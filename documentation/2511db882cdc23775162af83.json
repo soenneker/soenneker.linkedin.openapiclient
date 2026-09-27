@@ -1,0 +1,392 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries",
+  "Title": "Industries - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Industries - Standardized Data API",
+      "Anchor": "industries---standardized-data-api",
+      "SectionPath": [],
+      "Text": "The industries API provides standardized industry data across the LinkedIn platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET | BATCH_GET | GET_ALL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versions",
+      "Anchor": "versions",
+      "SectionPath": [
+        "Versions"
+      ],
+      "Text": "The industries API currently supports only the static version (V1) of industry data from LinkedIn. To access other available versions of the Industry Taxonomy, please refer to the Industry Taxonomy Versions API and use the appropriate endpoint to retrieve the desired version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "$URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized industry URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry name in various locales. Represented as MultiLocaleString type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/industries/{id}?locale.language=en\u0026locale.country=US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the industry data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Supermarkets\u0022\n        }\n    },\n    \u0022id\u0022: 22,\n    \u0022$URN\u0022: \u0022urn:li:industry:22\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "BATCH_GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/industries?ids={id1}\u0026ids={id2}\u0026ids={id3}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the industry data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u002222\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Supermarkets\u0022\n                }\n            },\n            \u0022id\u0022: 22,\n            \u0022$URN\u0022: \u0022urn:li:industry:22\u0022\n        },\n        \u002223\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Food Production\u0022\n                }\n            },\n            \u0022id\u0022: 23,\n            \u0022$URN\u0022: \u0022urn:li:industry:23\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/industries",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the industry data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Sporting Goods\u0022\n                }\n            },\n            \u0022id\u0022: 20,\n            \u0022$URN\u0022: \u0022urn:li:industry:20\u0022\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Tobacco\u0022\n                }\n            },\n            \u0022id\u0022: 21,\n            \u0022$URN\u0022: \u0022urn:li:industry:21\u0022\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Supermarkets\u0022\n                }\n            },\n            \u0022id\u0022: 22,\n            \u0022$URN\u0022: \u0022urn:li:industry:22\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

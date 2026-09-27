@@ -1,0 +1,283 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+  "Title": "Organizations and Brands Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizations and Brands Overview",
+      "Anchor": "organizations-and-brands-overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizations and Brands Overview",
+      "Anchor": "organizations-and-brands-overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizations and Brands Overview",
+      "Anchor": "organizations-and-brands-overview",
+      "SectionPath": [],
+      "Text": "Use the Organizations and Brand APIs to create, update, and delete your organization and brand information. Additionally, the APIs support viewing analytics, notifications, sharing content, enable members to follow organizations, and view suggested organizations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizations and Brands Overview",
+      "Anchor": "organizations-and-brands-overview",
+      "SectionPath": [],
+      "Text": "Unless otherwise specified, authenticated members must be assigned specific organization roles to use endpoints that retrieve, create, or modify an organization or its related data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Entities",
+      "Anchor": "organizational-entities",
+      "SectionPath": [
+        "Organizational Entities"
+      ],
+      "Text": "URNs uniquely identify organizational entities and can be generated with existing company or showcase IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Entities",
+      "Anchor": "organizational-entities",
+      "SectionPath": [
+        "Organizational Entities"
+      ],
+      "Text": "Both resources share common fields and similarities in how data is accessed, and can only be modified by members who have been granted specific Organization Roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Organizational Entities",
+      "Anchor": "organizational-entities",
+      "SectionPath": [
+        "Organizational Entities"
+      ],
+      "Text": "",
+      "Headers": [
+        "Page",
+        "Organizational Entity",
+        "URN"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Company Pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:{company id}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Showcase Pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organizationBrand:{showcase id}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Resources",
+      "Anchor": "resources",
+      "SectionPath": [
+        "Organizational Entities",
+        "Resources"
+      ],
+      "Text": "Organization Access Control\nOrganizations Lookup API\nOrganization Authorizations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Statistics and Analytics",
+      "Anchor": "organization-statistics-and-analytics",
+      "SectionPath": [
+        "Organizational Entities",
+        "Organization Statistics and Analytics"
+      ],
+      "Text": "You must be an authenticated member with role type ADMINISTRATOR for an organization to make the following API calls:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Statistics and Analytics",
+      "Anchor": "organization-statistics-and-analytics",
+      "SectionPath": [
+        "Organizational Entities",
+        "Organization Statistics and Analytics"
+      ],
+      "Text": "Retrieve Follower Statistics\nRetrieve Share Statistics\nRetrieve Page Statistics",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Organizations",
+      "Anchor": "test-organizations",
+      "SectionPath": [
+        "Organizational Entities",
+        "Test Organizations"
+      ],
+      "Text": "LinkedIn offers two dedicated organizations for testing and you don\u0027t need the ADMINISTRATOR role to make API calls to these organizations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Organizations",
+      "Anchor": "test-organizations",
+      "SectionPath": [
+        "Organizational Entities",
+        "Test Organizations"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Organizations",
+      "Anchor": "test-organizations",
+      "SectionPath": [
+        "Organizational Entities",
+        "Test Organizations"
+      ],
+      "Text": "Anyone can view shares posted to a test organization. When you post shares, make sure to exclude information that shouldn\u0027t be public.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Test Organizations",
+      "Anchor": "test-organizations",
+      "SectionPath": [
+        "Organizational Entities",
+        "Test Organizations"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "URL",
+        "Organization URN"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DevTestCo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/company/test-company-for-developers/",
+            "Links": [
+              "https://www.linkedin.com/company/test-company-for-developers/"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:2414183",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Test University",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/school/test-university-for-developers/",
+            "Links": [
+              "https://www.linkedin.com/school/test-university-for-developers/"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:6177438",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Organizations",
+      "Anchor": "test-organizations",
+      "SectionPath": [
+        "Organizational Entities",
+        "Test Organizations"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Organizations",
+      "Anchor": "test-organizations",
+      "SectionPath": [
+        "Organizational Entities",
+        "Test Organizations"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software, and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn API Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

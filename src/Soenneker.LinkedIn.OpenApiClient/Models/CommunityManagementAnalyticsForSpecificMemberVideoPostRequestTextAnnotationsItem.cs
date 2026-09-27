@@ -23,9 +23,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Entity { get; set; }
 #endif
         /// <summary>The length property</summary>
-        public int? Length { get; set; }
+        public long? Length { get; set; }
         /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        public long? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementAnalyticsForSpecificMemberVideoPostRequestTextAnnotationsItem"/> and sets the default values.
         /// </summary>
@@ -52,8 +52,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entity", n => { Entity = n.GetStringValue(); } },
-                { "length", n => { Length = n.GetIntValue(); } },
-                { "start", n => { Start = n.GetIntValue(); } },
+                { "length", n => { Length = n.GetLongValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("entity", Entity);
-            writer.WriteIntValue("length", Length);
-            writer.WriteIntValue("start", Start);
+            writer.WriteLongValue("length", Length);
+            writer.WriteLongValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

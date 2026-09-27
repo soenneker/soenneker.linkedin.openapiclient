@@ -1,0 +1,352 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+  "Title": "Patent Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-image",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/language",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Patent Fields",
+      "Anchor": "patent-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the patent object.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "applicationNumber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable patent application number. It is a\u00A0 MultiLocaleString \u00A0type. Only displayed when pending is true.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable description for additional details about this education.\u00A0It is a\u00A0 MultiLocaleRichText \u00A0type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalerichtext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filingDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Month, day, and year the patent was filed.\u00A0It is a\u00A0 Date \u00A0type.\u00A0Only displayed when pending is true.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "inventors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Members who created the patent or contributed to it. Represented in an array of Contributors. Required to have the member\u0027s own person URN in the array.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "memberId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inventor represented in person URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable member name. It is a\u00A0 MultiLocaleString \u00A0type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "issueDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Month, day, and year the patent was officially issued.\u00A0It is a\u00A0 Date \u00A0type.\u00A0Only displayed when pending is false.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "issuer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable issuer of the patent. Issuer based on country/region and is represented by lowercase two-letter country code as defined by ISO-3166 .\u00A0It is a MultiLocaleString type.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable patent number.\u00A0It is a\u00A0 MultiLocaleString \u00A0type.\u00A0Only displayed when pending is false.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pending",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status of patent represented as a boolean.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable title of the patent.\u00A0It is a\u00A0 MultiLocaleString \u00A0type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL referencing the patent represented in string.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

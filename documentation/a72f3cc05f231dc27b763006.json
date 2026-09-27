@@ -1,0 +1,81 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+  "Title": "Sync Services Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/data-validation-design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/exporting-crm-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Services Overview",
+      "Anchor": "sync-services-overview",
+      "SectionPath": [],
+      "Text": "Sales Navigator Sync Services offers APIs that enable richer integrations built on top of CRM Sync. With Sync Services, you can enhance UI experiences with LinkedIn profile photos and LinkedIn data within your application, and offer users opportunities improve lead and contact quality within their CRM instance with recommendations from LinkedIn. All Sync Services features require customers have the CRM Sync feature enabled in their Sales Navigator contract.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Validation API",
+      "Anchor": "data-validation-api",
+      "SectionPath": [
+        "Data Validation API"
+      ],
+      "Text": "The Data Validation API is an asynchronous export API that enables the No Longer with Company validation export. The API performs validation of data ingested via CRM Sync and when called, returns an export for a CRM instance that identifies contact and lead records whose current company on LinkedIn does not match the company in the CRM. This data can be used to enable data integrity workflows within the CRM application to keep CRM contact records up-to-date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations API",
+      "Anchor": "profile-associations-api",
+      "SectionPath": [
+        "Profile Associations API"
+      ],
+      "Text": "The Profile Associations API offers third-party applications the ability to leverage existing LinkedIn profile matches for customers using CRM Sync in their Sales Navigator implementation. Using external identifiers, you can request and use public profile photos and Sales Navigator profile links to enrich the identities of contacts and leads in the external application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Want to get started right now? Check out our Getting Started guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn SNAP Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

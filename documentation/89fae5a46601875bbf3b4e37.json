@@ -1,0 +1,948 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/content-series",
+  "Title": "Content Series",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/content-series",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Content Series",
+      "Anchor": "content-series",
+      "SectionPath": [],
+      "Text": "The ContentSeries API returns details for a content series (i.e. owner, subscriberCount, issues, cadence, etc). A \u0022Content Series\u0022 corresponds to LinkedIn\u0027s Newsletters feature, where an issue is a published article that is part of a recurring series that members and organizations can subscribe to and be notified about.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content Series",
+      "Anchor": "content-series",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content Series",
+      "Anchor": "content-series",
+      "SectionPath": [],
+      "Text": "GET - A single ContentSeries entity for the given contentSeriesUrn\nBATCH_GET - List of ContentSeries entities for the given set of contentSeriesUrns\nFindByOwner - List of ContentSeries entities for the given OrganizationUrn](../pages-profiles/organizations.md) or PersonUrn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Owner field is being encoded to PersonUrn from its respective MemberUrn, only if the owner is of type MemberUrn",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn/OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity owning this contentSeries.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "latestIssue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedInArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the last published issue attached to this series. Will be null if series has no issues. Can be resolved via the Original Articles API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles?view=li-dma-data-portability-2026-08#retrieve-original-article-data"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subscriberCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of subscribers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentSeriesUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentSeriesUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifier of the series",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AttributedText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description of this series",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "inviteTargetAudiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to invite targetAudiences to follow the series. This currently only applies to the 1st article published in a series. Note: an invitation is not sent to FOLLOWERS of the series",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version of the series.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media attached to this series.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAudiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[TargetAudience]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intended audiences or best fit audiences for this content as decided by the owner. By default, the series will be distributed to its followers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AttributedText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title of this series.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "issues",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[LinkedInArticleUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URNs of the issues attached to this series. Can be resolved via the Original Articles API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles?view=li-dma-data-portability-2026-08#retrieve-original-article-data"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cadence",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A field representing the cadence of how often this series is published.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "spamValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Derived from contentCertificationRecord. Indicates whether LinkedIn\u0027s automated content spam classification system has determined this series to be spam (true) or not spam (false).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaContentSeries/encoded ContentSeriesUrn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaContentSeries/urn%3Ali%3AcontentSeries%3A6897725118257209345\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:organization:1337\u0022,\n    \u0022description\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022A Newsletter highlighting trending topics, conversations and tools to help navigate the changing world of work.\u0022\n    },\n    \u0022versionTag\u0022: \u0022113\u0022,\n    \u0022media\u0022: {},\n    \u0022targetAudiences\u0022: [\n        \u0022FOLLOWERS\u0022\n    ],\n    \u0022title\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022In the Loop\u0022\n    },\n    \u0022issues\u0022: [\n        \u0022urn:li:linkedInArticle:6899827215236759552\u0022,\n        \u0022urn:li:linkedInArticle:6909632203832377346\u0022,\n        \u0022urn:li:linkedInArticle:7132417196768550912\u0022\n    ],\n    \u0022cadence\u0022: {\n        \u0022duration\u0022: 2,\n        \u0022unit\u0022: \u0022MONTH\u0022\n    },\n    \u0022spamValue\u0022: false,\n    \u0022latestIssue\u0022: \u0022urn:li:linkedInArticle:7132417196768550912\u0022,\n    \u0022subscriberCount\u0022: 6744172,\n    \u0022contentSeriesUrn\u0022: \u0022urn:li:contentSeries:6897725118257209345\u0022,\n    \u0022inviteTargetAudiences\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contentSeriesUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentSeriesUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn to fetch the ContentSeries details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:contentSeries:6897725118257209345",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaContentSeries?ids=List(encoded contentSeriesUrns)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaContentSeries?ids=List(urn%3Ali%3AcontentSeries%3A6897725118257209345,urn%3Ali%3AcontentSeries%3A7056663228474425344)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:contentSeries:6897725118257209345\u0022: {\n            \u0022owner\u0022: \u0022urn:li:organization:1337\u0022,\n            \u0022description\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022A Newsletter highlighting trending topics, conversations and tools to help navigate the changing world of work.\u0022\n            },\n            \u0022versionTag\u0022: \u0022113\u0022,\n            \u0022media\u0022: {},\n            \u0022targetAudiences\u0022: [\n                \u0022FOLLOWERS\u0022\n            ],\n            \u0022title\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022In the Loop\u0022\n            },\n            \u0022issues\u0022: [\n                \u0022urn:li:linkedInArticle:6899827215236759552\u0022,\n                \u0022urn:li:linkedInArticle:7123361951409192960\u0022,\n                \u0022urn:li:linkedInArticle:7132417196768550912\u0022\n            ],\n            \u0022cadence\u0022: {\n                \u0022duration\u0022: 2,\n                \u0022unit\u0022: \u0022MONTH\u0022\n            },\n            \u0022spamValue\u0022: false,\n            \u0022latestIssue\u0022: \u0022urn:li:linkedInArticle:7132417196768550912\u0022,\n            \u0022subscriberCount\u0022: 6744217,\n            \u0022contentSeriesUrn\u0022: \u0022urn:li:contentSeries:6897725118257209345\u0022,\n            \u0022inviteTargetAudiences\u0022: true\n        },\n        \u0022urn:li:contentSeries:7056663228474425344\u0022: {\n            \u0022owner\u0022: \u0022urn:li:organization:1035\u0022,\n            \u0022description\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Your monthly source of \\\u0022byte-sized\\\u0022 updates on Microsoft innovations and global tech advancements.\u0022\n            },\n            \u0022versionTag\u0022: \u002245\u0022,\n            \u0022media\u0022: {},\n            \u0022targetAudiences\u0022: [\n                \u0022FOLLOWERS\u0022\n            ],\n            \u0022title\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022The Monthly Tech-In\u0022\n            },\n            \u0022issues\u0022: [\n                \u0022urn:li:linkedInArticle:7056664972742819840\u0022,\n                \u0022urn:li:linkedInArticle:7067176158370426880\u0022,\n                \u0022urn:li:linkedInArticle:7123047667160530945\u0022\n            ],\n            \u0022cadence\u0022: {\n                \u0022duration\u0022: 1,\n                \u0022unit\u0022: \u0022MONTH\u0022\n            },\n            \u0022spamValue\u0022: false,\n            \u0022latestIssue\u0022: \u0022urn:li:linkedInArticle:7123047667160530945\u0022,\n            \u0022subscriberCount\u0022: 6105964,\n            \u0022contentSeriesUrn\u0022: \u0022urn:li:contentSeries:7056663228474425344\u0022,\n            \u0022inviteTargetAudiences\u0022: true\n        }\n    },\n    \u0022statuses\u0022: {},\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "BATCH_GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of ContentSeriesUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of ContentSeries Urn to fetch the details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn:li:contentSeries:6897725118257209345,urn:li:contentSeries:7056663228474425344)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "FindByOwner",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "FindByOwner",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaContentSeries?q=owner\u0026owner=encodedUrn\u0026start=0\u0026count=1",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "FindByOwner",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaContentSeries?q=owner\u0026owner=urn%3Ali%3Aperson%3AsyabJjcceP\u0026start=0\u0026count=1\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "FindByOwner",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 1,\n        \u0022links\u0022: [\n            {\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/rest/dmaContentSeries?owner=urn%3Ali%3Aperson%3AsyabJjcceP\u0026q=owner\u0026start=1\u0026count=1\u0022\n            }\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: \u0022urn:li:person:syabJjcceP\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:syabJjcceP\u0022,\n                \u0022time\u0022: 1701214743412\n            },\n            \u0022description\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Updates2\u0022\n            },\n            \u0022versionTag\u0022: \u00222\u0022,\n            \u0022targetAudiences\u0022: [\n                \u0022FOLLOWERS\u0022\n            ],\n            \u0022title\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Hello2\u0022\n            },\n            \u0022issues\u0022: [\n                \u0022urn:li:linkedInArticle:7135763771607724032\u0022,\n                \u0022urn:li:linkedInArticle:7135771933207408640\u0022\n            ],\n            \u0022cadence\u0022: {\n                \u0022duration\u0022: 1,\n                \u0022unit\u0022: \u0022DAY\u0022\n            },\n            \u0022spamValue\u0022: false,\n            \u0022latestIssue\u0022: \u0022urn:li:linkedInArticle:7135771933207408640\u0022,\n            \u0022subscriberCount\u0022: 6,\n            \u0022contentSeriesUrn\u0022: \u0022urn:li:contentSeries:7135411802925891584\u0022,\n            \u0022inviteTargetAudiences\u0022: true,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:syabJjcceP\u0022,\n                \u0022time\u0022: 1701300631396\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Retrieve ContentSeries data",
+        "FindByOwner",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Encoded OrganizationUrn](../pages-profiles/organizations.md) or PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Owner urn to fetch the ContentSeries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn%3Ali%3Aperson%3AsyabJjcceP",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pagingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PagingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paging parameters for the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=0\u0026count=1",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ILLEGAL_ARGUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad parameter is provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer does not have authorization to view content series owned by:CompanyUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the requesting viewer has create access to the particular owner company",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access content series data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the necessary permissions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller should have access to the Ad Account provided in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Ad Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided event is not existed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure to provide the data that is existed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

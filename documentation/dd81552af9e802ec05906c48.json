@@ -1,0 +1,360 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+  "Title": "LinkedIn Learning and Adobe Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following diagram illustrates the Adobe Learning Manager and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Deep Integration Functionality",
+      "Anchor": "adobe-deep-integration-functionality",
+      "SectionPath": [
+        "Adobe Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML SSO Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Deep Integration Functionality",
+      "Anchor": "adobe-deep-integration-functionality",
+      "SectionPath": [
+        "Adobe Deep Integration Functionality"
+      ],
+      "Text": "Reporting: AICC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Deep Integration Functionality",
+      "Anchor": "adobe-deep-integration-functionality",
+      "SectionPath": [
+        "Adobe Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (English only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Deep Integration Functionality",
+      "Anchor": "adobe-deep-integration-functionality",
+      "SectionPath": [
+        "Adobe Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Deep Integration Functionality",
+      "Anchor": "adobe-deep-integration-functionality",
+      "SectionPath": [
+        "Adobe Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Adobe Learning Manager integration configuration requires the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Deep Integration Functionality",
+      "Anchor": "adobe-deep-integration-functionality",
+      "SectionPath": [
+        "Adobe Deep Integration Functionality"
+      ],
+      "Text": "An active Adobe Learning Manager LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Adobe Learning Manager LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "Single Sign-On is recommended for all enterprise learning platform integrations and should be enabled prior to integrating with Adobe Learning Manager. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time learning and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "To configure SAML SSO with your organization\u0027s Identity Provider, review the LinkedIn Learning SSO Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning\nadds courses at a rate of 20-30 per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Adobe Learning Manager deep integration with LinkedIn Learning uses LinkedIn\nLearning APIs to refresh the content library daily. This feature ensures\nAdobe Learning Manager makes new content available within 24 hours of release.\nAdobe Learning Manager aggregates and indexes all content titles and descriptions to\naccommodate keyword searches and support efficient discoverability. Adobe\nLearning Manager supports automatic syncing of English only courses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "All LinkedIn Learning learner activity is captured in robust usage reports\naccessible from the LinkedIn Learning administrative interface. In addition to\nLinkedIn Learning reports, when a learner launches content from the LMS, AICC reporting is\nused to communicate a learner\u0027s progress back to Adobe Learning Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Single Sign-On",
+      "Anchor": "enable-single-sign-on",
+      "SectionPath": [
+        "Configuration",
+        "Enable Single Sign-On"
+      ],
+      "Text": "We recommend SSO for all enterprise learning platform integrations. You can\nconfigure SSO authentication in your LinkedIn Learning Admin settings. Most\norganizations have a centrally-managed identity management solution like Azure\nAD or Okta, which can be configured to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Single Sign-On",
+      "Anchor": "enable-single-sign-on",
+      "SectionPath": [
+        "Configuration",
+        "Enable Single Sign-On"
+      ],
+      "Text": "To configure SSO with your identity management solution, share our LinkedIn Learning SSO Implementation Guide with your organization\u0027s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration",
+      "Anchor": "aicc-configuration",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration"
+      ],
+      "Text": "For LinkedIn Learning to communicate learner progress to Adobe Learning Manager via AICC, you need to add your LMS hostnames in the admin settings. To enable AICC, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration",
+      "Anchor": "aicc-configuration",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Add content to your LMS via AICC. Expand the Configure AICC section.\n\n\nIn the host name field, enter the following values:\n\nlearningmanager.adobe.com\nlearningmanagerlrs.adobe.com\ncpcontents.adobe.com\n\n\nToggle the Enable AICC integration setting on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Adobe Learning Manager to sync LinkedIn Learning course metadata, you must provision API keys in the LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "To provision API keys, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "If you are not already in the Admin screen, select\nGo to Admin.\n\n\nFrom the side navigation menu, select Access content and reports via API.\n\nExpand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\n\nUse \u0022Adobe Learning Manager\u0022 as the application name.\n\nProvide a short description of the integration use case in the application\ndescription field. For example, \u0022Adobe Learning Manager content sync\u0022.\n\nThere are two checkboxes, Content and Report. Select Content.\n\nClick Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "The integration syncs content at the course level. If you would like to add individual videos to your LMS, follow these instructions in the LinkedIn Learning Standard AICC LMS Integration Guide to download AICC packages for individual videos.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Learning Manager Configuration",
+      "Anchor": "adobe-learning-manager-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Adobe Learning Manager Configuration"
+      ],
+      "Text": "To complete the configuration with Adobe Learning Manager, you will need the\nClient ID and Client Secret values you just created:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Learning Manager Configuration",
+      "Anchor": "adobe-learning-manager-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Adobe Learning Manager Configuration"
+      ],
+      "Text": "Once you\u0027ve gathered the required information, follow the Adobe-LinkedIn Learning configuration instructions to enable the connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adobe Learning Manager Configuration",
+      "Anchor": "adobe-learning-manager-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Adobe Learning Manager Configuration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via their Adobe Learning Manager instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

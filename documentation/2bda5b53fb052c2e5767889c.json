@@ -1,0 +1,1458 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+  "Title": "learningActivityReports API Reference",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "learningActivityReports API Reference",
+      "Anchor": "learningactivityreports-api-reference",
+      "SectionPath": [],
+      "Text": "This resource represents LinkedIn Learning activity reports like course completions, seconds of content viewed and learner days active. You can use these methods to aggregate activity data by account, group, individual or content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningActivityReports API Reference",
+      "Anchor": "learningactivityreports-api-reference",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningActivityReports API Reference",
+      "Anchor": "learningactivityreports-api-reference",
+      "SectionPath": [],
+      "Text": "Disclaimer: LinkedIn Learning is constantly investing in our reporting infrastructure. In the future, there may be changes to the Reporting API which can require adjustments to how the data is queried. These updates may require you to make some updates on your end. We intend to provide detailed guidance in advance of any potential changes to ensure that you have enough time to make necessary changes in your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026count=1\u0026startedAt=1627267600000\u0026timeOffset.unit=DAY\u0026timeOffset.duration=7\u0026aggregationCriteria.primary=ACCOUNT\u0026contentSource=ALL_SOURCES\u0027 \\\n  -H \u0027Authorization: Bearer AQW...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022latestDataAt\u0022: 1632207540000,\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementType\u0022: \u0022DAYS_ACTIVE\u0022,\n                    \u0022engagementValue\u0022: 88,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 12,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022engagementValue\u0022: 2505,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 16,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 1,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 2,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 66,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 22,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022entity\u0022: {\n                    \u0022accountUrn\u0022: \u0022urn:li:enterpriseAccount:999\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=ACCOUNT\u0026count=1\u0026q=criteria\u0026start=1\u0026startedAt=1627267600000\u0026timeOffset.duration=7\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Designates the query finder. The value of this parameter should always be criteria.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the beginning time for the range of records to be returned or summarized by the report. Represented by number of milliseconds since midnight, January 1, 1970 UTC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortBy.engagementMetricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An engagement type metric by which the results should be sorted. Supported values include: SECONDS_VIEWEDCOMPLETIONSDAYS_ACTIVEMARKED_AS_DONEPROGRESS_PERCENTAGEVIEWS",
+            "Links": [],
+            "Values": [
+              "SECONDS_VIEWED",
+              "COMPLETIONS",
+              "DAYS_ACTIVE",
+              "MARKED_AS_DONE",
+              "PROGRESS_PERCENTAGE",
+              "VIEWS"
+            ]
+          },
+          {
+            "Text": "EngagementMetricType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#engagementmetrictype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortBy.engagementMetricQualifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An engagement type metric by which the results should be sorted. Supported values include: TOTALUNIQUE",
+            "Links": [],
+            "Values": [
+              "TOTAL",
+              "UNIQUE"
+            ]
+          },
+          {
+            "Text": "EngagementMetricQualifier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#engagementmetricqualifier"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (Default = TOTAL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The order of the results. Supported values include:ASCENDINGDESCENDING",
+            "Links": [],
+            "Values": [
+              "ASCENDING",
+              "DESCENDING"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (Default = DESCENDING)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeOffset.unit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Describes the offset from start parameter to be used. Supported timeOffset units include:DAYWEEK",
+            "Links": [],
+            "Values": [
+              "DAY",
+              "WEEK"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeOffset.duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Describes the offset from start parameter to be used. Duration is limited to a max of 14 days/2 weeks from start date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale of the report. Report content will be localized based on this value. Supported values include:deenesfrjaptzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "ja",
+              "pt",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (Default = en)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of asset for the content whose report is generated. Supported values include: COURSEVIDEOARTICLEAUDIOBOOKEVENTLEARNING_COLLECTIONLEARNING_PATH",
+            "Links": [],
+            "Values": [
+              "COURSE",
+              "VIDEO",
+              "ARTICLE",
+              "AUDIO",
+              "BOOK",
+              "EVENT",
+              "LEARNING_COLLECTION",
+              "LEARNING_PATH"
+            ]
+          },
+          {
+            "Text": "AssetType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#assettype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentSource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes whether the content is proprietary to the LinkedIn Learning account, from LinkedIn Learning, or from a third-party provider. If it is admin created \u0022custom content\u0022 the source will be ORGANIZATION. If it is LinkedIn Learning content the source will be LINKEDIN_LEARNING. For third-party content the source will be THIRD_PARTY. Supported values include:ALL_SOURCESLINKEDIN_LEARNINGORGANIZATIONTHIRD_PARTYINTERNAL (deprecated)EXTERNAL (deprecated)",
+            "Links": [],
+            "Values": [
+              "ALL_SOURCES",
+              "LINKEDIN_LEARNING",
+              "ORGANIZATION",
+              "THIRD_PARTY",
+              "INTERNAL (deprecated)",
+              "EXTERNAL (deprecated)"
+            ]
+          },
+          {
+            "Text": "ContentSource",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#contentsource"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No = EXTERNAL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregationCriteria.primary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The primary aggregation level for the report. Supported values include: ACCOUNTGROUPINDIVIDUALCONTENTASSIGNMENT",
+            "Links": [],
+            "Values": [
+              "ACCOUNT",
+              "GROUP",
+              "INDIVIDUAL",
+              "CONTENT",
+              "ASSIGNMENT"
+            ]
+          },
+          {
+            "Text": "AggregationCriteria",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#aggregationcriteria"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (Default = ACCOUNT)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregationCriteria.secondary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The secondary aggregation level for the report. Supported values include: ACCOUNTGROUPINDIVIDUALCONTENTASSIGNMENT",
+            "Links": [],
+            "Values": [
+              "ACCOUNT",
+              "GROUP",
+              "INDIVIDUAL",
+              "CONTENT",
+              "ASSIGNMENT"
+            ]
+          },
+          {
+            "Text": "AggregationCriteria",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#aggregationcriteria"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Response Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "activities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All the relevant content engagements that occurred like the number of completions and unique views.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EngagementMetric[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#engagementmetric"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Details corresponding to the content like the name, locale and ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#contentdetails"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "latestDataAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since epoch for the latest data on which the report is based.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "learnerDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Details corresponding to the learner like the name, email and uniqueUserId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LearnerDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#learnerdetails"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Definitions",
+      "Anchor": "definitions",
+      "SectionPath": [
+        "Definitions"
+      ],
+      "Text": "AggregationCriteria\nAssetType\nContentDetails\nContentSource\nEngagementMetric\nEngagementMetricType\nEngagementMetricQualifier\nLearnerDetails\nLocale",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AggregationCriteria",
+      "Anchor": "aggregationcriteria",
+      "SectionPath": [
+        "Definitions",
+        "AggregationCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aggregation at LinkedIn Learning account level. This is the highest possible level of aggregation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INDIVIDUAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aggregation at individual user or learner level.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aggregation at content level.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AssetType",
+      "Anchor": "assettype",
+      "SectionPath": [
+        "Definitions",
+        "AssetType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ARTICLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A piece of written work published in a print or electronic medium. It is a type of document which refers to a specific topic, forming an independent part of a publication such as book, newspaper or web platform. Ex. Blog post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ASSESSMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used to evaluate a learner\u0027s skill and knowledge.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUDIO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audio-only content with no video elements, like audio books and podcasts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BOOK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Includes full length books presented in any form, text, audiobook, or otherwise. Does not include book summaries, reviews, excerpts, or other incomplete versions of a book.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COURSE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A course is a collection of chapters that represent a cohesive learning experience around a concept or concepts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A document refers to a medium of record for decisions, transactions, plan etc. Ex. Wiki page, PDF, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An event is an entity that can be scheduled to happen at a particular time where the learning content is synchronously offered (in-person or online) to the learners. Ex. workshops, seminars, tech talks, trainings.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEARNING_COLLECTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A learning collection is a non-sequential collection of learning assets generally centered around a skill or concept.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEARNING_PATH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A learning path is a guided sequential collection of courses and other content that is designed to teach a skill or set of skills. Generally much larger in scope than an individual course.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A video represents a single viewable video. It is one of the basic building blocks used in the larger learning assets like courses and learning paths.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContentDetails",
+      "Anchor": "contentdetails",
+      "SectionPath": [
+        "Definitions",
+        "ContentDetails"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of the learningAsset. For example, \u201CExcel Essential Training\u201D.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO 639-1 language code of the content, including locale information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentProviderName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the provider for this content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentSource (deprecated)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field is being replaced by contentProviderName, but the ContentSource enum will remain in use as a query parameter. Determines the source of the content. If it is admin created \u0022custom content\u0022 the source will be INTERNAL. If it is LinkedIn Learning content the source will be EXTERNAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentSource",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#contentsource"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "websiteUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The launch URL of the INTERNAL learning asset in the LinkedIn Learning web application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the primary content entity identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContentSource",
+      "Anchor": "contentsource",
+      "SectionPath": [
+        "Definitions",
+        "ContentSource"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ALL_SOURCES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Combines LINKEDIN_LEARNING, ORGANIZATION, and THIRD_PARTY.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LINKEDIN_LEARNING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include content published by LinkedIn Learning.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ORGANIZATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include content published by the caller\u0027s enterprise organization, not intended for use outside of the enterprise organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "THIRD_PARTY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include content published by any organization for external use, including user-supplied content providers and the caller\u0027s own organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INTERNAL (deprecated)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resource is proprietary. It is only available to the LinkedIn Learning account making the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXTERNAL (deprecated)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resource is available to all LinkedIn Learning customers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EngagementMetric",
+      "Anchor": "engagementmetric",
+      "SectionPath": [
+        "Definitions",
+        "EngagementMetric"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of asset for the content whose report is generated. Supported values include: COURSEVIDEO",
+            "Links": [],
+            "Values": [
+              "COURSE",
+              "VIDEO"
+            ]
+          },
+          {
+            "Text": "AssetType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#assettype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An engagement type metric by which the results should be sorted. Supported values include: SECONDS_VIEWEDCOMPLETIONSDAYS_ACTIVEMARKED_AS_DONEPROGRESS_PERCENTAGEVIEWSENGAGED_LEARNERS",
+            "Links": [],
+            "Values": [
+              "SECONDS_VIEWED",
+              "COMPLETIONS",
+              "DAYS_ACTIVE",
+              "MARKED_AS_DONE",
+              "PROGRESS_PERCENTAGE",
+              "VIEWS",
+              "ENGAGED_LEARNERS"
+            ]
+          },
+          {
+            "Text": "EngagementMetricType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#engagementmetrictype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value of the engagement for the engagement type. For example, number of seconds views or course completions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastEngagedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the content was last engaged. For example, the date the content was last viewed or completed. For COMPLETIONS this is the time when the content was completed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EngagementMetricType",
+      "Anchor": "engagementmetrictype",
+      "SectionPath": [
+        "Definitions",
+        "EngagementMetricType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SECONDS_VIEWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of seconds a content has been viewed by enterprise entities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPLETIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times the content has been completed by enterprise entities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DAYS_ACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of days the enterprise entities did at least one engagement for any content (day is defined as the period of 24 hours starting from 12am PDT)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MARKED_AS_DONE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times the content has been marked as done by enterprise entities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROGRESS_PERCENTAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Percentage of the content completed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIEWS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of views for the content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENGAGED_LEARNERS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times the content has been engaged with by enterprise entities.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EngagementMetricQualifier",
+      "Anchor": "engagementmetricqualifier",
+      "SectionPath": [
+        "Definitions",
+        "EngagementMetricQualifier"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "TOTAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times the content has been engaged by enterprise entities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNIQUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times the content has been engaged by unique enterprise entities.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LearnerDetails",
+      "Anchor": "learnerdetails",
+      "SectionPath": [
+        "Definitions",
+        "LearnerDetails"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the enterprise entity. An enterprise entity can be an account, group or individual.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of the enterprise entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enterpriseGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of groups that the enterprise profile belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (default=[])",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "uniqueUserId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, a unique and immutable user identifier. This value is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration. This value is often used to make an association between learner profiles in other enterprise applications like learning management systems (LMSs) or business intelligence (BI) tools.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Learning specific unique entity identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customAttributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional profile attributes provided by the enterprise. This data is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Locale",
+      "Anchor": "locale",
+      "SectionPath": [
+        "Definitions",
+        "Locale"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, an uppercase two-letter country code as defined by ISO-3166.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "variant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, a vendor or browser-specific code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

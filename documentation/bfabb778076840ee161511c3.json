@@ -1,0 +1,406 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees",
+  "Title": "Degrees - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Degrees - Standardized Data API",
+      "Anchor": "degrees---standardized-data-api",
+      "SectionPath": [],
+      "Text": "The degrees API provides standardized member degree and diploma data across the LinkedIn platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET | BATCH_GET | GET_ALL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Degree ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "$URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized degree URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Degree name in various locales. Represented as MultiLocaleString type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "alias",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All aliases to this standardized degree name. Represented as an array of MultiLocaleString.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rollup",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The general standardized degree category for the standardized degree. Represented as a degree URN. Optional.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/degrees/{id}?locale.language=en\u0026locale.country=US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the degree data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Bachelor of Architecture\u0022\n        }\n    },\n    \u0022alias\u0022: [\n        {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022BArch\u0022\n            }\n        },\n        {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bachelor of Architecture (B.Arch.)\u0022\n            }\n        },\n        {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bachelor of Architecture (BArch)\u0022\n            }\n        }\n    ],\n    \u0022id\u0022: 258,\n    \u0022$URN\u0022: \u0022urn:li:degree:258\u0022,\n    \u0022rollup\u0022: \u0022urn:li:degree:200\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "BATCH_GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/degrees?ids={id1}\u0026ids={id2}\u0026ids={id3}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the degree data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u0022258\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bachelor of Architecture\u0022\n                }\n            },\n            \u0022alias\u0022: [\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BArch\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Architecture (B.Arch.)\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Architecture (BArch)\u0022\n                    }\n                }\n            ],\n            \u0022id\u0022: 258,\n            \u0022$URN\u0022: \u0022urn:li:degree:258\u0022,\n            \u0022rollup\u0022: \u0022urn:li:degree:200\u0022\n        },\n        \u0022259\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bachelor of Applied Science\u0022\n                }\n            },\n            \u0022alias\u0022: [\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BASc\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Applied Science (B.A.Sc.)\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Applied Science (BASc)\u0022\n                    }\n                }\n            ],\n            \u0022id\u0022: 259,\n            \u0022$URN\u0022: \u0022urn:li:degree:259\u0022,\n            \u0022rollup\u0022: \u0022urn:li:degree:200\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/degrees",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the degree data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bachelor of Business Administration\u0022\n                }\n            },\n            \u0022alias\u0022: [\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BAC\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of business\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of business management\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of science of business administration\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BBA\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BBS\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BBM\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BBus\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BSBA\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Business Administration (B.B.A.)\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Business Administration (BBA)\u0022\n                    }\n                }\n            ],\n            \u0022id\u0022: 450,\n            \u0022$URN\u0022: \u0022urn:li:degree:450\u0022,\n            \u0022rollup\u0022: \u0022urn:li:degree:200\u0022\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bachelor of Applied Science\u0022\n                }\n            },\n            \u0022alias\u0022: [\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022BASc\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Applied Science (B.A.Sc.)\u0022\n                    }\n                },\n                {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Bachelor of Applied Science (BASc)\u0022\n                    }\n                }\n            ],\n            \u0022id\u0022: 259,\n            \u0022$URN\u0022: \u0022urn:li:degree:259\u0022,\n            \u0022rollup\u0022: \u0022urn:li:degree:200\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string CampaignGroup { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "campaignGroup", n => { CampaignGroup = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemName>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemName.CreateFromDiscriminatorValue); } },
                 { "objectiveType", n => { ObjectiveType = n.GetStringValue(); } },
                 { "campaignGroup~", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemCampaignGroup = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemCampaignGroup>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemCampaignGroup.CreateFromDiscriminatorValue); } },
@@ -106,7 +106,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("campaignGroup", CampaignGroup);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemName>("name", Name);
             writer.WriteStringValue("objectiveType", ObjectiveType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemCampaignGroup>("campaignGroup~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItemCampaignGroup);

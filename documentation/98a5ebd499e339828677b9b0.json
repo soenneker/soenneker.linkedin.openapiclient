@@ -1,0 +1,1973 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+  "Title": "Create and Manage Campaign Groups",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/ad-preview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Campaign Groups",
+      "Anchor": "create-and-manage-campaign-groups",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Campaign Groups",
+      "Anchor": "create-and-manage-campaign-groups",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Campaign Groups",
+      "Anchor": "create-and-manage-campaign-groups",
+      "SectionPath": [],
+      "Text": "Campaign groups provide advertisers a way to manage status, budget, and performance across multiple related campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Campaign Groups",
+      "Anchor": "create-and-manage-campaign-groups",
+      "SectionPath": [],
+      "Text": "Whenever an Ad Account is created, a new campaign group is automatically created for it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Campaign Groups",
+      "Anchor": "create-and-manage-campaign-groups",
+      "SectionPath": [],
+      "Text": "A campaign group can contain a variety of campaign types. There is no limit to the number of campaign groups per advertiser account. Note that LinkedIn imposes a limit of 5,000 campaigns per advertiser account and 2,000 campaigns per non-default campaign group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful Ad Account Users API calls:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permission accessibility for:\n\nrw_ads (read/write).\nr_ads (read-only)\n\n\nThe Ad Account user assigning permission holding one of the following Ad Account roles:\n\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (read-only, even with rw_ads scope)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions, refer to the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination for non-search APIs",
+      "Anchor": "pagination-for-non-search-apis",
+      "SectionPath": [
+        "Permissions",
+        "Pagination for non-search APIs"
+      ],
+      "Text": "The adCampaignGroups API implements pagination using the start and count parameters for several methods. The max count value is 1000. A 400 Bad Request response with the message, \u0022Specified count is larger than 1000\u0022 is returned if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination for non-search APIs",
+      "Anchor": "pagination-for-non-search-apis",
+      "SectionPath": [
+        "Permissions",
+        "Pagination for non-search APIs"
+      ],
+      "Text": "The count is greater than 1000.\nThe number of elements in the response is greater than 100, and the API request doesn\u0027t contain pagination request parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination for non-search APIs",
+      "Anchor": "pagination-for-non-search-apis",
+      "SectionPath": [
+        "Permissions",
+        "Pagination for non-search APIs"
+      ],
+      "Text": "For more information, see Pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Starting 202211, response decoration is no longer supported and has been replaced by Additional Info Fields. These new field(s) provide additional information for a field that\u0027s present in a schema. Learn more about the Additional Info Fields here.\nThe fields budgetOptimization.bidStrategy and budgetOptimization.budgetOptimizationStrategyare only supported starting from API versions 202501.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Additional Info Field"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the advertising account associated with the campaign. This value is immutable once set. For example, urn:li:SponsoredAccount:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accountInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09#schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backfilled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag that denotes whether the campaign group was created organically or to backfill existing campaigns. This is a read-only field set by the system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Numerical identifier for the campaign group. This is a read-only field set by the system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the campaign group used to make it easier to reference a campaign group and recall its purpose. The value of this field can\u0027t exceed 200 bytes when UTF-8 encoded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) date when to start running the associated campaigns under this campaign group. This field is required.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) date when to stop running the associated campaigns under this campaign group. If this field is unset, it indicates an open range with no end date. This field is required if totalBudget is set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servingStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of enums that determine whether or not campaigns within the campaign group may be served. Unlike status, which is user-managed, the values are controlled by the service. This is a read-only field. Possible values are: RUNNABLE Campaign group is currently active; billing information, budgetary constraints, or start and end dates are valid.STOPPED Campaign group is currently not eligible for serving for reasons other than billing information, budgetary constraints, or termination dates. For instance, a campaign group will be STOPPED if it has been canceled by the user, or it\u0027s marked as spam.BILLING_HOLD Parent account is on billing hold.ACCOUNT_TOTAL_BUDGET_HOLD Parent account total budget has been reached.ACCOUNT_END_DATE_HOLD Parent account end date has been reached.CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD Campaign group total budget has been reached.CAMPAIGN_GROUP_START_DATE_HOLD Campaign group start date is in the future.CAMPAIGN_GROUP_END_DATE_HOLD Campaign group end date has been reached.",
+            "Links": [],
+            "Values": [
+              "RUNNABLE Campaign group is currently active; billing information, budgetary constraints, or start and end dates are valid.",
+              "STOPPED Campaign group is currently not eligible for serving for reasons other than billing information, budgetary constraints, or termination dates. For instance, a campaign group will be STOPPED if it has been canceled by the user, or it\u0027s marked as spam.",
+              "BILLING_HOLD Parent account is on billing hold.",
+              "ACCOUNT_TOTAL_BUDGET_HOLD Parent account total budget has been reached.",
+              "ACCOUNT_END_DATE_HOLD Parent account end date has been reached.",
+              "CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD Campaign group total budget has been reached.",
+              "CAMPAIGN_GROUP_START_DATE_HOLD Campaign group start date is in the future.",
+              "CAMPAIGN_GROUP_END_DATE_HOLD Campaign group end date has been reached."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of campaign group. Possible values are: ACTIVE - Denotes that the campaign group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level).ARCHIVED - Denotes that the campaign group is presently inactive, and should mostly be hidden in the UI until un-archived. CANCELLED - Denotes that the campaign group has been permanently canceled and can\u0027t be reactivated. Not a settable status. DRAFT - Denotes that the campaign group is in a preliminary state and should temporarily not be served. PAUSED - Denotes that the campaign group meets all requirements to be served, but temporarily shouldn\u0027t be. PENDING_DELETION - Denotes that the campaign group has been requested to be deleted that\u0027s currently pending. REMOVED - Denoted that the campaign group was deleted, but must remain fetchable due to the existence of performance data.",
+            "Links": [],
+            "Values": [
+              "ACTIVE - Denotes that the campaign group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level).",
+              "ARCHIVED - Denotes that the campaign group is presently inactive, and should mostly be hidden in the UI until un-archived.",
+              "CANCELLED - Denotes that the campaign group has been permanently canceled and can\u0027t be reactivated. Not a settable status.",
+              "DRAFT - Denotes that the campaign group is in a preliminary state and should temporarily not be served.",
+              "PAUSED - Denotes that the campaign group meets all requirements to be served, but temporarily shouldn\u0027t be.",
+              "PENDING_DELETION - Denotes that the campaign group has been requested to be deleted that\u0027s currently pending.",
+              "REMOVED - Denoted that the campaign group was deleted, but must remain fetchable due to the existence of performance data."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If budgetOptimization.budgetOptimizationStrategy is DYNAMIC, the total budget of the campaign group will be shared among all campaigns within the same campaign group. Otherwise, it represents the maximum amount to be spent across all associated campaigns and creatives for the duration of the campaign group.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the currencyCode of the campaign group\u0027s total budget. Note: The currency must match the ISO currency code of the account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag showing whether this campaign group is a test campaign group, i.e., belongs to a test account. This is a read-only and immutable field that\u0027s set implicitly during creation based on whether the account is a Test Account or not.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "allowedCampaignTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of enums that indicates allowed campaign types within the specific campaign group. Possible values are:TEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn.SPONSORED_UPDATES - Native ads that promote a company\u0027s content updates in the LinkedIn feed.SPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to a LinkedIn\u0027s member inbox.DYNAMIC - Ads that are dynamically personalized. This is a read-only field.",
+            "Links": [],
+            "Values": [
+              "TEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn.",
+              "SPONSORED_UPDATES - Native ads that promote a company\u0027s content updates in the LinkedIn feed.",
+              "SPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to a LinkedIn\u0027s member inbox.",
+              "DYNAMIC - Ads that are dynamically personalized. This is a read-only field."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign Group Objective type values. This field is optional and immutable. Campaigns in this group will automatically have the same objective type. Click here for Objective descriptions BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITVIDEO_VIEWS",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-09"
+            ],
+            "Values": [
+              "BRAND_AWARENESS",
+              "ENGAGEMENT",
+              "JOB_APPLICANTS",
+              "LEAD_GENERATION",
+              "WEBSITE_CONVERSIONS",
+              "WEBSITE_VISIT",
+              "VIDEO_VIEWS"
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "budgetOptimization.bidStrategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes the strategy used for bidding in auction. Campaigns under the campaign group must have the same bid strategy. Possible values:MAXIMUM_DELIVERYMANUALCOST_CAP",
+            "Links": [],
+            "Values": [
+              "MAXIMUM_DELIVERY",
+              "MANUAL",
+              "COST_CAP"
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "budgetOptimization.budgetOptimizationStrategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Strategy used for campaign group budgeting to decide how to allocate budget across campaigns under the campaign group. Possible values: DYNAMIC",
+            "Links": [],
+            "Values": [
+              "DYNAMIC"
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dailyBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Daily budget for the campaign group and will be shared among all campaigns within the campaign group. This field is optional and mutable. It can only be used if budgetOptimization.budgetOptimizationStrategy is DYNAMIC Note: This field applies to API Versions starting from 202504 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "beneficiaryReference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BeneficiaryReference",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?view=li-lms-2026-09\u0026tabs=http#beneficiaryreference"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "A reference to the beneficiary of this campaign group. For a LinkedIn Marketing Solutions enterprise account, this is typically the organization (or company) entity being promoted. This field is optional and immutable once set. Note: This field applies to API Versions starting from 202608 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "billingReference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A reference to a billing object. This field is optional and immutable once set, and applies to ENTERPRISE accounts only. Note: This field applies to API Versions starting from 202608 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "billingParentReference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A reference to the parent of the billing object referenced by the billingReference field. This field is optional and immutable once set, and applies to ENTERPRISE accounts only. Note: This field applies to API Versions starting from 202608 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "buyingType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents whether the campaigns in the campaign group participate in an auction or have reserved inventory. This field is optional and immutable once set. Possible values are: AUCTION - Campaigns in the campaign group participate in an auction.RESERVATION - Campaigns in the campaign group have reserved inventory. Note: This field applies to API Versions starting from 202608 and later.",
+            "Links": [],
+            "Values": [
+              "AUCTION - Campaigns in the campaign group participate in an auction.",
+              "RESERVATION - Campaigns in the campaign group have reserved inventory. Note: This field applies to API Versions starting from 202608 and later."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "allowedCampaignTypes is in the response only when the account type is ENTERPRISE and is not in the response when account type is BUSINESS (as all campaign types can be created within Business accounts.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BeneficiaryReference",
+      "Anchor": "beneficiaryreference",
+      "SectionPath": [
+        "Schema",
+        "BeneficiaryReference"
+      ],
+      "Text": "A union representing the beneficiary of a campaign group. Exactly one member is set.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "BeneficiaryReference",
+      "Anchor": "beneficiaryreference",
+      "SectionPath": [
+        "Schema",
+        "BeneficiaryReference"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company URN of the beneficiary of the campaign group, in the format urn:li:company:{id}.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization URN of the beneficiary of the campaign group, in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "BeneficiaryReference",
+      "Anchor": "beneficiaryreference",
+      "SectionPath": [
+        "Schema",
+        "BeneficiaryReference"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BeneficiaryReference",
+      "Anchor": "beneficiaryreference",
+      "SectionPath": [
+        "Schema",
+        "BeneficiaryReference"
+      ],
+      "Text": "Company and organization URNs are interchangeable representations of the same entity. The member returned in a response reflects the entity type stored by the system, which may differ from the member used in the create request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "Campaign groups can be created in ACTIVE or DRAFT state. Can be changed from ACTIVE to ARCHIVED or PAUSED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n    \u0022name\u0022: \u0022CampaignGroup1\u0022,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022totalBudget\u0022: {\n        \u0022amount\u0022: \u002260000.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n    \u0022name\u0022: \u0022CampaignGroup1\u0022,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022totalBudget\u0022: {\n        \u0022amount\u0022: \u002260000.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Budgeting and Run Schedule",
+      "Anchor": "budgeting-and-run-schedule",
+      "SectionPath": [
+        "Create a Campaign Group",
+        "Budgeting and Run Schedule"
+      ],
+      "Text": "Budgets and start/end dates can exist at the advertiser account, campaign group, or campaign levels. If there\u0027s a conflict between levels, the more restrictive values are used for serving.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Campaign Group",
+      "Anchor": "get-a-campaign-group",
+      "SectionPath": [
+        "Get a Campaign Group"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Campaign Group",
+      "Anchor": "get-a-campaign-group",
+      "SectionPath": [
+        "Get a Campaign Group"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupsId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Campaign Group",
+      "Anchor": "get-a-campaign-group",
+      "SectionPath": [
+        "Get a Campaign Group"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupsId}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Campaign Group",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:512358882\u0022,\n    \u0022backfilled\u0022: false,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n            \u0022time\u0022: 1490074934000\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1490074934000\n        }\n    },\n    \u0022id\u0022: 512358882,\n    \u0022name\u0022: \u0022New Campaign Group\u0022,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022test\u0022: false,\n    \u0022servingStatuses\u0022: [\n        \u0022BILLING_HOLD\u0022\n    ],\n    \u0022allowedCampaignTypes\u0022: [\n        \u0022SPONSORED_UPDATES\u0022,\n        \u0022TEXT_AD\u0022\n    ],\n    \u0022status\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for Campaign Groups",
+      "Anchor": "search-for-campaign-groups",
+      "SectionPath": [
+        "Search for Campaign Groups"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for Campaign Groups",
+      "Anchor": "search-for-campaign-groups",
+      "SectionPath": [
+        "Search for Campaign Groups"
+      ],
+      "Text": "From 202401 version and above, we have moved from index based pagination to cursor based pagination for our search APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "The adCampaignGroups API implements cursor based pagination using the pageSize and pageToken parameters for search method. The max allowed pageSize is 1,000.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "pageSize governs the number of requested entities\npageToken is used to get the next set of results.\n\nnextPageToken is returned in metadata field of the search response.\nThis should be passed in pageToken query parameter in the request to get the next page of results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "Use the q=search parameter with to search for campaign groups by ID, name, and status fields. Search criteria is mandatory and can be chained together for increased granularity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?q=search\u0026search=(searchCriteria:(values:List(searchValue)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?q=search\u0026search=(status:(values:List(ACTIVE)))\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "search.id.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for campaign groups by ID. For example, urn:li:sponsoredCampaignGroup:{campaignGroupId}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.status.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for campaign groups with the provided status. The possible values are: ACTIVEARCHIVEDCANCELED DRAFT PAUSED PENDING_DELETION REMOVED",
+            "Links": [],
+            "Values": [
+              "ACTIVE",
+              "ARCHIVED",
+              "CANCELED",
+              "DRAFT",
+              "PAUSED",
+              "PENDING_DELETION",
+              "REMOVED"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "search.name.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for campaign groups by name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for campaign groups based on test or non-test. true: for test campaign groupsfalse: for non-test campaign groupsIf not specified, searches for both test and non-test campaign groups.",
+            "Links": [],
+            "Values": [
+              "true: for test campaign groups",
+              "false: for non-test campaign groupsIf not specified, searches for both test and non-test campaign groups."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "sortOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the sort order of the results. Results will be sorted by campaign group id. Supported values include:ASCENDINGDESCENDING The default is \u0022ASCENDING\u0022.",
+            "Links": [],
+            "Values": [
+              "ASCENDING",
+              "DESCENDING The default is \u0022ASCENDING\u0022."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "pageSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the number of entities to be returned. The default is 100. Max is 1,000.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique key representing the last entity of the response. This is to be used to fetch the next set of entities. If less than pageSize entities are returned in the current response, pageToken will be null",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "The following example searches for all campaign groups in ACTIVE and DRAFT status. The results are ordered by id in descending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/506223315/adCampaignGroups?q=search\u0026search=(status:(values:List(ACTIVE,DRAFT)))\u0026sortOrder=DESCENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/adAccounts/506223315/adCampaignGroups?q=search\u0026search=(status:(values:List(ACTIVE,DRAFT)))\u0026sortOrder=DESCENDING\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022time\u0022: 1542042798000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022time\u0022: 1542129293297\n                }\n            },\n            \u0022name\u0022: \u0022Refresh group\u0022,\n            \u0022test\u0022: false,\n            \u0022servingStatuses\u0022: [\n                \u0022CAMPAIGN_GROUP_END_DATE_HOLD\u0022,\n                \u0022BILLING_HOLD\u0022\n            ],\n            \u0022allowedCampaignTypes\u0022: [\n                \u0022SPONSORED_UPDATES\u0022,\n                \u0022TEXT_AD\u0022\n            ],\n            \u0022backfilled\u0022: false,\n            \u0022id\u0022: 603407684,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506223315\u0022,\n            \u0022status\u0022: \u0022ACTIVE\u0022\n        },\n        {\n            \u0022runSchedule\u0022: {\n                \u0022start\u0022: 1493228897000\n            },\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022time\u0022: 1493228897000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022time\u0022: 1493228897000\n                }\n            },\n            \u0022name\u0022: \u0022New Campaign Group\u0022,\n            \u0022test\u0022: false,\n            \u0022servingStatuses\u0022: [\n                \u0022BILLING_HOLD\u0022\n            ],\n            \u0022allowedCampaignTypes\u0022: [\n                \u0022SPONSORED_UPDATES\u0022,\n                \u0022TEXT_AD\u0022\n            ],\n            \u0022backfilled\u0022: false,\n            \u0022id\u0022: 504293601,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506223315\u0022,\n            \u0022status\u0022: \u0022ACTIVE\u0022\n        }\n    ],\n    \u0022metadata\u0022: {\n        \u0022nextPageToken\u0022: \u0022DgGerr1iVQreCJVjDOW_rcp63nueBDipsS4DJpvJo\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "The above call may return both test and non-test campaign groups.\nIf you would like to search only non-test campaign groups, you can filter out the test campaign groups by specifying search.test=false.If you would like to search only test campaign groups, specify search.test=true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "API Call to get the next set of results would use the nextPageToken passed in the response above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/506223315/adCampaignGroups?q=search\u0026search=(status:(values:List(ACTIVE,DRAFT)))\u0026sortOrder=DESCENDING\u0026pageToken=DgGerr1iVQreCJVjDOW_rcp63nueBDipsS4DJpvJo",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Campaign Groups",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/adAccounts/506223315/adCampaignGroups?q=search\u0026search=(status:(values:List(ACTIVE,DRAFT)))\u0026sortOrder=DESCENDING\u0026pageToken=DgGerr1iVQreCJVjDOW_rcp63nueBDipsS4DJpvJo\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Campaign Group",
+      "Anchor": "update-a-campaign-group",
+      "SectionPath": [
+        "Update a Campaign Group"
+      ],
+      "Text": "Campaign groups can be updated with a partial update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Campaign Group",
+      "Anchor": "update-a-campaign-group",
+      "SectionPath": [
+        "Update a Campaign Group"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Campaign Group",
+      "Anchor": "update-a-campaign-group",
+      "SectionPath": [
+        "Update a Campaign Group"
+      ],
+      "Text": "If the account type is ENTERPRISE, you can\u0027t update the default campaign group\u0027s fields through the API. To identify default campaign groups, check if backfilled is set to true. For non-default campaign groups, only name and status are mutable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "To update the budget:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u00223000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u00223000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "To update the status:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022DRAFT\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022DRAFT\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Campaign Group",
+      "Anchor": "delete-a-campaign-group",
+      "SectionPath": [
+        "Delete a Campaign Group"
+      ],
+      "Text": "A Campaign Group can be deleted. Use DELETE method to delete a DRAFT campaign group. To start the process of deleting non DRAFT campaign group, update the status to PENDING_DELETION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "To delete DRAFT campaign group:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "To delete non DRAFT campaign group:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}\n{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022PENDING_DELETION\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "To delete DRAFT campaign group:\ncurl -X DELETE \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\n\nTo delete non DRAFT campaign group:\ncurl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups/{adCampaignGroupId}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022PENDING_DELETION\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete a Campaign Group",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Operations",
+      "Anchor": "batch-operations",
+      "SectionPath": [
+        "Batch Operations"
+      ],
+      "Text": "Batch Create Campaign Groups\nBatch Get Campaign Groups\nBatch Partial Update Campaign Groups\nBatch Delete Campaign Groups",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Operations",
+      "Anchor": "batch-operations",
+      "SectionPath": [
+        "Batch Operations"
+      ],
+      "Text": "Batch operations may only be performed on entities that belong to the same Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Campaign Groups",
+      "Anchor": "batch-create-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups"
+      ],
+      "Text": "When you perform a batch create, the header X-RestLi-Method must be included in the request and set to BATCH_CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Campaign Groups",
+      "Anchor": "batch-create-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Campaign Groups",
+      "Anchor": "batch-create-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups"
+      ],
+      "Text": "This API is currently not supported for ENTERPRISE accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022name\u0022: \u0022CampaignGroup2\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002260000.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        },\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022name\u0022: \u0022CampaignGroup3\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002230000.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022name\u0022: \u0022CampaignGroup2\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002260000.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        },\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022name\u0022: \u0022CampaignGroup3\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002230000.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Campaign Groups",
+      "Anchor": "batch-get-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups"
+      ],
+      "Text": "Multiple campaign groups can be requested in a single call by chaining together ids parameters that each have a corresponding campaign group ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Campaign Groups",
+      "Anchor": "batch-get-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Campaign Groups",
+      "Anchor": "batch-get-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?ids=List(campaignGroupId1,campaignGroupId2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Campaign Groups",
+      "Anchor": "batch-get-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?ids=List(campaignGroupId1,campaignGroupId2)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups?ids=List(604716224,604716214)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups?ids=List(604716224,604716214)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Campaign Groups",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022604716214\u0022: {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022backfilled\u0022: false,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n                    \u0022time\u0022: 1494970241000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1494970241000\n                }\n            },\n            \u0022id\u0022: 604716214,\n            \u0022name\u0022: \u0022CampaignGroup2\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022test\u0022: false,\n            \u0022servingStatuses\u0022: [\n                \u0022BILLING_HOLD\u0022\n            ],\n            \u0022allowedCampaignTypes\u0022: [\n                \u0022SPONSORED_UPDATES\u0022,\n                \u0022TEXT_AD\u0022\n            ],\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002260000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        },\n        \u0022604716224\u0022: {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022backfilled\u0022: false,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n                    \u0022time\u0022: 1494970241000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1494970241000\n                }\n            },\n            \u0022id\u0022: 604716224,\n            \u0022name\u0022: \u0022CampaignGroup3\u0022,\n            \u0022test\u0022: false,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022servingStatuses\u0022: [\n                \u0022BILLING_HOLD\u0022\n            ],\n            \u0022allowedCampaignTypes\u0022: [\n                \u0022SPONSORED_UPDATES\u0022,\n                \u0022TEXT_AD\u0022\n            ],\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002230000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Campaign Groups",
+      "Anchor": "batch-update-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups"
+      ],
+      "Text": "Multiple campaign groups can be updated in a single call. Similar to a Batch GET, this can be done by chaining together ids parameters that each have a corresponding campaign group ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Campaign Groups",
+      "Anchor": "batch-update-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups"
+      ],
+      "Text": "When you perform a batch update, the header X-RestLi-Method must be included in the request and set to BATCH_PARTIAL_UPDATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Campaign Groups",
+      "Anchor": "batch-update-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Campaign Groups",
+      "Anchor": "batch-update-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups"
+      ],
+      "Text": "If the account type is ENTERPRISE, you can\u0027t update the default campaign group\u0027s fields through the API. To identify default campaign groups, check if backfilled is set to true. For non-default campaign groups, only name and status are mutable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups?ids=List(604716224,604716214)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022entities\u0022: {\n        \u0022604716214\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022totalBudget\u0022: {\n                        \u0022amount\u0022: \u00223000\u0022,\n                        \u0022currencyCode\u0022: \u0022USD\u0022\n                    }\n                }\n            }\n        },\n        \u0022604716224\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022ACTIVE\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Update Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups?ids=List(604716224,604716214)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022604716214\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022totalBudget\u0022: {\n                        \u0022amount\u0022: \u00223000\u0022,\n                        \u0022currencyCode\u0022: \u0022USD\u0022\n                    }\n                }\n            }\n        },\n        \u0022604716224\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022ACTIVE\u0022\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Campaign Groups",
+      "Anchor": "batch-delete-campaign-groups",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups"
+      ],
+      "Text": "Multiple campaign groups can be deleted. Use DELETE method to delete DRAFT campaign groups. To start the process of deleting non DRAFT campaign groups, update the status to PENDING_DELETION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "To delete DRAFT campaign groups:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?ids=List(CAMPAIGN_GROUP_ID1, CAMPAIGN_GROUP_ID2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "To delete non DRAFT campaign groups:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/512352200/adCampaignGroups?ids=List(604716224,604716214)\n{\n    \u0022entities\u0022: {\n        \u0022604716214\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022PENDING_DELETION\u0022\n                }\n            }\n        },\n        \u0022604716224\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022PENDING_DELETION\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "To delete DRAFT campaign groups:\ncurl -X DELETE \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?ids=List(CAMPAIGN_GROUP_ID1, CAMPAIGN_GROUP_ID2)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\n\nTo delete non DRAFT campaign groups:\ncurl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?ids=List(CAMPAIGN_GROUP_ID1, CAMPAIGN_GROUP_ID2)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022CAMPAIGN_GROUP_ID1\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022PENDING_DELETION\u0022\n                }\n            }\n        },\n        \u0022CAMPAIGN_GROUP_ID2\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022PENDING_DELETION\u0022\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Campaign Groups",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 code.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

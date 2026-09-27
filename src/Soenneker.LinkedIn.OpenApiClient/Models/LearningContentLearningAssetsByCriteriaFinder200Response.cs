@@ -7,44 +7,84 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class LearningContentLearningAssetsByCriteriaFinder200Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class LearningContentLearningAssetsByCriteriaFinder200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The elements property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseElementsItem>? Elements { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseElementsItem> Elements { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMetadata? Metadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMetadata Metadata { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 { get; set; }
 #endif
-        /// <summary>The paging property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponsePaging? Paging { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponsePaging Paging { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response"/> and sets the default values.
-        /// </summary>
-        public LearningContentLearningAssetsByCriteriaFinder200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9? LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2? LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +93,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200Response();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9();
+            result.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,12 +111,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9 != null || LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2 != null)
             {
-                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMetadata.CreateFromDiscriminatorValue); } },
-                { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponsePaging>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponsePaging.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9, LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -75,10 +124,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseElementsItem>("elements", Elements);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponsePaging>("paging", Paging);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1>(null, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf1, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf3, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf4, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf5, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf6, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf7, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf8, LearningContentLearningAssetsByCriteriaFinder200ResponseAnyOf9, LearningContentLearningAssetsByCriteriaFinder200ResponseBranch2);
         }
     }
 }

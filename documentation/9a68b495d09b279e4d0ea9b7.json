@@ -1,0 +1,887 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
+  "Title": "Update and Renew Jobs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/close-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Update and Renew Jobs",
+      "Anchor": "update-and-renew-jobs",
+      "SectionPath": [],
+      "Text": "Set the value for for jobPostingOperationType to UPDATE or RENEW to perform the respective job operation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update and Renew Jobs",
+      "Anchor": "update-and-renew-jobs",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update and Renew Jobs",
+      "Anchor": "update-and-renew-jobs",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [
+        "API Overview"
+      ],
+      "Text": "Use the /simpleJobPosting API to create, update, renew and close jobs on LinkedIn. This wiki describes how to update and renew jobs. To know more about this API, refer to API Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Overview",
+        "API Endpoint"
+      ],
+      "Text": "Use the following endpoint to submit a task to create, close, update, or renew one or more jobs asynchronously:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Overview",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Overview",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "We strongly recommend to use same access token for all concurrent and consecutive calls. An access token has a lifespan of 30 mins. Only on expiry of the existing token, new token should be generated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Update Jobs",
+      "Anchor": "sample-request-for-update-jobs",
+      "SectionPath": [
+        "Sample Request for Update Jobs"
+      ],
+      "Text": "In order to update a simple job posting, you can just re-post the job with any changed information and jobPostingOperationType field value set as UPDATE.\nTo know the API Endpoint, Authorization and Throttling refer to Post Jobs on LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Update Jobs",
+      "Anchor": "sample-request-for-update-jobs",
+      "SectionPath": [
+        "Sample Request for Update Jobs"
+      ],
+      "Text": "Refer to Check the Job Operation Task Status for finding the status of update call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Update Jobs",
+      "Anchor": "sample-request-for-update-jobs",
+      "SectionPath": [
+        "Sample Request for Update Jobs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Update Jobs",
+      "Anchor": "sample-request-for-update-jobs",
+      "SectionPath": [
+        "Sample Request for Update Jobs"
+      ],
+      "Text": "For basic jobs synced for Recruiter System Connect, if you need to update the availability from PUBLIC to PRIVATE_TO_ATS_INTEGRATION for a job, please close the existing job and re-open with the desired availability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Expiration Date Rules",
+      "Anchor": "expiration-date-rules",
+      "SectionPath": [
+        "Expiration Date Rules"
+      ],
+      "Text": "Use the UPDATE operation to extend a job\u2019s expiration date (where allowed).\nUPDATE cannot be used to refresh a job\u2019s listing date.\nAttempts to use UPDATE for listing refresh will result in errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Expiration Date Behavior",
+      "Anchor": "expiration-date-behavior",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "Expiration Date Behavior"
+      ],
+      "Text": "",
+      "Headers": [
+        "Job Product",
+        "Allowed Operation",
+        "Behavior"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Limited Listing (Basic)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can set expireAt. If not provided, defaults to 180 days. Max allowed is 365 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Slot-based Premium",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can set expireAt. If not provided, defaults to 180 days. Max allowed is 365 days.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create\nLinkedin-Version: YYYYMM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingSMM01\u0022,\n         \u0022title\u0022:\u0022Social Media Management\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022,\n         \u0022integrationContext\u0022:\u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingSMM01\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022jobPostingOperationType\u0022:\u0022UPDATE\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022posterEmail\u0022:\u0022recruiter_email@yourcompany.com\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingSMM01\u0022,\n         \u0022title\u0022:\u0022Social Media Management\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022,\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingSMM01\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022jobPostingOperationType\u0022:\u0022UPDATE\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022posterEmail\u0022:\u0022recruiter_email@yourcompany.com\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "Sample Request Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "Sample Request Body"
+      ],
+      "Text": "When updating jobs,",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Expiration Date Rules",
+        "Sample Request Body"
+      ],
+      "Text": "you may extend the expiration date (expireAt) only for Limited Listing (Basic) and Slot-based Premium jobs.\nmaximum allowed expiration is 365 days. If no expireAt is provided, the default is 180 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "Given below is a list possible error codes that can display while updating a job. One of the following responses is returned, that contains a JSON object with a status and a message about the error for Post on /simpleJobPostings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{mandatory key} :: field is required but not found and has no default value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required field is missing in the request body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to the schema documentation and make sure all the required fields are present in the request body",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{attribute_name} :: {value} cannot be coerced to Long\\n, (Why is \\n coming in error message)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When value of the attribute does not match the datatype it accepts,for example, title accepts String but we have provided numerical value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the value provided for attribute should match the datatype it accepts. Please refer to schema documentation for data types of the attributes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{attribute_name} :: {value} cannot be coerced to Long\\n,(Why is \\n coming in error message)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When value of the attribute does not match the datatype it accepts, for example, title accepts String but we have provided numerical value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enure the value provided for attribute should match the datatype it accepts. Please refer to schema documentation for data types of the attributes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /jobPostingOperationType :: \u0022UPDATED\u0022 is not an enum symbol\\n",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of CREATE, UPDATE or CLOSE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid company apply url for job with externalPartnerId \u003C\u003E, taskUrn \u003C\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL specified for the job posting is in an invalid format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the url specified is in a valid url",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access token is tampered",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header is a valid token but it has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST /simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application does not have enough permissions to use /simpleJobPostings API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to /simpleJobPosting is limited and granted only to apps that have a product-relevant use case. Please reach out to LinkedIn via the partner support form to request access",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller is not authorized to access the jobs for contract: urn:li:contract:{contract_id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application used for posting premium job does not belong to the Job posting contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that you are using the correct contract details provided in the Premium Job Posting onboarding email. 2. Ensure that you are using the correct application credentials",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot close job which is already closed or does not exist",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request payload is trying to close a job which either does not exist or is already closed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the jobPostingOperationType value is CREATE while creating new job postings",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /employmentStatus :: {value} is not an enum symbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP, TEMPORARY, VOLUNTEER or OTHER",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /experienceLevel :: {value} is not an enum symbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of ENTRY_LEVEL, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE, INTERNSHIP, ASSOCIATE or NOT_APPLICABLE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /state :: {value} is not an enum symbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of LISTED or CLOSED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{field} :: enum type is not backed by a String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field expects an enum value in the form of String but the value passed is not a string. For example state : 123",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When incorrect attribute type is given for example, Integer instead of String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please check if externalJobPostingId datatype is string in request body",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew Jobs",
+      "Anchor": "renew-jobs",
+      "SectionPath": [
+        "Renew Jobs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew Jobs",
+      "Anchor": "renew-jobs",
+      "SectionPath": [
+        "Renew Jobs"
+      ],
+      "Text": "To renew a job, re-post it with jobPostingOperationType field as RENEW and no other changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew Jobs",
+      "Anchor": "renew-jobs",
+      "SectionPath": [
+        "Renew Jobs"
+      ],
+      "Text": "As alternatives, you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew Jobs",
+      "Anchor": "renew-jobs",
+      "SectionPath": [
+        "Renew Jobs"
+      ],
+      "Text": "Close and repost - Close the existing job and repost it with the same externalJobPostingId (in some job products, metrics remain grouped).\nPost new job - Publish a new job with a different externalJobPostingId (treated as a completely new posting).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew Jobs",
+      "Anchor": "renew-jobs",
+      "SectionPath": [
+        "Renew Jobs"
+      ],
+      "Text": "To learn about the API endpoint, authorization and throttling refer to Post Jobs on LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Listing Date Rules",
+      "Anchor": "listing-date-rules",
+      "SectionPath": [
+        "Renew Jobs",
+        "Listing Date Rules"
+      ],
+      "Text": "Use the RENEW operation to refresh a job\u2019s listing date (where allowed).\nRENEW cannot be used to extend a job\u2019s expiration date.\nAttempts to use RENEW for expiration extension will result in errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Listing Date Behavior",
+      "Anchor": "listing-date-behavior",
+      "SectionPath": [
+        "Renew Jobs",
+        "Listing Date Behavior"
+      ],
+      "Text": "",
+      "Headers": [
+        "Job Product",
+        "Allowed Operation",
+        "Behavior"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Limited Listing (Basic)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting RENEW returns error: Only the listing date of promoted jobs can be refreshed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Slot-based Premium",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RENEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can refresh listing date only if current listing date \u2265 30 days.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

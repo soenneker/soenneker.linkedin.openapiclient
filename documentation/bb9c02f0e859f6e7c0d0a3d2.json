@@ -1,0 +1,802 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/migration-targeting-criteria",
+  "Title": "Migration Guide for targetingCriteria",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/migration-targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "LinkedIn uses member facets to define a segment of members who will be either included or excluded from an advertising campaign\u0027s targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "targetingCriteria provides a generic AND / OR construct to include and exclude different targeting facets when defining the audience for an Ad campaign. targetingCriteria is attached to a campaign and is replacing the now deprecated targeting object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "This migration guide consolidates the details required to migrate from targeting to targetingCriteria object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations of Targeting Object",
+      "Anchor": "limitations-of-targeting-object",
+      "SectionPath": [
+        "Introduction",
+        "Limitations of Targeting Object"
+      ],
+      "Text": "The current targeting object has certain limitations. Because of the way the structure was defined, a target audience could only be defined a combination of a forced \u201CAND\u201D across different targeting facets and a forced \u201COR\u201D within the different values of a facet. Here\u2019s an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Limitations of Targeting Object",
+      "Anchor": "limitations-of-targeting-object",
+      "SectionPath": [
+        "Introduction",
+        "Limitations of Targeting Object"
+      ],
+      "Text": "\u0022targeting\u0022: {\n    \u0022includedTargetingFacets\u0022: {\n        \u0022interfaceLocales\u0022: [\n            {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        ],\n        \u0022locations\u0022: [\n            \u0022urn:li:geo:103644278\u0022\n        ],\n        \u0022skills\u0022: [\n            \u0022urn:li:skill:17\u0022,\n            \u0022urn:li:skill:27\u0022\n        ],\n        \u0022titles\u0022: [\n            \u0022urn:li:title:1\u0022,\n            \u0022urn:li:title:2\u0022\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations of Targeting Object",
+      "Anchor": "limitations-of-targeting-object",
+      "SectionPath": [
+        "Introduction",
+        "Limitations of Targeting Object"
+      ],
+      "Text": "In this example, the only members who match the targeting criteria are those with skills (JAVA or C\u002B\u002B) \u00A0AND titles (Senior or Manager). Notice how the AND and OR operations are sequenced. With this structure, it is not possible to target a members who are either a (Manager with Skill Java) \u00A0OR (a Senior with Skill C\u002B\u002B). You can only apply OR operation within a facet type and You can only apply AND operation across facets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations of Targeting Object",
+      "Anchor": "limitations-of-targeting-object",
+      "SectionPath": [
+        "Introduction",
+        "Limitations of Targeting Object"
+      ],
+      "Text": "A few more examples highlighting the same:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations of Targeting Object",
+      "Anchor": "limitations-of-targeting-object",
+      "SectionPath": [
+        "Introduction",
+        "Limitations of Targeting Object"
+      ],
+      "Text": "You cannot target members who are either Managers OR have skill JAVA. \u00A0(because AND operation is forced across facets).\nYou cannot target members who have skill\u00A0JAVA and skill C\u002B\u002B (because OR operation is forced within the same facet)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of New targetingCriteria Object",
+      "Anchor": "benefits-of-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "Benefits of New targetingCriteria Object"
+      ],
+      "Text": "targetingCriteria provides a generic AND / OR construct to include and exclude different targeting facets when defining the audience for an Ad campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of New targetingCriteria Object",
+      "Anchor": "benefits-of-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "Benefits of New targetingCriteria Object"
+      ],
+      "Text": "targetingCriteria\u00A0mitigates the limitations described above. When all phases of the launch are complete,\u00A0targetingCriteria\u00A0will offer a powerful boolean construct that will allow for any combination of facets to be clubbed together in different ways.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of New targetingCriteria Object",
+      "Anchor": "benefits-of-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "Benefits of New targetingCriteria Object"
+      ],
+      "Text": "Also,\u00A0any new targeting facets or features are only going to be launched or supported using the new targetingCriteria\u00A0object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of New targetingCriteria Object",
+      "Anchor": "benefits-of-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "Benefits of New targetingCriteria Object"
+      ],
+      "Text": "The complete details about targetingCriteria structure can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "old targeting object",
+      "Anchor": "old-targeting-object",
+      "SectionPath": [
+        "Introduction",
+        "old targeting object"
+      ],
+      "Text": "\u0022targeting\u0022:{\n  \u0022includedTargetingFacets\u0022:{\n    \u0022skills\u0022:[\n      \u0022urn:li:skill:17\u0022\n    ],\n    \u0022locations\u0022:[\n      \u0022urn:li:geo:102221843\u0022\n    ],\n    \u0022interfaceLocales\u0022:[\n      {\n        \u0022country\u0022:\u0022US\u0022,\n        \u0022language\u0022:\u0022en\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "new targetingCriteria object",
+      "Anchor": "new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "new targetingCriteria object"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n  \u0022include\u0022:{\n    \u0022and\u0022:[\n      {\n        \u0022or\u0022:{\n          \u0022urn:li:adTargetingFacet:skills\u0022:[\n            \u0022urn:li:skill:17\u0022\n          ]\n        }\n      },\n      {\n        \u0022or\u0022:{\n          \u0022urn:li:adTargetingFacet:locations\u0022:[\n            \u0022urn:li:geo:102221843\u0022\n          ]\n        }\n      },\n      {\n        \u0022or\u0022:{\n          \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n            \u0022urn:li:locale:en_US\u0022\n          ]\n        }\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Timeline for Migration",
+      "Anchor": "timeline-for-migration",
+      "SectionPath": [
+        "Introduction",
+        "Timeline for Migration"
+      ],
+      "Text": "In order to facilitate a smooth migration from Targeting object to TargetingCriteria object, we are rolling out the changes in two phases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Timeline for Migration",
+      "Anchor": "timeline-for-migration",
+      "SectionPath": [
+        "Introduction",
+        "Timeline for Migration"
+      ],
+      "Text": "In Phase 1, we expect out API partners to implement changes such that there is direct, lossless translation of the Targeting object to equivalent TargetingCriteria object.\nIn Phase 2, we will enable all targeting logic that can be expressed using the new TargetingCriteria object. \u00A0All the added benefits of TargetingCriteria object can be actualized.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Timeline for Migration",
+      "Anchor": "timeline-for-migration",
+      "SectionPath": [
+        "Introduction",
+        "Timeline for Migration"
+      ],
+      "Text": "Our goal has been to provide enough time for our API partners to migrate to the new schema and we will be working closely with you during this migration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Impact",
+      "Anchor": "technical-impact",
+      "SectionPath": [
+        "Introduction",
+        "Technical Impact"
+      ],
+      "Text": "Below is a list of changes that will be required to successfully migrate from using the old targeting object to the new targetingCriteria object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to Campaign Targeting",
+      "Anchor": "changes-to-campaign-targeting",
+      "SectionPath": [
+        "Introduction",
+        "Changes to Campaign Targeting"
+      ],
+      "Text": "In the first phase of migration, when reading campaigns, TargetingCriteria will be published along Targeting. This will help in understanding the equivalence between the two objects. In this phase, when writing campaigns, you should provide TargetingCriteria. If you provide both Targeting and TargetingCriteria, the TargetingCriteria will be ignored.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to Campaign Targeting",
+      "Anchor": "changes-to-campaign-targeting",
+      "SectionPath": [
+        "Introduction",
+        "Changes to Campaign Targeting"
+      ],
+      "Text": "The documents for campaign creation and targeting have been updated. Here is a comparison between the two equivalent campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "campaign with old targeting",
+      "Anchor": "campaign-with-old-targeting",
+      "SectionPath": [
+        "Introduction",
+        "campaign with old targeting"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:516821035\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u00221800\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022Campaign Sponsored update\u0022,\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022targeting\u0022: {\n        \u0022includedTargetingFacets\u0022: {\n            \u0022interfaceLocales\u0022: [\n                {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            ],\n            \u0022locations\u0022: [\n                \u0022urn:li:geo:103644278\u0022\n            ],\n            \u0022skills\u0022: [\n                \u0022urn:li:skill:17\u0022\n            ]\n        }\n    },\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n    \u0022unitCost\u0022: {\n        \u0022amount\u0022: \u002215\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "campaign with new targetingCriteria object",
+      "Anchor": "campaign-with-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "campaign with new targetingCriteria object"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:516521035\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u00221800\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022Campaign Sponsored update\u0022,\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:skills\u0022: [\n                            \u0022urn:li:skill:17\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:geo:103644278\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                            \u0022urn:li:locale:en_US\u0022\n                        ]\n                    }\n                }\n            ]\n        }\n    },\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n    \u0022unitCost\u0022: {\n        \u0022amount\u0022: \u002215\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "campaign with new targetingCriteria object",
+      "Anchor": "campaign-with-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "campaign with new targetingCriteria object"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "campaign with new targetingCriteria object",
+      "Anchor": "campaign-with-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "campaign with new targetingCriteria object"
+      ],
+      "Text": "Please Note: Only one of TargetingCriteria or Targeting can be used with Campaigns. Furthermore, if TargetingCriteria is ever used to create or update a Campaign, it must be used going forward with that Campaign, since TargetingCriteria is more expressive than Targeting. Mapping/validation logic will be updated to ensure this rule is enforced.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "campaign with new targetingCriteria object",
+      "Anchor": "campaign-with-new-targetingcriteria-object",
+      "SectionPath": [
+        "Introduction",
+        "campaign with new targetingCriteria object"
+      ],
+      "Text": "Please refer to the updated documentation for Create and Manage Campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "A new FINDER has been introduced and the previous one is being deprecated. The q parameter has changed from targetingCriteria to targetingCriteriaV2 . A new query parameter based on targetingCriteria object is used in the URL instead of the old target.includedTargetingFacets object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "targetingCriteriaV2 uses \u0027X-Restli-Protocol-Version: 2.0.0\u0027. Here is a quick look at the changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "Old Finder\u00A0 (to be deprecated)\nNew Finder (without encoding, for readability)\nNew Finder (encoded, actual API call)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "OLD (GET) https://api.linkedin.com/v2/audienceCountsV2?q=targetingCriteria\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:102221843\u0026target.includedTargetingFacets.skills[0]=urn:li:skill:5\u0026target.includedTargetingFacets.skills[1]=urn:li:skill:17",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "New (GET) https://api.linkedin.com/v2/audienceCountsV2?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:locations}:List({encoded urn:li:geo:102221843}))),(or:({encoded urn:li:adTargetingFacet:skills}:List({encoded urn:li:skill:17}))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "New (GET) (encoding) https://api.linkedin.com/v2/audienceCountsV2?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A102221843))),(or:(urn%3Ali%3AadTargetingFacet%3Askills:List(urn%3Ali%3Askill%3A5,urn%3Ali%3Askill%3A17))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to AudienceCount API",
+      "Anchor": "changes-to-audiencecount-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to AudienceCount API"
+      ],
+      "Text": "Please refer to the updated documentation for AudienceCountsV2 API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adBudgetPricing API",
+      "Anchor": "changes-to-adbudgetpricing-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API"
+      ],
+      "Text": "A new FINDER has been introduced and the previous one is being deprecated.The q parameter has changed from criteria to criteriaV2 . A\u00A0new query parameter based on targetingCriteria object is used in the URL instead of the old target.includedTargetingFacets object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adBudgetPricing API",
+      "Anchor": "changes-to-adbudgetpricing-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API"
+      ],
+      "Text": "criteriaV2 uses Rest.li 2.0, so the encoding has also changed. encoded API request examples must pass the header X-Restli-Protocol-Version: 2.0.0 and the URN must be URL encoded, for example, a colon should be translated to %3A, so",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adBudgetPricing API",
+      "Anchor": "changes-to-adbudgetpricing-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API"
+      ],
+      "Text": "urn:li:organization:12345\n is URL encoded to\n\nurn%3Ali%3Aorganization%3A12345",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adBudgetPricing API",
+      "Anchor": "changes-to-adbudgetpricing-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API"
+      ],
+      "Text": "Here is a quick look at the last change:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Old Finder (deprecated)",
+      "Anchor": "old-finder-deprecated",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API",
+        "Old Finder (deprecated)"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adBudgetPricing?account=urn:li:sponsoredAccount:12345\u0026bidType=CPM\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteria\u0026target.includedTargetingFacets.staffCountRanges[0]=SIZE_501_TO_1000\u0026dailyBudget.amount=300\u0026dailyBudget.currencyCode=USD",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Finder (un-encoded)",
+      "Anchor": "new-finder-un-encoded",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API",
+        "New Finder (un-encoded)"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adBudgetPricing?account=urn:li:sponsoredAccount:12345\u0026bidType=CPM\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:staffCountRanges}:List({encoded urn:li:staffCountRange:(501,1000)}))))))\u0026dailyBudget=(amount:300,currencyCode:USD)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Finder (encoded, actual API call)",
+      "Anchor": "new-finder-encoded-actual-api-call",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API",
+        "New Finder (encoded, actual API call)"
+      ],
+      "Text": "GET (URL encoded) https://api.linkedin.com/v2/adBudgetPricing?account=urn%3Ali%3Aorganization%3A12345\u0026bidType=CPM\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteriaV2\u0026\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Finder (encoded, actual API call)",
+      "Anchor": "new-finder-encoded-actual-api-call",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adBudgetPricing API",
+        "New Finder (encoded, actual API call)"
+      ],
+      "Text": "Please refer to the updated documentation for adBudgetPricing API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "A new FINDER has been introduced and the previous one is being deprecated.The q parameter has changed from criteria to criteriaV2 . A new query parameter based on targetingCriteria object is used in the URL instead of the old target.includedTargetingFacets object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "Please also note: account is now a required input parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "criteriaV2 uses Rest.li 2.0, so the encoding has also changed. Here is a quick look at the changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "Old Finder\u00A0 \u00A0(to be deprecated)\nNew Finder (without encoding, for readability)\nNew Finder (encoded, actual API call)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "OLD (GET) https://api.linkedin.com/v2/adSupplyForecasts?q=criteria\u0026timeRange.start=1526348264000\u0026timeRange.end=1529026664000\u0026campaignType=SPONSORED_UPDATES\u0026competingBid.bidType=CPM\u0026competingBid.bidPrice.currencyCode=USD\u0026competingBid.bidPrice.amount=10\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.staffCountRanges[0]=SIZE_10001_OR_MORE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "New (GET) https://api.linkedin.com/v2/adSupplyForecasts?q=criteriaV2\u0026account=urn:li:sponsoredAccount:518121035\u0026timeRange=(start:1526348264000,end:1529026664000)\u0026campaignType=SPONSORED_UPDATES\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:locations}:List({encoded urn:li:geo:102221843}))))),exclude:(or:({encoded urn:li:adTargetingFacet:staffCountRanges}:List({encoded urn:li:staffCountRange:(10001,2147483647)}))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "New (GET) (Enc) https://api.linkedin.com/v2/adSupplyForecasts?q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A518121035\u0026timeRange=(start:1526348264000,end:1529026664000)\u0026campaignType=SPONSORED_UPDATES\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A102221843))))),exclude:(or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%2810001%2C2147483647%29))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adSupplyForecasts API",
+      "Anchor": "changes-to-adsupplyforecasts-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adSupplyForecasts API"
+      ],
+      "Text": "Please refer to the updated documentation for adSupplyForecasts API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingFacets API",
+      "Anchor": "changes-to-adtargetingfacets-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingFacets API"
+      ],
+      "Text": "The only change is this API is that a new field \u201C$URN\u201D is returned in the GET_ALL method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingFacets API",
+      "Anchor": "changes-to-adtargetingfacets-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingFacets API"
+      ],
+      "Text": "The new targetingCriteria object requires all targeting facets to be fully qualified names. This new field \u201C$URN\u201D gives that name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingFacets API",
+      "Anchor": "changes-to-adtargetingfacets-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingFacets API"
+      ],
+      "Text": "Facet discovery earlier returned just facetNames like genders, industries, seniorities. Now, the corresponding URNs are returned in \u2018$URN\u2019 field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingFacets API",
+      "Anchor": "changes-to-adtargetingfacets-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingFacets API"
+      ],
+      "Text": "urn:li:adTargetingFacet:genders\nurn:li:adTargetingFacet:industries\nurn:li:adTargetingFacet:seniorities (and so on.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingFacets API",
+      "Anchor": "changes-to-adtargetingfacets-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingFacets API"
+      ],
+      "Text": "It is important to store the URN names as those are the ones to be used in all the new APIs when using the targetingCriteria object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingFacets API",
+      "Anchor": "changes-to-adtargetingfacets-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingFacets API"
+      ],
+      "Text": "Please refer to the updated documentation for adTargetingFacets API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingEntities API",
+      "Anchor": "changes-to-adtargetingentities-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingEntities API"
+      ],
+      "Text": "A new \u2018queryVersion\u2019 parameter has been added to existing FINDERs (adTargetingFacet,similarEntities, typeahead)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingEntities API",
+      "Anchor": "changes-to-adtargetingentities-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingEntities API"
+      ],
+      "Text": "This ENUM denotes the version of the targeting expression that the desired entity should correspond to. The expression version determines whether the \u0027value\u0027 or \u0027urn\u0027 field will be populated as these both represent the value of the segment but in different formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingEntities API",
+      "Anchor": "changes-to-adtargetingentities-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingEntities API"
+      ],
+      "Text": "QUERY_USES_MIXED corresponds to the Targeting expression which takes varying types (like enum) in the \u0027value\u0027 field.\nQUERY_USES_URNS corresponds to the TargetingCriteria expression which takes a string urn in the \u0027urn\u0027 field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingEntities API",
+      "Anchor": "changes-to-adtargetingentities-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingEntities API"
+      ],
+      "Text": "Additionally, A new FINDER \u0027q=urns\u0027 has been introduced This FINDER can be used to get the metadata and value information for a collection of urns in the given locale. The metadata and value information is encapsulated in a collection of AdTargetingEntity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to adTargetingEntities API",
+      "Anchor": "changes-to-adtargetingentities-api",
+      "SectionPath": [
+        "Introduction",
+        "Changes to adTargetingEntities API"
+      ],
+      "Text": "Please refer to the updated documentation for adTargetingEntities API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When can I begin migration (Phase 1)?",
+      "Anchor": "when-can-i-begin-migration-phase-1",
+      "SectionPath": [
+        "Introduction",
+        "FAQ",
+        "When can I begin migration (Phase 1)?"
+      ],
+      "Text": "You can start using the new finders and new targetingCriteria object in campaigns as early as 07/01/2018.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "By what date should migration (Phase 1) be completed?",
+      "Anchor": "by-what-date-should-migration-phase-1-be-completed",
+      "SectionPath": [
+        "Introduction",
+        "FAQ",
+        "By what date should migration (Phase 1) be completed?"
+      ],
+      "Text": "We expect all our API partners to complete Phase 1 migration by 03/31/2019.\u00A0 This will make it easier to incorporate Phase 2 changes and launch full targeting expressiveness (Phase 2) alongside the UI feature launch in June 2019.\u00A0We highly recommend migrating as per our proposed phases as we will be able to support your needs better.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Will the old APIs be deprecated?\u00A0 What if I don\u0027t migrate?",
+      "Anchor": "will-the-old-apis-be-deprecated-what-if-i-dont-migrate",
+      "SectionPath": [
+        "Introduction",
+        "FAQ",
+        "Will the old APIs be deprecated?\u00A0 What if I don\u0027t migrate?"
+      ],
+      "Text": "The old APIs will be deprecated on 06/15/2019.\u00A0 You have enough time to migrate and you can choose to do so in phases as we have recommended or all at once before the depreciation date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When will LinkedIn enable advanced Targeting Expressiveness? (Phase 2)",
+      "Anchor": "when-will-linkedin-enable-advanced-targeting-expressiveness-phase-2",
+      "SectionPath": [
+        "Introduction",
+        "FAQ",
+        "When will LinkedIn enable advanced Targeting Expressiveness? (Phase 2)"
+      ],
+      "Text": "Full targeting expressiveness feature is set to launch in June 2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "By what date should migration (Phase 2) be completed?",
+      "Anchor": "by-what-date-should-migration-phase-2-be-completed",
+      "SectionPath": [
+        "Introduction",
+        "FAQ",
+        "By what date should migration (Phase 2) be completed?"
+      ],
+      "Text": "Ideally, our API partners could be launching this feature alongside UI feature launch in June 2019.\u00A0 The hard date for deprecation of old APIs is 06/15/2019.\u00A0 All migration should be completed by that time.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

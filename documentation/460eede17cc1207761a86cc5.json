@@ -1,0 +1,842 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+  "Title": "adTargetingEntities",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "adTargetingEntities",
+      "Anchor": "adtargetingentities",
+      "SectionPath": [],
+      "Text": "The LinkedIn ads platform allows advertisers to target different types of audiences on the professional network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "adTargetingEntities",
+      "Anchor": "adtargetingentities",
+      "SectionPath": [],
+      "Text": "Use the Ad Targeting Entities API to discover valid values of a targeting type available.\u00A0Use in conjunction with the Ad Targeting Facets API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "adTargetingEntities",
+      "Anchor": "adtargetingentities",
+      "SectionPath": [],
+      "Text": "This page should be used for reference purposes only. More comprehensive documentation with sample requests is available in Ad Targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "FINDER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "The Ad Targeting Entities API supports the following types of Finder methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "adTargetingFacet\nsimilarEntities\ntypeahead\nurns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value (legacy)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union [Urn, StaffCountRange,\u00A0 AgeRange,\u00A0 Gender, Locale,\u00A0 ClosedIntRange]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URNs or ENUMs that represent a set of member attribute entities being targeted for this facet.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingEntity urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN representation of this entity, for use with TargetingCriteria . Optional as the old targeting expression, Targeting\u0027 (without the new expanded boolean combinations), will use \u0027value\u0027 instead of this field.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN representation of the facet to which the entity belongs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the entity. This will be formatted according to locale.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "List of supported\u00A0adTargetingFacets\u00A0in\u00A0targetingCriteria\u00A0object can be found here .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "adTargetingFacet",
+      "Anchor": "adtargetingfacet",
+      "SectionPath": [
+        "FINDER",
+        "adTargetingFacet"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adTargetingEntities?q=adTargetingFacet",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Field Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingFacetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieves available options for the facet requested (e.g. urn:li:adTargetingFacet:seniorities)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdTargetingEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Return results will only contain data that matches type requested (e.g. SENIORITY).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QUERY_USES_MIXED QUERY_USES_URNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The default value is QUERY_USES_MIXED. It returns output in the field \u0022value\u0022. (legacy). The newer version is QUERY_USES_URNS. It returns output in \u0022urn\u0022, \u0022facetName\u0022 and \u0022name\u0022 fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:1\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:2\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:3\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:4\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:5\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:6\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:7\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:8\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:9\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:seniority:10\u0022\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "If queryVersion\u00A0is set to\u00A0QUERY_USES_URNS, the response is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:1\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Unpaid\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:10\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Owner\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:2\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Training\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:3\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Entry\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:4\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Senior\u0022\n        },\n    ..\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "similarEntities",
+      "Anchor": "similarentities",
+      "SectionPath": [
+        "FINDER",
+        "similarEntities"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adTargetingEntities?q=similarEntities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Field Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingFacetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieves available options for the facet requested (e.g. urn:li:adTargetingFacet:seniorities)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdTargetingEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Return results will only contain data that matches type requested (e.g. COMPANY).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QUERY_USES_MIXED QUERY_USES_URNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The default value is QUERY_USES_MIXED. It returns output in the field \u0022value\u0022. (legacy). The newer version is QUERY_USES_URNS. It returns output in \u0022urn\u0022, \u0022facetName\u0022 and \u0022name\u0022 fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:organization:125999\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:organization:163361\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:organization:10715\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:organization:1004\u0022\n            }\n        }\n    ..\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "If queryVersion\u00A0is set to\u00A0QUERY_USES_URNS, the response is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:10675\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022Plateau Systems\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:35450\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022TIBCO StreamBase\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:66650\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022ARCHIBUS, Inc.\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:167857\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022Worklight\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:165426\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022Pegasystems\u0022\n        }\n    ..\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "typeahead",
+      "Anchor": "typeahead",
+      "SectionPath": [
+        "FINDER",
+        "typeahead"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adTargetingEntities?q=typeahead",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Field Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingFacetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieves available options for the facet requested (e.g. urn:li:adTargetingFacet:seniorities)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdTargetingEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Return results will only contain data that matches type requested (e.g. FIELD_OF_STUDY).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QUERY_USES_MIXED QUERY_USES_URNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The default value is QUERY_USES_MIXED. It returns output in the field \u0022value\u0022. (legacy). The newer version is QUERY_USES_URNS. It returns output in \u0022urn\u0022, \u0022facetName\u0022 and \u0022name\u0022 fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:fieldOfStudy:100990\u0022\n            }\n        },\n        {\n            \u0022value\u0022: {\n                \u0022string\u0022: \u0022urn:li:fieldOfStudy:101438\u0022\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "If queryVersion\u00A0is set to\u00A0QUERY_USES_URNS, the response is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100990\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Economics\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:101438\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Business/Managerial Economics\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100994\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022International Economics\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100993\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Development Economics and International Development\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100991\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Applied Economics\u0022\n        },\n    ..\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "urns",
+      "Anchor": "urns",
+      "SectionPath": [
+        "FINDER",
+        "urns"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adTargetingEntities?q=urns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-3",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Field Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of URNs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of URNs for which information is required. urn:li:fieldOfStudy:100990, urn:li:organization:1035, urn:li:seniority:9",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fetchType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SINGLE_NODE (default) LAZY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The fetch type determines how much of the descendant tree (from the urns passed in) is returned. SINGLE_NODE will only resolve and return the entities corresponding to the urn values passed in and no descendants. LAZY will resolve and return all entities except those with a large taxonomy size.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QUERY_USES_MIXED QUERY_USES_URNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QUERY_USES_MIXED returns output in the field \u0022value\u0022. (legacy). The default version is QUERY_USES_URNS. It returns output in \u0022urn\u0022, \u0022facetName\u0022 and \u0022name\u0022 fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Economics\u0022,\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100990\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employersPast\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employersAll\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:firstDegreeConnectionCompanies\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:followedCompanies\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:contextualCompanies\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Partner\u0022,\n            \u0022urn\u0022: \u0022urn:li:seniority:9\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

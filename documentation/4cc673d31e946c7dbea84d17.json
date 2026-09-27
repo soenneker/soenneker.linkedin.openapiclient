@@ -1,0 +1,54 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+  "Title": "Conversions FAQ",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Conversions FAQ",
+      "Anchor": "conversions-faq",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions FAQ",
+      "Anchor": "conversions-faq",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions FAQ",
+      "Anchor": "conversions-faq",
+      "SectionPath": [],
+      "Text": "When should I use the Conversions API?\n\nTo strengthen your existing conversion tracking, you can use the Conversions API and the Insight Tag together to measure and optimize both online and offline events across your customer journey.\nYou need a secure way to connect data to LinkedIn without relying on cookie-based tracking.\n\n\nWhat types of events can I send through the Conversions API?\nSend both online and offline conversion events through the Conversions API. A complete list of supported conversions is available here.\n\nHow often should I share data and why is it important to send data in real time?\nConversions should be sent in real time as soon as they occur, or ideally within a day. Sending data in real time ensures that the data can be attributed and utilized by the campaign while it\u0027s fresh and relevant. For customers using a LinkedIn Marketing Partner, this near real-time sharing should happen automatically.\n\nAre there any minimums to the number of attributed conversions we\u0027ll show in reporting?.\nCurrently, there are no minimums.\n\nHow long does it take to process events sent through the Conversions API and see reporting for those events?.\nIt takes up to 24 hours to complete ingestion and an additional 48 hours for reporting; hence, it can take up to 72 hours for complete data to appear in reports.\n\nHow far back can conversions be attributed?.\nConversions can be attributed for up to a maximum of 180 days (90 conversion timestamp \u002B 90 attribution lookback) for most conversion types. For SUBMIT_APPLICATION, PURCHASE, ADD_TO_CART, QUALIFIED_LEAD, LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD, conversions can additionally be attributed using a 180-day or 365-day attribution window (postClickAttributionWindowSize/viewThroughAttributionWindowSize) on the conversion rule. MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are available starting with the 202608 version onwards.\n\nWhat is deduplication?.\nDeduplication is the process by which the system identifies the same event sent from both the Insight Tag and Conversions API and discards one to ensure accurate counting. It enables you to send the same events through both sources, allowing the Conversions API to work in tandem with your Insight Tag to provide maximum visibility into the conversions your campaigns are driving.\n\nHow do I implement deduplication?.\nReview the detailed guide here.\n\nIs there a max data load I can send via the Conversions API?.\nYes, you can send a maximum of 600 requests per minute and 500,000 requests per day through your member access token. For batch requests, you can send up to 5,000 conversion events in each batch request payload.\n\nWhat are identity match rates?.\nOnce the conversion data is sent to LinkedIn, we match the customer parameters sent in the request payload with LinkedIn member data. The match rate indicates how effectively we can match the identity of conversion events with LinkedIn members. This is important because we can only attribute conversions to members we successfully match.\n\nWhat are attribution match rates?.\nOnce the conversion data is sent to LinkedIn and identity has been matched with members, we search for members who were served your ad from the campaigns associated with the conversion rule, and either clicked or viewed the ad within the selected attribution window of the conversion rule. The match rate indicates how effectively we can attribute conversion events with LinkedIn ads.\n\nWhat are customer parameters? Why do they matter?.\nSending all available customer parameters (also known as user IDs) can help increase match rates. In general, the more IDs you send with each event, the more likely we are to match it to a member. This is important because only matched events can be used for attribution and optimization. Examples of recommended customer parameters include email (SHA256_EMAIL), LinkedIn\u0027s Click ID (LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID), firstName/lastName (or, starting with the 202609 version, hashedFirstName/hashedLastName), and IP Address (PLAINTEXT_IP_ADDRESS or SHA256_IP_ADDRESS).\n\nWhat customer parameters (also known as user IDs) does the Conversions API support?.\nThe Conversions API supports the following: SHA256_EMAIL, LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID, PLAINTEXT_IP_ADDRESS, SHA256_IP_ADDRESS, GOOGLE_AID, ACXIOM_ID, firstName, lastName, companyName, title, countryCode, lead, and externalIds. Starting with the 202609 version, hashedFirstName and hashedLastName are also supported. Please refer to the API documentation for the most up-to-date list.\n\nWhich parameters (user IDs) are required?.\nAn input request must provide at least one of the following:\n\nA valid user ID with idType SHA256_EMAIL.\nA valid user ID with idType LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID.\nA valid user ID with idType ACXIOM_ID.\nA valid user ID with idType PLAINTEXT_IP_ADDRESS.\nA valid user ID with idType SHA256_IP_ADDRESS.\nA valid user ID with idType GOOGLE_AID.\nA valid user info combination that requires firstName and lastName. Starting with the 202609 version, hashedFirstName and hashedLastName are also accepted, including mixed pairs (for example, firstName with hashedLastName).\nA valid list of externalIds.\nA valid lead field value in the format urn:li:leadGenFormResponse:{id}.\nWe recommend sending both SHA256 EMAIL and LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID for the best matching.\n\n\nHow do I hash identifiers?.\nThe Conversions API supports hashed emails and hashed IP addresses using SHA-256 without salting. Starting with the 202609 version, it also supports hashed first names and last names (hashedFirstName/hashedLastName) using SHA-256 without salting; before hashing a name, normalize it to lowercase with no spaces or punctuation, and encode special characters as UTF-8.\n\nIs it recommended to convert emails to lower case before hashing them?.\nYes, it\u0027s recommended to convert emails to lowercase before hashing them for better match rates.\n\nWhat is LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID?.\nLINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID, also known as li_fat_id, is LinkedIn\u0027s first party cookie click ID. When enhanced conversion tracking is enabled, LinkedIn automatically adds a click ID to the end of landing page URLs, which allows the tag to use first-party cookie tracking. Enabling first party cookies via enhanced conversion tracking allows you to send this click ID as a parameter for improved conversion tracking accuracy. This helps increase match rates significantly. The mapping of a li_fat_id to a LinkedIn member profile is stored for 365 days, so it can still be used as a user match identifier for Conversions API when streaming a conversion event within that window, even after the browser cookie itself has expired.\n\nHow do I enable first party cookies so I can use LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID?.\nCheck out Enabling Click IDs developer docs. How you choose to set this up will influence which type of conversions (click-through, view-through, or both) you\u0027re able to track.\n\nWhat are the implementation options for the Conversions API?.\n\nLeverage a partner integration:\nChoose from a variety of LinkedIn Marketing Partners to quickly and seamlessly set up with the Conversions API, such as Google Tag Manager, Zapier, Dreamdata, Supermetrics, Tealium, and Adobe. Refer to the relevant partner\u0027s onboarding guide to get started.\nBuild a direct integration:\nWork with your developers to build a direct integration with Conversions API.\n\n\nHow do the two implementation options compare?.\n\nLeverage a partner integration\n\nThe partner helps facilitate the API connection.\nOne-time setup with limited technical effort required from your team.\n\n\nMay have associated fees that vary by partner.\n\nTypically fast to implement.\n\n\nBuild a direct integration\n\nManage your own API connection.\nOffers the most customization and control over data sharing.\nRequires developer resources and ongoing maintenance.\nImplementation can take 1-2 weeks on average.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+  "Title": "LinkedIn Learning and Bridge Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Bridge and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Deep Integration Functionality",
+      "Anchor": "bridge-deep-integration-functionality",
+      "SectionPath": [
+        "Bridge Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML SSO Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Deep Integration Functionality",
+      "Anchor": "bridge-deep-integration-functionality",
+      "SectionPath": [
+        "Bridge Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Deep Integration Functionality",
+      "Anchor": "bridge-deep-integration-functionality",
+      "SectionPath": [
+        "Bridge Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Content Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Deep Integration Functionality",
+      "Anchor": "bridge-deep-integration-functionality",
+      "SectionPath": [
+        "Bridge Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Deep Integration Functionality",
+      "Anchor": "bridge-deep-integration-functionality",
+      "SectionPath": [
+        "Bridge Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Bridge integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Deep Integration Functionality",
+      "Anchor": "bridge-deep-integration-functionality",
+      "SectionPath": [
+        "Bridge Deep Integration Functionality"
+      ],
+      "Text": "An active Bridge LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Bridge LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Bridge\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "We recommend SAML SSO for all enterprise learning platform integrations. You can\nconfigure SSO authentication in your LinkedIn Learning Admin settings. Most\norganizations have a centrally-managed identity management solution like Azure\nAD, Okta, or ADFS which can be configured to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and Bridge\nto establish a secure SAML single sign-on (SSO) connection that ensures seamless\nand secure access to content. SSO authentication reduces friction for users and\nadministrators by eliminating the need for manual user registration. SSO ensures that learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "To ensure seamless and secure access to content, you need to enable SAML SSO.\nYou have two configuration options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "Connect to your organization\u2019s identity management solution \u2013 If your organization has a centrally managed identity management solution like Azure AD, Okta or ADFS, it can be configured to authenticate users into Bridge and LinkedIn Learning. Your IdP must be configured to send a Bridge unique user identifier to LinkedIn Learning. If user IDs aren\u2019t the same between the two systems, learner activity tracking (xAPI) will not work. To pursue this option, jump to the Configuring SAML SSO via 3rd Party Provider section.\n\nConnect directly to Bridge SAML IdP \u2013 LinkedIn Learning and Bridge can be configured to establish a SAML single sign-on (SSO) connection. To pursue this option, jump to the Configuring SAML SSO via Bridge section of the Appendix. Once you\u2019ve populated API keys and metadata fields in Bridge, scroll to the bottom of the page and click Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. Courses are added\nat a rate of 20-30 courses per week at no extra cost. Traditionally, the\nadministrator of Bridge manually uploads new content on a regular interval.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "However, the Bridge deep integration with LinkedIn Learning uses LinkedIn\nLearning APIs to dynamically refresh the content library daily. This ensures new\nLinkedIn Learning content is available within 24 hours of its release. All\ncontent titles and descriptions are aggregated and indexed to accommodate\nkeyword searches and support efficient discoverability. Bridge supports\nautomatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "In order to authenticate with the Linkedin Learning Content API, you must provision OAuth 2.0 keys in your Linkedin Learning admin settings. To provision the keys, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Access content and reports via API and expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter \u0022Bridge\u0022 in the Application Name field.\n\nIn the Application description field, enter a short description of the integration use case. For example, \u201CBridge content catalog sync\u201D.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nCopy the Client ID and Client Secret into the LinkedIn Learning App configuration in Bridge\u2019s app configuration UI.\n\n\nTo navigate to Bridge\u2019s configuration UI, replace [accountName], then open the browser to: https://[accountName\u003E].bridgeapp.com/admin/config/apps",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "If this is your first time configuring the integration, your xAPI settings should be blank. If you attempt to enable xAPI before saving the form, you will encounter an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "In order to communicate learner activity back to Bridge, you must enable xAPI in your Linkedin Learning admin settings. To complete this task, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "In Bridge, go to the LinkedIn Learning App configuration screen.\n\nClick Generate to populate the xAPI fields. Use the generated values for the following steps:\n\n\nGo to Me \u003E Integrate \u003E Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\nIn the Add xAPI integration screen, enter the integration name in the Integration name field. For example, \u0022Bridge reporting\u0022.\n\nIn the User Type drop down, select ID.\n\nCopy and paste the following items provided by Bridge into LinkedIn Learning:\n\nClient Secret\n\nClient ID\n\nOAuth Server URL\n\nTenant Server URL\n\n\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "You have enabled the Bridge xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the Integration",
+      "Anchor": "validate-the-integration",
+      "SectionPath": [
+        "Configuration",
+        "Validate the Integration"
+      ],
+      "Text": "Now that the integration is configured, you can verify the setup by following the steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the Integration",
+      "Anchor": "validate-the-integration",
+      "SectionPath": [
+        "Configuration",
+        "Validate the Integration"
+      ],
+      "Text": "Wait for courses load into Bridge.\n\nEnroll in a course from the Learning Library.\n\nLaunch the course.\n\nConfirm you are sent to LinkedIn Learning and are properly authenticated.\n\n\n\n Note\nIf your LinkedIn Learning account has LinkedIn Profile Binding enabled, you may be prompted to log in to LinkedIn after successful SSO authentication. This login is used to associate your LinkedIn Learning credentials with your personal LinkedIn account in order to drive content recommendations. If you have any questions about this prompt, contact your dedicated LinkedIn Learning Customer Success Manager to learn more.\n\n\nComplete the course in LinkedIn Learning.\n\nVerify course is marked complete in Bridge.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via 3rd Party Provider",
+      "Anchor": "configuring-saml-sso-via-3rd-party-provider",
+      "SectionPath": [
+        "Appendix",
+        "Configuring SAML SSO via 3rd Party Provider"
+      ],
+      "Text": "After working with your IT team to configure a 3rd-party SSO provider, you will need to provide your service provider metadata in the XML metadata field to satisfy form validation requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via 3rd Party Provider",
+      "Anchor": "configuring-saml-sso-via-3rd-party-provider",
+      "SectionPath": [
+        "Appendix",
+        "Configuring SAML SSO via 3rd Party Provider"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Authenticate \u003E Configure single sign-on.\n\n\nClick Add new SSO and select \u0022SAML\u0022.\n\n\nIn the Authenticate users with SAML SSO screen, select the Identity provider settings tab, then select Download file to download SAML metadata from LinkedIn Learning. Click Next.\n\n\nTo open in plain text, navigate to the downloaded file, right click the file and open it with TextEdit (on a Mac) or Notepad (on a PC). Do not open in Microsoft Word.\n\nOnce the file is open, copy the contents to your clipboard.\n\nPaste contents of the metadata file into the XML Metadata field in Bridge (on the LinkedIn Learning app configuration screen).\n\nPaste the contents of the metadata file into the XML Metadata field in Bridge on the LinkedIn Learning app configuration screen: https://[accountName].bridgeapp.com/admin/config/apps",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via 3rd Party Provider",
+      "Anchor": "configuring-saml-sso-via-3rd-party-provider",
+      "SectionPath": [
+        "Appendix",
+        "Configuring SAML SSO via 3rd Party Provider"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via 3rd Party Provider",
+      "Anchor": "configuring-saml-sso-via-3rd-party-provider",
+      "SectionPath": [
+        "Appendix",
+        "Configuring SAML SSO via 3rd Party Provider"
+      ],
+      "Text": "After you configure SSO with a third-party IdP, add the XML metadata in Bridge.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via Bridge",
+      "Anchor": "configuring-saml-sso-via-bridge",
+      "SectionPath": [
+        "Appendix",
+        "Configuring SAML SSO via Bridge"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Authenticate \u003E Configure single sign-on.\n\nIn the Authenticate users with SAML SSO screen, select the Identity provider settings tab, then select Download file to download SAML metadata from LinkedIn Learning. Click Next.\n\n\nTo open in plain text, right click the file and select open with TextEdit (on a Mac) or Notepad (on a PC). Do not open in Microsoft Word.\n\nOnce the file is open, copy the contents to your clipboard.\n\nPaste contents of the metadata file into the XML Metadata field in Bridge (on the LinkedIn Learning app config screen).\n\n\nDownload your Bridge IdP SAML Metadata from: https://[accountName].bridgeapp.com/saml/sso/linkedin/metadata\n\nIn the LinkedIn Learning Authenticate users with SAML SSO screen, select [Your org name] SSO Settings.\n\nClick Upload XML file to upload the metadata from Bridge to LinkedIn Learning.\n\nIn the SSO Options section, make the following modifications and click Save.\n\nSet Authentication Request Signing Algorithm to \u0022SHA256\u0022.\n\nSet Include Assertion Consumer Service URL to \u0022Yes\u0022.\n\n\n\n\nIn the Configure single sign-on screen, set the SSO connection status to \u0022Active\u0022.\n\n\nAfter activating SSO, click the \u0022More options\u0022 (...) icon, then select \u0022Edit\u0022.\n\n\nIn the Authenticate users with SAML SSO screen, set the Automatically provision licenses toggle to \u0022On\u0022.\n\n\nClick Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via Bridge",
+      "Anchor": "configuring-saml-sso-via-bridge",
+      "SectionPath": [
+        "Appendix",
+        "Configuring SAML SSO via Bridge"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their Bridge LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bridge Troubleshooting",
+      "Anchor": "bridge-troubleshooting",
+      "SectionPath": [
+        "Appendix",
+        "Bridge Troubleshooting"
+      ],
+      "Text": "You can reach Bridge\u2019s customer support team at support@instructure.com .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Appendix",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Appendix",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

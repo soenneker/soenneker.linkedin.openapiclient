@@ -1,0 +1,327 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/prospect-notes",
+  "Title": "Retrieve Prospect Notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/prospect-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Retrieve Prospect Notes",
+      "Anchor": "retrieve-prospect-notes",
+      "SectionPath": [],
+      "Text": "The Prospect Notes API allows you to retrieve notes that were created about prospects on a given Recruiter contract. In order to properly store and associate these notes within your application, you need to first retrieve the LinkedIn ID for the Recruiter seatholders (Seat URN) and the prospects (Prospect URN).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Prospect Notes",
+      "Anchor": "retrieve-prospect-notes",
+      "SectionPath": [],
+      "Text": "It is recommended to make calls to this API periodically using a batch process. Set the maximum time range to 12 hours per call, or more frequently as needed (for example, every 30 minutes).\nPlease note the timestamps returned are by last updated date and the note status is reflected with \u0022active\u0022: true field to make the appropriate deletions during syncs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Prospect Notes",
+      "Anchor": "retrieve-prospect-notes",
+      "SectionPath": [],
+      "Text": "All API requests require authorization. Additionally, API requests return paged results. Details on paging through results can be found here .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Prospect Notes",
+      "Anchor": "retrieve-prospect-notes-1",
+      "SectionPath": [
+        "Retrieve Prospect Notes"
+      ],
+      "Text": "Retrieve notes created for a prospect under the specified contract:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Prospect Notes",
+      "Anchor": "retrieve-prospect-notes-1",
+      "SectionPath": [
+        "Retrieve Prospect Notes"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/prospectNotes?q=criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Prospect Notes",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contract URN in format urn:li:contract:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find prospect notes associated with a specific Recruiter contract.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The seat identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat URN in format urn:li:seat:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find prospect notes associated with specific seatholders. Multiple allowed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "beforeDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive upper date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find prospect notes that were created before a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cutoffDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-inclusive lower date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find prospect notes that were created after a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Prospect Notes",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/prospectNotes?q=criteria\u0026contract=urn:li:contract:1234567\u0026owners=urn:li:seat:123456789\u0026beforeDate=1489192513000\u0026start=0\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Prospect Notes",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022active\u0022: true,\n            \u0022contract\u0022: \u0022urn:li:contract:1234567\u0022,\n            \u0022created\u0022: 1489192513000,\n            \u0022id\u0022: 1323073443,\n            \u0022lastModified\u0022: 1489192513000,\n            \u0022member\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022,\n            \u0022note\u0022: \u0022Testing out the Notes functionality 1\u0022,\n            \u0022owner\u0022: \u0022urn:li:seat:123456789\u0022\n        },\n        {\n            \u0022active\u0022: true,\n            \u0022contract\u0022: \u0022urn:li:contract:1234567\u0022,\n            \u0022created\u0022: 1489192513000,\n            \u0022id\u0022: 1285510423,\n            \u0022lastModified\u0022: 1489192513000,\n            \u0022member\u0022: \u0022urn:li:person:f6g7h8i9j0\u0022,\n            \u0022note\u0022: \u0022Testing out the Notes functionality 2\u0022,\n            \u0022owner\u0022: \u0022urn:li:seat:987654321\u0022\n        },\n        {\n            \u0022active\u0022: true,\n            \u0022contract\u0022: \u0022urn:li:contract:1234567\u0022,\n            \u0022created\u0022: 1489192513000,\n            \u0022id\u0022: 1323073443,\n            \u0022lastModified\u0022: 1489192513000,\n            \u0022member\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022,\n            \u0022note\u0022: \u0022Testing out the Notes functionality 3\u0022,\n            \u0022owner\u0022: \u0022urn:li:seat:123456789\u0022\n        },\n        {\n            \u0022active\u0022: true,\n            \u0022contract\u0022: \u0022urn:li:contract:1234567\u0022,\n            \u0022created\u0022: 1489192513000,\n            \u0022id\u0022: 1323073443,\n            \u0022lastModified\u0022: 1489192513000,\n            \u0022member\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022,\n            \u0022note\u0022: \u0022Testing out the Notes functionality 4\u0022,\n            \u0022owner\u0022: \u0022urn:li:seat:123456789\u0022\n        },\n        {\n            \u0022active\u0022: true,\n            \u0022contract\u0022: \u0022urn:li:contract:1234567\u0022,\n            \u0022created\u0022: 1489192513000,\n            \u0022id\u0022: 1323073443,\n            \u0022lastModified\u0022: 1489192513000,\n            \u0022member\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022,\n            \u0022note\u0022: \u0022Testing out the Notes functionality 5\u0022,\n            \u0022owner\u0022: \u0022urn:li:seat:123456789\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 5,\n        \u0022links\u0022: [\n            {\n                \u0022href\u0022: \u0022/v2/prospectNotes?beforeDate=1489192513000\u0026contract=urn%3Ali%3Acontract%3A1234567\u0026count=5\u0026q=criteria\u0026start=5\u0026owners=urn%3Ali%3Aseat%3A123456789\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 10\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Prospect Notes",
+      "Anchor": "delete-prospect-notes",
+      "SectionPath": [
+        "Delete Prospect Notes"
+      ],
+      "Text": "When a prospect note is deleted, a Push Event will be sent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Delete Prospect Notes",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of push event, in this case DELETE_PROSPECT_NOTE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "prospectNoteId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of the prospect note deleted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration context of the customer in the format of urn:li:contract:123.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Delete Prospect Notes",
+        "Sample Request"
+      ],
+      "Text": "\u0022Content-Type\u0022:\u0022application/json\u0022,\n\u0022X-LI-Signature\u0022:\u0022d3756e445a8065c0f38c2182c502f8229800eb2c6a9f3b4a1fdf152af867e6fc\u0022,\n\u0022Content-Length\u0022:\u0022138\u0022,\n\u0022Connection\u0022:\u0022Keep-Alive\u0022,\n\u0022Accept-Encoding\u0022:\u0022gzip,deflate\u0022\n\n{\n   \u0022prospectNoteId\u0022:\u00221323073443\u0022,\n   \u0022type\u0022:\u0022DELETE_PROSPECT_NOTE\u0022,\n   \u0022integrationContext\u0022:\u0022urn:li:contract:123\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

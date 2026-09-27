@@ -1,0 +1,233 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recommended-matches",
+  "Title": "Recommended Matches",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recommended-matches",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Recommended Matches extends Recruiter System Connect (RSC) functionality within the applicant tracking system (ATS) via an additional plugin. The solution is presented and optimized to streamline recruiters\u2019 sourcing experience. For every requisition (synced job) via the ATS, LinkedIn automatically presents a stream of matches and recommended candidates from across its network for recruiter users to rate and reach out to. With Recommended Matches, users can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Access the best candidates for a posted job/requisition, even if they haven\u2019t actively applied to yet.\nReach out to matches they think are a good fit, and save them to existing ATS requisitions (similar to One-Click Export).\nGet better matches over time as the algorithm learns from selected preferences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The Recommended Matches solution will be delivered in the form of an iframe widget and will be implemented in the ATS similar to how the Display Profile Plugin is implemented today. Via RSC\u2019s standard implementation, LinkedIn already receives all ATS jobs via the Sync Jobs endpoint. For the Recommended Matches widget to show a stream of candidates, the following minimum fields for each job must be synced: Job Title and Location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The Recommended Matches widget will display up to 125 matched candidates, with 25 candidates shown per page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Flow",
+      "Anchor": "user-flow",
+      "SectionPath": [
+        "User Flow"
+      ],
+      "Text": "The widget will include the ability for the user to initiate specific actions such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Flow",
+      "Anchor": "user-flow",
+      "SectionPath": [
+        "User Flow"
+      ],
+      "Text": "Save to Job - Ability to One-Click Export candidates\u0027 stub profile information into the ATS database under that specific requisition.\nSave and InMail - Ability to One-Click Export candidates\u0027 stub profile information into the ATS database under that specific requisition and send an InMail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Recruiter System Connect (RSC) is a prerequisite for Recommended Matches and must be fully integrated and implemented to enable any of the functionality detailed in these specs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "The plugin is rendered within an iframe and is self-contained; the JavaScript code handles the authentication and renders the content. This feature is dependent on already syncing jobs from your system to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Enablement",
+      "Anchor": "customer-enablement",
+      "SectionPath": [
+        "Customer Enablement"
+      ],
+      "Text": "When partners build Recommended Matches, customers will get RM automatically enabled as part of RSC enablement via onboarding widget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Recommended Matches Plugin",
+      "Anchor": "display-recommended-matches-plugin",
+      "SectionPath": [
+        "Display Recommended Matches Plugin"
+      ],
+      "Text": "Using the customer\u0027s app credentials provisioned for Recruiter System Connect, display the Recommended Matches Plugin:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Display Recommended Matches Plugin",
+      "Anchor": "display-recommended-matches-plugin",
+      "SectionPath": [
+        "Display Recommended Matches Plugin"
+      ],
+      "Text": "\u003Cscript src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {api_key}\n  extensions: RMWidget@https://platform.linkedin.com/rsc/extensions/recommended-matches-widget\n\u003C/script\u003E\n\u003Cscript type=\u0022IN/RMWidget\u0022\n  data-ats-job-posting-id=\u0022{job_id}\u0022\n  data-integration-context=\u0022urn:li:organization:{id}\u0022\n  data-width=\u0022{width}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Recommended Matches Parameters",
+      "Anchor": "recommended-matches-parameters",
+      "SectionPath": [
+        "Recommended Matches Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingId of previously synced job using Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration context value for the customer\u0027s integration. You\u0027ll get this value when the customer enables the integration via the Integration Configuration Plugin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ability to override default width of the plugin. Default and expected minimum width is 800px.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Matches Parameters",
+      "Anchor": "recommended-matches-parameters",
+      "SectionPath": [
+        "Recommended Matches Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Matches Parameters",
+      "Anchor": "recommended-matches-parameters",
+      "SectionPath": [
+        "Recommended Matches Parameters"
+      ],
+      "Text": "Verify Content Security Policy includes \u0022platform.linkedin.com\u0022 and \u0022www.linkedin.com\u0022.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

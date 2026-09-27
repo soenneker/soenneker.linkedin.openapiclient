@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// The key for FeaturedContentGroup.Documented type: PagesFeaturedContentGroupKeyRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKey : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The page property</summary>
+        /// <summary>URN of the page that owns this FeaturedContentGroup. It is of type urn:li:organizationalPage:{ID}.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Page { get; set; }
@@ -22,14 +23,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Page { get; set; }
 #endif
-        /// <summary>The topic property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Topic { get; set; }
-#nullable restore
-#else
-        public string Topic { get; set; }
-#endif
+        /// <summary>The topic of the PagesFeaturedContent. Value enums include: PRODUCT_HIGHLIGHTSPRODUCT_ANNOUNCEMENTSPRODUCT_EXPERTSPRODUCT_QUESTIONS_AND_ANSWERSORGANIZATION_HOMEDocumented type: PagesFeaturedContentTopicRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKeyTopic? Topic { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKey"/> and sets the default values.
         /// </summary>
@@ -56,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "page", n => { Page = n.GetStringValue(); } },
-                { "topic", n => { Topic = n.GetStringValue(); } },
+                { "topic", n => { Topic = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKeyTopic>(); } },
             };
         }
         /// <summary>
@@ -67,7 +62,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("page", Page);
-            writer.WriteStringValue("topic", Topic);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKeyTopic>("topic", Topic);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

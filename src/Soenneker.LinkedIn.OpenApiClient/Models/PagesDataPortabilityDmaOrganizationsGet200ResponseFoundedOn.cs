@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The year property</summary>
-        public int? Year { get; set; }
+        public long? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseFoundedOn"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "year", n => { Year = n.GetIntValue(); } },
+                { "year", n => { Year = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("year", Year);
+            writer.WriteLongValue("year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

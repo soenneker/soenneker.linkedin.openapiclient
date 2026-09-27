@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The include property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Include { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseOffsitePreferencesPublisherRestrictionFilesIncludeItem>? Include { get; set; }
 #nullable restore
 #else
-        public UntypedNode Include { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseOffsitePreferencesPublisherRestrictionFilesIncludeItem> Include { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseOffsitePreferencesPublisherRestrictionFiles"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "include", n => { Include = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseOffsitePreferencesPublisherRestrictionFilesIncludeItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseOffsitePreferencesPublisherRestrictionFilesIncludeItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("exclude", Exclude);
-            writer.WriteObjectValue<UntypedNode>("include", Include);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseOffsitePreferencesPublisherRestrictionFilesIncludeItem>("include", Include);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

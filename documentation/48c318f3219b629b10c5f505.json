@@ -1,0 +1,226 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/development-resources/api-clients",
+  "Title": "LinkedIn API Clients",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/sample-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/development-resources/api-clients",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "The Rest.li protocol defines 14 resource methods as a higher-level abstraction on top of the standard HTTP methods, each with its own standardized interface and intended semantics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "For example, to retrieve one or more entities, any one of these Rest.li methods can be implemented for a resource, depending on the use case: GET, BATCH_GET, GET_ALL, FINDER, or BATCH_FINDER. Each of those Rest.li methods would have its own standard request and response interfaces.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "The Rest.li protocol also supports complex resource keys and query parameters, and it has a custom protocol for encoding them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "Nearly all of LinkedIn\u0027s APIs are built on the Rest.li framework with additional LinkedIn-specific details, which results in a robust yet complex protocol that can be challenging to implement correctly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Client Overview",
+      "Anchor": "api-client-overview",
+      "SectionPath": [
+        "API Client Overview"
+      ],
+      "Text": "To simplify development, we have released API client libraries in the following languages, each of which contains comprehensive documentation and examples in their corresponding GitHub repository:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Client Overview",
+      "Anchor": "api-client-overview",
+      "SectionPath": [
+        "API Client Overview"
+      ],
+      "Text": "",
+      "Headers": [
+        "Language",
+        "Installation and API Reference Docs",
+        "Examples"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JavaScript",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "link",
+            "Links": [
+              "https://github.com/linkedin-developers/linkedin-api-js-client#linkedin-api-javascript-client"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "link",
+            "Links": [
+              "https://github.com/linkedin-developers/linkedin-api-js-client/tree/master/examples#linkedin-api-javascript-client-examples"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Python",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "link",
+            "Links": [
+              "https://github.com/linkedin-developers/linkedin-api-python-client#linkedin-api-python-client"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "link",
+            "Links": [
+              "https://github.com/linkedin-developers/linkedin-api-python-client/tree/main/examples"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Client Overview",
+      "Anchor": "api-client-overview",
+      "SectionPath": [
+        "API Client Overview"
+      ],
+      "Text": "Note that these client libraries do not support specific APIs - they provide an abstraction on top of the Rest.li protocol, making it easier to construct API requests to LinkedIn. This simplifies the process for you to build your higher-level clients for specific APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Client Overview",
+      "Anchor": "api-client-overview",
+      "SectionPath": [
+        "API Client Overview"
+      ],
+      "Text": "Some of the key features of the LinkedIn API Client Libraries include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Client Overview",
+      "Anchor": "api-client-overview",
+      "SectionPath": [
+        "API Client Overview"
+      ],
+      "Text": "RestliClient with support for all Rest.li methods\nAuthClient with support for token creation/management\nTyped interfaces to enable code completion and inline documentation in IDEs\nRest.li protocol 2.0 support\nAutomatic key/query parameter encoding\nSupport for versioned APIs\nAutomatic query tunneling of requests, if required",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Example"
+      ],
+      "Text": "To illustrate the benefits of using these API clients, consider searching for ad accounts using our Advertising API. For a NodeJS application using an HTTP client library like axios, there are quite a few details to get right to perform a working request, as shown in the following sample code: base URL, resource prefix, auth and custom headers, and correct encoding of complex query parameters. The result can be difficult to write and maintain and doesn\u2019t account for edge cases requiring query tunneling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Example"
+      ],
+      "Text": "const axios = require(\u0027axios\u0027);\n\nconst ACCESS_TOKEN = \u0022AQX5\u2026\u0022;\nconst API_VERSION = \u0027202302\u0027;\n\n// Define a generic function to search ad accounts by references\nfunction searchForAdAccountsByReferences(\n references,\n count = 10,\n sortField = \u0027ID\u0027,\n sortOrder = \u0027ASCENDING\u0027\n) {\n return axios.request({\n   baseURL: \u0027https://api.linkedin.com\u0027,\n   url: \u0027/rest/adAccounts\u0027,\n   method: \u0027get\u0027,\n   headers: {\n     \u0027Authorization\u0027: \u0060Bearer ${ACCESS_TOKEN}\u0060,\n     \u0027X-RestLi-Method\u0027: \u0027finder\u0027,\n     \u0027X-RestLi-Protocol-Version\u0027: \u00272.0.0\u0027,\n     \u0027Connection\u0027: \u0027Keep-Alive\u0027,\n     \u0027LinkedIn-Version\u0027: API_VERSION\n   },\n   params: {\n     q: \u0027search\u0027,\n     search: \u0060(reference:(values:List(${references.map(encodeURIComponent).join(\u0027,\u0027)})))\u0060,\n     count,\n     sort: \u0060(field:${sortField},order:${sortOrder})\u0060\n   },\n   paramsSerializer: {\n     // Can\u0027t use default encoding\n     encode: (val) =\u003E val\n   }\n }).then(response =\u003E response.data.elements);\n}\n\n// Search for ad accounts by a list of organizations, with up to 20 results\nconst orgs = [\u0027urn:li:organization:123\u0027, \u0027urn:li:organization:456\u0027];\nsearchForAdAccountsByReferences(orgs, 20).then(adAccounts =\u003E {\n console.log(adAccounts);\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Example"
+      ],
+      "Text": "Compare that to this code utilizing the LinkedIn API client. The client abstracts much of the complexities of constructing the request. It allows passing in objects, arrays, and strings with special characters as is, making the code easy to write and maintain. Furthermore, it handles edge cases where query tunneling may be required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Example"
+      ],
+      "Text": "const { RestliClient } = require(\u0027linkedin-api-client\u0027);\n\nconst restliClient = new RestliClient();\nconst ACCESS_TOKEN = \u0022AQX5...\u0022;\nconst API_VERSION = \u0027202302\u0027;\n\n// Define a generic function to search ad accounts by references\nfunction searchForAdAccountsByReferences(\n  references,\n  count = 10,\n  sortField = \u0027ID\u0027,\n  sortOrder = \u0027ASCENDING\u0027\n) {\n  return restliClient.finder({\n    resourcePath: \u0027/adAccounts\u0027,\n    finderName: \u0027search\u0027,\n    queryParams: {\n      search: {\n        reference: {\n          values: references\n        },\n      },\n      count,\n      sort: {\n        field: sortField,\n        order: sortOrder\n      }\n    },\n    versionString: API_VERSION,\n    accessToken: ACCESS_TOKEN\n  }).then(response =\u003E response.data.elements);\n}\n\n// Search for ad accounts by a list of organizations, with up to 20 results\nconst orgs = [\u0027urn:li:organization:123\u0027, \u0027urn:li:organization:456\u0027];\nsearchForAdAccountsByReferences(orgs, 20).then(adAccounts =\u003E {\n  console.log(adAccounts);\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Example"
+      ],
+      "Text": "In summary, using these API clients can speed up and simplify the development process and make your application code maintainable and robust. If any issues arise, the corresponding Github repository is available for bug reports and enhancement suggestions.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

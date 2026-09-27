@@ -15,13 +15,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 property</summary>
-        public int? UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 { get; set; }
+        public long? UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 { get; set; }
         /// <summary>The urnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 property</summary>
-        public int? UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 { get; set; }
+        public long? UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 { get; set; }
         /// <summary>The urnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 property</summary>
-        public int? UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 { get; set; }
+        public long? UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 { get; set; }
         /// <summary>The urnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 property</summary>
-        public int? UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 { get; set; }
+        public long? UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -47,10 +47,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)", n => { UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = n.GetIntValue(); } },
-                { "urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)", n => { UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = n.GetIntValue(); } },
-                { "urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)", n => { UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 = n.GetIntValue(); } },
-                { "urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)", n => { UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 = n.GetIntValue(); } },
+                { "urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)", n => { UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592 = n.GetLongValue(); } },
+                { "urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)", n => { UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931 = n.GetLongValue(); } },
+                { "urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)", n => { UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784 = n.GetLongValue(); } },
+                { "urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)", n => { UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960 = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -60,10 +60,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)", UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592);
-            writer.WriteIntValue("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)", UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931);
-            writer.WriteIntValue("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)", UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784);
-            writer.WriteIntValue("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)", UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960);
+            writer.WriteLongValue("urn:li:instantRepost:(urn:li:share:7138243044855746560,7138323973150318592)", UrnLiInstantRepostUrnLiShare71382430448557465607138323973150318592);
+            writer.WriteLongValue("urn:li:instantRepost:(urn:li:share:7138304574448140289,7138322454954876931)", UrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931);
+            writer.WriteLongValue("urn:li:instantRepost:(urn:li:ugcPost:7135001078080651264,7138341978886262784)", UrnLiInstantRepostUrnLiUgcPost71350010780806512647138341978886262784);
+            writer.WriteLongValue("urn:li:instantRepost:(urn:li:ugcPost:7137903987319644160,7138343164381224960)", UrnLiInstantRepostUrnLiUgcPost71379039873196441607138343164381224960);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The averageDaysToClose property</summary>
+        /// <summary>The average number of days to close a won deal attributed to LinkedIn marketing.(Opportunity length in days / closedWonOpportunities)Documented type: double</summary>
         public double? AverageDaysToClose { get; set; }
         /// <summary>The averageDealSizeInUsd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,10 +24,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string AverageDealSizeInUsd { get; set; }
 #endif
-        /// <summary>The closedWonOpportunities property</summary>
-        public int? ClosedWonOpportunities { get; set; }
-        /// <summary>The openOpportunities property</summary>
-        public int? OpenOpportunities { get; set; }
+        /// <summary>Number of closed-won opportunities attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.Documented type: long</summary>
+        public long? ClosedWonOpportunities { get; set; }
+        /// <summary>Number of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.Documented type: long</summary>
+        public long? OpenOpportunities { get; set; }
         /// <summary>The opportunityAmountInUsd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,9 +36,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string OpportunityAmountInUsd { get; set; }
 #endif
-        /// <summary>The opportunityWinRate property</summary>
+        /// <summary>Rate at which the opportunities are won out of all the closed opportunities. (closedWonOpportunities / Number of closed opportunities)Documented type: double</summary>
         public double? OpportunityWinRate { get; set; }
-        /// <summary>The returnOnAdSpend property</summary>
+        /// <summary>Ratio of total revenue won attributed to LinkedIn marketing divided by LinkedIn ad spend. Attribution credit is distributed at a business level across multiple ad accounts. (revenueWonInUsd / costInUsd)Documented type: double</summary>
         public double? ReturnOnAdSpend { get; set; }
         /// <summary>The revenueWonInUsd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,8 +75,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "averageDaysToClose", n => { AverageDaysToClose = n.GetDoubleValue(); } },
                 { "averageDealSizeInUsd", n => { AverageDealSizeInUsd = n.GetStringValue(); } },
-                { "closedWonOpportunities", n => { ClosedWonOpportunities = n.GetIntValue(); } },
-                { "openOpportunities", n => { OpenOpportunities = n.GetIntValue(); } },
+                { "closedWonOpportunities", n => { ClosedWonOpportunities = n.GetLongValue(); } },
+                { "openOpportunities", n => { OpenOpportunities = n.GetLongValue(); } },
                 { "opportunityAmountInUsd", n => { OpportunityAmountInUsd = n.GetStringValue(); } },
                 { "opportunityWinRate", n => { OpportunityWinRate = n.GetDoubleValue(); } },
                 { "returnOnAdSpend", n => { ReturnOnAdSpend = n.GetDoubleValue(); } },
@@ -92,8 +92,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("averageDaysToClose", AverageDaysToClose);
             writer.WriteStringValue("averageDealSizeInUsd", AverageDealSizeInUsd);
-            writer.WriteIntValue("closedWonOpportunities", ClosedWonOpportunities);
-            writer.WriteIntValue("openOpportunities", OpenOpportunities);
+            writer.WriteLongValue("closedWonOpportunities", ClosedWonOpportunities);
+            writer.WriteLongValue("openOpportunities", OpenOpportunities);
             writer.WriteStringValue("opportunityAmountInUsd", OpportunityAmountInUsd);
             writer.WriteDoubleValue("opportunityWinRate", OpportunityWinRate);
             writer.WriteDoubleValue("returnOnAdSpend", ReturnOnAdSpend);

@@ -1,0 +1,80 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+  "Title": "Experimentation Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Experimentation Overview",
+      "Anchor": "experimentation-overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experimentation Overview",
+      "Anchor": "experimentation-overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experimentation Overview",
+      "Anchor": "experimentation-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn\u2019s experimentation products help you optimize the return on your investment in LinkedIn Advertising. Below are the experiment products we currently offer:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experimentation Overview",
+      "Anchor": "experimentation-overview",
+      "SectionPath": [],
+      "Text": "Brand Lift Testing: Measures the impact of your ads on brand metrics that you care about such as awareness, consideration, familiarity, or favorability. This in turn helps you close the loop on your brand marketing efforts and better optimize for future brand value.\nA/B Testing: Enables you to optimize campaigns by running split testing experiments on creative content, Ad formats, bidding strategies, and more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experimentation Overview",
+      "Anchor": "experimentation-overview",
+      "SectionPath": [],
+      "Text": "For more information on all marketing related APIs, see the Overview page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizations as Advertisers",
+      "Anchor": "organizations-as-advertisers",
+      "SectionPath": [
+        "Organizations as Advertisers"
+      ],
+      "Text": "In order to advertise, you first need a LinkedIn Company Page. Company Pages can be managed through the UI or the API. For more information on the API, see Organizations and Brands APIs. Secondly, for most experimentation products, you\u0027ll need an Ad account, campaign, and creatives therein. Refer the Getting Started page to create these.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

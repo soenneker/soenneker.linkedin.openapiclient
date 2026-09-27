@@ -28,7 +28,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaOrganizationCommitmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationCommitment{?organization*,q*}", pathParameters)
+        public DmaOrganizationCommitmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationCommitment{?ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,29 +36,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmaOrganizationCommitmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationCommitment{?organization*,q*}", rawUrl)
+        public DmaOrganizationCommitmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pages-data-portability/rest/dmaOrganizationCommitment{?ids*}", rawUrl)
         {
         }
         /// <summary>
-        /// dmaOrganizationCommitment FINDER organization
+        /// dmaOrganizationCommitment BATCH_GET
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.DmaOrganizationCommitmentRequestBuilder.DmaOrganizationCommitmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.DmaOrganizationCommitmentRequestBuilder.DmaOrganizationCommitmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.DmaOrganizationCommitmentRequestBuilder.DmaOrganizationCommitmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.DmaOrganizationCommitmentRequestBuilder.DmaOrganizationCommitmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentFinderOrganization200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationCommitmentBatchget200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// dmaOrganizationCommitment FINDER organization
+        /// dmaOrganizationCommitment BATCH_GET
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
             return new global::Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganizationCommitment.DmaOrganizationCommitmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// dmaOrganizationCommitment FINDER organization
+        /// dmaOrganizationCommitment BATCH_GET
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DmaOrganizationCommitmentRequestBuilderGetQueryParameters 
@@ -94,27 +94,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.PagesDataPortability.Rest.DmaOrganiza
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
-            [QueryParameter("organization")]
-            public string? Organization { get; set; }
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
             #pragma warning restore CS1591
 #nullable restore
 #else
             #pragma warning disable CS1591
-            [QueryParameter("organization")]
-            public string Organization { get; set; }
-            #pragma warning restore CS1591
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            #pragma warning disable CS1591
-            [QueryParameter("q")]
-            public string? Q { get; set; }
-            #pragma warning restore CS1591
-#nullable restore
-#else
-            #pragma warning disable CS1591
-            [QueryParameter("q")]
-            public string Q { get; set; }
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
             #pragma warning restore CS1591
 #endif
         }

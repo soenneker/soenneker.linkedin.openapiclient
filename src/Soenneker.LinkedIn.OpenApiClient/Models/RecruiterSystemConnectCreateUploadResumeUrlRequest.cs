@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType? ContentType { get; set; }
 #nullable restore
 #else
-        public string ContentType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType ContentType { get; set; }
 #endif
         /// <summary>The fileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The hiringContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HiringContext { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext? HiringContext { get; set; }
 #nullable restore
 #else
-        public string HiringContext { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext HiringContext { get; set; }
 #endif
         /// <summary>The usageParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,9 +80,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blobTtl", n => { BlobTtl = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl.CreateFromDiscriminatorValue); } },
-                { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "contentType", n => { ContentType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType.CreateFromDiscriminatorValue); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
-                { "hiringContext", n => { HiringContext = n.GetStringValue(); } },
+                { "hiringContext", n => { HiringContext = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext.CreateFromDiscriminatorValue); } },
                 { "usageParameters", n => { UsageParameters = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters.CreateFromDiscriminatorValue); } },
             };
         }
@@ -94,9 +94,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestBlobTtl>("blobTtl", BlobTtl);
-            writer.WriteStringValue("contentType", ContentType);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestContentType>("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
-            writer.WriteStringValue("hiringContext", HiringContext);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestHiringContext>("hiringContext", HiringContext);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectCreateUploadResumeUrlRequestUsageParameters>("usageParameters", UsageParameters);
             writer.WriteAdditionalData(AdditionalData);
         }

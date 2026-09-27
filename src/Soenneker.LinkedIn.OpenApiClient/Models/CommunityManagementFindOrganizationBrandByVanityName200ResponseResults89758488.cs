@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The alternativeNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AlternativeNames { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488AlternativeNamesItem>? AlternativeNames { get; set; }
 #nullable restore
 #else
-        public UntypedNode AlternativeNames { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488AlternativeNamesItem> AlternativeNames { get; set; }
 #endif
         /// <summary>The autoCreated property</summary>
         public bool? AutoCreated { get; set; }
@@ -35,13 +35,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Groups { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488GroupsItem>? Groups { get; set; }
 #nullable restore
 #else
-        public UntypedNode Groups { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488GroupsItem> Groups { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The industries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,10 +61,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The localizedSpecialties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? LocalizedSpecialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488LocalizedSpecialtiesItem>? LocalizedSpecialties { get; set; }
 #nullable restore
 #else
-        public UntypedNode LocalizedSpecialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488LocalizedSpecialtiesItem> LocalizedSpecialties { get; set; }
 #endif
         /// <summary>The localizedWebsite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,10 +101,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The specialties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Specialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488SpecialtiesItem>? Specialties { get; set; }
 #nullable restore
 #else
-        public UntypedNode Specialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488SpecialtiesItem> Specialties { get; set; }
 #endif
         /// <summary>The vanityName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,19 +155,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alternativeNames", n => { AlternativeNames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488AlternativeNamesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488AlternativeNamesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "autoCreated", n => { AutoCreated = n.GetBoolValue(); } },
                 { "defaultLocale", n => { DefaultLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488DefaultLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488DefaultLocale.CreateFromDiscriminatorValue); } },
-                { "groups", n => { Groups = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488GroupsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488GroupsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "industries", n => { Industries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
-                { "localizedSpecialties", n => { LocalizedSpecialties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "localizedSpecialties", n => { LocalizedSpecialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488LocalizedSpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488LocalizedSpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "localizedWebsite", n => { LocalizedWebsite = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488Name.CreateFromDiscriminatorValue); } },
                 { "parentRelationship", n => { ParentRelationship = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488ParentRelationship>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488ParentRelationship.CreateFromDiscriminatorValue); } },
                 { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetStringValue(); } },
-                { "specialties", n => { Specialties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "specialties", n => { Specialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488SpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488SpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488Website>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488Website.CreateFromDiscriminatorValue); } },
@@ -180,19 +180,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("alternativeNames", AlternativeNames);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488AlternativeNamesItem>("alternativeNames", AlternativeNames);
             writer.WriteBoolValue("autoCreated", AutoCreated);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488DefaultLocale>("defaultLocale", DefaultLocale);
-            writer.WriteObjectValue<UntypedNode>("groups", Groups);
-            writer.WriteIntValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488GroupsItem>("groups", Groups);
+            writer.WriteLongValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("industries", Industries);
             writer.WriteStringValue("localizedName", LocalizedName);
-            writer.WriteObjectValue<UntypedNode>("localizedSpecialties", LocalizedSpecialties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488LocalizedSpecialtiesItem>("localizedSpecialties", LocalizedSpecialties);
             writer.WriteStringValue("localizedWebsite", LocalizedWebsite);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488Name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488ParentRelationship>("parentRelationship", ParentRelationship);
             writer.WriteStringValue("primaryOrganizationType", PrimaryOrganizationType);
-            writer.WriteObjectValue<UntypedNode>("specialties", Specialties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488SpecialtiesItem>("specialties", Specialties);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults89758488Website>("website", Website);

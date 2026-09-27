@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -41,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.At
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteIntegrationConfigurationJobPostingViewersRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteIntegrationConfigurationJobPostingViewersRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -60,11 +61,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.At
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteIntegrationConfigurationJobPostingViewersRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectVersionedDeleteIntegrationConfigurationJobPostingViewersRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnectVersioned.V2.AtsIntegrations.IntegrationContextUrnLiOrganizationWithOrgIdIntegrationTypeONE_CLICK_EXPORTTenantTypeRECRUITERDataProviderATS.Configurations.ConfigurationsRequestBuilder.ConfigurationsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

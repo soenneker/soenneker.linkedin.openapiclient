@@ -1,0 +1,596 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+  "Title": "Job Posting Announcements and Release Notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-\u0026-location-lookup",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Documented duplicate job error (ErrorCode:2009)",
+      "Anchor": "documented-duplicate-job-error-errorcode2009",
+      "SectionPath": [
+        "Documented duplicate job error (ErrorCode:2009)"
+      ],
+      "Text": "Documented the downstream-wrapped duplicate-job error (ErrorCode:2009) in the Check Job Operation Task Status error codes table, including a sample FAILED response and a note that it is an alternate surface of the existing duplicate-job failure.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Task URN multiplexing for multi-location jobs",
+      "Anchor": "task-urn-multiplexing-for-multi-location-jobs",
+      "SectionPath": [
+        "Task URN multiplexing for multi-location jobs"
+      ],
+      "Text": "Updated Check Job Operation Task Status with an important callout and sample response documenting task URN multiplexing behavior for multi-location jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application secret management APIs",
+      "Anchor": "application-secret-management-apis",
+      "SectionPath": [
+        "Application secret management APIs"
+      ],
+      "Text": "New Child Application Secret Management APIs - Added support for rotating and deleting secrets for parent, child, and standalone applications. Partners can now maintain up to two active secrets per application, enabling zero-downtime credential updates. See Application Secret Management for implementation details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job poster email requirement and posting guidelines",
+      "Anchor": "job-poster-email-requirement-and-posting-guidelines",
+      "SectionPath": [
+        "Job poster email requirement and posting guidelines"
+      ],
+      "Text": "Job Posting guidelines: New guidelines are added to require a valid email address associated with the job posting owner (see the last bullet in point 2.) and restrict access to LinkedIn integration to paying users (see point 7.) in Third-Party Job Listing and Job Site Inclusion Guidelines.\nXML feed: The XML feed schema is updated to require inclusion of the job poster email for each job.\nJob Posting API: The Unversioned API and Versioned Job Posting API schema are updated to require inclusion of the job poster email for each job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Easy Apply free application limit error code",
+      "Anchor": "linkedin-easy-apply-free-application-limit-error-code",
+      "SectionPath": [
+        "LinkedIn Easy Apply free application limit error code"
+      ],
+      "Text": "A new error code 1157 is added to indicate when LinkedIn Easy Apply is disabled due to exceeding the free application limit. To restore LinkedIn Easy Apply, promote the job to a paid slot. To learn more, see LinkedInApplyStatus Error Codes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioned API release cycle and schema changes",
+      "Anchor": "versioned-api-release-cycle-and-schema-changes",
+      "SectionPath": [
+        "Versioned API release cycle and schema changes"
+      ],
+      "Text": "LinkedIn\u0027s Talent APIs are transitioning to a versioned API release cycle starting with the January 2025 release under a new base path: https://api.linkedin.com/rest/, see LTS API Documentation Versioning. As of January version release, only Simple Job Posting API supports versioning. You can leverage latest schema by calling the API with header 202501.\nRecruiter Extension Schema is no longer supported in versioned simpleJobPosting API. For RSC partners a new Requisition API will be soon released in April 2025 to manage private jobs aka application tracking system job requisitions for 1-Click Export.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Versioned API release cycle and schema changes",
+      "Anchor": "versioned-api-release-cycle-and-schema-changes",
+      "SectionPath": [
+        "Versioned API release cycle and schema changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Field",
+        "Change(s) Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Two more operation types are added to the enum i.e. UPGRADE, DOWNGRADE. UPGRADE: promote a free job to paid; DOWNGRADE: de-promote a paid job to free.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "expireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Default expiry date is set to 180 days for all types of jobs. Max expiry date is relaxed to 365 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "availability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Every job must be either PUBLIC or INTERNAL. We have removed PRIVATE_TO_ATS_INTEGRATION. You can map the requisition to a PUBLIC job using partnerRequisitionId. We are soon launching a requisition API for RSC partner\u0027s to provide more flexibility around jobs and requisition mapping.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company URN of this job, previously referred via integrationContext field. You can use the company lookup API to fetch company details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-\u0026-location-lookup?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field is deprecated and can be replaced by company,companyName or companyPageUrl",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "partnerRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Unique ID of the job requisition, which links the job posting to ATS requisition. All job posting customers can use this field to map ATS job requisition to LinkedIn jobs. This field is required for RSC customers using RSC integration.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Company and location lookup APIs",
+      "Anchor": "company-and-location-lookup-apis",
+      "SectionPath": [
+        "Company and location lookup APIs"
+      ],
+      "Text": "Introduced a new optional module featuring helper APIs for searching Company IDs and Locations.\nThese APIs are versioned and will remain optional for now. For details, see Company \u0026 Location Lookup API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification test case restructure",
+      "Anchor": "certification-test-case-restructure",
+      "SectionPath": [
+        "Certification test case restructure"
+      ],
+      "Text": "Updated certification test cases to new numbering format. Added Modules 5 and 6.\n\nModule 1 - Basics (Self Evaluation and Confirmation Sufficient)\nModule 2 - Customer Application Provisioning and Job Board Setup\nModule 3 - Create and Manage Jobs\nModule 4 - Inline Upgrade and Downgrade Jobs\nModule 5 - Basic and Premium Job Posting\nModule 6 - Notifications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline upgrade and downgrade for API jobs",
+      "Anchor": "inline-upgrade-and-downgrade-for-api-jobs",
+      "SectionPath": [
+        "Inline upgrade and downgrade for API jobs"
+      ],
+      "Text": "Inline upgrade and downgrade for API Jobs\n\nInline upgrades from Basic API Jobs to Premium Jobs and downgrades from Premium API Jobs to Basic Jobs are now available.\nThe updated guidelines are available here.\n\n\nXML Feed\n\nAn important guideline has been added to indicate new limits to our Third-Party Job Listing and Job Site Inclusion\nGuidelines\nAdded new FAQ questions to Developer FAQs\n\n\nJob Posting API\n\nA new legal requirement has been added to indicate new\nlimits for third-party jobs that are ingested as Basic Jobs\nAdded new FAQ questions to Developer FAQs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multi-location job task status schema update",
+      "Anchor": "multi-location-job-task-status-schema-update",
+      "SectionPath": [
+        "Multi-location job task status schema update"
+      ],
+      "Text": "SimpleJobPostingTask Schema\n\nAdd location field to response for jobs that use alternateLocations or have customer defined multiple location job rules.\nStarting June 30, 2024, we will no longer support countryCode, postalCode, workRemoteAllowed, and state schema field. Please use location instead of countryCode and postalCode. workplaceTypes instead of workRemoteAllowed. Do not send the state field as it will be automatically determined by LinkedIn, based on the jobPostingOperationType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Premium job expiration and schema field updates",
+      "Anchor": "premium-job-expiration-and-schema-field-updates",
+      "SectionPath": [
+        "Premium job expiration and schema field updates"
+      ],
+      "Text": "Premium job postings will now honor schema with expireAt field along with the basic job postings. The expiration date must be within the range of 1 to 90 days. For invalid date, API returns an \u0022Invalid ExpirationDate\u0022 error.\nUpdated Job Posting Status API and Job Posting Status Notifications schema with expireAt field.\nUpdates to alternateLocations and workplaceTypes schema fields in XML Feed and Job Posting API schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Jobs API error details update",
+      "Anchor": "create-jobs-api-error-details-update",
+      "SectionPath": [
+        "Create Jobs API error details update"
+      ],
+      "Text": "Create Jobs API Error Details table updated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQ additions",
+      "Anchor": "product-faq-additions",
+      "SectionPath": [
+        "Product FAQ additions"
+      ],
+      "Text": "Added new FAQ questions to Product FAQs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ, task ID lifespan, and schema field updates",
+      "Anchor": "faq-task-id-lifespan-and-schema-field-updates",
+      "SectionPath": [
+        "FAQ, task ID lifespan, and schema field updates"
+      ],
+      "Text": "Added new Integration and Support questions in Job Posting FAQ\nSync Premium Jobs API - Updated lifespan value of Task id to 30 days\nUpdates to alternateLocations and location schema fields in XML Feed and Job Posting API schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer configuration widget updates",
+      "Anchor": "customer-configuration-widget-updates",
+      "SectionPath": [
+        "Customer configuration widget updates"
+      ],
+      "Text": "Updated Configure Customer Application and ATS Integration for widget screens and notes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Removed companyDescription field",
+      "Anchor": "removed-companydescription-field",
+      "SectionPath": [
+        "Removed companyDescription field"
+      ],
+      "Text": "Removed companyDescription field desription from Job Posting API schema as it is no longer supported",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company page URL, Basic Jobs naming, and task status updates",
+      "Anchor": "company-page-url-basic-jobs-naming-and-task-status-updates",
+      "SectionPath": [
+        "Company page URL, Basic Jobs naming, and task status updates"
+      ],
+      "Text": "Job Posting API Schema\n\nAdded new field companyPageUrl to support better job to company mappings.\nUpdated requirements of fields: employmentStatus, experienceLevel, categories, workplaceTypes, description, location. companyJobCode, companyName, companyPageUrl, posterEmail.\n\n\nUpdated Limited Listings naming convenion to Basic Jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company page URL, Basic Jobs naming, and task status updates",
+      "Anchor": "company-page-url-basic-jobs-naming-and-task-status-updates",
+      "SectionPath": [
+        "Company page URL, Basic Jobs naming, and task status updates"
+      ],
+      "Text": "The following updates are made to Check Job Operation Task Status",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company page URL, Basic Jobs naming, and task status updates",
+      "Anchor": "company-page-url-basic-jobs-naming-and-task-status-updates",
+      "SectionPath": [
+        "Company page URL, Basic Jobs naming, and task status updates"
+      ],
+      "Text": "Lifespan for task IDs is increased to 30 days\nNew status values PROCESSED added",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Industry codes update for XML feeds",
+      "Anchor": "industry-codes-update-for-xml-feeds",
+      "SectionPath": [
+        "Industry codes update for XML feeds"
+      ],
+      "Text": "Updated Industry Codes for XML ingested jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Premium job onboarding widget and field definitions",
+      "Anchor": "premium-job-onboarding-widget-and-field-definitions",
+      "SectionPath": [
+        "Premium job onboarding widget and field definitions"
+      ],
+      "Text": "Added new customer onboarding widget for premium jobs. You can embed this widget in your platform to allow customers to log in and choose the premium job posting contract and enable premium job posting from the partner platform\nUpdated field definitions for industries and categories field",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TYPEAHEAD enum removal",
+      "Anchor": "typeahead-enum-removal",
+      "SectionPath": [
+        "TYPEAHEAD enum removal"
+      ],
+      "Text": "Job Posting API TYPEAHEAD enum is removed from FormComponent Enum Values",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location format, field definitions, and legal requirements",
+      "Anchor": "location-format-field-definitions-and-legal-requirements",
+      "SectionPath": [
+        "Location format, field definitions, and legal requirements"
+      ],
+      "Text": "location field now supports \u0022COUNTRY CLUSTER\u0022\nUpdated field definitions for employmentStatus, experienceLevel, categories, and expiryAt fields\nAdded Legal Requirements for Job Posting API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "XML feed indexation frequency increase to 6 hours",
+      "Anchor": "xml-feed-indexation-frequency-increase-to-6-hours",
+      "SectionPath": [
+        "XML feed indexation frequency increase to 6 hours"
+      ],
+      "Text": "XML feed indexation for ATSs is increased from 12 hrs to every 6 hrs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API legal requirements",
+      "Anchor": "job-posting-api-legal-requirements",
+      "SectionPath": [
+        "Job Posting API legal requirements"
+      ],
+      "Text": "Added Legal Requirements for Job Posting API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "XML feed indexation, workplace types, and remote field sunset",
+      "Anchor": "xml-feed-indexation-workplace-types-and-remote-field-sunset",
+      "SectionPath": [
+        "XML feed indexation, workplace types, and remote field sunset"
+      ],
+      "Text": "XML feed indexation for ATSs has been increased from 24 hrs to every 12 hrs\nIntroduced workplaceTypes field in job posting schema to mark workplace nature of jobs. This field will be available for use by January 4, 2022\nIsRemote field to be sunset from November 1, 2022\nAdded customer facing FAQ section to Developer FAQs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workplace types and schema deprecation for API",
+      "Anchor": "workplace-types-and-schema-deprecation-for-api",
+      "SectionPath": [
+        "Workplace types and schema deprecation for API"
+      ],
+      "Text": "Introduced workplaceTypes field in job posting schema to mark workplace nature of jobs. This field will be available for use by January 4, 2022\n\nRevised description to include recommended value formats for location field\n\nAll partners need to adopt the latest Job Posting API\u0027s Schema by November 1, 2022. This means all partners should stop using fields mentioned in table below and marked with \u0027*\u0027 in the schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workplace types and schema deprecation for API",
+      "Anchor": "workplace-types-and-schema-deprecation-for-api",
+      "SectionPath": [
+        "Workplace types and schema deprecation for API"
+      ],
+      "Text": "A consolidated summary of the changes that the API partner needs to take care of is given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Posting API changes",
+      "Anchor": "job-posting-api-changes",
+      "SectionPath": [
+        "Workplace types and schema deprecation for API",
+        "Job Posting API changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Field",
+        "Change(s) Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "postalCode field will be deprecated. We recommend using the location field instead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "countryCode field will be deprecated. We recommend using the location field instead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workRemoteAllowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workRemoteAllowed field will be deprecated. We recommend using the workplaceTypes field instead. This field will be available for use by November 15, 2022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state field will be deprecated. We recommend using the jobPostingOperationType field instead. Thus, the state.listed field should be replaced by jobPostingOperationType.create and state.closed field should be replaced by jobPostingOperationType.close field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "expireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A value greater than 180 will not be allowed for the expireAt field. ATS should display to customers that the life of the job posting on LinkedIn will be 180 days and reflect the status as CLOSED on LinkedIn after 180 days. Once the job posting is closed on LinkedIn, it will be good to provide customers the support to RENEW the job posting or configure Auto-Renew in which case, ATS/Partner can renew the jobs proactively after 180 days if the job posting is still in LIVE/OPEN state on partner platform",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Unified Job Posting API and certification",
+      "Anchor": "unified-job-posting-api-and-certification",
+      "SectionPath": [
+        "Unified Job Posting API and certification"
+      ],
+      "Text": "Single Job Posting API and Schema introduced for Recruiter System Connect, Apply Connect and Premium Job Posting programs\nAll Job Posting API details now curated under the Job Postings API page\nAdded Job Posting API Certification\nAdded Job Posting FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Jobs XML feed launch",
+      "Anchor": "basic-jobs-xml-feed-launch",
+      "SectionPath": [
+        "Basic Jobs XML feed launch"
+      ],
+      "Text": "Basic Jobs\nRelease of Basic Jobs XML feed format and FAQ.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

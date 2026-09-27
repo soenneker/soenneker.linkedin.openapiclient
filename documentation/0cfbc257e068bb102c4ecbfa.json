@@ -1,0 +1,195 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/urn-namespace",
+  "Title": "Common URNs \u0026 Namespaces",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Common URNs \u0026 Namespaces",
+      "Anchor": "common-urns--namespaces",
+      "SectionPath": [],
+      "Text": "This reference page displays a set of common URNs on V2 API platform. For reference on URNs, please see here . The bolded names are their namespace and you will find which V1 and V2 APIs correspond to each URN. V1 APIs utilize IDs and V2 APIs utilize URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common URNs \u0026 Namespaces",
+      "Anchor": "common-urns--namespaces",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "URN",
+        "Information",
+        "V2 Endpoints"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person ID is unique to each application.",
+            "Links": [],
+            "Values": [
+              "Person ID is unique to each application."
+            ]
+          },
+          {
+            "Text": "Profile API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:share:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share URN can be translated here.",
+            "Links": [],
+            "Values": [
+              "Share URN can be translated here."
+            ]
+          },
+          {
+            "Text": "UGC Post API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:originalArticle:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Will need to utilize newsArticle URN.",
+            "Links": [],
+            "Values": [
+              "Will need to utilize newsArticle URN."
+            ]
+          },
+          {
+            "Text": "Article API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:ugcPost:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This URN type currently captures video posts and will include more types in the future.",
+            "Links": [],
+            "Values": [
+              "This URN type currently captures video posts and will include more types in the future."
+            ]
+          },
+          {
+            "Text": "UGC Post API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:comment:({activityURN},{commentId})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Comment URN can be\u00A0translated here using the V2 Activities API.",
+            "Links": [],
+            "Values": [
+              "Comment URN can be\u00A0translated here using the V2 Activities API."
+            ]
+          },
+          {
+            "Text": "Social Action API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:like:({personUrn},{activityUrn})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Like URN can be\u00A0translated here using the V2 Activities API.",
+            "Links": [],
+            "Values": [
+              "Like URN can be\u00A0translated here using the V2 Activities API."
+            ]
+          },
+          {
+            "Text": "Social Action API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company ID translates to Organization Urn via urn:li:organization:{companyID}.\u00A0 Company URN and Organization URN are interchangeable through its namespace (e.g. urn:li:company:1 can become urn:li:organization:1). A School ID will migrate to an Organization URN with an ID translation (e.g. school ID 123 will be urn:li:organization:456).",
+            "Links": [],
+            "Values": [
+              "Company ID translates to Organization Urn via urn:li:organization:{companyID}.",
+              "Company URN and Organization URN are interchangeable through its namespace (e.g. urn:li:company:1 can become urn:li:organization:1).",
+              "A School ID will migrate to an Organization URN with an ID translation (e.g. school ID 123 will be urn:li:organization:456)."
+            ]
+          },
+          {
+            "Text": "Organization API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

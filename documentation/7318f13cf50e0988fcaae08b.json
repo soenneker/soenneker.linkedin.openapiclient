@@ -1,0 +1,517 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+  "Title": "Release Notes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/xapi",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Release Notes",
+      "Anchor": "release-notes",
+      "SectionPath": [],
+      "Text": "LinkedIn Learning API releases product updates to provide new features, security updates, and bug fixes. Notes on releases describing changes are contained in this doc.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2025 -- LearningAssets API Video Curation Expansion",
+      "Anchor": "june-2025----learningassets-api-video-curation-expansion",
+      "SectionPath": [
+        "June 2025 -- LearningAssets API Video Curation Expansion"
+      ],
+      "Text": "In this release, we\u2019ve introduced a new AssetFilteringCriteria query parameter to the LearningAssets API criteria finder. By specifying assetFilteringCriteria.isCurated=true, the endpoint will return all videos curated by an account administrator using the LMS video curation feature.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2025 -- LearningAssets API Video Curation Expansion",
+      "Anchor": "june-2025----learningassets-api-video-curation-expansion",
+      "SectionPath": [
+        "June 2025 -- LearningAssets API Video Curation Expansion"
+      ],
+      "Text": "Please consult the learningAssets API Reference to see the types of requests and other query parameters that are supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2025 -- LearningAssets API Certification Expansion",
+      "Anchor": "march-2025----learningassets-api-certification-expansion",
+      "SectionPath": [
+        "March 2025 -- LearningAssets API Certification Expansion"
+      ],
+      "Text": "In this release, we are enhancing the certification data exposed via the LearningAssets API. The following additional pieces of information will now be exposed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2025 -- LearningAssets API Certification Expansion",
+      "Anchor": "march-2025----learningassets-api-certification-expansion",
+      "SectionPath": [
+        "March 2025 -- LearningAssets API Certification Expansion"
+      ],
+      "Text": "Disciplines associated with the certification, such as \u0027Fields of Study\u0027 for NASBA or \u0027Knowledge Areas\u0027 for PMI\nNumber of credits associated with the certification, such as CPE for NASBA or PTU for PMI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2025 -- LearningAssets API Certification Expansion",
+      "Anchor": "march-2025----learningassets-api-certification-expansion",
+      "SectionPath": [
+        "March 2025 -- LearningAssets API Certification Expansion"
+      ],
+      "Text": "These additional pieces of information will be exposed alongside the existing certification data present in the LearningAssets API classifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "March 2025 -- LearningAssets API Certification Expansion",
+        "References"
+      ],
+      "Text": "Please refer to the following page for more details on how the classification object will contain the new certification information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "March 2025 -- LearningAssets API Certification Expansion",
+        "References"
+      ],
+      "Text": "LearningClassification Documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 2025 -- xAPI Engagement Metrics Expansion",
+      "Anchor": "january-2025----xapi-engagement-metrics-expansion",
+      "SectionPath": [
+        "January 2025 -- xAPI Engagement Metrics Expansion"
+      ],
+      "Text": "In this release, we are introducing new data to be shared via xAPI:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 2025 -- xAPI Engagement Metrics Expansion",
+      "Anchor": "january-2025----xapi-engagement-metrics-expansion",
+      "SectionPath": [
+        "January 2025 -- xAPI Engagement Metrics Expansion"
+      ],
+      "Text": "Course Progress\nVideo Completion\nLearning Path Completion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 2025 -- xAPI Engagement Metrics Expansion",
+      "Anchor": "january-2025----xapi-engagement-metrics-expansion",
+      "SectionPath": [
+        "January 2025 -- xAPI Engagement Metrics Expansion"
+      ],
+      "Text": "These new xAPI statements will only be sent if the account\u2019s administrator has enabled such statements in the LinkedIn Learning xAPI Integrations Admin Settings. Course completions are still enabled by default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references-1",
+      "SectionPath": [
+        "January 2025 -- xAPI Engagement Metrics Expansion",
+        "References"
+      ],
+      "Text": "Please refer to the following pages for more details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references-1",
+      "SectionPath": [
+        "January 2025 -- xAPI Engagement Metrics Expansion",
+        "References"
+      ],
+      "Text": "xAPI Learning Activity Webhooks\nLinkedIn Learning xAPI Administration Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0 Scope Field Addition",
+      "Anchor": "oauth-20-scope-field-addition",
+      "SectionPath": [
+        "OAuth 2.0 Scope Field Addition"
+      ],
+      "Text": "We also added an optional \u201CScope\u201D field for xAPI OAuth 2.0 settings, enabling administrators to explicitly specify scopes for access tokens. If no \u0022Scope\u0022 is provided in the LinkedIn Learning Admin Settings, we will send a default value depending on the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0 Scope Field Addition",
+      "Anchor": "oauth-20-scope-field-addition",
+      "SectionPath": [
+        "OAuth 2.0 Scope Field Addition"
+      ],
+      "Text": "This improvement allows admins to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0 Scope Field Addition",
+      "Anchor": "oauth-20-scope-field-addition",
+      "SectionPath": [
+        "OAuth 2.0 Scope Field Addition"
+      ],
+      "Text": "Precisely control the operations and resources that an access token can access.\nEnsure greater security and granularity in permission management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2024 -- Support for Admin-Curated Videos",
+      "Anchor": "november-2024----support-for-admin-curated-videos",
+      "SectionPath": [
+        "November 2024 -- Support for Admin-Curated Videos"
+      ],
+      "Text": "In this release, we are introducing a new feature that allows learning asset videos to be curated for enhanced LMS integration, along with two new classifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2024 -- Support for Admin-Curated Videos",
+      "Anchor": "november-2024----support-for-admin-curated-videos",
+      "SectionPath": [
+        "November 2024 -- Support for Admin-Curated Videos"
+      ],
+      "Text": "New Classifications:\n\nPROFESSIONAL_CERTIFICATE: Indicates that the learning asset is associated with a professional certificate.\nHANDS_ON_PRACTICE: Indicates that the learning asset includes hands-on activities, such as coding challenges.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Admin Curation",
+      "Anchor": "video-admin-curation",
+      "SectionPath": [
+        "Video Admin Curation"
+      ],
+      "Text": "New Field: curatedForLearningManagementSystem (available in AssetDetails for video assets)\n\nDescription: Specifies if a learning asset was curated by an account administrator for Learning Management System within LinkedIn Learning.\nSupported Values:\n\ntrue\nfalse\n\n\nNote: This field currently applies only to video assets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "August 2023 -- LinkedIn Learning Supports Additional Languages",
+      "Anchor": "august-2023----linkedin-learning-supports-additional-languages",
+      "SectionPath": [
+        "August 2023 -- LinkedIn Learning Supports Additional Languages"
+      ],
+      "Text": "In this release, we are making correction to language locale enum value from id to in for Indonesia. This change only applies to Language locale, and Country enum still remains as \u0027ID\u0027. Also, using old enum value id for language locale would not provide filter results for Indonesia. it is recommended to update all language locale fields with this enum value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022 -- LinkedIn Learning Supports Additional Languages",
+      "Anchor": "december-2022----linkedin-learning-supports-additional-languages",
+      "SectionPath": [
+        "December 2022 -- LinkedIn Learning Supports Additional Languages"
+      ],
+      "Text": "Beginning December 2022, LinkedIn Learning content will be available in these additional languages: Dutch, Italian, Turkish, and Polish. By mid-2023, content will also be available in Korean and Bahasa Indonesia. Using these new locales, partners can pull content via the LearningAssets API. Results with that return all languages will also return courses in these new languages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022 -- LinkedIn Learning Supports Additional Languages",
+      "Anchor": "december-2022----linkedin-learning-supports-additional-languages",
+      "SectionPath": [
+        "December 2022 -- LinkedIn Learning Supports Additional Languages"
+      ],
+      "Text": "New locales will show up in API results as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "December 2022 -- LinkedIn Learning Supports Additional Languages",
+      "Anchor": "december-2022----linkedin-learning-supports-additional-languages",
+      "SectionPath": [
+        "December 2022 -- LinkedIn Learning Supports Additional Languages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Language",
+        "Locale Language",
+        "Locale Country/Region",
+        "Availability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Dutch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "nl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 2022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Italian",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "it",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 2022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Polish",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "pl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 2022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Turkish",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 2022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Korean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ko",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "KR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forthcoming",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Bahasa Indonesia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "in",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 2023",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022 -- LinkedIn Learning Supports Additional Languages",
+      "Anchor": "december-2022----linkedin-learning-supports-additional-languages",
+      "SectionPath": [
+        "December 2022 -- LinkedIn Learning Supports Additional Languages"
+      ],
+      "Text": "See the following pages for updated documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022 -- LinkedIn Learning Supports Additional Languages",
+      "Anchor": "december-2022----linkedin-learning-supports-additional-languages",
+      "SectionPath": [
+        "December 2022 -- LinkedIn Learning Supports Additional Languages"
+      ],
+      "Text": "learningAssets API Reference\nlearningClassifications API Reference\nCriteria Finder API\nLocale and Type Finder API\nRetrieve an Individual Learning Object",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2022 -- Learning Activity xAPI Progressed Statements",
+      "Anchor": "may-2022----learning-activity-xapi-progressed-statements",
+      "SectionPath": [
+        "May 2022 -- Learning Activity xAPI Progressed Statements"
+      ],
+      "Text": "In this release, we will send xAPI Progressed statements for any customer that has enabled xAPI statements in LinkedIn Learning. You can find details on how to these statements are structured in our xAPI Learning Activity Webhooks documentation. Partners are strongly encouraged to send us 200-level response codes for these events and add support for progressed statements to their implementations. These changes will be live for all customers on July 18, 2022, but will be released to partner test accounts on June 7, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 2021 -- Learning Activity Reports Hub Update",
+      "Anchor": "october-2021----learning-activity-reports-hub-update",
+      "SectionPath": [
+        "October 2021 -- Learning Activity Reports Hub Update"
+      ],
+      "Text": "In this release, the Reporting API has migrated to a new reporting system. The API now supports all partner content \u0026 content partner types supported by LinkedIn Learning Hub. The Reporting API now also includes more granular data on learning activity with the addition of video-level metrics and learning path tracking. Query structure and return format will remain the same, with the exception of the contentSource response field being replaced with contentProviderName. To account for the changes, the contentSource parameter has been updated to accept four new enum values. For the first two months of this release, you\u2019ll only be able to access the new system by using one of the four new ContentSource enum values in your request, otherwise you will remain on the old system. After that, all requests which use old ContentSource enum values will be mapped to the new system automatically. INTERNAL will be mapped to ORGANIZATION, and EXTERNAL will be mapped to LINKEDIN_LEARNING. Please contact your LinkedIn representative for specific dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2021 -- Developer Application ID parameter in the course URLs",
+      "Anchor": "may-2021----developer-application-id-parameter-in-the-course-urls",
+      "SectionPath": [
+        "May 2021 -- Developer Application ID parameter in the course URLs"
+      ],
+      "Text": "With this release, course launch URLs have been modified to include an additional parameter. This is a backwards compatible change and all previously consumed and stored URLs will continue to function. But LMS\u0027s that consume URLs for course launches are strongly encouraged to perform a full synchronization with LinkedIn Learning\u0027s catalog to ensure the most up-to-date URLs are populated in the LMS. Here is an example of an updated launch URL response :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "May 2021 -- Developer Application ID parameter in the course URLs",
+      "Anchor": "may-2021----developer-application-id-parameter-in-the-course-urls",
+      "SectionPath": [
+        "May 2021 -- Developer Application ID parameter in the course URLs"
+      ],
+      "Text": "{\n    \u0022urn\u0022: \u0022urn:li:lyndaCourse:378453\u0022,\n    \u0022details\u0022: {\n        \u0022urls\u0022: {\n            \u0022webLaunch\u0022: \u0022https://www.linkedin.com/learning/onenote-2016-essential-training?dApp=12345678910\u0022,\n            \u0022ssoLaunch\u0022: \u0022https://www.linkedin.com/checkpoint/enterprise/login/12345678?pathWildcard=12345678\u0026application=learning\u0026dApp=12345678910\u0026redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Flearning%2Fonenote-2016-essential-training%3FdApp%3D12345678910%26u%3D12345678\u0022,\n            \u0022aiccLaunch\u0022: \u0022https://www.linkedin.com/learning/aicc?content=urn%3Ali%3AlyndaCourse%3A378453\u0026account=urn%3Ali%3AenterpriseApplicationInstance%3A%28urn%3Ali%3AenterpriseAccount%3A12345678%2C7580252%29\u0026dApp=12345678910\u0022\n        }\n    },\n    \u0022title\u0022: {\n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022OneNote 2016 Essential Training\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Continuing Education Units classifications",
+      "Anchor": "continuing-education-units-classifications",
+      "SectionPath": [
+        "December 2020 -- Continuing Education Units and Archived Course URLs",
+        "Continuing Education Units classifications"
+      ],
+      "Text": "In this release, Learning Assets API requests will contain Continuing Education Units (CEUs) classifications, which indicate whether a particular course qualifies for CEUs. The CEU classifications will be returned for GET and criteria FINDER requests to the /learningAssets endpoint alongside existing classifications in the classifications field. Here is an example classifications field featuring a couple new CEU type records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Continuing Education Units classifications",
+      "Anchor": "continuing-education-units-classifications",
+      "SectionPath": [
+        "December 2020 -- Continuing Education Units and Archived Course URLs",
+        "Continuing Education Units classifications"
+      ],
+      "Text": "classifications: [\n  {\n    \u0022associatedClassification\u0022: {\n      \u0022owner\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaCredentialingAgency:5\u0022,\n        \u0022name\u0022: {\n          \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          },\n          \u0022value\u0022: \u0022National Association of State Boards of Accountancy (NASBA)\u0022\n        }\n      },\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022CPE\u0022\n      },\n      \u0022urn\u0022: \u0022urn:li:lyndaCredentialingProgram:(urn:li:lyndaCredentialingAgency:5,5)\u0022,\n      \u0022type\u0022: \u0022CONTINUING_EDUCATION_UNIT\u0022\n    }\n  },\n  {\n    \u0022associatedClassification\u0022: {\n      \u0022owner\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaCredentialingAgency:1\u0022,\n        \u0022name\u0022: {\n          \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          },\n          \u0022value\u0022: \u0022Project Management Institute (PMI)\u00AE\u0022\n        }\n      },\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022PMI\u0022\n      },\n      \u0022urn\u0022: \u0022urn:li:lyndaCredentialingProgram:(urn:li:lyndaCredentialingAgency:1,1)\u0022,\n      \u0022type\u0022: \u0022CONTINUING_EDUCATION_UNIT\u0022\n    }\n  }\n]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Archived Course URLs",
+      "Anchor": "archived-course-urls",
+      "SectionPath": [
+        "December 2020 -- Continuing Education Units and Archived Course URLs",
+        "Archived Course URLs"
+      ],
+      "Text": "When LinkedIn Learning courses are deactivated, courses are designated INACTIVE in the API but internally are considered archived or retired. Archived courses are not displayed in search results but are still accessible by direct link and in custom learning paths. Retired courses are not accessible and not shown in search results (retired courses are a small subset of INACTIVE courses and are our oldest inactive courses). Historically, we did not surface course URLs for archived courses in URL responses, but with this release, we include these URLs in responses. After a course is marked INACTIVE and archived, the URLs will continue be returned in /learningAssets responses for that course if requested.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

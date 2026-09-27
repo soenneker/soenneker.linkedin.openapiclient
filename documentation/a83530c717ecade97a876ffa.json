@@ -1,0 +1,469 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+  "Title": "Glossary Terms",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Glossary Terms",
+      "Anchor": "glossary-terms",
+      "SectionPath": [],
+      "Text": "Learn about the industry terms and LinkedIn-specific terminology used throughout the Talent Solutions documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL (Access Control List)",
+      "Anchor": "acl-access-control-list",
+      "SectionPath": [
+        "A",
+        "ACL (Access Control List)"
+      ],
+      "Text": "An ACL is a list that defines which recruiters or team members have permission to view specific jobs and applications. It controls data visibility and access rights within an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant",
+      "Anchor": "applicant",
+      "SectionPath": [
+        "A",
+        "Applicant"
+      ],
+      "Text": "An applicant is a candidate who applies to a job by submitting the job application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application feedback",
+      "Anchor": "application-feedback",
+      "SectionPath": [
+        "A",
+        "Application feedback"
+      ],
+      "Text": "Application feedback is a notification sent to applicants about the status of their job application. Examples include application viewed, resume downloaded, and application rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS",
+      "Anchor": "ats",
+      "SectionPath": [
+        "A",
+        "ATS"
+      ],
+      "Text": "Applicant Tracking System (ATS) is software used by employers to manage recruiting and hiring processes, including job postings, applications, candidate tracking, and interviews.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch call",
+      "Anchor": "batch-call",
+      "SectionPath": [
+        "B",
+        "Batch call"
+      ],
+      "Text": "A batch call is an API request that processes multiple records in a single operation. Typically, LinkedIn recommends a maximum of 100 records per batch.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic job",
+      "Anchor": "basic-job",
+      "SectionPath": [
+        "B",
+        "Basic job"
+      ],
+      "Text": "A basic job is a free job posting on LinkedIn without paid promotion features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Candidate",
+      "Anchor": "candidate",
+      "SectionPath": [
+        "C",
+        "Candidate"
+      ],
+      "Text": "A candidate is a person being considered for a job opening.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Career site",
+      "Anchor": "career-site",
+      "SectionPath": [
+        "C",
+        "Career site"
+      ],
+      "Text": "A career site is an employer organization\u0027s dedicated website for listing job openings and accepting applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Child application",
+      "Anchor": "child-application",
+      "SectionPath": [
+        "C",
+        "Child application"
+      ],
+      "Text": "A child application is a developer application created programmatically by a partner using a parent application. Child applications are used to isolate data and traffic across individual customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM (Candidate Relationship Management)",
+      "Anchor": "crm-candidate-relationship-management",
+      "SectionPath": [
+        "C",
+        "CRM (Candidate Relationship Management)"
+      ],
+      "Text": "A CRM is software that stores and manages candidate information. It syncs with LinkedIn Recruiter to export profiles and track recruiting activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer",
+      "Anchor": "customer",
+      "SectionPath": [
+        "C",
+        "Customer"
+      ],
+      "Text": "A customer is an employer organization that recruits and hires talent. In partner integrations, a customer uses an ATS, CRM, or Job Distributor provider\u0027s software to manage their recruiting processes and is a user of at least one of LinkedIn\u0027s talent products. The partner builds integrations that enable customers to sync jobs, receive applications, and access LinkedIn features directly within their provider\u0027s product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer application",
+      "Anchor": "developer-application",
+      "SectionPath": [
+        "D",
+        "Developer application"
+      ],
+      "Text": "A developer application is an entity that provides credentials for API access. Developer applications have configured settings that determine API endpoint access, authorization capabilities, and branding via name and logo.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Full profile",
+      "Anchor": "full-profile",
+      "SectionPath": [
+        "F",
+        "Full profile"
+      ],
+      "Text": "A full profile is a complete LinkedIn member profile containing detailed information such as work history, education, skills, certifications, and recommendations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InMail",
+      "Anchor": "inmail",
+      "SectionPath": [
+        "I",
+        "InMail"
+      ],
+      "Text": "InMail is LinkedIn\u0027s messaging feature that allows recruiters to contact members they are not connected to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration context",
+      "Anchor": "integration-context",
+      "SectionPath": [
+        "I",
+        "Integration context"
+      ],
+      "Text": "Integration context is a URN that identifies the organization or contract for an integration and is used in API requests. It represents the LinkedIn identifiers associated with the customer using the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration type",
+      "Anchor": "integration-type",
+      "SectionPath": [
+        "I",
+        "Integration type"
+      ],
+      "Text": "Integration type specifies which LinkedIn product integration is being used. Examples include APPLY_CONNECT (Apply Connect integration), CSA_API (Recruiter System Connect data access), PROFILE_PLUGIN (profile viewing in ATS), ONE_CLICK_EXPORT (candidate export from Recruiter), and UNIFIED_SEARCH (search across both systems).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job application",
+      "Anchor": "job-application",
+      "SectionPath": [
+        "J",
+        "Job application"
+      ],
+      "Text": "A job application is a submission of a candidate\u0027s information for a specific job opening.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job distributor",
+      "Anchor": "job-distributor",
+      "SectionPath": [
+        "J",
+        "Job distributor"
+      ],
+      "Text": "A job distributor is a third-party service that distributes job postings to multiple job boards and platforms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job posting",
+      "Anchor": "job-posting",
+      "SectionPath": [
+        "J",
+        "Job posting"
+      ],
+      "Text": "A job posting is a listing of a job opening published to attract applicants. It can be on LinkedIn, career sites, or job boards.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job requisition",
+      "Anchor": "job-requisition",
+      "SectionPath": [
+        "J",
+        "Job requisition"
+      ],
+      "Text": "A job requisition is an internal record of a job opening in an ATS. It manages sourcing and hiring workflow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job slot",
+      "Anchor": "job-slot",
+      "SectionPath": [
+        "J",
+        "Job slot"
+      ],
+      "Text": "A job slot is a paid job posting allocation purchased from LinkedIn that allows premium or promoted job postings with enhanced visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job state",
+      "Anchor": "job-state",
+      "SectionPath": [
+        "J",
+        "Job state"
+      ],
+      "Text": "Job state is the current status of a job posting. Values include LISTED (active and visible), CLOSED (no longer accepting applications), or UNLISTED (not visible on LinkedIn).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member",
+      "Anchor": "member",
+      "SectionPath": [
+        "M",
+        "Member"
+      ],
+      "Text": "A member is an individual with an account on LinkedIn. A member becomes an applicant after they apply to a job posting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0",
+      "Anchor": "oauth-20",
+      "SectionPath": [
+        "O",
+        "OAuth 2.0"
+      ],
+      "Text": "OAuth 2.0 is an industry-standard protocol for authentication and authorization. LinkedIn Talent APIs use the Client Credentials Flow (2-legged OAuth) for server-to-server authentication between partner systems and LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "One Click Export",
+      "Anchor": "one-click-export",
+      "SectionPath": [
+        "O",
+        "One Click Export"
+      ],
+      "Text": "One Click Export is the action in Recruiter System Connect or CRM Connect of sending a LinkedIn member\u0027s profile data from LinkedIn Recruiter to an ATS or CRM system when requested by a Recruiter user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Onsite Apply",
+      "Anchor": "onsite-apply",
+      "SectionPath": [
+        "O",
+        "Onsite Apply"
+      ],
+      "Text": "Onsite Apply in the Apply Connect program refers to a job application submitted directly on LinkedIn using LinkedIn\u0027s application form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization",
+      "Anchor": "organization",
+      "SectionPath": [
+        "O",
+        "Organization"
+      ],
+      "Text": "An organization is a company or business entity that has a LinkedIn page. Organizations can post jobs, manage applications, and interact with members through LinkedIn\u0027s platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parent application",
+      "Anchor": "parent-application",
+      "SectionPath": [
+        "P",
+        "Parent application"
+      ],
+      "Text": "A parent application is the main developer application under which child applications can be created for multi-tenant scenarios.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner",
+      "Anchor": "partner",
+      "SectionPath": [
+        "P",
+        "Partner"
+      ],
+      "Text": "A partner is an ATS/CRM provider or job distributor that integrates with LinkedIn\u0027s APIs to serve their customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Premium job (promoted job)",
+      "Anchor": "premium-job-promoted-job",
+      "SectionPath": [
+        "P",
+        "Premium job (promoted job)"
+      ],
+      "Text": "A premium job (also called a promoted job) is a paid job posting with enhanced visibility and promotion on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push event",
+      "Anchor": "push-event",
+      "SectionPath": [
+        "P",
+        "Push event"
+      ],
+      "Text": "A push event is a real-time notification sent from LinkedIn to a partner system via webhook when specific events occur, such as receiving a new job application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate limit",
+      "Anchor": "rate-limit",
+      "SectionPath": [
+        "R",
+        "Rate limit"
+      ],
+      "Text": "A rate limit is the maximum number of requests allowed within a time period. Exceeding this limit returns a 429 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resync",
+      "Anchor": "resync",
+      "SectionPath": [
+        "R",
+        "Resync"
+      ],
+      "Text": "Resync is the process of updating job information between an ATS and LinkedIn to resolve inconsistencies and ensure data consistency.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stub profile",
+      "Anchor": "stub-profile",
+      "SectionPath": [
+        "S",
+        "Stub profile"
+      ],
+      "Text": "A stub profile is a limited version of a LinkedIn member profile containing basic information such as name, headline, and current employer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification",
+      "Anchor": "verification",
+      "SectionPath": [
+        "V",
+        "Verification"
+      ],
+      "Text": "A confirmation, issued by LinkedIn, that a member\u0027s real-world identity or association with an organization is genuine, based on evidence such as a government ID or a corporate work email.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification data",
+      "Anchor": "verification-data",
+      "SectionPath": [
+        "V",
+        "Verification data"
+      ],
+      "Text": "The set of a member\u0027s verification records shared with certified partners so recruiters can view LinkedIn-issued trust signals on an applicant without leaving the ATS. Verification data is a positive signal only; its absence carries no negative meaning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification record",
+      "Anchor": "verification-record",
+      "SectionPath": [
+        "V",
+        "Verification record"
+      ],
+      "Text": "A single verification held by a member, describing one verified dimension (identity or workplace), the method used, and when it was last verified.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

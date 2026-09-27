@@ -1,0 +1,81 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview",
+  "Title": "LinkedIn Learning Single Sign-On (SSO) Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Single Sign-On (SSO) Overview",
+      "Anchor": "linkedin-learning-single-sign-on-sso-overview",
+      "SectionPath": [],
+      "Text": "Enterprise Single Sign-On (SSO) allows your company\u0027s employees to sign into\nsupported LinkedIn applications using their corporate credentials instead of\ntheir LinkedIn credentials.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Single Sign-On (SSO) Overview",
+      "Anchor": "linkedin-learning-single-sign-on-sso-overview",
+      "SectionPath": [],
+      "Text": "Using SSO and integrating with an SSO provider is not required to use LinkedIn\napplications. If SSO is not configured, your employees can authenticate\nthemselves using their current personal LinkedIn credentials or create a new\nmember account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Single Sign-On (SSO) Overview",
+      "Anchor": "linkedin-learning-single-sign-on-sso-overview",
+      "SectionPath": [],
+      "Text": "The administrator for your organization account can configure your company to authenticate to LinkedIn Learning using SSO through integration with LinkedIn\u0027s enterprise platform, or can use a third-party Identity Provider (IdP).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Your company email account\nFull administrator privileges\nIdentity Provider (IdP) administrative privileges",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why you Should Use Single Sign-On",
+      "Anchor": "why-you-should-use-single-sign-on",
+      "SectionPath": [
+        "Why you Should Use Single Sign-On"
+      ],
+      "Text": "Leverage your existing company\u0027s authentication\nBetter security when employees use your company\u0027s established password protocols rather than their individual accounts\nEasier user management when employees leave your company",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported SSO Protocols",
+      "Anchor": "supported-sso-protocols",
+      "SectionPath": [
+        "Supported SSO Protocols"
+      ],
+      "Text": "LinkedIn Learning currently supports SAML version 2.0, LTI 1.0 and 1.1, and Google SSO.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

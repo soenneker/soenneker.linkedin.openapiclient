@@ -1,0 +1,591 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
+  "Title": "Full Profile Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Full Profile Fields",
+      "Anchor": "full-profile-fields",
+      "SectionPath": [],
+      "Text": "To access any of the following full profile fields, your app must request the r_fullprofile member permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Full Profile Fields",
+      "Anchor": "full-profile-fields",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Full Profile Fields",
+      "Anchor": "full-profile-fields",
+      "SectionPath": [],
+      "Text": "Access to r_fullprofile is now closed. Consider requesting access to the r_liteprofile instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Full Profile Fields",
+      "Anchor": "full-profile-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable address that a member wants to display on the profile.\u00A0Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backgroundPicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata about the member\u0027s background image in the profile. This replaces existing backgroundImage. See Background Picture Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "birthDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Birth date of the member. Represented as a date object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#date"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "certifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the certifications that the member holds.\u00A0See Certification Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "courses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing courses the member has taken.\u00A0See Course Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the member\u0027s educational background.\u00A0See Education Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable first name of the member. Represented as a MultiLocaleString object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geoLocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s location listed in their profile; may be null if no location is selected. GeoUrn defined by standardization is used to specify the location.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable headline of member\u0027s choosing. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "honors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the various honors and awards the member has received.\u00A0See Honor Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifying value for the member. Referenced as personId in other API documentation pages. Can also be referenced as an URN such as urn:li:person:{personId}. This value is linked to your specific application. Any attempts to use it with a different application will result in a 404 error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industryId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifying value for the industry.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industryName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated. Refer to industryId. Localizable name of industry as entered by the member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this resource.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable last name of the member. Represented as a MultiLocaleString object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the firstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedHeadline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the headline field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the lastName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedMaidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the maidenName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedPhoneticFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version fo the firstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedPhoneticLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the lastName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable maiden name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the organizations that the member is in.\u00A0See Organization Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "patents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the various patents associated with the member.\u00A0See Patent Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneNumbers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The phone numbers of the member. See Phone Number Fields for a description of the fields available within this object. These phone numbers are listed under the \u0022Contact Info\u0022 of the profile section.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneticFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Phonetic representation of the firstName.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneticLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Phonetic representation of the lastName.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employment history. See Positions for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata about the member\u0027s picture in the profile. This will replace pictureInfo. See Profile Picture Fields for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "projects",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the various projects associated with the member.\u00A0See Project Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the various publications associated with the member.\u00A0See Publication Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the skills that the member holds.\u00A0See Skill Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile summary.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "supportedLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The supported locales of the member. Represented in an array of Locale.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#locale"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testScores",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the test scores that the member have.\u00A0See Test Score Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The vanity name of the member. Vanity name is represented as a string is used for the public profile URL: www.linkedin.com/in/{vanityName}.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "volunteeringExperiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the member\u0027s volunteering experience.\u00A0See Volunteering Experience Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "volunteeringInterests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "he volunteering interests of the member has or supports.\u00A0See Volunteering Interest Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "websites",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized websites the member wants displayed on the profile. See Website Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

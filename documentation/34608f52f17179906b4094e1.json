@@ -1,0 +1,358 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+  "Title": "LinkedIn Learning Edcast Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Edcast and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Deep Integration Functionality",
+      "Anchor": "edcast-deep-integration-functionality",
+      "SectionPath": [
+        "Edcast Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Deep Integration Functionality",
+      "Anchor": "edcast-deep-integration-functionality",
+      "SectionPath": [
+        "Edcast Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (English only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Deep Integration Functionality",
+      "Anchor": "edcast-deep-integration-functionality",
+      "SectionPath": [
+        "Edcast Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Deep Integration Functionality",
+      "Anchor": "edcast-deep-integration-functionality",
+      "SectionPath": [
+        "Edcast Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Deep Integration Functionality",
+      "Anchor": "edcast-deep-integration-functionality",
+      "SectionPath": [
+        "Edcast Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Edcast integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Deep Integration Functionality",
+      "Anchor": "edcast-deep-integration-functionality",
+      "SectionPath": [
+        "Edcast Deep Integration Functionality"
+      ],
+      "Text": "An active Edcast LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Edcast LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Edcast\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and Edcast to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to content. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses and\nadds courses at a rate of 20-30 per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Edcast deep integration with LinkedIn Learning uses LinkedIn Learning APIs\nto refresh the content library on a daily basis. This feature ensures LinkedIn Learning\nmakes new content available within 24 hours of release. LinkedIn Learning\naggregates and indexes all content titles and descriptions to accommodate\nkeyword searches and support efficient discoverability. Edcast supports\nautomatic syncing of English only content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "LinkedIn Learning recommends SAML SSO for all enterprise learning platform\nintegrations. SSO authentication can be configured in your LinkedIn Learning\nAdmin settings. Since Edcast supports SAML SSO, you have two configuration\noptions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "Connect directly to Edcast \u2013 To enable SAML SSO with Edcast, contact\ntheir customer support team for assistance in generating identity provider\nmetadata.\n\nConnect to your organization\u2019s identity management solution \u2013 Most\norganizations have a centrally managed identity management solution like\nAzure AD, Okta, or AD FS which can be configured to authenticate users into\nenterprise applications with their network credentials. This system can be\nconfigured to authenticate users into LinkedIn Learning and is generally\nmanaged by your organizations IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "For more information about SAML SSO, review the LinkedIn Learning SSO Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Configuration",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses xAPI to communicate a\nlearner\u2019s progress back to Edcast when the learner launches content from the\nLMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Edcast to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API, then expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter the name of your learning platform (e.g., \u0022Edcast\u0022) in the Application Name field.\n\nEnter a short description of the integration use case in the Application description field. For example, \u201CEdcast content catalog sync\u201D.\n\nUnder Choose keys there are two\u202Fcheckboxes\u202F\u2013\u202FContent\u202Fand\u202FReport. Select\u00A0Content.\u202F\u00A0\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nCopy the generated Client Id and Client Secret and paste the values into the corresponding Edcast fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI Configuration Steps",
+      "Anchor": "xapi-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "xAPI Configuration Steps"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI Configuration Steps",
+      "Anchor": "xapi-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "xAPI Configuration Steps"
+      ],
+      "Text": "If this is your first time configuring the integration, leave your xAPI settings blank. If you attempt to enable xAPI before saving the form, you will encounter an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI Configuration Steps",
+      "Anchor": "xapi-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "xAPI Configuration Steps"
+      ],
+      "Text": "To review the LinkedIn Learning xAPI configuration workflow, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI Configuration Steps",
+      "Anchor": "xapi-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "xAPI Configuration Steps"
+      ],
+      "Text": "To communicate learner activity back to Edcast, you must enable xAPI in your Linkedin Learning admin settings. To enable xAPI in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI Configuration Steps",
+      "Anchor": "xapi-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "xAPI Configuration Steps"
+      ],
+      "Text": "In the Edcast Admin screen, select Integrations \u003E Oauth2 Apps in the left-hand navigation menu.\n\nIn the Create OAuth2 Credentials screen, enter \u0022LinkedIn Learning\u0022 in the Name field and select \u0022LinkedIn Learning\u0022 from the Source drop down.\n\n\nClick Create.\n\nCopy the client_id and client_secret for use in the LinkedIn Learning Admin settings.\n\nLog in to LinkedIn Learning. If you are not already in the Admin screen, click Go to Admin.\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\nIn the Add xAPI integration screen, enter the integration name in the Integration name field. For example, \u0022Edcast reporting\u0022.\n\nIn the User Type drop down, select Email.\n\nIn the OAuth Server URL (token) field, enter https://\u003Cyour-edcast-instance-url\u003E/api/lrs/v1/xapi/oauth2/token, and in the Tenant Server URL (statement) field, enter https://\u003Cyour-edcast-instance-url\u003E/api/lrs/v1/xapi/statements.\n\nCopy and paste the following items provided by Edcast into LinkedIn Learning:\n\nClient Secret\n\nClient ID\n\n\n\nClick Enable.\n\nYou have enabled xAPI reporting in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Configuration",
+      "Anchor": "edcast-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Edcast Configuration"
+      ],
+      "Text": "Once you have gathered the required information, follow Edcast\u2019s configuration instructions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Edcast Configuration",
+      "Anchor": "edcast-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Edcast Configuration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting from their Edcast LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

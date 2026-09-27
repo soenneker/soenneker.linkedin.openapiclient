@@ -23,9 +23,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string FileIdentifyingUrlPathSegment { get; set; }
 #endif
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public long? Height { get; set; }
         /// <summary>The width property</summary>
-        public int? Width { get; set; }
+        public long? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseCoverImageArtifactsItem"/> and sets the default values.
         /// </summary>
@@ -52,8 +52,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fileIdentifyingUrlPathSegment", n => { FileIdentifyingUrlPathSegment = n.GetStringValue(); } },
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "width", n => { Width = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetLongValue(); } },
+                { "width", n => { Width = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("fileIdentifyingUrlPathSegment", FileIdentifyingUrlPathSegment);
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("width", Width);
+            writer.WriteLongValue("height", Height);
+            writer.WriteLongValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,1309 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+  "Title": "Conversation Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Conversation Ads API",
+      "Anchor": "conversation-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversation Ads API",
+      "Anchor": "conversation-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversation Ads API",
+      "Anchor": "conversation-ads-api",
+      "SectionPath": [],
+      "Text": "Linkedin is introducing its next generation of APIs to create and manage Conversation Ads, enabling advertisers to better deliver automated messages to a targeted LinkedIn member\u0027s inbox.\nThis API replaces the previous /sponsoredConversations API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s Ad Accounts. In addition, authenticated member must have READ access for a Company Page. Have one of the following Ad Account roles:ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Create a SponsoredConversation.\nIf you\u0027re using attachments in a conversation, upload SponsoredMessageContent Asset.\nCreate a tree of SponsoredMessageContent to represent a conversation.\nUpdate SponsoredConversation with reference to first SponsoredMessageContent.\nCreate an AdInMailContent using GuidedReplies as sub-content by using the Urn of the completed Sponsored Conversation.\nCreate a DRAFT conversation ad creative with the adInMailContent URN returned in the previous step as its content reference. See Create and Manage Creatives.\nTest the DRAFT conversation ad.\nMake any necessary modifications based on testing.\nThe creative should be in DRAFT status. Activate the creative by updating the creative status to ACTIVE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "The creative will be directed to the review queue after activation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "A \u0022Not Interested\u0022 CTA is automatically included on intro messages for Conversation Ads. The CTA is applied at render time and is not exposed in the API. Use test sends to preview the behavior.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Conversations",
+      "Anchor": "sponsored-conversations",
+      "SectionPath": [
+        "Sponsored Conversations"
+      ],
+      "Text": "This section explains how to manage sponsored ad conversations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SponsoredConversation Schema",
+      "Anchor": "sponsoredconversation-schema",
+      "SectionPath": [
+        "Sponsored Conversations",
+        "SponsoredConversation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredConversationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(read-only) ID key for the current conversation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Account URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(create-only) The parent account associated with this conversation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstMessageContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Message Content URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(update-only) Update the conversation with its first message content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headlineText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The conversation headline\u0027s text. This text is displayed both in the headline view and detail view, specified by the advertiser. When absent headline will display first line of the first message content.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "SponsoredConversation Schema",
+      "Anchor": "sponsoredconversation-schema",
+      "SectionPath": [
+        "Sponsored Conversations",
+        "SponsoredConversation Schema"
+      ],
+      "Text": "Validations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SponsoredConversation Schema",
+      "Anchor": "sponsoredconversation-schema",
+      "SectionPath": [
+        "Sponsored Conversations",
+        "SponsoredConversation Schema"
+      ],
+      "Text": "The specified parentAccount must exist and be valid.\nThe user must have the permission to manage the account.\nYou can\u0027t set the firstMessageContent when initially creating a sponsoredConversation. It can only be set by a subsequent partial update call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Sponsored Conversation",
+      "Anchor": "create-a-sponsored-conversation",
+      "SectionPath": [
+        "Create a Sponsored Conversation"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Sponsored Conversation",
+      "Anchor": "create-a-sponsored-conversation",
+      "SectionPath": [
+        "Create a Sponsored Conversation"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Sponsored Conversation",
+      "Anchor": "create-a-sponsored-conversation",
+      "SectionPath": [
+        "Create a Sponsored Conversation"
+      ],
+      "Text": "{\n  \u0022parentAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Sponsored Conversation",
+      "Anchor": "create-a-sponsored-conversation",
+      "SectionPath": [
+        "Create a Sponsored Conversation"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022parentAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Sponsored Conversation",
+      "Anchor": "create-a-sponsored-conversation",
+      "SectionPath": [
+        "Create a Sponsored Conversation"
+      ],
+      "Text": "Successful response will have Status 201 Created and the ID in the x-restli-id response header. For example,urn:li:sponsoredConversation:164380864",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Sponsored Conversation",
+      "Anchor": "get-a-sponsored-conversation",
+      "SectionPath": [
+        "Get a Sponsored Conversation"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Sponsored Conversation",
+      "Anchor": "get-a-sponsored-conversation",
+      "SectionPath": [
+        "Get a Sponsored Conversation"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversationAds/{conversationUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Sponsored Conversation",
+      "Anchor": "get-a-sponsored-conversation",
+      "SectionPath": [
+        "Get a Sponsored Conversation"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/conversationAds/urn:li:sponsoredConversation:2988042\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Sponsored Conversation",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022urn:li:sponsoredConversation:2988042\u0022,\n  \u0022parentAccount\u0022: \u0022urn:li:sponsoredAccount:504513845\u0022,\n  \u0022headlineText\u0022: \u0022subject of this ad\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Sponsored Conversation",
+      "Anchor": "update-a-sponsored-conversation",
+      "SectionPath": [
+        "Update a Sponsored Conversation"
+      ],
+      "Text": "In the following example, the firstMessageContent field is changed to point to the first message of the conversation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Sponsored Conversation",
+      "Anchor": "update-a-sponsored-conversation",
+      "SectionPath": [
+        "Update a Sponsored Conversation"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Sponsored Conversation",
+      "Anchor": "update-a-sponsored-conversation",
+      "SectionPath": [
+        "Update a Sponsored Conversation"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Sponsored Conversation",
+      "Anchor": "update-a-sponsored-conversation",
+      "SectionPath": [
+        "Update a Sponsored Conversation"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n     \u0022$set\u0022: {\n        \u0022firstMessageContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:185204:14253)\u0022\n     }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Sponsored Conversation",
+      "Anchor": "update-a-sponsored-conversation",
+      "SectionPath": [
+        "Update a Sponsored Conversation"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/urn:li:sponsoredConversation:185204\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022patch\u0022: {\n     \u0022$set\u0022: {\n        \u0022firstMessageContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:185204:14253)\u0022\n     }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Sponsored Conversation",
+      "Anchor": "update-a-sponsored-conversation",
+      "SectionPath": [
+        "Update a Sponsored Conversation"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Sponsored Conversations",
+      "Anchor": "batch-get-sponsored-conversations",
+      "SectionPath": [
+        "Batch Get Sponsored Conversations"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Sponsored Conversations",
+      "Anchor": "batch-get-sponsored-conversations",
+      "SectionPath": [
+        "Batch Get Sponsored Conversations"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversationAds?ids=List({conversation-urn1},{conversation-urn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Sponsored Conversations",
+      "Anchor": "batch-get-sponsored-conversations",
+      "SectionPath": [
+        "Batch Get Sponsored Conversations"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/conversationAds?ids=List(urn:li:sponsoredConversation:704255,urn:li:sponsoredConversation:703695)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Sponsored Conversations",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {\n        \u0022urn:li:sponsoredConversation:704255\u0022: 200,\n        \u0022urn:li:sponsoredConversation:703695\u0022: 200\n    },\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredConversation:704255\u0022:\n         {\n            \u0022id\u0022: \u0022urn:li:sponsoredConversation:704255\u0022,\n            \u0022parentAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n\n        },\n        \u0022urn:li:sponsoredConversation:703695\u0022:\n        {\n            \u0022id\u0022: \u0022urn:li:sponsoredConversation:703695\u0022,\n            \u0022parentAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SponsoredMessageContent Schema",
+      "Anchor": "sponsoredmessagecontent-schema",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "SponsoredMessageContent Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredMessageContentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(read-only) The ID key for this message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sponsoredConversation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredConversationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The conversation to which this message belongs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "nextAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredMessageContentUrn or SponsoredMessageOption[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether this message\u2019s next action is another message or an array of options",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "bodySource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either a text string, an AdFormUrn, or a mediaAttachment consisting of an ImageUrn and an optional text string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A message can consist of either simple text, or a lead generation form, or an image attachment with an optional attachment text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SponsoredMessageOption Schema",
+      "Anchor": "sponsoredmessageoption-schema",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "SponsoredMessageOption Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "replyType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Allowed values: LEAD_GENERATION SIMPLE_REPLY EXTERNAL_WEBSITE LEAD_GENERATION_THANK_YOU",
+            "Links": [],
+            "Values": [
+              "LEAD_GENERATION",
+              "SIMPLE_REPLY",
+              "EXTERNAL_WEBSITE",
+              "LEAD_GENERATION_THANK_YOU"
+            ]
+          },
+          {
+            "Text": "The type of the reply this option will generate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "nextContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredMessageContentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The next message this option will generate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text displayed on the button",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If specified, the button will redirect to this URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "The following validations occur when managing SponsoredMessageContent, otherwise it will throw validation errors (4xx error code).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "All SponsoredMessageContents within a conversation has the following tree level checks:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "The maximum number of SponsoredMessageContents within a conversation is 25.\nAll SponsoredMessageContentUrn references must exist.\nCyclical references between the message nodes are not allowed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "Individual SponsoredMessageContent Checks:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "If the bodySource is a leadGenerationForm:\n\nThe message type must be OPTION_PROVIDING.\nIt must have at least one LEAD_GENERATION_THANK_YOU SponsoredMessageOption.\nThe leadGenerationForm account needs to match the Conversation parentAccount.\n\n\nIf the bodySource is text:\n\nThe text length must be less than or equal to 500 characters.\n\n\nIf the bodySource is mediaAttachment:\n\nThe attachment must be an imageUrn.\nThe text length must be less than or equal to 500 characters.\nIf nextAction is an array of SponsoredMessageOption, the array must consist of at least 1 SponsoredMessageOption but no more than 5.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "Individual SponsoredMessageOption Validations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations",
+      "Anchor": "validations",
+      "SectionPath": [
+        "Sponsored Message Contents",
+        "Validations"
+      ],
+      "Text": "optionText must be between 1 and 35 characters.\nIf the type of the option is LEAD_GENERATION:\n\nThe nextAction field must exist and is required to point to a SponsoredMessageContent with a bodySource of type leadGenerationForm.\n\n\nIf the type of the option is LEAD_GENERATION_THANK_YOU:\n\nThe bodySource of this SponsoredMessageContent must be leadGenerationForm.\nNote that the optionText will always be set to the thank you message from the ad form regardless of the input provided for the SponsoredMessageOption optionText.\n\n\nIf the type of the option is EXTERNAL_WEBSITE:\n\nThe landingPage field must exist.\nThe nextAction must not point to a SponsoredMessageContent with a bodySource of type leadGenerationForm.\n\n\nIf the type of the option is SIMPLE_REPLY:\n\nThe landingPage must not exist.\nThe nextAction must exist.\n\n\nThe nextAction must not point to a SponsoredMessageContent with a bodySource of type leadGenerationForm.\nIf the type of the option is UNKNOWN:\n\nThis is always invalid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "{conversationAdsId} is returned in the response header as shown in the first step when you create a Sponsored Conversation using (POST /conversationAds).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022bodySource\u0022: {\n     \u0022text\u0022: \u0022test message\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022bodySource\u0022: {\n     \u0022text\u0022: \u0022test message\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022bodySource\u0022: {\n    \u0022mediaAttachment\u0022: {\n      \u0022attachment\u0022: \u0022urn:li:image:C5506AQGB9eP_4gNpEQ\u0022,\n      \u0022text\u0022: \u0022test text\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022bodySource\u0022: {\n    \u0022mediaAttachment\u0022: {\n      \u0022attachment\u0022: \u0022urn:li:image:C5506AQGB9eP_4gNpEQ\u0022,\n      \u0022text\u0022: \u0022test text\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022bodySource\u0022: {\n    \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n  },\n  \u0022nextAction\u0022:{\n    \u0022options\u0022:[\n      {\n        \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022bodySource\u0022: {\n    \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n  },\n  \u0022nextAction\u0022:{\n    \u0022options\u0022:[\n      {\n        \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022\n      }\n    ]\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022bodySource\u0022: {\n    \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n  },\n  \u0022nextAction\u0022:{\n    \u0022options\u0022:[\n      {\n        \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022\n      },\n      {\n        \u0022replyType\u0022: \u0022SIMPLE_REPLY\u0022,\n        \u0022nextContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14253)\u0022,\n        \u0022optionText\u0022: \u0022Simple reply\u0022\n      },\n      {\n        \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022,\n        \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022bodySource\u0022: {\n    \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n  },\n  \u0022nextAction\u0022:{\n    \u0022options\u0022:[\n      {\n        \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022\n      },\n      {\n        \u0022replyType\u0022: \u0022SIMPLE_REPLY\u0022,\n        \u0022nextContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14253)\u0022,\n        \u0022optionText\u0022: \u0022Simple reply\u0022\n      },\n      {\n        \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022,\n        \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022\n      }\n    ]\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Sponsored Message Content",
+      "Anchor": "create-sponsored-message-content",
+      "SectionPath": [
+        "Create Sponsored Message Content"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header, e.g. \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Sponsored Message Content",
+      "Anchor": "get-sponsored-message-content",
+      "SectionPath": [
+        "Get Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Sponsored Message Content",
+      "Anchor": "get-sponsored-message-content",
+      "SectionPath": [
+        "Get Sponsored Message Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents/{messageUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Sponsored Message Content",
+      "Anchor": "get-sponsored-message-content",
+      "SectionPath": [
+        "Get Sponsored Message Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents/{messageUrn}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Get Sponsored Message Content",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)\u0022,\n  \u0022sponsoredConversation\u0022: \u0022urn:li:sponsoredConversation:186604\u0022,\n  \u0022bodySource\u0022: {\n    \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n  },\n  \u0022nextAction\u0022:{\n    \u0022options\u0022:[\n      {\n        \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022\n      },\n      {\n        \u0022replyType\u0022: \u0022SIMPLE_REPLY\u0022,\n        \u0022nextContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14253)\u0022,\n        \u0022optionText\u0022: \u0022Simple reply\u0022\n      },\n      {\n        \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n        \u0022optionText\u0022: \u0022Visit website\u0022,\n        \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get All Sponsored Message Content",
+      "Anchor": "get-all-sponsored-message-content",
+      "SectionPath": [
+        "Get All Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get All Sponsored Message Content",
+      "Anchor": "get-all-sponsored-message-content",
+      "SectionPath": [
+        "Get All Sponsored Message Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get All Sponsored Message Content",
+      "Anchor": "get-all-sponsored-message-content",
+      "SectionPath": [
+        "Get All Sponsored Message Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get All Sponsored Message Content",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)\u0022,\n      \u0022sponsoredConversation\u0022: \u0022urn:li:sponsoredConversation:186604\u0022,\n      \u0022bodySource\u0022: {\n        \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n      },\n      \u0022nextAction\u0022:{\n        \u0022options\u0022:[\n          {\n            \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n            \u0022optionText\u0022: \u0022Visit website\u0022\n          },\n          {\n            \u0022replyType\u0022: \u0022SIMPLE_REPLY\u0022,\n            \u0022nextContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14253)\u0022,\n            \u0022optionText\u0022: \u0022Simple reply\u0022\n          },\n          {\n            \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n            \u0022optionText\u0022: \u0022Visit website\u0022,\n            \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022\n          }\n        ]\n      }\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14278)\u0022,\n      \u0022sponsoredConversation\u0022: \u0022urn:li:sponsoredConversation:186604\u0022,\n      \u0022bodySource\u0022: {\n        \u0022text\u0022: \u0022Sample text\u0022\n      },\n      \u0022nextAction\u0022:{\n        \u0022options\u0022:[\n          {\n            \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n            \u0022optionText\u0022: \u0022Other website\u0022,\n            \u0022landingPage\u0022: \u0022http://www.microsoft.com\u0022\n          }\n        ]\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Sponsored Message Content",
+      "Anchor": "update-sponsored-message-content",
+      "SectionPath": [
+        "Update Sponsored Message Content"
+      ],
+      "Text": "In the following example, the bodySource text field is updated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Sponsored Message Content",
+      "Anchor": "update-sponsored-message-content",
+      "SectionPath": [
+        "Update Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Sponsored Message Content",
+      "Anchor": "update-sponsored-message-content",
+      "SectionPath": [
+        "Update Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents/{messageUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Sponsored Message Content",
+      "Anchor": "update-sponsored-message-content",
+      "SectionPath": [
+        "Update Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022bodySource\u0022: {\n         \u0022text\u0022: \u0022New updated text\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Sponsored Message Content",
+      "Anchor": "update-sponsored-message-content",
+      "SectionPath": [
+        "Update Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents/{messageUrn}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022bodySource\u0022: {\n         \u0022text\u0022: \u0022New updated text\u0022\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Sponsored Message Content",
+      "Anchor": "update-sponsored-message-content",
+      "SectionPath": [
+        "Update Sponsored Message Content"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Sponsored Message Content",
+      "Anchor": "batch-create-sponsored-message-content",
+      "SectionPath": [
+        "Batch Create Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Sponsored Message Content",
+      "Anchor": "batch-create-sponsored-message-content",
+      "SectionPath": [
+        "Batch Create Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Sponsored Message Content",
+      "Anchor": "batch-create-sponsored-message-content",
+      "SectionPath": [
+        "Batch Create Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [ {\n    \u0022bodySource\u0022: {\n      \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n    },\n    \u0022nextAction\u0022:{\n      \u0022options\u0022:[\n        {\n          \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n          \u0022optionText\u0022: \u0022Visit website\u0022\n        },\n        {\n          \u0022replyType\u0022: \u0022SIMPLE_REPLY\u0022,\n          \u0022nextContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14253)\u0022,\n          \u0022optionText\u0022: \u0022Simple reply\u0022\n        },\n        {\n          \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n          \u0022optionText\u0022: \u0022Visit website\u0022,\n          \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022\n        }\n      ]\n    }\n  },{\n    \u0022bodySource\u0022: {\n      \u0022text\u0022: \u0022Sample text\u0022\n    },\n    \u0022nextAction\u0022:{\n      \u0022options\u0022:[\n        {\n          \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n          \u0022optionText\u0022: \u0022Other website\u0022,\n          \u0022landingPage\u0022: \u0022http://www.microsoft.com\u0022\n        }\n      ]\n    }\n\n  }]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Sponsored Message Content",
+      "Anchor": "batch-create-sponsored-message-content",
+      "SectionPath": [
+        "Batch Create Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationAdsId}/sponsoredMessageContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method:BATCH_CREATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022elements\u0022: [ {\n    \u0022bodySource\u0022: {\n      \u0022leadGenerationForm\u0022: \u0022urn:li:adForm:434835\u0022\n    },\n    \u0022nextAction\u0022:{\n      \u0022options\u0022:[\n        {\n          \u0022replyType\u0022: \u0022LEAD_GENERATION_THANK_YOU\u0022,\n          \u0022optionText\u0022: \u0022Visit website\u0022\n        },\n        {\n          \u0022replyType\u0022: \u0022SIMPLE_REPLY\u0022,\n          \u0022nextContent\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14253)\u0022,\n          \u0022optionText\u0022: \u0022Simple reply\u0022\n        },\n        {\n          \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n          \u0022optionText\u0022: \u0022Visit website\u0022,\n          \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022\n        }\n      ]\n    }\n  },{\n    \u0022bodySource\u0022: {\n      \u0022text\u0022: \u0022Sample text\u0022\n    },\n    \u0022nextAction\u0022:{\n      \u0022options\u0022:[\n        {\n          \u0022replyType\u0022: \u0022EXTERNAL_WEBSITE\u0022,\n          \u0022optionText\u0022: \u0022Other website\u0022,\n          \u0022landingPage\u0022: \u0022http://www.microsoft.com\u0022\n        }\n      ]\n    }\n\n  }]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Sponsored Message Content",
+      "Anchor": "batch-update-sponsored-message-content",
+      "SectionPath": [
+        "Batch Update Sponsored Message Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Sponsored Message Content",
+      "Anchor": "batch-update-sponsored-message-content",
+      "SectionPath": [
+        "Batch Update Sponsored Message Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents?ids=List({message-urn1},{message-urn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Sponsored Message Content",
+      "Anchor": "batch-update-sponsored-message-content",
+      "SectionPath": [
+        "Batch Update Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022bodySource\u0022: {\n            \u0022text\u0022: \u0022New updated text\u0022\n          }\n        }\n      }\n    },\n    \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14278)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022bodySource\u0022: {\n            \u0022text\u0022: \u0022New updated text2\u0022\n          }\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Sponsored Message Content",
+      "Anchor": "batch-update-sponsored-message-content",
+      "SectionPath": [
+        "Batch Update Sponsored Message Content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents?ids=List({message-urn1},{message-urn2})\u0027\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method:BATCH_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022bodySource\u0022: {\n            \u0022text\u0022: \u0022New updated text\u0022\n          }\n        }\n      }\n    },\n    \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14278)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022bodySource\u0022: {\n            \u0022text\u0022: \u0022New updated text2\u0022\n          }\n        }\n      }\n    }\n  }\n}\u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Update Sponsored Message Content",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/conversationAds/urn:li:sponsoredConversation:186604/sponsoredMessageContents/urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14250)\u0022,\n            \u0022status\u0022: 204,\n            \u0022id\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14250)\u0022\n        },\n        {\n            \u0022location\u0022: \u0022/conversationAds/urn:li:sponsoredConversation:186604/sponsoredMessageContents/urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14251)\u0022,\n            \u0022status\u0022: 204,\n            \u0022id\u0022: \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14251)\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Sponsored Message Content",
+      "Anchor": "batch-delete-sponsored-message-content",
+      "SectionPath": [
+        "Batch Delete Sponsored Message Content"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/conversationAds/{conversationUrn}/sponsoredMessageContents?ids=List({message-urn1},{message-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Sponsored Message Content",
+      "Anchor": "batch-delete-sponsored-message-content",
+      "SectionPath": [
+        "Batch Delete Sponsored Message Content"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)\u0022: {\n      \u0022status\u0022: 204\n    },\n    \u0022urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14278)\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "Batch Delete Sponsored Message Content",
+        "References"
+      ],
+      "Text": "Legacy /sponsoredConversations API",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

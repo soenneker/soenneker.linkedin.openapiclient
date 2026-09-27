@@ -1,0 +1,45 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+  "Title": "v2 Reference",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/article-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/media-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/invitation-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/urn-namespace"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Fields \u0026 Schemas",
+      "Anchor": "fields--schemas",
+      "SectionPath": [
+        "Fields \u0026 Schemas"
+      ],
+      "Text": "Digital Media Asset Schema\nInvitation Schema\nMessage Schema\nObject Types\nProfile Fields\nReputation Schema\nStandardized Data\nUGC Types",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Miscellaneous",
+      "Anchor": "migrations--miscellaneous",
+      "SectionPath": [
+        "Migrations \u0026 Miscellaneous"
+      ],
+      "Text": "Common URNs \u0026 Namespaces\nRich Media Platform Deprecation\nDEPRECATED - Media Migration\nDEPRECATED - Article Migration",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

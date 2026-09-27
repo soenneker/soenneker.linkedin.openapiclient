@@ -1,0 +1,1001 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form-response",
+  "Title": "Lead Gen Form Response",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form-response",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Form Response",
+      "Anchor": "lead-gen-form-response",
+      "SectionPath": [],
+      "Text": "The Lead Gen Form Response API provides information of leads collected from Lead Gen Forms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Form Response",
+      "Anchor": "lead-gen-form-response",
+      "SectionPath": [],
+      "Text": "The service currently provides the Owner method that finds all leads given for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about Lead Gen Form Responses. Restricted to page admins with the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYSTLEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST",
+              "LEAD_GEN_FORMS_MANAGER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID to identify the lead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the lead representing the origination of the lead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying which form this lead responds to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Owner of the lead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)EventUrnStandardizedProductUrn",
+            "Links": [],
+            "Values": [
+              "OrganizationUrn](../pages-profiles/organizations.md)",
+              "EventUrn",
+              "StandardizedProductUrn"
+            ]
+          },
+          {
+            "Text": "URN identifying which entity the lead is associated with. This field is optional for test leads and other use cases where leads don\u0027t have any associatedEntity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "submittedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch timestamp that recording when the form response was submitted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "formResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FormResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answers provided by the submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether this is a test lead created for testing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadType Sub-Object",
+      "Anchor": "leadtype-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadType Sub-Object"
+      ],
+      "Text": "LeadType is a sub-object in the Lead Form Response that indicates the type of the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadType Sub-Object",
+      "Anchor": "leadtype-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadType Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "COMPANY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from the company page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from the event page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ORGANIZATION_PRODUCT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from an organization product page.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "FormResponse Sub-Object",
+      "Anchor": "formresponse-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "FormResponse Sub-Object"
+      ],
+      "Text": "FormResponse is a sub-object in the Lead Form Response representing the form response from submitter, which contains a set of answers and consentResponses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "FormResponse Sub-Object",
+      "Anchor": "formresponse-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "FormResponse Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "answers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answer[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answers provided by the submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consentResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ConsentResponse[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Responses to the consents that are provided by the submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Answer Sub-Object",
+      "Anchor": "answer-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "Answer Sub-Object"
+      ],
+      "Text": "Answer is a sub-object in FormResponse, structured as an element in the array named answers. It represents the submitter\u0027s response to the questions in the Lead Gen Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Answer Sub-Object",
+      "Anchor": "answer-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "Answer Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "questionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "answerDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of TextQuestionAnswer, MultipleChoiceAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answer provided by a submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TextQuestionAnswer Sub-Object",
+      "Anchor": "textquestionanswer-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "TextQuestionAnswer Sub-Object"
+      ],
+      "Text": "TextQuestionAnswer is a sub-object in the Answer representing the response to a TextQuestion in text format.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TextQuestionAnswer Sub-Object",
+      "Anchor": "textquestionanswer-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "TextQuestionAnswer Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "answer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a single text-entry question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultipleChoiceAnswer Sub-Object",
+      "Anchor": "multiplechoiceanswer-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "MultipleChoiceAnswer Sub-Object"
+      ],
+      "Text": "MultipleChoiceAnswer is a sub-object in the Answer representing a form response to a particular Lead Gen Form, which contains a set of answers provided by the submitter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswer Sub-Object",
+      "Anchor": "multiplechoiceanswer-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "MultipleChoiceAnswer Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "options",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The array of the chosen option ids for a MultipleChoiceQuestion by the submitter. Default as empty array if No choice answered by submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ConsentResponse Sub-Object",
+      "Anchor": "consentresponse-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "ConsentResponse Sub-Object"
+      ],
+      "Text": "ConsentResponse is a sub-object in FormResponse, structured as an element in the array named consentResponses. It represents the submitter\u0027s response to the consents in the legal info in the Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ConsentResponse Sub-Object",
+      "Anchor": "consentresponse-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "ConsentResponse Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "consentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the consent, unique within LeadgenFormLegalInfo object.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accepted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consent answer provided by a submitter. True if the submitter chooses to opt-in.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lead Gen Form Response",
+      "Anchor": "retrieve-lead-gen-form-response",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lead Gen Form Response",
+      "Anchor": "retrieve-lead-gen-form-response",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of LeadGenerationAuthorizationActionType.LEAD_GENERATION_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response",
+        "OWNER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response",
+        "OWNER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLeadGenFormResponse?q=owner\u0026owner={ORGANIZATION_URN}\u0026leadType=(leadType:EVENT)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response",
+        "OWNER",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaLeadGenFormResponse?q=owner\u0026owner={ORGANIZATION_URN}\u0026leadType=(leadType:EVENT)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response",
+        "OWNER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: \u0022urn:li:organization:1\u0022,\n            \u0022leadType\u0022: \u0022EVENT\u0022,\n            \u0022versionedLeadGenFormUrn\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:1,1)\u0022,\n            \u0022id\u0022: \u00221\u0022,\n            \u0022submittedAt\u0022: 1701167083538,\n            \u0022associatedEntity\u0022: \u0022urn:li:event:1\u0022,\n            \u0022formResponse\u0022: {\n                \u0022consentResponses\u0022: [\n                    {\n                        \u0022accepted\u0022: false,\n                        \u0022consentId\u0022: 1\n                    }\n                ],\n                \u0022answers\u0022: [\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 1\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 2\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 3\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 4\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 5\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u00226\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: Test\n                    }\n                ]\n            },\n            \u0022testLead\u0022: false\n        },\n        {\n            \u0022owner\u0022: \u0022urn:li:organization:1\u0022,\n            \u0022leadType\u0022: \u0022EVENT\u0022,\n            \u0022versionedLeadGenFormUrn\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:1,1)\u0022,\n            \u0022id\u0022: \u00222\u0022,\n            \u0022submittedAt\u0022: 1701167276545,\n            \u0022associatedEntity\u0022: \u0022urn:li:event:1\u0022,\n            \u0022formResponse\u0022: {\n                \u0022consentResponses\u0022: [\n                    {\n                        \u0022accepted\u0022: false,\n                        \u0022consentId\u0022: 1\n                    }\n                ],\n                \u0022answers\u0022: [\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 1\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 2\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 3\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 4\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 5\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Test\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 6\n                    }\n                ]\n            },\n            \u0022testLead\u0022: false\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lead Gen Form Response",
+        "OWNER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN that owns the lead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner=ORGANIZATION_URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of lead to fetch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadType=(leadType:EVENT)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Form the lead is collected under",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "versionedFormUrn=VERSIONED_FORM_URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the entity the lead is collected under",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "associatedEntity=EVENT_URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "submittedAtTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range to fetch for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "submittedAtTimeRange=(start:1,end:2)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "Error Message",
+        "Description",
+        "Error Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. This includes cases where the caller lacks permission to access the specified organization (e.g., querying with a lead type such as COMPANY for an organization the caller is not authorized to manage).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure your developer application has the required permissions and that you have the appropriate admin role for the target organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

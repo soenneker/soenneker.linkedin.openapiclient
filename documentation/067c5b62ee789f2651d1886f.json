@@ -1,0 +1,776 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders",
+  "Title": "Retrieve Recruiter Contract Seatholders",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "A LinkedIn Recruiter seat contains a LinkedIn user who is licensed for specific roles within LinkedIn Recruiter. To utilize the Recruiter Prospect Interaction APIs, you will need the Recruiter Contract seatholder details in order to properly attribute the InMails and Prospect Notes to the end users in your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "All API requests require authorization . Additionally, API requests return paged results; details on paging through results can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "Person URN should be used to match the ATS user to Recruiter seatholders. The ID returned in this call refers to the Seat ID, which is referenced in the other Recruiter Prospect Interaction API calls as a Seat URN (e.g. urn:li:seat:123456789).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "When retrieve seatholders for a contract, to ensure you get the expected result, pagination parameter(start=0\u0026count=10) should be passed into seatsV2 API call.\nWithout pagination parameter, API only returns ten records as default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recruiter Contract Seatholders",
+      "Anchor": "retrieve-recruiter-contract-seatholders",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v2/seatsV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/seatsV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve seatholders",
+      "Anchor": "retrieve-seatholders",
+      "SectionPath": [
+        "Retrieve seatholders"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve seatholders",
+      "Anchor": "retrieve-seatholders",
+      "SectionPath": [
+        "Retrieve seatholders"
+      ],
+      "Text": "The SeatsV2 requires usage of pagination. Requests that do not specify the start parameter will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve seatholders",
+      "Anchor": "retrieve-seatholders",
+      "SectionPath": [
+        "Retrieve seatholders"
+      ],
+      "Text": "Retrieve seatholders for a contract using the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve seatholders",
+      "Anchor": "retrieve-seatholders",
+      "SectionPath": [
+        "Retrieve seatholders"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/seatsV2?q=attributes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve seatholders",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contracts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Recruiter contract ID(s)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contract URN in format urn:li:contract:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find seatholders associated with specific contract(s). Multiple allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "states",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the state of a seatholder. Supported states: ACTIVE, INACTIVE, INVITED, PARKED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find seatholders by seat state. Recommended to filter state by ACTIVE",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve seatholders",
+        "AuditStamp Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actor in format of urn:li:enterpriseProfile:xxx",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the creation of this record represented as an epoch timestamp in milliseconds (UTC). The value must be positive and cannot be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve seatholders",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/seatsV2?q=attributes\u0026contracts=urn:li:contract:123456789\u0026start=0\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve seatholders",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022firstName\u0022: \u0022testFirst1\u0022,\n            \u0022lastName\u0022: \u0022testLast1\u0022,\n            \u0022contract\u0022: \u0022urn:li:contract:123456789\u0022,\n            \u0022member\u0022: \u0022urn:li:person:a1b2c3d4\u0022,\n            \u0022state\u0022: \u0022ACTIVE\u0022,\n            \u0022seatRoles\u0022: [\n                \u0022ADMIN_SEAT\u0022,\n                \u0022SOURCER_ADD_PROSPECT\u0022,\n                \u0022SOURCER_EDIT_PROSPECT\u0022,\n                \u0022SOURCER_SEAT\u0022,\n                \u0022HP_ADMIN_SEAT\u0022,\n                \u0022HP_RECRUITER_SEARCHER_SEAT\u0022,\n                \u0022HP_SOURCER_SEAT\u0022\n            ],\n            \u0022id\u0022: 142636035,\n            \u0022email\u0022: \u0022test1@linkedin.com\u0022,\n            \u0022created\u0022: {\n                \u0022time\u0022: 1490641864000\n            }            \n        },\n        {\n            \u0022firstName\u0022: \u0022testFirst2\u0022,\n            \u0022lastName\u0022: \u0022testLast2\u0022,\n            \u0022contract\u0022: \u0022urn:li:contract:123456789\u0022,\n            \u0022member\u0022: \u0022urn:li:person:a2b3c4d5\u0022,\n            \u0022state\u0022: \u0022ACTIVE\u0022,\n            \u0022seatRoles\u0022: [\n                \u0022ADMIN_SEAT\u0022,\n                \u0022SOURCER_ADD_PROSPECT\u0022,\n                \u0022SOURCER_EDIT_PROSPECT\u0022,\n                \u0022SOURCER_SEAT\u0022,\n                \u0022HP_ADMIN_SEAT\u0022,\n                \u0022HP_RECRUITER_SEARCHER_SEAT\u0022,\n                \u0022HP_SOURCER_SEAT\u0022\n            ],\n            \u0022id\u0022: 142636055,\n            \u0022email\u0022: \u0022test2@linkedin.com\u0022,\n            \u0022created\u0022: {\n                \u0022time\u0022: 1490641864000\n            }              \n        },\n        {\n            \u0022firstName\u0022: \u0022testFirst3\u0022,\n            \u0022lastName\u0022: \u0022testLast3\u0022,\n            \u0022contract\u0022: \u0022urn:li:contract:123456789\u0022,\n            \u0022member\u0022: \u0022urn:li:person:a3b4c5d6\u0022,\n            \u0022state\u0022: \u0022ACTIVE\u0022,\n            \u0022seatRoles\u0022: [\n                \u0022ADMIN_SEAT\u0022,\n                \u0022SOURCER_ADD_PROSPECT\u0022,\n                \u0022SOURCER_EDIT_PROSPECT\u0022,\n                \u0022SOURCER_SEAT\u0022,\n                \u0022HP_ADMIN_SEAT\u0022,\n                \u0022HP_RECRUITER_SEARCHER_SEAT\u0022,\n                \u0022HP_SOURCER_SEAT\u0022\n            ],\n            \u0022id\u0022: 142636075,\n            \u0022email\u0022: \u0022test3@linkedin.com\u0022,\n            \u0022created\u0022: {\n                \u0022time\u0022: 1490641864000\n            }              \n        },\n        {\n            \u0022firstName\u0022: \u0022testFirst4\u0022,\n            \u0022lastName\u0022: \u0022testLast4\u0022,\n            \u0022contract\u0022: \u0022urn:li:contract:123456789\u0022,\n            \u0022member\u0022: \u0022urn:li:person:a4b5c6d7\u0022,\n            \u0022state\u0022: \u0022ACTIVE\u0022,\n            \u0022seatRoles\u0022: [\n                \u0022ADMIN_SEAT\u0022,\n                \u0022SOURCER_ADD_PROSPECT\u0022,\n                \u0022SOURCER_EDIT_PROSPECT\u0022,\n                \u0022SOURCER_SEAT\u0022,\n                \u0022HP_ADMIN_SEAT\u0022,\n                \u0022HP_RECRUITER_SEARCHER_SEAT\u0022,\n                \u0022HP_SOURCER_SEAT\u0022\n            ],\n            \u0022id\u0022: 142636095,\n            \u0022email\u0022: \u0022test4@linkedin.com\u0022,\n            \u0022created\u0022: {\n                \u0022time\u0022: 1490641864000\n            }              \n        },\n        {\n            \u0022firstName\u0022: \u0022testFirst5\u0022,\n            \u0022lastName\u0022: \u0022testLast5\u0022,\n            \u0022contract\u0022: \u0022urn:li:contract:123456789\u0022,\n            \u0022member\u0022: \u0022urn:li:person:a5b7c9d0\u0022,\n            \u0022state\u0022: \u0022ACTIVE\u0022,\n            \u0022seatRoles\u0022: [\n                \u0022ADMIN_SEAT\u0022,\n                \u0022SOURCER_ADD_PROSPECT\u0022,\n                \u0022SOURCER_EDIT_PROSPECT\u0022,\n                \u0022SOURCER_SEAT\u0022,\n                \u0022HP_ADMIN_SEAT\u0022,\n                \u0022HP_RECRUITER_SEARCHER_SEAT\u0022,\n                \u0022HP_SOURCER_SEAT\u0022\n            ],\n            \u0022id\u0022: 142636105,\n            \u0022email\u0022: \u0022test5@linkedin.com\u0022,\n            \u0022created\u0022: {\n                \u0022time\u0022: 1490641864000\n            }              \n        }\n    ],\n    \u0022metadata\u0022: \u0022seatsV2\u0022,\n    \u0022paging\u0022: {\n        \u0022total\u0022: 10,\n        \u0022count\u0022: 5,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/seatsV2?contracts=urn%3Ali%3Acontract%3A123456789\u0026count=5\u0026q=attributes\u0026start=5\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }        \n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Migrated Fields from Seats to SeatsV2",
+      "Anchor": "",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2"
+      ],
+      "Text": "",
+      "Headers": [
+        "Seats",
+        "SeatsV2",
+        "Format",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contractId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contractUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change in contractUrn values",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "states",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Changed from boolean to enum",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "seatRoles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Changed from boolean to array of enum",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Migrated Fields from Seats to SeatsV2",
+      "Anchor": "",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/seatsV2?q=attributes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/seatsV2?q=attributes\u0026count=2\u0026start=0\u0026contracts=urn%3Ali%3Acontract%3A12345\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/seatsV2?q=attributes\u0026count=2\u0026start=0\u0026contracts=urn%3Ali%3Acontract%3A12345\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/seatsV2?q=attributes\u0026count=2\u0026start=0\u0026contracts=urn%3Ali%3Acontract%3A12345\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/seatsV2?q=attributes\u0026count=2\u0026start=0\u0026contracts=urn%3Ali%3Acontract%3A12345\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 2,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/seatsV2?contracts=urn%3Ali%3Acontract%3A12345\u0026count=2\u0026q=attributes\u0026start=2\u0022\n      }\n    ],\n    \u0022total\u0022: 38\n  },\n  \u0022metadata\u0022: {\n    \u0022count\u0022: 2,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/x-protobuf2\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/seatsV2?contracts=urn%3Ali%3Acontract%3A283683741\u0026count=2\u0026q=attributes\u0026start=2\u0022\n      }\n    ],\n    \u0022total\u0022: 38\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022createdAt\u0022: {\n        \u0022actor\u0022: \u0022urn:li:enterpriseApplicationUsage:(urn:li:enterpriseApplication:enterprisePlatform,APPLICATION_INSTANCE_MOVE)\u0022,\n        \u0022time\u0022: 1631726149000\n      },\n      \u0022seatRoles\u0022: [],\n      \u0022contract\u0022: \u0022urn:li:contract:12345\u0022,\n      \u0022member\u0022: \u0022urn:li:person:abcde\u0022,\n      \u0022seatId\u0022: 245951016,\n      \u0022state\u0022: \u0022INACTIVE\u0022,\n      \u0022email\u0022: \u0022test1@linkedin.com\u0022\n    },\n    {\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022createdAt\u0022: {\n        \u0022actor\u0022: \u0022urn:li:enterpriseProfile:(urn:li:enterpriseAccount:106286740,168473366)\u0022,\n        \u0022time\u0022: 1754598917809\n      },\n      \u0022seatRoles\u0022: [\n        \u0022HP_SOURCER_SEAT\u0022,\n        \u0022SOURCER_SEAT\u0022,\n        \u0022HP_ADMIN_SEAT\u0022,\n        \u0022HP_PUBLIC_NOTE_VIEWER\u0022,\n        \u0022HP_RECRUITER_SEARCHER_SEAT\u0022,\n        \u0022SOURCER_ADD_PROSPECT\u0022,\n        \u0022SOURCER_EDIT_PROSPECT\u0022,\n        \u0022ADMIN_SEAT\u0022\n      ],\n      \u0022contract\u0022: \u0022urn:li:contract:12345\u0022,\n      \u0022member\u0022: \u0022urn:li:person:xyzwv\u0022,\n      \u0022seatId\u0022: 1544674653,\n      \u0022state\u0022: \u0022ACTIVE\u0022,\n      \u0022email\u0022: \u0022test2@linkedin.com\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the seat holder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the seat holder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the hiring platform contract the seat belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique ID of the member holding the seat within LinkedIn system, in format of urn:li:person:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of the seat.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seatRoles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract-level roles assigned to the seat.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of roles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seatId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the seat.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The primary email to be used with the seat.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The auditStamp including actor and the timestamp corresponding to the creation of this record.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders?view=li-lts-2026-04#auditstamp-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp Schema",
+      "Anchor": "auditstamp-schema-1",
+      "SectionPath": [
+        "Migrated Fields from Seats to SeatsV2",
+        "AuditStamp Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actor in format of urn:li:enterpriseProfile:xxx",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the creation of this record represented as an epoch timestamp in milliseconds (UTC). The value must be positive and cannot be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

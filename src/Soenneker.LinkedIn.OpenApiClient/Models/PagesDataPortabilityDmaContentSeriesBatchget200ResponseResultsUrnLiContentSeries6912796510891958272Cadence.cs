@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration property</summary>
-        public int? Duration { get; set; }
+        public long? Duration { get; set; }
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "duration", n => { Duration = n.GetIntValue(); } },
+                { "duration", n => { Duration = n.GetLongValue(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("duration", Duration);
+            writer.WriteLongValue("duration", Duration);
             writer.WriteStringValue("unit", Unit);
             writer.WriteAdditionalData(AdditionalData);
         }

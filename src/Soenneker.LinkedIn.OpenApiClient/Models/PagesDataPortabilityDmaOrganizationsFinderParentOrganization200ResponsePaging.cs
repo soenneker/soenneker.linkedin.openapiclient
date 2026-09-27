@@ -15,17 +15,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public int? Count { get; set; }
+        public long? Count { get; set; }
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Links { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponsePagingLinksItem>? Links { get; set; }
 #nullable restore
 #else
-        public UntypedNode Links { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponsePagingLinksItem> Links { get; set; }
 #endif
         /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        public long? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponsePaging"/> and sets the default values.
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetIntValue(); } },
-                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "start", n => { Start = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponsePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponsePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
-            writer.WriteObjectValue<UntypedNode>("links", Links);
-            writer.WriteIntValue("start", Start);
+            writer.WriteLongValue("count", Count);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponsePagingLinksItem>("links", Links);
+            writer.WriteLongValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

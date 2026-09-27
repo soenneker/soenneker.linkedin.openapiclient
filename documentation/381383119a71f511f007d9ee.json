@@ -1,0 +1,1627 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+  "Title": "Reporting",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [],
+      "Text": "The LinkedIn Reporting APIs provide key insights on performance such as clicks, impressions, ad spend and professional demographics information such as metrics by professional demographic values at the account, campaign or creative levels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_ads_reporting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve reporting for advertising accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics",
+      "Anchor": "ad-analytics",
+      "SectionPath": [
+        "Ad Analytics"
+      ],
+      "Text": "The adAnalytics endpoint supports three finder methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics",
+      "Anchor": "ad-analytics",
+      "SectionPath": [
+        "Ad Analytics"
+      ],
+      "Text": "Analytics: Use when grouping by one element (known as a pivot).\nStatistics: Use when grouping by up to three elements.\nAttributedRevenueMetrics: Use to request revenue attribution metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics",
+      "Anchor": "ad-analytics",
+      "SectionPath": [
+        "Ad Analytics"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics",
+      "Anchor": "ad-analytics",
+      "SectionPath": [
+        "Ad Analytics"
+      ],
+      "Text": "The adAnalytics endpoint currently does not support pagination.\nSome metrics are not available with professional demographic pivots. These are noted in the metrics available table.\nAn empty response is returned if there\u0027s no activity to report or if you don\u0027t have read access to the requested advertising data.\nRequests to adAnalytics can have a long list of query parameters causing them to exceed max request URL lengths. If you encounter a 414 error or expect to have long request URLs, refer to the query tunneling guide for how to adjust your calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retention",
+      "Anchor": "retention",
+      "SectionPath": [
+        "Ad Analytics",
+        "Retention"
+      ],
+      "Text": "The retention period for data depends on the type of request. Following are the types of requests and their retention periods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retention",
+      "Anchor": "retention",
+      "SectionPath": [
+        "Ad Analytics",
+        "Retention"
+      ],
+      "Text": "Requests for performance data (for example, by account, campaign, or creative) are retained for ten (10) years.\nProfessional demographics data (for example, by member title, job function, or seniority) is retained for two (2) years.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Ad Analytics",
+        "Restrictions"
+      ],
+      "Text": "The following restrictions apply based on your query parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Ad Analytics",
+        "Restrictions"
+      ],
+      "Text": "An empty response is returned if there\u0027s no activity to report or if you don\u0027t have read access to the requested advertising data.\nPagination is not supported.\nSome metrics are not available with specific pivots (e.g. conversion or professional demographics pivots). These are noted in the metrics available table.\nWhen timeGranularity=ALL, if either the start or end date of a request range is outside the 6-month daily retention period, the dates are automatically rounded to month boundaries, and the entire month\u0027s data is included in the response. Example: If a request is made on 8/1/2021 with dateRange.start = 1/15/2021 and dateRange.end = 7/15/2021, then dateRange.start is automatically adjusted to 1/1/2021. This is because 1/15/2021 is outside of a 6 month retention period for daily data, whereas monthly data for January is still within the 2 year retention period.\nResponse is limited to 15,000 elements.\nProfessional Demographic pivots only support the top 100 professional demographic values for each creative for each day. Example: If a creative is shown to members with 1,000 different titles, a query for the impressions for that creative with a MEMBER_JOB_TITLE pivot returns the 100 titles with the most impressions for that creative for that day.\nProfessional Demographic values are not returned for ads receiving engagement from too few members.\nProfessional Demographic pivots have a minimum threshold of 3 events. Professional Demographic values with less than 3 events are dropped from the query results.\nProfessional Demographic pivots don\u0027t support carousel metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delays",
+      "Anchor": "delays",
+      "SectionPath": [
+        "Ad Analytics",
+        "Delays"
+      ],
+      "Text": "Performance metrics such as metrics about a creative, campaign, or account are near real-time. Metrics based on any member professional demographics such as company size and job function can be delayed by 12 to 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delays",
+      "Anchor": "delays",
+      "SectionPath": [
+        "Ad Analytics",
+        "Delays"
+      ],
+      "Text": "The videoWatchTime and averageVideoWatchTime metrics are subject to a delay of up to 48 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accuracy",
+      "Anchor": "accuracy",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy"
+      ],
+      "Text": "To protect LinkedIn member privacy, professional demographic metrics are approximate. To learn more about this approximation, refer to this article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accuracy",
+      "Anchor": "accuracy",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy"
+      ],
+      "Text": "Because metrics are approximate, you can observe minor inconsistencies when comparing:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accuracy",
+      "Anchor": "accuracy",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy"
+      ],
+      "Text": "Similar time ranges. Example: Reporting on results over 7 days vs 8 days.\nThe sum of daily metrics to the full corresponding time period.\nReporting levels. Example: Adding campaign level data and comparing it to account level data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accuracy",
+      "Anchor": "accuracy",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy"
+      ],
+      "Text": "To minimize the effect of this approximation, select:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accuracy",
+      "Anchor": "accuracy",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy"
+      ],
+      "Text": "A full time period instead of adding up daily metrics for that time period.\nThe highest reporting level you want to view. Example: selecting account level data instead of adding up campaign level data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Non-Targeted Companies",
+      "Anchor": "non-targeted-companies",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy",
+        "Non-Targeted Companies"
+      ],
+      "Text": "Analytics can be pivoted by company name to organize results by company name and understand which companies saw a campaign or ad creative. These results can include companies that were not targeted in a campaign even if the advertiser explicitly targeted specific companies to see their campaign. This is possible for any of the following reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Non-Targeted Companies",
+      "Anchor": "non-targeted-companies",
+      "SectionPath": [
+        "Ad Analytics",
+        "Accuracy",
+        "Non-Targeted Companies"
+      ],
+      "Text": "LinkedIn members who work at more than one company.\nLinkedIn members who switch jobs during the campaign\u0027s duration.\nAudience expansion is turned on.\nTargeted companies are parent companies of other companies.\nAdvertiser changed the companies targeted during the campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Metrics Available",
+      "Anchor": "metrics-available",
+      "SectionPath": [
+        "Metrics Available"
+      ],
+      "Text": "For more details on the schema information, refer to the Metrics Available table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Professional Demographic Pivot Fields Restrictions",
+      "Anchor": "professional-demographic-pivot-fields-restrictions",
+      "SectionPath": [
+        "Metrics Available",
+        "Professional Demographic Pivot Fields Restrictions"
+      ],
+      "Text": "The following fields are present only for non-demographic pivots (i.e. not MEMBER_):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Professional Demographic Pivot Fields Restrictions",
+      "Anchor": "professional-demographic-pivot-fields-restrictions",
+      "SectionPath": [
+        "Metrics Available",
+        "Professional Demographic Pivot Fields Restrictions"
+      ],
+      "Text": "conversionValueInLocalCurrency\ncardImpressions\ncardClicks\nviralCardImpressions\nviralCardClicks\napproximateMemberReach",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Finder",
+      "Anchor": "analytics-finder",
+      "SectionPath": [
+        "Analytics Finder"
+      ],
+      "Text": "The Analytics Finder is used to specify a single pivot.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Finder",
+      "Anchor": "analytics-finder",
+      "SectionPath": [
+        "Analytics Finder"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Analytics Finder",
+      "Anchor": "analytics-finder",
+      "SectionPath": [
+        "Analytics Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026pivot={pivot}\u0026timeGranularity={time}\u0026dateRange={dateRange}\u0026{facet}=List({URN_1},{URN_2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Analytics Finder",
+      "Anchor": "analytics-finder",
+      "SectionPath": [
+        "Analytics Finder"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026pivot={pivot}\u0026timeGranularity=DAILY\u0026dateRange={dateRange}\u0026{facet}=List({URN_1},{URN_2})\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Analytics Finder",
+        "Query Parameters"
+      ],
+      "Text": "For more details on the query parameters information, refer to the Query Parameters table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "The following sample request returns creative level analytics for a particular campaign beginning in 2024.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026pivot=CREATIVE\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2024,month:1,day:1))\u0026campaigns=List(urn%3Ali%3AsponsoredCampaign%3A1234567)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026pivot=CREATIVE\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2024,month:1,day:1))\u0026campaigns=List(urn%3Ali%3AsponsoredCampaign%3A1234567)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022clicks\u0022: 177,\n            \u0022impressions\u0022: 54494,\n            \u0022dateRange\u0022: {\n                \u0022end\u0022: {\n                    \u0022day\u0022: 24,\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2025\n                },\n                \u0022start\u0022: {\n                    \u0022day\u0022: 1,\n                    \u0022month\u0022: 1,\n                    \u0022year\u0022: 2024\n                }\n            },\n            \u0022pivotValues\u0022: [\n                \u0022urn:li:sponsoredCreative:1234567\u0022\n            ]\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Analytics Finder",
+        "Sample Response"
+      ],
+      "Text": "We currently don\u0027t support queries to get analytics for deleted shares that were promoted as Sponsored Content. As creatives for Sponsored Content reference a particular share, you can retrieve analytics for the deleted share by requesting analytics for the creatives that sponsored the deleted share.\nTo retrieve analytics data on a video entity, you can refer to the Video Analytics API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Analytics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-analytics-finder",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder"
+      ],
+      "Text": "LinkedIn requires you to mention specific metrics in a request, using the fields query parameter. Otherwise, only impressions and clicks are returned by default. Request up to 20 metrics. The following metrics are supported:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Analytics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-analytics-finder",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder"
+      ],
+      "Text": "externalWebsiteConversionsdateRangeimpressionslandingPageClicksreactionssharescostInLocalCurrencypivotValues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Analytics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-analytics-finder",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Analytics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-analytics-finder",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder"
+      ],
+      "Text": "Each metric is separated by a comma after the fields= keyword.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Analytics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-analytics-finder",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder"
+      ],
+      "Text": "In the following sample request, the fields parameter specifies a limited set of metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026dateRange=(start:(year:2024,month:5,day:28),end:(year:2024,month:9,day:30))\u0026timeGranularity=DAILY\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A502840441)\u0026pivot=MEMBER_COMPANY\u0026fields=externalWebsiteConversions,dateRange,impressions,landingPageClicks,reactions,shares,costInLocalCurrency,pivotValues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026dateRange=(start:(year:2024,month:5,day:28),end:(year:2024,month:9,day:30))\u0026timeGranularity=DAILY\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A502840441)\u0026pivot=MEMBER_COMPANY\u0026fields=externalWebsiteConversions,dateRange,impressions,landingPageClicks,reactions,shares,costInLocalCurrency,pivotValues\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Sample Response"
+      ],
+      "Text": "{ \u0022elements\u0022: [\n        {\n            \u0022pivotValues\u0022: [\n                   \u0022urn:li:organization:1111\u0022\n             ] ,\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 28\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 28\n                }\n            },\n            \u0022landingPageClicks\u0022: 0,\n            \u0022costInLocalCurrency\u0022: \u00220.0\u0022,\n            \u0022impressions\u0022: 6,\n            \u0022shares\u0022: 0,\n            \u0022externalWebsiteConversions\u0022: 0,\n            \u0022reactions\u0022: 0\n        },\n        {\n             \u0022pivotValues\u0022: [\n                   \u0022urn:li:organization:1111\u0022\n             ] ,\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 29\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 29\n                }\n            },\n            \u0022landingPageClicks\u0022: 11,\n            \u0022costInLocalCurrency\u0022: \u002219.91833\u0022,\n            \u0022impressions\u0022: 165,\n            \u0022shares\u0022: 0,\n            \u0022externalWebsiteConversions\u0022: 0,\n            \u0022reactions\u0022: 0\n        }]}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Throttling",
+      "Anchor": "data-throttling",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Data Throttling"
+      ],
+      "Text": "LinkedIn limits the amount of data that can be requested from this endpoint within a short time window. If an application exceeds the upper limit of data returned in a 5-minute window, requests are throttled. To reduce data load, use field parameters as described in the Requesting Specific Fields in the Analytics Finder.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Throttling",
+      "Anchor": "data-throttling",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Data Throttling"
+      ],
+      "Text": "Data limit for all queries over a 5 min interval: 45 million metric values (where metric value is the value for a metric specified in the fields parameter).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Throttling",
+      "Anchor": "data-throttling",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Data Throttling"
+      ],
+      "Text": "Example of data limit computation for the request/response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Throttling",
+      "Anchor": "data-throttling",
+      "SectionPath": [
+        "Analytics Finder",
+        "Requesting specific metrics in the Analytics Finder",
+        "Data Throttling"
+      ],
+      "Text": "Metrics requested: 9Number of records returned: 2 (1 per day)Total data cost of query: 9 *2 = 18 metric values",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Statistics Finder",
+      "Anchor": "statistics-finder",
+      "SectionPath": [
+        "Statistics Finder"
+      ],
+      "Text": "The Statistics Finder can be used to specify up to three pivots.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Statistics Finder",
+      "Anchor": "statistics-finder",
+      "SectionPath": [
+        "Statistics Finder"
+      ],
+      "Text": "LinkedIn requires you to specify metrics in your request using the fields query parameter. Otherwise, only impressions and clicks are returned by default. You can request up to 20 metrics. For an example of a request that calls specific metrics, refer to Requesting Specific Fields in the Analytics Finder.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Statistics Finder",
+      "Anchor": "statistics-finder",
+      "SectionPath": [
+        "Statistics Finder"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Statistics Finder",
+      "Anchor": "statistics-finder",
+      "SectionPath": [
+        "Statistics Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=statistics\u0026pivots=List({pivot_1},{pivot_2},{pivot_3})\u0026timeGranularity={time}\u0026{facet}=List({URN_1},{URN_2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Statistics Finder",
+      "Anchor": "statistics-finder",
+      "SectionPath": [
+        "Statistics Finder"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=statistics\u0026pivots=List({pivot_1},{pivot_2},{pivot_3})\u0026timeGranularity={time}\u0026{facet}=List({URN_1},{URN_2})\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Statistics Finder",
+        "Query Parameters"
+      ],
+      "Text": "For more details on the query parameters information, refer to the Query Parameters table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Statistics Finder",
+        "Sample Request"
+      ],
+      "Text": "The following sample request returns campaign level statistics for a particular ad account beginning in 2024.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Statistics Finder",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Statistics Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=statistics\u0026pivots=List(CAMPAIGN)\u0026dateRange=(start:(year:2024,month:1,day:1))\u0026timeGranularity=DAILY\u0026campaigns=List(urn:li:sponsoredCampaign:1234567)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Statistics Finder",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=statistics\u0026pivots=List(CAMPAIGN)\u0026dateRange=(start:(year:2024,month:1,day:1))\u0026timeGranularity=DAILY\u0026campaigns=List(urn:li:sponsoredCampaign:1234567)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Statistics Finder",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022clicks\u0022: 177,\n            \u0022impressions\u0022: 54494,\n            \u0022dateRange\u0022: {\n                \u0022end\u0022: {\n                    \u0022day\u0022: 23,\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2025\n                },\n                \u0022start\u0022: {\n                    \u0022day\u0022: 1,\n                    \u0022month\u0022: 1,\n                    \u0022year\u0022: 2024\n                }\n            },\n            \u0022pivotValues\u0022: [\n                \u0022urn:li:sponsoredCampaign:1234567\u0022\n            ]\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Attributed Revenue Metrics Finder",
+      "Anchor": "attributed-revenue-metrics-finder",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder"
+      ],
+      "Text": "The Attributed Revenue Metrics Finder can be used when specifying up to three pivots to demonstrate LinkedIn marketing\u2019s influence on revenue using your CRM data. For more information, refer to the Revenue Attribution Report.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Prerequisites"
+      ],
+      "Text": "To share your CRM data to Campaign Manager:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Prerequisites"
+      ],
+      "Text": "Set up a Business Manager for your business\nClaim ad accounts from Campaign Manager that your business owns\nConnect one of the supported CRM to your Business Manager:\n\nConnect Salesforce CRM to Business Manager\nConnect Dynamics 365 CRM to Business Manager\nConnect HubSpot CRM to Business Manager\nRequest access to a CRM connected to your Sales Navigator in Business Manager",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Considerations",
+      "Anchor": "considerations",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Considerations"
+      ],
+      "Text": "The RevenueAttributionMetrics are only available for accounts that have connected their CRM to LinkedIn.\nAfter you\u2019ve connected your CRM data to Campaign Manager, it can take up to 72 hours initially for data to be available in the response.\nOnly ACCOUNT, CAMPAIGN_GROUP, CAMPAIGN pivots are supported.\nMetrics are only available within the last 1 year date range, so the dateRange must be between 30 and 366 days (inclusive).\nopportunityAmountInUsd and openOpportunities are available only when dateRange.end is set to today\u0027s date in UTC. Otherwise, these two fields are not returned.\nYou can collate Revenue Attribution Metrics with other ad metrics (like impressions, clicks) by matching with same pivots and dateRange in other finders.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Attributed Revenue Metrics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-attributed-revenue-metrics-finder",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Requesting specific metrics in the Attributed Revenue Metrics Finder"
+      ],
+      "Text": "Use fields=revenueAttributionMetrics to retrieve all metrics in the RevenueAttributionMetrics object. Alternatively, specify individual metrics by including them in the fields parameter, such as fields=dateRange,pivotValues,revenueAttributionMetrics:(openOpportunities,revenueWonInUsd). Refer to Field Projections for more details on using field projections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting specific metrics in the Attributed Revenue Metrics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-attributed-revenue-metrics-finder",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Requesting specific metrics in the Attributed Revenue Metrics Finder"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Requesting specific metrics in the Attributed Revenue Metrics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-attributed-revenue-metrics-finder",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Requesting specific metrics in the Attributed Revenue Metrics Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=attributedRevenueMetrics\u0026pivots=List({pivot_1},{pivot_2},{pivot_3})\u0026account={URN_1}\u0026{facet}=List({URN_2},{URN_3})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Requesting specific metrics in the Attributed Revenue Metrics Finder",
+      "Anchor": "requesting-specific-metrics-in-the-attributed-revenue-metrics-finder",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Requesting specific metrics in the Attributed Revenue Metrics Finder"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=attributedRevenueMetrics\u0026pivots=List({pivot_1},{pivot_2},{pivot_3})\u0026account={URN_1}\u0026{facet}=List({URN_2},{URN_3})\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Designates the query finder. This must be set to attributedRevenueMetrics for the Attributed Revenue Metrics Finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pivots",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pivot of results, by which each report data point is grouped. Accepts up to 3 values. The following enum values are supported: CAMPAIGN - Group results by campaign. CAMPAIGN_GROUP - Group results by campaign group. ACCOUNT - Group results by account.",
+            "Links": [],
+            "Values": [
+              "CAMPAIGN - Group results by campaign.",
+              "CAMPAIGN_GROUP - Group results by campaign group.",
+              "ACCOUNT - Group results by account."
+            ]
+          },
+          {
+            "Text": "Array of Strings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive start time range of the analytics. Start date should be within the last 1 year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive end time range of the analytics. The field must be after start time if it\u0027s present. If unset, it indicates an open range from start time to everything after.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by sponsored ad account facet.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by campaign facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Sponsored Campaign URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by campaign group facets. the default value is set to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Campaign Group URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters",
+        "Sample Request"
+      ],
+      "Text": "The following sample groups Revenue Attribution Metrics by Campaign for a particular ad account for the year 2025.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=attributedRevenueMetrics\u0026fields=revenueAttributionMetrics,dateRange,pivotValues\u0026dateRange=(start:(year:2025,month:03,day:1),end:(year:2025,month:05,day:31))\u0026account=urn%3Ali%3AsponsoredAccount%3A12345\u0026pivots=List(CAMPAIGN)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=attributedRevenueMetrics\u0026fields=revenueAttributionMetrics,dateRange,pivotValues\u0026dateRange=(start:(year:2025,month:03,day:1),end:(year:2025,month:05,day:31))\u0026account=urn%3Ali%3AsponsoredAccount%3A12345\u0026pivots=List(CAMPAIGN)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n          \u0022revenueAttributionMetrics\u0022: {\n                \u0022returnOnAdSpend\u0022: 10.0,\n                \u0022openOpportunities\u0022: 200,\n                \u0022opportunityWinRate\u0022: 0.75,\n                \u0022revenueWonInUsd\u0022: \u00221000.0\u0022,\n                \u0022closedWonOpportunities\u0022: 100,\n                \u0022opportunityAmountInUsd\u0022: \u00222000.0\u0022,\n                \u0022averageDaysToClose\u0022: 75.0,\n                \u0022averageDealSizeInUsd\u0022: \u002210.0\u0022\n          },\n          \u0022dateRange\u0022: {\n                \u0022end\u0022: {\n                    \u0022day\u0022: 31,\n                    \u0022month\u0022: 12,\n                    \u0022year\u0022: 2025\n                },\n                \u0022start\u0022: {\n                    \u0022day\u0022: 1,\n                    \u0022month\u0022: 1,\n                    \u0022year\u0022: 2025\n                }\n            },\n            \u0022pivotValues\u0022: [\n                \u0022urn:li:sponsoredCampaign:1234567\u0022\n            ]\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Attributed Revenue Metrics Finder",
+        "Query Parameters",
+        "Sample Response"
+      ],
+      "Text": "::: moniker-end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting Microsoft Bing Locations",
+      "Anchor": "reporting-microsoft-bing-locations",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations"
+      ],
+      "Text": "The ad reporting mechanism now uses the Microsoft Bing location dataset. In addition to targeting, the adAnalytics endpoint adds new professional demographic pivots for Bing location information for the following professional demographic categories:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting Microsoft Bing Locations",
+      "Anchor": "reporting-microsoft-bing-locations",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations"
+      ],
+      "Text": "MEMBER_COUNTRY_V2MEMBER_REGION_V2MEMBER_COUNTY",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting Microsoft Bing Locations",
+      "Anchor": "reporting-microsoft-bing-locations",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting Microsoft Bing Locations",
+      "Anchor": "reporting-microsoft-bing-locations",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations"
+      ],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you\u0027re agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Country",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Country",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=(MEMBER_COUNTRY_V2)\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Country",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=(MEMBER_COUNTRY_V2)\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Country",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:1\u0022\n         ],\n         \u0022impressions\u0022:29\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:2\u0022\n         ],\n         \u0022impressions\u0022:28\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:3\u0022\n         ],\n         \u0022impressions\u0022:28\n      }\n   ],\n   \u0022paging\u0022:{\n      \u0022count\u0022:10,\n      \u0022start\u0022:0,\n      \u0022links\u0022:[\n         {\n            \u0022rel\u0022:\u0022next\u0022,\n            \u0022href\u0022:\u0022/adAnalytics?q=analytics\u0026timeGranularity.value=ALL\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026start=10\u0026count=10\u0026pivot.value=_MEMBER_COUNTRY_V2\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026fields=impressions,pivotValues\u0022,\n            \u0022type\u0022:\u0022application/json\u0022\n         }\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Region",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Region",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=MEMBER_REGION_V2\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Region",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=MEMBER_REGION_V2\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member Region",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022pivotValues\u0022: [\n              \u0022urn:li:geo:1\u0022\n         ],\n         \u0022impressions\u0022:29\n      },\n      {\n         \u0022pivotValues\u0022: [\n                \u0022urn:li:geo:2\u0022\n         ],\n         \u0022impressions\u0022:28\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:3\u0022\n         ],\n         \u0022impressions\u0022:28\n      }\n   ],\n   \u0022paging\u0022:{\n      \u0022count\u0022:10,\n      \u0022start\u0022:0,\n      \u0022links\u0022:[\n         {\n            \u0022rel\u0022:\u0022next\u0022,\n            \u0022href\u0022:\u0022/adAnalytics?q=analytics\u0026timeGranularity=ALL\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026start=10\u0026count=10\u0026pivot=_MEMBER_COUNTRY_V2\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026fields=impressions,pivotValues\u0022,\n            \u0022type\u0022:\u0022application/json\u0022\n         }\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member County",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member County",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=MEMBER_COUNTY\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member County",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=MEMBER_COUNTY\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Reporting Microsoft Bing Locations",
+        "Member County",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:1\u0022\n         ],\n         \u0022impressions\u0022:29\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:2\u0022\n         ],\n         \u0022impressions\u0022:28\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:3\u0022\n         ],\n         \u0022impressions\u0022:28\n      }\n   ],\n   \u0022paging\u0022:{\n      \u0022count\u0022:10,\n      \u0022start\u0022:0,\n      \u0022links\u0022:[\n         {\n            \u0022rel\u0022:\u0022next\u0022,\n            \u0022href\u0022:\u0022/adAnalyticsV2?q=analytics\u0026timeGranularity=ALL\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026start=10\u0026count=10\u0026pivot=_MEMBER_COUNTRY_V2\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026fields=impressions,pivotValues\u0022,\n            \u0022type\u0022:\u0022application/json\u0022\n         }\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN Resolution",
+      "Anchor": "urn-resolution",
+      "SectionPath": [
+        "URN Resolution"
+      ],
+      "Text": "The URNs returned in the pivotValues field can be resolved to a human-readable name using the APIs in API URN Resolution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics Sample Request",
+      "Anchor": "ad-analytics-sample-request",
+      "SectionPath": [
+        "URN Resolution",
+        "Ad Analytics Sample Request"
+      ],
+      "Text": "The following sample gets analytics for each member country/region.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics Sample Request",
+      "Anchor": "ad-analytics-sample-request",
+      "SectionPath": [
+        "URN Resolution",
+        "Ad Analytics Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Analytics Sample Request",
+      "Anchor": "ad-analytics-sample-request",
+      "SectionPath": [
+        "URN Resolution",
+        "Ad Analytics Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=(MEMBER_COUNTRY_V2)\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Analytics Sample Request",
+      "Anchor": "ad-analytics-sample-request",
+      "SectionPath": [
+        "URN Resolution",
+        "Ad Analytics Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026pivot=(MEMBER_COUNTRY_V2)\u0026q=analytics\u0026timeGranularity=ALL\u0026fields=impressions,pivotValues\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Analytics Sample Response",
+      "Anchor": "ad-analytics-sample-response",
+      "SectionPath": [
+        "URN Resolution",
+        "Ad Analytics Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:1\u0022\n         ],\n         \u0022impressions\u0022:29\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:2\u0022\n         ],\n         \u0022impressions\u0022:28\n      },\n      {\n         \u0022pivotValues\u0022: [\n           \u0022urn:li:geo:3\u0022\n         ],\n         \u0022impressions\u0022:28\n      }\n   ],\n   \u0022paging\u0022:{\n      \u0022count\u0022:10,\n      \u0022start\u0022:0,\n      \u0022links\u0022:[\n         {\n            \u0022rel\u0022:\u0022next\u0022,\n            \u0022href\u0022:\u0022/adAnalytics?q=analytics\u0026timeGranularity.value=ALL\u0026dateRange=(start:(day:28,month:7,year:2019))\u0026start=10\u0026count=10\u0026pivot.value=_MEMBER_COUNTRY_V2\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A511183580)\u0026fields=impressions,pivotValues\u0022,\n            \u0022type\u0022:\u0022application/json\u0022\n         }\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics Sample Response",
+      "Anchor": "ad-analytics-sample-response",
+      "SectionPath": [
+        "URN Resolution",
+        "Ad Analytics Sample Response"
+      ],
+      "Text": "To resolve the geo URN, we can use the Geo API to retrieve the country/region name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Geo Sample Request",
+      "Anchor": "geo-sample-request",
+      "SectionPath": [
+        "URN Resolution",
+        "Geo Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/geo/1?locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Geo Sample Response",
+      "Anchor": "geo-sample-response",
+      "SectionPath": [
+        "URN Resolution",
+        "Geo Sample Response"
+      ],
+      "Text": "{\n  \u0022defaultLocalizedName\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022United States\u0022\n  },\n  \u0022id\u0022: 1\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "Error Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MISSING_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A required query parameter is missing. Ensure required parameters such as q, pivot (Analytics Finder), or pivots (Statistics Finder) are included in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VALUE_FOR_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An invalid value was provided for a query parameter. Verify that values for pivot, timeGranularity, and other enum parameters are valid.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "START_DATE_AFTER_END_DATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date cannot be after the end date. Verify that dateRange.start is set to a date earlier than dateRange.end.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DATE_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The date value is before the allowed minimum. The requested date is outside the supported retention period.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Authentication failed. Ensure a valid, non-empty, non-expired OAuth2 access token is included in the Authorization header.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user does not have access to the requested advertising data. Ensure the r_ads_reporting permission is granted and the authenticated user has access to the specified account, campaign, or creative URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested resource was not found. Verify that the account, campaign, or creative URN provided in the request is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "414",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REQUEST_URI_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request URL exceeds the maximum allowed length. Use query tunneling when the list of query parameters is too long.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The data request limit has been exceeded. More than 45 million metric values were requested in a 5-minute window. Reduce data load by specifying only required fields using the fields parameter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An unexpected server-side error occurred. Retry the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNDER_MAINTENANCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service is temporarily unavailable. Retry the request after a brief delay.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

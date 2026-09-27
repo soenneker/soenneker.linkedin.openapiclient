@@ -1,0 +1,94 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+  "Title": "API Terminology",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "API Terminology",
+      "Anchor": "api-terminology",
+      "SectionPath": [],
+      "Text": "The section below outlines key terms used by the LinkedIn Learning Content APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Asset",
+      "Anchor": "asset",
+      "SectionPath": [
+        "Asset"
+      ],
+      "Text": "A learning asset is the unified and extensible representation of LinkedIn Learning content in the API. A learning asset may contain other learning assets: for example, a course contains chapters. In LinkedIn Learning APIs, all learning content is represented as an asset, which may contain nested sub-assets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Classification",
+      "Anchor": "classification",
+      "SectionPath": [
+        "Classification"
+      ],
+      "Text": "A learning classification is category or skill metadata that a learning asset may be tagged with. For example, a course called \u0022Learning Java\u0022 may be classified under \u0022Technology\u0022 - a category - and teach \u0022Object-Oriented Programming (OOP)\u0022 - a skill. In LinkedIn Learning APIs, learning classifications provide context about a learning asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN",
+      "Anchor": "urn",
+      "SectionPath": [
+        "URN"
+      ],
+      "Text": "A Uniform Resource Name (URN) is a unique identifier for an entity in LinkedIn Learning APIs. All entities in the API - learning assets, learning classifications, as well as others (for example, authors) - are identified by URNs. Some example URNs are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "URN",
+      "Anchor": "urn",
+      "SectionPath": [
+        "URN"
+      ],
+      "Text": "urn:li:lyndaCourse:184457\n\nurn:li:lyndaCategory:7164\n\nurn:li:lyndaAuthor:2975371",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC",
+      "Anchor": "aicc",
+      "SectionPath": [
+        "AICC"
+      ],
+      "Text": "AICC is an integration standard that defines how eLearning systems deliver and evaluate learning content. LinkedIn Learning supports exclusively AICC 4.0 and issues the following commands: GetParam, PutParam \u0026 ExitAU.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Single Sign On (SSO)"
+      ],
+      "Text": "Web-based single sign-on (SSO) methods like Security Assertion Markup Language (SAML) 2.0 and Learning Tools Interoperability (LTI) 1.0 can be used to seamlessly authenticate users from external domains into LinkedIn Learning. Authentication methods are configured by account administrators in LinkedIn Learning Settings.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

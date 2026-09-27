@@ -1,0 +1,755 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+  "Title": "Create Apply Connect jobs - API overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Create Apply Connect jobs - API overview",
+      "Anchor": "create-apply-connect-jobs---api-overview",
+      "SectionPath": [],
+      "Text": "As a partner, you can integrate with Apply Connect using the Job Posting API. This API helps you create and manage Apply Connect jobs on LinkedIn for your customers. LinkedIn members can view these job postings and apply to them directly on the platform. Additionally, using this API, you can collect job applications directly on your website through webhooks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To use the Job Postings API, create and configure customer applications. Refer to Create and configure a customer application to create and configure an application for your customer to manage their job posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For existing RSC and PJP integrations",
+      "Anchor": "for-existing-rsc-and-pjp-integrations",
+      "SectionPath": [
+        "For existing RSC and PJP integrations"
+      ],
+      "Text": "If you have a Recruiter System Connect (RSC) or Premium Job Posting (PJP) integration, you already use this API. However, Apply Connect jobs require additional fields because LinkedIn hosts the application experience and delivers applications to partners, unlike PJP or RSC jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For existing RSC and PJP integrations",
+      "Anchor": "for-existing-rsc-and-pjp-integrations",
+      "SectionPath": [
+        "For existing RSC and PJP integrations"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For existing RSC and PJP integrations",
+      "Anchor": "for-existing-rsc-and-pjp-integrations",
+      "SectionPath": [
+        "For existing RSC and PJP integrations"
+      ],
+      "Text": "Continue to maintain XML Feeds if you have an Apply Connect integration.\nSend all public jobs to LinkedIn only through this API for your Apply Connect customers.\nEnsure job IDs (externalJobPostingId or companyJobCode) match across XML feeds, career sites, and API jobs.\nMaintain data parity by syncing all available job data from external career sites and XML feeds.\nSend all open, public jobs through the API once you send one job through the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For existing RSC and PJP integrations",
+      "Anchor": "for-existing-rsc-and-pjp-integrations",
+      "SectionPath": [
+        "For existing RSC and PJP integrations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For existing RSC and PJP integrations",
+      "Anchor": "for-existing-rsc-and-pjp-integrations",
+      "SectionPath": [
+        "For existing RSC and PJP integrations"
+      ],
+      "Text": "LinkedIn will notify you when all customers have migrated to the API and when to disable XML Feeds (typically around 3 months after general access).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legal requirements for the API",
+      "Anchor": "legal-requirements-for-the-api",
+      "SectionPath": [
+        "Legal requirements for the API"
+      ],
+      "Text": "The use of these APIs is restricted to those developers approved by LinkedIn. Reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.\nIf you are not yet a LinkedIn Talent Solutions Partner, complete the LinkedIn Talent Solutions Partner Request Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legal requirements for the API",
+      "Anchor": "legal-requirements-for-the-api",
+      "SectionPath": [
+        "Legal requirements for the API"
+      ],
+      "Text": "In addition to any restrictions or obligations contained in a signed API agreement, partner:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legal requirements for the API",
+      "Anchor": "legal-requirements-for-the-api",
+      "SectionPath": [
+        "Legal requirements for the API"
+      ],
+      "Text": "Acknowledges that LinkedIn acts as a passive conduit for the online distribution and publication of job listings and LinkedIn is not responsible for screening or monitoring job listings. Jobs posted to the LinkedIn Service (including via the LinkedIn APIs) may be posted only for lawful purposes by individuals and employers seeking employees. The LinkedIn APIs may not be used to post job listings that violate the restrictions included in the LinkedIn Jobs Terms and Conditions\nWill ensure that its customers agree to the LinkedIn Jobs Terms and Conditions prior to posting any jobs to the LinkedIn Service via partner\u2019s application and shall have a method of keeping track of which of its customers have agreed to the LinkedIn Jobs Terms and Conditions and when, and shall furnish such information to LinkedIn upon request\nShall not market any job listings to be distributed via LinkedIn or its syndication network as a \u0022free way to post jobs to LinkedIn\u0022 or anything substantially similar in any marketing or sales materials\nAcknowledges that in some cases, LinkedIn may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D). These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API endpoint"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API endpoint"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/simpleJobPostings\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\\\n--data \u0027{\n  \u0022elements\u0022: [\n    {\n      \u0022externalJobPostingId\u0022: \u0022external-job-id-0001\u0022,\n      \u0022title\u0022: \u0022Test Job\u0022,\n      \u0022description\u0022: \u0022Test customer job.\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022listedAt\u0022: 1558045934000,\n      \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n      \u0022location\u0022: \u0022Enterprise, UT\u0022,\n      \u0022availability\u0022: \u0022PUBLIC\u0022,\n      \u0022industries\u0022: [\n        \u0022urn:li:industry:3\u0022\n      ],\n      \u0022categories\u0022: [\n        \u0022advr\u0022\n      ],\n      \u0022trackingPixelUrl\u0022: \u0022http://localhost:5000/jobs/tracking\u0022,\n      \u0022companyApplyUrl\u0022: \u0022http://localhost:5000\u0022,\n      \u0022posterEmail\u0022: \u0022\u0022 \n    }\n  ]     \n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect jobs lifecycle",
+      "Anchor": "apply-connect-jobs-lifecycle",
+      "SectionPath": [
+        "Apply Connect jobs lifecycle"
+      ],
+      "Text": "You can perform the following operations on job postings. Pass one of the following values for the jobPostingOperationType field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect jobs lifecycle",
+      "Anchor": "apply-connect-jobs-lifecycle",
+      "SectionPath": [
+        "Apply Connect jobs lifecycle"
+      ],
+      "Text": "CREATE: To create a new job post.\nCLOSE: To close an existing job post.\nUPDATE: To update a job post by re-posting it with jobPostingOperationType set to UPDATE.\nRENEW: To extend a job post\u2019s life by 30 days by re-posting it with jobPostingOperationType set to RENEW.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try it in Postman",
+      "Anchor": "try-it-in-postman",
+      "SectionPath": [
+        "Try it in Postman"
+      ],
+      "Text": "Basic jobs\nPromoted jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request header",
+      "Anchor": "sample-request-header",
+      "SectionPath": [
+        "Sample request header"
+      ],
+      "Text": "Authorization: Bearer {access_token}\nx-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample request body"
+      ],
+      "Text": "{\n \u0022elements\u0022: [\n  {\n   \u0022externalJobPostingId\u0022: \u0022external-job-id-0001\u0022,\n   \u0022title\u0022: \u0022Test Job\u0022,\n   \u0022description\u0022: \u0022Lorem Ipsum is simply. . .\u0022,\n   \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n   \u0022listedAt\u0022: 1558045934000,\n   \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n   \u0022location\u0022: \u0022Enterprise, UT\u0022,\n   \u0022availability\u0022: \u0022PUBLIC\u0022,\n   \u0022industries\u0022: [\n    \u0022urn:li:industry:3\u0022\n   ],\n   \u0022categories\u0022: [\n    \u0022advr\u0022\n   ],\n   \u0022trackingPixelUrl\u0022: \u0022http://localhost:5000/jobs/tracking\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://localhost:5000\u0022,\n   \u0022posterEmail\u0022: \u0022test@email.com\u0022,\n   \u0022onsiteApplyConfiguration\u0022: {\n    \u0022jobApplicationWebhookUrl\u0022: \u0022https://customer-webhook.com/api/webhook\u0022,\n    \u0022questions\u0022: {\n     \u0022voluntarySelfIdentificationQuestions\u0022: {},\n     \u0022educationQuestions\u0022: {\n      \u0022educationExperienceQuestionSet\u0022: {}\n     },\n     \u0022workQuestions\u0022: {\n      \u0022workExperienceQuestionSet\u0022: {}\n     },\n     \u0022additionalQuestions\u0022: {\n      \u0022customQuestionSets\u0022: [\n       {\n        \u0022repeatLimit\u0022: 1,\n        \u0022questions\u0022: [\n         {\n          \u0022required\u0022: true,\n          \u0022partnerQuestionIdentifier\u0022: \u0022question1\u0022,\n          \u0022questionText\u0022: \u0022Please choose the right answer\u0022,\n          \u0022questionDetails\u0022: {\n           \u0022multipleChoiceQuestionDetails\u0022: {\n            \u0022choices\u0022: [\n             {\n              \u0022symbolicName\u0022: \u0022wrong\u0022,\n              \u0022displayValue\u0022: \u0022This is the wrong answer\u0022\n             },\n             {\n              \u0022symbolicName\u0022: \u0022right\u0022,\n              \u0022displayValue\u0022: \u0022This is the correct answer\u0022\n             },\n             {\n              \u0022symbolicName\u0022: \u0022right2\u0022,\n              \u0022displayValue\u0022: \u0022This is also the correct answer\u0022\n             }\n            ],\n            \u0022selectMultiple\u0022: false,\n            \u0022defaultValueSymbolicName\u0022: \u0022right\u0022,\n            \u0022preferredFormComponent\u0022: \u0022DROPDOWN\u0022,\n            \u0022favorableMultipleChoiceAnswer\u0022: {\n             \u0022favorableSymbolicNames\u0022: [\n              \u0022right\u0022,\n              \u0022right2\u0022\n             ]\n            }\n           }\n          }\n         }\n        ]\n       }\n      ]\n     }\n    }\n   }\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample request body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample request body"
+      ],
+      "Text": "Ensure job Ids (externalJobPostingId or companyJobCode) match across career sites and API jobs.\nThe availability field for basic jobs are by default set to PUBLIC for Apply Connect enabled jobs.\nThe questionText field supports the following formats:\n\nUnordered list \u003Cul\u003E\nList item \u003Cli\u003E\nBold \u003Cb\u003E\nItalic \u003Ci\u003E\nLinks \u003Ca\u003E\nParagraph \u003Cp\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Request body schema"
+      ],
+      "Text": "This API uses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Request body schema"
+      ],
+      "Text": "The standard Job Posting schema (foundation schema used to post jobs on LinkedIn regardless of the integrated programs)\nThe Apply Connect specific onsiteApplyConfiguration schema to specify questions that applicants must answer to complete the job application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Request body schema"
+      ],
+      "Text": "You must also specify a webhook URL in the jobApplicationWebhookUrl field where LinkedIn will POST job applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Request body schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Type",
+        "Field",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Basic Jobs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "availability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This value must be set to PUBLIC for Apply Connect enabled jobs.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Request body schema"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Request body schema"
+      ],
+      "Text": "If the integrationContext field is unavailable for a customer, ensure to provide the companyPageURL field in the payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting foundation schema",
+      "Anchor": "job-posting-foundation-schema",
+      "SectionPath": [
+        "Request body schema",
+        "Job Posting foundation schema"
+      ],
+      "Text": "For complete details on all job posting fields, refer to job-posting-foundation-schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OnsiteApplyConfiguration schema",
+      "Anchor": "onsiteapplyconfiguration-schema",
+      "SectionPath": [
+        "Request body schema",
+        "OnsiteApplyConfiguration schema"
+      ],
+      "Text": "For complete details on OnsiteApplyConfiguration fields and all question types, refer to onsite-apply-config-schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample response body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the simpleJobPostingTask in the response body.\nSince Job Postings API is asynchronous, you can refer to Check Job Operation Task Status for task status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response for success",
+      "Anchor": "sample-response-for-success",
+      "SectionPath": [
+        "Sample response body",
+        "Sample response for success"
+      ],
+      "Text": "{\n\n \u0022elements\u0022: [\n {\n  \u0022location\u0022: \u0022/simpleJobPostings/urn%3Ali%3AsimpleJobPostingTask%3A413d-954e-9b3ed6af71ba\u0022,\n  \u0022status\u0022: 202,\n  \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:c9f5-413d-954e-9b3ed6af71ba\u0022\n }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response for error",
+      "Anchor": "sample-response-for-error",
+      "SectionPath": [
+        "Sample response body",
+        "Sample response for success",
+        "Sample response for error"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022error\u0022: {\n        \u0022message\u0022: \u0022ERROR :: /onsiteApplyConfiguration/questions/additionalQuestions/customQuestionSets/0/questions/0/partnerQuestionIdentifier :: field is required but not found and has no default value\\n\u0022,\n        \u0022status\u0022: 422\n      },\n      \u0022status\u0022: 422\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HTTP status codes and errors",
+      "Anchor": "http-status-codes-and-errors",
+      "SectionPath": [
+        "Sample response body",
+        "Sample response for success",
+        "HTTP status codes and errors"
+      ],
+      "Text": "LinkedIn provides standard HTTP status codes and clear messages to help you easily understand errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HTTP status codes and errors",
+      "Anchor": "http-status-codes-and-errors",
+      "SectionPath": [
+        "Sample response body",
+        "Sample response for success",
+        "HTTP status codes and errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR_INVALID_LISTED_AT_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The listedAt field with value: 1234567894000 for the job cannot be a future time. An epoch time for future is provided in the listedAt field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access token is tampered",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header is a valid token but it has expired",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller is not authorized to access the jobs for contract: urn:li:contract:{contract_id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application used for posting premium job does not belong to the Job posting contract",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST /simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application does not have enough permissions to use /simpleJobPostings API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1100",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required one non-null optional field in /questionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "questionDetails in SimpleTalentQuestionDefinition should have exactly one field. For example, if dateQuestionDetails is present then other fields should not be present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteQuestion cannot depend on the response of another PrerequisiteQuestion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prerequisite question in prerequisiteQuestionResponse can not be a dependent question. For example, with two questions, Q1 and Q2, if Q2 has Q1 as its prerequisiteQuestionResponse then Q1 should have a null prerequisiteQuestionResponse",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteQuestion must be present within the same customQuestions set/array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prerequisite question in prerequisiteQuestionResponse should be defined within the same customQuestions array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Repeatable questions cannot have PrerequisiteQuestion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If any of the question types in SimpleTalentQuestions has repeatLimit \u003E 1 then all of the questions in it must have a null prerequisiteQuestionResponse",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HTTP status codes and errors",
+      "Anchor": "http-status-codes-and-errors",
+      "SectionPath": [
+        "Sample response body",
+        "Sample response for success",
+        "HTTP status codes and errors"
+      ],
+      "Text": "When Apply Connect task status is FAILED, then errorCode and errorMessage are also present in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HTTP status codes and errors",
+      "Anchor": "http-status-codes-and-errors",
+      "SectionPath": [
+        "Sample response body",
+        "Sample response for success",
+        "HTTP status codes and errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "TASK STATUS",
+        "ERROR CODE",
+        "ERROR MESSAGE",
+        "DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "150",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Apply update failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs due to some issue on LinkedIn and no action is required from the customer side",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1151",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unable to process questions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs due to issues with question transformation/validation or due to duplicate question identifiers. Partners are advised to re-validate the question payload.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1152",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No parent developer application found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs when the developer application used in job posting does not have a parent developer application in the LinkedIn system.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1153",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unable to register jobApplicationWebhookUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs when the job application webhook url is not successfully registered for sending the job applications to the partners",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related content",
+      "Anchor": "related-content",
+      "SectionPath": [
+        "Related content"
+      ],
+      "Text": "To monitor the status of your job postings, refer to Check job posting status.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

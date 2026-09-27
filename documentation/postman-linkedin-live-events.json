@@ -1,0 +1,1231 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "{{baseUrl}}/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "authUrl": "{{baseUrl}}/oauth/v2/authorization",
+      "clientId": "{{clientId}}",
+      "clientSecret": "{{clientSecret}}",
+      "client_authentication": "body",
+      "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+      "scope": "w_member_live r_member_live w_organization_live r_organization_live r_liteprofile r_organization_admin",
+      "tokenName": "live-video-token",
+      "useBrowser": true
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027livevideo-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "571d0405-0b9d-4687-bee0-cef42d74f59f",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "138e0092-c668-40f4-b682-5aca4417b9fa",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "cc0b9e49-eda7-4b43-94c8-f539829a1082",
+    "description": "Use the Live Events API to stream and manage Live Events with your LinkedIn network.",
+    "name": "LinkedIn Live Events",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "5628670e-6751-43b5-971a-db2beb353884",
+      "item": [
+        {
+          "description": "Go live to a LinkedIn member profile using [Live Video APIs](https://docs.microsoft.com/en-us/linkedin/consumer/integrations/live-video/).",
+          "id": "01371626-bcbe-4c08-95b0-8600e2eebf7d",
+          "item": [
+            {
+              "id": "0c96f4fb-95be-4237-8c37-b87f3146505e",
+              "name": "/me get",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": "{{baseUrl}}/v2/me"
+              },
+              "response": []
+            },
+            {
+              "id": "b6d7f9ad-6cd2-4d71-a70d-74d55e8540e7",
+              "name": "/contentAccess",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": "{{baseUrl}}/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+              },
+              "response": []
+            },
+            {
+              "id": "f7ee13cf-7440-4648-81b9-b9adc57fe67b",
+              "name": "/liveAssetActions register",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \u0022registerLiveEventRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:{{abcde}}\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022\n        ],\n        \u0022region\u0022: \u0022WEST_US\u0022,\n        \u0022autoCaptionLanguageTag\u0022: \u0022en-US\u0022\n    }\n}"
+                },
+                "header": [
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "action"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "type": "text",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "liveAssetActions"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "register"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/liveAssetActions?action=register"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "0c66de35-da02-4b50-829a-e1c02cb345e1",
+              "name": "/assets?projection=(recipes) get Copy",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "assets",
+                    "{{abcde12345}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projection",
+                      "value": "(recipes)"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "8ab79a9f-eace-4cb0-8643-365154bf4876",
+              "name": "/ugcPosts create",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \u0022author\u0022: \u0022urn:li:person:{{abcde}}\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}\u0022,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Let\u0027s go live on LinkedIn!\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022LIVE_VIDEO\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}"
+                },
+                "description": "create ugcPosts live video",
+                "header": [
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "create"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "type": "text",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/v2/ugcPosts"
+              },
+              "response": []
+            },
+            {
+              "id": "55393eaf-dcde-4bde-a1b7-3d106f4e2d9b",
+              "name": "/liveAssetActions end",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "action"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "liveAssetActions"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "end"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/liveAssetActions?action=end"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Member"
+        },
+        {
+          "description": "Go live to a LinkedIn organization page using [Live Video APIs](https://docs.microsoft.com/en-us/linkedin/consumer/integrations/live-video/).",
+          "id": "dbe7f4c1-62b6-4c30-85d3-6d2b7af5eec9",
+          "item": [
+            {
+              "id": "d1321f63-bacd-48b3-8d62-c7a37657825a",
+              "name": "/me",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": "{{baseUrl}}/v2/me"
+              },
+              "response": []
+            },
+            {
+              "id": "66179296-c017-4982-b5f5-9ad0a9b1f572",
+              "name": "/organizationAcls",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "organizationAcls"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "roleAssignee"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "(elements*(organization~))"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/organizationAcls?q=roleAssignee\u0026projection=(elements*(organization~))"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "f2902fda-97c7-44ec-916a-0f45f4384c2f",
+              "name": "/contentAccess",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": "{{baseUrl}}/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A{{12345}}),admin:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+              },
+              "response": []
+            },
+            {
+              "id": "c2b1590a-2748-4f1e-9b30-605052ea21c4",
+              "name": "/liveAssetActions register",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \u0022registerLiveEventRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:{{12345}}\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022\n        ],\n        \u0022region\u0022: \u0022WEST_US\u0022,\n        \u0022autoCaptionLanguageTag\u0022: \u0022en-US\u0022\n    }\n}"
+                },
+                "header": [
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "action"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "type": "text",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "liveAssetActions"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "register"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/liveAssetActions?action=register"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "bb810d73-4971-4f74-8df6-d9d374687fcb",
+              "name": "/assets?projection=(recipes) get Copy 2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "assets",
+                    "{{abcde12345}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projection",
+                      "value": "(recipes)"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "16878bd6-f42c-4a0e-a06f-2bce52350482",
+              "name": "/ugcPosts",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \u0022author\u0022: \u0022urn:li:organization:{{12345}}}}\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}}}\u0022,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Let\u0027s go live on LinkedIn!\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022LIVE_VIDEO\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}"
+                },
+                "description": "create ugcPosts live video",
+                "header": [
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "create"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "type": "text",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/v2/ugcPosts"
+              },
+              "response": []
+            },
+            {
+              "id": "10ec433d-1933-4e3e-a752-151bcef9d052",
+              "name": "/liveAssetActions end",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}}}\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "action"
+                  },
+                  {
+                    "key": "X-RestLi-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2",
+                    "liveAssetActions"
+                  ],
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "end"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/v2/liveAssetActions?action=end"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Organization Page"
+        },
+        {
+          "description": "Use the [Scheduled Live Events](https://docs.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live?context=linkedin/consumer/context) feature to promote your event on and off LinkedIn.",
+          "id": "82593271-e139-47df-8b3c-a385ab084c5f",
+          "item": [
+            {
+              "description": "This flow outlines the APIs needed to schedule a live event to a member profile.",
+              "id": "cd667a80-f749-46d1-8153-205a3ab63f14",
+              "item": [
+                {
+                  "id": "e0354518-3dc1-4e79-adea-bbbe709261fc",
+                  "name": "/me",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/v2/me"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "0a1e9cbf-9921-4df2-83f2-75d068eb51c6",
+                  "name": "/contentAccess",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "57518e37-2cc1-41c7-9756-7e25662a19a2",
+                  "name": "/liveVideos?q=author",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "liveVideos"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "author"
+                        },
+                        {
+                          "key": "author",
+                          "value": "urn%3Ali%3Aperson%3A{{abcde}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/liveVideos?q=author\u0026author=urn%3Ali%3Aperson%3A{{abcde}}"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "8b496953-158f-406d-84af-07cd7bf2941e",
+                  "name": "/assets (optional announcement image)",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022registerUploadRequest\u0022: {\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:video-liveannouncement-image\u0022\n        ],\n        \u0022owner\u0022: \u0022urn:li:person:{{abcde}}\u0022,\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022relationshipType\u0022: \u0022OWNER\u0022,\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022\n            }\n        ]\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "assets"
+                      ],
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "registerUpload"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/assets?action=registerUpload"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "75af1abe-252c-49c6-9f7f-4c442242f8b8",
+                  "name": "/liveVideos",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022author\u0022: {\n        \u0022member\u0022: \u0022urn:li:person:{{abcde}}}}\u0022\n    },\n    \u0022scheduledAt\u0022: 1626209590000,\n    \u0022announcementImage\u0022: {\n        \u0022media\u0022: \u0022urn:li:digitalmediaAsset:{{C5F22AQEUvl4IOBjE2g}}\u0022,\n        \u0022title\u0022: {\n            \u0022text\u0022: \u0022Image Title\u0022,\n            \u0022inferredLocale\u0022: \u0022en_US\u0022\n        }\n    },\n    \u0022name\u0022: \u0022Scheduled Live Event Title\u0022\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/v2/liveVideos"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "691693f8-92a8-4272-b8ff-c87a39915007",
+                  "name": "/ugcPosts",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \u0022author\u0022: \u0022urn:li:person:{{abcde}}\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:livevideo:{{123456789}}\u0022,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Let\u0027s go live on LinkedIn!\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    },\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022externalDistributionChannels\u0022: [],\n        \u0022distributedViaFollowFeed\u0022: true\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Method",
+                        "type": "text",
+                        "value": "create"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/v2/ugcPosts"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "3d376d86-e1d9-43c0-bea1-5c54dbd860e2",
+                  "name": "/liveAssetActions register",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \u0022registerLiveEventRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:{{abcde}}\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022\n        ],\n        \u0022region\u0022: \u0022WEST_US\u0022,\n        \u0022autoCaptionLanguageTag\u0022: \u0022en-US\u0022\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Method",
+                        "type": "text",
+                        "value": "action"
+                      },
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "liveAssetActions"
+                      ],
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "register"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/liveAssetActions?action=register"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "835c087e-988c-421c-93b4-3ae4574ac165",
+                  "name": "/assets?projection=(recipes) get",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "assets",
+                        "{{abcde12345}}"
+                      ],
+                      "query": [
+                        {
+                          "key": "projection",
+                          "value": "(recipes)"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "e06aa751-0915-4043-b5ea-18f281bb3744",
+                  "name": "/liveVideos",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022liveVideoAsset\u0022: {\n                \u0022media\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}\u0022\n            }\n        }\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/v2/liveVideos/{{123456789}}"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "8807dbaf-b350-4e8e-b02d-a3fc3595b491",
+                  "name": "/liveAssetActions end",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}\u0022\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Method",
+                        "type": "text",
+                        "value": "action"
+                      },
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "liveAssetActions"
+                      ],
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "end"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/liveAssetActions?action=end"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Member"
+            },
+            {
+              "description": "This flow outlines the APIs needed to schedule a live event to an organization page.",
+              "id": "35be0e37-254a-4c32-90c7-0793861d204a",
+              "item": [
+                {
+                  "id": "3ddcbca7-dc10-4d31-b79e-72bc4c38898b",
+                  "name": "/me",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/v2/me"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "87762dd7-0da6-462a-a89d-659e22330599",
+                  "name": "/organizationAcls",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "organizationAcls"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "roleAssignee"
+                        },
+                        {
+                          "key": "projection",
+                          "value": "(elements*(organization~))"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/organizationAcls?q=roleAssignee\u0026projection=(elements*(organization~))"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "55622e3a-9048-4322-8af1-45bcc44afd84",
+                  "name": "/contentAccess",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A{{12345}}),admin:(member:urn%3Ali%3Aperson%3A{{abcde}}),featureType:LIVE_VIDEO)"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "2f9eac6a-8fbc-4a43-bc88-c46d846520d2",
+                  "name": "/liveVideos?q=author",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "liveVideos"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "author"
+                        },
+                        {
+                          "key": "author",
+                          "value": "urn%3Ali%3Aorganization%3A{{12345}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/liveVideos?q=author\u0026author=urn%3Ali%3Aorganization%3A{{12345}}"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "94a3463d-9ca8-4c62-b7b4-ef82d9bfe233",
+                  "name": "/assets (optional announcement image)",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022registerUploadRequest\u0022: {\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:video-liveannouncement-image\u0022\n        ],\n        \u0022owner\u0022: \u0022urn:li:person:{{abcde}}\u0022,\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022relationshipType\u0022: \u0022OWNER\u0022,\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022\n            }\n        ]\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "assets"
+                      ],
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "registerUpload"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/assets?action=registerUpload"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "eb501e4e-a765-4544-b4c2-3d6500f33abe",
+                  "name": "/liveVideos",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022author\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:{{12345}}\u0022\n    },\n    \u0022scheduledAt\u0022: 1591892529000,\n    \u0022announcementImage\u0022: {\n        \u0022media\u0022: \u0022urn:li:digitalmediaAsset:{{C5F22AQEUvl4IOBjE2g}}\u0022,\n        \u0022title\u0022: {\n            \u0022text\u0022: \u0022Image Title\u0022,\n            \u0022inferredLocale\u0022: \u0022en_US\u0022\n        }\n    },\n    \u0022name\u0022: \u0022Scheduled Live Event Title\u0022\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/v2/liveVideos"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "00b5f1d6-f7ed-4c03-95b9-ee20ff9510e9",
+                  "name": "/ugcPosts",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \u0022author\u0022: \u0022urn:li:organization:{{12345}}\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:liveVideo:{{123456789}}\u0022,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Let\u0027s go live on LinkedIn!\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    },\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022externalDistributionChannels\u0022: [],\n        \u0022distributedViaFollowFeed\u0022: true\n    }\n}\u0027"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Method",
+                        "type": "text",
+                        "value": "create"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/v2/ugcPosts"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "b22b8131-d7ec-4463-ab6a-6051f6532e71",
+                  "name": "/liveAssetActions register",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \u0022registerLiveEventRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:{{12345}}\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022\n        ],\n        \u0022region\u0022: \u0022WEST_US\u0022,\n        \u0022autoCaptionLanguageTag\u0022: \u0022en-US\u0022\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Method",
+                        "type": "text",
+                        "value": "action"
+                      },
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "liveAssetActions"
+                      ],
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "register"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/liveAssetActions?action=register"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "8ea3520c-6591-4e2a-b983-39a61e75de0d",
+                  "name": "/assets?projection=(recipes) get",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "assets",
+                        "{{abcde12345}}"
+                      ],
+                      "query": [
+                        {
+                          "key": "projection",
+                          "value": "(recipes)"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/assets/{{abcde12345}}?projection=(recipes)"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "f06027da-2ba3-4a77-b1ed-2ce4fcd18420",
+                  "name": "/liveVideos",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022liveVideoAsset\u0022: {\n                \u0022media\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}\u0022\n            }\n        }\n    }\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/v2/liveVideos/{{123456789}}"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "85e6cb1a-feca-4536-aa42-85ee3f093503",
+                  "name": "/liveAssetActions end",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:{{abcde12345}}\u0022\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-RestLi-Method",
+                        "type": "text",
+                        "value": "action"
+                      },
+                      {
+                        "key": "X-RestLi-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v2",
+                        "liveAssetActions"
+                      ],
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "end"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/v2/liveAssetActions?action=end"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Organization"
+            }
+          ],
+          "name": "Scheduled Live Events"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ]
+}

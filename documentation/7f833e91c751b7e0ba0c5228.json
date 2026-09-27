@@ -1,0 +1,550 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+  "Title": "Messages",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is messages. This captures all inbound and outbound messages for direct connection, InMail, Recruiter and Sales Navigator of the regulated members. The method available is CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "You can determine whether a Messages event is an inbound or outbound message based on the actor field of each event. If the event is an outbound one (e.g. regulated member sends a message), the actor field will correspond to the regulated member\u0027s personUrn and equal to the value of the owner field. If the event is inbound, then the field will be of another member\u0027s personUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "All message events\u0027 activity and processedActivity fields will contain owner, author, and thread fields. These fields will help you figure out the identities of the mailbox and more. The owner and author field will correspond to the sender\u0027s mailbox, which can be personal, Recruiter, or Sales Navigator. The thread field contains the membership array field that have the identity of all the participants in the message thread. For more information on the schema, please refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "Below are response examples of inbound and outbound Message events:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "Outbound message with attachment from personal mailbox\nOutbound message from Sales Navigator mailbox\nInbound message to personal mailbox\nInbound message to Sales Navigator mailbox\nOutbound GIF message from Recruiter mailbox\nCompliance Event when a regulated member edits a sent message\nCompliance Event when a regulated member deletes a sent message",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contextual Decoration of entities shared on messages",
+      "Anchor": "contextual-decoration-of-entities-shared-on-messages",
+      "SectionPath": [
+        "Contextual Decoration of entities shared on messages"
+      ],
+      "Text": "LinkedIn has added a feature to provide more context on certain linkedin entities shared on via messages. Currently it supports member mentions, audio messages and video messages shared on messages. The contentUrn field within the activity field is populated with the URNs of the entity shared. The contentUrns are further decorated and populated in the contentUrn~ field within processedActivity to provide additional context regarding the entities shared.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contextual Decoration of entities shared on messages",
+      "Anchor": "contextual-decoration-of-entities-shared-on-messages",
+      "SectionPath": [
+        "Contextual Decoration of entities shared on messages"
+      ],
+      "Text": "Sample response of outbound audio message from personal mailbox\nSample response of outbound video message from personal mailbox\nSample response of outbound message with member mention sent from personal mailbox",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of outbound message activity with attachment from personal mailbox",
+      "Anchor": "sample-response-of-outbound-message-activity-with-attachment-from-personal-mailbox",
+      "SectionPath": [
+        "Sample response of outbound message activity with attachment from personal mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY2MDM0NDMwMzU5NDA0OTUzNjFfNTAw\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022createdAt\u0022: 1574383506267,\n    \u0022author\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDMwMzU5NDA0OTUzNjFfNTAw\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMTMyOTE1ODQzODkxMg==\u0022,\n    \u0022readAt\u0022: 1574383506000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello from personal message\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello from personal message\u0022\n      },\n      \u0022attachments\u0022: [\n          \u0022urn:li:digitalmediaAsset:C5606AQF245TuEXNVXA\u0022\n      ]\n    },\n    \u0022deliveredAt\u0022: 1574383506267\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY2MDM0NDMwMzU5NDA0OTUzNjFfNTAw\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022b000859e-1239-4d77-b3d3-b8c27ee13409\u0022,\n  \u0022processedAt\u0022: 1574383536887,\n  \u0022capturedAt\u0022: 1574383506487,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1574383506267,\n    \u0022deliveredAt\u0022: 1574383506267,\n    \u0022author\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022author~\u0022: {...},\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1573498565823,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1573498565823,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:2qXA98-mVk\u0022\n        }\n      ]\n    },\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMTMyOTE1ODQzODkxMg==\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDMwMzU5NDA0OTUzNjFfNTAw\u0022,\n    \u0022readAt\u0022: 1574383506000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello from personal message\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello from personal message\u0022\n      }\n    },\n    \u0022attachments~\u0022: {...}\n  },\n  \u0022id\u0022: 977493340\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response of outbound message activity with attachment from personal mailbox",
+      "Anchor": "sample-response-of-outbound-message-activity-with-attachment-from-personal-mailbox",
+      "SectionPath": [
+        "Sample response of outbound message activity with attachment from personal mailbox"
+      ],
+      "Text": "To download the media attachment, you will need to include the OAuth2 access token in the Authorization header with the identifier URL value in identifiers of attachments~. See below for an example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request of media download",
+      "Anchor": "sample-request-of-media-download",
+      "SectionPath": [
+        "Sample request of media download"
+      ],
+      "Text": "GET https://api.linkedin.com/mediaDownload/C4E06AQGlz2sDB72DQw/messaging-attachmentFile/0?app=4355721\u0026m=AQL6O71XM7RYCwAAAWcuIskYd_5WgTBEDPP1vu9mgwr17pkmTwAJepazDA\u0026e=1543963290\u0026v=beta\u0026t=12345\n-H \u0022Authorization: Bearer \u003Credacted access token\u003E\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of outbound message activity from Sales Navigator mailbox",
+      "Anchor": "sample-response-of-outbound-message-activity-from-sales-navigator-mailbox",
+      "SectionPath": [
+        "Sample response of outbound message activity from Sales Navigator mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022createdAt\u0022: 1574383495992,\n    \u0022attachments\u0022: [],\n    \u0022author\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022readAt\u0022: 1574383496000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello from Sales Navigator\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello from Sales Navigator\u0022\n      }\n    },\n    \u0022deliveredAt\u0022: 1574383495992\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u00226d43fcff-b56e-4e0f-993b-5a398c89fb5d\u0022,\n  \u0022processedAt\u0022: 1574383527451,\n  \u0022capturedAt\u0022: 1574383496347,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1574383495992,\n    \u0022deliveredAt\u0022: 1574383495992,\n    \u0022attachments\u0022: [],\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {\n            \u0022member\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n            \u0022member~\u0022: {...},\n            \u0022id\u0022: 334326\n          },\n          \u0022identity\u0022: \u0022urn:li:salesIdentity:334326\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022\n        }\n      ]\n    },\n    \u0022author\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n    \u0022readAt\u0022: 1574383496000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello from Sales Navigator\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello from Sales Navigator\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 977493324\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of inbound message activity to personal mailbox",
+      "Anchor": "sample-response-of-inbound-message-activity-to-personal-mailbox",
+      "SectionPath": [
+        "Sample response of inbound message activity to personal mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY2MDM0NDgxMzA5MzM1MzA2MjRfNTAw\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022createdAt\u0022: 1574384720910,\n    \u0022clientExperience\u0022: {\n      \u0022clientGeneratedToken\u0022: \u002241453ff9-a796-4259-8b80-e4a5da9f8230\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDgxMzA5MzM1MzA2MjRfNTAw\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMTMyOTE1ODQzODkxMg==\u0022,\n    \u0022readAt\u0022: 1574384721000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello back to personal inbox\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello back to personal inbox\u0022\n      }\n    },\n    \u0022deliveredAt\u0022: 1574384720910\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY2MDM0NDgxMzA5MzM1MzA2MjRfNTAw\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n  \u0022activityId\u0022: \u00221f9e70cc-925f-4738-a336-718832c9db46\u0022,\n  \u0022processedAt\u0022: 1574384751790,\n  \u0022capturedAt\u0022: 1574384721128,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1574384720910,\n    \u0022deliveredAt\u0022: 1574384720910,\n    \u0022author~\u0022: {...},\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1573498565823,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1573498565823,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:2qXA98-mVk\u0022\n        }\n      ]\n    },\n    \u0022author\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMTMyOTE1ODQzODkxMg==\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDgxMzA5MzM1MzA2MjRfNTAw\u0022,\n    \u0022readAt\u0022: 1574384721000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello back to personal inbox\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello back to personal inbox\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 977493572\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event when a regulated member edits a sent message",
+      "Anchor": "compliance-event-when-a-regulated-member-edits-a-sent-message",
+      "SectionPath": [
+        "Compliance Event when a regulated member edits a sent message"
+      ],
+      "Text": "When a regulated member edits a sent message:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event when a regulated member edits a sent message",
+      "Anchor": "compliance-event-when-a-regulated-member-edits-a-sent-message",
+      "SectionPath": [
+        "Compliance Event when a regulated member edits a sent message"
+      ],
+      "Text": "The value of method field would be UPDATE.\nThe processedActivity contains the edited content of the message.\nThe resourceId would be same as the original message sent / received by the regulated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Event when a regulated member edits a sent message",
+      "Anchor": "compliance-event-when-a-regulated-member-edits-a-sent-message",
+      "SectionPath": [
+        "Compliance Event when a regulated member edits a sent message"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:demo-123\u0022,\n    \u0022resourceId\u0022: \u00222-demoResourceId123==\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022UPDATE\u0022,\n    \u0022configVersion\u0022: 4,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-demoResourceId123==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:demo-123\u0022,\n    \u0022activityId\u0022: \u0022bf2c8e04-99fe-4c9c-be16-4b000b9fd387\u0022,\n    \u0022processedAt\u0022: 1686212247420,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1686212247039,\n    \u0022processedActivity\u0022: {\n        \u0022createdAt\u0022: 1686212246941,\n        \u0022attachments\u0022: [],\n        \u0022thread~\u0022: {\n            \u0022owner\u0022: \u0022urn:li:person:demo-123\u0022,\n            \u0022membership\u0022: [\n                {\n                    \u0022identity~\u0022: { ... },\n                    \u0022createdAt\u0022: 1625024160780,\n                    \u0022identity\u0022: \u0022urn:li:person:demo-123\u0022\n                },\n                {\n                    \u0022identity~\u0022: {...},\n                    \u0022createdAt\u0022: 1625024160780,\n                    \u0022identity\u0022: \u0022urn:li:person:demo-456\u0022\n                }\n            ]\n        },\n        \u0022author~\u0022: {...},\n        \u0022author\u0022: \u0022urn:li:person:demo-123\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-demoResourceId123==\u0022,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022TEXT\u0022,\n            \u0022fallback\u0022: \u0022This Sent message has been edited\u0022,\n            \u0022formatVersion\u0022: 1\n        }\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 1823218385\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event when a regulated member deletes a sent message",
+      "Anchor": "compliance-event-when-a-regulated-member-deletes-a-sent-message",
+      "SectionPath": [
+        "Compliance Event when a regulated member deletes a sent message"
+      ],
+      "Text": "When a regulated member deletes a sent message:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event when a regulated member deletes a sent message",
+      "Anchor": "compliance-event-when-a-regulated-member-deletes-a-sent-message",
+      "SectionPath": [
+        "Compliance Event when a regulated member deletes a sent message"
+      ],
+      "Text": "The value of method field would be DELETE.\nThe processedActivity.content and activity.content fields would not be present.\nThe resourceId would be same as the original message sent / received by the regulated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Event when a regulated member deletes a sent message",
+      "Anchor": "compliance-event-when-a-regulated-member-deletes-a-sent-message",
+      "SectionPath": [
+        "Compliance Event when a regulated member deletes a sent message"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:demo-user1\u0022,\n    \u0022resourceId\u0022: \u00222-demoResourceID==\u0022,\n    \u0022activity\u0022: { ... },\n    \u0022method\u0022: \u0022DELETE\u0022,\n    \u0022configVersion\u0022: 4,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-demoResourceID==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:demo-user1\u0022,\n    \u0022activityId\u0022: \u0022194b0d56-5b05-487f-8b84-da6cbe9e5c31\u0022,\n    \u0022processedAt\u0022: 1686213030032,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1686213029729,\n    \u0022processedActivity\u0022: {\n        \u0022createdAt\u0022: 1686213029706,\n        \u0022attachments\u0022: [],\n        \u0022thread~\u0022: {\n            \u0022owner\u0022: \u0022urn:li:person:demo-user1\u0022,\n            \u0022membership\u0022: [\n                {\n                    \u0022identity~\u0022: { ... },\n                    \u0022createdAt\u0022: 1625024160780,\n                    \u0022identity\u0022: \u0022urn:li:person:demo-user1\u0022\n                },\n                {\n                    \u0022identity~\u0022: { ... },\n                    \u0022createdAt\u0022: 1625024160780,\n                    \u0022identity\u0022: \u0022urn:li:person:demo-user2\u0022\n                }\n            ]\n        },\n        \u0022author~\u0022: { ... },\n        \u0022author\u0022: \u0022urn:li:person:demo-user1\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-demoThreadId==\u0022,\n        \u0022extensionContent\u0022: {\n            \u0022contentRecordMap\u0022: {}\n        }\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 1823218409\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of inbound message activity to Sales Navigator mailbox",
+      "Anchor": "sample-response-of-inbound-message-activity-to-sales-navigator-mailbox",
+      "SectionPath": [
+        "Sample response of inbound message activity to Sales Navigator mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022createdAt\u0022: 1574449632116,\n    \u0022clientExperience\u0022: {\n      \u0022clientGeneratedToken\u0022: \u002211daeca1-34af-47c2-b22e-d02a947c33a2\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022readAt\u0022: 1574449632000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello back to Sales Navigator inbox\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello back to Sales Navigator inbox\u0022\n      }\n    },\n    \u0022deliveredAt\u0022: 1574449632116\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n  \u0022activityId\u0022: \u0022c86c3c71-7844-4ed1-b1fc-66deeac14192\u0022,\n  \u0022processedAt\u0022: 1574449662997,\n  \u0022capturedAt\u0022: 1574449632331,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1574449632116,\n    \u0022deliveredAt\u0022: 1574449632116,\n    \u0022author~\u0022: {...},\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {\n            \u0022member\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n            \u0022member~\u0022: {...},\n            \u0022id\u0022: 334326\n          },\n          \u0022identity\u0022: \u0022urn:li:salesIdentity:334326\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022\n        }\n      ]\n    },\n    \u0022author\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n    \u0022readAt\u0022: 1574449632000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello back to Sales Navigator inbox\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello back to Sales Navigator inbox\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 978988628\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of outbound GIF message activity from Recruiter mailbox",
+      "Anchor": "sample-response-of-outbound-gif-message-activity-from-recruiter-mailbox",
+      "SectionPath": [
+        "Sample response of outbound GIF message activity from Recruiter mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY123456789\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022createdAt\u0022: 1580345063392,\n    \u0022attachments\u0022: [],\n    \u0022author\u0022: \u0022urn:li:hireMailbox:00000123456789\u0022,\n    \u0022id\u0022: \u00220-UzY123456789\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjA123456789\u0022,\n    \u0022readAt\u0022: 1580345063000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022\u0022\n      }\n    },\n    \u0022deliveredAt\u0022: 1580345063392,\n    \u0022extensionContent\u0022: {\n      \u0022contentRecordMap\u0022: {\n        \u0022ThirdPartyMedia\u0022: {\n          \u0022contentRecord\u0022: {\n            \u0022com.linkedin.messaging.plugin.content.ThirdPartyMedia\u0022: {\n              \u0022id\u0022: \u002216144203\u0022,\n              \u0022media\u0022: {\n                \u0022gif\u0022: {\n                  \u0022width\u0022: 498,\n                  \u0022url\u0022: \u0022https://snap.licdn.com/tr/images/09db7a56a494eab4477cfc43ce8ae4db/tenor.gif\u0022,\n                  \u0022height\u0022: 373\n                },\n                \u0022nanogif\u0022: {\n                  \u0022width\u0022: 120,\n                  \u0022url\u0022: \u0022https://snap.licdn.com/tr/images/70076b56d82a7cf30d364513ea732998/tenor.gif\u0022,\n                  \u0022height\u0022: 90\n                },\n                \u0022previewgif\u0022: {\n                  \u0022width\u0022: 220,\n                  \u0022url\u0022: \u0022https://snap.licdn.com/tr/images/f977153e1c03d21380e3fbd50690190c/tenor.gif\u0022,\n                  \u0022height\u0022: 165\n                }\n              },\n              \u0022title\u0022: \u0022\u0022,\n              \u0022type\u0022: \u0022TENOR_GIF\u0022\n            }\n          },\n          \u0022key\u0022: \u0022ThirdPartyMedia\u0022\n        }\n      }\n    }\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY123456789\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u00220f9bc010-4cff-4aa9-8b34-862e0c6a0634\u0022,\n  \u0022processedAt\u0022: 1580345094317,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1580345063639,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1580345063392,\n    \u0022deliveredAt\u0022: 1580345063392,\n    \u0022attachments\u0022: [],\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:hireMailbox:00000123456789\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1455240523597,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:iwXLgvQLRf\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1455240523597,\n          \u0022identity\u0022: \u0022urn:li:hireMailbox:00000123456789\u0022\n        }\n      ],\n      \u0022title\u0022: \u0022\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:hireMailbox:00000123456789\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjA123456789\u0022,\n    \u0022id\u0022: \u00220-UzY123456789\u0022,\n    \u0022readAt\u0022: 1580345063000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022\u0022\n      }\n    },\n    \u0022extensionContent\u0022: {\n      \u0022contentRecordMap\u0022: {\n        \u0022ThirdPartyMedia\u0022: {\n          \u0022contentRecord\u0022: {\n            \u0022com.linkedin.messaging.plugin.content.ThirdPartyMedia\u0022: {\n              \u0022id\u0022: \u002216144203\u0022,\n              \u0022media\u0022: {\n                \u0022gif\u0022: {\n                  \u0022width\u0022: 498,\n                  \u0022url\u0022: \u0022https://snap.licdn.com/tr/images/09db7a56a494eab4477cfc43ce8ae4db/tenor.gif\u0022,\n                  \u0022height\u0022: 373\n                },\n                \u0022nanogif\u0022: {\n                  \u0022width\u0022: 120,\n                  \u0022url\u0022: \u0022https://snap.licdn.com/tr/images/70076b56d82a7cf30d364513ea732998/tenor.gif\u0022,\n                  \u0022height\u0022: 90\n                },\n                \u0022previewgif\u0022: {\n                  \u0022width\u0022: 220,\n                  \u0022url\u0022: \u0022https://snap.licdn.com/tr/images/f977153e1c03d21380e3fbd50690190c/tenor.gif\u0022,\n                  \u0022height\u0022: 165\n                }\n              },\n              \u0022title\u0022: \u0022\u0022,\n              \u0022type\u0022: \u0022TENOR_GIF\u0022\n            }\n          },\n          \u0022key\u0022: \u0022ThirdPartyMedia\u0022\n        }\n      }\n    }\n  },\n  \u0022id\u0022: 1106033436\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of outbound audio message from personal mailbox",
+      "Anchor": "sample-response-of-outbound-audio-message-from-personal-mailbox",
+      "SectionPath": [
+        "Sample response of outbound audio message from personal mailbox"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022resourceId\u0022: \u00222-MTYyOTE0MDAzODE2M2I0MTgyMS0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n    \u0022activity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022attachments\u0022: [],\n        \u0022clientExperience\u0022: {...},\n        \u0022author\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-NjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022readAt\u0022: 1629140038306,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022LITTLE\u0022,\n            \u0022formatVersion\u0022: 1,\n            \u0022fallback\u0022: \u0022\u0022,\n            \u0022content\u0022: {\n                \u0022string\u0022: \u0022{audio|urn:li:digitalmediaAsset:C4E20AQGnXq\\\\_XPHmP3w}\u0022\n            }\n        },\n        \u0022deliveredAt\u0022: 1629140038306,\n        \u0022createdAt\u0022: 1629140038163,\n        \u0022contentFilterReasons\u0022: [],\n        \u0022contentUrns\u0022: [\n            \u0022urn:li:digitalmediaAsset:C4E20AQGnXq_XPHmP3w\u0022\n        ],\n        \u0022id\u0022: \u00222-MTYyOTE0MDAzODE2M2I0MTgyMS0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022$URN\u0022: \u0022urn:li:messagingMessage:2-MTYyOTE0MDAzODE2M2I0MTgyMS0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022\n    },\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022configVersion\u0022: 13,\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-MTYyOTE0MDAzODE2M2I0MTgyMS0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022activityId\u0022: \u0022a93b1b86-708b-4874-b312-cebcc8b52560\u0022,\n    \u0022processedAt\u0022: 1629140038885,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1629140038731,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022owner~\u0022: {...},\n        \u0022attachments\u0022: [],\n        \u0022author~\u0022: {...},\n        \u0022contentUrns~\u0022: [\n            {\n                \u0022paging\u0022: {\n                    \u0022count\u0022: 10,\n                    \u0022start\u0022: 0,\n                    \u0022links\u0022: []\n                },\n                \u0022elements\u0022: [\n                    {\n                        \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4E20AQGnXq_XPHmP3w,urn:li:digitalmediaMediaArtifactClass:voicemessaging-audio-analyzed)\u0022,\n                        \u0022pluggableServiceFactory\u0022: \u0022com.linkedin.vector.assetmanager.logic.pluggableservice.uploaddownloadservice.UploadDownloadServiceFactory\u0022,\n                        \u0022authorizationMethod\u0022: \u0022PRIVATE\u0022,\n                        \u0022data\u0022: {\n                            \u0022com.linkedin.digitalmedia.mediaartifact.Audio\u0022: {\n                                \u0022rawMetadataTags\u0022: [],\n                                \u0022durationInMicroseconds\u0022: 10752000,\n                                \u0022audioStreams\u0022: []\n                            }\n                        },\n                        \u0022identifiers\u0022: [\n                            {\n                                \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/C4E20AQGnXq_XPHmP3w/voicemessaging-audio-analyzed/0/1629140038155?app=70365316\u0026m=AQLLb_u3SlMNagAAAXtQUDTTaNAjjMrzkg_PHbo84cVIzaLRK4rlEoFNOw\u0026e=1631559238\u0026v=beta\u0026t=Da9Tv9RiqnBIJ4hBiFNOZp7_ij5lwnQiJtwKE3ObsU4\u0022,\n                                \u0022filename\u0022: \u00224973B2E2-9772-4E83-BF8F-70F3811955CD.m4a\u0022,\n                                \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C4E20AQGnXq_XPHmP3w,urn:li:digitalmediaMediaArtifactClass:voicemessaging-audio-analyzed,0)\u0022,\n                                \u0022size\u0022: 66492,\n                                \u0022index\u0022: 0,\n                                \u0022mediaType\u0022: \u0022application/octet-stream\u0022,\n                                \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                                \u0022identifierExpiresInSeconds\u0022: 1631559238\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \u0022author\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-NjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022readAt\u0022: 1629140038306,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022LITTLE\u0022,\n            \u0022formatVersion\u0022: 1,\n            \u0022fallback\u0022: \u0022\u0022,\n            \u0022content\u0022: {\n                \u0022string\u0022: \u0022{audio|urn:li:digitalmediaAsset:C4E20AQGnXq\\\\_XPHmP3w}\u0022\n            }\n        },\n        \u0022deliveredAt\u0022: 1629140038306,\n        \u0022createdAt\u0022: 1629140038163,\n        \u0022thread~\u0022: {...},\n        \u0022contentUrns\u0022: [\n            \u0022urn:li:digitalmediaAsset:C4E20AQGnXq_XPHmP3w\u0022\n        ],\n        \u0022id\u0022: \u00222-MTYyOTE0MDAzODE2M2I0MTgyMS0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 1969381378\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of Outbound video message from personal mailbox",
+      "Anchor": "sample-response-of-outbound-video-message-from-personal-mailbox",
+      "SectionPath": [
+        "Sample response of Outbound video message from personal mailbox"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022resourceId\u0022: \u00222-MTYyOTE0MDAyMDM4M2IxMDUxMC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n    \u0022activity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022attachments\u0022: [],\n        \u0022author\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-NjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022readAt\u0022: 1629140020509,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022LITTLE\u0022,\n            \u0022formatVersion\u0022: 1,\n            \u0022fallback\u0022: \u0022\u0022,\n            \u0022content\u0022: {\n                \u0022string\u0022: \u0022{video|urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w}\u0022\n            }\n        },\n        \u0022deliveredAt\u0022: 1629140020509,\n        \u0022createdAt\u0022: 1629140020383,\n        \u0022contentFilterReasons\u0022: [],\n        \u0022contentUrns\u0022: [\n            \u0022urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w\u0022\n        ],\n        \u0022messageContexts\u0022: [],\n        \u0022id\u0022: \u00222-MTYyOTE0MDAyMDM4M2IxMDUxMC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022$URN\u0022: \u0022urn:li:messagingMessage:2-MTYyOTE0MDAyMDM4M2IxMDUxMC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022\n    },\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-MTYyOTE0MDAyMDM4M2IxMDUxMC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022activityId\u0022: \u00228cd045c2-7cdf-4a6e-b629-3b3a413c7fca\u0022,\n    \u0022processedAt\u0022: 1629140020853,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1629140020699,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022owner~\u0022: {...},\n        \u0022author~\u0022: {...},\n        \u0022contentUrns~\u0022: [\n            {\n                \u0022paging\u0022: {\n                    \u0022count\u0022: 10,\n                    \u0022start\u0022: 0,\n                    \u0022links\u0022: []\n                },\n                \u0022elements\u0022: [\n                    {\n                        \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w,urn:li:digitalmediaMediaArtifactClass:videomessaging-mp4_mid)\u0022,\n                        \u0022pluggableServiceFactory\u0022: \u0022com.linkedin.vector.assetmanager.logic.pluggableservice.uploaddownloadservice.UploadDownloadServiceFactory\u0022,\n                        \u0022authorizationMethod\u0022: \u0022PRIVATE\u0022,\n                        \u0022data\u0022: {\n                            \u0022com.linkedin.digitalmedia.mediaartifact.Video\u0022: {\n                                \u0022rawMetadataTags\u0022: [],\n                                \u0022videoStreams\u0022: [\n                                    {\n                                        \u0022index\u0022: 0,\n                                        \u0022bitRate\u0022: {\n                                            \u0022type\u0022: \u0022CBR\u0022,\n                                            \u0022maximum\u0022: 2097152\n                                        },\n                                        \u0022durationInMicroseconds\u0022: 7401000,\n                                        \u0022displayAspectRatio\u0022: {\n                                            \u0022widthAspect\u0022: 0.5625,\n                                            \u0022heightAspect\u0022: 1.0,\n                                            \u0022formatted\u0022: \u00220.562500:1.000000\u0022\n                                        },\n                                        \u0022storageSize\u0022: {\n                                            \u0022width\u0022: 720,\n                                            \u0022height\u0022: 1280\n                                        }\n                                    }\n                                ],\n                                \u0022audioStreams\u0022: []\n                            }\n                        },\n                        \u0022identifiers\u0022: [\n                            {\n                                \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/C4E23AQEiWpnWqOxC8w/videomessaging-mp4_mid/0/1629140020374?app=70365316\u0026m=AQLrOE6H9yL_mQAAAXtQT-5hMWmcGNsLeglY8V0zyw1d55e2UNW0KzZxPQ\u0026e=1631559220\u0026v=beta\u0026t=bR27huusjrKRvkjYn1b1MXqCJtbDSlIxU7SkKbg9V8c\u0022,\n                                \u0022filename\u0022: \u00229504AA7B-2D25-4D54-A6DD-AB3310C08D71.mp4\u0022,\n                                \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w,urn:li:digitalmediaArtifactClass:videomessaging-mp4_mid,0)\u0022,\n                                \u0022size\u0022: 2585873,\n                                \u0022index\u0022: 0,\n                                \u0022mediaType\u0022: \u0022video/quicktime\u0022,\n                                \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                                \u0022identifierExpiresInSeconds\u0022: 1631559220\n                            }\n                        ]\n                    },\n                    {\n                        \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w,urn:li:digitalmediaMediaArtifactClass:videomessaging-thumbnail)\u0022,\n                        \u0022pluggableServiceFactory\u0022: \u0022com.linkedin.vector.assetmanager.logic.pluggableservice.uploaddownloadservice.UploadDownloadServiceFactory\u0022,\n                        \u0022authorizationMethod\u0022: \u0022PRIVATE\u0022,\n                        \u0022data\u0022: {...},\n                        \u0022identifiers\u0022: [\n                            {\n                                \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/C4E23AQEiWpnWqOxC8w/videomessaging-thumbnail/0/1629140020373?app=70365316\u0026m=AQJjk_oEIHREAQAAAXtQT-5hSChETOgwv4xvUsIeytDblQbQqd-rzQk_nw\u0026e=1631559220\u0026v=beta\u0026t=IB75pjxnwWleO-a6BCVj5PVj3UQCERZIDGdncwndQcI\u0022,\n                                \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w,urn:li:digitalmediaArtifactClass:videomessaging-thumbnail,0)\u0022,\n                                \u0022size\u0022: 452256,\n                                \u0022index\u0022: 0,\n                                \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                                \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                                \u0022identifierExpiresInSeconds\u0022: 1631559220\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \u0022author\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-NjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022readAt\u0022: 1629140020509,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022LITTLE\u0022,\n            \u0022formatVersion\u0022: 1,\n            \u0022fallback\u0022: \u0022\u0022,\n            \u0022content\u0022: {\n                \u0022string\u0022: \u0022{video|urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w}\u0022\n            }\n        },\n        \u0022deliveredAt\u0022: 1629140020509,\n        \u0022createdAt\u0022: 1629140020383,\n        \u0022thread~\u0022: {...},\n        \u0022contentUrns\u0022: [\n            \u0022urn:li:digitalmediaAsset:C4E23AQEiWpnWqOxC8w\u0022\n        ],\n        \u0022id\u0022: \u00222-MTYyOTE0MDAyMDM4M2IxMDUxMC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022\n    },\n    \u0022id\u0022: 1969381370\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of Outbound message with member mention sent from personal mailbox",
+      "Anchor": "sample-response-of-outbound-message-with-member-mention-sent-from-personal-mailbox",
+      "SectionPath": [
+        "Sample response of Outbound message with member mention sent from personal mailbox"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022resourceId\u0022: \u00222-MTYyOTEzOTk3NjQ4N2I4OTg1OC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n    \u0022activity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022author\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-NjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022readAt\u0022: 1629139976649,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022LITTLE\u0022,\n            \u0022formatVersion\u0022: 1,\n            \u0022fallback\u0022: \u0022This is a test @Siddartha Test\u0022,\n            \u0022content\u0022: {\n                \u0022string\u0022: \u0022This is a test @[Siddartha Test](urn:li:person:A3iH9CIw-n)\u0022\n            }\n        },\n        \u0022deliveredAt\u0022: 1629139976649,\n        \u0022createdAt\u0022: 1629139976487,\n        \u0022contentFilterReasons\u0022: [],\n        \u0022contentUrns\u0022: [\n            \u0022urn:li:person:A3iH9CIw-n\u0022\n        ],\n        \u0022messageContexts\u0022: [],\n        \u0022id\u0022: \u00222-MTYyOTEzOTk3NjQ4N2I4OTg1OC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022$URN\u0022: \u0022urn:li:messagingMessage:2-MTYyOTEzOTk3NjQ4N2I4OTg1OC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022\n    },\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-MTYyOTEzOTk3NjQ4N2I4OTg1OC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022activityId\u0022: \u0022663bfb24-492e-4198-9821-6255719a9143\u0022,\n    \u0022processedAt\u0022: 1629139977514,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1629139977339,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022owner~\u0022: {...},\n        \u0022attachments\u0022: [],\n        \u0022author~\u0022: {...},\n        \u0022contentUrns~\u0022: [\n            {\n                \u0022localizedLastName\u0022: \u0022Test\u0022,\n                \u0022firstName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Siddartha\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022profilePicture\u0022: {\n                    \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C4E03AQFEHQg35srlUg\u0022,\n                    \u0022displayImage~\u0022: {...}\n                },\n                \u0022lastName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Test\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022vanityName\u0022: \u0022sidaddarth34rfa7s07\u0022,\n                \u0022headline\u0022: {...},\n                \u0022localizedFirstName\u0022: \u0022Siddartha\u0022\n            }\n        ],\n        \u0022author\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-NjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022,\n        \u0022readAt\u0022: 1629139976649,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022LITTLE\u0022,\n            \u0022formatVersion\u0022: 1,\n            \u0022fallback\u0022: \u0022This is a test @Siddartha Test\u0022,\n            \u0022content\u0022: {\n                \u0022string\u0022: \u0022This is a test @[Siddartha Test](urn:li:person:A3iH9CIw-n)\u0022\n            }\n        },\n        \u0022deliveredAt\u0022: 1629139976649,\n        \u0022createdAt\u0022: 1629139976487,\n        \u0022thread~\u0022: {...},\n        \u0022contentUrns\u0022: [\n            \u0022urn:li:person:A3iH9CIw-n\u0022\n        ],\n        \u0022id\u0022: \u00222-MTYyOTEzOTk3NjQ4N2I4OTg1OC0wMDMmNjI2ZGZkZWEtZGFkZS00N2FkLTk2YmEtMDY5MWEyNmEyOThhXzAxMg==\u0022\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 1969381330\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Company Pages Messaging (BETA)",
+      "Anchor": "support-for-company-pages-messaging-beta",
+      "SectionPath": [
+        "Support for Company Pages Messaging (BETA)"
+      ],
+      "Text": "LinkedIn allows users to message LinkedIn Company Pages. Archiving messages sent and received between a regulated member and a LinkedIn Company page are now supported via the complianceEvents API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Company Pages Messaging (BETA)",
+      "Anchor": "support-for-company-pages-messaging-beta",
+      "SectionPath": [
+        "Support for Company Pages Messaging (BETA)"
+      ],
+      "Text": "The following use cases are supported:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Company Pages Messaging (BETA)",
+      "Anchor": "support-for-company-pages-messaging-beta",
+      "SectionPath": [
+        "Support for Company Pages Messaging (BETA)"
+      ],
+      "Text": "A regulated member messages a company page: In this case, all the messages sent are received by the regulated member are archived as compliance events for the regulated member.\n\nOutbound message to a LinkedIn Company Page by a regulated user\nInbound message sent by a LinkedIn Company Page to a regulated user\n\n\nA member messages a company page managed by a regulated member: In this case, if a regulated member is the ADMIN of a company page, then all the messages sent and received by the company page are archived as compliance events for all the regulated admins. The developer is expected to onboard atleast one admin for compliance regulation to be able to archive information on messages sent and received by the company page.\n\nInbound message sent to a LinkedIn Company Page by any user\nOutbound message sent by a LinkedIn Company Page to any user",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Company Pages Messaging (BETA)",
+      "Anchor": "support-for-company-pages-messaging-beta",
+      "SectionPath": [
+        "Support for Company Pages Messaging (BETA)"
+      ],
+      "Text": "For messages sent to a LinkedIn Company Page, the identity field under the processedActivity.thread~.membership would be a Page MailBox URN (urn:li:pageMailbox:\u003Cid\u003E) signifying a Company Page.\nDetails of the company page are provided under the identity~ field with the following schema:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Support for Company Pages Messaging (BETA)",
+      "Anchor": "support-for-company-pages-messaging-beta",
+      "SectionPath": [
+        "Support for Company Pages Messaging (BETA)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Data Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ownerOrganization.organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN of the Company Page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownerOrganization.organization~.name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocale String",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Name of the Company Page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownerOrganization.organization~.vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vanity name of the Company Page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownerOrganization.organization~.localizedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized name of the Company Page in their preferred locale",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownerOrganization.organization~.id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the organization",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event of an outbound message sent to a LinkedIn Company Page",
+      "Anchor": "compliance-event-of-an-outbound-message-sent-to-a-linkedin-company-page",
+      "SectionPath": [
+        "Compliance Event of an outbound message sent to a LinkedIn Company Page"
+      ],
+      "Text": "Sample Compliance Event:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Event of an outbound message sent to a LinkedIn Company Page",
+      "Anchor": "compliance-event-of-an-outbound-message-sent-to-a-linkedin-company-page",
+      "SectionPath": [
+        "Compliance Event of an outbound message sent to a LinkedIn Company Page"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:demo-123\u0022,\n    \u0022resourceId\u0022: \u00222-demoResourceId123==\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-demoResourceId123==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:demo-123\u0022,\n    \u0022processedAt\u0022: 1686198033638,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:gpq-OMQ48G\u0022,\n        \u0022createdAt\u0022: 1686198032462,\n        \u0022owner~\u0022: {...},\n        \u0022attachments\u0022: [],\n        \u0022author~\u0022: { ... },\n        \u0022thread~\u0022: {\n            \u0022owner\u0022: \u0022urn:li:person:demo-123\u0022,\n            \u0022membership\u0022: [\n                {\n                    \u0022identity~\u0022: {...},\n                    \u0022createdAt\u0022: 1685541512879,\n                    \u0022identity\u0022: \u0022urn:li:person:demo-123\u0022\n                },\n                {\n                    \u0022identity~\u0022: {\n                        \u0022messagingEnabled\u0022: true,\n                        \u0022ownerOrganization\u0022: {\n                            \u0022organization~\u0022: {\n                                \u0022name\u0022: {\n                                    \u0022localized\u0022: {\n                                        \u0022zh_TW\u0022: \u0022DemoCompany\u0022\n                                    },\n                                    \u0022preferredLocale\u0022: {\n                                        \u0022country\u0022: \u0022US\u0022,\n                                        \u0022language\u0022: \u0022en\u0022\n                                    }\n                                },\n                                \u0022vanityName\u0022: \u0022DemoCompany123\u0022,\n                                \u0022localizedName\u0022: \u0022demoCompany\u0022,\n                                \u0022id\u0022: 123\n                            },\n                            \u0022organization\u0022: \u0022urn:li:organization:123\u0022\n                        }\n                    },\n                    \u0022createdAt\u0022: 1685541512879,\n                    \u0022identity\u0022: \u0022urn:li:pageMailbox:6411\u0022\n                }\n            ]\n        },\n        \u0022author\u0022: \u0022urn:li:person:demo-123\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-demoResourceId123==\u0022,\n        \u0022id\u0022: \u00222-demoResourceId123==\u0022,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022TEXT\u0022,\n            \u0022fallback\u0022: \u0022Sending a message to the Company Page\u0022,\n            \u0022formatVersion\u0022: 1\n        },\n        \u0022deliveredAt\u0022: 1686198033358\n    },\n    \u0022siblingActivities\u0022: []\n    .\n    .\n    .\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event of an inbound message sent by a LinkedIn Company Page",
+      "Anchor": "compliance-event-of-an-inbound-message-sent-by-a-linkedin-company-page",
+      "SectionPath": [
+        "Compliance Event of an inbound message sent by a LinkedIn Company Page"
+      ],
+      "Text": "For messages sent by a LinkedIn Company Page to a regulated member, the following fields within processedActivity would be populated with a page mailbox URN (urn:li:pageMailBox:\u003Cid\u003E) signifying the message was sent by a LinkedIn Company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event of an inbound message sent by a LinkedIn Company Page",
+      "Anchor": "compliance-event-of-an-inbound-message-sent-by-a-linkedin-company-page",
+      "SectionPath": [
+        "Compliance Event of an inbound message sent by a LinkedIn Company Page"
+      ],
+      "Text": "processedActivity.owner\nprocessedActivity.author\nidentity field under the processedActivity.thread~.membership",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Event of an inbound message sent by a LinkedIn Company Page",
+      "Anchor": "compliance-event-of-an-inbound-message-sent-by-a-linkedin-company-page",
+      "SectionPath": [
+        "Compliance Event of an inbound message sent by a LinkedIn Company Page"
+      ],
+      "Text": "Sample Compliance Event:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Event of an inbound message sent by a LinkedIn Company Page",
+      "Anchor": "compliance-event-of-an-inbound-message-sent-by-a-linkedin-company-page",
+      "SectionPath": [
+        "Compliance Event of an inbound message sent by a LinkedIn Company Page"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:demo-123\u0022,\n    \u0022resourceId\u0022: \u00222-demoResourceId123==\u0022,\n    \u0022activity\u0022: { ... },\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-demoResourceId123==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:demo-123\u0022,\n    \u0022activityId\u0022: \u0022104d1d4e-d40f-4f1f-a7e6-demoID\u0022,\n    \u0022processedAt\u0022: 1686198051220,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1686198050946,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:pageMailbox:123\u0022,\n        \u0022createdAt\u0022: 1686198050222,\n        \u0022owner~\u0022: { ... },\n        \u0022attachments\u0022: [],\n        \u0022author~\u0022: {\n            \u0022ownerOrganization\u0022: {\n                \u0022organization~\u0022: {\n                    \u0022name\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022zh_TW\u0022: \u0022demoCompany\u0022\n                        },\n                        \u0022preferredLocale\u0022: {\n                            \u0022country\u0022: \u0022US\u0022,\n                            \u0022language\u0022: \u0022en\u0022\n                        }\n                    },\n                    \u0022vanityName\u0022: \u0022demoCompany123\u0022,\n                    \u0022localizedName\u0022: \u0022demoCompany\u0022,\n                    \u0022id\u0022: 123\n                },\n                \u0022organization\u0022: \u0022urn:li:organization:123\u0022\n            }\n        },\n        \u0022thread~\u0022: {\n            \u0022owner\u0022: \u0022urn:li:person:demo-123\u0022,\n            \u0022membership\u0022: [\n                {\n                    \u0022identity~\u0022: { ... },\n                    \u0022createdAt\u0022: 1685541512879,\n                    \u0022identity\u0022: \u0022urn:li:person:demo-123\u0022\n                },\n                {\n                    \u0022identity~\u0022: {\n                        \u0022messagingEnabled\u0022: true,\n                        \u0022ownerOrganization\u0022: {\n                            \u0022organization~\u0022: {\n                                \u0022name\u0022: {\n                                    \u0022localized\u0022: {\n                                        \u0022zh_TW\u0022: \u0022demoCompany\u0022\n                                    },\n                                    \u0022preferredLocale\u0022: {\n                                        \u0022country\u0022: \u0022US\u0022,\n                                        \u0022language\u0022: \u0022en\u0022\n                                    }\n                                },\n                                \u0022vanityName\u0022: \u0022demoCompany123\u0022,\n                                \u0022localizedName\u0022: \u0022demoCompany\u0022,\n                                \u0022id\u0022: 123\n                            },\n                            \u0022organization\u0022: \u0022urn:li:organization:123\u0022\n                        }\n                    },\n                    \u0022createdAt\u0022: 1685541512879,\n                    \u0022identity\u0022: \u0022urn:li:pageMailbox:123\u0022\n                }\n            ]\n        },\n        \u0022author\u0022: \u0022urn:li:pageMailbox:641143\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-demoResourceId123==\u0022,\n        \u0022id\u0022: \u00222-demoResourceId123==\u0022,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022TEXT\u0022,\n            \u0022fallback\u0022: \u0022A company page replying back\u0022,\n            \u0022formatVersion\u0022: 1\n        },\n        \u0022deliveredAt\u0022: 1686198050921\n    },\n    \u0022id\u0022: 1823011081\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inbound message sent to a LinkedIn Company Page by any user",
+      "Anchor": "inbound-message-sent-to-a-linkedin-company-page-by-any-user",
+      "SectionPath": [
+        "Inbound message sent to a LinkedIn Company Page by any user"
+      ],
+      "Text": "Sample Compliance Event:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Inbound message sent to a LinkedIn Company Page by any user",
+      "Anchor": "inbound-message-sent-to-a-linkedin-company-page-by-any-user",
+      "SectionPath": [
+        "Inbound message sent to a LinkedIn Company Page by any user"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022resourceId\u0022: \u00222-MTcyMTg5ODAyMDIyMmI3NjAzNS0wMDQmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022configVersion\u0022: 19,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-MTcyMTg5ODAyMDIyMmI3NjAzNS0wMDQmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:A3iH9CIw-n\u0022,\n    \u0022activityId\u0022: \u0022f2c9c64c-39cc-40b4-a531-37f1d1ca3112\u0022,\n    \u0022processedAt\u0022: 1721898021625,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1721898020677,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:A3iH9CIw-n\u0022,\n        \u0022createdAt\u0022: 1721898020222,\n        \u0022owner~\u0022: {...},\n        \u0022attachments\u0022: [],\n        \u0022author~\u0022: {...},\n        \u0022author\u0022: \u0022urn:li:person:A3iH9CIw-n\u0022,\n        \u0022thread!\u0022: {\n            \u0022message\u0022: \u0022Content_is_no_longer_available\u0022\n        },\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-MGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n        \u0022id\u0022: \u00222-MTcyMTg5ODAyMDIyMmI3NjAzNS0wMDQmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022TEXT\u0022,\n            \u0022fallback\u0022: \u0022Test Message\u0022,\n            \u0022formatVersion\u0022: 1\n        },\n        \u0022deliveredAt\u0022: 1721898020533\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 2059635257\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Outbound message sent by a LinkedIn Company Page to any user",
+      "Anchor": "outbound-message-sent-by-a-linkedin-company-page-to-any-user",
+      "SectionPath": [
+        "Outbound message sent by a LinkedIn Company Page to any user"
+      ],
+      "Text": "Sample Compliance Event",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Outbound message sent by a LinkedIn Company Page to any user",
+      "Anchor": "outbound-message-sent-by-a-linkedin-company-page-to-any-user",
+      "SectionPath": [
+        "Outbound message sent by a LinkedIn Company Page to any user"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022resourceId\u0022: \u00222-MTcyMTg5ODA3MzAxNGIxMjY3Mi0wMDEmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n    \u0022activity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:pageMailbox:3966458\u0022,\n        \u0022attachments\u0022: [],\n        \u0022clientExperience\u0022: {\n            \u0022clientGeneratedToken\u0022: \u00221e47db9a-8dd8-4a02-9920-90db2498fb9b\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:pageMailbox:3966458\u0022,\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-MGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n        \u0022contentClassification\u0022: {\n            \u0022classification\u0022: \u0022SAFE\u0022\n        },\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022TEXT\u0022,\n            \u0022fallback\u0022: \u0022Test Reply\u0022,\n            \u0022formatVersion\u0022: 1\n        },\n        \u0022deliveredAt\u0022: 1721898073138,\n        \u0022actor\u0022: \u0022urn:li:messagingActor:urn:li:person:KhoHfOWYNQ\u0022,\n        \u0022createdAt\u0022: 1721898073014,\n        \u0022mailbox\u0022: \u0022urn:li:messagingMailbox:urn:li:pageMailbox:3966458\u0022,\n        \u0022messageContexts\u0022: [],\n        \u0022id\u0022: \u00222-MTcyMTg5ODA3MzAxNGIxMjY3Mi0wMDEmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n        \u0022$URN\u0022: \u0022urn:li:messagingMessage:2-MTcyMTg5ODA3MzAxNGIxMjY3Mi0wMDEmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022\n    },\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022configVersion\u0022: 19,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022messages\u0022,\n    \u0022resourceUri\u0022: \u0022/messages/2-MTcyMTg5ODA3MzAxNGIxMjY3Mi0wMDEmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:KhoHfOWYNQ\u0022,\n    \u0022activityId\u0022: \u0022f9902cc5-e483-4dd1-92c0-c3afc5127bf8\u0022,\n    \u0022processedAt\u0022: 1721898073956,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1721898073238,\n    \u0022processedActivity\u0022: {\n        \u0022owner\u0022: \u0022urn:li:pageMailbox:3966458\u0022,\n        \u0022createdAt\u0022: 1721898073014,\n        \u0022owner~\u0022: {...},\n        \u0022attachments\u0022: [],\n        \u0022author~\u0022: {...},\n        \u0022author\u0022: \u0022urn:li:pageMailbox:3966458\u0022,\n        \u0022thread!\u0022: {\n            \u0022message\u0022: \u0022Content_is_no_longer_available\u0022\n        },\n        \u0022thread\u0022: \u0022urn:li:messagingThread:2-MGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n        \u0022id\u0022: \u00222-MTcyMTg5ODA3MzAxNGIxMjY3Mi0wMDEmMGUxZTAwYzItYjM3Yi00OGY3LWFiOGEtMzBmMGNiOTk4MWU5XzAxMw==\u0022,\n        \u0022content\u0022: {\n            \u0022format\u0022: \u0022TEXT\u0022,\n            \u0022fallback\u0022: \u0022Test Reply\u0022,\n            \u0022formatVersion\u0022: 1\n        },\n        \u0022deliveredAt\u0022: 1721898073138\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 5797969900\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Outbound message sent by a LinkedIn Company Page to any user",
+      "Anchor": "outbound-message-sent-by-a-linkedin-company-page-to-any-user",
+      "SectionPath": [
+        "Outbound message sent by a LinkedIn Company Page to any user"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Outbound message sent by a LinkedIn Company Page to any user",
+      "Anchor": "outbound-message-sent-by-a-linkedin-company-page-to-any-user",
+      "SectionPath": [
+        "Outbound message sent by a LinkedIn Company Page to any user"
+      ],
+      "Text": "This is currently in BETA, for compliance events archived for the regulated company page admins, the thread decoration currently returns thread!: \u0022Content_is_no_longer_available\u0022 We are working on this.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

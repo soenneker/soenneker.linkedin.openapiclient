@@ -1,0 +1,503 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+  "Title": "API version migrations",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "API version migrations",
+      "Anchor": "api-version-migrations",
+      "SectionPath": [],
+      "Text": "LinkedIn versioned APIs are updated periodically to introduce new features and improvements. Follow the migration timeline and version updates below to plan your migration before deadlines.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API version migrations",
+      "Anchor": "api-version-migrations",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API version migrations",
+      "Anchor": "api-version-migrations",
+      "SectionPath": [],
+      "Text": "All unversioned (v2) API deprecation deadlines are extended to July 2028 to provide additional flexibility for partner integration teams. Connect with your LinkedIn Business Development partner before planning migration work.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Migration timeline",
+      "Anchor": "migration-timeline",
+      "SectionPath": [
+        "Migration timeline"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version",
+        "Migration Deadline",
+        "Migration Steps",
+        "Version Updates"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "202604",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 2028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202604",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202604"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202604-latest"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 2028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202603",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202603"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC | CRM Connect",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202603",
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes?view=li-lts-2026-04#version-202603"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202602",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "February 2028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202602",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202602"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202602"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202512",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202512",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202512"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202512"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202511",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "November 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202511",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202511"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202511"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202510",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202510"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202510"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202508.02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202508.02",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-20250802"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-20250802"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202508",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202508",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202508"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202508"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202507",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202507",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202507"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202507"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202504",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202504"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202504"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "January 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202501",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/migrations?view=li-lts-2026-04#version-202501"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202501"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration timeline",
+      "Anchor": "migration-timeline",
+      "SectionPath": [
+        "Migration timeline"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration timeline",
+      "Anchor": "migration-timeline",
+      "SectionPath": [
+        "Migration timeline"
+      ],
+      "Text": "All endpoints introduced or updated in earlier versions remain fully supported in the latest API version (202604). Use the latest LinkedIn-Version header to access the most recent features while retaining compatibility with all previously versioned endpoints.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202604",
+      "Anchor": "version-202604",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202604"
+      ],
+      "Text": "Update the applications resource path from /rest/atsApplications to /rest/applications for PUT and DELETE requests.\nAdd LinkedIn-Version: 202604 to updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202603"
+      ],
+      "Text": "RSC: Add vanityIdentifier optional field to /rest/jobRequisitions requests if you want to display a human-readable identifier (for example, Req ID) alongside the canonical externalJobRequisitionId.\nCRM Connect: Update candidatePipelineStages, candidatePipelines, and pipelineStages endpoint paths from v2/tcrm* to rest/; rename request fields to external* convention; add LinkedIn-Version: 202603 header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202602",
+      "Anchor": "version-202602",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202602"
+      ],
+      "Text": "\u26A0\uFE0F Breaking change \u2014 Update /v2/atsCandidates to /rest/candidates; rename atsCandidateId to externalCandidateId, atsCreatedAt to externalCreatedAt, atsLastModifiedAt to externalLastModifiedAt; remove dataProvider from entity keys.\nUpdate /v2/atsIntegrations to /rest/integrations and /v2/atsIntegrationConfigurations to /rest/integrationConfigurations; remove dataProvider from entity keys.\nImplement DELETE /rest/candidates to replace DELETE /v2/atsCandidates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202512",
+      "Anchor": "version-202512",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202512"
+      ],
+      "Text": "Update GET /v2/seatsV2 to GET /rest/seatsV2; rename id to seatId and created.time to createdAt.actor \u002B createdAt.time.\nUpdate /v2/atsCandidates/{id}.../notes to /rest/candidateNotes and /v2/atsApplications/{id}.../notes to /rest/applicationNotes; rename atsCandidateId to externalCandidateId, atsJobApplicationId to externalJobApplicationId; rename note param ids to externalNoteId; remove dataProvider.\nImplement DELETE /rest/candidateNotes and DELETE /rest/applicationNotes for data deletion.\nAdd LinkedIn-Version: 202512 header to all updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202511",
+      "Anchor": "version-202511",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202511"
+      ],
+      "Text": "Update /v2/atsEntityAcls to /rest/entityAcls and /v2/atsEntityAclAssignees to /rest/entityAclAssignees; rename key params atsEntityAclId to entityAclId, atsEntityId to entityId, atsEntityType to entityType.\nAdd LinkedIn-Version: 202511 header to all updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202510",
+      "Anchor": "version-202510",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202510"
+      ],
+      "Text": "Update GET /v2/mailStubs to GET /rest/mailStubs; handle location response field change from string to profileLocation object (locationName, countryCode).\nImplement DELETE /rest/attachments for deleting synced resume attachments.\nAdd LinkedIn-Version: 202510 header to all updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202508.02",
+      "Anchor": "version-20250802",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202508.02"
+      ],
+      "Text": "Update /v2/atsApplications/{id}.../interviewFeedback to /rest/applicationInterviewFeedbacks; rename key params atsJobApplicationId to jobApplicationId; add interviewFeedbackId; remove dataProvider.\nAdd LinkedIn-Version: 202508.02 header to all updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202508",
+      "Anchor": "version-202508",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202508"
+      ],
+      "Text": "Implement /rest/attachments for syncing resumes as attachments; supports batch_update, batch_delete.\nAdd LinkedIn-Version: 202508 header to all updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202507",
+      "Anchor": "version-202507",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202507"
+      ],
+      "Text": "\u26A0\uFE0F Breaking change \u2014 Update /v2/simpleJobPostings to /rest/simpleJobPostings; migrate RSC private job postings to /rest/jobRequisitions.\nUpdate /v2/atsApplications to /rest/atsApplications; remove dataProvider from entity keys; add atsJobRequisitionId and accessRestricted fields.\n\u26A0\uFE0F Breaking change \u2014 Update GET /v2/exportedCandidates to GET /rest/exportedCandidates; remove handling for externalJobPostingId; add handling for referenceEntityType, referenceEntityId, and source.\nUpdate sub-resource path /atsApplications/{id}.../stages to flat /rest/applicationStage; rename atsJobApplicationId to jobApplicationId, atsCreatedAt to externalCreatedAt.\nUpdate GET /v2/atsPurgedExportedCandidates to GET /rest/atsPurgedExportedCandidates; no field changes.\nImplement new GET endpoint /rest/exportedApplicationEvaluations for retrieving application evaluations generated by LinkedIn Hiring Assistant (LiHA).\nImplement new DELETE endpoints: /rest/atsApplications, /rest/applicationInterviewFeedbacks, /rest/applicationStage, /rest/jobRequisitions, /rest/jobRequisitionStages.\nAdd LinkedIn-Version: 202507 header to all updated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202504",
+      "Anchor": "version-202504",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202504"
+      ],
+      "Text": "Implement /rest/jobRequisitions for syncing job requisitions; link to job postings using partnerRequisitionId in simpleJobPostings.\nImplement /rest/jobRequisitionStages for managing requisition lifecycle stages.\nAdd LinkedIn-Version: 202504 header to all requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202501",
+      "Anchor": "version-202501",
+      "SectionPath": [
+        "Migration timeline",
+        "Version 202501"
+      ],
+      "Text": "Update base path from https://api.linkedin.com/v2/ to https://api.linkedin.com/rest/ for all Talent API requests.\nAdd LinkedIn-Version: 202501 header to all requests.\nUpdate POST /v2/simpleJobPostings to POST /rest/simpleJobPostings; add required company field (URN format: urn:li:company:{id}).\nEnsure firstName is provided for all /atsCandidates requests.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

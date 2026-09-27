@@ -1,0 +1,142 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api",
+  "Title": "LinkedIn Learning Reporting API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api-faq",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "LinkedIn Learning Reporting APIs provide key insights and engagement metrics such as course completions, hours of content viewed, and learner days active. Insights can be aggregated by entities like individuals, groups, and accounts or content objects like courses and videos. These insights can help organizations measure effectiveness of learning and development initiatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the process for configuring the LinkedIn Learning Reporting API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disclaimer",
+      "Anchor": "disclaimer",
+      "SectionPath": [
+        "Disclaimer"
+      ],
+      "Text": "LinkedIn Learning is constantly investing in our reporting infrastructure. In the future, there may be changes to the Reporting API that may require\nadjustments to how data is queried. These updates may require you to make some updates on your platform. We intend to provide detailed guidance in advance of any potential changes to ensure that you have enough time to make necessary changes in your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys",
+      "Anchor": "provision-api-keys",
+      "SectionPath": [
+        "Provision API Keys"
+      ],
+      "Text": "To generate a new API key, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys",
+      "Anchor": "provision-api-keys",
+      "SectionPath": [
+        "Provision API Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Access content and reports via API and expand Generate LinkedIn Learning REST API Application.\n\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter the name of your learning platform or LMS in the Application Name field.\n\nProvide a short description of the integration use case in the Application description field. For example, \u0022[Your LMS] learner progress reporting\u0022.\n\nUnder Choose keys there are two\u202Fcheckboxes\u202F\u2013\u202FContent\u202Fand\u202FReport. Select Report.\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nCopy the generated Client Id and Client Secret and paste the values into the corresponding fields of your LMS configuration app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Enterprise Learning Activity Reports",
+      "Anchor": "retrieve-enterprise-learning-activity-reports",
+      "SectionPath": [
+        "Provision API Keys",
+        "Retrieve Enterprise Learning Activity Reports"
+      ],
+      "Text": "For details on how to retrieve key insights and engagement metrics from LinkedIn Learning, please review the detailed documentation captured here:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Enterprise Learning Activity Reports",
+      "Anchor": "retrieve-enterprise-learning-activity-reports",
+      "SectionPath": [
+        "Provision API Keys",
+        "Retrieve Enterprise Learning Activity Reports"
+      ],
+      "Text": "Retrieve Enterprise LinkedIn Learning Activity Reports",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Enterprise Learning Activity Reports",
+      "Anchor": "retrieve-enterprise-learning-activity-reports",
+      "SectionPath": [
+        "Provision API Keys",
+        "Retrieve Enterprise Learning Activity Reports"
+      ],
+      "Text": "For any questions on the LinkedIn Learning Reporting API please contact your LinkedIn Learning Technical Consultant.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Enterprise Learning Activity Reports",
+      "Anchor": "retrieve-enterprise-learning-activity-reports",
+      "SectionPath": [
+        "Provision API Keys",
+        "Retrieve Enterprise Learning Activity Reports"
+      ],
+      "Text": "Congratulations! Your learners and learning admins now can gain key insights and engagement metrics via their LinkedIn Learning Reporting API instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Provision API Keys",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Please review our LinkedIn Learning Reporting API FAQ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Provision API Keys",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Back-to-Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

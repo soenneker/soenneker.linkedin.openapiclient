@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The captions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Captions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem>? Captions { get; set; }
 #nullable restore
 #else
-        public UntypedNode Captions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem> Captions { get; set; }
 #endif
         /// <summary>The downloadUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string DownloadUrl { get; set; }
 #endif
         /// <summary>The downloadUrlExpiresAt property</summary>
-        public int? DownloadUrlExpiresAt { get; set; }
+        public long? DownloadUrlExpiresAt { get; set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,9 +73,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "captions", n => { Captions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "captions", n => { Captions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
-                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetIntValue(); } },
+                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "thumbnails", n => { Thumbnails = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetThumbnailsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetThumbnailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -87,9 +87,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("captions", Captions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetCaptionsItem>("captions", Captions);
             writer.WriteStringValue("downloadUrl", DownloadUrl);
-            writer.WriteIntValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
+            writer.WriteLongValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
             writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetThumbnailsItem>("thumbnails", Thumbnails);
             writer.WriteAdditionalData(AdditionalData);

@@ -1,0 +1,416 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/integration-requirements",
+  "Title": "Integration Requirements for Advertising API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Advertising API",
+      "Anchor": "integration-requirements-for-advertising-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Advertising API",
+      "Anchor": "integration-requirements-for-advertising-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Advertising API",
+      "Anchor": "integration-requirements-for-advertising-api",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Advertising API program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Advertising API",
+      "Anchor": "integration-requirements-for-advertising-api",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Advertising API",
+      "Anchor": "integration-requirements-for-advertising-api",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn can suggest modifications which should be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration, with right scopes, consent screen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to re-trigger OAuth Flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use refresh tokens to mint new access tokens.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and re-trigger OAuth Flow.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account Structure (Hierarchy) and Basic control",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Sponsored Accounts with status for the logged in user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all CampaignsGroups with status within Sponsored Accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Campaigns with status within Sponsored Accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Creatives with status within Campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to visualize account hierarchy (accounts -\u003E Creative (Ad)).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to PAUSE and ACTIVATE existing Campaigns and Creatives.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to update Bid amounts for Campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creating a Sponsored campaign (text ad/image ads/article ads/video ads)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Showcase Objective Based Advertising (OBA) experience in the campaign creation UX.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create 2 or more types of sponsored campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to edit and archive all loaded sponsored campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-204",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use an existing image share or article share to create a creative in the campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-205",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create a dark share (image/article) to create a creative in the campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-206",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to schedule a campaign Start/End Date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeting proficiency",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-301",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to offer all targeting facets in parity with Campaign Manager UI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-302",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to visualize targeting expressiveness (boolean structure, with include/exclude).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reporting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to perform Campaign Reporting based on Campaign hierarchy.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADS-502",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to perform Campaign Reporting based on Demographic pivots.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/customer-configuration",
+  "Title": "Customer Configuration and Enablement Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Customer Configuration and Enablement Overview",
+      "Anchor": "customer-configuration-and-enablement-overview",
+      "SectionPath": [],
+      "Text": "This page describes the requirements to begin syncing BASIC jobs to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Configuration and Enablement Overview",
+      "Anchor": "customer-configuration-and-enablement-overview",
+      "SectionPath": [],
+      "Text": "Requirements\nProvision Customers\nCreate Enablement Toggle",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Configuration and Enablement Overview",
+      "Anchor": "customer-configuration-and-enablement-overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Configuration and Enablement Overview",
+      "Anchor": "customer-configuration-and-enablement-overview",
+      "SectionPath": [],
+      "Text": "All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Provision one unique API key per customer account to be used for the job posting integration and other supported LinkedIn integrations.\nProvide the ability for customer\u0027s to enable / disable syncing of jobs to LinkedIn with LinkedIn\u0027s Job Terms \u0026 Conditions language.\nProvide the ability for customer\u0027s to enter a LinkedIn company page url to post jobs to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision Customers",
+      "Anchor": "provision-customers",
+      "SectionPath": [
+        "Provision Customers"
+      ],
+      "Text": "The Provisioning API allows you to create API keys for each of your customers. Please note that you will need to store a unique API key and a LinkedIn Developer Application id for each of your customers. For existing customers of Recruiter System Connect or Apply with LinkedIn you will be using their existing API keys.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Enablement Toggle",
+      "Anchor": "create-enablement-toggle",
+      "SectionPath": [
+        "Create Enablement Toggle"
+      ],
+      "Text": "In your application\u2019s job board settings, provide a toggle that allows your customers to opt in or out of syncing all external, public job postings and an input field for a customer to provide the LinkedIn company page url to post jobs to. If you are an Apply Connect partner, you can now use the ATS Onboarding Widget to streamline company page URL entry. It is recommended to prefill the input field with the integrationContext value obtained from the onboarding widget callback response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Enablement Toggle",
+      "Anchor": "create-enablement-toggle",
+      "SectionPath": [
+        "Create Enablement Toggle"
+      ],
+      "Text": "The following language needs to appear directly next to or below the toggle (in a font size and color that will be noticeable to your customers): \u0022By posting your job to LinkedIn, you agree to LinkedIn\u2019s Jobs Terms \u0026 Conditions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Disablement",
+      "Anchor": "integration-disablement",
+      "SectionPath": [
+        "Integration Disablement"
+      ],
+      "Text": "If a customer should disable the LinkedIn job posting integration from your application\u0027s job board settings, batch update jobs with a jobPostingOperationType as CLOSE. This action will close all job postings currently on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

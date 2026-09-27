@@ -1,0 +1,706 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+  "Title": "DMP Segment Users",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Users",
+      "Anchor": "dmp-segment-users",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Users",
+      "Anchor": "dmp-segment-users",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Users",
+      "Anchor": "dmp-segment-users",
+      "SectionPath": [],
+      "Text": "DMP Segment Users is a sub-resource of DMP segments that allows you to add users to a DMP Segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Users",
+      "Anchor": "dmp-segment-users",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Users",
+      "Anchor": "dmp-segment-users",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Users",
+      "Anchor": "dmp-segment-users",
+      "SectionPath": [],
+      "Text": "After creating a DMP segment, wait 5 seconds for it to become available before adding users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments to read and manage audience DMP segments.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Managing audiences is restricted to ad accounts where the authenticated member has a role other than VIEWER.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action to take on this entity: ADD or REMOVE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "userIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List[TypedId] (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of ID to match.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "idType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IdType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of this ID. All IDs of a given type must use the same format/encoding.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "idValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An opaque ID in type-specific format.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A plain text string with a maximum length of 35 characters representing the first name of the contact to match, e.g., Mike.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A plain text string with a maximum length of 35 characters representing the last name of the contact to match, e.g., Smith.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A plain text string with a maximum length of 100 characters representing the title name of the contact to match, e.g., Software Engineer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A plain text string with a maximum length of 50 characters representing the company name of the contact to match, e.g., Microsoft Corporation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO-standardized two letter country code, e.g., US.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "IdTypes",
+      "Anchor": "idtypes",
+      "SectionPath": [
+        "Schema",
+        "IdTypes"
+      ],
+      "Text": "The following idType values are supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "IdTypes",
+      "Anchor": "idtypes",
+      "SectionPath": [
+        "Schema",
+        "IdTypes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SHA256_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of user as a HEX encoded string with a maximum length of 64 characters. For example, 692682111bc191d915ac7009d118a78bc496cf7a2ba8c2d0134ade012ac1234",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SHA512_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of user as a HEX encoded string with a maximum length of 128 characters. For example, 09d118a78b692682111bc15ac70c496cf7a9e0502ba8c2d016f2f496cf7a2ba8c1....",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GOOGLE_AID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User identifier for matching with Android devices. A plain text string with a maximum length of 32 characters and all in lower case. For example, cdda802e-fb9c-47ad-0794d394c912....",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Hashing Guideline",
+      "Anchor": "email-hashing-guideline",
+      "SectionPath": [
+        "Schema",
+        "IdTypes",
+        "Email Hashing Guideline"
+      ],
+      "Text": "The following guidelines must be followed for Email hashing:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Hashing Guideline",
+      "Anchor": "email-hashing-guideline",
+      "SectionPath": [
+        "Schema",
+        "IdTypes",
+        "Email Hashing Guideline"
+      ],
+      "Text": "Convert all email addresses to lowercase.\nRemove any whitespace from the email address before generating the hash.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Input data requirements",
+      "Anchor": "input-data-requirements",
+      "SectionPath": [
+        "Schema",
+        "Input data requirements"
+      ],
+      "Text": "An input request will be validated and will fail if the following validation rules are not met:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Input data requirements",
+      "Anchor": "input-data-requirements",
+      "SectionPath": [
+        "Schema",
+        "Input data requirements"
+      ],
+      "Text": "All IDs provided in the userIds fields must have a supported type and valid value.\nAn input request must provide:\n\nAt least one valid ID, or\nA valid firstName and lastName\n\n\nRaw plain text email addresses must not be included in the userIds field or in the firstName and lastName fields.\nBest practice: include all available optional fields to potentially increase the match rate of the uploaded list to right entities on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove a User",
+      "Anchor": "add-or-remove-a-user",
+      "SectionPath": [
+        "Add or Remove a User"
+      ],
+      "Text": "Add or remove a single user from a DMP Segment. Send all available user identifiers to increase the match rates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10804/users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022action\u0022: \u0022ADD\u0022,\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u002209d118a78b69261bc191d915ac70c496cf7a9e0502ba8c2d016f2f134ade\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022cdda802e-fb9c-47ad-0794d394c912\u0022\n      }\n    ],\n    \u0022firstName\u0022: \u0022mike\u0022,\n    \u0022lastName\u0022: \u0022smith\u0022,\n    \u0022title\u0022: \u0022software engineer\u0022,\n    \u0022company\u0022: \u0022microsoft\u0022,\n    \u0022country\u0022: \u0022us\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10804/users\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022action\u0022: \u0022ADD\u0022,\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u002209d118a78b69261bc191d915ac70c496cf7a9e0502ba8c2d016f2f134ade\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022cdda802e-fb9c-47ad-0794d394c912\u0022\n      }\n    ],\n    \u0022firstname\u0022: \u0022mike\u0022,\n    \u0022lastname\u0022: \u0022smith\u0022,\n    \u0022titleName\u0022: \u0022software engineer\u0022,\n    \u0022companyName\u0022: \u0022microsoft\u0022,\n    \u0022countryName\u0022: \u0022us\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a User",
+        "Sample Request"
+      ],
+      "Text": "A 201 Created HTTP status code is returned if you add the same ID again or remove an already deleted ID. This is by design.\nA 400 Bad Request is returned if the request doesn\u0027t pass the validation check. Please check the error message to understand what validation failed",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Multiple Users",
+      "Anchor": "add-or-remove-multiple-users",
+      "SectionPath": [
+        "Add or Remove Multiple Users"
+      ],
+      "Text": "Add or remove multiple users from a DMP Segment by passing the X-RestLi-Method: BATCH_CREATE header. This method is more efficient than sending multiple requests to add or remove users one at a time. You may stream up to 5000 users in a single batch request. If you see issues with your batch request responses, you may try to resubmit with smaller batch size.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10804/users\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [\n              {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u0022692682111bc191d915ac7009d118a78bc496cf7a2ba8c2d0134ade012ac1234\u0022\n              },\n              {\n                \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n                \u0022idValue\u0022: \u0022cffg876e-gm9v-98de-0013d927s873\u0022\n              }\n            ],\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [\n              {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u002209d118a78b69261bc191d915ac70c496cf7a9e0502ba8c2d016f2f134ade\u0022\n              },\n              {\n                \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n                \u0022idValue\u0022: \u0022cdda802e-12cd-fb9c-47ad-0794d394c912\u0022\n              }\n            ],\n            \u0022firstname\u0022: \u0022mike\u0022,\n            \u0022lastname\u0022: \u0022smith\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10804/users\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [\n              {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u0022692682111bc191d915ac7009d118a78bc496cf7a2ba8c2d0134ade012ac1234\u0022\n              },\n              {\n                \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n                \u0022idValue\u0022: \u0022cffg876e-gm9v-98de-0013d927s873\u0022\n              }\n            ]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [\n              {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u002209d118a78b69261bc191d915ac70c496cf7a9e0502ba8c2d016f2f134ade\u0022\n              },\n              {\n                \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n                \u0022idValue\u0022: \u0022cdda802e-12cd-fb9c-47ad-0794d394c912\u0022\n              }\n            ],\n            \u0022firstname\u0022: \u0022mike\u0022,\n            \u0022lastname\u0022: \u0022smith\u0022\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Request"
+      ],
+      "Text": "A 400 Bad Request is returned if the request syntax is incorrect. For correct syntax, we return a batch response array with HTTP response status for each element in the batch, including 201 status for success and 400 status for error. If error, message contains a reference to batchIndex to specify the exact index of the invalid element in the array that caused the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022serviceErrorCode\u0022: 10007,\n  \u0022message\u0022: \u0022Validation failed because [{field=userIds, batchIndex=0, type=MISSING_REQUIRED_FIELD, message=ERROR :: /userIds/idType :: \\\u0022GOOGLE\\\u0022 is not an enum symbol}]\u0022,\n  \u0022status\u0022: 400\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022elements\u0022:\n  [ \n    {\u0022error\u0022:\n      {\u0022message\u0022:\u0022Validation failed because [{reason=CONDITIONAL_INVALID_VALUE, field=/userIds, batchIndex=0, type=INVALID_VALUE, \n                  message=/idValue cannot be set to \u003CREDACTED\u003E if /idType is set to SHA256_EMAIL, \n                  parameters={reason=The provided id \u0027\u0027 of type SHA256_EMAIL did not match the corresponding regex Optional[^[a-fA-F0-9=\\\\\u002B\\\\_\\\\-]{64}$], \n                  field1=/idValue, value2=SHA256_EMAIL, value1=\u003CREDACTED\u003E, field2=/idType}}]\u0022,\n        \u0022status\u0022:400},\n     \u0022status\u0022:400\n    },\n    {\u0022status\u0022:201}\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Add or Remove Multiple Users",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022elements\u0022:\n  [ \n    {\n\t    \u0022status\u0022:201\n    },\n    {\n      \u0022status\u0022:201\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "We have introduced a 1 minute rate limit per user (member) for our DMP streaming APIs Users \u0026 Companies to prevent abuse, ensure service stability, and consistent API availability. These limits are enforced in addition to your existing daily limits per user and per app, which can be found in the Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "For the /users endpoint, an application will have a 1 minute limit of 600 requests per user. This means an application can make up to 600 requests per user within a minute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "If your application calls /dmpSegments/users or /dmpSegments/companies too frequently, you may get an HTTP 429 response, indicating that you have exceeded the rate limits.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "If your application performs a high volume of automated data pushes, frequent throttling may occur. While this could impact API call throughput, it won\u0027t affect the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "To understand how to handle these rate limits see the FAQ",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The coverImage property</summary>
+        /// <summary>The organizational page&apos;s cover image. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no cover image for a particular organizational page.Documented type: OrganizationVectorImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage? CoverImage { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage CoverImage { get; set; }
 #endif
-        /// <summary>The coverImageCropMetadata property</summary>
+        /// <summary>Cropped image metadata used for positioning the organizational page cover image. This will only be present if the organizational page doesn&apos;t have a cropped cover image vector asset and only has the original size.Documented type: RectangleRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageCropMetadata? CoverImageCropMetadata { get; set; }
@@ -38,6 +38,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCreated Created { get; set; }
 #endif
+        /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDeleted? Deleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDeleted Deleted { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescription Description { get; set; }
 #endif
-        /// <summary>The entityUrn property</summary>
+        /// <summary>Unique identifier of the organizational page.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EntityUrn { get; set; }
@@ -62,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemLastModified LastModified { get; set; }
 #endif
-        /// <summary>The localizedDescription property</summary>
+        /// <summary>Localized description of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalizedDescription { get; set; }
@@ -70,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LocalizedDescription { get; set; }
 #endif
-        /// <summary>The localizedName property</summary>
+        /// <summary>Localized name of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalizedName { get; set; }
@@ -78,7 +86,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LocalizedName { get; set; }
 #endif
-        /// <summary>The logo property</summary>
+        /// <summary>The organizational page&apos;s logo. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no logo for a particular organizational page.Documented type: OrganizationVectorImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemLogo? Logo { get; set; }
@@ -102,13 +110,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPageProfileEntity PageProfileEntity { get; set; }
 #endif
-        /// <summary>The pageUrl property</summary>
+        /// <summary>The URL of the organizational page within the LinkedIn application. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PageUrl { get; set; }
 #nullable restore
 #else
         public string PageUrl { get; set; }
+#endif
+        /// <summary>Represents parent page organization associated with the organizational page. This will be present in the case there is a parent organization for a given organizational page.Documented type: OrganizationalPageUrnRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentOrganizationEntity { get; set; }
+#nullable restore
+#else
+        public string ParentOrganizationEntity { get; set; }
 #endif
         /// <summary>The primaryPageEntity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +134,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPrimaryPageEntity PrimaryPageEntity { get; set; }
 #endif
-        /// <summary>The vanityName property</summary>
+        /// <summary>The organizational page&apos;s unique name used in URLs scoped to their specific underlying entities. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or the underlying organizational page entities do not support vanity name functionality.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VanityName { get; set; }
@@ -154,6 +170,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "coverImage", n => { CoverImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage.CreateFromDiscriminatorValue); } },
                 { "coverImageCropMetadata", n => { CoverImageCropMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageCropMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageCropMetadata.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDeleted.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescription.CreateFromDiscriminatorValue); } },
                 { "entityUrn", n => { EntityUrn = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
@@ -163,6 +180,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemName.CreateFromDiscriminatorValue); } },
                 { "pageProfileEntity", n => { PageProfileEntity = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPageProfileEntity>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPageProfileEntity.CreateFromDiscriminatorValue); } },
                 { "pageUrl", n => { PageUrl = n.GetStringValue(); } },
+                { "parentOrganizationEntity", n => { ParentOrganizationEntity = n.GetStringValue(); } },
                 { "primaryPageEntity", n => { PrimaryPageEntity = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPrimaryPageEntity>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPrimaryPageEntity.CreateFromDiscriminatorValue); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
             };
@@ -177,6 +195,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage>("coverImage", CoverImage);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageCropMetadata>("coverImageCropMetadata", CoverImageCropMetadata);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCreated>("created", Created);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDeleted>("deleted", Deleted);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemDescription>("description", Description);
             writer.WriteStringValue("entityUrn", EntityUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemLastModified>("lastModified", LastModified);
@@ -186,6 +205,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPageProfileEntity>("pageProfileEntity", PageProfileEntity);
             writer.WriteStringValue("pageUrl", PageUrl);
+            writer.WriteStringValue("parentOrganizationEntity", ParentOrganizationEntity);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemPrimaryPageEntity>("primaryPageEntity", PrimaryPageEntity);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteAdditionalData(AdditionalData);

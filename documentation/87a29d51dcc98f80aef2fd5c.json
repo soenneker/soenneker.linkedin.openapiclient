@@ -1,0 +1,147 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes",
+  "Title": "Sales Navigator Analytics Services - Release Notes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Analytics Services - Release Notes",
+      "Anchor": "sales-navigator-analytics-services---release-notes",
+      "SectionPath": [],
+      "Text": "Sales Navigator Analytics Services release updates on a regular basis to provide new features, security updates, and bug fixes. Read more to learn about what\u0027s coming in the next release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "hasReportingAccess flag",
+      "Anchor": "hasreportingaccess-flag",
+      "SectionPath": [
+        "October 2018 Release",
+        "hasReportingAccess flag"
+      ],
+      "Text": "/salesContracts results now contain the hasReportingAccess field for the contract, which indicates whether the user can report on data for this contract.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API",
+      "Anchor": "release-of-analytics-api",
+      "SectionPath": [
+        "July 2018 release",
+        "Release of Analytics API"
+      ],
+      "Text": "Release Date: July 17, 2018",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API",
+      "Anchor": "release-of-analytics-api",
+      "SectionPath": [
+        "July 2018 release",
+        "Release of Analytics API"
+      ],
+      "Text": "We enabled a production data pipeline for the Analytics API, allowing partners to request activity data in the context of a production contract.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API",
+      "Anchor": "release-of-analytics-api",
+      "SectionPath": [
+        "July 2018 release",
+        "Release of Analytics API"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API",
+      "Anchor": "release-of-analytics-api",
+      "SectionPath": [
+        "July 2018 release",
+        "Release of Analytics API"
+      ],
+      "Text": "Mock data offered in the alpha release is no longer available with the release of production data pipeline.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API (Alpha)",
+      "Anchor": "release-of-analytics-api-alpha",
+      "SectionPath": [
+        "April 2018 release",
+        "Release of Analytics API (Alpha)"
+      ],
+      "Text": "Release Date: April 19, 2018",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API (Alpha)",
+      "Anchor": "release-of-analytics-api-alpha",
+      "SectionPath": [
+        "April 2018 release",
+        "Release of Analytics API (Alpha)"
+      ],
+      "Text": "This is an alpha release offering early access to the Analytics API. In this release, we introduced following APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API (Alpha)",
+      "Anchor": "release-of-analytics-api-alpha",
+      "SectionPath": [
+        "April 2018 release",
+        "Release of Analytics API (Alpha)"
+      ],
+      "Text": "/salesContracts: Get the list of contracts a user belongs to in Sales Navigator.\n/salesAnalyticsExportJobs: Create export jobs to export analytics data in Sales Navigator such as activity, activity outcomes, and seats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API (Alpha)",
+      "Anchor": "release-of-analytics-api-alpha",
+      "SectionPath": [
+        "April 2018 release",
+        "Release of Analytics API (Alpha)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release of Analytics API (Alpha)",
+      "Anchor": "release-of-analytics-api-alpha",
+      "SectionPath": [
+        "April 2018 release",
+        "Release of Analytics API (Alpha)"
+      ],
+      "Text": "The alpha release only offers mock data, helping partners implement and validate the integration before release.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,3518 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+  "Title": "Apply with LinkedIn with Verifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/icims/sync-job-application-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn with Verifications",
+      "Anchor": "apply-with-linkedin-with-verifications",
+      "SectionPath": [],
+      "Text": "As a certified Apply with LinkedIn partner, you receive LinkedIn-verified identity and workplace information about applicants through Apply with LinkedIn with Verifications, which extends Apply with LinkedIn (AWLI). When a member verifies their identity or workplace, LinkedIn shares that result with you. Your customers (recruiters) can use verified information to prioritize applicants without leaving the applicant tracking system (ATS).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn with Verifications",
+      "Anchor": "apply-with-linkedin-with-verifications",
+      "SectionPath": [],
+      "Text": "For off-site applications submitted on the customer\u0027s career site, verification data travels through the member\u0027s browser, so it is signed and bound to the member and job. For the decoded record model, refer to the Verification data schema. For AWLI, the signed wrapper is delivered in verificationData.signature. The schema below describes the validated claims inside that payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn with Verifications",
+      "Anchor": "apply-with-linkedin-with-verifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn with Verifications",
+      "Anchor": "apply-with-linkedin-with-verifications",
+      "SectionPath": [],
+      "Text": "Verification data only confirms an applicant\u0027s verified identity or workplace. It never indicates that an applicant is fraudulent, and its absence carries no negative meaning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn with Verifications",
+      "Anchor": "apply-with-linkedin-with-verifications",
+      "SectionPath": [],
+      "Text": "Apply with LinkedIn with Verifications and Apply Connect with Verifications render verification badges in the LinkedIn-hosted plugins. For more information, refer to Display verification badges.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before you begin",
+      "Anchor": "before-you-begin",
+      "SectionPath": [
+        "Before you begin"
+      ],
+      "Text": "Before you start, make sure you have:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before you begin",
+      "Anchor": "before-you-begin",
+      "SectionPath": [
+        "Before you begin"
+      ],
+      "Text": "An Apply with LinkedIn integration that is certified and approved for verification data. Work with your LinkedIn contact to request access and schedule recertification.\nAn Apply Connect integration that syncs jobs and screening questions.\nA server-side service that can validate HS256 JSON Web Signatures (JWS) and store verification records.\nA way to report application lifecycle actions to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before you begin",
+      "Anchor": "before-you-begin",
+      "SectionPath": [
+        "Before you begin"
+      ],
+      "Text": "Take the following steps to add verification data to your Apply with LinkedIn integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before you begin",
+      "Anchor": "before-you-begin",
+      "SectionPath": [
+        "Before you begin"
+      ],
+      "Text": "Configure customer applications\nSync jobs\nDeploy the Apply with LinkedIn widget\nReceive and validate verification data\nReport application activity\nComplete certification and testing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "Before implementing the widget, request access to the Apply with LinkedIn development environment and create or use the required developer applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "If you are an ATS partner supporting multiple customers, complete these actions for every customer:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "Create a customer application and store a unique client ID and client secret for that customer. The application name appears in the member consent screen.\nAdd the customer\u0027s fully qualified career-site domain, including protocol and any non-standard port, to the application\u0027s Valid SDK Domains setting.\nDisplay the ATS Integration Configuration Plugin in your customer-facing configuration experience and configure it to support APPLY_WITH_LINKEDIN.\nStore the integrationContext, integrationType, and tenantType that the plugin returns.\nUsing the customer application\u0027s OAuth 2 client credentials, enable the APPLY_WITH_LINKEDIN integration server-side and set a customer-facing integrationName.\nVerify that the integration\u0027s onboarding status is ENABLED before deploying the widget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "Enable customer integrations only from your server and in real time. A customer integration cannot be disabled after it is enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "The following plugin lets the customer request the integration. Your callback must store the returned data and send it to your server to enable the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {customer_client_id}\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/ATSIntegrationWidget\u0022\n  data-supported-bundled-integration-types=\u0022APPLY_WITH_LINKEDIN\u0022\n  data-onintegrate=\u0022handleIntegrations\u0022\n  data-width=\u0022{width}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure customer applications",
+      "Anchor": "step-1-configure-customer-applications",
+      "SectionPath": [
+        "Step 1: Configure customer applications"
+      ],
+      "Text": "The detailed enablement and status-check request and error reference appears later on this page. No additional OAuth scope is required for verification sharing.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Sync jobs",
+      "Anchor": "step-2-sync-jobs",
+      "SectionPath": [
+        "Step 2: Sync jobs"
+      ],
+      "Text": "Verification data is bound to a job, not just to a customer app. If the job is not synced, LinkedIn still returns the applicant profile but omits verification data and returns JOB_NOT_SYNCED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Sync jobs",
+      "Anchor": "step-2-sync-jobs",
+      "SectionPath": [
+        "Step 2: Sync jobs"
+      ],
+      "Text": "Follow the job posting guidance in Job Posting API overview and Sync job postings before you enable verification sharing. In practice, that means:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Sync jobs",
+      "Anchor": "step-2-sync-jobs",
+      "SectionPath": [
+        "Step 2: Sync jobs"
+      ],
+      "Text": "Sync the job and its screening questions through the existing Apply Connect integration.\nKeep the job listed on LinkedIn and resolvable through the same companyJobCode that you pass to the AWLI widget. This value must match the job\u0027s externalJobPostingId in the synced posting.\nSet onsiteApplyOptOut to true so the job stays off-site and applicants get a single apply path.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 2: Sync jobs",
+      "Anchor": "step-2-sync-jobs",
+      "SectionPath": [
+        "Step 2: Sync jobs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Default",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "onsiteApplyOptOut",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn does not enable LinkedIn Easy Apply for this job when this field is true.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Sync jobs",
+      "Anchor": "step-2-sync-jobs",
+      "SectionPath": [
+        "Step 2: Sync jobs"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Sync jobs",
+      "Anchor": "step-2-sync-jobs",
+      "SectionPath": [
+        "Step 2: Sync jobs"
+      ],
+      "Text": "The verification payload is only released for jobs that are successfully synced and matched by companyJobCode. If the job is missing, hidden, or not resolvable, verification data is intentionally omitted even when the applicant qualifies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Deploy the Apply with LinkedIn widget",
+      "Anchor": "step-3-deploy-the-apply-with-linkedin-widget",
+      "SectionPath": [
+        "Step 3: Deploy the Apply with LinkedIn widget"
+      ],
+      "Text": "Deploy the widget on the customer\u0027s career-site job application page. Use the customer client ID and the integrationContext that you stored in step 1. The same companyJobCode must identify the job you synced in step 2.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Deploy the Apply with LinkedIn widget",
+      "Anchor": "step-3-deploy-the-apply-with-linkedin-widget",
+      "SectionPath": [
+        "Step 3: Deploy the Apply with LinkedIn widget"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022\n  src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {customer_client_id}\n  extensions: AwliWidget@https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/AwliWidget\u0022\n  data-mode=\u0022BUTTON_DATA\u0022\n  data-integration-context=\u0022urn:li:organization:{id}\u0022\n  data-company-job-code=\u0022{company_job_code}\u0022\n  data-callback-method=\u0022handleProfileData\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 3: Deploy the Apply with LinkedIn widget",
+      "Anchor": "step-3-deploy-the-apply-with-linkedin-widget",
+      "SectionPath": [
+        "Step 3: Deploy the Apply with LinkedIn widget"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "api_key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer application client ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use BUTTON_DATA to render the button and receive profile data. Use CONVERSION on the completed-application page to report conversion tracking.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer urn:li:organization:{id} integration context returned in step 1.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-company-job-code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job ID. It must match the synced job\u0027s externalJobPostingId.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-callback-method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes for verification sharing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your JavaScript function that handles the profile response and verificationData.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-size and data-color",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional button presentation settings.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Deploy the Apply with LinkedIn widget",
+      "Anchor": "step-3-deploy-the-apply-with-linkedin-widget",
+      "SectionPath": [
+        "Step 3: Deploy the Apply with LinkedIn widget"
+      ],
+      "Text": "Do not customize the Apply with LinkedIn button or widget events with JavaScript. The widget handles member sign-in and consent during its authorization flow. Your integration does not request or configure an additional OAuth scope. Applicants who decline consent can still apply normally, but verification data is omitted. The complete parameter, rendering, profile response, and error reference appears later on this page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Because an applicant can modify anything in their browser, records are carried inside the signature rather than in the structured list. No unverified copy exists to trust by accident.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [],\n  \u0022signature\u0022: \u0022******\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "signature is a compact JWS signed with HS256, three base64url parts joined by dots: \u003Cheader\u003E.\u003Cpayload\u003E.\u003Cmac\u003E.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Header",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "{ \u0022alg\u0022: \u0022HS256\u0022, \u0022typ\u0022: \u0022JWT\u0022, \u0022kid\u0022: \u002212345\u0022 }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Payload claims",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "",
+      "Headers": [
+        "Claim",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ver",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The signing scheme version.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sub",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The memberIdentifier this payload was issued for, which must match the submission.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The companyJobCode you submitted for this application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "iat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time the payload was issued, in seconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "exp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The expiration time, in seconds since epoch. Reject the payload after this time.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jti",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifier LinkedIn uses as a nonce to reject replays.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field lists the completed verification categories, such as IDENTITY and WORKPLACE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field contains detailed verification metadata for the completed verifications. Refer to the Verification data schema.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Signing key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "The HS256 key is the client secret of the developer application identified by kid. If you recently rotated that secret, try your current, primary secret first, then your previous, secondary secret. Both are valid during the rotation overlap.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Validation steps",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Perform every check below when you receive the submission \u2014 not in a later batch job, since exp may have already passed by then:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Read alg and kid from the header. Reject if alg is not HS256, or if kid does not identify one of your developer applications.\nSelect the application\u0027s client secret, named by kid, as the key.\nVerify the HS256 signature over \u003Cheader\u003E.\u003Cpayload\u003E using a constant-time comparison.\nCheck that sub equals the memberIdentifier on this submission. This prevents a payload issued for one applicant from being reused for another.\nCheck that job equals the companyJobCode for this application, and that ver is a version you support. This prevents reuse across jobs.\nCheck that exp is in the future and iat is not later than the current time.\nCheck that jti has not been seen before. Cache processed values at least until exp.\nOnly now, read the verifications claim.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "If any check fails, treat verification data as absent. Never partially trust it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Node.js example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "This example uses only Node.js built-in modules. The payload is base64url-encoded rather than encrypted. Verify its MAC over the original encoded header and payload, then use the decoded claims only after every check succeeds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "import { createHmac, timingSafeEqual } from \u0022node:crypto\u0022;\n\nfunction decodeBase64Url(value) {\n  return Buffer.from(value, \u0022base64url\u0022);\n}\n\nfunction decodeJsonPart(value) {\n  return JSON.parse(decodeBase64Url(value).toString(\u0022utf8\u0022));\n}\n\nfunction validateVerificationSignature({\n  signature,\n  memberIdentifier,\n  companyJobCode,\n  developerApplications,\n  replayCache,\n  supportedVersions = new Set([\u00221\u0022]),\n  clockSkewSeconds = 60,\n}) {\n  const parts = signature.split(\u0022.\u0022);\n  if (parts.length !== 3) {\n    throw new Error(\u0022Invalid compact JWS format\u0022);\n  }\n\n  const [encodedHeader, encodedPayload, encodedMac] = parts;\n  const header = decodeJsonPart(encodedHeader);\n  const payload = decodeJsonPart(encodedPayload);\n\n  if (header.alg !== \u0022HS256\u0022 || typeof header.kid !== \u0022string\u0022) {\n    throw new Error(\u0022Unsupported algorithm or missing key identifier\u0022);\n  }\n\n  // Look up the secret by kid. Keep current and previous secrets during rotation.\n  const application = developerApplications.get(header.kid);\n  if (!application || !application.currentSecret) {\n    throw new Error(\u0022Unknown developer application\u0022);\n  }\n\n  const signingInput = \u0060${encodedHeader}.${encodedPayload}\u0060;\n  const receivedMac = decodeBase64Url(encodedMac);\n  const validSecret = [application.currentSecret, application.previousSecret]\n    .filter(Boolean)\n    .find((secret) =\u003E {\n      const expectedMac = createHmac(\u0022sha256\u0022, secret)\n        .update(signingInput)\n        .digest();\n      return (\n        receivedMac.length === expectedMac.length \u0026\u0026\n        timingSafeEqual(receivedMac, expectedMac)\n      );\n    });\n\n  if (!validSecret) {\n    throw new Error(\u0022Invalid JWS signature\u0022);\n  }\n\n  const now = Math.floor(Date.now() / 1000);\n  if (\n    payload.sub !== memberIdentifier ||\n    payload.job !== companyJobCode ||\n    !supportedVersions.has(payload.ver) ||\n    typeof payload.exp !== \u0022number\u0022 ||\n    payload.exp \u003C= now ||\n    typeof payload.iat !== \u0022number\u0022 ||\n    payload.iat \u003E now \u002B clockSkewSeconds ||\n    typeof payload.jti !== \u0022string\u0022 ||\n    replayCache.has(payload.jti)\n  ) {\n    throw new Error(\u0022Invalid verification claims\u0022);\n  }\n\n  // Mark the nonce as used only after signature and claim validation succeeds.\n  replayCache.add(payload.jti, payload.exp - now);\n\n  return {\n    verifications: payload.verifications,\n    verifiedDetails: payload.verifiedDetails,\n  };\n}\n\n// Example inputs from your server-side application.\nconst verificationData = {\n  verifications: [],\n  signature: \u0022******\u0022,\n};\n\nconst verified = validateVerificationSignature({\n  signature: verificationData.signature,\n  memberIdentifier: submission.memberIdentifier,\n  companyJobCode: submission.companyJobCode,\n  developerApplications: new Map([\n    [\u002212345\u0022, { currentSecret: process.env.CUSTOMER_CLIENT_SECRET }],\n  ]),\n  replayCache,\n});\n\n// Store and display only this validated data.\nconsole.log(verified.verifications, verified.verifiedDetails);",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Replace submission, replayCache, and the developer-application lookup with\nyour server-side implementations. Store replay-cache entries until their\ncorresponding exp time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "Decoded payload example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "{\n  \u0022ver\u0022: \u00221\u0022,\n  \u0022sub\u0022: \u0022AQEFf...the memberIdentifier...\u0022,\n  \u0022job\u0022: \u0022a48c6636-3b19-4153-9d57-6db4e0f8eb8d\u0022,\n  \u0022iat\u0022: 1785500000,\n  \u0022exp\u0022: 1785503600,\n  \u0022jti\u0022: \u00220e1f2a3b-4c5d-6e7f-8a9b-0c1d2e3f4a5b\u0022,\n  \u0022verifications\u0022: [\n    \u0022IDENTITY\u0022,\n    \u0022WORKPLACE\u0022\n  ],\n  \u0022verifiedDetails\u0022: [\n    {\n      \u0022category\u0022: \u0022IDENTITY\u0022,\n      \u0022verifiedName\u0022: {\n        \u0022firstName\u0022: \u0022MICHAEL\u0022,\n        \u0022middleName\u0022: \u0022GARY\u0022,\n        \u0022lastName\u0022: \u0022SCOTT\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744141828585\n    },\n    {\n      \u0022category\u0022: \u0022WORKPLACE\u0022,\n      \u0022verificationMethod\u0022: \u0022EMAIL_ADDRESS\u0022,\n      \u0022organizationInfo\u0022: {\n        \u0022name\u0022: \u0022Contoso\u0022,\n        \u0022url\u0022: \u0022https://www.linkedin.com/company/contoso12345\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744139009883\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Receive and validate verification data",
+      "Anchor": "step-4-receive-and-validate-verification-data",
+      "SectionPath": [
+        "Step 4: Receive and validate verification data"
+      ],
+      "Text": "LinkedIn provides signed test vectors, that is, a sample signing key, kid, and claim set with the expected JWS string, so you can confirm your implementation before going live.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "In exchange for verification data on off-site applications, report each submission so LinkedIn can attribute it to the correct job posting and member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/jobApplicationLifecycleActions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field specifies the lifecycle action, such as AWLI_APPLICATION_SUBMITTED, APPLICATION_VIEWED, RESUME_DOWNLOADED, APPLICATION_REJECTED, SCREENED, INTERVIEWED, or HIRED.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job application ID on LinkedIn. For the initial AWLI_APPLICATION_SUBMITTED action, provide urn:li:jobApplication:0. LinkedIn returns a canonical urn:li:awliApplication:({memberIdentifier},{jobPostingId}) ID, composed from the member and job posting, for all subsequent actions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "partnerJobCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes for Apply with LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job posting ID within the company\u0027s system. LinkedIn uses this value to identify the job and track applications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes for Apply with LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The encoded member ID of the applicant.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "performedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action timestamp, in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "{\n  \u0022action\u0022: \u0022AWLI_APPLICATION_SUBMITTED\u0022,\n  \u0022jobApplicationId\u0022: \u0022urn:li:jobApplication:0\u0022,\n  \u0022partnerJobCode\u0022: \u0022REQ-4821\u0022,\n  \u0022memberIdentifier\u0022: \u0022VuxQHF3ULX\u0022,\n  \u0022performedAt\u0022: 1785308047000\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "For the initial AWLI_APPLICATION_SUBMITTED action, send urn:li:jobApplication:0 together with partnerJobCode and the opaque memberIdentifier returned by Apply with LinkedIn. LinkedIn doesn\u0027t need to mint a new entity to make the signal show up on Job Tracker: all it needs is the member and the job posting. LinkedIn resolves partnerJobCode to the synced job posting and returns a canonical jobApplicationId composed directly from those two IDs: urn:li:awliApplication:({memberIdentifier},{jobPostingId}). Send this same value in jobApplicationId for every subsequent action on that application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "Sample response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "{\n  \u0022jobApplicationId\u0022: \u0022urn:li:awliApplication:(AQEBk3Fq2pXm9RtA7bY,urn:li:jobPosting:3801234567)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "Authenticate with the same developer application used to sync the job. LinkedIn resolves the job posting and member from the authenticated caller and the composite jobApplicationId.\nSync the job before sending the signal. Signals for unsynced jobs are buffered and reconciled, but an unsynced job also means no verification data in the apply flow.\nThe write is idempotent. A repeated signal for the same member and job does not create a duplicate. Because jobApplicationId is deterministic, resending AWLI_APPLICATION_SUBMITTED for the same member and job posting returns the same value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "Store the jobApplicationId from the response and send it back unchanged in every subsequent lifecycle signal, such as SCREENED, INTERVIEWED, or HIRED, for that application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Report application activity",
+      "Anchor": "step-5-report-application-activity",
+      "SectionPath": [
+        "Step 5: Report application activity"
+      ],
+      "Text": "For applications that originated on your career site, LinkedIn does not send emails or notifications to the applicant. These signals are used for attribution and analytics only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unavailable reasons",
+      "Anchor": "unavailable-reasons",
+      "SectionPath": [
+        "Unavailable reasons"
+      ],
+      "Text": "When no records are released, verificationData is present with an empty verifications list and, when available, a reason. Treat reason as optional. It discloses only partner-owned facts, so all member-specific causes collapse into one opaque value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Unavailable reasons",
+      "Anchor": "unavailable-reasons",
+      "SectionPath": [
+        "Unavailable reasons"
+      ],
+      "Text": "",
+      "Headers": [
+        "Reason",
+        "Meaning",
+        "Action"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JOB_NOT_SYNCED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job was not synced, so data cannot be bound to a job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync the job and its screening questions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PARTNER_NOT_CERTIFIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your integration is not certified for verification data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complete certification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNAVAILABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data is not available for this request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None. Do not infer anything about the member.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Unavailable reasons",
+      "Anchor": "unavailable-reasons",
+      "SectionPath": [
+        "Unavailable reasons"
+      ],
+      "Text": "Treat this list as open. Handle any unlisted reason exactly as UNAVAILABLE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unavailable reasons",
+      "Anchor": "unavailable-reasons",
+      "SectionPath": [
+        "Unavailable reasons"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unavailable reasons",
+      "Anchor": "unavailable-reasons",
+      "SectionPath": [
+        "Unavailable reasons"
+      ],
+      "Text": "UNAVAILABLE deliberately covers several distinct causes, including a member who has not consented, a member with no verifications, and a transient error. Do not build logic that treats it as a statement about the applicant.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Complete certification and testing",
+      "Anchor": "step-6-complete-certification-and-testing",
+      "SectionPath": [
+        "Step 6: Complete certification and testing"
+      ],
+      "Text": "Verification support requires an existing Apply with LinkedIn integration to be recertified. During certification, demonstrate member consent, signed-payload validation, storage and display of verification records, lifecycle reporting, and neutral handling of unavailable verification data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Complete certification and testing",
+      "Anchor": "step-6-complete-certification-and-testing",
+      "SectionPath": [
+        "Step 6: Complete certification and testing"
+      ],
+      "Text": "Test the complete flow before certification:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Complete certification and testing",
+      "Anchor": "step-6-complete-certification-and-testing",
+      "SectionPath": [
+        "Step 6: Complete certification and testing"
+      ],
+      "Text": "Test a working job for both staffing and non-staffing customers when signed in and signed out of LinkedIn.\nConfirm that the consent-screen logo and application name match the customer configuration.\nConfirm that selecting Allow returns to the job page, invokes your callback, and supplies verification data when eligible.\nComplete an application and confirm that the CONVERSION widget call is sent.\nTest responsive browser modes for iOS and Android form factors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Complete certification and testing",
+      "Anchor": "step-6-complete-certification-and-testing",
+      "SectionPath": [
+        "Step 6: Complete certification and testing"
+      ],
+      "Text": "This is the complete set of Apply with LinkedIn certification test cases, including the base widget test cases from Apply with LinkedIn Certification and the additional test cases required to recertify for verifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implement customer configuration",
+      "Anchor": "implement-customer-configuration",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Implement customer configuration"
+      ],
+      "Text": "Implement Apply with LinkedIn for multiple customers as an applicant tracking system (ATS) service provider and demonstrate the following test cases. Refer to Middleware Platform for setup steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Implement customer configuration",
+      "Anchor": "implement-customer-configuration",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Implement customer configuration"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo a functioning customer configuration plugin on your settings/integration page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The configuration widget loads, allowing the admin user to enable the integration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo receiving a working integrationContext for a customer who turns on Apply With LinkedIn in the customer configuration plugin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integrationContext is received and presented using the developer console in your browser, logs, or any other visual aid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo customers can update or add validJsSdkDomains for their application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The AWLI widget and plugin button are available only on the listed domains for the customer application. Customers can configure multiple domains or edit existing domains based on their requirements. For wildcard domain support, contact LinkedIn through the partner support form.",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy the Apply with LinkedIn widget",
+      "Anchor": "deploy-the-apply-with-linkedin-widget",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Deploy the Apply with LinkedIn widget"
+      ],
+      "Text": "Implement Apply with LinkedIn for multiple customers and demonstrate the following test cases. Refer to Apply with LinkedIn plugin for implementation steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Deploy the Apply with LinkedIn widget",
+      "Anchor": "deploy-the-apply-with-linkedin-widget",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Deploy the Apply with LinkedIn widget"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo the application flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Apply with LinkedIn button renders on a customer\u0027s job posted on their career site. Once authenticated using LinkedIn credentials, the OAuth consent screen displays. Once consent is given, the application form populates correctly.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Was the Apply with LinkedIn widget in conversion mode implemented on the completion page?",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The plugin triggers the conversion tracking event from the job submission page when data-mode is set to CONVERSION. In-browser developer tools log the track conversion call on the submit page. If the job is non-paid, an HTTP status 400 error appears, which is a valid response.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy the Apply with LinkedIn widget for direct customers",
+      "Anchor": "deploy-the-apply-with-linkedin-widget-for-direct-customers",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Deploy the Apply with LinkedIn widget for direct customers"
+      ],
+      "Text": "Implement Apply with LinkedIn for your own applicant tracking system (ATS) or career page and demonstrate the following test cases. Refer to Apply with LinkedIn plugin for implementation steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Deploy the Apply with LinkedIn widget for direct customers",
+      "Anchor": "deploy-the-apply-with-linkedin-widget-for-direct-customers",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Deploy the Apply with LinkedIn widget for direct customers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo the application flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Apply with LinkedIn button renders on a customer\u0027s job posted on their career site. The user enters LinkedIn credentials to authenticate and the OAuth screen displays. Next, the user clicks allow and the application form populates correctly.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Was the Apply with LinkedIn widget in conversion mode implemented on the completion page?",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The plugin triggers the conversion tracking event from the job submission page when the data-mode parameter is set to CONVERSION. In-browser developer tools log the track conversion call on the submit page. If the job is non-paid, an HTTP status 400 error appears, which is a valid response.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job postings and opt out of LinkedIn Easy Apply",
+      "Anchor": "sync-job-postings-and-opt-out-of-linkedin-easy-apply",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Sync job postings and opt out of LinkedIn Easy Apply"
+      ],
+      "Text": "See Step 2: Sync jobs for the companyJobCode and onsiteApplyOptOut fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync job postings and opt out of LinkedIn Easy Apply",
+      "Anchor": "sync-job-postings-and-opt-out-of-linkedin-easy-apply",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Sync job postings and opt out of LinkedIn Easy Apply"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-008",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo syncing a job through simpleJobPosting and confirm its externalJobPostingId matches the companyJobCode passed to the AWLI widget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job is listed and resolvable on LinkedIn, and the widget successfully matches the job by companyJobCode",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-009",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo setting onsiteApplyOptOut to true on a job synced through simpleJobPosting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job posting keeps onsiteApplyOptOut: true, LinkedIn Easy Apply is not offered for the job, and applicants only see the Apply with LinkedIn path",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Consume and display verifications",
+      "Anchor": "consume-and-display-verifications",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Consume and display verifications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-010",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo receiving and validating the signed verification payload (verifications and signature) returned by the widget callback for an applicant with completed verifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The JWS signature validates against the correct developer application secret (by kid), and sub, job, exp, and jti are checked before the verifications claim is read",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-011",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo storing verification records on the applicant record without using the absence of verification data, or an UNAVAILABLE/JOB_NOT_SYNCED/PARTNER_NOT_CERTIFIED reason, to automatically reject an applicant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification records are stored for eligible applicants, and applicants without verification data proceed through the normal application flow with no adverse action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-012",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo displaying verification data on the applicant record in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories (for example IDENTITY and WORKPLACE) and their details are visible on the applicant record",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-013 (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sorting, filtering, or searching the applicant list by verification data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiters can sort, filter, or search applicants by verification category (for example IDENTITY or WORKPLACE) or verification status",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application feedback signals",
+      "Anchor": "sync-job-application-feedback-signals",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Sync job application feedback signals"
+      ],
+      "Text": "See Sync job application notifications for the full JobApplicationLifecycleActionType reference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync job application feedback signals",
+      "Anchor": "sync-job-application-feedback-signals",
+      "SectionPath": [
+        "Step 6: Complete certification and testing",
+        "Sync job application feedback signals"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo reporting application lifecycle and outcome signals AWLI_APPLICATION_SUBMITTED back to LinkedIn for the initial submission",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn returns a canonical jobApplicationId for the initial AWLI_APPLICATION_SUBMITTED action, and subsequent actions are sent using that same jobApplicationId",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-015",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo how ATS application statuses are mapped to JobApplicationLifecycleActionType signals for applications received through LinkedIn Easy Apply",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A clear mapping is shown (or explained) between each ATS status and the signal it sends",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-016",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sending the APPLICATION_VIEWED signal when an application record is viewed in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn receives the signal and the applicant\u0027s status updates accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-017",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sending the RESUME_DOWNLOADED signal when an application resume is downloaded or displayed in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn receives the signal and the applicant\u0027s status updates accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-018",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sending the APPLICATION_REJECTED signal when an application is rejected in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn receives the signal and the applicant\u0027s status updates accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-019",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sending the SCREENED signal when an applicant reaches a screening stage (for example Screen, Phone Screen, Assessment) in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn receives the signal and the applicant\u0027s status updates accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sending the INTERVIEWED signal when an applicant is interviewed in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn receives the signal and the applicant\u0027s status updates accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo sending the HIRED signal when an applicant accepts an offer of employment in the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn receives the signal and the applicant\u0027s status updates accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer application configuration reference",
+      "Anchor": "customer-application-configuration-reference",
+      "SectionPath": [
+        "Customer application configuration reference"
+      ],
+      "Text": "Use this reference if you support multiple customer applications. It provides the customer integration enablement and status-check API details used in step 1.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer application configuration reference",
+      "Anchor": "customer-application-configuration-reference",
+      "SectionPath": [
+        "Customer application configuration reference"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer application configuration reference",
+      "Anchor": "customer-application-configuration-reference",
+      "SectionPath": [
+        "Customer application configuration reference"
+      ],
+      "Text": "Download the Postman collection for the APIs in this section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and configure a customer application",
+      "Anchor": "create-and-configure-a-customer-application",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Create and configure a customer application"
+      ],
+      "Text": "The Provisioning API lets you create a customer application for each customer. Use the correct customer name because it appears on the consent screen. Store a unique client ID and client secret for each customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and configure a customer application",
+      "Anchor": "create-and-configure-a-customer-application",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Create and configure a customer application"
+      ],
+      "Text": "Once your app is configured, you may begin making API requests and testing the integration. All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "Use the ATS integration configuration plugin to allow your customers to request for different integration types.\nEmbed the JavaScript code below to display the ATS integration configuration plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "The data-width attribute sets the configuration widget width.\nThe data-supported-bundled-integration-types attribute determines the integrations shown in the widget.\nUse the data-supported-bundled-integration-types attribute to declare which integrations you support, a list of different integration types are displayed on the plugin as mentioned in data-supported-bundled-integration-types attribute\ndata-onintegrate attribute holds a callback function name that is invoked when the customer requests for an integration type within the plugin\nWhen the customer requests for an integration, LinkedIn invokes this function in response and passes response data to the function parameter\nThe response data contains integrationContext, integrationType, and tenantType\nEnsure that you store the values of integrationContext, integrationType, and tenantType as they will be used in the next step",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {customer_client_id}\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/ATSIntegrationWidget\u0022\n  data-supported-bundled-integration-types=\u0022APPLY_WITH_LINKEDIN\u0022\n  data-onintegrate=\u0022handleIntegrations\u0022\n  data-width=\u0022{width}\u0022 \u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\n/**\n* This callback should:\n*   1) Store the customer\u0027s integration details in your ATS.\n*   2) Send the integration details to your server to create and configure the customer integration.\n* @param {Object[]} integrations\n* @param {string} integrations[].integrationContext\n* @param {string} integrations[].integrationType\n* @param {string} integrations[].tenantType\n*/\nfunction handleIntegrations (integrations) {\n//Your code here\n\n}\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "The value for data-supported-bundled-integration-types should be based on the integrations as indicated below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLY_CONNECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This value is used only for Apply Connect integrations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPLY_WITH_LINKEDIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This value is used only for Apply with LinkedIn integrations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECRUITER_SYSTEM_CONNECT_COMPANY, RECRUITER_SYSTEM_CONNECT_CONTRACT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "These values are used only for Recruiter System Connect (RSC) integrations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "To reload the plugin on a single page application, use in.parse()",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display the ATS integration configuration plugin",
+      "Anchor": "display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin"
+      ],
+      "Text": "All error tables in this page are in show/hide collapsible text. Please click the text view error details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin error details",
+      "Anchor": "plugin-error-details",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin",
+        "Plugin error details"
+      ],
+      "Text": "Use In-browser developer tools console to find out errors while rendering the plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Plugin error details",
+      "Anchor": "plugin-error-details",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Display the ATS integration configuration plugin",
+        "Plugin error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Domain validation failed for the api key.Please contact your ATS for further assistance.One should be seeing error.origin.not.in.api.domains in the In-browser developer-tool console",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Partner Domain URL is not allowlisted for the child application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1.Update validJsSdkDomains for child application 2. Ensure validJsSdkDomains should not contain trailing slash (/)3. Ensure validJsSdkDomains should contain complete URL and should start with http and https",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "There seems to be a problem you do not have permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Logged in customer does not have Admin permissions for the selected contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that the customer Admin has an active seat on the Recruiter contract.2. Ensure the customer seat has been granted Admin privileges.3. Ensure that the customer is logged in using the same email as mentioned in the contract seat 4. After the above corrections please ask the customer to re-login.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable customer integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations"
+      ],
+      "Text": "After the customer requests Apply with LinkedIn through the ATS Integration Configuration Plugin, enable the integration with the Enable Customer Integrations API. A successful request enables Apply with LinkedIn for that customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable customer integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations"
+      ],
+      "Text": "API Details\nThe details for Enable Customer Integrations API are given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass a bearer access token in your request as Authorization header. The access tokens are obtained via OAuth 2 Client Credentials flow. You must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API headers",
+      "Anchor": "api-headers",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "x-restli-method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_partial_update",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API request parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration context obtained in Step 2. The format will be urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration type obtained in Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s tenant type obtained in Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use ATS as the value for data provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "Sample request body"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{org_id}\u0026integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022My Customer\u0027s Apply with LinkedIn Integration\u0022\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API request body fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer-facing name for the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration context obtained in Step 2. The format will be urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration type obtained in Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s tenant type obtained in Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use ATS as the value for data provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "Sample response body"
+      ],
+      "Text": "Successful execution of this API will return a 200 OK HTTP response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "Sample response body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "Sample response body"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "Sample response body"
+      ],
+      "Text": "Generate the access token using the customer application client ID and client secret when making these API calls.\nCreate integrations server-side in real time.\nDo not call the Enable Customer Integration API from client-side JavaScript. Initiate all calls server-side.\nOnce an integration is enabled for a customer, it cannot be disabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API error details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API error details"
+      ],
+      "Text": "One of the following responses will be returned, containing a JSON object with a status and a message about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Enable customer integrations",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more of your update keys areviolating update rule :modifying onboarding statusfor already enabled integration is not allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status for the requested integrationType (i.e APPLY_WITH_LINKEDIN) for the customer is already ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the status of the integration request and check onboardingStatus. Use Verify customer integrations to verify the status.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#verify-customer-integrations"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch request mismatch. Entity key dataProvider=urn:li:developerApplication:\u003Capplication_id\u003E\u0026integrationContext=urn:li:company:\u003Ccompany_id\u003E\u0026integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS not found in the query parameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of following fields in request body and request parameters are not matching 1. integrationContext 2. integrationType 3. dataProvider 4. tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that values for following fields should match in request body and request parameters 1.integrationContext 2.integrationType 3.dataProvider 4.tenantType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration key parts are incomplete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more of the mandatory keys is missing from request body or request parameters. Following are mandatory keys 1.integrationContext 2.integrationType 3.dataProvider 4.tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that all the required keys are present in request body and request parameter 2. Ensure that values of following keys should match in request body and request parametersa. integrationContextb. integrationTypec. dataProviderd. tenantType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST /atsIntegrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application does not have required permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that correct child application credentials are used for fetching access token which is used as Authorization header in this api call",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#api-authorization"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access Token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used is either tempered or not correct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token.Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#api-authorization"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No record found to partial update",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not able to find out any ATSIntegration Request which is initiated by the given customer application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the customer has initiated an Apply with LinkedIn integration request through the ATS Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify customer integrations",
+      "Anchor": "verify-customer-integrations",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations"
+      ],
+      "Text": "Use the Verify Customer Integrations API to check the onboarding status of an integration requested through the ATS Integration Configuration Plugin.\nWhen you enable an Apply with LinkedIn integration, its onboarding status changes from REQUESTED to ENABLED.\nCustomer integrations can have following three onboarding statuses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify customer integrations",
+      "Anchor": "verify-customer-integrations",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations"
+      ],
+      "Text": "Requested - the customer requested the integration. This is the status when customers have successfully completed Step 2.\nPartner Ready - the integration is ready to be enabled by the customer. It is not applicable for the Apply with LinkedIn integration type.\nEnabled - the integration is set up and ready to use. This is the status when Step 3 is completed successfully.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify customer integrations",
+      "Anchor": "verify-customer-integrations",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations"
+      ],
+      "Text": "API Details\nThe details for Verify Customer Integrations API are given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "API endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "API authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass a bearer access token in your request as Authorization header.\nThe access tokens are obtained via OAuth 2 Client Credentials flow.\nYou must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API headers",
+      "Anchor": "api-headers-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "API headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API request parameters",
+      "Anchor": "api-request-parameters-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "API request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration context obtained in Step 2. The format will be urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration type obtained in Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s tenant type obtained in Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use ATS as the value for data provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "Sample response body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationContext=urn:li:organization:{org_id}\u0026integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n            \u0022integrationName\u0022: \u0022My Customer\u0027s Apply with LinkedIn Integration\u0022,\n            \u0022onboardingStatus\u0022: \u0022ENABLED\u0022\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API error details",
+      "Anchor": "api-error-details-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "API error details"
+      ],
+      "Text": "One of the following responses will be returned, containing a JSON object with a status and a message about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API error details",
+      "Anchor": "api-error-details-1",
+      "SectionPath": [
+        "Customer application configuration reference",
+        "Verify customer integrations",
+        "API error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No data in statuses, results and errors field of the response body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No ATSIntegration is requested using customer application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the customer has initiated an Apply with LinkedIn integration request through the ATS Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid integration context urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value passed in integrationContext request parameter is not valid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that you pass the correct integrationContext value in the request parameter. The integrationContext value is returned by the ATS Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration key parts are incomplete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more of the required fields are missing in request parameters or contains wrong values Following are mandatory fields 1.integrationContext 2.integrationType 3.dataProvider 4.tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1.Ensure that you provide all the mandatory fields in the request parameter and provide correct values to the fields 2. Refer to API Request Parameter section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#api-request-parameters-1"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token.Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#api-authorization-1"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used is either tempered or not correct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token.Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#api-authorization-1"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn widget reference",
+      "Anchor": "apply-with-linkedin-widget-reference",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference"
+      ],
+      "Text": "Use this reference for optional button settings and troubleshooting. It supports the widget deployment in step 3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Allowlist JavaScript domains",
+      "Anchor": "allowlist-javascript-domains",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Allowlist JavaScript domains"
+      ],
+      "Text": "To ensure that other applications cannot fraudulently represent themselves as your own using the JavaScript SDK, you must configure a list of valid domains on your application that LinkedIn is allowed to trust. Ensure that you include fully qualified domain names, including the protocol (i.e. http, https) and any non-standard port numbers (other than ports 80 or 443). The way you can update/add valid domains depends on if you are a partner who provides an ATS for multiple customers or a partner who owns a proprietary ATS or career page solution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For customers",
+      "Anchor": "for-customers",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Allowlist JavaScript domains",
+        "For customers"
+      ],
+      "Text": "Ensure your customers add their domains to the Valid SDK Domains field on their application\u0027s JavaScript tab:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For partners",
+      "Anchor": "for-partners",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Allowlist JavaScript domains",
+        "For partners"
+      ],
+      "Text": "Update the Valid SDK Domains for each customer application through the Provisioning API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For partners",
+      "Anchor": "for-partners",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Allowlist JavaScript domains",
+        "For partners"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For partners",
+      "Anchor": "for-partners",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Allowlist JavaScript domains",
+        "For partners"
+      ],
+      "Text": "Failure to allowlist JS Domain will result in an error to your browser whenever you try to load the plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy and configure the plugin",
+      "Anchor": "deploy-and-configure-the-plugin",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin"
+      ],
+      "Text": "Deploy the Apply with LinkedIn plugin on your career site\u0027s job application page. Do not customize the AWLI button or its events with JavaScript. Use BUTTON_DATA to identify applicants and prefill profile information. Use CONVERSION to report application completion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "JavaScript",
+      "Anchor": "javascript",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "JavaScript"
+      ],
+      "Text": "\u003Cdiv name=\u0022widget-holder\u0022\u003E\n\u003Cscript type=\u0022text/javascript\u0022\n src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n api_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\nextensions:AwliWidget@https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3\n\u003C/script\u003E\n\u003Cscript type=\u0022IN/AwliWidget\u0022\n  data-mode=\u0022{BUTTON_DATA or CONVERSION}\u0022\n  data-integration-context=\u0022urn:li:organization:{id}\u0022\n  data-company-job-code=\u0022{UniqueJobCode}\u0022\n  data-callback-method=\u0022handleProfileData\u0022\u003E\n\u003C/script\u003E\n\u2026\n\u003C/div\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin parameters",
+      "Anchor": "plugin-parameters",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "Plugin parameters"
+      ],
+      "Text": "The table below explains all plugin parameters that can be configured as required:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Plugin parameters",
+      "Anchor": "plugin-parameters",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "Plugin parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "api_key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client ID for your application",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-company-job-code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job posting id within the company\u0027s system. This value is used by LinkedIn to identify the job and for tracking purposes. If you use other integrations like RSC, PJP, AC to sync jobs to LinkedIn please ensure that this field is same as externalJobPostingId in Job Posting Schema",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A value in the format of urn:li:organization:{ID}, ATS partners retrieve this after the customer has completed customer application configuration. Customers directly integrating with AWLI can refer to this help center article to find their company ID for urn:li:organization:{ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview?view=li-lts-2026-04#step-1-configure-customer-applications",
+              "https://www.linkedin.com/help/linkedin/answer/a415420"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The mode in which this plugin will be used. Currently, the following two modes are supported:1.BUTTON_DATA Mode- Creates the Apply With LinkedIn button on the page and starts the click tracking within LinkedIn. Once applicant clicks this button and consents to sharing profile data, data is shared with partner using the callback method2.CONVERSION Mode- No visible items are created on the page. A conversion tracking event is sent back to LinkedIn to track the application status of the member. Note that the user must click the Apply With LinkedIn button on the previous page to track this conversion",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-callback-method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes for verification sharing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The callback method handles the profile response and verificationData received after the applicant selects the plugin button. The callback is not required for CONVERSION mode.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Acceptable values are small, medium or large. The default value is medium. For reference, the size of the button is as follows:1. Small - width: 188px, height: 32px2. Medium - width: 213px, height: 48px3. Large - width: 233px, height: 48px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-color",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Acceptable values are blue, black or white. The default value is blue",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "UI rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "Plugin parameters",
+        "UI rendering"
+      ],
+      "Text": "Below are various ways in which the Apply with LinkedIn button can be rendered (check table above for exact data-size values for different sizes):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "UI rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "Plugin parameters",
+        "UI rendering"
+      ],
+      "Text": "",
+      "Headers": [
+        "Size",
+        "Button Rendering"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Small",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Medium",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Large",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "UI rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "Plugin parameters",
+        "UI rendering"
+      ],
+      "Text": "If the applicant is not signed in to LinkedIn in the current browser session, LinkedIn displays a sign-in screen after they select the Apply with LinkedIn button.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UI rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Deploy and configure the plugin",
+        "Plugin parameters",
+        "UI rendering"
+      ],
+      "Text": "Once signed in with LinkedIn credentials, LinkedIn displays a different OAuth consent screen for regular customers v/s Search and Staff agencies (customers who use profile info across multiple jobs) as shown below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin error details",
+      "Anchor": "plugin-error-details-1",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Plugin error details"
+      ],
+      "Text": "For plugin error details, look into browser-developer-tool console log for any error message:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Plugin error details",
+      "Anchor": "plugin-error-details-1",
+      "SectionPath": [
+        "Apply with LinkedIn widget reference",
+        "Plugin error details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Error Message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "error.origin.not.in.api.domains",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Partner Domain URL is not allowlisted for your application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Update validJsSdkDomains for your application.2. Ensure validJsSdkDomains doesn\u0027t contain a trailing slash (/).3. Ensure validJsSdkDomains contains the complete URL and starts with http:// or https://.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.ats.integration.not.valid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value provided in the plugin parameter data-integration-context is invalid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify that you\u0027re using the correct integration context, which is a company URN in the format urn:li:organization:{id}:- For partners, such as ATS providers, call the Enable Customer Integration API after you receive the integration context. Refer to Step 3 in the ATS integration documentation.- For customers, that is, proprietary ATS or career page solutions, contact your LinkedIn point of contact for assistance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.finding.application.with.api.key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid API key used",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure you\u0027re using the correct API key.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.deprecated.mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated mode value used eg BUTTON, DATA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use BUTTON_DATA or CONVERSION as the mode value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.application.not.approved",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application is not in approved status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach out to our support team via the partner support form.",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.unknown.mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Incorrect mode value used",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use BUTTON_DATA or CONVERSION as the mode value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.unknown",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unknown error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach out to our support team to troubleshoot the issue.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.missing.origin.referer.headers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Web browsers automatically pass the origin and referer header. If partners or customers configure their application in a way that these headers are not passed (such as configuring referer header policy), then the widget cannot validate the domain for which it is embedded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configure your server to send the origin or referer header so the Apply with LinkedIn widget can validate the domain.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Related documentation"
+      ],
+      "Text": "Verification data schema\nApply Connect with Verifications\nDisplay verification badges\nApply with LinkedIn overview\nApply with LinkedIn certification",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
+  "Title": "ACL Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "ACL Overview",
+      "Anchor": "acl-overview",
+      "SectionPath": [],
+      "Text": "Certain entities in your system may be visible to some users and not others. These security policies are represented as access control lists (ACLs) in the Middleware Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL Overview",
+      "Anchor": "acl-overview",
+      "SectionPath": [],
+      "Text": "ACLs consist of two parts - atsEntityAcls and atsEntityAclAssignees . You will create atsEntityAcl records to associate your entities with security groups or roles in your system. Then, you\u0027ll create atsEntityAclAssignee records to associate your users with security groups or roles in your system for a specific entity type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL Overview",
+      "Anchor": "acl-overview",
+      "SectionPath": [],
+      "Text": "The visibility of your customer\u0027s synced entities within LinkedIn products will depend on the ACLs you sync. Before syncing ACLs, there are a few steps you must complete:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL Overview",
+      "Anchor": "acl-overview",
+      "SectionPath": [],
+      "Text": "Configure entity visibility defaults for the customer\nBind the customer\u0027s users with LinkedIn Person Ids\nSync ACLs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL Overview",
+      "Anchor": "acl-overview",
+      "SectionPath": [],
+      "Text": "Details for each step are below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Configure Customer Entity Visibility Defaults",
+      "Anchor": "1-configure-customer-entity-visibility-defaults",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults"
+      ],
+      "Text": "You can control whether the absence of atsEntityAcl records will cause securable entities to be hidden from all users or not. For example, if a customer doesn\u2019t secure entities in your system, you may choose to not send atsEntityAcl records and have LinkedIn products show entities without ACLs to all users. This can be configured per LinkedIn product ( tenantType ) and feature ( integrationType ).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Configure Customer Entity Visibility Defaults",
+      "Anchor": "1-configure-customer-entity-visibility-defaults",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults"
+      ],
+      "Text": "See Sync Integration Configurations for technical details on configuring the customer. Also, be sure to send visibility default configurations for each relevant integrationType to ensure the entity doesn\u0027t surface anywhere in the product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022JOB_POSTING_VIEWERS\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022ALL_PRODUCT_USERS\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Configure Customer Entity Visibility Defaults",
+        "sample request"
+      ],
+      "Text": "We will hide entities without atsEntityAcl records by default. Do not create (or do delete) this configuration if this behavior is desired for the customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Bind Customer Users",
+      "Anchor": "2-bind-customer-users",
+      "SectionPath": [
+        "2. Bind Customer Users"
+      ],
+      "Text": "You must store a mapping to a LinkedIn Person Id for each user in your system. This Person Id will be used to specify the target of this security rule when syncing atsEntityAclAssignee records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Bind Customer Users",
+      "Anchor": "2-bind-customer-users",
+      "SectionPath": [
+        "2. Bind Customer Users"
+      ],
+      "Text": "See Bind Customer Users for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Sync ACLs",
+      "Anchor": "3-sync-acls",
+      "SectionPath": [
+        "3. Sync ACLs"
+      ],
+      "Text": "You should sync ACLs in the following scenarios:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Sync ACLs",
+      "Anchor": "3-sync-acls",
+      "SectionPath": [
+        "3. Sync ACLs"
+      ],
+      "Text": "During the historical data sync after a customer onboards\nWhen a secured entity is created, deleted, or its security info is modified in your system\nWhen a customer user is created, deleted, or its security info is modified in your system",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Sync ACLs",
+      "Anchor": "3-sync-acls",
+      "SectionPath": [
+        "3. Sync ACLs"
+      ],
+      "Text": "See Sync ACLs for technical details.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

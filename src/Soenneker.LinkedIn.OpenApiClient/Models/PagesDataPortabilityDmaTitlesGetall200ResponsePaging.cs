@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
+        /// <summary>The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. The default value is 10.Documented type: IntegerRequirement: No</summary>
         public int? Count { get; set; }
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponsePagingLinksItem> Links { get; set; }
 #endif
-        /// <summary>The start property</summary>
+        /// <summary>The locale the function data is requested in. en_US locale is used if locale is not provided or supported. Formatted with a lowercase, two-letter language code as defined by ISO-639, an underscore, and an uppercase, two-letter country code as defined by ISO-3166 (for example, en_US)Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Locale { get; set; }
+#nullable restore
+#else
+        public string Locale { get; set; }
+#endif
+        /// <summary>The index of the first item you want results for. The default value is 0.Documented type: IntegerRequirement: No</summary>
         public int? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponsePaging"/> and sets the default values.
@@ -53,6 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponsePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponsePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetIntValue(); } },
             };
         }
@@ -65,6 +74,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponsePagingLinksItem>("links", Links);
+            writer.WriteStringValue("locale", Locale);
             writer.WriteIntValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -1,0 +1,795 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/ad-preview",
+  "Title": "Ad Preview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/ad-preview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Preview",
+      "Anchor": "ad-preview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Preview",
+      "Anchor": "ad-preview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Preview",
+      "Anchor": "ad-preview",
+      "SectionPath": [],
+      "Text": "The Ad Preview API offers an organised way to preview a creative using a creative URN. The two types of previews supported are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Preview",
+      "Anchor": "ad-preview",
+      "SectionPath": [],
+      "Text": "Accurate Preview - Preview an existing creative.\nLive Preview - Preview before creating a creative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Restricted) Retrieve posts, comments, and likes on behalf of an authenticated member. This is a private permission.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "creative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredCreativeUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the creative that corresponds to the ad preview.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "placement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Placement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Placement on LinkedIn for which the preview is rendered such as Desktop and Mobile.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preview",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "HTML when rendered will point to the actual ad preview. This has an iFrame for Sponsored Content Ads where iFrame parameters will embed the information needed for preview.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "X-Restli-Protocol-Version: 2.0.0 must be passed as the header in your API requests\nLinkedin-Version: {yyyymm} must be passed as the header in your API requests as this API is released with Versioning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accurate Preview",
+      "Anchor": "accurate-preview",
+      "SectionPath": [
+        "Accurate Preview"
+      ],
+      "Text": "Preview an existing creative. The formats supported are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accurate Preview",
+      "Anchor": "accurate-preview",
+      "SectionPath": [
+        "Accurate Preview"
+      ],
+      "Text": "Single image ad\nCarousel ad\nVideo ad\nSingle job ad\nEvent ad",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Accurate Preview",
+      "Anchor": "get-accurate-preview",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview"
+      ],
+      "Text": "Get an accurate preview of the creative by calling the /adPreviews GET API. Partners can embed the iFrame tag returned in the response on their websites and render the preview for both Desktop and Mobile placements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Accurate Preview",
+      "Anchor": "get-accurate-preview",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Accurate Preview",
+      "Anchor": "get-accurate-preview",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview"
+      ],
+      "Text": "iFrames returned by the API are valid upto 3 hours. When the iFrame expires, partners can fetch another iFrame by calling /adPreviews API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Accurate Preview",
+      "Anchor": "get-accurate-preview",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Accurate Preview",
+      "Anchor": "get-accurate-preview",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adPreviews?q=creative\u0026creative={sponsoredCreativeUrn}\u0026account={sponsoredAccountUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Accurate Preview",
+      "Anchor": "get-accurate-preview",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adPreviews?q=creative\u0026creative={sponsoredCreativeUrn}\u0026account={sponsoredAccountUrn}\n\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adPreviews?q=creative\u0026creative=urn%3Ali%3AsponsoredCreative%3A123456789\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adPreviews?q=creative\u0026creative=urn%3Ali%3AsponsoredCreative%3A123456789\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\n\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Accurate Preview",
+        "Get Accurate Preview",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022preview\u0022: \u0022\u003Ciframe src=\u0027https://www.linkedin.com/ads/ad-preview/?d=AgG8IZKRWCDwsgAAAYSBxhWaXM9Xs4hh2Njhw1ekfm2Eyr05mBTNWzdzfSylfS1cDaqWUQ_YAabYbHv732izWxTnvFoA0K-mn9TcNvxgv3vLzOE7y8rMypk-bjC8Dxt9FvJeTnCqCVox33jWMcT0ZfoJRIjn-gMOz0qpjNG3Q7d1dXkTTqlFpNHYLIFPru90DClj5pcJ4WrHFSEp4vYMhpxZPRDoBuwUMOHblRBUWT-uUW3cujvgWKPnQmm00f4lak-cMdqRthM6cRxvEwUEUHMQxzG-TOs8Fr_V53E9mLOQWsUV3KRlCOrjjULns5-bVgRC7IjeuudmVqc5MrtTJXZ0mIaF-c7ZmSFVugScKCdU8Tu3xIFEiKiG3aMu_do92weqD9iKj6gKcCjZ3oicSlD3wuw2IthbTPNTum2xnbnBZokpsuSLWPAAuRfwWajFtC_0IBdh-dlSfm2SUyQXESaZgCJFTjSlGztPizAWfYxXYWgwV6PH6tEokQg5PPubGieG-vdMHCq6ydYstezmQSBTEf5oYXo3Qpg9JTTLPdtJOYcbUFrSG93tZBalw-D8Y1uvYJoTZ06lRWxeSu5HjAqqiJcs1qeFXSyinVfE41Jehz_cVjF3w2OxBjowZQ2roWQfVZQnELzqLfoamRVMujIPqJGnQ_-wnG_tZH_aHqq4csFpsIq6AsKVdqGoZr_qAcbp4Q\u0027 height=580 width=650\u003E\u003C/iframe\u003E\u0022,\n      \u0022creative\u0022: \u0022urn:li:sponsoredCreative:123456789\u0022,\n      \u0022placement\u0022: {\n        \u0022linkedin\u0022: {\n            \u0022placementName\u0022: \u0022FEED\u0022,\n            \u0022contentPresentationType\u0022: \u0022DESKTOP_WEBSITE\u0022\n        }\n      }      \n    },\n    {\n      \u0022preview\u0022: \u0022\u003Ciframe src=\u0027https://www.linkedin.com/mwlite/ads/ad-preview?d=AgG8IZKRWCDwsgAAAYSBxhWaXM9Xs4hh2Njhw1ekfm2Eyr05mBTNWzdzfSylfS1cDaqWUQ_YAabYbHv732izWxTnvFoA0K-mn9TcNvxgv3vLzOE7y8rMypk-bjC8Dxt9FvJeTnCqCVox33jWMcT0ZfoJRIjn-gMOz0qpjNG3Q7d1dXkTTqlFpNHYLIFPru90DClj5pcJ4WrHFSEp4vYMhpxZPRDoBuwUMOHblRBUWT-uUW3cujvgWKPnQmm00f4lak-cMdqRthM6cRxvEwUEUHMQxzG-TOs8Fr_V53E9mLOQWsUV3KRlCOrjjULns5-bVgRC7IjeuudmVqc5MrtTJXZ0mIaF-c7ZmSFVugScKCdU8Tu3xIFEiKiG3aMu_do92weqD9iKj6gKcCjZ3oicSlD3wuw2IthbTPNTum2xnbnBZokpsuSLWPAAuRfwWajFtC_0IBdh-dlSfm2SUyQXESaZgCJFTjSlGztPizAWfYxXYWgwV6PH6tEokQg5PPubGieG-vdMHCq6ydYstezmQSBTEf5oYXo3Qpg9JTTLPdtJOYcbUFrSG93tZBalw-D8Y1uvYJoTZ06lRWxeSu5HjAqqiJcs1qeFXSyinVfE41Jehz_cVjF3w2OxBjowZQ2roWQfVZQnELzqLfoamRVMujIPqJGnQ_-wnG_tZH_aHqq4csFpsIq6AsKVdqGoZr_qAcbp4Q\u0027 height=375 width=700\u003E\u003C/iframe\u003E\u0022,\n      \u0022creative\u0022: \u0022urn:li:sponsoredCreative:123456789\u0022,\n      \u0022placement\u0022: {\n        \u0022linkedin\u0022: {\n            \u0022placementName\u0022: \u0022FEED\u0022,\n            \u0022contentPresentationType\u0022: \u0022MOBILE_WEBSITE\u0022\n        }\n      }      \n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Preview",
+      "Anchor": "live-preview",
+      "SectionPath": [
+        "Live Preview"
+      ],
+      "Text": "Preview the content of a creative before it\u0027s completely developed. The formats supported are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Preview",
+      "Anchor": "live-preview",
+      "SectionPath": [
+        "Live Preview"
+      ],
+      "Text": "Single image ad.\nText ad\nArticle ad",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Preview Creative Action",
+      "Anchor": "live-preview-creative-action",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action"
+      ],
+      "Text": "View the Live Preview of a creative by calling the /adPreviews action=livePreviewForCreative API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "creative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creatives Schema",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09#schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Creative for which preview is to be rendered. Supports preview for creatives referring existing organic post.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Schema"
+      ],
+      "Text": "Embed the iFrame tag returned in the response on your websites to render live preview for both Desktop and Mobile placements. Additionally, you can fetch another iFrame live when the creative content is updated by calling above method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Schema"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Schema"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreative",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Schema"
+      ],
+      "Text": "{\n  \u0022creative\u0022: {\n    \u0022content\u0022: {\n      \u0022reference\u0022: \u0022urn:li:share:7217750428568932352\u0022\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Schema"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreative\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n  \u0022creative\u0022: {\n    \u0022content\u0022: {\n      \u0022reference\u0022: \u0022urn:li:share:7217750428568932352\u0022\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreative",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022creative\u0022: {\n    \u0022content\u0022: {\n      \u0022reference\u0022: \u0022urn:li:share:7217750428568932352\u0022\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreative\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n  \u0022creative\u0022: {\n    \u0022content\u0022: {\n      \u0022reference\u0022: \u0022urn:li:share:7217750428568932352\u0022\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview Creative Action",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: [\n    {\n      \u0022preview\u0022: \u0022\u003Ciframe srcdoc=\u0027\u003Chtml\u003EDesktop Preview\u003C/html\u003E\u0027 height=580 width=650\u003E\u003C/iframe\u003E\u0022,\n      \u0022placement\u0022: {\n        \u0022linkedin\u0022: {\n            \u0022placementName\u0022: \u0022FEED\u0022,\n            \u0022contentPresentationType\u0022: \u0022DESKTOP_WEBSITE\u0022\n        }\n      } \n    },\n    {\n      \u0022preview\u0022: \u0022\u003Ciframe srcdoc=\u0027\u003Chtml\u003EMobile Preview\u003C/html\u003E\u0027 height=375 width=700\u003E\u003C/iframe\u003E\u0022,\n      \u0022placement\u0022: {\n        \u0022linkedin\u0022: {\n            \u0022placementName\u0022: \u0022FEED\u0022,\n            \u0022contentPresentationType\u0022: \u0022MOBILE_WEBSITE\u0022\n        }\n      } \n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Preview CreativeInline Action",
+      "Anchor": "live-preview-creativeinline-action",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action"
+      ],
+      "Text": "View the Live Preview of a creative inline content by calling the /adPreviews action=livePreviewForCreativeInline API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "inlineContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creatives Inline Schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative Inline content for which the preview is to be rendered.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Schema"
+      ],
+      "Text": "Partners can embed the iFrame tag returned in the response on their websites to render live preview for both Desktop and Mobile placements. Partners can fetch another iFrame live when creative inline content is updated by calling above method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Schema"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Schema"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreativeInline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Schema"
+      ],
+      "Text": "{\n  \u0022creative\u0022: {\n    \u0022inlineContent\u0022: {\n      \u0022post\u0022: {\n        \u0022adContext\u0022: {\n          \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n          \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n        \u0022commentary\u0022: \u0022commentary about the post\u0022,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022content\u0022: {\n          \u0022media\u0022: {\n            \u0022id\u0022: \u0022urn:li:image:D5510AQEPajp6XqYx3w\u0022,\n            \u0022title\u0022:\u0022Vaibhav_Example_Image\u0022\n          }\n        }\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Schema"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreativeInline\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n  \u0022creative\u0022: {\n    \u0022inlineContent\u0022: {\n      \u0022post\u0022: {\n        \u0022adContext\u0022: {\n          \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n          \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n        \u0022commentary\u0022: \u0022commentary about the post\u0022,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022content\u0022: {\n          \u0022media\u0022: {\n            \u0022id\u0022: \u0022urn:li:image:D5510AQEPajp6XqYx3w\u0022,\n            \u0022title\u0022:\u0022Vaibhav_Example_Image\u0022\n          }\n        }\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreativeInline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022creative\u0022: {\n    \u0022inlineContent\u0022: {\n      \u0022post\u0022: {\n        \u0022adContext\u0022: {\n          \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n          \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n        \u0022commentary\u0022: \u0022commentary about the post\u0022,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022content\u0022: {\n          \u0022media\u0022: {\n            \u0022id\u0022: \u0022urn:li:image:D5510AQEPajp6XqYx3w\u0022,\n            \u0022title\u0022:\u0022Vaibhav_Example_Image\u0022\n          }\n        }\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPreviews?action=livePreviewForCreativeInline\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n  \u0022creative\u0022: {\n    \u0022inlineContent\u0022: {\n      \u0022post\u0022: {\n        \u0022adContext\u0022: {\n          \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n          \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n        \u0022commentary\u0022: \u0022commentary about the post\u0022,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022content\u0022: {\n          \u0022media\u0022: {\n            \u0022id\u0022: \u0022urn:li:image:D5510AQEPajp6XqYx3w\u0022,\n            \u0022title\u0022:\u0022Vaibhav_Example_Image\u0022\n          }\n        }\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:371585095\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Live Preview",
+        "Live Preview CreativeInline Action",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: [\n    {\n      \u0022preview\u0022: \u0022\u003Ciframe srcdoc=\u0027\u003Chtml\u003EDesktop Preview\u003C/html\u003E\u0027 height=580 width=650\u003E\u003C/iframe\u003E\u0022,\n      \u0022placement\u0022: {\n        \u0022linkedin\u0022: {\n            \u0022placementName\u0022: \u0022FEED\u0022,\n            \u0022contentPresentationType\u0022: \u0022DESKTOP_WEBSITE\u0022\n        }\n      }\n    },\n    {\n      \u0022preview\u0022: \u0022\u003Ciframe srcdoc=\u0027\u003Chtml\u003EMobile Preview\u003C/html\u003E\u0027 height=375 width=700\u003E\u003C/iframe\u003E\u0022,\n      \u0022placement\u0022: {\n        \u0022linkedin\u0022: {\n            \u0022placementName\u0022: \u0022FEED\u0022,\n            \u0022contentPresentationType\u0022: \u0022MOBILE_WEBSITE\u0022\n        }\n      } \n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+  "Title": "LinkedIn Learning and Bob Learning Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Bob Learning HiBob LMS and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiBob Deep Integration Functionality",
+      "Anchor": "hibob-deep-integration-functionality",
+      "SectionPath": [
+        "HiBob Deep Integration Functionality"
+      ],
+      "Text": "Authentication: N/A",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiBob Deep Integration Functionality",
+      "Anchor": "hibob-deep-integration-functionality",
+      "SectionPath": [
+        "HiBob Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiBob Deep Integration Functionality",
+      "Anchor": "hibob-deep-integration-functionality",
+      "SectionPath": [
+        "HiBob Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiBob Deep Integration Functionality",
+      "Anchor": "hibob-deep-integration-functionality",
+      "SectionPath": [
+        "HiBob Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiBob Deep Integration Functionality",
+      "Anchor": "hibob-deep-integration-functionality",
+      "SectionPath": [
+        "HiBob Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and HiBob integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiBob Deep Integration Functionality",
+      "Anchor": "hibob-deep-integration-functionality",
+      "SectionPath": [
+        "HiBob Deep Integration Functionality"
+      ],
+      "Text": "An active HiBob Learning account\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your HiBob LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and HiBob to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to content. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "SSO authentication reduces friction for users and administrators by eliminating the\nneed for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains over 20,000 courses, with 20-30 courses\nadded per week at no extra cost. HiBob automates this process using the\nLinkedIn Learning content APIs, so LMS admins do not have to manually upload new\ncontent packages at regular intervals. After the initial setup, HiBob will\ndynamically refresh the content library on an automated basis. This ensures\nnew\u00A0LinkedIn Learning content is available to learners within 24 hours of\nrelease. All content titles and\u00A0 descriptions are aggregated and indexed to\naccommodate keyword searches and support efficient discoverability. HiBob supports automatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses xAPI to communicate a\nlearner\u2019s activity back to HiBob when the learner completes a LinkedIn Learning course. All LinkedIn Learning course completions will be reported both in LinkedIn Learning and in HiBob.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration \u2013 Enabling SAML SSO",
+      "Anchor": "configuration--enabling-saml-sso",
+      "SectionPath": [
+        "Configuration \u2013 Enabling SAML SSO"
+      ],
+      "Text": "We recommend SAML SSO for all enterprise learning platform integrations. You can\nconfigure SSO authentication in your LinkedIn Learning Admin settings. Most\norganizations have a centrally-managed identity management solution like Azure\nAD, Okta, or ADFS, which can be configured to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration \u2013 Enabling SAML SSO",
+      "Anchor": "configuration--enabling-saml-sso",
+      "SectionPath": [
+        "Configuration \u2013 Enabling SAML SSO"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration \u2013 Enabling SAML SSO",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For HiBob to sync LinkedIn Learning catalog metadata, you first must provision API keys in the LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration \u2013 Enabling SAML SSO",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, provide the name of your learning platform (e.g., \u0022HiBob Content Sync\u0022), as the application name.\n\nProvide a short description of the integration use case in the application description field. For example, \u0022HiBob content catalog sync\u0022.\n\nUnder Choose keys, there are two\u202Fcheckboxes\u202F\u2013\u202FContent\u202Fand\u202FReport. Select\u00A0Content.\u202F\u00A0\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\n\n\n\nCopy the generated Client Id and Client Secret. Use these values later in the \u0022Steps Performed in HiBob\u0022 section below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration \u2013 Steps Performed in HiBob",
+      "Anchor": "configuration--steps-performed-in-hibob",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob"
+      ],
+      "Text": "To complete the configuration with HiBob, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration \u2013 Steps Performed in HiBob",
+      "Anchor": "configuration--steps-performed-in-hibob",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob"
+      ],
+      "Text": "Client ID\nClient Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enter the Client ID and Secret in HiBob",
+      "Anchor": "enter-the-client-id-and-secret-in-hibob",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Enter the Client ID and Secret in HiBob"
+      ],
+      "Text": "To configure the LinkedIn Learning Provider in HiBob, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enter the Client ID and Secret in HiBob",
+      "Anchor": "enter-the-client-id-and-secret-in-hibob",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Enter the Client ID and Secret in HiBob"
+      ],
+      "Text": "From the top left, select Bob products \u003E System settings.\nSelect Integrations \u003E Course providers.\nOn the LinkedIn Learning tile, click \u002BConnect.\nOn the integration settings page, click Connect.\nIn the Connect to LinkedIn Learning popup, copy and paste the Client ID and Client Secret from LinkedIn Learning\u2019s API application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map the course categories",
+      "Anchor": "map-the-course-categories",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Map the course categories"
+      ],
+      "Text": "In the Connect to LinkedIn learning popup, map the course categories available in LinkedIn Learning to the categories in Bob Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map the course categories",
+      "Anchor": "map-the-course-categories",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Map the course categories"
+      ],
+      "Text": "The list in the Linkedin Learning column will show all of the course categories (on the subject level) available and sent from LinkedIn Learning.\n\nFor each LinkedIn Learning course category, select a course category from the dropdown in the Bob\u2019s column. All the course categories already created in Bob Learning will appear in the dropdown.\n\nClick Create and match to automatically create course categories in Bob Learning with the same name as any LinkedIn Learning categories that do not already exist in Bob. The categories will then be mapped automatically.\n\nIf you would like to add more course categories, you can do so from the dropdown, rather than opening Bob Learning and adding them there. From the dropdown in the Bob column, select Edit categories list.\n\nClick Connect.\n\nThe course sync will start automatically and the LinkedIn Learning courses incorporated in Bob\u2019s Learning module.\n\nIn the Pull data from Bob to LinkedIn Learning popup, copy the data in each of the four fields into the corresponding fields in LinkedIn Learning. The following fields are available: OAuth token URL, Client ID, Client Secret, xAPI statements URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map the course categories",
+      "Anchor": "map-the-course-categories",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Map the course categories"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map the course categories",
+      "Anchor": "map-the-course-categories",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Map the course categories"
+      ],
+      "Text": "Bob course categories will be selected automatically if they have the same name as a course category in Linkedin Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Using the information you acquired in HiBob, follow the instructions below to configure LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\nIn the Integration name field, enter \u0022HiBob Reporting\u0022.\n\nIn the User Type drop down, select Email. This value must match the email address value in HiBob; please reach out to HiBob support if you need help identifying this value.\n\nCopy and paste the Auth URL, Tracking URL, Client ID and Client Secret provided by HiBob into LinkedIn Learning.\n\nClick Enable.\n\n\n\n\nYou have enabled the HiBob xAPI connection in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage your LinkedIn Learning audience in HiBob",
+      "Anchor": "manage-your-linkedin-learning-audience-in-hibob",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Manage your LinkedIn Learning audience in HiBob"
+      ],
+      "Text": "In the Manage learning area in Bob, on the 3 dots select Manage access to providers courses.\nClick on the LinkedIn Learning row to edit your audience access to the courses\nIn the Set access to courses box, define who can access the LinkedIn Learning courses with the available audience conditions\nClick Save\nOnly the defined audience will see and have access to the LinkedIn Learning courses in Bob\u2019s Course library",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage your LinkedIn Learning audience in HiBob",
+      "Anchor": "manage-your-linkedin-learning-audience-in-hibob",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Manage your LinkedIn Learning audience in HiBob"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via their HiBob instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Questions"
+      ],
+      "Text": "For technical assistance, contact HiBob\u2019s Customer Support Team. For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration \u2013 Steps Performed in HiBob",
+        "Questions"
+      ],
+      "Text": "Back to top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

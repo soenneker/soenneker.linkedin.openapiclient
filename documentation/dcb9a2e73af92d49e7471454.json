@@ -1,0 +1,1183 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+  "Title": "Quickstart on Development Tier",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Quickstart on Development Tier",
+      "Anchor": "quickstart-on-development-tier",
+      "SectionPath": [],
+      "Text": "Get started quickly with the Verified on LinkedIn APIs in 10 minutes using the Development tier. This tier is designed for rapid prototyping and internal testing using your own LinkedIn administrator accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quickstart on Development Tier",
+      "Anchor": "quickstart-on-development-tier",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quickstart on Development Tier",
+      "Anchor": "quickstart-on-development-tier",
+      "SectionPath": [],
+      "Text": "Development tier is for testing only.\nIt can access only LinkedIn members who are application administrators.\nUpgrade to Lite tier to access all LinkedIn members. Lite tier reviews typically complete within a week.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Capabilities",
+      "Anchor": "development-tier-capabilities",
+      "SectionPath": [
+        "Development Tier Capabilities"
+      ],
+      "Text": "The table below summarizes what the Development tier includes and what it does not\u2014covering access, usage limits, and available APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Development Tier Capabilities",
+      "Anchor": "development-tier-capabilities",
+      "SectionPath": [
+        "Development Tier Capabilities"
+      ],
+      "Text": "",
+      "Headers": [
+        "Capability / API Access",
+        "Development Tier",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Access to your own admin accounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only app administrators can be queried",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Access to all LinkedIn members",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requires Lite or Plus tier",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Use in production",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intended only for testing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "3-legged OAuth testing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full OAuth flow supported",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UI badge integration testing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For development environments only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "API: /identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile info (name, email, photo, profile URL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "API: /verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "API: /validationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus tier only (bulk validation)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Cost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Free",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For testing purposes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Capabilities",
+      "Anchor": "development-tier-capabilities",
+      "SectionPath": [
+        "Development Tier Capabilities"
+      ],
+      "Text": "For full tier details, see Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Start Building Now",
+        "Prerequisites"
+      ],
+      "Text": "Before you begin, you\u2019ll need:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Start Building Now",
+        "Prerequisites"
+      ],
+      "Text": "A LinkedIn account\nAdd at least one verification (Identity or Workplace) at linkedin.com/verify to your profile to test the verification APIs with real data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Create Developer Application (2 minutes)",
+      "Anchor": "step-1-create-developer-application-2-minutes",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)"
+      ],
+      "Text": "Create a LinkedIn developer application to get your API credentials and enable the Verified on LinkedIn product in the Developer Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Create Developer Application (2 minutes)",
+      "Anchor": "step-1-create-developer-application-2-minutes",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)"
+      ],
+      "Text": "Follow these steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Create Developer Application (2 minutes)",
+      "Anchor": "step-1-create-developer-application-2-minutes",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)"
+      ],
+      "Text": "Go to the LinkedIn Developer Portal\nClick Create app\nFill in the required fields and create your application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Create a Developer Application and Add an API",
+      "Anchor": "how-to-create-a-developer-application-and-add-an-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)",
+        "How to Create a Developer Application and Add an API"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Create a Developer Application and Add an API",
+      "Anchor": "how-to-create-a-developer-application-and-add-an-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)",
+        "How to Create a Developer Application and Add an API"
+      ],
+      "Text": "App logo requirement: The logo must be a square image, and at least one dimension must be 100px or larger.\nIf you don\u2019t have a logo ready, you can use a temporary demo logo for quick setup.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Create a Developer Application and Add an API",
+      "Anchor": "how-to-create-a-developer-application-and-add-an-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)",
+        "How to Create a Developer Application and Add an API"
+      ],
+      "Text": "Download a sample demo logo:\nDownload demo app logo",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Create a Developer Application and Add an API",
+      "Anchor": "how-to-create-a-developer-application-and-add-an-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)",
+        "How to Create a Developer Application and Add an API"
+      ],
+      "Text": "This is the starting point for both Development and Lite tier integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Create a Developer Application and Add an API",
+      "Anchor": "how-to-create-a-developer-application-and-add-an-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 1: Create Developer Application (2 minutes)",
+        "How to Create a Developer Application and Add an API"
+      ],
+      "Text": "When to complete: before requesting Development or Lite tier access\nLearn more about Verified on LinkedIn\nRelated docs: Overview, Upgrade to Lite tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Request Development Tier Access (1 minute)",
+      "Anchor": "step-2-request-development-tier-access-1-minute",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 2: Request Development Tier Access (1 minute)"
+      ],
+      "Text": "In your new app, go to the Products tab\nFind Verified on LinkedIn in the product list\nClick Request access\nReview and accept Terms and Conditions\nAutomatic approval - Refresh page after 1-2 minutes to see status change",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Request Development Tier Access (1 minute)",
+      "Anchor": "step-2-request-development-tier-access-1-minute",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 2: Request Development Tier Access (1 minute)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Request Development Tier Access (1 minute)",
+      "Anchor": "step-2-request-development-tier-access-1-minute",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 2: Request Development Tier Access (1 minute)"
+      ],
+      "Text": "Development tier is provisioned automatically. No review required!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Your Credentials (1 minute)",
+      "Anchor": "step-3-get-your-credentials-1-minute",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 3: Get Your Credentials (1 minute)"
+      ],
+      "Text": "Go to the Auth tab in your app\nCopy these credentials (you\u0027ll need them):\n\nClient ID\nClient Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Your Credentials (1 minute)",
+      "Anchor": "step-3-get-your-credentials-1-minute",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 3: Get Your Credentials (1 minute)"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Your Credentials (1 minute)",
+      "Anchor": "step-3-get-your-credentials-1-minute",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 3: Get Your Credentials (1 minute)"
+      ],
+      "Text": "Keep your Client Secret secure. Never expose it in client-side code or public repositories.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Test with Sample App (Optional)",
+      "Anchor": "step-4-test-with-sample-app-optional",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 4: Test with Sample App (Optional)"
+      ],
+      "Text": "This video walks you through using the sample application to test the Verified on LinkedIn APIs end-to-end \u2014 including running the OAuth flow, reviewing verification responses, and seeing how badges appear in UI examples. It\u2019s an easy way to validate your credentials before writing any code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Test with Sample App (Optional)",
+      "Anchor": "step-4-test-with-sample-app-optional",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 4: Test with Sample App (Optional)"
+      ],
+      "Text": "Try our Sample App to see your credentials in action:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Test with Sample App (Optional)",
+      "Anchor": "step-4-test-with-sample-app-optional",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 4: Test with Sample App (Optional)"
+      ],
+      "Text": "Test OAuth flow securely\nView real verification responses\nSee verification badge display examples",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Test with Sample App (Optional)",
+      "Anchor": "step-4-test-with-sample-app-optional",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 4: Test with Sample App (Optional)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Test with Sample App (Optional)",
+      "Anchor": "step-4-test-with-sample-app-optional",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 4: Test with Sample App (Optional)"
+      ],
+      "Text": "The sample app does not store or share your credentials.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Generate Access Token (3-legged OAuth)",
+      "Anchor": "step-5-generate-access-token-3-legged-oauth",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)"
+      ],
+      "Text": "This video explains how LinkedIn OAuth works for Verified on LinkedIn, including scopes, redirects, and token exchange.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Generate Access Token (3-legged OAuth)",
+      "Anchor": "step-5-generate-access-token-3-legged-oauth",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)"
+      ],
+      "Text": "To generate a token during development:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option A: Use OAuth Tool (Fastest)",
+      "Anchor": "option-a-use-oauth-tool-fastest",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option A: Use OAuth Tool (Fastest)"
+      ],
+      "Text": "Go to OAuth Tool and select your developer app\nSelect scopes: r_profile_basicinfo and r_verify\nClick Request access token\nAuthorize with your LinkedIn account\nCopy the generated access token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "For production use, implement the full 3-legged OAuth flow in your application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "Review the authentication documentation for the complete OAuth sequence, including authorization, token exchange, and refresh handling.\nFollow the integration best practices guide for secure token storage, redirect handling, and recommended architecture.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "The state parameter is a standard OAuth 2.0 parameter used to pass per-request session data, such as CSRF tokens, session identifiers, or routing context.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "https://example.com/callback?state=abc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option B: Build OAuth Flow (Production-Ready)",
+      "Anchor": "option-b-build-oauth-flow-production-ready",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 5: Generate Access Token (3-legged OAuth)",
+        "Option B: Build OAuth Flow (Production-Ready)"
+      ],
+      "Text": "When used with Verified on LinkedIn verification flows, the state parameter is preserved and returned to your registered redirectUri after verification completes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try the APIs instantly (Postman)",
+      "Anchor": "try-the-apis-instantly-postman",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Try the APIs instantly (Postman)"
+      ],
+      "Text": "Use our Postman collection to call /identityMe and /verificationReport without writing code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try the APIs instantly (Postman)",
+      "Anchor": "try-the-apis-instantly-postman",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Try the APIs instantly (Postman)"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try the APIs instantly (Postman)",
+      "Anchor": "try-the-apis-instantly-postman",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Try the APIs instantly (Postman)"
+      ],
+      "Text": "You can make your first API call in under 10 minutes using Development tier with admin-only data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Making an API call",
+      "Anchor": "making-an-api-call",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Making an API call"
+      ],
+      "Text": "This video demonstrates how to call the Verified on LinkedIn APIs with a valid access token and interpret the response. It complements the /identityMe and /verificationReport API reference pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Making an API call",
+      "Anchor": "making-an-api-call",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Making an API call"
+      ],
+      "Text": "When to watch: once OAuth is working and you\u2019re ready to test real API calls.\nRelated docs: Profile Details API (/identityMe), Verification Report API (/verificationReport).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Profile API",
+      "Anchor": "test-profile-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Profile API"
+      ],
+      "Text": "Get basic profile information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Test Profile API",
+      "Anchor": "test-profile-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Profile API"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/identityMe\u0027 \\\n  -H \u0027Authorization: Bearer {YOUR_ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Profile API",
+      "Anchor": "test-profile-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Profile API"
+      ],
+      "Text": "Sample Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Test Profile API",
+      "Anchor": "test-profile-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Profile API"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022abc123\u0022,\n  \u0022lastRefreshedAt\u0022: 1760631246905,\n  \u0022basicInfo\u0022: {\n    \u0022firstName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022John\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022lastName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Doe\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022primaryEmailAddress\u0022: \u0022john.doe@example.com\u0022,\n    \u0022profileUrl\u0022: \u0022https://www.linkedin.com/profile-thirdparty-redirect/...\u0022,\n    \u0022profilePicture\u0022: {\n      \u0022croppedImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/...\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1763596800000\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "Check your verification status:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {YOUR_ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "Sample Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022abc123\u0022,\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "See Release Notes for current API versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "The /verificationReport API also supports the optional verifiedWithinDays query parameter. Use it when your application requires members to periodically re-confirm their identity or workplace verification. If an existing verification is older than the requested freshness window, the response includes a verificationUrl so the member can re-verify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Verification Report API",
+      "Anchor": "test-verification-report-api",
+      "SectionPath": [
+        "Start Building Now",
+        "Step 6: Call the APIs",
+        "Test Verification Report API"
+      ],
+      "Text": "See the Verification Report API documentation for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Understanding Your Limitations",
+      "Anchor": "understanding-your-limitations",
+      "SectionPath": [
+        "Understanding Your Limitations"
+      ],
+      "Text": "",
+      "Headers": [
+        "What You Can Do",
+        "What You Cannot Do"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Test with application administrators",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access data for other LinkedIn members",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Build and test integration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use in production",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Test OAuth flow end-to-end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access data for end users",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Display verification badges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scale beyond testing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Test all API endpoints",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Serve production traffic",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Your Limitations",
+      "Anchor": "understanding-your-limitations",
+      "SectionPath": [
+        "Understanding Your Limitations"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Your Limitations",
+      "Anchor": "understanding-your-limitations",
+      "SectionPath": [
+        "Understanding Your Limitations"
+      ],
+      "Text": "Application Administrator Access Only:\nDevelopment tier can only access verification data for LinkedIn members who are administrators of your developer application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Your Limitations",
+      "Anchor": "understanding-your-limitations",
+      "SectionPath": [
+        "Understanding Your Limitations"
+      ],
+      "Text": "To test with additional LinkedIn accounts, add them as application administrators in Developer Portal \u2192 Your App \u2192 Team members tab.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When You\u0027re Ready to Upgrade",
+      "Anchor": "when-youre-ready-to-upgrade",
+      "SectionPath": [
+        "When You\u0027re Ready to Upgrade"
+      ],
+      "Text": "Ready for production access? Upgrading to Lite tier is straightforward. For detailed upgrade instructions, see Lite Tier Quickstart.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When You\u0027re Ready to Upgrade",
+      "Anchor": "when-youre-ready-to-upgrade",
+      "SectionPath": [
+        "When You\u0027re Ready to Upgrade"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When You\u0027re Ready to Upgrade",
+      "Anchor": "when-youre-ready-to-upgrade",
+      "SectionPath": [
+        "When You\u0027re Ready to Upgrade"
+      ],
+      "Text": "Your Development tier integration will continue to work on Lite tier with no code changes. Lite tier uses the same APIs and implementation as Development tier, and reviews typically complete within a week.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When You\u0027re Ready to Upgrade",
+      "Anchor": "when-youre-ready-to-upgrade",
+      "SectionPath": [
+        "When You\u0027re Ready to Upgrade"
+      ],
+      "Text": "For detailed upgrade instructions, see Lite Tier Quickstart.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Continue Testing",
+      "Anchor": "continue-testing",
+      "SectionPath": [
+        "Next Steps",
+        "Continue Testing"
+      ],
+      "Text": "Implementation Guide - OAuth, tokens, best practices",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API References",
+      "Anchor": "api-references",
+      "SectionPath": [
+        "Next Steps",
+        "API References"
+      ],
+      "Text": "/identityMe API - Profile details endpoint\n/verificationReport API - Verification details endpoint\nAuthentication - OAuth details",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ready for Production?",
+      "Anchor": "ready-for-production",
+      "SectionPath": [
+        "Next Steps",
+        "Ready for Production?"
+      ],
+      "Text": "Upgrade to Lite Tier - Production access guide\nOverview - Compare tier features",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resources",
+      "Anchor": "resources",
+      "SectionPath": [
+        "Next Steps",
+        "Resources"
+      ],
+      "Text": "Branding Guidelines - Display badges correctly\nFAQ - Frequently asked questions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient permissions to access\u0022 Error",
+      "Anchor": "insufficient-permissions-to-access-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient permissions to access\u0022 Error"
+      ],
+      "Text": "Cause: Trying to access data for a LinkedIn member who is not an administrator of your developer application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient permissions to access\u0022 Error",
+      "Anchor": "insufficient-permissions-to-access-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient permissions to access\u0022 Error"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient permissions to access\u0022 Error",
+      "Anchor": "insufficient-permissions-to-access-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient permissions to access\u0022 Error"
+      ],
+      "Text": "Use a LinkedIn account that is an application administrator, OR\nAdd test accounts as application administrators in Developer Portal \u2192 Team members tab, OR\nUpgrade to Lite tier to access all LinkedIn members",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Invalid access token\u0022 Error",
+      "Anchor": "invalid-access-token-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Invalid access token\u0022 Error"
+      ],
+      "Text": "Cause: Token expired or invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Invalid access token\u0022 Error",
+      "Anchor": "invalid-access-token-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Invalid access token\u0022 Error"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Invalid access token\u0022 Error",
+      "Anchor": "invalid-access-token-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Invalid access token\u0022 Error"
+      ],
+      "Text": "Generate a new token using the OAuth tool\nImplement token refresh logic for production\nSee Authentication Guide for token refresh details",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "Cause: Verified on LinkedIn product not enabled",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "Go to Developer Portal \u2192 Your App \u2192 Products tab\nEnsure \u0022Verified on LinkedIn\u0022 shows as Approved\nRefresh page if just requested",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "\uD83C\uDF89 Congratulations! You\u0027re now testing Verified on LinkedIn APIs. When you\u0027re ready for production, upgrade to Lite tier.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

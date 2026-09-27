@@ -1,0 +1,85 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+  "Title": "Request API Access",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Request API Access",
+      "Anchor": "request-api-access",
+      "SectionPath": [],
+      "Text": "Access to LinkedIn Learning APIs is available to members of our Partner Program and organizations that have purchased LinkedIn Learning site licenses. LinkedIn Learning APIs use two-legged OAuth 2.0 for access. With a partnership or an organizational site license, API keys can be provisioned within your LinkedIn Learning Admin Settings. API keys are used to generate an access token to call the API. The access token is a value that must be included in a request header in each call to the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API Access",
+      "Anchor": "request-api-access",
+      "SectionPath": [],
+      "Text": "To learn how to provision LinkedIn Learning API keys, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining a Client ID and Client Secret",
+      "Anchor": "obtaining-a-client-id-and-client-secret",
+      "SectionPath": [
+        "Obtaining a Client ID and Client Secret"
+      ],
+      "Text": "To generate an access token, you need admin access to a LinkedIn Learning instance. Depending on your requirements, you can get access to LinkedIn Learning in one of two ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Learning Partner Program",
+      "Anchor": "1-learning-partner-program",
+      "SectionPath": [
+        "Obtaining a Client ID and Client Secret",
+        "1. Learning Partner Program"
+      ],
+      "Text": "If your organization is a member of the LinkedIn Learning Partner Program, you can reach out to your dedicated Business Development contact to request access to a LinkedIn Learning test instance. Once access is granted, you can provision API keys for testing and development within your LinkedIn Learning Admin Settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. LinkedIn Learning Admin Settings",
+      "Anchor": "2-linkedin-learning-admin-settings",
+      "SectionPath": [
+        "Obtaining a Client ID and Client Secret",
+        "2. LinkedIn Learning Admin Settings"
+      ],
+      "Text": "If your organization has purchased LinkedIn Learning, you can create a client and secret key within your LinkedIn Learning Admin Settings. With this client ID and client secret, the access token you generate will permit LinkedIn Learning APIs to return organization-specific metadata in addition to publicly-available metadata. In particular, the API will return AICC \u0026 SSO launch URLs of LinkedIn Learning content, with an identifier for a specific organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve LinkedIn Learning Enterprise Activity Reports",
+      "Anchor": "retrieve-linkedin-learning-enterprise-activity-reports",
+      "SectionPath": [
+        "Retrieve LinkedIn Learning Enterprise Activity Reports"
+      ],
+      "Text": "LinkedIn Learning Reporting APIs allow you to view key insights and engagement metrics to help you measure organization\u0027s L \u0026 D progress. To review the learningActivityReports API parameters, endpoints, and use cases, click here.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

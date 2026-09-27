@@ -1,0 +1,442 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+  "Title": "Website Visitors Retargeting",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adpagesets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adsegmentsources"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Website Visitors Retargeting",
+      "Anchor": "website-visitors-retargeting",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Website Visitors Retargeting",
+      "Anchor": "website-visitors-retargeting",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Website Visitors Retargeting",
+      "Anchor": "website-visitors-retargeting",
+      "SectionPath": [],
+      "Text": "The LinkedIn Ads platform offers advertisers the ability to retarget visitors of their website with ad content on LinkedIn. By adding the LinkedIn Insight Tag to their website, advertisers can match website visitors to members on LinkedIn to enable further engagement. Advertisers can also use website retargeting with LinkedIn professional demographic segments for more refined targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Website Visitors Retargeting",
+      "Anchor": "website-visitors-retargeting",
+      "SectionPath": [],
+      "Text": "A retargeting segment is a private user segment that\u0027s populated using tracking data sent from an advertiser\u2019s website.\u00A0A segment must have a minimum audience count of 300 before it can be used in a campaign. Unless this requirement is met, campaigns using the segment won\u0027t start serving right away.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Website Visitors Retargeting",
+      "Anchor": "website-visitors-retargeting",
+      "SectionPath": [],
+      "Text": "For more information on campaign targeting options, see Ads Targeting, and for information on using retargeting in Campaign Manager, see Website Retargeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Website Visitors Retargeting",
+      "Anchor": "website-visitors-retargeting",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments. Can manage and read audience DMP segments.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversion Tracking",
+      "Anchor": "conversion-tracking",
+      "SectionPath": [
+        "Permissions",
+        "Conversion Tracking"
+      ],
+      "Text": "The advertiser you\u0027re working with must have deployed a working and live Insight Tag on their website.\u00A0For more information, see Conversion Tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Segment State Transition",
+      "Anchor": "segment-state-transition",
+      "SectionPath": [
+        "Permissions",
+        "Segment State Transition"
+      ],
+      "Text": "Website retargeting segments follow the same state transitions as DMP segments however, they\u0027ll never be expired.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps",
+      "Anchor": "steps",
+      "SectionPath": [
+        "Permissions",
+        "Segment State Transition",
+        "Steps"
+      ],
+      "Text": "Create Ad Page Set\nCreate Ad Segment\nUpdate Ad Segment Source\nApply Targeting to Campaign",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Page Set",
+      "Anchor": "create-ad-page-set",
+      "SectionPath": [
+        "Create Ad Page Set"
+      ],
+      "Text": "Create an ad page set using the adPageSets API. A page set is a set of pages on the advertiser\u0027s website that are configured to be tracked. Every page set is owned by a Sponsored Account (advertiser). LinkedIn members who visit a page in a page set can be added to a retargeting segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Page Set",
+      "Anchor": "create-ad-page-set",
+      "SectionPath": [
+        "Create Ad Page Set"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Page Set",
+      "Anchor": "create-ad-page-set",
+      "SectionPath": [
+        "Create Ad Page Set"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPageSets",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Page Set",
+      "Anchor": "create-ad-page-set",
+      "SectionPath": [
+        "Create Ad Page Set"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:$accountId\u0022,\n    \u0022matchRules\u0022: [\n        {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022foo.com\u0022\n        }\n    ],\n    \u0022name\u0022: \u0022TestPageSet\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Page Set",
+      "Anchor": "create-ad-page-set",
+      "SectionPath": [
+        "Create Ad Page Set"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPageSets\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:$accountId\u0022,\n    \u0022matchRules\u0022: [\n        {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022foo.com\u0022\n        }\n    ],\n    \u0022name\u0022: \u0022TestPageSet\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Page Set",
+      "Anchor": "create-ad-page-set",
+      "SectionPath": [
+        "Create Ad Page Set"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the page set ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Segment",
+      "Anchor": "create-ad-segment",
+      "SectionPath": [
+        "Create Ad Segment"
+      ],
+      "Text": "Create an empty ad segment for the page set using the adSegments API. You add entities to be retargeted, such as members or companies, to the segment after this step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Segment",
+      "Anchor": "create-ad-segment",
+      "SectionPath": [
+        "Create Ad Segment"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ad segment ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Segment Source",
+      "Anchor": "update-ad-segment-source",
+      "SectionPath": [
+        "Update Ad Segment Source"
+      ],
+      "Text": "Create an association between the new page set and the new segment using the adSegmentSources API. The API stores associations between an ad page set URN, a segment URN, and a sponsored account URN. This association determines which segment a user should be associated with based on existing page set criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Segment Source",
+      "Anchor": "update-ad-segment-source",
+      "SectionPath": [
+        "Update Ad Segment Source"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Ad Segment Source",
+      "Anchor": "update-ad-segment-source",
+      "SectionPath": [
+        "Update Ad Segment Source"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adSegmentSources/source=urn:li:adPageSet:{id}\u0026segment=urn:li:adSegment:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Ad Segment Source",
+      "Anchor": "update-ad-segment-source",
+      "SectionPath": [
+        "Update Ad Segment Source"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:511910281\u0022,\n    \u0022segment\u0022: \u0022urn:li:adSegment:10001\u0022,\n    \u0022source\u0022: \u0022urn:li:adPageSet:10001\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Ad Segment Source",
+      "Anchor": "update-ad-segment-source",
+      "SectionPath": [
+        "Update Ad Segment Source"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adSegmentSources/source=urn:li:adPageSet:{id}\u0026segment=urn:li:adSegment:{id}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:511910281\u0022,\n    \u0022segment\u0022: \u0022urn:li:adSegment:10001\u0022,\n    \u0022source\u0022: \u0022urn:li:adPageSet:10001\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Segment Source",
+      "Anchor": "update-ad-segment-source",
+      "SectionPath": [
+        "Update Ad Segment Source"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "Add the segment to a campaign using the adCampaigns API. The segment ID can be used with other targeting criteria to run a campaign. The campaign is created, but not served until the segment is in READY status and has a minimum audience count of 300.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "Targeting facets must have locations and interfaceLocales defined.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaign ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "{\n \u0022patch\u0022: {\n  \u0022$set\u0022: {\n   \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n     \u0022and\u0022: [\n      {\n       \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:dynamicSegments\u0022: [\n         \u0022urn:li:adSegment:208133\u0022\n        ]\n       }\n      },\n      {\n       \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:locations\u0022: [\n         \u0022urn:li:geo:103644278\u0022\n        ]\n       }\n      },\n      {\n       \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n         \u0022urn:li:locale:en_US\u0022\n        ]\n       }\n      }\n     ]\n    }\n   }\n  }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaign ID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n--data \u0027{\n \u0022patch\u0022:{\n  \u0022$set\u0022:{\n   \u0022targetingCriteria\u0022:{\n    \u0022include\u0022:{\n     \u0022and\u0022:[\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:dynamicSegments\u0022:[\n         \u0022urn:li:adSegment:208133\u0022\n        ]\n       }\n      },\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:locations\u0022:[\n         \u0022urn:li:geo:103644278\u0022\n        ]\n       }\n      },\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n         \u0022urn:li:locale:en_US\u0022\n        ]\n       }\n      }\n     ]\n    }\n   }\n  }\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Targeting to Campaign",
+      "Anchor": "apply-targeting-to-campaign",
+      "SectionPath": [
+        "Apply Targeting to Campaign"
+      ],
+      "Text": "For more information, see Ads Targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Segment Source",
+      "Anchor": "delete-a-segment-source",
+      "SectionPath": [
+        "Apply Targeting to Campaign",
+        "Delete a Segment Source"
+      ],
+      "Text": "Remove an existing association between an ad page set and a segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Segment Source",
+      "Anchor": "delete-a-segment-source",
+      "SectionPath": [
+        "Apply Targeting to Campaign",
+        "Delete a Segment Source"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Segment Source",
+      "Anchor": "delete-a-segment-source",
+      "SectionPath": [
+        "Apply Targeting to Campaign",
+        "Delete a Segment Source"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adSegmentSources/source=urn:li:adPageSet:{id}\u0026segment=urn:li:adSegment:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Segment Source",
+      "Anchor": "delete-a-segment-source",
+      "SectionPath": [
+        "Apply Targeting to Campaign",
+        "Delete a Segment Source"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adSegmentSources/source=urn:li:adPageSet:{id}\u0026segment=urn:li:adSegment:{id}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

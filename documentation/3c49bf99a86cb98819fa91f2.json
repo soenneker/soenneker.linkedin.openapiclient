@@ -1,0 +1,230 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-contracts",
+  "Title": "salesContracts",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-analytics-export-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-contracts",
+    "https://learn.microsoft.com/en-us/linkedin/sales/concepts/contracts"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "salesContracts",
+      "Anchor": "salescontracts",
+      "SectionPath": [],
+      "Text": "This is a resource representing a sales contract.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "contractsByMember",
+      "Anchor": "contractsbymember",
+      "SectionPath": [
+        "Methods",
+        "contractsByMember"
+      ],
+      "Text": "Find all contracts where user has an active seat.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "contractsByMember",
+      "Anchor": "contractsbymember",
+      "SectionPath": [
+        "Methods",
+        "contractsByMember"
+      ],
+      "Text": "GET /salesContracts?q=contractsByMember",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Methods",
+        "contractsByMember",
+        "Response body"
+      ],
+      "Text": "Contract",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Methods",
+        "contractsByMember",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/salesContracts?q=contractsByMember\u0027 \\\n-H \u0027Authorization: Bearer AQXt...\u0027 \\\n-H \u0027X-RestLi-Protocol-Version=2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Methods",
+        "contractsByMember",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022contract\u0022: \u0022urn:li:contract:123456\u0022,\n      \u0022name\u0022: \u0022North America Sales Team\u0022,\n      \u0022description\u0022: \u0022Organic american apparel eiusmod, high life craft beer mollit polaroid lo-fi sed culpa.\u0022,\n      \u0022hasReportingAccess\u0022: true\n    },\n    {\n      \u0022contract\u0022: \u0022urn:li:contract:1234560\u0022,\n      \u0022name\u0022: \u0022EMEA Sales-EnterpriseLicense\u0022,\n      \u0022description\u0022: \u0022Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\u0022,\n      \u0022hasReportingAccess\u0022: false\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contract",
+      "Anchor": "contract",
+      "SectionPath": [
+        "Definitions",
+        "Contract"
+      ],
+      "Text": "Represents a Sales Navigator contract. See Concepts - Contracts to learn more about the concept of contracts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Contract",
+      "Anchor": "contract",
+      "SectionPath": [
+        "Definitions",
+        "Contract"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The urn of this Sales navigator contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContractUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-contracts#contracturn"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of this contract, appropriate for display to an end-user",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A description providing additional information about the contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hasReportingAccess",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether the user can export data for this contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ContractUrn",
+      "Anchor": "contracturn",
+      "SectionPath": [
+        "Definitions",
+        "ContractUrn"
+      ],
+      "Text": "A Sales Navigator contract granting a group of members access to subscription.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ContractUrn",
+      "Anchor": "contracturn",
+      "SectionPath": [
+        "Definitions",
+        "ContractUrn"
+      ],
+      "Text": "Reference Type: string",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+  "Title": "Plus Tier Quickstart",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Quickstart",
+      "Anchor": "plus-tier-quickstart",
+      "SectionPath": [],
+      "Text": "Get from zero to your first successful API call displaying detailed verification data in 15 minutes. Plus tier provides enterprise-grade features including basic profile data, detailed verification metadata, and bulk validation capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Quickstart",
+      "Anchor": "plus-tier-quickstart",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Quickstart",
+      "Anchor": "plus-tier-quickstart",
+      "SectionPath": [],
+      "Text": "Enterprise Partnership Required",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Quickstart",
+      "Anchor": "plus-tier-quickstart",
+      "SectionPath": [],
+      "Text": "Plus tier access requires approval from LinkedIn Business Development. This tier is designed for enterprise partners with strategic use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Get",
+      "Anchor": "what-youll-get",
+      "SectionPath": [
+        "Overview",
+        "What You\u0027ll Get"
+      ],
+      "Text": "\u2705 Basic profile data - Current job, education, and professional details\n\u2705 Detailed verification metadata - Verified names, timestamps, methods, organization info\n\u2705 Bulk validation API - Check freshness for up to 500 members per request\n\u2705 Custom rate limits - Enterprise-scale API access\n\u2705 Priority support - Dedicated partner support team",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Access",
+      "Anchor": "api-access",
+      "SectionPath": [
+        "Overview",
+        "API Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Available",
+        "Response Data"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/identityMe",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile (name, email, photo, URL, education, job)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/verificationReport",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Detailed verification metadata with timestamps",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/validationStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bulk member validation (up to 500 members)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OAuth Scopes",
+      "Anchor": "oauth-scopes",
+      "SectionPath": [
+        "Overview",
+        "OAuth Scopes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scope",
+        "Available",
+        "Purpose"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_profile_basicinfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile information",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_verify_details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Detailed verification metadata with timestamps",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_primary_current_experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current job title and company",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_most_recent_education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Most recent education information",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Overview",
+        "Rate Limits"
+      ],
+      "Text": "Custom limits - Negotiated based on partnership agreement\nBulk validation - Up to 500 members per /validationStatus request",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Before starting, ensure you have:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "\u2705 Approved partner access from LinkedIn Business Development\n\u2705 Developer application created in LinkedIn Developer Portal\n\u2705 Client ID and Client Secret from your app\u0027s Auth tab\n\u2705 Verified on LinkedIn Plus product enabled for your application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To request access, visit Verified on LinkedIn and submit an access request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Redirect URI",
+      "Anchor": "configure-redirect-uri",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Configure Redirect URI"
+      ],
+      "Text": "Go to Developer Portal \u2192 Your App \u2192 Auth tab\nAdd your redirect URI (e.g., https://yourapp.com/auth/linkedin/callback)\nNote your Client ID and Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "Redirect the member to LinkedIn\u0027s authorization page with all required scopes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "GET https://www.linkedin.com/oauth/v2/authorization\n  ?response_type=code\n  \u0026client_id={YOUR_CLIENT_ID}\n  \u0026redirect_uri={YOUR_REDIRECT_URI}\n  \u0026state={RANDOM_STRING}\n  \u0026scope=r_verify_details%20r_profile_basicinfo%20r_primary_current_experience%20r_most_recent_education",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "Required OAuth Scopes (Plus Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "r_verify_details \u2013 Detailed verification metadata\nr_profile_basicinfo \u2013 Basic profile info\nr_primary_current_experience \u2013 Current job details\nr_most_recent_education \u2013 Education information",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "Request all scopes at once for the best user experience. See Implementation Guide for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "The state parameter is a standard OAuth 2.0 parameter used to pass per-request session data, such as CSRF tokens, session identifiers, or routing context.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "https://example.com/callback?state=abc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "When used with Verified on LinkedIn verification flows, the state parameter is preserved and passed through to your registered redirectUri after verification completes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Authorization",
+      "Anchor": "request-authorization",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Request Authorization"
+      ],
+      "Text": "For more information about redirect URI validation and state parameter behavior, see Verification URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exchange Code for Access Token",
+      "Anchor": "exchange-code-for-access-token",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Exchange Code for Access Token"
+      ],
+      "Text": "After the member approves, LinkedIn redirects to your URI with an authorization code. Exchange it for an access token:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Exchange Code for Access Token",
+      "Anchor": "exchange-code-for-access-token",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Exchange Code for Access Token"
+      ],
+      "Text": "curl -X POST \u0027https://www.linkedin.com/oauth/v2/accessToken\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -d \u0027grant_type=authorization_code\u0027 \\\n  -d \u0027code={AUTHORIZATION_CODE}\u0027 \\\n  -d \u0027redirect_uri={YOUR_REDIRECT_URI}\u0027 \\\n  -d \u0027client_id={YOUR_CLIENT_ID}\u0027 \\\n  -d \u0027client_secret={YOUR_CLIENT_SECRET}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exchange Code for Access Token",
+      "Anchor": "exchange-code-for-access-token",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Exchange Code for Access Token"
+      ],
+      "Text": "Sample Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Exchange Code for Access Token",
+      "Anchor": "exchange-code-for-access-token",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Exchange Code for Access Token"
+      ],
+      "Text": "{\n  \u0022access_token\u0022: \u0022AQWsGriMiJuFpzv7...\u0022,\n  \u0022expires_in\u0022: 5183999,\n  \u0022refresh_token\u0022: \u0022AQVObXp9RNF9RuuN...\u0022,\n  \u0022scope\u0022: \u0022r_verify_details,r_profile_basicinfo,r_primary_current_experience,r_most_recent_education\u0022,\n  \u0022token_type\u0022: \u0022Bearer\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exchange Code for Access Token",
+      "Anchor": "exchange-code-for-access-token",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Exchange Code for Access Token"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exchange Code for Access Token",
+      "Anchor": "exchange-code-for-access-token",
+      "SectionPath": [
+        "Step 1: Set Up OAuth (2 minutes)",
+        "Exchange Code for Access Token"
+      ],
+      "Text": "Access tokens expire in 60 days\nRefresh tokens expire in 365 days\nStore both tokens securely and implement automatic refresh",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "Get comprehensive member profile data including education and current position:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/identityMe\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "Sample Response (Plus Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022abc123\u0022,\n  \u0022lastRefreshedAt\u0022: 1760631246905,\n  \u0022basicInfo\u0022: {\n    \u0022firstName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022John\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022lastName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Doe\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022primaryEmailAddress\u0022: \u0022john.doe@example.com\u0022,\n    \u0022profileUrl\u0022: \u0022https://www.linkedin.com/profile-thirdparty-redirect/...\u0022,\n    \u0022profilePicture\u0022: {\n      \u0022croppedImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/...\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1763596800000\n      }\n    }\n  },\n  \u0022primaryCurrentExperience\u0022: {\n    \u0022title\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Software Engineer\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022companyName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Contoso\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    }\n  },\n  \u0022mostRecentEducation\u0022: {\n    \u0022schoolName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Contoso University\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022degreeName\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Bachelor of Science\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    },\n    \u0022fieldOfStudy\u0022: {\n      \u0022localized\u0022: { \u0022en_US\u0022: \u0022Computer Science\u0022 },\n      \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "Plus tier returns additional fields: primaryCurrentExperience and mostRecentEducation. See /identityMe API Reference for complete schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Call /identityMe API (3 minutes)",
+      "Anchor": "step-2-call-identityme-api-3-minutes",
+      "SectionPath": [
+        "Step 2: Call /identityMe API (3 minutes)"
+      ],
+      "Text": "Explore Plus tier capabilities using our Postman collection, including verification metadata and bulk validation examples.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "Get detailed verification status with metadata:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "Sample Response (Plus Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022abc123\u0022,\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022],\n  \u0022identityVerification\u0022: {\n    \u0022verifiedName\u0022: {\n      \u0022firstName\u0022: {\n        \u0022localized\u0022: { \u0022en_US\u0022: \u0022John\u0022 },\n        \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n      },\n      \u0022lastName\u0022: {\n        \u0022localized\u0022: { \u0022en_US\u0022: \u0022Doe\u0022 },\n        \u0022preferredLocale\u0022: { \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022en\u0022 }\n      }\n    },\n    \u0022verifiedAt\u0022: 1698796800000\n  },\n  \u0022workplaceVerification\u0022: {\n    \u0022organizationName\u0022: \u0022Contoso\u0022,\n    \u0022organizationLogoUrl\u0022: \u0022https://media.licdn.com/dms/image/...\u0022,\n    \u0022verificationMethod\u0022: \u0022WORK_EMAIL\u0022,\n    \u0022verifiedAt\u0022: 1698796800000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "Plus tier returns detailed metadata including verified names, timestamps, and verification methods. Development/Lite tiers only return verification categories.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "The /verificationReport API also supports the optional verifiedWithinDays query parameter for enterprise workflows that require periodic re-verification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "GET /verificationReport?verifiedWithinDays=30",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "If an existing verification is older than 30 days, the response includes a verificationUrl so the member can re-verify while existing verification data continues to be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Call /verificationReport API (3 minutes)",
+      "Anchor": "step-3-call-verificationreport-api-3-minutes",
+      "SectionPath": [
+        "Step 3: Call /verificationReport API (3 minutes)"
+      ],
+      "Text": "See the Verification Report API for complete details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "Check data freshness for multiple members in bulk (Plus tier exclusive):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/validationStatus\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -d \u0027{\n    \u0022memberIds\u0022: [\u0022abc123\u0022, \u0022def456\u0022, \u0022ghi789\u0022]\n  }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "Sample Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "{\n  \u0022results\u0022: [\n    {\n      \u0022memberId\u0022: \u0022abc123\u0022,\n      \u0022status\u0022: \u0022FRESH\u0022,\n      \u0022lastRefreshedAt\u0022: 1760631246905\n    },\n    {\n      \u0022memberId\u0022: \u0022def456\u0022,\n      \u0022status\u0022: \u0022STALE\u0022,\n      \u0022lastRefreshedAt\u0022: 1698796800000\n    },\n    {\n      \u0022memberId\u0022: \u0022ghi789\u0022,\n      \u0022status\u0022: \u0022FRESH\u0022,\n      \u0022lastRefreshedAt\u0022: 1760500000000\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "2-legged OAuth - Uses client credentials (no member consent required)\nBatch limit - Up to 500 member IDs per request\nUse case - Check if cached data needs refreshing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Call /validationStatus API (3 minutes)",
+      "Anchor": "step-4-call-validationstatus-api-3-minutes",
+      "SectionPath": [
+        "Step 4: Call /validationStatus API (3 minutes)"
+      ],
+      "Text": "See /validationStatus API Reference for complete documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Show Verification Badges",
+      "Anchor": "show-verification-badges",
+      "SectionPath": [
+        "Step 5: Display Verification Data",
+        "Show Verification Badges"
+      ],
+      "Text": "Follow branding guidelines to display verification badges:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Show Verification Badges",
+      "Anchor": "show-verification-badges",
+      "SectionPath": [
+        "Step 5: Display Verification Data",
+        "Show Verification Badges"
+      ],
+      "Text": "\u003C!-- Identity Verified --\u003E\n\u003Cdiv class=\u0022verification-badge\u0022\u003E\n  \u003Cimg src=\u0022identity-verified-badge.svg\u0022 alt=\u0022Identity Verified\u0022 /\u003E\n  \u003Cspan\u003EIdentity Verified\u003C/span\u003E\n\u003C/div\u003E\n\n\u003C!-- Workplace Verified --\u003E\n\u003Cdiv class=\u0022verification-badge\u0022\u003E\n  \u003Cimg src=\u0022workplace-verified-badge.svg\u0022 alt=\u0022Workplace Verified\u0022 /\u003E\n  \u003Cspan\u003EWorkplace Verified at Tech Corp\u003C/span\u003E\n\u003C/div\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Display Profile Data",
+      "Anchor": "display-profile-data",
+      "SectionPath": [
+        "Step 5: Display Verification Data",
+        "Display Profile Data"
+      ],
+      "Text": "\u003Cdiv class=\u0022member-profile\u0022\u003E\n  \u003Cimg src=\u0022{profilePicture.downloadUrl}\u0022 alt=\u0022{firstName} {lastName}\u0022 /\u003E\n  \u003Ch2\u003E{firstName} {lastName}\u003C/h2\u003E\n  \u003Cp\u003E{primaryCurrentExperience.title} at {primaryCurrentExperience.companyName}\u003C/p\u003E\n  \u003Cp\u003EEducation: {mostRecentEducation.degreeName} from {mostRecentEducation.schoolName}\u003C/p\u003E\n\u003C/div\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth \u0026 Tokens",
+      "Anchor": "oauth--tokens",
+      "SectionPath": [
+        "Best Practices",
+        "OAuth \u0026 Tokens"
+      ],
+      "Text": "\u2705 Request all scopes at once (better UX)\n\u2705 Store tokens encrypted at rest\n\u2705 Implement automatic token refresh\n\u2705 Use refresh tokens to keep data fresh",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [
+        "Best Practices",
+        "Data Freshness"
+      ],
+      "Text": "\u2705 Use /validationStatus to check if data is stale\n\u2705 Refresh stale data proactively\n\u2705 Cache API responses appropriately\n\u2705 See Data Freshness Guide\n\u2705 Use verifiedWithinDays on /verificationReport when members must periodically re-confirm their identity or workplace verification during interactive user flows.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security",
+      "Anchor": "security",
+      "SectionPath": [
+        "Best Practices",
+        "Security"
+      ],
+      "Text": "\u2705 Enforce unique member ID validation\n\u2705 Use HTTPS only\n\u2705 Implement CSRF protection\n\u2705 See Implementation Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Production Readiness",
+      "Anchor": "production-readiness",
+      "SectionPath": [
+        "Best Practices",
+        "Production Readiness"
+      ],
+      "Text": "\u2705 Complete certification requirements\n\u2705 Follow implementation guidelines\n\u2705 Implement comprehensive error handling\n\u2705 Monitor API usage and performance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Features",
+      "Anchor": "plus-tier-features",
+      "SectionPath": [
+        "Next Steps",
+        "Plus Tier Features"
+      ],
+      "Text": "Data Freshness - Keep member data up-to-date\nCertification - Production readiness requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementation Guide",
+      "Anchor": "implementation-guide",
+      "SectionPath": [
+        "Next Steps",
+        "Implementation Guide"
+      ],
+      "Text": "Implementation Guide - OAuth, tokens, testing, production best practices",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API References",
+      "Anchor": "api-references",
+      "SectionPath": [
+        "Next Steps",
+        "API References"
+      ],
+      "Text": "/identityMe API - Profile details endpoint\n/verificationReport API - Verification details endpoint\n/validationStatus API - Bulk validation endpoint\nAuthentication - OAuth details",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resources",
+      "Anchor": "resources",
+      "SectionPath": [
+        "Next Steps",
+        "Resources"
+      ],
+      "Text": "Branding Guidelines - Display badges correctly\nCommon FAQ - Frequently asked questions\nRelease Notes - API updates and changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient scope\u0022 Error",
+      "Anchor": "insufficient-scope-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient scope\u0022 Error"
+      ],
+      "Text": "Cause: Missing required OAuth scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient scope\u0022 Error",
+      "Anchor": "insufficient-scope-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient scope\u0022 Error"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient scope\u0022 Error",
+      "Anchor": "insufficient-scope-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient scope\u0022 Error"
+      ],
+      "Text": "Verify all 4 scopes are requested: r_verify_details, r_profile_basicinfo, r_primary_current_experience, r_most_recent_education\nRe-authorize the member with correct scopes\nCheck token scope in OAuth response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "Cause: Plus tier not enabled for your application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Product not assigned\u0022 Error",
+      "Anchor": "product-not-assigned-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Product not assigned\u0022 Error"
+      ],
+      "Text": "Verify Plus tier approval with LinkedIn Business Development\nCheck Developer Portal \u2192 Products tab shows \u0022Plus Tier\u0022\nContact your LinkedIn partner manager",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Missing Education or Job Data",
+      "Anchor": "missing-education-or-job-data",
+      "SectionPath": [
+        "Troubleshooting",
+        "Missing Education or Job Data"
+      ],
+      "Text": "Cause: Member hasn\u0027t added data to LinkedIn profile, or missing scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Missing Education or Job Data",
+      "Anchor": "missing-education-or-job-data",
+      "SectionPath": [
+        "Troubleshooting",
+        "Missing Education or Job Data"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Missing Education or Job Data",
+      "Anchor": "missing-education-or-job-data",
+      "SectionPath": [
+        "Troubleshooting",
+        "Missing Education or Job Data"
+      ],
+      "Text": "Check member\u0027s LinkedIn profile has education/job data\nVerify r_primary_current_experience and r_most_recent_education scopes granted\nHandle missing fields gracefully in your UI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "Cause: Exceeded custom rate limits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "Review your rate limit agreement\nImplement caching and optimize API calls\nContact your LinkedIn partner manager to discuss limits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "\uD83C\uDF89 Congratulations! You\u0027re now using Verified on LinkedIn Plus tier with enterprise features. Complete certification requirements before going to production.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

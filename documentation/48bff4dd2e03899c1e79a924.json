@@ -1,0 +1,219 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+  "Title": "Display Services Certification",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Display Services Certification",
+      "Anchor": "display-services-certification",
+      "SectionPath": [],
+      "Text": "In order to ensure that integrations deliver an optimal user experience, all Display Services partner integrations are reviewed prior to launch. This document describes the criteria we use to evaluate integrations to ensure best practices to the external application\u0027s context have been implemented that are relevant.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display 2.1 Migration",
+      "Anchor": "display-21-migration",
+      "SectionPath": [
+        "Display 2.1 Migration"
+      ],
+      "Text": "During certification, solutions migrating to Display 2.1 will be reviewed to ensure that the Authentication Requirements are met. This includes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display 2.1 Migration",
+      "Anchor": "display-21-migration",
+      "SectionPath": [
+        "Display 2.1 Migration"
+      ],
+      "Text": "Implementation of the provisioning API as described in the requirements documentation.\nImplementation of Sales Access Tokens\nStorage of Access Tokens for subsequent usage\nDomain allow list defined for on child applications\nFollowing of Display 2.1 best practices, including adoption of programmatic refresh tokens and using all tokens for the duration of their TTL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display 2.1 Use Cases Reviewed",
+      "Anchor": "display-21-use-cases-reviewed",
+      "SectionPath": [
+        "Display 2.1 Use Cases Reviewed"
+      ],
+      "Text": "The following use cases/functionality will need to be demoed during certification:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Display 2.1 Use Cases Reviewed",
+      "Anchor": "display-21-use-cases-reviewed",
+      "SectionPath": [
+        "Display 2.1 Use Cases Reviewed"
+      ],
+      "Text": "",
+      "Headers": [
+        "Use Case",
+        "Success Criteria"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Customer UX for enabling of the integration and implement of Provisioning API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enabling integration incorporates provisioning API either overtly or transparently to administrators.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer sign in experience to iframe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User can sign in using SAT flow, best practices followed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Unhappy path sign in experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Following removing grant from permitted services, users can re-login without issue.",
+            "Links": [
+              "https://www.linkedin.com/psettings/permitted-services"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "User Onboarding Best Practices",
+      "Anchor": "user-onboarding-best-practices",
+      "SectionPath": [
+        "User Onboarding Best Practices"
+      ],
+      "Text": "In order to achieve the best possible adoption for your integration, we recommend users get opted-in to Sales Navigator integration by default. We\u0027ve ranked a range of options, from most to least recommended below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Onboarding Best Practices",
+      "Anchor": "user-onboarding-best-practices",
+      "SectionPath": [
+        "User Onboarding Best Practices"
+      ],
+      "Text": "Opt organizations/accounts in by default, and enable users/admins to disable (preferred)\nOpt users in by default, enable users to disable\nAllow entire accounts/organizations to opt-in\nAllow individual users to opt-in",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Onboarding Best Practices",
+      "Anchor": "user-onboarding-best-practices",
+      "SectionPath": [
+        "User Onboarding Best Practices"
+      ],
+      "Text": "We find that it is helpful in most cases to allow users to disable the integration if it is not wanted. One of the things we look for during integration reviews is that the onboarding flow is optimal for the application context.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matching Best Practices",
+      "Anchor": "matching-best-practices",
+      "SectionPath": [
+        "Matching Best Practices"
+      ],
+      "Text": "Matching is a core part of the experience for users of the Display Services. All users will interact with the matching flow, and it is important that the integration is designed to take full advantage of the persistence offered by the iframe, as described in our matching documentation. When evaluating matching implementations, we look for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matching Best Practices",
+      "Anchor": "matching-best-practices",
+      "SectionPath": [
+        "Matching Best Practices"
+      ],
+      "Text": "Using a unique external identifier in the crmRecordId field for the entity (lead or account) you are trying to load in the iframe.\nIf a unique ID is not available, using a hashing function to generate a consistent value for the entity.\nSending crmSourceType in every request--without it persistence does not work.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security Best Practices",
+      "Anchor": "security-best-practices",
+      "SectionPath": [
+        "Security Best Practices"
+      ],
+      "Text": "If your implementation uses Sales Access Tokens, we will validate that your implementation meets the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security Best Practices",
+      "Anchor": "security-best-practices",
+      "SectionPath": [
+        "Security Best Practices"
+      ],
+      "Text": "Access tokens are never sent to clients\nAccess tokens are encrypted at rest",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security Best Practices",
+      "Anchor": "security-best-practices",
+      "SectionPath": [
+        "Security Best Practices"
+      ],
+      "Text": "We will also review the process you use to determine expired Sales Access Tokens and refresh them to ensure optimal user experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Implementation Best Practices",
+      "Anchor": "other-implementation-best-practices",
+      "SectionPath": [
+        "Other Implementation Best Practices"
+      ],
+      "Text": "Finally, we also validate that a valid client ID is passed to us in the apiKey parameter in every request, and that the developer application has configured https://www.linkedin.com as a Valid JS Domain on developer.linkedin.com. This enables the Sign In button to be shown for users with no active session.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

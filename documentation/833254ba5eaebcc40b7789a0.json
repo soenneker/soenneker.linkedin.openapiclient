@@ -1,0 +1,395 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+  "Title": "Document Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Document Ads API",
+      "Anchor": "document-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Document Ads API",
+      "Anchor": "document-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Document Ads API",
+      "Anchor": "document-ads-api",
+      "SectionPath": [],
+      "Text": "LinkedIn Document Ads are a type of Sponsored Content that allow advertisers to promote documents directly in the LinkedIn feed. Members can read and download the document content without leaving LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Document Ads API",
+      "Anchor": "document-ads-api",
+      "SectionPath": [],
+      "Text": "Create and manage Document Ads with the external Creatives API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Document Ads API",
+      "Anchor": "document-ads-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Document Ads API",
+      "Anchor": "document-ads-api",
+      "SectionPath": [],
+      "Text": "If the creative is associated with a Campaign with the Lead Generation objective, we don\u0027t allow the reuse of the same underlying post or document for multiple creatives. If the same asset needs to be used in multiple creatives, it needs to be uploaded multiple times.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER CONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Restricted) Retrieve posts, comments, and likes on behalf of an authenticated member. This is a restricted permission.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Any assets (e.g. documents) must be uploaded via Documents API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Upload Document assets via Documents API.\nCreate a new Post content.\nCreate a new Creative referencing the Post content (alternatively, a post can be created inline with the creative).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Ensure you include the request header \u0022Content-Type\u0022: \u0022application/json\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Schema",
+      "Anchor": "api-schema",
+      "SectionPath": [
+        "Workflow",
+        "API Schema"
+      ],
+      "Text": "Document Ads are similar to existing Article, Image, and Video ads as they require a UGC post to be created. The only difference is that for Article, Image, and Video ads we set the reference to the UGC post inside the content field.\nFor Document Ads, the content field requires a documentAd object with the following field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Schema",
+      "Anchor": "api-schema",
+      "SectionPath": [
+        "Workflow",
+        "API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the content which will be sponsored in this creative. It can be a share or ugcPost URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "gatedLeadgenPreviewPageCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of pages to include in the gated preview. The preview will begin at page 1. This field is only applicable to LeadGen content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Schema",
+      "Anchor": "api-schema",
+      "SectionPath": [
+        "Workflow",
+        "API Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Schema",
+      "Anchor": "api-schema",
+      "SectionPath": [
+        "Workflow",
+        "API Schema"
+      ],
+      "Text": "Make sure you include the request header \u0022Content-Type\u0022: \u0022application/json\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Workflow",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Workflow",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Workflow",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n  \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n  \u0022commentary\u0022: \u0022Sample Document Post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022,\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022:{\n    \u0022media\u0022:{\n      \u0022title\u0022:\u0022title of the document\u0022,\n      \u0022id\u0022: \u0022urn:li:document:C5F10AQGKQg_6y2a4sQ\u0022\n      }\n    },\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022isReshareDisabledByAuthor\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Workflow",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n  \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n  \u0022commentary\u0022: \u0022Sample Document Post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022,\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022:{\n    \u0022media\u0022:{\n      \u0022title\u0022:\u0022title of the document\u0022,\n      \u0022id\u0022: \u0022urn:li:document:C5F10AQGKQg_6y2a4sQ\u0022\n      }\n    },\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022isReshareDisabledByAuthor\u0022: true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Workflow",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Document Ad with an Inline Post",
+      "Anchor": "create-a-document-ad-with-an-inline-post",
+      "SectionPath": [
+        "Create a Document Ad with an Inline Post"
+      ],
+      "Text": "Directly create a sponsored document post that won\u0027t show to Company Page followers but will be directly sponsored to target LinkedIn members\u0027 news feeds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Document Ad with an Inline Post",
+      "Anchor": "create-a-document-ad-with-an-inline-post",
+      "SectionPath": [
+        "Create a Document Ad with an Inline Post"
+      ],
+      "Text": "Create a Document campaign. For more information, see Create a Campaign.\nCreate a Document Creative with inlineContent. Pass the gatedLeadgenPreviewPageCount to the content.documentAd object if needed.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

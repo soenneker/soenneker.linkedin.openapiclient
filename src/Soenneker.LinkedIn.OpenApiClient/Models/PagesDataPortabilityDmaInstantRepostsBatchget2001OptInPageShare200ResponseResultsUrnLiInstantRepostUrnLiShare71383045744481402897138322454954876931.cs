@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931Created Created { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931Created>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931Created.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931LastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931LastModified.CreateFromDiscriminatorValue); } },
                 { "repostedContent", n => { RepostedContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931RepostedContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931RepostedContent.CreateFromDiscriminatorValue); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931Created>("created", Created);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931LastModified>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaInstantRepostsBatchget2001OptInPageShare200ResponseResultsUrnLiInstantRepostUrnLiShare71383045744481402897138322454954876931RepostedContent>("repostedContent", RepostedContent);
             writer.WriteAdditionalData(AdditionalData);

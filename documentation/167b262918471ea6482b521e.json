@@ -1,0 +1,51 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+  "Title": "LinkedIn API Best Practices",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/secure-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Best Practices",
+      "Anchor": "linkedin-api-best-practices",
+      "SectionPath": [],
+      "Text": "LinkedIn enables application development via a robust collection of APIs. See Getting Access for details on how to get access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Best Practices",
+      "Anchor": "linkedin-api-best-practices",
+      "SectionPath": [],
+      "Text": "Use the following guidelines to build an application that members will trust to handle and secure their sensitive data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Best Practices",
+      "Anchor": "linkedin-api-best-practices",
+      "SectionPath": [],
+      "Text": "Application Development: Discover best practices for implementing authorization and error handling.\nBuilding Secure Applications: Use these guidelines to secure your application and members\u0027 data against threats such as phishing and cross-site request forgery.\nBreaking Changes: A breaking change is a change that may require you to make changes to your application to avoid disruption to your integration.\nEndpoint Catalog: This tool provides a view of the endpoints and permissions your application has access to. view, sort, and filter all the endpoints associated with an API product.\nLinkedIn Developer News: Stay on top of what\u2019s new with our portal, products, and programs.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

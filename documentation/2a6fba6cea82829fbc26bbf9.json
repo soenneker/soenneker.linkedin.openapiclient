@@ -1,0 +1,392 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study",
+  "Title": "Fields of Study - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Fields of Study - Standardized Data API",
+      "Anchor": "fields-of-study---standardized-data-api",
+      "SectionPath": [],
+      "Text": "The fieldsOfStudy API provides standardized member curriculum data across the LinkedIn platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET | BATCH_GET | GET_ALL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field of study ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "$URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized fieldOfStudy URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field of study name in various locales. Represented as MultiLocaleString type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rollupIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The general standardized field of study categories. Returned as an array of fieldOfStudy URNs.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/fieldsOfStudy/{id}?locale.language=en\u0026locale.country=US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the field of study data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Culinary Arts and Related Services\u0022\n        }\n    },\n    \u0022id\u0022: 100220,\n    \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100220\u0022,\n    \u0022rollupIds\u0022: [\n        \u0022urn:li:fieldOfStudy:100203\u0022\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "BATCH_GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/fieldsOfStudy?ids={id1}\u0026ids={id2}\u0026ids={id3}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the field of study data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u0022100001\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022AGRICULTURE, AGRICULTURE OPERATIONS, AND RELATED SCIENCES\u0022\n                }\n            },\n            \u0022id\u0022: 100001,\n            \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100001\u0022\n        },\n        \u0022100002\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Agriculture, General\u0022\n                }\n            },\n            \u0022id\u0022: 100002,\n            \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100002\u0022,\n            \u0022rollupIds\u0022: [\n                \u0022urn:li:fieldOfStudy:100001\u0022\n            ]\n        },\n        \u0022100004\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Agribusiness/Agricultural Business Operations\u0022\n                }\n            },\n            \u0022id\u0022: 100004,\n            \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100004\u0022,\n            \u0022rollupIds\u0022: [\n                \u0022urn:li:fieldOfStudy:100003\u0022,\n                \u0022urn:li:fieldOfStudy:100001\u0022\n            ]\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/fieldsOfStudy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the field of study data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Cosmetology, Barber/Styling, and Nail Instructor\u0022\n                }\n            },\n            \u0022id\u0022: 100218,\n            \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100218\u0022,\n            \u0022rollupIds\u0022: [\n                \u0022urn:li:fieldOfStudy:100207\u0022,\n                \u0022urn:li:fieldOfStudy:100203\u0022\n            ]\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Master Aesthetician/Esthetician\u0022\n                }\n            },\n            \u0022id\u0022: 100219,\n            \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100219\u0022,\n            \u0022rollupIds\u0022: [\n                \u0022urn:li:fieldOfStudy:100207\u0022,\n                \u0022urn:li:fieldOfStudy:100203\u0022\n            ]\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Culinary Arts and Related Services\u0022\n                }\n            },\n            \u0022id\u0022: 100220,\n            \u0022$URN\u0022: \u0022urn:li:fieldOfStudy:100220\u0022,\n            \u0022rollupIds\u0022: [\n                \u0022urn:li:fieldOfStudy:100203\u0022\n            ]\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

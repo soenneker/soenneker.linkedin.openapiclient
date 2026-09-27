@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// The entity&apos;s background cover image. The sizes may vary, so clients should handle the given height and width accordingly.Documented type: CroppedImage
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -30,6 +31,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Cropped { get; set; }
 #endif
+        /// <summary>Height of the imageDocumented type: int</summary>
+        public int? Height { get; set; }
         /// <summary>The original property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +41,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Original { get; set; }
 #endif
+        /// <summary>Width of the imageDocumented type: int</summary>
+        public int? Width { get; set; }
+        /// <summary>X coordinate of the cornerDocumented type: int</summary>
+        public int? X { get; set; }
+        /// <summary>Y coordinate of the cornerDocumented type: int</summary>
+        public int? Y { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2"/> and sets the default values.
         /// </summary>
@@ -65,7 +74,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "cropInfo", n => { CropInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2CropInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2CropInfo.CreateFromDiscriminatorValue); } },
                 { "cropped", n => { Cropped = n.GetStringValue(); } },
+                { "height", n => { Height = n.GetIntValue(); } },
                 { "original", n => { Original = n.GetStringValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
+                { "x", n => { X = n.GetIntValue(); } },
+                { "y", n => { Y = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -77,7 +90,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2CropInfo>("cropInfo", CropInfo);
             writer.WriteStringValue("cropped", Cropped);
+            writer.WriteIntValue("height", Height);
             writer.WriteStringValue("original", Original);
+            writer.WriteIntValue("width", Width);
+            writer.WriteIntValue("x", X);
+            writer.WriteIntValue("y", Y);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

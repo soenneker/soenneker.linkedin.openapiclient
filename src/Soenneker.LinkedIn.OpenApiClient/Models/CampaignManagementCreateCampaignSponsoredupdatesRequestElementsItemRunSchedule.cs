@@ -14,10 +14,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The end property</summary>
-        public int? End { get; set; }
-        /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        /// <summary>Scheduled date range to run associated creatives. The start date must be non-null. Represents the exclusive (strictly less than) value in which to end the range. This field is optional. An unset field indicates an open range; for example, if start is 1455309628000 (Fri, 12 Feb 2016 20:40:28 GMT), and end is not set, it means everything at, or after 1455309628000.Documented type: longRequirement: False</summary>
+        public long? End { get; set; }
+        /// <summary>Scheduled date range to run associated creatives. The start date must be non-null. Represents the inclusive (greater than or equal to) value in which to start the range.Documented type: longRequirement: False</summary>
+        public long? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateCampaignSponsoredupdatesRequestElementsItemRunSchedule"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetIntValue(); } },
-                { "start", n => { Start = n.GetIntValue(); } },
+                { "end", n => { End = n.GetLongValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("end", End);
-            writer.WriteIntValue("start", Start);
+            writer.WriteLongValue("end", End);
+            writer.WriteLongValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

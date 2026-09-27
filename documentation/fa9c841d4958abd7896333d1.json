@@ -1,0 +1,334 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+  "Title": "LinkedIn Learning and IMC Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the IMC and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Deep Integration Functionality",
+      "Anchor": "imc-deep-integration-functionality",
+      "SectionPath": [
+        "IMC Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SSO and Non-SSO",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Deep Integration Functionality",
+      "Anchor": "imc-deep-integration-functionality",
+      "SectionPath": [
+        "IMC Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Deep Integration Functionality",
+      "Anchor": "imc-deep-integration-functionality",
+      "SectionPath": [
+        "IMC Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Search via LinkedIn Learning API and import of selected courses (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Deep Integration Functionality",
+      "Anchor": "imc-deep-integration-functionality",
+      "SectionPath": [
+        "IMC Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Deep Integration Functionality",
+      "Anchor": "imc-deep-integration-functionality",
+      "SectionPath": [
+        "IMC Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and IMC integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Deep Integration Functionality",
+      "Anchor": "imc-deep-integration-functionality",
+      "SectionPath": [
+        "IMC Deep Integration Functionality"
+      ],
+      "Text": "An active IMC LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your IMC LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of IMC Learning Suites\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Integration Overview",
+        "Authentication"
+      ],
+      "Text": "In the IMC Learning Suite, use a non-SSO (Single Sign-On) authentication method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Learning Suite and LinkedIn Learning Provider Settings",
+      "Anchor": "imc-learning-suite-and-linkedin-learning-provider-settings",
+      "SectionPath": [
+        "Integration Overview",
+        "IMC Learning Suite and LinkedIn Learning Provider Settings"
+      ],
+      "Text": "LinkedIn Learning integration in IMC Learning Suite allows companies to use the LinkedIn course library within the IMC Learning Suite environments. This seamless integration enables a best-of-both worlds experience for both administrators and learners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Learning Suite and LinkedIn Learning Provider Settings",
+      "Anchor": "imc-learning-suite-and-linkedin-learning-provider-settings",
+      "SectionPath": [
+        "Integration Overview",
+        "IMC Learning Suite and LinkedIn Learning Provider Settings"
+      ],
+      "Text": "To connect to the LinkedIn Learning API with IMC Learning Suite, you need a new LinkedIn Learning provider. LinkedIn Learning needs to be defined as a new external content provider with the following mandatory settings:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Learning Suite and LinkedIn Learning Provider Settings",
+      "Anchor": "imc-learning-suite-and-linkedin-learning-provider-settings",
+      "SectionPath": [
+        "Integration Overview",
+        "IMC Learning Suite and LinkedIn Learning Provider Settings"
+      ],
+      "Text": "Name\n\nLinkedIn Learning Client ID\n\nLinkedIn Learning Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For you to use the IMC Learning Suite Import functionality, you must provision API keys in your Linkedin Learning admin settings. To provision API keys, follow the steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API.\n\nClick Add application.\n\nEnter \u0022IMC Learning Suite\u0022 in the Application name field.\n\nProvide a short description of the integration use case in the Application description field. For example, \u0022IMC Learning Suite import\u0022.\n\nThere are two checkboxes \u2013 Content and Report. Select Content.\n\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\nCopy the generated Client ID and Client Secret and paste the values into the corresponding IMC fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "If this is your first time configuring the integration, your xAPI settings should be blank. If you attempt to enable xAPI before saving the form, you will encounter an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "See more information on enabling xAPI in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "To communicate learner activity back to IMC, you must enable xAPI in your Linkedin Learning admin settings. To complete this task, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "After you login, if you are not already in the Admin screen, select \u0022Go to Admin\u0022.\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\nIn the integration name field enter \u0022IMC reporting\u0022.\n\nIn the User Type drop down, select ID.\n\nCopy and paste the following items provided by IMC into LinkedIn Learning:\n\nOAuth Server URL\n\nTenant Server URL\n\nClient ID\n\nClient Secret\n\n\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "You have enabled the IMC Learning Suite xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their IMC LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMC Troubleshooting",
+      "Anchor": "imc-troubleshooting",
+      "SectionPath": [
+        "Configuration",
+        "IMC Troubleshooting"
+      ],
+      "Text": "For technical assistance, reach out to IMC\u2019s customer support team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

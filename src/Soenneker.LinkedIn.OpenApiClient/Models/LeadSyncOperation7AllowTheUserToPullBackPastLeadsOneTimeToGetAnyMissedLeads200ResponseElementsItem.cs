@@ -14,6 +14,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>URN identifying which entity the lead is associated with. This field should match with the leadType if there is an associatedEntity. This field is optional for test leads and other use cases where leads don&apos;t have any associatedEntity. If there&apos;s no value, the field is not returned.Documented type: Union of SponsoredCreativeUrn , OrganizationUrn , EventUrn , StandardizedProductUrn, OrganizationLandingPageUrn</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssociatedEntity { get; set; }
+#nullable restore
+#else
+        public string AssociatedEntity { get; set; }
+#endif
         /// <summary>The associatedEntityInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo AssociatedEntityInfo { get; set; }
 #endif
-        /// <summary>The form property</summary>
+        /// <summary>The Lead Gen Form associated to the lead.Documented type: LeadGenForm</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm? Form { get; set; }
@@ -30,7 +38,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm Form { get; set; }
 #endif
-        /// <summary>The formResponse property</summary>
+        /// <summary>Answers provided by the form submitter.Documented type: FormResponse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse? FormResponse { get; set; }
@@ -38,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse FormResponse { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique id to identify the Lead Form Response.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -46,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The leadMetadataInfo property</summary>
+        /// <summary>Metadata entity reference details. Record containing a subset of fields resolved on demand from the lead metadata references (e.g. campaign name , campaign type). Can be empty for test leads and cases where no lead metadata is relevant.Documented type: (optional) Union of SponsoredLeadMetadataInfo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo? LeadMetadataInfo { get; set; }
@@ -54,14 +62,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo LeadMetadataInfo { get; set; }
 #endif
-        /// <summary>The leadType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LeadType { get; set; }
-#nullable restore
-#else
-        public string LeadType { get; set; }
-#endif
+        /// <summary>Type of the lead that represents the origination of the lead.Documented type: LeadType</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType? LeadType { get; set; }
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner Owner { get; set; }
 #endif
-        /// <summary>The ownerInfo property</summary>
+        /// <summary>Record containing entity info that owns this Lead Form Response. It&apos;s an optional Union of sponsoredAccountInfo and organizationInfo.Documented type: (optional) LeadGenFormResponseOwnerInfo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo? OwnerInfo { get; set; }
@@ -78,9 +80,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo OwnerInfo { get; set; }
 #endif
-        /// <summary>The submittedAt property</summary>
-        public int? SubmittedAt { get; set; }
-        /// <summary>The testLead property</summary>
+        /// <summary>The unique identifier for the form response generated in the front-end when a submitter submits the response.Documented type: TrackingId</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId? ResponseId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId ResponseId { get; set; }
+#endif
+        /// <summary>An epoch timestamp that records when the form response was submitted.Documented type: Time</summary>
+        public long? SubmittedAt { get; set; }
+        /// <summary>From version 202408 onwards, Guest Leads (when a user submits a form without being logged in) submitted to lead forms, submitter field is treated as a null field and omitted from the JSON response. For non-guest leads, the submitter field is included in the response and provides the person&apos;s URN. Ex: &quot;submitter&quot;: &quot;urn:li:person:MpGcnvaU_p&quot;.Documented type: URN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Submitter { get; set; }
+#nullable restore
+#else
+        public string Submitter { get; set; }
+#endif
+        /// <summary>Whether this is a test lead created for testing purposes.Documented type: Boolean</summary>
         public bool? TestLead { get; set; }
         /// <summary>The versionedLeadGenFormUrn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,15 +133,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "associatedEntity", n => { AssociatedEntity = n.GetStringValue(); } },
                 { "associatedEntityInfo", n => { AssociatedEntityInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo.CreateFromDiscriminatorValue); } },
                 { "form", n => { Form = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm.CreateFromDiscriminatorValue); } },
                 { "formResponse", n => { FormResponse = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadMetadataInfo", n => { LeadMetadataInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo.CreateFromDiscriminatorValue); } },
-                { "leadType", n => { LeadType = n.GetStringValue(); } },
+                { "leadType", n => { LeadType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType>(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner.CreateFromDiscriminatorValue); } },
                 { "ownerInfo", n => { OwnerInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo.CreateFromDiscriminatorValue); } },
-                { "submittedAt", n => { SubmittedAt = n.GetIntValue(); } },
+                { "responseId", n => { ResponseId = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId.CreateFromDiscriminatorValue); } },
+                { "submittedAt", n => { SubmittedAt = n.GetLongValue(); } },
+                { "submitter", n => { Submitter = n.GetStringValue(); } },
                 { "testLead", n => { TestLead = n.GetBoolValue(); } },
                 { "versionedLeadGenFormUrn", n => { VersionedLeadGenFormUrn = n.GetStringValue(); } },
             };
@@ -135,15 +156,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("associatedEntity", AssociatedEntity);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfo>("associatedEntityInfo", AssociatedEntityInfo);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemForm>("form", Form);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponse>("formResponse", FormResponse);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadMetadataInfo>("leadMetadataInfo", LeadMetadataInfo);
-            writer.WriteStringValue("leadType", LeadType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemLeadType>("leadType", LeadType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwner>("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo>("ownerInfo", OwnerInfo);
-            writer.WriteIntValue("submittedAt", SubmittedAt);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemResponseId>("responseId", ResponseId);
+            writer.WriteLongValue("submittedAt", SubmittedAt);
+            writer.WriteStringValue("submitter", Submitter);
             writer.WriteBoolValue("testLead", TestLead);
             writer.WriteStringValue("versionedLeadGenFormUrn", VersionedLeadGenFormUrn);
             writer.WriteAdditionalData(AdditionalData);

@@ -1,0 +1,1686 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+  "Title": "Lead Sync API Migration",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "LinkedIn Marketing Solutions released a new Lead Sync API product in July 2023. This migration guide facilitates the onboarding of existing developers to the new product and endpoints.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "If you fall into one or more of the following categories, this migration guide is for you:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "Currently have access to the legacy Ads Lead Sync API and/or Events Lead Generation API and sync leads.\nCurrently have access to the Advertising API and create forms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API Migration",
+      "Anchor": "lead-sync-api-migration",
+      "SectionPath": [],
+      "Text": "There are no schema changes for the Events Lead Generation API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions for Lead Sync API",
+      "Anchor": "permissions-for-lead-sync-api",
+      "SectionPath": [
+        "Permissions for Lead Sync API"
+      ],
+      "Text": "With the launch of the new Lead Sync API, we\u0027re introducing the following new permissions and endpoints to simplify syncing leads across different lead types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions for Lead Sync API",
+      "Anchor": "permissions-for-lead-sync-api",
+      "SectionPath": [
+        "Permissions for Lead Sync API"
+      ],
+      "Text": "",
+      "Headers": [
+        "Old API endpoint",
+        "Old Permission Name",
+        "Supported Lead Types",
+        "Last Supported Version",
+        "Last Supported Version will stop working on"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/adFormQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/adForms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/adFormResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/adForms/Consents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadNotificationUrls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadGenFormQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadGenForms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/eventFormResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadGenFormLegalInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/eventLeadNotifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadGenFormVersions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202306",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 31, 2025",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions for Lead Sync API",
+      "Anchor": "permissions-for-lead-sync-api",
+      "SectionPath": [
+        "Permissions for Lead Sync API"
+      ],
+      "Text": "",
+      "Headers": [
+        "New API",
+        "New Permission Name",
+        "Supported Version starts from"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/leadForms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_marketing_leadgen_automationrw_adsr_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadFormResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_marketing_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/leadNotifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_marketing_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202307",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes",
+      "SectionPath": [
+        "AdFormResponses API \u2192 LeadFormResponses API",
+        "Workflow Changes"
+      ],
+      "Text": "The new Lead Sync API supports fetching different types of leads based on the request (e.g., SPONSORED, EVENTS, etc.).\nThe new associatedEntity field represents the entity from which the lead is collected. For example, in the Sponsored use case, associatedEntity is the corresponding SponsoredCreativeUrn ad; for the Event use case, associatedEntity is the corresponding EventUrn.\nThe /leadFormResponses API supports two different types of owners. For the Sponsored use case, the owner is SponsoredAccountUrn. For organic use cases, such as Event lead sync, the owner is [OrganizationUrn](../pages-profiles/organizations.md).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "AdFormResponses API \u2192 LeadFormResponses API",
+        "Schema Changes",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "AdFormResponses API",
+        "LeadGenFormResponses API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "versionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormOwner: SponsoredAccountUrn for sponsored use case; OrganizationUrn for other use cases.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/pages-profiles/organizations.md?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SponsoredCampaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredLeadMetadata: SponsoredCampaignUrn for sponsored use case. Currently, no other metadata information is collected for non-sponsored use cases.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SponsoredCreativeUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "associatedEntity union: - SponsoredCreativeUrn for sponsored use case - OrganizationUrn for company page use case - EventUrn for event use case - StandardizedProductUrn for product page use case - OrganizationLandingPageUrn for landing page use case.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/pages-profiles/organizations.md?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "testLead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "submittedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "submittedAt",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-1",
+      "SectionPath": [
+        "AdForms API \u2192 LeadForms API",
+        "Workflow Changes"
+      ],
+      "Text": "The new API supports both sponsored (previously called adForms) and organic LeadGen Forms with a single integration.\nThe SponsoredAccount field has been removed in favor of an owner record which is a union of SponsoredAccountUrn and an [OrganizationUrn](../pages-profiles/organizations.md).\nSponsored forms have a sponsored account as an owner, whereas organic forms have organization as the owner.\nForm fields now support multi-locale strings. This means instead of providing just string values, marketers need to provide both the locale and string value.\nFor example, a question field of a form created in English locale:\n JSONCopy \u0022question\u0022: {\n \u0022localized\u0022: {\n \u0022en_US\u0022: \u0022Last Name\u0022\n }\n }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-1",
+      "SectionPath": [
+        "AdForms API \u2192 LeadForms API",
+        "Workflow Changes"
+      ],
+      "Text": "Here Last Name is the question string value to be used for en_US locale.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-1",
+      "SectionPath": [
+        "AdForms API \u2192 LeadForms API",
+        "Workflow Changes"
+      ],
+      "Text": "For example, a question field of a form being created in Spanish locale:\n JSONCopy \u0022question\u0022: {\n \u0022localized\u0022: {\n \u0022es_ES\u0022: \u0022Apellido\u0022\n }\n }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-1",
+      "SectionPath": [
+        "AdForms API \u2192 LeadForms API",
+        "Workflow Changes"
+      ],
+      "Text": "Here Apellido is the question string value to be used for es_ES locale.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-1",
+      "SectionPath": [
+        "AdForms API \u2192 LeadForms API",
+        "Workflow Changes"
+      ],
+      "Text": "The Finder API supports fetching forms under either a sponsored account or an organization (for organic forms).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "AdForms API \u2192 LeadForms API",
+        "Schema Changes",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "AdForms API",
+        "LeadForms API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "id \u0026 versionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "id is still the unique identifier of the form. versionId is for managing form edits.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creationLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "reviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "changeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flattened and simplified to created and lastModified fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SUBMITTED maps to PUBLISHEDDRAFT maps to DRAFTARCHIVED maps to ARCHIVED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form.hiddenFields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hiddenFields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner. Union of SponsoredAccountUrn for sponsored use cases, [OrganizationUrn](../pages-profiles/organizations.md) for other use cases.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form.name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Renamed to content - headline and description are now multi-locale stringsWithin form.questions: - question is now a multi-locale string- typeSpecificQuestionDetails renamed to questionDetails- questionSubmissionCriteria is a new field to set up question submission criteria - label is a new field that serves as a unique identifier within the form to specify the question",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form.consents, form.privacyPolicy, form.legalDisclaimer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Moved under content.legalInfo - legalDisclaimer is now a multi-locale string - privacyPolicy renamed to privacyPolicyUrlWithin form.consents: - consentId renamed to id- consentRequired renamed to checkRequired - consent is now a multi-locale string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form.landingPage, form.thankYouMessage, form.thankYouPageCallToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Moved under content.postSubmissionInfo- thankYouMessage is now a multi-locale string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-2",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Workflow Changes"
+      ],
+      "Text": "LeadNotifications API supports storing notification URLs (webhooks) that are not associated with specific ad entities (the old API requires an account, campaign, or creative to be tied to the notification object).\nSupports storing notification URLs at varying levels of granularity, most notably at the form level.\nSupports storing URLs for the same form/owner under different lead types, such as SPONSORED and EVENT.\nSupports push notifications for both lead submissions and deletions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "LeadNotificationUrls API",
+        "LeadNotifications API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "createdTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "occurredAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For the SPONSORED lead type, the owner is a sponsored account URN. For all other lead types, the owner is an organization URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only sponsored leads have a campaignUrn; in this case, the campaign and related sponsored metadata can be obtained by fetching the lead directly.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creativeUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For the SPONSORED lead type, the creative URN is returned via the associatedEntity field. For other lead types, this field may resolve to other URNs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "formUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is a VersionedLeadGenFormUrn instead of an AdFormUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adFormResponseUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadGenFormResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is a LeadGenFormResponseUrn instead of an AdFormResponseUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always set to \u0022LEAD_ACTION\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the lead; set to \u0022SPONSORED\u0022 for sponsored leads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action performed on the lead; either \u0022CREATED\u0022 or \u0022DELETED\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Notification Payload",
+      "Anchor": "notification-payload",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Notification Payload"
+      ],
+      "Text": "",
+      "Headers": [
+        "LeadNotificationUrls API",
+        "LeadNotifications API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "createdTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "occurredAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For the SPONSORED lead type the owner is a sponsored account URN. For all other lead types the owner is an organization URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only sponsored leads have a campaignUrn, in this case the campaign and related sponsored metadata can be obtained by fetching the lead directly.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creativeUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For the SPONSORED lead type the creative URN is returned via the associatedEntity field. For other lead types this field may resolve to other urns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "formUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is a VersionedLeadGenFormUrn instead of an AdFormUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adFormResponseUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadGenFormResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is a LeadGenFormResponseUrn instead of an AdFormResponseUrn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always is set to \u0022LEAD_ACTION\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the lead, is set to \u0022SPONSORED\u0022 for sponsored leads",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action performed on the lead, is either \u0022CREATED\u0022 or \u0022DELETED\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Notification Payload",
+      "Anchor": "notification-payload",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Notification Payload"
+      ],
+      "Text": "For example, consider the following JSON in the old payload format:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Notification Payload",
+      "Anchor": "notification-payload",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Notification Payload"
+      ],
+      "Text": "{ \n  \u0022createdTime\u0022: 1489428028784, \n  \u0022accountUrn\u0022: \u0022urn:li:sponsoredAccount:67890\u0022, \n  \u0022campaignUrn\u0022: \u0022urn:li:sponsoredCampaign:789012\u0022, \n  \u0022creativeUrn\u0022: \u0022urn:li:sponsoredCreative:11223344\u0022, \n  \u0022formUrn\u0022: \u0022urn:li:adForm:123456\u0022, \n  \u0022adFormResponseUrn\u0022: \u0022urn:li:adFormResponse:abc123-abab-abab-abab-abc123abc123\u0022 \n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Notification Payload",
+      "Anchor": "notification-payload",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Notification Payload"
+      ],
+      "Text": "The equivalent JSON in the new payload format would look like:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Notification Payload",
+      "Anchor": "notification-payload",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Notification Payload"
+      ],
+      "Text": "{\n  \u0022type\u0022: \u0022LEAD_ACTION\u0022,\n  \u0022leadGenFormResponse\u0022: \u0022urn:li:leadGenFormResponse:abc123-abab-abab-abab-abc123abc123\u0022,\n  \u0022leadGenForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:123456, 1)\u0022,\n  \u0022owner\u0022: { \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:67890\u0022 },\n  \u0022associatedEntity\u0022: { \u0022sponsoredCreative\u0022: \u0022urn:li:sponsoredCreative:11223344\u0022 },\n  \u0022leadType\u0022: \u0022SPONSORED\u0022,\n  \u0022leadAction\u0022: \u0022CREATED\u0022,\n  \u0022occurredAt\u0022: 1489428028784\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Duplicate Webhooks",
+      "Anchor": "duplicate-webhooks",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Duplicate Webhooks"
+      ],
+      "Text": "Please note that legacy webhooks (LeadNotificationUrls) will continue to receive notifications in the old payload format until the legacy APIs reach end of life. This means that you\u0027ll receive duplicate notifications if you have also subscribed using the same parameters via the new LeadNotifications API. Proper deduplication logic should be put in place.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API",
+      "Anchor": "setting-up-a-webhook-via-leadnotificationurls-api-vs-leadnotifications-api",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API"
+      ],
+      "Text": "LeadNotificationUrls API create request for a sponsored account webhook.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API",
+      "Anchor": "setting-up-a-webhook-via-leadnotificationurls-api-vs-leadnotifications-api",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API"
+      ],
+      "Text": "curl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API",
+      "Anchor": "setting-up-a-webhook-via-leadnotificationurls-api-vs-leadnotifications-api",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotificationUrls\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022key\u0022: {\n        \u0022developerApplication\u0022: \u0022urn:li:developerApplication:12345\u0022,\n        \u0022sponsoredEntity\u0022: \u0022urn:li:sponsoredAccount:67890\u0022\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022url\u0022: \u0022[https://www.example.com](https://eogi5ry4pv6izmq.m.pipedream.net)\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API",
+      "Anchor": "setting-up-a-webhook-via-leadnotificationurls-api-vs-leadnotifications-api",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API"
+      ],
+      "Text": "LeadNotifications API create request for a sponsored account webhook.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API",
+      "Anchor": "setting-up-a-webhook-via-leadnotificationurls-api-vs-leadnotifications-api",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API"
+      ],
+      "Text": "curl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API",
+      "Anchor": "setting-up-a-webhook-via-leadnotificationurls-api-vs-leadnotifications-api",
+      "SectionPath": [
+        "LeadNotificationUrls \u2192 LeadNotifications API",
+        "Schema Changes",
+        "Setting up a webhook via LeadNotificationUrls API vs LeadNotifications API"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:67890\u0022\n    },\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ",
+      "Anchor": "faq",
+      "SectionPath": [
+        "FAQ"
+      ],
+      "Text": "Q: If my developer app already had access to the legacy APIs and permissions, do I need to request access to the new Lead Sync API?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ",
+      "Anchor": "faq",
+      "SectionPath": [
+        "FAQ"
+      ],
+      "Text": "No. Your existing developer app should already have access to the new endpoints and permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ",
+      "Anchor": "faq",
+      "SectionPath": [
+        "FAQ"
+      ],
+      "Text": "Q: What if I\u2019ve migrated to the new lead sync APIs but I haven\u0027t migrated any existing webhook subscriptions yet? This means I\u2019m still receiving the legacy webhook notification payload but using the new Lead Sync APIs to get back the form response data. Can I use the new GET /leadFormResponses/{id} endpoint using the id in the legacy webhook notification payload? E.g. urn:li:adFormResponse:abc123-abab-abab-abab-abc123abc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ",
+      "Anchor": "faq",
+      "SectionPath": [
+        "FAQ"
+      ],
+      "Text": "Yes, however please note that the new /leadFormResponses/{id} endpoint takes in an ID, abc123-abab-abab-abab-abc123abc123, and not a URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Decoration Migration",
+      "Anchor": "response-decoration-migration",
+      "SectionPath": [
+        "Response Decoration Migration"
+      ],
+      "Text": "Below are examples of the top API response decoration usage and how to achieve the same results using the new Lead Sync APIs. Some fields are not returned by default in the API response. Therefore, to retrieve all required fields, you need to use field projection. Field projection allows you to specify exactly which fields you want included in the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Decoration Migration",
+      "Anchor": "response-decoration-migration",
+      "SectionPath": [
+        "Response Decoration Migration"
+      ],
+      "Text": "If the additional metadata you need is still not returned, you may need to make a separate API request. For example, to retrieve the campaign group, make an API request to the GET campaign by ID endpoint and refer to the campaignGroupInfo field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response decoration migration for adFormResponses API",
+      "Anchor": "response-decoration-migration-for-adformresponses-api",
+      "SectionPath": [
+        "Response Decoration Migration",
+        "Response decoration migration for adFormResponses API"
+      ],
+      "Text": "",
+      "Headers": [
+        "adFormResponses",
+        "leadFormResponses",
+        "field projection example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "form~(form(hiddenFields, landingPage, name, id))",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "form.hiddenFields --\u003E form.hiddenFields[]form.landingPage --\u003Eform.content.postSubmissionInfo.callToAction.callToActionTarget.landingPageUrlform.name --\u003E form.nameform.id --\u003E form.id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=form:(hiddenFields,name,id,content:(postSubmissionInfo:(callToAction:(callToActionTarget:(landingPageUrl)))))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "question~(name, question, typeSpecificQuestionDetails, predefinedField, questionId)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "question.name --\u003E form.content.questions[].namequestion.question --\u003E form.content.questions[].questionquestion.typeSpecificQuestionDetails --\u003E form.content.questions[].questionDetailsquestion.predefinedfield --\u003E form.content.questions[].predefinedFieldquestion.questionId --\u003E form.content.questions[].questionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=form:(content:(questions))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consent~(content, consentId, consentRequired)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "consent.content --\u003E form.content.legalInfo.consents[].consentconsent.consentId --\u003E form.content.legalInfo.consents[].Idconsent.consentRequired --\u003E form.content.legalInfo.consents[].checkRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=form:(content:(legalInfo:(consents)))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account~(id, name)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "account.id --\u003E owner.sponsoredAccount (parse out just the numbers)account.name --\u003E ownerInfo.sponsoredAccountInfo.name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=owner,ownerInfo:(sponsoredAccountInfo)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign~(id, name, type)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.id --\u003E leadMetadataInfo.sponsoredLeadMetadataInfo.campaign.id (parse out just the numbers)campaign.name --\u003E leadMetadataInfo.sponsoredLeadMetadataInfo.campaign.namecampaign.type --\u003E leadMetadataInfo.sponsoredLeadMetadataInfo.campaign.type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=leadMetadataInfo:(sponsoredLeadMetadataInfo:(campaign:(id,name,type)))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creative~(id, intendedStatus, content)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creative.id --\u003E associatedEntityInfo.associatedCreative.id (parse out just the numbers)creative.intendedStatus --\u003E associatedEntityInfo.associatedCreative.intendedStatuscreative.content --\u003E associatedEntityInfo.associatedCreative.content.reference (make additional API call to the /posts endpoint to get additional metadata if required)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=associatedEntityInfo:(associatedCreative:(id,intendedStatus,content:(reference)))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response decoration migration for eventFormResponses API",
+      "Anchor": "response-decoration-migration-for-eventformresponses-api",
+      "SectionPath": [
+        "Response Decoration Migration",
+        "Response decoration migration for eventFormResponses API"
+      ],
+      "Text": "",
+      "Headers": [
+        "eventFormResponses",
+        "leadFormResponses",
+        "field projection example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "form~(hiddenFields, landingPage, name, id)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "form~.hiddenFields --\u003E form.hiddenFields[]form~.landingPage --\u003E form.content.postSubmissionInfo.callToAction.landingPageUrlform~.name --\u003E form.nameform~.id --\u003E form.id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=form:(hiddenFields,name,id,content:(postSubmissionInfo:(callToAction:(callToActionTarget:(landingPageUrl)))))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "event~(name,id)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "event~.name --\u003E make an additional api call to the /events endpoint using the idevent~.id --\u003E id",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-09#find-events-with-lead-gen-form-by-organizer"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "/leadFormResponses?fields=id",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "question~(name)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "question~.name --\u003E form.content.questions[].name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fields=form:(content:(questions))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response decoration migration for eventFormResponses API",
+      "Anchor": "response-decoration-migration-for-eventformresponses-api",
+      "SectionPath": [
+        "Response Decoration Migration",
+        "Response decoration migration for eventFormResponses API"
+      ],
+      "Text": "The examples in the table above are very specific to show how granular you can get with field projection. However, for the data we want, getting that granular isn\u0027t necessary. The following example simplifies the request, since the JSON response needs to be parsed either way. fields=ownerInfo,associatedEntityInfo,leadMetadataInfo,owner,leadType,versionedLeadGenFormUrn,id,submittedAt,testLead,formResponse,form:(hiddenFields,creationLocale,name,id,content).",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,1389 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+  "Title": "Recruiter System Connect - Developer FAQs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Developer FAQs",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Developer FAQs",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "This FAQ is meant for your development purposes only.\nThere is a separate FAQ wiki that Partner can share with their Customers post-production.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Integration Phase",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How do I learn more about LinkedIn product integration?\nHow do I get started developing?\nWhat will I need to do to integrate Recruiter System Connect if I had integrated with LinkedIn Referrals? [Only for partners who had supported LinkedIn Referrals]\nCan I choose to enable certain features of RSC and not others?\nIs there a minimum threshold of historical candidates, applications, jobs records that customers must send during the initial setup?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Data Privacy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "Does the Recruiter System Connect integration require our customers to update their privacy policies and acquire acceptance for all candidates in their system?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Customer Setup",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How do customers turn on the integration?\nHow do I delete middleware ATS data when a customer changes an ATS?\nHow does a customer deactivate RSC?\nWhat Seat Type will have access to RSC features?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Product Functionality: One-Click Export",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How should partners manage duplicate records if email address is not provided?\nWhy might a customer not be able to One-Click Export a member from LI Recruiter?\nWhat would you recommend if one wants to export a user but not associate it to a requisition?\nWill the Job Req drop down list \u201Call open jobs\u201D for the customer?\nWhat is the call limit?\nHow can ATS validate the authenticity of a request received on its registered CallBack URL?\nWhen we One-Click Export a candidate, the jobs list preview sometimes displays the \u0022externalJobPostingId\u0022 and sometimes it displays the \u0022companyJobCode\u0022 instead. What is the reason for this behavior?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Product Functionality: Misc",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How does LinkedIn handle jobs that are posted in multiple languages?\nHow frequently should candidate, application, job data be sent?\nIn our ATS, job requisition end-dates are optional, but LinkedIn job expire after 30 days? How do we address this?\nIn our ATS, some job requisitions have no location or multiple locations. How do we address this?\nCan LI use the existing LI Limited Posting requisition XML feed to ingest the customer\u2019s requisitions?\nDoes LI support multiple ATS integrations for the same customer?\nIs there any way to send/view InMail within the profile widget?\nWhat does \u0022Update me\u0022 in profile widget do?\nClosed Candidate Endpoint does not return closed profiles. Why?\nWhat is the implication of inline upgrade / downgrade with RSC?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Certification",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "Are all the features of RSC required to launch?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Questions",
+      "Anchor": "technical-questions",
+      "SectionPath": [
+        "Technical Questions"
+      ],
+      "Text": "What are the data requirements for customers to enable RSC?\nWhat if First Name and Last Name are either not available or the names are concatenated?\nWhat if Email Address is missing from Candidate data?\nWhat is the maximum amount of data we can bulk push?\nWhat would be the outcome if we always push all the data for a client every single time the ATS syncs with LinkedIn? (Are the update endpoints idempotent?)\nHow soon should the Partner ATS platform create the candidate and application in the ATS when a user uses the One-Click Export function?\nATS Integration Configuration Plugin - if there is a network error will the user be able to enable it again?\nHow are people in the ATS matched to LinkedIn profiles? What happens if the matching made is incorrect?\nWhen posting multiple jobs to simpleJobPostings, the response is an array of results and associated task ids, these task ids can then be used to check the creation status of the job. How do we associate the task id to the job we posted? For example, if a job fails how do we know which job in the batch failed?\nIs the onboarding widget responsive?\nThe attribute of \u0022description\u0022 in Sync Job APIs has the following notes: String Minimum 100 characters \u0026 required. Is there any upper character limit? If yes, what is it?\nWhat should the ATS do when Linking/Unlinking happens for any profile via the LinkedIn profile widget that is surfaced in the ATS?\nWhat should be done if profile plugin scripts fails to load widgets in iFrame in case of single page application?\nWhen are developer contracts renewed?\nHow can we test InMail functionality on a test account?\nDoes the existing RSC ACL allow security groups for only jobs or even for candidates, application etc",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I learn more about LinkedIn product integration?",
+      "Anchor": "how-do-i-learn-more-about-linkedin-product-integration-",
+      "SectionPath": [
+        "Integration Phase",
+        "How do I learn more about LinkedIn product integration?"
+      ],
+      "Text": "Please reference RSC developer documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get started developing?",
+      "Anchor": "how-do-i-get-started-developing-",
+      "SectionPath": [
+        "Integration Phase",
+        "How do I get started developing?"
+      ],
+      "Text": "Reach out to LinkedIn Business Development to fill out the Onboarding Request Form and follow steps in the RSC developer documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What will I need to do to integrate Recruiter System Connect if I had integrated with LinkedIn Referrals? [Only for partners who had supported LinkedIn Referrals]",
+      "Anchor": "what-will-i-need-to-do-to-integrate-recruiter-system-connect-if-i-had-integrated-with-linkedin-referrals---only-for-partners-who-had-supported-linkedin-referrals-",
+      "SectionPath": [
+        "Integration Phase",
+        "What will I need to do to integrate Recruiter System Connect if I had integrated with LinkedIn Referrals? [Only for partners who had supported LinkedIn Referrals]"
+      ],
+      "Text": "New Talent Solutions integrations like Recruiter System Connect are built on the Middleware Platform, which means you should manage job applications via the /atsApplications and /atsCandidates endpoint instead of /simpleJobApplications. If you\u2019ve previously integrated with LinkedIn Referrals, you\u2019ll need to switch to using the Middleware Platform for submitting job applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I choose to enable certain features of RSC and not others?",
+      "Anchor": "can-i-choose-to-enable-certain-features-of-rsc-and-not-others-",
+      "SectionPath": [
+        "Integration Phase",
+        "Can I choose to enable certain features of RSC and not others?"
+      ],
+      "Text": "No. The minimum product and technical requirements for RSC are indicated in this document and partners may not elect to enable a subset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there a minimum threshold of historical candidates, applications, jobs records that customers must send during the initial setup?",
+      "Anchor": "is-there-a-minimum-threshold-of-historical-candidates--applications--jobs-records-that-customers-must-send-during-the-initial-setup-",
+      "SectionPath": [
+        "Integration Phase",
+        "Is there a minimum threshold of historical candidates, applications, jobs records that customers must send during the initial setup?"
+      ],
+      "Text": "We require all historical candidate, applications, and jobs records to ensure LinkedIn Recruiter is as valuable as possible for your customers [i.e. the \u201CRediscovered Candidates\u201D Spotlight, \u2018In-ATS Indicator\u2019]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does the Recruiter System Connect integration require our customers to update their privacy policies and acquire acceptance for all candidates in their system?",
+      "Anchor": "does-the-recruiter-system-connect-integration-require-our-customers-to-update-their-privacy-policies-and-acquire-acceptance-for-all-candidates-in-their-system-",
+      "SectionPath": [
+        "Data Privacy",
+        "Does the Recruiter System Connect integration require our customers to update their privacy policies and acquire acceptance for all candidates in their system?"
+      ],
+      "Text": "Many customers will not need to do so if their privacy policies allows them to share candidate data to their third party partners. However, customers will need to consult their own legal teams regarding this prior to activating RSC. Some partners include a disclaimer in the onboarding widget that requires the customer to authorize the sharing of ATS data with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do customers turn on the integration?",
+      "Anchor": "how-do-customers-turn-on-the-integration-",
+      "SectionPath": [
+        "Customer Setup",
+        "How do customers turn on the integration?"
+      ],
+      "Text": "Customers will be able to turn on all their middleware integrations via a widget in the ATS and in their Recruiter dashboard. See technical docs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I delete middleware ATS data when a customer changes an ATS?",
+      "Anchor": "how-do-i-delete-middleware-ats-data-when-a-customer-changes-an-ats-",
+      "SectionPath": [
+        "Customer Setup",
+        "How do I delete middleware ATS data when a customer changes an ATS?"
+      ],
+      "Text": "If the customer wants to delete candidate records: Partner should call Delete End Points highlighted in developer docs for Sync Candidates, Notes, Interview Notes, Applications\nIf the customer wants to delete all their data for an ATS (including Jobs): Partner should contact ltsatsintegrations@linkedin.com\nNote: Once delete is processed, all copies of data will be deleted within 30 days",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does a customer deactivate RSC?",
+      "Anchor": "how-does-a-customer-deactivate-rsc-",
+      "SectionPath": [
+        "Customer Setup",
+        "How does a customer deactivate RSC?"
+      ],
+      "Text": "Customers must email the Partner and LinkedIn support notifying us they would like to deactivate RSC. Customer can contact LinkedIn support at ltsatsintegrations@linkedin.com",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What seat type will have access to RSC features?",
+      "Anchor": "what-seat-type-will-have-access-to-rsc-features-",
+      "SectionPath": [
+        "Customer Setup",
+        "What seat type will have access to RSC features?"
+      ],
+      "Text": "Rcorp (Recruiter Corporate), RPS (Recruiter Professional Services), and Recruiter SMB",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should partners manage duplicate records if email address is not provided?",
+      "Anchor": "how-should-partners-manage-duplicate-records-if-email-address-is-not-provided-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "How should partners manage duplicate records if email address is not provided?"
+      ],
+      "Text": "The ATS partner can confirm the duplication was handled in the ATS when LI passes back the PersonURN (Member ID) to the ATS Partner",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why might a customer not be able to One-Click Export a member from LI Recruiter?",
+      "Anchor": "why-might-a-customer-not-be-able-to-one-click-export-a-member-from-li-recruiter-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "Why might a customer not be able to One-Click Export a member from LI Recruiter?"
+      ],
+      "Text": "LinkedIn members that don\u0027t have their privacy settings set to share their profile with third parties will not have One-Click Export functionality enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What would you recommend if one wants to export a user but not associate it to a requisition?",
+      "Anchor": "what-would-you-recommend-if-one-wants-to-export-a-user-but-not-associate-it-to-a-requisition-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "What would you recommend if one wants to export a user but not associate it to a requisition?"
+      ],
+      "Text": "Customer can create a standard \u0022dummy req\u0022 field in the drop down that Recruiter will be able to export the candidate to if they do not want to associate the candidate with a Job Req. ATS can then conduct any matching required on their end. However, customers will need to consult their legal team to determine if they can export data unassociated with a requisition.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Will the Job Req drop down list \u201Call open jobs\u201D for the customer?",
+      "Anchor": "will-the-job-req-drop-down-list--all-open-jobs--for-the-customer-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "Will the Job Req drop down list \u201Call open jobs\u201D for the customer?"
+      ],
+      "Text": "Yes it will show all open jobs that the user has permissions to see based on Security Groups. If a Partner has not enabled Security Groups, all open jobs will be seen by all users. Customers can search for jobs based on type head",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the call limit?",
+      "Anchor": "what-is-the-call-limit-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "What is the call limit?"
+      ],
+      "Text": "Call volume for One-Click Export is 300 calls per Recruiter seat per month. LinkedIn reserves the right to change rate limits including to prevent abuse and protect privacy and security.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can ATS validate the authenticity of a request received on its registered CallBack URL?",
+      "Anchor": "how-can-ats-validate-the-authenticity-of-a-request-received-on-its-registered-callback-url-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "How can ATS validate the authenticity of a request received on its registered CallBack URL?"
+      ],
+      "Text": "ATS will validate this push event against the signature in the request, outlined in our documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When we One Click Export a candidate, the jobs list preview sometimes displays the \u0060externalJobPostingId\u0060 and sometimes it displays the \u0060companyJobCode\u0060 instead. What is the reason for this behavior?",
+      "Anchor": "when-we-one-click-export-a-candidate--the-jobs-list-preview-sometimes-displays-the--externaljobpostingid--and-sometimes-it-displays-the--companyjobcode--instead--what-is-the-reason-for-this-behavior-",
+      "SectionPath": [
+        "Product Functionality One-Click Export",
+        "When we One Click Export a candidate, the jobs list preview sometimes displays the \u0060externalJobPostingId\u0060 and sometimes it displays the \u0060companyJobCode\u0060 instead. What is the reason for this behavior?"
+      ],
+      "Text": "This is an expected behavior, when companyJobCode exist, it takes precedence over externalJobPostingId",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does LinkedIn handle jobs that are posted in multiple languages?",
+      "Anchor": "how-does-linkedin-handle-jobs-that-are-posted-in-multiple-languages-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "How does LinkedIn handle jobs that are posted in multiple languages?"
+      ],
+      "Text": "LI will post jobs based on the language that the customer posts in. If the job requires multiple languages, the customer should have separate listings for each language.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How frequently should candidate, application, job data be sent?",
+      "Anchor": "how-frequently-should-candidate--application--job-data-be-sent-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "How frequently should candidate, application, job data be sent?"
+      ],
+      "Text": "The preferred integration is to send in real-time",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In our ATS, job requisition end-dates are optional, but LinkedIn job expire after 30 days? How do we address this?",
+      "Anchor": "in-our-ats--job-requisition-end-dates-are-optional--but-linkedin-job-expire-after-30-days--how-do-we-address-this-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "In our ATS, job requisition end-dates are optional, but LinkedIn job expire after 30 days? How do we address this?"
+      ],
+      "Text": "Jobs will default to 180 days if there is no expiration date passed in.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In our ATS, some job requisitions have no location or multiple locations. How do we address this?",
+      "Anchor": "in-our-ats--some-job-requisitions-have-no-location-or-multiple-locations--how-do-we-address-this-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "In our ATS, some job requisitions have no location or multiple locations. How do we address this?"
+      ],
+      "Text": "For jobs with multiple locations, the current solution is to post one requisition per location. Or, send only the primary location if that designation exists.\nFor jobs with no location (e.g. virtual jobs), you may either:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In our ATS, some job requisitions have no location or multiple locations. How do we address this?",
+      "Anchor": "in-our-ats--some-job-requisitions-have-no-location-or-multiple-locations--how-do-we-address-this-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "In our ATS, some job requisitions have no location or multiple locations. How do we address this?"
+      ],
+      "Text": "Not send these jobs, or\n\nDefault to a specific location (for example, headquarter). Jobs will not be posted without a location",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can LI use the existing LI Limited Posting requisition XML feed to ingest the customer\u2019s requisitions?",
+      "Anchor": "can-li-use-the-existing-li-limited-posting-requisition-xml-feed-to-ingest-the-customer-s-requisitions-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "Can LI use the existing LI Limited Posting requisition XML feed to ingest the customer\u2019s requisitions?"
+      ],
+      "Text": "No, the way the middleware platform is architected, it needs to be through the Simple Job Posting API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does LI support multiple ATS integrations for the same customer?",
+      "Anchor": "does-li-support-multiple-ats-integrations-for-the-same-customer-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "Does LI support multiple ATS integrations for the same customer?"
+      ],
+      "Text": "Yes, LinkedIn integrations are set up at the contract level, so customers can have separate integrations for any of their contracts. Recruiter users can switch between contracts, and each contract can be associated with one or more integrations.\nPartners must be able to support multiple contracts for the same customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there any way to send/view InMail within the profile widget?",
+      "Anchor": "is-there-any-way-to-send-view-inmail-within-the-profile-widget-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "Is there any way to send/view InMail within the profile widget?"
+      ],
+      "Text": "There is an \u201CSend InMail\u201D button in the profile widget that allows sending InMails.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What does \u0022Update me\u0022 in profile widget do?",
+      "Anchor": "what-does--update-me--in-profile-widget-do-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "What does \u0022Update me\u0022 in profile widget do?"
+      ],
+      "Text": "It sends a notification to the ATS user in LinkedIn Recruiter when there are profile updates for the relevant candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Closed Candidate Endpoint does not return closed profiles. Why?",
+      "Anchor": "closed-candidate-endpoint-does-not-return-closed-profiles--why-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "Closed Candidate Endpoint does not return closed profiles. Why?"
+      ],
+      "Text": "If a candidate deletes their LinkedIn account, they can reactivate it within 21 days. After 21 days, we purge the deleted accounts and populate that information within the Closed Candidates Endpoint. Our ATS partners must query this endpoint periodically (at least once in 30 days) and purge the accounts (that appear within this endpoint) from their records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the implication of inline upgrade / downgrade with RSC?",
+      "Anchor": "what-is-the-implication-of-inline-upgrade---downgrade-with-rsc-",
+      "SectionPath": [
+        "Product Functionality Misc",
+        "What is the implication of inline upgrade / downgrade with RSC?"
+      ],
+      "Text": "When an API Job is designated as Basic, either by creating a new Basic API Job or by inline downgrading a Premium API Job, it will be visible in the RSC 1CE (one click export).\nInline upgrading a Basic API Job to a Premium Job does not change its visibility in the RSC 1CE; the job remains visible until it is closed.\nSimilarly, inline downgrading a Premium API Job to a Basic Job will make the job appear in the RSC 1CE. No updates to an API Job, except for the CLOSE action, are sent to the RSC.\nWe will implement a change, once ready, where public and private jobs will be synchronized separately. Until your integration aligns with this update, the above recommendation applies to your ATS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are all the features of RSC required to launch?",
+      "Anchor": "are-all-the-features-of-rsc-required-to-launch-",
+      "SectionPath": [
+        "Certification",
+        "Are all the features of RSC required to launch?"
+      ],
+      "Text": "Yes, it\u0027s an all-or-nothing integration (with the exception of the feature that enables the sending of Interview Notes and Feedback to LinkedIn Recruiter, which is optional) ; however partners can test and certify each module along the way prior to launch.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the data requirements for customers to enable RSC?",
+      "Anchor": "what-are-the-data-requirements-for-customers-to-enable-rsc-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What are the data requirements for customers to enable RSC?"
+      ],
+      "Text": "The requirements are laid out in the developer and required fields documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if First Name and Last Name are either not available or the names are concatenated?",
+      "Anchor": "what-if-first-name-and-last-name-are-either-not-available-or-the-names-are-concatenated-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What if First Name and Last Name are either not available or the names are concatenated?"
+      ],
+      "Text": "First name and last name are used as part of our matching algorithm, though the fields are optional. The preference would be to split firstName and lastName if you have it",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if Email Address is missing from Candidate data?",
+      "Anchor": "what-if-email-address-is-missing-from-candidate-data-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What if Email Address is missing from Candidate data?"
+      ],
+      "Text": "Email is required when available.\nThe only instance when email address may be omitted for a Candidate is via One-Click Export as documented here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the maximum amount of data we can bulk push?",
+      "Anchor": "what-is-the-maximum-amount-of-data-we-can-bulk-push-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What is the maximum amount of data we can bulk push?"
+      ],
+      "Text": "The throttling is based on the number of API calls being made. We don\u0027t have any maximum limits of how much data can be synced by customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What would be the outcome if we always push all the data for a client every single time the ATS syncs with LinkedIn? Are the update endpoints idempotent?",
+      "Anchor": "what-would-be-the-outcome-if-we-always-push-all-the-data-for-a-client-every-single-time-the-ats-syncs-with-linkedin--are-the-update-endpoints-idempotent-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What would be the outcome if we always push all the data for a client every single time the ATS syncs with LinkedIn? Are the update endpoints idempotent?"
+      ],
+      "Text": "The Sync API will consider any data after the initial push as an update. As long as you are sending the correct fields and values against it, there should be no problem.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How soon should the Partner ATS platform create the candidate and application in the ATS when a user uses the One-Click Export function?",
+      "Anchor": "how-soon-should-the-partner-ats-platform-create-the-candidate-and-application-in-the-ats-when-a-user-uses-the-one-click-export-function-",
+      "SectionPath": [
+        "Technical FAQs",
+        "How soon should the Partner ATS platform create the candidate and application in the ATS when a user uses the One-Click Export function?"
+      ],
+      "Text": "This varies across our ATS partners, however we generally see this reflected within a few minutes. Ideally this should be as real-time as possible.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Integration Configuration Plugin - if there is a network error will the user be able to enable it again?",
+      "Anchor": "ats-integration-configuration-plugin---if-there-is-a-network-error-will-the-user-be-able-to-enable-it-again-",
+      "SectionPath": [
+        "Technical FAQs",
+        "ATS Integration Configuration Plugin - if there is a network error will the user be able to enable it again?"
+      ],
+      "Text": "Yes, the button should show up if there was a network error. Once the request is sent, the button changes to Notify Partner, after this you should be able to call /atsIntegrations API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How are people in the ATS matched to LinkedIn profiles? What happens if the matching made is incorrect?",
+      "Anchor": "how-are-people-in-the-ats-matched-to-linkedin-profiles--what-happens-if-the-matching-made-is-incorrect-",
+      "SectionPath": [
+        "Technical FAQs",
+        "How are people in the ATS matched to LinkedIn profiles? What happens if the matching made is incorrect?"
+      ],
+      "Text": "People are matched on the basis of email first and then phone number, subject to the relevant member\u2019s privacy settings. If the matching made is incorrect or cannot be found, LinkedIn allows the Customer to manually match in the Profile Widget. Refer to this API. This updates the \u0027manualMatchedMember\u0027 attribute for synced candidates. It is advised that if the value for the manualMatchedMember field is present then ATS should always use that instead of the values present in the \u0027matchedMembers\u0027 attribute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When posting multiple jobs to simpleJobPostings, the response is an array of results and associated task ids, these task ids can then be used to check the creation status of the job. How do we associate the task id to the job we posted? For example, if a job fails how do we know which job in the batch failed?",
+      "Anchor": "when-posting-multiple-jobs-to-simplejobpostings--the-response-is-an-array-of-results-and-associated-task-ids--these-task-ids-can-then-be-used-to-check-the-creation-status-of-the-job--how-do-we-associate-the-task-id-to-the-job-we-posted--for-example--if-a-job-fails-how-do-we-know-which-job-in-the-batch-failed-",
+      "SectionPath": [
+        "Technical FAQs",
+        "When posting multiple jobs to simpleJobPostings, the response is an array of results and associated task ids, these task ids can then be used to check the creation status of the job. How do we associate the task id to the job we posted? For example, if a job fails how do we know which job in the batch failed?"
+      ],
+      "Text": "The jobs are sent in a sequence and also returned back in a sequence. So you would be keeping track of the sequence and able to match it accordingly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is the onboarding widget responsive?",
+      "Anchor": "is-the-onboarding-widget-responsive-",
+      "SectionPath": [
+        "Technical FAQs",
+        "Is the onboarding widget responsive?"
+      ],
+      "Text": "No.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The attribute of \u0022description\u0022 in Sync Job APIs has the following notes: String Minimum 100 characters \u0026 required. Is there any upper character limit? If yes, what is it?",
+      "Anchor": "the-attribute-of--description--in-sync-job-apis-has-the-following-notes--string-minimum-100-characters---required--is-there-any-upper-character-limit--if-yes--what-is-it-",
+      "SectionPath": [
+        "Technical FAQs",
+        "The attribute of \u0022description\u0022 in Sync Job APIs has the following notes: String Minimum 100 characters \u0026 required. Is there any upper character limit? If yes, what is it?"
+      ],
+      "Text": "The minimum character length is to ensure this is a genuine job and not spam. We accept only quality jobs so that is why we have the restriction. If the description is within 10K characters, this should be fine.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What should the ATS do when Linking/Unlinking happens for any profile via the LinkedIn profile widget that is surfaced in the ATS?",
+      "Anchor": "what-should-the-ats-do-when-linking-unlinking-happens-for-any-profile-via-the-linkedin-profile-widget-that-is-surfaced-in-the-ats-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What should the ATS do when Linking/Unlinking happens for any profile via the LinkedIn profile widget that is surfaced in the ATS?"
+      ],
+      "Text": "Within the widget there is a callback function parameter which on link / unlink allows your system to add or update the appropriate person URN to update and store. The person URN connects the candidate to the job post and all other information related to the candidate including notes, job application status, etc.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What should be done if profile plugin scripts fails to load widgets in iFrame in case of single page application?",
+      "Anchor": "what-should-be-done-if-profile-plugin-scripts-fails-to-load-widgets-in-iframe-in-case-of-single-page-application-",
+      "SectionPath": [
+        "Technical FAQs",
+        "What should be done if profile plugin scripts fails to load widgets in iFrame in case of single page application?"
+      ],
+      "Text": "Use in.parse() to reload the widget on a single page application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When are developer contracts renewed?",
+      "Anchor": "when-are-developer-contracts-renewed-",
+      "SectionPath": [
+        "Technical FAQs",
+        "When are developer contracts renewed?"
+      ],
+      "Text": "The Linkedin LTS Partner Operations (PO) team proactively renews contracts. This is a monthly activity and we renew your contract once its near expiry. This gives a seamless LinkedIn RSC experience without the need to raise a ticket for contract renewal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can we test InMail functionality on a test account?",
+      "Anchor": "how-can-we-test-inmail-functionality-on-a-test-account-",
+      "SectionPath": [
+        "Technical FAQs",
+        "How can we test InMail functionality on a test account?"
+      ],
+      "Text": "It is recommended to test the InMail functionality for RSC Integrations by sending InMails to your first degree connections. One can send unlimited inMails because there is no restriction to it. To be able to test this feature, the users should be connected to the developers of our team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does the existing RSC ACL allow security groups for only jobs or even for candidates, application etc?",
+      "Anchor": "does-the-existing-rsc-acl-allow-security-groups-for-only-jobs-or-even-for-candidates--application-etc--",
+      "SectionPath": [
+        "Technical FAQs",
+        "Does the existing RSC ACL allow security groups for only jobs or even for candidates, application etc?"
+      ],
+      "Text": "Through ACL, we control the visibility of any jobs to only user(s). ACLs consist of two parts - atsEntityAcls for groups and atsEntityAclAssignees for members who can view the jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does the existing RSC ACL allow security groups for only jobs or even for candidates, application etc?",
+      "Anchor": "does-the-existing-rsc-acl-allow-security-groups-for-only-jobs-or-even-for-candidates--application-etc--",
+      "SectionPath": [
+        "Technical FAQs",
+        "Does the existing RSC ACL allow security groups for only jobs or even for candidates, application etc?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does the existing RSC ACL allow security groups for only jobs or even for candidates, application etc?",
+      "Anchor": "does-the-existing-rsc-acl-allow-security-groups-for-only-jobs-or-even-for-candidates--application-etc--",
+      "SectionPath": [
+        "Technical FAQs",
+        "Does the existing RSC ACL allow security groups for only jobs or even for candidates, application etc?"
+      ],
+      "Text": "This FAQ is meant for your development purposes only.\nThere is a separate FAQ wiki that Partner can share with their Customers post-production.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Integration Phase",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How do I learn more about LinkedIn product integration?\nHow do I get started developing?\nWhat will I need to do to integrate Recruiter System Connect if I had integrated with LinkedIn Referrals? [Only for partners who had supported LinkedIn Referrals]\nCan I choose to enable certain features of RSC and not others?\nIs there a minimum threshold of historical candidates, applications, jobs records that customers must send during the initial setup?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Data Privacy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "Does the Recruiter System Connect integration require our customers to update their privacy policies and acquire acceptance for all candidates in their system?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Customer Setup",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How do customers turn on the integration?\nHow do I delete middleware ATS data when a customer changes an ATS?\nHow does a customer deactivate RSC?\nWhat Seat Type will have access to RSC features?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Product Functionality: One-Click Export",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How should partners manage duplicate records if email address is not provided?\nWhy might a customer not be able to One-Click Export a member from LI Recruiter?\nWhat would you recommend if one wants to export a user but not associate it to a requisition?\nWill the Job Req drop down list \u201Call open jobs\u201D for the customer?\nWhat is the call limit?\nHow can ATS validate the authenticity of a request received on its registered CallBack URL?\nWhen we One-Click Export a candidate, the jobs list preview sometimes displays the \u0022externalJobPostingId\u0022 and sometimes it displays the \u0022companyJobCode\u0022 instead. What is the reason for this behavior?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Product Functionality: Misc",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "How does LinkedIn handle jobs that are posted in multiple languages?\nHow frequently should candidate, application, job data be sent?\nIn our ATS, job requisition end-dates are optional, but LinkedIn job expire after 30 days? How do we address this?\nIn our ATS, some job requisitions have no location or multiple locations. How do we address this?\nCan LI use the existing LI Limited Posting requisition XML feed to ingest the customer\u2019s requisitions?\nDoes LI support multiple ATS integrations for the same customer?\nIs there any way to send/view InMail within the profile widget?\nWhat does \u0022Update me\u0022 in profile widget do?\nClosed Candidate Endpoint does not return closed profiles. Why?\nWhat is the implication of inline upgrade / downgrade with RSC?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "- Certification",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Questions",
+      "Anchor": "product-questions",
+      "SectionPath": [
+        "Product Questions"
+      ],
+      "Text": "Are all the features of RSC required to launch?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Questions",
+      "Anchor": "technical-questions",
+      "SectionPath": [
+        "Technical Questions"
+      ],
+      "Text": "What are the data requirements for customers to enable RSC?\nWhat if First Name and Last Name are either not available or the names are concatenated?\nWhat if Email Address is missing from Candidate data?\nWhat is the maximum amount of data we can bulk push?\nWhat would be the outcome if we always push all the data for a client every single time the ATS syncs with LinkedIn? (Are the update endpoints idempotent?)\nHow soon should the Partner ATS platform create the candidate and application in the ATS when a user uses the One-Click Export function?\nATS Integration Configuration Plugin - if there is a network error will the user be able to enable it again?\nHow are people in the ATS matched to LinkedIn profiles? What happens if the matching made is incorrect?\nWhen posting multiple jobs to simpleJobPostings, the response is an array of results and associated task ids, these task ids can then be used to check the creation status of the job. How do we associate the task id to the job we posted? For example, if a job fails how do we know which job in the batch failed?\nIs the onboarding widget responsive?\nThe attribute of \u0022description\u0022 in Sync Job APIs has the following notes: String Minimum 100 characters \u0026 required. Is there any upper character limit? If yes, what is it?\nWhat should the ATS do when Linking/Unlinking happens for any profile via the LinkedIn profile widget that is surfaced in the ATS?\nWhat should be done if profile plugin scripts fails to load widgets in iFrame in case of single page application?\nWhen are developer contracts renewed?\nHow can we test InMail functionality on a test account?\nDoes the existing RSC ACL allow security groups for only jobs or even for candidates, application etc",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Please reference RSC developer documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Reach out to LinkedIn Business Development to fill out the Onboarding Request Form and follow steps in the RSC developer documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "New Talent Solutions integrations like Recruiter System Connect are built on the Middleware Platform, which means you should manage job applications via the /atsApplications and /atsCandidates endpoint instead of /simpleJobApplications. If you\u2019ve previously integrated with LinkedIn Referrals, you\u2019ll need to switch to using the Middleware Platform for submitting job applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "No. The minimum product and technical requirements for RSC are indicated in this document and partners may not elect to enable a subset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "We require all historical candidate, applications, and jobs records to ensure LinkedIn Recruiter is as valuable as possible for your customers [i.e. the \u201CRediscovered Candidates\u201D Spotlight, \u2018In-ATS Indicator\u2019]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Many customers will not need to do so if their privacy policies allows them to share candidate data to their third party partners. However, customers will need to consult their own legal teams regarding this prior to activating RSC. Some partners include a disclaimer in the onboarding widget that requires the customer to authorize the sharing of ATS data with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Customers will be able to turn on all their middleware integrations via a widget in the ATS and in their Recruiter dashboard. See technical docs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "If the customer wants to delete candidate records: Partner should call Delete End Points highlighted in developer docs for Sync Candidates, Notes, Interview Notes, Applications\nIf the customer wants to delete all their data for an ATS (including Jobs): Partner should contact ltsatsintegrations@linkedin.com\nNote: Once delete is processed, all copies of data will be deleted within 30 days",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Customers must email the Partner and LinkedIn support notifying us they would like to deactivate RSC. Customer can contact LinkedIn support at ltsatsintegrations@linkedin.com",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Rcorp (Recruiter Corporate), RPS (Recruiter Professional Services), and Recruiter SMB",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The ATS partner can confirm the duplication was handled in the ATS when LI passes back the PersonURN (Member ID) to the ATS Partner",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "LinkedIn members that don\u0027t have their privacy settings set to share their profile with third parties will not have One-Click Export functionality enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Customer can create a standard \u0022dummy req\u0022 field in the drop down that Recruiter will be able to export the candidate to if they do not want to associate the candidate with a Job Req. ATS can then conduct any matching required on their end. However, customers will need to consult their legal team to determine if they can export data unassociated with a requisition.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Yes it will show all open jobs that the user has permissions to see based on Security Groups. If a Partner has not enabled Security Groups, all open jobs will be seen by all users. Customers can search for jobs based on type head",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Call volume for One-Click Export is 300 calls per Recruiter seat per month. LinkedIn reserves the right to change rate limits including to prevent abuse and protect privacy and security.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "ATS will validate this push event against the signature in the request, outlined in our documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "This is an expected behavior, when companyJobCode exist, it takes precedence over externalJobPostingId",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "LI will post jobs based on the language that the customer posts in. If the job requires multiple languages, the customer should have separate listings for each language.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The preferred integration is to send in real-time",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Jobs will default to 180 days if there is no expiration date passed in.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "For jobs with multiple locations, the current solution is to post one requisition per location. Or, send only the primary location if that designation exists.\nFor jobs with no location (e.g. virtual jobs), you may either:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Not send these jobs, or\n\nDefault to a specific location (for example, headquarter). Jobs will not be posted without a location",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "No, the way the middleware platform is architected, it needs to be through the Simple Job Posting API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Yes, LinkedIn integrations are set up at the contract level, so customers can have separate integrations for any of their contracts. Recruiter users can switch between contracts, and each contract can be associated with one or more integrations.\nPartners must be able to support multiple contracts for the same customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "There is an \u201CSend InMail\u201D button in the profile widget that allows sending InMails.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "It sends a notification to the ATS user in LinkedIn Recruiter when there are profile updates for the relevant candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "If a candidate deletes their LinkedIn account, they can reactivate it within 21 days. After 21 days, we purge the deleted accounts and populate that information within the Closed Candidates Endpoint. Our ATS partners must query this endpoint periodically (at least once in 30 days) and purge the accounts (that appear within this endpoint) from their records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "When an API Job is designated as Basic, either by creating a new Basic API Job or by inline downgrading a Premium API Job, it will be visible in the RSC 1CE (one click export).\nInline upgrading a Basic API Job to a Premium Job does not change its visibility in the RSC 1CE; the job remains visible until it is closed.\nSimilarly, inline downgrading a Premium API Job to a Basic Job will make the job appear in the RSC 1CE. No updates to an API Job, except for the CLOSE action, are sent to the RSC.\nWe will implement a change, once ready, where public and private jobs will be synchronized separately. Until your integration aligns with this update, the above recommendation applies to your ATS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Yes, it\u0027s an all-or-nothing integration (with the exception of the feature that enables the sending of Interview Notes and Feedback to LinkedIn Recruiter, which is optional) ; however partners can test and certify each module along the way prior to launch.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The requirements are laid out in the developer and required fields documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "First name and last name are used as part of our matching algorithm, though the fields are optional. The preference would be to split firstName and lastName if you have it",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Email is required when available.\nThe only instance when email address may be omitted for a Candidate is via One-Click Export as documented here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The throttling is based on the number of API calls being made. We don\u0027t have any maximum limits of how much data can be synced by customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The Sync API will consider any data after the initial push as an update. As long as you are sending the correct fields and values against it, there should be no problem.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "This varies across our ATS partners, however we generally see this reflected within a few minutes. Ideally this should be as real-time as possible.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Yes, the button should show up if there was a network error. Once the request is sent, the button changes to Notify Partner, after this you should be able to call /atsIntegrations API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "People are matched on the basis of email first and then phone number, subject to the relevant member\u2019s privacy settings. If the matching made is incorrect or cannot be found, LinkedIn allows the Customer to manually match in the Profile Widget. Refer to this API. This updates the \u0027manualMatchedMember\u0027 attribute for synced candidates. It is advised that if the value for the manualMatchedMember field is present then ATS should always use that instead of the values present in the \u0027matchedMembers\u0027 attribute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The jobs are sent in a sequence and also returned back in a sequence. So you would be keeping track of the sequence and able to match it accordingly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "No.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The minimum character length is to ensure this is a genuine job and not spam. We accept only quality jobs so that is why we have the restriction. If the description is within 10K characters, this should be fine.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Within the widget there is a callback function parameter which on link / unlink allows your system to add or update the appropriate person URN to update and store. The person URN connects the candidate to the job post and all other information related to the candidate including notes, job application status, etc.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Use in.parse() to reload the widget on a single page application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The Linkedin LTS Partner Operations (PO) team proactively renews contracts. This is a monthly activity and we renew your contract once its near expiry. This gives a seamless LinkedIn RSC experience without the need to raise a ticket for contract renewal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "It is recommended to test the InMail functionality for RSC Integrations by sending InMails to your first degree connections. One can send unlimited inMails because there is no restriction to it. To be able to test this feature, the users should be connected to the developers of our team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Through ACL, we control the visibility of any jobs to only user(s). ACLs consist of two parts - atsEntityAcls for groups and atsEntityAclAssignees for members who can view the jobs.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

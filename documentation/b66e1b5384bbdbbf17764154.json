@@ -1,0 +1,566 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema",
+  "Title": "Message Schemas",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Message Schema",
+      "Anchor": "message-schema",
+      "SectionPath": [
+        "Message Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of attachments for this message. The urns are digitalMediaAssetUrn. For more information, see here.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identity that created this message. It represents the sole owner of a mailbox in the given domain. Can be one of the following: personUrn - member mailbox in the format urn:li:person:XXX hireMailboxUrn - Recruiter mailbox in the format urn:li:hireMailbox:XXX salesIdentityUrn - Sales Navigator mailbox in the format urn:li:salesIdentity:XXX corporateMemberUrn - [LEGACY] Sales Navigator or Recruiter mailbox in the format urn:li:corporateMember:XXX",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema#sales-identity-schema"
+            ],
+            "Values": [
+              "personUrn - member mailbox in the format urn:li:person:XXX",
+              "hireMailboxUrn - Recruiter mailbox in the format urn:li:hireMailbox:XXX",
+              "salesIdentityUrn - Sales Navigator mailbox in the format urn:li:salesIdentity:XXX",
+              "corporateMemberUrn - [LEGACY] Sales Navigator or Recruiter mailbox in the format urn:li:corporateMember:XXX"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of the message. This field is identical for all viewers and will show the latest edit, if any.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of the message. If missing, rely on the fallback value for text to display. Use the format field to determine what type to expect in this field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fallback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text to display if the format is not understood by the client.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The encoding format for this message. Can be one of the follow enums: TEXT -\u00A0Text-only format. Because the fallback field would end up containing the same string as the content, for efficiency, the content is not provided and will be null. The fallback field will be the only text. EXPERIMENTAL -\u00A0Experimental format. Nothing of this type should be member authorable. Renderers may ignore messages with this format. LITTLE -\u00A0Lightweight markup format. The content field consists of a string in the LITTLE markup language. The fallback field contains a textual version of the content. SYSTEM -\u00A0System message format. The content field contains a SystemMessageContent object which defines the system message type and what changes it describes. The fallback field contains an English textual description of the system message. INDIRECT - The content that provides an Urn reference to message data.",
+            "Links": [],
+            "Values": [
+              "TEXT -\u00A0Text-only format. Because the fallback field would end up containing the same string as the content, for efficiency, the content is not provided and will be null. The fallback field will be the only text.",
+              "EXPERIMENTAL -\u00A0Experimental format. Nothing of this type should be member authorable. Renderers may ignore messages with this format.",
+              "LITTLE -\u00A0Lightweight markup format. The content field consists of a string in the LITTLE markup language. The fallback field contains a textual version of the content.",
+              "SYSTEM -\u00A0System message format. The content field contains a SystemMessageContent object which defines the system message type and what changes it describes. The fallback field contains an English textual description of the system message.",
+              "INDIRECT - The content that provides an Urn reference to message data."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "formatVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The version of the format being used. Versions are used to indicate additions of features within a format that are backward compatible. Versions start at 1 and increase with features. Breaking changes require a new format.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the content of the message was created.\u00A0Represented in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deliveredAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the message was delivered to the owner\u0027s mailbox. This value reflects only the message as viewed by the owner rather than any indication of what happened with the delivery of the message to other viewers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity ID of the message.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastEditedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the content and attachments of the Message changed since it was originally authored. A missing value means nothing has changed. Represented in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identity Urn that represents the owner of the mailbox in this domain where this message is stored. It is typically a personUrn but can be other URN type as well, such as salesIdentityUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema#sales-identity-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "readAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the message was read by the viewer. A missing value means the message is unread. Represented in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thread",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "messagingThreadUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema#messaging-thread-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The thread that ties this message to other related messages. A message can only belong to one thread.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Messaging Thread Schema",
+      "Anchor": "messaging-thread-schema",
+      "SectionPath": [
+        "Messaging Thread Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "membership",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The current list of participants in this thread. Each participant is an identity that owns a mailbox where messages will be delivered.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the thread participant was created",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "identity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identity Urn that is participating in the Thread. It represents the owner of a Mailbox in a given Domain and can be an author or a recipient in a Thread. Can be one of the following: personUrn - member mailbox in the format urn:li:person:XXX hireMailboxUrn - Recruiter mailbox in the format urn:li:hireMailbox:XXX salesIdentityUrn - Sales Navigator mailbox in the format urn:li:salesIdentity:XXX corporateMemberUrn - [LEGACY] Sales Navigator or Recruiter mailbox in the format urn:li:corporateMember:XXX",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema#sales-identity-schema"
+            ],
+            "Values": [
+              "personUrn - member mailbox in the format urn:li:person:XXX",
+              "hireMailboxUrn - Recruiter mailbox in the format urn:li:hireMailbox:XXX",
+              "salesIdentityUrn - Sales Navigator mailbox in the format urn:li:salesIdentity:XXX",
+              "corporateMemberUrn - [LEGACY] Sales Navigator or Recruiter mailbox in the format urn:li:corporateMember:XXX"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identity Urn that represents the owner of the mailbox in this domain where this thread is stored. Can be one of the following: personUrn - member mailbox in the format urn:li:person:XXX hireMailboxUrn - Recruiter mailbox in the format urn:li:hireMailbox:XXX salesIdentityUrn - Sales Navigator mailbox in the format urn:li:salesIdentity:XXX corporateMemberUrn - [LEGACY] Sales Navigator or Recruiter mailbox in the format urn:li:corporateMember:XXX",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema#sales-identity-schema"
+            ],
+            "Values": [
+              "personUrn - member mailbox in the format urn:li:person:XXX",
+              "hireMailboxUrn - Recruiter mailbox in the format urn:li:hireMailbox:XXX",
+              "salesIdentityUrn - Sales Navigator mailbox in the format urn:li:salesIdentity:XXX",
+              "corporateMemberUrn - [LEGACY] Sales Navigator or Recruiter mailbox in the format urn:li:corporateMember:XXX"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. The title of the thread. This field is identical but editable for all viewers of the thread.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sales Identity Schema",
+      "Anchor": "sales-identity-schema",
+      "SectionPath": [
+        "Sales Identity Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the sales identity entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "personUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The member of the Sales Navigator user.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

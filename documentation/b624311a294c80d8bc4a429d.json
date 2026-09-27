@@ -1,0 +1,313 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+  "Title": "LinkedIn Marketing Developer Platform - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing Developer Platform - Overview",
+      "Anchor": "linkedin-marketing-developer-platform---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing Developer Platform - Overview",
+      "Anchor": "linkedin-marketing-developer-platform---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing Developer Platform - Overview",
+      "Anchor": "linkedin-marketing-developer-platform---overview",
+      "SectionPath": [],
+      "Text": "Build technology to grow B2B communities and businesses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction to LinkedIn Marketing Solutions",
+      "Anchor": "introduction-to-linkedin-marketing-solutions",
+      "SectionPath": [
+        "Introduction to LinkedIn Marketing Solutions"
+      ],
+      "Text": "Advertising on LinkedIn helps businesses of any size achieve their goals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction to LinkedIn Marketing Solutions",
+      "Anchor": "introduction-to-linkedin-marketing-solutions",
+      "SectionPath": [
+        "Introduction to LinkedIn Marketing Solutions"
+      ],
+      "Text": "Target a unique audience - There are millions of active professionals on LinkedIn. Target them by job title, function, industry, and more.\nEasy and effective ads - Whether your goal is leads, brand awareness, or even event registrations, LinkedIn ads can help.\nControl your budget - Control your spend with flexible pricing options. Start with any budget and stop your ads at any time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction to LinkedIn Marketing Solutions",
+      "Anchor": "introduction-to-linkedin-marketing-solutions",
+      "SectionPath": [
+        "Introduction to LinkedIn Marketing Solutions"
+      ],
+      "Text": "Check out the Brand and Demand playbook to learn more about the tools and tactics marketers can use to engage their target audience on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertising API",
+      "Anchor": "advertising-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Advertising API"
+      ],
+      "Text": "Enable ads management at scale: Build functionality for scalable ads management with Ad Campaigns and Creatives APIs. For more information, see Ad Campaigns and Creatives.\n\nReporting: Build holistic view of marketing performance. Use the Ad Analytics API to pull campaign analytics data for measuring their performance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management API",
+      "Anchor": "event-management-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Event Management API"
+      ],
+      "Text": "Streamline event operations, amplify visibility, and drive meaningful connections within the professional landscape with Events APIs (Management \u0026 Ads).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management API",
+      "Anchor": "event-management-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Event Management API"
+      ],
+      "Text": "Event Management: Create and manage events and event posts.\nEvent Ads: Promote events to a targeted audience",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Community Management API"
+      ],
+      "Text": "Engage in conversations around a brand: Monitor @mentions of your brand and respond to comments with Social Actions Notifications API. @mention members for richer conversation using the People Typeahead API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Community Management API"
+      ],
+      "Text": "Page Management: Build a brand presence. Share content and track posts that drive the most engagement using the Posts API and Social Actions or Comments API.\n\nBrand Engagement: Engage in conversations around a brand.\nMonitor @mentions of your brand and respond to comments on your posts using the PeopleTypeahead API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync API",
+      "Anchor": "lead-sync-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Lead Sync API"
+      ],
+      "Text": "Automate lead delivery: Use the Lead Sync API to efficiently manage and route leads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API",
+      "Anchor": "conversions-api",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Conversions API"
+      ],
+      "Text": "Attribute offline and online marketing data to a LinkedIn campaign with Conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences",
+      "Anchor": "matched-audiences",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Matched Audiences"
+      ],
+      "Text": "Enhance LinkedIn targeting: Easily create audience segments and target on LinkedIn with DMP Segments API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights",
+      "Anchor": "audience-insights",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Audience Insights"
+      ],
+      "Text": "Discover audiences: Learn who your target audience is, their interest, and content they\u2019re engaging with to plan your campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Planning",
+      "Anchor": "media-planning",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Media Planning"
+      ],
+      "Text": "Plan your Marketing Campaigns: Plan your campaigns against your marketing objectives and target audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence",
+      "Anchor": "company-intelligence",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Company Intelligence"
+      ],
+      "Text": "Gain account-level insights: Use the Company Intelligence API to retrieve company-level paid and organic engagement data across your ad accounts, enabling account-based marketing and attribution reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence",
+      "Anchor": "company-intelligence",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Company Intelligence"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence",
+      "Anchor": "company-intelligence",
+      "SectionPath": [
+        "LinkedIn Marketing API Products",
+        "Company Intelligence"
+      ],
+      "Text": "Matched Audiences, Audience Insights, Media Planning API, and Company Intelligence API are private APIs and require additional approval. Learn more",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources can help you stay on top of new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Check out the Recent Changes page to see the latest API releases.\nCheck out the Developer Portal to know more about our developer products.\nUse the Migrations page to stay on top of breaking changes.\nRead our Developer Blog to stay on top of the latest features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Need help? Refer to LinkedIn API Partner Support for how to reach Developer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interested in Joining the LinkedIn Marketing Partner Program?",
+      "Anchor": "interested-in-joining-the-linkedin-marketing-partner-program",
+      "SectionPath": [
+        "Interested in Joining the LinkedIn Marketing Partner Program?"
+      ],
+      "Text": "The LinkedIn Marketing Partner Program is a global community of qualified technology and service providers that help marketers achieve more on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interested in Joining the LinkedIn Marketing Partner Program?",
+      "Anchor": "interested-in-joining-the-linkedin-marketing-partner-program",
+      "SectionPath": [
+        "Interested in Joining the LinkedIn Marketing Partner Program?"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interested in Joining the LinkedIn Marketing Partner Program?",
+      "Anchor": "interested-in-joining-the-linkedin-marketing-partner-program",
+      "SectionPath": [
+        "Interested in Joining the LinkedIn Marketing Partner Program?"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software, and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn API Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

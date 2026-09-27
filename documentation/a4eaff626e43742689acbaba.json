@@ -1,0 +1,858 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow-native",
+  "Title": "Authenticating with OAuth 2.0 for Native Clients",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow-native",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Authenticating with OAuth 2.0 for Native Clients",
+      "Anchor": "authenticating-with-oauth-20-for-native-clients",
+      "SectionPath": [],
+      "Text": "For native apps that don\u0027t have a reliable way to keep secrets, this documentation will walk you through using Proof Key for Code Exchange (PKCE) support to integrate LinkedIn OAuth 2.0 into your native apps. For more information about PKCE, please see the PKCE RFC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Configure your LinkedIn application",
+      "Anchor": "step-1---configure-your-linkedin-application",
+      "SectionPath": [
+        "Step 1 - Configure your LinkedIn application"
+      ],
+      "Text": "If you have not already done so, create an application. If you have an existing application, select it to modify its settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Configure your LinkedIn application",
+      "Anchor": "step-1---configure-your-linkedin-application",
+      "SectionPath": [
+        "Step 1 - Configure your LinkedIn application"
+      ],
+      "Text": "To prevent fraudulent transactions during the authentication process, we will only communicate with loopback IPs. Ensure your application has opened HTTP server on a random port of loopback interface and listen to the loopback to complete your portion of the authentication workflow. The lookback IP representation supported for IPv4 is http://127.0.0.1:{port} while for IPv6 is http://[::1]:{port}. We will be supporting both HTTP and HTTPS loopback IPs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Configure your LinkedIn application",
+      "Anchor": "step-1---configure-your-linkedin-application",
+      "SectionPath": [
+        "Step 1 - Configure your LinkedIn application"
+      ],
+      "Text": "Once you save your configuration, your application will be assigned a unique Client ID (otherwise known as Consumer Key or API key) value. Make note of this value \u2014 you will need to integrate it into the configuration files or the actual code of your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Configure your LinkedIn application",
+      "Anchor": "step-1---configure-your-linkedin-application",
+      "SectionPath": [
+        "Step 1 - Configure your LinkedIn application"
+      ],
+      "Text": "Once you have the app created, please reach out to your point of contact at LinkedIn, and we will enable PKCE OAuth 2 flow for your app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Configure your LinkedIn application",
+      "Anchor": "step-1---configure-your-linkedin-application",
+      "SectionPath": [
+        "Step 1 - Configure your LinkedIn application"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Configure your LinkedIn application",
+      "Anchor": "step-1---configure-your-linkedin-application",
+      "SectionPath": [
+        "Step 1 - Configure your LinkedIn application"
+      ],
+      "Text": "At the risk of your own application\u0027s security, DO NOT share your Client Secret value with anyone! This includes posting it in support forums for help with your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - Request an Authorization Code",
+      "Anchor": "step-2---request-an-authorization-code",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code"
+      ],
+      "Text": "Once your application is properly configured, it\u0027s time to request an authorization code. The authorization code is not the final token that you use to make calls to LinkedIn with. It is used in the next step of the OAuth 2.0 flow to exchange for an actual access token. This is an important step because it provides assurance directly from LinkedIn to the user that permission is being granted to the correct application, with the agreed-upon access to the member\u0027s LinkedIn profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate a code verifier and challenge",
+      "Anchor": "generate-a-code-verifier-and-challenge",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Generate a code verifier and challenge"
+      ],
+      "Text": "The PKCE flow requires a code_verifier and code_challenge to prevent the authorization code from being exchanged for an access token by a malicious attacker.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate a code verifier and challenge",
+      "Anchor": "generate-a-code-verifier-and-challenge",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Generate a code verifier and challenge"
+      ],
+      "Text": "Create a code verifier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate a code verifier and challenge",
+      "Anchor": "generate-a-code-verifier-and-challenge",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Generate a code verifier and challenge"
+      ],
+      "Text": "A random URL-safe string (43 to 128 characters long) generated by clients for every authorization request.\nIt is required to be sent to LinkedIn servers with an authorization code to obtain access token as a security measure",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate a code verifier and challenge",
+      "Anchor": "generate-a-code-verifier-and-challenge",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Generate a code verifier and challenge"
+      ],
+      "Text": "Create a code challenge:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate a code verifier and challenge",
+      "Anchor": "generate-a-code-verifier-and-challenge",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Generate a code verifier and challenge"
+      ],
+      "Text": "The code_challenge is a Base64-URL-encoded string of the SHA256 hash of the code_verifier. It should be sent with authorization code request to LinkedIn. LinkedIn verifies the identity of requester by validating the code challenge was generated from the code verifier while generating an access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate a code verifier and challenge",
+      "Anchor": "generate-a-code-verifier-and-challenge",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Generate a code verifier and challenge"
+      ],
+      "Text": "For more information about the implementation of generating code_verifier and code_challenge, please see PKCE RFC #page-17",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "To request an authorization code, your application should first start an HTTP server on a port on the loopback interface and direct the user\u0027s browser to LinkedIn\u0027s OAuth 2.0 authorization endpoint. Once the request is made, one of the following two situations will occur:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "If the user has not previously accepted the application\u0027s permission request, or the grant has expired or been manually revoked by the user, the browser will be redirected to LinkedIn\u0027s authorization screen (as seen below). When the user completes the authorization process, the browser is redirected to the loopback IP provided in the redirect_uri query parameter.\nIf there is a valid existing permission grant from the user, the authorization screen is by-passed and the user is immediately redirected to the loopback IP provided in the redirect_uri query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "Note that if you ever change the scope permissions that your application requires, your users will have to re-authenticate to ensure that they have explicitly granted your application all of the permissions that it requests on their behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "It\u0027s a requirement that all native applications use the default browser launched by user\u0027s operating system to perform OAuth authorization request, rather than an embedded in-app browser or webview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "GET https://www.linkedin.com/oauth/native-pkce/authorization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Redirecting the User",
+      "Anchor": "redirecting-the-user",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "response_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this field should always be: code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The \u0022API Key\u0022 value generated when you registered your application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "redirect_uri",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The loopback IP your users will be sent back to after authorization. Start an HTTP listener to listen to the redirect. e.g. http://127.0.0.1:3000/redirect or http://[::1]:3000/redirect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique string value of your choice that is hard to guess. Used to prevent CSRF. For example state=DCEeFWf45A53sdfKef424",
+            "Links": [
+              "http://en.wikipedia.org/wiki/Cross-site_request_forgery"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A URL-encoded, space-delimited list of member permissions your application is requesting on behalf of the user. For example scope=r_sales_nav_analytics. See Understanding application permissions for additional information about scopes.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow-native#understanding-application-permissions"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "code_challenge",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The encoded code_verifier used to secure authorization code grants via Proof Key for Code Exchange (PKCE) from a native client. For more information, see the PKCE RFC.",
+            "Links": [
+              "https://tools.ietf.org/html/rfc7636"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "code_challenge_method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The method used to encode code_verifier for code_challenge. The value of this field should always be: S256.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Redirecting the User",
+        "Sample Request"
+      ],
+      "Text": "GET https://www.linkedin.com/oauth/native-pkce/authorization?response_type=code\u0026client_id={your_client_id}\u0026redirect_uri=http://127.0.0.1:3000\u0026state=foobar\u0026scope=r_liteprofile\u0026code_challenge=E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM\u0026code_challenge_method=S256",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The User Experience",
+      "Anchor": "the-user-experience",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "The User Experience"
+      ],
+      "Text": "Once redirected, the user will be presented with LinkedIn\u0027s authentication dialog box. This identifies your application as well as outlines the particular member permissions that your application has requested. If desired, the logo and application name can be changed in your application configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Approved",
+      "Anchor": "application-approved",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Approved"
+      ],
+      "Text": "By providing valid LinkedIn credentials and clicking on the \u0022Allow Access\u0022 button, the user is approving your application\u0027s request to access their member data and interact with LinkedIn on their behalf. This approval instructs LinkedIn to redirect the user back to the loopback IP that you defined in your redirect_uri parameter, and the HTTP server your application started should be able to receive the authorization request in the loopback interface.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Approved",
+      "Anchor": "application-approved",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Approved"
+      ],
+      "Text": "Attached to the redirect_uri will be two important URL arguments that you need to read from the request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Approved",
+      "Anchor": "application-approved",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Approved"
+      ],
+      "Text": "code \u2014 The OAuth 2.0 authorization code.\nstate \u2014 A value used to test for possible CSRF attacks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Approved",
+      "Anchor": "application-approved",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Approved"
+      ],
+      "Text": "The code is a value that you will exchange with LinkedIn for an actual OAuth 2.0 access token in the next step of the authentication process. For security reasons, the authorization code has a very short lifespan and must be used within moments of receiving it - before it expires and you need to repeat all of the previous steps to request another.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Approved",
+      "Anchor": "application-approved",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Approved"
+      ],
+      "Text": "Before you accept the authorization code, your application should ensure that the value returned in the state parameter matches the state value from your original authorization code request. This ensures that you are dealing with the real original user and not a malicious script that has somehow slipped into the middle of your authentication flow. If the state values do not match, you are likely the victim of a CSRF attack and you should throw an HTTP 401 error code in response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Rejected",
+      "Anchor": "application-rejected",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Rejected"
+      ],
+      "Text": "If the user choses to cancel, or the request fails for any other reason, their client will be redirected back to your redirect_uri callback URL with the following additional query parameters appended:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Rejected",
+      "Anchor": "application-rejected",
+      "SectionPath": [
+        "Step 2 - Request an Authorization Code",
+        "Application Rejected"
+      ],
+      "Text": "error - A code indicating the type of error. Two available strings are:\n\nuser_cancelled_login - The user refused to login into LinkedIn account.\nuser_cancelled_authorize - The user refused to authorize permissions request from your application.\n\n\nerror_description - A URL-encoded textual description that summarizes error.\nstate - A value passed by your application to prevent CSRF attacks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3 - Exchange Authorization Code for an Access Token",
+      "Anchor": "step-3---exchange-authorization-code-for-an-access-token",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token"
+      ],
+      "Text": "The final step towards obtaining an Access Token is for your application to ask for one using the Authorization Code it just acquired. This is done by making the following \u0022x-www-form-urlencoded\u0022 HTTP POST request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3 - Exchange Authorization Code for an Access Token",
+      "Anchor": "step-3---exchange-authorization-code-for-an-access-token",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/accessToken",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 3 - Exchange Authorization Code for an Access Token",
+      "Anchor": "step-3---exchange-authorization-code-for-an-access-token",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "grant_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this field should always be: authorization_code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authorization code you received from Step 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "redirect_uri",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The same redirect_uri value that you passed in the previous step.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The \u0022API Key\u0022 value generated Step 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "code_verifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The code_verifier you used to generate code_challenge in the previous step.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token",
+        "Sample Request"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/accessToken\n\nContent-Type: application/x-www-form-urlencoded\ngrant_type=authorization_code\u0026code={authorization_code_from_step2_response}\u0026redirect_uri=http://127.0.0.1:3000\u0026client_id={your_client_id}\u0026code_verifier=dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Token Response",
+      "Anchor": "access-token-response",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token",
+        "Access Token Response"
+      ],
+      "Text": "A successful Access Token request will return a JSON object containing the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Token Response",
+      "Anchor": "access-token-response",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token",
+        "Access Token Response"
+      ],
+      "Text": "access_token \u2014 The access token for the user. This value must be kept secure, as per your agreement to the API Terms of Use.\nexpires_in \u2014 The number of seconds remaining, from the time it was requested, before the token will expire. Currently, all access tokens are issued with a 60 day lifespan.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Token Response",
+      "Anchor": "access-token-response",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token",
+        "Access Token Response"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Token Response",
+      "Anchor": "access-token-response",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token",
+        "Access Token Response"
+      ],
+      "Text": "The length of Access Tokens is ~500 characters. We recommend that you plan for your application stack to handle tokens with length of at least 1000 characters in order to accommodate current and any future expansion plans. This applies to both Access Tokens as well as Refresh Tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Token Scopes and Lifetime",
+      "Anchor": "access-token-scopes-and-lifetime",
+      "SectionPath": [
+        "Step 3 - Exchange Authorization Code for an Access Token",
+        "Access Token Scopes and Lifetime"
+      ],
+      "Text": "Access Tokens stay valid until the number of seconds returned in the expires_in field in the API response. A user can go through the OAuth flow on multiple clients (browsers or devices) and simultaneously hold multiple valid access tokens as long as the same scope is requested. If the user requests a different scope than the previously granted scope, then all the previous access tokens are invalidated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4 - Make authenticated requests",
+      "Anchor": "step-4---make-authenticated-requests",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests"
+      ],
+      "Text": "Once you\u0027ve obtained an Access Token, you can start making authenticated API requests on behalf of the user. This is accomplished by including an \u0022Authorization\u0022 header in your HTTP call to LinkedIn\u0027s API. Here is a sample HTTP request including the header value that includes the token:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me/\n\nConnection: Keep-Alive\nAuthorization: Bearer {access_token}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invalid Tokens",
+      "Anchor": "invalid-tokens",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests",
+        "Invalid Tokens"
+      ],
+      "Text": "If you make an API call using an invalid token, you will receive a \u0022401 Unauthorized\u0022 response back from the server. A token could be invalid and in need of regeneration because:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invalid Tokens",
+      "Anchor": "invalid-tokens",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests",
+        "Invalid Tokens"
+      ],
+      "Text": "It has expired.\nThe user has revoked the permission they initially granted to your application.\nYou have changed the member permissions (scope) your application is requesting.\nA subsequent OAuth2 flow that generated a new access token. The previous token will be invalidated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invalid Tokens",
+      "Anchor": "invalid-tokens",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests",
+        "Invalid Tokens"
+      ],
+      "Text": "Since a predictable expiry time is not the only contributing factor to token invalidation, it is very important that you code your applications to properly handle an encounter with a 401 error by redirecting the user back to the start of the authorization workflow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invalid Tokens",
+      "Anchor": "invalid-tokens",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests",
+        "Invalid Tokens"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invalid Tokens",
+      "Anchor": "invalid-tokens",
+      "SectionPath": [
+        "Step 4 - Make authenticated requests",
+        "Invalid Tokens"
+      ],
+      "Text": "In case of downstream failures in verification of the access token, you will receive a 500 error response back.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5 - Refresh your Access Tokens",
+      "Anchor": "step-5---refresh-your-access-tokens",
+      "SectionPath": [
+        "Step 5 - Refresh your Access Tokens"
+      ],
+      "Text": "To protect our member\u0027s data, LinkedIn does not generate excessively long-lived access tokens. You should ensure your application is built to handle refreshing user tokens before they expire, to avoid having to unnecessarily send your users through the authorization process to re-gain access to their LinkedIn profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Refreshing a token",
+      "Anchor": "refreshing-a-token",
+      "SectionPath": [
+        "Step 5 - Refresh your Access Tokens",
+        "Refreshing a token"
+      ],
+      "Text": "To refresh an Access Token, simply go through the authorization process outlined in this document again to fetch a new token. During the refresh workflow, provided the following conditions are met, the authorization dialog portion of the flow is automatically skipped and the user is redirected back to your callback URL, making acquiring a refreshed access token a seamless behind-the-scenes user experience:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Refreshing a token",
+      "Anchor": "refreshing-a-token",
+      "SectionPath": [
+        "Step 5 - Refresh your Access Tokens",
+        "Refreshing a token"
+      ],
+      "Text": "The user is still logged into www.linkedin.com\nThe user\u0027s current access token has not expired",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Refreshing a token",
+      "Anchor": "refreshing-a-token",
+      "SectionPath": [
+        "Step 5 - Refresh your Access Tokens",
+        "Refreshing a token"
+      ],
+      "Text": "If the user is no longer logged in to www.linkedin.com, or their access token has expired, they will be sent through the normal authorization process outlined at the start of this document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding application permissions",
+      "Anchor": "understanding-application-permissions",
+      "SectionPath": [
+        "Understanding application permissions"
+      ],
+      "Text": "All REST API calls require certain permissions to be granted from the LinkedIn member before they can be made. This system ensures that members are made aware of what an application could possibly access or do on their behalf before approving it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding application permissions",
+      "Anchor": "understanding-application-permissions",
+      "SectionPath": [
+        "Understanding application permissions"
+      ],
+      "Text": "The permissions that members are asked to grant are determined based on the permissions you tell your application to ask for during the OAuth 2.0 authentication process. They can be specified within the LinkedIn application configuration itself, or they can be explicitly requested using the scope argument during the authorization step of the OAuth 2.0 process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding application permissions",
+      "Anchor": "understanding-application-permissions",
+      "SectionPath": [
+        "Understanding application permissions"
+      ],
+      "Text": "If your application requires multiple permissions to access all the data it requires, your users will be required to accept all of them to proceed. It is not possible for users to accept only a subset of the requested application permissions. Ensure that your application requests the fewest necessary permissions, to provide the best experience for the user.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,1800 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
+  "Title": "Workday HCM \u002B LinkedIn Learning Career Hub Integration: Technical Implementation Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-lms",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Guide Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Integration Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Integration Benefits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "System Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "LinkedIn Learning Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Workday HCM Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "SFTP Server Setup",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Integration Workflow Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Integration Process Overview: Step-by-Step Instructions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Step 1: Creating Custom Reports in Workday",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Step 2: Generate SSH Key for Secure Transfer in Workday",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Step 4: Configure LinkedIn Learning Integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Data Flow and Mapping",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Troubleshooting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Security and Data Privacy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Support and Resources",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "FAQs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Purpose: This guide provides step-by-step instructions for configuring a secure data integration between Workday HCM and LinkedIn Learning Career Hub using SFTP-based file transfer. It is intended for HR, IT, and system administrators.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "At a Glance:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Table of Contents",
+      "Anchor": "table-of-contents",
+      "SectionPath": [
+        "Table of Contents"
+      ],
+      "Text": "Goal: Sync job architecture and (optionally) employee-level data from Workday to LinkedIn Learning\nSecurity: Encrypted SFTP delivery with SSH authentication\nOutput Format: JSON via custom Workday reports and EIB\nSetup Time: ~60\u201390 minutes\nOutcome: Scalable, intelligent talent architecture customization and career development enablement",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide Overview",
+      "Anchor": "guide-overview",
+      "SectionPath": [
+        "Guide Overview"
+      ],
+      "Text": "This guide outlines the technical steps to configure the secure data integration between Workday HCM and LinkedIn Learning Career Hub. Using Workday custom reports and secure SFTP transfers, this connection enables you to ingest job architecture data\u2014and optionally employee-level career data\u2014into LinkedIn Learning to power scalable, personalized career development experiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide Overview",
+      "Anchor": "guide-overview",
+      "SectionPath": [
+        "Guide Overview"
+      ],
+      "Text": "Designed for HR, IT, and system administrators, this guide ensures your talent architecture is seamlessly reflected across the employee experience and prepared for future skill-based personalization features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "LinkedIn Learning\u2019s Workday HCM integration allows your organization to align your talent data job with LinkedIn\u2019s unique and unparalleled wealth of skills knowledge. By syncing job families, titles, levels, descriptions, and (optionally) employee data via custom reports, you unlock personalized, AI-powered learning and career development opportunities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Whether you\u2019re looking to enhance an existing job architecture or build one from the ground up, this integration offers flexibility, scale, and continuous improvement through LinkedIn data insights.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Benefits",
+      "Anchor": "integration-benefits",
+      "SectionPath": [
+        "Integration Benefits"
+      ],
+      "Text": "Customize Career Development at Scale: Tailor LinkedIn Learning career development experiences using your org\u2019s architecture data to create personalized career journeys for every employee, based on your source of truth.\nAccelerate Architecture Creation: Quickly build and refine your talent architecture with AI-powered data suggestions for descriptions and skills from LinkedIn to streamline and enhance your talent management process.\nMaintain \u0026 Evolve Your Architecture with Insights: Leverage unique insights from LinkedIn to keep your job and skill architecture fresh over time and aligned with evolving market trends.\nFuture-Ready Employee Personalization (Optional): Uploading employee-level data now sets the stage for upcoming features like personalized career paths and skill-based content recommendations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Requirements",
+      "Anchor": "linkedin-learning-requirements",
+      "SectionPath": [
+        "System Requirements",
+        "LinkedIn Learning Requirements"
+      ],
+      "Text": "Access to LinkedIn Learning Hub account\nAdmin permission to configure integrations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workday HCM Requirements",
+      "Anchor": "workday-hcm-requirements",
+      "SectionPath": [
+        "System Requirements",
+        "Workday HCM Requirements"
+      ],
+      "Text": "Workday access with:\n\nPermission to create/export custom reports\nEnterprise Interface Builder (EIB) access\n\n\nNote: If \u201CCreate Only Temporary Reports\u201D is enabled, remember that access may expire after one week",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SFTP Server Setup",
+      "Anchor": "sftp-server-setup",
+      "SectionPath": [
+        "System Requirements",
+        "SFTP Server Setup"
+      ],
+      "Text": "Secure SFTP server for transferring data between Workday and LinkedIn Learning.\nSSH Key for authentication (steps detailed in this guide)\nValid SFTP credentials (username, host, etc.) from LinkedIn Learning (details in guide)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Workflow Overview",
+      "Anchor": "integration-workflow-overview",
+      "SectionPath": [
+        "Integration Workflow Overview"
+      ],
+      "Text": "Create Custom Reports in Workday\n\nOne report for job architecture data\n(Optional) A second report for employee-level data\n\n\nGenerate an SSH Key in Workday\nSet Up SFTP in LinkedIn Learning\n\nCreate an SFTP user and upload the Workday public SSH key\n\n\nConfigure LinkedIn Learning Integration\n\nCollect SFTP Credentials from LinkedIn Learning\n\n\nCreate an EIB in Workday\n\nUse your custom reports as the data source\nSet the output to JSON\nDeliver via SFTP\nSchedule regular syncs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Creating Custom Reports in Workday",
+      "Anchor": "step-1-creating-custom-reports-in-workday",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday"
+      ],
+      "Text": "To send data to LinkedIn Learning, you need to create custom reports in Workday. Get started by creating two custom reports in Workday: one for job architecture data, and another for employee-level data (optional).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Creating Custom Reports in Workday",
+      "Anchor": "step-1-creating-custom-reports-in-workday",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday"
+      ],
+      "Text": "Search for \u201CCreate Custom Report\u201D in Workday\nFill in the Report Details:\n\nReport Name: Customize name (ex. Job_Architecture_Report)\nReport Type: Select \u0022Advanced\u0022\nEnable As Web Service: Check to enable report access via SFTP.\nDo not select Optimized for Performance (this will restrict some fields selection)\n\n\nSelect the Data Source\n\nFor Job Architecture Report this is typically \u201CAll Active Job Profiles,\u201D that contains your Job Titles, Job Families, Job Levels, Job Descriptions, Job Skills,\nFor Employee Data Report this is typically \u2018Workers for HCM Reporting\u2019 and Data Source filter as \u2018All Active Workers (All Types)\u2019, containing: Employee Job Title, Manager, Team, Career Goals",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Creating Custom Reports in Workday",
+      "Anchor": "step-1-creating-custom-reports-in-workday",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday"
+      ],
+      "Text": "Format \u0026 Map Fields:\n\nEnsure fields are in text format. If no text type is available for the corresponding fields below, please use the available type and add the field.\n\nAdd \u0026 Map the fields using the below charts to guide you on what fields to add and how you should modify values in \u2018Column Heading Override XML Alias.\u2019 (Job Data; Employee Data)\n\nAdd Group Column Headings: For employee data, since you\u2019re adding fields from other business objects as well. you need to add those business objects in the below section \u0022Group Column Headings\u0022 and map Column heading name according to this table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Creating Custom Reports in Workday",
+      "Anchor": "step-1-creating-custom-reports-in-workday",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday"
+      ],
+      "Text": "Image: JobProfiles Field Names and Column Heading Names",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Creating Custom Reports in Workday",
+      "Anchor": "step-1-creating-custom-reports-in-workday",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday"
+      ],
+      "Text": "Pro Tip: Field names in Workday need to match LinkedIn Learning\u0027s formatting guidelines in order to flow through. Below are instructions on how to do this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Talent Architecture Data Mapping Guide",
+      "Anchor": "organizational-talent-architecture-data-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Organizational Talent Architecture Data Mapping Guide"
+      ],
+      "Text": "Please reference this chart for how LinkedIn requires you to map your data fields when creating custom reports for Talent Architecture, role and skill data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Organizational Talent Architecture Data Mapping Guide",
+      "Anchor": "organizational-talent-architecture-data-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Organizational Talent Architecture Data Mapping Guide"
+      ],
+      "Text": "",
+      "Headers": [
+        "Business Object",
+        "Field (* indicates required field to set up the integration)",
+        "Column Heading Override XML Alias"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Job Profile*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobId*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Profile Name*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobName*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Default Job Title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobTitle",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Profile Summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobSummary",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobDescription",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Skills on Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobSkills",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobLevel",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Management Level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "managementLevel",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Families on Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobFamilies",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last Updated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastUpdated",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Talent Architecture Data Mapping Guide",
+      "Anchor": "organizational-talent-architecture-data-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Organizational Talent Architecture Data Mapping Guide"
+      ],
+      "Text": "Note: Employee-level data upload is optional. We won\u2019t leverage this data until later in the year, but uploading it now will help streamline future integrations, so manual updates to the integration won\u2019t be needed down the line.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Employee-Level Data Mapping Guide",
+      "Anchor": "employee-level-data-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Employee-Level Data Mapping Guide"
+      ],
+      "Text": "Please reference this chart for how LinkedIn requires you to map your data fields when creating custom reports for Employee data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Employee-Level Data Mapping Guide",
+      "Anchor": "employee-level-data-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Employee-Level Data Mapping Guide"
+      ],
+      "Text": "",
+      "Headers": [
+        "Business Object",
+        "Field (* indicates required field to set up the integration)",
+        "Column Heading Override XML Alias"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Worker*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employee ID*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerId*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Worker*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email - Primary Work*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerEmail*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supervisory Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "supervisoryOrg",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last Functionally Updated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastUpdated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobInterestId",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Profile Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobInterestName",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Career Preferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "careerPreference",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Skill Interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "skillInterests",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Career Interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "careerInterests",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Skill for Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Created Moment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "skillAddedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Skill for Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Skill Item",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "skillItem",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Skill for Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Skill Level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "skillLevel",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Skill for Worker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard Workday ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "skillId",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Preferred Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Preferred Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manager - Level 01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employee ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "managerId",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manager - Level 01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email - Primary Work",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "managerEmail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Goal Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "goalName",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Goal Description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "goalDescription",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Created Moment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "goalCreatedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Goal Archived",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "goalArchived",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Due Date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "goalDueDate",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Completed On",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "goalCompletedOn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Direct Reports (Employees)*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employee ID*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "directReportId*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Direct Reports (Employees)*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email - Primary Work*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "directReportEmail*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerJobId*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Profile Name*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerJobName*",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Group Column Heading Mapping Guide",
+      "Anchor": "group-column-heading-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Group Column Heading Mapping Guide"
+      ],
+      "Text": "",
+      "Headers": [
+        "Business Object (* is required)",
+        "Group Column Heading XML Alias"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Direct Reports (Employees)*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerDirectReports*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Goals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerGoals",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manager - Level 01*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerManagers*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Preferred Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerPreferredNames",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Skill for Worker*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerSkills*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Profile*",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workerJobProfiles*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "careerJobInterests",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Column Heading Mapping Guide",
+      "Anchor": "group-column-heading-mapping-guide",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 1: Creating Custom Reports in Workday",
+        "Group Column Heading Mapping Guide"
+      ],
+      "Text": "Save the Report: Click OK to save the custom report.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate SSH Key for Secure Transfer in Workday",
+      "Anchor": "step-2-generate-ssh-key-for-secure-transfer-in-workday",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 2: Generate SSH Key for Secure Transfer in Workday"
+      ],
+      "Text": "Search for \u0027Create x509 Private Key Pair\u0027 in Workday\nEnter Key Details:\n\nName: We recommend you use \u2018LinkedIn_Learning_SFTP_Key\u2019\nDescription of your choice or the key pair\nHit OK\n\n\nOn the next screen, copy the Public Key (RSA-SSH Formatted) by copying the information that lives between (---- BEGIN SSH2 PUBLIC KEY ---- and ---- END SSH2 PUBLIC KEY ----) and save someplace to enter into LinkedIn Learning settings later on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Anchor": "step-3-set-up-sftp-user-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 3: Set up SFTP User in LinkedIn Learning"
+      ],
+      "Text": "No matter how many reports you\u2019re creating in Workday, you only need to complete SFTP user set-up once in LinkedIn Learning, and it can be applied to all!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Anchor": "step-3-set-up-sftp-user-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 3: Set up SFTP User in LinkedIn Learning"
+      ],
+      "Text": "Navigate to Admin Settings: Authenticate \u2192 Automate User Management\nNavigate to Create SFTP Users \u2192 Add User\nCreate an SFTP username and store somewhere safe to use later in Workday\nCreate a public SSH Key name of your choosing\nFormat the public SSH key you just got from Workday in Step 2, making sure to:\n\nCopy the content\nRemove the following parts: ----- BEGIN SSH2 PUBLIC KEY --- and ---- END SSH2 PUBLIC KEY ----\nRemove all spaces and linebreaks\nAdd a prefix ssh-rsa \u003Cvalue copied\u003E\n\n\nPaste the newly formatted public key into LinkedIn Learning\nClick Create User",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Anchor": "step-3-set-up-sftp-user-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 3: Set up SFTP User in LinkedIn Learning"
+      ],
+      "Text": "Pro Tip: Format the key accordingly BEFORE you paste into LinkedIn Learning. Attempts to format in the platform after pasting can lead to potential errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Anchor": "step-3-set-up-sftp-user-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 3: Set up SFTP User in LinkedIn Learning"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Anchor": "step-3-set-up-sftp-user-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 3: Set up SFTP User in LinkedIn Learning"
+      ],
+      "Text": "---- BEGIN SSH2 PUBLIC KEY ---  \nWqsjdHwd      123445 \n8728637213 \n---- END SSH2 PUBLIC KEY \\---",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Set up SFTP User in LinkedIn Learning",
+      "Anchor": "step-3-set-up-sftp-user-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 3: Set up SFTP User in LinkedIn Learning"
+      ],
+      "Text": "should be entered in the setting as ssh-rsa WqsjdHwd1234458728637213",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Configure LinkedIn Learning Integration",
+      "Anchor": "step-4-configure-linkedin-learning-integration",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 4: Configure LinkedIn Learning Integration"
+      ],
+      "Text": "No matter how many reports you\u2019re creating in Workday, you only need to configure the integration in LinkedIn Learning once time!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Configure LinkedIn Learning Integration",
+      "Anchor": "step-4-configure-linkedin-learning-integration",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 4: Configure LinkedIn Learning Integration"
+      ],
+      "Text": "In Admin Settings: Integrate \u2192 Configure HCM Setting \u2192 Workday HCM\nClick Set up integration\nEnsure that whatever metric - ID or Email - that is selected for Employee Unique Identifier matches the format for which you have employees identified within your Workday source of truth.\nRetrieve the following details from LiL to establish the connection from Workday and save someplace safe:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Configure LinkedIn Learning Integration",
+      "Anchor": "step-4-configure-linkedin-learning-integration",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 4: Configure LinkedIn Learning Integration"
+      ],
+      "Text": "SFTP Address\nSFTP Directory",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "You\u2019ll need to create a separate EIB connection per each custom report you set up.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Navigate to Workday and search for \u2018Create EIB\u2019 (Enterprise Interface Builder).\nEnter EIB Details:\n\nName: Choose unique names per each report you need a connection for\n\nJob Arch Data, we recommend you use Job_Data_Transfer\nEmployee Data, we recommend you use Employee_Data_Transfer\n\n\nOutbound Direction: Select Outbound to send data to LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Get Data:\n\nChoose the custom report you made in Step 1 (eg. Job_Architecture_Report or Employee_Career_Data_Report)\nOutput format: Set to JSON",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Set Up Transformation (Optional, as needed)\n\nSelect None if no transformation is required.\nAdd any necessary transformations for formatting or adjustments as needed\n\n\nDelivery Settings:\n\nDelivery Method: Choose SFTP.\nEnter SFTP Address and Directory you got from LinkedIn In Step 4\nAuthentication Method: Select SSH Authentication\nUser ID for access: Add the SFTP username created in Step 3\nFile Name:\n\nIf you\u2019re sending job arch data, set the file name to jobProfiles.json\nIf you\u2019re sending employee data, set the file name to workers.json",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "SSH Authentication Key Pair: Scroll through the list of key pairs and select the key pair name that you generated in Step 2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Review \u0026 Submit: Finalize the EIB\n\nReview your settings, click Done, then OK.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Test the Integration Set-Up: Before you schedule data syncs to LinkedIn Learning, you test that the integration connection has been successfully set-up in Workday.\n\nAfter creating the EIB, click on the three dots",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Navigate to Integration \u2192 Test Transport",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "A new pop up window appears with EIB SFTP details, click on Ok",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Select Connect and click on ok",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "If the connection was successful, you should see the following screenshot",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Launch / Schedule the Integration: Now that you\u2019ve confirmed the connection was set-up correctly, you can launch the integration and choose how often data should sync to LinkedIn learning. LinkedIn recommends setting this to sync to weekly.\n\nOnce again, click on the 3 dots at the top of the page to initiate the scheduling module",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Navigate to Integration on the left side menu and select Launch / Schedule",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Ensure the right integration and daily run frequency are selected. LinkedIn recommends setting this to sync to weekly.\n\nHit OK to launch the integration!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Create EIB for Outbound Data Transfer per Custom Report",
+      "Anchor": "step-5-create-eib-for-outbound-data-transfer-per-custom-report",
+      "SectionPath": [
+        "Integration Process Overview: Step-by-Step Instructions",
+        "Step 5: Create EIB for Outbound Data Transfer per Custom Report"
+      ],
+      "Text": "Pro Tip: If you want to quickly verify the integration is working as expected, run it once and then go back and schedule following syncs to be weekly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Flow and Mapping",
+      "Anchor": "data-flow-and-mapping",
+      "SectionPath": [
+        "Data Flow and Mapping"
+      ],
+      "Text": "Data Flow: Data will flow from Workday HCM to LinkedIn Learning via SFTP, including:\n\nOrganizational Data: Job titles, skills descriptions, families, and levels\nEmployee-Level Data (Optional for Now): Employee skills, career goals, team structure, and development preferences, to be leveraged later for more personalized experiences.\n\n\nMapping Organizational Role Data\n\nEnsure correct mapping of job role data for customized employee career pathing and development experiences, organizational insights.\n\n\nMapping Employee-Level Data\n\nWhen employee-level data is uploaded, map key details (e.g., career preferences, skill interests) to LinkedIn Learning for future personalization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Troubleshooting"
+      ],
+      "Text": "Failed SFTP Connection: Verify credentials and firewall settings.\nData Format Issues: Ensure report output is in the correct format and follows LinkedIn Learning\u2019s data structure.\nTesting the SFTP Credentials configured: Details here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security and Data Privacy",
+      "Anchor": "security-and-data-privacy",
+      "SectionPath": [
+        "Security and Data Privacy"
+      ],
+      "Text": "Data Encryption: All data transferred via SFTP is encrypted in transit using standard encryption protocols (e.g., AES-256) to ensure data security.\nCompliance: The integration complies with relevant data protection regulations (e.g., GDPR, CCPA) to ensure the privacy of employee and organizational data. LinkedIn Learning and Workday maintain industry-standard data security practices to protect user information",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Resources",
+      "Anchor": "support-and-resources",
+      "SectionPath": [
+        "Support and Resources"
+      ],
+      "Text": "Getting Help",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Resources",
+      "Anchor": "support-and-resources",
+      "SectionPath": [
+        "Support and Resources"
+      ],
+      "Text": "LinkedIn Learning Support: Reach out to LinkedIn Learning\u2019s support team for any integration-related issues.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Resources",
+      "Anchor": "support-and-resources",
+      "SectionPath": [
+        "Support and Resources"
+      ],
+      "Text": "Additional Documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Resources",
+      "Anchor": "support-and-resources",
+      "SectionPath": [
+        "Support and Resources"
+      ],
+      "Text": "LinkedIn Learning Help Center Article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "What data will be sent from Workday to LinkedIn Learning?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Job Architecture Data: Includes job families, job titles, job levels, job descriptions, and skills\nEmployee Career Data: Includes employee title, manager, team, skills, and career goals",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "How frequently will data be synced between Workday and LinkedIn Learning?\nThe data sync can be scheduled based on your requirements (e.g., daily, weekly). It is recommended to sync the data on a weekly basis to ensure that LinkedIn Learning has the latest job architecture and employee career data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "What happens if the data transfer fails\nIf the data transfer fails, check the EIB logs for error messages and troubleshooting suggestions. Common issues include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Incorrect field mappings or missing data.\nData formatting issues (e.g., incorrect file structure).\nConnectivity problems with the SFTP server.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "After identifying the issue, resolve it and re-run the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Can I modify the custom reports after they are created?\nYes, custom reports can be edited at any time by searching for the report and selecting \u0027Edit Custom Report\u0027 under Actions. Just make sure the Enable as Web Service option is still checked to allow the report to be used for SFTP transfers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "How do I secure the SSH keys used for the SFTP transfer?\nThe public key should only be shared with LinkedIn Learning for the connection setup. Regularly rotate the SSH keys for added security and compliance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Do I need special permissions to create custom reports and EIBs in Workday?\nYes, you will need the appropriate Workday permissions to create custom reports and Enterprise Interface Builders (EIBs). Ensure you have the System Integrator or Administrator role assigned in Workday to perform these tasks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "What if the data formats from Workday don\u2019t match LinkedIn Learning\u2019s requirements?\nIf there is a mismatch, you can modify the field mappings in the custom report creation process (under Column Heading Override). Ensure the field names in Workday are mapped correctly to LinkedIn Learning\u2019s expected field names.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "How do I test the integration before going live?\nTo test the integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Run the custom reports in Workday manually to check if the data aligns with expectations.\nPerform a dry-run of the EIB integration to ensure that the data flows correctly to LinkedIn Learning via SFTP.\nAfter the first successful test, verify the data sync by reviewing the transfer logs and ensuring accuracy on LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Can I customize the fields being sent to LinkedIn Learning?\nYes, you can choose the fields you want to send by adding/removing columns when creating the custom reports in Workday. You can also use filters to send a specific subset of the data, such as employees in certain job families or those with specific skills.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "How will LinkedIn Learning use the data received from Workday?\nThe data received will be used to create personalized learning paths for employees, tailored to their job role and career goals. Job architecture data helps LinkedIn Learning offer recommendations for relevant skills and learning content, while career data supports the creation of customized career development plans. Your ingested data will NOT be used to power other customers\u0027 LinkedIn Learning instances - only your own.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "What happens if I need to update or add new data fields in Workday?\nIf new data fields need to be added (e.g., new job families or skills), you\u2019ll need to update the custom reports in Workday. After making the necessary updates, reconfigure the EIB to ensure that the new data is sent correctly via SFTP to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Can I add more than one file to the SFTP transfer?\nYes, you can create multiple EIB integrations for different reports. Each report can be sent as a separate file. Ensure the correct file name and report mapping are configured for each EIB.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "How do I manage access and permissions for the SFTP connection?\nEnsure that only authorized personnel have access to the SSH private key and the SFTP credentials. Regularly review and manage access permissions in Workday to prevent unauthorized access to sensitive data.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

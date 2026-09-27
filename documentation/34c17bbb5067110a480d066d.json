@@ -1,0 +1,443 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+  "Title": "Admin Content",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Admin Content",
+      "Anchor": "admin-content",
+      "SectionPath": [],
+      "Text": "The Admin Content API returns media gallery asset data for the organization (i.e., Company, School, and Showcase). MediaAssets contain media information such as images, videos, and more. This API doesn\u2019t share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin Content",
+      "Anchor": "admin-content",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin Content",
+      "Anchor": "admin-content",
+      "SectionPath": [],
+      "Text": "Find all media assets for a given organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s media assets (e.g. images, videos). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for a media asset of an organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetUrns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalMediaAssetUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of DigitalMediaAssetUrns representing images, videos, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization URNs",
+      "Anchor": "organization-urns",
+      "SectionPath": [
+        "Definitions",
+        "Organization URNs"
+      ],
+      "Text": "Organization URNs are in the format urn:li:organization:{organization id} and represent a LinkedIn Company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_URN} is URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaAdminContentMediaGallery?q=organization\u0026organization=encoded {ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaAdminContentMediaGallery?q=organization\u0026organization=urn%3Ali%3Aorganization%3A1\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022assetUrns\u0022: [\n        \u0022urn:li:digitalmediaAsset:D5509AQEYJDfUTb_sqQ\u0022,\n        \u0022urn:li:digitalmediaAsset:D5509AQElFDqlTScPSA\u0022,\n        \u0022urn:li:digitalmediaAsset:D5509AQE5gGURIF8wCQ\u0022,\n        \u0022urn:li:digitalmediaAsset:D5509AQEgaw9W4lDkFA\u0022,\n        \u0022urn:li:digitalmediaAsset:D5509AQGt_l8I-PmAtA\u0022,\n        \u0022urn:li:digitalmediaAsset:D5509AQEvkPHZ9u2i6A\u0022,\n        \u0022urn:li:digitalmediaAsset:D5509AQHP7yaSSlC7CQ\u0022\n      ]\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Media Assets",
+        "Organization",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN to find media assets for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A1",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

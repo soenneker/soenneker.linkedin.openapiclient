@@ -1,0 +1,803 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+  "Title": "Reactions API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Reactions API",
+      "Anchor": "reactions-api",
+      "SectionPath": [],
+      "Text": "DMA Reaction API returns reactions on a post or a comment. DMA reaction API only supports BATCH_GET.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reaction example",
+      "Anchor": "reaction-example",
+      "SectionPath": [
+        "Reaction example"
+      ],
+      "Text": "Refer to the image below for a reaction example on LinkedIn Feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reaction example",
+      "Anchor": "reaction-example",
+      "SectionPath": [
+        "Reaction example"
+      ],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reaction example",
+      "Anchor": "reaction-example",
+      "SectionPath": [
+        "Reaction example"
+      ],
+      "Text": "BATCH_GET - List of DMA reaction for the given set of ids (LikeUrn or ReactionUrn)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s reactions and reactions made under your organization\u0027s posts or comments. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATOR, CONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR, CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "An organizational admin can access a reaction through this API if one of the following is true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "That organization/organizationalPage created the reaction.\nThat organization/organizationalPage created the post or comment that the requested reaction is under",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "The API will throw a 403 if the viewer does not meet one of those requirements or if the reaction\u0027s creator does not consent to having their data shared from this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reaction URNs",
+      "Anchor": "reaction-urns",
+      "SectionPath": [
+        "Reaction URNs"
+      ],
+      "Text": "A reaction URN is a composite URN constructed using the reactor URN (personUrn, organizationUrn or organizationalPageUrn) of the reaction and the Urn of the entity the reaction is on. For example, a reaction by urn:li:person:{PERSON_ID} on the entity Urn urn:li:activity:{ACTIVITY_ID} would look like - urn:li:reaction:(urn:li:person:{PERSON_ID},urn:li:activity:{ACTIVITY_ID}).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Like URNs",
+      "Anchor": "like-urns",
+      "SectionPath": [
+        "Like URNs"
+      ],
+      "Text": "A Like URN is essentially the same as a reaction URN except that the URN entity type is like instead of reaction. For example, a like by urn:li:person:{PERSON_ID} on the entity URN urn:li:activity:{ACTIVITY_ID} would look like - urn:li:like:(urn:li:person:{PERSON_ID},urn:li:activity:{ACTIVITY_ID}).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discovering Reaction URNs",
+      "Anchor": "discovering-reaction-urns",
+      "SectionPath": [
+        "Discovering Reaction URNs"
+      ],
+      "Text": "To discover reaction URNs on a post or comment, use the reactionsOnEntity finder from the DMA Feed Content API. This finder returns a collection of reaction URNs that contain the actor URN (person or organization) embedded within them, allowing you to identify who reacted to a post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discovering Reaction URNs",
+      "Anchor": "discovering-reaction-urns",
+      "SectionPath": [
+        "Discovering Reaction URNs"
+      ],
+      "Text": "Additionally, you can use the following APIs to retrieve actor information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discovering Reaction URNs",
+      "Anchor": "discovering-reaction-urns",
+      "SectionPath": [
+        "Discovering Reaction URNs"
+      ],
+      "Text": "DMA Posts API - Returns post information including the actor URN (person or organization) in the created field\nDMA Comments API - Returns comment information including the actor URN (person or organization) in the created field",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discovering Reaction URNs",
+      "Anchor": "discovering-reaction-urns",
+      "SectionPath": [
+        "Discovering Reaction URNs"
+      ],
+      "Text": "These APIs help identify the person ID or organization ID associated with posts and comments, similar to how reactionsOnEntity provides actor information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=urn%3Ali%3Aactivity%3A{ACTIVITY_ID}\u0026maxPaginationCount=10\u0026q=reactionsOnEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=urn%3Ali%3Aactivity%3A{ACTIVITY_ID}\u0026maxPaginationCount=10\u0026q=reactionsOnEntity\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022total\u0022: 1\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:reaction:(urn:li:organization:{ORGANIZATION_ID},urn:li:activity:{ACTIVITY_ID})\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Response"
+      ],
+      "Text": "The reaction URNs contain the actor URN (person or organization) that created the reaction.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Discovering Reaction URNs",
+        "Sample Response"
+      ],
+      "Text": "The reactionsOnEntity finder returns only reactions created by your organization. You can use either urn:li:activity, urn:li:share, urn:li:ugcPost, or urn:li:comment as the entity parameter - all will return the same results for the same content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Multiple Reactions",
+      "Anchor": "batch-get-multiple-reactions",
+      "SectionPath": [
+        "Batch Get Multiple Reactions"
+      ],
+      "Text": "To retrieve multiple reactions in a single request, provide a comma-separated list of reaction URNs in the ids parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Multiple Reactions",
+      "Anchor": "batch-get-multiple-reactions",
+      "SectionPath": [
+        "Batch Get Multiple Reactions"
+      ],
+      "Text": "ids=List(REACTION_URN_1,REACTION_URN_2,REACTION_URN_3)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Person/Organization URNs",
+      "Anchor": "obtaining-personorganization-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Person/Organization URNs"
+      ],
+      "Text": "Organization URN: Navigate to your organization\u0027s LinkedIn page and check the URL. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Obtaining Person/Organization URNs",
+      "Anchor": "obtaining-personorganization-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Person/Organization URNs"
+      ],
+      "Text": "https://www.linkedin.com/company/{ORGANIZATION_ID}/admin/dashboard/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Person/Organization URNs",
+      "Anchor": "obtaining-personorganization-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Person/Organization URNs"
+      ],
+      "Text": "The organization ID {ORGANIZATION_ID} can be used to construct the URN: urn:li:organization:{ORGANIZATION_ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Person/Organization URNs",
+      "Anchor": "obtaining-personorganization-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Person/Organization URNs"
+      ],
+      "Text": "Person URN: To discover person URNs, use the reactionsOnEntity finder which returns reaction URNs containing the actor URN (person or organization). Note that person reactions require explicit user consent to be retrieved via the DMA Reactions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Activity URNs",
+      "Anchor": "obtaining-activity-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Activity URNs"
+      ],
+      "Text": "An activity URN can be obtained directly from the LinkedIn UI. When viewing a post, you can copy the post link. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Obtaining Activity URNs",
+      "Anchor": "obtaining-activity-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Activity URNs"
+      ],
+      "Text": "https://www.linkedin.com/feed/update/urn:li:activity:{ACTIVITY_ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Activity URNs",
+      "Anchor": "obtaining-activity-urns",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Obtaining Activity URNs"
+      ],
+      "Text": "From this URL, you can directly extract the activity URN: urn:li:activity:{ACTIVITY_ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reactionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of reaction. Possible values are: LIKE: \u0022Like\u0022 in the UIPRAISE: \u0022Celebrate\u0022 in the UIMAYBE: DEPRECATED. Used to be \u0022Curious\u0022 in the UIEMPATHY: \u0022Love\u0022 in the UIINTEREST: \u0022Insightful\u0022 in the UIAPPRECIATION: \u0022Support\u0022 in the UIENTERTAINMENT: \u0022Funny\u0022 in the UI",
+            "Links": [],
+            "Values": [
+              "LIKE: \u0022Like\u0022 in the UI",
+              "PRAISE: \u0022Celebrate\u0022 in the UI",
+              "MAYBE: DEPRECATED. Used to be \u0022Curious\u0022 in the UI",
+              "EMPATHY: \u0022Love\u0022 in the UI",
+              "INTEREST: \u0022Insightful\u0022 in the UI",
+              "APPRECIATION: \u0022Support\u0022 in the UI",
+              "ENTERTAINMENT: \u0022Funny\u0022 in the UI"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity (ugcPost, share, activity or comment URN) on which the reaction is on.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not settable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not settable",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp",
+      "Anchor": "auditstamp",
+      "SectionPath": [
+        "How to Obtain Required URNs",
+        "AuditStamp"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that authorized the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor. Must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When the event/action happened in epoch time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaReactions?ids=List(urn%3Ali%3Areaction%3A%28urn%3Ali%3Aperson%3A{PERSON_ID}%2Curn%3Ali%3Aactivity%3A{ACTIVITY_ID}%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaReactions?ids=List(urn%3Ali%3Areaction%3A%28urn%3Ali%3Aperson%3A{PERSON_ID}%2Curn%3Ali%3Aactivity%3A{ACTIVITY_ID}%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {\n        \u0022urn:li:reaction:(urn:li:person:{PERSON_ID},urn:li:activity:{ACTIVITY_ID})\u0022: 200\n    },\n    \u0022results\u0022: {\n        \u0022urn:li:reaction:(urn:li:person:{PERSON_ID},urn:li:activity:{ACTIVITY_ID})\u0022: {\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:{PERSON_ID}\u0022,\n                \u0022time\u0022: 1689353471708\n            },\n            \u0022reactionType\u0022: \u0022LIKE\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:{PERSON_ID}\u0022,\n                \u0022time\u0022: 1689353471708\n            },\n            \u0022entity\u0022: \u0022urn:li:activity:{ACTIVITY_ID}\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URNs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of ReactionUrns to fetch the reactions. Only accepts reactionUrn or likeUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#reaction-urns",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction?view=li-dma-data-portability-2026-08\u0026tabs=http#like-urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3Areaction%3A%28urn%3Ali%3Aperson%3A{PERSON_ID}%2Curn%3Ali%3Aactivity%3A{ACTIVITY_ID}%29)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide a valid OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not authorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The viewer is not an admin of the organizational entity that created the reactions or top-level comments/posts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

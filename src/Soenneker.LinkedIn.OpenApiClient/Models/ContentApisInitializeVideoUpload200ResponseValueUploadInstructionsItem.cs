@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The firstByte property</summary>
-        public int? FirstByte { get; set; }
+        public long? FirstByte { get; set; }
         /// <summary>The lastByte property</summary>
-        public int? LastByte { get; set; }
+        public long? LastByte { get; set; }
         /// <summary>The uploadUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +51,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "firstByte", n => { FirstByte = n.GetIntValue(); } },
-                { "lastByte", n => { LastByte = n.GetIntValue(); } },
+                { "firstByte", n => { FirstByte = n.GetLongValue(); } },
+                { "lastByte", n => { LastByte = n.GetLongValue(); } },
                 { "uploadUrl", n => { UploadUrl = n.GetStringValue(); } },
             };
         }
@@ -63,8 +63,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("firstByte", FirstByte);
-            writer.WriteIntValue("lastByte", LastByte);
+            writer.WriteLongValue("firstByte", FirstByte);
+            writer.WriteLongValue("lastByte", LastByte);
             writer.WriteStringValue("uploadUrl", UploadUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

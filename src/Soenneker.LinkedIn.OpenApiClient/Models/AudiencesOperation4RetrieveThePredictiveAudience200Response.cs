@@ -15,13 +15,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created property</summary>
-        public int? Created { get; set; }
+        public long? Created { get; set; }
         /// <summary>The desiredAudienceCount property</summary>
-        public int? DesiredAudienceCount { get; set; }
+        public long? DesiredAudienceCount { get; set; }
         /// <summary>The dmpSegmentId property</summary>
-        public int? DmpSegmentId { get; set; }
+        public long? DmpSegmentId { get; set; }
         /// <summary>The lastModified property</summary>
-        public int? LastModified { get; set; }
+        public long? LastModified { get; set; }
         /// <summary>The seeds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,10 +71,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetIntValue(); } },
-                { "desiredAudienceCount", n => { DesiredAudienceCount = n.GetIntValue(); } },
-                { "dmpSegmentId", n => { DmpSegmentId = n.GetIntValue(); } },
-                { "lastModified", n => { LastModified = n.GetIntValue(); } },
+                { "created", n => { Created = n.GetLongValue(); } },
+                { "desiredAudienceCount", n => { DesiredAudienceCount = n.GetLongValue(); } },
+                { "dmpSegmentId", n => { DmpSegmentId = n.GetLongValue(); } },
+                { "lastModified", n => { LastModified = n.GetLongValue(); } },
                 { "seeds", n => { Seeds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "targetingFilter", n => { TargetingFilter = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter.CreateFromDiscriminatorValue); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
@@ -87,10 +87,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("created", Created);
-            writer.WriteIntValue("desiredAudienceCount", DesiredAudienceCount);
-            writer.WriteIntValue("dmpSegmentId", DmpSegmentId);
-            writer.WriteIntValue("lastModified", LastModified);
+            writer.WriteLongValue("created", Created);
+            writer.WriteLongValue("desiredAudienceCount", DesiredAudienceCount);
+            writer.WriteLongValue("dmpSegmentId", DmpSegmentId);
+            writer.WriteLongValue("lastModified", LastModified);
             writer.WriteCollectionOfPrimitiveValues<string>("seeds", Seeds);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4RetrieveThePredictiveAudience200ResponseTargetingFilter>("targetingFilter", TargetingFilter);
             writer.WriteStringValue("versionTag", VersionTag);

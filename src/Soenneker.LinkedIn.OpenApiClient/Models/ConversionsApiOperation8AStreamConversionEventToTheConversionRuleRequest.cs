@@ -17,13 +17,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The conversion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Conversion { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversion? Conversion { get; set; }
 #nullable restore
 #else
-        public string Conversion { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversion Conversion { get; set; }
 #endif
         /// <summary>The conversionHappenedAt property</summary>
-        public int? ConversionHappenedAt { get; set; }
+        public long? ConversionHappenedAt { get; set; }
         /// <summary>The conversionValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,8 +81,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversion", n => { Conversion = n.GetStringValue(); } },
-                { "conversionHappenedAt", n => { ConversionHappenedAt = n.GetIntValue(); } },
+                { "conversion", n => { Conversion = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversion>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversion.CreateFromDiscriminatorValue); } },
+                { "conversionHappenedAt", n => { ConversionHappenedAt = n.GetLongValue(); } },
                 { "conversionValue", n => { ConversionValue = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversionValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversionValue.CreateFromDiscriminatorValue); } },
                 { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
@@ -96,8 +96,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("conversion", Conversion);
-            writer.WriteIntValue("conversionHappenedAt", ConversionHappenedAt);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversion>("conversion", Conversion);
+            writer.WriteLongValue("conversionHappenedAt", ConversionHappenedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestConversionValue>("conversionValue", ConversionValue);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItem>("elements", Elements);
             writer.WriteStringValue("eventId", EventId);

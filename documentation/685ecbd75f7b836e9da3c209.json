@@ -1,0 +1,112 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-development-tools",
+  "Title": "Talent CRM Connect - Development Tools",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect - Development Tools",
+      "Anchor": "talent-crm-connect---development-tools",
+      "SectionPath": [],
+      "Text": "We provide Talent CRM Connect development tools to help expedite your development process. You will be provided access to these tools during the partner kick-off, but if you ever need to request access separately, please do so through the partner support form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect - Development Tools",
+      "Anchor": "talent-crm-connect---development-tools",
+      "SectionPath": [],
+      "Text": "We provide below resources:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "The contains all the APIs required for Talent CRM Connect integration. Development teams can use the Postman collection for reference while developing their code. It is fully functional and covers all the APIs so that it can be used as a playground to understand them in detail and try them out before starting any development activities. The Postman Collection can not be discovered publicly so access must be provided by a member of LinkedIn or the admin granted to your organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Please note that Postman is an independent entity and is not affiliated with LinkedIn. LinkedIn is providing the following resources to support your use of the Postman services but ultimately, any use of third party services, such as the Postman Services, is at your own discretion and risk. \nLinkedIn does not endorse or vet the Postman services and is not responsible for any damage or loss of data resulting from your use of third party services. Nothing herein shall restrict LinkedIn\u0027s ability to enforce all of its rights under its agreements with you.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "The Talent CRM Connect integration involves significant development and testing efforts. To help Project Managers and Developers with the planning, timelines and to help create checkpoints on different activities, we have created a Project Plan that can be used during development. The Project Plan template will be shared during project kickoff.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample HTML Applications for Talent CRM Connect",
+      "Anchor": "sample-html-applications-for-talent-crm-connect",
+      "SectionPath": [
+        "Sample HTML Applications for Talent CRM Connect"
+      ],
+      "Text": "We have created a sample application for your development reference. This sample application demonstrates how the customer onboarding plugin \u0026 profile plugin for Talent CRM Connect will function.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample HTML Applications for Talent CRM Connect",
+      "Anchor": "sample-html-applications-for-talent-crm-connect",
+      "SectionPath": [
+        "Sample HTML Applications for Talent CRM Connect"
+      ],
+      "Text": "This will be present in the sample-applications folder in the git repository repository.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample HTML Applications for Talent CRM Connect",
+      "Anchor": "sample-html-applications-for-talent-crm-connect",
+      "SectionPath": [
+        "Sample HTML Applications for Talent CRM Connect"
+      ],
+      "Text": "Please read the instructions mentioned in README.md file for instructions on how to use the Sample Applications. Current descriptions and links in the repo reference Recruiter System Connect. References to Recruiter System Connect can be ignored, and CRM Connect documentation should be used in lieu of Recruiter System Connect where necessary.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

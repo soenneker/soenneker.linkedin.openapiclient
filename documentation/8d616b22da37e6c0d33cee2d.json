@@ -1,0 +1,227 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+  "Title": "Compliance APIs Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance APIs Overview",
+      "Anchor": "compliance-apis-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn provides the following Compliance API Guides for all monitoring, archiving, and management of communications for enterprises in regulated industries. The APIs will help your social interactions remain effective while ensuring compliance with corporate governance policies and major regulations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user. To utilize all the new Compliance APIs, you will need the two following member permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "The use of these APIs is restricted to developers approved by LinkedIn. Reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permissions",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve activities for compliance monitoring and archiving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to manage and delete data for compliance.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "We recommend partners to request the r_compliance and w_compliance permissions on behalf of users to be able to use all the V2 APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Development",
+      "Anchor": "new-development",
+      "SectionPath": [
+        "New Development"
+      ],
+      "Text": "Ready to start development? Refer to the links below for guidance on building your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Development",
+      "Anchor": "new-development",
+      "SectionPath": [
+        "New Development"
+      ],
+      "Text": "Authentication\nAPI Concepts\nBreaking Change Policy\nBest Practices\nError Handling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "When onboarding a new member under compliance regulation, there are often questions about coverage of activities and more. To help ease the onboarding process, follow these steps as best practices to monitor, archive and manage your customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "To begin, you must use an access token to make an authenticated call on behalf of a user for all Compliance related APIs. Once the member has authorized, you should begin by getting a complete overview of the member\u0027s profile. To do so, please refer to the snapshot overview page .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "After you gather the current snapshot of the member\u0027s profile, you will follow the Compliance Events API to set the member up for monitoring. When the compliance authorization opt-in is complete, you will call the API periodically to check for any activities the member performed. Besides the Events API, you will also have access to request other APIs to capture new snapshots of the member\u0027s profile from time to time as well as inquiring more information or data that is not present in the Events API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Lastly, to remediate you will have access to each service to either update, delete, or both. The values in the Events API will make it easy to remediate while providing you the necessary archiving information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "For more information, please refer to each respective API guide by navigating to Integrations on the left navigation menu.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn API Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

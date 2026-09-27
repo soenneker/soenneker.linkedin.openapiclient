@@ -1,0 +1,403 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+  "Title": "Audience Counts",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Audience Counts",
+      "Anchor": "audience-counts",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Counts",
+      "Anchor": "audience-counts",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Counts",
+      "Anchor": "audience-counts",
+      "SectionPath": [],
+      "Text": "The Audience Count API provides the number of member accounts that fit your targeting criteria. As your campaign serves ads, the number of member accounts that you reach will be lower than the target audience size.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Counts",
+      "Anchor": "audience-counts",
+      "SectionPath": [],
+      "Text": "Since 300 is the minimum audience size in order to run a campaign, this endpoint is also useful to ensure your target audience is large enough.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Any application approved for the LinkedIn Marketing API Program can make these API calls using any 3-legged access token. No additional permissions are requested during the OAuth flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active audience count for the given targeting criteria. Active audience includes members that are more likely to visit LinkedIn sites.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "total",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total audience count for the given targeting criteria. To protect member privacy, this value is 0 when the audience size is less than 300. The total is a rounded approximation, and the degree of approximation depends upon the size of the audience segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "This finder gets the audience count for a given set of targeting criteria. For more information refer to Targeting Criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "The parameter q=targetingCriteriaV2 is always required as it represents the Finder targetingCriteriaV2 request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "Restli 2.0 requires URNs in query params to be URL encoded. For example, urn:li:skill:17 would become urn%3Ali%3Askill%3A17.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "Note that Postman or similar API tools may not support these types of calls. Testing with curl is recommended if you encounter a 400 error with message Invalid query parameters passed to request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "Calls to this endpoint are structured as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/audienceCounts?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded facet_URN_1}:List({encoded facet_URN_1_value_1}, {encoded facet_URN_1_value_2}))),(or:({encoded facet_URN_2}:List({encoded facet_URN_2_value_1},{encoded facet_URN_2_value_2}))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Count by CriteriaV2",
+      "Anchor": "find-count-by-criteriav2",
+      "SectionPath": [
+        "Find Count by CriteriaV2"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/audienceCounts?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded facet_URN_1}:List({encoded facet_URN_1_value_1}, {encoded facet_URN_1_value_2}))),(or:({encoded facet_URN_2}:List({encoded facet_URN_2_value_1},{encoded facet_URN_2_value_2}))))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be targetingCriteriaV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the targeting criteria that the member should match.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request"
+      ],
+      "Text": "The following shows a sample request forecasting the audience count for members living in North America and skill type \u201CEngineering\u201D.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request"
+      ],
+      "Text": "Any URNs included in the parameters must be URL encoded. An unencoded sample request has also been provided for readability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request",
+        "Unencoded Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request",
+        "Unencoded Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/audienceCounts?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn:li:adTargetingFacet:locations:List(urn:li:geo:102221843))),(or:(urn:li:adTargetingFacet:skills:List(urn:li:skill:17))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request",
+        "Unencoded Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/audienceCounts?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn:li:adTargetingFacet:locations:List(urn:li:geo:102221843))),(or:(urn:li:adTargetingFacet:skills:List(urn:li:skill:17))))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request",
+        "Encoded Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request",
+        "Encoded Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/audienceCounts?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A102221843))),(or:(urn%3Ali%3AadTargetingFacet%3Askills:List(urn%3Ali%3Askill%3A17))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Request",
+        "Encoded Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/audienceCounts?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A102221843))),(or:(urn%3Ali%3AadTargetingFacet%3Askills:List(urn%3Ali%3Askill%3A17))))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Response"
+      ],
+      "Text": "The API returns a list of AudienceCount results based on targetingCriteria parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Count by CriteriaV2",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022active\u0022: 0,\n            \u0022total\u0022: 25312600\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

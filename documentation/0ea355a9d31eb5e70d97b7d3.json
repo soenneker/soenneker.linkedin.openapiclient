@@ -1,0 +1,1796 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+  "Title": "Ads Targeting Migration Guide to Bing Geo",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ads Targeting Migration Guide to Bing Geo",
+      "Anchor": "ads-targeting-migration-guide-to-bing-geo",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ads Targeting Migration Guide to Bing Geo",
+      "Anchor": "ads-targeting-migration-guide-to-bing-geo",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ads Targeting Migration Guide to Bing Geo",
+      "Anchor": "ads-targeting-migration-guide-to-bing-geo",
+      "SectionPath": [],
+      "Text": "For targeting locations, LinkedIn is migrating to a new geo data source (i.e. Bing geo). If you\u0027re a partner using LinkedIn standardized geo locations to create campaigns for ads targeting, please continue reading this guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ads Targeting Migration Guide to Bing Geo",
+      "Anchor": "ads-targeting-migration-guide-to-bing-geo",
+      "SectionPath": [],
+      "Text": "The new geo data enables customers to target millions of new geo locations, including counties and cities, providing a more comprehensive and accurate geo targeting experience. Currently, there are ~6k standardized locations, primarily in US. With Bing geo, around 2.6 million locations will be available at launch, and a large number of international locations. This migration guide provides the details of migrating from current geo endpoints/values to the new ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ads Targeting Migration Guide to Bing Geo",
+      "Anchor": "ads-targeting-migration-guide-to-bing-geo",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ads Targeting Migration Guide to Bing Geo",
+      "Anchor": "ads-targeting-migration-guide-to-bing-geo",
+      "SectionPath": [],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement which are now incorporated into our LinkedIn Marketing API Program Terms. By accessing any Microsoft Bing Maps location data, you\u0027re agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How Migration is Planned",
+      "Anchor": "how-migration-is-planned",
+      "SectionPath": [
+        "How Migration is Planned"
+      ],
+      "Text": "The migration effort is divided among the following phases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How Migration is Planned",
+      "Anchor": "how-migration-is-planned",
+      "SectionPath": [
+        "How Migration is Planned"
+      ],
+      "Text": "Phase 1: Migrate from legacy geo API to typeahead and URN-to-name resolver API to retrieve locations.\nPhase 2: Start using Bing geo locations in ad campaigns, in place of legacy locations.\nPhase 3: Only Bing geo locations will be accepted in ad campaigns. Legacy locations can no longer be used for campaign creation, campaigns with legacy locations will be rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+      "Anchor": "migration-phase-1-move-to-typeahead-and-urn-to-name-resolver-api-from-legacy-geo-api",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API"
+      ],
+      "Text": "In this phase, we recommend partners to use the typeahead API to retrieve legacy geo locations along with URN-to-name resolver API instead of legacy geo API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps involved with Phase 1",
+      "Anchor": "steps-involved-with-phase-1",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Steps involved with Phase 1"
+      ],
+      "Text": "Partners have 3 months starting from 8/1/2019 to 10/31/2019 to migrate from legacy geo API to new typeahead API.\nDuring phase 1, typeahead will return legacy geo locations, such as \u201Curn:li:country:us\u201D.\nTypeahead API will NOT return Bing locations in phase 1. Bing locations will be available starting in phase 2.\nIn phase 2, the Bing geo locations will be returned as geo URN IDs via the Typeahead API. To convert geo URN IDs to localized labels, partners need to call the URN-to-name resolver API.\nAd campaigns still accepts the legacy locations during phase 1.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Mapping for migration",
+      "Anchor": "api-mapping-for-migration",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "API Mapping for migration"
+      ],
+      "Text": "",
+      "Headers": [
+        "Geo type",
+        "Get_all endpoint",
+        "Get_all methods",
+        "Migrate to"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Country group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/v2/countryGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET/GET_ALL/BATCH_GET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targeting typeahead finder and URN-to-name resolver API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/v2/countries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET/BATCH_GET/GET_ALL/FINDER countryGroupN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targeting typeahead finder and URN-to-name resolver API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "States",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/v2/states",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET/BATCH_GET/GET_ALL/FINDER country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targeting typeahead finder and URN-to-name resolver API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Regions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/v2/regions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET/BATCH_GET/GET_ALL/FINDER countries/FINDER states/FINDER standardizedLocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targeting typeahead finder and URN-to-name resolver API",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of using typeahead finder in place of legacy geo API",
+      "Anchor": "examples-of-using-typeahead-finder-in-place-of-legacy-geo-api",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Examples of using typeahead finder in place of legacy geo API"
+      ],
+      "Text": "Retrieve legacy geo locations using get_all API example.\nRetrieve legacy geo locations using typeahead API example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example of using URN-to-name resolver API",
+      "Anchor": "example-of-using-urn-to-name-resolver-api",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API"
+      ],
+      "Text": "To get localized name for a legacy geo location example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example of using URN-to-name resolver API",
+      "Anchor": "example-of-using-urn-to-name-resolver-api",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API"
+      ],
+      "Text": "Note: In Find Entities by Typeahead, please don\u0027t use entityType:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example of using URN-to-name resolver API",
+      "Anchor": "example-of-using-urn-to-name-resolver-api",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=TYPEAHEAD\u0026facet={adTargetingFacet URN}\u0026query={Search Query}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are there any special rule changes for Bing Geo locations?",
+      "Anchor": "are-there-any-special-rule-changes-for-bing-geo-locations",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API",
+        "Are there any special rule changes for Bing Geo locations?"
+      ],
+      "Text": "LinkedIn has removed the existing parent-child relationship validation rule on geo entities. Partners no longer have to implement and support complex geo rules. Ad campaign creation won\u2019t return error response in this scenario.\nExample, if the United States and California (subregion or \u201Cchildren\u201D of United States) are added to a campaign, our current campaign API fails the campaign creation and requires to remove one of them. After migration, this campaign creation will no longer error out.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are there any special rule changes for Bing Geo locations?",
+      "Anchor": "are-there-any-special-rule-changes-for-bing-geo-locations",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API",
+        "Are there any special rule changes for Bing Geo locations?"
+      ],
+      "Text": "After switching to targeting typeahead finder, it\u0027s not possible to get a complete list of all countries, regions etc. We require Partners to use typeahead for querying locations rather than handle a full list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are there any special rule changes for Bing Geo locations?",
+      "Anchor": "are-there-any-special-rule-changes-for-bing-geo-locations",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API",
+        "Are there any special rule changes for Bing Geo locations?"
+      ],
+      "Text": "After phase 1, following APIs that returns legacy geo shouldn\u0027t be used for ads Targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are there any special rule changes for Bing Geo locations?",
+      "Anchor": "are-there-any-special-rule-changes-for-bing-geo-locations",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API",
+        "Are there any special rule changes for Bing Geo locations?"
+      ],
+      "Text": "Get all continent.\nGet all countries/regions.\nGet all states.\nGet all regions.\nGet all countries/regions of a continent.\nGet all states of a country.\nGet all regions of a state",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are there any special rule changes for Bing Geo locations?",
+      "Anchor": "are-there-any-special-rule-changes-for-bing-geo-locations",
+      "SectionPath": [
+        "Migration Phase 1: Move to Typeahead and URN-to-name resolver API from legacy geo API",
+        "Example of using URN-to-name resolver API",
+        "Are there any special rule changes for Bing Geo locations?"
+      ],
+      "Text": "After switching to the typeahead finder endpoint and implementing URN-to-name resolver API for localized name for Ads location targeting, migration to phase 1 is complete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+      "Anchor": "migration-phase-2-use-bing-geo-location-in-ad-campaigns",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns"
+      ],
+      "Text": "In Phase 2, LinkedIn starts serving Bing geo locations via the Typeahead API. We also auto migrate existing campaigns to the new geo data. Partners should start using the Bing geo locations via the typeahead API while creating campaigns.\nPhase 2 commences from 12/12/2019 and ends by 3/31/2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps involved in Phase 2",
+      "Anchor": "steps-involved-in-phase-2",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Steps involved in Phase 2"
+      ],
+      "Text": "Typeahead API will return ONLY Bing locations: Refer to this example.\nAd campaigns will start accepting Bing locations. Although legacy locations are acceptable in ad campaigns in this phase, we strongly advise against using the legacy geo entities because the backend will convert them to new geo entities.\nTo get the name for a Bing geo location, by the start of phase 2, Partners should have completed the changes to invoke urn-to-name resolver API. Refer to this example.\nWhat happens to the existing campaigns already created with legacy geo entities?\nIntelligent mapping: Where possible, LinkedIn will map existing campaign legacy locations to Bing geo gradually. Due to this if you do GET on campaign data, you may expect Bing location values from past campaigns. For example, if a campaign targets on urn:li:state:(urn:li:country:us,CA), LinkedIn will transform it to urn:li:geo:102095887 in the campaign\u2019s targeting value.\nEntity name or audience count change after migration: In scenarios where LinkedIn doesn\u2019t find the exact match for the legacy location, newly mapped Bing locations could be of a different name or higher/lower audience count.\nHowever, in some cases, where the legacy geo entity can\u0027t be mapped to the new geo entity, we\u0027ll notify you with suggested mapping. It won\u0027t affect creating a campaign or running campaign and no action is needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Examples of legacy geo name change to Bing geo name",
+      "Anchor": "examples-of-legacy-geo-name-change-to-bing-geo-name",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of legacy geo name change to Bing geo name"
+      ],
+      "Text": "",
+      "Headers": [
+        "Legacy Geo URN",
+        "Legacy Geo Name",
+        "Bing Geo URN",
+        "Bing Geo Name"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:countryGroup:LA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latin America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:104514572",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South America",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:kr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Korea",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105149562",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South Korea",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:om",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sultanate of Oman",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:103619019",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oman",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:vg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Virgin Islands (British)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105534858",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "British Virgin Islands",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:vi",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Virgin Islands (U.S.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102119762",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US Virgin Islands",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:ch,ZH)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Canton of Z\u00FCrich",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102436504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Zurich",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:pk,3)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NWFP Peshawar",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:106436446",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Khyber Pakhtunkhwa",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:cn,NX)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ningxia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105325976",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ningxia Hui",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:275",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Destin/Fort Walton Beach, Florida Area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:90009453",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Crestview-Fort Walton Beach-Destin Area",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:928",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York, Pennsylvania Area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105243172",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York County",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Examples of legacy geo audience count change to bing geo audience count",
+      "Anchor": "examples-of-legacy-geo-audience-count-change-to-bing-geo-audience-count",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of legacy geo audience count change to bing geo audience count"
+      ],
+      "Text": "",
+      "Headers": [
+        "Legacy Geo URN",
+        "Legacy Geo Name",
+        "Legacy Member count",
+        "Bing Geo URN",
+        "Bing Geo Name",
+        "Bing Member Count",
+        "Audience Change"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:countryGroup:na",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "North America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "196514894",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102221843",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "North America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "218809397",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "11.34%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:countryGroup:LA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latin America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100608115",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:104514572",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "78276886",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "11.34%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:countryGroup:AS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Asia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "178219309",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102393603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Asia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "204540435",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "14.77%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:countryGroup:ME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Middle East",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "25967989",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:91000001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Middle East",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "33513746",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "29.06%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:pk,3)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NWFP Peshawar",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "171048",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:106436446",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Khyber Pakhtunkhwa",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "157474",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-7.94%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:928",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York, Pennsylvania Area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "149810",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105243172",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York County",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "138636",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-7.46%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example of number of segments for legacy location to Bing geo entity segments",
+      "Anchor": "example-of-number-of-segments-for-legacy-location-to-bing-geo-entity-segments",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Example of number of segments for legacy location to Bing geo entity segments"
+      ],
+      "Text": "The reason for North America and South America change is because Mexico and a few island countries/regions that are previously counted as part of Latin America, are now part of North America. A similar case of audience cover increases in Asia and the Middle East.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Example of number of segments for legacy location to Bing geo entity segments",
+      "Anchor": "example-of-number-of-segments-for-legacy-location-to-bing-geo-entity-segments",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Example of number of segments for legacy location to Bing geo entity segments"
+      ],
+      "Text": "",
+      "Headers": [
+        "Legacy Geo URN",
+        "Legacy Geo Name",
+        "Legacy Member count",
+        "Bing Geo URN",
+        "Bing Geo Name",
+        "Bing Member Count",
+        "Audience Change"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:region:5096",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pamplona Area, Spain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "177535",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:100146939 urn:li:geo:102688677",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Chartered Community of Navarre, Spain Guip\u00FAzcoa, Basque Country, Spain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "228756",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "29%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:b6",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Picardy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "271597",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:107080171 urn:li:geo:102672257 urn:li:geo:105012670",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Somme, Hauts-de-France, France, Oise, Hauts-de-France, France, Aisne, Hauts-de-France, France",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "272357",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "0.3%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example of number of segments for legacy location to Bing geo entity segments",
+      "Anchor": "example-of-number-of-segments-for-legacy-location-to-bing-geo-entity-segments",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Example of number of segments for legacy location to Bing geo entity segments"
+      ],
+      "Text": "One segment to multiple segments mapping is mostly for regions and a small part of states, and it will happen in phase 2 starting from Jan 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "Search for San Jose",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "Search for Georgia, the first response value is for the country in Europe.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "During phase 2, the typeahead endpoint response will return Bing geo locations as shown in this example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "Also it opens up new entities that don\u0027t exist in legacy geo values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "REQUEST:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "GET\nhttps://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026query=san%20mate\u0026facet=urn%3Ali%3AadTargetingFacet%3Alocations\u0026queryVersion=QUERY_USES_URNS\u0026locale.language=en\u0026locale.country=US\u0026lixEntity=urn%3Ali%3AsponsoredAccount%3A517969629",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "RESPONSE:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:geo:104739033\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022San Mateo County, California, United States\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:geo:104871069\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022San Mateo Atenco, M\u00E9xico, Mexico\u0022\n        },\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of same geographic name across different hierarchy from typeahead API",
+      "Anchor": "examples-of-same-geographic-name-across-different-hierarchy-from-typeahead-api",
+      "SectionPath": [
+        "Migration Phase 2: Use Bing Geo location in Ad campaigns",
+        "Examples of same geographic name across different hierarchy from typeahead API"
+      ],
+      "Text": "Note in the result the URN types and values have changed, names may be different from legacy name. There is no action required for developer at this step, the difference is that now Bing geo values(urn:li:geo:{id}) are returned in the result instead of legacy values(urn:li:countryGroup|country|state|region:{id}).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Phase 3: Sunset of Legacy Geo locations in Ad campaigns",
+      "Anchor": "migration-phase-3-sunset-of-legacy-geo-locations-in-ad-campaigns",
+      "SectionPath": [
+        "Migration Phase 3: Sunset of Legacy Geo locations in Ad campaigns"
+      ],
+      "Text": "Phase 3 of migration starts from 4/1/2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps for Phase 3",
+      "Anchor": "steps-for-phase-3",
+      "SectionPath": [
+        "Migration Phase 3: Sunset of Legacy Geo locations in Ad campaigns",
+        "Steps for Phase 3"
+      ],
+      "Text": "No action required if phase 2 migration steps are completed.\ncampaign creation will accept ONLY Bing geo locations.\nWhile reading a campaign created with Bing geo locations, the location value will be: urn:li:geo:{id}. To get the name of Bing geo location, Partners need to invoke the urn-to-name resolver API. Please refer to this example.\nCreate Ad campaign API will return an error response if any legacy locations are used for targeting.\nAny existing campaign using a legacy location should be automatically mapped to Bing geo location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve legacy locations using legacy geo API",
+      "Anchor": "retrieve-legacy-locations-using-legacy-geo-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using legacy geo API"
+      ],
+      "Text": "REQUEST:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve legacy locations using legacy geo API",
+      "Anchor": "retrieve-legacy-locations-using-legacy-geo-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using legacy geo API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/countryGroups",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve legacy locations using legacy geo API",
+      "Anchor": "retrieve-legacy-locations-using-legacy-geo-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using legacy geo API"
+      ],
+      "Text": "RESPONSE:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve legacy locations using legacy geo API",
+      "Anchor": "retrieve-legacy-locations-using-legacy-geo-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using legacy geo API"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Africa\u0022\n      },\n      \u0022$URN\u0022: \u0022urn:li:countryGroup:AF\u0022,\n      \u0022countryGroupCode\u0022: \u0022AF\u0022\n    },\n    {\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Antarctica\u0022\n      },\n      \u0022$URN\u0022: \u0022urn:li:countryGroup:AQ\u0022,\n      \u0022countryGroupCode\u0022: \u0022AQ\u0022\n    },\n    ...\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve legacy locations using typeahead API",
+      "Anchor": "retrieve-legacy-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using typeahead API"
+      ],
+      "Text": "REQUEST",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve legacy locations using typeahead API",
+      "Anchor": "retrieve-legacy-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using typeahead API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=TYPEAHEAD\u0026facet=urn:li:adTargetingFacet:locations\u0026query=afri",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve legacy locations using typeahead API",
+      "Anchor": "retrieve-legacy-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using typeahead API"
+      ],
+      "Text": "RESPONSE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve legacy locations using typeahead API",
+      "Anchor": "retrieve-legacy-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve legacy locations using typeahead API"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:countryGroup:AF\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022Africa\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:country:za\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022South Africa\u0022\n        },\n    ...\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Bing Geo locations using typeahead API",
+      "Anchor": "retrieve-bing-geo-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API"
+      ],
+      "Text": "REQUEST",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Bing Geo locations using typeahead API",
+      "Anchor": "retrieve-bing-geo-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=TYPEAHEAD\u0026facet=urn:li:adTargetingFacet:locations\u0026query=afri",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Bing Geo locations using typeahead API",
+      "Anchor": "retrieve-bing-geo-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API"
+      ],
+      "Text": "RESPONSE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Bing Geo locations using typeahead API",
+      "Anchor": "retrieve-bing-geo-locations-using-typeahead-api",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:geo:103537801\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022Africa\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:geo:104035573\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022South Africa\u0022\n        },\n    ...\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Another example when querying a country",
+      "Anchor": "another-example-when-querying-a-country",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API",
+        "Another example when querying a country"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=TYPEAHEAD\u0026facet=urn:li:adTargetingFacet:locations\u0026query=Santa%20Clara",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Another example when querying a country",
+      "Anchor": "another-example-when-querying-a-country",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API",
+        "Another example when querying a country"
+      ],
+      "Text": "RESPONSE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Another example when querying a country",
+      "Anchor": "another-example-when-querying-a-country",
+      "SectionPath": [
+        "API Examples",
+        "Retrieve Bing Geo locations using typeahead API",
+        "Another example when querying a country"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:geo:105416315\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022Santa Clara County\u0022\n        },\n    ...\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad campaigns using Legacy Locations",
+      "Anchor": "create-ad-campaigns-using-legacy-locations",
+      "SectionPath": [
+        "API Examples",
+        "Create Ad campaigns using Legacy Locations"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adcampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad campaigns using Legacy Locations",
+      "Anchor": "create-ad-campaigns-using-legacy-locations",
+      "SectionPath": [
+        "API Examples",
+        "Create Ad campaigns using Legacy Locations"
+      ],
+      "Text": "RESPONSE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad campaigns using Legacy Locations",
+      "Anchor": "create-ad-campaigns-using-legacy-locations",
+      "SectionPath": [
+        "API Examples",
+        "Create Ad campaigns using Legacy Locations"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:518121035\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u002218\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022campaign Sponsored update B\u0022,\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:region:84\u0022\n                        ]\n                    }\n                }\n            ]\n        }\n    },\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n    \u0022unitCost\u0022: {\n        \u0022amount\u0022: \u002215\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad campaigns using Bing Geo Locations",
+      "Anchor": "create-ad-campaigns-using-bing-geo-locations",
+      "SectionPath": [
+        "API Examples",
+        "Create Ad campaigns using Bing Geo Locations"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adcampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad campaigns using Bing Geo Locations",
+      "Anchor": "create-ad-campaigns-using-bing-geo-locations",
+      "SectionPath": [
+        "API Examples",
+        "Create Ad campaigns using Bing Geo Locations"
+      ],
+      "Text": "RESPONSE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad campaigns using Bing Geo Locations",
+      "Anchor": "create-ad-campaigns-using-bing-geo-locations",
+      "SectionPath": [
+        "API Examples",
+        "Create Ad campaigns using Bing Geo Locations"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:518121035\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u002218\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022campaign Sponsored update B\u0022,\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:geo:102095887\u0022\n                        ]\n                    }\n                }\n            ]\n        }\n    },\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n    \u0022unitCost\u0022: {\n        \u0022amount\u0022: \u002215\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get the name of the Legacy geo location values",
+      "Anchor": "get-the-name-of-the-legacy-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the Legacy geo location values"
+      ],
+      "Text": "Encoded Request",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get the name of the Legacy geo location values",
+      "Anchor": "get-the-name-of-the-legacy-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the Legacy geo location values"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026urns=List({encoded urn:li:state:(urn:li:country:us,CA)},{encoded urn:li:region:82})\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get the name of the Legacy geo location values",
+      "Anchor": "get-the-name-of-the-legacy-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the Legacy geo location values"
+      ],
+      "Text": "Unencoded Request",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get the name of the Legacy geo location values",
+      "Anchor": "get-the-name-of-the-legacy-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the Legacy geo location values"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026queryVersion=QUERY_USES_URNS\u0026urns=List(urn%3Ali%3Astate%3A%28urn%3Ali%3Acountry%3Aus%2CCA%29,urn%3Ali%3Aregion%3A82)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get the name of the Legacy geo location values",
+      "Anchor": "get-the-name-of-the-legacy-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the Legacy geo location values"
+      ],
+      "Text": "Response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get the name of the Legacy geo location values",
+      "Anchor": "get-the-name-of-the-legacy-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the Legacy geo location values"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:state:(urn:li:country:us,CA)\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022California\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:region:82\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022Sacramento, California Area\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get the name of the new Bing geo location values",
+      "Anchor": "get-the-name-of-the-new-bing-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the new Bing geo location values"
+      ],
+      "Text": "Encoded Request",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get the name of the new Bing geo location values",
+      "Anchor": "get-the-name-of-the-new-bing-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the new Bing geo location values"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026urns=List({encoded urn:li:geo:102095887},{encoded urn:li:geo:101857797})\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get the name of the new Bing geo location values",
+      "Anchor": "get-the-name-of-the-new-bing-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the new Bing geo location values"
+      ],
+      "Text": "Unencoded Request",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get the name of the new Bing geo location values",
+      "Anchor": "get-the-name-of-the-new-bing-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the new Bing geo location values"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026queryVersion=QUERY_USES_URNS\u0026urns=List(urn%3Ali%3Ageo%3A102095887,urn%3Ali%3Ageo%3A101857797)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get the name of the new Bing geo location values",
+      "Anchor": "get-the-name-of-the-new-bing-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the new Bing geo location values"
+      ],
+      "Text": "Response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get the name of the new Bing geo location values",
+      "Anchor": "get-the-name-of-the-new-bing-geo-location-values",
+      "SectionPath": [
+        "API Examples",
+        "Use of URN-to-name resolver API",
+        "Get the name of the new Bing geo location values"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:geo:102095887\u0022,\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022name\u0022: \u0022California, United States\u0022\n    },\n    {\n      \u0022urn\u0022: \u0022urn:li:geo:101857797\u0022,\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022name\u0022: \u0022Sacramento, California, United States\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 2147483647,\n    \u0022links\u0022: [],\n    \u0022start\u0022: 0\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "When are legacy geo locations values going to be deprecated? What are the corresponding Bing geo location values?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Legacy geo locations will be completely sunset by August 31, 2026. Beginning from phase 3, Ads targeting won\u0027t accept legacy geo locations in campaign creation. Legacy values examples: urn:li:countryGroup:{id},urn:li:country:{id},urn:li:state:{id},urn:li:region:{id} and corresponding examples in Bing geo are: urn:li:geo:{id}.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "How to get the localized name of the new Bing geo location values?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "To get the localized name for a Bing geo location, invoke the urn-to-name resolver endpoint. Both legacy and Bing geo values are supported in the same API. Refer to this example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "How to display all Bing geo location names for my active campaign:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Retrieve campaign info with a finder or an id.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "How to display search location result on load.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "LinkedIn campaign Manager will switch from legacy geo APIs to typeahead in Sep 2019. With that users of campaign Manager will no longer see a list of continents on first load but rather a blank search box. The locations will start populating results as user types the locations. Tree view display will no longer be shown.\nPartners should show an empty search box and only show results as user enters search text.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Can I use both legacy and new Bing geo in same campaign?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Yes, starting from phase 2, an ad campaign can include both legacy and Bing locations. For example: campaign can target both urn:li:geo:90000084 and urn:li:region:4573 in the same campaign. But from phase 3 only Bing geo locations are accepted in campaign creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "I have stored the created campaign locally in my own system, is there anything I need to pay attention?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Yes. During/after phase 2, the legacy values are updated by LinkedIn to new Bing geo values, so when GET the previously created campaigns, the values will be different from when it was stored. It is suggested to overwrite local stored values if necessary.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "When can I begin migration to typeahead finder and URN-to-name resolver API for geo entities?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Beginning from Phase 1, you can start using the Ads targeting typeahead finder and URN-to-name resolver API for legacy geo entities. And from phase 2, typeahead will return Bing geo locations. URN-to-name resolver API will always support legacy and Bing geo locations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "By what date will my app break if I don\u2019t take any action now?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "We expect all our API partners to complete Phase 1 and Phase 2 by end of Mar 2020 and ramp new Bing geo entities. We highly recommend migrating as per our proposed phases as we\u0027ll be able to support your needs better. Beginning of Phase 3, if none of the actions were taken from previous phases, create campaign will break if legacy geo locations are used.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "When will the old location APIs be deprecated? What if I don\u0027t migrate?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "The legacy locations API may be used in use cases other than Ads Targeting. The timeline for deprecating legacy locations for non-targeting uses cases is not yet decided. However, we require Ads API partners to align with this migration timeline, as after phase 2 migration, campaign creation won\u0027t take legacy geo entities even if the legacy locations API hasn\u0027t been deprecated for other use cases by that time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "When will LinkedIn start ramping Bing geo (migration phase 2)?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Linkedin Ads will start to ramp Bing geo after phase 1 around 12/12/2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "By what date will the app break if migration phase 2 not completed?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "We expect phase 2 migration to be complete by 3/31/2020. After that, legacy geo entities won\u0027t be supported any more in LinkedIn ads system and exception will be thrown if legacy geo entities are passed in to create campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "How will we be able to distinguish between the two locations names with the same name?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Typeahead API will provide metadata on the immediate parent to that geo (Georgia - United States vs. Georgia - Europe).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "When will shares/ugc targeting locations migrate to Bing geo?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQs)",
+      "Anchor": "frequently-asked-questions-faqs",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQs)"
+      ],
+      "Text": "Share and UGC \u0027locations\u0027 fields will be deprecated on Sept 30th, 2021. Please use \u0027geoLocations\u0027 field for organic company post targeting.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

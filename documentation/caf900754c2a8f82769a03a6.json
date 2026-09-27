@@ -1,0 +1,224 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+  "Title": "Picture Info Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/media-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-image",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/language",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Picture Info Fields",
+      "Anchor": "picture-info-fields",
+      "SectionPath": [],
+      "Text": "This field will be deprecated on December 1, 2018. Please refer to Profile Picture fields and Media Migration Guide for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Picture Info Fields",
+      "Anchor": "picture-info-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "cropInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The metadata of the cropped image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height represented in int.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width represented in int.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "x",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "X coordinate of upper-left corner of the cropped area (upper-left corner of image is 0). Represented in int.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "y",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Y coordinate of upper-left corner of the cropped area (upper-left corner of image is 0). Represented in int.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "croppedImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile image cropped for display.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hidden",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional boolean. Defaults to false.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "masterImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The original raw image uploaded by the member. This will not be used for display and will only be used for re-cropping purposes. Only available for self lookup.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional state defaulting to \u0022ACTIVE\u0022. Can be the following values: ACTIVE DELETED ABUSIVE QUESTIONED",
+            "Links": [],
+            "Values": [
+              "ACTIVE",
+              "DELETED",
+              "ABUSIVE",
+              "QUESTIONED"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Picture Info Fields",
+      "Anchor": "picture-info-fields",
+      "SectionPath": [],
+      "Text": "Note: To get the media, replace the\u00A0media-typed URN sub-string urn:li:media: to https://media.licdn.com/mpr/mpr . For example, if the field value is urn:li:media:/gcrc/dms/image/ABC/profile-displayphoto-shrink_800_800/0?e=1525021200\u0026v=alpha\u0026t=abc123 , you can modify it to https://media.licdn.com/mpr/mpr/gcrc/dms/image/ABC/background-profile-shrink_800_800/0?e=1525021200\u0026v=alpha\u0026t=abc123 to retrieve it as a media URL via the LinkedIn CDN.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

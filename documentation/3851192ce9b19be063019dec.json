@@ -1,0 +1,210 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/campaign-formats",
+  "Title": "Campaign Formats",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Campaign Formats",
+      "Anchor": "campaign-formats",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Formats",
+      "Anchor": "campaign-formats",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Formats",
+      "Anchor": "campaign-formats",
+      "SectionPath": [],
+      "Text": "The page Campaign Builder shows a mapping table for adFormat \u003C-\u003E campaign.format and creativeType",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Formats",
+      "Anchor": "campaign-formats",
+      "SectionPath": [],
+      "Text": "field: format\ntype: campaignFormat\nrequired: false",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Campaign Formats",
+      "Anchor": "campaign-formats",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "campaign.format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CAROUSEL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Carousel ad format is a kind of multi-content ad that allows members to swipe left and right to view content in succession",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FOLLOW_COMPANY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC campaign with FOLLOW_COMPANY_V2 creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOBS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC campaign with JOBS_V2 creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SINGLE_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Single video format is a single content ad where members can watch a video",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SPONSORED_INMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard advertiser created paid message sent to a member that supports links, leadgen forms, and other traditional methods of interacting with the creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Conversation Ad format that provides chat-like experience between the member and the advertiser.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event ad that allows advertisers to promote events created on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SPOTLIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC campaign with SPOTLIGHT_V2 creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STANDARD_UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard user generated content with a single image or article showing in LinkedIn feed, SlideShare, even off LinkedIn network, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEXT_AD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard advertiser created text-oriented ad showing on the right rail of LinkedIn desktop homepage, profile page or on the banner of LinkedIn desktop homepage",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNSUPPORTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Corresponds to all legacy creative types that are unsupported as of the time that campaign format was introduced. This includes both the explicit UNSUPPORTED creative type as well as the V1 dynamic creative types. This value shouldn\u0027t be passed as an input.NOTE: campaignFormat is a required field when campaign.type=DYNAMIC.This restricts the types of creatives (creativeType) that may be added to this campaign.For example, Carousel campaigns can only have creativeType=SPONSORED_UPDATE_CAROUSEL,and SINGLE_VIDEO can only have creatives with SPONSORED_VIDEO type. Refer to the validation documentation Validations by Campaign Format and Campaign Objectives",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#validations-based-on-objective-type",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Formats",
+      "Anchor": "campaign-formats",
+      "SectionPath": [],
+      "Text": "Back to: Campaign Objectives\nLearn more: Optimization by Objective Type\nRead more: Create and Manage Campaigns",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

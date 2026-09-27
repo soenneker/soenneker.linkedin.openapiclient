@@ -1,0 +1,357 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+  "Title": "Primary Contact API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Primary Contact API",
+      "Anchor": "primary-contact-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Primary Contact API",
+      "Anchor": "primary-contact-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Primary Contact API",
+      "Anchor": "primary-contact-api",
+      "SectionPath": [],
+      "Text": "The Primary Contact API returns an authenticated member\u0027s primary handles. A handle represents the contact information that the authenticated member provided to LinkedIn and can be an email or a phone number\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "This API requires one of the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_emailaddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve primary email address on the authenticated user\u0027s behalf.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_primarycontact",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve primary authenticated member handles (email or phone number) on the authenticated user\u0027s behalf.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "These two permissions are mutually exclusive, you should only include one permission in the \u0022scope\u0022 field while requesting access token. If your app only requires email address, you should specify r_emailaddress. And if your app requires email address or phone number, you should replace r_emailaddress with r_primarycontact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Primary Contact",
+      "Anchor": "retrieve-primary-contact",
+      "SectionPath": [
+        "Retrieve Primary Contact"
+      ],
+      "Text": "To query for an authenticated member\u0027s primary contact information, you can use the sample request below. Make sure your request has the appropriate authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Primary Contact",
+      "Anchor": "retrieve-primary-contact",
+      "SectionPath": [
+        "Retrieve Primary Contact"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/clientAwareMemberHandles?q=members\u0026projection=(elements*(primary,type,handle~))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Primary Contact",
+      "Anchor": "retrieve-primary-contact",
+      "SectionPath": [
+        "Retrieve Primary Contact"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Primary Contact",
+      "Anchor": "retrieve-primary-contact",
+      "SectionPath": [
+        "Retrieve Primary Contact"
+      ],
+      "Text": "The query parameter \u0022q=members\u0022 is always required, called Finder members in v2 APIs and represents querying by members to find their associated handles. The \u0022projection\u0022 parameter customizes the response you are expecting the API to return. Please check \u0027Request Methods\u0027 and \u0027Projections\u0027 sections at out v2 API Concepts page for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Email Address",
+      "Anchor": "retrieve-email-address",
+      "SectionPath": [
+        "Retrieve Email Address"
+      ],
+      "Text": "To query an authenticated member\u0027s primary email address:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Email Address",
+      "Anchor": "retrieve-email-address",
+      "SectionPath": [
+        "Retrieve Email Address"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/clientAwareMemberHandles?q=members\u0026projection=(elements*(primary,type,handle~))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Email Address",
+      "Anchor": "retrieve-email-address",
+      "SectionPath": [
+        "Retrieve Email Address"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Email Address",
+      "Anchor": "retrieve-email-address",
+      "SectionPath": [
+        "Retrieve Email Address"
+      ],
+      "Text": "The API call would return empty response body if the authenticated user was registered via phone number, and never added any primary email address into their LinkedIn account previously. The value of type is case sensitive, and can only be EMAIL in this case.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Response Body"
+      ],
+      "Text": "The response will be in JSON and always include the field elements that contains an array of handles belonging to the authenticated member. A handle can be either an email or a phone number, differentiated by type . An authenticated member is only required to have one primary handle of either type. Therefore, the response can return either one email address, one phone number or both. If an authenticated member has no primary handle, then the response code will still be 200 and the elements array will be empty.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Response Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "primary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the handle is primary or not.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the type of handle. It can be either: EMAIL PHONE",
+            "Links": [],
+            "Values": [
+              "EMAIL",
+              "PHONE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "handle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents either a emailAddress or phoneNumber URN. When decorated with ~, it will return with one of the formats: {\u0022emailAddress\u0022 : \u0022ding_wei_stub@example.com\u0022} {\u0022phoneNumber\u0022 : { \u0022number\u0022: \u0022158****1473\u0022 }} The phone number will be partially obfuscated.",
+            "Links": [],
+            "Values": [
+              "{\u0022emailAddress\u0022 : \u0022ding_wei_stub@example.com\u0022}",
+              "{\u0022phoneNumber\u0022 : { \u0022number\u0022: \u0022158****1473\u0022 }}"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Body",
+        "sample response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022handle\u0022: \u0022urn:li:emailAddress:3775708763\u0022,\n            \u0022handle~\u0022: {\n                \u0022emailAddress\u0022: \u0022ding_wei_stub@example.com\u0022\n            },\n            \u0022primary\u0022: true,\n            \u0022type\u0022: \u0022EMAIL\u0022\n        },\n        {\n            \u0022handle\u0022: \u0022urn:li:phoneNumber:6146249836070047744\u0022,\n            \u0022handle~\u0022: {\n                \u0022phoneNumber\u0022: {\n                    \u0022number\u0022: \u0022158****1473\u0022\n                }\n            },\n            \u0022primary\u0022: true,\n            \u0022type\u0022: \u0022PHONE\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Body",
+        "sample response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Body",
+        "sample response"
+      ],
+      "Text": "If a decoration succeeds, it will contain ~ in the field (ie. handle~ . fails. If it fails, it will contain ! (ie. handle! ). See below for example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample decoration error",
+      "Anchor": "sample-decoration-error",
+      "SectionPath": [
+        "Response Body",
+        "sample decoration error"
+      ],
+      "Text": "\u0022handle!\u0022: {\n  \u0022message\u0022: \u0022URN Resolution failed for unknown reasons.\u0022,\n  \u0022status\u0022: 500\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

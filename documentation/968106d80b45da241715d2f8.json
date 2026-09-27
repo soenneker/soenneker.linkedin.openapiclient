@@ -1,0 +1,123 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-bind-customer-users",
+  "Title": "Bind CRM Users",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-bind-customer-users",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-history",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Bind CRM Users",
+      "Anchor": "bind-crm-users",
+      "SectionPath": [],
+      "Text": "Your customers\u0027 users are associated with various entities in LinkedIn integrations, including InMail, 1 Click Exports, and ACLs. You can allow each user to bind themselves with LinkedIn so you can understand the user/entity associations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bind CRM Users",
+      "Anchor": "bind-crm-users",
+      "SectionPath": [],
+      "Text": "Binding is accomplished by storing the related LinkedIn person ID for a user within your solution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bind CRM Users",
+      "Anchor": "bind-crm-users",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bind CRM Users",
+      "Anchor": "bind-crm-users",
+      "SectionPath": [],
+      "Text": "LinkedIn user ids are scoped to the API key. Therefore, the same LinkedIn user will have a unique id across your customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtain an OAuth 2 User Access Token",
+      "Anchor": "obtain-an-oauth-2-user-access-token",
+      "SectionPath": [
+        "Obtain an OAuth 2 User Access Token"
+      ],
+      "Text": "Using the customer\u0027s API key credentials, initiate the OAuth 2 Authorization Code flow to obtain a token for the LinkedIn user. You can achieve this via button that launches the flow in a new tab or window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtain an OAuth 2 User Access Token",
+      "Anchor": "obtain-an-oauth-2-user-access-token",
+      "SectionPath": [
+        "Obtain an OAuth 2 User Access Token"
+      ],
+      "Text": "You should request the r_liteprofile scope.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bind a User",
+      "Anchor": "bind-a-user",
+      "SectionPath": [
+        "Bind a User"
+      ],
+      "Text": "Using the user\u0027s access token obtained above, call the Profile API to retrieve the user\u0027s LinkedIn Person id. Use Field Projections to only have the id field returned in the response. That\u0027s the only identifier you need to create or update the user\u0027s binding. This person ID will be used to match the user to their Recruiter seat .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Bind a User",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me?fields=id",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Bind a User",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022yrZCpj2Z12\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

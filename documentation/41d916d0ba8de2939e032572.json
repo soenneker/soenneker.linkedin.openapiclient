@@ -1,0 +1,675 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+  "Title": "Sync Candidate Resumes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes",
+      "Anchor": "sync-candidate-resumes",
+      "SectionPath": [],
+      "Text": "To upload a resume, you first need to get a signed URL from LinkedIn and then use it to upload the file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes",
+      "Anchor": "sync-candidate-resumes",
+      "SectionPath": [],
+      "Text": "When uploading a resume, LinkedIn recommends to abide by the following considerations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes",
+      "Anchor": "sync-candidate-resumes",
+      "SectionPath": [],
+      "Text": "Supported media formats are: PDF, DOC, or TXT\nEnsure that the media file size does not exceed 10MB for all file types\nUpload only one resume object per API call\nEnsure that all calls to upload resume use OAuth 2.0 authentication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes",
+      "Anchor": "sync-candidate-resumes",
+      "SectionPath": [],
+      "Text": "A typical workflow to upload your resume consists of the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes",
+      "Anchor": "sync-candidate-resumes",
+      "SectionPath": [],
+      "Text": "Create URL\nUpload Resume File",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes",
+      "Anchor": "sync-candidate-resumes",
+      "SectionPath": [],
+      "Text": "When a customer activates CRM Connect for the first time, you must sync all of their historical data to LinkedIn to power the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create URL",
+      "Anchor": "create-url",
+      "SectionPath": [
+        "Create URL"
+      ],
+      "Text": "Use the following endpoint to create URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create URL",
+      "Anchor": "create-url",
+      "SectionPath": [
+        "Create URL"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/hireMediaUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Create URL",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2.0 Authorization Framework and you must pass a bearer access token in your request as Authorization header. The access tokens are obtained via OAuth 2.0 Client Credentials flow. You must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "usageParameters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Helps LinkedIn to uniquely identify the use case for which media upload is being done. For this use case, use tcrmResumeParameters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complex",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the resume file. Valid values are: \u0022text/plain\u0022 for TXT file \u0022application/pdf\u0022 for PDF file\u0022application/msword\u0022 for DOC file",
+            "Links": [],
+            "Values": [
+              "\u0022text/plain\u0022 for TXT file",
+              "\u0022application/pdf\u0022 for PDF file",
+              "\u0022application/msword\u0022 for DOC file"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiringContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract which is signed by the customer with LinkedIn to use LinkedIn Recruiter services. Must be in the format urn:li:contract:{Id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter contract URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample hireMediaURL Request",
+      "Anchor": "sample-hiremediaurl-request",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields",
+        "Sample hireMediaURL Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample hireMediaURL Request",
+      "Anchor": "sample-hiremediaurl-request",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields",
+        "Sample hireMediaURL Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nAccept:application/json\nContent-Type:application/json\nX-RestLi-Protocol-Version:2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample hireMediaURL Request",
+      "Anchor": "sample-hiremediaurl-request",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields",
+        "Sample hireMediaURL Request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample hireMediaURL Request",
+      "Anchor": "sample-hiremediaurl-request",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields",
+        "Sample hireMediaURL Request"
+      ],
+      "Text": "{\n   \u0022usageParameters\u0022:     \n   {\n      \u0022tcrmResumeParameters\u0022 : {}\n   },\n   \u0022contentType\u0022: \u0022text/plain\u0022,\n   \u0022hiringContext\u0022: \u0022urn:li:contract:123456\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains a signed URL in the x-linkedin-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Create URL",
+        "Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "HTTP/2 201 \nx-li-responseorigin: RGW\nlocation: /hireMediaUrl/https%3A%2F%2Fwww.linkedin.com%2Fambry%2F%3Fx-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-linkedin-id: https://www.linkedin.com/ambry/?x-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-restli-protocol-version: 2.0.0\ncontent-length: 0\ndate: Thu, 17 Jun 2021 09:27:30 GMT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Resume File",
+      "Anchor": "upload-resume-file",
+      "SectionPath": [
+        "Create URL",
+        "Upload Resume File"
+      ],
+      "Text": "After getting a signed URL, you can now upload the resume file by calling the below API. To define a filename, add the query parameter x-ambry-filename to the signed URL received from the /hireMediaUrl endpoint and use it to define the filename of the file being uploaded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upload Request",
+      "Anchor": "sample-upload-request",
+      "SectionPath": [
+        "Create URL",
+        "Sample Upload Request"
+      ],
+      "Text": "curl -i \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQEvzZSZZQH75QAAAXhws9LWCtrppkjlS2oJyQOrJA...1XFGyS1XfEvSo\u0026x-ambry-filename={filename}\u0022 -H \u0022Authorization: Bearer {token}\u0022 --data-binary @datafile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Upload Response",
+      "Anchor": "sample-upload-response",
+      "SectionPath": [
+        "Create URL",
+        "Sample Upload Request",
+        "Sample Upload Response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains file location in the location response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upload Response Body",
+      "Anchor": "sample-upload-response-body",
+      "SectionPath": [
+        "Create URL",
+        "Sample Upload Request",
+        "Sample Upload Response Body"
+      ],
+      "Text": "HTTP/2 201 \ncache-control: no-cache, no-store\npragma: no-cache\nexpires: Thu, 01 Jan 1970 00:00:00 GMT\nlocation: /AAYUAgCvAAkAAQAAAAJFyLgwRkz_TmebRMrAixANdQ.txt\nx-li-uuid: HP2pABxWiRI1FsAisAAA==\ndate: Thu, 17 Jun 2021 09:56:58 GMT\ncontent-length: 0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Uploaded Candidate Resumes",
+      "Anchor": "sync-uploaded-candidate-resumes",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes"
+      ],
+      "Text": "Candidate Resumes should be synced to the Middleware Platform whenever they are created, updated, or deleted in your solution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Candidate Resumes maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Uploaded Candidate Resumes API Endpoint",
+      "Anchor": "sync-uploaded-candidate-resumes-api-endpoint",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Uploaded Candidate Resumes API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/v2/tcrmCandidateResumes?tcrmCandidateId={id1}\u0026dataProvider=PARTNER\u0026integrationContext={organization URN}\u0026ids={resume id 1}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Uploaded Candidate Resumes API Query String Parameters",
+      "Anchor": "sync-uploaded-candidate-resumes-api-query-string-parameters",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Uploaded Candidate Resumes API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "tcrmCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate identifier within external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmResumeId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resume identifier within external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always PARTNER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Resumes via Batch Update",
+      "Anchor": "sync-candidate-resumes-via-batch-update",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Candidate Resumes via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /tcrmCandidateResumes endpoint to sync candidate resumes to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidate Resumes Request Body Fields",
+      "Anchor": "sync-candidate-resumes-request-body-fields",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Candidate Resumes via Batch Update",
+        "Sync Candidate Resumes Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "tcrmCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resumeFile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN using format urn:li:ambryBlob:{location}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AmbryBlobUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Uploaded Candidate Resumes Request",
+      "Anchor": "sample-sync-uploaded-candidate-resumes-request",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Candidate Resumes via Batch Update",
+        "Sample Sync Uploaded Candidate Resumes Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/v2/tcrmCandidateResumes?ids%5B0%5D.tcrmCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B0%5D.tcrmResumeId=resumeid100\u0026ids%5B1%5D.tcrmCandidateId=tcrmCandidateId200\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmResumeId=resumeid200\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027{\n\u0022entities\u0022: {\n   \u0022tcrmCandidateId=tcrmCandidateId100\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0026tcrmResumeId=resumeid100\u0022: {\n    \u0022resumeFile\u0022: \u0022urn:li:ambryBlob:/AAYUAgCvAAkAAQAAAAJFyLgwRkz_TmebRMrAixANdQ.txt\u0022,\n        \u0022tcrmCreatedAt\u0022: 1670935153\n    },\n    \u0022tcrmCandidateId=tcrmCandidateId200\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0026tcrmResumeId=resumeid200\u0022: {\n    \u0022resumeFile\u0022: \u0022urn:li:ambryBlob:/AAYUAgCvAAkAAQAAAAJFyLgsRkz_TmebRMrAixxAjba1.txt\u0022,\n        \u0022tcrmCreatedAt\u0022: 1670935153\n    }\n   }\n} \u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Uploaded Candidate Resumes Response",
+      "Anchor": "sample-sync-uploaded-candidate-resumes-response",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Candidate Resumes via Batch Update",
+        "Sample Sync Uploaded Candidate Resumes Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Uploaded Candidate Resumes Response",
+      "Anchor": "sample-sync-uploaded-candidate-resumes-response",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Sync Candidate Resumes via Batch Update",
+        "Sample Sync Uploaded Candidate Resumes Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmCandidateId=tcrmCandidateId200\u0026tcrmResumeId=resumeid200\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmCandidateId=tcrmCandidateId100\u0026tcrmResumeId=resumeid100\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Uploaded Candidate Resumes Request",
+      "Anchor": "sample-delete-uploaded-candidate-resumes-request",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Delete Candidate Resumes",
+        "Sample Delete Uploaded Candidate Resumes Request"
+      ],
+      "Text": "curl -i -X DELETE \u0022https://api.linkedin.com/v2/tcrmCandidateResumes?ids%5B0%5D.tcrmCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B0%5D.tcrmResumeId=resumeid100\u0026ids%5B1%5D.tcrmCandidateId=tcrmCandidateId200\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmResumeId=resumeid200\u0022 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:1.0.0\u0027 \\\n-H \u0027Accept:application/json\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Delete Uploaded Candidate Resumes Response Body",
+      "Anchor": "sample-delete-uploaded-candidate-resumes-response-body",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Delete Candidate Resumes",
+        "Sample Delete Uploaded Candidate Resumes Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Uploaded Candidate Resumes Response Body",
+      "Anchor": "sample-delete-uploaded-candidate-resumes-response-body",
+      "SectionPath": [
+        "Sync Uploaded Candidate Resumes",
+        "Delete Candidate Resumes",
+        "Sample Delete Uploaded Candidate Resumes Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmCandidateId=tcrmCandidateId200\u0026tcrmResumeId=resumeid200\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmCandidateId=tcrmCandidateId100\u0026tcrmResumeId=resumeid100\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -39,7 +39,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The scheduledAt property</summary>
-        public int? ScheduledAt { get; set; }
+        public long? ScheduledAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "announcementImage", n => { AnnouncementImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAnnouncementImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAnnouncementImage.CreateFromDiscriminatorValue); } },
                 { "author", n => { Author = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAuthor>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAuthor.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scheduledAt", n => { ScheduledAt = n.GetIntValue(); } },
+                { "scheduledAt", n => { ScheduledAt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAnnouncementImage>("announcementImage", AnnouncementImage);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAuthor>("author", Author);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("scheduledAt", ScheduledAt);
+            writer.WriteLongValue("scheduledAt", ScheduledAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

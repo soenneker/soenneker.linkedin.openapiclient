@@ -1,0 +1,240 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+  "Title": "LinkedIn Marketing API Program Access Tiers",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program Access Tiers",
+      "Anchor": "linkedin-marketing-api-program-access-tiers",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program Access Tiers",
+      "Anchor": "linkedin-marketing-api-program-access-tiers",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program Access Tiers",
+      "Anchor": "linkedin-marketing-api-program-access-tiers",
+      "SectionPath": [],
+      "Text": "LinkedIn has two tiers of access to our Advertising API: Development and Standard.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program Access Tiers",
+      "Anchor": "linkedin-marketing-api-program-access-tiers",
+      "SectionPath": [],
+      "Text": "The tier assigned to your app defines how many Ad Accounts you can manage through the APIs. Upgrade to the next access tier by meeting the requirements described for that next level. Please note that all API Calls at all access levels are made on production data. Also, use of LinkedIn\u0027s Campaign Management APIs is subject to our LinkedIn Marketing API Program Terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program Access Tiers",
+      "Anchor": "linkedin-marketing-api-program-access-tiers",
+      "SectionPath": [],
+      "Text": "Access to the Advertising API is reserved for applications building supported use cases. See the Advertising API Overview for more information on supported use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LinkedIn Marketing API Program Access Tiers",
+      "Anchor": "linkedin-marketing-api-program-access-tiers",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Tier",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Build end-to-end workflows.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Standard",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support campaign management for multiple accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Access Tier Details",
+      "Anchor": "api-access-tier-details",
+      "SectionPath": [
+        "API Access Tier Details"
+      ],
+      "Text": "The following table outlines number of Ad Accounts you have access to and minimum qualification requirements for each access tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Access Tier Details",
+      "Anchor": "api-access-tier-details",
+      "SectionPath": [
+        "API Access Tier Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Access Tier",
+        "API Access Granted",
+        "How do you get access?*"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read: No limits on reading data related to Ad Accounts you administer Create : Access to create 1 test Ad Account through the API. All real Ad Accounts must be created through the Campaign Manager tool in this tier. Edit : Make updates related to up to 5 ad accounts that you administer",
+            "Links": [],
+            "Values": [
+              "Read: No limits on reading data related to Ad Accounts you administer",
+              "Create : Access to create 1 test Ad Account through the API. All real Ad Accounts must be created through the Campaign Manager tool in this tier.",
+              "Edit : Make updates related to up to 5 ad accounts that you administer"
+            ]
+          },
+          {
+            "Text": "Visit your app\u0027s Product tab in the Developer Portal to apply for the Advertising API.",
+            "Links": [
+              "https://www.linkedin.com/developers/apps"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Standard",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read :\u00A0No limits on reading data related to Ad Accounts you administer Create : Create unlimited Ad Accounts Edit : Make unlimited updates related to Ad Accounts that you administer",
+            "Links": [],
+            "Values": [
+              "Read :\u00A0No limits on reading data related to Ad Accounts you administer",
+              "Create : Create unlimited Ad Accounts",
+              "Edit : Make unlimited updates related to Ad Accounts that you administer"
+            ]
+          },
+          {
+            "Text": "Click on View Ad Accounts setting for the Advertising API under Added products within the Developer Portal.",
+            "Links": [
+              "https://www.linkedin.com/developers/apps"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Access Tier Details",
+      "Anchor": "api-access-tier-details",
+      "SectionPath": [
+        "API Access Tier Details"
+      ],
+      "Text": "* LinkedIn reserves the right to review applications and select partners at its discretion and a partner might not be upgraded even if they meet these minimum requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Access",
+      "Anchor": "development-access",
+      "SectionPath": [
+        "Development Access"
+      ],
+      "Text": "Visit your app\u0027s Product tab in the Developer Portal to apply for the Advertising API product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Access",
+      "Anchor": "development-access",
+      "SectionPath": [
+        "Development Access"
+      ],
+      "Text": "Before accessing the Standard Access tier, you must first build and test your application on LinkedIn\u2019s advertising platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Access",
+      "Anchor": "development-access",
+      "SectionPath": [
+        "Development Access"
+      ],
+      "Text": "Open to qualified developers, so you can build end-to-end workflows before obtaining full permissions. This tier enables you to POST for up to 5 Ad Accounts and GET for an unlimited number of accounts. To set up the ad account list, see Managing Your Ad Accounts List in Getting Started.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Access",
+      "Anchor": "standard-access",
+      "SectionPath": [
+        "Standard Access"
+      ],
+      "Text": "Standard Tier is designed for heavy ad demands with no limit on number of ad accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Access",
+      "Anchor": "standard-access",
+      "SectionPath": [
+        "Standard Access"
+      ],
+      "Text": "LinkedIn reserves the right to review applications and select partners at its discretion and a partner might not be upgraded even if they meet these minimum requirements.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

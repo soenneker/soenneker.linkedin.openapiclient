@@ -7,13 +7,22 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Creative review status. The review status can&apos;t be set/updated via the API but is started when the creative is activated (i.e., moves from draft state to active state). Hence, the review is absent (null) when the creative is in DRAFT state. Read-only.Documented type: CreativeReviewRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CampaignManagementFetchACreativeUsingCreativeId200ResponseReview : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An array of reasons for rejecting creatives. For more details, refer to the RejectionReason list.Documented type: Array[]Requirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?>? RejectionReasons { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons?> RejectionReasons { get; set; }
+#endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "rejectionReasons", n => { RejectionReasons = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons>()?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -57,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingIntegrationsAdsAccountStructureCreateAndManageCreativesAdCreativeRejectionReasons>("rejectionReasons", RejectionReasons);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

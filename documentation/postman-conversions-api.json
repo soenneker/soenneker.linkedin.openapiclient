@@ -1,0 +1,1710 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "body",
+      "scope": "r_ads,r_liteprofile,rw_conversions",
+      "state": "",
+      "tokenName": "conversions-token"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027conversions-linkedin-postman-versioning\u0027",
+          "});"
+        ],
+        "id": "0e42f8f4-6994-4e91-8d2f-218cf19c1a04",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "da6ac7b5-b15f-4f8f-93f1-f9e3f1ba1e78",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "cff35009-91ec-4af6-bf8e-20cf6d358f99",
+    "description": "**See the** [Getting Access](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/conversions/getting-access-conversions) guide **on how to apply.**\n\n[LinkedIn\u0027s Conversion API](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api) is a conversion tracking tool that creates a direct connection between marketing data from an advertiser\u2019s server and LinkedIn. This API enables advertisers to measure the performance of their LinkedIn marketing campaigns no matter where the conversion happens and use this data to power campaign optimization.\n\nThis collection aims to focus on the new Conversions API and should be used with the **conversions-env-versioning** environment.\n\nThere are two conditions for successful calls:\n\n(1) Scope permissions for [3-legged Oauth](https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow)\n\n- \u0060rw_conversions\u0060 (Read/Write)\n    \n- \u0060r_ads\u0060 (Read)\n    \n\nand\n\n(2) the user assigning permission holding one of the following roles in the Ad Account.\n\nAd Account Roles:\n\n- \u0060ACCOUNT_BILLING_ADMIN\u0060\n    \n- \u0060ACCOUNT_MANAGER\u0060\n    \n- \u0060CAMPAIGN_MANAGER\u0060\n    \n- \u0060CREATIVE_MANAGER\u0060\n    \n\n\\--All requests for the Conversions collection are in the Restli 2.0 format--",
+    "name": "Conversions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "description": "1. Obtain user authorization with consent to create and manage conversions using \u0060rw_conversions\u0060, \u0060r_ads\u0060 permissions in the scope.\n    \n2. Retrieve authenticated user\u0027s sponsored Ad Accounts where user has a non-viewer user role in the ad account.\n    \n3. Ask the user to select one of their Ad Account where conversion events would be streamed.\n    \n4. Fetch existing active Conversion Rules for CAPI in the selected Ad Account\n    \n5. Allow the user to choose if they want to create a new Conversion Rule or update an existing one\n    \n\n- If user chose to create a new conversion rule, otherwise jump to step 8:\n    \n\n6a. Create a new Conversion Rule with auto association to all campaigns  \n(if successful, jump to step 8)\n\nor\n\n6b. Create a new Conversion Rule with auto association to campaigns based on conversion type (mapped to campaign objectives)\n\n(if successful, jump to step 8)\n\nor\n\n6c. Create a new Conversion Rule with no campaign association (only required if auto association with all campaigns was not used)\n\n(if successful, continue to step 7)\n\n- Skip step 7 if the user chose to auto assoicate campaigns or update an existing Conversion Rule\n    \n\n7a. Fetch active campaign URNs to associate with conversion rule\n\n7b. Ask the user to select specific campaigns (by default select all campaigns)\n\n7c. Associate campaigns to conversion rule for campaign attribution and optimization\n\n7d. For multiple campaigns, Batch Associate multiple campaigns to conversion rule for campaign attribution and optimization\n\n- Send conversion events data (recurring)\n    \n\n8a. Stream conversion event to the conversion rule\n\n8b. Stream multiple conversion events to the conversion rule",
+      "id": "b8e2baf4-89ef-4f69-82a6-4e421813a6e2",
+      "item": [
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 200 OK response, continue",
+                  "if(httpresponse == \u0027200\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //for test automation, fetching the first sponsored account id from the list of elements returned with non-VIEWER user role; actually user will select ",
+                  "    for (let index = 0; index \u003C jsonData.elements.length; \u002B\u002Bindex) {",
+                  "        if (jsonData.elements[index].role != \u0022VIEWER\u0022) {",
+                  "            let sponsoredaccount_URN = jsonData.elements[index].account;",
+                  "            pm.environment.set(\u0022sponsoredaccount_id\u0022, sponsoredaccount_URN.split(\u0022:\u0022)[3]);",
+                  "            pm.test(\u0022Ad Account Fetch successful\u0022, true);",
+                  "            break;",
+                  "        }",
+                  "    }",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "5742a6b1-4cd6-43d0-8c10-704076f50629",
+          "name": "2. Retrieve authenticated user\u0027s Sponsored Ad Accounts",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "adAccountUsers"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "authenticatedUser"
+                },
+                {
+                  "key": "fields",
+                  "value": "role,account,user"
+                }
+              ],
+              "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser\u0026fields=role,account,user"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 2147483647,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 3\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022user\u0022: \u0022urn:li:person:abcd\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:5000123\u0022,\n            \u0022role\u0022: \u0022VIEWER\u0022\n        },\n        {\n            \u0022user\u0022: \u0022urn:li:person:abcd\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:5000234\u0022,\n            \u0022role\u0022: \u0022ACCOUNT_BILLING_ADMIN\u0022\n        },\n        {\n            \u0022user\u0022: \u0022urn:li:person:abcd\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:5000345\u0022,\n            \u0022role\u0022: \u0022ACCOUNT_BILLING_ADMIN\u0022\n        }\n    ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "1.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 14 Jun 2023 18:36:33 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAX\u002BGzsjqgSHmQZ8fFBRbA=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3380:u=1682:x=1:i=1686767793:t=1686813748:v=2:sig=AQFd2BBoXo4jGhMI0VSlCcsx5Q-0dR64\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3380:u=1682:x=1:i=1686767793:t=1686813748:v=2:sig=AQFd2BBoXo4jGhMI0VSlCcsx5Q-0dR64\u0022"
+                }
+              ],
+              "id": "e051ac84-ef62-4c7f-80dd-710b47cf1798",
+              "name": "2. Retrieve authenticated user\u0027s Sponsored Ad Accounts",
+              "originalRequest": {
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "adAccountUsers"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "authenticatedUser"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "role,account,user"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser\u0026fields=role,account,user"
+                }
+              },
+              "responseTime": null,
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 200 OK response, continue",
+                  "if(httpresponse == \u0027200\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //for test automation, fetching the first conversion id from the list of elements returned for CAPI; ; actually user will select ",
+                  "    for (let index = 0; index \u003C jsonData.elements.length; \u002B\u002Bindex) {",
+                  "        // conversionMethod must be CONVERSIONS_API and enabled must be true to filter active CAPI conversion rules",
+                  "        if (jsonData.elements[index].conversionMethod == \u0022CONVERSIONS_API\u0022 \u0026\u0026 jsonData.elements[index].enabled) {",
+                  "            pm.environment.set(\u0022conversion_id\u0022, jsonData.elements[index].id);",
+                  "            pm.test(\u0022Conversion rule Fetch successful\u0022, true);",
+                  "            break;",
+                  "        }",
+                  "    }",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "78d89ead-24c6-4875-b07b-fca6fe35c84b",
+          "name": "4. Fetch existing Conversion Rules for CAPI in the selected ad account",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "description": "Fetch existing conversion rules in the selected ad account with this endpoint and parse the response to filter elements with \u0060conversionMethod\u0060 to \u0060CONVERSIONS_API\u0060 for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "conversions"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "account"
+                },
+                {
+                  "key": "account",
+                  "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                },
+                {
+                  "key": "fields",
+                  "value": "conversionMethod,enabled,type,name,id,attributionType"
+                }
+              ],
+              "raw": "{{baseUrl}}/conversions?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026fields=conversionMethod,enabled,type,name,id,attributionType"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: -1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: \u0022Conversion API Segment 1\u0022,\n            \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n            \u0022id\u0022: 1403456,\n            \u0022type\u0022: \u0022LEAD\u0022,\n            \u0022enabled\u0022: true\n        },\n        {\n            \u0022name\u0022: \u0022Conversion API Segment 4\u0022,\n            \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n            \u0022id\u0022: 1103890,\n            \u0022type\u0022: \u0022LEAD\u0022,\n            \u0022enabled\u0022: true\n        },\n        {\n            \u0022name\u0022: \u0022Online Test\u0022,\n            \u0022conversionMethod\u0022: \u0022INSIGHT_TAG_URL_MATCH_RULES\u0022,\n            \u0022id\u0022: 10991460,\n            \u0022type\u0022: \u0022BOOK_APPOINTMENT\u0022,\n            \u0022enabled\u0022: true\n        },\n        {\n            \u0022name\u0022: \u0022Demo requests\u0022,\n            \u0022conversionMethod\u0022: \u0022INSIGHT_TAG_JAVASCRIPT_EVENT\u0022,\n            \u0022id\u0022: 4886884,\n            \u0022type\u0022: \u0022REQUEST_QUOTE\u0022,\n            \u0022enabled\u0022: false\n        }\n    ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 15 Jun 2023 08:51:41 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAX\u002BJy1X\u002Bzsm945WHNt5HQ=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3380:u=1684:x=1:i=1686819101:t=1686883294:v=2:sig=AQG9PJifKDndXPzy7_WniIlif5-4vsdz\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3380:u=1684:x=1:i=1686819101:t=1686883294:v=2:sig=AQG9PJifKDndXPzy7_WniIlif5-4vsdz\u0022"
+                }
+              ],
+              "id": "2fa01e35-82eb-47bf-a1cf-05f9e39eb24b",
+              "name": "4. Fetch existing Conversion Rules for CAPI in the selected ad account",
+              "originalRequest": {
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "conversions"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "account"
+                    },
+                    {
+                      "key": "account",
+                      "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "conversionMethod,enabled,type,name,id,attributionType"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/conversions?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026fields=conversionMethod,enabled,type,name,id,attributionType"
+                }
+              },
+              "responseTime": null,
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 201 Create response, continue",
+                  "if(httpresponse == \u0027201\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //set the collection variable",
+                  "    pm.environment.set(\u0022conversion_id\u0022, jsonData.id);",
+                  "    pm.test(\u0022Conversion rule creation successful\u0022, true);",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "951533eb-5a72-4be1-869a-434652383999",
+          "name": "6a. Create a new Conversion Rule with auto association to all campaigns",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \u0022name\u0022: \u0022Conversions API Segment\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "conversions"
+              ],
+              "query": [
+                {
+                  "key": "autoAssociationType",
+                  "value": "ALL_CAMPAIGNS"
+                }
+              ],
+              "raw": "{{baseUrl}}/conversions?autoAssociationType=ALL_CAMPAIGNS"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022postClickAttributionWindowSize\u0022: 90,\n    \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n    \u0022viewThroughAttributionWindowSize\u0022: 30,\n    \u0022created\u0022: 1747961796996,\n    \u0022type\u0022: \u0022LEAD\u0022,\n    \u0022enabled\u0022: true,\n    \u0022associatedCampaigns\u0022: [],\n    \u0022campaigns\u0022: [],\n    \u0022name\u0022: \u0022Conversions API Segment\u0022,\n    \u0022id\u0022: 14488340,\n    \u0022lastModified\u0022: 1747961796996,\n    \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n    \u0022urlRules\u0022: [],\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:5012345\u0022\n}",
+              "code": 201,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Location",
+                  "value": "/conversions/123"
+                },
+                {
+                  "key": "x-restli-id",
+                  "value": "123"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 24 Oct 2023 02:47:51 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYIbV1fUy9lNvosbDYsmQ=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115671:t=1698121131:v=2:sig=AQH9Ek4NjI_HRcW2-y6FXmJ_MnU6czll\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115671:t=1698121131:v=2:sig=AQH9Ek4NjI_HRcW2-y6FXmJ_MnU6czll\u0022"
+                }
+              ],
+              "id": "a2b74582-81b1-422b-94f5-485291204c0b",
+              "name": "6. Create a new Conversion Rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \u0022name\u0022: \u0022Conversion API Segment 5\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "conversions"
+                  ],
+                  "query": [
+                    {
+                      "key": "autoAssociationType",
+                      "value": "ALL_CAMPAIGNS"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/conversions?autoAssociationType=ALL_CAMPAIGNS"
+                }
+              },
+              "responseTime": null,
+              "status": "Created"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 201 Create response, continue",
+                  "if(httpresponse == \u0027201\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //set the collection variable",
+                  "    pm.environment.set(\u0022conversion_id\u0022, jsonData.id);",
+                  "    pm.test(\u0022Conversion rule creation successful\u0022, true);",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "462d28a1-c769-4021-973e-9ecd87b4b19e",
+          "name": "6b. Create a new Conversion Rule with auto association to campaigns based on conversion type",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \u0022name\u0022: \u0022Conversions API Segment\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "conversions"
+              ],
+              "query": [
+                {
+                  "key": "autoAssociationType",
+                  "value": "OBJECTIVE_BASED"
+                }
+              ],
+              "raw": "{{baseUrl}}/conversions?autoAssociationType=OBJECTIVE_BASED"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022postClickAttributionWindowSize\u0022: 90,\n    \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n    \u0022viewThroughAttributionWindowSize\u0022: 30,\n    \u0022created\u0022: 1747961796996,\n    \u0022type\u0022: \u0022LEAD\u0022,\n    \u0022enabled\u0022: true,\n    \u0022associatedCampaigns\u0022: [],\n    \u0022campaigns\u0022: [],\n    \u0022name\u0022: \u0022Conversions API Segment\u0022,\n    \u0022id\u0022: 14488340,\n    \u0022lastModified\u0022: 1747961796996,\n    \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n    \u0022urlRules\u0022: [],\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:5012345\u0022\n}",
+              "code": 201,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Location",
+                  "value": "/conversions/123"
+                },
+                {
+                  "key": "x-restli-id",
+                  "value": "123"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 24 Oct 2023 02:47:51 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYIbV1fUy9lNvosbDYsmQ=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115671:t=1698121131:v=2:sig=AQH9Ek4NjI_HRcW2-y6FXmJ_MnU6czll\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115671:t=1698121131:v=2:sig=AQH9Ek4NjI_HRcW2-y6FXmJ_MnU6czll\u0022"
+                }
+              ],
+              "id": "6012935b-59cc-416a-8dd2-d377764ca8f6",
+              "name": "6. Create a new Conversion Rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \u0022name\u0022: \u0022Conversion API Segment 5\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "conversions"
+                  ],
+                  "query": [
+                    {
+                      "key": "autoAssociationType",
+                      "value": "OBJECTIVE_BASED"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/conversions?autoAssociationType=OBJECTIVE_BASED"
+                }
+              },
+              "responseTime": null,
+              "status": "Created"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 201 Create response, continue",
+                  "if(httpresponse == \u0027201\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //set the collection variable",
+                  "    pm.environment.set(\u0022conversion_id\u0022, jsonData.id);",
+                  "    pm.test(\u0022Conversion rule creation successful\u0022, true);",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "4700c00f-2413-4bd8-b85b-c402f200f962",
+          "name": "6c. Create a new Conversion Rule with no campaigns association",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \u0022name\u0022: \u0022Conversions API Segment\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "POST",
+            "url": "{{baseUrl}}/conversions"
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022postClickAttributionWindowSize\u0022: 90,\n    \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n    \u0022viewThroughAttributionWindowSize\u0022: 30,\n    \u0022created\u0022: 1747961796996,\n    \u0022type\u0022: \u0022LEAD\u0022,\n    \u0022enabled\u0022: true,\n    \u0022associatedCampaigns\u0022: [],\n    \u0022campaigns\u0022: [],\n    \u0022name\u0022: \u0022Conversions API Segment\u0022,\n    \u0022id\u0022: 14488340,\n    \u0022lastModified\u0022: 1747961796996,\n    \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n    \u0022urlRules\u0022: [],\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:5012345\u0022\n}",
+              "code": 201,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Location",
+                  "value": "/conversions/123"
+                },
+                {
+                  "key": "x-restli-id",
+                  "value": "123"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 24 Oct 2023 02:47:51 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYIbV1fUy9lNvosbDYsmQ=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115671:t=1698121131:v=2:sig=AQH9Ek4NjI_HRcW2-y6FXmJ_MnU6czll\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115671:t=1698121131:v=2:sig=AQH9Ek4NjI_HRcW2-y6FXmJ_MnU6czll\u0022"
+                }
+              ],
+              "id": "0a894beb-ed2a-436a-b737-064946566fb8",
+              "name": "6. Create a new Conversion Rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \u0022name\u0022: \u0022Conversion API Segment 5\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/conversions"
+              },
+              "responseTime": null,
+              "status": "Created"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 200 OK response, continue",
+                  "if(httpresponse == \u0027200\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //for test automation, grabbing the first campaign id from the list of elements returned for campaigns",
+                  "    for (let index = 0; index \u003C jsonData.elements.length; \u002B\u002Bindex) {",
+                  "            pm.environment.set(\u0022campaign_id\u0022, jsonData.elements[index].id);",
+                  "            pm.environment.set(\u0022campaign_id_2\u0022, jsonData.elements[index\u002B1].id);",
+                  "            pm.test(\u0022Campaign Fetch successful\u0022, true);",
+                  "            break;",
+                  "    }",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "1ab9a821-7eaa-430a-9b66-6f3f5f487cac",
+          "name": "7a. Fetch active campaigns",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "description": "Fetch existing conversion rules in the selected ad account with this endpoint and parse the response to filter elements with \u0060conversionMethod\u0060 to \u0060CONVERSIONS_API\u0060 for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "adAccounts",
+                "{{sponsoredaccount_id}}",
+                "adCampaigns"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "search"
+                },
+                {
+                  "key": "search",
+                  "value": "(status:(values:List(ACTIVE,DRAFT)))"
+                },
+                {
+                  "key": "fields",
+                  "value": "id,name"
+                }
+              ],
+              "raw": "{{baseUrl}}/adAccounts/{{sponsoredaccount_id}}/adCampaigns?q=search\u0026search=(status:(values:List(ACTIVE,DRAFT)))\u0026fields=id,name"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n   \u0022metadata\u0022: {\n        \u0022nextPageToken\u0022: \u0022abcdxyz123\u0022\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: \u0022Website visits - May 4, 2025\u0022,\n            \u0022id\u0022: 12345\n        },\n        {\n            \u0022name\u0022: \u0022Brand awareness - Jul 14, 2024\u0022,\n            \u0022id\u0022: 14567\n        },\n        {\n            \u0022name\u0022: \u0022Lead generation - Dec 5, 2024\u0022,\n            \u0022id\u0022: 789090\n        },\n        {\n            \u0022name\u0022: \u0022Website conversions - Dec 6, 2024\u0022,\n            \u0022id\u0022: 899887\n        }\n    ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Oct 2023 01:50:46 GMT"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYH38BSGn\u002BzS5gvrvSuEg=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3877:u=1748:x=1:i=1697507446:t=1697509914:v=2:sig=AQG1F5DDw_-Cvyww_R4RWc8KPvLXx2sz\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3877:u=1748:x=1:i=1697507446:t=1697509914:v=2:sig=AQG1F5DDw_-Cvyww_R4RWc8KPvLXx2sz\u0022"
+                }
+              ],
+              "id": "33f9d750-96ef-4f08-9fe1-e5504dd13b18",
+              "name": "7a. Fetch active campaigns",
+              "originalRequest": {
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "adAccounts",
+                    "{{sponsoredaccount_id}}",
+                    "adCampaigns"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "search"
+                    },
+                    {
+                      "key": "search",
+                      "value": "(status:(values:List(ACTIVE,DRAFT)))"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/adAccounts/{{sponsoredaccount_id}}/adCampaigns?q=search\u0026search=(status:(values:List(ACTIVE,DRAFT)))\u0026fields=id,name"
+                }
+              },
+              "responseTime": null,
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 204 No Content response, continue",
+                  "if(httpresponse == \u0027204\u0027) {",
+                  "    //set the collection variable",
+                  "    pm.test(\u0022Campaign association successful\u0022, true);",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "90a5b50d-e02c-42e3-a017-610a53f8a17d",
+          "name": "7c. Associate campaigns to conversion rule",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{{campaign_id}}\u0022,\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "PUT",
+            "url": "{{baseUrl}}/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})"
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "plain",
+              "body": null,
+              "code": 204,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Oct 2023 02:01:02 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYH3\u002BUKX//t\u002B2JU8QjBgg=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3877:u=1748:x=1:i=1697508062:t=1697509914:v=2:sig=AQEuCMMAxhHSzyZlkupPJUKXiy1LEjWz\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3877:u=1748:x=1:i=1697508062:t=1697509914:v=2:sig=AQEuCMMAxhHSzyZlkupPJUKXiy1LEjWz\u0022"
+                }
+              ],
+              "id": "a5f0b3ba-de23-47dd-9479-f64c9d12785c",
+              "name": "7c. Associate campaigns to conversion rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{{campaign_id}}\u0022,\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "PUT",
+                "url": "{{baseUrl}}/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})"
+              },
+              "responseTime": null,
+              "status": "No Content"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 200 OK response, continue",
+                  "if(httpresponse == \u0027200\u0027) {",
+                  "    //set the collection variable",
+                  "    pm.test(\u0022Batch Campaign association successful\u0022, true);",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "a07d4193-2597-488e-a017-0fc35ef40a35",
+          "name": "7d. Batch Associate Multiple Campaigns to Conversion Rule",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true,
+            "disableUrlEncoding": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n \u0022entities\u0022:\n {\n  \t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})\u0022:{\n   \t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:{{campaign_id}}\u0022,\n\t \t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022\n  \t},\n  \t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})\u0022:{\n\t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:{{campaign_id_2}}\u0022,\n\t\t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022\n \t}\n }\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "campaignConversions"
+              ],
+              "query": [
+                {
+                  "key": "ids",
+                  "value": "List((campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}),(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}))"
+                }
+              ],
+              "raw": "{{baseUrl}}/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}),(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}))"
+            }
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022results\u0022: {\n        \u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A1234,conversion:urn%3Alla%3AllaPartnerConversion%3A135)\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A5678,conversion:urn%3Alla%3AllaPartnerConversion%3A246)\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "X-RestLi-Protocol-Version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 14 Feb 2024 02:39:18 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYRTmrbRPjb91hx216gPQ=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3721:u=1841:x=1:i=1707878358:t=1707963114:v=2:sig=AQGmqhYyEBmrLz8d-wpc8E_ABmXul4na\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3721:u=1841:x=1:i=1707878358:t=1707963114:v=2:sig=AQGmqhYyEBmrLz8d-wpc8E_ABmXul4na\u0022"
+                }
+              ],
+              "id": "86cf0311-393e-4073-8690-ee4bc70b09df",
+              "name": "7d. Batch Associate Multiple Campaigns to Conversion Rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n \u0022entities\u0022:\n {\n  \t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})\u0022:{\n   \t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:{{campaign_id}}\u0022,\n\t \t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022\n  \t},\n  \t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}})\u0022:{\n\t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:{{campaign_id_2}}\u0022,\n\t\t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022\n \t}\n }\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "X-RestLi-Method",
+                    "value": "BATCH_UPDATE"
+                  }
+                ],
+                "method": "PUT",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "campaignConversions"
+                  ],
+                  "query": [
+                    {
+                      "key": "ids",
+                      "value": "List((campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}),(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}))"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}),(campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id_2}},conversion:urn%3Alla%3AllaPartnerConversion%3A{{conversion_id}}))"
+                }
+              },
+              "responseTime": null,
+              "status": "OK"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 201 Create response, continue",
+                  "if(httpresponse == \u0027201\u0027) {",
+                  "    //set the collection variable",
+                  "    pm.test(\u0022Conversion event streaming successful\u0022, true);",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "dad0bf49-0351-4546-ae64-3bc8d165a741",
+          "name": "8a. Stream conversion event to the conversion rule",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022,\n      \u0022conversionHappenedAt\u0022: 1747964771000,\n      \u0022conversionValue\u0022: {\n           \u0022currencyCode\u0022: \u0022USD\u0022,\n           \u0022amount\u0022: \u0022500.0\u0022\n       },\n       \u0022user\u0022: {\n           \u0022userIds\u0022: [ {\n               \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n               \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n               }, {\n               \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n               \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n               } ],\n          \u0022userInfo\u0022: {\n               \t\u0022firstName\u0022: \u0022mike\u0022,\n                \u0022lastName\u0022: \u0022smith\u0022,\n                \u0022title\u0022: \u0022software engineer\u0022,\n                \u0022companyName\u0022: \u0022microsoft\u0022,\n                \u0022countryCode\u0022: \u0022US\u0022\n         \t},\n            \u0022lead\u0022 : \u0022urn:li:leadGenFormResponse:123\u0022,\n            \u0022externalIds\u0022: [\u0022abcxyz123\u0022]\n    \t },\n\t\u0022eventId\u0022 : \u0022abc12345\u0022\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "POST",
+            "url": "{{baseUrl}}/conversionEvents"
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "plain",
+              "body": null,
+              "code": 201,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Location",
+                  "value": "/conversionEvents/com.linkedin.restli.internal.client.ResponseImpl@781f7bc"
+                },
+                {
+                  "key": "x-restli-id",
+                  "value": "com.linkedin.restli.internal.client.ResponseImpl@781f7bc"
+                },
+                {
+                  "key": "x-restli-protocol-version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 17 Oct 2023 02:11:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYH4AnK1AAc/Azazc7Grg=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3877:u=1748:x=1:i=1697508678:t=1697509914:v=2:sig=AQHiQjPSFIG2tf12TF6YDOka3xTjrAoc\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3877:u=1748:x=1:i=1697508678:t=1697509914:v=2:sig=AQHiQjPSFIG2tf12TF6YDOka3xTjrAoc\u0022"
+                }
+              ],
+              "id": "06dd6891-06f3-468c-bc35-6044327b075f",
+              "name": "8a. Stream conversion event to the conversion rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022,\n      \u0022conversionHappenedAt\u0022: 1747964771000,\n      \u0022conversionValue\u0022: {\n           \u0022currencyCode\u0022: \u0022USD\u0022,\n           \u0022amount\u0022: \u002250.0\u0022\n       },\n       \u0022user\u0022: {\n           \u0022userIds\u0022: [ {\n               \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n               \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n               }, {\n               \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n               \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n               } ],\n          \u0022userInfo\u0022: {\n               \t\u0022firstName\u0022: \u0022mike\u0022,\n                \u0022lastName\u0022: \u0022smith\u0022,\n                \u0022title\u0022: \u0022software engineer\u0022,\n                \u0022companyName\u0022: \u0022microsoft\u0022,\n                \u0022countryCode\u0022: \u0022US\u0022\n         \t},\n            \u0022lead\u0022 : \u0022urn:li:leadGenFormResponse:123\u0022,\n            \u0022externalIds\u0022: [\u0022abcxyz123\u0022]\n    \t },\n\t\u0022eventId\u0022 : \u0022abc12345\u0022\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/conversionEvents"
+              },
+              "responseTime": null,
+              "status": "Created"
+            }
+          ]
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\u0022Request successful\u0022, function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "var httpresponse = pm.response.code;",
+                  "//if 200 Create response, continue",
+                  "if(httpresponse == \u0027200\u0027) {",
+                  "    var jsonData = JSON.parse(responseBody);",
+                  "    //check each element status is 201",
+                  "    for (let index = 0; index \u003C jsonData.elements.length; \u002B\u002Bindex) {",
+                  "        if (jsonData.elements[index].status == 201){",
+                  "            pm.test(\u0022Conversion event streaming successful - \u0022\u002B index, true);",
+                  "        }",
+                  "    }",
+                  "}"
+                ],
+                "id": "a632e3b4-fce3-403b-9a86-eef47c1453a9",
+                "packages": {},
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "f5dc5bea-e07e-4f66-a1f4-9da17a6a124a",
+          "name": "8b. Stream multiple conversion events to the conversion rule",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n\t\u0022elements\u0022:\n\t[\n        {\n            \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022,\n            \u0022conversionHappenedAt\u0022: 1747964772000,\n            \u0022conversionValue\u0022: {\n                \u0022currencyCode\u0022: \u0022USD\u0022,\n                \u0022amount\u0022: \u00221500.0\u0022\n            },\n            \u0022user\u0022: {\n                \u0022userIds\u0022: [ {\n                    \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                    \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n                    }, {\n                    \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n                    \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n                    } ],\n                \u0022userInfo\u0022: {\n                        \u0022firstName\u0022: \u0022mike\u0022,\n                        \u0022lastName\u0022: \u0022smith\u0022,\n                        \u0022title\u0022: \u0022software engineer\u0022,\n                        \u0022companyName\u0022: \u0022microsoft\u0022,\n                        \u0022countryCode\u0022: \u0022US\u0022\n                    }\n                },\n            \u0022eventId\u0022 : \u0022abc12345\u0022\n        },\n        {\n            \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022,\n            \u0022conversionHappenedAt\u0022: 1747964775000,\n            \u0022conversionValue\u0022: {\n                \u0022currencyCode\u0022: \u0022USD\u0022,\n                \u0022amount\u0022: \u00222000.0\u0022\n            },\n            \u0022user\u0022: {\n                \u0022userIds\u0022: [ {\n                    \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                    \u0022idValue\u0022: \u0022dsfgrtg56u767ujy982fgnbmcsdocl46c58c56b650cik230bb9\u0022\n                    }, {\n                    \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n                    \u0022idValue\u0022: \u0022ufh8h5-gh6t7-ph4j7h-mkl86n1\u0022\n                    } ],\n                \u0022userInfo\u0022: {\n                        \u0022firstName\u0022: \u0022jason\u0022,\n                        \u0022lastName\u0022: \u0022bourne\u0022,\n                        \u0022title\u0022: \u0022tech lead\u0022,\n                        \u0022companyName\u0022: \u0022linkedin\u0022,\n                        \u0022countryCode\u0022: \u0022US\u0022\n                    }\n                },\n            \u0022eventId\u0022 : \u0022xyz345\u0022\n        }\n    ]\n}"
+            },
+            "description": "Create one or more conversion rules with this endpoint and set\u00A0\u0060conversionMethod\u0060\u00A0to\u00A0\u0060CONVERSIONS_API\u0060\u00A0for streaming conversions through API.",
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "type": "text",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              },
+              {
+                "key": "X-RestLi-Method",
+                "type": "text",
+                "value": "BATCH_CREATE"
+              }
+            ],
+            "method": "POST",
+            "url": "{{baseUrl}}/conversionEvents"
+          },
+          "response": [
+            {
+              "_postman_previewlanguage": "json",
+              "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022status\u0022: 201\n        }\n    ]\n}",
+              "code": 200,
+              "cookie": [],
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "x-restli-protocol-version",
+                  "value": "2.0.0"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 24 Oct 2023 02:51:55 GMT"
+                },
+                {
+                  "key": "X-Li-Fabric",
+                  "value": "prod-lor1"
+                },
+                {
+                  "key": "Report-To",
+                  "value": "{\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "NEL",
+                  "value": "{\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.00066,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "X-Li-Source-Fabric",
+                  "value": "prod-lva1"
+                },
+                {
+                  "key": "X-Li-Pop",
+                  "value": "prod-lva1-x"
+                },
+                {
+                  "key": "X-LI-Proto",
+                  "value": "http/1.1"
+                },
+                {
+                  "key": "X-LI-UUID",
+                  "value": "AAYIbWvmBmkoHhcx9SVCSA=="
+                },
+                {
+                  "key": "Set-Cookie",
+                  "value": "lidc=\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115914:t=1698121131:v=2:sig=AQHzEIPucPFVAH_DkGU-T6ZaVmFk6Mxe\u0022"
+                },
+                {
+                  "key": "X-LI-Route-Key",
+                  "value": "\u0022b=OB52:s=O:r=O:a=O:p=O:g=3500:u=1754:x=1:i=1698115914:t=1698121131:v=2:sig=AQHzEIPucPFVAH_DkGU-T6ZaVmFk6Mxe\u0022"
+                }
+              ],
+              "id": "0cd04033-28a4-4864-a735-d04a72398fde",
+              "name": "8b. Stream multiple conversion events to the conversion rule",
+              "originalRequest": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n\t\u0022elements\u0022:\n\t[\n        {\n            \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022,\n            \u0022conversionHappenedAt\u0022: 1695739275000,\n            \u0022conversionValue\u0022: {\n                \u0022currencyCode\u0022: \u0022USD\u0022,\n                \u0022amount\u0022: \u00221500.0\u0022\n            },\n            \u0022user\u0022: {\n                \u0022userIds\u0022: [ {\n                    \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                    \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n                    }, {\n                    \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n                    \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n                    } ],\n                \u0022userInfo\u0022: {\n                        \u0022firstName\u0022: \u0022mike\u0022,\n                        \u0022lastName\u0022: \u0022smith\u0022,\n                        \u0022title\u0022: \u0022software engineer\u0022,\n                        \u0022companyName\u0022: \u0022microsoft\u0022,\n                        \u0022countryCode\u0022: \u0022US\u0022\n                    }\n                },\n            \u0022eventId\u0022 : \u0022abc12345\u0022\n        },\n        {\n            \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:{{conversion_id}}\u0022,\n            \u0022conversionHappenedAt\u0022: 1695950057000,\n            \u0022conversionValue\u0022: {\n                \u0022currencyCode\u0022: \u0022USD\u0022,\n                \u0022amount\u0022: \u00222000.0\u0022\n            },\n            \u0022user\u0022: {\n                \u0022userIds\u0022: [ {\n                    \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                    \u0022idValue\u0022: \u0022dsfgrtg56u767ujy982fgnbmcsdocl46c58c56b650cik230bb9\u0022\n                    }, {\n                    \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n                    \u0022idValue\u0022: \u0022ufh8h5-gh6t7-ph4j7h-mkl86n1\u0022\n                    } ],\n                \u0022userInfo\u0022: {\n                        \u0022firstName\u0022: \u0022jason\u0022,\n                        \u0022lastName\u0022: \u0022bourne\u0022,\n                        \u0022title\u0022: \u0022tech lead\u0022,\n                        \u0022companyName\u0022: \u0022linkedin\u0022,\n                        \u0022countryCode\u0022: \u0022US\u0022\n                    }\n                },\n            \u0022eventId\u0022 : \u0022xyz345\u0022\n        }\n    ]\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "X-RestLi-Method",
+                    "value": "BATCH_CREATE"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/conversionEvents"
+              },
+              "responseTime": null,
+              "status": "OK"
+            }
+          ]
+        }
+      ],
+      "name": "Conversion Events Streaming Workflow"
+    }
+  ]
+}

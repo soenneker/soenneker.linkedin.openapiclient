@@ -1,0 +1,2841 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+  "Title": "OnsiteApplyConfiguration schema",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "OnsiteApplyConfiguration schema",
+      "Anchor": "onsiteapplyconfiguration-schema",
+      "SectionPath": [],
+      "Text": "This schema defines the structure for collecting job applications directly on LinkedIn for Apply Connect enabled jobs, allowing you to customize application questions when used with the Job Posting API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OnsiteApplyConfiguration schema",
+      "Anchor": "onsiteapplyconfiguration-schema",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OnsiteApplyConfiguration schema",
+      "Anchor": "onsiteapplyconfiguration-schema",
+      "SectionPath": [],
+      "Text": "Ensure that partnerQuestionIdentifier values are unique and not duplicated in job payloads. Duplicate questions will result in jobs unsuccessfully posting as onsite apply.\nFor all synced jobs, ensure application questions match all questions available on customer career sites.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OnsiteApplyConfiguration fields",
+      "Anchor": "onsiteapplyconfiguration-fields",
+      "SectionPath": [
+        "OnsiteApplyConfiguration fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobApplicationWebhookUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is required for Apply Connect. The URL where you will receive job applications from LinkedIn in near-realtime for this job posting. Note: Any URL that is passed into this field must be capable of passing the Webhook Endpoint Validation Flow.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The object containing all necessary info to render questions to be asked for a given JobPosting. If no questions are specified, then only basic default contact information questions will be asked during the application process (first name, last name, and email).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "onsiteApplyOptOut",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn does not enable on-site apply for this job when this value is true, and the job stays off-site.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleTalentQuestions fields",
+      "Anchor": "simpletalentquestions-fields",
+      "SectionPath": [
+        "SimpleTalentQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contactInformationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contact information question section. If this field is null, then only mandatory contact information questions (first name, last name, and email) will be collected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContactInformationQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#contactinformationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resumeQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resume question section. If this field is null, then no resume questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ResumeQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#resumequestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverLetterQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cover letter question section. If this field is null, then no cover letter questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CoverLetterQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#coverletterquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work questions section. If this field is null, then no work questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WorkQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#workquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The education question section. If this field is null, then no education questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EducationQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#educationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "voluntarySelfIdentificationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The voluntary self identification question section. If this field is null, then no voluntary self identification questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VoluntarySelfIdentificationQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#voluntaryselfidentificationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "additionalQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A collection of custom questions which can be added if questions don\u2019t fit into any other question sections. Questions asked in additional Questions will be rendered in the \u201CAdditional Questions\u201D section of the Job Application UI. If this field is null, then no Additional Questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdditionalQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#additionalquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContactInformationQuestions fields",
+      "Anchor": "contactinformationquestions-fields",
+      "SectionPath": [
+        "ContactInformationQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "middleNameQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether middle name should be collected. Defaults to SKIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cellphoneNumberQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether cell phone number should be collected. Defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether location should be collected. Defaults to SKIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within the Contact Information section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ResumeQuestions fields",
+      "Anchor": "resumequestions-fields",
+      "SectionPath": [
+        "ResumeQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "resumeQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether a resume file (max 2 MB, accepted file types: \u201Cdoc\u201D, \u201Cdocx\u201D, \u201Cpdf\u201D) needs to be provided. Defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within the Resume Question section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CoverLetterQuestions fields",
+      "Anchor": "coverletterquestions-fields",
+      "SectionPath": [
+        "CoverLetterQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "coverLetterQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether a cover letter file (max 512 KB, accepted file types: \u0022doc\u0022, \u0022docx\u0022, \u0022pdf\u0022) needs to be provided. Defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textCoverLetterQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether to accept a multi-line text input for a cover letter. Defaults to SKIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within the Cover Letter section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkQuestions fields",
+      "Anchor": "workquestions-fields",
+      "SectionPath": [
+        "WorkQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "workExperienceQuestionSet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A set of repeatable questions on work experience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WorkExperienceQuestionSet",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#workexperiencequestionset-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within the Work question section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkExperienceQuestionSet fields",
+      "Anchor": "workexperiencequestionset-fields",
+      "SectionPath": [
+        "WorkExperienceQuestionSet fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "minRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field requires submission of work experience. The work experience min limit can be set to 1, then at least 1 has to be provided in order to submit the subsection. If no minRequired is specified, this field will default to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "repeatLimit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum number of times this question set can be asked. For example, if the value is 1 then the question set will only appear once. For this question set, the acceptable range of values is [1, 10]. If no repeatLimit is specified, this field will default to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "titleQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Title\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentDatesQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Employment Dates\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cityQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022City\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Company\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "descriptionQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Description\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within the Work Experience section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EducationQuestions fields",
+      "Anchor": "educationquestions-fields",
+      "SectionPath": [
+        "EducationQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "educationExperienceQuestionSet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An education experience set of repeatable questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EducationExperienceQuestionSet",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#educationexperiencequestionset-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within the Education question section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EducationExperienceQuestionSet fields",
+      "Anchor": "educationexperiencequestionset-fields",
+      "SectionPath": [
+        "EducationExperienceQuestionSet fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "minRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field requires submission of education experience. The education experience min limit can be set to 1, then at least 1 has to be provided in order to submit the subsection. If no minRequired is specified, this field will default to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "repeatLimit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum number of times this question set can be asked. For example, if the value is 1 then the question set will only appear once. For this question set, the acceptable range of values is [1, 3]. If no repeatLimit is specified, this field will default to 3.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schoolQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022School\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "datesAttendedQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Dates Attended\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cityQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022City\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degreeQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Degree\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldOfStudyQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the \u0022Field of Study\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The additional repeatable custom questions to be included within the Education Experience question set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "VoluntarySelfIdentificationQuestions fields",
+      "Anchor": "voluntaryselfidentificationquestions-fields",
+      "SectionPath": [
+        "VoluntarySelfIdentificationQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "disabilityQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Disability question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "genderQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Gender question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "raceQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Race question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "veteranStatusQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Veteran Status question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The additional repeatable custom questions to be included within the Voluntary Self Identification question set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdditionalQuestions fields",
+      "Anchor": "additionalquestions-fields",
+      "SectionPath": [
+        "AdditionalQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "customQuestionSets",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of custom question sets to be asked in the \u0022Additional Questions\u0022 section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CustomQuestionSet[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#customquestionset-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CustomQuestionSet fields",
+      "Anchor": "customquestionset-fields",
+      "SectionPath": [
+        "CustomQuestionSet fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "questions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of 1 or more custom questions that are a part of this custom question set. The ordering of these questions in this list will be maintained when rendering on UI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "repeatLimit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum number of times this question set can be asked, for example, if the value is 1 then the question set will only appear once. For custom question sets, the valid range is [1, 10]. If no value is specified then repeatLimit will default to 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "QuestionRequirement enum values",
+      "Anchor": "questionrequirement-enum-values",
+      "SectionPath": [
+        "QuestionRequirement enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "REQUIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This question is required. An answer must be provided by the applicant in order to complete the job application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OPTIONAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This question is optional. An answer does not need to be provided by the applicant in order to complete the job application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SKIP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This question is not rendered on the job application. No response will be provided for this question.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleTalentQuestionDefinition fields",
+      "Anchor": "simpletalentquestiondefinition-fields",
+      "SectionPath": [
+        "SimpleTalentQuestionDefinition fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partnerQuestionIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifier for this custom question. This is intended to be used by your systems to associate the answer(s) to this question when a job application is delivered by LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The details needed for a member to answer a question in any form. These question details will instruct the front-end as to how to render inputs and validation for this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#simplequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field indicates whether the question is required to complete the job application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The label text to describe this question. This field supports the following formats: Unordered list \u003Cul\u003E, List item \u003Cli\u003E, Bold \u003Cb\u003E, Italic \u003Ci\u003E, Links \u003Ca\u003E, and Paragraph \u003Cp\u003E.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "helpMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The brief additional information available to the person being asked the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expandedHelpMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The full additional information available to the person being asked the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "prerequisiteQuestionResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The prerequisite question response configuration. If this field is present, this question is displayed only when the prerequisite question is answered with the prerequisite response. Note that one CustomQuestionSet can only have one prerequisite question. Each answer value of the prerequisite question can be associated to one dependency question by specifying this field in the dependency question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteQuestionResponse",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#prerequisitequestionresponse-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleQuestionDetails fields",
+      "Anchor": "simplequestiondetails-fields",
+      "SectionPath": [
+        "SimpleQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a question where a date must be provided as the answer. If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#datequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRangeQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a question where a date range must be provided as the answer. If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRangeQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#daterangequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a question where a document must be provided as the answer. If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DocumentQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#documentquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "multipleChoiceQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a question where a multiple-choice selection must be provided as the answer. If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#multiplechoicequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "numericQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a question where a number must be provided as the answer. If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NumericQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#numericquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The representation of a question where text must be provided as the answer. If this field is present, all other fields must be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#textquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "DateQuestionDetails fields",
+      "Anchor": "datequestiondetails-fields",
+      "SectionPath": [
+        "DateQuestionDetails fields"
+      ],
+      "Text": "This is an empty record and contains no fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRangeQuestionDetails fields",
+      "Anchor": "daterangequestiondetails-fields",
+      "SectionPath": [
+        "DateRangeQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "startLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text that will be used to describe the start date input. Defaults to \u0022From\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text that will be used to describe the end date input. Defaults to \u0022To\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hideEndDateLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text that will be used to describe the input that will control whether or not the end date question is shown. For example, for employment dates this might be displayed as a checkbox with a label of \u0022I currently work here\u0022. Checking the checkbox would unset and hide the end date question regardless of the content of the label.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PrerequisiteQuestionResponse fields",
+      "Anchor": "prerequisitequestionresponse-fields",
+      "SectionPath": [
+        "PrerequisiteQuestionResponse fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "prerequisiteQuestion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The prerequisite question that triggers the display of this question. The prerequisite question must be a multiple choice question with RADIO_BUTTONS as form component.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteQuestionIdentifier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#prerequisitequestionidentifier-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "prerequisiteResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The required response to the prerequisite question that triggers the display of this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#prerequisiteanswervalue-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PrerequisiteQuestionIdentifier fields",
+      "Anchor": "prerequisitequestionidentifier-fields",
+      "SectionPath": [
+        "PrerequisiteQuestionIdentifier fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partnerQuestionIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier for custom questions. Each custom question has an identifier specified in partnerQuestionIdentifier under SimpleTalentQuestionDefinition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PrerequisiteAnswerValue fields",
+      "Anchor": "prerequisiteanswervalue-fields",
+      "SectionPath": [
+        "PrerequisiteAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "multipleChoiceAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An answer to a multiple choice question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#multiplechoiceanswervalue-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DocumentQuestionDetails fields",
+      "Anchor": "documentquestiondetails-fields",
+      "SectionPath": [
+        "DocumentQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "maximumSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum allowed size of the attachment in bytes. For resume 2 MB max size limit and cover letter 512 KB max size limit. Defaults to 100 MB.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "acceptableFileExtensions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The file extensions that you accept (for example, doc, docx, pdf). These should always be listed in lowercase. Leaving out this optional field indicates that the ATS has no restrictions. An empty array indicates that the ATS only accepts files with no extension.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceQuestionDetails fields",
+      "Anchor": "multiplechoicequestiondetails-fields",
+      "SectionPath": [
+        "MultipleChoiceQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "choices",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of possible answers to this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceAnswerOption[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#multiplechoiceansweroption-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultValueSymbolicName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The symbolic name for the default answer value from the array of choices.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "favorableMultipleChoiceAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field that contains the favorable multiple choice answer value for this question. This should only be present for which the question has a preferred/required qualification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FavorableMultipleChoiceAnswer",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#favorablemultiplechoiceanswer-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredFormComponent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field indicates whether a set of radio buttons, a dropdown, and so on should be used to display this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FormComponent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#formcomponent-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "selectMultiple",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field indicates whether the applicant is allowed to select more than one option when FormComponent is CHECKBOXES. Defaults to false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswerOption fields",
+      "Anchor": "multiplechoiceansweroption-fields",
+      "SectionPath": [
+        "MultipleChoiceAnswerOption fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "symbolicName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The machine-parsable name to refer to this particular answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "displayValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The display value for this multiple choice answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswerValue fields",
+      "Anchor": "multiplechoiceanswervalue-fields",
+      "SectionPath": [
+        "MultipleChoiceAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "symbolicNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of symbolic names for the answer value from the array of choices. Specify only one symbolic name when this MultipleChoiceAnswerValue is used to represent a prerequisite answer value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "FavorableMultipleChoiceAnswer fields",
+      "Anchor": "favorablemultiplechoiceanswer-fields",
+      "SectionPath": [
+        "FavorableMultipleChoiceAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "favorableSymbolicNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The symbolicNames from MultipleChoiceQuestionDetails that should be considered favorable. An example could be [\u201CBACHELOR\u201D, \u201CMASTERS\u201D] to indicate that the job poster wants the candidate to have either one of the educational levels.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "NumericQuestionDetails fields",
+      "Anchor": "numericquestiondetails-fields",
+      "SectionPath": [
+        "NumericQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "decimalQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The details for a decimal numeric question. If this field is present, the field integerQuestionDetails must be null. If this field is null, integerQuestionDetails must be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DecimalQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#decimalquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if integerQuestionDetails is not provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integerQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The details for an integer numeric question. If this field is present, the field decimalQuestionDetails must be null. If this field is null, decimalQuestionDetails must be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integerQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#integerquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if decimalQuestionDetails is not provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "favorableNumericAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field that contains the favorable numeric answer value for this question. This should only be present for numeric questions for which the question is a preferred/required qualification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DecimalQuestionDetails fields",
+      "Anchor": "decimalquestiondetails-fields",
+      "SectionPath": [
+        "DecimalQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "suggestedValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The suggested answer that is prefilled for the applicant being asked the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum value that is allowed for a decimal answer. Defaults to \u201C0.0\u201D.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum value allowed for a decimal answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "IntegerQuestionDetails fields",
+      "Anchor": "integerquestiondetails-fields",
+      "SectionPath": [
+        "IntegerQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "suggestedValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The suggested answer that is prefilled for the applicant being asked the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum value that is allowed for a decimal answer. Defaults to \u201C0\u201D.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum value allowed for an integer answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "FavorableNumericAnswer fields",
+      "Anchor": "favorablenumericanswer-fields",
+      "SectionPath": [
+        "FavorableNumericAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "favorableFloor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum inclusive value that will be considered favorable. For example, this field would be set to 5.0 if you want to capture \u2018Minimum 5 years of experience\u2019. Null means negative infinity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "favorableCeiling",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum inclusive value that will be considered favorable. Null means infinity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TextQuestionDetails fields",
+      "Anchor": "textquestiondetails-fields",
+      "SectionPath": [
+        "TextQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "suggestedValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The suggested answer that is prefilled for the applicant being asked the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minLength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum text length for the answer. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxLength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum text length for the answer. The value should be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredFormComponent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field indicates whether a one-line or multi-line text input should be used. The value should be TEXT or MULTILINE_TEXT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FormComponent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04#formcomponent-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "FormComponent enum values",
+      "Anchor": "formcomponent-enum-values",
+      "SectionPath": [
+        "FormComponent enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CHECKBOXES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A series of checkboxes - one for each option.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DROPDOWN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A vertical list of options.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTILINE_TEXT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A free-form text area that accepts multiple lines of text.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RADIO_BUTTONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of options with a toggle next to each one. Selecting one option will deselect all others.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEXT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A free-form text area that accepts only one line of text.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BUTTONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A series of buttons - one for each option.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

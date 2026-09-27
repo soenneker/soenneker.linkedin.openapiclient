@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The groupBy property</summary>
+        /// <summary>The ad targeting facet for which the provided audience criteria should be segmented for insights in the response.Documented type: AdTargetingFacetURNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupBy { get; set; }
@@ -22,7 +22,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string GroupBy { get; set; }
 #endif
-        /// <summary>The requestMetaData property</summary>
+        /// <summary>The max number of segments to include in the response. Default is 5 and maximum is 100.Documented type: intRequirement: Optional (default=5)</summary>
+        public int? MaxReturnCount { get; set; }
+        /// <summary>requestMetaData Object with sponsoredAccountUrn to identify the sponsored ad account where the authenticated user has a valid user role. See details below.Documented type: requestMetaData ObjectRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData? RequestMetaData { get; set; }
@@ -30,6 +32,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData RequestMetaData { get; set; }
 #endif
+        /// <summary>The order in which the segments should be returned. By default, the segments will be ordered in the descending order of the audience percentage of segments. Available values are: AUDIENCE_PERCENTAGE : Based on DESC order of Audience Percentage. HIERARCHICAL : Based on the hierarchical order of urns. This is supported only for a select few low cardinality facets like YearsOfExperience, Company Size, etc.Documented type: string (Enum)Requirement: Optional (default=AUDIENCE_PERCENTAGE)</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy? SegmentsOrderedBy { get; set; }
         /// <summary>The targetingCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +68,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "groupBy", n => { GroupBy = n.GetStringValue(); } },
+                { "maxReturnCount", n => { MaxReturnCount = n.GetIntValue(); } },
                 { "requestMetaData", n => { RequestMetaData = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData.CreateFromDiscriminatorValue); } },
+                { "segmentsOrderedBy", n => { SegmentsOrderedBy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy>(); } },
                 { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria.CreateFromDiscriminatorValue); } },
             };
         }
@@ -76,7 +82,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("groupBy", GroupBy);
+            writer.WriteIntValue("maxReturnCount", MaxReturnCount);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData>("requestMetaData", RequestMetaData);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestSegmentsOrderedBy>("segmentsOrderedBy", SegmentsOrderedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestTargetingCriteria>("targetingCriteria", TargetingCriteria);
             writer.WriteAdditionalData(AdditionalData);
         }

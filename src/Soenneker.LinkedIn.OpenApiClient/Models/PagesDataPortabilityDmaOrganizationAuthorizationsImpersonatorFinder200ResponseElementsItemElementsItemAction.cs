@@ -7,11 +7,20 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// The action requested, such as &quot;Editing Post XYZ&quot;. It can be one of the following values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization&apos;s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization&apos;s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization&apos;s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization&apos;s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization&apos;s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization&apos;s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization&apos;s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization&apos;s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization&apos;s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization&apos;s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization&apos;s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization&apos;s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization&apos;s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization&apos;s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization&apos;s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization&apos;s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization&apos;s services page)Documented type: OrganizationAuthorizationActionRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemAction : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
+        /// <summary>A type of action a user can take on an organization on behalf of a Business Manager. Value enums include:ORGANIZATION_CLAIM (Action denoting a user wants to claim an organization on behalf of a Business Manager)Documented type: BusinessManagerAuthorizationActionTypeRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType? ActionType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType ActionType { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organizationRoleAuthorizationAction property</summary>
@@ -47,6 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actionType", n => { ActionType = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType.CreateFromDiscriminatorValue); } },
                 { "organizationRoleAuthorizationAction", n => { OrganizationRoleAuthorizationAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionActionType>("actionType", ActionType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseElementsItemElementsItemActionOrganizationRoleAuthorizationAction>("organizationRoleAuthorizationAction", OrganizationRoleAuthorizationAction);
             writer.WriteAdditionalData(AdditionalData);
         }

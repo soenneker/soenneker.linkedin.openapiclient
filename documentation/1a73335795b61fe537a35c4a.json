@@ -1,0 +1,125 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+  "Title": "Authentication Requirements",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/provisioning-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Authentication Requirements",
+      "Anchor": "authentication-requirements",
+      "SectionPath": [],
+      "Text": "In addition to hosting the Display Services iframe or JS SDK within your solution, partners must implement the following authentication requirements in order to enable usage of the iframe:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication Requirements",
+      "Anchor": "authentication-requirements",
+      "SectionPath": [],
+      "Text": "Integrations must use OAuth2-based Sales Access Tokens to authenticate users within the iframe.\nThe developer applications used to request Sales Access Tokens must be created via the Provisioning API. One application must be created on behalf of each tenant.\nThe domain in the HTTP referer header must be allowlisted for the developer application the SAT corresponds to as described in this article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Sales Access Tokens",
+      "Anchor": "using-sales-access-tokens",
+      "SectionPath": [
+        "Using Sales Access Tokens"
+      ],
+      "Text": "Sales Access Tokens are required as a means of authenticating users. Sales Access Tokens are access tokens with a short TTL which are requested from the /salesAccessTokens API using a valid long-lived access token. The short-lived access token is then passed into the iframe\u0027s query string to authenticate the user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Sales Access Tokens",
+      "Anchor": "using-sales-access-tokens",
+      "SectionPath": [
+        "Using Sales Access Tokens"
+      ],
+      "Text": "There is a detailed walkthrough of how to implement authentication with Sales Access Tokens here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting Developer Credentials on Behalf of Your Customers",
+      "Anchor": "requesting-developer-credentials-on-behalf-of-your-customers",
+      "SectionPath": [
+        "Requesting Developer Credentials on Behalf of Your Customers"
+      ],
+      "Text": "Partners must create one set of developer credentials for each customer group that uses the Display Services integration. In order to request developer application credentials through the provisioning API, a partner\u0027s developer application is granted permission to make requests to the Provisioning API. Applications created via the Provisioning API receive predetermined permissions. For Display Services partners, any developer applications created via the Provisioning API will automatically be granted the r_sales_nav_display permission. When this permission is requested as the scope in the 3-legged authorization code grant flow, the resulting access token can be used to call /salesAccessTokens for a short-lived token to authenticate the iframe.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "One Developer Application per Customer",
+      "Anchor": "one-developer-application-per-customer",
+      "SectionPath": [
+        "Requesting Developer Credentials on Behalf of Your Customers",
+        "One Developer Application per Customer"
+      ],
+      "Text": "Developer applications must be created on behalf of each customer/tenant that exists within the partner solution. This is required for a number of reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "One Developer Application per Customer",
+      "Anchor": "one-developer-application-per-customer",
+      "SectionPath": [
+        "Requesting Developer Credentials on Behalf of Your Customers",
+        "One Developer Application per Customer"
+      ],
+      "Text": "Some partners may need to allowlist unique domains for each customer.\nLinkedIn may need to throttle individual developer applications due to irregular behavior/excessive usage. Throttling one customer\u0027s developer application will prevent all other customers from being impacted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "One Developer Application per Customer",
+      "Anchor": "one-developer-application-per-customer",
+      "SectionPath": [
+        "Requesting Developer Credentials on Behalf of Your Customers",
+        "One Developer Application per Customer"
+      ],
+      "Text": "You should specify an ID for the tenant when creating the developer application in the uniqueForeignId field of the create application request. You can find more details in the Provisioning API documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Domain Allowlist",
+      "Anchor": "domain-allowlist",
+      "SectionPath": [
+        "Domain Allowlist"
+      ],
+      "Text": "When the iframe is loaded by clients, the domain of the page the iframe is loaded on will be sent to LinkedIn in the HTTP referer header of the HTTP request. Any domain the iframe is loaded on must be allowlisted for the developer application that the Sales Access Token corresponds to. The domain in the header is validated by LinkedIn against the validJsSdkDomains list defined for the application. This list can be created when a new developer application is requested, or modified over time in an update request as described in the Provisioning API documentation.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

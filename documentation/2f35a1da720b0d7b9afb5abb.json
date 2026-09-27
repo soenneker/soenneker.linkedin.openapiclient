@@ -1,0 +1,256 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+  "Title": "Getting Access to Conversions API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Conversions API",
+      "Anchor": "getting-access-to-conversions-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Conversions API",
+      "Anchor": "getting-access-to-conversions-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoints and Permissions",
+      "Anchor": "api-endpoints-and-permissions",
+      "SectionPath": [
+        "API Endpoints and Permissions"
+      ],
+      "Text": "You have access to the following permissions under the Conversions API product bundle:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoints and Permissions",
+      "Anchor": "api-endpoints-and-permissions",
+      "SectionPath": [
+        "API Endpoints and Permissions"
+      ],
+      "Text": "Conversions: APIs to create/retrieve conversion rules, stream conversion events, associate campaigns to conversions. Permission required is rw_conversions.\nAccount Structure: APIs to retrieve information across sponsored accounts, campaign groups, campaigns, and creatives. Permission required is r_ads.\nLite profile information: APIs to retrieve the name and photo of the authenticated user. Permission required is r_liteprofile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Advertisers who want to send their conversion data directly to LinkedIn, without integrating through supported partner platforms, can generate access tokens for authentication from their Campaign Manager ad account. They don\u0027t need to create a developer application or apply for the Conversions API through the developer portal. The generated access tokens don\u0027t expire. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Instructions for advertisers on generating access tokens directly in Campaign Manager for authentication:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "In the left menu of your Campaign Manager ad account, click Data then select Signals Manager.\nClick Direct API, then click Generate access token.\nSign in to your LinkedIn account and follow the instructions.\nOnce your access token is displayed, click anywhere on the token to copy it. Then paste and store it securely in your system, close when done.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Campaign Manager doesn\u0027t store previously generated access tokens, so ensure you copy and store your token in a secure place.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Prerequisites"
+      ],
+      "Text": "You have read the LinkedIn Marketing API Terms and API specs.\nYou have one of the following use cases:\n\nUtilize Conversions API and Insight Tag together to measure and optimize campaign performance.\nTo track and measure both online and offline events across customer journey.\nConnect data to LinkedIn in a way that doesn\u2019t require cookie-based tracking.\nCompliance requirements that prevent installing Insight Tag on advertiser\u0027s website.\nTo provide alternative mechanism to track conversion events for LinkedIn ads.\n\n\nBe prepared to share your business email address and your organization\u2019s legal name, registered address, website. Your business email address will have to be verified. If you don\u2019t receive the verification email, be sure to check your email\u0027s spam folder, junk folder, social tab, and promotional tab. Personal email addresses won\u0027t pass the review process.\nCompany Page Verification is required for a developer application applying for access to Conversions API. Ensure that you\u0027re not using a fake or test company page.\nEnsure that a super admin of the LinkedIn Page associated with your organization has verified your developer application.\nEnsure that your application doesn\u0027t include any portion of the LinkedIn or Microsoft names or logos (e.g. Linked or In).\nEnsure that you have filled out all required fields in the access request form accurately and completely.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Prerequisites"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Prerequisites"
+      ],
+      "Text": "Any failure to meet the above prerequisites will result in your access request being rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Apply for Access"
+      ],
+      "Text": "Login to Developer Portal with your LinkedIn account.\nChoose your developer app from My Apps.\n\n Note\nIf you or your organization doesn\u0027t have an existing developer app, create a new developer application.\n\n\nNavigate to the Products tab under your App name.\nFrom the list of Additional available products, search for the Conversions API product and select Request Access.\nSubmit the form for LinkedIn to review your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review Process",
+      "Anchor": "review-process",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Review Process"
+      ],
+      "Text": "Once you have submitted the access request form, it will be reviewed by LinkedIn for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review Process",
+      "Anchor": "review-process",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Review Process"
+      ],
+      "Text": "Verified business email address.\nVerified organization\nVerified organization website and domain address\nApplication verified by LinkedIn Page associated with same organization.\nApproved use case\nCompliance with our terms, restrictions, and security, privacy, and trust requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Next Steps"
+      ],
+      "Text": "If your application is approved, you\u0027ll be notified over email about your access to the Conversions API and your developer application will be provisioned with the required permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Next Steps"
+      ],
+      "Text": "If your application is denied due to identity vetting failure, for example, when we were unable to verify that your organization is a legally registered active entity, you\u0027ll see an option to appeal for it from your developer portal application products, when you click on the Access denied link next to Conversions API product. Please reach out via a Developer Support ticket.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Next Steps"
+      ],
+      "Text": "If your application is rejected, for example, when your access request form provided insufficient details to approve your request, review the Prerequisites and Review Process to ensure your application is in compliance, and if you don\u0027t see any option to appeal for it, then you may create a new developer application, and submit a new access request form. Please see the Developer application review status definitions for details about each status and rejection message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Next Steps"
+      ],
+      "Text": "Please note that even if LinkedIn approves your integration, you\u0027re solely responsible for ensuring that your integration (including all use, disclosure, and storage of LinkedIn data) is, at all times, in compliance with: (a) the LinkedIn Marketing API Terms and the LinkedIn developer documentation; and (b) all other requirements or restrictions that LinkedIn separately communicates to you (e.g. during or after the review process). LinkedIn retains the right to monitor your application and suspend or discontinue access to the Conversions API for any non-compliance with the LinkedIn Marketing API Terms, even if your application was previously approved by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "API access for Partners (through Developer Portal)",
+        "Next Steps"
+      ],
+      "Text": "If you have additional questions or concerns, please reach out via a Developer Support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

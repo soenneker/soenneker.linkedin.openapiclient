@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time property</summary>
-        public int? Time { get; set; }
+        public long? Time { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsGetCreatorSettingOn200ResponseCreated"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetStringValue(); } },
-                { "time", n => { Time = n.GetIntValue(); } },
+                { "time", n => { Time = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actor", Actor);
-            writer.WriteIntValue("time", Time);
+            writer.WriteLongValue("time", Time);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

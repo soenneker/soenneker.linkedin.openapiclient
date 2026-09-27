@@ -15,11 +15,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The approximateUniqueImpressions property</summary>
-        public int? ApproximateUniqueImpressions { get; set; }
+        public long? ApproximateUniqueImpressions { get; set; }
         /// <summary>The clicks property</summary>
-        public int? Clicks { get; set; }
+        public long? Clicks { get; set; }
         /// <summary>The comments property</summary>
-        public int? Comments { get; set; }
+        public long? Comments { get; set; }
         /// <summary>The conversionValueInLocalCurrency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,25 +53,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange DateRange { get; set; }
 #endif
         /// <summary>The externalWebsiteConversions property</summary>
-        public int? ExternalWebsiteConversions { get; set; }
+        public long? ExternalWebsiteConversions { get; set; }
         /// <summary>The externalWebsitePostClickConversions property</summary>
-        public int? ExternalWebsitePostClickConversions { get; set; }
+        public long? ExternalWebsitePostClickConversions { get; set; }
         /// <summary>The externalWebsitePostViewConversions property</summary>
-        public int? ExternalWebsitePostViewConversions { get; set; }
+        public long? ExternalWebsitePostViewConversions { get; set; }
         /// <summary>The follows property</summary>
-        public int? Follows { get; set; }
+        public long? Follows { get; set; }
         /// <summary>The impressions property</summary>
-        public int? Impressions { get; set; }
+        public long? Impressions { get; set; }
         /// <summary>The landingPageClicks property</summary>
-        public int? LandingPageClicks { get; set; }
+        public long? LandingPageClicks { get; set; }
         /// <summary>The likes property</summary>
-        public int? Likes { get; set; }
+        public long? Likes { get; set; }
         /// <summary>The oneClickLeadFormOpens property</summary>
-        public int? OneClickLeadFormOpens { get; set; }
+        public long? OneClickLeadFormOpens { get; set; }
         /// <summary>The oneClickLeads property</summary>
-        public int? OneClickLeads { get; set; }
+        public long? OneClickLeads { get; set; }
         /// <summary>The opens property</summary>
-        public int? Opens { get; set; }
+        public long? Opens { get; set; }
         /// <summary>The pivot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,13 +91,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The pivotValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>? PivotValues { get; set; }
+        public List<string>? PivotValues { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem> PivotValues { get; set; }
+        public List<string> PivotValues { get; set; }
 #endif
         /// <summary>The reactions property</summary>
-        public int? Reactions { get; set; }
+        public long? Reactions { get; set; }
         /// <summary>The pivotValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,10 +109,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The pivotValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>? ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues { get; set; }
 #nullable restore
 #else
-        public List<string> ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem> ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues { get; set; }
 #endif
         /// <summary>The revenueAttributionMetrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,15 +123,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics RevenueAttributionMetrics { get; set; }
 #endif
         /// <summary>The sends property</summary>
-        public int? Sends { get; set; }
+        public long? Sends { get; set; }
         /// <summary>The shares property</summary>
-        public int? Shares { get; set; }
+        public long? Shares { get; set; }
         /// <summary>The totalEngagements property</summary>
-        public int? TotalEngagements { get; set; }
+        public long? TotalEngagements { get; set; }
         /// <summary>The videoCompletions property</summary>
-        public int? VideoCompletions { get; set; }
+        public long? VideoCompletions { get; set; }
         /// <summary>The videoViews property</summary>
-        public int? VideoViews { get; set; }
+        public long? VideoViews { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -157,35 +157,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approximateUniqueImpressions", n => { ApproximateUniqueImpressions = n.GetIntValue(); } },
-                { "clicks", n => { Clicks = n.GetIntValue(); } },
-                { "comments", n => { Comments = n.GetIntValue(); } },
+                { "approximateUniqueImpressions", n => { ApproximateUniqueImpressions = n.GetLongValue(); } },
+                { "clicks", n => { Clicks = n.GetLongValue(); } },
+                { "comments", n => { Comments = n.GetLongValue(); } },
                 { "conversionValueInLocalCurrency", n => { ConversionValueInLocalCurrency = n.GetStringValue(); } },
                 { "costInLocalCurrency", n => { CostInLocalCurrency = n.GetStringValue(); } },
                 { "costInUsd", n => { CostInUsd = n.GetStringValue(); } },
                 { "dateRange", n => { DateRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange.CreateFromDiscriminatorValue); } },
-                { "externalWebsiteConversions", n => { ExternalWebsiteConversions = n.GetIntValue(); } },
-                { "externalWebsitePostClickConversions", n => { ExternalWebsitePostClickConversions = n.GetIntValue(); } },
-                { "externalWebsitePostViewConversions", n => { ExternalWebsitePostViewConversions = n.GetIntValue(); } },
-                { "follows", n => { Follows = n.GetIntValue(); } },
-                { "impressions", n => { Impressions = n.GetIntValue(); } },
-                { "landingPageClicks", n => { LandingPageClicks = n.GetIntValue(); } },
-                { "likes", n => { Likes = n.GetIntValue(); } },
-                { "oneClickLeadFormOpens", n => { OneClickLeadFormOpens = n.GetIntValue(); } },
-                { "oneClickLeads", n => { OneClickLeads = n.GetIntValue(); } },
-                { "opens", n => { Opens = n.GetIntValue(); } },
+                { "externalWebsiteConversions", n => { ExternalWebsiteConversions = n.GetLongValue(); } },
+                { "externalWebsitePostClickConversions", n => { ExternalWebsitePostClickConversions = n.GetLongValue(); } },
+                { "externalWebsitePostViewConversions", n => { ExternalWebsitePostViewConversions = n.GetLongValue(); } },
+                { "follows", n => { Follows = n.GetLongValue(); } },
+                { "impressions", n => { Impressions = n.GetLongValue(); } },
+                { "landingPageClicks", n => { LandingPageClicks = n.GetLongValue(); } },
+                { "likes", n => { Likes = n.GetLongValue(); } },
+                { "oneClickLeadFormOpens", n => { OneClickLeadFormOpens = n.GetLongValue(); } },
+                { "oneClickLeads", n => { OneClickLeads = n.GetLongValue(); } },
+                { "opens", n => { Opens = n.GetLongValue(); } },
                 { "pivot", n => { Pivot = n.GetStringValue(); } },
                 { "pivotValue", n => { PivotValue = n.GetStringValue(); } },
-                { "pivotValues~", n => { PivotValues = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "reactions", n => { Reactions = n.GetIntValue(); } },
+                { "pivotValues", n => { PivotValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "reactions", n => { Reactions = n.GetLongValue(); } },
                 { "pivotValue~", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue.CreateFromDiscriminatorValue); } },
-                { "pivotValues", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pivotValues~", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "revenueAttributionMetrics", n => { RevenueAttributionMetrics = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics.CreateFromDiscriminatorValue); } },
-                { "sends", n => { Sends = n.GetIntValue(); } },
-                { "shares", n => { Shares = n.GetIntValue(); } },
-                { "totalEngagements", n => { TotalEngagements = n.GetIntValue(); } },
-                { "videoCompletions", n => { VideoCompletions = n.GetIntValue(); } },
-                { "videoViews", n => { VideoViews = n.GetIntValue(); } },
+                { "sends", n => { Sends = n.GetLongValue(); } },
+                { "shares", n => { Shares = n.GetLongValue(); } },
+                { "totalEngagements", n => { TotalEngagements = n.GetLongValue(); } },
+                { "videoCompletions", n => { VideoCompletions = n.GetLongValue(); } },
+                { "videoViews", n => { VideoViews = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -195,35 +195,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("approximateUniqueImpressions", ApproximateUniqueImpressions);
-            writer.WriteIntValue("clicks", Clicks);
-            writer.WriteIntValue("comments", Comments);
+            writer.WriteLongValue("approximateUniqueImpressions", ApproximateUniqueImpressions);
+            writer.WriteLongValue("clicks", Clicks);
+            writer.WriteLongValue("comments", Comments);
             writer.WriteStringValue("conversionValueInLocalCurrency", ConversionValueInLocalCurrency);
             writer.WriteStringValue("costInLocalCurrency", CostInLocalCurrency);
             writer.WriteStringValue("costInUsd", CostInUsd);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemDateRange>("dateRange", DateRange);
-            writer.WriteIntValue("externalWebsiteConversions", ExternalWebsiteConversions);
-            writer.WriteIntValue("externalWebsitePostClickConversions", ExternalWebsitePostClickConversions);
-            writer.WriteIntValue("externalWebsitePostViewConversions", ExternalWebsitePostViewConversions);
-            writer.WriteIntValue("follows", Follows);
-            writer.WriteIntValue("impressions", Impressions);
-            writer.WriteIntValue("landingPageClicks", LandingPageClicks);
-            writer.WriteIntValue("likes", Likes);
-            writer.WriteIntValue("oneClickLeadFormOpens", OneClickLeadFormOpens);
-            writer.WriteIntValue("oneClickLeads", OneClickLeads);
-            writer.WriteIntValue("opens", Opens);
+            writer.WriteLongValue("externalWebsiteConversions", ExternalWebsiteConversions);
+            writer.WriteLongValue("externalWebsitePostClickConversions", ExternalWebsitePostClickConversions);
+            writer.WriteLongValue("externalWebsitePostViewConversions", ExternalWebsitePostViewConversions);
+            writer.WriteLongValue("follows", Follows);
+            writer.WriteLongValue("impressions", Impressions);
+            writer.WriteLongValue("landingPageClicks", LandingPageClicks);
+            writer.WriteLongValue("likes", Likes);
+            writer.WriteLongValue("oneClickLeadFormOpens", OneClickLeadFormOpens);
+            writer.WriteLongValue("oneClickLeads", OneClickLeads);
+            writer.WriteLongValue("opens", Opens);
             writer.WriteStringValue("pivot", Pivot);
             writer.WriteStringValue("pivotValue", PivotValue);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>("pivotValues~", PivotValues);
-            writer.WriteIntValue("reactions", Reactions);
+            writer.WriteCollectionOfPrimitiveValues<string>("pivotValues", PivotValues);
+            writer.WriteLongValue("reactions", Reactions);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue>("pivotValue~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValue);
-            writer.WriteCollectionOfPrimitiveValues<string>("pivotValues", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValuesItem>("pivotValues~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValues);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemRevenueAttributionMetrics>("revenueAttributionMetrics", RevenueAttributionMetrics);
-            writer.WriteIntValue("sends", Sends);
-            writer.WriteIntValue("shares", Shares);
-            writer.WriteIntValue("totalEngagements", TotalEngagements);
-            writer.WriteIntValue("videoCompletions", VideoCompletions);
-            writer.WriteIntValue("videoViews", VideoViews);
+            writer.WriteLongValue("sends", Sends);
+            writer.WriteLongValue("shares", Shares);
+            writer.WriteLongValue("totalEngagements", TotalEngagements);
+            writer.WriteLongValue("videoCompletions", VideoCompletions);
+            writer.WriteLongValue("videoViews", VideoViews);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The function property</summary>
+        /// <summary>The function URN that this Title belongs to.Documented type: URN Must be of format urn:li:function:{ID}Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Function { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Function { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +32,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponseElementsItemName Name { get; set; }
 #endif
-        /// <summary>The superTitle property</summary>
+        /// <summary>The superTitle URN that this Title belongs to.Documented type: URN Must be of format urn:li:superTitle:{ID}Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SuperTitle { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "function", n => { Function = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponseElementsItemName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponseElementsItemName.CreateFromDiscriminatorValue); } },
                 { "superTitle", n => { SuperTitle = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("function", Function);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaTitlesGetall200ResponseElementsItemName>("name", Name);
             writer.WriteStringValue("superTitle", SuperTitle);
             writer.WriteAdditionalData(AdditionalData);

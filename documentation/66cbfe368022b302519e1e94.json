@@ -1,0 +1,789 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-canvas",
+  "Title": "Setting up LinkedIn Learning with LTI 1.3 in Canvas",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-13-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-d2l",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-moodle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps illustrate the LinkedIn Learning and LTI 1.3 integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "LTI is a standard used to integrate different learning platforms and tools to create a richer learning experience for the higher education sector. LTI 1.3 is the latest version of the LTI standard that focuses on improving security, enabling better content discoverability, and creating greater flexibility and extensibility. LTI 1.3 is the content discoverability standard for higher education using LMS providers such as Blackboard, Canvas, D2L, and Moodle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "LTI Advantage is a further set of extensions to LTI 1.3 that enhance its capabilities. Its main goals are to enable deeper integration between LMS and LTI tools and platforms, removing the need for custom integrations, and to provide a secure channel to transmit student and enrollment information. The three services included in LTI Advantage are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "Deep Linking: allows course creators to easily select and configure the content displayed to learners. For example, creators can configure a link that will launch a specific segment from a video, rather than displaying the full video and asking students to manually find the segment, saving time for both teachers and students.\n\nAssignments and Grades: syncs grades, progress, and comments from multiple sources into an LMS platform\u2019s gradebook, reducing faculty effort and any potential errors.\n\nNames and Roles Provisioning: securely shares course roster and enrollment information. This enables admins and instructors to access reports on student activity within the tool, such as which enrolled students have or have not started an activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Things to Consider before Implementation",
+      "Anchor": "things-to-consider-before-implementation",
+      "SectionPath": [
+        "Things to Consider before Implementation"
+      ],
+      "Text": "Since the LTI standard requires an LMS to launch the LinkedIn Learning content, the integration has distinct tradeoffs. Before opting for LTI, please review the\nsections below to ensure you fully understand the advantages and disadvantages of LTI integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "If you are a LinkedIn Learning user or admin, you have the following benefits of LTI integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "Seamless access to LinkedIn Learning for students and instructors\n\nEngaging user experiences for students and instructors\n\nGradable content\n\nContent easily integrated into LMS courses",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "If you are thinking about using the LTI standard in your learning platform, keep in mind the following restrictions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "To access LinkedIn Learning content, users must have access to your LMS. If a user cannot log into the LMS, the user does not have access to LinkedIn Learning.\n\nContent is only accessible from within the LMS. Educators cannot \u0022deep link\u0022 to LinkedIn Learning content on class webpages, wikis, or other external systems.\n\nIf your organization uses another form of Single Sign-on (SSO) with LinkedIn Learning, the SSO connection must use the same unique user ID as your LTI connection to prevent duplicate profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "Please use the corresponding guides for your desired LMS integration. If you do not see your LMS listed below please continue to the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "D2L\nMoodle\nCanvas\nBlackboard",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "You must be a designated LinkedIn Learning administrator to access Integration settings. If you are not an administrator, please reach out to your internal LinkedIn Learning lead, who can add you as an administrator in the system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "The IMS Learning Tools Interoperability (LTI) specification allows Learning Management Systems (LMS) or platforms (such as Canvas) to integrate remote tools (such as LinkedIn Learning) and content in a standard way. LTI v1.3 builds on LTI v1.1 by incorporating a new model for security for message and service authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "LinkedIn Learning is compliant with both LTI v1.1 and v1.3 coding standards. This article will guide you through the specific setup to allow instructors to use LinkedIn Learning with Canvas LMS via LTI v1.3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Log into LinkedIn Learning as IT Admin or Full Admin, Go to Admin portal and navigate to Authentication settings:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Click Add new SSO button in Configure single sign-on page and select \u201CLTI 1.3\u201D.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "(optional) Name your new SSO in Basics tab (e.g. LTI 1.3 Canvas) and click Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Keep the window open. We will be using those values later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Use a different browser window / tab to log into Canvas as an admin. Navigate to Admin section:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Navigate to Developer Keys in the navigation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Add an LTI Key by clicking \u002B Developer Key and choose LTI Key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Fill in Key Settings information.\na. Key Name - Set to LinkedIn Learning\n\n\n\n\nb. Redirect URIs - Copy the value from OIDC Redirect URL field in LIL.\n\n\n\n\nPaste the value in the following fields in Canvas.\n\n\n\n\n\n\n\n\nc. Method - choose Manual Entry.\n\n\n\n\nd. Title Set to LinkedIn Learning.\n\n\n\n\ne. Description - anything.\n\n\n\n\nf. OpenID Connect Initiation Url -\nCopy the OIDC Connect Initialization URL out of LIL.\n\n\n\n\nPaste the value in the following field in Canvas.\n\n\n\n\ng. JWK Method - Choose Public JWK URL.\n\n\n\n\nh. Public JWK URL - Copy the Keyset URL out of LIL.\n\n\n\n\nPaste the value in the following field in Canvas.\n\n\n\n\nThe end result should look like:\n\n\n\n\n\nIn the LTI Advantage Services section, you want to check everything to ON.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Copy the Domain value out of LIL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Paste the value In the Domain field in the Additional Settings section",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Please be sure to remove the slash / at the end of the URL - You will receive an error if included.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Make sure the Privacy Level is set to Public.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "In the Placements section, click the drop-down menu and choose Editor Button to add it in.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Click the drop-down menu in Placements section again, and add Assignment Selection in.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Scroll down to the Editor Button drop-down setting. Expand it by clicking the caret icon, and fill in:\na. Target Link URI - Set to https://www.linkedin.com/learning-admin/lti-deep-link (without quotes).\n\n\n\n\nb. Icon Url - Set to https://static-exp1.licdn.com/sc/h/3dio89ba7ceqktt0kek3tla5w\n\n\n\n\nc. Text - Set to LinkedIn Learning.\n\n\n\n\nd. Selection Height - Set to 800.\n\n\n\n\ne. Selection Width - Set to 1000.\n\n\n\n\nThe end result should look like the following.\n\n\n\n\n\nScroll down to the Assignment Selection drop-down setting. Expand it and fill in:\na. Target Link URI - Set to https://www.linkedin.com/learning-admin/lti-deep-link.\n\n\n\n\nb. Select Message Type - Select LtiDeepLinkingRequest\n\n\n\n\nc. Icon Url - Set to https://static-exp1.licdn.com/sc/h/3dio89ba7ceqktt0kek3tla5w\n\n\n\n\nd. Text - Set to LinkedIn Learning.\n\n\n\n\ne. Selection Height - Set to 800.\n\n\n\n\nf. Selection Width - Set to 1000.\n\n\n\n\nThe end result should look like:\n\n\n\n\n\nClick Save button.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "In the Developer Keys list, find the key we just set up and toggle the State to ON, and copy the value (Client ID) in Details column.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "In Canvas, go to the account, subaccount, and/ or course that you\u2019d like to be available in as an LTI 1.3 app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Click Settings \u003E Apps \u003E \u002BApp.\nChoose By Client ID* as configuration type and enter the Client ID of the Developer Key (from previous step).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Store and save your Deployment ID for step 20.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Next, we are adding the LinkedIn Learning app to Canvas. Navigate to Settings in the navigation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Select Apps tab, click View App Configurations button, and then click \u002B App.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Change Configuration Type to By Client ID by clicking the drop-down menu.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Paste in the Client ID value we copied in step 16.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Click Submit, and click Install.\n\nGo back to LinkedIn Learning browser window / tab, click Next, and fill in:\n\nClient ID - Paste the Client ID value we copied in step 16.\n\n\n\n\n\nDeployment ID - Paste the Deployment ID value copied in step 16.\n\n\n\n\n\nOIDC Issuer - Set to https://canvas.instructure.com.\n\n\n\n\n\nPlatform OIDC Authentication URL - Set to https://canvas.instructure.com/api/lti/authorize_redirect.\n\n\n\n\n\nSelect Keyset URL.\n\nPlatform OAuth 2.0 Keyset URL - Set to url like https://\u003Cyour-canvas-domain\u003E/api/lti/security/jwks. For example, if your canvas domain is example.instructure.com, then you should fill in https://example.instructure.com/api/lti/security/jwks.\n\n\n\n\n\nPlatform OAuth 2.0 Token Retrieval URL - Set to url like https://\u003Cyour-canvas-domain\u003E/login/oauth2/token.\n\n\n\n\n\nExternal ID Parameter Name:\nUse this setting to determine which authentication attribute is used to identify users. The default value is Subject. You also can use Email Address or a custom attribute name. For example, your LMS may provide an additional identifier, like lis_person_sourcedid.\n\n\n\n\nThe end result should look like the following:\n\n\n\n\n\n\n\nClick Next, and:\n\nToggle Enable LTI Advantage switch to ON.\n\n\n\n\n\nIn the textbox fill in your Canvas domain such as example.instructure.com, click Add.\n\nYou will also want to add canvas.instructure.com, click Add.\n\n\n\n\n\nToggle Reporting switch to ON.\n\n\n\n\n\nToggle Deep Linking switch to ON.\n\n\n\n\n\n\n\nClick Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "In SSO connections table, find the SSO we just saved, click Status drop-down menu, select Active.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Click Activate button.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "Your SSO connection should look like this, and congratulations, you are all set!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI and LTI v1.3?",
+      "Anchor": "what-is-lti-and-lti-v13",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?"
+      ],
+      "Text": "LinkedIn Learning will now appear in the WYSIWYG editor as an External Tool for assignment submission types in your Canvas.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Issue: if you find when launching the LTI Advantage Tool that it freezes or gets stuck in a loading screen. The issue could be due to cross-site tracking being enabled on your browser.\n\nFix: you will want to disable cross-site tracking on that browser. Please work with your IT team for assistance.\n\nIssue: If you experience a strange nested issue (or error) after clicking the Add button for either a Course or Video in the LTI Advantage tool the issue could be the domain you indicated in step 4.\n\nFix: You want to be sure you are including either https://www.linkedin.com or just www.linkedin.com. If you\u2019re already using one option try using the other to see if that fixes it. You may also need to clear your cache.\n\nIssue: If when launching the LTI Advantage Tool, you receive an \u201CThings Aren\u2019t Loading\u201D error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "The issue has to do with being logged into LinkedIn Learning or having an already active Learning session in another tab and/ or browser.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix 1: Try logging out of LinkedIn Learning in any tabs or browsers it is currently active in.\n\nFix 2: Try clearing your cache and cookies or launching the LTI Advantage Tool in a private/ incognito browser window.\n\nIssue If you receive an \u0022Oops! It\u0027s not you. It\u0027s us. Give it another try, please.\u0022 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "It means you are missing hostname(s) needing to be added in the LTI Advantage Tool tab in the LTI 1.3 configuration settings in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix 1: you will want to add those missing hostname(s) and test it again.\n\nTo add those hostname(s), you want to be logged into the Admin Tool in Linkedin Learning.\n\nHover over Me \u003E Authentication\n\nNext you want to click the 3 dots to the right of the LTI 1.3 configuration in the center panel \u003E followed by Edit\n\nClick on the LTI Advantage Tool tab\n\nType the hostname into the field \u003E click the Add button. Repeat for multiple names then click Save in the bottom right.\n\nFix 2: If this error is intermittent, you may need to reach out to LinkedIn Learning Support for further assistance, but you can try a different browser or clear your cache to see if it helps.\n\nIssue: If you see an \u201CUnable to connect to www.linkedin.com\u201D error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "This is likely due to a mismatch with the configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "What is LTI and LTI v1.3?",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix: Check to see if the Redirect URLs, the Target Link URI and the OpenID Connect Initiation URL are configured correctly. Any mismatch in values will result in the LTI Advantage Tool to fail. If the issue continues, please reach out to LinkedIn support.\n\nIssue: When trying to add a course from the External tool, if you receive an error - \u0022Couldn\u0027t find valid settings for this link.\u0022\n\nFix: Under Step 10, please ensure the domain field has no \u0022/\u0022 in the Canvas configuration field. Please remove the \u0022/\u0022 to resolve this issue.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Are all users able to connect their LinkedIn profiles through an LTI connection?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, LTI supports profile association.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Which provisioning types are supported?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. LTI requires\u00A0JIT (just in time)\u00A0provisioning and is automatically configured. This condition means that, upon the first successful LTI authentication, LinkedIn Learning automatically creates a user profile (if a user does not already exist).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can SAML SSO and LTI be enabled at the same time?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. You can enable both authentication options\u00A0at the same time, but we recommend that you consult your dedicated Technical Consultant before adopting this method. You might unintentionally create duplicate accounts if the same group of users has access to both LTI and a second SSO connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Is the Unique User ID value configurable?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, you can configure the Unique User ID in the External ID Parameter Name field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can LTI launches be loaded in an iFrame?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. No, LTI does not support iFrames.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "LinkedIn Learning SSO Implementation\n\nLTI, Canvas, and LinkedIn Learning Configuration\n\nGoogle SSO\n\nOkta SSO\n\nAdd and Manage Users in Bulk via CSV\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "For more information on integrating LTI v1.3 with your LMS and LinkedIn Learning, see IMS Global\u2019s\u00A0LTI 1.3 Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

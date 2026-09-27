@@ -23,9 +23,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string AnalyticsType { get; set; }
 #endif
         /// <summary>The analyticsValue property</summary>
-        public int? AnalyticsValue { get; set; }
+        public long? AnalyticsValue { get; set; }
         /// <summary>The percentageAnalyticsValue property</summary>
-        public int? PercentageAnalyticsValue { get; set; }
+        public long? PercentageAnalyticsValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastHighlightsFinder200ResponseElementsItemAnalyticsTypeWithPercentChangeValueItem"/> and sets the default values.
         /// </summary>
@@ -52,8 +52,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "analyticsType", n => { AnalyticsType = n.GetStringValue(); } },
-                { "analyticsValue", n => { AnalyticsValue = n.GetIntValue(); } },
-                { "percentageAnalyticsValue", n => { PercentageAnalyticsValue = n.GetIntValue(); } },
+                { "analyticsValue", n => { AnalyticsValue = n.GetLongValue(); } },
+                { "percentageAnalyticsValue", n => { PercentageAnalyticsValue = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("analyticsType", AnalyticsType);
-            writer.WriteIntValue("analyticsValue", AnalyticsValue);
-            writer.WriteIntValue("percentageAnalyticsValue", PercentageAnalyticsValue);
+            writer.WriteLongValue("analyticsValue", AnalyticsValue);
+            writer.WriteLongValue("percentageAnalyticsValue", PercentageAnalyticsValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

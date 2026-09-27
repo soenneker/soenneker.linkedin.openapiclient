@@ -1,0 +1,156 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/",
+  "Title": "Sales Navigator Application Platform Documentation",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Application Platform Documentation",
+      "Anchor": "sales-navigator-application-platform-documentation",
+      "SectionPath": [],
+      "Text": "LinkedIn Sales Navigator is a leading social selling tool that builds and nurtures customer relationships to lead to increased sales performance. By leveraging the power of LinkedIn\u0027s Sales Navigator, you can add exposure to sales leaders who are already engaged on LinkedIn and increase your product\u0027s engagement by integrating LinkedIn Sales Navigator seamlessly into your customers\u0027 workflow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Application Platform Documentation",
+      "Anchor": "sales-navigator-application-platform-documentation",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Application Platform Documentation",
+      "Anchor": "sales-navigator-application-platform-documentation",
+      "SectionPath": [],
+      "Text": "We are not currently accepting new partners for access to the LinkedIn Sales Navigator API. We periodically review our onboarding capacity and will update this page if availability changes. Thank you for your understanding.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Application Platform Documentation",
+      "Anchor": "sales-navigator-application-platform-documentation",
+      "SectionPath": [],
+      "Text": "With the Sales Navigator Application Platform (SNAP) your customers can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Application Platform Documentation",
+      "Anchor": "sales-navigator-application-platform-documentation",
+      "SectionPath": [],
+      "Text": "target people and companies with a search experience that delivers relevant prospects\nunderstand key lead and company changes with suggestions customized for you\nengage with leads and prospects from directly within your application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Application Platform Documentation",
+      "Anchor": "sales-navigator-application-platform-documentation",
+      "SectionPath": [],
+      "Text": "Read on to learn more about the UI and API-based services that can help you maximize sales performance for your customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services",
+      "Anchor": "display-services",
+      "SectionPath": [
+        "Display Services"
+      ],
+      "Text": "Sales professionals have unique informational needs at different stages of the sales process. Display Services offers a robust set of UI modules for embedding within external applications via iframe or JavaScript SDK to enrich workflow experiences with LinkedIn identity and insights. Display Services modules allow viewing LinkedIn profiles and accounts, displaying recent activity and posts, and connecting and sending messages (including InMail) to leads. External applications can also enrich UI presentations with LinkedIn profile photos and links to Sales Navigator profiles with the Profile Associations API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services",
+      "Anchor": "display-services",
+      "SectionPath": [
+        "Display Services"
+      ],
+      "Text": "To learn more about Display Services, visit the Display Services Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Services",
+      "Anchor": "analytics-services",
+      "SectionPath": [
+        "Analytics Services"
+      ],
+      "Text": "Analytics Services offers a bulk export API to retrieve activities performed by sales teams, as well as other metadata like a seat holder\u0027s daily Social Selling Index, total connections, total leads saved, and other metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Services",
+      "Anchor": "analytics-services",
+      "SectionPath": [
+        "Analytics Services"
+      ],
+      "Text": "To learn more about Analytics Services, visit the Analytics Services Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Services",
+      "Anchor": "sync-services",
+      "SectionPath": [
+        "Sync Services"
+      ],
+      "Text": "Sales Navigator Sync Services offers APIs that enable richer integrations built on top of CRM Sync. By leveraging CRM Sync matches between CRM records and LinkedIn, CRM applications can enable new data integrity workflows and UI experiences for CRM users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Services",
+      "Anchor": "sync-services",
+      "SectionPath": [
+        "Sync Services"
+      ],
+      "Text": "To learn more about Sync Services, visit the Sync Services Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Services",
+      "Anchor": "sync-services",
+      "SectionPath": [
+        "Sync Services"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Services",
+      "Anchor": "sync-services",
+      "SectionPath": [
+        "Sync Services"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn SNAP Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

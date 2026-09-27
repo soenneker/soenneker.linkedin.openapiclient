@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Attributes { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140048679083638784CommentaryAttributesItem>? Attributes { get; set; }
 #nullable restore
 #else
-        public UntypedNode Attributes { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140048679083638784CommentaryAttributesItem> Attributes { get; set; }
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140048679083638784CommentaryAttributesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140048679083638784CommentaryAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140048679083638784CommentaryAttributesItem>("attributes", Attributes);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

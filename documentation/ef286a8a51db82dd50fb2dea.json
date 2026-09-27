@@ -1,0 +1,586 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2021/marketing-api-changes",
+  "Title": "Archived Marketing API Changes 2021",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-social-action-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2021/marketing-api-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/video-ads-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adpagesets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2021",
+      "Anchor": "archived-marketing-api-changes-2021",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2021",
+      "Anchor": "archived-marketing-api-changes-2021",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November and December 2021",
+      "Anchor": "november-and-december-2021",
+      "SectionPath": [
+        "November and December 2021"
+      ],
+      "Text": "For this release, we\u0027re happy to share our perspective on the changing privacy landscape and our privacy-first approach to B2B digital advertising. First, we\u0027re introducing new approaches that help provide online consistency across channels and devices, all while limiting or even eliminating the use of third-party personal data. We\u2019re beginning to test Group Identity for B2B leveraging our first-party data to group members together based on shared professional identity attributes, such as seniority and industry. Second, reaching your audience is only one part of effective digital advertising - B2B measurement must evolve, too. As part of the many paths that we\u2019re exploring, we also are applying technologies to measure campaign success including: collecting conversions using first-party cookies, using artificial intelligence to measure conversions, and attributing offline conversions.These are a few of the solutions we\u2019re testing, and we\u2019ll continue to update you through this monthly newsletter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Platform",
+      "Anchor": "platform",
+      "SectionPath": [
+        "November and December 2021",
+        "Platform"
+      ],
+      "Text": "Save time with the new OAuth Token Generator tool.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: The new OAuth token generator tool configures your app and generates access tokens for you, saving you time and allowing you to jump straight into exploring our APIs. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management",
+      "SectionPath": [
+        "November and December 2021",
+        "Campaign Management"
+      ],
+      "Text": "Try the new Video API open beta.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Video is the most engaging format on LinkedIn. And we\u2019ve launched a new Video API open beta to make it easier to create video posts and ads, with thumbnails and captions capabilities. The API also now supports the ability to post on behalf of a member, and not just a company page. Learn how to create videos that deliver results on LinkedIn with these recommendations. Please submit any feedback through Developer Support.\nSponsored Messaging EU Targeting Restrictions.\nWho\u2019s impacted: Partners using the Message Ads API or Conversation Ads API.\nWhat\u2019s happening: We are stopping the display of Message and Conversations Ads to EU members effective starting January 10, 2022 for new and existing campaigns. New and existing Message or Conversation Ads campaigns targeting EU members will fail with a 400 error. This only affects targeting members based in the EU. Targeting members outside the EU are not impacted.\nChanges to conversion tracking on LinkedIn.\nWho\u2019s impacted: Partner using the Insight Tag API.\nWhat\u2019s happening: In light of changing regulations on privacy, we\u0027re asking customers to enable \u201Cenhanced conversion tracking\u201D for all LinkedIn Campaign Manager accounts. \u201CEnhanced conversion tracking\u201D allows first-party cookie tracking to minimize impact to their campaign performance due to privacy changes. If a customer uses LinkedIn Insight Tags, we recommend they enable \u201Cenhanced conversion tracking\u201D in Campaign Manager. If a customer uses site-wide image pixels, we recommend they switch to Insight Tag and enable \u201Cenhanced conversion tracking\u201D. There is no impact to your integration. More information can be found in this help center article..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management",
+      "SectionPath": [
+        "November and December 2021",
+        "Page Management"
+      ],
+      "Text": "[reminder] School mentions now require an organization ID.\nWho\u2019s impacted: Partners using the Shares or UGC API to mention a School.\nWhat\u2019s happening: If you\u0027re using a school URN (urn:li:school:{id}) to mention a school, starting November 30, 2021, you\u0027ll be required to use an organization ID (urn:li:organization:{id}) to mention a school. After this date, you\u0027ll get an error response when using the Share API with CREATE operations and a school URN is mentioned. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "November and December 2021",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] School Mentions for Shares and UGC API\nWho\u2019s impacted: Partners using the Shares or UGC API to mention a School.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting November 30, 2021.\n[reminder] OAuth 2.0 scopes enforcement\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: LinkedIn will sunset all legacy OAuth permissions on December 31, 2021. To ensure that your integration\u2019s OAuth flow is not impacted, your authorization request should only include permissions listed in your application settings. The complete permission list is under the \u201CAuth\u201D tab under \u201COAuth 2.0 scopes\u201D. Existing access tokens and refresh tokens are not impacted.\nWhen: December 31, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Platform",
+      "Anchor": "platform-1",
+      "SectionPath": [
+        "October 2021",
+        "Platform"
+      ],
+      "Text": "LinkedIn Marketing APIs now available on the Postman API Network.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Explore the LinkedIn Marketing Solutions public workspace to quickly get started with different use case specific collections in Postman. View our online documentation for more information on getting started with Postman.\nAll access and refresh token requests should be made using only the POST method.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Reminder that access and refresh token requests should be made using only the POST method with the request header \u201CContent-Type\u201D: \u201Cx-www-form-urlencoded\u201D and all required parameters in the request body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi",
+      "SectionPath": [
+        "October 2021",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "Upcoming Reach \u0026 Frequency metric changes.\nWho\u2019s impacted: Partners using the Ad Analytics API.\nWhat\u2019s happening: In Q1 2022, we\u0027ll announce the availability of 9 new metrics on the AdAnalyticsV2 API that will replace the existing approximateUniqueImpressions metric. These new metrics will approximate reach, frequency, and cost per 1,000 reached for three fixed time ranges: previous day, last 7 days, and last 30 days. You\u2019ll be able to pull these metrics for any day. For example, you can pull the \u201Caverage last 7-day reach\u201D for October 25, (which covers October 18 - October 25), for October 24 (which covers October 17 - October 24), and selecting October 24 - October 25 will average the two individual last 7-day counts. Please plan accordingly to have time to migrate to these new metrics. The exact date for removal of the existing reach metric will be announced when the replacement metrics are available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-1",
+      "SectionPath": [
+        "October 2021",
+        "Page Management"
+      ],
+      "Text": "[reminder] School mentions now require an organization ID.\nWho\u2019s impacted: Partners using the Shares or UGC API to mention a School.\nWhat\u2019s happening: If you\u0027re using a school URN (urn:li:school:{id}) to mention a school, starting November 30, 2021, you\u0027ll be required to use an organization ID (urn:li:organization:{id}) to mention a school. After this date, you\u0027ll get an error response when using the Share API with CREATE operations and a school URN is mentioned..\n[reminder] Companies endpoint sunset\nWho\u2019s impacted: Partners using the /v2/companies endpoint.\nWhat\u2019s happening: The /companies endpoint will be sunset and should be replaced with the Organization Lookup API. An example scenario is: /v2/companies?ids=123456\u0026projection=(results*(organizationalEntity)) will become /v2/organizationsLookup?ids=123456.\n[reminder] Organization Entity ACL API sunset\nWho\u0027s impacted: Any partner using Organization Entity ACLS API.\nWhat\u0027s happening: We are sunsetting the organizationalEntityAcls API in favor of the organizationAcls API. organizationalEntityAcls API will be removed on October 30, 2021. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-1",
+      "SectionPath": [
+        "October 2021",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here..\nWhen: Starting October 30, 2021.\n[reminder] Companies endpoint sunset\nWho\u2019s impacted: Partners using the /v2/companies endpoint.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting October 30, 2021.\n[reminder] Organization Entity ACL API sunset\nWho\u0027s impacted: Any partner using Organization Entity ACLS API.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting October 30, 2021.\n[reminder] School Mentions for Shares and UGC API\nWho\u2019s impacted: Partners using the Shares or UGC API to mention a School.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting November 30, 2021.\n[reminder] OAuth 2.0 scopes enforcement\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: LinkedIn will sunset all legacy OAuth permissions on December 31, 2021. To ensure that your integration\u2019s OAuth flow is not impacted, your authorization request should only include permissions listed in your application settings. The complete permission list is under the \u201CAuth\u201D tab under \u201COAuth 2.0 scopes\u201D. Existing access tokens and refresh tokens are not impacted.\nWhen: December 31, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-1",
+      "SectionPath": [
+        "September 2021",
+        "Campaign Management"
+      ],
+      "Text": "Text Ads top rail sunset.\nWho\u2019s impacted: Partners that support text ads.\nWhat\u2019s happening: We have decided to shift the focus of our Text Ad engagement from the top rail to the desktop right rail experience exclusively to create a better member experience. Starting December 15, 2021, the top rail placement above all other pages will be removed. As a result, your customers may see a decrease in Text Ad campaign pacing and delivery.\nTarget companies based on company revenue.\nWho\u2019s impacted: Partners using the adTargetingFacets and adTargetingEntities endpoints.\nWhat\u2019s happening: We expanded our targeting functionality to include company revenue of the member\u2019s primary employer(s) as a new facet. Learn More..\nEngagement Retargeting\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: With the new Engagement Retargeting API, you can retarget an audience based on content engagement or member actions, such as video viewers or article reads. Learn more..\nUpdated API error messages for adSupplyForecasts to provide the most relevant information.\nWho\u2019s impacted: Partners using the Ad Supply Forecasts API.\nWhat\u2019s happening: Some of our error messages are updated (using standardized error schema, which includes new error details) to provide the specific information to make it easier to use our APIs. Use this information to create more specific forecasting error messages. Learn more..\nNew field for Ad Page Sets API: urlMatchRuleExpression.\nWho\u2019s impacted: Partners using the Ad Page Sets API.\nWhat\u2019s happening: A new field, urlMatchRuleExpression, will be available for /adPageSets, used to determine if a page view event matches and will replace the existing field matchRules. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences",
+      "SectionPath": [
+        "September 2021",
+        "Audiences"
+      ],
+      "Text": "Website Retargeting segments will now show a new state: ARCHIVED.\nWho\u2019s impacted: Partners using Matched Audience website retargeting segments.\nWhat\u2019s happening: Website retargeting segments that haven\u0027t been updated or used in the last 30 days will be archived and can be identified with the new state, ARCHIVED. This won\u0027t impact your campaigns. Learn more..\nMember interests and Matched Audiences lists targeting combination re-enabled.\nWho\u2019s impacted: Partners who target member interest \u0026 traits AND with Matched Audiences of types contact list, marketing automation contact list and website retargeting.\nWhat\u0027s happening: In March, we disabled the ability to include or exclude a contact list, contact marketing automation or website segment with a member interest or trait targeting, due to Apple\u2019s App Tracking legal terms. Now, we\u2019ve made changes to the member interest and traits to make them compliant, and we re-enabled the ability to create the above targeting combination in new campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-2",
+      "SectionPath": [
+        "September 2021",
+        "Page Management"
+      ],
+      "Text": "New lifecycle state field: ARCHIVED.\nWho\u2019s impacted: Partners using the UGC API.\nWhat\u2019s happening: A new ARCHIVED value has been added to the existing lifecycleState enum. Posts with this value won\u0027t be visible on LinkedIn. Posts with the lifecycleState field set to ARCHIVED may be retrieved.\nSchool Mentions for Shares and UGC API.\nWho\u2019s impacted: Partners using the Shares API to mention a School.\nWhat\u2019s happening: If you\u0027re using a school URN (urn:li:school:{id}) to mention a school, starting November 30, 2021, you\u0027ll be required to use an organization ID (urn:li:organization:{id}) to mention a school. After this date, you\u0027ll get an error response when using the Share API with CREATE operations and a school URN is mentioned.\n[reminder] Companies endpoint sunset\nWho\u2019s impacted: Partners using the https://api.linkedin.com/v2/companies endpoint.\nWhat\u2019s happening: The /companies endpoint will be sunset and should be replaced with the Organization Lookup API. An example scenario is: /v2/companies?ids=123456\u0026projection=(results*(organizationalEntity)) will become /v2/organizationsLookup?ids=123456.\n[reminder] Organization Entity ACL API sunset\nWho\u0027s impacted: Any partner using Organization Entity ACLS API.\nWhat\u0027s happening: We are sunsetting the organizationalEntityAcls API in favor of the organizationAcls API. organizationalEntityAcls API will be removed on October 30, 2021. Learn more..\n[reminder] Geo-location migration for Shares and UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: Similar to the Bing geo migration that migrated location data to a new geo data source for ads targeting, we\u0027re deprecating the locations field on Sept 30, 2021, and migrating to the new geoLocations field (already available) for organic (non-sponsored) targeted company Shares or UGC posts. Please use the Geo Typeahead API to get respective geoUrns to be used in the new geoLocations field. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-2",
+      "SectionPath": [
+        "September 2021",
+        "Breaking Changes"
+      ],
+      "Text": "OAuth 2.0 scopes enforcement\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: LinkedIn will sunset all legacy OAuth permissions on December 31, 2021. To ensure that your integration\u2019s OAuth flow is not impacted, your authorization request should only include permissions listed in your application settings. The complete permission list is under the \u201CAuth\u201D tab under \u201COAuth 2.0 scopes\u201D. Existing access tokens and refresh tokens are not impacted.\nWhen: December 31, 2021.\n[reminder] The legacy adBudgetPricing criteria finder will be sunset.\nWho\u2019s impacted: Partners who use the criteria finder for adBudgetPricing to get insights on pricing metrics.\nWhat\u2019s happening: The API be sunset and criteriaV2 should be used instead.\nWhen: Starting September 30, 2021.\n[reminder] Geo-location migration for Shares and UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: The location field will be removed on September 30, 2021.\n[reminder] Change to response header names\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: LinkedIn is changing how we generate our API HTTP response headers, and as a result headers will be all lowercase. Although RFC-2616 specifies that HTTP headers are case-insensitive, your software may be case-sensitive. Please ensure that your handling of LinkedIn headers is done without expecting a case-sensitive match so your integration doesn\u2019t break.\nWhen: Starting September 30, 2021, all APIs will return headers in lower case.\n[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using Query Tunneling. See the query tunneling migration guide here..\nWhen: Starting October 30, 2021.\n[reminder] Companies endpoint sunset\nWho\u2019s impacted: Partners using the https://api.linkedin.com/v2/companies endpoint.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting October 30, 2021.\n[reminder] Organization Entity ACL API sunset\nWho\u0027s impacted: Any partner using Organization Entity ACLS API.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting October 30, 2021.\nSchool Mentions for Shares and UGC API.\nWho\u2019s impacted: Partners using the Shares or UGC API to mention a School.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting November 30, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-2",
+      "SectionPath": [
+        "August 2021",
+        "Campaign Management"
+      ],
+      "Text": "unitCost field required for manual or target-cost bidding campaigns.\nWho\u2019s impacted: Partners using the Ad Campaign API.\nWhat\u2019s happening: As a reminder, if you create a campaign using manual or target-cost bidding, ensure that the unitCost field is present and has a non-zero value. If the field is set to zero (0), the campaign won\u0027t deliver. Learn more..\nDelete campaigns or campaign groups in draft mode.\nWho\u2019s impacted: Partners using the Ad Campaign API and Campaign Group API.\nWhat\u2019s happening: Now delete campaigns or campaign groups that are in DRAFT status. Once deleted, these campaigns and campaign groups can\u0027t be retrieved or recovered. Learn more about Campaign and Campaign Group changes.\n[reminder] iOS device member trait sunset\nWho\u2019s impacted: Partners that enable targeting by iOS device.\nWhat\u2019s happening: With Apple\u2019s App Tracking Transparency (ATT) framework changes in place, we plan to sunset the iPhone user member trait starting August 31, 2021. New campaigns created with the iOS device segment will fail with a 400 error INVALID_VALUE_FOR_FIELD. Existing campaigns targeting the iOS device segment before August 31, 2021 can continue to run their campaigns without disruption. However, any campaign editing operations will fail with the validation error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi-1",
+      "SectionPath": [
+        "August 2021",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "Reach \u0026 Frequency Privacy Impact.\nWho\u2019s impacted: Partners using the approximateUniqueImpressions metric from the Ad Analytics API.\nWhat\u2019s happening: Due to the evolving privacy landscape, we can\u2019t monitor the unique reach of member accounts using the same methodologies as before. As we work towards a better reach and frequency experience that embraces these new privacy initiatives, please note that a small portion of LinkedIn Audience Network traffic will be excluded from the current reach metric, so it may be slightly underestimated for Audience Network campaigns. Consequently, average frequency and cost per 1,000 member accounts reached may be slightly overestimated when using approximateUniqueImpressions in the calculations.\nBrand Lift Testing Privacy Impact.\nWho\u2019s impacted: Partners using the Brand Lift Testing API..\nWhat\u2019s happening: Due to industry-wide privacy changes, a small amount of traffic from the LinkedIn Audience Network is currently excluded from Brand Lift Tests. If your test includes campaigns that run on our Audience Network, then that portion of traffic won\u2019t be reflected in your results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-3",
+      "SectionPath": [
+        "August 2021",
+        "Page Management"
+      ],
+      "Text": "Companies endpoint sunset.\nWho\u2019s impacted: Partners using the https://api.linkedin.com/v2/companies endpoint.\nWhat\u2019s happening: The /companies endpoint will be sunset and should be replaced with the Organization Lookup API. An example scenario is: /v2/companies?ids=123456\u0026projection=(results*(organizationalEntity)) will become /v2/organizationsLookup?ids=123456.\nOrganization Entity ACL API sunset.\nWho\u0027s impacted: Any partner using Organization Entity ACLS API.\nWhat\u0027s happening: We are sunsetting the organizationalEntityAcls API in favor of the organizationAcls API. organizationalEntityAcls API will be removed on October 30, 2021. Learn more..\n[reminder] Geo-location migration for Shares and UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: Similar to the Bing geo migration that migrated location data to a new geo data source for ads targeting, we\u0027re deprecating the locations field on Sept 30, 2021, and migrating to the new geoLocations field (already available) for organic (non-sponsored) targeted company Shares or UGC posts. Please use the Geo Typeahead API to get respective geoUrns to be used in the new geoLocations field. Learn more..\n[reminder] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: If you\u0027re currently using the /search?q=companiesV2 endpoint to find companies with industry, location, and other criteria, this endpoint will be deprecated and replaced with a new endpoint: /companySearch?q=search API. The old endpoint will be removed on August 31, 2021. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-3",
+      "SectionPath": [
+        "August 2021",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting August 31, 2021.\n[reminder] iOS device member trait sunset\nWho\u2019s impacted: Partners that enable targeting by iOS device.\nWhat\u2019s happening: See Campaign Management section above.\nWhen: Starting August 31, 2021.\nThe legacy adBudgetPricing criteria finder will be sunset.\nWho\u2019s impacted: Partners who use the criteria finder for adBudgetPricing to get insights on pricing metrics.\nWhat\u2019s happening: The API be sunset and criteriaV2 should be used instead.\nWhen: Starting September 30, 2021.\n[reminder] Geo-location migration for UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: The location field will be removed on September 30, 2021.\nChange to response header names.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: LinkedIn is changing how we generate our API HTTP response headers, and as a result headers will be all lowercase. Although RFC-2616 specifies that HTTP headers are case-insensitive, your software may be case-sensitive. Please ensure that your handling of LinkedIn headers is done without expecting a case-sensitive match so your integration doesn\u2019t break.\nWhen: Starting September 30, 2021, all APIs will return headers in lower case.\n[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here..\nWhen: Starting October 30, 2021.\nCompanies endpoint sunset.\nWho\u2019s impacted: Partners using the /v2/companies endpoint.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting October 30, 2021.\nOrganization Entity ACL API sunset.\nWho\u0027s impacted: Any partner using Organization Entity ACLS API.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting October 30, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-3",
+      "SectionPath": [
+        "July 2021",
+        "Campaign Management"
+      ],
+      "Text": "Change to default campaign group name.\n\nWho\u2019s impacted: Partners using the Ad Campaign Group API..\n\nWhat\u2019s happening: Whenever an ad account is created, a campaign group is automatically created. Previously, it was called \u0022default campaign group\u0022 and now it\u0027s called \u0022new campaign group\u0022. When searching for the campaign group, make sure to use the new campaign group name.\n\niOS device member trait sunset\n\nWho\u2019s impacted: Partners that enable targeting by iOS device.\n\nWhat\u2019s happening: With Apple\u2019s App Tracking Transparency (ATT) framework changes in place, we plan to sunset the iPhone user member trait starting August 31, 2021. New campaigns created with the iOS device segment will fail with a 400 error INVALID_VALUE_FOR_FIELD. Existing campaigns targeting the iOS device segment before August 31, 2021 can continue to run their campaigns without disruption. However, any campaign editing operations will fail with the validation error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi-2",
+      "SectionPath": [
+        "July 2021",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "Schedule field now required to run a Brand Lift test.\nWho\u2019s impacted: Partners using the Ad Lift Test API..\nWhat\u2019s happening: When calling the budget validation endpoint, you\u0027re now required to provide the schedule field to indicate how long the lift test will be running.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-4",
+      "SectionPath": [
+        "July 2021",
+        "Page Management"
+      ],
+      "Text": "[reminder] Geo-location migration for Shares and UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: Similar to the Bing geo migration that migrated location data to a new geo data source for ads targeting, we\u0027re deprecating the locations field on Sept 30, 2021, and migrating to the new geoLocations field (already available) for organic (non-sponsored) targeted company Shares or UGC posts. Please use the Geo Typeahead API to get respective geoUrns to be used in the new geoLocations field. Learn more..\n[reminder] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: If you\u0027re currently using the /search?q=companiesV2 endpoint to find companies with industry, location, and other criteria, this endpoint will be deprecated and replaced with a new endpoint: /companySearch?q=search API. The old endpoint will be removed on August 31, 2021. Learn more..\nChanges to certain fields used in company search API filters.\nWho\u2019s impacted: Partners who search companies using country region, followers range, location projection.\nWhat\u2019s happening: Field companyCountryRegion is no longer supported in the filter. followersRange is renamed to followersSize with updated valid values and location projection is renamed to locations. Learn more..\nCommentary length limit increase.\nWho\u2019s impacted: Partner using the Shares or UGC API.\nWhat\u2019s happening: UGC (shareCommentary.text field) and Share (text field) APIs increased the maximum text length limit from 1,300 to 3,000 characters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-4",
+      "SectionPath": [
+        "July 2021",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: See Page Management section above.\nWhen: The old endpoint will be removed on August 31, 2021.\niOS device member trait sunset\nWho\u2019s impacted: Partners that enable targeting by iOS device.\nWhat\u2019s happening: See Campaign Management section above.\nWhen: iPhone user member trait will be removed on August 31, 2021.\n[reminder] Geo-location migration for Shares and UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: The location field will be removed on September 30, 2021.\n[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here..\nWhen: Starting October 30, 2021, we\u0027ll reject calls that don\u0027t meet the new requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi-3",
+      "SectionPath": [
+        "June 2021",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "Get a demographic breakdown for your Brand Lift tests.\nWho\u2019s impacted: Partners using the new Ad Lift Test API.\nWhat\u2019s happening: Now see raw survey results and lift metrics broken down by member demographic for your LinkedIn Brand Lift tests with these new fields: adLiftTestSurveyResponseMemberDemographicBreakdowns and adLiftTestResultMetricMemberDemographicBreakdowns. Learn more. Note: we\u0027re making this feature available via the API first; it will appear in the LinkedIn UI soon.\nStandardized error codes for Brand Lift Tests.\nWho\u2019s impacted: Partners using the Ad Lift Test API.\nWhat\u2019s happening: The Ad Lift Test API will now return robust error messages and service-level error codes including the complete metadata of what fields are causing the errors and actions required to help you troubleshoot. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-5",
+      "SectionPath": [
+        "June 2021",
+        "Page Management"
+      ],
+      "Text": "[breaking change] Geo-location migration for Shares and UGC APIs\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: Similar to the Bing geo migration that migrated location data to a new geo data source for ads targeting, we\u0027re deprecating the locations field on Sept 30, 2021, and migrating to the new geoLocations field (already available) for organic (non-sponsored) targeted company Shares or UGC posts. Please use the Geo Typeahead API to get respective geoUrns to be used in the new geoLocations field.\n[reminder] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: If you\u0027re currently using the /search?q=companiesV2 endpoint to find companies with industry, location, and other criteria, this endpoint will be deprecated and replaced with a new endpoint: /companySearch?q=search API. The old endpoint will be removed on August 31, 2021. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "June 2021",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New error response schema\nWho\u2019s impacted: Partners using the adAccountsV2 API.\nWhat\u2019s happening: Last year, we introduced new error response fields (errorDetailType and errorDetails) and updated HTTP status codes for the adCampaignsGroups and adCampaigns API. Now, we\u0027re introducing the same changes for the adAccounts API. Make sure to check if you have parsed these fields and update your error parsing logic to account for the new error fields and the updated HTTP codes, as necessary. Learn more.\nWhen: These changes will be implemented on July 24, 2021. Please make sure your parsing logic accounts for the changes.\n*[reminder] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: See Page Management section above.\nWhen: The old endpoint will be removed on August 31, 2021.\nGeo-location migration for Shares and UGC APIs.\nWho\u2019s impacted: Partners using Share Distribution Target or UGC Target Audience APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: The location field will be removed on September 30, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi-4",
+      "SectionPath": [
+        "May 2021",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "Increased daily retention for campaign metrics.\nWho\u2019s impacted: Partners using the adAnalyticsV2 API.\nWhat\u2019s happening: Historically, when querying for campaign performance and engagement data by member attributes (e.g. MEMBER_JOB_TITLE, MEMBER_COMPANY, etc.) we have offered 6 months of retention for queries using the DAILY time granularity and 2 years of retention for the MONTHLY and YEARLY granularities. Today, we\u0027ll begin ramping a consistent 2 years retention regardless of the time granularity used..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-6",
+      "SectionPath": [
+        "May 2021",
+        "Page Management"
+      ],
+      "Text": "Introducing Roles \u0026 Permissions.\nWho\u2019s impacted: Partners using the Organization Access Control API.\nWhat\u2019s happening: New Roles \u0026 Permissions on LinkedIn Pages make it easier than ever for teams to work remotely and collaboratively. Now admins can take one of three new roles within an organic hierarchy to access their Page and maintain distributed access with increased security. Through this new API, partners will check permissions for each user and match the user\u2019s access level determined by their assigned role on the Page. Learn more.\nThere are three new roles introduced in Organization Access Control API, including:\nContent admin \u2013 has permission to create and manage Page content, including updates (as well as boosting updates), Events, Stories, and jobs.\nCurator \u2013 has permission to view Content Suggestions, create recommended content, and view and * export Page analytics.\nAnalyst \u2013 has permission to monitor the Page\u2019s performance through analytics to help drive goals.\nThe new Organization Authorizations API (/organizationAuthorizations) can be used to implement the same permission checks as the Organization Access Control API (/organizationsAcls). Please refer to the Role to Permission Mapping table in Getting Started, or see the Overview Page to learn more.\n[breaking change] New API for company search\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: If you\u0027re currently using the /search?q=companiesV2 endpoint to find companies with industry, location, and other criteria, this endpoint will be deprecated and replaced with a new endpoint /companySearch?q=search API. The old endpoint will be removed on August 31, 2021. Learn more.\nVideo Posts can now be created on member feeds.\nWho\u2019s impacted: Partners using the UGC API.\nWhat\u2019s happening: Now use the UGC API to create video posts on behalf of a member and be posted on their member profile. Make sure the author references a member URN and not an organization..\n[reminder] Shares and UGC Posts Article Type Posts\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting May 31, 2021, for article type posts the description, title, and thumbnail will be set from LinkedIn\u2019s URL Preview of the URL only if the description, title, and thumbnail are not provided from the API call. Prior to this change, each field was set from LinkedIn\u2019s URL Preview if the specific field was not set. If a specific representation of the post is desired, set the description, title, or thumbnail fields, rather than rely on automatic preview. Use the Post Inspector tool to determine what the LinkedIn URL Preview looks like.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-6",
+      "SectionPath": [
+        "May 2021",
+        "Breaking Changes"
+      ],
+      "Text": "New error response schema.\nWho\u2019s impacted: Partners using the adAccountsV2 API.\nWhat\u2019s happening: Last year, we introduced new error response fields (errorDetailType and errorDetails) and updated HTTP status codes for the adCampaignsGroups and adCampaigns API. Now, we\u0027re introducing the same changes for the adAccounts API. Make sure to check if you have parsed these fields and update your error parsing logic to account for the new error fields and the updated HTTP codes, as necessary. Learn more.\nWhen: These changes will be implemented on July 24, 2021. Please make sure your parsing logic accounts for the changes.\nNew API for company search.\nWho\u2019s impacted: Partners who search companies using industry, location, or other company facets.\nWhat\u2019s happening: See Page Management section above.\nWhen: The old endpoint will be removed on August 31, 2021.\n[reminder] Shares and UGC Posts Article Type Posts\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting May 31, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi-5",
+      "SectionPath": [
+        "April 2021",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "Introducing LinkedIn Brand Lift Testing.\nWhat\u2019s happening: Use the new Ad Lift Test API to create a brand lift test and gauge the impact of your ads on brand metrics that you care about: awareness, consideration, familiarity, favorability, and more. Better measure your brand marketing efforts and optimize for future brand value. Learn more..\nUse the Ads Review Information API to check the status of a Brand Lift test.\nWho\u2019s impacted: Partners using the new Ad Lift Test API.\nWhat\u2019s happening: Use this new API to understand if a Brand Lift test has been approved or rejected and potential rejection reasons to better troubleshoot. Before calling the endpoint, make sure to obtain the brandLiftTest URN and the reviewVersionTag of the specific version of the entity being tested. Learn more.\nMetrics grouped by member demographics now require longer processing time.\nWho\u2019s impacted: Partners using the adAnalyticsV2 API.\nWhat\u2019s happening: Metrics grouped by member demographics, such as company size and job function, will now be available in 12-24 hours. Historically this data was available within a few hours. The change is a first step towards scaling our systems to provide greater value. There is no change to performance metrics, such as those reported by creative, campaign or account, which will continue to be near real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-7",
+      "SectionPath": [
+        "April 2021",
+        "Page Management"
+      ],
+      "Text": "[Reminder] Shares and UGC Posts Article Type Posts\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting May 31, 2021, for article type posts the description, title, and thumbnail will be set from LinkedIn\u2019s URL Preview of the URL only if the description, title, and thumbnail are not provided from the API call. Prior to this change, each field was set from LinkedIn\u2019s URL Preview if the specific field was not set. If a specific representation of the post is desired, set the description, title, or thumbnail fields, rather than rely on automatic preview. Use the Post Inspector tool to determine what the LinkedIn URL Preview looks like.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences-1",
+      "SectionPath": [
+        "April 2021",
+        "Audiences"
+      ],
+      "Text": "[Reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: Starting April 30, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs Users \u0026 Companies to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-7",
+      "SectionPath": [
+        "April 2021",
+        "Breaking Changes"
+      ],
+      "Text": "[Reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: See Audiences section above.\nWhen: Starting April 30, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs.\n[Reminder] Shares and UGC Posts Article Type Posts\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting May 31, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Platform",
+      "Anchor": "developer-platform",
+      "SectionPath": [
+        "April 2021",
+        "Developer Platform"
+      ],
+      "Text": "Use the new API product endpoint catalog to know what you have access to.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Use this new Developer Portal tool to get a holistic view of the endpoints and permissions your application has access to. Easily view, sort, and filter through all the endpoints associated with an API product. Get started by visiting the Products tab under any application and select view endpoints for any product. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-4",
+      "SectionPath": [
+        "March 2021",
+        "Campaign Management"
+      ],
+      "Text": "Sharing an update on our plans for IDFA.\nOne of the bigger industry shifts is Apple\u2019s upcoming changes to Identifier for Advertising (IDFA), which companies use for tracking and ad targeting. We are committed to privacy-by-design principles that deliver value to our shared customers. As such, we have decided to stop our iOS apps\u2019 collection of IDFA data for now. Although this change affects the LinkedIn Audience Network (LAN), Conversion Tracking and Matched Audiences, we expect limited impact to campaign performance. Our plan is to leverage our first-party data to help marketers reach buyer groups, which are critical for success in B2B marketing. We\u2019ll update you next quarter on our progress and will share what we\u2019ve learned along the way. Learn more.\nChange to ad review rejection reasons.\nWho\u2019s impacted: Partners using the Ad Creatives and Ad Forms API.\nWhat\u2019s happening: LinkedIn doesn\u0027t allow ads that could capitalize from, exploit or sensationalize the currently monitored sensitive event. Therefore, we\u0027ve added two new rejection reasons: prohibited political content and current sensitive events. We have also deprecated the existing reasons: prohibited political or religious content. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-8",
+      "SectionPath": [
+        "March 2021",
+        "Page Management"
+      ],
+      "Text": "For the first time, get real-time notifications for social actions, now including mentions.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Organization social actions webhooks enables you to receive real time notification on engagement with a LinkedIn Page or post. Use it to receive real-time activity for likes, comments, shares, and mentions. Learn more.\nShares and UGC Posts Article Type Posts.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting May 31, 2021, for article type posts the description, title, and thumbnail fields will be set from LinkedIn\u2019s URL Preview of the URL only if the description, title, and thumbnail are not provided from the API call. Prior to this change, each field was set from LinkedIn\u2019s URL Preview if the specific field was not set. This feature has always been the best effort and when fields are not present in the URL Preview, then it won\u0027t be set. If a specific representation of the post is desired, then it\u0027s recommended that partners set the description, title, or thumbnail fields rather than rely on automatic preview from this feature. LinkedIn provides Post Inspector, a tool to determine what LinkedIn\u2019s URL Preview looks like. The tool uses slightly different naming. The three fields can be found under Properties with description and title named the same and Image corresponding to thumbnails.\n[Reminder] Shares and UGC Posts Article Thumbnails\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting March 31, 2021, only the first thumbnail will be kept per content entity or share media. Any thumbnails beyond the first will be removed. The specific fields impacted are thumbnails in the ShareMedia of UGC Posts and thumbnails in ShareContent of Shares. If the first thumbnail doesn\u0027t have the required URL field set and thus is invalid then this will result in no thumbnail regardless of if there are any thumbnails beyond the first.\n[Reminder] Shares and UGC Posts Validations\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting March 31, 2021, the following length validations will be added to the following String fields in Shares and UGC Posts APIs. Posts that violate these validations will be rejected with a 422 HTTP error code and message indicating the field that\u0027s out of range along with the valid range.\nThe following length validations will be added to UGC Posts:\nShareContent primaryLandingPageUrl: 2000 length limit.\nShareMedia landingPage.landingPageUrl: 2000 length limit.\nShareMedia originalUrl: 8192 length limit.\nShareMedia thumbnail.altText: 4086 length limit.\nShareMedia thumbnail.URL: 8192 length limit.\nThe following length validations will be added to Shares:\nShare Content landingPageUrl: 2000 length limit.\nShare Content contentEntities[i].landingPageUrl: 2000 length limit.\nShare Content contentEntities[i].entityLocation: 8192 length limit.\nShare Content contentEntities[i].thumbnails[j].resolvedUrl: 8192 length limit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences-2",
+      "SectionPath": [
+        "March 2021",
+        "Audiences"
+      ],
+      "Text": "Changes to targeting combination due to Apple\u2019s App Tracking terms.\nWho\u2019s impacted: Partners who target member interest \u0026 traits AND with Matched Audiences of types contact list, marketing automation contact list and website retargeting.\nWhat\u2019s happening: As per Apple\u2019s App Tracking (ATT) legal terms we can\u0027t link information inferred from user activity data on iOS app with any third party data for the purposes of ad targeting. With this, we\u0027re preventing customers from including or excluding a contact list, contact marketing automation or website segment with a member interest or trait targeting segments.\nWhat does this mean for your application?\nNew campaigns created with the targeting combination mentioned above will fail with the following error:\nError code: INCOMPATIBLE_TARGETING_COMBINATION_FOR_ APP_TRACKING_TRANSPARENCY.\nError message format: Facet {field1} with value(s) {value1} can\u0027t be AND\u0027ed together with {field2} to comply with app tracking transparency requirements.\nfield1: the targeting facet being checked.\nvalue1: the targeting facet value corresponding to field1\nfield2: the facets that are incompatible with field1.\nPlease refer to the API documentation for the list of incompatible combinations.\nExisting campaigns created prior to March 29, 2021 will continue to serve as before. However, any updates to targeting criteria with incompatible combinations post March 29 will fail with the error mentioned above.\n[Reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: Starting April 30, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs Users \u0026 Companies to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.\nWhat does this mean for my application? If your application calls /dmpSegments/users or /dmpSegments/companies, you may get a HTTP 429 response if calling the endpoints too frequently, indicating that you\u0027re exceeding the rate limits.\nHow do I handle API calls that are throttled? Your application should be catching errors when making calls to /dmpSegment/users and /dmpSegment/companies and retry after a minimum of 1 second whenever you receive an HTTP 429 response.\nCan I get the limits increased for my application? No, the limits we intend to enforce won\u0027t be customizable at an application level. However the limits will be enforced such that there\u0027s minimal interruption to existing applications.\nMy application creates a significant amount of automated API calls (eg. one time full data dump or weekly data pushes with large volumes followed by smaller traffic that contains diffs throughout the week). Will this rate limit affect my throughput ? If the volume of your automated traffic exceeds tens of millions, then you can expect to see frequent throttling. While this might affect the throughput of your API calls, you won\u0027t see any differences in the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-8",
+      "SectionPath": [
+        "March 2021",
+        "Breaking Changes"
+      ],
+      "Text": "Changes to targeting combination due to Apple\u2019s App Tracking terms.\nWho\u2019s impacted: Partners who target member interest \u0026 traits AND with Matched Audiences of types contact list, marketing automation contact list and website retargeting.\nWhat\u2019s happening: See Audiences section above.\nWhen: Starting March 29, 2021.\nShares and UGC Posts Article Type Posts.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting May 31, 2021.\n[Reminder] Shares and UGC Posts Validations\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting March 31, 2021.\n[Reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here.\nWhen: Starting March 31, 2021, we\u0027ll reject calls that don\u0027t meet the new requirements.\n[Reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: See Audiences section above.\nWhen: Starting April 30, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-5",
+      "SectionPath": [
+        "February 2021",
+        "Campaign Management"
+      ],
+      "Text": "[Reminder] Support for additional currencies.\nWho\u2019s impacted: Partners using the adAccountsV2 API.\nWhat\u2019s happening: The account creation endpoint adAccountsV2 will support creating ad accounts with 14 new currencies. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-9",
+      "SectionPath": [
+        "February 2021",
+        "Page Management"
+      ],
+      "Text": "Shares and UGC Posts Article Thumbnails.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting March 31, 2021, only the first thumbnail will be kept. Any thumbnails beyond the first will be removed. The specific fields impacted are thumbnails in the ShareMedia of UGC Posts and thumbnails in ShareContent of Shares. If the first thumbnail doesn\u0027t have the required URL field set and thus is invalid then this will result in no thumbnail regardless of if there are any thumbnails beyond the first.\nShares and UGC Posts Validations.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: Starting March 31, 2021, the following length validations will be added to the following String fields in Shares and UGC Posts APIs. Posts that violate these validations will be rejected with a 422 HTTP error code and message indicating the field that\u0027s out of range along with the valid range.\nThe following length validations will be added to UGC Posts:\nShareContent primaryLandingPageUrl: 2000 length limit.\nShareMedia landingPage.landingPageUrl: 2000 length limit.\nShareMedia originalUrl: 8192 length limit.\nShareMedia thumbnail.altText: 4086 length limit.\nShareMedia thumbnail.URL: 8192 length limit.\nThe following length validations will be added to Shares:\nShare Content landingPageUrl: 2000 length limit.\nShare Content landingPageUrl: 2000 length limit.\nShare Content contentEntities[i].entityLocation: 8192 length limit.\nShare Content contentEntities[i].thumbnails[j].resolvedUrl: 8192 length limit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences-3",
+      "SectionPath": [
+        "February 2021",
+        "Audiences"
+      ],
+      "Text": "[Reminder] Returning Organization Urn in AdTargetingEntities API school typeahead results.\nWho\u2019s impacted: Partners using the AdTargetingEntities API to identify targeting school segments using the typeahead finder.\nWhat\u2019s happening: Starting March 1, 2021, we return an Organization Urn (E.g.:urn:li:organization:1646 for Harvard University) in place of a School Urn (E.g.:urn:li:school:18483 for Harvard University). No schema change is involved. The only change is the entity type and ID of each urn. To convert a saved school urn to an organization urn, call the Find Entities by Typeahead finder with the same school entity name to get the corresponding organization urn. Learn more.\n[Reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: Starting March 31, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs Users \u0026 Companies to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.\nWhat does this mean for my application? If your application calls /dmpSegments/users or /dmpSegments/companies, you may get a HTTP 429 response if calling the endpoints too frequently, indicating that you\u0027re exceeding the rate limits.\nHow do I handle API calls that are throttled? Your application should be catching errors when making calls to /dmpSegment/users and /dmpSegment/companies and retry after a minimum of 1 second whenever you receive an HTTP 429 response.\nCan I get the limits increased for my application? No, the limits we intend to enforce won\u0027t be customizable at an application level. However the limits will be enforced such that there\u0027s minimal interruption to existing applications.\nMy application creates a significant amount of automated API calls (eg. one time full data dump or weekly data pushes with large volumes followed by smaller traffic that contains diffs throughout the week). Will this rate limit affect my throughput ? If the volume of your automated traffic exceeds tens of millions, then you can expect to see frequent throttling. While this might affect the throughput of your API calls, you won\u0027t see any differences in the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-9",
+      "SectionPath": [
+        "February 2021",
+        "Breaking Changes"
+      ],
+      "Text": "Shares and UGC Posts Validations.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting March 31, 2021.\n[Reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here..\nWhen: Starting March 31, 2021, we\u0027ll reject calls that don\u0027t meet the new requirements.\n[Reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: See Audiences section above.\nWhen: Starting March 31, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-6",
+      "SectionPath": [
+        "January 2021",
+        "Campaign Management"
+      ],
+      "Text": "New optimization target to maximize reach.\nWho\u2019s impacted: Partners using the Ad Supply Forecasts and adCampaignsV2 APIs to create new campaigns optimizing for unique member accounts.\nWhat\u2019s happening: A new optimization target (MAX_REACH) will be available under the Brand Awareness objective that aims to maximize the number of unique member accounts reached. The new OptimizationTargetType is usable specifically for the Brand Awareness objective and a new metric type (Reach \u0026 Reach per Million Impressions) under forecasting to show predicted number of new members reached, as well as the frequency they see an ad. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences-4",
+      "SectionPath": [
+        "January 2021",
+        "Audiences"
+      ],
+      "Text": "Returning Organization Urn in AdTargetingEntities API school typeahead results.\nWho\u2019s impacted: Partners using the AdTargetingEntities API to identify targeting school segments using the typeahead finder.\nWhat\u2019s happening: Starting March 1, 2021, we return an Organization Urn (E.g.:urn:li:organization:1646 for Harvard University) in place of a School Urn (E.g.:urn:li:school:18483 for Harvard University). No schema change is involved. The only change is the entity type and ID of each urn. To convert a saved school urn to an organization urn, call the Find Entities by Typeahead finder with the same school entity name to get the corresponding organization urn. Learn more..\n[reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: Starting March 31, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs (Users \u0026 Companies) to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.\nWhat does this mean for my application? If your application calls /dmpSegments/users or /dmpSegments/companies, you may get a HTTP 429 response if calling the endpoints too frequently, indicating that you\u0027re exceeding the rate limits.\nHow do I handle API calls that are throttled? Your application should be catching errors when making calls to /dmpSegment/users and /dmpSegment/companies and retry after a minimum of 1 second whenever you receive an HTTP 429 response.\nCan I get the limits increased for my application? No, the limits we intend to enforce won\u0027t be customizable at an application level. However the limits will be enforced such that there\u0027s minimal interruption to existing applications.\nMy application creates a significant amount of automated API calls (eg. one time full data dump or weekly data pushes with large volumes followed by smaller traffic that contains diffs throughout the week). Will this rate limit affect my throughput ? If the volume of your automated traffic exceeds tens of millions, then you can expect to see frequent throttling. While this might affect the throughput of your API calls, you won\u0027t see any differences in the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-10",
+      "SectionPath": [
+        "January 2021",
+        "Breaking Changes"
+      ],
+      "Text": "Shares and UGC Posts Validations.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: See Page Management section above.\nWhen: Starting March 31, 2021.\n[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here..\nWhen: Starting March 31, 2021, we\u0027ll reject calls that don\u0027t meet the new requirements.\n[reminder] New API rate limits for DMP streaming\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: See Audiences section above.\nWhen: Starting March 31, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

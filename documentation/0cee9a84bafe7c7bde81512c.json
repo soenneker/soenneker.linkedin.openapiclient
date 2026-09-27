@@ -1,0 +1,112 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester",
+  "Title": "Requester",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Requester Fields",
+      "Anchor": "requester-fields",
+      "SectionPath": [
+        "Requester Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the requester.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the requester.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id of the requester within LinkedIn system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN:LI:Person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

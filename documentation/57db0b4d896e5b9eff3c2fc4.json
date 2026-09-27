@@ -1,0 +1,204 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/appreciation",
+  "Title": "Appreciation",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/appreciation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Appreciation Schema",
+      "Anchor": "appreciation-schema",
+      "SectionPath": [
+        "Appreciation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this appreciation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The creator of the appreciation. e.g. urn:li:person:123ABC or urn:li:organization:1234.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An optional timestamp corresponding to the deletion of this appreciation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the appreciation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this appreciation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalmediaAssetUrn[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Defaults to empty array. The media urn(s) shared in this Kudo. This is always the Kudo award itself, but in the future, could also support additional media the member attached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The appreciation reason that the creator picked. Can currently be the following: THANK_YOU - Thank You GREAT_JOB -\u00A0Great Job GOING_ABOVE_AND_BEYOND -\u00A0Going Above and Beyond AMAZING_MENTOR -\u00A0Amazing Mentor MAKING_WORK_FUN - Making Work Fun TEAM_PLAYER -\u00A0Team Player OUTSIDE_THE_BOX_THINKER -\u00A0Outside the Box Thinker INSPIRATIONAL_LEADER -\u00A0Inspirational Leader GREAT_PRESENTATION -\u00A0Great Presentation MAKING_AN_IMPACT -\u00A0Making An Impact",
+            "Links": [],
+            "Values": [
+              "THANK_YOU - Thank You",
+              "GREAT_JOB -\u00A0Great Job",
+              "GOING_ABOVE_AND_BEYOND -\u00A0Going Above and Beyond",
+              "AMAZING_MENTOR -\u00A0Amazing Mentor",
+              "MAKING_WORK_FUN - Making Work Fun",
+              "TEAM_PLAYER -\u00A0Team Player",
+              "OUTSIDE_THE_BOX_THINKER -\u00A0Outside the Box Thinker",
+              "INSPIRATIONAL_LEADER -\u00A0Inspirational Leader",
+              "GREAT_PRESENTATION -\u00A0Great Presentation",
+              "MAKING_AN_IMPACT -\u00A0Making An Impact"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "recipients",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recipients listed in the appreciation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. Source the appreciation was published from.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

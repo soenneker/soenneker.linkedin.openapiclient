@@ -1,0 +1,115 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+  "Title": "Recruiter System Connect - Certification",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Upon completing development, to ensure official certification of LinkedIn Recruiter System Connect, please review each of the test cases mentioned for every Development Module.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Before scheduling your certification demo, ensure your integration meets the RSC data quality requirements. If any metric falls below the expected threshold, you must resolve it before proceeding.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Similar to development modules, we have defined 6 certification modules. These describe all the test cases that have to be demoed to LinkedIn for a partner or customer to get certified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Module 1 Certification - Configure Customer Applications and ATS Integrations\nModule 2 Certification - Sync Data from ATS to LinkedIn\nModule 3 Certification - Retrieve Data from LinkedIn\nModule 4 Certification - Sync ACLs\nModule 5 Certification - Data Deletion\nModule 6 Certification - Other",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Module 1 Certification demo is applicable for partners\u0027 ATS only. Certification demo for remaining modules is applicable for both partners and customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

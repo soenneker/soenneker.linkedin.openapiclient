@@ -1,0 +1,2213 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+  "Title": "Sync Applications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications",
+      "SectionPath": [],
+      "Text": "All job applications should be sent via the Middleware Platform whenever they are created or updated in your ATS. Use your job application identifier when syncing via the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v2/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "Use the following endpoint to create and update records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsApplications?ids[0].atsJobApplicationId={id1}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext={organization URN}\u0026ids[1].atsJobApplicationId={id2}\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId={id1}\u0026ids[0].integrationContext={organization URN}\u0026ids[1].atsJobApplicationId={id2}\u0026ids[1].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/applications?ids[0].atsJobApplicationId={id1}\u0026ids[0].integrationContext={organization URN}\u0026ids[1].atsJobApplicationId={id2}\u0026ids[1].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "For each id specified in the request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "Use your job application id as the value of id[i].atsJobApplicationId\nUse the customer\u0027s organization id as the value of id[i].integrationContext. The format should be urn:li:organization:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "When updating an existing record, you must specify all available fields. Omitting a field will set it to null.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications-1",
+      "SectionPath": [
+        "Sync Applications"
+      ],
+      "Text": "The combination of the above 3 mandatory query parameters will be used as a unique identifier for your synced job application within LinkedIn in later requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s unique identifier in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS. Must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was last updated in your ATS. Must be greater than 0. Must be greater than or equal to atsCreatedAt.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier in your ATS of the job being applied to. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsJobPostingName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name in your ATS of the job being applied to. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "candidateEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate email address as entered on the application. Email must follow X@X.X pattern. *Candidate email is required whenever available, to match ATS candidates with LinkedIn members. If candidate email is not available for an application, member matching will be attempted using the candidate\u2019s name, job title, and company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if available",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dispositionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the reason the candidate was not hired. Should otherwise be set to null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s first name as entered on the application. This field can not be null or empty. At least one of the fields \u2014 lastName or firstName \u2014 must be provided. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s last name as entered on the application. This field can not be null or empty. At least one of the fields \u2014 lastName or firstName \u2014 must be provided. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Where the application originated within your ATS. For example, \u0022Job Board\u0022 or \u0022Referral\u0022. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s unique identifier in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS. Must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was last updated in your ATS. Must be greater than 0. Must be greater than or equal to atsCreatedAt.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accessRestricted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag indicating whether the application is restricted by ACL. If true, the application is only accessible to a set of Recruiter users specified via ACLs. If false, the application is accessible to all Recruiter users. (Default value: false). NOTE: This field is not applicable from October 2025 version and above.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsJobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier in your ATS of the job requisition being applied to. Minimum length:1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier in your ATS of the job being applied to. Minimum length: 1. NOTE: This field is not applicable from October 2025 version and above.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsJobPostingName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name in your ATS of the job being applied to. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "candidateEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate email address as entered on the application. Email must follow X@X.X pattern. *Candidate email is required whenever available, to match ATS candidates with LinkedIn members. If candidate email is not available for an application, member matching will be attempted using the candidate\u2019s name, job title, and company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required if available",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dispositionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the reason the candidate was not hired. Should otherwise be set to null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s first name as entered on the application. This field can not be null or empty. At least one of the fields \u2014 lastName or firstName \u2014 must be provided. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s last name as entered on the application. This field can not be null or empty. At least one of the fields \u2014 lastName or firstName \u2014 must be provided. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Where the application originated within your ATS. For example, \u0022Job Board\u0022 or \u0022Referral\u0022. Minimum length: 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "In production, requests must use query tunneling to avoid reaching maximum URL length. You can use non-tunneled requests when request URLs are shorter than length limits, for testing purposes, and for troubleshooting. Please check details on Query Tunneling Migration Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202504\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n\nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202505\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneled)",
+      "Anchor": "sample-request-query-tunneled",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/applications\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n\nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/v2/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202504\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202505\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request(without query tunneling)",
+      "Anchor": "sample-requestwithout-query-tunneling",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Request(without query tunneling)"
+      ],
+      "Text": "curl -L -g -X PUT \u0027https://api.linkedin.com/rest/applications?ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND123\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Tester\u0022,\n      \u0022candidateEmail\u0022: \u0022bar@example.com\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022REFERRAL\u0022\n    },\n    \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022atsCandidateId\u0022: \u0022CAND456\u0022,\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022atsJobRequisitionId\u0022: \u0022JOBP123\u0022,\n      \u0022atsJobPostingId\u0022: \u0022JOBP456\u0022,\n      \u0022atsJobPostingName\u0022: \u0022Senior Manager\u0022,\n      \u0022candidateEmail\u0022: \u0022foo@example.com\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022source\u0022: \u0022Job Board\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022atsJobApplicationId=APPL123\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A2414183\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022atsJobApplicationId=APPL456\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%32414183\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn%3Ali%3Aorganization%3A2414183\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn%3Ali%3Aorganization%3A2414183\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Applications",
+        "API Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Applications",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications"
+      ],
+      "Text": "Perform HTTP DELETE on /atsApplications endpoint when a customer deletes records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "API Details"
+      ],
+      "Text": "More information is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "To upload a resume, you first need to get a signed URL from LinkedIn and then use it to upload the file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "When uploading resume, LinkedIn recommends to abide by the following considerations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "Supported media formats are: PDF, DOC, or TXT\nEnsure that the media file size does not exceed 10MB for all file types\nUpload only one resume object per API call\nEnsure that all calls to upload resume use OAuth 2.0 authentication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "A typical workflow to upload your resume consists of the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "Create URL\nUpload Resume File",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create URL",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Create URL"
+      ],
+      "Text": "Use the following endpoint to create URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create URL",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Create URL"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/hireMediaUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2.0 Authorization Framework and you must pass a bearer access token in your request as Authorization header. The access tokens are obtained via OAuth 2.0 Client Credentials flow. You must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "usageParameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Helps LinkedIn to uniquely identify the use case for which media upload is being done. For this use case, refer to the value as shown in the sample request below",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complex",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the resume file. Valid values are: \u0022text/plain\u0022 for TXT file \u0022application/pdf\u0022 for PDF file\u0022application/msword\u0022 for DOC file",
+            "Links": [],
+            "Values": [
+              "\u0022text/plain\u0022 for TXT file",
+              "\u0022application/pdf\u0022 for PDF file",
+              "\u0022application/msword\u0022 for DOC file"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of resume file",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiringContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract which is signed by the customer with LinkedIn to use LinkedIn Recruiter services. Must be in the format urn:li:contract:{Id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter contract URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Timespan",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Timespan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "DataType"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "unit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM values of the type: MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nAccept:application/json\nContent-Type:application/json\nX-RestLi-Protocol-Version:2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "Request Body (resume will be persisted in Linkedin forever ):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022usageParameters\u0022:     \n   {\n      \u0022recruiterSystemConnectResumeParameters\u0022 : {}\n   },\n   \u0022contentType\u0022: \u0022text/plain\u0022,\n   \u0022fileName\u0022: \u0022resume.txt\u0022,\n   \u0022hiringContext\u0022: \u0022urn:li:contract:123456\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains a signed URL in the x-linkedin-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "HTTP/2 201 \nx-li-responseorigin: RGW\nlocation: /hireMediaUrl/https%3A%2F%2Fwww.linkedin.com%2Fambry%2F%3Fx-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-linkedin-id: https://www.linkedin.com/ambry/?x-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-restli-protocol-version: 2.0.0\ncontent-length: 0\ndate: Thu, 17 Jun 2021 09:27:30 GMT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Resume File",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File"
+      ],
+      "Text": "After getting a signed URL, you can now upload the resume file by calling the below API. This API expects header \u0022Content-type\u0022 to be provided. Valid values are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Request"
+      ],
+      "Text": "curl -i -H \u0022Authorization: Bearer {token}\u0022 -H \u0027Content-Type: application/pdf\u0027 https://www.linkedin.com/ambry/?x-li-ambry-ep=AQEvzZSZZQH75QAAAXhws9LWCtrppkjlS2oJyQOrJA...1XFGyS1XfEvSo --data-binary @datafile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Request"
+      ],
+      "Text": "To upload a plain text file, use header \u0027Content-Type:text/plain\u0027 instead of \u0027Content-Type: application/pdf\u0027 in the above sample.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains file location in the location response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Response Body"
+      ],
+      "Text": "HTTP/2 201 \ncache-control: no-cache, no-store\npragma: no-cache\nexpires: Thu, 01 Jan 1970 00:00:00 GMT\nlocation: /AAYUAgCvAAkAAQAAAAJFyLgwRkz_TmebRMrAixANdQ.txt\nx-li-uuid: HP2pABxWiRI1FsAisAAA==\ndate: Thu, 17 Jun 2021 09:56:58 GMT\ncontent-length: 0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "resume-upload-1",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "To upload a resume, you first need to get a signed URL from LinkedIn and then use it to upload the file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "resume-upload-1",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "When uploading resume, LinkedIn recommends to abide by the following considerations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "resume-upload-1",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "Supported media formats are: PDF, DOC, or TXT\nEnsure that the media file size does not exceed 10MB for all file types\nUpload only one resume object per API call\nEnsure that all calls to upload resume use OAuth 2.0 authentication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "resume-upload-1",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "A typical workflow to upload your resume consists of the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume Upload",
+      "Anchor": "resume-upload-1",
+      "SectionPath": [
+        "Resume Upload"
+      ],
+      "Text": "Create URL\nUpload Resume File",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create URL",
+      "Anchor": "create-url-1",
+      "SectionPath": [
+        "Resume Upload",
+        "Create URL"
+      ],
+      "Text": "Use the following endpoint to create URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create URL",
+      "Anchor": "create-url-1",
+      "SectionPath": [
+        "Resume Upload",
+        "Create URL"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/hireMediaUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Resume Upload",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2.0 Authorization Framework and you must pass a bearer access token in your request as Authorization header. The access tokens are obtained via OAuth 2.0 Client Credentials flow. You must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "usageParameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Helps LinkedIn to uniquely identify the use case for which media upload is being done. For this use case, refer to the value as shown in the sample request below",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complex",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the resume file. Valid values are: \u0022text/plain\u0022 for TXT file \u0022application/pdf\u0022 for PDF file\u0022application/msword\u0022 for DOC file",
+            "Links": [],
+            "Values": [
+              "\u0022text/plain\u0022 for TXT file",
+              "\u0022application/pdf\u0022 for PDF file",
+              "\u0022application/msword\u0022 for DOC file"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of resume file",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiringContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract which is signed by the customer with LinkedIn to use LinkedIn Recruiter services. Must be in the format urn:li:contract:{Id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter contract URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Timespan",
+      "Anchor": "timespan-1",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Timespan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "DataType"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "unit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM values of the type: MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nAccept:application/json\nContent-Type:application/json\nX-RestLi-Protocol-Version:2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "Request Body (resume will be persisted in Linkedin forever ):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022usageParameters\u0022:     \n   {\n      \u0022recruiterSystemConnectResumeParameters\u0022 : {}\n   },\n   \u0022contentType\u0022: \u0022text/plain\u0022,\n   \u0022fileName\u0022: \u0022resume.txt\u0022,\n   \u0022hiringContext\u0022: \u0022urn:li:contract:123456\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains a signed URL in the x-linkedin-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Resume Upload",
+        "Request Body Fields",
+        "Sample Response Body"
+      ],
+      "Text": "HTTP/2 201 \nx-li-responseorigin: RGW\nlocation: /hireMediaUrl/https%3A%2F%2Fwww.linkedin.com%2Fambry%2F%3Fx-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-linkedin-id: https://www.linkedin.com/ambry/?x-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-restli-protocol-version: 2.0.0\ncontent-length: 0\ndate: Thu, 17 Jun 2021 09:27:30 GMT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Resume File",
+      "Anchor": "upload-resume-file-1",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File"
+      ],
+      "Text": "After getting a signed URL, you can now upload the resume file by calling the below API. This API expects header \u0022Content-type\u0022 to be provided. Valid values are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Request"
+      ],
+      "Text": "curl -i -H \u0022Authorization: Bearer {token}\u0022 -H \u0027Content-Type: application/pdf\u0027 https://www.linkedin.com/ambry/?x-li-ambry-ep=AQEvzZSZZQH75QAAAXhws9LWCtrppkjlS2oJyQOrJA...1XFGyS1XfEvSo --data-binary @datafile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Request"
+      ],
+      "Text": "To upload a plain text file, use header \u0027Content-Type:text/plain\u0027 instead of \u0027Content-Type: application/pdf\u0027 in the above sample.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains file location in the location response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-4",
+      "SectionPath": [
+        "Resume Upload",
+        "Upload Resume File",
+        "Sample Response Body"
+      ],
+      "Text": "HTTP/2 201 \ncache-control: no-cache, no-store\npragma: no-cache\nexpires: Thu, 01 Jan 1970 00:00:00 GMT\nlocation: /AAYUAgCvAAkAAQAAAAJFyLgwRkz_TmebRMrAixANdQ.txt\nx-li-uuid: HP2pABxWiRI1FsAisAAA==\ndate: Thu, 17 Jun 2021 09:56:58 GMT\ncontent-length: 0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Application Resumes",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes"
+      ],
+      "Text": "Use the following endpoint to create or update job application resume records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Resumes",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsApplications/atsJobApplicationId={id1}\u0026dataProvider=ATS\u0026integrationContext={organization URN}/resumes?ids={resume id 1}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resumeFile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN using format urn:li:ambryBlob:{location}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AmbryBlobUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022APPL_RESUME123\u0022: {\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022resumeFile\u0022: \u0022urn:li:ambryBlob:/AAYUAgCvAAkAAQAAAAJFyLgwRkz_TmebRMrAixANdQ.txt\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022APPL_RESUME123\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Resumes",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "If a job application has multiple resumes, only the newest copy will be used for candidate match. Resumes will be sorted based on \u0022atsCreatedAt\u0022 of the ATS application resume in descending order.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

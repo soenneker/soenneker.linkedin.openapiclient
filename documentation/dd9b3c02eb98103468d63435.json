@@ -1,0 +1,407 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/matched-audiences/workflows/streaming",
+  "Title": "DMP Segment Streaming API Workflow",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/matched-audiences/workflows/list-upload",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/matched-audiences/workflows/streaming",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Streaming API Workflow",
+      "Anchor": "dmp-segment-streaming-api-workflow",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Streaming API Workflow",
+      "Anchor": "dmp-segment-streaming-api-workflow",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Streaming API Workflow",
+      "Anchor": "dmp-segment-streaming-api-workflow",
+      "SectionPath": [],
+      "Text": "DMP Segment Audiences for Users and Companies can be added to LinkedIn audiences using the streaming APIs /dmpSegments/users and /dmpSegments/companies. In this guide, we\u0027ll provide sample requests to implement each step of this workflow for both user and company DMP Segments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Your application must have an access token with the following permissions to follow this guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "rw_dmp_segments\nrw_ads only if completing optional Step 6.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The rw_dmp_segments permission belongs to the Audiences program and is not granted automatically as part of the Marketing Developer Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Overview",
+      "Anchor": "workflow-overview",
+      "SectionPath": [
+        "Workflow Overview"
+      ],
+      "Text": "A typical streaming workflow consists of the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Overview",
+      "Anchor": "workflow-overview",
+      "SectionPath": [
+        "Workflow Overview"
+      ],
+      "Text": "Pick the sourcePlatform ENUM that fits your organization\u0027s use case.\nCreate DMP Segment and Destination.\nStart adding email addresses or company data to the segment using the streaming APIs.\nMonitor for READY status.\nOptional: Schedule periodic updates to add or remove data from the segment.\nOptional: Add to Campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Pick a sourcePlatform ENUM",
+      "Anchor": "step-1-pick-a-sourceplatform-enum",
+      "SectionPath": [
+        "Step 1: Pick a sourcePlatform ENUM"
+      ],
+      "Text": "Before creating DMP Segments, your integration must pass a sourcePlatform ENUM value. This value is passed every time your integration creates a DMP Segment to identify the source platform (your integration) the data came from.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Pick a sourcePlatform ENUM",
+      "Anchor": "step-1-pick-a-sourceplatform-enum",
+      "SectionPath": [
+        "Step 1: Pick a sourcePlatform ENUM"
+      ],
+      "Text": "Pick one of the following sourcePlatform ENUMs that fit your organization\u0027s use case:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Pick a sourcePlatform ENUM",
+      "Anchor": "step-1-pick-a-sourceplatform-enum",
+      "SectionPath": [
+        "Step 1: Pick a sourcePlatform ENUM"
+      ],
+      "Text": "DIRECT_API - A LinkedIn advertiser that wants to use matched audiences for its own ad account(s).\nAGENCY_API - An agency managing audiences on behalf of multiple clients.\nPARTNER_API - A platform enabling many LinkedIn advertisers to sync audiences at scale (not an agency).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Pick a sourcePlatform ENUM",
+      "Anchor": "step-1-pick-a-sourceplatform-enum",
+      "SectionPath": [
+        "Step 1: Pick a sourcePlatform ENUM"
+      ],
+      "Text": "We use PARTNER_API as the sourcePlatform value for this guide. Replace this with the value that fits your use case in order to follow this guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create DMP Segment and Destination",
+      "Anchor": "step-2-create-dmp-segment-and-destination",
+      "SectionPath": [
+        "Step 2: Create DMP Segment and Destination"
+      ],
+      "Text": "DMP Segments can be created to accept either user or company data depending on whether the type field is set as USER or COMPANY. A single DMP Segment can\u0027t accept both user and company data. Once created, DMP Segments can\u0027t change type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create DMP Segment and Destination",
+      "Anchor": "step-2-create-dmp-segment-and-destination",
+      "SectionPath": [
+        "Step 2: Create DMP Segment and Destination"
+      ],
+      "Text": "The sample below also creates a DMP Segment Destination that represents the ad exchange where the audience will be built. The only valid value currently is LINKEDIN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create DMP Segment and Destination",
+      "Anchor": "step-2-create-dmp-segment-and-destination",
+      "SectionPath": [
+        "Step 2: Create DMP Segment and Destination"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the DMP Segment\u0027s ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create DMP Segment and Destination",
+      "Anchor": "step-2-create-dmp-segment-and-destination",
+      "SectionPath": [
+        "Step 2: Create DMP Segment and Destination"
+      ],
+      "Text": "After successful creation, your integration must wait at least 5 seconds before proceeding to the next step and streaming data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "User DMP Segment",
+      "Anchor": "user-dmp-segment",
+      "SectionPath": [
+        "Step 2: Create DMP Segment and Destination",
+        "User DMP Segment"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/dmpSegments\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n   \u0022name\u0022:\u0022User DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022PARTNER_API\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:516413367\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Company DMP Segment",
+      "Anchor": "company-dmp-segment",
+      "SectionPath": [
+        "Step 2: Create DMP Segment and Destination",
+        "Company DMP Segment"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/dmpSegments\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n   \u0022name\u0022:\u0022Company DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022PARTNER_API\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:516413367\u0022,\n   \u0022type\u0022:\u0022COMPANY\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Add data via streaming APIs",
+      "Anchor": "step-3-add-data-via-streaming-apis",
+      "SectionPath": [
+        "Step 3: Add data via streaming APIs"
+      ],
+      "Text": "Once you\u0027ve waited 5 seconds after creating a DMP Segment, you can begin streaming data. The following samples use the BATCH CREATE endpoints to add multiple entities. Data can also be added individually. See the full documentation for DMP Segment Users and DMP Segment Companies for those samples.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Adding Users",
+      "Anchor": "adding-users",
+      "SectionPath": [
+        "Step 3: Add data via streaming APIs",
+        "Adding Users"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/dmpSegments/10804/users\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userId\u0022: {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u0022692682111bc191d915ac7009d118a78bc496cf7a2ba8c2d0134ade012ac1234\u0022\n            }\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userId\u0022: {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u002209d118a78b692682111bc15ac70c496cf7a9e0502ba8c2d016f2f1f7a2ba8c2\u0022\n            }\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Adding Companies",
+      "Anchor": "adding-companies",
+      "SectionPath": [
+        "Step 3: Add data via streaming APIs",
+        "Adding Companies"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/dmpSegments/10804/companies\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n   \u0022elements\u0022: [\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022LinkedIn\u0022\n       },\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022Microsoft\u0022\n       }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Monitor status",
+      "Anchor": "step-4-monitor-status",
+      "SectionPath": [
+        "Step 4: Monitor status"
+      ],
+      "Text": "Now you\u0027ll need to monitor the status of the DMP Segment Destination to track when it becomes ready to be used in a campaign. At first, the status will be BUILDING and will move to READY when it can be added to a campaign. There are several other statuses that can be returned. Refer to the DMP Segment Destination page for that information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Monitor status",
+      "Anchor": "step-4-monitor-status",
+      "SectionPath": [
+        "Step 4: Monitor status"
+      ],
+      "Text": "If your integration supports Campaign Management, you should note the adSegment URN returned in the destinationSegmentId field which will be used in optional Step 6. Otherwise, you can simply notify the user the segment is ready for them to use in targeting through LinkedIn Campaign Manager or any other partner campaign management tool.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Monitor status",
+      "Anchor": "step-4-monitor-status",
+      "SectionPath": [
+        "Step 4: Monitor status"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/dmpSegments/10804/destinations/LINKEDIN\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Step 4: Monitor status",
+        "Response"
+      ],
+      "Text": "{\n    \u0022audienceSize\u0022: 1500,\n    \u0022created\u0022: 1505349172000,\n    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:10001\u0022,\n    \u0022dmpSegmentId\u0022: 10804,\n    \u0022lastModified\u0022: 1506349172000,\n    \u0022matchedCount\u0022: 1400,\n    \u0022status\u0022: \u0022READY\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optional Step 5: Schedule updates",
+      "Anchor": "optional-step-5-schedule-updates",
+      "SectionPath": [
+        "Optional Step 5: Schedule updates"
+      ],
+      "Text": "DMP Segments can be updated to add or remove data periodically using the same BATCH CREATE endpoint used in Step 3. This same endpoint is used for removal. A single call can include both additions and removals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Removing Users",
+      "Anchor": "removing-users",
+      "SectionPath": [
+        "Optional Step 5: Schedule updates",
+        "Removing Users"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/dmpSegments/10804/users\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022action\u0022: \u0022REMOVE\u0022,\n            \u0022userId\u0022: {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u0022692682111bc191d915ac7009d118a78bc496cf7a2ba8c2d0134ade012ac1234\u0022\n            }\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userId\u0022: {\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u0022342700111bk594d915ac7009d118a22bc496cf7a2ba4j2o0027ade012tc5143\u0022\n            }\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Removing Companies",
+      "Anchor": "removing-companies",
+      "SectionPath": [
+        "Optional Step 5: Schedule updates",
+        "Removing Companies"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/dmpSegments/10804/companies\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n   \u0022elements\u0022: [\n       {\n            \u0022action\u0022: \u0022REMOVE\u0022,\n            \u0022companyName\u0022: \u0022LinkedIn\u0022\n       },\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022GitHub\u0022\n       }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optional Step 6: Add to Campaign",
+      "Anchor": "optional-step-6-add-to-campaign",
+      "SectionPath": [
+        "Optional Step 6: Add to Campaign"
+      ],
+      "Text": "The goal of any DMP Segment is to be used in a Campaign, but your integration is not required to manage this step if your user uses LinkedIn\u0027s Campaign Manager or another partner\u0027s platform. If your integration offers both Audience creation and Campaign Management, you should implement this step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optional Step 6: Add to Campaign",
+      "Anchor": "optional-step-6-add-to-campaign",
+      "SectionPath": [
+        "Optional Step 6: Add to Campaign"
+      ],
+      "Text": "Using the adSegment URN returned in Step 4, you can create a new Campaign or update an existing one including the adSegment in the targetingCriteria object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Creating New Campaign",
+      "Anchor": "creating-new-campaign",
+      "SectionPath": [
+        "Optional Step 6: Add to Campaign",
+        "Creating New Campaign"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/adCampaignsV2\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022targetingCriteria\u0022: {\n        \u0022exclude\u0022: {\n            \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:locations\u0022: [\n                    \u0022urn:li:geo:102095887\u0022\n                ]\n            }\n        },\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:geo:103644278\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                            \u0022urn:li:locale:en_US\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:segments\u0022: [\n                            \u0022urn:li:adSegment:10001\u0022\n                        ]\n                    }\n                }\n            ]\n        }\n    },\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:516413367\u0022,\n    \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:635137195\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u002218\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022Campaign with Ad Segment\u0022,\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n    \u0022unitCost\u0022: {\n        \u0022amount\u0022: \u002215\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Campaign",
+      "Anchor": "updating-campaign",
+      "SectionPath": [
+        "Optional Step 6: Add to Campaign",
+        "Updating Campaign"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/adCampaignsV2/{campaign ID}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n\t\u0022patch\u0022:{\n\t\t\u0022$set\u0022:{\n\t\t\t\u0022targetingCriteria\u0022:{\n\t\t\t\t\u0022include\u0022:{\n\t\t\t\t\t\u0022and\u0022:[\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\u0022or\u0022:{\n\t\t\t\t\t\t\t\t\u0022audienceMatchingSegments\u0022:[\n\t\t\t\t\t\t\t\t\t\u0022urn:li:adSegment:10001\u0022\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\u0022or\u0022:{\n\t\t\t\t\t\t\t\t\u0022urn:li:adTargetingFacet:locations\u0022:[\n\t\t\t\t\t\t\t\t\t\u0022urn:li:geo:103644278\u0022\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "References"
+      ],
+      "Text": "See the following links for additional information on building a Streaming DMP Segment integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "References"
+      ],
+      "Text": "DMP Segments\nDMP Segment Destinations\nDMP Segment Users\nDMP Segment Companies\nIntegration Requirements",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

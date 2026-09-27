@@ -1,0 +1,622 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+  "Title": "Account Access Controls",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Account Access Controls",
+      "Anchor": "account-access-controls",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Access Controls",
+      "Anchor": "account-access-controls",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Access Controls",
+      "Anchor": "account-access-controls",
+      "SectionPath": [],
+      "Text": "The LinkedIn Campaign Management APIs enable business account administrators to assign roles and functions to specific users. This gives admins the flexibility to grant access to campaign and creative data, as well as other associated campaign collateral.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "You need the following scope permissions along with one of the listed Ad Account roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "rw_ads (Read/Write).\nr_ads (Read-Only).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account Roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (Read-Only, even with rw_ads scope).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on the Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Refer to the Ad Account User Role Definitions.\nSee also: Create and Manage Ad Account Users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Account User Role Definitions",
+      "Anchor": "ad-account-user-role-definitions",
+      "SectionPath": [
+        "Ad Account User Role Definitions"
+      ],
+      "Text": "The following table describes in detail what each role provides:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Ad Account User Role Definitions",
+      "Anchor": "ad-account-user-role-definitions",
+      "SectionPath": [
+        "Ad Account User Role Definitions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Control Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VIEWER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports for the account. No ability to create or edit campaigns or ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATIVE_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports for the account. Ability to create and edit ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports for the account. Ability to create and edit campaigns and ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports for the account. Ability to create and edit campaigns and ads. Edit account data and manage user access for the account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_BILLING_ADMIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports for the account. Ability to create and edit campaigns and ads. Edit account data and manage user access for the account. Can also access billing data and is billed for this account. Note: There should be exactly one user with this role in an account.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant User Access",
+      "Anchor": "grant-user-access",
+      "SectionPath": [
+        "Grant User Access"
+      ],
+      "Text": "Each user account can be described by the AccountUser object. For more details please refer to Create and Manage Account Users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant User Access",
+      "Anchor": "grant-user-access",
+      "SectionPath": [
+        "Grant User Access"
+      ],
+      "Text": "This object consists of the following field types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Grant User Access",
+      "Anchor": "grant-user-access",
+      "SectionPath": [
+        "Grant User Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Ad Account URN to which access is being granted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "user",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user URN that you intend to grant access to.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AccountUserRole",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access type that\u0027s granted to the user. Valid values include: VIEWERCREATIVE_MANAGERCAMPAIGN_MANAGERACCOUNT_MANAGERACCOUNT_BILLING_ADMIN",
+            "Links": [],
+            "Values": [
+              "VIEWER",
+              "CREATIVE_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "ACCOUNT_MANAGER",
+              "ACCOUNT_BILLING_ADMIN"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant User Access",
+      "Anchor": "grant-user-access",
+      "SectionPath": [
+        "Grant User Access"
+      ],
+      "Text": "Note that a URN type is expected for both user and account. These URNs map to the person IDs and account IDs returned by other APIs. However, when managing users for an Ad account, you must format the subject and object as URNs using the IDs of persons and/or Ad accounts. For example, the account ID 777999 would be formatted as urn:li:sponsoredAccount:777999. Similarly, the person ID 12345 is formatted as urn:li:person:12345. Person ID can be retrieved by sending a GET /me request for the authenticated member from your developer application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant User Access",
+      "Anchor": "grant-user-access",
+      "SectionPath": [
+        "Grant User Access"
+      ],
+      "Text": "Setting up new account users, as well as editing existing account users, can be accomplished via a PUT call to the Ad Account Users API. In either case, the account user resource to be created/edited can be identified by a key composed of a combination of both the user and account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Grant User Access",
+        "Sample Request"
+      ],
+      "Text": "In the example below, a member is granted read-only access to the Ad account. The body of the PUT request is an adAccountUser object with VIEWER for the role field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Grant User Access",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Grant User Access",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adAccountUsers/(account=urn:li:sponsoredAccount:123456789,user=urn:li:person:qZXYVUTSR)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Grant User Access",
+        "Sample Request"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adAccountUsers/(account=urn:li:sponsoredAccount:123456789,user=urn:li:person:qZXYVUTSR)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:12345\u0022,\n    \u0022role\u0022: \u0022VIEWER\u0022,\n    \u0022user\u0022: \u0022urn:li:person:56789\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Grant User Access",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:12345...\u0022,\n    \u0022role\u0022: \u0022VIEWER\u0022,\n    \u0022user\u0022: \u0022urn:li:person:56789...\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Remove User Access",
+      "Anchor": "remove-user-access",
+      "SectionPath": [
+        "Remove User Access"
+      ],
+      "Text": "Use the DELETE method to remove an AdAccountUser resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Remove User Access",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Remove User Access",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adAccountUsers/(account=urn:li:sponsoredAccount:12345,user=urn:li:person:56789)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Remove User Access",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adAccountUsers/(account=urn:li:sponsoredAccount:12345,user=urn:li:person:56789)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Existing Ad Account Users",
+      "Anchor": "fetch-existing-ad-account-users",
+      "SectionPath": [
+        "Fetch Existing Ad Account Users"
+      ],
+      "Text": "When making a GET call to fetch existing users on an account, the authenticated user can only view themselves unless they\u0027re an account manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Existing Ad Account Users",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Existing Ad Account Users",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccountUsers?accounts=urn:li:sponsoredAccount:123456789\u0026q=accounts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Existing Ad Account Users",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccountUsers?accounts=urn:li:sponsoredAccount:123456789\u0026q=accounts\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Fetch Existing Ad Account Users",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 2147483647,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022role\u0022: \u0022ACCOUNT_BILLING_ADMIN\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022time\u0022: 1619111821000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022time\u0022: 1619111821000\n                }\n            },\n            \u0022user\u0022: \u0022urn:li:person:userId\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Fetch a Specific User",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Fetch a Specific User",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccountUsers/(account=urn:li:sponsoredAccount:123456789,user=urn:li:person:eEM1Em1em)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Fetch a Specific User",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccountUsers/(account=urn:li:sponsoredAccount:123456789,user=urn:li:person:eEM1Em1em)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Fetch a Specific User",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022role\u0022: \u0022CAMPAIGN_MANAGER\u0022,\n    \u0022changeAuditStamps\u0022: {\n    ...\n    \u0022user\u0022: \u0022urn:li:person:eEM1Em1em\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Access to Create a Video Ad",
+      "Anchor": "verify-access-to-create-a-video-ad",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad"
+      ],
+      "Text": "Use this endpoint to verify if the user has permission to create a Video Ad Dark post. You need rw_ads permission to use this resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Access to Create a Video Ad",
+      "Anchor": "verify-access-to-create-a-video-ad",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Verify Access to Create a Video Ad",
+      "Anchor": "verify-access-to-create-a-video-ad",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityCreateShareAuthorizations/owner=urn:li:company:5590506\u0026loggedInMember=urn:li:person:LBSWch4wcA\u0026agent=urn:li:sponsoredAccount:517753843",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Verify Access to Create a Video Ad",
+      "Anchor": "verify-access-to-create-a-video-ad",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityCreateShareAuthorizations/owner=urn:li:company:5590506\u0026loggedInMember=urn:li:person:LBSWch4wcA\u0026agent=urn:li:sponsoredAccount:517753843\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Access to Create a Video Ad",
+      "Anchor": "verify-access-to-create-a-video-ad",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad"
+      ],
+      "Text": "Get a response similar to one of the following with status code of 200.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Denied Response Sample",
+      "Anchor": "denied-response-sample",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad",
+        "Denied Response Sample"
+      ],
+      "Text": "{\n    \u0022status\u0022: {\n        \u0022com.linkedin.sharingauth.Denied\u0022: {}\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Approved Response Sample",
+      "Anchor": "approved-response-sample",
+      "SectionPath": [
+        "Verify Access to Create a Video Ad",
+        "Approved Response Sample"
+      ],
+      "Text": "{\n    \u0022status\u0022: {\n        \u0022com.linkedin.sharingauth.Approved\u0022: {}\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

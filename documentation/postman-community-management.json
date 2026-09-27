@@ -1,0 +1,2897 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "body",
+      "scope": "rw_organization_admin,w_organization_social,r_basicprofile,r_organization_social,r_organization_social_feed,r_organization_followers",
+      "tokenName": "community-management-token"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027communitymgmt-linkedin-postman-versioning\u0027",
+          "});"
+        ],
+        "id": "bf8cecfe-9134-4103-a4ff-3a1d32cc7ad0",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "1cbfde38-20ce-49d9-9c19-ac79c514b18f",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "ac814861-61ba-4313-9bb4-1c298b12e4ad",
+    "description": "**You must apply for access to the Marketing Developer Platform in order to use these APIs. See the** [**Developer Portal**](https://developer.linkedin.com/product-catalog/marketing/page-management) **on how to apply.**\n\nThis collection aims to focus on different Community Management use cases, for example, social action notifications, and should be used with the **community-management-env-versioning** environment.\n\n\\--All requests for the Community Management API collection are in the Restli 2.0 format--\n\nAuthorizationOAuth 2.0",
+    "name": "Community Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "e5ae145c-d7da-467b-b2e9-c42eacbb2038",
+      "item": [
+        {
+          "description": "The Organization Social Actions Notifications API enables your app to notify members about activity on their LinkedIn Company Pages. Use this API to build real-time streams for activity on LinkedIn Company Pages.",
+          "id": "18255056-eef2-4f47-b933-7a65d9377b47",
+          "item": [
+            {
+              "description": "Registered webhook URLs will receive notifications from LinkedIn for subscribed events.",
+              "id": "a28cecd8-d575-4aa7-a091-b4fa5750887a",
+              "item": [
+                {
+                  "id": "2e9a9795-97cc-4649-b521-f5c79ec6e595",
+                  "name": "2. Create a share with Company Mention",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n  \u0022owner\u0022: \u0022urn:li:organization:{{organization_id}}\u0022,\n  \u0022text\u0022: {\n    \u0022annotations\u0022: [{\n        \u0022entity\u0022: \u0022urn:li:organization:1337\u0022,\n        \u0022length\u0022: 8,\n        \u0022start\u0022: 6\n    }],\n    \u0022text\u0022: \u0022Hello LinkedIn world!\u0022\n  },\n  \u0022subject\u0022: \u0022Test Share Subject\u0022,\n  \u0022distribution\u0022: {\n    \u0022linkedInDistributionTarget\u0022: {}\n  },\n  \u0022content\u0022: {\n    \u0022contentEntities\u0022: [\n        {\n            \u0022entityLocation\u0022: \u0022https://www.example.com\u0022,\n            \u0022thumbnails\u0022: [\n                {\n                    \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                }\n            ]\n        }\n    ],\n    \u0022title\u0022: \u0022Test Share with Content title\u0022\n  }\n}"
+                    },
+                    "description": "Mention a company name by using the annotations. [Learn more](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http#share-text-and-mentions) by viewing our public documentation.\n\nThis example uses the LinkedIn organization.",
+                    "header": [
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/shares"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "cbfd4c86-2a48-4bf0-b565-f176a2f1c34a",
+                  "name": "3. Create a subscription request",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022 \n}"
+                    },
+                    "description": "[Create a subscription](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#creating-and-updating-subscriptions)\u00A0record to include the webhook URL where your app will receive notifications. The subscription request will only succeed if the subscribing member is an administrator of the organization being subscribed to.",
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "Linkedin-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "PUT",
+                    "url": "{{baseUrl}}/eventSubscriptions/(developerApplication:urn%3Ali%3AdeveloperApplication%3A{{application_id}},user:urn%3Ali%3Aperson%3A{{person_id}},entity:urn%3Ali%3Aorganization%3A{{organization_id}},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "8acb7aa5-5a44-42d9-a58d-abc71642780a",
+                  "name": "4. Retrieve subscription for authenticated members",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "Retrieve Subscriptions details such as webhook url and expiration for your application and registered user.\u00A0[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-by-key)\u00A0by viewing our public documentation.",
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "Linkedin-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "eventSubscriptions"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "subscriberAndEventType"
+                        },
+                        {
+                          "key": "eventType",
+                          "value": "ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/eventSubscriptions?q=subscriberAndEventType\u0026eventType=ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "00de711f-da88-413e-b049-7bfb67e1af0a",
+                  "name": "5. Retrieve Subscription by Key",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "Retrieve all the subscriptions details such as webhook url and expiration for the logged in user.\u00A0[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-for-an-authenticated-member)\u00A0by viewing our online documentation.",
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/eventSubscriptions/(developerApplication:urn%3Ali%3AdeveloperApplication%3A{{application_id}},user:urn%3Ali%3Aperson%3A{{person_id}},entity:urn%3Ali%3Aorganization%3A{{organization_id}},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "6319a393-f2aa-4b90-b09c-3c55b9cde443",
+                  "name": "6. Remove a Subscription",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "[Remove a subscription](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#remove-a-subscription)\u00A0for a your developer application and Organization.",
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "DELETE",
+                    "url": "{{baseUrl}}/eventSubscriptions/(developerApplication:{{application_id}},user:{{person_id}},entity:{{organization_id}},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)"
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Organization Social Actions Notifications - Push Workflow"
+            },
+            {
+              "description": "Notifications for the authenticated member\u2019s organizations can be queried using a criteria finder. Notifications are retained and available to pull for 60 days.",
+              "id": "3623dbee-928c-4bff-900f-1101ab7ff8a2",
+              "item": [
+                {
+                  "id": "3e9cb8e8-9c72-4c84-8f0f-01c5fb450ce7",
+                  "name": "2. Create a share with a Company Mention",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n  \u0022owner\u0022: \u0022urn:li:organization:{{organization_id}}\u0022,\n  \u0022text\u0022: {\n    \u0022annotations\u0022: [{\n        \u0022entity\u0022: \u0022urn:li:organization:1337\u0022,\n        \u0022length\u0022: 8,\n        \u0022start\u0022: 6\n    }],\n    \u0022text\u0022: \u0022Hello LinkedIn world!\u0022\n  },\n  \u0022subject\u0022: \u0022Test Share Subject\u0022,\n  \u0022distribution\u0022: {\n    \u0022linkedInDistributionTarget\u0022: {}\n  },\n  \u0022content\u0022: {\n    \u0022contentEntities\u0022: [\n        {\n            \u0022entityLocation\u0022: \u0022https://www.example.com\u0022,\n            \u0022thumbnails\u0022: [\n                {\n                    \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                }\n            ]\n        }\n    ],\n    \u0022title\u0022: \u0022Test Share with Content title\u0022\n  }\n}"
+                    },
+                    "description": "Mention a company name by using the annotations.\u00A0[Learn more](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/share-api?tabs=http#share-text-and-mentions)\u00A0by viewing our public documentation.\n\nThis example uses the LinkedIn organization.",
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/shares"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "f081ceaf-fc7b-40b2-9345-b4c0755153f5",
+                  "name": "3. Retrieve Notifications for the authenticated member\u0027s organization",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications)\u00A0by viewing our public documentation.",
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "Linkedin-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "eventSubscriptions"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "subscriberAndEventType"
+                        },
+                        {
+                          "key": "eventType",
+                          "value": "ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/eventSubscriptions?q=subscriberAndEventType\u0026eventType=ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Organization Social Actions Notifications - Pull Workflow"
+            }
+          ],
+          "name": "Social Actions Notifications"
+        },
+        {
+          "description": "This API gets the statistics for Organization, Page and for Share.",
+          "id": "e3f8de86-4abc-43b2-b2bd-91fa00113374",
+          "item": [
+            {
+              "description": "This API describes usage of Organization Follower Statistics. Fore more details, check\u00A0[here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/follower-statistics?tabs=http\u0026view=li-lms-unversioned).",
+              "id": "26892dcc-da07-44b2-bb80-180265448921",
+              "item": [
+                {
+                  "id": "42b7cfa5-1c09-4358-b86f-06df54b2f8b5",
+                  "name": "Lifetime follower statistics",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "Linkedin-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationalEntityFollowerStatistics"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "organizationalEntity"
+                        },
+                        {
+                          "key": "organizationalEntity",
+                          "value": "urn%3Ali%3Aorganization%3A77710671"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A77710671"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "219e7c6b-bc94-462b-9935-aa500761472a",
+                  "name": "Time-Bound follower statistics",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationalEntityFollowerStatistics"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "organizationalEntity"
+                        },
+                        {
+                          "key": "organizationalEntity",
+                          "value": "urn%3Ali%3Aorganization%3A2414183"
+                        },
+                        {
+                          "key": "timeIntervals.timeGranularityType",
+                          "value": "DAY"
+                        },
+                        {
+                          "key": "timeIntervals.timeRange.start",
+                          "value": "1634018799000"
+                        },
+                        {
+                          "key": "timeIntervals.timeRange.end",
+                          "value": "1634623599000"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1634018799000\u0026timeIntervals.timeRange.end=1634623599000"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Organization Follower Statistics"
+            },
+            {
+              "description": "This API describes usage of Organization Page Statistics. Fore more details, check\u00A0[here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/page-statistics?tabs=http\u0026view=li-lms-unversioned).",
+              "id": "f86d79f3-1a08-49ae-8e1b-8102382bcef1",
+              "item": [
+                {
+                  "id": "4d5a5a19-7dd0-4e9b-9a23-ad55fca02ec0",
+                  "name": "Time-Bound organization page statistics",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version\u0060",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationPageStatistics"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "organization"
+                        },
+                        {
+                          "key": "organization",
+                          "value": "urn%3Ali%3Aorganization%3A2414183"
+                        },
+                        {
+                          "key": "timeIntervals.timeGranularityType",
+                          "value": "DAY"
+                        },
+                        {
+                          "key": "timeIntervals.timeRange.start",
+                          "value": "1634018799000"
+                        },
+                        {
+                          "key": "timeIntervals.timeRange.end",
+                          "value": "1634623599000"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationPageStatistics?q=organization\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1634018799000\u0026timeIntervals.timeRange.end=1634623599000"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "c00670db-476b-421d-88d7-db1d8457460e",
+                  "name": "Lifetime Page Statistics",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationPageStatistics"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "organization"
+                        },
+                        {
+                          "key": "organization",
+                          "value": "urn%3Ali%3Aorganization%3A2414183"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationPageStatistics?q=organization\u0026organization=urn%3Ali%3Aorganization%3A2414183"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Organization Page Statistics"
+            },
+            {
+              "description": "This API describes usage of Organization Share Statistics. Fore more details, check\u00A0[here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/share-statistics?tabs=http).",
+              "id": "43f2f210-819e-4da8-8885-6f139d0d18c0",
+              "item": [
+                {
+                  "id": "17f1622f-331b-410f-a879-b4f91c46f3a9",
+                  "name": "Lifetime Share Statistics",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationalEntityShareStatistics"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "organizationalEntity"
+                        },
+                        {
+                          "key": "organizationalEntity",
+                          "value": "urn%3Ali%3Aorganization%3A2414183"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "1ff41b94-6bc1-4b39-83e3-327f25603237",
+                  "name": "Time Bound Share Statistics",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "Authorization",
+                        "type": "text",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationalEntityShareStatistics"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "organizationalEntity"
+                        },
+                        {
+                          "key": "organizationalEntity",
+                          "value": "urn%3Ali%3Aorganization%3A2414183"
+                        },
+                        {
+                          "key": "timeIntervals.timeGranularityType",
+                          "value": "DAY"
+                        },
+                        {
+                          "key": "timeIntervals.timeRange.start",
+                          "value": "1634018799000"
+                        },
+                        {
+                          "key": "timeIntervals.timeRange.end",
+                          "value": "1634623599000"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1634018799000\u0026timeIntervals.timeRange.end=1634623599000"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Organization Share Statistics"
+            }
+          ],
+          "name": "Statistics APIs"
+        },
+        {
+          "id": "acf747df-66d1-41c2-b934-1f4d03c298b6",
+          "item": [
+            {
+              "id": "f7f8dc93-ed64-403e-8d9b-0bc4b373f670",
+              "name": "Search By Keyword",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "peopleTypeahead"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "organizationFollowers"
+                    },
+                    {
+                      "key": "keywords",
+                      "value": "chris"
+                    },
+                    {
+                      "key": "organization",
+                      "value": "urn%3Ali%3Aorganization%3A{{organization_id}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/peopleTypeahead?q=organizationFollowers\u0026keywords=chris\u0026organization=urn%3Ali%3Aorganization%3A{{organization_id}}"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "447fa6b9-91a5-43e8-867a-c04f5fdee20a",
+              "name": "Search By Vanity URL",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "vanityUrl"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "vanityUrlAsOrganization"
+                    },
+                    {
+                      "key": "vanityUrl",
+                      "value": "https%3A//www.linkedin.com/in/vanityName/"
+                    },
+                    {
+                      "key": "organization",
+                      "value": "urn%3Ali%3Aorganization%3A{{organization_id}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/vanityUrl?q=vanityUrlAsOrganization\u0026vanityUrl=https%3A//www.linkedin.com/in/vanityName/\u0026organization=urn%3Ali%3Aorganization%3A{{organization_id}}"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Organization Followers"
+        },
+        {
+          "description": "This API\u0027s helps to get and lookup the Organization, Organization\u0027s brand details.\n\nFor more details, please visit the documentation [here](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/community-management/organizations/organization-lookup-api?view=li-lms-2022-11\u0026tabs=http).",
+          "id": "dd5c6f43-2c8f-464e-88a7-be2d656cf142",
+          "item": [
+            {
+              "id": "177739c7-af93-4bbe-9c0e-41e42733a9cb",
+              "item": [
+                {
+                  "id": "f0c2dbc4-65e9-4a12-a189-68236b273710",
+                  "name": "Batch GET by Administered Org Ids",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations"
+                      ],
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "List({{organization_id}},{{organization_id1}})"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizations?ids=List({{organization_id}},{{organization_id1}})"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022results\u0022: {\n        \u002279988552\u0022: {\n            \u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n            \u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n            \u0022groups\u0022: [],\n            \u0022versionTag\u0022: \u0022111146657\u0022,\n            \u0022coverPhotoV2\u0022: {\n                \u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n                \u0022original\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n                \u0022cropInfo\u0022: {\n                    \u0022x\u0022: 0,\n                    \u0022width\u0022: 800,\n                    \u0022y\u0022: 108,\n                    \u0022height\u0022: 135\n                }\n            },\n            \u0022organizationType\u0022: \u0022SELF_EMPLOYED\u0022,\n            \u0022defaultLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022alternativeNames\u0022: [],\n            \u0022specialties\u0022: [],\n            \u0022localizedSpecialties\u0022: [],\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:4\u0022\n            ],\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022locations\u0022: [],\n            \u0022id\u0022: 79988552\n        }\n    },\n    \u0022statuses\u0022: {\n        \u00223803\u0022: 403,\n        \u002279988552\u0022: 200\n    },\n    \u0022errors\u0022: {\n        \u00223803\u0022: {\n            \u0022message\u0022: \u0022Viewer don\u0027t have permission to the ADMIN_ONLY VisibilityReduction for urn:li:organization:3803\u0022,\n            \u0022status\u0022: 403\n        }\n    }\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:20:02 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "841"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZX9YJecn7hSvSufeow=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693602:t=1671775286:v=2:sig=AQHKEKl9ii_dByHRZ6Jyon6-VJLGx1n8\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693602:t=1671775286:v=2:sig=AQHKEKl9ii_dByHRZ6Jyon6-VJLGx1n8\u0022"
+                        }
+                      ],
+                      "id": "cd24bea4-2442-4408-ab8f-3d67ea9b7232",
+                      "name": "Batch GET by Administered Org Ids",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations"
+                          ],
+                          "query": [
+                            {
+                              "key": "ids",
+                              "value": "List({{organization_id}},{{organization_id1}})"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizations?ids=List({{organization_id}},{{organization_id1}})"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "5304a2eb-a0b0-4576-a1e4-0d626af66832",
+                  "name": "Retrieve Organization by ID",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/organizations/{{organization_id}}"
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n    \u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n    \u0022groups\u0022: [],\n    \u0022versionTag\u0022: \u0022111146657\u0022,\n    \u0022coverPhotoV2\u0022: {\n        \u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n        \u0022original\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n        \u0022cropInfo\u0022: {\n            \u0022x\u0022: 0,\n            \u0022width\u0022: 800,\n            \u0022y\u0022: 108,\n            \u0022height\u0022: 135\n        }\n    },\n    \u0022organizationType\u0022: \u0022SELF_EMPLOYED\u0022,\n    \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022alternativeNames\u0022: [],\n    \u0022specialties\u0022: [],\n    \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n    \u0022localizedSpecialties\u0022: [],\n    \u0022industries\u0022: [\n        \u0022urn:li:industry:4\u0022\n    ],\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n    \u0022locations\u0022: [],\n    \u0022id\u0022: 79988552,\n    \u0022$URN\u0022: \u0022urn:li:organization:79988552\u0022\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:20:14 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "701"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYAPG0cHa2TDk\u002BlDMw=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693614:t=1671775286:v=2:sig=AQEz40okk9PWNViZtSR_QgQH2OqXmumz\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693614:t=1671775286:v=2:sig=AQEz40okk9PWNViZtSR_QgQH2OqXmumz\u0022"
+                        }
+                      ],
+                      "id": "3f8b2122-8c17-41b0-ae3f-295149d9c647",
+                      "name": "Retrieve Organization by ID",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": "{{baseUrl}}/organizations/{{organization_id}}"
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "3d35ef14-5510-434b-8e5a-44a0856f069e",
+                  "name": "Find Organization by Vanity Name",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "vanityName"
+                        },
+                        {
+                          "key": "vanityName",
+                          "value": "{{vanityName}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizations?q=vanityName\u0026vanityName={{vanityName}}"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n            \u0022locations\u0022: [],\n            \u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n            \u0022id\u0022: 79988552\n        }\n    ]\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:20:22 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "299"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYCMxh9pZa4GjvO86Q=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693622:t=1671775286:v=2:sig=AQHncLmolSTe5O8fU9deZfStgY0uTpIT\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693622:t=1671775286:v=2:sig=AQHncLmolSTe5O8fU9deZfStgY0uTpIT\u0022"
+                        }
+                      ],
+                      "id": "df534e47-b446-4cdf-8440-90b4c7c290cf",
+                      "name": "Find Organization by Vanity Name",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations"
+                          ],
+                          "query": [
+                            {
+                              "key": "q",
+                              "value": "vanityName"
+                            },
+                            {
+                              "key": "vanityName",
+                              "value": "{{vanityName}}"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizations?q=vanityName\u0026vanityName={{vanityName}}"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "da55912d-8214-4c4f-b1a3-6420df49ea7c",
+                  "name": "Find Organization by Email Domain",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "emailDomain"
+                        },
+                        {
+                          "key": "emailDomain",
+                          "value": "{{email_domain}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizations?q=emailDomain\u0026emailDomain={{email_domain}}"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 3\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Microsoft Korea\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022vanityName\u0022: \u0022microsoft-korea\u0022,\n            \u0022locations\u0022: [],\n            \u0022localizedName\u0022: \u0022Microsoft Korea\u0022,\n            \u0022id\u0022: 9259085\n        },\n        {\n            \u0022vanityName\u0022: \u0022skype\u0022,\n            \u0022localizedName\u0022: \u0022Skype\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Skype\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022locations\u0022: [\n                {\n                    \u0022locationType\u0022: \u0022HEADQUARTERS\u0022,\n                    \u0022address\u0022: {\n                        \u0022geographicArea\u0022: \u0022WA\u0022,\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022city\u0022: \u0022Redmond\u0022,\n                        \u0022line1\u0022: \u00221 Microsoft Way\u0022,\n                        \u0022postalCode\u0022: \u002298052\u0022\n                    },\n                    \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n                    \u0022geoLocation\u0022: \u0022urn:li:geo:100610900\u0022,\n                    \u0022streetAddressFieldState\u0022: \u0022UNSET_OPT_OUT\u0022\n                }\n            ],\n            \u0022id\u0022: 7299,\n            \u0022logoV2\u0022: {\n                \u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C4D0BAQFJ0XE6_E1fpg\u0022,\n                \u0022original\u0022: \u0022urn:li:digitalmediaAsset:C4D0BAQFJ0XE6_E1fpg\u0022,\n                \u0022cropInfo\u0022: {\n                    \u0022x\u0022: 0,\n                    \u0022width\u0022: 0,\n                    \u0022y\u0022: 0,\n                    \u0022height\u0022: 0\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022lionhead-studios\u0022,\n            \u0022localizedName\u0022: \u0022Lionhead Studios\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Lionhead Studios\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022locations\u0022: [\n                {\n                    \u0022address\u0022: {\n                        \u0022geographicArea\u0022: \u0022Surrey,\u0022,\n                        \u0022country\u0022: \u0022GB\u0022,\n                        \u0022city\u0022: \u0022Guildford,\u0022,\n                        \u0022line2\u0022: \u0022Surrey Research Park,\u0022,\n                        \u0022line1\u0022: \u00221 Occam Court,\u0022,\n                        \u0022postalCode\u0022: \u0022GU2 7YQ\u0022\n                    },\n                    \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n                    \u0022geoLocation\u0022: \u0022urn:li:geo:103924304\u0022,\n                    \u0022phoneNumber1\u0022: {\n                        \u0022number\u0022: \u00221483401000\u0022\n                    },\n                    \u0022locationType\u0022: \u0022HEADQUARTERS\u0022,\n                    \u0022description\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022Lionhead Studios,\u0022\n                        },\n                        \u0022preferredLocale\u0022: {\n                            \u0022country\u0022: \u0022US\u0022,\n                            \u0022language\u0022: \u0022en\u0022\n                        }\n                    },\n                    \u0022localizedDescription\u0022: \u0022Lionhead Studios,\u0022\n                }\n            ],\n            \u0022id\u0022: 9908,\n            \u0022logoV2\u0022: {\n                \u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C4D0BAQF0AKqGSss67g\u0022,\n                \u0022original\u0022: \u0022urn:li:digitalmediaAsset:C4D0BAQF0AKqGSss67g\u0022,\n                \u0022cropInfo\u0022: {\n                    \u0022x\u0022: 53,\n                    \u0022width\u0022: 391,\n                    \u0022y\u0022: 57,\n                    \u0022height\u0022: 391\n                }\n            }\n        }\n    ]\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:20:36 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "1758"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYFYKP\u002BsXtDeRh4\u002B1g=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693635:t=1671775286:v=2:sig=AQFrLEDM1QWFhy9FRUw_U0dj6V5WYk4e\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693635:t=1671775286:v=2:sig=AQFrLEDM1QWFhy9FRUw_U0dj6V5WYk4e\u0022"
+                        }
+                      ],
+                      "id": "e96f849a-a9c4-4519-ab80-ef51c767e857",
+                      "name": "Find Organization by Email Domain",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations"
+                          ],
+                          "query": [
+                            {
+                              "key": "q",
+                              "value": "emailDomain"
+                            },
+                            {
+                              "key": "emailDomain",
+                              "value": "{{email_domain}}"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizations?q=emailDomain\u0026emailDomain={{email_domain}}"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "e956df32-a4f4-40b3-bdc0-3e8a4730f7bf",
+                  "name": "Retrieve Organization using projection",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        "{{organization_id}}"
+                      ],
+                      "query": [
+                        {
+                          "key": "projection",
+                          "value": "(vanityName,primaryOrganizationType,id)"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizations/{{organization_id}}?projection=(vanityName,primaryOrganizationType,id)"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n    \u0022id\u0022: 79988552,\n    \u0022vanityName\u0022: \u0022firstdemocompany\u0022\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:20:44 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "80"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYHeP8b/rtUwiBg4TA=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693644:t=1671775286:v=2:sig=AQHEZjCD8dD1Fr6LmN96qZV96eAX5eBA\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693644:t=1671775286:v=2:sig=AQHEZjCD8dD1Fr6LmN96qZV96eAX5eBA\u0022"
+                        }
+                      ],
+                      "id": "f802ee5a-bd74-4c82-b03c-3ee393cf865d",
+                      "name": "Retrieve Organization using projection",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            "{{organization_id}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "projection",
+                              "value": "(vanityName,primaryOrganizationType,id)"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizations/{{organization_id}}?projection=(vanityName,primaryOrganizationType,id)"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "6734b8e2-3eff-40b4-b33c-4a32c4d4bedd",
+                  "name": "Lookup by Organization Primary Type",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        "{{organization_id}}"
+                      ],
+                      "query": [
+                        {
+                          "key": "projection",
+                          "value": "(primaryOrganizationType)"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizations/{{organization_id}}?projection=(primaryOrganizationType)"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022primaryOrganizationType\u0022: \u0022NONE\u0022\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:20:52 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "34"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYJXnc/8Zp667Zwp2w=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693652:t=1671775286:v=2:sig=AQHsRg1CU_Z5pEdUEduKGxHDb8kz7ihJ\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693652:t=1671775286:v=2:sig=AQHsRg1CU_Z5pEdUEduKGxHDb8kz7ihJ\u0022"
+                        }
+                      ],
+                      "id": "7e71d173-ab18-437c-b9c5-facc600b6a75",
+                      "name": "Lookup by Organization Primary Type",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            "{{organization_id}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "projection",
+                              "value": "(primaryOrganizationType)"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizations/{{organization_id}}?projection=(primaryOrganizationType)"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "b9272d33-d023-4ddf-8120-ed75a36c3b29",
+                  "name": "Find Non-Administered Organization",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationsLookup"
+                      ],
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "List({{organization_id}},{{organization_id1}})"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationsLookup?ids=List({{organization_id}},{{organization_id1}})"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022results\u0022: {\n        \u00223803\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022New Century\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022vanityName\u0022: \u0022new-century\u0022,\n            \u0022locations\u0022: [\n                {\n                    \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n                    \u0022locationType\u0022: \u0022HEADQUARTERS\u0022,\n                    \u0022address\u0022: {\n                        \u0022country\u0022: \u0022US\u0022\n                    }\n                },\n                {\n                    \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n                    \u0022locationType\u0022: \u0022OTHER\u0022,\n                    \u0022address\u0022: {}\n                }\n            ],\n            \u0022localizedName\u0022: \u0022New Century\u0022,\n            \u0022id\u0022: 3803\n        },\n        \u002279988552\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n            \u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n            \u0022locations\u0022: [],\n            \u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n            \u0022id\u0022: 79988552\n        }\n    },\n    \u0022statuses\u0022: {\n        \u00223803\u0022: 200,\n        \u002279988552\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:21:19 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "677"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYPro52d92kEmROl/w=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693679:t=1671775286:v=2:sig=AQE-fhpSOZouoPwPC-a8jtqO3DIDX2_x\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693679:t=1671775286:v=2:sig=AQE-fhpSOZouoPwPC-a8jtqO3DIDX2_x\u0022"
+                        }
+                      ],
+                      "id": "7f93a963-7723-426b-b362-0e8a10278c92",
+                      "name": "Find Non-Administered Organization",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizationsLookup"
+                          ],
+                          "query": [
+                            {
+                              "key": "ids",
+                              "value": "List({{organization_id}},{{organization_id1}})"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizationsLookup?ids=List({{organization_id}},{{organization_id1}})"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "583f16ea-06dd-4f8a-8651-c4f97f442c9b",
+                  "name": "Retrieve Organization Follower Count",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "networkSizes",
+                        "urn:li:organization:{{organization_id}}"
+                      ],
+                      "query": [
+                        {
+                          "key": "edgeType",
+                          "value": "CompanyFollowedByMember"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/networkSizes/urn:li:organization:{{organization_id}}?edgeType=CompanyFollowedByMember"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022firstDegreeSize\u0022: 0\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "x-restli-protocol-version",
+                          "value": "1.0.0"
+                        },
+                        {
+                          "key": "x-source",
+                          "value": "RULE"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "21"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:21:30 GMT"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYSU7YcaYlLpJpOzOw=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693690:t=1671775286:v=2:sig=AQEj5sBudl4cE2faxgSGmXR8LuaJ3zBE\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693690:t=1671775286:v=2:sig=AQEj5sBudl4cE2faxgSGmXR8LuaJ3zBE\u0022"
+                        }
+                      ],
+                      "id": "5a57c319-eae4-4e40-9bd4-62b4641ba2c9",
+                      "name": "Retrieve Organization Follower Count",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "networkSizes",
+                            "urn:li:organization:{{organization_id}}"
+                          ],
+                          "query": [
+                            {
+                              "key": "edgeType",
+                              "value": "CompanyFollowedByMember"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/networkSizes/urn:li:organization:{{organization_id}}?edgeType=CompanyFollowedByMember"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                }
+              ],
+              "name": "Organizations"
+            },
+            {
+              "id": "1afce93a-b9a3-4f96-9b93-06c13f1567ee",
+              "item": [
+                {
+                  "id": "d1355d8a-8d59-4b73-b0ae-67403d81da3e",
+                  "name": "Find Organization Brand by Vanity Name",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationBrands"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "vanityName"
+                        },
+                        {
+                          "key": "vanityName",
+                          "value": "{{vanityName}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationBrands?q=vanityName\u0026vanityName={{vanityName}}"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 0\n    },\n    \u0022elements\u0022: []\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:21:48 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "68"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYWnFpGMbUOxN2dhdg=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693708:t=1671775286:v=2:sig=AQFROmTbc2fkuPf9YCPC2zUy2gPHnfQ9\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693708:t=1671775286:v=2:sig=AQFROmTbc2fkuPf9YCPC2zUy2gPHnfQ9\u0022"
+                        }
+                      ],
+                      "id": "2f6de28e-71c2-415d-88b8-dc3759255384",
+                      "name": "Find Organization Brand by Vanity Name",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizationBrands"
+                          ],
+                          "query": [
+                            {
+                              "key": "q",
+                              "value": "vanityName"
+                            },
+                            {
+                              "key": "vanityName",
+                              "value": "{{vanityName}}"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizationBrands?q=vanityName\u0026vanityName={{vanityName}}"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "526e3cfc-aa54-4e44-ad5e-98a3d5489934",
+                  "name": "Retrieve an Administered Organization Brand",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/organizationBrands/{{organizationBrand_id}}"
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022vanityName\u0022: \u0022internal-ei-demo\u0022,\n    \u0022localizedName\u0022: \u0022Internal_EI_Demo\u0022,\n    \u0022website\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022https://internal-ei-test-company.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022groups\u0022: [],\n    \u0022versionTag\u0022: \u00223061199585\u0022,\n    \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022alternativeNames\u0022: [],\n    \u0022specialties\u0022: [],\n    \u0022parentRelationship\u0022: {\n        \u0022relationshipStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022parent\u0022: \u0022urn:li:organization:79988552\u0022\n    },\n    \u0022localizedSpecialties\u0022: [],\n    \u0022industries\u0022: [\n        \u0022urn:li:industry:84\u0022\n    ],\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Internal_EI_Demo\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n    \u0022id\u0022: 89758488,\n    \u0022$URN\u0022: \u0022urn:li:organizationBrand:89758488\u0022,\n    \u0022autoCreated\u0022: false,\n    \u0022localizedWebsite\u0022: \u0022https://internal-ei-test-company.com\u0022\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:23:45 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "1.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "743"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZYypmttHzdbszOY7xA=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693825:t=1671775286:v=2:sig=AQGoeeGwjTLn5Unyu-Q6VKPlP6HXDx0P\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693825:t=1671775286:v=2:sig=AQGoeeGwjTLn5Unyu-Q6VKPlP6HXDx0P\u0022"
+                        }
+                      ],
+                      "id": "625cc780-c7d1-4acf-b398-eb08f61730c2",
+                      "name": "Retrieve an Administered Organization Brand",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": "{{baseUrl}}/organizationBrands/{{organizationBrand_id}}"
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "cfe6d16d-d6c7-4dfa-b27b-bed647bca355",
+                  "name": "Batch GET on Administered Organization Brands",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationBrands"
+                      ],
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationBrands?ids=List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022results\u0022: {\n        \u002289758488\u0022: {\n            \u0022vanityName\u0022: \u0022internal-ei-demo\u0022,\n            \u0022localizedName\u0022: \u0022Internal_EI_Demo\u0022,\n            \u0022website\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022https://internal-ei-test-company.com\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022groups\u0022: [],\n            \u0022versionTag\u0022: \u00223061199585\u0022,\n            \u0022defaultLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022alternativeNames\u0022: [],\n            \u0022specialties\u0022: [],\n            \u0022parentRelationship\u0022: {\n                \u0022relationshipStatus\u0022: \u0022ACTIVE\u0022,\n                \u0022parent\u0022: \u0022urn:li:organization:79988552\u0022\n            },\n            \u0022localizedSpecialties\u0022: [],\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:84\u0022\n            ],\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Internal_EI_Demo\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n            \u0022id\u0022: 89758488,\n            \u0022autoCreated\u0022: false,\n            \u0022localizedWebsite\u0022: \u0022https://internal-ei-test-company.com\u0022\n        }\n    },\n    \u0022statuses\u0022: {\n        \u002235625943\u0022: 403,\n        \u002289758488\u0022: 200\n    },\n    \u0022errors\u0022: {\n        \u002235625943\u0022: {\n            \u0022message\u0022: \u0022Viewer don\u0027t have permission to the ADMIN_ONLY VisibilityReduction for urn:li:organization:35625943\u0022,\n            \u0022status\u0022: 403\n        }\n    }\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:23:55 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "917"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZY06\u002BGcGRTyaDTTN\u002Bg=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693835:t=1671775286:v=2:sig=AQFCBSUN6_0zsTtMP91RSb64EL4GnqtY\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693835:t=1671775286:v=2:sig=AQFCBSUN6_0zsTtMP91RSb64EL4GnqtY\u0022"
+                        }
+                      ],
+                      "id": "c28ede1a-8b3f-4579-bfe7-7528f08467fe",
+                      "name": "Batch GET on Administered Organization Brands",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizationBrands"
+                          ],
+                          "query": [
+                            {
+                              "key": "ids",
+                              "value": "List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizationBrands?ids=List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "294ddd33-9ff5-4a94-84b4-70ae5cd529b5",
+                  "name": "Batch GET on Non-Administered Organization Brands",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizationBrandsLookup"
+                      ],
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizationBrandsLookup?ids=List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022results\u0022: {\n        \u002235625943\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Company LGF Showcase\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n            \u0022vanityName\u0022: \u0022company-lgf-showcase\u0022,\n            \u0022localizedName\u0022: \u0022Company LGF Showcase\u0022,\n            \u0022id\u0022: 35625943\n        },\n        \u002289758488\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Internal_EI_Demo\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n            \u0022vanityName\u0022: \u0022internal-ei-demo\u0022,\n            \u0022localizedName\u0022: \u0022Internal_EI_Demo\u0022,\n            \u0022id\u0022: 89758488,\n            \u0022localizedWebsite\u0022: \u0022https://internal-ei-test-company.com\u0022\n        }\n    },\n    \u0022statuses\u0022: {\n        \u002235625943\u0022: 200,\n        \u002289758488\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:24:08 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "2.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "596"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZY4BjcseAexl6rVsFQ=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693848:t=1671775286:v=2:sig=AQFAdBFZKRnFsc0gzQXACtwVuGqOLl06\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693848:t=1671775286:v=2:sig=AQFAdBFZKRnFsc0gzQXACtwVuGqOLl06\u0022"
+                        }
+                      ],
+                      "id": "3921306f-7d43-46d3-a7e0-3389ea022b5f",
+                      "name": "Batch GET on Non-Administered Organization Brands",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizationBrandsLookup"
+                          ],
+                          "query": [
+                            {
+                              "key": "ids",
+                              "value": "List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizationBrandsLookup?ids=List({{organizationBrand_id}},{{organizationBrand_id1}})"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "f75b0f9f-8ac4-4778-b6b1-7ae9a2a6f337",
+                  "name": "Find Administered Organization Brands by Parent Org",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "type": "text",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "X-Restli-Protocol-Version",
+                        "type": "text",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "parentOrganization"
+                        },
+                        {
+                          "key": "parent",
+                          "value": "urn:li:organization:{{organization_id}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/organizations?q=parentOrganization\u0026parent=urn:li:organization:{{organization_id}}"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Internal_EI_Demo\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n            \u0022vanityName\u0022: \u0022internal-ei-demo\u0022,\n            \u0022locations\u0022: [],\n            \u0022localizedName\u0022: \u0022Internal_EI_Demo\u0022,\n            \u0022id\u0022: 89758488\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Internal_EI_TestCompany\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n            \u0022vanityName\u0022: \u0022internal-ei-testcompany\u0022,\n            \u0022locations\u0022: [],\n            \u0022localizedName\u0022: \u0022Internal_EI_TestCompany\u0022,\n            \u0022id\u0022: 89757515\n        }\n    ]\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        },
+                        {
+                          "key": "Date",
+                          "value": "Thu, 22 Dec 2022 07:25:11 GMT"
+                        },
+                        {
+                          "key": "Server",
+                          "value": "Play"
+                        },
+                        {
+                          "key": "X-RestLi-Protocol-Version",
+                          "value": "1.0.0"
+                        },
+                        {
+                          "key": "Content-Length",
+                          "value": "554"
+                        },
+                        {
+                          "key": "X-Li-Fabric",
+                          "value": "prod-lor1"
+                        },
+                        {
+                          "key": "Connection",
+                          "value": "keep-alive"
+                        },
+                        {
+                          "key": "X-Li-Source-Fabric",
+                          "value": "prod-lva1"
+                        },
+                        {
+                          "key": "X-Li-Pop",
+                          "value": "prod-lva1-x"
+                        },
+                        {
+                          "key": "X-LI-Proto",
+                          "value": "http/1.1"
+                        },
+                        {
+                          "key": "X-LI-UUID",
+                          "value": "AAXwZZHGIBuhMvA/BMwKtQ=="
+                        },
+                        {
+                          "key": "Set-Cookie",
+                          "value": "lidc=\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693911:t=1671775286:v=2:sig=AQHFo_iP3NTosWNgRAmvCALCbNy0sSET\u0022"
+                        },
+                        {
+                          "key": "X-LI-Route-Key",
+                          "value": "\u0022b=OB39:s=O:r=O:a=O:p=O:g=3210:u=43:x=1:i=1671693911:t=1671775286:v=2:sig=AQHFo_iP3NTosWNgRAmvCALCbNy0sSET\u0022"
+                        }
+                      ],
+                      "id": "3f3c3397-5730-499a-97c4-098b73716379",
+                      "name": "Find Administered Organization Brands by Parent Org",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "LinkedIn-Version",
+                            "type": "text",
+                            "value": "{{insert_version}}"
+                          },
+                          {
+                            "disabled": true,
+                            "key": "X-Restli-Protocol-Version",
+                            "type": "text",
+                            "value": "2.0.0"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations"
+                          ],
+                          "query": [
+                            {
+                              "key": "q",
+                              "value": "parentOrganization"
+                            },
+                            {
+                              "key": "parent",
+                              "value": "urn:li:organization:{{organization_id}}"
+                            }
+                          ],
+                          "raw": "{{baseUrl}}/organizations?q=parentOrganization\u0026parent=urn:li:organization:{{organization_id}}"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                }
+              ],
+              "name": "Organization Brands"
+            }
+          ],
+          "name": "Organization Lookup"
+        },
+        {
+          "id": "e8ac1451-432a-4d55-ab7f-96bf8af79396",
+          "item": [
+            {
+              "id": "a31ec584-b787-4589-a716-92a3089762eb",
+              "name": "Find a Member\u0027s Organization Access Control",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "organizationAcls"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "roleAssignee"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/organizationAcls?q=roleAssignee"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "d5d77556-d501-4e2a-91f6-a9154369f9c4",
+              "name": "Find Organization Administrators",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "organizationAcls"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "organization"
+                    },
+                    {
+                      "key": "organization",
+                      "value": "urn%3Ali%3Aorganization%3A{{organization_id}}"
+                    },
+                    {
+                      "key": "role",
+                      "value": "ADMINISTRATOR"
+                    },
+                    {
+                      "key": "state",
+                      "value": "APPROVED"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/organizationAcls?q=organization\u0026organization=urn%3Ali%3Aorganization%3A{{organization_id}}\u0026role=ADMINISTRATOR\u0026state=APPROVED"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "91856488-b059-4515-bde0-8e6ce2f538eb",
+              "name": "Find Organization Access Control",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "organizationAcls"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "organization"
+                    },
+                    {
+                      "key": "organization",
+                      "value": "urn%3Ali%3Aorganization%3A{{organization_id}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/organizationAcls?q=organization\u0026organization=urn%3Ali%3Aorganization%3A{{organization_id}}"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Organization Access Controls"
+        },
+        {
+          "id": "2a6849eb-8715-400d-a5ed-2b26d5391dda",
+          "item": [
+            {
+              "id": "9ff0ac3a-8ee8-49af-b42c-f541e407fb10",
+              "name": "Total Followers Count",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "memberFollowersCount"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "me"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/memberFollowersCount?q=me"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "c253367d-10c5-4b8f-84b8-45fe83219c99",
+              "name": "Followers Count By DataRange",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "memberFollowersCount"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "dateRange"
+                    },
+                    {
+                      "key": "dateRange",
+                      "value": "(start:(year:2024,month:4,day:20),end:(year:2024,month:5,day:15))"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/memberFollowersCount?q=dateRange\u0026dateRange=(start:(year:2024,month:4,day:20),end:(year:2024,month:5,day:15))"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Member Profile Analytics"
+        },
+        {
+          "id": "f336bd9b-feef-401a-923b-45ff9346ea3b",
+          "item": [
+            {
+              "id": "ef072cf8-0df5-46a6-96ee-377cb1db0302",
+              "name": "Aggregate Analytics for Member Posts",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "bearer": {},
+                  "type": "bearer"
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \u0022owner\u0022: \u0022urn:li:organization:{{organization_id}}\u0022,\n  \u0022text\u0022: {\n    \u0022annotations\u0022: [{\n        \u0022entity\u0022: \u0022urn:li:organization:1337\u0022,\n        \u0022length\u0022: 8,\n        \u0022start\u0022: 6\n    }],\n    \u0022text\u0022: \u0022Hello LinkedIn world!\u0022\n  },\n  \u0022subject\u0022: \u0022Test Share Subject\u0022,\n  \u0022distribution\u0022: {\n    \u0022linkedInDistributionTarget\u0022: {}\n  },\n  \u0022content\u0022: {\n    \u0022contentEntities\u0022: [\n        {\n            \u0022entityLocation\u0022: \u0022https://www.example.com\u0022,\n            \u0022thumbnails\u0022: [\n                {\n                    \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                }\n            ]\n        }\n    ],\n    \u0022title\u0022: \u0022Test Share with Content title\u0022\n  }\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "memberCreatorPostAnalytics"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "me"
+                    },
+                    {
+                      "key": "queryType",
+                      "value": "REACTION"
+                    },
+                    {
+                      "key": "aggregation",
+                      "value": "DAILY"
+                    },
+                    {
+                      "key": "dateRange",
+                      "value": "(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/memberCreatorPostAnalytics?q=me\u0026queryType=REACTION\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "9239b8e2-f8d3-44cf-ac49-d8477c39b284",
+              "name": "Analytics for Specific Member Post",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "bearer": {},
+                  "type": "bearer"
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \u0022owner\u0022: \u0022urn:li:organization:{{organization_id}}\u0022,\n  \u0022text\u0022: {\n    \u0022annotations\u0022: [{\n        \u0022entity\u0022: \u0022urn:li:organization:1337\u0022,\n        \u0022length\u0022: 8,\n        \u0022start\u0022: 6\n    }],\n    \u0022text\u0022: \u0022Hello LinkedIn world!\u0022\n  },\n  \u0022subject\u0022: \u0022Test Share Subject\u0022,\n  \u0022distribution\u0022: {\n    \u0022linkedInDistributionTarget\u0022: {}\n  },\n  \u0022content\u0022: {\n    \u0022contentEntities\u0022: [\n        {\n            \u0022entityLocation\u0022: \u0022https://www.example.com\u0022,\n            \u0022thumbnails\u0022: [\n                {\n                    \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                }\n            ]\n        }\n    ],\n    \u0022title\u0022: \u0022Test Share with Content title\u0022\n  }\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "memberCreatorPostAnalytics"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "entity"
+                    },
+                    {
+                      "key": "entity",
+                      "value": "(share:urn%3Ali%3Ashare%3A{{share_id}})"
+                    },
+                    {
+                      "key": "queryType",
+                      "value": "REACTION"
+                    },
+                    {
+                      "key": "aggregation",
+                      "value": "DAILY"
+                    },
+                    {
+                      "key": "dateRange",
+                      "value": "(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/memberCreatorPostAnalytics?q=entity\u0026entity=(share:urn%3Ali%3Ashare%3A{{share_id}})\u0026queryType=REACTION\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "123e5b45-42b6-4e1f-99a6-deac8a1a1d6e",
+              "name": "Analytics for Specific Member VIDEO Post",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "bearer": {},
+                  "type": "bearer"
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \u0022owner\u0022: \u0022urn:li:organization:{{organization_id}}\u0022,\n  \u0022text\u0022: {\n    \u0022annotations\u0022: [{\n        \u0022entity\u0022: \u0022urn:li:organization:1337\u0022,\n        \u0022length\u0022: 8,\n        \u0022start\u0022: 6\n    }],\n    \u0022text\u0022: \u0022Hello LinkedIn world!\u0022\n  },\n  \u0022subject\u0022: \u0022Test Share Subject\u0022,\n  \u0022distribution\u0022: {\n    \u0022linkedInDistributionTarget\u0022: {}\n  },\n  \u0022content\u0022: {\n    \u0022contentEntities\u0022: [\n        {\n            \u0022entityLocation\u0022: \u0022https://www.example.com\u0022,\n            \u0022thumbnails\u0022: [\n                {\n                    \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                }\n            ]\n        }\n    ],\n    \u0022title\u0022: \u0022Test Share with Content title\u0022\n  }\n}"
+                },
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "memberCreatorVideoAnalytics"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "entity"
+                    },
+                    {
+                      "key": "entity",
+                      "value": "(share:urn%3Ali%3Ashare%3A{{share_id}})"
+                    },
+                    {
+                      "key": "queryType",
+                      "value": "VIDEO_PLAY"
+                    },
+                    {
+                      "key": "aggregation",
+                      "value": "TOTAL"
+                    },
+                    {
+                      "key": "dateRange",
+                      "value": "(start:(day:15,month:5,year:2024),end:(day:16,month:5,year:2024))"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/memberCreatorVideoAnalytics?q=entity\u0026entity=(share:urn%3Ali%3Ashare%3A{{share_id}})\u0026queryType=VIDEO_PLAY\u0026aggregation=TOTAL\u0026dateRange=(start:(day:15,month:5,year:2024),end:(day:16,month:5,year:2024))"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Member Post Analytics"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ]
+}

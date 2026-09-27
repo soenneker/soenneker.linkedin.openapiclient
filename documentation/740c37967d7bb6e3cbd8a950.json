@@ -1,0 +1,629 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+  "Title": "Organization Career Page Settings",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Career Page Settings",
+      "Anchor": "organization-career-page-settings",
+      "SectionPath": [],
+      "Text": "The Organization Career Page Settings API returns the career page settings for the organization (i.e. Company, School and Showcase) data. This API doesn\u0027t share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Career Page Settings",
+      "Anchor": "organization-career-page-settings",
+      "SectionPath": [],
+      "Text": "The service currently provides the following method:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Career Page Settings",
+      "Anchor": "organization-career-page-settings",
+      "SectionPath": [],
+      "Text": "Get a career page settings for the given organization URN. Organization URN is in the format urn:li:organization:{organization id} and represents a LinkedIn Company Page.\nUse this API to find the Organization id",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Career Page Settings Example",
+      "Anchor": "organizational-career-page-settings-example",
+      "SectionPath": [
+        "Organizational Career Page Settings Example"
+      ],
+      "Text": "Refer to the following image for an example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobCulturalInsightsVisible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, show the jobs related cultural insights module. Example insights here include distributions of employee seniorities, skills, work location, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "meetTheTeamVisible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, show the meet the team module. Module displaying list of employees who closely match the visitor\u0027s profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employeesYouShouldReachOutToVisible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, show the \u0022Employees You Should Reach Out To\u0022 module. Module displaying list of employees whose titles match the titles of recommended jobs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "automaticJobPostingSettings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AutomaticJobPostingSettings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Page admins can opt-in to automatic job post creation. If this field is null the page is not opted-in for automatic job post creation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "candidateInterest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CandidateInterest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate interest module settings for an organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AutomaticJobPostingSettings",
+      "Anchor": "automaticjobpostingsettings",
+      "SectionPath": [
+        "Definitions",
+        "AutomaticJobPostingSettings"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "postSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PostSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum representing all the different scheduling choices for an organization that opted-in to automatic job post creation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Page admins of companies that opted-in to automatic job post creation can provide a custom post description. If this field is null, default post description will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PostSchedule",
+      "Anchor": "postschedule",
+      "SectionPath": [
+        "Definitions",
+        "PostSchedule"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DAILY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Automatic job post creation occurs on a daily basis",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WEEKEND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Automatic job post creation occurs on weekend days - Saturday and Sunday",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CandidateInterest",
+      "Anchor": "candidateinterest",
+      "SectionPath": [
+        "Definitions",
+        "CandidateInterest"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "candidateInterestModuleVisble",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the candidate interest module is On. When true, candidate interest module is On. Members will see the CTA (Call To Action) to express interest in the organization. When false, candidate interest module is Off. Members will not see the CTA (Call To Action) to express interest in the organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Career Page Settings",
+      "Anchor": "retrieve-organization-career-page-settings",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Career Page Settings",
+      "Anchor": "retrieve-organization-career-page-settings",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of CareerPageAuthorizationActionType.CAREER_PAGE_JOBS_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings",
+        "GET",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings",
+        "GET",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_URN} must be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaCareerPageSettings/{ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaCareerPageSettings/urn%3Ali%3Aorganization%3A123\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Career Page Settings",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022automaticJobPostingSettings\u0022: {\n        \u0022postSchedule\u0022: \u0022DAILY\u0022,\n        \u0022postDescription\u0022: \u0022TESTING TEXT FIELD\u0022\n    },\n    \u0022meetTheTeamVisible\u0022: true,\n    \u0022jobCulturalInsightsVisible\u0022: true,\n    \u0022candidateInterest\u0022: {\n        \u0022candidateInterestModuleVisble\u0022: true\n    },\n    \u0022employeesYouShouldReachOutToVisible\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

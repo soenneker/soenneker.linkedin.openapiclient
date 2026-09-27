@@ -1,0 +1,2480 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+  "Title": "Manage Audience Restrictions",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/iab-categories"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Manage Audience Restrictions",
+      "Anchor": "manage-audience-restrictions",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage Audience Restrictions",
+      "Anchor": "manage-audience-restrictions",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage Audience Restrictions",
+      "Anchor": "manage-audience-restrictions",
+      "SectionPath": [],
+      "Text": "When serving Sponsored Content off network, LinkedIn offers a way for advertisers to opt out of serving certain sites and mobile applications. Manage mobile application restrictions\u00A0using mobile IAB (Interactive Advertising Bureau) categories and desktop and mobile web restrictions by domains.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage Audience Restrictions",
+      "Anchor": "manage-audience-restrictions",
+      "SectionPath": [],
+      "Text": "Additionally you can also create an allowlist of domains and mobile applications and option to serve only on those sites and mobile applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage IAB Categories",
+      "Anchor": "manage-iab-categories",
+      "SectionPath": [
+        "Manage IAB Categories"
+      ],
+      "Text": "Create A Campaign With IAB Category Exclusions\nUpdate IAB Category Exclusions In An Existing Campaign\nDelete IAB Category Exclusions From A Campaign\nDisable Offsite Sponsored Content Delivery",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "offsitePreferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional iabCategories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The set of IAB categories that this campaign may be excluded from based on where the ad request is from. Mobile Apps, Mobile Web, and Desktop inventory are all classified into one or more of these categories.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsitePreferences.iabCategories.exclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional\u00A0IABCategoryUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Excluded list of IAB categories.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteDeliveryEnabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Allow this campaign access to be served on the LinkedIn Advertising Network",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "To exclude a campaign from certain websites or applications, enter an IAB category URN in the exclusion list of offsitePreferences. Generate an IAB category URN using the iabCategory API, and append it to urn:li:iabCategory:.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "As these categories don\u0027t change often, we recommend that you call the iabCategory discovery API, cache the data, and do occasional refreshes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "To add the URN to the excluded list in offsitePreferences, the offsiteDeliveryEnabled flag must be set to true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "{\n   //Standard request to create a campaign. See campaign documentation for full samples.\n   \u0022offsiteDeliveryEnabled\u0022:true,\n   \u0022offsitePreferences\u0022:{\n      \u0022iabCategories\u0022:{\n         \u0022exclude\u0022:[\n            \u0022urn:li:iabCategory:IAB5-3\u0022,\n            \u0022urn:li:iabCategory:IAB1-1\u0022\n         ]\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign with IAB Category Exclusions",
+      "Anchor": "create-a-campaign-with-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Create a Campaign with IAB Category Exclusions"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n   //Standard request to create a campaign. See campaign documentation for full samples.\n   \u0022offsiteDeliveryEnabled\u0022:true,\n   \u0022offsitePreferences\u0022:{\n      \u0022iabCategories\u0022:{\n         \u0022exclude\u0022:[\n            \u0022urn:li:iabCategory:IAB5-3\u0022,\n            \u0022urn:li:iabCategory:IAB1-1\u0022\n         ]\n      }\n   }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update IAB Category Exclusions",
+      "Anchor": "update-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Update IAB Category Exclusions"
+      ],
+      "Text": "Add IAB category exclusions through a partial update to an existing campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update IAB Category Exclusions",
+      "Anchor": "update-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Update IAB Category Exclusions"
+      ],
+      "Text": "To add the URN to the excluded list in offsitePreferences, the offsiteDeliveryEnabled flag must be set to true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update IAB Category Exclusions",
+      "Anchor": "update-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Update IAB Category Exclusions"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update IAB Category Exclusions",
+      "Anchor": "update-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Update IAB Category Exclusions"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update IAB Category Exclusions",
+      "Anchor": "update-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Update IAB Category Exclusions"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsiteDeliveryEnabled\u0022: true,\n            \u0022offsitePreferences\u0022: {\n                \u0022iabCategories\u0022: {\n                    \u0022exclude\u0022: [\n                        \u0022urn:li:iabCategory:IAB5-3\u0022,\n                        \u0022urn:li:iabCategory:IAB1-1\u0022\n                    ]\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update IAB Category Exclusions",
+      "Anchor": "update-iab-category-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Update IAB Category Exclusions"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsiteDeliveryEnabled\u0022: true,\n            \u0022offsitePreferences\u0022: {\n                \u0022iabCategories\u0022: {\n                    \u0022exclude\u0022: [\n                        \u0022urn:li:iabCategory:IAB5-3\u0022,\n                        \u0022urn:li:iabCategory:IAB1-1\u0022\n                    ]\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete IAB Exclusions",
+      "Anchor": "delete-iab-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Delete IAB Exclusions"
+      ],
+      "Text": "To remove any exclusions, clear the exclude object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete IAB Exclusions",
+      "Anchor": "delete-iab-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Delete IAB Exclusions"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete IAB Exclusions",
+      "Anchor": "delete-iab-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Delete IAB Exclusions"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete IAB Exclusions",
+      "Anchor": "delete-iab-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Delete IAB Exclusions"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsitePreferences\u0022: {\n                \u0022iabCategories\u0022: {\n                    \u0022exclude\u0022: []\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete IAB Exclusions",
+      "Anchor": "delete-iab-exclusions",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Delete IAB Exclusions"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsitePreferences\u0022: {\n                \u0022iabCategories\u0022: {\n                    \u0022exclude\u0022: []\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disable Offsite Sponsored Content Delivery",
+      "Anchor": "disable-offsite-sponsored-content-delivery",
+      "SectionPath": [
+        "Manage IAB Categories",
+        "Disable Offsite Sponsored Content Delivery"
+      ],
+      "Text": "If you don\u0027t want LinkedIn to serve your content off network, set the offsiteDeliveryEnabled flag on your campaign to false.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Viewing Domain Block/Allow Lists",
+      "Anchor": "viewing-domain-blockallow-lists",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists"
+      ],
+      "Text": "By using domain block/allow lists, advertisers ensure that their ads are only served to their target audience and excluded/included from certain specific websites.\u00A0Learn more about uploading a block/allow list within Campaign Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Viewing Domain Block/Allow Lists",
+      "Anchor": "viewing-domain-blockallow-lists",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists"
+      ],
+      "Text": "Domain block/allow lists can be uploaded through the Campaign Manager UI as documented here or through the API as documented below in Creating Domain Publisher Lists.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Viewing Domain Block/Allow Lists",
+      "Anchor": "viewing-domain-blockallow-lists",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists"
+      ],
+      "Text": "Get a Campaign with Domain Restricted List\nGet Publisher Restriction List File Details\nGet All Publisher Restriction List File Details by Advertiser Account\nGet Global Publisher Allow List of Domains and Apps\nGet Publisher List File Download URL\nGet Publisher Restriction Files Details Applied at Advertiser Account",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Campaign with Domain Restricted List",
+      "Anchor": "get-a-campaign-with-domain-restricted-list",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get a Campaign with Domain Restricted List"
+      ],
+      "Text": "The following example fetches a Sponsored Update campaign that has offsite serving enabled. The offsite audience excludes/includes some domains. For brevity, the campaign response has been limited to the relevant fields using projection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Campaign with Domain Restricted List",
+      "Anchor": "get-a-campaign-with-domain-restricted-list",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get a Campaign with Domain Restricted List"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Campaign with Domain Restricted List",
+      "Anchor": "get-a-campaign-with-domain-restricted-list",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get a Campaign with Domain Restricted List"
+      ],
+      "Text": "A block list is named adPublisherFile in the API and is listed under publisherRestrictionFiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get a Campaign with Domain Restricted List",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "offsitePreferences.publisherRestrictionFiles.exclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdPublisherFileUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Excluded list of domains",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsitePreferences.publisherRestrictionFiles.include",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdPublisherFileUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Included list of domains",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteDeliveryEnabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Allow this campaign access to be served on the LinkedIn Advertising Network",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}?fields=offsitePreferences,offsiteDeliveryEnabled,type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}?fields=offsitePreferences,offsiteDeliveryEnabled,type\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022offsiteDeliveryEnabled\u0022: true,\n    \u0022offsitePreferences\u0022: {\n        \u0022iabCategories\u0022: {\n            \u0022exclude\u0022: []\n        },\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:1603\u0022\n            ],\n            \u0022include\u0022: [\n                \u0022urn:li:adPublisherFile:1604\u0022\n            ]\n        }\n    },\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Publisher Restriction List File Details",
+      "Anchor": "get-publisher-restriction-list-file-details",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction List File Details"
+      ],
+      "Text": "To get more details on the adPublisherFile URN in the previous sample response, make an additional request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adPublisherRestrictions/1603",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adPublisherRestrictions/1603\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022fileName\u0022: \u0022Test Block List\u0022,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1501619504000\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1501619504000\n        }\n    },\n    \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n    \u0022compressionFormat\u0022: \u0022NONE\u0022,\n    \u0022id\u0022: 1603,\n    \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n    \u0022type\u0022: \u0022BLOCKLIST\u0022\n    \u0022status\u0022: \u0022SUCCESS\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Response"
+      ],
+      "Text": "Alternatively when you fetch the campaign, you can resolve the\u00A0adPublisherFile\u00A0by decorating the URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/133066184?projection=(offsitePreferences(publisherRestrictionFiles(exclude*~)),offsiteDeliveryEnabled,type)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/133066184?projection=(offsitePreferences(publisherRestrictionFiles(exclude*~)),offsiteDeliveryEnabled,type)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022offsitePreferences\u0022: {\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:1603\u0022\n            ],\n            \u0022exclude~\u0022: [\n                {\n                    \u0022fileName\u0022: \u0022Test Block List\u0022,\n                    \u0022changeAuditStamps\u0022: {\n                        \u0022created\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                            \u0022time\u0022: 1501619504000\n                        },\n                        \u0022lastModified\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                            \u0022time\u0022: 1501619504000\n                        }\n                    },\n                    \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n                    \u0022compressionFormat\u0022: \u0022NONE\u0022,\n                    \u0022id\u0022: 1603,\n                    \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n                    \u0022type\u0022: \u0022BLOCKLIST\u0022,\n                    \u0022status\u0022: \u0022SUCCESS\u0022\n                }\n            ]\n        }\n    },\n    \u0022offsiteDeliveryEnabled\u0022: true,\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get All Publisher List File Details by Advertiser Account",
+      "Anchor": "get-all-publisher-list-file-details-by-advertiser-account",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get All Publisher List File Details by Advertiser Account"
+      ],
+      "Text": "Fetch publisher restriction lists by Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get All Publisher List File Details by Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get All Publisher List File Details by Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adPublisherRestrictions?q=entity\u0026entity=urn:li:sponsoredAccount:506106200",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get All Publisher List File Details by Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adPublisherRestrictions?q=entity\u0026entity=urn:li:sponsoredAccount:506106200\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get All Publisher List File Details by Advertiser Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022fileName\u0022: \u0022Test Block List\u0022,\n            \u0022dataId\u0022: \u0022urn:li:media:/AAMB_wDxAAUAAQAAAAAAAAydAAAAJDc4MzJkMDk4LThkNTMtNDkzZC05NmY0LTk0MDc5YzA3ODJhNQ.csv\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1501619504000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1501619504000\n                }\n            },\n            \u0022compressionFormat\u0022: \u0022NONE\u0022,\n            \u0022id\u0022: 1603,\n            \u0022entity\u0022: \u0022urn:li:sponsoredAccount:506106200\u0022,\n            \u0022type\u0022: \u0022BLOCKLIST\u0022,\n            \u0022status\u0022: \u0022SUCCESS\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Global Publisher Allow List of Domains and Apps",
+      "Anchor": "get-global-publisher-allow-list-of-domains-and-apps",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Global Publisher Allow List of Domains and Apps"
+      ],
+      "Text": "The following example retrieves a URL that can be utilized to perform a basic GET request and retrieve a comprehensive list of domains and apps curated by LAN for displaying ads. You can select from a predefined list of categories to specify the type of publisher list you want to download: either CONNECTED_TELEVISION or WEB_AND_APP, with the default option set to WEB_AND_APP. This list can serve as a reference to reduce the size of allowlists and blocklists created by advertisers, as it contains the superset of publishers. Publishers outside of this list will not have ads displayed to them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Global Publisher Allow List of Domains and Apps",
+        "Request Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "publisherListType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The global publisher list category specifies the type of publisher list to be downloaded. CONNECTED_TELEVISION / WEB_AND_APP. Default to WEB_AND_APP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Header",
+      "Anchor": "request-header",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Global Publisher Allow List of Domains and Apps",
+        "Request Header"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Content-Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content type for the request, must be: application/json",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Global Publisher Allow List of Domains and Apps",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Guaranteed in Response"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Collection for the response data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "collection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadSignedUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download block list content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/globalPublisherList",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022publisherListType\u0022: \u0022WEB_AND_APP\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/globalPublisherList\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\n--data \u0027{\n  \u0022publisherListType\u0022: \u0022WEB_AND_APP\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022downloadSignedUrl\u0022: \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQE_0g8A8UiOFgAAAWaEbHjizKrQZ4dPxDltpmPEHS-wdlXITXHYJp7SHZkbeCdS_Tqo077_EpEB1IO-i-m_LZzmIfHXhtGAJj1f1JZ4HOozhzfjZ_U3U7U-jkRm3nt5VXQp2tiDm2GsQbspN4MKhSRjF_zsmPF_XPU4kT5m09_2qSPlMTT40ICFfInn4H8rCygOlxLEX7kuMbjPjRQoogc-VBZuYIHv8q6r2yzjWqoBLzjKYyN79PpJ18DBu08xYnrNufHcuBX9QPCK8lTX_1bt1Rgl-Ml2Fwi13aslsvvBg9dERu0I0TBboKmSx-O4s_V_AwTGz4FDhyjDwvpftCF1D2uSjtkk-4BV6tdaLpn3nupuRY9sl9MleWd08fJ2UR0EOxHz_PbC5e_iPgw3XXpyDvhjreMofoqQ0DFtLZS-T922Y_m-Jv28Uv1C0x4OOKRmTOvcBQgfRy0So2UnwSl1JMaKa9L-WFlQGPCuksnnc81hoh3zUGjW9D01NxJZ2v7RwJOQtCjeEug1Ktb8AGTE7Purpidh_0P867MtAaCQ0YV-h0o61K2sOx_VK4mcPzdF1GikN2m3prO_b8LHjhNtxxEg\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download Content of Block/Allow List File",
+      "Anchor": "download-content-of-blockallow-list-file",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Download Content of Block/Allow List File"
+      ],
+      "Text": "The contents of a Publisher list file can be download through the following API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Publisher List File Download URL",
+      "Anchor": "get-publisher-list-file-download-url",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher List File Download URL"
+      ],
+      "Text": "The following API returns a URL where the block/allow list file content can be downloaded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Publisher List File Download URL",
+      "Anchor": "get-publisher-list-file-download-url",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher List File Download URL"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions?action=generateRestrictionsDownloadUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body",
+      "Anchor": "request-body-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher List File Download URL",
+        "Request Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "publisherRestrictionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the publisher restriction record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Numeric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Header",
+      "Anchor": "request-header-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher List File Download URL",
+        "Request Header"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Content-Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content type for the request, must be: application/json",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions?action=generateRestrictionsDownloadUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022publisherRestrictionId\u0022: {id}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions?action=generateRestrictionsDownloadUrl\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022publisherRestrictionId\u0022: {id}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022downloadSignedUrl\u0022: \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQE_0g8A8UiOFgAAAWaEbHjizKrQZ4dPxDltpmPEHS-wdlXITXHYJp7SHZkbeCdS_Tqo077_EpEB1IO-i-m_LZzmIfHXhtGAJj1f1JZ4HOozhzfjZ_U3U7U-jkRm3nt5VXQp2tiDm2GsQbspN4MKhSRjF_zsmPF_XPU4kT5m09_2qSPlMTT40ICFfInn4H8rCygOlxLEX7kuMbjPjRQoogc-VBZuYIHv8q6r2yzjWqoBLzjKYyN79PpJ18DBu08xYnrNufHcuBX9QPCK8lTX_1bt1Rgl-Ml2Fwi13aslsvvBg9dERu0I0TBboKmSx-O4s_V_AwTGz4FDhyjDwvpftCF1D2uSjtkk-4BV6tdaLpn3nupuRY9sl9MleWd08fJ2UR0EOxHz_PbC5e_iPgw3XXpyDvhjreMofoqQ0DFtLZS-T922Y_m-Jv28Uv1C0x4OOKRmTOvcBQgfRy0So2UnwSl1JMaKa9L-WFlQGPCuksnnc81hoh3zUGjW9D01NxJZ2v7RwJOQtCjeEug1Ktb8AGTE7Purpidh_0P867MtAaCQ0YV-h0o61K2sOx_VK4mcPzdF1GikN2m3prO_b8LHjhNtxxEg\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields-1",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Sample Request",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Guaranteed in Response?"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Collection for the response data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "collection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadSignedUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download publisher list content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Download Content of the Publisher List File",
+      "Anchor": "download-content-of-the-publisher-list-file",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Download Content of the Publisher List File"
+      ],
+      "Text": "To download the content of the publisher list file, simply invoke downloadSignedUrl obtained from the previous GET call. The URL is fully qualified including www.linkedin.com part.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Download Content of the Publisher List File",
+      "Anchor": "download-content-of-the-publisher-list-file",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Download Content of the Publisher List File"
+      ],
+      "Text": "GET {downloadSignedUrl}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Publisher Restriction Files Details Applied at Advertiser Account",
+      "Anchor": "get-publisher-restriction-files-details-applied-at-advertiser-account",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction Files Details Applied at Advertiser Account"
+      ],
+      "Text": "Retrieves the allowlist/blocklist applied at the ad account level. Allows you to view the current publisher restriction files configured for a specific sponsored account. The response provides include lists (allowlists) and exclude lists (blocklists) of publisher file URNs, along with audit information about when the preferences were created and last modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction Files Details Applied at Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction Files Details Applied at Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction Files Details Applied at Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction Files Details Applied at Advertiser Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022offsiteAccountPreferences\u0022: {\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022include\u0022: [\n                \u0022urn:li:adPublisherFile:11\u0022,\n                \u0022urn:li:adPublisherFile:12\u0022\n            ],\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:15\u0022,\n                \u0022urn:li:adPublisherFile:16\u0022\n            ]\n        }\n    },\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022time\u0022: 1755070193854\n        },\n        \u0022lastModified\u0022: {\n            \u0022time\u0022: 1755610707430\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Viewing Domain Block/Allow Lists",
+        "Get Publisher Restriction Files Details Applied at Advertiser Account",
+        "Response Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "offsiteAccountPreferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OffsiteAccountPreferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Offsite account preferences for this account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteAccountPreferences.publisherRestrictionFiles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PublisherRestrictionFiles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains allowlist/blocklist file URNs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteAccountPreferences.publisherRestrictionFiles.include",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdPublisherFileUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of publisher file URNs to allow (allowlist).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteAccountPreferences.publisherRestrictionFiles.exclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdPublisherFileUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of publisher file URNs to block (blocklist).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "changeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ChangeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audit stamps tracking last modification (read-only).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "changeAuditStamps.created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creation time in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "changeAuditStamps.lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last modification time in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating Domain Publisher Lists",
+      "Anchor": "creating-domain-publisher-lists",
+      "SectionPath": [
+        "Creating Domain Publisher Lists"
+      ],
+      "Text": "The Publisher List APIs provide higher control to advertisers by giving them the ability to define where their ads should or shouldn\u0027t appear. You have the ability to disable/enable serving their campaigns from certain apps and websites by creating block/allow lists through the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "uploadSignUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to upload block list csv file",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-binary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "file",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File details with location that has block list to upload",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the uploaded file",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "media URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media URN with details of uploaded file location",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Account URN of the Campaign",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the uploaded file",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publisherRestrictionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "numeric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the newly created adPublisherRestrictions record",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadSignedUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download the content of uploaded block list file",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the uploaded file BLOCKLIST/ALLOWLIST",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Domain Block Lists And Create Restriction",
+      "Anchor": "upload-domain-block-lists-and-create-restriction",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Upload Domain Block Lists And Create Restriction"
+      ],
+      "Text": "Uploading of a list with blocked/allowed domains and creating a campaign restriction to use it\u0027s a multi-step process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Domain Block Lists And Create Restriction",
+      "Anchor": "upload-domain-block-lists-and-create-restriction",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Upload Domain Block Lists And Create Restriction"
+      ],
+      "Text": "Please review the CSV template and guidelines in this help center article to prepare a successful publisher list file.\nObtain a URL to upload the content\nUpload the publisher list file\nCreate the publisher restriction\nApply publisher restriction at ad account level",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtain a URL to Upload the Content",
+      "Anchor": "obtain-a-url-to-upload-the-content",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Obtain a URL to Upload the Content"
+      ],
+      "Text": "Use the following API to get the URL where you can upload your publisher restriction list file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Obtain a URL to Upload the Content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Obtain a URL to Upload the Content",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions?action=generateRestrictionsUploadUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Obtain a URL to Upload the Content",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions?action=generateRestrictionsUploadUrl\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Obtain a URL to Upload the Content",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadSignUrl\u0022: \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFFC-Geqr_KYwAAAWZpL87yDFipgwXwWnG72OKIeDoTKqBzpXK_xMYgWYJu_A3dnSqPFUjBY9xhhx3z8FVVzKbwyg6A-ZuMkKJs4cUCnbMZJ4Qz3xug9FwVTGnnqWgB5_BLKr-HP-90a6P2drsm459tSOeuOgNqrsL1P2Cpj7MDuHgV9qqnxbEaxbHeMLHrzk8zVJx4yZTzkEUguBX6PPCOss3uSbzntZt7wk9B5ZtVSdwUd4eOe9hkuKEt78dN9u3KAyoJ3oonnt8sl2Gyvq_X2et6PW5GpHGcnM4Zy16iJIjzffTn5Xp1Im1vp7JSYw5J_eDtJE98-6mgYeOIF0oX8m0-BJF1H0u1j0rIt01t3y-DrGR9EyyDtArc9mMrllrR7SyuuYz0T106yjyxd8mrJVJqWDavo-1kpRTLUGKrQjusTfcIDbbkTWQaW13NSUiZkZsEzJuP1-GBbWuebj1GlZLUaijePOvni3lS8DO9SNqBtF4AUK4KwhuqYvJCrCBkZ5JmktEoPsAq6RJBPlFiFgS1VvXPZ2Xb4KjlnyxdM98NQTdfZcs_1kTo68YDZF-1CwTofXdBJtwXH-R_gGMq0Z74Imh7QwAns5osgp96Tm3qXuvYUF9R0ndXtPrd3DGIOgapJ7XYQZtIlEt9DXkEtwTqFiSvq3USYmQSBHDDaCP-Usfik-ILKgQ8UNWQ2lund8tQeO3yqj-hH2ObI7vRANkH4Q1i-25tVAYjEgmV20tqrRSxZZJfiOy6FxzEhmgxw3xLhkAiSmFDT_2Z9PUZ7HXQDguBcsBqguvvjQW56-ud2S9CEk9cfos3zFcuLr2llHFN6pOW5tgkFxY8nHydcJnNkrSvh_DUvqPcuV2vFi7F5kzRoDDNJ2CkUqCEbyJ0C5AnFvTQm9LgndlJjpvdxyIhIRjPzWjhcLRkiifKpwywQID3WQ0mUOieSypKkUflOPY5Ah7_Gvr38uX6F8kqLQAUd7mDnDrvaVKzTNIuMLaEoJLp5Rs\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields-2",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Obtain a URL to Upload the Content",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Guaranteed in Response?"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Collection for the response data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "collection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "uploadSignUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to upload publisher list file",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Publisher List File",
+      "Anchor": "upload-the-publisher-list-file",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Upload the Publisher List File"
+      ],
+      "Text": "Using the uploadSignUrl from the above request, you can upload the block/allow list file stored in your local computer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Publisher List File",
+      "Anchor": "upload-the-publisher-list-file",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Upload the Publisher List File"
+      ],
+      "Text": "Find the full file path and name for your block/allow list file.\nUse the following API call to upload the block/allow list csv file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload the Publisher List File",
+      "Anchor": "upload-the-publisher-list-file",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Upload the Publisher List File"
+      ],
+      "Text": "curl -i {uploadSignUrl} --data-binary @{csv file name}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Request"
+      ],
+      "Text": "curl -i \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFVRiTireeDqQAAAWcaXRMl2JPZd5aIs9gs70cBHxBxCa_Hg6wMRJEf7BuAtu_Xd_JFxrlqay3cGNxqif64gXA4NvTrDhCluxjDaaKkUG066nGIJm-wglQS2a8JzMdwrvJ7el5ATTjbONRv0xVT-dXF0zbej5RblSnuRmpk66Ar8s_dA9EPOhkX0rQiPnUZ967iFutSX0aBINoXE_fOLx1LHKZtx6AfpYZuQ7CnMxDBS-UDnRrJma--O2-vx1MfGN4GRXikFR37EhRFc4z-OiOPSw2z3M6Qv8XfaBrx7J8bS2fVhy2tS4OhfR5jusDm02e_Byhipn_Zm-iiGF9GUkT3CZXOplI83NLr0Tmy6Lb1M4tegVZGIuAe4EBrYCPEhParwe16GQ0J6TDR430M0HRh0KSOJhNQFwI_jQCRFulK0VNXtIXzPGcL90B3SPrk1xzeT5XXKU264BENYBcqJhAJ38rUc4Z75xaJhBR29QMGWYp4QAX9f15W_F7AKdKRUrZ1HkCH1ssCLiOaffSNt0WpOOqfdDR_tUsXGhbqNszEPpLPhHyOT9G-9iEWDvnfWO6KCgjNiZMX46vBl_Ypm53ScwQBoc9UOeGd_dmqLIzMrUSF69ciQW0U91yqficNcWCMZpexEyIiK1PkfvQn4kI0ig2b3YSKswNJuLbezExB2WKh2U9Yamqqf3t46-XP3YBLnmBS_hBLQJOJIbyDAqpYuTxOonHqOOmjHZWkwmso4mQls8Kxh5eMLIyHyMbIScWwHb7T1ZUaBR91P-SDJww3bXalThbDU1RXThKPtgKwPlUqhSrVtGQx0ccsbfzlRtPkSPnnPx6V9RIRLsrFLe_NcELEBXWjDv0VNEkjriExmxKpSPwp5P8DZXlmEg8KN0CTmFUQi4NETUcZ1LkF9PeT5WAKvhdR_XxmOJ7qnrm3rw\u0022 \n-H \u0027Authorization: Bearer \u003CBEARER_TOKEN\u003E\u0027 \n--data-binary @BlockList.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response"
+      ],
+      "Text": "From the API response, find the value of the location header. This value is used for the media URN while creating the publisher restrictions in the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response"
+      ],
+      "Text": "location: /AAUQBADxAAQAAQAAAAAAABB7AAAAJDBjOTY0ODk5LTMyMTMsfdsBkNS1iMjkyLThmNDJlYjVkNmI4ZQ.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create the Publisher Restriction",
+      "Anchor": "create-the-publisher-restriction",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction"
+      ],
+      "Text": "Now that the Publisher list file has been uploaded, you can create an adPublisherRestriction to be used in an Ad Campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create the Publisher Restriction",
+      "Anchor": "create-the-publisher-restriction",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-2",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dataId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media URN of the location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccount URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File type BLOCKLIST/ALLOWLIST, BLOCKLIST is default",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Header",
+      "Anchor": "request-header-2",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Request Header"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Content-Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content type for the request, must be: application/json",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Allowlist",
+      "Anchor": "sample-request-for-allowlist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Allowlist"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Allowlist",
+      "Anchor": "sample-request-for-allowlist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Allowlist"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Allowlist",
+      "Anchor": "sample-request-for-allowlist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Allowlist"
+      ],
+      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022Allowlist.csv\u0022,\n  \u0022type\u0022: \u0022ALLOWLIST\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Allowlist",
+      "Anchor": "sample-request-for-allowlist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Allowlist"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022Allowlist.csv\u0022,\n  \u0022type\u0022: \u0022ALLOWLIST\u0022\n\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Blocklist",
+      "Anchor": "sample-request-for-blocklist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Blocklist"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Blocklist",
+      "Anchor": "sample-request-for-blocklist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Blocklist"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adPublisherRestrictions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Blocklist",
+      "Anchor": "sample-request-for-blocklist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Blocklist"
+      ],
+      "Text": "{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Blocklist",
+      "Anchor": "sample-request-for-blocklist",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Request for Blocklist"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adPublisherRestrictions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n  \u0022dataId\u0022: \u0022urn:li:media:/AAUQAQCwAAQAAQAAAAAAAADPAAAAJDIxYTllNzllLTQ0Y2EtNDgdfgfd4i05NTcyLTEwYWVmYTgxNWY4Yg.csv\u0022,\n  \u0022entity\u0022: \u0022urn:li:sponsoredAccount:518306371\u0022,\n  \u0022fileName\u0022: \u0022BlockList.csv\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-9",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Response"
+      ],
+      "Text": "The ID of the newly created record can be parsed out of the location header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-9",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Create the Publisher Restriction",
+        "Sample Response"
+      ],
+      "Text": "location: /adPublisherRestrictions/28424",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Publisher Restriction at Ad Account Level",
+      "Anchor": "apply-publisher-restriction-at-ad-account-level",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level"
+      ],
+      "Text": "The /adAccountTrustPreferences API is used to manage account-level brand safety controls, specifically allowlists and blocklists for the LinkedIn Audience Network. This API enables you to view and update publisher restrictions (web domains/app store URLs) at the ad account level.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Apply Publisher Restriction at Ad Account Level",
+      "Anchor": "apply-publisher-restriction-at-ad-account-level",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level"
+      ],
+      "Text": "https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Publisher Restriction at Ad Account Level",
+      "Anchor": "apply-publisher-restriction-at-ad-account-level",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level"
+      ],
+      "Text": "Create or update the allowlist/blocklist for an ad account. This endpoint performs an upsert operation, which means if trust preferences don\u0027t exist for the account, they will be created. If they already exist, they will be updated with the new values. You can specify publisher restriction files for both include lists (allowlists) and exclude lists (blocklists).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "offsiteAccountPreferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OffsiteAccountPreferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account-level offsite preferences configuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteAccountPreferences.publisherRestrictionFiles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PublisherRestrictionFiles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Publisher restriction files configuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteAccountPreferences.publisherRestrictionFiles.include",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdPublisherFileUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of publisher file URNs to allow (allowlist). Only ads on these domains/apps will be served.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "offsiteAccountPreferences.publisherRestrictionFiles.exclude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdPublisherFileUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of publisher file URNs to block (blocklist). Ads will not be served on these domains/apps.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Header",
+      "Anchor": "request-header-3",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Request Header"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Content-Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content type for the request, must be: application/json",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022offsiteAccountPreferences\u0022: {\n    \u0022publisherRestrictionFiles\u0022: {\n      \u0022include\u0022: [\n        \u0022urn:li:adPublisherFile:13\u0022\n      ],\n      \u0022exclude\u0022: [\n        \u0022urn:li:adPublisherFile:12\u0022\n      ]\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Apply Publisher Restriction at Ad Account Level",
+        "Sample Request"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adAccountTrustPreferences/{sponsoredAccountId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022offsiteAccountPreferences\u0022: {\n        \u0022publisherRestrictionFiles\u0022: {\n            \u0022include\u0022: [\n                \u0022urn:li:adPublisherFile:13\u0022\n            ],\n            \u0022exclude\u0022: [\n                \u0022urn:li:adPublisherFile:12\u0022\n            ]\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Creating Domain Publisher Lists",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

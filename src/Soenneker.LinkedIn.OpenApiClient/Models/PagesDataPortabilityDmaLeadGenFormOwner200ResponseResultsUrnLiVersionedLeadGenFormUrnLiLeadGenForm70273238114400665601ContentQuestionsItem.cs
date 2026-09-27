@@ -39,7 +39,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestionDetails QuestionDetails { get; set; }
 #endif
         /// <summary>The questionId property</summary>
-        public int? QuestionId { get; set; }
+        public long? QuestionId { get; set; }
         /// <summary>The responseEditable property</summary>
         public bool? ResponseEditable { get; set; }
         /// <summary>The responseRequired property</summary>
@@ -72,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "question", n => { Question = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestion>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestion.CreateFromDiscriminatorValue); } },
                 { "questionDetails", n => { QuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestionDetails.CreateFromDiscriminatorValue); } },
-                { "questionId", n => { QuestionId = n.GetIntValue(); } },
+                { "questionId", n => { QuestionId = n.GetLongValue(); } },
                 { "responseEditable", n => { ResponseEditable = n.GetBoolValue(); } },
                 { "responseRequired", n => { ResponseRequired = n.GetBoolValue(); } },
             };
@@ -87,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestion>("question", Question);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentQuestionsItemQuestionDetails>("questionDetails", QuestionDetails);
-            writer.WriteIntValue("questionId", QuestionId);
+            writer.WriteLongValue("questionId", QuestionId);
             writer.WriteBoolValue("responseEditable", ResponseEditable);
             writer.WriteBoolValue("responseRequired", ResponseRequired);
             writer.WriteAdditionalData(AdditionalData);

@@ -1,0 +1,188 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+  "Title": "Frequently Asked Questions",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [],
+      "Text": "Here is a list of frequently asked questions from developers integrating with Display Services.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why isn\u0027t the iframe working properly in my mobile application?",
+      "Anchor": "why-isnt-the-iframe-working-properly-in-my-mobile-application",
+      "SectionPath": [
+        "Why isn\u0027t the iframe working properly in my mobile application?"
+      ],
+      "Text": "Mobile applications are not officially supported at this time. If you\u0027d like to integrate the Sales Navigator iframe into your mobile application or website, please contact your LinkedIn representative and let them know.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why are the iframe / Sign In Button not rendered?",
+      "Anchor": "why-are-the-iframe--sign-in-button-not-rendered",
+      "SectionPath": [
+        "Why are the iframe / Sign In Button not rendered?"
+      ],
+      "Text": "Make sure you have the domain you are serving the iframe from listed as a valid JavaScript SDK domain in the settings for your application. You also need to have https://www.linkedin.com added as one of your valid JavaScript SDK domains, as described in the Display Services Getting Started Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For crmRecordID and crmOrgId, what should I pass in?",
+      "Anchor": "for-crmrecordid-and-crmorgid-what-should-i-pass-in",
+      "SectionPath": [
+        "For crmRecordID and crmOrgId, what should I pass in?"
+      ],
+      "Text": "LinkedIn uses the crmRecordId to save mapping to a LinkedIn entity (member or company). This improves the performance of the iframe, as we don\u0027t have to search for a member/company each time a user navigates to a contact/account page from within the external application. There will also be instances where the search result LinkedIn provides will be incorrect or a confident match is not presented. In these instances, the user can manually search for the correct member/company and create the association to the CRM entity \u2014 this member/company mapping to the crmRecordId is persistent on the LinkedIn side. We have the ability to map multiple crmRecordsIds to the same member/company, so having multiple records pointing to the same LinkedIn entities is fine.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The JavaScript SDK isn\u0027t suitable for my application. Is there a different way to embed the Sales Navigator iframe?",
+      "Anchor": "the-javascript-sdk-isnt-suitable-for-my-application-is-there-a-different-way-to-embed-the-sales-navigator-iframe",
+      "SectionPath": [
+        "The JavaScript SDK isn\u0027t suitable for my application. Is there a different way to embed the Sales Navigator iframe?"
+      ],
+      "Text": "If the JavaScript SDK isn\u0027t working for your application, you can embed as an iframe directly in HTML. See our Embedding the Iframe guide for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The iframe isn\u0027t loading",
+      "Anchor": "the-iframe-isnt-loading",
+      "SectionPath": [
+        "The iframe isn\u0027t loading"
+      ],
+      "Text": "This can happen when the security settings of the browser are very restrictive. Because an iframe is being loaded from linkedin.com, and the domain of the application will not be linkedin.com, third-party cookies/JavaScript must be enabled within the browser to load the iframe.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The iframe isn\u0027t loading",
+      "Anchor": "the-iframe-isnt-loading",
+      "SectionPath": [
+        "The iframe isn\u0027t loading"
+      ],
+      "Text": "In Chrome, if the browser is set to block third-party cookies, the setting will either need to be disabled or https://www.linkedin.com will need to be added as an allowed domain. These settings appear in Chrome under Settings \u003E Content \u003E Cookies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The iframe isn\u0027t loading",
+      "Anchor": "the-iframe-isnt-loading",
+      "SectionPath": [
+        "The iframe isn\u0027t loading"
+      ],
+      "Text": "In Internet Explorer, https://*.linkedin.com should be added as a trusted site.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I allow users to switch the LinkedIn account associated used in the Sales Access Tokens integration?",
+      "Anchor": "how-can-i-allow-users-to-switch-the-linkedin-account-associated-used-in-the-sales-access-tokens-integration",
+      "SectionPath": [
+        "How can I allow users to switch the LinkedIn account associated used in the Sales Access Tokens integration?"
+      ],
+      "Text": "In order to allow users to successfully switch LinkedIn accounts authenticated to your integration, you can direct users to switch their account on www.linkedin.com and then request authorization for your integration. You will also need to provide a mechanism to \u0022logout\u0022 or \u0022unlink\u0022 existing accounts within your integration. Read more in the Logout from authentication documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported browsers?",
+      "Anchor": "what-are-the-supported-browsers",
+      "SectionPath": [
+        "What are the supported browsers?"
+      ],
+      "Text": "We support major modern browsers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported browsers?",
+      "Anchor": "what-are-the-supported-browsers",
+      "SectionPath": [
+        "What are the supported browsers?"
+      ],
+      "Text": "Chrome (current and last major version)\nFirefox (current and last major version)\nSafari (current and last major version)\nMicrosoft Edge (current and last major version)\nIE 11",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported browsers?",
+      "Anchor": "what-are-the-supported-browsers",
+      "SectionPath": [
+        "What are the supported browsers?"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported browsers?",
+      "Anchor": "what-are-the-supported-browsers",
+      "SectionPath": [
+        "What are the supported browsers?"
+      ],
+      "Text": "Non-browsers applications that embed WebView or similar web controls to render the iframe may not be fully supported. If your use case require the iframe to work in these scenarios, please contact your LinkedIn representatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is it possible to be loaded in a sandboxed iframe?",
+      "Anchor": "is-it-possible-to-be-loaded-in-a-sandboxed-iframe",
+      "SectionPath": [
+        "Is it possible to be loaded in a sandboxed iframe?"
+      ],
+      "Text": "Yes, but some flags need to be put in sandbox attribute:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is it possible to be loaded in a sandboxed iframe?",
+      "Anchor": "is-it-possible-to-be-loaded-in-a-sandboxed-iframe",
+      "SectionPath": [
+        "Is it possible to be loaded in a sandboxed iframe?"
+      ],
+      "Text": "allow-scripts: This allows the display iframe to run Javascript in its own sandbox\nallow-popups: This allows the display iframe to pop up login window\nallow-forms: This allows the display iframe to submit login form\nallow-same-origin: This allows the display iframe to access linkedin.com\u0027s cookies, without cookies access user won\u0027t be able to login",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-usecase",
+  "Title": "Media Planning API Use Cases",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Media Planning API Use Cases",
+      "Anchor": "media-planning-api-use-cases",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Planning API Use Cases",
+      "Anchor": "media-planning-api-use-cases",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Planning API Use Cases",
+      "Anchor": "media-planning-api-use-cases",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Media Planning API enables marketers to understand investment delivery against valuable audiences and objectives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Marketers can forecast the reach, impressions, and potential leads of their campaigns before committing to a budget. This allows for more informed decision-making and optimized budget allocation. The API provides detailed insights into how different audience segments respond to various marketing strategies, helping marketers to fine-tune their campaigns for maximum effectiveness. Additionally, the Media Planning API supports cross-channel planning, enabling marketers to integrate LinkedIn\u0027s data with other advertising platforms for a comprehensive view of their marketing efforts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Marketers need:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "To understand target audience reach across channels to accurately forecast business outcomes.\nRight data to forecast against the specific buying groups and lower-funnel actions vital to success in B2B and/or high-consideration B2C.\nThe ability to test different budget scenarios to optimize their media plans against desired outcomes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Media Planning API Permissions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Your developer application has access to LinkedIn Advertising APIs. If you\u0027re new to our APIs, get started by applying for Advertising API access.\nYour developer application needs to be provisioned with the Media Planning API product.\nYou have access to at least one ad account with one of the below roles:\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example User Process Flow - Media Plan for Brand Planning",
+      "Anchor": "example-user-process-flow---media-plan-for-brand-planning",
+      "SectionPath": [
+        "Example User Process Flow - Media Plan for Brand Planning"
+      ],
+      "Text": "Media Planner and/or buyer received a new campaign brief. Media Planner logs into planner tool built with LinkedIn APIs and navigates to the LinkedIn Media Planning module to begin validating the campaign brief. Planner inputs include age, gender, location criteria, and so on. The module produces a reach curve that planner is able to estimate the reach and frequency of multiple budget levels to optimize for highest ROI on LinkedIn. From there, planner can allocate budget to the platform and activate their holistic marketing plan.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1: Brand Planning/High-level Channel Planning",
+      "Anchor": "use-case-1-brand-planninghigh-level-channel-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning"
+      ],
+      "Text": "Plan based on key upper-funnel metrics to assist clients in managing their category and increasing their brand equity. Use LinkedIn Data to compare reach across other investment channels (e.g., social, video) accurately. Required inputs: high-level budget, audience (e.g., sourced from LinkedIn Audience API), or geo location, demographic data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1: Brand Planning/High-level Channel Planning",
+      "Anchor": "use-case-1-brand-planninghigh-level-channel-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning"
+      ],
+      "Text": "Flexibility to choose which inventory you want to forecast against:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1: Brand Planning/High-level Channel Planning",
+      "Anchor": "use-case-1-brand-planninghigh-level-channel-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning"
+      ],
+      "Text": "LinkedIn feed only \u201CSocial Media\u201D.\nLinkedIn LAN \u201CDisplay\u201D.\nLinkedIn CTV \u201CTV / Video (online)\u201D.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Perform 3L OAuth Flow",
+      "Anchor": "step-1-perform-3l-oauth-flow",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 1: Perform 3L OAuth Flow"
+      ],
+      "Text": "If there\u0027s no valid existing member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like r_ads which will be required to fetch authenticated user\u0027s ad accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Perform 3L OAuth Flow",
+      "Anchor": "step-1-perform-3l-oauth-flow",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 1: Perform 3L OAuth Flow"
+      ],
+      "Text": "For more information on generating 3L OAuth token, see 3L OAuth Token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve all LinkedIn Ad Accounts",
+      "Anchor": "step-2-retrieve-all-linkedin-ad-accounts",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 2: Retrieve all LinkedIn Ad Accounts"
+      ],
+      "Text": "Retrieve all LinkedIn Ad Accounts for the end user to choose one to further use with LinkedIn Media Planning APIs. The selected ad account should be then passed to subsequent API requests metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve all LinkedIn Ad Accounts",
+      "Anchor": "step-2-retrieve-all-linkedin-ad-accounts",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 2: Retrieve all LinkedIn Ad Accounts"
+      ],
+      "Text": "For more information on retrieving ad accounts, see Retrieve Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads for Brand Planning",
+      "Anchor": "step-3-forecast-reachimpressionleads-for-brand-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 3: Forecast Reach/Impression/Leads for Brand Planning"
+      ],
+      "Text": "Use the ad account from the previous step to forecast reach, impressions, and leads. Age, gender, location, and campaign objectives (BRAND_AWARENESS, VIDEO_VIEW or LEAD_GENERATION) will guide high-level planning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads for Brand Planning",
+      "Anchor": "step-3-forecast-reachimpressionleads-for-brand-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 3: Forecast Reach/Impression/Leads for Brand Planning"
+      ],
+      "Text": "For more information on targeting capabilities, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads for Brand Planning",
+      "Anchor": "step-3-forecast-reachimpressionleads-for-brand-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 3: Forecast Reach/Impression/Leads for Brand Planning"
+      ],
+      "Text": "targetingCriteria object\nDescriptive examples for targetingCriteria object\nList of supported adTargetingFacets in targetingCriteria object\nAd Targeting Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads for Brand Planning",
+      "Anchor": "step-3-forecast-reachimpressionleads-for-brand-planning",
+      "SectionPath": [
+        "Use Case 1: Brand Planning/High-level Channel Planning",
+        "Step 3: Forecast Reach/Impression/Leads for Brand Planning"
+      ],
+      "Text": "For more information on forecasting with Media Planning API, see documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+      "Anchor": "use-case-2-full-funnel-b2b-professional-audience-planning",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning"
+      ],
+      "Text": "Use LinkedIn Data to forecast any Professional audience accurately. This planning takes input of LinkedIn Professional audiences like IT Decision Makers, Campaign Objectives, Ad Formats, etc., and helps clients plan full-funnel metrics (reach, impressions, leads, etc.) for every stage of the marketing funnel by defining B2B audiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Perform the 3L OAuth Flow",
+      "Anchor": "step-1-perform-the-3l-oauth-flow",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 1: Perform the 3L OAuth Flow"
+      ],
+      "Text": "If there\u0027s no valid existing member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like r_ads which will be required to fetch authenticated user\u0027s ad accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Perform the 3L OAuth Flow",
+      "Anchor": "step-1-perform-the-3l-oauth-flow",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 1: Perform the 3L OAuth Flow"
+      ],
+      "Text": "For more information on generating 3L OAuth token, see 3L OAuth Token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve all the LinkedIn Ad Accounts",
+      "Anchor": "step-2-retrieve-all-the-linkedin-ad-accounts",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 2: Retrieve all the LinkedIn Ad Accounts"
+      ],
+      "Text": "Retrieve all LinkedIn Ad Accounts for the end user to choose one to further use with LinkedIn Media Planning APIs. The selected ad account should be then passed to subsequent API requests metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve all the LinkedIn Ad Accounts",
+      "Anchor": "step-2-retrieve-all-the-linkedin-ad-accounts",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 2: Retrieve all the LinkedIn Ad Accounts"
+      ],
+      "Text": "For more information on retrieving ad accounts, see Retrieve Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads",
+      "Anchor": "step-3-forecast-reachimpressionleads",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 3: Forecast Reach/Impression/Leads"
+      ],
+      "Text": "Use the ad account from the previous step to forecast reach, impressions, and leads. For B2B professional audience forecasting use LinkedIn\u2019s rich B2B targeting facets like interests, job title, seniority, job function, industries, firmographic facets etc., in addition to age, gender, location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads",
+      "Anchor": "step-3-forecast-reachimpressionleads",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 3: Forecast Reach/Impression/Leads"
+      ],
+      "Text": "For more information on targeting capabilities, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads",
+      "Anchor": "step-3-forecast-reachimpressionleads",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 3: Forecast Reach/Impression/Leads"
+      ],
+      "Text": "targetingCriteria object\nDescriptive examples for targetingCriteria object\nList of supported adTargetingFacets in targetingCriteria object\nAd Targeting Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Forecast Reach/Impression/Leads",
+      "Anchor": "step-3-forecast-reachimpressionleads",
+      "SectionPath": [
+        "Use Case 2: Full-Funnel/ B2B Professional Audience Planning",
+        "Step 3: Forecast Reach/Impression/Leads"
+      ],
+      "Text": "For information on audience segment size, see documentation.\nFor more information on forecasting with Media Planning API, see documentation.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

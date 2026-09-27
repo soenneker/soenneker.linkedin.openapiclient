@@ -1,0 +1,90 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+  "Title": "Middleware Customer Configuration",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "For Partners (for example: ATS)",
+      "Anchor": "for-partners-for-example-ats",
+      "SectionPath": [
+        "For Partners (for example: ATS)"
+      ],
+      "Text": "If you are a LinkedIn Partner (e.g. Applicant Tracking System) implementing Apply with LinkedIn for multiple customers, please follow below steps to complete Apply with LinkedIn Integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Partners (for example: ATS)",
+      "Anchor": "for-partners-for-example-ats",
+      "SectionPath": [
+        "For Partners (for example: ATS)"
+      ],
+      "Text": "Configure Customer Application and enable ATS Integrations for Apply with LinkedIn. Configure Customer Application and enable ATS Integrations document describes how to implement LinkedIn ATS Integration plugin that allows customers to set up Apply with LinkedIn.\n\nOnce you have completed configuring customer applications and enabling Apply with LinkedIn integrations, you will need to store the apiKey(client id for the customer application created by Provisioning API) and integrationContext(Organization (company) identifier retrieved via Customer Configuration Plugin) for each customer as you will be using them to power the Apply with LinkedIn plugin.\n\n\nIntegrate with Apply with LinkedIn Plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers (i.e. proprietary ATS or career page solution)",
+      "Anchor": "for-customers-ie-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "For Customers (i.e. proprietary ATS or career page solution)"
+      ],
+      "Text": "If you are implementing Apply with LinkedIn for your company only and have a signed agreement (see Note 1 below), please follow the below steps to complete Apply with LinkedIn Integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers (i.e. proprietary ATS or career page solution)",
+      "Anchor": "for-customers-ie-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "For Customers (i.e. proprietary ATS or career page solution)"
+      ],
+      "Text": "Please send the API key (Client ID) for the application you created to your dedicated LinkedIn Business Development representative for it to be allowlisted. In return, LinkedIn will send you back an integrationContext that will be used in the integration with Apply with LinkedIn Plugin.\nIntegrate with Apply with LinkedIn Plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers (i.e. proprietary ATS or career page solution)",
+      "Anchor": "for-customers-ie-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "For Customers (i.e. proprietary ATS or career page solution)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers (i.e. proprietary ATS or career page solution)",
+      "Anchor": "for-customers-ie-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "For Customers (i.e. proprietary ATS or career page solution)"
+      ],
+      "Text": "If you are not yet a LinkedIn Talent Solutions Partner, please complete the LinkedIn Talent Solutions Partner Request Form",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

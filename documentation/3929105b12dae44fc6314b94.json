@@ -1,0 +1,692 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+  "Title": "Text Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Text Ads API",
+      "Anchor": "text-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Text Ads API",
+      "Anchor": "text-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Text Ads API",
+      "Anchor": "text-ads-api",
+      "SectionPath": [],
+      "Text": "Create and manage Text Ads with the external Creatives API. Text ads include a headline, brief text, and an image. Place them on the right rail of various LinkedIn desktop pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "For creation of Text ads, the following requirements must be met. See Text Ads Specifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s Ad Accounts. To sponsor a image, the authenticated member must meet both of the following conditions: Be an ADMINISTRATOR of a Company Page or a DIRECT_SPONSORED_CONTENT_POSTER with access to Campaign Manager. Have one of the following Ad Account roles: ACCOUNT_BILLING_ADMIN,ACCOUNT_MANAGER, CAMPAIGN_MANAGER, CREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "Be an ADMINISTRATOR of a Company Page or a DIRECT_SPONSORED_CONTENT_POSTER with access to Campaign Manager.",
+              "Have one of the following Ad Account roles: ACCOUNT_BILLING_ADMIN,ACCOUNT_MANAGER, CAMPAIGN_MANAGER, CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Starting 202410, a new name field is introduced in Creative schema. Going forward, this new name field is the preferred approach to set and get the creative\u0027s name, consistently across all ad formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Schema for entire creative is similar to Creatives, only the content field now supports a Text Ad content for the creation and management of Text Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Schema for Text Ad Content is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description that provides more information about the ad. Use up to 75 characters, including spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The main message seen by the target audience on the ad. Use up to 25 characters, including spaces",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image uploaded by the advertiser, size is 100 x 100 pixels and \u003C= 2MB, format is either a JPG or PNG file. If empty, there\u0027s none",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL where the member should be redirected to, on clicking the text ad.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Text Ad",
+      "Anchor": "create-a-text-ad",
+      "SectionPath": [
+        "Create a Text Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Text Ad",
+      "Anchor": "create-a-text-ad",
+      "SectionPath": [
+        "Create a Text Ad"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Text Ad",
+      "Anchor": "create-a-text-ad",
+      "SectionPath": [
+        "Create a Text Ad"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n      \u0022textAd\u0022: {\n        \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n        \u0022headline\u0022: \u0022prod test headline\u0022,\n        \u0022description\u0022: \u0022prod test description\u0022,\n        \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:191989474\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Text Ad",
+      "Anchor": "create-a-text-ad",
+      "SectionPath": [
+        "Create a Text Ad"
+      ],
+      "Text": "curl --location POST -v \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022content\u0022: {\n      \u0022textAd\u0022: {\n        \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n        \u0022headline\u0022: \u0022prod test headline\u0022,\n        \u0022description\u0022: \u0022prod test description\u0022,\n        \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:191989474\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Text Ad",
+      "Anchor": "create-a-text-ad",
+      "SectionPath": [
+        "Create a Text Ad"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:164380864",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Text Ad",
+      "Anchor": "get-a-text-ad",
+      "SectionPath": [
+        "Get a Text Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Text Ad",
+      "Anchor": "get-a-text-ad",
+      "SectionPath": [
+        "Get a Text Ad"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives/{sponsoredCreativeUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Text Ad",
+      "Anchor": "get-a-text-ad",
+      "SectionPath": [
+        "Get a Text Ad"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreativeUrn}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Text Ad",
+      "Anchor": "get-a-text-ad",
+      "SectionPath": [
+        "Get a Text Ad"
+      ],
+      "Text": "Replace the sponsoredCreativeUrn parameter with an URL encoded valid URN which will look like URN%3Ali%3AsponsoredCreative%3A123456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Text Ad",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022servingHoldReasons\u0022: [\n       \u0022UNDER_REVIEW\u0022,\n       \u0022ACCOUNT_SERVING_HOLD\u0022\n   ],\n   \u0022lastModifiedAt\u0022: 1650828926000,\n   \u0022lastModifiedBy\u0022: \u0022urn:li:system:0\u0022,\n   \u0022content\u0022: {\n       \u0022textAd\u0022: {\n           \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n           \u0022description\u0022: \u0022prod test description\u0022,\n           \u0022headline\u0022: \u0022prod test headline\u0022,\n           \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022\n       }\n   },\n   \u0022createdAt\u0022: 1650828923000,\n   \u0022isTest\u0022: false,\n   \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n   \u0022review\u0022: {\n       \u0022status\u0022: \u0022NEEDS_REVIEW\u0022\n   },\n   \u0022isServing\u0022: false,\n   \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:191989474\u0022,\n   \u0022id\u0022: \u0022urn:li:sponsoredCreative:170811644\u0022,\n   \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n   \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Text Ad",
+      "Anchor": "update-a-text-ad",
+      "SectionPath": [
+        "Update a Text Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Text Ad",
+      "Anchor": "update-a-text-ad",
+      "SectionPath": [
+        "Update a Text Ad"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives/{sponsoredCreativeUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Text Ad",
+      "Anchor": "update-a-text-ad",
+      "SectionPath": [
+        "Update a Text Ad"
+      ],
+      "Text": "{\n\u0022patch\u0022: {\n       \u0022$set\u0022: {\n           \u0022content\u0022: {\n             \u0022textAd\u0022: {\n                 \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n                 \u0022headline\u0022: \u0022new prod test headline\u0022,\n                 \u0022description\u0022: \u0022new prod test description\u0022\n              }\n         }\n       }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Text Ad",
+      "Anchor": "update-a-text-ad",
+      "SectionPath": [
+        "Update a Text Ad"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreativeUrn}\u0027 \\\n-H \u0027X-RestLi-Method: partial_update\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n\u0022patch\u0022: {\n       \u0022$set\u0022: {\n           \u0022content\u0022: {\n             \u0022textAd\u0022: {\n                 \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n                 \u0022headline\u0022: \u0022new prod test headline\u0022,\n                 \u0022description\u0022: \u0022new prod test description\u0022,\n                 \u0022image\u0022: \u0022urn:li:image:abc\u0022\n              }\n         }\n       }\n   }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Text Ad",
+      "Anchor": "update-a-text-ad",
+      "SectionPath": [
+        "Update a Text Ad"
+      ],
+      "Text": "A successful response returns a 204 No Content. Replace the sponsoredCreativeUrn parameter with an URL encoded valid URN which will look like URN%3Ali%3AsponsoredCreative%3A123456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Text Ad",
+      "Anchor": "delete-a-text-ad",
+      "SectionPath": [
+        "Delete a Text Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Text Ad",
+      "Anchor": "delete-a-text-ad",
+      "SectionPath": [
+        "Delete a Text Ad"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/creatives/{sponsoredCreativeUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Text Ad",
+      "Anchor": "delete-a-text-ad",
+      "SectionPath": [
+        "Delete a Text Ad"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreativeUrn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Text Ad",
+      "Anchor": "delete-a-text-ad",
+      "SectionPath": [
+        "Delete a Text Ad"
+      ],
+      "Text": "A successful response returns a 204 No Content. Replace the sponsoredCreativeUrn parameter with an URL encoded valid URN which will look like URN%3Ali%3AsponsoredCreative%3A123456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Text Ads",
+      "Anchor": "batch-create-text-ads",
+      "SectionPath": [
+        "Batch Create Text Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Text Ads",
+      "Anchor": "batch-create-text-ads",
+      "SectionPath": [
+        "Batch Create Text Ads"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Text Ads",
+      "Anchor": "batch-create-text-ads",
+      "SectionPath": [
+        "Batch Create Text Ads"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n   {\n       \u0022content\u0022: {\n         \u0022textAd\u0022: {\n           \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n           \u0022headline\u0022: \u0022HL1\u0022,\n           \u0022description\u0022: \u0022DP1\u0022,\n           \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n         }\n       },\n       \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:192479594\u0022,\n       \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n   },\n   {\n       \u0022content\u0022: {\n         \u0022textAd\u0022: {\n           \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n           \u0022headline\u0022: \u0022HL2\u0022,\n           \u0022description\u0022: \u0022DP2\u0022,\n           \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n         }\n       },\n       \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:192479594\u0022,\n       \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n   }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Text Ads",
+      "Anchor": "batch-create-text-ads",
+      "SectionPath": [
+        "Batch Create Text Ads"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H\u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method:BATCH_CREATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022elements\u0022: [\n   {\n       \u0022content\u0022: {\n         \u0022textAd\u0022: {\n           \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n           \u0022headline\u0022: \u0022HL1\u0022,\n           \u0022description\u0022: \u0022DP1\u0022,\n           \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n         }\n       },\n       \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:192479594\u0022,\n       \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n   },\n   {\n       \u0022content\u0022: {\n         \u0022textAd\u0022: {\n           \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n           \u0022headline\u0022: \u0022HL2\u0022,\n           \u0022description\u0022: \u0022DP2\u0022,\n           \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n         }\n       },\n       \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:192479594\u0022,\n       \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n   }\n ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Create Text Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022: [\n       {\n           \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A170811974\u0022,\n           \u0022status\u0022: 201,\n           \u0022id\u0022: \u0022urn:li:sponsoredCreative:170811974\u0022\n       },\n       {\n           \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A170811984\u0022,\n           \u0022status\u0022: 201,\n           \u0022id\u0022: \u0022urn:li:sponsoredCreative:170811984\u0022\n       }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Text Ads",
+      "Anchor": "batch-get-text-ads",
+      "SectionPath": [
+        "Batch Get Text Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Text Ads",
+      "Anchor": "batch-get-text-ads",
+      "SectionPath": [
+        "Batch Get Text Ads"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreativeUrn1},{sponsoredCreativeUrn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Text Ads",
+      "Anchor": "batch-get-text-ads",
+      "SectionPath": [
+        "Batch Get Text Ads"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreativeUrn1},{sponsoredCreativeUrn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_GET\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Get Text Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:sponsoredCreative:170811974\u0022: {\n           \u0022servingHoldReasons\u0022: [\n               \u0022UNDER_REVIEW\u0022,\n               \u0022ACCOUNT_SERVING_HOLD\u0022\n           ],\n           \u0022lastModifiedAt\u0022: 1650830101000,\n           \u0022lastModifiedBy\u0022: \u0022urn:li:system:0\u0022,\n           \u0022content\u0022: {\n               \u0022textAd\u0022: {\n                   \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n                   \u0022description\u0022: \u0022DP1\u0022,\n                   \u0022headline\u0022: \u0022HL1\u0022,\n                   \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022\n               }\n           },\n           \u0022createdAt\u0022: 1650830099000,\n           \u0022isTest\u0022: false,\n           \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n           \u0022review\u0022: {\n               \u0022status\u0022: \u0022NEEDS_REVIEW\u0022\n           },\n           \u0022isServing\u0022: false,\n           \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:191989474\u0022,\n           \u0022id\u0022: \u0022urn:li:sponsoredCreative:170811974\u0022,\n           \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n       },\n       \u0022urn:li:sponsoredCreative:170811984\u0022: {\n           \u0022servingHoldReasons\u0022: [\n               \u0022UNDER_REVIEW\u0022,\n               \u0022ACCOUNT_SERVING_HOLD\u0022\n           ],\n           \u0022lastModifiedAt\u0022: 1650830101000,\n           \u0022lastModifiedBy\u0022: \u0022urn:li:system:0\u0022,\n           \u0022content\u0022: {\n               \u0022textAd\u0022: {\n                   \u0022image\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n                   \u0022description\u0022: \u0022DP2\u0022,\n                   \u0022headline\u0022: \u0022HL2\u0022,\n                   \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022\n               }\n           },\n           \u0022createdAt\u0022: 1650830099000,\n           \u0022isTest\u0022: false,\n           \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n           \u0022review\u0022: {\n               \u0022status\u0022: \u0022NEEDS_REVIEW\u0022\n           },\n           \u0022isServing\u0022: false,\n           \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:191989474\u0022,\n           \u0022id\u0022: \u0022urn:li:sponsoredCreative:170811984\u0022,\n           \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:sponsoredCreative:170811974\u0022: 200,\n       \u0022urn:li:sponsoredCreative:170811984\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Text Ads",
+      "Anchor": "batch-update-text-ads",
+      "SectionPath": [
+        "Batch Update Text Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Text Ads",
+      "Anchor": "batch-update-text-ads",
+      "SectionPath": [
+        "Batch Update Text Ads"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreativeUrn1},{sponsoredCreativeUrn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Text Ads",
+      "Anchor": "batch-update-text-ads",
+      "SectionPath": [
+        "Batch Update Text Ads"
+      ],
+      "Text": "{\n    \u0022entities\u0022: {\n        \u0022sponsoredCreativeUrn1\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022textAd\u0022: {\n                            \u0022headline\u0022: \u0022Updated RGW headline_1\u0022,\n                            \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n                            \u0022description\u0022: \u0022Updated RGW test description_1\u0022\n                        }\n                    }\n                }\n            }\n        },\n        \u0022sponsoredCreativeUrn2\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022textAd\u0022: {\n                            \u0022headline\u0022: \u0022Updated RGW headline_2\u0022,\n                            \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n                            \u0022description\u0022: \u0022Updated RGW test description_2\u0022\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Text Ads",
+      "Anchor": "batch-update-text-ads",
+      "SectionPath": [
+        "Batch Update Text Ads"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreativeUrn1},{sponsoredCreativeUrn2})\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022sponsoredCreativeUrn1\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022textAd\u0022: {\n                            \u0022headline\u0022: \u0022Updated RGW headline_1\u0022,\n                            \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n                            \u0022description\u0022: \u0022Updated RGW test description_1\u0022\n                        }\n                    }\n                }\n            }\n        },\n        \u0022sponsoredCreativeUrn2\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022textAd\u0022: {\n                            \u0022headline\u0022: \u0022Updated RGW headline_2\u0022,\n                            \u0022landingPage\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n                            \u0022description\u0022: \u0022Updated RGW test description_2\u0022\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Batch Update Text Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:sponsoredCreative:170811974\u0022: {\n           \u0022status\u0022: 204\n       },\n       \u0022urn:li:sponsoredCreative:170811984\u0022: {\n           \u0022status\u0022: 204\n       }\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Text Ads",
+      "Anchor": "batch-delete-text-ads",
+      "SectionPath": [
+        "Batch Delete Text Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Text Ads",
+      "Anchor": "batch-delete-text-ads",
+      "SectionPath": [
+        "Batch Delete Text Ads"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreativeUrn1},{sponsoredCreativeUrn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Text Ads",
+      "Anchor": "batch-delete-text-ads",
+      "SectionPath": [
+        "Batch Delete Text Ads"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreativeUrn1},{sponsoredCreativeUrn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Delete Text Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:170811974\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022urn:li:sponsoredCreative:170811984\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Batch Delete Text Ads",
+        "API Error Details"
+      ],
+      "Text": "General creative errors are included here - Creatives error.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

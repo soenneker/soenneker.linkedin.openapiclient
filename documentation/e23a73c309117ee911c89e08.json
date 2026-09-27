@@ -1,0 +1,692 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
+  "Title": "Sync Premium Jobs API",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Premium Jobs API",
+      "Anchor": "sync-premium-jobs-api",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Premium Job Posting API enables authorized third parties to post premium jobs directly to LinkedIn on the behalf of LinkedIn Recruiter customers. This is an asynchronous API and you will receive a task id which you can use to see the status of the job, verify whether it successfully posted to LinkedIn, or see if there was an error during creation and view any details about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Premium Jobs API",
+      "Anchor": "sync-premium-jobs-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Premium Jobs API",
+      "Anchor": "sync-premium-jobs-api",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "In order to publish a premium job, you need to construct the request body with all required fields. The API also provides many additional fields to post, which would be used for job recommendation. The more information your application can provide, the more candidates can be reached to satisfy customers\u2019 needs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "See this page for full field schema information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Authentication"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttling",
+      "Anchor": "throttling",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Throttling"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute",
+        "Records Per Day"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "60,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rest.li Concepts",
+      "Anchor": "restli-concepts",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Rest.li Concepts"
+      ],
+      "Text": "APIs below are built on the top of LinkedIn REST framework rest.li , which are similar as standard REST APIs, but provide more rich features, like field projections, extended request methods etc. It\u2019s highly recommended to read these technical details before development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Topic",
+      "Anchor": "topic",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Topic"
+      ],
+      "Text": "Publish premium jobs\nUpdate premium jobs\nClose premium jobs\nRenew premium jobs\nJob posting field schema\nCheck the job operation task status",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publish premium jobs",
+      "Anchor": "publish-premium-jobs",
+      "SectionPath": [
+        "Publish premium jobs"
+      ],
+      "Text": "Use the following endpoint to submit a task to have one premium job created asynchronously:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Publish premium jobs",
+      "Anchor": "publish-premium-jobs",
+      "SectionPath": [
+        "Publish premium jobs"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publish premium jobs",
+      "Anchor": "publish-premium-jobs",
+      "SectionPath": [
+        "Publish premium jobs"
+      ],
+      "Text": "::: moniker range=\u201C\u003E=li-lts-2025-01\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Publish premium jobs",
+      "Anchor": "publish-premium-jobs",
+      "SectionPath": [
+        "Publish premium jobs"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publish premium jobs",
+      "Anchor": "publish-premium-jobs",
+      "SectionPath": [
+        "Publish premium jobs"
+      ],
+      "Text": "::: moniker-end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publish premium jobs",
+      "Anchor": "publish-premium-jobs",
+      "SectionPath": [
+        "Publish premium jobs"
+      ],
+      "Text": "Note that the header for making the request is X-Restli-Method: batch_create . The maximum number of jobs which can be submitted during one batch call is 100. If you would like to submit more than 100 jobs at a time, please group your jobs in to collections of 100 and make multiple batch calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Header",
+      "Anchor": "sample-header",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Header",
+      "Anchor": "sample-header",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "::: moniker range=\u201C\u003E=li-lts-2025-01\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Header",
+      "Anchor": "sample-header",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: YYYYMM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Header",
+      "Anchor": "sample-header",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "::: moniker-end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Request",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC1\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC1\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id_01}\u0022,\n         \u0022integrationContext\u0022:\u0022urn:li:organization:{your_organization_id_01}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC1\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022\n      },\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC2\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC2\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EG1 TC2: Objective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id_02}\u0022,\n         \u0022industries\u0022:[\u0022urn:li:industry:4\u0022, \u0022urn:li:industry:99\u0022],\n         \u0022integrationContext\u0022:\u0022urn:li:organization:{your_organization_id_02}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC2\u0022,\n         \u0022countryCode\u0022: \u0022us\u0022,\n         \u0022postalCode\u0022: \u002294131\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n         \u0022posterEmail\u0022:\u0022stub@your_poster_email_address\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Request",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC1\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC1\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id_01}\u0022,\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC1\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022\n      },\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC2\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC2\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EG1 TC2: Objective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id_02}\u0022,\n         \u0022industries\u0022:[\u0022urn:li:industry:4\u0022, \u0022urn:li:industry:99\u0022],\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC2\u0022,\n         \u0022countryCode\u0022: \u0022us\u0022,\n         \u0022postalCode\u0022: \u002294131\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n         \u0022posterEmail\u0022:\u0022stub@your_poster_email_address\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the simpleJobPostingTaskIDs in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:03ff7ca6-dedf-4d92-b856-10669f8fe5ef\u0022,\n            \u0022status\u0022: 202\n        },\n        {\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:01c922a8-96cd-4c32-8cc1-40eea169fe01\u0022,\n            \u0022status\u0022: 202\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Response"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Publish premium jobs",
+        "Sample Response"
+      ],
+      "Text": "Task ids are valid for 30 days.\nPlease ensure that requests do not include duplicate updates to the same externalJobPostingId.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Premium Jobs",
+      "Anchor": "update-premium-jobs",
+      "SectionPath": [
+        "Update Premium Jobs"
+      ],
+      "Text": "In order to update premium job postings, you can just re-post jobs with any changed information. LinkedIn uses externalJobPostingId to identify whether a job should be created or updated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-1",
+      "SectionPath": [
+        "Update Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-1",
+      "SectionPath": [
+        "Update Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "::: moniker range=\u201C\u003E=li-lts-2025-01\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-1",
+      "SectionPath": [
+        "Update Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: YYYYMM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-1",
+      "SectionPath": [
+        "Update Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "::: moniker-end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Update Premium Jobs",
+        "Sample Request",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingSMM01\u0022,\n         \u0022title\u0022:\u0022Social Media Management\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022,\n         \u0022integrationContext\u0022:\u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingSMM01\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022jobPostingOperationType\u0022:\u0022UPDATE\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022posterEmail\u0022:\u0022recruiter_email@yourcompany.com\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Update Premium Jobs",
+        "Sample Request",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingSMM01\u0022,\n         \u0022title\u0022:\u0022Social Media Management\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022,\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingSMM01\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022jobPostingOperationType\u0022:\u0022UPDATE\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022posterEmail\u0022:\u0022recruiter_email@yourcompany.com\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Close Premium Jobs",
+      "Anchor": "close-premium-jobs",
+      "SectionPath": [
+        "Close Premium Jobs"
+      ],
+      "Text": "In order to close premium job postings, you can just re-post jobs but set jobPostingOperationType to CLOSE .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Close Premium Jobs",
+      "Anchor": "close-premium-jobs",
+      "SectionPath": [
+        "Close Premium Jobs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Close Premium Jobs",
+      "Anchor": "close-premium-jobs",
+      "SectionPath": [
+        "Close Premium Jobs"
+      ],
+      "Text": "Please close jobs previously posted by /jobs API using /jobs CLOSE call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-2",
+      "SectionPath": [
+        "Close Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "Authorization: Bearer {access token}\nX-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-2",
+      "SectionPath": [
+        "Close Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "::: moniker range=\u201C\u003E=li-lts-2025-01\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-2",
+      "SectionPath": [
+        "Close Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: YYYYMM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Header",
+      "Anchor": "sample-header-2",
+      "SectionPath": [
+        "Close Premium Jobs",
+        "Sample Request",
+        "Sample Header"
+      ],
+      "Text": "::: moniker-end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "Close Premium Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingSMM01\u0022,\n         \u0022title\u0022:\u0022Social Media Management\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022,\n         \u0022integrationContext\u0022:\u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingSMM01\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022jobPostingOperationType\u0022:\u0022CLOSE\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022posterEmail\u0022:\u0022recruiter_email@yourcompany.com\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "Close Premium Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingSMM01\u0022,\n         \u0022title\u0022:\u0022Social Media Management\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022,\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingSMM01\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022jobPostingOperationType\u0022:\u0022CLOSE\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022posterEmail\u0022:\u0022recruiter_email@yourcompany.com\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew premium jobs",
+      "Anchor": "renew-premium-jobs",
+      "SectionPath": [
+        "Renew premium jobs"
+      ],
+      "Text": "There are three ways to renew premium job postings:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renew premium jobs",
+      "Anchor": "renew-premium-jobs",
+      "SectionPath": [
+        "Renew premium jobs"
+      ],
+      "Text": "Re-post premium jobs without any change, it would extend published jobs by 30 days.\nClose previous premium jobs, and re-post premium jobs without any changes.\nPublish new premium jobs with different externalJobPostingId.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check the job operation task status",
+      "Anchor": "check-the-job-operation-task-status",
+      "SectionPath": [
+        "Check the job operation task status"
+      ],
+      "Text": "After creating job postings, you can use the task ids from the response to track the status of the creation of the job postings. Typically the job creation process should take no longer than 5 minutes and it is suggested that you validate the completion of the job creation at least 5 minutes after your initial call to confirm there were no issues during job creation. The task IDs returned will have a lifespan of 30 days. Possible status values returned are: IN_PROGRESS , SUCCEEDED , FAILED .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Daily Call Limit (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Throttle Limits"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/simpleJobPostingTasks?ids={simpleJobPostingTaskUrn 1}\u0026ids={simpleJobPostingTaskUrn 2}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Throttle Limits"
+      ],
+      "Text": "::: moniker range=\u201C\u003E=li-lts-2025-01\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Throttle Limits"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/simpleJobPostingTasks?ids={simpleJobPostingTaskUrn 1}\u0026ids={simpleJobPostingTaskUrn 2}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Throttle Limits"
+      ],
+      "Text": "::: moniker-end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022urn:li:simpleJobPostingTask:07ae37ab-2216-4d0f-97a0-53a516681c8f\u0022: {\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:07ae37ab-2216-4d0f-97a0-53a516681c8f\u0022,\n            \u0022jobPosting\u0022: \u0022urn:li:jobPosting:123456789\u0022,\n            \u0022status\u0022: \u0022SUCCEEDED\u0022\n        },\n        \u0022urn:li:simpleJobPostingTask:edc75eb8-2c4f-4ac7-a64f-2ee583446f83\u0022: {\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:edc75eb8-2c4f-4ac7-a64f-2ee583446f83\u0022,\n            \u0022status\u0022: \u0022IN_PROGRESS\u0022\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Check the job operation task status",
+        "Sample Response"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submitted.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

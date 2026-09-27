@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoCaptionLanguageTag property</summary>
+        /// <summary>The BCP-47 language tag of the auto captions to generated for the live event. Use &quot;en-US&quot; for English. Remove this parameter if you do not want auto captions added.Documented type: string (optional)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutoCaptionLanguageTag { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string AutoCaptionLanguageTag { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>The unique identifier of the member or organization registering the asset. To identify your Person URN, use the Lite Profile API and append the ID returned to &quot;urn:li:person:&quot;. To identify your Organization URN, use the Organization Access Control API. You must be the Administrator of your Organization in order to post to your Organization Page.Documented type: Person or Organization URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> Recipes { get; set; }
 #endif
-        /// <summary>The region property</summary>
+        /// <summary>The region specifies the closest region your asset should be registered to. Possible values include: 1. WEST_US (West US)2. EAST_US_NORTH (Northeastern US)3. EAST_US_SOUTH (Southeastern US)4. CENTRAL_US (Central US)5. SOUTH_CENTRAL_US (South Central US)6. SOUTH_AMERICA (South America)7. NORTH_EUROPE (North Europe)8. WEST_EUROPE (West Europe)Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get; set; }

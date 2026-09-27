@@ -1,0 +1,571 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+  "Title": "Digital Media Asset Schema",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Digital Media Asset Schema",
+      "Anchor": "digital-media-asset-schema",
+      "SectionPath": [],
+      "Text": "Digital Media Asset URNs can be decorated by ~ , ~digitalmediaAsset:playableStreams or ~digitalmediaAsset:privatePlayableStreams depending on the originating API you are requesting from. Some APIs will allow you to decorate with one or the other depending on use case and privacy concerns. ~ will provide the asset\u0027s metadata . ~digitalmediaAsset:playableStreams and ~digitalmediaAsset:privatePlayableStreams will provide URLs to the media asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Asset Metadata Table",
+      "Anchor": "asset-metadata-table",
+      "SectionPath": [
+        "Asset Metadata Table"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time represented in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. Time represented in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the asset.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time represented in epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaTypeFamily",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The media type of the asset. Can be the following enums: BINARYDATA - Unspecified binary data. STILLIMAGE\u00A0- A\u00A0static visual representation. VIDEO - Moving images plus audio. SOUND - A resource primarily intended to be heard. PAGINATEDDOCUMENT - A form of text document (with or without other media attached) intended to be presented in pages. SLIDESHOWDOCUMENT - A form of text document (with or without other media attached) intended to be presented as a slideshow. ARCHIVE - A file that is composed of one or more files along with metadata.",
+            "Links": [],
+            "Values": [
+              "BINARYDATA - Unspecified binary data.",
+              "STILLIMAGE\u00A0- A\u00A0static visual representation.",
+              "VIDEO - Moving images plus audio.",
+              "SOUND - A resource primarily intended to be heard.",
+              "PAGINATEDDOCUMENT - A form of text document (with or without other media attached) intended to be presented in pages.",
+              "SLIDESHOWDOCUMENT - A form of text document (with or without other media attached) intended to be presented as a slideshow.",
+              "ARCHIVE - A file that is composed of one or more files along with metadata."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "slug",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional.\u00A0A title or short description of the asset that can be used to create SEO friendly URLs. Must be un-escaped.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the asset. Default is ALLOWED. Can be the following enums: ALLOWED - The content is allowed to be served. BLOCKED - The content must not be served. ABANDONED - The asset was abandoned by its owner. Some possible reasons: Upload was cancelled; The application no longer needs it; The uploaded file is not of the intended type; etc.",
+            "Links": [],
+            "Values": [
+              "ALLOWED - The content is allowed to be served.",
+              "BLOCKED - The content must not be served.",
+              "ABANDONED - The asset was abandoned by its owner. Some possible reasons: Upload was cancelled; The application no longer needs it; The uploaded file is not of the intended type; etc."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "serviceRelationships",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Services the asset is related to. Represented as an array.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the related service. No syntax is enforced but URNs are preferred.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "relationshipType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of relationship. Default to GENERIC. Can be the following enums: GENERIC - A generic relationship with no pre-defined semantic. Generic relationships might be used for functionality outside the scope of the Asset Manager. CREATOR - The referenced downstream service is the one that created the Asset. OWNER - The referenced downstream service is an owner of the Asset.",
+            "Links": [],
+            "Values": [
+              "GENERIC - A generic relationship with no pre-defined semantic. Generic relationships might be used for functionality outside the scope of the Asset Manager.",
+              "CREATOR - The referenced downstream service is the one that created the Asset.",
+              "OWNER - The referenced downstream service is an owner of the Asset."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Asset Playable Streams Table",
+      "Anchor": "asset-playable-streams-table",
+      "SectionPath": [
+        "Asset Playable Streams Table"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "artifact",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the artifact this record is related to.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "authorizationMethod",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authorization method for this artifact. Can be the following enums: NONE - The artifact can not be served to users. PUBLIC - The artifact is public and no authorization is needed to serve. INTERNAL - The artifact is only accessible internally to other systems in the hosting or processing infrastructure. PRIVATE - The artifact is private and only an authorized user can access it.",
+            "Links": [],
+            "Values": [
+              "NONE - The artifact can not be served to users.",
+              "PUBLIC - The artifact is public and no authorization is needed to serve.",
+              "INTERNAL - The artifact is only accessible internally to other systems in the hosting or processing infrastructure.",
+              "PRIVATE - The artifact is private and only an authorized user can access it."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data about this artifact.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "identifiers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of file identifiers related to this artifact. Represented as an array.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "file",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional.\u00A0The File that this FileIdentifier is generated from.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "filename",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional.\u00A0When present, the blob will be served using this as filename header. It might also be used by a storage backend as a name to store the file.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. File identifier used to retrieve it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "identifierExpires InSeconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional.\u00A0Seconds since the epoch when the identifier expires. If not present, it might never expire but there\u0027s no guarantee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "index",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Index of this File entry in the files array in the artifact. Must be unique for the list. The File array index is 0 based.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "mediaType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of these media types. Defaults to\u00A0application/octet-stream.",
+            "Links": [
+              "http://www.iana.org/assignments/media-types/media-types.xhtml"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional.\u00A0File size in bytes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "slug",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional.\u00A0An optional string to identify a particular file inside the files list of the MediaArtifact. Must be unique for the list, un-escaped, and cannot start with a number. Used for SEO friendly URLs.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

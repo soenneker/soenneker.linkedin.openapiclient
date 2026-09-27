@@ -1,0 +1,283 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "body",
+      "grant_type": "client_credentials",
+      "scope": "r_learning_activity",
+      "tokenName": "learning-activity-reporting"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027learningactivityreport-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "0f09137c-9813-4b67-8fec-158d7ca8d594",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "5ea859f0-58e8-4a77-b978-ee3eb663b103",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "2977b707-cf51-4ca1-9ffb-07051643cbd5",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nThe 2 main uses for the externalized LinkedIn Learning APIs are for Learning Content and Learning Activity Reports.\n\n*Access to LinkedIn Learning APIs is available to members of our* [*Partner Program*](https://learning.linkedin.com/partners) *and organizations that have purchased LinkedIn Learning site licenses.*\n\nOverview: [https://docs.microsoft.com/en-us/linkedin/learning/overview/](https://docs.microsoft.com/en-us/linkedin/learning/overview/)\n\n* * *\n\nUse this collection with the **LinkedIn Learning Solutions** environment\n\n* * *",
+    "name": "Learning Activity Reports",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "8f94ac1d-acb4-4736-9b45-c39325502fe7",
+      "item": [
+        {
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "c64ad32d-a299-4b92-80b1-2965fef178fb",
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "32b01f35-80d2-4ead-8ab2-31a048f01f98",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "4eb35326-4bbd-4405-844c-7f67a1685bb1",
+          "item": [
+            {
+              "id": "da9040c5-c091-47f2-a4d8-ade123fcaaab",
+              "name": "Learning Activity Reports",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "Learning Activity Reports API\n\nThis resource represents LinkedIn Learning activity reports like course completions, seconds of content viewed and learner logins. You can use these methods to aggregate activity data by account, group, individual or content.\n\nDocumentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#definitions](https://docs.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference#definitionsParameters)\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                "header": [
+                  {
+                    "key": "referer",
+                    "type": "text",
+                    "value": "{{referrer_urn}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "api",
+                    "linkedin",
+                    "com"
+                  ],
+                  "path": [
+                    "v2",
+                    "learningActivityReports"
+                  ],
+                  "protocol": "https",
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "criteria"
+                    },
+                    {
+                      "key": "count",
+                      "value": "1"
+                    },
+                    {
+                      "key": "startedAt",
+                      "value": "1627267600000"
+                    },
+                    {
+                      "key": "timeOffset.unit",
+                      "value": "DAY"
+                    },
+                    {
+                      "key": "timeOffset.duration",
+                      "value": "7"
+                    },
+                    {
+                      "key": "aggregationCriteria.primary",
+                      "value": "ACCOUNT"
+                    },
+                    {
+                      "disabled": true,
+                      "key": "aggregationCriteria.secondary",
+                      "value": "INDIVIDUAL"
+                    },
+                    {
+                      "key": "contentSource",
+                      "value": "ALL_SOURCES"
+                    },
+                    {
+                      "disabled": true,
+                      "key": "sortBy.engagementMetricType",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "sortBy.engagementMetricQualifier",
+                      "value": ""
+                    },
+                    {
+                      "disabled": true,
+                      "key": "sortOrder",
+                      "value": ""
+                    },
+                    {
+                      "key": "locale.language",
+                      "value": "en"
+                    },
+                    {
+                      "disabled": true,
+                      "key": "assetType",
+                      "value": "VIDEO"
+                    },
+                    {
+                      "disabled": true,
+                      "key": "contentSource",
+                      "value": "LINKEDIN_LEARNING"
+                    }
+                  ],
+                  "raw": "https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026count=1\u0026startedAt=1627267600000\u0026timeOffset.unit=DAY\u0026timeOffset.duration=7\u0026aggregationCriteria.primary=ACCOUNT\u0026contentSource=ALL_SOURCES\u0026locale.language=en"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022latestDataAt\u0022: 1632207540000,\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementType\u0022: \u0022LOGINS\u0022,\n                    \u0022engagementValue\u0022: 88,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 12,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022engagementValue\u0022: 2505,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 16,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 1,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 2,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 66,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 22,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022entity\u0022: {\n                    \u0022accountUrn\u0022: \u0022urn:li:enterpriseAccount:999\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=ACCOUNT\u0026count=1\u0026q=criteria\u0026start=1\u0026startedAt=1627267600000\u0026timeOffset.duration=7\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": null,
+                  "id": "fb5127b5-1fc3-4f87-85ae-d3961afa8599",
+                  "name": "Learning Activity Reports",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningActivityReports"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "criteria"
+                        },
+                        {
+                          "key": "count",
+                          "value": "1"
+                        },
+                        {
+                          "key": "startedAt",
+                          "value": "1627267600000"
+                        },
+                        {
+                          "key": "timeOffset.unit",
+                          "value": "DAY"
+                        },
+                        {
+                          "key": "timeOffset.duration",
+                          "value": "7"
+                        },
+                        {
+                          "key": "aggregationCriteria.primary",
+                          "value": "ACCOUNT"
+                        },
+                        {
+                          "disabled": true,
+                          "key": "aggregationCriteria.secondary",
+                          "value": "INDIVIDUAL"
+                        },
+                        {
+                          "key": "contentSource",
+                          "value": "ALL_SOURCES"
+                        },
+                        {
+                          "disabled": true,
+                          "key": "sortBy.engagementMetricType",
+                          "value": ""
+                        },
+                        {
+                          "disabled": true,
+                          "key": "sortBy.engagementMetricQualifier",
+                          "value": ""
+                        },
+                        {
+                          "disabled": true,
+                          "key": "sortOrder",
+                          "value": ""
+                        },
+                        {
+                          "key": "locale.language",
+                          "value": "en"
+                        },
+                        {
+                          "disabled": true,
+                          "key": "assetType",
+                          "value": "VIDEO"
+                        },
+                        {
+                          "disabled": true,
+                          "key": "contentSource",
+                          "value": "LINKEDIN_LEARNING"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026count=1\u0026startedAt=1627267600000\u0026timeOffset.unit=DAY\u0026timeOffset.duration=7\u0026aggregationCriteria.primary=ACCOUNT\u0026contentSource=ALL_SOURCES\u0026locale.language=en"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            }
+          ],
+          "name": "Learning Activity Reports"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ],
+  "variable": [
+    {
+      "key": "referrer_urn",
+      "value": "urn:li:partner:democompany"
+    }
+  ]
+}

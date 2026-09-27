@@ -1,0 +1,447 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+  "Title": "Community Management - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/video-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-social-action-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Community Management - Overview",
+      "Anchor": "community-management---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management - Overview",
+      "Anchor": "community-management---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management - Overview",
+      "Anchor": "community-management---overview",
+      "SectionPath": [],
+      "Text": "The Community Management API enables developers to manage LinkedIn company pages for clients and access account details (admins, roles, followers) and analytics, including comments, reactions, and page activity. For more information, refer to Apply for API Access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Page Management"
+      ],
+      "Text": "Use Organizations and Brand APIs to create, update, and delete organization or brand information.\nCreate and manage company posts, comments, and reactions while monitoring member engagement.\nUse organization access APIs to find admin roles for members and all admins for organizations. Organization lookup APIs help find organizations, brands, or schools using vanity names or primary organization types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Analytics",
+      "Anchor": "page-analytics",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Page Analytics"
+      ],
+      "Text": "Track post analytics and company page performance with:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Analytics",
+      "Anchor": "page-analytics",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Page Analytics"
+      ],
+      "Text": "Follower Statistics: Retrieve lifetime and time-bound follower statistics for organizations.\nPage Statistics: Retrieve lifetime and time-bound view and click statistics for organization or brand pages.\nShare Statistics: Retrieve lifetime and time-bound share statistics with aggregate data across selected date ranges.\nSocial Metadata: Access social actions (reactions, comments) on shares and posts, both organic and sponsored. Provides reactions content type functionality, expanding beyond likes and replacing the existing socialActions endpoint.\nVideo Analytics: Gather analytics about a video entity. The API provides the following metrics:\n\nWatch time\nVideo views\nVideo viewers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Analytics",
+      "Anchor": "member-analytics",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Member Analytics"
+      ],
+      "Text": "Track post analytics and member performance with:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Analytics",
+      "Anchor": "member-analytics",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Member Analytics"
+      ],
+      "Text": "Follower Statistics: Retrieve lifetime and time-bound statistics on followers for a member.\nPost Statistics: Retrieve lifetime and time-bound post statistics for specific posts or members.\nVideo Analytics: Gather analytics about a video entity owned by a member, including:\n\nWatch time\nVideo views\nVideo viewers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Management",
+      "Anchor": "profile-management",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Profile Management"
+      ],
+      "Text": "Create and manage posts, comments, and reactions while monitoring engagement on behalf of individual profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Employee Advocacy",
+      "Anchor": "employee-advocacy",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Employee Advocacy"
+      ],
+      "Text": "Enable brands to leverage employee networks for content resharing and amplification via employee profiles. Features include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Employee Advocacy",
+      "Anchor": "employee-advocacy",
+      "SectionPath": [
+        "Approved Use Cases",
+        "Employee Advocacy"
+      ],
+      "Text": "Organization Social Actions Notifications: Notify members about LinkedIn Company Page activity.\nPeople Typeahead: Discover members for @mentions in organization posts and enable page admins to search followers by keyword or vanity URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program Tiers",
+      "Anchor": "program-tiers",
+      "SectionPath": [
+        "Program Tiers"
+      ],
+      "Text": "The Community Management program includes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program Tiers",
+      "Anchor": "program-tiers",
+      "SectionPath": [
+        "Program Tiers"
+      ],
+      "Text": "Development Tier: Initial approval with limited API call volume.\nStandard Tier: Full access requiring upgrade from Development Tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program Tiers",
+      "Anchor": "program-tiers",
+      "SectionPath": [
+        "Program Tiers"
+      ],
+      "Text": "When applying for Standard Tier, provide a screencast video demonstrating each use case specified in your access request form, matching the use cases described in the Standard Tier access request form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "API Product",
+        "Availability",
+        "How to Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Community Management API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vetted Product with development and standard tiers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the increasing access link to apply.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Applications must be authorized and authenticated before accessing LinkedIn data or member information. For more information, refer to authentication documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u0027s Marketing API Program uses versioning to allow API partners to release changes over time. For more information, refer to versioning documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "1. How do I gain access to the Community Management API if I already have Advertising API access?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Follow these steps to provision Community Management API for your current developer application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Create a new developer application with the same company page as your Advertising API.\nApply for Community Management API Development Tier access.\nUpon approval, complete the Standard Tier access request form and submit a screen recording of your developer application for Standard Tier upgrade.\nOnce approved, request Community Management API Standard Tier access on your existing Advertising API developer application. Enter your new developer application\u0027s client ID in the access form to skip most questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "2. What do I do with my newly created developer application after my existing Ads API application has Community Management API access?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The newly created developer application was used for verification purposes only and can be discarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "3. What are the updated API rate limits for Community Management API Development Tier?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Default API rate limits for Community Management API Development Tier have been increased:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Per App: Increased from 100 to 500 requests.\nPer Member: Increased from 10 to 100 requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "4. Why is the Community Management API access request option grayed out in developer.linkedin.com/developers?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Only request Community Management API Development Tier access with new developer applications that don\u0027t have access to other API products.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "5. Can the Community Management API product be added to an existing app?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Yes, follow the steps in FAQ #1.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "6. How do I get access to the Member Post Management program?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "r_member_social is a closed permission. We\u0027re not accepting access requests at this time due to resource constraints.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "If you are an API partner integrating with the Community Management API, please review the Integration Requirements to understand the capabilities you need to build and demonstrate during the Technical Sign Off process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources help you stay current with new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Recent Changes - Latest API releases.\nDeveloper Portal - API product information.\nMigrations - Breaking changes and updates.\nDeveloper Support - Submit support tickets.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

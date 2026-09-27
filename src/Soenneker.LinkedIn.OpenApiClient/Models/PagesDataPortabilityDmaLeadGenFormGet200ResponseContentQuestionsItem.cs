@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails QuestionDetails { get; set; }
 #endif
         /// <summary>The questionId property</summary>
-        public int? QuestionId { get; set; }
+        public long? QuestionId { get; set; }
         /// <summary>The responseEditable property</summary>
         public bool? ResponseEditable { get; set; }
         /// <summary>The responseRequired property</summary>
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "predefinedField", n => { PredefinedField = n.GetStringValue(); } },
                 { "question", n => { Question = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion.CreateFromDiscriminatorValue); } },
                 { "questionDetails", n => { QuestionDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails.CreateFromDiscriminatorValue); } },
-                { "questionId", n => { QuestionId = n.GetIntValue(); } },
+                { "questionId", n => { QuestionId = n.GetLongValue(); } },
                 { "responseEditable", n => { ResponseEditable = n.GetBoolValue(); } },
                 { "responseRequired", n => { ResponseRequired = n.GetBoolValue(); } },
             };
@@ -97,7 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("predefinedField", PredefinedField);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestion>("question", Question);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItemQuestionDetails>("questionDetails", QuestionDetails);
-            writer.WriteIntValue("questionId", QuestionId);
+            writer.WriteLongValue("questionId", QuestionId);
             writer.WriteBoolValue("responseEditable", ResponseEditable);
             writer.WriteBoolValue("responseRequired", ResponseRequired);
             writer.WriteAdditionalData(AdditionalData);

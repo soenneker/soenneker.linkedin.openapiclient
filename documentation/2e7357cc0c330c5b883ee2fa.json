@@ -1,0 +1,428 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin",
+  "Title": "Sign In with LinkedIn",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sign In with LinkedIn",
+      "Anchor": "sign-in-with-linkedin",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sign In with LinkedIn",
+      "Anchor": "sign-in-with-linkedin",
+      "SectionPath": [],
+      "Text": "This version of Sign In with LinkedIn has been deprecated as of August 1, 2023. For all Sign In with LinkedIn implementations going forward, please refer to Sign In with LinkedIn using OpenID Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "With more than 500 million members worldwide, LinkedIn is the largest and most trusted source of professional identities. Leverage this power to enhance the sign-in experience of your sites and applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Use Sign In with LinkedIn to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Reduce friction and obtain more sign-ups by allowing members to Sign In with LinkedIn, without having the need to create a new account.\nMinimize the costs and time associated with implementing your own login, identity, profile management, and password management.\nPersonalize your sites and applications with the latest member profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "New members logging in to your service for the first time will need to follow the Authenticating with OAuth 2.0 Guide. When requesting an authorization code in Step 2 of the OAuth 2.0 Guide, make sure to request the r_liteprofile and/or r_emailaddress scopes!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_liteprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve the member\u0027s lite profile including their id, name, and profile picture.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_emailaddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve the member\u0027s email address.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "After successful authentication, you will acquire an access token that can be used in the next step of the sign-in process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "If your application does not have these permissions, you can add them through the Developer Portal. Select your app from My Apps, navigate to the Products tab, and add the Sign in with LinkedIn product which will grant you r_liteprofile and r_emailaddress.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Member Profiles",
+      "Anchor": "retrieving-member-profiles",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles"
+      ],
+      "Text": "With your newly acquired access token for the authenticated member, you can use the following API request to retrieve the member\u0027s profile information. See Lite Profile to learn more about the Lite Profile fields available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles",
+        "API Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Schema",
+      "Anchor": "response-body-schema",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles",
+        "Response Body Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member\u0027s unique identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s first name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s last name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s profile picture URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles",
+        "Sample API Response"
+      ],
+      "Text": "{\n   \u0022id\u0022:\u0022REDACTED\u0022,\n   \u0022firstName\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Tina\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022lastName\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Belcher\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n    \u0022profilePicture\u0022: {\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:B54328XZFfe2134zTyq\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles",
+        "Sample API Response"
+      ],
+      "Text": "With the member\u0027s profile information successfully retrieved, the sign-in process is now complete and your user can continue to enjoy their personalized experience with your site or application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Member Profile Picture",
+      "Anchor": "retrieving-member-profile-picture",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profile Picture"
+      ],
+      "Text": "In order to retrieve the member\u0027s profile picture, you will need to use decoration. Use the API request below to retrieve the member\u0027s id, first name, last name, and profile picture.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Member Profile Picture",
+      "Anchor": "retrieving-member-profile-picture",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profile Picture"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(id,firstName,lastName,profilePicture(displayImage~:playableStreams))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Member Email Address",
+      "Anchor": "retrieving-member-email-address",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Email Address"
+      ],
+      "Text": "In addition to the member\u0027s profile, you may be interested in retrieving the member\u0027s email address. The r_emailaddress permission scope allows usage of the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request-1",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Email Address",
+        "API Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/emailAddress?q=members\u0026projection=(elements*(handle~))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Schema",
+      "Anchor": "response-body-schema-1",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Email Address",
+        "Response Body Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "handle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN representation of a member\u0027s handle.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email Address URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response-1",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Email Address",
+        "Sample API Response"
+      ],
+      "Text": "{\n    \u0022handle\u0022: \u0022urn:li:emailAddress:3775708763\u0022,\n    \u0022handle~\u0022: {\n        \u0022emailAddress\u0022: \u0022hsimpson@linkedin.com\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Resources",
+      "Anchor": "image-resources",
+      "SectionPath": [
+        "Additional Resources",
+        "Image Resources"
+      ],
+      "Text": "Download official Sign In with LinkedIn button images in multiple sizes and formats from the LinkedIn Brand Resources archive for use within your site or application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Additional Resources",
+        "Rate Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Type",
+        "Daily Request Limit (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500 Requests",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000 Requests",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

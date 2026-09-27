@@ -1,0 +1,421 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+  "Title": "Marketing API FAQ",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Marketing API FAQ",
+      "Anchor": "marketing-api-faq",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing API FAQ",
+      "Anchor": "marketing-api-faq",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing API FAQ",
+      "Anchor": "marketing-api-faq",
+      "SectionPath": [],
+      "Text": "This section covers the most frequently asked questions about the Marketing Developer Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do I need to upgrade my app to Standard tier?",
+      "Anchor": "do-i-need-to-upgrade-my-app-to-standard-tier",
+      "SectionPath": [
+        "General",
+        "Do I need to upgrade my app to Standard tier?"
+      ],
+      "Text": "The Advertising API and Community Management API each have two access tiers (Development, Standard) with different access criteria. All applications start with Development tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do I need to upgrade my app to Standard tier?",
+      "Anchor": "do-i-need-to-upgrade-my-app-to-standard-tier",
+      "SectionPath": [
+        "General",
+        "Do I need to upgrade my app to Standard tier?"
+      ],
+      "Text": "For the Advertising API, you don\u0027t need to upgrade to Standard tier unless you plan to build a campaign management solution for multiple ad accounts.\nFor the Community Management API, you do need to upgrade to Standard tier within twelve months of receiving API access to move your application to live production phase and to remove API call restrictions. If you don\u0027t apply for Standard tier within twelve months, we\u0027ll remove your API access due to inactivity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "If you\u0027re using a professional demographic pivot, LinkedIn will approximate data in order to protect member privacy at the more granular levels. The professional demographic metrics will be within three units (impressions, clicks, or conversions) of actual results in almost all cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "If a campaign is queried at the daily level, noise (\u002B/- 3) will be added to each result per day. If a campaign is queried at the week level noise will be added in once per week. Additionally, a minimum 3 threshold exists for reporting metrics such impressions, clicks, conversions, spend.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "Because metrics are approximate for privacy protection, you may observe inconsistencies when:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "Comparing similar time ranges, for example, reporting on results over seven days vs. eight days.\nComparing the sum of daily metrics to the full corresponding time period.\nComparing reporting levels, for example, adding campaign level data and comparing it to account level data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "To minimize the effect of privacy approximation, we recommend you select:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "A full time period instead of adding up daily metrics for that time period.\nThe highest reporting level you want to view, for example, select account level data instead of adding up campaign level data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do my results differ from those presented in LinkedIn Campaign Manager?",
+      "Anchor": "why-do-my-results-differ-from-those-presented-in-linkedin-campaign-manager",
+      "SectionPath": [
+        "General",
+        "Why do my results differ from those presented in LinkedIn Campaign Manager?"
+      ],
+      "Text": "Learn more about Ads Reporting accuracy and Professional Demographics for Your Ads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What time granularity should I use for professional demographic reporting?",
+      "Anchor": "what-time-granularity-should-i-use-for-professional-demographic-reporting",
+      "SectionPath": [
+        "General",
+        "What time granularity should I use for professional demographic reporting?"
+      ],
+      "Text": "LinkedIn\u2019s Campaign Manager professional demographics reports are the result of a single API call for the specified date range and reporting level (creative, campaign, account etc.), so we recommend following the same practice and use timegranularity=ALL and avoid aggregating data (i.e. from creative to campaign or account), to ensure your data is consistent with LinkedIn\u2019s native results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I create a social feed display with your APIs?",
+      "Anchor": "can-i-create-a-social-feed-display-with-your-apis",
+      "SectionPath": [
+        "General",
+        "Can I create a social feed display with your APIs?"
+      ],
+      "Text": "No - displaying a company page feed on your website or any other digital channel off LinkedIn is not an Approved use case",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to r_full_profile?",
+      "Anchor": "how-do-i-get-access-to-r_full_profile",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to r_full_profile?"
+      ],
+      "Text": "r_full_profile is a closed permission, and we\u0027re not accepting access requests currently. Learn more about Profile API permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to r_member_social?",
+      "Anchor": "how-do-i-get-access-to-r_member_social",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to r_member_social?"
+      ],
+      "Text": "r_member_social is a closed permission, and we\u0027re not accepting access requests this time due to resource constraints. Learn more about available Marketing APIs and permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to rw_dmp_segments?",
+      "Anchor": "how-do-i-get-access-to-rw_dmp_segments",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to rw_dmp_segments?"
+      ],
+      "Text": "rw_dmp_segments is available in the Matched Audiences API, which is a private API program that is available to qualified developers who meet additional criteria for access. If you\u2019d like to express interest in access to those APIs please complete the interest form here. LinkedIn will contact you up to 60 days after the form submission only if we will identify meeting access criteria and a strong partnership fit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to r_marketing_leadgen_automation?",
+      "Anchor": "how-do-i-get-access-to-r_marketing_leadgen_automation",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to r_marketing_leadgen_automation?"
+      ],
+      "Text": "r_marketing_leadgen_automation is available in the Lead Sync API product which can directly be requested for access from the Developer Portal. Check the Getting Access to Lead Sync API for pre-requisites and application process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to r_ads_leadgen_automation?",
+      "Anchor": "how-do-i-get-access-to-r_ads_leadgen_automation",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to r_ads_leadgen_automation?"
+      ],
+      "Text": "r_ads_leadgen_automation permission was deprecated in July 2023. New developments should request access to r_marketing_leadgen_automation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to rw_offlineConversions?",
+      "Anchor": "how-do-i-get-access-to-rw_offlineconversions",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to rw_offlineConversions?"
+      ],
+      "Text": "rw_offlineConversions permission was deprecated in October 2023. New developments should request access to rw_conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to rw_conversions?",
+      "Anchor": "how-do-i-get-access-to-rw_conversions",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to rw_conversions?"
+      ],
+      "Text": "rw_conversions is available in the Conversions API product which can directly be requested for access from the Developer Portal. Check the Getting Access to Conversions API for pre-requisites and application process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Audience Insights API product?",
+      "Anchor": "how-do-i-get-access-to-audience-insights-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Audience Insights API product?"
+      ],
+      "Text": "This API product is currently private and requires additional approval. If you meet the eligibility criteria and qualifications and wish to apply for access, please complete this application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Audience Insights API product?",
+      "Anchor": "how-do-i-get-access-to-audience-insights-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Audience Insights API product?"
+      ],
+      "Text": "Who\u2019s eligible to access the Audience Insights API: B2B marketing technology companies that are audience focused and support audience discovery, planning, activation, or campaign creation partners, or data platforms that aggregate and analyse audience interests and behavior to provide insights for campaign strategy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Audience Insights API product?",
+      "Anchor": "how-do-i-get-access-to-audience-insights-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Audience Insights API product?"
+      ],
+      "Text": "You\u0027re encouraged to apply if you meet the eligibility criteria and the following qualifications (although access remains subject to LinkedIn\u2019s approval and any other program requirements):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Audience Insights API product?",
+      "Anchor": "how-do-i-get-access-to-audience-insights-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Audience Insights API product?"
+      ],
+      "Text": "You have a B2B marketing company with an established use case for the API.\nYou have access to LinkedIn Advertising APIs. If you\u0027re new to our APIs, get started by applying for Advertising API access.\nYou agree to comply with the LinkedIn Marketing API Program Terms of Use.\nDemonstrate your data management practices, where applicable.\nDemonstrate Engineering readiness and the ability to complete integration with LinkedIn\u0027s Audience Insights API in a reasonable timeframe.\nYou are able to dedicate go-to-market resources to launch your solution to customers.\nYou plan to join the LinkedIn Marketing Partner Program by completing the certification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Audience Insights API product?",
+      "Anchor": "how-do-i-get-access-to-audience-insights-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Audience Insights API product?"
+      ],
+      "Text": "Once you have submitted application survey to the best of your ability, you will receive a response from the LinkedIn team with the status of your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Media Planning API product?",
+      "Anchor": "how-do-i-get-access-to-media-planning-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Media Planning API product?"
+      ],
+      "Text": "This API product is currently private and requires additional approval. If you meet the eligibility criteria and qualifications and wish to apply for access, submit the application survey.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Media Planning API product?",
+      "Anchor": "how-do-i-get-access-to-media-planning-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Media Planning API product?"
+      ],
+      "Text": "Who\u2019s eligible to access the Media Planning API: B2B marketing technology companies that enables marketers to have a better understanding of investment delivery against valuable audiences and objectives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Media Planning API product?",
+      "Anchor": "how-do-i-get-access-to-media-planning-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Media Planning API product?"
+      ],
+      "Text": "You\u0027re encouraged to apply if you meet the eligibility criteria and the following qualifications (although access remains subject to LinkedIn\u2019s approval and any other program requirements):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Media Planning API product?",
+      "Anchor": "how-do-i-get-access-to-media-planning-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Media Planning API product?"
+      ],
+      "Text": "You have a B2B marketing company with an established use case for the API.\nYou have access to LinkedIn Advertising APIs. If you\u0027re new to our APIs, get started by applying for Advertising API access.\nYou agree to comply with the LinkedIn Marketing API Program Terms of Use.\nDemonstrate your data management practices, where applicable.\nDemonstrate Engineering readiness and the ability to complete integration with LinkedIn\u0027s Audience Insights API in a reasonable timeframe.\nYou are able to dedicate go-to-market resources to launch your solution to customers.\nYou plan to join the LinkedIn Marketing Partner Program by completing the certification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Media Planning API product?",
+      "Anchor": "how-do-i-get-access-to-media-planning-api-product",
+      "SectionPath": [
+        "Permissions",
+        "How do I get access to Media Planning API product?"
+      ],
+      "Text": "Complete the application survey to the best of your ability. You will receive a response from the LinkedIn team with the status of your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is 2-legged OAuth available?",
+      "Anchor": "is-2-legged-oauth-available",
+      "SectionPath": [
+        "Permissions",
+        "Is 2-legged OAuth available?"
+      ],
+      "Text": "All LinkedIn Marketing API Program permissions are three-legged permissions. Two-legged auth is not available for marketing use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What does a 200 response status code with empty response from the adAnalytics API indicate?",
+      "Anchor": "what-does-a-200-response-status-code-with-empty-response-from-the-adanalytics-api-indicate",
+      "SectionPath": [
+        "Error Handling",
+        "What does a 200 response status code with empty response from the adAnalytics API indicate?"
+      ],
+      "Text": "An empty response is returned if there\u0027s no activity to report or if you don\u0027t have read access to the requested data. Read more about Ad Analytics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What does a 403 error mean when creating or updating an ad account?",
+      "Anchor": "what-does-a-403-error-mean-when-creating-or-updating-an-ad-account",
+      "SectionPath": [
+        "Error Handling",
+        "What does a 403 error mean when creating or updating an ad account?"
+      ],
+      "Text": "This indicates a member\u2019s access token doesn\u2019t have the right scope permissions. Often, if your app is on Developer access tier, it may indicate the ad account hasn\u0027t been added to your app in Developer Portal. To add an Ad Account to your app, select your app in the Developer Portal, then choose Products \u003E View Ad Accounts, or request an upgrade to Standard access tier.\nLearn more about 403 error responses.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

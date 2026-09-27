@@ -1,0 +1,570 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+  "Title": "Certification Checklist",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Certification Checklist",
+      "Anchor": "certification-checklist",
+      "SectionPath": [],
+      "Text": "All Verified Plus partners must complete this certification process to be approved for production access. The checklist covers OAuth integration, verification workflows, error handling, and LinkedIn policy compliance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Checklist",
+      "Anchor": "certification-checklist",
+      "SectionPath": [],
+      "Text": "You must demonstrate and document completion of each requirement with screenshots, logs, or product flow explanations as appropriate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Areas",
+      "Anchor": "certification-areas",
+      "SectionPath": [
+        "Certification Areas"
+      ],
+      "Text": "The checklist is divided into the following four categories:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "ID",
+        "Requirement",
+        "Expectations"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SL-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OAuth 2.0 Integration with Correct Scopes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Implement OAuth 2.0 using the appropriate scopes for your use case. Only request the scopes that are required, such as: r_profile_basicinfo, r_most_recent_education, r_primary_current_experience, and r_verify_details. Requesting additional scopes may result in unnecessarily large responses or data beyond the partner\u2019s intended use case, leading to integration mismatches or unused information.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latest API Endpoint and Version Compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that your integration uses the latest recommended endpoints (/identityMe, /verificationReport, /validationStatus), does not use deprecated APIs, and includes the LinkedIn-Version header with the latest supported version in all requests. See Current API Versions for the latest versions.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes#current-api-versions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Token Expiration \u0026 Management",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reuse valid access tokens when available. If the access token has expired, use the refresh token to obtain a new one. If the refresh token is also expired or invalid, re-trigger the OAuth flow with the member to obtain a new access token.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Breaking Change Policy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that you have read and agreed to LinkedIn\u2019s breaking change policy.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle API Errors such as Version Expiry \u0026 Rate Limiting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Capture version expiry errors, monitor 426 responses, track X-LI-UUID, include the LinkedIn-Version header in all requests, monitor relevant HTTP errors, handle rate limiting correctly, and comply with LinkedIn\u2019s query tunneling and versioning policies.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Verification Workflow",
+      "Anchor": "verification-workflow",
+      "SectionPath": [
+        "Verification Workflow"
+      ],
+      "Text": "",
+      "Headers": [
+        "ID",
+        "Requirement",
+        "Expectations"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SL-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show Complete Verification Flow (New User)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate full flow: user clicks the \u0022Verify on LinkedIn\u0022 CTA \u2192 redirected to LinkedIn \u2192 completes verification \u2192 redirected back \u2192 display verified badge with category (Identity, Workplace) and timestamp.",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/answer/a1631613"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification Badge Implementation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use \u201CVerified on LinkedIn\u201D text, proper LinkedIn branding, link badge to the member\u2019s LinkedIn profile, and display verification category and timestamp.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-008",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fetch Basic Member Profile via /identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve and use basic member information from /identityMe and explain how it is used in your platform.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-009",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification Flow for Pre-Verified Users",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate flows for users with identity only, workplace only, both, and multiple verifications. Show ability to request specific verification types based on use case.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-010",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle Incomplete or Cancelled Verification Flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle user cancellations, consent rejection, and OAuth revocation. Ensure proper redirection and clear error messaging.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-011",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error Logging \u0026 UUID Tracking",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate error handling with request/response logs including headers, especially X-LI-UUID.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [
+        "Data Freshness"
+      ],
+      "Text": "",
+      "Headers": [
+        "ID",
+        "Requirement",
+        "Expectations"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SL-012",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Persist Critical Fields for Data Freshness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Store id from /identityMe and /verificationReport, securely store refresh_token, and track lastRefreshedAt to avoid processing stale updates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Validation Status API Polling Workflow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Implement 2-legged OAuth with r_validation_status, call /validationStatus with up to 500 member IDs per request, handle VALID, INVALID, VALID_WITH_UPDATES, and refresh data using /verificationReport and /identityMe only when needed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Push Notifications Handling (if subscribed)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Register webhook endpoint, handle FEDERATED_MEMBER_DATA_STATUS_CHANGE, process isAccessRevoked, use timestamps to avoid duplicate or out-of-order events, and ensure webhook delivery health.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-015",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle Access Revocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete or invalidate stored data and tokens when access is revoked and ensure proper user experience with clear error messaging.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Integration Compliance",
+      "Anchor": "integration-compliance",
+      "SectionPath": [
+        "Integration Compliance"
+      ],
+      "Text": "",
+      "Headers": [
+        "ID",
+        "Requirement",
+        "Expectations"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SL-016",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass LinkedIn InfoSec Review",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that your application has passed LinkedIn\u2019s InfoSec security assessment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-017",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer App Admin Management",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure all relevant personnel are added as admins and kept up to date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-018",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Business Email DL Setup",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a distribution list (DL) with correct owners and register it as the business email in the LinkedIn Developer Portal.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-019",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support Routing Post-GA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all post-GA support queries are routed to voli-support@linkedin.com.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subscribe to API Status Page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subscribe to LinkedIn API Status page and ensure you receive real-time notifications for incidents.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SL-021",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Monitor API Release Updates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regularly review LinkedIn API release documentation to stay up to date with changes.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Use \u0026 Retention Guidelines",
+      "Anchor": "data-use--retention-guidelines",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines"
+      ],
+      "Text": "If LinkedIn has granted you access to the Verified on LinkedIn Plus Program, it will appear in the list of products that your application has access to on the LinkedIn developer portal. Please note that access to certain data fields may be restricted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Use \u0026 Retention Guidelines",
+      "Anchor": "data-use--retention-guidelines",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines"
+      ],
+      "Text": "Consult your Verified on LinkedIn API Agreement for other restrictions, conditions, and data deletion obligations relating to this data. For example, the Verified on LinkedIn Agreement requires that you obtain an authenticated Member\u2019s consent before storing their verification data. If there is any conflict between these requirements and the requirements in your Agreement, the requirements that are more restrictive or more protective of the data apply. Similarly, if a given data field is encompassed by two or more of the following requirements, the shortest storage/caching duration shall apply.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Use \u0026 Retention Guidelines",
+      "Anchor": "data-use--retention-guidelines",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines"
+      ],
+      "Text": "LinkedIn reserves the right to update these requirements at any time by posting changes on our developer documentation, and it is your responsibility to review and ensure your integration remains compliant with the most current requirements. Partners are expected to make necessary updates to their systems and processes in a timely manner to remain in good standing.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Use \u0026 Retention Guidelines",
+      "Anchor": "data-use--retention-guidelines",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines"
+      ],
+      "Text": "The following requirements do not apply to data that is independently provided to you by your clients and not retrieved via the Verified on LinkedIn API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Guides",
+      "Anchor": "api-guides",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines",
+        "API Guides"
+      ],
+      "Text": "Verification Report API Guide\nIdentityMe API Guide\nValidation Status API Guide\nOAuth Authorization Code Flow Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Resources",
+      "Anchor": "integration-resources",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines",
+        "Integration Resources"
+      ],
+      "Text": "Quickstart Guide\nOAuth 2.0 Authentication\nImplementation Guidelines\nData Freshness\nValidation Status API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Resources",
+      "Anchor": "developer-resources",
+      "SectionPath": [
+        "Data Use \u0026 Retention Guidelines",
+        "Developer Resources"
+      ],
+      "Text": "LinkedIn Developer Portal\nLinkedIn API Status Page",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

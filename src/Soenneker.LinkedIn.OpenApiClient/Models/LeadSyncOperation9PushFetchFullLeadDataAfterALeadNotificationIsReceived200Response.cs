@@ -95,7 +95,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwnerInfo OwnerInfo { get; set; }
 #endif
         /// <summary>The submittedAt property</summary>
-        public int? SubmittedAt { get; set; }
+        public long? SubmittedAt { get; set; }
         /// <summary>The submitter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,7 +149,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "leadType", n => { LeadType = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwner.CreateFromDiscriminatorValue); } },
                 { "ownerInfo", n => { OwnerInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwnerInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwnerInfo.CreateFromDiscriminatorValue); } },
-                { "submittedAt", n => { SubmittedAt = n.GetIntValue(); } },
+                { "submittedAt", n => { SubmittedAt = n.GetLongValue(); } },
                 { "submitter", n => { Submitter = n.GetStringValue(); } },
                 { "testLead", n => { TestLead = n.GetBoolValue(); } },
                 { "versionedLeadGenFormUrn", n => { VersionedLeadGenFormUrn = n.GetStringValue(); } },
@@ -172,7 +172,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("leadType", LeadType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwner>("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseOwnerInfo>("ownerInfo", OwnerInfo);
-            writer.WriteIntValue("submittedAt", SubmittedAt);
+            writer.WriteLongValue("submittedAt", SubmittedAt);
             writer.WriteStringValue("submitter", Submitter);
             writer.WriteBoolValue("testLead", TestLead);
             writer.WriteStringValue("versionedLeadGenFormUrn", VersionedLeadGenFormUrn);

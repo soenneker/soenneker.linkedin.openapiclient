@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The exclude property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Exclude { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem>? Exclude { get; set; }
 #nullable restore
 #else
-        public UntypedNode Exclude { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem> Exclude { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategories"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exclude", n => { Exclude = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("exclude", Exclude);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferencesIabCategoriesExcludeItem>("exclude", Exclude);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

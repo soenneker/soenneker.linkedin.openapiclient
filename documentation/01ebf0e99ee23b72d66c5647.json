@@ -1,0 +1,781 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+  "Title": "Analytics Services - Exports Schema",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Analytics Services - Exports Schema",
+      "Anchor": "analytics-services---exports-schema",
+      "SectionPath": [],
+      "Text": "This article explains format and schema of the data that is exported from Analytics Services APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Services - Exports Schema",
+      "Anchor": "analytics-services---exports-schema",
+      "SectionPath": [],
+      "Text": "Exports are CSV files that contain all rows available for the interval requested in the export job. Exports can be performed for activities, activity outcomes, and seats. CSV schemas for each export are defined below. For more information on how to create export jobs to export data, see Exporting User Activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Services - Exports Schema",
+      "Anchor": "analytics-services---exports-schema",
+      "SectionPath": [],
+      "Text": "Activity CSV Schema\nActivityOutcome CSV Schema\nSeats CSV Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Activity CSV Schema",
+      "Anchor": "activity-csv-schema",
+      "SectionPath": [
+        "Activity CSV Schema"
+      ],
+      "Text": "The Activity CSV export is a snapshot of statistics for the activities performed within Sales Navigator. Here is the schema of the Activity CSV Export:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Activity CSV Schema",
+      "Anchor": "activity-csv-schema",
+      "SectionPath": [
+        "Activity CSV Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column Name",
+        "Data Type",
+        "Optional in response",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "activityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for the sales activity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of activity. See Activity Types",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema#activity-types"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time the sales activity took place, in MM-DD-YYYY HH:MM:SS format (UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seatId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the seat holder who took the action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberIdentityKey",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the Lead associated with the activity. Some activities are not related to leads, i.e. saving an account, and will not contain memberIdentityKey",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Activity Types",
+      "Anchor": "activity-types",
+      "SectionPath": [
+        "Activity CSV Schema",
+        "Activity Types"
+      ],
+      "Text": "Here are the supported types of activities for export in Sales Navigator Analytics Services:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Activity Types",
+      "Anchor": "activity-types",
+      "SectionPath": [
+        "Activity CSV Schema",
+        "Activity Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Activity Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SAVED_LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder saved a lead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SAVED_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder saved an account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SEARCH_PERFORMED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder performed a search",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROFILE_VIEWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder viewed a profile",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INMAIL_SENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder sent an InMail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MESSAGE_SENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder sent a LinkedIn or Sales Navigator message",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONNECTION_MADE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat holder made a connection",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Activity Outcome CSV Schema",
+      "Anchor": "activity-outcome-csv-schema",
+      "SectionPath": [
+        "Activity Outcome CSV Schema"
+      ],
+      "Text": "The Activity Outcome CSV export is a snapshot of statistics for the outcome of activities performed within Sales Navigator. Here is the schema of the ActivityOutcome CSV Export:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Activity Outcome CSV Schema",
+      "Anchor": "activity-outcome-csv-schema",
+      "SectionPath": [
+        "Activity Outcome CSV Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column Name",
+        "Data Type",
+        "Optional in response?",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "activityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of the activity associated with this outcome event",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of outcome. See Activity Outcome Types",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema#activity-outcome-types"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time the sales outcome took place, in MM-DD-YYYY HH:MM:SS format (UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberIdentityKey",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the associated lead. Some activities are anonymous and will not contain a memberIdentityKey, e.g. viewing PointDrive without logging into LinkedIn",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Activity Outcome Types",
+      "Anchor": "activity-outcome-types",
+      "SectionPath": [
+        "Activity Outcome CSV Schema",
+        "Activity Outcome Types"
+      ],
+      "Text": "The activityType column in the Activity Outcomes export is a key that describes the type of outcome present. The following outcomes are currently supported:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Activity Outcome Types",
+      "Anchor": "activity-outcome-types",
+      "SectionPath": [
+        "Activity Outcome CSV Schema",
+        "Activity Outcome Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Activity Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "INMAIL_ACCEPTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member accepted InMail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INMAIL_REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member rejected InMail",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Seats CSV Schema",
+      "Anchor": "seats-csv-schema",
+      "SectionPath": [
+        "Seats CSV Schema"
+      ],
+      "Text": "The Seats CSV export is a snapshot of statistics for seat holders for each day that they are an active user of Sales Navigator. Here is the schema of the Seats CSV Export:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Seats CSV Schema",
+      "Anchor": "seats-csv-schema",
+      "SectionPath": [
+        "Seats CSV Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column Name",
+        "Data Type",
+        "Optional in response?",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contractId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for the sales contract",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seatId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for the sales seat",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recordedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When seat information was captured, in MM-DD-YYYY HH:MM:SS format (UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp for when seat was created, in MM-DD-YYYY HH:MM:SS format (UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ssi",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Overall SSI score of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ssiCreateProfessionalBrand",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSI score representing professional brand of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ssiFindRightPeople",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSI score representing connectivity of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ssiEngageWithInsights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSI score representing engagement with insights by the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ssiBuildStrongRelationship",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSI score representing relationship building of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalConnections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of connections in LinkedIn of the seat holder",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

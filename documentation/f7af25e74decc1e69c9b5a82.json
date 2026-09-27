@@ -1,0 +1,1187 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+  "Title": "Saved Audience Templates",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Saved Audience Templates",
+      "Anchor": "saved-audience-templates",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saved Audience Templates",
+      "Anchor": "saved-audience-templates",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saved Audience Templates",
+      "Anchor": "saved-audience-templates",
+      "SectionPath": [],
+      "Text": "The Saved Audience Templates API lets you create a workflow for users to easily save and retrieve audience templates for targeting in sponsored ad campaigns. These audience templates can be composed of approved targeting criteria made up of LinkedIn Audience Attributes and/or existing Matched Audience AdSegments (contact/company lists), and can be activated through the campaign API or the Campaign Manager user interface.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saved Audience Templates",
+      "Anchor": "saved-audience-templates",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saved Audience Templates",
+      "Anchor": "saved-audience-templates",
+      "SectionPath": [],
+      "Text": "All API requests are represented in Rest.li Protocol 2.0.0 and require the header: X-Restli-Protocol-Version: 2.0.0. Read the Protocol Versions document to learn more about using Rest.li Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Glossary",
+      "Anchor": "glossary",
+      "SectionPath": [
+        "Glossary"
+      ],
+      "Text": "",
+      "Headers": [
+        "Term",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Targeting Facets",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Facets are high-level categories of the types of targeting available. Use facets to narrow down your intended audience. To see the list of available facets and their URNs, refer to Targeting Criteria Facet URNs page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Audience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience is a general term used to describe the Targeting Criteria filter selected to view insights. For example, an audience can be \u0022Financial Analysts in the US\u0022. Refer targetingCriteria Object to define the audience criteria.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Matched Audience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Matched Audience is a set of targeting capabilities that gives you the power to reach your desired audience, including those you already have a relationship with, through website, contact, and company list targeting. Refer Ad Segments to fetch existing matched audience ad segment URNs that can be passed to urn:li:adTargetingFacet:audienceMatchingSegments.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful Saved Audience Templates API requests:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permission accessibility for:\n\nrw_ads (read/write).\n\nr_ads (read-only)\n\nThe authenticated Ad Account user that provides consent has one of the following roles on the Ad Account:\n\nACCOUNT_BILLING_ADMIN\n\nACCOUNT_MANAGER\n\nCAMPAIGN_MANAGER\n\nCREATIVE_MANAGER\n\nVIEWER (read-only, even with rw_ads scope)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Methods",
+      "Anchor": "methods",
+      "SectionPath": [
+        "Methods"
+      ],
+      "Text": "",
+      "Headers": [
+        "Method Name",
+        "Request Type",
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "get",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads,rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Get a single AdTargetTemplate given the unique key.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "create",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "POST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create a single Ad target template and persist the data. The input shouldn\u0027t include an ID, as that\u0027s a synthetic key which will be supplied by the service.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "partial_update",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "POST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update one or more fields of this Ad target template via the Patch operation. Other than the read-only fields that can\u0027t be updated there are no other restrictions to this operation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DELETE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete the identified Ad target template.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DELETE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch delete Ad target templates using a set of Ad target template IDs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "findByAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads,rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This finder returns a collection of AdTargetTemplates an Ad account can access that match the search parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Saved Audience Template",
+      "Anchor": "create-saved-audience-template",
+      "SectionPath": [
+        "Create Saved Audience Template"
+      ],
+      "Text": "Create a single Saved Audience Template and persist the data. The input shouldn\u0027t include an ID, as that\u0027s a synthetic key which will be supplied by the service.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create Saved Audience Template",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the sponsored Ad account associated with the saved targeting template; immutable. Refer to Find Ad Accounts by Authenticated User endpoint to fetch and select Ad accounts of the connected user.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-accounts-by-authenticated-user"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "TargetingCriteria is the object that represents an Audience. It provides a generic AND / OR construct to include and exclude different targeting facets when defining an audience. TargetingCriteria defines the audience, for example, members who are skilled in Java and work for ABC company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of template generated by the member who created or updated it. The maximum length of the name is 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the template generated by the member who created or updated it. The maximum length of the description is 500.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "approximateMemberCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Approximate number of members that the Ad targeting template could target. This field is optional for backward compatibility. Note that the member count could be slightly different than actual count.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReadOnly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReadOnly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource. If no modification has occurred since creation, lastModified should be the same as created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReadOnly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The auto-generated numeric identifier for the template.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReadOnly",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Saved Audience Template",
+        "Schema",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Saved Audience Template",
+        "Schema",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adTargetTemplates",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Saved Audience Template",
+        "Schema",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022name\u0022: \u0022AI Audience Template\u0022,\n  \u0022description\u0022: \u0022Audience interested in AI in tech in NA\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:\u003Caccount_id\u003E\u0022,\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interests\u0022: [\n              \u0022urn:li:interest:308\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:industries\u0022: [\n              \u0022urn:li:industry:6\u0022,\n              \u0022urn:li:industry:8\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:country:us\u0022,\n              \u0022urn:li:country:ca\u0022\n            ]\n          }\n        }\n      ]\n    },\n    \u0022exclude\u0022: {\n      \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:seniorities\u0022: [\n          \u0022urn:li:seniority:1\u0022,\n          \u0022urn:li:seniority:2\u0022\n        ]\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Saved Audience Template",
+        "Schema",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adTargetTemplates\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyyMM}\u0027 \\\n--data \u0027\n{\n  \u0022name\u0022: \u0022AI Audience Template\u0022,\n  \u0022description\u0022: \u0022Tech Audience interested in Artificial Intelligence in North America\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:\u003Caccount_id\u003E\u0022,\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interests\u0022: [\n              \u0022urn:li:interest:308\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:industries\u0022: [\n              \u0022urn:li:industry:6\u0022,\n              \u0022urn:li:industry:8\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:country:us\u0022,\n              \u0022urn:li:country:ca\u0022\n            ]\n          }\n        }\n      ]\n    },\n    \u0022exclude\u0022: {\n      \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:seniorities\u0022: [\n          \u0022urn:li:seniority:1\u0022,\n          \u0022urn:li:seniority:2\u0022\n        ]\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Saved Audience Template",
+        "Schema",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the saved audience template ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Saved Audience Template",
+      "Anchor": "get-saved-audience-template",
+      "SectionPath": [
+        "Get Saved Audience Template"
+      ],
+      "Text": "Get a single Saved Audience Template given the unique template id.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Saved Audience Template",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Saved Audience Template",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetTemplates/\u003Ctemplate_id\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Saved Audience Template",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetTemplates/\u003Ctemplate_id\u003E\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {yyyyMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Saved Audience Template",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022approximateMemberCount\u0022: 1000,\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n    \u0022time\u0022: 1676657537000\n  },\n  \u0022name\u0022: \u0022AI Audience Template\u0022,\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interests\u0022: [\n              \u0022urn:li:interest:308\u0022\n            ]\n          }\n        },     \n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:industries\u0022: [\n              \u0022urn:li:industry:6\u0022,\n              \u0022urn:li:industry:8\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:country:us\u0022,\n              \u0022urn:li:country:ca\u0022\n            ]\n          }\n        }\n      ]\n    },\n    \u0022exclude\u0022: {\n      \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:seniorities\u0022: [\n          \u0022urn:li:seniority:1\u0022,\n          \u0022urn:li:seniority:2\u0022\n        ]\n      }\n    }\n  },\n  \u0022description\u0022: \u0022Saved Audience Template\u0022,\n  \u0022id\u0022: 12345,\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n    \u0022time\u0022: 1676657835000\n  },\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:12345\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Saved Audience Template",
+      "Anchor": "update-saved-audience-template",
+      "SectionPath": [
+        "Update Saved Audience Template"
+      ],
+      "Text": "Update a single Saved Audience Template given the unique key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported schema fields that can be updated",
+      "Anchor": "supported-schema-fields-that-can-be-updated",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "TargetingCriteria which defines the audience, for example, members who are skilled in Java and work for ABC company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of template generated by the member who created or updated it. The maximum length of the description is 500.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of template generated by member who created or updated it. The maximum length of the name is 100.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adTargetTemplates/\u003Ctemplate_id\u003E\nX-Restli-Method: PARTIAL_UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: \u0022New Template Name\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adTargetTemplates/\u003Ctemplate_id\u003E\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Linkedin-Version: {yyyyMM}\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: \u0022New Template Name\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Update Saved Audience Template",
+        "Supported schema fields that can be updated",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 204\netag: W/\u002245\u0022\nX-Restli-Protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Saved Audience Template",
+      "Anchor": "delete-saved-audience-template",
+      "SectionPath": [
+        "Delete Saved Audience Template"
+      ],
+      "Text": "Delete a single Saved Audience Template given the unique key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Saved Audience Template",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Saved Audience Template",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adTargetTemplates/\u003Ctemplate_id\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Saved Audience Template",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adTargetTemplates/\u003Ctemplate_id\u003E\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {yyyyMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Delete Saved Audience Template",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Delete Saved Audience Template",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 204\netag: W/\u002245\u0022\nX-Restli-Protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Saved Audience Templates",
+      "Anchor": "batch-delete-saved-audience-templates",
+      "SectionPath": [
+        "Batch Delete Saved Audience Templates"
+      ],
+      "Text": "Batch delete multiple Saved Audience Templates given a set of template IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Batch Delete Saved Audience Templates",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Batch Delete Saved Audience Templates",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adTargetTemplates?ids=List(\u003Ctemplate_id1\u003E, \u003Ctemplate_id2\u003E, ..., \u003Ctemplate_idn\u003E)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Batch Delete Saved Audience Templates",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adTargetTemplates?ids=List(\u003Ctemplate_id1\u003E, \u003Ctemplate_id2\u003E, ..., \u003Ctemplate_idn\u003E)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {yyyyMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Delete Saved Audience Templates",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u002210000001\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u002210000002\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Saved Audience Templates by Account",
+      "Anchor": "find-saved-audience-templates-by-account",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account"
+      ],
+      "Text": "This finder returns a collection of Saved Audience Templates an ad account can access that match the search parameters.\nOnly account parameter and sortField parameter are required in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SortField Schema (Enum)",
+      "Anchor": "sortfield-schema-enum",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account",
+        "SortField Schema (Enum)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of ad targeting template",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of ad targeting template. Alphabetical sort with no localization.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SortOrder Schema (Enum)",
+      "Anchor": "sortorder-schema-enum",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account",
+        "SortOrder Schema (Enum)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ASCENDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sort by ascending order. This is by default",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DESCENDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sort by descending order.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetTemplates?q=account\u0026account=urn:li:sponsoredAccount:\u003Caccount_id\u003E\u0026sortField=ID\u0026sortOrder=ASCENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetTemplates?q=account\u0026account=urn:li:sponsoredAccount:\u003Caccount_id\u003E\u0026filter=(targetingCriterias:List())\u0026sortField=ID\u0026sortOrder=ASCENDING\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {yyyyMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Find Saved Audience Templates by Account",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022approximateMemberCount\u0022: 0,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n        \u0022time\u0022: 1676657537000\n      },\n      \u0022name\u0022: \u0022template_name1\u0022,\n      \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n          \u0022and\u0022: [\n            {\n              \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:locations\u0022: [\n                  \u0022urn:li:country:de\u0022\n                ]\n              }\n            },\n            {\n              \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:industries\u0022: [\n                  \u0022urn:li:industry:43\u0022\n                ]\n              }\n            },\n            {\n              \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                  \u0022urn:li:locale:en_US\u0022\n                ]\n              }\n            }\n          ]\n        },\n        \u0022exclude\u0022: {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:industries\u0022: [\n              \u0022urn:li:industry:20\u0022\n            ]\n          }\n        }\n      },\n      \u0022description\u0022: \u0022Saved Audience Template\u0022,\n      \u0022id\u0022: 12345,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n        \u0022time\u0022: 1676657835000\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:12345\u0022\n    },\n    {\n      \u0022approximateMemberCount\u0022: 0,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n        \u0022time\u0022: 1676657537000\n      },\n      \u0022name\u0022: \u0022template_name2\u0022,\n      \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n          \u0022and\u0022: [\n            {\n              \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:locations\u0022: [\n                  \u0022urn:li:country:de\u0022,\n                  \u0022urn:li:country:lu\u0022,\n                  \u0022urn:li:country:ca\u0022\n                ]\n              }\n            },\n            {\n              \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:industries\u0022: [\n                  \u0022urn:li:industry:43\u0022,\n                  \u0022urn:li:industry:46\u0022\n                ]\n              }\n            },\n            {\n              \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                  \u0022urn:li:locale:en_US\u0022\n                ]\n              }\n            }\n          ]\n        },\n        \u0022exclude\u0022: {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:industries\u0022: [\n              \u0022urn:li:industry:30\u0022\n            ]\n          }\n        }\n      },   \n      \u0022description\u0022: \u0022Saved Audience Template\u0022,\n      \u0022id\u0022: 12346,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n        \u0022time\u0022: 1676657835000\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:12346\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "ERROR MESSAGE",
+        "DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Parameter \u0027account\u0027 is required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing required field in the request",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Parameter \u0027sortField\u0027 is required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing required field in the request",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot find entity to update",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Template to update doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Key not found: 000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Template to delete doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "account::CreateOnly field present in a partial_update request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CreateOnly field couldn\u0027t be updated, account field shouldn\u0027t be used in update request",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

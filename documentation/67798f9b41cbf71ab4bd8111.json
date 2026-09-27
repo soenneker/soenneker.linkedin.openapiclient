@@ -1,0 +1,109 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/versioning-announcement",
+  "Title": "Versioning Announcment",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning-announcement"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Versioning Announcment",
+      "Anchor": "versioning-announcment",
+      "SectionPath": [],
+      "Text": "Beginning in 2025, new API endpoints and updates will be released on LinkedIn\u0027s versioned APIs. Versioning will allow adoption of new API features on your own schedule, requiring less coordination between you and LinkedIn to deliver increased value to our mutual customers, and will also allow more rapid release of new features to LinkedIn\u0027s developer platform. Calling versioned APIs requires minor changes to how requests are to LinkedIn are structured. This document describes the changes and provides recommendations for to make adoption of new versions easier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Base URL",
+      "Anchor": "new-base-url",
+      "SectionPath": [
+        "New Base URL"
+      ],
+      "Text": "Versioned APIs will have a new base URL, as described in the table below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "New Base URL",
+      "Anchor": "new-base-url",
+      "SectionPath": [
+        "New Base URL"
+      ],
+      "Text": "",
+      "Headers": [
+        "Old Base URL",
+        "New URL"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "https://api.linkedin.com/v2/",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "New Version Header",
+      "Anchor": "new-version-header",
+      "SectionPath": [
+        "New Version Header"
+      ],
+      "Text": "All requests to versioned APIs will require a new LinkedIn-Version header, populated with a version identifier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example Request with Version Header",
+      "Anchor": "example-request-with-version-header",
+      "SectionPath": [
+        "New Version Header",
+        "Example Request with Version Header"
+      ],
+      "Text": "GET /rest/someEndpoint HTTP/1.1\nHost: api.linkedin.com\nLinkedin-Version: 20240101",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendations for Migration",
+      "Anchor": "recommendations-for-migration",
+      "SectionPath": [
+        "Recommendations for Migration"
+      ],
+      "Text": "In order to facilitate easy migration, you should make the base URL and version header configurable modifications to your solution. When new API versions are released, modifying configurations should take minimal time to facilitate adoption of the latest APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Notification to Partners",
+      "Anchor": "notification-to-partners",
+      "SectionPath": [
+        "Notification to Partners"
+      ],
+      "Text": "When new API versions are released, LinkedIn will notify partners through standard communications channels and in our documentation release notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

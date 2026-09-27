@@ -1,0 +1,131 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+  "Title": "Getting Started with Analytics Services",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Analytics Services",
+      "Anchor": "getting-started-with-analytics-services",
+      "SectionPath": [],
+      "Text": "This tutorial shows you how to obtain permission to call Analytics Services APIs, request for access tokens, and make authenticated requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Analytics Services",
+      "Anchor": "getting-started-with-analytics-services",
+      "SectionPath": [],
+      "Text": "Analytics Services APIs exist on the LinkedIn Developer Platform. You can read more about the Developer Platform in the Authorization Code Flow (3-legged OAuth) documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtain Permission",
+      "Anchor": "obtain-permission",
+      "SectionPath": [
+        "Obtain Permission"
+      ],
+      "Text": "All Analytics API calls are made on behalf of an authenticated user. You will need to use an access token to make an authenticated call on behalf of that user. Your developer application must have been granted permission to use the r_sales_nav_analytics scope, and you must request this scope in your OAuth2 authorization request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtain Permission",
+      "Anchor": "obtain-permission",
+      "SectionPath": [
+        "Obtain Permission"
+      ],
+      "Text": "If you are a Sales Navigator Application Platform Partner, reach out to your point of contact at LinkedIn to request this permission be added to your application. Prospective partners can apply to join the SNAP program on the application page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Make Authenticated Requests",
+      "Anchor": "make-authenticated-requests",
+      "SectionPath": [
+        "Make Authenticated Requests"
+      ],
+      "Text": "Once your app has been granted the r_sales_nav_analytics permission, you are ready to perform OAuth2 request to obtain an access token with r_sales_nav_analytics permission and make authenticated requests to the Analytics APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Make Authenticated Requests",
+      "Anchor": "make-authenticated-requests",
+      "SectionPath": [
+        "Make Authenticated Requests"
+      ],
+      "Text": "In all HTTP requests to Analytics APIs, you must include the below headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Make Authenticated Requests",
+      "Anchor": "make-authenticated-requests",
+      "SectionPath": [
+        "Make Authenticated Requests"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer \u003Caccess_token\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-Restli-Protocol-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2.0.0",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Export Analytics Data",
+      "Anchor": "export-analytics-data",
+      "SectionPath": [
+        "Export Analytics Data"
+      ],
+      "Text": "Please refer to the Exporting User Activity tutorial to learn about how to use Analytics API to export user activity in Sales Navigator.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

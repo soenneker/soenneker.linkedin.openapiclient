@@ -49,17 +49,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
         /// <summary>
         /// To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningClassifications?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningclassifications-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndTypeDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.LearningClassificationsRequestBuilder.LearningClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.LearningClassificationsRequestBuilder.LearningClassificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.LearningClassificationsRequestBuilder.LearningClassificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifications.LearningClassificationsRequestBuilder.LearningClassificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.LearningContent.V2.LearningClassifica
             {
                 { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndTypeDefaultResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponse>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.LearningContentLearningClassificationByLocaleAndType2XxResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:GET https://api.linkedin.com/v2/learningClassifications?q=localeAndTypeDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningclassifications-localeandtype-finder*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword&amp;keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})Documentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*

@@ -1,0 +1,129 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+  "Title": "LinkedIn Marketing API Additional Info Fields",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Additional Info Fields",
+      "Anchor": "linkedin-marketing-api-additional-info-fields",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Additional Info Fields",
+      "Anchor": "linkedin-marketing-api-additional-info-fields",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Additional Info Fields",
+      "Anchor": "linkedin-marketing-api-additional-info-fields",
+      "SectionPath": [],
+      "Text": "Additional Info Fields are the replacement for API Decoration.\nThese fields provide additional information for a field that\u0027s present in a schema.\nFor example, the referenceInfo field in Accounts provides information about the reference field.\nThe field needs to be explicitly specified in projections for it to be returned in the response.\nFor example, to get referenceInfo field in Accounts, you must specify the reference info in the request projection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Additional Info Fields",
+      "Anchor": "linkedin-marketing-api-additional-info-fields",
+      "SectionPath": [],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LinkedIn Marketing API Additional Info Fields",
+      "Anchor": "linkedin-marketing-api-additional-info-fields",
+      "SectionPath": [],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountID}?fields=id,name,reference,referenceInfo",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LinkedIn Marketing API Additional Info Fields",
+      "Anchor": "linkedin-marketing-api-additional-info-fields",
+      "SectionPath": [],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountID}?fields=id,name,reference,referenceInfo\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022reference\u0022: \u0022urn:li:person:xdfs902\u0022,\n    \u0022name\u0022: \u0022Account Name\u0022,\n    \u0022id\u0022: 1234,\n    \u0022referenceInfo\u0022: {\n        \u0022person\u0022: {\n            \u0022vanityName\u0022: \u0022john.doe\u0022,\n            \u0022id\u0022: \u0022xdfs902\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Decoration Deprecation",
+      "Anchor": "api-decoration-deprecation",
+      "SectionPath": [
+        "API Decoration Deprecation"
+      ],
+      "Text": "API Decoration is a mechanism in LinkedIn\u0027s APIs to fetch data belonging to a URN object without having to make an extra call to that object\u0027s API.\nWe have decided to deprecate API Decoration as we have found the syntax to not be user friendly.\nWe\u0027re instead going to enhance the API schemas with the fields that are commonly queried in decoration requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Decoration Deprecation",
+      "Anchor": "api-decoration-deprecation",
+      "SectionPath": [
+        "API Decoration Deprecation"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Decoration Deprecation",
+      "Anchor": "api-decoration-deprecation",
+      "SectionPath": [
+        "API Decoration Deprecation"
+      ],
+      "Text": "Refer to this video to understand how to handle the deprecation of API decoration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Decoration Deprecation",
+      "Anchor": "api-decoration-deprecation",
+      "SectionPath": [
+        "API Decoration Deprecation"
+      ],
+      "Text": "We\u0027re going to roll out these changes a few APIs at a time every month. Refer to recent changes page to know which APIs will have the new enhanced schemas.\nThese changes are going to be versioned, the old way of API Decoration will be available in the older versions.\nThe newer versions won\u0027t support API decorations and will have enhanced schemas.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,1084 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting",
+  "Title": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "This migration guide provides the details of migrating from current geo endpoints/values to the new ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "These steps should be performed prior to Sept 30, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "For targeting locations, LinkedIn Bing geo. If you\u0027re a partner using LinkedIn legacy locations (Country, CountryGroup, Region, State) to create organic (non-sponsored) targeted company posts using UGC TargetAudience or Share linkedInDistributionTarget APIs, please continue reading this guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "The new geo data enables customers to target millions of new geo locations, including counties and cities, providing a more comprehensive and accurate geo targeting experience. Currently, there are ~6k standardized locations, primarily in the US.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organic Company UGC and Share Targeting Bing Geo Migration Guide",
+      "Anchor": "organic-company-ugc-and-share-targeting-bing-geo-migration-guide",
+      "SectionPath": [],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement which are now incorporated into our LinkedIn Marketing API Program Terms. By accessing any Microsoft Bing Maps location data, you\u0027re agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Steps",
+      "Anchor": "migration-steps",
+      "SectionPath": [
+        "Migration Steps"
+      ],
+      "Text": "Migrate\nFrom hard-coded legacy location URN or legacy location API to new Bing Geo Typeahead API to retrieve corresponding bing geo URN of locations that you want to target for an organic company post.\nStart using Bing geo urns\nRetrieved from Geo Typeahead API in geoLocations field instead of locations field for organic company post targeting. Only bing geoLocations will be accepted after Sept 30th, 2021. Legacy locations can no longer be used for organic targeted company post after Sept 30th, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo Typeahead API from legacy location API or hard-coded legacy location URN",
+      "Anchor": "geo-typeahead-api-from-legacy-location-api-or-hard-coded-legacy-location-urn",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "Geo Typeahead API from legacy location API or hard-coded legacy location URN"
+      ],
+      "Text": "LinkedIn now enforces partners to use the Geo Typeahead API to retrieve geo urns of locations to be targeted instead of using hard coded legacy location urns (eg. country, countryGroup, state, region urns) or legacy location APIs for organic company post targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo Typeahead API from legacy location API or hard-coded legacy location URN",
+      "Anchor": "geo-typeahead-api-from-legacy-location-api-or-hard-coded-legacy-location-urn",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "Geo Typeahead API from legacy location API or hard-coded legacy location URN"
+      ],
+      "Text": "Partners have 3 months starting from 6/30/2021 to 09/30/2021 to migrate from using legacy location APIs or hard coded legacy location urns to new Bing Geo typeahead API to retrieve Bing geo urns and use that in the new geoLocations field for organic company post targeting.\nBetween 6/30/2021 to 09/30/2021, both legacy location URN (eg. countryGroup, country, region, state urns) in locations field and geo URN in geoLocations field are accepted for UGC and Share APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to use the Bing Geo Typeahead",
+      "Anchor": "how-to-use-the-bing-geo-typeahead",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "How to use the Bing Geo Typeahead"
+      ],
+      "Text": "Bing Geo Typeahead API provides a list of Bing Geo urns based on user-provided text input. Jump to: Geo Typeahead API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Typeahead Sample Requests",
+      "Anchor": "bing-geo-typeahead-sample-requests",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "How to use the Bing Geo Typeahead",
+        "Bing Geo Typeahead Sample Requests"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bing Geo Typeahead Sample Requests",
+      "Anchor": "bing-geo-typeahead-sample-requests",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "How to use the Bing Geo Typeahead",
+        "Bing Geo Typeahead Sample Requests"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/geoTypeahead?q=search\u0026query=united\n\nGET https://api.linkedin.com/rest/geoTypeahead?q=search\u0026query=united\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bing Geo Typeahead Sample Requests",
+      "Anchor": "bing-geo-typeahead-sample-requests",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "How to use the Bing Geo Typeahead",
+        "Bing Geo Typeahead Sample Requests"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/geoTypeahead?q=search\u0026query=united\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027\n\ncurl -X GET \u0027https://api.linkedin.com/rest/geoTypeahead?q=search\u0026query=united\u0026locale=(language%3Aen%2Ccountry%3AUS)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bing Geo Typeahead Sample Response",
+      "Anchor": "bing-geo-typeahead-sample-response",
+      "SectionPath": [
+        "1. Migrate to new Bing Geo Typeahead",
+        "How to use the Bing Geo Typeahead",
+        "Bing Geo Typeahead Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [\n            {\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/geoTypeahead?q=search\u0026query=united\u0026count=10\u0026start=10\u0022\n            }\n        ],\n        \u0022total\u0022: 0\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022displayText\u0022: \u0022United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:103644278\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:101165590\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022United Arab Emirates\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:104305776\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022England, United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102299470\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022California, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102095887\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022Texas, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102748797\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022New York, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:105080838\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022Florida, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:101318387\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022London Area, United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90009496\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022London, England, United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102257491\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Use Bing Geo locations for Organic Company Post Targeting",
+      "Anchor": "2-use-bing-geo-locations-for-organic-company-post-targeting",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting"
+      ],
+      "Text": "In Step 2, partners start to populate geoLocations field with new bing geo urns retrieved from the new Geo Typeahead API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Timeline",
+      "Anchor": "timeline",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Timeline"
+      ],
+      "Text": "June 30th, 2021 - Sept 30th, 2021: Both locations field with legacy location urns and geoLocations field with new Bing Geo urns are supported.\nOn Sept 30th, 2021: locations field will be deprecated and UGC and Share APIs will reject any request with the deprecated locations field. Only geoLocations field with Bing Geo urns populated is supported..\nAfter Sept 30th, 2021, if locations field is used, UGC, and Share API will return following error response below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Timeline",
+      "Anchor": "timeline",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Timeline"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022com.linkedin.content.common.ResponseException: Target \u0027locations\u0027 field is deprecated. Please use \u0027geoLocations\u0027 field instead\u0022,\n    \u0022status\u0022: 400\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Details",
+      "Anchor": "details",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Details"
+      ],
+      "Text": "Partners migrate to use new geoLocations field with Bing Geo urns instead of locations field with legacy location urns for targeting organic post/share to specific locations. Please refer to UGC and Share sample creation requests with geoLocations field for examples.\nWhat happens to the organic targeted company posts/shares already created with legacy location urns in locations field prior to Sept 30th, 2021?\nNo action needed from Partners. LinkedIn will run a data fix on Sept 30th, 2021 where it will automatically populate geoLocations with corresponding geo urns from legacy location urns from locations field and locations fields are removed.\nAs there\u0027s no direct 1 to 1 mapping between legacy location URN and new bing geo URN, target count for organic targeted company share/post with new Bing Geo urns and information (eg. name) on some locations might differ a little bit as shown below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Examples of legacy location name change to Bing geo name",
+      "Anchor": "examples-of-legacy-location-name-change-to-bing-geo-name",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Examples of legacy location name change to Bing geo name"
+      ],
+      "Text": "",
+      "Headers": [
+        "Legacy Location URN",
+        "Legacy Location Name",
+        "Bing Geo URN",
+        "Bing Geo Name"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:countryGroup:LA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latin America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:104514572",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South America",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:kr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Korea",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105149562",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South Korea",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:om",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sultanate of Oman",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:103619019",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oman",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:vg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Virgin Islands (British)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105534858",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "British Virgin Islands",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:country:vi",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Virgin Islands (U.S.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102119762",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US Virgin Islands",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:ch,ZH)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Canton of Z\u00FCrich",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102436504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Zurich",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:pk,3)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NWFP Peshawar",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:106436446",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Khyber Pakhtunkhwa",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:cn,NX)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ningxia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105325976",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ningxia Hui",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:275",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Destin/Fort Walton Beach, Florida Area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:90009453",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Crestview-Fort Walton Beach-Destin Area",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:928",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York, Pennsylvania Area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105243172",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York County",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Examples of legacy location audience count change to bing geo audience count",
+      "Anchor": "examples-of-legacy-location-audience-count-change-to-bing-geo-audience-count",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Examples of legacy location audience count change to bing geo audience count"
+      ],
+      "Text": "",
+      "Headers": [
+        "Legacy Location URN",
+        "Legacy Location Name",
+        "Legacy Total Member count",
+        "Bing Geo URN",
+        "Bing Geo Name",
+        "Bing Total Member Count",
+        "Audience Change"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:countryGroup:NA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "North America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "196514894",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102221843",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "North America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "218809397",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "11.34%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:countryGroup:LA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latin America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100608115",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:104514572",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "78276886",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-22.19%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:countryGroup:AS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Asia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "178219309",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:102393603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Asia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "204540435",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "14.77%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:countryGroup:ME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Middle East",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "25967989",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:91000001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Middle East",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "33513746",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "29.06%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:state:(urn:li:country:pk,3)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NWFP Peshawar",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "171048",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:106436446",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Khyber Pakhtunkhwa",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "157474",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-7.94%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:928",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York, Pennsylvania Area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "149810",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:105243172",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "York County",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "138636",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-7.46%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example of number of segments for legacy location to Bing geo entity segments",
+      "Anchor": "example-of-number-of-segments-for-legacy-location-to-bing-geo-entity-segments",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Example of number of segments for legacy location to Bing geo entity segments"
+      ],
+      "Text": "The reason for North America and South America change is because Mexico and a few island countries/regions that are previously counted as part of Latin America, are now part of North America. A similar case of audience cover increases in Asia and the Middle East.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Example of number of segments for legacy location to Bing geo entity segments",
+      "Anchor": "example-of-number-of-segments-for-legacy-location-to-bing-geo-entity-segments",
+      "SectionPath": [
+        "2. Use Bing Geo locations for Organic Company Post Targeting",
+        "Example of number of segments for legacy location to Bing geo entity segments"
+      ],
+      "Text": "",
+      "Headers": [
+        "Legacy Location URN",
+        "Legacy Location Name",
+        "Legacy Member count",
+        "Bing Geo URN",
+        "Bing Geo Name",
+        "Bing Member Count",
+        "Audience Change"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:region:5096",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pamplona Area, Spain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "177535",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:100146939 urn:li:geo:102688677",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Chartered Community of Navarre, Spain Guip\u00FAzcoa, Basque Country, Spain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "228756",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "29%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:region:b6",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Picardy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "271597",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:geo:107080171 urn:li:geo:102672257 urn:li:geo:105012670",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Somme, Hauts-de-France, France, Oise, Hauts-de-France, France, Aisne, Hauts-de-France, France",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "272357",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "0.3%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+      "Anchor": "sample-creation-requests-for-ugc-and-share-for-old-locations-field-and-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field"
+      ],
+      "Text": "Old requests use country URN urn:li:country:us in the legacy locations field whereas new requests use bing geo URN urn:li:geo:103644278 (which is a corresponding geo URN for country URN urn:li:country:us) in the new geoLocations field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with legacy locations field"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with legacy locations field"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with legacy locations field"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022locations\u0022: [\n                    \u0022urn:li:country:us\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with legacy locations field"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/ugcPosts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022locations\u0022: [\n                    \u0022urn:li:country:us\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with new geoLocations field"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with new geoLocations field"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with new geoLocations field"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company UGC Post creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-ugc-post-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company UGC Post creation request with new geoLocations field"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/ugcPosts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Organic Targeted Company Share creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with legacy locations field"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company Share creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with legacy locations field"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/shares",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company Share creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with legacy locations field"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n        \u0022contentEntities\u0022: [\n            {\n                \u0022entityLocation\u0022: \u0022https://www.example.com/content.html\u0022,\n                \u0022thumbnails\u0022: [\n                    {\n                        \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                    }\n                ]\n            }\n        ],\n        \u0022title\u0022: \u0022Test Share with Content !!\u0022\n    },\n    \u0022distribution\u0022: {\n        \u0022externalEntities\u0022: [],\n        \u0022linkedInDistributionTarget\u0022: {\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:4\u0022\n            ],\n            \u0022locations\u0022: [\n                \u0022urn:li:country:us\u0022\n            ],\n            \u0022seniorities\u0022: [\n                \u0022urn:li:seniority:3\u0022\n            ]\n        }\n    },\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022subject\u0022: \u0022Test Share Subject !!\u0022,\n    \u0022text\u0022: {\n        \u0022text\u0022: \u0022Test Share created by postman !!\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company Share creation request with legacy locations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-legacy-locations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with legacy locations field"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/shares\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022content\u0022: {\n        \u0022contentEntities\u0022: [\n            {\n                \u0022entityLocation\u0022: \u0022https://www.example.com/content.html\u0022,\n                \u0022thumbnails\u0022: [\n                    {\n                        \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                    }\n                ]\n            }\n        ],\n        \u0022title\u0022: \u0022Test Share with Content !!\u0022\n    },\n    \u0022distribution\u0022: {\n        \u0022externalEntities\u0022: [],\n        \u0022linkedInDistributionTarget\u0022: {\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:4\u0022\n            ],\n            \u0022locations\u0022: [\n                \u0022urn:li:country:us\u0022\n            ],\n            \u0022seniorities\u0022: [\n                \u0022urn:li:seniority:3\u0022\n            ]\n        }\n    },\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022subject\u0022: \u0022Test Share Subject !!\u0022,\n    \u0022text\u0022: {\n        \u0022text\u0022: \u0022Test Share created by postman !!\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Organic Targeted Company Share creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with new geoLocations field"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company Share creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with new geoLocations field"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/shares",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company Share creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with new geoLocations field"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n        \u0022contentEntities\u0022: [\n            {\n                \u0022entityLocation\u0022: \u0022https://www.example.com/content.html\u0022,\n                \u0022thumbnails\u0022: [\n                    {\n                        \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                    }\n                ]\n            }\n        ],\n        \u0022title\u0022: \u0022Test Share with Content !!\u0022\n    },\n    \u0022distribution\u0022: {\n        \u0022externalEntities\u0022: [],\n        \u0022linkedInDistributionTarget\u0022: {\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:4\u0022\n            ],\n            \u0022geoLocations\u0022: [\n                \u0022urn:li:geo:103644278\u0022\n            ],\n            \u0022seniorities\u0022: [\n                \u0022urn:li:seniority:3\u0022\n            ]\n        }\n    },\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022subject\u0022: \u0022Test Share Subject !!\u0022,\n    \u0022text\u0022: {\n        \u0022text\u0022: \u0022Test Share created by postman !!\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Organic Targeted Company Share creation request with new geoLocations field",
+      "Anchor": "sample-organic-targeted-company-share-creation-request-with-new-geolocations-field",
+      "SectionPath": [
+        "Sample Creation Requests for UGC and Share for old locations field and new geoLocations field",
+        "Sample Organic Targeted Company Share creation request with new geoLocations field"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/shares\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022content\u0022: {\n        \u0022contentEntities\u0022: [\n            {\n                \u0022entityLocation\u0022: \u0022https://www.example.com/content.html\u0022,\n                \u0022thumbnails\u0022: [\n                    {\n                        \u0022resolvedUrl\u0022: \u0022https://www.example.com/image.jpg\u0022\n                    }\n                ]\n            }\n        ],\n        \u0022title\u0022: \u0022Test Share with Content !!\u0022\n    },\n    \u0022distribution\u0022: {\n        \u0022externalEntities\u0022: [],\n        \u0022linkedInDistributionTarget\u0022: {\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:4\u0022\n            ],\n            \u0022geoLocations\u0022: [\n                \u0022urn:li:geo:103644278\u0022\n            ],\n            \u0022seniorities\u0022: [\n                \u0022urn:li:seniority:3\u0022\n            ]\n        }\n    },\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022subject\u0022: \u0022Test Share Subject !!\u0022,\n    \u0022text\u0022: {\n        \u0022text\u0022: \u0022Test Share created by postman !!\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "When are legacy locations values (eg. country, countryGroup, region, and state) going to be deprecated? What are the corresponding Bing geo location values?\nLegacy locations will be deprecated for organic company post targeting on Sept 30th, 2021. Corresponding Bing geo urn can be retrieved using Geo Typeahead API.\n\nWhat happens to old posts with legacy location urns in locations field?\nLinkedIn will take care of that part where it will run a data fix on Sept 30th, 2021 to populate corresponding geo urns in geoLocations field based on legacy location urns in locations and remove existing locations field.\n\nWhat happens to existing target audience count restriction for Organic Company Post targeting?\nLinkedIn continues to enforce that total audience count for an organic targeted company post must exceed 300. Please take a look at this doc for more info about audience count.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

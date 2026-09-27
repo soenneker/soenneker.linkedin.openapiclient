@@ -14,9 +14,57 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ctvOnly property</summary>
+        /// <summary>Average Frequency is a single point value calculated by impression/reach assuming the single point budget in the request was used to forecast impression and reach results. It would be returned together with the impression curve if the forecasted impression is requested. Optional (returned when action=IMPRESSION and targetBudgetMicros is set in the input). The forecasted results are direction estimates and don’t guarantee the actual performance of campaigns.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestAverageFrequency? AverageFrequency { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestAverageFrequency AverageFrequency { get; set; }
+#endif
+        /// <summary>Cost Per Lead is a single point value calculated by spend/lead, assuming the single point budget in the request was used to forecast cost per each lead, currently supports USD only. Optional(returned only when action=LEAD). The forecasted results are direction estimates and don&apos;t guarantee the actual performance of campaigns. NOTE: costPerLead is only supported for API Versions starting from February 2025 and above.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead? CostPerLead { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead CostPerLead { get; set; }
+#endif
+        /// <summary>Cost Per Reach is a single point value calculated by spend/reach assuming the single point budget in the request was used to forecast cost per each reach, currently supports USD only. Optional(returned only when action=REACH). The forecasted results are direction estimates and don&apos;t guarantee the actual performance of campaigns. NOTE: costPerReach is only supported for API Versions starting from February 2025 and above.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach? CostPerReach { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach CostPerReach { get; set; }
+#endif
+        /// <summary>Cost Per Thousand Impressions is a single point value calculated by spend/(impression * 1000), assuming the single point budget in the request was used to forecast cost per each impression, currently supports USD only. Optional(returned only when action=IMPRESSION). The forecasted results are direction estimates and don&apos;t guarantee the actual performance of campaigns. NOTE: costPerThousandImpressions is only supported for API Versions starting from February 2025 and above.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions? CostPerThousandImpressions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions CostPerThousandImpressions { get; set; }
+#endif
+        /// <summary>The timestamp when the media plan was created.Documented type: timestampRequirement: read-only Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt? CreatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt CreatedAt { get; set; }
+#endif
+        /// <summary>The URN of the creator of the media plan.Documented type: URNRequirement: read-only Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Creator { get; set; }
+#nullable restore
+#else
+        public string Creator { get; set; }
+#endif
+        /// <summary>Forecast for connected TV only campaigns if true. This only be supported if objective is BRAND_AWARENESS and enableAudienceNetwork is set to true.Documented type: booleanRequirement: Optional (default=false)</summary>
         public bool? CtvOnly { get; set; }
-        /// <summary>The currencyCode property</summary>
+        /// <summary>The currency units for the forecasting curve.Documented type: stringRequirement: Optional(default=USD)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyCode { get; set; }
@@ -24,11 +72,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string CurrencyCode { get; set; }
 #endif
-        /// <summary>The enableAudienceExpansion property</summary>
+        /// <summary>The Audience Expansion status. (It’s enabled if true and disabled if false.)Documented type: booleanRequirement: Optional (default=true)</summary>
         public bool? EnableAudienceExpansion { get; set; }
-        /// <summary>The enableAudienceNetwork property</summary>
+        /// <summary>The LinkedIn Audience Network status. (It’s enabled if true and disabled if false.)Documented type: booleanRequirement: Optional (default=true)</summary>
         public bool? EnableAudienceNetwork { get; set; }
-        /// <summary>The endDateOn property</summary>
+        /// <summary>The end date of the media plan.Documented type: DateRequirement: Optional (default=90 days from today’s date in UTC)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestEndDateOn? EndDateOn { get; set; }
@@ -36,7 +84,31 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestEndDateOn EndDateOn { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The array of points along the impressions curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action=IMPRESSION). The forecasted results are direction estimates and don’t guarantee the actual performance of campaigns.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve? ImpressionCurve { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve ImpressionCurve { get; set; }
+#endif
+        /// <summary>The array of points along the lead generation curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and leads generated would be on the y-axis. Optional(returned only when action=LEAD). The forecasted results are direction estimates and don’t guarantee the actual performance of campaigns.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestLeadCurve? LeadCurve { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestLeadCurve LeadCurve { get; set; }
+#endif
+        /// <summary>The URN of the media plan.Documented type: URNRequirement: read-only Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MediaPlanUrn { get; set; }
+#nullable restore
+#else
+        public string MediaPlanUrn { get; set; }
+#endif
+        /// <summary>The name of the media plan.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -44,7 +116,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectiveType property</summary>
+        /// <summary>The objective of your marketing campaign. Refer objectivetype.Documented type: string (Enum)Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectiveType { get; set; }
@@ -52,7 +124,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string ObjectiveType { get; set; }
 #endif
-        /// <summary>The optimizationType property</summary>
+        /// <summary>The marketing results that you’re optimizing for.Documented type: string (Enum)Requirement: Optional (default=MAX_REACH for BRAND_AWARENESS objectiveType, default=MAX_VIDEO_VIEW for VIDEO_VIEW objective type, and default=MAX_LEAD for LEAD_GENERATION objective type)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OptimizationType { get; set; }
@@ -60,7 +132,23 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string OptimizationType { get; set; }
 #endif
-        /// <summary>The sponsoredAccountUrn property</summary>
+        /// <summary>The array of points along the reach curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action=REACH). The forecasted results are direction estimates and don’t guarantee the actual performance of campaigns.Documented type: ForecastMetricsRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachCurve? ReachCurve { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachCurve ReachCurve { get; set; }
+#endif
+        /// <summary>The array of points along the reach percentage curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action=REACH and enableAudienceExpansion=false). The forecasted results are direction estimates and don’t guarantee the actual performance of campaigns.Documented type: ForecastMetrics objectRequirement: read-only Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachPercentageCurve? ReachPercentageCurve { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachPercentageCurve ReachPercentageCurve { get; set; }
+#endif
+        /// <summary>The sponsored ad account URN where the authenticated user has a valid ad account user role.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SponsoredAccountUrn { get; set; }
@@ -68,7 +156,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string SponsoredAccountUrn { get; set; }
 #endif
-        /// <summary>The startDateOn property</summary>
+        /// <summary>The start date of the media plan.Documented type: DateRequirement: Optional (default=today’s date in UTC)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOn? StartDateOn { get; set; }
@@ -76,8 +164,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOn StartDateOn { get; set; }
 #endif
-        /// <summary>The targetBudgetMicros property</summary>
-        public int? TargetBudgetMicros { get; set; }
+        /// <summary>A specific budget that the caller is interested in. More metrics will be returned about this point. Note that this budget is represented in micros for precision ($1 USD = 1000000 micros)Documented type: longRequirement: Optional (default=none)</summary>
+        public long? TargetBudgetMicros { get; set; }
         /// <summary>The targetingCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,17 +199,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "averageFrequency", n => { AverageFrequency = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestAverageFrequency>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestAverageFrequency.CreateFromDiscriminatorValue); } },
+                { "costPerLead", n => { CostPerLead = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead.CreateFromDiscriminatorValue); } },
+                { "costPerReach", n => { CostPerReach = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach.CreateFromDiscriminatorValue); } },
+                { "costPerThousandImpressions", n => { CostPerThousandImpressions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt.CreateFromDiscriminatorValue); } },
+                { "creator", n => { Creator = n.GetStringValue(); } },
                 { "ctvOnly", n => { CtvOnly = n.GetBoolValue(); } },
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
                 { "enableAudienceExpansion", n => { EnableAudienceExpansion = n.GetBoolValue(); } },
                 { "enableAudienceNetwork", n => { EnableAudienceNetwork = n.GetBoolValue(); } },
                 { "endDateOn", n => { EndDateOn = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestEndDateOn>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestEndDateOn.CreateFromDiscriminatorValue); } },
+                { "impressionCurve", n => { ImpressionCurve = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve.CreateFromDiscriminatorValue); } },
+                { "leadCurve", n => { LeadCurve = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestLeadCurve>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestLeadCurve.CreateFromDiscriminatorValue); } },
+                { "mediaPlanUrn", n => { MediaPlanUrn = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectiveType", n => { ObjectiveType = n.GetStringValue(); } },
                 { "optimizationType", n => { OptimizationType = n.GetStringValue(); } },
+                { "reachCurve", n => { ReachCurve = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachCurve>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachCurve.CreateFromDiscriminatorValue); } },
+                { "reachPercentageCurve", n => { ReachPercentageCurve = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachPercentageCurve>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachPercentageCurve.CreateFromDiscriminatorValue); } },
                 { "sponsoredAccountUrn", n => { SponsoredAccountUrn = n.GetStringValue(); } },
                 { "startDateOn", n => { StartDateOn = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOn>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOn.CreateFromDiscriminatorValue); } },
-                { "targetBudgetMicros", n => { TargetBudgetMicros = n.GetIntValue(); } },
+                { "targetBudgetMicros", n => { TargetBudgetMicros = n.GetLongValue(); } },
                 { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestTargetingCriteria.CreateFromDiscriminatorValue); } },
             };
         }
@@ -132,17 +231,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestAverageFrequency>("averageFrequency", AverageFrequency);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerLead>("costPerLead", CostPerLead);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerReach>("costPerReach", CostPerReach);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCostPerThousandImpressions>("costPerThousandImpressions", CostPerThousandImpressions);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestCreatedAt>("createdAt", CreatedAt);
+            writer.WriteStringValue("creator", Creator);
             writer.WriteBoolValue("ctvOnly", CtvOnly);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteBoolValue("enableAudienceExpansion", EnableAudienceExpansion);
             writer.WriteBoolValue("enableAudienceNetwork", EnableAudienceNetwork);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestEndDateOn>("endDateOn", EndDateOn);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestImpressionCurve>("impressionCurve", ImpressionCurve);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestLeadCurve>("leadCurve", LeadCurve);
+            writer.WriteStringValue("mediaPlanUrn", MediaPlanUrn);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectiveType", ObjectiveType);
             writer.WriteStringValue("optimizationType", OptimizationType);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachCurve>("reachCurve", ReachCurve);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestReachPercentageCurve>("reachPercentageCurve", ReachPercentageCurve);
             writer.WriteStringValue("sponsoredAccountUrn", SponsoredAccountUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestStartDateOn>("startDateOn", StartDateOn);
-            writer.WriteIntValue("targetBudgetMicros", TargetBudgetMicros);
+            writer.WriteLongValue("targetBudgetMicros", TargetBudgetMicros);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningCreateAMediaPlanRequestTargetingCriteria>("targetingCriteria", TargetingCriteria);
             writer.WriteAdditionalData(AdditionalData);
         }

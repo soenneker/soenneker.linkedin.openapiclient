@@ -25,7 +25,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The voteCount property</summary>
-        public int? VoteCount { get; set; }
+        public long? VoteCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollOptionsItem"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "isVotedByViewer", n => { IsVotedByViewer = n.GetBoolValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "voteCount", n => { VoteCount = n.GetIntValue(); } },
+                { "voteCount", n => { VoteCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isVotedByViewer", IsVotedByViewer);
             writer.WriteStringValue("text", Text);
-            writer.WriteIntValue("voteCount", VoteCount);
+            writer.WriteLongValue("voteCount", VoteCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

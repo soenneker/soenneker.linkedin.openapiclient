@@ -1,0 +1,1816 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics",
+  "Title": "Member Post Statistics",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/video-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Member Post Statistics",
+      "Anchor": "member-post-statistics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Statistics",
+      "Anchor": "member-post-statistics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Statistics",
+      "Anchor": "member-post-statistics",
+      "SectionPath": [],
+      "Text": "The memberCreatorPostAnalytics API retrieves both single post or aggregated posts analytics for the authenticated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Post Statistics",
+      "Anchor": "member-post-statistics",
+      "SectionPath": [],
+      "Text": "Single post statistics: To retrieve single post statistics, use the entity finder. The API returns statistics for the given post, query type, and aggregation.\n\nAggregated post statistics for the member: To retrieve aggregated post statistics for the member, use the me finder. The API returns statistics for the given post, query type, and aggregation for all of the member\u0027s posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_member_postAnalytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your posts and their reporting data.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Metrics Definition for Member Post Analytics",
+      "Anchor": "metrics-definition-for-member-post-analytics",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric",
+        "Definition"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "IMPRESSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of impressions of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBERS_REACHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of members reached, post viewers or unique impressions count metric.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RESHARE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of reshares/reposts of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REACTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of reactions of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of comments of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Metrics Definition for Member Post Analytics",
+      "Anchor": "metrics-definition-for-member-post-analytics",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric",
+        "Definition"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "IMPRESSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of impressions of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBERS_REACHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of members reached, post viewers or unique impressions count metric.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RESHARE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of reshares/reposts of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REACTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of reactions of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of comments of the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "POST_SAVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times the requested entity was saved.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "POST_SEND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times the requested entity was sent through LinkedIn messaging.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LINK_CLICKS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of link clicks on the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PREMIUM_CTA_CLICKS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of premium call-to-action clicks on the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FOLLOWER_GAINED_FROM_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of followers gained from the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROFILE_VIEW_FROM_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of profile views driven by the requested entity.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Single Post Statistics",
+      "Anchor": "retrieve-single-post-statistics",
+      "SectionPath": [
+        "Retrieve Single Post Statistics"
+      ],
+      "Text": "Call memberCreatorPostAnalytics with entity query parameter to retrieve single post statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the entity whose type should be ugcPost or share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN. For example, urn:li:ugcPost:6443156446455693312.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of aggregation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note that the combination of MEMBERS_REACHED \u002B DAILY is not supported. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for which analytics will be fetched. If missing, it returns analytics for the lifetime of the post. It is an object with start and end fields holding the start and end date/time. The time range is inclusive of the start and exclusive of the end. The start and end fields are both optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the entity whose type should be ugcPost or share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN. For example, urn:li:ugcPost:6443156446455693312.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT, POST_SAVE, POST_SEND, LINK_CLICKS, PREMIUM_CTA_CLICKS, FOLLOWER_GAINED_FROM_CONTENT, PROFILE_VIEW_FROM_CONTENT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of aggregation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note: DAILY aggregation is not supported for MEMBERS_REACHED, LINK_CLICKS, FOLLOWER_GAINED_FROM_CONTENT or PROFILE_VIEW_FROM_CONTENT. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for which analytics will be fetched. If missing, it returns analytics for the lifetime of the post. It is an object with start and end fields holding the start and end date/time. The time range is inclusive of the start and exclusive of the end. The start and end fields are both optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the post entity with type ugcPost or share, e.g., urn:li:ugcPost:123.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics returned. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the post entity with type ugcPost or share, e.g., urn:li:ugcPost:123.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics returned. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT, POST_SAVE, POST_SEND, LINK_CLICKS, PREMIUM_CTA_CLICKS, FOLLOWER_GAINED_FROM_CONTENT, PROFILE_VIEW_FROM_CONTENT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRange Object Schema",
+      "Anchor": "daterange-object-schema",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "DateRange Object Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting date (year, month, day format).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting month.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending date (year, month, day format). Defaults to the current date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending month.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "To fetch the daily reactions count of a post owned by the current member from 2024/05/04 to 2024/05/06.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "Daily impression metrics are not supported if given entity is post.\nFor the entity parameter, if the URN is a ugcPostUrn, use entity=(ugc:urn%3Ali%3AugcPost%3A7325786486870552578). If the URN is a shareUrn, use entity=(share:urn%3Ali%3Ashare%3A7325786486870552578).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberCreatorPostAnalytics?q=entity\u0026entity=(share:urn%3Ali%3Ashare%3A7325786486870552578)\u0026queryType=REACTION\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberCreatorPostAnalytics?q=entity\u0026entity=(share:urn%3Ali%3Ashare%3A7325786486870552578)\u0026queryType=REACTION\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022count\u0022: 10,\n            \u0022metricType\u0022: {\n                \u0022com.linkedin.adsexternalapi.memberanalytics.v1.CreatorPostAnalyticsMetricTypeV1\u0022: \u0022REACTION\u0022\n            },\n            \u0022targetEntity\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7325786486870552578\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                }\n            }\n        },\n        {\n            \u0022count\u0022: 20,\n            \u0022metricType\u0022: {\n                \u0022com.linkedin.adsexternalapi.memberanalytics.v1.CreatorPostAnalyticsMetricTypeV1\u0022: \u0022REACTION\u0022\n            },\n            \u0022targetEntity\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7325786486870552578\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 6,\n                    \u0022year\u0022: 2024\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Single Post Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022count\u0022: 10,\n            \u0022metricType\u0022: \u0022REACTION\u0022,\n            \u0022targetEntity\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7325786486870552578\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                }\n            }\n        },\n        {\n            \u0022count\u0022: 20,\n            \u0022metricType\u0022: \u0022REACTION\u0022,\n            \u0022targetEntity\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7325786486870552578\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 6,\n                    \u0022year\u0022: 2024\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Aggregated Post Statistics",
+      "Anchor": "retrieve-aggregated-post-statistics",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics"
+      ],
+      "Text": "Call memberCreatorPostAnalytics with me query parameter to retrieve aggregated posts statistics for the current member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be me.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT. Note: RESHARE, REACTION, COMMENT are not consistent with UI at the moment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of aggregation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note that the combination of MEMBERS_REACHED \u002B DAILY is not supported. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for which analytics will be fetched. If missing, it returns analytics for the lifetime of the video. It is an object with start and end fields holding the start and end date/time. The time range is inclusive of the start and exclusive of the end. The start and end fields are both optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be me.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT, POST_SAVE, POST_SEND, LINK_CLICKS, PREMIUM_CTA_CLICKS, FOLLOWER_GAINED_FROM_CONTENT, PROFILE_VIEW_FROM_CONTENT. Note: RESHARE, REACTION, COMMENT are not consistent with UI at the moment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of aggregation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. Note: DAILY aggregation is not supported for MEMBERS_REACHED, LINK_CLICKS, FOLLOWER_GAINED_FROM_CONTENT or PROFILE_VIEW_FROM_CONTENT. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for which analytics will be fetched. If missing, it returns analytics for the lifetime of the content. It is an object with start and end fields holding the start and end date/time. The time range is inclusive of the start and exclusive of the end. The start and end fields are both optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics returned. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics returned. Options: IMPRESSION, MEMBERS_REACHED, RESHARE, REACTION, COMMENT, POST_SAVE, POST_SEND, LINK_CLICKS, PREMIUM_CTA_CLICKS, FOLLOWER_GAINED_FROM_CONTENT, PROFILE_VIEW_FROM_CONTENT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRange Object Schema",
+      "Anchor": "daterange-object-schema-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "DateRange Object Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting date (year, month, day format).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting month.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending date (year, month, day format). Defaults to the current date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending month.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "To fetch the daily reactions count of a post owned by the current member from 2024/05/04 to 2024/05/06.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberCreatorPostAnalytics?q=me\u0026queryType=REACTION\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberCreatorPostAnalytics?q=me\u0026queryType=REACTION\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022count\u0022: 10,\n            \u0022metricType\u0022: {\n                \u0022com.linkedin.adsexternalapi.memberanalytics.v1.CreatorPostAnalyticsMetricTypeV1\u0022: \u0022REACTION\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                }\n            }\n        },\n        {\n            \u0022count\u0022: 20,\n            \u0022metricType\u0022: {\n                \u0022com.linkedin.adsexternalapi.memberanalytics.v1.CreatorPostAnalyticsMetricTypeV1\u0022: \u0022REACTION\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 6,\n                    \u0022year\u0022: 2024\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Aggregated Post Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022count\u0022: 10,\n            \u0022metricType\u0022: \u0022REACTION\u0022,\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                }\n            }\n        },\n        {\n            \u0022count\u0022: 20,\n            \u0022metricType\u0022: \u0022REACTION\u0022,\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 6,\n                    \u0022year\u0022: 2024\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported query type TOTAL_COUNT for metric type MEMBER_FOLLOWER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported query type, and aggregation combination.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update the query parameter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intermittent LinkedIn server error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please try again.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The audienceInsight property</summary>
+        /// <summary>Audience Insight object which gives a breakdown of the audience in the request into segments grouped by the selected ad facet.Documented type: audienceInsight object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight? AudienceInsight { get; set; }
@@ -22,8 +22,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight AudienceInsight { get; set; }
 #endif
-        /// <summary>The totalAudienceCount property</summary>
-        public int? TotalAudienceCount { get; set; }
+        /// <summary>The full audience count of the base audience provided in the request, which can be used to calculate percentages from the segmentations.Documented type: long</summary>
+        public long? TotalAudienceCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValue"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audienceInsight", n => { AudienceInsight = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight.CreateFromDiscriminatorValue); } },
-                { "totalAudienceCount", n => { TotalAudienceCount = n.GetIntValue(); } },
+                { "totalAudienceCount", n => { TotalAudienceCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNy200ResponseValueAudienceInsight>("audienceInsight", AudienceInsight);
-            writer.WriteIntValue("totalAudienceCount", TotalAudienceCount);
+            writer.WriteLongValue("totalAudienceCount", TotalAudienceCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

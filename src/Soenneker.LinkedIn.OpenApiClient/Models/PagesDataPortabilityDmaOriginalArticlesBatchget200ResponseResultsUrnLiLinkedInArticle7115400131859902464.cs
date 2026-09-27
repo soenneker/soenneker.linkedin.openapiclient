@@ -31,9 +31,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string ContentHtml { get; set; }
 #endif
         /// <summary>The createdAt property</summary>
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
         /// <summary>The lastModifiedAt property</summary>
-        public int? LastModifiedAt { get; set; }
+        public long? LastModifiedAt { get; set; }
         /// <summary>The linkedInArticleUrn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,9 +67,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Permlink { get; set; }
 #endif
         /// <summary>The publishedAt property</summary>
-        public int? PublishedAt { get; set; }
+        public long? PublishedAt { get; set; }
         /// <summary>The readingDuration property</summary>
-        public int? ReadingDuration { get; set; }
+        public long? ReadingDuration { get; set; }
         /// <summary>The series property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +113,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string UgcPost { get; set; }
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get; set; }
+        public long? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464"/> and sets the default values.
         /// </summary>
@@ -141,21 +141,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "author", n => { Author = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464Author>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464Author.CreateFromDiscriminatorValue); } },
                 { "contentHtml", n => { ContentHtml = n.GetStringValue(); } },
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
-                { "lastModifiedAt", n => { LastModifiedAt = n.GetIntValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
+                { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "linkedInArticleUrn", n => { LinkedInArticleUrn = n.GetStringValue(); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464Locale>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464Locale.CreateFromDiscriminatorValue); } },
                 { "newsArticle", n => { NewsArticle = n.GetStringValue(); } },
                 { "permlink", n => { Permlink = n.GetStringValue(); } },
-                { "publishedAt", n => { PublishedAt = n.GetIntValue(); } },
-                { "readingDuration", n => { ReadingDuration = n.GetIntValue(); } },
+                { "publishedAt", n => { PublishedAt = n.GetLongValue(); } },
+                { "readingDuration", n => { ReadingDuration = n.GetLongValue(); } },
                 { "series", n => { Series = n.GetStringValue(); } },
                 { "spamValue", n => { SpamValue = n.GetBoolValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "structuredContent", n => { StructuredContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464StructuredContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464StructuredContent.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "ugcPost", n => { UgcPost = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -167,21 +167,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464Author>("author", Author);
             writer.WriteStringValue("contentHtml", ContentHtml);
-            writer.WriteIntValue("createdAt", CreatedAt);
-            writer.WriteIntValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteLongValue("createdAt", CreatedAt);
+            writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteStringValue("linkedInArticleUrn", LinkedInArticleUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464Locale>("locale", Locale);
             writer.WriteStringValue("newsArticle", NewsArticle);
             writer.WriteStringValue("permlink", Permlink);
-            writer.WriteIntValue("publishedAt", PublishedAt);
-            writer.WriteIntValue("readingDuration", ReadingDuration);
+            writer.WriteLongValue("publishedAt", PublishedAt);
+            writer.WriteLongValue("readingDuration", ReadingDuration);
             writer.WriteStringValue("series", Series);
             writer.WriteBoolValue("spamValue", SpamValue);
             writer.WriteStringValue("state", State);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesBatchget200ResponseResultsUrnLiLinkedInArticle7115400131859902464StructuredContent>("structuredContent", StructuredContent);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("ugcPost", UgcPost);
-            writer.WriteIntValue("version", Version);
+            writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

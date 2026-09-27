@@ -1,0 +1,4408 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+  "Title": "Ad Lift Tests",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/appendix",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests",
+      "Anchor": "ad-lift-tests",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests",
+      "Anchor": "ad-lift-tests",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "The Ad Lift Test API enables advertisers to create, modify, and report lift tests at scale via API. This reduces the operational lift required to activate portfolios of lift tests on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "Review the Getting Started Guide first to understand Lift Test concepts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Introduction",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s lift tests. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s lift tests. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Introduction",
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTest Schema",
+      "Anchor": "adlifttest-schema",
+      "SectionPath": [
+        "Introduction",
+        "AdLiftTest Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID that uniquely identifies the Ad Lift Test. This field is read-only and is generated when the Ad Lift Test is created. Provide -1 for this field when validating entity fields using the validation endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liftEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[ account: SponsoredAccountUrn, campaignGroup: SponsoredCampaignGroupUrn ] (e.g. \u0022liftEntity\u0022: { account\u0022: \u0022urn:li:sponsoredAccount:123\u0022}, \u0022liftEntity\u0022: { campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:124\u0022})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union representing the possible entities a lift test can operate on. The selected entity determines which campaigns are included in the lift test. For example, account includes all campaigns in an account, while campaignGroup includes only campaigns within a specific campaign group.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (e.g. urn:li:sponsoredAccount:123)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The advertising account that owns the Ad Lift Test and its results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Brand1 Lift Oct 2021\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The name of the Ad Lift Test set by the advertiser. Not visible to members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022My New Brand\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Brand names to be used when surveying users. The brand name will be reviewed and must align with the Advertising Guidelines and LinkedIn Ads Agreement. Provide the preferred internationalized brand name for the test\u2019s chosen language. Many advertisers use different brand names in different languages.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandNameLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022en\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The language in which the brand name must be provided. Only one language is allowed per lift test; the brand name and all campaigns within the lift test must use this language. Specify a lowercase two-letter language code as defined by ISO-639. The country/region and language combination must match one of the supported locales.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandNameLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022US\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required An uppercase two-letter country/region code as defined by ISO-3166. The country/region and language combination must match one of the supported locales.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Brand 22 Lift Test from May 2034\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A memo describing this Lift Test. Advertisers use this field to store information about the test for later reference. Not visible to members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test start time as configured by the user (in UTC epoch milliseconds). The start time must be UTC 00:00 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only after test start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test end time as suggested by the user (in UTC epoch milliseconds). The end time should be at least two weeks after the start time. The lift test cannot be set to run for more than 90 days (end time minus start time must be less than or equal to 90 days) and may be terminated earlier due to errors or issues with the campaign group or account. For example, if the advertiser\u0027s account is canceled, the lift test will also be canceled. The end time must be UTC 23:45 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lift test actual end time (when executionState is set to ENDED). The system may terminate the lift test before the scheduled end time. Lift tests that have not ended will not have this field populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "userState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of DRAFTREADYCANCELED",
+            "Links": [],
+            "Values": [
+              "DRAFT",
+              "READY",
+              "CANCELED"
+            ]
+          },
+          {
+            "Text": "Required State used by the advertiser to control the Ad Lift Test. For example, if userState is READY, the advertiser is ready to launch the test as scheduled. This field helps determine the execution state, which represents the actual behavior the Ad Lift Test is currently in. See User State Schema for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#user-state-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "executionState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of CREATEDSCHEDULEDSTARTEDENDED_RESUMABLEENDED",
+            "Links": [],
+            "Values": [
+              "CREATED",
+              "SCHEDULED",
+              "STARTED",
+              "ENDED_RESUMABLE",
+              "ENDED"
+            ]
+          },
+          {
+            "Text": "Overall Ad Lift Test execution state describing its behavior. This field is read-only and is derived from the user state and the internal state of the LinkedIn platform. For example, if userState is READY but the system is waiting to run the experiment because the user scheduled it to begin in a week (using the schedule field), the executionState would be CREATED. See Execution State Schema and Lift Test Workflows for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#execution-state-schema",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing?view=li-lms-2026-09#workflows"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of USER_CANCELEDEND_DATE_REACHEDCAMPAIGN_GROUP_NOT_RECOVERABLEACCOUNT_NOT_RECOVERABLE",
+            "Links": [],
+            "Values": [
+              "USER_CANCELED",
+              "END_DATE_REACHED",
+              "CAMPAIGN_GROUP_NOT_RECOVERABLE",
+              "ACCOUNT_NOT_RECOVERABLE"
+            ]
+          },
+          {
+            "Text": "A message explaining the reason for the end of the Ad Lift Test. This enum describes erroneous conditions or termination of the Ad Lift Test. For example, if the account that owns the Lift Test is deleted or archived during the test, the Lift Test is terminated. If the Lift Test runs to completion, it is marked accordingly. See Test End Reason Schema for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#test-end-reason-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentReviewVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional A long value representing the content version reviewed in accordance with LinkedIn content policies. Use this value as versionTag to fetch the review status using the Ads Review API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "reviewInfo[ reviewStatus: ReviewStatus, lastReviewed: AuditStamp, rejectionReasons: RejectionReasonArray ] (e.g. \u0022reviewInfo\u0022: {\u0022reviewStatus\u0022: \u0022REJECTED\u0022,\u0022rejectionReasons\u0022: [\u0022OFFER_NOT_FOUND\u0022],\u0022lastReviewed\u0022: {\u0022actor\u0022: \u0022urn:li:member:1\u0022,\u0022time\u0022: 1604793600000})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional Information about the content review of this lift test. This field is present only if the test has been reviewed by the Ads Review team. Note: Applicable only for API versions 202510 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTest Schema",
+      "Anchor": "adlifttest-schema",
+      "SectionPath": [
+        "Introduction",
+        "AdLiftTest Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID that uniquely identifies the Ad Lift Test. This field is read-only and is generated when the Ad Lift Test is created. Provide -1 for this field when validating entity fields using the validation endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liftEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[ account: SponsoredAccountUrn, campaignGroups: array[SponsoredCampaignGroupUrn] ] (e.g. \u0022liftEntity\u0022: { \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022} or \u0022liftEntity\u0022: { \u0022campaignGroups\u0022: [\u0022urn:li:sponsoredCampaignGroup:124\u0022, \u0022urn:li:sponsoredCampaignGroup:567\u0022]})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union representing the possible entities a lift test can operate on. The selected entity determines which campaigns are included in the lift test. For example, account includes all campaigns in an account, while campaignGroups includes only campaigns within a set of campaign groups.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (e.g. urn:li:sponsoredAccount:123)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The advertising account that owns the Ad Lift Test and its results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Brand1 Lift Oct 2021\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The name of the Ad Lift Test set by the advertiser. Not visible to members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022My New Brand\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Brand names to be used when surveying users. The brand name will be reviewed and must align with the Advertising Guidelines and LinkedIn Ads Agreement. Provide the preferred internationalized brand name for the test\u2019s chosen language. Many advertisers use different brand names in different languages.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandNameLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022en\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The language in which the brand name must be provided. Only one language is allowed per lift test; the brand name and all campaigns within the lift test must use this language. Specify a lowercase two-letter language code as defined by ISO-639. The country/region and language combination must match one of the supported locales.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandNameLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022US\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required An uppercase two-letter country/region code as defined by ISO-3166. The country/region and language combination must match one of the supported locales.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Brand 22 Lift Test from May 2034\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A memo describing this Lift Test. Advertisers use this field to store information about the test for later reference. Not visible to members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test start time as configured by the user (in UTC epoch milliseconds). The start time must be UTC 00:00 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only after test start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test end time as suggested by the user (in UTC epoch milliseconds). The end time should be at least two weeks after the start time. The lift test cannot be set to run for more than 90 days (end time minus start time must be less than or equal to 90 days) and may be terminated earlier due to errors or issues with the campaign group or account. For example, if the advertiser\u0027s account is canceled, the lift test will also be canceled. The end time must be UTC 23:45 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lift test actual end time (when executionState is set to ENDED). The system may terminate the lift test before the scheduled end time. Lift tests that have not ended will not have this field populated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "userState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of DRAFTREADYCANCELED",
+            "Links": [],
+            "Values": [
+              "DRAFT",
+              "READY",
+              "CANCELED"
+            ]
+          },
+          {
+            "Text": "Required State used by the advertiser to control the Ad Lift Test. For example, if userState is READY, the advertiser is ready to launch the test as scheduled. This field helps determine the execution state, which represents the actual behavior the Ad Lift Test is currently in. See User State Schema for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#user-state-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "executionState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of CREATEDSCHEDULEDSTARTEDENDED_RESUMABLEENDED",
+            "Links": [],
+            "Values": [
+              "CREATED",
+              "SCHEDULED",
+              "STARTED",
+              "ENDED_RESUMABLE",
+              "ENDED"
+            ]
+          },
+          {
+            "Text": "Overall Ad Lift Test execution state describing its behavior. This field is read-only and is derived from the user state and the internal state of the LinkedIn platform. For example, if userState is READY but the system is waiting to run the experiment because the user scheduled it to begin in a week (using the schedule field), the executionState would be CREATED. See Execution State Schema and Lift Test Workflows for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#execution-state-schema",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing?view=li-lms-2026-09#workflows"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of USER_CANCELEDEND_DATE_REACHEDCAMPAIGN_GROUP_NOT_RECOVERABLEACCOUNT_NOT_RECOVERABLE",
+            "Links": [],
+            "Values": [
+              "USER_CANCELED",
+              "END_DATE_REACHED",
+              "CAMPAIGN_GROUP_NOT_RECOVERABLE",
+              "ACCOUNT_NOT_RECOVERABLE"
+            ]
+          },
+          {
+            "Text": "A message explaining the reason for the end of the Ad Lift Test. This enum describes erroneous conditions or termination of the Ad Lift Test. For example, if the account that owns the Lift Test is deleted or archived during the test, the Lift Test is terminated. If the Lift Test runs to completion, it is marked accordingly. See Test End Reason Schema for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#test-end-reason-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentReviewVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional A long value representing the content version reviewed in accordance with LinkedIn content policies. Use this value as versionTag to fetch the review status using the Ads Review API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "reviewInfo[ reviewStatus: ReviewStatus, lastReviewed: AuditStamp, rejectionReasons: RejectionReasonArray ] (e.g. \u0022reviewInfo\u0022: {\u0022reviewStatus\u0022: \u0022REJECTED\u0022,\u0022rejectionReasons\u0022: [\u0022OFFER_NOT_FOUND\u0022],\u0022lastReviewed\u0022: {\u0022actor\u0022: \u0022urn:li:member:1\u0022,\u0022time\u0022: 1604793600000})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional Information about the content review of this lift test. This field is present only if the test has been reviewed by the Ads Review team. Note: Applicable only for API versions 202510 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "User State Schema",
+      "Anchor": "user-state-schema",
+      "SectionPath": [
+        "User State Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DRAFT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User is still drafting an Ad Lift Test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "READY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User would like to launch the ad lift test as per schedule. This state sends Lift Test for review and activates it on schedule.start date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CANCELED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User would like to cancel the Ad Lift Test. This state is not reversible. All fields of test become immutable.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Execution State Schema",
+      "Anchor": "execution-state-schema",
+      "SectionPath": [
+        "Execution State Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CREATED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Corresponds to AdLiftTestUserState Draft state. The advertiser has just created an Ad Lift Test, and we haven\u0027t validated it at all. Therefore, it can contain anything. When the advertiser transitions to READY state, we apply validations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test will start in the future; i.e., user has marked the Ad Lift Test READY, but the start date is set to future. It indicates that there were no issues with the setup of the Ad Lift Test when we moved state from CREATED to SCHEDULED.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STARTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test is currently running",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENDED_RESUMABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test has stopped due to reaching the user-defined end date. However, this is not a final/immutable state. For example, the advertiser can extend her test after reaching her end date, as long as it\u2019s still under the 90-day maximum.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENDED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test has ended. It becomes immutable (read only). This doesn\u0027t indicate successful or erroneous termination. For that, look at the endReason field.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Test End Reason Schema",
+      "Anchor": "test-end-reason-schema",
+      "SectionPath": [
+        "Test End Reason Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "USER_CANCELED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User canceled the Ad Lift Test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "END_DATE_REACHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Ad Lift Test successfully reached the 90 day window and the Ad Lift Test was completed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_NOT_RECOVERABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Ad Lift Test has terminated because the campaign group became not recoverable. (E.g., this could happen if the campaign group was permanently canceled.)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_RECOVERABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test has terminated since the account became not recoverable. (E.g., this could happen if the account was permanently canceled.)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Lift Tests",
+      "Anchor": "create-ad-lift-tests",
+      "SectionPath": [
+        "Create Ad Lift Tests"
+      ],
+      "Text": "New Ad Lift Tests can be created by issuing a POST call to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Lift Tests",
+      "Anchor": "create-ad-lift-tests",
+      "SectionPath": [
+        "Create Ad Lift Tests"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Lift Tests",
+      "Anchor": "create-ad-lift-tests",
+      "SectionPath": [
+        "Create Ad Lift Tests"
+      ],
+      "Text": "Before making a call, ensure that:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Lift Tests",
+      "Anchor": "create-ad-lift-tests",
+      "SectionPath": [
+        "Create Ad Lift Tests"
+      ],
+      "Text": "All required fields are populated correctly.\nSet schedule.start to UTC 00:00 and schedule.end to UTC 23:45. schedule can only be created or updated to \u0022future\u0022.\nYou have validated and verified that there are no validation errors.- Carefully observe and address any warnings. They will help you to uncover any setup related issues that may impact the validity of your result.\nFollowed the Linkedin Ads guidelines when creating ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022liftEntity\u0022: {\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n   },\n   \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n   \u0022name\u0022: \u0022Lift test on my brand\u0022,\n   \u0022brandName\u0022: \u0022My Signature Brand\u0022,\n   \u0022brandNameLocale\u0022: {\n      \u0022language\u0022: \u0022en\u0022,\n      \u0022country\u0022: \u0022US\u0022\n    },\n    \u0022description\u0022: \u0022Lift test on My Signature Brand\u0022,\n    \u0022schedule\u0022: {\n        \u0022start\u0022: 1611014400000,\n        \u0022end\u0022: 1614556800000\n    },\n    \u0022userState\u0022: \u0022DRAFT\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022brandName\u0022: \u0022My Signature Brand\u0022,\n    \u0022executionState\u0022: \u0022CREATED\u0022,\n    \u0022description\u0022: \u0022Lift test on My Signature Brand\u0022,\n    \u0022schedule\u0022: {\n        \u0022start\u0022: 1611014400000,\n        \u0022end\u0022: 1614556800000\n    },\n    \u0022liftEntity\u0022: {\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n    },\n    \u0022userState\u0022: \u0022DRAFT\u0022,\n    \u0022name\u0022: \u0022Lift test on my brand\u0022,\n    \u0022id\u0022: 123,\n    \u0022$URN\u0022: \u0022urn:li:adLiftTest:123\u0022,\n    \u0022brandNameLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Sample Response"
+      ],
+      "Text": "with response header",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Sample Response"
+      ],
+      "Text": "Location: /adLiftTests/\u003Clift_test_id\u003E\n x-restli-id: \u003Clift_test_id\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error codes you may encounter during creation. Each Service error code represents a unique condition where input can be invalid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid schema provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to update an immutable field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BRAND_NAME_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand name length should be between 1 and 200 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEST_NAME_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Test name length should be between 1 and 200 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DESCRIPTION_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description length should be between 0 and 1,000 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for less than 3 days. Lift tests must run for at least 3 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for more than 90 days. Lift tests must run for 90 days or less.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test to invalid start time. It either starts in the past or is at least 180 days in the future, or is at a time other than exact midnight UTC. Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test to end in the past, at least 180 days in the future, and/or at a time other than fifteen minutes before midnight UTC. Lift tests must be scheduled to end in the future, within 180 days from now, and fifteen minutes before midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided already has at least one lift test running. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_AB_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has an A/B test with overlapping schedule. Brand lift test can\u0027t run concurrently with an A/B test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided doesn\u0027t exist or is not eligible for this test. When running an account-level lift test, the account that you test must [1] exist and [2] be the same as the account in which you run the test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided is not eligible to run. Please choose another account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. For more information, refer to API Error Details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#api-error-details"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid schema provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to update an immutable field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BRAND_NAME_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand name length should be between 1 and 200 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEST_NAME_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Test name length should be between 1 and 200 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DESCRIPTION_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description length should be between 0 and 1,000 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for less than 3 days. Lift tests must run for at least 3 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for more than 90 days. Lift tests must run for 90 days or less.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test to invalid start time. It either starts in the past or is at least 180 days in the future, or is at a time other than exact midnight UTC. Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test to end in the past, at least 180 days in the future, and/or at a time other than fifteen minutes before midnight UTC. Lift tests must be scheduled to end in the future, within 180 days from now, and fifteen minutes before midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided already has at least one lift test running. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_AB_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has an A/B test with overlapping schedule. Brand lift test can\u0027t run concurrently with an A/B test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided doesn\u0027t exist or is not eligible for this test. When running an account-level lift test, the account that you test must [1] exist and [2] be the same as the account in which you run the test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided is not eligible to run. Please choose another account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. For more information, refer to API Error Details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#api-error-details"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "N/A (Generic validation)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Generic validation error. Example: Attempting to create a lift test with more than 50 campaign groups (limit: 50).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "An example of AdLiftTestValidationDetail is",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "{\n      \u0022code\u0022: \u0022INVALID_START_TIME\u0022,\n      \u0022errorDetailType\u0022: \u0022com.linkedin.ads.AdLiftTestValidationDetail\u0022,\n      \u0022errorDetails\u0022: {\n        \u0022pathErrors\u0022: [\n          {\n            \u0022input\u0022: {\n              \u0022value\u0022: {\n                \u0022stringValue\u0022: \u0022{start=1615507200000, end=1616802300000}\u0022\n              },\n              \u0022inputPath\u0022: {\n                \u0022fieldPath\u0022: \u0022/schedule\u0022\n              }\n            }\n          }\n        ]\n      },\n      \u0022message\u0022: \u0022Attempting to schedule a lift test to start in the past, at least 180 days in the future, and/or at a time other than midnight UTC. Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "An example of BadRequest due to MULTIPLE_VALIDATIONS_FAILED is",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "{\n   \u0022code\u0022:\u0022MULTIPLE_VALIDATIONS_FAILED\u0022,\n   \u0022errorDetailType\u0022:\u0022com.linkedin.common.error.BadRequest\u0022,\n   \u0022message\u0022:\u0022com.linkedin.ads.experiment.common.exceptions.LiftTestEntityValidationException: Lift test has validation errors. entityUrn: urn:li:adLiftTest:-1\u0022,\n   \u0022errorDetails\u0022:{\n      \u0022inputErrors\u0022:[\n         {\n            \u0022description\u0022:\u0022Attempting to schedule a lift test to start in the past, at least 180 days in the future, and/or at a time other than midnight UTC. Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.\u0022,\n            \u0022input\u0022:{\n               \u0022value\u0022:{\n                  \u0022stringValue\u0022:\u0022{start=1624500046000, end=1624800046000}\u0022\n               },\n               \u0022inputPath\u0022:{\n                  \u0022fieldPath\u0022:\u0022/schedule\u0022\n               }\n            },\n            \u0022code\u0022:\u0022INVALID_START_TIME\u0022\n         },\n         {\n            \u0022description\u0022:\u0022Attempting to schedule a lift test to end in the past, at least 180 days in the future, and/or at a time other than fifteen minutes before midnight UTC. Lift tests must be scheduled to end in the future, within 180 days from now, and fifteen minutes before midnight UTC.\u0022,\n            \u0022input\u0022:{\n               \u0022value\u0022:{\n                  \u0022stringValue\u0022:\u0022{start=1624500046000, end=1624800046000}\u0022\n               },\n               \u0022inputPath\u0022:{\n                  \u0022fieldPath\u0022:\u0022/schedule\u0022\n               }\n            },\n            \u0022code\u0022:\u0022INVALID_END_TIME\u0022\n         }\n      ]\n   },\n   \u0022status\u0022:422\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "Once Ad Lift Test is created, you can create the survey subresources according to Create Survey Question guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Activate Ad Lift Test",
+      "Anchor": "activate-ad-lift-test",
+      "SectionPath": [
+        "Activate Ad Lift Test"
+      ],
+      "Text": "All survey questions need to be created before activating the lift test. When ready, you can activate the lift test as following.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Activate Ad Lift Test",
+      "Anchor": "activate-ad-lift-test",
+      "SectionPath": [
+        "Activate Ad Lift Test"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests/{AdLiftTestId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Activate Ad Lift Test",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests/123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Activate Ad Lift Test",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022 :\n    {\n        \u0022$set\u0022 : {\n            \u0022userState\u0022: \u0022READY\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Activate Ad Lift Test",
+        "Sample Request"
+      ],
+      "Text": "with response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Activate Ad Lift Test",
+        "Sample Request"
+      ],
+      "Text": "HTTP/1.1 204 No Content",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Lift Tests",
+      "Anchor": "get-lift-tests",
+      "SectionPath": [
+        "Get Lift Tests"
+      ],
+      "Text": "Ad Lift Tests can be fetched individually. Use the endpoint below to fetch a single Ad LiftTest.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Lift Tests",
+      "Anchor": "get-lift-tests",
+      "SectionPath": [
+        "Get Lift Tests"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adLiftTests/{AdLiftTestId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Lift Tests",
+      "Anchor": "get-lift-tests",
+      "SectionPath": [
+        "Get Lift Tests"
+      ],
+      "Text": "Unauthorized requests, including insufficient ad account permissions, will be rejected with HTTP response code 403. Nonexistent AdLiftTestId will be rejected with HTTP response code 404.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Lift Tests",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adLiftTests/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Lift Tests",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022brandName\u0022: \u0022Your brand name\u0022,\n    \u0022executionState\u0022: \u0022ENDED\u0022,\n    \u0022description\u0022: \u0022Get our product here\u0022,\n    \u0022schedule\u0022: {\n        \u0022start\u0022: 1595548800000,\n        \u0022end\u0022: 1598227200000\n    },\n    \u0022liftEntity\u0022: {\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n    },\n    \u0022userState\u0022: \u0022READY\u0022,\n    \u0022name\u0022: \u0022Brand Test\u0022,\n    \u0022id\u0022: 1234,\n    \u0022$URN\u0022: \u0022urn:li:adLiftTest:1234\u0022,\n    \u0022brandNameLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n    \u0022contentReviewVersion\u0022: 1595548800000\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-1",
+      "SectionPath": [
+        "Get Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error codes you may encounter during creation. Each Service error code represents a unique condition where input can be invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-1",
+      "SectionPath": [
+        "Get Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLift Test referenced in the request doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "Ad Lift Tests can be updated before and after the lift test starts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests/{AdLiftTestId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "Before the lift test starts, nearly all fields can be updated. They only exception is account which can never be modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "After the lift test starts and execution state is STARTED only the following fields can be updated:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "name\ndescription\nschedule\nuserState",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "While schedule.end can be updated after the lift test has already started, it can\u0027t be extended so far that the scheduled end date is more than 90 days from the scheduled start date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "All fields not included in the above list are immutable once the lift test starts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "Once the lift test is ended, all fields are immutable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "The endpoint for updating a single Ad LiftTest is below. The request must include this header: X-RestLi-Method: partial_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Lift Tests",
+      "Anchor": "update-lift-tests",
+      "SectionPath": [
+        "Update Lift Tests"
+      ],
+      "Text": "The patch content in the request body must contain the entire top level field being updated. This is especially important if the field is a complex object. For example, to change the schedule of an Ad Lift Test, the request must contain the entire body of the schedule field, rather than just end.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Lift Tests",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Update Lift Tests",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 204 No Content",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-2",
+      "SectionPath": [
+        "Update Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error codes you may encounter during creation. Each Service error code represents a unique condition where input can be invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-2",
+      "SectionPath": [
+        "Update Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid schema provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to update an immutable field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BRAND_NAME_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand name length should be between 1 and 200 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEST_NAME_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Test name length should be between 1 and 200 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DESCRIPTION_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description length should be between 0 and 1,000 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for less than 3 days. Lift tests must run for at least 3 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for more than 90 days. Lift tests must run for 90 days or less.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test to invalid start time. It either starts in the past or is at least 180 days in the future, or is at a time other than exact midnight UTC. Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test to end in the past, at least 180 days in the future, and/or at a time other than fifteen minutes before midnight UTC. Lift tests must be scheduled to end in the future, within 180 days from now, and fifteen minutes before midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided already has at least one lift test running. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_AB_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has an A/B test with overlapping schedule. Brand lift test can\u0027t run concurrently with an A/B test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided doesn\u0027t exist or is not eligible for this test. When running an account-level lift test, the account that you test must [1] exist and [2] be the same as the account in which you run the test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided is not eligible to run. Please choose another account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLift Test referenced in the request doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENDED_TEST_NOT_EDITABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to update an ENDED test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOO_MANY_QUESTIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift tests can have no more than six questions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENOUGH_QUESTIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift tests need at least one question.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_BUDGET_THRESHOLD_TOO_LOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Based on the chosen number of questions and test start/end dates, active campaigns in the account don\u0027t have enough budget to run a brand lift test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATE_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to conduct an invalid state transition (AdLiftTestValidationResultCode.SCHEMA_MISMATCH, e.g., from ACTIVE to DRAFT).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONFLICT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request couldn\u0027t be processed because of conflict in the current state of the resource.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. Please see errorDetails for more information.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Lift Tests",
+      "Anchor": "delete-ad-lift-tests",
+      "SectionPath": [
+        "Delete Ad Lift Tests"
+      ],
+      "Text": "An Ad Lift Test can be deleted by issuing a DELETE call to the URL below. Ad Lift Tests can be deleted individually.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Ad Lift Tests",
+      "Anchor": "delete-ad-lift-tests",
+      "SectionPath": [
+        "Delete Ad Lift Tests"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adLiftTests/{AdLiftTestId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Lift Tests",
+      "Anchor": "delete-ad-lift-tests",
+      "SectionPath": [
+        "Delete Ad Lift Tests"
+      ],
+      "Text": "To delete a lift test, its executionState must be PENDING. If it\u2019s not, then the request will be rejected with HTTP response code 405. Unauthorized requests, including insufficient ad account permissions, will be rejected with HTTP response code 403. Nonexistent AdLiftTestId will be rejected with HTTP response code 404. Otherwise, successful requests will return and empty response with HTTP response code 204.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete Ad Lift Tests",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adLiftTests/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-3",
+      "SectionPath": [
+        "Delete Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error codes you may encounter during creation. Each Service error code represents a unique condition where input can be invalid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-3",
+      "SectionPath": [
+        "Delete Ad Lift Tests",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLift Test referenced in the request doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DELETE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A scheduled lift test is not allowed be deleted",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Ad Lift Tests",
+      "Anchor": "find-ad-lift-tests",
+      "SectionPath": [
+        "Find Ad Lift Tests"
+      ],
+      "Text": "Search for an ad lift test using a number of criteria. Supported search parameters:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Find Ad Lift Tests",
+      "Anchor": "find-ad-lift-tests",
+      "SectionPath": [
+        "Find Ad Lift Tests"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The advertiser account that created the Ad Lift Test",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Union of (account:SponsoredAccountUrn , campaignGroup:SponsoredCampaignGroupUrn)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Criteria used to filter lift tests based on the specific account or campaign group being operated on. For example, account indicates the lift test operates on all campaigns in a SponsoredAccountUrn, whereas campaignGroup means only the campaigns within the given SponsoredCampaignGroupUrn are used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "executionState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdLiftTestExecutionState",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#execution-state-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Filter Ad Lift Test based on its respective Ad Lift Test Execution State.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Ad Lift Tests",
+      "Anchor": "find-ad-lift-tests",
+      "SectionPath": [
+        "Find Ad Lift Tests"
+      ],
+      "Text": "The request must include a header for Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0. Restli 2.0 requires URNs in query params to be URL encoded. For example, urn:li:adLiftTest:1245678 would become urn%3Ali%3AadLiftTest%3A1245678.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Find Ad Lift Tests",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adLiftTests?q=criteria\u0026account=urn%3Ali%3AsponsoredAccount%3A123\u0026adLiftTestEntity=(account:urn%3Ali%3AsponsoredAccount%3A123)\u0026executionState=CREATED",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Find Ad Lift Tests",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022brandName\u0022: \u0022Sample Brand\u0022,\n            \u0022executionState\u0022: \u0022CREATED\u0022,\n            \u0022description\u0022: \u0022Sample Description\u0022,\n            \u0022schedule\u0022: {\n                \u0022start\u0022: 1595462400000,\n                \u0022end\u0022: 1596066300000\n            },\n            \u0022liftEntity\u0022: {\n                \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n            },\n            \u0022userState\u0022: \u0022DRAFT\u0022,\n            \u0022name\u0022: \u002223JUL2020 Test\u0022,\n            \u0022id\u0022: 11,\n            \u0022$URN\u0022: \u0022urn:li:adLiftTest:11\u0022,\n            \u0022brandNameLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Lift Test Setup",
+      "Anchor": "validate-lift-test-setup",
+      "SectionPath": [
+        "Validate Lift Test Setup"
+      ],
+      "Text": "Validate Ad Lift Test configuration settings using this endpoint before creating the actual test. This endpoint returns list of Errors/Warnings in your current Lift Test configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Validate Lift Test Setup",
+      "Anchor": "validate-lift-test-setup",
+      "SectionPath": [
+        "Validate Lift Test Setup"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests?action=validateAdLiftTest",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation Request Schema",
+      "Anchor": "validation-request-schema",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "Validation Request Schema"
+      ],
+      "Text": "The payload schema of validation request is identical to the one used for creation request, except for that value of the id. This helps ensuring the same model that\u0027s being created is also able to be validated.\nThis schema only contains fields that can be created by the API user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTest Schema for Validation Request",
+      "Anchor": "adlifttest-schema-for-validation-request",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "AdLiftTest Schema for Validation Request"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read-Only/Create-Only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This should be -1 when using this model to validate the entity fields with the validation end point",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liftEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[ account: SponsoredAccountUrn, campaignGroup: SponsoredCampaignGroupUrn ] (e.g. \u0022liftEntity\u0022: { account\u0022: \u0022urn:li:sponsoredAccount:123\u0022})",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union representing the possible entities a lift test can operate on. The choice of lift test entity determines which campaigns to operate on. E.g. account indicates the lift test operates on all campaigns in an account, whereas campaignGroup means to only use the campaigns within a given campaign group.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (e.g. urn:li:sponsoredAccount:123)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Advertising account that owns the Ad Lift test and its results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Brand1 Lift Oct 2021\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required The name of this Ad Lift Test set by the advertiser. Not visible to members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022My New Brand\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Brand names to be used when surveying users. The brand name will be reviewed and must align with the Advertising Guidelines and LinkedIn Ads Agreement. Be sure to provide the preferred internationalized brand name for the test\u2019s chosen language. (Many advertisers use a different name in different languages)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandNameLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022en\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Language we expect the brand name to be provided in. We only allow one language per lift test; the brand name and all campaigns within the lift test must have content created on this language. A lowercase two-letter language code as defined by ISO-639. The country/region and language combination must match one of the supported locales",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "brandNameLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022US\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required An uppercase two-letter country/region code as defined by ISO-3166. The country/region and language combination must match one of the supported locales",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/language-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Brand 22 Lift Test from May 2034\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A memo describing this Lift Test. This is used by advertisers to store information about the test for their later reference. Not visible to members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test start time as configured by user (in UTC Epoch Milliseconds). Start time should always be UTC 00:00 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only after test start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test end time as suggested by user (in UTC Epoch Milliseconds). End time is suggested to be at least 2 weeks after the start time. The Lift Test can\u0027t can\u0027t be set to run more than 90 days, i.e. end time - start time \u003C= 90 days, and may be terminated earlier due to errors or issues with the campaign group or account. Example - if the advertiser\u0027s account is canceled we also would cancel the lift test. End time should always be UTC 23:45 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "userState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of DRAFTREADYCANCELED",
+            "Links": [],
+            "Values": [
+              "DRAFT",
+              "READY",
+              "CANCELED"
+            ]
+          },
+          {
+            "Text": "Required State used by the advertiser to control the Ad Lift Test. For example, if userState is READY, then the advertiser is ready to launch the test as scheduled. This field is used to help determine the Execution State, which represents the actual behavior the Ad Lift Test is currently in. See User State Schema for details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#user-state-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Validation Response Schema",
+      "Anchor": "validation-response-schema",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "Validation Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftTestId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id for the adLiftTest. If the id is -1, it indicates the ad lift test hasn\u0027t yet been created so only a potential lift test was validated. This is in comparison to a non-zero value which would indicate an existing ad lift test model was validated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time indicating when the validation was run.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "items",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdLiftTestValidationResultItem",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array containing all the validation result items. An empty array indicates that no validation issues exist.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestValidationResultItem Schema",
+      "Anchor": "adlifttestvalidationresultitem-schema",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "AdLiftTestValidationResultItem Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of AdLiftTestValidationResultCode",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#validation-errors"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The error code of the validation result item.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "detail.associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN of entity that caused issue (e.g. account)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional data associated with a single validation error of ad experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "detail.pathErrors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional array of json path",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Path reference in Ads Lift Test json object that caused issue.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum Of WARNINGERROR",
+            "Links": [],
+            "Values": [
+              "WARNING",
+              "ERROR"
+            ]
+          },
+          {
+            "Text": "The level of the validation result item. The validations with Error level would throw an exception during creation call",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message of the validation result item.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "AdLiftTestValidationResultItem Schema",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests?action=validateAdLiftTest",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "AdLiftTestValidationResultItem Schema",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022liftEntity\u0022: {\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n   },\n   \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n   \u0022name\u0022: \u0022Lift test on my brand\u0022,\n   \u0022brandName\u0022: \u0022My Signature Brand\u0022,\n   \u0022brandNameLocale\u0022: {\n      \u0022language\u0022: \u0022en\u0022,\n      \u0022country\u0022: \u0022US\u0022\n    },\n    \u0022description\u0022: \u0022Lift test on My Signature Brand\u0022,\n    \u0022schedule\u0022: {\n        \u0022start\u0022: 1615489509470,\n        \u0022end\u0022: 1615499609470\n    },\n    \u0022userState\u0022: \u0022DRAFT\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "AdLiftTestValidationResultItem Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022adLiftTestId\u0022: -1,\n        \u0022items\u0022: [\n            {\n                \u0022code\u0022: \u0022INVALID_START_TIME\u0022,\n                \u0022message\u0022: \u0022Attempting to schedule a lift test to start in the past, at least 180 days in the future, and/or at a time other than midnight UTC. Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.\u0022,\n                \u0022level\u0022: \u0022ERROR\u0022\n            }\n        ],\n        \u0022validatedAt\u0022: 1615489509470\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Validation Errors",
+      "Anchor": "validation-errors",
+      "SectionPath": [
+        "Validate Lift Test Setup",
+        "Validation Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input doesn\u0027t match the expected data schema for this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_LOCALE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User has provided invalid locale.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User is attempting schedule a lift test for a duration less than 14 days. Lift tests must run for at least 14 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_BELOW_RECOMMENDATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lift test scheduled for less than 14 days. To improve the likelihood of conclusive results, we recommend running lift tests for at least 14 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DURATION_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for more than 90 days. Lift tests must run for 90 days or less.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided doesn\u0027t exist, or caller doesn\u0027t have permission to create lift tests for referenced account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lift tests must be scheduled to start in the future, within 180 days from now, and at midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lift tests must be scheduled to end in the future, within 180 days from now, and fifteen minutes before midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign Group provided doesn\u0027t exist, or the caller doesn\u0027t have permissions to create lift tests for referenced campaign group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INSUFFICIENT_PERMISSIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to create or modify a lift test with read-only permissions. You need write permissions to do this.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENOUGH_QUESTIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift tests need at least one question.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOO_MANY_QUESTIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift tests has too many questions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_FROM_DIFFERENT_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign group that was provided is not in the account that was provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_CAMPAIGN_LANGUAGES_NOT_SUPPORTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to create a lift test with campaigns that use different languages. All campaigns within the lift test should use the same language.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_ENDS_BEFORE_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign group provided has an end date before the lift test\u0027s end date. This can reduce your measured brand lift.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided is not eligible to run. Please choose another account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign Group provided is not eligible to run. Please choose another Campaign Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENDED_TEST_NOT_EDITABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to update an ENDED test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to update an immutable field (e.g. lift test start time after lift test has already started).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATE_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to conduct an invalid state transition (e.g., from ACTIVE to DRAFT).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_BUDGET_ENDS_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account budget ends before the lift test ends, so brand surveys may stop serving before the test\u0027s end date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_BUDGET_ENDS_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign group budget ends before the lift test ends, so brand surveys may stop serving before the test\u0027s end date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to create a lift test on the specified account because the provided account already has at least one lift test running. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_AB_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has an A/B test with overlapping schedule. Brand lift test can\u0027t run concurrently with an A/B test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to create a lift test on the specified campaign group because the provided campaign group already has at least one lift test running. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_CONTAINS_CAMPAIGN_GROUP_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to create a lift test on the specified account because the provided account contains a campaign group which is part of at least one running lift test. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_INSIDE_ACCOUNT_ALREADY_RUNNING_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to create a lift test on the specified campaign group because the provided campaign group is in an account which is part of at least one running lift test. This can limit test delivery and bias results.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_BUDGET_THRESHOLD_TOO_LOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Based on the chosen number of questions and test start/end dates, the account doesn\u0027t have enough budget to run a brand lift test",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Budget Requirements Validation",
+      "Anchor": "budget-requirements-validation",
+      "SectionPath": [
+        "Budget Requirements Validation"
+      ],
+      "Text": "Advertisers can run lift tests for 1 to 6 key metrics. Depending on how many metrics the advertiser is testing, there are budget threshold requirements on the advertiser\u0027s account to set the stage for statistically significant results. This endpoint helps determine the budget requirements given the number of metrics and the schedule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Budget Requirements Validation",
+      "Anchor": "budget-requirements-validation",
+      "SectionPath": [
+        "Budget Requirements Validation"
+      ],
+      "Text": "Use the action below to get budget requirements. Budget requirements can be used to build User Interface with UI-side predefined validations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Budget Requirements Validation",
+      "Anchor": "budget-requirements-validation",
+      "SectionPath": [
+        "Budget Requirements Validation"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests?action=requiredLiftTestBudgetForKeyMetrics",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Action Request Schema",
+      "Anchor": "action-request-schema",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "Action Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read-Only/Create-Only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (e.g. urn:li:sponsoredAccount:123)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Advertising account that owns the Ad Lift test and its results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test start time as configured by user (in UTC Epoch Milliseconds). Start time should always be UTC 00:00 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only after test start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required Lift test end time as suggested by user (in UTC Epoch Milliseconds). End time is suggested to be at least 2 weeks after the start time. The Lift Test can\u0027t can\u0027t be set to run more than 90 days, i.e. end time - start time \u003C= 90 days, and may be terminated earlier due to errors or issues with the campaign group or account. Example - if the advertiser\u0027s account is canceled we also would cancel the lift test. End time should always be UTC 23:45 to pass validation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Action Response Schema",
+      "Anchor": "action-response-schema",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "Action Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "liftTestBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string representing BigDecimal (e.g. \u0022100\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The budget available in account or campaign group for the duration of the lift test",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liftTestBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022USD\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An ISO currency code",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "budgetRequiredForKeyMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdLiftTestBudgetRequiredForKeyMetrics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#adlifttestbudgetrequiredforkeymetrics-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array containing all supported numbers of key metrics and lift test budget required to run a lift test with that amount of key metrics.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestBudgetRequiredForKeyMetrics Schema",
+      "Anchor": "adlifttestbudgetrequiredforkeymetrics-schema",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "AdLiftTestBudgetRequiredForKeyMetrics Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "numKeyMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of key metrics that could be used in a lift test",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requiredLiftTestBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string representing BigDecimal (e.g. \u0022100\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The budget required to run lift test with numKeyMetrics amount of key metrics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requiredLiftTestBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022USD\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An ISO currency code",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "AdLiftTestBudgetRequiredForKeyMetrics Schema",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests?action=requiredLiftTestBudgetForKeyMetrics",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "AdLiftTestBudgetRequiredForKeyMetrics Schema",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n  \u0022schedule\u0022: {\n      \u0022start\u0022: 1622851200000,\n      \u0022end\u0022: 1624664700000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "AdLiftTestBudgetRequiredForKeyMetrics Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022value\u0022:{\n      \u0022liftTestBudget\u0022:{\n         \u0022currencyCode\u0022:\u0022USD\u0022,\n         \u0022amount\u0022:\u00221500\u0022\n      },\n      \u0022budgetRequiredForKeyMetrics\u0022:[\n         {\n            \u0022requiredLiftTestBudget\u0022:{\n               \u0022currencyCode\u0022:\u0022USD\u0022,\n               \u0022amount\u0022:\u002290000.00\u0022\n            },\n            \u0022numKeyMetrics\u0022:2\n         },\n         {\n            \u0022requiredLiftTestBudget\u0022:{\n               \u0022currencyCode\u0022:\u0022USD\u0022,\n               \u0022amount\u0022:\u0022135000.00\u0022\n            },\n            \u0022numKeyMetrics\u0022:3\n         },\n         {\n            \u0022requiredLiftTestBudget\u0022:{\n               \u0022currencyCode\u0022:\u0022USD\u0022,\n               \u0022amount\u0022:\u0022180000.00\u0022\n            },\n            \u0022numKeyMetrics\u0022:4\n         },\n         {\n            \u0022requiredLiftTestBudget\u0022:{\n               \u0022currencyCode\u0022:\u0022USD\u0022,\n               \u0022amount\u0022:\u0022225000.00\u0022\n            },\n            \u0022numKeyMetrics\u0022:5\n         },\n         {\n            \u0022requiredLiftTestBudget\u0022:{\n               \u0022currencyCode\u0022:\u0022USD\u0022,\n               \u0022amount\u0022:\u0022270000.00\u0022\n            },\n            \u0022numKeyMetrics\u0022:6\n         }\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "API Error Details"
+      ],
+      "Text": "This section documents different Service Error codes you may encounter during creation. Each Service error code represents a unique condition where input can be invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Budget Requirements Validation",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "ADDITIONAL DETAILS"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided doesn\u0027t exist or is not eligible for this test. When running an account-level lift test, the account that you test must [1] exist and [2] be the same as the account in which you run the test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DURATION_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for less than 3 days. Lift tests must run for at least 3 days.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DURATION_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempting to schedule a lift test for more than 90 days. Lift tests must run for 90 days or less.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

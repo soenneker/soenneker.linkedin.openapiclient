@@ -1,0 +1,253 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+  "Title": "Connections API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Connections API",
+      "Anchor": "connections-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connections API",
+      "Anchor": "connections-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connections API",
+      "Anchor": "connections-api",
+      "SectionPath": [],
+      "Text": "The Connections API returns a list of 1st-degree connections for a user who has granted access to their account via OAuth.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You cannot \u0022browse connections.\u0022 That is, you can only get the connections of the user who granted your application access. You cannot get connections of that user\u0027s connections (2nd-degree connections). Access to connections data is subject to the relevant members\u0027 privacy settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "The Connections API does not permit browsing member connections. Connections are only available for the given member who has granted access to your application. 2nd-degree connections, or connections of your member\u0027s connections, are not available from LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "To use the Connections API, you must request an access token to make an authenticated call on behalf of a member. The Connections API requires one of the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_1st_connections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve 1st-degree connections",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve your activity for compliance monitoring and archiving",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Usage",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/connections?q=viewer\u0026start=0\u0026count=50",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Usage",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022to\u0022:\u0022urn:li:person:9HfhE6QlBz\u0022\n      }\n   ],\n   \u0022paging\u0022:{\n      \u0022count\u0022:50,\n      \u0022links\u0022:[\n\n      ],\n      \u0022start\u0022:0,\n      \u0022total\u0022:1\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Total Number of Connections",
+      "Anchor": "total-number-of-connections",
+      "SectionPath": [
+        "Total Number of Connections"
+      ],
+      "Text": "A Member\u0027s total number of 1st-degree connections is returned along with the paging response. To retrieve the number of connections only, use projection syntax to request the paging field. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Total Number of Connections",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/connections?q=viewer\u0026projection=(paging)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Total Number of Connections",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022total\u0022: 42,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Selection",
+      "Anchor": "field-selection",
+      "SectionPath": [
+        "Field Selection"
+      ],
+      "Text": "By default, the Connections API returns a list of Person URNs only. To retrieve additional information about each connection, use decoration syntax to retrieve the id, first and last names.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Field Selection",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Field Selection",
+        "Sample Request"
+      ],
+      "Text": "Recommended max limit of pagination count is 50. Requests containing both decoration and higher pagination count may timeout due to longer processing time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Field Selection",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/connections?q=viewer\u0026projection=(elements(*(to~)),paging)\u0026start=0\u0026count=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Field Selection",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022to~\u0022: {\n                \u0022lastName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Belcher\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022firstName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Louise\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022id\u0022: \u00229HfhE6QlBz\u0022\n            },\n            \u0022to\u0022: \u0022urn:li:person:9HfhE6QlBz\u0022\n        },\n        .\n        .\n        .\n        }\n    ],\n        \u0022paging\u0022: {\n        \u0022total\u0022: 42,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

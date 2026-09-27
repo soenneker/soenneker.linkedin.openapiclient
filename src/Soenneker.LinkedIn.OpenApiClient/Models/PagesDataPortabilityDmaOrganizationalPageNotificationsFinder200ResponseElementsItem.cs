@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The lastModifiedAt property</summary>
-        public int? LastModifiedAt { get; set; }
+        public long? LastModifiedAt { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lastModifiedAt", n => { LastModifiedAt = n.GetIntValue(); } },
+                { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadata.CreateFromDiscriminatorValue); } },
                 { "notificationType", n => { NotificationType = n.GetStringValue(); } },
                 { "recipient", n => { Recipient = n.GetStringValue(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageNotificationsFinder200ResponseElementsItemMetadata>("metadata", Metadata);
             writer.WriteStringValue("notificationType", NotificationType);
             writer.WriteStringValue("recipient", Recipient);

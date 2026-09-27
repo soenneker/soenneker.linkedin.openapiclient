@@ -1,0 +1,902 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+  "Title": "Sync Application Notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Application Notes",
+      "Anchor": "sync-application-notes",
+      "SectionPath": [],
+      "Text": "Application notes should be sent via the Middleware Platform whenever they are created or updated in your ATS. Use both your application identifier and note identifier when syncing application notes via API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Application Notes",
+      "Anchor": "sync-application-notes",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Application Notes",
+      "Anchor": "sync-application-notes",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rest/applicationNotes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Update Application Notes",
+      "Anchor": "create-and-update-application-notes",
+      "SectionPath": [
+        "Create and Update Application Notes"
+      ],
+      "Text": "Use the following endpoint to create and update application notes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create and Update Application Notes",
+      "Anchor": "create-and-update-application-notes",
+      "SectionPath": [
+        "Create and Update Application Notes"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsApplications/atsJobApplicationId={id1}\u0026dataProvider=ATS\u0026integrationContext={organization URN}/notes?ids={note id 1}\u0026ids={note id 2}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The person who wrote the note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Actor",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04#actor-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A note about the application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Actor Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Request Body Fields",
+        "Actor Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022APPL_NOTE123\u0022: {\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022note\u0022: \u0022Lorem Ipsum.\u0022,\n      \u0022author\u0022: {\n        \u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022\n      }\n    },\n    \u0022APPL_NOTE456\u0022: {\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022note\u0022: \u0022Lorem Ipsum moreum.\u0022,\n      \u0022author\u0022: {\n        \u0022firstName\u0022: \u0022Jane\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022APPL_NOTE123\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022APPL_NOTE456\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Create and Update Application Notes",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /atsApplications/{JobApplicationIdentifier}/notes to delete application notes. More information is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Details"
+      ],
+      "Text": "Use the following endpoint to create and update application notes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Details"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/applicationNotes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Details"
+      ],
+      "Text": "Include the LinkedIn-Version header when calling this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameter",
+      "Anchor": "api-request-parameter",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Request Parameter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context specifies who owns the note and identifies the customer who owns the data. The value must be in the format urn:li:organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalJobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the job application to which the note belongs within the partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalNoteId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the note within the partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The person who wrote the note.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Actor",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04#actor-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A note about the application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the note was created in the partner system, represented as an epoch timestamp in milliseconds (UTC). The value must be positive and cannot be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the note was last modified in the partner system, represented as an epoch timestamp in milliseconds (UTC). The value must be positive and cannot be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Actor Schema",
+      "Anchor": "actor-schema-1",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Actor Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1767735410000,\n            \u0022externalCreatedAt\u0022:1767735410000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1766187260000,\n            \u0022externalCreatedAt\u0022:1766187260000\n\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1767735410000,\n            \u0022externalCreatedAt\u0022:1767735410000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1766187260000,\n            \u0022externalCreatedAt\u0022:1766187260000\n\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1767735410000,\n            \u0022externalCreatedAt\u0022:1767735410000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1766187260000,\n            \u0022externalCreatedAt\u0022:1766187260000\n\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-3",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022Angela\u0022,\n                \u0022lastName\u0022: \u0022Smith\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1767735410000,\n            \u0022externalCreatedAt\u0022:1767735410000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-3",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026integrationContext=urn:li:organization:12345\u0026externalNoteId=note_20251219_0002\u0022: \n    {\n            \u0022author\u0022: {\n                \u0022firstName\u0022: \u0022John\u0022,\n                \u0022lastName\u0022: \u0022Doe\u0022\n            },\n            \u0022note\u0022: \u0022interview\u0022,           \n            \u0022externalLastModifiedAt\u0022: 1766187260000,\n            \u0022externalCreatedAt\u0022:1766187260000\n\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022externalJobApplicationId=app_20251219_0001\u0026externalNoteId=note_20251219_0002\u0026integrationContext=urn%3Ali%3Aorganization%3A12345\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-7",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-7",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026externalNoteId=note_20251219_0002\u0026integrationContext=urn%3Ali%3Aorganization%3A12345\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

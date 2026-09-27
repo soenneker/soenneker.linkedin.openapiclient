@@ -1,0 +1,367 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+  "Title": "Integration Requirements for Event Management",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Event Management",
+      "Anchor": "integration-requirements-for-event-management",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Event Management",
+      "Anchor": "integration-requirements-for-event-management",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Event Management",
+      "Anchor": "integration-requirements-for-event-management",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Event Management program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Event Management",
+      "Anchor": "integration-requirements-for-event-management",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. Plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Event Management",
+      "Anchor": "integration-requirements-for-event-management",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn can suggest modifications which should be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration with right scopes and consent screen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to re-trigger OAuth Flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use refresh tokens to mint new access tokens.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and re-trigger OAuth Flow.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Core",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve organization\u0027s events. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATOR, CONTENT_ADMINISTRATOR.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to modify organization\u0027s event. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATOR, CONTENT_ADMINISTRATOR.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to find events by organizer and filter by: EventTimeBasedFilter (lifeCycleState, start / end time) or EventEntryCriteria (GATED or PUBLIC).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to sort events by START_TIME_ASC or END_TIME_DESC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event Creation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create an event of OnlineEventType: LiveVideo.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create a test event for OnlineEventType: LiveVideo by setting eventDiscoveryMode to GATED.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create an event of OnlineEventType: External.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-204",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create an event of InPersonEventType.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-205",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create a background image asset. This involves both 1) registering an upload and 2) uploading a background image. Adding a background image asset to an event is optional, but recommended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-206",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to add a lead gen form (i.e. event registration form) to an event during event creation. To add a form, specify a Privacy Policy URL to be included in the disclaimer language of the form.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-207",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to post an event on LinkedIn by making a request to the Posts API. An event is readable and writable only if you post it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-208",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to fetch a newly created event. An event is not fetchable until one posts that event. The last component of the URL path is the ID of the event to fetch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event Management",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-301",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to update an event by changing the vanity name of a newly created event. An event is not updatable until you post it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EM-302",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to delete an event. An event is not deletable until one posts that event. One deletes a posted event by deleting its associated post. The last component of the URL path is the URL-encoded URN of the post to delete.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

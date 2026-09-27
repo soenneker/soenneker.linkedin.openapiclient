@@ -1,0 +1,847 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+  "Title": "Sync Application Stages",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Application Stages",
+      "Anchor": "sync-application-stages",
+      "SectionPath": [],
+      "Text": "All application stages should be sent via the Middleware Platform whenever they are created or updated in your ATS. Use both your application identifier and stage identifier when syncing application stages via API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Application Stages",
+      "Anchor": "sync-application-stages",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Application Stages",
+      "Anchor": "sync-application-stages",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rest/applicationStage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Application Stages",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages"
+      ],
+      "Text": "Use the following endpoint to create and update application stages:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsApplications/atsJobApplicationId={id1}\u0026dataProvider=ATS\u0026integrationContext={organization URN}/stages?ids={stage id 1}\u0026ids={stage id 2}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS. Must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stage in which the application stayed supplied by external ATS (e.g. Phone Screen, Onsite Interview, Rejected, Hired, etc.). Must be at least one character and not Not Available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Sample Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Sample Request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022APPL_STAGE123\u0022: {\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022stage\u0022: \u0022Offer Extended\u0022\n    },\n    \u0022APPL_STAGE456\u0022: {\n      \u0022atsCreatedAt\u0022: 1485794842000,\n      \u0022stage\u0022: \u0022Offer Accepted\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022APPL_STAGE123\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022APPL_STAGE456\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Request Body Schema"
+      ],
+      "Text": "The request body contains the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Request Body Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier of the customer organization, formatted as an organization URN (e.g., \u0022urn:li:organization:12345\u0022).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the job application in your ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicationStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the application stage in your ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the stage that the application has moved to. Examples include \u0022Phone Screen\u0022, \u0022Onsite Interview\u0022, \u0022Rejected\u0022, or \u0022Hired\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this application stage was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this application stage was last modified in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Request Body Schema"
+      ],
+      "Text": "Use the following endpoint to create and update application stages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Request Body Schema"
+      ],
+      "Text": "PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Sync Application Stages",
+        "Request Body Schema"
+      ],
+      "Text": "Include the LinkedIn-Version header when calling this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (without query tunneling)",
+      "Anchor": "sync-application-stages-without-query-tunneling-8",
+      "SectionPath": [
+        "Sync Application Stages (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n            \u0022jobApplicationStageId\u0022: \u0022job_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1752860345000,\n            \u0022externalCreatedAt\u0022:1752860345000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Application Stages (with query tunneling)",
+      "Anchor": "sync-application-stages-with-query-tunneling-8",
+      "SectionPath": [
+        "Sync Application Stages (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:70540833\u0026ids[0].jobApplicationStageId=test_appstage_0001\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022jobApplicationId=test_app_0001\u0026integrationContext=urn:li:organization:70540833\u0026jobApplicationStageId=test_appstage_0001\u0022: \n    {\n            \u0022jobApplicationStageId\u0022: \u0022test_appstage_0001\u0022,\n            \u0022stage\u0022: \u0022interview\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:70540833\u0022,\n            \u0022externalLastModifiedAt\u0022: 1755210989000,\n            \u0022externalCreatedAt\u0022:1755210989000,\n            \u0022jobApplicationId\u0022: \u0022test_app_0001\u0022\n    }\n  }\n}\n--xyz--",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026jobApplicationId=test_app_0001\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /atsApplications/{JobApplicationIdentifier}/stages to delete Job Application Stages. More information is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Request (without query tunneling)",
+      "Anchor": "sample-api-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample API Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE  \u0027https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022integrationContext=urn:li:organization:70540833\u0026jobApplicationId=test_app_0001\u0026jobApplicationStageId=job_appstage_0001\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

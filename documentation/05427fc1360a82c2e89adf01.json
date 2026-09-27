@@ -1,0 +1,1570 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-social-action-notifications",
+  "Title": "Organization Social Action Notifications",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-social-action-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Social Action Notifications",
+      "Anchor": "organization-social-action-notifications",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Social Action Notifications",
+      "Anchor": "organization-social-action-notifications",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Social Action Notifications",
+      "Anchor": "organization-social-action-notifications",
+      "SectionPath": [],
+      "Text": "The Organization Social Actions Notifications API enables your app to notify members about activity on their LinkedIn Company Pages. Use this API to build real-time streams for activity on LinkedIn Company Pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Social Action Notifications",
+      "Anchor": "organization-social-action-notifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Social Action Notifications",
+      "Anchor": "organization-social-action-notifications",
+      "SectionPath": [],
+      "Text": "All API request examples in this document are represented in protocol 2.0.0. Use the header X-Restli-Protocol-Version: 2.0.0 to follow these examples. All URNs must be URL encoded in order to use Restli Protocol 2.0.0. For example, a colon should be translated to \u0022%3A\u0022, so urn:li:organization:12345 is encoded to urn%3Ali%3Aorganization%3A12345.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data. Restricted to organizations in which the authenticated member has the following role: ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Registration and Validation",
+      "Anchor": "webhook-registration-and-validation",
+      "SectionPath": [
+        "Webhook Registration and Validation"
+      ],
+      "Text": "To receive notifications at your webhook, your webhook must be registered and validated. Please review and complete the steps in the documentation for Webhooks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Registration and Validation",
+      "Anchor": "webhook-registration-and-validation",
+      "SectionPath": [
+        "Webhook Registration and Validation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Registration and Validation",
+      "Anchor": "webhook-registration-and-validation",
+      "SectionPath": [
+        "Webhook Registration and Validation"
+      ],
+      "Text": "Webhook events for LIKE, COMMENT, and SHARE actions are only triggered for posts with visibility set to PUBLIC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Subscription API",
+      "Anchor": "event-subscription-api",
+      "SectionPath": [
+        "Event Subscription API"
+      ],
+      "Text": "In order to receive notifications on your validated webhook, you must also subscribe your members using the Subscription API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security",
+      "Anchor": "security",
+      "SectionPath": [
+        "Event Subscription API",
+        "Security"
+      ],
+      "Text": "Subscriptions must be authorized with the rw_organization_admin permission by each member who\u0027s receiving notifications. See Organization Access Control for information on how to retrieve roles through the API. Additionally, the ability to subscribe to and access an organization\u2019s data through the Organization Social Actions Notifications API is governed by the authenticated member\u2019s administrative access to the organization. Review and understand the implications of access control and member authorization on the lifetime of subscriptions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Subscription Lifetime",
+      "Anchor": "subscription-lifetime",
+      "SectionPath": [
+        "Event Subscription API",
+        "Subscription Lifetime"
+      ],
+      "Text": "Your app\u2019s subscriptions for a member are only valid for as long as the member\u0027s authorization grant is valid for your application. If the grant expires or if the member revokes their grant for your application, the subscriptions for the member will be removed. A subscription will also be removed in the case that the member is no longer an administrator of the company they\u0027re subscribed to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Subscription Lifetime",
+      "Anchor": "subscription-lifetime",
+      "SectionPath": [
+        "Event Subscription API",
+        "Subscription Lifetime"
+      ],
+      "Text": "You must properly handle these subscription change events in order to resume getting notifications. Failure to correctly handle the various subscription changes will lead to some notifications not being delivered to members. Managing Subscription Changes section covers the steps you should follow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating and Updating Subscriptions",
+      "Anchor": "creating-and-updating-subscriptions",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions"
+      ],
+      "Text": "A subscription record contains details of the subscription including the webhook URL where your app will receive notifications. Each subscription record is uniquely identified by your app, the member, the organizational entity and the eventType. You must specify your developerApplication, member, entity, and eventType as the key in your upsert calls to either create a subscription or update a subscription with a new webhook URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating and Updating Subscriptions",
+      "Anchor": "creating-and-updating-subscriptions",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions"
+      ],
+      "Text": "Ensure that the webhook URL is registered and validated. The webhook must be able to process the notification payload sent by LinkedIn and return a 2xx response upon success. Review the Webhook documentation for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating and Updating Subscriptions",
+      "Anchor": "creating-and-updating-subscriptions",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions"
+      ],
+      "Text": "The subscription request will only succeed if the subscribing member is an administrator of the organization being subscribed to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Subscription Sample Request",
+      "Anchor": "event-subscription-sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions",
+        "Event Subscription Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Event Subscription Sample Request",
+      "Anchor": "event-subscription-sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions",
+        "Event Subscription Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/eventSubscriptions/(developerApplication:urn:li:developerApplication:{developer application ID},user:urn:li:user:{member ID},entity:urn:li:organization:{organization ID},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Event Subscription Sample Request",
+      "Anchor": "event-subscription-sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions",
+        "Event Subscription Sample Request"
+      ],
+      "Text": "{\n  \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Event Subscription Sample Request",
+      "Anchor": "event-subscription-sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions",
+        "Event Subscription Sample Request"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/eventSubscriptions/(developerApplication:urn:li:developerApplication:{developer application ID},user:urn:li:person:{person ID},entity:urn:li:organization:{organization ID},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Resource Key Fields",
+      "Anchor": "resource-key-fields",
+      "SectionPath": [
+        "Event Subscription API",
+        "Creating and Updating Subscriptions",
+        "Resource Key Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "developerApplication",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of your developer application. Must be in the format urn:li:developerApplication:{id}. Your developer application id can be found within the URL of your application in the developer application portal",
+            "Links": [
+              "https://www.linkedin.com/developer/apps"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "user",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Person URN of the authenticated user. Must be in the format urn:li:person:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organizational entity being subscribed to. Must be in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Notification type being subscribed to. Supported values:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS",
+            "Links": [],
+            "Values": [
+              "ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions by Key",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions by Key",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/eventSubscriptions/(developerApplication:{URL_ENCODED_APPLICATION_URN},user:{URL_ENCODED_PERSON_URN},entity:{URL_ENCODED_ORGANIZATION_URN},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions by Key",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/eventSubscriptions/(developerApplication:{URL_ENCODED_APPLICATION_URN},user:{URL_ENCODED_PERSON_URN},entity:{URL_ENCODED_ORGANIZATION_URN},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions by Key",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022entity\u0022: \u0022urn:li:organization:12345\u0022,\n  \u0022eventType\u0022: \u0022ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS\u0022,\n  \u0022user\u0022: \u0022urn:li:person:abCdef\u0022,\n  \u0022expiresAt\u0022: \u00221536130694583\u0022,\n  \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions for an Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions for an Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/eventSubscriptions?q=subscriberAndEventType\u0026eventType=ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions for an Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/eventSubscriptions?q=subscriberAndEventType\u0026eventType=ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Event Subscription API",
+        "Retrieve Subscriptions for an Authenticated Member",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n      {\n          \u0022entity\u0022: \u0022urn:li:organization:12345\u0022,\n          \u0022eventType\u0022: \u0022ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS\u0022,\n          \u0022user\u0022: \u0022urn:li:person:abCdef\u0022,\n          \u0022expiresAt\u0022: \u00221536130694583\u0022,\n          \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022\n      },\n      {\n          \u0022entity\u0022: \u0022urn:li:organization:45678\u0022,\n          \u0022eventType\u0022: \u0022ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS\u0022,\n          \u0022member\u0022: \u0022urn:li:person:abCdef\u0022,\n          \u0022expiresAt\u0022: \u00221537176459876\u0022,\n          \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022\n      },\n      {\n          \u0022entity\u0022: \u0022urn:li:organization:45678\u0022,\n          \u0022eventType\u0022: \u0022ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS\u0022,\n          \u0022member\u0022: \u0022urn:li:person:ghijkl\u0022,\n          \u0022expiresAt\u0022: \u00221537176459876\u0022,\n          \u0022webhook\u0022: \u0022https://www.example.com/callback\u0022\n      }\n  ],\n  \u0022paging\u0022: {\n      \u0022count\u0022: 10,\n      \u0022links\u0022: [\n          \u0022href\u0022: \u0022/eventSubscriptions?count=10\u0026start=10\u0026q=subscriber\u0022,\n          \u0022rel\u0022: \u0022next\u0022,\n          \u0022type\u0022: \u0022application/json\u0022\n      ],\n      \u0022start\u0022: 0\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Event Subscription API",
+        "Remove a Subscription",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Event Subscription API",
+        "Remove a Subscription",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/eventSubscriptions/(developerApplication:{URL_ENCODED_APPLICATION_URN},user:{URL_ENCODED_PERSON_URN},entity:{URL_ENCODED_ORGANIZATION_URN},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Event Subscription API",
+        "Remove a Subscription",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/eventSubscriptions/(developerApplication:{URL_ENCODED_APPLICATION_URN},user:{URL_ENCODED_PERSON_URN},entity:{URL_ENCODED_ORGANIZATION_URN},eventType:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Event Subscription API",
+        "Remove a Subscription",
+        "Sample Request"
+      ],
+      "Text": "Returns 200 OK on success",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Subscription Changes",
+      "Anchor": "managing-subscription-changes",
+      "SectionPath": [
+        "Event Subscription API",
+        "Managing Subscription Changes"
+      ],
+      "Text": "A subscription\u0027s validity is tied to the member\u2019s access to the subscribed organization and their authorization for your app. You must ensure the following steps are taken to handle subscriptions that have been removed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Subscription Changes",
+      "Anchor": "managing-subscription-changes",
+      "SectionPath": [
+        "Event Subscription API",
+        "Managing Subscription Changes"
+      ],
+      "Text": "Track the timestamp of when the last notification was successfully received for each member.\nCheck if the authenticated member is no longer subscribed. Identify dropped subscriptions by doing both of:\n\nHandling 401 and 403 errors returned by calls to LinkedIn Organization APIs.\nA 401 error indicates that your application is no longer authorized by the member. You must acquire a new grant from the member before resubscribing.\nA 403 error indicates that the member is no longer an administrator of the company. This member should no longer be receiving notifications for that company, and will no longer be able to resubscribe to that company.\nOn a suitable cadence, query the organizations that the member currently administers and their active subscriptions to identify which of their current companies they\u0027re no longer subscribed to.\n\n\nNotifications for the member and organization won\u0027t be sent to your webhook during the period of time when the member didn\u0027t have an active subscription. Use the timestamp the member last received notifications to query missed notifications.\nResubscribe the member with a valid access token to resume getting notifications for the member. Use the notificationId in the notification payload to dedupe events you already pulled in Step 3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Webhook Push Notifications",
+      "Anchor": "receive-webhook-push-notifications",
+      "SectionPath": [
+        "Receive Webhook Push Notifications"
+      ],
+      "Text": "Registered webhook URLs will receive notifications from LinkedIn for subscribed events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Webhook Push Notifications",
+      "Anchor": "receive-webhook-push-notifications",
+      "SectionPath": [
+        "Receive Webhook Push Notifications"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Webhook Push Notifications",
+      "Anchor": "receive-webhook-push-notifications",
+      "SectionPath": [
+        "Receive Webhook Push Notifications"
+      ],
+      "Text": "Before sending a notification, LinkedIn will validate that the subscribed member has continued administrative access to the organization and has a valid authorization. The notification will be skipped if these access requirements are not met at the time of the event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationSocialActionNotificationEventsPayload Schema",
+      "Anchor": "organizationsocialactionnotificationeventspayload-schema",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "OrganizationSocialActionNotificationEventsPayload Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the push event. Possible values:ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS",
+            "Links": [],
+            "Values": [
+              "ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional OrganizationSocialActionNotification[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of notifications",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationSocialActionNotification Schema",
+      "Anchor": "organizationsocialactionnotification-schema",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "OrganizationSocialActionNotification Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "notificationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Global unique identifier to ensure notification uniqueness.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Organization URN for which the notification belongs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action type that triggered the notification. Possible values:LIKECOMMENTSHARESHARE_MENTIONADMIN_COMMENTCOMMENT_EDITCOMMENT_DELETE",
+            "Links": [],
+            "Values": [
+              "LIKE",
+              "COMMENT",
+              "SHARE",
+              "SHARE_MENTION",
+              "ADMIN_COMMENT",
+              "COMMENT_EDIT",
+              "COMMENT_DELETE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "sourcePost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The activity or article URN that the member acted on, e.g. the activity that member liked, the article that member shared.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "decoratedSourcePost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The decorated share the member acted on. This field may not be populated if there was an error when decorating the share.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of the last modification of the notification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "generatedActivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An activity or comment URN as a result of acting on the target, e.g. a comment entity generated when a member commented on an activity, article, etc. It exists for COMMENT, ADMIN_COMMENT, COMMENT_EDIT, COMMENT_DELETE, and SHARE_MENTION.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "decoratedGeneratedActivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[Share, Comment]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The decorated generated activity created as a result of acting on the sourcePost. E.g. a comment on an article or a share. This field may not be populated if there was an error when decorating the generated activity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subscriber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "member that created the subscription. If there\u0027s more than 1 subscription for a given organization each subscriber will get an event with the same notificationId but different subscriber.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Share Schema",
+      "Anchor": "share-schema",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Share Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique URN of the share",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the entity which owns the share.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text entered by the member for this share.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "member supplied title of the content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "member supplied description of the content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The main landing page URL of the share.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The category of media shared:NONEARTICLEIMAGERICHVIDEOCAROUSEL",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "ARTICLE",
+              "IMAGE",
+              "RICH",
+              "VIDEO",
+              "CAROUSEL"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Comment Schema",
+      "Anchor": "comment-schema",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Comment Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique URN of the comment",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The owner of the comment. Allowed URN types for now are OrganizationUrn](../pages-profiles/organizations.md), OrganizationBrandUrn, and PersonUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The object to which this action should be attributed. E.g. for comments on a share, the object of both the nested and top level comments is the share URN.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Notification Payload",
+      "Anchor": "notification-payload",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Notification Payload"
+      ],
+      "Text": "Notifications sent to each webhook are batched by the event type (ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS) with a batch size of 10. Notifications contain only URNs of entities related to the notification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Payload",
+      "Anchor": "sample-payload",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Notification Payload",
+        "Sample Payload"
+      ],
+      "Text": "{\n  \u0022type\u0022: \u0022ORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS\u0022,\n  \u0022notifications\u0022: [\n    {\n            \u0022generatedActivity\u0022: \u0022urn:li:share:6343443434841538048\u0022, \n            \u0022decoratedGeneratedActivity\u0022: {\n                  \u0022share\u0022: {\n                    \u0022entity\u0022: \u0022urn:li:share:6343443434841538048\u0022,\n                    \u0022owner\u0022: \u0022urn:li:organization:523424\u0022,\n                    \u0022text\u0022: \u0022This is a some share text\u0022,\n                    \u0022landingPageUrl\u0022: \u0022www.linkedin.com\u0022,\n                    \u0022mediaCategory\u0022: \u0022IMAGE\u0022\n                  }    \n            },\n            \u0022lastModifiedAt\u0022: 1535741251282, \n            \u0022notificationId\u0022: 4406004, \n            \u0022sourcePost\u0022: \u0022urn:li:activity:29292929292992929292\u0022, \n            \u0022decoratedSourcePost\u0022 : {\n                  \u0022entity\u0022: \u0022urn:li:share:343443\u0022,\n                  \u0022owner\u0022: \u0022urn:li:person:5234\u0022,\n                  \u0022text\u0022: \u0022This is a some share text\u0022,\n                  \u0022landingPageUrl\u0022: \u0022www.linkedin.com\u0022,\n                  \u0022mediaCategory\u0022: \u0022ARTICLE\u0022\n            },\n            \u0022action\u0022: \u0022SHARE\u0022, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:12345\u0022,\n            \u0022subscriber\u0022: \u0022urn:li:person:abcdedf\u0022\n    },\n    {\n            \u0022generatedActivity\u0022: \u0022urn:li:comment:(activity:63434434348, 12345)\u0022,\n            \u0022decoratedGeneratedActivity\u0022: {\n                 \u0022comment\u0022: {\n                   \u0022entity\u0022: \u0022urn:li:comment:(urn:li:activity:63434434348, 12345)\u0022,\n                   \u0022owner\u0022: \u0022urn:li:person:523424\u0022,\n                   \u0022object\u0022: \u0022urn:li:activity:56459853495\u0022,\n                   \u0022text\u0022: \u0022This is a some share text\u0022\n                 }    \n            }, \n            \u0022lastModifiedAt\u0022: 1535741251282, \n            \u0022notificationId\u0022: 4406004, \n            \u0022sourcePost\u0022: \u0022urn:li:activity:29292929292992929293\u0022,\n            \u0022decoratedSourcePost\u0022 : {\n                  \u0022entity\u0022: \u0022urn:li:share:343443\u0022,\n                  \u0022owner\u0022: \u0022urn:li:person:5234\u0022,\n                  \u0022text\u0022: \u0022This is a some share text\u0022,\n                  \u0022landingPageUrl\u0022: \u0022www.linkedin.com\u0022,\n                  \u0022mediaCategory\u0022: \u0022ARTICLE\u0022\n            }, \n            \u0022action\u0022: \u0022COMMENT\u0022, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:12345\u0022,\n            \u0022subscriber\u0022: \u0022urn:li:person:abcdedf\u0022\n    },\n    {\n            \u0022generatedActivity\u0022: \u0022urn:li:share:7343443434841538048\u0022, \n            \u0022lastModifiedAt\u0022: 1535741251282, \n            \u0022notificationId\u0022: 4406004, \n            \u0022sourcePost\u0022: \u0022urn:li:activity:49292929292992929292\u0022, \n            \u0022action\u0022: \u0022SHARE\u0022, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:67890\u0022,\n            \u0022subscriber\u0022: \u0022urn:li:person:abcdedf\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Payload",
+      "Anchor": "sample-payload",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Notification Payload",
+        "Sample Payload"
+      ],
+      "Text": "Review the OrganizationSocialActionNotification Schema to understand the data returned, and the mapping below to identify the APIs that can be used to retrieve the details of each entity using the Urns returned in the notification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "URN Types and Retrieval APIs",
+      "Anchor": "urn-types-and-retrieval-apis",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Notification Payload",
+        "URN Types and Retrieval APIs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type of URN",
+        "Retrieval APIs",
+        "Retrieval API Purpose"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organizations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about the company page that the notification is related",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourcePost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Activity Urn Article Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Activity API Article API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about the parent share on which the event occurred.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "generatedActivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share Urn Comment Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Shares API Social Actions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions?view=li-lms-2026-09#retrieve-social-actions"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about the entity related to the event that triggered the notification (share or comment).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subscriber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic Profile API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Use the personUrn to identify the member who the notification should be delivered to. The personUrn is typically sufficient for this and you may not need to make a call to the Basic Profile API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Reliability",
+      "Anchor": "message-reliability",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Message Reliability"
+      ],
+      "Text": "LinkedIn will attempt to redeliver the notification once every 5 minutes for 8 hours, after which redelivery attempts for that notification will be aborted. In case of webhook downtimes over 8 hours, you can query the missed notifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Receive Webhook Push Notifications",
+        "Error Handling"
+      ],
+      "Text": "The notification payload contains a notificationId and lastModifiedAt timestamp. You should use these values to deduplicate notifications and keep track of the notifications you have successfully received.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pull Organizational Notifications",
+      "Anchor": "pull-organizational-notifications",
+      "SectionPath": [
+        "Pull Organizational Notifications"
+      ],
+      "Text": "Notifications for the authenticated member\u2019s organizations can be queried using a criteria finder. Notifications are retained and available to pull for 60 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pull Organizational Notifications",
+      "Anchor": "pull-organizational-notifications",
+      "SectionPath": [
+        "Pull Organizational Notifications"
+      ],
+      "Text": "We recommend using this API only to bootstrap initial notifications for your product launch and for error handling. Using Webhook Notifications is the recommended approach for getting updates from an organization\u2019s feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Notification Schema",
+      "Anchor": "notification-schema",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Notification Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "notificationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Global unique identifier to ensure notification uniqueness.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Organization URN for which the notification belongs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action type that triggered the notification. Possible values:LIKECOMMENTSHARESHARE_MENTIONADMIN_COMMENTCOMMENT_EDITCOMMENT_DELETE",
+            "Links": [],
+            "Values": [
+              "LIKE",
+              "COMMENT",
+              "SHARE",
+              "SHARE_MENTION",
+              "ADMIN_COMMENT",
+              "COMMENT_EDIT",
+              "COMMENT_DELETE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "sourcePost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The activity or article URN that the member acted on, e.g. the activity that member liked, the article that member shared.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of the last modification of the notification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "generatedActivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An activity or comment URN as a result of acting on the target, e.g. a comment entity generated when a member commented on an activity, article, etc. It exists for COMMENT, ADMIN_COMMENT, COMMENT_EDIT, COMMENT_DELETE, and SHARE_MENTION.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Organization URN for which to query notifications. The authenticated member must be an administrator of the organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action type that triggered the notification. Possible values:LIKECOMMENTSHARESHARE_MENTIONADMIN_COMMENTCOMMENT_EDITCOMMENT_DELETE",
+            "Links": [],
+            "Values": [
+              "LIKE",
+              "COMMENT",
+              "SHARE",
+              "SHARE_MENTION",
+              "ADMIN_COMMENT",
+              "COMMENT_EDIT",
+              "COMMENT_DELETE"
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) value in which to end the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourcePost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Activity URN to search by. When this value is specified, only one enum can be specified in the actions parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityNotifications?q=criteria\u0026actions=List(COMMENT,SHARE_MENTION)\u0026organizationalEntity={URL_ENCODED_ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityNotifications?q=criteria\u0026actions=List(COMMENT,SHARE_MENTION)\u0026organizationalEntity={URL_ENCODED_ORGANIZATION_URN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022generatedActivity\u0022: \u0022urn:li:share:6441333333905633322\u0022, \n            \u0022lastModifiedAt\u0022: 1535741320050, \n            \u0022notificationId\u0022: 4406044, \n            \u0022sourcePost\u0022: \u0022urn:li:activity:92828282828282828828\u0022, \n            \u0022action\u0022: \u0022SHARE_MENTION\u0022, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:12345\u0022\n        }, \n        {\n            \u0022generatedActivity\u0022: \u0022urn:li:share:6343443434841538048\u0022, \n            \u0022lastModifiedAt\u0022: 1535741251282, \n            \u0022notificationId\u0022: 4406005, \n            \u0022sourcePost\u0022: \u0022urn:li:activity:29292929292992929292\u0022, \n            \u0022action\u0022: \u0022SHARE\u0022, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:12345\u0022\n        }\n  ],\n  \u0022paging\u0022: {\n        \u0022count\u0022: 10, \n        \u0022start\u0022: 0, \n        \u0022links\u0022: [\n            {\n                \u0022href\u0022: \u0022/organizationalEntityNotifications?q=criteria\u0026start=10\u0026count=10\u0026organizationalEntity=urn%3Ali%3Aorganization%3A12345\u0022, \n                \u0022type\u0022: \u0022application/json\u0022, \n                \u0022rel\u0022: \u0022next\u0022\n            }\n        ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Pull Organizational Notifications",
+        "Query Notifications Based on Criteria",
+        "Sample Response"
+      ],
+      "Text": "All URNs must be URL encoded in order to use Restli Protocol 2.0.0. Example: \u003Chttps://api.linkedin.com/rest/organizationalEntityNotifications?q=criteria\u0026actions=List(COMMENT,SHARE_MENTION)\u0026organizationalEntity=urn%3Ali%3Aorganization%3A12345\u003E",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

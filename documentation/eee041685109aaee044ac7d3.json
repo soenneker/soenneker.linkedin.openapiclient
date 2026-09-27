@@ -1,0 +1,2395 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+  "Title": "Videos API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Videos API",
+      "Anchor": "videos-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Videos API",
+      "Anchor": "videos-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Videos API",
+      "Anchor": "videos-api",
+      "SectionPath": [],
+      "Text": "The Videos API is a new offering from LinkedIn that features the ability to upload a captions file as well as thumbnail video functionality.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Videos API",
+      "Anchor": "videos-api",
+      "SectionPath": [],
+      "Text": "The request and response schema is simplified for uploading videos to the LinkedIn platform. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads. LinkedIn partners can create and upload rich and engaging personal or organization content for surfacing on select feeds within the LinkedIn ecosystem.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Videos API",
+      "Anchor": "videos-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Videos API",
+      "Anchor": "videos-api",
+      "SectionPath": [],
+      "Text": "The Videos API replaces the Assets API. See Migration Guide for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to the company admin, DSC poster, or content admin",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of authenticated member",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Additionally, the following permission checks are performed when uploading a video:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For videos with company URN owners, the caller needs to have ADMIN or DSC permissions for the company page.\nFor videos with member URN owners, the caller needs to match the video owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Invalid permissions results in the following API response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022Accessing this video resource is forbidden. Please check your permissions for this resource\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video File Size Specifications",
+      "Anchor": "video-file-size-specifications",
+      "SectionPath": [
+        "Video File Size Specifications"
+      ],
+      "Text": "The following are the high-level specifications for non-connected-television video file sizing. For connected television video specification, refer to Connected Television Video Ads Specifications for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video File Size Specifications",
+      "Anchor": "video-file-size-specifications",
+      "SectionPath": [
+        "Video File Size Specifications"
+      ],
+      "Text": "Length: Three seconds to 30 minutes.\nFile size: Between 75kb and 500MB.\nFile format: MP4.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video File Size Specifications",
+      "Anchor": "video-file-size-specifications",
+      "SectionPath": [
+        "Video File Size Specifications"
+      ],
+      "Text": "Refer to Video Ads Advertising Specifications for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "All APIs require the request headers Linkedin-Version: {Version in YYYYMM format}\nand X-Restli-Protocol-Version: 2.0.0. Refer to the Protocol Versions page to learn more about\u00A0Rest.li\u00A0Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "aspectRatioHeight",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media aspect ratio height. For media with a 16:9 ratio, it\u0027s a 9. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. It is empty if the media asset isn\u0027t available, failed processing, or there\u0027s another issue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aspectRatioWidth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aspect ratio width of the media. For media with a 16:9 ratio, it\u0027s 16. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. It is empty if the media asset isn\u0027t available, failed processing, or there\u0027s another issue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "captions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File identifier to retrieve the caption file. Present if initializeUploadRequest.uploadCaptions was true and a caption was successfully uploaded and processed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public URL to download/view the media asset. It be empty if the media asset isn\u0027t available, failed processing, or there\u0027s another issue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires. If it\u0027s not present, it may never expire. Unless the use case has a security and legal exception, all URLs have an expiration time. If they don\u0027t, they can still expire because URLs are signed, and the sign keys may be rotated. If a non expiring URL was signed with a key that gets invalidated, it expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The length of the video in milliseconds. It is empty if the media asset isn\u0027t available, failed processing, or there\u0027s another issue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique video URN. This field is read only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata.associatedAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The associated account that owns the media library (e.g. urn:li:sponsoredAccount:123). The media library specific metadata fields will be filled with the data from this account\u0027s library.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata.assetName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the asset in the associatedAccount\u0027s library.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata.mediaLibraryStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaLibraryStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the asset\u0027s entry in the media library. Defaults to \u0022ACTIVE\u0022 on creation.ACTIVE Owner considers asset available and usable. ARCHIVED Owner considers asset archived.",
+            "Links": [],
+            "Values": [
+              "ACTIVE Owner considers asset available and usable.",
+              "ARCHIVED Owner considers asset archived."
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PROCESSING Asset is processing to generate missing artifacts.PROCESSING_FAILED Processing failed due to client error such as file size too large, unsupported file format, internal error (e.g., performance issue, database error, network failure), or other issue.AVAILABLE All of the recipe\u0027s required artifacts are ready. The asset is available to be served.WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.",
+            "Links": [],
+            "Values": [
+              "PROCESSING Asset is processing to generate missing artifacts.",
+              "PROCESSING_FAILED Processing failed due to client error such as file size too large, unsupported file format, internal error (e.g., performance issue, database error, network failure), or other issue.",
+              "AVAILABLE All of the recipe\u0027s required artifacts are ready. The asset is available to be served.",
+              "WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed."
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "processingFailureReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reason for video processing failure. This field will only be present if video.status is PROCESSING_FAILED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thumbnail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File identifier to retrieve the thumbnail file. Present in one of the following cases: a) initializeUploadRequest.uploadThumbnail was true and a thumbnail was successfully uploaded and processed. b) initializeUploadRequest.uploadThumbnail was false but a system generated default thumbnail is present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.fileSizeBytes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File size in bytes. This determines how many parts the video upload will be broken into. Maximum allowed Videos size is 5GB.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.linkbackContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The necessary context to link back to this attribution. When missing either no linkback is needed or no additional context is required to link back to the attribution. Note: The initializeUploadRequest.linkbackContext field is only supported from API version 202602 onwards.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.mediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests. When this field is present, the uploaded asset will also be registered in the account\u0027s media library.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the entity that owns this asset. Can be a person(urn:li:person:123), or organization(urn:li:organization:123) URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.templateName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The template name (if any) used in the creation of this video using a third-party company, organization, tool, etc. Note: The initializeUploadRequest.templateName field is only supported from API version 202602 onwards.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.uploadCaptions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean default=false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specify whether you want to upload captions with the video. Each video can include only one caption file, and only English-language captions are supported. If this field is set to true for an Ads Video, caption processing must succeed for the video to be eligible for serving. For a feed video, the video can still be served even if caption processing fails. This field defaults to false, as captions are optional for all videos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.uploadThumbnail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean default=false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether you want to upload a thumbnail along with video. If the partner doesn\u0027t upload a thumbnail, a system generated thumbnail may be added to the video. If this field is set to true for an Ads Video, the processing of thumbnail must succeed for video to be servable. A feed video can serve even with failed captions. The value defaults to false as a thumbnail is optional for all videos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeVideoUploadResponse.captionsUploadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL for uploading captions. Present only if initializeUploadRequest.uploadCaptions was true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeVideoUploadResponse.thumbnailUploadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL for uploading thumbnail. This value is present only if initializeUploadRequest.uploadThumbnail is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeVideoUploadResponse.uploadInstructions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VideoPartUploadInstruction array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Instructions for parts of multi-part video upload. Each entry in the array represents one part of the multi-part upload. It is never be empty. Parts are sorted by non-overlapping byte-range. The first entry is byte range: 0 - 4194303, the next one with 4194304 - 8388607 and so on.firstByte long First byte (inclusive) in the byte range to upload in this part.lastByte long The last byte (inclusive) in the range to upload in this part. uploadUrl URL HTTP upload URL that you\u0027ll use to make HTTP PUT request.",
+            "Links": [],
+            "Values": [
+              "firstByte long First byte (inclusive) in the byte range to upload in this part.",
+              "lastByte long The last byte (inclusive) in the range to upload in this part.",
+              "uploadUrl URL HTTP upload URL that you\u0027ll use to make HTTP PUT request."
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeVideoUploadResponse.uploadToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier for an upload session. You need to pass this in the finalize step to link video parts together.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeVideoUploadResponse.uploadUrlsExpireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the upload URLs expire. All upload URLs expire at the same time. Trying to upload to expired URLs would throw a 401 error. Typically URLs expire 30 days from the time an upload is initialized.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeVideoUploadResponse.video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video URN that the uploaded Video is associated with",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "uploadToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "upload token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "finalizeUploadRequest.uploadToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier for an upload session.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is from the initialize video upload step. Partners shouldn\u0027t try to interpret it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "finalizeUploadRequest.uploadedPartIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IDs for each uploaded video part in the multipart upload. The order needs to be the same as the order of parts in the upload instructions. Callers are should get the IDs as ETags from the response headers when they upload the videos. ETag: \u0022e4383924336106965d6cd2a111beaceb\u0022 ETag: \u002224259a14365734f1f1b4abcdb5e55d01e\u0022 corresponds to uploadedPartIds: [\u0022e4383924336106965d6cd2a111beaceb\u0022, \u002224259a14365734f1f1b4abcdb5e55d01e\u0022]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "finalizeUploadRequest.video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video URN that the uploaded Video is associated with",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "How to Upload Videos"
+      ],
+      "Text": "With Videos API, you can upload captions and thumbnails independent of the file size with multipart upload functionality by default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "How to Upload Videos"
+      ],
+      "Text": "Steps to upload a video:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "How to Upload Videos"
+      ],
+      "Text": "Initialize Upload for Video\nSplit the file into 4 MB each (split -b 4194303).\nUpload the Video\nFinalize Video Upload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Video Upload",
+      "Anchor": "initialize-video-upload",
+      "SectionPath": [
+        "Initialize Video Upload"
+      ],
+      "Text": "Use the initializeUpload action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL from the uploadInstructions to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Video Upload",
+      "Anchor": "initialize-video-upload",
+      "SectionPath": [
+        "Initialize Video Upload"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Video Upload",
+      "Anchor": "initialize-video-upload",
+      "SectionPath": [
+        "Initialize Video Upload"
+      ],
+      "Text": "Initialize upload action is same irrespective of the file size, based on the file size, the response may have one or multiple upload URLs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video without Captions or Thumbnails",
+      "Anchor": "video-without-captions-or-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video without Captions or Thumbnails"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video without Captions or Thumbnails",
+      "Anchor": "video-without-captions-or-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video without Captions or Thumbnails"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video without Captions or Thumbnails",
+      "Anchor": "video-without-captions-or-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video without Captions or Thumbnails"
+      ],
+      "Text": "{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: false,\n       \u0022uploadThumbnail\u0022: false\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video without Captions or Thumbnails",
+      "Anchor": "video-without-captions-or-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video without Captions or Thumbnails"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: false,\n       \u0022uploadThumbnail\u0022: false\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code with the uploadUrl to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadUrlsExpireAt\u0022: 1633234498985,\n    \u0022video\u0022: \u0022urn:li:video:C5505AQH-oV1qvnFtKA\u0022,\n    \u0022uploadInstructions\u0022: [\n      {\n        \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5505AQH-oV1qvnFtKA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4tZWkuY29tL2FtYnJ5L2FtYnJ5LXZpZGVvZWkvP3gtbGktYW1icnktZXA9QVFHVkdRS0FtS05oM2dBQUFYd19ObG1uZzVYcllXajEzZjIybXh4LW55SGVBclVKcE8y\u0022,\n        \u0022lastByte\u0022: 4194303,\n        \u0022firstByte\u0022: 0\n      }\n    ],\n    \u0022uploadToken\u0022: \u0022\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "Videos uploaded with the Video Ads API can now be reused across different video post formats. For example, a video uploaded and posted to the feed can also be used in a sponsored video ad and doesn\u0027t require a separate video upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video with Captions but no Thumbnails",
+      "Anchor": "video-with-captions-but-no-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Captions but no Thumbnails"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with Captions but no Thumbnails",
+      "Anchor": "video-with-captions-but-no-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Captions but no Thumbnails"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with Captions but no Thumbnails",
+      "Anchor": "video-with-captions-but-no-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Captions but no Thumbnails"
+      ],
+      "Text": "{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: true,\n       \u0022uploadThumbnail\u0022: false\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with Captions but no Thumbnails",
+      "Anchor": "video-with-captions-but-no-thumbnails",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Captions but no Thumbnails"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027  \\\n--data-raw \u0027{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: true,\n       \u0022uploadThumbnail\u0022: false\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code with the uploadUrl to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadUrlsExpireAt\u0022: 1633234498985,\n    \u0022video\u0022: \u0022urn:li:video:C5505AQH-oV1qvnFtKA\u0022,\n    \u0022uploadInstructions\u0022: [\n      {\n        \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5505AQH-oV1qvnFtKA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4tZWkuY29tL2FtYnJ5L2FtYnJ5LXZpZGVvZWkvP3gtbGktYW1icnktZXA9QVFHVkdRS0FtS05oM2dBQUFYd19ObG1uZzVYcllXajEzZjIybXh4LW55SGVBclVKcE8y\u0022,\n        \u0022lastByte\u0022: 4194303,\n        \u0022firstByte\u0022: 0\n      }\n    ],\n    \u0022uploadToken\u0022: \u0022\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video with Thumbnails but no Captions",
+      "Anchor": "video-with-thumbnails-but-no-captions",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Thumbnails but no Captions"
+      ],
+      "Text": "Make sure you set the Content-Type header to application/json.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video with Thumbnails but no Captions",
+      "Anchor": "video-with-thumbnails-but-no-captions",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Thumbnails but no Captions"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with Thumbnails but no Captions",
+      "Anchor": "video-with-thumbnails-but-no-captions",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Thumbnails but no Captions"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with Thumbnails but no Captions",
+      "Anchor": "video-with-thumbnails-but-no-captions",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Thumbnails but no Captions"
+      ],
+      "Text": "{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: false,\n       \u0022uploadThumbnail\u0022: true\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with Thumbnails but no Captions",
+      "Anchor": "video-with-thumbnails-but-no-captions",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Thumbnails but no Captions"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: false,\n       \u0022uploadThumbnail\u0022: true\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code with the uploadUrl to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadUrlsExpireAt\u0022: 1633234498985,\n    \u0022video\u0022: \u0022urn:li:video:C5505AQH-oV1qvnFtKA\u0022,\n    \u0022uploadInstructions\u0022: [\n      {\n        \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5505AQH-oV1qvnFtKA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4tZWkuY29tL2FtYnJ5L2FtYnJ5LXZpZGVvZWkvP3gtbGktYW1icnktZXA9QVFHVkdRS0FtS05oM2dBQUFYd19ObG1uZzVYcllXajEzZjIybXh4LW55SGVBclVKcE8y\u0022,\n        \u0022lastByte\u0022: 4194303,\n        \u0022firstByte\u0022: 0\n      }\n    ],\n    \u0022uploadToken\u0022: \u0022\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video with MediaLibraryMetadata for media library registration",
+      "Anchor": "video-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "Note that the mediaLibraryMetadata.mediaLibraryStatus defaults to \u0022ACTIVE\u0022 on creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video with MediaLibraryMetadata for media library registration",
+      "Anchor": "video-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with MediaLibraryMetadata for media library registration",
+      "Anchor": "video-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with MediaLibraryMetadata for media library registration",
+      "Anchor": "video-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736 ,\n       \u0022uploadCaptions\u0022: false,\n       \u0022uploadThumbnail\u0022: false,\n       \u0022mediaLibraryMetadata\u0022: {\n            \u0022associatedAccount\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n            \u0022assetName\u0022: \u0022My media library asset\u0022\n      }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Video with MediaLibraryMetadata for media library registration",
+      "Anchor": "video-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022fileSizeBytes\u0022: 1055736,\n       \u0022uploadCaptions\u0022: false,\n       \u0022uploadThumbnail\u0022: false,\n        \u0022mediaLibraryMetadata\u0022: {\n            \u0022associatedAccount\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n            \u0022assetName\u0022: \u0022My media library asset\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code with the uploadUrl to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadUrlsExpireAt\u0022: 1633234498985,\n    \u0022video\u0022: \u0022urn:li:video:C5505AQH-oV1qvnFtKA\u0022,\n    \u0022uploadInstructions\u0022: [\n      {\n        \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5505AQH-oV1qvnFtKA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4tZWkuY29tL2FtYnJ5L2FtYnJ5LXZpZGVvZWkvP3gtbGktYW1icnktZXA9QVFHVkdRS0FtS05oM2dBQUFYd19ObG1uZzVYcllXajEzZjIybXh4LW55SGVBclVKcE8y\u0022,\n        \u0022lastByte\u0022: 4194303,\n        \u0022firstByte\u0022: 0\n      }\n    ],\n    \u0022uploadToken\u0022: \u0022\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video with Deeplink to Media Attribution",
+      "Anchor": "video-with-deeplink-to-media-attribution",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Video with Deeplink to Media Attribution"
+      ],
+      "Text": "This example demonstrates uploading a video with media attribution using templateName and linkbackContext fields to deeplink back to a specific third-party template or tool used in video creation. The template name is optional, and is only needed if it needs to be displayed later in the attribution CTA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022initializeUploadRequest\u0022: {\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022fileSizeBytes\u0022: 1055736,\n    \u0022uploadCaptions\u0022: false,\n    \u0022uploadThumbnail\u0022: false,\n    \u0022templateName\u0022: \u0022Sunshine birthday wishes\u0022,\n    \u0022linkbackContext\u0022: \u0022https://clipchamp.com/content/cc_ta0a5a7e7-sunshine-birthday/\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos?action=initializeUpload\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n  \u0022initializeUploadRequest\u0022: {\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022fileSizeBytes\u0022: 1055736,\n    \u0022uploadCaptions\u0022: false,\n    \u0022uploadThumbnail\u0022: false,\n    \u0022templateName\u0022: \u0022Sunshine birthday wishes\u0022,\n    \u0022linkbackContext\u0022: \u0022https://clipchamp.com/content/cc_ta0a5a7e7-sunshine-birthday/\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code with the uploadUrl to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Initialize Video Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadUrlsExpireAt\u0022: 1633234498985,\n    \u0022video\u0022: \u0022urn:li:video:C5505AQH-oV1qvnFtKA\u0022,\n    \u0022uploadInstructions\u0022: [\n      {\n        \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5505AQH-oV1qvnFtKA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4tZWkuY29tL2FtYnJ5L2FtYnJ5LXZpZGVvZWkvP3gtbGktYW1icnktZXA9QVFHVkdRS0FtS05oM2dBQUFYd19ObG1uZzVYcllXajEzZjIybXh4LW55SGVBclVKcE8y\u0022,\n        \u0022lastByte\u0022: 4194303,\n        \u0022firstByte\u0022: 0\n      }\n    ],\n    \u0022uploadToken\u0022: \u0022\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample Request"
+      ],
+      "Text": "curl -v \\\n -H \u0022Content-Type:application/octet-stream\u0022 \\\n --upload-file ~/Downloads/sample.mp4 \\\n\u0022https://www.linkedin.com/dms-uploads/C5505AQH-oV1qvnFtKA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4tZWkuY29tL2FtYnJ5L2FtYnJ5LXZpZGVvZWkvP3gtbGktYW1icnktZXA9QVFHVkdRS0FtS05oM2dBQUFYd19ObG1uZzVYcllXajEzZjIybXh4LW55SGVBclVKcE8y\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample Request"
+      ],
+      "Text": "The headers in the response return an ETag as shown below. Ensure that you save eTag for future use.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK\nContent-Length: 0\nConnection: keep-alive\netag: /ambry-videoei/signedId/AQHX97-zKFZrewAAAXx7Kf1h4pHEr_EVJ2_BGyigpJdmMfO9DreqqynKhTXcMMtKmFtM_JL07JFHXfzHoegWPUsBw9ofV7Z3KWfKRvB41FtIXq9pmvQtkDNrw_nPX4QjsDktxxzFq2gMlC9e3H4x8U_y0QQFQO0pMvtdwaBoFZ_eq_hGZRQCG-zTcYD0J_Nqsf1bApcZ_KGM3Zdc62eATjUTAV7zH4f--18-PLbhQMkKl4g9tjzgRVVv3jp3EPwRidBb7bk0RSI.bin",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload Captions",
+      "Anchor": "upload-captions",
+      "SectionPath": [
+        "Upload Captions"
+      ],
+      "Text": "curl -v -H \u0027Content-Type:multipart/form-data\u0027 -F metadata=\u0027{ \u0022format\u0022: \u0022SRT\u0022, \u0022formattedForEasyReader\u0022: true, \u0022largeText\u0022: true, \u0022source\u0022: \u0022USER_PROVIDED\u0022, \u0022locale\u0022: { \u0022variant\u0022: \u0022AMERICAN\u0022, \u0022country\u0022: \u0022US\u0022, \u0022language\u0022: \u0022EN\u0022}, \u0022transcriptType\u0022: \u0022CLOSED_CAPTION\u0022 }\u0027 -F \u0027file=@/Downloads/vector4/sample.srt;type=text/plain\u0027\n\u0022https://www.linkedin.com/dms-mpf-uploads/C5510AQFcJm7vFh0-GQ/userUploadedCustomCaptions/YBIDwEuGcAA-/0?sync=0\u0026v=beta\u0026ut=1dpApVoV7zLac1\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Captions",
+      "Anchor": "upload-captions",
+      "SectionPath": [
+        "Upload Captions"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Captions",
+      "Anchor": "upload-captions",
+      "SectionPath": [
+        "Upload Captions"
+      ],
+      "Text": "In the above call, The \u0022@\u0022 in \u0027file=@/Downloads/vector4/sample.srt;type=text/plain\u0027 is mandatory to avoid any errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Upload Captions",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Upload Captions",
+        "Sample Response"
+      ],
+      "Text": "POST /dms-mpf-uploads/C5510AQHwJl8JK7pBbw/userUploadedCustomCaptions/X9xZTedGYAA-/0?sync=0\u0026v=beta\u0026ut=2xCgsvCrxHQG81 HTTP/2\nHost: www.linkedin.com\nContent-Length: 962\nContent-Type: multipart/form-data; boundary=------------------------f04e0be9b719964e \nConnection state changed (MAX_CONCURRENT_STREAMS == 100)!\n[962 bytes data]\nWe are completely uploaded and fine\nHTTP/2 201",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload Thumbnail",
+      "Anchor": "upload-thumbnail",
+      "SectionPath": [
+        "Upload Thumbnail"
+      ],
+      "Text": "curl -v -H \u0027media-type-family:STILLIMAGE\u0027 -H \u0027Content-Type:application/octet-stream\u0027 --upload-file \u0027~/Downloads/vector4/kiki.jpg\u0027 \u0027https://www.linkedin.com/dms-uploads/C5510AQHHRzI0nYgcuw/ads-video-userUploadedThumbnail/0?ca=vector_ads\u0026cn=uploads_secure\u0026ccn=ambry-video\u0026sync=0\u0026v=beta\u0026ut=0LIRxJwkoZQG81",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Upload Thumbnail",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Upload Thumbnail",
+        "Sample Response"
+      ],
+      "Text": "PUT /dms-uploads/C5510AQHHRzI0nYgcuw/ads-video-userUploadedThumbnail/0?ca=vector_ads\u0026cn=uploads_secure\u0026ccn=ambry-video\u0026sync=0\u0026v=beta\u0026ut=0LIRxJwkoZQG81 HTTP/2\nHost: www.linkedin-ei.com\nUser-Agent: curl/7.64.1\nmedia-type-family:STILLIMAGE\nContent-Type:application/octet-stream\nX-LI-R2-W-MsgType: REST\nAccept: application/json\nContent-Length: 256600\nConnection state changed (MAX_CONCURRENT_STREAMS == 100)!\n[65536 bytes data]\nWe are completely uploaded and fine\nHTTP/2 201",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Finalize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Finalize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/videos?action=finalizeUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Finalize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022finalizeUploadRequest\u0022: {\n    \u0022video\u0022: \u0022urn:li:video:C5505AQHErI8lGthkfA\u0022,\n    \u0022uploadToken\u0022: \u0022\u0022,\n    \u0022uploadedPartIds\u0022: [\n    \u0022/ambry-videoei/signedId/AQHR565FaYkDgAAAAXw_UJ1CyIkbTA1fh0JAC2dLx1lklVp7hflbaQTu7F3n736vqZ0oF16jNYfdQeiw_Rqoo8oB0foqB3qpWwFYWoDt0lu3GYMvDOfoB4jKCgLHeP-bBsagclZ0aVGC-8QPxiq9iC7JAcWESNdAooTqS40jVEK2kqcXBumDWLGQrMpfNSJ1qHrY4UqflpL3ibwa7BVev5VfUjkdK6CPfEhfVHbDEaE-93-2dio20_XUee5o2ZSYxMz4Txx8I3Y.bin\u0022\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Finalize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos?action=finalizeUpload\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\u0022finalizeUploadRequest\u0022: {\u0022video\u0022: \u0022urn:li:video:C4E10AQEfKKMV9a1d-g\u0022, \u0022uploadToken\u0022: \u0022\u0022, \u0022uploadedPartIds\u0022: [\u0022/ambry-video/signedId/AQJxWLYHLkIhgQAAAYBHKrkfFtLeuylYvIQ4PIvA8y9vsNxOL81dFKPzDoelwAh3u1LtNoV1E0QgYbnJSzQYufWwcuDfeQFpp99kXzG3pmRCi3kDmUGRaP3VAqt1Gu527c5Av5A2blyHvduKarZJ288qeqO_JPO20ivmoEgBMr1LqzFnZIDvCvbJjNdtk_c3iH6NBv527jU18_cT5CWTds86xvXzUQurrlRvBmG71szPI9B8VarjT_XNIfmz6kfcego3Np3DR9s.bin\u0022, \u0022/ambry-video/signedId/AQImHSPUJvN5iQAAAYBHKrummJ26JZIelWw8dSfka6zbEpviF6Ibu2NMaiSgI8B_VOieCVIHePqnLwWCFkZO3fUYG5GT_RLBgDZqP_Al0Dm1qzov4xvQiQPdgwRIm6J7uoN2LUpyAgJfmkfdl7e2_HdJhuA4xp2mOu5fa3icuQWHTU09_ZlDZfS014Mcla7n6sB-X0LkiyJlJa9Ku8plE12-7hvU0KLd2GMzTlIxOrl9t6uOsMG5d4kLzV5Jje0Aifey4UM0we0.bin\u0022, \u0022/ambry-video/signedId/AQLN2Hlak3Kk2AAAAYBHKsKYlebOqPNKgpg5gF38dkxo79E8WsGYpJbbxI9VO48o67pj05ajTbqqT7zm_eFv5HzMc3cyvdeVP9obIEfbR2M2Kjx5zisV4rTzKqDPIXu3CpxjuwnTdxS3I5-Pl8BvO4hCFqtxqpO3LW81rhys8kvykvOdRWCazP3H_3M7cbEmXmHz1aNSrFR3SIPFBUIUDW4P4O7IrOlYILG9PqqcdMweWvIDBPH1TyVJx-Lxd6Pm0kvLGg7QOmA.bin\u0022, \u0022/ambry-video/signedId/AQJ53DRVN7kWEwAAAYBHKsYPzzQojALApZNqdLjenwy7yeH1RKGauKJ4Y0WtkJViorMsjQCzeMpG2Q1JNZSa_YeLXvr9hrY3TR5gw2cZfMTpnQ0wikzRI43OF-9X0oVOuaNBWfGj729ROuh6QRudsNOHwx497FPQwD9t4O7KNlt-9xNk2TkAeHXv9GKOUqXkjIOcG-VODb_5KXUiXihi921cqdeEbhKiFjAa5XQKthQBAxBewVLq0d619vyyjva38IAqNBiF0WM.bin\u0022]\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Finalize Video Upload",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns the 200 OK status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get a Video",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get a Video",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/videos/urn%3Ali%3Avideo%3AC4E10AQGUkQY7trgh-Q",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get a Video",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET https://api.linkedin.com/rest/videos/urn%3Ali%3Avideo%3AC4E10AQGUkQY7trgh-Q \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Get a Video",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022duration\u0022: 32066,\n   \u0022aspectRatioWidth\u0022: 16,\n   \u0022owner\u0022: \u0022urn:li:organization:18799005\u0022,\n   \u0022thumbnail\u0022: \u0022https://media-exp1.licdn.com/dms/image/C4E10AQGUkQY7trgh-Q/ads-video-thumbnail_720_1280/0/1635274077531?e=2147483647\u0026v=beta\u0026t=_HxpoaXestMGYSqDyziZjUtzDvsp9zOgZvAy9HtVJZw\u0022,\n   \u0022downloadUrlExpiresAt\u0022: 1650549600000,\n   \u0022downloadUrl\u0022: \u0022https://dms.licdn.com/playlist/C4E10AQGUkQY7trgh-Q/mp4-720p-30fp-crf28/0/1635274088269?e=2147483647\u0026v=beta\u0026t=tsv3E_sgOT1e7VPGpmrxk6ED7C0W3vwTh9Ui-8mlFZk\u0022,\n   \u0022id\u0022: \u0022urn:li:video:C4E10AQGUkQY7trgh-Q\u0022,\n   \u0022aspectRatioHeight\u0022: 9,\n   \u0022captions\u0022: \u0022https://www.linkedin.com/dms-mpf-uploads/C5510AQHHRzI0nYgcuw/ads-video-userUploadedThumbnail/0?ca=vector_ads\u0026cn=uploads_secure\u0026ccn=ambry-video\u0026sync=0\u0026v=beta\u0026ut=0LIRxJwkoZQG81\u0022,\n   \u0022status\u0022: \u0022AVAILABLE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Get a Video",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Get a Video",
+        "Sample Response"
+      ],
+      "Text": "https://www.linkedin.com/dms-mpf-uploads/C5510AQHHRzI0nYgcuw/ads-video-userUploadedThumbnail/0?ca=vector_ads\u0026cn=uploads_secure\u0026ccn=ambry-video\u0026sync=0\u0026v=beta\u0026ut=0LIRxJwkoZQG81 is the upload URL provided in response during the initializing video step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Batch Get a Video",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Batch Get a Video",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/videos?ids=List(urn%3Ali%3Avideo%3AC4D10AQE9WE5n4uJKUg,urn%3Ali%3Avideo%3AC5F10AQElP1fVH1Ke6g)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Batch Get a Video",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET https://api.linkedin.com/rest/videos?ids=List(urn%3Ali%3Avideo%3AC4D10AQE9WE5n4uJKUg,urn%3Ali%3Avideo%3AC5F10AQElP1fVH1Ke6g) \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-9",
+      "SectionPath": [
+        "Batch Get a Video",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:video:C4D10AQE9WE5n4uJKUg\u0022: {\n           \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n           \u0022status\u0022: \u0022WAITING_UPLOAD\u0022,\n           \u0022id\u0022: \u0022urn:li:video:C4D10AQE9WE5n4uJKUg\u0022\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:video:C4D10AQE9WE5n4uJKUg\u0022: 200,\n       \u0022urn:li:video:C5F10AQElP1fVH1Ke6g\u0022: 404\n   },\n   \u0022errors\u0022: {\n       \u0022urn:li:video:C5F10AQElP1fVH1Ke6g\u0022: {\n           \u0022message\u0022: \u0022Could not find entity\u0022,\n           \u0022status\u0022: 404,\n           \u0022code\u0022: \u0022NOT_FOUND\u0022\n       }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update on a Video",
+      "Anchor": "partial-update-on-a-video",
+      "SectionPath": [
+        "Partial Update on a Video"
+      ],
+      "Text": "Only supports updates on the media library metadata and only for the specified account. As such, the associatedAccount parameter is mandatory. Silently ignores any other patch data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update on a Video",
+      "Anchor": "partial-update-on-a-video",
+      "SectionPath": [
+        "Partial Update on a Video"
+      ],
+      "Text": "When updating the mediaLibraryMetadata.mediaLibraryStatus field, an asset can go from ACTIVE to ARCHIVED only if it\u0027s not currently in processing (i.e. is done processing or processing failed). An asset can only go from ARCHIVED to ACTIVE if it succeeded processing. Updating the mediaLibraryMetadata.mediaLibraryStatus field won\u0027t update the last modified time of the asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Partial Update on a Video",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Partial Update on a Video",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/videos/urn%3Ali%3Avideo%3AC5510AQEB1AGuxQ1NEA?associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Partial Update on a Video",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022patch\u0022:{\n      \u0022mediaLibraryMetadata\u0022:{\n         \u0022$set\u0022:{\n            \u0022assetName\u0022:\u0022updated name\u0022,\n            \u0022mediaLibraryStatus\u0022:\u0022ARCHIVED\u0022\n         }\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Partial Update on a Video",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/videos/urn%3Ali%3Avideo%3AC5510AQEB1AGuxQ1NEA?associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-Restli-Method:PARTIAL_UPDATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n  \u0022patch\u0022: {\n    \u0022mediaLibraryMetadata\u0022: {\n      \u0022\\$set\u0022: {\n        \u0022assetName\u0022: \u0022updated name\u0022,\n        \u0022mediaLibraryStatus\u0022: \u0022ARCHIVED\u0022\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Partial Update on a Video",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find by Associated Account",
+      "Anchor": "find-by-associated-account",
+      "SectionPath": [
+        "Find by Associated Account"
+      ],
+      "Text": "Get the Videos associated with the specified account, by descending order of last modified time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Find by Associated Account",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Required",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must be associatedAccount",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional filter on the media library status. When omitted, all videos will be returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index at which the returned elements should begin. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of elements to return, up to 1,000. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Find by Associated Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Find by Associated Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/videos?start=0\u0026count=1\u0026associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789\u0026mediaLibraryStatus=ACTIVE\u0026q=associatedAccount \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Find by Associated Account",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET https://api.linkedin.com/rest/videos?start=0\u0026count=1\u0026associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789\u0026mediaLibraryStatus=ACTIVE\u0026q=associatedAccount \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-11",
+      "SectionPath": [
+        "Find by Associated Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n       {\n            \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022aspectRatioWidth\u0022: 9.0,\n            \u0022duration\u0022: 6827,\n            \u0022thumbnail\u0022: \u0022https://media.licdn-ei.com/dms/image/C5510AQEB1AGuxQ1NEA/ads-video-thumbnail_720_1280/0/1674575147547/customthumbnail?e=1676390400\u0026v=beta\u0026t=t8j6ysV2yIGB0pBJz63N-X0AB0bMn_L8vqbl7A32B00\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1676390400000,\n            \u0022downloadUrl\u0022: \u0022https://dms.licdn-ei.com/playlist/C5510AQEB1AGuxQ1NEA/mp4-640p-30fp-crf28/0/1674575155048/customthumbnail?e=1676390400\u0026v=beta\u0026t=wbhPr3X9gQ-b7q36KMrSHXRiSqPXSaab-Q-B_oQ9AiI\u0022,\n            \u0022id\u0022: \u0022urn:li:video:C5510AQEB1AGuxQ1NEA\u0022,\n            \u0022aspectRatioHeight\u0022: 16.0,\n            \u0022mediaLibraryMetadata\u0022: {\n                \u0022associatedAccount\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n                \u0022mediaLibraryStatus\u0022: \u0022ACTIVE\u0022,\n                \u0022assetName\u0022: \u0022custom thumbnail\u0022\n            },\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n    ]\n    \u0022paging\u0022: {\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022https://api.linkedin.com/rest/videos?associatedAccount=urn%3Ali%3AsponsoredAccount%3A521498108\u0026q=associatedAccount\u0026start=1\u0026count=1\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration from Assets API to Videos API",
+      "Anchor": "migration-from-assets-api-to-videos-api",
+      "SectionPath": [
+        "Migration from Assets API to Videos API"
+      ],
+      "Text": "LinkedIn recommends migrating to the Videos API for your video uploads. The following sections describe some of the key benefits.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema Enhancement",
+      "Anchor": "response-schema-enhancement",
+      "SectionPath": [
+        "Migration from Assets API to Videos API",
+        "Response Schema Enhancement"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Videos API",
+        "Benefit"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Returns generic digitalMediaAsset URN for all content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returns specific URN (e.g., video:C4E05AQEw_VQIt69CrA)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Purpose-built response URN rather than generic asset URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Returns mediaArtifact field with superfluous details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Does not return mediaArtifact field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Headers for AWS S3 Upload for backward compatibility (LinkedIn has storage capability)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No unnecessary headers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urlExpiresAt param present in multi-part even with consistent value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urlExpiresAt param outside nested structure for a single value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Nested field relationships",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Improvements with Request Schema to complete Upload",
+      "Anchor": "improvements-with-request-schema-to-complete-upload",
+      "SectionPath": [
+        "Migration from Assets API to Videos API",
+        "Improvements with Request Schema to complete Upload"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Videos API",
+        "Benefit"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Nested field relationships required in the request schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified Request structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Metadata, mediaArtifact, ETags, status fields required in request schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requires only ETags and upload token (previously metadata)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified request structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Action Purpose",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Assets API Action Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Videos API Name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "----",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-----",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "---",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Init Upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "registerUpload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "initializeUpload",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Complete Upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "completeMultiPartUpload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "finalizeUpload",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VIDEO_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This Video ID is invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_CALL_TO_ACTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{cta} is an invalid Call To Action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{cta} is an invalid URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URN_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} must be a {urnType} URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EXPIRED_UPLOAD_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Video upload URL is expired",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URN_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This URN Id is invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MEDIA_ASSET_PROCESSING_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media asset failed processing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MEDIA_ASSET_WAITING_UPLOAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media asset is waiting upload",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UPDATING_ASSET_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to update asset {URN} for the intended usecase. Please recreate the asset and try again.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

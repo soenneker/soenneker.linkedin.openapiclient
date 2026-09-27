@@ -1,0 +1,188 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+  "Title": "Shares Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Shares Overview",
+      "Anchor": "shares-overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Shares Overview",
+      "Anchor": "shares-overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Shares Overview",
+      "Anchor": "shares-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn offers a Shares and Social Stream API Platform through which members can share content and insights with their professional network. Shared content can be personal shares or organization shares and is distributed to members through the network updates stream.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Shares Overview",
+      "Anchor": "shares-overview",
+      "SectionPath": [],
+      "Text": "The network updates stream is a rich and engaging real-time feed of content and changes in a member\u2019s first and second-degree network. Viral interactions and activities in the stream create additional distribution opportunities across the larger network of professionals on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Posts API",
+      "Anchor": "posts-api",
+      "SectionPath": [
+        "Posts API"
+      ],
+      "Text": "The Posts API is a new API that will eventually replace the UGC Post API and Shares API. Create and retrieve various types of posts such as image post, video post, article post, poll post and multiImage post using the Posts API. More functionality will soon be added to the Posts API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guides",
+      "Anchor": "guides",
+      "SectionPath": [
+        "Guides"
+      ],
+      "Text": "Access Control for Social Data.\nUGC Post API\nShare API\nPoll API\nMultiImage API\nPosts API\nLittle Text Format\nSocial Actions API\nImage API\nVideo API\nAssets API\nArticles API\nVideo Analytics API\nShare Targeting API\nBing Geo Migration for Organic Company Post Targeting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Constructing Permalinks",
+      "Anchor": "constructing-permalinks",
+      "SectionPath": [
+        "Constructing Permalinks"
+      ],
+      "Text": "Permalinks are permanent URLs to your posts, pages, or other content. To share threads and comments from an application, construct a permalink URL by prepending https://www.linkedin.com to the value in the path column below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Constructing Permalinks",
+      "Anchor": "constructing-permalinks",
+      "SectionPath": [
+        "Constructing Permalinks"
+      ],
+      "Text": "",
+      "Headers": [
+        "Type",
+        "Dynamic Segment(s)",
+        "Permalink Path"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "person.vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/in/\u003Cperson.vanityName\u003E/",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Thread",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "activityUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/feed/update/\u003CactivityUrn\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Comment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "activityUrn, commentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/feed/update/\u003CactivityUrn\u003E?commentUrn=\u003CcommentUrn\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Constructing Permalinks",
+      "Anchor": "constructing-permalinks",
+      "SectionPath": [
+        "Constructing Permalinks"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Constructing Permalinks",
+      "Anchor": "constructing-permalinks",
+      "SectionPath": [
+        "Constructing Permalinks"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software, and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn API Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

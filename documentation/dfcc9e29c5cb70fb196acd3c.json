@@ -1,0 +1,765 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+  "Title": "Getting Started - Reporting",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-facets"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Started - Reporting",
+      "Anchor": "getting-started---reporting",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started - Reporting",
+      "Anchor": "getting-started---reporting",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started - Reporting",
+      "Anchor": "getting-started---reporting",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Reporting APIs enable you to leverage\u00A0LinkedIn marketing data\u00A0to\u00A0automate internal reporting and gain valuable insights. Partners can integrate LinkedIn data into their solutions to retrieve performance data, targeting information,\u00A0audience insights, and much more. This guide provides a brief look at how these APIs can be used to provide valuable insights into audiences, impressions, targeting, and budgeting data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started - Reporting",
+      "Anchor": "getting-started---reporting",
+      "SectionPath": [],
+      "Text": "Audience Counts\nAd Budget Pricing\nAd Supply Forecasts\nSuggested Targeting Options\nUpdating a Share with UTM Tracking Parameters\nReporting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started - Reporting",
+      "Anchor": "getting-started---reporting",
+      "SectionPath": [],
+      "Text": "For a better picture of what the platform fully provides in functionality, read the Overview page or Campaign Management Getting Started.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads_reporting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve reporting for advertising accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Counts",
+      "Anchor": "audience-counts",
+      "SectionPath": [
+        "Audience Counts"
+      ],
+      "Text": "The audienceCounts API allows you to forecast reach based on targeting criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Audience Counts",
+        "Sample Request"
+      ],
+      "Text": "The following request returns estimated audience counts for Canada and USA while excluding members who are in entry-level positions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Audience Counts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Audience Counts",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/audienceCounts?q=targetingCriteria\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.seniorities[0]=urn:li:seniority:3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Audience Counts",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/audienceCounts?q=targetingCriteria\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.seniorities[0]=urn:li:seniority:3\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Audience Counts",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022active\u0022: 0,\n            \u0022total\u0022: 150000000\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Audience Counts",
+        "Sample Response"
+      ],
+      "Text": "See the targetingFacets reference page to learn more about targetingFacets and Audience Counts for more information on the Audience Counts API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Pricing",
+      "Anchor": "ad-budget-pricing",
+      "SectionPath": [
+        "Ad Budget Pricing"
+      ],
+      "Text": "With the adBudgetPricing API, you can get key insights on pricing metrics such as minimum, maximum, and suggested bids based on targeting criteria. The sample request returns pricing for an account based on target market criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Sample Request"
+      ],
+      "Text": "In the following example, the target market consists of LinkedIn members between the ages of 18 and 24.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adBudgetPricing?account=urn:li:sponsoredAccount:1245678\u0026bidType=CPM\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteria\u0026target.includedTargetingFacets.ageRanges[0]=AGE_18_24",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adBudgetPricing?account=urn:li:sponsoredAccount:1245678\u0026bidType=CPM\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteria\u0026target.includedTargetingFacets.ageRanges[0]=AGE_18_24\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022maxBid\u0022: {\n                \u0022amount\u0022: \u0022100.0\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022minBid\u0022: {\n                \u0022amount\u0022: \u00220.3\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022suggestedBid\u0022: {\n                \u0022amount\u0022: \u00222.06\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022suggestedBidRangeHighEnd\u0022: {\n                \u0022amount\u0022: \u00222.11\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022suggestedBidRangeLowEnd\u0022: {\n                \u0022amount\u0022: \u00222.01\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Sample Response"
+      ],
+      "Text": "See the targetingFacets reference page to learn more about targetingFacets and Ad Budget Pricing for more information on the Ad Budget Pricing API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Supply Forecasts",
+      "Anchor": "ad-supply-forecasts",
+      "SectionPath": [
+        "Ad Supply Forecasts"
+      ],
+      "Text": "The adSupplyForecasts API provides a forecast of the reach, cost, and supply for an ad using specified targeting criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Sample Request"
+      ],
+      "Text": "The following sample request forecasts the impressions of a sponsored update for Canada and USA while excluding members in entry-level positions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adSupplyForecasts?q=criteria\u0026timeRange.start=1464804127000\u0026timeRange.end=1465581727000\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.seniorities[0]=urn:li:seniority:3\u0026campaignType=SPONSORED_UPDATES\u0026competingBid.bidType=CPM\u0026competingBid.bidPrice.currencyCode=USD\u0026competingBid.bidPrice.amount=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adSupplyForecasts?q=criteria\u0026timeRange.start=1464804127000\u0026timeRange.end=1465581727000\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.seniorities[0]=urn:li:seniority:3\u0026campaignType=SPONSORED_UPDATES\u0026competingBid.bidType=CPM\u0026competingBid.bidPrice.currencyCode=USD\u0026competingBid.bidPrice.amount=10\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022timeSeries\u0022: [\n        {\n          \u0022value\u0022: 22874,\n          \u0022timestamp\u0022: 1485302400000\n        },\n        {\n          \u0022value\u0022: 2244802,\n          \u0022timestamp\u0022: 1485388800000\n        },\n        {\n          \u0022value\u0022: 1869223,\n          \u0022timestamp\u0022: 1485475200000\n        },\n        {\n          \u0022value\u0022: 1098326,\n          \u0022timestamp\u0022: 1485561600000\n        },\n        ...\n     ],\n     \u0022metricType\u0022: \u0022IMPRESSION\u0022,\n      \u0022granularity\u0022: \u0022DAILY\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Sample Response"
+      ],
+      "Text": "For more information on the Ad Supply Forecasts API, check out Ad Supply Forecasts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Suggested Targeting Options",
+      "Anchor": "suggested-targeting-options",
+      "SectionPath": [
+        "Suggested Targeting Options"
+      ],
+      "Text": "The LinkedIn Ads platform allows you to reach a wide range of audiences based on unique targeting criteria. The Ad Targeting Similar Entities finder suggests additional targeting attributes based on a provided target set.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Suggested Targeting Options",
+        "Sample Request"
+      ],
+      "Text": "The following example returns industries similar to Biotechnology, urn:li:industry:12.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Suggested Targeting Options",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Suggested Targeting Options",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/adTargetingEntities?q=similarEntities\u0026facet=urn:li:adTargetingFacet:industries\u0026entityType=INDUSTRY\u0026entities=urn:li:industry:12\u0026fields=value,name,facetUrn,urn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Suggested Targeting Options",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=similarEntities\u0026facet=urn:li:adTargetingFacet:industries\u0026entityType=INDUSTRY\u0026entities=urn:li:industry:12\u0026fields=value,name,facetUrn,urn\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Suggested Targeting Options",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022value\u0022: {\n        \u0022string\u0022: \u0022urn:li:industry:15\u0022,\n        \u0022string~\u0022: {\n          \u0022name\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Pharmaceuticals\u0022\n            }\n          }\n        }\n      }\n    },\n    {\n      \u0022value\u0022: {\n        \u0022string\u0022: \u0022urn:li:industry:17\u0022,\n        \u0022string~\u0022: {\n          \u0022name\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Medical Device\u0022\n            }\n          }\n        }\n      }\n    },\n    {\n      \u0022value\u0022: {\n        \u0022string\u0022: \u0022urn:li:industry:13\u0022,\n        \u0022string~\u0022: {\n          \u0022name\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Medical Practice\u0022\n            }\n          }\n        }\n      }\n    },\n    ...\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Suggested Targeting Options",
+        "Sample Response"
+      ],
+      "Text": "To learn more about Targeting by Similar Entities, see the Ad Targeting page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating a Share with UTM Tracking Parameters",
+      "Anchor": "updating-a-share-with-utm-tracking-parameters",
+      "SectionPath": [
+        "Updating a Share with UTM Tracking Parameters"
+      ],
+      "Text": "URLs in shares can be updated to include UTM parameters for advertisers to track the success of marketing efforts and prove ROI. This feature allows retroactive modification of URLs contained within shares.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating a Share with UTM Tracking Parameters",
+      "Anchor": "updating-a-share-with-utm-tracking-parameters",
+      "SectionPath": [
+        "Updating a Share with UTM Tracking Parameters"
+      ],
+      "Text": "To update UTM parameters, you must know the share URN and content of the share. For more information on how to leverage this feature, see UTM Tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating a Share with UTM Tracking Parameters",
+      "Anchor": "updating-a-share-with-utm-tracking-parameters",
+      "SectionPath": [
+        "Updating a Share with UTM Tracking Parameters"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating a Share with UTM Tracking Parameters",
+      "Anchor": "updating-a-share-with-utm-tracking-parameters",
+      "SectionPath": [
+        "Updating a Share with UTM Tracking Parameters"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/sharesUrl/{shareURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating a Share with UTM Tracking Parameters",
+      "Anchor": "updating-a-share-with-utm-tracking-parameters",
+      "SectionPath": [
+        "Updating a Share with UTM Tracking Parameters"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022content\u0022: {\n            \u0022$set\u0022: {\n                \u0022contentEntities\u0022: [\n                    {\n                        \u0022description\u0022: \u0022News, email and search are just the beginning. Discover more every day. Find your yodel.\u0022,\n                        \u0022entity\u0022: \u0022urn:li:article:8302773461016502828\u0022,\n                        \u0022entityLocation\u0022: \u0022https://www.yahoo.com?utm_campaign=blogpost\u0026utm_medium=social\u0026utm_source=facebook\u0022,\n                        \u0022thumbnails\u0022: [\n                            {\n                                \u0022imageSpecificContent\u0022: {\n                                    \u0022height\u0022: 200,\n                                    \u0022size\u0022: 5992,\n                                    \u0022width\u0022: 200\n                                },\n                                \u0022resolvedUrl\u0022: \u0022https://s.yimg.com/dh/ap/default/130909/y_200_a.png\u0022\n                            }\n                        ],\n                        \u0022title\u0022: \u0022Test Share with Content !!\u0022\n                    }\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating a Share with UTM Tracking Parameters",
+      "Anchor": "updating-a-share-with-utm-tracking-parameters",
+      "SectionPath": [
+        "Updating a Share with UTM Tracking Parameters"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/sharesUrl/{shareURN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022content\u0022: {\n            \u0022$set\u0022: {\n                \u0022contentEntities\u0022: [\n                    {\n                        \u0022description\u0022: \u0022News, email and search are just the beginning. Discover more every day. Find your yodel.\u0022,\n                        \u0022entity\u0022: \u0022urn:li:article:8302773461016502828\u0022,\n                        \u0022entityLocation\u0022: \u0022https://www.yahoo.com?utm_campaign=blogpost\u0026utm_medium=social\u0026utm_source=facebook\u0022,\n                        \u0022thumbnails\u0022: [\n                            {\n                                \u0022imageSpecificContent\u0022: {\n                                    \u0022height\u0022: 200,\n                                    \u0022size\u0022: 5992,\n                                    \u0022width\u0022: 200\n                                },\n                                \u0022resolvedUrl\u0022: \u0022https://s.yimg.com/dh/ap/default/130909/y_200_a.png\u0022\n                            }\n                        ],\n                        \u0022title\u0022: \u0022Test Share with Content !!\u0022\n                    }\n                ]\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Analytics",
+      "Anchor": "ad-analytics",
+      "SectionPath": [
+        "Ad Analytics"
+      ],
+      "Text": "The Ad Analytics API provides account, campaign, and creative level statistics on current spend as well as chargeable clicks and impressions. To learn more, see Reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Analytics",
+        "Sample Request"
+      ],
+      "Text": "The following example returns analytics from January 1, 2016 for campaign ID 10,002,907 with a monthly time granularity and pivoting based on creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Analytics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Analytics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026dateRange.start.month=1\u0026dateRange.start.day=1\u0026dateRange.start.year=2016\u0026timeGranularity=MONTHLY\u0026pivot=CREATIVE\u0026campaigns=urn:li:sponsoredCampaign:112466001",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Analytics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalytics?q=analytics\u0026dateRange.start.month=1\u0026dateRange.start.day=1\u0026dateRange.start.year=2016\u0026timeGranularity=MONTHLY\u0026pivot=CREATIVE\u0026campaigns=urn:li:sponsoredCampaign:112466001\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad Analytics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022chargeableClicks\u0022: 59,\n            \u0022dateRange\u0022: {\n                \u0022end\u0022: {\n                    \u0022day\u0022: 18,\n                    \u0022month\u0022: 9,\n                    \u0022year\u0022: 2016\n                },\n                \u0022start\u0022: {\n                    \u0022day\u0022: 1,\n                    \u0022month\u0022: 1,\n                    \u0022year\u0022: 2016\n                }\n            },\n            \u0022impressions\u0022: 8456,\n            \u0022nonchargeableClicks\u0022: 1,\n            \u0022pivot\u0022: \u0022urn:li:sponsoredCampaign:10002907\u0022,\n            \u0022spend\u0022: {\n                \u0022amount\u0022: \u0022142.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share \u0026 Social Action Insights",
+      "Anchor": "share--social-action-insights",
+      "SectionPath": [
+        "Share \u0026 Social Action Insights"
+      ],
+      "Text": "Share and Social Action APIs provide insights into share, like, and comment statistics. This data can be used to optimize organic and sponsored content performance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Share by URN",
+      "Anchor": "find-share-by-urn",
+      "SectionPath": [
+        "Share \u0026 Social Action Insights",
+        "Find Share by URN"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Share by URN",
+      "Anchor": "find-share-by-urn",
+      "SectionPath": [
+        "Share \u0026 Social Action Insights",
+        "Find Share by URN"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/shares/{share URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Share by URN",
+      "Anchor": "find-share-by-urn",
+      "SectionPath": [
+        "Share \u0026 Social Action Insights",
+        "Find Share by URN"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/shares/{share URN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Share \u0026 Social Action Insights",
+        "Find Share by URN",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022activity\u0022: \u0022urn:li:activity:6230438468758052864\u0022,\n    \u0022content\u0022: {\n        \u0022contentEntities\u0022: [\n            {\n                \u0022entity\u0022: \u0022urn:li:article:6994272117874578221\u0022,\n                \u0022entityLocation\u0022: \u0022http://www.lemondeinformatique.fr/actualites/lire-business-france-emmene-des-start-ups-au-web-summit-de-lisbonne-66405.html?utm_source=Sociallymap\u0026utm_medium=Sociallymap\u0026utm_campaign=Sociallymap\u0022\n            }\n        ],\n        \u0022description\u0022: \u00228 start-ups fran\\u00e7aises IT ont \\u00e9t\\u00e9 s\\u00e9lectionn\\u00e9es parmi 60 candidates par la d\\u00e9l\\u00e9gation Business France pour participer au Web Summit 2016 qui aura...\u0022,\n        \u0022title\u0022: \u0022Business France emm\\u00e8ne des start-ups au Web Summit de Lisbonne - Le Monde Informatique\u0022\n    },\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:uex10Z3oFO\u0022,\n        \u0022time\u0022: 1485452286000\n    },\n    \u0022distribution\u0022: {\n        \u0022linkedInDistributionTarget\u0022: {}\n    },\n    \u0022edited\u0022: false,\n    \u0022id\u0022: \u00226230438468804177920\u0022,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:uex10Z3oFO\u0022,\n        \u0022time\u0022: 1485452286000\n    },\n    \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022text\u0022: {\n        \u0022text\u0022: \u0022Business France emm\\u00e8ne des start-ups au Web Summit de Lisbonne #airmisconseil\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "If you are an API partner integrating with the Reporting APIs, please review the Integration Requirements to understand the capabilities you need to build and demonstrate during the Technical Sign Off process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Actions",
+      "Anchor": "social-actions",
+      "SectionPath": [
+        "Social Actions"
+      ],
+      "Text": "Shares may have social actions such as likes and comments attached to them. With the socialActions API, you can view social actions on various types of network updates. To learn more about retrieving social actions, see Network Update Social Action.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Comments for a Share",
+      "Anchor": "find-comments-for-a-share",
+      "SectionPath": [
+        "Social Actions",
+        "Find Comments for a Share"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Comments for a Share",
+      "Anchor": "find-comments-for-a-share",
+      "SectionPath": [
+        "Social Actions",
+        "Find Comments for a Share"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialActions/{share URN}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Comments for a Share",
+      "Anchor": "find-comments-for-a-share",
+      "SectionPath": [
+        "Social Actions",
+        "Find Comments for a Share"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialActions/{share URN}/comments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Social Actions",
+        "Find Comments for a Share",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: {\n                \u0022time\u0022: 1485303622383\n            },\n            \u0022id\u0022: \u00226229814924525211648\u0022,\n            \u0022lastModified\u0022: {\n                \u0022time\u0022: 1485303622383\n            },\n            \u0022message\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022This is a comment\u0022\n            },\n            \u0022object\u0022: \u0022urn:li:activity:6229788468420055040\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Likes for a Share",
+      "Anchor": "find-likes-for-a-share",
+      "SectionPath": [
+        "Social Actions",
+        "Find Likes for a Share"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Likes for a Share",
+      "Anchor": "find-likes-for-a-share",
+      "SectionPath": [
+        "Social Actions",
+        "Find Likes for a Share"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialActions/{share URN}/likes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Likes for a Share",
+      "Anchor": "find-likes-for-a-share",
+      "SectionPath": [
+        "Social Actions",
+        "Find Likes for a Share"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialActions/{share URN}/likes\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Social Actions",
+        "Find Likes for a Share",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: {\n                \u0022time\u0022: 1485303834338\n            },\n            \u0022lastModified\u0022: {\n                \u0022time\u0022: 1485303834515\n            },\n            \u0022object\u0022: \u0022urn:li:activity:6229788468420055040\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

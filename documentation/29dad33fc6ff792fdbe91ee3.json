@@ -1,0 +1,1073 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/",
+  "Title": "Organization Services Page Providers",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/skills",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Services Page Providers",
+      "Anchor": "organization-services-page-providers",
+      "SectionPath": [],
+      "Text": "The Organization Services Page Providers DMA API is used to fetch services page provider information for organizations. This API allows you to retrieve the services page configuration for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Services Page Providers",
+      "Anchor": "organization-services-page-providers",
+      "SectionPath": [],
+      "Text": "This API currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Services Page Providers",
+      "Anchor": "organization-services-page-providers",
+      "SectionPath": [],
+      "Text": "Finder organization to return the services page provider for a given organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u0027s posts, comments, reactions, and other engagement data. Retrieve your organization\u0027s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERRECRUITING_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "RECRUITING_POSTER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "How to determine which organizations you can query:\nTo find the organizations you can query services page provider information for, please use OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of ServicesPageAuthorizationActionType.SERVICES_PAGE_MANAGE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationServicesPageProvider",
+      "Anchor": "organizationservicespageprovider",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationServicesPageProvider"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Creation timestamp in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servicesDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description shown in the Services Page services description section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "marketplaceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of marketplace the provider is providing supply for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "serviceCategories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ServiceCategories",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/?view=li-dma-data-portability-2026-08\u0026tabs=http#servicecategories"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The service skills and categories.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "usingCompanyLocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether or not the service is using the company location. Default value is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "availableToWorkRemotely",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether or not the service is available to work remotely. Default value is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servicePricing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ServicePricing",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/?view=li-dma-data-portability-2026-08\u0026tabs=http#servicepricing"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The service pricing info provided by provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProviderStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/?view=li-dma-data-portability-2026-08\u0026tabs=http#providerstatus"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The service page status. Maps to MarketplaceProviderStatus in the marketplace platform. Default value is ACTIVE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servicesPageMedia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The url of the services page which the user can use to download the media files.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of when the resource/association/sub-resource moved into the specific lifecycle stage represented by this audit event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. a personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "topLevelServiceCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[SkillUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The L1 service category that the provider has selected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "secondaryServiceCategories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[SkillUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The list of L2 service categories that the provider has selected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "Note: SkillUrn format is urn:li:skill:{ID} and can be resolved via /dmaSkills.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "ServicePricing is a union type representing either service rates or a \u0022contact for pricing\u0022 option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Union Member",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "serviceRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ServiceRate",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/?view=li-dma-data-portability-2026-08\u0026tabs=http#servicerate"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Model for rendering the option that a service provider provides the service rates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contactForPricing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContactForPricing",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/?view=li-dma-data-portability-2026-08\u0026tabs=http#contactforpricing"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Representing the case that service providers want buyers to contact them for service rates.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The currency for the hourly rate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hourlyRatePrice",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The services hourly rate price in the currency provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "ContactForPricing is an empty record that indicates the provider expects buyers to reach out for service rates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "This type has no fields - its presence in the servicePricing union indicates that pricing information is available upon contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "Represents the status of a provider in the marketplace. Maps to MarketplaceProviderStatus in the marketplace platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "Provider status enum values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketplace provider is active on the platform.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PENDING_REVIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketplace provider is waiting for GCO review.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FLAGGED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketplace provider is banned due to malicious behavior.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketplace provider is inactive.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketplace provider is rejected after GCO review.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Services Page Providers data",
+        "FINDER ORGANIZATION",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Services Page Providers data",
+        "FINDER ORGANIZATION",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationServicesPageProviders?q=organization\u0026organization={ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Services Page Providers data",
+        "FINDER ORGANIZATION",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationServicesPageProviders?q=organization\u0026organization={ORGANIZATION_URN}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Services Page Providers data",
+        "FINDER ORGANIZATION",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022createdAt\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1640787326214\n      },\n      \u0022servicesDescription\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022We provide comprehensive marketing and consulting services to help your business grow.\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022marketplaceType\u0022: \u0022SERVICES_MARKETPLACE\u0022,\n      \u0022serviceCategories\u0022: {\n        \u0022topLevelServiceCategory\u0022: [\n          \u0022urn:li:skill:2998\u0022\n        ],\n        \u0022secondaryServiceCategories\u0022: [\n          \u0022urn:li:skill:3309\u0022,\n          \u0022urn:li:skill:2283\u0022\n        ]\n      },\n      \u0022usingCompanyLocation\u0022: true,\n      \u0022availableToWorkRemotely\u0022: true,\n      \u0022servicePricing\u0022: {\n        \u0022serviceRate\u0022: {\n          \u0022currency\u0022: \u0022USD\u0022,\n          \u0022hourlyRatePrice\u0022: 150\n        }\n      },\n      \u0022status\u0022: \u0022ACTIVE\u0022,\n      \u0022servicesPageMedia\u0022: \u0022https://media.licdn.com/dms/document/C4E1FAQHxyz/services-page-media/0/1640787326214\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Services Page Providers data",
+        "FINDER ORGANIZATION",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Value must be organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=organization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization urn with format urn:li:organization:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn:li:organization:12345",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Notes",
+      "Anchor": "notes",
+      "SectionPath": [
+        "Retrieve Organization Services Page Providers data",
+        "FINDER ORGANIZATION",
+        "Notes"
+      ],
+      "Text": "For each organization, either 0 or 1 OrganizationServicesPageProvider will be returned.\nIf no services page provider exists for the organization, the elements array will be empty.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No marketplace provider found with the specified key, or member is in the disallow list.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the organization URN is correct and the member has appropriate access.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNPROCESSABLE_ENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Marketplace provider filtered out by UCF (Universal Content Filtering).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested provider cannot be accessed due to content filtering policies.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Traffic dropped due to too many requests for provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reduce request rate and implement exponential backoff retry logic.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

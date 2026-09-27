@@ -1,0 +1,1156 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+  "Title": "Migrations",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [],
+      "Text": "There will be periodic changes to LinkedIn Marketing Developer Platform APIs that require updating your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Migration Status",
+      "Anchor": "api-migration-status",
+      "SectionPath": [
+        "API Migration Status"
+      ],
+      "Text": "",
+      "Headers": [
+        "Migration",
+        "Sunset Date",
+        "Version Status"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202609 (September 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "September 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202608 (August 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 17, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202607 (July 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202606 (June 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202605 (May 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202604 (April 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202603 (March 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 16, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202602 (February 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "February 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202601 (January 2026) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "January 15, 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202511 (November 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "November 16, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202510 (October 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202509 (September 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "September 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202508 (August 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 17, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202507 (July 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202506 (June 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202505 (May 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202504 (April 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202503 (March 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 16, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202502 (February 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "February 16, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202501 (January 2025) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "January 15, 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202411 (November 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "November 17, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202410 (October 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 15, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202409 (September 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "September 15, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202408 (August 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 18, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202407 (July 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 22, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202406 (June 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 16, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202405 (May 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May 15, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202404 (April 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 15, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202403 (March 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 17, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202402 (February 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "February 18, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202401 (January 2024) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "January 22, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs unversioned to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202311 (November 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "November 15, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202310 (October 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 15, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202309 (September 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "September 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202308 (August 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202307 (July 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202306 (June 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202305 (May 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 17, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202304 (April 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 15, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using Ads Lead Sync or Events Lead sync API migrating to the new Lead Sync API or Developers creating Lead Gen Forms via API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "December 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202303 (March 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 15, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202302 (February 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Feb 15, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202301 (January 2023) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202212 (December 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202211 (November 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202210 (October 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 16, 2024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using legacy Offline Conversions API to migrate to the new Conversions API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "November 15, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202209 (September 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "September 15, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202208 (August 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 16, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202207 (July 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "July 25, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs version 202206 (June 2022) to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 15, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn Marketing APIs for community management solutions migrating to the new Community Management API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 30, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Content APIs are replacing APIs such as assets, adInMailContentsV2, adCreativesV2, ugcPosts, sponsoredConversations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 30, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using the unversioned APIs to migrate to the new versioned APIs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 30, 2023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Error Message and Code Updates.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ongoing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Deprecating filter.industry for Company Search API to use filter.industryV2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 30, 2022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "New Max Request Length Limits.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "April 30, 2022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Removing totalBudget and totalBudgetEndsAt fields from Ad Accounts V2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 30, 2020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Ad Campaigns V2 requires campaignGroup field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "October 30, 2020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Required to select Specific Ad Analytics fields.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "September 30, 2020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Removal of adAudienceMatches endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 31, 2020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Bing Geo Migration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 31, 2020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Rich Media Platform Deprecation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "March 30, 2020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

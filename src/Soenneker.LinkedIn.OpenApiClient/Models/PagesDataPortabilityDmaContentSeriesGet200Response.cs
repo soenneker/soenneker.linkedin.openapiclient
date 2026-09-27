@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseCadence Cadence { get; set; }
 #endif
-        /// <summary>The contentSeriesUrn property</summary>
+        /// <summary>A unique identifier of the seriesDocumented type: ContentSeriesUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentSeriesUrn { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseCreated Created { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description of this seriesDocumented type: AttributedTextRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescription? Description { get; set; }
@@ -46,9 +46,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescription Description { get; set; }
 #endif
-        /// <summary>The inviteTargetAudiences property</summary>
+        /// <summary>Whether to invite targetAudiences to follow the series. This currently only applies to the 1st article published in a series. Note: an invitation is not sent to FOLLOWERS of the seriesDocumented type: booleanRequirement: No</summary>
         public bool? InviteTargetAudiences { get; set; }
-        /// <summary>The issues property</summary>
+        /// <summary>The URNs of the issues attached to this series. Can be resolved via the Original Articles API.Documented type: array[LinkedInArticleUrn]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Issues { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseLastModified LastModified { get; set; }
 #endif
-        /// <summary>The latestIssue property</summary>
+        /// <summary>URN of the last published issue attached to this series. Will be null if series has no issues. Can be resolved via the Original Articles API.Documented type: LinkedInArticleUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LatestIssue { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseMedia Media { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>The entity owning this contentSeries.Documented type: PersonUrn/OrganizationUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner { get; set; }
@@ -88,11 +88,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Owner { get; set; }
 #endif
-        /// <summary>The spamValue property</summary>
+        /// <summary>Derived from contentCertificationRecord. Indicates whether LinkedIn&apos;s automated content spam classification system has determined this series to be spam (true) or not spam (false).Documented type: booleanRequirement: No</summary>
         public bool? SpamValue { get; set; }
-        /// <summary>The subscriberCount property</summary>
-        public int? SubscriberCount { get; set; }
-        /// <summary>The targetAudiences property</summary>
+        /// <summary>Total number of subscribersDocumented type: longRequirement: No</summary>
+        public long? SubscriberCount { get; set; }
+        /// <summary>Intended audiences or best fit audiences for this content as decided by the owner. By default, the series will be distributed to its followers.Documented type: array[TargetAudience]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TargetAudiences { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> TargetAudiences { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The title of this series.Documented type: AttributedTextRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseTitle? Title { get; set; }
@@ -108,7 +108,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseTitle Title { get; set; }
 #endif
-        /// <summary>The versionTag property</summary>
+        /// <summary>Version of the series.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VersionTag { get; set; }
@@ -152,7 +152,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseMedia.CreateFromDiscriminatorValue); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "spamValue", n => { SpamValue = n.GetBoolValue(); } },
-                { "subscriberCount", n => { SubscriberCount = n.GetIntValue(); } },
+                { "subscriberCount", n => { SubscriberCount = n.GetLongValue(); } },
                 { "targetAudiences", n => { TargetAudiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseTitle.CreateFromDiscriminatorValue); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
@@ -176,7 +176,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseMedia>("media", Media);
             writer.WriteStringValue("owner", Owner);
             writer.WriteBoolValue("spamValue", SpamValue);
-            writer.WriteIntValue("subscriberCount", SubscriberCount);
+            writer.WriteLongValue("subscriberCount", SubscriberCount);
             writer.WriteCollectionOfPrimitiveValues<string>("targetAudiences", TargetAudiences);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseTitle>("title", Title);
             writer.WriteStringValue("versionTag", VersionTag);

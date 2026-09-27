@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATION_HOME property</summary>
-        public int? PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME { get; set; }
+        public long? PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME { get; set; }
         /// <summary>The PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCT_HIGHLIGHTS property</summary>
-        public int? PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS { get; set; }
+        public long? PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)", n => { PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = n.GetIntValue(); } },
-                { "(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:PRODUCT_HIGHLIGHTS)", n => { PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS = n.GetIntValue(); } },
+                { "(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)", n => { PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME = n.GetLongValue(); } },
+                { "(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:PRODUCT_HIGHLIGHTS)", n => { PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)", PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME);
-            writer.WriteIntValue("(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:PRODUCT_HIGHLIGHTS)", PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS);
+            writer.WriteLongValue("(page:urn%3Ali%3AorganizationalPage%3A10002687,topic:ORGANIZATION_HOME)", PageUrn3Ali3AorganizationalPage3A10002687TopicORGANIZATIONHOME);
+            writer.WriteLongValue("(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:PRODUCT_HIGHLIGHTS)", PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

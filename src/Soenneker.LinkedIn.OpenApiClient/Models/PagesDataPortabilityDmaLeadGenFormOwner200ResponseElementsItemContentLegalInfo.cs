@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Legal information displayed alongside the form.Documented type: LeadGenFormLegalInfoRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The consents property</summary>
+        /// <summary>Additional consents used to obtain member approval for using data collected via the Lead Form. This field is empty if No viewer consents are required by the owner.Documented type: LeadGenFormConsent[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoConsentsItem>? Consents { get; set; }
@@ -22,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoConsentsItem> Consents { get; set; }
 #endif
-        /// <summary>The legalDisclaimer property</summary>
+        /// <summary>Owner&apos;s legal disclaimer to accompany this form. Optional since the owner may alternatively use other fields (e.g. legalDisclaimer, consents) to surface the privacy policy.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoLegalDisclaimer? LegalDisclaimer { get; set; }
@@ -30,9 +31,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoLegalDisclaimer LegalDisclaimer { get; set; }
 #endif
-        /// <summary>The legalInfoId property</summary>
-        public int? LegalInfoId { get; set; }
-        /// <summary>The privacyPolicyUrl property</summary>
+        /// <summary>Unique identifier of the LeadGenFormLegalInfo.Documented type: longRequirement: Yes</summary>
+        public long? LegalInfoId { get; set; }
+        /// <summary>The URL of the privacy policy that covers any data passed to the owner of the form. Optional since it is not required to be present for all the use cases.Documented type: UrlRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivacyPolicyUrl { get; set; }
@@ -67,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "consents", n => { Consents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoConsentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoConsentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legalDisclaimer", n => { LegalDisclaimer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoLegalDisclaimer>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoLegalDisclaimer.CreateFromDiscriminatorValue); } },
-                { "legalInfoId", n => { LegalInfoId = n.GetIntValue(); } },
+                { "legalInfoId", n => { LegalInfoId = n.GetLongValue(); } },
                 { "privacyPolicyUrl", n => { PrivacyPolicyUrl = n.GetStringValue(); } },
             };
         }
@@ -80,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoConsentsItem>("consents", Consents);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseElementsItemContentLegalInfoLegalDisclaimer>("legalDisclaimer", LegalDisclaimer);
-            writer.WriteIntValue("legalInfoId", LegalInfoId);
+            writer.WriteLongValue("legalInfoId", LegalInfoId);
             writer.WriteStringValue("privacyPolicyUrl", PrivacyPolicyUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

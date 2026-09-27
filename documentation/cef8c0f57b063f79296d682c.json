@@ -1,0 +1,434 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+  "Title": "LinkedIn Learning and Meridian Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Meridian Deep Integration Functionality",
+      "Anchor": "meridian-deep-integration-functionality",
+      "SectionPath": [
+        "Meridian Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SSO\nContent Discovery: Automatic Content Sync (All languages)\nReporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Deep Integration Functionality",
+      "Anchor": "meridian-deep-integration-functionality",
+      "SectionPath": [
+        "Meridian Deep Integration Functionality"
+      ],
+      "Text": "Requirements:\nThe LinkedIn Learning and Meridian integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Deep Integration Functionality",
+      "Anchor": "meridian-deep-integration-functionality",
+      "SectionPath": [
+        "Meridian Deep Integration Functionality"
+      ],
+      "Text": "An active Meridian LMS instance\nAn active LinkedIn Learning account\nAdmin access to LinkedIn Learning\nAdmin privileges to your Meridian LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Overview",
+        "Single Sign-On"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and Meridian to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to content. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning adds courses at a rate of 20-30 per week at no extra cost.\nThe Meridian deep integration with LinkedIn Learning uses LinkedIn Learning APIs to refresh the content library daily. This feature ensures LinkedIn Learning makes new content available within 24 hours of release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses xAPI to communicate a\nlearner\u2019s activity back to Meridian when the learner completes a LinkedIn Learning course. All LinkedIn Learning course completions will be reported both in LinkedIn Learning and in Meridian.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "Enabling SAML SSO:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "LinkedIn Learning recommends SAML SSO for all enterprise learning platform integrations. SSO authentication can be configured in your LinkedIn Learning Admin settings. Most organizations have a centrally managed identity management solution like Azure AD, Okta or AD FS which can be configured to authenticate users into enterprise applications like LinkedIn Learning.\n\nTo configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.\n\nTo configure a SAML SSO connection between LinkedIn Learning and Meridian directly please reach out to Meredian Customer Support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For Meridian to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "To sync your Meridian content with LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "Login to LinkedIn Learning. If you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, Access content and reports via API.\n\n\nClick the down arrow on the right to expand the Generate LinkedIn Learning REST API Application section.\n\nClick Add Application and provide the name related to your LMS (e.g., \u0022Meridian LMS Integration\u0022), as the application name, and provide a short description of the integration use case in the application description field.\n\n\n\n\n\nThere are two checkboxes \u2013 Content and Report. Select the fields that apply to you. For Content Sync to the LMS, only Content is required.\n\nClick Next and agree to the Terms and Conditions\n\nSave the Client ID and Client Secret values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Configuration",
+      "Anchor": "meridian-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Configuration"
+      ],
+      "Text": "To complete the configuration with Meridian, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Configuration",
+      "Anchor": "meridian-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Configuration"
+      ],
+      "Text": "\u2022 Client ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Configuration",
+      "Anchor": "meridian-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Configuration"
+      ],
+      "Text": "\u2022 Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Configuration",
+      "Anchor": "meridian-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Configuration"
+      ],
+      "Text": "Once you\u2019ve gathered the required information and have logged into the Meridian LMS, follow these steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Configuration",
+      "Anchor": "meridian-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Configuration"
+      ],
+      "Text": "On the home screen, navigate to Manage \u003E Training\n\n\n\n\n\nOn the right side of the screen, under Quick Links, click on LinkedIn Learning\n\n\n\n\n\nYou are presented with a page displaying all LinkedIn Learning content that has been synced with the LMS (on initial setup this will be empty)\n\nSelect Settings and paste the Client ID and the Client Secret into their respective boxes\n\n\n\n\n\nClick Save\n\nThis area will now display all LinkedIn Learning content available for your organization. Select which pieces of content you\u2019d like to add, and the system will sync it accordingly.\n\n\n\n\n\nWhen syncing a large number of courses, the system will import them in the background. You can return to this page to see the status of the bulk import:\n\n\n\n\n\nOnce the sync is complete, you will find the items in the following sections:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Configuration",
+      "Anchor": "meridian-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Configuration"
+      ],
+      "Text": "Learner admin\n\n\n\n\n\nContent searches",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To configure the LinkedIn Learning Provider in Meridian, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "For the optional Scope field, you must fill in with xapi:write",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "The Meridian Client ID and Client Secret for authentication can be found using the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Login to the Meridian LMS and navigate to Administer \u003E Domains\n\n\n\n\n\nSelect the appropriate domain and then navigate to the URL tab\n\n\n\n\n\nThe Consumer Key is the Client ID (however, when copy/pasting from the Meridian LMS to LinkedIn Learning, you must replace the -api characters at the end with -cc) and the Consumer Secret is the Client Secret.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Check out the LinkedIn Learning xAPI configuration workflow",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To communicate learner activity back to Meridian, you must enable xAPI in your LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To enable xAPI in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you login, if you are not already in the Admin screen, click Go to Admin.\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\nIn the Integration name field, enter a name such as \u0022Meridian Reporting\u0022.\n\nIn the User Type drop down, select ID.\n\nCopy and paste the following items provided by Meridian into LinkedIn Learning:\n\nOAuth Server URL\nTenant Server URL\nClient ID\nClient Secret\n\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "xAPI statements are communicated once. From the LinkedIn Learning perspective, the original completion will be maintained.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Meridian Troubleshooting",
+      "Anchor": "meridian-troubleshooting",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Meridian Troubleshooting"
+      ],
+      "Text": "In order to reach out to Meridians support team please visit their website Meredian Customer Support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Meridian",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

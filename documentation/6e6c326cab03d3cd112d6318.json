@@ -1,0 +1,1370 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+  "Title": "Organizational Page Credibility",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Credibility",
+      "Anchor": "organizational-page-credibility",
+      "SectionPath": [],
+      "Text": "The Organizational Page Credibility API provides APIs to retrieve Page Credibilities, which are admin-specified highlights of the page.\nThis Credibility shows up in various surfaces on LinkedIn, such as on the top card, in the search card entity, etc.\nThe first Page Credibility is considered the \u0022highlighted\u0022, or most prominent Credibility to display.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Credibility",
+      "Anchor": "organizational-page-credibility",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Credibility",
+      "Anchor": "organizational-page-credibility",
+      "SectionPath": [],
+      "Text": "Get a single Credibility.\nBatch Get Credibilities.\nFinder to get Credibility by organizational page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Credibility Example",
+      "Anchor": "organizational-page-credibility-example",
+      "SectionPath": [
+        "Organizational Page Credibility Example"
+      ],
+      "Text": "Refer to the image below for an example on LinkedIn Feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and reporting data (including follower, visitor, and content analytics). Restricted to organizations where the authenticated member has the following company page role: ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPageCredibility",
+      "Anchor": "organizationalpagecredibility",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageCredibility"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPageCredibility",
+      "Anchor": "organizationalpagecredibility",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageCredibility"
+      ],
+      "Text": "Either of the created / lastModified / deleted fields will always be present in the response schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageCredibility",
+      "Anchor": "organizationalpagecredibility",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageCredibility"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The key for OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The page for OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The primary text for the OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "secondaryText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The secondary text for the OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "multiLocaleWebsite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleUrl",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocaleurl"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The website for OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The logo of the OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featured",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the OrganizationalPageCredibility is featured. Only the first OrganizationalPageCredibility will be featured.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of when the resource/association/sub-resource is moved into the specific lifecycle stage represented by this audit event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. a personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URN of the page that owns this OrganizationalPageCredibility. It is of type urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID for the OrganizationalPageCredibility.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOAD",
+            "Links": [],
+            "Values": [
+              "PROCESSING",
+              "PROCESSING_FAILED",
+              "AVAILABLE",
+              "WAITING_UPLOAD"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download/view the media asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageCredibility/{KEY}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageCredibility/{KEY}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022featured\u0022: false,\n  \u0022created\u0022: {\n    \u0022time\u0022: 1715661270445,\n    \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n  },\n  \u0022primaryText\u0022: \u0022primary text 1\u0022,\n  \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:5509810\u0022,\n  \u0022logo\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n  },\n  \u0022lastModified\u0022: {\n    \u0022time\u0022: 1715661270445,\n    \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n  },\n  \u0022id\u0022: 4600,\n  \u0022multiLocaleWebsite\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n    }\n  },\n  \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022featured\u0022: false,\n  \u0022created\u0022: {\n    \u0022time\u0022: 1715661270445\n  },\n  \u0022primaryText\u0022: \u0022primary text 1\u0022,\n  \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:5509810\u0022,\n  \u0022logo\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n  },\n  \u0022lastModified\u0022: {\n    \u0022time\u0022: 1715661270445\n  },\n  \u0022id\u0022: 4600,\n  \u0022multiLocaleWebsite\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n    }\n  },\n  \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageCredibilityKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecredibilitykey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the OrganizationalPageCredibility record is a path parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(page:urn%3Ali%3AorganizationalPage%3A{ID},id:{ID})",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageCredibility?ids=List(KEY_1,KEY_2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageCredibility?ids=List(KEY_1,KEY_2)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:456)\u0022: {\n      \u0022featured\u0022: false,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1715661270445,\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n      },\n      \u0022primaryText\u0022: \u0022primary text 1\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123\u0022,\n      \u0022logo\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1715661270445,\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n      },\n      \u0022id\u0022: 456,\n      \u0022multiLocaleWebsite\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n        }\n      },\n      \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n    },\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:789)\u0022: {\n      \u0022featured\u0022: false,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1715661270445,\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n      },\n      \u0022primaryText\u0022: \u0022primary text 1\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123\u0022,\n      \u0022logo\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1715661270445,\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n      },\n      \u0022id\u0022: 789,\n      \u0022multiLocaleWebsite\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n        }\n      },\n      \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:456)\u0022: 200,\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:789)\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:456)\u0022: {\n      \u0022featured\u0022: false,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1715661270445\n      },\n      \u0022primaryText\u0022: \u0022primary text 1\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123\u0022,\n      \u0022logo\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1715661270445\n      },\n      \u0022id\u0022: 456,\n      \u0022multiLocaleWebsite\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n        }\n      },\n      \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n    },\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:789)\u0022: {\n      \u0022featured\u0022: false,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1715661270445\n      },\n      \u0022primaryText\u0022: \u0022primary text 1\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123\u0022,\n      \u0022logo\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1715661270445\n      },\n      \u0022id\u0022: 789,\n      \u0022multiLocaleWebsite\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n        }\n      },\n      \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:456)\u0022: 200,\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123,id:789)\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(OrganizationalPageCredibilityKey)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecredibilitykey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of OrganizationalPageCredibilityKey to query for.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecredibilitykey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List((page:urn%3Ali%3AorganizationalPage%3A1234,id:101),(page:urn%3Ali%3AorganizationalPage%3A2345,id:102))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember\nwith an authorization action of OrganizationProfileAuthorizationActionType.ORGANIZATIONAL_PAGE_CREDIBILITY_MANAGE. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageCredibility?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A{ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageCredibility?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A{ID}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 1,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationalPageCredibility?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A123\u0026start=1\u0026count=1\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022featured\u0022: false,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1715661270445,\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n      },\n      \u0022primaryText\u0022: \u0022primary text 1\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123\u0022,\n      \u0022logo\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1715661270445,\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022\n      },\n      \u0022id\u0022: 456,\n      \u0022multiLocaleWebsite\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n        }\n      },\n      \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 1,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationalPageCredibility?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A123\u0026start=1\u0026count=1\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022featured\u0022: false,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1715661270445\n      },\n      \u0022primaryText\u0022: \u0022primary text 1\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123\u0022,\n      \u0022logo\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D550BAQHjOwnJ0EpgxQ/company-logo_400_400/0/1715654007210/mariokart8deluxe_logo?e=1723680000\u0026v=beta\u0026t=aaIltDsCYtNl7nkXVzBAQKV5Odjl_f76S4NGPa1hWso\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1723680000000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1715661270445\n      },\n      \u0022id\u0022: 456,\n      \u0022multiLocaleWebsite\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://linkedin.com\u0022\n        }\n      },\n      \u0022secondaryText\u0022: \u0022secondary text 2\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Credibility Data",
+        "FIND_BY_PAGE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder function to retrieve data from. Finder name: page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational Page URN. The format of the organizational page is urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn=urn:li:organizationalPage:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch key parameter value is invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid batch key.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

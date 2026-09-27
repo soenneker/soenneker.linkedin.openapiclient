@@ -1,0 +1,379 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation-request",
+  "Title": "Recommendation Request",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation-request",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Recommendation Schema",
+      "Anchor": "recommendation-schema",
+      "SectionPath": [
+        "Recommendation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this recommendation request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the deletion of this recommendation request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fulfilledBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the request is fulfilled by a new recommendation, this field is the new recommendation\u0027s urn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the recommendation request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this recommendation request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Notification of this recommendation request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this notification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this notification.notification.lastModified",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Message that requester sends to requestee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subject of the message that requester sends to requestee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "numRequests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Times of sending this request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "previousRecommendation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this recommendation replaces an old recommendation, this field should be the urn of the old recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requestee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requestee represented in personUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requesteeEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requestee\u0027s entity. For example: urn:li:position:(urn:li:person:, )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requester",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requester represented in personUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requesterEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requester\u0027s entity. For example: urn:li:position:(urn:li:person:, )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relationship",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Relationship between recommender and recommendee. Can be the following enum values: RECOMMENDER_MANAGED_RECOMMENDEE -\u00A0Relation where the recommender managed the recipient. RECOMMENDER_REPORTED_TO_RECOMMENDEE -\u00A0Relation where the recommendee is more senior that the recipient. RECOMMENDER_SENIOR_THAN_RECOMMENDEE -\u00A0Relation where the recipient is more senior that the recommendee. RECOMMENDEE_SENIOR_THAN_RECOMMENDER -\u00A0Relation where the recommendee is more senior that the recipient. WORKED_IN_SAME_GROUP -\u00A0Relation where both recipient and recommendee worked in the same company. WORKED_IN_DIFFERENT_GROUPS -\u00A0Relation where both recipient and recommendee worked in different groups. WORKED_IN_DIFFERENT_COMPANIES -\u00A0Relation where both recipient and recommendee worked in different companies. RECOMMENDEE_IS_CLIENT_OF_RECOMMENDER -\u00A0Relation where recommendee is a client of the recipient. RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE -\u00A0Relation where the recipient is a client of the recommendee. RECOMMENDER_TAUGHT_RECOMMENDEE -\u00A0Relation where the recipient taught the recommendee. RECOMMENDER_ADVISED_RECOMMENDEE -\u00A0Relation where the recipient advised the recommendee. RECOMMENDER_STUDIED_WITH_RECOMMENDEE -\u00A0Relation where the recipient studied with the recommendee.",
+            "Links": [],
+            "Values": [
+              "RECOMMENDER_MANAGED_RECOMMENDEE -\u00A0Relation where the recommender managed the recipient.",
+              "RECOMMENDER_REPORTED_TO_RECOMMENDEE -\u00A0Relation where the recommendee is more senior that the recipient.",
+              "RECOMMENDER_SENIOR_THAN_RECOMMENDEE -\u00A0Relation where the recipient is more senior that the recommendee.",
+              "RECOMMENDEE_SENIOR_THAN_RECOMMENDER -\u00A0Relation where the recommendee is more senior that the recipient.",
+              "WORKED_IN_SAME_GROUP -\u00A0Relation where both recipient and recommendee worked in the same company.",
+              "WORKED_IN_DIFFERENT_GROUPS -\u00A0Relation where both recipient and recommendee worked in different groups.",
+              "WORKED_IN_DIFFERENT_COMPANIES -\u00A0Relation where both recipient and recommendee worked in different companies.",
+              "RECOMMENDEE_IS_CLIENT_OF_RECOMMENDER -\u00A0Relation where recommendee is a client of the recipient.",
+              "RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE -\u00A0Relation where the recipient is a client of the recommendee.",
+              "RECOMMENDER_TAUGHT_RECOMMENDEE -\u00A0Relation where the recipient taught the recommendee.",
+              "RECOMMENDER_ADVISED_RECOMMENDEE -\u00A0Relation where the recipient advised the recommendee.",
+              "RECOMMENDER_STUDIED_WITH_RECOMMENDEE -\u00A0Relation where the recipient studied with the recommendee."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the recommendation request. Can be the following enum values: PENDING DECLINED FULFILLED WITHDRAWN POSITION_DELETED",
+            "Links": [],
+            "Values": [
+              "PENDING",
+              "DECLINED",
+              "FULFILLED",
+              "WITHDRAWN",
+              "POSITION_DELETED"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

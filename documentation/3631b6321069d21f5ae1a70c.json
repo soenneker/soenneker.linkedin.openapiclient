@@ -1,0 +1,656 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/article-migration",
+  "Title": "Publishing Article Migration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/article-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Publishing Article Migration Guide",
+      "Anchor": "publishing-article-migration-guide",
+      "SectionPath": [],
+      "Text": "On June 17, 2019, LinkedIn will begin changing how LinkedIn Publishing Articles are surfaced through the APIs. This migration guide documents the API workflows before and after these changes are made, and how to successfully continue satisfying your Publishing Articles use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Publishing Article Migration Guide",
+      "Anchor": "publishing-article-migration-guide",
+      "SectionPath": [],
+      "Text": "Retrieve Publishing Articles\nRetrieve Reshares of Publishing Articles\nRetrieve Social Actions of Publishing Articles\nSocial Actions on Publishing Articles",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "A LinkedIn Publishing Article entity is referenced by Articles API. The entity currently has two identifiers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for article. Referenced in the {id} portion of urn:li:linkedInArticle:{id}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "newsArticle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The article URN (urn:li:article:{id}) referenced to look up comments and likes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "As part of the migration, Publishing Articles will start surfacing in both Articles API and UGCPost API. The Articles will be identified by URN_REFERENCE value in the shareMediaCategory field and urn:li:linkedInArticle:{id} in media field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "{\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n      \u0022shareCommentary\u0022: {\n        \u0022text\u0022: \u0022This is a LinkedIn Publishing Article!\u0022\n      },\n      \u0022media\u0022: [\n        {\n          \u0022media\u0022: \u0022urn:li:linkedInArticle:123456789\u0022,\n          \u0022thumbnails\u0022: [],\n          \u0022status\u0022: \u0022READY\u0022\n        }\n      ],\n      \u0022shareCategorization\u0022: {}\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "Articles API will have a new field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional ugcPost URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ugcPost (urn:li:ugcPost:{id}) created when the article is initially published. This field only applies to articles created after migration, and is only valid for published articles",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "Lastly, the entity association for actions taken on an Article entity will change:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "",
+      "Headers": [
+        "Action Taken",
+        "Old Entity Association",
+        "New Entity Association"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Social Actions of a Publishing Article",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:article:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:ugcPost:{id}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Reshare of a Publishing Article",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:ugcPost:{id}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Current Workflow",
+      "Anchor": "current-workflow",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "Current Workflow"
+      ],
+      "Text": "Currently, the possible ways to retrieve Publishing Articles include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current Workflow",
+      "Anchor": "current-workflow",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "Current Workflow"
+      ],
+      "Text": "Articles API - Retrieve Articles\nArticles API - Retrieve Articles by Author\nArticles API - Retrieve Articles by Author Using Permalinks\nCompliance Events API - Publishing Articles",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Workflow",
+      "Anchor": "new-workflow",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "New Workflow"
+      ],
+      "Text": "You can still use the Articles API but Publishing Articles will now surface through UGCPost as well:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Workflow",
+      "Anchor": "new-workflow",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "New Workflow"
+      ],
+      "Text": "UGCPost API - Retrieve UGC Posts by Authors\nUGCPost API - Retrieve UGC Posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "New Workflow",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded personUrn})\u0026projection=(elements*(author,clientApplication,created,distribution,lastModified,lifecycleState,permalinkSuffix,ugcOrigin,visibility,specificContent(*(shareMediaCategory,shareFeatures,media(*(media~linkedInArticle:publishingV2(authors*(author~(vanityName,profilePicture(displayImage~:playableStreams),localizedFirstName,localizedLastName,localizedHeadline),type),content,coverImage~:playableStreams,coverMedia,created,displayImage,id,lastModified,permlink,publishedAt,state,title,version)),thumbnails,description,landingPage,originalUrl,title,status),primaryLandingPageUrl,shareCategorization(skills*),shareCommentary(attributes*(length,start,value(*(*~))),inferredLocale,text))),responseContext(root~,parent~)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "New Workflow",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts/{ugcPost Urn}?projection=(author,clientApplication,created,distribution,lastModified,lifecycleState,permalinkSuffix,ugcOrigin,visibility,specificContent(*(shareMediaCategory,shareFeatures,media(*(media~linkedInArticle:publishingV2(authors*(author~(vanityName,profilePicture(displayImage~:playableStreams),localizedFirstName,localizedLastName,localizedHeadline),type),content,coverImage~:playableStreams,coverMedia,created,displayImage,id,lastModified,permlink,publishedAt,state,title,version)),thumbnails,description,landingPage,originalUrl,title,status),primaryLandingPageUrl,shareCategorization(skills*),shareCommentary(attributes*(length,start,value(*(*~))),inferredLocale,text)),responseContext(root~,parent~)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "New Workflow",
+        "Sample Request"
+      ],
+      "Text": "After June 17, 2019, Compliance Events API will start surfacing Publishing Articles as both ugcPost (new) and originalArticles (old) activities for newly created Publishing Articles. LinkedIn will gradually migrate from the old workflow to the new workflow of ugcPost until it\u0027s fully ramped. Below is a sample response of the new activity:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API with ugcPost activity for Publishing Article",
+      "Anchor": "compliance-events-api-with-ugcpost-activity-for-publishing-article",
+      "SectionPath": [
+        "Retrieve Publishing Articles",
+        "New Workflow",
+        "Compliance Events API with ugcPost activity for Publishing Article"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n  \u0022configVersion\u0022: 36,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022visibility\u0022: {\n      \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    },\n    \u0022specificContent\u0022: {\n      \u0022com.linkedin.ugc.ShareContent\u0022: {\n        \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n        \u0022shareCommentary\u0022: {\n          \u0022text\u0022: \u0022This is a LinkedIn Publishing Article!\u0022\n        },\n        \u0022media\u0022: [\n          {\n            \u0022media\u0022: \u0022urn:li:linkedInArticle:123456789\u0022,\n            \u0022thumbnails\u0022: [],\n            \u0022status\u0022: \u0022READY\u0022\n          }\n        ],\n        \u0022shareCategorization\u0022: {}\n      }\n    },\n    \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n    ...\n  },\n  \u0022resourceName\u0022: \u0022ugcPosts\u0022,\n  \u0022resourceUri\u0022: \u0022/ugcPosts/urn:li:ugcPost:123456789\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u00228561f816-517e-49fb-901d-29c589e3b09f\u0022,\n  \u0022processedAt\u0022: 1552071375435,\n  \u0022capturedAt\u0022: 1552071345264,\n  \u0022processedActivity\u0022: {\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022visibility\u0022: {\n      \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    },\n    \u0022specificContent\u0022: {\n      \u0022com.linkedin.ugc.ShareContent\u0022: {\n        \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n        \u0022shareCommentary\u0022: {\n          \u0022text\u0022: \u0022This is a LinkedIn Publishing Article!\u0022\n        },\n        \u0022media\u0022: [\n          {\n            \u0022media\u0022: \u0022urn:li:linkedInArticle:123456789\u0022,\n            \u0022media~\u0022: {\n              \u0022authors\u0022: [\n                {\n                  \u0022author\u0022: \u0022urn:li:person:123ABC\u0022,\n                  \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022\n                }\n              ],\n              \u0022content\u0022: {\n                \u0022com.linkedin.publishing.HtmlContent\u0022: {\n                  \u0022htmlText\u0022: \u0022\u003Cp\u003EAnd text\u003C/p\u003E\u0022,\n                  \u0022secureHtmlText\u0022: \u0022\u003Cp\u003EAnd text\u003C/p\u003E\u0022\n                }\n              },\n              \u0022coverImage\u0022: {\n                \u0022caption\u0022: \u0022\u0022,\n                \u0022croppedImage\u0022: {\n                  \u0022cropInfo\u0022: {\n                    \u0022height\u0022: 1333,\n                    \u0022width\u0022: 2000,\n                    \u0022x\u0022: 0,\n                    \u0022y\u0022: 0\n                  },\n                  \u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C5400AQENYhjODZ9eRw\u0022,\n                  \u0022original\u0022: \u0022urn:li:digitalmediaAsset:C5400AQENYhjODZ9eRw\u0022\n                }\n              },\n              \u0022created\u0022: 1517248648000,\n              \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5400AQENYhjODZ9eRw\u0022,\n              \u0022id\u0022: 123456789,\n              \u0022lastModified\u0022: 1517253706000,\n              \u0022locale\u0022: {\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022newsArticle\u0022: \u0022urn:li:article:7255369085935814179\u0022,\n              \u0022permlink\u0022: \u0022article-with-new\u0022,\n              \u0022publishCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022\u0022\n              },\n              \u0022publishedAt\u0022: 1517253706000,\n              \u0022state\u0022: \u0022PUBLISHED\u0022,\n              \u0022title\u0022: \u0022Article with New Media Type\u0022,\n              \u0022version\u0022: 12\n            },\n            \u0022thumbnails\u0022: [],\n            \u0022status\u0022: \u0022READY\u0022\n          }\n        ],\n        \u0022shareCategorization\u0022: {}\n      }\n    },\n    \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Reshares of Publishing Articles",
+      "Anchor": "retrieve-reshares-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles"
+      ],
+      "Text": "All Reshares of Publishing Article will surface through UGCPost API. There are two ways to Reshare a Publishing Article:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Reshares of Publishing Articles",
+      "Anchor": "retrieve-reshares-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles"
+      ],
+      "Text": "Share the article URL through the share box\nShare the article through the article reader button",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Reshares of Publishing Articles",
+      "Anchor": "retrieve-reshares-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles"
+      ],
+      "Text": "For sharing the article URL through the share box, it will have the following changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Retrieve Reshares of Publishing Articles",
+      "Anchor": "retrieve-reshares-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Current Value",
+        "New Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:ugcPost:{id}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareMediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ARTICLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN_REFERENCE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:article:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:linkedInArticle:{id}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Reshares of Publishing Articles",
+      "Anchor": "retrieve-reshares-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles"
+      ],
+      "Text": "This is identical to the initial publishing of the article mentioned above. Old Articles will continue to maintain the old reshare flow while the new articles created will go through the new reshare flow. To decorate the media URN field, please refer to the above sample requests\u0027 projection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Reshares of Publishing Articles",
+      "Anchor": "retrieve-reshares-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles"
+      ],
+      "Text": "For sharing the article through the article reader button, it will be a reshare of the initial ugcPost. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Reshare of Publishing Article via Article Reader Button",
+      "Anchor": "reshare-of-publishing-article-via-article-reader-button",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles",
+        "Reshare of Publishing Article via Article Reader Button"
+      ],
+      "Text": "{\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022visibility\u0022: {\n    \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n  },\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022shareMediaCategory\u0022: \u0022NONE\u0022,\n      \u0022shareFeatures\u0022: {\n        \u0022hashtags\u0022: []\n      },\n      \u0022shareCommentary\u0022: {\n        \u0022text\u0022: \u0022This is a reshare via article reader button\u0022\n      },\n      \u0022media\u0022: [],\n      \u0022shareCategorization\u0022: {}\n    }\n  },\n  \u0022responseContext\u0022: {\n    \u0022parent\u0022: \u0022urn:li:ugcPost:6521432600718954496\u0022,\n    \u0022root\u0022: \u0022urn:li:ugcPost:6521432600718954496\u0022\n  },\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reshare of Publishing Article via Article Reader Button",
+      "Anchor": "reshare-of-publishing-article-via-article-reader-button",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles",
+        "Reshare of Publishing Article via Article Reader Button"
+      ],
+      "Text": "For Compliance Events API, Reshare a Publishing Article is currently surfaced as a ugcPost activity. With the migration, it will still be ugcPost activity. Between the two ways to reshare, the first is identical to the creation of a Publishing Article from above. See below for a sample response on the second way to reshare:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API of Reshare a Publishing Article via Article Reader Button",
+      "Anchor": "compliance-events-api-of-reshare-a-publishing-article-via-article-reader-button",
+      "SectionPath": [
+        "Retrieve Reshares of Publishing Articles",
+        "Compliance Events API of Reshare a Publishing Article via Article Reader Button"
+      ],
+      "Text": "{\n  \u0022resourceId\u0022: \u0022urn:li:ugcPosts:123456789\u0022,\n  \u0022resourceName\u0022: \u0022ugcPosts\u0022,\n  \u0022resourceUri\u0022: \u0022/ugcPosts/urn:li:ugcPosts:123456789\u0022,\n  \u0022activity\u0022: {\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022visibility\u0022: {\n      \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    },\n    \u0022specificContent\u0022: {\n      \u0022com.linkedin.ugc.ShareContent\u0022: {\n        \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n        \u0022shareFeatures\u0022: {\n          \u0022hashtags\u0022: []\n        },\n        \u0022shareCommentary\u0022: {\n          \u0022text\u0022: \u0022This is a reshare via article reader button\u0022\n        },\n        \u0022media\u0022: [],\n        \u0022shareCategorization\u0022: {}\n      }\n    },\n    \u0022responseContext\u0022: {\n      \u0022parent\u0022: \u0022urn:li:ugcPost:6521432600718954496\u0022,\n      \u0022root\u0022: \u0022urn:li:ugcPost:6521432600718954496\u0022\n    },\n    ...\n  },\n  \u0022processedActivity\u0022: {\n    \u0022specificContent\u0022: {\n      \u0022com.linkedin.ugc.ShareContent\u0022: {\n        \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n        \u0022media\u0022: [],\n        \u0022shareCategorization\u0022: {}\n      }\n    },\n    \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n    \u0022responseContext\u0022: {\n      \u0022parent\u0022: \u0022urn:li:ugcPost:6521432600718954496\u0022,\n      \u0022parent~\u0022: {...},\n      \u0022root\u0022: \u0022urn:li:ugcPost:6521432600718954496\u0022,\n      \u0022root~\u0022: {...}\n    },\n    ...\n  },\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Social Actions of Publishing Articles",
+      "Anchor": "retrieve-social-actions-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles"
+      ],
+      "Text": "Currently, Social Actions of Publishing Article are attributed to the article\u0027s newsArticle (urn:li:article:{id}) URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Social Actions of Publishing Articles",
+      "Anchor": "retrieve-social-actions-of-publishing-articles",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles"
+      ],
+      "Text": "With the migration, all new Publishing Articles\u0027 Social Actions will be attributed to the ugcPost (urn:li:ugcPost:{id}) URN. The old Publishing Articles will remain on the article\u0027s newsArticle URN. See below for sample requests:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Comments for an Article",
+      "Anchor": "retrieve-comments-for-an-article",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles",
+        "Retrieve Comments for an Article"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/socialActions/{ugcPost Urn}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Likes for an Article",
+      "Anchor": "retrieve-likes-for-an-article",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles",
+        "Retrieve Likes for an Article"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/socialActions/{ugcPost Urn}/likes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Likes for an Article",
+      "Anchor": "retrieve-likes-for-an-article",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles",
+        "Retrieve Likes for an Article"
+      ],
+      "Text": "The object and $URN field in Social Actions API will return ugcPost related URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Likes for an Article",
+      "Anchor": "retrieve-likes-for-an-article",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles",
+        "Retrieve Likes for an Article"
+      ],
+      "Text": "For Compliance Events API, Social Actions on a Publishing Article is already being surfaced. With the migration, the object association will change to ugcPost URN. See below for sample responses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API of Comment on a Publishing Article",
+      "Anchor": "compliance-events-api-of-comment-on-a-publishing-article",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles",
+        "Compliance Events API of Comment on a Publishing Article"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022time\u0022: 1492112821044\n    },\n    \u0022id\u0022: \u00226258374773714362368\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022time\u0022: 1492112821044\n    },\n    \u0022likesSummary\u0022: {\n      \u0022aggregatedTotalLikes\u0022: 0,\n      \u0022likedByCurrentUser\u0022: false,\n      \u0022selectedLikes\u0022: [],\n      \u0022totalLikes\u0022: 0\n    },\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [],\n      \u0022text\u0022: \u0022This is a comment on a publishing post.\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:ugcPost:123456789\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1492112821044\n    },\n    \u0022id\u0022: \u00226258374773714362368\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1492112821044\n    },\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [],\n      \u0022text\u0022: \u0022This is a comment on a publishing post.\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n    \u0022object~\u0022: {\n      \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n          \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n          \u0022media\u0022: [\n            {\n              \u0022media~\u0022: {...},\n              \u0022media\u0022: \u0022urn:li:linkedInArticle:123456789\u0022,\n              \u0022status\u0022: \u0022READY\u0022\n            }\n          ],\n          \u0022shareCategorization\u0022: {}\n        }\n      }\n    }\n  },\n  \u0022resourceName\u0022: \u0022socialActions/comments\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:ugcPost:123456789/comments/6258374773714362368\u0022,\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API of Like on a Publishing Article",
+      "Anchor": "compliance-events-api-of-like-on-a-publishing-article",
+      "SectionPath": [
+        "Retrieve Social Actions of Publishing Articles",
+        "Compliance Events API of Like on a Publishing Article"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022time\u0022: 1492112791993\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022time\u0022: 1492112791993\n    },\n    \u0022object\u0022: \u0022urn:li:ugcPost:123456789\u0022\n  },\n  \u0022processedAt\u0022: 1492112812255,\n  \u0022capturedAt\u0022: 1492112792032,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1492112791993\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1492112791993\n    },\n    \u0022object~\u0022: {...},\n    \u0022object\u0022: \u0022urn:li:ugcPost:123456789\u0022\n  },\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:ugcPost:123456789/likes/urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:ugcPost:123456789\u0022\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Actions on Publishing Articles",
+      "Anchor": "social-actions-on-publishing-articles",
+      "SectionPath": [
+        "Social Actions on Publishing Articles"
+      ],
+      "Text": "Currently, Social Actions of Publishing Article are attributed to the article\u0027s newsArticle (urn:li:article:{id}) URN. See here for more information on Social Action creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Comment for an Article (OLD)",
+      "Anchor": "create-comment-for-an-article-old",
+      "SectionPath": [
+        "Social Actions on Publishing Articles",
+        "Create Comment for an Article (OLD)"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/socialActions/{article Urn}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Like for an Article (OLD)",
+      "Anchor": "create-like-for-an-article-old",
+      "SectionPath": [
+        "Social Actions on Publishing Articles",
+        "Create Like for an Article (OLD)"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/socialActions/{article Urn}/likes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Like for an Article (OLD)",
+      "Anchor": "create-like-for-an-article-old",
+      "SectionPath": [
+        "Social Actions on Publishing Articles",
+        "Create Like for an Article (OLD)"
+      ],
+      "Text": "With the migration, all new Publishing Articles\u0027 Social Actions will be attributed to the ugcPost (urn:li:ugcPost:{id}) URN. The old Publishing Articles will remain on the article\u0027s newsArticle URN. See below for the new sample requests:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Comment for an Article (NEW)",
+      "Anchor": "create-comment-for-an-article-new",
+      "SectionPath": [
+        "Social Actions on Publishing Articles",
+        "Create Comment for an Article (NEW)"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/socialActions/{ugcPost Urn}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Like for an Article (NEW)",
+      "Anchor": "create-like-for-an-article-new",
+      "SectionPath": [
+        "Social Actions on Publishing Articles",
+        "Create Like for an Article (NEW)"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/socialActions/{ugcPost Urn}/likes",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

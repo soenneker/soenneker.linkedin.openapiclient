@@ -1,0 +1,919 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+  "Title": "Embedding the Iframe",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Embedding the Iframe",
+      "Anchor": "embedding-the-iframe",
+      "SectionPath": [],
+      "Text": "The Display Services iframe enables sales teams to leverage LinkedIn identity and insights without having to leave your application\u0027s workflow. This guide describes how to embed the Display Services iframe into your application, and other need-to-know technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "The iframe can be embedded in your application by placing it directly in HTML. Here\u0027s an example iframe element that can be embedded:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "\u003C!-- NOTE: line breaks are added for readability --\u003E\n\u003C!-- apiKey, firstName, lastName, email, companyName, crmRecordId, crmOrgId, crmSourceType values are for example only --\u003E\n\u003Ciframe src=\u0022https://www.linkedin.com/sales/widget/profile-matching?\n  apiKey=YOUR_CLIENT_ID\u0026\n  firstName=Bill\u0026\n  lastName=Abrams\u0026\n  email=babrams@examplecompany.com\u0026\n  companyName=Example Company\u0026\n  crmRecordId=3AFXT8CAAY\u0026\n  crmOrgId=HV1OX56I8B\u0026\n  crmSourceType=YOUR_CRM_SOURCE_TYPE\u0026\n  crmType=contact\u0026\n  modules=TopCard2,RelatedLeads\u0026\n  version=2.1\u0026\n  isInlineMode=false\n  \u0026sat=Aj2AKAv\u0022\n  width=\u0022300\u0022\n  height=\u0022336\u0022\n  frameborder=\u00220\u0022\n  type=\u0022text/html\u0022\u003E\n\u003C/iframe\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "One critical advantage of embedding the iframe directly is the ability to specify an ID for the iframe element so that your application can display, hide, and resize the iframe dynamically through JavaScript or CSS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "Directly embedded iframes must have the iframe source URL-encoded. See the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "Your actual HTML should contain URL-encoded parameters, including ampersands:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Embedding via HTML Iframe",
+      "Anchor": "embedding-via-html-iframe",
+      "SectionPath": [
+        "Embedding Methods",
+        "Embedding via HTML Iframe"
+      ],
+      "Text": "\u003C!-- apiKey, firstName, lastName, email, companyName, crmRecordId, crmOrgId, crmSourceType, crmType, sat values are for example only --\u003E\n\u003Ciframe src=\u0022https%3A%2F%2Fwww.linkedin.com%2Fsales%2Fwidget%2Fprofile-matching%3FapiKey%3DYOUR_CLIENT_ID%26firstName%3DBill%26lastName%3DAbrams%26email%3Dbabrams%40examplecompany.com%26companyName%3DExample%20Company%26crmRecordId%3D3AFXT8CAAY%26crmOrgId%3DHV1OX56I8B%26crmSourceType%3DLINKEDIN_PROVIDED_CRM_SOURCE_TYPE%26crmType%3Dcontact%26modules%3DTopCard2%2CRelatedLeads%26version%3D2.1%26isInlineMode%3Dfalse%26sat%3DAj2AKAv\u0022 width=\u0022320\u0022 height=\u0022336\u0022 frameborder=\u00220\u0022 type=\u0022text/html\u0022\u003E\n\u003C/iframe\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customizing Experience: Components and Display Modes",
+      "Anchor": "customizing-experience-components-and-display-modes",
+      "SectionPath": [
+        "Customizing Experience: Components and Display Modes"
+      ],
+      "Text": "The iframe\u0027s path and query string define what Sales Navigator functionality can be experienced by the user. All instances of the iframe are rendered in the context of leads (LinkedIn member profiles) and accounts (companies). For each context, there are a number of components that you can select to render individually or with the Top Card, which describes the lead or account being displayed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customizing Experience: Components and Display Modes",
+      "Anchor": "customizing-experience-components-and-display-modes",
+      "SectionPath": [
+        "Customizing Experience: Components and Display Modes"
+      ],
+      "Text": "Here is an example iframe in Classic Mode with profile Top Card (left) and Icebreakers, Get Introduced, and Related Leads components(right):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customizing Experience: Components and Display Modes",
+      "Anchor": "customizing-experience-components-and-display-modes",
+      "SectionPath": [
+        "Customizing Experience: Components and Display Modes"
+      ],
+      "Text": "You can see screenshots for all the components available on our Leads Module References and Accounts Module References pages, with accompanying descriptions of the content included in each component.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline and Classic Modes",
+      "Anchor": "inline-and-classic-modes",
+      "SectionPath": [
+        "Customizing Experience: Components and Display Modes",
+        "Inline and Classic Modes"
+      ],
+      "Text": "To give you the freedom to design workflow experiences when minimal space is available in your application, Display Services offers Inline Mode for components that are rendered individually. You can get the Inline Mode experience by specifying isInlineMode to true in the query parameters. Inline Mode offers a few benefits over the default Classic Mode:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline and Classic Modes",
+      "Anchor": "inline-and-classic-modes",
+      "SectionPath": [
+        "Customizing Experience: Components and Display Modes",
+        "Inline and Classic Modes"
+      ],
+      "Text": "It removes the header and footer border elements\nIt displays more content in less space\nPrevents redundant branding when more than one iframe is embedded on a page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline and Classic Modes",
+      "Anchor": "inline-and-classic-modes",
+      "SectionPath": [
+        "Customizing Experience: Components and Display Modes",
+        "Inline and Classic Modes"
+      ],
+      "Text": "Here is an example rendering of the Top Card for a profile in Inline Mode:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Loading Profiles or Accounts",
+      "Anchor": "loading-profiles-or-accounts",
+      "SectionPath": [
+        "Loading Profiles or Accounts"
+      ],
+      "Text": "You can choose to display information about profiles or accounts by specifying so in the path when embedding the iframe directly. Here is an example iframe src requesting the profile Top Card:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Loading Profiles or Accounts",
+      "Anchor": "loading-profiles-or-accounts",
+      "SectionPath": [
+        "Loading Profiles or Accounts"
+      ],
+      "Text": "\u003C!-- NOTE: line breaks are added for readability --\u003E\n\u003C!-- apiKey, firstName, lastName, crmRecordId, crmOrgId, crmSourceType values are for example only --\u003E\n\u003Ciframe src=\u0022https://www.linkedin.com/sales/widget/profile-matching?\n  apiKey=YOUR_CLIENT_ID\u0026\n  firstName=Abraham\u0026\n  lastName=Lincoln\u0026\n  crmRecordId=3AFXT8CAAY\u0026\n  crmOrgId=HV1OX56I8B\u0026\n  crmSourceType=YOUR_CRM_SOURCE_TYPE\u0026\n  crmType=contact\u0026\n  modules=TopCard2\u0026\n  version=2.1\u0026\n  isInlineMode=false\u0026\n  sat=Aj2AKAv\u0022\n  width=\u0022300\u0022\n  height=\u0022336\u0022\n  frameborder=\u00220\u0022\n  type=\u0022text/html\u0022\u003E\n\u003C/iframe\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Loading Profiles or Accounts",
+      "Anchor": "loading-profiles-or-accounts",
+      "SectionPath": [
+        "Loading Profiles or Accounts"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Loading Profiles or Accounts",
+      "Anchor": "loading-profiles-or-accounts",
+      "SectionPath": [
+        "Loading Profiles or Accounts"
+      ],
+      "Text": "The query parameters available for searching change depending on whether you are loading the lead or account paths.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Loading Profiles or Accounts",
+      "Anchor": "loading-profiles-or-accounts",
+      "SectionPath": [
+        "Loading Profiles or Accounts"
+      ],
+      "Text": "Here is an example displaying the company Top Card instead of the profile Top Card:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Loading Profiles or Accounts",
+      "Anchor": "loading-profiles-or-accounts",
+      "SectionPath": [
+        "Loading Profiles or Accounts"
+      ],
+      "Text": "\u003C!-- NOTE: line breaks are added for readability --\u003E\n\u003C!-- apiKey, name, website, crmRecordId, crmOrgId, crmSourceType values are for example only --\u003E\n\u003Ciframe src=\u0022https://www.linkedin.com/sales/widget/company-matching?\n  apiKey=YOUR_CLIENT_ID\u0026\n  name=LinkedIn\u0026\n  website=www.linkedin.com\u0026\n  crmRecordId=3AFXT8CAAY\u0026\n  crmOrgId=HV1OX56I8B\u0026\n  crmSourceType=YOUR_CRM_SOURCE_TYPE\u0026\n  crmInstanceType=YOUR_CRM_INSTANCE_TYPE\u0026\n  crmType=account\u0026\n  modules=TopCard2\u0026\n  version=2.1\u0026\n  isInlineMode=false\u0026\n  sat=Aj2AKAv\u0022\n  width=\u0022300\u0022\n  height=\u0022265\u0022\n  frameborder=\u00220\u0022\n  type=\u0022text/html\u0022\u003E\n\u003C/iframe\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Query Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Query Parameters"
+      ],
+      "Text": "If no module is specified or the module query parameter is missing, then all modules will be rendered. This will allow any newly released modules to be rendered automatically for the end user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Lead Query Parameters",
+      "Anchor": "lead-query-parameters",
+      "SectionPath": [
+        "Query Parameters",
+        "Lead Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Required?",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "crmSourceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This must be set to the value provided by LinkedIn. If you\u0027re unsure how to set this value, please contact your LinkedIn representative.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "apiKey",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The provisioned child application\u0027s API key, also called Client ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for leads/member profiles. Used to find the most relevant person based on first name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for leads/member profiles. Used to find the most relevant person based on last name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for leads/member profiles. Used to find the most relevant person based on email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for leads/member profiles. Used to find the most relevant person based on job title.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid for leads/member profiles. Used to find the most relevant person at a company based on the company name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmRecordId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The record ID of the external record corresponding to the profile being requested. This value should be unique, under 28 characters (only alphanumeric and hyphen characters accepted), and is usually the unique identifier for this contact or lead record in the external system.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmOrgId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization ID, customer ID, or tenant ID for the instance utilizing the iframe. This value should be unique, under 28 characters (only alphanumeric and hyphen characters accepted), and is usually the unique identifier for the organization or tenant in the external system.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the crm record, either contact or lead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "modules",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A comma-separated list representing the components to load. For profiles, valid values are: TopCard2MessagingConnectIcebreakersRecentActivityHighlightsGetIntroducedRelatedLeadsNote: If no module is specified or the parameter is missing, then all the modules available will be rendered.",
+            "Links": [],
+            "Values": [
+              "TopCard2",
+              "Messaging",
+              "Connect",
+              "Icebreakers",
+              "RecentActivity",
+              "Highlights",
+              "GetIntroduced",
+              "RelatedLeads"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "isInlineMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean value that identifies whether or not to render component in Inline Mode. If using Inline Mode, pass only one module. Valid values: truefalse (Default)",
+            "Links": [],
+            "Values": [
+              "true",
+              "false (Default)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only applicable when embedding via HTML iframe. Not required, but should always be passed to maintain your desired experience. Valid values: 2.1",
+            "Links": [],
+            "Values": [
+              "2.1"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "appVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the installed application version from the integrating CRM (Currently used by Salesforce).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If a Sales Access Token is passed in this parameter, it will be used to authenticate the Sales Navigator user and create a session in their client. If using this feature, version must be set to 2.1 or higher.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Query Parameters",
+      "Anchor": "company-query-parameters",
+      "SectionPath": [
+        "Query Parameters",
+        "Company Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Required?",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "crmSourceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This must be set to the value provided by LinkedIn. If you\u0027re unsure how to set this value, please contact your LinkedIn representative.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmInstanceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This must be set to the value of either DEV or SANDBOX or PRODUCTION based on your CRM Instance type. If you\u0027re unsure how to set this value, please contact your LinkedIn representative.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "apiKey",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The provisioned child application\u0027s API key, also called Client ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for companies/accounts. Used to find the most relevant company based on the company name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "website",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for companies/accounts. Used to find the most relevant company based on the company website.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for companies/accounts. Used to find the most relevant company based on the industry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only valid for companies/accounts. Used to find the most relevant company based on the location.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmRecordId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The record ID of the external record corresponding to the company being requested. This value should be unique, under 28 characters (only alphanumeric and hyphen characters accepted), and is usually the unique identifier for this account record in the external system.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmOrgId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization ID, customer ID, or tenant ID for the instance utilizing the iframe. This value should be unique, under 28 characters (only alphanumeric and hyphen characters accepted), and is usually the unique identifier for the organization or tenant in the external system.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the crm record, always account for company-matching",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "isExpandEnabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean value that identifies whether or not to show the expand button for the Relationship Map component. Valid values:truefalse (Default)If this is set to True, kindly refer to this section to handle the Expand/Collapse button.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe#handling-the-expandcollapse-button"
+            ],
+            "Values": [
+              "true",
+              "false (Default)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "modules",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A comma-separated list representing the company profile card and the tabs in the iframe. For company-matching, valid values are:TopCardConnectionsNewsFindPeople (Replacement for Recommended Leads module and available only to the Advanced Plus users)Maps (Available only to the Advanced Plus users)Note: If no module is specified or the parameter is missing, then all the modules of the selected account will be rendered.",
+            "Links": [],
+            "Values": [
+              "TopCard",
+              "Connections",
+              "News",
+              "FindPeople (Replacement for Recommended Leads module and available only to the Advanced Plus users)",
+              "Maps (Available only to the Advanced Plus users)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "isInlineMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supported since version 2.0.0. Boolean value that identifies whether or not to render component in Inline Mode. If using Inline Mode, pass only one module. Valid values: truefalse (Default)",
+            "Links": [],
+            "Values": [
+              "true",
+              "false (Default)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only applicable when embedding via HTML iframe. Not required, but should always be passed to maintain your desired experience. Valid values: 2.1",
+            "Links": [],
+            "Values": [
+              "2.1"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "appVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the installed application version from the integrating CRM (Currently used by Salesforce).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If a Sales Access Token is passed in this parameter, it will be used to authenticate the Sales Navigator user and create a session in their client. If using this feature, version must be set to 2.1 or higher.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling the Expand/Collapse button",
+      "Anchor": "handling-the-expandcollapse-button",
+      "SectionPath": [
+        "Query Parameters",
+        "Handling the Expand/Collapse button"
+      ],
+      "Text": "The Expand button will be present in the \u201CRelationship Map\u201D widget iframe UI and button will be handled using the Lightning component full screen modal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling the Expand/Collapse button",
+      "Anchor": "handling-the-expandcollapse-button",
+      "SectionPath": [
+        "Query Parameters",
+        "Handling the Expand/Collapse button"
+      ],
+      "Text": "The expand button needs to be handled at the widget end. You need to handle the \u0022expand\u0022 message from the widget iframe. The expand event will be passed to the parent window by window.postMessage() method. To listen to the event, you can use a standard event listener for a message event like below and obtain event data from data object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Handling the Expand/Collapse button",
+      "Anchor": "handling-the-expandcollapse-button",
+      "SectionPath": [
+        "Query Parameters",
+        "Handling the Expand/Collapse button"
+      ],
+      "Text": "/** Partner app needs to listen to the \u0022expand\u0022 message from the widget iframe **/\n\nwindow.addEventListener(\u0022message\u0022, function(event) {\n  var origin = event.origin; // \u0022https://www.linkedin.com\u0022\n  var message = event.data; // \u0022{\u0022actionTaken\u0022:\u0022Expand\u0022}\u0022\n  if (origin === \u0022https://www.linkedin.com\u0022 \n      \u0026\u0026 message.actionTaken === \u0022Expand\u0022)  {\n    // Implement expand handling, e.g tweaking the CSS of widget to occupy the entire screen or opening partner\u0027s full screen modal with iFrame embedded\n  }\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling the Expand/Collapse button",
+      "Anchor": "handling-the-expandcollapse-button",
+      "SectionPath": [
+        "Query Parameters",
+        "Handling the Expand/Collapse button"
+      ],
+      "Text": "Likewise, you need to send the \u201Ccollapse\u201D event back to us to notify the close event as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Handling the Expand/Collapse button",
+      "Anchor": "handling-the-expandcollapse-button",
+      "SectionPath": [
+        "Query Parameters",
+        "Handling the Expand/Collapse button"
+      ],
+      "Text": "/** Partner app needs to send a postMessage to communicate the close event to the iframe **/\n\nconst message = { actionTaken: \u201Ccollapse\u201D};\nconst targetOrigin = \u0027https://linkedin.com\u0027;\nwindow.postMessage(message, targetOrigin);",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

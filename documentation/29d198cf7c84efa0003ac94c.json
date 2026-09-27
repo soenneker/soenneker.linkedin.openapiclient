@@ -1,0 +1,197 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+  "Title": "Ad Targeting Facets",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [],
+      "Text": "The LinkedIn ads platform allows advertisers to target different types of audiences on the professional network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [],
+      "Text": "Use the Ad Targeting Facets API to discover types of targeting available. Use in conjunction with the Ad Targeting Entities API .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [],
+      "Text": "Please note that website retargeting facet was named retargetingSegments in the legacy Targeting object. However the name is changed to dynamicSegments in the TargetingCriteria object. Please start using the new facet name if you\u0027re managing ad campaigns that use this facet with TargetingCriteria. If you\u0027re still managing ad campaigns using Targeting object, old name should be used as before.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [],
+      "Text": "In versions before the 202304, the adTargetingFacetUrn field was $URN and the type of the field was urn. Hence for older versions, the name and type should be used as before.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET ALL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Field Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "availableEntityFinders",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingEntityFinderType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of Finder methods that are available for this facet via the Ad Targeting Entities API .",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of entity types available for targeting, represented by the resources that support them",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facetName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String IDs matching the names of the different fields",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adTragetingFacetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingFacetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn of the facet. Facet urns will be the preferred format to specify in targeting, forecasting and other APIs where facet names were previously used.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "GET ALL",
+      "Anchor": "get-all",
+      "SectionPath": [
+        "GET ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adTargetingFacets",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COMPANY\u0022\n            ],\n            \u0022facetName\u0022: \u0022employersPast\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:employersPast\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COMPANY\u0022\n            ],\n            \u0022facetName\u0022: \u0022employers\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COMPANY\u0022\n            ],\n            \u0022facetName\u0022: \u0022employersAll\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:employersAll\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COMPANY\u0022\n            ],\n            \u0022facetName\u0022: \u0022followedCompanies\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:followedCompanies\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022DEGREE\u0022\n            ],\n            \u0022facetName\u0022: \u0022degrees\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:degrees\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022SKILL\u0022\n            ],\n            \u0022facetName\u0022: \u0022skills\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:skills\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COUNTRY_GROUP\u0022,\n                \u0022COUNTRY\u0022,\n                \u0022STATE\u0022,\n                \u0022REGION\u0022\n            ],\n            \u0022facetName\u0022: \u0022locations\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022$UNKNOWN\u0022\n            ],\n            \u0022facetName\u0022: \u0022audienceMatchingSegments\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:audienceMatchingSegments\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022$UNKNOWN\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022AGE\u0022\n            ],\n            \u0022facetName\u0022: \u0022ageRanges\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:ageRanges\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022TITLE\u0022\n            ],\n            \u0022facetName\u0022: \u0022titles\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:titles\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022FIRMOGRAPHIC\u0022\n            ],\n            \u0022facetName\u0022: \u0022growthRate\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:growthRate\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022INTEREST\u0022\n            ],\n            \u0022facetName\u0022: \u0022interests\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:interests\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022LOCALE\u0022\n            ],\n            \u0022facetName\u0022: \u0022interfaceLocales\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:interfaceLocales\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COMPANY\u0022\n            ],\n            \u0022facetName\u0022: \u0022firstDegreeConnectionCompanies\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:firstDegreeConnectionCompanies\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COMPANY_SIZE\u0022\n            ],\n            \u0022facetName\u0022: \u0022staffCountRanges\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:staffCountRanges\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022SENIORITY\u0022\n            ],\n            \u0022facetName\u0022: \u0022seniorities\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022$UNKNOWN\u0022\n            ],\n            \u0022facetName\u0022: \u0022dynamicSegments\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:dynamicSegments\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022$UNKNOWN\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022GENDER\u0022\n            ],\n            \u0022facetName\u0022: \u0022genders\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:genders\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022SCHOOL\u0022\n            ],\n            \u0022facetName\u0022: \u0022schools\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:schools\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022TITLE\u0022\n            ],\n            \u0022facetName\u0022: \u0022titlesPast\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:titlesPast\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022YEARS_OF_EXPERIENCE\u0022\n            ],\n            \u0022facetName\u0022: \u0022yearsOfExperienceRanges\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:yearsOfExperienceRanges\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022FUNCTION\u0022\n            ],\n            \u0022facetName\u0022: \u0022jobFunctions\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:jobFunctions\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022FIRMOGRAPHIC\u0022\n            ],\n            \u0022facetName\u0022: \u0022companyCategory\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:companyCategory\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022FIELD_OF_STUDY\u0022\n            ],\n            \u0022facetName\u0022: \u0022fieldsOfStudy\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022MEMBER_BEHAVIOR\u0022\n            ],\n            \u0022facetName\u0022: \u0022memberBehaviors\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:memberBehaviors\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022BUYER_GROUP\u0022\n            ],\n            \u0022facetName\u0022: \u0022buyerGroups\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:buyerGroups\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022INDUSTRY\u0022\n            ],\n            \u0022facetName\u0022: \u0022industries\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:industries\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022COUNTRY_GROUP\u0022,\n                \u0022COUNTRY\u0022,\n                \u0022STATE\u0022,\n                \u0022REGION\u0022\n            ],\n            \u0022facetName\u0022: \u0022profileLocations\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:profileLocations\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022TITLE\u0022\n            ],\n            \u0022facetName\u0022: \u0022titlesAll\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:titlesAll\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        },\n        {\n            \u0022entityTypes\u0022: [\n                \u0022GROUP\u0022\n            ],\n            \u0022facetName\u0022: \u0022groups\u0022,\n            \u0022adTargetingFacetUrn\u0022: \u0022urn:li:adTargetingFacet:groups\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ]\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

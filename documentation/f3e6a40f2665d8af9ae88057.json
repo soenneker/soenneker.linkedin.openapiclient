@@ -1,0 +1,669 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+  "Title": "Authentication",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [],
+      "Text": "Verified on LinkedIn APIs use OAuth 2.0 for authentication. The authentication method depends on which API you\u0027re calling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OAuth Flow by API",
+      "Anchor": "oauth-flow-by-api",
+      "SectionPath": [
+        "OAuth Flow by API"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "OAuth Type",
+        "Member Consent",
+        "Tiers"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3-legged",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All tiers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3-legged",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All tiers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/validationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2-legged",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Not required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "3-Legged OAuth (Authorization Code Flow)",
+      "Anchor": "3-legged-oauth-authorization-code-flow",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)"
+      ],
+      "Text": "Used for /identityMe and /verificationReport APIs. Requires member consent and authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Overview",
+      "Anchor": "quick-overview",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Quick Overview"
+      ],
+      "Text": "Redirect member to LinkedIn for authorization\nMember grants permission to your app\nLinkedIn redirects back with authorization code\nExchange code for access token\nCall APIs with the access token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Overview",
+      "Anchor": "quick-overview",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Quick Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Overview",
+      "Anchor": "quick-overview",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Quick Overview"
+      ],
+      "Text": "Partners may optionally include an OAuth 2.0 state parameter in their redirect URI to maintain session context, implement CSRF protection, or track requests. When used with Verified on LinkedIn verification flows, the state parameter is preserved and returned to the partner\u0027s registered redirect URI after verification completes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required OAuth Scopes by Tier",
+      "Anchor": "required-oauth-scopes-by-tier",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Required OAuth Scopes by Tier"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scope",
+        "Development",
+        "Lite",
+        "Plus",
+        "Purpose"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_profile_basicinfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile info (name, email, photo)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_verify",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories only (Dev \u0026 Lite)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_verify_details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Detailed verification metadata (Plus only) \u002B Verification categories",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_primary_current_experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current job details (Plus only)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_most_recent_education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Education info (Plus only)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scopes by Tier",
+      "Anchor": "required-oauth-scopes-by-tier",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Required OAuth Scopes by Tier"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scopes by Tier",
+      "Anchor": "required-oauth-scopes-by-tier",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Required OAuth Scopes by Tier"
+      ],
+      "Text": "Key Difference: r_verify returns only verification categories (e.g., [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022]), while r_verify_details returns full metadata including verified names, timestamps, methods, and organization details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Token Characteristics",
+      "Anchor": "token-characteristics",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Token Characteristics"
+      ],
+      "Text": "Access token lifetime: 60 days\nRefresh token lifetime: 1 year\nRefresh tokens: Yes, included in response\nMember consent: Required once (unless scopes change)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complete Guide",
+      "Anchor": "complete-guide",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Complete Guide"
+      ],
+      "Text": "For detailed implementation, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complete Guide",
+      "Anchor": "complete-guide",
+      "SectionPath": [
+        "3-Legged OAuth (Authorization Code Flow)",
+        "Complete Guide"
+      ],
+      "Text": "Authorization Code Flow Guide \u2013 Complete 3-legged OAuth walkthrough\nRefresh Tokens Guide \u2013 Token refresh implementation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2-Legged OAuth (Client Credentials Flow)",
+      "Anchor": "2-legged-oauth-client-credentials-flow",
+      "SectionPath": [
+        "2-Legged OAuth (Client Credentials Flow)"
+      ],
+      "Text": "Used for /validationStatus API (Plus tier only). No member consent required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Overview",
+      "Anchor": "quick-overview-1",
+      "SectionPath": [
+        "2-Legged OAuth (Client Credentials Flow)",
+        "Quick Overview"
+      ],
+      "Text": "Request access token using client credentials\nCall API with the access token\nToken expires in 30 minutes \u2013 request new token as needed",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "2-Legged OAuth (Client Credentials Flow)",
+        "Required OAuth Scope"
+      ],
+      "Text": "r_validation_status \u2013 Bulk validation checks (Plus tier only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Token Characteristics",
+      "Anchor": "token-characteristics-1",
+      "SectionPath": [
+        "2-Legged OAuth (Client Credentials Flow)",
+        "Token Characteristics"
+      ],
+      "Text": "Access token lifetime: 30 minutes\nRefresh tokens: No, request new token after expiry\nMember consent: Not required",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complete Guide",
+      "Anchor": "complete-guide-1",
+      "SectionPath": [
+        "2-Legged OAuth (Client Credentials Flow)",
+        "Complete Guide"
+      ],
+      "Text": "For detailed implementation, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complete Guide",
+      "Anchor": "complete-guide-1",
+      "SectionPath": [
+        "2-Legged OAuth (Client Credentials Flow)",
+        "Complete Guide"
+      ],
+      "Text": "Client Credentials Flow Guide \u2013 Complete 2-legged OAuth walkthrough",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier",
+      "Anchor": "development-tier",
+      "SectionPath": [
+        "Getting Started by Tier",
+        "Development Tier"
+      ],
+      "Text": "Scopes: r_profile_basicinfo, r_verify\nTest with admin accounts only\nSee Quickstart Guide for setup instructions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lite Tier",
+      "Anchor": "lite-tier",
+      "SectionPath": [
+        "Getting Started by Tier",
+        "Lite Tier"
+      ],
+      "Text": "Scopes: r_profile_basicinfo, r_verify (same as Development)\nAccess all member data (with consent)\nSee Upgrade to Lite Tier for setup instructions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier",
+      "Anchor": "plus-tier",
+      "SectionPath": [
+        "Getting Started by Tier",
+        "Plus Tier"
+      ],
+      "Text": "Scopes: r_verify_details, r_profile_basicinfo, r_primary_current_experience, r_most_recent_education\nAccess to 2-legged OAuth for bulk validation\nSee Implementation Guide for setup instructions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do tokens work across tier upgrades?",
+      "Anchor": "do-tokens-work-across-tier-upgrades",
+      "SectionPath": [
+        "Common Questions",
+        "Do tokens work across tier upgrades?"
+      ],
+      "Text": "Yes! When you upgrade from Development to Lite or Lite to Plus:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do tokens work across tier upgrades?",
+      "Anchor": "do-tokens-work-across-tier-upgrades",
+      "SectionPath": [
+        "Common Questions",
+        "Do tokens work across tier upgrades?"
+      ],
+      "Text": "Existing access tokens remain valid\nMembers don\u0027t need to re-authorize (unless you add new scopes)\nOnly request new consent if adding scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I add more scopes?",
+      "Anchor": "how-do-i-add-more-scopes",
+      "SectionPath": [
+        "Common Questions",
+        "How do I add more scopes?"
+      ],
+      "Text": "If you need additional OAuth scopes (e.g., upgrading to Plus tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I add more scopes?",
+      "Anchor": "how-do-i-add-more-scopes",
+      "SectionPath": [
+        "Common Questions",
+        "How do I add more scopes?"
+      ],
+      "Text": "Update your authorization URL with new scopes\nAsk member to re-authorize\nNew tokens will include additional scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "3-legged OAuth (access token):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "Use refresh token to get new access token\nNo member interaction required",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "Example: Refresh Token Request",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "curl -X POST \u0022https://www.linkedin.com/oauth/v2/accessToken\u0022 \\\n  -H \u0022Content-Type: application/x-www-form-urlencoded\u0022 \\\n  --data-urlencode \u0027grant_type=refresh_token\u0027 \\\n  --data-urlencode \u0027refresh_token=\u003CREFRESH_TOKEN\u003E\u0027 \\\n  --data-urlencode \u0027client_id=\u003CCLIENT_ID\u003E\u0027 \\\n  --data-urlencode \u0027client_secret=\u003CCLIENT_SECRET\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "See Refresh Tokens Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "2-legged OAuth:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when tokens expire?",
+      "Anchor": "what-happens-when-tokens-expire",
+      "SectionPath": [
+        "Common Questions",
+        "What happens when tokens expire?"
+      ],
+      "Text": "Request new token using client credentials\nNo user interaction involved\nHappens automatically in 30 minutes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "\u2705 Store tokens securely \u2013 Encrypt at rest, never expose in client-side code\n\u2705 Use refresh tokens \u2013 Don\u0027t make users re-authenticate every 60 days\n\u2705 Request minimum scopes \u2013 Only request what you need\n\u2705 Handle token expiry gracefully \u2013 Implement automatic refresh logic\n\u2705 Validate redirect URIs \u2013 Redirect URIs must match exactly with Developer Portal settings. The OAuth 2.0 state parameter is the only supported dynamic query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication Guides",
+      "Anchor": "authentication-guides",
+      "SectionPath": [
+        "Related Resources",
+        "Authentication Guides"
+      ],
+      "Text": "Authorization Code Flow \u2013 3-legged OAuth\nClient Credentials Flow \u2013 2-legged OAuth\nRefresh Tokens \u2013 Token refresh\nDeveloper Portal Tools \u2013 Token management",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Reference",
+      "Anchor": "api-reference",
+      "SectionPath": [
+        "Related Resources",
+        "API Reference"
+      ],
+      "Text": "Profile Details API \u2013 Requires 3-legged OAuth\nVerification Report API \u2013 Requires 3-legged OAuth\nValidation Status API \u2013 Requires 2-legged OAuth (Plus only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Related Resources",
+        "Getting Started"
+      ],
+      "Text": "Quickstart Guide \u2013 Get started in 5 minutes\nImplementation Guide \u2013 OAuth best practices",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

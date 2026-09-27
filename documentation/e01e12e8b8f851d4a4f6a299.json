@@ -1,0 +1,5613 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing",
+  "Title": "A/B Testing API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/marketing-permissions-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "The A/B Testing API measures the performance of two campaigns with equal audiences and budgets to test one variable, such as creative content / ad format, targeting, or placement. The testing tool then selects a winner (if any), or verifies that the performance difference between the variants is insignificant or inconclusive. Optimize for the following KPIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Cost Per Click (CPC).\nCost Per Thousand Impressions (CPM).\nCost Per Video View (CPV).\nCost Per Message Sent (CPMS).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Currently, A/B Testing experiments can be created to compare 2 campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Experiments can be configured to automatically stop based on predefined criteria. For example, the experiment can be automatically stopped if a winner is picked at a defined confidence level. The confidence level can be defined when you create the experiment. Also automatically stop the experiment based on a stop time that you define.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Members within the user\u2019s target audience are randomly selected to see either variant of an experiment. Once selected, they\u0027ll never see the other variant for the duration of the experiment. Direct traffic unevenly by defining the trafficWeight field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "A/B Testing API",
+      "Anchor": "ab-testing-api",
+      "SectionPath": [],
+      "Text": "All API calls documented here require the header for the latest Rest.li protocol: X-Restli-Protocol-Version: 2.0.0. Refer to the Protocol Versions page to learn more about\u00A0Rest.li\u00A0Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s experiments. Restricted to experiments belonging to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to experiments belonging to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "If you\u0027re using legacy permissions, please refer to the Marketing Permissions Migration page for requesting legacy permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Although we can\u0027t guarantee that your experiment will be conclusive\u2014i.e., we can\u0027t guarantee that we\u0027ll be able to either (A) identify a winner or (B) confirm that there\u0027s no winner. However, we have provided a series of best practices that may increase your chances of getting a conclusive test result.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check for Experiment Warnings",
+      "Anchor": "check-for-experiment-warnings",
+      "SectionPath": [
+        "Best Practices",
+        "Check for Experiment Warnings"
+      ],
+      "Text": "Validation on potential experiment configuration issues can be pulled through the validateExperimentSetup Rest.li action. These warnings aim to alert you of issues that may compromise the results of your experiment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check for Experiment Warnings",
+      "Anchor": "check-for-experiment-warnings",
+      "SectionPath": [
+        "Best Practices",
+        "Check for Experiment Warnings"
+      ],
+      "Text": "Warnings can be fetched even before experiment is saved. We recommend always checking validation setup and addressing any warnings before the experiment is saved. The following flow is recommended to manage warnings:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check for Experiment Warnings",
+      "Anchor": "check-for-experiment-warnings",
+      "SectionPath": [
+        "Best Practices",
+        "Check for Experiment Warnings"
+      ],
+      "Text": "Create or edit an experiment setup.\nCall validateExperimentSetup Rest.li action and fetch the experiment\u2019s validation result for any errors/warnings.\nResolve any warnings that\u0027s unintended in experiment setup, and then save or update the experiment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set a High Confidence Level",
+      "Anchor": "set-a-high-confidence-level",
+      "SectionPath": [
+        "Best Practices",
+        "Set a High Confidence Level"
+      ],
+      "Text": "While we permit setting confidence levels as low as 51%, the best practice is to use higher confidence levels. We recommend confidence levels of at least 90%.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schedule Long Running Experiments",
+      "Anchor": "schedule-long-running-experiments",
+      "SectionPath": [
+        "Best Practices",
+        "Schedule Long Running Experiments"
+      ],
+      "Text": "We allow experiments to run for up to 90 days. The longer an experiment is run, the more conclusive and reliable the results will be.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Proportional Budgets",
+      "Anchor": "set-proportional-budgets",
+      "SectionPath": [
+        "Best Practices",
+        "Set Proportional Budgets"
+      ],
+      "Text": "An experiment has the most power if the campaigns that it\u0027s comparing are weighted equally. The more you skew the traffic weight, the less power you\u2019ll have. To ensure that you\u0027re weighted equally, we recommend that you create two new campaigns for your A/B test. However, if you do leverage uneven traffic weight, then the campaign\u2019s budgets should be proportional to their weights.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Restrictions"
+      ],
+      "Text": "We prohibit creating experiments of the following types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Restrictions"
+      ],
+      "Text": "Experiments that have the goal of manipulating / altering member\u2019s moods or emotions.\nExperiments designed to intentionally deliver a negative member experience.\nExperiments that involve sensitive categories, including race, ethnicity, national origin, gender, health, age, religion, political opinions, sexual orientation and union membership.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperiment Schema",
+      "Anchor": "adexperiment-schema",
+      "SectionPath": [
+        "Schemas",
+        "AdExperiment Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsoredAccount URN identifying the owner of the experiment. This field is create only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "autoStop",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An enum describing the configuration on when to stop the experiment and its campaigns. Possible values are: AUTO_STOP_AT_END_DATE - Default value. Stop the experiment once it reaches its end date, and automatically pause all campaigns within the experiment. AUTO_STOP_AT_WINNER - Stop the experiment once a winner has been declared or the experiment reaches its end date, and automatically pause all campaigns within the experiment. AUTO_STOP_DISABLED - Stop the experiment once it reaches its end date, but allow the campaigns to keep running. The traffic split no longer applies to the campaigns after the experiment is stopped.",
+            "Links": [],
+            "Values": [
+              "AUTO_STOP_AT_END_DATE - Default value. Stop the experiment once it reaches its end date, and automatically pause all campaigns within the experiment.",
+              "AUTO_STOP_AT_WINNER - Stop the experiment once a winner has been declared or the experiment reaches its end date, and automatically pause all campaigns within the experiment.",
+              "AUTO_STOP_DISABLED - Stop the experiment once it reaches its end date, but allow the campaigns to keep running. The traffic split no longer applies to the campaigns after the experiment is stopped."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "cells",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdExperimentCells",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentcell-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "A list of cells to compare under the experiment. This field must contain 2 cells. The array isn\u2019t editable after the experiment has started, the cell names and descriptions can be updated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "confidence",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An integer percent defining the confidence level of the experiment. For example, a value of 90 requires the experiment result to reach a confidence level of 90% to be considered valid.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description of this experiment. This is an optional field. Its length must not be more than 1,000 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch timestamp in milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment\u2019s actual end time. NULL until the experiment ends. The system may terminate the experiment before the scheduled end time. This field is read only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "executionState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An enum describing the execution state of the experiment. This field is read only. Possible values are: RUNNING - Experiment is running. PENDING - Experiment will start in the future, for example, the user has created the experiment, but the start date is set to future. ON_HOLD - Experiment is temporarily suspended. STOPPED - Experiment is stopped. However, it can run again in the future, for example, user extends the scheduledEndAt field. ENDED - Experiment is ended. It becomes immutable and can\u0027t run again.",
+            "Links": [],
+            "Values": [
+              "RUNNING - Experiment is running.",
+              "PENDING - Experiment will start in the future, for example, the user has created the experiment, but the start date is set to future.",
+              "ON_HOLD - Experiment is temporarily suspended.",
+              "STOPPED - Experiment is stopped. However, it can run again in the future, for example, user extends the scheduledEndAt field.",
+              "ENDED - Experiment is ended. It becomes immutable and can\u0027t run again."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID uniquely identifying the experiment. This field is read only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "keyMetric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A single metric defining the winning criteria - usually a cost-per-action metric such as cost-per-click. Possible values are: CPC - Cost per clickCPM - Cost per thousand impressions CPV - Cost per video view CPMS - Cost per message sent",
+            "Links": [],
+            "Values": [
+              "CPC - Cost per click",
+              "CPM - Cost per thousand impressions",
+              "CPV - Cost per video view",
+              "CPMS - Cost per message sent"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of this experiment. Does not have to be unique in account. This is a mandatory field. Its length must not be more than 100 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scheduledEndAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch timestamp in milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment\u2019s end time, as suggested by the user. Should be greater than the start time. Also, experiment can\u0027t be set to run for more than 90 days (i.e. end time - start time \u003C= 90 days).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scheduledStartAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch timestamp in milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment\u2019s start time, as suggested by the user. Setting a start time in the past will cause the experiment to start right away.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "terminationReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A message explaining why the experiment was moved to an ENDED state by LinkedIn. This field is read only. Our system will automatically end experiments for the following reasons: It has been 90 days since the experiment\u2019s start date. The experiment hit an erroneous condition.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#validation-error-code"
+            ],
+            "Values": [
+              "It has been 90 days since the experiment\u2019s start date.",
+              "The experiment hit an erroneous condition."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "userIntendedState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An enum describing the available states for the user to select in order to control the experiment. Possible values are: ACTIVECANCELEDDRAFTPAUSED",
+            "Links": [],
+            "Values": [
+              "ACTIVE",
+              "CANCELED",
+              "DRAFT",
+              "PAUSED"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdExperimentCell Schema",
+      "Anchor": "adexperimentcell-schema",
+      "SectionPath": [
+        "Schemas",
+        "AdExperimentCell Schema"
+      ],
+      "Text": "An AdExperimentCell contains a reference to an existing ads entity (e.g. a sponsoredCampaign URN) to be used in the experiment. It also contains metadata, such as the cell name and what percentage of traffic should see this cell.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentCell Schema",
+      "Anchor": "adexperimentcell-schema",
+      "SectionPath": [
+        "Schemas",
+        "AdExperimentCell Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of this cell. Does not need to be unique. This is a mandatory field. Its length must be less than 100 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A memo of what this cell is about. This is an optional field. Its length must be less than 500 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reference.campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredCampaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ads entity that this cell is associated with.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "trafficWeight",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An integer defining the percentage of traffic that will receive the cell treatment. The sum of all traffic weights in the experiment must equal 100.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "New experiments can be created by issuing a POST to the below URL. Experiments can be created individually.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "User must have one of the following ad account permissions in order to create an experiment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "An experiment must meet the following conditions. Otherwise, it will be rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "All required fields are present.\nThe start date is before the end date.\nThe experiment run time (i.e., end date - start date) is less than or equal to 90 days.\nThe confidence level is between 51 and 99.\nEach individual cell\u2019s trafficWeight value is between 1 and 99.\nThe sum of all cells\u2019 trafficWeight values is equal to 100.\nAny campaign included in a cell is not part of any other active or future experiments with overlapping run dates.\nThe experiment includes 2 cells with distinct campaigns from the same campaign group (and, therefore, from the same account).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Experiments",
+      "Anchor": "create-experiments",
+      "SectionPath": [
+        "Create Experiments"
+      ],
+      "Text": "Before creation, you may check the validity of your experiment\u2019s configuration by using the validation API. This endpoint will return warnings and errors indicating when something in your experiment may skew the results. Please refer to Validate Experiments for more information on warnings and errors that you may encounter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Experiments",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Experiments",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022name\u0022: \u0022Experiment 1\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n  \u0022keyMetric\u0022: \u0022CPC\u0022,\n  \u0022confidence\u0022: 90,\n  \u0022scheduledEndAt\u0022: 1562964400000,\n  \u0022scheduledStartAt\u0022: 1561964400000,\n  \u0022userIntendedState\u0022: \u0022ACTIVE\u0022,\n  \u0022autoStop\u0022: \u0022AUTO_STOP_DISABLED\u0022,\n  \u0022cells\u0022: [\n    {\n      \u0022name\u0022: \u0022cell1\u0022,\n      \u0022trafficWeight\u0022: 50,\n      \u0022reference\u0022: {\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022\n      }\n    },\n    {\n      \u0022name\u0022: \u0022cell2\u0022,\n      \u0022trafficWeight\u0022: 50,\n      \u0022reference\u0022: {\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Experiments",
+        "Sample Request"
+      ],
+      "Text": "Successful creation requests will return a 201 status with a full response body of the successfully created experiment along with its id.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions",
+      "SectionPath": [
+        "Create Experiments",
+        "Exceptions"
+      ],
+      "Text": "Following are expected exceptions from the Create end point.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Exceptions",
+      "Anchor": "exceptions",
+      "SectionPath": [
+        "Create Experiments",
+        "Exceptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status",
+        "Message",
+        "Error Detail Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad account doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_BRAND_LIFT_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has a brand lift test with overlapping schedule. A/B test can\u0027t run concurrently with a brand lift test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_ALREADY_SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "There is an already existing experiment with overlapping schedule containing same campaign.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_BID_MUST_BE_GREATER_THAN_MINIMUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You must set a higher bid price than minimum for this campaign type.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUPS_DIFFERENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns in the experiment belong to different campaign groups under the same account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_DYNAMIC_BUDGET_OPTIMIZATION_MUST_BE_DISABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You should disable Campaign Group Dynamic Budget Optimization for valid A/B test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u0027t allow campaign to be served. For example, campaign is canceled. This can\u0027t be reverted by the user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGNS_FROM_DIFFERENT_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns referenced in the experiment belong to two separate accounts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DUPLICATE_ELEMENTS_IN_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Both cells reference the same entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User has no access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_CONFIDENCE_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s confidence value must be \u003E= 51 AND \u003C= 99.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled end time is not valid. It can\u0027t be in the past or more than 180 days in the future.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_NO_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment must contain exactly 2 cells.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SCHEDULE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s schedule is not valid. Experiment can\u0027t be scheduled to run for more than 90 days.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled start time is not valid. It has to be positive.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATE_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user is attempting to make a state change that\u0027s not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SUM_OF_WEIGHT_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sum of traffic weight of cells must equal 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_WEIGHT_OF_CELL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A cell has an unexpected traffic weight. It must be \u003E= 1, and \u003C= 99.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. Please see errorDetails for more information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentErrorDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input doesn\u0027t match schema.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SET_OR_UPDATE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is attempting to either set or modify a field(s) which is not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Experiments",
+      "Anchor": "validate-experiments",
+      "SectionPath": [
+        "Validate Experiments"
+      ],
+      "Text": "Experiments can be validated for potential configuration issues that could compromise the results of the experiment. For example, if a Sponsored Campaign in an experiment was running while the experiment was on hold, this could skew the experiment results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Experiments",
+      "Anchor": "validate-experiments",
+      "SectionPath": [
+        "Validate Experiments"
+      ],
+      "Text": "The validation status can be retrieved at any time during and after the creation of an experiment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Possible Validation Warnings",
+      "Anchor": "possible-validation-warnings",
+      "SectionPath": [
+        "Validate Experiments",
+        "Possible Validation Warnings"
+      ],
+      "Text": "For the full list of possible validation warnings and errors, see Validation Error Code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentValidationResult Schema",
+      "Anchor": "adexperimentvalidationresult-schema",
+      "SectionPath": [
+        "Validate Experiments",
+        "AdExperimentValidationResult Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "experimentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "items",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdExperimentValidationResultItems",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationresultitem-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array containing all of the validation result items.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch timestamp in milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the validation was run.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentValidationResultItem Schema",
+      "Anchor": "adexperimentvalidationresultitem-schema",
+      "SectionPath": [
+        "Validate Experiments",
+        "AdExperimentValidationResultItem Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The error code of the validation result item.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#validation-error-code"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "detail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional data associated with a single validation error of experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An enum describing the level of a validation result item. Possible values: WARNINGERROR",
+            "Links": [],
+            "Values": [
+              "WARNING",
+              "ERROR"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message of the validation result item.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentValidationDetail Schema",
+      "Anchor": "adexperimentvalidationdetail-schema",
+      "SectionPath": [
+        "Validate Experiments",
+        "AdExperimentValidationDetail Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredCampaignUrn, SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the entity because of which validation error happened.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pathErrors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of InputError",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of InputError where each InputError contains information about the pathSpec and error in it",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Endpoint",
+      "Anchor": "validate-endpoint",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint"
+      ],
+      "Text": "These warnings are retrievable through a sub-resource to check the validity of an experiment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Validate Endpoint",
+      "Anchor": "validate-endpoint",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments?action=validateExperimentSetup",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Endpoint",
+      "Anchor": "validate-endpoint",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint"
+      ],
+      "Text": "This endpoint returns an AdExperimentValidationResult object. This object contains an array of objects called AdExperimentValidationResultItem that provide details on what may be misconfigured. The schemas of these 2 objects are defined above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Endpoint",
+      "Anchor": "validate-endpoint",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate Endpoint",
+      "Anchor": "validate-endpoint",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint"
+      ],
+      "Text": "When a new experiment (which is not stored) is sent for validation, the id field can\u0027t be present in the request body. When an existing entity or modified version of existing entity is sent for validation, id must be present in the request body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments?action=validateExperimentSetup",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022adExperiment\u0022: {\n    \u0022name\u0022: \u0022Test1\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:1234567\u0022,\n    \u0022keyMetric\u0022: \u0022CPC\u0022,\n    \u0022confidence\u0022: 90,\n    \u0022scheduledEndAt\u0022: 1562119781530,\n    \u0022scheduledStartAt\u0022: 1561119781530,\n    \u0022userIntendedState\u0022: \u0022ACTIVE\u0022,\n    \u0022autoStop\u0022: \u0022AUTO_STOP_DISABLED\u0022,\n    \u0022cells\u0022: [\n      {\n        \u0022name\u0022: \u0022cell1\u0022,\n        \u0022trafficWeight\u0022: 50,\n        \u0022reference\u0022: {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:12345\u0022\n        }\n      },\n      {\n        \u0022name\u0022: \u0022cell2\u0022,\n        \u0022trafficWeight\u0022: 50,\n        \u0022reference\u0022: {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:22345\u0022\n        }\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validate Endpoint",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022items\u0022: [\n      {\n        \u0022code\u0022: \u0022CAMPAIGN_STARTS_TOO_EARLY\u0022,\n        \u0022level\u0022: \u0022WARNING\u0022,\n        \u0022detail\u0022: {\n          \u0022associatedEntity\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:12345\u0022\n          }\n        },\n        \u0022message\u0022: \u0022The campaign is scheduled to run before the experiment scheduled start time.\u0022\n      }\n    ],\n    \u0022validatedAt\u0022: 1557857848554\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Validation Error Code",
+      "Anchor": "validation-error-code",
+      "SectionPath": [
+        "Validate Experiments",
+        "Validation Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Error",
+        "Description",
+        "Level",
+        "Impact"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AB_TEST_BUDGET_BELOW_RECOMMENDATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "While conclusive results are never guaranteed, you can increase the likelihood of a conclusive test result by increasing your test budget to $5,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AB_TEST_CANCELED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Due to your particular test setup, your test results and statistical strength can continue to fluctuate up or down for a number of days after your scheduled end date. For the most accurate readout, wait until your test has completed and this period has passed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AB_TEST_DURATION_BELOW_RECOMMENDATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "While conclusive results are never guaranteed, you can increase the likelihood of a conclusive test result by running your test for at least 3 weeks.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AB_TEST_DURATION_BELOW_REQUIREMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Each variant in the test must have an audience size of at least 1,000,000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AB_TEST_PAUSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pausing this test will pause both campaigns. Your test\u0027s end date won\u0027t change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_BRAND_LIFT_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has a brand lift test with overlapping schedule. A/B test can\u0027t run concurrently with a brand lift test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad account doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u0027t allow account to be served. For example, account is canceled. This can\u0027t be reverted by user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_ON_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User doesn\u0027t allow account to be served. For example, account has total budget on hold flag. This can be reverted by user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in experiment being put on hold while it runs; experiment may not run for its intended duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_TOTAL_BUDGET_BELOW_AB_TEST_BUDGET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad account\u0027s budget doesn\u0027t cover this A/B test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_TOTAL_BUDGET_ENDS_TOO_SOON",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad account\u2019s total budget ends before the experiment ends.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in experiment being put on hold while it runs; experiment may not run for its intended duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BUDGET_AND_CELL_WEIGHT_NOT_PROPORTIONAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The budget allocation of the cells is not proportional to their traffic weight allocation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in biased experiment result.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_ALREADY_SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "There is an already existing experiment with overlapping schedule containing same campaign.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_AUDIENCE_EXPANSION_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign has the Audience Expansion feature enabled. A/B testing is currently not supported for the Audience Expansion feature, and this may result in inaccurate statistical results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in biased experiment result",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_AUDIENCE_SIZE_BELOW_RECOMMENDATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "While conclusive results are never guaranteed, you can increase the likelihood of a conclusive test result by increasing your test budget to $5,000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_AUDIENCE_SIZE_BELOW_REQUIREMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Each variant in the test must have an audience size of at least 1,000,000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_BID_MUST_BE_GREATER_THAN_MINIMUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You must set a higher bid price than minimum for this campaign type.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_DIFFERENT_TARGETING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns referenced in the experiment are targeting different audiences.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_FINISHES_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign is scheduled to end before the experiments scheduled end time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in experiment being put on hold while it runs; experiment may not run for its intended duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_DYNAMIC_BUDGET_OPTIMIZATION_MUST_BE_DISABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You should disable Campaign Group Dynamic Budget Optimization for valid A/B test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_SCHEDULE_ENDS_TOO_SOON",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your campaign group\u0027s budget ends before the test end date. If you don\u0027t update the campaign group budget, then the test may be put on hold before it reaches its end date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_TOTAL_BUDGET_BELOW_AB_TEST_BUDGET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign group\u0027s budget doesn\u0027t cover this A/B test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An experiment can\u0027t be created",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUPS_DIFFERENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns in the experiment belong to different campaign groups under the same account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u2019t allow campaign to be served. For example, campaign is canceled. This can\u0027t be reverted by the user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_ON_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User doesn\u0027t allow campaign to be served. For example, campaign is paused by user. This can be reverted by user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in experiment being put on hold while it runs; experiment may not run for its intended duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_STARTS_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign is scheduled to run before the experiment starts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in biased experiment result",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_STARTS_TOO_LATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign is scheduled to start after the experiments scheduled start time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in experiment being put on hold while it runs; experiment may not run for its intended duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGNS_FROM_DIFFERENT_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaigns referenced in the experiment belong to two separate accounts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATIVE_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u0027t allow any creatives from one of the cells to be served. For example, all creatives are canceled in one campaign. This can\u0027t be reverted by user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Will result in experiment being marked as canceled before its result is reached",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATIVE_ON_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User doesn\u0027t allow any creatives from one of cells to be served. For example, all creatives are paused in one campaign. This can be reverted by user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May result in experiment being put on hold while it runs; experiment may not run for its intended duration.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DUPLICATE_ELEMENTS_IN_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Both cells reference the same entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_CONFIDENCE_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s confidence value must be \u003E= 51 AND \u003C= 99.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled end time is not valid. It can\u0027t be in the past or more than 180 days in the future.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_KEY_METRIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns can\u0027t provide information for the experiment\u0027s KeyMetric. For example, campaign ad format is not video, but experiment\u0027s KeyMetric is CPV.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment can\u0027t be created",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_NO_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment must contain exactly 2 cells.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SCHEDULE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s schedule is not valid. Experiment can\u0027t be scheduled to run for more than 90 days.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled start time is not valid. It has to be positive.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATE_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user is attempting to make a state change that\u0027s not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SUM_OF_WEIGHT_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sum of traffic weight of cells must equal 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_WEIGHT_OF_CELL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A cell has an unexpected traffic weight. Cell weights must be \u003E= 1, and \u003C= 99.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO_ACTIVE_CREATIVES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "At least one variant in your A/B test has no Active creatives. Your A/B test can\u0027t run until both variants have at least one Active creative.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input doesn\u0027t match the schema.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SET_OR_UPDATE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is attempting to either set or modify a field(s) which is not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOME_CREATIVES_IN_DRAFT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "At least one creative in your A/B test is in Draft. A creative can\u0027t run as part of your A/B test until it\u0027s Active.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WARN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-1",
+      "SectionPath": [
+        "Validate Experiments",
+        "Exceptions"
+      ],
+      "Text": "Valid Rest.li action should always succeed without any exception.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Experiment",
+      "Anchor": "get-experiment",
+      "SectionPath": [
+        "Get Experiment"
+      ],
+      "Text": "Experiments can be fetched individually. Use the endpoint below to fetch a single experiment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Experiment",
+      "Anchor": "get-experiment",
+      "SectionPath": [
+        "Get Experiment"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperiments/{AdExperimentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Experiment",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022id\u0022: 123,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n  \u0022name\u0022: \u0022Test Experiment\u0022,\n  \u0022description\u0022: \u0022This is a test experiment\u0022,\n  \u0022scheduledStartAt\u0022: 1542148557000,\n  \u0022scheduledEndAt\u0022: 1544740556000,\n  \u0022endedAt\u0022: 1544740556000,\n  \u0022cells\u0022: [\n    {\n      \u0022name\u0022: \u0022Campaign 1\u0022,\n      \u0022description\u0022: \u0022This is campaign 1\u0022,\n      \u0022trafficWeight\u0022: 50,\n      \u0022reference\u0022: {\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022\n      }\n    },\n    {\n      \u0022name\u0022: \u0022Campaign 2\u0022,\n      \u0022description\u0022: \u0022This is campaign 2\u0022,\n      \u0022trafficWeight\u0022: 50,\n      \u0022reference\u0022: {\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345\u0022\n      }\n    }\n  ],\n  \u0022userIntendedState\u0022: \u0022ACTIVE\u0022,\n  \u0022executionState\u0022: \u0022ENDED\u0022,\n  \u0022autoStop\u0022: \u0022AUTO_STOP_AT_END_DATE\u0022,\n  \u0022confidence\u0022: 90,\n  \u0022keyMetric\u0022: \u0022CPC\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-2",
+      "SectionPath": [
+        "Get Experiment",
+        "Exceptions"
+      ],
+      "Text": "Following are expected exceptions from the Get end point:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-2",
+      "SectionPath": [
+        "Get Experiment",
+        "Exceptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status",
+        "Message"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperiment referenced in the request doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Experiments",
+      "Anchor": "batch-get-experiments",
+      "SectionPath": [
+        "Batch Get Experiments"
+      ],
+      "Text": "Experiments can be fetched in batch as below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Experiments",
+      "Anchor": "batch-get-experiments",
+      "SectionPath": [
+        "Batch Get Experiments"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperiments?ids=List(12685,11111)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Get Experiments",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u002212685\u0022: {\n      \u0022keyMetric\u0022: \u0022CPM\u0022,\n      \u0022scheduledStartAt\u0022: 1565568000000,\n      \u0022scheduledEndAt\u0022: 1573171200000,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:member:123456\u0022,\n        \u0022time\u0022: 1565631108588\n      },\n      \u0022confidence\u0022: 90,\n      \u0022executionState\u0022: \u0022ON_HOLD\u0022,\n      \u0022autoStop\u0022: \u0022AUTO_STOP_AT_WINNER\u0022,\n      \u0022userIntendedState\u0022: \u0022ACTIVE\u0022,\n      \u0022cells\u0022: [\n        {\n          \u0022name\u0022: \u0022control\u0022,\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123456\u0022\n          },\n          \u0022trafficWeight\u0022: 50\n        },\n        {\n          \u0022name\u0022: \u0022test\u0022,\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:223456\u0022\n          },\n          \u0022trafficWeight\u0022: 50\n        }\n      ],\n      \u0022name\u0022: \u0022My Test\u0022,\n      \u0022id\u0022: 12685,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:member:123456\u0022,\n        \u0022time\u0022: 1565631108594\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022\n    }\n  },\n  \u0022errors\u0022: {\n    \u002211111\u0022: {\n      \u0022code\u0022: \u0022EXPERIMENT_NOT_FOUND\u0022,\n      \u0022exceptionClass\u0022: \u0022com.linkedin.restli.server.RestLiServiceException\u0022,\n      \u0022message\u0022: \u0022AdExperiment referenced in the request doesn\u0027t exist\u0022,\n      \u0022status\u0022: 404\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-3",
+      "SectionPath": [
+        "Batch Get Experiments",
+        "Exceptions"
+      ],
+      "Text": "Batch get should always expect 200 response code. Each experiment is mapped to an individual response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "Experiments can be updated before and after the experiment starts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments/{AdExperimentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "Before the experiment starts, nearly all fields can be updated. The only exception is account which can never be modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "After the experiment starts, only the following fields can be updated:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "name\ndescription\nscheduledEndAt\nautoStop\nconfidence\nuserIntendedState\nAdExperimentCell.name\nAdExperimentCell.description",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "While scheduledEndAt can be updated after the experiment has already started, it can\u0027t be extended so far that scheduledEndAt - scheduledStartAt \u003E 90 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "All fields not included in the above list are immutable once the experiment starts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "Once the experiment is ended, all fields are immutable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "The user must have one of the following ad account permissions in order to update an experiment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "The endpoint for updating a single experiment is below. The request must include this header: X-RestLi-Method: partial_update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Experiments",
+      "Anchor": "update-experiments",
+      "SectionPath": [
+        "Update Experiments"
+      ],
+      "Text": "The patch content in the request body must contain the entire top level field being updated. This is especially important if the field is a complex object. For example, to change the description of an experiment cell, the request must contain the entire body of the cells field, rather than just a single field of a single cell.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Update Experiments",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Update Experiments",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022scheduledEndAt\u0022: 1792221412\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Experiments",
+        "Sample Request"
+      ],
+      "Text": "The following example updates a value within the cells array so the entire cells array must be provided.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Experiments",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Experiments",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022cells\u0022: [\n        {\n          \u0022name\u0022: \u0022Updated Campaign 1\u0022,\n          \u0022description\u0022: \u0022This is campaign 1\u0022,\n          \u0022trafficWeight\u0022: 50,\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022\n          }\n        },\n        {\n          \u0022name\u0022: \u0022Campaign 2\u0022,\n          \u0022description\u0022: \u0022This is campaign 2\u0022,\n          \u0022trafficWeight\u0022: 50,\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345\u0022\n          }\n        }\n      ]\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-4",
+      "SectionPath": [
+        "Update Experiments",
+        "Exceptions"
+      ],
+      "Text": "Following are expected exceptions from Update end point.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-4",
+      "SectionPath": [
+        "Update Experiments",
+        "Exceptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Http Status",
+        "Message",
+        "Error Detail Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_BRAND_LIFT_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has a brand lift test with overlapping schedule. A/B test can\u0027t run concurrently with a brand lift test.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_ALREADY_SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "There is an already existing experiment with overlapping schedule containing same campaign.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUPS_DIFFERENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns in the experiment belong to different campaign groups under the same account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u0027t allow campaign to be served. For example, campaign is canceled. This can\u0027t be reverted by the user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGNS_FROM_DIFFERENT_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns referenced in the experiment belong to two separate accounts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DUPLICATE_ELEMENTS_IN_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Both cells reference the same entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperiment referenced in the request doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User has no access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_CONFIDENCE_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s confidence value must be \u003E= 51 AND \u003C= 99.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled end time is not valid. It can\u0027t be in the past or more than 180 days in the future.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_NO_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment must contain exactly 2 cells.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SCHEDULE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s schedule is not valid. Experiment can\u0027t be scheduled to run for more than 90 days.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled start time is not valid. It has to be positive.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATE_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user is attempting to make a state change that\u0027s not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SUM_OF_WEIGHT_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sum of traffic weight of cells must equal 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_WEIGHT_OF_CELL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A cell has an unexpected traffic weight. It must be \u003E= 1, and \u003C= 99.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. Please see errorDetails for more information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentErrorDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input doesn\u0027t match schema.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SET_OR_UPDATE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is attempting to either set or modify a field(s) which is not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WRITE_CONFLICT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User is trying to modify an entity which is already updated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Experiments",
+      "Anchor": "find-experiments",
+      "SectionPath": [
+        "Find Experiments"
+      ],
+      "Text": "Experiments can be fetched in batch according to certain search criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Experiments",
+      "Anchor": "find-experiments",
+      "SectionPath": [
+        "Find Experiments"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperiments?q=search\u0026search=({criteria}:(values:List({value_list})))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Find Experiments",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Designates the query finder. Must be search for the Experiment Finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search criteria, the following enum values are supported:accountCriteria idCriteria campaignCriteria campaignGroupCriteria keyMetricCriteria userIntendedStateCriteria executionStateCriteria",
+            "Links": [],
+            "Values": [
+              "accountCriteria",
+              "idCriteria",
+              "campaignCriteria",
+              "campaignGroupCriteria",
+              "keyMetricCriteria",
+              "userIntendedStateCriteria",
+              "executionStateCriteria"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sort",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional sort criteria, contains a list of field and order",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "field supports the following enum values:ID NAME SCHEDULED_START_AT SCHEDULED_END_AT ENDED_AT USER_INTENDED_STATE EXECUTION_STATECREATED",
+            "Links": [],
+            "Values": [
+              "ID",
+              "NAME",
+              "SCHEDULED_START_AT",
+              "SCHEDULED_END_AT",
+              "ENDED_AT",
+              "USER_INTENDED_STATE",
+              "EXECUTION_STATE",
+              "CREATED"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "order supports the following enum values:ASCENDINGDESCENDING If not provided, it defaults to ASCENDING.",
+            "Links": [],
+            "Values": [
+              "ASCENDING",
+              "DESCENDING"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Find Experiments",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Search Criteria",
+        "Description",
+        "Value Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "accountCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by Ad account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Sponsored Campaign URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroupCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by campaign group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign Group URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "executionStateCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by executionState of experiment, the following enum values are supported: PENDINGRUNNINGON_HOLDSTOPPEDENDED",
+            "Links": [],
+            "Values": [
+              "PENDING",
+              "RUNNING",
+              "ON_HOLD",
+              "STOPPED",
+              "ENDED"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "idCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by experiment id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "keyMetricCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by key metric of experiment, the following enum values are supported: CPC: Cost per clickCPM: Cost per thousand impressionsCPV: Cost per video viewCPMS: Cost per message sent",
+            "Links": [],
+            "Values": [
+              "CPC: Cost per click",
+              "CPM: Cost per thousand impressions",
+              "CPV: Cost per video view",
+              "CPMS: Cost per message sent"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "userIntendedStateCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by userIntendedState of experiment, the following enum values are supported: ACTIVECANCELEDDRAFTPAUSED",
+            "Links": [],
+            "Values": [
+              "ACTIVE",
+              "CANCELED",
+              "DRAFT",
+              "PAUSED"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find Experiments",
+        "Sample Request"
+      ],
+      "Text": "The following sample request finds all experiments that contain a specific campaign 1234567 as its cell, sorting by name and created timestamp.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find Experiments",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperiments?q=search\u0026search=(campaignCriteria:(values:List(urn%3Ali%3AsponsoredCampaign%3A1234567)))\u0026sort=List((field:NAME),(field:CREATED,order:DESCENDING))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find Experiments",
+        "Sample Request"
+      ],
+      "Text": "The following is a complex sample request that involve all search criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find Experiments",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperiments?/adExperiments?q=search\u0026search=(accountCriteria:(values:List(urn%3Ali%3AsponsoredAccount%3A1234567)),campaignCriteria:(values:List(urn%3Ali%3AsponsoredCampaign%3A1234567)),keyMetricCriteria:(values:List(CPC)),userIntendedStateCriteria:(values:List(ACTIVE)),executionStateCriteria:(values:List(PENDING,RUNNING)),campaignGroupCriteria:(values:List(urn%3Ali%3AsponsoredCampaignGroup%3A1234567)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Find Experiments",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022keyMetric\u0022: \u0022CPC\u0022,\n      \u0022scheduledStartAt\u0022: 1568062327739,\n      \u0022scheduledEndAt\u0022: 1575162000000,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:member:1234567\u0022,\n        \u0022time\u0022: 1568063540121\n      },\n      \u0022confidence\u0022: 90,\n      \u0022executionState\u0022: \u0022RUNNING\u0022,\n      \u0022autoStop\u0022: \u0022AUTO_STOP_DISABLED\u0022,\n      \u0022userIntendedState\u0022: \u0022ACTIVE\u0022,\n      \u0022cells\u0022: [\n        {\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:1234567\u0022\n          },\n          \u0022trafficWeight\u0022: 50,\n          \u0022name\u0022: \u0022test cell\u0022\n        },\n        {\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:2234567\u0022\n          },\n          \u0022trafficWeight\u0022: 50,\n          \u0022name\u0022: \u0022control cell\u0022\n        }\n      ],\n      \u0022name\u0022: \u0022Test blue vs. red\u0022,\n      \u0022id\u0022: 11113,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:member:1234567\u0022,\n        \u0022time\u0022: 1568063540121\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:1234567\u0022\n    },\n    {\n      \u0022keyMetric\u0022: \u0022CPC\u0022,\n      \u0022scheduledStartAt\u0022: 1568062327739,\n      \u0022scheduledEndAt\u0022: 1575162000000,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:member:1234567\u0022,\n        \u0022time\u0022: 1568062451794\n      },\n      \u0022confidence\u0022: 90,\n      \u0022executionState\u0022: \u0022ENDED\u0022,\n      \u0022autoStop\u0022: \u0022AUTO_STOP_DISABLED\u0022,\n      \u0022userIntendedState\u0022: \u0022CANCELED\u0022,\n      \u0022cells\u0022: [\n        {\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:1234567\u0022\n          },\n          \u0022trafficWeight\u0022: 50,\n          \u0022name\u0022: \u0022test cell\u0022\n        },\n        {\n          \u0022reference\u0022: {\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:3234567\u0022\n          },\n          \u0022trafficWeight\u0022: 50,\n          \u0022name\u0022: \u0022control cell\u0022\n        }\n      ],\n      \u0022name\u0022: \u0022Test blue vs. purple\u0022,\n      \u0022id\u0022: 11103,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:member:1234567\u0022,\n        \u0022time\u0022: 1568063172152\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:1234567\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 2,\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-5",
+      "SectionPath": [
+        "Find Experiments",
+        "Exceptions"
+      ],
+      "Text": "Finder requests should always succeed without any exception.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Experiments",
+      "Anchor": "delete-experiments",
+      "SectionPath": [
+        "Delete Experiments"
+      ],
+      "Text": "An experiment can be deleted by issuing a DELETE call to the URL below. Experiments can only be deleted individually.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Experiments",
+      "Anchor": "delete-experiments",
+      "SectionPath": [
+        "Delete Experiments"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adExperiments/{AdExperimentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Experiments",
+      "Anchor": "delete-experiments",
+      "SectionPath": [
+        "Delete Experiments"
+      ],
+      "Text": "The user must have one of the following ad account permissions in order to delete an experiment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Experiments",
+      "Anchor": "delete-experiments",
+      "SectionPath": [
+        "Delete Experiments"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Experiments",
+      "Anchor": "delete-experiments",
+      "SectionPath": [
+        "Delete Experiments"
+      ],
+      "Text": "To delete an experiment, its executionState must be PENDING. If it\u2019s not, then the request will be rejected with an HTTP response code 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Delete Experiments",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adExperiments/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-6",
+      "SectionPath": [
+        "Delete Experiments",
+        "Exceptions"
+      ],
+      "Text": "Following are expected Exception from Delete end point.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-6",
+      "SectionPath": [
+        "Delete Experiments",
+        "Exceptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status",
+        "Message",
+        "Error Detail Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DELETION_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "405",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete operation is not allowed except for experiments in PENDING execution state.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperiment referenced in the request doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User has no access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Experiment Results",
+      "Anchor": "get-experiment-results",
+      "SectionPath": [
+        "Get Experiment Results"
+      ],
+      "Text": "Experiment\u2019s result contains details on the cell that won the experiment, as well as the confidence for the experiment result. This is re-evaluated on a daily basis, always folding in the new data collected over the past day. The generatedOn field is the cutoff point at which we stopped considering that new data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Experiment Results",
+      "Anchor": "get-experiment-results",
+      "SectionPath": [
+        "Get Experiment Results"
+      ],
+      "Text": "A single result can be retrieved as below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Experiment Results",
+      "Anchor": "get-experiment-results",
+      "SectionPath": [
+        "Get Experiment Results"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperimentResults/{AdExperimentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentResult Schema",
+      "Anchor": "adexperimentresult-schema",
+      "SectionPath": [
+        "Get Experiment Results",
+        "AdExperimentResult Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "experimentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "generatedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cutoff time for considering data to generate the current experiment result. Always midnight UTC. Of the format (day, month, year).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The p value for the analysis result. In the range of [0, 1], with two digits of precision after the decimal point. Empty if no winner is selected. We only report the p value and the winner if (1 - p value) is greater than or equal to the confidence level specified at experiment setup.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minimumDetectableEffect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum detectable effect is the smallest difference between two cells that the system can detect in an experiment. For example, a minimum detectable effect of 0.08 means that the system can only detect a difference if one cell performs at least 8% better than the other. It can also be used to better understand experiment results. When an experiment comes back as no winner but has a small minimum detectable effect (e.g., 0.02), then there\u0027s no practical difference between the two cells. We suggest using a threshold of 0.1 for this purpose.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "winner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentCell URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the winning cell, if the system is able to identify a winner of the experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cellResults",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdExperimentCellResults",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentcellresult-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The statistical result of every cell for the key metric defined at experiment setup. Empty when no result has been collected.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentCellResult Schema",
+      "Anchor": "adexperimentcellresult-schema",
+      "SectionPath": [
+        "Get Experiment Results",
+        "AdExperimentCellResult Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "cell",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentCell URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The AdExperimentCell URN for which the result is generated. Of the form urn:li:adExperimentCell:(entity_urn,experiment_id) For example: urn:li:adExperimentCell:(urn:li:sponsoredCampaign:1234,567) for campaign ID 1234 in experiment ID 567.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "confidenceInterval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ConfidenceInterval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The confidence interval of the AdExperimentKeyMetric for this cell, based on the confidence level specified at experiment setup.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "confidenceInterval.lowerBound",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lower bound of the confidence interval.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "confidenceInterval.upperBound",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive upper bound of the confidence interval.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get Experiment Results",
+        "AdExperimentCellResult Schema",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperimentResults/123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Get Experiment Results",
+        "AdExperimentCellResult Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022experimentId\u0022: 123,\n  \u0022generatedOn\u0022: {\n    \u0022day\u0022: 12,\n    \u0022month\u0022: 12,\n    \u0022year\u0022: 2018\n  },\n  \u0022pValue\u0022: 0.05,\n  \u0022minimumDetectableEffect\u0022: 0.09,\n  \u0022winner\u0022: \u0022urn:li:adExperimentCell:(urn:li:sponsoredCampaign:1234,123)\u0022,\n  \u0022cellResults\u0022: [\n    {\n      \u0022cell\u0022: \u0022urn:li:adExperimentCell:(urn:li:sponsoredCampaign:1234,123)\u0022,\n      \u0022confidenceInterval\u0022: {\n        \u0022upperBound\u0022: 5.62,\n        \u0022lowerBound\u0022: 4.39\n      }\n    },\n    {\n      \u0022cell\u0022: \u0022urn:li:adExperimentCell:(urn:li:sponsoredCampaign:5678,123)\u0022,\n      \u0022confidenceInterval\u0022: {\n        \u0022upperBound\u0022: 8.76,\n        \u0022lowerBound\u0022: 5.23\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-7",
+      "SectionPath": [
+        "Get Experiment Results",
+        "Exceptions"
+      ],
+      "Text": "Following are expected exceptions from the Delete end point:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-7",
+      "SectionPath": [
+        "Get Experiment Results",
+        "Exceptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status",
+        "Message",
+        "Error Detail Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User has no access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperiment referenced in the request doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_RESULT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperiment referenced in the request exists. But corresponding result is not generated yet.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Experiments Results",
+      "Anchor": "find-experiments-results",
+      "SectionPath": [
+        "Find Experiments Results"
+      ],
+      "Text": "Experiment results can be fetched in batch according to certain search criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Experiments Results",
+      "Anchor": "find-experiments-results",
+      "SectionPath": [
+        "Find Experiments Results"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperimentResults?q=search\u0026criteria=({criteria}:(values:List({value_list})))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Find Experiments Results",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Designates the query finder. Must be search for the Experiment Finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "searchByCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search criteria, the following enum values are supported: experimentIds",
+            "Links": [],
+            "Values": [
+              "experimentIds"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Find Experiments Results",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Search Criteria",
+        "Description",
+        "Value Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "experimentIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search by list of experiment IDs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Find Experiments Results",
+        "Sample Request"
+      ],
+      "Text": "The following sample request finds the experiment results for experiments with id 123 and 234.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Find Experiments Results",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adExperimentResults/?q=searchByCriteria\u0026criteria=(experimentIds:List(123,234))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Find Experiments Results",
+        "Sample Response"
+      ],
+      "Text": "[\n  {\n    \u0022winner\u0022: \u0022urn:li:adExperimentCell:(5678,123)\u0022,\n    \u0022generatedOn\u0022: {\n      \u0022month\u0022: 3,\n      \u0022year\u0022: 2019,\n      \u0022day\u0022: 22\n    },\n    \u0022cellResults\u0022: [\n      {\n        \u0022confidenceInterval\u0022: {\n          \u0022upperBound\u0022: 2.5,\n          \u0022lowerBound\u0022: 1.2\n        },\n        \u0022cell\u0022: \u0022urn:li:adExperimentCell:(5678,123)\u0022\n      },\n      {\n        \u0022confidenceInterval\u0022: {\n          \u0022upperBound\u0022: 2.5,\n          \u0022lowerBound\u0022: 1.2\n        },\n        \u0022cell\u0022: \u0022urn:li:adExperimentCell:(6789,123)\u0022\n      }\n    ],\n    \u0022pValue\u0022: 0.05,\n    \u0022minimumDetectableEffect\u0022: 0.09,\n    \u0022experimentId\u0022: 123\n  },\n  {\n    \u0022winner\u0022: \u0022urn:li:adExperimentCell:(7928534,234\u0022,\n    \u0022generatedOn\u0022: {\n      \u0022month\u0022: 6,\n      \u0022year\u0022: 2019,\n      \u0022day\u0022: 21\n    },\n    \u0022cellResults\u0022: [\n      {\n        \u0022confidenceInterval\u0022: {\n          \u0022upperBound\u0022: 3.5,\n          \u0022lowerBound\u0022: 2.2\n        },\n        \u0022cell\u0022: \u0022urn:li:adExperimentCell:(9015782,234)\u0022\n      },\n      {\n        \u0022confidenceInterval\u0022: {\n          \u0022upperBound\u0022: 2.7,\n          \u0022lowerBound\u0022: 1.6\n        },\n        \u0022cell\u0022: \u0022urn:li:adExperimentCell:(7928534,234)\u0022\n      }\n    ],\n    \u0022pValue\u0022: 0.06,\n    \u0022minimumDetectableEffect\u0022: 0.12,\n    \u0022experimentId\u0022: 234\n  }\n]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Exceptions",
+      "Anchor": "exceptions-8",
+      "SectionPath": [
+        "Find Experiments Results",
+        "Exceptions"
+      ],
+      "Text": "Finder requests should always succeed without any exception.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error in Request Processing",
+      "Anchor": "error-in-request-processing",
+      "SectionPath": [
+        "Error in Request Processing"
+      ],
+      "Text": "Error response uses AdExperimentErrorDetail schema. It is similar to Validation Response but doesn\u0027t have level field. Most of the error code have been reused from validation response and few more values are allowed which are specific to exception.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AdExperimentErrorDetail Schema",
+      "Anchor": "adexperimenterrordetail-schema",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetail Schema"
+      ],
+      "Text": "An AdExperimentErrorDetail Schema is used to contain error information whenever there are multiple errors in any REST request. The schema of this is similar to AdExperimentValidationDetail schema with a difference that code contains some additional values that are not expected with validation of a single resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentErrorDetail Schema",
+      "Anchor": "adexperimenterrordetail-schema",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetail Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdExperimentErrorDetailItem",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetailitem-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array of error detail item, each item representing one failure.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdExperimentErrorDetailItem Schema",
+      "Anchor": "adexperimenterrordetailitem-schema",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailItem Schema"
+      ],
+      "Text": "The AdExperimentErrorDetailItem schema is used to contain error information of a single error whenever there are multiple errors in any REST Request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentErrorDetailItem Schema",
+      "Anchor": "adexperimenterrordetailitem-schema",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailItem Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentErrorDetailCode",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimenterrordetailcode-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "This is the code of failure.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A human-readable explanation of the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "detail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperimentValidationDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing?view=li-lms-2026-09#adexperimentvalidationdetail-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "This is failure specific information associated with the experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdExperimentErrorDetailCode Schema",
+      "Anchor": "adexperimenterrordetailcode-schema",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailCode Schema"
+      ],
+      "Text": "The AdExperimentErrorDetailCode shows all the errors that can be expected from the REST end point.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdExperimentErrorDetailCode Schema",
+      "Anchor": "adexperimenterrordetailcode-schema",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailCode Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACCOUNT_ALREADY_RUNNING_BRAND_LIFT_TEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account provided has a brand lift test with overlapping schedule. A/B test can\u0027t run concurrently with a brand lift test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad account doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u0027t allow account to be served. For example, account is canceled. This can\u0027t be reverted by user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BATCH_GET_ENTITY_FROM_DIFFERENT_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch Get request is trying to fetch entities from multiple accounts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGNS_FROM_DIFFERENT_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns referenced in the experiment belong to two separate accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_ALREADY_SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "There is an already existing experiment with overlapping schedule containing same campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_BID_MUST_BE_GREATER_THAN_MINIMUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You must set a higher bid price than minimum for this campaign type.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUPS_DIFFERENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns in the experiment belong to different campaign groups under the same account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_DYNAMIC_BUDGET_OPTIMIZATION_MUST_BE_DISABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You should disable Campaign Group Dynamic Budget Optimization for valid A/B test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATIVE_NOT_SERVABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System doesn\u0027t allow any creatives from one of the cells to be served. For example, all creatives are canceled in one campaign. This can\u0027t be reverted by user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DELETION_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete operation is not allowed except for experiments in PENDING execution state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DUPLICATE_ELEMENTS_IN_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Both cells reference the same entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdExperiment referenced in the request doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_CONFIDENCE_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s confidence value must be \u003E= 51 AND \u003C= 99.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_END_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled end time is not valid. It can\u0027t be in the past or more than 180 days in the future.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_KEY_METRIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaigns can\u0027t provide information for the experiment\u0027s KeyMetric. For example, campaign ad format is not video, but experiment\u0027s KeyMetric is CPV.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_NO_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The experiment must contain exactly 2 cells.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SCHEDULE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experiment\u2019s schedule is not valid Experiment can\u0027t be scheduled to run for more than 90 days.\u0022,",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_START_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled start time is not valid. It has to be positive.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATE_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user is attempting to make a state change that\u0027s not allowed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SUM_OF_WEIGHT_OF_CELLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sum of traffic weight of cells must equal 100.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_WEIGHT_OF_CELL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A cell has an unexpected traffic weight. It must be \u003E= 1, and \u003C= 99.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input doesn\u0027t match schema",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SET_OR_UPDATE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is attempting to either set or modify a field(s) which is not allowed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WRITE_CONFLICT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User is trying to modify an entity which is already updated\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Erroneous Request",
+      "Anchor": "sample-erroneous-request",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailCode Schema",
+        "Sample Erroneous Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adExperiments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Erroneous Request",
+      "Anchor": "sample-erroneous-request",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailCode Schema",
+        "Sample Erroneous Request"
+      ],
+      "Text": "{\n  \u0022name\u0022: \u0022Experiment 1\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n  \u0022keyMetric\u0022: \u0022CPC\u0022,\n  \u0022confidence\u0022: 90,\n  \u0022scheduledEndAt\u0022: 156211978530,\n  \u0022scheduledStartAt\u0022: -1561964400000,\n  \u0022userIntendedState\u0022: \u0022ACTIVE\u0022,\n  \u0022autoStop\u0022: \u0022AUTO_STOP_DISABLED\u0022,\n  \u0022cells\u0022: [\n    {\n      \u0022name\u0022: \u0022cell1\u0022,\n      \u0022trafficWeight\u0022: 50,\n      \u0022reference\u0022: {\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022\n      }\n    },\n    {\n      \u0022name\u0022: \u0022cell2\u0022,\n      \u0022trafficWeight\u0022: 50,\n      \u0022reference\u0022: {\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Error Response",
+      "Anchor": "sample-error-response",
+      "SectionPath": [
+        "Error in Request Processing",
+        "AdExperimentErrorDetailCode Schema",
+        "Sample Error Response"
+      ],
+      "Text": "{\n  \u0022code\u0022: \u0022MULTIPLE_VALIDATIONS_FAILED\u0022,\n  \u0022errorDetailType\u0022: \u0022com.linkedin.ads.AdExperimentExceptionDetail\u0022,\n  \u0022errorDetails\u0022: {\n    \u0022details\u0022: [\n      {\n        \u0022code\u0022: \u0022INVALID_START_TIME\u0022,\n        \u0022detail\u0022: {\n          \u0022pathErrors\u0022: [\n            {\n              \u0022input\u0022: {\n                \u0022inputPath\u0022: {\n                  \u0022fieldPath\u0022: \u0022/scheduledStartAt\u0022\n                },\n                \u0022value\u0022: {\n                  \u0022decimalValue\u0022: \u0022-156111971530\u0022\n                }\n              }\n            }\n          ]\n        },\n        \u0022message\u0022: \u0022Scheduled start time is not valid.\u0022\n      },\n      {\n        \u0022code\u0022: \u0022INVALID_END_TIME\u0022,\n        \u0022detail\u0022: {\n          \u0022pathErrors\u0022: [\n            {\n              \u0022input\u0022: {\n                \u0022inputPath\u0022: {\n                  \u0022fieldPath\u0022: \u0022/scheduledEndAt\u0022\n                },\n                \u0022value\u0022: {\n                  \u0022decimalValue\u0022: \u0022156211978530\u0022\n                }\n              }\n            }\n          ]\n        },\n        \u0022message\u0022: \u0022Scheduled end time is not valid.\u0022\n      },\n      {\n        \u0022code\u0022: \u0022INVALID_SCHEDULE\u0022,\n        \u0022detail\u0022: {},\n        \u0022message\u0022: \u0022Experiment\u0027s schedule is not valid. Experiment cannot be scheduled to run for more than 90 days.\u0022\n      }\n    ]\n  },\n  \u0022exceptionClass\u0022: \u0022com.linkedin.restli.server.RestLiServiceException\u0022,\n  \u0022status\u0022: 422\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experiment Cancellation or On Hold Reasons",
+      "Anchor": "experiment-cancellation-or-on-hold-reasons",
+      "SectionPath": [
+        "Experiment Cancellation or On Hold Reasons"
+      ],
+      "Text": "An experiment can be stopped or put on hold at any point during its execution because of one or more of the following reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Experiment Cancellation or On Hold Reasons",
+      "Anchor": "experiment-cancellation-or-on-hold-reasons",
+      "SectionPath": [
+        "Experiment Cancellation or On Hold Reasons"
+      ],
+      "Text": "",
+      "Headers": [
+        "Affected Entity",
+        "Action",
+        "Impact"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Campaign Group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paused",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total budget exists and it\u0027s exhausted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No impact on experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Daily budget is exhausted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No impact on experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paused",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total budget exists and it\u0027s exhausted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be put on hold and cells would stop serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign is on hold because audience count is too low",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be put on hold and cells would stop serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaigns end date is reached",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be put on hold and cells would stop serving. Would not result in experiment cancellation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign start date is not reached yet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be put on hold and cells would stop serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Daily budget is exhausted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No impact on experiment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled if there are no more creatives under the same campaign which can serve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paused",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rejected or Archived or Cancelled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled if there are no more creatives under the same campaign which can serve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In Review",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be put on hold and cells would stop serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Ad Form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rejected or Cancelled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled if there are no more creatives under the same campaign which can serve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In Review",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be put on hold and cells would stop serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sponsored Content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Purged by system because referred content in it\u0027s deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad experiment would be marked as cancelled.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,635 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+  "Title": "Company Search",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-benchmarking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [],
+      "Text": "The Company Search API enables you to find companies using keywords, industry, location, and other criteria. It returns a collection of matching companies. Each entry can contain an entity field represented by an organization URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [],
+      "Text": "The API also supports filters to further refine your request, which is similar to using the filters on the left-hand side of the LinkedIn Search results page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [],
+      "Text": "The Company Search endpoint is restricted. This permission is granted to selected developers only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for Companies",
+      "Anchor": "search-for-companies",
+      "SectionPath": [
+        "Search for Companies"
+      ],
+      "Text": "Here are a few examples of how to use the Company Search API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Companies",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Companies",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/companySearch?q=search",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Companies",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/companySearch?q=search\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Companies",
+        "Sample Request"
+      ],
+      "Text": "Unless otherwise specified:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Companies",
+        "Sample Request"
+      ],
+      "Text": "All input is case insensitive.\nMultiple words should be joined using a space. Since you need to URL encode input, this translates to %20. For example, Andrew%20Clark.\nWhen you pass in multiple words, a search is made for the complete string.\nWildcards and Boolean logic is not supported (for example: *, ?, AND, and OR).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Search for Companies",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "query",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is typically the organization name, but keyword hits will match this value anywhere in an organization listing. Format is space-delimited, URL-encoded search terms, and requires a minimum of 3 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filter.industry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "industry fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filter.industryV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "industry V2 fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filter.networkDegree",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "network relationship",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filter.companySize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization size range",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filter.followersSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "number of followers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filter.fortune",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fortune ranking",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Search for Companies",
+        "Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Search for Companies",
+        "Parameters"
+      ],
+      "Text": "You should search for only a single company at a time. All search parameters should be related to the single company you intend to find.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search by Keywords",
+      "Anchor": "search-by-keywords",
+      "SectionPath": [
+        "Search by Keywords"
+      ],
+      "Text": "Use query to search companies by keywords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Search by Keywords",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Search by Keywords",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/companySearch?q=search\u0026query=LinkedIn%20Corporation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Search by Keywords",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/companySearch?q=search\u0026query=LinkedIn%20Corporation\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search by Filters",
+      "Anchor": "search-by-filters",
+      "SectionPath": [
+        "Search by Filters"
+      ],
+      "Text": "Use the filter parameters to search by one or more facets. Each filter may contain multiple values, so use bracket array notation, and be sure to URL-encode the brackets (note encoded brackets %5B0 and %5BD in the request below).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Search by Filters",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Search by Filters",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/companySearch?q=search\u0026query=LinkedIn%20Corporation\u0026filter.industry%5B0%5D=6\u0026filter.companySize%5B0%5D=H",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Search by Filters",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/companySearch?q=search\u0026query=LinkedIn%20Corporation\u0026filter.industry%5B0%5D=6\u0026filter.companySize%5B0%5D=H\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Filter Details",
+      "Anchor": "filter-details",
+      "SectionPath": [
+        "Filter Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Filter",
+        "Definition",
+        "Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "industry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated on June 30, 2022. Use industryV2 field instead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry codes are listed on a separate page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industryV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An industry field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry V2 codes are listed on a separate page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "networkDegree",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Collection of companies based on relationship.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid values are:F: First degreeS: Second degreeO: Out of network",
+            "Links": [],
+            "Values": [
+              "F: First degree",
+              "S: Second degree",
+              "O: Out of network"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "companySize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company collection based on size range specified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid values are:B: 1-10C: 11-50D: 51-200E: 201-500F: 501-1000G: 1001-5000H: 5001-10,000I: 10,000\u002B",
+            "Links": [],
+            "Values": [
+              "B: 1-10",
+              "C: 11-50",
+              "D: 51-200",
+              "E: 201-500",
+              "F: 501-1000",
+              "G: 1001-5000",
+              "H: 5001-10,000",
+              "I: 10,000\u002B"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "followersSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company collection based on the number of followers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid values are:1: 5000 to *2: 1001-50003: 101-10004: 51-1005: 1-50",
+            "Links": [],
+            "Values": [
+              "1: 5000 to *",
+              "2: 1001-5000",
+              "3: 101-1000",
+              "4: 51-100",
+              "5: 1-50"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "fortune",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company collection based on the Fortune ranking.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid values are:1: Fortune 502: Fortune 51 - 1003: Fortune 101 - 2504: Fortune 251 - 5005: Fortune 501 - 1000",
+            "Links": [],
+            "Values": [
+              "1: Fortune 50",
+              "2: Fortune 51 - 100",
+              "3: Fortune 101 - 250",
+              "4: Fortune 251 - 500",
+              "5: Fortune 501 - 1000"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Response",
+      "Anchor": "search-response",
+      "SectionPath": [
+        "Filter Details",
+        "Search Response"
+      ],
+      "Text": "By default, results will contain an organization URN for each search hit. Get the id, name, localizedName, vanityName, logoV2, and locations for each search hit using decoration in the request via the projection query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Response",
+      "Anchor": "search-response",
+      "SectionPath": [
+        "Filter Details",
+        "Search Response"
+      ],
+      "Text": "For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Response",
+      "Anchor": "search-response",
+      "SectionPath": [
+        "Filter Details",
+        "Search Response"
+      ],
+      "Text": "\u0026projection=(elements*(entity~(vanityName)),paging)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Filter Details",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-it\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:1032984\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:1333387\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-in\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:11673184\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-hr-linkedhr-\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:351062\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-executive-search\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:2257467\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-rh\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:3348356\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-education\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:10610729\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-local-network\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:1459903\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-quebec\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:1599550\u0022\n        },\n        {\n            \u0022entity~\u0022: {\n                \u0022vanityName\u0022: \u0022linked-com\u0022\n            },\n            \u0022entity\u0022: \u0022urn:li:organization:3618227\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 12991,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/companySearch?q=search\u0026query=Linked\u0026count=10\u0026projection=%28elements*%28entity%7E%28vanityName%29%29%2Cpaging%29\u0026start=0\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

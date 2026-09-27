@@ -1,0 +1,564 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+  "Title": "Display Apply Connect plugins",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Display Apply Connect plugins",
+      "Anchor": "display-apply-connect-plugins",
+      "SectionPath": [],
+      "Text": "Apply Connect provides two plugins that display candidates\u0027 profiles who have applied to jobs, allowing recruiters to quickly view a candidate\u0027s profile:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Apply Connect plugins",
+      "Anchor": "display-apply-connect-plugins",
+      "SectionPath": [],
+      "Text": "Applicant Highlights: A hover-over widget that provides quick access to candidate information\nFull Profile Plugin: Displays the complete candidate profile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Apply Connect plugins",
+      "Anchor": "display-apply-connect-plugins",
+      "SectionPath": [],
+      "Text": "The plugins are rendered within an iframe and are self-contained; the JavaScript code handles the authentication and renders the content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Apply Connect plugins",
+      "Anchor": "display-apply-connect-plugins",
+      "SectionPath": [],
+      "Text": "Using your customer\u0027s app credentials provisioned for the Apply Connect integration, you can display the Applicant Highlights and Full Profile plugins by adding the following scripts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Apply Connect plugins",
+      "Anchor": "display-apply-connect-plugins",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Apply Connect plugins",
+      "Anchor": "display-apply-connect-plugins",
+      "SectionPath": [],
+      "Text": "Your application will have one API key per customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Applicant Highlights plugin",
+      "Anchor": "display-applicant-highlights-plugin",
+      "SectionPath": [
+        "Display Applicant Highlights plugin"
+      ],
+      "Text": "Display the Applicant Highlights plugin in your applicant tracking system (ATS) candidate list view. This hover-over widget provides quick access to candidate details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Applicant Highlights plugin",
+      "Anchor": "display-applicant-highlights-plugin",
+      "SectionPath": [
+        "Display Applicant Highlights plugin"
+      ],
+      "Text": "The plugin supports:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Applicant Highlights plugin",
+      "Anchor": "display-applicant-highlights-plugin",
+      "SectionPath": [
+        "Display Applicant Highlights plugin"
+      ],
+      "Text": "Applicants from jobs that are onsite or LinkedIn Easy Apply enabled (uses job application ID)\n(Optional) Applicants from career sites or third-party job boards (requires LinkedIn profile URL and email address)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Applicant Highlights plugin",
+      "Anchor": "display-applicant-highlights-plugin",
+      "SectionPath": [
+        "Display Applicant Highlights plugin"
+      ],
+      "Text": "The plugin renders a LinkedIn icon for each applicant, as shown in the following screenshot:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Applicant Highlights plugin",
+      "Anchor": "display-applicant-highlights-plugin",
+      "SectionPath": [
+        "Display Applicant Highlights plugin"
+      ],
+      "Text": "Use the following code examples to implement the plugin for LinkedIn applicants and non-LinkedIn applicants.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Implement for LinkedIn applicants",
+      "Anchor": "implement-for-linkedin-applicants",
+      "SectionPath": [
+        "Display Applicant Highlights plugin",
+        "Implement for LinkedIn applicants"
+      ],
+      "Text": "\u003C!-- Load this script tag only once per page--\u003E\n\u003Cscript src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {customer_api_key}\n  extensions: ApplicantHighlights@https://www.linkedin.com/talentwidgets/extensions/applicant-highlights-widget\n\u003C/script\u003E\n\n\u003C!-- Load this script tag where Applicant Highlights hovercard needs to be displayed --\u003E\n\u003Cscript type=\u0022IN/ApplicantHighlights\u0022\n  data-li-job-application-id=\u0022{linkedin_job_application_urn}\u0022\n  data-integration-context=\u0022urn:li:organization:{id}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Implement for non-LinkedIn applicants",
+      "Anchor": "implement-for-non-linkedin-applicants",
+      "SectionPath": [
+        "Display Applicant Highlights plugin",
+        "Implement for non-LinkedIn applicants"
+      ],
+      "Text": "\u003C!-- Load this script tag only once per page--\u003E\n\u003Cscript src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {customer_api_key}\n  extensions: ApplicantHighlights@https://www.linkedin.com/talentwidgets/extensions/applicant-highlights-widget\n\u003C/script\u003E\n\n\u003C!-- Load this script tag where Applicant Highlights hovercard needs to be displayed --\u003E\n\u003Cscript type=\u0022IN/ApplicantHighlights\u0022\n  data-ats-job-posting-id=\u0022{ats_job_posting_id}\u0022\n  data-applicant-email=\u0022{applicant_email_address}\u0022\n  data-li-applicant-profile-url=\u0022{applicant_linkedin_profile_url}\u0022\n  data-integration-context=\u0022urn:li:organization:{id}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Applicant Highlights parameters",
+      "Anchor": "applicant-highlights-parameters",
+      "SectionPath": [
+        "Display Applicant Highlights plugin",
+        "Applicant Highlights parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "data-li-job-application-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID received from the Receive Job Applications API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS job posting ID. This value must be the same as externalJobPostingId in the Sync Jobs API. The job posting needs to be LinkedIn Easy Apply enabled for the widget to load for offsite job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No, for LinkedIn onsite applicants. Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-applicant-email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-li-applicant-profile-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context value for the customer\u0027s APPLY_CONNECT integration type. You receive this value when the customer enables the integration through the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Full Profile plugin",
+      "Anchor": "display-full-profile-plugin",
+      "SectionPath": [
+        "Display Full Profile plugin"
+      ],
+      "Text": "Display the Full Profile plugin on a detailed applicant page. This plugin provides a full LinkedIn profile view.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Full Profile plugin",
+      "Anchor": "display-full-profile-plugin",
+      "SectionPath": [
+        "Display Full Profile plugin"
+      ],
+      "Text": "The plugin supports:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Full Profile plugin",
+      "Anchor": "display-full-profile-plugin",
+      "SectionPath": [
+        "Display Full Profile plugin"
+      ],
+      "Text": "Applicants from jobs that are onsite or LinkedIn Easy Apply enabled (uses job application ID)\n(Optional) Applicants from career sites or third-party job boards (requires LinkedIn profile URL and email address)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Full Profile plugin",
+      "Anchor": "display-full-profile-plugin",
+      "SectionPath": [
+        "Display Full Profile plugin"
+      ],
+      "Text": "The plugin renders a full LinkedIn profile view when viewing an applicant details page, as shown in the following screenshot:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LinkedIn applicant implementation",
+      "Anchor": "linkedin-applicant-implementation",
+      "SectionPath": [
+        "Display Full Profile plugin",
+        "LinkedIn applicant implementation"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\napi_key: {api_key}\nextensions: HcmWidget@https://platform.linkedin.com/rsc/extensions/profile-widget\n\u003C/script\u003E\n\u003Cscript type=\u0022IN/HcmWidget\u0022\ndata-widget-type=\u0022ATS\u0022\ndata-integration-context=\u0022{customer_integration_context}\u0022\ndata-width=\u0022{width}\u0022\ndata-li-job-application-id=\u0022{job_application_id}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Non-LinkedIn applicant implementation",
+      "Anchor": "non-linkedin-applicant-implementation",
+      "SectionPath": [
+        "Display Full Profile plugin",
+        "Non-LinkedIn applicant implementation"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\napi_key: {api_key}\nextensions: HcmWidget@https://platform.linkedin.com/rsc/extensions/profile-widget\n\u003C/script\u003E\n\u003Cscript type=\u0022IN/HcmWidget\u0022\ndata-widget-type=\u0022ATS\u0022\ndata-integration-context=\u0022{customer_integration_context}\u0022\ndata-width=\u0022{width}\u0022\ndata-ats-job-posting-id=\u0022{ats_job_posting_id}\u0022\ndata-applicant-email=\u0022{applicant_email_address}\u0022\ndata-li-applicant-profile-url=\u0022{applicant_profile_url}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply Connect Full Profile plugin parameters",
+      "Anchor": "apply-connect-full-profile-plugin-parameters",
+      "SectionPath": [
+        "Display Full Profile plugin",
+        "Apply Connect Full Profile plugin parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "data-widget-type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The widget type. Set this value to ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context value for the customer\u0027s APPLY_CONNECT integration type. You receive this value when the customer enables the integration through the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS job posting ID. This value must be the same as externalJobPostingId in the Sync Jobs API. The job posting needs to be LinkedIn Easy Apply enabled for the widget to load for offsite job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No, for LinkedIn onsite applicants. Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-applicant-email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-li-applicant-profile-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The width of the widget. This value overrides the default width of 800px. The minimum value is 500px.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-li-job-application-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID received from the Receive Job Applications API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect Full Profile plugin parameters",
+      "Anchor": "apply-connect-full-profile-plugin-parameters",
+      "SectionPath": [
+        "Display Full Profile plugin",
+        "Apply Connect Full Profile plugin parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect Full Profile plugin parameters",
+      "Anchor": "apply-connect-full-profile-plugin-parameters",
+      "SectionPath": [
+        "Display Full Profile plugin",
+        "Apply Connect Full Profile plugin parameters"
+      ],
+      "Text": "For Apply Connect, data-ats-candidate-id is not required for the Profile Plugin. If a customer has an RSC integration and provides both data-ats-candidate-id and data-li-job-application-id, RSC-specific data will display when rendering this widget.\nVerify that your Content Security Policy includes \u0022platform.linkedin.com\u0022 and \u0022www.linkedin.com\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display verification badges",
+      "Anchor": "display-verification-badges",
+      "SectionPath": [
+        "Display verification badges"
+      ],
+      "Text": "Both Apply Connect with Verifications and Apply with LinkedIn with Verifications render verification badges inside the Applicant Highlights and Full Profile plugins on this page. Because the plugins are self-contained and load in an iframe, no code changes are required beyond the parameters you already pass. Which parameters you send depends on how the applicant applied, not on which plugin you embed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display verification badges",
+      "Anchor": "display-verification-badges",
+      "SectionPath": [
+        "Display verification badges"
+      ],
+      "Text": "If the applicant applied on LinkedIn (Apply Connect), continue to pass data-li-job-application-id as shown above.\nIf the applicant applied off LinkedIn on your career site (Apply with LinkedIn), continue to pass data-ats-job-posting-id, data-applicant-email, and data-li-applicant-profile-url as shown above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display verification badges",
+      "Anchor": "display-verification-badges",
+      "SectionPath": [
+        "Display verification badges"
+      ],
+      "Text": "Rendering the plugin only requires partner certification. It doesn\u0027t require separate member or customer consent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display verification badges",
+      "Anchor": "display-verification-badges",
+      "SectionPath": [
+        "Display verification badges"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display verification badges",
+      "Anchor": "display-verification-badges",
+      "SectionPath": [
+        "Display verification badges"
+      ],
+      "Text": "Because plugins have a different consent gate than delivered data, a recruiter can see a badge in a plugin for an applicant whose records were not delivered to you through the webhook payload or the signed profile response. Do not build reconciliation logic that assumes the two always match.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display verification badges",
+      "Anchor": "display-verification-badges",
+      "SectionPath": [
+        "Display verification badges"
+      ],
+      "Text": "Verification badges only confirm an applicant\u0027s verified identity or workplace. Their absence never indicates that an applicant is fraudulent, and it carries no negative meaning.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

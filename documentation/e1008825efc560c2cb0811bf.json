@@ -1,0 +1,90 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting",
+  "Title": "Premium Job Posting",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Premium Job Posting",
+      "Anchor": "premium-job-posting",
+      "SectionPath": [],
+      "Text": "This integration requires a partnership; please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement to use this integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Premium Job Posting",
+      "Anchor": "premium-job-posting",
+      "SectionPath": [],
+      "Text": "If you are not yet a LinkedIn Talent Solutions Partner, please complete the LinkedIn Talent Solutions Partner Request Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Premium Job Posting",
+      "Anchor": "premium-job-posting",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Job Posting API enables authorized third parties, such as clients, ATS systems, and job distributors, to post jobs directly to LinkedIn on behalf of LinkedIn Recruiter customers with premium job slots.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Premium Job Posting",
+      "Anchor": "premium-job-posting",
+      "SectionPath": [],
+      "Text": "This guide details how to enable premium job postings for LinkedIn Recruiter customers. Once your app is configured, you may make API calls as described below. These requests return paged results; details on paging through results can be found in Pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Premium Jobs",
+      "Anchor": "sync-premium-jobs",
+      "SectionPath": [
+        "Sync Premium Jobs"
+      ],
+      "Text": "LinkedIn\u0027s Premium Job Posting API enables authorized third parties to post premium jobs directly to LinkedIn on the behalf of LinkedIn Recruiter customers. This is an asynchronous API and you will receive a task id which you can use to see the status of the job, verify whether it successfully posted to LinkedIn, or see if there was an error during creation and view any details about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Premium Jobs",
+      "Anchor": "sync-premium-jobs",
+      "SectionPath": [
+        "Sync Premium Jobs"
+      ],
+      "Text": "Refer to the below topics to understand API implementation details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Premium Jobs",
+      "Anchor": "sync-premium-jobs",
+      "SectionPath": [
+        "Sync Premium Jobs"
+      ],
+      "Text": "Job Postings API Overview and Create Promoted Jobs\nFoundation Schema and Promoted Jobs Extension Schema",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

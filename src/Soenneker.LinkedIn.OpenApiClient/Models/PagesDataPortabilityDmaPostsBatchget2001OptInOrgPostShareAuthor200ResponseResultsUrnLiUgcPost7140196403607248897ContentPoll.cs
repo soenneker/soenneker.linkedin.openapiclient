@@ -39,7 +39,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings Settings { get; set; }
 #endif
         /// <summary>The uniqueVotersCount property</summary>
-        public int? UniqueVotersCount { get; set; }
+        public long? UniqueVotersCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPoll"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollOptionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollOptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "question", n => { Question = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings.CreateFromDiscriminatorValue); } },
-                { "uniqueVotersCount", n => { UniqueVotersCount = n.GetIntValue(); } },
+                { "uniqueVotersCount", n => { UniqueVotersCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollOptionsItem>("options", Options);
             writer.WriteStringValue("question", Question);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897ContentPollSettings>("settings", Settings);
-            writer.WriteIntValue("uniqueVotersCount", UniqueVotersCount);
+            writer.WriteLongValue("uniqueVotersCount", UniqueVotersCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

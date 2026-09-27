@@ -1,0 +1,159 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+  "Title": "Migrations",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [],
+      "Text": "There will be periodic changes to LinkedIn DMA Developer Platform APIs that require updating your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Migration Status",
+      "Anchor": "api-migration-status",
+      "SectionPath": [
+        "API Migration Status"
+      ],
+      "Text": "",
+      "Headers": [
+        "Migration",
+        "Sunset Date",
+        "Version Status"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202511 (November 2025) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202508 (August 2025) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202505 (May 2025) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202502 (February 2025) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202411 (November 2024) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202408 (August 2024) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "August 18, 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Developers using LinkedIn DMA APIs version 202405 (May 2024) need to migrate to the latest versions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -7,22 +7,31 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// The description of this seriesDocumented type: AttributedTextRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaContentSeriesGet200ResponseDescription : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The attributes property</summary>
+        /// <summary>User generated attributes in the textDocumented type: array[Attribute]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Attributes { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem>? Attributes { get; set; }
 #nullable restore
 #else
-        public UntypedNode Attributes { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem> Attributes { get; set; }
 #endif
-        /// <summary>The text property</summary>
+        /// <summary>The locale that may have be inferred for this text. This value would be null if the local inference was not possible or successfulDocumented type: StringRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InferredLocale { get; set; }
+#nullable restore
+#else
+        public string InferredLocale { get; set; }
+#endif
+        /// <summary>The text content that may be attributed.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -55,7 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inferredLocale", n => { InferredLocale = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -66,7 +76,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesGet200ResponseDescriptionAttributesItem>("attributes", Attributes);
+            writer.WriteStringValue("inferredLocale", InferredLocale);
             writer.WriteStringValue("text", Text);
             writer.WriteAdditionalData(AdditionalData);
         }

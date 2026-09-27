@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Created Created { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "commentary", n => { Commentary = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Commentary>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Commentary.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Created>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Created.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032LastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032LastModified.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "parentComment", n => { ParentComment = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Commentary>("commentary", Commentary);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032Created>("created", Created);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71277052482567249927139067183812268032LastModified>("lastModified", LastModified);
             writer.WriteStringValue("object", Object);
             writer.WriteStringValue("parentComment", ParentComment);

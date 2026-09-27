@@ -14,7 +14,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Documented type: stringRequirement: optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AltText { get; set; }
+#nullable restore
+#else
+        public string AltText { get; set; }
+#endif
+        /// <summary>Documented type: ImageUrnRequirement: required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Documented type: stringRequirement: required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -55,6 +63,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "altText", n => { AltText = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -66,6 +75,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("altText", AltText);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

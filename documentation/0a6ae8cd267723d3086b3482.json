@@ -1,0 +1,349 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/libraries/libraries-docs/libraries-upgrade",
+  "Title": "LinkedIn Learning for Libraries Configuration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/libraries/libraries-docs/libraries-upgrade",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the LinkedIn Learning for Libraries configuration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "This document outlines the steps for Library admins to configure their learning platform with LinkedIn Learning for Library as a new customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "The objective of this document is to demonstrate to Library or Integrated Library System (ILS) Admins how to configure simple and secure access to LinkedIn Learning via SIP2 and Patron.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "Check out a quick video on the LinkedIn Learning for Library upgrade and configuration steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "If your library was a Lynda.com customer and has not yet upgraded to LinkedIn Learning, your library must start as a net new customer. When you make this transition to LinkedIn Learning, your library will lose its Lynda.com learner history.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Libraries Upgrade configuration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "An active Integrated Library System (ILS)\n\nAdmin privileges to your ILS\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "Verification Methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "There are two methods available for configuration with LinkedIn Learning (select one based on your library\u0027s technical requirements):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Libraries Configuration Functionality",
+      "Anchor": "linkedin-learning-and-libraries-configuration-functionality",
+      "SectionPath": [
+        "LinkedIn Learning and Libraries Configuration Functionality"
+      ],
+      "Text": "SIP2: The standard method for library self-service applications.\n\nPatron: The API that provides the endpoint for patron-specific information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify IP \u0022Allow list\u0022",
+      "Anchor": "verify-ip-allow-list",
+      "SectionPath": [
+        "Configuration",
+        "Verify IP \u0022Allow list\u0022"
+      ],
+      "Text": "Before you configure SIP2 or Patron, you need to ensure that the LinkedIn IP addresses are included in your \u0022Allow list\u0022. To verify the IP addresses, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify IP \u0022Allow list\u0022",
+      "Anchor": "verify-ip-allow-list",
+      "SectionPath": [
+        "Configuration",
+        "Verify IP \u0022Allow list\u0022"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Account settings. From the Admin homepage, you can download posters to share with your patrons, download reports to measure learner progress, and view the LinkedIn Learning content library.\n\n\nExpand the \u0022Allow list\u0022 and confirm the LinkedIn IPs are included in your library\u0027s list of allowed addresses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify IP \u0022Allow list\u0022",
+      "Anchor": "verify-ip-allow-list",
+      "SectionPath": [
+        "Configuration",
+        "Verify IP \u0022Allow list\u0022"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify IP \u0022Allow list\u0022",
+      "Anchor": "verify-ip-allow-list",
+      "SectionPath": [
+        "Configuration",
+        "Verify IP \u0022Allow list\u0022"
+      ],
+      "Text": "If the addresses are not included in your \u0022Allow list\u0022, you cannot complete the SIP2 or Patron verification. Reach out to your library\u0027s IT team to ensure this process is complete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify SIP2",
+      "Anchor": "verify-sip2",
+      "SectionPath": [
+        "Configuration",
+        "Verify SIP2"
+      ],
+      "Text": "Once you have confirmed the LinkedIn IPs have been added to your system\u0027s \u0022Allow list\u0022, you can configure your required verification method. If your library\u0027s method is SIP2, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify SIP2",
+      "Anchor": "verify-sip2",
+      "SectionPath": [
+        "Configuration",
+        "Verify SIP2"
+      ],
+      "Text": "Under Step 2: Verification, click Add verification and select \u0022SIP2\u0022.\n\n\nIf you are new customer, enter the correct values in the Host and Port fields. If you are upgrading from Lynda.com to LinkedIn Learning, these values should auto-populate the fields. If they do not, reach out to your ILS team to confirm the information.\n\nSelect Add checksum (unless you are instructed not to do so by your ILS team). Checksum is a utility used to check data files for errors.\n\nIf your library server requires a login, select Add login configuration. This action allows you to input a username and password to connect to the server.\n\n\nClick Save and move on to Testing Configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Patron",
+      "Anchor": "verify-patron",
+      "SectionPath": [
+        "Configuration",
+        "Verify Patron"
+      ],
+      "Text": "If your library\u0027s verification method is Patron, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Patron",
+      "Anchor": "verify-patron",
+      "SectionPath": [
+        "Configuration",
+        "Verify Patron"
+      ],
+      "Text": "Under Step 2: Verification, click Add verification and select \u0022Patron\u0022.\n\n\nIf you are new customer, enter the correct values in the Host and Port fields. If you are upgrading from Lynda.com to LinkedIn Learning, these values should auto-populate the fields. If they do not, reach out to your Integrated Library System (ILS) team to confirm the information.\n\n Important\nLinkedIn requires that you use the https:// protocol in the Scheme field.\n\n\nIf the API Path field is not auto-populated, enter \u0022PATRONAPI\u0022.\n\n\nClick Save and move on to Testing Configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Testing your Configuration"
+      ],
+      "Text": "To ensure your SIP2/Patron connection is working, you need to test your configuration by taking the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Testing your Configuration"
+      ],
+      "Text": "Expand the Testing Configuration panel.\n\nEnter a valid library card number and PIN in the specified fields.\n\nClick Test Connection. If you receive an error, review the configuration steps to ensure you have completed the SIP2 or Patron verification. If the error persists, reach out to your Account Representative for assistance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating a Custom Invitation Link",
+      "Anchor": "creating-a-custom-invitation-link",
+      "SectionPath": [
+        "Configuration",
+        "Creating a Custom Invitation Link"
+      ],
+      "Text": "The custom invitation URL is the primary access point for your patrons to access LinkedIn Learning. To create the custom URL, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating a Custom Invitation Link",
+      "Anchor": "creating-a-custom-invitation-link",
+      "SectionPath": [
+        "Configuration",
+        "Creating a Custom Invitation Link"
+      ],
+      "Text": "Under Step 4: Custom login link, notice the URL the configuration has generated.\n\nClick Copy to clipboard and save the URL to a secure location (i.e., for invitation emails distributed to your patrons or posting to your library\u0027s web site).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Support",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Please review our comprehensive LinkedIn Learning for Libraries FAQ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation",
+      "Anchor": "documentation",
+      "SectionPath": [
+        "Support",
+        "Documentation"
+      ],
+      "Text": "Check out how to integrate your library catalog management system\u0027s MARC records metadata with LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation",
+      "Anchor": "documentation",
+      "SectionPath": [
+        "Support",
+        "Documentation"
+      ],
+      "Text": "Congratulations! Your patrons now have simple, secure access to LinkedIn Learning for Library.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Support",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Support",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

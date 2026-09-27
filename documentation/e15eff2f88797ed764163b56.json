@@ -1,0 +1,442 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+  "Title": "LinkedIn Learning and Saba Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Saba and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": ".",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Deep Integration Functionality",
+      "Anchor": "saba-deep-integration-functionality",
+      "SectionPath": [
+        "Saba Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML SSO Identity Provider; LTI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Deep Integration Functionality",
+      "Anchor": "saba-deep-integration-functionality",
+      "SectionPath": [
+        "Saba Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Deep Integration Functionality",
+      "Anchor": "saba-deep-integration-functionality",
+      "SectionPath": [
+        "Saba Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Deep Integration Functionality",
+      "Anchor": "saba-deep-integration-functionality",
+      "SectionPath": [
+        "Saba Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Deep Integration Functionality",
+      "Anchor": "saba-deep-integration-functionality",
+      "SectionPath": [
+        "Saba Deep Integration Functionality"
+      ],
+      "Text": "An active Saba LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin access to your Saba LMS instance\n\nA Saba license for the LinkedIn Learning connector",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Saba\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning to\nestablish a secure single sign-on (SSO) connection that ensures seamless and\nsecure access to content. SSO authentication reduces friction for users and\nadministrators by eliminating the need for manual user registration. SSO ensures that learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "SAML SSO (Recommended): If your organization has a SAML-compliant Identity Provider (IdP) like Azure AD, Okta or ADFS, it can be configured to manage LinkedIn Learning authentication. It is important to note the connection must be configured to send LinkedIn Learning a learner\u2019s work email address. If email is not released to LinkedIn Learning, learner activity tracking and reporting will not work in Saba. For more information about the configuration process review the LinkedIn Learning SSO Implementation Guide.\n\nLTI SSO: If your organization doesn\u2019t have a SAML-compliant IdP, you can configure Saba and LinkedIn to manage authentication directly using LTI. For more information about the LTI configuration, review the Configuring LTI Authentication section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. Courses are added\nat a rate of 25-30 courses per week at no extra cost. Traditionally, the\nadministrator of a content discovery platform manually uploads new content on a\nregular interval. However, the Saba deep integration uses LinkedIn Learning APIs\nto dynamically refresh the content library daily. This ensures new LinkedIn\nLearning content is available within 24 hours of its release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "All content titles and descriptions are aggregated and indexed to accommodate keyword searches and support efficient discoverability. Saba supports the automatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "In order to authenticate with the Linkedin Learning Content API, OAuth 2.0 keys\nmust be provisioned in your Linkedin Learning admin settings. To provision keys,\nfollow the steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API.\n\nClick Add application.\n\nUse \u0022Saba connector\u0022 as the application name.\n\nProvide a short description of the integration use case in the application description field. For example, \u0022Saba deep integration\u0022.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nOnce you\u2019ve generated API keys, save the Client ID and Client Secret for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Content Connector Configuration",
+      "Anchor": "saba-content-connector-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Saba Content Connector Configuration"
+      ],
+      "Text": "In this section, we review the steps required to enable content syncing between the two systems. Before proceeding, ensure SSO is configured and fully enabled for your LinkedIn Learning account. If you enable content syncing before completing the SSO configuration, course launches will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Saba Content Connector Configuration",
+      "Anchor": "saba-content-connector-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Saba Content Connector Configuration"
+      ],
+      "Text": "Log in to Saba as an admin.\n\nGo to Admin \u003E Marketplace.\n\n\nSelect the LinkedIn Learning Connector to launch the configuration card (below).\nExpand table\n\n\nLiL Fields in Saba (above)\nDescription\n\n\n\n\nClient ID\nThe LinkedIn Learning client ID value obtained from the last section. This value is used to sync content via LinkedIn Learning\u2019s Content Catalog API.\n\n\nClient Secret\nThe LinkedIn Learning client secret value obtained in the last section. This value is used content sync via LinkedIn Learning\u2019s Content Catalog API.\n\n\nConsumer Key and Consumer Secret\nKeys for LTI authentication. LTI is an authentication alternative to SAML. If your organization uses SAML SSO authentication, both fields should be blank. Do not copy and paste LinkedIn Learning API keys in these fields.\n\n\nImport Language\nList of LinkedIn Learning locales to be imported. To import the English Library, input the following value: en_US If you\u2019ve purchased access to the multi-language library and would like to import all languages input: en_US,es_ES,fr_FR, ja_JP,de_DE,pt_BR,zh_CN Note: language codes should be separated only by commas only, not spaces. If you\u2019re not sure which languages you\u2019ve purchased, follow up with your LinkedIn Learning Technical Consultant or Customer Success Manager\n\n\nImport Domain\nThis is the domain in which the content, class, and course are created. If you\u2019re unsure which value to select, contact Saba support for assistance.\n\n\n\n\nExpand table\n\n\nSaba Fields (above)\nDescription\n\n\n\n\nActivation Key\nIn order to enable the integration, you must purchase a connector subscription from Saba. Contact Saba support or Saba Account manager to purchase. Once purchased, this field will be automatically populated with an activation key.\n\n\nProfile Identifier\nField used to communicate learner completions between the two systems. Recommended option: EMAIL\n\n\nClient ID\nThe Saba client ID value obtained from the first section. Use this value for xAPI. reporting.\n\n\nClient Secret\nThe Saba client secret value obtained in the first section. Use this value for xAPI. reporting.\n\n\nImport Domain\nThis is the domain in which the content, class, and course are created. If you\u2019re unsure which value to select, contact Saba support for assistance.\n\n\nSaba User\nProvide a Saba Cloud username. The username provided is set as owner on contents imported and WBT courses created. If Create WBT Course in Saba option is enabled, you must enter a valid Saba Cloud username. Otherwise, the create WBT step will fail.\n\n\nContent Folder\nSpecify the folder name in the content repository to which the LinkedIn content will sync.\n\n\nKeywords\nKeyword for Content. These are not course keywords.\n\n\nMobile Compatibility\nIndicates the course compatibility on mobile devices. Recommended option: allDevices\n\n\nPlayer Template\nSaba recommends using New Window Standard Template as the value for this field. Note: LinkedIn Learning pages cannot be rendered in an iFrame.\n\n\nCreator for Ad-hoc Transcripts\nProvide a valid Saba Cloud username. The username should be a super user or a user with privileges in Saba to create an ad hoc transcript. After you add this username, Saba marks completions without a course enrollment as \u201CComplete\u0022.\n\n\n\n\nAfter filling the required fields, agree to Saba\u2019s terms by selecting the checkbox at the bottom of the page.\n\nClick Save.\n\nTo verify your configuration, open the connector modal again and click the TEST button.\n\nIf the test passes, you can sync content. Click SYNC CONTENT.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check the Sync Status",
+      "Anchor": "check-the-sync-status",
+      "SectionPath": [
+        "Configuration",
+        "Check the Sync Status"
+      ],
+      "Text": "To verify the success of your Saba and LinkedIn Learning content sync, take the\nfollowing steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check the Sync Status",
+      "Anchor": "check-the-sync-status",
+      "SectionPath": [
+        "Configuration",
+        "Check the Sync Status"
+      ],
+      "Text": "In the Saba admin interface, select System Admin \u003E Manage Integrations.\n\nFind \u0022LINKEDIN_LEARNING_BULK_CONTENT_IMPORT\u0022 and select Monitor.\n\nIf the status column states \u0022Completed\u0022, the course sync is complete. Click \u0022Completed\u0022 to view import statistics or DOWNLOAD LOGS to view the import details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage LinkedIn Learning Content in Saba",
+      "Anchor": "manage-linkedin-learning-content-in-saba",
+      "SectionPath": [
+        "Configuration",
+        "Manage LinkedIn Learning Content in Saba"
+      ],
+      "Text": "To manage LinkedIn Learning content in Saba, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage LinkedIn Learning Content in Saba",
+      "Anchor": "manage-linkedin-learning-content-in-saba",
+      "SectionPath": [
+        "Configuration",
+        "Manage LinkedIn Learning Content in Saba"
+      ],
+      "Text": "In the Saba admin interface, select Learning \u003E Manage Content \u003E Content Library.\n\nIn the Production Repository section, select the content folder you specified when configuring the connector.\n\nIf you chose to create a WBT, you\u2019ll see the courses created under Manage Learning Catalog.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure xAPI Activity Tracking",
+      "Anchor": "configure-xapi-activity-tracking",
+      "SectionPath": [
+        "Configuration",
+        "Configure xAPI Activity Tracking"
+      ],
+      "Text": "To configure xAPI learner activity tracking, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure xAPI Activity Tracking",
+      "Anchor": "configure-xapi-activity-tracking",
+      "SectionPath": [
+        "Configuration",
+        "Configure xAPI Activity Tracking"
+      ],
+      "Text": "In the Saba admin interface, go back to the connector configuration card by selecting Marketplace.\n\nCopy the Saba Client ID and Client Secret to be used in Step 8 (below).\n\nFrom your LinkedIn Learning admin settings, go to Integrate \u003E Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\nIn the Integration name field, enter \u0022Saba reporting\u0022.\n\nIn the User Type field, select \u0022Email\u0022.\n\nPaste the values from Step 2 (above) into the Client ID and Client Secret fields.\n\nTo construct the OAuth and Tenant Server URLs, find your Saba Base URL and add \u201C-api\u201D to the hostname then append the following paths:\n\nBase URL: https://[sabacloud-tenant].sabacloud.com\n\nAPI Base URL: https://[sabacloud-tenant]-api.sabacloud.com\n\nOAuth URL: https://[sabacloud-tenant]-api.sabacloud.com/v1/oauth2/token\n\nTenant URL: https://[sabacloud-tenant]-api.sabacloud.com/v1/public/lrsapi/statements\n\n\nFor example, if your Saba base URL is https://examplecompany.sabacloud.com, the OAuth and Tenant Server URLs are:\n\nOAuth URL: https://examplecompany-api.sabacloud.com/v1/oauth2/token\n\nTenant URL: https://examplecompany-api.sabacloud.com/v1/public/lrsapi/statements\n\n\nAfter you generate the values, populate them in the corresponding fields in the LinkedIn Learning Admin UI.\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure xAPI Activity Tracking",
+      "Anchor": "configure-xapi-activity-tracking",
+      "SectionPath": [
+        "Configuration",
+        "Configure xAPI Activity Tracking"
+      ],
+      "Text": "You have enabled the Saba xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Appendix",
+        "Configure LTI Authentication"
+      ],
+      "Text": "If your organization would like to use LTI SSO for learner authentication, take the following steps to provision keys in LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Appendix",
+        "Configure LTI Authentication"
+      ],
+      "Text": "From your LinkedIn Learning admin settings, select Authentication from the left navigation menu.\n\n\nIn the Configure single sign-on section, select Add new SSO, then select \u0022LTI\u0022.\n\n\nIn the Authenticate users with LTI SSO window, enter the following URL in SP-initiated redirect URL field:\nhttps://[sabacloudtenant].sabacloud.com/Saba/ltiauthentication.jsp?vendor=lil\n\n\nClick Generate Keys. Save the consumer key and consumer secret values so you can reference them in the Saba Content Connector Configuration section.\n\nClick Save and set the connection status to \u0022Active\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "For a completion to be sent back to Saba, the following conditions must be true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "The learner\u2019s Saba email must match the user\u2019s LinkedIn Learning email. If there are multiple users configured using the same email in Saba, the completion can\u2019t be processed.\n\nThe completed course must be imported into Saba catalog. If you wish to view activity for courses that haven\u2019t been created in Saba, you can do so by purchasing Saba\u2019s Discovery extension. Contact Saba for more information about Discovery. Once purchased, you can find activity in Profile \u003E Activity \u003E Saba Discovery for individual learners.\n\nThe learner must complete a course in full. You can verify the learner has completed the course in LinkedIn Learning by selecting In Progress \u003E Learning History and confirming the \u201CCompleted on\u201D date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "If the three conditions above are met, provide your dedicated technical consultant with the following information to further investigate:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "The user\u2019s email address\n\nThe name of the course completed\n\nThe date the course was completed",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their Saba LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Appendix",
+        "Questions"
+      ],
+      "Text": "If you need further technical assistance contact Saba Customer Support. You must register as a Saba member to receive Saba technical support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Appendix",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Appendix",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

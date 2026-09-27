@@ -1,0 +1,4797 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
+  "Title": "Metrics Available",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Metrics Available",
+      "Anchor": "metrics-available",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on the action button of the Sponsored Messaging ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adUnitClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on the ad unit displayed alongside the Sponsored Messaging ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "approximateMemberReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The estimated number of unique member accounts with at least one impression. This metric is an updated and more accurate version of legacy metric approximateUniqueImpressions. This metric is only available when the number of days in the date range is less than or equal to 92 days. This metric is fully launched in Jan 2024.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageDwellTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Average user dwell time (in seconds). It measures the duration for which more than 50% of the ad\u0027s pixels remain visible in the viewport. Note: The averageDwellTime field is only supported from API version 202411 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "audiencePenetration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The approximate number of unique members reached by the advertiser divided by the approximate total target audience size. The field is null if the date range has more than 92 days. This metric supports ACCOUNT, CAMPAIGN_GROUP, or CAMPAIGN pivots, and can be used alongside additional pivots as long as at least one of these primary pivots is included. Note: The audiencePenetration field is only supported from API version 202411 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cardClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of clicks for each card of a carousel ad. The first card click of the carousel ad results in an immediate cardClick and click, whereas scrolling to other cards and clicking counts as an additional cardClick.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cardImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of impressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate cardImpression and impression, whereas scrolling to other cards counts as additional cardImpressions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of chargeable clicks. Despite not charging for clicks for CPM campaigns, this field still represents those clicks for which we would otherwise charge advertisers based on objective (for example, clicks to view the landing page or company page).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentLikes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes of a comment. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "comments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of comments. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks to view the company page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionValueInLocalCurrency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). Value of the conversions in the account\u0027s local currency based on rules defined by the advertiser. Conversion value is set by the advertiser at a per conversion level, and aggregated across the query time range.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costInLocalCurrency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost in the account\u0027s local currency based on the pivot and timeGranularity. For example, this would be spend by member company size per month if the pivot is MEMBER_COMPANY_SIZE and timeGranularity is MONTHLY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costInUsd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost in USD based on the pivot and timeGranularity. For example, this would be spend by campaign on a given day if the pivot is CAMPAIGN and timeGranularity is DAILY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerQualifiedLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How much money was spent per qualified lead. Ratio is costInLocalCurrency / qualifiedLeads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date range covered by the report data point. Date is specified in UTC. Start and end date are inclusive. Start date is required. End date is optional and defaults to today.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached 100% of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the first quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the second quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the third quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users have indicated the intent to download the media in an ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). This metric is only available for ad formats supporting media downloads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalWebsiteConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long, default=\u00220\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times users took a desired action after clicking on or seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalWebsitePostClickConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long, default=\u00220\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times users took a desired action after clicking on your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalWebsitePostViewConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long, default=\u00220\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times users took a desired action after seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "follows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of follows. Sponsored Content and Follower ads only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fullScreenPlays",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headlineClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times members clicked on the headline of conversation ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headlineImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times members were shown the headline of conversation ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the count of \u0022impressions\u0022 for Sponsored Content and \u0022sends\u0022 for Sponsored Messaging.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing or clicking on an ad. Currently, this metric is broken down into postViewJobApplications (if the member applied after viewing the ad) and postClickJobApplications (if the member applied after clicking the ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on a LinkedIn jobs page after viewing or clicking on an ad which has a LinkedIn job landing page. Currently, this metric is broken down into postViewJobApplyClicks (if the member performed the action after viewing the ad) and postClickJobApplyClicks (if the member performed the action after clicking the ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks which take the user to the creative landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenerationMailContactInfoShares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users shared contact info through the One Click Lead Gen for Sponsored Messaging ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenerationMailInterestedClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of Sponsored Messaging ad recipients who clicked to demonstrate interest.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "likes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "oneClickLeadFormOpens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of times users opened the lead form for a One Click Lead Gen campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "oneClickLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of leads generated through One Click Lead Gen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "opens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of opens of Sponsored Messaging ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "otherEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of user interactions with the ad unit that don\u0027t fit into any other more specific category.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pivotValues",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[], default=\u0022[]\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after clicking on an ad. See also jobApplications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on an ad which has a LinkedIn job landing page. See also jobApplyClicks.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after clicking on an ad which has a LinkedIn landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postViewJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing an ad. See also jobApplications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postViewJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking an ad which has a LinkedIn job landing page. See also jobApplyClicks.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postViewRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering. See also registrations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "qualifiedLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of qualified leads shared by the advertiser. Qualified lead is a lead that has been deemed more likely to become a customer compared to other leads, based on their engagement and fit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reactions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of positive reactions on Sponsored Content which can capture, like, interest, praise, and other responses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing or clicking on an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "revenueAttributionMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RevenueAttributionMetrics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-09#revenue-attribution-metrics"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Metrics that represent LinkedIn Ads-attributed opportunities within the CRM (Customer Relationship Management) system. This field is only available through the attributedRevenueMetrics finder.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sends",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of sends of Sponsored Messaging ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of shares. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subscriptionClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks to subscribe to a series, such as a Newsletter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "talentLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of leads captured through a talent media campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textUrlClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on any links (anchor tags) that were included in the body of the Sponsored Messaging ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of all user interactions with the ad unit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validWorkEmailLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of leads with a valid work email that doesn\u0027t use an established free or personal email domain.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played 97-100% of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played through the first quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played through the midpoint of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoStarts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that were started by users.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played through the third quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to fullscreen mode) doesn\u0027t count as a view.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCardClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralClicks for each card of a carousel ad. The first viralCardClick of the carousel ad results in an immediate viralCardClick and viralClick, whereas scrolling to other cards and clicking counts as additional viralCardClick.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCardImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralImpressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate viralCardImpression and viralImpression, whereas scrolling to other cards counts as additional viralCardImpressions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on viral impressions. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCommentLikes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes on comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralComments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCompanyPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks to view the company page from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached 100% of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the first quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the second quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the third quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDownloadClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users have indicated the intent to download the media in a viral ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). Only available for ads supporting media downloads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralExternalWebsiteConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of conversions that are attributed to your ads driven by a viral event. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralExternalWebsitePostClickConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of post-click conversions that are attributed to your ads driven by a viral click. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralExternalWebsitePostViewConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of post-view conversions that are attributed to your ads driven by a viral impression. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralFollows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of follows from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralFullScreenPlays",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral impressions for this activity. Viral impressions are those resulting from users sharing sponsored content to their own network of connections. Viral impressions are not counted as regular impressions. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing or clicking on a viral ad. Currently, this metric is broken down into viralPostViewJobApplications (if the member performed the action after viewing the viral ad) and viralPostClickJobApplications (if the member performed the action after clicking the viral ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing or clicking on a viral ad which has a LinkedIn job landing page during the date range.Currently, this metric is broken down into viralPostViewJobApplyClicks (if the member performed the action after viewing the viral ad) and viralPostClickJobApplyClicks (if the member performed the action after clicking the viral ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralLandingPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on viral impressions to take the user to the creative landing page. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralLikes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralOneClickLeadFormOpens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of times users opened the lead form for viral impressions from a Lead Gen campaign. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralOneClickLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of leads generated through One Click Lead Gen from viral impressions for this activity. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralOtherEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of user interactions with viral impressions that don\u0027t fit into any other more specific category. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostClickJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after clicking on a viral ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostClickJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on a viral ad which has a LinkedIn job landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostClickRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after clicking on a viral ad which has a LinkedIn landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostViewJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing a viral ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostViewJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing a viral ad which has a LinkedIn job landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostViewRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralReactions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of positive reactions on viral Sponsored Content which can capture like, interest, praise, and other responses. See viral impressions definition for details on viral engagements.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing or clicking on a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralShares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of shares from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralSubscriptionClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral clicks to subscribe to a series, such as a Newsletter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralTotalEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of all user interactions with a viral ad unit. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played 97-100% of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played through the first quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played through the midpoint of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoStarts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that were started by users. See viralImpressions definition. Since viral videos are automatically played for ON_SITE, this is the same as viralImpressions if the servingLocation is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played through the third quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A viral video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to full screen mode) doesn\u0027t count as a view. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Metrics Available",
+      "Anchor": "metrics-available",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on the action button of the Sponsored Messaging ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adUnitClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on the ad unit displayed alongside the Sponsored Messaging ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "appointmentsScheduled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of appointments booked through Lead Gen campaigns. Note: The appointmentsScheduled field is only supported from API version 202605 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "approximateMemberReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The estimated number of unique member accounts with at least one impression. This metric is an updated and more accurate version of legacy metric approximateUniqueImpressions. This metric is only available when the number of days in the date range is less than or equal to 92 days. This metric is fully launched in Jan 2024.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageDwellTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Average user dwell time (in seconds). It measures the duration for which more than 50% of the ad\u0027s pixels remain visible in the viewport. Note: The averageDwellTime field is only supported from API version 202411 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageEventWatchTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The average watch time of the event in milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageEventWatchTimeOver15Seconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The average watch time in milliseconds for users who watched the event for more than 15 seconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageEventWatchTimeOver2Minutes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The average watch time in milliseconds for users who watched the event for more than 2 minutes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageEventWatchTimeOver30Seconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The average watch time in milliseconds for users who watched the event for more than 30 seconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageVideoWatchTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Average videoWatchTime in milliseconds. Note: This metric may be delayed by up to 48 hours.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "audiencePenetration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The approximate number of unique members reached by the advertiser divided by the approximate total target audience size. The field is null if the date range has more than 92 days. This metric supports ACCOUNT, CAMPAIGN_GROUP, or CAMPAIGN pivots, and can be used alongside additional pivots as long as at least one of these primary pivots is included. Note: The audiencePenetration field is only supported from API version 202411 onwards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cardClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of clicks for each card of a carousel ad. The first card click of the carousel ad results in an immediate cardClick and click, whereas scrolling to other cards and clicking counts as additional cardClick.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cardImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of impressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate cardImpression and impression, whereas scrolling to other cards counts as additional cardImpressions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of chargeable clicks. Despite not charging for clicks for CPM campaigns, this field still represents those clicks for which we would otherwise charge advertisers based on objective (for example, clicks to view the landing page or company page).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentLikes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes of a comment. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "comments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of comments. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks to view the company page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionValueInLocalCurrency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). Value of the conversions in the account\u0027s local currency based on rules defined by the advertiser. Conversion value is set by the advertiser at a per conversion level, and aggregated across the query time range.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costInLocalCurrency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost in the account\u0027s local currency based on the pivot and timeGranularity. For example, this would be spend by member company size per month if the pivot is MEMBER_COMPANY_SIZE and timeGranularity is MONTHLY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costInUsd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost in USD based on the pivot and timeGranularity. For example, this would be spend by campaign on a given day if the pivot is CAMPAIGN and timeGranularity is DAILY. Cost is not adjusted for over delivery when a member professional demographic pivot is specified in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerEventView",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cost per view for an event hosted on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerEventViewOver15Seconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cost per view for an event hosted on LinkedIn for users who watched the event for more than 15 seconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerEventViewOver2Minutes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cost per view for an event hosted on LinkedIn for users who watched the event for more than 2 minutes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerEventViewOver30Seconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cost per view for an event hosted on LinkedIn for users who watched the event for more than 30 seconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerQualifiedLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How much money was spent per qualified lead. Ratio is costInLocalCurrency / qualifiedLeads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date range covered by the report data point. Date is specified in UTC. Start and end date are inclusive. Start date is required. End date is optional and defaults to today.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached 100% of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the first quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the second quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the third quartile of the document\u2019s length, including those that skipped to this point. This metric is only available for document ads and not all dimensions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users have indicated the intent to download the media in an ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). This metric is only available for ad formats supporting media downloads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of valid views for an event hosted on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventViewsOver15Seconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 15 seconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventViewsOver2Minutes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 2 minutes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventViewsOver30Seconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of valid views for an event hosted on LinkedIn for users who watched the event for more than 30 seconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventWatchTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total watch time of the event in milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalWebsiteConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long, default=\u00220\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times users took a desired action after clicking on or seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalWebsitePostClickConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long, default=\u00220\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times users took a desired action after clicking on your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalWebsitePostViewConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long, default=\u00220\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of times users took a desired action after seeing your ad. When conversions can\u0027t be attributed to individual users, group level attribution or estimation can be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "follows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of follows. Sponsored Content and Follower ads only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fullScreenPlays",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headlineClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times members clicked on the headline of conversation ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headlineImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times members were shown the headline of conversation ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the count of \u0022impressions\u0022 for Sponsored Content and \u0022sends\u0022 for Sponsored Messaging.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing or clicking on an ad. Currently, this metric is broken down into postViewJobApplications (if the member applied after viewing the ad) and postClickJobApplications (if the member applied after clicking the ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing or clicking on an ad which has a LinkedIn job landing page. Currently, this metric is broken down into postViewJobApplyClicks (if the member performed the action after viewing the ad) and postClickJobApplyClicks (if the member performed the action after clicking the ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks which take the user to the creative landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenerationMailContactInfoShares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users shared contact info through the One Click Lead Gen for Sponsored Messaging ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenerationMailInterestedClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of Sponsored Messaging ad recipients who clicked to demonstrate interest.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "likes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "oneClickLeadFormOpens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of times users opened the lead form for a One Click Lead Gen campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "oneClickLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of leads generated through One Click Lead Gen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "opens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of opens of Sponsored Messaging ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "otherEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of user interactions with the ad unit that don\u0027t fit into any other more specific category.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pivotValues",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[], default=\u0022[]\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the pivots for a specific record returned. For example, supplying pivots of CREATIVE and CONVERSION results in a list of records, one for each creative/conversion combination. The pivotValues contain serialized URNs for the specific creative and conversion for a record. To resolve these URNs to their corresponding entities, refer to LinkedIn Marketing API URN Resolution.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after clicking on an ad. See also jobApplications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on an ad which has a LinkedIn job landing page. See also jobApplyClicks.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after clicking on an ad which has a LinkedIn landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postViewJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing an ad. See also jobApplications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postViewJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking an ad which has a LinkedIn job landing page. See also jobApplyClicks.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postViewRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering. See also registrations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "qualifiedLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of qualified leads shared by the advertiser. Qualified lead is a lead that has been deemed more likely to become a customer compared to other leads, based on their engagement and fit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reactions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of positive reactions on Sponsored Content which can capture, like, interest, praise, and other responses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing or clicking on an ad which has a LinkedIn event landing page. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "revenueAttributionMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RevenueAttributionMetrics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-09#revenue-attribution-metrics"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Metrics that represent LinkedIn Ads-attributed opportunities within the CRM (Customer Relationship Management) system. This field is only available through the attributedRevenueMetrics finder.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sends",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of sends of Sponsored Messaging ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of shares. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subscriptionClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks to subscribe to a series, such as a Newsletter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "talentLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of leads captured through a talent media campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textUrlClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on any links (anchor tags) that were included in the body of the Sponsored Messaging ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of all user interactions with the ad unit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validWorkEmailLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of leads with a valid work email that doesn\u0027t use an established free or personal email domain.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played 97-100% of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played through the first quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played through the midpoint of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoStarts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that were started by users.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of video ads that played through the third quartile of the video. This includes watches that skipped to this point if the serving location is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to fullscreen mode) doesn\u0027t count as a view.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoWatchTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total watch time in milliseconds for a video ad. This metric is populated if a user\u0027s watching behavior is qualified for videoViews metric. Note: This metric may be delayed by up to 48 hours.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCardClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralClicks for each card of a carousel ad. The first viralCardClick of the carousel ad results in an immediate viralCardClick and viralClick, whereas scrolling to other cards and clicking counts as additional viralCardClick.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCardImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-demographic pivots only (i.e. not MEMBER_). The number of viralImpressions shown for each card of a carousel ad. The first card of the carousel ad results in an immediate viralCardImpression and viralImpression, whereas scrolling to other cards counts as additional viralCardImpressions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on viral impressions. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCommentLikes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes on comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralComments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of comments from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralCompanyPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks to view the company page from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached 100% of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the first quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the second quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDocumentThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users reached the third quartile of the document\u2019s length on a viral post, including those that skipped to this point. This metric is only available for document ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralDownloadClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times users have indicated the intent to download the media in a viral ad by clicking the download icon. This can or can not result in an actual download (e.g. if the user rejects a browser download prompt). Only available for ads supporting media downloads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralExternalWebsiteConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of conversions that are attributed to your ads driven by a viral event. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralExternalWebsitePostClickConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of post-click conversions that are attributed to your ads driven by a viral click. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralExternalWebsitePostViewConversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of post-view conversions that are attributed to your ads driven by a viral impression. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralFollows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of follows from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralFullScreenPlays",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times members click on the full screen button or on the video(mobile only) to go into full screen mode. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral impressions for this activity. Viral impressions are those resulting from users sharing sponsored content to their own network of connections. Viral impressions are not counted as regular impressions. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing or clicking on a viral ad. Currently, this metric is broken down into viralPostViewJobApplications (if the member performed the action after viewing the viral ad) and viralPostClickJobApplications (if the member performed the action after clicking the viral ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing or clicking on a viral ad which has a LinkedIn job landing page during the date range.Currently, this metric is broken down into viralPostViewJobApplyClicks (if the member performed the action after viewing the viral ad) and viralPostClickJobApplyClicks (if the member performed the action after clicking the viral ad).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralLandingPageClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of clicks on viral impressions to take the user to the creative landing page. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralLikes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of likes from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralOneClickLeadFormOpens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of times users opened the lead form for viral impressions from a Lead Gen campaign. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralOneClickLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of leads generated through One Click Lead Gen from viral impressions for this activity. See viral impressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralOtherEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of user interactions with viral impressions that don\u0027t fit into any other more specific category. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostClickJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after clicking on a viral ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostClickJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after clicking on a viral ad which has a LinkedIn job landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostClickRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after clicking on a viral ad which has a LinkedIn landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostViewJobApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member completed a job application after viewing a viral ad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostViewJobApplyClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member clicked on the job\u2019s apply button on an LinkedIn jobs page after viewing a viral ad which has a LinkedIn job landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralPostViewRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralReactions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of positive reactions on viral Sponsored Content which can capture like, interest, praise, and other responses. See viral impressions definition for details on viral engagements.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralRegistrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times a member has registered for an event or seminar after viewing or clicking on a viral ad which has a LinkedIn event landing page. See viralImpressions definition. This includes gross registrations and doesn\u0027t account for a user unregistering.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralShares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of shares from viral impressions for this activity. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralSubscriptionClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral clicks to subscribe to a series, such as a Newsletter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralTotalEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of all user interactions with a viral ad unit. See viral impressions definition. Sponsored Content only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played 97-100% of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played through the first quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played through the midpoint of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoStarts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that were started by users. See viralImpressions definition. Since viral videos are automatically played for ON_SITE, this is the same as viralImpressions if the servingLocation is ON_SITE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of viral video ads that played through the third quartile of the video. This includes watches that skipped to this point. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viralVideoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A viral video ad playing for at least 2 continuous seconds 50% in-view, or a click on the CTA, whichever comes first. An interaction with the video (like going to full screen mode) doesn\u0027t count as a view. See viralImpressions definition.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Analytics Finder Query Parameters",
+      "Anchor": "analytics-finder-query-parameters",
+      "SectionPath": [
+        "Analytics Finder Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Designates the query finder. Must be analytics for the Analytics Finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pivot.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pivot of results, by which each report data point is grouped. The following enum values are supported: COMPANY - Group results by advertiser\u0027s company. ACCOUNT - Group results by account. SHARE - Group results by sponsored share. CAMPAIGN - Group results by campaign. CREATIVE - Group results by creative. CAMPAIGN_GROUP - Group results by campaign group. CONVERSION - Group results by conversion. CONVERSATION_NODE - The element row in the conversation is the information for each individual node of the conversation tree.CONVERSATION_NODE_OPTION_INDEX - Used actionClicks are deaggregated and reported at the Node Button level. The second value of the pivot_values is the index of the button in the node.SERVING_LOCATION - Group results by serving location, onsite or offsite. UNKNOWN means the serving location can\u0027t be determined, which can result from metrics produced by machine learning models. CARD_INDEX - Group results by the index of where a card appears in a carousel ad creative. Metrics are based on the index of the card at the time when the user\u0027s action (impression, click, etc.) happened on the creative (Carousel creatives only). MEMBER_COMPANY_SIZE - Group results by member company size. MEMBER_INDUSTRY - Group results by member industry. MEMBER_SENIORITY - Group results by member seniority. MEMBER_JOB_TITLE - Group results by member job title. MEMBER_JOB_FUNCTION - Group results by member job function. MEMBER_COUNTRY_V2 - Group results by member country/region. MEMBER_REGION_V2 - Group results by member region. MEMBER_COMPANY - Group results by member company. MEMBER_DESIGNATED_MARKET_AREA - Group results by member Nielsen Designated Market Area (DMA). Pivot items are returned as urn:li:geo:{id} URNs. Use the Ad Targeting Entities resource (q=urns) to resolve these geo URNs to their DMA region names. When displaying results grouped by the MEMBER_DESIGNATED_MARKET_AREA pivot, you must display a \u0022circle R\u0022 notice of registration immediately following each display of the DMA marks (that is, DMA\u00AE) and the following statement: \u0022DMA\u00AE is a registered service mark of The Nielsen Company.\u0022 Note: Available starting with the 202609 version. PLACEMENT_NAME - Group results by placement. UNKNOWN means the placement can\u0027t be determined, which can result from metrics produced by machine learning models. IMPRESSION_DEVICE_TYPE - Group results by the device type the ad made an impression on. Reach metrics and conversion metrics are not available when this pivot is used. More details can be found here. EVENT_STAGE - Organize results based on the stage of the live event. (PRE_LIVE, LIVE, POST_LIVE).",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext",
+              "https://www.linkedin.com/help/lms/answer/a1509104"
+            ],
+            "Values": [
+              "COMPANY - Group results by advertiser\u0027s company.",
+              "ACCOUNT - Group results by account.",
+              "SHARE - Group results by sponsored share.",
+              "CAMPAIGN - Group results by campaign.",
+              "CREATIVE - Group results by creative.",
+              "CAMPAIGN_GROUP - Group results by campaign group.",
+              "CONVERSION - Group results by conversion.",
+              "CONVERSATION_NODE - The element row in the conversation is the information for each individual node of the conversation tree.",
+              "CONVERSATION_NODE_OPTION_INDEX - Used actionClicks are deaggregated and reported at the Node Button level. The second value of the pivot_values is the index of the button in the node.",
+              "SERVING_LOCATION - Group results by serving location, onsite or offsite. UNKNOWN means the serving location can\u0027t be determined, which can result from metrics produced by machine learning models.",
+              "CARD_INDEX - Group results by the index of where a card appears in a carousel ad creative. Metrics are based on the index of the card at the time when the user\u0027s action (impression, click, etc.) happened on the creative (Carousel creatives only).",
+              "MEMBER_COMPANY_SIZE - Group results by member company size.",
+              "MEMBER_INDUSTRY - Group results by member industry.",
+              "MEMBER_SENIORITY - Group results by member seniority.",
+              "MEMBER_JOB_TITLE - Group results by member job title.",
+              "MEMBER_JOB_FUNCTION - Group results by member job function.",
+              "MEMBER_COUNTRY_V2 - Group results by member country/region.",
+              "MEMBER_REGION_V2 - Group results by member region.",
+              "MEMBER_COMPANY - Group results by member company.",
+              "MEMBER_DESIGNATED_MARKET_AREA - Group results by member Nielsen Designated Market Area (DMA). Pivot items are returned as urn:li:geo:{id} URNs. Use the Ad Targeting Entities resource (q=urns) to resolve these geo URNs to their DMA region names. When displaying results grouped by the MEMBER_DESIGNATED_MARKET_AREA pivot, you must display a \u0022circle R\u0022 notice of registration immediately following each display of the DMA marks (that is, DMA\u00AE) and the following statement: \u0022DMA\u00AE is a registered service mark of The Nielsen Company.\u0022 Note: Available starting with the 202609 version.",
+              "PLACEMENT_NAME - Group results by placement. UNKNOWN means the placement can\u0027t be determined, which can result from metrics produced by machine learning models.",
+              "IMPRESSION_DEVICE_TYPE - Group results by the device type the ad made an impression on. Reach metrics and conversion metrics are not available when this pivot is used. More details can be found here.",
+              "EVENT_STAGE - Organize results based on the stage of the live event. (PRE_LIVE, LIVE, POST_LIVE)."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive start time range of the analytics. If unset, it indicates an open range up to the end time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive end time range of the analytics. Must be after start time if it\u0027s present. If unset, it indicates an open range from start time to everything after.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeGranularity.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time granularity of results. Valid enum values: ALL - Results grouped into a single result across the entire time range of the report. DAILY - Results grouped by day. MONTHLY - Results grouped by month. YEARLY - Results grouped by year.",
+            "Links": [],
+            "Values": [
+              "ALL - Results grouped into a single result across the entire time range of the report.",
+              "DAILY - Results grouped by day.",
+              "MONTHLY - Results grouped by month.",
+              "YEARLY - Results grouped by year."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignType.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by a campaign type. Supported types are [TEXT_AD, SPONSORED_UPDATES, SPONSORED_INMAILS, DYNAMIC]. Requires at least one other facet. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by share facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Share URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by campaign facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Sponsored Campaign URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by campaign group facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Campaign Group URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by sponsored ad account facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Account URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by advertiser\u0027s own company facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Organization URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortBy.field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field by which the results are sorted. Supported values include:COST_IN_LOCAL_CURRENCYIMPRESSIONSCLICKSONE_CLICK_LEADSOPENSSENDSEXTERNAL_WEBSITE_CONVERSIONS",
+            "Links": [],
+            "Values": [
+              "COST_IN_LOCAL_CURRENCY",
+              "IMPRESSIONS",
+              "CLICKS",
+              "ONE_CLICK_LEADS",
+              "OPENS",
+              "SENDS",
+              "EXTERNAL_WEBSITE_CONVERSIONS"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if sortBy.order is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortBy.order",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The order of the results. Supported values include:ASCENDINGDESCENDING",
+            "Links": [],
+            "Values": [
+              "ASCENDING",
+              "DESCENDING"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if sortBy.field is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of metric fields that you can fetch by passing the required fields. Refer to the Supported fields from the metrics available table.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema?view=li-lms-2026-09#metrics-available"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Statistics Finder Query Parameters",
+      "Anchor": "statistics-finder-query-parameters",
+      "SectionPath": [
+        "Statistics Finder Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Designates the query finder. Must be statistics for the Statistics Finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pivots.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pivot of results, by which each report data point is grouped. Accepts up to 3 values. The following enum values are supported: COMPANY - Group results by advertiser\u0027s company. ACCOUNT - Group results by account. SHARE - Group results by sponsored share. CAMPAIGN - Group results by campaign. CREATIVE - Group results by creative. CAMPAIGN_GROUP - Group results by campaign group. CONVERSION - Group results by conversion. CONVERSATION_NODE - The element row in the conversation is the information for each individual node of the conversation tree.CONVERSATION_NODE_OPTION_INDEX - Used actionClicks are deaggregated and reported at the Node Button level. The second value of the pivot_values is the index of the button in the node.SERVING_LOCATION - Group results by serving location, onsite or offsite. UNKNOWN means the serving location can\u0027t be determined, which can result from metrics produced by machine learning models. OBJECTIVE_TYPE: Group results by campaign\u0027s objective type. CARD_INDEX - Group results by the index of where a card appears in a carousel ad creative. Metrics are based on the index of the card at the time when the user\u0027s action (impression, click, etc.) happened on the creative (Carousel creatives only). PLACEMENT_NAME - Group results by placement. UNKNOWN means the placement can\u0027t be determined, which can result from metrics produced by machine learning models. IMPRESSION_DEVICE_TYPE - Group results by the device type the ad made an impression on. Reach metrics and conversion metrics are not available when this pivot is used. More details can be found here. EVENT_STAGE - Organize results based on the stage of the live event. (PRE_LIVE, LIVE, POST_LIVE).",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a1509104"
+            ],
+            "Values": [
+              "COMPANY - Group results by advertiser\u0027s company.",
+              "ACCOUNT - Group results by account.",
+              "SHARE - Group results by sponsored share.",
+              "CAMPAIGN - Group results by campaign.",
+              "CREATIVE - Group results by creative.",
+              "CAMPAIGN_GROUP - Group results by campaign group.",
+              "CONVERSION - Group results by conversion.",
+              "CONVERSATION_NODE - The element row in the conversation is the information for each individual node of the conversation tree.",
+              "CONVERSATION_NODE_OPTION_INDEX - Used actionClicks are deaggregated and reported at the Node Button level. The second value of the pivot_values is the index of the button in the node.",
+              "SERVING_LOCATION - Group results by serving location, onsite or offsite. UNKNOWN means the serving location can\u0027t be determined, which can result from metrics produced by machine learning models.",
+              "OBJECTIVE_TYPE: Group results by campaign\u0027s objective type.",
+              "CARD_INDEX - Group results by the index of where a card appears in a carousel ad creative. Metrics are based on the index of the card at the time when the user\u0027s action (impression, click, etc.) happened on the creative (Carousel creatives only).",
+              "PLACEMENT_NAME - Group results by placement. UNKNOWN means the placement can\u0027t be determined, which can result from metrics produced by machine learning models.",
+              "IMPRESSION_DEVICE_TYPE - Group results by the device type the ad made an impression on. Reach metrics and conversion metrics are not available when this pivot is used. More details can be found here.",
+              "EVENT_STAGE - Organize results based on the stage of the live event. (PRE_LIVE, LIVE, POST_LIVE)."
+            ]
+          },
+          {
+            "Text": "Array of Strings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive start time range of the analytics. If unset, it indicates an open range up to the end time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive end time range of the analytics. Must be after start time if it\u0027s present. If unset, it indicates an open range from start time to everything after.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filters results by objective type. The following enum values are supported: LEAD_GENERATION CREATIVE_ENGAGEMENT WEBSITE_TRAFFIC VIDEO_VIEW BRAND_AWARENESSWEBSITE_CONVERSION WEBSITE_VISIT ENGAGEMENT JOB_APPLICANT",
+            "Links": [],
+            "Values": [
+              "LEAD_GENERATION",
+              "CREATIVE_ENGAGEMENT",
+              "WEBSITE_TRAFFIC",
+              "VIDEO_VIEW",
+              "BRAND_AWARENESS",
+              "WEBSITE_CONVERSION",
+              "WEBSITE_VISIT",
+              "ENGAGEMENT",
+              "JOB_APPLICANT"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeGranularity.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time granularity of results. Valid enum values: ALL - Results grouped into a single result across the entire time range of the report. DAILY - Results grouped by day. MONTHLY - Results grouped by month. YEARLY - Results grouped by year.",
+            "Links": [],
+            "Values": [
+              "ALL - Results grouped into a single result across the entire time range of the report.",
+              "DAILY - Results grouped by day.",
+              "MONTHLY - Results grouped by month.",
+              "YEARLY - Results grouped by year."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignType.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by a campaign type. Supported types are: TEXT_AD SPONSORED_UPDATESSPONSORED_INMAILS DYNAMIC Requires at least one other facet. Defaults to empty.",
+            "Links": [],
+            "Values": [
+              "TEXT_AD",
+              "SPONSORED_UPDATES",
+              "SPONSORED_INMAILS",
+              "DYNAMIC"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by share facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Share URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by campaign facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Sponsored Campaign URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by campaign group facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Campaign Group URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by sponsored ad account facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Account URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match result by advertiser\u0027s own company facets. Defaults to empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Organization URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes unless another facet is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortBy.field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field by which the results are sorted. Supported values include:COST_IN_LOCAL_CURRENCYIMPRESSIONSCLICKSONE_CLICK_LEADSOPENSSENDSEXTERNAL_WEBSITE_CONVERSIONS",
+            "Links": [],
+            "Values": [
+              "COST_IN_LOCAL_CURRENCY",
+              "IMPRESSIONS",
+              "CLICKS",
+              "ONE_CLICK_LEADS",
+              "OPENS",
+              "SENDS",
+              "EXTERNAL_WEBSITE_CONVERSIONS"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if sortBy.order is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortBy.order",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The order of the results. Supported values include:ASCENDINGDESCENDING",
+            "Links": [],
+            "Values": [
+              "ASCENDING",
+              "DESCENDING"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if sortBy.field is provided.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Revenue Attribution Metrics",
+      "Anchor": "revenue-attribution-metrics",
+      "SectionPath": [
+        "Revenue Attribution Metrics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "revenueWonInUsd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sales revenue in USD in customer\u0027s CRM that can be attributed to being generated through LinkedIn ads. Attribution credit is distributed at a business level across multiple ad accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "returnOnAdSpend",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ratio of total revenue won attributed to LinkedIn marketing divided by LinkedIn ad spend. Attribution credit is distributed at a business level across multiple ad accounts. (revenueWonInUsd / costInUsd)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "closedWonOpportunities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of closed-won opportunities attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "opportunityAmountInUsd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total revenue in USD of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "openOpportunities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of open opportunities (CRM deals in progress) attributed to LinkedIn marketing. Attribution credit is distributed at a business level across multiple ad accounts.This metric is available only when date range includes current day.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "opportunityWinRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate at which the opportunities are won out of all the closed opportunities. (closedWonOpportunities / Number of closed opportunities)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageDealSizeInUsd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Of closed-won opportunities, what\u0027s the average size of the deals Linkedin is driving.(revenueWon / closedWonOpportunities)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageDaysToClose",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The average number of days to close a won deal attributed to LinkedIn marketing.(Opportunity length in days / closedWonOpportunities)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,715 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles",
+  "Title": "Titles",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/benefit-taxonomy-versions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/degree",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/featuredcommitment-taxonomy-versions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/fields-of-study",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/function",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry-taxonomy-versions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/productcategories",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/skills",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/super-titles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "The Titles API provides standardized job title data across the LinkedIn platform. Each position or job is mapped to a\nlist of titles and their higher granularities. Titles is a child of the superTitles entity.\nThis API doesn\u2019t share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "Titles represent standardized job titles on LinkedIn member profiles and job postings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "This API may also be referred to as \u0022Job Title\u0022 or \u0022Position Title\u0022 in other contexts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "Each title has a function field (resolve via Function API) and a superTitle field (resolve via Super Titles API).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Titles",
+      "Anchor": "titles",
+      "SectionPath": [],
+      "Text": "Get a single Title entity.\nGet All Titles that are available in the taxonomy.\nBatch Get Titles for the set of titleIds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Retrieve Title IDs",
+      "Anchor": "how-to-retrieve-title-ids",
+      "SectionPath": [
+        "How to Retrieve Title IDs"
+      ],
+      "Text": "Use GET_ALL with pagination to list all titles. Title IDs also appear in member profile experience sections returned by other DMA APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "| Permission | Description |\n| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| r_dma_admin_pages_content | Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics).\nSee Organization Access Control\nfor more information on\ncompany page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "function",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of format urn:li:function:{ID}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The function URN that this Title belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Title ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title name in various locales.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "superTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of format urn:li:superTitle:{ID}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The superTitle URN that this Title belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaTitles/{ID}?locale=en_US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaTitles/{ID}?locale=en_US\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022name\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022Owner\u0022\n    }\n  },\n  \u0022superTitle\u0022: \u0022urn:li:superTitle:523\u0022,\n  \u0022id\u0022: 1,\n  \u0022function\u0022: \u0022urn:li:function:4\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the Title data is requested in. en_US locale is used if locale is not provided or supported. Formatted with a lowercase, two-letter language code as defined by ISO-639, an underscore, and an uppercase, two-letter country code as defined by ISO-3166 (for example, en_US).",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=en_US",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET_ALL",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET_ALL",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaTitles?locale=en_US\u0026start=2\u0026count=4",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET_ALL",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaTitles?locale=en_US\u0026start=2\u0026count=4\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET_ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 2,\n    \u0022count\u0022: 4,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaTitles?start=0\u0026count=4\u0026locale=en_US\u0022\n      },\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaTitles?start=6\u0026count=4\u0026locale=en_US\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Consultant\u0022\n        }\n      },\n      \u0022superTitle\u0022: \u0022urn:li:superTitle:288\u0022,\n      \u0022id\u0022: 3,\n      \u0022function\u0022: \u0022urn:li:function:6\u0022\n    },\n    {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Project Manager\u0022\n        }\n      },\n      \u0022superTitle\u0022: \u0022urn:li:superTitle:483\u0022,\n      \u0022id\u0022: 4,\n      \u0022function\u0022: \u0022urn:li:function:20\u0022\n    },\n    {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Director\u0022\n        }\n      },\n      \u0022id\u0022: 5\n    },\n    {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022President\u0022\n        }\n      },\n      \u0022superTitle\u0022: \u0022urn:li:superTitle:564\u0022,\n      \u0022id\u0022: 6,\n      \u0022function\u0022: \u0022urn:li:function:4\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "GET_ALL",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the Titles data is requested in. en_US locale is used if locale is not provided or supported. Formatted with a lowercase, two-letter language code as defined by ISO-639, an underscore, and an uppercase, two-letter country code as defined by ISO-3166 (for example, en_US).",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=en_US",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaTitles?ids=List(id_1,id_2,id_3)\u0026locale=en_US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaTitles?ids=List(id_1,id_2,id_3)\u0026locale=en_US\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u00221\u0022: {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Owner\u0022\n        }\n      },\n      \u0022superTitle\u0022: \u0022urn:li:superTitle:523\u0022,\n      \u0022id\u0022: 1,\n      \u0022function\u0022: \u0022urn:li:function:4\u0022\n    },\n    \u00222\u0022: {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Manager\u0022\n        }\n      },\n      \u0022id\u0022: 2\n    },\n    \u00223\u0022: {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Consultant\u0022\n        }\n      },\n      \u0022superTitle\u0022: \u0022urn:li:superTitle:288\u0022,\n      \u0022id\u0022: 3,\n      \u0022function\u0022: \u0022urn:li:function:6\u0022\n    },\n    \u00224\u0022: {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Project Manager\u0022\n        }\n      },\n      \u0022superTitle\u0022: \u0022urn:li:superTitle:483\u0022,\n      \u0022id\u0022: 4,\n      \u0022function\u0022: \u0022urn:li:function:20\u0022\n    },\n    \u00225\u0022: {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Director\u0022\n        }\n      },\n      \u0022id\u0022: 5\n    }\n  },\n  \u0022statuses\u0022: {},\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Titles Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of Titles ids to query for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(ID_1, ID_2, ...)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the Titles data is requested in. en_US locale is used if locale is not provided or supported. Formatted with a lowercase, two-letter language code as defined by ISO-639, an underscore, and an uppercase, two-letter country code as defined by ISO-3166 (for example, en_US).",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes",
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=en_US",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

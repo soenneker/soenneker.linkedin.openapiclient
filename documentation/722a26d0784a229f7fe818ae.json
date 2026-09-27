@@ -1,0 +1,245 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+  "Title": "Getting Access to Matched Audiences API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Matched Audiences API",
+      "Anchor": "getting-access-to-matched-audiences-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Matched Audiences API",
+      "Anchor": "getting-access-to-matched-audiences-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Matched Audiences API",
+      "Anchor": "getting-access-to-matched-audiences-api",
+      "SectionPath": [],
+      "Text": "LinkedIn Matched Audiences API allows advertisers and partners to programmatically build, update, and manage custom audience segments to use as targeting selections in their advertising campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "Audience Upload: Upload a list of companies or contacts as a one-time transfer to build a custom audience segment.\nAudience Streaming: Stream a set of companies or contacts to continuously sync and update an audience segment.\nRetargeting: Build audiences of member accounts based on engagement with your website, ads, Lead Gen Forms, Company Page, LinkedIn Events, or Conversions API signals.\nPredictive Audiences: Combine your first-party or third-party data with LinkedIn\u0027s predictive AI modeling to build a high-intent audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "You have access to the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "DMP Segments: APIs to create and manage audience segments. Permission required is rw_dmp_segments.\nDMP Segment Users: APIs to add or remove users from an audience segment. Permission required is rw_dmp_segments.\nDMP Segment Companies: APIs to add or remove companies from an audience segment. Permission required is rw_dmp_segments.\nDMP Segment Destinations: APIs to manage the destinations associated with an audience segment. Permission required is rw_dmp_segments.\nAd Segments: APIs to retrieve ad segment details. Permission required is rw_dmp_segments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Applying for Matched Audiences API Access",
+        "Prerequisites"
+      ],
+      "Text": "Read the LinkedIn Marketing API Terms and developer documentation.\nYou have one of the following use cases:\n\nReach specific target companies / accounts (ABM) by uploading company names or domains.\nReach specific known contacts by streaming user identities like user email, name.\nRe-engage people who already interacted (e.g., CRM activity, website visits, or conversion/intent signals).\nExclude / suppress audiences (e.g., existing customers) to refine targeting.\nExpand reach to similar audiences using lookalike or predictive modeling from a first-party seed.\n\n\nBe prepared to share your business email address and your organization\u0027s legal name, registered address, website. Your business email address will have to be verified. If you don\u0027t receive the verification email, be sure to check your email\u0027s spam folder, junk folder, social tab, and promotional tab. Personal email addresses won\u0027t pass the review process.\nCompany Page Verification is required for a developer application applying for access to API. Ensure that you\u0027re not using a fake or test company page.\nEnsure that a super admin of the LinkedIn Page associated with your organization has verified your developer application.\nEnsure that your application doesn\u0027t include any portion of the LinkedIn or Microsoft names or logos (e.g. Linked or In).\nEnsure that you have filled out all required fields in the access request form accurately and completely.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Applying for Matched Audiences API Access",
+        "Prerequisites"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Applying for Matched Audiences API Access",
+        "Prerequisites"
+      ],
+      "Text": "Any failure to meet the above prerequisites will result in your access request being rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Login to Developer Portal with your LinkedIn account.\nChoose your developer app from My Apps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "If you or your organization doesn\u0027t have an existing developer app, create a new developer application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Navigate to the Products tab under your App name.\nFrom the list of Additional available products, search for the Matched Audiences product and select Request Access.\nSubmit the form for LinkedIn to review your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review Process",
+      "Anchor": "review-process",
+      "SectionPath": [
+        "Review Process"
+      ],
+      "Text": "Once you have submitted the access request form, it will be reviewed by LinkedIn for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review Process",
+      "Anchor": "review-process",
+      "SectionPath": [
+        "Review Process"
+      ],
+      "Text": "Verified business email address.\nVerified organization\nVerified organization website and domain address\nApplication verified by LinkedIn Page associated with same organization.\nApproved use case\nCompliance with our terms, restrictions, and security, privacy, and trust requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If your application is approved, you\u0027ll be notified over email about your access to the Matched Audiences API and your developer application will be provisioned with the required permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If your application is denied due to identity vetting failure, for example, when we were unable to verify that your organization is a legally registered active entity, you\u0027ll see an option to appeal for it from your developer portal application products, when you click on the Access denied link next to Matched Audiences API product. Please reach out via a Developer Support ticket.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If your application is rejected, for example, when your access request form provided insufficient details to approve your request, review the Prerequisites and Review Process to ensure your application is in compliance, and if you don\u0027t see any option to appeal for it, then you may create a new developer application, and submit a new access request form. Please see the Developer application review status definitions for details about each status and rejection message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Please note that even if LinkedIn approves your integration, you\u0027re solely responsible for ensuring that your integration (including all use, disclosure, and storage of LinkedIn data) is, at all times, in compliance with: (a) the LinkedIn Marketing API Terms and the LinkedIn developer documentation; and (b) all other requirements or restrictions that LinkedIn separately communicates to you (e.g. during or after the review process). LinkedIn retains the right to monitor your application and suspend or discontinue access to the Matched Audiences API for any non-compliance with the LinkedIn Marketing API Terms, even if your application was previously approved by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If you have additional questions or concerns, please reach out via a Developer Support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

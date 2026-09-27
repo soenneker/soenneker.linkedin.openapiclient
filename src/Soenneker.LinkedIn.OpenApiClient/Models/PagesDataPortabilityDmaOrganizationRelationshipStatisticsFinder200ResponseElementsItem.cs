@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The organization property</summary>
+        /// <summary>URN of focus organization.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Organization { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Organization { get; set; }
 #endif
-        /// <summary>The pageVisitorsEmployedByRelatedOrg property</summary>
+        /// <summary>TThe number of unique visitors to the focus organization&apos;s page who are currently employed by the related organization.Documented type: OrganizationRelationshipStatisticsDataRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg? PageVisitorsEmployedByRelatedOrg { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg PageVisitorsEmployedByRelatedOrg { get; set; }
 #endif
-        /// <summary>The relatedOrganization property</summary>
+        /// <summary>URN of the related organization whose relationship to the focus organization is being detailed.Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelatedOrganization { get; set; }

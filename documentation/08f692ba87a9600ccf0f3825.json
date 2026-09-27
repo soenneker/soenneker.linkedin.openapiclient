@@ -1,0 +1,62 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+  "Title": "Third-Party Job Listing and Job Site Inclusion Guidelines",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Third-Party Job Listing and Job Site Inclusion Guidelines",
+      "Anchor": "third-party-job-listing-and-job-site-inclusion-guidelines",
+      "SectionPath": [],
+      "Text": "LinkedIn is a platform for real people to interact with one another professionally, to grow in their careers, and to learn from each other. Millions of people use LinkedIn to search and apply for jobs every day. Helping our members stay safe while they search for jobs on LinkedIn is important to us. Along with our automated defenses, our manual review efforts help us identify and prevent abuse and misbehavior.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Third-Party Job Listing and Job Site Inclusion Guidelines",
+      "Anchor": "third-party-job-listing-and-job-site-inclusion-guidelines",
+      "SectionPath": [],
+      "Text": "Please read these Job Listings Guidelines carefully and provided that you are a third-party site sending jobs to LinkedIn on behalf of your customers, you must at all times ensure that your job listings comply with your Basic Jobs or Limited Listings Job Feed contract with LinkedIn, below guidelines and applicable laws. In case of conflicts between your Basic Jobs contract and the guidelines below, your Basic Jobs contract with LinkedIn shall control. We may modify these guidelines from time to time and by continuing to send us your jobs/job feed, you agree to any such modification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Listing Guidelines",
+      "Anchor": "job-listing-guidelines",
+      "SectionPath": [
+        "Job Listing Guidelines"
+      ],
+      "Text": "All job listings sent to LinkedIn must represent valid, real and current job openings. Job listings must represent a legitimate intent to hire for a bona fide job opportunity and comply with LinkedIn\u2019s terms and conditions and Jobs Policies.\nJob listings must not misrepresent the job, hiring company, or poster.\n\nAll job listings you provide must strictly adhere to our XML job feed format.\nJob listings must include accurate and complete data for the following data fields: company name, location, job title and complete job description. The aforementioned job listing data fields provided by the third-party site must exactly match the data fields on the source job listing and must not be altered.\nThe company name must accurately represent the actual employer hiring for the position. The company name must match the employer name on the source job listing and must not use placeholders such as \u0022Confidential\u0022, \u0022Confidential Company\u0022, or other generic names to hide the employer identity. If you are a staffing agency or recruiter posting jobs on behalf of clients where the employer name cannot be disclosed, these listings are not eligible for Basic Jobs or Limited Listings XML feeds and will require paid promotion on LinkedIn. Contact your LinkedIn representative to discuss promotion options.\nThe job title must exactly match the job title as on the source listing and must not be altered to include extra information like location, company name or benefits (for example, \u0022Job in Cleveland\u0022, \u0022Engineer - Salary $100k\u002B\u0022).\nEach job must have a valid email associated with the owner of the job posting. These email addresses must always be corporate domain email addresses.\n\n\nThe job feed must contain unique job listings to avoid duplicate job content in our search results.\nThe job feed must not contain closed or expired job listings.\nJob seekers must not have to pay a fee to view or apply to jobs.\nThe job feed must not contain jobs that have been aggregated from other job boards.\nAccess to LinkedIn integration should be restricted to verified, paying users of your system. It should not be available to any non-paying users, including but not limited to:\n\nUsers on a free and/or trial basis of your system\nUsers undergoing investigation or considered suspicious by your system (even if they are a paying user)\nUsers whose accounts on your system are only 30 days old or less (even if they are a paying user)\n\n\nJob seekers must not have to register or login to view the entire job listing.\nYou must have the right to share with or post the job listing on LinkedIn (for example, you must ensure that the trademark owner and the copyright owner of the content have consented to listing the job). You must commit to removing jobs where a hiring company informs LinkedIn that the jobs have been shared without its prior knowledge and authorization.\nThe application process must lead directly to the source job listing; i.e. when the job seeker clicks the apply button on LinkedIn, they should be immediately directed to the site where the application process is hosted without being redirected to any other sites.\n\nAny advertisements on the site with your job listing must be unobtrusive and must not distract the job seeker from the description and application\nThe apply button must not be hidden or obscured by advertisements and should be accessible across devices (desktop, mobile, etc.)\nThe application itself must request only information that is requested in the source job listing created by the employer\n\n\nThe application must not be utilized as a tool for lead generation and/or marketing activities. The application process must not require the job seeker to visit social media platforms and/or \u2018like\u2019 any communication or entity and/or \u2018share\u2019 content as a condition of the application.\nJob listings should not be utilized for \u201Cbusiness opportunities\u201D that require payments or recruitment of others or that resemble franchises, multi-level marketing, club memberships, distributorships, or are entirely or almost entirely commission-based.\nJob listings should not be offensive to a reasonable person.\nJob listings should not violate any applicable laws or regulations (in particular those relating to employment discrimination).\nJob seekers\u0027 privacy and personal information must be protected and only used in conjunction with their job search or application.\nJob seekers must not be \u201Cspammed\u201D or otherwise contacted after they have asked not to be contacted.\nAny advertisements on the third-party site must be unobtrusive and must not distract the job seeker from the description and application.\nBeginning in August 2024, certain third-party jobs may no longer be visible on LinkedIn when they are ingested as Basic Jobs or Limited Listings from third-party sources such as applicant tracking systems (ATSs) and job boards. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Listing Guidelines",
+      "Anchor": "job-listing-guidelines",
+      "SectionPath": [
+        "Job Listing Guidelines"
+      ],
+      "Text": "LinkedIn will enforce the aforementioned guidelines and conduct regular audits to verify compliance with the guidelines. As part of our compliance audit, we will serve one warning for observed non-compliance and provide third-party sites one week to comply. In order to protect our users\u2019 best interests, LinkedIn reserves the right to remove from its site any job listing for any reason. Further, LinkedIn reserves the right to remove partners and immediately terminate the Basic Jobs contract for any third-party job site that fails to adhere to these guidelines after one warning and/or generates an excessive number of member complaints.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

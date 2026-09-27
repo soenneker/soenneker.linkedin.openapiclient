@@ -1,0 +1,324 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+  "Title": "LinkedIn Learning and 360Learning Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the 360Learning and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Deep Integration Functionality",
+      "Anchor": "360learning-deep-integration-functionality",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SSO (Idp, not LMS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Deep Integration Functionality",
+      "Anchor": "360learning-deep-integration-functionality",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Deep Integration Functionality",
+      "Anchor": "360learning-deep-integration-functionality",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automatic Content Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Deep Integration Functionality",
+      "Anchor": "360learning-deep-integration-functionality",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Deep Integration Functionality",
+      "Anchor": "360learning-deep-integration-functionality",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and 360Learning integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Deep Integration Functionality",
+      "Anchor": "360learning-deep-integration-functionality",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality"
+      ],
+      "Text": "An active 360Learning LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your 360Learning LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality",
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of 360Learning\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality",
+        "Authentication"
+      ],
+      "Text": "Use your own IdP, not your LMS, as your Single Sign-On (SSO) method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality",
+        "Authentication"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, review the LinkedIn Learning SSO Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning LinkedIn Learning Provider Settings",
+      "Anchor": "360learning-linkedin-learning-provider-settings",
+      "SectionPath": [
+        "360Learning Deep Integration Functionality",
+        "360Learning LinkedIn Learning Provider Settings"
+      ],
+      "Text": "LinkedIn Learning integration in 360Learning allows companies to use the LinkedIn course library within the 360Learning environments. This seamless integration enables a best-of-both worlds experience for both administrators and learners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For you to use the 360Learning and LinkedIn Learning integration, you must provision API keys in your Linkedin Learning admin settings. To provision API keys, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Configuration",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Access content and reports via API and expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\n\nIn the Add LinkedIn Learning API application screen, enter \u0022360Learning\u0022 in the Application Name field.\n\nIn the Application description field, provide a short description of the integration use case. For example, \u0022360Learning content catalog sync\u0022.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nCopy the Client ID and Client Secret in the LinkedIn Learning App configuration into 360Learning\u2019s app configuration UI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "If this is your first time configuring the integration, your xAPI settings should be blank. If you attempt to enable xAPI before saving the form, you will encounter an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "Check out the LinkedIn Learning xAPI configuration workflow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "To communicate learner activity back to 360Learning, you must enable xAPI in your Linkedin Learning admin settings. To enable xAPI in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "After you login, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Integrate.\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\nIn the Integration name field, enter \u0022360Learning reporting\u0022.\n\nIn the User Type drop down, select ID.\n\nCopy and paste the following items provided by 360Learning into LinkedIn Learning:\n\nOAuth Server URL\n\nTenant Server URL\n\nClient ID\n\nClient Secret\n\n\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "You have enabled the 360Learning xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI in LinkedIn Learning",
+      "Anchor": "enable-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI in LinkedIn Learning"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via their 360Learning LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "360Learning Troubleshooting",
+      "Anchor": "360learning-troubleshooting",
+      "SectionPath": [
+        "Configuration",
+        "360Learning Troubleshooting"
+      ],
+      "Text": "For technical assistance, reach out to 360Learning\u2019s Customer Support Team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

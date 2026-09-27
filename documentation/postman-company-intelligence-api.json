@@ -1,0 +1,908 @@
+{
+  "info": {
+    "_postman_id": "6b610c40-26f5-4907-b654-72af0cf014d1",
+    "name": "Company Intelligence API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "bcd1424b-baee-4661-9f16-ba6e109400f3",
+      "name": "Fetch all ad accounts of the authenticated user",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "value": "2.0.0"
+          },
+          {
+            "disabled": true,
+            "key": "Authorization",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "adAccountUsers"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "authenticatedUser"
+            }
+          ],
+          "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser"
+        }
+      },
+      "response": [
+        {
+          "_postman_previewlanguage": "json",
+          "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:516413367\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1500331577000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1505328748000\n                }\n            },\n            \u0022role\u0022: \u0022ACCOUNT_BILLING_ADMIN\u0022,\n            \u0022user\u0022: \u0022urn:li:person:K1RwyVNukt\u0022,\n            \u0022version\u0022: {\n                \u0022versionTag\u0022: \u002289\u0022\n            }\n        },\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:516880883\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1505326590000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1505326615000\n                }\n            },\n            \u0022role\u0022: \u0022ACCOUNT_BILLING_ADMIN\u0022,\n            \u0022user\u0022: \u0022urn:li:person:K1RwyVNukt\u0022,\n            \u0022version\u0022: {\n                \u0022versionTag\u0022: \u00223\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 2\n    }\n}",
+          "code": 200,
+          "cookie": [],
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RestLi-Protocol-Version",
+              "value": "2.0.0"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Li-Fabric",
+              "value": "prod-lva1"
+            },
+            {
+              "key": "X-Li-Pop",
+              "value": "prod-lva1-x"
+            },
+            {
+              "key": "X-LI-Proto",
+              "value": "http/1.1"
+            },
+            {
+              "key": "X-LI-UUID",
+              "value": "AAYDeP50GndIRiDUNqZFNA=="
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            },
+            {
+              "key": "X-LI-Route-Key",
+              "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            }
+          ],
+          "id": "b4e2b018-803d-4bef-89db-22dfd592556c",
+          "name": "Fetch all ad accounts of the authenticated user",
+          "originalRequest": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              },
+              {
+                "disabled": true,
+                "key": "Authorization",
+                "value": "{{insert_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "adAccountUsers"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "authenticatedUser"
+                }
+              ],
+              "raw": "{{baseUrl}}/adAccountUsers?q=authenticatedUser"
+            }
+          },
+          "responseTime": null,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "id": "04564c05-ce1e-4e0f-992f-21d9ff916245",
+      "name": "Search for campaigns using search criteria",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "value": "2.0.0"
+          },
+          {
+            "disabled": true,
+            "key": "Authorization",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "adAccounts",
+            "{{adAccountsId}}",
+            "adCampaigns"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "search"
+            },
+            {
+              "key": "search.campaignGroup.values[0]",
+              "value": "urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+            }
+          ],
+          "raw": "{{baseUrl}}/adAccounts/{{adAccountsId}}/adCampaigns?q=search\u0026search.campaignGroup.values[0]=urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+        }
+      },
+      "response": [
+        {
+          "_postman_previewlanguage": "json",
+          "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022targetingCriteria\u0022: {\n                \u0022include\u0022: {\n                    \u0022and\u0022: [\n                        {\n                            \u0022or\u0022: {\n                                \u0022urn:li:adTargetingFacet:employers\u0022: [\n                                    \u0022urn:li:company:1035\u0022\n                                ]\n                            }\n                        },\n                        {\n                            \u0022or\u0022: {\n                                \u0022urn:li:adTargetingFacet:locations\u0022: [\n                                    \u0022urn:li:geo:103644278\u0022\n                                ]\n                            }\n                        },\n                        {\n                            \u0022or\u0022: {\n                                \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                                    \u0022urn:li:locale:en_US\u0022\n                                ]\n                            }\n                        }\n                    ]\n                }\n            },\n            \u0022servingStatuses\u0022: [\n                \u0022ACCOUNT_SERVING_HOLD\u0022\n            ],\n            \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n            \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022version\u0022: {\n                \u0022versionTag\u0022: \u00221\u0022\n            },\n            \u0022associatedEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022test\u0022: false,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022targeting\u0022: {\n                \u0022includedTargetingFacets\u0022: {\n                    \u0022employers\u0022: [\n                        \u0022urn:li:organization:1035\u0022\n                    ],\n                    \u0022locations\u0022: [\n                        \u0022urn:li:geo:103644278\u0022\n                    ],\n                    \u0022interfaceLocales\u0022: [\n                        {\n                            \u0022country\u0022: \u0022US\u0022,\n                            \u0022language\u0022: \u0022en\u0022\n                        }\n                    ]\n                }\n            },\n            \u0022optimizationPreference\u0022: {\n                \u0022frequencyOptimizationPreference\u0022: {\n                    \u0022timeSpan\u0022: {\n                        \u0022duration\u0022: 7,\n                        \u0022unit\u0022: \u0022DAY\u0022\n                    },\n                    \u0022optimizationType\u0022: \u0022MAX_FREQUENCY\u0022,\n                    \u0022frequency\u0022: 10\n                }\n            },\n            \u0022optimizationTargetType\u0022: \u0022NONE\u0022,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022time\u0022: 1543365082000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022time\u0022: 1543365082000\n                }\n            },\n            \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:603030884\u0022,\n            \u0022dailyBudget\u0022: {\n                \u0022amount\u0022: \u002218\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022unitCost\u0022: {\n                \u0022amount\u0022: \u002215\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n            \u0022costType\u0022: \u0022CPC\u0022,\n            \u0022name\u0022: \u0022Campaign Sponsored update B\u0022,\n            \u0022offsiteDeliveryEnabled\u0022: false,\n            \u0022id\u0022: 145282384,\n            \u0022audienceExpansionEnabled\u0022: false,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506333826\u0022,\n            \u0022status\u0022: \u0022ACTIVE\u0022\n        }\n    ],\n    \u0022metadata\u0022: {\n        \u0022nextPageToken\u0022: \u0022DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo\u0022\n    }\n}",
+          "code": 200,
+          "cookie": [],
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RestLi-Protocol-Version",
+              "value": "2.0.0"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Li-Fabric",
+              "value": "prod-lva1"
+            },
+            {
+              "key": "X-Li-Pop",
+              "value": "prod-lva1-x"
+            },
+            {
+              "key": "X-LI-Proto",
+              "value": "http/1.1"
+            },
+            {
+              "key": "X-LI-UUID",
+              "value": "AAYDeP50GndIRiDUNqZFNA=="
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            },
+            {
+              "key": "X-LI-Route-Key",
+              "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            }
+          ],
+          "id": "18e21178-3f4d-46ea-8f2e-1c1c1fab158c",
+          "name": "Search for campaigns using search criteria",
+          "originalRequest": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              },
+              {
+                "disabled": true,
+                "key": "Authorization",
+                "value": "{{insert_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "adAccounts",
+                "{{adAccountsId}}",
+                "adCampaigns"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "search"
+                },
+                {
+                  "key": "search.campaignGroup.values[0]",
+                  "value": "urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+                }
+              ],
+              "raw": "{{baseUrl}}/adAccounts/{{adAccountsId}}/adCampaigns?q=search\u0026search.campaignGroup.values[0]=urn:li:sponsoredCampaignGroup:{{campaigngroup_id}}"
+            }
+          },
+          "responseTime": null,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "id": "690b3db5-c932-4b3a-a16f-0c101eec4acd",
+      "name": "Fetch existing ad segments based on ad account",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "value": "2.0.0"
+          },
+          {
+            "disabled": true,
+            "key": "Authorization",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "adSegments"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "account"
+            },
+            {
+              "key": "accounts",
+              "value": "List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+            }
+          ],
+          "raw": "{{baseUrl}}/adSegments?q=account\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+        }
+      },
+      "response": [
+        {
+          "_postman_previewlanguage": "json",
+          "body": "{\n   \u0022elements\u0022: [\n       {\n           \u0022approximateMemberCount\u0022: 230000,\n           \u0022created\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1651129031000\n           },\n           \u0022name\u0022: \u0022DMP Segment 1\u0022,\n           \u0022versionTag\u0022: \u002281433811311\u0022,\n           \u0022id\u0022: 11422166,\n           \u0022lastModified\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1654271097000\n           },\n           \u0022type\u0022: \u0022MARKET_AUTOMATION\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n           \u0022status\u0022: \u0022ARCHIVED\u0022\n       },\n       {\n           \u0022approximateMemberCount\u0022: 0,\n           \u0022created\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1651486505000\n           },\n           \u0022name\u0022: \u0022DMP segment for CSV uploads\u0022,\n           \u0022versionTag\u0022: \u002278913777069\u0022,\n           \u0022id\u0022: 11462646,\n           \u0022lastModified\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1651972148000\n           },\n           \u0022type\u0022: \u0022BULK\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n           \u0022status\u0022: \u0022READY\u0022\n       },\n       {\n           \u0022approximateMemberCount\u0022: 0,\n           \u0022created\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1657199237000\n           },\n           \u0022name\u0022: \u0022Bulk AdSegment created by self service, and go through state transitions\u0022,\n           \u0022description\u0022: \u0022description for AdSegment Bulk\u0022,\n           \u0022versionTag\u0022: \u002284646462865\u0022,\n           \u0022id\u0022: 12554466,\n           \u0022lastModified\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1657238293000\n           },\n           \u0022type\u0022: \u0022RETARGETING\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n           \u0022status\u0022: \u0022READY\u0022\n       }\n   ]\n}",
+          "code": 200,
+          "cookie": [],
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RestLi-Protocol-Version",
+              "value": "2.0.0"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Li-Fabric",
+              "value": "prod-lva1"
+            },
+            {
+              "key": "X-Li-Pop",
+              "value": "prod-lva1-x"
+            },
+            {
+              "key": "X-LI-Proto",
+              "value": "http/1.1"
+            },
+            {
+              "key": "X-LI-UUID",
+              "value": "AAYDeP50GndIRiDUNqZFNA=="
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            },
+            {
+              "key": "X-LI-Route-Key",
+              "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            }
+          ],
+          "id": "dbddcb21-9aff-4cba-91e1-3cccbc5fb833",
+          "name": "Fetch existing ad segments based on ad account",
+          "originalRequest": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{insert_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "adSegments"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "account"
+                },
+                {
+                  "key": "accounts",
+                  "value": "List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+                }
+              ],
+              "raw": "{{baseUrl}}/adSegments?q=account\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})"
+            }
+          },
+          "responseTime": null,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "id": "2502956c-b4ce-49df-896e-7b52c1d9195e",
+      "name": "Fetch account intelligence data using lookback window filter",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "value": "2.0.0"
+          },
+          {
+            "disabled": true,
+            "key": "Authorization",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "accountIntelligence"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "account"
+            },
+            {
+              "key": "start",
+              "value": "0"
+            },
+            {
+              "key": "count",
+              "value": "10"
+            },
+            {
+              "key": "account",
+              "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+            },
+            {
+              "key": "filterCriteria",
+              "value": "(lookbackWindow:LAST_7_DAYS)"
+            }
+          ],
+          "raw": "{{baseUrl}}/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS)"
+        }
+      },
+      "response": [
+        {
+          "_postman_previewlanguage": "json",
+          "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022:    \u0022https://www.linkedin.com/company/microsoft\u0022,\n \u0022companyWebsite\u0022 : \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 20,\n            \u0022organicEngagements\u0022: 50,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 40,\n            \u0022paidEngagements\u0022: 300,\n            \u0022paidImpressions\u0022: 133,\n            \u0022organicImpressions\u0022: 50,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022\n        },\n        ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/partnerApiAccountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}\n",
+          "code": 200,
+          "cookie": [],
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RestLi-Protocol-Version",
+              "value": "2.0.0"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Li-Fabric",
+              "value": "prod-lva1"
+            },
+            {
+              "key": "X-Li-Pop",
+              "value": "prod-lva1-x"
+            },
+            {
+              "key": "X-LI-Proto",
+              "value": "http/1.1"
+            },
+            {
+              "key": "X-LI-UUID",
+              "value": "AAYDeP50GndIRiDUNqZFNA=="
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            },
+            {
+              "key": "X-LI-Route-Key",
+              "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            }
+          ],
+          "id": "d7ff082c-b781-43f0-9e41-b2065c08b5e7",
+          "name": "Fetch account intelligence data using lookback window filter",
+          "originalRequest": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              },
+              {
+                "disabled": true,
+                "key": "Authorization",
+                "value": "{{insert_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accountIntelligence"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "account"
+                },
+                {
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "key": "count",
+                  "value": "10"
+                },
+                {
+                  "key": "account",
+                  "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                },
+                {
+                  "key": "filterCriteria",
+                  "value": "(lookbackWindow:LAST_7_DAYS)"
+                }
+              ],
+              "raw": "{{baseUrl}}/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS)"
+            }
+          },
+          "responseTime": null,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "id": "e4fa9c7f-3105-4adf-b89c-11bd1ab99232",
+      "name": "Fetch account intelligence data using ad segment filter",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "value": "2.0.0"
+          },
+          {
+            "disabled": true,
+            "key": "Authorization",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "accountIntelligence"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "account"
+            },
+            {
+              "key": "start",
+              "value": "0"
+            },
+            {
+              "key": "count",
+              "value": "10"
+            },
+            {
+              "key": "account",
+              "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+            },
+            {
+              "key": "filterCriteria",
+              "value": "(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+            }
+          ],
+          "raw": "{{baseUrl}}/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+        }
+      },
+      "response": [
+        {
+          "_postman_previewlanguage": "json",
+          "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022:    \u0022https://www.linkedin.com/company/microsoft\u0022,\n \u0022companyWebsite\u0022 : \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 20,\n            \u0022organicEngagements\u0022: 50,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 40,\n            \u0022paidEngagements\u0022: 300,\n            \u0022paidImpressions\u0022: 133,\n            \u0022organicImpressions\u0022: 50,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022\n        },\n        ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/partnerApiAccountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}\n",
+          "code": 200,
+          "cookie": [],
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RestLi-Protocol-Version",
+              "value": "2.0.0"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Li-Fabric",
+              "value": "prod-lva1"
+            },
+            {
+              "key": "X-Li-Pop",
+              "value": "prod-lva1-x"
+            },
+            {
+              "key": "X-LI-Proto",
+              "value": "http/1.1"
+            },
+            {
+              "key": "X-LI-UUID",
+              "value": "AAYDeP50GndIRiDUNqZFNA=="
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            },
+            {
+              "key": "X-LI-Route-Key",
+              "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            }
+          ],
+          "id": "dff99a25-1ce0-4faa-9730-813c1c5a81a5",
+          "name": "Fetch account intelligence data using ad segment filter",
+          "originalRequest": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              },
+              {
+                "key": "Authorization",
+                "value": "{{insert_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accountIntelligence"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "account"
+                },
+                {
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "key": "count",
+                  "value": "10"
+                },
+                {
+                  "key": "account",
+                  "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                },
+                {
+                  "key": "filterCriteria",
+                  "value": "(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+                }
+              ],
+              "raw": "{{baseUrl}}/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A{{adsegment_id1}},urn%3Ali%3AadSegment%3A{{adsegement_id2}}))"
+            }
+          },
+          "responseTime": null,
+          "status": "OK"
+        }
+      ]
+    },
+    {
+      "id": "eaf94ad7-ef07-41dd-a0be-bbf2ffe4c05a",
+      "name": "Fetch account intelligence data using campaign filter",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "value": "2.0.0"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "accountIntelligence"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "account"
+            },
+            {
+              "key": "start",
+              "value": "0"
+            },
+            {
+              "key": "count",
+              "value": "10"
+            },
+            {
+              "key": "account",
+              "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+            },
+            {
+              "key": "filterCriteria",
+              "value": "(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+            }
+          ],
+          "raw": "{{baseUrl}}/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026filterCriteria=(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+        }
+      },
+      "response": [
+        {
+          "_postman_previewlanguage": "json",
+          "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022:    \u0022https://www.linkedin.com/company/microsoft\u0022,\n \u0022companyWebsite\u0022 : \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 20,\n            \u0022organicEngagements\u0022: 50,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 40,\n            \u0022paidEngagements\u0022: 300,\n            \u0022paidImpressions\u0022: 133,\n            \u0022organicImpressions\u0022: 50,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022\n        },\n        ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/partnerApiAccountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List())\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}\n",
+          "code": 200,
+          "cookie": [],
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RestLi-Protocol-Version",
+              "value": "2.0.0"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 22 Aug 2023 01:34:20 GMT"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "X-Li-Fabric",
+              "value": "prod-lva1"
+            },
+            {
+              "key": "X-Li-Pop",
+              "value": "prod-lva1-x"
+            },
+            {
+              "key": "X-LI-Proto",
+              "value": "http/1.1"
+            },
+            {
+              "key": "X-LI-UUID",
+              "value": "AAYDeP50GndIRiDUNqZFNA=="
+            },
+            {
+              "key": "Set-Cookie",
+              "value": "lidc=\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            },
+            {
+              "key": "X-LI-Route-Key",
+              "value": "\u0022b=VB52:s=V:r=V:a=V:p=V:g=3817:u=1714:x=1:i=1692668060:t=1692748247:v=2:sig=AQEExcZ9-g2kMBwFJV4hRYBz8S5UhRNr\u0022"
+            }
+          ],
+          "id": "5224b6f1-6776-4395-abe3-b77ef8ff8c4a",
+          "name": "Fetch account intelligence data using campaign filter",
+          "originalRequest": {
+            "header": [
+              {
+                "key": "LinkedIn-Version",
+                "value": "{{insert_version}}"
+              },
+              {
+                "key": "X-Restli-Protocol-Version",
+                "value": "2.0.0"
+              },
+              {
+                "disabled": true,
+                "key": "Authorization",
+                "value": "{{insert_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accountIntelligence"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "account"
+                },
+                {
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "key": "count",
+                  "value": "10"
+                },
+                {
+                  "key": "account",
+                  "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                },
+                {
+                  "key": "filterCriteria",
+                  "value": "(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+                }
+              ],
+              "raw": "{{baseUrl}}/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026filterCriteria=(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A{{campaign_id}})"
+            }
+          },
+          "responseTime": null,
+          "status": "OK"
+        }
+      ]
+    }
+  ]
+}

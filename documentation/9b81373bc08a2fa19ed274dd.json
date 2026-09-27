@@ -1,0 +1,159 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+  "Title": "Enabling Click IDs",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Enabling Click IDs",
+      "Anchor": "enabling-click-ids",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling Click IDs",
+      "Anchor": "enabling-click-ids",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling Click IDs",
+      "Anchor": "enabling-click-ids",
+      "SectionPath": [],
+      "Text": "Capturing Clicks IDs, such as li_fat_id (LinkedIn First-Party Ad Tracking ID) from ad landing page URLs is critical to power the Conversions API for improved match rates by including it as a user identifier when streaming conversion events to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To activate click IDs as a first party cookie tracking, you need to Access LinkedIn Insight Tag in Campaign Manager and enable Enhanced conversion tracking. This automatically appends a click ID parameter li_fat_id to the landing page URLs every time a user clicks on a LinkedIn ad and is redirected to advertiser\u0027s landing page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "This is enabled by default for all new Insight Tags that are recently created. For more information, see Insight Tag Troubleshooting guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Alternatively, developers can also use Find Insight Tag by Ad Account API to retrieve Insight Tag, and then use Partial Update Insight Tag API and set firstPartyTrackingEnabled to true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Capturing Click IDs",
+      "Anchor": "capturing-click-ids",
+      "SectionPath": [
+        "Capturing Click IDs"
+      ],
+      "Text": "Capture Click ID li_fat_id by parsing from the Click URLs and/or read from Cookies (if Insight Tag code is added on website) as outlined in the following two approaches:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parsing li_fat_id From Click URL",
+      "Anchor": "parsing-li_fat_id-from-click-url",
+      "SectionPath": [
+        "Capturing Click IDs",
+        "Parsing li_fat_id From Click URL"
+      ],
+      "Text": "Once Enhanced conversion tracking is enabled from the created Insight Tag (but not required to actually install Insight Tag code on advertiser\u0027s website), you can implement a Javascript code on the website to retrieve Click IDs from the landing page URLs by parsing li_fat_id from the URL as shown in an example below and pass it as a hidden field during form submission for conversion. View-though conversion attribution may be limited in this approach.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Parsing li_fat_id From Click URL",
+      "Anchor": "parsing-li_fat_id-from-click-url",
+      "SectionPath": [
+        "Capturing Click IDs",
+        "Parsing li_fat_id From Click URL"
+      ],
+      "Text": "// New browsers. Not supported on IE \u003C= 11 and Opera Mini.\nconst li_fat_id = (new URLSearchParams(window.location.search)).get(\u0022li_fat_id\u0022);\n\n// Old browsers\nfunction getParam(param) {\n    const queryParams = window.location.split(\u0022?\u0022)[1];\n    const queryKeyValues = queryParams.split(\u0022\u0026\u0022);\n\n    for (const keyValue of queryKeyValues) {\n        const [key, value] = keyValue.split(\u0022=\u0022);\n        if (key === param) {\n                return value;\n            }\n    }\n    return \u0022\u0022;\n}\n    // usage\n    getParam(\u0027li_fat_id\u0027);",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reading li_fat_id From Cookies",
+      "Anchor": "reading-li_fat_id-from-cookies",
+      "SectionPath": [
+        "Capturing Click IDs",
+        "Reading li_fat_id From Cookies"
+      ],
+      "Text": "Once enhanced conversion tracking is enabled from the created Insight Tag and Insight tag has been installed on your website, you can also implement additional Javascript code on advertiser website to retrieve Click IDs by reading li_fat_id cookie from the cookie store as shown in an example below. Then pass it as a hidden field during form submission for conversion. The cookie will persist for 30 days from the most recent ad click that redirected to the landing page where Insight Tag has been installed. View-though conversion attribution are supported in this approach if user previously clicked on one of your ads in the last 30 days and was redirected to the landing page where Insight Tag has been installed. The mapping of a li_fat_id to a LinkedIn member profile is stored for 365 days, so it can still be used as a user match identifier for Conversions API when streaming a conversion event within that window, even after the browser cookie itself has expired.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Reading li_fat_id From Cookies",
+      "Anchor": "reading-li_fat_id-from-cookies",
+      "SectionPath": [
+        "Capturing Click IDs",
+        "Reading li_fat_id From Cookies"
+      ],
+      "Text": "function getCookie(name) {\n  let matches = document.cookie.match(new RegExp(\n    \u0022(?:^|; )\u0022 \u002B name.replace(/([.$?*|{}()[\\]\\\\/\u002B^])/g, \u0027\\\\$1\u0027) \u002B \u0022=([^;]*)\u0022\n  ));\n\n  // usually a cookie value is encoded, so decode it.\n  return matches ? decodeURIComponent(matches[1]) : undefined; \n}\n// usage\ngetCookie(\u0027li_fat_id\u0027);",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Click IDs as User Match Identifier for Conversions",
+      "Anchor": "using-click-ids-as-user-match-identifier-for-conversions",
+      "SectionPath": [
+        "Using Click IDs as User Match Identifier for Conversions"
+      ],
+      "Text": "Once you have retrieved li_fat_id from click URLs and/or cookies, you can include them when Streaming conversion events through API as LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID, which is one of the supported user match identifier idType to improve your match rates with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

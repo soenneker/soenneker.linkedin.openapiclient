@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateRange property</summary>
+        /// <summary>The date range that the analytics data point represents. If the value covers the whole analytics data retention period of the target entity, this field is not set.Documented type: DateRangeRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDateRange? DateRange { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDateRange DateRange { get; set; }
 #endif
-        /// <summary>The demographicDimension property</summary>
+        /// <summary>The dimension of the analytics data point. The field is present only if the requested queryType is ACTOR_DEMOGRAPHICSDocumented type: DemographicDimensionRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension? DemographicDimension { get; set; }
@@ -30,15 +30,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension DemographicDimension { get; set; }
 #endif
-        /// <summary>The metric property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Metric { get; set; }
-#nullable restore
-#else
-        public string Metric { get; set; }
-#endif
-        /// <summary>The percentageChange property</summary>
+        /// <summary>The metric type of analytics data point represents. Possible values are VIDEO_PLAYVIDEO_WATCH_TIMEARTICLE_VIEWNEWSLETTER_ARTICLE_VIEWNEWSLETTER_IMPRESSIONNEWSLETTER_SUBSCRIBERNEWSLETTER_ENGAGEMENTVIDEO_VIEWERARTICLE_VIEWERDocumented type: enumRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemMetric? Metric { get; set; }
+        /// <summary>The percentage change of the analytics data point. The field is missing if the percentage change is not available.Documented type: PercentageChangeRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChange? PercentageChange { get; set; }
@@ -46,7 +40,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChange PercentageChange { get; set; }
 #endif
-        /// <summary>The targetEntity property</summary>
+        /// <summary>The target entity that the analytics data point is for. The URN type is determined by the content type:If the data point is for a video, this field is a ugc post URN (urn:li:ugcPost:123)If the data point is for an article, this field is an article URN (urn:li:article:123 or urn:li:linkedArticleUrn:456)If the data point is for a newsletter, this field is an contentSeries URN (urn:li:contentSeries:123)Documented type: URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetEntity { get; set; }
@@ -89,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "dateRange", n => { DateRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDateRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDateRange.CreateFromDiscriminatorValue); } },
                 { "demographicDimension", n => { DemographicDimension = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension.CreateFromDiscriminatorValue); } },
-                { "metric", n => { Metric = n.GetStringValue(); } },
+                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemMetric>(); } },
                 { "percentageChange", n => { PercentageChange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChange>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChange.CreateFromDiscriminatorValue); } },
                 { "targetEntity", n => { TargetEntity = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemValue.CreateFromDiscriminatorValue); } },
@@ -104,7 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDateRange>("dateRange", DateRange);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemDemographicDimension>("demographicDimension", DemographicDimension);
-            writer.WriteStringValue("metric", Metric);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemMetric>("metric", Metric);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemPercentageChange>("percentageChange", PercentageChange);
             writer.WriteStringValue("targetEntity", TargetEntity);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponseElementsItemValue>("value", Value);

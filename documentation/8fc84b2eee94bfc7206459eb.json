@@ -1,0 +1,51 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/release-notes",
+  "Title": "Sales Navigator Sync Services - Release Notes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/data-validation-design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/exporting-crm-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sales Navigator Sync Services - Release Notes",
+      "Anchor": "sales-navigator-sync-services---release-notes",
+      "SectionPath": [],
+      "Text": "Sales Navigator Sync Services release updates on a regular basis to provide new features, security updates, and bug fixes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 12, 2018 - downloadUrl Replaced",
+      "Anchor": "november-12-2018---downloadurl-replaced",
+      "SectionPath": [
+        "November 2018 Release",
+        "November 12, 2018 - downloadUrl Replaced"
+      ],
+      "Text": "The downloadUrl field has been replaced with downloadUrls in GET responses for crmDataValidationExportJobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 8, 2018 - Service Released",
+      "Anchor": "november-8-2018---service-released",
+      "SectionPath": [
+        "November 2018 Release",
+        "November 8, 2018 - Service Released"
+      ],
+      "Text": "crmDataValidationExportJob endpoint released.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

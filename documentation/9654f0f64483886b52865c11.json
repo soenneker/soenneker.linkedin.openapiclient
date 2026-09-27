@@ -1,0 +1,147 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/educations",
+  "Title": "Profile Edit API - Educations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/educations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Edit API - Educations",
+      "Anchor": "profile-edit-api---educations",
+      "SectionPath": [],
+      "Text": "This sub-resource API will allow you to create, update, and delete educations of a member.\u00A0See Education Fields for a description of the fields available within this object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "CREATE | PARTIAL_UPDATE | DELETE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/people/id={person ID}/educations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022activities\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Alpha Phi Omega\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022degreeName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Bachelor of Science (B.S.)\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022endMonthYear\u0022: {\n        \u0022year\u0022: 2013\n    },\n    \u0022fieldsOfStudy\u0022: [\n        {\n            \u0022fieldOfStudyName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Computer Engineering\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }\n    ],\n    \u0022grade\u0022: {\n        \u0022grade\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u00223.9\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        }\n    },\n    \u0022notes\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: {\n                \u0022rawText\u0022: \u0022Graduated with Honors.\u0022\n            }\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n    \u0022schoolName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Santa Clara University\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022startMonthYear\u0022: {\n        \u0022year\u0022: 2011\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "A successful response will return a 201 Created HTTP status code. To record the created entity\u0027s id, refer to the header x-linkedin-id field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "PARTIAL UPDATE",
+      "Anchor": "partial-update",
+      "SectionPath": [
+        "PARTIAL UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/people/id={person ID}/educations/{education ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022degreeName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bachelor of Science (B.S.)\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022schoolName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Stanford University\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startMonthYear\u0022: {\n                \u0022year\u0022: 2013\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "sample request body"
+      ],
+      "Text": "Sample Json to delete one or more fields. If you attempt to delete a field that is mandatory, the API will return a 422 Error Response. See Education Fields for allowed list of fields for this resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$delete\u0022: [\n            \u0022field1\u0022,\n            \u0022field2\u0022\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "DELETE",
+      "Anchor": "delete",
+      "SectionPath": [
+        "DELETE"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/people/id={person ID}/educations/{education ID}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

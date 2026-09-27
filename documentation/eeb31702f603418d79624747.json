@@ -1,0 +1,478 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/sample-applications",
+  "Title": "OAuth Sample Application",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/sample-apps-lms",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/sample-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/development-resources/api-clients",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The OAuth Sample Application is a ready-to-use code example that you can readily use to try out RESTful OAuth calls to the LinkedIn Authentication server. This version of the sample application is based on Java. The OAuth sample application shown below provides scalable and customizable code for your requirements as you begin API development with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The sample application contains the client and server components you can use to manage your request calls to LinkedIn\u0027s APIs. The server creates and stores your access token and invokes APIs upon request from the client application.You can download or clone the OAuth sample application and try out these APIs as shown in the demo.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The OAuth sample application uses the following development tools:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Spring Boot: provides the web server framework [https://spring.io/projects/spring-boot]\nLinkedIn OAuth 2.0: user authorization and API authentication\nMaven: app building and management\nJava: requires SE 7 or later versions for development",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Register your application in the LinkedIn Developer Portal.\nAfter registration of the application, note down the Client ID and Client Secret for your future reference\nAdd http://localhost:8080/login to the Authorized Redirect URLs under the Authentication section\nConfigure your application build by installing and using Apache Maven\nDownload the OAuth sample application from Sample Application Repository",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the OAuth sample application",
+      "Anchor": "configure-the-oauth-sample-application",
+      "SectionPath": [
+        "Configure the OAuth sample application"
+      ],
+      "Text": "Configure the client app:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the OAuth sample application",
+      "Anchor": "configure-the-oauth-sample-application",
+      "SectionPath": [
+        "Configure the OAuth sample application"
+      ],
+      "Text": "Access the application.properties file. This file is located at /client/src/main/resources/application.properties\n\nEnter the server.port and SERVER_URL in the noted fields:\n JavaScriptCopy server.port = \u003Creplace_with_required_port_no\u003E\nSERVER_URL = \u003Creplace_with_required_server_url\u003E\n\n\nSave your changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the OAuth sample application",
+      "Anchor": "configure-the-oauth-sample-application",
+      "SectionPath": [
+        "Configure the OAuth sample application"
+      ],
+      "Text": "Configure the server app:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the OAuth sample application",
+      "Anchor": "configure-the-oauth-sample-application",
+      "SectionPath": [
+        "Configure the OAuth sample application"
+      ],
+      "Text": "Access the config.properties file. This file is located at /server/src/main/resources/config.properties\n\nEnter your client credential values in the noted fields:\n JavaScriptCopy clientId = \u003Creplace_with_client_id\u003E\nclientSecret = \u003Creplace_with_client_secret\u003E\nredirectUri = \u003Creplace_with_redirect_url_set_in_developer_portal\u003E\nscope = \u003Creplace_with_api_scope\u003E \nclient_url = \u003Creplace_with_client_url\u003E\n\n\nSave your changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "To start the server:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "Access the server folder.\nOpen the terminal/command prompt and run the following command to install dependencies:\nmvn install\nExecute the following command to run the spring-boot server:\nmvn spring-boot:run",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "The server runs on http://localhost:8080/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "To start the client:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "Access the client folder.\nOpen the terminal/command prompt and run the following command to install dependencies:\nmvn install\nExecute the following command to run the spring-boot server:\nmvn spring-boot:run",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start the OAuth sample application",
+      "Anchor": "start-the-oauth-sample-application",
+      "SectionPath": [
+        "Start the OAuth sample application"
+      ],
+      "Text": "Note: The client runs on http://localhost:8989/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application Demo",
+      "Anchor": "sample-application-demo",
+      "SectionPath": [
+        "Sample Application Demo"
+      ],
+      "Text": "This demo shows an overall execution of the LinkedIn OAuth Sample Application. The demo contains clickable areas on the screen, which you can use to navigate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application Demo",
+      "Anchor": "sample-application-demo",
+      "SectionPath": [
+        "Sample Application Demo"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application Demo",
+      "Anchor": "sample-application-demo",
+      "SectionPath": [
+        "Sample Application Demo"
+      ],
+      "Text": "You can reset the demo by refreshing the page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Sample Application Demo",
+        "Next Steps"
+      ],
+      "Text": "If you are interested in exploring the sample application for Marketing, see Marketing Sample Application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "List of dependencies",
+      "Anchor": "list-of-dependencies",
+      "SectionPath": [
+        "Sample Application Demo",
+        "List of dependencies"
+      ],
+      "Text": "",
+      "Headers": [
+        "Component Name",
+        "License",
+        "Linked",
+        "Modified"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "boot:spring-boot-starter-parent:2.5.2",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent/2.5.2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "boot:spring-boot-starter-parent:2.5.2",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent/2.5.2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "org.springframework.boot:spring-boot-starter-thymeleaf:2.2.2.RELEASE",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf/2.2.2.RELEASE"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "org.springframework.boot:spring-boot-devtools:2.6.0",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools/2.6.0"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "com.fasterxml.jackson.core:jackson-databind:2.13.0",
+            "Links": [
+              "https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind/2.13.0"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "com.fasterxml.jackson.core:jackson-core:2.13.0",
+            "Links": [
+              "https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core/2.13.0"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "org.springframework.boot:spring-boot-starter-web:2.5.2",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web/2.5.2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "org.springframework.boot:spring-boot-starter-test:2.6.0",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test/2.6.0"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "org.springframework:spring-core:5.3.13",
+            "Links": [
+              "https://mvnrepository.com/artifact/org.springframework/spring-core/5.3.13"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Apache 2.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Static",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

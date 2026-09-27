@@ -1,0 +1,516 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "clientId": "{{customer_client_id}}",
+      "clientSecret": "{{customer_client_secret}}",
+      "grant_type": "client_credentials",
+      "tokenName": "customer_access_token"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027applyconnect-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "fb90ae97-012d-44b0-a659-e8bb58b80cfd",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "16e3a59e-905e-4b6e-86a5-1032f6b96f8e",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "d8748d0e-707c-43b5-9bd4-5489a29207a4",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.",
+    "name": "Apply Connect",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "b216f032-021e-4cc4-9c3e-0ff09ff1b327",
+      "item": [
+        {
+          "id": "6e5e559b-ee34-4b11-a525-9b416962b0d4",
+          "name": "Provision Customer Application",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \u0022uniqueForeignId\u0022: \u0022{{$randomUUID}}\u0022,\n  \u0022name\u0022: \u0022Partner Name - Customer Application\u0022,\n  \u0022description\u0022: \u0022This is a customer application.\u0022,\n  \u0022validJsSdkDomains\u0022: [\u0022http://localhost:5000\u0022]\n}"
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{parent_access_token}}"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.linkedin.com/v2/provisionedApplications"
+          },
+          "response": []
+        },
+        {
+          "id": "52f1a3c3-d852-4a82-ac7e-0c9aaa1a1804",
+          "name": "Sync Customer Integrations",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=APPLY_CONNECT\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022integrationName\u0022: \u0022Apply Connect Integration\u0022\n                }\n            }\n        }\n    }\n}"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "type": "text",
+                "value": "batch_partial_update"
+              },
+              {
+                "disabled": true,
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "Bearer {{global_access_token}}"
+              }
+            ],
+            "method": "POST",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "atsIntegrations"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].integrationType",
+                  "value": "APPLY_CONNECT"
+                },
+                {
+                  "key": "ids[0].tenantType",
+                  "value": "JOBS"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "ATS"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=APPLY_CONNECT\u0026ids[0].tenantType=JOBS\u0026ids[0].dataProvider=ATS"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "73f46107-f6fd-4ade-b960-fbb4af2114af",
+          "name": "Get App by uniqueForeignID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "Bearer {{parent_access_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "provisionedApplications"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "q",
+                  "value": "credentialsByUniqueForeignId"
+                },
+                {
+                  "key": "uniqueForeignId",
+                  "value": "{{$randomUUID}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/provisionedApplications?q=credentialsByUniqueForeignId\u0026uniqueForeignId={{$randomUUID}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "08230114-d12e-4f43-8195-35dcb397318a",
+          "name": "Verify Integrations",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "Bearer {{child_access_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "atsIntegrations"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].integrationType",
+                  "value": "APPLY_CONNECT"
+                },
+                {
+                  "key": "ids[0].tenantType",
+                  "value": "JOBS"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "ATS"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=APPLY_CONNECT\u0026ids[0].tenantType=JOBS\u0026ids[0].dataProvider=ATS"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Module 1 - Customer Configuration"
+    },
+    {
+      "id": "c3d5455c-6e6b-48bd-9f35-59427f861b02",
+      "item": [
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let jsonData = JSON.parse(responseBody);",
+                  "pm.globals.set(\u0022id\u0022, jsonData.elements[0].id);",
+                  ""
+                ],
+                "id": "f24cf1bc-b650-4df6-9095-60bfc0296aef",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "f1d81034-2428-49eb-bdc6-ae1d94b2f460",
+          "name": "Sync Jobs",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \u0022elements\u0022: [\n        {\n            \u0022externalJobPostingId\u0022: \u0022externalJobPostingId-0001\u0022,\n            \u0022title\u0022: \u0022Software Engineer Test Job\u0022,\n            \u0022description\u0022: \u0022Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\u0027s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:{{org_id}}\u0022,\n            // \u0022companyName\u0022: \u0022Company name\u0022,\n            \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n            \u0022employmentStatus\u0022: \u0022OTHER\u0022,\n            \u0022experienceLevel\u0022: \u0022NOT_APPLICABLE\u0022,\n            \u0022listingType\u0022: \u0022BASIC\u0022,\n            \u0022listedAt\u0022: {{$timestamp}}000,\n            \u0022location\u0022: \u0022United States\u0022,\n            \u0022industries\u0022: [\n                \u0022urn:li:industry:26\u0022\n            ],\n            \u0022categories\u0022: [\n                \u0022advr\u0022\n            ],\n            \u0022companyApplyUrl\u0022: \u0022https://localhost:5000\u0022,\n            \u0022onsiteApplyConfiguration\u0022: {\n                \u0022jobApplicationWebhookUrl\u0022: \u0022{{webhook_url}}\u0022,\n                \u0022questions\u0022: {\n                    \u0022resumeQuestions\u0022: {\n                        \u0022resumeQuestionRequirement\u0022: \u0022REQUIRED\u0022\n                    },\n                    \u0022coverLetterQuestions\u0022: {},\n                    \u0022contactInformationQuestions\u0022: {\n                        \u0022cellphoneNumberQuestionRequirement\u0022: \u0022REQUIRED\u0022,\n                        \u0022helpMessage\u0022: \u0022This is a help message.\u0022\n                    },\n                    \u0022voluntarySelfIdentificationQuestions\u0022: {},\n                    \u0022educationQuestions\u0022: {\n                        \u0022educationExperienceQuestionSet\u0022: {}\n                    },\n                    \u0022workQuestions\u0022: {\n                        \u0022workExperienceQuestionSet\u0022: {}\n                    },\n                    \u0022additionalQuestions\u0022: {\n                        \u0022customQuestionSets\u0022: [\n                            {\n                                \u0022repeatLimit\u0022: 1,\n                                \u0022questions\u0022: [\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022date-question\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022dateQuestionDetails\u0022: {}\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022Enter Today\u0027s Date\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022text-question\u0022,\n                                        \u0022helpMessage\u0022: \u0022This is a help message.\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022textQuestionDetails\u0022: {\n                                                \u0022preferredFormComponent\u0022: \u0022TEXT\u0022\n                                            }\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a text question.\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022multilinetext-question\u0022,\n                                        \u0022helpMessage\u0022: \u0022This is a help message.\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022textQuestionDetails\u0022: {\n                                                \u0022preferredFormComponent\u0022: \u0022MULTILINE_TEXT\u0022\n                                            }\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a multiline text question.\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022fileupload-question\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022documentQuestionDetails\u0022: {}\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a file upload question.\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022multiplechoice-question\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022multipleChoiceQuestionDetails\u0022: {\n                                                \u0022preferredFormComponent\u0022: \u0022CHECKBOXES\u0022,\n                                                \u0022choices\u0022: [\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-1\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 1\u0022\n                                                    },\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-2\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 2\u0022\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a checkbox question with HTML formatting.\u003Ca href=\u0027https://www.linkedin.com\u0027\u003Ehere.\u003C/a\u003E\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022dropdown-question\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022multipleChoiceQuestionDetails\u0022: {\n                                                \u0022preferredFormComponent\u0022: \u0022DROPDOWN\u0022,\n                                                \u0022choices\u0022: [\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-1\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 1\u0022\n                                                    },\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-2\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 2\u0022\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a drop-down question.\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022radiobutton-question\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022multipleChoiceQuestionDetails\u0022: {\n                                                \u0022preferredFormComponent\u0022: \u0022RADIO_BUTTONS\u0022,\n                                                \u0022choices\u0022: [\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-1\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 1\u0022\n                                                    },\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-2\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 2\u0022\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a radio buttons question.\u0022\n                                    },\n                                    {\n                                        \u0022partnerQuestionIdentifier\u0022: \u0022buttons-question\u0022,\n                                        \u0022questionDetails\u0022: {\n                                            \u0022multipleChoiceQuestionDetails\u0022: {\n                                                \u0022preferredFormComponent\u0022: \u0022BUTTONS\u0022,\n                                                \u0022choices\u0022: [\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-1\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 1\u0022\n                                                    },\n                                                    {\n                                                        \u0022symbolicName\u0022: \u0022choice-2\u0022,\n                                                        \u0022displayValue\u0022: \u0022Choice 2\u0022\n                                                    }\n                                                ]\n                                            }\n                                        },\n                                        \u0022required\u0022: true,\n                                        \u0022questionText\u0022: \u0022This is a button question.\u0022\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_create"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{customer_access_token}}"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.linkedin.com/v2/simpleJobPostings"
+          },
+          "response": []
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "b43778a1-f68b-4fc9-ba9e-12e11d594641",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "11207f33-2107-45df-9703-59a13f20399f",
+          "name": "Check Job Operation Task Status",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "ids",
+                  "type": "text",
+                  "value": "{{id}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{customer_access_token}}"
+              },
+              {
+                "key": "X-HTTP-Method-Override",
+                "type": "text",
+                "value": "GET"
+              },
+              {
+                "key": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.linkedin.com/v2/simpleJobPostingTasks"
+          },
+          "response": []
+        },
+        {
+          "id": "e6964397-705f-4d84-a7c2-b9868a964c7e",
+          "name": "Check Job Posting Status",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "ids",
+                  "type": "text",
+                  "value": "{{external_job_posting_id_1}}"
+                },
+                {
+                  "key": "ids",
+                  "type": "text",
+                  "value": "{{external_job_posting_id_2}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{customer_access_token}}"
+              },
+              {
+                "key": "X-HTTP-Method-Override",
+                "value": "GET"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.linkedin.com/v2/jobPostingStatus"
+          },
+          "response": []
+        }
+      ],
+      "name": "Module 2 - Sync Jobs"
+    },
+    {
+      "id": "f3b74ba6-cdb4-4528-89f7-8a859e5553ea",
+      "item": [
+        {
+          "id": "c9988aae-4a3b-4cf1-b15b-5659cf527ed8",
+          "name": "Get Resume/Cover Letter",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "bearer": {
+                "token": ""
+              },
+              "type": "bearer"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{customer_access_token}}"
+              }
+            ],
+            "method": "GET",
+            "url": {
+              "host": [
+                "www",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "ambry",
+                ""
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "disabled": true,
+                  "key": "",
+                  "value": ""
+                },
+                {
+                  "key": "x-li-ambry-ep",
+                  "value": "{{resume_url}}"
+                }
+              ],
+              "raw": "https://www.linkedin.com/ambry/?x-li-ambry-ep={{resume_url}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Module 3 - Receive Applications"
+    },
+    {
+      "id": "0d4bd72a-0d6a-41f9-b6c3-e5252b777367",
+      "item": [
+        {
+          "id": "b76762bd-b8ac-4dfe-9022-d6324dccb8ef",
+          "name": "Sync Job Application Feedback Signals",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \u0022jobApplicationId\u0022: \u0022urn:li:jobApplication:{{job_application_id}}\u0022,\n    \u0022action\u0022: \u0022APPLICATION_VIEWED\u0022,\n    // \u0022action\u0022: \u0022RESUME_DOWNLOADED\u0022,\n    // \u0022action\u0022: \u0022APPLICATION_REJECTED\u0022,\n    \u0022performedAt\u0022: {{$timestamp}}000,\n    \u0022integrationContext\u0022: \u0022urn:li:organization:{{org_id}}\u0022\n}"
+            },
+            "header": [
+              {
+                "key": "Authorization",
+                "type": "text",
+                "value": "Bearer {{customer_access_token}}"
+              },
+              {
+                "key": "X-RestLi-Method",
+                "type": "text",
+                "value": "create"
+              },
+              {
+                "key": "X-RestLi-Protocol-Version",
+                "type": "text",
+                "value": "2.0.0"
+              }
+            ],
+            "method": "POST",
+            "url": "https://api.linkedin.com/v2/jobApplicationLifecycleActions"
+          },
+          "response": []
+        }
+      ],
+      "name": "Module 5 - Sync Application Feedback Signals"
+    }
+  ],
+  "variable": [
+    {
+      "key": "customer_client_id",
+      "value": "{{customer_client_id}}"
+    },
+    {
+      "key": "customer_client_secret",
+      "value": "{{customer_client_secret}}"
+    },
+    {
+      "key": "org_id",
+      "value": "{{org_id}}"
+    },
+    {
+      "key": "partner_client_id",
+      "value": "{{partner_client_id}}"
+    },
+    {
+      "key": "partner_client_secret",
+      "value": "{{partner_client_secret}}"
+    },
+    {
+      "key": "webhook_url",
+      "value": "{{customer_webhook_url}}"
+    }
+  ]
+}

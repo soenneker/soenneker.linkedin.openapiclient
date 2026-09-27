@@ -1,0 +1,233 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/",
+  "Title": "LinkedIn Talent Solutions overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/partner-support-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent Solutions overview",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "LinkedIn Talent Solutions enhances candidate sourcing and recruiting experiences for ATSs and applications by leveraging the world\u0027s largest professional network. Follow the links below to learn more about the LinkedIn Talent Solutions APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent Solutions overview",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "How-To Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent Solutions overview",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "How-To Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent Solutions overview",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "What\u0027s new",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Apply Connect"
+      ],
+      "Text": "Apply Connect is an ATS integration from LinkedIn that improves the candidate experience by allowing job seekers to apply for customer jobs without leaving LinkedIn and stay informed after applying (optional). Additionally, customers with a LinkedIn Recruiter Corporate license or LinkedIn Recruiter Professional Services license can also enhances their applicant management process by providing access to real-time LinkedIn data directly in their ATS to more efficiently evaluate applicants based on their fit for the job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Apply Connect"
+      ],
+      "Text": "Apply Connect\n \n \n \n \n \n \n \n Apply Connect with Verifications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Apply with LinkedIn"
+      ],
+      "Text": "Apply with LinkedIn (AWLI) aims to bring a shorter and more seamless job application experience to candidates who apply on the career site of our customers. AWLI drives more job applicants to complete applications by reducing the friction caused by adding redundant information that leads to applicant drop-off. It accomplishes this by allowing candidates to share information from their LinkedIn profile and automatically populate answers to common application questions such as name, contact information, location, employers, and education background.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Apply with LinkedIn"
+      ],
+      "Text": "Apply with LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Job Posting"
+      ],
+      "Text": "Jobs that are already created externally on ATS, company site, or job board can be automatically ingested by LinkedIn. LinkedIn provides various solutions to ingest such jobs to our customers, partner ATSs\u0027 and Job Distributors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Job Posting"
+      ],
+      "Text": "Job Posting API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Connect",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "CRM Connect"
+      ],
+      "Text": "CRM Connect synchronizes candidate information between your Candidate Relationship Management system and LinkedIn Recruiter. With CRM Connect, LinkedIn Recruiter users will be able to export LinkedIn member profiles to your external CRM System and view member profiles directly within the CRM. Users will also be able to view CRM recruiting activity from within LinkedIn Recruiter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Connect",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "CRM Connect"
+      ],
+      "Text": "CRM Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Recruiter System Connect"
+      ],
+      "Text": "Recruiter System Connect synchronizes customers\u0027 candidate information between your ATS and LinkedIn Recruiter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Talent APIs",
+        "Recruiter System Connect"
+      ],
+      "Text": "Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and developer resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and developer resources"
+      ],
+      "Text": "These resources can help you stay on top of new features, developer portal access, migrations, and deprecations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and developer resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and developer resources"
+      ],
+      "Text": "Stay on top of breaking changes related to migration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and developer resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and developer resources"
+      ],
+      "Text": "Stay on top of the developer offerings though our portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and developer resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and developer resources"
+      ],
+      "Text": "Stay on top of the latest feature updates via available on our blog post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and developer resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and developer resources"
+      ],
+      "Text": "Guide for integration partners to leverage LinkedIn\u0027s support ecosystem.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -12,17 +12,161 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>URN identifying the advertising account associated with the campaign. This value is immutable once set. Example: urn:li:sponsoredAccount:{id}.Documented type: SponsoredAccountUrnRequirement: True</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Account { get; set; }
+#nullable restore
+#else
+        public string Account { get; set; }
+#endif
+        /// <summary>Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: AccountRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo? AccountInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo AccountInfo { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An URN identifying the intended beneficiary of the advertising campaign such as a specific company or member.Documented type: URNRequirement: False unless campaign will use Sponsored Content, Dynamic Ads, or Lead Gen Forms</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssociatedEntity { get; set; }
+#nullable restore
+#else
+        public string AssociatedEntity { get; set; }
+#endif
+        /// <summary>Information about the associatedEntity. If the entity is an organization, an OrganizationInfo object is returned. If the entity is a person, a PersonInfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: UnionRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo? AssociatedEntityInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo AssociatedEntityInfo { get; set; }
+#endif
+        /// <summary>Enable Audience Expansion for the campaign provides query expansion for certain targeting criteria.Documented type: boolean, default=&quot;false&quot;Requirement: False</summary>
+        public bool? AudienceExpansionEnabled { get; set; }
+        /// <summary>URN identifying the campaign group associated with the campaign. The campaign group URN must be specified for campaign creation starting October 30, 2020.Documented type: Sponsored-CampaignGroup URNRequirement: True</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CampaignGroup { get; set; }
+#nullable restore
+#else
+        public string CampaignGroup { get; set; }
+#endif
+        /// <summary>Information about the Campaign Group associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: CampaignGroupRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo? CampaignGroupInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo CampaignGroupInfo { get; set; }
+#endif
+        /// <summary>Flag showing whether this campaign is a Connected Television Only campaign. Allow advertisers to specify when they’re creating a CTV campaign. Not specifying the boolean can be considered false. When &apos;connectedTelevisionOnly = true&apos;, offsiteDeliveryEnabled should be set to true. Note: Applicable only from versions 202408 and above.Documented type: Boolean Optional, default=&quot;False&quot;Requirement: False</summary>
+        public bool? ConnectedTelevisionOnly { get; set; }
+        /// <summary>CPM- Cost per thousand advertising impressions. If type=SPONSORED_INMAILS; cost per send(CPS) is measured as CPM x 1000. CPC- Cost per individual click on the associated link. CPV- Cost per view for video ads.Documented type: CostTypeRequirement: True</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType? CostType { get; set; }
+        /// <summary>ROUND_ROBIN - Rotate through available creatives to serve them as evenly as possible. OPTIMIZED - Bias selection taking into account such as expected performance. Not available for Message and Conversation Ads (type=SPONSORED_INMAILS).Documented type: CampaignCreativeSelection, default=&quot;OPTIMIZED&quot;Requirement: False</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection? CreativeSelection { get; set; }
+        /// <summary>The dailyBudget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget? DailyBudget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget DailyBudget { get; set; }
+#endif
+        /// <summary>The ad format on campaign level.For more information, refer to: Ad FormatsDocumented type: campaignFormatRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat? Format { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat Format { get; set; }
+#endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
-        /// <summary>The name property</summary>
+        public long? Id { get; set; }
+        /// <summary>The locale property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale? Locale { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale Locale { get; set; }
+#endif
+        /// <summary>The name of the campaign; primarily used to make it easier to reference a campaign and to recall its purpose.Documented type: stringRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>Campaign Objective type values. Click here for Campaign Objective descriptions. BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITSVIDEO_VIEWSDocumented type: stringRequirement: False</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType? ObjectiveType { get; set; }
+        /// <summary>Allows your campaign to be served on the LinkedIn Audience Network to extend the reach of the campaign by delivering ads beyond the LinkedIn feed to members on third-party apps and sites. There is no default set.Documented type: Boolean (True/False)Requirement: True</summary>
+        public bool? OffsiteDeliveryEnabled { get; set; }
+        /// <summary>Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferencesDocumented type: OffsitePreferencesRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences? OffsitePreferences { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences OffsitePreferences { get; set; }
+#endif
+        /// <summary>The optimizationPreference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference? OptimizationPreference { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference OptimizationPreference { get; set; }
+#endif
+        /// <summary>Identifies the pacing option used for the campaign.Optional and editable only on create. Possible values: LIFETIME - Lifetime pacing that optimizes campaign budget delivery throughout campaign&apos;s lifetime. ACCELERATED - Accelerated pacing is a pacing option that can maximize reach and delivery during an event as it works to deliver your campaign budget to your target audience as quickly as possible. Note: The field is only available from version 202501 and above.Documented type: stringRequirement: False</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy? PacingStrategy { get; set; }
+        /// <summary>Enum indicating whether a campaign is categorized as a political campaign. This allows advertisers to declare whether their ad constitutes political advertising. This field can be updated when the targeting of campaign changes. The possible values are: POLITICAL: Campaign is political advertising. NOT_POLITICAL: Campaign is not a political advertising. NOT_DECLARED: Indicates that the campaign&apos;s political intent hasn&apos;t been specified.Documented type: stringRequirement: True</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent? PoliticalIntent { get; set; }
+        /// <summary>The runSchedule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule? RunSchedule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule RunSchedule { get; set; }
+#endif
+        /// <summary>Array of enums that determine whether or not a campaign can be served; unlike &apos;status&apos;, which is user-managed, the values are controlled by the service. This is a read-only field. Possible values are: RUNNABLE Campaign: Eligible for serving.STOPPED: Campaign is currently not servable for reasons other than billing information, budgetary constraints, or termination dates. For instance, an campaign will be STOPPED if it has been PAUSED by the user.ACCOUNT_TOTAL_BUDGET_HOLD: Parent account total budget has been reached.ACCOUNT_END_DATE_HOLD: Parent account end date has been reached. CAMPAIGN_START_DATE_HOLD: Campaign start date is in the future.CAMPAIGN_END_DATE_HOLD: Campaign end date has been reached.CAMPAIGN_TOTAL_BUDGET_HOLD: Campaign total budget has been reached.CAMPAIGN_AUDIENCE_COUNT_HOLD: Campaign is on hold because it has an audience count lower than the threshold.CAMPAIGN_GROUP_START_DATE_HOLD: Campaign group start date is in the future.CAMPAIGN_GROUP_END_DATE_HOLD: Campaign Group end date is in the past.CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD: Campaign group total budget has been reached.CAMPAIGN_GROUP_STATUS_HOLD: Campaign group status is on hold.ACCOUNT_SERVING_HOLD: Parent account is on hold and not eligible for serving.Documented type: stringsRequirement: False</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses? ServingStatuses { get; set; }
+        /// <summary>ACTIVE - Denotes that the campaign is fully servable. PAUSED - Denotes that the campaign meets all requirements to be served, but temporarily shouldn&apos;t be. ARCHIVED - Denotes that the campaign is presently inactive, and should mostly be hidden in the UI until un-archived. COMPLETED - Denotes that the campaign has reached a specified budgetary or chronological limit. CANCELED - Denotes that the campaign has been permanently canceled, such as when an advertising account is permanently closed. DRAFT - Denotes that the campaign is still being edited and not eligible for serving. Some validation will be postponed until the campaign is activated. PENDING_DELETION - Denotes that the campaign has been requested to be deleted that is currently pending. REMOVED - Denotes that the campaign was deleted, but must remain fetchable due to the existence of performance data.Documented type: stringRequirement: True</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus? Status { get; set; }
+        /// <summary>Flag showing whether this campaign is a test campaign, i.e., belongs to a test account. This is a read-only and immutable field that is set implicitly during creation based on whether the account is a Test Account or not.Documented type: boolean, default=&quot;False&quot;Requirement: False</summary>
+        public bool? Test { get; set; }
+        /// <summary>The totalBudget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget? TotalBudget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget TotalBudget { get; set; }
+#endif
+        /// <summary>TEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn. SPONSORED_UPDATES - Native ads that promote a company&apos;s content updates in the LinkedIn feed. SPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to a LinkedIn&apos;s member inbox. DYNAMIC - Ads that are dynamically personalized.Documented type: CampaignTypeRequirement: True</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType? Type { get; set; }
+        /// <summary>The unitCost property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost? UnitCost { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost UnitCost { get; set; }
+#endif
+        /// <summary>Each entity has a version tag associated with it. The version tag is initiated to 1 when the entity is created. Each single update to the entity increases its version tag by 1.Documented type: stringRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionTag { get; set; }
+#nullable restore
+#else
+        public string VersionTag { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem"/> and sets the default values.
@@ -49,8 +193,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "account", n => { Account = n.GetStringValue(); } },
+                { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo.CreateFromDiscriminatorValue); } },
+                { "associatedEntity", n => { AssociatedEntity = n.GetStringValue(); } },
+                { "associatedEntityInfo", n => { AssociatedEntityInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo.CreateFromDiscriminatorValue); } },
+                { "audienceExpansionEnabled", n => { AudienceExpansionEnabled = n.GetBoolValue(); } },
+                { "campaignGroup", n => { CampaignGroup = n.GetStringValue(); } },
+                { "campaignGroupInfo", n => { CampaignGroupInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo.CreateFromDiscriminatorValue); } },
+                { "connectedTelevisionOnly", n => { ConnectedTelevisionOnly = n.GetBoolValue(); } },
+                { "costType", n => { CostType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType>(); } },
+                { "creativeSelection", n => { CreativeSelection = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection>(); } },
+                { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget.CreateFromDiscriminatorValue); } },
+                { "format", n => { Format = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType>(); } },
+                { "offsiteDeliveryEnabled", n => { OffsiteDeliveryEnabled = n.GetBoolValue(); } },
+                { "offsitePreferences", n => { OffsitePreferences = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences.CreateFromDiscriminatorValue); } },
+                { "optimizationPreference", n => { OptimizationPreference = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference.CreateFromDiscriminatorValue); } },
+                { "pacingStrategy", n => { PacingStrategy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy>(); } },
+                { "politicalIntent", n => { PoliticalIntent = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent>(); } },
+                { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule.CreateFromDiscriminatorValue); } },
+                { "servingStatuses", n => { ServingStatuses = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus>(); } },
+                { "test", n => { Test = n.GetBoolValue(); } },
+                { "totalBudget", n => { TotalBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType>(); } },
+                { "unitCost", n => { UnitCost = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost.CreateFromDiscriminatorValue); } },
+                { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +231,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("account", Account);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAccountInfo>("accountInfo", AccountInfo);
+            writer.WriteStringValue("associatedEntity", AssociatedEntity);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemAssociatedEntityInfo>("associatedEntityInfo", AssociatedEntityInfo);
+            writer.WriteBoolValue("audienceExpansionEnabled", AudienceExpansionEnabled);
+            writer.WriteStringValue("campaignGroup", CampaignGroup);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCampaignGroupInfo>("campaignGroupInfo", CampaignGroupInfo);
+            writer.WriteBoolValue("connectedTelevisionOnly", ConnectedTelevisionOnly);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCostType>("costType", CostType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemCreativeSelection>("creativeSelection", CreativeSelection);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemDailyBudget>("dailyBudget", DailyBudget);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemFormat>("format", Format);
+            writer.WriteLongValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemObjectiveType>("objectiveType", ObjectiveType);
+            writer.WriteBoolValue("offsiteDeliveryEnabled", OffsiteDeliveryEnabled);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOffsitePreferences>("offsitePreferences", OffsitePreferences);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemOptimizationPreference>("optimizationPreference", OptimizationPreference);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPacingStrategy>("pacingStrategy", PacingStrategy);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemPoliticalIntent>("politicalIntent", PoliticalIntent);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemRunSchedule>("runSchedule", RunSchedule);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemServingStatuses>("servingStatuses", ServingStatuses);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemStatus>("status", Status);
+            writer.WriteBoolValue("test", Test);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemTotalBudget>("totalBudget", TotalBudget);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItemUnitCost>("unitCost", UnitCost);
+            writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

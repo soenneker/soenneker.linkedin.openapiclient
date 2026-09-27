@@ -1,0 +1,1160 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+  "Title": "Message Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Message Ads API",
+      "Anchor": "message-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Ads API",
+      "Anchor": "message-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Ads API",
+      "Anchor": "message-ads-api",
+      "SectionPath": [],
+      "Text": "Setup and manage message Ads via API to send direct messages via LinkedIn Messages to your prospects to spark immediate action. With message ads, you can engage your prospects through native ads displayed through LinkedIn Messaging.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Ads API",
+      "Anchor": "message-ads-api",
+      "SectionPath": [],
+      "Text": "This API replaces the previous /adInMailContentsV2 and /adInMailContents APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Ads API",
+      "Anchor": "message-ads-api",
+      "SectionPath": [],
+      "Text": "A Message Ad is a message delivered to a LinkedIn member\u0027s InMail inbox. Message Ads provide a way for marketers to increase their reach on LinkedIn by sending personalized messages to the audiences that matter most to their business. Unlike InMail communications between members, a Message Ad is a branded message with a call-to-action button that takes the user to an advertiser\u0027s landing page. Lead Generation forms can also be attached to Message Ads. A target audience will see Message Ads as part of their messenger experience when they\u0027re active anywhere on the LinkedIn site, on desktop or mobile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "You have the Message Ads Campaign and Creative details under an Ad Account. For more information, see.\n\nAd Accounts\n\nCreate an Ad Campaign (Types of Campaigns).\n\nCampaigns/Creatives\n\n\n\nSender must have permission to send a Message Ad. To manage senders, see Manage Message Ad Senders.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Message Ad",
+      "Anchor": "create-a-message-ad",
+      "SectionPath": [
+        "Create a Message Ad"
+      ],
+      "Text": "Upload asset for Message Ad by following these steps.\nCreate AdInMail Content for Message Ad.\nCreate a draft message ad creative.\nTest the draft Message Ad.\nMake necessary modifications based on testing.\nNote: Creative should be in the DRAFT status.\nActivate the creative by updating the creative status to ACTIVE. The creative will be directed to the review queue after activation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMIN ACCOUNT_MANAGERCAMPAIGN_MANAGER CREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InMail Content",
+      "Anchor": "inmail-content",
+      "SectionPath": [
+        "Schema",
+        "InMail Content"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InMail Content",
+      "Anchor": "inmail-content",
+      "SectionPath": [
+        "Schema",
+        "InMail Content"
+      ],
+      "Text": "Starting 202410, a new name field is introduced in Creative schema. Going forward, this new name field is the preferred approach to set and get the creative\u0027s name, consistently across all ad formats. The current name field in InMail Content schema is still supported for the time being for Message ads. The creative\u0027s name is pre-populated using the legacy value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InMail Content",
+      "Anchor": "inmail-content",
+      "SectionPath": [
+        "Schema",
+        "InMail Content"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InMail Content",
+      "Anchor": "inmail-content",
+      "SectionPath": [
+        "Schema",
+        "InMail Content"
+      ],
+      "Text": "A \u0022Not Interested\u0022 CTA is automatically included on Message Ads. The CTA is applied at render time and is not exposed in the API. Use test sends to preview the behavior.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "InMail Content",
+      "Anchor": "inmail-content",
+      "SectionPath": [
+        "Schema",
+        "InMail Content"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdInMailContent URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of the InMail content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Read-Only) Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccount URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising account URN that the content is associated with. For example, urn:li:sponsoredAccount:12121",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Canonical name of the content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sender",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sender from whom the Sponsored InMail was sent from. Used to render the sender in detail and list views. The sender can be either a Person URN or an Organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The subject of the content. Displayed in the inbox\u2019s list and detailed view.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "htmlBody",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Raw HTML body text for the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customFooter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The terms and conditions of the content. Shown on the bottom of the message.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdInMailRegularSubContent, AdInMailGuidedRepliesSubContent, or AdInMailFormSubContent,",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations?view=li-lms-2026-09\u0026tabs=http#adinmailregularsubcontent",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations?view=li-lms-2026-09\u0026tabs=http#adinmailguidedrepliessubcontent",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations?view=li-lms-2026-09\u0026tabs=http#adinmailformsubcontent"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The subcontent, which will be one of several types depending on the advertiser\u2019s objective.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the content was last modified in milliseconds since epoch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Read-Only) Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. Person URN) who most recently modified the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Read-Only) Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the content was created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Read-Only) Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. person URN) who created this content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Read-Only) Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdInMailRegularSubContent",
+      "Anchor": "adinmailregularsubcontent",
+      "SectionPath": [
+        "Schema",
+        "AdInMailRegularSubContent"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "callToActionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text for the call-to-action button. Max length of 20 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionLandingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The landing page\u2019s URL. The call-to-action button redirects to this URL. Max length of 1,024 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rightRailAdPicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The picture to be displayed on the right-rail ad space with this Sponsored InMail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdInMailGuidedRepliesSubContent",
+      "Anchor": "adinmailguidedrepliessubcontent",
+      "SectionPath": [
+        "Schema",
+        "AdInMailGuidedRepliesSubContent"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sponsoredConversation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredConversation URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the guided replies conversation which contains contents of all the messages.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rightRailAdPicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The picture to be displayed on the right-rail ad space within the detail view.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdInMailFormSubContent",
+      "Anchor": "adinmailformsubcontent",
+      "SectionPath": [
+        "Schema",
+        "AdInMailFormSubContent"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "callToActionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text for the call-to-action button that redirects to a lead generation form. Max length of 20 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rightRailAdPicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The picture to be displayed on the right-rail ad space within the detail view.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdInMailFormSubContent",
+      "Anchor": "adinmailformsubcontent",
+      "SectionPath": [
+        "Schema",
+        "AdInMailFormSubContent"
+      ],
+      "Text": "Note: InMails associated with a leadGen Form don\u0027t have a landing Page URL since the landing Page is determined by the lead gen form.\nPlease use the landingPage field in the adForms API to set or update landing pages for InMails that have AdInMailFormSubContent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Regular",
+      "Anchor": "regular",
+      "SectionPath": [
+        "Create InMail Content",
+        "Regular"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Regular",
+      "Anchor": "regular",
+      "SectionPath": [
+        "Create InMail Content",
+        "Regular"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/inMailContents/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Regular",
+      "Anchor": "regular",
+      "SectionPath": [
+        "Create InMail Content",
+        "Regular"
+      ],
+      "Text": "{\n \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n \u0022name\u0022: \u0022test strings\u0022,\n \u0022subject\u0022: \u0022test subject\u0022,\n \u0022sender\u0022: \u0022urn:li:person:12345\u0022,\n \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n \u0022htmlBody\u0022:\u0022sample body\u0022,\n \u0022subContent\u0022: {\n   \u0022regular\u0022: {\n     \u0022callToActionText\u0022: \u0022sample string\u0022,\n     \u0022callToActionLandingPageUrl\u0022:\u0022http://www.linkedin.com\u0022,\n     \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022\n   }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Regular",
+      "Anchor": "regular",
+      "SectionPath": [
+        "Create InMail Content",
+        "Regular"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/inMailContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data-raw \u0027{\n \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n \u0022name\u0022: \u0022test strings\u0022,\n \u0022subject\u0022: \u0022test subject\u0022,\n \u0022sender\u0022: \u0022urn:li:member:676867590\u0022,\n \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n \u0022htmlBody\u0022:\u0022sample body\u0022,\n \u0022subContent\u0022: {\n   \u0022regular\u0022: {\n     \u0022callToActionText\u0022: \u0022sample string\u0022,\n     \u0022callToActionLandingPageUrl\u0022:\u0022http://www.linkedin.com\u0022,\n     \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022\n   }\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guided Conversation",
+      "Anchor": "guided-conversation",
+      "SectionPath": [
+        "Create InMail Content",
+        "Guided Conversation"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Guided Conversation",
+      "Anchor": "guided-conversation",
+      "SectionPath": [
+        "Create InMail Content",
+        "Guided Conversation"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/inMailContents/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Guided Conversation",
+      "Anchor": "guided-conversation",
+      "SectionPath": [
+        "Create InMail Content",
+        "Guided Conversation"
+      ],
+      "Text": "{\n \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n \u0022name\u0022: \u0022test strings\u0022,\n \u0022subject\u0022: \u0022test subject\u0022,\n \u0022sender\u0022: \u0022urn:li:person:12345\u0022,\n \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n \u0022htmlBody\u0022:\u0022sample body\u0022,\n \u0022subContent\u0022: {\n   \u0022guidedReplies\u0022: {\n     \u0022sponsoredConversation\u0022: \u0022urn:li:sponsoredConversation:1641954\u0022,\n     \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C4D10AQHMsMTTjxlblw\u0022\n   }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Guided Conversation",
+      "Anchor": "guided-conversation",
+      "SectionPath": [
+        "Create InMail Content",
+        "Guided Conversation"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/inMailContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data-raw \u0027{\n \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n \u0022name\u0022: \u0022test strings\u0022,\n \u0022subject\u0022: \u0022test subject\u0022,\n \u0022sender\u0022: \u0022urn:li:person:12345\u0022,\n \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n \u0022htmlBody\u0022:\u0022sample body\u0022,\n \u0022subContent\u0022: {\n   \u0022guidedReplies\u0022: {\n     \u0022sponsoredConversation\u0022: \u0022urn:li:sponsoredConversation:1641954\u0022,\n     \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C4D10AQHMsMTTjxlblw\u0022\n   }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGen Form",
+      "Anchor": "leadgen-form",
+      "SectionPath": [
+        "Create InMail Content",
+        "LeadGen Form"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LeadGen Form",
+      "Anchor": "leadgen-form",
+      "SectionPath": [
+        "Create InMail Content",
+        "LeadGen Form"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/inMailContents/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LeadGen Form",
+      "Anchor": "leadgen-form",
+      "SectionPath": [
+        "Create InMail Content",
+        "LeadGen Form"
+      ],
+      "Text": "{\n \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n \u0022name\u0022: \u0022test strings\u0022,\n \u0022subject\u0022: \u0022test subject\u0022,\n \u0022sender\u0022: \u0022urn:li:person:12345\u0022,\n \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n \u0022htmlBody\u0022:\u0022sample body\u0022,\n \u0022subContent\u0022: {\n   \u0022form\u0022: {\n     \u0022callToActionText\u0022: \u0022sample string\u0022,\n     \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022\n   }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LeadGen Form",
+      "Anchor": "leadgen-form",
+      "SectionPath": [
+        "Create InMail Content",
+        "LeadGen Form"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/inMailContents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data-raw \u0027{\n \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n \u0022name\u0022: \u0022test strings\u0022,\n \u0022subject\u0022: \u0022test subject\u0022,\n \u0022sender\u0022: \u0022urn:li:person:12345\u0022,\n \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n \u0022htmlBody\u0022:\u0022sample body\u0022,\n \u0022subContent\u0022: {\n   \u0022form\u0022: {\n     \u0022callToActionText\u0022: \u0022sample string\u0022,\n     \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022\n   }\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGen Form",
+      "Anchor": "leadgen-form",
+      "SectionPath": [
+        "Create InMail Content",
+        "LeadGen Form"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get InMail Content",
+      "Anchor": "get-inmail-content",
+      "SectionPath": [
+        "Get InMail Content"
+      ],
+      "Text": "Retrieve InMail Content while passing in an AdInMailContent URN into {adInMailContentURN}. Example below shows a GET request and response for regular sub-content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get InMail Content",
+      "Anchor": "get-inmail-content",
+      "SectionPath": [
+        "Get InMail Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/inMailContents/{adInMailContentURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get InMail Content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get InMail Content",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/inMailContents/urn:li:adInMailContent:6684124",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get InMail Content",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/inMailContents/urn:li:adInMailContent:6684124\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get InMail Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022createdAt\u0022: 1649351278000,\n   \u0022htmlBody\u0022: \u0022sample body\u0022,\n   \u0022lastModifiedAt\u0022: 1649351278000,\n   \u0022sender\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n   \u0022createdBy\u0022: \u0022urn:li:person:12344\u0022,\n   \u0022subject\u0022: \u0022test subject\u0022,\n   \u0022lastModifiedBy\u0022: \u0022urn:li:person:12344\u0022,\n   \u0022name\u0022: \u0022test strings\u0022,\n   \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n   \u0022id\u0022: \u0022urn:li:adInMailContent:6674504\u0022,\n   \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n   \u0022subContent\u0022: {\n       \u0022regular\u0022: {\n           \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022,\n           \u0022callToActionLandingPageUrl\u0022: \u0022http://www.linkedin.com\u0022,\n           \u0022callToActionText\u0022: \u0022sample string\u0022\n       }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update InMail Content",
+      "Anchor": "update-inmail-content",
+      "SectionPath": [
+        "Update InMail Content"
+      ],
+      "Text": "Update the sender, subject, htmlBody, and subContent. Once a creative goes live, you can\u0027t modify it further.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update InMail Content",
+      "Anchor": "update-inmail-content",
+      "SectionPath": [
+        "Update InMail Content"
+      ],
+      "Text": "In the following example, the name field is changed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update InMail Content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update InMail Content",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/inMailContents/urn:li:adInMailContent:6684124",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update InMail Content",
+        "Sample Request"
+      ],
+      "Text": "{\n \u0022patch\u0022: {\n   \u0022$set\u0022: {\n     \u0022name\u0022: \u0022test strings new\u0022\n   }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update InMail Content",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/inMailContents/urn:li:adInMailContent:6684124\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data-raw \u0027{\n \u0022patch\u0022: {\n   \u0022$set\u0022: {\n     \u0022name\u0022: \u0022test strings new\u0022\n   }\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Update InMail Content",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get InMail Content",
+      "Anchor": "batch-get-inmail-content",
+      "SectionPath": [
+        "Batch Get InMail Content"
+      ],
+      "Text": "Also fetch multiple Message Ad records by providing multiple IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get InMail Content",
+      "Anchor": "batch-get-inmail-content",
+      "SectionPath": [
+        "Batch Get InMail Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get InMail Content",
+      "Anchor": "batch-get-inmail-content",
+      "SectionPath": [
+        "Batch Get InMail Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/inMailContents?ids={encoded adInMailContentId}\u0026ids={encoded adInMailContentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get InMail Content",
+      "Anchor": "batch-get-inmail-content",
+      "SectionPath": [
+        "Batch Get InMail Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/inMailContents?ids={encoded adInMailContentId}\u0026ids={encoded adInMailContentId}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_GET\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Get InMail Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:adInMailContent:6674504\u0022: {\n           \u0022createdAt\u0022: 1649351278000,\n           \u0022htmlBody\u0022: \u0022sample body\u0022,\n           \u0022lastModifiedAt\u0022: 1649351278000,\n           \u0022sender\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n           \u0022createdBy\u0022: \u0022urn:li:person:12344\u0022,\n           \u0022subject\u0022: \u0022test subject\u0022,\n           \u0022lastModifiedBy\u0022: \u0022urn:li:person:12344\u0022,\n           \u0022name\u0022: \u0022test strings\u0022,\n           \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n           \u0022id\u0022: \u0022urn:li:adInMailContent:6674504\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n           \u0022subContent\u0022: {\n               \u0022regular\u0022: {\n                   \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022,\n                   \u0022callToActionLandingPageUrl\u0022: \u0022http://www.linkedin.com\u0022,\n                   \u0022callToActionText\u0022: \u0022sample string\u0022\n               }\n           }\n       },\n       \u0022urn:li:adInMailContent:5122946\u0022: {\n           \u0022createdAt\u0022: 1650404673000,\n           \u0022htmlBody\u0022: \u0022sample body\u0022,\n           \u0022lastModifiedAt\u0022: 1650404673000,\n           \u0022sender\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n           \u0022createdBy\u0022: \u0022urn:li:person:12344\u0022,\n           \u0022subject\u0022: \u0022test subject\u0022,\n           \u0022lastModifiedBy\u0022: \u0022urn:li:person:12344\u0022,\n           \u0022name\u0022: \u0022test strings\u0022,\n           \u0022customFooter\u0022: \u0022terms and conditions\u0022,\n           \u0022id\u0022: \u0022urn:li:adInMailContent:5122946\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n           \u0022subContent\u0022: {\n               \u0022regular\u0022: {\n                   \u0022rightRailAdPicture\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022,\n                   \u0022callToActionLandingPageUrl\u0022: \u0022http://www.linkedin.com\u0022,\n                   \u0022callToActionText\u0022: \u0022sample string\u0022\n               }\n           }\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:adInMailContent:6674504\u0022: 200,\n       \u0022urn:li:adInMailContent:5122946\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Send Test InMail",
+      "Anchor": "send-test-inmail",
+      "SectionPath": [
+        "Send Test InMail"
+      ],
+      "Text": "The sendTestInMail action can be used to trigger a test message for a draft message or conversation ad. The recipient will be the same as the authenticated LinkedIn member and the test message can be viewed in the recipient\u2019s LinkedIn inbox.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Send Test InMail",
+      "Anchor": "send-test-inmail",
+      "SectionPath": [
+        "Send Test InMail"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Send Test InMail",
+      "Anchor": "send-test-inmail",
+      "SectionPath": [
+        "Send Test InMail"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/inMailContents?action=sendTestInMail",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Send Test InMail",
+      "Anchor": "send-test-inmail",
+      "SectionPath": [
+        "Send Test InMail"
+      ],
+      "Text": "{\n  \u0022adInMailContentId\u0022: \u0022urn:li:adInMailContent:5118806\u0022,\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:194467334\u0022,\n  \u0022creative\u0022: \u0022urn:li:sponsoredCreative:170358284\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Send Test InMail",
+      "Anchor": "send-test-inmail",
+      "SectionPath": [
+        "Send Test InMail"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/inMailContents?action=sendTestInMail\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: action\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data-raw \u0027{\n\u0022adInMailContentId\u0022: \u0022urn:li:adInMailContent:5118806\u0022,\n\u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:194467334\u0022,\n\u0022creative\u0022: \u0022urn:li:sponsoredCreative:170358284\u0022,\n\u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Send Test InMail",
+      "Anchor": "send-test-inmail",
+      "SectionPath": [
+        "Send Test InMail"
+      ],
+      "Text": "A successful response returns a 200 OK HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "Send Test InMail",
+        "References"
+      ],
+      "Text": "Sponsored Conversation Ads\nCreate and Manage Ad InMail Contents",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,2315 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+  "Title": "Ad Targeting",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting",
+      "Anchor": "ad-targeting",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting",
+      "Anchor": "ad-targeting",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting",
+      "Anchor": "ad-targeting",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Ad Targeting API enables advertisers to better control which audiences see their ads. These controls include a variety of member professional demographics in the LinkedIn platform. Targeting is set at the campaign level, and applies to all creatives associated with that campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting",
+      "Anchor": "ad-targeting",
+      "SectionPath": [],
+      "Text": "The two core concepts for targeting are facets and entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting",
+      "Anchor": "ad-targeting",
+      "SectionPath": [],
+      "Text": "Facets are high-level categories of the types of targeting available to you. Facets contain multiple entities which are the specific professional demographic values within that facet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting",
+      "Anchor": "ad-targeting",
+      "SectionPath": [],
+      "Text": "For example, Industries is a facet. Specific industries such as Computer Software, Biotechnology, and Telecommunications are entities within the Industries facet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Any application approved for the LinkedIn Marketing API Program can make these API calls using any 3-legged access token. No additional permissions need to be requested during the OAuth flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Discrimination Notice",
+      "Anchor": "targeting-discrimination-notice",
+      "SectionPath": [
+        "Targeting Discrimination Notice"
+      ],
+      "Text": "Applications utilizing LinkedIn\u0027s targeting capabilities are required to display a notice in their user interface notifying advertisers that they can\u0027t use LinkedIn to discriminate against members based on personal characteristics. The notice should include the following text:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Discrimination Notice",
+      "Anchor": "targeting-discrimination-notice",
+      "SectionPath": [
+        "Targeting Discrimination Notice"
+      ],
+      "Text": "LinkedIn tools may not be used to discriminate based on personal characteristics like gender, age, race, or ethnicity. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Discrimination Notice",
+      "Anchor": "targeting-discrimination-notice",
+      "SectionPath": [
+        "Targeting Discrimination Notice"
+      ],
+      "Text": "To learn more about targeting in general on LinkedIn, see Targeting Optionsand Best Practices for LinkedIn Advertisements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [
+        "Ad Targeting Facets"
+      ],
+      "Text": "Facets are high-level categories of the types of targeting available to you. Use facets to narrow down your intended audience. Refer to Targeting Criteria Facet URNs for the list of available facets and their URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Facets",
+      "Anchor": "ad-targeting-facets",
+      "SectionPath": [
+        "Ad Targeting Facets"
+      ],
+      "Text": "The adTargetingFacets API returns available targeting facets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Request"
+      ],
+      "Text": "To add new fields or enums to an existing schema:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingFacets",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingFacets\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Response"
+      ],
+      "Text": "The response returns facets available to you for targeting. Each targeting type contains the name of the facet, the type, and Finder methods to get more information on the type and values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Response"
+      ],
+      "Text": "To learn more, see the Ad Targeting Facets API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Response"
+      ],
+      "Text": "{ \n   \u0022elements\u0022:[ \n      {\n         \u0022facetName\u0022:\u0022genders\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022GENDER\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:genders\u0022\n       },\n      {\n         \u0022facetName\u0022:\u0022industries\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022,\n            \u0022SIMILAR_ENTITIES\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022INDUSTRY\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:industries\u0022\n       },\n      ... some facets omitted ...\n      {\n         \u0022facetName\u0022:\u0022memberBehaviors\u0022,\n         \u0022availableEntityFinders\u0022:[\n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[\n            \u0022MEMBER_BEHAVIOR\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:memberBehaviors\u0022\n       },\n      { \n         \u0022facetName\u0022:\u0022growthRate\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022FIRMOGRAPHIC\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:growthRate\u0022\n       },\n      { \n         \u0022facetName\u0022:\u0022companyCategory\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022FIRMOGRAPHIC\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:companyCategory\u0022\n       }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Ad Targeting Facets",
+        "Sample Response"
+      ],
+      "Text": "{ \n   \u0022elements\u0022:[ \n      {\n         \u0022facetName\u0022:\u0022genders\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022GENDER\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:genders\u0022\n       },\n      {\n         \u0022facetName\u0022:\u0022industries\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022,\n            \u0022SIMILAR_ENTITIES\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022INDUSTRY\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:industries\u0022\n       },\n      ... some facets omitted ...\n      {\n         \u0022facetName\u0022:\u0022memberBehaviors\u0022,\n         \u0022availableEntityFinders\u0022:[\n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[\n            \u0022MEMBER_BEHAVIOR\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:memberBehaviors\u0022\n       },\n      {\n         \u0022facetName\u0022:\u0022buyerGroups\u0022,\n         \u0022availableEntityFinders\u0022:[\n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[\n            \u0022BUYER_GROUP\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:buyerGroups\u0022\n       },\n      { \n         \u0022facetName\u0022:\u0022growthRate\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022FIRMOGRAPHIC\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:growthRate\u0022\n       },\n      { \n         \u0022facetName\u0022:\u0022companyCategory\u0022,\n         \u0022availableEntityFinders\u0022:[ \n            \u0022AD_TARGETING_FACET\u0022,\n            \u0022TYPEAHEAD\u0022\n          ],\n         \u0022entityTypes\u0022:[ \n            \u0022FIRMOGRAPHIC\u0022\n          ],\n         \u0022adTargetingFacetUrn\u0022:\u0022urn:li:adTargetingFacet:companyCategory\u0022\n       }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Entities",
+      "Anchor": "ad-targeting-entities",
+      "SectionPath": [
+        "Ad Targeting Entities"
+      ],
+      "Text": "Once you\u0027ve identified the facet type(s) you\u0027d like to target, you can fetch their entity values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Entities",
+      "Anchor": "ad-targeting-entities",
+      "SectionPath": [
+        "Ad Targeting Entities"
+      ],
+      "Text": "Use the adTargetingEntities API to fetch available options for each facet type. To learn more, see Ad Targeting Entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Facet",
+      "Anchor": "find-entities-by-facet",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet"
+      ],
+      "Text": "This method returns targeting entities contained within a given targeting facet. For example, passing in the industries targeting facet will return names and URNs for all the industry targeting entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Facet",
+      "Anchor": "find-entities-by-facet",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by Facet",
+      "Anchor": "find-entities-by-facet",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026facet={encoded adTargetingFacet URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by Facet",
+      "Anchor": "find-entities-by-facet",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026facet={encoded adTargetingFacet URN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be adTargetingFacet for this method.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeting facet that results should be returned for.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be QUERY_USES_VALUES.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn%3Ali%3AadTargetingFacet%3Aseniorities\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn%3Ali%3AadTargetingFacet%3Aseniorities\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:1\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Unpaid\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:10\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Owner\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:2\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Training\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:3\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Entry\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:4\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Senior\u0022\n        },\n    ..\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Entities for Member Behaviors",
+      "Anchor": "ad-targeting-entities-for-member-behaviors",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Ad Targeting Entities for Member Behaviors"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Targeting Entities for Member Behaviors",
+      "Anchor": "ad-targeting-entities-for-member-behaviors",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Ad Targeting Entities for Member Behaviors"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026facet=urn%3Ali%3AadTargetingFacet%3AmemberBehaviors\u0026queryVersion=QUERY_USES_URNS\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Targeting Entities for Member Behaviors",
+      "Anchor": "ad-targeting-entities-for-member-behaviors",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Ad Targeting Entities for Member Behaviors"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026facet=urn%3Ali%3AadTargetingFacet%3AmemberBehaviors\u0026queryVersion=QUERY_USES_URNS\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Facet",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n       {\n            \u0022urn\u0022: \u0022urn:li:memberBehavior:2\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:memberBehaviors\u0022,\n            \u0022name\u0022: \u0022Mobile Users\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:memberBehavior:3\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:memberBehaviors\u0022,\n            \u0022name\u0022: \u0022iPhone Users\u0022,\n        },\n        ... Some entities omitted ...\n        {\n            \u0022urn\u0022: \u0022urn:li:memberBehavior:13\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:memberBehaviors\u0022,\n            \u0022name\u0022: \u0022Open to Education\u0022,\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:memberBehavior:14\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:memberBehaviors\u0022,\n            \u0022name\u0022: \u0022Frequent Contributor\u0022,\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Buyer Groups",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Buyer Groups",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026facet=urn%3Ali%3AadTargetingFacet%3AbuyerGroups\u0026queryVersion=QUERY_USES_URNS\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Buyer Groups",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026facet=urn%3Ali%3AadTargetingFacet%3AbuyerGroups\u0026queryVersion=QUERY_USES_URNS\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Buyer Groups",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:standardizedProductCategory:1031\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:buyerGroups\u0022,\n            \u0022isTargetable\u0022: true,\n            \u0022name\u0022: \u0022Customer Support Software\u0022,\n            \u0022description\u0022: \u0022Software used to assist customers with the use of products and services.\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:standardizedProductCategory:1127\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:buyerGroups\u0022,\n            \u0022isTargetable\u0022: true,\n            \u0022name\u0022: \u0022Cybersecurity Software\u0022,\n            \u0022description\u0022: \u0022Software used to protect computer systems and networks from damage, attack, or unauthorized use.\u0022\n        },\n        ... Some entities omitted ...\n        {\n            \u0022urn\u0022: \u0022urn:li:standardizedProductCategory:1396\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:buyerGroups\u0022,\n            \u0022isTargetable\u0022: true,\n            \u0022name\u0022: \u0022Human Resources Software\u0022,\n            \u0022description\u0022: \u0022Software used to recruit, hire, train, track performance, and manage compensation for workers in an organization. Can include ensuring compliance with legal requirements, organizational design, creating a talent brand, and policies and training for different workplace situations.\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:standardizedProductCategory:1397\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:buyerGroups\u0022,\n            \u0022isTargetable\u0022: true,\n            \u0022name\u0022: \u0022Marketing Software\u0022,\n            \u0022description\u0022: \u0022Software used to identify and anticipate the wants and needs of buyers, increase awareness and positive reputation of an organization and its products, and target buyers who may be interested in the organization products.\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 56,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Targeting Entities for Company Growth Rate and Category",
+      "Anchor": "ad-targeting-entities-for-company-growth-rate-and-category",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Company Growth Rate and Category"
+      ],
+      "Text": "LinkedIn now enables advertisers to include company growth rate and company category to target LinkedIn members by.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Company Growth Rate and Category",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Company Growth Rate and Category",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?facet=urn%3Ali%3AadTargetingFacet%3AcompanyCategory\u0026q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026totals=false",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Company Growth Rate and Category",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?facet=urn%3Ali%3AadTargetingFacet%3AcompanyCategory\u0026q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026totals=false\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Ad Targeting Entities for Company Growth Rate and Category",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:organizationRankingList:1\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:companyCategory\u0022,\n            \u0022name\u0022: \u0022Fortune Global 500\u0022,\n        },\n     // ... Some entities omitted ...\n        {\n             \u0022urn\u0022: \u0022urn:li:organizationRankingList:3\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:companyCategory\u0022,\n            \u0022name\u0022: \u0022Forbes World\u0027s Most Innovative Companies\u0022,\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Similar Entities",
+      "Anchor": "find-entities-by-similar-entities",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities"
+      ],
+      "Text": "This method returns targeting entities that are similar to a given targeting entity. For example, passing in the employers targeting facet and an organization URN for a university would return name and URNs of similar employers. In this case, the similar employers would be other universities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Similar Entities",
+      "Anchor": "find-entities-by-similar-entities",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities"
+      ],
+      "Text": "The number of entities per facet is capped to 100 for nearly all facets. The exceptions are employers, employersPast, employersAll, geos, and profileGeos which are capped to 200. To target a larger audience, see Audiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Similar Entities",
+      "Anchor": "find-entities-by-similar-entities",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by Similar Entities",
+      "Anchor": "find-entities-by-similar-entities",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=similarEntities\u0026facet={facetURN}\u0026entities=List({encoded URN1},{encoded URN2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by Similar Entities",
+      "Anchor": "find-entities-by-similar-entities",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=similarEntities\u0026facet={encoded facetURN}\u0026entities=List({encoded URN1},{encoded URN2})\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be similarEntities for this method.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeting facet that results should be returned for.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of URNs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URNs of the entities that will be use to retrieve similar entities for.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum to restrict results to only contain data that matches type requested. Possible values: AGECOMPANYCOMPANY_SIZEDEGREEFIELD_OF_STUDYFUNCTIONGENDERGROUPINDUSTRYLOCALESCHOOLSENIORITYSKILLTITLEYEARS_OF_EXPERIENCE",
+            "Links": [],
+            "Values": [
+              "AGE",
+              "COMPANY",
+              "COMPANY_SIZE",
+              "DEGREE",
+              "FIELD_OF_STUDY",
+              "FUNCTION",
+              "GENDER",
+              "GROUP",
+              "INDUSTRY",
+              "LOCALE",
+              "SCHOOL",
+              "SENIORITY",
+              "SKILL",
+              "TITLE",
+              "YEARS_OF_EXPERIENCE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be QUERY_USES_URNS.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities",
+        "Sample Request"
+      ],
+      "Text": "This example shows how to discover similar employers by passing in an organization URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=similarEntities\u0026facet=urn%3Ali%3AadTargetingFacet%3Aemployers\u0026queryVersion=QUERY_USES_URNS\u0026entities=List(urn%3Ali%3Aorganization%3A1003)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=similarEntities\u0026facet=urn%3Ali%3AadTargetingFacet%3Aemployers\u0026queryVersion=QUERY_USES_URNS\u0026entities=List(urn%3Ali%3Aorganization%3A1003)\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Similar Entities",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:163361\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022DataMirror\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:1666\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022Intuit\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:10715\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022Lexmark Enterprise Software\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:organization:21867\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employers\u0022,\n            \u0022name\u0022: \u0022eClinicalWorks\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 48,\n        \u0022count\u0022: 2147483647,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Typeahead",
+      "Anchor": "find-entities-by-typeahead",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead"
+      ],
+      "Text": "This method allows search of targeting entities within a given targeting facet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by Typeahead",
+      "Anchor": "find-entities-by-typeahead",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by Typeahead",
+      "Anchor": "find-entities-by-typeahead",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026facet={encoded adTargetingFacet URN}\u0026query={Search Query}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by Typeahead",
+      "Anchor": "find-entities-by-typeahead",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026facet={encoded adTargetingFacet URN}\u0026query={Search Query}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be TYPEAHEAD for this method.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "facet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeting facet that results should be returned for.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "query",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String of partial text to be used for matching with.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum to restrict results to only contain data that matches type requested. Possible values: AGECOMPANYCOMPANY_SIZEDEGREEFIELD_OF_STUDYFUNCTIONGENDERGROUPINDUSTRYINTERESTLOCALESCHOOLSENIORITYSKILLTITLEYEARS_OF_EXPERIENCEMEMBER_BEHAVIOR",
+            "Links": [],
+            "Values": [
+              "AGE",
+              "COMPANY",
+              "COMPANY_SIZE",
+              "DEGREE",
+              "FIELD_OF_STUDY",
+              "FUNCTION",
+              "GENDER",
+              "GROUP",
+              "INDUSTRY",
+              "INTEREST",
+              "LOCALE",
+              "SCHOOL",
+              "SENIORITY",
+              "SKILL",
+              "TITLE",
+              "YEARS_OF_EXPERIENCE",
+              "MEMBER_BEHAVIOR"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be QUERY_USES_URNS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "useCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum to indicate whether filtering targeting entities for a specific use case is needed. Possible values: CONNECTED_TELEVISION_ONLY_CAMPAIGN Note: Applicable only from API versions 202503 and later.",
+            "Links": [],
+            "Values": [
+              "CONNECTED_TELEVISION_ONLY_CAMPAIGN"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request: GET Fields of Study Entities for \u0027Economics\u0027",
+      "Anchor": "sample-request-get-fields-of-study-entities-for-economics",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Request: GET Fields of Study Entities for \u0027Economics\u0027"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request: GET Fields of Study Entities for \u0027Economics\u0027",
+      "Anchor": "sample-request-get-fields-of-study-entities-for-economics",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Request: GET Fields of Study Entities for \u0027Economics\u0027"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026entityType=FIELD_OF_STUDY\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn%3Ali%3AadTargetingFacet%3AfieldsOfStudy\u0026query=econ\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request: GET Fields of Study Entities for \u0027Economics\u0027",
+      "Anchor": "sample-request-get-fields-of-study-entities-for-economics",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Request: GET Fields of Study Entities for \u0027Economics\u0027"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026entityType=FIELD_OF_STUDY\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn%3Ali%3AadTargetingFacet%3AfieldsOfStudy\u0026query=econ\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100990\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Economics\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:101438\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Business/Managerial Economics\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100994\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022International Economics\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100993\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Development Economics and International Development\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100991\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Applied Economics\u0022\n        },\n    ..\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request: GET Locations Entities for Location \u0027Africa\u0027",
+      "Anchor": "sample-request-get-locations-entities-for-location-africa",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Request: GET Locations Entities for Location \u0027Africa\u0027"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request: GET Locations Entities for Location \u0027Africa\u0027",
+      "Anchor": "sample-request-get-locations-entities-for-location-africa",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Request: GET Locations Entities for Location \u0027Africa\u0027"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn%3Ali%3AadTargetingFacet%3Alocations\u0026query=afric\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request: GET Locations Entities for Location \u0027Africa\u0027",
+      "Anchor": "sample-request-get-locations-entities-for-location-africa",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Request: GET Locations Entities for Location \u0027Africa\u0027"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=typeahead\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn%3Ali%3AadTargetingFacet%3Alocations\u0026query=afric\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by Typeahead",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n       {\n            \u0022urn\u0022: \u0022urn:li:geo:103537801\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022Africa\u0022\n        },\n        {\n        \n            \u0022urn\u0022: \u0022urn:li:geo:104035573\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n            \u0022name\u0022: \u0022South Africa\u0022\n        },\n    ]\n    \n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by URNs",
+      "Anchor": "find-entities-by-urns",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs"
+      ],
+      "Text": "Get the metadata and value information for a collection of URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by URNs",
+      "Anchor": "find-entities-by-urns",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by URNs",
+      "Anchor": "find-entities-by-urns",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs"
+      ],
+      "Text": "All requests are represented in protocol 2.0.0 and require the following header: X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Entities by URNs",
+      "Anchor": "find-entities-by-urns",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by URNs",
+      "Anchor": "find-entities-by-urns",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026urns={URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Entities by URNs",
+      "Anchor": "find-entities-by-urns",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026urns={URN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-3",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be urns for this method.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of URNs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of URNs requesting metadata for.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639. Defaults to \u0022en\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166. Defaults to \u0022US\u0022 if no value is provided.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be QUERY_USES_URNS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fetchType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Determines how much of an URN\u0027s descendant tree is returned.SINGLE_NODE: Default value. Resolve and return only the entities explicitly requested with no descendants.LAZY: Resolve and return all entities except those with a large taxonomy size. Supported when passing a single URN value only.",
+            "Links": [],
+            "Values": [
+              "SINGLE_NODE: Default value. Resolve and return only the entities explicitly requested with no descendants.",
+              "LAZY: Resolve and return all entities except those with a large taxonomy size. Supported when passing a single URN value only."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request to Get Field of Study Names",
+      "Anchor": "sample-request-to-get-field-of-study-names",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Request to Get Field of Study Names"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request to Get Field of Study Names",
+      "Anchor": "sample-request-to-get-field-of-study-names",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Request to Get Field of Study Names"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026urns=List(urn%3Ali%3AfieldOfStudy%3A100990,urn%3Ali%3Aorganization%3A1035,urn%3Ali%3Aseniority%3A9)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request to Get Field of Study Names",
+      "Anchor": "sample-request-to-get-field-of-study-names",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Request to Get Field of Study Names"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026urns=List(urn%3Ali%3AfieldOfStudy%3A100990,urn%3Ali%3Aorganization%3A1035,urn%3Ali%3Aseniority%3A9)\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:fieldsOfStudy\u0022,\n            \u0022name\u0022: \u0022Economics\u0022,\n            \u0022urn\u0022: \u0022urn:li:fieldOfStudy:100990\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:employersPast\u0022,\n            \u0022name\u0022: \u0022Microsoft\u0022,\n            \u0022urn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n        {\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Partner\u0022,\n            \u0022urn\u0022: \u0022urn:li:seniority:9\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request to Get Locations",
+      "Anchor": "sample-request-to-get-locations",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Request to Get Locations"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request to Get Locations",
+      "Anchor": "sample-request-to-get-locations",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Request to Get Locations"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026queryVersion=QUERY_USES_URNS\u0026urns=List(urn%3Ali%3Ageo%3A102095887,urn%3Ali%3Ageo%3A101857797)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request to Get Locations",
+      "Anchor": "sample-request-to-get-locations",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Request to Get Locations"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?q=urns\u0026queryVersion=QUERY_USES_URNS\u0026urns=List(urn%3Ali%3Ageo%3A102095887,urn%3Ali%3Ageo%3A101857797)\u0026locale=(language:en,country:US)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-9",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Find Entities by URNs",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:geo:102095887\u0022,\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022name\u0022: \u0022California, United States\u0022\n    },\n    {\n      \u0022urn\u0022: \u0022urn:li:geo:101857797\u0022,\n      \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:locations\u0022,\n      \u0022name\u0022: \u0022Sacramento, California, United States\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 2147483647,\n    \u0022links\u0022: [],\n    \u0022start\u0022: 0\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Discovering Targeting Entities",
+      "Anchor": "discovering-targeting-entities",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities"
+      ],
+      "Text": "Following table shows a list of all the targeting facets and the corresponding endpoint to retrieve list of entities for a given targeting facet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Types of Finder",
+      "Anchor": "types-of-finder",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities",
+        "Types of Finder"
+      ],
+      "Text": "adTargetingFacet returns all the targeting entities for a given facet.\ntypeahead only returns targeting entities for a given targeting facet search query.\nsimilarEntities returns similar targeting entities for a given targeting entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Types of Finder",
+      "Anchor": "types-of-finder",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities",
+        "Types of Finder"
+      ],
+      "Text": "",
+      "Headers": [
+        "AdTargetingFacets",
+        "Supported Finder",
+        "Recommended Finder"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:genders",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:seniorities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:ageRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead only after Bing Geo Migration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:profileLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead only after Bing Geo Migration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:staffCountRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employersPast",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employersAll",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titlesPast",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titlesAll",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:schools",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:followedCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:fieldsOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:yearsOfExperienceRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:firstDegreeConnectionCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead, similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:audienceMatchingSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:dynamicSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "typeahead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:memberBehaviors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:buyerGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet. Note: Applicable only from API versions 202603 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:companyCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:growthRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:revenue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet, typeahead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adTargetingFacet",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Types of Finder",
+      "Anchor": "types-of-finder",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities",
+        "Types of Finder"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Types of Finder",
+      "Anchor": "types-of-finder",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities",
+        "Types of Finder"
+      ],
+      "Text": "LinkedIn is migrating to a new geo data source (i.e. Bing geo). To understand the complete migration plan for Bing geo, see Bing geo Migration Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Types of Finder",
+      "Anchor": "types-of-finder",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities",
+        "Types of Finder"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Types of Finder",
+      "Anchor": "types-of-finder",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Discovering Targeting Entities",
+        "Types of Finder"
+      ],
+      "Text": "As part of our ongoing efforts to provide a safe and trusted platform for members, we have decided to disable Member Groups\u2019 targeting within the European Economic Area (EEA) and Switzerland (CH) starting May 2024. This means you can no longer use the urn:li:adTargetingFacet:groups facet to target members based on their group membership within these regions.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The budgetMicros property</summary>
-        public int? BudgetMicros { get; set; }
+        public long? BudgetMicros { get; set; }
         /// <summary>The metricValue property</summary>
         public double? MetricValue { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "budgetMicros", n => { BudgetMicros = n.GetIntValue(); } },
+                { "budgetMicros", n => { BudgetMicros = n.GetLongValue(); } },
                 { "metricValue", n => { MetricValue = n.GetDoubleValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("budgetMicros", BudgetMicros);
+            writer.WriteLongValue("budgetMicros", BudgetMicros);
             writer.WriteDoubleValue("metricValue", MetricValue);
             writer.WriteAdditionalData(AdditionalData);
         }

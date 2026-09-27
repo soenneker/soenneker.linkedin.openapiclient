@@ -1,0 +1,453 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+  "Title": "Token Introspection",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/postman-getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "The token inspector tool enables developers to check the Time to Live (TTL) and status (active/expired) for all tokens (including Enterprise tokens.) For Authorization Code Flow (3-legged OAuth) tokens, permission scopes will be displayed. You can fetch access token data using the /introspectToken endpoint or the Token Inspector Tool in the UI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Details",
+      "Anchor": "api-details",
+      "SectionPath": [
+        "Introduction",
+        "API Details"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/introspectToken\n\nContent-Type: application/x-www-form-urlencoded",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Sample Request"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/introspectToken",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://www.linkedin.com/oauth/v2/introspectToken\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--data-urlencode \u0027client_id=\u003CApplication Client ID\u003E\u0027 \\\n--data-urlencode \u0027client_secret=\u003CApplication Client Secret\u003E\u0027 \\\n--data-urlencode \u0027token=\u003CToken Value\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Request Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required. Application client id",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required. Application client secret",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required. The string value of the token returned using Client Credential Flow (2-legged OAuth), Authorization Code Flow (3-legged OAuth), or Enterprise_User (Enterprise OAuth Flow).",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+              "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022active\u0022: true,\n    \u0022client_id\u0022: \u0022xxxxxxxx\u0022,\n    \u0022authorized_at\u0022: 1493055596,\n    \u0022created_at\u0022: 1493055596,\n    \u0022status\u0022: \u0022active\u0022,\n    \u0022expires_at\u0022: 1497497620,\n    \u0022scope\u0022: \u0022r_liteprofile,r_emailaddress,w_member_social\u0022,\n    \u0022auth_type\u0022: \u0022_see note below_\u0022 \n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Sample Response"
+      ],
+      "Text": "Possible auth-type values returned are:\u0022auth_type\u0022: \u00222L\u0022\u0022auth_type\u0022: \u00223L\u0022\u0022auth_type\u0022: \u0022Enterprise_User\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Response Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required. Boolean indicator of whether or not the returned token is currently active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. An enum string with values:revoked - Token has been revoked expired - Token has expired due to the \u0022expires_at\u0022 TTLactive - Token is active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. A string containing a comma-separated list of scopes associated with this token.Returned only for token obtained via Authorization Code Flow (3-legged OAuth)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. Optional. Application Client ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. Epoch time in seconds, indicating when this token was originally issued",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expires_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. Epoch time in seconds, indicating when this token will expire",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "authorized_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. Epoch time in seconds, indicating when the token was authorized",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "auth_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. String with values:3L - 3-legged member token2L - 2-legged application tokenEnterprise_User - Enterprise member token",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HTTP Response Status Codes",
+      "Anchor": "http-response-status-codes",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Response Fields",
+        "HTTP Response Status Codes"
+      ],
+      "Text": "The response will vary depending on the status of the token and its authenticity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HTTP Response Status Codes",
+      "Anchor": "http-response-status-codes",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Response Fields",
+        "HTTP Response Status Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Status Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Success",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid client id or token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid client secret",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HTTP Response Status Codes",
+      "Anchor": "http-response-status-codes",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Response Fields",
+        "HTTP Response Status Codes"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HTTP Response Status Codes",
+      "Anchor": "http-response-status-codes",
+      "SectionPath": [
+        "Introduction",
+        "API Details",
+        "Response Fields",
+        "HTTP Response Status Codes"
+      ],
+      "Text": "If the credentials are valid but do not match the client information in the token, you will receive a successful response (status 200 OK), however with \u0022active\u0022: false, in the response body.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

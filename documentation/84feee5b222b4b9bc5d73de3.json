@@ -1,0 +1,703 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+  "Title": "Leads Module References",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Leads Module References",
+      "Anchor": "leads-module-references",
+      "SectionPath": [],
+      "Text": "This guide contains a description of the content featured in all components and recommended sizes for various layouts. Descriptions for how to instantiate these components can be found in the Embedding the Iframe documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Leads Module References",
+      "Anchor": "leads-module-references",
+      "SectionPath": [],
+      "Text": "Below you will find descriptions of the main functionality for a given component. For all components, if a strong match is not found for a given set of query parameters, the user will land on a search results page (the matching page) where they can further refine their search or enter new search terms. After a match is selected, the UI will display the component requested.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Leads Module References",
+      "Anchor": "leads-module-references",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Leads Module References",
+      "Anchor": "leads-module-references",
+      "SectionPath": [],
+      "Text": "Due to limitations of the content width displayed here, some recommended sizes are wider than the width allowed on this page. Screenshots larger than the allowed width are presented but scaled down in size, though the aspect ratio remains consistent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Inline Mode",
+      "Anchor": "inline-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Inline Mode"
+      ],
+      "Text": "",
+      "Headers": [
+        "Module",
+        "1-Column Thumbnail",
+        "2-Column Thumbnail",
+        "1-Column Small",
+        "2-Column Small",
+        "1-Column Medium"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Top Card",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 336 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 390 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 528 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Get Introduced",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 336 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 336 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Messaging",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 336 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 390 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 528 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Connect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 336 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 390 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 528 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Recent Activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 155 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 155 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Highlights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 155 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 155 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Related Leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 230 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 230 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Classic Mode",
+      "Anchor": "classic-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Classic Mode"
+      ],
+      "Text": "Modules presented in classic mode are responsive and can be best viewed at the following sizes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Classic Mode",
+      "Anchor": "classic-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Classic Mode"
+      ],
+      "Text": "1-Column Small\n\nMin width: 320px\nMax width: 480px\nHeight: 405px\n\n\n1-Column Medium\n\nMin width: 320px\nMax width: 640px\nHeight: 515px\n\n\n1-Column Large\n\nMin width: 320px\nMax width: 640px\nHeight: 820px\n\n\n2-Column Medium\n\nMin width: 640px\nMax width: 944px\nHeight: 515px\n\n\n3-Column Medium\n\nMin width: 944px\nMax width: dynamic\nHeight: 515px",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "The Top Card displays user profile data for a lead, including name, headline, and role. From this component, users can save, message, or view the lead in Sales Navigator.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "Screenshots below were rendered using the TopCard2 query parameter, which should be used in all new implementations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "Top Card, 1-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "Top Card, 2-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "Top Card, 1-Column Medium, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Introduced",
+      "Anchor": "get-introduced",
+      "SectionPath": [
+        "Get Introduced"
+      ],
+      "Text": "With the Get Introduced component, sales professionals can ask for an introduction to the lead from anyone within their network who may be connected to the lead. If the Sales Navigator instance has licensed TeamLink, users will be able to see anyone in their organization who is connected to the lead who can make the introduction.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Introduced",
+      "Anchor": "get-introduced",
+      "SectionPath": [
+        "Get Introduced"
+      ],
+      "Text": "Get Introduced, 1-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Introduced",
+      "Anchor": "get-introduced",
+      "SectionPath": [
+        "Get Introduced"
+      ],
+      "Text": "Get Introduced, 2-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging",
+      "Anchor": "messaging",
+      "SectionPath": [
+        "Messaging"
+      ],
+      "Text": "The Messaging component enables sales professionals to send private messages to their connections and InMail to new leads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging",
+      "Anchor": "messaging",
+      "SectionPath": [
+        "Messaging"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging",
+      "Anchor": "messaging",
+      "SectionPath": [
+        "Messaging"
+      ],
+      "Text": "If the recipient is not a 1st or 2nd degree connection, an InMail will be sent to the recipient when using this module. For 1st and 2nd degree connections, a normal message will be sent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging",
+      "Anchor": "messaging",
+      "SectionPath": [
+        "Messaging"
+      ],
+      "Text": "Messaging, 1-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging",
+      "Anchor": "messaging",
+      "SectionPath": [
+        "Messaging"
+      ],
+      "Text": "Messaging, 2-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging",
+      "Anchor": "messaging",
+      "SectionPath": [
+        "Messaging"
+      ],
+      "Text": "Messaging, 1-Column Medium, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect",
+      "Anchor": "connect",
+      "SectionPath": [
+        "Connect"
+      ],
+      "Text": "With the Connect component, sales professionals can send connection invites along with personal messages, to solidify leads and add them to their network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect",
+      "Anchor": "connect",
+      "SectionPath": [
+        "Connect"
+      ],
+      "Text": "Connect, 1-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect",
+      "Anchor": "connect",
+      "SectionPath": [
+        "Connect"
+      ],
+      "Text": "Connect, 2-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect",
+      "Anchor": "connect",
+      "SectionPath": [
+        "Connect"
+      ],
+      "Text": "Connect, 1-Column Medium, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Icebreakers",
+      "Anchor": "icebreakers",
+      "SectionPath": [
+        "Icebreakers"
+      ],
+      "Text": "Ice Breakers informs sales professionals on a leads\u0027 key activities and interests, and commonalities shared with a sales professional. If a user taps on the light bulb button in Messaging module, the Icebreakers component will load and contain the Recent Activity and Highlights modules. Recent Activity and Highlights can also be loaded individually.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Icebreakers",
+      "Anchor": "icebreakers",
+      "SectionPath": [
+        "Icebreakers"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Icebreakers",
+      "Anchor": "icebreakers",
+      "SectionPath": [
+        "Icebreakers"
+      ],
+      "Text": "The Icebreakers module is not supported as a standalone module in Inline Mode.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recent Activity",
+      "Anchor": "recent-activity",
+      "SectionPath": [
+        "Recent Activity"
+      ],
+      "Text": "The Recent Activity component displays updates for a lead, including job updates, news about their company, and shares they have created, liked or commented on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recent Activity",
+      "Anchor": "recent-activity",
+      "SectionPath": [
+        "Recent Activity"
+      ],
+      "Text": "Recent Activity, 1-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recent Activity",
+      "Anchor": "recent-activity",
+      "SectionPath": [
+        "Recent Activity"
+      ],
+      "Text": "Recent Activity, 2-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Highlights",
+      "Anchor": "highlights",
+      "SectionPath": [
+        "Highlights"
+      ],
+      "Text": "The Highlights component identifies commonalities in background between the Sales Navigator user and the lead. This information can be leveraged to engage with a potential lead and establish a personal connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Highlights",
+      "Anchor": "highlights",
+      "SectionPath": [
+        "Highlights"
+      ],
+      "Text": "Highlights, 1-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Highlights",
+      "Anchor": "highlights",
+      "SectionPath": [
+        "Highlights"
+      ],
+      "Text": "Highlights, 2-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Leads",
+      "Anchor": "related-leads",
+      "SectionPath": [
+        "Related Leads"
+      ],
+      "Text": "Related Leads shows the potential leads similar to the target lead, to enable sales professionals to connect with the target lead\u2019s network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Leads",
+      "Anchor": "related-leads",
+      "SectionPath": [
+        "Related Leads"
+      ],
+      "Text": "Related Leads, 1-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Leads",
+      "Anchor": "related-leads",
+      "SectionPath": [
+        "Related Leads"
+      ],
+      "Text": "Related Leads, 2-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Classic Mode with All Modules",
+      "Anchor": "classic-mode-with-all-modules",
+      "SectionPath": [
+        "Classic Mode with All Modules"
+      ],
+      "Text": "The classic mode with all modules will allows you to embed just one iframe with all modules sales professionals might need.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Classic Mode with All Modules",
+      "Anchor": "classic-mode-with-all-modules",
+      "SectionPath": [
+        "Classic Mode with All Modules"
+      ],
+      "Text": "All Modules, 1-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Classic Mode with All Modules",
+      "Anchor": "classic-mode-with-all-modules",
+      "SectionPath": [
+        "Classic Mode with All Modules"
+      ],
+      "Text": "All Modules, 3-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

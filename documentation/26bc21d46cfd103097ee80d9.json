@@ -1,0 +1,928 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2023/marketing-api-changes",
+  "Title": "Archived Marketing API Changes 2023",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/ad-preview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2023/marketing-api-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/ab-testing/ab-testing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2023",
+      "Anchor": "archived-marketing-api-changes-2023",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2023",
+      "Anchor": "archived-marketing-api-changes-2023",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements",
+      "SectionPath": [
+        "November 2023 - Version 202311",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Ad Preview API: Ad account URN required to generate creative preview.\nStarting with the 202311 version, you need to pass the Creative URN and Ad account URN to generate a preview of the creative in your platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements",
+      "SectionPath": [
+        "November 2023 - Version 202311",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Offline Conversion API: Sunsetting Offline Conversions.\nIn October 2023, we launched the Conversions API, which connects both online and offline conversions directly to LinkedIn, and replaces the Offline Conversions API. If you have integrated with Offline Conversions API, migrate to the new Conversions API before October 2024.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements",
+      "SectionPath": [
+        "November 2023 - Version 202311",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Brand Lift Testing API: New question type is now available.\nNow use a new brand lift metric \u2018Top-of-mind Awareness\u2019, for example \u0022What [brand / product / service / employer] comes to mind when you think of [user input]?\u0022, in Brand Lift Testing to prove how your brand efforts are moving the needle to keep your brand top of mind.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "November 2023 - Version 202311",
+        "Breaking Changes"
+      ],
+      "Text": "The monthly API versions below will be deprecated and removed from the platform on the dates listed. To avoid disruptions to your platform, please migrate the latest API version launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "November 2023 - Version 202311",
+        "Breaking Changes"
+      ],
+      "Text": "202212 - December 15, 2023\n202301 - January 15, 2024\n202302 - February 15, 2024",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation Changes",
+      "Anchor": "documentation-changes",
+      "SectionPath": [
+        "October 2023 - Version 202310",
+        "Documentation Changes"
+      ],
+      "Text": "New Marketing APIs Landing Page: A brand new landing page has been added to the Marketing APIs section that provides a detailed view of the API products offered with a fresh look and feel.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "October 2023 - Version 202310",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Conversions API: Build a server-to-server integration to strengthen both performance and privacy.\nLeverage LinkedIn\u0027s Conversions API to build a solution that connects marketing data, like online and offline conversions, directly to LinkedIn. Conversions API enables full-funnel measurement and powers campaign optimization while providing a secure, reliable data connection. Get started by reviewing the prerequisites and application process here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "October 2023 - Version 202310",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Creatives API: New call to action types\nWe\u0027ve expanded the call to action types for a lead generation form creative to include: JOIN, SIGNUP, REQUEST DEMO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-1",
+      "SectionPath": [
+        "October 2023 - Version 202310",
+        "Breaking Changes"
+      ],
+      "Text": "The monthly API versions below will be deprecated and removed from the platform on the dates listed. To avoid disruptions to your platform, please migrate the latest API version launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-1",
+      "SectionPath": [
+        "October 2023 - Version 202310",
+        "Breaking Changes"
+      ],
+      "Text": "202211 - November 15, 2023\n202212 - December 15, 2023\n202301 - January 15, 2024",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-2",
+      "SectionPath": [
+        "September 2023 - Version 202309",
+        "Breaking Changes"
+      ],
+      "Text": "The monthly API versions below will be deprecated and removed from the platform on the dates listed. To avoid disruptions to your platform, please migrate the latest API version (202309) launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-2",
+      "SectionPath": [
+        "September 2023 - Version 202309",
+        "Breaking Changes"
+      ],
+      "Text": "202210 to be deprecated on October 16, 2023\n202211 to be deprecated on November 15, 2023\n202212 to be deprecated on December 15, 2023",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-2",
+      "SectionPath": [
+        "September 2023 - Version 202309",
+        "Breaking Changes"
+      ],
+      "Text": "See Versioning Guide for more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-2",
+      "SectionPath": [
+        "August 2023 - Version 202308",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Conversation Ads API: Add subject to a Conversation Ad.\nNow add a subject to a Conversion Ad which will appear as the first line in the member\u2019s inbox. Previously it was auto populated with the first conversation message.\n\nmediaArtifactPublicUrls API: API is deprecated.\nAdditional fields have been added to Assets API to support the mediaArtifactPublicUrls use case.\n\nCreatives API \u0026 Legacy Creatives API: Updates to Ad Creative Rejection Reasons. We have added six new rejection reason symbols, which could be returned as rejection reasons from the API:\n\nILLICIT_OR_RECREATIONAL_DRUGS_AND_RELATED_PRODUCTS\nLEGITSCRIPT_APPROVAL_MISSING\nMEDICAL_DEVICES_AND_TREATMENTS\nOVER_THE_COUNTER_DRUGS\nPHARMACY_AND_TELEHEALTH\nPRESCRIPTION_DRUGS\n\nWe have updated the description of the HEALTH_MATTERS symbol explaining the current policy for rejecting Ads with this reason.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-3",
+      "SectionPath": [
+        "August 2023 - Version 202308",
+        "Breaking Changes"
+      ],
+      "Text": "The monthly API versions below will be deprecated and removed from the platform on the dates listed. To avoid disruptions to your platform, please migrate the latest API version launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-3",
+      "SectionPath": [
+        "August 2023 - Version 202308",
+        "Breaking Changes"
+      ],
+      "Text": "202209 - September 15, 2023\n202210 - October 16, 2023\n202211 - November 15, 2023",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-3",
+      "SectionPath": [
+        "August 2023 - Version 202308",
+        "Breaking Changes"
+      ],
+      "Text": "Starting with the 202307 version, API decoration won\u0027t be supported for any API. We\u2019ve created this video to assist you with this change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders",
+      "SectionPath": [
+        "August 2023 - Version 202308",
+        "Reminders"
+      ],
+      "Text": "Message Ads to be sunset on August 31, 2023\nOn August 31, 2023, we\u0027ll be sunsetting Message Ads and recommend switching to Conversation Ads. The ability to create a Message Ad will be sunset across all API versions. Delivery for existing Message Ads campaigns will be reduced, and we recommend notifying your clients to stop creating new Message Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-3",
+      "SectionPath": [
+        "July 2023 - Version 202307",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Post API: More images allowed in multi-image posts.\nWe have increased the max number of images you can include in a multi-image post from 9 to 20. To know more, go to Post API page.\n\nComments API: Update to $URN field and digitalmediaAsset field. We have replaced the following:\n\n$URN field with the id field\ndigitalmediaAsset field with the image field. To know more, go to Comments API page\n\n\nReactions API: Updates to MAYBE reaction and $URN field.\nThe following updates are made to the Reactions API:\n- The MAYBE reaction is no longer supported. Any write with the MAYBE reaction will be rejected with a 400 error.\n- The $URN field is replaced with the id field.\n\nNew Lead Sync API: Collect leads from ads, events, and other future marketing cases via a single API\nThe Ads Lead Sync and Events Lead Sync APIs will be deprecated and replaced with the new Lead Sync API. If you\u2019re integrated with any of the legacy APIs, you\u0027ll automatically have access to the new API and will need to migrate to the new API using the migration guide before July 2024 when version 202307 sunsets. If you\u2019re interested in accessing the new API for the first time, learn about the qualifications, and application steps here.\n\nCreatives API and the Legacy Creatives API: Updates to Ad Creative Rejection Reasons.\nWe have added six new rejection reason symbols, which could be returned as rejection reasons from the API:\n- ILLICIT_OR_RECREATIONAL_DRUGS_AND_RELATED_PRODUCTS\n- LEGITSCRIPT_APPROVAL_MISSING\n- MEDICAL_DEVICES_AND_TREATMENTS\n- OVER_THE_COUNTER_DRUGS\n- PHARMACY_AND_TELEHEALTH\n- PRESCRIPTION_DRUGS\nWe have updated the description of the HEALTH_MATTERS symbol explaining the current policy for rejecting Ads with this reason.\n\nEngagement Retargeting API: Update to timeFrame field.\nThe timeFrame field will accept timeSpan instead of com.linkedin.common.timeSpan.\n\nAPI Deprecations\nStarting with version 202307:\n\nThe countries, countryGroup, places, regions, and states APIs are deprecated and should be replaced with the geo API.\nThe companies API is deprecated and should be replaced with the Organizations API.\nOrganizationBrandLookup API is deprecated and should be replaced with the OrganizationLookup API.\nThe adCampaign Recommendation API is deprecated and not being replaced by another API.\nThe /adInMailContents API is deprecated and should be replaced with the /inMailContents API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-4",
+      "SectionPath": [
+        "July 2023 - Version 202307",
+        "Breaking Changes"
+      ],
+      "Text": "The monthly API versions below will be deprecated and removed from the platform on the dates listed. To avoid disruptions to your platform, please migrate the latest API version launched today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-4",
+      "SectionPath": [
+        "July 2023 - Version 202307",
+        "Breaking Changes"
+      ],
+      "Text": "202207 - July 25, 2023\n202208 - August 15, 2023\n202209 - September 15, 2023",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-4",
+      "SectionPath": [
+        "July 2023 - Version 202307",
+        "Breaking Changes"
+      ],
+      "Text": "Starting with the 202307 version, API decoration won\u0027t be supported for any API. We\u2019ve created this video to assist you with this change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-1",
+      "SectionPath": [
+        "July 2023 - Version 202307",
+        "Reminders"
+      ],
+      "Text": "Message Ads to be sunset on August 31, 2023.\nOn August 31, 2023, we\u0027ll be sunsetting Message Ads and recommend switching to Conversation Ads. The ability to create a Message Ad will be sunset across all API versions. Delivery for existing Message Ads campaigns will be reduced, and we recommend notifying your clients to stop creating new Message Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Migrations"
+      ],
+      "Text": "Critical API migrations must be completed by June 30, 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Migrations"
+      ],
+      "Text": "API Versioning and new Content APIs: We sunset unversioned APIs and legacy Content APIs Shares API, UGC API on June 30, 2023. Migrate to versioned APIs and new Content APIs to avoid any disruptions.\n\nNew Community Management API*: We introduced a new Community Management API in January 2023 to offer more functionality to enable your customers to grow their professional communities. Apply and migrate to the new API to keep your community management integration active. Legacy community management permissions will sunset and be removed on June 30, 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-4",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Audience Insights API: Make it easier to plan and understand professional audiences.\nWe\u0027re introducing the Audience Insights API, which provides aggregated insights into the professional demographic and firmographic details, and interests of a target audience. These insights help you understand more about \u201Cwho\u201D the audience is and can be leveraged to discover new audiences, plan \u0026 optimize your strategy, and build new audiences to seamlessly start your campaign. This is a private API and requires additional approval to access. Learn more on how to apply here.\n\nAd Analytics API: B2B query templates make it easy to get relevant reporting metrics.\nTemplated, B2B-focused queries are now available via Postman collection to enable quick access to B2B-relevant metrics that can be used to build insightful reports and inform optimization. We are starting with 3 focused bundles - Performance Overview, ABM Performance Overview, Conversions Deep Dive - and will continue to evolve our templates library, so please take advantage and share feedback here for future updates.\n\nResponse format change for thirdPartyTrackingTags API.\nStarting with version 202306, we\u0027re making changes to the response format of the thirdPartyTrackingTags API. The GET and FINDER APIs will now return changeTimeStamps instead of changeAuditStamps in their responses. The new changeTimeStamps will still include the created, lastUpdated, and deleted fields, but they\u0027ll now directly contain the timestamp value instead of being nested within another object with a time field.\n\nQuery params changes: Enabling unwrapped query params.\nWe previously announced that certain query params had to be wrapped - e.g. we required intendedStatuses=(value:List(ARCHIVED,CANCELED)) rather than intendedStatuses=List(ARCHIVED,CANCELED). Based on your feedback and to create a better experience, we\u2019ve decided to revert this decision and enable you to make requests without wrapping the query params. We support both wrapped and unwrapped query params until the 202305 version. From 202306 onwards only unwrapped query params are allowed. The APIs that are affected by this change are: Ad Analytics API, Creatives API, Posts API, Saved Audience Template API, Videos API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Breaking Changes"
+      ],
+      "Text": "202207 version will be deprecated and removed from the platform on July 17, 2023. Be sure to update your apps to the latest version before then.\n\nMessage Ads will be sunset and removed across all versions starting August 31, 2023.\n\nStarting with the 202305 and 202306 versions, API decoration won\u0027t be supported for certain APIs. See the Recent Changes page in documentation for the complete list of impacted APIs. We\u2019ve created this video to assist you with this change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Breaking Changes"
+      ],
+      "Text": "From 202305:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Breaking Changes"
+      ],
+      "Text": "/adPageSets\n/adSegmentSources\n/adSegments\n/dmpSegments/{dmpSegmentId}/companies\n/dmpSegments/{dmpSegmentId}/destinations\n/dmpSegments/{dmpSegmentId}/lookalikes\n/dmpSegments\n/dmpSegments/{dmpSegmentId}/users\n/adAccounts/{id}/creatives\n/posts\n/adInMailContents\n/inMailContents\n/conversationAds\n/conversationAds/{conversationId}/sponsoredMessageContents\n/adAccounts/{id}/adCampaignGroups/\n/adAccounts/{id}/adCampaigns\n/adLiftTests\n/adLiftTests/{id}/adLiftTestSurveys\n/adSupplyForecasts\n/networkSizes\n/adPublisherRestrictions\n/videoAnalytics\n/brandPageStatistics\n/organizationAcls\n/organizationalEntityFollowerStatistics\n/organizationalEntityNotifications\n/organizationalEntityShareStatistics\n/organizationPageStatistics\n/organizationShareAuthorizations\n/adInMailMemberSenderPermissions\n/adBudgetPricing\n/documents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Breaking Changes"
+      ],
+      "Text": "From 202306:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Breaking Changes"
+      ],
+      "Text": "/shortlink\n/conversions\n/thirdPartyTrackingTags\n/socialActions/{target}/likes\n/socialActions\n/socialActions/{target}/comments\n/socialMetadata\n/assets\n/people\n/me\n/dmpEngagementSourceTypes\n/dmpEngagementSourceTypes/{engagementSourceType}/dmpEngagementTriggers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-2",
+      "SectionPath": [
+        "June 2023 - Version 202306",
+        "Reminders"
+      ],
+      "Text": "Access and refresh token requests after June 30, 2023.\nMake access token and refresh token requests using the POST method to /accessToken endpoint with the request header \u201CContent-Type\u201D: \u201Cx-www-form-urlencoded\u201D and all required parameters in the request body. Using the GET /accessToken endpoint after June 30, 2023 will result in a 400 error.\n\nMessage Ads to be sunset on August 31, 2023.\nOn August 31, 2023, we\u0027ll be sunsetting Message Ads and recommend switching to Conversation Ads. The ability to create a Message Ad will be sunset across all API versions. Delivery for new Message Ads campaigns will be reduced, and we recommend notifying your clients to stop creating new Message Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "Critical API migrations must be completed by June 30, 2023..\nPlease review details below for recent API enhancements that may impact your apps.\nAPI versioning and new Content APIs*: Introduced in June 2022, these enhancements make it easy for you to build on our platform.\nAPI versioning: Learn more and how to migrate from unversioned\nNew Content APIs: Learn more and how to migrate from legacy APIs.\nNew Community Management API*: Introduced in Q4 2022, this API accelerates access to more functionality enabling your customers to know and grow their professional communities. Learn how to migrate to the new API as well as our plans for community management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "If you have impacted apps, please make the necessary changes immediately or set aside time/resources to complete updates before June 30th 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "Migrate June 2022 versioned APIs to the latest version prior to June 15, 2023.\nBeginning June 2022, we introduced monthly versioning of our APIs and committed to supporting each monthly version for 12 months. Applications using the 202206 version of any versioned APIs must migrate to the latest version before June 15, when we\u0027ll release the June 2023 versions of our APIs.\n\nReminder about access and refresh token requests after June 30, 2023.\nAll access token and refresh token requests should be made using only the POST method to /accessToken endpoint with the request header \u201CContent-Type\u201D: \u201Cx-www-form-urlencoded\u201D and all required parameters in the request body. We start returning 400 errors on the GET /accessToken endpoint after June 30, 2023.\n\nUpdate to adCreativesV2 deco.\nStarting May, all deco calls for creative URN will resolve via the /creatives endpoint instead of the /adCreativesV2 endpoint. Partners who use the adAnalytics endpoint and other endpoints that use deco calls to fetch creatives need to update their calls.\n\nMessage Ads API.\nWe\u2019re sunsetting Message Ads API starting May 22, 2023. New campaign creation will be disabled on June 19, 2023. We strongly encourage switching from the legacy Message Ads API to Conversation Ads API by June 19th to avoid disruption of campaign delivery.\n\nUpdates to Base URLs.\nStarting with the 202305 version, all API calls to the following endpoints will be modified to include advertiser Account ID in the URL path:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint Changed",
+        "Previous Base URL",
+        "New Base URL"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/adCampaignGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/adCampaignGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/adCampaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/adCampaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/creatives",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/creatives",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "What this means:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "Finder functionality will now be limited to a single account. Currently, we can search for campaign groups, campaigns, and creatives across accounts using finders. Adding advertiser account ID to the URL would limit the ability to do this. Any calls from now on need to be made per account.\n\nIn addition, we\u0027ll be removing the ability to filter by account predicate from campaign group, campaign, and creative finders. As we\u0027re already limiting the finder functionality to a single account, it doesn\u2019t make sense to have it as a filter predicate. Similarly, we can no longer sort by Account field since the search results are being limited to an advertiser account.\n\nThe new URLs will be active from the May version. This means that all APIs using version header 202304 or earlier will need to call the old URLs. And all APIs using version headers 202305 or above will need to call the new API URLs.\n\nWith the new APIs, applications will always need to pass an advertiser account ID in the URL path.\n\nAd Analytics API\n\nDeprecate API Decoration starting with the June 2023 version: Starting with the 202306 version, we\u0027ll remove API Decoration from the Ad Analytics API. As an alternative, individual requests can be made to access the corresponding entity associated with a URN. More information can be found in URN Resolution. For eligible pivots of the Ad Analytics API, we\u0027re adding a note that indicates which type of URN will be returned for each pivot. For example, if the MEMBER_COMPANY pivot is used with an analytics finder, then the response will contain a pivot value in the format urn:li:organization:\u003CorganizationId\u003E.\nRemove support for pivot and pivotValue fields: Starting with the 202305 version, we\u0027ll no longer support the pivot and pivotValue fields in the returned entities of the Ad Analytics API. Requests with these fields in the field projections will be rejected. We continue to support pivotValues, which provides more accurate and comprehensive information about the values of the pivots requested.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "DMP Segments API: Find by account requests without start or count parameters are now paginated according to the standard pagination behavior.\nDMP Segments Users API: The userId field has been sunset and replaced by the userIds field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-5",
+      "SectionPath": [
+        "May 2023 - Version 202305",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Content API: Externalizing Document Ads.\nIn September 2022, we rolled out a new ad format, Document Ads, which allows advertisers to share ungated and gated documents, such as case studies, white papers, or research reports, directly in the LinkedIn feed. With Document Ads, target audiences can read or download documents without leaving the feed. Advertisers can choose to share their content freely to build awareness and grow thought leadership or gate their documents with a Lead Gen Form.\n\nDocument Ads API\nPrior to today, creating a Document Ad was only available to advertisers through Campaign Manager. The new Document Ads API allows advertisers to now have access to a new format during ad creation on partner platforms. To learn more, see the Document Ads API page.\n\nAd Analytics API: New metrics for Conversation Ads.\nWe\u2019re launching a new \u0026 improved version of Conversation Ads on May 22nd, with availability increasing over time. Alongside this product change, we\u0027ll introduce two new reporting metrics for Conversation Ads - headlineImpressions and headlineCTR - to help you measure campaign performance for new \u0026 improved Conversation Ads. These new metrics will measure the number of times members are shown the headline of the Conversation Ad and the number of times members clicked on it to start a conversation. To learn more, see this article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes-1",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "Critical API migrations must be completed by June 30, 2023..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes-1",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "Please review details below for recent API enhancements that may impact your apps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes-1",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "API versioning and new Content APIs: Introduced in June 2022, these enhancements make it easy for you to build on our platform.\nAPI versioning: Learn more and how to migrate from unversioned\nNew Content APIs: Learn more and how to migrate from legacy APIs.\nNew Community Management API: Introduced in Q4 2022, this API accelerates access to more functionality enabling your customers to know and grow their professional communities. Learn how to migrate to the new API as well as our plans for community management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes-1",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "If you have impacted apps, please make the necessary changes immediately or set aside time/resources to complete updates before June 30th 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations \u0026 Breaking Changes",
+      "Anchor": "migrations--breaking-changes-1",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes"
+      ],
+      "Text": "Migrate June 2022 versioned APIs to the latest version prior to June 15, 2023.\nBeginning June 2022, we introduced monthly versioning of our APIs and committed to supporting each monthly version for 12 months. Applications using the 202206 version of any versioned APIs must migrate to the latest version before June 15, when we\u0027ll release the June 2023 versions of our APIs.\n\nReminder about access and refresh token requests after June 30, 2023.\nAll access token and refresh token requests should be made using only the POST method to /accessToken endpoint with the request header \u201CContent-Type\u201D: \u201Cx-www-form-urlencoded\u201D and all required parameters in the request body. We start returning 400 errors on the GET /accessToken endpoint after June 30, 2023.\n\nAd Segments API: find by account requests without start or count parameters are now paginated according to the standard pagination behavior.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema changes",
+      "Anchor": "schema-changes",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes",
+        "Schema changes"
+      ],
+      "Text": "Ad Targeting, Ad Targeting Entities API: Starting with the 202304 version, we\u0027re changing the format of certain query parameters in the adTargetingFacet finder, the similarEntities finder, the typeahead finder and the urns finder. In the finders, entityType, queryVersion, and fetchType would be records containing the expected values instead of directly accepting values. For example, entityType=SENIORITY would become entityType=(value:SENIORITY).\n\nAd Targeting, Ad Targeting Facets API: Starting with the 202304 version, we\u0027re changing the $URN field of type urn in the GET_ALL method to adTargetingFacetUrn of type AdTargetingFacetUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deco Updates",
+      "Anchor": "deco-updates",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes",
+        "Deco Updates"
+      ],
+      "Text": "Deprecation of API Decoration.\nIn November 2022, we began deprecating API decoration for some APIs. Starting with the 202303 version, we no longer support decoration on the following additional APIs:\nAd Targeting Entities API - /adTargetingEntities\nAd Targeting Facets API - /adTargetingFacets\nVideoAnalytics API - /videoAnalytics\nAd Segments API - /adSegments\nNetwork Sizes API - /networkSizes.\nAd Supply Forecasts API - /adSupplyForecasts\nAd Publisher Restrictions API - /adPublisherRestrictions\neventSubscriptions API - /eventSubscriptions\nDMP Segment Lookalike API- /dmpSegments/lookalikes.\nVanity URL API - /vanityUrl\nPeople Typeahead API - /peopleTypeahead\nCampaignConversions API - /campaignConversions\nAudience Restrictions API - /adPublisherRestrictions, /iabCategories",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deco Updates",
+      "Anchor": "deco-updates",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes",
+        "Deco Updates"
+      ],
+      "Text": "Be sure to watch our helpful video on how to handle this change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deco Updates",
+      "Anchor": "deco-updates",
+      "SectionPath": [
+        "April 2023",
+        "Migrations \u0026 Breaking Changes",
+        "Deco Updates"
+      ],
+      "Text": "Update to adCreativesV2 for deco.\nStarting May, all deco calls for creative URN are resolving via the /creatives endpoint instead of the /adCreativesV2 endpoint. Partners who use the adAnalytics endpoint and other endpoints that use deco calls to fetch creatives need to update their calls. All access and refresh token requests should only be made using the POST method after June 30,2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-6",
+      "SectionPath": [
+        "April 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Images API \u0026 Videos API: Beginning with the 202304 release, we\u0027re removing a role check for company URN owners and member URN owners when retrieving an image and/or video. For partners using a combination of /posts and /images or /videos, if /post API viewability checks are satisfied (e.g. you need to own the post as a member or company admin or be a role in AdAccount) you\u0027ll be able to access images through /images and videos through /video.\n\nAd Analytics API:\n\nIntroducing IMPRESSION_DEVICE_TYPE pivot: Starting with the 202304 version, we\u0027re introducing the IMPRESSION_DEVICE_TYPE pivot for both the statistics finder and the analytics finder. When this pivot is used, the results will be grouped by the device type the ad made an impression on, such as MOBILE_APP and DESKTOP_WEB.\n\nDeprecate API Decoration starting from the June 2023 version: Starting with the 202306 version, we\u0027re removing API Decoration from the Ad Analytics API. As an alternative, individual requests can be made to access the corresponding entity associated with a URN. More information can be found in LinkedIn Marketing API URN Resolution. For eligible pivots of the Ad Analytics API, we\u0027re adding a note that indicates which type of URN will be returned for each pivot. For example, if the MEMBER_COMPANY pivot is used with an analytics finder, then the response will contain a pivot value in the format urn:li:organization: \u003CorganizationId\u003E.\n\nAd Publisher Restrictions API: Externalizing the type field\nStarting with the 202304 version, we\u0027re introducing a new field type. This field can be used to create allowlist by passing type as ALLOWLIST in create method. This is an optional field having a default value as BLOCKLIST for backward compatibility since in earlier versions we supported only creation of BLOCKLIST from API. For example, \u201Ctype\u201D: \u201CALLOWLIST\u201D can be used to create allowlist.\n\nNew training videos.\nTo support our developer community, we\u0027ve started to produce training videos on topics we think you\u0027ll find helpful. Our first two cover:\n\nBest practices when working with our API support team\n\nHow to handle deprecation of API decoration (see related post in the Migrations \u0026 Breaking Changes section above for link).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-7",
+      "SectionPath": [
+        "March 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Ad Analytics API: Introducing validWorkEmailLeads metric and PLACEMENT_NAME pivot\nStarting with the 202303 version, we\u0027re introducing the following:\nvalidWorkEmailLeads: This metric represents the count of leads with a valid work email that doesn\u0027t use an established free or personal email domain.\nPLACEMENT_NAME: This pivot enables grouping of metrics by placement. The pivot values are: LINKEDIN, OFFSITE and OFFSITE_IN_STREAM. Only LAN(Linkedin Audience Network) enabled video campaigns are eligible to deliver on offsite in-stream inventory. When video campaigns deliver on offsite in-stream inventory, you\u0027ll see the metrics available for \u0022OFFSITE_IN_STREAM\u0022 placement..\nImage API \u0026 Videos API: Externalizing the Media Library\nIn October 2022, we rolled out the media library in the Campaign Manager UI. The media library provides one location where advertisers can upload, manage, and select images and videos for single image ads and video ads. We are externalizing the media library for our API partners so that advertisers can use the same media library during ad creation on partner platforms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-7",
+      "SectionPath": [
+        "March 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "This allow API partners to perform the following actions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-7",
+      "SectionPath": [
+        "March 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "initializeUpload (existing method): This is an existing method for asset upload; the update in the release would be parallel registration under the Media Library.\n\nfindByAssociatedAccount (new method): Return all media library assets under a specific account and asset type.\n\npartialUpdate (new method): Update an existing media library asset- specifically to rename an asset or to archive it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-7",
+      "SectionPath": [
+        "March 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "We enable findByIdsAndAssociatedAccount to return specific media library assets based on ID in a future release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-7",
+      "SectionPath": [
+        "March 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Saved Audience Template API: Save Audience Criteria \nWe\u0027re introducing a new API to enable the following:\n\nSave audiences, including targeting attributes and/or existing matched audiences, for easy re-use in campaigns. This is especially valuable for users who build audiences via the Audience Insights and wish to apply those audiences to a campaign.\n\nFetch audiences to access audience insights when used in tandem with the Audience Insights saved via the Campaign Manager UI.\n\nAds A/B Testing API: Test Campaign Performance\nWe have launched A/B Testing to help our advertisers optimize their ROI with rigorous testing. A/B Testing measures the performance of two campaigns with equal audiences and budgets to test one variable, such as creative content / ad format, targeting, or placement. The testing tool then selects a winner (if any), or verifies that the performance difference between the variants is insignificant or inconclusive.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-6",
+      "SectionPath": [
+        "March 2023",
+        "Breaking Changes"
+      ],
+      "Text": "Ad Analytics API: Change in structure of query parameters**",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-6",
+      "SectionPath": [
+        "March 2023",
+        "Breaking Changes"
+      ],
+      "Text": "Starting with the 202303 version, we\u0027ll change the format of certain query parameters in both the analytics finder and the statistics finder. In both finders, pivot, pivots, timeGranularity, campaignType, and objectiveType would be records containing the expected values instead of directly accepting values. For example, pivot=CAMPAIGN would become pivots=(value:List(CREATIVE,CAMPAIGN)) would become pivots=List((value:CREATIVE),(value:CAMPAIGN)).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-6",
+      "SectionPath": [
+        "March 2023",
+        "Breaking Changes"
+      ],
+      "Text": "Creatives API: Change in the structure of IntendedStatuses finder parameter**.\nStarting with the 202303 version, intendedStatuses query parameter in the finder request would be a record which would contain the expected array instead of directly accepting an array value. Instead of providing intendedStatuses=List(ARCHIVED,CANCELED) we would require passing intendedStatuses=(value:List(ARCHIVED,CANCELED)).\n\nAPI Decoration Deprecation: In November 2022, we began deprecating API decoration for some APIs. Starting with the 202303 version, we\u0027ll no longer support decoration on the following APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-6",
+      "SectionPath": [
+        "March 2023",
+        "Breaking Changes"
+      ],
+      "Text": "Creatives API\nImages API\nVideos API\nAd Lift Test Results API\nInsight Tags Permissions API\nInsight Tags API\nAudience Counts API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-3",
+      "SectionPath": [
+        "March 2023",
+        "Reminders"
+      ],
+      "Text": "Migrate to the new Community Management API before June 30, 2023 .\nWe\u2019re accelerating our push to release more functionality that enables your customers to know and grow their professional communities\u2014starting with a new Community Management API.\nExisting community management partners must migrate to the new API by June 30, 2023. Check out this article to learn more about our plans for community management.\n\nAll access and refresh token requests should only be made using the POST method after June 30, 2023 .\nThis is a reminder that access token and refresh token requests should be made using only the POST method to /accessToken endpoint with the request header Content-Type: x-www-form-urlencoded and all required parameters in the request body. We start returning 400 errors on the GET /accessToken endpoint after June 30, 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-8",
+      "SectionPath": [
+        "February 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Posts API: Specify the sort order for finder results.\nWe\u2019re introducing an optional sortBy parameter to the posts author finder to enable you to specify the sort order for finder results. Sort by either last modified time or created time, in descending order. The default sort order is by last modified time in descending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-7",
+      "SectionPath": [
+        "February 2023",
+        "Breaking Changes"
+      ],
+      "Text": "Ad Account Users API: API decoration deprecation.\nIn November 2022, we began deprecating API decoration for some APIs. Starting with the 202302 version, we\u0027ll no longer support decoration on the adAccountUsers API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-4",
+      "SectionPath": [
+        "February 2023",
+        "Reminders"
+      ],
+      "Text": "Migrate to versioned APIs and new Content APIs by February 28, 2023.\nIn June 2022, we introduced API Versioning and new Content APIs to make it easier for you to build with ease and manage API changes with predictability. With the new APIs, we plan to sunset the unversioned APIs and legacy Content APIs on February 28, 2023.\nMigrate to the latest versioned API (February 2023) and the new Content APIs using this migration guide.\nLearn more about API versioning at LinkedIn and the new Content APIs through these videos: Versioning, Content APIs.\n\nMigrate to the new Community Management API before the end of June 2023.\nWe\u2019re accelerating our push to release more functionality that enables your customers to know and grow their professional communities\u2014starting with a new Community Management API. Existing community management partners must migrate to the new API by June 30, 2023. Check out this article to learn more about our plans for community management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-9",
+      "SectionPath": [
+        "January 2023",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "LinkedIn Marketing Developer Products refreshed with 2 API products.\nLinkedIn Marketing Developer Products now has 2 API products the Advertising API to build paid marketing solutions and Community Management API to build organic marketing solutions. Check out the updated Developer Portal to learn more on what you can build, with which API, and how it benefits your customers. If you have a paid marketing integration, no action is required. If you have an organic marketing integration, you\u0027ll need to migrate to the new Community Management API by June 2023 to keep your integration active.\n\nPosts API: Find posts authored by a specified member.\nStarting with the 202301 version, we\u2019re introducing a member author finder to enable you to fetch post contents authored by specified members. Results for all /posts finders (findByDscAccount and findByAuthor) will be sorted by last modified time in descending order (latest -\u003E oldest) by default. This help you manage post contents more efficiently.\n\nAd Analytics API: Sort reporting metrics.\nThe finder methods, Analytics and Statistics, of the adAnalytics endpoint now support two additional optional parameters: sortBy.field and sortBy.order. These parameters allow the results of these endpoints to be sorted in an ascending or descending order by one of the following fields: costInLocalCurrency, impressions, clicks, oneClickLeads, opens, sends, externalWebsiteConversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-8",
+      "SectionPath": [
+        "January 2023",
+        "Breaking Changes"
+      ],
+      "Text": "Content APIs: New batch size limit\nTo handle batch requests more effectively, batch calls to the following endpoints: /creatives, /inMailContents, /posts, /videos, /images, /conversationAds, will only support 100 requests in a single batch, starting January 18, 2023. This change will apply to all versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-5",
+      "SectionPath": [
+        "January 2023",
+        "Reminders"
+      ],
+      "Text": "Migrate to versioned APIs before the end of February 2023.\nWe now support API versioning for all LinkedIn Marketing APIs \u2013 giving you the power to decide when to adopt API changes. We release a new version every month and intend to support each version for a full year with its own set of documentation that covers all Marketing APIs. Continue to check the Recent Changes page to stay up to date on the latest releases.\n\nMake sure when calling an API version to include the request header with key \u201CLinkedin-Version\u201D and set the value to correspond with the version you\u2019re referencing using the YYYYMM format. Get started with this blog post, walk through video, or versioning documentation. Make sure to migrate before February 2023 when we\u0027ll sunset unversioned APIs.\n\nNew Content APIs that simplify the content creation experience and save you time.\nWe introduced four new Content APIs that enable you to build quicker and to adopt the latest formats easier: Images, Videos, Post, and Creatives. With the new APIs, we\u2019ve reduced the steps to upload creative assets and create posts; and the APIs are built to support your workflow. Get started with the new migration guide. Make sure to migrate to the new APIs before February 28, 2023 when we\u0027ll sunset the Shares and UGC APIs.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string AnalyticsType { get; set; }
 #endif
         /// <summary>The analyticsValue property</summary>
-        public int? AnalyticsValue { get; set; }
+        public long? AnalyticsValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponseElementsItemAnalyticsItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "analyticsType", n => { AnalyticsType = n.GetStringValue(); } },
-                { "analyticsValue", n => { AnalyticsValue = n.GetIntValue(); } },
+                { "analyticsValue", n => { AnalyticsValue = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("analyticsType", AnalyticsType);
-            writer.WriteIntValue("analyticsValue", AnalyticsValue);
+            writer.WriteLongValue("analyticsValue", AnalyticsValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

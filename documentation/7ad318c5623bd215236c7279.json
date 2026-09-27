@@ -1,0 +1,1539 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics",
+  "Title": "Organizational Page Edge Analytics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-visitor-of-the-day",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Edge Analytics",
+      "Anchor": "organizational-page-edge-analytics",
+      "SectionPath": [],
+      "Text": "The Organizational Page Edge Analytics API will provide visitor and follower analytics for an organizational page.\nThis API doesn\u2019t share members personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Edge Analytics",
+      "Anchor": "organizational-page-edge-analytics",
+      "SectionPath": [],
+      "Text": "This API provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Edge Analytics",
+      "Anchor": "organizational-page-edge-analytics",
+      "SectionPath": [],
+      "Text": "Finder dimension provides aggregate demographic breakdown analytics based on facets such as location, job function, seniority, industry, and company size across a given time range.\nFinder trend provides the trend of visitors/followers gained over a period of time up to 365 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageEdgeAnalytics",
+      "Anchor": "organizationalpageedgeanalytics",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageEdgeAnalytics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organizationalPageUrn for which the statistics represent.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageEdgeAnalyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific analytics type for an organizational page. Value enums include: FOLLOWERVISITOR",
+            "Links": [],
+            "Values": [
+              "FOLLOWER",
+              "VISITOR"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsDimension",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpageanalyticsdimension"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific member dimension to fetch analytics for an organizational page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpageanalyticsvalue"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Numeric value of the analytics data point.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeIntervals",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timeintervals"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Time intervals for requesting historical trend data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsDimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific member dimension type. Value enums include: JOB_FUNCTIONINDUSTRYSENIORITYREGION_GEOSTAFF_COUNT_RANGECOUNTRY_GEORELATIONSHIP",
+            "Links": [],
+            "Values": [
+              "JOB_FUNCTION",
+              "INDUSTRY",
+              "SENIORITY",
+              "REGION_GEO",
+              "STAFF_COUNT_RANGE",
+              "COUNTRY_GEO",
+              "RELATIONSHIP"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[urn: URN, staffRangeCount: StaffRangeCount, relationship: Relationship, reaction: ReactionType]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains value corresponding to type field. It can contain either URN, staffRangeCount, relationship or reaction. Value enums include: URN - function URN, geo URN, industry URN, organization URN, seniority URN, superTitle URN, title URNStaffRangeCount - StaffCountRange_SIZE_1, StaffCountRange_SIZE_2_TO_10, StaffCountRange_SIZE_11_TO_50, StaffCountRange_SIZE_51_TO_200, StaffCountRange_SIZE_201_TO_500, StaffCountRange_SIZE_501_TO_1000, StaffCountRange_SIZE_1001_TO_5000, StaffCountRange_SIZE_5001_TO_10000, StaffCountRange_SIZE_10001_OR_MORERelationship - EMPLOYEE ReactionType - REACT_LIKE, REACT_PRAISE, REACT_APPRECIATION, REACT_EMPATHY, REACT_INTEREST, REACT_MAYBE, REACT_ENTERTAINMENT",
+            "Links": [],
+            "Values": [
+              "URN - function URN, geo URN, industry URN, organization URN, seniority URN, superTitle URN, title URN",
+              "StaffRangeCount - StaffCountRange_SIZE_1, StaffCountRange_SIZE_2_TO_10, StaffCountRange_SIZE_11_TO_50, StaffCountRange_SIZE_51_TO_200, StaffCountRange_SIZE_201_TO_500, StaffCountRange_SIZE_501_TO_1000, StaffCountRange_SIZE_1001_TO_5000, StaffCountRange_SIZE_5001_TO_10000, StaffCountRange_SIZE_10001_OR_MORE",
+              "Relationship - EMPLOYEE",
+              "ReactionType - REACT_LIKE, REACT_PRAISE, REACT_APPRECIATION, REACT_EMPATHY, REACT_INTEREST, REACT_MAYBE, REACT_ENTERTAINMENT"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "totalCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[long: long, bigDecimal: BigDecimal]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "It contains the total count. It is null if no such value is applicable/available. This value will be BigDecimal type if percentage (e.g. engagement rate) based analytics type is requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "typeSpecificValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[followerEdgeAnalyticsValue: OrganizationalPageFollowerEdgeAnalyticsValue, visitorEdgeAnalyticsValue: OrganizationalPageVisitorEdgeAnalyticsValue]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpagefolloweredgeanalyticsvalue",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#organizationalpagevisitoredgeanalyticsvalue"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "A value containing analytics values specific for the use-case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organicValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organic (non-sponsored) value. It is null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sponsoredValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored value. It is null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "uniqueCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique count. Null if no such value is available. This field won\u0027t be returned by default. If this field is needed, you need to request it through Field Projections.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "desktopCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Desktop count. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mobileCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mobile count. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "desktopUniqueCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Desktop unique count. Null if no such value is available. This field won\u0027t be returned by default. If this field is needed, you need to request it through Field Projections.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mobileUniqueCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mobile unique count. Null if no such value is available. This field won\u0027t be returned by default. If this field is needed, you need to request it through Field Projections.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "desktopCtaClickCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Desktop cta click count. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mobileCtaClickCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mobile cta click count. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "guestDesktopCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Desktop guest view count. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "guestMobileCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mobile guest view count. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timerange"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The range of time for the statistics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeGranularityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeGranularity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unit time for granularity. Value enums include: DAYMONTHWEEKBIMONTHLY",
+            "Links": [],
+            "Values": [
+              "DAY",
+              "MONTH",
+              "WEEK",
+              "BIMONTHLY"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) value in which to end the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "Sample Request"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "Sample Request"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember\nwith an authorization action of OrganizationAnalyticsAuthorizationActionType.VISITOR_ANALYTICS_READ. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER Dimension",
+      "Anchor": "finder-dimension",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER Dimension",
+      "Anchor": "finder-dimension",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension"
+      ],
+      "Text": "We are taking the following measures to protect member privacy and limit backtracking of analytics data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER Dimension",
+      "Anchor": "finder-dimension",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension"
+      ],
+      "Text": "Analytics values that are lower than a specific threshold determined by the server will be returned as 0 instead.\nIf the same exact request is sent twice, slightly different results might be returned due to the randomization factor added by the server to the actual analytics value.\nWe enforce API rate limits in order to protect member identity. Once the quota is fully used, results with analytics value equal to 0 will be returned with metadata indicating the quota refresh time.\nIf the actual analytics value is very close to the server set threshold, the added randomization factor might put it below the threshold for some requests hence results with analytics value equal to 0 will be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER Dimension",
+      "Anchor": "finder-dimension",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER Dimension",
+      "Anchor": "finder-dimension",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageEdgeAnalytics?q=dimension\u0026organizationalPage={ORGANIZATIONAL_PAGE_URN}\u0026analyticsType=VISITOR\u0026sourceType=CAREER\u0026dimensionType=JOB_FUNCTION\u0026timeRange=(end:1701414557234,start:1698908957234)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER Dimension",
+      "Anchor": "finder-dimension",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageEdgeAnalytics?q=dimension\u0026organizationalPage={ORGANIZATIONAL_PAGE_URN}\u0026analyticsType=VISITOR\u0026sourceType=CAREER\u0026dimensionType=JOB_FUNCTION\u0026timeRange=(end:1701414557234,start:1698908957234)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022VISITOR\u0022,\n      \u0022value\u0022: {\n        \u0022totalCount\u0022: {\n          \u0022long\u0022: 42\n        },\n        \u0022typeSpecificValue\u0022: {\n          \u0022visitorEdgeAnalyticsValue\u0022: {}\n        }\n      },\n      \u0022dimension\u0022: {\n        \u0022type\u0022: \u0022JOB_FUNCTION\u0022,\n        \u0022value\u0022: {\n          \u0022urn\u0022: \u0022urn:li:function:8\u0022\n        }\n      },\n      \u0022sourceType\u0022: \u0022CAREER\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:1234\u0022\n    },\n    {\n      \u0022type\u0022: \u0022VISITOR\u0022,\n      \u0022value\u0022: {\n        \u0022totalCount\u0022: {\n          \u0022long\u0022: 29\n        },\n        \u0022typeSpecificValue\u0022: {\n          \u0022visitorEdgeAnalyticsValue\u0022: {}\n        }\n      },\n      \u0022dimension\u0022: {\n        \u0022type\u0022: \u0022JOB_FUNCTION\u0022,\n        \u0022value\u0022: {\n          \u0022urn\u0022: \u0022urn:li:function:25\u0022\n        }\n      },\n      \u0022sourceType\u0022: \u0022CAREER\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:1234\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of finder to retrieve data from. Value must be dimension.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=dimension",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational page urn to retrieve data for. It is of format urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn=urn:li:organizationalPage:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "analyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageEdgeAnalyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific analytics type for an organizational page. Value enums include: FOLLOWERVISITOR",
+            "Links": [],
+            "Values": [
+              "FOLLOWER",
+              "VISITOR"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "analyticsType=VISITOR",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsDimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific member dimension type. Value enums include: JOB_FUNCTIONINDUSTRYSENIORITYREGION_GEOSTAFF_COUNT_RANGECOUNTRY_GEORELATIONSHIP",
+            "Links": [],
+            "Values": [
+              "JOB_FUNCTION",
+              "INDUSTRY",
+              "SENIORITY",
+              "REGION_GEO",
+              "STAFF_COUNT_RANGE",
+              "COUNTRY_GEO",
+              "RELATIONSHIP"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "dimensionType=JOB_FUNCTION",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageEdgeAnalyticsSourceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Granular breakdown of the metric, such as what entry point on the Page that captured the metric (e.g. overview tab). This allows a more granular measure of the analytics data point. Note that sourceType is only supported for VISITOR analytics. Value enums include: OVERVIEWJOBSLIFECAREERPRODUCTSABOUTINSIGHTSPEOPLE",
+            "Links": [],
+            "Values": [
+              "OVERVIEW",
+              "JOBS",
+              "LIFE",
+              "CAREER",
+              "PRODUCTS",
+              "ABOUT",
+              "INSIGHTS",
+              "PEOPLE"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sourceType=CAREER",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timerange"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The requested timeRange to return analytics data within milliseconds. TimeRange will be ignored for FOLLOWER analyticsType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeRange=(end:121233,start:23891233)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension",
+        "Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER Dimension",
+        "Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember\nwith an authorization action of OrganizationAnalyticsAuthorizationActionType.VISITOR_ANALYTICS_READ. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER TREND",
+      "Anchor": "finder-trend",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER TREND",
+      "Anchor": "finder-trend",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND"
+      ],
+      "Text": "For visitorEdgeAnalyticsValue you can request either the unique fields (uniqueCount, desktopUniqueCount, mobileUniqueCount) or non-unique fields (desktopCount, mobileCount, desktopCtaClickCount, mobileCtaClickCount, guestDesktopCount, guestMobileCount) through fields projection and not both at the same time. If the field projection contains unique as well as non-unique fields the response will contain only the non-unique fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER TREND",
+      "Anchor": "finder-trend",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER TREND",
+      "Anchor": "finder-trend",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageEdgeAnalytics?q=trend\u0026organizationalPage={ORGANIZATIONAL_PAGE_URN}\u0026analyticsType=VISITOR\u0026timeIntervals=(timeRange:(end:1631491202001,start:1631491202000))\u0026sourceTypes=List(JOBS,CAREER)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER TREND",
+      "Anchor": "finder-trend",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageEdgeAnalytics?q=trend\u0026organizationalPage={ORGANIZATIONAL_PAGE_URN}\u0026analyticsType=VISITOR\u0026timeIntervals=(timeRange:(end:1631491202001,start:1631491202000))\u0026sourceTypes=List(JOBS,CAREER)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022VISITOR\u0022,\n      \u0022value\u0022: {\n        \u0022totalCount\u0022: {\n          \u0022long\u0022: 0\n        },\n        \u0022typeSpecificValue\u0022: {\n          \u0022visitorEdgeAnalyticsValue\u0022: {\n            \u0022mobileCount\u0022: 0,\n            \u0022desktopCount\u0022: 0\n          }\n        }\n      },\n      \u0022timeIntervals\u0022: {\n        \u0022timeRange\u0022: {\n          \u0022start\u0022: 1673136000000,\n          \u0022end\u0022: 1673222400000\n        }\n      },\n      \u0022sourceType\u0022: \u0022CAREER\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022\n    },\n    {\n      \u0022type\u0022: \u0022VISITOR\u0022,\n      \u0022value\u0022: {\n        \u0022totalCount\u0022: {\n          \u0022long\u0022: 0\n        },\n        \u0022typeSpecificValue\u0022: {\n          \u0022visitorEdgeAnalyticsValue\u0022: {\n            \u0022mobileCount\u0022: 0,\n            \u0022guestMobileCount\u0022: 0,\n            \u0022mobileCtaClickCount\u0022: 0,\n            \u0022guestDesktopCount\u0022: 0,\n            \u0022desktopCount\u0022: 0,\n            \u0022desktopCtaClickCount\u0022: 0\n          }\n        }\n      },\n      \u0022timeIntervals\u0022: {\n        \u0022timeRange\u0022: {\n          \u0022start\u0022: 1673136000000,\n          \u0022end\u0022: 1673222400000\n        }\n      },\n      \u0022sourceType\u0022: \u0022JOBS\u0022,\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Page Edge Analytics Data",
+        "FINDER TREND",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of finder to retrieve data from. Value must be trend.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=trend",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational page urn to retrieve data for. It is of format urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn=urn:li:organizationalPage:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "analyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageEdgeAnalyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific analytics type for organizational pages. Value enums include: FOLLOWERVISITOR",
+            "Links": [],
+            "Values": [
+              "FOLLOWER",
+              "VISITOR"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "analyticsType=VISITOR",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeIntervals",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#timeintervals"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Time intervals for requesting historical trend data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeIntervals=(timeRange:(end:1631491202001,start:1631491202000))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[OrganizationalPageEdgeAnalyticsSourceType]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Granular breakdown of the metric, such as what entry point on the Page that captured the metric (e.g. overview tab). This allows a more granular measure of the analytics data point. Note that sourceTypes is only supported for VISITOR analytics. Value enums include: OVERVIEWJOBSLIFECAREERPRODUCTSABOUTINSIGHTSPEOPLE",
+            "Links": [],
+            "Values": [
+              "OVERVIEW",
+              "JOBS",
+              "LIFE",
+              "CAREER",
+              "PRODUCTS",
+              "ABOUT",
+              "INSIGHTS",
+              "PEOPLE"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sourceTypes=List(JOBS,CAREER)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of dimension requests exceeded your privacy budget limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

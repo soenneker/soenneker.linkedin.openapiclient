@@ -1,0 +1,760 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation",
+  "Title": "Exported Application Evaluation",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-receive-push-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Receive Exported Application Evaluation",
+      "Anchor": "receive-exported-application-evaluation",
+      "SectionPath": [
+        "Receive Exported Application Evaluation"
+      ],
+      "Text": "All exported application evaluations can be retrieved from the Middleware Platform when a webhook event is received from the ATS partner. Use the id provided in the application evaluation webhook to access the data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Exported Application Evaluation",
+      "Anchor": "receive-exported-application-evaluation",
+      "SectionPath": [
+        "Receive Exported Application Evaluation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Exported Application Evaluation",
+      "Anchor": "receive-exported-application-evaluation",
+      "SectionPath": [
+        "Receive Exported Application Evaluation"
+      ],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Exported Application Evaluation",
+      "Anchor": "receive-exported-application-evaluation",
+      "SectionPath": [
+        "Receive Exported Application Evaluation"
+      ],
+      "Text": "Use the following endpoint to receive the application evaluation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Receive Exported Application Evaluation",
+      "Anchor": "receive-exported-application-evaluation",
+      "SectionPath": [
+        "Receive Exported Application Evaluation"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rest/exportedApplicationEvaluation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Evaluation of an application will happen only once in 24 hour.\nIf there is any change in the underlying job then relevant applications might again be evaluated and send to the ATS partner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "The requestId sent by push notification will expire in 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/exportedApplicationEvaluation?q=request\u0026requestId=123abc\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Response Schema",
+      "Anchor": "api-response-schema",
+      "SectionPath": [
+        "Throttle Limits",
+        "API Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "applicationEvaluation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application evaluation information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ApplicationEvaluation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation?view=li-lts-2026-04#applicationevaluation-response-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reference for atsJobApplicationId string in case of RSC (offsite).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reference to the external RSC job requisition you created for the associated application. It is populated when the application is synced through RSC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The JobApplicationUrn string used for Apply Connect (onsite) applications, e.g., urn:li:jobApplication:{application_id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reference identifier of the external job in your system to which the applicant applied. This field is populated for applications received via Apply Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier of the customer\u0027s OrganizationUrn (i.e. urn:li:organization:{LinkedIn_Company_Id}).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source of the application evaluation. E.g. \u201CLinkedIn\u201D.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ApplicationEvaluation Response Schema",
+      "Anchor": "applicationevaluation-response-schema",
+      "SectionPath": [
+        "Throttle Limits",
+        "ApplicationEvaluation Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate\u0027s evaluation brief with semantic information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "evaluatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch time (in milliseconds) when an application is evaluated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "evaluationClassification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The overall classification of the candidate\u0027s application evaluation. This indicates the fit of the candidate for the role. The value would be any one of the following: TOP_FITMIGHT_BE_FITMIGHT_NOT_BE_FITUNKNOWN",
+            "Links": [],
+            "Values": [
+              "TOP_FIT",
+              "MIGHT_BE_FIT",
+              "MIGHT_NOT_BE_FIT",
+              "UNKNOWN"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requiredCriteriaExplanations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of explanations for required qualifications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CandidateCriteriaExplanation[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation?view=li-lts-2026-04#candidatecriteriaexplanation-response-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredCriteriaExplanations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of explanations for preferred qualifications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CandidateCriteriaExplanation[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation?view=li-lts-2026-04#candidatecriteriaexplanation-response-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requiredCriteriaCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of required qualifications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requiredCriteriaMatchCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of required qualifications that match the candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredCriteriaCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of preferred qualifications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredCriteriaMatchCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of preferred qualifications that match the candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalCriteriaCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of total qualifications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalCriteriaMatchCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of total qualifications that match the candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "evaluationProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Link to profile in Recruiter. A URL that points to the candidate\u0027s Recruiter profile page in the specific project that the evaluation was conducted in.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CandidateCriteriaExplanation Response Schema",
+      "Anchor": "candidatecriteriaexplanation-response-schema",
+      "SectionPath": [
+        "Throttle Limits",
+        "CandidateCriteriaExplanation Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "criteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The hiring intent criteria that the explanation is for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "criteriaClassification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The classification of hiring intent criteria for a candidate. The value would be any one the following: Meets (The candidate meets the criteria.)Does not meet (The candidate does not meet or only partially meets the criteria.)Unknown (The candidate can\u2019t be evaluated.)",
+            "Links": [],
+            "Values": [
+              "Meets (The candidate meets the criteria.)",
+              "Does not meet (The candidate does not meet or only partially meets the criteria.)",
+              "Unknown (The candidate can\u2019t be evaluated.)"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "explanationSource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Source of the explanation. It would be one the following. LinkedIn, ATS, CRM, Unknown",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Throttle Limits",
+        "CandidateCriteriaExplanation Response Schema",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 200 OK response code, and you will find the status of the entity in the response body. BATCH_GET is not supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Throttle Limits",
+        "CandidateCriteriaExplanation Response Schema",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022atsApplicationId\u0022: \u0022efe0ca59-f52d-42b7-9036-b834fb3675dd\u0022,\n      \u0022source\u0022: \u0022LinkedIn\u0022,\n      \u0022applicationEvaluation\u0022: {\n        \u0022summary\u0022: \u0022Ranran has over 8 years of experience in software engineering and holds a Master\u0027s and Bachelor\u0027s degree in Computer Science.\u0022,\n        \u0022evaluationClassification\u0022: \u0022TOP_FIT\u0022,\n        \u0022totalCriteriaCount\u0022: 2,\n        \u0022totalCriteriaMatchCount\u0022: 2,\n        \u0022preferredCriteriaExplanations\u0022: [\n          {\n            \u0022explanationSource\u0022: \u0022LinkedIn\u0022,\n            \u0022criteriaClassification\u0022: \u0022Meets\u0022,\n            \u0022criteria\u0022: \u0022Bachelor\u0027s or Master\u0027s Degree in Computer Science or related technical discipline, or related practical experience.\u0022\n          }\n        ],\n        \u0022requiredCriteriaCount\u0022: 1,\n        \u0022preferredCriteriaMatchCount\u0022: 1,\n        \u0022requiredCriteriaMatchCount\u0022: 1,\n        \u0022evaluatedAt\u0022: 1748454105,\n        \u0022requiredCriteriaExplanations\u0022: [\n          {\n            \u0022explanationSource\u0022: \u0022LinkedIn\u0022,\n            \u0022criteriaClassification\u0022: \u0022Meets\u0022,\n            \u0022criteria\u0022: \u00222-5 years of experience in software engineering.\u0022\n          }\n        ],\n        \u0022preferredCriteriaCount\u0022: 1,\n        \u0022evaluationProfileUrl\u0022:\u0022http://www.linkedin.com/profile/12345\u0022\n      },\n      \u0022jobRequisitionId\u0022: \u002203cd778e-7247-464b-b215-30b5b5e9e165\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Throttle Limits",
+        "CandidateCriteriaExplanation Response Schema",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Throttle Limits",
+        "CandidateCriteriaExplanation Response Schema",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to the exported evaluation.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

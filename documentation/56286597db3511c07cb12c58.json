@@ -1,0 +1,112 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+  "Title": "Getting Started with Display Services",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/provisioning-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Display Services",
+      "Anchor": "getting-started-with-display-services",
+      "SectionPath": [],
+      "Text": "This guide walks through the prerequisites for integrating Display Services. Before you begin, make sure you are an approved partner for this integration. If you are unsure, please reach out to your LinkedIn representative or become a partner today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a LinkedIn Developer Application",
+      "Anchor": "create-a-linkedin-developer-application",
+      "SectionPath": [
+        "Create a LinkedIn Developer Application"
+      ],
+      "Text": "Using the iframe requires you to have an application registered with LinkedIn. If you have not already done so, create an application. If you have an existing application, select it in My Apps to modify its settings. Once you have your application, please notify your LinkedIn technical representative with your application\u0027s \u0022Client ID\u0022. You can find it in the \u0022Authentication Keys\u0022 section under the \u0022Authentication\u0022 tab:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a LinkedIn Developer Application",
+      "Anchor": "create-a-linkedin-developer-application",
+      "SectionPath": [
+        "Create a LinkedIn Developer Application"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a LinkedIn Developer Application",
+      "Anchor": "create-a-linkedin-developer-application",
+      "SectionPath": [
+        "Create a LinkedIn Developer Application"
+      ],
+      "Text": "Each customer/tenant will need to use a unique application key. Partners can automate the application creation process on behalf of their customers with LinkedIn\u0027s Provisioning API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Your LinkedIn Application for JavaScript Use",
+      "Anchor": "configure-your-linkedin-application-for-javascript-use",
+      "SectionPath": [
+        "Configure Your LinkedIn Application for JavaScript Use"
+      ],
+      "Text": "In order for the sign-in button to load, https://www.linkedin.com must be configured as one of the app\u0027s valid JavaScript SDK Domains.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Your LinkedIn Application for JavaScript Use",
+      "Anchor": "configure-your-linkedin-application-for-javascript-use",
+      "SectionPath": [
+        "Configure Your LinkedIn Application for JavaScript Use"
+      ],
+      "Text": "To add, navigate to your app\u0027s settings (Application Settings), then select JavaScript. In the \u0022Valid SDK Domains\u0022 field, please add https://www.linkedin.com, then press Add. Afterwards, press Update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receiving the Required Permissions",
+      "Anchor": "receiving-the-required-permissions",
+      "SectionPath": [
+        "Receiving the Required Permissions"
+      ],
+      "Text": "Once your developer application has been properly configured, your application must be granted the r_sales_nav_display permission to be able to integrate with the iframe. Approved partners can be granted this permission; if you application does not have this permission and you are an approved partner, please reach out to your LinkedIn representative. You can verify that the permission has been granted for your application on the Application Settings page on developer.linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Embedding the Iframe",
+      "Anchor": "embedding-the-iframe",
+      "SectionPath": [
+        "Embedding the Iframe"
+      ],
+      "Text": "After the above steps are complete, you are ready to begin integrating with the Display Services iframe. For a detailed walkthrough on embedding the iframe and other technical details, visit Embedding the Iframe.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

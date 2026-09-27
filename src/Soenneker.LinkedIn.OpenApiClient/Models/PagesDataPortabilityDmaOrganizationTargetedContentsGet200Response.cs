@@ -14,34 +14,42 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The additionalMediaSections property</summary>
+        /// <summary>Custom media modules admins can define, contains a title, subtitle and an image or videoDocumented type: Array of [TargetedContentMediaSection]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AdditionalMediaSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItem>? AdditionalMediaSections { get; set; }
 #nullable restore
 #else
-        public UntypedNode AdditionalMediaSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItem> AdditionalMediaSections { get; set; }
 #endif
-        /// <summary>The candidateTestimonialSections property</summary>
+        /// <summary>List of testimonials from candidates (people looking for jobs through staffing companies). Curated by organization admins. Only available for staffing companies. All these sections go into a single section in display.Documented type: Array of [TargetedContentTestimonialSection]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CandidateTestimonialSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem>? CandidateTestimonialSections { get; set; }
 #nullable restore
 #else
-        public UntypedNode CandidateTestimonialSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem> CandidateTestimonialSections { get; set; }
 #endif
-        /// <summary>The candidateTestimonialSectionsVisible property</summary>
+        /// <summary>Whether candidateTestimonialSections are visible to page visitors. Default true.Documented type: booleanRequirement: No</summary>
         public bool? CandidateTestimonialSectionsVisible { get; set; }
-        /// <summary>The clientTestimonialSections property</summary>
+        /// <summary>List of testimonials from client (organization looking to hire through staffing companies). Curated by organization admins. Only available for staffing companies. All these sections go into a single section in display.Documented type: Array of [TargetedContentOrganizationTestimonialSection]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ClientTestimonialSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem>? ClientTestimonialSections { get; set; }
 #nullable restore
 #else
-        public UntypedNode ClientTestimonialSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem> ClientTestimonialSections { get; set; }
 #endif
-        /// <summary>The clientTestimonialSectionsVisible property</summary>
+        /// <summary>Whether clientTestimonialSections are visible to page visitors. Default true.Documented type: booleanRequirement: No</summary>
         public bool? ClientTestimonialSectionsVisible { get; set; }
+        /// <summary>Contact Us section. Admin can configure an email and a set of functions for viewer to reach out to. Only available for staffing company.Documented type: TargetedContentContactSectionRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseContactUsSection? ContactUsSection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseContactUsSection ContactUsSection { get; set; }
+#endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,9 +58,33 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCreated Created { get; set; }
 #endif
-        /// <summary>The defaultView property</summary>
+        /// <summary>Boolean flag indicating whether this TargetedContent is configured as a default targeted audience view in the latest published ContentRevision. Default false.Documented type: booleanRequirement: No</summary>
         public bool? DefaultView { get; set; }
-        /// <summary>The featuredMediaSection property</summary>
+        /// <summary>Stores employee content data associated with the targeted content.Documented type: TargetedContentEmployeeContentSectionRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeeContentSection? EmployeeContentSection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeeContentSection EmployeeContentSection { get; set; }
+#endif
+        /// <summary>Toggle-able section containing posts published by employees chosen to display on the page by admin.Documented type: TargetedContentArticlesSectionRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeePerspectivesSection? EmployeePerspectivesSection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeePerspectivesSection EmployeePerspectivesSection { get; set; }
+#endif
+        /// <summary>Featured leaders.Documented type: TargetedContentFeaturedMembersRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedLeaders? FeaturedLeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedLeaders FeaturedLeaders { get; set; }
+#endif
+        /// <summary>Prominently featured media, curated by organization adminsDocumented type: TargetedContentMediaSectionRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSection? FeaturedMediaSection { get; set; }
@@ -60,7 +92,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSection FeaturedMediaSection { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>Featured recruiters.Documented type: TargetedContentFeaturedMembersRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedRecruiters? FeaturedRecruiters { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedRecruiters FeaturedRecruiters { get; set; }
+#endif
+        /// <summary>Unique identifier for this targeted content.Documented type: OrganizationTargetedContentUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -76,7 +116,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseLastModified LastModified { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of this targeted content.Documented type: stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -84,7 +124,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The photosSection property</summary>
+        /// <summary>Toggle-able section containing photos chosen by admins from a list of uploaded photos.Documented type: TargetedContentPhotosSectionRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSection? PhotosSection { get; set; }
@@ -92,7 +132,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponsePhotosSection PhotosSection { get; set; }
 #endif
-        /// <summary>The reportingId property</summary>
+        /// <summary>Unique ID for reporting and tracking purposes. It is the same as the targetedContentId during the creation time, but differs in other cases.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportingId { get; set; }
@@ -100,9 +140,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string ReportingId { get; set; }
 #endif
-        /// <summary>The showLifeAtCulturalInsights property</summary>
+        /// <summary>If true, show the organization non-job related cultural insights module. Example insights here include distributions of languages employees speak, volunteering causes they support, etc. Default true.Documented type: booleanRequirement: No</summary>
         public bool? ShowLifeAtCulturalInsights { get; set; }
-        /// <summary>The target property</summary>
+        /// <summary>Attributes used to target this content to users.Documented type: TargetRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTarget? Target { get; set; }
@@ -110,17 +150,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTarget Target { get; set; }
 #endif
-        /// <summary>The testimonialSections property</summary>
+        /// <summary>List of employees with their testimonial about the organization, curated by organization admins.Documented type: Array of [TargetedContentTestimonialSection]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TestimonialSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTestimonialSectionsItem>? TestimonialSections { get; set; }
 #nullable restore
 #else
-        public UntypedNode TestimonialSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTestimonialSectionsItem> TestimonialSections { get; set; }
 #endif
-        /// <summary>The testimonialSectionsVisible property</summary>
+        /// <summary>Whether testimonialSections are visible to page visitors. Default false.Documented type: booleanRequirement: No</summary>
         public bool? TestimonialSectionsVisible { get; set; }
-        /// <summary>The vanityName property</summary>
+        /// <summary>Customizable part of the page URL. e.g., www.linkedin.com/company/ORGANIZATION_NAME/life/VANITY_NAMEDocumented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VanityName { get; set; }
@@ -128,9 +168,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string VanityName { get; set; }
 #endif
-        /// <summary>The visible property</summary>
+        /// <summary>Whether this targeted content is visible to page visitors. Admins can choose to configure and save all content for a targeted content while keeping it invisible so they can keep it hidden while it&apos;s still a work in progress. Default true.Documented type: booleanRequirement: No</summary>
         public bool? Visible { get; set; }
-        /// <summary>The visibleOnlyWhenTargeted property</summary>
+        /// <summary>If true, this targeted content is not visible to visitors who do not meet its targeting criteria, whereas non-private contents are selectable via a drop down menu.Documented type: booleanRequirement: Yes</summary>
         public bool? VisibleOnlyWhenTargeted { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200Response"/> and sets the default values.
@@ -157,14 +197,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalMediaSections", n => { AdditionalMediaSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "candidateTestimonialSections", n => { CandidateTestimonialSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "additionalMediaSections", n => { AdditionalMediaSections = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "candidateTestimonialSections", n => { CandidateTestimonialSections = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "candidateTestimonialSectionsVisible", n => { CandidateTestimonialSectionsVisible = n.GetBoolValue(); } },
-                { "clientTestimonialSections", n => { ClientTestimonialSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "clientTestimonialSections", n => { ClientTestimonialSections = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "clientTestimonialSectionsVisible", n => { ClientTestimonialSectionsVisible = n.GetBoolValue(); } },
+                { "contactUsSection", n => { ContactUsSection = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseContactUsSection>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseContactUsSection.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCreated.CreateFromDiscriminatorValue); } },
                 { "defaultView", n => { DefaultView = n.GetBoolValue(); } },
+                { "employeeContentSection", n => { EmployeeContentSection = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeeContentSection>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeeContentSection.CreateFromDiscriminatorValue); } },
+                { "employeePerspectivesSection", n => { EmployeePerspectivesSection = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeePerspectivesSection>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeePerspectivesSection.CreateFromDiscriminatorValue); } },
+                { "featuredLeaders", n => { FeaturedLeaders = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedLeaders>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedLeaders.CreateFromDiscriminatorValue); } },
                 { "featuredMediaSection", n => { FeaturedMediaSection = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSection>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSection.CreateFromDiscriminatorValue); } },
+                { "featuredRecruiters", n => { FeaturedRecruiters = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedRecruiters>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedRecruiters.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -172,7 +217,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "reportingId", n => { ReportingId = n.GetStringValue(); } },
                 { "showLifeAtCulturalInsights", n => { ShowLifeAtCulturalInsights = n.GetBoolValue(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTarget>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTarget.CreateFromDiscriminatorValue); } },
-                { "testimonialSections", n => { TestimonialSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "testimonialSections", n => { TestimonialSections = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTestimonialSectionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTestimonialSectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "testimonialSectionsVisible", n => { TestimonialSectionsVisible = n.GetBoolValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -186,14 +231,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("additionalMediaSections", AdditionalMediaSections);
-            writer.WriteObjectValue<UntypedNode>("candidateTestimonialSections", CandidateTestimonialSections);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseAdditionalMediaSectionsItem>("additionalMediaSections", AdditionalMediaSections);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCandidateTestimonialSectionsItem>("candidateTestimonialSections", CandidateTestimonialSections);
             writer.WriteBoolValue("candidateTestimonialSectionsVisible", CandidateTestimonialSectionsVisible);
-            writer.WriteObjectValue<UntypedNode>("clientTestimonialSections", ClientTestimonialSections);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseClientTestimonialSectionsItem>("clientTestimonialSections", ClientTestimonialSections);
             writer.WriteBoolValue("clientTestimonialSectionsVisible", ClientTestimonialSectionsVisible);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseContactUsSection>("contactUsSection", ContactUsSection);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseCreated>("created", Created);
             writer.WriteBoolValue("defaultView", DefaultView);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeeContentSection>("employeeContentSection", EmployeeContentSection);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseEmployeePerspectivesSection>("employeePerspectivesSection", EmployeePerspectivesSection);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedLeaders>("featuredLeaders", FeaturedLeaders);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedMediaSection>("featuredMediaSection", FeaturedMediaSection);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseFeaturedRecruiters>("featuredRecruiters", FeaturedRecruiters);
             writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseLastModified>("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
@@ -201,7 +251,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("reportingId", ReportingId);
             writer.WriteBoolValue("showLifeAtCulturalInsights", ShowLifeAtCulturalInsights);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTarget>("target", Target);
-            writer.WriteObjectValue<UntypedNode>("testimonialSections", TestimonialSections);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationTargetedContentsGet200ResponseTestimonialSectionsItem>("testimonialSections", TestimonialSections);
             writer.WriteBoolValue("testimonialSectionsVisible", TestimonialSectionsVisible);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteBoolValue("visible", Visible);

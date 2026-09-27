@@ -1,0 +1,59 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations",
+  "Title": "Locations - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Locations - Standardized Data API",
+      "Anchor": "locations---standardized-data-api",
+      "SectionPath": [],
+      "Text": "LinkedIn locations are categorized as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locations - Standardized Data API",
+      "Anchor": "locations---standardized-data-api",
+      "SectionPath": [],
+      "Text": "Geo\nGeo Typeahead\nMarketing Ads Targeting Locations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locations - Standardized Data API",
+      "Anchor": "locations---standardized-data-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locations - Standardized Data API",
+      "Anchor": "locations---standardized-data-api",
+      "SectionPath": [],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

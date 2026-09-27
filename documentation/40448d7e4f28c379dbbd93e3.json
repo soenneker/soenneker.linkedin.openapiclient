@@ -1,0 +1,353 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation",
+  "Title": "Recommendation",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Recommendation Schema",
+      "Anchor": "recommendation-schema",
+      "SectionPath": [
+        "Recommendation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the deletion of this recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stores the locale used to create the recommendation.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#locale"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A message that recommender sends to recommendee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "nextRecommendation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this recommendation is replaced by a new recommendation, this field should be the urn of the new recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "previousRecommendation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this recommendation replaces an old recommendation, this field should be the urn of the old recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recommendationText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content of the recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recommendee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recommendee represented in personUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recommendeeEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recommendee\u0027s entity. For example: urn:li:position:(urn:li:person:, )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recommender",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recommender represented in personUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recommenderEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recommender\u0027s entity. For example: urn:li:position:(urn:li:person:, )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relationship",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Relationship between recommender and recommendee. Can be the following enum values: RECOMMENDER_MANAGED_RECOMMENDEE -\u00A0Relation where the recommender managed the recipient. RECOMMENDER_REPORTED_TO_RECOMMENDEE -\u00A0Relation where the recommendee is more senior that the recipient. RECOMMENDER_SENIOR_THAN_RECOMMENDEE -\u00A0Relation where the recipient is more senior that the recommendee. RECOMMENDEE_SENIOR_THAN_RECOMMENDER -\u00A0Relation where the recommendee is more senior that the recipient. WORKED_IN_SAME_GROUP -\u00A0Relation where both recipient and recommendee worked in the same company. WORKED_IN_DIFFERENT_GROUPS -\u00A0Relation where both recipient and recommendee worked in different groups. WORKED_IN_DIFFERENT_COMPANIES -\u00A0Relation where both recipient and recommendee worked in different companies. RECOMMENDEE_IS_CLIENT_OF_RECOMMENDER -\u00A0Relation where recommendee is a client of the recipient. RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE -\u00A0Relation where the recipient is a client of the recommendee. RECOMMENDER_TAUGHT_RECOMMENDEE -\u00A0Relation where the recipient taught the recommendee. RECOMMENDER_ADVISED_RECOMMENDEE -\u00A0Relation where the recipient advised the recommendee. RECOMMENDER_STUDIED_WITH_RECOMMENDEE -\u00A0Relation where the recipient studied with the recommendee.",
+            "Links": [],
+            "Values": [
+              "RECOMMENDER_MANAGED_RECOMMENDEE -\u00A0Relation where the recommender managed the recipient.",
+              "RECOMMENDER_REPORTED_TO_RECOMMENDEE -\u00A0Relation where the recommendee is more senior that the recipient.",
+              "RECOMMENDER_SENIOR_THAN_RECOMMENDEE -\u00A0Relation where the recipient is more senior that the recommendee.",
+              "RECOMMENDEE_SENIOR_THAN_RECOMMENDER -\u00A0Relation where the recommendee is more senior that the recipient.",
+              "WORKED_IN_SAME_GROUP -\u00A0Relation where both recipient and recommendee worked in the same company.",
+              "WORKED_IN_DIFFERENT_GROUPS -\u00A0Relation where both recipient and recommendee worked in different groups.",
+              "WORKED_IN_DIFFERENT_COMPANIES -\u00A0Relation where both recipient and recommendee worked in different companies.",
+              "RECOMMENDEE_IS_CLIENT_OF_RECOMMENDER -\u00A0Relation where recommendee is a client of the recipient.",
+              "RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE -\u00A0Relation where the recipient is a client of the recommendee.",
+              "RECOMMENDER_TAUGHT_RECOMMENDEE -\u00A0Relation where the recipient taught the recommendee.",
+              "RECOMMENDER_ADVISED_RECOMMENDEE -\u00A0Relation where the recipient advised the recommendee.",
+              "RECOMMENDER_STUDIED_WITH_RECOMMENDEE -\u00A0Relation where the recipient studied with the recommendee."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the recommendation. Can be the following enum values: PENDING VISIBLE HIDDEN WITHDRAWN REPLACED CLOSED",
+            "Links": [],
+            "Values": [
+              "PENDING",
+              "VISIBLE",
+              "HIDDEN",
+              "WITHDRAWN",
+              "REPLACED",
+              "CLOSED"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subject of the message that recommender sends to recommendee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visibilityForRecommender",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Visibility on recommender\u0027s profile. By default, the recommendation is visible to EVERYONE on recommender\u0027s profile if recommendee accepts it. Can be the following enum values: EVERYONE - default CONNETION NONE",
+            "Links": [],
+            "Values": [
+              "EVERYONE - default",
+              "CONNETION",
+              "NONE"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

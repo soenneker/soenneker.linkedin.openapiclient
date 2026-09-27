@@ -1,0 +1,67 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/",
+  "Title": "LinkedIn Compliance Solutions Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-management",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-sales-nav-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Compliance Solutions Overview",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "LinkedIn provides the following Compliance API Guides for all monitoring, archiving, and management of communications for enterprises in regulated industries. The APIs will help your social interactions remain effective while ensuring compliance with corporate governance policies and major regulations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get started",
+      "Anchor": "",
+      "SectionPath": [
+        "Compliance Solutions for Sales Navigator",
+        "Get started"
+      ],
+      "Text": "Overview\n \n \n Compliance Management API\n \n \n Compliance Events API\n \n \n Compliance - Sales Navigator FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get started",
+      "Anchor": "",
+      "SectionPath": [
+        "Compliance API Partner Program",
+        "Get started"
+      ],
+      "Text": "Overview\n \n \n Compliance Snapshot API\n \n \n Compliance Management API\n \n \n Compliance Events API\n \n \n Compliance API FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "General API Topics",
+        "Training"
+      ],
+      "Text": "Authentication\n \n \n API Concepts\n \n \n Breaking Change Policy\n \n \n Best Practices",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

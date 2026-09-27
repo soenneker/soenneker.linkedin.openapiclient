@@ -1,0 +1,843 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+  "Title": "Ad Segments",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Segments",
+      "Anchor": "ad-segments",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Segments",
+      "Anchor": "ad-segments",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Segments",
+      "Anchor": "ad-segments",
+      "SectionPath": [],
+      "Text": "An Ad segment is a collection of entities (such as members or companies) to which ads can be targeted. Ad Segments are created automatically after DMP Segments are matched with LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful requests:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permission accessibility for:\n\nrw_ads (read/write)\nr_ads (read-only)\n\n\nThe authenticated Ad Account user that provides consent has one of the following roles on the Ad Account:\n\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (read-only, even with rw_ads scope)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "Update Ad Segment | Find Ad Segments by Ad Account | Get Ad Segment",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the advertising account associated with the segment. This field is immutable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "approximateMemberCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Approximate number of members in the segment. Please note that because of member privacy protection mechanisms we have in place, this metric is approximate. (Read only)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An auditStamp object containing actor and time corresponding to the creation of this resource. (Read only)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An auditStamp object containing actor and time corresponding to the last modification of this resource. If no modification has happened since creation, lastModified should be the same as created. (Read only)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The detailed description of the ad segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad segment\u0027s ID. (Read only)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The display name of the ad segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments?view=li-lms-2026-09\u0026tabs=http#adsegmentstatus"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Status on readiness of use",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments?view=li-lms-2026-09\u0026tabs=http#adsegmenttype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Type of the ad segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "The audience size of an ad campaign could be very different from the field approximateMemberCount of the segment due to other targeting facets applied. To get audience size of an ad campaign, please use audienceCounts API instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdSegmentStatus",
+      "Anchor": "adsegmentstatus",
+      "SectionPath": [
+        "Schema",
+        "AdSegmentStatus"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BUILDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that this segment is being built by the Audience pipeline and not ready to be used yet.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATION_PENDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The segment is being created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UPDATING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that a segment is being updated and is being built by the backend again to pick up the updates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "READY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that all information about this segment is ready and that campaigns using this segment can start to serve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that some failure happened during the backend processing of this segment. For DMPSegments, failure specifics can be found in the \u0027failure\u0027 field under DMPDestinationSegmentInfo.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ARCHIVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that the segment hasn\u0027t been used in any active campaign for more than 30 days. The segment can still be used in a campaign before it gets expired in 90 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that a segment audience has been purged from our system due to data retention policy. Segments that haven\u0027t been used in any campaign for 90 days will become expired.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdSegmentType",
+      "Anchor": "adsegmenttype",
+      "SectionPath": [
+        "Schema",
+        "AdSegmentType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BULK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A segment defined by advertiser by uploading a file containing companies or members to be targeted. This type of segment can be used in \u0027audience matching\u0027 target facet in ad campaign",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RETARGETING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A \u0027retargeting\u0027 segment is used to target the visitors to all or part of an advertiser\u0027s website. This type of segment is populated based on the rules defined in an adPageSet. It can be used in the \u0027dynamic\u0027 targeting facet of an ad campaign.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MARKET_AUTOMATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Marketing automation segments are created and managed by selected third party vendors.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BUSINESS_OBJECTIVE_BASED_AUDIENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The segment originates from business objective based audiences - a generated segment whose audience is likely to convert on the advertiser\u0027s business objective.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Ad Segment",
+      "Anchor": "get-ad-segment",
+      "SectionPath": [
+        "Get Ad Segment"
+      ],
+      "Text": "Fetch an existing ad segment by its ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Get Ad Segment",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad segment\u0027s ID",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adSegments/{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/adSegments/{id}\\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Ad Segment",
+        "Parameters",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022created\u0022: {\n       \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n       \u0022time\u0022: 1678259032000\n   },\n   \u0022name\u0022: \u0022Bulk AdSegment created by self service, and go through state transitions\u0022,\n   \u0022description\u0022: \u0022description for AdSegment Bulk\u0022,\n   \u0022versionTag\u0022: \u0022108105253952\u0022,\n   \u0022lastModified\u0022: {\n       \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n       \u0022time\u0022: 1678259032000\n   },\n   \u0022id\u0022: 16182906,\n   \u0022type\u0022: \u0022RETARGETING\u0022,\n   \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n   \u0022status\u0022: \u0022READY\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Segment",
+      "Anchor": "update-ad-segment",
+      "SectionPath": [
+        "Update Ad Segment"
+      ],
+      "Text": "Partial update fields such as name on the existing ad segment by its ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Update Ad Segment",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad segment\u0027s ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The display name of the ad segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentStatus, default=\u0022ACTIVE\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adSegments/{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022patch\u0022: {\n       \u0022$set\u0022: {\n           \u0022name\u0022: \u0022Retargeting AdSegment\u0022,\n           \u0022status\u0022: \u0022ARCHIVED\u0022\n       }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Update Ad Segment",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/adSegments/{id} \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\\\n-H \u0027X-Restli-Method: PARTIAL_UPDATE\u0027\\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Content-Type: application/json\u0027\\\n--data \u0027{\n   \u0022patch\u0022: {\n       \u0022$set\u0022: {\n           \u0022name\u0022: \u0022Retargeting AdSegment\u0022,\n           \u0022status\u0022: \u0022ARCHIVED\u0022\n       }\n   }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Update Ad Segment",
+        "Parameters",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Ad Segments by Ad Account",
+      "Anchor": "find-ad-segments-by-ad-account",
+      "SectionPath": [
+        "Find Ad Segments by Ad Account"
+      ],
+      "Text": "Query ad segments by advertiser account:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Find Ad Segments by Ad Account",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "accounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter result by \u0027accounts\u0027 field of the object",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "statuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdSegmentStatusArrayRecord",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter result by \u0027status\u0027 field of the object",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "types",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdSegmentTypeArrayRecord",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "filter result by \u0027type\u0027 field of the object",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find Ad Segments by Ad Account",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find Ad Segments by Ad Account",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/adSegments?q=accounts\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}})\u0026start=0\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find Ad Segments by Ad Account",
+        "Parameters",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/adSegments?q=accounts\u0026start=0\u0026count=5\u0026accounts=List(urn%253Ali%253AsponsoredAccount%253A509090297)\u0026types=(value:List(BULK))\u0026statuses=(value:List(EXPIRED))\u0027\\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Find Ad Segments by Ad Account",
+        "Parameters",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022: [\n       {\n           \u0022approximateMemberCount\u0022: 230000,\n           \u0022created\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1651129031000\n           },\n           \u0022name\u0022: \u0022DMP Segment 1\u0022,\n           \u0022versionTag\u0022: \u002281433811311\u0022,\n           \u0022id\u0022: 11422166,\n           \u0022lastModified\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1654271097000\n           },\n           \u0022type\u0022: \u0022MARKET_AUTOMATION\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n           \u0022status\u0022: \u0022ARCHIVED\u0022\n       },\n       {\n           \u0022approximateMemberCount\u0022: 0,\n           \u0022created\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1651486505000\n           },\n           \u0022name\u0022: \u0022DMP segment for CSV uploads\u0022,\n           \u0022versionTag\u0022: \u002278913777069\u0022,\n           \u0022id\u0022: 11462646,\n           \u0022lastModified\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1651972148000\n           },\n           \u0022type\u0022: \u0022BULK\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n           \u0022status\u0022: \u0022READY\u0022\n       },\n       {\n           \u0022approximateMemberCount\u0022: 0,\n           \u0022created\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1657199237000\n           },\n           \u0022name\u0022: \u0022Bulk AdSegment created by self service, and go through state transitions\u0022,\n           \u0022description\u0022: \u0022description for AdSegment Bulk\u0022,\n           \u0022versionTag\u0022: \u002284646462865\u0022,\n           \u0022id\u0022: 12554466,\n           \u0022lastModified\u0022: {\n               \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n               \u0022time\u0022: 1657238293000\n           },\n           \u0022type\u0022: \u0022RETARGETING\u0022,\n           \u0022account\u0022: \u0022urn:li:sponsoredAccount:509090297\u0022,\n           \u0022status\u0022: \u0022READY\u0022\n       }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+  "Title": "Lead Sync Use Cases",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Sync Use Cases",
+      "Anchor": "lead-sync-use-cases",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync Use Cases",
+      "Anchor": "lead-sync-use-cases",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "LinkedIn Lead Sync enables advertisers to collect and sync high-quality leads directly from LinkedIn Lead Gen Forms to marketing automation platforms, CRMs, and CDPs. This streamlines sales outreach, marketing automation, and re-targeting efforts, ensuring a seamless and efficient lead management process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Partners and end-users require these use cases for the following reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Automation: Eliminates manual steps, ensuring leads flow into automated marketing and sales workflows.\nEnrichment: Enhances leads by adding additional fields for better lead scoring and routing.\nScoring: Helps prioritize leads based on value and relevance.\nRouting: Directs leads to the appropriate team members for immediate action\nReporting: Measures lead conversion into pipeline opportunities and ROI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Applications must have an access token with the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "r_marketing_leadgen_automation\nr_ads\nr_organization_admin",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Lead Gen APIs require separate access from the LinkedIn Marketing API Program. Developers must apply for access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-requisites",
+      "Anchor": "pre-requisites",
+      "SectionPath": [
+        "Pre-requisites"
+      ],
+      "Text": "Your developer application must have access to the Lead Sync API product.\nYou need access to at least one ad account with one of the following roles:\nAccount Administrator\nCampaign Manager\nLeads Manager",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1: Lead Syncing to CRM/CDP/Marketing Automation Platforms",
+      "Anchor": "use-case-1-lead-syncing-to-crmcdpmarketing-automation-platforms",
+      "SectionPath": [
+        "Use Case 1: Lead Syncing to CRM/CDP/Marketing Automation Platforms"
+      ],
+      "Text": "Sync LinkedIn Lead Gen Forms data directly to a destination such as a marketing automation platform, CRM, or CDP to automate sales and marketing efforts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow",
+      "SectionPath": [
+        "Use Case 1: Lead Syncing to CRM/CDP/Marketing Automation Platforms",
+        "Procedure/Workflow"
+      ],
+      "Text": "Obtain User Authorization: Secure permission to access leads and ads data.\nRetrieve User\u2019s Ad Accounts: Identify relevant ad accounts for lead syncing.\nSelect Ad Account(s): Allow the user to choose ad accounts to sync leads from.\nLook Up Organization: Validate the user\u0027s organization association.\nRetrieve Lead Gen Forms: Fetch available Lead Gen Forms associated with the selected ad account.\nMap Lead Gen Form Fields: Align form fields with the CRM/CDP\u2019s data fields.\nRegister for Lead Notifications: Enable push notifications for real-time lead updates.\nFetch Lead Data: Retrieve leads from LinkedIn once notified.\nSync Leads to Destination: Push the collected leads into the configured marketing platform, CRM, or CDP.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 2: Lead-to-Sales Reporting",
+      "Anchor": "use-case-2-lead-to-sales-reporting",
+      "SectionPath": [
+        "Use Case 2: Lead-to-Sales Reporting"
+      ],
+      "Text": "Connect lead data with sales outcomes to understand the conversion rate from lead to purchase.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow-1",
+      "SectionPath": [
+        "Use Case 2: Lead-to-Sales Reporting",
+        "Procedure/Workflow"
+      ],
+      "Text": "Sync Lead Data with Sales System: Integrate LinkedIn leads with internal sales tracking systems\nTrack Lead Progression: Monitor the movement of leads through the sales funnel.\nAnalyze Lead Effectiveness: Compare generated leads against actual purchases\nOptimize Campaigns: Use insights to refine targeting and improve lead conversion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 3: Real-Time Sales Notifications",
+      "Anchor": "use-case-3-real-time-sales-notifications",
+      "SectionPath": [
+        "Use Case 3: Real-Time Sales Notifications"
+      ],
+      "Text": "Enable sales representatives to receive real-time notifications when a new lead is captured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow-2",
+      "SectionPath": [
+        "Use Case 3: Real-Time Sales Notifications",
+        "Procedure/Workflow"
+      ],
+      "Text": "Enable Webhook Notifications: Configure LinkedIn to send push notifications for new leads\nTrigger Alerts to Sales Teams: Notify relevant sales representatives as soon as a lead is generated.\nProvide Lead Details: Include key lead information in the notification for quick action.\nFacilitate Immediate Follow-Up: Ensure sales teams act promptly on new leads to improve conversion rates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Push vs Pull for Lead Sync",
+      "Anchor": "webhook-push-vs-pull-for-lead-sync",
+      "SectionPath": [
+        "Webhook Push vs Pull for Lead Sync"
+      ],
+      "Text": "Lead synchronization can be achieved using two methods: the push model (webhooks) and the pull model (periodic API requests). The push model is recommended as it allows real-time lead synchronization by triggering webhooks when a new lead is generated. This ensures immediate updates and faster response times for sales teams. The pull model, on the other hand, requires periodically querying the API for new leads, which can introduce delays and requires additional resources to manage scheduled requests. A combination of both methods provides a balance between real-time responsiveness and data reliability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Links",
+      "Anchor": "additional-links",
+      "SectionPath": [
+        "Additional Links"
+      ],
+      "Text": "Lead Sync API Documentation.\nWebhook Configuration Guide",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

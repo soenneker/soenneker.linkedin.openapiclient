@@ -1,0 +1,343 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+  "Title": "Integration Requirements for Audience Insights",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audience Insights",
+      "Anchor": "integration-requirements-for-audience-insights",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audience Insights",
+      "Anchor": "integration-requirements-for-audience-insights",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audience Insights",
+      "Anchor": "integration-requirements-for-audience-insights",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Audience Insights program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audience Insights",
+      "Anchor": "integration-requirements-for-audience-insights",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audience Insights",
+      "Anchor": "integration-requirements-for-audience-insights",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn can suggest modifications which should be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration with minimum permission scopes and consent screen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me) and detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry and ability to use refresh tokens to renew access tokens to extend beyond their expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and re-trigger OAuth Flow.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to have consistent OAuth 2.0 scope permissions to avoid token conflicts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience Insights",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Sponsored Ad Accounts (id, name, status) for the logged in user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to allow users to select one of the fetched ad accounts and the selected ad account should be then passed to subsequent API requests metadata.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to input combination of at least five audience attributes as ad targeting facets, for example: industries, job functions, titles, skills, interests etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability that you require to input one or more geo location urn and throw validation error if no geo location selected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to allow AND and OR operations between different attributes (ad facets).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to select one of the available facets as the segment to group the insights by that facet in the response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to return 5 or more entity segments in response with entity percentage/value of each segment and total audience count.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-108",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to allow the user to select existing matched audience ad segments (company/contact lists) as input.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-109",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to setup exclusion criteria along with inclusion targeting criteria.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-110",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate error handling and user input validation, especially when no insights are available due to low audience count (under 300 or over 100M); or low number of segments returned when segment count is under 30.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Saved Audience Templates",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to save the ad targeting criteria (used to fetch insights) in a new template in the selected ad account and allow user to input its name and description.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all available previously saved ad targeting templates in the selected ad account with name, desc and targeting criteria.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to update the ad targeting criteria (used to fetch insights) in an existing template saved in the selected ad account with name, desc, targetingCriteria.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AI-204",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that saved templates are ready for activation in campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

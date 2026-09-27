@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SevenNineNineEightEightFiveFiveTwo property</summary>
-        public int? SevenNineNineEightEightFiveFiveTwo { get; set; }
+        public long? SevenNineNineEightEightFiveFiveTwo { get; set; }
         /// <summary>The ThreeEightZeroThree property</summary>
-        public int? ThreeEightZeroThree { get; set; }
+        public long? ThreeEightZeroThree { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "79988552", n => { SevenNineNineEightEightFiveFiveTwo = n.GetIntValue(); } },
-                { "3803", n => { ThreeEightZeroThree = n.GetIntValue(); } },
+                { "79988552", n => { SevenNineNineEightEightFiveFiveTwo = n.GetLongValue(); } },
+                { "3803", n => { ThreeEightZeroThree = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("79988552", SevenNineNineEightEightFiveFiveTwo);
-            writer.WriteIntValue("3803", ThreeEightZeroThree);
+            writer.WriteLongValue("79988552", SevenNineNineEightEightFiveFiveTwo);
+            writer.WriteLongValue("3803", ThreeEightZeroThree);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

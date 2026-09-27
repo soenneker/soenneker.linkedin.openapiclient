@@ -1,0 +1,332 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+  "Title": "Find Profile by VanityName API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Find Profile by VanityName API",
+      "Anchor": "find-profile-by-vanityname-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Profile by VanityName API",
+      "Anchor": "find-profile-by-vanityname-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Profile by VanityName API",
+      "Anchor": "find-profile-by-vanityname-api",
+      "SectionPath": [],
+      "Text": "The vanityName is used to represent the public profile URL in the follow format: www.linkedin.com/in/{vanityName}. Each LinkedIn profile has an unique vanityName. This API returns basic profile fields for the LinkedIn member that matches the vanityName.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permissions",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_compliance_2l",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compliance permission to allow access of APIs without a member involvement. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You cannot \u0022browse members\u0022 by VanityNames. It should only be used to identify profiles from known vanityNames for your partnership\u0027s approved use case. Access to profile data is subject to the relevant members\u0027 privacy settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "To use this API, you must request an access token to make an application authenticated call. This API has an application limit of 500 per day.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Usage",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/people?q=vanityName\u0026vanityName={vanityName}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Usage",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022localizedLastName\u0022: \u0022Last\u0022,\n      \u0022lastName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Last\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022vanityName\u0022: \u0022a-sample-vanity-name\u0022,\n      \u0022firstName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022First\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022localizedHeadline\u0022: \u0022Software Engineer at LinkedIn\u0022,\n      \u0022positions\u0022: {\n        \u002247301314\u0022: {\n          \u0022localizedCompanyName\u0022: \u0022Linkedin\u0022,\n          \u0022created\u0022: 1551295846540,\n          \u0022companyName\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Linkedin\u0022\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          \u0022company\u0022: \u0022urn:li:organization:12345\u0022,\n          \u0022lastModified\u0022: 1551295846540,\n          \u0022id\u0022: 47301314,\n          \u0022title\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Software Engineer\u0022\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          \u0022localizedTitle\u0022: \u0022Software Engineer\u0022\n        }\n      },\n      \u0022id\u0022: \u0022xo11w_WomY\u0022,\n      \u0022headline\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Software Engineer at LinkedIn\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022localizedFirstName\u0022: \u0022First\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Fields Selection",
+      "Anchor": "profile-fields-selection",
+      "SectionPath": [
+        "Profile Fields Selection"
+      ],
+      "Text": "This API will only return the following profile fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Profile Fields Selection",
+      "Anchor": "profile-fields-selection",
+      "SectionPath": [
+        "Profile Fields Selection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifying value for the member.Referenced as personId in other API documentation pages.Can also be referenced as an URN such as urn:li:person:{personId}. This value is linked to your specific application.Any attempts to use it with a different application will result in a 404 error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable first name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the firstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable last name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the lastName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable maiden name of the member.Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedMaidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the maidenName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "headline of member\u0027s choosing. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedHeadline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the headline field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata about the member\u0027s picture in the profile. This will replace pictureInfo. See Profile Picture Fields for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The vanity name of the member. Vanity name is represented as a string is used for the public profile URL: www.linkedin.com/in/{vanityName}.",
+            "Links": [
+              "https://www.linkedin.com/in/%7BvanityName%7D"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object representing the employment history of the member. See Position Fields for a description of the fields available within this object.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positionsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Positions intra-section order. Represented as an optional long[]",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

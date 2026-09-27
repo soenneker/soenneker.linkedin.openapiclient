@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The country property</summary>
+        /// <summary>The Country field of Locale.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -22,13 +22,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The language property</summary>
+        /// <summary>The Language field of Locale.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }
 #nullable restore
 #else
         public string Language { get; set; }
+#endif
+        /// <summary>The Variant field of Locale.Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Variant { get; set; }
+#nullable restore
+#else
+        public string Variant { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesGet200ResponseDescriptionPreferredLocale"/> and sets the default values.
@@ -57,6 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "variant", n => { Variant = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

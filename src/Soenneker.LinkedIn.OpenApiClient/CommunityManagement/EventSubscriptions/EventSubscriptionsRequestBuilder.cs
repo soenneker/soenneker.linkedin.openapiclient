@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscriptions.DeveloperApplicationUrn3Ali3AdeveloperApplication3AWithApplicationIduserUrn3Ali3Aperson3AWithPersonIdentityUrn3Ali3Aorganization3AWithOrganizationIdeventTypeORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS;
 using Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscriptions.DeveloperApplicationWithApplicationIduserWithPersonIdentityWithOrganizationIdeventTypeORGANIZATION_SOCIAL_ACTION_NOTIFICATIONS;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -68,6 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem>">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscriptions.EventSubscriptionsRequestBuilder.EventSubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,7 +80,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementOperation4RetrieveSubscriptionForAuthenticatedMembersDefaultResponseSchemaItem.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve Subscriptions details such as webhook url and expiration for your application and registered user. [Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#retrieve-subscriptions-by-key) by viewing our public documentation.[Learn more](https://docs.microsoft.com/linkedin/marketing/integrations/community-management/organizations/organization-social-action-notifications?tabs=http#pull-organizational-notifications) by viewing our public documentation.
@@ -96,6 +102,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CommunityManagement.EventSubscription
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

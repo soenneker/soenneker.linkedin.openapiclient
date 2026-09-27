@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The desiredAudienceCount property</summary>
-        public int? DesiredAudienceCount { get; set; }
+        public long? DesiredAudienceCount { get; set; }
         /// <summary>The seeds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "desiredAudienceCount", n => { DesiredAudienceCount = n.GetIntValue(); } },
+                { "desiredAudienceCount", n => { DesiredAudienceCount = n.GetLongValue(); } },
                 { "seeds", n => { Seeds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "targetingFilter", n => { TargetingFilter = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation3CreatePredictiveAudienceRequestTargetingFilter>(global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation3CreatePredictiveAudienceRequestTargetingFilter.CreateFromDiscriminatorValue); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("desiredAudienceCount", DesiredAudienceCount);
+            writer.WriteLongValue("desiredAudienceCount", DesiredAudienceCount);
             writer.WriteCollectionOfPrimitiveValues<string>("seeds", Seeds);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation3CreatePredictiveAudienceRequestTargetingFilter>("targetingFilter", TargetingFilter);
             writer.WriteAdditionalData(AdditionalData);

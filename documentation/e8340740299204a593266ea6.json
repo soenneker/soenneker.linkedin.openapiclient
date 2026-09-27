@@ -1,0 +1,85 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+  "Title": "Phone Number Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-image",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/language",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Phone Number Fields",
+      "Anchor": "phone-number-fields",
+      "SectionPath": [],
+      "Text": "These phone numbers are listed under the \u0022Contact Info\u0022 of the profile section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Phone Number Fields",
+      "Anchor": "phone-number-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the phone number.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional enum: WORK HOME MOBILE FAX PAGER",
+            "Links": [],
+            "Values": [
+              "WORK",
+              "HOME",
+              "MOBILE",
+              "FAX",
+              "PAGER"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

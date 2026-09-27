@@ -1,0 +1,1962 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+  "Title": "Verified on LinkedIn - FAQ",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn - FAQ",
+      "Anchor": "verified-on-linkedin---faq",
+      "SectionPath": [],
+      "Text": "This comprehensive FAQ provides answers to common questions about integrating and using the Verified on LinkedIn API, including access, authentication, data returned, policy guidelines, and developer support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the Verified on LinkedIn API?",
+      "Anchor": "what-is-the-verified-on-linkedin-api",
+      "SectionPath": [
+        "Getting Started",
+        "What is the Verified on LinkedIn API?"
+      ],
+      "Text": "The Verified on LinkedIn API enables you to retrieve LinkedIn members\u0027 verified identity and workplace information after they grant explicit consent through OAuth 2.0. You can display the \u0022Verified on LinkedIn\u0022 badge within your app to build trust and authenticity into your platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the Verified on LinkedIn API?",
+      "Anchor": "what-is-the-verified-on-linkedin-api",
+      "SectionPath": [
+        "Getting Started",
+        "What is the Verified on LinkedIn API?"
+      ],
+      "Text": "More than 80 million LinkedIn members have confirmed their identity with a government-issued ID or verified their workplace using a company email. Read more about LinkedIn verifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the different tiers?",
+      "Anchor": "what-are-the-different-tiers",
+      "SectionPath": [
+        "Getting Started",
+        "What are the different tiers?"
+      ],
+      "Text": "LinkedIn offers three tiers of the Verified on LinkedIn API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What are the different tiers?",
+      "Anchor": "what-are-the-different-tiers",
+      "SectionPath": [
+        "Getting Started",
+        "What are the different tiers?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Tier",
+        "Best For",
+        "Access",
+        "Cost",
+        "Rate Limits"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Testing \u0026 prototyping",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer app admins only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Free",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Lite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SMBs \u0026 startups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn members",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Free",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enterprise partners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn members \u002B enhanced data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact us",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the different tiers?",
+      "Anchor": "what-are-the-different-tiers",
+      "SectionPath": [
+        "Getting Started",
+        "What are the different tiers?"
+      ],
+      "Text": "See Overview for detailed tier comparison.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I choose which tier to use?",
+      "Anchor": "how-do-i-choose-which-tier-to-use",
+      "SectionPath": [
+        "Getting Started",
+        "How do I choose which tier to use?"
+      ],
+      "Text": "Development: Start here to test the API with your admin account. Perfect for prototyping and learning.\nLite: Ready for production with basic verification data. No cost, suitable for SMBs and startups.\nPlus: Enterprise-grade with detailed verification metadata, organization details, and bulk validation API. Requires business partnership.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data does each tier return?",
+      "Anchor": "what-data-does-each-tier-return",
+      "SectionPath": [
+        "Getting Started",
+        "What data does each tier return?"
+      ],
+      "Text": "All Tiers: Completed verification categories (IDENTITY, WORKPLACE), and a verificationUrl for members eligible to complete missing verifications.\nPlus Tier Only: Organization names, verification methods, verification timestamps, education data, and basic profile details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data does each tier return?",
+      "Anchor": "what-data-does-each-tier-return",
+      "SectionPath": [
+        "Getting Started",
+        "What data does each tier return?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data does each tier return?",
+      "Anchor": "what-data-does-each-tier-return",
+      "SectionPath": [
+        "Getting Started",
+        "What data does each tier return?"
+      ],
+      "Text": "For extended metadata (organization details, verification methods, timestamps), use Verified on LinkedIn Plus. See Overview for tier comparison.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What Member consent is required?",
+      "Anchor": "what-member-consent-is-required",
+      "SectionPath": [
+        "Getting Started",
+        "What Member consent is required?"
+      ],
+      "Text": "Members must explicitly grant consent via LinkedIn\u0027s OAuth 2.0 authorization flow before your app can access their verification data. Without consent, no data can be retrieved. Consent is required once unless you add new scopes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does the API share unverified or pending data?",
+      "Anchor": "does-the-api-share-unverified-or-pending-data",
+      "SectionPath": [
+        "Getting Started",
+        "Does the API share unverified or pending data?"
+      ],
+      "Text": "No. The API only returns completed verification categories. Members who are not yet verified will receive a verificationUrl to complete the process on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can Members revoke access?",
+      "Anchor": "can-members-revoke-access",
+      "SectionPath": [
+        "Getting Started",
+        "Can Members revoke access?"
+      ],
+      "Text": "Yes. Members can revoke access anytime from their LinkedIn account settings at https://www.linkedin.com/mypreferences/d/data-sharing-for-permitted-services. After revocation, all subsequent API requests return 401 Unauthorized until the member re-consents.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which OAuth scopes are required?",
+      "Anchor": "which-oauth-scopes-are-required",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Which OAuth scopes are required?"
+      ],
+      "Text": "Development \u0026 Lite Tiers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which OAuth scopes are required?",
+      "Anchor": "which-oauth-scopes-are-required",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Which OAuth scopes are required?"
+      ],
+      "Text": "r_profile_basicinfo \u2013 Basic profile information (name, email, profile URL, picture)\nr_verify \u2013 Verification categories only",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which OAuth scopes are required?",
+      "Anchor": "which-oauth-scopes-are-required",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Which OAuth scopes are required?"
+      ],
+      "Text": "Plus Tier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which OAuth scopes are required?",
+      "Anchor": "which-oauth-scopes-are-required",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Which OAuth scopes are required?"
+      ],
+      "Text": "r_verify_details \u2013 Detailed verification status and metadata\nr_profile_basicinfo \u2013 Basic profile information\nr_most_recent_education \u2013 Most recent education details\nr_primary_current_experience \u2013 Current workplace information",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which OAuth scopes are required?",
+      "Anchor": "which-oauth-scopes-are-required",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Which OAuth scopes are required?"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which OAuth scopes are required?",
+      "Anchor": "which-oauth-scopes-are-required",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Which OAuth scopes are required?"
+      ],
+      "Text": "Key Difference: r_verify returns only verification categories (e.g., [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022]), while r_verify_details returns full metadata including verified names, timestamps, methods, and organization details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I obtain access tokens?",
+      "Anchor": "how-do-i-obtain-access-tokens",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "How do I obtain access tokens?"
+      ],
+      "Text": "Use the OAuth 2.0 Authorization Code flow to exchange an authorization code for an access token and refresh token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I obtain access tokens?",
+      "Anchor": "how-do-i-obtain-access-tokens",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "How do I obtain access tokens?"
+      ],
+      "Text": "Token Characteristics:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I obtain access tokens?",
+      "Anchor": "how-do-i-obtain-access-tokens",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "How do I obtain access tokens?"
+      ],
+      "Text": "Access tokens are valid for 60 days\nRefresh tokens remain valid for 1 year and can be used to obtain new access tokens without requiring member re-consent\nMember consent is required once (unless you add new scopes)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I obtain access tokens?",
+      "Anchor": "how-do-i-obtain-access-tokens",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "How do I obtain access tokens?"
+      ],
+      "Text": "For detailed implementation, see Authorization Code Flow Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Should I request all scopes at once?",
+      "Anchor": "should-i-request-all-scopes-at-once",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Should I request all scopes at once?"
+      ],
+      "Text": "Yes. Request all required scopes in a single authorization request to provide the best user experience and avoid multiple authorization prompts. This gives you:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Should I request all scopes at once?",
+      "Anchor": "should-i-request-all-scopes-at-once",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Should I request all scopes at once?"
+      ],
+      "Text": "\u2705 Single consent flow - Member authorizes once instead of multiple times\n\u2705 Complete data access - Get all profile and verification data in one session\n\u2705 Better UX - Avoid interrupting member with additional authorization requests\n\u2705 Simplified implementation - No need to manage partial authorization states",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when my access token expires?",
+      "Anchor": "what-happens-when-my-access-token-expires",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "What happens when my access token expires?"
+      ],
+      "Text": "When an access token expires, API calls return 401 Unauthorized. Use your refresh token to obtain a new access token without requiring the member to re-authorize. If the refresh token has also expired (after 1 year), the member must complete the OAuth flow again.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens when my access token expires?",
+      "Anchor": "what-happens-when-my-access-token-expires",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "What happens when my access token expires?"
+      ],
+      "Text": "See Authentication Guide for implementation details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do tokens work across tier upgrades?",
+      "Anchor": "do-tokens-work-across-tier-upgrades",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Do tokens work across tier upgrades?"
+      ],
+      "Text": "Yes! When you upgrade from Development to Lite or Lite to Plus:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do tokens work across tier upgrades?",
+      "Anchor": "do-tokens-work-across-tier-upgrades",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "Do tokens work across tier upgrades?"
+      ],
+      "Text": "Existing access tokens remain valid\nMembers don\u0027t need to re-authorize (unless you add new scopes)\nOnly request new consent if adding scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I add more scopes?",
+      "Anchor": "how-do-i-add-more-scopes",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "How do I add more scopes?"
+      ],
+      "Text": "If you need additional OAuth scopes (e.g., upgrading to Plus tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I add more scopes?",
+      "Anchor": "how-do-i-add-more-scopes",
+      "SectionPath": [
+        "OAuth \u0026 Authentication",
+        "How do I add more scopes?"
+      ],
+      "Text": "Update your authorization URL with new scopes\nAsk member to re-authorize\nNew tokens will include additional scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What endpoints should I use?",
+      "Anchor": "what-endpoints-should-i-use",
+      "SectionPath": [
+        "API Integration",
+        "What endpoints should I use?"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Purpose",
+        "Development",
+        "Lite",
+        "Plus"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/identityMe",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Profile data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile \u002B job \u002B education",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/verificationReport",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Verification status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Categories only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Categories only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Categories \u002B Verification details",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/validationStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Bulk validation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Validation statuses",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What endpoints should I use?",
+      "Anchor": "what-endpoints-should-i-use",
+      "SectionPath": [
+        "API Integration",
+        "What endpoints should I use?"
+      ],
+      "Text": "See Release Notes for the current version of each API endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "What is the correct API request format?",
+      "Anchor": "what-is-the-correct-api-request-format",
+      "SectionPath": [
+        "API Integration",
+        "What is the correct API request format?"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/verificationReport",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the correct API request format?",
+      "Anchor": "what-is-the-correct-api-request-format",
+      "SectionPath": [
+        "API Integration",
+        "What is the correct API request format?"
+      ],
+      "Text": "Use headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "What is the correct API request format?",
+      "Anchor": "what-is-the-correct-api-request-format",
+      "SectionPath": [
+        "API Integration",
+        "What is the correct API request format?"
+      ],
+      "Text": "LinkedIn-Version: {LATEST_VERSION}\nAuthorization: Bearer {ACCESS_TOKEN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What should I do if the API returns a verificationUrl?",
+      "Anchor": "what-should-i-do-if-the-api-returns-a-verificationurl",
+      "SectionPath": [
+        "API Integration",
+        "What should I do if the API returns a verificationUrl?"
+      ],
+      "Text": "Display a \u0022Verify on LinkedIn\u0022 button and redirect the member to the returned URL. After the member completes verification on LinkedIn, call /verificationReport again to refresh the updated verification categories.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What should I do if the API returns a verificationUrl?",
+      "Anchor": "what-should-i-do-if-the-api-returns-a-verificationurl",
+      "SectionPath": [
+        "API Integration",
+        "What should I do if the API returns a verificationUrl?"
+      ],
+      "Text": "Always re-query /verificationReport to obtain a fresh verificationUrl instead of reusing older links, as they may expire.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I require members to periodically re-verify?",
+      "Anchor": "how-can-i-require-members-to-periodically-re-verify",
+      "SectionPath": [
+        "API Integration",
+        "How can I require members to periodically re-verify?"
+      ],
+      "Text": "Use the optional verifiedWithinDays query parameter when calling /verificationReport.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I require members to periodically re-verify?",
+      "Anchor": "how-can-i-require-members-to-periodically-re-verify",
+      "SectionPath": [
+        "API Integration",
+        "How can I require members to periodically re-verify?"
+      ],
+      "Text": "For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How can I require members to periodically re-verify?",
+      "Anchor": "how-can-i-require-members-to-periodically-re-verify",
+      "SectionPath": [
+        "API Integration",
+        "How can I require members to periodically re-verify?"
+      ],
+      "Text": "GET /verificationReport?verifiedWithinDays=365",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I require members to periodically re-verify?",
+      "Anchor": "how-can-i-require-members-to-periodically-re-verify",
+      "SectionPath": [
+        "API Integration",
+        "How can I require members to periodically re-verify?"
+      ],
+      "Text": "If an existing verification is older than the requested freshness window and the member is still eligible to re-verify the existing verification, the response includes a verificationUrl so the member can re-verify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I require members to periodically re-verify?",
+      "Anchor": "how-can-i-require-members-to-periodically-re-verify",
+      "SectionPath": [
+        "API Integration",
+        "How can I require members to periodically re-verify?"
+      ],
+      "Text": "Existing verification data continues to be returned and is not removed or invalidated.\nThe verifiedWithinDays parameter only affects whether a verificationUrl is returned.\nNo verification data is removed or invalidated.\nIf the existing verification satisfies the requested freshness window, no re-verification is requested.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I require members to periodically re-verify?",
+      "Anchor": "how-can-i-require-members-to-periodically-re-verify",
+      "SectionPath": [
+        "API Integration",
+        "How can I require members to periodically re-verify?"
+      ],
+      "Text": "See the /verificationReport API for complete details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does Verified on LinkedIn support OAuth state?",
+      "Anchor": "does-verified-on-linkedin-support-oauth-state",
+      "SectionPath": [
+        "API Integration",
+        "Does Verified on LinkedIn support OAuth state?"
+      ],
+      "Text": "Yes. The state parameter is the only supported dynamic query parameter in redirect URLs. It is excluded from redirect URL validation and preserved in the final redirect URL after verification. Partners can use state for CSRF protection, session continuity, and request tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I store verification results?",
+      "Anchor": "can-i-store-verification-results",
+      "SectionPath": [
+        "API Integration",
+        "Can I store verification results?"
+      ],
+      "Text": "You may cache verification results temporarily for performance optimization, but you must:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I store verification results?",
+      "Anchor": "can-i-store-verification-results",
+      "SectionPath": [
+        "API Integration",
+        "Can I store verification results?"
+      ],
+      "Text": "Refresh them periodically to ensure accuracy\nComply with LinkedIn\u0027s API Terms\nNot store verification data indefinitely",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I store verification results?",
+      "Anchor": "can-i-store-verification-results",
+      "SectionPath": [
+        "API Integration",
+        "Can I store verification results?"
+      ],
+      "Text": "For Plus tier, see Data Freshness Guide for best practices on keeping member data up-to-date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I show badges for all users?",
+      "Anchor": "can-i-show-badges-for-all-users",
+      "SectionPath": [
+        "API Integration",
+        "Can I show badges for all users?"
+      ],
+      "Text": "Only display the \u0022Verified on LinkedIn\u0022 badge for users who have completed one or more verification categories, as indicated by the API response. Follow the Branding \u0026 UX Guidelines for correct badge usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What are the rate limits?",
+      "Anchor": "what-are-the-rate-limits",
+      "SectionPath": [
+        "API Integration",
+        "What are the rate limits?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Type",
+        "Limit"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Per Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000 requests per day",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Per member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500 requests per day",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the rate limits?",
+      "Anchor": "what-are-the-rate-limits",
+      "SectionPath": [
+        "API Integration",
+        "What are the rate limits?"
+      ],
+      "Text": "If you exceed these limits, the API returns a 429 Too Many Requests response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What timeout should I use?",
+      "Anchor": "what-timeout-should-i-use",
+      "SectionPath": [
+        "API Integration",
+        "What timeout should I use?"
+      ],
+      "Text": "Standard endpoints (/identityMe, /verificationReport): 5 seconds\nBulk validation (/validationStatus): 30 seconds",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I handle missing optional fields?",
+      "Anchor": "how-do-i-handle-missing-optional-fields",
+      "SectionPath": [
+        "API Integration",
+        "How do I handle missing optional fields?"
+      ],
+      "Text": "Some fields may be missing from API responses (e.g., email address, profile picture). Your implementation should:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I handle missing optional fields?",
+      "Anchor": "how-do-i-handle-missing-optional-fields",
+      "SectionPath": [
+        "API Integration",
+        "How do I handle missing optional fields?"
+      ],
+      "Text": "\u2705 Handle missing optional fields gracefully\n\u2705 Display fallback content when data is unavailable\n\u2705 Log missing fields for debugging",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I validate member ID uniqueness?",
+      "Anchor": "how-do-i-validate-member-id-uniqueness",
+      "SectionPath": [
+        "API Integration",
+        "How do I validate member ID uniqueness?"
+      ],
+      "Text": "This is critical for security. You must validate that each id is unique in your system to prevent a single LinkedIn account from verifying multiple accounts on your platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I validate member ID uniqueness?",
+      "Anchor": "how-do-i-validate-member-id-uniqueness",
+      "SectionPath": [
+        "API Integration",
+        "How do I validate member ID uniqueness?"
+      ],
+      "Text": "Best Practices:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I validate member ID uniqueness?",
+      "Anchor": "how-do-i-validate-member-id-uniqueness",
+      "SectionPath": [
+        "API Integration",
+        "How do I validate member ID uniqueness?"
+      ],
+      "Text": "\u2705 Enforce uniqueness at the database level (UNIQUE constraint)\n\u2705 Check for existing LinkedIn ID before saving new verification\n\u2705 Log security alerts when duplicate attempts are detected\n\u2705 Display clear error messages to members\n\u2705 Provide support contact for legitimate edge cases",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I validate member ID uniqueness?",
+      "Anchor": "how-do-i-validate-member-id-uniqueness",
+      "SectionPath": [
+        "API Integration",
+        "How do I validate member ID uniqueness?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I validate member ID uniqueness?",
+      "Anchor": "how-do-i-validate-member-id-uniqueness",
+      "SectionPath": [
+        "API Integration",
+        "How do I validate member ID uniqueness?"
+      ],
+      "Text": "Always use the id field (available since version 202510). The userId field will be deprecated in future versions and should only be used for temporary backward compatibility during migration from older API versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I keep member data up-to-date?",
+      "Anchor": "how-do-i-keep-member-data-up-to-date",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I keep member data up-to-date?"
+      ],
+      "Text": "Plus tier only. You have two options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I keep member data up-to-date?",
+      "Anchor": "how-do-i-keep-member-data-up-to-date",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I keep member data up-to-date?"
+      ],
+      "Text": "Polling with /validationStatus \u2013 Call the bulk validation API daily to check if member data has changed\nPush Notifications \u2013 Receive real-time webhooks when member data changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I keep member data up-to-date?",
+      "Anchor": "how-do-i-keep-member-data-up-to-date",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I keep member data up-to-date?"
+      ],
+      "Text": "See Data Freshness Guide for detailed implementation strategies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the /validationStatus API?",
+      "Anchor": "what-is-the-validationstatus-api",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "What is the /validationStatus API?"
+      ],
+      "Text": "The /validationStatus API (Plus tier only) allows you to bulk-check up to 500 members at once to see if their verification or profile data has changed. It returns status values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the /validationStatus API?",
+      "Anchor": "what-is-the-validationstatus-api",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "What is the /validationStatus API?"
+      ],
+      "Text": "VALID \u2013 Data is current, no action needed\nINVALID \u2013 Data should be refreshed by calling /verificationReport and /identityMe\nVALID_WITH_UPDATES \u2013 Data is valid but member re-verified (optional refresh)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the /validationStatus API?",
+      "Anchor": "what-is-the-validationstatus-api",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "What is the /validationStatus API?"
+      ],
+      "Text": "This reduces unnecessary API calls compared to polling individual members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do push notifications work?",
+      "Anchor": "how-do-push-notifications-work",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do push notifications work?"
+      ],
+      "Text": "Push notifications provide real-time updates when member data changes. To use them:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do push notifications work?",
+      "Anchor": "how-do-push-notifications-work",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do push notifications work?"
+      ],
+      "Text": "Contact LinkedIn API Support to set up webhooks for your application\nReceive FEDERATED_MEMBER_DATA_STATUS_CHANGE events when member data changes\nRefresh data by calling /verificationReport and /identityMe with the member\u0027s access token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do push notifications work?",
+      "Anchor": "how-do-push-notifications-work",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do push notifications work?"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do push notifications work?",
+      "Anchor": "how-do-push-notifications-work",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do push notifications work?"
+      ],
+      "Text": "Push notifications indicate that changes exist\u2014they do not contain the actual updated data. You must call the actual endpoints to retrieve the new data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What should I do when I receive a push notification?",
+      "Anchor": "what-should-i-do-when-i-receive-a-push-notification",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "What should I do when I receive a push notification?"
+      ],
+      "Text": "Check if isAccessRevoked is true:\n\nIf yes \u2192 Remove the member\u0027s data from your system\nIf no \u2192 Continue to step 2\n\n\nCheck the status fields in the notification:\n\nINVALID \u2192 Must refresh data by calling /verificationReport and/or /identityMe\nVALID_WITH_UPDATES \u2192 Optionally refresh to get latest data\nVALID \u2192 No action needed\n\n\nCall the appropriate endpoints with the member\u0027s access token\nUpdate your stored data",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What fields should I persist for data freshness?",
+      "Anchor": "what-fields-should-i-persist-for-data-freshness",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "What fields should I persist for data freshness?"
+      ],
+      "Text": "To implement data freshness strategies, you must store:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What fields should I persist for data freshness?",
+      "Anchor": "what-fields-should-i-persist-for-data-freshness",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "What fields should I persist for data freshness?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Why It\u0027s Critical"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required for /validationStatus checks and push notifications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "refresh_token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Needed to obtain new access tokens without member re-authorization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastRefreshedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp to ignore stale notifications and avoid unnecessary API calls",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I implement polling with /validationStatus?",
+      "Anchor": "how-do-i-implement-polling-with-validationstatus",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I implement polling with /validationStatus?"
+      ],
+      "Text": "Polling involves two steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I implement polling with /validationStatus?",
+      "Anchor": "how-do-i-implement-polling-with-validationstatus",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I implement polling with /validationStatus?"
+      ],
+      "Text": "Step 1: Check Status (2-legged OAuth, no member consent needed)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I implement polling with /validationStatus?",
+      "Anchor": "how-do-i-implement-polling-with-validationstatus",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I implement polling with /validationStatus?"
+      ],
+      "Text": "Call /validationStatus with up to 500 member ids in a single request\nReceive status for each member: VALID, INVALID, or VALID_WITH_UPDATES",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I implement polling with /validationStatus?",
+      "Anchor": "how-do-i-implement-polling-with-validationstatus",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I implement polling with /validationStatus?"
+      ],
+      "Text": "Step 2: Refresh Data (3-legged OAuth, member consent required)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I implement polling with /validationStatus?",
+      "Anchor": "how-do-i-implement-polling-with-validationstatus",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I implement polling with /validationStatus?"
+      ],
+      "Text": "For members with INVALID or VALID_WITH_UPDATES status only\nCall /verificationReport and /identityMe with the member\u0027s access token\nStore the updated data",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I implement polling with /validationStatus?",
+      "Anchor": "how-do-i-implement-polling-with-validationstatus",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How do I implement polling with /validationStatus?"
+      ],
+      "Text": "This two-step approach minimizes API calls by only refreshing data for members who have changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How often should I poll for data changes?",
+      "Anchor": "how-often-should-i-poll-for-data-changes",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How often should I poll for data changes?"
+      ],
+      "Text": "Recommended: Once per day during off-peak hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How often should I poll for data changes?",
+      "Anchor": "how-often-should-i-poll-for-data-changes",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How often should I poll for data changes?"
+      ],
+      "Text": "Best Practices:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How often should I poll for data changes?",
+      "Anchor": "how-often-should-i-poll-for-data-changes",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "How often should I poll for data changes?"
+      ],
+      "Text": "\u2705 Run polling during off-peak hours to minimize impact\n\u2705 Batch requests (up to 500 members per call) to stay within rate limits\n\u2705 Only call actual endpoints for members with VALID_WITH_UPDATES or INVALID status\n\u2705 Implement exponential backoff for rate limit errors\n\u2705 Store critical fields (id, refresh_token, lastRefreshedAt) before implementing polling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is data freshness available for all tiers?",
+      "Anchor": "is-data-freshness-available-for-all-tiers",
+      "SectionPath": [
+        "Data Freshness \u0026 Push Notifications",
+        "Is data freshness available for all tiers?"
+      ],
+      "Text": "No. Data freshness strategies (polling and push notifications) are Plus tier only. Development and Lite tiers do not have access to /validationStatus or push notifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should I store OAuth tokens?",
+      "Anchor": "how-should-i-store-oauth-tokens",
+      "SectionPath": [
+        "Security \u0026 Data Handling",
+        "How should I store OAuth tokens?"
+      ],
+      "Text": "This is critical for security. You must securely store OAuth access tokens and refresh tokens with encryption.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should I store OAuth tokens?",
+      "Anchor": "how-should-i-store-oauth-tokens",
+      "SectionPath": [
+        "Security \u0026 Data Handling",
+        "How should I store OAuth tokens?"
+      ],
+      "Text": "Best Practices:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should I store OAuth tokens?",
+      "Anchor": "how-should-i-store-oauth-tokens",
+      "SectionPath": [
+        "Security \u0026 Data Handling",
+        "How should I store OAuth tokens?"
+      ],
+      "Text": "\u2705 Encrypt tokens using AES-256-GCM or equivalent\n\u2705 Store in secure backend database with proper access controls\n\u2705 Implement token rotation and secure deletion policies\n\u2705 Never store tokens in client-side storage (cookies, localStorage, sessionStorage)\n\u2705 Log access to tokens for audit purposes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do I need to store refresh tokens?",
+      "Anchor": "why-do-i-need-to-store-refresh-tokens",
+      "SectionPath": [
+        "Security \u0026 Data Handling",
+        "Why do I need to store refresh tokens?"
+      ],
+      "Text": "Storing refresh tokens is necessary to generate new access tokens when needed to refresh member data without requiring the member to re-authorize. This enables you to keep member profile and verification information up-to-date through background processes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the general security best practices?",
+      "Anchor": "what-are-the-general-security-best-practices",
+      "SectionPath": [
+        "Security \u0026 Data Handling",
+        "What are the general security best practices?"
+      ],
+      "Text": "\u2705 Store tokens securely \u2013 Encrypt at rest, never expose in client-side code\n\u2705 Use refresh tokens \u2013 Don\u0027t make users re-authenticate every 60 days\n\u2705 Request minimum scopes \u2013 Only request what you need\n\u2705 Handle token expiry gracefully \u2013 Implement automatic refresh logic\n\u2705 Validate redirect URIs \u2013 Must match exactly with Developer Portal settings\n\u2705 Implement CSRF protection \u2013 Use state parameter in OAuth flow\n\u2705 Use HTTPS only for all API calls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the approved use cases?",
+      "Anchor": "what-are-the-approved-use-cases",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "What are the approved use cases?"
+      ],
+      "Text": "The API is designed for trust enhancement, not regulatory compliance or eligibility decisions. Approved use cases include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What are the approved use cases?",
+      "Anchor": "what-are-the-approved-use-cases",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "What are the approved use cases?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Examples"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Trust \u0026 Safety",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Professional communities, networking platforms, online marketplaces, peer-to-peer exchanges",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Communities \u0026 Networks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event registration, professional conferences, community moderation, alumni groups",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Marketplaces",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Buyer/seller verification, freelance platforms, service-sharing, resale platforms",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the restricted use cases?",
+      "Anchor": "what-are-the-restricted-use-cases",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "What are the restricted use cases?"
+      ],
+      "Text": "The API cannot be used for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What are the restricted use cases?",
+      "Anchor": "what-are-the-restricted-use-cases",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "What are the restricted use cases?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Restricted Use Case",
+        "Reason"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Hiring or employment decisions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not an employment screening tool. Do not use to rank or approve candidates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Background checks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Does not include criminal, financial, or government background data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Credit, loans, or insurance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not related to creditworthiness or insurability.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Housing eligibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot be used for rental or housing determinations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Fintech or banking KYC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not a regulated KYC/AML service.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Government or regulated identity checks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not a substitute for official ID verification systems.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Platform safety or risk scoring",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Should complement \u2014 not replace your platform\u0027s trust and risk systems.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I use this API for background checks or credit decisions?",
+      "Anchor": "can-i-use-this-api-for-background-checks-or-credit-decisions",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "Can I use this API for background checks or credit decisions?"
+      ],
+      "Text": "No. The API cannot be used for employment eligibility, credit scoring, housing, or any similar decision-making purposes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I aggregate or resell LinkedIn verification data?",
+      "Anchor": "can-i-aggregate-or-resell-linkedin-verification-data",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "Can I aggregate or resell LinkedIn verification data?"
+      ],
+      "Text": "No. You may only use verification data within your own app for the member who granted consent. Aggregation, resale, or redistribution is strictly prohibited.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there a review process?",
+      "Anchor": "is-there-a-review-process",
+      "SectionPath": [
+        "Policy \u0026 Compliance",
+        "Is there a review process?"
+      ],
+      "Text": "Yes. Verified on LinkedIn applications undergo automated and manual reviews. LinkedIn may request clarifications or revoke access for policy violations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should I display the \u0022Verify on LinkedIn\u0022 button?",
+      "Anchor": "how-should-i-display-the-verify-on-linkedin-button",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "How should I display the \u0022Verify on LinkedIn\u0022 button?"
+      ],
+      "Text": "Purpose: Routes members to LinkedIn to complete identity or workplace verification\nPlacement: Display in contexts where verification is required\nState: Render only when the API response includes a valid verificationUrl\nLabel: Button text must remain \u0022Verify on LinkedIn\u0022. No modifications such as \u0022LinkedIn Verify\u0022 or \u0022Verify via LinkedIn\u0022\nDo not cache: Always use the latest verificationUrl from each API response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should I display the \u0022Verify on LinkedIn\u0022 button?",
+      "Anchor": "how-should-i-display-the-verify-on-linkedin-button",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "How should I display the \u0022Verify on LinkedIn\u0022 button?"
+      ],
+      "Text": "See Branding \u0026 UX Guidelines for design specifications and asset downloads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When should I display the \u0022Verified on LinkedIn\u0022 badge?",
+      "Anchor": "when-should-i-display-the-verified-on-linkedin-badge",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "When should I display the \u0022Verified on LinkedIn\u0022 badge?"
+      ],
+      "Text": "Display the badge when:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When should I display the \u0022Verified on LinkedIn\u0022 badge?",
+      "Anchor": "when-should-i-display-the-verified-on-linkedin-badge",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "When should I display the \u0022Verified on LinkedIn\u0022 badge?"
+      ],
+      "Text": "\u2705 At least one verification type (Identity or Workplace) is completed\n\u2705 After verification completes (no verificationUrl returned)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When should I display the \u0022Verified on LinkedIn\u0022 badge?",
+      "Anchor": "when-should-i-display-the-verified-on-linkedin-badge",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "When should I display the \u0022Verified on LinkedIn\u0022 badge?"
+      ],
+      "Text": "Do not display the badge when:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When should I display the \u0022Verified on LinkedIn\u0022 badge?",
+      "Anchor": "when-should-i-display-the-verified-on-linkedin-badge",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "When should I display the \u0022Verified on LinkedIn\u0022 badge?"
+      ],
+      "Text": "\u274C Member is unverified or verification data is missing\n\u274C Data is from cached or manually entered sources",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What design assets are available?",
+      "Anchor": "what-design-assets-are-available",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "What design assets are available?"
+      ],
+      "Text": "Official assets for the \u0022Verify on LinkedIn\u0022 button and \u0022Verified on LinkedIn\u0022 badge are available for partner use. Download Asset Kit (.zip)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the branding rules?",
+      "Anchor": "what-are-the-branding-rules",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "What are the branding rules?"
+      ],
+      "Text": "Do\u0027s:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the branding rules?",
+      "Anchor": "what-are-the-branding-rules",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "What are the branding rules?"
+      ],
+      "Text": "\u2705 Use official assets from LinkedIn\u0027s API documentation\n\u2705 Maintain proportional spacing and readable font sizes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the branding rules?",
+      "Anchor": "what-are-the-branding-rules",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "What are the branding rules?"
+      ],
+      "Text": "Don\u0027ts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the branding rules?",
+      "Anchor": "what-are-the-branding-rules",
+      "SectionPath": [
+        "Branding \u0026 UX",
+        "What are the branding rules?"
+      ],
+      "Text": "\u274C Change text to \u0022LinkedIn Verified\u0022, \u0022LinkedIn Trusted\u0022, or any other non-approved language\n\u274C Alter badge colors or replace icons\n\u274C Show the badge before confirmation from API response\n\u274C Combine with other third-party verification marks",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Where can I get technical help?",
+      "Anchor": "where-can-i-get-technical-help",
+      "SectionPath": [
+        "Troubleshooting",
+        "Where can I get technical help?"
+      ],
+      "Text": "For technical issues or troubleshooting, please submit a support ticket and include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Where can I get technical help?",
+      "Anchor": "where-can-i-get-technical-help",
+      "SectionPath": [
+        "Troubleshooting",
+        "Where can I get technical help?"
+      ],
+      "Text": "App name and Client ID\nAPI endpoint and version\nTimestamp and sample request/response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 401 Unauthorized error?",
+      "Anchor": "what-do-i-do-if-i-get-a-401-unauthorized-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 401 Unauthorized error?"
+      ],
+      "Text": "This typically means:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 401 Unauthorized error?",
+      "Anchor": "what-do-i-do-if-i-get-a-401-unauthorized-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 401 Unauthorized error?"
+      ],
+      "Text": "Your access token has expired \u2013 Use your refresh token to get a new one\nYour refresh token has expired \u2013 Ask the member to re-authorize\nThe member revoked access \u2013 Ask them to re-authorize from your app",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 403 Forbidden error?",
+      "Anchor": "what-do-i-do-if-i-get-a-403-forbidden-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 403 Forbidden error?"
+      ],
+      "Text": "Ensure your access token includes the required scopes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 403 Forbidden error?",
+      "Anchor": "what-do-i-do-if-i-get-a-403-forbidden-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 403 Forbidden error?"
+      ],
+      "Text": "Development/Lite: r_verify and r_profile_basicinfo\nPlus: r_verify_details, r_profile_basicinfo, r_most_recent_education, r_primary_current_experience",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 429 Too Many Requests error?",
+      "Anchor": "what-do-i-do-if-i-get-a-429-too-many-requests-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 429 Too Many Requests error?"
+      ],
+      "Text": "You\u0027ve exceeded rate limits. Check:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 429 Too Many Requests error?",
+      "Anchor": "what-do-i-do-if-i-get-a-429-too-many-requests-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 429 Too Many Requests error?"
+      ],
+      "Text": "Per Application: 5,000 requests per day\nPer member: 500 requests per day",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I do if I get a 429 Too Many Requests error?",
+      "Anchor": "what-do-i-do-if-i-get-a-429-too-many-requests-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "What do I do if I get a 429 Too Many Requests error?"
+      ],
+      "Text": "Implement request throttling and caching to reduce API calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "My redirect URI isn\u0027t working. What should I check?",
+      "Anchor": "my-redirect-uri-isnt-working-what-should-i-check",
+      "SectionPath": [
+        "Troubleshooting",
+        "My redirect URI isn\u0027t working. What should I check?"
+      ],
+      "Text": "Ensure your redirect URI exactly matches the one configured in your app settings in the Developer Portal. The match is case-sensitive and must include the protocol (http/https).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The verificationUrl returned is expired or invalid. What should I do?",
+      "Anchor": "the-verificationurl-returned-is-expired-or-invalid-what-should-i-do",
+      "SectionPath": [
+        "Troubleshooting",
+        "The verificationUrl returned is expired or invalid. What should I do?"
+      ],
+      "Text": "Always re-query /verificationReport to obtain a fresh verificationUrl instead of reusing older links. URLs expire after a period of time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How long does verification remain valid?",
+      "Anchor": "how-long-does-verification-remain-valid",
+      "SectionPath": [
+        "Troubleshooting",
+        "How long does verification remain valid?"
+      ],
+      "Text": "Verification categories reflect LinkedIn\u0027s current record for the member. If the member updates or removes their verification, the API response will reflect the change accordingly. This is why you should refresh verification data periodically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I test my integration?",
+      "Anchor": "how-do-i-test-my-integration",
+      "SectionPath": [
+        "Troubleshooting",
+        "How do I test my integration?"
+      ],
+      "Text": "Follow these test scenarios:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I test my integration?",
+      "Anchor": "how-do-i-test-my-integration",
+      "SectionPath": [
+        "Troubleshooting",
+        "How do I test my integration?"
+      ],
+      "Text": "\u2705 Test successful OAuth authorization\n\u2705 Test member denies authorization (handle gracefully)\n\u2705 Test token expiry and refresh\n\u2705 Call /identityMe with valid token\n\u2705 Call /verificationReport with valid token\n\u2705 Test with fully verified members (IDENTITY \u002B WORKPLACE)\n\u2705 Test with partially verified members (IDENTITY only or WORKPLACE only)\n\u2705 Test with unverified members\n\u2705 Test error handling (invalid token, insufficient scopes, rate limits)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I test my integration?",
+      "Anchor": "how-do-i-test-my-integration",
+      "SectionPath": [
+        "Troubleshooting",
+        "How do I test my integration?"
+      ],
+      "Text": "See Implementation Guide for detailed testing strategies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get started with Development tier?",
+      "Anchor": "how-do-i-get-started-with-development-tier",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "How do I get started with Development tier?"
+      ],
+      "Text": "Follow the Development Tier Quickstart (10 minutes). You can test with your admin account immediately.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I upgrade to Lite tier?",
+      "Anchor": "how-do-i-upgrade-to-lite-tier",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "How do I upgrade to Lite tier?"
+      ],
+      "Text": "Follow the Lite Tier Quickstart (10 minutes). Your app will undergo application review before production access is granted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Plus tier?",
+      "Anchor": "how-do-i-get-access-to-plus-tier",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "How do I get access to Plus tier?"
+      ],
+      "Text": "To request access to Verified on LinkedIn Plus, submit a partnership request. A member of LinkedIn\u0027s Business Development team will review and respond.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Plus tier?",
+      "Anchor": "how-do-i-get-access-to-plus-tier",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "How do I get access to Plus tier?"
+      ],
+      "Text": "Plus tier includes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I get access to Plus tier?",
+      "Anchor": "how-do-i-get-access-to-plus-tier",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "How do I get access to Plus tier?"
+      ],
+      "Text": "Enterprise-grade verification metadata\nOrganization details and verification methods\nTimestamps for all verification events\nBulk validation API (/validationStatus)\nCustom rate limits\nDedicated support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the Plus tier certification process?",
+      "Anchor": "what-is-the-plus-tier-certification-process",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "What is the Plus tier certification process?"
+      ],
+      "Text": "Enterprise partners integrating Verified on LinkedIn Plus complete a guided certification process with LinkedIn\u0027s Partner Solutions Engineering (PSE) team. During certification, you validate:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the Plus tier certification process?",
+      "Anchor": "what-is-the-plus-tier-certification-process",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "What is the Plus tier certification process?"
+      ],
+      "Text": "OAuth integration and token handling\nVerification workflows and redirect flows\nUI display of verification badges\nError handling and fallback behavior",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the Plus tier certification process?",
+      "Anchor": "what-is-the-plus-tier-certification-process",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "What is the Plus tier certification process?"
+      ],
+      "Text": "See Certification Requirements for detailed guidance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For technical issues, where do I go?",
+      "Anchor": "for-technical-issues-where-do-i-go",
+      "SectionPath": [
+        "Tier-Specific Questions",
+        "For technical issues, where do I go?"
+      ],
+      "Text": "Continue to use the Developer Support portal for technical issues and troubleshooting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Resources",
+      "Anchor": "related-resources",
+      "SectionPath": [
+        "Related Resources"
+      ],
+      "Text": "Overview - Product overview and tier comparison\nAPI Reference - Complete API documentation\nImplementation Guide - Integration best practices\nBranding \u0026 UX Guidelines - Button and badge usage\nRelease Notes - Version history and updates",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

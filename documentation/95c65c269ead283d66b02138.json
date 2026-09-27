@@ -1,0 +1,707 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-%26-location-lookup",
+  "Title": "Company \u0026 Locations Lookup",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-%26-location-lookup",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-\u0026-location-lookup",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Company \u0026 Locations Lookup",
+      "Anchor": "company--locations-lookup",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company \u0026 Locations Lookup",
+      "Anchor": "company--locations-lookup",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "When creating a job posting on LinkedIn, it is crucial to ensure that the location string and companyId are properly formatted. To facilitate this process for our partners, LinkedIn will be launching two optional typeahead search APIs. These APIs will enable partners to help their customers post job openings to specific locations and under their own company IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The implementation of the Company and Locations finder API is now optional.\nWe will be updating our Job-posting schema document to include the location urn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location Lookup API Overview",
+      "Anchor": "location-lookup-api-overview",
+      "SectionPath": [
+        "Overview",
+        "Location Lookup API Overview"
+      ],
+      "Text": "Use the /jobPostingGeoLocations API to typeahead search a location based on provided input.\nWhen utilizing this API, the partner will input a location string and an optional locale. The API will then generate a list of corresponding geo locations, complete with the geo location name (displayText) and LinkedIn geo URN (entity).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Overview",
+        "API Endpoint"
+      ],
+      "Text": "Use the following endpoint to typeahead search a location:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Overview",
+        "API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/jobPostingGeoLocations?q=search\u0026location=\u0027\u003CLocation_Name\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Overview",
+        "API Authorization"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Overview",
+        "API Authorization"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Overview",
+        "API Authorization"
+      ],
+      "Text": "The Location and Company lookups APIs must be called using access tokens generated from your child developer applications, not parent applications.\nWe strongly recommend using the same access token for all concurrent and consecutive calls. An access token has a lifespan of 30 minutes. Only on expiry of the existing token, a new token should be generated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location finder schema",
+      "Anchor": "location-finder-schema",
+      "SectionPath": [
+        "Location finder schema"
+      ],
+      "Text": "The API will return a list of matching geo locations including the geo location name (displayText) and LinkedIn geo URN (entity).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Location finder schema",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The location name with url-encoded formatting (e.g. \u201Dsanta%20cruz\u201D)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale refers to the language context of the provided location. If the locale is not provided or is not supported, the \u0022en_US\u0022 locale will be utilized.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale default=\u201Den_US\u201D",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Location finder schema",
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the standardized location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geoUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The geo URN of the location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Location finder schema",
+        "API Header"
+      ],
+      "Text": "The header for making the request is Linkedin-Version: 202411.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Location finder schema",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nLinkedin-Version: YYYYMM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Location finder Request",
+      "Anchor": "sample-location-finder-request",
+      "SectionPath": [
+        "Sample Location finder Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/jobPostingGeoLocations?q=search\u0026location=California\n\nOr\n\nhttps://api.linkedin.com/rest/jobPostingGeoLocations?q=search\u0026location=California\u0026locale=en_US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Location finder Response",
+      "Anchor": "sample-location-finder-response",
+      "SectionPath": [
+        "Sample Location finder Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:102095887\u0022,\n            \u0022locationName\u0022: \u0022California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:103104382\u0022,\n            \u0022locationName\u0022: \u0022Los Angeles County, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:102448103\u0022,\n            \u0022locationName\u0022: \u0022Los Angeles, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:105416315\u0022,\n            \u0022locationName\u0022: \u0022Santa Clara County, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:100737633\u0022,\n            \u0022locationName\u0022: \u0022San Diego County, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:105621717\u0022,\n            \u0022locationName\u0022: \u0022Orange County, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:100901743\u0022,\n            \u0022locationName\u0022: \u0022San Francisco County, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:102277331\u0022,\n            \u0022locationName\u0022: \u0022San Francisco, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:102839053\u0022,\n            \u0022locationName\u0022: \u0022Alameda County, California, United States\u0022\n        },\n        {\n            \u0022geoUrn\u0022: \u0022urn:li:geo:103918656\u0022,\n            \u0022locationName\u0022: \u0022San Diego, California, United States\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Location finder Response",
+      "Anchor": "sample-location-finder-response",
+      "SectionPath": [
+        "Sample Location finder Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Location finder Response",
+      "Anchor": "sample-location-finder-response",
+      "SectionPath": [
+        "Sample Location finder Response"
+      ],
+      "Text": "Response Details.\nThe API will return a maximum of 10 locations\nThe generated list of locations will be sorted according to the best matching geolocations based on the search query.\nThe partner will then need to include the geoUrn as part of the /simpleJobPosting payload. For further information, please refer to the job-posting API schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CompanyId Lookup API Overview",
+      "Anchor": "companyid-lookup-api-overview",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "CompanyId Lookup API Overview"
+      ],
+      "Text": "Use the /jobPostingCompanies API to typeahead search a companyId based on provided input.\nWhen making use of this API, the partner will enter a company string. The API will then generate a list of matching LinkedIn company details, which will include the company vanity name (companyName) and LinkedIn company URN (organizationUrn).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Endpoint"
+      ],
+      "Text": "Use the following endpoint to search companies:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/jobPostingCompanies?q=search\u0026company=\u0027\u003CCompany_Name\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Authorization"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Authorization"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Authorization"
+      ],
+      "Text": "The Location and Company lookups APIs must be called using access tokens generated from your child developer applications, not parent applications.\nWe strongly recommend using the same access token for all concurrent and consecutive calls. An access token has a lifespan of 30 minutes. Only on expiry of the existing token, a new token should be generated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Header",
+      "Anchor": "api-header-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Header"
+      ],
+      "Text": "The header for making the request is Linkedin-Version: 202603.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header-1",
+      "SectionPath": [
+        "Sample Location finder Response",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nLinkedin-Version: YYYYMM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema-1",
+      "SectionPath": [
+        "Company finder schema",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company name with url-encoded formatting (e.g. \u201DLinkedIn%20Corporation\u201D).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema-1",
+      "SectionPath": [
+        "Company finder schema",
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The standardized name of the company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization URN serves as a unique identifier for the company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Company finder Request",
+      "Anchor": "sample-company-finder-request",
+      "SectionPath": [
+        "Sample Company finder Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/jobPostingCompanies?q=search\u0026company=micro",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Company finder Response",
+      "Anchor": "sample-company-finder-response",
+      "SectionPath": [
+        "Sample Company finder Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:1035\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022AMD\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:1497\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022Micron Technology\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:3690\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022Ingram Micro\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:2576\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022Microchip Technology Inc.\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:6481\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022MicroStrategy\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:3643\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022micro1\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:81490090\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022MicroVention-Terumo\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:93302\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022Sun Microsystems\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:1062\u0022\n        },\n\t {\n            \u0022companyName\u0022: \u0022Trend Micro\u0022,\n            \u0022entityUrn\u0022: \u0022urn:li:organization:4312\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Company finder Response",
+      "Anchor": "sample-company-finder-response",
+      "SectionPath": [
+        "Sample Company finder Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Company finder Response",
+      "Anchor": "sample-company-finder-response",
+      "SectionPath": [
+        "Sample Company finder Response"
+      ],
+      "Text": "Response Details.\nThe API will return a maximum of 10 companies\nResponse will be sorted according to the best matching company names based on the search query.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "Given below is a list of possible error codes that can display while utilizing Company / Locations finder.\nOne of the following responses is returned, that contains a JSON object with a status and a message about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RESOURCE_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No virtual resource found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url request is not properly formatted. Make sure to add q=search in the url parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API versions should have date format as YYYYMM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location \u0026 Company finder is a versioned API. Make sure to use proper version",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401 [65600]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Authorization token has expired, usually it has 30 minute life",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "To retry the operation, please regenerate the authorization token and pass it in the API header.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

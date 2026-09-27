@@ -1,0 +1,891 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+  "Title": "Tutorial: Configure Automated User Management for LinkedIn Learning via OneLogin",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This tutorial describes the steps you need to perform in both LinkedIn Learning and OneLogin to configure automatic user provisioning. When configured, OneLogin automatically provisions and de-provisions users and groups to LinkedIn Learning using SCIM provisioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "For additional details on what this service does, see OneLogin \u2013 Understanding SCIM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Capabilities Supported",
+      "Anchor": "capabilities-supported",
+      "SectionPath": [
+        "Capabilities Supported"
+      ],
+      "Text": "Create user profiles and assign licenses in LinkedIn Learning.\nRemove user licenses in LinkedIn Learning when they do not require access anymore.\nKeep user attributes synchronized between OneLogin and LinkedIn Learning.\nCreate groups and manage group memberships in LinkedIn Learning.\nSingle sign-on to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "The scenario outlined in this tutorial assumes that you already have the following prerequisites:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "OneLogin tenant with admin permissions.\nLinkedIn Learning admin access.\nAn admin user account in OneLogin to configure a custom application - (e.g., SCIM Provisioner with SAML (SCIM v2 Enterprise, full SAML)).\nAccurate user data in LinkedIn Learning. See this guide for instructions on cleaning up your user data if necessary for existing Learning accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "OneLogin has LinkedIn Learning native application to setup SSO, but the standard native application does not support SCIM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "If configuring just SSO, native LinkedIn Learning App from OneLoging will suffice, however, if configuring both SSO and SCIM, it is required to add a custom application from the available applications (SCIM Provisioner with SAML (SCIM v2 Enterprise, full SAML)). Please see below for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-onelogin",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin"
+      ],
+      "Text": "Log into LinkedIn Learning as an admin and navigate to Me \u003E Authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-onelogin",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin"
+      ],
+      "Text": "Click on Automate user management and expand the Configure SCIM section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-onelogin",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin"
+      ],
+      "Text": "In the Configure SCIM section, Select Add SCIM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-onelogin",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin"
+      ],
+      "Text": "Enter a name for the configuration and set Auto-assign licenses to On. Then, click Generate token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-onelogin",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin"
+      ],
+      "Text": "Copy the Access token for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "OneLogin allows you to assign the application to specific users or groups. When SCIM provisioning is enabled, all users assigned to the application will be automatically provisioned in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Start small. Test with a small set of users and/or groups before assigning the application to your full user group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "When new users are provisioned in LinkedIn Learning, an invitation email is sent out automatically. If you want to assign users to the application without notifying them, make sure to disable emails to new learners in the LinkedIn Learning admin settings. Make sure to re-enable these settings when you are ready to notify your learners. You can also re-send the invitation email at any time in the admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "This section guides you through the steps to configure the OneLogin SCIM provisioning service to create, update, and disable users in LinkedIn Learning based on user assignments in the OneLogin custom application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "To configure automatic user provisioning for LinkedIn Learning in OneLogin:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "Sign into the OneLogin admin portal and navigate to Applications \u003E Search for the custom application - SCIM Provisioner with SAML (SCIM v2 Enterprise, full SAML).\n\n\n\n\n\nSelect the app and click Save to see the fields on the configuration tab.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with OneLogin",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "To Setup SCIM, first setup SSO as it it a prerequisite for the custom application to have SSO config in place.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "a. After you log in to LinkedIn Learning, if you are not already in the Admin screen, select Go to Admin \u003E Authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "b. Select Configure single sign-on under Authenticate and click Add new SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "c. Select SAML from the Add new SSO drop down.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "d. Under Basics tab, give your SSO connection a name (ex: Azure AD SSO) and click Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "e. Navigate to Identity provider settings tab, click Load and copy information from fields to download the meta data file from LinkedIn to be able to upload into OneLogin SSO settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "Copy the required fields (Entity ID and Assertion Consumer Service (ACS) URL) and save them for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "f. Download the XML file from OneLogin Go to SSO Section - Click View Details - Download. The file then can be uploaded into LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "g. To Upload the XML to LinkedIn Learning - Go to SSO Settings - click Upload XML file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "h. SAML Signature Algorithm: Please select based on the above step under the SSO settings. Then Save the settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO section",
+      "Anchor": "sso-section",
+      "SectionPath": [
+        "SSO section"
+      ],
+      "Text": "i. Enable login hint and Login Connection Display",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "a. SAML Audience URL - Entity ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "Copy the Entity ID from LinkedIn Learning and paste it in SAML Audience URL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "b. RelayState - Leave blank.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "c. Recipient field - Leave blank.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "d. ACS (Consumer) URL Validator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "Copy the link from Assertion Consumer Services (ACS) URL and paste it in the ACS (Consumer) URL Validator field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "Please note: This field will not allow any special characters hence the ACS URL will transform as per below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "e. ACS (Consumer) URL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "Copy the ACS Consumer Services URL (ACS) URL to ACS (Consumer) URL. This field accepts special characters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "f. Single Logout URL: Leave blank.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "g. Login URL: This is required when SP as the SAML Initiator -Leave blank for default setting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "h. SAML not valid before - set to: 3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "i. SAML not valid on or after \u2013 set to: 3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "j. SAML initiator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "k. SAML nameID format: This is the common attribute for SSO as well as SCIM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "l. SAML issuer type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "m. SAML signature element",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "n. Encrypt assertion - Uncheck.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "o. SAML encryption method \u2013 TRIPLEDES-CBC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "p. Send NameID format in SLO Request - Uncheck",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "q. Generate AttributeValue tag for empty values - Uncheck",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "r. SAML sessionNotOnOrAfter - set to 1440",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "s. Sign SLO Request - Uncheck",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "t. Sign SLO Response - Uncheck",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "u. SCIM Base URL: set to \u2013 \u0027https://api.linkedin.com/scim\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "v. SCIM JSON Template: No change required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "w. Custom Headers - Leave Blank",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "x. SCIM Bearer Token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "This is the Token value generated from step 5 from the above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration section",
+      "Anchor": "configuration-section",
+      "SectionPath": [
+        "Configuration section"
+      ],
+      "Text": "Once completed, make sure to save all changes before going to next section - Parameters section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters section",
+      "Anchor": "parameters-section",
+      "SectionPath": [
+        "Parameters section"
+      ],
+      "Text": "Determine what parameters are in scope from Provisioning. By default, Groups, Manager ID, SAML NameID (Subject) - map it to email, Department, scimusername, title are available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters section",
+      "Anchor": "parameters-section",
+      "SectionPath": [
+        "Parameters section"
+      ],
+      "Text": "Add givenName, surname as custom parameters to be sent back to LinkedIn Learning via SAML response as per below (If only required).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters section",
+      "Anchor": "parameters-section",
+      "SectionPath": [
+        "Parameters section"
+      ],
+      "Text": "Please Save all changes before proceeding to next - SSO section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provisioning section",
+      "Anchor": "provisioning-section",
+      "SectionPath": [
+        "Provisioning section"
+      ],
+      "Text": "Enable Provisioning only once all config has been setup.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provisioning section",
+      "Anchor": "provisioning-section",
+      "SectionPath": [
+        "Provisioning section"
+      ],
+      "Text": "De-select \u201CCreate User\u201D, \u201CDelete User\u201D and \u201CUpdate User\u201D from the permissions as it requires manual approval to add users via SCIM to LinkedIn Learning (recommended).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Users section",
+      "Anchor": "users-section",
+      "SectionPath": [
+        "Users section"
+      ],
+      "Text": "Add users individually or in bulk. (Please test with at least 2 or 3 users first before adding all users)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Users section",
+      "Anchor": "users-section",
+      "SectionPath": [
+        "Users section"
+      ],
+      "Text": "Once the user has been provisioned, there will a green tick against the user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Users section",
+      "Anchor": "users-section",
+      "SectionPath": [
+        "Users section"
+      ],
+      "Text": "Congratulations! SSO and SCIM from OneLogin has been setup successfully.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO or SCIM setup, contact your account team or application support team through the LinkedIn Learning Help Centre.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "Now that you have finished configuring SCIM provisioning, all users assigned to the application in OneLogin should be automatically provisioned with a license in LinkedIn Learning, and any pushed groups should be automatically created and populated in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "The initial sync may take longer if you have a large employee population, but subsequent changes and user updates should reflect in LinkedIn Learning in near real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "Any future changes after the initial successful setup of SCIM implementation, it is highly recommended to stop the provisioning tool before making any changes on OneLogin side to avoid unnecessary sync process.\nThis may lead to revoking licenses in error. Hence strongly suggest stopping the provisioning tool before making any changes first and turn back on provisioning once ready to sync.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "If you wish to discuss any questions, please contact LinkedIn Learning Account team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Appendix",
+        "Additional resources"
+      ],
+      "Text": "LinkedIn Learning SCIM Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

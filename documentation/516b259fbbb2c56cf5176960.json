@@ -1,0 +1,716 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+  "Title": "Sync Pipeline Stages",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Pipeline Stages",
+      "Anchor": "sync-pipeline-stages",
+      "SectionPath": [],
+      "Text": "Pipeline Stages should be sent via the Middleware Platform whenever a new stage is created or an existing stage is updated in your CRM. When a customer activates CRM Connect for the first time, you must sync all of their historical data to LinkedIn to power the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Pipeline Stages",
+      "Anchor": "sync-pipeline-stages",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Pipeline Stages",
+      "Anchor": "sync-pipeline-stages",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Pipeline stages maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Pipeline Stages API Endpoint",
+      "Anchor": "sync-pipeline-stages-api-endpoint",
+      "SectionPath": [
+        "Sync Pipeline Stages API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/v2/tcrmPipelineStages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Pipeline Stages API Endpoint",
+      "Anchor": "sync-pipeline-stages-api-endpoint",
+      "SectionPath": [
+        "Sync Pipeline Stages API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/rest/pipelineStages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Pipeline Stages API Query String Parameters",
+      "Anchor": "sync-pipeline-stages-api-query-string-parameters",
+      "SectionPath": [
+        "Sync Pipeline Stages API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "tcrmPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The pipeline identifier within external Talent CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The stage identifier within external Talent CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company URN provided during customer onboarding, e.g. urn:li:organization:1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always PARTNER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Pipeline Stages API Query String Parameters",
+      "Anchor": "sync-pipeline-stages-api-query-string-parameters",
+      "SectionPath": [
+        "Sync Pipeline Stages API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This specifies who owns the pipeline stage. This identifies the customer who owns the data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the pipeline within external system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalPipelineStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the pipeline stage within external system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Pipeline Stages via Batch Update",
+      "Anchor": "sync-pipeline-stages-via-batch-update",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /tcrmPipelineStages endpoint to send talent CRM pipeline stages to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Pipeline Stages via Batch Update",
+      "Anchor": "sync-pipeline-stages-via-batch-update",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /pipelineStages endpoint to send talent CRM pipeline stages to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Pipeline Stages API Request Body Fields",
+      "Anchor": "sync-pipeline-stages-api-request-body-fields",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sync Pipeline Stages API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Fields",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "stageCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The category of the pipeline stage. Possible stage categories: NURTURELEADCONTACTEDREPLIEDAPPLIEDSCREENINTERVIEWOFFERHIREDREJECTEDDECLINEDARCHIVEDOTHER",
+            "Links": [],
+            "Values": [
+              "NURTURE",
+              "LEAD",
+              "CONTACTED",
+              "REPLIED",
+              "APPLIED",
+              "SCREEN",
+              "INTERVIEW",
+              "OFFER",
+              "HIRED",
+              "REJECTED",
+              "DECLINED",
+              "ARCHIVED",
+              "OTHER"
+            ]
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stageDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The details of the pipeline stage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when this pipeline stage was created within external CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Pipeline Stages API Request Body Fields",
+      "Anchor": "sync-pipeline-stages-api-request-body-fields",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sync Pipeline Stages API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "stageCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The category of the stage for this pipeline. Must be one of these stage categories: NURTURELEADCONTACTEDREPLIEDAPPLIEDSCREENINTERVIEWOFFERHIREDREJECTEDDECLINEDARCHIVEDOTHER",
+            "Links": [],
+            "Values": [
+              "NURTURE",
+              "LEAD",
+              "CONTACTED",
+              "REPLIED",
+              "APPLIED",
+              "SCREEN",
+              "INTERVIEW",
+              "OFFER",
+              "HIRED",
+              "REJECTED",
+              "DECLINED",
+              "ARCHIVED",
+              "OTHER"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stageDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The details of the stage for this pipeline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the pipeline stage was created within external system. Number of milliseconds since midnight January 1 1970 UTC. It must be a positive number.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the pipeline stage was last modified within external system. Number of milliseconds since midnight January 1 1970 UTC. It must be a positive number.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Pipeline Stages API Request",
+      "Anchor": "sample-sync-pipeline-stages-api-request",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sample Sync Pipeline Stages API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/v2/tcrmPipelineStages?ids%5B0%5D.tcrmPipelineId=tcrmPipelineid1000\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B0%5D.tcrmStageId=tcrmStageId1001\u0026ids%5B1%5D.tcrmPipelineId=tcrmPipelineid2000\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmStageId=tcrmStageId2002\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027{\n    \u0022entities\u0022: {\n        \u0022tcrmPipelineId=tcrmPipelineid1000\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0026tcrmStageId=tcrmStageId1001\u0022: {\n        \u0022stageCategory\u0022:\u0022HIRED\u0022,\n        \u0022stageDetails\u0022:\u0022Candidate was hired\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000,\n        \u0022tcrmLastModifiedAt\u0022:1640995200001\n        },\n        \u0022tcrmPipelineId=tcrmPipelineid2000\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0026tcrmStageId=tcrmStageId2002\u0022: {\n        \u0022stageCategory\u0022:\u0022HIRED\u0022,\n        \u0022stageDetails\u0022:\u0022Candidate was hired\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000,\n        \u0022tcrmLastModifiedAt\u0022:1640995200001\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Pipeline Stages API Request",
+      "Anchor": "sample-sync-pipeline-stages-api-request",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sample Sync Pipeline Stages API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/pipelineStages?ids%5B0%5D.externalPipelineId=tcrmPipelineid1000\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineStageId=tcrmStageId1001\u0026ids%5B1%5D.externalPipelineId=tcrmPipelineid2000\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineStageId=tcrmStageId2002\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027{\n    \u0022entities\u0022: {\n        \u0022externalPipelineId=tcrmPipelineid1000\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineStageId=tcrmStageId1001\u0022: {\n        \u0022stageCategory\u0022:\u0022HIRED\u0022,\n        \u0022stageDetails\u0022:\u0022Candidate was hired\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000,\n        \u0022tcrmLastModifiedAt\u0022:1640995200001\n        },\n        \u0022externalPipelineId=tcrmPipelineid2000\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineStageId=tcrmStageId2002\u0022: {\n        \u0022stageCategory\u0022:\u0022HIRED\u0022,\n        \u0022stageDetails\u0022:\u0022Candidate was hired\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000,\n        \u0022tcrmLastModifiedAt\u0022:1640995200001\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Pipeline Stages API Request",
+      "Anchor": "sample-sync-pipeline-stages-api-request",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sample Sync Pipeline Stages API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/pipelineStages?ids%5B0%5D.externalPipelineId=tcrmPipelineid1000\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineStageId=tcrmStageId1001\u0026ids%5B1%5D.externalPipelineId=tcrmPipelineid2000\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineStageId=tcrmStageId2002\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027{\n    \u0022entities\u0022: {\n        \u0022externalPipelineId=tcrmPipelineid1000\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineStageId=tcrmStageId1001\u0022: {\n        \u0022stageCategory\u0022:\u0022HIRED\u0022,\n        \u0022stageDetails\u0022:\u0022Candidate was hired\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000,\n        \u0022tcrmLastModifiedAt\u0022:1640995200001\n        },\n        \u0022externalPipelineId=tcrmPipelineid2000\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineStageId=tcrmStageId2002\u0022: {\n        \u0022stageCategory\u0022:\u0022HIRED\u0022,\n        \u0022stageDetails\u0022:\u0022Candidate was hired\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000,\n        \u0022tcrmLastModifiedAt\u0022:1640995200001\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Pipeline Stages API Response",
+      "Anchor": "sample-sync-pipeline-stages-api-response",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sample Sync Pipeline Stages API Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmPipelineId=tcrmPipelineid1000\u0026tcrmStageId=tcrmStageId1001\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmPipelineId=tcrmPipelineid2000\u0026tcrmStageId=tcrmStageId2002\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Pipeline Stages API Response",
+      "Anchor": "sample-sync-pipeline-stages-api-response",
+      "SectionPath": [
+        "Sync Pipeline Stages via Batch Update",
+        "Sample Sync Pipeline Stages API Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline05\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline06\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Pipeline Stages",
+      "Anchor": "delete-pipeline-stages",
+      "SectionPath": [
+        "Delete Pipeline Stages"
+      ],
+      "Text": "Perform HTTP DELETE on the /tcrmPipelineStages endpoint when a customer deletes pipeline stage records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Pipeline Stages",
+      "Anchor": "delete-pipeline-stages",
+      "SectionPath": [
+        "Delete Pipeline Stages"
+      ],
+      "Text": "Perform HTTP DELETE on the /pipelineStages endpoint when a customer deletes pipeline stage records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Pipeline Stages Request",
+      "Anchor": "sample-delete-pipeline-stages-request",
+      "SectionPath": [
+        "Delete Pipeline Stages",
+        "Sample Delete Pipeline Stages Request"
+      ],
+      "Text": "curl -i -X DELETE \u0022https://api.linkedin.com/v2/tcrmPipelineStages?ids%5B0%5D.tcrmPipelineId=tcrmPipelineid1000\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B0%5D.tcrmStageId=tcrmStageId1001\u0026ids%5B1%5D.tcrmPipelineId=tcrmPipelineid2000\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmStageId=tcrmStageId2002\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:1.0.0\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Pipeline Stages Request",
+      "Anchor": "sample-delete-pipeline-stages-request",
+      "SectionPath": [
+        "Delete Pipeline Stages",
+        "Sample Delete Pipeline Stages Request"
+      ],
+      "Text": "curl -i -X DELETE \u0027https://api.linkedin.com/rest/pipelineStages?ids%5B0%5D.externalPipelineId=tcrmPipelineid1000\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineStageId=tcrmStageId1001\u0026ids%5B1%5D.externalPipelineId=tcrmPipelineid2000\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineStageId=tcrmStageId2002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Pipeline Stages Request",
+      "Anchor": "sample-delete-pipeline-stages-request",
+      "SectionPath": [
+        "Delete Pipeline Stages",
+        "Sample Delete Pipeline Stages Request"
+      ],
+      "Text": "curl -i -X DELETE \u0027https://api.linkedin.com/rest/pipelineStages?ids%5B0%5D.externalPipelineId=tcrmPipelineid1000\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineStageId=tcrmStageId1001\u0026ids%5B1%5D.externalPipelineId=tcrmPipelineid2000\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineStageId=tcrmStageId2002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample DELETE Pipeline Stages Response Body",
+      "Anchor": "sample-delete-pipeline-stages-response-body",
+      "SectionPath": [
+        "Delete Pipeline Stages",
+        "Sample DELETE Pipeline Stages Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample DELETE Pipeline Stages Response Body",
+      "Anchor": "sample-delete-pipeline-stages-response-body",
+      "SectionPath": [
+        "Delete Pipeline Stages",
+        "Sample DELETE Pipeline Stages Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmPipelineId=tcrmPipelineid1000\u0026tcrmStageId=tcrmStageId1001\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmPipelineId=tcrmPipelineid2000\u0026tcrmStageId=tcrmStageId2002\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample DELETE Pipeline Stages Response Body",
+      "Anchor": "sample-delete-pipeline-stages-response-body",
+      "SectionPath": [
+        "Delete Pipeline Stages",
+        "Sample DELETE Pipeline Stages Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline05\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline06\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

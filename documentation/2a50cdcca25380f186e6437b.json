@@ -1,0 +1,1184 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics",
+  "Title": "Creator Analytics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-visitor-of-the-day",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/super-titles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Creator Analytics",
+      "Anchor": "creator-analytics",
+      "SectionPath": [],
+      "Text": "The creator analytics API returns analytics metrics for content created on LinkedIn. Currently, the API supports analytics metrics for videos, articles and newsletters. This API doesn\u2019t share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creator Analytics",
+      "Anchor": "creator-analytics",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creator Analytics",
+      "Anchor": "creator-analytics",
+      "SectionPath": [],
+      "Text": "targetEntity Finder: Find a list of creator analytics data points for a metric of a target entity. The metricType and queryType determine the type of analytics data returned from this finder. e.g. If metricType = VIDEO_PLAY and queryType = DAILY_COUNT, the finder will return a list of data points representing video play count per day. Each data point includes video play count for a specific date. If metricType = ARTICLE_VIEW, queryType = ACTOR_DEMOGRAPHICS and dimension = INDUSTRY, the finder will return a list of data points representing top industry demographics. Each data point includes article view count for a specific industry.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve analytics for pages content. Restricted to page admins with the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Differential Privacy",
+      "Anchor": "differential-privacy",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Differential Privacy"
+      ],
+      "Text": "To protect viewer privacy, some demographic category results will not be shown until you have enough unique viewers in that category. See Help Center Article for more information regarding applying differential privacy on analytics demographic data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CreatorAnalyticsDataPoint",
+      "Anchor": "creatoranalyticsdatapoint",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "CreatorAnalyticsDataPoint"
+      ],
+      "Text": "This data represents a single analytics data point",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CreatorAnalyticsDataPoint",
+      "Anchor": "creatoranalyticsdatapoint",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "CreatorAnalyticsDataPoint"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The target entity that the analytics data point is for. The URN type is determined by the content type:If the data point is for a video, this field is a ugc post URN (urn:li:ugcPost:123)If the data point is for an article, this field is an article URN (urn:li:article:123 or urn:li:linkedArticleUrn:456)If the data point is for a newsletter, this field is an contentSeries URN (urn:li:contentSeries:123)",
+            "Links": [],
+            "Values": [
+              "If the data point is for a video, this field is a ugc post URN (urn:li:ugcPost:123)",
+              "If the data point is for an article, this field is an article URN (urn:li:article:123 or urn:li:linkedArticleUrn:456)",
+              "If the data point is for a newsletter, this field is an contentSeries URN (urn:li:contentSeries:123)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union [count: long, percentage: float]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the analytics data point. It is either an integer count or a float percentage number.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The metric type of analytics data point represents. Possible values are VIDEO_PLAYVIDEO_WATCH_TIMEARTICLE_VIEWNEWSLETTER_ARTICLE_VIEWNEWSLETTER_IMPRESSIONNEWSLETTER_SUBSCRIBERNEWSLETTER_ENGAGEMENTVIDEO_VIEWERARTICLE_VIEWER",
+            "Links": [],
+            "Values": [
+              "VIDEO_PLAY",
+              "VIDEO_WATCH_TIME",
+              "ARTICLE_VIEW",
+              "NEWSLETTER_ARTICLE_VIEW",
+              "NEWSLETTER_IMPRESSION",
+              "NEWSLETTER_SUBSCRIBER",
+              "NEWSLETTER_ENGAGEMENT",
+              "VIDEO_VIEWER",
+              "ARTICLE_VIEWER"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#daterange"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The date range that the analytics data point represents. If the value covers the whole analytics data retention period of the target entity, this field is not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "demographicDimension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DemographicDimension",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#demographicdimension"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The dimension of the analytics data point. The field is present only if the requested queryType is ACTOR_DEMOGRAPHICS",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#query-type"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "percentageChange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PercentageChange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#percentagechange"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The percentage change of the analytics data point. The field is missing if the percentage change is not available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "DateRange",
+      "Anchor": "daterange",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "DateRange"
+      ],
+      "Text": "This represents a range of dates inclusive of start date and exclusive of end date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRange",
+      "Anchor": "daterange",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "DateRange"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) value in which to end the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Date",
+      "Anchor": "date",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "Date"
+      ],
+      "Text": "This represents a date in UTC timezone.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Date",
+      "Anchor": "date",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "Date"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents year of the date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents month of the date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents day of the date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "DemographicDimension",
+      "Anchor": "demographicdimension",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "DemographicDimension"
+      ],
+      "Text": "This represents the demographic dimension of a CreatorAnalyticsDataPoint",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DemographicDimension",
+      "Anchor": "demographicdimension",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "DemographicDimension"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the type of demographic dimension. Possible values are ORGANIZATIONINDUSTRYSENIORITYREGIONORGANIZATION_STAFF_COUNT_RANGE",
+            "Links": [],
+            "Values": [
+              "ORGANIZATION",
+              "INDUSTRY",
+              "SENIORITY",
+              "REGION",
+              "ORGANIZATION_STAFF_COUNT_RANGE"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimensionValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the URN value of the demographic dimension. The URN type is determined by the dimension type.ORGANIZATION: OrganizationUrnINDUSTRY: IndustryUrnTITLE: TitleUrn or SuperTitleUrnSENIORITY: SeniorityUrnREGION: GeoUrnORGANIZATION_STAFF_COUNT_RANGE: StaffCountRangeUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/super-titles?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": [
+              "ORGANIZATION: OrganizationUrn",
+              "INDUSTRY: IndustryUrn",
+              "TITLE: TitleUrn or SuperTitleUrn",
+              "SENIORITY: SeniorityUrn",
+              "REGION: GeoUrn",
+              "ORGANIZATION_STAFF_COUNT_RANGE: StaffCountRangeUrn"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PercentageChange",
+      "Anchor": "percentagechange",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "PercentageChange"
+      ],
+      "Text": "This represents the percentage change in the metric value of a CreatorAnalyticsDataPoint",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PercentageChange",
+      "Anchor": "percentagechange",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Schema",
+        "PercentageChange"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "percentage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the percentage change value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "comparedTo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents what the percentage change value is calculated against. Possible values are PREVIOUS_PERIOD: indicates the percentage is calculated against the previous period of the date range in CreatorAnalyticsDataPoint. For example, if the dateRange in the CreatorAnalyticsDataPoint is 7 days from 2020-01-08 to 2020-01-14, the percentage is calculated against the previous period with the same number of days: 2020-01-01 to 2020-01-07",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#creatoranalyticsdatapoint",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http#creatoranalyticsdatapoint"
+            ],
+            "Values": [
+              "PREVIOUS_PERIOD: indicates the percentage is calculated against the previous period of the date range in CreatorAnalyticsDataPoint. For example, if the dateRange in the CreatorAnalyticsDataPoint is 7 days from 2020-01-08 to 2020-01-14, the percentage is calculated against the previous period with the same number of days: 2020-01-01 to 2020-01-07"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "/dmaCreatorAnalytics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Format",
+        "Description",
+        "Required",
+        "Example Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "the finder name. It must be targetEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetEntity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The target entity to get analytics data for. It should be an URN representing the content that the analytics data is fetched for. An activity URN and ugc post URN is required for the article and video analytics.A content series URN is needed for newsletter analytics.",
+            "Links": [],
+            "Values": [
+              "An activity URN and ugc post URN is required for the article and video analytics.",
+              "A content series URN is needed for newsletter analytics."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:activity:123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The metric type of the target entity to get analytics data for. Possible values are VIDEO_PLAYVIDEO_WATCH_TIMEARTICLE_VIEW NEWSLETTER_ARTICLE_VIEWNEWSLETTER_IMPRESSIONNEWSLETTER_SUBSCRIBERNEWSLETTER_ENGAGEMENTVIDEO_VIEWERARTICLE_VIEWER",
+            "Links": [],
+            "Values": [
+              "VIDEO_PLAY",
+              "VIDEO_WATCH_TIME",
+              "ARTICLE_VIEW",
+              "NEWSLETTER_ARTICLE_VIEW",
+              "NEWSLETTER_IMPRESSION",
+              "NEWSLETTER_SUBSCRIBER",
+              "NEWSLETTER_ENGAGEMENT",
+              "VIDEO_VIEWER",
+              "ARTICLE_VIEWER"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(value:ARTICLE_VIEW)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "the type of the analytics query. If the query type is set to ACTOR_DEMOGRAPHICS, the demographic dimension must be specified. Possible values are TOTAL_COUNT: request for a total count for the metricDAILY_COUNT: request for a list of daily counts for the metricACTOR_DEMOGRAPHICS: request for demographic information for metric actors. This is only compatible with VIDEO_VIEWER, ARTICLE_VIEWER and NEWSLETTER_SUBSCRIBER metrics.",
+            "Links": [],
+            "Values": [
+              "TOTAL_COUNT: request for a total count for the metric",
+              "DAILY_COUNT: request for a list of daily counts for the metric",
+              "ACTOR_DEMOGRAPHICS: request for demographic information for metric actors. This is only compatible with VIDEO_VIEWER, ARTICLE_VIEWER and NEWSLETTER_SUBSCRIBER metrics."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(value:TOTAL_COUNT)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "the date range to get analytics data for. If not specified, data across the full retention period of the target entity (retention period for a content can be found here) will be returned. This field is ONLY supported and REQUIRED for newsletter analytics requests for now. Possible values are: PAST_7_DAYSPAST_14_DAYSPAST_28_DAYSPAST_90_DAYSPAST_365_DAYS",
+            "Links": [],
+            "Values": [
+              "PAST_7_DAYS",
+              "PAST_14_DAYS",
+              "PAST_28_DAYS",
+              "PAST_90_DAYS",
+              "PAST_365_DAYS"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(value:PAST_90_DAYS)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Total Count for Video Plays",
+      "Anchor": "total-count-for-video-plays",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Total Count for Video Plays"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Total Count for Video Plays",
+      "Anchor": "total-count-for-video-plays",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Total Count for Video Plays"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaCreatorAnalytics?q=targetEntity\u0026targetEntity=urn%3Ali%3Aactivity%3A7091750680251523072\u0026metric=(value:VIDEO_PLAY)\u0026queryType=(value:TOTAL_COUNT)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Total Count for Video Plays",
+      "Anchor": "total-count-for-video-plays",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Total Count for Video Plays"
+      ],
+      "Text": "curl -X GET \u0022https://api.linkedin.com/rest/dmaCreatorAnalytics?q=targetEntity\u0026targetEntity=urn%3Ali%3Aactivity%3A7091750680251523072\u0026metric=(value:VIDEO_PLAY)\u0026queryType=(value:TOTAL_COUNT)\u0022 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:ugcPost:7091750671531552768\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 59\n            },\n            \u0022metric\u0022: \u0022VIDEO_PLAY\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Daily count for newsletter article views",
+      "Anchor": "daily-count-for-newsletter-article-views",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Daily count for newsletter article views"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Daily count for newsletter article views",
+      "Anchor": "daily-count-for-newsletter-article-views",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Daily count for newsletter article views"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaCreatorAnalytics?q=targetEntity\u0026targetEntity=urn%3Ali%3AcontentSeries%3A7084999622758129665\u0026metric=(value:NEWSLETTER_ARTICLE_VIEW)\u0026queryType=(value:DAILY_COUNT)\u0026dateRange=(value:PAST_7_DAYS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Daily count for newsletter article views",
+      "Anchor": "daily-count-for-newsletter-article-views",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Daily count for newsletter article views"
+      ],
+      "Text": "curl -X GET \u0022https://api.linkedin.com/rest/dmaCreatorAnalytics?q=targetEntity\u0026targetEntity=urn%3Ali%3AcontentSeries%3A7084999622758129665\u0026metric=(value:NEWSLETTER_ARTICLE_VIEW)\u0026queryType=(value:DAILY_COUNT)\u0026dateRange=(value:PAST_7_DAYS)\u0022 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 6\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 11,\n                    \u0022day\u0022: 29,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 11,\n                    \u0022day\u0022: 30,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022,\n            \u0022percentageChange\u0022: {\n                \u0022comparedTo\u0022: \u0022PREVIOUS_PERIOD\u0022,\n                \u0022percentage\u0022: -33.3\n            }\n        },\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 20\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 11,\n                    \u0022day\u0022: 30,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 1,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022,\n            \u0022percentageChange\u0022: {\n                \u0022comparedTo\u0022: \u0022PREVIOUS_PERIOD\u0022,\n                \u0022percentage\u0022: 233.3\n            }\n        },\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 7\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 1,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 2,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022,\n            \u0022percentageChange\u0022: {\n                \u0022comparedTo\u0022: \u0022PREVIOUS_PERIOD\u0022,\n                \u0022percentage\u0022: -65.0\n            }\n        },\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 33\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 2,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 3,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022,\n            \u0022percentageChange\u0022: {\n                \u0022comparedTo\u0022: \u0022PREVIOUS_PERIOD\u0022,\n                \u0022percentage\u0022: 371.4\n            }\n        },\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 8\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 3,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022,\n            \u0022percentageChange\u0022: {\n                \u0022comparedTo\u0022: \u0022PREVIOUS_PERIOD\u0022,\n                \u0022percentage\u0022: -75.8\n            }\n        },\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 0\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022,\n            \u0022percentageChange\u0022: {\n                \u0022comparedTo\u0022: \u0022PREVIOUS_PERIOD\u0022,\n                \u0022percentage\u0022: -100.0\n            }\n        },\n        {\n            \u0022targetEntity\u0022: \u0022urn:li:contentSeries:7084999622758129665\u0022,\n            \u0022value\u0022: {\n                \u0022count\u0022: 0\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2023\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 12,\n                    \u0022day\u0022: 6,\n                    \u0022year\u0022: 2023\n                }\n            },\n            \u0022metric\u0022: \u0022NEWSLETTER_ARTICLE_VIEW\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article viewer demographics",
+      "Anchor": "article-viewer-demographics",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Article viewer demographics"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Article viewer demographics",
+      "Anchor": "article-viewer-demographics",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Article viewer demographics"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaCreatorAnalytics?q=targetEntity\u0026targetEntity=urn%3Ali%3Aactivity%3A7095110343118446593\u0026metric=(value:ARTICLE_VIEWER)\u0026queryType=(value:ACTOR_DEMOGRAPHICS)\u0026demographicDimension=(value:ORGANIZATION)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Article viewer demographics",
+      "Anchor": "article-viewer-demographics",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Article viewer demographics"
+      ],
+      "Text": "curl -X GET \u0022https://api.linkedin.com/rest/dmaCreatorAnalytics?q=targetEntity\u0026targetEntity=urn%3Ali%3Aactivity%3A7095110343118446593\u0026metric=(value:ARTICLE_VIEWER)\u0026queryType=(value:ACTOR_DEMOGRAPHICS)\u0026demographicDimension=(value:ORGANIZATION)\u0022 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Creator Analytics for Your Pages Content",
+        "Sample Requests",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022demographicDimension\u0022: {\n                \u0022dimensionType\u0022: \u0022ORGANIZATION\u0022,\n                \u0022dimensionValue\u0022: \u0022urn:li:organization:1337\u0022\n            },\n            \u0022targetEntity\u0022: \u0022urn:li:linkedInArticle:7095110255222607872\u0022,\n            \u0022value\u0022: {\n                \u0022percentage\u0022: 66.7\n            },\n            \u0022metric\u0022: \u0022ARTICLE_VIEWER\u0022\n        },\n        {\n            \u0022demographicDimension\u0022: {\n                \u0022dimensionType\u0022: \u0022ORGANIZATION\u0022,\n                \u0022dimensionValue\u0022: \u0022urn:li:organization:1441\u0022\n            },\n            \u0022targetEntity\u0022: \u0022urn:li:linkedInArticle:7095110255222607872\u0022,\n            \u0022value\u0022: {\n                \u0022percentage\u0022: 22.9\n            },\n            \u0022metric\u0022: \u0022ARTICLE_VIEWER\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics Data Retention",
+      "Anchor": "analytics-data-retention",
+      "SectionPath": [
+        "Analytics Data Retention"
+      ],
+      "Text": "LinkedIn will not store analytics for a long time because of data privacy regulations and data storage costs. The following is the analytics data retention period for different content types that we can guarantee. However it is possible some data may exceed the retention period.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Analytics Data Retention",
+      "Anchor": "analytics-data-retention",
+      "SectionPath": [
+        "Analytics Data Retention"
+      ],
+      "Text": "",
+      "Headers": [
+        "Content Type",
+        "Retention Period"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1 year",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Article",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2 years",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Newsletter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2 years",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS",
+        "ERROR CODE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access token is not valid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the API token is correct",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member doesn\u2019t have permission to view analytics of the entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check member admin permission to the company that owns the entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested entity is not found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check if the targetEntity parameter is correct",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User input error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fix request URL based on the error message",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact LinkedIn",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

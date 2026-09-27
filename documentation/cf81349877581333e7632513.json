@@ -1,0 +1,35 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
+  "Title": "LinkedIn Campaign Management API Use Cases",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/video-ads-usecase"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Campaign Management API Use Cases",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Overview of use cases and basic concepts for LinkedIn API Campaign Management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "Ad Formats",
+        "Training"
+      ],
+      "Text": "Video Ads",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

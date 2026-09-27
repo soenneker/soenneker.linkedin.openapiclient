@@ -1,0 +1,1347 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+  "Title": "Organization Commitment",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/featuredcommitment-taxonomy-versions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Commitment API returns commitment data for organizations (companies, schools, and showcase pages) on LinkedIn. Commitments represent values and causes that organizations publicly support and demonstrate through their actions. Ex: Diversity, Equity \u0026 Inclusion (DEI).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "Commitments are displayed on organization LinkedIn pages under the About section, where companies showcase their dedication to specific values and causes.\nExamples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "Diversity, Equity \u0026 Inclusion (DEI)\nEnvironmental Sustainability\nCareer Growth and Learning\nWork-Life Balance\nSocial Impact",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "Organizations can provide evidence of their commitments through:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "Featured credentials (reports or pledges)\nThird-party certifications (e.g., B Corp membership)\nResources (articles, blog posts, videos)\nPerks and benefits offered to employees\nInternal programs (e.g., mentorship programs)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "This feature has been known by different names across LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "Organization Commitments (current name)\nFeatured Commitments (taxonomy reference)\nCompany Values (informal reference)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "This API does not share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Commitments?",
+      "Anchor": "what-are-commitments",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Commitments?"
+      ],
+      "Text": "Get a single organization\u0027s commitment for a given organization commitment URN.\nBatch Get commitments for the set of organization commitment urns.\nOrganization find all commitments for a given organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to use this API ?",
+        "Prerequisites"
+      ],
+      "Text": "To query organization commitment data, the authenticated user must have one of the following roles on the organization page:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to use this API ?",
+        "Prerequisites"
+      ],
+      "Text": "ADMINISTRATOR\nCONTENT_ADMINISTRATOR",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Step 1: Get Organizations You Can Query",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Before querying commitment data, you need to identify which organizations you have permissions to access. Use the OrganizationAuthorization API\u0027s BATCH_FIND method:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationAuthorization?q=authorizationActionAndAuthenticatedMember\u0026authorizationAction=(organizationProfileAuthorizationAction:(actionType:ORGANIZATION_PROFILE_WRITE))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "This returns a list of organization URNs you have access to. For more information, refer to Organization Authorization .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Step 2: Query Commitments for Your Organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Once you have an organization URN (e.g., urn:li:organization:1234), you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Option A: Find all commitments for an organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationCommitment?q=organization\u0026organization=urn%3Ali%3Aorganization%3A1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Option B: Get specific commitment by URN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "If you have a specific organization commitment URN (e.g., urn:li:organizationCommitment:(urn:li:organization:1234,5)):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationCommitment/urn%3Ali%3AorganizationCommitment%3A%28urn%3Ali%3Aorganization%3A1234%2C5%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Step 3: Resolve Commitment Names",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "The API response includes commitment IDs. To get human-readable commitment names (like \u0022Diversity, Equity \u0026 Inclusion\u0022), extract the commitment ID from the URN and call the Featured Commitment Taxonomy API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeaturedCommitmentTaxonomyVersions/V1_0/dmaFeaturedCommitment/{COMMITMENT_ID}?locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "See Featured Commitment Taxonomy for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "Step 4: Resolve Benefits (if applicable)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "If the commitment response includes perksAndBenefits URNs, resolve them using the Benefits Taxonomy API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step-by-Step Usage Guide",
+      "Anchor": "step-by-step-usage-guide",
+      "SectionPath": [
+        "How to use this API ?",
+        "Step-by-Step Usage Guide"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaBenefitTaxonomyVersions/V1_0/dmaBenefit/{BENEFIT_ID}?locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Commitment Example",
+      "Anchor": "organizational-commitment-example",
+      "SectionPath": [
+        "How to use this API ?",
+        "Organizational Commitment Example"
+      ],
+      "Text": "Refer to the following image for an example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to use this API ?",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to use this API ?",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to use this API ?",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to use this API ?",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Member Data Obfuscation\nThis DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to use this API ?",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for a commitment of an organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of the organization commitment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if this commitment is active. When active is true, commitment is visible in the member view, which means a LinkedIn member is able to see the commitments on a organization\u0027s page. When active is false, commitment is hidden from the member view. (In admin view, commitments are editable. In member view, it is read only.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredCredential",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of [report: ProofDetails, pledge: ProofDetails]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Featured credential (report or pledge) is a proof for commitment. External or internal URL is supported. Organizations can present either report or pledge as a proof (whichever available, not both)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "certificationsAndPledges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of ProofDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certification and pledges are proof for commitment. External or internal URLs supported. Ex: Third party credentials such as B Corp membership indicating proof of the commitment \u0027Diversity, Equity \u0026 Inclusion (DEI)\u0027.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of ProofDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resources are proof for commitment. External or internal URLs supported. Ex: articles, blog posts, organization pages, videos, podcasts,etc indicating proofs to the commitment \u0027Diversity, Equity \u0026 Inclusion (DEI)\u0027.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "perksAndBenefits",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of URNs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Array of perks and benefits are proof for commitment. Subset of the existing benefits taxonomy. Ex: Work from home benefit indicating the proof to the commitment \u0027Work Life Balance\u0027.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "programs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Programs (comma separated text) are proof for commitment. Ex: Details about Quarterly Mentorship Program, Internal Rotation ...etc indicating proofs to the commitment \u0027Career Growth and Learning\u0027.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "displayOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Order in which to display the commitment. It is internally inferred/mapped number used for commitments display order",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "isQuality",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether a commitment is measured as quality by current Data Science definitions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the creation of this resource, association, or sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the deletion of this resource, association, or sub-resource. The deleted timestamp must be later than the creation timestamp. Note: It may or may not match the lastModified timestamp, depending on the semantics of the resource, association, or sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the last modification of this resource, association, or sub-resource. Note: If no modification has happened since creation, lastModified should be the same as created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ProofDetails",
+      "Anchor": "proofdetails",
+      "SectionPath": [
+        "How to use this API ?",
+        "Permissions",
+        "ProofDetails"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ingestedContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "This field represents a stored ingested content record for an URL. This field is present if the URL content was successfully ingested. ingestedContent is editable only by an internal system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url of the external content provided by the organization. The contentUrl is editable by admin user. Ex: bcorp.net/yourorganization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Name of the URL or description of the proof explicitly provided by the organization Ex: Oustia\u0027s Green Seal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Commitment URNs",
+      "Anchor": "organization-commitment-urns",
+      "SectionPath": [
+        "Organization Commitment URNs"
+      ],
+      "Text": "An organizationCommitmentUrn is a composite URN constructed using the commitment ID and the URN of the organization this commitment belongs to.\nFor example, a commitment with an ID of 5 for organization URN urn:li:organization:1234 would look like urn:li:organizationCommitment:(urn:li:organization:1234,5).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Commitment URNs",
+      "Anchor": "organization-commitment-urns",
+      "SectionPath": [
+        "Organization Commitment URNs"
+      ],
+      "Text": "To get commitments data like name, description etc call partnerApiDmaFeaturedCommitment endpoint with relevant commitment ID.\nCommitment ID can be extracted from OrganizationCommitmentUrn (see example above).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefit URNs",
+      "Anchor": "benefit-urns",
+      "SectionPath": [
+        "Benefit URNs"
+      ],
+      "Text": "To get benefits data like name, description etc call partnerApiDmaBenefits endpoint with relevant benefit ID extracted from BenefitUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefit URNs",
+      "Anchor": "benefit-urns",
+      "SectionPath": [
+        "Benefit URNs"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefit URNs",
+      "Anchor": "benefit-urns",
+      "SectionPath": [
+        "Benefit URNs"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of OrganizationProfileAuthorizationActionType.ORGANIZATION_PROFILE_WRITE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_URN} must be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "GET"
+      ],
+      "Text": "An organizationCommitmentUrn is a composite URN constructed using a commitment ID (can be extracted from FeaturedCommitmentUrn) and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationCommitment/{ORGANIZATION_COMMITMENT_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationCommitment/dmaOrganizationCommitment/urn%3Ali%3AorganizationCommitment%3A%28urn%3Ali%3Aorganization%3A1234%2C5%29\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022active\u0022 : true,\n   \u0022certificationsAndPledges\u0022 : [],\n   \u0022created\u0022 : {\n      \u0022time\u0022 : 1660937256874\n   },\n   \u0022description\u0022 : {\n      \u0022localized\u0022 : {\n         \u0022en_US\u0022 : \u0022Transformation is a key component of our culture.\u0022\n      },\n      \u0022preferredLocale\u0022 : {\n         \u0022country\u0022 : \u0022US\u0022,\n         \u0022extensions\u0022 : {},\n         \u0022language\u0022 : \u0022en\u0022,\n         \u0022script\u0022 : \u0022null\u0022,\n         \u0022variant\u0022 : \u0022null\u0022\n      }\n   },\n   \u0022isQuality\u0022 : true,\n   \u0022key\u0022 : \u0022urn:li:organizationCommitment:(urn:li:organization:1234,5)\u0022,\n   \u0022lastModified\u0022 : {\n      \u0022time\u0022 : 1698867204939\n   },\n   \u0022perksAndBenefits\u0022 : [],\n   \u0022programs\u0022 : {\n      \u0022localized\u0022 : {\n         \u0022en_US\u0022 : \u0022Mentorship, Career Week\u0022\n      },\n      \u0022preferredLocale\u0022 : {\n         \u0022country\u0022 : \u0022US\u0022,\n         \u0022extensions\u0022 : {},\n         \u0022language\u0022 : \u0022en\u0022,\n         \u0022script\u0022 : \u0022null\u0022,\n         \u0022variant\u0022 : \u0022null\u0022\n      }\n   },\n   \u0022resources\u0022 : [\n      {\n         \u0022contentUrl\u0022 : \u0022https://business.abc.com/talent-solutions/global-talent-trends\u0022,\n         \u0022created\u0022 : {\n            \u0022time\u0022 : 1698867204939\n         },\n         \u0022ingestedContent\u0022 : \u0022urn:li:ingestedContent:1234596312345119999\u0022,\n         \u0022lastModified\u0022 : {\n            \u0022time\u0022 : 1698867204939\n         }\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "BATCH_GET"
+      ],
+      "Text": "An organizationCommitmentUrn is a composite URN constructed using a commitment ID (can be extracted from FeaturedCommitmentUrn) and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationCommitment?ids=List(id_1,id_2,id_3)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationCommitment?ids=List(urn%3Ali%3AorganizationCommitment%3A%28urn%3Ali%3Aorganization%3A1234%2C1%29,urn%3Ali%3AorganizationCommitment%3A%28urn%3Ali%3Aorganization%3A1234%2C2%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022errors\u0022 : {},\n   \u0022results\u0022 : {\n      \u0022urn:li:organizationCommitment:(urn:li:organization:1234,1)\u0022 : {\n         \u0022active\u0022 : true,\n         \u0022certificationsAndPledges\u0022 : [],\n         \u0022created\u0022 : {\n            \u0022time\u0022 : 1660937256880\n         },\n         \u0022description\u0022 : {\n            \u0022localized\u0022 : {\n               \u0022en_US\u0022 : \u0022Our commitment to Diversity, Inclusion \u0026 Belonging (DIBs) is about creating an inclusive environment for all employees globally.\u0022\n            },\n            \u0022preferredLocale\u0022 : {\n               \u0022country\u0022 : \u0022US\u0022,\n               \u0022extensions\u0022 : {},\n               \u0022language\u0022 : \u0022en\u0022,\n               \u0022script\u0022 : \u0022null\u0022,\n               \u0022variant\u0022 : \u0022null\u0022\n            }\n         },\n         \u0022featuredCredential\u0022 : {\n            \u0022report\u0022 : {\n               \u0022contentUrl\u0022 : \u0022https://news.abc.com/en-us/2022/october/2022-workforce-diversity-report\u0022,\n               \u0022created\u0022 : {\n                  \u0022time\u0022 : 1674061191665\n               },\n               \u0022ingestedContent\u0022 : \u0022urn:li:ingestedContent:12388882707000\u0022,\n               \u0022lastModified\u0022 : {\n                  \u0022time\u0022 : 1674061191665\n               }\n            }\n         },\n         \u0022isQuality\u0022 : true,\n         \u0022key\u0022 : \u0022urn:li:organizationCommitment:(urn:li:organization:1234,1)\u0022,\n         \u0022lastModified\u0022 : {\n            \u0022time\u0022 : 1674061191665\n         },\n         \u0022perksAndBenefits\u0022 : [],\n         \u0022resources\u0022 : [\n            {\n               \u0022contentUrl\u0022 : \u0022https://www.forbes.com/best-employers-women/#69c9fb6d7de9\u0022,\n               \u0022created\u0022 : {\n                  \u0022time\u0022 : 1674061191665\n               },\n               \u0022ingestedContent\u0022 : \u0022urn:li:ingestedContent:800028123456\u0022,\n               \u0022lastModified\u0022 : {\n                  \u0022time\u0022 : 1674061191665\n               }\n            }\n         ]\n      },\n      \u0022urn:li:organizationCommitment:(urn:li:organization:1234,2)\u0022 : {\n         \u0022active\u0022 : true,\n         \u0022certificationsAndPledges\u0022 : [\n            {\n               \u0022contentUrl\u0022 : \u0022https://www.abc.com/posts/diversity-pledge\u0022,\n               \u0022created\u0022 : {\n                  \u0022time\u0022 : 1698867204939\n               },\n               \u0022description\u0022 : {\n                  \u0022localized\u0022 : {\n                     \u0022en_US\u0022 : \u0022Biodiversity Pledge\u0022\n                  },\n                  \u0022preferredLocale\u0022 : {\n                     \u0022country\u0022 : \u0022US\u0022,\n                     \u0022extensions\u0022 : {},\n                     \u0022language\u0022 : \u0022en\u0022,\n                     \u0022script\u0022 : \u0022null\u0022,\n                     \u0022variant\u0022 : \u0022null\u0022\n                  }\n               },\n               \u0022lastModified\u0022 : {\n                  \u0022time\u0022 : 1698867204939\n               }\n            }\n         ],\n         \u0022created\u0022 : {\n            \u0022time\u0022 : 1660937256875\n         },\n         \u0022description\u0022 : {\n            \u0022localized\u0022 : {\n               \u0022en_US\u0022 : \u0022Our company has public, time-bound commitments to become carbon negative, water positive, and zero waste in our operations by 2030.\u0022\n            },\n            \u0022preferredLocale\u0022 : {\n               \u0022country\u0022 : \u0022US\u0022,\n               \u0022extensions\u0022 : {},\n               \u0022language\u0022 : \u0022en\u0022,\n               \u0022script\u0022 : \u0022null\u0022,\n               \u0022variant\u0022 : \u0022null\u0022\n            }\n         },\n         \u0022featuredCredential\u0022 : {\n            \u0022report\u0022 : {\n               \u0022contentUrl\u0022 : \u0022https://socialimpact.abc.com/environmental-sustainability\u0022,\n               \u0022created\u0022 : {\n                  \u0022time\u0022 : 1698867204939\n               },\n               \u0022ingestedContent\u0022 : \u0022urn:li:ingestedContent:88189231151905\u0022,\n               \u0022lastModified\u0022 : {\n                  \u0022time\u0022 : 1698867204939\n               }\n            }\n         },\n         \u0022isQuality\u0022 : true,\n         \u0022key\u0022 : \u0022urn:li:organizationCommitment:(urn:li:organization:1234,2)\u0022,\n         \u0022lastModified\u0022 : {\n            \u0022time\u0022 : 1698867204939\n         },\n         \u0022perksAndBenefits\u0022 : [],\n         \u0022resources\u0022 : [\n            {\n               \u0022contentUrl\u0022 : \u0022https://socialimpact.abc.com/en-us/cx\u0022,\n               \u0022created\u0022 : {\n                  \u0022time\u0022 : 1698867204939\n               },\n               \u0022ingestedContent\u0022 : \u0022urn:li:ingestedContent:7465417311217603839\u0022,\n               \u0022lastModified\u0022 : {\n                  \u0022time\u0022 : 1698867204939\n               }\n            }\n         ]\n      }\n   },\n   \u0022statuses\u0022 : {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "BATCH_GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of organization commitment urns to query for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(urn%3Ali%3AorganizationCommitment%3A%28urn%3Ali%3Aorganization%3A1234%2C1%29,urn%3Ali%3AorganizationCommitment%3A%28urn%3Ali%3Aorganization%3A1234%2C2%29)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationCommitment?q=organization\u0026organization=encoded {ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationCommitment?q=organization\u0026organization=urn%3Ali%3Aorganization%3A1\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022 : [\n     {\n       \u0022active\u0022 : true,\n       \u0022certificationsAndPledges\u0022 : [],\n       \u0022created\u0022 : {\n         \u0022time\u0022 : 1660937256874\n       },\n       \u0022description\u0022 : {\n         \u0022localized\u0022 : {\n           \u0022en_US\u0022 : \u0022Transformation is a key component of our culture.\u0022\n         },\n         \u0022preferredLocale\u0022 : {\n           \u0022country\u0022 : \u0022US\u0022,\n           \u0022extensions\u0022 : {},\n           \u0022language\u0022 : \u0022en\u0022,\n           \u0022script\u0022 : \u0022null\u0022,\n           \u0022variant\u0022 : \u0022null\u0022\n         }\n       },\n       \u0022isQuality\u0022 : true,\n       \u0022key\u0022 : \u0022urn:li:organizationCommitment:(urn:li:organization:1234,5)\u0022,\n       \u0022lastModified\u0022 : {\n         \u0022time\u0022 : 1698867204939\n       },\n       \u0022perksAndBenefits\u0022 : [],\n       \u0022programs\u0022 : {\n         \u0022localized\u0022 : {\n           \u0022en_US\u0022 : \u0022Mentorship, Career Week\u0022\n         },\n         \u0022preferredLocale\u0022 : {\n           \u0022country\u0022 : \u0022US\u0022,\n           \u0022extensions\u0022 : {},\n           \u0022language\u0022 : \u0022en\u0022,\n           \u0022script\u0022 : \u0022null\u0022,\n           \u0022variant\u0022 : \u0022null\u0022\n         }\n       },\n       \u0022resources\u0022 : [\n         {\n           \u0022contentUrl\u0022 : \u0022https://business.abc.com/talent-solutions/global-talent-trends\u0022,\n           \u0022created\u0022 : {\n             \u0022time\u0022 : 1698867204939\n           },\n           \u0022ingestedContent\u0022 : \u0022urn:li:ingestedContent:1234596312345119999\u0022,\n           \u0022lastModified\u0022 : {\n             \u0022time\u0022 : 1698867204939\n           }\n         }\n       ]\n     }\n   ],\n   \u0022paging\u0022 : {\n     \u0022count\u0022 : 1,\n     \u0022links\u0022 : [],\n     \u0022start\u0022 : 0,\n     \u0022total\u0022 : 1\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Commitments",
+        "Organization",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization urn to find commitments for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A1",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

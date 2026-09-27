@@ -1,0 +1,104 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+  "Title": "People Compliance Events",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/marketplace-provider-schema"
+  ],
+  "Blocks": [
+    {
+      "Kind": "code",
+      "Section": "People Activity - First Name Edit",
+      "Anchor": "people-activity---first-name-edit",
+      "SectionPath": [
+        "People Activity - First Name Edit"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bob\u0022\n            }\n        }\n    }, \n    \u0022activityId\u0022: \u002212356788990000\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n    \u0022actor~\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bob\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Engineer\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Smith\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }\n    }, \n    \u0022capturedAt\u0022: 1489510349698, \n    \u0022configVersion\u0022: 4, \n    \u0022id\u0022: 425180, \n    \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n    \u0022owner~\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bob\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Engineer\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Smith\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }\n    }, \n    \u0022processedActivity\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bob\u0022\n            }\n        }\n    }, \n    \u0022processedAt\u0022: 1489510364841, \n    \u0022resourceName\u0022: \u0022people\u0022, \n    \u0022resourceUri\u0022: \u0022/people/id=KPA1hpZ1yM\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "People Activity - Add a Language (sub-resource)",
+      "Anchor": "people-activity---add-a-language-sub-resource",
+      "SectionPath": [
+        "People Activity - Add a Language (sub-resource)"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022created\u0022: 1489510372136, \n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Spanish\u0022\n            }\n        }, \n        \u0022proficiency\u0022: \u0022PROFESSIONAL_WORKING\u0022\n    }, \n    \u0022activityId\u0022: \u002212356788990000\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n    \u0022actor~\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bob\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Engineer\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Smith\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }\n    }, \n    \u0022capturedAt\u0022: 1489510372367, \n    \u0022configVersion\u0022: 1, \n    \u0022id\u0022: 425196, \n    \u0022method\u0022: \u0022CREATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n    \u0022owner~\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Bob\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Engineer\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }, \n        \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Smith\u0022\n            }, \n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022, \n                \u0022language\u0022: \u0022en\u0022\n            }\n        }\n    }, \n    \u0022processedActivity\u0022: {\n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Spanish\u0022\n            }\n        }, \n        \u0022proficiency\u0022: \u0022PROFESSIONAL_WORKING\u0022\n    }, \n    \u0022processedAt\u0022: 1489510376557, \n    \u0022resourceName\u0022: \u0022people/languages\u0022, \n    \u0022resourceUri\u0022: \u0022/people/id=KPA1hpZ1yM/languages/1304204746\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Providing Services",
+      "Anchor": "providing-services",
+      "SectionPath": [
+        "Providing Services"
+      ],
+      "Text": "The identity of the resourceName is marketplacePlatformProviders. Currently, this resource appears when the member publishes, edits, or unpublishes the Providing Service(s) on their profile. The methods currently available are: CREATE and PARTIAL_UPDATE. An initial creation of the Providing Service will result in CREATE whereas any subsequent edits, including unpublishing and re-publishing, will be a PARTIAL_UPDATE. Please see the Marketplace Provider schema for more information. See examples below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Providing Service Activity - Create a Providing Service",
+      "Anchor": "providing-service-activity---create-a-providing-service",
+      "SectionPath": [
+        "Providing Service Activity - Create a Providing Service"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u0022(marketplaceType:SERVICE_MARKETPLACE,provider:urn:li:person:2qXA98-mVk)\u0022,\n  \u0022activity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022servicesPageStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022serviceProviderSkills\u0022: {\n          \u0022serviceSkills\u0022: [\n            \u0022urn:li:skill:50342\u0022\n          ]\n        },\n        \u0022servicesDescription\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022This is an API service description\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022optedIntoOpenToExperience\u0022: true,\n        \u0022optedIntoOpenToExperienceAt\u0022: 1615591223446,\n        \u0022availableToWorkRemotely\u0022: true,\n        \u0022profileLocationSelected\u0022: true\n      }\n    },\n    \u0022provider\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022marketplaceType\u0022: \u0022SERVICE_MARKETPLACE\u0022,\n    \u0022status\u0022: \u0022ACTIVE\u0022\n  },\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022configVersion\u0022: 3,\n  \u0022resourceName\u0022: \u0022marketplacePlatformProviders\u0022,\n  \u0022resourceUri\u0022: \u0022/marketplacePlatformProviders/($params:(),marketplaceType:SERVICE_MARKETPLACE,provider:urn:li:person:2qXA98-mVk)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022e38443c4-9045-4413-aac6-29a3656645a0\u0022,\n  \u0022processedAt\u0022: 1615591254082,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1615591223805,\n  \u0022processedActivity\u0022: {\n    \u0022provider\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022provider~\u0022: {...},\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022servicesPageStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022serviceProviderSkills\u0022: {\n          \u0022serviceSkills\u0022: [\n            \u0022urn:li:skill:50342\u0022\n          ],\n          \u0022serviceSkills~\u0022: [\n            {\n              \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022standardizedName\u0022: \u0022IT Consulting\u0022,\n              \u0022id\u0022: 50342\n            }\n          ]\n        },\n        \u0022servicesDescription\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022This is an API service description\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022optedIntoOpenToExperience\u0022: true,\n        \u0022optedIntoOpenToExperienceAt\u0022: 1615591223446,\n        \u0022availableToWorkRemotely\u0022: true,\n        \u0022profileLocationSelected\u0022: true\n      }\n    },\n    \u0022marketplaceType\u0022: \u0022SERVICE_MARKETPLACE\u0022\n  },\n  \u0022id\u0022: 2130989972\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Providing Service Activity - Add a Providing Service",
+      "Anchor": "providing-service-activity---add-a-providing-service",
+      "SectionPath": [
+        "Providing Service Activity - Add a Providing Service"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u0022marketplaceType=SERVICE_MARKETPLACE\u0026provider=urn:li:person:2qXA98-mVk\u0022,\n  \u0022activity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022servicesDescription\u0022: {\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022serviceProviderSkills\u0022: {\n          \u0022serviceSkills\u0022: [\n            \u0022urn:li:skill:50342\u0022,\n            \u0022urn:li:skill:1794\u0022\n          ]\n        }\n      }\n    }\n  },\n  \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022,\n  \u0022configVersion\u0022: 3,\n  \u0022resourceName\u0022: \u0022marketplacePlatformProviders\u0022,\n  \u0022resourceUri\u0022: \u0022/marketplacePlatformProviders/($params:(),marketplaceType:SERVICE_MARKETPLACE,provider:urn:li:person:2qXA98-mVk)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u002212c7e1c8-c989-4e9d-b329-39f329bf2569\u0022,\n  \u0022processedAt\u0022: 1615591401894,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1615591371622,\n  \u0022processedActivity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022servicesDescription\u0022: {\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022serviceProviderSkills\u0022: {\n          \u0022serviceSkills\u0022: [\n            \u0022urn:li:skill:50342\u0022,\n            \u0022urn:li:skill:1794\u0022\n          ],\n          \u0022serviceSkills~\u0022: [\n            {\n              \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022standardizedName\u0022: \u0022IT Consulting\u0022,\n              \u0022id\u0022: 50342\n            },\n            {\n              \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022standardizedName\u0022: \u0022Computer Repair\u0022,\n              \u0022id\u0022: 1794\n            }\n          ]\n        }\n      }\n    }\n  },\n  \u0022id\u0022: 2130990044\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Providing Service Activity - Unpublish Providing Service",
+      "Anchor": "providing-service-activity---unpublish-providing-service",
+      "SectionPath": [
+        "Providing Service Activity - Unpublish Providing Service"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u0022marketplaceType=SERVICE_MARKETPLACE\u0026provider=urn:li:person:2qXA98-mVk\u0022,\n  \u0022activity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022optedIntoOpenToExperience\u0022: false,\n        \u0022servicesPageStatus\u0022: \u0022UNPUBLISHED\u0022\n      }\n    }\n  },\n  \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022,\n  \u0022configVersion\u0022: 3,\n  \u0022resourceName\u0022: \u0022marketplacePlatformProviders\u0022,\n  \u0022resourceUri\u0022: \u0022/marketplacePlatformProviders/($params:(),marketplaceType:SERVICE_MARKETPLACE,provider:urn:li:person:2qXA98-mVk)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u002207df254c-9eb0-44c0-951f-26c94caf47a8\u0022,\n  \u0022processedAt\u0022: 1615591466838,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1615591436665,\n  \u0022processedActivity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022optedIntoOpenToExperience\u0022: false,\n        \u0022servicesPageStatus\u0022: \u0022UNPUBLISHED\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 2130990092\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Providing Service Activity - Publish a Providing Service after unpublish",
+      "Anchor": "providing-service-activity---publish-a-providing-service-after-unpublish",
+      "SectionPath": [
+        "Providing Service Activity - Publish a Providing Service after unpublish"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u0022marketplaceType=SERVICE_MARKETPLACE\u0026provider=urn:li:person:2qXA98-mVk\u0022,\n  \u0022activity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022servicesPageStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022serviceProviderSkills\u0022: {\n          \u0022serviceSkills\u0022: [\n            \u0022urn:li:skill:38164\u0022\n          ]\n        },\n        \u0022optedIntoOpenToExperience\u0022: true\n      }\n    }\n  },\n  \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022,\n  \u0022configVersion\u0022: 3,\n  \u0022resourceName\u0022: \u0022marketplacePlatformProviders\u0022,\n  \u0022resourceUri\u0022: \u0022/marketplacePlatformProviders/($params:(),marketplaceType:SERVICE_MARKETPLACE,provider:urn:li:person:2qXA98-mVk)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022560c7951-d19c-431a-91ff-7b8774b69c1c\u0022,\n  \u0022processedAt\u0022: 1615591542616,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1615591512519,\n  \u0022processedActivity\u0022: {\n    \u0022preferences\u0022: {\n      \u0022com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences\u0022: {\n        \u0022servicesPageStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022serviceProviderSkills\u0022: {\n          \u0022serviceSkills\u0022: [\n            \u0022urn:li:skill:38164\u0022\n          ],\n          \u0022serviceSkills~\u0022: [\n            {\n              \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022standardizedName\u0022: \u0022Backup \u0026 Recovery Systems\u0022,\n              \u0022id\u0022: 38164\n            }\n          ]\n        },\n        \u0022optedIntoOpenToExperience\u0022: true\n      }\n    }\n  },\n  \u0022id\u0022: 2130990148\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

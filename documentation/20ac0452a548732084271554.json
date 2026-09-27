@@ -1,0 +1,46 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+  "Title": "Endorsement",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Endorsement",
+      "Anchor": "endorsement",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is endorsement. Currently, this resource captures all endorsements the member gives. An endorsement is shown on the member\u0027s profile page where there is a set of featured skills and your connections can endorse you for those set of skills. See examples below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endorsement Activity - Endorse a skill",
+      "Anchor": "endorsement-activity---endorse-a-skill",
+      "SectionPath": [
+        "Endorsement Activity - Endorse a skill"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022owner~\u0022: {\n    \u0022firstName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Bob\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022lastName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Smith\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022headline\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Software Engineer\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    }\n  },\n  \u0022configVersion\u0022: 2,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022item\u0022: {\n      \u0022nonStandardEntity\u0022: {\n        \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n        \u0022entityPhrase\u0022: \u0022Node.js\u0022\n      }\n    },\n    \u0022endorser\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022recipient\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n    \u0022location\u0022: \u0022neptune-skills-section\u0022,\n    \u0022status\u0022: \u0022ACCEPTED\u0022\n  },\n  \u0022actor~\u0022: {\n    \u0022firstName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Bob\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022lastName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Smith\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022headline\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Staff Software Engineer\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    }\n  },\n  \u0022resourceName\u0022: \u0022endorsement\u0022,\n  \u0022resourceUri\u0022: \u0022/endorsement/urn:li:endorsement:(urn:li:person:V9W_L_bioc,65761962366)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022processedAt\u0022: 1489511042014,\n  \u0022capturedAt\u0022: 1489511033748,\n  \u0022processedActivity\u0022: {\n    \u0022item\u0022: {\n      \u0022nonStandardEntity\u0022: {\n        \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n        \u0022entityPhrase\u0022: \u0022Node.js\u0022\n      }\n    },\n    \u0022endorser\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022recipient\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n    \u0022recipient~\u0022: {\n      \u0022firstName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022John\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022lastName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Smith\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022headline\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Partner Engineer at LinkedIn\u0022,\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      }\n    },\n    \u0022endorser~\u0022: {\n      \u0022firstName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Bob\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022lastName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Smith\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022headline\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Software Engineer\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      }\n    },\n    \u0022location\u0022: \u0022neptune-skills-section\u0022,\n    \u0022status\u0022: \u0022ACCEPTED\u0022\n  },\n  \u0022id\u0022: 425820,\n  \u0022activityId\u0022: \u002212356788990000\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

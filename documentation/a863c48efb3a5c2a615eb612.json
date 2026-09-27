@@ -1,0 +1,626 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+  "Title": "Accounts Module References",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Accounts Module References",
+      "Anchor": "accounts-module-references",
+      "SectionPath": [],
+      "Text": "This guide contains a description of the content featured in all components and recommended sizes for various layouts. Descriptions for how to instantiate these components can be found in the Embedding the Iframe documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accounts Module References",
+      "Anchor": "accounts-module-references",
+      "SectionPath": [],
+      "Text": "Below you will find descriptions of the main functionality for a given component. For all components, if a strong match is not found for a given set of query parameters, the user will land on a search results page (the matching page) where they can further refine their search or enter new search terms. After a match is selected, the UI will display the component requested.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accounts Module References",
+      "Anchor": "accounts-module-references",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accounts Module References",
+      "Anchor": "accounts-module-references",
+      "SectionPath": [],
+      "Text": "Due to limitations of the content width displayed here, some recommended sizes are wider than the width allowed on this page. Screenshots larger than the allowed width are presented but scaled down in size, though the aspect ratio remains consistent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Inline Mode",
+      "Anchor": "inline-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Inline Mode"
+      ],
+      "Text": "",
+      "Headers": [
+        "Module",
+        "1-Column Thumbnail",
+        "2-Column Thumbnail",
+        "1-Column Small",
+        "2-Column Small"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Top Card",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 265 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Recommended Leads [Deprecated]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 230 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 230 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Connections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 230 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 230 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "News",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 x 155 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "625 x 155 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Mode",
+      "Anchor": "inline-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Inline Mode"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Mode",
+      "Anchor": "inline-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Inline Mode"
+      ],
+      "Text": "Recommended sizing has been updated for classic mode. Find People is not supported in Inline mode and should only be implemented in Classic mode.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Classic Mode",
+      "Anchor": "classic-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Classic Mode"
+      ],
+      "Text": "Modules presented in classic mode are responsive and can be best viewed at the following sizes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Classic Mode",
+      "Anchor": "classic-mode",
+      "SectionPath": [
+        "Recommended Sizes",
+        "Classic Mode"
+      ],
+      "Text": "",
+      "Headers": [
+        "Width \u0026 Height",
+        "1-Column Small",
+        "1-Column Medium",
+        "1-Column Large",
+        "2-Column Medium",
+        "3-Column Medium"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Min Width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "380 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "380 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "944 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1010 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Max Width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "480 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "944 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1010 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1300 px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "405 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "870 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "610 px",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "610 px",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "From the Top Card, users can save an account, view the account in Sales Navigator, and view the company\u0027s employees in Sales Navigator.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Top Card",
+      "Anchor": "top-card",
+      "SectionPath": [
+        "Top Card"
+      ],
+      "Text": "Top Card, 1-Column Medium, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connections",
+      "Anchor": "connections",
+      "SectionPath": [
+        "Connections"
+      ],
+      "Text": "The Connections component presents a list of the user\u0027s current 1st and 2nd degree connections at the selected company. This component enables a sales professional to identify valuable connections within their network who may be able to help them reach potential leads within the company.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connections",
+      "Anchor": "connections",
+      "SectionPath": [
+        "Connections"
+      ],
+      "Text": "Connections, 1-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connections",
+      "Anchor": "connections",
+      "SectionPath": [
+        "Connections"
+      ],
+      "Text": "Connections, 2-Column Small, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "News",
+      "Anchor": "news",
+      "SectionPath": [
+        "News"
+      ],
+      "Text": "The News component allows sales professionals to stay up-to-date on a company\u0027s developments by offering a list of shares published on the company\u0027s page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "News",
+      "Anchor": "news",
+      "SectionPath": [
+        "News"
+      ],
+      "Text": "News, 1-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "News",
+      "Anchor": "news",
+      "SectionPath": [
+        "News"
+      ],
+      "Text": "News, 2-Column Thumbnail, Inline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find People",
+      "Anchor": "find-people",
+      "SectionPath": [
+        "Find People"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find People",
+      "Anchor": "find-people",
+      "SectionPath": [
+        "Find People"
+      ],
+      "Text": "Module parameter for the Find People features is FindPeople",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find People",
+      "Anchor": "find-people",
+      "SectionPath": [
+        "Find People"
+      ],
+      "Text": "Find People allows a user to find people based on personas.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find People",
+      "Anchor": "find-people",
+      "SectionPath": [
+        "Find People"
+      ],
+      "Text": "Find People, 1-Column Small, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find People",
+      "Anchor": "find-people",
+      "SectionPath": [
+        "Find People"
+      ],
+      "Text": "Find People, 2-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Module parameter for the Relationship Map feature is Maps.\nWhen the new parameter \u0022crmInstanceType\u0022 comes with the value of \u0022DEV\u0022, you will see \u0060Dev Mode\u0027 in the bottom right corner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Relationship Map, 1-Column Large, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Relationship Map, 1-Column Small, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Relationship Map, 1-Column Large, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Relationship Map, 2-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Relationship Map",
+      "Anchor": "relationship-map",
+      "SectionPath": [
+        "Relationship Map"
+      ],
+      "Text": "Relationship Map, 3-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account IQ",
+      "Anchor": "account-iq",
+      "SectionPath": [
+        "Account IQ"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account IQ",
+      "Anchor": "account-iq",
+      "SectionPath": [
+        "Account IQ"
+      ],
+      "Text": "AccountIQ is enabled by default for those who are onboarded for new Embedded experience as part of \u0022TopCard\u0022 module.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account IQ",
+      "Anchor": "account-iq",
+      "SectionPath": [
+        "Account IQ"
+      ],
+      "Text": "Account IQ, 1-Column Small, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account IQ",
+      "Anchor": "account-iq",
+      "SectionPath": [
+        "Account IQ"
+      ],
+      "Text": "Account IQ, 1-Column Large, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account IQ",
+      "Anchor": "account-iq",
+      "SectionPath": [
+        "Account IQ"
+      ],
+      "Text": "Account IQ, 2-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account IQ",
+      "Anchor": "account-iq",
+      "SectionPath": [
+        "Account IQ"
+      ],
+      "Text": "Account IQ, 3-Column Medium, Classic",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

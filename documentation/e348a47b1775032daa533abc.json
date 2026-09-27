@@ -1,0 +1,230 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+  "Title": "Self-Serve v1 to v2 API Migration Frequently Asked Questions",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "All new applications created on the LinkedIn Developer Platform as of January 14, 2019 can use LinkedIn\u0027s v2 APIs. Starting May 1, 2019, LinkedIn will deprecate use of its v1 APIs. If your developer application currently depends on LinkedIn v1 APIs, see the frequently asked questions below before migrating to LinkedIn v2 APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does my developer application have access to the LinkedIn v2 API?",
+      "Anchor": "does-my-developer-application-have-access-to-the-linkedin-v2-api",
+      "SectionPath": [
+        "Overview",
+        "Does my developer application have access to the LinkedIn v2 API?"
+      ],
+      "Text": "All developer applications created on the LinkedIn Developer Portal after January 14, 2019 have access to the LinkedIn v2 API by default. Alternatively, if your developer application has made a successful LinkedIn v1 API request from September 1, 2018 to December 17, 2018, your developer application has immediate access to the v2 API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions do I have access to?",
+      "Anchor": "what-permissions-do-i-have-access-to",
+      "SectionPath": [
+        "Overview",
+        "What permissions do I have access to?"
+      ],
+      "Text": "LinkedIn v1 APIs provided the following set of permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions do I have access to?",
+      "Anchor": "what-permissions-do-i-have-access-to",
+      "SectionPath": [
+        "Overview",
+        "What permissions do I have access to?"
+      ],
+      "Text": "r_basicprofile\nr_emailaddress\nw_share\nrw_company_admin",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions do I have access to?",
+      "Anchor": "what-permissions-do-i-have-access-to",
+      "SectionPath": [
+        "Overview",
+        "What permissions do I have access to?"
+      ],
+      "Text": "Moving forward, the available v2 APIs include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions do I have access to?",
+      "Anchor": "what-permissions-do-i-have-access-to",
+      "SectionPath": [
+        "Overview",
+        "What permissions do I have access to?"
+      ],
+      "Text": "r_liteprofile (replaces r_basicprofile)\nr_emailaddress\nw_member_social (replaces w_share)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions do I have access to?",
+      "Anchor": "what-permissions-do-i-have-access-to",
+      "SectionPath": [
+        "Overview",
+        "What permissions do I have access to?"
+      ],
+      "Text": "Looking to maintain access to rw_company_admin? Apply to the LinkedIn Marketing API Program to continue managing your Company Pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the main differences with the new Sign In with LinkedIn?",
+      "Anchor": "what-are-the-main-differences-with-the-new-sign-in-with-linkedin",
+      "SectionPath": [
+        "Overview",
+        "What are the main differences with the new Sign In with LinkedIn?"
+      ],
+      "Text": "With Sign In with LinkedIn, developer applications have access to a member\u0027s Basic Profile. In the interest of providing members with greater control over their data, Sign In with LinkedIn using OpenID Connect returns only the critical pieces of member data necessary for identification. The v2 API permits usage of the Lite Profile consisting of a member\u0027s id, first name, last name, and profile picture.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the main differences with the new Sign In with LinkedIn?",
+      "Anchor": "what-are-the-main-differences-with-the-new-sign-in-with-linkedin",
+      "SectionPath": [
+        "Overview",
+        "What are the main differences with the new Sign In with LinkedIn?"
+      ],
+      "Text": "A request to retrieve the member profile in v1 may resemble",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "What are the main differences with the new Sign In with LinkedIn?",
+      "Anchor": "what-are-the-main-differences-with-the-new-sign-in-with-linkedin",
+      "SectionPath": [
+        "Overview",
+        "What are the main differences with the new Sign In with LinkedIn?"
+      ],
+      "Text": "GET https://api.linkedin.com/v1/people/~",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the main differences with the new Sign In with LinkedIn?",
+      "Anchor": "what-are-the-main-differences-with-the-new-sign-in-with-linkedin",
+      "SectionPath": [
+        "Overview",
+        "What are the main differences with the new Sign In with LinkedIn?"
+      ],
+      "Text": "The equivalent request to retrieve the member profile in v2 follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "What are the main differences with the new Sign In with LinkedIn?",
+      "Anchor": "what-are-the-main-differences-with-the-new-sign-in-with-linkedin",
+      "SectionPath": [
+        "Overview",
+        "What are the main differences with the new Sign In with LinkedIn?"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the main differences with the new Sign In with LinkedIn?",
+      "Anchor": "what-are-the-main-differences-with-the-new-sign-in-with-linkedin",
+      "SectionPath": [
+        "Overview",
+        "What are the main differences with the new Sign In with LinkedIn?"
+      ],
+      "Text": "Looking to maintain access to the Basic Profile fields? Learn more about LinkedIn Developer Enterprise products.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I retrieve the member\u0027s email address?",
+      "Anchor": "how-do-i-retrieve-the-members-email-address",
+      "SectionPath": [
+        "Overview",
+        "How do I retrieve the member\u0027s email address?"
+      ],
+      "Text": "There are no changes to the r_emailaddress permission scope used to retrieve the authenticated member\u0027s email address. However, the method used to retrieve the email address has been updated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I retrieve the member\u0027s email address?",
+      "Anchor": "how-do-i-retrieve-the-members-email-address",
+      "SectionPath": [
+        "Overview",
+        "How do I retrieve the member\u0027s email address?"
+      ],
+      "Text": "Whereas the v1 Profile API returned the email address within the Profile response body, a separate request is to retrieve the email address is now required. Use the request below to retrieve the currently authenticated member\u0027s email address:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How do I retrieve the member\u0027s email address?",
+      "Anchor": "how-do-i-retrieve-the-members-email-address",
+      "SectionPath": [
+        "Overview",
+        "How do I retrieve the member\u0027s email address?"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/emailAddress?q=members\u0026projection=(elements*(handle~))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Troubleshooting"
+      ],
+      "Text": "If you have not yet adjusted your application to work around these changes, you will begin to see critical errors occurring now, or in the near future when your authentication tokens next expire. Here are some tips for resolving common potential issues:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Troubleshooting"
+      ],
+      "Text": "The most common problem that will occur as a result of the API changes is that your authentication workflow will fail because your app is attempting to request member permissions that you no longer have access to.\nTo correct this issue, ensure that the scope parameter in your authorization workflow is no longer requesting any of the following member permissions:\nr_basicprofile, w_share, rw_company_admin.\nAdditionally, default scopes are no longer permitted. For all OAuth authorization code requests, make sure to include the proper scope with your request. The scope parameter along with the requested scope must be present within your OAuth request.\nPay special attention to any 3rd party libraries that you are using for authenticating with LinkedIn, as they may be asking for more member permissions than you realize!\nNote that by removing member permissions, you may also be required to remove API calls that depend on those permissions being present, so you will need to thoroughly review your application and ensure that all of the API calls that it makes can be done under the remaining member permissions.\n\nOver the default access token life cycle, even after your LinkedIn API access changes, your application may still have some users with an access token that allows them to call APIs that are no longer available to you.\nWhen your API access changes, your application may not immediately experience the impact of the changes until your current user access tokens start to expire and you are forced to refresh them to continue making API calls. Please ensure your application is prepared to handle access tokens that were granted before your API access was changed so that they do not request unavailable permissions upon refresh.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

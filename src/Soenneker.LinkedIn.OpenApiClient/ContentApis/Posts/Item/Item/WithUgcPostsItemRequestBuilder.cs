@@ -36,22 +36,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.Item.Item
         /// <summary>
         /// The following `posts` field are available to update. Refer to [Schema](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/posts-api?view=li-lms-2022-08&amp;tabs=http#post-schema) for complete field details.| Field | Description || --- | --- || commentary | String || contentCallToActionLabel | contentCallToActionLabel text || contentLandingPage | URL of the landing page || reshareContext |  || lifecycleState |  || adContext | \*   dscName: Update the name of the sponsored content&lt;br&gt;\*   dscStatus: Update the status of the sponsored content |
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateAPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateAPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateAPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateAPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The following `posts` field are available to update. Refer to [Schema](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/posts-api?view=li-lms-2022-08&amp;tabs=http#post-schema) for complete field details.| Field | Description || --- | --- || commentary | String || contentCallToActionLabel | contentCallToActionLabel text || contentLandingPage | URL of the landing page || reshareContext |  || lifecycleState |  || adContext | \*   dscName: Update the name of the sponsored content&lt;br&gt;\*   dscStatus: Update the status of the sponsored content |

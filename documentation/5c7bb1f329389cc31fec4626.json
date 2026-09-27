@@ -1,0 +1,393 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+  "Title": "Request Methods",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Request Methods",
+      "Anchor": "request-methods",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s APIs have an expressive set of methods for interacting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "The GET method requests a single, specific entity/object from a service. This method leverages the traditional HTTP GET method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}/{resourceIdentifier}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "The GET_ALL method requests all entities/objects from a service. GET_ALL requests never provide resource identifiers to a service.\u00A0This method uses the traditional HTTP GET method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "BATCH_GET"
+      ],
+      "Text": "The BATCH_GET method requests more than one specific entity/object from a service.\u00A0This method uses the traditional HTTP GET method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "BATCH_GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}?ids=List(resourceIdentifier_1,...,resourceIdentifier_n)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER {finderName}",
+      "Anchor": "finder-findername",
+      "SectionPath": [
+        "FINDER {finderName}"
+      ],
+      "Text": "Conceptually, FINDER methods are similar to GET/BATCH_GET calls. The main difference between these methods is that you use FINDER queries when you don\u0027t have an identifier to directly retrieve an entity. These methods use the HTTP GET method with a q={finderName} request parameter which identifies the type of query being made. FINDER methods can return zero, one, or more results, depending on the number of entities that match the query input.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER {finderName}",
+      "Anchor": "finder-findername",
+      "SectionPath": [
+        "FINDER {finderName}"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}?q={finderName}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "The CREATE method indicates to a service that it should use the information provided in the request body to create a new entity. This method uses the traditional HTTP POST method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/{service}/{Request Body}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_CREATE",
+      "Anchor": "batch_create",
+      "SectionPath": [
+        "BATCH_CREATE"
+      ],
+      "Text": "The BATCH_CREATE method indicates to a service that it should use the information provided in the request body to create multiple new entities.\u00A0This method uses the traditional HTTP POST method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_CREATE",
+      "Anchor": "batch_create",
+      "SectionPath": [
+        "BATCH_CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/{service}/{Request Body}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UPDATE",
+      "Anchor": "update",
+      "SectionPath": [
+        "UPDATE"
+      ],
+      "Text": "The UPDATE method indicates to a service that it should use the information provided in the request body to overwrite the entire definition of an existing entity. This method uses the traditional HTTP PUT method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "UPDATE",
+      "Anchor": "update",
+      "SectionPath": [
+        "UPDATE"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/{service}/{Request Body}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_UPDATE",
+      "Anchor": "batch_update",
+      "SectionPath": [
+        "BATCH_UPDATE"
+      ],
+      "Text": "The BATCH_UPDATE method indicates to a service that it should use the information provided in the request body to overwrite the entire definitions of multiple existing entities.\u00A0This method uses the traditional HTTP PUT method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_UPDATE",
+      "Anchor": "batch_update",
+      "SectionPath": [
+        "BATCH_UPDATE"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/{service}/{Request Body}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "PARTIAL_UPDATE",
+      "Anchor": "partial_update",
+      "SectionPath": [
+        "PARTIAL_UPDATE"
+      ],
+      "Text": "The PARTIAL_UPDATE method indicates to a service that it should use the information provided in the request body to update only specific portions of an existing entity rather than overwriting the entire definition of the entity.\u00A0This method uses the traditional HTTP POST method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "PARTIAL_UPDATE",
+      "Anchor": "partial_update",
+      "SectionPath": [
+        "PARTIAL_UPDATE"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "PARTIAL_UPDATE",
+      "Anchor": "partial_update",
+      "SectionPath": [
+        "PARTIAL_UPDATE"
+      ],
+      "Text": "For the server to differentiate between a PARTIAL_UPDATE and an UPDATE, you must include X-Restli-Method: PARTIAL_UPDATE as the header value in your request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "PARTIAL_UPDATE",
+      "Anchor": "partial_update",
+      "SectionPath": [
+        "PARTIAL_UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/{service}/{Request Body}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_PARTIAL_UPDATE",
+      "Anchor": "batch_partial_update",
+      "SectionPath": [
+        "BATCH_PARTIAL_UPDATE"
+      ],
+      "Text": "The BATCH_PARTIAL_UPDATE method indicates to a service that it should use the multiple pieces of information provided in the request body to update specific portions of multiple specified entities, rather than overwriting them entirely.\u00A0This method uses the traditional HTTP POST method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_PARTIAL_UPDATE",
+      "Anchor": "batch_partial_update",
+      "SectionPath": [
+        "BATCH_PARTIAL_UPDATE"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_PARTIAL_UPDATE",
+      "Anchor": "batch_partial_update",
+      "SectionPath": [
+        "BATCH_PARTIAL_UPDATE"
+      ],
+      "Text": "For the server to differentiate between a BATCH_PARTIAL_UPDATE and a BATCH_UPDATE, you must include X-Restli-Method: BATCH_PARTIAL_UPDATE as the header value in your request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_PARTIAL_UPDATE",
+      "Anchor": "batch_partial_update",
+      "SectionPath": [
+        "BATCH_PARTIAL_UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/{service}/{Request Body}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DELETE",
+      "Anchor": "delete",
+      "SectionPath": [
+        "DELETE"
+      ],
+      "Text": "The DELETE method indicates to a service that it should delete an identified object/entity.\u00A0This method uses the traditional HTTP DELETE method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "DELETE",
+      "Anchor": "delete",
+      "SectionPath": [
+        "DELETE"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/{service}/{resourceIdentifier}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_DELETE",
+      "Anchor": "batch_delete",
+      "SectionPath": [
+        "BATCH_DELETE"
+      ],
+      "Text": "The BATCH_DELETE method indicates to a service that it should delete multiple identified objects/entities.\u00A0This method uses the traditional HTTP DELETE method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_DELETE",
+      "Anchor": "batch_delete",
+      "SectionPath": [
+        "BATCH_DELETE"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/{service}?ids=List({resourceIdentifier_1},...,{resourceIdentifier_n})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_FINDER {finderName}",
+      "Anchor": "batch_finder-findername",
+      "SectionPath": [
+        "BATCH_FINDER {finderName}"
+      ],
+      "Text": "Conceptually, BATCH_FINDER methods are similar to BATCH_GET calls. The main difference between these methods is that you use BATCH_FINDER queries when you don\u0027t have identifiers to directly retrieve entities. These methods use the HTTP GET method with a bq={batchFinderName} request parameter which identifies the type of query being made. BATCH_FINDER methods accept a list of filters set. Instead of calling multiple finders with different filter values, we call one BATCH_FINDER method with a list of filters. BATCH_FINDER methods can return zero, one, or more results, depending on the number of entities that match the query input.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_FINDER {finderName}",
+      "Anchor": "batch_finder-findername",
+      "SectionPath": [
+        "BATCH_FINDER {finderName}"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}?bq={batchFinderName}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACTION {actionName}",
+      "Anchor": "action-actionname",
+      "SectionPath": [
+        "ACTION {actionName}"
+      ],
+      "Text": "The ACTION method is a flexible method that does not specify any type of standard behavior. It uses the HTTP POST method, with a special action={actionName} request parameter, which identifies the specific type of action to take.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "ACTION {actionName}",
+      "Anchor": "action-actionname",
+      "SectionPath": [
+        "ACTION {actionName}"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/{service}?action={actionName}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

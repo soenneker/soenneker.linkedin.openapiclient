@@ -1,0 +1,977 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+  "Title": "Getting Started with Brand Lift Testing",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/appendix",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Brand Lift Testing",
+      "Anchor": "getting-started-with-brand-lift-testing",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Brand Lift Testing",
+      "Anchor": "getting-started-with-brand-lift-testing",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Brand Lift Testing Overview",
+      "Anchor": "brand-lift-testing-overview",
+      "SectionPath": [
+        "Brand Lift Testing Overview"
+      ],
+      "Text": "Brand lift testing helps you gauge the impact of your ads on brand metrics that you care about such as awareness, consideration, familiarity, favorability, and more. This helps you close the loop on your brand marketing efforts and better optimize for future brand value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Brand Lift Testing Overview",
+      "Anchor": "brand-lift-testing-overview",
+      "SectionPath": [
+        "Brand Lift Testing Overview"
+      ],
+      "Text": "For the duration of the brand lift test, we split your target audience into two groups: a test group that\u2019s eligible to see your ads and a control group that\u2019s not. We then deliver surveys to a subset of the active members in both groups. Finally, we analyze the differences in how the test and control groups respond to measure how your ads have impacted members\u2019 perception of your brand. We also estimate the return on your investment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Brand Lift Testing Overview",
+      "Anchor": "brand-lift-testing-overview",
+      "SectionPath": [
+        "Brand Lift Testing Overview"
+      ],
+      "Text": "Here\u2019s a sample member experience:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertiser benefits / use cases",
+      "Anchor": "advertiser-benefits--use-cases",
+      "SectionPath": [
+        "Advertiser benefits / use cases"
+      ],
+      "Text": "Helps marketers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertiser benefits / use cases",
+      "Anchor": "advertiser-benefits--use-cases",
+      "SectionPath": [
+        "Advertiser benefits / use cases"
+      ],
+      "Text": "Measure the impact of their brand ads via native surveys.\nTrack brand sentiment over time (with repeated tests).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Access",
+      "Anchor": "api-access",
+      "SectionPath": [
+        "Prerequisites and Dependencies",
+        "API Access"
+      ],
+      "Text": "Note that in order to create new Brand Lift Tests, your application must have Standard Access to the LinkedIn Marketing API Program. You can\u0027t create Brand Lift Tests using the Development Access tier. For more information, refer to LinkedIn Marketing API Program Access Tiers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setup",
+      "Anchor": "setup",
+      "SectionPath": [
+        "Prerequisites and Dependencies",
+        "Setup"
+      ],
+      "Text": "Create an Ad Account or use existing.\nCreate Ad Campaigns with Ad Creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Level Authorizations and Access",
+      "Anchor": "service-level-authorizations-and-access",
+      "SectionPath": [
+        "Prerequisites and Dependencies",
+        "Service Level Authorizations and Access"
+      ],
+      "Text": "All Account Managers and Campaign Managers on the ad account can take any action detailed in this document. They also have access to all tests within the account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Level Authorizations and Access",
+      "Anchor": "service-level-authorizations-and-access",
+      "SectionPath": [
+        "Prerequisites and Dependencies",
+        "Service Level Authorizations and Access"
+      ],
+      "Text": "All Account Managers, Campaign Managers, Creative Managers, and Viewers on the ad account have reporting permissions and can thus view test results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to use the API",
+      "Anchor": "how-to-use-the-api",
+      "SectionPath": [
+        "How to use the API"
+      ],
+      "Text": "The Ad Lift Test object is the main entity in Brand Lift Testing APIs allowing advertisers to create and manage a lift test. An advertiser should attach questions to a given Ad Lift Test using the Ad Lift Test Survey API. After the test creation, advertisers can check whether their brand lift test was approved or not using Ads Review Information API. At the end of the lift test, they should get the results using the Ad Lift Test Results API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [
+        "How to use the API",
+        "API Overview"
+      ],
+      "Text": "Ad Lift Test API: Enables advertisers to create, modify, and report on Brand Lift Tests at scale via API.\nAd Lift Test Survey API: Enables advertisers to choose the survey questions for respondents in the test and control groups. Surveys are always associtead with the only one Brand Lift Test.\nAd Lift Test Results API: Enables advertisers to get the results for a given Brand Lift Test.\nAd Review Information API: Allow advertisers to check review information associated with their Brand Lift Test.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to use the API",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad lift tests. Restricted to ad lift tests belonging to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad lift tests belonging to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to use the API",
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to use the API",
+        "Permissions"
+      ],
+      "Text": "If you\u0027re using legacy permissions, please refer to the Permission Migration Guide for requesting legacy permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [
+        "How to use the API",
+        "Pagination"
+      ],
+      "Text": "The Brand Lift Testing APIs (AdLiftTests, AdLiftTestSurveys, AdLiftTestResults) implement pagination using the start and count parameters. The max count value is 1000. A 400 Bad Request response with the message, \u201CSpecified count is larger than 1000\u201D is returned if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [
+        "How to use the API",
+        "Pagination"
+      ],
+      "Text": "The count is greater than 1,000.\nNumber of elements in the response is greater than 100, and the API request doesn\u0027t have pagination request parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [
+        "How to use the API",
+        "Pagination"
+      ],
+      "Text": "For more information, see Pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "How to use the API",
+        "Best Practices"
+      ],
+      "Text": "We can\u0027t guarantee that your lift test will be conclusive. However, we have provided a series of best practices that may increase your chances of getting a conclusive test result.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "How to use the API",
+        "Best Practices"
+      ],
+      "Text": "Warnings on potential lift test configuration issues can be pulled through the validation endpoint. These warnings aim to alert you of issues that may compromise the results of your lift test.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "How to use the API",
+        "Best Practices"
+      ],
+      "Text": "Refer to the Ad Lift Testing Validation Endpoint for additional information about using the pre-flight endpoint to check if a brand lift test created is valid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "How to use the API",
+        "Best Practices"
+      ],
+      "Text": "You\u2019ll improve your chances of getting meaningful test results, ensuring that the campaigns you\u2019re testing are fully utilizing their budgets, since we deliver lift testing surveys in proportion with campaign delivery. Consider:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "How to use the API",
+        "Best Practices"
+      ],
+      "Text": "Stronger bidding (e.g., maximum delivery, target cost bid types).\nBetter pacing (e.g., lifetime pacing, lifetime budget).\nBroader placements (e.g., LAN-enabled).\nMore relevant targeting.\nMore engaging creative content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Product Details",
+      "Anchor": "api-product-details",
+      "SectionPath": [
+        "API Product Details"
+      ],
+      "Text": "This section contains details about the usage of the ad lift testing test API that may help advertisers to understand expected usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User State Transitions",
+      "Anchor": "user-state-transitions",
+      "SectionPath": [
+        "API Product Details",
+        "User State Transitions"
+      ],
+      "Text": "The management of an ad lift test goes through different stages depending on what an Advertiser would like to do (e.g. set up a prototype test, run a real test, cancel an existing test, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User State Transitions",
+      "Anchor": "user-state-transitions",
+      "SectionPath": [
+        "API Product Details",
+        "User State Transitions"
+      ],
+      "Text": "The following state diagram outlines the possible changes to the user state that are controlled by an advertiser:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User State Transitions",
+      "Anchor": "user-state-transitions",
+      "SectionPath": [
+        "API Product Details",
+        "User State Transitions"
+      ],
+      "Text": "The following example shows the sequence of state transitions used to manage the Lift Test lifecycle:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User State Transitions",
+      "Anchor": "user-state-transitions",
+      "SectionPath": [
+        "API Product Details",
+        "User State Transitions"
+      ],
+      "Text": "Create a DRAFT lift test.\nCreate your survey questions..\nLift tests are ready for activation when they have associated survey questions. Do not move your lift test out of DRAFT mode until your survey questions are complete.\nAdd your survey questions and activate your lift test by marking it as READY.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User State Transitions",
+      "Anchor": "user-state-transitions",
+      "SectionPath": [
+        "API Product Details",
+        "User State Transitions"
+      ],
+      "Text": "Extend or cancel the testing period while the ad lift test is in READY state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User State Transitions",
+      "Anchor": "user-state-transitions",
+      "SectionPath": [
+        "API Product Details",
+        "User State Transitions"
+      ],
+      "Text": "Note: When a lift test is marked READY, all ENDED_RESUMABLE tests within the account are ENDED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Execution State",
+      "Anchor": "understanding-execution-state",
+      "SectionPath": [
+        "API Product Details",
+        "Understanding Execution State"
+      ],
+      "Text": "Execution state for Lift Tests is a combination of the user state and system related events like an ads review decision or budget completion for the account running the test. The Lift Test behavior depends on multiple factors like test serving schedule, ability to serve campaigns under test, number of impressions delivered in tested campaigns to retarget members with survey, etc. Use execution state and the end reason to identify current test behavior and troubleshoot issues.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Understanding Execution State",
+      "Anchor": "understanding-execution-state",
+      "SectionPath": [
+        "API Product Details",
+        "Understanding Execution State"
+      ],
+      "Text": "",
+      "Headers": [
+        "Execution state",
+        "Is the traffic for the campaigns being test split into test/control segments?",
+        "Are surveys being served?",
+        "Can test be modified / extended?"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CREATED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (All mutable fields)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEDULED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (limited set like end date)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STARTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (limited set like end date)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENDED_RESUMABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (for at most 7 days after test ends)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (limited set like end date)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENDED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Brand Name",
+      "Anchor": "brand-name",
+      "SectionPath": [
+        "API Product Details",
+        "Brand Name"
+      ],
+      "Text": "The brand name provided during creation of the Ad Lift Test is how we show the brand name to members when providing surveys. As such, we\u0027ll use the provided brand name for the specific locale in order to ensure brand consistency.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is brand lift testing?",
+      "Anchor": "what-is-brand-lift-testing",
+      "SectionPath": [
+        "FAQ",
+        "What is brand lift testing?"
+      ],
+      "Text": "Brand lift testing measures the impact of your ads on brand metrics that you care about \u2013 like awareness, consideration, familiarity, favorability, and more. This helps advertisers close the loop on your brand marketing efforts and better optimize for future brand value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is brand lift testing?",
+      "Anchor": "what-is-brand-lift-testing",
+      "SectionPath": [
+        "FAQ",
+        "What is brand lift testing?"
+      ],
+      "Text": "For the duration of the brand lift test, we split your target audience into two groups: a test group that\u2019s eligible to see your ads and a control group that\u2019s not. We then deliver surveys to a subset of the active members in both groups. Finally, we analyze the differences in how the test and control groups respond to measure how your ads have impacted members\u2019 perception of your brand. We also estimate the return on your investment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What brand metrics can I measure?",
+      "Anchor": "what-brand-metrics-can-i-measure",
+      "SectionPath": [
+        "FAQ",
+        "What brand metrics can I measure?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric",
+        "Question"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad recall",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Do you recall seeing a digital ad for [brand/product]?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Aided awareness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Have you heard of [brand/product]?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Product consideration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How likely are you to consider [brand/product] for your next purchase?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Recommendation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How likely are you to recommend [brand/product] to someone else?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Brand familiarity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How familiar are you with [brand/product]?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Brand favorability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How favorably do you view [brand/product]?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Employer familiarity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How familiar are you with [brand] as an employer?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Employer favorability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How favorably do you view [brand] as an employer?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Employer recommendation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How likely would you recommend {0} as an employer to your friend or colleague?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Employer consideration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If you were looking for a job, how likely would you be to consider {0}?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Top of mind Awareness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What [a] comes to mind, when you [b], where a and b are defined by the advertiser.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What brand metrics can I measure?",
+      "Anchor": "what-brand-metrics-can-i-measure",
+      "SectionPath": [
+        "FAQ",
+        "What brand metrics can I measure?"
+      ],
+      "Text": "Questions and answers translations to all supported languages are available in Appendix",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does every member who receives a survey see every question in my test?",
+      "Anchor": "does-every-member-who-receives-a-survey-see-every-question-in-my-test",
+      "SectionPath": [
+        "FAQ",
+        "Does every member who receives a survey see every question in my test?"
+      ],
+      "Text": "No; different members see different questions\u2014and they only ever see one question at a time. This improves test speed and your chances of conclusive \u002B meaningful test results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Within a single test, can I have one brand for one question and another brand for another question? (For example: within a single test, can I ask an ad recall question about \u201CLinkedIn Marketing Solutions\u201D and a brand familiarity question about \u201CLinkedIn Learning Solutions?\u201D)",
+      "Anchor": "within-a-single-test-can-i-have-one-brand-for-one-question-and-another-brand-for-another-question-for-example-within-a-single-test-can-i-ask-an-ad-recall-question-about-linkedin-marketing-solutions-and-a-brand-familiarity-question-about-linkedin-learning-solutions",
+      "SectionPath": [
+        "FAQ",
+        "Within a single test, can I have one brand for one question and another brand for another question? (For example: within a single test, can I ask an ad recall question about \u201CLinkedIn Marketing Solutions\u201D and a brand familiarity question about \u201CLinkedIn Learning Solutions?\u201D)"
+      ],
+      "Text": "No. The brand name must be the same for all questions within a test.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I customize the questions and answers?",
+      "Anchor": "can-i-customize-the-questions-and-answers",
+      "SectionPath": [
+        "FAQ",
+        "Can I customize the questions and answers?"
+      ],
+      "Text": "Yes, you can use the TOP_OF_MIND question type to customize your question and answers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do you do with member data?",
+      "Anchor": "what-do-you-do-with-member-data",
+      "SectionPath": [
+        "FAQ",
+        "What do you do with member data?"
+      ],
+      "Text": "Member data is aggregated and anonymous to the advertiser.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the data retention period for brand lift tests?",
+      "Anchor": "what-is-the-data-retention-period-for-brand-lift-tests",
+      "SectionPath": [
+        "FAQ",
+        "What is the data retention period for brand lift tests?"
+      ],
+      "Text": "Brand lift test data is retained for two years.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "At what level do you run the brand lift test?",
+      "Anchor": "at-what-level-do-you-run-the-brand-lift-test",
+      "SectionPath": [
+        "FAQ",
+        "At what level do you run the brand lift test?"
+      ],
+      "Text": "Currently, we support account-level tests\u2014meaning that you\u2019ll run a brand lift test across all of the campaigns in a given account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which objectives, targeting, formats, placements, etc. do you support?",
+      "Anchor": "which-objectives-targeting-formats-placements-etc-do-you-support",
+      "SectionPath": [
+        "FAQ",
+        "Which objectives, targeting, formats, placements, etc. do you support?"
+      ],
+      "Text": "Run a brand lift test on any ad account. This includes accounts with Talent Media campaigns. (In fact, we have talent-specific brand lift questions.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which languages do you support?",
+      "Anchor": "which-languages-do-you-support",
+      "SectionPath": [
+        "FAQ",
+        "Which languages do you support?"
+      ],
+      "Text": "We support any language that\u0027s available for standard campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which languages do you support?",
+      "Anchor": "which-languages-do-you-support",
+      "SectionPath": [
+        "FAQ",
+        "Which languages do you support?"
+      ],
+      "Text": "Note that all campaigns within a single lift test must use the same language. So if you\u2019re running an account-level brand lift test, then all campaigns within that account must use the same language.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I qualify to run a brand lift test?",
+      "Anchor": "how-do-i-qualify-to-run-a-brand-lift-test",
+      "SectionPath": [
+        "FAQ",
+        "How do I qualify to run a brand lift test?"
+      ],
+      "Text": "Qualification for brand lift testing is based on budget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I qualify to run a brand lift test?",
+      "Anchor": "how-do-i-qualify-to-run-a-brand-lift-test",
+      "SectionPath": [
+        "FAQ",
+        "How do I qualify to run a brand lift test?"
+      ],
+      "Text": "For now, your account must have a minimum of USD 45K budgeted for one brand lift question, with each additional question requiring an additional USD 45K in budget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I qualify to run a brand lift test?",
+      "Anchor": "how-do-i-qualify-to-run-a-brand-lift-test",
+      "SectionPath": [
+        "FAQ",
+        "How do I qualify to run a brand lift test?"
+      ],
+      "Text": "This amount must be budgeted for the time between the brand lift test\u2019s start and end dates. It\u2019s OK to have also spent on this account before or after the brand lift test\u2014but you still need a minimum of USD 90K budgeted for the duration of the brand lift test.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if I budget enough to qualify but don\u2019t spend all of that budget?",
+      "Anchor": "what-if-i-budget-enough-to-qualify-but-dont-spend-all-of-that-budget",
+      "SectionPath": [
+        "FAQ",
+        "What if I budget enough to qualify but don\u2019t spend all of that budget?"
+      ],
+      "Text": "While your budget may qualify you to run a brand lift test, the testing credit to actually deliver your surveys is gradually allocated as you spend your budget. Therefore, if you don\u2019t end up spending much of your budget, then you may not deliver many brand lift surveys\u2014which reduces the likelihood of getting helpful and conclusive test results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if I qualify for a test but then shift my budget to a different account while my test is running?",
+      "Anchor": "what-if-i-qualify-for-a-test-but-then-shift-my-budget-to-a-different-account-while-my-test-is-running",
+      "SectionPath": [
+        "FAQ",
+        "What if I qualify for a test but then shift my budget to a different account while my test is running?"
+      ],
+      "Text": "While your original budget qualified you to run a brand lift test, the ad testing credit to actually deliver your surveys is gradually allocated as you spend your budget. Therefore, if you don\u2019t end up spending very much of the original budget within this account, then you may not deliver many brand lift surveys\u2014which reduces the likelihood of getting helpful and trustworthy test results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if I add a new campaign or cancel / pause a campaign while my test is running?",
+      "Anchor": "what-if-i-add-a-new-campaign-or-cancel--pause-a-campaign-while-my-test-is-running",
+      "SectionPath": [
+        "FAQ",
+        "What if I add a new campaign or cancel / pause a campaign while my test is running?"
+      ],
+      "Text": "Your test will continue to serve, so long as you continue to run other campaigns. But the testing credit to actually deliver your surveys is gradually allocated as you spend your budget. Therefore, if you don\u2019t end up spending much of your budget, then you may not deliver many brand lift surveys\u2014which reduces the likelihood of getting helpful and conclusive test results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there a maximum number of questions for which I can qualify?",
+      "Anchor": "is-there-a-maximum-number-of-questions-for-which-i-can-qualify",
+      "SectionPath": [
+        "FAQ",
+        "Is there a maximum number of questions for which I can qualify?"
+      ],
+      "Text": "If you allocate enough budget, then you\u2019re eligible to run as many of the available questions as you\u2019d like.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How did you determine budget thresholds?",
+      "Anchor": "how-did-you-determine-budget-thresholds",
+      "SectionPath": [
+        "FAQ",
+        "How did you determine budget thresholds?"
+      ],
+      "Text": "The budget threshold is set according to our best estimations to support meaningful test results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if I only use a daily budget, or a combination of daily and lifetime budgets?",
+      "Anchor": "what-if-i-only-use-a-daily-budget-or-a-combination-of-daily-and-lifetime-budgets",
+      "SectionPath": [
+        "FAQ",
+        "What if I only use a daily budget, or a combination of daily and lifetime budgets?"
+      ],
+      "Text": "To determine whether you qualify, we estimate your \u201Ctest lifetime budget\u201D based on a combination of your daily budget(s) and desired test duration.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

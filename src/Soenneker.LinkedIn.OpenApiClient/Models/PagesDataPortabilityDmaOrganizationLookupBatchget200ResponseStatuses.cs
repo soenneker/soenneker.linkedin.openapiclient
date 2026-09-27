@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The OneZeroZeroZeroTwoSixEightSeven property</summary>
-        public int? OneZeroZeroZeroTwoSixEightSeven { get; set; }
+        public long? OneZeroZeroZeroTwoSixEightSeven { get; set; }
         /// <summary>The TwoFourOneFourOneEightThree property</summary>
-        public int? TwoFourOneFourOneEightThree { get; set; }
+        public long? TwoFourOneFourOneEightThree { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationLookupBatchget200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "10002687", n => { OneZeroZeroZeroTwoSixEightSeven = n.GetIntValue(); } },
-                { "2414183", n => { TwoFourOneFourOneEightThree = n.GetIntValue(); } },
+                { "10002687", n => { OneZeroZeroZeroTwoSixEightSeven = n.GetLongValue(); } },
+                { "2414183", n => { TwoFourOneFourOneEightThree = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("10002687", OneZeroZeroZeroTwoSixEightSeven);
-            writer.WriteIntValue("2414183", TwoFourOneFourOneEightThree);
+            writer.WriteLongValue("10002687", OneZeroZeroZeroTwoSixEightSeven);
+            writer.WriteLongValue("2414183", TwoFourOneFourOneEightThree);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

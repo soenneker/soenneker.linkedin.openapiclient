@@ -1,0 +1,1821 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+  "Title": "Object Types",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Object Types",
+      "Anchor": "object-types",
+      "SectionPath": [],
+      "Text": "MultiLocaleString\nMultiLocaleRichText\nMultiLocaleUrl\nDate\nLocaleString\nLocale\nVideo\nImage\nDocument\nLink\nAuditStamp",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleString",
+      "Anchor": "multilocalestring",
+      "SectionPath": [
+        "MultiLocaleString"
+      ],
+      "Text": "The MultiLocaleString object represents a textual fields with values for multiple locales. It contains two fields: localized and preferredLocale . See below for a detailed description of these fields, allowed values, and sample JSON.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleString Schema",
+      "Anchor": "multilocalestring-schema",
+      "SectionPath": [
+        "MultiLocaleString",
+        "MultiLocaleString Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "localized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maps a locale to a localized version of the string. Each key is a Locale record converted to string format, with the language, country/region and variant separated by underscores. Examples: \u0027en\u0027, \u0027de_DE\u0027, \u0027en_US_WIN\u0027, \u0027de_POSIX\u0027, \u0027fr_MAC\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The preferred locale to use, based on standard rules.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0 ISO-3166 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0 ISO-639 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of multiLocaleString",
+      "Anchor": "sample-json-of-multilocalestring",
+      "SectionPath": [
+        "MultiLocaleString",
+        "Sample JSON of multiLocaleString"
+      ],
+      "Text": "{\n   \u0022address\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u00222029 Stierlin Ct, Mountain View, CA 94043\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleRichText",
+      "Anchor": "multilocalerichtext",
+      "SectionPath": [
+        "MultiLocaleRichText"
+      ],
+      "Text": "The MultiLocaleRichText object represents a textual fields with values for multiple locales. It contains two fields: localized and preferredLocale . See below for a detailed description of these fields, allowed values, and sample JSON.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleRichText Schema",
+      "Anchor": "multilocalerichtext-schema",
+      "SectionPath": [
+        "MultiLocaleRichText",
+        "MultiLocaleRichText Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "localized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maps a locale to a localized version of the string. Each key is a Locale record converted to string format, with the language, country/region and variant separated by underscores. Examples: \u0027en\u0027, \u0027de_DE\u0027, \u0027en_US_WIN\u0027, \u0027de_POSIX\u0027, \u0027fr_MAC\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rawText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rich text represented in string.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The preferred locale to use, based on standard rules.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0 ISO-3166 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0 ISO-639 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of multiLocaleRichText",
+      "Anchor": "sample-json-of-multilocalerichtext",
+      "SectionPath": [
+        "MultiLocaleRichText",
+        "Sample JSON of multiLocaleRichText"
+      ],
+      "Text": "{\n   \u0022summary\u0022:{\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      },\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:{\n            \u0022rawText\u0022:\u0022Awesome summary of me.\u0022\n         }\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleUrl",
+      "Anchor": "multilocaleurl",
+      "SectionPath": [
+        "MultiLocaleUrl"
+      ],
+      "Text": "The MultiLocaleUrl object represents a textual fields with values for multiple locales. It contains two fields: localized and preferredLocale . See below for a detailed description of these fields, allowed values, and sample JSON.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleUrl Schema",
+      "Anchor": "multilocaleurl-schema",
+      "SectionPath": [
+        "MultiLocaleUrl",
+        "MultiLocaleUrl Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "localized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maps a locale to a localized version of the string. Each key is a Locale record converted to string format, with the language, country/region and variant separated by underscores. Examples: \u0027en\u0027, \u0027de_DE\u0027, \u0027en_US_WIN\u0027, \u0027de_POSIX\u0027, \u0027fr_MAC\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The preferred locale to use, based on standard rules.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0 ISO-3166 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0 ISO-639 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of multiLocaleUrl",
+      "Anchor": "sample-json-of-multilocaleurl",
+      "SectionPath": [
+        "MultiLocaleUrl",
+        "Sample JSON of multiLocaleUrl"
+      ],
+      "Text": "{\n   \u0022url\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022http://www.linkedin-other.com\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Date",
+      "Anchor": "date",
+      "SectionPath": [
+        "Date"
+      ],
+      "Text": "The Date object represents a date of day, month and year.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Date Schema",
+      "Anchor": "date-schema",
+      "SectionPath": [
+        "Date",
+        "Date Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Day represented in integer. Valid range from 1 to 31 depending on month.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Month represented in integer. Valid range from 1 to 12.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Year represented in integer.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of date",
+      "Anchor": "sample-json-of-date",
+      "SectionPath": [
+        "Date",
+        "Sample JSON of date"
+      ],
+      "Text": "{\n   \u0022birthDate\u0022:{\n      \u0022day\u0022:1,\n      \u0022month\u0022:1,\n      \u0022year\u0022:1974\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LocaleString",
+      "Anchor": "localestring",
+      "SectionPath": [
+        "LocaleString"
+      ],
+      "Text": "The LocaleString object represents a textual fields with the specified locale. It contains two fields: locale and value . See below for a detailed description of these fields, allowed values, and sample JSON.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LocaleString Schema",
+      "Anchor": "localestring-schema",
+      "SectionPath": [
+        "LocaleString",
+        "LocaleString Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maps a locale to a localized version of the string. Each key is a Locale record converted to string format, with the language, country/region and variant separated by underscores. Examples: \u0027en\u0027, \u0027de_DE\u0027, \u0027en_US_WIN\u0027, \u0027de_POSIX\u0027, \u0027fr_MAC\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0 ISO-3166 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0 ISO-639 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value represented in string.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of LocaleString",
+      "Anchor": "sample-json-of-localestring",
+      "SectionPath": [
+        "LocaleString",
+        "Sample JSON of LocaleString"
+      ],
+      "Text": "{\n   \u0022name\u0022:{\n      \u0022locale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      },\n      \u0022value\u0022:\u0022California\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locale",
+      "Anchor": "locale",
+      "SectionPath": [
+        "Locale"
+      ],
+      "Text": "The Locale object represents a country and language . See below for a detailed description of these fields, allowed values, and sample JSON.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Locale Schema",
+      "Anchor": "locale-schema",
+      "SectionPath": [
+        "Locale",
+        "Locale Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0 ISO-3166 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0 ISO-639 .",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of Locale",
+      "Anchor": "sample-json-of-locale",
+      "SectionPath": [
+        "Locale",
+        "Sample JSON of Locale"
+      ],
+      "Text": "{\n   \u0022locale\u0022:{\n      \u0022country\u0022:\u0022US\u0022,\n      \u0022language\u0022:\u0022en\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video",
+      "Anchor": "video",
+      "SectionPath": [
+        "Video"
+      ],
+      "Text": "The Video object represents the metadata for a video content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Video Schema",
+      "Anchor": "video-schema",
+      "SectionPath": [
+        "Video",
+        "Video Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of this video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Duration of the video in milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of this video in pixels.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "htmlEmbedCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The html embed code for this video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title of this video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The external url of this video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of this video in pixels.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of Video",
+      "Anchor": "sample-json-of-video",
+      "SectionPath": [
+        "Video",
+        "Sample JSON of Video"
+      ],
+      "Text": "{\n   \u0022description\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Description of the video\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022duration\u0022:60000,\n   \u0022height\u0022:720,\n   \u0022title\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Title of the video\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022url\u0022:\u0022https://linkedin.com\u0022,\n   \u0022width\u0022:1080\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image",
+      "Anchor": "image",
+      "SectionPath": [
+        "Image"
+      ],
+      "Text": "The Image object represents the metadata for an image content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Image Schema",
+      "Anchor": "image-schema",
+      "SectionPath": [
+        "Image",
+        "Image Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of this image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of this image in pixels.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "htmlEmbedCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The html embed code for this image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "slideShareImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SlideShareImage Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The urn to slideshow for this image if uploaded to SlideShare.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title of this image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The external url of this image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of this image in pixels.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of Image",
+      "Anchor": "sample-json-of-image",
+      "SectionPath": [
+        "Image",
+        "Sample JSON of Image"
+      ],
+      "Text": "{\n   \u0022description\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Description of the image\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022height\u0022:720,\n   \u0022title\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Title of the image\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022url\u0022:\u0022https://linkedin.com\u0022,\n   \u0022width\u0022:1080\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Document",
+      "Anchor": "document",
+      "SectionPath": [
+        "Document"
+      ],
+      "Text": "The Document object represents the metadata for a document content. The document is in text files, e.g., .pdf, .doc, .ppt, .pps, .rtf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Image Schema",
+      "Anchor": "image-schema-1",
+      "SectionPath": [
+        "Document",
+        "Image Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of this document.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of this document in pixels.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "htmlEmbedCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The html embed code for this document.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "slideshow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SlideShareSlideShowUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The urn to slideshow for this document if uploaded to SlideShare.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title of this document.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The external url of this document.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of this document in pixels.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of Document",
+      "Anchor": "sample-json-of-document",
+      "SectionPath": [
+        "Document",
+        "Sample JSON of Document"
+      ],
+      "Text": "{\n   \u0022description\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Description of the document\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022height\u0022:720,\n   \u0022title\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Title of the document\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022url\u0022:\u0022https://linkedin.com\u0022,\n   \u0022width\u0022:1080\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Link",
+      "Anchor": "link",
+      "SectionPath": [
+        "Link"
+      ],
+      "Text": "The Link object represents the metadata for a link content. The link contains a url that doesn not point to an image, video or document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Link Schema",
+      "Anchor": "link-schema",
+      "SectionPath": [
+        "Link",
+        "Link Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of this link.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title of this link.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The external url of this link.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of Link",
+      "Anchor": "sample-json-of-link",
+      "SectionPath": [
+        "Link",
+        "Sample JSON of Link"
+      ],
+      "Text": "{\n   \u0022description\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Description of the document\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022title\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Title of the document\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022url\u0022:\u0022https://linkedin.com\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AuditStamp",
+      "Anchor": "auditstamp",
+      "SectionPath": [
+        "AuditStamp"
+      ],
+      "Text": "The AuditStamp object represents the metadata of when an object is acted upon.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp Schema",
+      "Anchor": "auditstamp-schema",
+      "SectionPath": [
+        "AuditStamp",
+        "AuditStamp Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity authorized the change.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor. Must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When the event happened in epoch time.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON of AuditStamp",
+      "Anchor": "sample-json-of-auditstamp",
+      "SectionPath": [
+        "AuditStamp",
+        "Sample JSON of AuditStamp"
+      ],
+      "Text": "{\n   \u0022actor\u0022:\u0022urn:li:person:123ABC\u0022,\n   \u0022time\u0022:1332187798000\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CroppedImage",
+      "Anchor": "croppedimage",
+      "SectionPath": [
+        "CroppedImage"
+      ],
+      "Text": "An image with its cropping information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CroppedImage Schema",
+      "Anchor": "croppedimage-schema",
+      "SectionPath": [
+        "CroppedImage",
+        "CroppedImage Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "cropped",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the cropped image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "original",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the original image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cropInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rectangle",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#rectangle"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The cropping information defined by a rectangle in which the specified corner is the upper-left corner of the crop area.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "CroppedImage Schema",
+      "Anchor": "croppedimage-schema",
+      "SectionPath": [
+        "CroppedImage",
+        "CroppedImage Schema"
+      ],
+      "Text": "###Sample JSON of CroppedImage",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "CroppedImage Schema",
+      "Anchor": "croppedimage-schema",
+      "SectionPath": [
+        "CroppedImage",
+        "CroppedImage Schema"
+      ],
+      "Text": "{\n  \u0022cropped\u0022: \u0022urn:li:media:/gcrc/dms/image/Z561BAQF8zT9beoHupA/company-background_10000/0/1544648748713?e=1631905200\u0026v=beta\u0026t=ZSHOeHDliP1QEmnMoIg3GPUcLocCXMx0OaU_X2MJNks\u0022,\n  \u0022original\u0022: \u0022urn:li:media:/gcrc/dms/image/Z561BAQF8zT9beoHupA/company-background_10000/0/1544648748713?e=1631905200\u0026v=beta\u0026t=ZSHOeHDliP1QEmnMoIg3GPUcLocCXMx0OaU_X2MJNks\u0022,\n  \u0022cropInfo\u0022: {\n    \u0022x\u0022: 0,\n    \u0022width\u0022: 646,\n    \u0022y\u0022: 0,\n    \u0022height\u0022: 220\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rectangle",
+      "Anchor": "rectangle",
+      "SectionPath": [
+        "Rectangle"
+      ],
+      "Text": "An abstract rectangle defined by the coordinates of a corner and its width and height without any associated domain specific semantics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rectangle Schema",
+      "Anchor": "rectangle-schema",
+      "SectionPath": [
+        "Rectangle",
+        "Rectangle Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of the image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of the image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "x",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "X coordinate of the corner.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "y",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Y coordinate of the corner.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rectangle Schema",
+      "Anchor": "rectangle-schema",
+      "SectionPath": [
+        "Rectangle",
+        "Rectangle Schema"
+      ],
+      "Text": "###Sample JSON of Rectangle",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Rectangle Schema",
+      "Anchor": "rectangle-schema",
+      "SectionPath": [
+        "Rectangle",
+        "Rectangle Schema"
+      ],
+      "Text": "{\n  \u0022x\u0022: 0,\n  \u0022width\u0022: 646,\n  \u0022y\u0022: 0,\n  \u0022height\u0022: 220\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

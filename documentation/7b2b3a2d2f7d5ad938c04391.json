@@ -1,0 +1,380 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+  "Title": "Authentication with Sales Access Tokens",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_display/sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Sales Access Tokens offer an alternative method for creating user sessions needed to access the Display Services iframe. This document describes why Sales Access Tokens may be necessary to support your integration and how to integrate them into your application. Typically, native applications and mobile use cases require Sales Access Tokens in order to integrate successfully with Display Services.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "To use the Display Services iframe, users will need to have an authenticated session in cookie storage. When the iframe is embedded in a web application, it will automatically pick up the current session from the cookie store for the linkedin.com domain. If no valid session is found, a Sign In button will be presented within the iframe to allow users to sign in to their LinkedIn account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "While this works well within a desktop browser, completing the authentication process may be problematic if the iframe is embedded into a native desktop or mobile application because of the need to open a pop-up window and complete the sign in process through it. In many cases, opening a pop-up, or some of the JavaScript that enables the authentication flow, may be unavailable in the context of the native application, preventing sign in.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "Sales Access Tokens were introduced to enable authenticated sessions in these scenarios. Sales Access Tokens can be requested using access tokens granted through a standard three-legged OAuth 2.0 flow. Once a Sales Access token is retrieved, it can be used to authenticate a user\u0027s client on their behalf by passing it into the iframe query string.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background",
+      "Anchor": "background",
+      "SectionPath": [
+        "Background"
+      ],
+      "Text": "In this guide, we will walk you through the process of obtaining a Sales Access Token and using it in the Display Services iframe.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Permission",
+      "Anchor": "obtaining-permission",
+      "SectionPath": [
+        "Obtaining Permission"
+      ],
+      "Text": "In order to generate Sales Access Tokens, your application must be granted the r_sales_nav_display permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining OAuth 2.0 Access Tokens",
+      "Anchor": "obtaining-oauth-20-access-tokens",
+      "SectionPath": [
+        "Obtaining OAuth 2.0 Access Tokens"
+      ],
+      "Text": "An OAuth 2.0 access token with r_sales_nav_displayscope will be needed to generate Sales Access Token. Please see the Authorization Code Flow (3-legged OAuth) documentation to learn about how to request an OAuth 2.0 access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Sales Access Tokens",
+      "Anchor": "obtaining-sales-access-tokens",
+      "SectionPath": [
+        "Obtaining Sales Access Tokens"
+      ],
+      "Text": "Once you have an OAuth 2.0 access token, you can obtain a Sales Access Token from the /salesAccessTokens endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Obtaining Sales Access Tokens",
+      "Anchor": "obtaining-sales-access-tokens",
+      "SectionPath": [
+        "Obtaining Sales Access Tokens"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/salesAccessTokens?q=viewerAndDeveloperApp HTTP/1.1\nAuthorization: Bearer {ACCESS_TOKEN}\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Sales Access Tokens",
+      "Anchor": "obtaining-sales-access-tokens",
+      "SectionPath": [
+        "Obtaining Sales Access Tokens"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Sales Access Tokens",
+      "Anchor": "obtaining-sales-access-tokens",
+      "SectionPath": [
+        "Obtaining Sales Access Tokens"
+      ],
+      "Text": "A new Sales Access Token can be retrieved at any time, so long as the access token has not expired. Sales Access Tokens have a TTL of 45 minutes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Storing OAuth 2.0 Tokens and Sales Access Tokens",
+      "Anchor": "storing-oauth-20-tokens-and-sales-access-tokens",
+      "SectionPath": [
+        "Storing OAuth 2.0 Tokens and Sales Access Tokens"
+      ],
+      "Text": "Now that you have the user\u0027s OAuth 2.0 access token and Sales Access Token, you should store the tokens appropriately so that users won\u0027t go through the whole flow again next time to get new tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Storing OAuth 2.0 Tokens and Sales Access Tokens",
+      "Anchor": "storing-oauth-20-tokens-and-sales-access-tokens",
+      "SectionPath": [
+        "Storing OAuth 2.0 Tokens and Sales Access Tokens"
+      ],
+      "Text": "When you are storing the tokens, you should make sure they are encrypted at rest. The OAuth 2.0 access tokens should not be passed to client side. In your datastore, the tokens should be associated with users or sessions so that you can serve same tokens when same users are accessing the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Sales Access Tokens",
+      "Anchor": "using-the-sales-access-tokens",
+      "SectionPath": [
+        "Using the Sales Access Tokens"
+      ],
+      "Text": "The Sales Navigator iframe and JS SDK can utilize Sales Access Tokens to provide users an authenticated session without having to log in through the iframe. This is accomplished by sending the Sales Access Token in the sat query parameter to the iframe or JS SDK. See the following example for iframe:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Using the Sales Access Tokens",
+      "Anchor": "using-the-sales-access-tokens",
+      "SectionPath": [
+        "Using the Sales Access Tokens"
+      ],
+      "Text": "\u003C!-- NOTE: line breaks are added for readability --\u003E\n\u003Ciframe\n  src=\u0022https://www.linkedin.com/sales/widget/profile-matching?\n     apiKey=YOUR_CLIENT_ID\u0026\n     profile=lead\u0026\n     firstName=Abraham\u0026\n     lastName=Lincoln\u0026\n     crmRecordId=3AFXT8CAAY\u0026\n     crmOrgId=HV1OX56I8B\u0026\n     modules=TopCard2\u0026\n     isInlineMode=true\u0026\n     version=2.1\u0026\n     sat=AIAAQB_AAIAAQAAAAAAAAAgAAAAJGRlOTQ1YmU5LWY1MTQtNDAy\u0022\n  width=\u0022500\u0022\n  height=\u0022660\u0022\n  frameborder=\u00220\u0022\n  type=\u0022text/html\u0022\n\u003E\n\u003C/iframe\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Sales Access Tokens",
+      "Anchor": "using-the-sales-access-tokens",
+      "SectionPath": [
+        "Using the Sales Access Tokens"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Sales Access Tokens",
+      "Anchor": "using-the-sales-access-tokens",
+      "SectionPath": [
+        "Using the Sales Access Tokens"
+      ],
+      "Text": "When using Sales Access Tokens, version 2.1 must be specified.\nWhen using version 2.1, cookies will be ignored.\nThe session has the same TTL as the Sales Access Token used to create it. Please refer to Handling of Session/Token Expiry section to learn more about how to handle the limitation gracefully.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementing the Launch Experience",
+      "Anchor": "implementing-the-launch-experience",
+      "SectionPath": [
+        "Implementing the Launch Experience"
+      ],
+      "Text": "When the iframe is initialized with version=2.1 or above, users will be prompted to sign into the iframe if the sat parameter is empty or not included in the query string. After the user successfully signs in, a window.postMessage() event will be sent to the parent window. To listen to the event, you can use a standard event listener for a message event like below and obtain event data from data object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Implementing the Launch Experience",
+      "Anchor": "implementing-the-launch-experience",
+      "SectionPath": [
+        "Implementing the Launch Experience"
+      ],
+      "Text": "window.addEventListener(\u0022message\u0022, function(event) {\n  var origin = event.origin; // \u0022https://www.linkedin.com\u0022\n  var message = event.data; // \u0022{\u0022message\u0022:\u0022Sales Navigator Authentication Succeeded\u0022,\u0022type\u0022:\u0022salesNavAuthSuccess\u0022}\u0022\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementing the Launch Experience",
+      "Anchor": "implementing-the-launch-experience",
+      "SectionPath": [
+        "Implementing the Launch Experience"
+      ],
+      "Text": "If the origin value is \u0022https://www.linkedin.com\u0022 and message value is \u0022{\u0022message\u0022:\u0022Sales Navigator Authentication Succeeded\u0022,\u0022type\u0022:\u0022salesNavAuthSuccess\u0022}\u0022, handle this event and launch the authorization code grant flow, as described in the Obtaining OAuth 2.0 Access Tokens step. After the token is retrieved via your server-side exchange for the authorization code, you can redirect the client\u0027s iframe to a new iframe URL that contains the Sales Access Token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling of Session/Token Expiry",
+      "Anchor": "handling-of-sessiontoken-expiry",
+      "SectionPath": [
+        "Handling of Session/Token Expiry"
+      ],
+      "Text": "When the Sales Access Token passed to the iframe is invalid/expired or the iframe session created by Sales Access Token has expired, the parent window of the iframe will be notified. Your application should fetch a new Sales Access Token using a valid OAuth 2.0 access token and reload the iframes with the new Sales Access Token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling of Session/Token Expiry",
+      "Anchor": "handling-of-sessiontoken-expiry",
+      "SectionPath": [
+        "Handling of Session/Token Expiry"
+      ],
+      "Text": "The expiry event will be passed to parent window by window.postMessage() method. To listen to the event, you can use a standard event listener for a message event like below and obtain event data from data object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Handling of Session/Token Expiry",
+      "Anchor": "handling-of-sessiontoken-expiry",
+      "SectionPath": [
+        "Handling of Session/Token Expiry"
+      ],
+      "Text": "window.addEventListener(\u0022message\u0022, function(event) {\n  var origin = event.origin; // \u0022https://www.linkedin.com\u0022\n  var message = event.data; // \u0022{\u0022message\u0022:\u0022Sales Access Token denied.\u0022,\u0022type\u0022:\u0022tokenError\u0022}\u0022\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling of Session/Token Expiry",
+      "Anchor": "handling-of-sessiontoken-expiry",
+      "SectionPath": [
+        "Handling of Session/Token Expiry"
+      ],
+      "Text": "If the origin value is \u0022https://www.linkedin.com\u0022 and message value is \u0022{\u0022message\u0022:\u0022Sales Access Token denied.\u0022,\u0022type\u0022:\u0022tokenError\u0022}\u0022, reload the iframe with a new Sales Access Token to regain authenticated session.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling Token Refreshing",
+      "Anchor": "handling-token-refreshing",
+      "SectionPath": [
+        "Handling Token Refreshing"
+      ],
+      "Text": "Standard OAuth 2.0 access tokens last 60 days. You can request a new OAuth 2.0 access token for a user by sending them through the Obtaining OAuth 2.0 Access Tokens step again if the user\u0027s OAuth 2.0 token has expired or become invalid. Refresh tokens are also available for extending access for up to 180 days after the initial grant. This functionality must be enabled for your application, if you are interested in using refresh tokens please reach out to developer support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling Token Refreshing",
+      "Anchor": "handling-token-refreshing",
+      "SectionPath": [
+        "Handling Token Refreshing"
+      ],
+      "Text": "Sales Access Tokens have a TTL of 45 minutes. They will need to be refreshed regularly as described above. You can request a new Sales Access Token at any time with active OAuth 2.0 access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling Token Refreshing",
+      "Anchor": "handling-token-refreshing",
+      "SectionPath": [
+        "Handling Token Refreshing"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling Token Refreshing",
+      "Anchor": "handling-token-refreshing",
+      "SectionPath": [
+        "Handling Token Refreshing"
+      ],
+      "Text": "There are a few suggestions for ensuring that a valid Sales Access Token is sent to initialize the iframe:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling Token Refreshing",
+      "Anchor": "handling-token-refreshing",
+      "SectionPath": [
+        "Handling Token Refreshing"
+      ],
+      "Text": "Store valid OAuth 2.0 access tokens and Sales Access Tokens and their TTL on server side\nReuse existing Sales Access Tokens if they are still valid and request new Sales Access Tokens when they are about to or already expired",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Logout from authentication",
+      "Anchor": "logout-from-authentication",
+      "SectionPath": [
+        "Logout from authentication"
+      ],
+      "Text": "Your users might want to logout from the authentication or switch to a different LinkedIn account within your product. In this case, your product should provide \u0022logout\u0022 or \u0022unlink\u0022 option for users after they have successfully authorized the authentication. The tokens stored on both client or server should be removed upon logout.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Logout from authentication",
+      "Anchor": "logout-from-authentication",
+      "SectionPath": [
+        "Logout from authentication"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Logout from authentication",
+      "Anchor": "logout-from-authentication",
+      "SectionPath": [
+        "Logout from authentication"
+      ],
+      "Text": "In order to allow users to successfully switch LinkedIn accounts authenticated to your integration, you can direct users to switch their account on www.linkedin.com before authenticating a different LinkedIn account to your integration.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

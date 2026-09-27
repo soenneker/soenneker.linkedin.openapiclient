@@ -1,0 +1,74 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+  "Title": "Custom Lists in Display Services",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Custom Lists in Display Services",
+      "Anchor": "custom-lists-in-display-services",
+      "SectionPath": [],
+      "Text": "With Sales Navigator Custom Lists, customers can organize workflow and keep track of leads, accounts, and existing clients. Display Services bring Custom Lists to external customer applications as part of the core experience in the iframe, and does so in a manner consistent with Custom Lists on mobile and the web.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Lists in Display Services",
+      "Anchor": "custom-lists-in-display-services",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Lists in Display Services",
+      "Anchor": "custom-lists-in-display-services",
+      "SectionPath": [],
+      "Text": "Custom Lists only works with version 2.0 of Display Services and above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When Custom Lists are Displayed",
+      "Anchor": "when-custom-lists-are-displayed",
+      "SectionPath": [
+        "When Custom Lists are Displayed"
+      ],
+      "Text": "Customers will have the opportunity to save leads and accounts to Custom Lists after clicking Save in Sales Navigator on the lead or company Top Card. After clicking this button, the Custom Lists dialog slides in, and the lead/account can be added to existing lists, or just saved generally by selecting All leads or All accounts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When Custom Lists are Displayed",
+      "Anchor": "when-custom-lists-are-displayed",
+      "SectionPath": [
+        "When Custom Lists are Displayed"
+      ],
+      "Text": "New Custom Lists can also be created at this time. After a lead or account is saved, on the Top Card, a new Lists icon will be displayed so that existing lists this lead or account is on can be managed. Clicking this icon will bring up the Lists dialog.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/similar-entities",
+  "Title": "Similar Entities - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/similar-entities",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Similar Entities - Standardized Data API",
+      "Anchor": "similar-entities---standardized-data-api",
+      "SectionPath": [],
+      "Text": "The similarEntities API is used to retrieve similar standardized entities, given a source entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "FINDER sourceEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creation timestamp of the similar entities data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "similarEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of scored entities corresponding to key. Sorted in decreasing order of score.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "score",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Similarity score assigned to entity in the range of 0 to 1. Higher score represents a better similarity and match.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "General entity URN in the same URN type as the source entity.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER sourceEntity",
+      "Anchor": "finder-sourceentity",
+      "SectionPath": [
+        "FINDER sourceEntity"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/similarEntities?q=sourceEntity\u0026sourceEntity={sourceEntityURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "FINDER sourceEntity",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sourceEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source entity used to fetch similar entities.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "FINDER sourceEntity",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022createdAt\u0022: 1460395796,\n            \u0022similarEntities\u0022: [\n                {\n                    \u0022entity\u0022: \u0022urn:li:industry:4\u0022,\n                    \u0022score\u0022: 1.0\n                },\n                {\n                    \u0022entity\u0022: \u0022urn:li:industry:5\u0022,\n                    \u0022score\u0022: 0.9683\n                }\n            ]\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 1\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

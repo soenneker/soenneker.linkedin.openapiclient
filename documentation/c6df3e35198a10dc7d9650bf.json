@@ -1,0 +1,676 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+  "Title": "People Typeahead API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "People Typeahead API",
+      "Anchor": "people-typeahead-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People Typeahead API",
+      "Anchor": "people-typeahead-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People Typeahead API",
+      "Anchor": "people-typeahead-api",
+      "SectionPath": [],
+      "Text": "People Typeahead API facilitates the discovery of members who can be mentioned in the organization page posts. Pages (via Page Admins) can search for Page followers by keyword or vanity URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People Typeahead API",
+      "Anchor": "people-typeahead-api",
+      "SectionPath": [],
+      "Text": "Search by keyword returns up to 10 profiles matching the first few characters of first or last name.\nSearch response contains member basic profile information and unique member identifier.\nSearch by vanity URL returns member identifier corresponding to the vanity name.\nPerson URN returned in search response can be further used in Post Creation APIs to @mention in member or organization page posts in the format @Person Name.\nSearch response contains only members that are followers of the company.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People Typeahead API",
+      "Anchor": "people-typeahead-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People Typeahead API",
+      "Anchor": "people-typeahead-api",
+      "SectionPath": [],
+      "Text": "The People Typeahead API endpoint is restricted. This permission is granted to select developers only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "To search a member for @mentions in UGC posts, you must have the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_organization_followers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use your followers\u0027 data so your organization can mention them in posts. Restricted to organizations in which they\u0027re authenticated. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search by Keyword for Organization Pages",
+      "Anchor": "search-by-keyword-for-organization-pages",
+      "SectionPath": [
+        "Search by Keyword for Organization Pages"
+      ],
+      "Text": "An example of how to use the search by keyword to @mention a member in organization page post is shown:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search by Keyword for Organization Pages",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search by Keyword for Organization Pages",
+        "Sample Request"
+      ],
+      "Text": "GET \u0022https://api.linkedin.com/rest/peopleTypeahead?q=organizationFollowers\u0026keywords=ann\u0026organization=urn%3Ali%3Aorganization%3A9510\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search by Keyword for Organization Pages",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0022https://api.linkedin.com/rest/peopleTypeahead?q=organizationFollowers\u0026keywords=ann\u0026organization=urn%3Ali%3Aorganization%3A9510\u0022 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Search by Keyword for Organization Pages",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n    {\n      \u0022member\u0022: \u0022urn:li:person:133\u0022,\n      \u0022photo\u0022: \u0022urn:li:image:C56\u0022,\n      \u0022firstName\u0022: \u0022Annie.\u0022,\n      \u0022lastName\u0022: \u0022Victor\u0022,\n      \u0022headline\u0022: \u0022Head of Marketing\u0022\n    },\n    {\n      \u0022member\u0022: \u0022urn:li:person:134\u0022,\n      \u0022firstName\u0022: \u0022Anna\u0022,\n      \u0022lastName\u0022: \u0022K.\u0022,\n      \u0022headline\u0022: \u0022Chief of Staff, Global Applications\u0022\n    },\n    {\n      \u0022member\u0022: \u0022urn:li:person:135\u0022,\n      \u0022photo\u0022: \u0022urn:li:image:C4w\u0022,\n      \u0022firstName\u0022: \u0022Annapurna\u0022,\n      \u0022lastName\u0022: \u0022G.\u0022,\n      \u0022headline\u0022: \u0022Crypto expert !!\u0022\n    },\n    {\n      \u0022member\u0022: \u0022urn:li:person:136\u0022,\n      \u0022photo\u0022: \u0022urn:li:image:C4E0\u0022,\n      \u0022firstName\u0022: \u0022Annette\u0022,\n      \u0022lastName\u0022: \u0022Nash\u0022,\n      \u0022headline\u0022: \u0022I\u0027m hiring\u0022\n    },\n    {\n      \u0022member\u0022: \u0022urn:li:person:137\u0022,\n      \u0022photo\u0022: \u0022urn:li:image:C56\u0022,\n      \u0022firstName\u0022: \u0022Anny Peter\u0022,\n      \u0022lastName\u0022: \u0022Chang\u0022,\n      \u0022headline\u0022: \u0022Senior Director, Human Resources\u0022\n    },\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 5,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Finder Parameters",
+      "Anchor": "search-finder-parameters",
+      "SectionPath": [
+        "Search Finder Parameters"
+      ],
+      "Text": "Unless otherwise specified:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Finder Parameters",
+      "Anchor": "search-finder-parameters",
+      "SectionPath": [
+        "Search Finder Parameters"
+      ],
+      "Text": "The input is case insensitive.\nMultiple words should be joined using a space. Since you need to encode the input URL, this translates to %20. For example, Andrew%20Clark.\nWildcards and Boolean logic are not supported (for example: *, ?, AND, and OR).\nNumeric characters not allowed.\nspecial characters allowed: space(\u201C \u201C), apostrophe(\u201C\u0060\u201D), hyphen(\u201C-\u201D), dot(\u201C.\u201D), all other non alphanumeric special characters not allowed.\nNo two special character in succession allowed - for example two spaces next to each other, a space and apostrophe next to each other is not allowed.\nMinimum length of 3 characters if no special characters.\nOnly one space character allowed.\nIf dot and/or space is present, minimum of 6 characters required including the special character.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Search Finder Parameters",
+      "Anchor": "search-finder-parameters",
+      "SectionPath": [
+        "Search Finder Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Example",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "keywords",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "type ahead keyword representing first few characters of a keyword",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "John",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization urn identifier of the company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:{organizationId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes for organization page search",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Finder Parameters",
+      "Anchor": "search-finder-parameters",
+      "SectionPath": [
+        "Search Finder Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Finder Parameters",
+      "Anchor": "search-finder-parameters",
+      "SectionPath": [
+        "Search Finder Parameters"
+      ],
+      "Text": "For example, keywords parameter \u0022John Smith\u0022 would be URL coded as John%20Smith.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Response",
+      "Anchor": "search-response",
+      "SectionPath": [
+        "Search Response"
+      ],
+      "Text": "Search response contains a few basic profile fields of the member such as firstName, lastName, optional photo, and headline. Search responses\nreturned respective member\u0027s privacy settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Search Response",
+      "Anchor": "search-response",
+      "SectionPath": [
+        "Search Response"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "personUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "person urn identifier of the member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:person:{personId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the member. max length is 128, min length is 1. Supports en_US locale only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "John",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the member. maximum length is 128, minimum length is 1. Supports en_US locale only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the member is returned, which is obtained from the member profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "I am hiring",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "photo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "imageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile picture of the member returned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:image:{imageId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Search by Vanity URL for Organization Page",
+      "Anchor": "search-by-vanity-url-for-organization-page",
+      "SectionPath": [
+        "Search by Vanity URL for Organization Page"
+      ],
+      "Text": "This is an exact match search by vanity URL. Response contains person URN that can be decorated to obtain member\u0027s basic profile information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Search by Vanity URL for Organization Page",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Search by Vanity URL for Organization Page",
+        "Sample Request"
+      ],
+      "Text": "GET \u0022https://api.linkedin.com/rest/vanityUrl?q=vanityUrlAsOrganization\u0026vanityUrl=https://www.linkedin.com/in/{vanityName}\u0026organization=urn%3Ali%3Aorganization%3A2414\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Search by Vanity URL for Organization Page",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0022https://api.linkedin.com/rest/vanityUrl?q=vanityUrlAsOrganization\u0026vanityUrl=https://www.linkedin.com/in/{vanityName}\u0026organization=urn%3Ali%3Aorganization%3A2414\u0022 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search by Vanity URL for Organization Page",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022member\u0022: \u0022urn:li:person:abcdefg1h\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SEARCH_KEYWORD_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Minimum of 3 characters required for keyword.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SEARCH_FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inadequate permissions to continue the search.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity - e.g invalid org URN in the input",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported parameters",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_SPACE_CHARACTER_COUNT_IN_SEARCH_KEYWORD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only maximum one space character allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INSUFFICIENT_KEYWORDS_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Keywords length must be larger than 6 if contains space and/or dot",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_ALLOWED_CHARACTERS_IN_SEARCH_KEYWORD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Keywords contain not allowed characters, only alphabet and special characters: space, apostrophe, hyphen, dot are allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_ALLOWED_CONSECUTIVE_CHARACTERS_IN_SEARCH_KEYWORD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consecutive special characters are not allowed",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

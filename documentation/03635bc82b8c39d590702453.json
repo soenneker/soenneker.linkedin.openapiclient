@@ -1,0 +1,1319 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/events",
+  "Title": "Events",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/event-role-assignments",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/events",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-viewer-count-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events",
+      "SectionPath": [],
+      "Text": "Events have been an important approach for companies to attract leads and make conversions. Event organizers leverage the events platform at LinkedIn to create event pages where members can register to attend events, join live stream online events, and participate in the post-event activities. At the same time, attendees discover relevant events, make new connections, and nurture existing relationships on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events",
+      "SectionPath": [],
+      "Text": "get a single event.\nbatch get multiple events.\nFinder to get events for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organization\u2019s events. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has person urn data that is obfuscated in the created audit stamp.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Events Schema",
+      "Anchor": "events-schema",
+      "SectionPath": [
+        "Events Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the event as inputted by the creator.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the event inputted by the creator. This field will not be present when event description is not provided by the organizer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The physical address of the event (i.e. where the event is taking place). This field will not be present when address is not provided by the organizer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizer of the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vanity name (unique across events) for the event that helps with easy identification and better SEO.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "venueDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The additional details about the event venue, on top of the address field, like room name, floor number etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "settings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventSettings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Container for various event settings.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRangeV2.startsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start time of the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRangeV2.endsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end time of the event. The field will not be present if the organizer hasn\u0027t entered an end time during event creation/update",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL external to LinkedIn containing event information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backgroundImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Background image associated with this event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventTimezone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeZone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The event\u0027s timezone in IANA Time Zone database format, e.g. America/Los_Angeles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an event. Default event state will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geoLocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GeoUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/geo.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Closest standardized bing geo match of the event location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deletable",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag to indicate whether the event can be deleted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "broadcastTool",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventBroadcastTool",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Broadcasting tool used for streaming the event online.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UserGeneratedContentPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ugcPostUrn of the ugcPost that gets created as part of event creation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionedLeadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn of the lead gen form associated with the event.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/lead-gen/lead-gen-form.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creation time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the member who has created the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EventSetting Schema",
+      "Anchor": "eventsetting-schema",
+      "SectionPath": [
+        "Events Schema",
+        "EventSetting Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entryCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventEntryCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entry criteria member needs to satisfy to be able to attend the event. Possible values: PUBLIC: This event is open to all members.GATED: A member needs to raise a request to attend the event.",
+            "Links": [],
+            "Values": [
+              "PUBLIC: This event is open to all members.",
+              "GATED: A member needs to raise a request to attend the event."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "invitationSettings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventInvitationSettings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invitation related settings for an event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "discoveryMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventDiscoveryMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mode in which the event can be discovered on LinkedIn. Possible values: LISTED: Event is discoverable through search/relevance/recommendation channels.URL_ONLY: Event can only be discovered via URL.",
+            "Links": [],
+            "Values": [
+              "LISTED: Event is discoverable through search/relevance/recommendation channels.",
+              "URL_ONLY: Event can only be discovered via URL."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attendanceMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventAttendanceMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mode in which the attendees can attend an event. Possible values: IN_PERSON: The event is an offline only event with physical location associated to it and can only be attended in person.VIRTUAL: The event is an online only event, which has no physical location associated to it. It can only be attended virtually using streaming URL.IN_PERSON_OR_VIRTUAL: The event has a physical location to attend in person and also has URL for attending virtually.",
+            "Links": [],
+            "Values": [
+              "IN_PERSON: The event is an offline only event with physical location associated to it and can only be attended in person.",
+              "VIRTUAL: The event is an online only event, which has no physical location associated to it. It can only be attended virtually using streaming URL.",
+              "IN_PERSON_OR_VIRTUAL: The event has a physical location to attend in person and also has URL for attending virtually."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mapsToSingleUgcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether a ugc post gets created as part of the event creation, which is tied 1:1 to the lifecycle of this event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "premiumGated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the event is Premium-gated.Note: Applicable from versions 202602 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Event",
+      "Anchor": "get-event",
+      "SectionPath": [
+        "Get Event"
+      ],
+      "Text": "Individual event can be requested using the endpoint below that only requires event identifier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Event",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Event",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaEvents/7130296341984911360",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Event",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaEvents/7130296341984911360\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Event",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022timeRangeV2\u0022: {\n        \u0022endsAt\u0022: 1700002800000,\n        \u0022startsAt\u0022: 1699995600000\n    },\n    \u0022settings\u0022: {\n        \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n        \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n        \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n        \u0022mapsToSingleUgcPost\u0022: true,\n        \u0022invitationSettings\u0022: {\n            \u0022invitationPrivilegePolicies\u0022: [\n                {\n                    \u0022policy\u0022: \u0022ALL_ATTENDEES\u0022\n                }\n            ]\n        }\n    },\n    \u0022vanityName\u0022: \u0022testdma2event7130296341984911360\u0022,\n    \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7130296344711151618\u0022,\n    \u0022organizer\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022created\u0022: {\n        \u0022time\u0022: 1699995122701\n    },\n    \u0022backgroundImage\u0022: {\n        \u0022downloadUrl\u0022: \u003Cdownload_url\u003E,\n        \u0022downloadUrlExpiresAt\u0022: 1700600400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n    },\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test dma2 event\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022deletable\u0022: true,\n    \u0022eventTimezone\u0022: \u0022America/Los_Angeles\u0022,\n    \u0022id\u0022: 7130296341984911360,\n    \u0022broadcastTool\u0022: \u0022LINKEDIN_LIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Event",
+      "Anchor": "batch-get-event",
+      "SectionPath": [
+        "Batch Get Event"
+      ],
+      "Text": "Multiple events can be requested using the endpoint below that only requires list of event identifiers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Event",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Event",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaEvents?ids=List(7130261648786829313,7130296341984911360)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Event",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaEvents?ids=List(7130261648786829313,7130296341984911360)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Event",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u00227130261648786829313\u0022: {\n            \u0022timeRangeV2\u0022: {\n                \u0022endsAt\u0022: 1699995600000,\n                \u0022startsAt\u0022: 1699987380000\n            },\n            \u0022settings\u0022: {\n                \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n                \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n                \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n                \u0022mapsToSingleUgcPost\u0022: true,\n                \u0022invitationSettings\u0022: {\n                    \u0022invitationPrivilegePolicies\u0022: [\n                        {\n                            \u0022policy\u0022: \u0022ALL_ATTENDEES\u0022\n                        }\n                    ]\n                }\n            },\n            \u0022vanityName\u0022: \u0022testdmaevent7130261648786829313\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7130261653039759362\u0022,\n            \u0022organizer\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: {},\n                \u0022time\u0022: 1699986851117\n            },\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test dma event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022deletable\u0022: false,\n            \u0022description\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022DMA testing\u0022\n                    }\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022eventTimezone\u0022: \u0022America/Los_Angeles\u0022,\n            \u0022id\u0022: 7130261648786829313,\n            \u0022broadcastTool\u0022: \u0022LINKEDIN_LIVE\u0022\n        },\n        \u00226945473755364155393\u0022: {\n            \u0022timeRangeV2\u0022: {\n                \u0022endsAt\u0022: 1716678000000,\n                \u0022startsAt\u0022: 1655935200000\n            },\n            \u0022settings\u0022: {\n                \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n                \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n                \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n                \u0022mapsToSingleUgcPost\u0022: true,\n                \u0022invitationSettings\u0022: {\n                    \u0022invitationPrivilegePolicies\u0022: [\n                        {\n                            \u0022policy\u0022: \u0022ALL_ATTENDEES\u0022\n                        }\n                    ]\n                }\n            },\n            \u0022vanityName\u0022: \u0022needyetanothertestevent6945473755364155393\u0022,\n            \u0022externalUrl\u0022: \u0022https://www.youtube.com/watch?v=5qap5aO4i9A\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:6945473756970590208\u0022,\n            \u0022organizer\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: {},\n                \u0022time\u0022: 1655929983999\n            },\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Need yet another test event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022deletable\u0022: false,\n            \u0022description\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022More lofi jams\u0022\n                    }\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022eventTimezone\u0022: \u0022America/New_York\u0022,\n            \u0022id\u0022: 6945473755364155393\n        }\n    },\n    \u0022statuses\u0022: {\n        \u00227130261648786829313\u0022: 200,\n        \u00226945473755364155393\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Event",
+        "Sample Response"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Event",
+        "Sample Response"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of OrganizationEventAuthorizationActionType.EVENTS_MANAGE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Events by Organization",
+      "Anchor": "fetch-events-by-organization",
+      "SectionPath": [
+        "Fetch Events by Organization"
+      ],
+      "Text": "This endpoint returns all events organized by a particular organization. This endpoint requires q=organization with a organization URN in the organizer parameter and an optional timeBasedFilter to filter the event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Events by Organization",
+      "Anchor": "fetch-events-by-organization",
+      "SectionPath": [
+        "Fetch Events by Organization"
+      ],
+      "Text": "Since an organization can have a large volume of Events, this API supports pagination using the paginationCursor and maxPaginationCount parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Events by Organization",
+      "Anchor": "fetch-events-by-organization",
+      "SectionPath": [
+        "Fetch Events by Organization"
+      ],
+      "Text": "Note that there can be an instance where an empty result does not indicate that there is no more data due to internal filtering logic. In this case, the returned metadata would contain the nextPaginationCursor that can be passed in to retrieve the next page of data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Fetch Events by Organization",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be organizer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:2414183",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeBasedFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents criteria based on which we filter events by time.Possible values: lifeCycleState:ONGOING: The event is in-progress.lifeCycleState:PAST: The event has ended.lifeCycleState:UPCOMING: The event hasn\u0027t started yet.",
+            "Links": [],
+            "Values": [
+              "lifeCycleState:ONGOING: The event is in-progress.",
+              "lifeCycleState:PAST: The event has ended.",
+              "lifeCycleState:UPCOMING: The event hasn\u0027t started yet."
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(lifeCycleState:PAST)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of results to display on each page. Default is 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The decoded index of the form to begin your result page at, which is retrieved from the previous response metadata. There is no need to pass in this parameter for the first call.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Events by Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Events by Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaEvents?q=organizer\u0026organizer=URN%3Ali%3Aorganization%3A2414183\u0026paginationCursor=MTA=\u0026maxPaginationCount=2\u0026timeBasedFilter=(lifeCycleState:PAST)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Events by Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaEvents?q=organizer\u0026organizer=URN%3Ali%3Aorganization%3A2414183\u0026paginationCursor=MTA=\u0026maxPaginationCount=2\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Fetch Events by Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022metadata\u0022: {\n        \u0022nextPaginationCursor\u0022: \u0022MTI=\u0022\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022timeRangeV2\u0022: {\n                \u0022endsAt\u0022: 1701302400000,\n                \u0022startsAt\u0022: 1701298800000\n            },\n            \u0022settings\u0022: {\n                \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n                \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n                \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n                \u0022mapsToSingleUgcPost\u0022: true,\n                \u0022invitationSettings\u0022: {\n                    \u0022invitationPrivilegePolicies\u0022: [\n                        {\n                            \u0022policy\u0022: \u0022ALL_ATTENDEES\u0022\n                        }\n                    ]\n                }\n            },\n            \u0022vanityName\u0022: \u0022testspeaker27118327286021398528\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7118327288378601472\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: {},\n                \u0022time\u0022: 1697141477168\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Test speaker 2\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022deletable\u0022: false,\n            \u0022id\u0022: 7118327286021398528,\n            \u0022eventTimezone\u0022: \u0022America/New_York\u0022,\n            \u0022broadcastTool\u0022: \u0022LINKEDIN_LIVE\u0022\n        },\n        {\n            \u0022timeRangeV2\u0022: {\n                \u0022endsAt\u0022: 1701385200000,\n                \u0022startsAt\u0022: 1701381600000\n            },\n            \u0022settings\u0022: {\n                \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n                \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n                \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n                \u0022mapsToSingleUgcPost\u0022: true,\n                \u0022invitationSettings\u0022: {\n                    \u0022invitationPrivilegePolicies\u0022: [\n                        {\n                            \u0022policy\u0022: \u0022ALL_ATTENDEES\u0022\n                        }\n                    ]\n                }\n            },\n            \u0022vanityName\u0022: \u0022speakerinvitationtest7118319981087313920\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7118319983457091584\u0022,\n            \u0022organizer\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: {},\n                \u0022time\u0022: 1697139735538\n            },\n            \u0022backgroundImage\u0022: {\n                \u0022downloadUrl\u0022: \u003Cdownload_url\u003E,\n                \u0022downloadUrlExpiresAt\u0022: 1701579600000,\n                \u0022status\u0022: \u0022AVAILABLE\u0022\n            },\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022speaker invitation test\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022deletable\u0022: false,\n            \u0022eventTimezone\u0022: \u0022America/New_York\u0022,\n            \u0022id\u0022: 7118319981087313920,\n            \u0022broadcastTool\u0022: \u0022LINKEDIN_LIVE\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ILLEGAL_ARGUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad parameter is provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access events data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the necessary permissions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller should have access to the Ad Account provided in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Ad Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided event is not existed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure to provide the data that is existed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-tools",
+  "Title": "XML Feeds - Development Tools",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "XML Feeds - Development Tools",
+      "Anchor": "xml-feeds---development-tools",
+      "SectionPath": [],
+      "Text": "The Project Plan describes different stages of Basic Jobs development and estimated timeline to help create project plans for Basic Jobs integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Building and integrating the XML feed involves development and testing efforts which can take anywhere between 2 - 8 weeks. We have created the project plan to help project managers and developers with the planning, timelines and help create checkpoints on different activities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Below are the milestones definitions for Basic Jobs Integration Project Plan:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Time",
+        "Milestone",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "One week",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Self-Serve access provided by LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact LL-BD@linkedin.com to request participation. Partner developers and project managers should review Basic Jobs documentation, align on requirements and discuss timelines with their LinkedIn Business Development contact to start development",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "1-4 Week",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partners can reach out to the LinkedIn Business Development team to clarify their questions during the development phase. Once the XML feed is ready, share the link with the LinkedIn Business Development team for integration.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "2-3 Weeks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Testing \u0026 Certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Business Development team reviews the XML feed for schema and accuracy. They will provide feedback on changes required (if any). Once the changes have been incorporated and the integration is compliant, the partner is certified by LinkedIn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Day 1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Launch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Once certified, LinkedIn pushes the feed live and jobs start appearing on LinkedIn.com in 24 hours. LinkedIn Business Development team provides resources to help communicate the benefits of the integration to your customers",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Please reach out to your LinkedIn Business Development point of contact for questions not addressed on the documentation.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

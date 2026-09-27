@@ -1,0 +1,628 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/identity/people",
+  "Title": "People",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/identity/people",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "People",
+      "Anchor": "people",
+      "SectionPath": [],
+      "Text": "The People API returns a member\u0027s LinkedIn profile, subject to the member\u0027s privacy settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People",
+      "Anchor": "people",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "People",
+      "Anchor": "people",
+      "SectionPath": [],
+      "Text": "get a single profile.\nbatch get multiple profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data obfuscated depending on whether member has opted into the new DMA privacy setting (opted out by default). When opted in, member data is returned. When opted out, member data is filtered out.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of format urn:li:person:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The person id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable first name of a member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the firstName field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable last name of a member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the lastName field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable maiden name of a member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedMaidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the maidenName field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable headline of choosing to be put on the profile; can be title but may also be anything that suits the purpose",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedHeadline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the headline field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The vanity name for the member (i.e. public URL)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePicture.displayImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata about the member\u2019s picture in the profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Profile",
+      "Anchor": "get-profile",
+      "SectionPath": [
+        "Get Profile"
+      ],
+      "Text": "This method allows for fetching a single LinkedIn member profile given a person id.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Profile",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Profile",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaPeople/(id:123)?fields=id,firstName,lastName,maidenName,localizedFirstName,localizedLastName,localizedMaidenName,vanityName,headline,localizedHeadline,profilePicture",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Profile",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaPeople/(id:123)?fields=id,firstName,lastName,maidenName,localizedFirstName,localizedLastName,localizedMaidenName,vanityName,headline,localizedHeadline,profilePicture\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Profile",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022123\u0022,\n    \u0022firstName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022MyFirstName\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedFirstName\u0022: \u0022MyFirstName\u0022,\n    \u0022lastName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022MyLastName\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedLastName\u0022: \u0022MyLastName\u0022,\n    \u0022maidenName\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022MyMaidenName\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedMaidenName\u0022: \u0022MyMaidenName\u0022,\n    \u0022headline\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022This is my headline\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022localizedHeadline\u0022: \u0022This is my headline\u0022,\n    \u0022vanityName\u0022: \u0022myVanityName\u0022,\n    \u0022profilePicture\u0022: {\n        \u0022displayImage\u0022: {\n            \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E03AQEqeCvWIJKq4g/profile-displayphoto-shrink_400_400/0/1675118916417?e=1705536000\u0026v=beta\u0026t=Mdj0dzluNN0mEVlNZT0XBSNlKif7ZMcXAn1eJX3YPpE\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1705536000000,\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Profile",
+      "Anchor": "batch-get-profile",
+      "SectionPath": [
+        "Batch Get Profile"
+      ],
+      "Text": "This method allows for fetching multiple LinkedIn member profiles given person ids.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Profile",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Profile",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaPeople?ids=List((id:123),(id:456))\u0026fields=id,firstName,lastName,maidenName,localizedFirstName,localizedLastName,localizedMaidenName,vanityName,headline,localizedHeadline,profilePicture",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Profile",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaPeople?ids=List((id:123),(id:456))\u0026fields=id,firstName,lastName,maidenName,localizedFirstName,localizedLastName,localizedMaidenName,vanityName,headline,localizedHeadline,profilePicture\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Profile",
+        "Sample Response"
+      ],
+      "Text": "In this example, first member is opted into new DMA setting (and hence member data is returned) and second member is opted out (and hence member data is obfuscated)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Profile",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022(id:123)\u0022: {\n            \u0022id\u0022: \u0022123\u0022,\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022MyFirstName\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedFirstName\u0022: \u0022MyFirstName\u0022,\n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022MyLastName\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedLastName\u0022: \u0022MyLastName\u0022,\n            \u0022maidenName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022MyMaidenName\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedMaidenName\u0022: \u0022MyMaidenName\u0022,\n            \u0022headline\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022This is my headline\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedHeadline\u0022: \u0022This is my headline\u0022,\n            \u0022vanityName\u0022: \u0022myVanityName\u0022,\n            \u0022profilePicture\u0022: {\n                \u0022displayImage\u0022: {\n                    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E03AQEqeCvWIJKq4g/profile-displayphoto-shrink_400_400/0/1675118916417?e=1705536000\u0026v=beta\u0026t=Mdj0dzluNN0mEVlNZT0XBSNlKif7ZMcXAn1eJX3YPpE\u0022,\n                    \u0022downloadUrlExpiresAt\u0022: 1705536000000,\n                    \u0022status\u0022: \u0022AVAILABLE\u0022\n                }\n            }\n        },\n        \u0022(id:456)\u0022: {\n            \u0022id\u0022: \u0022private\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid oauth2 access token for the given member attempting to be fetched",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token matching member being fetched",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access people data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the necessary permissions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid member id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you are requesting an existing member",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

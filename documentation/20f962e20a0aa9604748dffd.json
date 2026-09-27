@@ -1,0 +1,396 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+  "Title": "LinkedIn Learning and Docebo/Ceridian Dayforce Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Docebo/Ceridian Dayforce and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo/Ceridian Dayforce Deep Integration Functionality",
+      "Anchor": "doceboceridian-dayforce-deep-integration-functionality",
+      "SectionPath": [
+        "Docebo/Ceridian Dayforce Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo/Ceridian Dayforce Deep Integration Functionality",
+      "Anchor": "doceboceridian-dayforce-deep-integration-functionality",
+      "SectionPath": [
+        "Docebo/Ceridian Dayforce Deep Integration Functionality"
+      ],
+      "Text": "Reporting: AICC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo/Ceridian Dayforce Deep Integration Functionality",
+      "Anchor": "doceboceridian-dayforce-deep-integration-functionality",
+      "SectionPath": [
+        "Docebo/Ceridian Dayforce Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo/Ceridian Dayforce Deep Integration Functionality",
+      "Anchor": "doceboceridian-dayforce-deep-integration-functionality",
+      "SectionPath": [
+        "Docebo/Ceridian Dayforce Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Docebo integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo/Ceridian Dayforce Deep Integration Functionality",
+      "Anchor": "doceboceridian-dayforce-deep-integration-functionality",
+      "SectionPath": [
+        "Docebo/Ceridian Dayforce Deep Integration Functionality"
+      ],
+      "Text": "An active Docebo LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Docebo LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Docebo\u0027s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and Docebo\nto establish a secure SAML single sign-on (SSO) connection to ensure seamless access to\ncontent. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning\nadds courses at a rate of 20-30 per week at no extra cost. The Docebo\nadministrator manually uploads new content at regular intervals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Docebo deep integration with LinkedIn Learning uses LinkedIn Learning APIs\nto refresh the content library daily. This feature ensures LinkedIn Learning\nmakes new content available within 24 hours of release. LinkedIn Learning\naggregates and indexes all content titles and descriptions to accommodate\nkeyword searches and support efficient discoverability. Docebo supports\nautomatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "LinkedIn Learning recommends SAML SSO for all enterprise learning platform\nintegrations. SSO authentication can be configured in your LinkedIn Learning\nAdmin settings. Most organizations have a centrally managed identity management\nsolution like Azure AD, Okta or AD FS which can be configured to authenticate\nusers into enterprise applications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with\nyour organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Configuration",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses AICC to communicate a\nlearner\u2019s progress back to Docebo when the learner launches content from the\nLMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "For LinkedIn Learning to communicate learner progress to Docebo, you\nneed to allow AICC traffic to flow to your LMS in your admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Add content to your LMS via AICC.\n\nUnder Hostname(s), enter your LMS host name. Generally, this value should be your Docebo and or Ceridian Dayforce portal name (for example, examplecompany.docebo.com or examplecompany.dayforce.com). If you are unsure which values to use, contact your organization\u2019s LMS administrator or your internal LMS support contact.\n\n Note\nDo not use protocols for the hostname (e.g., http:// and https://).\n\n\nUnder AICC Integration, switch the \u0022Enabled\u0022 toggle to \u0022On\u0022. You must enter a hostname to enable the AICC integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "Do not manually download or import AICC packages. The next section of this document shows you how to enable automatic content integration, which allows Docebo to automate the process on your behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "For more information about enabling AICC, please review the LinkedIn Learning Standard AICC LMS Integration Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Docebo to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For admins who wish to download videos from LinkedIn Learning, please note the following condition: You integrate video content into your LMS at the course level. If you would like to add individual videos to your LMS, follow these instructions in the Standard AICC Integration Guide to download individual videos as AICC packages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "To sync your Docebo content with LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\nIn the Application Name field, provide the name of your learning platform (e.g., \u0022Docebo LMS\u0022), as the application name.\n\nIn the Application description field, provide a short description of the integration use case in the application description field. For example, \u0022Docebo content catalog sync\u0022.\n\nUnder Choose keys, there are two\u202Fcheckboxes\u202F\u2013\u202FContent\u202Fand\u202FReport. Select\u00A0Content.\u202F\u00A0\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nCopy the generated Client Id and Client Secret and paste the values into the corresponding Docebo fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo Configuration",
+      "Anchor": "docebo-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Docebo Configuration"
+      ],
+      "Text": "To complete the configuration with Docebo, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo Configuration",
+      "Anchor": "docebo-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Docebo Configuration"
+      ],
+      "Text": "Client ID\n\nClient Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo Configuration",
+      "Anchor": "docebo-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Docebo Configuration"
+      ],
+      "Text": "Once you\u2019ve gathered the required information, follow Docebo\u0027s configuration instructions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Docebo Configuration",
+      "Anchor": "docebo-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Docebo Configuration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their Docebo/Ceridian Dayforce instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recommended-matches-certification",
+  "Title": "CRM Connect Recommended Matches Certification (Optional)",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recommended-matches-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "CRM Connect Recommended Matches Certification (Optional)",
+      "Anchor": "crm-connect-recommended-matches-certification-optional",
+      "SectionPath": [],
+      "Text": "The Recommended Matches certification validates that your CRM Connect integration properly handles LinkedIn\u0027s AI-powered candidate recommendations. This certification ensures your system can receive, process, and display recommended candidates effectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Before certification, ensure that you:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Complete the core CRM Connect certification.\nHave a working CRM Connect integration with:\n\nCandidate sync functionality\nPipeline sync functionality\nRetrieve exported candidates capability\n\n\nEnable Recommended Matches feature flag for your integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification test cases",
+      "Anchor": "certification-test-cases",
+      "SectionPath": [
+        "Certification test cases"
+      ],
+      "Text": "Complete the following test cases to validate your Recommended Matches integration with CRM Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Certification test cases",
+      "Anchor": "certification-test-cases",
+      "SectionPath": [
+        "Certification test cases"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API requirements",
+        "Expected result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "TC-1: Display Recommended Matches",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm the Recommended Matches widget loads after activating a CRM Connect integration. Recommended candidates might take 24 hours to appear after account activation and data sync completion, but the widget should load without errors.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the Recommended Matches widget appears and shows recommendations related to the pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TC-2: Logged in / Logged out",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Load the recommended matches widget while logged out from LinkedIn, then log in.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm the widget shows a login or signup option when logged out and displays full recommended matches profiles when logged in.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TC-3: Display full profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View one candidate\u0027s complete profile in the widget from the recommended matches.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the full profile width displays on the specific pipeline and shows \u0022Save to pipeline\u0022 and \u0022Save and InMail\u0022 options.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TC-4: Save to pipeline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Select one candidate from the recommended matches widget and choose \u0022Save to pipeline\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm the candidate exports to the ATS under the selected pipeline. Create a new record for new candidates or update existing records when applicable. LinkedIn Recruiter should display \u0022Exported successfully\u0022 under the candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TC-5: Send InMail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Select \u0022Save and InMail\u0022 for one candidate from the recommended matches widget.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the \u0022Compose Message\u0022 pane displays fully when expanded.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

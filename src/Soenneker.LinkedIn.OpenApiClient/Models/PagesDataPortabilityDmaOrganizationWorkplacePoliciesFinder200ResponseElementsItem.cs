@@ -24,6 +24,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemCreated Created { get; set; }
 #endif
+        /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource. Logically, deleted MUST have a later timestamp than creation. It may or may not have the same time as lastModified depending upon the resource/association/sub-resource semantics.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemDeleted? Deleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemDeleted Deleted { get; set; }
+#endif
         /// <summary>The genericDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +39,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails GenericDetails { get; set; }
+#endif
+        /// <summary>Unique identifier for a workplace policy of an organization.Documented type: OrganizationWorkplacePolicyUrnRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Key { get; set; }
+#nullable restore
+#else
+        public string Key { get; set; }
 #endif
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +91,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemDeleted.CreateFromDiscriminatorValue); } },
                 { "genericDetails", n => { GenericDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
                 { "policyTypeDetails", n => { PolicyTypeDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemPolicyTypeDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemPolicyTypeDetails.CreateFromDiscriminatorValue); } },
             };
@@ -89,7 +107,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemCreated>("created", Created);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemDeleted>("deleted", Deleted);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemGenericDetails>("genericDetails", GenericDetails);
+            writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemLastModified>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationWorkplacePoliciesFinder200ResponseElementsItemPolicyTypeDetails>("policyTypeDetails", PolicyTypeDetails);
             writer.WriteAdditionalData(AdditionalData);

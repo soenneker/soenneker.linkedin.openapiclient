@@ -1,0 +1,451 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2022/marketing-api-changes",
+  "Title": "Archived Marketing API Changes 2022",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2022/marketing-api-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/sample-apps-lms",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2-naics",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2022",
+      "Anchor": "archived-marketing-api-changes-2022",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2022",
+      "Anchor": "archived-marketing-api-changes-2022",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements",
+      "SectionPath": [
+        "November 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Engagement Retargeting API: Retarget an audience based on content engagement or member actions\nThe Engagement Retargeting API is available again starting with the November API version, after we removed the API in May due to a bug. Retarget audiences based on content engagement or member actions such as company website or LinkedIn Page visits, engagement with Single Image Ads, Video Ad views, Lead Gen Form opens and more. We\u2019ve also introduced more flexibility with website retargeting lookback windows, and added the ability to delete segments.\n\nNew methodology for Video Completion Rate: To align with the industry standard, we\u0027re changing how we calculate Video Completion Rate (VCR) for all videos across LinkedIn and the LinkedIn Audience Network (LAN)\u2014from completions divided by views to completions divided by plays. Learn more about the definitions of these metrics here. VCR is a derived metric that\u0027s not shared in any APIs. However, if you\u0027re calculating VCR using data that\u0027s available via Ad Analytics API, we recommend updating the calculation to videoCompletions divided by videoStarts as a percentage.\n\nDeprecating API decoration: Starting with the 202211 version, we\u0027ll no longer support API Decoration for the adAccounts, adCampaigns and adCampaignGroups APIs; we\u0027ll deprecate API Decoration for other APIs in future versions. To replace API Decoration, we\u0027re introducing additional fields in the schemas. Learn more about how to access these fields here.\n\nA new, more focused inbox experience: We\u2019re introducing a two-tabbed inbox in the LinkedIn platform so members can more easily find and respond to the messages that matter most. The Focused tab contains the most relevant messages, while the Other tab houses the remaining conversations. Sponsored Messages will be delivered to the Focused tab for members who have a higher propensity to click or submit a lead based on their past interactions with Sponsored Messages. Sponsored Messages will be delivered in the Other tab for all other members. No action is required. Please make note of this change as it may impact campaign performance. Learn more here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "October 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Offline Conversions API: A new API to measure the marketing impact on offline events.\nThe new Offline Conversions API gives you the tools to build a solution that enables you to attribute offline marketing data to more accurately measure the down-funnel effectiveness of ad campaigns - unlocking insights to improve ROI measurement and optimize performance. See this blog post to learn more about what you can build with this API, how it can benefit your customers, who this API is for, and how to apply for access.\n\nOrganization Follower Statistics API: New accurate and comprehensive follower data for Pages. Starting with the version 202210, the organization follower breakdown is replaced by legacy geo region and country with the Bing Geo market area and country/region. This provide more accurate and comprehensive geographical data for Page followers. To avoid disruption and inconsistency in the naming conventions and follower counts across products, please take the following actions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "October 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Migrate to followerCountsByGeo or followerCountsByGeoCountry and to be able to read the Bing Geo URNs, which can be resolved by the Bing Geo API.\nMigrate to the new Industry Taxonomy Versions API, introduced in the September 2022 update, to resolve the industry V2 URNs in followerCountsByIndustry.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "October 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Ad Campaigns API: LinkedIn Audience Network offsiteDeliveryEnabled field now required. The LinkedIn Audience Network (LAN) helps you reach targeted professional audiences across multiple touch points and in different trusted environments to boost campaign performance. Starting with the version 202210, you\u0027ll have to explicitly set the offsiteDeliveryEnabled field (now a mandatory) to be true or false, so that the LinkedIn Audience Network can be enabled across all eligible campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-2",
+      "SectionPath": [
+        "September 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Ad Supply Forecasts API: New metricType values for cost per key result forecasting such as COST_PER_MILLION_IMPRESSIONS, COST_PER_MILLION_CLICKS, COST_PER_MILLION_VIEWS, COST_PER_MILLION_LEADS, COST_PER_MILLION_REACHES, and COST_PER_MILLION_MESSAGE_SENDS have been added to the /adSupplyForecasts API. This enables advertisers to understand cost per objective key result hypothetically based on their campaign set up, so they can better plan their campaign and budget use.\n\nBrand Lift Results API: we\u2019ve introduced two new values to understand statistical strength of Brand Lift test. First, statistical strength for Relative Brand Lift has been added as relativeLiftStatisticalStrengthMetrics to adLiftResultMetrics. Secondly, the statistical strength for demographic breakdown is now available as adLiftResultStatisticalMetrics in TestResultMetricMemberBreakdowns.\n\nIndustry Taxonomy Versions API: We\u2019ve introduced a new API to better represent industry data on LinkedIn. It replaces the /industries API and queries industry data based on industry URNs. The new API offers a hierarchical structure to easily navigate the comprehensive list of industries available on LinkedIn. It supports the existing industry data and 400\u002B additional industry codes that are aligned with the North American Industry Classification System (NAICS).\n\nNew API Postman Collection workspace for versioned APIs only.\nA new workspace dedicated for versioned APIs is now available to test newly released versioned APIs. Clicking on the \u201CTry with postman\u201D button from public developer pages links you right into this workspace. This change enhances the overall dev experience, searchability \u0026 tracking capabilities. Check it out.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "September 2022",
+        "Breaking Changes"
+      ],
+      "Text": "Unversioned Ad Analytics API: approximateUniqueImpressions available again [in beta]\nIn our July update, we communicated the removal of the approximateUniqueImpressions metric. As of September 12, 2022, we\u2019ve reinstated this metric in the AdAnalyticsV2 endpoint, based on feedback from our partners and our customers. The reach metric will come with a new 92-day maximum window, meaning you\u0027ll be able to pull the metrics on any dimension (e.g. campaign level, campaign-group level, etc.,) for any time range\u003C=92 days.\nFor all campaigns, the approximateUniqueImpressions metric is currently in beta, meaning that we\u2019re still testing and iterating on it. During these iterations, the calculation of the metric can change. Therefore, we recommend using this metric directionally. We don\u0027t recommend using it for historical performance comparisons. Moreover, for campaigns running on our Audience Network, some traffic is excluded, so the metric may be underestimated\u2014in some cases significantly.\nWe also deprecate the following approximateReach metrics from the unversioned APIs starting in October: averageDailyReachMetrics,averagePreviousDayReachMetrics, averagePreviousSevenDayReachMetrics, averagePreviousThirtyDayReachMetrics.\n\nDMP Segments Lookalike API:\nStarting October 31, 2022, we\u0027ll introduce 1 minute per user (a.k.a member) rate limits for our Lookalike API. The limits will be enforced such that there\u0027s minimal interruption to existing applications and their users. For more detailed information, see the rate limit specific sections of our FAQ.\n\nUnversioned Industries API: Starting January 31, 2023, the /industries API will be deprecated. It has been replaced by the Industry Taxonomy Versions API. Requests made to /industries will receive a 404 status code error in response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders",
+      "SectionPath": [
+        "September 2022",
+        "Reminders"
+      ],
+      "Text": "DMP Segments API: New rate limits for users and companies streaming endpoints. Starting October 31, 2022, we\u0027ll introduce 1 minute per user (a.k.a member) rate limits for our streaming APIs. The limits will be enforced such that there\u0027s minimal interruption to existing applications and their users. For more detailed information, see the rate limit specific sections of our FAQ.\n\nAll LinkedIn Marketing APIs are now versioned: We now support API versioning for all LinkedIn Marketing APIs \u2013 giving you the power to decide when to adopt API changes. The first version is available now, and we\u0027ll release a new version every month. We intend to support each API version for a full year with its own set of documentation that covers all Marketing APIs. Continue to check the Recent Changes page to stay up to date on the latest releases. To call an API version, include the request header with key \u201CLinkedin-Version\u201D and set the value to correspond with the version you\u2019re referencing using the YYYYMM format. Get started with this blog post, walk through video, or documentation. Make sure to migrate to the new APIs before February 2023 when we\u0027ll sunset the Shares and UGC APIs.\n\nNew Content APIs that simplify the content creation experience and save you time: We introduced four new Content APIs that enable you to build quicker and to adopt the latest formats easier: Images, Videos, Post, and Creatives. With the new APIs, we\u2019ve reduced the steps to upload creative assets and create posts, and the APIs are built to support your workflow. Get started with the new migration guide. Make sure to migrate before February 2023 when we\u0027ll sunset unversioned APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-3",
+      "SectionPath": [
+        "August 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Ad Account Users API: We\u2019ve updated our error format to make the errors more descriptive and easier to resolve.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-1",
+      "SectionPath": [
+        "August 2022",
+        "Breaking Changes"
+      ],
+      "Text": "New rate limits for users and companies streaming endpoints:\nStarting October 31, 2022, we\u0027ll introduce 1 minute per user (a.k.a member) rate limits for our streaming APIs. The limits will be enforced such that there\u0027s minimal interruption to existing applications and their users. For more detailed information, see the rate limit specific sections of our FAQ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-1",
+      "SectionPath": [
+        "August 2022",
+        "Reminders"
+      ],
+      "Text": "All LinkedIn Marketing APIs are now versioned: We now support API versioning for all LinkedIn Marketing APIs \u2013 giving you the power to decide when to adopt API changes. The first version is available now, and we\u0027ll release a new version every month. We intend to support each API version for a full year with its own set of documentation that covers all Marketing APIs. Continue to check the Recent Changes page to stay up to date on the latest releases. To call an API version, include the request header with key \u201CLinkedin-Version\u201D and set the value to correspond with the version you\u2019re referencing using the YYYYMM format. Get started with this blog post, walk through video, or documentation.\n\nNew Content APIs that simplify the content creation experience and save you time: We introduced four new Content APIs that enable you to build quicker and to adopt the latest formats easier: Images, Videos, Post, and Creatives. With the new APIs, we\u2019ve reduced the steps to upload creative assets and create posts, and the APIs are built to support your workflow. Get started with the new migration guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-4",
+      "SectionPath": [
+        "July 2022",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Posts API\n\nCreate Polls and Multi-Image Posts to engage your community: Our new Posts API now supports the creation and retrieval of polls and multi-image posts, increasing the variety of content formats marketers can use to reach their audiences.\n\nDynamic UTM API/adTrackingParameters.\n\nCreate a dynamic UTM parameter to effectively track campaigns: Now attach dynamic and custom UTM parameters on supported creative URLs to understand your ad\u0027s effectiveness across platforms and to track all campaigns and creatives uniquely, even if duplicated from an existing campaign. These macros are automatically filled with LinkedIn platform values for a campaign, creative, account, and more. Moreover, you don\u0027t need to trigger numerous creative content changes for UTM tracking purposes, which overloads Ads Quality with creative edit history and large review queues. Sponsored Content (Image, Article, Video) will be supported with this change. Support for Dynamic Ads, Carousel, and Message ads will come later. All partners using Shares and UGC APIs exclusively for UTM purposes, should now use this new API and avoid duplicate UTM assignments due to more than one method. Previous static UTM assignments will be preserved, but moving them from content to campaign is advisable using this API.\n\nBrand Lift API.\n\nGet brand lift survey results broken down by member age and gender demographics: Two new values MEMBER_AGE_RANGE and MEMBER_GENDER are added to AdLiftTestMemberDemographicCategory Enum. Now see raw survey results and lift metrics broken down by member age range and gender demographics (assuming that there are enough data points, according to our privacy thresholds). Start reading the new enum values to see member age and gender demographics for the adLiftTestResults.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-2",
+      "SectionPath": [
+        "July 2022",
+        "Breaking Changes"
+      ],
+      "Text": "Ad Analytics API\napproximateUniqueImpressions removed on July 31: On June 8, we launched 9 new metrics on the versioned \u0026 unversioned Ad Analytics API to replace the approximateUniqueImpressions metric. These new metrics are contained within the averageDailyReachMetrics, averagePreviousSevenDayReachMetrics, and averagePreviousThirtyDayReachMetrics sub-records and will approximately reach, frequency, and cost per 1,000 member accounts reached for three fixed time ranges: the current day, the last 7 days, and the last 30 days. You\u2019ll be able to pull these metrics for any day. approximateUniqueImpressions will be removed on July 31, 2022 from the API, and any calls with this metric will result in a 404 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders-2",
+      "SectionPath": [
+        "July 2022",
+        "Reminders"
+      ],
+      "Text": "All LinkedIn Marketing APIs are now versioned: We now support API versioning for all LinkedIn Marketing APIs \u2013 giving you the power to decide when to adopt API changes. The first version is available now, and we\u0027ll release a new version every month. We intend to support each API version for a full year with its own set of documentation that covers all Marketing APIs. Continue to check the Recent Changes page to stay up to date on the latest releases. To call an API version, include the request header with key \u201CLinkedin-Version\u201D and set the value to correspond with the version you\u2019re referencing using the YYYYMM format. Get started with this blog post, walk through video, or documentation.\n\nNew Content APIs that simplify the content creation experience and save you time: We introduced four new Content APIs that enable you to build quicker and to adopt the latest formats easier: Images, Videos, Post, and Creatives. With the new APIs, we\u2019ve reduced the steps to upload creative assets and create posts, and the APIs are built to support your workflow. Get started with this blog post or walk through video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Platform",
+      "Anchor": "platform",
+      "SectionPath": [
+        "June 2022",
+        "Platform"
+      ],
+      "Text": "Introducing API Versioning at LinkedIn.\n\nWho\u2019s impacted: All partners.\n\nWhat\u2019s happening: We now support API versioning for all LinkedIn Marketing APIs \u2013 giving you more power to decide when to adopt API changes. The first version is available now, and we\u0027ll release a new version every month. Each API version will be supported for a full year with its own set of documentation that covers all Marketing APIs. Continue to check the Recent Changes page to stay up to date on the latest releases. To call an API version, include the request header with key \u201CLinkedin-Version\u201D and set the value to correspond with the version you\u2019re referencing using the YYYYMM format. Get started with this blog post, walk through video, or documentation.\n\nNew Content APIs that simplify the content creation experience.\n\nWho\u2019s impacted: Partner using Shares or UGCPost APIs.\n\nWhat\u2019s happening: We\u2019re introducing four new Content APIs that enable you to build quicker and to adopt the latest formats easier: Images, Videos, Post, and Creatives. With the new APIs, we\u2019ve reduced the steps to upload creative assets and create posts, and the APIs are built to support your workflow. Get started with this blog post or walk through video.\n\nGet started with the new versioned and Content APIs using postman collection.\n\nWho\u2019s impacted: All partners.\n\nWhat\u2019s happening: The LinkedIn Marketing Solutions Versioned API\u0027s public workspace in Postman is updated to help you quickly get started with the versioned API and new Content APIs. View our online documentation for more information on getting started with Postman.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi",
+      "SectionPath": [
+        "June 2022",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "[reminder] New Reporting Metrics\nWho\u2019s impacted: Partners using the Ad Analytics API.\nWhat\u2019s happening: Starting June 8, 2022, we provided 9 new metrics on the AdAnalyticsV2 API to replace the existing approximateUniqueImpressions metric. These new metrics are contained within the averageDailyReachMetrics, averagePreviousSevenDayReachMetrics, and averagePreviousThirtyDayReachMetrics subrecords and will approximate reach, frequency, and cost per 1,000 member accounts reached for three fixed time ranges: the current day, the last 7 days, and the last 30 days. You\u2019ll be able to pull these metrics for any day. For example, you can pull the \u201Caverage last 7-day reach\u201D for October 25, (which covers October 18 - October 25), for October 24 (which covers October 17 - October 24), and selecting October 24 - October 25 will average the two individual last 7-day counts. approximateUniqueImpressions will be removed July 31, 2022. Calls requesting approximateUniqueImpressions after this date will receive a 400 error in response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-3",
+      "SectionPath": [
+        "June 2022",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New industryV2 filter for Company Search API\nWho\u2019s impacted: Partners using the Company Search API industry parameter.\nWhat\u2019s happening: If you\u0027re currently using the Company Search API to find companies using the filter.industry parameter, we\u0027re deprecating the existing filter.industry parameter in favor of a new parameter, filter.industryV2, which supports all values plus 200\u002B new industry codes. Learn more.\nWhen: Starting June 30, 2022.\n[reminder] Updating LinkedIn Audience Network to being enabled by default via Ads Campaign API\nWho\u2019s impacted: Partners using the Ad Campaigns API.\nWhat\u2019s happening: The LinkedIn Audience Network helps customers reach, engage, and convert targeted professional audiences in different trusted environments beyond the LinkedIn Feed to boost performance across advertising objectives. Within the LinkedIn Campaign Manager UI, LinkedIn Audience Network is enabled by default, and we\u2019re updating the API accordingly. This means that the default value for offsiteDeliveryEnabled will change from false to true for new campaigns. If you support our Audience Network in your platform, please ensure that the option for it\u0027s also set as true by default so that advertisers can continue to benefit from reach and scale efficiencies. If you don\u0027t support our Audience Network, make sure this field is set to false to avoid having ads being served on it. We recommend enabling the Audience Network for all eligible objective types and ad formats. Learn more here.\nWhen: Starting June 30, 2022.\n[reminder] approximateUniqueImpressions metric to be sunset\nWho\u2019s impacted: Partners using the Ad Analytics API.\nWhat\u2019s happening: API requests that include approximateUniqueImpressions metric in their request query will receive a 400 status code error in response. More details to migrate to new reach \u0026 frequency metrics are mentioned above.\nWhen: July 31, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management",
+      "SectionPath": [
+        "May 2022",
+        "Campaign Management"
+      ],
+      "Text": "Engagement Retargeting unavailable until further notice.\nWho\u2019s impacted: Partners using or considering the Engagement Retargeting API.\nWhat\u2019s happening: We discovered a bug that impacts the Engagement Retargeting API. While we resolve the bug, the API will be un-externalized and not available. We\u2019ll update you via this newsletter when the API is available again.\nRemoval of campaign floor price (unitCost field).\nWho\u2019s impacted: Partners using the Ad Campaigns API or Ad Budget Pricing API.\nWhat\u2019s happening: We are removing the floor price for manual bidding campaigns. Beginning on July 18, when creating manual bidding campaigns, advertiser campaigns now must satisfy two criteria: a bid must be greater than 0 and can\u0027t exceed bidLimits.max. Previously, bids had to be greater than bidLimits.min, which is returned by the Ad Budget Pricing API. If you\u0027re using bidLimits.min as a requirement for unitCost, you no longer need to and only need to ensure bids are greater than 0. If an advertiser tries to create or update a campaign to have bid \u003E 0 and below bidLimits.min, this will no longer return an error. The campaign would be created successfully.\nBrand Lift Test Benchmarking released.\nWho\u2019s impacted: Advertisers currently adopting or will adopt the Brand Lift Test API.\nWhat\u2019s happening: We\u2019re introducing Brand Lift Test Benchmarking, which provides industry and region-level benchmarks for brand lift results. The solution will [a] allow for comparison of results to other tests that selected the same region and industry and [b] enable customers to make better decisions from their results by contextualizing brand lift against other advertisers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi-1",
+      "SectionPath": [
+        "May 2022",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "New Reporting Metrics.\nWho\u2019s impacted: Partners using the Ad Analytics API.\nWhat\u2019s happening:\nNew Reach \u0026 Frequency Metrics: Starting June 8, 2022, we\u0027ll provide 9 new metrics on the AdAnalyticsV2 API to replace the existing approximateUniqueImpressions metric. These new metrics are contained within the averageDailyReachMetrics, averagePreviousSevenDayReachMetrics, and averagePreviousThirtyDayReachMetrics sub records and will approximate reach, frequency, and cost per 1,000 member accounts reached for three fixed time ranges: the current day, the last 7 days, and the last 30 days. You\u2019ll be able to pull these metrics for any day. For example, you can pull the \u201Caverage last 7-day reach\u201D for October 25, (which covers October 18 - October 25), for October 24 (which covers October 17 - October 24), and selecting October 24 - October 25 will average the two individual last 7-day counts. approximateUniqueImpressions will be removed July 31, 2022. Calls requesting approximateUniqueImpressions after this date will receive a 400 error in response.\nEvent Registrations: Advertisers can now run ads to drive registrations to online events. The new registrations metrics capture the number of registrations occurring after the member saw or clicked on an ad which is set up to land on the event registration page.\nDocument Progress \u0026 Completions: Document ads provide advertisers a way to show documents natively in the feed which users can peruse or download. Document metrics, similar to video metrics, show insight into the progress users make through reading the document and how many times the document has been downloaded.\nJob Apply Clicks \u0026 Applications: Talent media ads promote job pages. jobApplyClicks and jobApplications count when a member sees a talent media ad and then clicks to apply or submits their application on the job\u2019s landing page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-4",
+      "SectionPath": [
+        "May 2022",
+        "Breaking Changes"
+      ],
+      "Text": "approximateUniqueImpressions metric to be sunset\n\nWho\u2019s impacted: Partners using the Ad Analytics API.\n\nWhat\u2019s happening: API requests that include approximateUniqueImpressions metric in their request query will receive a 400 status code error in response. More details to migrate to new reach \u0026 frequency metrics are mentioned above.\n\nWhen: July 31, 2022.\n\n[reminder] New industryV2 filter for Company Search API\n\nWho\u2019s impacted: Partners using the Company Search API industry parameter.\n\nWhat\u2019s happening: If you\u0027re currently using the Company Search API to find companies using the filter.industry parameter, we\u0027re deprecating the existing filter.industry parameter in favor of a new parameter, filter.industryV2, which supports all values plus 200\u002B new industry codes. Learn more.\n\nWhen: Starting June 30, 2022.\n\n[reminder] Updating LinkedIn Audience Network to being enabled by default via Ads Campaign API.\n\nWho\u2019s impacted: Partners using the Ad Campaigns API.\n\nWhat\u2019s happening: The LinkedIn Audience Network helps customers reach, engage, and convert targeted professional audiences in different trusted environments beyond the LinkedIn Feed to boost performance across advertising objectives. Within the LinkedIn Campaign Manager UI, LinkedIn Audience Network is enabled by default, and we\u2019re updating the API accordingly. This means that the default value for offsiteDeliveryEnabled will change from false to true for new campaigns. If you support our Audience Network in your platform, please ensure that the option for it\u0027s also set as true by default so that advertisers can continue to benefit from reach and scale efficiencies. If you don\u0027t support our Audience Network, make sure this field is set to false to avoid having ads being served on it. We recommend enabling the Audience Network for all eligible objective types and ad formats. Learn more here.\n\nWhen: Starting June 30, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-1",
+      "SectionPath": [
+        "April 2022",
+        "Campaign Management"
+      ],
+      "Text": "Delete Ad entities.\nWho\u2019s impacted: Partners using the Ad Account API, Campaign API, Campaign Group API, and Creatives API.\nWhat\u2019s happening: Partners can now delete ad entities (Ad Account, Campaign Group, Campaign, and Creative) in any status, including test entities. This action is permanent and can\u0027t be recovered. Deleted entities that contain spend data are moved into a read-only REMOVED status in order for billing administrators to reconcile charges. Search or retrieve of ad entities may show these new values (PENDING_DELETION, REMOVED) in the status field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management",
+      "SectionPath": [
+        "April 2022",
+        "Page Management"
+      ],
+      "Text": "Editing page comments.\nWho\u2019s impacted: Partners using the Comments API.\nWhat\u2019s happening: Partners can now edit existing comments. Only the comment\u2019s message field, which contains the comment\u2019s text, is editable. Unlike the endpoints for CREATE and GET, the new PARTIAL_UPDATE endpoint won\u0027t have a resolved URN in its responses\u2019 $URN field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences",
+      "SectionPath": [
+        "April 2022",
+        "Audiences"
+      ],
+      "Text": "Granular rate limiting for Audiences.\nWho\u2019s impacted: Audiences partners using the /users and /companies streaming endpoints.\nWhat\u2019s happening: We be introducing 1 minute per user (a.k.a member) rate limits for our streaming APIs. The limits will be enforced such that there\u0027s minimal interruption to existing applications and their users. For more detailed information, see the rate limit specific sections of our FAQ.\nWhen: Starting July 31, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-5",
+      "SectionPath": [
+        "April 2022",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here.\nWhen: Starting April 30, 2022.\n[reminder] New industryV2 filter for Company Search API\nWho\u2019s impacted: Partners using the Company Search API industry parameter.\nWhat\u2019s happening: If you\u0027re currently using the Company Search API to find companies using the filter.industry parameter, we\u0027re deprecating the existing filter.industry parameter in favor of a new parameter, filter.industryV2, which supports all values plus 200\u002B new industry codes. Learn more.\nWhen: Starting June 30, 2022.\nUpdating LinkedIn Audience Network to being enabled by default via Ads Campaign API.\nWho\u2019s impacted: Partners using the Ad Campaigns API.\nWhat\u2019s happening: The LinkedIn Audience Network helps customers reach, engage, and convert targeted professional audiences in different trusted environments beyond the LinkedIn Feed to boost performance across advertising objectives. Within the LinkedIn Campaign Manager UI, LinkedIn Audience Network is enabled by default, and we\u2019re updating the API accordingly. This means that the default value for offsiteDeliveryEnabled will change from false to true for new campaigns. If you support our Audience Network in your platform, please ensure that the option for it\u0027s also set as true by default so that advertisers can continue to benefit from reach and scale efficiencies. If you don\u0027t support our Audience Network, make sure this field is set to false to avoid having ads being served on it. We recommend enabling the Audience Network for all eligible objective types and ad formats. Learn more here.\nWhen: Starting June 30, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Coming Soon",
+      "Anchor": "coming-soon",
+      "SectionPath": [
+        "April 2022",
+        "Coming Soon"
+      ],
+      "Text": "[reminder] Upcoming Reach \u0026 Frequency metric changes\nWho\u2019s impacted: Partners using the Ad Analytics API.\nWhat\u2019s happening: In Q2 CY 2022, 9 new metrics on the AdAnalyticsV2 API will be available, and replace the existing approximateUniqueImpressions metric. These new metrics will approximate reach, frequency, and cost per 1,000 member accounts reached for three fixed time ranges: the previous day, the last 7 days, and the last 30 days. You\u2019ll be able to pull these metrics for any day. For example, you can pull the \u201Caverage last 7-day reach\u201D for October 25, (which covers October 18 - October 25), for October 24 (which covers October 17 - October 24), and selecting October 24 - October 25 will average the two individual last 7-day counts. Please plan accordingly to have time to migrate to these new metrics. The exact date for removal of the existing reach metric will be announced when the replacement metrics are available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Platform",
+      "Anchor": "platform-1",
+      "SectionPath": [
+        "March 2022",
+        "Platform"
+      ],
+      "Text": "All access and refresh token requests should be made using only the POST method.\n\nWho\u2019s impacted: All partners.\n\nWhat\u2019s happening: Reminder that access and refresh token requests should be made using only the POST method with the request header \u201CContent-Type\u201D: \u201Cx-www-form-urlencoded\u201D and all required parameters in the request body.\n\nGetting started with LinkedIn Marketing APIs just got easier with a Marketing Sample Application.\n\nWho\u2019s impacted: All partners.\n\nWhat\u2019s happening: The Marketing Sample Application provides ready-to-use code that you can use to try out RESTful API calls to LinkedIn\u0027s OAuth and Marketing APIs. For example, you can use the sample application to fetch an authenticated user\u0027s ad account and role profile to confirm access. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-2",
+      "SectionPath": [
+        "March 2022",
+        "Campaign Management"
+      ],
+      "Text": "New cost control bid strategy for all advertisers.\nWho\u2019s impacted: Partners using adCampaignsV2 and adSupplyForecastsV2 APIs.\nWhat\u2019s happening: Cost Cap Bidding is an automated bid strategy that enables you to input your maximum cost per key (CPX) result when setting up a campaign. LinkedIn provides you with all of the possible results in accordance with the maximum CPX cost you set. To create campaigns with this bid strategy, use the new optimization target types described here. Cost Cap Bidding is a new feature which is ramping and may not be immediately available to all advertisers.\nRetarget audiences that visited a website or engaged with an ad.\nWho\u2019s impacted: Partners using the Engagement Retargeting API.\nWhat\u2019s happening: Partners can use the new trigger WEBSITE and SINGLE_IMAGE_ADS to create engagement retargeting segments, retargeting audiences who have visited your website, performed chargeable clicks on your single image ads, or engaged with your single image ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Page Management",
+      "Anchor": "page-management-1",
+      "SectionPath": [
+        "March 2022",
+        "Page Management"
+      ],
+      "Text": "New industryV2 filter for Company Search API.\nWho\u2019s impacted: Partners using the Company Search API industry parameter.\nWhat\u2019s happening: If you\u0027re currently using the Company Search API to find companies using the filter.industry parameter, we\u0027re deprecating the existing filter.industry parameter in favor for a new parameter, filter.industryV2, which supports all values plus 200\u002B new industry codes. The filter.industry parameter will sunset on June 30, 2022. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-6",
+      "SectionPath": [
+        "March 2022",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here.\nWhen: Starting April 30, 2022.\nNew industryV2 filter for Company Search API.\nWho\u2019s impacted: Partners using the Company Search API industry parameter.\nWhat\u2019s happening: If you\u0027re currently using the Company Search API to find companies using the filter.industry parameter, we\u0027re deprecating the existing filter.industry parameter in favor for a new parameter, filter.industryV2, which supports all values plus 200\u002B new industry codes. Learn more.\nWhen: Starting June 30, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-7",
+      "SectionPath": [
+        "February 2022",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here.\nWhen: Starting April 30, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Coming Soon",
+      "Anchor": "coming-soon-1",
+      "SectionPath": [
+        "February 2022",
+        "Coming Soon"
+      ],
+      "Text": "[reminder] Upcoming Reach \u0026 Frequency metric changes\nWho\u2019s impacted: Partners using the Ad Analytics API.\nWhat\u2019s happening: In Q2 CY 2022, 9 new metrics on the AdAnalyticsV2 API will be available and replace the existing approximateUniqueImpressions metric. These new metrics will approximate reach, frequency, and cost per 1,000 member accounts reached for three fixed time ranges: the previous day, the last 7 days, and the last 30 days. You\u2019ll be able to pull these metrics for any day. For example, you can pull the \u201Caverage last 7-day reach\u201D for October 25, (which covers October 18 - October 25), for October 24 (which covers October 17 - October 24), and selecting October 24 - October 25 will average the two individual last 7-day counts. Please plan accordingly to have time to migrate to these new metrics. The exact date for removal of the existing reach metric will be announced when the replacement metrics are available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management-3",
+      "SectionPath": [
+        "January 2022",
+        "Campaign Management"
+      ],
+      "Text": "LinkedIn\u2019s privacy-first approach to B2B digital advertising.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: In case you missed it, last month we shared our privacy-first approach to B2B digital advertising. We are introducing new approaches that help provide online consistency across channels and devices, all while limiting or even eliminating the use of third-party personal data including: testing Group Identity for B2B leveraging our first-party data and further investing in B2B measurement. Learn more.\n[reminder] Sponsored Messaging EU Targeting Restrictions\nWho\u2019s impacted: Partners using the Message Ads API or Conversation Ads API.\nWhat\u2019s happening: We are stopping the display of Message and Conversations Ads to EU members effective starting January 10, 2022 for new and existing campaigns. New and existing Message or Conversation Ads campaigns targeting EU members will fail with a 400 error. This only affects targeting members based in the EU. Targeting members outside the EU are not impacted.\n[reminder] Changes to conversion tracking on LinkedIn\nWho\u2019s impacted: Partner using the Insight Tag API.\nWhat\u2019s happening: In light of changing regulations on privacy, we\u0027re asking customers to enable \u201Cenhanced conversion tracking\u201D for all LinkedIn Campaign Manager accounts. \u201CEnhanced conversion tracking\u201D allows first-party cookie tracking to minimize impact to their campaign performance due to privacy changes. If a customer uses LinkedIn Insight Tags, we recommend they enable \u201Cenhanced conversion tracking\u201D in Campaign Manager. If a customer uses site-wide image pixels, we recommend they switch to Insight Tag and enable \u201Cenhanced conversion tracking\u201D. There is no impact to your integration. More information can be found in this help center article..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-8",
+      "SectionPath": [
+        "January 2022",
+        "Breaking Changes"
+      ],
+      "Text": "[reminder] OAuth 2.0 scopes enforcement\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: We sunset all legacy OAuth permissions on December 31, 2021. Ensure your authorization request only includes permissions listed in your application settings otherwise your call will be rejected. The complete permission list is under the \u201CAuth\u201D tab under \u201COAuth 2.0 scopes\u201D.\n[reminder] New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here.\nWhen: Starting April 30, 2022.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

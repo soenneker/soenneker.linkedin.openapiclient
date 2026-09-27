@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601Content Content { get; set; }
 #endif
         /// <summary>The created property</summary>
-        public int? Created { get; set; }
+        public long? Created { get; set; }
         /// <summary>The creationLocale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,9 +41,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601HiddenFieldsItem> HiddenFields { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The lastModified property</summary>
-        public int? LastModified { get; set; }
+        public long? LastModified { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string State { get; set; }
 #endif
         /// <summary>The versionId property</summary>
-        public int? VersionId { get; set; }
+        public long? VersionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601"/> and sets the default values.
         /// </summary>
@@ -96,15 +96,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601Content>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601Content.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetIntValue(); } },
+                { "created", n => { Created = n.GetLongValue(); } },
                 { "creationLocale", n => { CreationLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601CreationLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601CreationLocale.CreateFromDiscriminatorValue); } },
                 { "hiddenFields", n => { HiddenFields = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601HiddenFieldsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601HiddenFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "lastModified", n => { LastModified = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "lastModified", n => { LastModified = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "versionId", n => { VersionId = n.GetIntValue(); } },
+                { "versionId", n => { VersionId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -115,15 +115,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601Content>("content", Content);
-            writer.WriteIntValue("created", Created);
+            writer.WriteLongValue("created", Created);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601CreationLocale>("creationLocale", CreationLocale);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601HiddenFieldsItem>("hiddenFields", HiddenFields);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("lastModified", LastModified);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("state", State);
-            writer.WriteIntValue("versionId", VersionId);
+            writer.WriteLongValue("versionId", VersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

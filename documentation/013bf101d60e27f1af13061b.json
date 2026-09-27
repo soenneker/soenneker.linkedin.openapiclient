@@ -1,0 +1,716 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+  "Title": "Sync Job Requisition Stages",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages",
+      "SectionPath": [],
+      "Text": "All job requisition stages should be sent via the Middleware Platform whenever they are created or updated in your ATS. Use both your job requisition identifier and stage identifier when syncing job requisition stages via API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rest/jobRequisitionStages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages-1",
+      "SectionPath": [
+        "Sync Job Requisition Stages"
+      ],
+      "Text": "Use the following endpoint to create and update job requisition stages:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages-1",
+      "SectionPath": [
+        "Sync Job Requisition Stages"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/jobRequisitionStages?ids[0].jobRequisitionId=req_67890\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234567890\u0026ids[0].jobRequisitionStageId=stage_12345",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages-1",
+      "SectionPath": [
+        "Sync Job Requisition Stages"
+      ],
+      "Text": "Include the LinkedIn-Version header when calling this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages-1",
+      "SectionPath": [
+        "Sync Job Requisition Stages"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisition Stages",
+      "Anchor": "sync-job-requisition-stages-1",
+      "SectionPath": [
+        "Sync Job Requisition Stages"
+      ],
+      "Text": "You can use the x-restli-method header to specify the method as batch_update for bulk updates and batch_delete for bulk deletes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobRequisitionStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the job requisition stage in the partner ATS (maximum 50 characters).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the job requisition in the partner ATS (maximum 100 characters).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization URN in the format urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "stageName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the stage in partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stageType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This denotes the \u201Ctype\u201D of stage. Eg. is it a pre_application stage, interview stage etc. This should be provided if partner\u0027s stageName can be grouped into one of the provided options. Available options are: PRE_APPLICATION, CONTACTED, APPLIED, SCREEN, INTERVIEW, REFERENCE_CHECK, OFFER, PRE_HIRE, HIRED, DISPOSITIONED, SHORTLISTED, HIRING_MANAGER_REVIEW, UNKNOWN. Default value is UNKNOWN if not applicable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stageStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of job requisition stage. Available options are: ACTIVE, INACTIVE. Default value is ACTIVE if not applicable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stageOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Order/Sequence of the stage in job requisition pipeline in partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the stage was created in the partner system. This is epoch timestamp in milliseconds (UTC) and should not be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the stage was last modified in the partner system. This is epoch timestamp in milliseconds (UTC) and should not be a future time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitionStages\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202504\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].jobRequisitionStageId=stage_12345\u0026ids[0].jobRequisitionId=req_67890\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Technical Interview\u0022,\n      \u0022stageType\u0022: \u0022INTERVIEW\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 2,\n      \u0022externalCreatedAt\u0022: 1670935153000,\n      \u0022externalLastModifiedAt\u0022: 1670935160000\n    },\n    \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Contact Candidate\u0022,\n      \u0022stageType\u0022: \u0022CONTACTED\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 3,\n      \u0022externalCreatedAt\u0022: 1670935200000,\n      \u0022externalLastModifiedAt\u0022: 1670935260000\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitionStages?ids%5B0%5D.jobRequisitionStageId=stage_12345\u0026ids%5B0%5D.jobRequisitionId=req_67890\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202504\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Technical Interview\u0022,\n      \u0022stageType\u0022: \u0022INTERVIEW\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 2,\n      \u0022externalCreatedAt\u0022: 1670935153000,\n      \u0022externalLastModifiedAt\u0022: 1670935160000\n    },\n    \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Contact Candidate\u0022,\n      \u0022stageType\u0022: \u0022CONTACTED\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 3,\n      \u0022externalCreatedAt\u0022: 1670935200000,\n      \u0022externalLastModifiedAt\u0022: 1670935260000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitionStages\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202505\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].jobRequisitionStageId=stage_12345\u0026ids[0].jobRequisitionId=req_67890\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Technical Interview\u0022,\n      \u0022stageType\u0022: \u0022INTERVIEW\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 2,\n      \u0022externalCreatedAt\u0022: 1670935153000,\n      \u0022externalLastModifiedAt\u0022: 1670935160000\n    },\n    \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Contact Candidate\u0022,\n      \u0022stageType\u0022: \u0022CONTACTED\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 3,\n      \u0022externalCreatedAt\u0022: 1670935200000,\n      \u0022externalLastModifiedAt\u0022: 1670935260000\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitionStages?ids%5B0%5D.jobRequisitionStageId=stage_12345\u0026ids%5B0%5D.jobRequisitionId=req_67890\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202505\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Technical Interview\u0022,\n      \u0022stageType\u0022: \u0022INTERVIEW\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 2,\n      \u0022externalCreatedAt\u0022: 1670935153000,\n      \u0022externalLastModifiedAt\u0022: 1670935160000\n    },\n    \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Contact Candidate\u0022,\n      \u0022stageType\u0022: \u0022CONTACTED\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 3,\n      \u0022externalCreatedAt\u0022: 1670935200000,\n      \u0022externalLastModifiedAt\u0022: 1670935260000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitionStages\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].jobRequisitionStageId=stage_12345\u0026ids[0].jobRequisitionId=req_67890\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Technical Interview\u0022,\n      \u0022stageType\u0022: \u0022INTERVIEW\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 2,\n      \u0022externalCreatedAt\u0022: 1670935153000,\n      \u0022externalLastModifiedAt\u0022: 1670935160000\n    },\n    \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Contact Candidate\u0022,\n      \u0022stageType\u0022: \u0022CONTACTED\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 3,\n      \u0022externalCreatedAt\u0022: 1670935200000,\n      \u0022externalLastModifiedAt\u0022: 1670935260000\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitionStages?ids%5B0%5D.jobRequisitionStageId=stage_12345\u0026ids%5B0%5D.jobRequisitionId=req_67890\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202506\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Technical Interview\u0022,\n      \u0022stageType\u0022: \u0022INTERVIEW\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 2,\n      \u0022externalCreatedAt\u0022: 1670935153000,\n      \u0022externalLastModifiedAt\u0022: 1670935160000\n    },\n    \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022stageName\u0022: \u0022Contact Candidate\u0022,\n      \u0022stageType\u0022: \u0022CONTACTED\u0022,\n      \u0022stageStatus\u0022:\u0022ACTIVE\u0022,\n      \u0022stageOrder\u0022: 3,\n      \u0022externalCreatedAt\u0022: 1670935200000,\n      \u0022externalLastModifiedAt\u0022: 1670935260000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022jobRequisitionStageId=stage_12345\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:123456789\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022jobRequisitionStageId=stage_67890\u0026jobRequisitionId=req_67890\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Job Requisition Stages",
+        "Sample Response",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Job Requisition Stages",
+      "Anchor": "delete-job-requisition-stages",
+      "SectionPath": [
+        "Delete Job Requisition Stages"
+      ],
+      "Text": "Use the following endpoint to delete records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Job Requisition Stages",
+      "Anchor": "delete-job-requisition-stages",
+      "SectionPath": [
+        "Delete Job Requisition Stages"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:{job_requisition_id},jobRequisitionStageId:{job_requisition_stage_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((jobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 204 response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A82988289\u0026jobRequisitionId=job-req-11\u0026jobRequisitionStageId=job-req-stage-1\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A82988289\u0026jobRequisitionId=job-req-11\u0026jobRequisitionStageId=job-req-stage-2\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

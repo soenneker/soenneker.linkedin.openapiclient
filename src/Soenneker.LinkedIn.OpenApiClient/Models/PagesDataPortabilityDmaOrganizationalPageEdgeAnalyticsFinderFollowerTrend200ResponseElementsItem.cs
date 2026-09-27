@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemDimension Dimension { get; set; }
 #endif
-        /// <summary>The organizationalPage property</summary>
+        /// <summary>The organizationalPageUrn for which the statistics represent.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationalPage { get; set; }
@@ -46,14 +46,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemTimeIntervals TimeIntervals { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Specifies a specific analytics type for an organizational page. Value enums include: FOLLOWERVISITORDocumented type: OrganizationalPageEdgeAnalyticsTypeRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +85,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
                 { "sourceType", n => { SourceType = n.GetStringValue(); } },
                 { "timeIntervals", n => { TimeIntervals = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemTimeIntervals>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemTimeIntervals.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -106,7 +100,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("organizationalPage", OrganizationalPage);
             writer.WriteStringValue("sourceType", SourceType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemTimeIntervals>("timeIntervals", TimeIntervals);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

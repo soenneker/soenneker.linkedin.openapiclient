@@ -1,0 +1,268 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+  "Title": "Matched Audiences Use cases",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/matched-audiences/workflows/list-upload",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Matched Audiences is a set of targeting capabilities that allow advertisers to combine LinkedIn\u2019s data with their own, ensuring they reach the right audiences on the platform. This enables effective audience segmentation and refined ad targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Subject to members\u0027 preferences, LinkedIn Matched Audiences are custom audience segments you can use as targeting selections in your advertising campaigns. With Matched Audiences, you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Upload a list of companies or contacts (one-time transfer).\nStream a set of companies or contacts (continuous sync).\nRetarget member accounts that:\nVisited a page on your website.\nEngaged with your single image ad.\nEngaged with your document ad.\nViewed your video ad.\nOpened or submitted your Lead Gen Form.\nOpened a conversation or clicked on any conversation ad call-to-action (CTA).\nEngaged with your Company Page.\nResponded to your LinkedIn Event.\nConnected through Conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Partners and end-users require these use cases for the following reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Account-Based Marketing (ABM): Target high-value accounts with precision.\nContact Targeting: Engage specific individuals using their professional or personal email addresses.\nWebsite Retargeting: Re-engage users who have visited your website with tailored ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Applications must have an access token with the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "rw_dmp_segments (For DMP Segment APIs)\nrw_ads (For Website Retargeting APIs)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-requisites",
+      "Anchor": "pre-requisites",
+      "SectionPath": [
+        "Pre-requisites"
+      ],
+      "Text": "Your developer application must have access to the Advertising API and Matched Audiences API.\nYou need access to at least one ad account with relevant permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1: Account Targeting (ABM)",
+      "Anchor": "use-case-1-account-targeting-abm",
+      "SectionPath": [
+        "Use Case 1: Account Targeting (ABM)"
+      ],
+      "Text": "Create audiences using Company Name or Company Domain to target specific organizations for LinkedIn ad campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow",
+      "SectionPath": [
+        "Use Case 1: Account Targeting (ABM)",
+        "Procedure/Workflow"
+      ],
+      "Text": "Obtain User Authorization: Secure permission to access DMP Segment APIs.\nCreate a DMP Segment: Set metadata such as account, type (COMPANY), and sourcePlatform.\nUpload Company Data: Add company names or domains via Streaming API or CSV upload.\nMonitor Segment Status: Ensure it reaches READY status.\nApply to Campaigns: Use the generated segment in LinkedIn Ads targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "Use Case 1: Account Targeting (ABM)",
+        "Procedure/Workflow",
+        "References"
+      ],
+      "Text": "Create DMP Segment\nUpload Company Data\nMonitor Segment Status\nApply to Campaigns.\nUpload Contact Data\nWebsite Visitors Retargeting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 2: Contact Targeting",
+      "Anchor": "use-case-2-contact-targeting",
+      "SectionPath": [
+        "Use Case 2: Contact Targeting"
+      ],
+      "Text": "Create audiences by matching contact email addresses to LinkedIn members for precise ad targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow-1",
+      "SectionPath": [
+        "Use Case 2: Contact Targeting",
+        "Procedure/Workflow"
+      ],
+      "Text": "Obtain User Authorization: Secure access to DMP Segment APIs.\nCreate a DMP Segment: Set metadata such as account, type (USER), and sourcePlatform.\nUpload Contact Data: Add SHA256-encoded email addresses via Streaming API or CSV upload.\nMonitor Segment Status: Ensure it reaches READY status.\nApply to Campaigns: Use the generated segment in LinkedIn Ads targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references-1",
+      "SectionPath": [
+        "Use Case 2: Contact Targeting",
+        "Procedure/Workflow",
+        "References"
+      ],
+      "Text": "Create DMP Segment\nUpload Contact Data\nMonitor Segment Status\nApply to Campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 3: Website Retargeting",
+      "Anchor": "use-case-3-website-retargeting",
+      "SectionPath": [
+        "Use Case 3: Website Retargeting"
+      ],
+      "Text": "Create audiences from website visitors and conversions using the LinkedIn Insight Tag.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow-2",
+      "SectionPath": [
+        "Use Case 3: Website Retargeting",
+        "Procedure/Workflow"
+      ],
+      "Text": "Deploy the LinkedIn Insight Tag: Ensure it\u0027s live on the advertiser\u2019s website.\nCreate Ad Page Set: Define the audience source.\nCreate Ad Segment: Set up retargeting parameters.\nUpdate Ad Segment Source: Ensure continuous tracking.\nApply Targeting to Campaign: Use the retargeting audience for LinkedIn Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure/Workflow",
+      "Anchor": "procedureworkflow-2",
+      "SectionPath": [
+        "Use Case 3: Website Retargeting",
+        "Procedure/Workflow"
+      ],
+      "Text": "Reference: Website Visitors Retargeting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Streaming API vs CSV Upload Method",
+      "Anchor": "streaming-api-vs-csv-upload-method",
+      "SectionPath": [
+        "Streaming API vs CSV Upload Method"
+      ],
+      "Text": "LinkedIn provides two methods for uploading audience data: the Streaming API and the CSV upload method. The Streaming API is recommended for real-time audience updates, allowing advertisers to dynamically add or remove records without disrupting ongoing campaigns. This method ensures seamless updates and higher efficiency for large-scale campaigns. The CSV upload method, on the other hand, is a static upload where advertisers must replace the entire list when updates are needed. While it\u0027s simpler to implement, it may cause temporary campaign pauses as the new list processes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Links",
+      "Anchor": "additional-links",
+      "SectionPath": [
+        "Additional Links"
+      ],
+      "Text": "List Uploads\nStreaming API",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

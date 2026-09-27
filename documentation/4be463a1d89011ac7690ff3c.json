@@ -1,0 +1,264 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+  "Title": "Module 3 - Create and Manage Jobs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Create and Manage Jobs",
+      "Anchor": "module-3---create-and-manage-jobs",
+      "SectionPath": [],
+      "Text": "Upon completing development, to ensure official certification of Module 3, please review each of the test cases mentioned below. To ensure an efficient meeting, please review all appropriate documentation and send technical questions to your Business Development and/or Partner Engineering representative beforehand.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Create and Manage Jobs",
+      "Anchor": "module-3---create-and-manage-jobs",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Create and Manage Jobs",
+      "Anchor": "module-3---create-and-manage-jobs",
+      "SectionPath": [],
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 3 - Create and Manage Jobs",
+      "Anchor": "module-3---create-and-manage-jobs",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API requirements"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JP-C-01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability for a customer to create a Job Requisition in your ATS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate job attribute mappings are based on LinkedIn pre-defined values (ie. categories, experience level, industries, employment status). Confirm if no mapping exists with LinkedIn\u0027s pre-defined values then raw string values are send instead of using existing enum values like \u0027OTHER\u0027 or \u0027NOT_APPLICABLE\u0027 value. Mandatory Fields: Company Name (provide companyID too if you have), Description, Location, Title, CompanyApplyUrl, ListedAt, ExternalJobPostingId, JobPostingOperationType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to post a remote location job or define workplacetype. Required if workplace types are presented on career sites",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-04",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to view or display the successfully created LinkedIn job posting URL.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-05",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability of a customer to update job properties like description/title after a job is created and synced on LinkedIn. Show the change reflected in the LinkedIn website for job posting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-06",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the actions that trigger renewing the job posting on LinkedIn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-07",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the actions that trigger closing the job posting on LinkedIn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-08",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate Error Scenario",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-09",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain retry logic and logging for failed job sync requests. - For failure, LinkedIn needs ATS to store both request \u0026 response payload in full including headers. - For any failure if any LI assistance is needed, LI will request to furnish the full request/response and X-LI-UUID response header value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-10",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ATS should enforce strict minimum and maximum length checking of various fields those were inputted by the customer and the same was passed to the API via as a payload. Demonstrate that title with length less than 50 characters and Description less than 150 characters are failing at ATS side, and no LI API call was made. - If ATS couldn\u0027t implement such restriction at ATS side, show us the error handling at API level.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-12",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that the job is posted against a location-type as mentioned in the API schema",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-13",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that offsite apply urls are source attributed to LinkedIn. \u0027companyApplyUrl\u0027 field is used to mention this source attribution.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-14",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate retrieving the current job posting status and displaying status in the ATS. Check Job Posting Status API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-15",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that the externalJobPostingId for a job is unique among all jobs submitted across all child applications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-16",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that multiplexing is used or that the tile title, externalJobPostingId, company and location will all be unique for all job postings posted via API. Confirm whether multiplexing or uniqueness is utilized to avoide deduplication.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-C-17",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If RSC is implemented, demonstrate that job postings and job requistions are being sent for each public job, and job requisitons are being sent for private jobs.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

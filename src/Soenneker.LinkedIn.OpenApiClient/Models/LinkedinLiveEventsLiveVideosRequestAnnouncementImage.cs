@@ -14,13 +14,37 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The media property</summary>
+        /// <summary>Provide a short description for your image or article.Documented type: stringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>ID of the uploaded image asset. If you are uploading an article, this field is not required.Documented type: DigitalMediaAsset URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Media { get; set; }
 #nullable restore
 #else
         public string Media { get; set; }
+#endif
+        /// <summary>Provide the URL of the article you would like to share here.Documented type: stringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalUrl { get; set; }
+#nullable restore
+#else
+        public string OriginalUrl { get; set; }
+#endif
+        /// <summary>Must be configured to READY.Documented type: stringRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +79,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetStringValue(); } },
+                { "originalUrl", n => { OriginalUrl = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAnnouncementImageTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAnnouncementImageTitle.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +93,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("media", Media);
+            writer.WriteStringValue("originalUrl", OriginalUrl);
+            writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsLiveVideosRequestAnnouncementImageTitle>("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

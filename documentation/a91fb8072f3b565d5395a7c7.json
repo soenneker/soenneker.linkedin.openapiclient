@@ -1,0 +1,926 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups",
+  "Title": "adCampaignGroups",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adcampaigngroups",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "adCampaignGroups",
+      "Anchor": "adcampaigngroups",
+      "SectionPath": [],
+      "Text": "Campaign groups provide advertisers a way to manage status, budget, and measure performance across multiple related campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "CREATE | GET | SEARCH\u00A0FINDER | PARTIAL\u00A0UPDATE | BATCH\u00A0CREATE | BATCH GET | BATCH\u00A0PARTIAL\u00A0UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "adCampaignGroups Schema",
+      "Anchor": "adcampaigngroups-schema",
+      "SectionPath": [
+        "adCampaignGroups Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the advertising account associated with the Campaign Group. This value is immutable once set",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the Campaign Group. Primarily used to make it easier to reference a Campaign Group and to recall its purpose",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string,\u00A0default=\u0022ACTIVE\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTIVE\u00A0-\u00A0Denotes that the Campaign Group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level) ARCHIVED -\u00A0\u00A0Denotes that the Campaign Group is presently inactive, and should mostly be hidden in the UI until un-archived CANCELED - \u00A0Denotes that the Campaign Group has been permanently canceled and cannot be reactivated DRAFT\u00A0-\u00A0Denotes Campaign Group is in a preliminary state and should temporarily not be served PAUSED -\u00A0\u00A0Denotes that the Campaign Group meets all requirements to be served, but temporarily should not be",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional\u00A0BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum amount to spend over the life of the Campaign Group. The currency must match that of the Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code. The currency code must match that of the parent account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range. This field is mandatory",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled date range to run associated objects. The start date must be non-null. Represents the exclusive (strictly less than) value in which to end the range. This field is optional. An unset field here indicates an open range; for example, if start is 1455309628000 (Fri, 12 Feb 2016 20:40:28 GMT), and end is not set, it would mean everything at, or after, 1455309628000. If totalBudget is set, this field is mandatory",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backfilled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag that denotes whether the Campaign Group was created organically or was created to backfill existing campaigns. This is a system controlled field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servingStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "strings[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of enums that determine whether or not campaigns within the Campaign Group may be served; unlike \u0027status\u0027, which is user-managed, the values are controlled by the service. This is a read-only field. Possible values are: RUNNABLE Campaign group is currently active; billing information, budgetary constraints, or start and end dates are valid.STOPPED Campaign group is currently not eligible for serving for reasons other than billing information, budgetary constraints, or termination dates. For instance, a campaign group will be STOPPED if it has been canceled by the user, or it is marked as spam.BILLING_HOLD Parent account is on billing hold.ACCOUNT_TOTAL_BUDGET_HOLD Parent account total budget has been reached.ACCOUNT_END_DATE_HOLD Parent account end date has been reached.CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD Campaign group total budget has been reached.CAMPAIGN_GROUP_START_DATE_HOLD Campaign group start date is in the future.CAMPAIGN_GROUP_END_DATE_HOLD Campaign group end date has been reached.",
+            "Links": [],
+            "Values": [
+              "RUNNABLE Campaign group is currently active; billing information, budgetary constraints, or start and end dates are valid.",
+              "STOPPED Campaign group is currently not eligible for serving for reasons other than billing information, budgetary constraints, or termination dates. For instance, a campaign group will be STOPPED if it has been canceled by the user, or it is marked as spam.",
+              "BILLING_HOLD Parent account is on billing hold.",
+              "ACCOUNT_TOTAL_BUDGET_HOLD Parent account total budget has been reached.",
+              "ACCOUNT_END_DATE_HOLD Parent account end date has been reached.",
+              "CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD Campaign group total budget has been reached.",
+              "CAMPAIGN_GROUP_START_DATE_HOLD Campaign group start date is in the future.",
+              "CAMPAIGN_GROUP_END_DATE_HOLD Campaign group end date has been reached."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Numerical identifier for the campaign group",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adCampaignGroupsV2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Body Fields",
+      "Anchor": "body-fields",
+      "SectionPath": [
+        "CREATE",
+        "Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the advertising account associated with the Campaign Group. This value is immutable once set",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the Campaign Group. Primarily used to make it easier to reference a Campaign Group and to recall its purpose",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled date range to run associated objects. The start date must be non-null",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range. This field is mandatory.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled date range to run associated objects. The start date must be non-null. Represents the exclusive (strictly less than) value in which to end the range. This field is optional. An unset field here indicates an open range; for example, if start is 1455309628000 (Fri, 12 Feb 2016 20:40:28 GMT), and end is not set, it would mean everything at, or after, 1455309628000. If totalBudget is set, this field is mandatory",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum amount to spend over the life of the Campaign Group. The currency must match that of the Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The amount of money as a real number string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTIVE - Denotes that the Campaign Group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level) ARCHIVED - \u00A0Denotes that the Campaign Group is presently inactive, and should mostly be hidden in the UI until un-archived CANCELED - \u00A0Denotes that the Campaign Group has been permanently canceled and cannot be reactivated DRAFT - Denotes Campaign Group is in a preliminary state and should temporarily not be served PAUSED - \u00A0Denotes that the Campaign Group meets all requirements to be served, but temporarily should not be",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n    \u0022name\u0022: \u0022CampaignGroup1\u0022,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022totalBudget\u0022: {\n        \u0022amount\u0022: \u002260000.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adCampaignGroupsV2/{campaignGroup ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "campaignGroup ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique numerical identifier for the ad campaign",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n    \u0022backfilled\u0022: false,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n            \u0022time\u0022: 1493054119000\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n            \u0022time\u0022: 1493054119000\n        }\n    },\n    \u0022id\u0022: 602830604,\n    \u0022name\u0022: \u0022CampaignGroup1\u0022,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022servingStatuses\u0022: [\n        \u0022CAMPAIGN_GROUP_START_DATE_HOLD\u0022,\n        \u0022BILLING_HOLD\u0022\n    ],\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022totalBudget\u0022: {\n        \u0022amount\u0022: \u002260000\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "SEARCH FINDER",
+      "Anchor": "search-finder",
+      "SectionPath": [
+        "SEARCH FINDER"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adCampaignGroupsV2?q=search",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "SEARCH FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "search.account.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for Campaign Groups associated with the provided sponsored account URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.id.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for Campaign Groups by ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.status.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for Campaign Groups with the\u00A0provided status. The possible values are: ACTIVE ARCHIVED CANCELED COMPLETED DRAFT PAUSED",
+            "Links": [],
+            "Values": [
+              "ACTIVE",
+              "ARCHIVED",
+              "CANCELED",
+              "COMPLETED",
+              "DRAFT",
+              "PAUSED"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "search.name.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for Campaign Groups by name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sort.field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifies an individual field to use as a sorting key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sort.order",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the sort order of the results. Supported values include: ASCENDING DESCENDING The default is \u0022ASCENDING\u0022",
+            "Links": [],
+            "Values": [
+              "ASCENDING",
+              "DESCENDING"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "SEARCH FINDER",
+        "Example"
+      ],
+      "Text": "The query below fetches all active Campaign Groups and sorts the results by id in descending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "SEARCH FINDER",
+        "Example"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adCampaignGroupsV2?q=search\u0026search.status.values[0]=ACTIVE\u0026sort.field=ID\u0026sort.order=DESC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "SEARCH FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022backfilled\u0022: false,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n                    \u0022time\u0022: 1494962256000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1494962256000\n                }\n            },\n            \u0022id\u0022: 604711434,\n            \u0022name\u0022: \u0022CampaignGroup1\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022servingStatuses\u0022: [\n                \u0022RUNNABLE\u0022\n            ],\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002260000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 10\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "PARTIAL UPDATE",
+      "Anchor": "partial-update",
+      "SectionPath": [
+        "PARTIAL UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adCampaignGroupsV2/{campaignGroup ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Body Fields",
+      "Anchor": "body-fields-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the Campaign Group. Primarily used to make it easier to reference a Campaign Group and to recall its purpose",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTIVE - Denotes that the Campaign Group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level) ARCHIVED - \u00A0Denotes that the Campaign Group is presently inactive, and should mostly be hidden in the UI until un-archived CANCELED - \u00A0Denotes that the Campaign Group has been permanently canceled and cannot be reactivated DRAFT - Denotes Campaign Group is in a preliminary state and should temporarily not be served PAUSED - \u00A0Denotes that the Campaign Group meets all requirements to be served, but temporarily should not betotalBudget.amount",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled date range to run associated objects. The start date must be non-null",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range. This field is mandatory.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scheduled date range to run associated objects. The start date must be non-null. Represents the exclusive (strictly less than) value in which to end the range. This field is optional. An unset field here indicates an open range; for example, if start is 1455309628000 (Fri, 12 Feb 2016 20:40:28 GMT), and end is not set, it would mean everything at, or after, 1455309628000. If totalBudget is set, this field is mandatory",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum amount to spend over the life of the Campaign. The currency must match that of the Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The amount of money as a real number string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u00223000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH CREATE",
+      "Anchor": "batch-create",
+      "SectionPath": [
+        "BATCH CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adCampaignGroupsV2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required Batch Header",
+      "Anchor": "required-batch-header",
+      "SectionPath": [
+        "BATCH CREATE",
+        "Required Batch Header"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BATCH_CREATE",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "BATCH CREATE",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022name\u0022: \u0022CampaignGroup2\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002260000.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        },\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022name\u0022: \u0022CampaignGroup3\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002230000.00\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH GET",
+      "Anchor": "batch-get",
+      "SectionPath": [
+        "BATCH GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adCampaignGroupsV2?ids=602445944\u0026ids=604711464",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "BATCH GET",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022602445944\u0022: {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022backfilled\u0022: false,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n                    \u0022time\u0022: 1492623245000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1492623245000\n                }\n            },\n            \u0022id\u0022: 602445944,\n            \u0022name\u0022: \u0022CampaignGroup2\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            },\n            \u0022servingStatuses\u0022: [\n                \u0022CAMPAIGN_GROUP_START_DATE_HOLD\u0022,\n                \u0022BILLING_HOLD\u0022,\n                \u0022CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD\u0022\n            ],\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002260000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        },\n        \u0022604711464\u0022: {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:512352200\u0022,\n            \u0022backfilled\u0022: false,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:person:324_kGGaLE\u0022,\n                    \u0022time\u0022: 1494962643000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1494962643000\n                }\n            },\n            \u0022id\u0022: 604711464,\n            \u0022name\u0022: \u0022CampaignGroup3\u0022,\n            \u0022runSchedule\u0022: {\n                \u0022end\u0022: 9876543210123,\n                \u0022start\u0022: 1234567890987\n            \u0022servingStatuses\u0022: [\n                \u0022BILLING_HOLD\u0022\n            ],\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u002230000\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            }\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH PARTIAL UPDATE",
+      "Anchor": "batch-partial-update",
+      "SectionPath": [
+        "BATCH PARTIAL UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adCampaignGroupsV2?ids=602445944\u0026ids=604711464",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required Batch Header",
+      "Anchor": "required-batch-header-1",
+      "SectionPath": [
+        "BATCH PARTIAL UPDATE",
+        "Required Batch Header"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BATCH_PARTIAL_UPDATE",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-3",
+      "SectionPath": [
+        "BATCH PARTIAL UPDATE",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022entities\u0022: {\n        \u0022602445944\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022status\u0022: \u0022ACTIVE\u0022\n                }\n            }\n        },\n        \u0022604711464\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022totalBudget\u0022: {\n                        \u0022amount\u0022: \u00226000\u0022,\n                        \u0022currencyCode\u0022: \u0022USD\u0022\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

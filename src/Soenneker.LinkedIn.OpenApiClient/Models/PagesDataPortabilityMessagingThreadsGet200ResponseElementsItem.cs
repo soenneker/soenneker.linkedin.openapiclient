@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
         /// <summary>The creator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem> Labels { get; set; }
 #endif
         /// <summary>The lastActivityAt property</summary>
-        public int? LastActivityAt { get; set; }
+        public long? LastActivityAt { get; set; }
         /// <summary>The pageMailboxOwner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,11 +75,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "lastActivityAt", n => { LastActivityAt = n.GetIntValue(); } },
+                { "lastActivityAt", n => { LastActivityAt = n.GetLongValue(); } },
                 { "pageMailboxOwner", n => { PageMailboxOwner = n.GetStringValue(); } },
             };
         }
@@ -90,11 +90,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("creator", Creator);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingThreadsGet200ResponseElementsItemLabelsItem>("labels", Labels);
-            writer.WriteIntValue("lastActivityAt", LastActivityAt);
+            writer.WriteLongValue("lastActivityAt", LastActivityAt);
             writer.WriteStringValue("pageMailboxOwner", PageMailboxOwner);
             writer.WriteAdditionalData(AdditionalData);
         }

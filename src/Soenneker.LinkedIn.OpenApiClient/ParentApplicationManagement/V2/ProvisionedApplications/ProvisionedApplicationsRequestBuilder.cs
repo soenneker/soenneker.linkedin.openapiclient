@@ -49,40 +49,40 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
         /// <summary>
         /// Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.ProvisionedApplicationsRequestBuilder.ProvisionedApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.ProvisionedApplicationsRequestBuilder.ProvisionedApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.ProvisionedApplicationsRequestBuilder.ProvisionedApplicationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.ProvisionedApplications.ProvisionedApplicationsRequestBuilder.ProvisionedApplicationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementGetChildApplication200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API Endpoint when partner wants to create a child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#create-application) for more information.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplicationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ParentApplicationManagementProvisionChildApplication201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information.
@@ -100,6 +100,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -120,6 +121,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ParentApplicationManagement.V2.Provis
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

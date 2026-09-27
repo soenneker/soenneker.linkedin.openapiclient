@@ -42,11 +42,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,20 +56,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAc
         /// <summary>
         /// Endpoint to retrieve details of already synced ACL Assignees. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#retrieve-entity-acl-assignee)
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectRetrieveEntityAclAssignees200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Endpoint to create and update ACL entities for assignees. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls#upsert-entity-acl-assignees)
@@ -99,11 +99,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectDeleteEntityAclAssigneesFormDataRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAclAssignees.AtsEntityAclAssigneesRequestBuilder.AtsEntityAclAssigneesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -128,6 +128,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsEntityAc
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

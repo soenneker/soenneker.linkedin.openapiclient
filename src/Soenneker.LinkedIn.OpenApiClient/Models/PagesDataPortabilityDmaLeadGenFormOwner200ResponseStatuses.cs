@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 property</summary>
-        public int? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 { get; set; }
+        public long? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 { get; set; }
         /// <summary>The urnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 property</summary>
-        public int? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 { get; set; }
+        public long? UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)", n => { UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = n.GetIntValue(); } },
-                { "urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)", n => { UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = n.GetIntValue(); } },
+                { "urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)", n => { UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601 = n.GetLongValue(); } },
+                { "urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)", n => { UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481 = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)", UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601);
-            writer.WriteIntValue("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)", UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481);
+            writer.WriteLongValue("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7027323811440066560,1)", UrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601);
+            writer.WriteLongValue("urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7086882062019739648,1)", UrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,1257 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+  "Title": "Configure Customer Applications and ATS Integrations",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Applications and ATS Integrations",
+      "Anchor": "configure-customer-applications-and-ats-integrations",
+      "SectionPath": [],
+      "Text": "As a LinkedIn partner, you can allow your customers to authorize your ATS to use specific Middleware Platform integrations, such as Recruiter System Connect (RSC), on their behalf. To achieve this:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Applications and ATS Integrations",
+      "Anchor": "configure-customer-applications-and-ats-integrations",
+      "SectionPath": [],
+      "Text": "You will create and configure a development application for the customer.\nUsing the app\u0027s credentials, you will host a customer-facing configuration plugin that allows customers to manage their integrations with your ATS.\nAfter the customer pre-authorizes integrations in the plugin, you will update integrations on behalf of the customer with a user-facing integration name.\nDepending on the type of integration, you may need to send customer-specific configuration values.\nFinally, the customer will log into the relevant LinkedIn product and enable the integration. Once enabled, you will be authorized to begin sending customer data to the Middleware Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Applications and ATS Integrations",
+      "Anchor": "configure-customer-applications-and-ats-integrations",
+      "SectionPath": [],
+      "Text": "Details for each step are below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Applications and ATS Integrations",
+      "Anchor": "configure-customer-applications-and-ats-integrations",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Applications and ATS Integrations",
+      "Anchor": "configure-customer-applications-and-ats-integrations",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps",
+      "Anchor": "steps",
+      "SectionPath": [
+        "Steps"
+      ],
+      "Text": "Create and Configure a Customer App\nDisplay the ATS Integration Configuration Plugin\nUpdate Customer Integrations\nSync Integration Configurations\nVerify Customer Integrations Enablement",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v2/atsIntegrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/integrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/integrationConfigurations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Create and Configure a Customer App",
+      "Anchor": "1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "1. Create and Configure a Customer App"
+      ],
+      "Text": "The Provisioning API allows you to create API keys for each of your customers. Please note that you will need to store a unique API key for each of your customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Create and Configure a Customer App",
+      "Anchor": "1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "1. Create and Configure a Customer App"
+      ],
+      "Text": "Once your app is configured, you may begin making API requests and testing the integration. All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Create and Configure a Customer App",
+      "Anchor": "1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "1. Create and Configure a Customer App"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Create and Configure a Customer App",
+      "Anchor": "1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "1. Create and Configure a Customer App"
+      ],
+      "Text": "For existing CSA customers, you will be using their existing API keys. Please contact your Partner Engineering representative to coordinate migrating these API keys.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "Using the customer\u0027s app credentials obtained in step 1, display the ATS Integration Configuration Plugin:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/ATSIntegrationWidget\u0022\n  data-supported-bundled-integration-types=\u0022RECRUITER_SYSTEM_CONNECT_COMPANY,RECRUITER_SYSTEM_CONNECT_CONTRACT,APPLY_WITH_LINKEDIN\u0022\n  data-onintegrate=\u0022handleIntegrations\u0022\n  data-width=\u0022{width}\u0022 \u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\n/**\n* This callback should:\n*   1) Store the customer\u0027s integration in your ATS. These values are used to throughout the Middleware Platform\u0027s API.\n*   2) Tell your server to create and configure customer integrations via the Middleware Platform using this data.\n* @param {Object[]} integrations\n* @param {string} integrations[].integrationContext\n* @param {string} integrations[].integrationType\n* @param {string} integrations[].tenantType\n*/\nfunction handleIntegrations (integrations) {\n//Your code here\n\n}\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Enums",
+      "Anchor": "integration-enums",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Integration Enums"
+      ],
+      "Text": "The value for data-supported-bundled-integration-types should be based on the integrations as indicated below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Integration Enums",
+      "Anchor": "integration-enums",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Integration Enums"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLY_CONNECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Apply Connect integrations only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPLY_WITH_LINKEDIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Apply with LinkedIn integrations only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECRUITER_SYSTEM_CONNECT_COMPANY, RECRUITER_SYSTEM_CONNECT_CONTRACT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the RSC integrations only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Load",
+      "Anchor": "plugin-load",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Plugin Load"
+      ],
+      "Text": "The plugin will load based on the data-width and data-supported-bundled-integration-types attributes you specify. Use the latter attribute to declare which integrations you support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Callback",
+      "Anchor": "plugin-callback",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Plugin Callback"
+      ],
+      "Text": "The callback specified for the data-onintegrate script attribute will be fired when the customer enables an integration within the plugin. You will need to store the values you retrieve per customer for: integrationContext , integrationType, and tenantType as they will be used in the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Callback",
+      "Anchor": "plugin-callback",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Plugin Callback"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Callback",
+      "Anchor": "plugin-callback",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Plugin Callback"
+      ],
+      "Text": "Details on the customer\u0027s workflow within the plugin can be found here.\nIn order to reload the widget on a single page application, use in.parse()\nVerify Content Security Policy includes \u0022platform.linkedin.com\u0022 and \u0022www.linkedin.com\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Contract Support",
+      "Anchor": "multiple-contract-support",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support"
+      ],
+      "Text": "The onboarding widget supports multiple contract activations. When your customer activates their first contract, the plugin returns a payload with the following four types of integrationType values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Multiple Contract Support",
+      "Anchor": "multiple-contract-support",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support"
+      ],
+      "Text": "[\n  {\n    \u0022tenantType\u0022: \u0022RECRUITER\u0022,\n    \u0022integrationType\u0022: \u0022ONE_CLICK_EXPORT\u0022,\n    \u0022integrationContext\u0022: \u0022urn:li:organization:12345678\u0022,\n    \u0022onboardingStatus\u0022: \u0022REQUESTED\u0022\n  },\n  {\n    \u0022tenantType\u0022: \u0022RECRUITER\u0022,\n    \u0022integrationType\u0022: \u0022CSA_API\u0022,\n    \u0022integrationContext\u0022: \u0022urn:li:contract:12345678\u0022,\n    \u0022onboardingStatus\u0022: \u0022REQUESTED\u0022\n  },\n  {\n    \u0022tenantType\u0022: \u0022RECRUITER\u0022,\n    \u0022integrationType\u0022: \u0022IN_ATS_INDICATOR\u0022,\n    \u0022integrationContext\u0022: \u0022urn:li:organization:12345678\u0022,\n    \u0022onboardingStatus\u0022: \u0022REQUESTED\u0022\n  },\n  {\n    \u0022tenantType\u0022: \u0022RECRUITER\u0022,\n    \u0022integrationType\u0022: \u0022PROFILE_PLUGIN\u0022,\n    \u0022integrationContext\u0022: \u0022urn:li:organization:12345678\u0022,\n    \u0022onboardingStatus\u0022: \u0022REQUESTED\u0022\n  }\n]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Contract Support",
+      "Anchor": "multiple-contract-support",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support"
+      ],
+      "Text": "If your customer selects Apply with LinkedIn, that integration type will also be included in the payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Contract Support",
+      "Anchor": "multiple-contract-support",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support"
+      ],
+      "Text": "After receiving the payload, proceed with steps 3\u20135 of the onboarding process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Subsequent Contract Activation",
+      "Anchor": "subsequent-contract-activation",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support",
+        "Subsequent Contract Activation"
+      ],
+      "Text": "To activate a second contract, your customer can use the \u201CChange Contract\u201D button in the widget. The new payload will include only the values of integrationType that were not already configured (e.g., only CRM_CSA_API). For example, see the following payload:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Subsequent Contract Activation",
+      "Anchor": "subsequent-contract-activation",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support",
+        "Subsequent Contract Activation"
+      ],
+      "Text": "[\n  {\n    \u0022tenantType\u0022: \u0022RECRUITER\u0022,\n    \u0022integrationType\u0022: \u0022CSA_API\u0022,\n    \u0022integrationContext\u0022: \u0022urn:li:contract:87654321\u0022,\n    \u0022onboardingStatus\u0022: \u0022REQUESTED\u0022\n  }\n]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Subsequent Contract Activation",
+      "Anchor": "subsequent-contract-activation",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support",
+        "Subsequent Contract Activation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Subsequent Contract Activation",
+      "Anchor": "subsequent-contract-activation",
+      "SectionPath": [
+        "2. Display the ATS Integration Configuration Plugin",
+        "Multiple Contract Support",
+        "Subsequent Contract Activation"
+      ],
+      "Text": "You only need to sync data with one organization URN. Sending data for multiple organization URNs in the sync APIs (under module 2) is not supported to avoid complexity.\nWhen a customer activates a contract with the same organization, the payload includes only the new integrationType values (e.g., CRM_CSA_API), keeping all other values the same.\nIf a customer activates a contract with a different organization URN, you\u2019ll receive the full payload as in Multiple Contract Support. In such cases, throw an error and advise the customer that only one organization can be active. They can contact the LinkedIn integrations support at ltsatsintegrations@linkedin.com for assistance.\nFor any subsequent contract payloads, repeat Steps 3\u20135 of the onboarding process, as done previously.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Customer Integrations",
+      "Anchor": "sync-customer-integrations",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sync Customer Integrations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Customer Integrations",
+      "Anchor": "sync-customer-integrations",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sync Customer Integrations"
+      ],
+      "Text": "Creating integrations must be done server-side and in real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Customer Integrations",
+      "Anchor": "sync-customer-integrations",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sync Customer Integrations"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records and a minimum delay of one-second between calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Customer Integrations",
+      "Anchor": "sync-customer-integrations",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sync Customer Integrations"
+      ],
+      "Text": "For each id part specified in the request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Customer Integrations",
+      "Anchor": "sync-customer-integrations",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sync Customer Integrations"
+      ],
+      "Text": "Use the customer\u0027s integration context obtained in step 2 as the value of id[i].integrationContext . The format will be either \u0022urn:li:organization:{id}\u0022 or \u0022urn:li:contract:{id}\u0022.\nUse the integration type obtained in step 2 as the value of id[i].integrationType .\nUse the tenant type obtained in step 2 as the value of id[i].tenantType .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Customer Integrations",
+      "Anchor": "sync-customer-integrations",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sync Customer Integrations"
+      ],
+      "Text": "Use the customer\u0027s integration context obtained in step 2 as the value of id[i].integrationContext . The format will be either \u0022urn:li:organization:{id}\u0022 or \u0022urn:li:contract:{id}\u0022.\nUse the integration type obtained in step 2 as the value of id[i].integrationType .\nUse the tenant type obtained in step 2 as the value of id[i].tenantType .\nUse \u0022ATS\u0022 as the value of id[i].dataProvider .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer-facing name for the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0027 \\\n--header \u0027x-restli-method: batch_partial_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027\\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter One-Click Export Integration\u0022\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0027 \\\n--header \u0027x-restli-method: batch_partial_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027\\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter One-Click Export Integration\u0022\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0027 \\\n--header \u0027x-restli-method: batch_partial_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027\\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter One-Click Export Integration\u0022\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "API Endpoint"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "API Endpoint"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_partial_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "API Endpoint"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{org_id}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022My Customer\u0027s LinkedIn Recruiter One-Click Export Integration\u0022\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "3. Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Sync Integration Configurations",
+      "Anchor": "4-sync-integration-configurations",
+      "SectionPath": [
+        "4. Sync Integration Configurations"
+      ],
+      "Text": "Some integrations require additional configuration values to be created to complete customer onboarding for Recruiter System Connect. Configurations are a set of key-value pairs which are defined for a specific integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Sync Integration Configurations",
+      "Anchor": "4-sync-integration-configurations",
+      "SectionPath": [
+        "4. Sync Integration Configurations"
+      ],
+      "Text": "Here is an example request that sets the CALLBACK_URL key for the ONE_CLICK_EXPORT configuration type:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026configurationName=CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://www.linkedin.com\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026configurationName=CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://www.linkedin.com\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026configurationName=CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://www.linkedin.com\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=CALLBACK_URL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upsert Request",
+      "Anchor": "sample-upsert-request",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Upsert Request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022CALLBACK_URL\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022configurationName=CALLBACK_URL\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022CALLBACK_URL\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Response"
+      ],
+      "Text": "You can find more details on how to configure these keys, example requests, and definition of which configuration values are required for various integration types in our Integration Configuration docs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "4. Sync Integration Configurations",
+        "Sample Response"
+      ],
+      "Text": "If a customer opts-out of restricting user-based entity visibility or your ATS doesn\u0027t offer this security functionality, you should configure customer entity visibility defaults so that entities without ACLs are shown in LinkedIn products.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Verify Customer Integrations Enablement",
+      "Anchor": "5-verify-customer-integrations-enablement",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement"
+      ],
+      "Text": "Customer integrations have three onboarding statuses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Verify Customer Integrations Enablement",
+      "Anchor": "5-verify-customer-integrations-enablement",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement"
+      ],
+      "Text": "Requested - the customer requested the integration.\nPartner Ready - the integration is ready to be enabled by the customer.\nEnabled - the integration is set up and ready to use.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Verify Customer Integrations Enablement",
+      "Anchor": "5-verify-customer-integrations-enablement",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement"
+      ],
+      "Text": "When a customer enables an integration, the onboarding status of that integration changes from Partner Ready to Enabled. When that happens, LinkedIn will send you a push notification (see Receive Push Events ) with a unique ID. You can use this ID to retrieve information about the customer and the enabled integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Verify Customer Integrations Enablement",
+      "Anchor": "5-verify-customer-integrations-enablement",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement"
+      ],
+      "Text": "In order for push notifications to work, you must first submit a callback URL as a integration configuration for each integration the customer requested. Refer to Sync Integration Configurations for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Verify Customer Integrations Enablement",
+      "Anchor": "5-verify-customer-integrations-enablement",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement"
+      ],
+      "Text": "Once callback URLs are submitted, LinkedIn will generate and send a push notification automatically when a customer enables an integration. A notification will be sent for every integration enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Verify Customer Integrations Enablement",
+      "Anchor": "5-verify-customer-integrations-enablement",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement"
+      ],
+      "Text": "Notifications will follow the syntax below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Notification",
+      "Anchor": "sample-notification",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Notification"
+      ],
+      "Text": "\u0022Content-Type\u0022:\u0022application/json\u0022,\n\u0022X-LI-Signature\u0022:\u0022d3756e445a8065c0f38c2182c502f8229800eb2c6a9f3b4a1fdf152af867e6fc\u0022\n\n{\n    \u0022id\u0022:\u0022{Unique Notification ID}\u0022,\n    \u0022type\u0022:\u0022INTEGRATION_STATUS_CHANGE\u0022,\n    \u0022expiresAt\u0022:0\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Notification",
+      "Anchor": "sample-notification",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Notification"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Notification",
+      "Anchor": "sample-notification",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Notification"
+      ],
+      "Text": "Onboarding status change notifications will be denoted by the value INTEGRATION_STATUS_CHANGE (enum) in the type field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Notification",
+      "Anchor": "sample-notification",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Notification"
+      ],
+      "Text": "Upon receiving the notification and verifying that type = INTEGRATION_STATUS_CHANGE , use the endpoint below with the unique notification ID to retrieve more information about the enabled integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/integrations?q=request\u0026requestId={Unique Notification ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsIntegrations?q=request\u0026requestId={Unique Notification ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022integrationContext\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022integrationName\u0022: \u0022My Customer\u0027s LinkedIn Recruiter One-Click Export Integration\u0022,\n            \u0022integrationType\u0022: \u0022ONE_CLICK_EXPORT\u0022,\n            \u0022onboardingStatus\u0022: \u0022ENABLED\u0022,\n            \u0022tenantType\u0022: \u0022RECRUITER\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022dataProvider\u0022: \u0022ATS\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022integrationName\u0022: \u0022My Customer\u0027s LinkedIn Recruiter One-Click Export Integration\u0022,\n            \u0022integrationType\u0022: \u0022ONE_CLICK_EXPORT\u0022,\n            \u0022onboardingStatus\u0022: \u0022ENABLED\u0022,\n            \u0022tenantType\u0022: \u0022RECRUITER\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "For partners who implemented RSC prior to December 2017 and AWLI please reference the section below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "To manually retrieve the onboarding status of customer integrations, use the endpoint below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=IN_ATS_INDICATOR\u0026ids[0].tenantType=RECRUITER\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[1].integrationType=PROFILE_PLUGIN\u0026ids[1].tenantType=RECRUITER\u0026ids[2].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[2].integrationType=ONE_CLICK_EXPORT\u0026ids[2].tenantType=RECRUITER\u0026ids[3].integrationContext=urn%3Ali%3Acontract%3A454294456\u0026ids[3].integrationType=CSA_API\u0026ids[3].tenantType=RECRUITER\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=IN_ATS_INDICATOR\u0026ids[0].tenantType=RECRUITER\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[1].integrationType=PROFILE_PLUGIN\u0026ids[1].tenantType=RECRUITER\u0026ids[2].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[2].integrationType=ONE_CLICK_EXPORT\u0026ids[2].tenantType=RECRUITER\u0026ids[3].integrationContext=urn%3Ali%3Acontract%3A454294456\u0026ids[3].integrationType=CSA_API\u0026ids[3].tenantType=RECRUITER\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].integrationType=IN_ATS_INDICATOR\u0026ids[0].tenantType=RECRUITER\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[1].integrationType=PROFILE_PLUGIN\u0026ids[1].tenantType=RECRUITER\u0026ids[2].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[2].integrationType=ONE_CLICK_EXPORT\u0026ids[2].tenantType=RECRUITER\u0026ids[3].integrationContext=urn%3Ali%3Acontract%3A454294456\u0026ids[3].integrationType=CSA_API\u0026ids[3].tenantType=RECRUITER\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "A successful response will look like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=IN_ATS_INDICATOR\u0026tenantType=RECRUITER\u0022: {\n      \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter IN_ATS_INDICATOR Integration\u0022,\n      \u0022onboardingStatus\u0022: \u0022ENABLED\u0022\n    },\n    \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=PROFILE_PLUGIN\u0026tenantType=RECRUITER\u0022: {\n      \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter PROFILE_PLUGIN Integration\u0022,\n      \u0022onboardingStatus\u0022: \u0022ENABLED\u0022\n    },\n    \u0022integrationContext=urn%3Ali%3Aorganization%3A1234\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022integrationName\u0022: \u0022ONE_CLICK_EXPORT\u0022,\n      \u0022onboardingStatus\u0022: \u0022PARTNER_READY\u0022\n    },\n    \u0022integrationContext=urn%3Ali%3Acontract%3A454294456\u0026integrationType=CSA_API\u0026tenantType=RECRUITER\u0022: {\n      \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter CSA_API Integration\u0022,\n      \u0022onboardingStatus\u0022: \u0022ENABLED\u0022\n    }\n  },\n  \u0022statuses\u0022: {},\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "A successful response will look like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationContext=urn:li:organization:{org_id}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n            \u0022integrationName\u0022: \u0022My Customer\u0027s LinkedIn Recruiter One-Click Export Integration\u0022,\n            \u0022onboardingStatus\u0022: \u0022ENABLED\u0022\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "The response body will include the fields you supplied as well as the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer-facing integration name you supplied",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "onboardingStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the three onboarding statuses for a given integration: REQUESTED, PARTNER_READY or ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "5. Verify Customer Integrations Enablement",
+        "Sample Response"
+      ],
+      "Text": "During development, we recommend not having more than 10-15 integrations on your development contract as this may cause issues with our APIs. This will not be an issue in production as most customers generally have between 1-2 enabled integrations. If you should have more than 10-15 integrations please file a support ticket with a list of integrations you would like to delete.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

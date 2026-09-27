@@ -1,0 +1,205 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+  "Title": "Updated DMA API Error Responses",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To make error messages more actionable, we have introduced a standardized error response schema that includes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "New error response fields: errorDetailType and errorDetails.\nStandard HTTP status codes that will be specific to the error.\nUpdated messages which are clear, actionable, and structured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "By providing a machine-readable error response schema, you can know exactly how to troubleshoot and be able to programmatically fix the error. These changes should make it easier for you to debug effectively on your own.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Response",
+      "Anchor": "error-response",
+      "SectionPath": [
+        "Error Response"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A description of the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "serviceErrorCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A subcode that further classifies the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The HTTP status code.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "errorDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JSON object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional error details. This field may be absent in certain cases.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "errorDetailType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The constant error code that defines the category of the error. Please see this section for all possible error codes.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/error-responses?view=li-dma-data-portability-2026-08#error-codes"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "List of all possible error codes along with the HTTP status code and message templates that could be present in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Version header is missing in the request",
+      "Anchor": "example-1-version-header-is-missing-in-the-request",
+      "SectionPath": [
+        "Error Codes",
+        "Examples of Error Responses",
+        "Example 1: Version header is missing in the request"
+      ],
+      "Text": "This is the error response returned when the version header is missing in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Version header is missing in the request",
+      "Anchor": "example-1-version-header-is-missing-in-the-request",
+      "SectionPath": [
+        "Error Codes",
+        "Examples of Error Responses",
+        "Example 1: Version header is missing in the request"
+      ],
+      "Text": "{\n  \u0022status\u0022: 400,\n  \u0022code\u0022: \u0022VERSION_MISSING\u0022,\n  \u0022message\u0022: \u0022A version must be present. Please specify a version by adding the LinkedIn-Version header.\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

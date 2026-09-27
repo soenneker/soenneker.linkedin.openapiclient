@@ -14,6 +14,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The imageBlock property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemImageBlock? ImageBlock { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemImageBlock ImageBlock { get; set; }
+#endif
         /// <summary>The textBlock property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "imageBlock", n => { ImageBlock = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemImageBlock>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemImageBlock.CreateFromDiscriminatorValue); } },
                 { "textBlock", n => { TextBlock = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemTextBlock>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemTextBlock.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemImageBlock>("imageBlock", ImageBlock);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContentContentItemTextBlock>("textBlock", TextBlock);
             writer.WriteAdditionalData(AdditionalData);
         }

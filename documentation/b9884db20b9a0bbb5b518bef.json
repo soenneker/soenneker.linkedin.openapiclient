@@ -1,0 +1,954 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+  "Title": "InstantRepost API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "InstantRepost API",
+      "Anchor": "instantrepost-api",
+      "SectionPath": [],
+      "Text": "DMA InstantRepost API returns reposts of a post. These are reshares without commentary \u2014 for reshares with commentary, see the DMA Post API. DMA InstantRepost API only supports BATCH_GET.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InstantRepost API",
+      "Anchor": "instantrepost-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InstantRepost API",
+      "Anchor": "instantrepost-api",
+      "SectionPath": [],
+      "Text": "BATCH_GET - List of DMA instantReposts for the given set of ids (instantRepostUrn)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InstantRepost example",
+      "Anchor": "instantrepost-example",
+      "SectionPath": [
+        "InstantRepost example"
+      ],
+      "Text": "Refer to the image below for an instantRepost example on LinkedIn Feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve reposts by your organization, reposts of your organization\u0027s posts, or reposts of reshares with commentary of your organization\u0027s posts. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "An organizational admin can access an instantRepost through this API if one of the following is true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "That organization/organizationalPage created the original post that was reposted.\nThat organization/organizationalPage created the instantRepost",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "If a non-authorized viewer tries to access reposts, the API will throw 403.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "InstantRepost URNs",
+      "Anchor": "instantrepost-urns",
+      "SectionPath": [
+        "InstantRepost URNs"
+      ],
+      "Text": "An instantRepost URN is a composite URN constructed using the ID of the instantRepost and the original post URN (shareUrn, ugcPostUrn) which is reposted. For example, an instantRepost on urn:li:share:7067167295080394752 would look like - urn:li:instantRepost:(urn:li:share:7067167295080394752,1234).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Some fields may be removed based on the member\u0027s DMA privacy settings. The fields in the right column will be removed if the PersonUrn in the field on the left does not consent to having their data shared from this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Member Field",
+        "Fields to Remove"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created:(actor)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "created:(actor)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created:(impersonator)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "created:(impersonator)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified:(actor)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastModified:(actor)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified:(impersonator)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastModified:(impersonator)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "InstantRepost ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "repostedContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Original post (shareUrn or ugcPostUrn) which was reposted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp",
+      "Anchor": "auditstamp",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "AuditStamp"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that authorized the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor. Must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When the event/action happened in epoch time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain InstantRepost URNs",
+      "Anchor": "how-to-obtain-instantrepost-urns",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "How to Obtain InstantRepost URNs"
+      ],
+      "Text": "InstantRepost URNs are required to retrieve repost data using the DMA InstantRepost API. You can obtain these URNs through the DMA Feed Content API using either the repostsByReposter or repostsFromEntity finder methods.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain InstantRepost URNs",
+      "Anchor": "how-to-obtain-instantrepost-urns",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "How to Obtain InstantRepost URNs"
+      ],
+      "Text": "Retrieves a list of urn:li:instantRepost values representing instant reposts made by the specified organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (repostsByReposter)",
+      "Anchor": "sample-request-repostsbyreposter",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsByReposter)"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (repostsByReposter)",
+      "Anchor": "sample-request-repostsbyreposter",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsByReposter)"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?reposter={ORG_URN}\u0026maxPaginationCount={MAX}\u0026q=repostsByReposter",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (repostsByReposter)",
+      "Anchor": "sample-request-repostsbyreposter",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsByReposter)"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?reposter={ORG_URN}\u0026maxPaginationCount={MAX}\u0026q=repostsByReposter\u0027 \\\n  --header \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  --header \u0027Linkedin-Version: {YYYYMM}\u0027 \\\n  --header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters (repostsByReposter)",
+      "Anchor": "query-parameters-repostsbyreposter",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Query Parameters (repostsByReposter)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reposter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your organization\u0027s URN identifier. You can find it in the URL when viewing your organization page on LinkedIn (e.g., linkedin.com/company/{ID}).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:123456",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum number of instant repost URNs to return. Default is 50, maximum is 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Query type. Must be set to repostsByReposter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "repostsByReposter",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (repostsFromEntity)",
+      "Anchor": "sample-request-repostsfromentity",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsFromEntity)"
+      ],
+      "Text": "Retrieves a list of urn:li:instantRepost values representing instant reposts of a specific post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (repostsFromEntity)",
+      "Anchor": "sample-request-repostsfromentity",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsFromEntity)"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (repostsFromEntity)",
+      "Anchor": "sample-request-repostsfromentity",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsFromEntity)"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?entity={POST_URN}\u0026maxPaginationCount={MAX}\u0026q=repostsFromEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (repostsFromEntity)",
+      "Anchor": "sample-request-repostsfromentity",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Sample Request (repostsFromEntity)"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?entity={POST_URN}\u0026maxPaginationCount={MAX}\u0026q=repostsFromEntity\u0027 \\\n  --header \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  --header \u0027Linkedin-Version: {YYYYMM}\u0027 \\\n  --header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters (repostsFromEntity)",
+      "Anchor": "query-parameters-repostsfromentity",
+      "SectionPath": [
+        "InstantRepost URNs",
+        "Query Parameters (repostsFromEntity)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The post URN (urn:li:share or urn:li:ugcPost) for which you want to retrieve reposts. To learn more about posts and how to obtain post URNs, see Posts API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:7127775805794840576",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum number of instant repost URNs to return. Default is 50, maximum is 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Query type. Must be set to repostsFromEntity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "repostsFromEntity",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get a Collection of InstantReposts",
+      "Anchor": "batch-get-a-collection-of-instantreposts",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts"
+      ],
+      "Text": "Retrieves a list of urn:li:instantRepost values representing instant reposts on a specific post (urn:li:share, urn:li:ugcPost, or urn:li:groupPost).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get a Collection of InstantReposts",
+      "Anchor": "batch-get-a-collection-of-instantreposts",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts"
+      ],
+      "Text": "Note: Provide instantRepost URNs as a comma-separated list in the format List(encoded_instantRepost_URN_1,encoded_instantRepost_URN_2). Each instantRepost URN follows the format urn:li:instantRepost:(POST_URN,REPOST_ID), for example: urn:li:instantRepost:(urn:li:share:{POST_ID},{REPOST_ID}). You can obtain instantRepost URNs using the repostsByReposter or repostsFromEntity finder methods.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaInstantReposts?ids=List(urn%3Ali%3AinstantRepost%3A%28urn%3Ali%3Ashare%3A7127775805794840576%2C7127776228119306240%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaInstantReposts?ids=List(urn%3Ali%3AinstantRepost%3A%28urn%3Ali%3Ashare%3A7127775805794840576%2C7127776228119306240%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u0022urn:li:instantRepost:(urn:li:share:7127775805794840576,7127776228119306240)\u0022: {\n            \u0022id\u0022: 7127776228119306240,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:p1o8wGdEXZ\u0022,\n                \u0022time\u0022: 1699394280474\n            },\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:p1o8wGdEXZ\u0022,\n                \u0022time\u0022: 1699394280474\n            },\n            \u0022repostedContent\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7127775805794840576\u0022\n            }\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Batch Get a Collection of InstantReposts",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of instantRepostUrns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of instantRepostUrns to fetch the instantReposts. Only accepts instantRepostUrns",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost?view=li-dma-data-portability-2026-08\u0026tabs=http#instantrepost-urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3AinstantRepost%3A%28urn%3Ali%3Ashare%3A7127775805794840576%2C7127776228119306240%29)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide a valid OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not authorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The viewer is not an admin of the organizational entity that created the instantReposts or the post that was reposted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

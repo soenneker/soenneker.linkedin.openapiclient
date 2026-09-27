@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
         /// <summary>The creator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +103,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemStartDateOn StartDateOn { get; set; }
 #endif
         /// <summary>The targetBudgetMicros property</summary>
-        public int? TargetBudgetMicros { get; set; }
+        public long? TargetBudgetMicros { get; set; }
         /// <summary>The targetingCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,7 +137,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "ctvOnly", n => { CtvOnly = n.GetBoolValue(); } },
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
@@ -151,7 +151,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "reachCurve", n => { ReachCurve = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemReachCurve>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemReachCurve.CreateFromDiscriminatorValue); } },
                 { "sponsoredAccountUrn", n => { SponsoredAccountUrn = n.GetStringValue(); } },
                 { "startDateOn", n => { StartDateOn = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemStartDateOn>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemStartDateOn.CreateFromDiscriminatorValue); } },
-                { "targetBudgetMicros", n => { TargetBudgetMicros = n.GetIntValue(); } },
+                { "targetBudgetMicros", n => { TargetBudgetMicros = n.GetLongValue(); } },
                 { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemTargetingCriteria.CreateFromDiscriminatorValue); } },
             };
         }
@@ -162,7 +162,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("creator", Creator);
             writer.WriteBoolValue("ctvOnly", CtvOnly);
             writer.WriteStringValue("currencyCode", CurrencyCode);
@@ -176,7 +176,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemReachCurve>("reachCurve", ReachCurve);
             writer.WriteStringValue("sponsoredAccountUrn", SponsoredAccountUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemStartDateOn>("startDateOn", StartDateOn);
-            writer.WriteIntValue("targetBudgetMicros", TargetBudgetMicros);
+            writer.WriteLongValue("targetBudgetMicros", TargetBudgetMicros);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemTargetingCriteria>("targetingCriteria", TargetingCriteria);
             writer.WriteAdditionalData(AdditionalData);
         }

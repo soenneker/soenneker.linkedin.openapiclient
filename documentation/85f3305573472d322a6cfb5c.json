@@ -1,0 +1,156 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+  "Title": "Conversions API Workflow",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Conversions API Workflow",
+      "Anchor": "conversions-api-workflow",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API Workflow",
+      "Anchor": "conversions-api-workflow",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Generate a 3-legged access token",
+      "Anchor": "step-1-generate-a-3-legged-access-token",
+      "SectionPath": [
+        "API Workflow",
+        "Step 1: Generate a 3-legged access token"
+      ],
+      "Text": "Generate a 3-legged member access token to obtain user authorization for consent to create and manage conversions using rw_conversions and r_ads permissions in the scope.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Generate a 3-legged access token",
+      "Anchor": "step-1-generate-a-3-legged-access-token",
+      "SectionPath": [
+        "API Workflow",
+        "Step 1: Generate a 3-legged access token"
+      ],
+      "Text": "For direct advertiser builds, see set up and create conversions using Direct API. For partners, see Authorization Code Flow (3-legged OAuth).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve Authenticated User\u0027s Ad Accounts",
+      "Anchor": "step-2-retrieve-authenticated-users-ad-accounts",
+      "SectionPath": [
+        "API Workflow",
+        "Step 2: Retrieve Authenticated User\u0027s Ad Accounts"
+      ],
+      "Text": "Retrieve all sponsored ad accounts of the authenticated user where the user doesn\u0027t have a VIEWER role on the ad account.\nPrompt the user to select one of their ad accounts where conversion events should be streamed. Save the selected ad account URN for subsequent requests. For additional details, refer to Find Ad Accounts by Authenticated User.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Fetch Existing Conversions API Rules in the Selected Ad Account",
+      "Anchor": "step-3-fetch-existing-conversions-api-rules-in-the-selected-ad-account",
+      "SectionPath": [
+        "API Workflow",
+        "Step 3: Fetch Existing Conversions API Rules in the Selected Ad Account"
+      ],
+      "Text": "Fetch all active Conversions API conversion rules available in the selected ad account.\nUse request query parameter enabled=true to filter out deleted conversion rules, and conversionMethod=CONVERSIONS_API to filter Conversions API-specific rules.\nAllow the user to choose whether to create a new Conversion Rule or update an existing one. If updating, prompt the user to select an existing conversion rule (based on display name, type, and status) for streaming conversion events. Save the selected conversion URN for future requests.\nFor more information, please see Find Conversion Rules by Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Optional (Skip This Step if Updating an Existing Rule): Create a New Conversion Rule",
+      "Anchor": "step-4-optional-skip-this-step-if-updating-an-existing-rule-create-a-new-conversion-rule",
+      "SectionPath": [
+        "API Workflow",
+        "Step 4: Optional (Skip This Step if Updating an Existing Rule): Create a New Conversion Rule"
+      ],
+      "Text": "Create a new conversion rule in the selected ad account. Each conversion rule should include conversion name, ad account URN, conversion method, and type (key conversion behavior). We recommend using the request query parameter autoAssociationType=ALL_CAMPAIGNS to associate the conversion rule with all ad campaigns. Conversions are only attributed for the associated ad campaigns.\n\nOnce created, save the newly created conversion ID for subsequent requests. For more information, please see Create a Conversion Rule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Optional (Skip This Step if Updating an Existing Rule): Create a New Conversion Rule",
+      "Anchor": "step-4-optional-skip-this-step-if-updating-an-existing-rule-create-a-new-conversion-rule",
+      "SectionPath": [
+        "API Workflow",
+        "Step 4: Optional (Skip This Step if Updating an Existing Rule): Create a New Conversion Rule"
+      ],
+      "Text": "The created conversion rule should also appear on Campaign Manager \u003E Ad Account \u003E Measurement \u003E Conversion Tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Optional (Skip This Step if Updating an Existing Rule): Create a New Conversion Rule",
+      "Anchor": "step-4-optional-skip-this-step-if-updating-an-existing-rule-create-a-new-conversion-rule",
+      "SectionPath": [
+        "API Workflow",
+        "Step 4: Optional (Skip This Step if Updating an Existing Rule): Create a New Conversion Rule"
+      ],
+      "Text": "Conversion rules can also be created directly from the Campaign Manager UI. For more information, please see Setup a Conversions API Integration in Campaign Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Stream Conversion Events to the Conversion Rule",
+      "Anchor": "step-5-stream-conversion-events-to-the-conversion-rule",
+      "SectionPath": [
+        "API Workflow",
+        "Step 5: Stream Conversion Events to the Conversion Rule"
+      ],
+      "Text": "Stream conversion events to the conversion rule previously created or fetched, and send all available user identifiers for matching with LinkedIn. For the list of supported user identifiers, see User Schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Stream Conversion Events to the Conversion Rule",
+      "Anchor": "step-5-stream-conversion-events-to-the-conversion-rule",
+      "SectionPath": [
+        "API Workflow",
+        "Step 5: Stream Conversion Events to the Conversion Rule"
+      ],
+      "Text": "For more information, see Adding Multiple Conversion Events in a Batch. To learn more about recommended best practices, see Conversions API Best Practices.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

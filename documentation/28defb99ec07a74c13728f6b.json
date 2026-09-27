@@ -1,0 +1,572 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+  "Title": "LinkedIn Learning Standard AICC LMS Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/moodle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "AICC Overview",
+      "Anchor": "aicc-overview",
+      "SectionPath": [
+        "AICC Overview"
+      ],
+      "Text": "LinkedIn Learning supports the AICC standard for integration with a Learning Management System (LMS). You can download all LinkedIn Learning courses and learning paths as AICC packages, ready to be integrated into your existing LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Overview",
+      "Anchor": "aicc-overview",
+      "SectionPath": [
+        "AICC Overview"
+      ],
+      "Text": "This document covers the benefits of AICC, technical requirements, and frequently asked questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Overview",
+      "Anchor": "aicc-overview",
+      "SectionPath": [
+        "AICC Overview"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Overview",
+      "Anchor": "aicc-overview",
+      "SectionPath": [
+        "AICC Overview"
+      ],
+      "Text": "Admin privileges to your Learning Management System\n\nAn active LinkedIn Learning account\n\nLinkedIn Learning Full Admin permissions or Sub-Admin permissions to Manage IT Settings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Systems",
+      "Anchor": "supported-systems",
+      "SectionPath": [
+        "AICC Overview",
+        "Supported Systems"
+      ],
+      "Text": "This guide applies to LMSs that support the uploading of standard AICC packages. Many learning platforms use this standard, including these popular systems:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Systems",
+      "Anchor": "supported-systems",
+      "SectionPath": [
+        "AICC Overview",
+        "Supported Systems"
+      ],
+      "Text": "Halogen\nLMS365\nLitmos\nSchoox\nTotara\nUltiPro",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Systems",
+      "Anchor": "supported-systems",
+      "SectionPath": [
+        "AICC Overview",
+        "Supported Systems"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Systems",
+      "Anchor": "supported-systems",
+      "SectionPath": [
+        "AICC Overview",
+        "Supported Systems"
+      ],
+      "Text": "If you are unsure if your LMS is AICC compliant, please reach out to your LMS representative for confirmation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of LMS Integration",
+      "Anchor": "benefits-of-lms-integration",
+      "SectionPath": [
+        "AICC Overview",
+        "Benefits of LMS Integration"
+      ],
+      "Text": "Tracking user course progress - LinkedIn Learning communicates the user\u2019s course completion progress (0% - 100%) and the status (\u0022Incomplete\u0022 or \u0022Complete\u0022) back to the Learning Management System when learners launch and consume courses within the LMS.\n\nDiscoverability - Most Learning Management Systems index all content uploaded into the LMS and have search functionality; uploading LinkedIn Learning courses into your LMS allows your users to search, find, and launch LinkedIn Learning content from within your LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Packages",
+      "Anchor": "aicc-packages",
+      "SectionPath": [
+        "AICC Overview",
+        "AICC Packages"
+      ],
+      "Text": "AICC packages contain course metadata (course title, author, description, etc.)\nin a .zip file and can be downloaded in bulk for the entire LinkedIn Learning\nlibrary, or by individual course. You can then upload these packages into your\nLearning Management System.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Requirements",
+      "Anchor": "technical-requirements",
+      "SectionPath": [
+        "AICC Overview",
+        "Technical Requirements"
+      ],
+      "Text": "AICC-compliant LMS - LinkedIn Learning supports AICC 4.0, 3.5, 3.0 and 2.5. If you are unsure which version(s) of AICC your LMS supports, contact your LMS provider for further guidance.\n\nRegistration/authentication configuration - AICC is an LMS integration standard. It is not an authentication standard; in order to view LinkedIn Learning content, your users need to log into LinkedIn Learning. This can be done using local credentials (username/password), or Single Sign-On (SAML 2.0).\n\nWeb-accessible LMS deployment - The LinkedIn Learning implementation of AICC uses the HTTP/S-based AICC/CMI Protocol (HACP) to send AICC messages over HTTP/S. Your LMS must be able to receive HACP messages over the Internet.\n\niFrame content\n\n Note\nIt is not recommended to iFrame LinkedIn Learning content. Although technically capable, only individual course packages and Learning Paths can be loaded into an iFrame with limited functionality. Videos and collections cannot be viewed in an iFrame. If iFrames are implemented, your learners must allow all cookies in the browser. When available, always load LinkedIn Learning content in a new tab/window, not an iFrame.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC Integration",
+      "Anchor": "enable-aicc-integration",
+      "SectionPath": [
+        "Enable AICC Integration"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then click Me \u003E Integrate.\n\n\nFrom the side navigation menu, select Add content to your LMS via AICC.\n\nOpen the Configure AICC panel.\n\nUnder Hostname(s), enter your LMS host name (for example, examplecompany.lms.com or examplecompany.plateau.com).\n\n Caution\nSome LMSs use special names or require multiple entries. To review a list of LMSs and their hostnames, go to the Appendix. If you are unsure of the hostname values, please contact your LMS representative or LinkedIn Learning Customer Success Manager (who will include a LinkedIn Learning Technical Consultant).\n\n\nSet the AICC Integration toggle to \u0022Enabled\u0022.\n\n\n Important\nDo not include the protocol. An example host name is examplecompany.lms.com, not https://examplecompany.lms.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading Course Packages",
+      "Anchor": "downloading-course-packages",
+      "SectionPath": [
+        "Downloading Course Packages"
+      ],
+      "Text": "To download course packages, choose one of the two following procedures:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option 1 \u2013 Download Course Packages for the Entire Library",
+      "Anchor": "option-1--download-course-packages-for-the-entire-library",
+      "SectionPath": [
+        "Downloading Course Packages",
+        "Option 1 \u2013 Download Course Packages for the Entire Library"
+      ],
+      "Text": "In the Integrate interface, open the Download AICC Packages panel.\n\nSelect your language and library preference.\n\nClick Download package to begin the file download.\n\nOn subsequent visits to this setting, you\u0027re given the option to download AICC packages for all new courses offered since the last download.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option 2 \u2013 Download Individual Course Packages",
+      "Anchor": "option-2--download-individual-course-packages",
+      "SectionPath": [
+        "Downloading Course Packages",
+        "Option 2 \u2013 Download Individual Course Packages"
+      ],
+      "Text": "Once you\u2019ve set the AICC Integration toggle to \u0022Enabled\u0022, navigate to the Content tab in the menu bar and select \u0022Library\u0022.\n\n\nSelect a course, collection, or learning path in your library.\n\n\nAt the top right-hand side of the course page, click More, and select Download AICC Package. A zipped version of an AICC package downloads to your computer. You can then upload this package to your LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading Video Packages",
+      "Anchor": "downloading-video-packages",
+      "SectionPath": [
+        "Downloading Video Packages"
+      ],
+      "Text": "To download video packages from LinkedIn Learning to upload to your LMS, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading Video Packages",
+      "Anchor": "downloading-video-packages",
+      "SectionPath": [
+        "Downloading Video Packages"
+      ],
+      "Text": "Log in as an Admin and search for a course, collection, or learning path that contains video content you want your learners to consume.\n\n\nIn the Contents pane, click the More Options (\u0022...\u0022) icon next to the video you would like to download and select \u0022Download AICC Package\u0022. This action downloads the selected individual video. (A zipped version of an AICC package downloads to your computer.) You then can upload this package to your LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading Learning Paths",
+      "Anchor": "downloading-learning-paths",
+      "SectionPath": [
+        "Downloading Learning Paths"
+      ],
+      "Text": "To download Learning Path packages from LinkedIn Learning to upload to your LMS, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading Learning Paths",
+      "Anchor": "downloading-learning-paths",
+      "SectionPath": [
+        "Downloading Learning Paths"
+      ],
+      "Text": "Log in as an Admin and search for the Learning Path that you want your learners to consume.\n\nAt the top right-hand side of the Learning Path page, click More, and select Download AICC Package. A zipped version of an AICC package downloads to your computer. You can then upload this package to your LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading Learning Paths",
+      "Anchor": "downloading-learning-paths",
+      "SectionPath": [
+        "Downloading Learning Paths"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common LMS Hostnames",
+      "Anchor": "common-lms-hostnames",
+      "SectionPath": [
+        "Appendix",
+        "Common LMS Hostnames"
+      ],
+      "Text": "",
+      "Headers": [
+        "LMS",
+        "Hostnames"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Brainier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "companyname.brainier.com, scorm.brainier.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ComplianceWire",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "content.compliancewire.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Halogen/ Saba TalentSpace",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "learning.hgncloud.com, global.hgncloud.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Paycom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ms.paycomonline.net, lms.paycomdfw.net, scormengine.schoox.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Schoox/ Ultipro",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "scormengine.schoox.com, schoox.com, idp.schoox.com, filepicker.io, pusher.com, googleapis.com, boxcdn.net, api.box.com, boxcloud.com, excel.officeapps.live.com, integration.schoox.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCORM Cloud",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cloud.scorm.com",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting"
+      ],
+      "Text": "If you encounter the following error after launching an AICC course from your LMS, you most likely have not added the correct LMS hostname. If you look at the URL in your browser window, you can find the hostname in the URL as one of the parameters, aicc_url.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting"
+      ],
+      "Text": "If you see this error when launching a Learning Path, make sure the Learning Path is opening in a new tab/window, not in a frame.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q.:Do my users log in to access the LinkedIn Learning courses?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A.: Yes, all users must authenticate with LinkedIn Learning to access courses. We\noffer several different ways for users at organizations to authenticate with our\nsystem, by using either local credentials or SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q.: Can my users access LinkedIn Learning courses on a mobile device?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A.: Yes. However, any learning activity may not be reported to your LMS. You should confirm that your LMS supports learner tracking on mobile devices.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q.: If a user navigates directly to LinkedIn Learning, is the user\u0027s activity sent back to our LMS?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A.: No. In order to communicate activity back to the LMS, content must be launched from the LMS. LinkedIn Learning does provide a \u0022Learner Activity Outside LMS\u0022 report that specifically highlights any learning activity occurring outside of an LMS session. You may find his report helpful when you consolidate learning in your LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q.: After launching a LinkedIn Learning course from my LMS, what activity does LinkedIn Learning report to the LMS?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A.: In order to communicate activity back to the LMS, you must launch content from the LMS. Both course completions and courses in progress report back to the LMS. The only activity that LinkedIn Learning reports back to the LMS resides in the course the user launched from the LMS. If a user then navigates into other courses, LinkedIn Learning does not report that viewing activity to the LMS. Therefore, users should launch each course viewing from the LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q.: Does LinkedIn Learning support Sharable Content Object Reference Model (aka SCORM)?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A.: No. A SCORM content package is a .zip file containing video contents. LinkedIn Learning hosts and showcases its content on linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q.: Can I integrate with LinkedIn Learning if my LMS is behind a firewall?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Appendix",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A.: No. By design, the HTTP AICC Communication Protocol (HACP) requires that an LMS can communicate over the HTTP protocol.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Add and Manage Learners via CSV Org Sync\n\nCustom Content on LinkedIn Learning\n\nCustom Content - Supported File Formats\n\nRecommend or Share Content as an Admin\n\nOkta IdP and LinkedIn Learning SSO\n\nSSO Implementation Guide\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with your LMS-LinkedIn Learning integration, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages",
+  "Title": "Messages API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Messages API",
+      "Anchor": "messages-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages API",
+      "Anchor": "messages-api",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages API",
+      "Anchor": "messages-api",
+      "SectionPath": [],
+      "Text": "LinkedIn offers the Messages API allowing members to create messages to one or more first-degree connections or reply to existing conversations. The Compliance Events API provides options to monitor a given member\u0027s messaging activities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "You must adhere to the following requirements when posting a message to LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "A message must be associated with a specific member action. Member actions do not include an automated or scheduled event. For example, a member navigating through your application is not a specific member action.\nMembers must opt in to sending a message, as opposed to opting out of sending a message. The member must be given a choice about whether to send the message or not.\nIf you choose to present the member with a pre-prepared message, you must provide the member with a proposed draft of the pre-prepared message, including the subject, body, and attachments. The member must be able to edit the content of the subject, the body, and the attachments, and the member must take an affirmative action to send the message after you present the member with the draft.\nA message must be posted at, or around the time the member took action to send the message.\nAn application must not offer any direct or indirect incentive to the member as a reward for issuing a message.\nAn application must not offer any direct or indirect incentive to the recipients of a message.\nMessages posted on LinkedIn must not contain any HTML.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity ID of the message. Read only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recipients",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api?context=linkedin/compliance/context"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Recipients of the conversation message. Optional. Required if thread is missing and must be omitted if thread is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The subject of the conversation. Also known as the thread conversation\u0027s name. Optional.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of the message.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "messageType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message type. Can be the following enums: MEMBER_TO_MEMBER - Member to member message.",
+            "Links": [],
+            "Values": [
+              "MEMBER_TO_MEMBER - Member to member message."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "thread",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MessagingThread URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The MessagingThread URN that ties this message to other related messages. A message can only belong to one thread. Optional. Required if recipients is missing and must be omitted if recipients is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of attachments for this message. This field contains a list of encrypted URNs representing files stored outside of the messaging system. It is currently a DigitalMediaAsset URN. Defaults to empty.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset?context=linkedin/compliance/context"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a New Message",
+      "Anchor": "create-a-new-message",
+      "SectionPath": [
+        "Create a New Message"
+      ],
+      "Text": "To create a new message, recipients field is required to specify who to send the new message to. Once the message is created, the thread value will be generated in the response. This will be used for future messages in the same conversation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample New Message Request",
+      "Anchor": "sample-new-message-request",
+      "SectionPath": [
+        "Create a New Message",
+        "Sample New Message Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/messages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample New Message Request",
+      "Anchor": "sample-new-message-request",
+      "SectionPath": [
+        "Create a New Message",
+        "Sample New Message Request"
+      ],
+      "Text": "{\n  \u0022recipients\u0022: [\n    \u0022urn:li:person:123ABC\u0022,\n    \u0022urn:li:person:456DEF\u0022\n  ],\n  \u0022subject\u0022: \u0022Group conversation title\u0022,\n  \u0022body\u0022: \u0022Hello everyone! This is a message conversation to demo the Message API.\u0022,\n  \u0022messageType\u0022: \u0022MEMBER_TO_MEMBER\u0022,\n  \u0022attachments\u0022: [\n    \u0022urn:li:digitalMediaAsset:123ABC\u0022\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample New Message Header Response",
+      "Anchor": "sample-new-message-header-response",
+      "SectionPath": [
+        "Create a New Message",
+        "Sample New Message Header Response"
+      ],
+      "Text": "HTTP/2 201\n\nx-linkedin-id: {thread=urn:li:messagingThread:123ABC, id=123456789}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reply to an Existing Conversation",
+      "Anchor": "reply-to-an-existing-conversation",
+      "SectionPath": [
+        "Reply to an Existing Conversation"
+      ],
+      "Text": "To reply to an existing conversation, supply either the list of PersonUrns in recipients or the threadUrn in thread. If both are present, the request will be rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Reply Request",
+      "Anchor": "sample-reply-request",
+      "SectionPath": [
+        "Reply to an Existing Conversation",
+        "Sample Reply Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/messages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Reply Request",
+      "Anchor": "sample-reply-request",
+      "SectionPath": [
+        "Reply to an Existing Conversation",
+        "Sample Reply Request"
+      ],
+      "Text": "{\n  \u0022body\u0022: \u0022Replying back to the above new message. I love APIs!\u0022,\n  \u0022messageType\u0022: \u0022MEMBER_TO_MEMBER\u0022,\n  \u0022thread\u0022: \u0022urn:li:messagingThread:123ABC\u0022,\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Reply Header Response",
+      "Anchor": "sample-reply-header-response",
+      "SectionPath": [
+        "Reply to an Existing Conversation",
+        "Sample Reply Header Response"
+      ],
+      "Text": "HTTP/2 201\n\nx-linkedin-id: {id=1-MTU3ODUzNjc5MjYxOWIxOTM2NC0wMDEmYTI3YjEwM2YtMmI1MC00YjM0LTk0NzEtYWU4MDE4ZTkzNDE0XzAwNA%3D%3D%2C\u002Bthread%3Durn%3Ali%3AmessagingThread%3A2-YTI3YjEwM2YtMmI1MC00YjM0LTk0NzEtYWU4MDE4ZTkzNDE0XzAwNA%3D%3D%7D",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging Activities on Compliance Events API",
+      "Anchor": "messaging-activities-on-compliance-events-api",
+      "SectionPath": [
+        "Messaging Activities on Compliance Events API"
+      ],
+      "Text": "Refer here for the message schema used in Compliance Events API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Attachment Creation",
+      "Anchor": "message-attachment-creation",
+      "SectionPath": [
+        "Message Attachment Creation"
+      ],
+      "Text": "To create a message attachment, utilize the Assets API to upload the media. The following steps outlines how to create a message with an attachment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Attachment Creation",
+      "Anchor": "message-attachment-creation",
+      "SectionPath": [
+        "Message Attachment Creation"
+      ],
+      "Text": "Register an upload\nUpload the attachment\nCheck status of upload\nCreate an Attachment Message",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register an Upload",
+      "Anchor": "register-an-upload",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Register an Upload"
+      ],
+      "Text": "Use the registerUpload action to register the attachment upload. Use the HTTP URL returned to upload the attachment. Use the uploadUrl returned within the response body to upload your image. You will need to supply the recipe: urn:li:digitalmediaRecipe:ads-image. See note in Assets API for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Request",
+      "Anchor": "register-request",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Register an Upload",
+        "Register Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register Request",
+      "Anchor": "register-request",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Register an Upload",
+        "Register Request"
+      ],
+      "Text": "Make sure you set the Content-Type header to application/json.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Request",
+      "Anchor": "register-request",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Register an Upload",
+        "Register Request"
+      ],
+      "Text": "{\n    \u0022registerUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:messaging-attachment\u0022\n        ],\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n                \u0022relationshipType\u0022: \u0022OWNER\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Response",
+      "Anchor": "register-response",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Register an Upload",
+        "Register Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022headers\u0022: {\n                    \u0022media-type-family\u0022: \u0022STILLIMAGE\u0022\n                },\n                \u0022uploadUrl\u0022: \u0022https://api.linkedin.com/mediaUpload/C5522AQHn46pwH96hxQ/feedshare-uploadedImage/0?ca=vector_feedshare\u0026cn=uploads\u0026m=AQLKRJOn_yNw6wAAAW2T0DWnRStny4dzsNVJjlF3aN4-H3ZR9Div77kKoQ\u0026app=1983914\u0026sync=0\u0026v=beta\u0026ut=1Dnjy796bpjEY1\u0022\n            }\n        },\n       \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5522AQHn46pwH96hxQ,urn:li:digitalmediaMediaArtifactClass:ads-image)\u0022,\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Attachment",
+      "Anchor": "upload-the-attachment",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Upload the Attachment"
+      ],
+      "Text": "Use the uploadUrl from the previous step to upload the attachment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload Request",
+      "Anchor": "upload-request",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Upload the Attachment",
+        "Upload Request"
+      ],
+      "Text": "curl -i --upload-file ~/Desktop/MyAttachment.jpg -H \u0027Authorization: Bearer Redacted\u0027 \u0022https://api.linkedin.com/mediaUpload/C5522AQHn46pwH96hxQ/feedshare-uploadedImage/0?ca=vector_feedshare\u0026cn=uploads\u0026m=AQLKRJOn_yNw6wAAAW2T0DWnRStny4dzsNVJjlF3aN4-H3ZR9Div77kKoQ\u0026app=1983914\u0026sync=0\u0026v=beta\u0026ut=1Dnjy796bpjEY1\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload Response",
+      "Anchor": "upload-response",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Upload the Attachment",
+        "Upload Response"
+      ],
+      "Text": "HTTP/2 201 \nserver: Play\nset-cookie: lang=v=2\u0026lang=en-us; Path=/; Domain=api.linkedin.com\ndate: Wed, 16 Oct 2019 06:25:12 GMT\ncontent-length: 0\nx-li-proto: http/2\nreport-to: {\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}\nnel: {\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.0001,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}\nx-li-uuid: slguD4sMzhUwATrTkisAAA==\nset-cookie: lidc=\u0022b=ETB86:g=301:u=12:i=1571207079:t=1571261189:s=AQGEngFr_Vc-bGAR4gREsIou-eLZon31\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check the Status of Upload",
+      "Anchor": "check-the-status-of-upload",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Check the Status of Upload"
+      ],
+      "Text": "You can retrieve asset information using the Asset ID from the digitalmediaAsset URN. Depending on content size, it might take a few minutes for the upload to complete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Status Request",
+      "Anchor": "status-request",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Check the Status of Upload",
+        "Status Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/assets/C5400AQHpR1ANqMWqNA",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Status Response",
+      "Anchor": "status-response",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Check the Status of Upload",
+        "Status Response"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1521582700662,\n    \u0022id\u0022: \u0022C5405AQEOFHXqeM2vRA\u0022,\n    \u0022lastModified\u0022: 1521583180818,\n    \u0022mediaTypeFamily\u0022: \u0022VIDEO\u0022,\n    \u0022recipes\u0022: [\n        {\n            \u0022recipe\u0022: \u0022urn:li:digitalmediaRecipe:messaging-attachment\u0022,\n            \u0022status\u0022: \u0022PROCESSING\u0022\n        }\n    ],\n    \u0022serviceRelationships\u0022: [\n        {\n            \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n            \u0022relationshipType\u0022: \u0022OWNER\u0022\n        }\n    ],\n    \u0022status\u0022: \u0022ALLOWED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Attachment Message",
+      "Anchor": "create-an-attachment-message",
+      "SectionPath": [
+        "Message Attachment Creation",
+        "Create an Attachment Message"
+      ],
+      "Text": "Use the created DigitalMediaAsset URN returned in the response\u0027s field asset to create a message with the attachment.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

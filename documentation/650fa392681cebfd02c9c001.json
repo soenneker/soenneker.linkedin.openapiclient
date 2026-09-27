@@ -1,0 +1,176 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+  "Title": "Event Management API - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Event Management API - Overview",
+      "Anchor": "event-management-api---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management API - Overview",
+      "Anchor": "event-management-api---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management API - Overview",
+      "Anchor": "event-management-api---overview",
+      "SectionPath": [],
+      "Text": "The Event Management APIs enable developers to create, manage, and promote LinkedIn Events (both on and off-platform) for their clients. This includes event creation, updates, visibility/registration management, and access to comprehensive performance data. Paid and organic performance data are available via the Advertising API\u0027s Ad Analytics with organic data also accessible through the Community Management API\u0027s Share Statistics. The API comprises two main components:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management API - Overview",
+      "Anchor": "event-management-api---overview",
+      "SectionPath": [],
+      "Text": "Event Management API: Streamline event creation and management on LinkedIn. Seamlessly create, update, and manage both on- and off-platform LinkedIn Events directly from your preferred platform.\nEvent Ads API: Amplify event reach and engagement on LinkedIn. Automate event ad creation, management, and performance to connect with a professional audience and drive event success.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management API - Use Cases",
+      "Anchor": "event-management-api---use-cases",
+      "SectionPath": [
+        "Use Cases",
+        "Event Management API - Use Cases"
+      ],
+      "Text": "Seamless Event Creation and Management: Use the Event Management API to create, update, and manage both on- and off-platform LinkedIn Events directly from your preferred event technology platform. Streamline event setup, registration management, and attendee communication.\nEvent Registrations: Use the Event Management API to attach a custom registration form during event creation. This allows for a frictionless registration process for LinkedIn members and guarantees relevant information is collected for all attendees of the event. Note - you\u2019ll need to request access to the Advertising API product to create a custom registration form. Registration form data can be downloaded manually from the Event Details Page UI or the Lead Sync API can be used to sync event leads and have them automatically flow through to existing CRMs or other data hubs. Registration forms must be created and approved before they can be attached to an event. A registration form can only be added at the point of event creation and can\u0027t be edited after it\u0027s attached.\nEvent Control Center: Leverage the Event Management API to create a centralized place for all event-related activities, integrating LinkedIn events into existing workflows and dashboards within your chosen event platform.\nAutomated Event Updates: Use the Event Management API to automate event updates and synchronize data between your event platform and LinkedIn, ensuring consistency and eliminating manual data entry.\nUnified Event Measurement and Reporting: Combine data from your event platform and LinkedIn using the Event Management API to gain a holistic view of event performance, including registration data, attendance metrics, and engagement insights (leveraging Share Statistics, within the Community Management API).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Ads API - Use Cases",
+      "Anchor": "event-ads-api---use-cases",
+      "SectionPath": [
+        "Use Cases",
+        "Event Ads API - Use Cases"
+      ],
+      "Text": "Simplified Event Promotion at Scale: Use the Event Ads API to create and manage large-scale LinkedIn ad campaigns promoting events to precisely defined professional audiences. Leverage automated campaign creation and management to efficiently reach a broad audience and drive event registrations.\nAmplifying In-Person, Virtual, and Hybrid Events: Use the Event Ads API to boost awareness and registrations for all event types \u2013 in-person, virtual, and hybrid. Promote events before, during, and after they occur, maximizing reach and engagement throughout the event lifecycle.\nDriving Measurable Event Growth: Use the Event Ads API to track event ad performance and measure the impact of your campaigns on registrations, attendance, and post-event engagement. Access comprehensive data and analytics to optimize campaigns and demonstrate the ROI of your event marketing efforts.\n\nPre-Event Promotion: Use the Event Ads API to create targeted ad campaigns that drive awareness and registrations for upcoming events. Reach specific professional audiences with compelling ad creatives and drive traffic to event registration pages.\nDuring-Event Engagement: Use the Event Ads API to promote live virtual events on LinkedIn and interact with attendees in real-time. Extend the reach of your live events and engage with a wider audience beyond those directly participating.\nPost-Event Follow-Up: Re-engage event attendees and connect with those who couldn\u0027t attend using the Matched Audiences API and event engagement retargeting. Share post-event content, highlight key takeaways, and nurture leads, extending the value of your event.\n\n\nDriving Measurable Event Growth: Use the Event Ads API to track event ad performance and measure the impact of your campaigns on registrations, attendance, and post-event engagement. Access comprehensive data and analytics to optimize campaigns and demonstrate the ROI of your event marketing efforts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Combined Use cases (Event Management \u0026 Event Ads)",
+      "Anchor": "combined-use-cases-event-management--event-ads",
+      "SectionPath": [
+        "Use Cases",
+        "Combined Use cases (Event Management \u0026 Event Ads)"
+      ],
+      "Text": "Combine the Event Management and Event Ads APIs to manage the entire event lifecycle from creation and promotion to post-event engagement and analysis via Share Statistics for organic reporting and Ad Analytics for ads reporting. Integrate LinkedIn events into workflows, automate processes, and maximize impact through organic and paid strategies. This helps marketers manage campaigns, act on leads, engage audiences, prove event value, and increase LinkedIn events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "API product",
+        "Availability",
+        "How to Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Event Management API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers as a self-serve API product on request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply for access from your developer portal and use the getting started guide.",
+            "Links": [
+              "https://www.linkedin.com/developers/apps",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-6-get-started-with-the-event-management-api"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u2019s Marketing API Program supports versioning so API partners can release changes over time. This document explains how to use versioned APIs. For more information about using versioned APIs, refer to Versioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "If you are an API partner integrating with the Event Management API, please review the Integration Requirements to understand the capabilities you need to build and demonstrate during the Technical Sign Off process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources can help you stay on top of new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Check out the Recent Changes page to see the latest API releases.\nCheck out the Developer Portal to know more about our API products.\nUse the Migrations page to stay on top of breaking changes.\nNeed help? Reach out to Developer Support by submitting a support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

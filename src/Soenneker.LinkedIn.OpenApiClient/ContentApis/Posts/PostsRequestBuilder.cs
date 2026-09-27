@@ -41,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?dscAdAccount*,ids*,q*}", pathParameters)
+        public PostsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?dscAdAccount*,dscAdTypes*,ids*,q*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,26 +49,26 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?dscAdAccount*,ids*,q*}", rawUrl)
+        public PostsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/posts{?dscAdAccount*,dscAdTypes*,ids*,q*}", rawUrl)
         {
         }
         /// <summary>
         /// Multiple posts can be retrieved and viewed in a single API call by passing in multiple UGC Posts or share URNs into the `ids` parameter. The UGC Post URNs should be passed in `List` format and should be encoded as shown in the examples below. Note that the `,` in the `List` separating each URN does not need to be encoded.You can retrieve all posts with the specific Sponsored Account and the content types with the following parameters:
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts.PostsRequestBuilder.PostsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetMultiplePostByUrn200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This API creates an image content.Simplest form of post creation where an organic post is made ith a sample text at a page.
@@ -105,6 +105,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -154,6 +155,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Posts
             #pragma warning disable CS1591
             [QueryParameter("dscAdAccount")]
             public string DscAdAccount { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("dscAdTypes")]
+            public string? DscAdTypes { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("dscAdTypes")]
+            public string DscAdTypes { get; set; }
             #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

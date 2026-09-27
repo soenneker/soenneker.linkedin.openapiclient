@@ -1,0 +1,424 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
+  "Title": "Use Cases - Event Management",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Event Management",
+      "Anchor": "use-cases---event-management",
+      "SectionPath": [],
+      "Text": "With events being a cornerstone of driving brand awareness and pipeline, businesses, and event organizers have recognized the power of reaching a broader audience by having a virtual component (even if they host the event in-person). Virtual and hybrid events provide extended reach, enhanced accessibility, and improved scalability, delivering a high return on investment due to reduced hosting costs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Event organizers and marketers run events on LinkedIn for several reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "With over a billion members, LinkedIn can reach a broad audience of engaged, professional profiles. Not only can LinkedIn help drive brand awareness with events, LinkedIn makes it easy for members to take the next step and register for an event using prefilled information from a member\u2019s LinkedIn profile.\nLinkedIn can seamlessly amplify content. LinkedIn\u2019s relevance models and distribution capabilities ensure an event can be surfaced to the right person at the right time, throughout the event lifecycle: pre, during, and post.\nLinkedIn delivers value by fostering connections between professionals and brands, facilitating measurable growth. Its diverse range of tools and features supports scaling this growth, from thought leadership posts about events to engagement retargeting and messaging. LinkedIn\u2019s suite of products effectively nurtures potential buyers, guiding them from event attendees to closed deals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Event APIs",
+      "Anchor": "why-event-apis",
+      "SectionPath": [
+        "Why Event APIs"
+      ],
+      "Text": "For event marketers, agencies, and technology platforms seeking to streamline event operations, amplify visibility, and drive meaningful connections within the professional landscape, LinkedIn\u2019s Event APIs provide a powerful, integrated solution. By centralizing event creation, management, and promotion\u2014both organic and paid\u2014directly within existing workflows, these APIs empower users to effortlessly connect with their target audience on LinkedIn, maximizing event reach, engagement, and business impact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Event APIs",
+      "Anchor": "why-event-apis",
+      "SectionPath": [
+        "Why Event APIs"
+      ],
+      "Text": "Event Management API\nEvent organizers can create an event presence on LinkedIn organically by creating an event post/page hosted on the brand\u2019s Company Page. Once created, the event is shared with Company Page followers and LinkedIn members can be invited to join the event. Creating events on LinkedIn is available to any Company Page (no subscription or payment required), and now with the Event Management API, creation is made even easier.\n\nEvent Ads API\nEvent marketers can enhance their organic LinkedIn events by opting for paid promotion, ensuring the event reaches a designated target audience effectively. With LinkedIn\u2019s Event Ads API, partners, and their customers can seamlessly create and manage Event ad campaigns. Using the Event Ads API, event marketers can easily select target audiences and optimize delivery based on their campaign objective (e.g., brand awareness, engagement, or website visits). Campaigns can also be set up to run at specific points throughout the event lifecycle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Event APIs",
+      "Anchor": "why-event-apis",
+      "SectionPath": [
+        "Why Event APIs"
+      ],
+      "Text": "LinkedIn\u2019s Event ad format offers an engaging and dynamic experience for event attendees, with the event media changing automatically throughout the event phases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Event APIs",
+      "Anchor": "why-event-apis",
+      "SectionPath": [
+        "Why Event APIs"
+      ],
+      "Text": "Pre-event: The ad showcases the cover image for the event, details on event date, timing, and location. Additionally, the ad enables the target audience to register for the event with one-click, directly in the feed.\nDuring the event: The ad displays a live stream video in the feed. Clicking on the ad opens a live theater view where members can comment and react in real-time.\nPost-event: The ad displays a video recording of the live stream in the feed, engaging those who weren\u2019t able to attend the live event and re-engaging members who attended and wanted to watch more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "APIs for Event-Related Use Cases",
+      "Anchor": "apis-for-event-related-use-cases",
+      "SectionPath": [
+        "APIs for Event-Related Use Cases"
+      ],
+      "Text": "Beyond the Event Ads API and Event Management API, there are additional APIs that you can leverage to create a fully-integrated event experience across event creation, event distribution, and event reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "APIs for Event-Related Use Cases",
+      "Anchor": "apis-for-event-related-use-cases",
+      "SectionPath": [
+        "APIs for Event-Related Use Cases"
+      ],
+      "Text": "Creation:\n\nEvent Management API: Create an event, event page, and event post on your LinkedIn Company Page.\nAdvertising API:\nCreate ad campaigns and ad creatives.\nCreate custom registration forms that can be attached to an event during event creation.\nCommunity Management API: Includes the following endpoints/APIs for organic content and post creation:\nVideos API\nDocuments API\nPosts API\n\n\nDistribution:\n\nEvent Ads API: Distribute the event to a targeted audience with paid promotion.\nSelect a specific campaign objective (e.g., Brand Awareness, Engagement, Website Visit).\nMatched Audiences API:\nExtend attendee and registrant data to LinkedIn\u2019s professional profiles.\nBuild new targeting audiences via a contact or company list.\nLeverage engagement signals from previous ad campaigns on LinkedIn to retarget specific audiences.\nLive Events API: Connect an event to a live stream.\nComments API: Comment as the Company Page on an event (enables event moderation).\n\n\nReporting:\n\nCampaign Reporting API: View performance of event ad campaigns, including breakdowns by event stage (pre, during, and post).\nShare Statistics API: Retrieve analytics and stats for organic event posts (note: Share Statistics is an endpoint under Community Management).\nLead Sync API: Sync event registrant data from LinkedIn to CRMs or other lead management systems.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Applications must have an access token with the permissions specified under Event Management API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-requisites",
+      "Anchor": "pre-requisites",
+      "SectionPath": [
+        "Permissions",
+        "Pre-requisites"
+      ],
+      "Text": "Your developer application must have access to the Event Management API product, which requires agreeing to the Marketing API terms and API terms of use.\nYour developer application will separately require access to the Live Events API product to stream the actual event at its designated time.\nYour developer application may separately require access to the Ads API Product and the Community Management API Product to fully explore and implement use cases across LinkedIn\u2019s organic and paid surfaces:\n\nGetting access to Ads API Product\nGetting access to Community Management Product\nYour developer application may also separately require the LeadSync API product and the Matched Audiences product to build full funnel and nurturing capabilities:\n\nGetting access to LeadSync API Product\nGetting access to Matched Audiences Product",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Use Case 1: Event Audiences",
+      "Anchor": "use-case-1-event-audiences",
+      "SectionPath": [
+        "Use Cases",
+        "Use Case 1: Event Audiences"
+      ],
+      "Text": "",
+      "Headers": [
+        "Customer Job",
+        "How to Solve with LinkedIn APIs"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Customer has past event registrant list they want to use.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map a custom audience list to LinkedIn member profiles. This creates a DMP segment that can be targeted in an ad campaign using the Matched Audiences API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to use engagement signals from those who previously engaged with their content on LinkedIn to build a new audience segment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create retargeting audience via Engagement Retargeting endpoint.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to use an existing registrant list and expand it to include other potential registrants.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Step 1: Leverage Matched Audiences API to create a targetable audience segment.Step 2: Using the matched audience DMP segment as a seed, leverage Predictive Audiences in Campaign Manager to develop an expanded audience list.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-09",
+              "https://www.linkedin.com/help/lms/answer/a1631056"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to exclude people who have already registered for their event from the target audience of a paid social campaign on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Step 1: Use the Matched Audiences API to upload a list of people who have already registered for an event (list will dynamically update as more people register).Step 2: Run ad campaigns and exclude the DMP segment created via Matched Audiences API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Use Case 2: Event Registrations / Lead Management",
+      "Anchor": "use-case-2-event-registrations--lead-management",
+      "SectionPath": [
+        "Use Cases",
+        "Use Case 2: Event Registrations / Lead Management"
+      ],
+      "Text": "",
+      "Headers": [
+        "Customer Job",
+        "How to Solve with LinkedIn APIs"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Customer wants to leverage LinkedIn lead gen forms / registration forms to seamlessly collect registrant details.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Note: LinkedIn lead gen forms offer pre-fill from member profile, work email validation, custom fields/questions, clear consent capture, etc.Step 1: Create a custom registration form via the Advertising API.Step 2: Attach a registration form to the event during event creation using the Event Management API.Note: Lead generation objective is not yet available for Event ads via the Event Ads API (coming soon).",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-2-get-started-with-the-advertising-api",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to sync leads / registrant info collected from LinkedIn with existing CRMs and downstream platforms.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integrate with the Lead Sync API and accept leadType = Event.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Use Case 3: Event Live Streaming",
+      "Anchor": "use-case-3-event-live-streaming",
+      "SectionPath": [
+        "Use Cases",
+        "Use Case 3: Event Live Streaming"
+      ],
+      "Text": "",
+      "Headers": [
+        "Customer Job",
+        "How to Solve with LinkedIn APIs"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Customer wants to multi-cast their event to LinkedIn, in addition to a partner or third-party platform to increase event reach.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage Live Events API to ingest Real-Time Messaging Protocol content and stream to LinkedIn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to create a LinkedIn post with the event and live stream via partner platform.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage Live Events API and Scheduled Live endpoint to create the event page on LinkedIn via API and stream to the event page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to moderate comments on their live event on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use Comments API to post comments as the Company Page, delete attendee comments, get / read comments.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Use Case 4: Event Content",
+      "Anchor": "use-case-4-event-content",
+      "SectionPath": [
+        "Use Cases",
+        "Use Case 4: Event Content"
+      ],
+      "Text": "",
+      "Headers": [
+        "Customer Job",
+        "How to Solve with LinkedIn APIs"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Customer wants to bulk upload event-related video assets to Campaign Manager for future use in ad campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage the Videos API to upload video-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To promote the video, use the Video Ads API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to bulk upload event-related video assets to their Company / Organization Page for easy creation of page posts in the future.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage the Videos API to upload video-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To post the video organically to the Company / Organization page, use the Posts API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to post event clips, highlight reels, and other video content directly to their Company / Organization Page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage the Videos API to upload video-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To post the video organically to the Company / Organization page, use the Posts API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to share non-video event media organically to their Company / Organization Page (e.g., documents, decks, PDFs).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage the Documents API to upload document-based media. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads.To post the document organically to the Company / Organization page, use the Posts API.To promote the document as a Document Ad, leverage the Document Ads API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer wants to promote content to distribute their content broadly to a target audience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leverage the Advertising API to create various ad campaigns to promote different types of content.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

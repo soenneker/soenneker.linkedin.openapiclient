@@ -1,0 +1,287 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+  "Title": "URNs and IDs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/urn-namespace",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "URNs",
+      "Anchor": "urns",
+      "SectionPath": [
+        "URNs"
+      ],
+      "Text": "URNs are used to represent foreign associations to an entity (persons, organizations, and so on) in an API. A URN is a string-based identifier with the format:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URNs",
+      "Anchor": "urns",
+      "SectionPath": [
+        "URNs"
+      ],
+      "Text": "urn:{namespace}:{entityType}:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URNs",
+      "Anchor": "urns",
+      "SectionPath": [
+        "URNs"
+      ],
+      "Text": "For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URNs",
+      "Anchor": "urns",
+      "SectionPath": [
+        "URNs"
+      ],
+      "Text": "urn:li:person:123\nurn:li:organization:456\nurn:li:sponsoredAccount:789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URNs",
+      "Anchor": "urns",
+      "SectionPath": [
+        "URNs"
+      ],
+      "Text": "URNs encode more information, including the entity type. Using the entity type, it\u0027s possible to dereference a URN and access the underlying data of the entity using a process called decoration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URNs",
+      "Anchor": "urns",
+      "SectionPath": [
+        "URNs"
+      ],
+      "Text": "URN values returned from LinkedIn\u0027s APIs are a maximum of 255 characters in length.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IDs",
+      "Anchor": "ids",
+      "SectionPath": [
+        "IDs"
+      ],
+      "Text": "Simple integer IDs are returned to\u00A0represent an object\u0027s primary key. Your application should support transforming URNs into IDs and vice versa.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IDs versus URNs",
+      "Anchor": "ids-versus-urns",
+      "SectionPath": [
+        "IDs versus URNs"
+      ],
+      "Text": "IDs are self-referencing identifiers similar to a primary key. URNs are Globally Unique Identifiers (GUID) used to represent an entity\u0027s foreign associations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IDs versus URNs",
+      "Anchor": "ids-versus-urns",
+      "SectionPath": [
+        "IDs versus URNs"
+      ],
+      "Text": "In the example below, we fetch details about a share and use a projection to limit the results to the id and owner fields. The shares API returns an id that is the\u00A0primary key and an owner that is a foreign reference to the person who created the share in the form of a URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "IDs versus URNs",
+      "Anchor": "ids-versus-urns",
+      "SectionPath": [
+        "IDs versus URNs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Resource Type",
+        "URN",
+        "ID"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:1234",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1234",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Person",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:person:-f_Ut43FoQ",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-f_Ut43FoQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "IDs versus URNs",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/shares/1234?projection=(id,owner)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "IDs versus URNs",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u00221234\u0022,\n    \u0022owner\u0022: \u0022urn:li:person:-f_Ut43FoQ\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN Deconstruction",
+      "Anchor": "urn-deconstruction",
+      "SectionPath": [
+        "URN Deconstruction"
+      ],
+      "Text": "To get more information about the owner of the share, we can deconstruct the URN by removing the urn:li:person prefix and making an additional call to the people API. We need to deconstruct the URN and parse the ID because the people API expects an ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "URN Deconstruction",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/people/id=-f_Ut43FoQ?projection=(id,localizedFirstName,localizedLastName)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "URN Deconstruction",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022-f_Ut43FoQ\u0022,\n    \u0022localizedFirstName\u0022: \u0022Dwight\u0022,\n    \u0022localizedLastName\u0022: \u0022Schrute\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN Decoration",
+      "Anchor": "urn-decoration",
+      "SectionPath": [
+        "URN Decoration"
+      ],
+      "Text": "To make this query more efficient, we can use decoration to expand the share owner URN and return the owner\u0027s first and last name in a single call. This saves an API call by not having to make a separate call to the people API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "URN Decoration",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/shares/1234?projection=(id,owner~(localizedFirstName,localizedLastName))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "URN Decoration",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u00221234\u0022,\n    \u0022owner\u0022: \u0022urn:li:person:-f_Ut43FoQ\u0022,\n    \u0022owner~\u0022: {\n        \u0022localizedFirstName\u0022: \u0022Schrute\u0022,\n        \u0022localizedLastName\u0022: \u0022Dwight\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URNs and Namespaces",
+      "Anchor": "urns-and-namespaces",
+      "SectionPath": [
+        "URNs and Namespaces"
+      ],
+      "Text": "For common URNs and their namespace conversions, see URN Namespaces.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

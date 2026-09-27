@@ -1,0 +1,34 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-migration-guide",
+  "Title": "Apply Connect migration guide",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply Connect migration guide",
+      "Anchor": "apply-connect-migration-guide",
+      "SectionPath": [],
+      "Text": "After completing your Apply Connect integration, use these steps to migrate customers from the Easy Apply APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect migration guide",
+      "Anchor": "apply-connect-migration-guide",
+      "SectionPath": [],
+      "Text": "Submit a list of customer LinkedIn Developer Application IDs to LinkedIn for Apply Connect allowlisting.\nWait for LinkedIn to confirm allowlisting, then sync all customer public, external job postings to LinkedIn.\nUpdate all job postings with relevant application questions (OnsiteApplicationConfigurations) for default opt-in customers of LinkedIn Easy Apply.\nCommunicate with opt-in customers on how to enable the new integration.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

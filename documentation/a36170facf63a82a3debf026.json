@@ -1,0 +1,127 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-video",
+  "Title": "Profile Video Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-video",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Video Fields",
+      "Anchor": "profile-video-fields",
+      "SectionPath": [],
+      "Text": "Details about a member\u0027s profile video (Cover Story). It is a short introductory video that allows members to further add to the credibility of their profile and enhance their personal brand. A member can have both a profile picture and a profile video. More information in LinkedIn Cover Story can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Profile Video Fields",
+      "Anchor": "profile-video-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this profile video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this profile video. If no modification has happened since creation, lastModified will be the same as created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "videoAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The digitalmediaAsset URN of the profile video.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Video Fields",
+      "Anchor": "profile-video-fields",
+      "SectionPath": [],
+      "Text": "To decorate the digitalMediaAsset URN from videoAsset, you can use parameter projection that will include ~digitalmediaAsset:playableStreams . For more information, see here about digital media asset URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Video Fields",
+      "Anchor": "profile-video-fields",
+      "SectionPath": [],
+      "Text": "The decorated VideoAsset returns a list of artifacts corresponding to the Profile Video File in processed different codecs. The identifiers List contains identifiers related to the artifact. The URL to access the Profile Video is populated in the identifier field where identifierType is EXTERNAL_URL. mediaType specifies the Media Type of the file as described by IANA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Video Fields",
+      "Anchor": "profile-video-fields",
+      "SectionPath": [],
+      "Text": "See below for an example of Profile API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Profile Video Fields",
+      "Anchor": "profile-video-fields",
+      "SectionPath": [],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(id,profileVideoInfo(videoAsset~digitalmediaAsset:playableStreams))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Profile API sample response",
+      "Anchor": "profile-api-sample-response",
+      "SectionPath": [
+        "Profile API sample response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022TnKNdHv7e9\u0022,\n    \u0022profileVideoInfo\u0022: {\n        \u0022createdAt\u0022: 1628573428811,\n        \u0022lastModifiedAt\u0022: 1628573550867,\n        \u0022videoAsset~\u0022: {\n            \u0022paging\u0022: {\n                \u0022count\u0022: 10,\n                \u0022start\u0022: 0,\n                \u0022links\u0022: []\n            },\n            \u0022elements\u0022: [\n                {\n                    \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C553BAQH57g-hwhTngQ,urn:li:digitalmediaMediaArtifactClass:mp4-720p-30fp-crf28)\u0022,\n                    \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n                    \u0022data\u0022: {\n                        \u0022com.linkedin.digitalmedia.mediaartifact.Video\u0022: {\n                            \u0022startTimeInMicroseconds\u0022: 0,\n                            \u0022videoStreams\u0022: [\n                                {\n                                    \u0022pixelAspectRatio\u0022: {\n                                        \u0022widthAspect\u0022: 1.0,\n                                        \u0022heightAspect\u0022: 1.0,\n                                        \u0022formatted\u0022: \u00221.00:1.00\u0022\n                                    },\n                                    \u0022startTimeInMicroseconds\u0022: 0,\n                                    \u0022chromaSubsampling\u0022: \u00224:2:0\u0022,\n                                    \u0022index\u0022: 0,\n                                    \u0022displaySize\u0022: {\n                                        \u0022width\u0022: 720.0,\n                                        \u0022uom\u0022: \u0022PX\u0022,\n                                        \u0022height\u0022: 960.0\n                                    },\n                                    \u0022displayAspectRatio\u0022: {\n                                        \u0022widthAspect\u0022: 3.0,\n                                        \u0022heightAspect\u0022: 4.0,\n                                        \u0022formatted\u0022: \u00223:4\u0022\n                                    },\n                                    \u0022frameRate\u0022: {\n                                        \u0022type\u0022: \u0022UNKNOWN\u0022,\n                                        \u0022average\u0022: {\n                                            \u0022fps\u0022: 30.0,\n                                            \u0022rational\u0022: {\n                                                \u0022numerator\u0022: 30,\n                                                \u0022denominator\u0022: 1\n                                            },\n                                            \u0022formatted\u0022: \u002230/1\u0022\n                                        }\n                                    },\n                                    \u0022codec\u0022: {\n                                        \u0022name\u0022: \u0022h264\u0022,\n                                        \u0022longName\u0022: \u0022H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\u0022\n                                    },\n                                    \u0022bitRate\u0022: {\n                                        \u0022type\u0022: \u0022UNKNOWN\u0022,\n                                        \u0022average\u0022: 382610,\n                                        \u0022maximum\u0022: 382610\n                                    },\n                                    \u0022colorSpaceName\u0022: \u0022YUV\u0022,\n                                    \u0022storageSize\u0022: {\n                                        \u0022width\u0022: 720,\n                                        \u0022height\u0022: 960\n                                    },\n                                    \u0022storageAspectRatio\u0022: {\n                                        \u0022widthAspect\u0022: 3.0,\n                                        \u0022heightAspect\u0022: 4.0,\n                                        \u0022formatted\u0022: \u00223:4\u0022\n                                    },\n                                    \u0022videoMultiMethodAssessmentFusion\u0022: 81.352325,\n                                    \u0022durationInMicroseconds\u0022: 25900000\n                                }\n                            ],\n                            \u0022rawMetadataTags\u0022: [],\n                            \u0022mediaType\u0022: \u0022video/mp4\u0022,\n                            \u0022audioStreams\u0022: [\n                                {\n                                    \u0022channelLayout\u0022: \u0022stereo\u0022,\n                                    \u0022codec\u0022: {\n                                        \u0022name\u0022: \u0022aac\u0022,\n                                        \u0022longName\u0022: \u0022AAC (Advanced Audio Coding)\u0022\n                                    },\n                                    \u0022channels\u0022: 2,\n                                    \u0022bitRate\u0022: {\n                                        \u0022type\u0022: \u0022CBR\u0022,\n                                        \u0022average\u0022: 128334,\n                                        \u0022maximum\u0022: 128334\n                                    },\n                                    \u0022startTimeInMicroseconds\u0022: 0,\n                                    \u0022index\u0022: 1,\n                                    \u0022sampleRate\u0022: 44100,\n                                    \u0022durationInMicroseconds\u0022: 26050998\n                                }\n                            ],\n                            \u0022rawFormatSpec\u0022: {\n                                \u0022name\u0022: \u0022mov,mp4,m4a,3gp,3g2,mj2\u0022,\n                                \u0022longName\u0022: \u0022QuickTime / MOV\u0022,\n                                \u0022tags\u0022: [\n                                    {\n                                        \u0022value\u0022: \u0022isom\u0022,\n                                        \u0022key\u0022: \u0022major_brand\u0022\n                                    },\n                                    {\n                                        \u0022value\u0022: \u0022Lavf58.45.100\u0022,\n                                        \u0022key\u0022: \u0022encoder\u0022\n                                    },\n                                    {\n                                        \u0022value\u0022: \u0022512\u0022,\n                                        \u0022key\u0022: \u0022minor_version\u0022\n                                    },\n                                    {\n                                        \u0022value\u0022: \u0022isomiso2avc1mp41\u0022,\n                                        \u0022key\u0022: \u0022compatible_brands\u0022\n                                    }\n                                ]\n                            },\n                            \u0022durationInMicroseconds\u0022: 26075000\n                        }\n                    },\n                    \u0022identifiers\u0022: [\n                        {\n                            \u0022identifier\u0022: \u0022https://dms.licdn.com/playlist/C553BAQH57g-hwhTngQ/mp4-720p-30fp-crf28/0/1628573549158?e=1629817200\u0026v=beta\u0026t=EHDPrlfqbB8Imge8QbzuNB9n-4HCJeMYqkaDq3zsxXE\u0022,\n                            \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C553BAQH57g-hwhTngQ,urn:li:digitalmediaArtifactClass:mp4-720p-30fp-crf28,0)\u0022,\n                            \u0022size\u0022: 1685683,\n                            \u0022index\u0022: 0,\n                            \u0022mediaType\u0022: \u0022video/mp4\u0022,\n                            \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                            \u0022identifierExpiresInSeconds\u0022: 1629817200\n                        }\n                    ]\n                },\n                ... Other Video Assets with for different Codecs and Resolution\n            ]\n        },\n        \u0022videoAsset\u0022: \u0022urn:li:digitalmediaAsset:C553BAQH57g-hwhTngQ\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,615 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+  "Title": "Apply with LinkedIn FAQ",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-v2-to-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "LinkedIn customers will receive a similar version of this FAQ, this is meant for your development purposes only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "- Product FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "What are the benefits of the new AWLI?\nWhat\u0027s happening to the existing, legacy AWLI?\nHow long does the cookie last in the browser?\nWhat browsers are supported for the new AWLI widget?\nHow does the AWLI widget comply with accessibility requirements?\nHow are different language handled by the widget?\nWhat is the difference between AWLI V2 and AWLI V3?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "- Technical FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "The Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.origin.not.in.api.domains\u0022?\nThe Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.ats.integration.not.valid\u0022?\nWhy do I receive a 400 bad request error response on the conversion tracking page?\nWhy do I receive a 403 Forbidden error response on the Update/Verify Customer Integrations call? [ATS Partners only]?\nHow to update company logo on Oauth consent screen?\nWhen I click AWLI Button, I see a Bummer screen?\nIn what scenarios user will not see the consent screen on clicking AWLI Button?\nIs Standard flow and account creation flow still supported?\nWhy is the customer application logo important for AWLI V3?\nHow to add a domain to Valid SDK Domain (Allowlist domain)?\nWhich data mode\u0027s are supported with AWLI V3?\nWhich cookies are essential for the AWLI button to render?\nWhich information is needed to resolve AWLI related issues?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the benefits of the new AWLI?",
+      "Anchor": "what-are-the-benefits-of-the-new-awli-",
+      "SectionPath": [
+        "Product FAQ",
+        "What are the benefits of the new AWLI?"
+      ],
+      "Text": "Increase applicant conversion rates from the customer website. Smashfly Platform Data, 2015 reads that 74% of candidates who apply, quit a job application because the process is too long. Apply with LinkedIn streamlines the application process by allowing candidates to use profile data to autofill their information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u0027s happening to the existing, legacy AWLI?",
+      "Anchor": "what-s-happening-to-the-existing--legacy-awli-",
+      "SectionPath": [
+        "Product FAQ",
+        "What\u0027s happening to the existing, legacy AWLI?"
+      ],
+      "Text": "The legacy AWLI integration of partners is now updated to the newer experience of AWLI V3. Existing customers will now see the new AWLI. There is no further action required from existing partners or customers, please check our version comparison guide for more details on AWLI V3. If you are a new customer, please follow the integration guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How long does the cookie last in the browser?",
+      "Anchor": "how-long-does-the-cookie-last-in-the-browser-",
+      "SectionPath": [
+        "Product FAQ",
+        "How long does the cookie last in the browser?"
+      ],
+      "Text": "One (1) year unless the member actively signs out of LinkedIn or clears their cookies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What browsers are supported for the new AWLI widget?",
+      "Anchor": "what-browsers-are-supported-for-the-new-awli-widget-",
+      "SectionPath": [
+        "Product FAQ",
+        "What browsers are supported for the new AWLI widget?"
+      ],
+      "Text": "Per LinkedIn\u0027s policy on Web browsers, we support the current and previous (n-1) major releases of internet browsers. We do not support Firefox in private mode or any browser whose Enhanced Tracking Protection is enabled by default as this setting blocks third party URL access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the AWLI widget comply with accessibility requirements?",
+      "Anchor": "how-does-the-awli-widget-comply-with-accessibility-requirements-",
+      "SectionPath": [
+        "Product FAQ",
+        "How does the AWLI widget comply with accessibility requirements?"
+      ],
+      "Text": "The Apply with LinkedIn widget complies with accessibility requirements: 1) the wording of the widget is readable by screen-readers, 2) the widget can be \u0022tabbed through\u0022, and 3) the widget has compliant color / contrast levels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How are different languages handled by the widget?",
+      "Anchor": "how-are-different-languages-handled-by-the-widget-",
+      "SectionPath": [
+        "Product FAQ",
+        "How are different languages handled by the widget?"
+      ],
+      "Text": "We only support the English locale, no other languages are currently supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the difference between AWLI V2 and AWLI V3?",
+      "Anchor": "what-is-the-difference-between-awli-v2-and-awli-v3-",
+      "SectionPath": [
+        "Product FAQ",
+        "What is the difference between AWLI V2 and AWLI V3?"
+      ],
+      "Text": "AWLI is switching from cookie-based authentication and a legacy tech stack to OAuth-based new tech stack. Refer this page that describes new features introduced in AWLI V3 and provides a comparison between AWLI V2 and V3 versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the customer application logo important for AWLI V3?",
+      "Anchor": "why-is-the-customer-application-logo-important-for-awli-v3-",
+      "SectionPath": [
+        "Product FAQ",
+        "Why is the customer application logo important for AWLI V3?"
+      ],
+      "Text": "AWLI V3 uses OAuth-based authentication which renders consent screen to LinkedIn members. We recommend adding a company logo to your developer application using https://developer.linkedin.com/.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.origin.not.in.api.domains\u0022?",
+      "Anchor": "the-customer-configuration-and-or-the-awli-widget-has-an-error-in-the-console-that-says--error-origin-not-in-api-domains--",
+      "SectionPath": [
+        "Technical FAQ",
+        "The Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.origin.not.in.api.domains\u0022?"
+      ],
+      "Text": "This means that the domain on which the widget has been hosted is not included in the ValidJSSdkDomains field. Please make sure that the domain is allowlisted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.ats.integration.not.valid\u0022?",
+      "Anchor": "the-customer-configuration-and-or-the-awli-widget-has-an-error-in-the-console-that-says--error-ats-integration-not-valid--",
+      "SectionPath": [
+        "Technical FAQ",
+        "The Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.ats.integration.not.valid\u0022?"
+      ],
+      "Text": "If you are an ATS: This error points to an error in the integration context. Either the integration context is missing/incorrect or you have not made a call to update ATS integrations after you have received the integration context. Please refer to Module 2 Step 2 in the documentation . If you are not an ATS: Please ask for assistance from your LinkedIn point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do I receive a 400 bad request error response on the conversion tracking page?",
+      "Anchor": "why-do-i-receive-a-400-bad-request-error-response-on-the-conversion-tracking-page-",
+      "SectionPath": [
+        "Technical FAQ",
+        "Why do I receive a 400 bad request error response on the conversion tracking page?"
+      ],
+      "Text": "The conversion tracking event is only successful if the job code you added to the widget was associated with a paid job on LinkedIn. If the job is not associated with a paid job its ok to receive a \u0022 400 bad request\u0022 response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do I receive a 403 Forbidden error response on the Update/Verify Customer Integrations call? [ATS Partners only]?",
+      "Anchor": "why-do-i-receive-a-403-forbidden-error-response-on-the-update-verify-customer-integrations-call---ats-partners-only--",
+      "SectionPath": [
+        "Technical FAQ",
+        "Why do I receive a 403 Forbidden error response on the Update/Verify Customer Integrations call? [ATS Partners only]?"
+      ],
+      "Text": "This is most likely because you are attempting to make this call using the Parent Application which does not have access to this endpoint. Make sure to use the specific Child Application\u0027s credentials (Key/Secret to generate OAuth token) to update and verify the integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to update company logo on Oauth consent screen?",
+      "Anchor": "how-to-update-company-logo-on-oauth-consent-screen-",
+      "SectionPath": [
+        "Technical FAQ",
+        "How to update company logo on Oauth consent screen?"
+      ],
+      "Text": "Please file a ticket via and attach the correct logo. Our teams will then process the update and confirm once it is completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When I click AWLI Button, I see a Bummer screen?",
+      "Anchor": "when-i-click-awli-button--i-see-a-bummer-screen-",
+      "SectionPath": [
+        "Technical FAQ",
+        "When I click AWLI Button, I see a Bummer screen?"
+      ],
+      "Text": "It\u2019s possible your app is either disabled or its missing required settings/permissions needed in order for Oauth flow to work, please submit a support case via the partner support form and we will help you to resolve this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In what scenarios user will not see the consent screen on clicking AWLI Button?",
+      "Anchor": "in-what-scenarios-user-will-not-see-the-consent-screen-on-clicking-awli-button-",
+      "SectionPath": [
+        "Technical FAQ",
+        "In what scenarios user will not see the consent screen on clicking AWLI Button?"
+      ],
+      "Text": "If a user has applied to a different job and given the consent to share profile data via OAuth Consent screen, they will not see the consent screen again for the next 30 minutes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is Standard flow and account creation flow still supported?",
+      "Anchor": "is-standard-flow-and-account-creation-flow-still-supported-",
+      "SectionPath": [
+        "Technical FAQ",
+        "Is Standard flow and account creation flow still supported?"
+      ],
+      "Text": "Multiple page flows like the Standard Flow and Create Account flow can still be supported but will require persisting profile data in the first page. Refer here for more information",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to add a domain to Valid SDK Domain (Allowlist domain)?",
+      "Anchor": "how-to-add-a-domain-to-valid-sdk-domain--allowlist-domain--",
+      "SectionPath": [
+        "Technical FAQ",
+        "How to add a domain to Valid SDK Domain (Allowlist domain)?"
+      ],
+      "Text": "AWLI widget is visible only on the validJsSdkDomains which are specified for the particular customer application client_id. You can check or update existing allowlist domains using Provisioning API. You can make a GET call to the API to check existing allowlisted domains.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which data mode\u0027s are supported with AWLI V3",
+      "Anchor": "which-data-mode-s-are-supported-with-awli-v3-",
+      "SectionPath": [
+        "Technical FAQ",
+        "Which data mode\u0027s are supported with AWLI V3"
+      ],
+      "Text": "Following two modes are supported with the AWLI V3. 1) BUTTON_DATA Mode- Creates the Apply With LinkedIn button on the page and starts the click tracking within LinkedIn. Once applicant clicks this button and consents to sharing profile data, data is shared with partner using the callback method. 2) CONVERSION Mode- No visible items are created on the page. A conversion tracking event is sent back to LinkedIn to track the application status of the member. Note that the user must click the Apply With LinkedIn button on the previous page to track this conversion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which cookies are essential for the AWLI button to render?",
+      "Anchor": "which-cookies-are-essential-for-the-awli-button-to-render--",
+      "SectionPath": [
+        "Technical FAQ",
+        "Which cookies are essential for the AWLI button to render?"
+      ],
+      "Text": "bcookie - Used by security plugin in ATS and is essential for LinkedIn\u0027s operations. It\u0027s set to identify which devices are accessing LinkedIn.\nbscookie - Similar to bcookie, used for authentication and is only accessible through HTTP(s)\nlang - This cookie is used to store language preference of the user\nlidc - This cookie is used for routing purposes. It helps directing request\u0027s to the correct domain",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which information is needed to resolve AWLI related issues?",
+      "Anchor": "which-information-is-needed-to-resolve-awli-related-issues-",
+      "SectionPath": [
+        "Technical FAQ",
+        "Which information is needed to resolve AWLI related issues?"
+      ],
+      "Text": "To debug any customer or partner issues, please submit a support case via the partner support form and provide the following details: 1) Career site URL for customer. 2) HAR file with preserved logs. 3) Customer application client_id. 4) Customer contract ID. 5) Customer company ID. 6) Video/Screenshot of the inspector with error message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which information is needed to resolve AWLI related issues?",
+      "Anchor": "which-information-is-needed-to-resolve-awli-related-issues-",
+      "SectionPath": [
+        "Technical FAQ",
+        "Which information is needed to resolve AWLI related issues?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which information is needed to resolve AWLI related issues?",
+      "Anchor": "which-information-is-needed-to-resolve-awli-related-issues-",
+      "SectionPath": [
+        "Technical FAQ",
+        "Which information is needed to resolve AWLI related issues?"
+      ],
+      "Text": "LinkedIn customers will receive a similar version of this FAQ, this is meant for your development purposes only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "- Product FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "What are the benefits of the new AWLI?\nWhat\u0027s happening to the existing, legacy AWLI?\nHow long does the cookie last in the browser?\nWhat browsers are supported for the new AWLI widget?\nHow does the AWLI widget comply with accessibility requirements?\nHow are different language handled by the widget?\nWhat is the difference between AWLI V2 and AWLI V3?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "- Technical FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "The Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.origin.not.in.api.domains\u0022?\nThe Customer Configuration and/or the AWLI widget has an error in the console that says \u0022error.ats.integration.not.valid\u0022?\nWhy do I receive a 400 bad request error response on the conversion tracking page?\nWhy do I receive a 403 Forbidden error response on the Update/Verify Customer Integrations call? [ATS Partners only]?\nHow to update company logo on Oauth consent screen?\nWhen I click AWLI Button, I see a Bummer screen?\nIn what scenarios user will not see the consent screen on clicking AWLI Button?\nIs Standard flow and account creation flow still supported?\nWhy is the customer application logo important for AWLI V3?\nHow to add a domain to Valid SDK Domain (Allowlist domain)?\nWhich data mode\u0027s are supported with AWLI V3?\nWhich cookies are essential for the AWLI button to render?\nWhich information is needed to resolve AWLI related issues?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "Increase applicant conversion rates from the customer website. Smashfly Platform Data, 2015 reads that 74% of candidates who apply, quit a job application because the process is too long. Apply with LinkedIn streamlines the application process by allowing candidates to use profile data to autofill their information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "The legacy AWLI integration of partners is now updated to the newer experience of AWLI V3. Existing customers will now see the new AWLI. There is no further action required from existing partners or customers, please check our version comparison guide for more details on AWLI V3. If you are a new customer, please follow the integration guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "One (1) year unless the member actively signs out of LinkedIn or clears their cookies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "Per LinkedIn\u0027s policy on Web browsers, we support the current and previous (n-1) major releases of internet browsers. We do not support Firefox in private mode or any browser whose Enhanced Tracking Protection is enabled by default as this setting blocks third party URL access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "The Apply with LinkedIn widget complies with accessibility requirements: 1) the wording of the widget is readable by screen-readers, 2) the widget can be \u0022tabbed through\u0022, and 3) the widget has compliant color / contrast levels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "We only support the English locale, no other languages are currently supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "AWLI is switching from cookie-based authentication and a legacy tech stack to OAuth-based new tech stack. Refer this page that describes new features introduced in AWLI V3 and provides a comparison between AWLI V2 and V3 versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "AWLI V3 uses OAuth-based authentication which renders consent screen to LinkedIn members. We recommend adding a company logo to your developer application using https://developer.linkedin.com/.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "This means that the domain on which the widget has been hosted is not included in the ValidJSSdkDomains field. Please make sure that the domain is allowlisted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "If you are an ATS: This error points to an error in the integration context. Either the integration context is missing/incorrect or you have not made a call to update ATS integrations after you have received the integration context. Please refer to Module 2 Step 2 in the documentation . If you are not an ATS: Please ask for assistance from your LinkedIn point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "The conversion tracking event is only successful if the job code you added to the widget was associated with a paid job on LinkedIn. If the job is not associated with a paid job its ok to receive a \u0022 400 bad request\u0022 response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "This is most likely because you are attempting to make this call using the Parent Application which does not have access to this endpoint. Make sure to use the specific Child Application\u0027s credentials (Key/Secret to generate OAuth token) to update and verify the integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "Please file a ticket via and attach the correct logo. Our teams will then process the update and confirm once it is completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "It\u2019s possible your app is either disabled or its missing required settings/permissions needed in order for Oauth flow to work, please submit a support case via the partner support form and we will help you to resolve this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "If a user has applied to a different job and given the consent to share profile data via OAuth Consent screen, they will not see the consent screen again for the next 30 minutes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "Multiple page flows like the Standard Flow and Create Account flow can still be supported but will require persisting profile data in the first page. Refer here for more information",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "AWLI widget is visible only on the validJsSdkDomains which are specified for the particular customer application client_id. You can check or update existing allowlist domains using Provisioning API. You can make a GET call to the API to check existing allowlisted domains.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "Following two modes are supported with the AWLI V3. 1) BUTTON_DATA Mode- Creates the Apply With LinkedIn button on the page and starts the click tracking within LinkedIn. Once applicant clicks this button and consents to sharing profile data, data is shared with partner using the callback method. 2) CONVERSION Mode- No visible items are created on the page. A conversion tracking event is sent back to LinkedIn to track the application status of the member. Note that the user must click the Apply With LinkedIn button on the previous page to track this conversion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "bcookie - Used by security plugin in ATS and is essential for LinkedIn\u0027s operations. It\u0027s set to identify which devices are accessing LinkedIn.\nbscookie - Similar to bcookie, used for authentication and is only accessible through HTTP(s)\nlang - This cookie is used to store language preference of the user\nlidc - This cookie is used for routing purposes. It helps directing request\u0027s to the correct domain",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "To debug any customer or partner issues, please submit a support case via the partner support form and provide the following details: 1) Career site URL for customer. 2) HAR file with preserved logs. 3) Customer application client_id. 4) Customer contract ID. 5) Customer company ID. 6) Video/Screenshot of the inspector with error message.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

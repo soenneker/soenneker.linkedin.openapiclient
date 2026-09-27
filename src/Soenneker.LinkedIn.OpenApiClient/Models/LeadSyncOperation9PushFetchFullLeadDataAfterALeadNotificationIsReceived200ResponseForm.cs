@@ -39,7 +39,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormHiddenFieldsItem> HiddenFields { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +76,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent.CreateFromDiscriminatorValue); } },
                 { "creationLocale", n => { CreationLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormCreationLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormCreationLocale.CreateFromDiscriminatorValue); } },
                 { "hiddenFields", n => { HiddenFields = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormHiddenFieldsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormHiddenFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormContent>("content", Content);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormCreationLocale>("creationLocale", CreationLocale);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormHiddenFieldsItem>("hiddenFields", HiddenFields);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -30,6 +30,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseMetadata Metadata { get; set; }
 #endif
+        /// <summary>The results property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseResults? Results { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseResults Results { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200Response"/> and sets the default values.
         /// </summary>
@@ -57,6 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseMetadata.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseResults>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseResults.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,6 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseElementsItem>("elements", Elements);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation7AFetchActiveCampaigns200ResponseResults>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

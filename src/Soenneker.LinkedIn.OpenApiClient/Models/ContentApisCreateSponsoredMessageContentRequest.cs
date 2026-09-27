@@ -30,6 +30,30 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem> Elements { get; set; }
 #endif
+        /// <summary>(read-only) The ID key for this messageDocumented type: SponsoredMessageContentUrnRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Indicates whether this message’s next action is another message or an array of optionsDocumented type: SponsoredMessageContentUrn or SponsoredMessageOption[]Requirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem>? NextAction { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem> NextAction { get; set; }
+#endif
+        /// <summary>The conversation to which this message belongsDocumented type: SponsoredConversationUrnRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SponsoredConversation { get; set; }
+#nullable restore
+#else
+        public string SponsoredConversation { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequest"/> and sets the default values.
         /// </summary>
@@ -57,6 +81,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "bodySource", n => { BodySource = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestBodySource>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestBodySource.CreateFromDiscriminatorValue); } },
                 { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "nextAction", n => { NextAction = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sponsoredConversation", n => { SponsoredConversation = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +95,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestBodySource>("bodySource", BodySource);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem>("elements", Elements);
+            writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestNextActionItem>("nextAction", NextAction);
+            writer.WriteStringValue("sponsoredConversation", SponsoredConversation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

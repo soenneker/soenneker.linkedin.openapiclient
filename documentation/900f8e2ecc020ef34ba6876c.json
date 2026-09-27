@@ -1,0 +1,1434 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
+  "Title": "Company Intelligence API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "The Company Intelligence API delivers company (target account)-level data for all companies engaged through LinkedIn. It provides metrics such as engagement score, paid impressions, paid clicks, leads, paid qualified leads, conversions, paid video views, organic impressions, and organic engagements. Designed to support attribution tools, the API offers accurate company-level data. Use it to gain insights, improve targeting, and measure how companies across your ad accounts interact with your brand on LinkedIn effectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "The Company Intelligence API delivers company (target account)-level data for all companies engaged through LinkedIn. It provides metrics such as engagement score, paid impressions, paid clicks, leads, paid qualified leads, conversions, paid video views, cost per paid qualified lead (CPQL), organic impressions, and organic engagements, along with firmographic attributes such as company size, industry, and headquarters country/region. Designed to support attribution tools, the API offers accurate company-level data. Use it to gain insights, improve targeting, and measure how companies across your ad accounts interact with your brand on LinkedIn effectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "The Company Intelligence API delivers company (target account)-level data for all companies engaged through LinkedIn. It provides metrics such as engagement score, paid impressions, paid clicks, leads, paid qualified leads, conversions, paid video views, cost per paid qualified lead (CPQL), organic impressions, and organic engagements, along with firmographic attributes such as company size, industry, and headquarters country/region. You can filter results by campaign, campaign group, objective type, or member seniority. Designed to support attribution tools, the API offers accurate company-level data. Use it to gain insights, improve targeting, and measure how companies across your ad accounts interact with your brand on LinkedIn effectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Metrics such as paid qualified leads and conversions are only supported for API versions starting from March 2026 and later.\nThe paidVideoViews metric is only supported for API versions starting from May 2026 and later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Metrics such as paid qualified leads and conversions are only supported for API versions starting from March 2026 and later.\nThe paidVideoViews metric is only supported for API versions starting from May 2026 and later.\nThe companySize, industry, countryCode, and costInLocalCurrencyPerPaidQualifiedLead fields, along with the LAST_365_DAYS lookback window option, are only supported for API versions starting from June 2026 and later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence API",
+      "Anchor": "company-intelligence-api",
+      "SectionPath": [],
+      "Text": "Metrics such as paid qualified leads and conversions are only supported for API versions starting from March 2026 and later.\nThe paidVideoViews metric is only supported for API versions starting from May 2026 and later.\nThe companySize, industry, countryCode, and costInLocalCurrencyPerPaidQualifiedLead fields, along with the LAST_365_DAYS lookback window option, are only supported for API versions starting from June 2026 and later.\nThe campaignGroup, objectiveType, and seniority filter fields are only supported for API versions starting from September 2026 and later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "The developer application must be provisioned with the Company Intelligence API access.\nThe developer application must be provisioned with the Advertising API access.\nThe authenticated member must have a valid user role VIEWER or above on the requested ad account for this API.\nThe authenticated member must have consented to the r_ads_reporting permission of the Advertising API product for your developer app. If the member has already consented through an existing integration (e.g., Ad Analytics API), you can use their existing member access token and do not need to require re-authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "This is a private API available only to previously approved developers. We are not currently accepting new applications for the Company Intelligence API. Use the Ad Analytics API for your reporting needs. We will update our recent changes documentation when we are ready to accept new applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Company Intelligence",
+      "Anchor": "retrieve-company-intelligence",
+      "SectionPath": [
+        "Retrieve Company Intelligence"
+      ],
+      "Text": "Use the Company Intelligence API to retrieve company-level paid and organic engagement for a Sponsored Account, using filter criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limits",
+      "Anchor": "limits",
+      "SectionPath": [
+        "Retrieve Company Intelligence",
+        "Limits"
+      ],
+      "Text": "All results available are returned via the API with no upper limits. You can page through the results using the start and count parameters. You can leverage the href returned under links with rel: next in the response to make your next paginated request in a loop and exit when there are no elements in the response elements:[].\nThe maximum supported page size (i.e., count parameter) is 1,000. We recommend a smaller page size (count=500 or lower) to prevent server timeout issues.\nAll impression, engagement, and click metrics must meet specific number thresholds to protect member privacy. If that threshold isn\u2019t met, you\u2019ll see a 0 value for those metrics in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sort Order",
+      "Anchor": "sort-order",
+      "SectionPath": [
+        "Retrieve Company Intelligence",
+        "Sort Order"
+      ],
+      "Text": "Elements in the response are sorted by paidImpressions in descending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Schema",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Account URN of the advertiser requesting the account intelligence data. The format is urn:li:sponsoredAccount:1234. The authenticated user must have a valid role on this ad account. For more information, see Find Ad Accounts by Authenticated User API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-account-users-by-accounts"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "filterCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array [Company Intelligence Filter Criteria]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains filters to apply to the request as described in Company Intelligence Filter Criteria.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api?view=li-lms-2026-09\u0026tabs=http#company-intelligence-filter-criteria"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skipCompanyDecoration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether to skip fetching companyName in response. Currently returns companyName even if specified true due to an API issue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to false)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Intelligence Filter Criteria",
+      "Anchor": "company-intelligence-filter-criteria",
+      "SectionPath": [
+        "Schema",
+        "Request Schema",
+        "Company Intelligence Filter Criteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lookbackWindow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to last 90 days)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[Ad Segment URN]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all ad segments)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Note: Organic metrics will be 0 when the campaign filter is used.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaigns)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Intelligence Filter Criteria",
+      "Anchor": "company-intelligence-filter-criteria",
+      "SectionPath": [
+        "Schema",
+        "Request Schema",
+        "Company Intelligence Filter Criteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lookbackWindow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LAST_180_DAYS, LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 180, 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied. Note: Pass lookbackWindow:LAST_180_DAYS in the filterCriteria parameter of the accountIntelligence finder query. When no lookback window is specified, the default of 90 days continues to apply.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to last 90 days)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[Ad Segment URN]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all ad segments)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Note: Organic metrics will be 0 when the campaign filter is used.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaigns)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Intelligence Filter Criteria",
+      "Anchor": "company-intelligence-filter-criteria",
+      "SectionPath": [
+        "Schema",
+        "Request Schema",
+        "Company Intelligence Filter Criteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lookbackWindow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LAST_365_DAYS, LAST_180_DAYS, LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 365, 180, 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied. Note: Pass lookbackWindow:LAST_365_DAYS in the filterCriteria parameter of the accountIntelligence finder query to retrieve a full year of engagement history. When no lookback window is specified, the default of 90 days continues to apply.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to last 90 days)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[Ad Segment URN]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all ad segments)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Note: Organic metrics will be 0 when the campaign filter is used.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaigns)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Intelligence Filter Criteria",
+      "Anchor": "company-intelligence-filter-criteria",
+      "SectionPath": [
+        "Schema",
+        "Request Schema",
+        "Company Intelligence Filter Criteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lookbackWindow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LAST_365_DAYS, LAST_180_DAYS, LAST_90_DAYS, LAST_60_DAYS, LAST_30_DAYS, LAST_7_DAYS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lookback window in days to filter results. Engagement events are included only if they fall within this lookback range from the day the results are calculated. The lookback window starts approximately 2 days prior to the current date and extends backward 365, 180, 90, 60, 30, or 7 days. The range is rounded to the start of day (00:00 UTC) for the beginning and to the end of day (23:00 UTC) for the end.For example, for a LAST_7_DAYS request sent on 5/21, response data will be from 5/12 00:00 UTC to 5/19 23:00 UTC.If this field is not provided, a default lookback of 90 days is applied. Note: Pass lookbackWindow:LAST_365_DAYS in the filterCriteria parameter of the accountIntelligence finder query to retrieve a full year of engagement history. When no lookback window is specified, the default of 90 days continues to apply.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to last 90 days)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[Ad Segment URN]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The collection of ad segment URNs to filter results. You can provide none, one, or multiple ad segments.Example: [\u0022urn:li:adSegment:1234\u0022, \u0022urn:li:adSegment:4567\u0022].For more information, see Find Ad Segments by Ad Account API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments?view=li-lms-2026-09#find-dmp-segments-by-account"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all ad segments)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign URN to filter results. Multiple campaigns are not supported.Example: urn:li:sponsoredCampaign:1234.For more information, see Search for Campaigns API.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign filter is used.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#search-for-campaigns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaigns)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignGroup",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign Group URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign group URN to filter results. Multiple campaign groups are not supported.Example: urn:li:sponsoredCampaignGroup:1234.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the campaign group filter is used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all campaign groups)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one campaign objective type to filter results.Example: BRAND_AWARENESS.Use only one of campaign, campaignGroup, or objectiveType in a request. Organic metrics will be 0 when the objective type filter is used. See list of objectiveType here.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations?view=li-lms-2026-09#objective-type-descriptions"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all objective types)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seniority",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (numeric ID)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can provide none or one standardized seniority ID. The Standardized Seniorities API returns id as a number; pass its decimal representation as a string in this field.Example: standardized seniority ID 4 (Senior) is passed as string value \u00224\u0022. In Rest.li finder syntax, scalar string values within a complex query parameter are not enclosed in quotation marks, so the request uses seniority:4.The seniority filter is supported only with LAST_90_DAYS and when campaign, campaignGroup, and objectiveType are not provided. Other combinations return no results. The seniority filter applies to member-attributable paid and organic engagement metrics; paidQualifiedLeads, conversions, and costInLocalCurrencyPerPaidQualifiedLead are not broken down by seniority.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09#get_all"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (defaults to all seniorities)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Schema",
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the engaged member\u2019s company (target company). Returns empty string if skipCompanyDecoration is set to true.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of the target company\u0027s company page on linkedin.com (e.g., http://linkedin.com/company/linkedin).",
+            "Links": [
+              "http://linkedin.com/company/linkedin"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyWebsite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of the target company\u2019s website domain (e.g., https://www.microsoft.com).",
+            "Links": [
+              "https://www.microsoft.com/"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The engagement level of the target company is calculated based on the number of paid and organic member engagements, normalized over the selected time range. The possible values are LOW, VERY_LOW, MEDIUM, HIGH, VERY_HIGH.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organicImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of visits to the advertiser\u0027s LinkedIn company page, feed impressions, and product page impressions from members in the target company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organicEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of interactions with page posts and product pages on the advertiser\u0027s LinkedIn company page from members in the target company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paidImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of times sponsored ads were shown to members from the target company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paidClicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of clicks on sponsored ads and ads virally shared from the members of the target company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paidEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sum of all social actions, clicks to ad landing page, and clicks to LinkedIn company page (chargeable and free).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paidLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of leads collected from the target company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paidQualifiedLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of qualified leads from Conversions API (CAPI) attributed to the target company. Note: Applicable only from API versions 202603 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of conversions based on actions performed by a member after viewing or clicking on an ad. This includes Conversions API (CAPI) and insights tag conversions. Note: Applicable only from API versions 202603 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paidVideoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of paid video ad views from target company members within the lookback window. Note: Applicable only from API versions 202605 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companySize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The range of the number of staff employed by the target company. Possible values: SIZE_1, SIZE_2_TO_10, SIZE_11_TO_50, SIZE_51_TO_200, SIZE_201_TO_500, SIZE_501_TO_1000, SIZE_1001_TO_5000, SIZE_5001_TO_10000, SIZE_10001_OR_MORE. Note: Applicable only from API versions 202606 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IndustryUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the industry the target company is associated with, based on its primary business activities and products (e.g., urn:li:industry:1). Note: Applicable only from API versions 202606 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO country/region code of the target company\u0027s headquarters (e.g., US, GB). Note: Applicable only from API versions 202606 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costInLocalCurrencyPerPaidQualifiedLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost per paid qualified lead (CPQL) attributed to the target company, in the advertiser\u0027s local currency. Derived as the ratio of total ad spend over the number of paid qualified leads collected from members of the target company within the lookback window. Note: Applicable only from API versions 202606 and later.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS)\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_180_DAYS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_180_DAYS)\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_365_DAYS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Lookback Window Filter",
+      "Anchor": "lookback-window-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Lookback Window Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_365_DAYS)\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Segment Filter",
+      "Anchor": "ad-segment-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Ad Segment Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Segment Filter",
+      "Anchor": "ad-segment-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Ad Segment Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A1234,urn%3Ali%3AadSegment%3A5678))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Ad Segment Filter",
+      "Anchor": "ad-segment-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Ad Segment Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_7_DAYS,adSegments:List(urn%3Ali%3AadSegment%3A1234,urn%3Ali%3AadSegment%3A5678))\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Filter",
+      "Anchor": "campaign-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Campaign Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Filter",
+      "Anchor": "campaign-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Campaign Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A12345678)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Filter",
+      "Anchor": "campaign-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Campaign Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_30_DAYS,campaign:urn%3Ali%3AsponsoredCampaign%3A12345678)\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Group Filter",
+      "Anchor": "campaign-group-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Campaign Group Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Group Filter",
+      "Anchor": "campaign-group-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Campaign Group Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,campaignGroup:urn%3Ali%3AsponsoredCampaignGroup%3A12345678)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Group Filter",
+      "Anchor": "campaign-group-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Campaign Group Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,campaignGroup:urn%3Ali%3AsponsoredCampaignGroup%3A12345678)\u0027 \\\n  -H \u0027Authorization: ******\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective Type Filter",
+      "Anchor": "objective-type-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Objective Type Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Objective Type Filter",
+      "Anchor": "objective-type-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Objective Type Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,objectiveType:BRAND_AWARENESS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Objective Type Filter",
+      "Anchor": "objective-type-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Objective Type Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,objectiveType:BRAND_AWARENESS)\u0027 \\\n  -H \u0027Authorization: ******\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Seniority Filter",
+      "Anchor": "seniority-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Seniority Filter"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Seniority Filter",
+      "Anchor": "seniority-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Seniority Filter"
+      ],
+      "Text": "The seniority field is string-typed. Pass the decimal string representation of the numeric id returned by the Standardized Seniorities API. Rest.li finder syntax does not enclose scalar string values in quotation marks, so seniority ID 4 is sent as seniority:4.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Seniority Filter",
+      "Anchor": "seniority-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Seniority Filter"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Seniority Filter",
+      "Anchor": "seniority-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Seniority Filter"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,seniority:4)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Seniority Filter",
+      "Anchor": "seniority-filter",
+      "SectionPath": [
+        "Sample Requests",
+        "Seniority Filter"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/accountIntelligence?q=account\u0026start=0\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,seniority:4)\u0027 \\\n  -H \u0027Authorization: ******\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022: \u0022https://www.linkedin.com/company/microsoft\u0022,\n            \u0022companyWebsite\u0022: \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 20,\n            \u0022organicEngagements\u0022: 50,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 40,\n            \u0022paidEngagements\u0022: 300,\n            \u0022paidImpressions\u0022: 133,\n            \u0022organicImpressions\u0022: 50,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022,\n            \u0022paidQualifiedLeads\u0022: 5,\n            \u0022conversions\u0022: 12\n        }\n        // ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/rest/accountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_90_DAYS,adSegments:List())\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022: \u0022https://www.linkedin.com/company/microsoft\u0022,\n            \u0022companyWebsite\u0022: \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 40,\n            \u0022organicEngagements\u0022: 100,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 80,\n            \u0022paidEngagements\u0022: 600,\n            \u0022paidImpressions\u0022: 266,\n            \u0022organicImpressions\u0022: 100,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022,\n            \u0022paidQualifiedLeads\u0022: 8,\n            \u0022conversions\u0022: 18\n        }\n        // ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/rest/accountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_180_DAYS)\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022: \u0022https://www.linkedin.com/company/microsoft\u0022,\n            \u0022companyWebsite\u0022: \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 40,\n            \u0022organicEngagements\u0022: 100,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 80,\n            \u0022paidEngagements\u0022: 600,\n            \u0022paidImpressions\u0022: 266,\n            \u0022organicImpressions\u0022: 100,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022,\n            \u0022paidQualifiedLeads\u0022: 8,\n            \u0022conversions\u0022: 18,\n            \u0022paidVideoViews\u0022: 160\n        }\n        // ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/rest/accountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_180_DAYS)\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022companyPageUrl\u0022: \u0022https://www.linkedin.com/company/microsoft\u0022,\n            \u0022companyWebsite\u0022: \u0022http://www.microsoft.com\u0022,\n            \u0022paidClicks\u0022: 40,\n            \u0022organicEngagements\u0022: 100,\n            \u0022companyName\u0022: \u0022Microsoft\u0022,\n            \u0022paidLeads\u0022: 80,\n            \u0022paidEngagements\u0022: 600,\n            \u0022paidImpressions\u0022: 266,\n            \u0022organicImpressions\u0022: 100,\n            \u0022engagementLevel\u0022: \u0022VERY_LOW\u0022,\n            \u0022paidQualifiedLeads\u0022: 8,\n            \u0022conversions\u0022: 18,\n            \u0022paidVideoViews\u0022: 160,\n            \u0022companySize\u0022: \u0022SIZE_10001_OR_MORE\u0022,\n            \u0022industry\u0022: \u0022urn:li:industry:4\u0022,\n            \u0022countryCode\u0022: \u0022US\u0022,\n            \u0022costInLocalCurrencyPerPaidQualifiedLead\u0022: 145.5\n        }\n        // ...\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 30,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/rest/accountIntelligence?q=account\u0026filterCriteria=(lookbackWindow:LAST_365_DAYS)\u0026start=10\u0026count=10\u0026account=urn%3Ali%3AsponsoredAccount%3A123456789\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED: Not enough permissions to access /accountIntelligence API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your developer application may not be provisioned with the Company Intelligence API product.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PERMISSION_DENIED: Access request for sponsored account denied for READ_SPONSORED_ACCOUNT permissions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authenticated member doesn\u0027t have the required user role on the sponsored ad account to view the data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ads reporting permission is required to fetch Company Intelligence data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authenticated member hasn\u2019t granted access to r_ads_reporting permission to your developer app.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

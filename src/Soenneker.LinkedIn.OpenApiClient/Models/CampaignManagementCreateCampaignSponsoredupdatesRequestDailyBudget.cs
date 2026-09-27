@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>Maximum amount to spend per day UTC. The amount of money as a real number string.Documented type: BigDecimalRequirement: True, unless totalBudget is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Amount { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>The currencyCode property</summary>
+        /// <summary>ISO currency code. The currency must match that of the parent account.Documented type: CurrencyRequirement: True, unless totalBudget is provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyCode { get; set; }

@@ -1,0 +1,2697 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+  "Title": "Sync CRM candidates",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync CRM candidates",
+      "Anchor": "sync-crm-candidates",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM candidates",
+      "Anchor": "sync-crm-candidates",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM candidates",
+      "Anchor": "sync-crm-candidates",
+      "SectionPath": [],
+      "Text": "Candidates should be synced to the Middleware Platform whenever they are created or updated in your CRM. When a customer activates CRM Connect for the first time, you must sync all of their historical data to LinkedIn to power the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM candidates",
+      "Anchor": "sync-crm-candidates",
+      "SectionPath": [],
+      "Text": "To ensure the best possible ATS candidate to LinkedIn member match rate, sync phoneNumbers, linkedInProfileUrl, currentCompanyName, and currentJobTitle along with firstName, lastName, and emailAddresses whenever available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Candidate maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/v2/atsCandidates",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidates API Query String Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate identifier within external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidates via Batch Update",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /atsCandidates endpoint when to sync candidates to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidates API Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "addresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of personal addresses of the candidate. All fields are optional but must comply with the following rules: Address.Line1 is required if Line 2 or Line3 or Line4 are provided.Address.Line2 is required if Line3 or Line4 are provided.Address.Line3 is required if Line4 is provided.Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.At most 30 addresses can be provided.. May be an empty array.",
+            "Links": [],
+            "Values": [
+              "Address.Line1 is required if Line 2 or Line3 or Line4 are provided.",
+              "Address.Line2 is required if Line3 or Line4 are provided.",
+              "Address.Line3 is required if Line4 is provided.",
+              "Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.",
+              "If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.",
+              "At most 30 addresses can be provided."
+            ]
+          },
+          {
+            "Text": "Address[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#address-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currentCompanyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate\u0027s current company name. If specified, string value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currentJobTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate\u0027s current job title. String value cannot be empty or blank spaces. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "doNotContact",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag indicating whether the candidate is willing to be contacted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of emails that belong to the candidate. Emails must follow X@X.X pattern. 30 email addresses max.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required unless manualMatchedMember is provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Link to Profile in CRM An URL that points to the candidate\u0027s external profile page, other than the Linkedin profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the candidate within the external CRM. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the candidate within the external CRM. Optional if the candidate does not have a last name. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "linkedInProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A URL that points to the candidate\u0027s LinkedIn profile page. Can be used to facilitate profile matching within LinkedIn. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "manualMatchedMember",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member selected manually from the TCRM Profile Widget by a CRM user for this candidate. Must match format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "matchedMembers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of LinkedIn members that can be matched to this candidate. If null, the asynchronous process of finding matched members is still being processed. If empty, no LinkedIn member can be matched to this candidate. Items are typed urns (urn:li:person:{id}, etc.). Note: This field should not be present in sync request bodies, only responses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "middleInitial",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The middle initial of the candidate. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneNumbers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of phone numbers of the candidate. Format must follow com.google.i18n.phonenumbers standard. At most 30 phone numbers can be provided. May be an empty array.",
+            "Links": [
+              "https://javadoc.io/doc/com.googlecode.libphonenumber/libphonenumber/8.4.1/com/google/i18n/phonenumbers/PhoneNumberUtil.html"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "PhoneNumber[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#phonenumber-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "prefix",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The prefix name of the candidate, i.e. Mr, Mrs, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "suffix",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The suffix name of the candidate, i.e. Eng, MD, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of candidate\u0027s skills as a string, e.g. [\u0022Java\u0022,\u0022Critical Thinking\u0022].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of Candidate\u0027s source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Source[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#source-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tags",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of candidate\u0027s tags as strings, e.g. [\u0022tag-1\u0022,\u0022tag-2\u0022].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the content was created within external CRM, in milliseconds since Unix Epoch. Value must be greater than zero. Value cannot be more than atsLastModifiedAt.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the content was last modified within external CRM, in milliseconds since Unix Epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Address Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Address Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address city.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address country/region. ISO 3166-2 2 Character Country Code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geographicArea",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State of the Provice of this address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geographicAreaType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the geographic area. Possible values:StateProvince",
+            "Links": [],
+            "Values": [
+              "State",
+              "Province"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "latLong",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LatLong",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#latlong-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Geographical coordinates of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Second line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line3",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Third line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line4",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fourth line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Postal code of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LatLong Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "LatLong Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "latitude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latitude in decimal degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "longitude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Longitude in decimal degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PhoneNumber Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "PhoneNumber Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the phone number. The length should be no more than 25.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Source Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Source Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sourceCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Category of the candidate\u0027s source. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER",
+            "Links": [],
+            "Values": [
+              "LINKEDIN",
+              "EMAIL",
+              "SOCIAL_MEDIA",
+              "EVENT",
+              "CAREER_SITE",
+              "AGENCY",
+              "REFERRAL",
+              "INTERNAL",
+              "JOB_POSTING",
+              "OTHER"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the candidate source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Source Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Source Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Source Schema",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Source Schema"
+      ],
+      "Text": "When updating an existing record, you must specify all available fields. Omitting a field will set it to null.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Candidates API request (query tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (query tunneled)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Candidates API request (query tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (query tunneled)"
+      ],
+      "Text": "In production, requests must use query tunneling to avoid reaching maximum URL length described here. You can use non-tunneled requests when request URLs are shorter than length limits, for testing purposes, and for troubleshooting (subsequent example).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Candidates API request (query tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (query tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsCandidates\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsCandidateId=CAND123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:{org_id}\u0026ids[1].atsCandidateId=CAND456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:{org_id}\\r\\n--xyz\\r\\n\nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022atsCandidateId=CAND123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{org_id}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u002231 Spooner St\u0022,\n          \u0022city\u0022: \u0022Quahog\u0022,\n          \u0022geographicArea\u0022: \u0022RI\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002202802\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022currentCompanyName\u0022: \u0022Pawtucket Patriot Brewery\u0022,\n      \u0022currentJobTitle\u0022: \u0022Quality Assurance\u0022,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/j-doe\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022middleInitial\u0022: \u0022L\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-555-5555\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022skills\u0022: [\u0022Java\u0022, \u0022C\u002B\u002B\u0022],\n      \u0022tags\u0022: [\u0022tag-1\u0022, \u0022tag-2\u0022],\n      \u0022sources\u0022:[\n        {\n           \u0022sourceCategory\u0022: \u0022LINKEDIN\u0022,\n           \u0022sourceDetails\u0022: \u0022Get the candidate from LinkedIn 1CE\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    },\n    \u0022atsCandidateId=CAND456\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{org_id}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u00221000 W Maude Ave\u0022,\n          \u0022line2\u0022: \u0022ATTN: Jane Doe\u0022,\n          \u0022city\u0022: \u0022Calgary\u0022,\n          \u0022geographicArea\u0022: \u0022AB\u0022,\n          \u0022geographicAreaType\u0022: \u0022PROVINCE\u0022,\n          \u0022postalCode\u0022: \u0022T1X 0L3\u0022,\n          \u0022country\u0022: \u0022ca\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/j-doe\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022skills\u0022: [\u0022Java\u0022, \u0022C\u002B\u002B\u0022],\n      \u0022tags\u0022: [\u0022tag-1\u0022, \u0022tag-2\u0022],\n      \u0022sources\u0022:[\n        {\n           \u0022sourceCategory\u0022: \u0022AGENCY\u0022,\n           \u0022sourceDetails\u0022: \u0022Get the candidate from recruiting agency\u0022\n        }\n      ],\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-666-7777\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mrs\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Candidates API request (not query tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (not query tunneled)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/v2/atsCandidates?ids%5B0%5D.atsCandidateId=atsCandidateId1001\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=ATS\u0026ids%5B1%5D.atsCandidateId=atsCandidateId1002\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=ATS\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022atsCandidateId=atsCandidateId1001\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u0022 333 Main Street\u0022,\n          \u0022city\u0022: \u0022San Jose\u0022,\n          \u0022geographicArea\u0022: \u0022CA\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002295118\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1670935153,\n      \u0022atsLastModifiedAt\u0022: 1670935160,\n      \u0022emailAddresses\u0022: [\n        \u0022Johndoe@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://www.linkedin.com/in/John-doe-forbackend\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022doe\u0022,\n      \u0022middleInitial\u0022:\u0022K\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022510 235 9998\u0022,\n          \u0022extension\u0022: \u0022123\u0022\n        }\n      ],\n      \u0022skills\u0022: [\u0022Java\u0022, \u0022C\u002B\u002B\u0022],\n      \u0022tags\u0022: [\u0022tag-1\u0022, \u0022tag-2\u0022],\n      \u0022sources\u0022:[\n        {\n           \u0022sourceCategory\u0022: \u0022AGENCY\u0022,\n           \u0022sourceDetails\u0022: \u0022Get the candidate from recruiting agency\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    },\n    \u0022atsCandidateId=atsCandidateId1002\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u0022800 1st Ave\u0022,\n          \u0022city\u0022: \u0022San Jose\u0022,\n          \u0022geographicArea\u0022: \u0022CA\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002295118\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1670935153,\n      \u0022atsLastModifiedAt\u0022: 1670935160,\n      \u0022emailAddresses\u0022: [\n        \u0022JaneDoe@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://www.linkedin.com/in/Jane-doe-forbackend\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022doe\u0022,\n      \u0022middleInitial\u0022:\u0022K\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022408 235 9998\u0022,\n          \u0022extension\u0022: \u0022123\u0022\n        }\n      ],\n      \u0022skills\u0022: [\u0022Java\u0022, \u0022C\u002B\u002B\u0022],\n      \u0022tags\u0022: [\u0022tag-1\u0022, \u0022tag-2\u0022],\n      \u0022sources\u0022:[\n        {\n           \u0022sourceCategory\u0022: \u0022AGENCY\u0022,\n           \u0022sourceDetails\u0022: \u0022Get the candidate from recruiting agency\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Candidates Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Candidates Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateId1002\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateId1001\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId={id 1}\u0026ids[0].integrationContext={organization URN}\u0026ids[1].externalCandidateId={id 2}\u0026ids[1].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "For each id specified in the request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "Use your candidate id as the value of id[i].externalCandidateId.\nUse the customer\u0027s organization id as the value of id[i].integrationContext. The format should be \u0022urn:li:organization:{id}\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "Include the LinkedIn-Version header (for example, LinkedIn-Version: 202602) when calling this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidates API Query String Parameters",
+      "Anchor": "sync-candidates-api-query-string-parameters-1",
+      "SectionPath": [
+        "Sync Candidates API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate identifier within external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidates via Batch Update",
+      "Anchor": "sync-candidates-via-batch-update-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /candidates endpoint when to sync candidates to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidates API Schema",
+      "Anchor": "sync-candidates-api-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "addresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of personal addresses of the candidate. All fields are optional but must comply with the following rules: Address.Line1 is required if Line 2 or Line3 or Line4 are provided.Address.Line2 is required if Line3 or Line4 are provided.Address.Line3 is required if Line4 is provided.Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.At most 30 addresses can be provided.. May be an empty array.",
+            "Links": [],
+            "Values": [
+              "Address.Line1 is required if Line 2 or Line3 or Line4 are provided.",
+              "Address.Line2 is required if Line3 or Line4 are provided.",
+              "Address.Line3 is required if Line4 is provided.",
+              "Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.",
+              "If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.",
+              "At most 30 addresses can be provided."
+            ]
+          },
+          {
+            "Text": "Address[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#address-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currentCompanyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate\u0027s current company name. If specified, string value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currentJobTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate\u0027s current job title. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "doNotContact",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag indicating whether the candidate is willing to be contacted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of emails that belong to the candidate. Emails must follow X@X.X pattern. 30 email addresses max.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required unless manualMatchedMember is provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Link to Profile in CRM. A URL that points to the candidate\u0027s external profile page, other than the LinkedIn profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the candidate within the external CRM. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the candidate within the external CRM. Optional if the candidate does not have a last name. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "linkedInProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A URL that points to the candidate\u0027s LinkedIn profile page. Can be used to facilitate profile matching within LinkedIn. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "manualMatchedMember",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member selected manually from the TCRM Profile Widget by a CRM user for this candidate. Must match format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "middleInitial",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The middle initial of the candidate. String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneNumbers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of phone numbers of the candidate. Format must follow com.google.i18n.phonenumbers standard. At most 30 phone numbers can be provided. May be an empty array.",
+            "Links": [
+              "https://javadoc.io/doc/com.googlecode.libphonenumber/libphonenumber/8.4.1/com/google/i18n/phonenumbers/PhoneNumberUtil.html"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "PhoneNumber[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#phonenumber-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "prefix",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The prefix name of the candidate, i.e. Mr, Mrs, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "suffix",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The suffix name of the candidate, i.e. Eng, MD, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of candidate\u0027s skills as a string, e.g. [\u0022Java\u0022,\u0022Critical Thinking\u0022].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of Candidate\u0027s source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Source[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#source-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tags",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of candidate\u0027s tags as strings, e.g. [\u0022tag-1\u0022,\u0022tag-2\u0022].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the content was created within external CRM, in milliseconds since Unix Epoch. Value must be greater than zero. Value cannot be more than externalLastModifiedAt.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the content was last modified within external CRM, in milliseconds since Unix Epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Address Schema",
+      "Anchor": "address-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Address Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address city.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address country/region. ISO 3166-2 2 Character Country Code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geographicArea",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State of the Provice of this address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geographicAreaType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the geographic area. Possible values:StateProvince",
+            "Links": [],
+            "Values": [
+              "State",
+              "Province"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "latLong",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LatLong",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04#latlong-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Geographical coordinates of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Second line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line3",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Third line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line4",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fourth line of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Postal code of the address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LatLong Schema",
+      "Anchor": "latlong-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "LatLong Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "latitude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latitude in decimal degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "longitude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Longitude in decimal degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PhoneNumber Schema",
+      "Anchor": "phonenumber-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "PhoneNumber Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the phone number. The length should be no more than 25.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Source Schema",
+      "Anchor": "source-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Source Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sourceCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Category of the candidate\u0027s source. Must be one of these source category type : LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER",
+            "Links": [],
+            "Values": [
+              "LINKEDIN",
+              "EMAIL",
+              "SOCIAL_MEDIA",
+              "EVENT",
+              "CAREER_SITE",
+              "AGENCY",
+              "REFERRAL",
+              "INTERNAL",
+              "JOB_POSTING",
+              "OTHER"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the candidate source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Source Schema",
+      "Anchor": "source-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Source Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Source Schema",
+      "Anchor": "source-schema-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sync Candidates API Schema",
+        "Source Schema"
+      ],
+      "Text": "When updating an existing record, you must specify all available fields. Omitting a field will set it to null.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Candidates API request (query tunneled)",
+      "Anchor": "sample-sync-candidates-api-request-query-tunneled-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (query tunneled)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Candidates API request (query tunneled)",
+      "Anchor": "sample-sync-candidates-api-request-query-tunneled-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (query tunneled)"
+      ],
+      "Text": "In production, requests must use query tunneling to avoid reaching maximum URL length described here. You can use non-tunneled requests when request URLs are shorter than length limits, for testing purposes, and for troubleshooting (subsequent example).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Candidates API request (query tunneled)",
+      "Anchor": "sample-sync-candidates-api-request-query-tunneled-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (query tunneled)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidates\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalCandidateId=CAND123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[1].externalCandidateId=CAND456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalCandidateId=CAND123\u0026integrationContext=urn:li:organization:{org_id}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u002231 Spooner St\u0022,\n          \u0022city\u0022: \u0022Quahog\u0022,\n          \u0022geographicArea\u0022: \u0022RI\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002202802\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022externalCreatedAt\u0022: 1484864187000,\n      \u0022externalLastModifiedAt\u0022: 1484864187000,\n      \u0022currentCompanyName\u0022: \u0022Pawtucket Patriot Brewery\u0022,\n      \u0022currentJobTitle\u0022: \u0022Quality Assurance\u0022,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/j-doe\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022middleInitial\u0022: \u0022L\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-555-5555\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022skills\u0022: [\u0022Java\u0022, \u0022C\u002B\u002B\u0022],\n      \u0022tags\u0022: [\u0022tag-1\u0022, \u0022tag-2\u0022],\n      \u0022sources\u0022: [\n        {\n          \u0022sourceCategory\u0022: \u0022LINKEDIN\u0022,\n          \u0022sourceDetails\u0022: \u0022Get the candidate from LinkedIn 1CE\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    },\n    \u0022externalCandidateId=CAND456\u0026integrationContext=urn:li:organization:{org_id}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u00221000 W Maude Ave\u0022,\n          \u0022line2\u0022: \u0022ATTN: Jane Doe\u0022,\n          \u0022city\u0022: \u0022Calgary\u0022,\n          \u0022geographicArea\u0022: \u0022AB\u0022,\n          \u0022geographicAreaType\u0022: \u0022PROVINCE\u0022,\n          \u0022postalCode\u0022: \u0022T1X 0L3\u0022,\n          \u0022country\u0022: \u0022ca\u0022\n        }\n      ],\n      \u0022externalCreatedAt\u0022: 1484864187000,\n      \u0022externalLastModifiedAt\u0022: 1484864187000,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/j-doe\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-666-7777\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022sources\u0022: [\n        {\n          \u0022sourceCategory\u0022: \u0022AGENCY\u0022,\n          \u0022sourceDetails\u0022: \u0022Get the candidate from recruiting agency\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mrs\u0022\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Candidates API request (not query tunneled)",
+      "Anchor": "sample-sync-candidates-api-request-not-query-tunneled-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates API request (not query tunneled)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId=CAND123\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[1].externalCandidateId=CAND456\u0026ids[1].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{\n  \u0022entities\u0022: {\n    \u0022externalCandidateId=CAND123\u0026integrationContext=urn:li:organization:{org_id}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u002231 Spooner St\u0022,\n          \u0022city\u0022: \u0022Quahog\u0022,\n          \u0022geographicArea\u0022: \u0022RI\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002202802\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022externalCreatedAt\u0022: 1484864187000,\n      \u0022externalLastModifiedAt\u0022: 1484864187000,\n      \u0022currentCompanyName\u0022: \u0022Pawtucket Patriot Brewery\u0022,\n      \u0022currentJobTitle\u0022: \u0022Quality Assurance\u0022,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/j-doe\u0022,\n      \u0022firstName\u0022: \u0022John\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022middleInitial\u0022: \u0022L\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022510 235 9998\u0022,\n          \u0022extension\u0022: \u0022123\u0022\n        }\n      ],\n      \u0022skills\u0022: [\u0022Java\u0022, \u0022C\u002B\u002B\u0022],\n      \u0022tags\u0022: [\u0022tag-1\u0022, \u0022tag-2\u0022],\n      \u0022sources\u0022: [\n        {\n          \u0022sourceCategory\u0022: \u0022AGENCY\u0022,\n          \u0022sourceDetails\u0022: \u0022Get the candidate from recruiting agency\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    },\n    \u0022externalCandidateId=CAND456\u0026integrationContext=urn:li:organization:{org_id}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u0022800 1st Ave\u0022,\n          \u0022city\u0022: \u0022San Jose\u0022,\n          \u0022geographicArea\u0022: \u0022CA\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002295118\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022emailAddresses\u0022: [\n        \u0022JaneDoe@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://www.linkedin.com/in/Jane-doe-forbackend\u0022,\n      \u0022firstName\u0022: \u0022Jane\u0022,\n      \u0022lastName\u0022: \u0022Doe\u0022,\n      \u0022middleInitial\u0022: \u0022K\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022408 235 9998\u0022,\n          \u0022extension\u0022: \u0022123\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Sync Candidates Response",
+      "Anchor": "sample-sync-candidates-response-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Candidates Response",
+      "Anchor": "sample-sync-candidates-response-1",
+      "SectionPath": [
+        "Sync Candidates via Batch Update",
+        "Sample Sync Candidates Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalCandidateId=CAND123\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022externalCandidateId=CAND456\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Candidate Matches",
+      "Anchor": "retrieve-candidate-matches",
+      "SectionPath": [
+        "Retrieve Candidate Matches"
+      ],
+      "Text": "After you\u0027ve sent candidates to us, you may retrieve candidate details, which will include any algorithmic and user-supplied matches with LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Retrieve Candidate Matches",
+        "Response Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "matchedMembers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn\u0027s algorithmic profile matches for this candidate. If multiple results are present, you should use the first element.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of Person URN null or not returned when matching hasn\u0027t yet occurred. Empty when no matches could be found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "manualMatchedMember",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate match specified by the customer (for example, via the Profile Plugin). Use this as the preferred match if present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN null or not returned when customer hasn\u0027t specified a match.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Retrieve Candidates API Request",
+      "Anchor": "sample-retrieve-candidates-api-request",
+      "SectionPath": [
+        "Retrieve Candidate Matches",
+        "Sample Retrieve Candidates API Request"
+      ],
+      "Text": "curl -i -X GET \u0022https://api.linkedin.com/v2/atsCandidates?ids%5B0%5D.atsCandidateId=atsCandidateTest100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=ATS\u0026ids%5B1%5D.atsCandidateId=atsCandidateTest200\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=ATS\u0026%5B2%5D.atsCandidateId=atsCandidateTest222\u0026ids%5B2%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B2%5D.dataProvider=ATS\u0022 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:1.0.0\u0027 \\\n-H \u0027Accept:application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Retrieve Candidates Response",
+      "Anchor": "sample-retrieve-candidates-response",
+      "SectionPath": [
+        "Retrieve Candidate Matches",
+        "Sample Retrieve Candidates Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest100\u0022: {\n            \u0022firstName\u0022: \u0022john\u0022,\n            \u0022lastName\u0022: \u0022doe\u0022,\n            \u0022addresses\u0022: [\n                {\n                    \u0022country\u0022: \u0022us\u0022,\n                    \u0022geographicArea\u0022: \u0022CA\u0022,\n                    \u0022city\u0022: \u0022San Jose\u0022,\n                    \u0022line1\u0022: \u0022798 Madison Ave\u0022,\n                    \u0022postalCode\u0022: \u002295118\u0022,\n                    \u0022geographicAreaType\u0022: \u0022STATE\u0022\n                }\n            ],\n            \u0022emailAddresses\u0022: [\n                \u0022johndoe@example.com\u0022\n            ],\n            \u0022middleInitial\u0022: \u0022K\u0022,\n            \u0022changeTimeStamps\u0022: {\n                \u0022created\u0022: 1671772914835,\n                \u0022lastModified\u0022: 1671772914835\n            },\n            \u0022prefix\u0022: \u0022Mr\u0022,\n            \u0022atsLastModifiedAt\u0022: 1670935160,\n            \u0022atsCreatedAt\u0022: 1670935153,\n            \u0022suffix\u0022: \u0022Jr\u0022,\n            \u0022externalProfileUrl\u0022: \u0022https://www.linkedin.com/in/john-doe-forbackend\u0022,\n            \u0022matchedMembers\u0022: [\u0022urn:li:person:avAbvjal2\u0022],\n            \u0022phoneNumbers\u0022: [\n                {\n                    \u0022number\u0022: \u0022510 235 9998\u0022,\n                    \u0022extension\u0022: \u0022123\u0022\n                }\n            ]\n        },\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest200\u0022: {\n            \u0022firstName\u0022: \u0022Jane\u0022,\n            \u0022lastName\u0022: \u0022Doe\u0022,\n            \u0022addresses\u0022: [\n                {\n                    \u0022country\u0022: \u0022us\u0022,\n                    \u0022geographicArea\u0022: \u0022CA\u0022,\n                    \u0022city\u0022: \u0022San Jose\u0022,\n                    \u0022line1\u0022: \u00221001 Madison Ave\u0022,\n                    \u0022postalCode\u0022: \u002295118\u0022,\n                    \u0022geographicAreaType\u0022: \u0022STATE\u0022\n                }\n            ],\n            \u0022middleInitial\u0022: \u0022W\u0022,\n            \u0022emailAddresses\u0022: [\n                \u0022janedoe@example.com\u0022\n            ],\n            \u0022changeTimeStamps\u0022: {\n                \u0022created\u0022: 1671773291330,\n                \u0022lastModified\u0022: 1671773291330\n            },\n            \u0022atsLastModifiedAt\u0022: 1670935160,\n            \u0022atsCreatedAt\u0022: 1670935153,\n            \u0022externalProfileUrl\u0022: \u0022https://www.linkedin.com/in/jane-doe-forbackend\u0022,\n            \u0022manualMatchedMember\u0022: \u0022urn:li:person:xz2jAl\u0022,\n            \u0022matchedMembers\u0022: [\u0022urn:li:person:aax2sddaj\u0022],\n            \u0022phoneNumbers\u0022: [\n                {\n                    \u0022number\u0022: \u0022408 777 9998\u0022,\n                    \u0022extension\u0022: \u0022123\u0022\n                }\n            ]\n        }\n    },\n    \u0022statuses\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest100\u0022: 200,\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest200\u0022: 200,\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest222\u0022: 404\n    },\n    \u0022errors\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest222\u0022: {\n            \u0022message\u0022: \u0022Record not found\u0022,\n            \u0022status\u0022: 404\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Retrieve Candidates Response",
+      "Anchor": "sample-retrieve-candidates-response",
+      "SectionPath": [
+        "Retrieve Candidate Matches",
+        "Sample Retrieve Candidates Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Retrieve Candidates Response",
+      "Anchor": "sample-retrieve-candidates-response",
+      "SectionPath": [
+        "Retrieve Candidate Matches",
+        "Sample Retrieve Candidates Response"
+      ],
+      "Text": "LinkedIn matches profiles asynchronously with respect to candidate creates and updates. If the matchedMembers field is ever null for a candidate, resend the request for that candidate in 60 seconds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Attach Person URN to Candidate",
+      "Anchor": "attach-person-urn-to-candidate",
+      "SectionPath": [
+        "Attach Person URN to Candidate"
+      ],
+      "Text": "After your CRM receives a One-Click Export stub profile from LinkedIn and creates a candidate in your CRM, sync the newly created candidate in your talent CRM back to LinkedIn with the new Person URN in the manualMatchedMember field. You may use the sync candidates endpoint with the BATCH_UPDATE method to create or update the candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Candidates",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates"
+      ],
+      "Text": "Perform HTTP DELETE on the /atsCandidates endpoint when a customer deletes candidate records within the Talent CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request"
+      ],
+      "Text": "curl -i -X DELETE \u0022https://api.linkedin.com/v2/atsCandidates?ids%5B0%5D.atsCandidateId=atsCandidateTest100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1000\u0026ids%5B0%5D.dataProvider=ATS\u0026ids%5B1%5D.atsCandidateId=atsCandidateTest200\u0026ids%5B1%5D.integrationContext=urn:li:organization:1000\u0026ids%5B1%5D.dataProvider=ATS\u0022 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:1.0.0\u0027 \\\n-H \u0027Accept:application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Delete Candidates Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest100\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026atsCandidateId=atsCandidateTest200\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Candidates",
+      "Anchor": "delete-candidates-1",
+      "SectionPath": [
+        "Delete Candidates"
+      ],
+      "Text": "Perform HTTP DELETE on the /candidates endpoint when a customer deletes candidate records within the Talent CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request (without query tunneling)",
+      "Anchor": "sample-delete-candidates-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId=atsCandidateTest100\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request (without query tunneling)",
+      "Anchor": "sample-delete-candidates-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId=atsCandidateTest100\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request (without query tunneling)",
+      "Anchor": "sample-delete-candidates-request-without-query-tunneling",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId=atsCandidateTest100\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request (query tunneling)",
+      "Anchor": "sample-delete-candidates-request-query-tunneling",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidates\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=atsCandidateTest100\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request (query tunneling)",
+      "Anchor": "sample-delete-candidates-request-query-tunneling",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidates\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=atsCandidateTest100\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Request (query tunneling)",
+      "Anchor": "sample-delete-candidates-request-query-tunneling",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidates\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=atsCandidateTest100\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Delete Candidates Response Body",
+      "Anchor": "sample-delete-candidates-response-body-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidates Response Body",
+      "Anchor": "sample-delete-candidates-response-body-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Candidates Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n       \u0022externalCandidateId=atsCandidateTest100\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "View Synced Candidates in LinkedIn",
+      "Anchor": "view-synced-candidates-in-linkedin",
+      "SectionPath": [
+        "View Synced Candidates in LinkedIn"
+      ],
+      "Text": "Synced candidates will be visible on a member profile in LinkedIn Recruiter via the In-CRM Indicator or CRM tab if LinkedIn was able to determine a match based on the synced candidate records. You can filter LinkedIn members by whether they are present in the CRM via the In-CRM Advanced Search Filter present in Advanced Filters.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

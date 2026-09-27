@@ -1,0 +1,1145 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+  "Title": "Conversions API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Conversions API",
+      "Anchor": "conversions-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API",
+      "Anchor": "conversions-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API",
+      "Anchor": "conversions-api",
+      "SectionPath": [],
+      "Text": "The LinkedIn Conversions API allows advertisers to stream conversion events from their server to LinkedIn primarily to measure LinkedIn marketing campaign performance, regardless of where the conversion occurs. This data is used to optimize campaigns and improve attribution, data reliability, and delivery. For more information, refer to LinkedIn Conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_conversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upload your conversion data to LinkedIn and manage your conversion tracking.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read access to an authenticated member\u0027s ad accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The following conditions must be met for a successful call:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions to rw_conversions, r_ads.\nThe user assigning permission holds one of the following roles\nin the ad account:\n\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on ad account roles and permissions, refer to the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions.\nCreate and Manage Ad Account Users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions for 3-legged OAuth",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "rw_conversions (Read/Write).\nr_ads (Read)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Following are the requirements to send conversion events:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Create a Conversion Rule.\nAssociate campaign(s) to the conversion rule.\nStream conversion events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversion Rule Schema",
+      "Anchor": "conversion-rule-schema",
+      "SectionPath": [
+        "Conversion Rule Schema"
+      ],
+      "Text": "For more information on the schema, refer to the Conversions API Schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Conversion Rule",
+      "Anchor": "create-a-conversion-rule",
+      "SectionPath": [
+        "Create a Conversion Rule"
+      ],
+      "Text": "Create a conversion rule with the POST /conversions endpoint for each conversion type that you want to track and set conversionMethod to CONVERSIONS_API for streaming conversion events through API. Each conversion rule should include a conversion name, ad account URN, conversion method, and type (key conversion behavior). To associate campaigns automatically when the conversion rule is created, include the optional autoAssociationType query parameter. For more information, see Associate campaigns to conversion rule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Conversion Rule",
+      "Anchor": "create-a-conversion-rule",
+      "SectionPath": [
+        "Create a Conversion Rule"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Conversion Rule",
+      "Anchor": "create-a-conversion-rule",
+      "SectionPath": [
+        "Create a Conversion Rule"
+      ],
+      "Text": "X-Restli-Protocol-Version: 2.0.0 must be passed as a request header in all your API requests.\nLinkedin-Version: {yyyymm} must be passed as a request header in all your API requests as per Versioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversions?autoAssociationType=ALL_CAMPAIGNS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022name\u0022: \u0022Conversion API Segment 1\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:5123456\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversions?autoAssociationType=ALL_CAMPAIGNS\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022name\u0022: \u0022Conversion API Segment 1\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:5123456\u0022,\n  \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n  \u0022postClickAttributionWindowSize\u0022: 90,\n  \u0022viewThroughAttributionWindowSize\u0022: 30,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022type\u0022: \u0022LEAD\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Sample Response"
+      ],
+      "Text": "A 201 Created HTTP status code is returned if the request is successful and conversion rule ID is in the id field in response body and in x-restli-id response header.\nA 400 Bad Request is returned if the request doesn\u0027t pass the validation check. Please check the error message to understand what validation failed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create conversion rules in a batch",
+      "Anchor": "create-conversion-rules-in-a-batch",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Create conversion rules in a batch"
+      ],
+      "Text": "To create multiple conversion rules in one request, set the X-RestLi-Method request header to BATCH_CREATE. A conversion-rule creation batch can contain a maximum of 100 conversion rules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create conversion rules in a batch",
+      "Anchor": "create-conversion-rules-in-a-batch",
+      "SectionPath": [
+        "Create a Conversion Rule",
+        "Create conversion rules in a batch"
+      ],
+      "Text": "You can include autoAssociationType=ALL_CAMPAIGNS or autoAssociationType=OBJECTIVE_BASED in the batch request URL. The selected auto-association type applies to each conversion rule that is created successfully. If you omit autoAssociationType, no campaigns are associated automatically. For the request and response format, see Batch create conversion rules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Conversion Rules by Ad Account",
+      "Anchor": "find-conversion-rules-by-ad-account",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account"
+      ],
+      "Text": "All conversion rules associated with an ad account can be retrieved using the endpoint that takes a sponsoredAccount URN in the account parameter. Parse the response to filter active Conversions API rules where conversionMethod is set to CONVERSIONS_API and enabled is set to true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Conversion Rules by Ad Account",
+      "Anchor": "find-conversion-rules-by-ad-account",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account"
+      ],
+      "Text": "Starting with 202605 version, you may include optional query parameter conversionOwnershipTypes and set it to List(OWNED,SHARED) to also return shared conversion rules across ad accounts under the same Business Manager, indicated by ownershipType field in the response elements. If the conversionOwnershipTypes query parameter is not included in the request, only owned conversions created in the same ad account are returned by default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversions?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{sponsoredAccountId}\u0026conversionOwnershipTypes=List(OWNED,SHARED)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/conversions?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{sponsoredAccountId}\u0026conversionOwnershipTypes=List(OWNED,SHARED)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022postClickAttributionWindowSize\u0022: 90,\n      \u0022viewThroughAttributionWindowSize\u0022: 30,\n      \u0022created\u0022: 1563230311551,\n      \u0022type\u0022: \u0022LEAD\u0022,\n      \u0022enabled\u0022: true,\n      \u0022name\u0022: \u0022Conversion API Segment 2\u0022,\n      \u0022lastModified\u0022: 1563230311551,\n      \u0022id\u0022: 104012,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n      \u0022ownershipType\u0022: \u0022OWNED\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:51234560\u0022\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 90,\n      \u0022viewThroughAttributionWindowSize\u0022: 30,\n      \u0022created\u0022: 1563230255308,\n      \u0022type\u0022: \u0022PURCHASE\u0022,\n      \u0022enabled\u0022: true,\n      \u0022name\u0022: \u0022Conversion API Segment 3\u0022,\n      \u0022lastModified\u0022: 1563230265652,\n      \u0022id\u0022: 104004,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022conversionMethod\u0022: \u0022CONVERSIONS_API\u0022,\n      \u0022ownershipType\u0022: \u0022OWNED\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:51234560\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Conversion Rules by Ad Account",
+        "Sample Response"
+      ],
+      "Text": "For more information on other HTTP methods such as GET, BATCH GET, and UPDATE, refer to Conversion Tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "When you create a conversion rule, the optional autoAssociationType query parameter can associate campaigns automatically. Both auto-association types consider campaigns in ACTIVE, PAUSED, and DRAFT status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "",
+      "Headers": [
+        "autoAssociationType value",
+        "Association behavior"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ALL_CAMPAIGNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associates up to 200 campaigns in the ad account. The 200-campaign limit applies only to ALL_CAMPAIGNS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OBJECTIVE_BASED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associates campaigns whose campaign objective maps to the conversion rule type. The 200-campaign limit doesn\u0027t apply to OBJECTIVE_BASED. For the complete mapping, see Objective-based auto-association mapping.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#objective-based-auto-association-mapping"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "If you omit autoAssociationType, no campaigns are associated automatically. To associate the conversion rule with specific campaigns, use the Campaign Conversions API before proceeding to Streaming Conversion Events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "Campaign Conversions API can be used to associate specific campaigns to a Conversion rule URN. Only the campaigns associated with the conversion rule are eligible for attributing tracked conversions for reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "Advertisers can also associate campaigns to a conversion rule directly from the LinkedIn Campaign Manager tool (go to Ad Account \u003E Measurement \u003E Conversion tracking, select the conversion rule created in the previous step where Data source should list the selected partner integration or Direct API, review your conversion details and selected ad sets, and select all ad sets to track conversions or add conversions to existing campaigns).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "Refer Search for Campaigns API to get list of active sponsored campaign URNs and then pass them to this endpoint.\nPartnerConversionURN is of the format urn:lla:llaPartnerConversion:ID where you need to replace ID with the conversion ID extracted when creating the conversion rule in this step by parsing id field from its response body or x-restli-id response header .\nIt is important to associate each conversion with an active campaign, as conversions can only be attributed to campaigns they are associated with. Associate your conversions with as many applicable campaigns as possible to maximize attribution and visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Associate Campaigns to Conversion Rule",
+      "Anchor": "associate-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/campaignConversions/(campaign:{sponsoredCampaignURN},conversion:{conversionURN})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:337643194\u0022,\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:70203\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "curl -X PUT \\\n\u0027https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:337643194\u0022,\n    \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:70203\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Associate Multiple Campaigns to Conversion Rule",
+      "Anchor": "batch-associate-multiple-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule"
+      ],
+      "Text": "Multiple campaign conversions can be created with a Batch Update method that accepts ids parameter with a list of campaign URN and conversion URN. The campaign and conversion URNs should be passed in a list format and URL encoded as shown in the following examples. Be sure to include request header \u0027X-RestLi-Method: BATCH_UPDATE\u0027 to indicate batch update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Associate Multiple Campaigns to Conversion Rule",
+      "Anchor": "batch-associate-multiple-campaigns-to-conversion-rule",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:{sponsoredCampaignURN},conversion:{conversionURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004),(campaign:urn%3Ali%3AsponsoredCampaign%3A345396777,conversion:urn%3Alla%3AllaPartnerConversion%3A104004))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "{\n \u0022entities\u0022:\n\t{\n\t\t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022:{\n\t\t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:345396555\u0022,\n\t\t\t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:104004\u0022\n\t\t},\n\t\t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396777,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022:{\n\t\t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:345396777\u0022,\n\t\t\t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:104004\u0022\n\t\t}\n \t}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule",
+        "Sample Request"
+      ],
+      "Text": "curl -X PUT https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004),(campaign:urn%3Ali%3AsponsoredCampaign%3A345396777,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)) \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n \u0022entities\u0022:\n {\n  \t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022:{\n   \t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:345396555\u0022,\n\t \t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:104004\u0022\n  \t},\n  \t\u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396777,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022:{\n\t\t\u0022campaign\u0022:\u0022urn:li:sponsoredCampaign:345396777\u0022,\n\t\t\u0022conversion\u0022:\u0022urn:lla:llaPartnerConversion:104004\u0022\n \t}\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396777,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Associate Campaigns to Conversion Rule",
+        "Batch Associate Multiple Campaigns to Conversion Rule",
+        "Sample Response"
+      ],
+      "Text": "For more information on other HTTP methods like GET, FINDER, DELETE etc., Refer Campaign conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Streaming Conversion Events",
+      "Anchor": "streaming-conversion-events",
+      "SectionPath": [
+        "Streaming Conversion Events"
+      ],
+      "Text": "Stream conversion events from your server to LinkedIn on the conversion rule previously created, using the /conversionEvents endpoint. Each event should be accompanied by one or more user identifiers that are used for matching with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Streaming Conversion Events",
+      "Anchor": "streaming-conversion-events",
+      "SectionPath": [
+        "Streaming Conversion Events"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Streaming Conversion Events",
+      "Anchor": "streaming-conversion-events",
+      "SectionPath": [
+        "Streaming Conversion Events"
+      ],
+      "Text": "Explore the Payload Builder to create the conversion events payload based on your inputs. For more information, refer to the payload builder documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Streaming Conversion Events",
+      "Anchor": "streaming-conversion-events",
+      "SectionPath": [
+        "Streaming Conversion Events"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversionEvents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversion Events Schema",
+      "Anchor": "conversion-events-schema",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Conversion Events Schema"
+      ],
+      "Text": "For more information on the schema, refer to Streaming Conversion Events Schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding Single Conversion Event",
+      "Anchor": "adding-single-conversion-event",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event"
+      ],
+      "Text": "This endpoint allows you to stream a single conversion event, including different match identifiers for the same user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversionEvents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n  \u0022conversionHappenedAt\u0022: 1590739275000,\n  \u0022conversionValue\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250.0\u0022\n  },\n  \u0022user\u0022: {\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n        \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n        \u0022idValue\u0022: \u0022103.20.92.12\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n      }\n    ],\n    \u0022userInfo\u0022: {\n      \u0022firstName\u0022: \u0022mike\u0022,\n      \u0022lastName\u0022: \u0022smith\u0022,\n      \u0022title\u0022: \u0022software engineer\u0022,\n      \u0022companyName\u0022: \u0022microsoft\u0022,\n      \u0022countryCode\u0022: \u0022US\u0022\n    },\n    \u0022lead\u0022: \u0022urn:li:leadGenFormResponse:8f7356abcd9-8d5c-49ca-931b-513123abc9-4\u0022,\n    \u0022externalIds\u0022: [\u0022abc-external-123\u0022]\n  },\n  \u0022eventId\u0022: \u0022abc12345\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversionEvents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n  \u0022conversionHappenedAt\u0022: 1590739275000,\n  \u0022conversionValue\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250.0\u0022\n  },\n  \u0022user\u0022: {\n    \u0022userIds\u0022: [\n      {\n        \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n        \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n        \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n        \u0022idValue\u0022: \u0022103.20.92.12\u0022\n      },\n      {\n        \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n        \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n      }\n    ],\n    \u0022userInfo\u0022: {\n      \u0022firstName\u0022: \u0022mike\u0022,\n      \u0022lastName\u0022: \u0022smith\u0022,\n      \u0022title\u0022: \u0022software engineer\u0022,\n      \u0022companyName\u0022: \u0022microsoft\u0022,\n      \u0022countryCode\u0022: \u0022US\u0022\n    },\n    \u0022lead\u0022: \u0022urn:li:leadGenFormResponse:8f7356abcd9-8d5c-49ca-931b-513123abc9-4\u0022,\n    \u0022externalIds\u0022: [\u0022abc-external-123\u0022]\n  },\n  \u0022eventId\u0022: \u0022abc12345\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Single Conversion Event",
+        "Sample Response"
+      ],
+      "Text": "A failed response returns a 400 Bad Request status code. To prevent failures, ensure that your request meets all the validation requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding Multiple Conversion Events in a Batch",
+      "Anchor": "adding-multiple-conversion-events-in-a-batch",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch"
+      ],
+      "Text": "To stream multiple conversions in a batch, include the X-RestLi-Method header set to BATCH_CREATE. You can send up to 5,000 conversion events in a single batch request. If you encounter issues, try using a smaller batch size. This method helps avoid rate limit throttling when sending large numbers of conversion events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversionEvents\n\u0027X-RestLi-Method\u0027: \u0027BATCH_CREATE\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Request"
+      ],
+      "Text": "{\n\t\u0022elements\u0022:\n\t[\n\t\t{\n\t\t      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n\t\t      \u0022conversionHappenedAt\u0022: 1590739275000,\n\t\t      \u0022conversionValue\u0022: {\n\t\t\t\t\u0022currencyCode\u0022: \u0022USD\u0022,\n\t\t\t\t\u0022amount\u0022: \u002250.0\u0022\n\t\t       },\n\t\t       \u0022user\u0022: {\n\t\t\t\t\u0022userIds\u0022: [ {\n\t\t\t\t       \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n\t\t\t\t       \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n\t\t\t\t       }\n\t\t\t   \t],\n\t\t\t\t\u0022userInfo\u0022: {\n\t\t\t\t\t\u0022firstName\u0022: \u0022mike\u0022,\n\t\t\t\t\t\u0022lastName\u0022: \u0022smith\u0022,\n\t\t\t\t\t\u0022title\u0022: \u0022software engineer\u0022,\n\t\t\t\t\t\u0022companyName\u0022: \u0022microsoft\u0022,\n\t\t\t\t\t\u0022countryCode\u0022: \u0022US\u0022\n         \t\t\t}\n     \t\t\t},\n\t\t\t\u0022eventId\u0022 : \u0022abc234\u0022\n\t\t}, {\n\t\t      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n\t\t      \u0022conversionHappenedAt\u0022: 162723579000,\n\t\t      \u0022conversionValue\u0022: {\n\t\t\t\t\u0022currencyCode\u0022: \u0022USD\u0022,\n\t\t\t\t\u0022amount\u0022: \u0022100.0\u0022\n\t\t       },\n\t\t       \u0022user\u0022: {\n\t\t\t\t\u0022userIds\u0022: [ {\n\t\t\t\t\t\t\u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n\t\t\t\t\t\t\u0022idValue\u0022: \u0022dsfgrtg56u767ujy982fgnbmcsdocl46c58c56b650cik230bb9\u0022\n\t\t\t\t       \t}, {\n\t\t\t\t\t\t\u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n\t\t\t\t\t\t\u0022idValue\u0022: \u0022ufh8h5-gh6t7-ph4j7h-mkl86n1\u0022\n               \t\t\t}, {\n\t\t               \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n\t\t               \u0022idValue\u0022: \u0022103.20.92.12\u0022\n\t\t               \t}, {\n\t\t               \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n\t\t               \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n\t\t               \t} ],\n\t\t\t\t\u0022userInfo\u0022: {\n\t\t\t\t\t\u0022firstName\u0022: \u0022jason\u0022,\n\t\t\t\t\t\u0022lastName\u0022: \u0022bourne\u0022,\n\t\t\t\t\t\u0022title\u0022: \u0022tech lead\u0022,\n\t\t\t\t\t\u0022companyName\u0022: \u0022github\u0022,\n\t\t\t\t\t\u0022countryCode\u0022: \u0022US\u0022\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\u0022eventId\u0022 : \u0022abc345\u0022\n\t\t\t}\n\t]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversionEvents\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n\u0022elements\u0022:\n\t[\n\t\t{\n\t\t      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n\t\t      \u0022conversionHappenedAt\u0022: 1590739275000,\n\t\t      \u0022conversionValue\u0022: {\n\t\t\t\t\u0022currencyCode\u0022: \u0022USD\u0022,\n\t\t\t\t\u0022amount\u0022: \u002250.0\u0022\n\t\t       } ,\n\t\t       \u0022user\u0022: {\n\t\t\t\t\u0022userIds\u0022: [ {\n\t\t\t\t       \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n\t\t\t\t       \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n\t\t\t\t      \t}\n\t\t\t   \t],\n\t\t\t\t\u0022userInfo\u0022: {\n\t\t\t\t\t\u0022firstName\u0022: \u0022mike\u0022,\n\t\t\t\t\t\u0022lastName\u0022: \u0022smith\u0022,\n\t\t\t\t\t\u0022title\u0022: \u0022software engineer\u0022,\n\t\t\t\t\t\u0022companyName\u0022: \u0022microsoft\u0022,\n\t\t\t\t\t\u0022countryCode\u0022: \u0022US\u0022\n\t\t\t\t}\n     \t\t\t},\n\t\t\t\u0022eventId\u0022 : \u0022abc234\u0022\n\t\t}, {\n\t\t      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n\t\t      \u0022conversionHappenedAt\u0022: 162723579000,\n\t\t      \u0022conversionValue\u0022: {\n\t\t\t\t\u0022currencyCode\u0022: \u0022USD\u0022,\n\t\t\t\t\u0022amount\u0022: \u0022100.0\u0022\n\t\t       },\n\t\t       \u0022user\u0022: {\n\t\t\t\t\u0022userIds\u0022: [ {\n\t\t\t\t\t\t\u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n\t\t\t\t\t\t\u0022idValue\u0022: \u0022dsfgrtg56u767ujy982fgnbmcsdocl46c58c56b650cik230bb9\u0022\n\t\t\t\t       \t}, {\n\t\t\t\t\t\t\u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n\t\t\t\t\t\t\u0022idValue\u0022: \u0022ufh8h5-gh6t7-ph4j7h-mkl86n1\u0022\n               \t\t\t}, {\n\t\t               \u0022idType\u0022: \u0022PLAINTEXT_IP_ADDRESS\u0022,\n\t\t               \u0022idValue\u0022: \u0022103.20.92.12\u0022\n\t\t               \t}, {\n\t\t               \u0022idType\u0022: \u0022GOOGLE_AID\u0022,\n\t\t               \u0022idValue\u0022: \u0022AEBE52E7-03EE-455A-B3C4-E57283966239\u0022\n\t\t               \t} ],\n\t\t\t\t\u0022userInfo\u0022: {\n\t\t\t\t\t\t\u0022firstName\u0022: \u0022jason\u0022,\n\t\t\t\t\t\t\u0022lastName\u0022: \u0022bourne\u0022,\n\t\t\t\t\t\t\u0022title\u0022: \u0022tech lead\u0022,\n\t\t\t\t\t\t\u0022companyName\u0022: \u0022github\u0022,\n\t\t\t\t\t\t\u0022countryCode\u0022: \u0022US\u0022\n         \t\t\t\t}\n\t\t\t\t},\n\t\t\t\u0022eventId\u0022 : \u0022abc345\u0022\n\t\t}\n\t]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Response"
+      ],
+      "Text": "400 Bad Request is returned if the request is incorrect. The error message contains a reference to batchIndex, with the index of the array element in the request payload that caused the error.\nIf there\u0027s any invalid value in the request body like missing required field or invalid data type, all records fail and you\u2019ll need to resubmit the entire payload after correcting the data as indicated in the response body message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Streaming Conversion Events",
+        "Adding Multiple Conversion Events in a Batch",
+        "Sample Response"
+      ],
+      "Text": "Send a maximum of 600 requests per minute from your member access token and a maximum of 500,000 requests per day from your member access token, otherwise your requests can get throttled due to rate limits.\nUse batch requests for sending up to 5,000 conversion events in a single batch request to avoid getting throttled from rate limits.\nSend multiple user identifiers if available, to increase match rates. This is important, as only matched events can be used for attribution and optimization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request has a syntax error or validation error. Please check the error message to understand what part of request failed and resubmit with valid data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty oauth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User should have access to the ad account provided in the request and/or the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Validation failed because [{field=Invalid Conversion time, batchIndex=0, type=INVALID_CONVERSION_TIME_FIELD_VALUE, message=Conversion time should be within 90 days.}]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please make sure conversion timestamp in milliseconds is from the past 90 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Validation failed because [{field=Multiple fields issue, batchIndex=0, type=INVALID_USER_IDENTIFICATION_FIELD_VALUE, message=The request must contain one of these fields: SHA256_EMAIL or LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID or ACXIOM_ID or PLAINTEXT_IP_ADDRESS or GOOGLE_AID or (firstName and lastName) or externalIds or lead, and the input shouldn\u0027t be empty string}]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The required field is missing. Starting with the 202609 version, hashedFirstName/hashedLastName (including mixed plain/hashed combinations) also satisfy the userInfo requirement, even though this error message text still lists only firstName and lastName.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid Conversion information provided, this event(s) is associated to a conversion that\u0027s marked as deleted. Conversion enabled should be true",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please make sure the conversion rule enabled is set as true; otherwise conversion events can\u0027t be streamed to a deleted conversion rule.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "365 is not an available post-click window selection. Available: [1, 7, 28, 30, 90]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "180 days and 365 days are supported values for these conversion types: SUBMIT_APPLICATIONPURCHASEADD_TO_CARTQUALIFIED_LEADLEADMARKETING_QUALIFIED_LEADSALES_QUALIFIED_LEADMARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are available starting with the 202608 version onwards.",
+            "Links": [],
+            "Values": [
+              "SUBMIT_APPLICATION",
+              "PURCHASE",
+              "ADD_TO_CART",
+              "QUALIFIED_LEAD",
+              "LEAD",
+              "MARKETING_QUALIFIED_LEAD",
+              "SALES_QUALIFIED_LEAD"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /conversionHappenedAt :: field is required but not found and has no default value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The required conversionHappenedAt field is missing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /user/userIds :: field is required but not found and has no default value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The required userIds field must be present. If identifying the user via lead, externalIds, or userInfo, include userIds as an empty list ([]).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /user/lead :: Invalid Urn format. Invalid prefix.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When passing any value to lead field, it must be in a valid URN format e.g. \u0022urn:li:leadGenFormResponse:123e4adfv9-8d5c-49ca-931b-fdgfgr123-4\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

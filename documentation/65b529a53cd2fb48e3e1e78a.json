@@ -1,0 +1,1131 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+  "Title": "Conversions API Schema",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Conversion Rule API Schema",
+      "Anchor": "conversion-rule-api-schema",
+      "SectionPath": [
+        "Conversion Rule API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Sponsored Ad Account URN for the account where this conversion rule is created. Refer Find Ad Accounts By Authenticated User API to select an ad account.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-accounts-by-authenticated-user"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:sponsoredAccount:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A short name for this rule, which is shown in the UI and in reports.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Summer_Sale CRM Leads",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionMethod",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A method enum that specifies how a conversion event should be registered. For streaming conversions via API, the only supported value is CONVERSIONS_API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONVERSIONS_API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enabled (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set to true or false to enable or disable this rule from matching conversions. The initial state can be either, but only rules that are enabled trigger the conversion events. Default is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickAttributionWindowSize (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The conversion window timeframe (in days) during which conversions are attributed to a LinkedIn ad after a member clicks on it (post-click conversion). Default is 30. Allowed values are: 173090180 *(for limited types)365 *(for limited types)A 180-day or 365-day window is a supported value for the following conversion types: SUBMIT_APPLICATIONPURCHASEADD_TO_CARTQUALIFIED_LEADLEADMARKETING_QUALIFIED_LEADSALES_QUALIFIED_LEADMARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are available starting with the 202608 version onwards. Learn more",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a426359"
+            ],
+            "Values": [
+              "1",
+              "7",
+              "30",
+              "90",
+              "180 *(for limited types)",
+              "365 *(for limited types)",
+              "SUBMIT_APPLICATION",
+              "PURCHASE",
+              "ADD_TO_CART",
+              "QUALIFIED_LEAD",
+              "LEAD",
+              "MARKETING_QUALIFIED_LEAD",
+              "SALES_QUALIFIED_LEAD"
+            ]
+          },
+          {
+            "Text": "90",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viewThroughAttributionWindowSize (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The conversion window timeframe (in days) during which conversions are attributed to a LinkedIn ad after a member views it (view-through conversion). Default is 7. Allowed values are: 173090180 *(for limited types)365 *(for limited types)A 180-day or 365-day window is supported for the following conversion types: SUBMIT_APPLICATIONPURCHASEADD_TO_CART QUALIFIED_LEADLEADMARKETING_QUALIFIED_LEADSALES_QUALIFIED_LEADMARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are available starting with the 202608 version onwards. Learn more",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a426359"
+            ],
+            "Values": [
+              "1",
+              "7",
+              "30",
+              "90",
+              "180 *(for limited types)",
+              "365 *(for limited types)",
+              "SUBMIT_APPLICATION",
+              "PURCHASE",
+              "ADD_TO_CART",
+              "QUALIFIED_LEAD",
+              "LEAD",
+              "MARKETING_QUALIFIED_LEAD",
+              "SALES_QUALIFIED_LEAD"
+            ]
+          },
+          {
+            "Text": "30",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attributionType (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The model that describes how conversion actions are to be counted. Default is \u0022LAST_TOUCH_BY_CAMPAIGN\u0022. Acceptable values are: LAST_TOUCH_BY_CAMPAIGN (Each campaign): conversion actions are counted once for each campaign to which they can be attributed. (Default)LAST_TOUCH_BY_CONVERSION (Single Campaign): conversion actions are counted once for each conversion with at least one associated campaign.Learn more",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a426349"
+            ],
+            "Values": [
+              "LAST_TOUCH_BY_CAMPAIGN (Each campaign): conversion actions are counted once for each campaign to which they can be attributed. (Default)",
+              "LAST_TOUCH_BY_CONVERSION (Single Campaign): conversion actions are counted once for each conversion with at least one associated campaign."
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the conversion type to track for this conversion rule, such as PURCHASE, LEAD, or SIGN_UP. Complete list is as follows: ADD_TO_CART : The user added one or more things to their shopping cart. DOWNLOAD : The user downloaded a file. INSTALL: The user installed a plugin or an app. KEY_PAGE_VIEW : The user viewed an important web page / app screen. LEAD : The user filled out a lead generation form. PURCHASE : The user made a purchase. SIGN_UP : The user signed up for a website / app service. OTHER : Something that\u0027s not listed. SAVE: Saves a form or state in the flow. START_CHECKOUT: Begins the checkout process. SCHEDULE: Schedule a service or appointment. VIEW_CONTENT: The user viewed a section of the page or app screen(webview). VIEW_VIDEO: The user played a video. ADD_BILLING_INFO: The user added credit card or purchase details. BOOK_APPOINTMENT: The user reserved an appointment. REQUEST_QUOTE: The user requested a quote. SEARCH: The user searched within the app. Can also track using KEY_PAGE_VIEW that fires from a search results page. SUBSCRIBE: The user subscribed to a service. AD_CLICK: The user clicked a 3rd party ad. (first party ads are tracked from LinkedIn) AD_VIEW: The user viewed an ad. COMPLETE_SIGNUP: The user completed registration process. SUBMIT_APPLICATION: The user submitted an application, same as COMPLETE_SIGNUP. PHONE_CALL: The user started a call, or performed phone-call specific event or submission. INVITE: The user sent/shared an invite. LOGIN: The user logged in to advertiser\u0027s service account.SHARE: The user shared content. DONATE: The user performed a donation ADD_TO_LIST: The user added a product to a wishlist. START_TRIAL: The user started a trial subscription. Overlaps with SUBSCRIBE. OUTBOUND_CLICK: The user left the app or page by clicking a link. (we do not capture the link). CONTACT: The user attempted to contact, by filling a form or a phone call. QUALIFIED_LEAD: Identified lead as a qualified lead. Qualified Leads can be used as an optimization target within the Lead Generation campaign objective. Learn more. Attributed conversion events of this type are also reported as qualifiedLeads metric which shows count of qualified leads attributed to ad entities in the selected date range and costPerQualifiedLead which shows count of qualified leads divided by ad spend. MARKETING_QUALIFIED_LEAD: The user filled out a lead generation form, and has been filtered by the advertiser to be a marketing qualified lead. SALES_QUALIFIED_LEAD: The user filled out a lead generation form, and has been filtered by the advertiser to be a sales qualified lead.Note: MARKETING_QUALIFIED_LEAD and SALES_QUALIFIED_LEAD conversion types are supported only for API versions 202608 and later.",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a6553958"
+            ],
+            "Values": [
+              "ADD_TO_CART : The user added one or more things to their shopping cart.",
+              "DOWNLOAD : The user downloaded a file.",
+              "INSTALL: The user installed a plugin or an app.",
+              "KEY_PAGE_VIEW : The user viewed an important web page / app screen.",
+              "LEAD : The user filled out a lead generation form.",
+              "PURCHASE : The user made a purchase.",
+              "SIGN_UP : The user signed up for a website / app service.",
+              "OTHER : Something that\u0027s not listed.",
+              "SAVE: Saves a form or state in the flow.",
+              "START_CHECKOUT: Begins the checkout process.",
+              "SCHEDULE: Schedule a service or appointment.",
+              "VIEW_CONTENT: The user viewed a section of the page or app screen(webview).",
+              "VIEW_VIDEO: The user played a video.",
+              "ADD_BILLING_INFO: The user added credit card or purchase details.",
+              "BOOK_APPOINTMENT: The user reserved an appointment.",
+              "REQUEST_QUOTE: The user requested a quote.",
+              "SEARCH: The user searched within the app. Can also track using KEY_PAGE_VIEW that fires from a search results page.",
+              "SUBSCRIBE: The user subscribed to a service.",
+              "AD_CLICK: The user clicked a 3rd party ad. (first party ads are tracked from LinkedIn)",
+              "AD_VIEW: The user viewed an ad.",
+              "COMPLETE_SIGNUP: The user completed registration process.",
+              "SUBMIT_APPLICATION: The user submitted an application, same as COMPLETE_SIGNUP.",
+              "PHONE_CALL: The user started a call, or performed phone-call specific event or submission.",
+              "INVITE: The user sent/shared an invite.",
+              "LOGIN: The user logged in to advertiser\u0027s service account.",
+              "SHARE: The user shared content.",
+              "DONATE: The user performed a donation",
+              "ADD_TO_LIST: The user added a product to a wishlist.",
+              "START_TRIAL: The user started a trial subscription. Overlaps with SUBSCRIBE.",
+              "OUTBOUND_CLICK: The user left the app or page by clicking a link. (we do not capture the link).",
+              "CONTACT: The user attempted to contact, by filling a form or a phone call.",
+              "QUALIFIED_LEAD: Identified lead as a qualified lead. Qualified Leads can be used as an optimization target within the Lead Generation campaign objective. Learn more. Attributed conversion events of this type are also reported as qualifiedLeads metric which shows count of qualified leads attributed to ad entities in the selected date range and costPerQualifiedLead which shows count of qualified leads divided by ad spend.",
+              "MARKETING_QUALIFIED_LEAD: The user filled out a lead generation form, and has been filtered by the advertiser to be a marketing qualified lead.",
+              "SALES_QUALIFIED_LEAD: The user filled out a lead generation form, and has been filtered by the advertiser to be a sales qualified lead."
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "valueType (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (default= DYNAMIC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC: Overrides the conversion value with the monetary value passed in the events FIXED: Uses the conversion value NO_VALUE: Does not use any value for the conversion.",
+            "Links": [],
+            "Values": [
+              "DYNAMIC: Overrides the conversion value with the monetary value passed in the events",
+              "FIXED: Uses the conversion value",
+              "NO_VALUE: Does not use any value for the conversion."
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownershipType (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (default= OWNED)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OWNED: Owned conversion rules that were created in the same ad account. SHARED: Shared conversion rules across ad accounts under the same Business Manager. This read-only field is only available in the response elements of FIND /conversions by account, starting from 202605 version.",
+            "Links": [],
+            "Values": [
+              "OWNED: Owned conversion rules that were created in the same ad account.",
+              "SHARED: Shared conversion rules across ad accounts under the same Business Manager."
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Conversion Rule API Schema",
+      "Anchor": "conversion-rule-api-schema",
+      "SectionPath": [
+        "Conversion Rule API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Request Parameter Name",
+        "Type",
+        "Description",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "autoAssociationType (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines how campaigns are associated automatically when a conversion rule is created. For batch creation, the selected value applies to each conversion rule that is created successfully. Both values consider campaigns in ACTIVE, PAUSED, and DRAFT status. Allowed values are: ALL_CAMPAIGNS: Associates up to 200 campaigns in the ad account. The 200-campaign limit applies only to this value.OBJECTIVE_BASED: Associates campaigns whose campaign objective maps to the conversion rule type. The 200-campaign limit doesn\u0027t apply to this value. See Objective-based auto-association mapping. If this parameter isn\u0027t included, no campaigns are associated automatically.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#objective-based-auto-association-mapping"
+            ],
+            "Values": [
+              "ALL_CAMPAIGNS: Associates up to 200 campaigns in the ad account. The 200-campaign limit applies only to this value.",
+              "OBJECTIVE_BASED: Associates campaigns whose campaign objective maps to the conversion rule type. The 200-campaign limit doesn\u0027t apply to this value. See Objective-based auto-association mapping."
+            ]
+          },
+          {
+            "Text": "autoAssociationType=ALL_CAMPAIGNS",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective-based auto-association mapping",
+      "Anchor": "objective-based-auto-association-mapping",
+      "SectionPath": [
+        "Conversion Rule API Schema",
+        "Objective-based auto-association mapping"
+      ],
+      "Text": "Objective-based auto-association reduces manual setup by associating a newly created conversion rule with existing campaigns whose campaign objective is relevant to the rule\u0027s conversion type. It considers campaigns in ACTIVE, PAUSED, and DRAFT status and doesn\u0027t have the 200-campaign limit that applies to ALL_CAMPAIGNS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective-based auto-association mapping",
+      "Anchor": "objective-based-auto-association-mapping",
+      "SectionPath": [
+        "Conversion Rule API Schema",
+        "Objective-based auto-association mapping"
+      ],
+      "Text": "The following conversion type groups are used in the objective mapping:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Objective-based auto-association mapping",
+      "Anchor": "objective-based-auto-association-mapping",
+      "SectionPath": [
+        "Conversion Rule API Schema",
+        "Objective-based auto-association mapping"
+      ],
+      "Text": "",
+      "Headers": [
+        "Conversion type group",
+        "Conversion rule type values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Consideration types",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AD_CLICK, KEY_PAGE_VIEW, OUTBOUND_CLICK, VIEW_CONTENT, ADD_TO_LIST, SEARCH, SHARE, VIEW_VIDEO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "General action types",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SIGN_UP, DOWNLOAD, REGISTER_EVENT, BOOK_APPOINTMENT, CONTACT, COMPLETE_SIGNUP, REQUEST_QUOTE, APPLY_JOB, TALENT_LEAD, START_CHECKOUT, PHONE_CALL, START_TRIAL, SUBSCRIBE, SCHEDULE, INSTALL, ADD_BILLING_INFO, LOGIN, SUBMIT_APPLICATION, ADD_TO_CART, DONATE, PURCHASE, OTHER",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Objective-based auto-association mapping",
+      "Anchor": "objective-based-auto-association-mapping",
+      "SectionPath": [
+        "Conversion Rule API Schema",
+        "Objective-based auto-association mapping"
+      ],
+      "Text": "",
+      "Headers": [
+        "Campaign objective",
+        "Automatically associated conversion rule types"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BRAND_AWARENESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AD_VIEW, all consideration types, and all general action types",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WEBSITE_VISIT, ENGAGEMENT, VIDEO_VIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All consideration types and all general action types",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_GENERATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All general action types, LEAD, QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WEBSITE_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All general action types, QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_APPLICANT, TALENT_LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All general action types",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective-based auto-association mapping",
+      "Anchor": "objective-based-auto-association-mapping",
+      "SectionPath": [
+        "Conversion Rule API Schema",
+        "Objective-based auto-association mapping"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective-based auto-association mapping",
+      "Anchor": "objective-based-auto-association-mapping",
+      "SectionPath": [
+        "Conversion Rule API Schema",
+        "Objective-based auto-association mapping"
+      ],
+      "Text": "QUALIFIED_LEAD, MARKETING_QUALIFIED_LEAD, and SALES_QUALIFIED_LEAD are associated only with eligible LEAD_GENERATION or WEBSITE_CONVERSION campaigns that use the MAX_QUALIFIED_LEAD optimization target. Campaign objectives and conversion rule types that aren\u0027t listed in the mapping aren\u0027t associated automatically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Streaming Conversion Events API Schema",
+      "Anchor": "streaming-conversion-events-api-schema",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "conversion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the conversion rule created. The format of your input should be urn:lla:llaPartnerConversion:ID, where you must replace ID with the respective conversion rule ID. You can parse the id field in response body or from the x-restli-id response header from Create a new Conversion Rule API or id of existing conversion rules from the Find Conversion Rules by Ad Account API. Alternatively, you can also find it from the conversion URL in LinkedIn Campaign Manager by selecting the conversion rule to edit, and extract id that immediately follows /conversions/ in the URL (/campaignmanager/accounts/{accountId}/conversions/{conversionId}).",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api?view=li-lms-2026-09#create-a-conversion-rule",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api?view=li-lms-2026-09#find-conversion-rules-by-ad-account"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "urn:lla:llaPartnerConversion:123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionHappenedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch timestamp in milliseconds at which the conversion event happened. Note: If your source records conversion timestamp in seconds, please insert 000 at the end to transform it to milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1590739275000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionValue(optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The monetary value for this conversion. It contains \u201CcurrencyCode\u201D in ISO format (e.g. \u201CUSD\u201D) and the \u201Camount\u201D value of the conversion in decimal string. (e.g. \u201C100.05\u201D). Advertisers can set conversion values dynamically here or set a fix value when creating conversion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{\u0022currencyCode\u0022: \u0022USD\u0022, \u0022amount\u0022: \u002250.0\u0022}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventId(optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique id generated by advertisers to indicate each event. This field is optional and is used for deduplication.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "ABCDppSv6KBwg",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "user",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object containing userIds, userInfo, lead and externalIds attributes of the user who performed the conversion. See ConversionEventUser below.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#conversioneventuser"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "For more details about usage, refer to the Sample Request",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api?view=li-lms-2026-09#sample-request-4"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ConversionEventUser",
+      "Anchor": "conversioneventuser",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema",
+        "ConversionEventUser"
+      ],
+      "Text": "The user attributes related to the user who performed the conversion event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ConversionEventUser",
+      "Anchor": "conversioneventuser",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema",
+        "ConversionEventUser"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "userIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (idType,idValue)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#idtype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of one or more identifiers to match the conversion user with objects containing idType and idValue. Currently supported idType are: SHA256_EMAIL LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID ACXIOM_ID PLAINTEXT_IP_ADDRESS SHA256_IP_ADDRESS GOOGLE_AID",
+            "Links": [],
+            "Values": [
+              "SHA256_EMAIL",
+              "LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID",
+              "ACXIOM_ID",
+              "PLAINTEXT_IP_ADDRESS",
+              "SHA256_IP_ADDRESS",
+              "GOOGLE_AID"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "userInfo (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "userInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#userinfo"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Object containing additional fields in plain text or hashed format for probabilistic user matching. Currently supported fields are: firstName lastName hashedFirstName(available starting with the 202609 version) hashedLastName(available starting with the 202609 version) companyName title countryCode",
+            "Links": [],
+            "Values": [
+              "firstName",
+              "lastName",
+              "hashedFirstName(available starting with the 202609 version)",
+              "hashedLastName(available starting with the 202609 version)",
+              "companyName",
+              "title",
+              "countryCode"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "lead (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormResponseUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The leadGenFormResponse is generated when users submit LinkedIn Lead-gen form and advertisers can download it from Campaign Manager UI or Lead Sync API. It is in format of urn:li:leadGenFormResponse:id.",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a425750",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalIds (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (string)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of externalIds. An externalId contains an advertiser-provided identifier representing the user who triggered the conversion event. The maximum supported size of the list is 1 at the moment. If the list contains multiple values, only the first value is used. Advertisers must send the externalId together with regular standard identifiers (for example, userIds or userInfo) in order for it to be matched. Once matched, LinkedIn preserves the External ID to LinkedIn Member mapping for one year across ad accounts owned by the same Business Manager. Subsequent events can then include just the externalId, without needing to repeat the other standard identifiers, and the existing association will be used for matching. Refer to Custom Matching Identifiers for more details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "idType",
+      "Anchor": "idtype",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema",
+        "idType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SHA256_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The email address of the contact associated with the conversion event. It must be converted to lower case, without any whitespaces and then hashed in SHA256 format. The result should be a HEX-encoded string with a maximum length of 64 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First party cookie or Click ID. Advertisers need to enable enhanced conversion tracking from Campaign Manager in order to activate first party cookies that appends a click ID parameter li_fat_id to the click URLs. Refer Enabling Click IDs for implementation details.",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423304/enable-first-party-cookies-on-a-linkedin-insight-tag",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACXIOM_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User identifier for matching with LiveRamp identity graph.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PLAINTEXT_IP_ADDRESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IP address of the user in plain text format. Currently, only IPv4 addresses are supported. LinkedIn will generate the SHA256 hash with salt from your plain text address before matching.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SHA256_IP_ADDRESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IP address of the user, hashed using SHA256. Currently, only IPv4 addresses are supported. The result should be a HEX-encoded string of exactly 64 characters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GOOGLE_AID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User identifier for matching with Android devices. The Google Advertising ID (GAID or Android Ad ID) is a unique, user-resettable, and anonymous identifier for Android devices.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "userInfo",
+      "Anchor": "userinfo",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema",
+        "userInfo"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the contact to match the conversion, in plain text. Required for versions earlier than 202609. Starting with the 202609 version, either firstName or hashedFirstName must be provided together with either lastName or hashedLastName.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mike",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the contact to match the conversion, in plain text. Required for versions earlier than 202609. Starting with the 202609 version, either lastName or hashedLastName must be provided together with either firstName or hashedFirstName.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Smith",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hashedFirstName (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the contact to match the conversion, hashed using SHA-256. Before hashing, normalize the value to lowercase with no spaces or punctuation, and encode special characters as UTF-8. The result should be a HEX-encoded string of exactly 64 characters. Note: Available starting with the 202609 version.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "6915771be1c5aa0c886870b6951b03d7eafc121fea0e80a5ea83beb7c449f4ec",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hashedLastName (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the contact to match the conversion, hashed using SHA-256. Before hashing, normalize the value to lowercase with no spaces or punctuation, and encode special characters as UTF-8. The result should be a HEX-encoded string of exactly 64 characters. Note: Available starting with the 202609 version.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "b4cb6cb33fe4b865868de825023a1e2790dc12ac01ecc8d7c5afe8254071c8ba",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyName (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A plain text string representing the company of the contact to match.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Microsoft",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A plain text string representing the title of the contact to match.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Software Engineer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An ISO standardized two letter country/region code representing the country/region of the contact to match.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Input Data Validation",
+      "Anchor": "input-data-validation",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema",
+        "Input Data Validation"
+      ],
+      "Text": "An input request undergoes validation and fails if the following rules are not met:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Input Data Validation",
+      "Anchor": "input-data-validation",
+      "SectionPath": [
+        "Streaming Conversion Events API Schema",
+        "Input Data Validation"
+      ],
+      "Text": "The conversion URN must be valid with format urn:lla:llaPartnerConversion:\u003Cid\u003E.\nThe authenticated user must have a valid user access role (other than VIEWER role) on the ad account where the conversion rule is created.\nThe userIds field in the input request must include at least one or more of the following unless other valid user identifier is provided:\n\nA valid userId with idType SHA256_EMAIL.\nA valid userId with idType LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID.\nA valid userId with idType ACXIOM_ID.\nA valid userId with idType PLAINTEXT_IP_ADDRESS.\nA valid userId with idType SHA256_IP_ADDRESS.\nA valid userId with idType GOOGLE_AID.\n\n\nIncluding userInfo in the input request can improve match rates. If included, for versions earlier than 202609, it must contain both firstName and lastName in plain text. Starting with the 202609 version, it must contain either firstName or hashedFirstName, together with either lastName or hashedLastName.\nIf you include userInfo or externalIds or lead without any valid idType in userIds, you must use an empty list [] for userIds.\nconversionHappenedAt must be a valid timestamp representing the number of milliseconds since epoch time. The timestamp must be within the past 90 days.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

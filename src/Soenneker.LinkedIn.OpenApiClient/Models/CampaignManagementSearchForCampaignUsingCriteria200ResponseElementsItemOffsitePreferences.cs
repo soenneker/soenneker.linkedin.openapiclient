@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Offsite preferences that an advertiser specifies for this campaign. An example OffsitePreference is an object that contains Application Categories, Application Store URLs, Web Domain Names for which this campaign should be included/excluded. For more information, refer to OffsitePreferencesDocumented type: OffsitePreferencesRequirement: False
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CampaignManagementSearchForCampaignUsingCriteria200ResponseElementsItemOffsitePreferences : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

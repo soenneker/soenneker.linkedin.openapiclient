@@ -1,0 +1,874 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+  "Title": "LinkedIn Learning Single Sign-On (SSO) Implementation Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-13-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "SSO Implementation Overview",
+      "Anchor": "sso-implementation-overview",
+      "SectionPath": [
+        "SSO Implementation Overview"
+      ],
+      "Text": "The administrator for your organization\u0027s account can configure your organization\u0027s Identity Provider (IdP) to authenticate your employees into LinkedIn Learning using Single Sign-On.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "SSO Implementation Overview",
+        "Prerequisites"
+      ],
+      "Text": "LinkedIn Learning administrator privileges\nIdentity Provider (IdP) administrator privileges",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Single Sign-On (SSO)",
+      "Anchor": "about-single-sign-on-sso",
+      "SectionPath": [
+        "SSO Implementation Overview",
+        "About Single Sign-On (SSO)"
+      ],
+      "Text": "Enterprise Single Sign-On (SSO) allows your organization\u0027s learners to sign into\nLinkedIn Learning using their corporate credentials and allows organizations to determine who is authorized to access the application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Single Sign-On (SSO)",
+      "Anchor": "about-single-sign-on-sso",
+      "SectionPath": [
+        "SSO Implementation Overview",
+        "About Single Sign-On (SSO)"
+      ],
+      "Text": "Using SSO and integrating with an Identity Provider is not required to use LinkedIn\napplications. If SSO is not configured, learners can log in using their current personal LinkedIn credentials or by creating a separate password for Linkedn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why you Should Use Single Sign-On",
+      "Anchor": "why-you-should-use-single-sign-on",
+      "SectionPath": [
+        "SSO Implementation Overview",
+        "Why you Should Use Single Sign-On"
+      ],
+      "Text": "Leverage your existing company\u0027s authentication\nEnhanced security when employees use your organization\u0027s established password protocols\nEasier user management when employees join or leave your organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported SSO Protocols",
+      "Anchor": "supported-sso-protocols",
+      "SectionPath": [
+        "SSO Implementation Overview",
+        "Supported SSO Protocols"
+      ],
+      "Text": "LinkedIn Learning currently supports SAML 2.0, LTI, and Google SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure SAML Single Sign-On",
+      "Anchor": "configure-saml-single-sign-on",
+      "SectionPath": [
+        "Configure SAML Single Sign-On"
+      ],
+      "Text": "To configure SAML SSO in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure SAML Single Sign-On",
+      "Anchor": "configure-saml-single-sign-on",
+      "SectionPath": [
+        "Configure SAML Single Sign-On"
+      ],
+      "Text": "After you log in to LinkedIn Learning, if you are not already in the Admin screen, select Go to Admin, then click Authentication.\n\n\nSelect Configure single sign-on under Authentication and click Add new SSO.\n\n\n\n\n\nSelect SAML from the Add new SSO drop down.\n\nOn the Basics tab, give your SSO connection a name (ex: Azure AD SSO) and click Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Service-Provider Metadata",
+      "Anchor": "linkedin-learning-service-provider-metadata",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "LinkedIn Learning Service-Provider Metadata"
+      ],
+      "Text": "If your Identity Provider supports loading a metadata file, you can download the metadata file from LinkedIn Learning and provide or upload the file to your Identity Provider.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Service-Provider Metadata",
+      "Anchor": "linkedin-learning-service-provider-metadata",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "LinkedIn Learning Service-Provider Metadata"
+      ],
+      "Text": "Determine if you can download a metadata file or if you need to work with individual fields, then follow one of the procedures in the next sections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download SP Metadata File",
+      "Anchor": "download-sp-metadata-file",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "LinkedIn Learning Service-Provider Metadata",
+        "Download SP Metadata File"
+      ],
+      "Text": "To configure your IdP via a metadata file, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download SP Metadata File",
+      "Anchor": "download-sp-metadata-file",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "LinkedIn Learning Service-Provider Metadata",
+        "Download SP Metadata File"
+      ],
+      "Text": "From within the Identity provider settings tab, click Download file to download a metadata file you can use with your Identity Provider. The metadata.xml file downloads to your computer.\n\n\n\n\n\nClick Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Copy Metadata Information from Fields",
+      "Anchor": "copy-metadata-information-from-fields",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "LinkedIn Learning Service-Provider Metadata",
+        "Copy Metadata Information from Fields"
+      ],
+      "Text": "If your Identity Provider requires you to paste in the individual metadata values, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Copy Metadata Information from Fields",
+      "Anchor": "copy-metadata-information-from-fields",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "LinkedIn Learning Service-Provider Metadata",
+        "Copy Metadata Information from Fields"
+      ],
+      "Text": "From the Identity provider settings tab, click Load and copy information from fields.\n\n\n\n\n\nCopy the values you will need to paste into your Identity Provider.\n\nClick Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure your Identity Provider",
+      "Anchor": "configure-your-identity-provider",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider"
+      ],
+      "Text": "Using the SP metadata you obtained in the previous section, create a new LinkedIn Learning application in your Identity Provider.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure your Identity Provider",
+      "Anchor": "configure-your-identity-provider",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider"
+      ],
+      "Text": "Determine if you can download an IdP metadata file from your Identity Provider or if you need to enter values manually into LinkedIn Learning, then follow one of the procedures in the following sections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure your Identity Provider",
+      "Anchor": "configure-your-identity-provider",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider"
+      ],
+      "Text": "If you exited the SSO configuration settings, see Configure SAML Single Sign-On to get back to the settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Identity Provider Metadata File",
+      "Anchor": "upload-identity-provider-metadata-file",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider",
+        "Upload Identity Provider Metadata File"
+      ],
+      "Text": "To configure your SSO connection via a metadata XML file upload, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Identity Provider Metadata File",
+      "Anchor": "upload-identity-provider-metadata-file",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider",
+        "Upload Identity Provider Metadata File"
+      ],
+      "Text": "From the SSO settings tab, click Upload XML file to add the metadata file from your Identity Provider.\n\n\n\n\n\nNavigate to the downloaded file, select it, and click Open.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enter Metadata Values Manually",
+      "Anchor": "enter-metadata-values-manually",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider",
+        "Enter Metadata Values Manually"
+      ],
+      "Text": "To add your metadata values manually, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enter Metadata Values Manually",
+      "Anchor": "enter-metadata-values-manually",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Configure your Identity Provider",
+        "Enter Metadata Values Manually"
+      ],
+      "Text": "From within the SSO settings tab, select the Manually enter values radio button to manually add the data.\n\n\n\n\n\nEnter the data in the following fields:\n\nIssuer String or Entity ID\n\nBudget group: Choose the default option or leave as-is.\n\nIdP redirect endpoint\n\nSAML Subject Identity attribute name: This is the attribute name in the SAML response used to identify the user if a NameId value is not present or should be ignored. Only use this field if you are sure you want to override the NameId value.\n\nIf the SAML response provides a SAML assertion containing a set of attributes, you can provide the SAML attribute name of the attribute containing the employee\u0027s unique identifier in this field. For example, if an Employee ID value is sent in a SAML attribute named employeeId, you could insert \u0022employeeId\u0022 into the SAML Subject Identity attribute name field, and LinkedIn will use the employeeId attribute in each assertion to identify the user.\n\n\nX.509 Public certificate: LinkedIn verifies the validity of the SAML authentication response using the x.509 certificate provided by your Identity Provider. When pasting the certificate value, make sure to exclude spaces and line breaks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Settings",
+      "Anchor": "sso-settings",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "SSO Settings"
+      ],
+      "Text": "Once you have added your Identity Provider metadata, review the settings on the SSO settings tab and adjust as needed. Most customers do not need to make adjustments to these settings, so if you are not sure, leave the default settings as-is.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Logout",
+      "Anchor": "single-logout",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "SSO Settings",
+        "Single Logout"
+      ],
+      "Text": "Single Logout allows users to be automatically logged out of their organization\u0027s Single Sign-On when they log out of LinkedIn Learning. Enabling this setting can be particularly helpful for organizations where learners may be using shared devices and ensures their accounts remain secure.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Logout",
+      "Anchor": "single-logout",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "SSO Settings",
+        "Single Logout"
+      ],
+      "Text": "The Single Logout request is only triggered when a user actively logs out of LinkedIn Learning, not when their authentication session expires.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Logout",
+      "Anchor": "single-logout",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "SSO Settings",
+        "Single Logout"
+      ],
+      "Text": "To enable Single Logout, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Logout",
+      "Anchor": "single-logout",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "SSO Settings",
+        "Single Logout"
+      ],
+      "Text": "Flip the Single Logout toggle to On.\n\nAdd your Single Logout URL provided by your Identity Provider.\n\nIf you enable Single Logout and leave this field blank, the logout request will be sent to the IdP Redirect Endpoint.\n\n\nClick Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Single Sign-On",
+      "Anchor": "enable-single-sign-on",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On"
+      ],
+      "Text": "After you have completed your configuration, enable SSO by selecting Active from the SSO Status drop-down. See the table below for information about when to use the available options.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SSO Status Options",
+      "Anchor": "sso-status-options",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "SSO Status Options"
+      ],
+      "Text": "",
+      "Headers": [
+        "Status",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Inactive",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSO is not enabled. All learners will log in with email and password or LinkedIn profile credentials.",
+            "Links": [],
+            "Values": [
+              "SSO is not enabled.",
+              "All learners will log in with email and password or LinkedIn profile credentials."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Pilot mode (IdP only)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSO is set up and configured.Pilot mode allows IdP-initiated SSO only. SP-initiated authentication and Just-in-Time provisioning are disabled. This mode is useful when configuring SSO for the first time but should not be used once testing is complete.",
+            "Links": [],
+            "Values": [
+              "SSO is set up and configured.",
+              "Pilot mode allows IdP-initiated SSO only. SP-initiated authentication and Just-in-Time provisioning are disabled.",
+              "This mode is useful when configuring SSO for the first time but should not be used once testing is complete."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSO is set up and enabled.Users can sign in using an IdP-initiated or SP-initiated authentication flow.",
+            "Links": [],
+            "Values": [
+              "SSO is set up and enabled.",
+              "Users can sign in using an IdP-initiated or SP-initiated authentication flow."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Status Options",
+      "Anchor": "sso-status-options",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "SSO Status Options"
+      ],
+      "Text": "IdP-Initiated Flow: The user must launch the LinkedIn Learning app from within in their Identity Provider, and the IdP sends the authentication response directly to LinkedIn Learning.\nSP-Initiated Flow: The user can access LinkedIn Learning directly, utilize an activation link, or launch a course from a Learning Management system, and LinkedIn will send an authentication request to the Identity Provider for authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assigning Licenses",
+      "Anchor": "assigning-licenses",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "Assigning Licenses"
+      ],
+      "Text": "Once you have activated the SSO connection, you can enable Just-in-Time (JIT) provisioning by toggling Automatically provision licenses to On. When you enable this option, users are automatically granted a license when they are authenticated for the first time via SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assigning Licenses",
+      "Anchor": "assigning-licenses",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "Assigning Licenses"
+      ],
+      "Text": "To automate license provisioning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assigning Licenses",
+      "Anchor": "assigning-licenses",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "Assigning Licenses"
+      ],
+      "Text": "Click the \u0022...\u0022 icon for your SSO connection and select Edit.\n\n\n\n\n\nSet the Automatically provision licenses toggle to On.\n\n\n\n\n\nClick \u0022Save\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assigning Licenses",
+      "Anchor": "assigning-licenses",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "Assigning Licenses"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assigning Licenses",
+      "Anchor": "assigning-licenses",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Enable Single Sign-On",
+        "Assigning Licenses"
+      ],
+      "Text": "If this option is disabled, users must be provisioned before they can access LinkedIn Learning for the first time. This can be done manually by an admin in People Management, or it can be done automatically using SCIM, Org Sync or Activation Through Login.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Attributes",
+      "Anchor": "user-attributes",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes"
+      ],
+      "Text": "One reason SAML 2.0 has become so popular is its flexibility when sending user information to the Service Provider. When an Identity Provider sends a SAML assertion, it includes attributes describing the user. These attributes allow\nLinkedIn to both identify the user and automatically provision new users. A few of the possible attributes are described in this section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unique User Identifier (Required)",
+      "Anchor": "unique-user-identifier-required",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Unique User Identifier (Required)"
+      ],
+      "Text": "By default, LinkedIn Learning uses the value sent in the SAML response\u0027s NameId field as a user\u0027s unique identifier.\u00A0This value can be whatever value your Identity Provider typically uses and is usually an Employee ID or User Principal Name. While this can be any value, we always recommend using a unique, immutable value that will not change over time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unique User Identifier (Required)",
+      "Anchor": "unique-user-identifier-required",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Unique User Identifier (Required)"
+      ],
+      "Text": "If you are planning to integrate a Learning Management System (LMS) with LinkedIn Learning, you may need to use a specific user identifier that matches your users\u0027 identifier in the LMS to allow reporting to sync between the two systems.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Address (Strongly Recommended)",
+      "Anchor": "email-address-strongly-recommended",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Email Address (Strongly Recommended)"
+      ],
+      "Text": "Email Address is not a required SSO attribute, but it is strongly recommended to help with user management and to utilize some engagement features in LinkedIn Learning. Although email addresses are allowed as the users\u0027 unique user identifier, we do recommend you use an employee ID or some other unique, immutable value and include Email Address as an additional user attribute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Address (Strongly Recommended)",
+      "Anchor": "email-address-strongly-recommended",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Email Address (Strongly Recommended)"
+      ],
+      "Text": "Identity Providers use different naming conventions, so LinkedIn looks for an email address in the following attribute names sequentially:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Address (Strongly Recommended)",
+      "Anchor": "email-address-strongly-recommended",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Email Address (Strongly Recommended)"
+      ],
+      "Text": "EmailAddress\nemail\nEmail\nMail\nemailAddress\nUser.email",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Address (Strongly Recommended)",
+      "Anchor": "email-address-strongly-recommended",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Email Address (Strongly Recommended)"
+      ],
+      "Text": "If your identity provider uses a different naming convention, you can map the email address attribute as a custom attribute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "First Name (Optional)",
+      "Anchor": "first-name-optional",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "First Name (Optional)"
+      ],
+      "Text": "LinkedIn automatically looks for a first name value in the following attribute names:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "First Name (Optional)",
+      "Anchor": "first-name-optional",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "First Name (Optional)"
+      ],
+      "Text": "FirstName\nfirst_name\nfirstname\nfirstName\nUser.FirstName",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Last Name (Optional)",
+      "Anchor": "last-name-optional",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Last Name (Optional)"
+      ],
+      "Text": "LinkedIn automatically looks for the last name in the following attribute names:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Last Name (Optional)",
+      "Anchor": "last-name-optional",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Last Name (Optional)"
+      ],
+      "Text": "LastName\nlast_name\nlastname\nlastName\nUser.LastName",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Attributes",
+      "Anchor": "custom-attributes",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Custom Attributes"
+      ],
+      "Text": "You can include any number of user attributes in the SAML response and map the values to a list of predefined attribute labels or create custom attribute labels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Attributes",
+      "Anchor": "custom-attributes",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Custom Attributes"
+      ],
+      "Text": "To add custom attributes via SSO, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Attributes",
+      "Anchor": "custom-attributes",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Custom Attributes"
+      ],
+      "Text": "Go to Me \u003E Authenticate \u003E Automate user management.\n\nSelect Custom Attributes.\n\n\n\n\n\nClick Add Attribute.\n\n\n\n\n\nSelect an appropriate attribute name from the Attribute Name menu or select Custom name and enter your own attribute name.\n\n\n\n\n\n Note\nTo auto-group learners by the attribute name you selected, click the Assign groups checkbox.\n\n\nClick Save.\n\nOn the attribute you just created, click Add Mapping.\n\n\n\n\n\nSelect an SSO connection for the mapping.\n\nUnder Map to SSO attribute name, input the attribute name in your SAML response. Use the actual attribute name as it appears in the SAML response, not the friendly name.\n\n\n\n\n\nClick Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Attributes",
+      "Anchor": "custom-attributes",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "User Attributes",
+        "Custom Attributes"
+      ],
+      "Text": "For more information on SSO custom attributes, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify your Setup",
+      "Anchor": "verify-your-setup",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Verify your Setup"
+      ],
+      "Text": "Verify that you\u0027ve correctly integrated with your Identity Provider and have the following in place:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify your Setup",
+      "Anchor": "verify-your-setup",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Verify your Setup"
+      ],
+      "Text": "SSO is enabled and set to Active.\n\nA LinkedIn Learning application is configured in your Identity Provider as\npreviously instructed.\n\nThe LinkedIn Learning application configured in your IdP has been provisioned to the appropriate users.\n\nA SAML Subject NameID value is sent in the SAML response or a SAML Subject Identity has been defined in the Configure your Identity Provider section to use an alternate attribute name as the identifier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify your Setup",
+      "Anchor": "verify-your-setup",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Verify your Setup"
+      ],
+      "Text": "Test using the following login flows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Identity Provider-initiated login",
+      "Anchor": "identity-provider-initiated-login",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Verify your Setup",
+        "Identity Provider-initiated login"
+      ],
+      "Text": "Navigate to your Identity Provider.\nIf supported, launch the LinkedIn Learning application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Provider-initiated login",
+      "Anchor": "service-provider-initiated-login",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Verify your Setup",
+        "Service Provider-initiated login"
+      ],
+      "Text": "Navigate to People Management.\n\nSelect Add new users \u003E Add users by activation link.\n\n\n\n\n\nCopy the activation link and paste it into your browser. This will trigger a Service Provider-initiated authentication flow. This link can be sent to anyone who has been assigned the LinkedIn Learning application in your IdP.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connecting your LinkedIn profile to Learning",
+      "Anchor": "connecting-your-linkedin-profile-to-learning",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Connecting your LinkedIn profile to Learning"
+      ],
+      "Text": "LinkedIn Learning allows learners to connect their personal LinkedIn profile to their organization\u0027s LinkedIn Learning account. This step, known as profile binding, allows LinkedIn Learning to surface content that aligns with your learners\u0027 goals and interests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connecting your LinkedIn profile to Learning",
+      "Anchor": "connecting-your-linkedin-profile-to-learning",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Connecting your LinkedIn profile to Learning"
+      ],
+      "Text": "If you see the below login screen while testing SSO, it does not mean SSO is broken. It simply means you need to re-login to LinkedIn.com with your personal profile credentials, separate from your organization\u0027s SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connecting your LinkedIn profile to Learning",
+      "Anchor": "connecting-your-linkedin-profile-to-learning",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Connecting your LinkedIn profile to Learning"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content through Single Sign-On (SSO).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Authentication Methods",
+      "Anchor": "multiple-authentication-methods",
+      "SectionPath": [
+        "Configure SAML Single Sign-On",
+        "Multiple Authentication Methods"
+      ],
+      "Text": "LinkedIn Learning supports multiple authentication methods and multiple SSO connections for users. You can configure any number of SSO connections and specify the correct authentication method for individual users. For more information on configuring multiple authentication methods, please see the LinkedIn Learning SSO Multiple Authentication Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Azure AD SSO Guide\n\nOkta SSO Guide\n\nLTI 1.3 Guide\n\nMultiple Authentication SSO Guide\n\nManaging User Profile Data\n\nSCIM Automated User Management",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

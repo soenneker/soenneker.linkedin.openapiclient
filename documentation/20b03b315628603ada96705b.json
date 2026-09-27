@@ -1,0 +1,330 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+  "Title": "Release Notes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Release Notes",
+      "Anchor": "release-notes",
+      "SectionPath": [],
+      "Text": "Sales Navigator Display Services will release updates on a regular basis to provide new features, security updates, and bug fixes. Read more to learn about what\u0027s coming in the next release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Modules for Company Profile",
+      "Anchor": "new-modules-for-company-profile",
+      "SectionPath": [
+        "New Modules for Company Profile"
+      ],
+      "Text": "Announcment Date: April 2024",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Modules for Company Profile",
+      "Anchor": "new-modules-for-company-profile",
+      "SectionPath": [
+        "New Modules for Company Profile"
+      ],
+      "Text": "Beginning April 2024, we are excited to share that we will be adding new experience to the Company Profile Embedded Experience. This update brings in Relationship Map and Account IQ experience to Embedded experiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Modules for Company Profile",
+      "Anchor": "new-modules-for-company-profile",
+      "SectionPath": [
+        "New Modules for Company Profile"
+      ],
+      "Text": "Relationship Map Visualizes the complex web of relationships within your accounts, helping you identify decision-makers more efficiently.\nAccountIQ In a single click, deliver deep insights into your target accounts, including news, financials, and key stakeholders.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Modules for Company Profile",
+      "Anchor": "new-modules-for-company-profile",
+      "SectionPath": [
+        "New Modules for Company Profile"
+      ],
+      "Text": "Announcment Date: January 2024",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Modules for Company Profile",
+      "Anchor": "new-modules-for-company-profile",
+      "SectionPath": [
+        "New Modules for Company Profile"
+      ],
+      "Text": "We are excited to announce that we will be adding new modules to the Company Profile embedded experience. This update brings the Relationship Explorer experience to Embedded experiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Modules for Company Profile",
+      "Anchor": "new-modules-for-company-profile",
+      "SectionPath": [
+        "New Modules for Company Profile"
+      ],
+      "Text": "New Find People replacing the Recommended Leads tab allowing a user to find people based on personas.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Display 2.0 Security Requirements",
+      "Anchor": "new-display-20-security-requirements",
+      "SectionPath": [
+        "New Display 2.0 Security Requirements"
+      ],
+      "Text": "Announcment Date: January 14, 2021",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Display 2.0 Security Requirements",
+      "Anchor": "new-display-20-security-requirements",
+      "SectionPath": [
+        "New Display 2.0 Security Requirements"
+      ],
+      "Text": "Beginning January 19th, 2021, all Display Services implementations using the 2.0 version must conform to the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Display 2.0 Security Requirements",
+      "Anchor": "new-display-20-security-requirements",
+      "SectionPath": [
+        "New Display 2.0 Security Requirements"
+      ],
+      "Text": "The developer application corresponding to the client ID passed in the apiKey query parameter of the iframe source URL must be assigned the r_sales_nav_display permission.\nThe root domain the iframe is being hosted on (for example, your-solutions-domain.com) must be listed in the Widget Domains list in developer application settings on developer.linkedin.com for the corresponding developer application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display 2.1 Launch Experience Improvements",
+      "Anchor": "display-21-launch-experience-improvements",
+      "SectionPath": [
+        "Display 2.1 Launch Experience Improvements"
+      ],
+      "Text": "Announcment Date: December 21, 2020",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display 2.1 Launch Experience Improvements",
+      "Anchor": "display-21-launch-experience-improvements",
+      "SectionPath": [
+        "Display 2.1 Launch Experience Improvements"
+      ],
+      "Text": "In order to simplify implementation of the OAuth2 authentication experience, the Display Services iframe now sends window.postMessage events to the parent window. Post messages can be used to launch the OAuth2 authorization code grant flow as described in the Implementing the Launch Experience section. The version=2.1 query parameter is now required to fully migrate to Display 2.1. Refresh Tokens with OAuth 2.0 are available for Display 2.1 partners, but partners must request access through LinkedIn developer support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.0 Deprecation",
+      "Anchor": "display-services-20-deprecation",
+      "SectionPath": [
+        "Display Services 2.0 Deprecation"
+      ],
+      "Text": "Announcment Date: May 1, 2020",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.0 Deprecation",
+      "Anchor": "display-services-20-deprecation",
+      "SectionPath": [
+        "Display Services 2.0 Deprecation"
+      ],
+      "Text": "Updated 12/21/20 to extend deprecation date to end of calendar year 2021",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.0 Deprecation",
+      "Anchor": "display-services-20-deprecation",
+      "SectionPath": [
+        "Display Services 2.0 Deprecation"
+      ],
+      "Text": "Following our March 13, 2019 release of Display Services version 2.1, which leverages OAuth2-based authentication for Display Services iframe requests, we are deprecating Display Services version 2.0 and its cookie-based authentication model at the end of calendar year 2021. You can find a summary of the changes necessary to migrate to Display 2.1 in the Authentication Requirements documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.1",
+      "Anchor": "display-services-21",
+      "SectionPath": [
+        "March 2019 Release",
+        "Display Services 2.1"
+      ],
+      "Text": "In Display Services 2.1, we introduced OAuth2-based authentication with Sales Access Tokens). Partners can use Sales Access Tokens to establish persistent login for the Display Services iframe across clients and devices. Further information can be found in the documentation: Authentication with Sales Access Tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.1",
+      "Anchor": "display-services-21",
+      "SectionPath": [
+        "March 2019 Release",
+        "Display Services 2.1"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.1",
+      "Anchor": "display-services-21",
+      "SectionPath": [
+        "March 2019 Release",
+        "Display Services 2.1"
+      ],
+      "Text": "Requires LinkedIn approval. Please reach out to your LinkedIn Business Development partner before initiating development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom List",
+      "Anchor": "custom-list",
+      "SectionPath": [
+        "March 2019 Release",
+        "Custom List"
+      ],
+      "Text": "In our February Sales Navigator release, we launched a feature called Custom Lists that allows users to create unlimited, customized lists for saved leads and accounts. Custom Lists is now part of the core experience in Display Services 2.0. If you are on Display Services 2.0, you will not need to update your implementation to take advantage of this new feature. If your solution uses Display Services 1.0, you can take advantage of Custom Lists upon upgrade to 2.0 (further information in Deprecating Display Service v1 Release Notes) below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecating Display Service v1",
+      "Anchor": "deprecating-display-service-v1",
+      "SectionPath": [
+        "Deprecating Display Service v1"
+      ],
+      "Text": "Announcement Date: Dec 21, 2018",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecating Display Service v1",
+      "Anchor": "deprecating-display-service-v1",
+      "SectionPath": [
+        "Deprecating Display Service v1"
+      ],
+      "Text": "We will not be serving the v1 experience after June 30, 2019; existing integrations on v1 will automatically be redirected to the v2 experience after this v1 deprecation date. We recommend upgrading at your earliest convenience to ensure a smooth transition and to identify any potential issues before this deprecation date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Guide",
+      "Anchor": "migration-guide",
+      "SectionPath": [
+        "Deprecating Display Service v1",
+        "Migration Guide"
+      ],
+      "Text": "If you are embedding with iframe, please add \u0026version=2.0.0 in the iframe URL to get v2 experience. If you are embedding with Javascript SDK, please replace the script tag URL (before ? and query parameters) with latest JS SDK URL https://static.licdn.com/sc/h/czuzgpeyh1o594lihf8z4h37t.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Guide",
+      "Anchor": "migration-guide",
+      "SectionPath": [
+        "Deprecating Display Service v1",
+        "Migration Guide"
+      ],
+      "Text": "If you selected TopCard in the \u0022modules\u0022 query parameter for Lead Profile, you will need to modify the TopCard value to TopCard2 in order to get the updated Top Card layout for Lead. We also recommend reviewing the implementation details for the new module flexibility and other features so that you can incorporate them into your next release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services 2.0 Release",
+      "Anchor": "display-services-20-release",
+      "SectionPath": [
+        "Display Services 2.0 Release"
+      ],
+      "Text": "Release Date: May, 2018",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New features",
+      "Anchor": "new-features",
+      "SectionPath": [
+        "Display Services 2.0 Release",
+        "New features"
+      ],
+      "Text": "New Inline Mode for presenting singular iframe components with less chrome and border elements. All modules can now be rendered individually rather than in conjunction with the Top Card.\nNew Top Card module (TopCard2) with updated layout that features access to messaging.\nRecent Activity and Highlights sections within Ice Breakers are now available to be rendered as individual components.\nNew Messages module for sending LinkedIn messages and InMail that can be rendered individually or accessed via the TopCard2 module.\nNew Connect module that can be rendered individually for enabling simpler connect workflows.\nNew version query parameter. All of the above features will need to include the version parameter to function, with version set to 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New features",
+      "Anchor": "new-features-1",
+      "SectionPath": [
+        "June 2017 Release",
+        "New features"
+      ],
+      "Text": "Job Title is now a supported field when constructing the query parameters for the widget; the documentation has been updated to reflect the new field\nThe widget now supports being embedded directly as an Iframe, vs. requiring use of the JavaScript SDK.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fixes",
+      "Anchor": "fixes",
+      "SectionPath": [
+        "June 2017 Release",
+        "Fixes"
+      ],
+      "Text": "Profile associations will be more reliably persisted\nVisual fixes to the overflow menu to improve placement in situations where the widget is narrow\nWidget style improvements",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

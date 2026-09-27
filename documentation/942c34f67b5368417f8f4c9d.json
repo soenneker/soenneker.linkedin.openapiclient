@@ -1,0 +1,152 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+  "Title": "Module 4 - PJP Widget and Enabling Customers via widget",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 4 - PJP Widget and Enabling Customers via widget",
+      "Anchor": "module-4---pjp-widget-and-enabling-customers-via-widget",
+      "SectionPath": [],
+      "Text": "Upon completing development, to ensure official certification of Module 4, please review each of the test cases mentioned below. To ensure an efficient meeting or review of the recorded demo shared via the partner support form, please review all appropriate documentation and send technical questions to your Business Development and/or Partner Engineering representative beforehand.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 4 - PJP Widget and Enabling Customers via widget",
+      "Anchor": "module-4---pjp-widget-and-enabling-customers-via-widget",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 4 - PJP Widget and Enabling Customers via widget",
+      "Anchor": "module-4---pjp-widget-and-enabling-customers-via-widget",
+      "SectionPath": [],
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 4 - PJP Widget and Enabling Customers via widget",
+      "Anchor": "module-4---pjp-widget-and-enabling-customers-via-widget",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JP-D-01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate customer opt-in via PJP onboarding widget with contract and Default job poster",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-D-02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate how the PJP onboarding widget callback response is managed and customer is notified of their enablement state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-D-03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "After a customer is initiated PJP onboarding via the PJP onboarding Widget, a JS-callback is returned from the same widget. Partner needs to make an /ATSIntegration call using the returned parameters. Demonstrate how this is done?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-D-04",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate Global Customer Settings for: Company, Contract for created application ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-D-05",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Do you have customers with multiple contract_Ids? - ATS should make provision to onboard multiple contracts for the same company. - For multiple contract_ids for a same company_id, use same child application_id.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-D-06",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For customers with multiple contracts, How customers can identify \u0022ENABLED\u0022 contracts?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-D-07",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate How customers can choose the contract and company_ID to post a job",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

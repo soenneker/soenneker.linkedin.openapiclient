@@ -30,6 +30,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The ORGANIZATION_AUTHORIZATION_KEY_1 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1? ORGANIZATIONAUTHORIZATIONKEY1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1 ORGANIZATIONAUTHORIZATIONKEY1 { get; set; }
+#endif
+        /// <summary>The ORGANIZATION_AUTHORIZATION_KEY_2 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey2? ORGANIZATIONAUTHORIZATIONKEY2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey2 ORGANIZATIONAUTHORIZATIONKEY2 { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResults"/> and sets the default values.
         /// </summary>
@@ -57,6 +73,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "(action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ)),impersonation:(scope:(value:()),subject:(value:(member:urn%3Ali%3Aperson%3AsyabJjcceP))),organization:urn%3Ali%3Aorganization%3A10002683)", n => { ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATORREADImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsActionOrganizationRoleAuthorizationActionActionTypeAdministratorReadImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsActionOrganizationRoleAuthorizationActionActionTypeAdministratorReadImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683.CreateFromDiscriminatorValue); } },
                 { "(action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_WRITE)),impersonation:(scope:(value:()),subject:(value:(member:urn%3Ali%3Aperson%3AsyabJjcceP))),organization:urn%3Ali%3Aorganization%3A10002683)", n => { ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATORWRITEImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsActionOrganizationRoleAuthorizationActionActionTypeAdministratorWriteImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsActionOrganizationRoleAuthorizationActionActionTypeAdministratorWriteImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683.CreateFromDiscriminatorValue); } },
+                { "(ORGANIZATION_AUTHORIZATION_KEY_1)", n => { ORGANIZATIONAUTHORIZATIONKEY1 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1.CreateFromDiscriminatorValue); } },
+                { "(ORGANIZATION_AUTHORIZATION_KEY_2)", n => { ORGANIZATIONAUTHORIZATIONKEY2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,6 +86,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsActionOrganizationRoleAuthorizationActionActionTypeAdministratorReadImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683>("(action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ)),impersonation:(scope:(value:()),subject:(value:(member:urn%3Ali%3Aperson%3AsyabJjcceP))),organization:urn%3Ali%3Aorganization%3A10002683)", ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATORREADImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsActionOrganizationRoleAuthorizationActionActionTypeAdministratorWriteImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683>("(action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_WRITE)),impersonation:(scope:(value:()),subject:(value:(member:urn%3Ali%3Aperson%3AsyabJjcceP))),organization:urn%3Ali%3Aorganization%3A10002683)", ActionOrganizationRoleAuthorizationActionActionTypeADMINISTRATORWRITEImpersonationScopeValueSubjectValueMemberUrn3Ali3Aperson3AsyabJjccePOrganizationUrn3Ali3Aorganization3A10002683);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey1>("(ORGANIZATION_AUTHORIZATION_KEY_1)", ORGANIZATIONAUTHORIZATIONKEY1);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationAuthorizationsImpersonatorFinder200ResponseResultsOrganizationAuthorizationKey2>("(ORGANIZATION_AUTHORIZATION_KEY_2)", ORGANIZATIONAUTHORIZATIONKEY2);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

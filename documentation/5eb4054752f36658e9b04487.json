@@ -1,0 +1,2959 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+  "Title": "Organization Lookup",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Lookup",
+      "Anchor": "organization-lookup",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Lookup",
+      "Anchor": "organization-lookup",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Lookup",
+      "Anchor": "organization-lookup",
+      "SectionPath": [],
+      "Text": "The Organization Lookup API searches organizations and their profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Lookup",
+      "Anchor": "organization-lookup",
+      "SectionPath": [],
+      "Text": "Unless otherwise noted, the following rules apply when specifying input parameters:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Lookup",
+      "Anchor": "organization-lookup",
+      "SectionPath": [],
+      "Text": "All strings are case-insensitive.\nMultiple words should be joined with a space. The input is URL encoded where spaces are translated to \u0022%20\u0022. For example, Apple Inc. is encoded to Apple%20Inc.\nIf a search includes multiple words, the complete string is searched.\nWildcards and boolean logic are not supported:\n*, ?, AND, and OR",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Lookup",
+      "Anchor": "organization-lookup",
+      "SectionPath": [],
+      "Text": "For information on finding organizations with partial or incomplete information, see the Company Search documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organization pages and retrieve reporting data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve posts, comments, and likes on behalf of an authenticated member for compliance monitoring and archiving. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Organization lookup API is protected by 3-legged OAuth token. For more information, Authorization Code Flow (3-legged OAuth).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin and Non-Admin Access",
+      "Anchor": "admin-and-non-admin-access",
+      "SectionPath": [
+        "Permissions",
+        "Admin and Non-Admin Access"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin and Non-Admin Access",
+      "Anchor": "admin-and-non-admin-access",
+      "SectionPath": [
+        "Permissions",
+        "Admin and Non-Admin Access"
+      ],
+      "Text": "Some of these API calls require that the authenticated member has the role type ADMINISTRATOR for the requested organization. For information on how to retrieve roles through the API, see Organization Access Control.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin and Non-Admin Access",
+      "Anchor": "admin-and-non-admin-access",
+      "SectionPath": [
+        "Permissions",
+        "Admin and Non-Admin Access"
+      ],
+      "Text": "APIs that don\u0027t require administrative access will only return the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin and Non-Admin Access",
+      "Anchor": "admin-and-non-admin-access",
+      "SectionPath": [
+        "Permissions",
+        "Admin and Non-Admin Access"
+      ],
+      "Text": "id\nname\nlocalizedName\nlocalizedWebsite\nvanityName\nlogoV2\nlocations\nprimaryOrganizationType",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Admin and Non-Admin Access",
+      "Anchor": "admin-and-non-admin-access",
+      "SectionPath": [
+        "Permissions",
+        "Admin and Non-Admin Access"
+      ],
+      "Text": "APIs that require administrative access will return all available Organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Find detailed schema information, see Schema Information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organizations",
+      "Anchor": "retrieve-organizations",
+      "SectionPath": [
+        "Retrieve Organizations"
+      ],
+      "Text": "Use the Organization Lookup API to find organizations using an organization id, vanity name, or email domain.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organizations",
+      "Anchor": "retrieve-organizations",
+      "SectionPath": [
+        "Retrieve Organizations"
+      ],
+      "Text": "Organization URNs are in the format urn:li:organization:{organization id} and represent a LinkedIn Company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve an Administered Organization",
+      "Anchor": "retrieve-an-administered-organization",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization"
+      ],
+      "Text": "Use the organization ID to look up organization information on behalf of authenticated members with role type ADMINISTRATOR for that organization. API calls with insufficient permissions return 403 Forbidden.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations/{organization ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizations/{organization ID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "Sample Request Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations/79988552",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organizations/79988552\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Retrieve an Administered Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n\u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n\u0022groups\u0022: [],\n\u0022versionTag\u0022: \u0022111146657\u0022,\n\u0022coverPhotoV2\u0022: {\n\u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n\u0022original\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n\u0022cropInfo\u0022: {\n\u0022x\u0022: 0,\n\u0022width\u0022: 800,\n\u0022y\u0022: 108,\n\u0022height\u0022: 135\n}\n},\n\u0022organizationType\u0022: \u0022SELF_EMPLOYED\u0022,\n\u0022defaultLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n},\n\u0022alternativeNames\u0022: [],\n\u0022specialties\u0022: [],\n\u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n\u0022localizedSpecialties\u0022: [],\n\u0022industries\u0022: [\n\u0022urn:li:industry:4\u0022\n],\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n\u0022locations\u0022: [],\n\u0022id\u0022: 79988552,\n\u0022$URN\u0022: \u0022urn:li:organization:79988552\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Administered Organizations",
+      "Anchor": "batch-get-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations"
+      ],
+      "Text": "Fetch a list of organizations with the associated IDs on behalf of authenticated members with role type ADMINISTRATOR for those organizations. API calls with insufficient permissions receive a 403 Forbidden response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Administered Organizations",
+      "Anchor": "batch-get-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Administered Organizations",
+      "Anchor": "batch-get-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations"
+      ],
+      "Text": "The request must include a header for Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations?ids=List({organization ID1, organization ID2..})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizations?ids=List({organization ID1, organization ID2..})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "Sample Request Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations?ids=List(79988552,27056405)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organizations?ids=List(79988552,27056405)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Administered Organizations",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022results\u0022: {\n\u002279988552\u0022: {\n\u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n\u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n\u0022groups\u0022: [],\n\u0022versionTag\u0022: \u0022111146657\u0022,\n\u0022coverPhotoV2\u0022: {\n\u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n\u0022original\u0022: \u0022urn:li:digitalmediaAsset:C561BAQHqQYsCLYiAnA\u0022,\n\u0022cropInfo\u0022: {\n\u0022x\u0022: 0,\n\u0022width\u0022: 800,\n\u0022y\u0022: 108,\n\u0022height\u0022: 135\n}\n},\n\u0022organizationType\u0022: \u0022SELF_EMPLOYED\u0022,\n\u0022defaultLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n},\n\u0022alternativeNames\u0022: [],\n\u0022specialties\u0022: [],\n\u0022localizedSpecialties\u0022: [],\n\u0022industries\u0022: [\n\u0022urn:li:industry:4\u0022\n],\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n\u0022locations\u0022: [],\n\u0022id\u0022: 79988552\n}\n},\n\u0022statuses\u0022: {\n\u002279988552\u0022: 200,\n\u002227056405\u0022: 403\n},\n\u0022errors\u0022: {\n\u002227056405\u0022: {\n\u0022message\u0022: \u0022Viewer don\u0027t have permission to the ADMIN_ONLY VisibilityReduction for urn:li:organization:27056405\u0022,\n\u0022status\u0022: 403\n}\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Non-Administered Organizations",
+      "Anchor": "batch-get-non-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations"
+      ],
+      "Text": "Fetch a list of organizations the authenticated member doesn\u0027t administer using the following API. The returned fields are more limited than the equivalent endpoint for administered organizations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Non-Administered Organizations",
+      "Anchor": "batch-get-non-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations"
+      ],
+      "Text": "The request must include a header for Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Non-Administered Organizations",
+      "Anchor": "batch-get-non-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Non-Administered Organizations",
+      "Anchor": "batch-get-non-administered-organizations",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations"
+      ],
+      "Text": "organizationsLookup usage doesn\u0027t require administrator access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationsLookup?ids=List(id1,id2, ...)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationsLookup?ids=List(id1,id2, ...)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "Sample Request Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationsLookup?ids=List(90966477,79988552)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organizationsLookup?ids=List(90966477,79988552)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Batch Get Non-Administered Organizations",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022results\u0022: {\n\u002279988552\u0022: {\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022FirstDemoCompany\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n\u0022vanityName\u0022: \u0022firstdemocompany\u0022,\n\u0022locations\u0022: [],\n\u0022localizedName\u0022: \u0022FirstDemoCompany\u0022,\n\u0022id\u0022: 79988552\n},\n\u002290966477\u0022: {\n\u0022vanityName\u0022: \u0022devtestcocompany\u0022,\n\u0022localizedName\u0022: \u0022Devtestco\u0022,\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022Devtestco\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n\u0022locations\u0022: [],\n\u0022id\u0022: 90966477,\n\u0022localizedWebsite\u0022: \u0022LinkedIn.com\u0022\n}\n},\n\u0022statuses\u0022: {\n\u002279988552\u0022: 200,\n\u002290966477\u0022: 200\n},\n\u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Organization by Vanity Name",
+      "Anchor": "find-organization-by-vanity-name",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Find Organization by Vanity Name"
+      ],
+      "Text": "Look up organizations using vanityName to retrieve Non-Admin Fields.\nThe API can return schools (such as Universities),organizations (companies). To differentiate between entities, primaryOrganizationType field returns one of the following possible organizational entity values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Organization by Vanity Name",
+      "Anchor": "find-organization-by-vanity-name",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Find Organization by Vanity Name"
+      ],
+      "Text": "SCHOOL\nBRAND\nNONE - no primary type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find an Organization - LinkedIn",
+      "Anchor": "find-an-organization---linkedin",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "Find an Organization - LinkedIn"
+      ],
+      "Text": "\u200B\u200BGET https://api.linkedin.com/rest/organizations?q=vanityName\u0026vanityName=LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find a School - Boise State University",
+      "Anchor": "find-a-school---boise-state-university",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "Find a School - Boise State University"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations?q=vanityName\u0026vanityName=boisestate",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response - For Boise State University Lookup",
+      "Anchor": "sample-response---for-boise-state-university-lookup",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "Sample Response - For Boise State University Lookup"
+      ],
+      "Text": "{\n   \u0022paging\u0022: {\n       \u0022start\u0022: 0,\n       \u0022count\u0022: 10,\n       \u0022links\u0022: [],\n       \u0022total\u0022: 1\n   },\n   \u0022elements\u0022: [{\n       \u0022vanityName\u0022: \u0022boisestate\u0022,\n       \u0022localizedName\u0022: \u0022Boise State University\u0022,\n       \u0022schoolAttributes\u0022: {\n           \u0022hierarchyClassification\u0022: \u0022UNIVERSITY\u0022,\n           \u0022type\u0022: \u0022PUBLIC\u0022,\n           \u0022yearLevel\u0022: \u0022FOUR_YEAR\u0022,\n           \u0022legacySchool\u0022: \u0022urn:li:school:18235\u0022\n       },\n       \u0022name\u0022: {\n           \u0022localized\u0022: {\n               \u0022en_US\u0022: \u0022Boise State University\u0022\n           },\n           \u0022preferredLocale\u0022: {\n               \u0022country\u0022: \u0022US\u0022,\n               \u0022language\u0022: \u0022en\u0022\n           }\n       },\n       \u0022primaryOrganizationType\u0022: \u0022SCHOOL\u0022,\n       \u0022locations\u0022: [{\n           \u0022address\u0022: {\n               \u0022geographicArea\u0022: \u0022Idaho\u0022,\n               \u0022country\u0022: \u0022US\u0022,\n               \u0022city\u0022: \u0022Boise\u0022,\n               \u0022line1\u0022: \u0022301 S. CAPITOL BLVD.\u0022,\n               \u0022postalCode\u0022: \u002283702\u0022\n           },\n           \u0022staffCountRange\u0022: \u0022SIZE_11_TO_50\u0022,\n           \u0022geoLocation\u0022: \u0022urn:li:geo:100754108\u0022,\n           \u0022phoneNumber1\u0022: {\n               \u0022number\u0022: \u00222084263335\u0022\n           },\n           \u0022locationType\u0022: \u0022OTHER\u0022,\n           \u0022description\u0022: {\n               \u0022localized\u0022: {\n                   \u0022en_US\u0022: \u0022Boise State Downtown\u0022\n               },\n               \u0022preferredLocale\u0022: {\n                   \u0022country\u0022: \u0022US\u0022,\n                   \u0022language\u0022: \u0022en\u0022\n               }\n           },\n           \u0022localizedDescription\u0022: \u0022Boise State Downtown\u0022,\n           \u0022streetAddressFieldState\u0022: \u0022UNSET_OPT_OUT\u0022\n       }, {\n           \u0022address\u0022: {\n               \u0022geographicArea\u0022: \u0022Idaho\u0022,\n               \u0022country\u0022: \u0022US\u0022,\n               \u0022city\u0022: \u0022Nampa\u0022,\n               \u0022line2\u0022: \u0022Nampa Campus Aspen Classroom Bldg.\u0022,\n               \u0022line1\u0022: \u00226002 Birch Lane\u0022,\n               \u0022postalCode\u0022: \u002283687\u0022\n           },\n           \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n           \u0022geoLocation\u0022: \u0022urn:li:geo:105011711\u0022,\n           \u0022streetAddressFieldState\u0022: \u0022UNSET_OPT_OUT\u0022\n       }],\n       \u0022id\u0022: 11832,\n       \u0022localizedWebsite\u0022: \u0022https://boisestate.edu\u0022,\n       \u0022logoV2\u0022: {\n           \u0022cropped\u0022: \u0022urn:li:digitalmediaAsset:C4D0BAQE6V6rj_w1yVQ\u0022,\n           \u0022original\u0022: \u0022urn:li:digitalmediaAsset:C4D0BAQE6V6rj_w1yVQ\u0022,\n           \u0022cropInfo\u0022: {\n               \u0022x\u0022: 0,\n               \u0022width\u0022: 0,\n               \u0022y\u0022: 0,\n               \u0022height\u0022: 0\n           }\n       }\n   }]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use the API Response for Finding School Organization URN",
+      "Anchor": "how-to-use-the-api-response-for-finding-school-organization-urn",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "How to Use the API Response for Finding School Organization URN"
+      ],
+      "Text": "The API returns an id field, which is the organization URN (urn:li:organization:11832) for Boise State:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use the API Response for Finding School Organization URN",
+      "Anchor": "how-to-use-the-api-response-for-finding-school-organization-urn",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "How to Use the API Response for Finding School Organization URN"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use the API Response for Finding School Organization URN",
+      "Anchor": "how-to-use-the-api-response-for-finding-school-organization-urn",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "How to Use the API Response for Finding School Organization URN"
+      ],
+      "Text": "Use id field as shown above for school organization. The legacySchool field has a school URN that has near term plans for deprecation, e.g. \u0022legacySchool\u0022: \u0022urn:li:school:18235\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use the API Response for Finding School Organization URN",
+      "Anchor": "how-to-use-the-api-response-for-finding-school-organization-urn",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "How to Use the API Response for Finding School Organization URN"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use the API Response for Finding School Organization URN",
+      "Anchor": "how-to-use-the-api-response-for-finding-school-organization-urn",
+      "SectionPath": [
+        "Retrieve Organizations",
+        "Sample API Calls to Lookup",
+        "How to Use the API Response for Finding School Organization URN"
+      ],
+      "Text": "Deprecation Notice\nWe have discontinued Find Organization by Email Domain API Finder starting with version 202408 and above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Follower Count",
+      "Anchor": "retrieve-organization-follower-count",
+      "SectionPath": [
+        "Retrieve Organization Follower Count"
+      ],
+      "Text": "The Organization Network Size API provides the ability to retrieve the number of first-degree connections (followers) for any organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/networkSizes/urn:li:organization:1234567?edgeType=COMPANY_FOLLOWED_BY_MEMBER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/networkSizes/urn:li:organization:1234567?edgeType=COMPANY_FOLLOWED_BY_MEMBER\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/networkSizes/urn:li:organization:1234567?edgeType=CompanyFollowedByMember",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/networkSizes/urn:li:organization:1234567?edgeType=CompanyFollowedByMember\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022firstDegreeSize\u0022: 219145\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Follower Count",
+        "Sample Response"
+      ],
+      "Text": "The ?edgeType= parameter options for CompanyFollowedByMember for the /networkSizes endpoint changes to COMPANY_FOLLOWED_BY_MEMBER starting in v202305. Prior versions (\u2264 v202304) still utilize CompanyFollowedByMember but the two options are not retrocompatible.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization",
+      "Anchor": "retrieve-organization",
+      "SectionPath": [
+        "Retrieve Organization"
+      ],
+      "Text": "Use the Organization Lookup API to find organizations using an organization ID, parent organization ID, or a vanity name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization",
+      "Anchor": "retrieve-organization",
+      "SectionPath": [
+        "Retrieve Organization"
+      ],
+      "Text": "Organization URNs are in the format urn:li:organization:{id} and represent LinkedIn Company Pages or LinkedIn Showcase Pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization",
+      "Anchor": "retrieve-organization",
+      "SectionPath": [
+        "Retrieve Organization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization",
+      "Anchor": "retrieve-organization",
+      "SectionPath": [
+        "Retrieve Organization"
+      ],
+      "Text": "urn:li:organizationBrand:XXX\u0022 is mapped to urn:li:organization:XXX\u0022 as Organization Brand API has been deprecated since Jan 2024 onwards.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve an Administered Organization",
+      "Anchor": "retrieve-an-administered-organization-1",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization"
+      ],
+      "Text": "Use the organization ID to lookup Organization information on behalf of authenticated members with role type ADMINISTRATOR for that brand. API calls with insufficient permissions receive a 403 Forbidden response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organization/{organization ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organization/{organization ID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "Sample Request Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organization/89758488",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organization/89758488\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Retrieve an Administered Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022vanityName\u0022: \u0022internal-ei-demo\u0022,\n\u0022localizedName\u0022: \u0022Internal_EI_Demo\u0022,\n\u0022website\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022https://internal-ei-test-company.com\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022groups\u0022: [],\n\u0022versionTag\u0022: \u00223061199585\u0022,\n\u0022defaultLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n},\n\u0022alternativeNames\u0022: [],\n\u0022specialties\u0022: [],\n\u0022parentRelationship\u0022: {\n\u0022relationshipStatus\u0022: \u0022ACTIVE\u0022,\n\u0022parent\u0022: \u0022urn:li:organization:79988552\u0022\n},\n\u0022localizedSpecialties\u0022: [],\n\u0022industries\u0022: [\n\u0022urn:li:industry:84\u0022\n],\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022Internal_EI_Demo\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n\u0022id\u0022: 89758488,\n\u0022$URN\u0022: \u0022urn:li:organization:89758488\u0022,\n\u0022autoCreated\u0022: false,\n\u0022localizedWebsite\u0022: \u0022https://internal-ei-test-company.com\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Administered Organization by Parent Organization",
+      "Anchor": "find-administered-organization-by-parent-organization",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization"
+      ],
+      "Text": "Use this API to look up information about Organization using the parent organization URN on behalf of authenticated members with role type ADMINISTRATOR. This returns an array of brands that belong to the specified parent organization and only brands that are administered by the authenticated member are returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations?q=parentOrganization\u0026parent={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizations?q=parentOrganization\u0026parent={organization URN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "Sample Request Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizations?q=parentOrganization\u0026parent=urn%3Ali%3Aorganization%3A79988552",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organizations?q=parentOrganization\u0026parent=urn%3Ali%3Aorganization%3A79988552\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Administered Organization by Parent Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022paging\u0022: {\n\u0022start\u0022: 0,\n\u0022count\u0022: 10,\n\u0022links\u0022: [],\n\u0022total\u0022: 2\n},\n\u0022elements\u0022: [\n{\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022Internal_EI_Demo\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n\u0022vanityName\u0022: \u0022internal-ei-demo\u0022,\n\u0022locations\u0022: [],\n\u0022localizedName\u0022: \u0022Internal_EI_Demo\u0022,\n\u0022id\u0022: 89758488\n},\n{\n\u0022name\u0022: {\n\u0022localized\u0022: {\n\u0022en_US\u0022: \u0022Internal_EI_TestCompany\u0022\n},\n\u0022preferredLocale\u0022: {\n\u0022country\u0022: \u0022US\u0022,\n\u0022language\u0022: \u0022en\u0022\n}\n},\n\u0022primaryOrganizationType\u0022: \u0022BRAND\u0022,\n\u0022vanityName\u0022: \u0022internal-ei-testcompany\u0022,\n\u0022locations\u0022: [],\n\u0022localizedName\u0022: \u0022Internal_EI_TestCompany\u0022,\n\u0022id\u0022: 89757515\n}\n]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Organization by Vanity Name",
+      "Anchor": "find-organization-by-vanity-name-1",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name"
+      ],
+      "Text": "Look up organization using vanityName to retrieve Non-Admin Fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organization?q=vanityName\u0026vanityName=Linkedin",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organization?q=vanityName\u0026vanityName=Linkedin\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "Sample Request Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organization?q=vanityName\u0026vanityName=company-lgf-showcase",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve Organization",
+        "Find Organization by Vanity Name",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organization?q=vanityName\u0026vanityName=company-lgf-showcase\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer don\u0027t have permission to the ADMIN_ONLY VisibilityReduction for urn:li:organization:xxxxx",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewing Member is not an Admin of the respective Organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lookup for the list of Organization IDs for which the viewing member is an Admin.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization xxxx is inactive",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requested Organization/Organization is either inactive or not available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide the correct Organization ID.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Organization",
+      "Anchor": "organization",
+      "SectionPath": [
+        "Schema Information",
+        "Organization"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Admin Only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "alternativeNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString []",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Alternative names of the entity. There can be multiple names per locale.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverPhotoV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CroppedImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u0027s background cover image. The sizes may vary, so clients should handle the given height and width accordingly.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Default locale of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleted timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description for the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "foundedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Date when the entity was founded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GroupUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Groups featured by the organizational entity. Default to empty array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IndustryURN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The industries associated with the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific description of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific name of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedSpecialties",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific, admin-defined specialty tags of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedWebsite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific website of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocationInfo[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of locations for the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Entity\u0027s name.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRelationship. parent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the parent organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRelationship. organizationRelationshipType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of relationship from child to parent organizations. Possible values: SUBSIDIARY: This organization is a subsidiary of the parent. ACQUISITION: This organization was acquired by the parent. SCHOOL: An associated school of the parent organization. For example, a University\u0027s School of Law or a remote campus, or a company-owned university.",
+            "Links": [],
+            "Values": [
+              "SUBSIDIARY: This organization is a subsidiary of the parent.",
+              "ACQUISITION: This organization was acquired by the parent.",
+              "SCHOOL: An associated school of the parent organization. For example, a University\u0027s School of Law or a remote campus, or a company-owned university."
+            ]
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRelationship. relationshipStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status of a relationship between organizations. Possible values: ACTIVE: The relationship is active. INACTIVE: The relationship is inactive.",
+            "Links": [],
+            "Values": [
+              "ACTIVE: The relationship is active.",
+              "INACTIVE: The relationship is inactive."
+            ]
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specialties.tags[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string []",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Admin-defined specialty tags of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity\u0027s unique name used in URLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tag indicating version.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "website",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Entity\u0027s website.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "staffCountRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Range of the number of staff associated with this entity. Possible values: SIZE_1 SIZE_2_TO_10 SIZE_11_TO_50 SIZE_51_TO_200 SIZE_201_TO_500 SIZE_501_TO_1000 SIZE_1001_TO_5000 SIZE_5001_TO_10000 SIZE_10001_OR_MORE",
+            "Links": [],
+            "Values": [
+              "SIZE_1",
+              "SIZE_2_TO_10",
+              "SIZE_11_TO_50",
+              "SIZE_51_TO_200",
+              "SIZE_201_TO_500",
+              "SIZE_501_TO_1000",
+              "SIZE_1001_TO_5000",
+              "SIZE_5001_TO_10000",
+              "SIZE_10001_OR_MORE"
+            ]
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schoolAttributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SchoolAttributes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#schoolattributes"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "School-specific attributes of the organization. If this field exists, then this entity is a school.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "overviewPhotoV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CroppedImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The image used in the Overview tab on the organization\u0027s page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logoV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CroppedImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u2019s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly. For more information, see GET a single image",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-09#get-a-single-image"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the organization, such as operating or out of business. Possible values: OPERATING: Currently operating OPERATING_SUBSIDIARY: Operating as a subsidiary REORGANIZING: Undergoing reorganization OUT_OF_BUSINESS: Out of business ACQUIRED: Acquired by another organization",
+            "Links": [],
+            "Values": [
+              "OPERATING: Currently operating",
+              "OPERATING_SUBSIDIARY: Operating as a subsidiary",
+              "REORGANIZING: Undergoing reorganization",
+              "OUT_OF_BUSINESS: Out of business",
+              "ACQUIRED: Acquired by another organization"
+            ]
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of organization. Possible values: PUBLIC_COMPANY: A public company EDUCATIONAL: An educational institution SELF_EMPLOYED: A self-employed business GOVERNMENT_AGENCY: A government agency NON_PROFIT: A non-profit organization SELF_OWNED: A self-owned business PRIVATELY_HELD: A privately held business PARTNERSHIP: A partnership",
+            "Links": [],
+            "Values": [
+              "PUBLIC_COMPANY: A public company",
+              "EDUCATIONAL: An educational institution",
+              "SELF_EMPLOYED: A self-employed business",
+              "GOVERNMENT_AGENCY: A government agency",
+              "NON_PROFIT: A non-profit organization",
+              "SELF_OWNED: A self-owned business",
+              "PRIVATELY_HELD: A privately held business",
+              "PARTNERSHIP: A partnership"
+            ]
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryOrganizationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of primary organization being used in the lookup. Possible values: SCHOOL: Identifies the organizational entity as a schoolBRAND: identifies the organizational entity as a brand NONE: Identifies the organizational entity as not having a primary type.",
+            "Links": [],
+            "Values": [
+              "SCHOOL: Identifies the organizational entity as a school",
+              "BRAND: identifies the organizational entity as a brand",
+              "NONE: Identifies the organizational entity as not having a primary type."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Organization",
+      "Anchor": "organization-1",
+      "SectionPath": [
+        "Schema Information",
+        "Organization"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Admin Only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "alternativeNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString []",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Alternative names of the entity. There can be multiple names per locale.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverPhotoV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CroppedImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u0027s background cover image. The sizes may vary, so clients should handle the given height and width accordingly.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Default locale of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Map of locale to localized entity\u0027s description.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "foundedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Date when the entity was founded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IndustryURN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The industries associated with the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific description of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific name of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedSpecialties",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific, admin-defined specialty tags of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedWebsite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific website of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Entity\u0027s name.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRelationship. parent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the parent organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specialties.tags[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string []",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Admin-defined specialty tags of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity\u0027s unique name used in URLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tag indicating version.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "website",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Entity\u0027s website.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logoV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CroppedImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#croppedimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity\u2019s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly. For more information, see GET a single image",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-09#get-a-single-image"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pinnedPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the entity\u0027s pinned post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "autoCreated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the entity was auto-created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CroppedImage",
+      "Anchor": "croppedimage",
+      "SectionPath": [
+        "Schema Information",
+        "CroppedImage"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of the image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of the image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "x",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "X coordinate of the corner",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "y",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Y coordinate of the corner",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cropped",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the cropped image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "original",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the original image",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Date",
+      "Anchor": "date",
+      "SectionPath": [
+        "Schema Information",
+        "Date"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Day",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Month",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Year",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Locale",
+      "Anchor": "locale",
+      "SectionPath": [
+        "Schema Information",
+        "Locale"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3,166.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocaleString",
+      "Anchor": "localestring",
+      "SectionPath": [
+        "Schema Information",
+        "LocaleString"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09\u0026tabs=http#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Locale key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String value for locale",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleString",
+      "Anchor": "multilocalestring",
+      "SectionPath": [
+        "Schema Information",
+        "MultiLocaleString"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "localized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "map (string-\u003Estring)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Map of locale to localized entity\u0027s description.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The preferred locale to use for entity\u2019s description.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SchoolAttributes",
+      "Anchor": "schoolattributes",
+      "SectionPath": [
+        "Schema Information",
+        "SchoolAttributes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "hierarchyClassification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The classification for school hierarchy. Possible values: CONSORTIUM_SYSTEM: A collection of schools and education providers. UNIVERSITY: A university, typically containing individual schools within it. INDEPENDENT_SCHOOL_COLLEGE_PROVIDER: Provides degrees, certs, etc., but typically doesn\u0027t contain individual schools within it. REMOTE_CAMPUS: A separate campus that\u0027s at a distance from the primary college area. DISTANCE_LEARNING: A school that provides education solely through online channels.",
+            "Links": [],
+            "Values": [
+              "CONSORTIUM_SYSTEM: A collection of schools and education providers.",
+              "UNIVERSITY: A university, typically containing individual schools within it.",
+              "INDEPENDENT_SCHOOL_COLLEGE_PROVIDER: Provides degrees, certs, etc., but typically doesn\u0027t contain individual schools within it.",
+              "REMOTE_CAMPUS: A separate campus that\u0027s at a distance from the primary college area.",
+              "DISTANCE_LEARNING: A school that provides education solely through online channels."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "legacySchool",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legacy school URN for the organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of institution. Possible values: PUBLIC: A public school operated by the state, as opposed to being a private enterprise. PRIVATE: A private school, also known as independent school, non-governmental, or non-state school, not administered by a government.PROFIT: A for-profit school operated by a private, profit-seeking business.",
+            "Links": [],
+            "Values": [
+              "PUBLIC: A public school operated by the state, as opposed to being a private enterprise.",
+              "PRIVATE: A private school, also known as independent school, non-governmental, or non-state school, not administered by a government.",
+              "PROFIT: A for-profit school operated by a private, profit-seeking business."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "yearLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Classification of the length of the institution\u0027s educational programs. These levels are defined by the National Center for Education Statistics (http://nces.ed.gov/pubs2015/2015097rev.pdf). Possible values: UNDER_TWO_YEAR: As defined by National Center for Education Statistics: \u0027This group includes any post-secondary institution that offers programs of less than 2 years\u2019 duration below the baccalaureate level, as well as occupational and vocational schools with programs that don\u0027t exceed 1,800 contact hours.\u0027 TWO_YEAR: As defined by the National Center for Education Statistics: \u0027: Any post-secondary institution that offers programs of at least 2 but less than 4 years\u2019 duration, as well as occupational and vocational schools with programs of at least 1,800 hours and academic institutions with programs of less than 4 years. Does not include bachelor\u0027s-degree-granting institutions where the baccalaureate program can be completed in 3 years.\u0027FOUR_YEAR: As defined by the National Center for Education Statistics: \u0027Any post-secondary institution that offers programs of at least 4 years\u2019 duration or one that offers programs at or above the baccalaureate level, as well as schools that offer post-baccalaureate certificates only or those that offer graduate programs only.\u0027",
+            "Links": [
+              "http://nces.ed.gov/pubs2015/2015097rev.pdf"
+            ],
+            "Values": [
+              "UNDER_TWO_YEAR: As defined by National Center for Education Statistics: \u0027This group includes any post-secondary institution that offers programs of less than 2 years\u2019 duration below the baccalaureate level, as well as occupational and vocational schools with programs that don\u0027t exceed 1,800 contact hours.\u0027",
+              "TWO_YEAR: As defined by the National Center for Education Statistics: \u0027: Any post-secondary institution that offers programs of at least 2 but less than 4 years\u2019 duration, as well as occupational and vocational schools with programs of at least 1,800 hours and academic institutions with programs of less than 4 years. Does not include bachelor\u0027s-degree-granting institutions where the baccalaureate program can be completed in 3 years.\u0027",
+              "FOUR_YEAR: As defined by the National Center for Education Statistics: \u0027Any post-secondary institution that offers programs of at least 4 years\u2019 duration or one that offers programs at or above the baccalaureate level, as well as schools that offer post-baccalaureate certificates only or those that offer graduate programs only.\u0027"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

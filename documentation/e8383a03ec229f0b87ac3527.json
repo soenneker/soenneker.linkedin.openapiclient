@@ -1,0 +1,358 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+  "Title": "LinkedIn Learning and Learnster Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning and Learnster Deep Integration Guide",
+      "Anchor": "linkedin-learning-and-learnster-deep-integration-guide",
+      "SectionPath": [],
+      "Text": "As a Learnster admin, you can integrate LinkedIn Learning with Learnster to import English-language courses, enable single sign-on (SSO), and receive course completion data through the Experience API (xAPI), a standard for sharing learning activity between systems. Setup requires admin access to both LinkedIn Learning and Learnster.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single sign-on",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Supported features",
+        "Single sign-on"
+      ],
+      "Text": "Learners can use their organization\u2019s credentials to access LinkedIn Learning through SAML single sign-on (SSO). This reduces the need to manage a separate set of sign-in credentials.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content catalog sync",
+      "Anchor": "content-catalog-sync",
+      "SectionPath": [
+        "Supported features",
+        "Content catalog sync"
+      ],
+      "Text": "As a Learnster admin, you can select and import the LinkedIn Learning courses you want to make available in Learnster. Learnster retrieves catalog metadata through LinkedIn Learning content APIs, so you don\u2019t need to manually upload content packages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content catalog sync",
+      "Anchor": "content-catalog-sync",
+      "SectionPath": [
+        "Supported features",
+        "Content catalog sync"
+      ],
+      "Text": "The integration supports English-language courses only. Course titles and descriptions are indexed to help learners find courses through keyword searches.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner activity reporting",
+      "Anchor": "learner-activity-reporting",
+      "SectionPath": [
+        "Supported features",
+        "Learner activity reporting"
+      ],
+      "Text": "LinkedIn Learning records learners\u2019 activity for content viewed on its platform in usage reports available in the LinkedIn Learning admin interface. When a learner completes a LinkedIn Learning course, LinkedIn Learning sends their course completion data to Learnster through xAPI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner activity reporting",
+      "Anchor": "learner-activity-reporting",
+      "SectionPath": [
+        "Supported features",
+        "Learner activity reporting"
+      ],
+      "Text": "As an admin, you can view learners\u2019 course completions in both LinkedIn Learning and Learnster, helping you track LinkedIn Learning completions alongside other training in Learnster.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner activity reporting",
+      "Anchor": "learner-activity-reporting",
+      "SectionPath": [
+        "Supported features",
+        "Learner activity reporting"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner activity reporting",
+      "Anchor": "learner-activity-reporting",
+      "SectionPath": [
+        "Supported features",
+        "Learner activity reporting"
+      ],
+      "Text": "Ensure each learner\u2019s work email address in LinkedIn Learning matches their email address in Learnster. When configuring xAPI reporting, select Email as the User Type so Learnster can associate course completions with the correct learner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "To set up the integration, you need:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "An active Learnster LMS instance with admin access.\nAn active LinkedIn Learning account with admin access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure SAML single sign-on",
+      "Anchor": "step-1-configure-saml-single-sign-on",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 1: Configure SAML single sign-on"
+      ],
+      "Text": "LinkedIn Learning recommends SAML SSO for enterprise learning platform integrations. If your organization uses an identity provider such as Azure AD, Okta, or Active Directory Federation Services (AD FS), you can configure it to authenticate learners accessing LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Configure SAML single sign-on",
+      "Anchor": "step-1-configure-saml-single-sign-on",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 1: Configure SAML single sign-on"
+      ],
+      "Text": "To configure SAML SSO, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate Content API credentials in LinkedIn Learning",
+      "Anchor": "step-2-generate-content-api-credentials-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 2: Generate Content API credentials in LinkedIn Learning"
+      ],
+      "Text": "Generate Content API credentials in LinkedIn Learning admin settings so Learnster can retrieve LinkedIn Learning catalog metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate Content API credentials in LinkedIn Learning",
+      "Anchor": "step-2-generate-content-api-credentials-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 2: Generate Content API credentials in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then click Me \u003E Integrate.\n\nFrom the side navigation menu, select Access content and reports via API and expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\n\nIn the Add LinkedIn Learning API application screen, provide the name of your learning platform (e.g., \u0022Learnster Courses Export\u0022) as the application name.\n\nProvide a short description of the integration use case in the application description field. For example, \u0022Learnster courses export\u0022.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the Terms and Conditions.\n\nSave the Client ID and Client Secret values. You will use these values in Step 3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate Content API credentials in LinkedIn Learning",
+      "Anchor": "step-2-generate-content-api-credentials-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 2: Generate Content API credentials in LinkedIn Learning"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate Content API credentials in LinkedIn Learning",
+      "Anchor": "step-2-generate-content-api-credentials-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 2: Generate Content API credentials in LinkedIn Learning"
+      ],
+      "Text": "The client secret is displayed only once. Store it securely and do not share it outside your organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Configure LinkedIn Learning in Learnster",
+      "Anchor": "step-3-configure-linkedin-learning-in-learnster",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 3: Configure LinkedIn Learning in Learnster"
+      ],
+      "Text": "Enable the LinkedIn Learning integration in Learnster and obtain the credentials needed to configure xAPI reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Configure LinkedIn Learning in Learnster",
+      "Anchor": "step-3-configure-linkedin-learning-in-learnster",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 3: Configure LinkedIn Learning in Learnster"
+      ],
+      "Text": "To complete the configuration with Learnster, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Configure LinkedIn Learning in Learnster",
+      "Anchor": "step-3-configure-linkedin-learning-in-learnster",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 3: Configure LinkedIn Learning in Learnster"
+      ],
+      "Text": "Client ID\nClient Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Configure LinkedIn Learning in Learnster",
+      "Anchor": "step-3-configure-linkedin-learning-in-learnster",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 3: Configure LinkedIn Learning in Learnster"
+      ],
+      "Text": "Go to Learnster Studio and navigate to Settings \u003E Integrations \u003E LinkedIn to access the setup interface.\n\nAdd the credentials you saved from LinkedIn Learning, then enable the integration by switching the Credentials enabled toggle ON.\n\nSwitch the xAPI Integration toggle ON.\n\n\nRetrieve the following values from the Learnster configuration page (these are used when you return to LinkedIn Learning to complete the xAPI reporting configuration):\n\nOAuth Server URL\nTenant Server URL\nClient ID\nClient Secret\nScope",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Configure xAPI reporting in LinkedIn Learning",
+      "Anchor": "step-4-configure-xapi-reporting-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 4: Configure xAPI reporting in LinkedIn Learning"
+      ],
+      "Text": "Use the reporting credentials obtained from Learnster to configure xAPI reporting in LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Configure xAPI reporting in LinkedIn Learning",
+      "Anchor": "step-4-configure-xapi-reporting-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 4: Configure xAPI reporting in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Integrate.\n\nFrom the side navigation menu, select Configure content push and reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\nIn the Integration name field, enter a name such as \u0022Learnster Reporting\u0022.\n\nIn the User Type drop down, select Email. This value must match the learner\u2019s email address in Learnster.\n\nCopy and paste the following items provided by Learnster into LinkedIn Learning:\n\nOAuth Server URL\nTenant Server URL\nClient ID\nClient Secret\nScope\n\n\n\nUnder Confirm which data you want to share for this integration, select Course completions and Course progress.\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Configure xAPI reporting in LinkedIn Learning",
+      "Anchor": "step-4-configure-xapi-reporting-in-linkedin-learning",
+      "SectionPath": [
+        "Set up the integration",
+        "Step 4: Configure xAPI reporting in LinkedIn Learning"
+      ],
+      "Text": "You have now successfully enabled the Learnster xAPI connection in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learnster troubleshooting",
+      "Anchor": "learnster-troubleshooting",
+      "SectionPath": [
+        "Learnster troubleshooting"
+      ],
+      "Text": "To create a support request, please contact the Learnster support team through the chat inside of the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, contact your dedicated LinkedIn Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

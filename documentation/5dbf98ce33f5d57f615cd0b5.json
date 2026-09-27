@@ -1,0 +1,336 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations",
+  "Title": "Profile Associations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_profiles/sales-navigator-profile-associations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/data-validation-design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/exporting-crm-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Associations",
+      "Anchor": "profile-associations",
+      "SectionPath": [],
+      "Text": "The Profile Associations API offers third-party applications the ability to leverage existing LinkedIn profile matches for customers using CRM Sync in their Sales Navigator implementation. Using external identifiers, you can request and use public profile photos and Sales Navigator profile links to enrich the identities of contacts and leads in the external application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations",
+      "Anchor": "profile-associations",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations",
+      "Anchor": "profile-associations",
+      "SectionPath": [],
+      "Text": "In order to successfully call the Profile Associations API, customers must have CRM Sync enabled. CRM Sync is currently supported for Dynamics 365 and Salesforce.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations and CRM Sync",
+      "Anchor": "profile-associations-and-crm-sync",
+      "SectionPath": [
+        "Profile Associations and CRM Sync"
+      ],
+      "Text": "The Profile Associations API provides a public photo URL and the Sales Navigator Profile URL for any member that has been matched in Sales Navigator. Matching occurs via the CRM Sync process, after external CRM records, like leads, contacts and accounts, are ingested and fuzzy matching is performed against the LinkedIn graph to determine matches.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations and CRM Sync",
+      "Anchor": "profile-associations-and-crm-sync",
+      "SectionPath": [
+        "Profile Associations and CRM Sync"
+      ],
+      "Text": "Matches are created with an associated level of confidence using the provided external data. Visit Profile Matching to learn more about matching functionality. Only high confidence matches are returned via API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations and CRM Sync",
+      "Anchor": "profile-associations-and-crm-sync",
+      "SectionPath": [
+        "Profile Associations and CRM Sync"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Associations and CRM Sync",
+      "Anchor": "profile-associations-and-crm-sync",
+      "SectionPath": [
+        "Profile Associations and CRM Sync"
+      ],
+      "Text": "Whether profile photos appear in the response is determined by member privacy settings. Only public profile photos are returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Making a Request",
+      "Anchor": "making-a-request",
+      "SectionPath": [
+        "Making a Request"
+      ],
+      "Text": "After records are ingested by CRM Sync, you can make a request to surface matches:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Making a Request",
+      "Anchor": "making-a-request",
+      "SectionPath": [
+        "Making a Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/salesNavigatorProfileAssociations/(partner:MS,instanceId:instance.crm.dynamics.com,recordId:7e0db184-267b-e811-a95e-000d3a30d5db) HTTP/1.1\nAuthorization: Bearer {ACCESS_TOKEN}\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Making a Request",
+      "Anchor": "making-a-request",
+      "SectionPath": [
+        "Making a Request"
+      ],
+      "Text": "If a match exists for the instanceId, partner, and recordId in the request, you\u0027ll receive a JSON response that includes the Sales Navigator profile URL and public profile photo that you can use in your application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Making a Request",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022profile\u0022: \u0022https://www.linkedin.com/sales/profile/ACwAAAwMJ8gB1ACzMnNA8Sj1P-0J9_pd4mT3eZ4,,?pathWildcard=ACwAAAwMJ8gB1ACzMnNA8Sj1P-0J9_pd4mT3eZ4%2C%2C\u0022,\n  \u0022member\u0022: \u0022urn:li:person:ME6J0dvP9y\u0022,\n  \u0022profilePhoto\u0022: \u0022https://media.licdn.com/mpr/mpr/shrink_200_200/AAIAAQB_AAIAAQAAAAAAAAAgAAAAJGRlOTQ1YmU5LWY1MTQtNDAyZi05ZGM4LWE1YzcwODk1YzdlMw.jpg\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Making a Request",
+        "Sample Request Body"
+      ],
+      "Text": "The r_sales_nav_profiles permission is required to access /salesNavigatorProfileAssociations. Any OAuth2 token used to make the call must have been granted the r_sales_nav_profiles scope. To learn more about OAuth2, visit our Client Credentials Flow (2-legged OAuth) documentation. To learn more about the Sales Navigator Profile Associations API, see our API Reference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "Requests can return errors for a variety of reasons, and responses will contain HTTP status codes, concise error messages, and service error codes if applicable to help consumers understand the root causes for failures. Your integration should utilize the Error Codes below to ensure you deliver optimal experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Handling",
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response Code",
+        "Service Error Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad request, missing parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Sync not enabled for this CRM instance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot determine CRM Sync status for this CRM instance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized (typically a result of token expiration)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application does not have enough access to complete the request. Application may not have the required scope to use the endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match unavailable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too many requests. The application is currently being throttled due to high call volume",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unhandled service error",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Message Response Format",
+      "Anchor": "error-message-response-format",
+      "SectionPath": [
+        "Error Handling",
+        "Error Message Response Format"
+      ],
+      "Text": "Error responses will be returned in the following response format. The HTTP response code in the response header will also be present in the status field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Error Message Response Format",
+      "Anchor": "error-message-response-format",
+      "SectionPath": [
+        "Error Handling",
+        "Error Message Response Format"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022CRM Sync not enabled for this CRM instance.\u0022,\n    \u0022status\u0022: 400,\n    \u0022serviceErrorCode\u0022: 40002\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+  "Title": "Developer AI Policy",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "Via certain LinkedIn Marketing APIs (such as the Community Management APIs), developers are able to access organic content from the LinkedIn platform, such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "Content created by LinkedIn members (such as posts, articles, comments, messages, and profile data)\nContent created by LinkedIn pages (such as posts, articles, comments, messages, and information on their pages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "This Policy outlines the extent to which developers can use AI functionality in connection with the referenced content/data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "Please consult the LinkedIn Marketing API Program Terms for other restrictions, conditions, and data deletion obligations relating to this data. If there is any conflict between these requirements and the requirements in the terms, the requirements that are more restrictive or more protective of the data apply.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer AI Policy",
+      "Anchor": "developer-ai-policy",
+      "SectionPath": [],
+      "Text": "LinkedIn reserves the right to update these requirements at any time, upon posting the updated requirements on our developer documentation. The following requirements do not apply to data that is independently provided to you by your clients and not retrieved via the LinkedIn Marketing APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required Design Principles for AI Functionality that Uses LinkedIn Data",
+      "Anchor": "required-design-principles-for-ai-functionality-that-uses-linkedin-data",
+      "SectionPath": [
+        "Required Design Principles for AI Functionality that Uses LinkedIn Data"
+      ],
+      "Text": "I. Accountability: Developers should establish an internal review body that provides oversight, insights, and guidance about responsibly developing and deploying AI functionality.\nII. Fairness and Inclusiveness: AI functionality must not facilitate unfair bias or discriminatory practices, whether intentional or inadvertent. In particular, AI functionality should not discriminate based on any sensitive or legally protected categories or characteristics (such as race, color, national origin, religion, sex, age, disability, immigration status, gender identification, or sexual orientation). AI functionality should also be designed and developed using inclusive, accessible design principles to address potential barriers to use.\nIII. Transparency: Explainability helps end users make informed, responsible decisions around the use of AI functionality. Developers must clearly describe to end users of their applications:\nA. That: (1) users are interacting with an AI system (e.g., using a prominent \u201CAI-powered\u201D label); and (2) output is partly or fully generated by an AI system.\nB. How AI functionality operates (including transformative logic and how it generates its output).\nC. Best practices to ensure responsible and safe use of the AI functionality.\nD. Whether the end user\u2019s data is being used for additional purposes (e.g., to further train or improve the AI functionality) or shared with any third party.\nE. The principles that govern the AI functionality (including those protecting user content, transparency, and control).\nF. That AI-generated output may contain inaccuracies and that the end user should check for potential inaccuracies.\nG. How to report inappropriate, harmful, or offensive content to the developer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required Design Principles for AI Functionality that Uses LinkedIn Data",
+      "Anchor": "required-design-principles-for-ai-functionality-that-uses-linkedin-data",
+      "SectionPath": [
+        "Required Design Principles for AI Functionality that Uses LinkedIn Data"
+      ],
+      "Text": "To support the above transparency efforts, developers should also:\nA. Restrict automated posting of AI-generated content to external sites (including LinkedIn) or automated execution of generated code, without end user involvement.\n1. If generated text, image, or other content will be published, distributed, or otherwise attributed to the end user, the end user should be provided tools to first edit the generated content.\nB. Develop a channel for receiving end user feedback and a mechanism to process and address it in a timely manner.\nIV. Reliability and Safety: AI functionality must not generate or provide access to inappropriate, harmful, or offensive content. Developers must promptly respond to and address reports of any such content. AI functionality should perform as originally designed and respond safely to new situations. Its inherent resilience should resist intended or unintended manipulation. Developers should establish rigorous testing and validation, along with robust monitoring and model-tracking processes, to reactively and proactively measure performance, identify harms, and retrain as necessary.\nV. Third-Party AI Functionality: Developers who are using AI functionality provided by a third party must:(a) ensure that the AI functionality is in compliance with this Policy and (b) enter into a written agreement with the third party that is at least as protective of the LinkedIn data as this Policy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "USE OF LINKEDIN DATA IN AI FUNCTIONALITY",
+      "Anchor": "use-of-linkedin-data-in-ai-functionality",
+      "SectionPath": [
+        "USE OF LINKEDIN DATA IN AI FUNCTIONALITY"
+      ],
+      "Text": "I. GENERALLY PROHIBITED: LinkedIn page and member data obtained via our Marketing APIs may not be used to train AI functionality or as a prompt/input to AI functionality, except as specified in Section II. This prohibition applies to all data fields available via these APIs, such as:\nA. Posts, comments, reactions, messages, or other content created by members, pages, or third parties\nB. Member profile data\nC. Company page profile data (e.g., logo, location, size)\nD. LinkedIn standardized data (e.g., standardized locations, industries, degrees, job functions, and other fields)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "USE OF LINKEDIN DATA IN AI FUNCTIONALITY",
+      "Anchor": "use-of-linkedin-data-in-ai-functionality",
+      "SectionPath": [
+        "USE OF LINKEDIN DATA IN AI FUNCTIONALITY"
+      ],
+      "Text": "II. EXCEPTIONS: Permitted AI Use Cases for LinkedIn Page and Member Data\nA. Posts, Comments, and Messages Created by Users of Developer Application:\n1. Scope of Permitted Data: Content of posts, articles, comments, reactions, or messages created by (or on behalf of) Page admins or members that are current users of the developer\u2019s application and that have consented to the use of their data for these AI use cases\n2. Excluded Data:\na) Posts, articles, comments, reactions, messages, or other content created by other members, pages, or third parties (other than as permitted under Section III), regardless of whether:\n(1) The content is posted publicly on LinkedIn\n(2) The content @ mentions or otherwise references an application user\n(3) The relevant member/page engaged with the application user\u2019s post (e.g., commented on a post) or messaged the application user\n(4) The application user copied or shared the content via functionality on the LinkedIn platform (e.g., repost, insertion of third-party URL)\n3. Nature of Permitted Use: Training or as an input/prompt to AI functionality.\n4. Permitted AI Use Cases: AI Functionality that supports the following use cases:\na) Prioritize content (such as posts, comments, messages) for application users\u2019 review/response\nb) Sentiment analysis and other tools that categorize content (e.g. by topic)\nc) Speech-to-text, text-to-speech, and visual recognition technology for accessibility purposes\nd) Modifications to posts, comments, messages, or other content\ne) Creating posts, comments, messages, or other content\n5. Prohibited AI Use Cases:\na) AI functionality that\u0027s not intended specifically for one or more of the use cases listed above\nb) AI functionality that\u0027s unrelated to the approved use cases for the relevant LinkedIn Marketing API(s)\nB. Posts, Comments, and Messages Created by Pages or Members that are not Users of Developer Application:\n1. Scope of Permitted Data: Content of any posts, articles, comments, reactions, or messages by any\norganization or member\n2. Nature of Permitted Use: Input/prompt to AI functionality (no training use cases)\n3. Permitted AI Use Cases:\na) Prioritize content (such as posts, comments, messages) for application users\u2019 review/response\nb) Sentiment analysis and other tools that categorize content (e.g. by topic)\nc) Speech-to-text, text-to-speech, and visual recognition technology for accessibility purposes\n4. Prohibited AI Use Cases:\na) AI functionality that creates or modifies posts, comments, messages, or other content\nb) AI functionality that\u0027s not intended specifically for one or more of the use cases listed in preceding Section 3.\nc) AI functionality that\u0027s unrelated to the approved use cases for the relevant LinkedIn Marketing API(s)",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

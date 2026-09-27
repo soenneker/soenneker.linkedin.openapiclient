@@ -1,0 +1,119 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+  "Title": "Module 4 - Sync ACLs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Module 4 - Sync ACLs",
+      "Anchor": "module-4---sync-acls",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One-Click Export Secure Job Posting Test. 1. Create an ACL. 2. Create a new job posting and assign it to the ACL created above. 3.Add one or more users to that ACL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Login to the system as one of the users you assigned the ACL to and ensure that the secure job posting is visible (One-Click Export). 2. Login to the system as a user that was not assigned to the ACL you created and ensure that the securable job posting is not visible (One-Click Export).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-402",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In-ATS Indicator Secure Job Posting Test. 1. Sync a candidate and sync an application to the job associated to the ACL created from the last step. Add application notes, stages, etc. as needed. 2. Add one or more users to the ACL created above.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Login to the system as one of the users you assigned the ACL to and ensure that the secure job posting is visible In-ATS indicator. 2. Login to the system as a user that was not assigned to the ACL you created and ensure that the securable job posting is not visible (In-ATS indicator).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Remove ACL Assignee Test. Remove user(s) from the ACL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Log in to the system as one of the users you removed from the ACL and ensure that they no longer can see secured job postings in the drop-down list of the One-Click Export feature and in the In-ATS Indicator for any candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-add user(s) to the security group.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Login to the system as one of the users you re-added to the ACL and ensure that they are able to see the secured job posting(s) in the dropdown list of the One-Click Export feature and in the In-ATS Indicator for any candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 4 - Sync ACLs",
+      "Anchor": "module-4---sync-acls",
+      "SectionPath": [],
+      "Text": "Relevant Documentation: Sync ACLs",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

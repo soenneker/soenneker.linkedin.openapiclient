@@ -1,0 +1,2561 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+  "Title": "Industry Codes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Industry Codes",
+      "Anchor": "industry-codes",
+      "SectionPath": [],
+      "Text": "This table shows all valid industry codes. If you use an industry code other than one that appears here, you will receive no results. The group is not used for the API call but is included here if you want to use these on an interface. You might want to have two drop downs with the first selecting a group and the second selecting the specific industry within that group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Industry Codes",
+      "Anchor": "industry-codes",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Industry Codes",
+      "Anchor": "industry-codes",
+      "SectionPath": [],
+      "Text": "We are migrating to Industry V2 codes and they will be available from April 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Industry Codes",
+      "Anchor": "industry-codes",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Groups",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "47",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accounting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "94",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man, tech, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Airlines/Aviation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "120",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leg, org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Alternative Dispute Resolution",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "125",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Alternative Medicine",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "127",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Animation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "19",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apparel \u0026 Fashion",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "50",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Architecture \u0026 Planning",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "111",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Arts and Crafts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "53",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Automotive",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "52",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aviation \u0026 Aerospace",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "41",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Banking",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "12",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, hlth, tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Biotechnology",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "36",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Broadcast Media",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "49",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Building Materials",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "138",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Business Supplies and Equipment",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "129",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Capital Markets",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "54",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Chemicals",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "90",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Civic \u0026 Social Organization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "51",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons, gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Civil Engineering",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "128",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons, corp, fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Commercial Real Estate",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "118",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Computer \u0026 Network Security",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "109",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Computer Games",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "3",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Computer Hardware",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "5",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Computer Networking",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "4",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Computer Software",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "48",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Construction",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "24",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consumer Electronics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "25",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consumer Goods",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "91",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consumer Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "18",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cosmetics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "65",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "agr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dairy",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defense \u0026 Space",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "99",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Design",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "69",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "edu",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Education Management",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "132",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "edu, org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "E-Learning",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "112",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Electrical/Electronic Manufacturing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "28",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entertainment",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "86",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Environmental Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "110",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, rec, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Events Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "76",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Executive Office",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "122",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Facilities Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "63",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "agr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Farming",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "43",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Financial Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "38",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fine Art",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "66",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "agr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fishery",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "34",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Food \u0026 Beverages",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "23",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Food Production",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fund-Raising",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "26",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Furniture",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "29",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gambling \u0026 Casinos",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "145",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Glass, Ceramics \u0026 Concrete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "75",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Government Administration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "148",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Government Relations",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "140",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Graphic Design",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "124",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Health, Wellness and Fitness",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "68",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "edu",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Higher Education",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "14",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hospital \u0026 Health Care",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "31",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec, serv, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hospitality",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "137",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Human Resources",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "134",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, good, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Import and Export",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "88",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Individual \u0026 Family Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "147",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industrial Automation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "84",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "96",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information Technology and Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "42",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Insurance",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "74",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "International Affairs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "141",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, org, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "International Trade and Development",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "6",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internet",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "45",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Investment Banking",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "46",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Investment Management",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "73",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, leg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Judiciary",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "77",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, leg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Law Enforcement",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "9",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Law Practice",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legal Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "72",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, leg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legislative Office",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "30",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec, serv, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leisure, Travel \u0026 Tourism",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "85",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Libraries",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "116",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Logistics and Supply Chain",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "143",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Luxury Goods \u0026 Jewelry",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "55",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Machinery",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "11",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Management Consulting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "95",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maritime",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "97",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Market Research",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "80",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, med",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Marketing and Advertising",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "135",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons, gov, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mechanical or Industrial Engineering",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "126",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media Production",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "17",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Medical Devices",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "13",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Medical Practice",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "139",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mental Health Care",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "71",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Military",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "56",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mining \u0026 Metals",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "35",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Motion Pictures and Film",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "37",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Museums and Institutions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "115",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Music",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "114",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, man, tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nanotechnology",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "81",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Newspapers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "100",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-Profit Organization Management",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "57",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oil \u0026 Energy",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "113",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Online Media",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "123",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Outsourcing/Offshoring",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "87",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "serv, tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Package/Freight Delivery",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "146",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Packaging and Containers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "61",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paper \u0026 Forest Products",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "39",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Performing Arts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "15",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth, tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pharmaceuticals",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "131",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Philanthropy",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "136",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Photography",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "117",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plastics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Political Organization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "67",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "edu",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Primary/Secondary Education",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "83",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Printing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Professional Training \u0026 Coaching",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Program Development",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "79",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public Policy",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "98",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public Relations and Communications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "78",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public Safety",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "82",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Publishing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "62",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Railroad Manufacture",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "64",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "agr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ranching",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "44",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "cons, fin, good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Real Estate",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "40",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recreational Facilities and Services",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "89",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "org, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Religious Institutions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "144",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, man, org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Renewables \u0026 Environment",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "70",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "edu, gov",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Research",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "32",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Restaurants",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "27",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "121",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, org, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Security and Investigations",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "7",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Semiconductors",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "58",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Shipbuilding",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "20",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sporting Goods",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "33",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sports",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Staffing and Recruiting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "22",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supermarkets",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "8",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Telecommunications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "60",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Textiles",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "130",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "gov, org",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Think Tanks",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "21",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tobacco",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "108",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "corp, gov, serv",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Translation and Localization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "92",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Transportation/Trucking/Railroad",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "59",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "man",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Utilities",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fin, tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Venture Capital \u0026 Private Equity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "16",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hlth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Veterinary",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "93",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tran",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Warehousing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "133",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wholesale",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "142",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "good, man, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wine and Spirits",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "119",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "tech",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wireless",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "art, med, rec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Writing and Editing",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

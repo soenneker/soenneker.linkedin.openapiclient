@@ -1,0 +1,149 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview",
+  "Title": "Company Intelligence - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence - Overview",
+      "Anchor": "company-intelligence---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence - Overview",
+      "Anchor": "company-intelligence---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence - Overview",
+      "Anchor": "company-intelligence---overview",
+      "SectionPath": [],
+      "Text": "The Company Intelligence API delivers company (target account)-level data for all companies engaged through LinkedIn. It provides metrics such as engagement score, paid impressions, paid clicks, leads, organic impressions, and organic engagements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use Cases"
+      ],
+      "Text": "CRM Outcome Reporting: Report on LinkedIn\u2019s specific influence on company engagement and CRM outcomes (e.g., number of MQLs, pipeline value, revenue won) via an approach that does not blend data across channels\u2014and either offers a LinkedIn-only view, or LinkedIn and other channels side by side.\n\nCross-Channel Attribution: Customers increasingly need to measure the influence of multiple channels in driving pipeline and revenue outcomes in a centralized source of truth. This API unlocks the ability for customers to ingest valuable data points into their cross-channel attribution tools by reporting on LinkedIn\u2019s specific influence on company engagement and CRM outcomes (e.g., number of MQLs, pipeline value, revenue won) via an approach that blends data across channel engagements.\n\nBridge Partners: Third-party services that assist in transferring Company Intelligence API data to large advertisers who wish to run their attribution modeling in-house without building direct integrations themselves.\n\nIn-House Advertisers: Large organizations (e.g., Amazon) that prefer to conduct attribution and analytics internally using their own teams instead of relying on third-party platforms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "We are not currently accepting new applications for the Company Intelligence API. This is a private API available only to previously approved developers, so there are currently no other workarounds for access. Use the Ad Analytics API for your reporting needs. We will update our recent changes documentation when we are ready to accept new applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data. To learn more about the OAuth flows, see Authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u0027s Marketing API Program supports versioning so API partners can release changes over time. For more information on how to use versioned APIs, see Versioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "How do I generate a token for the Company Intelligence API?\nThe Company Intelligence API requires a 3-legged OAuth member token, and your developer application must be provisioned with the Advertising API and Company Intelligence API. Once approved, the authenticated member must have consented to the r_ads_reporting permission of the Advertising API product for your developer app. If the member has already consented through an existing integration (for example, Ad Analytics API), you can use their existing member access token and do not need to require re-authentication.\n\nWho is eligible to access the Company Intelligence API?\nB2B marketing technology companies that support attribution and reporting solutions\u2014enabling marketers to have a better understanding of company-level engagement and investment delivery against valuable audiences and objectives.\nReview the eligibility criteria and the following qualifications. The Company Intelligence API is a private API, and we are not currently accepting new applications (access remains subject to LinkedIn\u0027s approval and any other program requirements):\n\nYou have a B2B marketing company with an established use case for the API.\nYou have access to LinkedIn Advertising APIs. If you\u0027re new to our APIs, get started by applying for Advertising API access.\nYou agree to comply with the LinkedIn Marketing API Program Terms of Use.\nDemonstrate your data management practices, where applicable.\nDemonstrate engineering readiness and the ability to complete integration with the Company Intelligence API in a reasonable time frame.\nYou\u0027re able to dedicate go-to-market resources to launch your solution to customers.\n\nWe will update our recent changes documentation when we are ready to accept new applications.\n\nWhat permissions are required?\nThe authenticated member must have consented to the r_ads_reporting permission. No additional permission scope is needed beyond what is already granted through an existing Advertising API integration. For more details, see Increasing Access.\n\nWhat ad account roles are required?\nThe authenticated member must have a valid user role of VIEWER or above on the requested ad account. For more information, see Ad Account Roles.\n\nWhat lookback windows are supported?\nThe API supports the following lookback windows: LAST_7_DAYS, LAST_30_DAYS, LAST_60_DAYS, and LAST_90_DAYS. If no lookback window is specified, a default of 90 days is applied. For more information, see Company Intelligence API.\n\nAre organic metrics available?\nYes. The API returns both paid metrics (impressions, clicks, engagements, leads) and organic metrics (impressions, engagements) at the company level. Note that organic metrics will be 0 when a campaign filter is applied.\n\nHow are engagement levels calculated?\nThe engagementLevel field is calculated based on the number of paid and organic member engagements, normalized over the selected time range. Possible values are VERY_LOW, LOW, MEDIUM, HIGH, and VERY_HIGH.\n\nAre there privacy thresholds applied to the metrics?\nYes. All impression, engagement, and click metrics must meet specific number thresholds to protect member privacy. If that threshold isn\u0027t met, you\u0027ll see a 0 value for those metrics in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources can help you stay on top of new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Check out the Recent Changes page to see the latest API releases.\nCheck out the Developer Portal to learn more about our API products.\nUse the Migrations page to stay on top of breaking changes.\nNeed help? Reach out to Developer Support by submitting a support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

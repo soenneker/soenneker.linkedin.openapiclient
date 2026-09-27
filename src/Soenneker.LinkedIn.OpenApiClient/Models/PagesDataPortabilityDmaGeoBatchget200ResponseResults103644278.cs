@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoBatchget200ResponseResults103644278DefaultLocalizedName DefaultLocalizedName { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoBatchget200ResponseResults103644278"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "defaultLocalizedName", n => { DefaultLocalizedName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoBatchget200ResponseResults103644278DefaultLocalizedName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoBatchget200ResponseResults103644278DefaultLocalizedName.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoBatchget200ResponseResults103644278DefaultLocalizedName>("defaultLocalizedName", DefaultLocalizedName);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

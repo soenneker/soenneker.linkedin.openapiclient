@@ -1,0 +1,89 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+  "Title": "IM Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-image",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/language",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "IM Fields",
+      "Anchor": "im-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The IM name represented in string.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "provider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of the IM provider: AIM (AIM) - Deprecated SKYPE (Skype) YAHOO (Yahoo Messenger) - Deprecated ICQ (ICQ) GTALK (Google Talk) QQ (QQ) WEIXIN (WeChat)",
+            "Links": [],
+            "Values": [
+              "AIM (AIM) - Deprecated",
+              "SKYPE (Skype)",
+              "YAHOO (Yahoo Messenger) - Deprecated",
+              "ICQ (ICQ)",
+              "GTALK (Google Talk)",
+              "QQ (QQ)",
+              "WEIXIN (WeChat)"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

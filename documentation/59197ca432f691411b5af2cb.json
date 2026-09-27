@@ -1,0 +1,311 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-content-access",
+  "Title": "Live Events Content Access API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-content-access",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-spontaneous-migration",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "LinkedIn Live provides a platform for individuals and organizations to broadcast live event content to their network in real time. This video broadcasting feature is currently in beta and available to LinkedIn Members and LinkedIn Pages that meet specific criteria. This specific criteria is to ensure we provide access to existing content creators who have a significant LinkedIn audience and a history of creating quality, professional video content. We also want to ensure that video content sharing happens in a safe and trusted environment on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To learn more about requesting access to LinkedIn Live, submit an application here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Already have access? Use this API to confirm whether your profile or page have been approved. The response from this will API will determine if you have access to create live videos using the following services: assets, liveVideos, and ugcPosts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Content Access",
+        "API Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/contentAccess/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Content Access",
+        "API Request"
+      ],
+      "Text": "",
+      "Headers": [
+        "Key Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity:(member)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used when requesting content access information on behalf of a LinkedIn Member (Profile). Accepts the URL-encoded person urn of the member going live.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (Profile)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity:(company)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used when requesting content access information on behalf of a LinkedIn Page. Accepts the URL-encoded organization urn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (Pages)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "admin:(member)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used when requesting content access information on behalf of a LinkedIn Page. Accepts the URL-encoded person urn of the page admin going live.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (Pages)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featureType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must always be the value: LIVE_VIDEO.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Content Access",
+        "API Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Content Access",
+        "API Request"
+      ],
+      "Text": "You must include the X-RestLi-Protocol-Version: 2.0.0 header along with your request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Profile)",
+      "Anchor": "sample-request-profile",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Profile)"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/contentAccess/(entity:(member:urn%3Ali%3Aperson%3AmvgmS_tF6N),featureType:LIVE_VIDEO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Profile)",
+      "Anchor": "sample-request-profile",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Profile)"
+      ],
+      "Text": "In this request, we append the URL-encoded person urn to the entity:(member) parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Profile)",
+      "Anchor": "sample-request-profile",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Profile)"
+      ],
+      "Text": "URL-decoded person urn: urn:li:person:mvgmS_tF6N\nURL-encoded person urn: urn%3Ali%3Aperson%3AmvgmS_tF6N\nEntity: entity:(member:urn%3Ali%3Aperson%3AmvgmS_tF6N)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Page)",
+      "Anchor": "sample-request-page",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Page)"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/v2/contentAccess/(entity:(company:urn%3Ali%3Aorganization%3A20277203),admin:(member:urn%3Ali%3Aperson%3AmvgmS_tF6N),featureType:LIVE_VIDEO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Page)",
+      "Anchor": "sample-request-page",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Page)"
+      ],
+      "Text": "In this request, we append the URL-encoded organization urn to the entity:(company) parameter. We also append the URL-encoded person urn to the admin:(member) parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Page)",
+      "Anchor": "sample-request-page",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Page)"
+      ],
+      "Text": "URL-decoded organization urn: urn:li:organization:20277203\nURL-encoded organization urn: urn%3Ali%3Aorganization%3A20277203\nEntity: entity:(company:urn%3Ali%3Aorganization%3A20277203)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Page)",
+      "Anchor": "sample-request-page",
+      "SectionPath": [
+        "Content Access",
+        "API Request",
+        "Sample Request (Page)"
+      ],
+      "Text": "URL-decoded person urn: urn:li:person:mvgmS_tF6N\nURL-encoded person urn: urn%3Ali%3Aperson%3AmvgmS_tF6N\nAdmin: admin:(member:urn%3Ali%3Aperson%3AmvgmS_tF6N)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Response",
+      "Anchor": "api-response",
+      "SectionPath": [
+        "Content Access",
+        "API Response"
+      ],
+      "Text": "If the member or page has been approved to go live, the API returns a 200 OK response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Response",
+      "Anchor": "api-response",
+      "SectionPath": [
+        "Content Access",
+        "API Response"
+      ],
+      "Text": "If the member or page has not yet been approved to go live, the API returns a 404 Not Found response.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

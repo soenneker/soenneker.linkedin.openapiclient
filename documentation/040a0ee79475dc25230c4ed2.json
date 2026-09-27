@@ -1,0 +1,37 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+  "Title": "Including your partner identifier in API requests",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Including your partner identifier in API requests",
+      "Anchor": "including-your-partner-identifier-in-api-requests",
+      "SectionPath": [],
+      "Text": "For rate limiting and developer support purposes, strategic partners are required to include a referer header in all API requests. The referer header must contain your partner identification URN. If you haven\u0027t received a partner URN, contact LinkedIn developer support. Below you will find an example request using a fictitious partner URN:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Including your partner identifier in API requests",
+      "Anchor": "including-your-partner-identifier-in-api-requests",
+      "SectionPath": [],
+      "Text": "curl -H \u0027referer: urn:li:partner:dundermifflin\u0027 -H \u0027Authorization: Bearer AQXt\u2026\u0027 \u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:354\u0027",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

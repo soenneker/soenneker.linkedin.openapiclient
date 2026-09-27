@@ -1,0 +1,46 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+  "Title": "Publishing Articles",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Publishing Articles",
+      "Anchor": "publishing-articles",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is originalArticles . Currently, this resource captures all personal published articles. The two methods available are: ACTION and DELETE . When it\u0027s an action, the methodName will appear as createOrUpdateArticle .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "article activity - publishing a post",
+      "Anchor": "article-activity---publishing-a-post",
+      "SectionPath": [
+        "article activity - publishing a post"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022article\u0022: {\n            \u0022authors\u0022: [\n                {\n                    \u0022author\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n                    \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022\n                }\n            ], \n            \u0022content\u0022: {\n                \u0022com.linkedin.publishing.HtmlContent\u0022: {\n                    \u0022htmlText\u0022: \u0022\u003Cp\u003EThis is an awesome article!\u003C/p\u003E\u0022\n                }\n            }, \n            \u0022created\u0022: 1492111354000, \n            \u0022id\u0022: 6258368624109719552, \n            \u0022lastModified\u0022: 1492111380000, \n            \u0022state\u0022: \u0022PUBLISHED\u0022, \n            \u0022title\u0022: \u0022Sample Publishing Post\u0022, \n            \u0022version\u0022: 9\n        }, \n        \u0022distOptions\u0022: {\n            \u0022publishMessage\u0022: {\n                \u0022text\u0022: \u0022Check this article out!\u0022\n            }\n        }, \n        \u0022submitter\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022\n    }, \n    \u0022activityId\u0022: \u002212356788990000\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n    \u0022capturedAt\u0022: 1492111403071, \n    \u0022configVersion\u0022: 2, \n    \u0022id\u0022: 1177820, \n    \u0022method\u0022: \u0022ACTION\u0022, \n    \u0022methodName\u0022: \u0022createOrUpdateArticle\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n    \u0022processedActivity\u0022: {\n        \u0022article\u0022: {\n            \u0022authors\u0022: [\n                {\n                    \u0022author\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022, \n                    \u0022author~\u0022: {\n                        \u0022firstName\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Bob\u0022\n                            }, \n                            \u0022preferredLocale\u0022: {\n                                \u0022country\u0022: \u0022US\u0022, \n                                \u0022language\u0022: \u0022en\u0022\n                            }\n                        }, \n                        \u0022headline\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Software Engineer\u0022\n                            }, \n                            \u0022preferredLocale\u0022: {\n                                \u0022country\u0022: \u0022US\u0022, \n                                \u0022language\u0022: \u0022en\u0022\n                            }\n                        }, \n                        \u0022lastName\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Smith\u0022\n                            }, \n                            \u0022preferredLocale\u0022: {\n                                \u0022country\u0022: \u0022US\u0022, \n                                \u0022language\u0022: \u0022en\u0022\n                            }\n                        }\n                    }, \n                    \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022\n                }\n            ], \n            \u0022content\u0022: {\n                \u0022com.linkedin.publishing.HtmlContent\u0022: {\n                    \u0022htmlText\u0022: \u0022\u003Cp\u003EThis is an awesome article!\u003C/p\u003E\u0022\n                }\n            }, \n            \u0022created\u0022: 1492111354000, \n            \u0022id\u0022: 6258368624109719552, \n            \u0022lastModified\u0022: 1492111380000, \n            \u0022state\u0022: \u0022PUBLISHED\u0022, \n            \u0022title\u0022: \u0022Sample Publishing Post\u0022, \n            \u0022version\u0022: 9\n        }\n    }, \n    \u0022processedAt\u0022: 1492111414624, \n    \u0022resourceId\u0022: \u00226258368624109719552\u0022, \n    \u0022resourceName\u0022: \u0022originalArticles\u0022, \n    \u0022resourceUri\u0022: \u0022/originalArticles\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

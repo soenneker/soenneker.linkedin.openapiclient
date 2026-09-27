@@ -1,0 +1,974 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+  "Title": "Organization Access Control by Role",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control by Role",
+      "Anchor": "organization-access-control-by-role",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control by Role",
+      "Anchor": "organization-access-control-by-role",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control by Role",
+      "Anchor": "organization-access-control-by-role",
+      "SectionPath": [],
+      "Text": "A role defines the privileges that a member has within the organization. You must be an authenticated member with role type ADMINISTRATOR for an organization to use many of the Organization APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [
+        "Organization Access Control"
+      ],
+      "Text": "Search for access control information by member or organizational entity URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [
+        "Organization Access Control"
+      ],
+      "Text": "host: api.linkedin.com\nbasePath: /rest\nscheme: https\nendpoint: /organizationAcls\nmethods: PUT, roleAssignee FINDER, organization FINDER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [
+        "Organization Access Control"
+      ],
+      "Text": "FINDER requests must include a header for Restli Protocol 2.0.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [
+        "Organization Access Control"
+      ],
+      "Text": "X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data.Restricted to organizations in which the authenticated member has the role type ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u0027s pages and their reporting data (including follower, visitor, and content analytics).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Organization Roles",
+      "Anchor": "organization-roles",
+      "SectionPath": [
+        "Organization Roles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Role Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to administer an organizational entity.An administrator can post updates, edit the organization\u0027s page, add other admins, view analytics, and view notifications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to read and create direct sponsored content (DSC) for an organizational entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECRUITING_POSTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to post to an organizational entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_CAPTURE_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to view and manage landing pages for the company, create new landing pages, and edit existing ones.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to retrieve leads that belong to a specific account which is associated with a company page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ANALYST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to view an organization\u0027s private administrative data that relates to its social presence on LinkedIn, access limited to analytics tab to monitor the Page\u2019s performance to help drive goals. Can edit the competitors of a page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CURATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to broadcast content to employees of the organization, view Content Suggestions, create recommended content, and view and export Page analytics. Can edit the competitors of a page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to create and manage Page content, including updates, pinned posts, boosting updates, events, jobs etc.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Role State",
+      "Anchor": "role-state",
+      "SectionPath": [
+        "Role State"
+      ],
+      "Text": "",
+      "Headers": [
+        "Role State",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role is approved.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role was requested, but then rejected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REQUESTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role is requested.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REVOKED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role was previously approved, but then revoked.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find a Member\u0027s Organization Access Control Information",
+      "Anchor": "find-a-members-organization-access-control-information",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find a Member\u0027s Organization Access Control Information",
+      "Anchor": "find-a-members-organization-access-control-information",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information"
+      ],
+      "Text": "All requests must include a header for Restli Protocol 2.0.0 asX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAcls?q=roleAssignee\nHeader: X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationAcls?q=roleAssignee\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific roles, such as ADMINISTRATOR or DIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific role states, such as APPROVED or REQUESTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Role State",
+        "Find a Member\u0027s Organization Access Control Information",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022role\u0022: \u0022DIRECT_SPONSORED_CONTENT_POSTER\u0022,\n            \u0022organization\u0022: \u0022urn:li:organization:1234123\u0022,\n            \u0022roleAssignee\u0022: \u0022urn:li:person:abCdEf\u0022,\n            \u0022state\u0022: \u0022REQUESTED\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAcls?q=organization\u0026organization={encoded organization URN}\u0026role=ADMINISTRATOR\u0026state=APPROVED",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationAcls?q=organization\u0026organization={encoded organization URN}\u0026role=ADMINISTRATOR\u0026state=APPROVED\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 200 OK HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n            \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022roleAssignee\u0022: \u0022urn:li:person:abCdEf\u0022,\n            \u0022state\u0022: \u0022APPROVED\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "Fetch the next set of results using the pagination as shown in the following sample:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAcls?q=roleAssignee\u0026role=ADMINISTRATOR\u0026state=APPROVED\u0026count=10\u0026start=0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organizationAcls?q=roleAssignee\u0026role=ADMINISTRATOR\u0026state=APPROVED\u0026count=10\u0026start=0\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Administrators",
+        "Sample Response"
+      ],
+      "Text": "{\n       \u0022paging\u0022: {\n           \u0022start\u0022: 0,\n           \u0022count\u0022: 10,\n           \u0022links\u0022: [\n               {\n                   \u0022type\u0022: \u0022application/json\u0022,\n                   \u0022rel\u0022: \u0022next\u0022,\n                   \u0022href\u0022: \u0022/rest/organizationAcls?count=10\u0026q=roleAssignee\u0026role=ADMINISTRATOR\u0026start=10\u0026state=APPROVED\u0022\n               }\n           ]\n       },\n       \u0022elements\u0022: [       {\n         \u0022state\u0022: \u0022APPROVED\u0022,\n         \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n         \u0022roleAssignee\u0022: \u0022urn:li:person:A839rocZ\u0022,\n         \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n       },\n       {\n         \u0022state\u0022: \u0022APPROVED\u0022,\n         \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n         \u0022roleAssignee\u0022: \u0022urn:li:person:pwo82E2v\u0022,\n         \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n       },\n       {\n         \u0022state\u0022: \u0022APPROVED\u0022,\n         \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n         \u0022roleAssignee\u0022: \u0022urn:li:person:vQpe2J8\u0022,\n         \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n       },\n       {\n         \u0022state\u0022: \u0022APPROVED\u0022,\n         \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n         \u0022roleAssignee\u0022: \u0022urn:li:person:J2foLx4\u0022,\n         \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n       }\n     ]\n   }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Access Control",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Access Control",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAcls?q=organization\u0026organization={encoded organization URN}\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Access Control",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationAcls?q=organization\u0026organization={encoded organization URN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Access Control",
+        "Sample Response"
+      ],
+      "Text": "{\n \u0022paging\u0022: {\n \u0022count\u0022: 10,\n \u0022start\u0022: 0\n },\n \u0022elements\u0022: [\n {\n \u0022state\u0022: \u0022APPROVED\u0022,\n \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n \u0022roleAssignee\u0022: \u0022urn:li:person:A839rocZ\u0022,\n \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n },\n {\n \u0022state\u0022: \u0022APPROVED\u0022,\n \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n \u0022roleAssignee\u0022: \u0022urn:li:person:pwo82E2v\u0022,\n \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n },\n {\n \u0022state\u0022: \u0022APPROVED\u0022,\n \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n \u0022roleAssignee\u0022: \u0022urn:li:person:vQpe2J8\u0022,\n \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n },\n {\n \u0022state\u0022: \u0022APPROVED\u0022,\n \u0022role\u0022: \u0022ADMINISTRATOR\u0022,\n \u0022roleAssignee\u0022: \u0022urn:li:person:J2foLx4\u0022,\n \u0022organizationTarget\u0022: \u0022urn:li:organization:2414183\u0022\n }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Role State",
+        "Find Organization Access Control",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific roles, such as ADMINISTRATOR or DIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific role states, such as APPROVED or REQUESTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Direct Sponsored Content Poster Role",
+      "Anchor": "request-direct-sponsored-content-poster-role",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role"
+      ],
+      "Text": "Request DIRECT_SPONSORED_CONTENT_POSTER role to an organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Direct Sponsored Content Poster Role",
+      "Anchor": "request-direct-sponsored-content-poster-role",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Direct Sponsored Content Poster Role",
+      "Anchor": "request-direct-sponsored-content-poster-role",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role"
+      ],
+      "Text": "The PUT API works only when the user is requesting the DIRECT_SPONSORED_CONTENT_POSTER role to an organization for themselves and not on behalf of others.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/organizationAcls/(organization:{encoded organization URN},role:DIRECT_SPONSORED_CONTENT_POSTER,roleAssignee:{person URN})\nHeader: X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Sample Request"
+      ],
+      "Text": "{\n \u0022state\u0022: \u0022REQUESTED\u0022,\n \u0022role\u0022: \u0022DIRECT_SPONSORED_CONTENT_POSTER\u0022,\n \u0022roleAssignee\u0022: \u0022urn:li:person:abCdEf\u0022,\n \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Sample Request"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/organizationAcls/(organization:{encoded organization URN},role:DIRECT_SPONSORED_CONTENT_POSTER,roleAssignee:{person URN})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n \u0022state\u0022: \u0022REQUESTED\u0022,\n \u0022role\u0022: \u0022DIRECT_SPONSORED_CONTENT_POSTER\u0022,\n \u0022roleAssignee\u0022: \u0022urn:li:person:abCdEf\u0022,\n \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The role to add. Only the value DIRECT_SPONSORED_CONTENT_POSTER is supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The role state to add. Only the value REQUESTED is supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "roleAssignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The person URN of the member being added. Must be in the format urn:li:person{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organizational entity for which access control information is being added.Must either be in the format urn:li:organization:{id} or urn:li:organizationBrand:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Request Body Fields"
+      ],
+      "Text": "A successful response returns a 204 OK status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Details",
+      "Anchor": "retrieve-organization-details",
+      "SectionPath": [
+        "Request Direct Sponsored Content Poster Role",
+        "Retrieve Organization Details"
+      ],
+      "Text": "You can retrieve an organization\u0027s information by using Organization Lookup API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "A failed response returns one of the following status codes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malformed requests. Typically, the Access Control fields are invalid.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A viewer is not present, or the user is not authorized to modify the Access Control.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Access Control doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1378 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+  "Title": "Retrieve Exported Candidates Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Retrieve Exported Candidates Overview",
+      "Anchor": "retrieve-exported-candidates-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn allows the ability for customers to export limited LinkedIn profile information from LinkedIn Recruiter into their ATS with a single click. This integration between LinkedIn Recruiter and the partner ATS will improve workflow improvements for our customers. This integration offers an additional feature called InMail Stub Profile sync, which will allow LinkedIn member contact information to be synced to the ATS when shared by the member. With this feature enabled, LinkedIn Members will be prompted to share their contact information when they are InMailed by a recruiter. If the member consents to share, their contact information will be synced to their ATS via an InMail Stub Profile. Learn more here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Exported Candidates Overview",
+      "Anchor": "retrieve-exported-candidates-overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Exported Candidates Overview",
+      "Anchor": "retrieve-exported-candidates-overview",
+      "SectionPath": [],
+      "Text": "The call volume limit for the Recruiter One-Click Export API is 300 per Recruiter seat per month",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Exported Candidates Overview",
+      "Anchor": "retrieve-exported-candidates-overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Exported Candidates Overview",
+      "Anchor": "retrieve-exported-candidates-overview",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v2/exportedCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/exportedCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/atsPurgedExportedCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Before You Begin",
+        "Authentication"
+      ],
+      "Text": "All API requests should be authorized with a OAuth 2.0 Client Credentials token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync All Jobs",
+      "Anchor": "sync-all-jobs",
+      "SectionPath": [
+        "Before You Begin",
+        "Sync All Jobs"
+      ],
+      "Text": "For the Recruiter to associate a candidate with an appropriate job, you must sync all of your customer\u0027s jobs with LinkedIn. Learn more about syncing jobs here .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Notification Platform",
+      "Anchor": "push-notification-platform",
+      "SectionPath": [
+        "Before You Begin",
+        "Push Notification Platform"
+      ],
+      "Text": "For customer export requests to be in real-time from LinkedIn, LinkedIn will be pushing notifications of export events to our partners. Read more about LinkedIn\u2019s push notification platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receiving Push Notifications",
+      "Anchor": "receiving-push-notifications",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Receiving Push Notifications"
+      ],
+      "Text": "When an export event occurs within LinkedIn, a push notification will be sent to the registered callback URL for your customer. Each event will have an event-type of \u201CEXPORT_CANDIDATE_PROFILE\u201D.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Exported Candidate Information",
+      "Anchor": "retrieving-exported-candidate-information",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Retrieving Exported Candidate Information"
+      ],
+      "Text": "When the callback URL has received a notification event of \u201CEXPORT_CANDIDATE_PROFILE\u201D type, you should then make an API call to retrieve the limited profile information of the exported candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Exported Candidate Information",
+      "Anchor": "retrieving-exported-candidate-information",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Retrieving Exported Candidate Information"
+      ],
+      "Text": "The integrationContext field will be included in the response. This field will contain an identifier unique to the customer for which this candidate was exported on behalf of. Since all callback URLs are unique per customer, you should verify that this identifier correlates to the callback URL the request was sent to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Exported Candidate Information",
+      "Anchor": "retrieving-exported-candidate-information",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Retrieving Exported Candidate Information"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/exportedCandidates?q=request\u0026requestId=123456789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Exported Candidate Information",
+      "Anchor": "retrieving-exported-candidate-information",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Retrieving Exported Candidate Information"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=123456789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/v2/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/exportedCandidates?q=request\u0026requestId=1234abcd\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Request"
+      ],
+      "Text": "The requestId sent in the push notification will expire in 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn stub profile of the candidate being exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "StubProfile",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The notes entered by the customer during one click export.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id for the job within the applicant tracking system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the customer on whose behalf the candidate was exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:{ID}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requestedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the candidate was exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long (Number of milliseconds since midnight, January 1, 1970 UTC. It must be a positive number)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requester",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requester who initiated the request to export the candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requester",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source from where the candidate is exported. The value is always LINKEDIN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields-1",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn stub profile of the candidate being exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "StubProfile",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The notes entered by the customer during one click export.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "referenceEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the entity associated with the export. It can be either REQUISITION or PIPELINE. This field is used to determine whether referenceEntityId is externalJobRequisitionId or externalPipelineId.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReferenceEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "referenceEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier within the ATS or CRM system associated with the export. It is used to represent the externalJobRequisitionId or externalPipelineId based on the value of referenceEntityType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the customer on whose behalf the candidate was exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:{ID}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requestedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the candidate was exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long (Number of milliseconds since midnight, January 1, 1970 UTC. It must be a positive number)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requester",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requester who initiated the request to export the candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requester",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source from where the candidate is exported. The value is always LINKEDIN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [],\n    \u0022total\u0022: 1\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022requester\u0022: {\n        \u0022member\u0022: \u0022urn:li:person:k7elQHTTKX\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022firstName\u0022: \u0022John\u0022\n      },\n      \u0022candidate\u0022: {\n        \u0022profileUrl\u0022: \u0022https://www.linkedin.com/in/abc-35a72153\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022firstName\u0022: \u0022John\u0022,\n        \u0022currentEmployerNames\u0022: [\n          \u0022LinkedIn\u0022\n        ],\n        \u0022member\u0022: \u0022urn:li:person:k7elQHTTKX\u0022,\n        \u0022location\u0022: \u0022Mountain View, California, United States\u0022,\n        \u0022headline\u0022: \u0022Software Engineer at LinkedIn\u0022\n      },\n      \u0022notes\u0022: \u0022test note and emailAddresses\u0022,\n      \u0022requestedAt\u0022: 1748433986195,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022source\u0022: \u0022LINKEDIN\u0022,\n      \u0022externalJobPostingId\u0022: \u0022123456789\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [],\n    \u0022total\u0022: 1\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022requester\u0022: {\n        \u0022member\u0022: \u0022urn:li:person:k7elQHTTKX\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022firstName\u0022: \u0022John\u0022\n      },\n      \u0022candidate\u0022: {\n        \u0022profileUrl\u0022: \u0022https://www.linkedin.com/in/abc-35a72153\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022firstName\u0022: \u0022John\u0022,\n        \u0022currentEmployerNames\u0022: [\n          \u0022LinkedIn\u0022\n        ],\n        \u0022member\u0022: \u0022urn:li:person:k7elQHTTKX\u0022,\n        \u0022location\u0022: \u0022Mountain View, California, United States\u0022,\n        \u0022headline\u0022: \u0022Software Engineer at LinkedIn\u0022\n      },\n      \u0022notes\u0022: \u0022test note and emailAddresses\u0022,\n      \u0022requestedAt\u0022: 1748433986195,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022source\u0022: \u0022LINKEDIN\u0022,\n      \u0022referenceEntityType\u0022: \u0022REQUISITION\u0022,\n      \u0022referenceEntityId\u0022: \u0022Req-142b6d4a\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieving Exported Candidates",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [],\n    \u0022total\u0022: 1\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022requester\u0022: {\n        \u0022member\u0022: \u0022urn:li:person:k7elQHTTKX\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022firstName\u0022: \u0022John\u0022\n      },\n      \u0022candidate\u0022: {\n        \u0022profileUrl\u0022: \u0022https://www.linkedin.com/in/abc-35a72153\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022firstName\u0022: \u0022John\u0022,\n        \u0022currentEmployerNames\u0022: [\n          \u0022LinkedIn\u0022\n        ],\n        \u0022member\u0022: \u0022urn:li:person:k7elQHTTKX\u0022,\n        \u0022location\u0022: {\n            \u0022locationName\u0022:\u0022Mountain View, California, United States\u0022,\n            \u0022countryCode\u0022:\u0022US\u0022\n        },\n        \u0022headline\u0022: \u0022Software Engineer at LinkedIn\u0022\n      },\n      \u0022notes\u0022: \u0022test note and emailAddresses\u0022,\n      \u0022requestedAt\u0022: 1748433986195,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022source\u0022: \u0022LINKEDIN\u0022,\n      \u0022referenceEntityType\u0022: \u0022REQUISITION\u0022,\n      \u0022referenceEntityId\u0022: \u0022Req-142b6d4a\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Closed Candidate Profiles",
+      "Anchor": "retrieving-closed-candidate-profiles",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles"
+      ],
+      "Text": "After an export event occurs on behalf of a particular candidate, that candidate may choose to close their LinkedIn member account. To enable customers to be notified of such action, you should make an API call to retrieve those candidates that have recently closed their LinkedIn member accounts and update your ATS records as necessary.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Closed Candidate Profiles",
+      "Anchor": "retrieving-closed-candidate-profiles",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles"
+      ],
+      "Text": "If a candidate deletes their LinkedIn account, they can reactivate it within 21 days. After 21 days, we purge the deleted accounts and populate that information within the Closed Candidates Endpoint. Our ATS partners must query this endpoint periodically (at least once in 30 days) and notify end customers that they may need to delete the data that appear within this endpoint from their records if they do not have a legal basis to continue processing it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Closed Candidate Profiles",
+      "Anchor": "retrieving-closed-candidate-profiles",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsPurgedExportedCandidates?q=criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Closed Candidate Profiles",
+      "Anchor": "retrieving-closed-candidate-profiles",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/atsPurgedExportedCandidates?q=criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive lower date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find candidates who have closed their profiles on or after a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive upper date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find candidates who have closed their profiles before a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "exportType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the feature that exports the candidate to an external Applicant Tracking System (ATS). You should always provide ONE_CLICK_EXPORT.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive lower date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find candidates who have closed their profiles on or after a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive upper date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find candidates who have closed their profiles before a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/v2/atsPurgedExportedCandidates?timeRange.start=1589747047000\u0026timeRange.end=1592425447000\u0026q=criteria\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202505\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202506\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/atsPurgedExportedCandidates?timeRange=(start:0,end:10)\u0026exportType=ONE_CLICK_EXPORT\u0026q=criteria\u0027 \\\n--header \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022candidate\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022\n        },\n        {\n            \u0022candidate\u0022: \u0022urn:li:person:f6g7h8i9j0\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Response Body Fields"
+      ],
+      "Text": "The following fields are included in the response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn stub profile of the candidate being exported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "StubProfile",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The notes that were entered by the requester during the One-Click Export process.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "referenceEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reference type of the entity associated with this export. The available options are \u0022REQUISITION\u0022 or \u0022PIPELINE\u0022, which indicate whether the export is associated with a job requisition or a talent pipeline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "referenceEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier used by the recruiter when exporting the candidate via One-Click Export. This can be either a pipelineId or a jobRequisitionId, depending on the referenceEntityType value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier of your customer organization on whose behalf the candidate was exported. This is formatted as an organization URN (urn:li:organization:{ID}).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:{ID}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requestedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when the candidate was exported. This is represented as a long value containing the number of milliseconds since midnight, January 1, 1970 UTC. The value must be a positive number.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requester",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The information about the person who requested to export the candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requester",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields-3",
+      "SectionPath": [
+        "Retrieving Closed Candidate Profiles",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate that was exported and profile is now closed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn in format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

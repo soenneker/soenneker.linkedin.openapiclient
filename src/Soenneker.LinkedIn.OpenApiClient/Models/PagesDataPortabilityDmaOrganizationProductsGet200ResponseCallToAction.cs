@@ -7,24 +7,27 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Customizable call-to-action that the product is associated with. This is optional as an admin may choose to not create one.Documented type: ProductCallToActionRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
-        /// <summary>The active property</summary>
+        /// <summary>Whether or not CTA should be active. If the CTA is active, it will be visible for both members and admins. If its inactive, it will be visible to neither, though admins can access the last ctaType and redirectUrl values that were inputted in case they wish to reactivate it with the same values.Documented type: BooleanRequirement: Yes</summary>
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ctaType property</summary>
+        /// <summary>Verb of the message that should be conveyed, such as a request for an estimate for the product. Value enums includes BUY_NOWDOWNLOADGET_STARTEDREQUEST_DEMOTRYCONTACT_USLEARN_MORELEAD_GEN_FORMDocumented type: ProductCallToActionTypeRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType? CtaType { get; set; }
+        /// <summary>URL specified by product admins when configuring a product to use a lead generation form. The URL will point to a given organization’s privacy policy web page.Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CtaType { get; set; }
+        public string? PrivacyPolicy { get; set; }
 #nullable restore
 #else
-        public string CtaType { get; set; }
+        public string PrivacyPolicy { get; set; }
 #endif
-        /// <summary>The redirectUrl property</summary>
+        /// <summary>URL to redirect users to when they interact with CTA (call to action).Documented type: URLRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RedirectUrl { get; set; }
@@ -58,7 +61,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
-                { "ctaType", n => { CtaType = n.GetStringValue(); } },
+                { "ctaType", n => { CtaType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType>(); } },
+                { "privacyPolicy", n => { PrivacyPolicy = n.GetStringValue(); } },
                 { "redirectUrl", n => { RedirectUrl = n.GetStringValue(); } },
             };
         }
@@ -70,7 +74,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
-            writer.WriteStringValue("ctaType", CtaType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToActionCtaType>("ctaType", CtaType);
+            writer.WriteStringValue("privacyPolicy", PrivacyPolicy);
             writer.WriteStringValue("redirectUrl", RedirectUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

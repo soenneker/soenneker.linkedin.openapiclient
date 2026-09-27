@@ -22,6 +22,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValidationQueriesItem> ValidationQueries { get; set; }
 #endif
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem>? Value { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem> Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequest"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "validationQueries", n => { ValidationQueries = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValidationQueriesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValidationQueriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValidationQueriesItem>("validationQueries", ValidationQueries);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequestValueItem>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

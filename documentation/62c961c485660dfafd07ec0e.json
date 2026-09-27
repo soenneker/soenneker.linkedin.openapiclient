@@ -1,0 +1,504 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/follower-statistics",
+  "Title": "Member Follower Statistics",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/video-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Member Follower Statistics",
+      "Anchor": "member-follower-statistics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Follower Statistics",
+      "Anchor": "member-follower-statistics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Follower Statistics",
+      "Anchor": "member-follower-statistics",
+      "SectionPath": [],
+      "Text": "The memberFollowersCount API retrieves both lifetime and time-bound follower statistics for the authenticated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Follower Statistics",
+      "Anchor": "member-follower-statistics",
+      "SectionPath": [],
+      "Text": "Lifetime follower statistics: To retrieve lifetime follower statistics, use the me finder. The API returns lifetime follower counts.\n\nTime-bound follower statistics: To retrieve time-bound follower statistics, use the dateRange finder. The API returns the daily followers count within the specified dateRange.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_member_profileAnalytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your profile analytics, including the number of profile viewers, followers, and search appearances. Restricted to members.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lifetime Follower Statistics",
+      "Anchor": "retrieve-lifetime-follower-statistics",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics"
+      ],
+      "Text": "Call memberFollowersCount with me query parameter to retrieve lifetime follower statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "To fetch lifetime follower statistics for a member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberFollowersCount?q=me",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberFollowersCount?q=me\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022memberFollowersCount\u0022: 100\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-bound Follower Statistics",
+      "Anchor": "retrieve-time-bound-follower-statistics",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics"
+      ],
+      "Text": "Call memberFollowersCount with dateRange query parameter to retrieve time-bound follower statistics aggregated on daily basis.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time restriction for the query. When omitted, the lifetime member follower count will be returned on a daily basis.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting date for the query (in year, month, day format).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting year for the query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting month for the query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting day for the query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending date for the query (in year, month, day format). Queries until the current date when not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending year for the query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending month for the query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending day for the query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "To fetch time-bound follower statistics for a member from 2024/05/04 to 2024/05/06.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberFollowersCount?q=dateRange\u0026dateRange=(start:(year:2024,month:5,day:4),end:(year:2024,month:5,day:6))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberFollowersCount?q=dateRange\u0026dateRange=(start:(year:2024,month:5,day:4),end:(year:2024,month:5,day:6))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Time-bound Follower Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022memberFollowersCount\u0022: 2,\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 4\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 5\n                }\n            }\n        },\n        {\n            \u0022memberFollowersCount\u0022: 4,\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 5\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022year\u0022: 2024,\n                    \u0022day\u0022: 6\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intermittent LinkedIn server error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please try again.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

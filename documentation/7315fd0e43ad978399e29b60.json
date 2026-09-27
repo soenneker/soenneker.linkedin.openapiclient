@@ -1,0 +1,323 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+  "Title": "Job Resync Notifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Resync Notifications",
+      "Anchor": "job-resync-notifications",
+      "SectionPath": [],
+      "Text": "The Job Resync Notifications API allows your application to be notified by LinkedIn to request a job or multiple jobs to be re-synced via the SimpleJobPostings API. This allows us to resolve any inconsistencies between customer\u0027s job data between the ATS and LinkedIn for API posted jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Resync Notifications",
+      "Anchor": "job-resync-notifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Resync Notifications",
+      "Anchor": "job-resync-notifications",
+      "SectionPath": [],
+      "Text": "Ensure to register and enable only one webhook for each event type per parent application in the developer portal\u0027s webhooks tab.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Configure a webhook url which is publicly acccesible.\nRegister and validate the webhook url in the LinkedIn Developer Portal",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Registration and Validation",
+      "Anchor": "webhook-registration-and-validation",
+      "SectionPath": [
+        "Webhook Registration and Validation"
+      ],
+      "Text": "To receive notifications at your webhook, your webhook must be registered and validated. Please review and complete the steps in the documentation for Webhooks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Resync Request",
+      "Anchor": "receive-resync-request",
+      "SectionPath": [
+        "Receive Resync Request"
+      ],
+      "Text": "Registered webhook URLs will receive notifications from LinkedIn for job resync events. This request will contain the developerApplicationUrn associated to the customer and requested jobs. Process the requested job(s) for the specified developerApplicationUrn and using the jobPostingOperationType with UPDATE request for those job within 30 minutes. More details can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Receive Resync Request",
+        "Sample Request"
+      ],
+      "Text": "POST https://{webhookUrl}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ResyncJobs Schema",
+      "Anchor": "resyncjobs-schema",
+      "SectionPath": [
+        "Receive Resync Request",
+        "ResyncJobs Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "developerApplicationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer Application urn for a child app.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the callback request, current supported type include RESYNC_JOBS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "syncAllOpenJobs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents whether all open jobs belong to the Developer Application ID need to be re-sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalJobPostingIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of unique job ids within the partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Payload (Sync Individual Jobs)",
+      "Anchor": "sample-payload-sync-individual-jobs",
+      "SectionPath": [
+        "Receive Resync Request",
+        "ResyncJobs Schema",
+        "Sample Payload (Sync Individual Jobs)"
+      ],
+      "Text": "{\n  \u0022developerApplicationUrn\u0022: \u0022urn:li:developerApplication:12345\u0022,\n  \u0022externalJobPostingIds\u0022: [\n    \u0022job-1234\u0022,\n    \u0022job-2345\u0022,\n    \u0022job-3456\u0022\n  ],\n  \u0022syncAllOpenJobs\u0022: false,\n  \u0022type\u0022: \u0022RESYNC_JOBS\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Payload (Sync All Jobs)",
+      "Anchor": "sample-payload-sync-all-jobs",
+      "SectionPath": [
+        "Receive Resync Request",
+        "ResyncJobs Schema",
+        "Sample Payload (Sync All Jobs)"
+      ],
+      "Text": "{\n  \u0022developerApplicationUrn\u0022: \u0022urn:li:developerApplication:12345\u0022,\n  \u0022syncAllOpenJobs\u0022: true,\n  \u0022type\u0022: \u0022RESYNC_JOBS\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Event Responses",
+      "Anchor": "push-event-responses",
+      "SectionPath": [
+        "Push Event Responses"
+      ],
+      "Text": "Upon receiving notifications from LinkedIn, your webhook must respond with an HTTP response. For each notification delivered to your webhook, it must return an HTTP status code to indicate delivery of the notification to your webhook. Valid HTTP response codes listed below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Push Event Responses",
+      "Anchor": "push-event-responses",
+      "SectionPath": [
+        "Push Event Responses"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Code",
+        "Result",
+        "HTTP Payload Response"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Callback was successfully received",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Callback was received, but payload was not understood by the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Respond with the field errorMessage. This string field should be the reason the request payload was not understood. Example: {\u0022errorMessage\u0022: \u0022Failed to get id from request payload.\u0022}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System encountered an error while processing the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "If a push notification request sent to the registered webhook URL receives an unsuccessful response (not 200 OK), then LinkedIn will retry sending the request.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "header",
+      "grant_type": "authorization_code",
+      "redirect_uri": "https://www.getpostman.com/oauth2/callback",
+      "scope": "r_compliance",
+      "tokenName": "Compliance - Read"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027complianceevents-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "7469beb8-3e32-4db2-9fbf-18d217ced22f",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "990a1644-d708-4cc4-aa58-a9cb4b9fe632",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "73ae177e-8b1b-46a9-b2b0-9d8a237850df",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn provides Compliance API Guides for all monitoring, archiving, and management of communications for enterprises in regulated industries. The APIs will help your social interactions remain effective while ensuring compliance with corporate governance policies and major regulations.\n\nThe Compliance Events API allows applications to archive all LinkedIn activities from the past 30 days of a regulated, authenticated member. It returns each monitored activity as an individual event record to provide ease of archive and remediation if necessary.\n\nAll the variables used in this collection are defined in the \u0060Compliance Events\u0060 environment.\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/).",
+    "name": "Compliance Events",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "a4fe22d6-873c-47d6-b01e-c262c60fc54d",
+      "item": [
+        {
+          "description": "This folder contains APIs to opt-in and opt-out a member to be regulated on LinkedIn.\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-authorization).",
+          "id": "30b0fae7-f439-4869-9dc3-6c151087d898",
+          "item": [
+            {
+              "id": "d6675add-2f99-41c4-9f30-48e398b2d1db",
+              "name": "Opt in a member to be regulated",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{}"
+                },
+                "header": [],
+                "method": "POST",
+                "url": "https://api.linkedin.com/v2/memberComplianceAuthorizations"
+              },
+              "response": []
+            },
+            {
+              "id": "37d6248d-8664-481d-a86d-e17a8ceac168",
+              "name": "Check a member\u0027s regulation status",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "api",
+                    "linkedin",
+                    "com"
+                  ],
+                  "path": [
+                    "v2",
+                    "memberComplianceAuthorizations"
+                  ],
+                  "protocol": "https",
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "member"
+                    }
+                  ],
+                  "raw": "https://api.linkedin.com/v2/memberComplianceAuthorizations?q=member"
+                }
+              },
+              "response": []
+            },
+            {
+              "id": "d61d901d-5961-41c1-a8db-be3a9de123fd",
+              "name": "Opt out a member from being regulated",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "Opt out a member from being regulated on LinkedIn.\n\n**Note:** A member will not opt out of Compliance authorization due to access token expiration. The only ways an opt out can happen are:\n* Application invokes the DELETE API mentioned above\n* The regulated member removes the application\u0027s authorization through LinkedIn\u0027s Privacy Setting page. This can be found under the [Third Parties section](https://www.linkedin.com/psettings/permitted-services).\n\n\nTo know more, please [refer](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#sample-get-response).",
+                "header": [],
+                "method": "DELETE",
+                "url": "https://api.linkedin.com/v2/memberComplianceAuthorizations/developerApplication=urn:li:developerApplication:{{developer_application_id}}\u0026member=urn:li:person:{{person_id}}"
+              },
+              "response": []
+            }
+          ],
+          "name": "Compliance Authorization"
+        },
+        {
+          "description": "This folder contains API to retrieve compliance events for a regulated member.\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events).",
+          "id": "9c99b7c2-abfd-491e-ab6f-4a06c7d879f6",
+          "item": [
+            {
+              "id": "db916812-c8d7-41a4-afea-81d74405bac6",
+              "name": "Retrieve compliance events for a regulated member",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "Once the member has authorized to be regulated, the compliance events for the member can be retrieved using the \u0060/v2/complianceEvents\u0060 API. \n\nTo know more on the response schema, refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events-schema).\n\nTo know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?context=linkedin/compliance/context#compliance-events).",
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "api",
+                    "linkedin",
+                    "com"
+                  ],
+                  "path": [
+                    "v2",
+                    "complianceEvents"
+                  ],
+                  "protocol": "https",
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "memberAndApplication"
+                    },
+                    {
+                      "key": "projection",
+                      "value": "(elements*(id,capturedAt,processedAt,configVersion,owner~(firstName,lastName,headline),actor~(firstName,lastName,headline),resourceName,resourceid,resourceUri,method,activity,processedActivity,siblingActivities,parentActivity,parentSiblingActivities),paging)"
+                    },
+                    {
+                      "key": "startTime",
+                      "value": "{{start_time_in_ms}}"
+                    },
+                    {
+                      "key": "count",
+                      "value": "10"
+                    }
+                  ],
+                  "raw": "https://api.linkedin.com/v2/complianceEvents?q=memberAndApplication\u0026projection=(elements*(id,capturedAt,processedAt,configVersion,owner~(firstName,lastName,headline),actor~(firstName,lastName,headline),resourceName,resourceid,resourceUri,method,activity,processedActivity,siblingActivities,parentActivity,parentSiblingActivities),paging)\u0026startTime={{start_time_in_ms}}\u0026count=10"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Compliance Events"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ]
+}

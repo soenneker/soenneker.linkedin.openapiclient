@@ -1,0 +1,404 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/",
+  "Title": "LinkedIn Marketing API Program",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/account-intel-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/company-intelligence-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-social-action-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "The LinkedIn Marketing Platform helps businesses grow by building technology to reach, engage, and convert professional audiences at scale. The platform offers APIs to create LinkedIn marketing campaigns, to report campaign performance, to manage leads, and to grow a company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "Quickstart",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "How-To Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "How-To Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Program",
+      "Anchor": "hero-title",
+      "SectionPath": [],
+      "Text": "What\u0027s new",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertising",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Advertising"
+      ],
+      "Text": "With Advertising APIs, streamline your campaign management, audience targeting, and track performance to optimize advertising efforts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertising",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Advertising"
+      ],
+      "Text": "Campaign Management\n \n \n \n \n \n \n \n Integration Requirements - Advertising API\n \n \n \n \n \n \n \n Reporting and Analytics\n \n \n \n \n \n \n \n Integration Requirements - Reporting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Event Management"
+      ],
+      "Text": "Streamline event operations, amplify visibility, and drive meaningful connections within the professional landscape with Events APIs (Management \u0026 Ads).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Management",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Event Management"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Events\n \n \n \n \n \n \n \n Event Management API Usecases\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Community Management"
+      ],
+      "Text": "Efficiently manage and engage with their LinkedIn communities, enhancing social media presence and interactions on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Community Management"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Page Access Management\n \n \n \n \n \n \n \n Page and Content Analysis\n \n \n \n \n \n \n \n Shares \u0026 Social Stream\n \n \n \n \n \n \n \n Monitor Mentions of Your Brand\n \n \n \n \n \n \n \n Mention a Member or a Brand\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Lead Sync"
+      ],
+      "Text": "Seamlessly synchronize lead data captured through LinkedIn Lead Gen Forms with customer relationship management (CRM) systems and simplify lead management and follow-up processes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Lead Sync"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Lead Sync\n \n \n \n \n \n \n \n Lead Sync API Use Cases\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Matched Audiences"
+      ],
+      "Text": "Reach specific audiences by uploading contact lists, website retargeting, or utilizing account targeting for more precise Ad campaigns on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Matched Audiences"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n DMP Segments\n \n \n \n \n \n \n \n DMP Segment Users\n \n \n \n \n \n \n \n DMP Segment Destinations\n \n \n \n \n \n \n \n DMP Segment Companies\n \n \n \n \n \n \n \n DMP Segment List\n \n \n \n \n \n \n \n Website Retargeting\n \n \n \n \n \n \n \n Ad Segments\n \n \n \n \n \n \n \n Predictive Audiences\n \n \n \n \n \n \n \n Matched Audiences API Use Cases\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Audience Insights"
+      ],
+      "Text": "Provides valuable data and analytics to advertisers, helping you better understand and target your audience on the platform for more effective and tailored marketing campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Audience Insights"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Audience Insights API\n \n \n \n \n \n \n \n Audience Insights API Use Cases\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Planning",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Media Planning"
+      ],
+      "Text": "Enables marketers to have a better understanding of investment delivery against valuable audiences and objectives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Planning",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Media Planning"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Media Planning API\n \n \n \n \n \n \n \n Manage Media Plans\n \n \n \n \n \n \n \n Media Planning API Use Cases\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Conversions"
+      ],
+      "Text": "Securely and accurately track and measure the impact of their LinkedIn ad campaigns by sending conversion event data directly to LinkedIn, to help optimize your advertising efforts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Conversions"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Conversions API\n \n \n \n \n \n \n \n Getting Access to Conversions API\n \n \n \n \n \n \n \n Deduplication\n \n \n \n \n \n \n \n Enabling Click IDs\n \n \n \n \n \n \n \n Google Tag Manager Server-Side Tagging\n \n \n \n \n \n \n \n Conversions API Payload Builder\n \n \n \n \n \n \n \n Use Cases - Conversions API\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Company Intelligence"
+      ],
+      "Text": "Gain insights into company level data for all companies reached via LinkedIn with engagement score, paid impressions, paid clicks, leads, organic impressions, and organic engagements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Intelligence",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Marketing APIs",
+        "Company Intelligence"
+      ],
+      "Text": "Overview\n \n \n \n \n \n \n \n Company Intelligence API\n \n \n \n \n \n \n \n Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Developer Resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and Developer Resources"
+      ],
+      "Text": "These resources can help you stay on top of new features, developer portal access, migrations, and deprecations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Developer Resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and Developer Resources"
+      ],
+      "Text": "Stay on top of breaking changes related to migration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Developer Resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and Developer Resources"
+      ],
+      "Text": "Stay on top of the developer offerings though our portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Developer Resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and Developer Resources"
+      ],
+      "Text": "Stay on top of the latest feature updates via available on our blog post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support and Developer Resources",
+      "Anchor": "support-and-developer-resources",
+      "SectionPath": [
+        "Support and Developer Resources"
+      ],
+      "Text": "Refer to LinkedIn API Partner Support for how to reach Developer Support.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

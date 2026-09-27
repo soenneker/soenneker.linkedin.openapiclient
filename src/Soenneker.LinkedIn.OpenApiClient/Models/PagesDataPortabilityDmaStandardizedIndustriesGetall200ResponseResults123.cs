@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Function { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "function", n => { Function = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaStandardizedIndustriesGetall200ResponseResults123Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaStandardizedIndustriesGetall200ResponseResults123Name.CreateFromDiscriminatorValue); } },
                 { "superTitle", n => { SuperTitle = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("function", Function);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaStandardizedIndustriesGetall200ResponseResults123Name>("name", Name);
             writer.WriteStringValue("superTitle", SuperTitle);
             writer.WriteAdditionalData(AdditionalData);

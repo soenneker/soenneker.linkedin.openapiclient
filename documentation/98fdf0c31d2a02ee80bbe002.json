@@ -1,0 +1,370 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/invitation-schema",
+  "Title": "Invitation Schema",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Invitation Schema",
+      "Anchor": "invitation-schema",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this invitation.\u00A0Represented as milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the deletion of this invitation.\u00A0Represented as milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the invitation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "invitee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the invitee. Can be one following format: Person - urn:li:person:{personID} Email - urn:li:emailAddress:{emailID} Phone - urn:li:phoneAccount:{phoneAccountID}",
+            "Links": [],
+            "Values": [
+              "Person - urn:li:person:{personID}",
+              "Email - urn:li:emailAddress:{emailID}",
+              "Phone - urn:li:phoneAccount:{phoneAccountID}"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "inviter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier of the LinkedIn member as the inviter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this invitation.\u00A0Represented as milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message content. Can be a template or customized message.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message template ID. Can be the following values: \u0022invite_member_28\u0022 - Default member template \u0022invite_guest\u0022 - Default guest template \u0022sms_invite_guest\u0022 - Default SMS template \u0022accept_invite_04\u0022 - Default invitation accept template",
+            "Links": [],
+            "Values": [
+              "\u0022invite_member_28\u0022 - Default member template",
+              "\u0022invite_guest\u0022 - Default guest template",
+              "\u0022sms_invite_guest\u0022 - Default SMS template",
+              "\u0022accept_invite_04\u0022 - Default invitation accept template"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin. invitations. InvitationMessage. body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The body of a custom message created by the inviter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sentAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of the last time this invitation was sent.\u00A0Represented as milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source type of this invitation. Can be the following values: ABI -\u00A0The invitation is contributed by Address-Book-Import workflow. PYMK -\u00A0The invitation is contributed by People-You-May-Know workflow. PROFILE -\u00A0The invitation comes from direct profile view. OTHER -\u00A0The invitation comes from all other sources except the specified ones.",
+            "Links": [],
+            "Values": [
+              "ABI -\u00A0The invitation is contributed by Address-Book-Import workflow.",
+              "PYMK -\u00A0The invitation is contributed by People-You-May-Know workflow.",
+              "PROFILE -\u00A0The invitation comes from direct profile view.",
+              "OTHER -\u00A0The invitation comes from all other sources except the specified ones."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source type of this invitation. Can be the following values: UNSENT -\u00A0The invitation has been created but has not been submitted to the senders for processing. ABORTED -\u00A0The invitation was aborted prior to being sent. PENDING -\u00A0The invitation has been sent and is awaiting action by the invitee or inviter. BOUNCED -\u00A0The invitation failed to be sent due to a problem with the delivery mechanism. ACCEPTED -\u00A0The invitation has been accepted by the invitee. IGNORED -\u00A0The invitation has been ignored by the invitee. REJECTED -\u00A0The invitation has been rejected by the invitee. WITHDRAWN -\u00A0The invitation has been withdrawn by the inviter after it is sent out. EXPIRED -\u00A0The invitation has been expired. BLOCKED -\u00A0The invitation was sent to an invitee without providing sufficient invitee information.",
+            "Links": [],
+            "Values": [
+              "UNSENT -\u00A0The invitation has been created but has not been submitted to the senders for processing.",
+              "ABORTED -\u00A0The invitation was aborted prior to being sent.",
+              "PENDING -\u00A0The invitation has been sent and is awaiting action by the invitee or inviter.",
+              "BOUNCED -\u00A0The invitation failed to be sent due to a problem with the delivery mechanism.",
+              "ACCEPTED -\u00A0The invitation has been accepted by the invitee.",
+              "IGNORED -\u00A0The invitation has been ignored by the invitee.",
+              "REJECTED -\u00A0The invitation has been rejected by the invitee.",
+              "WITHDRAWN -\u00A0The invitation has been withdrawn by the inviter after it is sent out.",
+              "EXPIRED -\u00A0The invitation has been expired.",
+              "BLOCKED -\u00A0The invitation was sent to an invitee without providing sufficient invitee information."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "useCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use case of this invitation such as whethether client is going to send the invitation out. Can be the following values: CLIENT_TO_SEND -\u00A0The client will send this invitation. The service should store this invitation and not send it out, e.g.native SMS.",
+            "Links": [],
+            "Values": [
+              "CLIENT_TO_SEND -\u00A0The client will send this invitation. The service should store this invitation and not send it out, e.g.native SMS."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "validationToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A randomly generated value used for the invitee performing action on his or her own pending invitations. This field will only be returned if the requester is the invitee of the invitation object.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1271 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+  "Title": "Comments API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "DMA Comment API returns comments or nested comments on a post or a comment. DMA comment API only supports BATCH_GET.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "BATCH_GET - List of DMA comments for the given set of ids (commentUrns)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comment Example",
+      "Anchor": "comment-example",
+      "SectionPath": [
+        "Comment Example"
+      ],
+      "Text": "Refer to an image below for a comment example on LinkedIn Feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s comments and comments made under your organization\u0027s posts or comments. Restricted to organizations in which the authenticated member has the following company page role. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "An organizational admin can access a comment through this API if one of the following is true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "That organization/organizationalPage created the comment\nThat organization/organizationalPage created the post or comment that the requested comment is under",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "If a non-authorized viewer tries to access comments, the API will throw 403.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Access",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Some fields may be removed based on the member\u0027s DMA privacy settings. The fields in the right column will be removed if the PersonUrn in the field on the left does not consent to having their data shared from this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Access",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Member Field",
+        "Fields to Remove"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created:(actor)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "created:(actor), commentary, content",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created:(impersonator)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "created:(impersonator)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified:(actor)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastModified:(actor)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified:(impersonator)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastModified:(impersonator)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentary:(attributes:(value:(person:(person))))",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "commentary:(attributes:(value:(person:(person))))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Comment URNs",
+      "Anchor": "comment-urns",
+      "SectionPath": [
+        "Comment URNs"
+      ],
+      "Text": "A comment URN is a composite URN combining the parent thread URN (post or comment) with the comment ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Comment URNs",
+      "Anchor": "comment-urns",
+      "SectionPath": [
+        "Comment URNs"
+      ],
+      "Text": "urn:li:comment:(\u003Cpost_or_comment_urn\u003E,\u003Ccomment_id\u003E)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example \u2014 Top-Level Comment",
+      "Anchor": "example--top-level-comment",
+      "SectionPath": [
+        "Example \u2014 Top-Level Comment"
+      ],
+      "Text": "Post URN:       urn:li:activity:{ACTIVITY_ID}\nComment ID:     {COMMENT_ID}\nComment URN:    urn:li:comment:(urn:li:activity:{ACTIVITY_ID},{COMMENT_ID})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example \u2014 Nested Comment",
+      "Anchor": "example--nested-comment",
+      "SectionPath": [
+        "Example \u2014 Nested Comment"
+      ],
+      "Text": "A nested comment is also known as a reply or comment reply. When a user replies to an existing comment on LinkedIn, it creates a nested comment structure where the reply is linked to its parent comment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example \u2014 Nested Comment",
+      "Anchor": "example--nested-comment",
+      "SectionPath": [
+        "Example \u2014 Nested Comment"
+      ],
+      "Text": "Parent Comment URN:   urn:li:comment:(urn:li:activity:{ACTIVITY_ID},{PARENT_COMMENT_ID})\nReply Comment ID:     {REPLY_COMMENT_ID}\nNested Comment URN:   urn:li:comment:(urn:li:comment:(urn:li:activity:{ACTIVITY_ID},{PARENT_COMMENT_ID}),{REPLY_COMMENT_ID})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id referring to this comment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The object to which this comment is attributed. For comments on a post, the object of both nested and top-level comments would be the post URN. Can be urn:li:share, urn:li:ugcPost, urn:li:activity and urn:li:comment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CommentMessage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#commentmessage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The text of the comment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentComment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For nested comments, this is the URN of the parent comment. This is null if the comment is a top-level comment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of ContentEntity",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#contententity"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Content in a comment, such as an image. Null if the comment author has opted out of DMA.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the update of this content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CommentMessage",
+      "Anchor": "commentmessage",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "CommentMessage"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text of the comment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of Attribute",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#attribute"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The list of annotations within the comment text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Attribute",
+      "Anchor": "attribute",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Attribute"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "length",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The length of the range within the referenced ordered collection. Must be greater than zero and start \u002B length must be less than the length of the referenced ordered collection.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Starting position of the range within the referenced ordered collection. Must be greater than or equal to zero and start \u002B length must be less than the length of the referenced ordered collection. Zero-based index.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the attribute that applies to given range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union [PersonAttributedEntity, OrganizationAttributedEntity, OrganizationalPageAttributedEntity]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.dma.socialactions.PersonAttributedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains a person field that points to a personUrn. This person field is null if the person does not consent to having their data shared from this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "personUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.dma.socialactions.OrganizationAttributedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains an organization field that points to an organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.common.OrganizationalPageAttributedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains an organizationalPage field that points to an organizationalPage URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp",
+      "Anchor": "auditstamp",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "AuditStamp"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity authorized the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor. Must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When the event/action happened in epoch time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContentEntity",
+      "Anchor": "contententity",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "ContentEntity"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A permalink to the image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The image entity attached to the comment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Comment URNs",
+      "Anchor": "obtaining-comment-urns",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs"
+      ],
+      "Text": "There are two methods to obtain Comment URNs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 1: Using the commentsOnEntity Finder",
+      "Anchor": "method-1-using-the-commentsonentity-finder",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 1: Using the commentsOnEntity Finder"
+      ],
+      "Text": "Use the DMA Feed Content API\u0027s commentsOnEntity finder to retrieve comment URNs for an entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 1: Using the commentsOnEntity Finder",
+      "Anchor": "method-1-using-the-commentsonentity-finder",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 1: Using the commentsOnEntity Finder"
+      ],
+      "Text": "Step 1: Call the commentsOnEntity finder:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Method 1: Using the commentsOnEntity Finder",
+      "Anchor": "method-1-using-the-commentsonentity-finder",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 1: Using the commentsOnEntity Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?q=commentsOnEntity\u0026entity=urn%3Ali%3Aactivity%3A{ACTIVITY_ID}\u0026start=0\u0026count=100\u0026maxPaginationCount=100",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 1: Using the commentsOnEntity Finder",
+      "Anchor": "method-1-using-the-commentsonentity-finder",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 1: Using the commentsOnEntity Finder"
+      ],
+      "Text": "Step 2: Use the returned comment URNs with the DMA Comments BATCH_GET API below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 1: Using the commentsOnEntity Finder",
+      "Anchor": "method-1-using-the-commentsonentity-finder",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 1: Using the commentsOnEntity Finder"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 1: Using the commentsOnEntity Finder",
+      "Anchor": "method-1-using-the-commentsonentity-finder",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 1: Using the commentsOnEntity Finder"
+      ],
+      "Text": "The entity parameter supports: urn:li:share, urn:li:ugcPost, urn:li:groupPost, urn:li:activity, and urn:li:comment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Copy Comment Link from LinkedIn UI",
+      "Anchor": "method-2-copy-comment-link-from-linkedin-ui",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 2: Copy Comment Link from LinkedIn UI"
+      ],
+      "Text": "To obtain the Comment URN from LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Copy Comment Link from LinkedIn UI",
+      "Anchor": "method-2-copy-comment-link-from-linkedin-ui",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 2: Copy Comment Link from LinkedIn UI"
+      ],
+      "Text": "Navigate to the comment on LinkedIn (either a top-level comment on a post or a nested comment/reply)\nClick the three dots (\u2022\u2022\u2022) menu icon on the comment\nSelect Copy link to comment from the menu options\nThe copied URL will follow this pattern:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Method 2: Copy Comment Link from LinkedIn UI",
+      "Anchor": "method-2-copy-comment-link-from-linkedin-ui",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 2: Copy Comment Link from LinkedIn UI"
+      ],
+      "Text": "https://www.linkedin.com/feed/update/urn:li:activity:{ACTIVITY_ID}/?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A{ACTIVITY_ID}%2C{COMMENT_ID}%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Copy Comment Link from LinkedIn UI",
+      "Anchor": "method-2-copy-comment-link-from-linkedin-ui",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 2: Copy Comment Link from LinkedIn UI"
+      ],
+      "Text": "Extract and URL-decode the commentUrn query parameter value to get the usable Comment URN:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Method 2: Copy Comment Link from LinkedIn UI",
+      "Anchor": "method-2-copy-comment-link-from-linkedin-ui",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 2: Copy Comment Link from LinkedIn UI"
+      ],
+      "Text": "urn:li:comment:(urn:li:activity:{ACTIVITY_ID},{COMMENT_ID})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Copy Comment Link from LinkedIn UI",
+      "Anchor": "method-2-copy-comment-link-from-linkedin-ui",
+      "SectionPath": [
+        "Example \u2014 Nested Comment",
+        "Obtaining Comment URNs",
+        "Method 2: Copy Comment Link from LinkedIn UI"
+      ],
+      "Text": "This CommentUrn may then be passed to the DMA Comments API via the ids parameter. This method applies to both top-level comments and nested comments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaComments?ids=List(urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID}%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaComments?ids=List(urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID}%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:comment:(urn:li:activity:{ACTIVITY_ID},{COMMENT_ID})\u0022: {\n      \u0022id\u0022: {COMMENT_ID},\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:organization:109761421\u0022,\n        \u0022time\u0022: 1763375562669\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:organization:109761421\u0022,\n        \u0022time\u0022: 1763375562669\n      },\n      \u0022commentary\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022Test\u0022\n      },\n      \u0022object\u0022: \u0022urn:li:activity:{ACTIVITY_ID}\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022urn:li:comment:(urn:li:activity:{ACTIVITY_ID},{COMMENT_ID})\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Multiple Comments",
+      "Anchor": "retrieving-multiple-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Retrieving Multiple Comments"
+      ],
+      "Text": "To retrieve multiple comments in a single request, separate comment URNs with commas inside the List() parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Multiple Comments",
+      "Anchor": "retrieving-multiple-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Retrieving Multiple Comments"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Multiple Comments",
+      "Anchor": "retrieving-multiple-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Retrieving Multiple Comments"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaComments?ids=List(urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID_1}%29,urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID_2}%29,urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID_3}%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Multiple Comments",
+      "Anchor": "retrieving-multiple-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Retrieving Multiple Comments"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaComments?ids=List(urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID_1}%29,urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID_2}%29,urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A{ACTIVITY_ID}%2C{COMMENT_ID_3}%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of CommentUrns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of CommentUrn to fetch the comments. Only accepts commentUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment?view=li-dma-data-portability-2026-08\u0026tabs=http#comment-urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3Acomment%3A%28urn%3Ali%3Aactivity%3A7061794973381181440%2C7061795051579785216%29)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide a valid OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not authorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The viewer is not an admin of the organizational entity that created the comments or top-level comments/posts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

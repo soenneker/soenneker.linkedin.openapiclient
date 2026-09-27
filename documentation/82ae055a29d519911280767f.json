@@ -1,0 +1,1028 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+  "Title": "Data Freshness",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [],
+      "Text": "Learn how to keep member profile and verification data up-to-date using polling or push notifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [],
+      "Text": "This guide focuses on refresh strategies for keeping data current and is only available for Plus tier. For initial data retrieval, call /verificationReport and /identityMe directly when the member authorizes your app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Choose Your Refresh Method",
+      "Anchor": "choose-your-refresh-method",
+      "SectionPath": [
+        "Choose Your Refresh Method"
+      ],
+      "Text": "",
+      "Headers": [
+        "Method",
+        "Best For",
+        "When to Use"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "verifiedWithinDays (/verificationReport)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "On-demand freshness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Interactive user flows that require periodic re-verification",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Validation Status API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness#method-1-validation-status-api-polling"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Bulk checks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Daily background jobs to check many members",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Push Notifications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness#method-2-push-notifications"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Real-time updates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event-driven notifications",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose Your Refresh Method",
+      "Anchor": "choose-your-refresh-method",
+      "SectionPath": [
+        "Choose Your Refresh Method"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose Your Refresh Method",
+      "Anchor": "choose-your-refresh-method",
+      "SectionPath": [
+        "Choose Your Refresh Method"
+      ],
+      "Text": "Critical: Regardless of how you detect data changes (polling via /validationStatus or push notifications), you must call the actual endpoints (/verificationReport and /identityMe) with the member\u0027s 3-legged OAuth access token to retrieve updated data. Status checks and notifications only indicate that changes exist\u2014they don\u0027t contain the actual data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose Your Refresh Method",
+      "Anchor": "choose-your-refresh-method",
+      "SectionPath": [
+        "Choose Your Refresh Method"
+      ],
+      "Text": "Use the optional verifiedWithinDays query parameter on /verificationReport for interactive, on-demand freshness checks during member sign-in or other user-driven flows.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When to Use",
+      "Anchor": "when-to-use",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "When to Use"
+      ],
+      "Text": "Performing bulk validation checks (up to 500 members)\nRunning scheduled background jobs\nChecking if member data has been updated without member interaction\nMonitoring validation status across your entire user base",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "How It Works"
+      ],
+      "Text": "Check status (2-legged OAuth, no member consent needed):\n\nCall /validationStatus with up to 500 member ids\nGet status: VALID, INVALID, or VALID_WITH_UPDATES\n\n\nRefresh data (3-legged OAuth, member consent required):\n\nFor members with VALID_WITH_UPDATES or INVALID status\nCall /verificationReport and /identityMe with member\u0027s access token\nStore updated data",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "How It Works"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "How It Works"
+      ],
+      "Text": "Make sure you\u0027ve stored the required fields listed in Critical Fields to Persist before implementing this method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Polling Interval",
+      "Anchor": "recommended-polling-interval",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "Recommended Polling Interval"
+      ],
+      "Text": "Poll once per day (every 24 hours)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Polling Interval",
+      "Anchor": "recommended-polling-interval",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "Recommended Polling Interval"
+      ],
+      "Text": "Run during off-peak hours to minimize impact\nBatch requests (up to 500 members per call) to stay within rate limits\nOnly call actual endpoints /verificationReport and /identityMe for members with status changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Method 1: Validation Status API (Polling)",
+        "Best Practices"
+      ],
+      "Text": "\u2705 Run polling during off-peak hours\n\u2705 Batch requests (up to 500 members per call)\n\u2705 Only call actual endpoints for members with VALID_WITH_UPDATES or INVALID\n\u2705 Implement exponential backoff for rate limit errors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Push Notifications",
+      "Anchor": "method-2-push-notifications",
+      "SectionPath": [
+        "Method 2: Push Notifications"
+      ],
+      "Text": "Push notifications provide real-time updates when member data changes, eliminating the need for constant polling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Push Notifications",
+      "Anchor": "method-2-push-notifications",
+      "SectionPath": [
+        "Method 2: Push Notifications"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Method 2: Push Notifications",
+      "Anchor": "method-2-push-notifications",
+      "SectionPath": [
+        "Method 2: Push Notifications"
+      ],
+      "Text": "To set up webhooks and enable push notifications for your application, please work with the Verified on LinkedIn Support team (voli-support@linkedin.com).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When to Use",
+      "Anchor": "when-to-use-1",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "When to Use"
+      ],
+      "Text": "You need immediate notification when member data changes\nEvent-driven architecture where you want to react to changes as they occur\nReducing API calls compared to frequent polling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works-1",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How It Works"
+      ],
+      "Text": "Register a webhook to receive push notifications\nReceive notifications when member verification or profile data changes\nRefresh data by calling /verificationReport and /identityMe with the member\u0027s 3-legged OAuth access token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works-1",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How It Works"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works-1",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How It Works"
+      ],
+      "Text": "Push notifications indicate that changes exist\u2014they do not contain the actual updated data. You must call the actual endpoints to retrieve the new data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Register a Webhook?",
+      "Anchor": "how-to-register-a-webhook",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?"
+      ],
+      "Text": "Webhooks allow your application to receive real-time HTTP notifications when subscribed events occur. Only applications with approved webhook use cases can register and receive these notifications. LinkedIn sends notifications only to webhook endpoints that are properly registered and successfully validated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Register Your Webhook URL",
+      "Anchor": "1-register-your-webhook-url",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "1. Register Your Webhook URL"
+      ],
+      "Text": "Open your application in the LinkedIn Developer Portal.\nNavigate to the Webhooks tab.\nClick Create Webhook.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Register Your Webhook URL",
+      "Anchor": "1-register-your-webhook-url",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "1. Register Your Webhook URL"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Register Your Webhook URL",
+      "Anchor": "1-register-your-webhook-url",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "1. Register Your Webhook URL"
+      ],
+      "Text": "The Webhooks tab is visible only for applications that have been approved for webhook usage. Applications with the Verified on LinkedIn product will see the Webhooks tab in the Developer Portal. To learn more, refer to our LinkedIn Webhooks Setup guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Enter and Test Your Webhook Endpoint",
+      "Anchor": "2-enter-and-test-your-webhook-endpoint",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "2. Enter and Test Your Webhook Endpoint"
+      ],
+      "Text": "When configuring your webhook in the LinkedIn Developer Portal, enter the HTTPS endpoint where your application will receive LinkedIn push notifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Enter and Test Your Webhook Endpoint",
+      "Anchor": "2-enter-and-test-your-webhook-endpoint",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "2. Enter and Test Your Webhook Endpoint"
+      ],
+      "Text": "Click Test to validate the webhook URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Choose Event Types",
+      "Anchor": "3-choose-event-types",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "3. Choose Event Types"
+      ],
+      "Text": "Select the events your application should be notified about.\nFor Verified on LinkedIn integrations, choose:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Choose Event Types",
+      "Anchor": "3-choose-event-types",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "3. Choose Event Types"
+      ],
+      "Text": "Notifications of member verification or profile status change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Choose Event Types",
+      "Anchor": "3-choose-event-types",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "3. Choose Event Types"
+      ],
+      "Text": "This ensures your webhook receives updates whenever a member\u2019s verification or profile data changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Validating the Webhook Endpoint",
+      "Anchor": "4-validating-the-webhook-endpoint",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "4. Validating the Webhook Endpoint"
+      ],
+      "Text": "LinkedIn validates the ownership of a webhook URL before it can be registered by an application. The validation flow leverages the application\u0027s clientSecret as the secret key along with the universally-known HMACSHA256 algorithm to generate and validate the application\u0027s response to a challenge code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Validating the Webhook Endpoint",
+      "Anchor": "4-validating-the-webhook-endpoint",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "How to Register a Webhook?",
+        "4. Validating the Webhook Endpoint"
+      ],
+      "Text": "Once you save the URL and events, the webhook will appear with validation status and notification status along with last validation time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Payload",
+      "Anchor": "event-payload",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Event Payload"
+      ],
+      "Text": "When member data changes, you\u0027ll receive a FEDERATED_MEMBER_DATA_STATUS_CHANGE event with the following structure:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example: Access Revoked",
+      "Anchor": "example-access-revoked",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Event Payload",
+        "Example: Access Revoked"
+      ],
+      "Text": "When a member revokes your application\u0027s access, verification and profile status fields are not included:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example: Access Revoked",
+      "Anchor": "example-access-revoked",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Event Payload",
+        "Example: Access Revoked"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022H6slYd_dso\u0022,\n  \u0022type\u0022: \u0022FEDERATED_MEMBER_DATA_STATUS_CHANGE\u0022,\n  \u0022developerApplicationId\u0022: 220828831,\n  \u0022eventTimestamp\u0022: 1762378846790,\n  \u0022statusUpdate\u0022: {\n    \u0022isAccessRevoked\u0022: true\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example: Data Status Change",
+      "Anchor": "example-data-status-change",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Event Payload",
+        "Example: Data Status Change"
+      ],
+      "Text": "When member data changes but access is not revoked, the payload includes current status values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example: Data Status Change",
+      "Anchor": "example-data-status-change",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Event Payload",
+        "Example: Data Status Change"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022K9mtZe_ftq\u0022,\n  \u0022type\u0022: \u0022FEDERATED_MEMBER_DATA_STATUS_CHANGE\u0022,\n  \u0022developerApplicationId\u0022: 220828832,\n  \u0022eventTimestamp\u0022: 1762378856790,\n  \u0022statusUpdate\u0022: {\n    \u0022isAccessRevoked\u0022: false,\n    \u0022verificationStatus\u0022: {\n      \u0022identity\u0022: \u0022INVALID\u0022,\n      \u0022workplace\u0022: \u0022VALID_WITH_UPDATES\u0022\n    },\n    \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Payload Fields",
+      "Anchor": "payload-fields",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Payload Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member\u0027s unique identifier for your application",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event type: FEDERATED_MEMBER_DATA_STATUS_CHANGE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "developerApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your application\u0027s ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventTimestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unix timestamp (milliseconds) when the change occurred",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "statusUpdate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains the status change details",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Status Update Fields",
+      "Anchor": "status-update-fields",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Update Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "isAccessRevoked",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "true if the member revoked access to your application",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains identity and/or workplace status (only present when isAccessRevoked is false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileInformationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of profile data: VALID or INVALID (only present when isAccessRevoked is false)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Status Values",
+      "Anchor": "status-values",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Values"
+      ],
+      "Text": "For verificationStatus.identity and verificationStatus.workplace:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Status Values",
+      "Anchor": "status-values",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Status",
+        "Meaning",
+        "Action Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data is current and accurate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action needed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data should be removed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call /verificationReport to refresh",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VALID_WITH_UPDATES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data is valid but has newer verification timestamp (Member re-verified)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optionally call /verificationReport to get latest",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Status Values",
+      "Anchor": "status-values",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Values"
+      ],
+      "Text": "For profileInformationStatus:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Status Values",
+      "Anchor": "status-values",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Status",
+        "Meaning",
+        "Action Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile data is current",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action needed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile data should be refreshed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call /identityMe to refresh",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Status Values",
+      "Anchor": "status-values",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Values"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Status Values",
+      "Anchor": "status-values",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Status Values"
+      ],
+      "Text": "If the member has no identity verification, verificationStatus.identity will not be present\nIf the member has no workplace verification, verificationStatus.workplace will not be present\nIf neither verification type exists, the entire verificationStatus object will not be present\nSimilarly, profileInformationStatus is only included when profile data status is known",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling Notifications",
+      "Anchor": "handling-notifications",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Handling Notifications"
+      ],
+      "Text": "Receive notification\nCheck isAccessRevoked:\n\nIf true \u2192 Remove member\u0027s data from your system\nIf false \u2192 Continue to step 3\n\n\nCheck each status field present in the payload:\n\nINVALID \u2192 Must refresh data\nVALID_WITH_UPDATES \u2192 Consider refreshing data\nVALID \u2192 No action needed\n\n\nCall /verificationReport and/or /identityMe with member\u0027s access token\nUpdate your stored data",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices-1",
+      "SectionPath": [
+        "Method 2: Push Notifications",
+        "Best Practices"
+      ],
+      "Text": "\u2705 Validate the developerApplicationId matches your application\n\u2705 Use eventTimestamp to ignore out-of-order or duplicate notifications\n\u2705 Compare eventTimestamp with your stored lastRefreshedAt to avoid processing stale notifications\n\u2705 Implement idempotent processing to handle potential duplicate deliveries\n\u2705 When isAccessRevoked is true, delete or invalidate the member\u0027s stored data and tokens",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Critical Fields to Persist",
+      "Anchor": "critical-fields-to-persist",
+      "SectionPath": [
+        "Critical Fields to Persist"
+      ],
+      "Text": "To effectively manage data freshness, you must persist these fields from the API response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Critical Fields to Persist",
+      "Anchor": "critical-fields-to-persist",
+      "SectionPath": [
+        "Critical Fields to Persist"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Source",
+        "Why It\u0027s Critical"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/verificationReport, /identityMe",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required for /validationStatus checks and push notifications. Uniquely identifies the member for your application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "refresh_token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OAuth token response",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to obtain new access tokens without member re-authorization. Essential for refreshing data when member is not actively using your app.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastRefreshedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/verificationReport, /identityMe",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of when data was last updated. Use to ignore stale push notifications and avoid unnecessary API calls.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Critical Fields to Persist",
+      "Anchor": "critical-fields-to-persist",
+      "SectionPath": [
+        "Critical Fields to Persist"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Critical Fields to Persist",
+      "Anchor": "critical-fields-to-persist",
+      "SectionPath": [
+        "Critical Fields to Persist"
+      ],
+      "Text": "The userId field will be deprecated in future API versions. Use the id field as the standard identifier (available since version 202510). Only persist userId if you are migrating from an older API version and need temporary backward compatibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Storage Best Practices",
+      "Anchor": "storage-best-practices",
+      "SectionPath": [
+        "Critical Fields to Persist",
+        "Storage Best Practices"
+      ],
+      "Text": "\u2705 Encrypt and store tokens\n\u2705 Store in secure backend database with proper access controls\n\u2705 Index the id field for fast lookups\n\u2705 Implement token rotation and secure deletion policies\n\u2705 Never store tokens in client-side storage (cookies, localStorage)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Resources",
+      "Anchor": "related-resources",
+      "SectionPath": [
+        "Related Resources"
+      ],
+      "Text": "/identityMe API \u2013 Profile details endpoint\n/verificationReport API \u2013 Verification details endpoint\n/validationStatus API \u2013 Bulk validation endpoint\nWebhooks Guide \u2013 Learn how to register and validate webhook endpoints for receiving real-time notifications\nQuickstart Guide \u2013 Get started in 5 minutes\nFAQ \u2013 Troubleshooting and answers",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

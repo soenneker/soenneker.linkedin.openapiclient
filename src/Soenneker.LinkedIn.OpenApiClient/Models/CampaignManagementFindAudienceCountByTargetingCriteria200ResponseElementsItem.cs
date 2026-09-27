@@ -13,11 +13,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The active property</summary>
-        public int? Active { get; set; }
+        public long? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total property</summary>
-        public int? Total { get; set; }
+        public long? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFindAudienceCountByTargetingCriteria200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active", n => { Active = n.GetIntValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                { "active", n => { Active = n.GetLongValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("active", Active);
-            writer.WriteIntValue("total", Total);
+            writer.WriteLongValue("active", Active);
+            writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

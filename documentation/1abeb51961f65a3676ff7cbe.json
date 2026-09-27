@@ -1,0 +1,364 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+  "Title": "Integration Requirements for Audiences",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audiences",
+      "Anchor": "integration-requirements-for-audiences",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audiences",
+      "Anchor": "integration-requirements-for-audiences",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audiences",
+      "Anchor": "integration-requirements-for-audiences",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Audiences program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audiences",
+      "Anchor": "integration-requirements-for-audiences",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Audiences",
+      "Anchor": "integration-requirements-for-audiences",
+      "SectionPath": [],
+      "Text": "A Demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn may suggest modifications which will need to be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration with right scopes and consent screen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to re-trigger OAuth Flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use refresh tokens to mint new access tokens.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and re-trigger OAuth Flow.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Core",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Sponsored Accounts (ad accounts) with status for the logged in user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all available audiences uploaded by your platform per sponsored account (ad account).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read status of all uploaded audience segments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read match rate, estimated audience size and display readiness of a segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact/users match",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create dynamic audience segments for users (hashed email addresses or MAID).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to Add/Remove a single user (or multiple users) from dynamic audience segments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support additional fields such as first name, last name, Region, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company match",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create dynamic audience segments for companies.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to Add/Remove a single company (or multiple companies) from dynamic audience segments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MA-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support additional fields for company matching country/region, stock symbol, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

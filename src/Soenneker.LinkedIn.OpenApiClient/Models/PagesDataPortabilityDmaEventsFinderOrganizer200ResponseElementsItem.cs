@@ -89,7 +89,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string GeoLocation { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,7 +197,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "eventTimezone", n => { EventTimezone = n.GetStringValue(); } },
                 { "externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
                 { "geoLocation", n => { GeoLocation = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseElementsItemName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseElementsItemName.CreateFromDiscriminatorValue); } },
                 { "organizer", n => { Organizer = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseElementsItemSettings>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseElementsItemSettings.CreateFromDiscriminatorValue); } },
@@ -226,7 +226,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("eventTimezone", EventTimezone);
             writer.WriteStringValue("externalUrl", ExternalUrl);
             writer.WriteStringValue("geoLocation", GeoLocation);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseElementsItemName>("name", Name);
             writer.WriteStringValue("organizer", Organizer);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseElementsItemSettings>("settings", Settings);

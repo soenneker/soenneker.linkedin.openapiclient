@@ -1,0 +1,276 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+  "Title": "Compliance FAQ",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Compliance API is a closed permission. The Compliance APIs are currently not accepting applications for new Partners due to resource constraints. Should this change, we will send out formal communications and update our request form.\nFor more technical support please reach out to us via Developer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "- Questions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "How can I get access to the Compliance APIs?\nWhat is the difference between a Compliance event API and a snapshot API?\nWho is considered a regulated member?\nWhat is the timeframe for which I can query Compliance Events from a regulated member?\nCan I access data beyond 28 days?\nHow long is the access token valid once a member has consented to be regulated?\nCan a regulated member opt out from Compliance regulation themself?\nWhat data is captured in the Compliance Events API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I get access to the Compliance APIs?",
+      "Anchor": "how-can-i-get-access-to-the-compliance-apis-",
+      "SectionPath": [
+        "How can I get access to the Compliance APIs?"
+      ],
+      "Text": "The Compliance API Partner Program is a private and paid partnership. Acceptance to this partnership is subject to discretion of LinkedIn based on the following criteria. The Partner organization or its customers should be FINRA / SEC registered. The primary use case should be archiving and monitoring LinkedIn member\u2019s posts and public correspondence as required to be compliant with FINRA \u0026 SEC regulations. Compliance API is a closed permission. The Compliance APIs are currently not accepting applications for new Partners due to resource constraints. Should this change, we will send out formal communications and update our request form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the difference between a Compliance event API and a snapshot API?",
+      "Anchor": "what-is-the-difference-between-a-compliance-event-api-and-a-snapshot-api--",
+      "SectionPath": [
+        "What is the difference between a Compliance event API and a snapshot API?"
+      ],
+      "Text": "The Compliance Events API allows you to archive a changelog of LinkedIn activities of a regulated, authenticated member for the past 28 days. It returns each monitored activity (such as content created, edited and so on.) as an individual compliance event record to provide ease of archival and remediation if necessary. To know more on Compliance Events API, refer to our documentation. Compliance Snapshot APIs are for gathering information on authenticated members. It provides data as we see on linkedin.com. It does not provide any information on edits and deletes covered under the Compliance Events API. To know more on Compliance Snapshot API, refer to our documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Who is considered a regulated member?",
+      "Anchor": "who-is-considered-a-regulated-member--",
+      "SectionPath": [
+        "Who is considered a regulated member?"
+      ],
+      "Text": "A regulated member is a LinkedIn user who has consented to share information with the developer and the developer has registered the member for compliance monitoring via our POST /memberComplianceAuthorizations API. Only these members are considered as regulated members and their interaction on LinkedIn is archived for Compliance Events API. Note that there must be legal record-keeping compliance obligations, to justify achieving member posts for the Compliance API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the timeframe for which I can query Compliance Events from a regulated member?",
+      "Anchor": "what-is-the-timeframe-for-which-i-can-query-compliance-events-from-a-regulated-member-",
+      "SectionPath": [
+        "What is the timeframe for which I can query Compliance Events from a regulated member?"
+      ],
+      "Text": "The Compliance Events API allows you to query all LinkedIn activities from the past 28 days of a regulated, authenticated member. Compliance events older 28 days are purged from LinkedIn. Note that LinkedIn starts monitoring and archiving the compliance events for a member only once they have been opted in for compliance events. Events before opting in for Compliance Events would not be present.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I access data beyond 28 days?",
+      "Anchor": "can-i-access-data-beyond-28-days--",
+      "SectionPath": [
+        "Can I access data beyond 28 days?"
+      ],
+      "Text": "The Compliance Events API allows you to archive all LinkedIn activities from the past 28 days. For data beyond 28 days, you can use Compliance Snapshot APIs which provide a limited set of data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How long is the access token valid once a member has consented to be regulated?",
+      "Anchor": "how-long-is-the-access-token-valid-once-a-member-has-consented-to-be-regulated-",
+      "SectionPath": [
+        "How long is the access token valid once a member has consented to be regulated?"
+      ],
+      "Text": "The access token is valid for 1 year from the time the member consents to be regulated. Post which the developer would have to initiate the oAuth flow again to request the member\u2019s consent and get a new token. We do not provide any refresh tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can a regulated member Opt Out from compliance regulation themself?",
+      "Anchor": "can-a-regulated-member-opt-out-from-compliance-regulation-themself--",
+      "SectionPath": [
+        "Can a regulated member Opt Out from compliance regulation themself?"
+      ],
+      "Text": "Yes, members can remove access to any third-party application from their Settings and Privacy page on LinkedIn.com. For more information on how to remove access, refer to this article. Note that if a regulated member removes access from their Setting and Privacy page, their access_token is invalidated immediately and they are automatically removed from (Opted out) from Compliance Monitoring and LinkedIn stops monitoring the member for compliance events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data is captured in the Compliance Events API?",
+      "Anchor": "what-data-is-captured-in-the-compliance-events-api--",
+      "SectionPath": [
+        "What data is captured in the Compliance Events API?"
+      ],
+      "Text": "Profile Updates made by the regulated member\nEndorsement - endorsement received \u0026 given by the regulated member\nRecommendation - recommendations received \u0026 given by the regulated member\nPosts -\n\nPosts created by the regulated member\nEdits made to an already updated posts\nPost deleted by the regulated member\n\n\nReactions \u0026 comments:\n\ncreated by the regulated member\nUpdated by the regulated member\ndeleted by the regulated member\n\n\nOrganizations\n\nCompany page created by the regulated member\nUpdating company page\nAdding admins to the page\n\n\nInvitations - Connection requests sent \u0026 received by the regulated member\nMessages\nMessages sent and received by the regulated member\nINMAILS sent and received by the regulated member\nMessages and INMAILS sent and received by the regulated member\u2019s sales Navigator mailbox\nLinkedIn Events - LinkedIn event created by the regulated member",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data is captured in the Compliance Events API?",
+      "Anchor": "what-data-is-captured-in-the-compliance-events-api--",
+      "SectionPath": [
+        "What data is captured in the Compliance Events API?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data is captured in the Compliance Events API?",
+      "Anchor": "what-data-is-captured-in-the-compliance-events-api--",
+      "SectionPath": [
+        "What data is captured in the Compliance Events API?"
+      ],
+      "Text": "Compliance API is a closed permission. The Compliance APIs are currently not accepting applications for new Partners due to resource constraints. Should this change, we will send out formal communications and update our request form.\nFor more technical support please reach out to us via Developer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "- Questions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "How can I get access to the Compliance APIs?\nWhat is the difference between a Compliance event API and a snapshot API?\nWho is considered a regulated member?\nWhat is the timeframe for which I can query Compliance Events from a regulated member?\nCan I access data beyond 28 days?\nHow long is the access token valid once a member has consented to be regulated?\nCan a regulated member opt out from Compliance regulation themself?\nWhat data is captured in the Compliance Events API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The Compliance API Partner Program is a private and paid partnership. Acceptance to this partnership is subject to discretion of LinkedIn based on the following criteria. The Partner organization or its customers should be FINRA / SEC registered. The primary use case should be archiving and monitoring LinkedIn member\u2019s posts and public correspondence as required to be compliant with FINRA \u0026 SEC regulations. Compliance API is a closed permission. The Compliance APIs are currently not accepting applications for new Partners due to resource constraints. Should this change, we will send out formal communications and update our request form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The Compliance Events API allows you to archive a changelog of LinkedIn activities of a regulated, authenticated member for the past 28 days. It returns each monitored activity (such as content created, edited and so on.) as an individual compliance event record to provide ease of archival and remediation if necessary. To know more on Compliance Events API, refer to our documentation. Compliance Snapshot APIs are for gathering information on authenticated members. It provides data as we see on linkedin.com. It does not provide any information on edits and deletes covered under the Compliance Events API. To know more on Compliance Snapshot API, refer to our documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A regulated member is a LinkedIn user who has consented to share information with the developer and the developer has registered the member for compliance monitoring via our POST /memberComplianceAuthorizations API. Only these members are considered as regulated members and their interaction on LinkedIn is archived for Compliance Events API. Note that there must be legal record-keeping compliance obligations, to justify achieving member posts for the Compliance API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The Compliance Events API allows you to query all LinkedIn activities from the past 28 days of a regulated, authenticated member. Compliance events older 28 days are purged from LinkedIn. Note that LinkedIn starts monitoring and archiving the compliance events for a member only once they have been opted in for compliance events. Events before opting in for Compliance Events would not be present.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The Compliance Events API allows you to archive all LinkedIn activities from the past 28 days. For data beyond 28 days, you can use Compliance Snapshot APIs which provide a limited set of data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The access token is valid for 1 year from the time the member consents to be regulated. Post which the developer would have to initiate the oAuth flow again to request the member\u2019s consent and get a new token. We do not provide any refresh tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Yes, members can remove access to any third-party application from their Settings and Privacy page on LinkedIn.com. For more information on how to remove access, refer to this article. Note that if a regulated member removes access from their Setting and Privacy page, their access_token is invalidated immediately and they are automatically removed from (Opted out) from Compliance Monitoring and LinkedIn stops monitoring the member for compliance events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Profile Updates made by the regulated member\nEndorsement - endorsement received \u0026 given by the regulated member\nRecommendation - recommendations received \u0026 given by the regulated member\nPosts -\n\nPosts created by the regulated member\nEdits made to an already updated posts\nPost deleted by the regulated member\n\n\nReactions \u0026 comments:\n\ncreated by the regulated member\nUpdated by the regulated member\ndeleted by the regulated member\n\n\nOrganizations\n\nCompany page created by the regulated member\nUpdating company page\nAdding admins to the page\n\n\nInvitations - Connection requests sent \u0026 received by the regulated member\nMessages\nMessages sent and received by the regulated member\nINMAILS sent and received by the regulated member\nMessages and INMAILS sent and received by the regulated member\u2019s sales Navigator mailbox\nLinkedIn Events - LinkedIn event created by the regulated member",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

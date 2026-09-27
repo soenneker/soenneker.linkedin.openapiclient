@@ -1,0 +1,378 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+  "Title": "Verified on LinkedIn \u2013 Branding \u0026 UX Guidelines",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Branding \u0026 UX Guidelines",
+      "Anchor": "verified-on-linkedin--branding--ux-guidelines",
+      "SectionPath": [],
+      "Text": "Partners integrating the Verified on LinkedIn API must follow these branding and UX guidelines to ensure a consistent and trusted member experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Branding \u0026 UX Guidelines",
+      "Anchor": "verified-on-linkedin--branding--ux-guidelines",
+      "SectionPath": [],
+      "Text": "This page explains the correct usage of the \u201CVerify on LinkedIn\u201D button, the \u201CVerified on LinkedIn\u201D badge, and the associated placement and design standards.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Branding \u0026 UX Guidelines",
+      "Anchor": "verified-on-linkedin--branding--ux-guidelines",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Branding \u0026 UX Guidelines",
+      "Anchor": "verified-on-linkedin--branding--ux-guidelines",
+      "SectionPath": [],
+      "Text": "Visual assets (buttons, badges, and icons) must only be used as provided by LinkedIn.\nPartners may not alter these assets or create custom \u201Cverified\u201D visuals that could mislead Members about verification sources or statuses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The Verified on LinkedIn visual system represents trust and authenticity for LinkedIn members across partner experiences.\nProper implementation ensures the integrity of LinkedIn\u2019s verification experience and reinforces credibility and security for end users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Key Principles",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Always use the official button and badge assets provided by LinkedIn.\nMaintain sizing, color, and spacing to ensure visual consistency.\nDo not modify or recreate any verification icons, logos, or phrases.\nDo not misstate or overstate what Verified on LinkedIn means.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u201CVerify on LinkedIn\u201D Button",
+      "Anchor": "verify-on-linkedin-button",
+      "SectionPath": [
+        "\u201CVerify on LinkedIn\u201D Button"
+      ],
+      "Text": "The \u201CVerify on LinkedIn\u201D button is the primary call-to-action (CTA) for users to start the verification flow on LinkedIn.\nIt must link directly to the verificationUrl returned from the /verificationReport API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Button Usage Rules",
+      "Anchor": "button-usage-rules",
+      "SectionPath": [
+        "\u201CVerify on LinkedIn\u201D Button",
+        "Button Usage Rules"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Purpose",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Routes members to LinkedIn to complete identity or workplace verification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Placement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display in contexts where verification is required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "State",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Render only when the API response includes a valid verificationUrl.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Do not cache",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Do not cache the URL \u2014 use the latest verificationUrl from each API response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Button text must remain \u201CVerify on LinkedIn\u201D. No modifications such as \u201CLinkedIn Verify\u201D or \u201CVerify via LinkedIn\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sizing and color options",
+      "Anchor": "sizing-and-color-options",
+      "SectionPath": [
+        "\u201CVerify on LinkedIn\u201D Button",
+        "Button Design",
+        "Sizing and color options"
+      ],
+      "Text": "We want your team to utilize the best sizing of our \u0022Verify on LinkedIn\u0022 button for your experience. However, we want to limit use of the button being too small or too large as it impacts the visual design aesthetic, impact, and brand perception. To ensure the main call to action is prominent and consistent across partner sites, we ask that the blue version be used and inverted white colors used in dark mode.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interaction",
+      "Anchor": "interaction",
+      "SectionPath": [
+        "\u201CVerify on LinkedIn\u201D Button",
+        "Button Design",
+        "Interaction"
+      ],
+      "Text": "Use \u0022button\u0022 states to suggest interaction. This includes the enabled, hover and active state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Verified on LinkedIn\u0022 Badge",
+      "Anchor": "verified-on-linkedin-badge",
+      "SectionPath": [
+        "\u0022Verified on LinkedIn\u0022 Badge"
+      ],
+      "Text": "The \u0022Verified on LinkedIn\u0022 badge is a visual signal confirming that a member has completed one or more verification types (Identity or Workplace) through LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "When to Display",
+      "Anchor": "when-to-display",
+      "SectionPath": [
+        "\u0022Verified on LinkedIn\u0022 Badge",
+        "When to Display"
+      ],
+      "Text": "",
+      "Headers": [
+        "Condition",
+        "Display the Badge?"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "At least one verification type (Identity or Workplace) is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "After verification completes (no verificationUrl returned).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member is unverified or verification data is missing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Data is from cached or manually entered sources.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sizing and color options",
+      "Anchor": "sizing-and-color-options-1",
+      "SectionPath": [
+        "\u0022Verified on LinkedIn\u0022 Badge",
+        "Sizing and color options"
+      ],
+      "Text": "To maintain a consistent experience, the badge should adhere to recommended sizing guidelines. Avoid making it too small, which can reduce visibility and usability, or too large, which can disrupt the visual hierarchy and negatively impact brand perception. Proper sizing ensures the badge remains clear, functional, and aesthetically aligned with the overall design system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interaction",
+      "Anchor": "interaction-1",
+      "SectionPath": [
+        "\u0022Verified on LinkedIn\u0022 Badge",
+        "Interaction"
+      ],
+      "Text": "The badge acts as a clickable element that navigates directly to the user\u0027s LinkedIn profile, enabling quick access for others to view professional details. Use \u0022button\u0022 states to suggest interaction. This includes the enabled, hover and active state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do\u0027s and Don\u0027ts",
+      "Anchor": "dos-and-donts",
+      "SectionPath": [
+        "Do\u0027s and Don\u0027ts"
+      ],
+      "Text": "Do\n\nUse official assets from LinkedIn\u0027s API documentation.\nMaintain proportional spacing and readable font sizes.\n\n\nDon\u0027t\n\nChange text to \u0022LinkedIn Verified\u0022, \u0022LinkedIn Trusted\u0022, or any other non-approved language.\nAlter badge colors or replace icons.\nShow the badge before confirmation from API response.\nCombine with other third-party verification marks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example UX Flow",
+      "Anchor": "example-ux-flow",
+      "SectionPath": [
+        "Example UX Flow"
+      ],
+      "Text": "Your app calls the /verificationReport endpoint to check the member\u0027s current verification categories.\nIf the API response includes a verificationUrl, display the \u0022Verify on LinkedIn\u0022 button.\nWhen the member clicks the button, they are redirected to LinkedIn to complete verification.\nAfter completion, LinkedIn redirects the member back to your app\u0027s registered redirect URL.\nYour app calls /verificationReport again to confirm the updated verification categories.\nOnce verified, display the \u0022Verified on LinkedIn\u0022 badge in the appropriate location (for example, profile header or account summary).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Design Assets",
+      "Anchor": "obtaining-design-assets",
+      "SectionPath": [
+        "Obtaining Design Assets"
+      ],
+      "Text": "Official assets for the \u0022Verify on LinkedIn\u0022 button and \u0022Verified on LinkedIn\u0022 badge are available for partner use.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Design Assets",
+      "Anchor": "obtaining-design-assets",
+      "SectionPath": [
+        "Obtaining Design Assets"
+      ],
+      "Text": "Download Asset Kit (.zip)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Design Assets",
+      "Anchor": "obtaining-design-assets",
+      "SectionPath": [
+        "Obtaining Design Assets"
+      ],
+      "Text": "Have a design-related question?\nCheck the Verified on LinkedIn FAQ, for usage clarifications and implementation tips.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Design Assets",
+      "Anchor": "obtaining-design-assets",
+      "SectionPath": [
+        "Obtaining Design Assets"
+      ],
+      "Text": "Important:\nUnauthorized reproduction or modification of LinkedIn marks is strictly prohibited.\nAll implementations must comply with LinkedIn Brand Guidelines and Partner Terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Review the Verified on LinkedIn API to understand key API capabilities.\nExplore API Reference for implementation details.\nStay up to date with Release Notes for new asset or schema updates.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

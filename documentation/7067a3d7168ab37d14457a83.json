@@ -1,0 +1,138 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/",
+  "Title": "LinkedIn API Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Overview",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s home for API documentation for all LinkedIn business lines. Our API documentation is organized by business lines covering Consumer, Compliance, Learning, Marketing, Sales, and Talent Solutions. Follow the links below to learn more about business lines and their possible integration types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get started",
+      "Anchor": "",
+      "SectionPath": [
+        "Where to Start",
+        "Get started"
+      ],
+      "Text": "LinkedIn Business Solutions\n \n \n Get API Access\n \n \n Authentication\n \n \n API Concepts\n \n \n Breaking Change Policy\n \n \n Best Practices\n \n \n Error Handling\n \n \n LinkedIn API Partner Support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Consumer Solutions",
+        "Overview"
+      ],
+      "Text": "Consumer Overview\n \n \n Sign in with LinkedIn using OpenID Connect\n \n \n Verified on LinkedIn\n \n \n Share on LinkedIn\n \n \n Plugins",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Learning Solutions",
+        "Overview"
+      ],
+      "Text": "Learning Home\n \n \n Learning Overview\n \n \n Request Access\n \n \n API Terminology\n \n \n API Foundations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Marketing Solutions",
+        "Overview"
+      ],
+      "Text": "Marketing Overview\n \n \n Getting Started\n \n \n Integrations Overview\n \n \n Apply for Access\n \n \n Recent Changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Talent Solutions",
+        "Overview"
+      ],
+      "Text": "Talent Overview\n \n \n Apply Connect\n \n \n Apply with LinkedIn\n \n \n Job Posting\n \n \n Recruiter System Connect\n \n \n CRM Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Sales Solutions",
+        "Overview"
+      ],
+      "Text": "Sales Overview\n \n \n Analytics Services\n \n \n Display Services\n \n \n Sync Services",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Compliance",
+        "Overview"
+      ],
+      "Text": "Compliance Overview\n \n \n Release Notes",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

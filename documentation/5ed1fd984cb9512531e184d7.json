@@ -1,0 +1,286 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/migration-testing-guide",
+  "Title": "Migration Testing Guide",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-v2-to-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/build-awli-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/migration-testing-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Migration Testing Guide",
+      "Anchor": "migration-testing-guide",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Testing Guide",
+      "Anchor": "migration-testing-guide",
+      "SectionPath": [],
+      "Text": "This testing guide has been revised as of October 2022. The following steps should take around 30 minutes to complete. The new sections added are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Testing Guide",
+      "Anchor": "migration-testing-guide",
+      "SectionPath": [],
+      "Text": "Instructions to render and test AWLI V3\nStaffing and non-staffing customer setup\nStaffing and non-staffing consent screen examples\nMobile devices testing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Testing Guide",
+      "Anchor": "migration-testing-guide",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Testing Guide",
+      "Anchor": "migration-testing-guide",
+      "SectionPath": [],
+      "Text": "Refer to this section for any troubleshooting while testing the AWLI V3 widget.\nFor any unresolved issues encountered during testing, submit a support case via the partner support form detailing the issue along with apiKeys and sample job URLs used for testing.\nIf you want to build to the AWLI V3 widget directly, submit a support case via the partner support form expressing your interest to build to V3 for the next steps",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Render and Test AWLI V3",
+      "Anchor": "how-to-render-and-test-awli-v3",
+      "SectionPath": [
+        "How to Render and Test AWLI V3"
+      ],
+      "Text": "Repeat the following steps to test all career site templates that your customers can use:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Render and Test AWLI V3",
+      "Anchor": "how-to-render-and-test-awli-v3",
+      "SectionPath": [
+        "How to Render and Test AWLI V3"
+      ],
+      "Text": "If you support both staffing and non-staffing customers, find a job page with a working AWLI V2 button for each type of customer (if AWLI V2 does not work, submit a support case via the partner support form with API key and sample job URL). Refer to the Staffing and Non-Staffing Customer Setup topic for instructions on how to setup a staffing and non-staffing customer for testing, if needed.\nSteps to test when not signed into LinkedIn.\n\nGo to www.linkedin.com and sign out of your account (if you are already signed in).\nFollow the steps in the Guide to Render Apply With LinkedIn v3.0 topic to render the AWLI V3 button on the selected job page from Step 1.\nOnce the AWLI V3 button renders, click the button. A page for Sign into LinkedIn will open in a new window. \nSign into your LinkedIn account by providing your login credentials.\nAfter successfully signing in, you should be redirected to an OAuth consent screen in the same window. The text on the consent screen varies for staffing and non-staffing customers. Refer to the Staffing and Non-Staffing Consent Screen Examples for more information.\nCheck for the following details on the consent screen\n\nLogo - For Customers (e.g Proprietary ATS or Career Page Solution), the logo should be the customer logo. For Partners (e.g ATS), the logo should be the ATS logo.\nApplication name - For Customers, the application name should be their application name. For Partners, it should be the relevant customers\u0027 application name provided as part of the step for configuring customer application. Partners should check all of their customer application names for accuracy, and if needed, submit a support case via the partner support form with a list of their customers\u0027 application client ID and corresponding names.\n\n\nClicking Allow on the consent screen should close the consent window and take you back to your career site job page. Refer to Step 4 below for further testing steps.\nClicking Cancel on the consent screen should display the below page for 5 seconds in the same window before the window closes. You should then be taken back to your career site job page. \n\n\nSteps to test when already signed into LinkedIn\n\nGo to www.linkedin.com and sign into your account if you are not signed in.\nFollow the steps in the Guide to Render Apply With LinkedIn v3.0 topic to render the AWLI V3 button on the selected job page from Step 1.\nOnce the AWLI V3 button renders, click on the button.\nAn OAuth consent screen page will open in a new window. The text on the consent screen varies for staffing and non-staffing customers. Refer to the Staffing and Non-Staffing Consent Screen Examples for more information.\nCheck for the following details on the consent screen\n\nLogo - For Customers (e.g. Proprietary ATS or Career Page Solution), the logo should be the customer logo. For Partners (e.g. ATS), the logo should be the logo of the ATS.\nApplication name - For Customers, the application name should be their application name. For Partners, it should be the relevant customers\u0027 application name provided as part of the step for configuring customer application. Partners should check all of their customer application names for accuracy, and if needed, submit a support case via the partner support form with a list of their customers\u0027 application client ID and corresponding names.\n\n\nClicking Allow on the consent screen should close the consent window and take you back to your career site job page. Refer to Step 4 below for further testing steps.\nClicking Cancel on the consent screen should display the below page for 5 seconds in the same window before the window closes. You will then be taken back to your career site job page. \n\n\nSteps to test after clicking Allow on OAuth consent screen\n\nMake sure your career site job page displays the applicant\u2019s profile data shared by LinkedIn via the callback function. This callback function is a configuration (data-callback-method) set during the initial Apply With LinkedIn Plugin integration.\nOpen developer tools by right clicking anywhere on the page and select the Inspect option. Click on the Network tab in developer tools. \nFilter the network tab by \u201Capply-with-linkedin\u201D. \nComplete applying to the job by submitting the application.\nOnce the application is submitted, check the Network tab for a call to the LinkedIn AWLI widget with CONVERSION mode as shown below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Render and Test AWLI V3",
+      "Anchor": "how-to-render-and-test-awli-v3",
+      "SectionPath": [
+        "How to Render and Test AWLI V3"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Render and Test AWLI V3",
+      "Anchor": "how-to-render-and-test-awli-v3",
+      "SectionPath": [
+        "How to Render and Test AWLI V3"
+      ],
+      "Text": "Once the applicant/user gives consent to share a profile with an employer, the OAuth consent screen for the same employer will not appear for the next 30 minutes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Staffing and Non-Staffing Customer Setup",
+      "Anchor": "staffing-and-non-staffing-customer-setup",
+      "SectionPath": [
+        "Staffing and Non-Staffing Customer Setup"
+      ],
+      "Text": "For Non-Staffing Customers\n\nEnable a customer for the AWLI integration via LinkedIn\u2019s Onboarding widget. The configuring customer document provides details on how to integrate with LinkedIn\u2019s Onboarding widget and how to enable a customer for AWLI.\nMake sure the AWLI V2 button renders and works for this customer.\n\n\nFor Staffing Customers\n\nEnable a customer for AWLI integration via LinkedIn\u2019s Onboarding widget. The configuring customer document provides details on how to integrate with LinkedIn\u2019s Onboarding widget and how to enable a customer for AWLI.\nUse the \u201Cintegration context\u201D from the above step to submit a support case via the partner support form to enable the customer for Staffing set up.\nMake sure the AWLI V2 button renders and works for this customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Staffing and Non-Staffing Consent Screen Examples",
+      "Anchor": "staffing-and-non-staffing-consent-screen-examples",
+      "SectionPath": [
+        "Staffing and Non-Staffing Consent Screen Examples"
+      ],
+      "Text": "The consent screen for Staffing and Non-Staffing customers varies in text as shown below",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mobile Devices Testing",
+      "Anchor": "mobile-devices-testing",
+      "SectionPath": [
+        "Mobile Devices Testing"
+      ],
+      "Text": "To test that the AWLI button renders correctly and that the end to end flow works correctly for iOS and Android devices such as mobile phones and tablets, use a browser device simulator/responsive mode.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mobile Devices Testing",
+      "Anchor": "mobile-devices-testing",
+      "SectionPath": [
+        "Mobile Devices Testing"
+      ],
+      "Text": "More information on using browser simulators can be found below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mobile Devices Testing",
+      "Anchor": "mobile-devices-testing",
+      "SectionPath": [
+        "Mobile Devices Testing"
+      ],
+      "Text": "Chrome: https://developer.chrome.com/docs/devtools/device-mode/ \nFirefox: https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Render Apply With LinkedIn v3.0",
+      "Anchor": "guide-to-render-apply-with-linkedin-v30",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0"
+      ],
+      "Text": "To test if there are any problematic customizations, complete the following steps detailed below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Render Apply With LinkedIn v3.0",
+      "Anchor": "guide-to-render-apply-with-linkedin-v30",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0"
+      ],
+      "Text": "Find a page on your career site with a currently working AWLI button\n\nTest the new version of AWLI by setting a local storage value in the career site with the following key and value. You can return back to the current version of AWLI by removing these values.\n HTMLCopy localStorage.setItem(\u2018in.awli.v3.enabled\u2019, \u2018true\u2019)\nKey - \u201Cin.awli.v3.enabled\u201D\nValue - \u201Ctrue\u201D\n\n\nRefer to the below topic Enabling AWLI V3 using Local Storage Flag for details with screenshots",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Render Apply With LinkedIn v3.0",
+      "Anchor": "guide-to-render-apply-with-linkedin-v30",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Render Apply With LinkedIn v3.0",
+      "Anchor": "guide-to-render-apply-with-linkedin-v30",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0"
+      ],
+      "Text": "To test with your test/stage developer application, simply browse to a test job page with a working AWLI button and it should render the AWLI V3 button",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling AWLI V3 using Local Storage Flag",
+      "Anchor": "enabling-awli-v3-using-local-storage-flag",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0",
+        "Enabling AWLI V3 using Local Storage Flag"
+      ],
+      "Text": "Listed below are the steps to enable AWLI v3 using local storage flag:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling AWLI V3 using Local Storage Flag",
+      "Anchor": "enabling-awli-v3-using-local-storage-flag",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0",
+        "Enabling AWLI V3 using Local Storage Flag"
+      ],
+      "Text": "Open Chrome developer tools by right clicking anywhere on the page and select the Inspect option \n\nClick the Application tab in the developer tools \n\nClick your career site URL where AWLI is being loaded in the local storage section. In the screenshot we are using linkedin.com as an example but your career site will be different\n\nRight click the empty row under the Key column and select \u201CAdd new\u201D to add a new row\n\nType \u201Cin.awli.v3.enabled\u201D as the key name\n\nRight click the Value column for the newly added row and select Edit \u201CValue\u201D \n\nType \u201Ctrue\u201D as the Value\n\nRefresh the page, the AWLI V3 widget should appear",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Issues and Resolution",
+      "Anchor": "issues-and-resolution",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0",
+        "Issues and Resolution"
+      ],
+      "Text": "Below are common issues that might occur while testing the new AWLI along with their corresponding resolution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Issues and Resolution",
+      "Anchor": "issues-and-resolution",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0",
+        "Issues and Resolution"
+      ],
+      "Text": "If multiple sites appear in Step 3 (above) and AWLI v3 is not working even after enabling the flag on your career site, try setting the key on all of the sites listed in local storage\nIn case the AWLI V3 widget does not appear as shown in step 8 (above), then repeat step 3 and add the key to all sites listed in local storage",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Issues and Resolution",
+      "Anchor": "issues-and-resolution",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0",
+        "Issues and Resolution"
+      ],
+      "Text": "Here are some sample issues to look out for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Issues and Resolution",
+      "Anchor": "issues-and-resolution",
+      "SectionPath": [
+        "Guide to Render Apply With LinkedIn v3.0",
+        "Issues and Resolution"
+      ],
+      "Text": "New AWLI widget/button does not render:\n\nCSS or Javascript customizations have been made on top of LinkedIn\u2019s AWLI widget. These customizations need to be removed in order to properly render the new AWLI widget\nThe page is already loading LinkedIn\u2019s in.js script. This preload of \u201Cin.js\u201D script needs to be removed or load \u201Cin.js\u201D with the same API key used for AWLI. Note that LinkedIn uses API key to uniquely identify a customer. Please create only one API key per customer and avoid loading multiple instances of in.js with different API keys on a page\n\n\nNew AWLI widget/button renders but there are multiple buttons on the same page\n\nMake sure to integrate with AWLI only once per job page\n\n\nNew AWLI widget renders but it is not aligned properly or is cut-off\n\nSubmit a support case via the partner support form detailing the issue along with apiKeys and sample job URLs used for testing\n\n\nNew AWLI widget renders but when clicked, a new window with something went wrong opens:\n\nSubmit a support case via the partner support form detailing the issue along with apiKeys and sample job URLs used for testing\n\n\nCompany logo is incorrect or blank in the OAuth consent screen:\n\nSubmit a support case via the partner support form and attach the correct logo. Our teams will then process the update and confirm once it is completed",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

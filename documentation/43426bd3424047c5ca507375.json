@@ -1,0 +1,2002 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+  "Title": "Pages Featured Content Groups",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Pages Featured Content Groups",
+      "Anchor": "pages-featured-content-groups",
+      "SectionPath": [],
+      "Text": "The Pages FeaturedContentGroups API provides featured content group information of an organizational page and topic.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pages Featured Content Groups",
+      "Anchor": "pages-featured-content-groups",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pages Featured Content Groups",
+      "Anchor": "pages-featured-content-groups",
+      "SectionPath": [],
+      "Text": "Get a single featured content group.\nBatch Get featured content groups.\nFinder to get featured content group by organizational page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and reporting data (including follower, visitor, and content analytics). Restricted to organizations where the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContent.created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContent.created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContent.lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContent.lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContent.deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContent.deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PagesFeaturedContentGroup",
+      "Anchor": "pagesfeaturedcontentgroup",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "PagesFeaturedContentGroup"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "PagesFeaturedContentGroup",
+      "Anchor": "pagesfeaturedcontentgroup",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "PagesFeaturedContentGroup"
+      ],
+      "Text": "Either of the created / lastModified / deleted fields will always be present in the response schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PagesFeaturedContentGroup",
+      "Anchor": "pagesfeaturedcontentgroup",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "PagesFeaturedContentGroup"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PagesFeaturedContentGroupKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedcontentgroupkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The key for FeaturedContentGroup.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredContents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[PagesFeaturedContent]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedcontent"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Ordered list of PagesFeaturedContents that represents the content to be featured.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of when the resource/association/sub-resource is moved into the specific lifecycle stage represented by this audit event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. a personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URN of the page that owns this FeaturedContentGroup. It is of type urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "topic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PagesFeaturedContentTopic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The topic of the PagesFeaturedContent. Value enums include: PRODUCT_HIGHLIGHTSPRODUCT_ANNOUNCEMENTSPRODUCT_EXPERTSPRODUCT_QUESTIONS_AND_ANSWERSORGANIZATION_HOME",
+            "Links": [],
+            "Values": [
+              "PRODUCT_HIGHLIGHTS",
+              "PRODUCT_ANNOUNCEMENTS",
+              "PRODUCT_EXPERTS",
+              "PRODUCT_QUESTIONS_AND_ANSWERS",
+              "ORGANIZATION_HOME"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "Either of the created / lastModified / deleted fields will always be present in the response schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[pagesFeaturedPostContent: PagesFeaturedPostContent,pagesFeaturedMediaContent: PagesFeaturedMediaContent]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedpostcontent",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedmediacontent"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The specific content for the featuredContent.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ActivityUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the post to be featured. It is of type urn:li:activity:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "mediaContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[uploadedMediaContent: FeaturedUploadedMediaContent,linkedMediaContent: FeaturedLinkedMediaContent]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#featureduploadedmediacontent",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#featuredlinkedmediacontent"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Media uploaded for the featuredContent.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title for this featured media. Null if not set by admin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description for this featured media. Null if not set by admin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "digitalMediaAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[image: Image,video: Video]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#video"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Image or Video present in the uploaded featured media content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FeaturedUploadedMediaContentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of content to be featured. Value enums include: UPLOADED_IMAGEUPLOADED_VIDEO",
+            "Links": [],
+            "Values": [
+              "UPLOADED_IMAGE",
+              "UPLOADED_VIDEO"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ingestedContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IngestedContentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents ingested content, usually external content such as YouTube links, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FeaturedLinkedMediaContentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of content to be featured. Value enums include: VIMEO_VIDEOYOUTUBE_VIDEO",
+            "Links": [],
+            "Values": [
+              "VIMEO_VIDEO",
+              "YOUTUBE_VIDEO"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOAD",
+            "Links": [],
+            "Values": [
+              "PROCESSING",
+              "PROCESSING_FAILED",
+              "AVAILABLE",
+              "WAITING_UPLOAD"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download/view the media asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOAD",
+            "Links": [],
+            "Values": [
+              "PROCESSING",
+              "PROCESSING_FAILED",
+              "AVAILABLE",
+              "WAITING_UPLOAD"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download/view the media asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "captions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[Caption]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#caption"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Identifies the Captions provided by page admins. If not found returns an empty array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thumbnails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[Thumbnail]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#thumbnail"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Identifies the Thumbnails provided by page admins. If not found returns an empty array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to retrieve the caption file.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the file expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to retrieve the thumbnail file.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the file expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaPagesFeaturedContentGroups/{KEY}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaPagesFeaturedContentGroups/{KEY}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n    \u0022time\u0022: 1701983704003\n  },\n  \u0022key\u0022: {\n    \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n    \u0022page\u0022: \u0022urn:li:organizationalPage:2414183\u0022\n  },\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n    \u0022time\u0022: 1695074901509\n  },\n  \u0022featuredContents\u0022: [\n    {\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n        \u0022time\u0022: 1699993119811\n      },\n      \u0022content\u0022: {\n        \u0022pagesFeaturedPostContent\u0022: {\n          \u0022post\u0022: \u0022urn:li:activity:123456\u0022\n        }\n      },\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n        \u0022time\u0022: 1699993119811\n      }\n    },\n    {\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n        \u0022time\u0022: 1701983703991\n      },\n      \u0022content\u0022: {\n        \u0022pagesFeaturedPostContent\u0022: {\n          \u0022post\u0022: \u0022urn:li:activity:123456\u0022\n        }\n      },\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n        \u0022time\u0022: 1701983703991\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022lastModified\u0022: {\n    \u0022time\u0022: 1701983704003\n  },\n  \u0022key\u0022: {\n    \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n    \u0022page\u0022: \u0022urn:li:organizationalPage:2414183\u0022\n  },\n  \u0022created\u0022: {\n    \u0022time\u0022: 1695074901509\n  },\n  \u0022featuredContents\u0022: [\n    {\n      \u0022created\u0022: {\n        \u0022time\u0022: 1699993119811\n      },\n      \u0022content\u0022: {\n        \u0022pagesFeaturedPostContent\u0022: {\n          \u0022post\u0022: \u0022urn:li:activity:123456\u0022\n        }\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1699993119811\n      }\n    },\n    {\n      \u0022created\u0022: {\n        \u0022time\u0022: 1701983703991\n      },\n      \u0022content\u0022: {\n        \u0022pagesFeaturedPostContent\u0022: {\n          \u0022post\u0022: \u0022urn:li:activity:123456\u0022\n        }\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1701983703991\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PagesFeaturedContentGroupKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedcontentgroupkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the PagesFeaturedContentGroup record is a path parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(page:urn%3Ali%3AorganizationalPage%3A{ID},topic:ORGANIZATION_HOME)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaPagesFeaturedContentGroups?ids=List(KEY_1,KEY_2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaPagesFeaturedContentGroups?ids=List(KEY_1,KEY_2)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A19096789,topic:ORGANIZATION_HOME)\u0022: {\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n        \u0022time\u0022: 1701883392532\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n        \u0022time\u0022: 1694450247653\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n            \u0022time\u0022: 1701392143165\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:713606612\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n            \u0022time\u0022: 1701392143165\n          }\n        }\n      ]\n    },\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:ORGANIZATION_HOME)\u0022: {\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n        \u0022time\u0022: 1701983704003\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:12345\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n        \u0022time\u0022: 1695074901509\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n            \u0022time\u0022: 1699993119811\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:7130272267388\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n            \u0022time\u0022: 1699993119811\n          }\n        },\n        {\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:OG5Q8\u0022,\n            \u0022time\u0022: 1701983703991\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:713834316\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KL1JR\u0022,\n            \u0022time\u0022: 1701983703991\n          }\n        }\n      ]\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123456,topic:ORGANIZATION_HOME)\u0022: 200,\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A12345,topic:ORGANIZATION_HOME)\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A19096789,topic:ORGANIZATION_HOME)\u0022: {\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1701883392532\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1694450247653\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022time\u0022: 1701392143165\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:713606612\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022time\u0022: 1701392143165\n          }\n        }\n      ]\n    },\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:ORGANIZATION_HOME)\u0022: {\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1701983704003\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:12345\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1695074901509\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022time\u0022: 1699993119811\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:7130272267388\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022time\u0022: 1699993119811\n          }\n        },\n        {\n          \u0022created\u0022: {\n            \u0022time\u0022: 1701983703991\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:713834316\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022time\u0022: 1701983703991\n          }\n        }\n      ]\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A123456,topic:ORGANIZATION_HOME)\u0022: 200,\n    \u0022(page:urn%3Ali%3AorganizationalPage%3A12345,topic:ORGANIZATION_HOME)\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(PagesFeaturedContentGroupKey)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedcontentgroupkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of PagesFeaturedContentGroupKey to query for.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pagesfeaturedcontentgroupkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List((page:urn%3Ali%3AorganizationalPage%3A1234,topic:ORGANIZATION_HOME),(page:urn%3Ali%3AorganizationalPage%3A2345,topic:PRODUCT_HIGHLIGHTS))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember\nwith an authorization action of OrganizationProfileAuthorizationActionType.ORGANIZATION_PROFILE_WRITE. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaPagesFeaturedContentGroups?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A{ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaPagesFeaturedContentGroups?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A{ID}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 2,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaPagesFeaturedContentGroups?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A123456\u0026start=2\u0026count=2\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBf\u0022,\n        \u0022time\u0022: 1701983704003\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBf\u0022,\n        \u0022time\u0022: 1695074901509\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KLBf\u0022,\n            \u0022time\u0022: 1699993119811\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:71302722\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KLBf\u0022,\n            \u0022time\u0022: 1699993119811\n          }\n        },\n        {\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KLBf\u0022,\n            \u0022time\u0022: 1701983703991\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:713834316\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KLBfp\u0022,\n            \u0022time\u0022: 1701983703991\n          }\n        }\n      ]\n    },\n    {\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n        \u0022time\u0022: 1701984214671\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022PRODUCT_HIGHLIGHTS\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n        \u0022time\u0022: 1701984214612\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n            \u0022time\u0022: 1701984214655\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:71383239\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:KLBfJR\u0022,\n            \u0022time\u0022: 1701984214655\n          }\n        }\n      ]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 2,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaPagesFeaturedContentGroups?q=page\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A123456\u0026start=2\u0026count=2\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1701983704003\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022ORGANIZATION_HOME\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1695074901509\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022time\u0022: 1699993119811\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:71302722\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022time\u0022: 1699993119811\n          }\n        },\n        {\n          \u0022created\u0022: {\n            \u0022time\u0022: 1701983703991\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:713834316\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022time\u0022: 1701983703991\n          }\n        }\n      ]\n    },\n    {\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1701984214671\n      },\n      \u0022key\u0022: {\n        \u0022topic\u0022: \u0022PRODUCT_HIGHLIGHTS\u0022,\n        \u0022page\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1701984214612\n      },\n      \u0022featuredContents\u0022: [\n        {\n          \u0022created\u0022: {\n            \u0022time\u0022: 1701984214655\n          },\n          \u0022content\u0022: {\n            \u0022pagesFeaturedPostContent\u0022: {\n              \u0022post\u0022: \u0022urn:li:activity:71383239\u0022\n            }\n          },\n          \u0022lastModified\u0022: {\n            \u0022time\u0022: 1701984214655\n          }\n        }\n      ]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Pages Featured Content Groups Data",
+        "FIND_BY_PAGE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder function to retrieve data from. Finder name: page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational Page URN. The format of the organizational page is urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn=urn:li:organizationalPage:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch key parameter value is invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid batch key.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

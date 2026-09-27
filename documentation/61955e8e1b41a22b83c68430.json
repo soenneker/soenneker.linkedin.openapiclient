@@ -1,0 +1,4063 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+  "Title": "Data Deletion",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Data Deletion",
+      "Anchor": "data-deletion",
+      "SectionPath": [],
+      "Text": "Given below is a set of all DELETE APIs supported by the Middleware Platform. To know how to create these artifacts refer to The Middleware Platform overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Deletion",
+      "Anchor": "data-deletion",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Deletion",
+      "Anchor": "data-deletion",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Deletion",
+      "Anchor": "data-deletion",
+      "SectionPath": [],
+      "Text": "Delete Candidates\nDelete Candidate Notes\nDelete Applications\nDelete Application Notes\nDelete Application Interview Feedback\nDelete Application Stages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Deletion",
+      "Anchor": "data-deletion",
+      "SectionPath": [],
+      "Text": "Delete Candidates\nDelete Candidate Notes\nDelete Applications\nDelete Application Notes\nDelete Application Interview Feedback\nDelete Application Stages\nDelete Job Requisitions\nDelete Job Requisition Stages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Deletion",
+      "Anchor": "data-deletion",
+      "SectionPath": [],
+      "Text": "Delete Candidates\nDelete Candidate Notes\nDelete Applications\nDelete Application Notes\nDelete Application Interview Feedback\nDelete Application Stages\nDelete Job Requisitions\nDelete Job Requisition Stages\nDelete Attachments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Details"
+      ],
+      "Text": "Execute Delete on the /atsCandidates endpoint when a customer deletes records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsCandidates?ids[0].atsCandidateId={UniqueATSCandidateID}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext={organizationURN}\u0026ids[1].atsCandidateId={id 2}\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].atsCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the unique Candidate ID in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization/Company ID The format should be \u0022urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use \u0022ATS\u0022 as the value for data provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Request"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsCandidates\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].atsCandidateId={UniqueATSCandidateID}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext={organizationURN}\u0026ids[1].atsCandidateId={id 2}\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext={organization URN}\u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022atsCandidateId=CAND123\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022atsCandidateId=CAND456\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Details"
+      ],
+      "Text": "Execute Delete on the /candidates endpoint when a customer deletes records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId={UniqueATSCandidateID}\u0026ids[0].integrationContext={organizationURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202602",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202603",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].externalCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the unique Candidate ID in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization/Company ID The format should be urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidates\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=john_demo_candidate_1000\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId=john_demo_candidate_1000\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Request (with query tunneling)",
+      "Anchor": "sample-delete-request-with-query-tunneling-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidates\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=john_demo_candidate_1000\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Request (without query tunneling)",
+      "Anchor": "sample-delete-request-without-query-tunneling-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Delete Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidates?ids[0].externalCandidateId=john_demo_candidate_1000\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n       \u0022externalCandidateId=john_demo_candidate_1000\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Candidates",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on /atsCandidates/{CandidateIdentifier}/notes endpoint to delete candidate notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsCandidates/atsCandidateId={CandidateID}\u0026dataProvider=ATS\u0026integrationContext={Organization URN}/notes?ids={NoteID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Endpoint"
+      ],
+      "Text": "The combination of atsCandidateId,dataProvider \u0026 integrationContext fields in the above URL is the unique candidate identifier for your candidate record synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Note ID for the ATS Candidate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsCandidates/atsCandidateId=CAND123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183/notes?ids=CAND_NOTE123\u0026ids=CAND_NOTE456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022CAND_NOTE123\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022CAND_NOTE456\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-3",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the /candidateNotes endpoint to delete candidate notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-3",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/candidateNotes?ids[0].externalCandidateId={externalCandidateId}\u0026ids[0].integrationContext={organization URN}\u0026ids[0].externalNoteId={externalNoteId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-3",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-3",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-3",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to per-version sample requests below.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-3",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].externalCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the candidate in the partner ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization URN in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalNoteId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the candidate note in the partner ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidateNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=candidate_20251219_001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidateNotes?ids[0].externalCandidateId=candidate_20251219_001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidateNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=candidate_20251219_001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidateNotes?ids[0].externalCandidateId=candidate_20251219_001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-2",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/candidateNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalCandidateId=candidate_20251219_001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-2",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/candidateNotes?ids[0].externalCandidateId=candidate_20251219_001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Delete Candidate Notes",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalCandidateId=candidate_20251219_001\u0026externalNoteId=note_20251219_0002\u0026integrationContext=urn%3Ali%3Aorganization%3A12345\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the applications endpoint when a customer deletes records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsApplications?ids[0].atsJobApplicationId={ATSJobApplicationID}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].atsJobApplicationId=APPL123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/atsApplications?ids[0].atsJobApplicationId={ATSJobApplicationID}\u0026ids[0].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: {version}\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "Replace {version} with the appropriate LinkedIn-Version header for your version. Refer to the per-version sample requests below for the exact value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/applications?ids[0].atsJobApplicationId={ATSJobApplicationID}\u0026ids[0].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Endpoint"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/applications\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: ******\u0027 \\\n--data \u0027ids[0].atsJobApplicationId=APPL123\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].integrationContext=urn:li:organization:1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].atsJobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use your ATS Job Application ID as the value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization/Company ID The format should be \u0022urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use \u0022ATS\u0022 as the value for data provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-4",
+      "SectionPath": [
+        "Delete Applications",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].atsJobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use your ATS Job Application ID as the value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization/Company ID The format should be \u0022urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsApplications\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].atsJobApplicationId=APPL123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[1].atsJobApplicationId=APPL456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:1000\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/atsApplications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/applications?ids=List((atsJobApplicationId:APPL123,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: ******\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022atsJobApplicationId=APPL123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:1000\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022atsJobApplicationId=APPL456\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:1000\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022atsJobApplicationId=APPL123\u0026integrationContext=urn:li:organization:1000\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022atsJobApplicationId=APPL456\u0026integrationContext=urn:li:organization:1000\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "Delete Applications",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /atsApplications/{JobApplicationIdentifier}/notes to delete application notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsApplications/atsJobApplicationId={ATSJobApplicationID}\u0026dataProvider=ATS\u0026integrationContext={organizationURN}/notes?ids={noteID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Endpoint"
+      ],
+      "Text": "The combination of atsJobApplicationId,dataProvider \u0026 integrationContext fields in the above URL is the job application identifier for your job application synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Note ID for the Job Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsApplications/atsJobApplicationId=APPL123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183/notes?ids=APPL_NOTE123\u0026ids=APPL_NOTE456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022APPL_NOTE123\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022APPL_NOTE456\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-6",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the /applicationNotes endpoint to delete application notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-6",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId={externalJobApplicationId}\u0026ids[0].integrationContext={organization URN}\u0026ids[0].externalNoteId={externalNoteId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-6",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-6",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-6",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to per-version sample requests below.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-6",
+      "SectionPath": [
+        "Delete Application Notes",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].externalJobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the job application in the partner ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer\u0027s organization URN in the format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].externalNoteId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the application note in the partner ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-5",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationNotes\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn:li:organization:12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-5",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationNotes?ids[0].externalJobApplicationId=app_2025219_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A12345\u0026ids[0].externalNoteId=note_20251219_0002\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Delete Application Notes",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022externalJobApplicationId=app_2025219_0001\u0026externalNoteId=note_20251219_0002\u0026integrationContext=urn%3Ali%3Aorganization%3A12345\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /atsApplications/{JobApplicationIdentifier}/interviewFeedback to delete interviews. More information is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsApplications/atsJobApplicationId={ATSJobApplicationID}\u0026dataProvider=ATS\u0026integrationContext={organizationURN}/interviewFeedback?ids={InterviewID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Endpoint"
+      ],
+      "Text": "The combination of atsJobApplicationId,dataProvider \u0026 integrationContext fields becomes the job application identifier for your job application synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Interview ID for the Job Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/v2/atsApplications/atsJobApplicationId=kg_app_test_0002\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:1000/interviewFeedback?ids=APPL_INTERVIEW_0001\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022INTFB123\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022INTFB456\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-8",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /applicationInterviewFeedbacks to delete interviews. More information is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-8",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids=List((jobApplicationId:jdoe_sw_engr_1001,interviewFeedbackId:APPL_INTERVIEW_0001,integrationContext:urn%3Ali%3Aorganization%3A1000))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-8",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-8",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-8",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202508.02",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Content-Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "application/json",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-8",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Application ID from your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interviewFeedbackId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Interview Feedback ID for the Job Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization/Company ID The format should be \u0022urn:li:organization:{id}\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids[0].jobApplicationId=kg_app_test_0002\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].interviewFeedbackId=test_feedback_0001\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=kg_app_test_20250530_111\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].interviewFeedbackId=feedback_test_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids[0].jobApplicationId=kg_app_test_0002\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].interviewFeedbackId=test_feedback_0001\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=kg_app_test_20250530_111\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].interviewFeedbackId=feedback_test_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids[0].jobApplicationId=kg_app_test_0002\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].interviewFeedbackId=test_feedback_0001\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=kg_app_test_20250530_111\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].interviewFeedbackId=feedback_test_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids[0].jobApplicationId=kg_app_test_0002\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].interviewFeedbackId=test_feedback_0001\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=kg_app_test_20250530_111\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].interviewFeedbackId=feedback_test_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids[0].jobApplicationId=kg_app_test_0002\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].interviewFeedbackId=test_feedback_0001\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=kg_app_test_20250530_111\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].interviewFeedbackId=feedback_test_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-11",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks?ids[0].jobApplicationId=kg_app_test_0002\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].interviewFeedbackId=test_feedback_0001\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-11",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationInterviewFeedbacks\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=kg_app_test_20250530_111\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].interviewFeedbackId=feedback_test_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(integrationContext:urn%3Ali%3Aorganization%3A1000,interviewFeedbackId:APPL_INTERVIEW_0001,jobApplicationId:jdoe_sw_engr_1001)\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Delete Application Interview Feedback",
+        "Sample Response"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /atsApplications/{JobApplicationIdentifier}/stages to delete Job Application Stages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsApplications/atsJobApplicationId={ATSJobApplicationID}\u0026dataProvider=ATS\u0026integrationContext={organizationURN}/stages?ids={StageID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Endpoint"
+      ],
+      "Text": "The combination of atsJobApplicationId,dataProvider \u0026 integrationContext fields in above URL is the unique job application identifier for your job application synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Stage ID for the Job Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsApplications/atsJobApplicationId=APPL123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183/stages?ids=APPL_STAGE123\u0026ids=APPL_STAGE456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022APPL_STAGE123\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022APPL_STAGE456\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/applicationStage?ids[0].jobApplicationId=jobApplicationId\u0026ids[0].integrationContext=urn:li:organization:organizationURN\u0026ids[0].jobApplicationStageId={StageID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Endpoint"
+      ],
+      "Text": "The combination of jobApplicationId \u0026 integrationContext fields in above URL is the unique job application identifier for your job application synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-10",
+      "SectionPath": [
+        "Delete Application Stages",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique Application ID from your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicationStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique jobApplication Stage ID for the Job Application Stage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Customer\u0027s Organization/Company ID The format should be \u0022urn:li:organization:{id}\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-21",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/applicationStage\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].jobApplicationId=test_app_0001\u0026ids[0].integrationContext=urn:li:organization:1000\u0026ids[0].jobApplicationStageId=job_appstage_0001\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-7",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-7",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022:{\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A1000\u0026jobApplicationId=test_app_0001\u0026jobApplicationStageId=job_appstage_0001\u0022:{\n            \u0022status\u0022:204\n        }\n    },\n    \u0022errors\u0022:{}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-7",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-7",
+      "SectionPath": [
+        "Delete Application Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-10",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /jobRequisitions to delete job requisitions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Endpoint"
+      ],
+      "Text": "The combination of externalJobRequisitionId \u0026 integrationContext fields in above URL is the unique job requisition identifier for your job requisition synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-11",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifiers of the job requisitions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-30",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-8",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 204 response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-8",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022results\u0022: [\n    {\n      \u0022externalJobRequisitionId\u0022: \u0022EXT_REQS_13\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1000\u0022,\n      \u0022status\u0022: 204\n    }\n  ],\n  \u0022errors\u0022: []\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-8",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-8",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-11",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /jobRequisitionStages to delete job requisition stages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:{external_job_requisition_id},jobRequisitionStageId:{job_requisition_stage_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Endpoint"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Endpoint"
+      ],
+      "Text": "The combination of externalJobRequisitionId, jobRequisitionStageId \u0026 integrationContext fields in above URL is the unique job requisition stage identifier for your job requisition stage synced in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-12",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifiers of the job requisition stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-39",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitionStages?ids=List((externalJobRequisitionId:EXT_REQS_13,jobRequisitionStageId:TEST_APP_ACL_2,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-9",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 204 response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-9",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A82988289\u0026jobRequisitionId=job-req-11\u0026jobRequisitionStageId=job-req-stage-1\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A82988289\u0026jobRequisitionId=job-req-11\u0026jobRequisitionStageId=job-req-stage-2\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-9",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-9",
+      "SectionPath": [
+        "Delete Job Requisition Stages",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details-12",
+      "SectionPath": [
+        "Delete Attachments",
+        "API Details"
+      ],
+      "Text": "Perform HTTP DELETE on the endpoint /attachments to delete documents.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-13",
+      "SectionPath": [
+        "Delete Attachments",
+        "API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId={external_ref_entity_id}\u0026ids[0].externalAttachmentId={external_attachment_id}\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-13",
+      "SectionPath": [
+        "Delete Attachments",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass an access token of type Bearer in your request as Authorization header.\nThe access token is obtained via OAuth 2 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-13",
+      "SectionPath": [
+        "Delete Attachments",
+        "API Authorization"
+      ],
+      "Text": "OAuth Application: You must use your Customer Application\u0027s Client ID and Client Secret to obtain this access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Headers",
+      "Anchor": "api-request-headers-13",
+      "SectionPath": [
+        "Delete Attachments",
+        "API Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-13",
+      "SectionPath": [
+        "Delete Attachments",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalReferenceEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id of reference entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalAttachmentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifiers of the attachment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integrationcontext in format of urn:li:organization:1234",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalReferenceEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "currently only \u0022APPLICATION\u0022 is supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attachmentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "attachment type. Currently only \u0022RESUME\u0022 is supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-16",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling-16",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--header \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1000\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-10",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 204 response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-10",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Response Body"
+      ],
+      "Text": "{\n\u0022results\u0022:\n{\u0022attachmentType=RESUME\u0026externalAttachmentId=attachment_0001\u0026externalReferenceEntityId=external_ref_entity_id_0001\u0026externalReferenceEntityType=APPLICATION\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0022:{\u0022status\u0022:204}\n},\n\u0022errors\u0022:{}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-10",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-10",
+      "SectionPath": [
+        "Delete Attachments",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

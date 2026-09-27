@@ -15,11 +15,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public int? Day { get; set; }
+        public long? Day { get; set; }
         /// <summary>The month property</summary>
-        public int? Month { get; set; }
+        public long? Month { get; set; }
         /// <summary>The year property</summary>
-        public int? Year { get; set; }
+        public long? Year { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningFetchAllMediaPlansInAnAdAccount200ResponseElementsItemStartDateOn"/> and sets the default values.
         /// </summary>
@@ -45,9 +45,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "day", n => { Day = n.GetIntValue(); } },
-                { "month", n => { Month = n.GetIntValue(); } },
-                { "year", n => { Year = n.GetIntValue(); } },
+                { "day", n => { Day = n.GetLongValue(); } },
+                { "month", n => { Month = n.GetLongValue(); } },
+                { "year", n => { Year = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("day", Day);
-            writer.WriteIntValue("month", Month);
-            writer.WriteIntValue("year", Year);
+            writer.WriteLongValue("day", Day);
+            writer.WriteLongValue("month", Month);
+            writer.WriteLongValue("year", Year);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversion property</summary>
+        /// <summary>URN of the conversion rule created. The format of your input should be urn:lla:llaPartnerConversion:ID, where you must replace ID with the respective conversion rule ID. You can parse the id field in response body or from the x-restli-id response header from Create a new Conversion Rule API or id of existing conversion rules from the Find Conversion Rules by Ad Account API. Alternatively, you can also find it from the conversion URL in LinkedIn Campaign Manager by selecting the conversion rule to edit, and extract id that immediately follows /conversions/ in the URL (/campaignmanager/accounts/{accountId}/conversions/{conversionId}).Documented type: URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Conversion { get; set; }
@@ -22,8 +22,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Conversion { get; set; }
 #endif
-        /// <summary>The conversionHappenedAt property</summary>
-        public int? ConversionHappenedAt { get; set; }
+        /// <summary>Epoch timestamp in milliseconds at which the conversion event happened. Note: If your source records conversion timestamp in seconds, please insert 000 at the end to transform it to milliseconds.Documented type: long</summary>
+        public long? ConversionHappenedAt { get; set; }
         /// <summary>The conversionValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string EventId { get; set; }
 #endif
-        /// <summary>The user property</summary>
+        /// <summary>Object containing userIds, userInfo, lead and externalIds attributes of the user who performed the conversion. See ConversionEventUser below.Documented type: Object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUser? User { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversion", n => { Conversion = n.GetStringValue(); } },
-                { "conversionHappenedAt", n => { ConversionHappenedAt = n.GetIntValue(); } },
+                { "conversionHappenedAt", n => { ConversionHappenedAt = n.GetLongValue(); } },
                 { "conversionValue", n => { ConversionValue = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemConversionValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemConversionValue.CreateFromDiscriminatorValue); } },
                 { "eventId", n => { EventId = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUser>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUser.CreateFromDiscriminatorValue); } },
@@ -88,7 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversion", Conversion);
-            writer.WriteIntValue("conversionHappenedAt", ConversionHappenedAt);
+            writer.WriteLongValue("conversionHappenedAt", ConversionHappenedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemConversionValue>("conversionValue", ConversionValue);
             writer.WriteStringValue("eventId", EventId);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestElementsItemUser>("user", User);

@@ -1,0 +1,1418 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+  "Title": "Images API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Images API",
+      "Anchor": "images-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Images API",
+      "Anchor": "images-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Images API",
+      "Anchor": "images-api",
+      "SectionPath": [],
+      "Text": "Image API makes it easier for you to manage image assets and create image ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Images API",
+      "Anchor": "images-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Images API",
+      "Anchor": "images-api",
+      "SectionPath": [],
+      "Text": "The Images API replaces the Assets API. See Migration Guide for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "All APIs require the request headers Linkedin-Version: {Version in YYYYMM format}\nand X-Restli-Protocol-Version: 2.0.0. Refer to the Protocol Versions page to learn more about\u00A0Rest.li\u00A0Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "aspectRatioHeight",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The aspect ratio height of the media. For a 16:9 media, this will be 9. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. Empty if the media asset isn\u0027t available, failed processing, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aspectRatioWidth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The aspect ratio width of the media. For a 16:9 media, this will be 16. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. Empty if the media asset isn\u0027t available, failed processing, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public URL to download/view the media asset. Is empty if the media asset isn\u0027t available, failed processing, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires. If not present, it might never expire but there\u0027s no guarantee. Unless the use case has a security\u002Blegal exception, all URLs have an expiration time. If they don\u0027t, they can still expire because URLs are signed, and the sign keys might be rotated. If a non expiring URL was signed with a key that gets invalidated, it essentially expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Imageurn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique URN for an Image. Synthetic key that shouldn\u0027t be allowed during the creation of an Image. The field is read only and derived to be populated internally.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata.associatedAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The associated account that owns the media library (e.g. urn:li:sponsoredAccount:123). The media library specific metadata fields will be filled with the data from this account\u0027s library.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata.assetName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the asset in the associatedAccount\u0027s library.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryMetadata.mediaLibraryStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaLibraryStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the asset\u0027s entry in the media library. Defaults to \u0022ACTIVE\u0022 on creation.ACTIVE Owner considers asset available and usable. ARCHIVED Owner considers asset archived.",
+            "Links": [],
+            "Values": [
+              "ACTIVE Owner considers asset available and usable.",
+              "ARCHIVED Owner considers asset archived."
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the entity that owns this asset. It can be a person(urn:li:person:123), organization(urn:li:organization:123) or sponsoredAccount(urn:li:sponsoredAccount:123) URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PROCESSING Asset is processing to generate missing artifacts. PROCESSING_FAILED - Processing failed due to client error such as file size too large, unsupported file format, internal error (e.g., performance issue, database error, network failure), or other issue. AVAILABLE - All of the recipe\u0027s required artifacts are ready. The asset is available to be served. WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "altText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The alternate text of this thumbnail. Used for screen reader accessibility. Maximum length is 4,086 characters, recommended length is less than 120 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.mediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaLibraryMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests. When this field is present, the uploaded asset will also be registered in the account\u0027s media library.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the entity that owns this asset. Can be a person(urn:li:person:123), or organization(urn:li:organization:123) URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "The Images API supports the following image pixel count and formats:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Images with less than 36,152,320 pixels.\nJPG, GIF, and PNG formats\nGIF format supports up to 250 frames",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The following permission checks are performed when uploading an image:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For images with company URN owners, the caller must have ADMIN or DSC permissions for the company page.\nFor images with SponsoredContentAccount URN owners, all GET\u0027s and UPDATE\u0027s are permitted.\nFor images with member URN owners, the caller must match the image owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The permissions required for rest/images access are: rw_ads, w_member_social, w_organization_social, and w_power_creators. However, w_member_social permission are write-only and tokens with only w_member_social permissions would be unable to perform a GET call for rest/images.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "This only applies to versioned gateway calls. w_member_social permissions are sufficient to make legacy GET calls to rest/images.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Invalid permissions results in the following API response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022Accessing this image resource is forbidden. Please check your permissions for this resource\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Image Upload",
+      "Anchor": "initialize-image-upload",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload"
+      ],
+      "Text": "Use the initializeUpload action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL to upload the image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Image Upload",
+      "Anchor": "initialize-image-upload",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Image Upload",
+      "Anchor": "initialize-image-upload",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload"
+      ],
+      "Text": "SYNCHRONOUS_UPLOAD is not supported in Images API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/images?action=initializeUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022initializeUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:5583111\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/images?action=initializeUpload\u0027  \n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022initializeUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:5583111\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022value\u0022: {\n       \u0022uploadUrlExpiresAt\u0022: 1650567510704,\n       \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C4E10AQFoyyAjHPMQuQ/uploaded-image/0?ca=vector_ads\u0026cn=uploads\u0026sync=0\u0026v=beta\u0026ut=08zHQjMjAOLqc1\u0022,\n       \u0022image\u0022: \u0022urn:li:image:C4E10AQFoyyAjHPMQuQ\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image with MediaLibraryMetadata for media library registration",
+      "Anchor": "image-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Image with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image with MediaLibraryMetadata for media library registration",
+      "Anchor": "image-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Image with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "mediaLibraryMetadata.mediaLibraryStatus defaults to ACTIVE on creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image with MediaLibraryMetadata for media library registration",
+      "Anchor": "image-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Image with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Image with MediaLibraryMetadata for media library registration",
+      "Anchor": "image-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Image with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/images?action=initializeUpload\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Image with MediaLibraryMetadata for media library registration",
+      "Anchor": "image-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Image with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n       \u0022mediaLibraryMetadata\u0022: {\n            \u0022associatedAccount\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n            \u0022assetName\u0022: \u0022My media library asset\u0022\n      }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Image with MediaLibraryMetadata for media library registration",
+      "Anchor": "image-with-medialibrarymetadata-for-media-library-registration",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Image with MediaLibraryMetadata for media library registration"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/images?action=initializeUpload\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{ \u0022initializeUploadRequest\u0022: {\n       \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n        \u0022mediaLibraryMetadata\u0022: {\n            \u0022associatedAccount\u0022: \u0022urn:li:sponsoredAccount:123456789\u0022,\n            \u0022assetName\u0022: \u0022My media library asset\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK status code with the uploadUrl to upload the image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Initialize Image Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022value\u0022: {\n       \u0022uploadUrlExpiresAt\u0022: 1650567510704,\n       \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C4E10AQFoyyAjHPMQuQ/uploaded-image/0?ca=vector_ads\u0026cn=uploads\u0026sync=0\u0026v=beta\u0026ut=08zHQjMjAOLqc1\u0022,\n       \u0022image\u0022: \u0022urn:li:image:C4E10AQFoyyAjHPMQuQ\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Image",
+      "Anchor": "upload-the-image",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Upload the Image"
+      ],
+      "Text": "Using the uploadUrl returned from the previous step, upload the image. For more information, see Upload the Image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Image",
+      "Anchor": "upload-the-image",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Upload the Image"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Image",
+      "Anchor": "upload-the-image",
+      "SectionPath": [
+        "Managing Image asset",
+        "Uploading an Image",
+        "Upload the Image"
+      ],
+      "Text": "Images uploaded with the Images API can now be reused across different image and image ad formats. For example, an image can be used in a single image ad, a carousel ad and a spotlight ad and doesn\u0027t require separate image uploads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET a single image",
+      "Anchor": "get-a-single-image",
+      "SectionPath": [
+        "Managing Image asset",
+        "GET a single image"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET a single image",
+      "Anchor": "get-a-single-image",
+      "SectionPath": [
+        "Managing Image asset",
+        "GET a single image"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/images/urn:li:image:C4E10AQFn10iWtKexVA",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET a single image",
+      "Anchor": "get-a-single-image",
+      "SectionPath": [
+        "Managing Image asset",
+        "GET a single image"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/images/urn:li:image:C4E10AQFn10iWtKexVA\u0027  \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Managing Image asset",
+        "GET a single image",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:organization:5583111\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n    \u0022downloadUrl\u0022: \u0022https://media.licdn-ei.com/dms/image/C4E10AQFn10iWtKexVA/image-shrink_1280/0/1675963270302/imagecreatedfirst?e=1676584800\u0026v=beta\u0026t=zuE2bQG5S-pY2R1v-FNJu15Pbs2K_Z02Q4naeM2kh00\u0022,\n    \u0022id\u0022: \u0022urn:li:image:C4E10AQFn10iWtKexVA\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1679083200000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch get images",
+      "Anchor": "batch-get-images",
+      "SectionPath": [
+        "Managing Image asset",
+        "Batch get images"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch get images",
+      "Anchor": "batch-get-images",
+      "SectionPath": [
+        "Managing Image asset",
+        "Batch get images"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/images?ids=List(urn%3Ali%3Aimage%3AC4E10AQFn10iWtKexVA,urn%3Ali%3Aimage%3AC4E10AQFgOYeVoHFeBw)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch get images",
+      "Anchor": "batch-get-images",
+      "SectionPath": [
+        "Managing Image asset",
+        "Batch get images"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/images?ids=List(urn%3Ali%3Aimage%3AC4E10AQFn10iWtKexVA,urn%3Ali%3Aimage%3AC4E10AQFgOYeVoHFeBw)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Managing Image asset",
+        "Batch get images",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:image:C4E10AQFn10iWtKexVA\u0022: {\n            \u0022owner\u0022: \u0022urn:li:organization:5583111\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n            \u0022downloadUrl\u0022: \u0022https://media.licdn-ei.com/dms/image/C4E10AQFn10iWtKexVA/image-shrink_1280/0/1675963270302/imagecreatedfirst?e=1676584800\u0026v=beta\u0026t=zuE2bQG5S-pY2R1v-FNJu15Pbs2K_Z02Q4naeM2kh00\u0022,\n            \u0022id\u0022: \u0022urn:li:image:C4E10AQFn10iWtKexVA\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1679083200000,\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022urn:li:image:C4E10AQFgOYeVoHFeBw\u0022:\n        {\n            \u0022owner\u0022: \u0022urn:li:organization:5583111\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n            \u0022downloadUrl\u0022: \u0022https://media.licdn-ei.com/dms/image/C4E10AQFgOYeVoHFeBw/image-shrink_1280/0/1675963270302/imagecreatedfirst?e=1676584800\u0026v=beta\u0026t=zuE2bQG5S-pY2R1v-FNJu15Pbs2K_Z02Q4naeM2kh00\u0022,\n            \u0022id\u0022: \u0022urn:li:image:C4E10AQFgOYeVoHFeBw\u0022,\n            \u0022status\u0022: \u0022WAITING_UPLOAD\u0022\n        }\n    },\n    \u0022statuses\u0022:\n    {\n        \u0022urn:li:image:C4E10AQFn10iWtKexVA\u0022: 200,\n        \u0022urn:li:image:C4E10AQFgOYeVoHFeBw\u0022: 200\n    },\n    \u0022errors\u0022:\n    {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update on an Image",
+      "Anchor": "partial-update-on-an-image",
+      "SectionPath": [
+        "Partial Update on an Image"
+      ],
+      "Text": "Only supports updates on the media library metadata and only for the specified account. As such, the associatedAccount parameter is mandatory. Silently ignores any other patch data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update on an Image",
+      "Anchor": "partial-update-on-an-image",
+      "SectionPath": [
+        "Partial Update on an Image"
+      ],
+      "Text": "When updating the mediaLibraryMetadata.mediaLibraryStatus field, an asset can go from ACTIVE to ARCHIVED only if it\u0027s not currently in processing (i.e. is done processing or processing failed). An asset can only go from ARCHIVED to ACTIVE if it succeeded processing. Updating the mediaLibraryMetadata.mediaLibraryStatus field won\u0027t update the last modified time of the asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update on an Image",
+      "Anchor": "partial-update-on-an-image",
+      "SectionPath": [
+        "Partial Update on an Image"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Partial Update on an Image",
+      "Anchor": "partial-update-on-an-image",
+      "SectionPath": [
+        "Partial Update on an Image"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/images/urn%3Ali%3Aimage%3AC5510AQEB1AGuxQ1NEA?associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Partial Update on an Image",
+      "Anchor": "partial-update-on-an-image",
+      "SectionPath": [
+        "Partial Update on an Image"
+      ],
+      "Text": "{\n   \u0022patch\u0022:{\n      \u0022mediaLibraryMetadata\u0022:{\n         \u0022$set\u0022:{\n            \u0022assetName\u0022:\u0022updated name\u0022,\n            \u0022mediaLibraryStatus\u0022:\u0022ARCHIVED\u0022\n         }\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Partial Update on an Image",
+      "Anchor": "partial-update-on-an-image",
+      "SectionPath": [
+        "Partial Update on an Image"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/images/urn%3Ali%3Aimage%3AC5510AQEB1AGuxQ1NEA?associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789\u0027\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-Restli-Method:PARTIAL_UPDATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n  \u0022patch\u0022: {\n    \u0022mediaLibraryMetadata\u0022: {\n      \u0022\\$set\u0022: {\n        \u0022assetName\u0022: \u0022updated name\u0022,\n        \u0022mediaLibraryStatus\u0022: \u0022ARCHIVED\u0022\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Partial Update on an Image",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find by associated account",
+      "Anchor": "find-by-associated-account",
+      "SectionPath": [
+        "Find by associated account"
+      ],
+      "Text": "Get the Images associated with the specified account, by descending order of last modified time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Find by associated account",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Required",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must be associatedAccount",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaLibraryStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional filter on the media library status. When omitted, all images will be returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index at which the returned elements should begin. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of elements to return, up to 1,000. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find by associated account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find by associated account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/images?start=0\u0026count=1\u0026associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789\u0026mediaLibraryStatus=(value:ACTIVE)\u0026q=associatedAccount \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find by associated account",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET https://api.linkedin.com/rest/images?start=0\u0026count=1\u0026associatedAccount=urn%3Ali%3AsponsoredAccount%3A123456789\u0026mediaLibraryStatus=(value:ACTIVE)\u0026q=associatedAccount \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Find by associated account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: \u0022urn:li:company:5791012\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n            \u0022downloadUrl\u0022: \u0022https://media.licdn-ei.com/dms/image/C5510AQGbefUcYjBtaA/image-shrink_1280/0/1675963270302/imagecreatedfirst?e=1676584800\u0026v=beta\u0026t=zuE2bQG5S-pY2R1v-FNJu15Pbs2K_Z02Q4naeM2kh00\u0022,\n            \u0022id\u0022: \u0022urn:li:image:C5510AQGbefUcYjBtaA\u0022,\n            \u0022mediaLibraryMetadata\u0022: {\n                \u0022associatedAccount\u0022: \u0022urn:li:sponsoredAccount:521498108\u0022,\n                \u0022mediaLibraryStatus\u0022: \u0022ACTIVE\u0022,\n                \u0022assetName\u0022: \u0022image created first\u0022\n            },\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022https://api.linkedin.com/rest/images?associatedAccount=urn%3Ali%3AsponsoredAccount%3A521498108\u0026q=associatedAccount\u0026start=1\u0026count=1\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions-1",
+      "SectionPath": [
+        "Find by associated account",
+        "Permissions"
+      ],
+      "Text": "The following permission checks are performed when retrieving or uploading an image",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions-1",
+      "SectionPath": [
+        "Find by associated account",
+        "Permissions"
+      ],
+      "Text": "For images with company URN owners, the caller needs to have ADMIN or DSC permissions for the company page.\nFor images with SponsoredContentAccount URN owners, all the GET and UPDATE methods are permitted.\nFor images with member URN owners, the caller needs to match the image owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions-1",
+      "SectionPath": [
+        "Find by associated account",
+        "Permissions"
+      ],
+      "Text": "Invalid permissions results in the following API response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Permissions",
+      "Anchor": "permissions-1",
+      "SectionPath": [
+        "Find by associated account",
+        "Permissions"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022Accessing this image resource is forbidden. Please check your permissions for this resource\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Image content",
+      "Anchor": "create-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Create Image content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Image content",
+      "Anchor": "create-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Create Image content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Image content",
+      "Anchor": "create-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Create Image content"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n    \u0022commentary\u0022: \u0022test strings!\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022media\u0022: {\n            \u0022altText\u0022: \u0022testing for alt tags\u0022,\n            \u0022id\u0022: \u0022urn:li:image:C5610AQFj6TdYowm17w\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Image content",
+      "Anchor": "create-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Create Image content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n    \u0022commentary\u0022: \u0022test strings!\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022media\u0022: {\n            \u0022altText\u0022: \u0022testing for alt tags\u0022,\n            \u0022id\u0022: \u0022urn:li:image:C5610AQFj6TdYowm17w\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Managing Image content",
+        "Create Image content",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Image content",
+      "Anchor": "get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Get Image content"
+      ],
+      "Text": "Retrieve image content associated with a Post performing GET call to the Posts API on a post that was created with image content. Example post ID: urn:li:share:6876614985750310912",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Image content",
+      "Anchor": "get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Get Image content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Image content",
+      "Anchor": "get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Get Image content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{postId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Image content",
+      "Anchor": "get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Get Image content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts/urn:li:share:6876614985750310912 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Managing Image content",
+        "Get Image content",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022publishedBy\u0022: \u0022urn:li:member:231303601\u0022,\n    \u0022lastModifiedAt\u0022: 1639512853791,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022publishedAt\u0022: 1639512774391,\n    \u0022author\u0022: \u0022urn:li:company:5515715\u0022,\n    \u0022lastModifiedBy\u0022: \u0022urn:li:csUser:2\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022media\u0022: {\n            \u0022taggedEntities\u0022: [],\n            \u0022id\u0022: \u0022urn:li:image:C5F22AQEYStbwuCM12w\u0022\n        }\n    },\n    \u0022lifecycleStateInfo\u0022: {\n        \u0022isEditedByAuthor\u0022: false\n    },\n    \u0022isReshareDisabledByAuthor\u0022: false,\n    \u0022createdAt\u0022: 1639512774185,\n    \u0022createdBy\u0022: \u0022urn:li:member:231303601\u0022,\n    \u0022id\u0022: \u0022urn:li:share:6876614985750310912\u0022,\n    \u0022commentary\u0022: \u0022test strings\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Image Content",
+      "Anchor": "batch-get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Batch Get Image Content"
+      ],
+      "Text": "Fetch multiple posts with image content by providing multiple post IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Image Content",
+      "Anchor": "batch-get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Batch Get Image Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Image Content",
+      "Anchor": "batch-get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Batch Get Image Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts?ids=List({encoded postId},{encoded postId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Image Content",
+      "Anchor": "batch-get-image-content",
+      "SectionPath": [
+        "Managing Image content",
+        "Batch Get Image Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts?ids=List(urn%3Ali%3Ashare%3A6914373086788128769,urn%3Ali%3Ashare%3A6914374851449270272)\u0027 \\\n--header \u0027X-RestLi-Method: batch_get\u0027 \\\n--header \u0027X-Restli-Protocol-version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Managing Image content",
+        "Batch Get Image Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:share:6927408039457087488\u0022: {\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1651622781932,\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1651622781932,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1651622781932,\n           \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n           \u0022id\u0022: \u0022urn:li:share:6927408039457087488\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022media\u0022: {\n                   \u0022id\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022\n               }\n           },\n           \u0022commentary\u0022: \u0022test strings\u0022,\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           }\n       },\n       \u0022urn:li:share:6927408326569783296\u0022: {\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1651622850346,\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1651622850346,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1651622850346,\n           \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n           \u0022id\u0022: \u0022urn:li:share:6927408326569783296\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022media\u0022: {\n                   \u0022id\u0022: \u0022urn:li:image:C5F22AQFIMShx0jJbQw\u0022\n               }\n           },\n           \u0022commentary\u0022: \u0022test strings1\u0022,\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           }\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:share:6927408039457087488\u0022: 200,\n       \u0022urn:li:share:6927408326569783296\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_IMAGE_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This Image ID is invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URN_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This URN ID is invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URN_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} must be a {urnType} URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

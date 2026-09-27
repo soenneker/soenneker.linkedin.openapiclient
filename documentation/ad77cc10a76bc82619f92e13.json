@@ -1,0 +1,1454 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications",
+  "Title": "Job Status Change Notifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Status Change Notifications",
+      "Anchor": "job-status-change-notifications",
+      "SectionPath": [],
+      "Text": "After jobs have successfully posted on LinkedIn a jobs\u0027 status can change at a later time. Some examples are jobs converting from an on-site to off-site application flow, jobs being reported by members resulting in that job being closed, or the promotion status changed by LinkedIn or the customer. With those changes partners do not have visibility into these changes as they happen, and have no way to retrieve the current status of a job posting on LinkedIn. This limitation also prevents ATS partners from having a way to display accurate job status information to customers in their UI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Status Change Notifications",
+      "Anchor": "job-status-change-notifications",
+      "SectionPath": [],
+      "Text": "With the Job Status Change Notifications API this allows partners to be notified by LinkedIn in near real-time of up-to-date statuses of their customer posted jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Status Change Notifications",
+      "Anchor": "job-status-change-notifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Status Change Notifications",
+      "Anchor": "job-status-change-notifications",
+      "SectionPath": [],
+      "Text": "Ensure to register and enable only one webhook for each event type per parent application in the developer portal\u0027s webhooks tab.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Configure a webhook url which is publicly acccesible.\nRegister and validate the webhook url in the LinkedIn Developer Portal",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Registration and Validation",
+      "Anchor": "webhook-registration-and-validation",
+      "SectionPath": [
+        "Webhook Registration and Validation"
+      ],
+      "Text": "To receive notifications at your webhook, your webhook must be registered and validated. Please review and complete the steps in the documentation for Webhooks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Job Status Change Notification",
+      "Anchor": "receive-job-status-change-notification",
+      "SectionPath": [
+        "Receive Job Status Change Notification"
+      ],
+      "Text": "Registered webhook URLs will receive notifications from LinkedIn for job status change events. This request will contain the developerApplicationUrn associated to the customer and the externalJobPostingId of the updated job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Receive Job Status Change Notification",
+        "Sample Request"
+      ],
+      "Text": "POST https://{webhookUrl}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Receive Job Status Change Notification",
+        "Sample Request"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job posting id within the partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "developerApplicationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer Application urn for a child app.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the callback request, current supported type JOB_POSTING_STATUS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobPostingInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job posting id within the partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications?view=li-lts-2026-04#jobpostinginfo-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobPostingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Link to the job posting on LinkedIn. Will only be present if job is listed on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "linkedInApplyStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Easy Apply status of the job posting. Will be one of ENABLED, NOT_ENABLED, IN_PROGRESS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "linkedInApplyStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "listingStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Listing state of the job posting. Will be one of LISTED, NOT_LISTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "listingStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error description for the job, if not listed successfully.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "promotionStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Promoted status of the job listing. Will be one of PROMOTED, NOT_PROMOTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "promotionStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Instruction message to manage job promotion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "JobPostingInfo Field Schema",
+      "Anchor": "jobpostinginfo-field-schema",
+      "SectionPath": [
+        "JobPostingInfo Field Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "alternateLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Alternate locations for the job, which can have multiple locations. This field is used to reflect the locations other than the one set in location field. It\u0027s empty if the job only has one location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job company details, contains company name and page url.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CompanyDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications?view=li-lts-2026-04#companydetails-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the date the job posting will expire on LinkedIn. Null if the job posting is not listed yet. The date is epoch timestamp in milliseconds (UTC).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "listedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents initial date the job posting was listed on Linkedin. The date is epoch timestamp in milliseconds (UTC).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized location for the job listing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CompanyDetails Field Schema",
+      "Anchor": "companydetails-field-schema",
+      "SectionPath": [
+        "CompanyDetails Field Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of a company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company page on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "JobPostingStatusDetail Field Schema",
+      "Anchor": "jobpostingstatusdetail-field-schema",
+      "SectionPath": [
+        "JobPostingStatusDetail Field Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "errorCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error code identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "errorType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error desciption. Will be one of CUSTOMER_ERRORCustomer inputted data contains errors. PARTNER_ERRORPartner API request contains errors. LINKEDIN_ERRORAn error occurred on LinkedIn.",
+            "Links": [],
+            "Values": [
+              "CUSTOMER_ERROR",
+              "Customer inputted data contains errors.",
+              "PARTNER_ERROR",
+              "Partner API request contains errors.",
+              "LINKEDIN_ERROR",
+              "An error occurred on LinkedIn."
+            ]
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "statusMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the status.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ListingStatusDetails Error Codes",
+      "Anchor": "listingstatusdetails-error-codes",
+      "SectionPath": [
+        "ListingStatusDetails Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "ListedStatus",
+        "Error Code",
+        "Error Type",
+        "Error Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_LOCATION: The job location cannot be standardized. Please update the location in your ATS according to the API schema location field best practices.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The location cannot be recognized, most likely because it is missing information such as a Country or Postal code.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MISSING_LOCATION: The job is missing location data. Please add the location in your ATS to post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job is missing a location.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BLOCKED_COUNTRY: The job\u2019s location is a country/region blocked by LinkedIn to comply with US government sanctions. Please refer to LinkedIn Help to ensure the job location is not in a sanctioned country/region.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job location cannot be in a country/region sanctioned by the US.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MEMBER_REPORTED: The job was closed because it was reported by multiple LinkedIn members as no longer accepting applications. Please ensure the job was not incorrectly closed in your ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn auto-closes jobs that have been reported multiple times by jobseekers as no longer accepting applicants.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_EXCLUDED: The job was deliberately not posted due to a customer-requested rule. Please reach out to LinkedIn Support to modify or remove the rule.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customers may exclude certain jobs from being posted by requesting rules through LinkedIn Support.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3390",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INGESTION_TRUST_BLOCK: Block by job posting classification. The job has been blocked due to trust and safety classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job posting has been blocked by LinkedIn\u0027s trust and safety systems due to content that may violate platform policies. Review the job posting content and ensure it complies with LinkedIn\u0027s job posting guidelines.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_LISTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PENDING_CUSTOMER_MIGRATION:This job is not yet eligible to be posted automatically via the API. LinkedIn Support has been notified to ensure customer\u2019s readiness to migrate to real time API posting within 1-2 weeks.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LinkedinApplyStatus Error Codes",
+      "Anchor": "linkedinapplystatus-error-codes",
+      "SectionPath": [
+        "LinkedinApplyStatus Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "linkedInApplyStatus",
+        "Error Code",
+        "Error Type",
+        "Error Message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "IN_PROGRESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1156",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IN_PROGRESS: LinkedIn Apply is being processed. Please check back in 5 minutes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Easy Apply enablement has been requested and is being processed by the system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action needed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1100",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: Required one non-null optional field in /questionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "questionDetails in SimpleTalentQuestionDefinition should have exactly one field. For example, if dateQuestionDetails is present then other fields should not be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address error and update job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: PrerequisiteQuestion cannot depend on the response of another PrerequisiteQuestion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prerequisite question in prerequisiteQuestionResponse can not be a dependent question. For example, with two questions, Q1 and Q2, if Q2 has Q1 as its prerequisiteQuestionResponse then Q1 should have a null prerequisiteQuestionResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address error and update job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: PrerequisiteQuestion must be present within the same customQuestions set/array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prerequisite question in prerequisiteQuestionResponse should be defined within the same customQuestions array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address error and update job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: Repeatable questions cannot have PrerequisiteQuestion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If any of the question types in SimpleTalentQuestions has repeatLimit \u003E 1 then all of the questions in it must have a null prerequisiteQuestionResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address error and update job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1150",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: LinkedIn Apply update failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs due to some issue on LinkedIn and no action is required from the customer side.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action required. LinkedIn will retry processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1151",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: Unable to process questions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs due to issues with question transformation/validation or due to duplicate question identifiers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partners are advised to re-validate the question payload and format.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1153",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENABLING_APPLY_CONNECT_BY_PARTNER_FAILED: Unable to register jobApplicationWebhookUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This error occurs when the job application webhook url is not successfully registered to receive job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure webhook is valid and update job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1154",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BLOCKED_WEBHOOK: The application delivery webhook wasn\u2019t reachable. Please ensure webhook is reachable and able to accept applications and then resync the job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Webhook validation failed. Usually means challengeResponse != Hex-encoded(HMACSHA256(challengeCode, clientSecret)). Webhook Validation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Ensure webhook is valid and update job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1155",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARTNER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LOW_APPLICATION_DELIVERY: LinkedIn Apply has been disabled due to application delivery failures. Please verify the webhook url, ensure you are able to process applications successfully for this job and then resync the job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Easy Apply has been disabled due to application delivery failures.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please verify the webhook url, ensure you are able to process applications successfully for this job and then resync the job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1157",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "APPLY_CONNECT_FREE_JOB_APPLICATION_LIMIT_EXCEEDED: LinkedIn Apply free job application limit exceeded. To re-enable LinkedIn Apply, promote this job to a paid job slot.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Easy Apply has been disabled for the job because the number of applications delivered has exceeded the limit for free jobs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action needed. Customers can promote this job to a paid job slot to re-enable LinkedIn Easy Apply.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PromotionStatus Error Codes",
+      "Anchor": "promotionstatus-error-codes",
+      "SectionPath": [
+        "PromotionStatus Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "PromotionStatus",
+        "Error Code",
+        "Error Type",
+        "Error Message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PROMOTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LI_CUSTOMER_PROMOTED: Visit Recruiter to manage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn customer\u2019s job was promoted successfully through their LinkedIn Recruiter contract.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action required from partner or customer in the ATS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_PROMOTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LI_CUSTOMER_BASIC: Promote your job in Recruiter or ask your Job Posting Admin to manage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn customer\u2019s job was posted as a basic job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action required from partner or customer in the ATS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_PROMOTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10XX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CUSTOMER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ATS_CUSTOMER_BASIC: Reach out to LinkedIn Sales to learn more.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS customer\u2019s job was posted as a basic job since they do not have a LinkedIn contract.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action required from partner or customer in the ATS.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Payload",
+      "Anchor": "sample-payload",
+      "SectionPath": [
+        "PromotionStatus Error Codes",
+        "Sample Payload"
+      ],
+      "Text": "\u0022Content-Type\u0022:\u0022application/json\u0022,\n\u0022X-LI-Signature\u0022:\u0022d3756e445a8065c0f38c2182c502f8229800eb2c6a9f3b4a1fdf152af867e6fc\u0022,\n\u0022Content-Length\u0022:\u0022107\u0022,\n\u0022Connection\u0022:\u0022Keep-Alive\u0022,\n\u0022Accept-Encoding\u0022:\u0022gzip,deflate\u0022\n\n{\n  \u0022developerApplicationUrn\u0022: \u0022urn:li:developerApplication:12345\u0022,\n  \u0022externalJobPostingIds\u0022: \u0022{external_job_posting_id_1}\u0022,\n  \u0022type\u0022: \u0022JOB_POSTING_STATUS\u0022,\n  \u0022listedAt\u0022: 1602137400011,\n  \u0022externalJobPostingId\u0022: \u0022{external_job_posting_id_1}\u0022,\n  \u0022location\u0022: \u0022Sunnyvale, California\u0022,\n  \u0022listingStatus\u0022: \u0022LISTED\u0022,\n  \u0022linkedInApplyStatus\u0022: \u0022ENABLED\u0022,\n  \u0022jobPostingUrl\u0022: \u0022https://www.linkedin.com/jobs/view/123\u0022,\n  \u0022companyDetails\u0022: {\n    \u0022companyName\u0022: \u0022abc\u0022,\n    \u0022companyPage\u0022: \u0022https://www.linkedin.com/company/abc\u0022\n  },\n  \u0022promotionStatus\u0022: \u0022PROMOTED\u0022,\n  \u0022promotionStatusDetail\u0022: {\n    \u0022errorCode\u0022: 1012,\n    \u0022errorType\u0022: \u0022CUSTOMER_ERROR\u0022,\n    \u0022errorMessage\u0022: \u0022LI_CUSTOMER_PROMOTED: Visit Recruiter to manage.\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Event Responses",
+      "Anchor": "push-event-responses",
+      "SectionPath": [
+        "Push Event Responses"
+      ],
+      "Text": "Upon receiving notifications from LinkedIn, your webhook must respond with an HTTP response. For each notification delivered to your webhook, it must return an HTTP status code to indicate delivery of the notification to your webhook. Valid HTTP response codes listed below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Push Event Responses",
+      "Anchor": "push-event-responses",
+      "SectionPath": [
+        "Push Event Responses"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Code",
+        "Result",
+        "HTTP Payload Response"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Callback was successfully received",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Callback was received, but payload was not understood by the ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Respond with the field errorMessage. This string field should be the reason the request payload was not understood. Example: {\u0022errorMessage\u0022: \u0022Failed to get id from request payload.\u0022}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "System encountered an error while processing the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "If a push notification request sent to the registered webhook URL receives an unsuccessful response (not 200 OK), then LinkedIn will retry sending the request.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

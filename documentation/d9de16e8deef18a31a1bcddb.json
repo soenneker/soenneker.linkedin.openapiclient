@@ -1,0 +1,580 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+  "Title": "Module 2 - Apply with LinkedIn Plugin",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-usecases",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Apply with LinkedIn Plugin",
+      "Anchor": "module-2---apply-with-linkedin-plugin",
+      "SectionPath": [],
+      "Text": "Refer to the below sections for a step by step guide to integrate the Apply With LinkedIn plugin onto your job application page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Apply with LinkedIn Plugin",
+      "Anchor": "module-2---apply-with-linkedin-plugin",
+      "SectionPath": [],
+      "Text": "Step 1 - Allowlist JS Domains\nStep 2 - Deploy and Configure the Plugin",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Allowlist JS Domains",
+      "Anchor": "step-1---allowlist-js-domains",
+      "SectionPath": [
+        "Step 1 - Allowlist JS Domains"
+      ],
+      "Text": "To ensure that other applications cannot fraudulently represent themselves as your own using the JavaScript SDK, you must configure a list of valid domains on your application that LinkedIn is allowed to trust. Ensure that you include fully qualified domain names, including the protocol (i.e. http, https) and any non-standard port numbers (other than ports 80 or 443). The way you can update/add valid domains depends on if you are a partner who provides an ATS for multiple customers or a partner who owns a proprietary ATS or career page solution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers (i.e. proprietary ATS or career page solution)",
+      "Anchor": "for-customers-ie-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "Step 1 - Allowlist JS Domains",
+        "For Customers (i.e. proprietary ATS or career page solution)"
+      ],
+      "Text": "Add your domain(s) to the Valid SDK Domains field in your application\u0027s settings page under JavaScript tab as shown below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Partners (e.g. ATS)",
+      "Anchor": "for-partners-eg-ats",
+      "SectionPath": [
+        "Step 1 - Allowlist JS Domains",
+        "For Customers (i.e. proprietary ATS or career page solution)",
+        "For Partners (e.g. ATS)"
+      ],
+      "Text": "Update the valid JS domains for each child app using the endpoint documented here .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Partners (e.g. ATS)",
+      "Anchor": "for-partners-eg-ats",
+      "SectionPath": [
+        "Step 1 - Allowlist JS Domains",
+        "For Customers (i.e. proprietary ATS or career page solution)",
+        "For Partners (e.g. ATS)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Partners (e.g. ATS)",
+      "Anchor": "for-partners-eg-ats",
+      "SectionPath": [
+        "Step 1 - Allowlist JS Domains",
+        "For Customers (i.e. proprietary ATS or career page solution)",
+        "For Partners (e.g. ATS)"
+      ],
+      "Text": "Failure to allowlist JS Domain will result in an error to your browser whenever you try to load the plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - Deploy and Configure the Plugin",
+      "Anchor": "step-2---deploy-and-configure-the-plugin",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin"
+      ],
+      "Text": "To use any of the functionality provided by the \u0022Apply With LinkedIn\u0022 plugin, it must be deployed and loaded on your career site\u2019s web page. Based on the plug-in, the setup may vary for each page where the plugin needs to be added. We do not support JavaScript customization of AWLI button and events. The setup is to identify the user who clicked apply, prefilling profile information, or providing application completion information back to LinkedIn. However, there are slight differences in the parameters to invoke the plugin and the callback to handle the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "javascript",
+      "Anchor": "javascript",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "javascript"
+      ],
+      "Text": "\u003Cdiv name=\u0022widget-holder\u0022\n\u003Cscript type=\u0022text/javascript\u0022\n src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n api_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\nextensions:AwliWidget@https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3\n\u003C/script\u003E\n\u003Cscript type=\u0022IN/AwliWidget\u0022\n  data-mode=\u0022{BUTTON_DATA or CONVERSION}\u0022\n  data-integration-context=\u0022urn:li:organization:{id}\u0022\n  data-company-job-code=\u201D{UniqueJobCode}\u201D\n  data-callback-method=\u201DhandleProfileData\u201D\u003E\n\u003C/script\u003E\n\u2026\n\u003C/div\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Parameters",
+      "Anchor": "plugin-parameters",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters"
+      ],
+      "Text": "The table below explains all plugin parameters that can be configured as required:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Plugin Parameters",
+      "Anchor": "plugin-parameters",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "api_key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API key (Client ID) for your application",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-company-job-code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job posting id within the company\u0027s system. This value is used by LinkedIn to identify the job and for tracking purposes. If you use other integrations like RSC, PJP, AC to sync jobs to LinkedIn please ensure that this field is same as externalJobPostingId in Job Posting Schema",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A value in the format of urn:li:organization:{ID}, ATS partners will retrieve this after the customer has logged in to the customer configuration plugin. Customers directly integrating with AWLI can refer to this help center article to find their company ID for urn:li:organization:{ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04",
+              "https://www.linkedin.com/help/linkedin/answer/a415420"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The mode in which this plugin will be used. Currently, the following two modes are supported:1.BUTTON_DATA Mode- Creates the Apply With LinkedIn button on the page and starts the click tracking within LinkedIn. Once applicant clicks this button and consents to sharing profile data, data is shared with partner using the callback method2.CONVERSION Mode- No visible items are created on the page. A conversion tracking event is sent back to LinkedIn to track the application status of the member. Note that the user must click the Apply With LinkedIn button on the previous page to track this conversion",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-callback-method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The callback method that will be called when there is communication required between the plugin and the client. Depending on the mode that is configured, different callback methods will be required.1.BUTTON_DATA Mode- Specify the actions to take after the plugin button is clicked and the applicant\u2019s profile data is received from LinkedIn.2.CONVERSION Mode- Callback not required.For BUTTON_DATA mode, the tracking events/profile data fetch action on the LinkedIn side will still be triggered even if a callback is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Acceptable values are small, medium or large. The default value is medium. For reference, the size of the button is as follows:1. Small - width: 188px, height: 32px2. Medium - width: 213px, height: 48px3. Large - width: 233px, height: 48px",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-color",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Acceptable values are blue, black or white. The default value is blue",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "UI Rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters",
+        "UI Rendering"
+      ],
+      "Text": "Below are various ways in which the Apply with LinkedIn button can be rendered (check table above for exact data-size values for different sizes):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "UI Rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters",
+        "UI Rendering"
+      ],
+      "Text": "",
+      "Headers": [
+        "Size",
+        "Button Rendering"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Small",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Medium",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Large",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "UI Rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters",
+        "UI Rendering"
+      ],
+      "Text": "If the applicant is not signed to LinkedIn in the current browser session and has no browser cookie present, the below sign in screen appears for the applicant when they click on Apply With LinkedIn button.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UI Rendering",
+      "Anchor": "ui-rendering",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters",
+        "UI Rendering"
+      ],
+      "Text": "Once signed in with LinkedIn credentials, LinkedIn displays a different OAuth consent screen for regular customers v/s Search and Staff agencies (customers who use profile info across multiple jobs) as shown below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Walkthrough",
+      "Anchor": "integration-walkthrough",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Parameters",
+        "Integration Walkthrough"
+      ],
+      "Text": "Please check video here to learn how to integrate Apply with LinkedIn plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Error Details",
+      "Anchor": "plugin-error-details",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Error Details"
+      ],
+      "Text": "For plugin error details, look into browser-developer-tool console log for any error message:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Plugin Error Details",
+      "Anchor": "plugin-error-details",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Plugin Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Error Message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "error.origin.not.in.api.domains",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Partner Domain URL is not allowlisted for your application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1.Update validJsSdkDomains for your application.2. Ensure validJsSdkDomains should not contain trailing slash (/)3. Ensure validJsSdkDomains should contain complete URL and should start with http and https",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.ats.integration.not.valid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value provided in the plugin parameter data-integration-context is invalid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that you are using correct integration context. It should be a company urn and will look like urn:li:organization:xxxxx. Follow below steps if you are using correct integration context:1.a For Partners (e.g. ATS) - Make sure Enable Customer Integration API is called after you have received the integration context. Please refer to Step 3 in the ATS Integration documentation. 1.b For Customers (i.e. proprietary ATS or career page solution). Please ask for assistance from your LinkedIn point of contact",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.finding.application.with.api.key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid API key used",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you are using the correct api key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.deprecated.mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated mode value used eg BUTTON, DATA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid modes to use - BUTTON_DATA or CONVERSION",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.application.not.approved",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application is not in approved status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please reach out to our support team via the partner support form",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.unknown.mode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Incorrect mode value used",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you use with BUTTON_DATA or CONVERSION mode",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.unknown",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unknown error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please reach out to our support team to troubleshoot the issue",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "error.missing.origin.referer.headers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Web browsers automatically pass the origin and referer header. If partners or customers configure their application in a way that these headers are not passed (such as configuring referer header policy), then the widget cannot validate the domain for which it is embedded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Origin or referer header must be passed for the Apply with LinkedIn widget to work",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Profile Data Response",
+      "Anchor": "sample-profile-data-response",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Sample Profile Data Response"
+      ],
+      "Text": "If the member is LinkedIn authenticated and authorized (via OAuth authorization flow), and the plugin is configured in BUTTON_DATA mode, we fetch the member\u2019s profile data and pass it back to the partner\u2019s page. Depending on the implementation, the data can be used to help fill the application form. The application needs to create a callback method to handle this data returned from LinkedIn. A sample response is shown below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Profile Data Response",
+      "Anchor": "sample-profile-data-response",
+      "SectionPath": [
+        "Step 2 - Deploy and Configure the Plugin",
+        "Sample Profile Data Response"
+      ],
+      "Text": "\u201CprofileData\u201D:\n{\n  \u0022firstName\u0022: \u0022FirstName\u0022,\n  \u0022lastName\u0022: \u0022LastName\u0022,\n  \u0022headline\u0022: \u0022Software engineer at LinkedIn Corporation\u0022,\n  \u0022summary\u0022: \u0022This is my Summary.\u0022,\n  \u0022location\u0022: {\n    \u0022locationName\u0022: \u0022San Francisco Bay Area\u0022,\n    \u0022country\u0022: \u0022us\u0022\n  },\n  \u0022publicProfileUrl\u0022: \u0022www.linkedin.com/in/firstname-lastname-123\u0022,\n  \u0022positions\u0022: [\n    {\n      \u0022title\u0022: \u0022Software Engineer\u0022,\n      \u0022summary\u0022: \u0022Software development\u0022,\n      \u0022startDate\u0022: null,\n      \u0022endDate\u0022: null,\n      \u0022isCurrent\u0022: true,\n      \u0022companyName\u0022: \u0022LinkedIn Corporation\u0022,\n      \u0022company\u0022: {\n        \u0022name\u0022: \u0022LinkedIn\u0022,\n        \u0022type\u0022: \u0022EDUCATIONAL\u0022\n        \n      }\n    },\n    {\n      \u0022title\u0022: \u0022abc\u0022,\n      \u0022summary\u0022: null,\n      \u0022startDate\u0022: {\n        \u0022month\u0022: 1,\n        \u0022year\u0022: 2011\n      },\n      \u0022endDate\u0022: {\n        \u0022month\u0022: 2,\n        \u0022year\u0022: 2013\n      },\n      \u0022isCurrent\u0022: false,\n      \u0022companyName\u0022: \u0022nonexistingcompany\u0022,\n      \u0022company\u0022: null\n    }\n  ],\n  \u0022skills\u0022: [],\n  \u0022educations\u0022: [\n    {\n      \u0022schoolName\u0022: \u0022University of Pennsylvania\u0022,\n      \u0022fieldOfStudy\u0022: \u0022Computer Science\u0022,\n      \u0022startDate\u0022: {\n        \u0022year\u0022: 2016\n      },\n      \u0022endDate\u0022: {\n        \u0022year\u0022: 2020\n      },\n      \u0022degree\u0022: \u0022Master of Engineering (MEng)\u0022,\n      \u0022activities\u0022: \u0022a brief description to my UPenn activities\u0022,\n      \u0022notes\u0022: \u0022Hanging around\u0022\n    }\n  ],\n  \u0022languages\u0022: [\n    {\n      \u0022name\u0022: \u0022English\u0022,\n      \u0022proficiency\u0022: \u0022ELEMENTARY\u0022\n    },\n    {\n      \u0022name\u0022: \u0022Chinese (Simplified)\u0022,\n      \u0022proficiency\u0022: \u0022PROFESSIONAL_WORKING\u0022\n    }\n  ],\n  \u0022certifications\u0022: [\n    {\n      \u0022name\u0022: \u0022Certified Java Programmer\u0022,\n      \u0022authority\u0022: \u0022Coursera\u0022,\n      \u0022number\u0022: \u00221233211234-4\u0022,\n      \u0022startDate\u0022: {\n        \u0022month\u0022: 1,\n        \u0022year\u0022: 2000\n      },\n      \u0022endDate\u0022: {\n        \u0022month\u0022: 1,\n        \u0022year\u0022: 2000\n      }\n    }\n  ],\n  \u0022emailAddress\u0022: \u0022testuser@linkedin.com\u0022,\n  \u0022phoneNumber\u0022: \u0022123-321-1234\u0022,\n  \u201CmemberIdentifier\u201D: \u0022VuxQHF3ULX\u0022\n}\nsignature: \u00221f51064ea13176a0ace6c8cb490e884d74e1ddf128f81e3fab8a119055dcc5fb\u0022",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

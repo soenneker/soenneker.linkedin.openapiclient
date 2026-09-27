@@ -1,0 +1,92 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+  "Title": "Organizations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizations",
+      "Anchor": "organizations",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is organizations and organizationAcls. Events relating to creation and updation of company pages have resourceName organization. Refer here for more information on organization schema. Events relating to adding or removing admins for a company page have resourceName organizationAcls. To know more about the schema refer here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organizations Activity - Creating a Company Page",
+      "Anchor": "organizations-activity---creating-a-company-page",
+      "SectionPath": [
+        "Organizations Activity - Creating a Company Page"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022resourceId\u0022: \u002282318779\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022configVersion\u0022: 1,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022organizations\u0022,\n    \u0022resourceUri\u0022: \u0022/organizations/82318779\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activityId\u0022: \u002269d7b9cd-5f0c-4138-b8b9-01f5b7e13f34\u0022,\n    \u0022processedAt\u0022: 1657611011610,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1657610981505,\n    \u0022processedActivity\u0022: {\n        \u0022vanityName\u0022: \u0022test-company-compliance\u0022,\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1657610981259\n        },\n        \u0022lastModifiedByAdmin\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1657610981259\n        },\n        \u0022defaultLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022organizationType\u0022: \u0022NON_PROFIT\u0022,\n        \u0022industries~\u0022: [\n            {\n                \u0022name\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Internet\u0022\n                    }\n                },\n                \u0022parentIndustries\u0022: [],\n                \u0022id\u0022: 6,\n                \u0022$URN\u0022: \u0022urn:li:industry:6\u0022,\n                \u0022childrenIndustries\u0022: [],\n                \u0022industryGroup\u0022: \u0022urn:li:industryGroup:8\u0022\n            }\n        ],\n        \u0022entityStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n        \u0022industries\u0022: [\n            \u0022urn:li:industry:6\u0022\n        ],\n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Test Company Compliance\u0022\n            }\n        },\n        \u0022tagline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022This is a test company\u0022\n            }\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1657610981259\n        },\n        \u0022id\u0022: 82318779\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 3331301444\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizations Activity - Updating the description",
+      "Anchor": "organizations-activity---updating-the-description",
+      "SectionPath": [
+        "Organizations Activity - Updating the description"
+      ],
+      "Text": "The method for any events relating to updates to the company page is UPDATE. Note that the entire updated schema is present in activity and processedActivity fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organizations Activity - Updating the description",
+      "Anchor": "organizations-activity---updating-the-description",
+      "SectionPath": [
+        "Organizations Activity - Updating the description"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022resourceId\u0022: \u002282318779\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022UPDATE\u0022,\n    \u0022configVersion\u0022: 1,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022organizations\u0022,\n    \u0022resourceUri\u0022: \u0022/organizations/82318779\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activityId\u0022: \u00224315b496-d754-4fdc-93db-5c20c84a16fa\u0022,\n    \u0022processedAt\u0022: 1657611275478,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1657611245380,\n    \u0022processedActivity\u0022: {\n        \u0022vanityName\u0022: \u0022test-company-compliance\u0022,\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1657610981259\n        },\n        \u0022associatedHashtags\u0022: [],\n        \u0022description\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022This is an edited description for the company\u0022\n            }\n        },\n        \u0022groups\u0022: [],\n        \u0022lastModifiedByAdmin\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1657611245298\n        },\n        \u0022versionTag\u0022: \u00222479309411\u0022,\n        \u0022defaultLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022organizationType\u0022: \u0022NON_PROFIT\u0022,\n        \u0022specialties\u0022: [],\n        \u0022industries~\u0022: [\n            {\n                \u0022name\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Internet\u0022\n                    }\n                },\n                \u0022parentIndustries\u0022: [],\n                \u0022id\u0022: 6,\n                \u0022$URN\u0022: \u0022urn:li:industry:6\u0022,\n                \u0022childrenIndustries\u0022: [],\n                \u0022industryGroup\u0022: \u0022urn:li:industryGroup:8\u0022\n            }\n        ],\n        \u0022entityStatus\u0022: \u0022ACTIVE\u0022,\n        \u0022staffCountRange\u0022: \u0022SIZE_1\u0022,\n        \u0022industries\u0022: [\n            \u0022urn:li:industry:6\u0022\n        ],\n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Test Company Compliance\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022tagline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022This is a test company\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022primaryOrganizationType\u0022: \u0022NONE\u0022,\n        \u0022parentCareersUsed\u0022: false,\n        \u0022locations\u0022: [],\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1657611245298\n        },\n        \u0022revenueRecords\u0022: [],\n        \u0022id\u0022: 82318779\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 3331301460\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationsAcls Activity - Adding a new admin",
+      "Anchor": "organizationsacls-activity---adding-a-new-admin",
+      "SectionPath": [
+        "OrganizationsAcls Activity - Adding a new admin"
+      ],
+      "Text": "Adding a member as a Content Administrator for a company page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "OrganizationsAcls Activity - Adding a new admin",
+      "Anchor": "organizationsacls-activity---adding-a-new-admin",
+      "SectionPath": [
+        "OrganizationsAcls Activity - Adding a new admin"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022resourceId\u0022: \u0022organization=urn%3Ali%3Aorganization%3A82318779\u0026role=CONTENT_ADMINISTRATOR\u0026roleAssignee=urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activity\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n        \u0022role\u0022: \u0022CONTENT_ADMINISTRATOR\u0022,\n        \u0022state\u0022: \u0022APPROVED\u0022,\n        \u0022organization\u0022: \u0022urn:li:organization:82318779\u0022\n    },\n    \u0022method\u0022: \u0022UPDATE\u0022,\n    \u0022configVersion\u0022: 1,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022organizationAcls\u0022,\n    \u0022resourceUri\u0022: \u0022/organizationAcls/(organization:urn:li:organization:82318779,role:CONTENT_ADMINISTRATOR,roleAssignee:urn:li:person:\u003CpersonID\u003E)\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activityId\u0022: \u0022d837483e-a63d-43e4-a745-8092631a5d60\u0022,\n    \u0022processedAt\u0022: 1657611164764,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1657611134668,\n    \u0022processedActivity\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n        \u0022state\u0022: \u0022APPROVED\u0022,\n        \u0022role\u0022: \u0022CONTENT_ADMINISTRATOR\u0022,\n        \u0022organization~\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Test Company Compliance\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedName\u0022: \u0022Test Company Compliance\u0022\n        },\n        \u0022roleAssignee~\u0022: {...},\n        \u0022organization\u0022: \u0022urn:li:organization:82318779\u0022\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 3331301452\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

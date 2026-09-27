@@ -1,0 +1,85 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/sales-nav-messages",
+  "Title": "Messages",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-management",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-sales-nav-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/sales-nav-messages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is messages. This captures all inbound and outbound messages from the Sales Navigator of the regulated members. The method available is CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "You can determine whether a Messages event is an inbound or outbound message based on the actor field of each event. If the event is an outbound one (e.g. regulated member sends a message), the actor field will correspond to the regulated member\u0027s personUrn and equal to the value of the owner field. If the event is inbound, then the field will be of another member\u0027s personUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "All message events\u0027 activity and processedActivity fields will contain owner, author, and thread fields. These fields will help you figure out the identities of the mailbox and more. The owner and author field will correspond to the sender\u0027s mailbox, which can be personal, Recruiter, or Sales Navigator. The thread field contains the membership array field that have the identity of all the participants in the message thread. For more information on the schema, please refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "Below are response examples of inbound and outbound Message events:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages",
+      "Anchor": "messages",
+      "SectionPath": [],
+      "Text": "Outbound message from Sales Navigator mailbox\nInbound message to Sales Navigator mailbox",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of outbound message activity from Sales Navigator mailbox",
+      "Anchor": "sample-response-of-outbound-message-activity-from-sales-navigator-mailbox",
+      "SectionPath": [
+        "Sample response of outbound message activity from Sales Navigator mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022createdAt\u0022: 1574383495992,\n    \u0022attachments\u0022: [],\n    \u0022author\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022readAt\u0022: 1574383496000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello from Sales Navigator\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello from Sales Navigator\u0022\n      }\n    },\n    \u0022deliveredAt\u0022: 1574383495992\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u00226d43fcff-b56e-4e0f-993b-5a398c89fb5d\u0022,\n  \u0022processedAt\u0022: 1574383527451,\n  \u0022capturedAt\u0022: 1574383496347,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1574383495992,\n    \u0022deliveredAt\u0022: 1574383495992,\n    \u0022attachments\u0022: [],\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {\n            \u0022member\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n            \u0022member~\u0022: {...},\n            \u0022id\u0022: 334326\n          },\n          \u0022identity\u0022: \u0022urn:li:salesIdentity:334326\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022\n        }\n      ]\n    },\n    \u0022author\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM0NDI5OTQyNjU4MTI5OTJfMTAwMA==\u0022,\n    \u0022readAt\u0022: 1574383496000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello from Sales Navigator\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello from Sales Navigator\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 977493324\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of inbound message activity to Sales Navigator mailbox",
+      "Anchor": "sample-response-of-inbound-message-activity-to-sales-navigator-mailbox",
+      "SectionPath": [
+        "Sample response of inbound message activity to Sales Navigator mailbox"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u00220-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n  \u0022configVersion\u0022: 1,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022createdAt\u0022: 1574449632116,\n    \u0022clientExperience\u0022: {\n      \u0022clientGeneratedToken\u0022: \u002211daeca1-34af-47c2-b22e-d02a947c33a2\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022readAt\u0022: 1574449632000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello back to Sales Navigator inbox\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello back to Sales Navigator inbox\u0022\n      }\n    },\n    \u0022deliveredAt\u0022: 1574449632116\n  },\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n  \u0022activityId\u0022: \u0022c86c3c71-7844-4ed1-b1fc-66deeac14192\u0022,\n  \u0022processedAt\u0022: 1574449662997,\n  \u0022capturedAt\u0022: 1574449632331,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022createdAt\u0022: 1574449632116,\n    \u0022deliveredAt\u0022: 1574449632116,\n    \u0022author~\u0022: {...},\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:salesIdentity:334326\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {\n            \u0022member\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n            \u0022member~\u0022: {...},\n            \u0022id\u0022: 334326\n          },\n          \u0022identity\u0022: \u0022urn:li:salesIdentity:334326\u0022\n        },\n        {\n          \u0022createdAt\u0022: 1573498467712,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022\n        }\n      ]\n    },\n    \u0022author\u0022: \u0022urn:li:person:kAq_1ptj-v\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjU5OTczMDkxNTAzODAyNzc3Ng==\u0022,\n    \u0022id\u0022: \u00220-UzY2MDM3MjAzODc4OTk1OTI3MDRfNTAw\u0022,\n    \u0022readAt\u0022: 1574449632000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022Hello back to Sales Navigator inbox\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022Hello back to Sales Navigator inbox\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 978988628\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+  "Title": "Basic Job Posting",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Basic Job Posting",
+      "Anchor": "basic-job-posting",
+      "SectionPath": [],
+      "Text": "LinkedIn aggregates open requisitions from across the web and posts them as Basic Jobs. These external job posts create a comprehensive job seeking experience for LinkedIn members and are visible to candidates actively conducting a job search or viewing LinkedIn page of a company. Certain Basic Jobs may be promoted to LinkedIn members through targeted recommendations in the Recommended Jobs feature.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Job Posting",
+      "Anchor": "basic-job-posting",
+      "SectionPath": [],
+      "Text": "Below outlines the benefits of using Basic Jobs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Job Posting",
+      "Anchor": "basic-job-posting",
+      "SectionPath": [],
+      "Text": "ATSs integrated with Basic Jobs can enable all their customers to seamlessly post their jobs on LinkedIn\nCandidates who are actively conducting a job search can view Basic Jobs. This in turn drives relevant and quality applicants to the job postings\nFor customers who purchased Job Slots, LinkedIn offers Job Wrapping which copies all jobs published to your career site or jobs\u2019 source and allows job posters to prioritize specific jobs in Job Slots. This requires minimal technical effort and is based on the same technology that supports Basic Jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "The integration of the XML feed is limited to those developers approved by LinkedIn. Reach out to your Business Development contact to meet certain criteria and sign an agreement in order to use this integration.\nCompliance with our contract and guidelines is integral. Refer to Job Posting Guidelines for details.\nIf you are not yet a LinkedIn Talent Solutions Partner, please contact the team at LL-BD@linkedin.com to request for evaluation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Before beginning development, you need to be evaluated and approved by LinkedIn. You can request for evaluation by completing the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Contact a member from LinkedIn Business Development with whom you have been working and share the below information:\n\nAverage number of daily listings available on your platform at any point in time.\nMarkets where the job listings are available.\nYour platform\u2019s search results page URL and sample job URLs.\n\n\nIf you do not have a Business Development contact, please send the above information at LL-BD@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Once you receive approval from the team to proceed, you are required to prepare the XML feed. In order to successfully integrate, please complete the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Create the XML job feed as per the Development Guide.\nReview the Developer FAQ and Job Posting Guidelines carefully. Please reach out to your LinkedIn Business Development point of contact for questions not addressed on the documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Development Guide",
+      "Anchor": "2-development-guide",
+      "SectionPath": [
+        "2. Development Guide"
+      ],
+      "Text": "The XML feed contains the job posting information that helps facilitate creating a job that displays on LinkedIn. When your customers create jobs in your system, the jobs are sent using the XML feed to LinkedIn.\nRefer to the Development Guide to create the XML feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Development Tools",
+      "Anchor": "3-development-tools",
+      "SectionPath": [
+        "3. Development Tools"
+      ],
+      "Text": "Building and integrating the XML feed typically takes 2 - 8 weeks. The Project Plan helps make planning and execution easier for developers and project managers. Refer to the Development Tools documentation for the different milestones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Certification",
+      "Anchor": "4-certification",
+      "SectionPath": [
+        "4. Certification"
+      ],
+      "Text": "Partners can provide the XML feed in a static URL from where LinkedIn can download the feed on an ongoing basis. You may add authentication if required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Certification",
+      "Anchor": "4-certification",
+      "SectionPath": [
+        "4. Certification"
+      ],
+      "Text": "Please reach out to your LinkedIn Business Development contact once the feed is ready. They will support you with the review process, enabling authentication and provide feedback on any technical or quality issues that may be present.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Partner FAQs",
+      "Anchor": "5-partner-faqs",
+      "SectionPath": [
+        "5. Partner FAQs"
+      ],
+      "Text": "If you have any product or technical questions, please refer to Developer FAQ before reaching out to your LinkedIn Business Development point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "6. Announcements and Releases",
+      "Anchor": "6-announcements-and-releases",
+      "SectionPath": [
+        "6. Announcements and Releases"
+      ],
+      "Text": "All the changes that are continuously being made to LinkedIn\u0027s Basic Jobs documentation can be tracked in the section for Release Notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

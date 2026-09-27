@@ -1,0 +1,935 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+  "Title": "Job Posting - Developer FAQs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-html-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Posting - Developer FAQs",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting - Developer FAQs",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "This FAQ is meant for your development purposes only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "- Product",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "What are the different ways that a customer can post jobs on LinkedIn?\nHow can I avoid Job Deduplication?\nOur customer cannot renew their closed job via Premium Job Posting. How can I do that?\nOur customer is having issues with their HTML formatting not getting honored in the job description. Why is this happening?\nWhy is my customer unable to post jobs on LinkedIn for specific locations?\nWhat are the reasons a Basic Job doesn\u2019t appear on LinkedIn?\nMany of our customer jobs are getting posted to LinkedIn via XML feed and Job Wrapping. What happens when the same jobs get posted via Premium Job Posting?\nCan a job posted via the Job Posting API replace old or backfilled jobs in the Recruiter dashboard?\nHow do I know if the location provided will be standardized correctly?\nAre alternate location postings supported by all type of PJP contracts such as job posts, job slots? Are customers charged differently?\nWhen a candidate applies to a posting with alternate locations, is the location of origin communicated back to the ATS?\nIs there any difference in terms of performance between a single free/premium posting with three alternate locations, versus three individual free/premium postings with a single location?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "- Integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "How can we get contract and company details of a customer? Is there a way for LinkedIn to provide this information?\nJob Location of our customer is not getting accepted by the Premium Job Posting. How can I ensure their job location is valid?\nOur customer job was posted successfully but it cannot be viewed. What went wrong?\nHow can our customers post Remote Jobs via Premium Job Posting?\nCan customers enable a tracking pixel with Premium Job Posting?\nIs there any throttling limit to the number of promoted jobs that can be posted?\nIs there any URL or Query String length limit that integration partner needs to comply with?\nProvisioned Applications response is not recorded due to some error, how can we obtain client secret?\nHow to update validJsSdkDomains in the customer application?\nIf the widget callback fails in partner ATS, how can we get the customer contract id?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "- Support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "What can I do in a scenario where we cannot fix locations and other fields for jobs created via API?\nHow can we fix default job poster related issues?\nHow can I help customers when their Job Slots are full?\nHow can I surface feedback on the Premium Job Posting to LinkedIn?\nHow can I allocate Job Slots between Recruiters?\nCan I completely disable manual job posting into job slots from LinkedIn Recruiter dashboard and allow ATS to manage it?\nWhat would happen if we remove the default job poster?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the different ways that a customer can post jobs on LinkedIn?",
+      "Anchor": "what-are-the-different-ways-that-a-customer-can-post-jobs-on-linkedin-",
+      "SectionPath": [
+        "Product",
+        "What are the different ways that a customer can post jobs on LinkedIn?"
+      ],
+      "Text": "Please reference Job Posting documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I avoid Job Deduplication?",
+      "Anchor": "how-can-i-avoid-job-deduplication-",
+      "SectionPath": [
+        "Product",
+        "How can I avoid Job Deduplication?"
+      ],
+      "Text": "If a customer is using Job Wrapping and Premium Job Posting API, there could be a risk that these jobs are duplicated.\nBetween Basic and promoted jobs, our system prioritizes jobs that are promoted.\nIt is recommended that customer uses either API or XML Feed based jobs to avoid duplication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Our customer cannot renew their closed job via Premium Job Posting. How can I do that?",
+      "Anchor": "our-customer-cannot-renew-their-closed-job-via-premium-job-posting--how-can-i-do-that-",
+      "SectionPath": [
+        "Product",
+        "Our customer cannot renew their closed job via Premium Job Posting. How can I do that?"
+      ],
+      "Text": "You can RENEW only an open job. If the Job is CLOSED, a new request for the job needs to be sent with jobPostingOperationType: CREATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Our customer is having issues with their HTML formatting not getting honored in the job description. Why is this happening?",
+      "Anchor": "our-customer-is-having-issues-with-their-html-formatting-not-getting-honored-in-the-job-description--why-is-this-happening-",
+      "SectionPath": [
+        "Product",
+        "Our customer is having issues with their HTML formatting not getting honored in the job description. Why is this happening?"
+      ],
+      "Text": "This is dependent on the HTML tags being provided. To know what HTML tags are supported please refer to these API documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I format the job description with HTML?",
+      "Anchor": "how-can-i-format-the-job-description-with-html-",
+      "SectionPath": [
+        "Product",
+        "How can I format the job description with HTML?"
+      ],
+      "Text": "Job descriptions support a limited set of HTML tags for formatting. See the supported HTML tags.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I format the job description with HTML?",
+      "Anchor": "how-can-i-format-the-job-description-with-html-",
+      "SectionPath": [
+        "Product",
+        "How can I format the job description with HTML?"
+      ],
+      "Text": "For detailed questions about HTML formatting, styling, and rendering issues, refer to Job Posting HTML FAQ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is my customer unable to post jobs on LinkedIn for specific locations?",
+      "Anchor": "why-is-my-customer-unable-to-post-jobs-on-linkedin-for-specific-locations-",
+      "SectionPath": [
+        "Product",
+        "Why is my customer unable to post jobs on LinkedIn for specific locations?"
+      ],
+      "Text": "Please refer to the following help center article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the reasons a Basic Job doesn\u2019t appear on LinkedIn?",
+      "Anchor": "what-are-the-reasons-a-basic-job-doesn-t-appear-on-linkedin-",
+      "SectionPath": [
+        "Product",
+        "What are the reasons a Basic Job doesn\u2019t appear on LinkedIn?"
+      ],
+      "Text": "In some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D) or jobs from search and staffing companies. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Many of our customer jobs are getting posted to LinkedIn via XML feed and Job Wrapping. What happens when the same jobs get posted via Premium Job Posting?",
+      "Anchor": "many-of-our-customer-jobs-are-getting-posted-to-linkedin-via-xml-feed-and-job-wrapping--what-happens-when-the-same-jobs-get-posted-via-premium-job-posting-",
+      "SectionPath": [
+        "Product",
+        "Many of our customer jobs are getting posted to LinkedIn via XML feed and Job Wrapping. What happens when the same jobs get posted via Premium Job Posting?"
+      ],
+      "Text": "It depends on the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Many of our customer jobs are getting posted to LinkedIn via XML feed and Job Wrapping. What happens when the same jobs get posted via Premium Job Posting?",
+      "Anchor": "many-of-our-customer-jobs-are-getting-posted-to-linkedin-via-xml-feed-and-job-wrapping--what-happens-when-the-same-jobs-get-posted-via-premium-job-posting-",
+      "SectionPath": [
+        "Product",
+        "Many of our customer jobs are getting posted to LinkedIn via XML feed and Job Wrapping. What happens when the same jobs get posted via Premium Job Posting?"
+      ],
+      "Text": "For the partners who have integrated with LinkedIn\u0027s Apply Connect program, the promoted jobs posted via /simpleJobPosting API will close out existing scraped and wrapped jobs\nFor the remaining partners, whichever job was posted first will stay up. If a job is posted via Job Wrapping first, the Simple Job Posting (SJP) job does not post if it has the same unique partner identifier. In such cases, the task status response outlines the following error message:\n\n\u0022Trying to create a job with the same partnerIdentifier already exists! Dropping the duplicate job posting creation request. JobId: 123456789, partnerIdentifier: {partner=urn:li:jobPostingPartner:{id}, partnerJobCode=Test123456}.\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can a job posted via the Job Posting API replace old or backfilled jobs in the Recruiter dashboard?",
+      "Anchor": "can-a-job-posted-via-the-job-posting-api-replace-old-or-backfilled-jobs-in-the-recruiter-dashboard-",
+      "SectionPath": [
+        "Product",
+        "Can a job posted via the Job Posting API replace old or backfilled jobs in the Recruiter dashboard?"
+      ],
+      "Text": "No, if you have used your job slots you will receive an error message indicating that there are none remaining. You are unable to replace to backfill jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I know if the location provided will be standardized correctly?",
+      "Anchor": "how-do-i-know-if-the-location-provided-will-be-standardized-correctly-",
+      "SectionPath": [
+        "Product",
+        "How do I know if the location provided will be standardized correctly?"
+      ],
+      "Text": "Answer: We do not have a utility tool or an API that can help validate a location match. However, refer to the Help Article for few guidelines to ensure improved accuracy for location matching.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are alternate location postings supported by all type of PJP contracts such as job posts, job slots? Are customers charged differently?",
+      "Anchor": "are-alternate-location-postings-supported-by-all-type-of-pjp-contracts-such-as-job-posts--job-slots--are-customers-charged-differently-",
+      "SectionPath": [
+        "Product",
+        "Are alternate location postings supported by all type of PJP contracts such as job posts, job slots? Are customers charged differently?"
+      ],
+      "Text": "Yes, they are supported by all types of PJP contracts, and each multiplexed job takes up an additional slot for job slots. For FP4P, customer will need to set separate budgets for each job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When a candidate applies to a posting with alternate locations, is the location of origin communicated back to the ATS?",
+      "Anchor": "when-a-candidate-applies-to-a-posting-with-alternate-locations--is-the-location-of-origin-communicated-back-to-the-ats-",
+      "SectionPath": [
+        "Product",
+        "When a candidate applies to a posting with alternate locations, is the location of origin communicated back to the ATS?"
+      ],
+      "Text": "For jobs with alternateLocations, we will mirror career site experience and provide application back to original jobpostingID. If customer is trying to tie applicants to specific cities, customer should include a question in application flow to capture preferred location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there any difference in terms of performance between a single free/premium posting with three alternate locations, versus three individual free/premium postings with a single location?",
+      "Anchor": "is-there-any-difference-in-terms-of-performance-between-a-single-free-premium-posting-with-three-alternate-locations--versus-three-individual-free-premium-postings-with-a-single-location-",
+      "SectionPath": [
+        "Product",
+        "Is there any difference in terms of performance between a single free/premium posting with three alternate locations, versus three individual free/premium postings with a single location?"
+      ],
+      "Text": "There should not be a performance difference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can we get contract and company details of a customer ? Is there a way for LinkedIn to provide this information?",
+      "Anchor": "how-can-we-get-contract-and-company-details-of-a-customer---is-there-a-way-for-linkedin-to-provide-this-information-",
+      "SectionPath": [
+        "Integration",
+        "How can we get contract and company details of a customer ? Is there a way for LinkedIn to provide this information?"
+      ],
+      "Text": "A customer needs to manually provide these details and the partner ATS should provide support to take both LinkedIn Contract ID and Company ID as input.\nDependent on ATS / Job Distributor this may be done through the UI or manually through support teams\nBelow Help Article links can be shared to help customers find their Contract and Company ID:\n\nFor Contract ID refer to this help center\nFor Company ID refer to this help center",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Location of our customer is not getting accepted by the Premium Job Posting. How can I ensure their job location is valid?",
+      "Anchor": "job-location-of-our-customer-is-not-getting-accepted-by-the-premium-job-posting--how-can-i-ensure-their-job-location-is-valid-",
+      "SectionPath": [
+        "Integration",
+        "Job Location of our customer is not getting accepted by the Premium Job Posting. How can I ensure their job location is valid?"
+      ],
+      "Text": "Ensuring the right format of the location details are outlined here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Our customer job was posted successfully but it cannot be viewed. What went wrong?",
+      "Anchor": "our-customer-job-was-posted-successfully-but-it-cannot-be-viewed--what-went-wrong-",
+      "SectionPath": [
+        "Integration",
+        "Our customer job was posted successfully but it cannot be viewed. What went wrong?"
+      ],
+      "Text": "In order to troubleshoot this issue please collect the following information from the customer:\n\nRequest Headers, Request Body, Response Headers \u0026 Response Body to be shared for both Job Posting and Job Task Status API\nSubmit ticket to GCO support\n\n\nFew scenarios why this may happen are:\n\nJob got marked as Spam\nJob Poster User is marked as Spam",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can our customers post Remote Jobs via Premium Job Posting?",
+      "Anchor": "how-can-our-customers-post-remote-jobs-via-premium-job-posting-",
+      "SectionPath": [
+        "Integration",
+        "How can our customers post Remote Jobs via Premium Job Posting?"
+      ],
+      "Text": "Customers can achieve this by setting the \u2018workplaceTypes\u2019 field as remote. For more details refer to Job Posting API Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can customers enable a tracking pixel with Premium Job Posting?",
+      "Anchor": "can-customers-enable-a-tracking-pixel-with-premium-job-posting-",
+      "SectionPath": [
+        "Integration",
+        "Can customers enable a tracking pixel with Premium Job Posting?"
+      ],
+      "Text": "Yes, please refer to the following help center article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there any throttling limit to the number of promoted jobs that can be posted?",
+      "Anchor": "is-there-any-throttling-limit-to-the-number-of-promoted-jobs-that-can-be-posted-",
+      "SectionPath": [
+        "Integration",
+        "Is there any throttling limit to the number of promoted jobs that can be posted?"
+      ],
+      "Text": "Yes, please refer to the following API documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there any URL or Query String length limit, that integration partner needs to comply with ??",
+      "Anchor": "is-there-any-url-or-query-string-length-limit--that-integration-partner-needs-to-comply-with---",
+      "SectionPath": [
+        "Integration",
+        "Is there any URL or Query String length limit, that integration partner needs to comply with ??"
+      ],
+      "Text": "Yes, please refer to the following API documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provisioned Applications response is not recorded due to some error, how can we obtain client secret?",
+      "Anchor": "provisioned-applications-response-is-not-recorded-due-to-some-error--how-can-we-obtain-client-secret-",
+      "SectionPath": [
+        "Integration",
+        "Provisioned Applications response is not recorded due to some error, how can we obtain client secret?"
+      ],
+      "Text": "In this case, you need to check if the application is created or not using uniqueForeignId, if the application is not created you can request it again with the same uniqueForeignId otherwise you need to create a new application with a new uniqueForeignId.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to update \u0060validJsSdkDomains\u0060 in the customer application?",
+      "Anchor": "how-to-update--validjssdkdomains--in-the-customer-application-",
+      "SectionPath": [
+        "Integration",
+        "How to update \u0060validJsSdkDomains\u0060 in the customer application?"
+      ],
+      "Text": "Provisioning APIs allow partners to update customer applications, This will override the existing list of JavaScript SDK domain names with the list of domains in the request body of this POST call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "If the widget callback fails in partner ATS, how can we get the customer contract id?",
+      "Anchor": "if-the-widget-callback-fails-in-partner-ats--how-can-we-get-the-customer-contract-id-",
+      "SectionPath": [
+        "Integration",
+        "If the widget callback fails in partner ATS, how can we get the customer contract id?"
+      ],
+      "Text": "You can ask customers to opt in again with the widget. Unless \u0022update customer integration\u0022 call goes through API job postings will not be active for customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What can I do in a scenario where we cannot fix locations and other fields for jobs created via API?",
+      "Anchor": "what-can-i-do-in-a-scenario-where-we-cannot-fix-locations-and-other-fields-for-jobs-created-via-api-",
+      "SectionPath": [
+        "Support",
+        "What can I do in a scenario where we cannot fix locations and other fields for jobs created via API?"
+      ],
+      "Text": "If you are able to post to LinkedIn and can find the location on Bing Geo, you should be able to post via the API\nIf there is a valid location not mapping properly, we can map it to post if it is valid. Please reach out to LinkedIn Customer Support ltsatsintegrations@linkedin.com for the same\nWe cannot create custom mapping; the client must supply the right location info/string",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can we fix default job poster related issues?",
+      "Anchor": "how-can-we-fix-default-job-poster-related-issues-",
+      "SectionPath": [
+        "Support",
+        "How can we fix default job poster related issues?"
+      ],
+      "Text": "In such cases, the task status response outlines this error message: \u0022Caller is not authorized to access the jobs for contract: urn:li:contract:189990\nTroubleshooting steps will be\n\nEnsure Customer has configured Job Poster correctly.\nEnsure poster email is the primary email on LinkedIn profile and seat holder on the above contract\nAdmin should check if the default poster is a valid seat holder (sometimes this is not updated if someone is removed from the Recruiter dashboard)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I help customers when their Job Slots are full?",
+      "Anchor": "how-can-i-help-customers-when-their-job-slots-are-full-",
+      "SectionPath": [
+        "Support",
+        "How can I help customers when their Job Slots are full?"
+      ],
+      "Text": "This issue may arise when customers are manually posting jobs in Recruiter or using Job Wrapping while also using a Job Posting Partner\nAn admin can check job slot availability within the Recruiter dashboard product settings\nPlease refer to the following help center article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I surface feedback on the Premium Job Posting to LinkedIn?",
+      "Anchor": "how-can-i-surface-feedback-on-the-premium-job-posting-to-linkedin-",
+      "SectionPath": [
+        "Support",
+        "How can I surface feedback on the Premium Job Posting to LinkedIn?"
+      ],
+      "Text": "If the Partner has questions on the integration, please ask them to reach out via the partner support form and copy their LinkedIn Business Development and Partner Engineering point of contact directly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I allocate Job Slots between Recruiters?",
+      "Anchor": "how-can-i-allocate-job-slots-between-recruiters--",
+      "SectionPath": [
+        "Support",
+        "How can I allocate Job Slots between Recruiters?"
+      ],
+      "Text": "As an admin, you can determine how job slots are allocated across your recruiting team. Click here to learn more about managing job slots and the ability to disable manual job posting for users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I completely disable manual job posting into job slots from LinkedIn Recruiter dashboard and allow ATS to manage it?",
+      "Anchor": "can-i-completely-disable-manual-job-posting-into-job-slots-from-linkedin-recruiter-dashboard-and-allow-ats-to-manage-it--",
+      "SectionPath": [
+        "Support",
+        "Can I completely disable manual job posting into job slots from LinkedIn Recruiter dashboard and allow ATS to manage it?"
+      ],
+      "Text": "Yes, this is possible. Ensure that your ATS is integrated with LinkedIn\u2019s Premium Job Posting program and then follow the steps mentioned in the article here. To disable the functionality, select the Do not allow manual job postings option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What would happen if we remove the default job poster?",
+      "Anchor": "what-would-happen-if-we-remove-the-default-job-poster-",
+      "SectionPath": [
+        "Support",
+        "What would happen if we remove the default job poster?"
+      ],
+      "Text": "If the default job poster is removed from the contract after widget integration, Job postings via API will fail until you go through the widget opt-in process to select a new default job poster again.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What would happen if we remove the default job poster?",
+      "Anchor": "what-would-happen-if-we-remove-the-default-job-poster-",
+      "SectionPath": [
+        "Support",
+        "What would happen if we remove the default job poster?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What would happen if we remove the default job poster?",
+      "Anchor": "what-would-happen-if-we-remove-the-default-job-poster-",
+      "SectionPath": [
+        "Support",
+        "What would happen if we remove the default job poster?"
+      ],
+      "Text": "This FAQ is meant for your development purposes only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "- Product",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "What are the different ways that a customer can post jobs on LinkedIn?\nHow can I avoid Job Deduplication?\nOur customer cannot renew their closed job via Premium Job Posting. How can I do that?\nOur customer is having issues with their HTML formatting not getting honored in the job description. Why is this happening?\nWhy is my customer unable to post jobs on LinkedIn for specific locations?\nWhat are the reasons a Basic Job doesn\u2019t appear on LinkedIn?\nMany of our customer jobs are getting posted to LinkedIn via XML feed and Job Wrapping. What happens when the same jobs get posted via Premium Job Posting?\nCan a job posted via the Job Posting API replace old or backfilled jobs in the Recruiter dashboard?\nHow do I know if the location provided will be standardized correctly?\nAre alternate location postings supported by all type of PJP contracts such as job posts, job slots? Are customers charged differently?\nWhen a candidate applies to a posting with alternate locations, is the location of origin communicated back to the ATS?\nIs there any difference in terms of performance between a single free/premium posting with three alternate locations, versus three individual free/premium postings with a single location?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "- Integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "How can we get contract and company details of a customer? Is there a way for LinkedIn to provide this information?\nJob Location of our customer is not getting accepted by the Premium Job Posting. How can I ensure their job location is valid?\nOur customer job was posted successfully but it cannot be viewed. What went wrong?\nHow can our customers post Remote Jobs via Premium Job Posting?\nCan customers enable a tracking pixel with Premium Job Posting?\nIs there any throttling limit to the number of promoted jobs that can be posted?\nIs there any URL or Query String length limit that integration partner needs to comply with?\nProvisioned Applications response is not recorded due to some error, how can we obtain client secret?\nHow to update validJsSdkDomains in the customer application?\nIf the widget callback fails in partner ATS, how can we get the customer contract id?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "- Support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions Catalogue",
+      "Anchor": "questions-catalogue",
+      "SectionPath": [
+        "Questions Catalogue"
+      ],
+      "Text": "What can I do in a scenario where we cannot fix locations and other fields for jobs created via API?\nHow can we fix default job poster related issues?\nHow can I help customers when their Job Slots are full?\nHow can I surface feedback on the Premium Job Posting to LinkedIn?\nHow can I allocate Job Slots between Recruiters?\nCan I completely disable manual job posting into job slots from LinkedIn Recruiter dashboard and allow ATS to manage it?\nWhat would happen if we remove the default job poster?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Please reference Job Posting documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "If a customer is using Job Wrapping and Premium Job Posting API, there could be a risk that these jobs are duplicated.\nBetween Basic and promoted jobs, our system prioritizes jobs that are promoted.\nIt is recommended that customer uses either API or XML Feed based jobs to avoid duplication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "You can RENEW only an open job. If the Job is CLOSED, a new request for the job needs to be sent with jobPostingOperationType: CREATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "This is dependent on the HTML tags being provided. To know what HTML tags are supported please refer to these API documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Job descriptions support a limited set of HTML tags for formatting. See the supported HTML tags.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "For detailed questions about HTML formatting, styling, and rendering issues, refer to Job Posting HTML FAQ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Please refer to the following help center article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "In some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D) or jobs from search and staffing companies. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "It depends on the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "For the partners who have integrated with LinkedIn\u0027s Apply Connect program, the promoted jobs posted via /simpleJobPosting API will close out existing scraped and wrapped jobs\nFor the remaining partners, whichever job was posted first will stay up. If a job is posted via Job Wrapping first, the Simple Job Posting (SJP) job does not post if it has the same unique partner identifier. In such cases, the task status response outlines the following error message:\n\n\u0022Trying to create a job with the same partnerIdentifier already exists! Dropping the duplicate job posting creation request. JobId: 123456789, partnerIdentifier: {partner=urn:li:jobPostingPartner:{id}, partnerJobCode=Test123456}.\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "No, if you have used your job slots you will receive an error message indicating that there are none remaining. You are unable to replace to backfill jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Answer: We do not have a utility tool or an API that can help validate a location match. However, refer to the Help Article for few guidelines to ensure improved accuracy for location matching.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Yes, they are supported by all types of PJP contracts, and each multiplexed job takes up an additional slot for job slots. For FP4P, customer will need to set separate budgets for each job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "For jobs with alternateLocations, we will mirror career site experience and provide application back to original jobpostingID. If customer is trying to tie applicants to specific cities, customer should include a question in application flow to capture preferred location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "There should not be a performance difference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "A customer needs to manually provide these details and the partner ATS should provide support to take both LinkedIn Contract ID and Company ID as input.\nDependent on ATS / Job Distributor this may be done through the UI or manually through support teams\nBelow Help Article links can be shared to help customers find their Contract and Company ID:\n\nFor Contract ID refer to this help center\nFor Company ID refer to this help center",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Ensuring the right format of the location details are outlined here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "In order to troubleshoot this issue please collect the following information from the customer:\n\nRequest Headers, Request Body, Response Headers \u0026 Response Body to be shared for both Job Posting and Job Task Status API\nSubmit ticket to GCO support\n\n\nFew scenarios why this may happen are:\n\nJob got marked as Spam\nJob Poster User is marked as Spam",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Customers can achieve this by setting the \u2018workplaceTypes\u2019 field as remote. For more details refer to Job Posting API Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Yes, please refer to the following help center article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Yes, please refer to the following API documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Yes, please refer to the following API documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "In this case, you need to check if the application is created or not using uniqueForeignId, if the application is not created you can request it again with the same uniqueForeignId otherwise you need to create a new application with a new uniqueForeignId.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Provisioning APIs allow partners to update customer applications, This will override the existing list of JavaScript SDK domain names with the list of domains in the request body of this POST call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "You can ask customers to opt in again with the widget. Unless \u0022update customer integration\u0022 call goes through API job postings will not be active for customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "If you are able to post to LinkedIn and can find the location on Bing Geo, you should be able to post via the API\nIf there is a valid location not mapping properly, we can map it to post if it is valid. Please reach out to LinkedIn Customer Support ltsatsintegrations@linkedin.com for the same\nWe cannot create custom mapping; the client must supply the right location info/string",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "In such cases, the task status response outlines this error message: \u0022Caller is not authorized to access the jobs for contract: urn:li:contract:189990\nTroubleshooting steps will be\n\nEnsure Customer has configured Job Poster correctly.\nEnsure poster email is the primary email on LinkedIn profile and seat holder on the above contract\nAdmin should check if the default poster is a valid seat holder (sometimes this is not updated if someone is removed from the Recruiter dashboard)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "This issue may arise when customers are manually posting jobs in Recruiter or using Job Wrapping while also using a Job Posting Partner\nAn admin can check job slot availability within the Recruiter dashboard product settings\nPlease refer to the following help center article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "If the Partner has questions on the integration, please ask them to reach out via the partner support form and copy their LinkedIn Business Development and Partner Engineering point of contact directly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "As an admin, you can determine how job slots are allocated across your recruiting team. Click here to learn more about managing job slots and the ability to disable manual job posting for users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "Yes, this is possible. Ensure that your ATS is integrated with LinkedIn\u2019s Premium Job Posting program and then follow the steps mentioned in the article here. To disable the functionality, select the Do not allow manual job postings option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions and Answers",
+      "Anchor": "questions-and-answers",
+      "SectionPath": [
+        "Questions and Answers"
+      ],
+      "Text": "If the default job poster is removed from the contract after widget integration, Job postings via API will fail until you go through the widget opt-in process to select a new default job poster again.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

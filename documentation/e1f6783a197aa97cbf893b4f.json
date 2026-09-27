@@ -1,0 +1,487 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/event-role-assignments",
+  "Title": "Event Role Assignment",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/event-role-assignments",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/events",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-viewer-count-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Event Role Assignment",
+      "Anchor": "event-role-assignment",
+      "SectionPath": [],
+      "Text": "The Event Role Assignment API returns the event attendees data and its associated role of an event. This API contains person URN as part of the API response and provides the finder method to get the event attendee of an event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organization\u2019s events. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has person urn data that is obfuscated for assignee field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of format urn:li:event:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The event id.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person urn of the returned member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The role of the returned person. Possible values: ATTENDEE: Role to attend at an event.SPEAKER: Role to speak at an event.HOST: Role to host at an event.",
+            "Links": [],
+            "Values": [
+              "ATTENDEE: Role to attend at an event.",
+              "SPEAKER: Role to speak at an event.",
+              "HOST: Role to host at an event."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Event Attendees for your Organization",
+      "Anchor": "retrieve-event-attendees-for-your-organization",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization"
+      ],
+      "Text": "This endpoint returns all event attendees within an event. This endpoint requires q=event with a event URN in the event parameter and an optional role to only fetch specific role among all attendees in a single event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Event Attendees for your Organization",
+      "Anchor": "retrieve-event-attendees-for-your-organization",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization"
+      ],
+      "Text": "Since an organization can have a large volume of Events, this API supports pagination using the start and count parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaEventRoleAssignments?q=event\u0026event=urn%3Ali%3Aevent%3A7130261648786829313\u0026start=0\u0026count=2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaEventRoleAssignments?q=event\u0026event=urn%3Ali%3Aevent%3A7130261648786829313\u0026start=0\u0026count=2\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 2,\n        \u0022links\u0022: [\n            {\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/rest/dmaEventRoleAssignments?q=event\u0026start=2\u0026count=2\u0026event=urn%3Ali%3Aevent%3A7130261648786829313\u0022\n            }\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022event\u0022: \u0022urn:li:event:7130261648786829313\u0022,\n            \u0022role\u0022: \u0022SPEAKER\u0022\n        },\n        {\n            \u0022event\u0022: \u0022urn:li:event:7130261648786829313\u0022,\n            \u0022role\u0022: \u0022ATTENDEE\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Event Attendees for your Organization",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:event:713028382838379315",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "role of the attendee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role enum value used to filter attendees by a specific role. If not provided, attendees with all roles are returned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "HOST, SPEAKER, ATTENDEE",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ILLEGAL_ARGUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad parameter is provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access events data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the necessary permissions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided event is not existed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure to provide the data that is existed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+  "Title": "LinkedIn Learning - Workday Org Sync",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/revoking-users-in-bulk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This document provides instructions for automating user management in LinkedIn Learning via Workday.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To automate Org Sync with Workday, you need the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Workday integration builder permissions\nFull LinkedIn Learning admin privileges",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate SSH Key in Workday",
+      "Anchor": "generate-ssh-key-in-workday",
+      "SectionPath": [
+        "Generate SSH Key in Workday"
+      ],
+      "Text": "Log into your Workday instance as an admin and search for the task, \u201CCreate x509 Private Key Pair.\u201D\nGenerate an x509 Private Key Pair.\nCopy the public portion of the RSA-SSH formatted key. Do not include the comments (--BEGIN SSH2 Public Key--).\nConvert the public key to OpenSSH format (the key will need to start with \u201Cssh-rsa\u201D).\nSave the public SSH key for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create SFTP Username in LinkedIn Learning",
+      "Anchor": "create-sftp-username-in-linkedin-learning",
+      "SectionPath": [
+        "Create SFTP Username in LinkedIn Learning"
+      ],
+      "Text": "This step must be completed in LinkedIn Learning by a Full Admin. If you are not already in the admin interface, click on Go to Admin in the top navigation bar.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create SFTP Username in LinkedIn Learning",
+      "Anchor": "create-sftp-username-in-linkedin-learning",
+      "SectionPath": [
+        "Create SFTP Username in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin, then select Authentication.\n\n\nIn the left-hand navigation menu, select Automate user management, then expand the Create SFTP Users panel.\n\n\n\n\n\nClick Add user.\n\nChoose a username that will be unique to your organization and does not contain spaces or special characters (ex: MyOrganization_sftp).\n\n\n\n\n\nCheck the box if you would like to have upload results emails sent to you.\n\nIf you would like the upload results emails sent to an additional email address, add that now. You may want to use an alias or distribution list here.\n\nGive your SSH key a name.\n\nCopy and paste your SSH key in the Public key box.\n\n Note\nThe key must start with either ssh-rsa or ssh-dss and should not contain any line breaks.\n\n\nClick Create user.\nThe new SFTP user can now be used to upload CSV files via SFTP.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Custom Report in Workday",
+      "Anchor": "create-a-custom-report-in-workday",
+      "SectionPath": [
+        "Create a Custom Report in Workday"
+      ],
+      "Text": "You can download a CSV template from LinkedIn Learning or work with your LinkedIn Learning Customer Success Manager to create a template that best suits your needs. Detailed instructions for formatting your CSV file can be found here. At minimum, your file will need the column header, primary_email_address, and there can be no duplicate values in this column.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Custom Report in Workday",
+      "Anchor": "create-a-custom-report-in-workday",
+      "SectionPath": [
+        "Create a Custom Report in Workday"
+      ],
+      "Text": "In Workday, create a web service enabled custom report.\nWhen configuring the Column Heading Override/XML Alias, use the CSV template from LinkedIn Learning as guidance.\n\nNote: Column headers must match the format used in LinkedIn Learning; custom user attributes can also be used and should follow the format attribute_Your Attribute Label (ex: attribute_Business Unit).\n\n\nCreate an outbound EIB integration with the following values:\n\nData Source: Custom Report \u003E Select the report you created above.\n\nCreate an xslt transformation to make the custom report in CSV format.\n\n\nDelivery Method: SFTP\n\nSFTP Address: sftp://sftp.linkedin.com\nAuthentication Method: SSH Authentication\nUser ID: Same as the SFTP username created in LinkedIn Learning\nSSH Authentication Key Pair: Select the x509 Key Pair you created previously.\n\n\nFile name: Create a file name. There are no naming requirements for LinkedIn Learning.\n\n\nTest the connection, then launch the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Use the following resources if you need assistance adding employee data to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Add and Manage Learners via Bulk CSV Org Sync\n\nAdd Learners Automatically via SFTP\n\nRevoke Learners in Bulk via CSV",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

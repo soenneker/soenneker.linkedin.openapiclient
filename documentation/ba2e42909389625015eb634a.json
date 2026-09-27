@@ -1,0 +1,975 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+  "Title": "Compliance Events API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-activityurn",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/entity-monitoring",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/support-content-topic",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [],
+      "Text": "Documentation Updates: We have made some structural changes to the left navigation to create a logical grouping of topics. Following are the changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [],
+      "Text": "The Integration section is now available under Compliance Snapshot Overview API.\nCompliance Event API and Compliance Snapshot API are now separate sections containing the respective topics within it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [],
+      "Text": "The Compliance Events API allows you to archive all LinkedIn activities from the past 30 days of a regulated, authenticated member. It returns each monitored activity as an individual event record to provide ease of archive and remediation if necessary.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Decoration Activities",
+      "Anchor": "additional-decoration-activities",
+      "SectionPath": [
+        "Additional Decoration Activities"
+      ],
+      "Text": "Decoration Change to Activity URNs\nContent Topic Decoration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve activities for compliance monitoring and archiving.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "To use the following APIs, you will need to know your application ID. This can be found in your Developer Application Setting page. Select your application and go to the Mobile section to view your application ID. Alternatively, you can find the ID from the URL as well (ie. https://www.linkedin.com/developer/apps/{applicationID}/auth).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "To begin monitoring a member\u0027s activities, you will need to opt in the member into our Compliance system by calling the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "POST\n\nhttps://api.linkedin.com/v2/memberComplianceAuthorizations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "You will need to supply an empty JSON object, {} to the request body to successfully opt the member into compliance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "Once the member has been opted in, all activities performed will be captured by the Compliance Events API . The API will not contain any preceding activities and will only capture activities performed following the authorization toggle. You can check the member\u0027s authorization status by requesting the following member FINDER API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/memberComplianceAuthorizations?q=member\u0026projection=(elements*(memberComplianceAuthorizationKey(developerApplication,member~(firstName,lastName,headline)),regulatedAt))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample GET response",
+      "Anchor": "sample-get-response",
+      "SectionPath": [
+        "Compliance Authorization",
+        "sample GET response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022memberComplianceAuthorizationKey\u0022: {\n        \u0022developerApplication\u0022: \u0022urn:li:developerApplication:123456\u0022,\n        \u0022member\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022member~\u0022: {\n          \u0022firstName\u0022: {...},\n          \u0022lastName\u0022: {...},\n          \u0022headline\u0022: {...}\n        }\n      },\n      \u0022regulatedAt\u0022: {\n        \u0022created\u0022: 1476375405722,\n        \u0022lastModified\u0022: 1476375405722\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample GET response",
+      "Anchor": "sample-get-response",
+      "SectionPath": [
+        "Compliance Authorization",
+        "sample GET response"
+      ],
+      "Text": "If the response contains your own developerApplicationUrn , then you are good to go!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample GET response",
+      "Anchor": "sample-get-response",
+      "SectionPath": [
+        "Compliance Authorization",
+        "sample GET response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample GET response",
+      "Anchor": "sample-get-response",
+      "SectionPath": [
+        "Compliance Authorization",
+        "sample GET response"
+      ],
+      "Text": "The sample request above is utilizing projection to decorate member with more information. This not needed as the member returned is always the one represented by the access token. However, this example represents decoration use if you choose to utilize it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "If you wish to have LinkedIn stop monitoring a regulated member\u0027s activities i.e. opt out the member from our Compliance Platform, call the following and all subsequent member activities performed on LinkedIn will not be captured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "To allow developers to De-Authorize members for whom the access token might have expired, the following API can also be used with access tokens obtained via OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/memberComplianceAuthorizations/developerApplication={developerApplicationURN}\u0026member={personURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/v2/memberComplianceAuthorizations/developerApplication=urn:li:developerApplication:\u003CapplicationID\u003E\u0026member=urn:li:person:\u003CpersonID\u003E\u0027 \\\n--header \u0027Authorization: Bearer \u003CAccess Token\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "A member will not opt out of Compliance authorization due to access token expiration. The only ways an opt out can happen are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Application invokes the DELETE API mentioned above\nThe regulated member removes the application\u0027s authorization through LinkedIn\u0027s Privacy Setting page. This can be found under the Third Parties section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Therefore, it is always a good idea to periodically check the member\u0027s authorization status using the GET API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events",
+      "Anchor": "compliance-events",
+      "SectionPath": [
+        "Compliance Events"
+      ],
+      "Text": "After the member is authorized, you can start archiving the activities performed with the following request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events",
+      "Anchor": "compliance-events",
+      "SectionPath": [
+        "Compliance Events"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/complianceEvents?q=memberAndApplication\u0026projection=(elements*(id,capturedAt,processedAt,configVersion,owner~(firstName,lastName,headline),actor~(firstName,lastName,headline),resourceName,resourceid,resourceUri,method,activity,processedActivity,siblingActivities,parentActivity,parentSiblingActivities),paging)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "startTime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represented as an inclusive timestamp in epoch milliseconds. If present, returns all the activities that are processed after the time.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "We recommend you specifying startTime by using the latest processedAt from the previous response. If there is no event from the previous response, keep the same startTime for the next request. If there is an event from the response, the next request should use the latest timestamp of the processedAt and that event will show up on the next request\u0027s response. This way, we will ensure no data loss in the next API request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "We currently return events up to 30 days. If you specify a startTime older than 30 days of the current timestamp, it will return events up to 30 days. If you specify an invalid timestamp, it will throw a 400 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "In addition, we recommend querying at a count=10 to reduce latency and to query each member\u0027s activities once an hour. The upper limit is 50 . If you set a number not in the range [1,50] , it will result in a 400 and an error message containing the recommended count .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "If you decide to increase number of activities returned via count , keep in mind it will slow down processing time and can lead to timeouts. For querying each member\u0027s activities, we recommend spreading out your requests over the hour such that your application is not having QPS spikes, which could lead to timeouts as well.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "We also recommend using the capturedAt time returned by Compliance Events API to determine the time of the event activity. There might be instances within the specific activity that do not return the created/lastModified time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Compliance Events",
+        "Query Parameters"
+      ],
+      "Text": "The Compliance Events API will return an array of elements. Each element is an activity record with the following schema:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Compliance Events Schema",
+      "Anchor": "compliance-events-schema",
+      "SectionPath": [
+        "Compliance Events",
+        "Compliance Events Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the activity event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "capturedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time the event is captured.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "processedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time the event is processed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "configVersion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The configuration version used to process this event. This is unique to the activity\u0027s resourceName and method. It can change periodically as we update our configurations to better the API experience. It will mainly used for debugging purpose.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member who owns the record. It is the same member who has retrieval and viewing access to this activity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member who performs the action of the activity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resourceName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of resource being acted upon. Please refer below for a complete list of the resources being captured.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/?tabs=http#resource-references"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resourceId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier of the resource.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resourceUri",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URI of the resource being modified. Used for remediation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resource method. Can be one of the following write methods: CREATE BATCH_CREATE UPDATE PARTIAL_UPDATE BATCH_UPDATE BATCH_PARTIAL_UPDATE DELETE ACTION *As of now, if a method is DELETE, the activity and processedActivity fields should be empty since we cannot capture the object after it has been deleted.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#create",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#batch_create",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#update",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#partial_update",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#batch_update",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#batch_partial_update",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#delete",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods?context=linkedin/compliance/context#action-actionname"
+            ],
+            "Values": [
+              "CREATE",
+              "BATCH_CREATE",
+              "UPDATE",
+              "PARTIAL_UPDATE",
+              "BATCH_UPDATE",
+              "BATCH_PARTIAL_UPDATE",
+              "DELETE",
+              "ACTION"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "methodName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional string representing the method\u0027s name. Only present in ACTION method.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The original activity data. Used for remediation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "processedActivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The decorated original activity containing relevant contextual information. For example, if the original activity is a comment, this will include the original share content. Used for archiving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "siblingActivities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The activities on the same resource level. This is used for previous sibling comments on a share or previous messages in a conversation. Will return up to 10 most recent previous activities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentSiblingActivities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The previous activities on the parent resource level. Example would be the previous sibling comments of a parent comment of a nested comment. Will return up to 10 most recent previous activities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique string identifier of a captured activity. If an activity is processed more than once, all generated records share same activityId.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activityStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NEW! The status of the event. Can be one of the following: SUCCESS - Event is successfully processed on the initial attempt. FAILURE - Event has partial or complete processing failure on the initial attempt. The API will not surface multiple FAILURE events of the same activity. SUCCESSFUL_REPLAY - Event is successfully reprocessed after one or many attempts.",
+            "Links": [],
+            "Values": [
+              "SUCCESS - Event is successfully processed on the initial attempt.",
+              "FAILURE - Event has partial or complete processing failure on the initial attempt. The API will not surface multiple FAILURE events of the same activity.",
+              "SUCCESSFUL_REPLAY - Event is successfully reprocessed after one or many attempts."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Decorated snapshots and payload stability",
+      "Anchor": "decorated-snapshots-and-payload-stability",
+      "SectionPath": [
+        "Compliance Events",
+        "Decorated snapshots and payload stability"
+      ],
+      "Text": "processedActivity is a decorated snapshot of the activity captured at ingestion time. The Compliance Events API does not re-decorate or reshape previously archived events when the upstream content model changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decorated snapshots and payload stability",
+      "Anchor": "decorated-snapshots-and-payload-stability",
+      "SectionPath": [
+        "Compliance Events",
+        "Decorated snapshots and payload stability"
+      ],
+      "Text": "This means that when an upstream content model migrates to a new payload shape (for example, the MultiPhoto/Carousel content model rollout described in the UGC Posts resource reference), only events ingested after the migration will reflect the new shape. Events ingested before the migration retain the shape that was in effect at the time they were captured. Partners parsing processedActivity should account for both shapes coexisting in their event history and should not assume a payload shape is fixed indefinitely for a given resourceName.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Get Response",
+      "Anchor": "sample-get-response-1",
+      "SectionPath": [
+        "Compliance Events",
+        "Sample Get Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: 100,\n      \u0022activityId\u0022: \u002212356788990000\u0022,\n      \u0022capturedAt\u0022: 1476375751786,\n      \u0022processedAt\u0022: 1476375771769,\n      \u0022configVersion\u0022: 1,\n      \u0022owner\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022owner~\u0022: {\n        \u0022firstName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022John\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022lastName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Smith\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022headline\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Staff Software Engineer\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022actor~\u0022: {\n        \u0022firstName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022John\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022lastName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Smith\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022headline\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Staff Software Engineer\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022resourceName\u0022: \u0022people/positions\u0022,\n      \u0022resourceId\u0022: \u0022123ABC\u0022,\n      \u0022resourceUri\u0022: \u0022/people/id=123ABC/positions\u0022,\n      \u0022methods\u0022: \u0022PARTIAL_UPDATE\u0022,\n      \u0022activity\u0022: {\n        \u0022patch\u0022: {\n          \u0022$set\u0022: {\n            \u0022startMonthYear\u0022: {\n              \u0022month\u0022: 3,\n              \u0022year\u0022: 2014\n            },\n            \u0022title\u0022: {\n              \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Developer\u0022\n              }\n            },\n            \u0022company\u0022: \u0022urn:li:company:0000\u0022\n          }\n        }\n      },\n      \u0022processedActivity\u0022: {\n        \u0022patch\u0022: {\n          \u0022$set\u0022: {\n            \u0022startMonthYear\u0022: {\n              \u0022month\u0022: 3,\n              \u0022year\u0022: 2014\n            },\n            \u0022title\u0022: {\n              \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Developer\u0022\n              }\n            },\n            \u0022company\u0022: \u0022urn:li:company:0000\u0022,\n            \u0022company~\u0022: {\n              \u0022name\u0022: \u0022LinkedIn\u0022,\n              \u0022description\u0022: \u0022Awesome Company!\u0022\n            }\n          }\n        }\n      }\n    },\n    {\n      \u0022id\u0022: 101,\n      \u0022capturedAt\u0022: 1476375771786,\n      \u0022processedAt\u0022: 1476375971769,\n      \u0022configVersion\u0022: 1,\n      \u0022owner\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022resourceName\u0022: \u0022endorsement\u0022,\n      \u0022resourceId\u0022: \u0022123456\u0022,\n      \u0022resourceUri\u0022: \u0022/endorsements/123456\u0022,\n      \u0022methods\u0022: \u0022CREATE\u0022,\n      \u0022activity\u0022: {\n        \u0022item\u0022: {\n          \u0022nonStandardEntity\u0022: {\n            \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n            \u0022entityPhrase\u0022: \u0022Java\u0022,\n\n          }\n        },\n        \u0022endorser\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022recipient\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022location\u0022: \u0022skills.section\u0022\n      },\n      \u0022processedActivity\u0022: {\n        \u0022item\u0022: {\n          \u0022nonStandardEntity\u0022: {\n            \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n            \u0022entityPhrase\u0022: \u0022Java\u0022,\n\n          }\n        },\n        \u0022endorser\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022endorser~\u0022: {\n          \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Smith\u0022,\n\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Bob\u0022,\n\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          \u0022headline\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Software Engineer at LinkedIn\u0022,\n\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          }\n        },\n        \u0022recipient\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022recipient~\u0022: {\n          \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Johnson\u0022,\n\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Joe\u0022,\n\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          \u0022headline\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Senior Software Engineer\u0022,\n\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          }\n        },\n        \u0022location\u0022: \u0022skills.section\u0022\n      }\n    },\n    ...\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/v2/complianceEvents?count=10\u0026projection=%28elements*%28id%2CcapturedAt%2CprocessedAt%2CconfigVersion%2Cowner%7E%28firstName%2ClastName%2Cheadline%29%2Cactor%7E%28firstName%2ClastName%2Cheadline%29%2CresourceName%2Cresourceid%2CresourceUri%2Cmethods%2Cactivity%2CprocessedActivity%2CsiblingActivities%2CparentActivity%2CparentSiblingActivities%29%2Cpaging%29\u0026q=memberAndApplication\u0026start=10\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Get Response",
+      "Anchor": "sample-get-response-1",
+      "SectionPath": [
+        "Compliance Events",
+        "Sample Get Response"
+      ],
+      "Text": "Each activity record contains metadata such as resourceName , resourceId , resourceUri , and more to help you identify the activity performed so you can properly archive and remediate as needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Get Response",
+      "Anchor": "sample-get-response-1",
+      "SectionPath": [
+        "Compliance Events",
+        "Sample Get Response"
+      ],
+      "Text": "As best practice, we recommend archiving all the data but specifically method , resourceName , resourceId , configVersion and processedActivity . For remediation, you will be able to use resourceUri and activity to easily update what is needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resource References",
+      "Anchor": "resource-references",
+      "SectionPath": [
+        "Resource References"
+      ],
+      "Text": "The following resources are currently being captured and supported as part of Compliance Events:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resource References",
+      "Anchor": "resource-references",
+      "SectionPath": [
+        "Resource References"
+      ],
+      "Text": "People\nEndorsement\nRecommendation\nPublishing Articles\nUGC Posts\nSocial Actions\nOrganizations\nInvitations\nMessages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Entity Monitoring",
+      "Anchor": "entity-monitoring",
+      "SectionPath": [
+        "Entity Monitoring"
+      ],
+      "Text": "We added this feature to monitor activities that does not reference the regulated member directly. The activities returned will be related to the regulated member but not directly associated or performed by the regulated member. To know more, refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "In the event that a field or an activity is unable to be processed, we will still return the activity such that you are notified that an activity has occurred. The field that is not processed will have following message of \u0022Unable_to_process_this_field.\u0022 . In the processedActivity , the whole activity can be unprocessed, which will result in string of \u0022message\u0022: \u0022Unable to process this event.\u0022 . If a particular field in the processedActivity is unprocessed, then it will have ! and the string \u0022message\u0022: \u0022Unable to process this field.\u0022 . See below for examples.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unable to process a field",
+      "Anchor": "unable-to-process-a-field",
+      "SectionPath": [
+        "Error Handling",
+        "Unable to process a field"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {}, \n    \u0022activityId\u0022: \u002281fafbe1-ea4b-4454-a736-6b8a20d9aa90\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n    \u0022capturedAt\u0022: 1494367986523, \n    \u0022configVersion\u0022: 2, \n    \u0022id\u0022: 23260, \n    \u0022method\u0022: \u0022UPDATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n    \u0022processedActivity\u0022: {\n        \u0022message\u0022: \u0022Unable to process this event.\u0022\n    }, \n    \u0022processedAt\u0022: 1494368009776, \n    \u0022resourceId\u0022: \u0022Unable_to_process_this_field.\u0022, \n    \u0022resourceName\u0022: \u0022mockSimpleKeyCollection\u0022, \n    \u0022resourceUri\u0022: \u0022Unable_to_process_this_field.\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "unable to process an activity",
+      "Anchor": "unable-to-process-an-activity",
+      "SectionPath": [
+        "Error Handling",
+        "unable to process an activity"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022simpleUnionField\u0022: {\n            \u0022int\u0022: 3\n        }, \n        \u0022urn\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022\n    }, \n    \u0022activityId\u0022: \u0022b77d27f4-b7c9-426c-a43e-204a2735c798\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n    \u0022capturedAt\u0022: 1494368763168, \n    \u0022configVersion\u0022: 2, \n    \u0022id\u0022: 23716, \n    \u0022method\u0022: \u0022UPDATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n    \u0022processedActivity\u0022: {\n        \u0022message\u0022: \u0022Unable to process this event.\u0022\n    }, \n    \u0022processedAt\u0022: 1494369845019, \n    \u0022resourceId\u0022: \u00224\u0022, \n    \u0022resourceName\u0022: \u0022mockSimpleKeyCollection\u0022, \n    \u0022resourceUri\u0022: \u0022/mockSimpleKeyCollection/4\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unable to process an urn field in processedActivity",
+      "Anchor": "unable-to-process-an-urn-field-in-processedactivity",
+      "SectionPath": [
+        "Error Handling",
+        "Unable to process an urn field in processedActivity"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022simpleUnionField\u0022: {\n            \u0022int\u0022: 3\n        }, \n        \u0022urn\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022\n    }, \n    \u0022activityId\u0022: \u002281fafbe1-ea4b-4454-a736-6b8a20d9aa90\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n    \u0022capturedAt\u0022: 1494367986523, \n    \u0022configVersion\u0022: 2, \n    \u0022id\u0022: 23260, \n    \u0022method\u0022: \u0022UPDATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n    \u0022processedActivity\u0022: {\n        \u0022simpleUnionField\u0022: {\n            \u0022int\u0022: 3\n        }, \n        \u0022urn\u0022: \u0022urn:li:person:sFrA4B1w3F\u0022, \n        \u0022urn!\u0022: {\n            \u0022message\u0022: \u0022Unable to process this field.\u0022\n        }\n    }, \n    \u0022processedAt\u0022: 1494368009776, \n    \u0022resourceId\u0022: \u00224\u0022, \n    \u0022resourceName\u0022: \u0022mockSimpleKeyCollection\u0022, \n    \u0022resourceUri\u0022: \u0022/mockSimpleKeyCollection/4\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature",
+      "Anchor": "replayer-feature",
+      "SectionPath": [
+        "Replayer Feature"
+      ],
+      "Text": "Replayer feature provides the ability to reprocess events that have already occurred and surfaced on the API response. This feature will provide more information on past activities that were not previously available during the initial compliance capture and process by surfacing them on new events. The Replayer feature will not modify existing events, only create new ones corresponding to the same activty. This feature will go live on February 12, 2020 with the goal of reprocessing all events that have missing and/or incomplete data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature",
+      "Anchor": "replayer-feature",
+      "SectionPath": [
+        "Replayer Feature"
+      ],
+      "Text": "Starting on February 12, 2020, you may see reprocessed events in the Compliance Events API response. To differentiate between initial and reprocessed events, we are introducing activityStatus field to denote each event\u0027s process state. It can be one of the following: SUCCESS, FAILURE, or SUCCESSFUL_REPLAY. To prevent archiving duplicate events, partners can filter out reprocessed events by filtering out SUCCESSFUL_REPLAY events until they are ready to utilize this feature.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature",
+      "Anchor": "replayer-feature",
+      "SectionPath": [
+        "Replayer Feature"
+      ],
+      "Text": "Currently, reprocessed events will only appear in the API response if it\u0027s successfully reprocessed with no processing failures. This means the maximum number of Compliance Events for a unique activity is two. Therefore the three possible scenarios are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature",
+      "Anchor": "replayer-feature",
+      "SectionPath": [
+        "Replayer Feature"
+      ],
+      "Text": "Event with SUCCESS activityStatus.\nEvent with FAILURE activityStatus with no subsequent event.\nEvent with FAILURE activityStatus that eventually is followed by another event with SUCCESSFUL_REPLAY activityStatus.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature",
+      "Anchor": "replayer-feature",
+      "SectionPath": [
+        "Replayer Feature"
+      ],
+      "Text": "Some other ways to identify and differentiate these activities are to use the following fields: id, activityId, and processedAt. For more information on these fields, refer to the Compliance Events Schema. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Replay Activities",
+      "Anchor": "sample-replay-activities",
+      "SectionPath": [
+        "Replayer Feature",
+        "Sample Replay Activities"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: 1000,\n      \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022resourceId\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n      \u0022configVersion\u0022: 36,\n      \u0022method\u0022: \u0022CREATE\u0022,\n      \u0022activity\u0022: {\n        \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        ...\n      },\n      \u0022resourceName\u0022: \u0022ugcPosts\u0022,\n      \u0022resourceUri\u0022: \u0022/ugcPosts/urn:li:ugcPost:123456789\u0022,\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022activityId\u0022: \u00228561f816-517e-49fb-901d-29c589e3b09f\u0022,\n      \u0022processedAt\u0022: 1572831764582,\n      \u0022capturedAt\u0022: 1573079762090,\n      \u0022activityStatus\u0022: \u0022FAILURE\u0022,\n      \u0022processedActivity\u0022: {\n        \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022author!\u0022: {\n          \u0022message\u0022: \u0022Unable to process this field.\u0022\n        },\n        \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        ...\n      }\n    },\n    {\n      \u0022id\u0022: 1001,\n      \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n      ...\n    },\n    {\n      \u0022id\u0022: 1002,\n      \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n      ...\n    },\n    {\n      \u0022id\u0022: 1003,\n      \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n      ...\n    },\n    {\n      \u0022id\u0022: 1004,\n      \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022resourceId\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n      \u0022configVersion\u0022: 37,\n      \u0022method\u0022: \u0022CREATE\u0022,\n      \u0022activity\u0022: {\n        \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        ...\n      },\n      \u0022resourceName\u0022: \u0022ugcPosts\u0022,\n      \u0022resourceUri\u0022: \u0022/ugcPosts/urn:li:ugcPost:123456789\u0022,\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022activityId\u0022: \u00228561f816-517e-49fb-901d-29c589e3b09f\u0022,\n      \u0022processedAt\u0022: 1573759549000,\n      \u0022capturedAt\u0022: 1573079762090,\n      \u0022activityStatus\u0022: \u0022SUCCESSFUL_REPLAY\u0022,\n      \u0022processedActivity\u0022: {\n        \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022author~\u0022: {\n          \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022Bob\u0022\n            },\n            \u0022preferredLocale\u0022: {\n              \u0022country\u0022: \u0022US\u0022,\n              \u0022language\u0022: \u0022en\u0022\n            }\n          },\n          ...\n        },\n        \u0022id\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        ...\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Replay Activities",
+      "Anchor": "sample-replay-activities",
+      "SectionPath": [
+        "Replayer Feature",
+        "Sample Replay Activities"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Replay Activities",
+      "Anchor": "sample-replay-activities",
+      "SectionPath": [
+        "Replayer Feature",
+        "Sample Replay Activities"
+      ],
+      "Text": "Notice the first and last event in the above sample response and their specific fields: activityStatus, id, activityId, and processedAt. The activityStatus field helps determine whether or not it\u0027s a reprocessed event and the last event denotes a reprocessed event. In addition, the two events correspond to the same activity by having the same activityId. However, they have different unique id and the first activity has the previous processedAt timestamp while the last one has the latest timestamp. The last activity was not able to process the author decoration in processedActivity and has author! whereas the first activity reprocessed the field with author~ in processedActivity. For more information on response decoration, please refer here.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+  "Title": "LinkedIn Learning API Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What is LinkedIn Learning?",
+      "Anchor": "what-is-linkedin-learning",
+      "SectionPath": [
+        "What is LinkedIn Learning?"
+      ],
+      "Text": "LinkedIn Learning is an online learning platform that combines the industry-leading content from Lynda.com with LinkedIn\u2019s professional data and network. LinkedIn Learning is built on three core pillars:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LinkedIn Learning?",
+      "Anchor": "what-is-linkedin-learning",
+      "SectionPath": [
+        "What is LinkedIn Learning?"
+      ],
+      "Text": "World-class content: Our library of 9,000\u002B digital courses are taught by industry experts and cover a wide range of business, creative and technical topics, from leadership \u201Csoft skills\u201D to design principles to programming. We\u2019re always evolving the Lynda.com library, adding at least 25 courses a week, and teaching the leading-edge skills you need to stay current. Plus, we also offer courses in German, Spanish, Japanese and French.\nData-driven personalization: We get the right course in front of you at the right time. Using the intelligence that comes with our network, LinkedIn Learning creates personalized recommendations, so learners can efficiently discover which courses are most relevant to their goals or job function. Organizations can use LinkedIn insights to customize multi-course Learning Paths to meet their specific needs. We also provide robust analytics and reporting to help you measure learning effectiveness.\nAnytime, anywhere convenience: It isn\u2019t enough to know exactly which course to take \u2013 it also needs to be easy to take. Our courses are broken into bite-sized segments that can be viewed anytime, on any device, online and off. Learning content is recommended throughout your LinkedIn.com experience, helping you easily discover relevant courses, and the content can be integrated with a learning management system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Use Cases",
+      "Anchor": "api-use-cases",
+      "SectionPath": [
+        "API Use Cases"
+      ],
+      "Text": "LinkedIn Learning APIs are designed to represent LinkedIn Learning content in a unified and extensible format. The endpoints can be used to integrate LinkedIn Learning catalog metadata and search into your application. Using LinkedIn Learning APIs you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Use Cases",
+      "Anchor": "api-use-cases",
+      "SectionPath": [
+        "API Use Cases"
+      ],
+      "Text": "Retrieve a page of learning assets, given some criteria.\nRetrieve an individual learning asset, given an URN.\nRetrieve a page of learning classifications, given some criteria.\nRetrieve an individual learning classification, given an URN.\nRetrieve a page of learning assets, given some search and relevance criteria.\nRetrieve a list of learning assets updated since a given date.\nRetrieve a page of learning classifications, given a keyword.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Use Cases",
+      "Anchor": "api-use-cases",
+      "SectionPath": [
+        "API Use Cases"
+      ],
+      "Text": "In researching standards and implementations of learning content metadata, we adopted patterns that will allow the API to evolve and expand using the same fundamental data model. This means after you integrate with the API presented in this document, your integration can more easily take advantage of new types of LinkedIn Learning content and content information as we add them to the API.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

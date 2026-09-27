@@ -14,16 +14,40 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alternativeNames property</summary>
+        /// <summary>Alternative names of the entity. There can be multiple names per locale.Documented type: array[LocaleString]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AlternativeNames { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseAlternativeNamesItem>? AlternativeNames { get; set; }
 #nullable restore
 #else
-        public UntypedNode AlternativeNames { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseAlternativeNamesItem> AlternativeNames { get; set; }
 #endif
-        /// <summary>The autoCreated property</summary>
+        /// <summary>Whether the entity was auto-created.Documented type: booleanRequirement: Yes</summary>
         public bool? AutoCreated { get; set; }
+        /// <summary>Brand-specific attributes of the organization. If this field exists, then this entity is a brand.Documented type: BrandAttributesRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseBrandAttributes? BrandAttributes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseBrandAttributes BrandAttributes { get; set; }
+#endif
+        /// <summary>Customizable call-to-action that this organizational entity wants to be associated with.Documented type: OrganizationCallToActionRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCallToAction? CallToAction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCallToAction CallToAction { get; set; }
+#endif
+        /// <summary>Company-specific attributes of the organization. If this field exists, then this entity is a company.Documented type: CompanyAttributesRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCompanyAttributes? CompanyAttributes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCompanyAttributes CompanyAttributes { get; set; }
+#endif
         /// <summary>The competitorOrganizationUrns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> CompetitorOrganizationUrns { get; set; }
 #endif
-        /// <summary>The coverPhotoV2 property</summary>
+        /// <summary>Cover photo uploaded via Vector. The entity&apos;s background cover image.Documented type: OrganizationCroppedImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2? CoverPhotoV2 { get; set; }
@@ -48,6 +72,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCreated Created { get; set; }
 #endif
+        /// <summary>Custom spotlight for the Page.Documented type: CustomSpotlightRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCustomSpotlight? CustomSpotlight { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCustomSpotlight CustomSpotlight { get; set; }
+#endif
         /// <summary>The defaultLocale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +87,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDefaultLocale DefaultLocale { get; set; }
+#endif
+        /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDeleted? Deleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDeleted Deleted { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,14 +104,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDescription Description { get; set; }
 #endif
-        /// <summary>The entityStatus property</summary>
+        /// <summary>Email address of the entity.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityStatus { get; set; }
+        public string? EmailAddress { get; set; }
 #nullable restore
 #else
-        public string EntityStatus { get; set; }
+        public string EmailAddress { get; set; }
 #endif
+        /// <summary>Status of the entity, such as active or inactive. Value enums include: ACTIVEINACTIVEDocumented type: EntityStatusRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseEntityStatus? EntityStatus { get; set; }
         /// <summary>The foundedOn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,9 +122,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseFoundedOn FoundedOn { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public int? Id { get; set; }
-        /// <summary>The industriesV2 property</summary>
+        /// <summary>ID of the entity.Documented type: longRequirement: Yes</summary>
+        public long? Id { get; set; }
+        /// <summary>The industries with industryV2 taxonomy data associated with the entity.Documented type: array[IndustryUrn]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IndustriesV2 { get; set; }
@@ -90,6 +132,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> IndustriesV2 { get; set; }
 #endif
+        /// <summary>Whether the organizational entity has been archived by an admin.Documented type: booleanRequirement: No</summary>
+        public bool? IsArchived { get; set; }
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +150,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModifiedByAdmin LastModifiedByAdmin { get; set; }
 #endif
-        /// <summary>The leadGenFormEntryPoint property</summary>
+        /// <summary>LeadGenForm entry point shown on the organization page.Documented type: LeadGenFormEntryPointRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint? LeadGenFormEntryPoint { get; set; }
@@ -114,7 +158,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint LeadGenFormEntryPoint { get; set; }
 #endif
-        /// <summary>The localizedDescription property</summary>
+        /// <summary>The locale-specific announcement of the organization.Documented type: AttributedTextRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocalizedAnnouncement? LocalizedAnnouncement { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocalizedAnnouncement LocalizedAnnouncement { get; set; }
+#endif
+        /// <summary>The locale-specific description of the entity.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalizedDescription { get; set; }
@@ -122,7 +174,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LocalizedDescription { get; set; }
 #endif
-        /// <summary>The localizedName property</summary>
+        /// <summary>The locale-specific name of the entity.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalizedName { get; set; }
@@ -130,7 +182,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LocalizedName { get; set; }
 #endif
-        /// <summary>The localizedSpecialties property</summary>
+        /// <summary>The locale-specific, admin-defined specialty tags of the entity.Documented type: array[String]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LocalizedSpecialties { get; set; }
@@ -138,7 +190,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> LocalizedSpecialties { get; set; }
 #endif
-        /// <summary>The localizedTagline property</summary>
+        /// <summary>The locale-specific tagline of the entity.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalizedTagline { get; set; }
@@ -146,7 +198,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LocalizedTagline { get; set; }
 #endif
-        /// <summary>The localizedWebsite property</summary>
+        /// <summary>The locale-specific website of the entity.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalizedWebsite { get; set; }
@@ -154,7 +206,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LocalizedWebsite { get; set; }
 #endif
-        /// <summary>The locations property</summary>
+        /// <summary>Locations of the entity.Documented type: array[LocationInfo]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocationsItem>? Locations { get; set; }
@@ -162,13 +214,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocationsItem> Locations { get; set; }
 #endif
-        /// <summary>The logoV2 property</summary>
+        /// <summary>Logo photo uploaded via Vector.Documented type: OrganizationCroppedImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLogoV2? LogoV2 { get; set; }
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLogoV2 LogoV2 { get; set; }
+#endif
+        /// <summary>The map of Locale to announcement message of an organization. Each key is a Locale record converted to string format, with the language, country and variant separated by underscores.Documented type: map[string, AttributedText]Requirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MultiLocaleAnnouncements { get; set; }
+#nullable restore
+#else
+        public string MultiLocaleAnnouncements { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -178,7 +238,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseName Name { get; set; }
 #endif
-        /// <summary>The organizationalPage property</summary>
+        /// <summary>OrganizationalPageUrn to represent this organization entity (i.e. Company/School/Showcase) page.Documented type: OrganizationalPageUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationalPage { get; set; }
@@ -194,33 +254,71 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationFieldStates OrganizationFieldStates { get; set; }
 #endif
-        /// <summary>The organizationType property</summary>
+        /// <summary>Status of the organization. Value enums include: OPERATINGOPERATING_SUBSIDIARYREORGANIZINGOUT_OF_BUSINESSACQUIREDDocumented type: OrganizationStatusRequirement: No</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationStatus? OrganizationStatus { get; set; }
+        /// <summary>Type of organization. Value enums include: PUBLIC_COMPANYEDUCATIONALSELF_EMPLOYEDGOVERNMENT_AGENCYNON_PROFITSELF_OWNEDPRIVATELY_HELDPARTNERSHIPDocumented type: OrganizationTypeRequirement: No</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationType? OrganizationType { get; set; }
+        /// <summary>Overview photo uploaded via Vector. The image used in the Overview tab on the organization&apos;s page.Documented type: OrganizationCroppedImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOverviewPhotoV2? OverviewPhotoV2 { get; set; }
 #nullable restore
 #else
-        public string OrganizationType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOverviewPhotoV2 OverviewPhotoV2 { get; set; }
 #endif
-        /// <summary>The parentCareersUsed property</summary>
+        /// <summary>Whether to use the careers data from this organization&apos;s parent organization to render the careers section of it&apos;s page. If there is no parent for this organization, this field will be set to false.Documented type: booleanRequirement: Yes</summary>
         public bool? ParentCareersUsed { get; set; }
-        /// <summary>The primaryOrganizationType property</summary>
+        /// <summary>The organization&apos;s relationship with its parent.Documented type: OrganizationParentRelationshipRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryOrganizationType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseParentRelationship? ParentRelationship { get; set; }
 #nullable restore
 #else
-        public string PrimaryOrganizationType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseParentRelationship ParentRelationship { get; set; }
 #endif
-        /// <summary>The revenueRecords property</summary>
+        /// <summary>Information about the partner who provided all of the data for this organization.Documented type: PartnerInfoRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RevenueRecords { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePartnerInfo? PartnerInfo { get; set; }
 #nullable restore
 #else
-        public UntypedNode RevenueRecords { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePartnerInfo PartnerInfo { get; set; }
 #endif
-        /// <summary>The specialties property</summary>
+        /// <summary>The entity&apos;s pinned post.Documented type: URNRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PinnedPost { get; set; }
+#nullable restore
+#else
+        public string PinnedPost { get; set; }
+#endif
+        /// <summary>Defines the primary organization type of an organizational entity. Value enums include: SCHOOLBRANDNONEDocumented type: PrimaryOrganizationTypeRequirement: No</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePrimaryOrganizationType? PrimaryOrganizationType { get; set; }
+        /// <summary>Organization revenue records. Could be quarterly or yearly.Documented type: array[Revenue]Requirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseRevenueRecordsItem>? RevenueRecords { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseRevenueRecordsItem> RevenueRecords { get; set; }
+#endif
+        /// <summary>School-specific attributes of the organization. If this field exists, then this entity is a school.Documented type: SchoolAttributesRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSchoolAttributes? SchoolAttributes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSchoolAttributes SchoolAttributes { get; set; }
+#endif
+        /// <summary>Organization-specific settings, such as ads display setting.Documented type: SettingsRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings? Settings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings Settings { get; set; }
+#endif
+        /// <summary>Admin-defined specialty tags of the entity.Documented type: array[LocaleTags]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem>? Specialties { get; set; }
@@ -228,14 +326,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem> Specialties { get; set; }
 #endif
-        /// <summary>The staffCountRange property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StaffCountRange { get; set; }
-#nullable restore
-#else
-        public string StaffCountRange { get; set; }
-#endif
+        /// <summary>Range of the number of staff associated with this entity. Value enums include: SIZE_1SIZE_2_TO_10SIZE_11_TO_50SIZE_51_TO_200SIZE_201_TO_500SIZE_501_TO_1000SIZE_1001_TO_5000SIZE_5001_TO_10000SIZE_10001_OR_MOREDocumented type: StaffCountRangeRequirement: No</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseStaffCountRange? StaffCountRange { get; set; }
         /// <summary>The tagline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -244,7 +336,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline Tagline { get; set; }
 #endif
-        /// <summary>The vanityName property</summary>
+        /// <summary>Entity&apos;s unique name used in URLs.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VanityName { get; set; }
@@ -252,7 +344,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string VanityName { get; set; }
 #endif
-        /// <summary>The website property</summary>
+        /// <summary>The entity&apos;s website.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseWebsite? Website { get; set; }
@@ -285,20 +377,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alternativeNames", n => { AlternativeNames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseAlternativeNamesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseAlternativeNamesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "autoCreated", n => { AutoCreated = n.GetBoolValue(); } },
+                { "brandAttributes", n => { BrandAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseBrandAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseBrandAttributes.CreateFromDiscriminatorValue); } },
+                { "callToAction", n => { CallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCallToAction.CreateFromDiscriminatorValue); } },
+                { "companyAttributes", n => { CompanyAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCompanyAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCompanyAttributes.CreateFromDiscriminatorValue); } },
                 { "competitorOrganizationUrns", n => { CompetitorOrganizationUrns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "coverPhotoV2", n => { CoverPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCreated.CreateFromDiscriminatorValue); } },
+                { "customSpotlight", n => { CustomSpotlight = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCustomSpotlight>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCustomSpotlight.CreateFromDiscriminatorValue); } },
                 { "defaultLocale", n => { DefaultLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDefaultLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDefaultLocale.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDeleted.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDescription.CreateFromDiscriminatorValue); } },
-                { "entityStatus", n => { EntityStatus = n.GetStringValue(); } },
+                { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "entityStatus", n => { EntityStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseEntityStatus>(); } },
                 { "foundedOn", n => { FoundedOn = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseFoundedOn>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseFoundedOn.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "industriesV2", n => { IndustriesV2 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
                 { "lastModifiedByAdmin", n => { LastModifiedByAdmin = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModifiedByAdmin>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModifiedByAdmin.CreateFromDiscriminatorValue); } },
                 { "leadGenFormEntryPoint", n => { LeadGenFormEntryPoint = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint.CreateFromDiscriminatorValue); } },
+                { "localizedAnnouncement", n => { LocalizedAnnouncement = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocalizedAnnouncement>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocalizedAnnouncement.CreateFromDiscriminatorValue); } },
                 { "localizedDescription", n => { LocalizedDescription = n.GetStringValue(); } },
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
                 { "localizedSpecialties", n => { LocalizedSpecialties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -306,15 +406,23 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "localizedWebsite", n => { LocalizedWebsite = n.GetStringValue(); } },
                 { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logoV2", n => { LogoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLogoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLogoV2.CreateFromDiscriminatorValue); } },
+                { "multiLocaleAnnouncements", n => { MultiLocaleAnnouncements = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseName.CreateFromDiscriminatorValue); } },
                 { "organizationFieldStates", n => { OrganizationFieldStates = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationFieldStates>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationFieldStates.CreateFromDiscriminatorValue); } },
-                { "organizationType", n => { OrganizationType = n.GetStringValue(); } },
+                { "organizationStatus", n => { OrganizationStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationStatus>(); } },
+                { "organizationType", n => { OrganizationType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationType>(); } },
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
+                { "overviewPhotoV2", n => { OverviewPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOverviewPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOverviewPhotoV2.CreateFromDiscriminatorValue); } },
                 { "parentCareersUsed", n => { ParentCareersUsed = n.GetBoolValue(); } },
-                { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetStringValue(); } },
-                { "revenueRecords", n => { RevenueRecords = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "parentRelationship", n => { ParentRelationship = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseParentRelationship>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseParentRelationship.CreateFromDiscriminatorValue); } },
+                { "partnerInfo", n => { PartnerInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePartnerInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePartnerInfo.CreateFromDiscriminatorValue); } },
+                { "pinnedPost", n => { PinnedPost = n.GetStringValue(); } },
+                { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePrimaryOrganizationType>(); } },
+                { "revenueRecords", n => { RevenueRecords = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseRevenueRecordsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseRevenueRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "schoolAttributes", n => { SchoolAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSchoolAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSchoolAttributes.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings.CreateFromDiscriminatorValue); } },
                 { "specialties", n => { Specialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "staffCountRange", n => { StaffCountRange = n.GetStringValue(); } },
+                { "staffCountRange", n => { StaffCountRange = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseStaffCountRange>(); } },
                 { "tagline", n => { Tagline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline.CreateFromDiscriminatorValue); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
                 { "website", n => { Website = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseWebsite>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseWebsite.CreateFromDiscriminatorValue); } },
@@ -327,20 +435,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("alternativeNames", AlternativeNames);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseAlternativeNamesItem>("alternativeNames", AlternativeNames);
             writer.WriteBoolValue("autoCreated", AutoCreated);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseBrandAttributes>("brandAttributes", BrandAttributes);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCallToAction>("callToAction", CallToAction);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCompanyAttributes>("companyAttributes", CompanyAttributes);
             writer.WriteCollectionOfPrimitiveValues<string>("competitorOrganizationUrns", CompetitorOrganizationUrns);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCoverPhotoV2>("coverPhotoV2", CoverPhotoV2);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCreated>("created", Created);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseCustomSpotlight>("customSpotlight", CustomSpotlight);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDefaultLocale>("defaultLocale", DefaultLocale);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDeleted>("deleted", Deleted);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseDescription>("description", Description);
-            writer.WriteStringValue("entityStatus", EntityStatus);
+            writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseEntityStatus>("entityStatus", EntityStatus);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseFoundedOn>("foundedOn", FoundedOn);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("industriesV2", IndustriesV2);
+            writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModified>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLastModifiedByAdmin>("lastModifiedByAdmin", LastModifiedByAdmin);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint>("leadGenFormEntryPoint", LeadGenFormEntryPoint);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocalizedAnnouncement>("localizedAnnouncement", LocalizedAnnouncement);
             writer.WriteStringValue("localizedDescription", LocalizedDescription);
             writer.WriteStringValue("localizedName", LocalizedName);
             writer.WriteCollectionOfPrimitiveValues<string>("localizedSpecialties", LocalizedSpecialties);
@@ -348,15 +464,23 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("localizedWebsite", LocalizedWebsite);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLocationsItem>("locations", Locations);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLogoV2>("logoV2", LogoV2);
+            writer.WriteStringValue("multiLocaleAnnouncements", MultiLocaleAnnouncements);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseName>("name", Name);
             writer.WriteStringValue("organizationalPage", OrganizationalPage);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationFieldStates>("organizationFieldStates", OrganizationFieldStates);
-            writer.WriteStringValue("organizationType", OrganizationType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationStatus>("organizationStatus", OrganizationStatus);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOrganizationType>("organizationType", OrganizationType);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseOverviewPhotoV2>("overviewPhotoV2", OverviewPhotoV2);
             writer.WriteBoolValue("parentCareersUsed", ParentCareersUsed);
-            writer.WriteStringValue("primaryOrganizationType", PrimaryOrganizationType);
-            writer.WriteObjectValue<UntypedNode>("revenueRecords", RevenueRecords);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseParentRelationship>("parentRelationship", ParentRelationship);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePartnerInfo>("partnerInfo", PartnerInfo);
+            writer.WriteStringValue("pinnedPost", PinnedPost);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponsePrimaryOrganizationType>("primaryOrganizationType", PrimaryOrganizationType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseRevenueRecordsItem>("revenueRecords", RevenueRecords);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSchoolAttributes>("schoolAttributes", SchoolAttributes);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseSpecialtiesItem>("specialties", Specialties);
-            writer.WriteStringValue("staffCountRange", StaffCountRange);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseStaffCountRange>("staffCountRange", StaffCountRange);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseTagline>("tagline", Tagline);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseWebsite>("website", Website);

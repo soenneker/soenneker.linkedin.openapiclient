@@ -1,0 +1,1320 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+  "Title": "Ad Supply Forecasts",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Supply Forecasts",
+      "Anchor": "ad-supply-forecasts",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Supply Forecasts",
+      "Anchor": "ad-supply-forecasts",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Supply Forecasts",
+      "Anchor": "ad-supply-forecasts",
+      "SectionPath": [],
+      "Text": "The Ad Supply Forecasts API enables you to forecast impressions, spending, and other metrics based on:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Supply Forecasts",
+      "Anchor": "ad-supply-forecasts",
+      "SectionPath": [],
+      "Text": "Targeting criteria\nCampaign settings such as campaign type and objective type.\nBid and spending settings.\nTime period",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Supply Forecasts",
+      "Anchor": "ad-supply-forecasts",
+      "SectionPath": [],
+      "Text": "To calculate the forecast, we analyze these data points for your campaign, take into account campaign performance from similar campaigns/advertisers, and simulate the ad auction and serving processes. While we aim for utmost accuracy in our forecasts, it\u2019s important to remember that forecasted results are an estimate and don\u0027t guarantee the actual performance of your campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "The following schema table documents the fields responses will contain. Query parameters are documented separately for the criteriaV2 finder.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "granularity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The granularity of the forecast. Valid values: DAILY - Denotes per day for the forecast supply value.SEVEN_DAY - Denotes per a sum of the 7 days starting at the timestamp for the forecast supply value.THIRTY_DAY - Denotes that the forecast supply value is per a sum of the 30 days starting at the timestamp.CUSTOM - Denotes per a sum of a custom number of days sent in the dateRange of the forecasting client request for the forecast supply value starting at the timestamp.",
+            "Links": [],
+            "Values": [
+              "DAILY - Denotes per day for the forecast supply value.",
+              "SEVEN_DAY - Denotes per a sum of the 7 days starting at the timestamp for the forecast supply value.",
+              "THIRTY_DAY - Denotes that the forecast supply value is per a sum of the 30 days starting at the timestamp.",
+              "CUSTOM - Denotes per a sum of a custom number of days sent in the dateRange of the forecasting client request for the forecast supply value starting at the timestamp."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The forecast metric type. Metric types returned depend upon passed in values. Valid values include: IMPRESSION - The number of ad impressions in a selected time period. The window starts at the specified timestamp with the length defined as the granularity. For Conversation Ad, this is the number of headline impressions in a selected time period CLICK - The number of ad clicks in a time window. The window starts at the specified timestamp with the length defined as the granularity. For Conversation Ad, this is the number of headline clicks in a time window. VIDEO_VIEW - The number of video views in a time window. The window starts at the specified timestamp with the length defined as the granularity. SPENDING - The amount spent in campaign currency. LEAD - The lead generated from the campaign. MAX_POTENTIAL_BUDGET - The max budget for the campaign. SPONSORED_INMAIL_SEND - The sponsored inmail send. CONVERSION - The conversion from campaign. CLICK_PER_MILLION_IMPRESSIONS - Forecasted number of clicks per one million campaign impressions, e.g. if the value is 1, the actual Click Through Rate should be 1/1000000. VIDEO_VIEW_PER_MILLION_IMPRESSIONS - The number of video views per one million campaign impressions, e.g. if the value is 1, the actual View Through Rate should be 1/1000000. LEAD_PER_MILLION_IMPRESSIONS - The number of leads per one million campaign impressions, e.g. if the value is 1, the actual Lead Through Rate should be 1/1000000. REACH - The projected number of unique member accounts that are shown your campaign ad at least once in a time window. Starts with the specified timestamp and ends according to the listed granularity. REACH_PER_MILLION_IMPRESSIONS - The projected reach per one million campaign impressions, in which reach is the estimated number of unique member accounts that are shown your campaign ad. e.g., if the value is 10,000, then the estimate indicates that your campaign ads will be shown to 10,000 unique member accounts for every million impressions.COST_PER_MILLION_IMPRESSIONS - The projected number of cost per one million impressions for the campaign. e.g., if the value is 1, the actual Cost Per Impression is 1/1000000.COST_PER_MILLION_CLICKS - The projected number of cost per one million clicks for the campaign. e.g., if the value is 1, the actual Cost Per Click is 1/1000000.COST_PER_MILLION_VIEWS - The projected number of cost per one million video views for the campaign. e.g., if the value is 1, the actual Cost Per Video View is 1/1000000.COST_PER_MILLION_LEADS - The projected number of cost per one million lead gen form submissions for the campaign. e.g., if the value is 1, the actual Cost Per Lead is 1/1000000.COST_PER_MILLION_REACHES - The projected number of cost per one million member accounts reached for the campaign. e.g., if the value is 1, the actual Cost Per Reach is 1/1000000.COST_PER_MILLION_MESSAGE_SENDS - The projected number of cost per one million messages sent for the campaign. e.g., if the value is 1, the actual Cost Per Message Send is 1/1000000.",
+            "Links": [],
+            "Values": [
+              "IMPRESSION - The number of ad impressions in a selected time period. The window starts at the specified timestamp with the length defined as the granularity. For Conversation Ad, this is the number of headline impressions in a selected time period",
+              "CLICK - The number of ad clicks in a time window. The window starts at the specified timestamp with the length defined as the granularity. For Conversation Ad, this is the number of headline clicks in a time window.",
+              "VIDEO_VIEW - The number of video views in a time window. The window starts at the specified timestamp with the length defined as the granularity.",
+              "SPENDING - The amount spent in campaign currency.",
+              "LEAD - The lead generated from the campaign.",
+              "MAX_POTENTIAL_BUDGET - The max budget for the campaign.",
+              "SPONSORED_INMAIL_SEND - The sponsored inmail send.",
+              "CONVERSION - The conversion from campaign.",
+              "CLICK_PER_MILLION_IMPRESSIONS - Forecasted number of clicks per one million campaign impressions, e.g. if the value is 1, the actual Click Through Rate should be 1/1000000.",
+              "VIDEO_VIEW_PER_MILLION_IMPRESSIONS - The number of video views per one million campaign impressions, e.g. if the value is 1, the actual View Through Rate should be 1/1000000.",
+              "LEAD_PER_MILLION_IMPRESSIONS - The number of leads per one million campaign impressions, e.g. if the value is 1, the actual Lead Through Rate should be 1/1000000.",
+              "REACH - The projected number of unique member accounts that are shown your campaign ad at least once in a time window. Starts with the specified timestamp and ends according to the listed granularity.",
+              "REACH_PER_MILLION_IMPRESSIONS - The projected reach per one million campaign impressions, in which reach is the estimated number of unique member accounts that are shown your campaign ad. e.g., if the value is 10,000, then the estimate indicates that your campaign ads will be shown to 10,000 unique member accounts for every million impressions.",
+              "COST_PER_MILLION_IMPRESSIONS - The projected number of cost per one million impressions for the campaign. e.g., if the value is 1, the actual Cost Per Impression is 1/1000000.",
+              "COST_PER_MILLION_CLICKS - The projected number of cost per one million clicks for the campaign. e.g., if the value is 1, the actual Cost Per Click is 1/1000000.",
+              "COST_PER_MILLION_VIEWS - The projected number of cost per one million video views for the campaign. e.g., if the value is 1, the actual Cost Per Video View is 1/1000000.",
+              "COST_PER_MILLION_LEADS - The projected number of cost per one million lead gen form submissions for the campaign. e.g., if the value is 1, the actual Cost Per Lead is 1/1000000.",
+              "COST_PER_MILLION_REACHES - The projected number of cost per one million member accounts reached for the campaign. e.g., if the value is 1, the actual Cost Per Reach is 1/1000000.",
+              "COST_PER_MILLION_MESSAGE_SENDS - The projected number of cost per one million messages sent for the campaign. e.g., if the value is 1, the actual Cost Per Message Send is 1/1000000."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "timeSeries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time series value for the forecast.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value timestamp. The time when the current forecast value is seen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasting supply value at a specific time.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adForecastRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "High and low range of the forecasting supply value at a specific time",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "The criteriaV2 finder uses the targetingCriteria format to return forecasts on particular audiences, bid configurations, and budgets. For more information on Targeting Criteria, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "The forecast reflects the user\u0027s daily and total budgets. When the total budget is specified, part of the forecasted time series may show as a 0 after the user\u0027s budget is forecasted to run out, depending on the user\u0027s total and daily budget. The daily spending forecast is capped at 1.2x the daily budget. The result metrics (clicks, impressions, etc.) reflect the user\u0027s forecasted spending.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "Restli 2.0 requires URNs in query params to be URL encoded. For example, urn:li:skill:17 would become urn%3Ali%3Askill%3A17.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "Note that some API tools may not support these types of calls. Testing with curl is recommended if you encounter a 400 error with message Invalid query parameters passed to request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "Calls to this endpoint are structured as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account={sponsored account urn}\u0026campaignType={type}\u0026timeRange.start={timestamp}\u0026timeRange.end={timestamp} \u0026targetingCriteria=(include:(and:List((or:({encoded facet_URN_1}:List({encoded facet_URN_1_value_1},{encoded facet_URN_1_value_2}))),(or:({encoded facet_URN_2}:List({encoded facet_URN_2_value_1},{encoded facet_URN_2_value_2}))))))\u0026enableAudienceNetwork={true/false}\u0026connectedTelevisionOnly={true/false}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Supply by CriteriaV2",
+      "Anchor": "find-supply-by-criteriav2",
+      "SectionPath": [
+        "Find Supply by CriteriaV2"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account={sponsored account urn}\u0026campaignType={type}\u0026timeRange.start={timestamp}\u0026timeRange.end={timestamp} \u0026targetingCriteria=(include:(and:List((or:({encoded facet_URN_1}:List({encoded facet_URN_1_value_1},{encoded facet_URN_1_value_2}))),(or:({encoded facet_URN_2}:List({encoded facet_URN_2_value_1},{encoded facet_URN_2_value_2}))))))\u0026enableAudienceNetwork={true/false}\u0026connectedTelevisionOnly={true/false}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be criteriaV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account for which the supply forecast is requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Account URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign type. Valid values are: SPONSORED_UPDATES SPONSORED_INMAILS DYNAMIC For connected television campaigns, campaignType can only be SPONSORED_UPDATES.",
+            "Links": [],
+            "Values": [
+              "SPONSORED_UPDATES",
+              "SPONSORED_INMAILS",
+              "DYNAMIC For connected television campaigns, campaignType can only be SPONSORED_UPDATES."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored campaign, if available can be used to provide better forecasts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive start time range of the forecast. Must be after current UTC time. If unset, it will indicate an open range up to the end time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Timestamp in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive end time range of the forecast. Must be after start time. If unset, it will indicate an open range up of start time to everything after.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Timestamp in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies targeting criteria that the member should match. This is a more advanced boolean expression than the previous targeting field. It provides a generic AND / OR construct to include and exclude different targeting facets when defining the campaign audience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative type, if available can be used to provide better forecasts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Objective type, if available can be used to provide better forecasts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "objectiveType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "competingBid.bidPrice.amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bid amount of the current campaign to forecast. Required for manual bid type forecasts. Required if other competingBid parameters are present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "competingBid.bidPrice.currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bid currency of the current campaign. Represented by the three character ISO currency codes (ie. USD). Required if other competingBid parameters are present.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_4217"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "competingBid.bidType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid enum values are: CPM - Cost per thousand advertising impressions. CPC - Cost per individual click on the associated link. CPV - Cost per view for video ads Required for manual bid type forecasts. Required if other competingBid parameters are present.",
+            "Links": [],
+            "Values": [
+              "CPM - Cost per thousand advertising impressions.",
+              "CPC - Cost per individual click on the associated link.",
+              "CPV - Cost per view for video ads Required for manual bid type forecasts. Required if other competingBid parameters are present."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional*",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dailyBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum amount to spend per day. The currency must match that of the parent account. The amount of money as a real number string. Required if totalBudget is not specified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required if totalBudget not present in call",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum amount to spend over the life of the Campaign. The currency must match that of the Account. The amount of money as a real number string. Required if dailyBudget is not specified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required if dailyBudget not present in call",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optimizationTarget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optimizationTargetType is used to optimize spending for a campaign. A forecast will be provided for auto-bidding when certain optimizationTargetTypes are provided. When optimizationTargetTypes is absent, you must provide the competingBid parameter for a manual bidding forecast.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Target Type",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09#optimization-of-campaigns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional, default=\u0022NONE\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enableAudienceNetwork",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include LinkedIn Audience Network inventory into campaign performance forecast. For connected television campaigns, enableAudienceNetwork must be set to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "default=false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enableAudienceExpansion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include Audience Expansion inventory into campaign performance forecast.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "default=false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetCost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target cost for Target CPX (where CPX stands for cost per X where X is a result such as an impression, click, etc.) campaigns. Target CPX is an optimization target type designed to maximize results while maintaining a daily cost per X (impression, click, etc.) as specified by the advertiser.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required only for optimization target type of target cost",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costCap",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost cap for Cost Cap bidding. This value is the maximum cost the advertiser is willing to pay per result (for example, click, mille impressions, video view).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required only for optimization target type of cost cap",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "connectedTelevisionOnly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Generate forecasting for connected television campaigns. Note: Applicable only from versions 202408 and above.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional,default=false",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request"
+      ],
+      "Text": "The following shows a sample request forecasting the impressions of a Sponsored Update which targets members located in both Canada and the United States. The example request also excludes members working in organizations with more than 10,000 employees.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request"
+      ],
+      "Text": "Any URNs included in the parameters must be URL encoded. An unencoded sample request has also been provided for readability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Unencoded Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Unencoded Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account=urn:li:sponsoredAccount:518121035\u0026timeRange=(start:1526348264000,end:1529026664000)\u0026campaignType=SPONSORED_UPDATES\u0026dailyBudget=(amount:300,currencyCode:USD)\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:locations}:List({encoded urn:li:geo:102221843}))))),exclude:(or:({encoded urn:li:adTargetingFacet:staffCountRanges}:List({encoded urn:li:staffCountRange:(10001,2147483647)}))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Unencoded Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account=urn:li:sponsoredAccount:518121035\u0026timeRange=(start:1526348264000,end:1529026664000)\u0026campaignType=SPONSORED_UPDATES\u0026dailyBudget=(amount:300,currencyCode:USD)\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:locations}:List({encoded urn:li:geo:102221843}))))),exclude:(or:({encoded urn:li:adTargetingFacet:staffCountRanges}:List({encoded urn:li:staffCountRange:(10001,2147483647)}))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Encoded Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Encoded Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A507001111\u0026timeRange=(start:1566284400000,end:1568962800000)\u0026campaignType=SPONSORED_UPDATES\u0026totalBudget=(amount:100.00,currencyCode:USD)\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A101165590))))),exclude:(or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%2810001%2C2147483647%29))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Encoded Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A507001111\u0026timeRange=(start:1566284400000,end:1568962800000)\u0026campaignType=SPONSORED_UPDATES\u0026totalBudget=(amount:100.00,currencyCode:USD)\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A101165590))))),exclude:(or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%2810001%2C2147483647%29))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "The API returns a list of AdSupplyForecast results based on the targetingCriteria parameters inputted from the previous example. Note that the metric forecasts that are returned are dependent on the request parameters, such as campaignType and objectiveType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{  \n   \u0022elements\u0022:[  \n      {  \n         \u0022metricType\u0022:\u0022IMPRESSION\u0022,\n         \u0022timeSeries\u0022:[  \n            {  \n               \u0022adForecastRange\u0022:{  \n                  \u0022lowEnd\u0022:38,\n                  \u0022highEnd\u0022:210\n               },\n               \u0022value\u0022:180,\n               \u0022timestamp\u0022:1566259200000\n            },\n            ...\n         ],\n         \u0022granularity\u0022:\u0022DAILY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022IMPRESSION\u0022,\n         \u0022timeSeries\u0022:[  \n            {  \n               \u0022adForecastRange\u0022:{  \n                  \u0022lowEnd\u0022:270,\n                  \u0022highEnd\u0022:1500\n               },\n               \u0022value\u0022:1200,\n               \u0022timestamp\u0022:1566259200000\n            }\n         ],\n         \u0022granularity\u0022:\u0022SEVEN_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022IMPRESSION\u0022,\n         \u0022timeSeries\u0022:[  \n            {  \n               \u0022adForecastRange\u0022:{  \n                  \u0022lowEnd\u0022:1200,\n                  \u0022highEnd\u0022:6300\n               },\n               \u0022value\u0022:5300,\n               \u0022timestamp\u0022:1566259200000\n            }\n         ],\n         \u0022granularity\u0022:\u0022THIRTY_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022IMPRESSION\u0022,\n         \u0022timeSeries\u0022:[  \n            {  \n               \u0022adForecastRange\u0022:{  \n                  \u0022lowEnd\u0022:1200,\n                  \u0022highEnd\u0022:6700\n               },\n               \u0022value\u0022:5600,\n               \u0022timestamp\u0022:1566259200000\n            }\n         ],\n         \u0022granularity\u0022:\u0022CUSTOM\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022CLICK\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022DAILY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022CLICK\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022SEVEN_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022CLICK\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022THIRTY_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022CLICK\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022CUSTOM\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022CLICK_PER_MILLION_IMPRESSIONS\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022DAILY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022SPENDING\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022DAILY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022SPENDING\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022SEVEN_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022SPENDING\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022THIRTY_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022SPENDING\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022CUSTOM\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022MAX_POTENTIAL_BUDGET\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022DAILY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022MAX_POTENTIAL_BUDGET\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022SEVEN_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022MAX_POTENTIAL_BUDGET\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022THIRTY_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022MAX_POTENTIAL_BUDGET\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022CUSTOM\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022COST_PER_MILLION_IMPRESSIONS\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022DAILY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022COST_PER_MILLION_IMPRESSIONS\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022SEVEN_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022COST_PER_MILLION_IMPRESSIONS\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022THIRTY_DAY\u0022\n      },\n      {  \n         \u0022metricType\u0022:\u0022COST_PER_MILLION_IMPRESSIONS\u0022,\n         \u0022timeSeries\u0022:[  \n            ...\n         ],\n         \u0022granularity\u0022:\u0022CUSTOM\u0022\n      }\n   ],\n   \u0022paging\u0022:{  \n      \u0022count\u0022:10,\n      \u0022start\u0022:0,\n      \u0022links\u0022:[  \n\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Supply by CriteriaV2",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "Below is a list of some possible error codes along with the Http status code and message templates that could be present in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MISSING_FIELD_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The {field} is required but missing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DATE_BEFORE_TODAY_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The {field} can\u0027t be before today. Update the {field} to be on or after {minValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "START_DATE_AFTER_END_DATE_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign start date can\u0027t be after the campaign end date",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "END_DATE_MAX_HORIZON_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted results aren\u0027t available for campaigns that end more than {maxValue} days from today",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNSUPPORTED_AUTO_BIDDING_CONVERSIONS_CAMPAIGN_SETUP_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasted results aren\u0027t available for maximum delivery bidding with a website conversions optimization goal",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MISSING_LOCATION_ATTRIBUTE_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The target audience is missing a location. Add at least one location",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_OR_INVALID_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} is either empty or invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONDITIONAL_VALUE_TOO_HIGH_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The {field1} can\u0027t be higher than the {field2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_VALUE_ABOVE_LIMITS_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The {field} is over the maximum of {maxValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_VALUE_BELOW_LIMITS_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The {field} must be at least {minValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_CURRENCY_CODE_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Currency {value} is not supported for {field}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AUDIENCE_LIST_STILL_PROCESSING_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasting will update a few days after your selected lists have fully processed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AUDIENCE_COUNT_LESS_THAN_THRESHOLD_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The target audience size is too small to show a forecast",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_FIELD_FOR_OPTIMIZATION_TARGET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field {field1} shouldn\u0027t be passed in when optimization target type is {field2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNSUPPORTED_ENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecasting doesn\u0027t support {field} {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTV_CAMPAIGN_WITHOUT_LAN_ENABLED_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTV campaigns require LAN to be enabled for forecasting. Note: Applicable only from versions 202408 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTV_CAMPAIGN_INVALID_CAMPAIGN_TYPE_FOR_FORECAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Currently only SPONSORED_UPDATES campaign type is supported for Forecasting with CTV campaign. Note: Applicable only from versions 202408 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

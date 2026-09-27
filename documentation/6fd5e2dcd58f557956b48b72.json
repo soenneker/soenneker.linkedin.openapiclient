@@ -1,0 +1,186 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+  "Title": "LinkedIn Learning and MARC Records Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "This document details how to integrate your library catalog MARC Records with LinkedIn Learning as a new customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the MARC Records and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MARC Records Overview",
+      "Anchor": "marc-records-overview",
+      "SectionPath": [
+        "MARC Records Overview"
+      ],
+      "Text": "MARC standards are a set of digital formats for the description of items catalogued by libraries, such as books, articles, and academic publications. MARC encodes information about a bibliographic item, not about the content of that item; this means it is a metadata transmission standard, not a content standard.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MARC Records Overview",
+      "Anchor": "marc-records-overview",
+      "SectionPath": [
+        "MARC Records Overview"
+      ],
+      "Text": "The MARC standards define three aspects of a MARC record:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MARC Records Overview",
+      "Anchor": "marc-records-overview",
+      "SectionPath": [
+        "MARC Records Overview"
+      ],
+      "Text": "The field designations within each record\n\nThe structure of the record\n\nThe actual content of the record itself",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for MARC 21 and MARCXML",
+      "Anchor": "requirements-for-marc-21-and-marcxml",
+      "SectionPath": [
+        "MARC Records Overview",
+        "Requirements for MARC 21 and MARCXML"
+      ],
+      "Text": "The client has a library catalog system that can ingest MARC data sets.\n\nLTI users: The learner needs to authenticate with their LMS through LTI before launching the course. After the LMS authenticates the learner, the SSO URL launches the course.\n\nThe LinkedIn Learning administrator needs Sub Admin- (\u0022Other\u0022, below) or Full Admin-level privileges to download the MARC Records. (See the below screenshot.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading MARC Records",
+      "Anchor": "downloading-marc-records",
+      "SectionPath": [
+        "Downloading MARC Records"
+      ],
+      "Text": "Before you begin the MARC file download process, keep several points in mind:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading MARC Records",
+      "Anchor": "downloading-marc-records",
+      "SectionPath": [
+        "Downloading MARC Records"
+      ],
+      "Text": "LinkedIn Learning does not have partnerships with library systems to test uploads to their library catalog management systems. For further assistance, reach out to your library catalog provider.\n\nWhile the courses are available in every language, the metadata (i.e., \u0022online resources\u0022, \u0022latest version\u0022, \u0022presenter\u0022, and so on) is in English. The course title, description, and author are defined in the native language; we are working to expand the metadata feature to other languages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading MARC Records",
+      "Anchor": "downloading-marc-records",
+      "SectionPath": [
+        "Downloading MARC Records"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Integrate.\n\nClick Download a catalog of our courses, then select the Download Course Package dropdown.\n\n\nSelect the language for which you want to download MARC Records, if applicable.\n\n Note\nMetadata appears in English, even for courses in other languages.\n\n\nUnder Choose course status, select one of the following values:\n\nActive \u002B Retired\n\nActive only\n\nRetired only\n\n\n\n\nUnder Choose package format, select your institution\u2019s preferred file format. (We assume you are not choosing \u0022CSV\u0022.)\n\nMARC 21 \u2013 The binary format\n\nMARCXML \u2013 The XML format\n\n\n\nUnder Choose which package you would like to download, select one of the following packages:\n\nPackage for every course\n\nPackages for courses updated since the last download\n\n\n\nClick Download.\n\n Note\nThese files are large and may be slow to download.\n\n\nAfter the download completes, upload the MARC Records to your library catalog management system (or portal). If you need assistance, please have your LinkedIn Learning administrator reach out to your library catalog point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Downloading MARC Records",
+      "Anchor": "downloading-marc-records",
+      "SectionPath": [
+        "Downloading MARC Records"
+      ],
+      "Text": "Congratulations! You have integrated your library catalog management system\u0027s MARC Records metadata with LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Notes",
+      "Anchor": "additional-notes",
+      "SectionPath": [
+        "Additional Notes"
+      ],
+      "Text": "Once a course retires, MARC omits the course URL.\n\nWe add 40-plus courses on a weekly basis. At this time, we are unable to offer automated file delivery, but we recommend you set up a weekly or monthly reminder to refresh the content in your catalog.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Notes",
+      "Anchor": "additional-notes",
+      "SectionPath": [
+        "Additional Notes"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

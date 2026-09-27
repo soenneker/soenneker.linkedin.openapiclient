@@ -1,0 +1,123 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+  "Title": "LinkedIn Marketing Developer Platform - API Documentation",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-social-action-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/ads-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/lead-sync/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing Developer Platform - API Documentation",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "The LinkedIn Marketing Developer Platform helps businesses grow by building technology to reach, engage, and convert professional audiences at scale. The platform offers APIs to create LinkedIn marketing campaigns, to report campaign performance, to manage leads, and to grow a company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get started",
+      "Anchor": "",
+      "SectionPath": [
+        "Getting Started",
+        "Get started"
+      ],
+      "Text": "Increasing API Access\n \n \n Quick Start\n \n \n Using OAuth 2.0\n \n \n Getting Started Campaign Management\n \n \n Getting Started Marketing Analytics\n \n \n Standardized Data\n \n \n Data Storage Requirements\n \n \n Versioning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "Campaign Management",
+        "Training"
+      ],
+      "Text": "Ad Accounts\n \n \n Ad Account Users\n \n \n Ad Campaign Groups\n \n \n Ad Campaigns\n \n \n Ad Creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "Advertising \u0026 Targeting",
+        "Training"
+      ],
+      "Text": "Ads Targeting\n \n \n Audience Counts\n \n \n Ads Supply Forecast\n \n \n LinkedIn Audience Network\n \n \n Manage Audience Restrictions\n \n \n Video Ads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "Reporting",
+        "Training"
+      ],
+      "Text": "Reporting \u0026 Analytics\n \n \n Conversion Tracking\n \n \n UTM Tracking\n \n \n Ad Budget Pricing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "Lead Sync",
+        "Training"
+      ],
+      "Text": "Lead Sync APIs\n \n \n Lead Sync Integration Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Training",
+      "Anchor": "",
+      "SectionPath": [
+        "Community Management",
+        "Training"
+      ],
+      "Text": "Page Access Management\n \n \n Shares \u0026 Social Stream\n \n \n Monitor Mentions of Your Brand\n \n \n Mention a Member or a Brand",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+  "Title": "LinkedIn Learning Certification",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To ensure LinkedIn Learning Content API integration works as expected, LinkedIn must certify the finished development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Please review all appropriate documentation and send technical questions to your Business Development point of contact and/or Partner Engineering representative if you have doubts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Upon completing development, a certification call is expected to be scheduled which demonstrates the integration is working as per the expectation. Please review the test cases below that need to be covered for the LMS integration to be certified by LinkedIn team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Cases",
+      "Anchor": "test-cases",
+      "SectionPath": [
+        "Test Cases"
+      ],
+      "Text": "Following are the test cases for LinkedIn Partners integrating with LinkedIn Content and Reporting APIs for multiple customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Test Cases",
+      "Anchor": "test-cases",
+      "SectionPath": [
+        "Test Cases"
+      ],
+      "Text": "",
+      "Headers": [
+        "#",
+        "Category",
+        "Sub-Category",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Setup Content Integration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your admin UI should collect the following information for each LinkedIn Learning tenant: Client ID Secret Key",
+            "Links": [],
+            "Values": [
+              "Client ID",
+              "Secret Key"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Import LinkedIn Learning course catalog",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your application should be able to handle the following events: A new course is released A dated course is retired A course is updated Ability to perform full sync of catalog Perform a full catalog sync when the number of updated courses is greater than 500Full sync or delta updates should not overwrite any customer provided values wherever applicable.Ingest LinkedIn taxonomy like skills, categories, CEU if possible.",
+            "Links": [],
+            "Values": [
+              "A new course is released",
+              "A dated course is retired",
+              "A course is updated",
+              "Ability to perform full sync of catalog",
+              "Perform a full catalog sync when the number of updated courses is greater than 500",
+              "Full sync or delta updates should not overwrite any customer provided values wherever applicable.",
+              "Ingest LinkedIn taxonomy like skills, categories, CEU if possible."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "3",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Referer header",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner URN must be passed in the API calls as the value of referer header.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "4",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User Experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search \u0026 Discover Courses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn Learning content displayed to end users should: Be LinkedIn Learning branded Include a thumbnail Include course title.",
+            "Links": [],
+            "Values": [
+              "Be LinkedIn Learning branded",
+              "Include a thumbnail",
+              "Include course title."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "5",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User Experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Launch course",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your application must: Launch LinkedIn Learning content in a new window or tab(iFrames are not supported) Support standard and SSO course launches If your application supports AICC, the aicc launch URL should be used",
+            "Links": [],
+            "Values": [
+              "Launch LinkedIn Learning content in a new window or tab(iFrames are not supported)",
+              "Support standard and SSO course launches",
+              "If your application supports AICC, the aicc launch URL should be used"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "6",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User Experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AICC reporting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If your system supports AICC, demo that course status updates after completion.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "7",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User Experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "xAPI reporting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If your system supports xAPI, demo course completion update.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "8",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Test \u0026 Demo Environment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For internal training and testing we require a test instance. 10 licenses are sufficient.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "9",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Implementation Document/ wiki",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A wiki or knowledge base article to walk customers through the integration configuration.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,765 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+  "Title": "Sync Candidate Pipeline Information",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Pipeline Information",
+      "Anchor": "sync-candidate-pipeline-information",
+      "SectionPath": [],
+      "Text": "The Candidate Pipeline endpoint represents information about a candidate that is specific to a single pipeline. A candidate\u0027s pipeline information should be synced to the Middleware Platform whenever a candidate is added to, removed from, or updated inside a pipeline in your CRM. When a customer activates CRM Connect for the first time, you must sync all of their historical data to LinkedIn to power the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Pipeline Information",
+      "Anchor": "sync-candidate-pipeline-information",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Pipeline Information",
+      "Anchor": "sync-candidate-pipeline-information",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Candidate Pipelines maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Candidate Pipelines API Endpoint",
+      "Anchor": "sync-candidate-pipelines-api-endpoint",
+      "SectionPath": [
+        "Sync Candidate Pipelines API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/v2/tcrmCandidatePipelines",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Candidate Pipelines API Endpoint",
+      "Anchor": "sync-candidate-pipelines-api-endpoint",
+      "SectionPath": [
+        "Sync Candidate Pipelines API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/rest/candidatePipelines",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidate Pipelines API Query String Parameters",
+      "Anchor": "candidate-pipelines-api-query-string-parameters",
+      "SectionPath": [
+        "Candidate Pipelines API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "tcrmCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate identifier within external Talent CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The pipeline identifier within external Talent CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company URN provided during customer onboarding, e.g. urn:li:organization:1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always PARTNER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidate Pipelines API Query String Parameters",
+      "Anchor": "candidate-pipelines-api-query-string-parameters",
+      "SectionPath": [
+        "Candidate Pipelines API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This specifies who owns the candidate pipeline. This identifies the customer who owns the data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the candidate within external system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the pipeline within external system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Pipelines via Batch Update",
+      "Anchor": "sync-candidate-pipelines-via-batch-update",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /tcrmCandidatePipelines endpoint to sync candidate pipeline associations to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Pipelines via Batch Update",
+      "Anchor": "sync-candidate-pipelines-via-batch-update",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /candidatePipelines endpoint to sync candidate pipeline associations to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidate Pipelines API Request Body Fields",
+      "Anchor": "sync-candidate-pipelines-api-request-body-fields",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sync Candidate Pipelines API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dispositionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reason that the candidate was removed from the pipeline (e.g., \u0022candidate declined,\u0022 \u0022not a fit,\u0022 etc.).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This contains sourceDetails and sourceCategory.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complex",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources.sourceCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The category of where the candidate originated from. Must be one of these source categories: LINKEDINEMAILSOCIAL_MEDIAEVENTCAREER_SITEAGENCYREFERRALINTERNALJOB_POSTINGOTHER",
+            "Links": [],
+            "Values": [
+              "LINKEDIN",
+              "EMAIL",
+              "SOCIAL_MEDIA",
+              "EVENT",
+              "CAREER_SITE",
+              "AGENCY",
+              "REFERRAL",
+              "INTERNAL",
+              "JOB_POSTING",
+              "OTHER"
+            ]
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources.sourceDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source where the candidate originated from (i.e. LinkedIn, Career Event, etc).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when this candidate was put in this pipeline within external CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the content was last modified within external CRM, in milliseconds since Unix Epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidate Pipelines API Request Body Fields",
+      "Anchor": "sync-candidate-pipelines-api-request-body-fields",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sync Candidate Pipelines API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dispositionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reason for the disposition of the candidate in this pipeline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sources from which the candidate was added to this pipeline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[RscSource]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the candidate pipeline was created within external system. Number of milliseconds since midnight January 1 1970 UTC. It must be a positive number.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the candidate pipeline was last modified within external system. Number of milliseconds since midnight January 1 1970 UTC. It must be a positive number.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Update Candidate Pipelines API Request",
+      "Anchor": "sample-batch-update-candidate-pipelines-api-request",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sample Batch Update Candidate Pipelines API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/v2/tcrmCandidatePipelines?ids%5B0%5D.tcrmCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B0%5D.tcrmPipelineId=tcrmPipeline05\u0026ids%5B1%5D.tcrmCandidateId=tcrmCandidateId100\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmPipelineId=tcrmPipeline06\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027\n{\n    \u0022entities\u0022: {\n    \u0022tcrmCandidateId=tcrmCandidateId100\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0026tcrmPipelineId=tcrmPipeline05\u0022: {\n        \u0022dispositionReason\u0022: \u0022Disposition Reason\u0022,\n                \u0022sources\u0022: [{\n                    \u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n                    \u0022sourceDetails\u0022: \u0022Applied through career site\u0022\n                }],\n                \u0022tcrmCreatedAt\u0022: 1640995200000,\n                \u0022tcrmLastModifiedAt\u0022: 1640995200000\n        },\n        \u0022tcrmCandidateId=tcrmCandidateId100\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0026tcrmPipelineId=tcrmPipeline06\u0022: {\n        \u0022dispositionReason\u0022: \u0022Disposition Reason\u0022,\n                \u0022sources\u0022: [{\n                    \u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n                    \u0022sourceDetails\u0022: \u0022Applied through career site\u0022\n                }],\n                \u0022tcrmCreatedAt\u0022: 1640995200000,\n                \u0022tcrmLastModifiedAt\u0022: 1640995200000\n        }\n    }\n}\n\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Update Candidate Pipelines API Request",
+      "Anchor": "sample-batch-update-candidate-pipelines-api-request",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sample Batch Update Candidate Pipelines API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/candidatePipelines?ids%5B0%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineId=tcrmPipeline05\u0026ids%5B1%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineId=tcrmPipeline06\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027\n{\n    \u0022entities\u0022: {\n    \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline05\u0022: {\n        \u0022dispositionReason\u0022: \u0022Disposition Reason\u0022,\n                \u0022sources\u0022: [{\n                    \u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n                    \u0022sourceDetails\u0022: \u0022Applied through career site\u0022\n                }],\n                \u0022externalCreatedAt\u0022: 1640995200000,\n                \u0022externalLastModifiedAt\u0022: 1640995200000\n        },\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline06\u0022: {\n        \u0022dispositionReason\u0022: \u0022Disposition Reason\u0022,\n                \u0022sources\u0022: [{\n                    \u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n                    \u0022sourceDetails\u0022: \u0022Applied through career site\u0022\n                }],\n                \u0022externalCreatedAt\u0022: 1640995200000,\n                \u0022externalLastModifiedAt\u0022: 1640995200000\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Update Candidate Pipelines API Request",
+      "Anchor": "sample-batch-update-candidate-pipelines-api-request",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sample Batch Update Candidate Pipelines API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/candidatePipelines?ids%5B0%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineId=tcrmPipeline05\u0026ids%5B1%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineId=tcrmPipeline06\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--data-raw \u0027\n{\n    \u0022entities\u0022: {\n    \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline05\u0022: {\n        \u0022dispositionReason\u0022: \u0022Disposition Reason\u0022,\n                \u0022sources\u0022: [{\n                    \u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n                    \u0022sourceDetails\u0022: \u0022Applied through career site\u0022\n                }],\n                \u0022externalCreatedAt\u0022: 1640995200000,\n                \u0022externalLastModifiedAt\u0022: 1640995200000\n        },\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline06\u0022: {\n        \u0022dispositionReason\u0022: \u0022Disposition Reason\u0022,\n                \u0022sources\u0022: [{\n                    \u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n                    \u0022sourceDetails\u0022: \u0022Applied through career site\u0022\n                }],\n                \u0022externalCreatedAt\u0022: 1640995200000,\n                \u0022externalLastModifiedAt\u0022: 1640995200000\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Update Candidate Pipelines API Response",
+      "Anchor": "sample-batch-update-candidate-pipelines-api-response",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sample Batch Update Candidate Pipelines API Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1234567890\u0026tcrmCandidateId=tcrmCandidateId100\u0026tcrmPipelineId=tcrmPipeline05\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1234567890\u0026tcrmCandidateId=tcrmCandidateId100\u0026tcrmPipelineId=tcrmPipeline06\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Update Candidate Pipelines API Response",
+      "Anchor": "sample-batch-update-candidate-pipelines-api-response",
+      "SectionPath": [
+        "Sync Candidate Pipelines via Batch Update",
+        "Sample Batch Update Candidate Pipelines API Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline05\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline06\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Candidate Pipelines",
+      "Anchor": "delete-candidate-pipelines",
+      "SectionPath": [
+        "Delete Candidate Pipelines"
+      ],
+      "Text": "Perform HTTP DELETE on the /tcrmCandidatePipelines endpoint when a customer deletes candidate pipeline records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Candidate Pipelines",
+      "Anchor": "delete-candidate-pipelines",
+      "SectionPath": [
+        "Delete Candidate Pipelines"
+      ],
+      "Text": "Perform HTTP DELETE on the /candidatePipelines endpoint when a customer deletes candidate pipeline records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidate Pipelines Request",
+      "Anchor": "sample-delete-candidate-pipelines-request",
+      "SectionPath": [
+        "Delete Candidate Pipelines",
+        "Sample Delete Candidate Pipelines Request"
+      ],
+      "Text": "curl -i -X DELETE \u0022https://api.linkedin.com/v2/tcrmCandidatesPipelines?ids%5B0%5D.tcrmCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B0%5D.tcrmPipelineId=tcrmPipeline05\u0026ids%5B1%5D.tcrmCandidateId=tcrmCandidateId100\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmPipelineId=tcrmPipeline06\u0022 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:1.0.0\u0027 \\\n-H \u0027Accept:application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidate Pipelines Request",
+      "Anchor": "sample-delete-candidate-pipelines-request",
+      "SectionPath": [
+        "Delete Candidate Pipelines",
+        "Sample Delete Candidate Pipelines Request"
+      ],
+      "Text": "curl -i -X DELETE \u0027https://api.linkedin.com/rest/candidatePipelines?ids%5B0%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineId=tcrmPipeline05\u0026ids%5B1%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineId=tcrmPipeline06\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidate Pipelines Request",
+      "Anchor": "sample-delete-candidate-pipelines-request",
+      "SectionPath": [
+        "Delete Candidate Pipelines",
+        "Sample Delete Candidate Pipelines Request"
+      ],
+      "Text": "curl -i -X DELETE \u0027https://api.linkedin.com/rest/candidatePipelines?ids%5B0%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.externalPipelineId=tcrmPipeline05\u0026ids%5B1%5D.externalCandidateId=tcrmCandidateId100\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.externalPipelineId=tcrmPipeline06\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Delete Candidate Pipeline Response",
+      "Anchor": "sample-delete-candidate-pipeline-response",
+      "SectionPath": [
+        "Delete Candidate Pipelines",
+        "Sample Delete Candidate Pipeline Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidate Pipeline Response",
+      "Anchor": "sample-delete-candidate-pipeline-response",
+      "SectionPath": [
+        "Delete Candidate Pipelines",
+        "Sample Delete Candidate Pipeline Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1234567890\u0026tcrmCandidateId=tcrmCandidateId100\u0026tcrmPipelineId=tcrmPipeline05\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1234567890\u0026tcrmCandidateId=tcrmCandidateId100\u0026tcrmPipelineId=tcrmPipeline06\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Candidate Pipeline Response",
+      "Anchor": "sample-delete-candidate-pipeline-response",
+      "SectionPath": [
+        "Delete Candidate Pipelines",
+        "Sample Delete Candidate Pipeline Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline05\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022externalCandidateId=tcrmCandidateId100\u0026integrationContext=urn:li:organization:1234567890\u0026externalPipelineId=tcrmPipeline06\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

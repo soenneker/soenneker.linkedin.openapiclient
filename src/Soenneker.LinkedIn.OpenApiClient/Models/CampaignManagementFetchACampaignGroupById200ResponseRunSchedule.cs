@@ -14,10 +14,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The end property</summary>
-        public int? End { get; set; }
-        /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        /// <summary>Represents the exclusive (strictly less than) date when to stop running the associated campaigns under this campaign group. If this field is unset, it indicates an open range with no end date. This field is required if totalBudget is set.Documented type: optional long</summary>
+        public long? End { get; set; }
+        /// <summary>Represents the inclusive (greater than or equal to) date when to start running the associated campaigns under this campaign group. This field is required.Documented type: long</summary>
+        public long? Start { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseRunSchedule"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end", n => { End = n.GetIntValue(); } },
-                { "start", n => { Start = n.GetIntValue(); } },
+                { "end", n => { End = n.GetLongValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("end", End);
-            writer.WriteIntValue("start", Start);
+            writer.WriteLongValue("end", End);
+            writer.WriteLongValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

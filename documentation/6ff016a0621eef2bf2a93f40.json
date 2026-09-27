@@ -1,0 +1,453 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+  "Title": "LinkedIn Learning SFTP Org Sync",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "This document provides information about automated user management, called Org Sync. The Org Sync process involves adding your employee and/or student data to LinkedIn Learning and the automatic updating or modifying of that data in your HR system. The focus of the workflow is how to automate the uploading of CSV files via SFTP org sync.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "If you wish to continue managing users by manual CSV uploads, and you want to learn how to format your bulk CSV and license headers, please review our LinkedIn Learning data management documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "To learn how to add employee data to LinkedIn Learning via manual and automated methods, review our LinkedIn Learning Adding User Data Admin Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing the Account Center",
+      "Anchor": "accessing-the-account-center",
+      "SectionPath": [
+        "Accessing the Account Center"
+      ],
+      "Text": "In the LinkedIn Learning Account Center, you can manage learner data, curate content, and gain learner progress insights.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits",
+      "Anchor": "benefits",
+      "SectionPath": [
+        "Benefits"
+      ],
+      "Text": "LinkedIn Learning customers benefit from our automated org sync via SFTP in the following ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits",
+      "Anchor": "benefits",
+      "SectionPath": [
+        "Benefits"
+      ],
+      "Text": "Save time: Org sync lets you spend less time on manual uploads to manage users and groups. This enhancement allows you to assign courses to custom groups and automatically revoke licenses when learners leave your organization.\n\nMeasure value: Org sync allows you to slice and dice reports based on employee/student attributes, and update attributes in real time. This functionality gives you enhanced abilities to tell your organization\u0027s ROI story to its stakeholders.\n\nDrive engagement: Org sync gives you the power to drive engagement by sending you relevant content notifications and recommendations. You can notify colleagues when employees/students like, share, and complete courses and learning paths. You also can target learners by course relevance to department, team, job title, academic major, or graduation year.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To automate org sync in your organization, you need the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "A HRIS or SIS system (the source of user data that allows you to assign and revoke licenses)\nFull LinkedIn Learning admin privileges",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automating Employee Data Integration",
+      "Anchor": "automating-employee-data-integration",
+      "SectionPath": [
+        "Automating Employee Data Integration"
+      ],
+      "Text": "To automate employee/student data integration, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an SFTP user",
+      "Anchor": "create-an-sftp-user",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Create an SFTP user"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an SFTP user",
+      "Anchor": "create-an-sftp-user",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Create an SFTP user"
+      ],
+      "Text": "The SFTP user is bound to the Administrator account creating the user.\nIf the Administrator who created the SFTP user loses their Full Administrator permissions or their license, the SFTP connection will no longer work.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an SFTP user",
+      "Anchor": "create-an-sftp-user",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Create an SFTP user"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin.\n\n\nIn the left-hand navigation menu, select Automate user management, then expand the Create SFTP Users panel.\n\n\nClick Add user.\n\nIn the Add User screen, enter the data in the appropriate fields and click Create user.\n\n\nPlease ensure your username is globally unique and does not contain spaces or special characters. (We suggest you append the account name to the SFTP user name).\n\nCopy and paste your SSH key into the Public key box. It should start with ssh-rsa or ssh-dss.\nThe new SFTP user now can upload CSV files via SFTP.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to the SFTP server",
+      "Anchor": "connect-to-the-sftp-server",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Connect to the SFTP server"
+      ],
+      "Text": "LinkedIn Learning supports a variety of SFTP clients; however, we have created the following documentation for the SFTP client that ships with OpenSSH.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to the SFTP server",
+      "Anchor": "connect-to-the-sftp-server",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Connect to the SFTP server"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to the SFTP server",
+      "Anchor": "connect-to-the-sftp-server",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Connect to the SFTP server"
+      ],
+      "Text": "LinkedIn Learning supports Port 22 as well as Port 2705.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to the SFTP server",
+      "Anchor": "connect-to-the-sftp-server",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Connect to the SFTP server"
+      ],
+      "Text": "In your terminal, run this command to connect to the SFTP server: sftp -i ~/.ssh/\u003Cyour_private_key\u003E -P 2705 \u003Cusername\u003E@sftp.linkedin.com\n\nReplace \u003Cyour_private_key\u003E with the name to the file of your private SSH key that matches the public one you provided in step one.\n\nReplace \u003Cusername\u003E with the username you just provisioned in step one. You should see a response like this in your terminal. If you are asked if you want to continue connecting, enter \u0022yes\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "To upload a file, run the following command in your terminal:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "Put {Myfile}.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "You should see the following response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "Uploading \u003CMyfile\u003E.csv to \u003CMyfile\u003E.csv \u003CMyfile\u003E.csv\n100% 1458 1.4KB/s 00:00",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "This file is processed automatically and a new file \u003CMyfile.csv\u003E_resultReport.csv is also created.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "This new CSV file shows the result report.\nCheck your directory contents to ensure it contains the command ls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "You may have to wait a short period for the new file to be created:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "sftp\u003E ls \u003CMyfile\u003E.csv\n\u003CMyfile\u003E.csv_resultReport.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV file",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Upload your CSV file"
+      ],
+      "Text": "If you have a GUI SFTP application, you can connect to the server and upload your CSV by dragging and dropping your file into that application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download both CSV files to verify the content",
+      "Anchor": "download-both-csv-files-to-verify-the-content",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Download both CSV files to verify the content"
+      ],
+      "Text": "Run the GET command to download the files:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Download both CSV files to verify the content",
+      "Anchor": "download-both-csv-files-to-verify-the-content",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Download both CSV files to verify the content"
+      ],
+      "Text": "sftp\u003E get \u003CMyfile\u003E.csv\nFetching \u003CMyfile\u003E.csv to \u003Cyourfile\u003E.csv \u003CMyfile\u003E.csv\u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 \u00A0 97% 1458 1.4KB/s 00:00 ETA\nsftp\u003E get \u003CMyfile\u003E.csv_resultReport.csv\nFetching \u003CMyfile\u003E.csv_resultReport.csv to \u003CMyfile\u003E.csv_resultReport.csv \u00A0 98% 1727\u00A0 \u00A0 1.7KB/s 00:00 ETA sftp\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download both CSV files to verify the content",
+      "Anchor": "download-both-csv-files-to-verify-the-content",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Download both CSV files to verify the content"
+      ],
+      "Text": "Make sure you can download both files without errors, and verify they contain the expected content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download both CSV files to verify the content",
+      "Anchor": "download-both-csv-files-to-verify-the-content",
+      "SectionPath": [
+        "Automating Employee Data Integration",
+        "Upload your CSV over SFTP",
+        "Download both CSV files to verify the content"
+      ],
+      "Text": "Congratulations! You now can add users to your LMS instance via SFTP.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Use the following resources if you need assistance adding employee/student data to LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Workday Org Sync Implementation Guide\n\nSuccessFactors Org Sync Implementation Guide\n\nSingle Sign-on Implementation Guide\n\nAdding Employee Data Administration Guide\n\nAdding Learners Individually to your LinkedIn Learning Account\n\nManage Custom Learner Attributes\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)\n\nLinkedIn Privacy and Data Security Policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, please write to us.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

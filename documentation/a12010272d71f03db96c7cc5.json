@@ -1,0 +1,669 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/endorsement",
+  "Title": "Endorsement API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation-request",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/endorsement"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Endorsement API",
+      "Anchor": "endorsement-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Endorsement API",
+      "Anchor": "endorsement-api",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.\nAll API requests are represented in protocol 2.0.0. Therefore, all API requests require the header X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Endorsement API",
+      "Anchor": "endorsement-api",
+      "SectionPath": [],
+      "Text": "With the Endorsement API, you can replicate the full LinkedIn experience around endorsing skills of LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Endorsements",
+      "Anchor": "create-endorsements",
+      "SectionPath": [
+        "Create Endorsements"
+      ],
+      "Text": "Send an endorsement by issuing a POST that specifies the recipient and his/her skill. You can only send endorsements on behalf of the authenticated user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Endorsements",
+      "Anchor": "create-endorsements",
+      "SectionPath": [
+        "Create Endorsements"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/endorsement",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create Endorsements",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "recipient",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recipient entity id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "item",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity for a recipient that can be endorsed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "nonStandardEntity. entityPhrase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the entity skill being endorsed. For example: JAVA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "nonStandardEntity. entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of entity. Always the enum PROFILE_SKILL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the Endorsement. Can be the following enum values: ACCEPTED - Should use this state if the skill already exists. PENDING - Should use this state if the skill does NOT exists.",
+            "Links": [],
+            "Values": [
+              "ACCEPTED - Should use this state if the skill already exists.",
+              "PENDING - Should use this state if the skill does NOT exists."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Create Endorsements",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022item\u0022: {\n        \u0022nonStandardEntity\u0022: {\n            \u0022entityPhrase\u0022: \u0022JAVA\u0022,\n            \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022\n        }\n    },\n    \u0022recipient\u0022: \u0022urn:li:person:123ABC\u0022,\n    \u0022status\u0022: \u0022ACCEPTED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response header",
+      "Anchor": "sample-response-header",
+      "SectionPath": [
+        "Create Endorsements",
+        "sample response header"
+      ],
+      "Text": "X-RestLi-Id: urn:li:endorsement:(urn:li:person:123ABC,123456)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Endorsements",
+      "Anchor": "retrieve-endorsements",
+      "SectionPath": [
+        "Retrieve Endorsements"
+      ],
+      "Text": "Once an endorsement has been created, you can retrieve that endorsement by taking the endorsement URN (urn:li:endorsement:(personUrn,12345)) value returned in the X-RestLi-Id header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Endorsements",
+      "Anchor": "retrieve-endorsements",
+      "SectionPath": [
+        "Retrieve Endorsements"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement/urn:li:endorsement:(urn:li:person:123ABC,123456)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Endorsements",
+      "Anchor": "retrieve-endorsements",
+      "SectionPath": [
+        "Retrieve Endorsements"
+      ],
+      "Text": "Above is the API request represented in pretty print. With X-Restli-Protocol-Version: 2.0.0, you will need to do the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Endorsements",
+      "Anchor": "retrieve-endorsements",
+      "SectionPath": [
+        "Retrieve Endorsements"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement/urn%3Ali%3Aendorsement%3A%28urn%3Ali%3Aperson%3A123ABC%2C123456%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Retrieve Endorsements",
+        "sample response body"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1486746325406,\n    \u0022endorser\u0022: \u0022urn:li:person:456DEF\u0022,\n    \u0022id\u0022: 123456,\n    \u0022item\u0022: {\n        \u0022nonStandardEntity\u0022: {\n            \u0022entityPhrase\u0022: \u0022Java\u0022,\n            \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022\n        }\n    },\n    \u0022lastModified\u0022: 1486746325406,\n    \u0022recipient\u0022: \u0022urn:li:person:123ABC\u0022,\n    \u0022status\u0022: \u0022ACCEPTED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Retrieve Endorsements",
+        "sample response body"
+      ],
+      "Text": "For more information, refer to the Endorsement schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Retrieve Endorsements",
+        "sample response body"
+      ],
+      "Text": "Alternatively, you can lookup multiple endorsements by doing the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Retrieve Endorsements",
+        "sample response body"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement?ids=List(urn:li:endorsement:(urn:li:person:123ABC,123456),urn:li:endorsement:(urn:li:person:123ABC,456789))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Retrieve Endorsements",
+        "sample response body"
+      ],
+      "Text": "Above is the API request represented in pretty print. With X-Restli-Protocol-Version: 2.0.0, you will need to do the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Retrieve Endorsements",
+        "sample response body"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement?ids=List(urn%3Ali%3Aendorsement%3A%28urn%3Ali%3Aperson%3A123ABC%2C123456%29,urn%3Ali%3Aendorsement%3A%28urn%3Ali%3Aperson%3A123ABC%2C456789%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Endorsements by Endorser",
+      "Anchor": "retrieve-endorsements-by-endorser",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser"
+      ],
+      "Text": "You can look up an endorser\u0027s endorsement by requesting the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Endorsements by Endorser",
+      "Anchor": "retrieve-endorsements-by-endorser",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement?q=endorser\u0026statusFilters=List(ACCEPTED,PENDING)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Required",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "statusFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can be of the following endorsement enum status: UNKNOWN - Default State. ACCEPTED - Indicates that the endorsement has been accepted and is currently visible by other members REJECTED - Indicates that the endorsement has been rejected by the member. HIDDEN - Indicates that the endorsement has been hidden by the recipient. PENDING - Indicates that the endorsement is in a pending state and not yet accepted by the recipient. DELETED - Indicates that the endorsement has been deleted by the sender. CLOSED - Indicates that the endorsement has been closed by the member.",
+            "Links": [],
+            "Values": [
+              "UNKNOWN - Default State.",
+              "ACCEPTED - Indicates that the endorsement has been accepted and is currently visible by other members",
+              "REJECTED - Indicates that the endorsement has been rejected by the member.",
+              "HIDDEN - Indicates that the endorsement has been hidden by the recipient.",
+              "PENDING - Indicates that the endorsement is in a pending state and not yet accepted by the recipient.",
+              "DELETED - Indicates that the endorsement has been deleted by the sender.",
+              "CLOSED - Indicates that the endorsement has been closed by the member."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser",
+        "sample response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022status\u0022: \u0022ACCEPTED\u0022,\n      \u0022created\u0022: 1486746325406,\n      \u0022lastModified\u0022: 1486746325406,\n      \u0022endorser\u0022: \u0022urn:li:person:456DEF\u0022,\n      \u0022item\u0022: {\n        \u0022nonStandardEntity\u0022: {\n          \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n          \u0022entityPhrase\u0022: \u0022Java\u0022\n        }\n      },\n      \u0022recipient\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022id\u0022: 123456\n    },\n    {\n      \u0022status\u0022: \u0022ACCEPTED\u0022,\n      \u0022created\u0022: 1486746325406,\n      \u0022lastModified\u0022: 1486746325406,\n      \u0022endorser\u0022: \u0022urn:li:person:456DEF\u0022,\n      \u0022item\u0022: {\n        \u0022nonStandardEntity\u0022: {\n          \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n          \u0022entityPhrase\u0022: \u0022C\u002B\u002B\u0022\n        }\n      },\n      \u0022recipient\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022id\u0022: 234567\n    },\n    ...\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 5,\n    \u0022start\u0022: 5,\n    \u0022total\u0022: 11,\n    \u0022links\u0022: [\n      {\n        \u0022href\u0022: \u0022/v2/endorsement?q=endorser\u0026count=5\u0026start=0\u0026statusFilters=List(ACCEPTED)\u0022,\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022\n      },\n      {\n        \u0022href\u0022: \u0022/v2/endorsement?q=endorser\u0026count=5\u0026start=10\u0026statusFilters=List(ACCEPTED)\u0022,\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser",
+        "sample response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser",
+        "sample response"
+      ],
+      "Text": "To paginate through all the endorsement data, please use the href link referenced in the paging section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Endorsements by Endorser",
+        "sample response"
+      ],
+      "Text": "Due to performance reasons, we recommend fetching 100 elements per request, hence setting count=100. In addition, please disregard the total number since it is incorrect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Endorsements by Recipient",
+      "Anchor": "retrieve-endorsements-by-recipient",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient"
+      ],
+      "Text": "You can look up an endorser\u0027s endorsement by requesting the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Endorsements by Recipient",
+      "Anchor": "retrieve-endorsements-by-recipient",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement?q=recipient\u0026statusFilters=List(ACCEPTED,PENDING)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Required",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "statusFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can be of the following endorsement enum status: UNKNOWN - Default State. ACCEPTED - Indicates that the endorsement has been accepted and is currently visible by other members REJECTED - Indicates that the endorsement has been rejected by the member. HIDDEN - Indicates that the endorsement has been hidden by the recipient. PENDING - Indicates that the endorsement is in a pending state and not yet accepted by the recipient. DELETED - Indicates that the endorsement has been deleted by the sender. CLOSED - Indicates that the endorsement has been closed by the member.",
+            "Links": [],
+            "Values": [
+              "UNKNOWN - Default State.",
+              "ACCEPTED - Indicates that the endorsement has been accepted and is currently visible by other members",
+              "REJECTED - Indicates that the endorsement has been rejected by the member.",
+              "HIDDEN - Indicates that the endorsement has been hidden by the recipient.",
+              "PENDING - Indicates that the endorsement is in a pending state and not yet accepted by the recipient.",
+              "DELETED - Indicates that the endorsement has been deleted by the sender.",
+              "CLOSED - Indicates that the endorsement has been closed by the member."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient",
+        "sample response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022status\u0022: \u0022ACCEPTED\u0022,\n      \u0022created\u0022: 1486746325406,\n      \u0022lastModified\u0022: 1486746325406,\n      \u0022endorser\u0022: \u0022urn:li:person:456DEF\u0022,\n      \u0022item\u0022: {\n        \u0022nonStandardEntity\u0022: {\n          \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n          \u0022entityPhrase\u0022: \u0022Java\u0022\n        }\n      },\n      \u0022recipient\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022id\u0022: 123456\n    },\n    {\n      \u0022status\u0022: \u0022ACCEPTED\u0022,\n      \u0022created\u0022: 1486746325406,\n      \u0022lastModified\u0022: 1486746325406,\n      \u0022endorser\u0022: \u0022urn:li:person:456DEF\u0022,\n      \u0022item\u0022: {\n        \u0022nonStandardEntity\u0022: {\n          \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022,\n          \u0022entityPhrase\u0022: \u0022C\u002B\u002B\u0022\n        }\n      },\n      \u0022recipient\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022id\u0022: 234567\n    },\n    ...\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 5,\n    \u0022start\u0022: 5,\n    \u0022total\u0022: 11,\n    \u0022links\u0022: [\n      {\n        \u0022href\u0022: \u0022/v2/endorsement?q=recipient\u0026count=5\u0026start=0\u0026statusFilters=List(ACCEPTED)\u0022,\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022\n      },\n      {\n        \u0022href\u0022: \u0022/v2/endorsement?q=recipient\u0026count=5\u0026start=10\u0026statusFilters=List(ACCEPTED)\u0022,\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient",
+        "sample response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient",
+        "sample response"
+      ],
+      "Text": "To paginate through all the endorsement data, please use the href link referenced in the paging section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Endorsements by Recipient",
+        "sample response"
+      ],
+      "Text": "Due to performance reasons, we recommend fetching 100 elements per request, hence setting count=100. In addition, please disregard the total number since it is incorrect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Endorsements",
+      "Anchor": "update-endorsements",
+      "SectionPath": [
+        "Update Endorsements"
+      ],
+      "Text": "You can update an endorsement status of one you have given or received by doing the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Endorsements",
+      "Anchor": "update-endorsements",
+      "SectionPath": [
+        "Update Endorsements"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/endorsement/urn:li:endorsement:(urn:li:person:123ABC,123456)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Endorsements",
+      "Anchor": "update-endorsements",
+      "SectionPath": [
+        "Update Endorsements"
+      ],
+      "Text": "Above is the API request represented in pretty print. With X-Restli-Protocol-Version: 2.0.0, you will need to do the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Endorsements",
+      "Anchor": "update-endorsements",
+      "SectionPath": [
+        "Update Endorsements"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/endorsement/urn%3Ali%3Aendorsement%3A%28urn%3Ali%3Aperson%3A123ABC%2C123456%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Update Endorsements",
+        "sample request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022HIDDEN\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Update Endorsements",
+        "sample request"
+      ],
+      "Text": "The only field that can be updated is the status. The updated status can only be ACCEPTED, HIDDEN, or REJECTED for the recipient. The endorser can only update the status to DELETED (unendorse action). The partial update will not succeed for any other type of updates.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

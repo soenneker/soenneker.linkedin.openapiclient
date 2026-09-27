@@ -1,0 +1,540 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-system-connect",
+  "Title": "Recruiter System Connect (RSC) Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect (RSC) Overview",
+      "Anchor": "recruiter-system-connect-rsc-overview",
+      "SectionPath": [],
+      "Text": "As a LinkedIn Talent Solutions partner, you can use RSC to synchronize candidate information between your Applicant Tracking System (ATS) and LinkedIn Recruiter, ensuring data flow across both platforms. RSC is available as RSC 1.0 and RSC\u002B.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B",
+      "Anchor": "rsc-10-and-rsc",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B"
+      ],
+      "Text": "RSC\u002B is a superset of RSC 1.0. To enable RSC\u002B, RSC 1.0 must be active. The following features are available in both:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B",
+      "Anchor": "rsc-10-and-rsc",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B"
+      ],
+      "Text": "Rediscovered Candidates\nIn-ATS Indicator\nOne-Click Export\nEnhanced Profile Widget\nRetrieve InMail History\nRetrieve Stub Profiles after an InMail Response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B",
+      "Anchor": "rsc-10-and-rsc",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B"
+      ],
+      "Text": "RSC\u002B extends RSC 1.0 with the following additional features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "RSC 1.0 and RSC\u002B",
+      "Anchor": "rsc-10-and-rsc",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B"
+      ],
+      "Text": "",
+      "Headers": [
+        "Feature",
+        "Description",
+        "RSC 1.0",
+        "RSC\u002B"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync job requisition stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Sync ATS job requisition stages to LinkedIn to reflect your hiring pipeline status.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Retrieve application evaluations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Use the ATS as the source of truth to evaluate all applicants\u2014members and non-members from any source in one place, using LinkedIn Hiring Assistant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Upload and sync attachments",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Sync candidate resumes and attachments from your ATS to LinkedIn for applicant evaluation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Connected Projects",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-system-connect?view=li-lts-2026-04#connected-projects"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Link a LinkedIn Recruiter hiring project to an ATS job requisition to create a single source of truth for all applicants across LinkedIn and your ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B",
+      "Anchor": "rsc-10-and-rsc",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC 1.0 and RSC\u002B",
+      "Anchor": "rsc-10-and-rsc",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B"
+      ],
+      "Text": "For existing RSC partner developers, the additional APIs relating to RSC\u002B (and Connected Projects features) do require approval from LinkedIn. Please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need an amended API agreement with reference to RSC\u002B in order to offer these additional features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "RSC\u002B includes Connected Projects, which link a LinkedIn Recruiter hiring project directly to its corresponding job requisition in your ATS, creating a single source of truth for recruiting teams to manage every applicant\u2014from onsite LinkedIn Easy Apply to offsite ATS applicants\u2014all in one place. If LinkedIn Hiring Assistant is enabled, Connected Projects provide the context Hiring Assistant needs to evaluate candidates automatically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "RSC\u002B must be enabled before Connected Projects can be used. Key benefits of Connected Projects include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "Unified applicant management \u2014 View all applicants (LinkedIn and ATS) in a single combined pipeline, filtered by source and ATS stage\nSmarter AI evaluation \u2014 LinkedIn Hiring Assistant (LiHA) evaluates applicants using both ATS resume data and LinkedIn profile signals, with results synced back to your ATS\nFaster sourcing \u2014 ATS job requisitions auto-populate hiring intent and qualifications for LiHA, skipping manual project setup\nDuplicate job detection \u2014 Automatically detects when an RSC job matches an existing Enterprise Job Posting and suggests converting it to a Connected Project\nTrust and fraud prevention \u2014 LinkedIn verifications identify verified applicants, which is not possible in ATS-only workflows",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "To see RSC in action and find out which ATS partners are already supported, visit the Recruiter System Connect Business Site.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "New Talent Solutions integrations like Recruiter System Connect are built on the Middleware Platform , which means you should manage job applications exclusively via the Middleware endpoints.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connected Projects",
+      "Anchor": "connected-projects",
+      "SectionPath": [
+        "RSC 1.0 and RSC\u002B",
+        "Connected Projects"
+      ],
+      "Text": "If you\u2019ve previously integrated with LinkedIn Referrals, you\u2019ll need to switch to using the Middleware Platform for submitting job applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "The use of these APIs is restricted to those developers approved by LinkedIn. Please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.\n\nIf you are not yet a LinkedIn Talent Solutions Partner, please complete the LinkedIn Talent Solutions Partner Request Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Before beginning development, you will need to be provisioned access to test resources, and your API applications will have to be enabled to access the Recruiter System Connect endpoints. You can request access by completing the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Create API applications for the integration. You may create 2 API applications per integration - 1 for production, and 1 for development and testing.\nPlease contact the member from LinkedIn Business Development who you have been working with and request to fill out the Partner Onboarding Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "After the above steps, you\u0027ll be provided with various Test Credentials in the mail which you will consume for your development \u0026 testing. Next, ensure that:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "You can log into LinkedIn Recruiter\nYou can access the One-Click Export and In-ATS indicator within LinkedIn Recruiter",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Once your application is configured, you may begin making API requests and testing the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Terms like \u0022Partner ATS\u0022 \u0026 \u0022Customer\u0022 are referenced throughout this documentation. \u0022Partner ATS\u0022 is an ATS with multiple customers. \u0022Customer\u0022 stands for proprietary ATS or Career Page Solution.\nNew Talent Solutions integrations like Recruiter System Connect are built on the Middleware Platform, which means you should manage your job applications exclusively via the Middleware endpoints.\nAll API requests require OAuth\u0027s 2 Legged Authorization.\nAPI requests return paged results; details on paging through results can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "In order to implement Recruiter System Connect, LinkedIn has broken down the scope of integration into 5 Development Modules that can be found under API \u0026 Plugin Guide documentation. As a customer or partner, you will need to utilize the components described within below modules:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Module 1 - Configure Customer Applications and ATS Integrations : This module needs to be implemented by Partner ATS only. It describes the steps for customer onboarding for Partners.\nModule 2 - Sync Data from ATS to LinkedIn : This module includes Middleware Platform APIs to sync candidates, applications, notes from ATS to LinkedIn. The data synced will show up in the ATS indicator in your Recruiter account.\nModule 3 - Retrieve Data from LinkedIn : This module includes the Push Notification calls that LinkedIn makes to your callback URL to notify of One-Click Export \u0026 provide other updates. This also includes APIs to help you retrieve data from LinkedIn once you get these Push Notifications.\nModule 4 - Sync ACLs : This module includes APIs to help you define ACL permissions to control who all can access what data within your Recruiter account.\nModule 5 - Data Deletion : This module includes all Entity Deletion APIs provided by LinkedIn\u0027s Middleware Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Onboarding for Partners",
+      "Anchor": "customer-onboarding-for-partners",
+      "SectionPath": [
+        "2. Begin Development",
+        "Customer Onboarding for Partners"
+      ],
+      "Text": "Partner ATS has to create and maintain configurations for every customer with LinkedIn Middleware. In the process, the partner gets a unique API key(Client ID) \u0026 Client Secret, Organization URN and Contract URN corresponding to each customer that needs to be persisted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Onboarding for Partners",
+      "Anchor": "customer-onboarding-for-partners",
+      "SectionPath": [
+        "2. Begin Development",
+        "Customer Onboarding for Partners"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Onboarding for Partners",
+      "Anchor": "customer-onboarding-for-partners",
+      "SectionPath": [
+        "2. Begin Development",
+        "Customer Onboarding for Partners"
+      ],
+      "Text": "All component APIs described in the above modules need to be invoked on behalf of the customer by the partner using the OAuth Client ID \u0026 Client Secret of Customer Application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Onboarding for Partners",
+      "Anchor": "customer-onboarding-for-partners",
+      "SectionPath": [
+        "2. Begin Development",
+        "Customer Onboarding for Partners"
+      ],
+      "Text": "Refer to Module 1 - Configure Customer Applications and ATS Integrations for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Development Tools",
+      "Anchor": "3-development-tools",
+      "SectionPath": [
+        "3. Development Tools"
+      ],
+      "Text": "We provide a snapshot of your integration journey in Project Planner Template. It provides a very helpful summary if you are just beginning development. We also provide few development tools like API Postman Collection, Sample Applications for testing Recruiter System Connect Plugins to assist in efficient, organized \u0026 speedy development. Refer to Development Tools documentation for same.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Required Fields",
+      "Anchor": "4-required-fields",
+      "SectionPath": [
+        "4. Required Fields"
+      ],
+      "Text": "We have put together required fields for all Recruiter System Connect APIs together at one place. Refer to Required Fields documentation to understand what all fields your ATS must provide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Certification",
+      "Anchor": "5-certification",
+      "SectionPath": [
+        "5. Certification"
+      ],
+      "Text": "Be sure to review the test cases per module required for your certification. These test cases should be demoed in your certification meetings. These are described in detail here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "6. Developer FAQs",
+      "Anchor": "6-developer-faqs",
+      "SectionPath": [
+        "6. Developer FAQs"
+      ],
+      "Text": "If you have any product or technical questions, please make sure to refer to FAQ section before reaching out to your LinkedIn Business Development point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "7. Customer Support \u0026 FAQ Guide",
+      "Anchor": "7-customer-support--faq-guide",
+      "SectionPath": [
+        "7. Customer Support \u0026 FAQ Guide"
+      ],
+      "Text": "In order to make sure that partners have a smooth journey onboarding their customers with LinkedIn RSC Integration, we have curated support documents \u0026 common FAQs here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "8. Announcements \u0026 Release Notes",
+      "Anchor": "8-announcements--release-notes",
+      "SectionPath": [
+        "8. Announcements \u0026 Release Notes"
+      ],
+      "Text": "All the changes that are continuously being made to LinkedIn\u0027s RSC documentation can be tracked in Release Notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

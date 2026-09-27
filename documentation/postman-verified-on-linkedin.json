@@ -1,0 +1,448 @@
+{
+  "auth": {
+    "oauth2": {
+      "addTokenTo": "header"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "ced4215a-ecd0-4f52-b3cd-e03ff3fb9c32",
+        "packages": {},
+        "requests": {},
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "77983299-e4df-4b82-a2d7-7b03968955dc",
+        "packages": {},
+        "requests": {},
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "ce7f8bd1-b44b-4e0c-b71d-72127ba642e7",
+    "description": "The Verified on LinkedIn API allows you to access trusted verification signals from LinkedIn members, enabling you to display verified identity and workplace information directly within your platform.",
+    "name": "Verified on LinkedIn",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "auth": {
+        "oauth2": {
+          "addTokenTo": "header"
+        },
+        "type": "oauth2"
+      },
+      "description": "The\u00A0**Identity API**\u00A0(\u0060/identityMe\u0060) provides a simple way for partners to retrieve LinkedIn Member profile details \u2014 including name, primary email address, profile photo, and LinkedIn profile URL \u2014 with the Member\u2019s consent.",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "id": "0393f71b-223e-4581-aaf0-32706990341c",
+            "packages": {},
+            "requests": {},
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "id": "b3648455-5a41-44eb-81a9-9a10a7b24e94",
+            "packages": {},
+            "requests": {},
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "b6983bc8-eb68-4b0e-811c-8a3eedfe5089",
+      "item": [
+        {
+          "description": "/identityMe API is versioned api. use the latest verison- version-202510.03 in request header.",
+          "id": "2b44a4e6-452d-49f4-95ff-01640e2de33c",
+          "item": [
+            {
+              "id": "05ed7a1c-71cb-4901-ac5e-b3bb3826e007",
+              "name": "identityMe",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The **Identity API** (\u0060/identityMe\u0060) provides a simple way for partners to retrieve LinkedIn Member profile details. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "202510.03"
+                  }
+                ],
+                "method": "GET",
+                "url": "https://api.linkedin.com/rest/identityMe"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n\t\u0022lastRefreshedAt\u0022: 1760631246905,\n\t\u0022basicInfo\u0022: {\n    \t\u0022profileUrl\u0022: \u0022https://www.linkedin.com/profile-thirdparty-redirect/AFw7Tw9YDLbPn8exJln1FFI074SVkNAH8eIr_u-rdXZCPyXMUTb3sTCE81RbfN_yO7870\u0022,\n    \t\u0022profilePicture\u0022: {\n        \t\u0022croppedImage\u0022: {\n            \t\u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/0hYE9aEqulDqnnCpvzUnx8dZy2T5yhR8\u0022,\n                \u0022downloadUrlExpiresAt\u0022: 1763596800000\n        \t}\n    \t},\n    \t\u0022lastName\u0022: {\n        \t\u0022localized\u0022: {\n            \t\u0022en_US\u0022: \u0022Doe\u0022\n        \t},\n        \t\u0022preferredLocale\u0022: {\n            \t\u0022country\u0022: \u0022US\u0022,\n            \t\u0022language\u0022: \u0022en\u0022\n        \t}\n    \t},\n    \t\u0022firstName\u0022: {\n        \t\u0022localized\u0022: {\n            \t\u0022en_US\u0022: \u0022John\u0022\n        \t},\n        \t\u0022preferredLocale\u0022: {\n            \t\u0022country\u0022: \u0022US\u0022,\n            \t\u0022language\u0022: \u0022en\u0022\n        \t}\n    \t},\n   \t\u0022primaryEmailAddress\u0022: \u0022John.Doe@linkedin.com\u0022\n\t},\n   \u0022id\u0022: \u00221n23dtwSmS\u0022\n}",
+                  "cookie": [],
+                  "header": null,
+                  "id": "cd0aec97-0050-4ca8-b628-e7641e0a017e",
+                  "name": "identityMe-200",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "202510.03"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "https://api.linkedin.com/rest/identityMe"
+                  },
+                  "responseTime": null
+                }
+              ]
+            }
+          ],
+          "name": "version-202510.03"
+        }
+      ],
+      "name": "Identity Me API"
+    },
+    {
+      "description": "The **Verification Report API** allows partners to retrieve the verified categories (for example, \u0060IDENTITY\u0060, \u0060WORKPLACE\u0060) associated with a LinkedIn Member, or to obtain a \u0060verificationUrl\u0060 that enables Members to complete eligible verifications on LinkedIn. VerificationCriteria does not filter out verifications, it is only for the verificationUrl generated to show which categories the partner is interested in.",
+      "id": "e2a85f26-c47e-45ee-acd8-822acfb99953",
+      "item": [
+        {
+          "description": "\u0060/verificationReport\u0060 API is versioned api. use the latest verison- version-202510 in request header.",
+          "id": "f52b03e9-b375-4d0e-9155-0d781346c543",
+          "item": [
+            {
+              "id": "bf6df946-5618-479b-b7e7-ea970d819464",
+              "name": "verificationReport",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The **Verification Report API** allows partners to retrieve the verified categories (for example, \u0060IDENTITY\u0060, \u0060WORKPLACE\u0060) associated with a LinkedIn Member, or to obtain a \u0060verificationUrl\u0060 that enables Members to complete eligible verifications on LinkedIn. [Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
+                "header": [
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "202510"
+                  }
+                ],
+                "method": "GET",
+                "url": "https://api.linkedin.com/rest/verificationReport"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022\n}",
+                  "cookie": [],
+                  "header": null,
+                  "id": "8f01c8ce-2e41-45e1-9406-04bf2196c9c9",
+                  "name": "Fetch verifications",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "202510"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "https://api.linkedin.com/rest/verificationReport"
+                  },
+                  "responseTime": null
+                },
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022\n}",
+                  "cookie": [],
+                  "header": null,
+                  "id": "6149c6be-c9d6-42b9-91b4-e0c0df470ed1",
+                  "name": "Fetch verification with Identity criteria",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "202510"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "rest",
+                        "verificationReport"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "verificationCriteria",
+                          "value": "IDENTITY"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/rest/verificationReport?verificationCriteria=IDENTITY"
+                    }
+                  },
+                  "responseTime": null
+                },
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022,\n  \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3DAgFAAk4lCixcPAbCBxA%26verificationCriteria%3D2522WORK_EMAIL_ADDRESS%2522%2%2522WORK_EMAIL_ADDRESS%2255D%257D\u0022\n}\n",
+                  "cookie": [],
+                  "header": null,
+                  "id": "21fec06c-4e43-4ded-a75a-c5e04f23c893",
+                  "name": "Fetch verification with Workplace criteria",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "202510"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "rest",
+                        "verificationReport"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "verificationCriteria",
+                          "value": "WORKPLACE"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/rest/verificationReport?verificationCriteria=WORKPLACE"
+                    }
+                  },
+                  "responseTime": null
+                },
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022\n}\n",
+                  "cookie": [],
+                  "header": null,
+                  "id": "5b15103c-80b9-4bff-81e2-df64242c6c16",
+                  "name": "Fetch verifications with Identity and Workplace criteria",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "202510"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "rest",
+                        "verificationReport"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "verificationCriteria",
+                          "value": "IDENTITY"
+                        },
+                        {
+                          "key": "verificationCriteria",
+                          "value": "WORKPLACE"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/rest/verificationReport?verificationCriteria=IDENTITY\u0026verificationCriteria=WORKPLACE"
+                    }
+                  },
+                  "responseTime": null
+                }
+              ]
+            }
+          ],
+          "name": "version-202510"
+        }
+      ],
+      "name": "Verification Report API"
+    },
+    {
+      "description": "The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for \u0060identity\u0060, \u0060workplace\u0060, and \u0060profileInformationStatus\u0060 so you can quickly identify which members need fresh profile or verification data. This endpoint uses **2-legged OAuth (client credentials)** \u2014 no member consent required \u2014 and supports up to **500 member IDs per request** (use the \u0060id\u0060 from \u0060/identityMe\u0060 or \u0060/verificationReport\u0060).",
+      "id": "aa57a0f4-00f0-49b7-8b3c-24da5e554e24",
+      "item": [
+        {
+          "description": "\u0060/validationStatus\u0060 API is versioned api. use the latest verison-202510 in request header.",
+          "id": "6153b63d-e8fc-4111-911c-052ec061c7bf",
+          "item": [
+            {
+              "id": "f636187a-f753-47b8-984e-e793ab20fa55",
+              "name": "validationStatus",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \u0022validationQueries\u0022: [\n    {\n      \u0022id\u0022: \u0022string\u0022\n    }\n  ]\n}"
+                },
+                "description": "The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for \u0060identity\u0060, \u0060workplace\u0060, and \u0060profileInformationStatus.\u0060[Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.",
+                "header": [
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "202510"
+                  }
+                ],
+                "method": "POST",
+                "url": {
+                  "host": [
+                    "api",
+                    "linkedin",
+                    "com"
+                  ],
+                  "path": [
+                    "rest",
+                    "validationStatus"
+                  ],
+                  "protocol": "https",
+                  "query": [
+                    {
+                      "key": "action",
+                      "value": "retrieve"
+                    }
+                  ],
+                  "raw": "https://api.linkedin.com/rest/validationStatus?action=retrieve"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n  \u0022value\u0022: [\n    {\n      \u0022id\u0022: \u0022abc123\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022VALID\u0022,\n        \u0022workplace\u0022: \u0022VALID\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n    }\n  ]\n}",
+                  "cookie": [],
+                  "header": null,
+                  "id": "67e1f299-5a3a-471a-8e24-42aa91479800",
+                  "name": "Single Member Validation",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n  \u0022validationQueries\u0022: [\n    {\n      \u0022id\u0022: \u0022abc123\u0022\n    }\n  ]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "202510"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "rest",
+                        "validationStatus"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "retrieve"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/rest/validationStatus?action=retrieve"
+                    }
+                  },
+                  "responseTime": null
+                },
+                {
+                  "_postman_previewlanguage": null,
+                  "body": "{\n  \u0022value\u0022: [\n    {\n      \u0022id\u0022: \u0022abc123\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022VALID\u0022,\n        \u0022workplace\u0022: \u0022VALID_WITH_UPDATES\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n    },\n    {\n      \u0022id\u0022: \u0022def456\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022INVALID\u0022,\n        \u0022workplace\u0022: \u0022VALID\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022INVALID\u0022\n    },\n    {\n      \u0022id\u0022: \u0022ghi789\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022VALID\u0022,\n        \u0022workplace\u0022: \u0022VALID\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n    }\n  ]\n}",
+                  "cookie": [],
+                  "header": null,
+                  "id": "7f5f1f3f-a4da-478b-b505-d921d5fa5719",
+                  "name": "Bulk Member Validation",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n  \u0022validationQueries\u0022: [\n    {\n      \u0022id\u0022: \u0022abc123\u0022\n    },\n    {\n      \u0022id\u0022: \u0022def456\u0022\n    },\n    {\n      \u0022id\u0022: \u0022ghi789\u0022\n    }\n  ]\n}\n"
+                    },
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "202510"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "rest",
+                        "validationStatus"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "action",
+                          "value": "retrieve"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/rest/validationStatus?action=retrieve"
+                    }
+                  },
+                  "responseTime": null
+                }
+              ]
+            }
+          ],
+          "name": "version-202510"
+        }
+      ],
+      "name": "Validation Status API"
+    }
+  ]
+}

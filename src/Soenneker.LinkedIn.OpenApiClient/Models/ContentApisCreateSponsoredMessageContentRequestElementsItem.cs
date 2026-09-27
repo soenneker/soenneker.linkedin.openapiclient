@@ -14,21 +14,37 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bodySource property</summary>
+        /// <summary>A message can consist of either simple text, or a lead generation form, or an image attachment with an optional attachment textDocumented type: Either a text string, an AdFormUrn, or a mediaAttachment consisting of an ImageUrn and an optional text stringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemBodySource? BodySource { get; set; }
+        public string? BodySource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemBodySource BodySource { get; set; }
+        public string BodySource { get; set; }
 #endif
-        /// <summary>The nextAction property</summary>
+        /// <summary>(read-only) The ID key for this messageDocumented type: SponsoredMessageContentUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextAction? NextAction { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextAction NextAction { get; set; }
+        public string Id { get; set; }
+#endif
+        /// <summary>Indicates whether this message’s next action is another message or an array of optionsDocumented type: SponsoredMessageContentUrn or SponsoredMessageOption[]Requirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextActionItem>? NextAction { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextActionItem> NextAction { get; set; }
+#endif
+        /// <summary>The conversation to which this message belongsDocumented type: SponsoredConversationUrnRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SponsoredConversation { get; set; }
+#nullable restore
+#else
+        public string SponsoredConversation { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItem"/> and sets the default values.
@@ -55,8 +71,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bodySource", n => { BodySource = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemBodySource>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemBodySource.CreateFromDiscriminatorValue); } },
-                { "nextAction", n => { NextAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextAction.CreateFromDiscriminatorValue); } },
+                { "bodySource", n => { BodySource = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "nextAction", n => { NextAction = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextActionItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextActionItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sponsoredConversation", n => { SponsoredConversation = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +84,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemBodySource>("bodySource", BodySource);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextAction>("nextAction", NextAction);
+            writer.WriteStringValue("bodySource", BodySource);
+            writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequestElementsItemNextActionItem>("nextAction", NextAction);
+            writer.WriteStringValue("sponsoredConversation", SponsoredConversation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

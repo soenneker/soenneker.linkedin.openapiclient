@@ -1,0 +1,679 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration",
+  "Title": "Configure Customer Application and ATS Integration",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Application and ATS Integration",
+      "Anchor": "configure-customer-application-and-ats-integration",
+      "SectionPath": [],
+      "Text": "You can embed a LinkedIn widget in your platform that allows customers to log-in, select the Premium Job Posting contract, and enable the Premium Job Posting within the partner\u2019s platform.\n Once enabled, the partner platform will be able to post premium jobs on behalf of the customer.\nYou can integrate the onboarding widget to let LinkedIn\u0027s Recruiter customers post paid jobs directly into their contract, without leaving the partner site.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Application and ATS Integration",
+      "Anchor": "configure-customer-application-and-ats-integration",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Customer Application and ATS Integration",
+      "Anchor": "configure-customer-application-and-ats-integration",
+      "SectionPath": [],
+      "Text": "A customer who has either the Dashboard Manager Admin or Recruiter Admin seat in LinkedIn Recruiter can opt into the premium job posting from this widget\nThis widget can be either live on your Job Board Settings page (preferable) or LinkedIn Global Settings page (where the RSC customer onboarding widget is also hosted)\nRefer this link for more information about job promotion at LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to Onboard PJP Widget",
+      "Anchor": "steps-to-onboard-pjp-widget",
+      "SectionPath": [
+        "Steps to Onboard PJP Widget"
+      ],
+      "Text": "Follow the below steps to for OnBoarding Widget implementation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to Onboard PJP Widget",
+      "Anchor": "steps-to-onboard-pjp-widget",
+      "SectionPath": [
+        "Steps to Onboard PJP Widget"
+      ],
+      "Text": "Create and Configure a Customer App\nDisplay the Customer Onboarding Widget Plugin\nUpdate Customer Integrations\nWidget Enablement Stages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Create and Configure a Customer App",
+      "Anchor": "step-1---create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1 - Create and Configure a Customer App"
+      ],
+      "Text": "The Provisioning API allows you to create API keys for each of your customers. Please note that you will need to store a unique API key for each of your customers. Once your app is configured, you may begin making API requests and testing the integration. All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Create and Configure a Customer App",
+      "Anchor": "step-1---create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1 - Create and Configure a Customer App"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Create and Configure a Customer App",
+      "Anchor": "step-1---create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1 - Create and Configure a Customer App"
+      ],
+      "Text": "For existing CSA customers, you will be using their existing API keys. Please contact your Partner Engineering representative to coordinate migrating these API keys.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - Display the Customer Onboarding Widget Plugin",
+      "Anchor": "step-2---display-the-customer-onboarding-widget-plugin",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin"
+      ],
+      "Text": "The Onboarding Widget allows the API partners to integrate and let the LinkedIn Recruiter customers post paid jobs directly into their contract, without leaving the partner site.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Script",
+      "Anchor": "widget-script",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Script"
+      ],
+      "Text": "Once a new customer application is created, it may take up to five minutes for the widget to load. You can host this widget by leveraging the below lines of Javascript code:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Widget Script",
+      "Anchor": "widget-script",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Script"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\napi_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\nextensions: UJPWidget@https://platform.linkedin.com/rsc/extensions/ujp-onboarding-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/UJPWidget\u0022 data-onconfirmjobposter=\u0022confirmJobPoster\u0022\ndata-width=\u0022{width}\u0022\u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\n/**\n* This callback should:\n*Store the customer\u0027s integration details like contractID in your ATS. These values will be used to promote jobs on LinkedIn on behalf of customer\n* @param {Object[]} integrations\n* @param {string} integrations[].tenantType\n* @param {string} integrations[].onboardingStatus\n* @param {string} integrations[].integrationType\n* @param {string} integrations[].integrationContext\n* \n*/\nfunction confirmJobPoster(integrations) {\n//Your code here\nconsole.log(\u0022integrations:\u0022, integrations);\n}\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Script",
+      "Anchor": "widget-script",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Script"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Script",
+      "Anchor": "widget-script",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Script"
+      ],
+      "Text": "In order to reload the widget on a single page application, use in.parse()\nVerify Content Security Policy includes \u0022platform.linkedin.com\u0022 and \u0022www.linkedin.com\u0022 and ensure these domains are allowed in your platform\nPlease add the host domain of widget under application settings on https://developer.linkedin.com",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Load",
+      "Anchor": "widget-load",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Load"
+      ],
+      "Text": "The plugin loads based on the api_key and data-width attributes you specify. Use the latter attribute to declare the width of the widget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Callback",
+      "Anchor": "widget-callback",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Callback"
+      ],
+      "Text": "The callback specified for the data-onconfirmjobposter script attribute will be fired when the customer selects the default job poster and clicks the Save button. You need to store the values you retrieve per customer for contractID as it will be used for posting premium job on behalf of this customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Callback",
+      "Anchor": "widget-callback",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Widget Callback"
+      ],
+      "Text": "Widget will return 4 values\n{\ntenantType: JOBS\nonboardingStatus: REQUESTED\nintegrationType: PREMIUM_JOB_POSTING\nintegrationContext: urn:li:contract:\u003Ccontract_id\u003E\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Enablement Flow",
+      "Anchor": "customer-enablement-flow",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Customer Enablement Flow"
+      ],
+      "Text": "To enable premium job posting, a LinkedIn contract seatholder with admin privileges has to perform a few steps in your platform when the javascript widget is loaded:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Enablement Flow",
+      "Anchor": "customer-enablement-flow",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Customer Enablement Flow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Enablement Flow",
+      "Anchor": "customer-enablement-flow",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Customer Enablement Flow"
+      ],
+      "Text": "These steps are for the customers of the partners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Enablement Flow",
+      "Anchor": "customer-enablement-flow",
+      "SectionPath": [
+        "Step 2 - Display the Customer Onboarding Widget Plugin",
+        "Customer Enablement Flow"
+      ],
+      "Text": "Click Sign in \n\n\nEnter your LinkedIn credential\n\n\nIf you have a seat on multiple LinkedIn contracts, select one you would like to connect to your ATS\n\n\n Note\n\nIf you only have a seat on one LinkedIn contract, you will bypass this page\nThe widget also provide an option to the customer to change the contract if they wish to enable premium job posting for more than one contracts. This will be one time enablement step per contract. Once enabled, partner platform can promote all jobs using API on behalf of the customer. There is only one client_id per customer\n\n\n\nThe admin seat holder of the LinkedIn contract will be prompted to select the default Job Poster to display alongside their jobs. At this point, the customer can select one of the seat holders of their Recruiter Contract. \n\n\nOnce the default job poster is selected, customers are directed to this following landing page after partner approves their integration request with update customer integration call. \n\n\n Note\n\nThe widget allows the customer to update the default job poster value anytime in future. It is necessary for partners to execute the following API request every time there is a modification in the default job poster\nIf the default job poster is removed from the contract or restricted please update the default job poster via widget to re-enable job postings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3 - Update Customer Integrations",
+      "Anchor": "step-3---update-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations"
+      ],
+      "Text": "Once the customer clicks the Save button, the widget invokes the callback method configured in partner platform and provides below parameters:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3 - Update Customer Integrations",
+      "Anchor": "step-3---update-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations"
+      ],
+      "Text": "tenantType: JOBS\nonboardingStatus: REQUESTED\nintegrationType: PREMIUM_JOB_POSTING\nintegrationContext: urn:li:contract:\u003Ccontract-id\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:contract:(ContractID returned by widget) \u0026ids[0].integrationType=PREMIUM_JOB_POSTING\u0026ids[0].tenantType=JOBS\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "Create access token using the customer application client Id used in background for widget to make this API call. Creating integrations must be done server-side and in real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "For each id part specified in the request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "Use the customer\u0027s integration context obtained in step 2 as the value of id[i].integrationContext . The format will be either urn:li:organization:{id} or urn:li:contract:{id}\nUse the integration type obtained in step 2 as the value of id[i].integrationType\nUse the tenant type obtained in step 2 as the value of id[i].tenantType\nUse \u0022ATS\u0022 as the value of id[i].dataProvider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "The partner should:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Customer Integrations",
+      "Anchor": "enable-customer-integrations",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations"
+      ],
+      "Text": "Persist contractID detail\nImmediately invoke LinkedIn\u2019s ATSIntegrations endpoint to enable customers\u2019 premium job posting integration.\nThe API call will be as below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provide Customer Integration Name",
+      "Anchor": "provide-customer-integration-name",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations",
+        "Provide Customer Integration Name"
+      ],
+      "Text": "API URL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Provide Customer Integration Name",
+      "Anchor": "provide-customer-integration-name",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations",
+        "Provide Customer Integration Name"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:contract:(ContractID returned by widget) \u0026ids[0].integrationType=PREMIUM_JOB_POSTING\u0026ids[0].tenantType=JOBS\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Provide Customer Integration Name",
+      "Anchor": "provide-customer-integration-name",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Enable Customer Integrations",
+        "Provide Customer Integration Name"
+      ],
+      "Text": "Request Headers:\nAuthorization: Bearer {token}\nx-restli-method: batch_partial_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:contract:\u003CID\u003E\u0026integrationType=PREMIUM_JOB_POSTING\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022\u003CPartnerName\u003E-\u003CCustomerName\u003E LinkedIn Premium Job Posting Integration\u0022\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {  \u0022integrationType=PREMIUM_JOB_POSTING\u0026tenantType=JOBS\u0026dataProvider=ATS\u0026integrationContext=urn:li:contract:\u003CID\u003E\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "The above step will successfully enable premium job posting integration for your customer. You can also pull the status of the integration by making a GET call",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3 - Update Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4 - Widget Enablement States",
+      "Anchor": "step-4---widget-enablement-states",
+      "SectionPath": [
+        "Step 4 - Widget Enablement States"
+      ],
+      "Text": "The PJP Widget has three distinct states which are determined by the actions of our customers.\nIf the following text displays at the widget, the customers can utilize their paired customer application API key and contract for the specified organization_id to post premium jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4 - Widget Enablement States",
+      "Anchor": "step-4---widget-enablement-states",
+      "SectionPath": [
+        "Step 4 - Widget Enablement States"
+      ],
+      "Text": "Once the customer logs into the widget for the first time and no default job-poster is selected yet, the widget displays \u201CNot Connected\u201D. \n\nAfter you select the default job poster and click the Save button, the widget displays \u201CPremium Job Posting is requested\u201D. Every time a customer changes or removes default job poster from their contract via this widget, integration reverts to \u201CRequested\u201D state. Partner ATS must run an Update Customer Integration API call to re-enable customers for job posting. \n\nAfter the default job poster is associated with this integration, the widget state will be displayed as \u201CPremium Job Posting is enabled\u201D. Depending on whether the customer has chosen a contract that falls under the recommended budget type or not, they will be presented with one of two widget states.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Widget Errors",
+      "Anchor": "widget-errors",
+      "SectionPath": [
+        "Widget Errors"
+      ],
+      "Text": "Customers can see following errors while configuring with widget:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Widget Errors",
+      "Anchor": "widget-errors",
+      "SectionPath": [
+        "Widget Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Error Message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "You don\u0027t have permission to view this page. Log in as a Recruiter Admin to view this page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When the widget is loaded with API key which does not have correct permission to access the widget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Log in as a Recruiter Admin to view this page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Something went wrong. There was an issue with our servers. Please try again",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When widget is unable to fetch permission for the API key provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try reloading the widget",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Something went wrong. There was an issue with our servers. Please try again",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When widget is unable to fetch integration configuration for the API key provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try reloading the widget",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Something went wrong. There was an issue with our servers. Please try again",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the fetching of the profile of the job-poster fails for an already saved job-poster",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try reloading the widget",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "An error occurred when fetching data. Please try again",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "While searching for a particular job poster, fetching of profiles fail on entering search key into input field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry with the key again, by deleting and reentering the key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Saving the default poster failed due to a network error. Please try again or contact LinkedIn Support",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the saving of default job poster fails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try again, as this is a server error",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Please select a job poster from the drop down",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the user clicks the Save button without selecting a valid job poster",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always try to choose user from suggeted drop down",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "No data found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the user enters a default job poster and relevant results as suggestions are not present within LinkedIn users",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please recheck if the entered job poster is spelled correctly to match the details of the profile",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Saving the recommended budget setting failed due to a network error. Please try again or contact LinkedIn Support",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the saving of recommended budget setting fails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try again, as this is a server error",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Something went wrong. There was an issue with our servers. Please try again",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fetching the recommended budget setting fails while loading the widget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try reloading the widget",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

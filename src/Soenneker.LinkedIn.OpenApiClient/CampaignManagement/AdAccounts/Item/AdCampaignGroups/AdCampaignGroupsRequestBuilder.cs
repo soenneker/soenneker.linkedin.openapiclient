@@ -91,21 +91,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
         /// <summary>
         /// Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates a Campaign Group](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#create-a-campaign-group) in the state DRAFT.Campaign groups can be created in ACTIVE or DRAFT state. You can change ACTIVE to ARCHIVED or PAUSED. This example [creates multiple Campaign Groups](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-create-campaign-groups) using the RestLi method BATCH_CREATE.Multiple campaign groups can be updated with a partial update. This example updates the amount and currencyCode for one Campaign Group and status for another Campaign Group using the RestLi method BATCH_PARTIAL_UPDATE.View our public documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-update-campaign-groups) to learn more.
         /// </summary>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201Response?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201Response> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroupRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.AdCampaignGroups.AdCampaignGroupsRequestBuilder.AdCampaignGroupsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementCreateACampaignGroup201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Multiple Campaign Group can be deleted as shown in this example call. View our online documentation [here](https://docs.microsoft.com/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?tabs=http#batch-delete-campaign-groups) to learn more.Only campaign groups which are in DRAFT status are allowed to be deleted. Once deleted, a campaign group can&apos;t be retrieved or recovered.
@@ -162,6 +163,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.CampaignManagement.AdAccounts.Item.Ad
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

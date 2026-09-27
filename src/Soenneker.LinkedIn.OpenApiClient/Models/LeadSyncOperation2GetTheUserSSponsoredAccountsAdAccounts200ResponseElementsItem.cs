@@ -14,9 +14,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
-        public int? Id { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn moreDocumented type: string, default=&quot;USD&quot;Requirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Currency { get; set; }
+#nullable restore
+#else
+        public string Currency { get; set; }
+#endif
+        /// <summary>Unique internal ID representing the accountDocumented type: longRequirement: False</summary>
+        public long? Id { get; set; }
+        /// <summary>A label for the accountDocumented type: stringRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -24,7 +32,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The referenceInfo property</summary>
+        /// <summary>Indicates if the campaign contact is notified about campaign optimization opportunitiesDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
+        public bool? NotifiedOnCampaignOptimization { get; set; }
+        /// <summary>Indicates if the creative contact is notified when a creative has been reviewed and approvedDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
+        public bool? NotifiedOnCreativeApproval { get; set; }
+        /// <summary>Indicates if the creative contact is notified when a creative has been rejected due to contentDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
+        public bool? NotifiedOnCreativeRejection { get; set; }
+        /// <summary>Indicates if the campaign contact is notified when an associated campaign has been completedDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
+        public bool? NotifiedOnEndOfCampaign { get; set; }
+        /// <summary>Indicates if the account owner is notified about new Campaign Manager featuresDocumented type: boolean, default=&quot;false&quot;Requirement: False</summary>
+        public bool? NotifiedOnNewFeaturesEnabled { get; set; }
+        /// <summary>The URN of the LinkedIn customer entity (an organization or an individual) that originated the order associated with this account, in the format urn:li:customer:{id}. This field applies to ENTERPRISE accounts only and is set when the account is created. It&apos;s an immutable field. Note: This field is only supported starting from API version 202608.Documented type: optional URNRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginatingCustomer { get; set; }
+#nullable restore
+#else
+        public string OriginatingCustomer { get; set; }
+#endif
+        /// <summary>Source product type of all campaigns under this account. If set, all campaigns under the account inherit this product type. This field applies to ENTERPRISE accounts only and is set when the account is created. It&apos;s an immutable field. Possible values are: MARKETING_SOLUTIONS - The account is created for LinkedIn Marketing Solutions (LMS) products.TALENT_SOLUTIONS - The account is created for LinkedIn Talent Solutions (LTS) products.LINKEDIN_ON_LINKEDIN - The account is created for LinkedIn On LinkedIn (LOL) products. Note: This field is only supported starting from API version 202608.Documented type: optional stringRequirement: False</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType? ProductType { get; set; }
+        /// <summary>The entity on whose behalf the account is advertised. Must either be in the format urn:li:person:{id} or urn:li:organization:{id}Documented type: optional URNRequirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reference { get; set; }
+#nullable restore
+#else
+        public string Reference { get; set; }
+#endif
+        /// <summary>Information about the entity associated with the reference. If the entity is an organization, an Organizationinfo object is returned. If the entity is a person, a Personinfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: UnionRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo? ReferenceInfo { get; set; }
@@ -32,8 +68,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo ReferenceInfo { get; set; }
 #endif
-        /// <summary>The test property</summary>
+        /// <summary>An array of enums with information about the account&apos;s system serving statuses. If an account is eligible for serving, then the array has a single element: RUNNABLE Otherwise, the array contains one or more reasons why the account is not servable: STOPPED BILLING_HOLD ACCOUNT_TOTAL_BUDGET_HOLD ACCOUNT_END_DATE_HOLD RESTRICTED_HOLD INTERNAL_HOLDDocumented type: string[], default=&quot;[]&quot;Requirement: False</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?>? ServingStatuses { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem?> ServingStatuses { get; set; }
+#endif
+        /// <summary>ACTIVE - Account is active; this is the default stateCANCELED - Account has been permanently canceledDRAFT - Account is in draft status, meaning it&apos;s not yet fully set up and it&apos;s not serving PENDING_DELETION - Denotes that the account has been requested to be deleted that&apos;s currently pendingREMOVED - Denotes that the account was deleted, but must remain fetchable due to the existence of performance data.Documented type: string, default=&quot;ACTIVE&quot;Requirement: False</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus? Status { get; set; }
+        /// <summary>Flag showing whether this account is marked as a test account. An account can be marked as test only during creation. This is an immutable field.Documented type: boolean, default=&quot;false&quot;Requirement: False</summary>
         public bool? Test { get; set; }
+        /// <summary>BUSINESS – This is the only value allowed when creating accounts through the API. ENTERPRISE – This value can&apos;t be used to create accounts through the API and is reserved for accounts created by LinkedIn&apos;s internal ad operations systems.Documented type: stringRequirement: True</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -59,10 +107,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "notifiedOnCampaignOptimization", n => { NotifiedOnCampaignOptimization = n.GetBoolValue(); } },
+                { "notifiedOnCreativeApproval", n => { NotifiedOnCreativeApproval = n.GetBoolValue(); } },
+                { "notifiedOnCreativeRejection", n => { NotifiedOnCreativeRejection = n.GetBoolValue(); } },
+                { "notifiedOnEndOfCampaign", n => { NotifiedOnEndOfCampaign = n.GetBoolValue(); } },
+                { "notifiedOnNewFeaturesEnabled", n => { NotifiedOnNewFeaturesEnabled = n.GetBoolValue(); } },
+                { "originatingCustomer", n => { OriginatingCustomer = n.GetStringValue(); } },
+                { "productType", n => { ProductType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType>(); } },
+                { "reference", n => { Reference = n.GetStringValue(); } },
                 { "referenceInfo", n => { ReferenceInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo.CreateFromDiscriminatorValue); } },
+                { "servingStatuses", n => { ServingStatuses = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem>()?.AsList(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus>(); } },
                 { "test", n => { Test = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType>(); } },
             };
         }
         /// <summary>
@@ -72,10 +132,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("notifiedOnCampaignOptimization", NotifiedOnCampaignOptimization);
+            writer.WriteBoolValue("notifiedOnCreativeApproval", NotifiedOnCreativeApproval);
+            writer.WriteBoolValue("notifiedOnCreativeRejection", NotifiedOnCreativeRejection);
+            writer.WriteBoolValue("notifiedOnEndOfCampaign", NotifiedOnEndOfCampaign);
+            writer.WriteBoolValue("notifiedOnNewFeaturesEnabled", NotifiedOnNewFeaturesEnabled);
+            writer.WriteStringValue("originatingCustomer", OriginatingCustomer);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemProductType>("productType", ProductType);
+            writer.WriteStringValue("reference", Reference);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo>("referenceInfo", ReferenceInfo);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemServingStatusesItem>("servingStatuses", ServingStatuses);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemStatus>("status", Status);
             writer.WriteBoolValue("test", Test);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

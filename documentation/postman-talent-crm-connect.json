@@ -1,0 +1,2255 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "body",
+      "grant_type": "client_credentials",
+      "tokenName": "tcrm-access-token"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027tcrm-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "f3644908-c8f7-4f44-9ac9-88726a08c8ac",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "b29ff2b7-1cc8-439b-82ad-df8940098e26",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "f4ca4f7e-5913-412f-90e9-e873543b4b5e",
+    "description": "CRM Connect synchronizes candidate information between your Candidate Relationship Management system and LinkedIn Recruiter. With CRM Connect, LinkedIn Recruiter users will be able to export LinkedIn member profiles to your external CRM System and view member profiles directly within the CRM. Users will also be able to view CRM recruiting activity from within LinkedIn Recruiter.\n\nThe following features will be available with CRM Connect:\n\n- In-CRM Indicator\n    \n- One-Click Export\n    \n- Profile Widget\n    \n- CRM tab in LinkedIn Recruiter\n    \n\nWe are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nFor more details, please check the [Talent CRM Connect Overiew](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview)",
+    "name": "Talent CRM Connect",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "description": "Configure Customer Applications and ATS Integrations. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration)",
+      "id": "f571ba63-afab-474c-9e60-64c18fb7563f",
+      "item": [
+        {
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "e4727cfb-4b6e-48ba-815d-f25fed92a576",
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "166b5fa5-7ea3-44df-bb5e-9dd793c0433a",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "d93e55b2-b58e-457f-8be5-00d350fad086",
+          "item": [
+            {
+              "description": "Once Customer requested for Integration, Partner has to update the Integration for \u0060One Click Export\u0060 , \u0060IN_ATS Indicator\u0060 , \u0060Profile  Plugin\u0060 and \u0060CSA_API\u0060 . To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#3-update-customer-integrations)",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "id": "aa6dfb2c-9218-4127-8970-c4c60a7dff59",
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "id": "211d5fac-da70-43f1-aebb-89bd9cf84cef",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "73405448-6b7e-4767-a607-8d6ac8b99a65",
+              "item": [
+                {
+                  "event": [
+                    {
+                      "listen": "test",
+                      "script": {
+                        "exec": [
+                          "var jsonData = JSON.parse(responseBody);",
+                          "pm.globals.set(\u0022customer_access_token\u0022, jsonData.access_token);"
+                        ],
+                        "id": "eb97f8c3-d8a6-4e3f-ada1-1514203cf6bd",
+                        "type": "text/javascript"
+                      }
+                    }
+                  ],
+                  "id": "f37760cb-3864-45c8-9613-73b08d61121d",
+                  "name": "Child Application Access Token",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "grant_type",
+                          "type": "text",
+                          "value": "client_credentials"
+                        },
+                        {
+                          "key": "client_id",
+                          "type": "text",
+                          "value": "{{customer_app_client_id}}"
+                        },
+                        {
+                          "key": "client_secret",
+                          "type": "text",
+                          "value": "{{customer_app_client_secret}}"
+                        }
+                      ]
+                    },
+                    "description": "Updating Customer Integration by using \u0060Child Application token\u0060",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "https://www.linkedin.com/oauth/v2/accessToken"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "124962e9-ef24-45d5-8d4e-3dd980cffb11",
+                  "name": "Update Customer ATSIntegration",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter One-Click Export Integration\u0022\n        }\n      }\n    }\n  }\n}"
+                    },
+                    "description": "\u0060/atsIntegrations\u0060 used to update the customer Integration. To enable \u0060ONE_CLICK_EXPORT\u0060, use \u0060integrationType=ONE_CLICK_EXPORT\u0060 in the request body. Partner can update other RSC Integrations by changing \u0060integrationType\u0060.\u0060ONE_CLICK_EXPORT\u0060 is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "type": "text",
+                        "value": "batch_partial_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "name": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids[0].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[0].integrationType",
+                          "value": "ONE_CLICK_EXPORT"
+                        },
+                        {
+                          "key": "ids[0].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[0].dataProvider",
+                          "value": "ATS"
+                        },
+                        {
+                          "key": "ids[1].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[1].integrationType",
+                          "value": "PROFILE_PLUGIN"
+                        },
+                        {
+                          "key": "ids[1].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[1].dataProvider",
+                          "value": "ATS"
+                        },
+                        {
+                          "key": "ids[2].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[2].integrationType",
+                          "value": "IN_ATS_INDICATOR"
+                        },
+                        {
+                          "key": "ids[2].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[2].dataProvider",
+                          "value": "ATS"
+                        },
+                        {
+                          "key": "ids[3].integrationContext",
+                          "value": "urn:li:contract:{{contract_id}}"
+                        },
+                        {
+                          "key": "ids[3].integrationType",
+                          "value": "CSA_API"
+                        },
+                        {
+                          "key": "ids[3].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[3].dataProvider",
+                          "value": "ATS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:{{org_id}}\u0026ids[1].integrationType=PROFILE_PLUGIN\u0026ids[1].tenantType=RECRUITER\u0026ids[1].dataProvider=ATS\u0026ids[2].integrationContext=urn:li:organization:{{org_id}}\u0026ids[2].integrationType=IN_ATS_INDICATOR\u0026ids[2].tenantType=RECRUITER\u0026ids[2].dataProvider=ATS\u0026ids[3].integrationContext=urn:li:contract:{{contract_id}}\u0026ids[3].integrationType=CSA_API\u0026ids[3].tenantType=RECRUITER\u0026ids[3].dataProvider=ATS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "42c15f46-e4fa-49ee-9b56-546e340449c1",
+                  "name": "Update Customer ATSIntegration - CRM_ONE_CLICK_EXPORT",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter CRM-One-Click Export Integration\u0022\n        }\n      }\n    }\n  }\n}"
+                    },
+                    "description": "\u0060/atsIntegrations\u0060 used to update the customer Integration. To enable \u0060ONE_CLICK_EXPORT\u0060, use \u0060integrationType=ONE_CLICK_EXPORT\u0060 in the request body. Partner can update other RSC Integrations by changing \u0060integrationType\u0060.\u0060ONE_CLICK_EXPORT\u0060 is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "type": "text",
+                        "value": "batch_partial_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids[0].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[0].integrationType",
+                          "value": "CRM_ONE_CLICK_EXPORT"
+                        },
+                        {
+                          "key": "ids[0].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[0].dataProvider",
+                          "value": "ATS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].dataProvider=ATS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "b2fb9ce0-7055-4a0b-9d71-6255b8949e29",
+                  "name": "Update Customer ATSIntegration - IN_CRM_INDICATOR",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_IN_ATS_INDICATOR\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter CRM ATS Indicator Integration\u0022\n        }\n      }\n    }\n  }\n}"
+                    },
+                    "description": "\u0060/atsIntegrations\u0060 used to update the customer Integration. To enable \u0060IN_ATS_INDICATOR \u0060, use \u0060integrationType= IN_ATS_INDICATOR \u0060 in the request body. Partner can update other RSC Integrations by changing \u0060integrationType\u0060.\u0060IN_ATS_INDICATOR \u0060 is Company level Integration To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "type": "text",
+                        "value": "batch_partial_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids[0].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[0].integrationType",
+                          "value": "IN_CRM_INDICATOR"
+                        },
+                        {
+                          "key": "ids[0].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[0].dataProvider",
+                          "value": "ATS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=IN_CRM_INDICATOR\u0026ids[0].tenantType=RECRUITER\u0026ids[0].dataProvider=ATS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "9b3ce970-8a61-4180-8120-144e8aa97083",
+                  "name": "Update Customer ATSIntegration - CRM_ PROFILE_PLUGIN",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_PROFILE_PLUGIN\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter CRM Profile Plugin Integration\u0022\n        }\n      }\n    }\n  }\n}"
+                    },
+                    "description": "\u0060/atsIntegrations\u0060 used to update the customer Integration. To enable \u0060PROFILE_PLUGIN \u0060, use \u0060integrationType= PROFILE_PLUGIN \u0060 in the request body. Partner can update other RSC Integrations by changing \u0060integrationType\u0060.\u0060PROFILE_PLUGIN \u0060 is Company level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "type": "text",
+                        "value": "batch_partial_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids[0].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[0].integrationType",
+                          "value": "CRM_PROFILE_PLUGIN"
+                        },
+                        {
+                          "key": "ids[0].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[0].dataProvider",
+                          "value": "ATS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=CRM_PROFILE_PLUGIN\u0026ids[0].tenantType=RECRUITER\u0026ids[0].dataProvider=ATS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "19d52a0f-ab59-4559-9aab-1145ab1d63f1",
+                  "name": "Update Customer ATSIntegration - CRM_CSA_API",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:contract:{{contract_id}}\u0026integrationType=CRM_CSA_API\u0026tenantType=RECRUITER\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022{{customer_name}} LinkedIn Recruiter CRM_CSA_API Integration\u0022\n        }\n      }\n    }\n  }\n}"
+                    },
+                    "description": "\u0060/atsIntegrations\u0060 used to update the customer Integration. To enable \u0060CSA_API \u0060, use \u0060integrationType= CSA_API \u0060 in the request body. Partner can update other RSC Integrations by changing \u0060integrationType\u0060.\u0060CSA_API \u0060 is Contract level Integration. To know more , please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#sample-request)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "type": "text",
+                        "value": "batch_partial_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "type": "text",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids[0].integrationContext",
+                          "value": "urn:li:contract:{{contract_id}}"
+                        },
+                        {
+                          "key": "ids[0].integrationType",
+                          "value": "CRM_CSA_API"
+                        },
+                        {
+                          "key": "ids[0].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[0].dataProvider",
+                          "value": "ATS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:contract:{{contract_id}}\u0026ids[0].integrationType=CRM_CSA_API\u0026ids[0].tenantType=RECRUITER\u0026ids[0].dataProvider=ATS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "47f7dd12-beb4-4671-abcc-8614f4b2228f",
+                  "name": "Verify Customer\u0027s  ATSIntegrations",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "bearer": {
+                        "token": "{{customer_access_token}}"
+                      },
+                      "type": "bearer"
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids[0].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[0].integrationType",
+                          "value": "IN_CRM_INDICATOR"
+                        },
+                        {
+                          "key": "ids[0].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[0].dataProvider",
+                          "value": "ATS"
+                        },
+                        {
+                          "key": "ids[1].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[1].integrationType",
+                          "value": "CRM_PROFILE_PLUGIN"
+                        },
+                        {
+                          "key": "ids[1].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[1].dataProvider",
+                          "value": "ATS"
+                        },
+                        {
+                          "key": "ids[2].integrationContext",
+                          "value": "urn:li:organization:{{org_id}}"
+                        },
+                        {
+                          "key": "ids[2].integrationType",
+                          "value": "CRM_ONE_CLICK_EXPORT"
+                        },
+                        {
+                          "key": "ids[2].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[2].dataProvider",
+                          "value": "ATS"
+                        },
+                        {
+                          "key": "ids[3].integrationContext",
+                          "value": "urn:li:contract:{{contract_id}}"
+                        },
+                        {
+                          "key": "ids[3].integrationType",
+                          "value": "CRM_CSA_API"
+                        },
+                        {
+                          "key": "ids[3].tenantType",
+                          "value": "RECRUITER"
+                        },
+                        {
+                          "key": "ids[3].dataProvider",
+                          "value": "ATS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].integrationType=IN_CRM_INDICATOR\u0026ids[0].tenantType=RECRUITER\u0026ids[0].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:{{org_id}}\u0026ids[1].integrationType=CRM_PROFILE_PLUGIN\u0026ids[1].tenantType=RECRUITER\u0026ids[1].dataProvider=ATS\u0026ids[2].integrationContext=urn:li:organization:{{org_id}}\u0026ids[2].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[2].tenantType=RECRUITER\u0026ids[2].dataProvider=ATS\u0026ids[3].integrationContext=urn:li:contract:{{contract_id}}\u0026ids[3].integrationType=CRM_CSA_API\u0026ids[3].tenantType=RECRUITER\u0026ids[3].dataProvider=ATS"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Update Customer\u0027s ATSIntegration (Mandatory)"
+            },
+            {
+              "id": "5d9f13c5-8aeb-442b-ad61-925b2241a110",
+              "item": [
+                {
+                  "id": "0eb35f02-68d2-489b-8876-f47edd3dad2e",
+                  "name": "Sync Integration Configuration - Callback URL (Mandatory)",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022CALLBACK_URL\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022\u003Chttps://YourCallbackURL\u003E\u0022\n      }\n    }\n  }\n}"
+                    },
+                    "description": "Once a customer creates an integration requiring configuration, you must create the configuration using this API before they can enable the integration.\u0060Callback URL\u0060 is mandatory for enabling Integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#upsert-integration-configurations)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "value": "batch_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "PUT",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations",
+                        "integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS",
+                        "configurations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "CALLBACK_URL"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=CALLBACK_URL"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "370a1f65-721d-47a1-8325-e20c5881ce16",
+                  "name": "Sync Integration Configuration - Job Posting Viewers (Optional)",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022JOB_POSTING_VIEWERS\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022ALL_PRODUCT_USERS\u0022\n      }\n    }\n  }\n}"
+                    },
+                    "description": "API governs who may view job postings within the One-Click Export drop-down.Customers can use this API, if they are not using ACL\u0027s.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "value": "batch_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "PUT",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations",
+                        "integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS",
+                        "configurations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "JOB_POSTING_VIEWERS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=JOB_POSTING_VIEWERS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "bc7cd760-7afb-4e1a-a8e1-2710e58fe5c2",
+                  "name": "Sync Integration Configuration - Application Viewers (Optional)",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \u0022entities\u0022: {\n    \u0022APPLICATION_VIEWERS\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022ALL_PRODUCT_USERS\u0022\n      }\n    }\n  }\n}"
+                    },
+                    "description": "API governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#integration-configuration-keys)",
+                    "header": [
+                      {
+                        "key": "x-restli-method",
+                        "value": "batch_update"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "PUT",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations",
+                        "integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=IN_CRM_INDICATOR\u0026tenantType=RECRUITER\u0026dataProvider=ATS",
+                        "configurations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "APPLICATION_VIEWERS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=IN_CRM_INDICATOR\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=APPLICATION_VIEWERS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "840b721c-23f2-4d98-b4bf-484e78cd7c2c",
+                  "name": "Delete Integration Configuration - Job Posting Viewers",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "description": "Customer can delete \u0060JOB_POSTING_VIEWERS\u0060 Integration using this API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#delete-integration-configurations)",
+                    "header": [],
+                    "method": "DELETE",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations",
+                        "integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS",
+                        "configurations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "JOB_POSTING_VIEWERS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=JOB_POSTING_VIEWERS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "8099d023-aa0c-407f-ad5b-7bedfc75012d",
+                  "name": "Delete Integration Configuration - Application Viewers",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "bearer": {
+                        "token": "{{customer_access_token}}"
+                      },
+                      "type": "bearer"
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": ""
+                    },
+                    "description": "Customer can delete \u0060APPLICATION_VIEWERS\u0060 Integration using this API. To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#delete-integration-configurations)",
+                    "header": [],
+                    "method": "DELETE",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations",
+                        "integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=IN_ATS_INDICATOR\u0026tenantType=RECRUITER\u0026dataProvider=ATS",
+                        "configurations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "APPLICATION_VIEWERS"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=IN_ATS_INDICATOR\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=APPLICATION_VIEWERS"
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "id": "852cc47e-fcf8-4e12-8e52-1d23c556972f",
+                  "name": "Verify Customer Integrations - Configs",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "API used to retrieve the Customer Integration Configurations.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types#verify-integration-configurations)",
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations",
+                        "integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS",
+                        "configurations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "ids",
+                          "value": "CALLBACK_URL"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=CALLBACK_URL"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Sync Integration Configurations (Mandatory)"
+            },
+            {
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "id": "fc31fd1c-9316-484c-a1b9-df1d648572b4",
+                    "type": "text/javascript"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "id": "ff988388-b18d-4a02-9ded-0ba4d4a95fb5",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "3b255f77-e65a-4fac-bc17-1e675bace7e7",
+              "item": [
+                {
+                  "id": "38b3eecb-1f81-41e4-91eb-0a0751020f5d",
+                  "name": "GET Notification Type INTEGRATION_STATUS_CHANGE",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "When a customer enables an integration, the onboarding status of that integration changes from \u0060Partner Ready\u0060 to \u0060Enabled\u0060. When that happens, LinkedIn will send you a push notification with a unique ID.Use this endpoint with the unique notification ID to retrieve more information about the enabled integration.To know more, please refer [here](https://docs.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration#5-verify-customer-integrations-enablement)",
+                    "header": [],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "atsIntegrations"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "request"
+                        },
+                        {
+                          "key": "requestId",
+                          "value": "{{Enter_Request_ID_obtained_from_POST_in_CallbackURL}}"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/atsIntegrations?q=request\u0026requestId={{Enter_Request_ID_obtained_from_POST_in_CallbackURL}}"
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Retrieve PUSH Notification Content"
+            },
+            {
+              "id": "e08ef423-85e8-4ab7-97db-ed94027cef48",
+              "item": [
+                {
+                  "id": "4370ef4f-120a-45b1-b440-068985e13301",
+                  "name": "Delete ATS Integration CRM_ONE_CLICK_EXPORT",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "bearer": {
+                        "token": "{{customer_access_token}}"
+                      },
+                      "type": "bearer"
+                    },
+                    "header": [],
+                    "method": "DELETE",
+                    "url": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "35890f77-ec0c-4e75-9c2b-ab3b373d4922",
+                  "name": "Delete ATS Integration IN_ATS_INDICATOR",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "bearer": {
+                        "token": "{{customer_access_token}}"
+                      },
+                      "type": "bearer"
+                    },
+                    "header": [],
+                    "method": "DELETE",
+                    "url": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=IN_ATS_INDICATOR\u0026tenantType=RECRUITER\u0026dataProvider=ATS"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "8bb596b1-1a04-4a19-a13f-b7fb0f3cda2c",
+                  "name": "Delete ATS Integration PROFILE_PLUGIN",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "bearer": {
+                        "token": "{{customer_access_token}}"
+                      },
+                      "type": "bearer"
+                    },
+                    "header": [],
+                    "method": "DELETE",
+                    "url": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{{org_id}}\u0026integrationType=PROFILE_PLUGIN\u0026tenantType=RECRUITER\u0026dataProvider=ATS"
+                  },
+                  "response": []
+                },
+                {
+                  "id": "d32862b1-475a-4ba0-a4f0-bbe6165d13ca",
+                  "name": "Delete ATS Integration CSA_PROFILE",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "header": [],
+                    "method": "DELETE",
+                    "url": "https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:contract:{{contract_id}}\u0026integrationType=CAS_PROFILE\u0026tenantType=RECRUITER\u0026dataProvider=ATS"
+                  },
+                  "response": []
+                }
+              ],
+              "name": "Delete ATS Integrations for Development App"
+            }
+          ],
+          "name": "Configure Customer Integrations"
+        }
+      ],
+      "name": "Module 1 - Customer Onboarding"
+    },
+    {
+      "description": "Candidates should be synced to the Middleware Platform whenever they are created or updated in your Talent CRM connect.\n\nFor more details, please see the [Sync Candidate documentation.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?context=linkedin/talent/crm-connect/full_context/context)",
+      "id": "69e23c80-980b-4713-b035-ca74fb3af659",
+      "item": [
+        {
+          "id": "fbb78e62-ce22-461a-ba13-28b21d13bf8d",
+          "name": "Sync TCRM Candidates",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n \u0022entities\u0022: {\n    \u0022atsCandidateId={{candidate_id}}\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{{org_id}}\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u002231 Spooner St\u0022,\n          \u0022city\u0022: \u0022Quahog\u0022,\n          \u0022geographicArea\u0022: \u0022RI\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002202802\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: {{$timestamp}}000,\n\t  \u0022atsLastModifiedAt\u0022: {{$timestamp}}000,\n      \u0022currentCompanyName\u0022: \u0022Pawtucket Patriot Brewery\u0022,\n      \u0022currentJobTitle\u0022: \u0022Quality Assurance\u0022,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/p-griffin\u0022,\n      \u0022firstName\u0022: \u0022Peter\u0022,\n      \u0022lastName\u0022: \u0022Griffin\u0022,\n      \u0022middleInitial\u0022: \u0022L\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-555-5555\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    }\n  }\n}\n"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "atsCandidates"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].atsCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "ATS"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/atsCandidates?ids[0].atsCandidateId={{candidate_id}}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "b0cc6ddf-8e77-4cdf-9008-1262a78c0948",
+          "name": "Get TCRM Candidates",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "atsCandidates"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].atsCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "ATS"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/atsCandidates?ids[0].atsCandidateId={{candidate_id}}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "e22b9050-984f-45b2-bb8e-765065f03dfd",
+          "name": "Delete TCRM Candidates",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "li-restli-method",
+                "value": "batch_delete"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "atsCandidates"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].atsCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "ATS"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/atsCandidates?ids[0].atsCandidateId={{candidate_id}}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM Candidates"
+    },
+    {
+      "description": "Pipelines (or the equivalent in your system) should be synced to the Middleware Platform whenever they are created or updated in your Talent CRM Connect. We define a pipeline as any feature that is used for nurturing and sourcing candidates. Other terms for pipeline include talent pool and folder.\n\nFor more details, please see the [Sync Pipelines document.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines?context=linkedin/talent/crm-connect/full_context/context)",
+      "id": "998aadab-19bc-44f3-a400-215eb9e813a9",
+      "item": [
+        {
+          "id": "550efbe5-f13c-42b6-a9c5-7bcd299d8ec9",
+          "name": "Sync TCRM Pipelines",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n  \u0022entities\u0022: {\n    \u0022tcrmPipelineId={{pipeline_id}}\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{{org_id}}\u0022: {\n      \u0022description\u0022: \u0022Testing for pipeline01.. Only for testing purposes\u0022,\n      \u0022externalJobPostingIds\u0022: [\u0022extJobPostingId01\u0022,\u0022extJobPostingId02\u0022],\n      \u0022locations\u0022: [\u0022locA\u0022,\u0022locB\u0022],       \n      \u0022ownerEmailAddress\u0022: \u0022foo@example.com\u0022,\n      \u0022ownerFirstName\u0022: \u0022Peter\u0022,\n      \u0022ownerLastName\u0022: \u0022Griffin\u0022,\n      \u0022pipelineState\u0022: \u0022OPEN\u0022,\n      \u0022skills\u0022: [\u0022java\u0022,\u0022jsp\u0022],\n      \u0022title\u0022: \u0022Peter pipeline\u0022,\n      \u0022private\u0022: true,\n      \u0022tcrmCreatedAt\u0022: {{$timestamp}}000,\n      \u0022tcrmLastModifiedAt\u0022: {{$timestamp}}000\n     }\n    } \n }"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmPipelines"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmPipelineId",
+                  "value": "{{pipeline_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmPipelines?ids[0].tcrmPipelineId={{pipeline_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "7dfedfbf-f67b-476f-935d-5c250633d9ef",
+          "name": "Delete TCRM Pipelines",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "li-restli-method",
+                "value": "batch_delete"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmPipelines"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmPipelineId",
+                  "value": "{{pipeline_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmPipelines?ids[0].tcrmPipelineId={{pipeline_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM Pipelines"
+    },
+    {
+      "description": "Pipeline Stages should be sent via the Middleware Platform whenever a new stage is created or an existing stage is updated in your Talent CRM.\n\nFor more details, please see the [Sync PipelineStages document](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages?context=linkedin/talent/crm-connect/full_context/context).",
+      "id": "9a8b060a-3b11-4c18-adaf-2f2a786f6cbc",
+      "item": [
+        {
+          "id": "b2dbeed3-e096-4104-ba50-d75c06f4eb5a",
+          "name": "Sync TCRM PipelineStages",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n\u0022entities\u0022: {\n    \u0022tcrmPipelineId={{pipeline_id}}\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{{org_id}}\u0026tcrmStageId={{stage_id}}\u0022: {\n    \u0022stageCategory\u0022:\u0022HIRED\u0022,\n    \u0022stageDetails\u0022:\u0022test stage details for stageid 05\u0022,\n    \u0022tcrmCreatedAt\u0022:{{$timestamp}}000,\n    \u0022tcrmLastModifiedAt\u0022:{{$timestamp}}000\n    }\n    }\n   } \n"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmPipelineStages"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmPipelineId",
+                  "value": "{{pipeline_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].tcrmStageId",
+                  "value": "{{stage_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmPipelineStages?ids[0].tcrmPipelineId={{pipeline_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].tcrmStageId={{stage_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "652713ed-9d85-4c68-b0c2-5e764aaa52c2",
+          "name": "Delete TCRM PipelineStages",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "li-restli-method",
+                "value": "batch_delete"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmPipelineStages"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmPipelineId",
+                  "value": "{{pipeline_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].tcrmStageId",
+                  "value": "{{stage_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmPipelineStages?ids[0].tcrmPipelineId={{pipeline_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].tcrmStageId={{stage_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM PipelineStages"
+    },
+    {
+      "description": "The Candidate Pipeline endpoint represents information about a candidate that is specific to a single pipeline. A candidate\u2019s pipeline information should be synced to the Middleware Platform whenever a candidate is added to, removed from, or updated inside a pipeline in your Talent CRM.\n\nFor more details, please see the [Sync CandidatePipelines document.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines?context=linkedin/talent/crm-connect/full_context/context)",
+      "id": "bd31aad9-b2c9-49cf-8ff4-88ed5b80196c",
+      "item": [
+        {
+          "id": "b1aec8be-56a9-4bed-b4a7-47b0e48d1013",
+          "name": "Sync TCRM CandidatePipelines",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n\u0022entities\u0022: {\n    \u0022tcrmCandidateId={{candidate_id}}\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{{org_id}}\u0026tcrmPipelineId={{pipeline_id}}\u0022: {\n    \u0022dispositionReason\u0022: \u0022Some dispo Reason - UPDATED\u0022,\n\t\t\t\u0022sources\u0022: [{\n\t\t\t\t\u0022sourceCategory\u0022: \u0022CAREER_SITE\u0022,\n\t\t\t\t\u0022sourceDetails\u0022: \u0022Met this candidate somewhere...\u0022\n\t\t\t}],\n\t\t\t\u0022tcrmCreatedAt\u0022: {{$timestamp}}000,\n\t\t\t\u0022tcrmLastModifiedAt\u0022: {{$timestamp}}000,\n\t\t\t\u0022tcrmStageId\u0022: \u0022tcrmStageId02\u0022\n    }\n    }\n   }\n"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmCandidatePipelines"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].tcrmPipelineId",
+                  "value": "{{pipeline_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmCandidatePipelines?ids[0].tcrmCandidateId={{candidate_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].tcrmPipelineId={{pipeline_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "90142931-2d22-47b3-8d7d-da9a12c072cb",
+          "name": "Delete TCRM CandidatePipelines",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "li-restli-method",
+                "value": "batch_delete"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmCandidatePipelines"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].tcrmPipelineId",
+                  "value": "{{pipeline_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmCandidatePipelines?ids[0].tcrmCandidateId={{candidate_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].tcrmPipelineId={{pipeline_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM CandidatePipelines"
+    },
+    {
+      "description": "The Candidate Pipeline Stages endpoint represents information about a candidate that is specific to a single pipeline and stage change. A candidate\u2019s pipeline information should be synced to the Middleware Platform whenever a candidate stage changes inside a pipeline in your Talent CRM.\n\nFor more details, please see the [Sync CandidatePipelineStages document.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages?context=linkedin%2Ftalent%2Fcrm-connect%2Ffull_context%2Fcontext)",
+      "id": "3b06f178-cf23-493b-9ba0-445eada28301",
+      "item": [
+        {
+          "id": "34fc6427-db68-4115-a96b-8bc4b7175095",
+          "name": "Sync TCRM CandidatePipelineStages",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n    \u0022entities\u0022: \n    {\n        \u0022tcrmCandidatePipelineStageId={{candidate_pipeline_stage_id}}\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:{{org_id}}\u0022: {\n            \u0022tcrmCandidateId\u0022: \u0022{{candidate_id}}\u0022,\n            \u0022tcrmPipelineId\u0022: \u0022{{pipeline_id}}\u0022,\n            \u0022tcrmStageId\u0022: \u0022{{stage_id}}\u0022,\n            \u0022tcrmCreatedAt\u0022: 1681600000000\n            }\n}"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmCandidatePipelineStages"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmCandidatePipelineStageId",
+                  "value": "{{candidate_pipeline_stage_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmCandidatePipelineStages?ids[0].tcrmCandidatePipelineStageId={{candidate_pipeline_stage_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "b1e937bd-cc4c-467b-9163-a70fe91ef55d",
+          "name": "Sync TCRM CandidatePipelineStages Copy",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_delete"
+              },
+              {
+                "disabled": true,
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmCandidatePipelineStages"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmCandidatePipelineStageId",
+                  "value": "{{candidate_pipeline_stage_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmCandidatePipelineStages?ids[0].tcrmCandidatePipelineStageId={{candidate_pipeline_stage_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM CandidatePipelineStages"
+    },
+    {
+      "description": "To upload a resume, you first need to get a signed URL from LinkedIn and then use it to upload the file. When uploading resume, LinkedIn recommends to abide by the following considerations:\n\n- Supported media formats are: PDF, DOC, or TXT\n- Ensure that the media file size does not exceed 10MB for all file types\n- Upload only one resume object per API call\n- Ensure that all calls to upload resume use OAuth 2.0 authentication\n    \n\nFor more details, please see the [Sync CandidateResunes document.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes?context=linkedin/talent/crm-connect/full_context/context)",
+      "id": "81b87983-5cda-4e63-9842-a30ac3f5817b",
+      "item": [
+        {
+          "id": "c747ec95-794e-4269-9228-a258273e02c4",
+          "name": "Sync TCRM CandidateResumes",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n\u0022entities\u0022: {\n   \u0022tcrmCandidateId={{candidate_id}}\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{{org_id}}\u0026tcrmResumeId={{resume_id}}\u0022: {\n    \u0022resumeFile\u0022: \u0022urn:li:ambryBlob:20012\u0022,\n        \u0022tcrmCreatedAt\u0022: {{timestamp}}000\n    }\n   }\n}\n"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmCandidateResumes"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "description": "ids[0].",
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].tcrmResumeId",
+                  "value": "{{resume_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmCandidateResumes?ids[0].tcrmCandidateId={{candidate_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].tcrmResumeId={{resume_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "957544a8-3158-48af-891d-816537076b29",
+          "name": "Delete TCRM CandidateResumes",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "li-restli-method",
+                "value": "batch_delete"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmCandidateResumes"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmCandidateId",
+                  "value": "{{candidate_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                },
+                {
+                  "key": "ids[0].tcrmResumeId",
+                  "value": "{{resume_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmCandidateResumes?ids[0].tcrmCandidateId={{candidate_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}\u0026ids[0].tcrmResumeId={{resume_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM CandidateResumes"
+    },
+    {
+      "description": "Interactions include any means by which a candidate has interacted with a recruiter, a candidate has interacted with a company, or a recruiter has updated a candidate\u2019s profile within the Talent CRM system (e.g., recruiter tags and notes). All of the interactions that fall into these categories should be sent via the Middleware Platform whenever they are created or updated in your CRM system.\n\nFor more details, please see the [Sync Interactions document.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions?context=linkedin/talent/crm-connect/full_context/context)",
+      "id": "05e28ae9-c77a-416f-96ef-6c2fa7b8243a",
+      "item": [
+        {
+          "id": "4d372c12-8f71-4d45-b36a-2fbc0bd54dc1",
+          "name": "Sync TCRM Interactions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\n \u0022entities\u0022: {\n    \u0022tcrmInteractionId={{interaction_id}}\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:{{org_id}}\u0022: {\n    \u0022tcrmCandidateId\u0022:\u0022CAND123\u0022,\n    \u0022tcrmPipelineId\u0022:\u0022pipeline_tom\u0022,\n    \u0022interactionDirection\u0022:\u0022TO\u0022,\n    \u0022interactionTypeCategory\u0022:\u0022INMAIL\u0022,\n    \u0022interactionTypeDescription\u0022:\u0022description\u0022,\n    \u0022notes\u0022:\u0022notes1\u0022,\n    \u0022recruiterEmailAddress\u0022:\u0022foo@example.com\u0022,\n    \u0022recruiterFirstName\u0022:\u0022Peter\u0022,\n    \u0022recruiterLastName\u0022:\u0022Griffin\u0022,\n    \u0022tcrmCreatedAt\u0022:{{timestamp}}000\n     }\n   }\n}\n"
+            },
+            "header": [
+              {
+                "key": "x-restli-method",
+                "value": "batch_update"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmInteractions"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmInteractionId",
+                  "value": "{{interaction_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmInteractions?ids[0].tcrmInteractionId={{interaction_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "eee2f0ce-0705-495a-a234-be2aa6546fa5",
+          "name": "Delete TCRM Interactions",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [
+              {
+                "key": "li-restli-method",
+                "value": "batch_delete"
+              }
+            ],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "tcrmInteractions"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "ids[0].tcrmInteractionId",
+                  "value": "{{interaction_id}}"
+                },
+                {
+                  "key": "ids[0].dataProvider",
+                  "value": "PARTNER"
+                },
+                {
+                  "key": "ids[0].integrationContext",
+                  "value": "urn:li:organization:{{org_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/tcrmInteractions?ids[0].tcrmInteractionId={{interaction_id}}\u0026ids[0].dataProvider=PARTNER\u0026ids[0].integrationContext=urn:li:organization:{{org_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Sync TCRM interactions"
+    },
+    {
+      "description": "LinkedIn allows the ability for customers to export limited LinkedIn profile information from LinkedIn Recruiter into their Talent CRM with a single click. This integration between LinkedIn Recruiter and the partner Talent CRM will improve workflow improvements for our customers.\n\nFor more details, please see the [Retrieve CRM Exported Candidate document.](https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates?context=linkedin/talent/crm-connect/full_context/context)",
+      "id": "b021e5a7-9666-4e5a-bd7d-64b3b32e4d35",
+      "item": [
+        {
+          "id": "df283836-9140-4668-9f49-e9b20387af99",
+          "name": "GET Notification Type EXPORT_CANDIDATE_PROFILE",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "exportedCandidates"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "q",
+                  "value": "request"
+                },
+                {
+                  "key": "requestId",
+                  "value": "{{Enter_Request_ID_obtained_from_POST_in_CallbackURL}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/exportedCandidates?q=request\u0026requestId={{Enter_Request_ID_obtained_from_POST_in_CallbackURL}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Module 3 - Retrieve Exported Candidate"
+    },
+    {
+      "id": "32aee527-71cf-4088-b8b5-a8a3d905c01b",
+      "item": [
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "bd1ad0c7-284d-4ed6-8720-1ccaa0da0fd6",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "a8660893-ff30-47c6-bc00-7e457a280798",
+          "name": "Retrieve InMail History",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "bearer": {
+                "token": "{{customer_access_token}}"
+              },
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "conversationEvents"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "q",
+                  "value": "criteria"
+                },
+                {
+                  "key": "viewer",
+                  "value": "urn:li:seat:{{seat_id}}"
+                },
+                {
+                  "key": "timeRange.end",
+                  "value": "{{time_start}}"
+                },
+                {
+                  "key": "timeRange.start",
+                  "value": "{{time_end}}"
+                },
+                {
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "key": "count",
+                  "value": "50"
+                },
+                {
+                  "disabled": true,
+                  "key": "fields",
+                  "value": "id"
+                },
+                {
+                  "disabled": true,
+                  "key": "threadUrn",
+                  "value": "{{thread_urn}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/conversationEvents?q=criteria\u0026viewer=urn:li:seat:{{seat_id}}\u0026timeRange.end={{time_start}}\u0026timeRange.start={{time_end}}\u0026start=0\u0026count=50"
+            }
+          },
+          "response": []
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "console.log(jsonData.elements.id)"
+                ],
+                "id": "64bce301-831d-4ef7-96c1-2ade72c8bf12",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "860c84c0-40fc-480c-ad8c-e984ce842277",
+          "name": "Retrieve Recruiter Seatholders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "seatsV2"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "q",
+                  "value": "attributes"
+                },
+                {
+                  "key": "contracts",
+                  "value": "urn:li:contract:{{contract_id}}"
+                },
+                {
+                  "key": "count",
+                  "value": "100"
+                },
+                {
+                  "key": "start",
+                  "value": "0"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/seatsV2?q=attributes\u0026contracts=urn:li:contract:{{contract_id}}\u0026count=100\u0026start=0"
+            }
+          },
+          "response": []
+        },
+        {
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "311496f6-ea37-4d8a-b7c8-3c911e822b39",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "465c04d3-e24c-4202-ad00-50103f382c45",
+          "name": "Retrieve InMail Stub Profiles",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "api",
+                "linkedin",
+                "com"
+              ],
+              "path": [
+                "v2",
+                "mailStubs"
+              ],
+              "protocol": "https",
+              "query": [
+                {
+                  "key": "q",
+                  "value": "contract"
+                },
+                {
+                  "key": "start",
+                  "value": "0"
+                },
+                {
+                  "key": "count",
+                  "value": "50"
+                },
+                {
+                  "key": "contract",
+                  "value": "urn:li:contract:{{contract_id}}"
+                },
+                {
+                  "key": "createdDateStart",
+                  "value": "{{time_start}}"
+                },
+                {
+                  "key": "createdDateEnd",
+                  "value": "{{time_end}}"
+                },
+                {
+                  "key": "owners",
+                  "value": "urn:li:seat:{{seat_id}}"
+                }
+              ],
+              "raw": "https://api.linkedin.com/v2/mailStubs?q=contract\u0026start=0\u0026count=50\u0026contract=urn:li:contract:{{contract_id}}\u0026createdDateStart={{time_start}}\u0026createdDateEnd={{time_end}}\u0026owners=urn:li:seat:{{seat_id}}"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Module 7 - Retrieve Additional Data from LinkedIn"
+    },
+    {
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "pm.globals.set(\u0022customer_access_token\u0022, jsonData.access_token);"
+            ],
+            "id": "9e5435f8-f6e8-4e52-b0f7-10b833a3a942",
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "409ac2ec-9725-418b-b9a6-ff1df417d364",
+      "name": "Get Customer Application Access Token Copy",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "type": "text",
+              "value": "client_credentials"
+            },
+            {
+              "key": "client_id",
+              "type": "text",
+              "value": "{{customer_app_client_id}}"
+            },
+            {
+              "key": "client_secret",
+              "type": "text",
+              "value": "{{customer_app_client_secret}}"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "method": "POST",
+        "url": "https://www.linkedin.com/oauth/v2/accessToken"
+      },
+      "response": []
+    },
+    {
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "pm.globals.set(\u0022customer_access_token\u0022, jsonData.access_token);"
+            ],
+            "id": "9e5435f8-f6e8-4e52-b0f7-10b833a3a942",
+            "packages": {},
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "b4541dd6-3547-47f3-881f-6c3de4183523",
+      "name": "Get Customer Application Access Token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "bearer": {
+            "token": "{{customer_access_token}}"
+          },
+          "type": "bearer"
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "type": "text",
+              "value": "client_credentials"
+            },
+            {
+              "key": "client_id",
+              "type": "text",
+              "value": "{{customer_app_client_id}}"
+            },
+            {
+              "key": "client_secret",
+              "type": "text",
+              "value": "{{customer_app_client_secret}}"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "method": "POST",
+        "url": "https://www.linkedin.com/oauth/v2/accessToken"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "candidate_id",
+      "value": ""
+    },
+    {
+      "key": "org_id",
+      "value": ""
+    },
+    {
+      "key": "timestamp",
+      "value": ""
+    },
+    {
+      "key": "pipeline_id",
+      "value": ""
+    },
+    {
+      "key": "stage_id",
+      "value": ""
+    },
+    {
+      "key": "resume_id",
+      "value": ""
+    },
+    {
+      "key": "interaction_id",
+      "value": ""
+    },
+    {
+      "key": "seat_id",
+      "value": ""
+    },
+    {
+      "key": "contract_id",
+      "value": ""
+    },
+    {
+      "key": "Enter_Request_ID_obtained_from_POST_in_CallbackURL",
+      "value": ""
+    },
+    {
+      "key": "candidate_pipeline_stage_id",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "key": "time_start",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "key": "time_end",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "key": "thread_urn",
+      "type": "string",
+      "value": ""
+    }
+  ]
+}

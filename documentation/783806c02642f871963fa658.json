@@ -1,0 +1,1908 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics",
+  "Title": "Organizational Page Content Analytics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-visitor-of-the-day",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "The Organizational Page Content Analytics DMA API provides:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "Single Post Analytics (SPA) demographics breakdown, including impressions, reactions, comments, reposts, and clicks.\nSPA reactions count breakdown by reaction types (e.g. Like, maybe, etc.)\nDemographics filter supported for the SPA breakdowns.\nSupport for trend data such as Organization level trend data and post level trend data.\nList of people who reacted, commented, reposted and viewed the post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "Finder postDimension returns a list of OrganizationalPageContentAnalytics for a post. The list will be a dimension breakdown under the requested dimension type.\nFinder trend returns a list of OrganizationalPageContentAnalytics for an organizational page or a post. The list will be a time series breakdown with the requested time range.\nFinder postGestures returns a list of OrganizationalPageContentAnalytics for a post. Each returned record represents a post gesture performed by a member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "We are taking the following measures to protect member privacy and limit backtracking of analytics data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Analytics",
+      "Anchor": "organizational-page-content-analytics",
+      "SectionPath": [],
+      "Text": "Analytics values that are lower than a specific threshold determined by the server will be returned as 0 instead.\nIf the same exact request is sent twice, slightly different results might be returned due to the randomization factor added by the server to the actual analytics value.\nWe enforce API rate limits in order to protect member identity. Once the quota is fully used, results with analytics value equal to 0 will be returned with metadata indicating the quota refresh time.\nIf the actual analytics value is very close to the server set threshold, the added randomization factor might put it below the threshold for some requests hence results with analytics value equal to 0 will be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on\ncompany page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "gesture/actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of actor who made the gesture. This field will be populated if the user has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "gesture/entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "It contains the gesture entity and could be empty depending on the gesture type. This field will be populated if the user has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sourceEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "It represents the source entity for the analytics record. It could be an organizational page URN with format urn:li:organizationalPage:{ID}, share URN with format urn:li:share:{ID} or an ugcPost URN with format urn:li:ugcPost:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageContentAnalyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type for the analytics data point. Value enums include: IMPRESSIONSUNIQUE_IMPRESSIONSCLICKSCOMMENTSREACTIONSREPOSTSENGAGEMENT_RATESPENDECPMENGAGEMENT_SPENDCTRACQUIRED_FOLLOWS",
+            "Links": [],
+            "Values": [
+              "IMPRESSIONS",
+              "UNIQUE_IMPRESSIONS",
+              "CLICKS",
+              "COMMENTS",
+              "REACTIONS",
+              "REPOSTS",
+              "ENGAGEMENT_RATE",
+              "SPEND",
+              "ECPM",
+              "ENGAGEMENT_SPEND",
+              "CTR",
+              "ACQUIRED_FOLLOWS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageContentAnalyticsMetric",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsmetric"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Aggregated values for a certain dimension or over selected time range. This field will be returned if the aggregated data for a certain analytics type is requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "gesture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageContentAnalyticsGesture",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsgesture"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "A gesture that is performed for the requested source entity. This field will be returned if the non-aggregated data for a certain analytics type is requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[OrganizationalPageAnalyticsDimension]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsdimension"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the filter list with the same dimension type.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeIntervals",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#timeintervals"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Time intervals to get analytics data for the specified period.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsDimension",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsdimension"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The dimension for the analytic.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpageanalyticsvalue"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The numeric value of the analytic.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#timerange"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The time range to fetch the statistics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeGranularityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeGranularity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unit time for granularity. Value enums include: DAYMONTHWEEKBIMONTHLY",
+            "Links": [],
+            "Values": [
+              "DAY",
+              "MONTH",
+              "WEEK",
+              "BIMONTHLY"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive value to specify the start of time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive value to specify the end of time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsDimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a specific member dimension type. Value enums include: JOB_FUNCTIONINDUSTRYSENIORITYREGION_GEOSTAFF_COUNT_RANGECOUNTRY_GEORELATIONSHIPORGANIZATIONOCCUPATIONREACTION",
+            "Links": [],
+            "Values": [
+              "JOB_FUNCTION",
+              "INDUSTRY",
+              "SENIORITY",
+              "REGION_GEO",
+              "STAFF_COUNT_RANGE",
+              "COUNTRY_GEO",
+              "RELATIONSHIP",
+              "ORGANIZATION",
+              "OCCUPATION",
+              "REACTION"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[urn: URN, staffRangeCount: StaffRangeCount, relationship: Relationship, reaction: ReactionType]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains value corresponding to type field. It can contain either URN, staffRangeCount, relationship or reaction. Value enums include: URN - function URN, geo URN, industry URN, organization URN, seniority URN, superTitle URN, title URNStaffRangeCount - StaffCountRange_SIZE_1, StaffCountRange_SIZE_2_TO_10, StaffCountRange_SIZE_11_TO_50, StaffCountRange_SIZE_51_TO_200, StaffCountRange_SIZE_201_TO_500, StaffCountRange_SIZE_501_TO_1000, StaffCountRange_SIZE_1001_TO_5000, StaffCountRange_SIZE_5001_TO_10000, StaffCountRange_SIZE_10001_OR_MORERelationship - EMPLOYEE ReactionType - REACT_LIKE, REACT_PRAISE, REACT_APPRECIATION, REACT_EMPATHY, REACT_INTEREST, REACT_MAYBE, REACT_ENTERTAINMENT",
+            "Links": [],
+            "Values": [
+              "URN - function URN, geo URN, industry URN, organization URN, seniority URN, superTitle URN, title URN",
+              "StaffRangeCount - StaffCountRange_SIZE_1, StaffCountRange_SIZE_2_TO_10, StaffCountRange_SIZE_11_TO_50, StaffCountRange_SIZE_51_TO_200, StaffCountRange_SIZE_201_TO_500, StaffCountRange_SIZE_501_TO_1000, StaffCountRange_SIZE_1001_TO_5000, StaffCountRange_SIZE_5001_TO_10000, StaffCountRange_SIZE_10001_OR_MORE",
+              "Relationship - EMPLOYEE",
+              "ReactionType - REACT_LIKE, REACT_PRAISE, REACT_APPRECIATION, REACT_EMPATHY, REACT_INTEREST, REACT_MAYBE, REACT_ENTERTAINMENT"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "totalCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[long: long, bigDecimal: BigDecimal]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "It contains the total count. It is null if no such value is applicable/available. This value will be BigDecimal type if percentage (e.g. engagement rate) based analytics type is requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "typeSpecificValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contentAnalyticsValue: OrganizationalPageContentAnalyticsValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsvalue"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Value containing analytics values specific for the use case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organicValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[long: long, bigDecimal: BigDecimal]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organic (non-sponsored) value. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sponsoredValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[long: long, bigDecimal: BigDecimal]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored value. Null if no such value is available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageDimensionFilter",
+      "Anchor": "organizationalpagedimensionfilter",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageDimensionFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageContentAnalyticsGestureType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "It contains the type of the gesture. Value enums include: COMMENTREACT_LIKEREACT_PRAISEREACT_APPRECIATIONREACT_EMPATHYREACT_INTERESTREACT_MAYBEREPOSTREACT_ENTERTAINMENTIMPRESSION",
+            "Links": [],
+            "Values": [
+              "COMMENT",
+              "REACT_LIKE",
+              "REACT_PRAISE",
+              "REACT_APPRECIATION",
+              "REACT_EMPATHY",
+              "REACT_INTEREST",
+              "REACT_MAYBE",
+              "REPOST",
+              "REACT_ENTERTAINMENT",
+              "IMPRESSION"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The URN of actor who made the gesture. This field will be populated if the user has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "It contains the gesture entity and could be empty depending on the gesture type. E.g. A comment gesture is represented by comment URN whereas gestures such as like, reaction do not have an entity URN. This field will be populated if the user has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageContentAnalytics?q=postDimension\u0026sourcePostEntity={SOURCE_POST_ENTITY_URN}\u0026metricType=REPOSTS\u0026dimensionType=STAFF_COUNT_RANGE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageContentAnalytics?q=postDimension\u0026sourcePostEntity={SOURCE_POST_ENTITY_URN}\u0026metricType=REPOSTS\u0026dimensionType=STAFF_COUNT_RANGE\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022REPOSTS\u0022,\n      \u0022metric\u0022: {\n        \u0022dimension\u0022: {\n          \u0022type\u0022: \u0022STAFF_COUNT_RANGE\u0022,\n          \u0022value\u0022: {\n            \u0022staffRangeCount\u0022: \u0022SIZE_2_TO_10\u0022\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022long\u0022: 2\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022long\u0022: 5\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022REPOST\u0022,\n        \u0022actor\u0022: \u0022urn:li:person:Jklpo\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:12345\u0022\n    },\n    {\n      \u0022type\u0022: \u0022REPOSTS\u0022,\n      \u0022metric\u0022: {\n        \u0022dimension\u0022: {\n          \u0022type\u0022: \u0022STAFF_COUNT_RANGE\u0022,\n          \u0022value\u0022: {\n            \u0022staffRangeCount\u0022: \u0022SIZE_11_TO_50\u0022\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022long\u0022: 1\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022long\u0022: 5\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022REPOST\u0022,\n        \u0022actor\u0022: \u0022urn:li:person:Jklpo\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:12345\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022REPOSTS\u0022,\n      \u0022metric\u0022: {\n        \u0022dimension\u0022: {\n          \u0022type\u0022: \u0022STAFF_COUNT_RANGE\u0022,\n          \u0022value\u0022: {\n            \u0022staffRangeCount\u0022: \u0022SIZE_2_TO_10\u0022\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022long\u0022: 2\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022long\u0022: 5\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022REPOST\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:12345\u0022\n    },\n    {\n      \u0022type\u0022: \u0022REPOSTS\u0022,\n      \u0022metric\u0022: {\n        \u0022dimension\u0022: {\n          \u0022type\u0022: \u0022STAFF_COUNT_RANGE\u0022,\n          \u0022value\u0022: {\n            \u0022staffRangeCount\u0022: \u0022SIZE_11_TO_50\u0022\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022long\u0022: 1\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022long\u0022: 5\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022REPOST\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:12345\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Finder name: postDimension.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=postDimension",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourcePostEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Source post entity URN for which the analytics is being fetched for. It can either be a share URN with format urn:li:share:{ID} or ugcPost URN with format urn:li:ugcPost:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sourceEntity=urn%3Ali%3AugcPost%3A123456",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageContentAnalyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Types of analytics that is to be requested. Supported enum values include: IMPRESSIONSCOMMENTSREACTIONSREPOSTS",
+            "Links": [],
+            "Values": [
+              "IMPRESSIONS",
+              "COMMENTS",
+              "REACTIONS",
+              "REPOSTS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "metricType=COMMENTS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimensionFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[OrganizationalPageDimensionFilter]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The dimensions filters for filtering the data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "dimensionFilters=List((values:List((type:STAFF_COUNT_RANGE,value:(staffRangeCount:SIZE_201_TO_500)))))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageAnalyticsDimensionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of dimension that is being requested. Supported enum values include: INDUSTRYSENIORITYREGION_GEOSTAFF_COUNT_RANGEORGANIZATIONREACTIONSTRUCTURED_TITLE_OCCUPATION",
+            "Links": [],
+            "Values": [
+              "INDUSTRY",
+              "SENIORITY",
+              "REGION_GEO",
+              "STAFF_COUNT_RANGE",
+              "ORGANIZATION",
+              "REACTION",
+              "STRUCTURED_TITLE_OCCUPATION"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "dimensionType=INDUSTRY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viewer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GuestUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional viewer support to provide guest URN with format.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "viewer=urn%3Ali%3Aguest%3A123456",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTDIMENSION",
+        "Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query analytics for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of OrganizationAnalyticsAuthorizationActionType.UPDATE_ANALYTICS_READ. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageContentAnalytics?q=trend\u0026sourceEntity={SOURCE_ENTITY_URN}\u0026metricTypes=List(IMPRESSIONS,COMMENTS)\u0026timeIntervals=(timeRange:(start:1638835200000,end:1670371199999))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageContentAnalytics?q=trend\u0026sourceEntity={SOURCE_ENTITY_URN}\u0026metricTypes=List(IMPRESSIONS,COMMENTS)\u0026timeIntervals=(timeRange:(start:1638835200000,end:1670371199999))\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022IMPRESSIONS\u0022,\n      \u0022metric\u0022: {\n        \u0022timeIntervals\u0022: {\n          \u0022timeRange\u0022: {\n            \u0022start\u0022: 1668124800000,\n            \u0022end\u0022: 1670284800000\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022bigDecimal\u0022: \u00220.0065\u0022\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022bigDecimal\u0022: \u00220.0065\u0022\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022IMPRESSIONS\u0022,\n        \u0022actor\u0022: \u0022urn:li:person:Jklpo\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:organizationalPage:2414183\u0022\n    },\n    {\n      \u0022type\u0022: \u0022COMMENTS\u0022,\n      \u0022metric\u0022: {\n        \u0022timeIntervals\u0022: {\n          \u0022timeRange\u0022: {\n            \u0022start\u0022: 1668124800000,\n            \u0022end\u0022: 1670284800000\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022long\u0022: 3\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022long\u0022: 3\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022COMMENTS\u0022,\n        \u0022actor\u0022: \u0022urn:li:person:Jklpo\u0022,\n        \u0022entity\u0022: \u0022urn:li:commentUrn:1233445\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:organizationalPage:2414183\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022IMPRESSIONS\u0022,\n      \u0022metric\u0022: {\n        \u0022timeIntervals\u0022: {\n          \u0022timeRange\u0022: {\n            \u0022start\u0022: 1668124800000,\n            \u0022end\u0022: 1670284800000\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022bigDecimal\u0022: \u00220.0065\u0022\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022bigDecimal\u0022: \u00220.0065\u0022\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022IMPRESSIONS\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:organizationalPage:2414183\u0022\n    },\n    {\n      \u0022type\u0022: \u0022COMMENTS\u0022,\n      \u0022metric\u0022: {\n        \u0022timeIntervals\u0022: {\n          \u0022timeRange\u0022: {\n            \u0022start\u0022: 1668124800000,\n            \u0022end\u0022: 1670284800000\n          }\n        },\n        \u0022value\u0022: {\n          \u0022totalCount\u0022: {\n            \u0022long\u0022: 3\n          },\n          \u0022typeSpecificValue\u0022: {\n            \u0022contentAnalyticsValue\u0022: {\n              \u0022organicValue\u0022: {\n                \u0022long\u0022: 3\n              }\n            }\n          }\n        }\n      },\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022COMMENTS\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:organizationalPage:2414183\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER TREND",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Finder name: trend.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=trend",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Source entity URN for which the analytics is being fetched for. It can either be an organizational page URN with format urn:li:organizationalPage:{ID}, share URN with format urn:li:share:{ID} or an ugcPost URN with format urn:li:ugcPost:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sourceEntity=urn%3Ali%3AorganizationalPage%3A2414183",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[OrganizationalPageContentAnalyticsType]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of types of analytics that is to be requested. Supported enum values include: IMPRESSIONSUNIQUE_IMPRESSIONS(organic only)CLICKSCOMMENTSREACTIONSREPOSTSENGAGEMENT_RATESPEND(sponsored only)ECPM(sponsored only)ENGAGEMENT_SPEND(sponsored only)CTRACQUIRED_FOLLOWS(sponsored only)",
+            "Links": [],
+            "Values": [
+              "IMPRESSIONS",
+              "UNIQUE_IMPRESSIONS(organic only)",
+              "CLICKS",
+              "COMMENTS",
+              "REACTIONS",
+              "REPOSTS",
+              "ENGAGEMENT_RATE",
+              "SPEND(sponsored only)",
+              "ECPM(sponsored only)",
+              "ENGAGEMENT_SPEND(sponsored only)",
+              "CTR",
+              "ACQUIRED_FOLLOWS(sponsored only)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "metricTypes=List(IMPRESSIONS,UNIQUE_IMPRESSIONS,CLICKS)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeIntervals",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#timeintervals"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Time interval for which the analytics is to be fetched. Please note that if WEEK is passed in as the granularity in the time interval sponsored value cannot be broken down by weeks. In this case the value of the whole time range will be returned.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagecontentanalyticsvalue"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeIntervals=(timeRange:(start:1638835200000,end:1670371199999))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimensionFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[OrganizationalPageDimensionFilter]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The dimensions filters for filtering the data. Note: This query param is only supported after API version 202402.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "dimensionFilters=List((values:List((type:STAFF_COUNT_RANGE,value:(staffRangeCount:SIZE_201_TO_500)))))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viewer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GuestUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional viewer support to provide guest URN with format urn:li:guest:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "viewer=urn%3Ali%3Aguest%3A123456",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageContentAnalytics?q=postGestures\u0026sourcePostEntity={SOURCE_POST_ENTITY_URN}\u0026metricType=COMMENTS\u0026start=0\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageContentAnalytics?q=postGestures\u0026sourcePostEntity={SOURCE_POST_ENTITY_URN}\u0026metricType=COMMENTS\u0026start=0\u0026count=5\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 5,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022COMMENTS\u0022,\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022COMMENT\u0022,\n        \u0022actor\u0022: \u0022urn:li:person:Jklpo\u0022,\n        \u0022entity\u0022: \u0022urn:li:commentUrn:1233445\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:713377585\u0022\n    },\n    {\n      \u0022type\u0022: \u0022COMMENTS\u0022,\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022COMMENT\u0022,\n        \u0022actor\u0022: \u0022urn:li:person:Jklpo\u0022,\n        \u0022entity\u0022: \u0022urn:li:commentUrn:1233445\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:71337758585\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 5,\n    \u0022links\u0022: []\n  },\n  \u0022metadata\u0022: {},\n  \u0022elements\u0022: [\n    {\n      \u0022type\u0022: \u0022COMMENTS\u0022,\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022COMMENT\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:7133775858552512512\u0022\n    },\n    {\n      \u0022type\u0022: \u0022COMMENTS\u0022,\n      \u0022gesture\u0022: {\n        \u0022type\u0022: \u0022COMMENT\u0022\n      },\n      \u0022sourceEntity\u0022: \u0022urn:li:share:7133775858552512512\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Content Analytics Data",
+        "FINDER POSTGESTURES",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Finder name: postGestures.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=postGestures",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourcePostEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Source post entity URN for which the analytics is being fetched for. It can either be a share URN with format urn:li:share:{ID} or an ugcPost URN with format urn:li:ugcPost:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sourceEntity=urn%3Ali%3Ashare%3A123456",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageContentAnalyticsType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Types of analytics that is to be requested. Supported enum values include: IMPRESSIONSCOMMENTSREACTIONSREPOSTS",
+            "Links": [],
+            "Values": [
+              "IMPRESSIONS",
+              "COMMENTS",
+              "REACTIONS",
+              "REPOSTS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "metricType=COMMENTS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dimensionFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[OrganizationalPageDimensionFilter]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationalpagedimensionfilter"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The dimensions filters for filtering the data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "dimensionFilters=List((values:List((type:STAFF_COUNT_RANGE,value:(staffRangeCount:SIZE_201_TO_500)))))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viewer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GuestUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional viewer support to provide guest URN with format urn:li:guest:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "viewer=urn%3Ali%3Aguest%3A123456",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=3",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of requests exceed the privacy budget limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

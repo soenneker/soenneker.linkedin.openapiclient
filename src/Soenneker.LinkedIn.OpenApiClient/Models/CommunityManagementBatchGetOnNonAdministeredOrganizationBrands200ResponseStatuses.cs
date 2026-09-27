@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The EightNineSevenFiveEightFourEightEight property</summary>
-        public int? EightNineSevenFiveEightFourEightEight { get; set; }
+        public long? EightNineSevenFiveEightFourEightEight { get; set; }
         /// <summary>The ThreeFiveSixTwoFiveNineFourThree property</summary>
-        public int? ThreeFiveSixTwoFiveNineFourThree { get; set; }
+        public long? ThreeFiveSixTwoFiveNineFourThree { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetOnNonAdministeredOrganizationBrands200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "89758488", n => { EightNineSevenFiveEightFourEightEight = n.GetIntValue(); } },
-                { "35625943", n => { ThreeFiveSixTwoFiveNineFourThree = n.GetIntValue(); } },
+                { "89758488", n => { EightNineSevenFiveEightFourEightEight = n.GetLongValue(); } },
+                { "35625943", n => { ThreeFiveSixTwoFiveNineFourThree = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("89758488", EightNineSevenFiveEightFourEightEight);
-            writer.WriteIntValue("35625943", ThreeFiveSixTwoFiveNineFourThree);
+            writer.WriteLongValue("89758488", EightNineSevenFiveEightFourEightEight);
+            writer.WriteLongValue("35625943", ThreeFiveSixTwoFiveNineFourThree);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

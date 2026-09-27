@@ -1,0 +1,540 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/marketplace-provider-schema",
+  "Title": "Marketplace Provider Reference",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/marketplace-provider-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Marketplace Provider Schema",
+      "Anchor": "marketplace-provider-schema",
+      "SectionPath": [
+        "Marketplace Provider Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Locale associated with the provider.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "marketplaceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of marketplace the provider is providing supply for. Can only be the following value: SERVICE_MARKETPLACE - Represents the service marketplace which contains requesters and service providers.",
+            "Links": [],
+            "Values": [
+              "SERVICE_MARKETPLACE - Represents the service marketplace which contains requesters and service providers."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "preferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Preferences selected by the provider upon onboarding onto the marketplace.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.marketplaceplatform.servicemarketplace.ServiceProviderPreferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ServiceProviderPreferences",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/marketplace-provider-schema#service-provider-preferences-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Preferences for service providers who are part of the service marketplace.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "provider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The provider who can provide the supply. E.g. urn:li:person:ABC123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The vanity name associated with a particular Provider.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Provider Preferences Schema",
+      "Anchor": "service-provider-preferences-schema",
+      "SectionPath": [
+        "Service Provider Preferences Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "availableToWorkRemotely",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True if the provider has selected that he/she is available to work remotely, false if otherwise.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optedIntoOpenToExperience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defaults to false. True if the provider is opted into to the Open To experience, false if not.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optedIntoOpenToExperienceAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time the provider initially opted into the OpenTo experience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileLocationSelected",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "True if the provider would like to use their profile location to specify where he/she offers services, false if otherwise. This field will only be populated if optedIntoOpenToExperience is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "serviceProviderSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service skills that the provider has selected through the Open To experience, contains both serviceSkillFamily and serviceSkills. This field is only populated if optedIntoOpenToExperience is true.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "serviceSkillFamily",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional SkillUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The parent service skill that the provider has selected through the Open To experience. This field is only populated if a provider has opted into the Open To experience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "serviceSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional SkillUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The list of service skills that the provider has selected through the Open To experience. This field is only populated if a provider has opted into the Open To experience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servicesDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description shown in the Services Page services description section. This is an optional field for the Services Page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servicesPageStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status of the Service Page. Can only be the following value: ACTIVE - The Services Page is active on the platform. UNPUBLISHED - The Services Page is unpublished on the platform.",
+            "Links": [],
+            "Values": [
+              "ACTIVE - The Services Page is active on the platform.",
+              "UNPUBLISHED - The Services Page is unpublished on the platform."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "servicesPageVanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The vanity name for a Services Page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "willingToReceiveFreeInquiries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True if the provider has selected that he/she is willing to receive free inquires false if otherwise. This field will only be populated if optedIntoOpenToExperience is true.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/developer-webhooks",
+  "Title": "Developer Webhooks",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/developer-webhooks",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Developer Webhooks",
+      "Anchor": "developer-webhooks",
+      "SectionPath": [],
+      "Text": "To better support partners who provision applications and register webhooks on behalf of their customers, we\u0027ve introduced a new email notification and API for partners to verify and resolve webhook url issues.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Partners with Apply Connect and Job Posting integrations have the following permissions to manage webhook statuses for provisioned applications:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Access for parent applications to retrieve all webhooks and statuses for child apps.\nAccess for parent applications to revalidate webhooks in batches.\nReceive job status updates via webhooks.\nReceive job resync requests via webhooks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "If you are notified of child application webhook urls being blocked:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Use the DeveloperWebhooks API Finder to validate what webhook urls are in a blocked state.\nResolve any application issues to allow push events to be delivered and validated successfully.\nRevalidate any blocked webhook urls using the DeveloperWebhooks API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DeveloperWebhooks Finder",
+      "Anchor": "developerwebhooks-finder",
+      "SectionPath": [
+        "DeveloperWebhooks Finder"
+      ],
+      "Text": "If you received an email notification that child application webhooks have been blocked, use the DeveloperWebhooks Finder to query for all urls and associated applications with a status of BLOCKED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DeveloperWebhooks Finder Request Body Fields",
+      "Anchor": "developerwebhooks-finder-request-body-fields",
+      "SectionPath": [
+        "DeveloperWebhooks Finder",
+        "DeveloperWebhooks Finder Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of query, must use parentApplication.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp for when the action was taken. Milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DeveloperWebhookQueryCriteria",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/developer-webhooks#developerwebhookquerycriteria-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DeveloperWebhookQueryCriteria Schema",
+      "Anchor": "developerwebhookquerycriteria-schema",
+      "SectionPath": [
+        "DeveloperWebhooks Finder",
+        "DeveloperWebhookQueryCriteria Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "webhookStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search webhook by its status: active or blocked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Headers",
+      "Anchor": "sample-headers",
+      "SectionPath": [
+        "DeveloperWebhooks Finder",
+        "Sample Headers"
+      ],
+      "Text": "Authorization: Bearer {access_token}\nX-RestLi-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "DeveloperWebhooks Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/developerWebhooks?q=parentApplication\u0026queryCriteria=(webhookStatus:BLOCKED)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "DeveloperWebhooks Finder",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022developerApplication\u0022: \u0022urn:li:developerApplication:12345678\u0022,\n            \u0022url\u0022: \u0022{webhook_url}\u0022,\n            \u0022status\u0022: \u0022BLOCKED\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Revalidate Blocked Webhooks",
+      "Anchor": "revalidate-blocked-webhooks",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks"
+      ],
+      "Text": "Once you\u0027ve identified the developerApplication and url with a status of BLOCKED, process all urls using the revalidateWebhook ACTION. This will trigger the webhook validation process and send a challengeRequest to the registered webhook url.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DeveloperWebhooks RevalidateWebhook Headers",
+      "Anchor": "developerwebhooks-revalidatewebhook-headers",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "DeveloperWebhooks RevalidateWebhook Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Key",
+        "Value",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {access_token}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-RestLi-Protocol-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2.0.0",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DeveloperWebhooks RevalidateWebhook Query Parameters",
+      "Anchor": "developerwebhooks-revalidatewebhook-query-parameters",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "DeveloperWebhooks RevalidateWebhook Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Key",
+        "Value",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "revalidateWebhook",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DeveloperWebhooks RevalidateWebhook Request Body Fields",
+      "Anchor": "developerwebhooks-revalidatewebhook-request-body-fields",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "DeveloperWebhooks RevalidateWebhook Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DeveloperApplicationUrn associated to the blocked webhook url.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "webhook",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Webhook url registered to the DeveloperApplicationUrn which is blocked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Headers",
+      "Anchor": "sample-headers-1",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "Sample Headers"
+      ],
+      "Text": "Authorization: Bearer {access_token}\nX-RestLi-Protocol-Version: 2.0.0\nX-RestLi-Method:action",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/developerWebhooks?action=revalidateWebhook",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022application\u0022:\u0022urn:li:developerApplication:12345678\u0022,\n    \u0022webhook\u0022:\u0022{webhook_url}\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Revalidate Blocked Webhooks",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022developerApplication\u0022: \u0022urn:li:developerApplication:12345678\u0022,\n            \u0022url\u0022: \u0022{webhook_url}\u0022,\n            \u0022status\u0022: \u0022BLOCKED\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

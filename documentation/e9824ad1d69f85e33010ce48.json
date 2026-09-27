@@ -1,0 +1,243 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+  "Title": "Getting Access to Lead Sync API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Lead Sync API",
+      "Anchor": "getting-access-to-lead-sync-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Lead Sync API",
+      "Anchor": "getting-access-to-lead-sync-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Access to Lead Sync API",
+      "Anchor": "getting-access-to-lead-sync-api",
+      "SectionPath": [],
+      "Text": "The Lead Sync API makes it easy for your customers to automatically collect and sync leads to your platform \u2013 saving them time and enabling their sales teams to act on them in real-time.\nThe new API provides access to leads for all marketing use cases, including ads and events as well as the capability to map custom field names to your CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "Lead Sync: Sync leads directly to a destination such as a marketing automation platform, CRM, or CDP\nReporting: Connect leads with sales data to understand if a lead translated to a purchase\nNotification: Create real-time notifications to inform sales of new leads for immediate follow-up.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "You have access to the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "Lead Sync: APIs to retrieve lead gen forms and form response (lead) data. Permission required is r_marketing_leadgen_automation.\nEvents: The APIs that retrieve your organization\u0027s events. Permission required is r_events.\nPage Access: APIs to find organizations and organizations\u0027 administrators and access control details by roles. Permission required is r_organization_admin. This permission is only available from Linkedin-Version: 202210 or later.\nAccount Structure: APIs to retrieve information across sponsored accounts, campaign groups, campaigns, and creatives. Permission required is r_ads.\nLite profile information: APIs to retrieve the name and photo of the authenticated user. Permission required is r_liteprofile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "If you want to create and manage LinkedIn Lead Gen Forms, you should request access to the Advertising API and use the lead syncing endpoints available within the rw_ads permission to create a Lead Gen Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Applying for Lead Sync API Access",
+        "Prerequisites"
+      ],
+      "Text": "Read the LinkedIn Marketing API Terms and developer documentation.\nEnsure your use case matches one of the Supported Use Cases.\nBe prepared to share your business email address and your organization\u2019s legal name, registered address, website. Your business email address will have to be verified. If you don\u2019t receive the verification email, be sure to check your email\u0027s spam folder, junk folder, social tab, and promotional tab. Personal email addresses won\u0027t pass the review process.\nCompany Page Verification is required for a developer application applying for access to API. Ensure that you\u0027re not using a fake or test company page.\nEnsure that a super admin of the LinkedIn Page associated with your organization has verified your developer application.\nEnsure that your application doesn\u0027t include any portion of the LinkedIn or Microsoft names or logos (e.g. Linked or In).\nEnsure that you have filled out all required fields in the access request form accurately and completely.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Applying for Lead Sync API Access",
+        "Prerequisites"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Applying for Lead Sync API Access",
+        "Prerequisites"
+      ],
+      "Text": "Any failure to meet the above prerequisites will result in your access request being rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Login to Developer Portal with your LinkedIn account.\nChoose your developer app from My Apps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "If you or your organization doesn\u0027t have an existing developer app, create a new developer application.\n3. Navigate to the Products tab under your App name.\n4. From the list of Additional available products, search for the Lead Sync API product and select Request Access.\n5. Submit the form for LinkedIn to review your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review Process",
+      "Anchor": "review-process",
+      "SectionPath": [
+        "Review Process"
+      ],
+      "Text": "Once you have submitted the access request form, it will be reviewed by LinkedIn for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review Process",
+      "Anchor": "review-process",
+      "SectionPath": [
+        "Review Process"
+      ],
+      "Text": "Verified business email address.\nVerified organization\nVerified organization website and domain address\nApplication verified by LinkedIn Page associated with same organization.\nApproved use case\nCompliance with our terms, restrictions, and security, privacy, and trust requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If your application is approved, you\u0027ll be notified over email about your access to the Lead Sync API and your developer application will be provisioned with the required permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If your application is denied due to identity vetting failure, for example, when we were unable to verify that your organization is a legally registered active entity, you\u0027ll see an option to appeal for it from your developer portal application products, when you click on the Access denied link next to Lead Sync API product. Please reach out via a Developer Support ticket.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If your application is rejected, for example, when your access request form provided insufficient details to approve your request, review the Prerequisites and Review Process to ensure your application is in compliance, and if you don\u0027t see any option to appeal for it, then you may create a new developer application, and submit a new access request form. Please see the Developer application review status definitions for details about each status and rejection message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Please note that even if LinkedIn approves your integration, you\u0027re solely responsible for ensuring that your integration (including all use, disclosure, and storage of LinkedIn data) is, at all times, in compliance with: (a) the LinkedIn Marketing API Terms and the LinkedIn developer documentation; and (b) all other requirements or restrictions that LinkedIn separately communicates to you (e.g. during or after the review process). LinkedIn retains the right to monitor your application and suspend or discontinue access to the Lead Sync API for any non-compliance with the LinkedIn Marketing API Terms, even if your application was previously approved by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "If you have additional questions or concerns, please reach out via a Developer Support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

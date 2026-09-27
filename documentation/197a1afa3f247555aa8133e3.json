@@ -1,0 +1,1233 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan",
+  "Title": "Manage Media Plans",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Manage Media Plans",
+      "Anchor": "manage-media-plans",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage Media Plans",
+      "Anchor": "manage-media-plans",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Media Planners can utilize the /mediaPlan API to save and retrieve media plans within an advertising account, allowing them to reference previously created media plans.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This is a private API that\u0027s available to qualified developers who meet additional criteria for access. To learn more about eligibility qualifications and how to request access, please see the FAQ. If you wish to apply for access, submit the application survey.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_media_plans",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage an authenticated member\u0027s Media Plans. Can manage and read Media Plans. This permission belongs to the Media Planning API program and is not granted automatically as part of the LinkedIn Marketing API Program.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "mediaPlanUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the media plan was created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the creator of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored ad account URN where the authenticated user has a valid ad account user role.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#targetingcriteria-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object defines the audience that the desired insights are for. This is a boolean expression of ad targeting facets and entities that identifies the member attributes to be included/excluded in the audience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The currency units for the forecasting curve.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional(default=USD)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (Enum)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The objective of your marketing campaign. Refer objectivetype.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optimizationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (Enum)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketing results that you\u2019re optimizing for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=MAX_REACH for BRAND_AWARENESS objectiveType, default=MAX_VIDEO_VIEW for VIDEO_VIEW objective type, and default=MAX_LEAD for LEAD_GENERATION objective type)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startDateOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-09\u0026tabs=http#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=today\u2019s date in UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endDateOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-09\u0026tabs=http#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The end date of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=90 days from today\u2019s date in UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetBudgetMicros",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A specific budget that the caller is interested in. More metrics will be returned about this point. Note that this budget is represented in micros for precision ($1 USD = 1000000 micros)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=none)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enableAudienceNetwork",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn Audience Network status. (It\u2019s enabled if true and disabled if false.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=true)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enableAudienceExpansion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Audience Expansion status. (It\u2019s enabled if true and disabled if false.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=true)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ctvOnly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecast for connected TV only campaigns if true. This only be supported if objective is BRAND_AWARENESS and enableAudienceNetwork is set to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reachCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the reach curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action=REACH). The forecasted results are direction estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reachPercentageCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the reach percentage curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action=REACH and enableAudienceExpansion=false). The forecasted results are direction estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impressionCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the impressions curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action=IMPRESSION). The forecasted results are direction estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageFrequency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Average Frequency is a single point value calculated by impression/reach assuming the single point budget in the request was used to forecast impression and reach results. It would be returned together with the impression curve if the forecasted impression is requested. Optional (returned when action=IMPRESSION and targetBudgetMicros is set in the input). The forecasted results are direction estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the lead generation curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and leads generated would be on the y-axis. Optional(returned only when action=LEAD). The forecasted results are direction estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cost Per Reach is a single point value calculated by spend/reach assuming the single point budget in the request was used to forecast cost per each reach, currently supports USD only. Optional(returned only when action=REACH). The forecasted results are direction estimates and don\u0027t guarantee the actual performance of campaigns. NOTE: costPerReach is only supported for API Versions starting from February 2025 and above.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerThousandImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cost Per Thousand Impressions is a single point value calculated by spend/(impression * 1000), assuming the single point budget in the request was used to forecast cost per each impression, currently supports USD only. Optional(returned only when action=IMPRESSION). The forecasted results are direction estimates and don\u0027t guarantee the actual performance of campaigns. NOTE: costPerThousandImpressions is only supported for API Versions starting from February 2025 and above.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cost Per Lead is a single point value calculated by spend/lead, assuming the single point budget in the request was used to forecast cost per each lead, currently supports USD only. Optional(returned only when action=LEAD). The forecasted results are direction estimates and don\u0027t guarantee the actual performance of campaigns. NOTE: costPerLead is only supported for API Versions starting from February 2025 and above.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Forecast Metric Type",
+      "Anchor": "forecast-metric-type",
+      "SectionPath": [
+        "Schema",
+        "Forecast Metric Type"
+      ],
+      "Text": "Forecast metrics type is an enum that specifies the type of forecast metrics to include when creating a media plan. The following forecast metric types are supported:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Forecast Metric Type",
+      "Anchor": "forecast-metric-type",
+      "SectionPath": [
+        "Schema",
+        "Forecast Metric Type"
+      ],
+      "Text": "",
+      "Headers": [
+        "Forecast Metric Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "REACH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This metric describes the forecasted amount of unique members that will see the ad. Media plan will be created with reach and reach percentage curve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMPRESSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This metric describes the forecasted number of impressions on the ad. Media plan will be created with impression and average frequency curve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This metric describes the forecasted number of leads generated from the campaign. Media Plan will be created with lead curve.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Date",
+      "Anchor": "date",
+      "SectionPath": [
+        "Sub-schemas",
+        "Date"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Day represented in integer. Valid range from 1 to 31 depending on month.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Month represented in integer. Valid range from 1 to 12.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Year represented in integer.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Media Plan",
+      "Anchor": "create-a-media-plan",
+      "SectionPath": [
+        "Create a Media Plan"
+      ],
+      "Text": "Create a media plan to retrieve and refer later. Types of curves included in media plan depends on ForecastMetricType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations and Minimum Requirements",
+      "Anchor": "validations-and-minimum-requirements",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Validations and Minimum Requirements"
+      ],
+      "Text": "A sponsored ad account ID must be provided in the request. Authenticated members must have access to that sponsored ad account (any role VIEWER or above).\nFor the MVP version of the API, the only currency supported as input is USD (default).\nAn objectiveType must always be present as input in the API request. Current supported values are: BRAND_AWARENESS, VIDEO_VIEW, and LEAD_GENERATION.\nThe optimizationType values supported are MAX_REACH, MAX_IMPRESSION, MAX_VIDEO_VIEW and MAX_LEAD. This is an optional input in the API request and defaults to MAX_REACH for the objectiveType BRAND_AWARENESS, MAX_VIDEO_VIEW for the objectiveType VIDEO_VIEW, and MAX_LEAD for the objectiveType LEAD_GENERATION.\nThe minimum target budget to be input for a single point metric corresponding to that budget is $100 USD. The upper bound of the metric curve is dynamic instead of fixed, any request with budget value exceeding the upper bound won\u0027t be served.\nThe total audience counts for the Targeting Criteria provided should be at least 300 for the API to predict reach metrics.\nThe targeting criteria provided in the request should always have a geo or profileGeo criteria in the input.\nThe start date and end date are optional inputs and defaults to today\u2019s date in UTC and 90 days after respectively. If set explicitly, both the dates must be in the future and the duration between them shouldn\u0027t exceed 90 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "All API requests are represented in Rest.li Protocol 2.0.0 and require the header: X-Restli-Protocol-Version: 2.0.0. Read the Protocol Versions document to learn about using Rest.li Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "This sample request creates media plan with the Reach curve.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/mediaPlans?forecastMetricType=REACH",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022name\u0022: \u0022TEST_MEDIA_PLAN\u0022,\n  \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:2\u0022,\n  \u0022targetingCriteria\u0022:{\n    \u0022include\u0022:{\n      \u0022and\u0022:[\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:locations\u0022:[\n              \u0022urn:li:geo:105080838\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:skills\u0022:[\n              \u0022urn:li:skill:236\u0022,\n              \u0022urn:li:skill:242\u0022,\n              \u0022urn:li:skill:252\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022currencyCode\u0022: \u0022USD\u0022,\n  \u0022objectiveType\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022optimizationType\u0022: \u0022MAX_REACH\u0022,\n  \u0022startDateOn\u0022: {\n    \u0022day\u0022: 24,\n    \u0022month\u0022: 5,\n    \u0022year\u0022: 2024\n  },\n  \u0022endDateOn\u0022: {\n    \u0022day\u0022: 24,\n    \u0022month\u0022: 7,\n    \u0022year\u0022: 2024\n  },\n  \u0022targetBudgetMicros\u0022: 200,\n  \u0022enableAudienceNetwork\u0022: true,\n  \u0022enableAudienceExpansion\u0022: true,\n  \u0022ctvOnly\u0022: false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/mediaPlans?forecastMetricType=REACH\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027\n{\n  \u0022name\u0022: \u0022TEST_MEDIA_PLAN\u0022,\n  \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:2\u0022,\n  \u0022targetingCriteria\u0022:{\n    \u0022include\u0022:{\n      \u0022and\u0022:[\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:locations\u0022:[\n              \u0022urn:li:geo:105080838\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:skills\u0022:[\n              \u0022urn:li:skill:236\u0022,\n              \u0022urn:li:skill:242\u0022,\n              \u0022urn:li:skill:252\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022currencyCode\u0022: \u0022USD\u0022,\n  \u0022objectiveType\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022optimizationType\u0022: \u0022MAX_REACH\u0022,\n  \u0022startDateOn\u0022: {\n    \u0022day\u0022: 24,\n    \u0022month\u0022: 5,\n    \u0022year\u0022: 2024\n  },\n  \u0022endDateOn\u0022: {\n    \u0022day\u0022: 24,\n    \u0022month\u0022: 7,\n    \u0022year\u0022: 2024\n  },\n  \u0022targetBudgetMicros\u0022: 200,\n  \u0022enableAudienceNetwork\u0022: true,\n  \u0022enableAudienceExpansion\u0022: true,\n  \u0022ctvOnly\u0022: false\n} \u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Media Plan",
+        "Sample Request"
+      ],
+      "Text": "The Media plan is created with a 201 Created response and the response header x-restli-id contains the URN of the media plan.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Media Plan by ID",
+      "Anchor": "get-a-media-plan-by-id",
+      "SectionPath": [
+        "Get a Media Plan by ID"
+      ],
+      "Text": "Retrieve a media plan with specific URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Search Parameters",
+      "Anchor": "search-parameters",
+      "SectionPath": [
+        "Get a Media Plan by ID",
+        "Search Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "accountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad account URN in which the media plan is saved",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get a Media Plan by ID",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get a Media Plan by ID",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/mediaPlans/urn%3Ali%3AmediaPlan%3A4f1dc5d9-3ed2-41d6-8c7c-2aa4c46756a6?accountUrn=urn%3Ali%3AsponsoredAccount%3A1234567",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get a Media Plan by ID",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/mediaPlans/urn%3Ali%3AmediaPlan%3A4f1dc5d9-3ed2-41d6-8c7c-2aa4c46756a6?accountUrn=urn%3Ali%3AsponsoredAccount%3A1234567\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Media Plan by ID",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022mediaPlanUrn\u0022: \u0022urn:li:mediaPlan:4f1dc5d9-3ed2-41d6-8c7c-2aa4c46756a6\u0022,\n  \u0022name\u0022: \u0022MyFirstMediaPlan\u0022,\n  \u0022createdAt\u0022: 1716526432,\n  \u0022creator\u0022: \u0022urn:li:person:OANpIJkysG\u0022,\n  \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:1234567\u0022,\n  \u0022targetingCriteria\u0022:{\n    \u0022include\u0022:{\n      \u0022and\u0022:[\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:locations\u0022:[\n              \u0022urn:li:geo:105080838\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022:{\n            \u0022urn:li:adTargetingFacet:skills\u0022:[\n              \u0022urn:li:skill:236\u0022,\n              \u0022urn:li:skill:242\u0022,\n              \u0022urn:li:skill:252\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022currencyCode\u0022: \u0022USD\u0022,\n  \u0022objectiveType\u0022: \u0022BRAND_AWARENESS\u0022,\n  \u0022optimizationType\u0022: \u0022MAX_REACH\u0022,\n  \u0022startDateOn\u0022: {\n    \u0022day\u0022: 24,\n    \u0022month\u0022: 5,\n    \u0022year\u0022: 2024\n  },\n  \u0022endDateOn\u0022: {\n    \u0022day\u0022: 24,\n    \u0022month\u0022: 7,\n    \u0022year\u0022: 2024\n  },\n  \u0022targetBudgetMicros\u0022: 200,\n  \u0022enableAudienceNetwork\u0022: true,\n  \u0022enableAudienceExpansion\u0022: true,\n  \u0022reachCurve\u0022: {\n    \u0022metricCurve\u0022: [\n      {\n        \u0022budgetMicros\u0022: 100000000,\n        \u0022metricValue\u0022: 26973.962890625,\n        \u0022metricUpper\u0022: 30480.577937784372,\n        \u0022metricLower\u0022: 23467.347843465628\n      },\n      ..........\n      ..........\n      98 more points\n      {\n        \u0022budgetMicros\u0022: 2459575683,\n        \u0022metricValue\u0022: 213905.078125,\n        \u0022metricUpper\u0022: 261662.54896138102,\n        \u0022metricLower\u0022: 175159.79484779478\n      }\n    ],\n    \u0022singlePointMetric\u0022: {\n      \u0022budgetMicros\u0022: 200000000,\n      \u0022metricValue\u0022: 16094.2763671875,\n      \u0022metricUpper\u0022: 18486.50121314139,\n      \u0022metricLower\u0022: 13702.074113565037\n    }\n  },\n  \u0022costPerReach\u0022: {\n    \u0022singlePointMetric\u0022: {\n      \u0022budgetMicros\u0022: 200000000,\n      \u0022metricValue\u0022: 7.46\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finder To Get All Media Plans For An Account",
+      "Anchor": "finder-to-get-all-media-plans-for-an-account",
+      "SectionPath": [
+        "Finder To Get All Media Plans For An Account"
+      ],
+      "Text": "Retrieve all media plans saved for specific account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Search Parameters",
+      "Anchor": "search-parameters-1",
+      "SectionPath": [
+        "Finder To Get All Media Plans For An Account",
+        "Search Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "accountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad account URN in which the media plan is saved",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Finder To Get All Media Plans For An Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Finder To Get All Media Plans For An Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/mediaPlans?q=getAllMediaPlans\u0026accountUrn=urn%3Ali%3AsponsoredAccount%3A1234567",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Finder To Get All Media Plans For An Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/mediaPlans?q=getAllMediaPlans\u0026accountUrn=urn%3Ali%3AsponsoredAccount%3A1234567\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Finder To Get All Media Plans For An Account",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: \n  [\n    {\n      \u0022mediaPlanUrn\u0022: \u0022urn:li:mediaPlan:4f1dc5d9-3ed2-41d6-8c7c-2aa4c46756a6\u0022,\n      \u0022name\u0022: \u0022MyFirstMediaPlan\u0022,\n      \u0022createdAt\u0022: 1716526432,\n      \u0022creator\u0022: \u0022urn:li:person:OANpIJkysG\u0022,\n      \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:1234567\u0022,\n      \u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n          \u0022and\u0022:[\n            {\n              \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:locations\u0022:[\n                  \u0022urn:li:geo:105080838\u0022\n                ]\n              }\n            },\n            {\n              \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n                  \u0022urn:li:locale:en_US\u0022\n                ]\n              }\n            },\n            {\n              \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:skills\u0022:[\n                  \u0022urn:li:skill:236\u0022,\n                  \u0022urn:li:skill:242\u0022,\n                  \u0022urn:li:skill:252\u0022\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \u0022currencyCode\u0022: \u0022USD\u0022,\n      \u0022objectiveType\u0022: \u0022BRAND_AWARENESS\u0022,\n      \u0022optimizationType\u0022: \u0022MAX_REACH\u0022,\n      \u0022startDateOn\u0022: {\n        \u0022day\u0022: 24,\n        \u0022month\u0022: 5,\n        \u0022year\u0022: 2024\n      },\n      \u0022endDateOn\u0022: {\n        \u0022day\u0022: 24,\n        \u0022month\u0022: 7,\n        \u0022year\u0022: 2024\n      },\n      \u0022targetBudgetMicros\u0022: 200,\n      \u0022enableAudienceNetwork\u0022: true,\n      \u0022enableAudienceExpansion\u0022: true,\n      \u0022reachCurve\u0022: {\n        \u0022metricCurve\u0022: [\n          {\n            \u0022budgetMicros\u0022: 100000000,\n            \u0022metricValue\u0022: 26973.962890625,\n            \u0022metricUpper\u0022: 30480.577937784372,\n            \u0022metricLower\u0022: 23467.347843465628\n          },\n          ..........\n          ..........\n          98 more points\n          {\n            \u0022budgetMicros\u0022: 2459575683,\n            \u0022metricValue\u0022: 213905.078125,\n            \u0022metricUpper\u0022: 261662.54896138102,\n            \u0022metricLower\u0022: 175159.79484779478\n          }\n        ],\n        \u0022singlePointMetric\u0022: {\n            \u0022budgetMicros\u0022: 200000000,\n            \u0022metricValue\u0022: 16094.2763671875,\n            \u0022metricUpper\u0022: 18486.50121314139,\n            \u0022metricLower\u0022: 13702.074113565037\n        }\n      },\n      \u0022costPerReach\u0022: {\n        \u0022singlePointMetric\u0022: {\n          \u0022budgetMicros\u0022: 200000000,\n          \u0022metricValue\u0022: 7.46\n        }\n      }\n    },\n    {\n      \u0022mediaPlanUrn\u0022: \u0022urn:li:mediaPlan:3g2dw5f9-3yu2-4ki6-8c7c-2aa4c46756a6\u0022,\n      \u0022name\u0022: \u0022MySecondMediaPlan\u0022,\n      \u0022createdAt\u0022: 1716526432,\n      \u0022creator\u0022: \u0022urn:li:person:OANpIJkysG\u0022,\n      \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:1234567\u0022,\n      \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n          \u0022and\u0022: [\n            {\n              \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:locations\u0022:[\n                  \u0022urn:li:geo:105080838\u0022\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \u0022currencyCode\u0022: \u0022USD\u0022,\n      \u0022objectiveType\u0022: \u0022BRAND_AWARENESS\u0022,\n      \u0022optimizationType\u0022: \u0022MAX_IMPRESSION\u0022,\n      \u0022startDateOn\u0022: {\n        \u0022day\u0022: 24,\n        \u0022month\u0022: 5,\n        \u0022year\u0022: 2024\n      },\n      \u0022endDateOn\u0022: {\n        \u0022day\u0022: 24,\n        \u0022month\u0022: 7,\n        \u0022year\u0022: 2024\n      },\n      \u0022targetBudgetMicros\u0022: 200,\n      \u0022enableAudienceNetwork\u0022: true,\n      \u0022enableAudienceExpansion\u0022: true,\n      \u0022impressionCurve\u0022: {\n        \u0022metricCurve\u0022: [\n          {\n            \u0022budgetMicros\u0022: 3639363525,\n            \u0022metricValue\u0022: 275577.25,\n            \u0022metricUpper\u0022: 333327.74220089556,\n            \u0022metricLower\u0022: 222516.08399543885\n          },\n          ..........\n          ..........\n          98 more points\n          {\n            \u0022budgetMicros\u0022: 5998939453,\n            \u0022metricValue\u0022: 380696.46875,\n            \u0022metricUpper\u0022: 456045.3624927355,\n            \u0022metricLower\u0022: 303762.8600794339\n          }\n        ],\n        \u0022singlePointMetric\u0022: {\n            \u0022budgetMicros\u0022: 200000000,\n            \u0022metricValue\u0022: 16094.2763671875,\n            \u0022metricUpper\u0022: 18486.50121314139,\n            \u0022metricLower\u0022: 13702.074113565037\n        }\n      },\n      \u0022averageFrequency\u0022: {\n        \u0022metricCurve\u0022: [],\n        \u0022singlePointMetric\u0022: {\n          \u0022budgetMicros\u0022: 4819151367,\n          \u0022metricValue\u0022: 330436.75,\n          \u0022metricUpper\u0022: 397279.1031530626,\n          \u0022metricLower\u0022: 264834.70810107223\n        }\n      },\n      \u0022costPerThousandImpressions\u0022: {\n        \u0022singlePointMetric\u0022: {\n          \u0022budgetMicros\u0022: 200000000,\n          \u0022metricValue\u0022: 0.16\n        }\n      }\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: targetingAudienceInsights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the (Private) Media Plan API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media plan not found while getting media plan by ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure media plan URN provided is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller should have access to the Ad Account provided in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Ad Account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

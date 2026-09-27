@@ -1,0 +1,622 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+  "Title": "Activities",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Activities",
+      "Anchor": "activities",
+      "SectionPath": [],
+      "Text": "The Activities API resolves an Activity URN into the underlying DomainEntity, such as a Share, UGC Post, Comment, Article, Group Post, or Instant Repost.\nThis API returns no personal data and is scoped strictly to DMA-approved activity types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "An Activity represents an action performed by a LinkedIn member on content.\nEach activity is uniquely identified by:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "urn:li:activity:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The Activities API performs a Batch_Get to resolve one or more Activity URNs into their corresponding underlying entity URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Activity Types",
+      "Anchor": "supported-activity-types",
+      "SectionPath": [
+        "Overview",
+        "Supported Activity Types"
+      ],
+      "Text": "The Activities API can resolve Activity URNs that correspond to the following types of LinkedIn content:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Activity Types",
+      "Anchor": "supported-activity-types",
+      "SectionPath": [
+        "Overview",
+        "Supported Activity Types"
+      ],
+      "Text": "Like - Reactions to posts or content\nShare - Reshared content\nComment - Comments on posts\nGroupPost - Posts within LinkedIn groups\nUgcPost - User-generated content posts\nLinkedinArticle - Published LinkedIn articles\nInstantRepost - Quick reposts of content",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Activity Types",
+      "Anchor": "supported-activity-types",
+      "SectionPath": [
+        "Overview",
+        "Supported Activity Types"
+      ],
+      "Text": "For activities that correspond to unsupported content types (such as Reactions), the API will return an HTTP 403 error with the message Activity\u0027s verb type is not allowed from the ActivityFilter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Overview",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of urn:li:activity:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Activity URN(s) to resolve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "domainEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Underlying content object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returned when allowed",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Overview",
+        "Schema"
+      ],
+      "Text": "URNs must match: urn:li:activity:[0-9]\u002B",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Overview",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Member data obfuscation is performed per activity level to see if an activity\u0027s author is opted in or out for sharing their data. The DomainEntity field will be empty when the author is opted out for sharing their data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locate the Activity URN",
+      "Anchor": "locate-the-activity-urn",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Locate the Activity URN"
+      ],
+      "Text": "Activity URNs can be obtained from LinkedIn feed URLs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locate the Activity URN",
+      "Anchor": "locate-the-activity-urn",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Locate the Activity URN"
+      ],
+      "Text": "Navigate to a LinkedIn post or activity on linkedin.com\nClick on the three dots menu (\u22EF) on the post\nSelect \u0022Copy link to post\u0022 from the menu\nThe copied URL will be in the format: https://www.linkedin.com/feed/update/urn:li:activity:{id}\nExtract the activity URN portion: urn:li:activity:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locate the Activity URN",
+      "Anchor": "locate-the-activity-urn",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Locate the Activity URN"
+      ],
+      "Text": "Example from a feed URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Locate the Activity URN",
+      "Anchor": "locate-the-activity-urn",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Locate the Activity URN"
+      ],
+      "Text": "https://www.linkedin.com/feed/update/urn:li:activity:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locate the Activity URN",
+      "Anchor": "locate-the-activity-urn",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Locate the Activity URN"
+      ],
+      "Text": "Extract:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Locate the Activity URN",
+      "Anchor": "locate-the-activity-urn",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Locate the Activity URN"
+      ],
+      "Text": "urn:li:activity:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Retrieve Activity Details",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Retrieve Activity Details",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaActivities?ids=List(urn%3Ali%3Aactivity%3A{id})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Retrieve Activity Details",
+        "Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Retrieve Activity Details",
+        "Sample Request"
+      ],
+      "Text": "Authorization: Bearer {ACCESS_TOKEN}\nLinkedin-Version: YYYYMM\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Retrieve Activity Details",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaActivities?ids=List(urn%3Ali%3Aactivity%3A{id})\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Retrieve Activity Details",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:activity:{id}\u0022: {\n      \u0022domainEntity\u0022: \u0022urn:li:groupPost:9054972-{id}\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022urn:li:activity:{id}\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Request - Multiple Activities",
+      "Anchor": "batch-request---multiple-activities",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities"
+      ],
+      "Text": "To retrieve multiple activities in a single request, provide a comma-separated list of activity URNs in the ids parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Batch Request",
+      "Anchor": "sample-batch-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities",
+        "Sample Batch Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Request",
+      "Anchor": "sample-batch-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities",
+        "Sample Batch Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaActivities?ids=List(urn%3Ali%3Aactivity%3A{id1},urn%3Ali%3Aactivity%3A{id2},urn%3Ali%3Aactivity%3A{id3})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Batch Request",
+      "Anchor": "sample-batch-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities",
+        "Sample Batch Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Request",
+      "Anchor": "sample-batch-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities",
+        "Sample Batch Request"
+      ],
+      "Text": "Authorization: Bearer {ACCESS_TOKEN}\nLinkedin-Version: YYYYMM\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Request",
+      "Anchor": "sample-batch-request",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities",
+        "Sample Batch Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaActivities?ids=List(urn%3Ali%3Aactivity%3A{id1},urn%3Ali%3Aactivity%3A{id2},urn%3Ali%3Aactivity%3A{id3})\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Batch Response",
+      "Anchor": "sample-batch-response",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Batch Request - Multiple Activities",
+        "Sample Batch Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:activity:{id1}\u0022: {\n      \u0022domainEntity\u0022: \u0022urn:li:share:{id}\u0022\n    },\n    \u0022urn:li:activity:{id2}\u0022: {\n      \u0022domainEntity\u0022: \u0022urn:li:groupPost:9054972-{id}\u0022\n    },\n    \u0022urn:li:activity:{id3}\u0022: {\n      \u0022domainEntity\u0022: \u0022urn:li:share:{id}\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022urn:li:activity:{id1}\u0022: 200,\n    \u0022urn:li:activity:{id2}\u0022: 200,\n    \u0022urn:li:activity:{id3}\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interpret the DomainEntity",
+      "Anchor": "interpret-the-domainentity",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Interpret the DomainEntity"
+      ],
+      "Text": "domainEntity points to the content that triggered the activity.\nFetch underlying content using the corresponding API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "Interpret the DomainEntity",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Activity URN, must follow the regex urn:li:activity:[0-9]\u002B",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:activity:123456789",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "How to Use the API (Usability Guide)",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid id/urn provided. URN must be provided as urn:li:activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested URN is not an ActivityUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "ActivityUrn must match regex urn:li:activity:[0-9]\u002B.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested Activity URN is restricted to be viewed/accessed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Activity\u0027s verb type is not allowed from the ActivityFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The activity corresponds to a content type that is not supported by this API. See the \u0022Supported Activity Types\u0022 section for supported content types.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use only activities that correspond to supported content types.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find activity for given activity URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested Activity URN does not exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the Activity URN is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

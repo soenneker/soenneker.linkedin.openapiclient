@@ -1,0 +1,147 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/patents",
+  "Title": "Profile Edit API - Patents",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/patents",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Edit API - Patents",
+      "Anchor": "profile-edit-api---patents",
+      "SectionPath": [],
+      "Text": "This sub-resource API will allow you to create, update, and delete patents of a member.\u00A0See Patent Fields for a description of the fields available within this object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "CREATE | PARTIAL_UPDATE | DELETE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/people/id={person ID}/patents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "{,\n  \u0022inventors\u0022: [\n    {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Frank Smith\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022memberId\u0022: \u0022urn:li:person:123ABC\u0022\n    },\n    {\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Bob Smith\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022memberId\u0022: \u0022urn:li:person:456ABC\u0022\n    }\n  ],\n  \u0022pending\u0022: false,\n  \u0022description\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: {\n        \u0022rawText\u0022: \u0022Check out this awesome API Platform!\u0022\n      }\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022title\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022LinkedIn Awesome API\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022issuer\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022us\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022url\u0022: \u0022http://www.developer.linkedin.com\u0022,\n  \u0022number\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u002212345\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022issueDate\u0022: {\n    \u0022month\u0022: 2,\n    \u0022year\u0022: 2016,\n    \u0022day\u0022: 2\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "CREATE",
+        "sample request body"
+      ],
+      "Text": "A successful response will return a 201 Created HTTP status code. To record the created entity\u0027s id, refer to the header x-linkedin-id field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "PARTIAL UPDATE",
+      "Anchor": "partial-update",
+      "SectionPath": [
+        "PARTIAL UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/people/id={person ID}/patents/{patent ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022filingDate\u0022: {\n                \u0022day\u0022: 2,\n                \u0022month\u0022: 2,\n                \u0022year\u0022: 2016\n            },\n            \u0022issueDate\u0022: {},\n            \u0022pending\u0022: true\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "sample request body"
+      ],
+      "Text": "Sample Json to delete one or more fields. If you attempt to delete a field that is mandatory, the API will return a 422 Error Response. See Patent Fields for allowed list of fields for this resource",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$delete\u0022: [\n            \u0022field1\u0022,\n            \u0022field2\u0022\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "DELETE",
+      "Anchor": "delete",
+      "SectionPath": [
+        "DELETE"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/people/id={person ID}/patents/{patent ID}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

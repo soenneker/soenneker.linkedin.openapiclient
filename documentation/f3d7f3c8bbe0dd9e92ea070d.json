@@ -1,0 +1,554 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-blackboard",
+  "Title": "Setting up LinkedIn Learning with LTI 1.3 in Blackboard",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-13-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-d2l",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-moodle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps illustrate the LinkedIn Learning and LTI 1.3 integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "LTI is a standard used to integrate different learning platforms and tools to create a richer learning experience for the higher education sector. LTI 1.3 is the latest version of the LTI standard that focuses on improving security, enabling better content discoverability, and creating greater flexibility and extensibility. LTI 1.3 is the content discoverability standard for higher education using LMS providers such as Blackboard, Canvas, D2L, and Moodle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "LTI Advantage is a further set of extensions to LTI 1.3 that enhance its capabilities. Its main goals are to enable deeper integration between LMS and LTI tools and platforms, removing the need for custom integrations, and to provide a secure channel to transmit student and enrollment information. The three services included in LTI Advantage are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "Deep Linking: allows course creators to easily select and configure the content displayed to learners. For example, creators can configure a link that will launch a specific segment from a video, rather than displaying the full video and asking students to manually find the segment, saving time for both teachers and students.\n\nAssignments and Grades: syncs grades, progress, and comments from multiple sources into an LMS platform\u2019s gradebook, reducing faculty effort and any potential errors.\n\nNames and Roles Provisioning: securely shares course roster and enrollment information. This enables admins and instructors to access reports on student activity within the tool, such as which enrolled students have or have not started an activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Things to Consider before Implementation",
+      "Anchor": "things-to-consider-before-implementation",
+      "SectionPath": [
+        "Things to Consider before Implementation"
+      ],
+      "Text": "Since the LTI standard requires an LMS to launch the LinkedIn Learning content, the integration has distinct tradeoffs. Before opting for LTI, please review the\nsections below to ensure you fully understand the advantages and disadvantages of LTI integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "If you are a LinkedIn Learning user or admin, you have the following benefits of LTI integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "Seamless access to LinkedIn Learning for students and instructors\n\nEngaging user experiences for students and instructors\n\nGradable content\n\nContent easily integrated into LMS courses",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "If you are thinking about using the LTI standard in your learning platform, keep in mind the following restrictions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "To access LinkedIn Learning content, users must have access to your LMS. If a user cannot log into the LMS, the user does not have access to LinkedIn Learning.\n\nContent is only accessible from within the LMS. Educators cannot \u0022deep link\u0022 to LinkedIn Learning content on class webpages, wikis, or other external systems.\n\nIf your organization uses another form of Single Sign-on (SSO) with LinkedIn Learning, the SSO connection must use the same unique user ID as your LTI connection to prevent duplicate profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "Please use the corresponding guides for your desired LMS integration. If you do not see your LMS listed below please continue to the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "D2L\nMoodle\nCanvas\nBlackboard",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "You must be a designated LinkedIn Learning administrator to access Integration settings. If you are not an administrator, please reach out to your internal LinkedIn Learning lead, who can add you as an administrator in the system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+      "Anchor": "configuring-linkedin-learning-lti-13-advantage-tool-for-blackboard",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard"
+      ],
+      "Text": "You must be a designated LinkedIn Learning administrator to access Integration settings. If you are not an administrator, please reach out to your internal LinkedIn Learning lead, who can add you as an administrator in the system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+      "Anchor": "configuring-linkedin-learning-lti-13-advantage-tool-for-blackboard",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard"
+      ],
+      "Text": "From the Admin portal click on the Me drop down found in the upper right hand corner and select Authentication:\n\n\nClick Add new SSO button in Configure single sign-on page and select LTI 1.3.\n\n\n\n\n\nName your new SSO in the Basics tab (e.g. LTI 1.3 Blackboard) and click Next.\n\n\n\n\n\nKeep the Configuration page open in a separate tab and move on to the next step (you will be leveraging these fields shortly).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning App within Blackboard Developer Portal",
+      "Anchor": "register-linkedin-learning-app-within-blackboard-developer-portal",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Register LinkedIn Learning App within Blackboard Developer Portal"
+      ],
+      "Text": "During this step you will be registering an application within the Blackboard Developer Portal. Please ensure you have the necessary permissions to configure this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning App within Blackboard Developer Portal",
+      "Anchor": "register-linkedin-learning-app-within-blackboard-developer-portal",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Register LinkedIn Learning App within Blackboard Developer Portal"
+      ],
+      "Text": "In a separate window please register an application within the Blackboard Developer Portal: https://developer.blackboard.com.\n\nSelect Register a new application and populate the following and:\n\nApplication Name: LinkedIn Learning\nDescription: LinkedIn Learning\nDomain: www.LinkedIn.com\n\n\n\n\n\n\nTurn on \u201CMy Integration supports LTI 1.3\u201D toggle.\n\nUse the provided information from the LinkedIn Learning Configuration page you have opened in a separate tab to populate the fields outlined below.\n\nCopy the OIDC Connect Initialization from LinkedIn Learning\n\n\n\nPaste this value into the Blackboard Login Initiation URL field\n\n\n\n\n\nCopy the OIDC Redirect URL from LinkedIn Learning\n\n\n\n\nPaste this value into the Tool Redirect URL(s) field within Blackboard\n\n\n\n\n\nCopy the Keyset URL from LinkedIn Learning\n\n\n\n\nPaste this value into the Tool JWKS URL field within Blackboard\n\n\n\n\n\nSet the Signing Algorithm to: RS256 within Blackboard\n\n\n\n\n\n\n\nWe will now move onto the Registration page within LinkedIn Learning and copy in the corresponding values below:\n\nCopy the Issue from Blackboard\n\n\n\n\nPaste this value into the OIDC Issuer field within LinkedIn Learning\n\n\n\n\n\nCopy the OIDC auth request endpoint from Blackboard\n\n\n\n\nPaste this value into the Platform OIDC Authentication URL within LinkedIn Learning\n\n\n\n\n\nSelect Keyset URL within LinkedIn Learning\n\n\n\n\n\nCopy the Public keyset URL from Blackboard\n\n\n\n\nPaste this value in the Platform OAuth 2.0 Keyset URL field within LinkedIn Learning\n\n\n\n\n\nCopy the Auth token endpoint from Blackboard\n\n\n\n\nPaste this value into the Platform OAuth 2.0 Token Retrieval URL field within LinkedIn Learning\n\n\n\n\n\nExternal ID Parameter Name:\n\n\nUse this setting to determine which authentication attribute is used to identify users. The default value is Subject. You also can use Email Address or a custom attribute name. For example, your LMS may provide an additional identifier, like lis_person_sourcedid.\n\n\n\n\n\nClick the \u201CRegister Application\u201D button. Upon registering you will be provided with the Application ID:\n\n\n\n\n\nCopy the Application ID from Blackboard (Please note we will use this same value again shortly)\n\n\n\n\nPaste this value into the Client ID field in LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the LTI 1.3 Advantage Tool",
+      "Anchor": "register-the-lti-13-advantage-tool",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Register the LTI 1.3 Advantage Tool"
+      ],
+      "Text": "Login as a Blackboard Admin.\n\nNavigate to Admin Panel shown below:\n\n\n\n\n\nUnder the Integrations tab select LTI Tool Providers\n\n\n\n\n\nClick Register LTI 1.3/Advantage Tool\n\n\n\n\n\nClient ID: Use the \u201CApplication ID\u201D we got from the previous section\n\n\n\n\n\n\n\n\n\nClick \u201CSubmit\u201D and continue\n\nSet \u201CTool Status\u201D to \u201CApproved\u201D\n\n\n\n\n\nCheck all \u201CUser Fields to Send\u201D\n\n\n\n\n\nToggle Allow grade service access to Yes.\n\n\n\n\nIn order for grades to be reflected in Gradebook, you must toggle the Allow grade service access option to Yes. If set to No, the grade will show as blank in Gradebook.\n\n\n\nCopy the \u201CDeployment ID\u201D value from Blackboard\n\n\n\n\nPaste this value into the Deployment ID field within LinkedIn Learning\n\n\n\n\n\nIn LinkedIn Learning click Next to navigate to the LTI Advantage page:\n\nToggle the Enable LTI Advantage switch to ON.\nIn the textbox fill in your Blackboard domain such as \u201Clinkedin-test.blackboard.com\u201D, and click Add.\nToggle Reporting switch to ON.\nToggle the Deep Linking switch to ON.\n\n\n\n\n\n\nClick \u201CSave\u201D and In the \u201CSSO connections\u201D table, find the SSO we just saved, click the \u201CStatus\u201D drop-down menu, select \u201CActive\u201D.\n\nIn Blackboard click Submit and Expand the menu by hovering on the tool\u2019s name or by clicking the drop down arrow to the right.\n\n\n\n\n\nSelect Manage Placements and Create Placements\n\n\n\n\n\nUpload the icon\n\nTarget Link Url: \u201Chttps://www.linkedin.com/learning-admin/lti-deep-link\u201D\n\nIn Course Settings select Course Menu and Structure\n\n\n\n\n\nFollow:\n\nhttps://help.blackboard.com/Learn/Administrator/SaaS/Integrations/Learning_Tools_Interoperability#add-a-new-lti-tool-provider_OTP-4\nhttps://success.vitalsource.com/hc/en-gb/articles/360051538994-Blackboard-LTI-1-3-Tool-Setup",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating a course in Blackboard",
+      "Anchor": "creating-a-course-in-blackboard",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Creating a course in Blackboard"
+      ],
+      "Text": "Login as an admin and click on Admin on the left side of the screen\n\n\n\n\n\nClick on courses in administrator tools\n\n\n\n\n\nIn the next screen, click Create course \u2192 New\n\n\n\n\n\nIn the next screenEnter course name and course id (adding your ldap as prefix might help with identification)\n\nIn \u201CCourse view option\u201D select \u201CUltra course view\u201D (second option)\n\n\n\n\n\nAll other options can be left as-is.\n\nHit the submit button on the bottom right of the screen\n\n\n\nThis will take you back to the screen in step 3 above\n\nIn this screen, search for your ldap prefix\n\n\n\n\n\nHover over the COURSE ID and a drop down will appear\n\n\n\n\n\nClick on it and press Make Available.\n\n\n\n\n\nIn the screen that comes up, again search for the course you created\n\nHover over the course you created and click on enrollment that appears after clicking on the drop down\n\n\n\n\n\nClick on \u201CEnroll Users\u201D in the next screen.\n\n\n\n\n\nAdd users you would like to enable access for below\n\n\n\n\n\n(Optional) If you would like to validate the experience, if you login as a student, you should be able to find this course under the list of courses",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Launch LinkedIn Learning Institution Tool",
+      "Anchor": "launch-linkedin-learning-institution-tool",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Launch LinkedIn Learning Institution Tool"
+      ],
+      "Text": "From the homepage click on courses \u2192 select the course you just created.\n\n\n\n\n\nYou\u2019ll see a page like so and click on the \u201C\u002B\u201D (highlighted below)\n\n\n\n\n\nClick on \u201CContent Market\u201D in the menu that opens up\n\n\n\n\n\nClick LinkedIn Learning under Institution Tools\n\n\n\n\n\nAfter clicking this link you will now be able to leverage the LinkedIn Learning tool to search, add, and remove courses/videos. When done, click the Confirm button at the bottom.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Gradebook Experience",
+      "Anchor": "gradebook-experience",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Gradebook Experience"
+      ],
+      "Text": "Login as an instructor, navigate to the course and select the gradebook. In the below screen, once you click \u201Cpost grades\u201D, the student user will be able to view their grade.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Gradebook Experience",
+      "Anchor": "gradebook-experience",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Gradebook Experience"
+      ],
+      "Text": "Congratulations! Your learners now can use the LinkedIn Learning and LTI 1.3 integration for SSO and learner progress reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Issue: if you find when launching the LTI Advantage Tool that it freezes or gets stuck in a loading screen. The issue could be due to cross-site tracking being enabled on your browser.\n\nFix: you will want to disable cross-site tracking on that browser. Please work with your IT team for assistance.\n\nIssue: If you experience a strange nested issue (or error) after clicking the Add button for either a Course or Video in the LTI Advantage tool the issue could be the domain you indicated in step 4.\n\nFix: You want to be sure you are including either https://www.linkedin.com or just www.linkedin.com. If you\u2019re already using one option try using the other to see if that fixes it. You may also need to clear your cache.\n\nIssue: If when launching the LTI Advantage Tool, you receive an \u201CThings Aren\u2019t Loading\u201D error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "The issue has to do with being logged into LinkedIn Learning or having an already active Learning session in another tab and/ or browser.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix 1: Try logging out of LinkedIn Learning in any tabs or browsers it is currently active in.\n\nFix 2: Try clearing your cache and cookies or launching the LTI Advantage Tool in a private/ incognito browser window.\n\nIssue If you receive an \u0022Oops! It\u0027s not you. It\u0027s us. Give it another try, please.\u0022 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "It means you are missing hostname(s) needing to be added in the LTI Advantage Tool tab in the LTI 1.3 configuration settings in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix 1: you will want to add those missing hostname(s) and test it again.\n\nTo add those hostname(s), you want to be logged into the Admin Tool in Linkedin Learning.\n\nHover over Me \u003E Authentication\n\nNext you want to click the 3 dots to the right of the LTI 1.3 configuration in the center panel \u003E followed by Edit\n\nClick on the LTI Advantage Tool tab\n\nType the hostname into the field \u003E click the Add button. Repeat for multiple names then click Save in the bottom right.\n\nFix 2: If this error is intermittent, you may need to reach out to LinkedIn Learning Support for further assistance, but you can try a different browser or clear your cache to see if it helps.\n\nIssue: If you see an \u201CUnable to connect to www.linkedin.com\u201D error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "This is likely due to a mismatch with the configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Configuring LinkedIn Learning LTI 1.3 Advantage Tool for Blackboard",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix: Check to see if the Redirect URLs, the Target Link URI and the OpenID Connect Initiation URL are configured correctly. Any mismatch in values will result in the LTI Advantage Tool to fail. If the issue continues, please reach out to LinkedIn support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Are all users able to connect their LinkedIn profiles through an LTI connection?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, LTI supports profile association.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Which provisioning types are supported?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. LTI requires\u00A0JIT (just in time)\u00A0provisioning and is automatically configured. This condition means that, upon the first successful LTI authentication, LinkedIn Learning automatically creates a user profile (if a user does not already exist).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can SAML SSO and LTI be enabled at the same time?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. You can enable both authentication options\u00A0at the same time, but we recommend that you consult your dedicated Technical Consultant before adopting this method. You might unintentionally create duplicate accounts if the same group of users has access to both LTI and a second SSO connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Is the Unique User ID value configurable?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, you can configure the Unique User ID in the External ID Parameter Name field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can LTI launches be loaded in an iFrame?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. No, LTI does not support iFrames.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "LinkedIn Learning SSO Implementation\n\nLTI, Canvas, and LinkedIn Learning Configuration\n\nGoogle SSO\n\nOkta SSO\n\nAdd and Manage Users in Bulk via CSV\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "For more information on integrating LTI v1.3 with your LMS and LinkedIn Learning, see IMS Global\u2019s\u00A0LTI 1.3 Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,2602 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
+  "Title": "Lead Gen Form",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form-response",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Form",
+      "Anchor": "lead-gen-form",
+      "SectionPath": [],
+      "Text": "The Lead Gen Forms API provides information of forms belonging to an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Form",
+      "Anchor": "lead-gen-form",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Form",
+      "Anchor": "lead-gen-form",
+      "SectionPath": [],
+      "Text": "Get: Retrieves information about a Lead Gen Form\nBatch Get: Retrieves information list of Lead Gen Forms\nOwner: Find all Lead Gen Forms belonging to an organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about Lead Gen Forms. Restricted to page admins with the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYSTLEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST",
+              "LEAD_GEN_FORMS_MANAGER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Numerical identifier for the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch time corresponding to the creation of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch time corresponding to the last modified of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creationLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Locale of the entity. This field serves as the preferred locale for all fields within the form with an object type that is capable of localization, such as MultiLocaleString.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN that identifies the owner of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the form provided by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DisplayContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content of the form which is displayed to the viewer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiddenFields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "HiddenField[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hidden fields used by the owner to track key attributes of the form that generated the lead. The field is empty if the owner chooses to not append any tracking attributes to the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenLifecycleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information about the current state of the Lead Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenReviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Latest information about the content review of the form. It will not be present if the form has not been reviewed by the review pipeline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The version ID of the form. This is a derived field and is generated on the server side.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times the form has been modified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "DisplayContent Sub-Object",
+      "Anchor": "displaycontent-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "DisplayContent Sub-Object"
+      ],
+      "Text": "DisplayContent is a sub-object in the Lead Gen Form which represents the form content shown to the viewers for collecting responses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DisplayContent Sub-Object",
+      "Anchor": "displaycontent-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "DisplayContent Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of the form. Optional since the owner may choose to not have this information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormQuestion[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Questions to request information from the viewer. At least one question should be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "legalInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormLegalInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legal information displayed alongside the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postSubmissionInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PostSubmissionInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information displayed to the user after submitting the form (e.g. thank you message, etc.). Optional since not all use cases require a post submission experience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormQuestion Sub-Object",
+      "Anchor": "leadgenformquestion-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormQuestion Sub-Object"
+      ],
+      "Text": "LeadGenFormQuestion is a sub-object in the DisplayContent which contains a question.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormQuestion Sub-Object",
+      "Anchor": "leadgenformquestion-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormQuestion Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "questionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the question, shown to the owner only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "question",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The question prompt, shown to the viewer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textPrompt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The description or hint of the question, shown to the viewer. Empty in case No hint is provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "predefinedField",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PredefinedField",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The predefined field that the question is requesting. This field is used for specifying viewer specific fields(e.g. First name, City, School, etc.) that should be used to prefill the question response. Customized questions do not request a predefined field and will leave this field empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseEditable",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True if the member viewing the form can edit a pre-filled form response. Default is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True if the response is required for the question. Default is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of TextQuestionDetails, MultipleChoiceQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The specific details of the question including default answer, answer restrictions etc. We allow text and selection questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionSubmissionCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of WorkEmailSubmissionCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The criteria for submission of response for the question. For example: allow only Non-freemium emails for the work email form question. A question submission criteria is exclusive to the predefined field tied to the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The label of the question specified by marketers. These labels for the questions are unique within the context of a single form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PredefinedField Sub-Object",
+      "Anchor": "predefinedfield-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "PredefinedField Sub-Object"
+      ],
+      "Text": "PredefinedField is a sub-object in the LeadGenFormQuestion that can be used as a question in a Lead Form. Responses to some of these fields can be prefilled using the viewer\u0027s profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PredefinedField Sub-Object",
+      "Anchor": "predefinedfield-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "PredefinedField Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FIRST_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LAST_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PHONE_NUMBER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The phone number of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The email of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The city of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COUNTRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The country/region of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ZIP_CODE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The postal code or zip code of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_TITLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The latest job title of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_FUNCTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job function of the viewer\u0027s latest job (e.g. Sales, Engineering, etc.)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SENIORITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The seniority of the viewer\u0027s job title (e.g. manager, director, VP, etc.)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPANY_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the company of the viewer\u0027s latest job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPANY_SIZE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The size of the company of the viewer\u0027s latest job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INDUSTRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DEGREE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The degree attained from the latest school attended by the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_OF_STUDY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field of study for the viewer\u0027s latest school attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHOOL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the school the viewer last attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "START_DATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the viewer at the latest school attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GRADUATION_DATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The graduation date of the viewer at the latest school attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GENDER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The gender of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WORK_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work email address of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LINKEDIN_PROFILE_LINK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn public profile URL of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WORK_PHONE_NUMBER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work phone number of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TextQuestionDetails Sub-Object",
+      "Anchor": "textquestiondetails-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "TextQuestionDetails Sub-Object"
+      ],
+      "Text": "TextQuestionDetails is a sub-object in the LeadGenFormQuestion representing text question specific details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TextQuestionDetails Sub-Object",
+      "Anchor": "textquestiondetails-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "TextQuestionDetails Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "defaultResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either the default response to a question as specified by the owner, or the prefilled viewer information for a predefined field. Can be empty in case the owner choose not to specify, or if the response couldn\u0027t be prefilled.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxResponseLength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum length of the response, in characters. Default is 300.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultipleChoiceQuestionDetails Sub-Object",
+      "Anchor": "multiplechoicequestiondetails-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "MultipleChoiceQuestionDetails Sub-Object"
+      ],
+      "Text": "MultipleChoiceQuestionDetails is a sub-object in the LeadGenFormQuestion representing the details of a multiple choice question.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceQuestionDetails Sub-Object",
+      "Anchor": "multiplechoicequestiondetails-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "MultipleChoiceQuestionDetails Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "options",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceQuestionOption",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The options for a multiple choice question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultSelectedOption",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the option which is selected by default when shown to the viewer. If empty then No option is shown as selected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultipleChoiceQuestionOption Sub-Object",
+      "Anchor": "multiplechoicequestionoption-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "MultipleChoiceQuestionOption Sub-Object"
+      ],
+      "Text": "MultipleChoiceQuestionOption is a sub-object in the MultipleChoiceQuestionDetails, structured as an element in the array named options. MultipleChoiceQuestionOption represents an option of a multiple choice question specified by the owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceQuestionOption Sub-Object",
+      "Anchor": "multiplechoicequestionoption-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "MultipleChoiceQuestionOption Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier for a MultipleChoiceQuestionOption within the context of a MultipleChoiceQuestion. This will be unique only under the scope of a MultipleChoiceQuestion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Text describing an option for a multiple choice question specified by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The label of the multiple choice option specified by marketers. These labels for the multiple choice options are unique within the context of a single form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "WorkEmailSubmissionCriteria Sub-Object",
+      "Anchor": "workemailsubmissioncriteria-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "WorkEmailSubmissionCriteria Sub-Object"
+      ],
+      "Text": "WorkEmailSubmissionCriteria is a sub-object in the LeadGenFormQuestion representing the criteria for submission of responses to a WORK_EMAIL PredefinedField.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkEmailSubmissionCriteria Sub-Object",
+      "Anchor": "workemailsubmissioncriteria-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "WorkEmailSubmissionCriteria Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "freemiumEmailAllowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, then a personal or freemium domain email address will be allowed to be submitted as the response of the WORK EMAIL PredefinedField.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormLegalInfo Sub-Object",
+      "Anchor": "leadgenformlegalinfo-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormLegalInfo Sub-Object"
+      ],
+      "Text": "LeadGenFormLegalInfo is a sub-object in the Lead Form representing Lead Form legal information to display to viewers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormLegalInfo Sub-Object",
+      "Anchor": "leadgenformlegalinfo-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormLegalInfo Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "legalInfoId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the LeadGenFormLegalInfo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "privacyPolicyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of the privacy policy that covers any data passed to the owner of the form. Optional since it is not required to be present for all the use cases.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "legalDisclaimer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Owner\u0027s legal disclaimer to accompany this form. Optional since the owner may alternatively use other fields (e.g. legalDisclaimer, consents) to surface the privacy policy.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormConsent[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional consents used to obtain member approval for using data collected via the Lead Form. This field is empty if No viewer consents are required by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormConsent Sub-Object",
+      "Anchor": "leadgenformconsent-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormConsent Sub-Object"
+      ],
+      "Text": "LeadGenFormConsent is a sub-object in the LeadGenFormLegalInfo, structured as an element in the array named consents. LeadGenFormConsent representing the Lead Form consent as defined by the owner of the form. Used for obtaining member approval to collecting data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormConsent Sub-Object",
+      "Anchor": "leadgenformconsent-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormConsent Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the consent, unique within LeadGenFormLegalInfo object.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The custom text that appears next to the checkbox, informing the member of what use of data they are consenting to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "checkRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the consent is required to be checked by the member when submitting the form. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The label of the consent specified by marketers. These labels for the consents are unique within the context of a single form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PostSubmissionInfo Sub-Object",
+      "Anchor": "postsubmissioninfo-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "PostSubmissionInfo Sub-Object"
+      ],
+      "Text": "PostSubmissionInfo is a sub-object in the Lead Form representing the content for displaying to viewers after they submit the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PostSubmissionInfo Sub-Object",
+      "Anchor": "postsubmissioninfo-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "PostSubmissionInfo Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The message displayed to a member after the Lead Gen Form is submitted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormCallToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call to action shown after the Lead Gen Form submission.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormCallToAction Sub-Object",
+      "Anchor": "leadgenformcalltoaction-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormCallToAction Sub-Object"
+      ],
+      "Text": "LeadGenFormCallToAction is a sub-object in the PostSubmissionInfo representing a call to action in the form of a button or label a member can act on that opens a landing page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormCallToAction Sub-Object",
+      "Anchor": "leadgenformcalltoaction-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormCallToAction Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "callToActionLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PostSubmissionCallToActionLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Label for the call to action shown to the viewer. Default is VISIT_COMPANY_WEBSITE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionTarget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of LandingPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target where the user is taken after clicking on the CTA. E.g. a LandingPageUrl which is a URL redirect to a web page. It can be empty for CTA\u0027s which don\u0027t require additional information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PostSubmissionCallToActionLabel Sub-Object",
+      "Anchor": "postsubmissioncalltoactionlabel-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "PostSubmissionCallToActionLabel Sub-Object"
+      ],
+      "Text": "PostSubmissionCallToActionLabel is a sub-object in the LeadGenFormCallToAction that predefined values of call to action to be displayed after form submission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PostSubmissionCallToActionLabel Sub-Object",
+      "Anchor": "postsubmissioncalltoactionlabel-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "PostSubmissionCallToActionLabel Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VISIT_COMPANY_WEBSITE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Visit Company Website call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEARN_MORE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Learn More call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIEW_NOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View Now call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOWNLOAD_NoW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Now call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TRY_NOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try Now call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField Sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "HiddenField Sub-Object"
+      ],
+      "Text": "HiddenField is a sub-object in the Lead Form, structured as an element in the array named hiddenFields. HiddenField is not displayed on the form, but can be used by marketers for tracking purposes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField Sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "HiddenField Sub-Object"
+      ],
+      "Text": "The array can contain a maximum of 20 HiddenField.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HiddenField Sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "HiddenField Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the hidden field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of the hidden field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenLifecycleState Sub-Object",
+      "Anchor": "leadgenlifecyclestate-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenLifecycleState Sub-Object"
+      ],
+      "Text": "LeadGenLifecycleState is a sub-object in the Lead Form that indicate the lifecycle stage of a Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenLifecycleState Sub-Object",
+      "Anchor": "leadgenlifecyclestate-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenLifecycleState Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DRAFT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is still being edited.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PUBLISHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is published, i.e. it has gone through processing (e.g. manual review) and is ready to be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ARCHIVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is archived.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenReviewInfo Sub-Object",
+      "Anchor": "leadgenreviewinfo-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenReviewInfo Sub-Object"
+      ],
+      "Text": "LeadGenReviewInfo is a sub-object in the Lead Form that indicate the review info of the form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenReviewInfo Sub-Object",
+      "Anchor": "leadgenreviewinfo-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenReviewInfo Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reviewStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormReviewStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicate the state of review for the Lead Gen Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastUpdated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch time in millisecond indicating when the review status is initiated/last updated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rejectionReasons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RejectionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of rejection reasons for the Lead Gen Form. It\u0027s Non-empty if the review status is REJECTED in the latest review.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormReviewStatus Sub-Object",
+      "Anchor": "leadgenformreviewstatus-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormReviewStatus Sub-Object"
+      ],
+      "Text": "LeadGenFormReviewStatus is a sub-object in the LeadGenReviewInfo that indicate whether the entity has been reviewed and the result of the review.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormReviewStatus Sub-Object",
+      "Anchor": "leadgenformreviewstatus-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadGenFormReviewStatus Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PENDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is pending review and not serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is approved for serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is rejected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PREAPPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been pre-approved, it\u0027s ready for serving but still need further review.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUTO_APPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been auto approved by content model.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NEEDS_REVIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been rejected by content model or policy checker or returned by fallback case that auto approval didn\u0027t make any decision.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUTO_REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been auto rejected by content model.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLeadGenForm/{VERSIONED_LEAD_GEN_FORM_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaLeadGenForm/{VERSIONED_LEAD_GEN_FORM_URN}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:organization:1\u0022,\n    \u0022hiddenFields\u0022: [],\n    \u0022versionId\u0022: 1,\n    \u0022created\u0022: 1698944300179,\n    \u0022creationLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022Test\u0022,\n    \u0022id\u0022: 1,\n    \u0022lastModified\u0022: 1698944300179,\n    \u0022state\u0022: \u0022PUBLISHED\u0022,\n    \u0022content\u0022: {\n        \u0022questions\u0022: [\n            {\n                \u0022questionId\u0022: 1,\n                \u0022question\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Last Name\u0022\n                    }\n                },\n                \u0022responseEditable\u0022: true,\n                \u0022name\u0022: \u0022lastName\u0022,\n                \u0022questionDetails\u0022: {\n                    \u0022textQuestionDetails\u0022: {\n                        \u0022maxResponseLength\u0022: 300\n                    }\n                },\n                \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                \u0022responseRequired\u0022: true\n            }\n        ],\n        \u0022postSubmissionInfo\u0022: {\n            \u0022message\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Thanks\u0022\n                }\n            },\n            \u0022callToAction\u0022: {\n                \u0022callToActionLabel\u0022: \u0022VISIT_COMPANY_WEBSITE\u0022\n            }\n        },\n        \u0022legalInfo\u0022: {\n            \u0022consents\u0022: [\n                {\n                    \u0022consent\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022The event organizer may use the above information to send communications about their offerings.\u0022\n                        }\n                    },\n                    \u0022checkRequired\u0022: false,\n                    \u0022id\u0022: 1\n                }\n            ],\n            \u0022privacyPolicyUrl\u0022: \u0022https://www.blah.com/1\u0022,\n            \u0022legalInfoId\u0022: 4\n        },\n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022This is a test\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLeadGenForm?ids=List({VERSIONED_LEAD_GEN_FORM_1},{VERSIONED_LEAD_GEN_FORM_2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaLeadGenForm?ids=List({VERSIONED_LEAD_GEN_FORM_1},{VERSIONED_LEAD_GEN_FORM_2})\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:1,1)\u0022: {\n            \u0022owner\u0022: \u0022urn:li:organization:1\u0022,\n            \u0022hiddenFields\u0022: [],\n            \u0022versionId\u0022: 1,\n            \u0022created\u0022: 1698944433906,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022name\u0022: \u0022DMA Test\u0022,\n            \u0022id\u0022: 7125889434939535361,\n            \u0022lastModified\u0022: 1698944433906,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 1,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Last Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022lastName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022postSubmissionInfo\u0022: {\n                    \u0022message\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022Thanks\u0022\n                        }\n                    },\n                    \u0022callToAction\u0022: {\n                        \u0022callToActionLabel\u0022: \u0022VISIT_COMPANY_WEBSITE\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [\n                        {\n                            \u0022consent\u0022: {\n                                \u0022localized\u0022: {\n                                    \u0022en_US\u0022: \u0022The event organizer may use the above information to send communications about their offerings.\u0022\n                                }\n                            },\n                            \u0022checkRequired\u0022: false,\n                            \u0022id\u0022: 1\n                        }\n                    ],\n                    \u0022privacyPolicyUrl\u0022: \u0022https://www.blah.com/1\u0022,\n                    \u0022legalInfoId\u0022: 4\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022This is a test\u0022\n                    }\n                }\n            }\n        },\n        \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:2,1)\u0022: {\n            \u0022owner\u0022: \u0022urn:li:organization:1\u0022,\n            \u0022hiddenFields\u0022: [],\n            \u0022versionId\u0022: 1,\n            \u0022created\u0022: 1698944300179,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022name\u0022: \u0022DMA Test\u0022,\n            \u0022id\u0022: 2,\n            \u0022lastModified\u0022: 1698944300179,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 1,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Last Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022lastName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022postSubmissionInfo\u0022: {\n                    \u0022message\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022Thanks\u0022\n                        }\n                    },\n                    \u0022callToAction\u0022: {\n                        \u0022callToActionLabel\u0022: \u0022VISIT_COMPANY_WEBSITE\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [\n                        {\n                            \u0022consent\u0022: {\n                                \u0022localized\u0022: {\n                                    \u0022en_US\u0022: \u0022The event organizer may use the above information to send communications about their offerings.\u0022\n                                }\n                            },\n                            \u0022checkRequired\u0022: false,\n                            \u0022id\u0022: 1\n                        }\n                    ],\n                    \u0022privacyPolicyUrl\u0022: \u0022https://www.blah.com/1\u0022,\n                    \u0022legalInfoId\u0022: 4\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022This is a test\u0022\n                    }\n                }\n            }\n        }\n    },\n    \u0022statuses\u0022: {\n        \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:1,1)\u0022: 200,\n        \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:2,1)\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List with VersionedForm URNs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(VERSIONED_FORM_URN_1,VERSIONED_FORM_URN_2)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of LeadGenerationAuthorizationActionType.LEAD_GENERATION_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "OWNER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "OWNER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLeadGenForm?q=owner\u0026owner={ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "OWNER",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaLeadGenForm?q=owner\u0026owner={ORGANIZATION_URN}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "OWNER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: \u0022urn:li:organization:1\u0022,\n            \u0022hiddenFields\u0022: [\n                {\n                    \u0022name\u0022: \u0022Event name\u0022,\n                    \u0022value\u0022: \u0022LeadGen Test\u0022\n                }\n            ],\n            \u0022versionId\u0022: 1,\n            \u0022created\u0022: 1645786593450,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022name\u0022: \u0022Registration form for LeadGen Test\u0022,\n            \u0022id\u0022: 1,\n            \u0022lastModified\u0022: 1645786593450,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 1,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022First Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022firstName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 2,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Last Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022lastName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 3,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Email Address\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022email\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022EMAIL\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 4,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Company name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022company\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022COMPANY_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 5,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Job title\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022jobTitle\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022JOB_TITLE\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 6,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Country/Region\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022country\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022COUNTRY\u0022,\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022description\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Register for this event with your profile information\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [\n                        {\n                            \u0022consent\u0022: {\n                                \u0022localized\u0022: {\n                                    \u0022en_US\u0022: \u0022The event organizer may use the above information to send communications about their offerings.\u0022\n                                }\n                            },\n                            \u0022checkRequired\u0022: false,\n                            \u0022id\u0022: 1\n                        }\n                    ],\n                    \u0022privacyPolicyUrl\u0022: \u0022https://www.linkedin.com/policy\u0022,\n                    \u0022legalInfoId\u0022: 1\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Registration Form\u0022\n                    }\n                }\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Lead Gen Form",
+        "OWNER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN to find forms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner=ORGANIZATION_URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "Error Message",
+        "Description",
+        "Error Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

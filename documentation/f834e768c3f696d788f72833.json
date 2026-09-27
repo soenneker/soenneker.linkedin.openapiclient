@@ -1,0 +1,128 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+  "Title": "Profile Matching",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/concepts/contracts",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Matching",
+      "Anchor": "profile-matching",
+      "SectionPath": [],
+      "Text": "In order to fully utilize LinkedIn identity and insights in external applications, Display Services offers the capability to match LinkedIn profiles and company pages to external record IDs that may exist in a third-party solution. This document walks through how external record IDs are ingested and matched to LinkedIn data, and how those matches shape the overall user experience provided by the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingesting External Record IDs",
+      "Anchor": "ingesting-external-record-ids",
+      "SectionPath": [
+        "Ingesting External Record IDs"
+      ],
+      "Text": "Before matches to external record IDs can be utilized within Display Services, they must first be established. There are two ways that external record IDs can be matched to LinkedIn members or companies: through CRM Sync and within the iframe.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Sync",
+      "Anchor": "crm-sync",
+      "SectionPath": [
+        "Ingesting External Record IDs",
+        "CRM Sync"
+      ],
+      "Text": "The CRM Sync process ingests external CRM records, like leads, contacts and accounts, for supported platforms. After ingestion, fuzzy matching is performed against the LinkedIn graph to determine matches. Matches are created with an associated level of confidence using the provided external data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Within the Display Services Iframe",
+      "Anchor": "within-the-display-services-iframe",
+      "SectionPath": [
+        "Ingesting External Record IDs",
+        "Within the Display Services Iframe"
+      ],
+      "Text": "The iframe is loaded with query parameters that shape the user\u0027s experience. All iframes are loaded with a select module or modules, and in the context of a LinkedIn profile or account. If an external record ID exists for the external entity the iframe is being asked to show LinkedIn data for (like a contact or a company), the external ID can be passed in the crmRecordId query parameter. If there is not already an existing high-confidence match for the external ID, the iframe will use the additional query parameters passed to offer search results that can be used by the user to identify a match. After a user has decided which LinkedIn member or company is the correct match, and they click \u0022Match\u0022 in the iframe, a 100% confidence match is established between the external record ID and the member or company selected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Displaying Established Matches",
+      "Anchor": "displaying-established-matches",
+      "SectionPath": [
+        "Displaying Established Matches"
+      ],
+      "Text": "Once a high-confidence match is established between an external record ID and a LinkedIn member or company via CRM Sync or the iframe matching flow, that match can be surfaced through the iframe or through the Profile Associations API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Displaying Established Matches",
+      "Anchor": "displaying-established-matches",
+      "SectionPath": [
+        "Displaying Established Matches"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Displaying Established Matches",
+      "Anchor": "displaying-established-matches",
+      "SectionPath": [
+        "Displaying Established Matches"
+      ],
+      "Text": "Established matches persist for all seat holders on a Sales Navigator contract.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matches in the Iframe",
+      "Anchor": "matches-in-the-iframe",
+      "SectionPath": [
+        "Displaying Established Matches",
+        "Matches in the Iframe"
+      ],
+      "Text": "In the iframe, when a crmRecordId is passed in the query string, the iframe will identify the existing high confidence match and load the associated LinkedIn data. If users decide that the match corresponds to an incorrect record within LinkedIn, the user can click on the \u0022...\u0022 button in the iframe to select a new match.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matches in the Profile Associations API",
+      "Anchor": "matches-in-the-profile-associations-api",
+      "SectionPath": [
+        "Displaying Established Matches",
+        "Matches in the Profile Associations API"
+      ],
+      "Text": "The Profile Associations API returns the most recent high-confidence match available for a given external record ID. More information about this API, and how it can be consumed, is available on the Profile Associations API page.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

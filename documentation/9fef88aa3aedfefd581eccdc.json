@@ -1,0 +1,141 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+  "Title": "LinkedIn Learning SSO Certificate Renewal",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning SSO Certificate Renewal",
+      "Anchor": "linkedin-learning-sso-certificate-renewal",
+      "SectionPath": [],
+      "Text": "LinkedIn Learning and its partners exchange SAML SSO certificates on a predetermined basis so that LinkedIn Learning continues communicating with partner identity providers, such as Okta, Azure AD, and ADFS. To maintain their SAML Single Sign-On connections, partner organizations need to periodically renew their certificates. A new stand-alone SAML certificate may be added to an existing Single Sign-On configuration, or a new version of the identity provider metadata file can be reloaded into the configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the LinkedIn Learning SSO certificate renewal process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": ".",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renewing a Certificate",
+      "Anchor": "renewing-a-certificate",
+      "SectionPath": [
+        "Renewing a Certificate"
+      ],
+      "Text": "To add a SAML SSO certificate, take the following actions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Renewing a Certificate",
+      "Anchor": "renewing-a-certificate",
+      "SectionPath": [
+        "Renewing a Certificate"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then click Authentication.\n\n\nIn the Configure single sign-on section, under SSO connections, select the \u0022More Options\u0022 (\u0022...\u0022) icon \u003E \u0022Edit\u0022 next to your existing SSO configuration.\n\n\nIn the Authenticate users with SAML SSO screen, select the SSO settings tab, then select the Manually enter values radio button.\n\nClick Add another certificate. (The active certificate is auto-filled by your original configuration.)\n\n\nCopy your new SAML certificate and paste it into the Additional certificate field.\n\nClick Save.\n\n\nBoth certificates are now active for LinkedIn Learning. Note: Do not remove your original certificate when you add the new certificate. This action locks you out and you then must re-submit the new certificate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Using with a Metadata File",
+      "Anchor": "updating-using-with-a-metadata-file",
+      "SectionPath": [
+        "Updating Using with a Metadata File"
+      ],
+      "Text": "You can also upload and replace your SSO certificate via an identity provider metadata file (XML). To upload your metadata file, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Using with a Metadata File",
+      "Anchor": "updating-using-with-a-metadata-file",
+      "SectionPath": [
+        "Updating Using with a Metadata File"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Using with a Metadata File",
+      "Anchor": "updating-using-with-a-metadata-file",
+      "SectionPath": [
+        "Updating Using with a Metadata File"
+      ],
+      "Text": "This method immediately removes your old SAML certificate and activates your new certificate, unless both certificates are included in the metadata file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Uploading a Metadata File",
+      "Anchor": "uploading-a-metadata-file",
+      "SectionPath": [
+        "Updating Using with a Metadata File",
+        "Uploading a Metadata File"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then click Authentication.\n\n\nIn the Configure single sign-on section, under SSO connections, select the \u0022More Options\u0022 (\u0022...\u0022) icon \u003E \u0022Edit\u0022 next to your existing SSO configuration.\n\n\nIn the Authenticate users with SAML SSO screen, select the SSO settings tab, then select the Upload XML file radio button.\n\n\nNavigate to the downloaded file and click Open. If successful, the LinkedIn Learning fields are populated with the metadata and certificate/s.\n\nClick Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Uploading a Metadata File",
+      "Anchor": "uploading-a-metadata-file",
+      "SectionPath": [
+        "Updating Using with a Metadata File",
+        "Uploading a Metadata File"
+      ],
+      "Text": "Congratulations! Your learners can continue using their Single Sign-On authentication method with LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Uploading a Metadata File",
+      "Anchor": "uploading-a-metadata-file",
+      "SectionPath": [
+        "Updating Using with a Metadata File",
+        "Uploading a Metadata File"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

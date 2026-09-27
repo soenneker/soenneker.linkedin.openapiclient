@@ -7,13 +7,38 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Details corresponding to the learner like the name, email and uniqueUserIdDocumented type: LearnerDetailsRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Additional profile attributes provided by the enterprise. This data is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration.Documented type: ObjectRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes? CustomAttributes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes CustomAttributes { get; set; }
+#endif
+        /// <summary>Email address of the enterprise entity.Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get; set; }
+#nullable restore
+#else
+        public string Email { get; set; }
+#endif
+        /// <summary>A list of groups that the enterprise profile belongs to.Documented type: ArrayRequirement: Yes (default=[])</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem>? EnterpriseGroups { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem> EnterpriseGroups { get; set; }
+#endif
         /// <summary>The entity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +46,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity Entity { get; set; }
+#endif
+        /// <summary>Name of the enterprise entity. An enterprise entity can be an account, group or individual.Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>If present, a unique and immutable user identifier. This value is generally provided to LinkedIn Learning through a manual or automated user provisioning process during account configuration. This value is often used to make an association between learner profiles in other enterprise applications like learning management systems (LMSs) or business intelligence (BI) tools.Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueUserId { get; set; }
+#nullable restore
+#else
+        public string UniqueUserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails"/> and sets the default values.
@@ -47,7 +88,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customAttributes", n => { CustomAttributes = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "enterpriseGroups", n => { EnterpriseGroups = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entity", n => { Entity = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "uniqueUserId", n => { UniqueUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +103,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsCustomAttributes>("customAttributes", CustomAttributes);
+            writer.WriteStringValue("email", Email);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceLearnerdetailsEnterpriseGroupsItem>("enterpriseGroups", EnterpriseGroups);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetailsEntity>("entity", Entity);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("uniqueUserId", UniqueUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

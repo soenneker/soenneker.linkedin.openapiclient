@@ -1,0 +1,493 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+  "Title": "The Middleware Platform",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "The Middleware Platform",
+      "Anchor": "the-middleware-platform",
+      "SectionPath": [],
+      "Text": "The Middleware Platform represents a common set of APIs used to sync jobs, job applications, and talent profiles (such as candidates) between your ATS and LinkedIn on behalf of customers. Integrating with Middleware is essential for the Recruiter System Connect integration and powers a number of features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "All Middleware Platform operations are done on behalf of a customer. See Configure Customer Middleware Integrations for details on enabling and configuring customers to integrate with your ATS. This is a prerequisite.\nIf you\u0027re developing a Recruiter System Connect integration, check out the guide for important prerequisites before proceeding.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Jobs",
+      "Anchor": "sync-jobs",
+      "SectionPath": [
+        "Sync Jobs"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Jobs",
+      "Anchor": "sync-jobs",
+      "SectionPath": [
+        "Sync Jobs"
+      ],
+      "Text": "Required for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do",
+      "SectionPath": [
+        "Sync Jobs",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send all historical jobs in bulk as a one-time process. Closed jobs must be included.\nAs jobs are created and updated by the customer, use the Middleware Platform to sync these new and updated jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do",
+      "SectionPath": [
+        "Sync Jobs",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See Sync Jobs for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing",
+      "SectionPath": [
+        "Sync Jobs",
+        "Testing"
+      ],
+      "Text": "Open jobs are available when exporting a candidate in LinkedIn Recruiter",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidates",
+      "Anchor": "sync-candidates",
+      "SectionPath": [
+        "Sync Candidates"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidates",
+      "Anchor": "sync-candidates",
+      "SectionPath": [
+        "Sync Candidates"
+      ],
+      "Text": "Required for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-1",
+      "SectionPath": [
+        "Sync Candidates",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send all historical candidates in bulk as a one-time process. Then, retrieve and store the LinkedIn ID for each candidate.\nAs candidates are created, updated, and deleted by the customer, use the Middleware Platform to sync these new and updated candidates. Then, retrieve and store the LinkedIn ID for each candidate.\nAs candidates apply to jobs, link candidates with job applications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-1",
+      "SectionPath": [
+        "Sync Candidates",
+        "What You\u0027ll Do"
+      ],
+      "Text": "The Middleware Platform will automatically link the candidates you send with Recruiter profiles based on email address and other profile fields. If integrating with Recruiter System Connect, customers will also be able to link candidates manually using the Profile Plugin embedded in your ATS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-1",
+      "SectionPath": [
+        "Sync Candidates",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See Sync Candidates for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-1",
+      "SectionPath": [
+        "Sync Candidates",
+        "What You\u0027ll Do"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-1",
+      "SectionPath": [
+        "Sync Candidates",
+        "What You\u0027ll Do"
+      ],
+      "Text": "Note: Customer manual candidate linking via the Profile Plugin should override LinkedIn\u0027s algorithmic matches.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing-1",
+      "SectionPath": [
+        "Sync Candidates",
+        "Testing"
+      ],
+      "Text": "The Profile Plugin embedded in your ATS displays the LinkedIn profile that\u0027s correctly matched with a profile in your system\nCandidate is marked as \u0022In-ATS\u0022 in LinkedIn Recruiter\nUp-to-date candidate data appears in LinkedIn Recruiter\u0027s In-ATS indicator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Notes",
+      "Anchor": "sync-candidate-notes",
+      "SectionPath": [
+        "Sync Candidate Notes"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Candidate Notes",
+      "Anchor": "sync-candidate-notes",
+      "SectionPath": [
+        "Sync Candidate Notes"
+      ],
+      "Text": "Optional for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-2",
+      "SectionPath": [
+        "Sync Candidate Notes",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send all historical candidate notes in bulk as a one-time process.\nAs candidate notes are created and updated by the customer, use the Middleware Platform to sync these new and updated notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-2",
+      "SectionPath": [
+        "Sync Candidate Notes",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See Sync Candidates Notes for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing-2",
+      "SectionPath": [
+        "Sync Candidate Notes",
+        "Testing"
+      ],
+      "Text": "Up-to-date candidate notes appear in LinkedIn Recruiter\u0027s In-ATS indicator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Applications",
+      "Anchor": "sync-job-applications",
+      "SectionPath": [
+        "Sync Job Applications"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Applications",
+      "Anchor": "sync-job-applications",
+      "SectionPath": [
+        "Sync Job Applications"
+      ],
+      "Text": "Required for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-3",
+      "SectionPath": [
+        "Sync Job Applications",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send all historical job applications in bulk as a one-time process.\nAs job applications are submitted, updated, or deleted, use the Middleware Platform to sync these new and updated job applications.\nAs candidates apply to jobs, link candidates with job applications\nLink new job applications with previously submitted job postings using your ATS\u0027s identifier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-3",
+      "SectionPath": [
+        "Sync Job Applications",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See Sync Job Applications for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing-3",
+      "SectionPath": [
+        "Sync Job Applications",
+        "Testing"
+      ],
+      "Text": "Up-to-date candidate application data appears in LinkedIn Recruiter\u0027s In-ATS Indicator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Application Notes \u0026 Interview Feedback",
+      "Anchor": "sync-job-application-notes--interview-feedback",
+      "SectionPath": [
+        "Sync Job Application Notes \u0026 Interview Feedback"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Application Notes \u0026 Interview Feedback",
+      "Anchor": "sync-job-application-notes--interview-feedback",
+      "SectionPath": [
+        "Sync Job Application Notes \u0026 Interview Feedback"
+      ],
+      "Text": "Optional for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-4",
+      "SectionPath": [
+        "Sync Job Application Notes \u0026 Interview Feedback",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send all historical job applications notes and interview feedback in bulk as a one-time process.\nAs job application notes and interview feedback are submitted and updated, use the Middleware Platform to sync these new and updated records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-4",
+      "SectionPath": [
+        "Sync Job Application Notes \u0026 Interview Feedback",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See Sync Application Notes \u0026 Interview Feedback for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing-4",
+      "SectionPath": [
+        "Sync Job Application Notes \u0026 Interview Feedback",
+        "Testing"
+      ],
+      "Text": "Up-to-date candidate application notes and interview feedback appears in LinkedIn Recruiter\u0027s In-ATS Indicator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Application Stages",
+      "Anchor": "sync-job-application-stages",
+      "SectionPath": [
+        "Sync Job Application Stages"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Application Stages",
+      "Anchor": "sync-job-application-stages",
+      "SectionPath": [
+        "Sync Job Application Stages"
+      ],
+      "Text": "Required for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-5",
+      "SectionPath": [
+        "Sync Job Application Stages",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send the historical stages of a job application.\nAs job application changes its current stage, use the Middleware Platform to sync these new and updated records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-5",
+      "SectionPath": [
+        "Sync Job Application Stages",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See Sync Application Stages for technical details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing-5",
+      "SectionPath": [
+        "Sync Job Application Stages",
+        "Testing"
+      ],
+      "Text": "Up-to-date candidate application stage reflected in LinkedIn Recruiter\u0027s In-ATS Indicator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync ACLs",
+      "Anchor": "sync-acls",
+      "SectionPath": [
+        "Sync ACLs"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync ACLs",
+      "Anchor": "sync-acls",
+      "SectionPath": [
+        "Sync ACLs"
+      ],
+      "Text": "Required for: Recruiter System Connect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-6",
+      "SectionPath": [
+        "Sync ACLs",
+        "What You\u0027ll Do"
+      ],
+      "Text": "When enabling a customer, use the Middleware Platform to send all user-level entity security information in bulk as a one-time process.\nAs secured entities are created and updated by the customer, use the Middleware Platform to sync these new and updated entity/role associations.\nAs users are added to and removed from security groups or roles, use the Middleware Platform to sync these user/role associations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What You\u0027ll Do",
+      "Anchor": "what-youll-do-6",
+      "SectionPath": [
+        "Sync ACLs",
+        "What You\u0027ll Do"
+      ],
+      "Text": "See ACL Overview for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing",
+      "Anchor": "testing-6",
+      "SectionPath": [
+        "Sync ACLs",
+        "Testing"
+      ],
+      "Text": "Secured jobs are only visible to the correct users when exporting a candidate in LinkedIn Recruiter\nCandidate application info for secured jobs are only visible to the correct users when viewing In-ATS indicator in LinkedIn Recruiter",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,801 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+  "Title": "Ad Budget Pricing",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/money-object",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Pricing",
+      "Anchor": "ad-budget-pricing",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Pricing",
+      "Anchor": "ad-budget-pricing",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Pricing",
+      "Anchor": "ad-budget-pricing",
+      "SectionPath": [],
+      "Text": "The Ad Budget Pricing API provides key insights on pricing metrics such as minimum, maximum, and suggested bids based on targeting criteria. This data helps you make the most of your LinkedIn Ads experience by ensuring that your ads are cost effective.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful calls: (1) Scope permissions to rw_ads and/or r_ads, and (2) the user assigning the permission holds one of the following roles in the Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions as follows:\n\nrw_ads (Read/Write).\nr_ads (Read-Only)\n\n\nAssigning permission for the Ad Account roles:\n\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (Read-Only, even with rw_ads scope).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "The following schema table describes the response fields. Query parameters are shown separately for the criteriaV2 finder.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "bidLimits.max",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum allowable bid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "bidLimits.min",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Amount for which if the bid is below the limit, campaign delivery may be poor for Sponsored Update format campaigns. If the campaign format is not Sponsored Update, then the bid can\u0027t be below this value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "suggestedBid.default",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The suggested bid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "suggestedBid.max",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "High end of suggested bid range",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "suggestedBid.min",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Low end of suggested bid range",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dailyBudgetLimits.max",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum daily budget",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dailyBudgetLimits.min",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Minimum daily budget",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dailyBudgetLimits.default",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Default daily budget",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "The criteriaV2 finder uses the targetingCriteria format to return pricing insights on specific audiences, bid types, and campaign types. For more information on Targeting Criteria, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the X-Restli-Protocol-Version: 2.0.0 header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "Restli 2.0 requires URNs in query params to be URL encoded. For example, urn:li:sponsoredAccount:1245678 would become urn%3Ali%3AsponsoredAccount%3A1245678.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "Note that Postman or similar API tools may not support these types of calls. Testing with curl is recommended if you encounter a 400 error with message Invalid query parameters passed to request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "Calls to this endpoint are structured as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adBudgetPricing?account={adAccountUrn}\u0026bidType={bidTypeEnum}\u0026optimizationTargetType={optimizationTargetEnum}\u0026objectiveType={objectiveTypeEnum}\u0026campaignType={campaignTypeEnum}\u0026q=criteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded facet_URN_1}:List({encoded facet_URN_1_value_1},{encoded facet_URN_1_value_2}))),(or:({encoded facet_URN_2}:List({encoded facet_URN_2_value_1},{encoded facet_URN_2_value_2}))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Pricing Insights by CriteriaV2",
+      "Anchor": "find-pricing-insights-by-criteriav2",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adBudgetPricing?account={adAccountUrn}\u0026bidType={bidTypeEnum}\u0026optimizationTargetType={optimizationTargetEnum}\u0026objectiveType={objectiveTypeEnum}\u0026campaignType={campaignTypeEnum}\u0026q=criteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded facet_URN_1}:List({encoded facet_URN_1_value_1},{encoded facet_URN_1_value_2}))),(or:({encoded facet_URN_2}:List({encoded facet_URN_2_value_1},{encoded facet_URN_2_value_2}))))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consistent field value of criteriaV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaignType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign type. Valid values are: TEXT_AD SPONSORED_UPDATES SPONSORED_INMAILS",
+            "Links": [],
+            "Values": [
+              "TEXT_AD",
+              "SPONSORED_UPDATES",
+              "SPONSORED_INMAILS"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored account URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "bidType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid enum values are: CPM - Cost per thousand advertising impressionsCPC - Cost per individual click on the associated linkCPV - Cost per view for video ads",
+            "Links": [],
+            "Values": [
+              "CPM - Cost per thousand advertising impressions",
+              "CPC - Cost per individual click on the associated link",
+              "CPV - Cost per view for video ads"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO-4217 currency code. The default value is in USD.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_4217"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Two character lower case country code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "matchType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid enum values are: EXACT AUDIENCE_EXPANDED",
+            "Links": [],
+            "Values": [
+              "EXACT",
+              "AUDIENCE_EXPANDED"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the targeting criteria that the member should match. This is a more advanced boolean expression than the previous targeting field. It provides a generic AND/OR construct to include and exclude different targeting facets when defining audience for campaigns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetingCriteria object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dailyBudget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Daily campaign budget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Money amount",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/money-object?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the campaign\u0027s objective type. Valid objective values are: VIDEO_VIEW LEAD_GENERATION WEBSITE_CONVERSION BRAND_AWARENESS WEBSITE_VISIT ENGAGEMENT WEBSITE_TRAFFICCREATIVE_ENGAGEMENT JOB_APPLICATION TALENT_LEAD",
+            "Links": [],
+            "Values": [
+              "VIDEO_VIEW",
+              "LEAD_GENERATION",
+              "WEBSITE_CONVERSION",
+              "BRAND_AWARENESS",
+              "WEBSITE_VISIT",
+              "ENGAGEMENT",
+              "WEBSITE_TRAFFIC",
+              "CREATIVE_ENGAGEMENT",
+              "JOB_APPLICATION",
+              "TALENT_LEAD"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used to optimize spending for a campaign. Depending on what value is populated in this field, the campaign will use either auto or manual bidding. Valid optimization values are: NONEMAX IMPRESSION MAX_CLICK MAX_CONVERSIONAWARENESSWEBSITE_VISIT ENHANCED_CONVERSIONMAX_VIDEO_VIEWMAX_LEADTARGET_COST_PER_CLICKTARGET_COST_PER_IMPRESSIONTARGET_COST_PER_VIDEO_VIEWCAP_COST_AND_MAXIMIZE_CLICKSCAP_COST_AND_MAXIMIZE_IMPRESSIONSCAP_COST_AND_MAXIMIZE_VIDEO_VIEWSCAP_COST_AND_MAXIMIZE_LEADS",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX IMPRESSION",
+              "MAX_CLICK",
+              "MAX_CONVERSION",
+              "AWARENESS",
+              "WEBSITE_VISIT",
+              "ENHANCED_CONVERSION",
+              "MAX_VIDEO_VIEW",
+              "MAX_LEAD",
+              "TARGET_COST_PER_CLICK",
+              "TARGET_COST_PER_IMPRESSION",
+              "TARGET_COST_PER_VIDEO_VIEW",
+              "CAP_COST_AND_MAXIMIZE_CLICKS",
+              "CAP_COST_AND_MAXIMIZE_IMPRESSIONS",
+              "CAP_COST_AND_MAXIMIZE_VIDEO_VIEWS",
+              "CAP_COST_AND_MAXIMIZE_LEADS"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Parameters"
+      ],
+      "Text": "For descriptions of Objective and Optimization Target type values, see Allowable Type Combinations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Sample Request"
+      ],
+      "Text": "The following sample request returns pricing for a target market of LinkedIn members working at organizations with 501 to 1,000 employees. The suggested bid returned is based on the specified dailyBudget of USD 300.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Sample Request"
+      ],
+      "Text": "Any URNs included in the parameters must be URL encoded. An unencoded sample request has also been provided for readability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Unencoded Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Unencoded Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adBudgetPricing?account=urn:li:sponsoredAccount:1245678\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:staffCountRanges}:List({encoded urn:li:staffCountRange:(501,1000)}))))))\u0026dailyBudget=(amount:300,currencyCode:USD)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Sample Request",
+      "Anchor": "unencoded-sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Unencoded Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adBudgetPricing?account=urn:li:sponsoredAccount:1245678\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteriaV2\u0026targetingCriteria=(include:(and:List((or:({encoded urn:li:adTargetingFacet:staffCountRanges}:List({encoded urn:li:staffCountRange:(501,1000)}))))))\u0026dailyBudget=(amount:300,currencyCode:USD)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Encoded Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Encoded Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adBudgetPricing?account=urn%3Ali%3AsponsoredAccount%3A1245678\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteriaV2\u0026\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Sample Request",
+      "Anchor": "encoded-sample-request",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Encoded Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adBudgetPricing?account=urn%3Ali%3AsponsoredAccount%3A1245678\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026q=criteriaV2\u0026\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Sample Response"
+      ],
+      "Text": "Note that although this returns a collection in the elements field, for all practical purposes, the returned collection contains only one element of pricing information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022bidLimits\u0022: {\n                \u0022max\u0022: {\n                    \u0022amount\u0022: \u0022100.0\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022min\u0022: {\n                    \u0022amount\u0022: \u00224.0\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                }\n            },\n            \u0022dailyBudgetLimits\u0022: {\n                \u0022default\u0022: {\n                    \u0022amount\u0022: \u002225.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022max\u0022: {\n                    \u0022amount\u0022: \u00221000000.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022min\u0022: {\n                    \u0022amount\u0022: \u002210.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                }\n            },\n            \u0022suggestedBid\u0022: {\n                \u0022default\u0022: {\n                    \u0022amount\u0022: \u00227.10\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022max\u0022: {\n                    \u0022amount\u0022: \u002211.14\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022min\u0022: {\n                    \u0022amount\u0022: \u00227.10\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Find Pricing Insights by CriteriaV2",
+        "Sample Response"
+      ],
+      "Text": "For allowable combinations of Objective and Optimization Target types, see Allowable Type Combinations.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+  "Title": "Locale and Type Finder API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The LinkedIn Learning \u0022localeAndType\u0022 Finder API can be used to return the entire catalog of LinkedIn Learning courses and videos, grouped by language. The LinkedIn Learning API is designed to represent LinkedIn Learning content in a unified and extensible format. In researching standards and implementations of learning content metadata, we adopted patterns that will allow the API to evolve and expand using the same fundamental data model. This means as you integrate with the API presented in this document, your integration can more easily take advantage of new types of LinkedIn Learning content and content information as we add them to the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "The LinkedIn Learning API provides two sets of endpoints - one for learning assets, and one for learning classifications. You can use these endpoints to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "Retrieve a page of learning assets, given locale and type criteria.\nRetrieve a page of learning classifications, given locale and type criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "First, a note about pagination, using learning assets as an example (the same applies for learning classifications). When you call the endpoint that retrieves a page of learning assets, you will get a response like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    \u2026\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 5810,\n    \u0022count\u0022: 20,\n    \u0022start\u0022: 1000,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=980\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      },\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=1020\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "The value of the \u0022elements\u0022 field is an array of learning assets for the requested page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "The value of the \u0022paging\u0022 field is an object with paging metadata. In particular, if you wish to iterate through the catalog of learning assets, you can use the \u0022links\u0022 field in the paging metadata to help construct a request for the next page. The \u0022links\u0022 field simplifies requests for additional pages because you will not need to track the page start and count yourself.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Learning Pagination Reference Table",
+      "Anchor": "learning-pagination-reference-table",
+      "SectionPath": [
+        "Learning Pagination Reference Table"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "total",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total number of learning entities matching the requested criteria",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested number of learning entities for the page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested start index of learning entities for the page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "links",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of link objects. Each link object includes: A \u0022rel\u0022 field whose value can be prev or next.An \u0022href\u0022 field whose value is the link (relative to the base API URL) for the previous or next page of learning entities matching the requested criteria. If the previous or next page does not exist, the corresponding link object will be omitted",
+            "Links": [],
+            "Values": [
+              "A \u0022rel\u0022 field whose value can be prev or next.",
+              "An \u0022href\u0022 field whose value is the link (relative to the base API URL) for the previous or next page of learning entities matching the requested criteria."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Learning Pagination Reference Table",
+      "Anchor": "learning-pagination-reference-table",
+      "SectionPath": [
+        "Learning Pagination Reference Table"
+      ],
+      "Text": "Each localeAndType Finder endpoint and its parameters are documented below. Note that all parameter names and values are case-sensitive.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets localeAndType Finder",
+      "Anchor": "learningassets-localeandtype-finder",
+      "SectionPath": [
+        "learningAssets localeAndType Finder"
+      ],
+      "Text": "To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets localeAndType Finder",
+      "Anchor": "learningassets-localeandtype-finder",
+      "SectionPath": [
+        "learningAssets localeAndType Finder"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets localeAndType Finder",
+      "Anchor": "learningassets-localeandtype-finder",
+      "SectionPath": [
+        "learningAssets localeAndType Finder"
+      ],
+      "Text": "The content library is licensed by language. One LinkedIn Learning tenant may have access to English assets while another may have access to French and German assets. The \u0022localeAndType\u0022 finder does not filter results based on licensing. If your use case requires bulk importing LinkedIn Learning assets licensed to a tenant, use the \u0022criteria\u0022 finder. Review Retrieve learning assets based on requester\u0027s licensed access for additional information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "learningAssets localeAndType Finder",
+      "Anchor": "learningassets-localeandtype-finder",
+      "SectionPath": [
+        "learningAssets localeAndType Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/learningAssets?q=localeAndType",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "learningAssets localeAndType Finder",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be: localeAndType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the learning assets. The value of this parameter should be COURSE, LEARNING_PATH, or VIDEO.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language of the learning assets. The value of this parameter should be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country of the learning assets. The value of this parameter should be DE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expandDepth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#specifying-the-level-of-asset-details"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 1)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeRetired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to include retired learning assets. The value of this parameter should be true or false. To retrieve active and retired learning assets, set this parameter to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning assets for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 20)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request",
+      "SectionPath": [
+        "learningAssets localeAndType Finder",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=localeAndType\u0026assetType=COURSE\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026start=1000\u0026count=20\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "learningAssets localeAndType Finder",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:lyndaCourse:110715\u0022,\n      \u0022contents\u0022: [\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:110715,114477)\u0022,\n            \u0022contents\u0022: [\n              {\n                \u0022asset\u0022: {\n                  \u0022urn\u0022: \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:110715,114478)\u0022,\n                  \u0022contents\u0022: [],\n                  \u0022type\u0022: \u0022VIDEO\u0022,\n                  \u0022title\u0022: {\n                    \u0022locale\u0022: {\n                      \u0022country\u0022: \u0022US\u0022,\n                      \u0022language\u0022: \u0022en\u0022\n                    },\n                    \u0022value\u0022: \u0022Welcome\u0022\n                  }\n                }\n              },\n    \u2026\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 5810,\n    \u0022count\u0022: 20,\n    \u0022start\u0022: 1000,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=980\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      },\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=1020\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningClassifications localeAndType Finder",
+      "Anchor": "learningclassifications-localeandtype-finder",
+      "SectionPath": [
+        "learningClassifications localeAndType Finder"
+      ],
+      "Text": "To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "learningClassifications localeAndType Finder",
+      "Anchor": "learningclassifications-localeandtype-finder",
+      "SectionPath": [
+        "learningClassifications localeAndType Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/learningClassifications?q=localeAndType",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "learningClassifications localeAndType Finder",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be: localeAndType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the learning classifications. The value of this parameter should be LIBRARY, SUBJECT, or TOPIC. Libraries, subjects, and topics are taxonomy categories associated with learning assets. Libraries - for example, \u0022Technology\u0022 - are broad groups of learning assets. Subjects - for example, \u0022Software Development\u0022 - are children of libraries and are groups of related topics. Topics - for example, \u0022Version Control\u0022 - are children of subjects and are focused topics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language of the learning classifications. The value of this parameter should be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country of the learning classifications. The value of this parameter should be DE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning classifications for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning classifications to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 100)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "learningClassifications localeAndType Finder",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningClassifications?q=localeAndType\u0026type=LIBRARY\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026start=0\u0026count=100\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-1",
+      "SectionPath": [
+        "learningClassifications localeAndType Finder",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:lyndaCategory:7163\u0022,\n      \u0022owner\u0022: {\n        \u0022urn\u0022: \u0022urn:li:company:0000\u0022,\n        \u0022name\u0022: {\n          \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          },\n          \u0022value\u0022: \u0022LinkedIn\u0022\n        }\n      },\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Creative\u0022\n      },\n      \u0022type\u0022: \u0022LIBRARY\u0022\n    },\n    \u2026\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 3,\n    \u0022count\u0022: 100,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

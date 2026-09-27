@@ -1,0 +1,230 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/media-migration",
+  "Title": "Media Changes and Migration",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/media-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-image",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Media Changes and Migration",
+      "Anchor": "media-changes-and-migration",
+      "SectionPath": [],
+      "Text": "Media images are an important part of the LinkedIn API ecosystem. From pictureInfo and backgroundImage in Profile API to logo and coverPhoto in Organization API , these media fields enhance the LinkedIn Developer Platform in many ways and will continue to do so in the future.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Changes and Migration",
+      "Anchor": "media-changes-and-migration",
+      "SectionPath": [],
+      "Text": "We will be making some updates to our media fields and values beginning February 26, 2018. On this page, you will find what has changed and what changes are to come.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Existing Field Changes",
+      "Anchor": "existing-field-changes",
+      "SectionPath": [
+        "Existing Field Changes"
+      ],
+      "Text": "For media fields that return a media-typed URN (e.g. urn:li:media:{id} ), the structure will stay the same for backward compatability but there will be some underlying functionality changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before the change",
+      "Anchor": "before-the-change",
+      "SectionPath": [
+        "Existing Field Changes",
+        "Before the change"
+      ],
+      "Text": "Retrieve the media file of a media-typed URN by replacing the URN sub-string urn:li:media: to https://media.licdn.com/mpr/mpr . For example, if the field value is urn:li:media:/p/1/000/0a1/99/123456.jpg , you can modify it to https://media.licdn.com/mpr/mpr/p/1/000/0a1/99/123456.jpg to retrieve it as a media URL via the LinkedIn CDN. To get a specific dimension, you can concatenate shrink_X_X/ to get appropriate sizing. For example, https://media.licdn.com/mpr/mpr/shrink_100_100/p/1/000/0a1/99/123456.jpg .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After the change",
+      "Anchor": "after-the-change",
+      "SectionPath": [
+        "Existing Field Changes",
+        "After the change"
+      ],
+      "Text": "The media-typed URN will still return in the same structure but the id portion will be different. For example: urn:li:media:/gcrc/dms/image/C4D03AQGsitRwG8U8ZQ/profile-displayphoto-shrink_800_800/0?e=1525021200\u0026v=alpha\u0026t=QU3NjJVvPZR6C_6VhPn7wrOCWYoLsx7i1234knkzRRw . The replacement of the LinkedIn CDN will still be the same except the resizing functionality with shrink_X_X/ will no longer work. If you append the shrink_X_X/ , we will always return the original size of the media image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After the change",
+      "Anchor": "after-the-change",
+      "SectionPath": [
+        "Existing Field Changes",
+        "After the change"
+      ],
+      "Text": "The new id will be dynamic and can change from time to time. We recommend retrieving at least once every 60 days to update your media-typed URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After the change",
+      "Anchor": "after-the-change",
+      "SectionPath": [
+        "Existing Field Changes",
+        "After the change"
+      ],
+      "Text": "This will remain working until December 1, 2018 . Please continue reading to see the required media migration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Migration to New Fields",
+      "Anchor": "media-migration-to-new-fields",
+      "SectionPath": [
+        "Media Migration to New Fields"
+      ],
+      "Text": "Both the existing and new fields will work concurrently over the coming months. Starting December 1, 2018 , the existing fields will no longer be returned. After that, only the new fields and their format values will be supported. We ask all developers to plan their migration accordingly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Migration to New Fields",
+      "Anchor": "media-migration-to-new-fields",
+      "SectionPath": [
+        "Media Migration to New Fields"
+      ],
+      "Text": "The new value formats are digitalmediaAsset URNs (e.g. urn:li:digitalmediaAsset:123ABC ). These URNs will need to be decorated via your query parameter projection that will include ~, ~:playableStreams or ~:privatePlayableStreams . For more information, see here about digital media asset URNs . See below for an example of Profile API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Media Migration to New Fields",
+      "Anchor": "media-migration-to-new-fields",
+      "SectionPath": [
+        "Media Migration to New Fields"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(id,profilePicture(displayImage~:playableStreams))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Profile API sample response",
+      "Anchor": "profile-api-sample-response",
+      "SectionPath": [
+        "Media Migration to New Fields",
+        "Profile API sample response"
+      ],
+      "Text": "{\n  \u0022profilePicture\u0022: {\n    \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ\u0022,\n    \u0022displayImage~\u0022: {\n      \u0022elements\u0022: [\n        {\n          \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100)\u0022,\n          \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n          \u0022data\u0022: {\n            \u0022com.linkedin.digitalmedia.mediaartifact.StillImage\u0022: {\n              \u0022storageSize\u0022: {\n                \u0022width\u0022: 100,\n                \u0022height\u0022: 100\n              },\n              \u0022storageAspectRatio\u0022: {\n                \u0022widthAspect\u0022: 1,\n                \u0022heightAspect\u0022: 1,\n                \u0022formatted\u0022: \u00221.00:1.00\u0022\n              },\n              \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n              \u0022rawCodecSpec\u0022: {\n                \u0022name\u0022: \u0022jpeg\u0022,\n                \u0022type\u0022: \u0022image\u0022\n              },\n              \u0022displaySize\u0022: {\n                \u0022uom\u0022: \u0022PX\u0022,\n                \u0022width\u0022: 100,\n                \u0022height\u0022: 100\n              },\n              \u0022displayAspectRatio\u0022: {\n                \u0022widthAspect\u0022: 1,\n                \u0022heightAspect\u0022: 1,\n                \u0022formatted\u0022: \u00221.00:1.00\u0022\n              }\n            }\n          },\n          \u0022identifiers\u0022: [\n            {\n              \u0022identifier\u0022: \u0022https://media.licdn.com/dms/image/C4D03AQGsitRwG8U8ZQ/profile-displayphoto-shrink_100_100/0?e=1526940000\u0026v=alpha\u0026t=12345\u0022,\n              \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100,0)\u0022,\n              \u0022index\u0022: 0,\n              \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n              \u0022identifierExpiresInSeconds\u0022: 1526940000\n            }\n          ]\n        },\n        {\n          \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_200_200)\u0022,\n          \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n          \u0022data\u0022: {\n            \u0022com.linkedin.digitalmedia.mediaartifact.StillImage\u0022: {\n              \u0022storageSize\u0022: {\n                \u0022width\u0022: 200,\n                \u0022height\u0022: 200\n              },\n              \u0022storageAspectRatio\u0022: {\n                \u0022widthAspect\u0022: 1,\n                \u0022heightAspect\u0022: 1,\n                \u0022formatted\u0022: \u00221.00:1.00\u0022\n              },\n              \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n              \u0022rawCodecSpec\u0022: {\n                \u0022name\u0022: \u0022jpeg\u0022,\n                \u0022type\u0022: \u0022image\u0022\n              },\n              \u0022displaySize\u0022: {\n                \u0022uom\u0022: \u0022PX\u0022,\n                \u0022width\u0022: 200,\n                \u0022height\u0022: 200\n              },\n              \u0022displayAspectRatio\u0022: {\n                \u0022widthAspect\u0022: 1,\n                \u0022heightAspect\u0022: 1,\n                \u0022formatted\u0022: \u00221.00:1.00\u0022\n              }\n            }\n          },\n          \u0022identifiers\u0022: [\n            {\n              \u0022identifier\u0022: \u0022https://media.licdn.com/dms/image/C4D03AQGsitRwG8U8ZQ/profile-displayphoto-shrink_200_200/0?e=1526940000\u0026v=alpha\u0026t=12345\u0022,\n              \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_200_200,0)\u0022,\n              \u0022index\u0022: 0,\n              \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n              \u0022identifierExpiresInSeconds\u0022: 1526940000\n            }\n          ]\n        },\n        {...},\n        {...}\n      ],\n      \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n      }\n    }\n  },\n  \u0022id\u0022: \u0022yrZCpj2ZYQ\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile API sample response",
+      "Anchor": "profile-api-sample-response",
+      "SectionPath": [
+        "Media Migration to New Fields",
+        "Profile API sample response"
+      ],
+      "Text": "For more reference on each impacted API, see the section below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List of Impacted APIs",
+      "Anchor": "list-of-impacted-apis",
+      "SectionPath": [
+        "List of Impacted APIs"
+      ],
+      "Text": "Profile API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List of Impacted APIs",
+      "Anchor": "list-of-impacted-apis",
+      "SectionPath": [
+        "List of Impacted APIs"
+      ],
+      "Text": "Existing Fields: pictureInfo , backgroundImage\nNew Fields: profilePicture , backgroundPicture",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List of Impacted APIs",
+      "Anchor": "list-of-impacted-apis",
+      "SectionPath": [
+        "List of Impacted APIs"
+      ],
+      "Text": "Organization and OrganizationBrands API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List of Impacted APIs",
+      "Anchor": "list-of-impacted-apis",
+      "SectionPath": [
+        "List of Impacted APIs"
+      ],
+      "Text": "Existing Fields: coverPhoto, logo, overviewPhoto\nNew Fields: coverPhotoV2, logoV2, overviewPhotoV2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List of Impacted APIs",
+      "Anchor": "list-of-impacted-apis",
+      "SectionPath": [
+        "List of Impacted APIs"
+      ],
+      "Text": "Ad Creatives API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List of Impacted APIs",
+      "Anchor": "list-of-impacted-apis",
+      "SectionPath": [
+        "List of Impacted APIs"
+      ],
+      "Text": "Existing Fields: TextAdCreativeImageVariables.ImageId\nNew Fields:\u00A0 TextAdCreativeImageVariables.vectorImage",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

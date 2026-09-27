@@ -25,7 +25,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation4FetchExistingConversionRulesForCapiInTheSelectedAdAccount200ResponseElementsItemKey? Key { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation4FetchExistingConversionRulesForCapiInTheSelectedAdAccount200ResponseElementsItemKey Key { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,7 +77,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "conversionMethod", n => { ConversionMethod = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation4FetchExistingConversionRulesForCapiInTheSelectedAdAccount200ResponseElementsItemKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation4FetchExistingConversionRulesForCapiInTheSelectedAdAccount200ResponseElementsItemKey.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -83,7 +92,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversionMethod", ConversionMethod);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation4FetchExistingConversionRulesForCapiInTheSelectedAdAccount200ResponseElementsItemKey>("key", Key);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

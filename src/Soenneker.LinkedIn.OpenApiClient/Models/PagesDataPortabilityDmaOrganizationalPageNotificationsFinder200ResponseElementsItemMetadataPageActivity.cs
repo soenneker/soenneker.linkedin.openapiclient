@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string GeneratedActivity { get; set; }
 #endif
         /// <summary>The pageActivityNotificationId property</summary>
-        public int? PageActivityNotificationId { get; set; }
+        public long? PageActivityNotificationId { get; set; }
         /// <summary>The sourcePost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "generatedActivity", n => { GeneratedActivity = n.GetStringValue(); } },
-                { "pageActivityNotificationId", n => { PageActivityNotificationId = n.GetIntValue(); } },
+                { "pageActivityNotificationId", n => { PageActivityNotificationId = n.GetLongValue(); } },
                 { "sourcePost", n => { SourcePost = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("generatedActivity", GeneratedActivity);
-            writer.WriteIntValue("pageActivityNotificationId", PageActivityNotificationId);
+            writer.WriteLongValue("pageActivityNotificationId", PageActivityNotificationId);
             writer.WriteStringValue("sourcePost", SourcePost);
             writer.WriteAdditionalData(AdditionalData);
         }

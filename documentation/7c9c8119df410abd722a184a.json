@@ -1,0 +1,70 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/follow-company-plugin",
+  "Title": "Follow Company Plugin",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/follow-company-plugin"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Follow Company Plugin",
+      "Anchor": "follow-company-plugin",
+      "SectionPath": [],
+      "Text": "Plugins are a quick and easy way to drop LinkedIn functionality into your website. Use the Follow Company Plugin to allow your users to easily follow your company page on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follow Company Plugin",
+      "Anchor": "follow-company-plugin",
+      "SectionPath": [],
+      "Text": "The JavaScript snippet below will create a widget to follow the LinkedIn company page. Replace the data-id parameter with your Company ID to update the company page followed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follow Company Plugin",
+      "Anchor": "follow-company-plugin",
+      "SectionPath": [],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follow Company Plugin",
+      "Anchor": "follow-company-plugin",
+      "SectionPath": [],
+      "Text": "As a company page administrator, your Company ID can be retrieved by navigating to the admin section of your company page. For example, the LinkedIn Company Admin Page is https://www.linkedin.com/company/0000/admin/. We will use the Company ID 0000 in our example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Sample Request"
+      ],
+      "Text": "\u003Cscript src=\u0022https://platform.linkedin.com/in.js\u0022 type=\u0022text/javascript\u0022\u003E lang: en_US\u003C/script\u003E\n\u003Cscript type=\u0022IN/FollowCompany\u0022 data-id=\u00220000\u0022 data-counter=\u0022bottom\u0022\u003E\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Plugin",
+      "Anchor": "sample-plugin",
+      "SectionPath": [
+        "Sample Plugin"
+      ],
+      "Text": "By obtaining and using LinkedIn Plugins you agree to the Plugins Terms of Use.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

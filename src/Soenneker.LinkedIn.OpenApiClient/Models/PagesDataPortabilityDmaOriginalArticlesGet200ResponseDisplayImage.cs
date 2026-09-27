@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Display image for use when displaying the article around the site.Documented type: ImageRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The downloadUrl property</summary>
+        /// <summary>URL to download/view the media asset.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DownloadUrl { get; set; }
@@ -22,16 +23,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string DownloadUrl { get; set; }
 #endif
-        /// <summary>The downloadUrlExpiresAt property</summary>
-        public int? DownloadUrlExpiresAt { get; set; }
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        /// <summary>Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.Documented type: longRequirement: No</summary>
+        public long? DownloadUrlExpiresAt { get; set; }
+        /// <summary>Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOADDocumented type: MediaStatusRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImageStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage"/> and sets the default values.
         /// </summary>
@@ -58,8 +53,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
-                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetLongValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImageStatus>(); } },
             };
         }
         /// <summary>
@@ -70,8 +65,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("downloadUrl", DownloadUrl);
-            writer.WriteIntValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
-            writer.WriteStringValue("status", Status);
+            writer.WriteLongValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImageStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

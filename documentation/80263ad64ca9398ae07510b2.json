@@ -1,0 +1,635 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+  "Title": "Feed Content Public URL API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Feed Content Public URL API",
+      "Anchor": "feed-content-public-url-api",
+      "SectionPath": [],
+      "Text": "The Feed Content Public URL API returns a publicly visible URL for specific feed content. It supports urn:li:contentTopic, urn:li:job, urn:li:jobPosting, urn:li:lyndaCourse, urn:li:lyndaVideo and urn:li:group only because organizations cannot create these and are not created in response to or in engagement with organizational content. LinkedIn only needs to provide a public URL for those content types. The API constructs and returns the public URL regardless of feed content availability as the returned URL is hard-coded based on the provided URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feed Content Public URL API",
+      "Anchor": "feed-content-public-url-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feed Content Public URL API",
+      "Anchor": "feed-content-public-url-api",
+      "SectionPath": [],
+      "Text": "BATCH_GET - List of publicly visible URL entities for the given set of ids",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Publicly visible URL to the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Locate URNs",
+      "Anchor": "locate-urns",
+      "SectionPath": [
+        "Locate URNs"
+      ],
+      "Text": "URNs can be obtained from feed URLs or by extracting them from the LinkedIn page source.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Extract URNs from Page Source",
+      "Anchor": "extract-urns-from-page-source",
+      "SectionPath": [
+        "Locate URNs",
+        "Extract URNs from Page Source"
+      ],
+      "Text": "To find URNs for LinkedIn content in the page source:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Extract URNs from Page Source",
+      "Anchor": "extract-urns-from-page-source",
+      "SectionPath": [
+        "Locate URNs",
+        "Extract URNs from Page Source"
+      ],
+      "Text": "Navigate to the LinkedIn page containing the content you want to reference.\n\nRight-click anywhere on the page and select View Page Source (or press Ctrl\u002BU on Windows/Linux or Cmd\u002BOption\u002BU on Mac).\n\nIn the page source, use your browser\u0027s search function (Ctrl\u002BF or Cmd\u002BF) to search for \u0022urn:li:{entity_type}:\u0022 where {entity_type} corresponds to the content type:\nExpand table\n\n\nContent Type\nEntity Type\n\n\n\n\nLinkedIn Learning Course\nlyndaCourse\n\n\nLinkedIn Learning Video\nlyndaVideo\n\n\nJob Posting\njobPosting\n\n\nJob\njob\n\n\nNews/Content Topic\ncontentTopic\n\n\nGroup\ngroup\n\n\n\n\nCopy the complete URN value, which will be in the format:\n\nurn:li:lyndaCourse:{courseId}\nurn:li:lyndaVideo:(urn:li:lyndaCourse:{courseId},{videoId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Extract URNs from Page Source",
+      "Anchor": "extract-urns-from-page-source",
+      "SectionPath": [
+        "Locate URNs",
+        "Extract URNs from Page Source"
+      ],
+      "Text": "Example URN from Page Source:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Extract URNs from Page Source",
+      "Anchor": "extract-urns-from-page-source",
+      "SectionPath": [
+        "Locate URNs",
+        "Extract URNs from Page Source"
+      ],
+      "Text": "urn:li:lyndaCourse:{courseId}\n    urn:li:lyndaVideo:(urn:li:lyndaCourse:{courseId},{videoId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Extract URNs from Feed URLs",
+      "Anchor": "extract-urns-from-feed-urls",
+      "SectionPath": [
+        "Locate URNs",
+        "Extract URNs from Feed URLs"
+      ],
+      "Text": "For certain content types, you can derive the URN directly from the URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Extract URNs from Feed URLs",
+      "Anchor": "extract-urns-from-feed-urls",
+      "SectionPath": [
+        "Locate URNs",
+        "Extract URNs from Feed URLs"
+      ],
+      "Text": "https://www.linkedin.com/jobs/view/{jobId} -\u003E urn:li:job:{jobId}\n    https://www.linkedin.com/news/story/{contentTopicId} -\u003E urn:li:contentTopic:{contentTopicId}\n    https://www.linkedin.com/groups/{groupId} -\u003E urn:li:group:{groupId}\n    https://www.linkedin.com/jobs/view/{jobPostingId} -\u003E urn:li:jobPosting:{jobPostingId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URL Encoding URNs for ids=List()",
+      "Anchor": "url-encoding-urns-for-idslist",
+      "SectionPath": [
+        "URL Encoding URNs for ids=List()"
+      ],
+      "Text": "When passing URNs in the ids parameter, special characters must be URL-encoded. Use the following encoding values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "URL Encoding URNs for ids=List()",
+      "Anchor": "url-encoding-urns-for-idslist",
+      "SectionPath": [
+        "URL Encoding URNs for ids=List()"
+      ],
+      "Text": "",
+      "Headers": [
+        "Character",
+        "URL Encoded",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": ":",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "%3A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Colon",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "(",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "%28",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Opening parenthesis",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": ")",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "%29",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Closing parenthesis",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": ",",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "%2C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Comma",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Encoding Example",
+      "Anchor": "encoding-example",
+      "SectionPath": [
+        "URL Encoding URNs for ids=List()",
+        "Encoding Example"
+      ],
+      "Text": "Original URN:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoding Example",
+      "Anchor": "encoding-example",
+      "SectionPath": [
+        "URL Encoding URNs for ids=List()",
+        "Encoding Example"
+      ],
+      "Text": "urn:li:lyndaVideo:(urn:li:lyndaCourse:{courseId},{videoId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Encoding Example",
+      "Anchor": "encoding-example",
+      "SectionPath": [
+        "URL Encoding URNs for ids=List()",
+        "Encoding Example"
+      ],
+      "Text": "Encoded URN:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoding Example",
+      "Anchor": "encoding-example",
+      "SectionPath": [
+        "URL Encoding URNs for ids=List()",
+        "Encoding Example"
+      ],
+      "Text": "urn%3Ali%3AlyndaVideo%3A%28urn%3Ali%3AlyndaCourse%3A{courseId}%2C{videoId}%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET"
+      ],
+      "Text": "Use the BATCH_GET method to retrieve public URLs for multiple URNs in a single API call. Pass URNs into the ids parameter using the List() format. Each URN should be URL-encoded and separated by commas.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET"
+      ],
+      "Text": "Format: ids=List({encoded_urn1},{encoded_urn2},{encoded_urn3},...)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET"
+      ],
+      "Text": "Example with multiple URNs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET"
+      ],
+      "Text": "ids=List(urn%3Ali%3AcontentTopic%3A{contentTopicId},urn%3Ali%3Agroup%3A{groupId},urn%3Ali%3Ajob%3A{jobId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET"
+      ],
+      "Text": "The commas separating URNs in the List() do not need to be encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaContentPublicUrl?ids=List(encoded contentTopicUrn, jobUrn, jobPostingUrn, lyndaCourseUrn, lyndaVideoUrn)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaContentPublicUrl?ids=List(urn%3Ali%3AcontentTopic%3A{contentTopicId},urn%3Ali%3Agroup%3A{groupId},urn%3Ali%3Ajob%3A{jobId},urn%3Ali%3AjobPosting%3A{jobPostingId},urn%3Ali%3AlyndaCourse%3A{courseId},urn%3Ali%3AlyndaVideo%3A%28urn%3Ali%3AlyndaCourse%3A{courseId}%2C{videoId}%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n        \u0022results\u0022: {\n            \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:{courseId},{videoId})\u0022: {\n                \u0022url\u0022:\u0022https://www.linkedin.com/feed/update/urn:li:lyndaVideo:(urn:li:lyndaCourse:{courseId},{videoId})\u0022\n            },\n            \u0022urn:li:jobPosting:{jobPostingId}\u0022: {\n                \u0022url\u0022:\u0022https://www.linkedin.com/jobs/view/{jobPostingId}\u0022\n            },\n            \u0022urn:li:group:{groupId}\u0022: {\n                \u0022url\u0022:\u0022https://www.linkedin.com/groups/{groupId}\u0022\n            },\n            \u0022urn:li:contentTopic:{contentTopicId}\u0022: {\n                \u0022url\u0022:\u0022https://www.linkedin.com/news/story/{contentTopicId}\u0022\n            },\n            \u0022urn:li:job:{jobId}\u0022: {\n                \u0022url\u0022:\u0022https://www.linkedin.com/jobs/view/{jobId}\u0022\n            },\n            \u0022urn:li:lyndaCourse:{courseId}\u0022: {\n                \u0022url\u0022:\u0022https://www.linkedin.com/feed/update/urn:li:lyndaCourse:{courseId}\u0022\n            }\n        },\n        \u0022statuses\u0022:{\u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:{courseId},{videoId})\u0022:200,\u0022urn:li:jobPosting:{jobPostingId}\u0022:200,\u0022urn:li:group:{groupId}\u0022:200,\u0022urn:li:contentTopic:{contentTopicId}\u0022:200,\u0022urn:li:job:{jobId}\u0022:200,\u0022urn:li:lyndaCourse:{courseId}\u0022:200},\n        \u0022errors\u0022:{} \n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Public URL to specific feed content types",
+        "BATCH_GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URNs to fetch the public URL for those feed content types. Only accepts contentTopicUrn, jobUrn, jobPostingUrn, lyndaCourseUrn, lyndaVideoUrn or groupUrn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3AcontentTopic%3A{contentTopicId},urn%3Ali%3Agroup%3A{groupId},urn%3Ali%3Ajob%3A{jobId},urn%3Ali%3AjobPosting%3A{jobPostingId},urn%3Ali%3AlyndaCourse%3A{courseId},urn%3Ali%3AlyndaVideo%3A(urn%3Ali%3AlyndaCourse%3A{courseId}%2C{videoId}))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported entity type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided unsupported URN entity types on ids param.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide valid URNs only (urn:li:contentTopic, urn:li:job, urn:li:jobPosting, urn:li:lyndaCourse, urn:li:lyndaVideo).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide a valid OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

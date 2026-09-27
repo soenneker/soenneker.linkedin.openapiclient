@@ -14,13 +14,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The BCP-47 language tag of the auto captions to generated for the live event. Use &quot;en-US&quot; for English. Remove this parameter if you do not want auto captions added.Documented type: string (optional)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AutoCaptionLanguageTag { get; set; }
+#nullable restore
+#else
+        public string AutoCaptionLanguageTag { get; set; }
+#endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner? Owner { get; set; }
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner Owner { get; set; }
 #endif
         /// <summary>The recipes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +37,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> Recipes { get; set; }
+#endif
+        /// <summary>The region specifies the closest region your asset should be registered to. Possible values include: 1. WEST_US (West US)2. EAST_US_NORTH (Northeastern US)3. EAST_US_SOUTH (Southeastern US)4. CENTRAL_US (Central US)5. SOUTH_CENTRAL_US (South Central US)6. SOUTH_AMERICA (South America)7. NORTH_EUROPE (North Europe)8. WEST_EUROPE (West Europe)Documented type: string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
 #endif
         /// <summary>The serviceRelationships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +79,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "autoCaptionLanguageTag", n => { AutoCaptionLanguageTag = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner.CreateFromDiscriminatorValue); } },
                 { "recipes", n => { Recipes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
                 { "serviceRelationships", n => { ServiceRelationships = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,8 +93,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("owner", Owner);
+            writer.WriteStringValue("autoCaptionLanguageTag", AutoCaptionLanguageTag);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestOwner>("owner", Owner);
             writer.WriteCollectionOfPrimitiveValues<string>("recipes", Recipes);
+            writer.WriteStringValue("region", Region);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LinkedinLiveEventsAssetsOptionalAnnouncementImageRequestRegisterUploadRequestServiceRelationshipsItem>("serviceRelationships", ServiceRelationships);
             writer.WriteAdditionalData(AdditionalData);
         }

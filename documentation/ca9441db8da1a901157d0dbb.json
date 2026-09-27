@@ -1,0 +1,886 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/invitations",
+  "Title": "Invitations API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/invitation-schema"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Invitations API",
+      "Anchor": "invitations-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations API",
+      "Anchor": "invitations-api",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations API",
+      "Anchor": "invitations-api",
+      "SectionPath": [],
+      "Text": "With the Invitations API, you can replicate the full LinkedIn experience around connecting LinkedIn members to each other.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sending an Invitation",
+      "Anchor": "sending-an-invitation",
+      "SectionPath": [
+        "Creating Invitations",
+        "Sending an Invitation"
+      ],
+      "Text": "Send an invitation by issuing a POST that specifies the URN of the LinkedIn member that the invite will be sent to. You can only send invites on behalf of the authenticated user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sending an Invitation",
+      "Anchor": "sending-an-invitation",
+      "SectionPath": [
+        "Creating Invitations",
+        "Sending an Invitation"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/invitations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Creating Invitations",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "invitee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the person to send the invite to. Can be one of the following URN format: Person - urn:li:person:{personID} Email - urn:li:emailAddress:{emailID} Phone - urn:li:phoneAccount:{phoneAccountID} Raw email - urn:li:email:{raw email string}",
+            "Links": [],
+            "Values": [
+              "Person - urn:li:person:{personID}",
+              "Email - urn:li:emailAddress:{emailID}",
+              "Phone - urn:li:phoneAccount:{phoneAccountID}",
+              "Raw email - urn:li:email:{raw email string}"
+            ]
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "message. com.linkedin.invitations.InvitationMessage. body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The body of the invitation message. Omit to send the default message.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Creating Invitations",
+        "Sample request body"
+      ],
+      "Text": "{\n    \u0022invitee\u0022: \u0022urn:li:email:test@linkedin.com\u0022,\n    \u0022message\u0022: {\n        \u0022com.linkedin.invitations.InvitationMessage\u0022: {\n            \u0022body\u0022: \u0022Let\u0027s connect!\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Header",
+      "Anchor": "sample-response-header",
+      "SectionPath": [
+        "Creating Invitations",
+        "Sample Response Header"
+      ],
+      "Text": "x-linkedin-id: urn:li:invitation:617608454596123456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Invitations",
+      "Anchor": "retrieving-invitations",
+      "SectionPath": [
+        "Retrieving Invitations"
+      ],
+      "Text": "Once an invitation has been created, you can retrieve that invitation to check on it\u0027s status. For example, the invitation may be accepted or rejected. You can also retrieve a list of invitations sent out by the authenticated user, as well as a list of invitations they have received.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving an Invitation by Invitation URN",
+      "Anchor": "retrieving-an-invitation-by-invitation-urn",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Retrieving an Invitation by Invitation URN"
+      ],
+      "Text": "Once you have an Invitation\u0027s unique identifier, you can retrieve information on its current state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving an Invitation by Invitation URN",
+      "Anchor": "retrieving-an-invitation-by-invitation-urn",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Retrieving an Invitation by Invitation URN"
+      ],
+      "Text": "GET  https://api.linkedin.com/v2/invitations/{invitation Urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample invitation response",
+      "Anchor": "sample-invitation-response",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "sample invitation response"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1484671788434,\n    \u0022id\u0022: \u0022urn:li:invitation:6227164820370661376\u0022,\n    \u0022invitee\u0022: \u0022urn:li:person:RYZMZJHEsz\u0022,\n    \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n    \u0022lastModified\u0022: 1484672192563,\n    \u0022message\u0022: {\n        \u0022com.linkedin.invitations.InvitationMessage\u0022: {\n            \u0022body\u0022: \u0022Connect with me!\u0022\n        }\n    },\n    \u0022sentAt\u0022: 1484671817742,\n    \u0022state\u0022: \u0022ACCEPTED\u0022,\n    \u0022validationToken\u0022: \u0022viUrSCUs\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample invitation response",
+      "Anchor": "sample-invitation-response",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "sample invitation response"
+      ],
+      "Text": "For more information, refer to the Invitation schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using parameters to search for multiple matching Invitations",
+      "Anchor": "using-parameters-to-search-for-multiple-matching-invitations",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Using parameters to search for multiple matching Invitations"
+      ],
+      "Text": "You can retrieve a list of invitations that match certain search criteria. Common use cases would be:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using parameters to search for multiple matching Invitations",
+      "Anchor": "using-parameters-to-search-for-multiple-matching-invitations",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Using parameters to search for multiple matching Invitations"
+      ],
+      "Text": "Find invites sent within a certain time range\nFind invites that are in a certain state (pending, accepted, rejected, etc.)\nWhether the invite had a custom message vs. default message",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using parameters to search for multiple matching Invitations",
+      "Anchor": "using-parameters-to-search-for-multiple-matching-invitations",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Using parameters to search for multiple matching Invitations"
+      ],
+      "Text": "Please see below for the available APIs and their parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Invitations the user received",
+      "Anchor": "retrieving-invitations-the-user-received",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Retrieving Invitations the user received"
+      ],
+      "Text": "You can retrieve a list of invitations the authenticated user has received from other LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Invitations the user received",
+      "Anchor": "retrieving-invitations-the-user-received",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Retrieving Invitations the user received"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/invitations?q=invitee\u0026states=PENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "timeFrame",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range to constrain the search to. Filters based on the invitation create time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "see below",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeFrame.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeFrame.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) value in which to end the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of states to constrain the search to. Valid states are: UNSENT ABORTED PENDING BOUNCED ACCEPTED IGNORED REJECTED WITHDRAWN EXPIRED BLOCKED",
+            "Links": [],
+            "Values": [
+              "UNSENT",
+              "ABORTED",
+              "PENDING",
+              "BOUNCED",
+              "ACCEPTED",
+              "IGNORED",
+              "REJECTED",
+              "WITHDRAWN",
+              "EXPIRED",
+              "BLOCKED"
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hasCustomizedMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the invite had a custom message or the default message.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "inviters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inviters for whom you want to retrieve the invitation data sent from.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonURN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Invitations the user sent",
+      "Anchor": "retrieving-invitations-the-user-sent",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Retrieving Invitations the user sent"
+      ],
+      "Text": "You can retrieve a list of invitations the authenticated user has sent to other users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Invitations the user sent",
+      "Anchor": "retrieving-invitations-the-user-sent",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Retrieving Invitations the user sent"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/invitations?q=inviter\u0026states=ACCEPTED",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "timeFrame",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range to constrain the search to. Filters based on the invitation create time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "see below",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeFrame.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeFrame.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) value in which to end the range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of states to constrain the search to. Valid states are: UNSENT ABORTED PENDING BOUNCED ACCEPTED IGNORED REJECTED WITHDRAWN EXPIRED BLOCKED",
+            "Links": [],
+            "Values": [
+              "UNSENT",
+              "ABORTED",
+              "PENDING",
+              "BOUNCED",
+              "ACCEPTED",
+              "IGNORED",
+              "REJECTED",
+              "WITHDRAWN",
+              "EXPIRED",
+              "BLOCKED"
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The filter to select the invitations from specified source types. Valid types are: ABI - The invitation is contributed by Address-Book-Import workflow. PYMK - The invitation is contributed by People-You-May-Know workflow. PROFILE - The invitation comes from direct profile view. OTHER - The invitation comes from all other sources except the specified ones.",
+            "Links": [],
+            "Values": [
+              "ABI - The invitation is contributed by Address-Book-Import workflow.",
+              "PYMK - The invitation is contributed by People-You-May-Know workflow.",
+              "PROFILE - The invitation comes from direct profile view.",
+              "OTHER - The invitation comes from all other sources except the specified ones."
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "invitees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invitees for whom you want to retrieve the invitation data sent to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonURN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "invitations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of invitation URNs that are of interest.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "InvitationURN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample finder response",
+      "Anchor": "sample-finder-response",
+      "SectionPath": [
+        "Retrieving Invitations",
+        "Sample finder response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022validationToken\u0022: \u0022gFulHMKt\u0022,\n      \u0022created\u0022: 1485388767467,\n      \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n      \u0022id\u0022: \u0022urn:li:invitation:6230172048157614080\u0022,\n      \u0022state\u0022: \u0022PENDING\u0022,\n      \u0022lastModified\u0022: 1485388791605,\n      \u0022sentAt\u0022: 1485388791605,\n      \u0022message\u0022: {\n        \u0022string\u0022: \u0022invite_member_28\u0022\n      },\n      \u0022invitee\u0022: \u0022urn:li:person:RT7VAAk2nr\u0022\n    },\n    {\n      \u0022validationToken\u0022: \u002254aKoD6Q\u0022,\n      \u0022created\u0022: 1485379397914,\n      \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n      \u0022id\u0022: \u0022urn:li:invitation:6230132749475291136\u0022,\n      \u0022state\u0022: \u0022PENDING\u0022,\n      \u0022lastModified\u0022: 1485379412806,\n      \u0022sentAt\u0022: 1485379412806,\n      \u0022message\u0022: {\n        \u0022com.linkedin.invitations.InvitationMessage\u0022: {\n          \u0022body\u0022: \u0022Connect with me!\u0022\n        }\n      },\n      \u0022invitee\u0022: \u0022urn:li:person:r5GpfvpA3t\u0022\n    },\n    ...\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 5,\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Taking Action Upon an Invitation",
+      "Anchor": "taking-action-upon-an-invitation",
+      "SectionPath": [
+        "Taking Action Upon an Invitation"
+      ],
+      "Text": "Once an Invitation has been created, you can then take action upon it. The most common use cases would be to accept or reject an invitation, rescind a sent invitation, etc. A full list of actions that can be taken are listed below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accepting an Invitation the user received",
+      "Anchor": "accepting-an-invitation-the-user-received",
+      "SectionPath": [
+        "Taking Action Upon an Invitation",
+        "Accepting an Invitation the user received"
+      ],
+      "Text": "By setting the inviteeActionType field to one of the states above, you can take actions on an invitation the user has received. The available actionTypes are ACCEPT, IGNORE, REJECT, and REPORT_SPAM. The required request fields are invitationId, validationToken, and inviteeActionType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Accepting an Invitation the user received",
+      "Anchor": "accepting-an-invitation-the-user-received",
+      "SectionPath": [
+        "Taking Action Upon an Invitation",
+        "Accepting an Invitation the user received"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/invitations?action=inviteeClosingInvitation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "request body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Taking Action Upon an Invitation",
+        "request body"
+      ],
+      "Text": "{\n  \u0022inviteActionData\u0022: [\n    {\n      \u0022invitationId\u0022: \u0022urn:li:invitation:6148971681877606400\u0022,\n      \u0022validationToken\u0022: \u0022ABC123\u0022\n    }\n  ],\n  \u0022inviteeActionType\u0022: \u0022ACCEPT\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Withdrawing an Invitation the user has sent",
+      "Anchor": "withdrawing-an-invitation-the-user-has-sent",
+      "SectionPath": [
+        "Taking Action Upon an Invitation",
+        "Withdrawing an Invitation the user has sent"
+      ],
+      "Text": "By setting the inviterActionType field to one of the states above, you can take actions on an invitation the user has received. The available actionTypes are WITHDRAW, and ABORT. The required request fields are invitationId and inviterActionType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Withdrawing an Invitation the user has sent",
+      "Anchor": "withdrawing-an-invitation-the-user-has-sent",
+      "SectionPath": [
+        "Taking Action Upon an Invitation",
+        "Withdrawing an Invitation the user has sent"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/invitations?action=inviterClosingInvitation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "request body",
+      "Anchor": "request-body-1",
+      "SectionPath": [
+        "Taking Action Upon an Invitation",
+        "request body"
+      ],
+      "Text": "{\n  \u0022inviteActionData\u0022: [\n    {\n      \u0022invitationId\u0022: \u0022urn:li:invitation:6148971681877606400\u0022\n    }\n  ],\n  \u0022inviterActionType\u0022: \u0022WITHDRAW\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resolving Inviter and Invitee URNs",
+      "Anchor": "resolving-inviter-and-invitee-urns",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs"
+      ],
+      "Text": "As you might have noticed, inviter and invitee both return URNs and can be the following types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resolving Inviter and Invitee URNs",
+      "Anchor": "resolving-inviter-and-invitee-urns",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs"
+      ],
+      "Text": "Person - urn:li:person:{person ID}\nEmail - urn:li:emailAddress:{email ID}\nPhone - urn:li:phoneAccount:{phoneAccount ID}\nRaw email - urn:li:email:{raw email string}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resolving Inviter and Invitee URNs",
+      "Anchor": "resolving-inviter-and-invitee-urns",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs"
+      ],
+      "Text": "This URNs can be resolved by our projection concept. See below for examples of how these URNs are easily decorated to contain more information without making additional calls:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Resolving Inviter and Invitee URNs",
+      "Anchor": "resolving-inviter-and-invitee-urns",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/invitations//urn:li:invitation:123456789?projection=(created,inviter~person(firstName,lastName,headline)~emailAddress(emailAddress)~phoneAccount(phoneNumber),id,state,lastModified,sentAt,message,invitee~person(firstName,lastName,headline)~emailAddress(emailAddress)~phoneAccount(phoneNumber))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1487769180000,\n    \u0022id\u0022: \u0022urn:li:invitation:6240156200003072\u0022,\n    \u0022invitee\u0022: \u0022urn:li:emailAddress:6368071366\u0022,\n    \u0022invitee~\u0022: {\n        \u0022emailAddress\u0022: \u0022bob-smith@linkedin.com\u0022\n    },\n    \u0022inviter\u0022: \u0022urn:li:person:TejNUSGAB1\u0022,\n    \u0022inviter~\u0022: {\n        \u0022firstName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022John\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Software Engineer at LinkedIn\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022lastName\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Smith\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        }\n    },\n    \u0022lastModified\u0022: 1487769180000,\n    \u0022message\u0022: {\n        \u0022string\u0022: \u0022invite_guest\u0022\n    },\n    \u0022sentAt\u0022: 1487769180760,\n    \u0022state\u0022: \u0022SENT\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "As you can see, the projection parameter not only provides ability to do field selection but also a way to retrieve more information on URNs. The syntax is done so by doing ~(field1,field2,field3). In addition, if it\u0027s a generic URN, the correct way is to identify what you want for each URN type, hence the ~person(firstName,lastName,headline) ~emailAddress(emailAddress)~phoneAccount(phoneNumber). If you wanted more fields from each URN, you just have to specify more. For example, ~person(firstName,positions).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "For now, phoneAccountUrn will not resolve. It is still under development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "Below is an example for the FINDER invitee :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/invitations?q=inviter\u0026count=100\u0026projection=(elements*(created,inviter~person(firstName,lastName,headline)~emailAddress(emailAddress)~phoneAccount(phoneNumber),id,state,lastModified,sentAt,message,invitee~person(firstName,lastName,headline)~emailAddress(emailAddress)~phoneAccount(phoneNumber)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "response body",
+      "Anchor": "response-body-1",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022invitee~\u0022: {\n        \u0022emailAddress\u0022: \u0022bob-smith@linkedin.com\u0022\n      },\n      \u0022created\u0022: 1487769180000,\n      \u0022inviter~\u0022: {\n        \u0022firstName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022John\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022lastName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Smith\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022headline\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Software Engineer at LinkedIn\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022inviter\u0022: \u0022urn:li:person:TejNUSGAB1\u0022,\n      \u0022id\u0022: \u0022urn:li:invitation:6240156200003072\u0022,\n      \u0022state\u0022: \u0022SENT\u0022,\n      \u0022lastModified\u0022: 1487769180000,\n      \u0022sentAt\u0022: 1487769180760,\n      \u0022message\u0022: {\n        \u0022string\u0022: \u0022invite_guest\u0022\n      },\n      \u0022invitee\u0022: \u0022urn:li:emailAddress:6368071366\u0022\n    },\n    ...\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "response body",
+      "Anchor": "response-body-1",
+      "SectionPath": [
+        "Resolving Inviter and Invitee URNs",
+        "response body"
+      ],
+      "Text": "You will notice the only difference is the elements*. This is because all FINDERs will return a collection of results grouped in elements. The * syntax represents an array and will decorate all the objects in that array.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

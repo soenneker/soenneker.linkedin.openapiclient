@@ -1,0 +1,442 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+  "Title": "LinkedIn Learning and Degreed Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Degreed and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Deep Integration Functionality",
+      "Anchor": "degreed-deep-integration-functionality",
+      "SectionPath": [
+        "Degreed Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Deep Integration Functionality",
+      "Anchor": "degreed-deep-integration-functionality",
+      "SectionPath": [
+        "Degreed Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Deep Integration Functionality",
+      "Anchor": "degreed-deep-integration-functionality",
+      "SectionPath": [
+        "Degreed Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Deep Integration Functionality",
+      "Anchor": "degreed-deep-integration-functionality",
+      "SectionPath": [
+        "Degreed Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Deep Integration Functionality",
+      "Anchor": "degreed-deep-integration-functionality",
+      "SectionPath": [
+        "Degreed Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Degreed integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Deep Integration Functionality",
+      "Anchor": "degreed-deep-integration-functionality",
+      "SectionPath": [
+        "Degreed Deep Integration Functionality"
+      ],
+      "Text": "An active Degreed LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Degreed LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Degreed\u0027s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and\nDegreed to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to\ncontent. SSO authentication reduces friction for users and administrators by eliminating the\nneed for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. Courses are added\nat a rate of 25-30 courses per week at no extra cost. Traditionally, the\nadministrator of a content discovery platform manually uploads new content on a\nregular interval. However, the Degreed deep integration uses LinkedIn Learning\nAPIs to dynamically refresh the content library daily. This ensures new LinkedIn\nLearning content is available within 24 hours of its release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "All content titles and descriptions are aggregated and indexed to accommodate\nkeyword searches and enhance discoverability. Degreed supports automatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "SAML SSO is recommended for all enterprise learning platform integrations. You\ncan configure SSO authentication in your LinkedIn Learning Admin settings. Most\norganizations have a centrally-managed identity management solution like Azure\nAD, Okta, or ADFS that you can configure to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share our LinkedIn Learning SSO Implementation Guide with your organization\u0027s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "For xAPI to work, the Bridge unique identifier (i.e., email address) must match the LinkedIn Learning SSO identifier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Degreed to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings. To implement content sync in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API, then expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter \u0022Degreed\u0022 in the Application Name field.\n\nIn the Application description field, provide a short description of the integration use case. For example, \u0022Degreed content catalog sync\u0022.\n\nUnder Choose keys, there are two\u202Fcheckboxes\u202F\u2013\u202FContent\u202Fand\u202FReport. Select\u00A0Content.\u202F\u00A0\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nSave the Client ID and Client Secret values for use in the step.\n\nPaste the Client ID and Client Secret into the corresponding Degreed fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To get the required data from Degreed, contact your Degreed Technical Implementation Consultant or email support@degreed.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Using the information you acquired in the previous step, follow the instructions below to configure LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select LMS Configure reporting APIs.\n\nExpand the Configure xAPI panel.\n\nClick Add integration.\n\nIn the Add xAPI integration screen, enter \u0022Degreed reporting\u0022 Integration name field.\n\nIn the User Type field, select \u0022ID\u0022.\n\nCopy and paste the Client Secret, Client ID, Tenant Server URL, and OAuth Server URL provided by Degreed into LinkedIn Learning.\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "You have enabled the Degreed xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Configuration",
+      "Anchor": "degreed-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Degreed Configuration"
+      ],
+      "Text": "To complete the configuration with Degreed, you will need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Configuration",
+      "Anchor": "degreed-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Degreed Configuration"
+      ],
+      "Text": "Client ID\n\nClient Secret\n\nLinkedIn Learning Languages Purchased\n\nLinkedIn Learning Account ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Configuration",
+      "Anchor": "degreed-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Degreed Configuration"
+      ],
+      "Text": "Once you\u2019ve gathered the required information, follow the Degreed configuration instructions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Video Curation \u0026 Reporting - Admin steps to enable settings",
+      "Anchor": "degreed-video-curation--reporting---admin-steps-to-enable-settings",
+      "SectionPath": [
+        "Configuration",
+        "Degreed Video Curation \u0026 Reporting - Admin steps to enable settings"
+      ],
+      "Text": "To utilise Video curation, please follow below steps. It is a two step process. Enabling settings in LinkedIn Learning and Degreed are mandatory to utilise Video curation and reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Video Curation \u0026 Reporting - Admin steps to enable settings",
+      "Anchor": "degreed-video-curation--reporting---admin-steps-to-enable-settings",
+      "SectionPath": [
+        "Configuration",
+        "Degreed Video Curation \u0026 Reporting - Admin steps to enable settings"
+      ],
+      "Text": "Turn on xAPI settings in LinkedIn Learning.\n\n\nPlease contact your Degreed Customer Success Manager (CSM) or the Support team to request that the settings be enabled, as they are turned off by default on Degreed\u0027s side.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Degreed Video Curation \u0026 Reporting - Admin steps to enable settings",
+      "Anchor": "degreed-video-curation--reporting---admin-steps-to-enable-settings",
+      "SectionPath": [
+        "Configuration",
+        "Degreed Video Curation \u0026 Reporting - Admin steps to enable settings"
+      ],
+      "Text": "Once the above two steps are enabled, end users can leverage Video level curation and they can see the completions with in Degreed platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to curate videos and Reporting",
+      "Anchor": "steps-to-curate-videos-and-reporting",
+      "SectionPath": [
+        "Configuration",
+        "Steps to curate videos and Reporting"
+      ],
+      "Text": "Share Videos from LinkedIn Learning to Degreed\n\n\nOnce shared, Videos will appear under Videos selection in Degreed.\n\nOnce the video completed successfully, the completed videos will appear on Degreed side --\u003E Home --\u003E Saved. A verified tick appears on the Video completion.\n\n\nTo report on Video completions, please reach out Degreed CSM or support team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to curate videos and Reporting",
+      "Anchor": "steps-to-curate-videos-and-reporting",
+      "SectionPath": [
+        "Configuration",
+        "Steps to curate videos and Reporting"
+      ],
+      "Text": "For admin and super user technical support, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to curate videos and Reporting",
+      "Anchor": "steps-to-curate-videos-and-reporting",
+      "SectionPath": [
+        "Configuration",
+        "Steps to curate videos and Reporting"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting from their Degreed instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

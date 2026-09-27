@@ -1,0 +1,1035 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+  "Title": "LinkedIn Learning and Darwinbox Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Deep Integration Functionality",
+      "Anchor": "darwinbox-deep-integration-functionality",
+      "SectionPath": [
+        "Darwinbox Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automatic Content Sync\nReporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Deep Integration Functionality",
+      "Anchor": "darwinbox-deep-integration-functionality",
+      "SectionPath": [
+        "Darwinbox Deep Integration Functionality"
+      ],
+      "Text": "Requirements:\nThe LinkedIn Learning and Darwinbox integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Deep Integration Functionality",
+      "Anchor": "darwinbox-deep-integration-functionality",
+      "SectionPath": [
+        "Darwinbox Deep Integration Functionality"
+      ],
+      "Text": "\u2022 An active Darwinbox instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Deep Integration Functionality",
+      "Anchor": "darwinbox-deep-integration-functionality",
+      "SectionPath": [
+        "Darwinbox Deep Integration Functionality"
+      ],
+      "Text": "\u2022 An active LinkedIn Learning account",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Deep Integration Functionality",
+      "Anchor": "darwinbox-deep-integration-functionality",
+      "SectionPath": [
+        "Darwinbox Deep Integration Functionality"
+      ],
+      "Text": "\u2022 Admin access to LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Deep Integration Functionality",
+      "Anchor": "darwinbox-deep-integration-functionality",
+      "SectionPath": [
+        "Darwinbox Deep Integration Functionality"
+      ],
+      "Text": "\u2022 Admin privileges to your Darwinbox instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "Enabling SAML SSO:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "\u2022 LinkedIn Learning recommends SAML SSO for all enterprise learning platform integrations. SSO authentication can be configured in your LinkedIn Learning Admin settings. Most organizations have a centrally managed identity management solution like Azure AD, Okta or AD FS which can be configured to authenticate users into enterprise applications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "\u2022 To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "SSO Configuration",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning adds courses at a rate of 20-30 per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "SSO Configuration",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "Darwinbox automates this process using the LinkedIn Learning content APIs, so LMS admins do not have to manually upload new content packages at regular intervals. After the initial setup, Darwinbox will dynamically refresh the content library on an automated basis. This ensures new LinkedIn Learning content is available to learners within 24 hours of release. All content titles and descriptions are aggregated and indexed to accommodate keyword searches and support efficient discoverability within Darwinbox.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "SSO Configuration",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses xAPI to communicate a\nlearner\u2019s activity back to Darwinbox when the learner completes a LinkedIn Learning course. All LinkedIn Learning course completions will be reported both in LinkedIn Learning and in Darwinbox.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For Darwinbox to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "To sync your Darwinbox content with LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "Login to LinkedIn Learning. If you are not already in the Admin screen, select Go to Admin, then click Me \u003E Integrate\n\n\n\n\n\nFrom the side navigation menu, Access content and reports via API.\n\n\n\n\n\nClick the down arrow on the right to expand the Generate LinkedIn Learning REST API Application section.\n\nClick Add Application and provide the name related to your LMS (e.g., \u0022Darwinbox LMS Integration\u0022), as the application name, and provide a short description of the integration use case in the application description field.\n\n\n\n\n\nThere are two checkboxes \u2013 Content and Report. Select the fields that apply to you. For Content Sync to the LMS, only Content is required.\n\nClick Next and agree to the Terms and Conditions\n\nSave the Client ID and Client Secret values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "To complete the configuration with Darwinbox, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 Client ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "Once you\u2019ve gathered the required information and have logged into the Darwinbox LMS as an Admin, follow these steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "Open Darwinbox Studio\n\nNavigate to Connector Library and search for LinkedIn Learning\n\nOpen the application and click install\n\n\n\n\n\nAfter installing the application, navigate to Automation Hub\n\nClick on App Connection and select Create\n\n\n\n\n\nOpen the newly crated application and input the following information into the applicible sections:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 App Connection Name: LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 Auth Type: No",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 OAuth Base URL: https://www.linkedin.com/oauth/v2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 API Base URL: https://api.linkedin.com/v2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 Client ID: The value that was generated within LinkedIn Learning outlined in steps above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 Client Secret: The value that was generated within LinkedIn Learning outlined in steps above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "\u2022 Grant Type: client_credentials",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "*",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "Click on Update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Configuration",
+      "Anchor": "darwinbox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Darwinbox",
+        "Darwinbox Configuration"
+      ],
+      "Text": "The App Connection is now completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To enable xAPI in Darwinbox, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Login to the Darwinbox LMS and navigate to Connector Library and Open the App - LinkedIn Learning\n\nSelect the flow Sync User Learning Activity Transactions from LinkedIn (xAPI)\n\n\n\n\n\nClick on Use Recipe\n\n\n\n\n\nHere you can select the relevant Project and App Connection\n\n\n\n\n\nSelect Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "If the project is not yet created, one will have to be created using the steps below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "a. To create a project. Navigate to Studio Designer \u003E My Projects \u003E Create Project\n\n\n\n\u2022 Project Name: LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "b. Click Save",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "This flow will then be copied to the Automation Hub - Automation Rules section. Step 4 and 5 can now be repeated with the newly created project. After the above steps have been completed, the relevant API details which will be used for the XAPI configuration within LinkedIn Learning will now be available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Navigate to Darwinbox API Keys",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Find the API with the Name [Recipe_Sync User Learning Activity Transactions from LinkedIn (xAPI)] \u003E Select the 3 dots \u003E View/Reset API Key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "The Client ID and Client Secret values are located here. Save these for later",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Again find the API with the Name [Recipe_Sync User Learning Activity Transactions from LinkedIn (xAPI)] \u003E Select Copy API Endpoint \u003E The first endpoint that appears is the Tenant Server URL. Save this for later",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To generate the OAuth Server URL replace {tenant_url} in https://{tenant_url}/oauth/v2token with your own unique tenant URL. Save this for later",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To communicate learner activity back to Darwinbox, you must enable xAPI in your LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To enable xAPI in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you login, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Integrate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "From the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\n\n\n\nIn the Integration name field, enter a name such as \u0022Darwinbox Reporting\u0022.\n\nIn the User Type drop down, select ID or E-mail.\n\n\n\n\n\nCopy and paste the values saved earlier from Darwinbox into LinkedIn Learning:\n\u2022 OAuth Server URL\n\u2022 Tenant Server URL\n\u2022 Client ID\n\u2022 Client Secret\n\n\n\n\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "xAPI statements are communicated once. From the LinkedIn Learning perspective, the original completion will be maintained.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "Please see LinkedIn_Learning_User_Activities_Mapping file content below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "",
+      "Headers": [
+        "xAPI verb",
+        "Full verb URI",
+        "Darwinbox action"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "completed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/completed",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/completed"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "passed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/passed",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/passed"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "failed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/failed",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/failed"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "watched",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/watched",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/watched"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "listened",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/listened",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/listened"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "read",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/read",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/read"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attended",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/attended",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/attended"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "earned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/earned",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/earned"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "complete",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attempted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/attempted",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/attempted"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "started",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/started",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/started"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resumed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/resumed",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/resumed"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "progressed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/progressed",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/progressed"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "experienced",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/experienced",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/experienced"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registered",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/registered",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/registered"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "enroll",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "suspended",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://adlnet.gov/expapi/verbs/suspended",
+            "Links": [
+              "http://adlnet.gov/expapi/verbs/suspended"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "remove",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "Save the above as a CSV file with the name - LinkedIn_Learning_User_Activities_Mapping.csv\n\nUpload this file in Darwinbox Studio \u003E Studio Designer \u003E Master Files \u003E Upload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "For completion reporting to be successfull the learner must exsist in LinkedIn Learning and Darwinbox. Also the learner Email or ID must match on both instances.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "You have now enabled the Darwinbox xAPI connection in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuration of the XAPI Mapping Sheet for Darwinbox",
+      "Anchor": "configuration-of-the-xapi-mapping-sheet-for-darwinbox",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Configuration of the XAPI Mapping Sheet for Darwinbox"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via their Darwinbox instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Darwinbox Troubleshooting",
+      "Anchor": "darwinbox-troubleshooting",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Darwinbox Troubleshooting"
+      ],
+      "Text": "To create a support request, please visit the Darwinbox Customer Support Page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

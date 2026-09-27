@@ -1,0 +1,252 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+  "Title": "Recent DMA Data Portability API Changes",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-visitor-of-the-day",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/events",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/services/",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements",
+      "SectionPath": [
+        "August 2026 - Version 202608 (Latest)",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "No partner-visible API changes were introduced in this version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-1",
+      "SectionPath": [
+        "May 2026 - Version 202605",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Publishing Original Article API\nThe coverMediaV2 field supports both video and image cover media in the Original Articles API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "April 2026 - Version 202604",
+        "Breaking Changes"
+      ],
+      "Text": "Lead Analytics API\nThe Lead Analytics API no longer supports versions 202508 and earlier. Update the LinkedIn-Version header in your requests to 202604.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation Updates",
+      "Anchor": "documentation-updates",
+      "SectionPath": [
+        "January 2026",
+        "Documentation Updates"
+      ],
+      "Text": "The following APIs and their related fields are deprecated:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation Updates",
+      "Anchor": "documentation-updates",
+      "SectionPath": [
+        "January 2026",
+        "Documentation Updates"
+      ],
+      "Text": "Employee Broadcast Audience Time Series Analytics\nEmployee Broadcast Highlights\nEmployee Broadcast Analytics\nEmployee Broadcast Audience Demographic Analytics\nOrganization Search Appearance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-2",
+      "SectionPath": [
+        "November 2025 - Version 202511",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Pages Events\nThe premiumGated field in the Event Settings Schema table indicates whether the event is gated behind a premium subscription.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-3",
+      "SectionPath": [
+        "August 2025 - Version 202508",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Admin Content API - Get Assets By Organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-3",
+      "SectionPath": [
+        "August 2025 - Version 202508",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Admin Partners can fetch digital media assets owned by their organizations. These media assets contain media information such as images and videos.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-4",
+      "SectionPath": [
+        "May 2025 - Version 202505",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Organization Services Page Providers API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-4",
+      "SectionPath": [
+        "May 2025 - Version 202505",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Fetches service page provider information for organizations. Retrieves the service page configuration for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-1",
+      "SectionPath": [
+        "February 2025 - Version 202502",
+        "Breaking Changes"
+      ],
+      "Text": "The following APIs and their related fields are no longer available in versions released from February onwards.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes-1",
+      "SectionPath": [
+        "February 2025 - Version 202502",
+        "Breaking Changes"
+      ],
+      "Text": "Employee Broadcast Audience Time Series Analytics\nEmployee Broadcast Highlights\nEmployee Broadcast Analytics\nEmployee Broadcast Audience Demographic Analytics\nEmployeeExperienceSettingsV2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders",
+      "SectionPath": [
+        "November 2024 - Version 202411",
+        "Reminders"
+      ],
+      "Text": "The My Company tab and related features on LinkedIn Pages are being removed beginning in November 2024 (details). Accordingly, the LinkedIn Pages My Company tab, the Employee Advocacy tab, and the curator administrator role will be phased out and completely unavailable by January 2025. All page administrators currently assigned to Curator roles will be converted to Analyst roles starting January 2025.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders",
+      "SectionPath": [
+        "November 2024 - Version 202411",
+        "Reminders"
+      ],
+      "Text": "The following endpoints and other specified fields will be discontinued beginning with the February 2025 release version:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders",
+      "SectionPath": [
+        "November 2024 - Version 202411",
+        "Reminders"
+      ],
+      "Text": "Employee Broadcast Audience Time Series Analytics\nEmployee Broadcast Highlights\nEmployee Broadcast Audience Demographic Analytics\nEmployee Broadcast Analytics\nmyCompanyEmployeeVerificationRequired field. For more information, refer to Organizations API.\nMy Company access setting. For more information, refer to Organizations API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminders",
+      "Anchor": "reminders",
+      "SectionPath": [
+        "November 2024 - Version 202411",
+        "Reminders"
+      ],
+      "Text": "To retain your Employee Broadcast Analytics data and other specified fields, export your analytics before January 2025, as such data can no longer be available for export beginning with the February 2025 release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-5",
+      "SectionPath": [
+        "August 2024 - Version 202408",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Organizational Page Visitor Of The Day API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-5",
+      "SectionPath": [
+        "August 2024 - Version 202408",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Partners can fetch Visitor Of The Day data for an Organizational Page to keep track of their Organization\u0027s audience. For more information, refer to Organizational Page Visitor Of The Day API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product \u0026 Platform Announcements",
+      "Anchor": "product--platform-announcements-6",
+      "SectionPath": [
+        "May 2024 - Version 202405",
+        "Product \u0026 Platform Announcements"
+      ],
+      "Text": "Content Ingestion Sources API: Find by Page\nPartners can fetch content ingestion sources that one of their managed pages owns. These content ingestion sources reference RSS feeds that will be ingested and posted on the page\u2019s feed. OrganizationalPage Content Ingestion Sources API.\n\nOrganizational Page Credibility API\nPartners can fetch Page Credibility, a premium page feature that enables pages to showcase any recognition or awards that they received. For more information, refer to Organizational Page Credibility API.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

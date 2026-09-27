@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string EventTimezone { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,7 +145,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "deletable", n => { Deletable = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Description>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Description.CreateFromDiscriminatorValue); } },
                 { "eventTimezone", n => { EventTimezone = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Name.CreateFromDiscriminatorValue); } },
                 { "organizer", n => { Organizer = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Settings>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Settings.CreateFromDiscriminatorValue); } },
@@ -168,7 +168,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteBoolValue("deletable", Deletable);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Description>("description", Description);
             writer.WriteStringValue("eventTimezone", EventTimezone);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Name>("name", Name);
             writer.WriteStringValue("organizer", Organizer);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889Settings>("settings", Settings);

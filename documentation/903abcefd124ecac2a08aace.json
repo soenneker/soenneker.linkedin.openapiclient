@@ -1,0 +1,93 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-type-codes",
+  "Title": "Job Type Codes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Job Type Codes",
+      "Anchor": "job-type-codes",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Code ID",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FULL_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full Time",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PART_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Part Time",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTRACT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contract",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INTERNSHIP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internship",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VOLUNTEER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Volunteer",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

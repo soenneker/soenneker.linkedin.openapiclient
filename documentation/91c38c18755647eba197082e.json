@@ -1,0 +1,52 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/overview/overview-blocking-policy",
+  "Title": "What is LinkedIn Learning?",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/overview-blocking-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What is LinkedIn Learning?",
+      "Anchor": "what-is-linkedin-learning",
+      "SectionPath": [],
+      "Text": "LinkedIn Learning is an online learning platform that combines the industry-leading content from Lynda.com with LinkedIn\u2019s professional data and network. LinkedIn Learning is built on three core pillars:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LinkedIn Learning?",
+      "Anchor": "what-is-linkedin-learning",
+      "SectionPath": [],
+      "Text": "World-class content: Industry experts, thought leaders, and technologists teach our library of 10,000\u002B digital courses that cover a wide range of business, creative, and technical topics, from leadership \u0022soft skills\u0022 to design principles to programming. We are always evolving the Lynda.com library, adding at least 25 courses per week, and teaching the leading-edge skills you and your learners need to stay current in a competitive job market. LinkedIn Learning offers courses in English, French, German, Japanese, Spanish, Mandarin, and Portuguese.\nData-driven personalization: We get the right content to you at the right time. Using the intelligence that comes with our network, LinkedIn Learning creates personalized recommendations so learners can efficiently discover the courses that are most relevant to their goals or job functions. Organizations can use LinkedIn insights to customize multi-course learning paths and collections to meet their specific needs. We also provide robust analytics and reporting to help you measure learning effectiveness.\nAnytime, anywhere convenience: Our mission is not only guiding you to the content that best suit your learning needs \u2013 we want our courses to be easy for your learners to take. We segment our courses into bite-sized units that can be viewed anytime, on any device, online and off. We recommend Learning content throughout your LinkedIn.com experience, helping you easily discover relevant courses. You can integrate our content with most learning management systems.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blocking LinkedIn.com",
+      "Anchor": "blocking-linkedincom",
+      "SectionPath": [
+        "Blocking LinkedIn.com"
+      ],
+      "Text": "Question: Can my organization block user access to LinkedIn.com? My organization has policies that mandate blocking social media sites.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blocking LinkedIn.com",
+      "Anchor": "blocking-linkedincom",
+      "SectionPath": [
+        "Blocking LinkedIn.com"
+      ],
+      "Text": "Answer: Some organizations block employee access to social media sites, including LinkedIn.com. Because LinkedIn Learning (linkedin.com/learning) shares critical infrastructure with the LinkedIn parent site (linkedin.com), blocking access can disrupt or break the experience for your learners and we do not support this action. Please reach out to your account team if you would like to discuss alternatives.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

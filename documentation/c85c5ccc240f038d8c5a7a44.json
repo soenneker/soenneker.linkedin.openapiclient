@@ -1,0 +1,530 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+  "Title": "Celebration API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Celebration API",
+      "Anchor": "celebration-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Celebration API",
+      "Anchor": "celebration-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Celebration API",
+      "Anchor": "celebration-api",
+      "SectionPath": [],
+      "Text": "The LinkedIn Celebration post API helps you fetch celebration content type post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Celebration API",
+      "Anchor": "celebration-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Celebration API",
+      "Anchor": "celebration-api",
+      "SectionPath": [],
+      "Text": "Currently, Celebration post can\u0027t be created through external apis and instead, it will throw 400. Only fetching celebration post is allowed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles:ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Restricted) Retrieve posts, comments, and likes on behalf of an authenticated member. This is a private permission.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Please check the Posts API for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Celebration",
+      "Anchor": "celebration",
+      "SectionPath": [
+        "Schema",
+        "Celebration"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "recipients",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recipient(s) of the celebration. Only certain celebration types can have recipients",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "create-only optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "taggedEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tagged entity(s) of the celebration. Only certain celebration types can have taggedEntities.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "create-only optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CELEBRATE_WELCOME - Welcome a new member to the team CELEBRATE_ANNIVERSARY - Celebrate a job anniversary CELEBRATE_AWARD - Celebrate an award or honor CELEBRATE_EVENT-Celebrate a team event, such as an offsite or dinner CELEBRATE_GRADUATION - Celebrate a graduation CELEBRATE_JOB_CHANGE - Celebrate a job change CELEBRATE_KUDOS - Celebrate appreciation by giving kudos CELEBRATE_LAUNCH - Celebrate a product or project launch CELEBRATE_CAREER_BREAK - Celebrate a career break CELEBRATE_CERTIFICATE - Celebrate a certificate CELEBRATE_EDUCATION - Celebrate an education CELEBRATE_MILESTONE - Celebrate a milestone or achievement",
+            "Links": [],
+            "Values": [
+              "CELEBRATE_WELCOME - Welcome a new member to the team",
+              "CELEBRATE_ANNIVERSARY - Celebrate a job anniversary",
+              "CELEBRATE_AWARD - Celebrate an award or honor",
+              "CELEBRATE_EVENT-Celebrate a team event, such as an offsite or dinner",
+              "CELEBRATE_GRADUATION - Celebrate a graduation",
+              "CELEBRATE_JOB_CHANGE - Celebrate a job change",
+              "CELEBRATE_KUDOS - Celebrate appreciation by giving kudos",
+              "CELEBRATE_LAUNCH - Celebrate a product or project launch",
+              "CELEBRATE_CAREER_BREAK - Celebrate a career break",
+              "CELEBRATE_CERTIFICATE - Celebrate a certificate",
+              "CELEBRATE_EDUCATION - Celebrate an education",
+              "CELEBRATE_MILESTONE - Celebrate a milestone or achievement"
+            ]
+          },
+          {
+            "Text": "Type of celebration created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string in little format",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "any associated strings on Celebration content (eg. mentions/tags on celebration objects itself)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN (either urn:li:image or urn:li:celebrationTemplate). urn:li:image means that users provided their own image. urn:li:celebrationTemplate means that users used LI provided celebration template image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the template or user-provided image this Celebration was created with. User needs to specify either user-provided image (image) or LinkedIn provided celebration templates. Only certain templates are available for each celebrationType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts/urn:li:ugcPost:7117591584669327360\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 200 HTTP status code and payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Celebration Content",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022lastModifiedAt\u0022: 1696966499120,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022publishedAt\u0022: 1696966072646,\n    \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022celebration\u0022: {\n            \u0022media\u0022: \u0022urn:li:celebrationTemplate:PLANES\u0022,\n            \u0022type\u0022: \u0022CELEBRATE_CERTIFICATE\u0022\n        }\n    },\n    \u0022lifecycleStateInfo\u0022: {\n        \u0022isEditedByAuthor\u0022: false\n    },\n    \u0022isReshareDisabledByAuthor\u0022: false,\n    \u0022createdAt\u0022: 1696966072646,\n    \u0022id\u0022: \u0022urn:li:ugcPost:7117591584669327360\u0022,\n    \u0022commentary\u0022: \u0022Celebrating my new certification!\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "Also fetch multiple posts with different types of content by providing multiple post IDs. The example response shows a Batch Get response for two posts, one with Celebration content and the other with Carousel content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts?ids={encoded postId}\u0026ids={encoded postId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts?ids=List(urn%3Ali%3AugcPost%3A6914373086788128769,urn%3Ali%3AugcPost%3A7117591584669327360)\u0027 \\\n--header \u0027X-RestLi-Method: BATCH_GET\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Batch Get Celebration Content",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a list of posts containing HTTP status code and its content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Celebration Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:ugcPost:7117591584669327360\u0022: {\n            \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n            \u0022lastModifiedAt\u0022: 1696966499120,\n            \u0022visibility\u0022: \u0022PUBLIC\u0022,\n            \u0022publishedAt\u0022: 1696966072646,\n            \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022distribution\u0022: {\n                \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n                \u0022thirdPartyDistributionChannels\u0022: []\n            },\n            \u0022content\u0022: {\n                \u0022celebration\u0022: {\n                    \u0022media\u0022: \u0022urn:li:celebrationTemplate:PLANES\u0022,\n                    \u0022type\u0022: \u0022CELEBRATE_CERTIFICATE\u0022\n                }\n            },\n            \u0022lifecycleStateInfo\u0022: {\n                \u0022isEditedByAuthor\u0022: false\n            },\n            \u0022isReshareDisabledByAuthor\u0022: false,\n            \u0022createdAt\u0022: 1696966072646,\n            \u0022id\u0022: \u0022urn:li:ugcPost:7117591584669327360\u0022,\n            \u0022commentary\u0022: \u0022Celebrating my new certification!\u0022\n        },\n       \u0022urn:li:ugcPost:6914373086788128769\u0022: {\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1648516563685,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1648515006906,\n           \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022NONE\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022carousel\u0022: {\n                   \u0022cards\u0022: [\n                       {\n                           \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                           \u0022media\u0022: {\n                               \u0022title\u0022: \u0022first card\u0022,\n                               \u0022taggedEntities\u0022: [],\n                               \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                           }\n                       },\n                       {\n                           \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                           \u0022media\u0022: {\n                               \u0022title\u0022: \u0022second card\u0022,\n                               \u0022taggedEntities\u0022: [],\n                               \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                           }\n                       }\n                   ]\n               }\n           },\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           },\n           \u0022contentLandingPage\u0022: \u0022http://www.linkedin.com/contentLandingPage\u0022,\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1648515006906,\n           \u0022id\u0022: \u0022urn:li:ugcPost:6914373086788128769\u0022,\n           \u0022commentary\u0022: \u0022test strings\u0022,\n           \u0022adContext\u0022: {\n               \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n               \u0022dscAdType\u0022: \u0022CAROUSEL\u0022,\n               \u0022isDsc\u0022: true,\n               \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n           }\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:ugcPost:7117591584669327360\u0022: 200,\n       \u0022urn:li:ugcPost:6914373086788128769\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "Error Message",
+        "Description",
+        "Error Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide valid OAuth2 access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content not found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided id is correct",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "References"
+      ],
+      "Text": "Posts API",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

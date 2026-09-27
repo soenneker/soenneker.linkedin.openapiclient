@@ -1,0 +1,455 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-viewer-count-analytics",
+  "Title": "Live Viewer Count Analytics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/event-role-assignments",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/events",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-viewer-count-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Live Viewer Count Analytics",
+      "Anchor": "live-viewer-count-analytics",
+      "SectionPath": [],
+      "Text": "The Live Viewer Count Analytics API returns analytics data for the live viewer count of live videos. This API is designed to work for both scheduled live video events and spontaneous live events, similar to LMS APIs for video analytics. This API doesn\u2019t share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Viewer Count Analytics",
+      "Anchor": "live-viewer-count-analytics",
+      "SectionPath": [],
+      "Text": "The service currently provides a finder to get live viewer count analytics for a live video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "/dmaLiveViewerCountAnalytics",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve analytics data for live viewer counts of live videos. Restricted to page admins with the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "/dmaLiveViewerCountAnalytics",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "/dmaLiveViewerCountAnalytics",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API does not include member personal data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "/dmaLiveViewerCountAnalytics",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ugcPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of format urn:li:ugcPost:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the live video (ugcPost)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Statistic.concurrentViewerCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Live viewer count as of the timestamp in milliseconds when the count was last updated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Statistic.timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range over which the Statistic was collected",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Live Viewer Count Analytics for a Live Video",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Live Viewer Count Analytics for a Live Video",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLiveViewerCountAnalytics?q=statistics\u0026ugcPostUrn=encoded -b",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Live Viewer Count Analytics for a Live Video",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaLiveViewerCountAnalytics?q=statistics\u0026ugcPostUrn=URN%3Ali%3AugcPost%3A123456789\u0026timeRange=(end:1234578890000,start:1234567890000)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Live Viewer Count Analytics for a Live Video",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n          \u0022concurrentViewerCount\u0022: 0,\n          \u0022timeRange\u0022: {\n              \u0022start\u0022: 1234567890000,\n              \u0022end\u0022: 1234577890000\n          }\n        },\n        {\n          \u0022concurrentViewerCount\u0022: 12,\n          \u0022timeRange\u0022: {\n              \u0022start\u0022: 1234577890000,\n              \u0022end\u0022: 1234578890000\n          }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Live Viewer Count Analytics for a Live Video",
+        "Sample Request",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be statistics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "statistics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User Generated Content Post URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:ugcPost:123456789",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range over which the Statistics should be collected",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(end:1234578890000,start:1234567890000)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access dmaLiveViewerCountAnalytics data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the necessary permissions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller should have access to the UgcPost provided in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Organization Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

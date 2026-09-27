@@ -1,0 +1,3112 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
+  "Title": "Campaign Objectives",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/ad-preview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/campaign-formats",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Campaign Objectives",
+      "Anchor": "campaign-objectives",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Objectives",
+      "Anchor": "campaign-objectives",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Objectives",
+      "Anchor": "campaign-objectives",
+      "SectionPath": [],
+      "Text": "This document highlights the relationship between the campaign manager UI selections and the corresponding endpoint objects in the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Objectives",
+      "Anchor": "campaign-objectives",
+      "SectionPath": [],
+      "Text": "Read more: Marketing Platform Primer",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaigns",
+      "Anchor": "campaigns",
+      "SectionPath": [
+        "Campaigns"
+      ],
+      "Text": "Marketing campaigns are structured like this:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaigns",
+      "Anchor": "campaigns",
+      "SectionPath": [
+        "Campaigns"
+      ],
+      "Text": "Ad account\n\nCampaign group\n\nCampaign\nObjective\nCreative\nLaunch/manage",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaigns",
+      "Anchor": "campaigns",
+      "SectionPath": [
+        "Campaigns"
+      ],
+      "Text": "The Campaign Objective will determine which ad format, bidding strategy, and optimization settings are available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective",
+      "Anchor": "objective",
+      "SectionPath": [
+        "Campaigns",
+        "Objective"
+      ],
+      "Text": "A Campaign Objective is the basic intent of a campaign strategy. While these are relatively straightforward, there are differences in configuration and implementation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective",
+      "Anchor": "objective",
+      "SectionPath": [
+        "Campaigns",
+        "Objective"
+      ],
+      "Text": "There are seven primary campaign objectives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective",
+      "Anchor": "objective",
+      "SectionPath": [
+        "Campaigns",
+        "Objective"
+      ],
+      "Text": "Read more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Objective",
+      "Anchor": "objective",
+      "SectionPath": [
+        "Campaigns",
+        "Objective"
+      ],
+      "Text": "Objective Pricing table\nObjective descriptions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Format",
+      "Anchor": "format",
+      "SectionPath": [
+        "Campaigns",
+        "Format"
+      ],
+      "Text": "Read more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Format",
+      "Anchor": "format",
+      "SectionPath": [
+        "Campaigns",
+        "Format"
+      ],
+      "Text": "Campaign Formats\nAd Formats",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bidding",
+      "Anchor": "bidding",
+      "SectionPath": [
+        "Campaigns",
+        "Bidding"
+      ],
+      "Text": "Bidding strategies are outlined in Create and Manage Campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization",
+      "Anchor": "optimization",
+      "SectionPath": [
+        "Campaigns",
+        "Optimization"
+      ],
+      "Text": "Campaigns optimizing for MAX_CONVERSION must have a conversion associated with it to be activated. Campaigns of this type should be created and then associated with a conversion before activating. See Conversion Tracking for instructions on creating conversions and associating them with campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization",
+      "Anchor": "optimization",
+      "SectionPath": [
+        "Campaigns",
+        "Optimization"
+      ],
+      "Text": "Read more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization",
+      "Anchor": "optimization",
+      "SectionPath": [
+        "Campaigns",
+        "Optimization"
+      ],
+      "Text": "Optimization of Campaigns\nOptimization by Objective Type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation",
+      "Anchor": "validation",
+      "SectionPath": [
+        "Campaigns",
+        "Validation"
+      ],
+      "Text": "During campaign creation, certain fields that are expected to be set with specific values for each ObjectiveType and will be validated by the API. The following table lists the validations for each ObjectiveType:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation",
+      "Anchor": "validation",
+      "SectionPath": [
+        "Campaigns",
+        "Validation"
+      ],
+      "Text": "Read more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation",
+      "Anchor": "validation",
+      "SectionPath": [
+        "Campaigns",
+        "Validation"
+      ],
+      "Text": "Validations by Campaign Format\nValidations by Objective Type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Brand Awareness",
+      "Anchor": "brand-awareness",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Brand Awareness"
+      ],
+      "Text": "objectiveType: BRAND_AWARENESS\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Brand Awareness",
+      "Anchor": "brand-awareness",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Brand Awareness"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adFormat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "bidStrategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ImageVideoEvent",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420760",
+              "https://www.linkedin.com/help/lms/answer/a423762",
+              "https://www.linkedin.com/help/lms/answer/a459550"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "STANDARD_UPDATESINGLE_VIDEOSPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_STATUS_UPDATESPONSORED_VIDEOSPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_REACH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX TGTMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_IMPRESSIONSTARGET_COST_PER_IMPRESSIONNone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Carousel",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423087"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "CAROUSEL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_CAROUSEL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX TGTMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_IMPRESSIONSTARGET_COST_PER_IMPRESSIONNone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TextSpotlightFollower",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a424670",
+              "https://www.linkedin.com/help/lms/answer/a420806",
+              "https://www.linkedin.com/help/lms/answer/a423314"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "TEXT_ADSPOTLIGHTFOLLOW_COMPANY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TEXT_ADSPOTLIGHT_V2FOLLOW_COMPANY_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Conversation",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sends",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Document",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a737898"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_REACH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Website Visits",
+      "Anchor": "website-visits",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Website Visits"
+      ],
+      "Text": "objectiveType: WEBSITE_VISIT\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Website Visits",
+      "Anchor": "website-visits",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Website Visits"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ImageCarouselVideoEvent",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420760",
+              "https://www.linkedin.com/help/lms/answer/a423087",
+              "https://www.linkedin.com/help/lms/answer/a425322",
+              "https://www.linkedin.com/help/lms/answer/a459550"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "STANDARD_UPDATECAROUSELSINGLE_VIDEOSPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_STATUS_UPDATESPONSORED_UPDATE_CAROUSELSPONSORED_VIDEOSPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX TGTMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_CLICK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*CPM if MAX CLICK*CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TextSpotlight",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a424670",
+              "https://www.linkedin.com/help/lms/answer/a420806"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "TEXTSPOTLIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TEXT_ADSPOTLIGHT_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MessageConversation",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a421723",
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILSSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sends (msg formats)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Engagement",
+      "Anchor": "engagement",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Engagement"
+      ],
+      "Text": "objectiveType: ENGAGEMENT\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Engagement",
+      "Anchor": "engagement",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Engagement"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ImageCarouselVideoEvent",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420760",
+              "https://www.linkedin.com/help/lms/answer/a423087",
+              "https://www.linkedin.com/help/lms/answer/a423762",
+              "https://www.linkedin.com/help/lms/answer/a459550"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "STANDARD_UPDATECAROUSELSINGLE_VIDEOSPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_STATUS_UPDATECAROUSELSPONSORED_VIDEOSPONSORED_UPDATE_EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Engagement clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX TGTMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_CLICKTARGET_COST_PER_CLICKENHANCED_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*CPM if MAX CLICK*CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Follower",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423314"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "FOLLOW_COMPANY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FOLLOW_COMPANY_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Engagement clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Conversation",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sends (msg formats)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Document",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a737898"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_REACH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Video Views",
+      "Anchor": "video-views",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Video Views"
+      ],
+      "Text": "objectiveType: VIDEO_VIEW\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Video Views",
+      "Anchor": "video-views",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Video Views"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Video",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423762"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SINGLE_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video views",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX TGTMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPV (if MAX_VIDEO_VIEW)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Lead Generation",
+      "Anchor": "lead-generation",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Lead Generation"
+      ],
+      "Text": "objectiveType: LEAD_GENERATION\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Lead Generation",
+      "Anchor": "lead-generation",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Lead Generation"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Lead GenCarouselVideoMessage",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a422440",
+              "https://www.linkedin.com/help/lms/answer/a423087",
+              "https://www.linkedin.com/help/lms/answer/a423762",
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": [
+              "Lead Gen",
+              "Carousel",
+              "Video",
+              "Message"
+            ]
+          },
+          {
+            "Text": "LEAD_GENERATION_FORM_SPONSORED_CONTENTLEAD_GENERATION_FORM_CAROUSEL_SPONSORED_CONTENTVIDEO_LEAD_GENERATION_FORM_SPONSORED_CONTENTLEAD_GENERATION_FORM_SPONSORED_INMAIL",
+            "Links": [],
+            "Values": [
+              "LEAD_GENERATION_FORM_SPONSORED_CONTENT",
+              "LEAD_GENERATION_FORM_CAROUSEL_SPONSORED_CONTENT",
+              "VIDEO_LEAD_GENERATION_FORM_SPONSORED_CONTENT",
+              "LEAD_GENERATION_FORM_SPONSORED_INMAIL"
+            ]
+          },
+          {
+            "Text": "{varies}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leads (SU formats ONLY)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": [
+              "MAX",
+              "MAN"
+            ]
+          },
+          {
+            "Text": "MAX_LEADMAX_QUALIFIED_LEADENHANCED_CONVERSION",
+            "Links": [],
+            "Values": [
+              "MAX_LEAD",
+              "MAX_QUALIFIED_LEAD",
+              "ENHANCED_CONVERSION"
+            ]
+          },
+          {
+            "Text": "CPM if MAX_LEAD or MAX_QUALIFIED_LEADCPC",
+            "Links": [],
+            "Values": [
+              "CPM if MAX_LEAD or MAX_QUALIFIED_LEAD",
+              "CPC"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MessageConversation",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a421723",
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": [
+              "Message",
+              "Conversation"
+            ]
+          },
+          {
+            "Text": "SPONSORED_INMAILSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": [
+              "SPONSORED_INMAIL",
+              "SPONSORED_MESSAGE"
+            ]
+          },
+          {
+            "Text": "SPONSORED_INMAILSSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": [
+              "SPONSORED_INMAILS",
+              "SPONSORED_MESSAGE"
+            ]
+          },
+          {
+            "Text": "Sends (msg formats)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Document",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a737898"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAXMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": [
+              "MAX",
+              "MAN"
+            ]
+          },
+          {
+            "Text": "MAX_LEADMAX_QUALIFIED_LEADENHANCED_CONVERSION",
+            "Links": [],
+            "Values": [
+              "MAX_LEAD",
+              "MAX_QUALIFIED_LEAD",
+              "ENHANCED_CONVERSION"
+            ]
+          },
+          {
+            "Text": "CPM if MAX_LEAD or MAX_QUALIFIED_LEADCPC",
+            "Links": [],
+            "Values": [
+              "CPM if MAX_LEAD or MAX_QUALIFIED_LEAD",
+              "CPC"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Lead Generation",
+      "Anchor": "lead-generation",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Lead Generation"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Lead GenCarouselVideoMessage",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a422440",
+              "https://www.linkedin.com/help/lms/answer/a423087",
+              "https://www.linkedin.com/help/lms/answer/a423762",
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": [
+              "Lead Gen",
+              "Carousel",
+              "Video",
+              "Message"
+            ]
+          },
+          {
+            "Text": "LEAD_GENERATION_FORM_SPONSORED_CONTENTLEAD_GENERATION_FORM_CAROUSEL_SPONSORED_CONTENTVIDEO_LEAD_GENERATION_FORM_SPONSORED_CONTENTLEAD_GENERATION_FORM_SPONSORED_INMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{varies}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leads (SU formats ONLY)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_LEADMAX_QUALIFIED_LEADENHANCED_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM if MAX_LEAD or MAX_QUALIFIED_LEADCPC",
+            "Links": [],
+            "Values": [
+              "CPM if MAX_LEAD or MAX_QUALIFIED_LEAD",
+              "CPC"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MessageConversation",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a421723",
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILSSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sends (msg formats)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Document",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a737898"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_NATIVE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAXMAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_LEADMAX_QUALIFIED_LEADENHANCED_CONVERSION",
+            "Links": [],
+            "Values": [
+              "MAX_QUALIFIED_LEAD",
+              "ENHANCED_CONVERSION"
+            ]
+          },
+          {
+            "Text": "CPM if MAX_LEAD or MAX_QUALIFIED_LEADCPC",
+            "Links": [],
+            "Values": [
+              "CPM if MAX_LEAD or MAX_QUALIFIED_LEAD",
+              "CPC"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Website Conversions",
+      "Anchor": "website-conversions",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Website Conversions"
+      ],
+      "Text": "objectiveType: WEBSITE_CONVERSION\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Website Conversions",
+      "Anchor": "website-conversions",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Website Conversions"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ImageCarouselVideo",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420760",
+              "https://www.linkedin.com/help/lms/answer/a423087",
+              "https://www.linkedin.com/help/lms/answer/a423762"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "STANDARD_UPDATECAROUSELSINGLE_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_STATUS_UPDATESPONSORED_UPDATE_CAROUSELSPONSORED_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Website conversions (SU formats ONLY)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_CONVERSIONENHANCED_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM if MAX_CONVERSIONCPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TextSpotlight(LMS)",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a424670",
+              "https://www.linkedin.com/help/lms/answer/a420806"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "TEXTSPOTLIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TEXT_ADSPOTLIGHT_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Spotlight(LTS)",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420806"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MessageConversation",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a421723",
+              "https://www.linkedin.com/help/lms/answer/a421723"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_INMAILSSPONSORED_MESSAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sends (msg formats)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Job Applicants",
+      "Anchor": "job-applicants",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Job Applicants"
+      ],
+      "Text": "objectiveType: JOB_APPLICANT\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Applicants",
+      "Anchor": "job-applicants",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Job Applicants"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobImage",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a425322",
+              "https://www.linkedin.com/help/lms/answer/a420760"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "JOBSSTANDARD_UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOBS_V2SPONSORED_STATUS_UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_CLICKNone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*CPM if MAX CLICK*CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Spotlight(LMS)",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420806"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_CLICKNone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*CPM if MAX CLICK*CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Spotlight(LTS)Job",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420806",
+              "https://www.linkedin.com/help/lms/answer/a425322"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHTJOBS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT_V2JOBS_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Talent Lead",
+      "Anchor": "talent-lead",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Talent Lead"
+      ],
+      "Text": "objectiveType: TALENT_LEAD\nformat: CampaignFormat",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Talent Lead",
+      "Anchor": "talent-lead",
+      "SectionPath": [
+        "Campaign Objective API Mapping",
+        "Talent Lead"
+      ],
+      "Text": "",
+      "Headers": [
+        "UI",
+        "API",
+        "API",
+        "UI",
+        "UI",
+        "API \u0026 UI",
+        "API \u0026 UI"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Ad Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "campaign.format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creativeType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization Goal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bidding Strategy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optimizationTargetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost Type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ImageCarouselVideo",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420760",
+              "https://www.linkedin.com/help/lms/answer/a423087",
+              "https://www.linkedin.com/help/lms/answer/a423762"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "STANDARD_UPDATECAROUSELSINGLE_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_STATUS_UPDATESPONSORED_UPDATE_CAROUSELSPONSORED_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Talent leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAX MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423490",
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MAX_CLICKENHANCED_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*CPM if MAX CLICK*CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Landing page clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Spotlight",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a420806"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT_V2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Impressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MAN",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/120554"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

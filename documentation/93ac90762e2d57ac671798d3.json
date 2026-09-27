@@ -1,0 +1,1067 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+  "Title": "Upgrade to Lite Tier",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Upgrade to Lite Tier",
+      "Anchor": "upgrade-to-lite-tier",
+      "SectionPath": [],
+      "Text": "Upgrade to production-ready access by moving from Development to Lite tier. Lite tier uses the same APIs as Development tier, but allows you to access verification data for all LinkedIn members instead of just developer app administrators.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upgrade to Lite Tier",
+      "Anchor": "upgrade-to-lite-tier",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upgrade to Lite Tier",
+      "Anchor": "upgrade-to-lite-tier",
+      "SectionPath": [],
+      "Text": "Lite tier is identical to Development tier in terms of APIs and implementation. The only difference: you can now access all LinkedIn members instead of just developer app administrators. No code changes required!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How the upgrade process works",
+      "Anchor": "how-the-upgrade-process-works",
+      "SectionPath": [
+        "How the upgrade process works"
+      ],
+      "Text": "End-to-end upgrade flow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How the upgrade process works",
+      "Anchor": "how-the-upgrade-process-works",
+      "SectionPath": [
+        "How the upgrade process works"
+      ],
+      "Text": "Submit an upgrade request from the Developer Portal.\nProvide your business details as part of the request.\nComplete a short LinkedIn survey.\nFollow the onboarding instructions provided by LinkedIn.\nOnce Lite tier access is enabled, your app can access all LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How the upgrade process works",
+      "Anchor": "how-the-upgrade-process-works",
+      "SectionPath": [
+        "How the upgrade process works"
+      ],
+      "Text": "[!NOTE]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How the upgrade process works",
+      "Anchor": "how-the-upgrade-process-works",
+      "SectionPath": [
+        "How the upgrade process works"
+      ],
+      "Text": "This process makes your integration production-ready. Your API endpoints, scopes, and implementation remain unchanged.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lite Tier Capabilities",
+      "Anchor": "lite-tier-capabilities",
+      "SectionPath": [
+        "Lite Tier Capabilities"
+      ],
+      "Text": "The table below summarizes what the Lite tier includes and what it does not\u2014covering access level, API availability, and feature limitations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Lite Tier Capabilities",
+      "Anchor": "lite-tier-capabilities",
+      "SectionPath": [
+        "Lite Tier Capabilities"
+      ],
+      "Text": "",
+      "Headers": [
+        "Capability / API Access",
+        "Lite Tier",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Production access",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can be used to serve real end users",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Access to all LinkedIn members",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not limited to application administrators",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Same APIs as Development tier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No code changes required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "API: /identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile and verification-linked identity data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "API: /verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Same rate limits as Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000 calls/day (application-level)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Advanced profile data (education, jobs)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus tier only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Bulk validation API: /validationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus tier only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Detailed verification metadata (timestamps)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus tier only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Access",
+      "Anchor": "api-access",
+      "SectionPath": [
+        "Lite Tier Capabilities",
+        "API Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Available",
+        "Response Data"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/identityMe",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile (name, email, photo, profile URL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/verificationReport",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/validationStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (Plus tier only)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bulk member validation",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OAuth Scopes",
+      "Anchor": "oauth-scopes",
+      "SectionPath": [
+        "Lite Tier Capabilities",
+        "OAuth Scopes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scope",
+        "Available",
+        "Purpose"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_profile_basicinfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile information",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_verify",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories (not detailed metadata)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth Scopes",
+      "Anchor": "oauth-scopes",
+      "SectionPath": [
+        "Lite Tier Capabilities",
+        "OAuth Scopes"
+      ],
+      "Text": "For OAuth scopes and rate limits, see the API reference documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth Scopes",
+      "Anchor": "oauth-scopes",
+      "SectionPath": [
+        "Lite Tier Capabilities",
+        "OAuth Scopes"
+      ],
+      "Text": "/identityMe\n/verificationReport",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Before requesting Lite tier access:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "\u2705 Development tier access - Must have tested with Development tier first\n\u2705 Valid use case - Clear business need for verification data\n\u2705 Working integration - Tested integration with Development tier",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "You must start with Development tier before upgrading to Lite. Learn more about tier progression.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Test with Development Tier (If Not Done)",
+      "Anchor": "step-1-test-with-development-tier-if-not-done",
+      "SectionPath": [
+        "Step 1: Test with Development Tier (If Not Done)"
+      ],
+      "Text": "If you haven\u0027t already:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Test with Development Tier (If Not Done)",
+      "Anchor": "step-1-test-with-development-tier-if-not-done",
+      "SectionPath": [
+        "Step 1: Test with Development Tier (If Not Done)"
+      ],
+      "Text": "Complete the Quickstart Guide\nTest OAuth flow and API calls\nValidate your integration works correctly",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Request Lite Tier Upgrade",
+      "Anchor": "step-2-request-lite-tier-upgrade",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade"
+      ],
+      "Text": "Submitting the request typically takes only a few minutes. Follow the onboarding instructions provided by LinkedIn to complete the Lite tier upgrade process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2.1 Click Request Upgrade",
+      "Anchor": "21-click-request-upgrade",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade",
+        "2.1 Click Request Upgrade"
+      ],
+      "Text": "Go to LinkedIn Developer Portal\nSelect your application\nNavigate to Products tab\nFind Verified on LinkedIn (should show \u0022Development Tier\u0022 status)\nClick Request upgrade",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2.2 Accept Terms and Verify Email",
+      "Anchor": "22-accept-terms-and-verify-email",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade",
+        "2.2 Accept Terms and Verify Email"
+      ],
+      "Text": "Review and accept Verified on LinkedIn Terms and Conditions\nVerify your business email address\nAn Access Request Form link will appear",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2.3 Complete Access Request Form",
+      "Anchor": "23-complete-access-request-form",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade",
+        "2.3 Complete Access Request Form"
+      ],
+      "Text": "Click the Access Request Form link and provide necessary details about your application, company, use case, and technical implementation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2.3 Complete Access Request Form",
+      "Anchor": "23-complete-access-request-form",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade",
+        "2.3 Complete Access Request Form"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2.3 Complete Access Request Form",
+      "Anchor": "23-complete-access-request-form",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade",
+        "2.3 Complete Access Request Form"
+      ],
+      "Text": "Be specific: Provide clear and detailed information about your application, company, and use case to help ensure a smooth onboarding experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2.4 Complete the Upgrade Process",
+      "Anchor": "24-complete-the-upgrade-process",
+      "SectionPath": [
+        "Step 2: Request Lite Tier Upgrade",
+        "2.4 Complete the Upgrade Process"
+      ],
+      "Text": "Notification: You\u0027ll receive email once Lite tier access is enabled.\nStatus: Check the Products tab for the latest status of your upgrade.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Configure Production Settings",
+      "Anchor": "step-3-configure-production-settings",
+      "SectionPath": [
+        "Step 3: Configure Production Settings"
+      ],
+      "Text": "Once Lite tier access is enabled, configure your production environment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3.1 Verify OAuth Scopes",
+      "Anchor": "31-verify-oauth-scopes",
+      "SectionPath": [
+        "Step 3: Configure Production Settings",
+        "3.1 Verify OAuth Scopes"
+      ],
+      "Text": "Ensure these scopes are authorized:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3.1 Verify OAuth Scopes",
+      "Anchor": "31-verify-oauth-scopes",
+      "SectionPath": [
+        "Step 3: Configure Production Settings",
+        "3.1 Verify OAuth Scopes"
+      ],
+      "Text": "r_profile_basicinfo - Basic profile info\nr_verify - Verification status",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3.2 Add Production Redirect URIs",
+      "Anchor": "32-add-production-redirect-uris",
+      "SectionPath": [
+        "Step 3: Configure Production Settings",
+        "3.2 Add Production Redirect URIs"
+      ],
+      "Text": "Go to Auth tab\nUnder Authorized redirect URLs, add your production URLs:\n\nhttps://yourdomain.com/auth/linkedin/callback\nhttps://yourdomain.com/oauth/callback",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3.2 Add Production Redirect URIs",
+      "Anchor": "32-add-production-redirect-uris",
+      "SectionPath": [
+        "Step 3: Configure Production Settings",
+        "3.2 Add Production Redirect URIs"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3.2 Add Production Redirect URIs",
+      "Anchor": "32-add-production-redirect-uris",
+      "SectionPath": [
+        "Step 3: Configure Production Settings",
+        "3.2 Add Production Redirect URIs"
+      ],
+      "Text": "Only HTTPS URLs are allowed. HTTP URLs will be rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3.3 Secure Your Credentials",
+      "Anchor": "33-secure-your-credentials",
+      "SectionPath": [
+        "Step 3: Configure Production Settings",
+        "3.3 Secure Your Credentials"
+      ],
+      "Text": "\u2705 Store Client Secret in environment variables or secret manager\n\u2705 Never commit credentials to version control\n\u2705 Use different credentials for staging and production\n\u2705 Implement token encryption at rest",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4.1 Update OAuth Flow",
+      "Anchor": "41-update-oauth-flow",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.1 Update OAuth Flow"
+      ],
+      "Text": "Your Development tier code will work with Lite tier. The only change is access scope:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "4.1 Update OAuth Flow",
+      "Anchor": "41-update-oauth-flow",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.1 Update OAuth Flow"
+      ],
+      "Text": "// Same OAuth flow - now works for all LinkedIn members\nconst authUrl = \u0060https://www.linkedin.com/oauth/v2/authorization?response_type=code\u0026client_id=${clientId}\u0026redirect_uri=${redirectUri}\u0026scope=r_profile_basicinfo%20r_verify\u0026state=${state}\u0060;",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4.2 Test with Real Users",
+      "Anchor": "42-test-with-real-users",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.2 Test with Real Users"
+      ],
+      "Text": "Have non-admin LinkedIn members test your integration\nVerify OAuth consent flow works correctly\nTest API calls return expected data\nVerify verification badges display correctly",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4.3 Monitor API Usage",
+      "Anchor": "43-monitor-api-usage",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.3 Monitor API Usage"
+      ],
+      "Text": "Track your API usage to stay within rate limits:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4.3 Monitor API Usage",
+      "Anchor": "43-monitor-api-usage",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.3 Monitor API Usage"
+      ],
+      "Text": "Application-level: 5,000 calls/day\nMember-level: 500 calls/day per member",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4.3 Monitor API Usage",
+      "Anchor": "43-monitor-api-usage",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.3 Monitor API Usage"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4.3 Monitor API Usage",
+      "Anchor": "43-monitor-api-usage",
+      "SectionPath": [
+        "Step 4: Deploy to Production",
+        "4.3 Monitor API Usage"
+      ],
+      "Text": "Implement caching and token refresh to optimize API usage. See Implementation Guide for best practices.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Call the APIs",
+      "Anchor": "step-5-call-the-apis",
+      "SectionPath": [
+        "Step 5: Call the APIs"
+      ],
+      "Text": "The API calls are identical to Development tier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Profile Data",
+      "Anchor": "get-profile-data",
+      "SectionPath": [
+        "Step 5: Call the APIs",
+        "Get Profile Data"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/identityMe\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Verification Report",
+      "Anchor": "get-verification-report",
+      "SectionPath": [
+        "Step 5: Call the APIs",
+        "Get Verification Report"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Verification Report",
+      "Anchor": "get-verification-report",
+      "SectionPath": [
+        "Step 5: Call the APIs",
+        "Get Verification Report"
+      ],
+      "Text": "Sample Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Verification Report",
+      "Anchor": "get-verification-report",
+      "SectionPath": [
+        "Step 5: Call the APIs",
+        "Get Verification Report"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022abc123\u0022,\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Verification Report",
+      "Anchor": "get-verification-report",
+      "SectionPath": [
+        "Step 5: Call the APIs",
+        "Get Verification Report"
+      ],
+      "Text": "Quickly validate your integration using the Verified on LinkedIn Postman collection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security",
+      "Anchor": "security",
+      "SectionPath": [
+        "Production Best Practices",
+        "Security"
+      ],
+      "Text": "\u2705 Encrypt tokens at rest\n\u2705 Use HTTPS only\n\u2705 Implement CSRF protection (state parameter)\n\u2705 Rotate secrets regularly",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Performance",
+      "Anchor": "performance",
+      "SectionPath": [
+        "Production Best Practices",
+        "Performance"
+      ],
+      "Text": "\u2705 Cache API responses appropriately\n\u2705 Implement token refresh before expiry\n\u2705 Use exponential backoff for retries\n\u2705 Monitor rate limits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Experience",
+      "Anchor": "user-experience",
+      "SectionPath": [
+        "Production Best Practices",
+        "User Experience"
+      ],
+      "Text": "\u2705 Follow branding guidelines\n\u2705 Handle unverified members gracefully\n\u2705 Provide clear consent messaging\n\u2705 Test mobile responsiveness",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Experience",
+      "Anchor": "user-experience",
+      "SectionPath": [
+        "Production Best Practices",
+        "User Experience"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Experience",
+      "Anchor": "user-experience",
+      "SectionPath": [
+        "Production Best Practices",
+        "User Experience"
+      ],
+      "Text": "For comprehensive production guidelines, see Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upgrade to Plus Tier When:",
+      "Anchor": "upgrade-to-plus-tier-when",
+      "SectionPath": [
+        "When You\u0027re Ready to Upgrade",
+        "Upgrade to Plus Tier When:"
+      ],
+      "Text": "\u2705 Need detailed verification metadata (timestamps, methods)\n\u2705 Need education and job title data\n\u2705 Need bulk validation API (/validationStatus)\n\u2705 Enterprise-scale requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upgrade:",
+      "Anchor": "how-to-upgrade",
+      "SectionPath": [
+        "When You\u0027re Ready to Upgrade",
+        "How to Upgrade:"
+      ],
+      "Text": "Plus tier requires partnership discussions with LinkedIn. Contact your LinkedIn representative or visit the Plus Tier Guide for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimize Your Integration",
+      "Anchor": "optimize-your-integration",
+      "SectionPath": [
+        "Next Steps",
+        "Optimize Your Integration"
+      ],
+      "Text": "Implementation Guide - OAuth, tokens, error handling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API References",
+      "Anchor": "api-references",
+      "SectionPath": [
+        "Next Steps",
+        "API References"
+      ],
+      "Text": "/identityMe API - Profile details endpoint\n/verificationReport API - Verification details endpoint\nAuthentication - OAuth details",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Consider Plus Tier",
+      "Anchor": "consider-plus-tier",
+      "SectionPath": [
+        "Next Steps",
+        "Consider Plus Tier"
+      ],
+      "Text": "Plus Tier Guide - Enterprise features\nOverview - Compare all tiers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resources",
+      "Anchor": "resources",
+      "SectionPath": [
+        "Next Steps",
+        "Resources"
+      ],
+      "Text": "Branding Guidelines - Display badges correctly\nFAQ - Frequently asked questions\nRelease Notes - API updates and changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Upgrade In Progress\u0022 Status",
+      "Anchor": "upgrade-in-progress-status",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Upgrade In Progress\u0022 Status"
+      ],
+      "Text": "Cause: Upgrade is still being processed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Upgrade In Progress\u0022 Status",
+      "Anchor": "upgrade-in-progress-status",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Upgrade In Progress\u0022 Status"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Upgrade In Progress\u0022 Status",
+      "Anchor": "upgrade-in-progress-status",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Upgrade In Progress\u0022 Status"
+      ],
+      "Text": "Check your email for updates.\nCheck the Products tab for the latest status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient permissions\u0022 Error",
+      "Anchor": "insufficient-permissions-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient permissions\u0022 Error"
+      ],
+      "Text": "Cause: Your app does not yet have Lite tier access, or the access token was issued before Lite tier access was enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient permissions\u0022 Error",
+      "Anchor": "insufficient-permissions-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient permissions\u0022 Error"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u0022Insufficient permissions\u0022 Error",
+      "Anchor": "insufficient-permissions-error",
+      "SectionPath": [
+        "Troubleshooting",
+        "\u0022Insufficient permissions\u0022 Error"
+      ],
+      "Text": "Verify Lite tier is enabled in Products tab\nRegenerate access token with correct scopes\nEnsure using production redirect URIs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "Cause: Exceeded 5,000 calls/day (application) or 500 calls/day (member)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "Solution:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "Implement caching to reduce API calls\nUse token refresh instead of re-authorization\nMonitor usage and optimize call patterns\nConsider upgrading to Plus tier for higher limits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Exceeded",
+      "Anchor": "rate-limit-exceeded",
+      "SectionPath": [
+        "Troubleshooting",
+        "Rate Limit Exceeded"
+      ],
+      "Text": "\uD83C\uDF89 Congratulations! You\u0027re now production-ready with Verified on LinkedIn Lite tier. For enterprise features, contact your LinkedIn representative.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

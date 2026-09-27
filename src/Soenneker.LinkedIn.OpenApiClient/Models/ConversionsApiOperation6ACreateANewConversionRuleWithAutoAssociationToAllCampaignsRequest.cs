@@ -15,10 +15,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestAccount? Account { get; set; }
 #nullable restore
 #else
-        public string Account { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestAccount Account { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string AttributionType { get; set; }
 #endif
-        /// <summary>The conversionMethod property</summary>
+        /// <summary>A method enum that specifies how a conversion event should be registered. For streaming conversions via API, the only supported value is CONVERSIONS_API.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversionMethod { get; set; }
@@ -38,26 +38,34 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string ConversionMethod { get; set; }
 #endif
+        /// <summary>The elements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestElementsItem>? Elements { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestElementsItem> Elements { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestName? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestName Name { get; set; }
 #endif
         /// <summary>The postClickAttributionWindowSize property</summary>
-        public int? PostClickAttributionWindowSize { get; set; }
+        public long? PostClickAttributionWindowSize { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestType? Type { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestType Type { get; set; }
 #endif
         /// <summary>The viewThroughAttributionWindowSize property</summary>
-        public int? ViewThroughAttributionWindowSize { get; set; }
+        public long? ViewThroughAttributionWindowSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequest"/> and sets the default values.
         /// </summary>
@@ -83,13 +91,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetStringValue(); } },
+                { "account", n => { Account = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestAccount>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestAccount.CreateFromDiscriminatorValue); } },
                 { "attributionType", n => { AttributionType = n.GetStringValue(); } },
                 { "conversionMethod", n => { ConversionMethod = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "postClickAttributionWindowSize", n => { PostClickAttributionWindowSize = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "viewThroughAttributionWindowSize", n => { ViewThroughAttributionWindowSize = n.GetIntValue(); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestName>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestName.CreateFromDiscriminatorValue); } },
+                { "postClickAttributionWindowSize", n => { PostClickAttributionWindowSize = n.GetLongValue(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestType>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestType.CreateFromDiscriminatorValue); } },
+                { "viewThroughAttributionWindowSize", n => { ViewThroughAttributionWindowSize = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -99,13 +108,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account", Account);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestAccount>("account", Account);
             writer.WriteStringValue("attributionType", AttributionType);
             writer.WriteStringValue("conversionMethod", ConversionMethod);
-            writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("postClickAttributionWindowSize", PostClickAttributionWindowSize);
-            writer.WriteStringValue("type", Type);
-            writer.WriteIntValue("viewThroughAttributionWindowSize", ViewThroughAttributionWindowSize);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestElementsItem>("elements", Elements);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestName>("name", Name);
+            writer.WriteLongValue("postClickAttributionWindowSize", PostClickAttributionWindowSize);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaignsRequestType>("type", Type);
+            writer.WriteLongValue("viewThroughAttributionWindowSize", ViewThroughAttributionWindowSize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

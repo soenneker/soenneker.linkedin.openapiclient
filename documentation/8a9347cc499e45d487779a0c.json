@@ -1,0 +1,665 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide",
+  "Title": "LinkedIn API Partner Support",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/secure-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/linkedin-api-partner-support-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/partner-support-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Partner Support",
+      "Anchor": "linkedin-api-partner-support",
+      "SectionPath": [],
+      "Text": "As a LinkedIn API partner, use this page to navigate LinkedIn\u0027s support ecosystem and build reliable, scalable, and well-governed API integrations across all LinkedIn business lines.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Partner Support",
+      "Anchor": "linkedin-api-partner-support",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Partner Support",
+      "Anchor": "linkedin-api-partner-support",
+      "SectionPath": [],
+      "Text": "For LinkedIn Talent Solutions partners, refer to the Talent Solution-specific best practices for partner support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Partner Support",
+      "Anchor": "linkedin-api-partner-support",
+      "SectionPath": [],
+      "Text": "This page explains how to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn API Partner Support",
+      "Anchor": "linkedin-api-partner-support",
+      "SectionPath": [],
+      "Text": "Request API access\nContact the LinkedIn Customer Support team\nHandle identity vetting, review, and appeals\nReach the LinkedIn Developer Technical Support team\nFAQs and troubleshooting\nStay updated and track changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "To access LinkedIn APIs, log in to the LinkedIn Developer Portal with your LinkedIn credentials and create an application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "Within the LinkedIn Developer Portal:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "Navigate to the My Apps section.\nClick Create App and configure your application details.\nOnce the app is created, go to the Products tab and select the API products you want to request access to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "Different business lines have different requirements and eligibility criteria. Some allow immediate access without approval; others require a vetting process and use-case review before access can be granted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "For example, LinkedIn Marketing APIs use a tiered vetting process. Development tier access lets you build and test your integration with limited capabilities. Once your integration meets the business line requirements, you can request standard tier access for full production functionality and broader API usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "Access to LinkedIn APIs is granted based on the intended use case and compliance with LinkedIn business line requirements. LinkedIn reserves the right to review applications and approve API access at its discretion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "For the full list of OAuth permissions and partner programs available per business line, refer to Getting access to LinkedIn APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "For business-line-specific guidance, refer to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request API access",
+      "Anchor": "request-api-access",
+      "SectionPath": [
+        "Request API access"
+      ],
+      "Text": "Marketing API Program\nConsumer Program\nCompliance Program\nLinkedIn Talent Solutions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contact the LinkedIn Customer Support team",
+      "Anchor": "contact-the-linkedin-customer-support-team",
+      "SectionPath": [
+        "Contact the LinkedIn Customer Support team"
+      ],
+      "Text": "Direct customers to LinkedIn Customer Support for issues unrelated to API integration\u2014account configuration, product settings, billing, policy enforcement, or platform UI behavior. If the customer is using a third-party platform to integrate with LinkedIn and the issue appears unrelated to direct API request/response behavior, route it to LinkedIn Customer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contact the LinkedIn Customer Support team",
+      "Anchor": "contact-the-linkedin-customer-support-team",
+      "SectionPath": [
+        "Contact the LinkedIn Customer Support team"
+      ],
+      "Text": "Refer to the following help centers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contact the LinkedIn Customer Support team",
+      "Anchor": "contact-the-linkedin-customer-support-team",
+      "SectionPath": [
+        "Contact the LinkedIn Customer Support team"
+      ],
+      "Text": "LinkedIn Members: Member Support\nLinkedIn Marketing Solutions (LMS API): LMS Help Center\nLinkedIn Talent Solutions: LTS Help Center\nLinkedIn Sales Navigator: Sales Navigator Help Center\nLinkedIn Learning: Learning Help Center",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Identity vetting, review, and appeals",
+      "Anchor": "identity-vetting-review-and-appeals",
+      "SectionPath": [
+        "Identity vetting, review, and appeals"
+      ],
+      "Text": "If your API access is denied due to identity vetting issues, submit a vetting appeal using the Contact form. For the list of denial reasons, refer to Developer application review status definitions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required information for a vetting appeal",
+      "Anchor": "required-information-for-a-vetting-appeal",
+      "SectionPath": [
+        "Identity vetting, review, and appeals",
+        "Required information for a vetting appeal"
+      ],
+      "Text": "Take the following steps to submit a vetting appeal:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required information for a vetting appeal",
+      "Anchor": "required-information-for-a-vetting-appeal",
+      "SectionPath": [
+        "Identity vetting, review, and appeals",
+        "Required information for a vetting appeal"
+      ],
+      "Text": "Open the Contact form.\nIn the Application Client ID field, enter your API key.\nIn the Form Type field, select Vetting Appeal.\nIn the API Program you are appealing for field, select the applicable API product (for example, Advertising APIs, Community Management API).\nIn the Description field, provide a clear and concise subject and description of the issue.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reach out to the LinkedIn Developer Technical Support team",
+      "Anchor": "reach-out-to-the-linkedin-developer-technical-support-team",
+      "SectionPath": [
+        "Reach out to the LinkedIn Developer Technical Support team"
+      ],
+      "Text": "Before submitting a support ticket, search the LinkedIn documentation or try the Help Assistant on the LinkedIn Developer Platform for common questions about API usage, configuration, and integration troubleshooting. If neither resolves your issue, raise a support request with the LinkedIn API Developer Support team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reach out to the LinkedIn Developer Technical Support team",
+      "Anchor": "reach-out-to-the-linkedin-developer-technical-support-team",
+      "SectionPath": [
+        "Reach out to the LinkedIn Developer Technical Support team"
+      ],
+      "Text": "For more information please refer to the walkthrough video as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When submitting a ticket",
+      "Anchor": "when-submitting-a-ticket",
+      "SectionPath": [
+        "Reach out to the LinkedIn Developer Technical Support team",
+        "When submitting a ticket"
+      ],
+      "Text": "Take the following steps to submit a developer support ticket:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When submitting a ticket",
+      "Anchor": "when-submitting-a-ticket",
+      "SectionPath": [
+        "Reach out to the LinkedIn Developer Technical Support team",
+        "When submitting a ticket"
+      ],
+      "Text": "Open the Contact form.\nIn the Application Client ID field, enter your API key.\nIn the Form Type field, select Developer Support.\nIn the What API Product do you require support for? field, select the relevant API (for example, Advertising, Community Management, Recruiter System Connect).\nIn the Description field, provide a clear and concise description of the issue.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required information for investigation",
+      "Anchor": "required-information-for-investigation",
+      "SectionPath": [
+        "Reach out to the LinkedIn Developer Technical Support team",
+        "Required information for investigation"
+      ],
+      "Text": "To help the LinkedIn Partner Integrations team quickly validate the issue, reproduce the behavior, and escalate it to the appropriate engineering team, include the following details when submitting a ticket:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required information for investigation",
+      "Anchor": "required-information-for-investigation",
+      "SectionPath": [
+        "Reach out to the LinkedIn Developer Technical Support team",
+        "Required information for investigation"
+      ],
+      "Text": "LinkedIn Application or Client ID\nAPI endpoint or API URL used in the request\nAPI request body (where applicable)\nUUID from the API response (if available)\nError message or error code received (if applicable)\nNumber of customers impacted (if applicable)\nScreenshots or logs demonstrating the issue (if applicable)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the Community Management API request button grayed out?",
+      "Anchor": "why-is-the-community-management-api-request-button-grayed-out",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "Why is the Community Management API request button grayed out?"
+      ],
+      "Text": "The Community Management API requires that it be the only product associated with a developer application due to legal and security constraints. If your current application already has other provisioned products (for example, Ads API, Share) or pending product requests, the option to request the Community Management API is disabled (grayed out).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the Community Management API request button grayed out?",
+      "Anchor": "why-is-the-community-management-api-request-button-grayed-out",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "Why is the Community Management API request button grayed out?"
+      ],
+      "Text": "In this case, create a new developer application using the same company page that is associated with your existing Ads API or other API application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the Community Management API request button grayed out?",
+      "Anchor": "why-is-the-community-management-api-request-button-grayed-out",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "Why is the Community Management API request button grayed out?"
+      ],
+      "Text": "After creating the new application, follow these steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the Community Management API request button grayed out?",
+      "Anchor": "why-is-the-community-management-api-request-button-grayed-out",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "Why is the Community Management API request button grayed out?"
+      ],
+      "Text": "Apply for Community Management API Development Tier access through the new developer application.\nOnce the Development Tier request is approved, complete the Standard Tier access request form.\nSubmit the required screen recording of your application as part of the Standard Tier upgrade request.\nAfter approval, request Community Management API Standard Tier access. In the access form, enter the application ID of the newly created developer application to skip most of the repeated questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the Community Management API request button grayed out?",
+      "Anchor": "why-is-the-community-management-api-request-button-grayed-out",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "Why is the Community Management API request button grayed out?"
+      ],
+      "Text": "The newly created developer application is used for verification purposes only and can be discarded after approval.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the Community Management API request button grayed out?",
+      "Anchor": "why-is-the-community-management-api-request-button-grayed-out",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "Why is the Community Management API request button grayed out?"
+      ],
+      "Text": "For more details, refer to the Community Management API migration guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the vetting survey work for API access requests?",
+      "Anchor": "how-does-the-vetting-survey-work-for-api-access-requests",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How does the vetting survey work for API access requests?"
+      ],
+      "Text": "When you apply for API products that require vetting of your company and use case, a survey is automatically generated and made available in the Developer Portal. You must complete this survey within 21 days from the date it is triggered.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the vetting survey work for API access requests?",
+      "Anchor": "how-does-the-vetting-survey-work-for-api-access-requests",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How does the vetting survey work for API access requests?"
+      ],
+      "Text": "Once your survey is submitted, the review team works to review all access requests in a timely manner. If additional information is required, the review team reaches out on your registered business email to request further documentation. Such follow-ups may result in a slight delay in the final decision.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the vetting survey work for API access requests?",
+      "Anchor": "how-does-the-vetting-survey-work-for-api-access-requests",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How does the vetting survey work for API access requests?"
+      ],
+      "Text": "If the survey is not submitted within the 21-day timeframe, your request is marked as incomplete and the application may be closed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the vetting survey work for API access requests?",
+      "Anchor": "how-does-the-vetting-survey-work-for-api-access-requests",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How does the vetting survey work for API access requests?"
+      ],
+      "Text": "If your application was missing information, a Reapply option appears in the Developer Portal, which allows you to resubmit your request for the same product. This applies in cases where:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the vetting survey work for API access requests?",
+      "Anchor": "how-does-the-vetting-survey-work-for-api-access-requests",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How does the vetting survey work for API access requests?"
+      ],
+      "Text": "The survey was not started or completed.\nThe survey was partially filled but not submitted.\nAdditional information was requested but no response was provided within 21 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How does the vetting survey work for API access requests?",
+      "Anchor": "how-does-the-vetting-survey-work-for-api-access-requests",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How does the vetting survey work for API access requests?"
+      ],
+      "Text": "In all such scenarios, the request is marked as Insufficient Details, and the Reapply flow is enabled, allowing you to submit a new request without creating a new application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What does a 403 error mean and how do I resolve it?",
+      "Anchor": "what-does-a-403-error-mean-and-how-do-i-resolve-it",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?"
+      ],
+      "Text": "A 403 Forbidden error generally means the request was understood by LinkedIn\u0027s servers, but the application or member does not have the required permission to access the resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Verify API product access",
+      "Anchor": "step-1-verify-api-product-access",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?",
+        "Step 1: Verify API product access"
+      ],
+      "Text": "Log in to the LinkedIn Developer Portal and navigate to My Apps \u2192 [Your App] \u2192 Products.\nConfirm that the required API product (for example, Advertising API, Community Management API) shows as Approved.\nIf the status shows Pending or Access Denied, the request may still be under review or was not approved.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Validate OAuth scopes",
+      "Anchor": "step-2-validate-oauth-scopes",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?",
+        "Step 2: Validate OAuth scopes"
+      ],
+      "Text": "Review the OAuth scopes granted during the member authorization flow.\nEnsure the required scopes for the endpoint are included in the access token (for example, r_ads, w_member_social, r_organization_social).\nIf scopes are missing, re-initiate the OAuth authorization flow with the correct scope parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Confirm resource-level permissions",
+      "Anchor": "step-3-confirm-resource-level-permissions",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?",
+        "Step 3: Confirm resource-level permissions"
+      ],
+      "Text": "Verify that the authenticated member has the appropriate role and permissions on the target resource (for example, Ad Account, Organization Page):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Confirm resource-level permissions",
+      "Anchor": "step-3-confirm-resource-level-permissions",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?",
+        "Step 3: Confirm resource-level permissions"
+      ],
+      "Text": "For Advertising APIs, the member must have an active role (for example, ACCOUNT_BILLING_ADMIN, CAMPAIGN_MANAGER) on the Ad Account.\nFor Organization APIs, the member must be an authorized administrator of the LinkedIn Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Check access token validity",
+      "Anchor": "step-4-check-access-token-validity",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?",
+        "Step 4: Check access token validity"
+      ],
+      "Text": "Ensure the access token has not expired \u2014 LinkedIn access tokens have a limited lifespan.\nUse the Token Introspection endpoint to verify the token\u0027s status, scopes, and expiration.\nIf expired, use the refresh token to generate a new access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Confirm the API endpoint URL is correct",
+      "Anchor": "step-5-confirm-the-api-endpoint-url-is-correct",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "What does a 403 error mean and how do I resolve it?",
+        "Step 5: Confirm the API endpoint URL is correct"
+      ],
+      "Text": "Confirm the API endpoint URL is correct and matches the official documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "There is no limit on the number of accounts you can call to retrieve data or analytics. Do not apply for a tier upgrade for data or analytics use cases only \u2014 these requests are rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "The tier upgrade from Development to Standard is only needed to create Ads for more than 5 Ad Accounts using the POST method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "To request a tier upgrade:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "Log in to the LinkedIn Developer Portal.\n\nNavigate to My Apps \u2192 Select the app \u2192 Products.\n\nLocate the Advertising API product.\n\nReview your current access tier.\n\nIf you are on the Development Tier, submit a Standard Tier access request via a support ticket. Include the following information:\n\nBusiness use case \u2014 describe what your application offers to customers and how it uses LinkedIn Ads APIs (for example, campaign creation, optimization, analytics).\nDemo video recording \u2014 provide a video (Google Drive or Microsoft SharePoint link) demonstrating campaign creation, campaign editing, and campaign optimization workflows.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "If your use case includes creating Ads for more than 5 Ad Accounts, ensure this functionality is clearly demonstrated in the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I request a tier upgrade for the Ads API?",
+      "Anchor": "how-do-i-request-a-tier-upgrade-for-the-ads-api",
+      "SectionPath": [
+        "FAQs and troubleshooting",
+        "How do I request a tier upgrade for the Ads API?"
+      ],
+      "Text": "The review process can take up to 30 business days due to the high volume of requests. LinkedIn follows up with status updates as the review progresses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay updated and track changes",
+      "Anchor": "stay-updated-and-track-changes",
+      "SectionPath": [
+        "Stay updated and track changes"
+      ],
+      "Text": "To ensure your integration remains compliant, performant, and aligned with the latest LinkedIn platform updates, regularly monitor:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay updated and track changes",
+      "Anchor": "stay-updated-and-track-changes",
+      "SectionPath": [
+        "Stay updated and track changes"
+      ],
+      "Text": "Developer News and Announcements \u2014 latest product launches, deprecations, policy updates, and API enhancements.\nLinkedIn Marketing Solutions API Changes \u2014 recent changes, version updates, and breaking changes across LinkedIn Marketing APIs.\nLinkedIn Talent Solutions Release Notes \u2014 recent changes, version updates, and breaking changes across LinkedIn Talent Solutions APIs.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

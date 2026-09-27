@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The country property</summary>
+        /// <summary>Locale of the campaign. An uppercase two-letter country code as defined by ISO-3166. The country and language combination must match one of the supported locales.Documented type: stringRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>The language property</summary>
+        /// <summary>Locale of the campaign. A lowercase two-letter language code as defined by ISO-639. The country and language combination must match one of the supported locales.Documented type: stringRequirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language { get; set; }

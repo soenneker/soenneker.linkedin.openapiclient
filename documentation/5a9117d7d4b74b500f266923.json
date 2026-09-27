@@ -1,0 +1,1370 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+  "Title": "Content API Migration",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Content API Migration",
+      "Anchor": "content-api-migration",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content API Migration",
+      "Anchor": "content-api-migration",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content API Migration",
+      "Anchor": "content-api-migration",
+      "SectionPath": [],
+      "Text": "This topic summarizes the changes between legacy APIs and the Content APIs that replace them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes",
+      "SectionPath": [
+        "Share API \u2192 Posts API",
+        "Workflow Changes"
+      ],
+      "Text": "Find posts by author supports a single author per request. Multi-author finder calls are not supported.\nDirect Sponsored Content are managed by the adContext.dscStatus field.\nArchive direct sponsored content is supported by using the Post API\u0027s adContext.dscStatus field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Share API \u2192 Posts API",
+        "Schema Changes",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Share API",
+        "Posts API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "agent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adContext.dscAdAccount",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content.title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For articles, content.article.title. For images, content.media.title.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content.landingPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "content.article.source",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content.commentary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "commentary",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Moved to content.carousel",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareMediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed, but a similar concept exists under content under the various content types.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#content"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resharedShare",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "reshareContext.parent",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "originalShare",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "reshareContext.root",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-1",
+      "SectionPath": [
+        "UgcPosts API \u2192 Posts API",
+        "Workflow Changes"
+      ],
+      "Text": "For versions prior to 202301, find Posts by authors is only supported for organization authors. For versions 202301 and above, finding by both person and organization authors are supported.\nFind Posts by container entity is not supported.\nThumbnails for Article Posts must be fetched and uploaded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema-1",
+      "SectionPath": [
+        "UgcPosts API \u2192 Posts API",
+        "Schema Changes",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "UgcPosts API",
+        "Posts API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "clientApplication",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "containerEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "container",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentCertificationRecord",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AuditStamps (created, deleted, lastModified fields)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flattened, simplified, and renamed to createdAt, lastModifiedAt, createdBy, lastModifiedBy",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "distribution",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "See Distribution table",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide?view=li-lms-2026-09#distribution-data-model"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "reshareContext",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAudience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "distribution.targetEntities",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentary field using Attributes and attributed text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flattened to a single string field supporting little text",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredContentVisibility has been removed. SponsoredContentVisibility.DARK is replaced by the setting distribution.NONE and visibility.PUBLIC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specificContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Renamed to content and support types mentioned in content",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/post-api-schema?view=li-lms-2026-09#content"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Distribution Data Model",
+      "Anchor": "distribution-data-model",
+      "SectionPath": [
+        "UgcPosts API \u2192 Posts API",
+        "Schema Changes",
+        "Distribution Data Model"
+      ],
+      "Text": "",
+      "Headers": [
+        "UgcPosts Distribution Data Model",
+        "Posts Distribution Data Model"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "distributedViaFollowFeed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalDistributionChannels",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "thirdPartyDistributionChannels",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "feedDistribution",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "feedDistribution",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-2",
+      "SectionPath": [
+        "AdCreativesV2 API\u2192 Creatives API",
+        "Workflow Changes"
+      ],
+      "Text": "The creatives API simplifies the adCreativesV2 API schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-2",
+      "SectionPath": [
+        "AdCreativesV2 API\u2192 Creatives API",
+        "Workflow Changes"
+      ],
+      "Text": "You no longer need to create Direct Sponsored Content before creating a creative.\nYou no longer need to specify a type field. It is now inferred automatically based on content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-2",
+      "SectionPath": [
+        "AdCreativesV2 API\u2192 Creatives API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "AdCreativesV2 API",
+        "Creatives API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "id has changed from a long (123) to a SponsoredCreativeUrn (urn:li:sponsoredCreative:123)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "intendedStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field renamed to clarify the intent",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servingStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "isServing \u002B servingHoldReasons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean isServing to convey whether a creative is serving. servingHoldReasons will be present when this field is false.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed as type is inferred automatically based on the content",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reference \u002B variables",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content field can either be reference to a post or an inline content for dynamic ads, text ads and so on.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadgenCallToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field renamed",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdInMailContentsV2 API \u2192 InMailContents API",
+      "Anchor": "adinmailcontentsv2-api--inmailcontents-api",
+      "SectionPath": [
+        "AdInMailContentsV2 API \u2192 InMailContents API"
+      ],
+      "Text": "The InMailContents API simplifies the previous schema by renaming fields to more closely reflect their purpose, removing deprecated fields/types, and flattening the structure for better ease-of-use.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema-2",
+      "SectionPath": [
+        "AdInMailContentsV2 API \u2192 InMailContents API",
+        "Schema Changes",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "AdInMailContentsV2 API",
+        "InMailContents API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "legalText.rawText field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Renamed to customFooter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sender field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sender only contains MemberUrn who has permissions on the account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Standard SubContent field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- com.linkedin.ads.AdInMailStandardSubContent renamed to regular- Removed deprecated field adUnit- Action renamed to landingPageUrl- adUnitV2 renamed to landingPageUrl and only supports Image URN- Introduced nesting for better clarity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Form SubContent field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- com.linkedin.ads.AdInMailFormSubContent renamed to form- removed deprecated field adUnit- action renamed to landingPageUrl- adUnitV2 renamed to rightRailAdPicture and only supports Image URN- introduced nesting for better clarity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GuidedReplies SubContent field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- com.linkedin.ads.AdInMailFormSubContent renamed to guidedReplies- rightRailAdPicture only supports Image URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LeadGen SubContent field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "editable field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "AdInMailContentsV2 API \u2192 InMailContents API",
+        "Schema Changes",
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "AdInMailContentsV2 API",
+        "InMailContents API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "changeAuditStamps fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flattened and renamed to lastModifiedAt/lastModifiedBy/createdAt/createdBy",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-4",
+      "SectionPath": [
+        "sponsoredConversations API \u2192 conversationAds API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "sponsoredConversations API",
+        "conversationAds API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "editable field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed (inferred)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-4",
+      "SectionPath": [
+        "sponsoredConversations API \u2192 conversationAds API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "sponsoredConversations/SponsoredMessageContents API",
+        "conversationAds/SponsoredMessageContents API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "body field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed (deprecated)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "removed (inferred)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "bodySource.Attachment and bodySource.AttachmentAndText fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Changed to bodySource.MediaAttachment with an optional text field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SponsoredMessageOption.type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Renamed to SponsoredMessageOption.replyType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SponsoredMessageOption.landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flatter structure, duplicate landingPage removed from SponsoredMessageContent.ActionTarget field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SponsoredMessageOption.ActionTarget field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed field, including both duplicate child fields leadGenerationForm and landingPage fields",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-3",
+      "SectionPath": [
+        "Assets API \u2192 Images API",
+        "Workflow Changes"
+      ],
+      "Text": "You\u0027re no longer required to provide an upfront recipe when uploading images (for example feedshare-image etc.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-5",
+      "SectionPath": [
+        "Assets API \u2192 Images API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Images API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Requires recipe names (eg: feedshare-image)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Does not require any upfront statement of recipe or image usage intent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You don\u0027t need to input recipe names and can reuse images across different image ad placements (single image ad, dynamic ad, etc)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Returns generic digitalMediaAsset URN for all content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returns specific URN (e.g. urn:li:image:C4D10AQFjGx47bqmcTA)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Purpose-built response URN rather than generic asset URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Returns mediaArtifact field with superfluous details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Does not return mediaArtifact field. Simplified response structure",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Headers for AWS S3 Upload for backward compatibility (LinkedIn has storage capability)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No unnecessary headers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-5",
+      "SectionPath": [
+        "Assets API \u2192 Images API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Action Purpose",
+        "Assets API Action Name",
+        "Images API Name"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Initialize Image Upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "registerUpload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "initializeUpload",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-4",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Workflow Changes"
+      ],
+      "Text": "The following steps are no longer required to create a video ad with the Videos API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow Changes",
+      "Anchor": "workflow-changes-4",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Workflow Changes"
+      ],
+      "Text": "Verify access to create a video ad using organizationalEntityCreateShareAuthorizations - Then access check that the video creation is done by the underlying services.\nCreate AdDirectSponsoredContent - The adDirectSponsoredContent option is set at the posts API request payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-6",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Videos API",
+        "Benefit"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "All assets are managed through a single API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video specific actions and fields like aspect ratio, captions, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Better defined models, extended features/",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema Changes",
+      "Anchor": "schema-changes-6",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Schema Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Action Purpose",
+        "Assets API Action Name",
+        "Videos API Name"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Initialize video upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "registerUpload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "initializeUpload",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Complete video upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "completeMultiPartUpload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "finalizeUpload",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema-3",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Schema Changes",
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Videos API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Requires recipe names (e.g., feedshare-video, feedshare-image)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No recipe or intent needed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Do not have to know internal recipe names",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Provide service relationships during upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Do not need to provide service relationship",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal UGC relationships inferred by LinkedIn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Figure out which request schema to use based on the file size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Single request schema with multi-part upload option as default",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consistent schema for all file sizes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "File-size param optional for a single part but mandatory for multi-part uploads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File-size param mandatory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Determine file sizes to figure out the upload option",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Single part or multi part upload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multi part upload by default",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Single upload mode",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Nested field relationships",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified schema structure",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Improvements with Request Schema to complete Upload",
+      "Anchor": "improvements-with-request-schema-to-complete-upload",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Schema Changes",
+        "Improvements with Request Schema to complete Upload"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Videos API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Nested field relationships required in the request schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified Request structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Metadata, mediaArtifact, ETags, status fields required in request schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requires only ETags and upload token (previously metadata) Simplified request structure",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified Request structure",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema-1",
+      "SectionPath": [
+        "Assets API \u2192 Videos API",
+        "Schema Changes",
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Assets API",
+        "Videos API",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Returns generic digitalMediaAsset URN for all content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returns specific URN (e.g. video:C4E05AQEw_VQIt69CrA)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Purpose-built response URN rather than generic asset URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Returns mediaArtifact field with superfluous details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Does not return mediaArtifact fieldSimplified response structure",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Headers for AWS S3 Upload for backward compatibility (LinkedIn has storage capability)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No headers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urlExpiresAt param present in multi-part even with consistent value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urlExpiresAt param outside nested structure for a single value Simplified response structure",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Nested field relationships",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Simplified response structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Supplemental assets like captions and thumbnails are not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can upload captions and thumbnails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "More features",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

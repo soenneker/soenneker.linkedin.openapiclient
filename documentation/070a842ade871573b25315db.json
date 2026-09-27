@@ -1,0 +1,1414 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+  "Title": "Create Jobs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/close-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Create Jobs",
+      "Anchor": "create-jobs",
+      "SectionPath": [],
+      "Text": "To create a job, post the job by providing unique externalJobPostingId value and set the jobPostingOperationType as CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Jobs",
+      "Anchor": "create-jobs",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Jobs",
+      "Anchor": "create-jobs",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [
+        "API Overview"
+      ],
+      "Text": "Use the /simpleJobPosting API to create, update, renew and close jobs on LinkedIn. This wiki describes how to create jobs. To know more about this API, refer to API Overview. To learn about updating or renewing jobs, refer to Update and Renew Jobs. To learn about closing jobs, refer to Close Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Overview",
+        "API Endpoint"
+      ],
+      "Text": "Use the following endpoint to submit a task to create, close, update, or renew one or more jobs asynchronously:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Overview",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Overview",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "We strongly recommend to use same access token for all concurrent and consecutive calls. An access token has a lifespan of 30 mins. Only on expiry of the existing token, new token should be generated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "API Overview",
+        "API Authorization"
+      ],
+      "Text": "Ensure that requests do not include duplicate updates to the same externalJobPostingId\nThe maximum number of jobs which can be submitted during one batch call is 100. If you would like to submit more than 100 jobs at a time, please group your jobs in to collections of 100 and make multiple batch calls in sequential order",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "In order to publish a job as a free job, you need to provide listingType field value as BASIC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "API Header:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "The header for making the request is X-Restli-Method: batch_create.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: 202603",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "Sample Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{\n   \u0022integrationContext\u0022: \u0022urn:li:organization:2414183\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://linkedin.com\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022employmentStatus\u0022: \u0022PART_TIME\u0022,\n   \u0022externalJobPostingId\u0022: \u00221234\u0022,\n   \u0022listedAt\u0022: 1440716666,\n   \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022location\u0022: \u0022India\u0022,\n   \u0022workplaceTypes\u0022: [\n    \u0022remote\u0022\n   ]\n  },\n  {\n   \u0022integrationContext\u0022: \u0022urn:li:organization:2414183\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://linkedin.com\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022employmentStatus\u0022: \u0022PART_TIME\u0022,\n   \u0022externalJobPostingId\u0022: \u00221234\u0022,\n   \u0022listedAt\u0022: 1440716666,\n   \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022location\u0022: \u0022San Francisco, CA\u0022,\n   \u0022workplaceTypes\u0022: [\n    \u0022hybrid\u0022\n   ]\n  },\n  {\n   \u0022integrationContext\u0022: \u0022urn:li:organization:2414183\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://linkedin.com\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Senior Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022employmentStatus\u0022: \u0022PART_TIME\u0022,\n   \u0022externalJobPostingId\u0022: \u0022789\u0022,\n   \u0022listedAt\u0022: 1440716666,\n   \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n   \u0022title\u0022: \u0022Senior Software Engineer\u0022,\n   \u0022location\u0022: \u0022San Francisco, CA\u0022\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{  \n  \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://linkedin.com\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022employmentStatus\u0022: \u0022PART_TIME\u0022,\n   \u0022externalJobPostingId\u0022: \u00221234\u0022,\n   \u0022listedAt\u0022: 1440716666,\n   \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022location\u0022: \u0022India\u0022,\n   \u0022workplaceTypes\u0022: [\n    \u0022remote\u0022\n   ]\n  },\n  {\n   \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://linkedin.com\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022employmentStatus\u0022: \u0022PART_TIME\u0022,\n   \u0022externalJobPostingId\u0022: \u00221234\u0022,\n   \u0022listedAt\u0022: 1440716666,\n   \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022location\u0022: \u0022San Francisco, CA\u0022,\n   \u0022workplaceTypes\u0022: [\n    \u0022hybrid\u0022\n   ]\n  },\n  {\n   \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022http://linkedin.com\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Senior Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022employmentStatus\u0022: \u0022PART_TIME\u0022,\n   \u0022externalJobPostingId\u0022: \u0022789\u0022,\n   \u0022listedAt\u0022: 1440716666,\n   \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n   \u0022title\u0022: \u0022Senior Software Engineer\u0022,\n   \u0022location\u0022: \u0022San Francisco, CA\u0022\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Basic Jobs",
+      "Anchor": "sample-request-for-basic-jobs",
+      "SectionPath": [
+        "Sample Request for Basic Jobs"
+      ],
+      "Text": "The first element in the above request body is an example of posting a remote job on LinkedIn (workplaceTypes is remote, note that the location field has only COUNTRY value) and the second element is an example of posting a hybrid job (workplaceTypes is hybrid). In the third element, since no value for workplaceTypes field is provided, the job will get posted as an On-site job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Promoted Jobs",
+      "Anchor": "sample-request-for-promoted-jobs",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs"
+      ],
+      "Text": "In order to post a job as promoted, you need to provide listingType field value as PREMIUM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Promoted Jobs",
+      "Anchor": "sample-request-for-promoted-jobs",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Promoted Jobs",
+      "Anchor": "sample-request-for-promoted-jobs",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs"
+      ],
+      "Text": "Only selective partners have the permission to post promoted jobs. If your developer application does not support posting promoted jobs, reach out to LinkedIn\u0027s business development point of contact (if interested).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: 202603",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC1\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC1\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id}\u0022,\n         \u0022integrationContext\u0022:\u0022urn:li:organization:{your_organization_id_01}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC1\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022\n      },\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC2\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC2\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EG1 TC2: Objective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id}\u0022,\n         \u0022industries\u0022:[\u0022urn:li:industry:4\u0022, \u0022urn:li:industry:99\u0022],\n         \u0022integrationContext\u0022:\u0022urn:li:organization:{your_organization_id_02}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC2\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n         \u0022posterEmail\u0022:\u0022stub@your_poster_email_address\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC1\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC1\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id}\u0022,\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC1\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022\n      },\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC2\u0022,\n         \u0022listingType\u0022:\u0022PREMIUM\u0022,\n         \u0022title\u0022:\u0022Premium Job Posting G1 TC2\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EG1 TC2: Objective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id}\u0022,\n         \u0022industries\u0022:[\u0022urn:li:industry:4\u0022, \u0022urn:li:industry:99\u0022],\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC2\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n         \u0022posterEmail\u0022:\u0022stub@your_poster_email_address\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Sample Request for Promoted Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "Ensure that requests do not include duplicate updates to the same externalJobPostingId\nTo post promoted jobs it is mandatory to provide contract information. If the posterEmail field is not provided the job is be posted on behalf of the default job poster email configured by recruiter customers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Internal Only Jobs",
+      "Anchor": "sample-request-for-internal-only-jobs",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs"
+      ],
+      "Text": "In order to post a job as internal only, you need to provide availability field value as INTERNAL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Internal Only Jobs",
+      "Anchor": "sample-request-for-internal-only-jobs",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Internal Only Jobs",
+      "Anchor": "sample-request-for-internal-only-jobs",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs"
+      ],
+      "Text": "Only selective partners have the permission to post internal only jobs. If your developer application does not support posting internal only jobs, reach out to LinkedIn\u0027s business development point of contact (if interested).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header-1",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header-1",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create\nLinkedin-Version: 202603",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC1\u0022,\n         \u0022listingType\u0022:\u0022BASIC\u0022,\n         \u0022title\u0022:\u0022Job Posting G1 TC1\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id}\u0022,\n         \u0022integrationContext\u0022:\u0022urn:li:organization:{your_organization_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC1\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n         \u0022availability\u0022: \u0022INTERNAL\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n         \u0022externalJobPostingId\u0022:\u0022PremiumJobPostingG1TC1\u0022,\n         \u0022listingType\u0022:\u0022BASIC\u0022,\n         \u0022title\u0022:\u0022Job Posting G1 TC1\u0022,\n         \u0022description\u0022:\u0022\u003Cb\u003EObjective of the Position\u003C/b\u003E\u003Cbr/\u003E \u003Cul\u003E \u003Cli\u003ETo develop digital content plan, manage and monitor different content executions for social and online platforms to maximize the communication effectiveness and impact\u003C/li\u003E \u003Cli\u003ETo manage, monitor and keep optimizing the performance of social platforms of MB and AMG\u003C/li\u003E \u003Cli\u003ETo monitor and manage internet word of mouth to keep the health of brand and product image\u003C/li\u003E\u003C/ul\u003E\u0022,\n         \u0022contract\u0022:\u0022urn:li:contract:{your_contract_id}\u0022,\n         \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n         \u0022companyApplyUrl\u0022: \u0022http://linkedin.com/jobpostingG1TC1\u0022,\n         \u0022location\u0022:\u0022San Francisco, CA\u0022,\n         \u0022listedAt\u0022:1513756352000,\n         \u0022jobPostingOperationType\u0022:\u0022CREATE\u0022,\n         \u0022availability\u0022: \u0022INTERNAL\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Request Body"
+      ],
+      "Text": "Ensure that requests do not include duplicate updates to the same externalJobPostingId\nTo post internal jobs it is mandatory to provide contract information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Below are the response body examples for success and error scenarios:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Sample Response Body for Success",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request returns a 200 OK response code, and you will find the simpleJobPostingTaskIDs in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:03ff7ca6-dedf-4d92-b856-10669f8fe5ef\u0022,\n            \u0022status\u0022: 202\n        },\n        {\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:01c922a8-96cd-4c32-8cc1-40eea169fe01\u0022,\n            \u0022status\u0022: 202\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Sample Response Body for Error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "In case of an error, the request will return a 200 OK response code and the error message is within the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{\n  \u0022error\u0022: {\n   \u0022message\u0022: \u0022ERROR :: /title :: field is required but not found and has no default value\\n\u0022,\n   \u0022status\u0022: 422\n  },\n  \u0022status\u0022: 422\n }]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Sample Response Body for Success",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request returns a 200 OK response code, and you will find the simpleJobPostingTaskIDs in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/simpleJobPostings/urn%3Ali%3AsimpleJobPostingTask%3A33349175-1da5-48b4-a3a6-abfd9248bdc6\u0022,\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:33349175-1da5-48b4-a3a6-abfd9248bdc6\u0022,\n            \u0022entity\u0022: {\n                \u0022externalJobPostingId\u0022: \u0022Job1234\u0022\n            },\n            \u0022status\u0022: 202\n        },\n        {\n            \u0022location\u0022: \u0022/simpleJobPostings/urn%3Ali%3AsimpleJobPostingTask%3A2f46fde5-bccb-4750-ab9c-99e02359fb6b\u0022,\n            \u0022id\u0022: \u0022urn:li:simpleJobPostingTask:2f46fde5-bccb-4750-ab9c-99e02359fb6b\u0022,\n            \u0022entity\u0022: {\n                \u0022externalJobPostingId\u0022: \u0022Job2345\u0022\n            },\n            \u0022status\u0022: 202\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Sample Response Body for Error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "In case of an error, the request will return a 200 OK response code and the error message is within the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022error\u0022: {\n                \u0022code\u0022: \u0022ERROR_INVALID_LISTED_AT_FIELD\u0022,\n                \u0022serviceErrorCode\u0022: 1026,\n                \u0022requestId\u0022: \u0022Job1234\u0022,\n                \u0022errorDetailType\u0022: \u0022com.linkedin.restli.common.ErrorDetails\u0022,\n                \u0022message\u0022: \u0022The listedAt field with value: 1753776197000 for the job cannot be a future time.\u0022,\n                \u0022status\u0022: 400,\n                \u0022errorDetails\u0022: {\n                    \u0022externalJobPostingId\u0022: \u0022Job1234\u0022\n                }\n            },\n            \u0022status\u0022: 400\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit\nThe Task ids returned in the above response are valid for 24 hours\nCheck the Job Operation Task Status to find the status of the job posting via above task ids\nThe value of integrationContext field is obtained from customer onboarding widget. To know more, refer to Apply Connect\u0027s Customer OnBoarding or Recruiter System Connect\u0027s Customer OnBoarding. If this value is not present please provide the company information via companyName field",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sample Request for Internal Only Jobs",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit\nThe Task ids returned in the above response are valid for 24 hours\nCheck the Job Operation Task Status to find the status of the job posting via above task ids",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Test",
+      "Anchor": "",
+      "SectionPath": [
+        "How to Test"
+      ],
+      "Text": "To test and view the public jobs that were successfully posted, use your integrationContextid to view the job here: https://www.linkedin.com/jobs/search/?f_C={id}\u0026locationType=Y. For jobs posted with an availability set to PRIVATE_TO_ATS_INTEGRATION, login to your Recruiter platform with development contract and use the One-Click Export feature.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "One of the following responses is returned, that contains a JSON object with a status and a message about the error for Post on /simpleJobPostings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{mandatory key} :: field is required but not found and has no default value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required field is missing in the request body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to the schema documentation and ensure all the required fields are present in the request body",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{attribute_name} :: {value} cannot be coerced to Long\\n\u0022, (Why is \\n coming in error message)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When value of the attribute does not match the datatype it accepts. For example, title accepts String but we have provided numerical value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the value provided for attribute should match the datatype it accepts. Please refer to schema documentation for data types of the attributes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /jobPostingOperationType :: \u0022UPDATED\u0022 is not an enum symbol\\n",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of CREATE, UPDATE or CLOSE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The workplaceTypes field cannot have more than one value provided. Provided values [..]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workplaceTypes field accepts an array of only one element, but the request contains more than one elements for workplaceTypes field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that workplaceTypes field is an array with only one element (one of the following: On-Site, Hybrid, Remote)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid company apply url for job with externalPartnerId {externalJobPostingId}, taskUrn urn:li:simpleJobPostingTask:{taskID}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL specified for the job posting is in an invalid format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the url specified is in a valid url",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either context or company or companyPageUrl or companyName must be provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration context company field is missing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All jobs are associated with company page. You can provide this value with either of the schema fields listed in the error messages",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR_JOB_DESCRIPTION_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job description is too long. Please ensure the job description has no more than 25000 characters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the job description has no more than 25000 characters. This character limit applies to the job description text, including HTML tags, but excludes CSS styling. Partners are required to remove all CSS styles before submitting the description field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access token is tampered",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header is a valid token but it has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "402",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "402",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Insufficient job slots for contract = urn:li:contract:{contract_id} for purchase flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All job slots associated with the supplied contract are used",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please ask the customer to reach out to LinkedIn\u0027s customer support to purchase more Job Slots with LinkedIn or Close some existing Premium Job Postings to free up Job Slots. To know more refer to LinkedIn help center article. If this issue is occurring frequently in your development environment please submit a support case using the partner support form",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/answer/a417111?lang=en",
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "402",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "402",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Insufficient lifetime budget for contract: urn:li:contract:{contract_id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For FP4P jobs PAYMENTS_INSUFFICIENT_FUNDS contract has exhausted allocated budget for premium job posting. Contract monthly limits can be setup within LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please validate contract limit per month or sufficient balance before posting a premium job",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller is not authorized to access the jobs for contract: urn:li:contract:{contract_id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application used for posting premium job does not belong to the Job posting contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that you are using the correct contract details provided in the Premium Job Posting onboarding email 2. Ensure that you are using the correct application credentials",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST /simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The application does not have enough permissions to use /simpleJobPostings API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the header x-restli-method with value batch_create is present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unpermitted fields present in REQUEST_BODY: Data Processing Exception while processing fields [/elements]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value for Request Header: x-restli-method: batch_create is not provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that value for Request Header: x-restli-method: batch_create is provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller is not authorized to access the fp4p contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer is unable to post premium jobs after widget opt-in",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pay for performance contract customers need to enable toggle for posting of promoted jobs with a LinkedIn recommended budget using the Job Posting API (Partner Integrations)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST (Name)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access token is generated from the application which does not have permission to access this resource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use Partner application for creating child application, all other resources should be requested using child applications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resource (Name) does not exist",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API URL format is incorrect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please verify the URL format from documentation and sample code",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot close job which is already closed or does not exist",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request payload is trying to close a job which either does not exist or is already closed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the jobPostingOperationType value is CREATE while creating new job postings",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /employmentStatus :: {value} is not an enum symbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of FULL_TIME, PART_TIME, CONTRACT, INTERNSHIP, TEMPORARY, VOLUNTEER or OTHER",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /experienceLevel :: {value} is not an enum symbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of ENTRY_LEVEL, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE, INTERNSHIP, ASSOCIATE or NOT_APPLICABLE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /state :: {value} is not an enum symbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wrong value provided for the field state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value should either be one of LISTED or CLOSED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ERROR :: /{field} :: enum type is not backed by a String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field expects an enum value in the form of String but the value passed is not a string. For example, state : 123",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure the Enum value provided is in a String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job contains more than seven locations. Please ensure maximum seven locations per job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "More than seven locations are passed in the alternateLocations field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You can add upto seven locations in a single API call",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When incorrect attribute type is given. For example, Integer instead of String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please check if externalJobPostingId datatype is string in request body",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gateway Timeout",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid API request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please recheck all header\u0027s and API payload",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/unified-search",
+  "Title": "Unified Search",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/unified-search",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Unified Search allows users on an RSC-enabled contract to initiate a search from within their ATS system or LinkedIn Recruiter, rendering a list of relevant results that best match a search query from both systems. The Unified Search solution will allow a user to search and view results via a LinkedIn iframe widget (similar to RSC\u0027s Profile Widget) within the ATS and also surface ATS candidate data that matches a search query made within LinkedIn Recruiter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The Unified Search plugin will allow users to query using the following search parameters, to source candidates from within their ATS:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Keyword - General search facet to query across all candidate fields.\nLocation - A list of location strings where candidates are based. The location would match member\u0027s profile location, and not any of a candidate\u2019s interested locations e.g. \u201CDenver, Colorado\u201D.\nJob Title - Title a candidate currently works under e.g. \u201CChief Marketing Officer\u201D.\nIn ATS - Filter results for candidates that are currently in the ATS.\nOpen to New Opportunities - Filter results to only show candidates that are open to new opportunities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Flow",
+      "Anchor": "user-flow",
+      "SectionPath": [
+        "User Flow"
+      ],
+      "Text": "For candidates shown via the search list view or within the full profile view in the plugin, users will be able to initiate specific actions, such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Flow",
+      "Anchor": "user-flow",
+      "SectionPath": [
+        "User Flow"
+      ],
+      "Text": "Save to Job - Ability to import the candidate\u2019s stub profile information into the ATS database within the context of the plugin.\nSend InMail - Send a LinkedIn InMail within the context of the plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Recruiter System Connect is a prerequisite for Unified Search and must be fully integrated and implemented to enable any of the functionality detailed in these specs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "All RSC required fields\nCandidate Resumes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Enablement",
+      "Anchor": "customer-enablement",
+      "SectionPath": [
+        "Customer Enablement"
+      ],
+      "Text": "As customers enable/disable Unified Search from the Customer Configuration Plugin toggles, your application should display or hide this feature based on the customer\u0027s onboardingStatus for integrationType of UNIFIED_SEARCH. If a customer should enable the integration, all customer historical and future resumes begin and continue to sync. If a customer should disable the integration, customer resume sync should stop.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Unified Search Plugin",
+      "Anchor": "display-unified-search-plugin",
+      "SectionPath": [
+        "Display Unified Search Plugin"
+      ],
+      "Text": "The plugin is rendered within an iframe and is self-contained; the JavaScript code handles the authentication and renders the content. This feature is dependent on already syncing RSC required fields from your system to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Unified Search Plugin",
+      "Anchor": "display-unified-search-plugin",
+      "SectionPath": [
+        "Display Unified Search Plugin"
+      ],
+      "Text": "Using the customer\u0027s app credentials provisioned for Recruiter System Connect, display the Unified Search plugin:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Display Unified Search Plugin",
+      "Anchor": "display-unified-search-plugin",
+      "SectionPath": [
+        "Display Unified Search Plugin"
+      ],
+      "Text": "\u003Cscript src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n   api_key: {api_key}\n   extensions: USWidget@https://platform.linkedin.com/rsc/extensions/unified-search-widget\n\u003C/script\u003E\n\u003Cscript type=\u0022IN/USWidget\u0022\u003E\n   data-integration-context=\u0022urn:li:organization:{id}\u0022\n   data-width=\u0022{width}\u0022\u003E\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Unified Search Parameters",
+      "Anchor": "unified-search-parameters",
+      "SectionPath": [
+        "Unified Search Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration context value for the customer\u0027s integration. You\u0027ll get this value when the customer enables the integration via the Integration Configuration Plugin .",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ability to override default width of the plugin. Default and expected minimum width is 990px.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Unified Search Parameters",
+      "Anchor": "unified-search-parameters",
+      "SectionPath": [
+        "Unified Search Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unified Search Parameters",
+      "Anchor": "unified-search-parameters",
+      "SectionPath": [
+        "Unified Search Parameters"
+      ],
+      "Text": "Please allow up to 72 hours for candidates to appear in search results after syncing.\nVerify Content Security Policy includes \u0022platform.linkedin.com\u0022 and \u0022www.linkedin.com\u0022.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

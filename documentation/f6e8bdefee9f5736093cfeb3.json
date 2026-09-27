@@ -1,0 +1,1312 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+  "Title": "Ad Lift Test Results",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/appendix",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "Please review the Getting Started Guide first to understand Lift Test concepts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "This is the resource for advertisers to view the result of an Ad Lift Test.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "It can take several days for the surveys to begin delivering, so you won\u0027t immediately see results upon launching an Ad Lift Test.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Results",
+      "Anchor": "ad-lift-test-results",
+      "SectionPath": [],
+      "Text": "Results can continue to fluctuate for up to 15 days after the end date as we continue to survey responses. This is caused by surveys that were served while the lift test was still running, but not viewed until after.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestResult Schema",
+      "Anchor": "adlifttestresult-schema",
+      "SectionPath": [
+        "AdLiftTestResult Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftResultMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftResultMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Overall lift result metrics for this AdLiftKeyMetric (as opposed to breakdowns, like lift metric by survey response). This should contain all non-statistical metrics applying to the lift test. This won\u0027t be present if we don\u0027t have enough responses to calculate statistical significance.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftResultStatisticalMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftResultStatisticalMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Statistical metrics about lift calculations for this AdLiftKeyMetric, like p-value and confidence intervals. This won\u0027t be present if we don\u0027t have enough responses to calculate statistical significance.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftSurveyResponseBreakdowns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftSurveyResponseBreakdown[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Raw response metrics for all survey answers (like YES or SOMEWHAT_FAVORABLE) for this key metric for both the control and test surveys.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestResultKey",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestResultKey",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A composite key that uniquely identifies this brand lift result.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestResultMetricMemberDemographicBreakdowns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TestResultMetricMemberBreakdown[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift result metrics (i.e. relative lift, cost per lifted member, etc) broken down by professional demographic (i.e. members working for Linkedin or members working for companies in the logistics industry). For member privacy reasons, results will only be included for professional demographics with more than 10 responses.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestSurveyResponseMemberDemographicBreakdowns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TestSurveyResponseMemberBreakdown[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Raw survey results (i.e. treatment clicks, control clicks) broken down by professional demographic (i.e. members working for Linkedin or members working for companies in the logistics industry). For member privacy reasons, results will only be included for professional demographics with more than 10 responses.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftResultMetrics Schema",
+      "Anchor": "adliftresultmetrics-schema",
+      "SectionPath": [
+        "AdLiftResultMetrics Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "absoluteLift",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The difference in desired responses between the test and control groups, measured as an absolute difference in percentage points. For example, if 20% of control responses were desirable and 30% of test responses were desirable, then the absolute lift is 0.1. But if the numbers were reversed, then the value would be -0.1. This will always be in the range [-1.0, 1.0].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerLiftedMember",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MoneyAmount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The approximate cost of each additional person who we estimate would give a desirable response to your survey. Negative cost doesn\u0027t make sense in this context (we\u0027re not giving advertiser money back), so costPerLiftedMember will not be present if it would be negative.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relativeLift",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ratio of desired responses from the test group and desired responses from the control group, measured as a relative percentage. The range for this metric is unbounded. Relative lift can be over 1.0. For example, if desired responses tripled between control and test, it would be 3.0. It can also be negative if the test surveys received a lower percentage of desired responses than the control.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalEstimatedLift",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The estimated brand lift across the entire population that your campaigns reached. This value uses your total reach to extrapolate your survey results and estimate the improvement in the total number of people who would give a desirable response to your survey.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftResultStatisticalMetrics Schema",
+      "Anchor": "adliftresultstatisticalmetrics-schema",
+      "SectionPath": [
+        "AdLiftResultStatisticalMetrics Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "absoluteLiftConfidenceInterval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ConfidenceInterval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The confidence interval for absolute lift.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestResultStrength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestResultStrength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A high-level measure of the strength of results generated based on p-value and power. This is aimed at advertisers who don\u0027t want to examine the detailed data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The probability that this lift was caused by random chance, assuming that the null hypothesis is correct. (In this case, the null hypothesis is that there\u0027s no lift.) The p-value is in the range of [0, 1].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "power",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The probability that the test rejects the null hypothesis when the alternative hypothesis is true. This is in the range [0, 1], where a lower number is a lower probability.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relativeLiftStatisticalStrengthMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "StatisticalStrengthMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The statistical strength metrics related to the relative lift.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "StatisticalStrengthMetrics Schema",
+      "Anchor": "statisticalstrengthmetrics-schema",
+      "SectionPath": [
+        "StatisticalStrengthMetrics Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ConfidenceInterval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ConfidenceInterval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The confidence interval for this metric.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestResultStrength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestResultStrength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A high-level measure of the strength of results generated based on p-value and power. This is aimed at advertisers who don\u0027t want to examine the detailed data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The probability that this lift was caused by random chance, assuming that the null hypothesis is correct. (In this case, the null hypothesis is that there\u0027s no lift.) The p-value is in the range of [0, 1].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "power",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The probability that the test rejects the null hypothesis when the alternative hypothesis is true. This is in the range [0, 1], where a lower number is a lower probability.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftSurveyResponseBreakdown Schema",
+      "Anchor": "adliftsurveyresponsebreakdown-schema",
+      "SectionPath": [
+        "AdLiftSurveyResponseBreakdown Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "controlResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of responses for this answer from the control survey (sent to the control group, who haven\u0027t seen an ad from the account under test).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "surveyAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftSurveyAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The survey answer (e.g., YES, SOMEWHAT_FAVORABLE, etc.) that these metrics correspond to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "treatmentResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of responses for this answer from the treatment survey (sent to the treatment group, who have seen an ad from the account under test).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TestResultMetricMemberBreakdown",
+      "Anchor": "testresultmetricmemberbreakdown",
+      "SectionPath": [
+        "AdLiftSurveyResponseBreakdown Schema",
+        "TestResultMetricMemberBreakdown"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftResultMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftResultMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift result metrics (ie relative lift, cost per lifted member, etc) for the given professional demographic.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftResultStatisticalMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftResultStatisticalMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Statistical metrics (e.g. p-Value, confidence interval) about the lift test results for the given professional demographic.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestDemographic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestMemberDemographic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The professional demographic these results are for (eg a job title of Software Engineer or a member company of 1001-5000 employers.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TestResultMetricMemberBreakdown",
+      "Anchor": "testresultmetricmemberbreakdown",
+      "SectionPath": [
+        "AdLiftSurveyResponseBreakdown Schema",
+        "TestResultMetricMemberBreakdown"
+      ],
+      "Text": "Note: Professional Demographic breakdowns are for directional insights and haven\u0027t been tested for statistical significance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TestSurveyResponseMemberBreakdown",
+      "Anchor": "testsurveyresponsememberbreakdown",
+      "SectionPath": [
+        "AdLiftSurveyResponseBreakdown Schema",
+        "TestSurveyResponseMemberBreakdown"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftSurveyResponseBreakdown",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftSurveyResponseBreakdown",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Raw response metrics for a single survey answer (i.e. YES, SOMEWHAT_FAVORABLE, etc) for both the control and test surveys.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestDemographic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestMemberDemographic",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The professional demographic these results are for (e.g. a job title of Software Engineer or a member company of 1001-5000 employers.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TestSurveyResponseMemberBreakdown",
+      "Anchor": "testsurveyresponsememberbreakdown",
+      "SectionPath": [
+        "AdLiftSurveyResponseBreakdown Schema",
+        "TestSurveyResponseMemberBreakdown"
+      ],
+      "Text": "Note: Professional Demographic breakdowns are for directional insights and haven\u0027t been tested for statistical significance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestMemberProfessionalDemographic",
+      "Anchor": "adlifttestmemberprofessionaldemographic",
+      "SectionPath": [
+        "AdLiftTestMemberProfessionalDemographic"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "demographicCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestMemberDemographicCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A professional demographic category like MEMBER_COMPANY_SIZE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "demographicName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Translations for the professional demographic value. For example a MEMBER_JOB_SENIORITY professional demographic might be \u0022Entry\u0022 and a MEMBER_COMPANY_SIZE professional demographic might be \u00221001-5000 employees\u0022. Translations will be provided for all locales supported by LMS. This field is derived from the raw professional demographic value (which isn\u0027t exposed directly by this resource).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestMemberProfessionalDemographicCategory Enum",
+      "Anchor": "adlifttestmemberprofessionaldemographiccategory-enum",
+      "SectionPath": [
+        "AdLiftTestMemberProfessionalDemographicCategory Enum"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Example Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "MEMBER_JOB_FUNCTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job function",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Human Resources",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_JOB_SENIORITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job seniority",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Director",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_COMPANY_INDUSTRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company industry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oil \u0026 Energy",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_COMPANY_SIZE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,001-5,000 employees",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_AGE_RANGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Age range",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "18-24",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_GENDER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gender",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Female",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_AD_PLACEMENT_DOMAIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad placement domain where the ad was delivered (e.g., Feed, LinkedIn Audience Network, Connected TV)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ONSITE_FEED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_AD_FORMAT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad formats presented to the member prior to survey response",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SINGLE_VIDEO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_AD_FREQUENCY_RANGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of ad impressions delivered to the member prior to survey response",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1-2",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestResultKey Schema",
+      "Anchor": "adlifttestresultkey-schema",
+      "SectionPath": [
+        "AdLiftTestResultKey Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftKeyMetric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftKeyMetric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad lift key metric (example: BRAND_RECALL) that this result is associated with.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTestUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad lift test that this result is associated with.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ConfidenceInterval Schema",
+      "Anchor": "confidenceinterval-schema",
+      "SectionPath": [
+        "ConfidenceInterval Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Example Value",
+        "Required",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lowerBound",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive lower bound of the confidence interval.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-0.02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "upperBound",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive upper bound of the confidence interval.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "0.05",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "FindByAdLiftTests Finder",
+      "Anchor": "findbyadlifttests-finder",
+      "SectionPath": [
+        "FindByAdLiftTests Finder"
+      ],
+      "Text": "This finder can be used to request the results for an Ad Lift Test. It returns a list of AdLiftTestResults.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FindByAdLiftTests Finder",
+      "Anchor": "findbyadlifttests-finder",
+      "SectionPath": [
+        "FindByAdLiftTests Finder"
+      ],
+      "Text": "The request must include a header for Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0Restli 2.0 requires URNs in query params to be URL encoded. For example, urn:li:adLiftTest:1245678 would become urn%3Ali%3AadLiftTest%3A1245678",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "FindByAdLiftTests Finder",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftTests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Ad Lift Test Urns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad lift tests to fetch results for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "FindByAdLiftTests Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adLiftTestResults?q=adLiftTests\u0026adLiftTests=List(urn%3Ali%3AadLiftTest%3A{liftTestId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "FindByAdLiftTests Finder",
+        "Sample Response"
+      ],
+      "Text": "AdLiftTestResults will return an array containing all relevant results. If an Ad Lift Test is requested for which the member doesn\u0027t have access, it will be omitted from the results. If the request contains no valid Ad Lift Test Results, an empty array will be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "FindByAdLiftTests Finder",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022adLiftSurveyResponseBreakdowns\u0022: [\n        {\n          \u0022controlResponses\u0022: 50,\n          \u0022treatmentResponses\u0022: 100,\n          \u0022surveyAnswer\u0022: \u0022YES\u0022\n        },\n        {\n          \u0022controlResponses\u0022: 50,\n          \u0022treatmentResponses\u0022: 100,\n          \u0022surveyAnswer\u0022: \u0022NO\u0022\n        },\n        {\n          \u0022controlResponses\u0022: 50,\n          \u0022treatmentResponses\u0022: 100,\n          \u0022surveyAnswer\u0022: \u0022NOT_SURE\u0022\n        }\n      ],\n      \u0022adLiftTestResultKey\u0022: {\n        \u0022adLiftKeyMetric\u0022: \u0022AWARENESS\u0022,\n        \u0022adLiftTestUrn\u0022: \u0022urn:li:adLiftTest:12345\u0022\n      },\n      \u0022adLiftResultMetrics\u0022: {\n        \u0022totalEstimatedLift\u0022: 150000,\n        \u0022absoluteLift\u0022: 0.09234,\n        \u0022relativeLift\u0022: 0.21233\n      },\n      \u0022adLiftResultStatisticalMetrics\u0022: {\n        \u0022pValue\u0022: 0.012342,\n        \u0022absoluteLiftConfidenceInterval\u0022: {\n          \u0022upperBound\u0022: 0.1231,\n          \u0022lowerBound\u0022: -0.1233\n        },\n        \u0022power\u0022: 0.4132131,\n        \u0022relativeLiftStatisticalStrengthMetrics\u0022: {\n          \u0022adLiftTestResultStrength\u0022: \u0022MEDIUM\u0022,\n          \u0022ConfidenceInterval\u0022: {\n            \u0022lowerBound\u0022: 0.1231,\n            \u0022upperBound\u0022: -0.1233\n          },\n          \u0022pValue\u0022: 0.012342,\n          \u0022power\u0022: 0.4132131\n        },\n        \u0022adLiftTestResultStrength\u0022: \u0022MEDIUM\u0022\n      }\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "FindByAdLiftTests Finder",
+        "Sample Response"
+      ],
+      "Text": "A successful request will return a 200 OK response code.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

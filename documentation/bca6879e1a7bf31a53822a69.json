@@ -1,0 +1,318 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+  "Title": "Advertising - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Advertising - Overview",
+      "Anchor": "advertising---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertising - Overview",
+      "Anchor": "advertising---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertising - Overview",
+      "Anchor": "advertising---overview",
+      "SectionPath": [],
+      "Text": "The Advertising API enables developers to manage LinkedIn\u0027s campaign management platform on behalf of clients through APIs. These APIs provide all features available in LinkedIn Campaign Manager, including creation and management of ad accounts, campaign groups, campaigns, creatives, ad types, and analytics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advertising - Overview",
+      "Anchor": "advertising---overview",
+      "SectionPath": [],
+      "Text": "With access to the Advertising API program, developers can create and manage Ad Accounts entirely through APIs without depending on the LinkedIn Campaign Manager UI. API calls succeed only when made with correct scopes/permissions assigned to the app after the vetting process. Once the developer application has the required permissions, all Advertising Account features can be accessed by passing identifiers from API responses in the hierarchy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [
+        "Core Components",
+        "Ad Accounts"
+      ],
+      "Text": "LinkedIn enables you to create Ad Accounts for your organization\u0027s advertising campaigns. Each Ad Account supports:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [
+        "Core Components",
+        "Ad Accounts"
+      ],
+      "Text": "Maximum 5,000 campaigns\nMaximum 15,000 creatives\nRequires Enterprise or Business Ad Account with one authenticated user as account administrator",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Users",
+      "Anchor": "account-users",
+      "SectionPath": [
+        "Core Components",
+        "Account Users"
+      ],
+      "Text": "The Ad Account Users enables advertisers to manage ad account user access. Ad account users are members who have ad account permissions in LinkedIn Campaign Manager. Partners can control user roles for granular access management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Groups",
+      "Anchor": "campaign-groups",
+      "SectionPath": [
+        "Core Components",
+        "Campaign Groups"
+      ],
+      "Text": "Campaign groups help advertisers manage status, budget, and performance across multiple related campaigns. Key features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Groups",
+      "Anchor": "campaign-groups",
+      "SectionPath": [
+        "Core Components",
+        "Campaign Groups"
+      ],
+      "Text": "Automatically created when an Ad Account is created\nCan contain various campaign types\nNo limit on campaign groups per advertiser account\nLimits: 5,000 campaigns per advertiser account, 2,000 campaigns per non-default campaign group",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaigns",
+      "Anchor": "campaigns",
+      "SectionPath": [
+        "Core Components",
+        "Campaigns"
+      ],
+      "Text": "Campaigns define ad schedules and budgets (daily/total). Campaigns can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaigns",
+      "Anchor": "campaigns",
+      "SectionPath": [
+        "Core Components",
+        "Campaigns"
+      ],
+      "Text": "Be bound to a specific start and end date or run continuously until the budget is spent\nTarget specific member audiences based on job title, function, seniority, and other criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creatives",
+      "Anchor": "creatives",
+      "SectionPath": [
+        "Core Components",
+        "Creatives"
+      ],
+      "Text": "The Creatives API contains data and information for visually rendering ads. Available ad creative types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creatives",
+      "Anchor": "creatives",
+      "SectionPath": [
+        "Core Components",
+        "Creatives"
+      ],
+      "Text": "Video Ads: Next-generation Sponsored Content for engaging business decision-makers on LinkedIn\u0027s mobile and desktop feeds\nMessage Ads: Messages delivered to LinkedIn members\u0027 InMail inboxes\nJob Ads: Personalized ads targeting top talent to encourage relevant candidates to apply\nText Ads: Text-based advertising format\nImage Ads: Single Image Ads are Sponsored Content posts appearing in LinkedIn feeds, delivering targeted messages beyond your organization\u0027s LinkedIn Page\nFollower Ads: Follower Ads promote your LinkedIn Page or Showcase Page to encourage follows\nCarousel Ads: Sponsored Content format displaying multiple images in succession\nArticle Ads: Sponsored Content posts appearing in LinkedIn feeds for targeted messaging\nSpotlight Ads: Spotlight Ads showcase products, services, events, or content, directing users to your chosen website or landing page\nConversation Ads: LinkedIn ad format delivering pre-determined messages to targeted members\u0027 inboxes, providing chat-like experiences",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics",
+      "Anchor": "analytics",
+      "SectionPath": [
+        "Core Components",
+        "Analytics"
+      ],
+      "Text": "LinkedIn Reporting APIs provide key performance insights including:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics",
+      "Anchor": "analytics",
+      "SectionPath": [
+        "Core Components",
+        "Analytics"
+      ],
+      "Text": "Clicks, impressions, and ad spend\nProfessional demographics metrics by demographic values\nData available at account, campaign, and creative levels",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics",
+      "Anchor": "analytics",
+      "SectionPath": [
+        "Core Components",
+        "Analytics"
+      ],
+      "Text": "These insights help users optimize their LinkedIn ads experience and ensure effective campaign performance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "To learn more, refer to the Apply for API Access Documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "API Product",
+        "Availability",
+        "How to Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vetted Product with development and standard tiers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the increasing access link to apply.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-2-get-started-with-the-advertising-api"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Applications must be authorized and authenticated before accessing LinkedIn data or member information. To learn more about OAuth flows, see authentication documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u0027s Marketing API Program supports versioning so API partners can release changes over time. To learn about using versioned APIs, see versioning documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "If you are an API partner integrating with the Advertising API, please review the Integration Requirements to understand the capabilities you need to build and demonstrate during the Technical Sign Off process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources help you stay current with new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Recent Changes - Latest API releases\nDeveloper Portal - API product information\nMigrations - Breaking changes and updates\nDeveloper Support - Submit support tickets",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

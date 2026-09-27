@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string UploadToken { get; set; }
 #endif
         /// <summary>The uploadUrlsExpireAt property</summary>
-        public int? UploadUrlsExpireAt { get; set; }
+        public long? UploadUrlsExpireAt { get; set; }
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "uploadInstructions", n => { UploadInstructions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "uploadToken", n => { UploadToken = n.GetStringValue(); } },
-                { "uploadUrlsExpireAt", n => { UploadUrlsExpireAt = n.GetIntValue(); } },
+                { "uploadUrlsExpireAt", n => { UploadUrlsExpireAt = n.GetLongValue(); } },
                 { "video", n => { Video = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeVideoUpload200ResponseValueUploadInstructionsItem>("uploadInstructions", UploadInstructions);
             writer.WriteStringValue("uploadToken", UploadToken);
-            writer.WriteIntValue("uploadUrlsExpireAt", UploadUrlsExpireAt);
+            writer.WriteLongValue("uploadUrlsExpireAt", UploadUrlsExpireAt);
             writer.WriteStringValue("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }

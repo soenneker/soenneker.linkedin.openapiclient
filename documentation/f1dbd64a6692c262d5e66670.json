@@ -1,0 +1,262 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+  "Title": "CRM Profile Plugin",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "CRM Profile Plugin",
+      "Anchor": "crm-profile-plugin",
+      "SectionPath": [],
+      "Text": "The JavaScript profile plugin is a component of CRM Connect that allows a LinkedIn profile to be displayed in your Talent CRM. Users of your application will be prompted in the plugin to log into LinkedIn if they do not have an active cookie. We will check to see that the user\u0027s company has a valid LinkedIn Recruiter license.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Profile Plugin",
+      "Anchor": "crm-profile-plugin",
+      "SectionPath": [],
+      "Text": "The plugin is rendered within an iFrame and is self-contained; the JavaScript code handles the authentication and renders the content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Profile Plugin",
+      "Anchor": "crm-profile-plugin",
+      "SectionPath": [],
+      "Text": "This feature is dependent on already syncing candidates from your system to LinkedIn. Considering that candidate data in your system might differ from LinkedIn Member data on LinkedIn, there is a possibility that the Profile Plugin will not return a correct match or identify a match at all. In the event that either occur, a user will be able to correct the match manually from within the widget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Profile Plugin",
+      "Anchor": "crm-profile-plugin",
+      "SectionPath": [],
+      "Text": "Note: Your application will have an API key per customer tenant.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Profile Plugin",
+      "Anchor": "display-profile-plugin",
+      "SectionPath": [
+        "Display Profile Plugin"
+      ],
+      "Text": "To display the profile plugin within your application, use the below javascript:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Display Profile Plugin",
+      "Anchor": "display-profile-plugin",
+      "SectionPath": [
+        "Display Profile Plugin"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\napi_key: {api_key}\nextensions: HcmWidget@https://platform.linkedin.com/rsc/extensions/profile-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/HcmWidget\u0022\ndata-widget-type=\u0022ATS\u0022\ndata-ats-candidate-id=\u0022{ats_candidate_id}\u0022\ndata-integration-context=\u0022{customer_integration_context}\u0022\ndata-show-unlink-url=\u0022{true|false}\u0022\ndata-confirm-unlink=\u0022{true|false}\u0022\ndata-onlink=\u0022link\u0022\ndata-onunlink=\u0022unlink\u0022\ndata-width=\u0022{width}\u0022\u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\nfunction link(member) {\n    console.log(\u0022Link callback\u0022, member);\n }\nfunction unlink(member){\n    console.log(\u0022Unlink callback\u0022, member); \n}\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Profile Plugin Parameters",
+      "Anchor": "profile-plugin-parameters",
+      "SectionPath": [
+        "Profile Plugin Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "data-widget-type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, value \u0022ATS\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-ats-candidate-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id used to sync this candidate to atsCandidates endpoint.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration context value for the customer\u0027s CRM_PROFILE_PLUGIN integration type. You\u0027ll get this value when the customer enables the integration via the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-integration-types?view=li-lts-2026-04#integration--types",
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-show-unlink-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Disable ability to unlink a matched profile. Defaults to false. (For Manual Profile Link certification test case set to True)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-confirm-unlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display confirmation message when unlinking matched profile. Defaults to false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-onlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specify Javascript function to call when a profile is linked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-onunlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specify Javascript function to call when a profile is unlinked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "data-width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ability to override default widget of the widget. Defaults to 800px, minimum value is 500px.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Plugin Parameters",
+      "Anchor": "profile-plugin-parameters",
+      "SectionPath": [
+        "Profile Plugin Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Plugin Parameters",
+      "Anchor": "profile-plugin-parameters",
+      "SectionPath": [
+        "Profile Plugin Parameters"
+      ],
+      "Text": "Verify Content Security Policy includes \u0022platform.linkedin.com\u0022 and \u0022www.linkedin.com\u0022",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

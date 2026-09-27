@@ -1,0 +1,345 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations-overview",
+  "Title": "Organization Authorizations Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations Overview",
+      "Anchor": "organization-authorizations-overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations Overview",
+      "Anchor": "organization-authorizations-overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations Overview",
+      "Anchor": "organization-authorizations-overview",
+      "SectionPath": [],
+      "Text": "Using the /organizationalAuthorizations endpoint is optional; you may continue using /organizationAcls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations Overview",
+      "Anchor": "organization-authorizations-overview",
+      "SectionPath": [],
+      "Text": "Read more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations Overview",
+      "Anchor": "organization-authorizations-overview",
+      "SectionPath": [],
+      "Text": "Role to Permission Mapping\nOrganization Authorization Actions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Features",
+      "Anchor": "features",
+      "SectionPath": [
+        "What is Changing",
+        "Features"
+      ],
+      "Text": "There are currently more than 100 features available across the LinkedIn ecosystem, and there are multiple feature sets for content creators.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Features",
+      "Anchor": "features",
+      "SectionPath": [
+        "What is Changing",
+        "Features"
+      ],
+      "Text": "Consider this workflow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Features",
+      "Anchor": "features",
+      "SectionPath": [
+        "What is Changing",
+        "Features"
+      ],
+      "Text": "Five (5) Pages Partners.\nEach Partner makes 20 checks across the Apps.\nThe manual procedure for feature checks for each new partner will multiply the effort required to administer or maintain user permissions by role.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Roles",
+      "Anchor": "new-roles",
+      "SectionPath": [
+        "What is Changing",
+        "New Roles"
+      ],
+      "Text": "This change includes newly added roles, which",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Roles",
+      "Anchor": "new-roles",
+      "SectionPath": [
+        "What is Changing",
+        "New Roles"
+      ],
+      "Text": "Provide structure and granularity to page admin roles.\nProvide instant access to new roles available in existing API.\nEliminates role-based permissions using /organizationAcls which provides too much privilege or restricts access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the benefits?",
+      "Anchor": "what-are-the-benefits",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What are the benefits?"
+      ],
+      "Text": "Organization Authorizations provides a more granular delegation of access to company page management. User Roles may still be provisioned using /organizationAcls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the benefits?",
+      "Anchor": "what-are-the-benefits",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What are the benefits?"
+      ],
+      "Text": "/organizationAuthorizations exists as a convenient utility for permission checking, which is useful for permissions that span multiple roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why would I spend resources to build a complex feature check?",
+      "Anchor": "why-would-i-spend-resources-to-build-a-complex-feature-check",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "Why would I spend resources to build a complex feature check?"
+      ],
+      "Text": "Using /organizationAuthorizations eliminates the need to check multiple user roles, provides more granular page admin roles/permissions, and requires no code changes for newly added roles in the future.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What about Page additions?",
+      "Anchor": "what-about-page-additions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What about Page additions?"
+      ],
+      "Text": "LinkedIn anticipates a 20\u002B increase in Roles over the next few years for pages. To use /organizationAuthorizations you\u0027ll need to find the following existing roles and how they\u0027re mapped to the new endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What about Page additions?",
+      "Anchor": "what-about-page-additions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What about Page additions?"
+      ],
+      "Text": "Learn more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What about Page additions?",
+      "Anchor": "what-about-page-additions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What about Page additions?"
+      ],
+      "Text": "Role to Permission mapping\nOrganization Auth Actions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find an authenticated member\u2019s organization role assignee?",
+      "Anchor": "how-do-i-find-an-authenticated-members-organization-role-assignee",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find an authenticated member\u2019s organization role assignee?"
+      ],
+      "Text": "You don\u0027t need to maintain a list of roles that have permissions, Users are allowed to continue using cURL /organizationAuthorizations -X GET method to determine if the member has a particular permission at an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do new permission sets simplify the way you compute permissions?",
+      "Anchor": "how-do-new-permission-sets-simplify-the-way-you-compute-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do new permission sets simplify the way you compute permissions?"
+      ],
+      "Text": "You can easily:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do new permission sets simplify the way you compute permissions?",
+      "Anchor": "how-do-new-permission-sets-simplify-the-way-you-compute-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do new permission sets simplify the way you compute permissions?"
+      ],
+      "Text": "View analytics (statistics), notifications, and posts.\nManage (create/edit/delete) posts.\nFind access control information.\nAssociate developer applications (in rare cases.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do new permission sets simplify the way you compute permissions?",
+      "Anchor": "how-do-new-permission-sets-simplify-the-way-you-compute-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do new permission sets simplify the way you compute permissions?"
+      ],
+      "Text": "Learn more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do new permission sets simplify the way you compute permissions?",
+      "Anchor": "how-do-new-permission-sets-simplify-the-way-you-compute-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do new permission sets simplify the way you compute permissions?"
+      ],
+      "Text": "Retrieve Organization info using Organization Lookup API.\nView auth tables for /organizationAuthorizations Organization Auth Actions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I provision a user with the DIRECT_SPONSORED_CONTENT_POSTER role?",
+      "Anchor": "how-do-i-provision-a-user-with-the-direct_sponsored_content_poster-role",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I provision a user with the DIRECT_SPONSORED_CONTENT_POSTER role?"
+      ],
+      "Text": "For a given organization and member you may continue to use the cURL method /organizationAcls -X PUT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find additional Admin info?",
+      "Anchor": "how-do-i-find-additional-admin-info",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find additional Admin info?"
+      ],
+      "Text": "Use Decoration to find users First/Last name. This procedure hasn\u0027t changed, however, the field name may be slightly different in /organizationAuthorizations to get member info.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find Admin Data using Response Decoration?",
+      "Anchor": "how-do-i-find-admin-data-using-response-decoration",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find Admin Data using Response Decoration?"
+      ],
+      "Text": "The call is basically identical to /organizationAcls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find Admin Data using Response Decoration?",
+      "Anchor": "how-do-i-find-admin-data-using-response-decoration",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find Admin Data using Response Decoration?"
+      ],
+      "Text": "See: Response Decoration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find all Role Permissions?",
+      "Anchor": "how-do-i-find-all-role-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find all Role Permissions?"
+      ],
+      "Text": "The Organization Authorizations endpoint has a finder to return all the permissions for a given role.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find all Role Permissions?",
+      "Anchor": "how-do-i-find-all-role-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find all Role Permissions?"
+      ],
+      "Text": "Read more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I find all Role Permissions?",
+      "Anchor": "how-do-i-find-all-role-permissions",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I find all Role Permissions?"
+      ],
+      "Text": "Organization Authorization Actions table",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

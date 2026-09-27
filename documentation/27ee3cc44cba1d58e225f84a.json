@@ -1,0 +1,752 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+  "Title": "Organization Workplace Policies",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Workplace Policies",
+      "Anchor": "organization-workplace-policies",
+      "SectionPath": [],
+      "Text": "The Organization Workplace Policies API returns the workplace policies data for the organization (i.e. Company, School and Showcase) data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Workplace Policies",
+      "Anchor": "organization-workplace-policies",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Workplace Policies",
+      "Anchor": "organization-workplace-policies",
+      "SectionPath": [],
+      "Text": "Get - returns a workplace policy for a given organization workplace policy URN.\nOrganization - finds all workplace policies that are available for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Workplace Policy Example",
+      "Anchor": "organizational-workplace-policy-example",
+      "SectionPath": [
+        "Organizational Workplace Policy Example"
+      ],
+      "Text": "Admin can fetch /update Workplace policies as shown in the image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationWorkplacePolicyUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/employer-brand/organization-workplace-policies.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for a workplace policy of an organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "policyTypeDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A Union of [HybridWorkplacePolicy, RemoteWorkplacePolicy, OnsiteWorkplacePolicy]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Details specific to a type of workplace, that are not present in other types; when admin clears the chosen policy type and turns off the workplace module, this field will not be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "genericDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WorkplacePolicyGenericDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Details of the workplace, that are applicable to all types of workplace; when admin clears all fields and turns off the workplace module, this field will not be present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if this workplace policy is active.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource. Logically, deleted MUST have a later timestamp than creation. It may or may not have the same time as lastModified depending upon the resource/association/sub-resource semantics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource. If no modification has happened since creation, lastModified should be the same as created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HybridWorkplacePolicy",
+      "Anchor": "hybridworkplacepolicy",
+      "SectionPath": [
+        "Permissions",
+        "HybridWorkplacePolicy"
+      ],
+      "Text": "Represents details specific to a hybrid workplace, which is a combination of remote and onsite.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HybridWorkplacePolicy",
+      "Anchor": "hybridworkplacepolicy",
+      "SectionPath": [
+        "Permissions",
+        "HybridWorkplacePolicy"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FlexibleOnsiteRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flexible presence at onsite",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DaysPerWeekOnsiteRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Days per week expected to be at onsite",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PercentOfTimeOnsiteRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Percentage of time expected to be at onsite",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "RemoteWorkplacePolicy",
+      "Anchor": "remoteworkplacepolicy",
+      "SectionPath": [
+        "Permissions",
+        "RemoteWorkplacePolicy"
+      ],
+      "Text": "Represents details specific to a fully remote workplace.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OnsiteWorkplacePolicy",
+      "Anchor": "onsiteworkplacepolicy",
+      "SectionPath": [
+        "Permissions",
+        "OnsiteWorkplacePolicy"
+      ],
+      "Text": "Details specific for onsite workplace.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Workplace Policy URN",
+      "Anchor": "organization-workplace-policy-urn",
+      "SectionPath": [
+        "Organization Workplace Policy URN"
+      ],
+      "Text": "An organization workplace policy URN is a composite URN constructed using the workplace policy ID and the URN of the organization this workplace policy belongs to.\nFor example, a workplace policy with an ID of 222333444111111 for organization URN urn:li:organization:1234 would look like urn:li:organizationWorkplacePolicy:(urn:li:organization:1234,222333444111111).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefit URNs",
+      "Anchor": "benefit-urns",
+      "SectionPath": [
+        "Benefit URNs"
+      ],
+      "Text": "To get benefits data like name, description etc, you must call dmaBenefits endpoint with relevant benefit ID extracted from BenefitUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article URNs",
+      "Anchor": "article-urns",
+      "SectionPath": [
+        "Article URNs"
+      ],
+      "Text": "To get policy article ingested content URL, you must call dmaIngestedContentSummaries endpoint with relevant ingested content ID extracted from policyArticleIngestedContent URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_PHOTO_URN} must be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "GET"
+      ],
+      "Text": "An organizationWorkplacePolicyUrn is a composite URN constructed using a workplace policy ID and an organization URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationWorkplacePolicies/{ORGANIZATION_WORKPLACE_POLICY_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationWorkplacePolicies/urn%3Ali%3AorganizationWorkplacePolicy%3A%28urn%3Ali%3Aorganization%3A1337%2C2808596515109490508%29\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022active\u0022 : true,\n  \u0022created\u0022 : {\n    \u0022time\u0022 : 1633121894940\n  },\n  \u0022genericDetails\u0022 : {\n    \u0022featuredBenefits\u0022 : [\n      \u0022urn:li:benefit:19\u0022,\n      \u0022urn:li:benefit:50\u0022,\n      \u0022urn:li:benefit:41\u0022\n    ],\n    \u0022policyArticle\u0022 : \u0022https://www.linkedin.com/pulse/linkedins-hybrid-approach-we-trust-each-other-ryan-roslansky/\u0022,\n    \u0022policyArticleIngestedContent\u0022 : \u0022urn:li:ingestedContent:123456789\u0022,\n    \u0022policyDescription\u0022 : {\n      \u0022localized\u0022 : {\n        \u0022en_US\u0022 : \u0022Policy description.\u0022\n      },\n      \u0022preferredLocale\u0022 : {\n        \u0022country\u0022 : \u0022us\u0022,\n        \u0022extensions\u0022 : {},\n        \u0022language\u0022 : \u0022en\u0022,\n        \u0022script\u0022 : \u0022null\u0022,\n        \u0022variant\u0022 : \u0022null\u0022\n      }\n    },\n    \u0022vaccinationPolicy\u0022 : {\n      \u0022vaccinationRequirement\u0022 : \u0022REQUIRED\u0022\n    }\n  },\n  \u0022key\u0022 : \u0022urn:li:organizationWorkplacePolicy:(urn:li:organization:1234,2808596515109490508)\u0022,\n  \u0022lastModified\u0022 : {\n    \u0022time\u0022 : 1666892596491\n  },\n  \u0022policyTypeDetails\u0022 : {\n    \u0022hybrid\u0022 : {\n      \u0022onsitePresenceRequirement\u0022 : {\n        \u0022flexibleOnsiteRequirement\u0022 : {}\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "None",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationWorkplacePolicies?q=organization\u0026organization={ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationWorkplacePolicies?q=organization\u0026organization=urn%3Ali%3Aorganization%3A123\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022 : [\n      {\n         \u0022active\u0022 : true,\n         \u0022created\u0022 : {\n            \u0022time\u0022 : 1633121894940\n         },\n         \u0022genericDetails\u0022 : {\n            \u0022featuredBenefits\u0022 : [\n               \u0022urn:li:benefit:19\u0022,\n               \u0022urn:li:benefit:50\u0022,\n               \u0022urn:li:benefit:41\u0022\n            ],\n            \u0022policyArticle\u0022 : \u0022https://www.linkedin.com/pulse/linkedins-hybrid-approach-we-trust-each-other-ryan-roslansky/\u0022,\n            \u0022policyArticleIngestedContent\u0022 : \u0022urn:li:ingestedContent:123456789\u0022,\n            \u0022policyDescription\u0022 : {\n               \u0022localized\u0022 : {\n                  \u0022en_US\u0022 : \u0022Policy description.\u0022\n               },\n               \u0022preferredLocale\u0022 : {\n                  \u0022country\u0022 : \u0022us\u0022,\n                  \u0022extensions\u0022 : {},\n                  \u0022language\u0022 : \u0022en\u0022,\n                  \u0022script\u0022 : \u0022null\u0022,\n                  \u0022variant\u0022 : \u0022null\u0022\n               }\n            },\n            \u0022vaccinationPolicy\u0022 : {\n               \u0022vaccinationRequirement\u0022 : \u0022REQUIRED\u0022\n            }\n         },\n         \u0022key\u0022 : \u0022urn:li:organizationWorkplacePolicy:(urn:li:organization:1234,2808596515109490508)\u0022,\n         \u0022lastModified\u0022 : {\n            \u0022time\u0022 : 1666892596491\n         },\n         \u0022policyTypeDetails\u0022 : {\n            \u0022hybrid\u0022 : {\n               \u0022onsitePresenceRequirement\u0022 : {\n                  \u0022flexibleOnsiteRequirement\u0022 : {}\n               }\n            }\n         }\n      }\n   ],\n   \u0022paging\u0022 : {\n      \u0022count\u0022 : 10,\n      \u0022links\u0022 : [],\n      \u0022start\u0022 : 0,\n      \u0022total\u0022 : 1\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Workplace Policies",
+        "Organization",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization for which workplace policies are requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A123",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,991 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+  "Title": "DMP Segments",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMP Segments",
+      "Anchor": "dmp-segments",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segments",
+      "Anchor": "dmp-segments",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segments",
+      "Anchor": "dmp-segments",
+      "SectionPath": [],
+      "Text": "DMP Segments act as staging entities, which can take in user information from a third-party provider, map them to LinkedIn member profiles, and output Ad Segments, which can then be used with other LinkedIn ads APIs. A DMP segment is tied to a sponsored account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segments",
+      "Anchor": "dmp-segments",
+      "SectionPath": [],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "DMP Segments",
+      "Anchor": "dmp-segments",
+      "SectionPath": [],
+      "Text": "X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments. Can manage and read audience DMP segments. This permission belongs to the Audiences program and is not granted automatically as part of the LinkedIn Marketing API Program.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create DMP Segment",
+      "Anchor": "create-dmp-segment",
+      "SectionPath": [
+        "Create DMP Segment"
+      ],
+      "Text": "Creates an empty DMP Segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account urn that this DMP segment belongs to. Refer Find Ad Accounts By Authenticated User API to select an ad account.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users?view=li-lms-2026-09#find-ad-accounts-by-authenticated-user"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A description for this DMP segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "destinations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "See DMP Segment Destinations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations?view=li-lms-2026-09#create-dmp-segment-destination"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The destinations and various metadata that the content of this segment will be onboarded to. Currently, the only accepted value is\u00A0LINKEDIN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of this DMP segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourcePlatform",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The platform from which profiles are imported. Pick the ENUM that fits your organization\u0027s use case: DIRECT_API (a LinkedIn advertiser using matched audiences for its own ad account(s)), AGENCY_API (an agency managing audiences on behalf of multiple clients), or PARTNER_API (a platform enabling many LinkedIn advertisers to sync audiences at scale, not an agency). For CSV list upload segments, use LIST_UPLOAD instead. See DMP Segment List Uploads for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceSegmentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The foreign key on the source platform. This is an optional field that will be indexed and can be used by the source platform to find their segments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER, COMPANY, USER_LIST_UPLOAD, COMPANY_LIST_UPLOAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content type of the profiles being imported into this DMP segment. Use USER or COMPANY for streaming segments. For CSV list upload segments, use USER_LIST_UPLOAD or COMPANY_LIST_UPLOAD (with sourcePlatform set to LIST_UPLOAD) \u2014 see DMP Segment List Uploads.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Schema"
+      ],
+      "Text": "A sponsored account can have a maximum of 1,000 DMP segments. Attempting to create a segment beyond this limit returns a 429 error with code SEGMENT_LIMIT_EXCEEDED. Delete unused segments to free up capacity before creating new ones.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022name\u0022:\u0022DMP Segment 1\u0022,\n   \u0022sourcePlatform\u0022:\u0022PARTNER_API\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:516848833\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n   \u0022name\u0022:\u0022DMP Segment 1\u0022,\n   \u0022sourcePlatform\u0022:\u0022PARTNER_API\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:516848833\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the segment ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "If the sponsored account has reached the 1,000 segment limit, the API returns a 429 error response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022code\u0022: \u0022SEGMENT_LIMIT_EXCEEDED\u0022,\n  \u0022errorDetailType\u0022: \u0022com.linkedin.common.error.BadRequest\u0022,\n  \u0022message\u0022: \u0022Account has reached the maximum limit of 1000 segments. Please delete unused segments before creating new ones.\u0022,\n  \u0022errorDetails\u0022: {\n    \u0022inputErrors\u0022: [\n      {\n        \u0022description\u0022: \u0022Account has reached the maximum limit of 1000 segments. Please delete unused segments before creating new ones.\u0022,\n        \u0022input\u0022: {\n          \u0022value\u0022: {\n            \u0022stringValue\u0022: \u0022urn:li:sponsoredAccount:{accountId}\u0022\n          },\n          \u0022inputPath\u0022: {\n            \u0022fieldPath\u0022: \u0022/DMPSegment/account\u0022\n          }\n        },\n        \u0022code\u0022: \u0022SEGMENT_LIMIT_EXCEEDED\u0022,\n        \u0022maxValue\u0022: 1000\n      }\n    ]\n  },\n  \u0022status\u0022: 429\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get DMP Segment",
+      "Anchor": "get-dmp-segment",
+      "SectionPath": [
+        "Get DMP Segment"
+      ],
+      "Text": "Retrieve details of a DMP segment using the segment ID. The response returns all the fields listed for the create request and the following additional fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Get DMP Segment",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creation timestamp.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last updated timestamp.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The DMP segment id.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "inputCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of input entities (companies or users) that the source platform has pushed to this segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "destinations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please refer destinations segment info to see additional fields returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/11204",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/11204\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get DMP Segment",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022created\u0022:1505229479000,\n   \u0022destinations\u0022:[\n      {\n         \u0022created\u0022:1505229479000,\n         \u0022lastModified\u0022:1505229479000,\n         \u0022status\u0022:\u0022BUILDING\u0022,\n         \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:848336\u0022\n      }\n   ],\n   \u0022name\u0022:\u0022Test DMP Segment 2\u0022,\n   \u0022sourcePlatform\u0022:\u0022PARTNER_API\u0022,\n   \u0022id\u0022:11204,\n   \u0022lastModified\u0022:1505229479000,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:516848833\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Multiple DMP Segments",
+      "Anchor": "get-multiple-dmp-segments",
+      "SectionPath": [
+        "Get Multiple DMP Segments"
+      ],
+      "Text": "Fetch information on multiple DMP segments in one request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Multiple DMP Segments",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Multiple DMP Segments",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments?ids=List(10804,10814)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Multiple DMP Segments",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments?ids=List(10804,10814)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Multiple DMP Segments",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u002210804\u0022: {\n            \u0022created\u0022: 1505229200000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022created\u0022: 1505229200000,\n                    \u0022lastModified\u0022: 1505229200000,\n                    \u0022status\u0022: \u0022BUILDING\u0022,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:848336\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022Test DMP Segment 1\u0022,\n            \u0022sourcePlatform\u0022: \u0022PARTNER_API\u0022,\n            \u0022id\u0022: 10804,\n            \u0022lastModified\u0022: 1505229200000,\n            \u0022type\u0022: \u0022USER\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:516848833\u0022\n        },\n        \u002210814\u0022: {\n            \u0022created\u0022: 1505229479000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022created\u0022: 1505229479000,\n                    \u0022lastModified\u0022: 1505229479000,\n                    \u0022status\u0022: \u0022BUILDING\u0022,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:999336\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022Test DMP Segment 2\u0022,\n            \u0022sourcePlatform\u0022: \u0022PARTNER_API\u0022,\n            \u0022id\u0022: 10814,\n            \u0022lastModified\u0022: 1505229479000,\n            \u0022type\u0022: \u0022USER\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:516848833\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Multiple DMP Segments",
+        "Sample Response"
+      ],
+      "Text": "This request always returns a 200 OK HTTP status. If some of the IDs in the request are invalid, the results for the other IDs are returned. If none of the IDs in the batch are valid, the empty response {\u00A0 \u0022statuses\u0022: {},\u00A0 \u0022results\u0022: {},\u00A0 \u0022errors\u0022: {}} is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update DMP Segment",
+      "Anchor": "update-dmp-segment",
+      "SectionPath": [
+        "Update DMP Segment"
+      ],
+      "Text": "Perform partial updates to some of the fields of a DMP Segment. Only name , description , and sourceSegmentId can be modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10804",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: \u0022New Name\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10804\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: \u0022New Name\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find DMP Segments by Account",
+      "Anchor": "find-dmp-segments-by-account",
+      "SectionPath": [
+        "Find DMP Segments by Account"
+      ],
+      "Text": "Use the q=account parameter and the account URN to find DMP segments by the associated sponsored account. For more granular results, add sourcePlatform and sourceSegmentId query parameters to the query.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find DMP Segments by Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find DMP Segments by Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments?q=account\u0026account=urn:li:sponsoredAccount:516848833",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find DMP Segments by Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments?q=account\u0026account=urn:li:sponsoredAccount:516848833\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Find DMP Segments by Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:516848833\u0022,\n            \u0022created\u0022: 1505229200000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022created\u0022: 1505229200000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:848336\u0022,\n                    \u0022lastModified\u0022: 1505229200000,\n                    \u0022status\u0022: \u0022BUILDING\u0022\n                }\n            ],\n            \u0022id\u0022: 10804,\n            \u0022lastModified\u0022: 1505229200000,\n            \u0022name\u0022: \u0022Test DMP Segment 1\u0022,\n            \u0022sourcePlatform\u0022: \u0022PARTNER_API\u0022,\n            \u0022type\u0022: \u0022USER\u0022\n        },\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:516848833\u0022,\n            \u0022created\u0022: 1505229479000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022created\u0022: 1505229479000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:999336\u0022,\n                    \u0022lastModified\u0022: 1505229479000,\n                    \u0022status\u0022: \u0022BUILDING\u0022\n                }\n            ],\n            \u0022id\u0022: 10814,\n            \u0022lastModified\u0022: 1505229479000,\n            \u0022name\u0022: \u0022Test DMP Segment 2\u0022,\n            \u0022sourcePlatform\u0022: \u0022PARTNER_API\u0022,\n            \u0022type\u0022: \u0022USER\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 2\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete DMP Segment",
+      "Anchor": "delete-dmp-segment",
+      "SectionPath": [
+        "Delete DMP Segment"
+      ],
+      "Text": "Delete a DMP segment using the segment ID. The response returns 204 No Content if the deletion succeeds. Everything related to this DMP segment will be deleted altogether as well, including the DMP segment destinations, the corresponding Ad segment, the DMP segment list (if there\u0027s any). You must have write access to the sponsored account that owns the DMP segment to be able to delete it. Otherwise, you\u0027ll get a 403 Forbidden error response. Deleting unused segments also frees up capacity toward the 1,000 DMP segments per sponsored account limit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Delete DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Delete DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/dmpSegments/10000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Delete DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/dmpSegments/10000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Delete DMP Segment",
+        "Sample Response"
+      ],
+      "Text": "With http header enabled, you should see the following response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Delete DMP Segment",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 204\netag: W/\u002221\u0022\nX-Restli-Protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete DMP Segments",
+      "Anchor": "batch-delete-dmp-segments",
+      "SectionPath": [
+        "Batch Delete DMP Segments"
+      ],
+      "Text": "Delete a batch of DMP segments using segment IDs. Note that all the DMP segments must be under the same sponsored account. The response returns 204 No Content for each segment deleted successfully, or an error for each segment that failed to be deleted. For each batch delete request, all the segments must belong to the same sponsored account. You must have write access to the sponsored account that owns the DMP segments; otherwise, you\u0027ll get a 403 Forbidden error response for those segments. Deleting unused segments also frees up capacity toward the 1,000 DMP segments per sponsored account limit. All API requests are represented in protocol 2.0.0 and require the header:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete DMP Segments",
+      "Anchor": "batch-delete-dmp-segments",
+      "SectionPath": [
+        "Batch Delete DMP Segments"
+      ],
+      "Text": "X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Delete DMP Segments",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Delete DMP Segments",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/dmpSegments?ids=List(10001,10002)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Batch Delete DMP Segments",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/dmpSegments?ids=List(10001,10002)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Delete DMP Segments",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u002210001\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u002210002\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [
+        "Pagination"
+      ],
+      "Text": "The dmpSegments API implements pagination using the start and count parameters for finding DMP Segments by account.\nFor more information, see Pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "The table below lists commonly encountered errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malformed requests, such as if the input dmp segment ID is not a number.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error deleting AdSegments for dmp destination {dmpSegment ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegment is being used in active campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No WRITE access to {sponsored account URN}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not present or user is not authorized to delete the dmp segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity with key {adSegment ID} is not found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DMP segment of the provided ID in the path doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account has reached the maximum limit of 1000 segments. Please delete unused segments before creating new ones.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SEGMENT_LIMIT_EXCEEDED \u2014 Sponsored account has reached the maximum limit of 1,000 DMP segments. Delete unused segments before creating new ones.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

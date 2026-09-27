@@ -1,0 +1,210 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp",
+  "Title": "LinkedIn Learning Hub SFTP Configuration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-lms",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the LinkedIn Learning Hub SFTP configuration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This document offers a step-by-step guide on how to upload external learning data from an LMS or Content Partner to LinkedIn Learning Hub. It contains instructions for the following processes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "How to create a new SFTP user\nHow to connect to the SFTP server",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits",
+      "Anchor": "benefits",
+      "SectionPath": [
+        "Benefits"
+      ],
+      "Text": "The LinkedIn Learning Hub integration ingests content from LMS-hosted resources (e.g., assignments, courses, events, and so on) and Content Partners into LinkedIn Learning Hub, driving engagement and offering learners a singular, intuitive platform to discover all relevant content for their learning needs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SFTP Details",
+      "Anchor": "sftp-details",
+      "SectionPath": [
+        "SFTP Details"
+      ],
+      "Text": "The LinkedIn Learning SFTP server hostname and port are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SFTP Details",
+      "Anchor": "sftp-details",
+      "SectionPath": [
+        "SFTP Details"
+      ],
+      "Text": "SFTP server hostname: sftp.linkedin.com\nSFTP server ports: 2705 and 22",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SFTP Details",
+      "Anchor": "sftp-details",
+      "SectionPath": [
+        "SFTP Details"
+      ],
+      "Text": "The external IPs that the customer uses in their allow list to establish a SFTP handshake with LinkedIn Learning Hub are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SFTP Details",
+      "Anchor": "sftp-details",
+      "SectionPath": [
+        "SFTP Details"
+      ],
+      "Text": "108.174.5.95\n108.174.2.53",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure a New SFTP User",
+      "Anchor": "configure-a-new-sftp-user",
+      "SectionPath": [
+        "SFTP Details",
+        "Configure a New SFTP User"
+      ],
+      "Text": "To set up a new SFTP user in LinkedIn Learning Hub, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure a New SFTP User",
+      "Anchor": "configure-a-new-sftp-user",
+      "SectionPath": [
+        "SFTP Details",
+        "Configure a New SFTP User"
+      ],
+      "Text": "Create public-private key pairs by running the following command: ssh-keygen -t rsa\nThis action creates a private key (that does not end with .pub) and a public key (that ends with .pub).\n\nAfter you log in, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Authenticate.\n\n\nIn the left-hand navigation menu, select Automate user management, then expand the Create SFTP Users panel.\n\n\nClick Add user.\n\nIn the Add User screen, enter the data in the appropriate fields and click Create user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure a New SFTP User",
+      "Anchor": "configure-a-new-sftp-user",
+      "SectionPath": [
+        "SFTP Details",
+        "Configure a New SFTP User"
+      ],
+      "Text": "Make sure your username is unique and does not have any spaces or special characters.\n\nCopy and paste your SSH key into the Public key box. It should start with ssh-rsa or ssh-dss.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure a New SFTP User",
+      "Anchor": "configure-a-new-sftp-user",
+      "SectionPath": [
+        "SFTP Details",
+        "Configure a New SFTP User"
+      ],
+      "Text": "Congratulations! You have added a new SFTP user to your LinkedIn Learning Hub integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Data via SFTP",
+      "Anchor": "upload-data-via-sftp",
+      "SectionPath": [
+        "SFTP Details",
+        "Upload Data via SFTP"
+      ],
+      "Text": "To complete the transfer of LMS data or Content Partner data to the LinkedIn Learning Hub endpoint, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Data via SFTP",
+      "Anchor": "upload-data-via-sftp",
+      "SectionPath": [
+        "SFTP Details",
+        "Upload Data via SFTP"
+      ],
+      "Text": "To connect to the SFTP server in PROD, use the following command (replace ~/.ssh/\u003Cmy_private_key\u003E with your private key, and sftp_username with the username you created in the previous step):\nsftp -i ~/.ssh/\u003Cmy_private_key\u003E -P 2705 \u003Csftp_username\u003E@sftp.linkedin.com\n\nCreate a new directory with the current timestamp to upload a set of files. Make note of the following conditions:\n\nThe directory structure to which you upload LMS snapshot data should consist of the following format: /li-lls-lxp-lms-\u003CintegrationInstanceId\u003E/snapshot/\u003Ctimestamp\u003E/\u003Cfilename\u003E.csv\n\nLinkedIn Learning Hub provisions the integrationInstanceId.\n\nThe LinkedIn Learning Technical Consulting team converts the CSV data to the standardized format.\n\nThe timestamp directory name should be in milliseconds since epoch.\n\nFor a single upload containing a set of files, the timestamp should match. Upload all the files to the same timestamp directory. For example:\n\n\n[timestamp1234]/content.csv\n[timestamp1234\u003E]/progress.csv\n[timestamp1234]/assignment.csv\n\nExample input and output commands:\n\nsftp -i ~/.ssh/test_private_key -P 2705 testuser@sftp.linkedin.com\nConnected to sftp.linkedin.com.\nsftp\u003E put content.csv /li-lls-lxp-lms-12345/snapshot/1612565824000/content.csv\nsftp\u003E put progress.csv /li-lls-lxp-lms-12345/snapshot/1612565824000/progress.csv\nsftp\u003E put assignment.csv /li-lls-lxp-lms-12345/snapshot/1612565824000/assignment.csv\n\nUse the following directory structure format to upload Content Partner Snapshot Data :\n/li-lls-lxp-thirdparty-\u003CintegrationInstanceId\u003E/snapshot/\u003Ctimestamp\u003E/\u003Cfilename\u003E.csv\nThis format assumes the customer uploads Partner Content by bypassing the LMS.\n\n Note\nRefer to \u0022point A\u0022 (above) to see what each value means.\n\n\nTo verify the data has been correctly uploaded, exit from SFTP and reconnect to the SFTP server.\n\nFetch the file to ensure you can download it.\nsftp -i ~/.ssh/test_private_key -P 2705 testuser@sftp.linkedin.com\nConnected to sftp.linkedin.com.\nsftp\u003E get content.csv /li-lls-lxp-thirdparty-12345/snapshot/1612565824000/content.csv ./download/content.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "SFTP Details",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "SFTP Details",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "SFTP Details",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

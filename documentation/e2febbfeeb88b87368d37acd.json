@@ -1,0 +1,165 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+  "Title": "Using the Conversions API Payload Builder",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "With the Conversions API Payload Builder, you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Create a sample payload for your Conversions API request.\nMake real-time API calls using the sample payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Developers sending requests to an API need a seamless experience to understand the schema and required parameters. They should be able to construct request payloads with sample data to validate the structure of their API requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Currently, the payload builder supports building the payload for streaming the Conversion Events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using the Conversions API Payload Builder",
+      "Anchor": "using-the-conversions-api-payload-builder",
+      "SectionPath": [],
+      "Text": "Fill out the required and optional fields with sample values to see the payload structure for LinkedIn API requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Payload Builder Capabilities",
+      "Anchor": "payload-builder-capabilities",
+      "SectionPath": [
+        "Payload Builder Capabilities"
+      ],
+      "Text": "To support developers in integrating the API effectively, the Payload Builder provides the following capabilities:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Payload Builder Capabilities",
+      "Anchor": "payload-builder-capabilities",
+      "SectionPath": [
+        "Payload Builder Capabilities"
+      ],
+      "Text": "Versioning: Versioning headers are provided.\nRequest Configuration: Clearly list required and optional fields for:\n\nQuery parameters\nHeaders\nRequest payload\n\n\nCode Generation: Code with sample requests gets created in JSON and cURL format.\nError Handling \u0026 Guidance: Display clear warnings and actionable steps for developers to correct any invalid data inputs.\nAPI Call Execution: Allows developers to make API calls directly from the Payload Builder interface, enabling them to test their payloads in real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Payload Builder Capabilities",
+      "Anchor": "payload-builder-capabilities",
+      "SectionPath": [
+        "Payload Builder Capabilities"
+      ],
+      "Text": "This document explains how to use the Payload Builder for the Conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "A LinkedIn Developer account with access to the Developer portal.\n\nThe Ad account must have one of the roles mentioned in the Ad account roles section in the Conversions API documentation to make a successful API call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure",
+      "Anchor": "procedure",
+      "SectionPath": [
+        "Procedure"
+      ],
+      "Text": "Open the Developer portal.\nNavigate to My Apps and choose the application.\nGo to the Products tab, scroll to the Conversions API tile, and select Payload Builder.\n\n Note\nThis opens a template builder screen where you can configure the required Conversions Payload.\n\n\nIn the Conversions Direct API Template Builder screen, provide the URN of the conversion rule in the Partner Conversion URN field. The format of your input should be urn:lla:llaPartnerConversion:XXX, where you must replace \u0022XXX\u0022 with the respective conversion rule ID retrieved when creating a new conversion rule through API and parsing the id field in response body or from the x-restli-id response header. Alternatively, you can also retrieve id of existing conversion rules from the finder on conversions by ad account, or from the conversion URL in LinkedIn Campaign Manager. For more information, refer to the following documentation:\n\nFor the Create a Conversion Rule API.\nFor the Find Conversion Rules by Ad Account API\nFor LinkedIn Campaign Manager, you can select the conversion rule to edit, and extract id that immediately follows /conversions/ in the URL (/campaignmanager/accounts/{accountId}/conversions/{conversionId}).\n\n\nProvide the timestamp when the conversion event occurred in the Time text box.\n\n Note\nThe time should be in epoch millisecond format. For example, 1700000000000.\n\n\nProvide the Unique User Values like idValue and idType for a list of unique identifiers to match the conversion user with existing records.\n\n Note\nAdditional Unique User Values can be added by choosing the \u002B Add more option.\n\n\n(Optional) Add additional parameters using Add Parameters, such as userInfo, lead, or externalIds if you want these parameters in your payload.\nIn the Conversion Data section, provide the Currency Code and Amount.\n\n Note\nUse the standard ISO 4217 currency code.\n\n\n(Optional) If you want to use deduping, provide the eventId in the Event Data field.\n\n Note\nIn the right-side Code section, the payload is rendered in both JSON and cURL based on the parameters you have added.\n\n\n(Optional) To make an API call with the payload:\n\nIn the Make an API Call section, choose an app.\nNote: Use the Generate OAuth access token option to generate a LinkedIn access token for an app that has access to the Conversions API. Alternatively, you can use an existing OAuth access token that has the following permission scopes: r_ads, rw_conversions.\nEnter your OAuth access Token or generate a new one.\nSelect the required Ad Account from the dropdown.\nNote: Ensure that the ad account contains at least one conversion rule. If you don\u0027t have an ad account, refer to Create Ad Account to create one. To create a conversion rule, see create a conversion rule.\n\n\nChoose the required Conversion rule from the dropdown.\nSelect Call API to execute the request..\nNow view the following upon choosing to call the API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Procedure",
+      "Anchor": "procedure",
+      "SectionPath": [
+        "Procedure"
+      ],
+      "Text": "View the payload in the Code section, which can be used for further consumption.\nThe API response will be displayed in the Response panel.\nThe event gets created in the production environment.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

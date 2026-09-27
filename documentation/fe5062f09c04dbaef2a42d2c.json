@@ -1,0 +1,438 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations",
+  "Title": "Organization Authorizations",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations",
+      "Anchor": "organization-authorizations",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations",
+      "Anchor": "organization-authorizations",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations",
+      "Anchor": "organization-authorizations",
+      "SectionPath": [],
+      "Text": "Organization Authorizations allow you to access an organization\u0027s administrative data and API on its behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations",
+      "Anchor": "organization-authorizations",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorizations",
+      "Anchor": "organization-authorizations",
+      "SectionPath": [],
+      "Text": "All API request examples in this document must include a header for Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0All URNs must be URL Encoded:A colon should be translated to \u0022%3A\u0022, so urn:li:organization:12345 is encoded to urn%3Ali%3Aorganization%3A12345.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationAction",
+      "Anchor": "organizationauthorizationaction",
+      "SectionPath": [
+        "OrganizationAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "AuthorizationAction",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "OrganizationRoleAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What type of action a user wants to take on an organization\u0027s role holders, such as adding or removing an administrator. Valid enums include:ADMINISTRATOR_READADMINISTRATOR_WRITEDIRECT_SPONSORED_CONTENT_POSTER_READDIRECT_SPONSORED_CONTENT_POSTER_WRITEPIPELINE_BUILDER_READPIPELINE_BUILDER_WRITEPENDING_ADMIN_READPENDING_ADMIN_WRITEPENDING_DIRECT_SPONSORED_CONTENT_POSTER_READPENDING_DIRECT_SPONSORED_CONTENT_POSTER_WRITE",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR_READ",
+              "ADMINISTRATOR_WRITE",
+              "DIRECT_SPONSORED_CONTENT_POSTER_READ",
+              "DIRECT_SPONSORED_CONTENT_POSTER_WRITE",
+              "PIPELINE_BUILDER_READ",
+              "PIPELINE_BUILDER_WRITE",
+              "PENDING_ADMIN_READ",
+              "PENDING_ADMIN_WRITE",
+              "PENDING_DIRECT_SPONSORED_CONTENT_POSTER_READ",
+              "PENDING_DIRECT_SPONSORED_CONTENT_POSTER_WRITE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "OrganizationContentAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What type of action a user wants to take on an organization\u0027s content such as editing or reading. Valid enums include:ORGANIC_SHARE_VIEW_AS_AUTHORORGANIC_SHARE_CREATEORGANIC_SHARE_EDITORGANIC_SHARE_DELETEDARK_SHARE_CREATEDARK_SHARE_EDITDARK_SHARE_DELETEDARK_SHARE_VIEW_AS_AUTHOR",
+            "Links": [],
+            "Values": [
+              "ORGANIC_SHARE_VIEW_AS_AUTHOR",
+              "ORGANIC_SHARE_CREATE",
+              "ORGANIC_SHARE_EDIT",
+              "ORGANIC_SHARE_DELETE",
+              "DARK_SHARE_CREATE",
+              "DARK_SHARE_EDIT",
+              "DARK_SHARE_DELETE",
+              "DARK_SHARE_VIEW_AS_AUTHOR"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "OrganizationProfileAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What type of action a user wants to take on an organization\u0027s profile such as creating a showcase or editing the profile. Valid enums include:ADMINISTRATION_PAGE_VIEW",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATION_PAGE_VIEW"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "OrganizationActivityAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What type of action a user wants to take on an organization\u0027s activity monitoring page such as editing or reading. Valid enums include:ORGANIZATION_ACTIVITY_READ",
+            "Links": [],
+            "Values": [
+              "ORGANIZATION_ACTIVITY_READ"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "OrganizationAnalyticsAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What type of action a user wants to take on an organization\u0027s analytics page. Valid enums include:VISITOR_ANALYTICS_READFOLLOWER_ANALYTICS_READUPDATE_ANALYTICS_READ",
+            "Links": [],
+            "Values": [
+              "VISITOR_ANALYTICS_READ",
+              "FOLLOWER_ANALYTICS_READ",
+              "UPDATE_ANALYTICS_READ"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "OrganizationApplicationAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What type of action a user wants to take on an organization\u0027s third party applications such as associating their application to a LinkedIn organization. Valid enums include:APPLICATION_ASSOCIATE",
+            "Links": [],
+            "Values": [
+              "APPLICATION_ASSOCIATE"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Organization Authorization Information",
+      "Anchor": "fetch-organization-authorization-information",
+      "SectionPath": [
+        "Fetch Organization Authorization Information"
+      ],
+      "Text": "The /organizationAuthorizations endpoint supports GET, BATCH_GET, and BATCH_FINDER authorizationActionsAndImpersonator\u003C!----and authorizationActionsAndOrganization BatchFinder--\u003E.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Organization Authorization Information",
+      "Anchor": "fetch-organization-authorization-information",
+      "SectionPath": [
+        "Fetch Organization Authorization Information"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Organization Authorization Information",
+      "Anchor": "fetch-organization-authorization-information",
+      "SectionPath": [
+        "Fetch Organization Authorization Information"
+      ],
+      "Text": "The request must include a header for Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Organization Authorization Information",
+      "Anchor": "get-organization-authorization-information",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Get Organization Authorization Information"
+      ],
+      "Text": "Use the personUrn, organizationUrn, and OrganizationAuthorizationAction to lookup Organization Authorization information on behalf of authenticated members. API calls with insufficient permissions receive a 403 Forbidden response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Get Organization Authorization Information",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Get Organization Authorization Information",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAuthorizations/(impersonator:{PERSON_URN},organization:{ORGANIZATION_URN},action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Get Organization Authorization Information",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationAuthorizations/(impersonator:{PERSON_URN},organization:{ORGANIZATION_URN},action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ)))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Get Organization Authorization Information",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022impersonator\u0022: \u0022urn:li:person:12345678\u0022,\n    \u0022action\u0022: {\n        \u0022OrganizationRoleAuthorizationActionType\u0022: {\n            \u0022actionType\u0022: \u0022ADMINISTRATOR_READ\u0022\n        }\n    },\n    \u0022organization\u0022: \u0022urn:li:organization:11111111\u0022,\n    \u0022status\u0022: {\n        \u0022com.linkedin.organization.Approved\u0022: {}\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Organization Authorization Information",
+      "Anchor": "batch-get-organization-authorization-information",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Get Organization Authorization Information"
+      ],
+      "Text": "Fetch a list of Organizations Authorizations for authenticated members. API calls with insufficient permissions receive a 403 Forbidden response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Get Organization Authorization Information",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Get Organization Authorization Information",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAuthorizations?ids=List((impersonator:{PERSON_URN},organization:{ORGANIZATION_URN},action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ))),(impersonator:{PERSON_URN2},organization:{ORGANIZATION_URN2},action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATION_PAGE_VIEW))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Get Organization Authorization Information",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationAuthorizations?ids=List((impersonator:{PERSON_URN},organization:{ORGANIZATION_URN},action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATOR_READ))),(impersonator:{PERSON_URN2},organization:{ORGANIZATION_URN2},action:(organizationRoleAuthorizationAction:(actionType:ADMINISTRATION_PAGE_VIEW))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Get Organization Authorization Information",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n      \u0022(action:(OrganizationRoleAuthorizationActionType:(actionType:ADMINISTRATOR_READ)),impersonator:urn%3Ali%3Aperson%3A12345678,organization:urn%3Ali%3Aorganization%3A11111111)\u0022: {\n            \u0022impersonator\u0022: \u0022urn:li:person:12345678\u0022,\n            \u0022action\u0022: {\n                \u0022OrganizationRoleAuthorizationActionType\u0022: {\n                    \u0022actionType\u0022: \u0022ADMINISTRATOR_READ\u0022\n                }\n            },\n            \u0022organization\u0022: \u0022urn:li:organization:11111111\u0022,\n            \u0022status\u0022: {\n                \u0022com.linkedin.organization.Approved\u0022: {}\n            }\n        },\n        \u0022(action:(OrganizationRoleAuthorizationActionType:(actionType:ADMINISTRATION_PAGE_VIEW)),impersonator:urn%3Ali%3Aperson%3A12345679,organization:urn%3Ali%3Aorganization%3A11111112)\u0022: {\n            \u0022impersonator\u0022: \u0022urn:li:person:12345679\u0022,\n            \u0022action\u0022: {\n                \u0022OrganizationRoleAuthorizationActionType\u0022: {\n                    \u0022actionType\u0022: \u0022ADMINISTRATION_PAGE_VIEW\u0022\n                }\n            },\n            \u0022organization\u0022: \u0022urn:li:organization:11111112\u0022,\n            \u0022status\u0022: {\n                \u0022com.linkedin.organization.Denied\u0022: {\n                    \u0022reasons\u0022: [\n                        \u0022ORGANIZATION_INACTIVE\u0022,\n                        \u0022MEMBER_HAS_INSUFFICIENT_PERMISSIONS_IN_ACCESS_CONTROL\u0022\n                    ]\n                }\n            }\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Find Organization Authorization Information by authorizationAction and Authenticated Member",
+      "Anchor": "batch-find-organization-authorization-information-by-authorizationaction-and-authenticated-member",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Find Organization Authorization Information by authorizationAction and Authenticated Member"
+      ],
+      "Text": "Look up Organization Authorizations using AuthorizationAction and authenticated member. The impersonator that\u0027s fetched Organization Authorizations against is always set to the authenticated member. Please refer to the batch finder usage instructions in LinkedIn API Methods.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Find Organization Authorization Information by authorizationAction and Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Find Organization Authorization Information by authorizationAction and Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationAuthorizations?bq=authorizationActionsAndImpersonator\u0026authorizationActions=List((authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:VISITOR_ANALYTICS_READ))),(authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:FOLLOWER_ANALYTICS_READ))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Find Organization Authorization Information by authorizationAction and Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationAuthorizations?bq=authorizationActionsAndImpersonator\u0026authorizationActions=List((authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:VISITOR_ANALYTICS_READ))),(authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:FOLLOWER_ANALYTICS_READ))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Fetch Organization Authorization Information",
+        "Batch Find Organization Authorization Information by authorizationAction and Authenticated Member",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022elements\u0022: [\n                {\n                    \u0022impersonator\u0022: \u0022urn:li:person:12345678\u0022,\n                    \u0022action\u0022: {\n                        \u0022OrganizationAnalyticsAuthorizationAction\u0022: {\n                            \u0022actionType\u0022: \u0022VISITOR_ANALYTICS_READ\u0022\n                        }\n                    },\n                    \u0022organization\u0022: \u0022urn:li:organization:11111111\u0022,\n                    \u0022status\u0022: {\n                        \u0022com.linkedin.organization.Approved\u0022: {}\n                    }\n                },\n                {\n                    \u0022impersonator\u0022: \u0022urn:li:person:12345678\u0022,\n                    \u0022action\u0022: {\n                        \u0022OrganizationAnalyticsAuthorizationAction\u0022: {\n                            \u0022actionType\u0022: \u0022VISITOR_ANALYTICS_READ\u0022\n                        }\n                    },\n                    \u0022organization\u0022: \u0022urn:li:organization:11111112\u0022,\n                    \u0022status\u0022: {\n                        \u0022com.linkedin.organization.Approved\u0022: {}\n                    }\n                }\n            ],\n            \u0022paging\u0022: {\n                \u0022count\u0022: 10,\n                \u0022start\u0022: 0,\n                \u0022links\u0022: []\n            }\n        },\n        {\n            \u0022elements\u0022: [\n                {\n                    \u0022impersonator\u0022: \u0022urn:li:person:123345678\u0022,\n                    \u0022action\u0022: {\n                        \u0022OrganizationAnalyticsAuthorizationAction\u0022: {\n                            \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n                        }\n                    },\n                    \u0022organization\u0022: \u0022urn:li:organization:11111111\u0022,\n                    \u0022status\u0022: {\n                        \u0022com.linkedin.organization.Approved\u0022: {}\n                    }\n                },\n                {\n                    \u0022impersonator\u0022: \u0022urn:li:person:12345678\u0022,\n                    \u0022action\u0022: {\n                        \u0022OrganizationAnalyticsAuthorizationAction\u0022: {\n                            \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n                        }\n                    },\n                    \u0022organization\u0022: \u0022urn:li:organization:11111112\u0022,\n                    \u0022status\u0022: {\n                        \u0022com.linkedin.organization.Approved\u0022: {}\n                    }\n                }\n            ],\n            \u0022paging\u0022: {\n                \u0022count\u0022: 10,\n                \u0022start\u0022: 0,\n                \u0022links\u0022: []\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

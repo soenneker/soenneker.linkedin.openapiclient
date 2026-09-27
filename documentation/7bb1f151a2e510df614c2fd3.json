@@ -1,0 +1,549 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+  "Title": "Module 4 - Inline Upgrade / Downgrade",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 4 - Inline Upgrade / Downgrade",
+      "Anchor": "module-4---inline-upgrade--downgrade",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 4 - Inline Upgrade / Downgrade",
+      "Anchor": "module-4---inline-upgrade--downgrade",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Upgrading a Basic job to a Premium job and Downgrading a Premium job to a Basic job is possible via simpleJobPosting API. The underlying job has to be an API job as well.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The inline upgrade/downgrade feature is subject to availability, please contact your Business Development point of contact.\nInline upgrades and downgrades are only applicable to API jobs posted to a single location (non-multiplexed jobs).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [
+        "Overview",
+        "API Overview"
+      ],
+      "Text": "Use the /simpleJobPostings API to inline upgrade or downgrade jobs on LinkedIn. To know more about this API, refer to API Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Overview",
+        "API Endpoint"
+      ],
+      "Text": "Use the following endpoint to submit a task to upgrade or downgrade to one or more jobs asynchronously:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Overview",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Overview",
+        "API Authorization"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Overview",
+        "API Authorization"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Overview",
+        "API Authorization"
+      ],
+      "Text": "We strongly recommend to use same access token for all concurrent and consecutive calls. An access token has a lifespan of 30 mins. Only on expiry of the existing token, new token should be generated.\nWhen upgrading or downgrading a job, it is important to use the same externalJobPostingId that was used for the underlying job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "To upgrade a Basic API job to a Premium job, repost it with following changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "jobPostingOperationType field value as UPDATE\nlistingType field value as PREMIUM\ncontract field value as in the format urn:li:contract:{contract_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "jobPostingOperationType field value as UPGRADE\nlistingType field value as PREMIUM\ncontract field value as in the format urn:li:contract:{contract_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "Ensure to configure the Customer Application and ATS Integration prior to initiating the inline upgrade, details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "posterEmail \u0026 showPosterInfo can be added optionally as mentioned in the promoted job extension schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "When an API job is upgraded, the expiration of job posts is reset to either 30 days from the date of upgrade or to the date specified in the \u0027expireAt\u0027 field of the payload, if that date has already passed. The expiration date can be extended up to 90 days from the date of job upgrade.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "Refer to Check the Job Operation Task Status for finding the status \u0026 job url of update call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Upgrade Jobs",
+      "Anchor": "sample-request-for-upgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs"
+      ],
+      "Text": "The LinkedIn jobId \u0026 URL remains the same after an inline upgrade.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs",
+        "API Header"
+      ],
+      "Text": "The header for making the request is X-Restli-Method: batch_create.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upgrade Request Body",
+      "Anchor": "sample-upgrade-request-body",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs",
+        "Sample Upgrade Request Body"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{\n   \u0022integrationContext\u0022: \u0022urn:li:organization:{organization_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022https://{apply_url}\u0022,\n   \u0022externalJobPostingId\u0022:\u0022BasicJobPosting01\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022listedAt\u0022: \u0022{timestamp-in-mili}\u0022,\n   \u0022location\u0022:\u0022San Francisco, CA\u0022,\n   \u0022workplaceTypes\u0022: [\u0022On-site\u0022],\n\n   \u0022jobPostingOperationType\u0022: \u0022UPDATE\u0022,\n   \u0022listingType\u0022:\u0022PREMIUM\u0022,         \n   \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Upgrade Request Body",
+      "Anchor": "sample-upgrade-request-body",
+      "SectionPath": [
+        "Sample Request for Upgrade Jobs",
+        "Sample Upgrade Request Body"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{\n   \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022https://{apply_url}\u0022,\n   \u0022externalJobPostingId\u0022:\u0022BasicJobPosting01\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022listedAt\u0022: \u0022{timestamp-in-mili}\u0022,\n   \u0022location\u0022:\u0022San Francisco, CA\u0022,\n   \u0022workplaceTypes\u0022: [\u0022On-site\u0022],\n\n   \u0022jobPostingOperationType\u0022: \u0022UPGRADE\u0022,\n   \u0022listingType\u0022:\u0022PREMIUM\u0022,         \n   \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "To downgrade a Premium API job to a Basic job, repost it with following changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "jobPostingOperationType field value as UPDATE\nlistingType field value as BASIC\ncontract field value as in the format urn:li:contract:{contract_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "jobPostingOperationType field value as DOWNGRADE\nlistingType field value as BASIC\ncontract field value as in the format urn:li:contract:{contract_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "The downgradation of an API job resets the expiry of job posts to 180 days from the date of downgrade or to the expireDate if passed in the payload in the field expireAt while downgrading the job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "Refer to Check the Job Operation Task Status for finding the status \u0026 job url of update call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Downgrade Jobs",
+      "Anchor": "sample-request-for-downgrade-jobs",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs"
+      ],
+      "Text": "The LinkedIn jobId \u0026 URL gets changed after inline downgrade. Please update the new job url for customers to refer via UI. You can find the new job URL and ID by calling the Job Posting Status API and retrieving the jobPostingUrl once the Job Posting Task generated for the downgrade has SUCCEEDED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Header",
+      "Anchor": "api-header-1",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs",
+        "API Header"
+      ],
+      "Text": "The header for making the request is X-Restli-Method: batch_create.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Header",
+      "Anchor": "api-header-1",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs",
+        "API Header"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Downgrade Request Body",
+      "Anchor": "sample-downgrade-request-body",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs",
+        "Sample Downgrade Request Body"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{\n   \u0022integrationContext\u0022: \u0022urn:li:organization:{organization_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022https://{apply_url}\u0022,\n   \u0022externalJobPostingId\u0022:\u0022PremiumJobPosting01\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022listedAt\u0022: \u0022{timestamp-in-mili}\u0022,\n   \u0022location\u0022:\u0022San Francisco, CA\u0022,\n   \u0022workplaceTypes\u0022: [\u0022On-site\u0022],\n\n   \u0022jobPostingOperationType\u0022: \u0022UPDATE\u0022,\n   \u0022listingType\u0022:\u0022BASIC\u0022,         \n   \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Downgrade Request Body",
+      "Anchor": "sample-downgrade-request-body",
+      "SectionPath": [
+        "Sample Request for Downgrade Jobs",
+        "Sample Downgrade Request Body"
+      ],
+      "Text": "{\n \u0022elements\u0022: [{\n   \u0022company\u0022: \u0022urn:li:company:{company_id}\u0022,\n   \u0022companyApplyUrl\u0022: \u0022https://{apply_url}\u0022,\n   \u0022externalJobPostingId\u0022:\u0022PremiumJobPosting01\u0022,\n   \u0022title\u0022: \u0022Software Engineer\u0022,\n   \u0022description\u0022: \u0022We are looking for a passionate Software Engineer to design, develop and install software solutions. Software Engineer responsibilities include gathering user requirements, defining system functionality and writing code in various languages. Our ideal candidates are familiar with the software development life cycle (SDLC) from preliminary system analysis to tests and deployment.\u0022,\n   \u0022listedAt\u0022: \u0022{timestamp-in-mili}\u0022,\n   \u0022location\u0022:\u0022San Francisco, CA\u0022,\n   \u0022workplaceTypes\u0022: [\u0022On-site\u0022],\n\n   \u0022jobPostingOperationType\u0022: \u0022DOWNGRADE\u0022,\n   \u0022listingType\u0022:\u0022BASIC\u0022,         \n   \u0022contract\u0022:\u0022urn:li:contract:{contract_id}\u0022\n  }\n ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Job Posting Status",
+      "Anchor": "get-job-posting-status",
+      "SectionPath": [
+        "Get Job Posting Status"
+      ],
+      "Text": "Upon successful completion of a job upgrade or downgrade, it is necessary to use the job posting status API to determine the job\u0027s status and listing type (Basic or Premium). This API must be used once the job operation task status has been successfully completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "Given below is a list of possible error codes that can display while updating a job.\nOne of the following responses is returned, that contains a JSON object with a status and a message about the error for\nPost on /simpleJobPostings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller is not authorized to access the jobs for contract: urn:li:contract:{contract-id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used customer-app is not configured with the contract to post a premium job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to module-2, to onboard the customer app with the contract",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contract field missing for job promotion with extJobPostingId {Dummy_Ext_Job_Id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "While downgrading, contractId has to be part of the payload",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please refer to the Sample Request for Downgrade Jobs and send the payloads accordingly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Authorization token has expired, usually it has 30 minute life",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "To retry the operation, please regenerate the authorization token and pass it in the API header.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

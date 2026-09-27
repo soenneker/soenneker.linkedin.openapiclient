@@ -1,0 +1,592 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+  "Title": "Member Rich Content API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "Member Rich Content API is used indirectly through the Profile /me API and Compliance Events API to retrieve the current member\u0027s rich media content on their profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "Member Rich Content records are referenced in the profile as MemberRichContent URNs and appear in the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Legacy field",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "memberRichContents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of memberRichContent URNs associated with the Profile summary. This is the Featured section. Default to empty array.",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/answer/111587/feature-samples-of-your-work-on-your-linkedin-profile?lang=en"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "summaryRichMediaAssociations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MemberRichContentUrn[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api#member-rich-content-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educations.memberRichContents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In education schema. The list of memberRichContent urns associated with the education. Default to empty array.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "educations. summaryRichMediaAssociations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MemberRichContentUrn[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api#member-rich-content-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positions.memberRichContents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In position schema. The list of memberRichContent urns associated with the education. Default to empty array.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "positions. summaryRichMediaAssociations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MemberRichContentUrn[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api#member-rich-content-schema"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Content API",
+      "Anchor": "member-rich-content-api",
+      "SectionPath": [],
+      "Text": "All API requests are represented in protocol 2.0.0. Therefore, all API requests require the header X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Rich Content Schema",
+      "Anchor": "member-rich-content-schema",
+      "SectionPath": [
+        "Member Rich Content Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of a MemberRichContent record.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of:IngestedContentUrn - Reference Links to web contentDigitalmediaAssetUrn - Reference Media upload photos, documents, and presentationsActivityUrn - Reference content Posts to LinkedIn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset?context=linkedin/compliance/context",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities"
+            ],
+            "Values": [
+              "IngestedContentUrn - Reference Links to web content",
+              "DigitalmediaAssetUrn - Reference Media upload photos, documents, and presentations",
+              "ActivityUrn - Reference content Posts to LinkedIn",
+              ""
+            ]
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedInArticleUrn - Reference Articles published on LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this record.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the deletion of this record.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customized description for the content if provided by the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server generated identifier of the record.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this record.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customized title for the content if provided by the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "To gather a snapshot of the current member\u0027s rich contents on his or her profile, use the Profile API with decoration on the fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "memberRichContents\neducations.memberRichContents\npositions.memberRichContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "You can use the projection string:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "memberRichContents*~(content(asset~digitalmediaAsset:playableStreams,linkedinArticle~linkedInArticle:publishingV2,activity~activity:v2,ingestedContent),*)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "NOTE: IngestedContentUrn is currently not supported through Profile API. It is only available through the Compliance Events API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "Below is an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Member Rich Content via Profile API",
+      "Anchor": "retrieve-member-rich-content-via-profile-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API"
+      ],
+      "Text": "https://api.linkedin.com/v2/me?projection=(memberRichContents*~(content(asset~digitalmediaAsset:playableStreams,linkedinArticle~linkedInArticle:publishingV2,activity~activity:v2,ingestedContent),*),positions*(memberRichContents*~(content(asset~digitalmediaAsset:playableStreams,linkedinArticle~linkedInArticle:publishingV2,activity~activity:v2,ingestedContent),*)),educations*(memberRichContents*~(content(asset~digitalmediaAsset:playableStreams,linkedinArticle~linkedInArticle:publishingV2,activity~activity:v2,ingestedContent),*)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample decoration response",
+      "Anchor": "sample-decoration-response",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API",
+        "Sample decoration response"
+      ],
+      "Text": "{\n  \u0022memberRichContents~\u0022: [\n    {\n      \u0022created\u0022: 1586981719810,\n      \u0022lastModified\u0022: 1586981719810,\n      \u0022id\u0022: 1586981719813,\n      \u0022content\u0022: {\n        \u0022linkedinArticle\u0022: \u0022urn:li:linkedInArticle:123456789\u0022,\n        \u0022linkedinArticle~\u0022: {\n          \u0022newsArticle\u0022: \u0022urn:li:article:123456789\u0022,\n          \u0022publishedAt\u0022: 1461634142000,\n          \u0022created\u0022: 1461634142000,\n          \u0022title\u0022: \u0022Test Article\u0022,\n          \u0022version\u0022: 4,\n          \u0022content\u0022: {\n            \u0022com.linkedin.publishing.HtmlContent\u0022: {\n              \u0022htmlText\u0022: \u0022\u003Cp\u003ELorem ipsum dolor sit amet, no mel graeci pertinax, est invenire vituperata assueverit te, vide deleniti cu vis. Mel sale dicam populo et, et idque aperiam officiis pri. Ea eos postea dicunt aliquam, usu summo inciderint cu. Ea augue disputationi his, vide debitis mel in, wisi ullum molestiae mea an. Quis consequuntur ius in, te hendrerit prodesset mea. Vel probatus eloquentiam in. His velit erant in.\u003C/p\u003E\\n \\n\u0022,\n              \u0022secureHtmlText\u0022: \u0022\u003Cp\u003ELorem ipsum dolor sit amet, no mel graeci pertinax, est invenire vituperata assueverit te, vide deleniti cu vis. Mel sale dicam populo et, et idque aperiam officiis pri. Ea eos postea dicunt aliquam, usu summo inciderint cu. Ea augue disputationi his, vide debitis mel in, wisi ullum molestiae mea an. Quis consequuntur ius in, te hendrerit prodesset mea. Vel probatus eloquentiam in. His velit erant in.\u003C/p\u003E\\n \\n\u0022\n            }\n          },\n          \u0022lastModified\u0022: 1516328320000,\n          \u0022id\u0022: 1234567890,\n          \u0022state\u0022: \u0022PUBLISHED\u0022,\n          \u0022permlink\u0022: \u0022test-article\u0022,\n          \u0022authors\u0022: [\n            {\n              \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022,\n              \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022\n            }\n          ]\n        }\n      }\n    },\n    {\n      \u0022created\u0022: 1586981706746,\n      \u0022lastModified\u0022: 1586981706746,\n      \u0022id\u0022: 1586981706752,\n      \u0022content\u0022: {\n        \u0022activity\u0022: \u0022urn:li:activity:123456789\u0022,\n        \u0022activity~\u0022: {\n          \u0022domainEntity\u0022: \u0022urn:li:share:123456789\u0022\n        }\n      }\n    },\n    {\n      \u0022created\u0022: 1586981701401,\n      \u0022lastModified\u0022: 1586981701401,\n      \u0022id\u0022: 1586981701404,\n      \u0022content\u0022: {\n        \u0022activity\u0022: \u0022urn:li:activity:123456789\u0022,\n        \u0022activity~\u0022: {\n          \u0022domainEntity\u0022: \u0022urn:li:ugcPost:123456789\u0022\n        }\n      }\n    },\n    {\n      \u0022created\u0022: 1586981607791,\n      \u0022lastModified\u0022: 1586981607791,\n      \u0022id\u0022: 1586981607791,\n      \u0022title\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022file-sample_100kB.docx\u0022\n        }\n      },\n      \u0022content\u0022: {\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:ABCDE12345\u0022,\n        \u0022asset~\u0022: {\n          \u0022paging\u0022: {\n            \u0022count\u0022: 10,\n            \u0022start\u0022: 0,\n            \u0022links\u0022: []\n          },\n          \u0022elements\u0022: [\n            {\n              \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:ABCDE12345,urn:li:digitalmediaMediaArtifactClass:profile-treasury-document-master-manifest)\u0022,\n              \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n              \u0022data\u0022: {\n                \u0022com.linkedin.digitalmedia.mediaartifact.DocumentMasterManifest\u0022: {}\n              },\n              \u0022identifiers\u0022: [\n                {\n                  \u0022identifier\u0022: \u0022https://media-exp1.licdn.com/dms/document/ABCDE12345/profile-treasury-document-master-manifest/0?e=1587074400\u0026v=beta\u0026t=GX1HvDN56HKEIQHwEec_U1jQJyB6V8GJ_MGXqJ1kjLs\u0022,\n                  \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:12345ABCDE,urn:li:digitalmediaMediaArtifactClass:profile-treasury-document-master-manifest,0)\u0022,\n                  \u0022size\u0022: 1442,\n                  \u0022index\u0022: 0,\n                  \u0022mediaType\u0022: \u0022application/json\u0022,\n                  \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                  \u0022identifierExpiresInSeconds\u0022: 1587074400\n                }\n              ]\n            },\n            ...\n          ]\n        }\n      }\n    },\n    {\n      \u0022created\u0022: 1586896503398,\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022LinkedIn Music Video\u0022\n        }\n      },\n      \u0022lastModified\u0022: 1586896503398,\n      \u0022id\u0022: 1586896503398,\n      \u0022title\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022LinkedIn Music Video\u0022\n        }\n      },\n      \u0022content\u0022: {\n        \u0022ingestedContent\u0022: \u0022urn:li:ingestedContent:9222818478844446923\u0022\n      }\n    },\n    {\n      \u0022created\u0022: 1586896503135,\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022PDF\u0022\n        }\n      },\n      \u0022lastModified\u0022: 1586896503135,\n      \u0022id\u0022: 1586896503135,\n      \u0022title\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022pdf-sample.pdf\u0022\n        }\n      },\n      \u0022content\u0022: {\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:12345ABCDE\u0022,\n        \u0022asset~\u0022: {\n          \u0022paging\u0022: {\n            \u0022count\u0022: 10,\n            \u0022start\u0022: 0,\n            \u0022links\u0022: []\n          },\n          \u0022elements\u0022: [\n            {\n              \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:12345ABCDE,urn:li:digitalmediaMediaArtifactClass:profile-treasury-document-pdf-analyzed)\u0022,\n              \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n              \u0022data\u0022: {\n                \u0022com.linkedin.digitalmedia.mediaartifact.Document\u0022: {\n                  \u0022rawMetadataTags\u0022: [],\n                  \u0022isConvertedDocument\u0022: false,\n                  \u0022pageCount\u0022: 1,\n                  \u0022wordCount\u0022: 173,\n                  \u0022documentType\u0022: \u0022PDF\u0022\n                }\n              },\n              \u0022identifiers\u0022: [\n                {\n                  \u0022identifier\u0022: \u0022https://media-exp1.licdn.com/dms/document/12345ABCDE/profile-treasury-document-pdf-analyzed/0?e=1587074400\u0026v=beta\u0026t=6HwSWUyZQiACu7yCn9ob_JpbJEvO_ThpbHPAPyTdG2s\u0022,\n                  \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:12345ABCDE,urn:li:digitalmediaMediaArtifactClass:profile-treasury-document-pdf-analyzed,0)\u0022,\n                  \u0022size\u0022: 7945,\n                  \u0022index\u0022: 0,\n                  \u0022mediaType\u0022: \u0022application/pdf\u0022,\n                  \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                  \u0022identifierExpiresInSeconds\u0022: 1587074400\n                }\n              ]\n            },\n            ...\n          ]\n        }\n      }\n    },\n    {\n      \u0022created\u0022: 1586817498165,\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Hello World Image!\u0022\n        }\n      },\n      \u0022lastModified\u0022: 1586896502978,\n      \u0022id\u0022: 1586817498165,\n      \u0022title\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022test_hi.png\u0022\n        }\n      },\n      \u0022content\u0022: {\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:12345ABCDE\u0022,\n        \u0022asset~\u0022: {\n          \u0022paging\u0022: {\n            \u0022count\u0022: 10,\n            \u0022start\u0022: 0,\n            \u0022links\u0022: []\n          },\n          \u0022elements\u0022: [\n            {\n              \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:12345ABCDE,urn:li:digitalmediaMediaArtifactClass:profile-treasury-image-shrink_800_800)\u0022,\n              \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n              \u0022data\u0022: {\n                \u0022com.linkedin.digitalmedia.mediaartifact.StillImage\u0022: {\n                  \u0022storageSize\u0022: {\n                    \u0022width\u0022: 800,\n                    \u0022height\u0022: 800\n                  },\n                  \u0022storageAspectRatio\u0022: {\n                    \u0022widthAspect\u0022: 1,\n                    \u0022heightAspect\u0022: 1,\n                    \u0022formatted\u0022: \u00221.00:1.00\u0022\n                  },\n                  \u0022rawMetadataTags\u0022: [],\n                  \u0022scale\u0022: \u0022UP\u0022,\n                  \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                  \u0022rawCodecSpec\u0022: {\n                    \u0022name\u0022: \u0022jpeg\u0022,\n                    \u0022type\u0022: \u0022image\u0022\n                  },\n                  \u0022displaySize\u0022: {\n                    \u0022width\u0022: 800,\n                    \u0022uom\u0022: \u0022PX\u0022,\n                    \u0022height\u0022: 800\n                  },\n                  \u0022displayAspectRatio\u0022: {\n                    \u0022widthAspect\u0022: 1,\n                    \u0022heightAspect\u0022: 1,\n                    \u0022formatted\u0022: \u00221.00:1.00\u0022\n                  }\n                }\n              },\n              \u0022identifiers\u0022: [\n                {\n                  \u0022identifier\u0022: \u0022https://media-exp1.licdn.com/dms/image/12345ABCDE/profile-treasury-image-shrink_800_800/0?e=1587074400\u0026v=beta\u0026t=z4E8H62iJIOt8ZThNkxAwrlqstBU6bRpO9_M0lG5a_o\u0022,\n                  \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:12345ABCDE,urn:li:digitalmediaMediaArtifactClass:profile-treasury-image-shrink_800_800,0)\u0022,\n                  \u0022size\u0022: 26456,\n                  \u0022index\u0022: 0,\n                  \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                  \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                  \u0022identifierExpiresInSeconds\u0022: 1587074400\n                }\n              ]\n            },\n            ...\n          ]\n        }\n      }\n    }\n  ],\n  \u0022memberRichContents\u0022: [\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981719813)\u0022,\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981706752)\u0022,\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981701404)\u0022,\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981607791)\u0022,\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586896503398)\u0022,\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586896503135)\u0022,\n    \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586817498165)\u0022\n  ],\n  \u0022educations\u0022: {\n    \u0022288661425\u0022: {\n      \u0022memberRichContents~\u0022: [\n        {\n          \u0022created\u0022: 1586978503919,\n          \u0022lastModified\u0022: 1586978503919,\n          \u0022id\u0022: 1586978503919,\n          \u0022title\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022education_image.png\u0022\n            }\n          },\n          \u0022content\u0022: {\n            \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:12345ABCDE\u0022,\n            \u0022asset~\u0022: {...}\n          }\n        },\n        {\n          \u0022created\u0022: 1586978521358,\n          \u0022lastModified\u0022: 1586978521358,\n          \u0022id\u0022: 1586978521358,\n          \u0022title\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022education_image2.png\u0022\n            }\n          },\n          \u0022content\u0022: {\n            \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:333ABCDE\u0022,\n            \u0022asset~\u0022: {...}\n          }\n        }\n      ],\n      \u0022memberRichContents\u0022: [\n        \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586978503919)\u0022,\n        \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586978521358)\u0022\n      ]\n    },\n    ...\n  },\n  \u0022positions\u0022: {\n    \u00221498982952\u0022: {\n      \u0022memberRichContents~\u0022: [\n        {\n          \u0022created\u0022: 1586978454826,\n          \u0022lastModified\u0022: 1586978454826,\n          \u0022id\u0022: 1586978454826,\n          \u0022title\u0022: {\n            \u0022localized\u0022: {\n              \u0022en_US\u0022: \u0022position_image.png\u0022\n            }\n          },\n          \u0022content\u0022: {\n            \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:12345ABCDE\u0022,\n            \u0022asset~\u0022: {...}\n          }\n        }\n      ],\n      \u0022memberRichContents\u0022: [\n        \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586978454826)\u0022\n      ]\n    },\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample decoration response",
+      "Anchor": "sample-decoration-response",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Profile API",
+        "Sample decoration response"
+      ],
+      "Text": "Tip: To decorate the domainEntity field in activityUrn such as shareUrn and ugcPostUrn, you can supply the projection string: activity~activity:v2(domainEntity~ugcPost~share:ugcPost~). Alternatively, you can make subsequent requests to the respective APIs that resolves each URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Compliance Events API",
+      "Anchor": "retrieve-member-rich-content-via-compliance-events-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API"
+      ],
+      "Text": "Currently when a member manages his or her profile media content, it surfaces through MemberRichMedia events. With this migration, all profile media content management will appear as Profile events:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Compliance Events API",
+      "Anchor": "retrieve-member-rich-content-via-compliance-events-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API"
+      ],
+      "Text": "resourceName = people or people/{sub-resourceName}\nmethod = PARTIAL_UPDATE, CREATE, DELETE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Compliance Events API",
+      "Anchor": "retrieve-member-rich-content-via-compliance-events-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API"
+      ],
+      "Text": "For information on how to use the Compliance Events API, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Compliance Events API",
+      "Anchor": "retrieve-member-rich-content-via-compliance-events-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API"
+      ],
+      "Text": "There are three profile sections that a member can create, update, and delete a Member Rich Content:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Compliance Events API",
+      "Anchor": "retrieve-member-rich-content-via-compliance-events-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API"
+      ],
+      "Text": "memberRichContents\neducations.memberRichContents\npositions.memberRichContents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Member Rich Content via Compliance Events API",
+      "Anchor": "retrieve-member-rich-content-via-compliance-events-api",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API"
+      ],
+      "Text": "Below are sample responses of each field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Profile Edit - memberRichContents",
+      "Anchor": "profile-edit---memberrichcontents",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API",
+        "Profile Edit - memberRichContents"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022id=yrZCpj2ZYQ\u0022,\n  \u0022activity\u0022: {\n    \u0022lastModified\u0022: 1586995612800,\n    \u0022created\u0022: 1429907766452,\n    \u0022summaryRichMediaAssociations\u0022: [\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981719813)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981706752)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981701404)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981607791)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586896503398)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586896503135)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586817498165)\u0022\n      }\n    ],\n    \u0022memberRichContents\u0022: [\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981719813)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981706752)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981701404)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981607791)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586896503398)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586896503135)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586817498165)\u0022\n    ]\n  },\n  \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022,\n  \u0022configVersion\u0022: 18,\n  \u0022resourceName\u0022: \u0022people\u0022,\n  \u0022resourceUri\u0022: \u0022/people/id=yrZCpj2ZYQ\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u00221feae9a5-b1bd-44e2-89be-e9539f10a83f\u0022,\n  \u0022processedAt\u0022: 1586995643173,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1586995612820,\n  \u0022processedActivity\u0022: {\n    \u0022memberRichContents~\u0022: [\n      {\n        \u0022id\u0022: 1586995612790,\n        \u0022lastModified\u0022: 1586995612787,\n        \u0022content\u0022: {\n          \u0022activity\u0022: \u0022urn:li:activity:123456789\u0022,\n          \u0022activity~\u0022: {\n            \u0022verb\u0022: \u0022linkedin:post\u0022,\n            \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n            \u0022domainEntity\u0022: \u0022urn:li:share:123456789\u0022,\n            \u0022domainEntity~\u0022: {\n              \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n              \u0022visibility\u0022: {\n                \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n              },\n              \u0022specificContent\u0022: {\n                \u0022com.linkedin.ugc.ShareContent\u0022: {\n                  \u0022shareCommentary\u0022: {\n                    \u0022inferredLocale\u0022: \u0022en_US\u0022,\n                    \u0022text\u0022: \u0022Hello World\u0022\n                  },\n                  \u0022media\u0022: [],\n                  \u0022shareCategorization\u0022: {},\n                  \u0022shareMediaCategory\u0022: \u0022NONE\u0022\n                }\n              },\n              \u0022author~\u0022: {...},\n              \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n                \u0022actor~\u0022: {...},\n                \u0022time\u0022: 1582669490581\n              },\n              \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n              \u0022ugcOrigin\u0022: \u0022DESKTOP\u0022,\n              \u0022firstPublishedAt\u0022: 1582669490581,\n              \u0022id\u0022: \u0022urn:li:share:123456789\u0022,\n              \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:7\u0022,\n                \u0022time\u0022: 1582670993310\n              },\n              \u0022distribution\u0022: {\n                \u0022externalDistributionChannels\u0022: [],\n                \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n                \u0022distributedViaFollowFeed\u0022: true\n              }\n            },\n            \u0022actor~\u0022: {...},\n            \u0022object\u0022: \u0022urn:li:share:123456789\u0022\n          }\n        },\n        \u0022created\u0022: 1586995612787\n      },\n      {\n        \u0022id\u0022: 1586981719813,\n        \u0022lastModified\u0022: 1586981719810,\n        \u0022content\u0022: {\n          \u0022linkedinArticle~\u0022: {\n            \u0022publishedAt\u0022: 1461634142000,\n            \u0022created\u0022: 1461634142000,\n            \u0022lastModified\u0022: 1516328320000,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022id\u0022: 123456789,\n            \u0022title\u0022: \u0022Test Article\u0022,\n            \u0022version\u0022: 4,\n            \u0022permlink\u0022: \u0022test-article\u0022,\n            \u0022content\u0022: {\n              \u0022com.linkedin.publishing.HtmlContent\u0022: {\n                \u0022htmlText\u0022: \u0022\u003Cp\u003ELorem ipsum dolor sit amet, no mel graeci pertinax, est invenire vituperata assueverit te, vide deleniti cu vis. Mel sale dicam populo et, et idque aperiam officiis pri. Ea eos postea dicunt aliquam, usu summo inciderint cu. Ea augue disputationi his, vide debitis mel in, wisi ullum molestiae mea an. Quis consequuntur ius in, te hendrerit prodesset mea. Vel probatus eloquentiam in. His velit erant in.\u003C/p\u003E\\n \\n\u0022,\n                \u0022secureHtmlText\u0022: \u0022\u003Cp\u003ELorem ipsum dolor sit amet, no mel graeci pertinax, est invenire vituperata assueverit te, vide deleniti cu vis. Mel sale dicam populo et, et idque aperiam officiis pri. Ea eos postea dicunt aliquam, usu summo inciderint cu. Ea augue disputationi his, vide debitis mel in, wisi ullum molestiae mea an. Quis consequuntur ius in, te hendrerit prodesset mea. Vel probatus eloquentiam in. His velit erant in.\u003C/p\u003E\\n \\n\u0022\n              }\n            },\n            \u0022authors\u0022: [\n              {\n                \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022,\n                \u0022author~\u0022: {...},\n                \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022\n              }\n            ]\n          },\n          \u0022linkedinArticle\u0022: \u0022urn:li:linkedInArticle:123456789\u0022\n        },\n        \u0022created\u0022: 1586981719810\n      },\n      {\n        \u0022id\u0022: 1586981706752,\n        \u0022lastModified\u0022: 1586981706746,\n        \u0022content\u0022: {\n          \u0022activity\u0022: \u0022urn:li:activity:123456789\u0022,\n          \u0022activity~\u0022: {\n            \u0022verb\u0022: \u0022linkedin:share\u0022,\n            \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n            \u0022domainEntity\u0022: \u0022urn:li:share:123456789\u0022,\n            \u0022domainEntity~\u0022: {...},\n            \u0022actor~\u0022: {...},\n            \u0022object\u0022: \u0022urn:li:share:123456789\u0022\n          }\n        },\n        \u0022created\u0022: 1586981706746\n      },\n      {\n        \u0022id\u0022: 1586981607791,\n        \u0022lastModified\u0022: 1586981607791,\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022file-sample_100kB.docx\u0022\n          }\n        },\n        \u0022content\u0022: {\n          \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:123ABC\u0022,\n          \u0022asset~\u0022: {...}\n        },\n        \u0022created\u0022: 1586981607791\n      },\n      {\n        \u0022description\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022LinkedIn Music Video\u0022\n          }\n        },\n        \u0022id\u0022: 1586896503398,\n        \u0022lastModified\u0022: 1586896503398,\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022LinkedIn Music Video\u0022\n          }\n        },\n        \u0022content\u0022: {\n          \u0022ingestedContent~\u0022: {\n            \u0022urn\u0022: \u0022urn:li:ingestedContent:123456789\u0022,\n            \u0022specificContent\u0022: {\n              \u0022com.linkedin.ingestedcontent.VideoSpecificContent\u0022: {\n                \u0022thumbnails\u0022: [\n                  {\n                    \u0022imageSpecificContent\u0022: {\n                      \u0022width\u0022: 480,\n                      \u0022digitalmediaAsset\u0022: \u0022urn:li:digitalmediaAsset:123ABC\u0022,\n                      \u0022height\u0022: 360\n                    },\n                    \u0022resolvedUrl\u0022: \u0022https://sample.jpg\u0022\n                  },\n                  {\n                    \u0022imageSpecificContent\u0022: {\n                      \u0022width\u0022: 1280,\n                      \u0022size\u0022: 50684,\n                      \u0022digitalmediaAsset\u0022: \u0022urn:li:digitalmediaAsset:123ABC\u0022,\n                      \u0022height\u0022: 720\n                    },\n                    \u0022resolvedUrl\u0022: \u0022https://sample.jpg\u0022\n                  }\n                ],\n                \u0022width\u0022: 480,\n                \u0022height\u0022: 270\n              }\n            },\n            \u0022provider\u0022: {\n              \u0022name\u0022: \u0022YouTube\u0022,\n              \u0022url\u0022: \u0022https://www.youtube.com/\u0022\n            },\n            \u0022publishedAt\u0022: 1389139200000,\n            \u0022description\u0022: \u0022LinkedIn Music Video\u0022,\n            \u0022mediaType\u0022: \u0022text/html\u0022,\n            \u0022id\u0022: \u00229222818478844446923\u0022,\n            \u0022resolvedUrl\u0022: \u0022https://www.youtube.com/watch?v=12345\u0022,\n            \u0022title\u0022: \u0022LinkedIn Music Video\u0022,\n            \u0022locale\u0022: {\n              \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022authors\u0022: [\n              {}\n            ]\n          },\n          \u0022ingestedContent\u0022: \u0022urn:li:ingestedContent:123456789\u0022\n        },\n        \u0022created\u0022: 1586896503398\n      },\n      {\n        \u0022description\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022PDF\u0022\n          }\n        },\n        \u0022id\u0022: 1586896503135,\n        \u0022lastModified\u0022: 1586896503135,\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022pdf-sample.pdf\u0022\n          }\n        },\n        \u0022content\u0022: {\n          \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:123ABC\u0022,\n          \u0022asset~\u0022: {...}\n        },\n        \u0022created\u0022: 1586896503135\n      },\n      {\n        \u0022description\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Hello World!\u0022\n          }\n        },\n        \u0022id\u0022: 1586817498165,\n        \u0022lastModified\u0022: 1586896502978,\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test_hi.png\u0022\n          }\n        },\n        \u0022content\u0022: {\n          \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:123ABC\u0022,\n          \u0022asset~\u0022: {...}\n        },\n        \u0022created\u0022: 1586817498165\n      }\n    ],\n    \u0022summaryRichMediaAssociations\u0022: [\n      {\n        \u0022richMedia~\u0022: {...},\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n      },\n      {\n        \u0022richMedia~\u0022: {...},\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981719813)\u0022\n      },\n      {\n        \u0022richMedia~\u0022: {...},\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981706752)\u0022\n      },\n      {\n        \u0022richMedia~\u0022: {...},\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981701404)\u0022\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586981607791)\u0022,\n        \u0022richMedia~\u0022: {...},\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586896503398)\u0022,\n        \u0022richMedia~\u0022: {...},\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586896503135)\u0022,\n        \u0022richMedia~\u0022: {...},\n      },\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586817498165)\u0022,\n        \u0022richMedia~\u0022: {...},\n    ],\n    \u0022memberRichContents\u0022: [\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981719813)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981706752)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981701404)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981607791)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586896503398)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586896503135)\u0022,\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586817498165)\u0022\n    ]\n  },\n  \u0022id\u0022: 1135155498\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Profile Edit - educations.memberRichContents",
+      "Anchor": "profile-edit---educationsmemberrichcontents",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API",
+        "Profile Edit - educations.memberRichContents"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022id=yrZCpj2ZYQ\u0022,\n  \u0022activity\u0022: {\n    \u0022memberRichContents\u0022: [\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n    ],\n    \u0022summaryRichMediaAssociations\u0022: [\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n      }\n    ],\n    ...\n  },\n  \u0022method\u0022: \u0022CREEATE\u0022,\n  \u0022configVersion\u0022: 18,\n  \u0022resourceName\u0022: \u0022people\u0022,\n  \u0022resourceUri\u0022: \u0022/people/id=yrZCpj2ZYQ/educations\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u00221feae9a5-b1bd-44e2-89be-e9539f10a83f\u0022,\n  \u0022processedAt\u0022: 1586995643173,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1586995612820,\n  \u0022processedActivity\u0022: {\n    \u0022memberRichContents~\u0022: [\n      {...}\n    ],\n    \u0022summaryRichMediaAssociations\u0022: [\n      {\n        \u0022richMedia~\u0022: {...},\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n      }\n    ],\n    \u0022memberRichContents\u0022: [\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n    ],\n    ...\n  },\n  \u0022id\u0022: 1135155498\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Profile Edit - positions.memberRichContents",
+      "Anchor": "profile-edit---positionsmemberrichcontents",
+      "SectionPath": [
+        "Retrieve Member Rich Content via Compliance Events API",
+        "Profile Edit - positions.memberRichContents"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022id=yrZCpj2ZYQ\u0022,\n  \u0022activity\u0022: {\n    \u0022memberRichContents\u0022: [\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n    ],\n    \u0022summaryRichMediaAssociations\u0022: [\n      {\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n      }\n    ]\n  },\n  \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022,\n  \u0022configVersion\u0022: 18,\n  \u0022resourceName\u0022: \u0022people\u0022,\n  \u0022resourceUri\u0022: \u0022/people/id=yrZCpj2ZYQ/positions/123456\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u00221feae9a5-b1bd-44e2-89be-e9539f10a83f\u0022,\n  \u0022processedAt\u0022: 1586995643173,\n  \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n  \u0022capturedAt\u0022: 1586995612820,\n  \u0022processedActivity\u0022: {\n    \u0022memberRichContents~\u0022: [\n      {...}\n    ],\n    \u0022summaryRichMediaAssociations\u0022: [\n      {\n        \u0022richMedia~\u0022: {...},\n        \u0022richMedia\u0022: \u0022urn:li:richMedia:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n      }\n    ],\n    \u0022memberRichContents\u0022: [\n      \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586995612790)\u0022\n    ]\n  },\n  \u0022id\u0022: 1135155498\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

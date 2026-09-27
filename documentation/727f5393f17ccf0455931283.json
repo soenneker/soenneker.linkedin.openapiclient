@@ -1,0 +1,245 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/authentication",
+  "Title": "API Authentication",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "API Authentication",
+      "Anchor": "api-authentication",
+      "SectionPath": [],
+      "Text": "LinkedIn Learning APIs use two-legged OAuth 2.0 for access. Two-legged OAuth is also known as OAuth 2.0 application access using the Client Credentials Flow. This flow allows your application to authorize with LinkedIn\u0027s API directly - outside the context of any specific user. To generate an access token, you will need a client ID and client secret which can be obtained by following the steps in Request Access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generating an access token",
+      "Anchor": "generating-an-access-token",
+      "SectionPath": [
+        "Generating an access token"
+      ],
+      "Text": "Generate an access token by issuing a POST request to the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Generating an access token",
+      "Anchor": "generating-an-access-token",
+      "SectionPath": [
+        "Generating an access token"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/accessToken",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Generating an access token",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "grant_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be client_credentials.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The client ID obtained by following the steps in Request Access.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The client secret obtained by following the steps in Request Access.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request",
+      "SectionPath": [
+        "Generating an access token",
+        "Request"
+      ],
+      "Text": "curl -X POST https://www.linkedin.com/oauth/v2/accessToken  -d \u0027grant_type=client_credentials\u0026client_id={client_id}\u0026client_secret={client_secret}\u0027 -H \u0027Content-Type: application/x-www-form-urlencoded\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Generating an access token",
+        "Response"
+      ],
+      "Text": "{\n  \u0022access_token\u0022: \u0022AQXt...\u0022,\n  \u0022expires_in\u0022: 7775999\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field schema",
+      "Anchor": "field-schema",
+      "SectionPath": [
+        "Generating an access token",
+        "Field schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "access_token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token that must be included in a request header in each call to LinkedIn Learning APIs. This value must be kept secure.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expires_in",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of seconds remaining, from the time it was requested before the token will expire. You can request a new token once your previous token expires.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field schema",
+      "Anchor": "field-schema",
+      "SectionPath": [
+        "Generating an access token",
+        "Field schema"
+      ],
+      "Text": "Once you have generated an access token, you can start using LinkedIn Learning APIs. See the Making authenticated requests section for how to call the API with the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field schema",
+      "Anchor": "field-schema",
+      "SectionPath": [
+        "Generating an access token",
+        "Field schema"
+      ],
+      "Text": "If you call the LinkedIn Learning API with an invalid access token, you will receive a 401 Unauthorized error. An access token could be invalid because it has expired or was revoked. When you integrate with the API, it is important to code your application to properly handle 401 Unauthorized errors. For example, if you receive the error, you can use the client ID and client secret to generate a new access token and retry your request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Making authenticated requests",
+      "Anchor": "making-authenticated-requests",
+      "SectionPath": [
+        "Making authenticated requests"
+      ],
+      "Text": "Each request to LinkedIn Learning APIs must include a header that contains an access token, generated by following the steps in the Generating an access token section. To include the access token in your request to the API, set an Authorization header in your request, with the access token in the header value (note the \u0022Bearer\u0022 authorization type preceding the access token; this value is required by the authorization protocol):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "Making authenticated requests",
+        "Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=urn,title\u0026count=3\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "Making authenticated requests",
+        "Request"
+      ],
+      "Text": "{\n    \u0022metadata\u0022: {\n        \u0022assetTypeFacetMetadata\u0022: [\n            {\n                \u0022count\u0022: 3000,\n                \u0022assetType\u0022: \u0022VIDEO\u0022\n            },\n            {\n                \u0022count\u0022: 116,\n                \u0022assetType\u0022: \u0022COURSE\u0022\n            },\n            {\n                \u0022count\u0022: 2,\n                \u0022assetType\u0022: \u0022LEARNING_PATH\u0022\n            }\n        ],\n        \u0022difficultyLevelFacetMetadata\u0022: [\n            {\n                \u0022difficultyLevel\u0022: \u0022INTERMEDIATE\u0022,\n                \u0022count\u0022: 1427\n            },\n            {\n                \u0022difficultyLevel\u0022: \u0022BEGINNER\u0022,\n                \u0022count\u0022: 727\n            },\n            {\n                \u0022difficultyLevel\u0022: \u0022ADVANCED\u0022,\n                \u0022count\u0022: 173\n            }\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:669544\u0022,\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Learning Java\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:375490\u0022,\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Java Essential Training for Students\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:107061\u0022,\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Advanced Java Programming\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 3118,\n        \u0022count\u0022: 3,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.keyword=java\u0026count=3\u0026q=criteria\u0026start=3\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

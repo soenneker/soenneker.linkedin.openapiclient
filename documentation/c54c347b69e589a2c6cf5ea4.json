@@ -1,0 +1,343 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+  "Title": "Sync job application status updates",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync job application status updates",
+      "Anchor": "sync-job-application-status-updates",
+      "SectionPath": [],
+      "Text": "Keep applicants informed by sending real-time notifications about actions taken on their job applications, using the Job application lifecycle actions API. LinkedIn supports the following types of applicant notifications:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application status updates",
+      "Anchor": "sync-job-application-status-updates",
+      "SectionPath": [],
+      "Text": "Application viewed\nResume downloaded\nApplication rejected\nApplication screened\nApplication interviewed\nApplication hired",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application status updates",
+      "Anchor": "sync-job-application-status-updates",
+      "SectionPath": [],
+      "Text": "As a partner, once your customer posts a job to LinkedIn with LinkedIn Easy Apply, send these application lifecycle events to keep the applicants updated about their job applications. Send a unique event for every action taken on an application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application status updates",
+      "Anchor": "sync-job-application-status-updates",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application status updates",
+      "Anchor": "sync-job-application-status-updates",
+      "SectionPath": [],
+      "Text": "LinkedIn will only send these events to the applicant if your customer has given consent through the \u0022Applicant notifications\u0022 checkbox within the Customer Onboarding widget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job application lifecycle actions API",
+      "Anchor": "job-application-lifecycle-actions-api",
+      "SectionPath": [
+        "Job application lifecycle actions API"
+      ],
+      "Text": "Use the Job application lifecycle actions API to send these status updates for applications submitted through LinkedIn Apply: application viewed, resume downloaded, application rejected, application screened, application interviewed, or application hired. Each action triggers a notification email that keeps the applicant informed of their application status. LinkedIn automatically sends the application submitted event when it receives the application, so that status doesn\u0027t require an API call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "JobApplicationLifecycleAction request body fields",
+      "Anchor": "jobapplicationlifecycleaction-request-body-fields",
+      "SectionPath": [
+        "Job application lifecycle actions API",
+        "JobApplicationLifecycleAction request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID for which an action is taken.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action which was taken on the given job application. Possible enum values: APPLICATION_VIEWED, RESUME_DOWNLOADED, APPLICATION_REJECTED, SCREENED, INTERVIEWED, or HIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "performedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp for when the action was taken, in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization URN that must be of the form urn:li:organization:12345.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if received during customer enablement from Customer Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04#step-3-display-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample header",
+      "Anchor": "sample-header",
+      "SectionPath": [
+        "Job application lifecycle actions API",
+        "Sample header"
+      ],
+      "Text": "Authorization: Bearer {access_token}\nx-restli-method: create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Job application lifecycle actions API",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/jobApplicationLifecycleActions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Job application lifecycle actions API",
+        "Sample request body"
+      ],
+      "Text": "{\n  \u0022jobApplicationId\u0022:  \u0022urn:li:jobApplication:12345678\u0022,\n  \u0022action\u0022: \u0022APPLICATION_VIEWED\u0022,\n  \u0022performedAt\u0022: 1604600000017,\n  \u0022integrationContext\u0022: \u0022urn:li:organization:12345\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant notification experience",
+      "Anchor": "applicant-notification-experience",
+      "SectionPath": [
+        "Applicant notification experience"
+      ],
+      "Text": "When you update the job applications with the available actions, an applicant will view statuses or receive the notifications. They can view or receive the following types of application statuses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant notification experience",
+      "Anchor": "applicant-notification-experience",
+      "SectionPath": [
+        "Applicant notification experience"
+      ],
+      "Text": "Application submitted\nApplication viewed\nResume downloaded\nApplication rejected\nApplication screened\nApplication interviewed\nApplication hired",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant notification experience",
+      "Anchor": "applicant-notification-experience",
+      "SectionPath": [
+        "Applicant notification experience"
+      ],
+      "Text": "Each of these statuses is described in the following sections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application submitted",
+      "Anchor": "application-submitted",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application submitted"
+      ],
+      "Text": "Once an applicant submits the job application, they can view the Application submitted status in three places\u2014LinkedIn email notification, LinkedIn job posting they applied to, and the My Jobs section, as shown in the following screenshots.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application viewed",
+      "Anchor": "application-viewed",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application viewed"
+      ],
+      "Text": "The status of the application changes to Application viewed once an application record is viewed within your ATS. An applicant can view this status in three places\u2014LinkedIn email notification, LinkedIn job posting they applied to, and in the My Jobs section, as shown in the following screenshots.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume downloaded",
+      "Anchor": "resume-downloaded",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Resume downloaded"
+      ],
+      "Text": "The status of the application changes to Resume downloaded once an application resume is downloaded or displayed within a document viewer in your ATS. An applicant can view this status in two places\u2014LinkedIn job posting they applied to and in the My Jobs section, as shown in the following screenshots.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application rejected",
+      "Anchor": "application-rejected",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application rejected"
+      ],
+      "Text": "The status of the application changes to Application rejected once an application is rejected within your ATS. An applicant will receive a LinkedIn email notification after 72 hours of the action being updated, as shown in the following screenshot.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application screened",
+      "Anchor": "application-screened",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application screened"
+      ],
+      "Text": "The status of the application changes to Application screened once an application record moves into the screening stage within your ATS. Send the SCREENED action to let the applicant know their application is being actively reviewed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application interviewed",
+      "Anchor": "application-interviewed",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application interviewed"
+      ],
+      "Text": "The status of the application changes to Application interviewed once an applicant is moved to the interview stage within your ATS. Send the INTERVIEWED action after an interview is scheduled or completed to keep the applicant updated on their progress.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application hired",
+      "Anchor": "application-hired",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application hired"
+      ],
+      "Text": "The status of the application changes to Application hired once an applicant is hired for the role within your ATS. Send the HIRED action to notify the applicant that they were selected for the position.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

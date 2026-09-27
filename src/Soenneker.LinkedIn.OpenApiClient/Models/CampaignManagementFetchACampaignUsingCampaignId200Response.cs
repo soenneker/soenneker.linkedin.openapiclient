@@ -83,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Format { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -237,7 +237,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "creativeSelection", n => { CreativeSelection = n.GetStringValue(); } },
                 { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseDailyBudget.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectiveType", n => { ObjectiveType = n.GetStringValue(); } },
@@ -274,7 +274,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("creativeSelection", CreativeSelection);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseDailyBudget>("dailyBudget", DailyBudget);
             writer.WriteStringValue("format", Format);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignUsingCampaignId200ResponseLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectiveType", ObjectiveType);

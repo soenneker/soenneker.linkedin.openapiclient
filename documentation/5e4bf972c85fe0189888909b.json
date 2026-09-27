@@ -1,0 +1,1852 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+  "Title": "Talent CRM Connect Certification",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-bind-customer-users",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning-announcement"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect Certification",
+      "Anchor": "talent-crm-connect-certification",
+      "SectionPath": [],
+      "Text": "LinkedIn requires all Talent CRM Connect implementations undergo a certification review. This ensures that our members get the best experience using a LinkedIn partner integration. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect Certification",
+      "Anchor": "talent-crm-connect-certification",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you are nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect Certification",
+      "Anchor": "talent-crm-connect-certification",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you will be asked to showcase all your product capabilities. During this evaluation, LinkedIn may suggest modifications which will need to be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 1 - Authentication",
+      "Anchor": "module-1---authentication",
+      "SectionPath": [
+        "Module 1 - Authentication"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 Client Credentials integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can request a token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Method for evaluation validity of token is understood by LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Store and check TTL for token at time of request",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate reuse of access token until near expiration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tokens will be stored and reused. New token retrieved when close to expiration.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrigger OAuth 2.0 Client Credentials flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Handle 401 response codes by requesting a new access token.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 1 - Customer Onboarding",
+      "Anchor": "module-1---customer-onboarding",
+      "SectionPath": [
+        "Module 1 - Customer Onboarding"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-010",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate provisioning a new developer application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A CRM tenant is provisioned only one developer application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-011",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect an application has already been provisioned for a customer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When an application is detected, a new one is not created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-012",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate enabling Talent CRM Connect for the first time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration values from Onboarding Plugin\u2019s JS callback are stored for a customer. Requests to /atsIntegrations and /atsIntegrations/configurations properly set integration values.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the historical sync of jobs and CRM data is initiated after onboarding.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Historical sync is initiated following customer onboarding via Onboarding Plugin. Customers can understand progress and errors with sync",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(If RSC is supported) Demonstrate the same application enabling RSC and historical sync kicked off for RSC related data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC can be enabled in conjunction with CRM Connect without issue",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-015",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain what initiates the synchronization of jobs/CRM data to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mechanism to sync data continuously is described and understood.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-016",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate activating Talent CRM Connect with a second contract that uses the same organization ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The second contract is activated successfully. All atsIntegrations are properly recorded, including new CRM_CSA_API integration context which has the new contract value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-017",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate activating Talent CRM Connect with a second contract that uses a different organization ID.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The second contract is not activated and an error message is displayed that says only one organization ID can be active at a time.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Create and Manage Jobs",
+      "Anchor": "module-2---create-and-manage-jobs",
+      "SectionPath": [
+        "Module 2 - Create and Manage Jobs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate sync job success by viewing a candidate in a pipeline with associated jobs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jobs synced to LI are visible within CRM indicator.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync TCRM Candidates",
+      "Anchor": "module-2---sync-tcrm-candidates",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Candidates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-030",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate a candidate has been synced to LinkedIn as part of historical candidate sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When viewing the associated LI member in Recruiter, associated candidate data is present from the CRM in Talent Integrations CRM tab.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-031",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate candidate person URN is associated with candidate in CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate data in CRM is augmented with LI person URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-032",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate how LI person URN is used for deduplication within the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidates can be deduplicated using LI person URN if architecturally possible.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-033",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate how updates to a candidate\u2019s record are synced to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When a candidate is updated, updates are reflected within Recruiter due to resync of data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-034",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate creation of a candidate and subsequent sync to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate data can be found in LI if it matches a LI member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-035",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate how a candidate synced without required data could be possible and how it would be handled (for example, by submitting a candidate with an improperly formatted email that does not follow x@x.x pattern).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate sync failure is handled and highlighted to the user if architecturally possible.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-036",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all candidate records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of candidates that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync TCRM Candidate Resumes",
+      "Anchor": "module-2---sync-tcrm-candidate-resumes",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Candidate Resumes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-040",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate a candidate resume has been synced to LinkedIn as part of historical candidate sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When viewing the associated LI member in Recruiter, associated candidate resume data is present from the CRM in Talent Integrations CRM tab.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-041",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate adding a new resume to a candidate and subsequent sync to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When viewing the associated LI member in Recruiter, new associated candidate resume data is present from the CRM in Talent Integrations CRM tab.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-042",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all candidate resume records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of candidate resumes that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync TCRM Pipelines",
+      "Anchor": "module-2---sync-tcrm-pipelines",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Pipelines"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-050",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate pipelines have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking Export to CRM on a candidate in Recruiter, pipeline can be found in the list.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-051",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate adding a new pipeline to the CRM and subsequent sync to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking Export to CRM on a candidate in Recruiter, pipeline can be found in the list.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-052",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all pipeline records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of pipelines that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync TCRM Pipeline Stages",
+      "Anchor": "module-2---sync-tcrm-pipeline-stages",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Pipeline Stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-060",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate pipeline stages have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking on a candidate in Recruiter, pipeline and stage are visible for a candidate in the pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-061",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate adding a new pipeline stage to the CRM and subsequent sync to LI. Update a candidate in the pipeline so it is in the stage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking on a candidate in Recruiter, pipeline and new stage are visible for the candidate in the pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-062",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how stageCategory enum values are determined based on the stage name within the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stage names are associated with correct enum values when possible. \u201COTHER\u201D is used only when absolutely necessary.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-063",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all pipeline stage records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of pipeline stages that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync TCRM Candidate Pipelines",
+      "Anchor": "module-2---sync-tcrm-candidate-pipelines",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Candidate Pipelines"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Sync TCRM Candidate Pipelines",
+      "Anchor": "module-2---sync-tcrm-candidate-pipelines",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Candidate Pipelines"
+      ],
+      "Text": "Candidate pipeline stage history should be sent via the Candidate Pipeline Stage API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync TCRM Candidate Pipelines",
+      "Anchor": "module-2---sync-tcrm-candidate-pipelines",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Candidate Pipelines"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-070",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate candidate pipeline and stage associations have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking on a candidate in Recruiter, pipeline and stage are visible for a candidate in the pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-071",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate adding a new candidate to a pipeline in the CRM and subsequent sync to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking on a candidate in Recruiter, pipeline and new stage are visible for the candidate in the pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-072",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how sourceCategory enum values are determined based on the source name within the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Source names are associated with correct enum values when possible. \u201COTHER\u201D is used only when absolutely necessary.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-073",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all candidate pipeline and stage records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of candidate pipelines and stages that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync TCRM Interactions",
+      "Anchor": "module-2---sync-tcrm-interactions",
+      "SectionPath": [
+        "Module 2 - Sync TCRM Interactions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-080",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate candidate interactions have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pipeline accurately reflected in Recruiter for a given candidate\u2019s interaction.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-081",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate adding a new candidate interaction in the CRM and subsequent sync to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking on a candidate in Recruiter, candidate interaction is visible for the candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-082",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate updating a candidate interaction and subsequent sync to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When clicking on a candidate in Recruiter, candidate interaction is visible for the candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-083",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how pipelineId is determined by the CRM for a given interaction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pipeline determination clearly understood.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-084",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all interaction records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of interaction records that exist and should be synced from the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 3 - One Click Export to CRM",
+      "Anchor": "module-3---one-click-export-to-crm",
+      "SectionPath": [
+        "Module 3 - One Click Export to CRM"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-090",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate export of an existing candidate to a pipeline that has never been exported to the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate is not duplicated in CRM. Candidate details are updated with notes (optional) and associated LinkedIn information. Candidate is identified based on person URN already present in CRM.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-091",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate resync of the updated candidate pipeline back to LI with the associated candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Existing candidate is added to pipeline in the CRM, and the associated relationship is sent to LI and reflected in Talent Integrations tab in Recruiter. Source category for the candidate is set to LINKEDIN. Source category in CRM is visible as \u0022LinkedIn\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-092",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate exporting a new candidate to the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A new candidate is created in the CRM and associated with the correct pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-093",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate resyncing the newly created candidate in the CRM back to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Source category for the candidate is set to LINKEDIN for related pipeline. A new candidate is sent to LinkedIn with the manualMatchedMember field populated with the member\u2019s person URN that was exported. The exported Candidates should show up with \u0022source\u0022 as \u0022LINKEDIN\u0022 in partner system UI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-133",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate where customers will see or be notified of (and have the option to delete) any LinkedIn member profiles that were deleted from LinkedIn after the customer 1-Click Exported the relevant profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of deleted profiles displayed to the customer matches the list retrieved from LinkedIn. Any profiles deleted by the customer are removed from the CRM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-134",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate usage of 3-legged auth flow to bind CRM users to recruiter seats.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-bind-customer-users?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Users are asked to complete the 3-legged OAuth2 flow to link their accounts the first time they use the integration after activation.Recommendation: Build a binding experience on top of viewing the profile plugin.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-135",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate how InMail history is displayed in the CRM UI, either on the candidate\u0027s page or in the message center.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The /conversationEvents API is called every 30 minutes or less to display new InMails. The CRM user linked to a recruiter seat is correctly identified as the sender in conversations with the candidate.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 4 - Profile Plugin",
+      "Anchor": "module-4---profile-plugin",
+      "SectionPath": [
+        "Module 4 - Profile Plugin"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-120",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add a candidate to the CRM that does not match a profile on LinkedIn by inventing a name and email address. In the Profile Plugin, manually link this new candidate to a completed LinkedIn profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refresh the page and ensure that the chosen LinkedIn profile is still displayed in the Profile Plugin. Ensure that the candidate records in CRM and LinkedIn are updated with appropriate Person URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-121",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Logout of LinkedIn, display the candidate Profile Plugin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sign In to LinkedIn widget is displayed. Scrolling in the Profile Plugin fits within CRM UI",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-122",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Login to LinkedIn, display the candidate Profile Plugin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile Plug is displayed in authenticated mode. Scrolling in the Profile Plugin fits within CRM UI",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 5 - Data Deletion",
+      "Anchor": "module-5---data-deletion",
+      "SectionPath": [
+        "Module 5 - Data Deletion"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-100",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of a candidate within the CRM system and associated update to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate delete is synced to LinkedIn and reflected in Recruiter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate cascading delete caused by candidate deletion within the CRM system .",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All the related candidate pipelines, pipeline stages, resumes, and interactions are deleted automatically.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of a pipeline within the CRM system and associated update to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pipeline delete is synced to LinkedIn and reflected in Recruiter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate cascading delete caused by candidate pipeline deletion within the CRM system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All the related candidate pipelines, pipeline stages, and interactions are also deleted automatically.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of a pipeline stage within the CRM system and associated update to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pipeline stage delete is synced to LinkedIn and reflected in Recruiter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate cascading delete caused by pipeline stage deletion within the CRM system",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pipeline stage deletes should trigger cascading deletes / updates for associated candidate pipelines in that stage.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of a candidate resume within the CRM system and associated update to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate resume delete is synced to LinkedIn and reflected in Recruiter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of an interaction within the CRM system and associated update to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Interaction delete is synced to LinkedIn and reflected in Recruiter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-108",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of any candidate pipeline within the CRM system and associated update to LI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate pipeline delete is synced to LinkedIn and reflected in Recruiter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-109",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the deletion of a purged members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Purged members that customers choose to delete have data retrieve from LI removed from the CRM.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-162",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of ACL associations to an entity when a pipeline record is transitioned to publicly accessible.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associated ACL / entity relationships are purged when pipeline record is transitionted to publicly visible. If the ACL is removed as part of this change confirm deletion of the ACL and any referencing entites within LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-163",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate removal of a user from an ACL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removal of the ACL list for a user is reflected in Recruiter through verification of no visibility to that ACL\u0027s associated pipelines.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-164",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate removal of a user from ACLs stored in LI when the user is deleted from the CRM or marked as inactive.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When a user is deleted, all assignments to ACLs in LI are removed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-165",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of an ACL stored in LI when the ACL is deleted from the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When a ACL is deleted, all assignments to ACLs in LI are removed and all entity / ACL relationships are removed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-166",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate cascading delete when a candidate pipeline is deleted in the CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All the related records of candidate pipeline stage and interactions are also deleted automatically.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-167",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate deletion of candidate pipeline stage within the CRM system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The candidate pipeline stage in LinkedIn is also deleted automatically.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 6 - Error Handling",
+      "Anchor": "module-6---error-handling",
+      "SectionPath": [
+        "Module 6 - Error Handling"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-110",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how a customer re-enables an integration (Talent CRM Connect, RSC, etc.) if it was disabled for enablement or sync issues.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customers can re-enable integrations as desired.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-111",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how and when logging is completed for failed requests.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full request, including URL, headers, and body, and responses logged when failures encountered. Batch requests are logged when there are failures within the request, even if there is a 2xx response code.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-112",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how and when you retry API requests.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry logic is understood. 429s requests are exponentially delayed and retried. Future requests to an endpoint after several (5\u002B) attempts return 429 and are held off until UTC midnight for daily limits to reset.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-113",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how your support teams can get access to production logging when errors occur.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer support teams can access production logs to support customer issues.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-114",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how customers can understand when API failures occur.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customers can understand when API failures occur and relevant corrective actions that can be taken to resolve issues.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-115",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how query tunneling is used when URLs in requests exceed defined limits.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Query tunnelling is utilized when query string exceeds set limits.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 7 - Retrieve Data from LinkedIn (cont\u0027d)",
+      "Anchor": "module-7---retrieve-data-from-linkedin-contd",
+      "SectionPath": [
+        "Module 7 - Retrieve Data from LinkedIn (cont\u0027d)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-130",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "As a recruiter, send an InMail to a LinkedIn member (1st connection not currently in CRM) on your team from a Recruiter. As a candidate, (recipient of InMail) reply to InMail and share contact email. Display new CRM candidate record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New candidate is created in CRM with contact info shared via Recruiter. Profile information is retrieved from InMail Stub Profiles endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-131",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "As a recruiter, send an InMail to same LinkedIn member. As a candidate, (recipient of InMail) reply to InMail and share a different contact email and phone number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate record is updated with new contact info in CRM. Profile information is retrieved from InMail Stub Profiles endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-132",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how seatholders are consumed within the CRM synchronization process",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seats are ingested. Pagination is used when calling the seatsV2 endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 8 - Sync CRM ACLs",
+      "Anchor": "module-8---sync-crm-acls",
+      "SectionPath": [
+        "Module 8 - Sync CRM ACLs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-155",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate and explain how access restrictions are defined for CRM Pipeline records",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LI understands access restriction rules and features in the CRM for pipeline records.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-156",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate and explain which how per-user visibility can be defined for CRM Pipeline records",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LI understands how the CRM determines users that have access to view a pipeline.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-157",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate and explain which users are in ACL lists/groups.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LI understands how users can be members of ACL lists.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-158",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that the max number of ACL a user can be assigned to is \u003C 10",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and sync multiple records that are access controlled, and multiple users that have access at least one of the records. Confirm that the integration pattern will not produce a ACL membership exceeding the max value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-159",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that visibility restrictions on pipelines in the CRM prevent users in Recruiter from viewing inaccessible records.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync records that have restricted access. As a user that does not have access in Recruiter, attempt to export a candidate to the pipeline. Confirm that it is not possible. Confirm that a candidate in the pipeline does not list the pipeline membership on the candidate\u0027s CRM tab in recruiter if the user does not have access.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-160",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that visibility restrictions on pipelines in the CRM allow users in Recruiter to view accessible records.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync records that have restricted access. As a user that does have access in Recruiter, attempt to export a candidate to the pipeline. Confirm that it is possible. Confirm that a candidate in the pipeline does list the pipeline membership on the candidate\u0027s CRM tab in recruiter if the user has access.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-161",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the modification of pipeline from no visibility restrictions to having visibility restrictions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "After transitioning status in the CRM, changes are reflected in LinkedIn Recruiter. Users with access can still see the pipeline in One CLick Export and candidate membership on the CRM tab.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-140",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain what changes will need to take place to facilitate migration to versioned endpoints",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Versioning migration path clearly understood by LinkedIn. Switching consumption to versioned endpoints requires minimal development support.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "The following test case applies from version 202603 onwards.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-141",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain that all versioned CRM Connect API calls include a LinkedIn-Version header value of 202603 or higher.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All versioned CRM Connect API calls use a LinkedIn-Version header value of 202603 or higher.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Compliance Confirmation",
+      "Anchor": "compliance-confirmation",
+      "SectionPath": [
+        "Compliance Confirmation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-150",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner is in compliance with all Terms of Service and partnership agreements.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner is not violating partnership agreements or Terms of Service. Any remediation plans defined to resolve violations have been completed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-151",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirmation of compliance with LinkedIn API Breaking Change policy.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Complying with and understanding the LinkedIn API Breaking Change policy.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

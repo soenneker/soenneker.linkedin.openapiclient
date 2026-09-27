@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoLegalDisclaimer LegalDisclaimer { get; set; }
 #endif
         /// <summary>The legalInfoId property</summary>
-        public int? LegalInfoId { get; set; }
+        public long? LegalInfoId { get; set; }
         /// <summary>The privacyPolicyUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "consents", n => { Consents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoConsentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoConsentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "legalDisclaimer", n => { LegalDisclaimer = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoLegalDisclaimer>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoLegalDisclaimer.CreateFromDiscriminatorValue); } },
-                { "legalInfoId", n => { LegalInfoId = n.GetIntValue(); } },
+                { "legalInfoId", n => { LegalInfoId = n.GetLongValue(); } },
                 { "privacyPolicyUrl", n => { PrivacyPolicyUrl = n.GetStringValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoConsentsItem>("consents", Consents);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70868820620197396481ContentLegalInfoLegalDisclaimer>("legalDisclaimer", LegalDisclaimer);
-            writer.WriteIntValue("legalInfoId", LegalInfoId);
+            writer.WriteLongValue("legalInfoId", LegalInfoId);
             writer.WriteStringValue("privacyPolicyUrl", PrivacyPolicyUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

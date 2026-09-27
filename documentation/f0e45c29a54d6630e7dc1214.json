@@ -1,0 +1,2512 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+  "Title": "Sync Job Requisitions",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-requisition-job-function-codes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-\u0026-location-lookup",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisitions",
+      "Anchor": "sync-job-requisitions",
+      "SectionPath": [],
+      "Text": "All job requisitions should be sent via the Middleware Platform whenever they are created or updated in your ATS. Use your job requisition identifier when syncing via the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisitions",
+      "Anchor": "sync-job-requisitions",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisitions",
+      "Anchor": "sync-job-requisitions",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rest/jobRequisitions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisitions",
+      "Anchor": "sync-job-requisitions-1",
+      "SectionPath": [
+        "Sync Job Requisitions"
+      ],
+      "Text": "Use the following endpoint to create and update records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sync Job Requisitions",
+      "Anchor": "sync-job-requisitions-1",
+      "SectionPath": [
+        "Sync Job Requisitions"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId={id1}\u0026ids[0].integrationContext={organization URN}\u0026ids[1].externalJobRequisitionId={id1}\u0026ids[1].integrationContext={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Job Requisitions",
+      "Anchor": "sync-job-requisitions-1",
+      "SectionPath": [
+        "Sync Job Requisitions"
+      ],
+      "Text": "Include the LinkedIn-Version header when calling this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalJobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the job requisition in the partner ATS (maximum 100 characters).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization URN in the format urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Parameters"
+      ],
+      "Text": "When updating an existing record, you must specify all available fields. Omitting a field will set it to null.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Parameters"
+      ],
+      "Text": "The combination of the above 2 mandatory query parameters will be used as a unique identifier for your synced job application within LinkedIn in later requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "accessRestricted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag indicating whether the job requisition is ACL-protected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the Job Requisition was created in the partner system. The date is epoch timestamp in milliseconds (UTC) and should not be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the Job Requisition was last modified in the partner system. This date is epoch timestamp in milliseconds (UTC) and should not be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetedStartAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target start date for candidates hired using this particular job requisition. This date is epoch timestamp in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location array which contains all locations corresponding to the Job Requisition. Please provide at least one location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "location[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#location-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The desired skills and experiences for a job position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The preferred skills and experiences of the job position on top of the basic skills.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job-specific duties (e.g., Accounting, Marketing, Sales), similar to a \u0022department\u0022 for Job Requisition. Refer to the JobRequisitionJobFunction enum Job Requisition Job Functions reference table. Ensure to provide job function codes in uppercase.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-requisition-job-function-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workplaceTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The workplace nature of the job. Currently accepts single element array with one of the following values On-site , Hybrid, Remote\u0022. (Should be one of On-site, Hybrid,Remote)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The industries of the job or company. Each array element must be quoted and in URN format: \u0022urn:li:industry:{industry_id}\u0022. Industry IDs are predefined by LinkedIn and can be retrieved from Industry Codes reference table. Default value is [] if no value is provided.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Array of IndustryUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "compensation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compensation provided for the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PosterProvidedCompensation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#poster-provided-compensation-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employment status of the job position. Available options are: FULL_TIME, PART_TIME, CONTRACT, TEMPORARY, TEST, OTHER, VOLUNTEER,INTERNSHIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents experience level of the job position to hire. Available options are: NOT_APPLICABLE,INTERNSHIP,ENTRY_LEVEL, ASSOCIATE, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the Job Requisition. Possible values are Open or Closed. Available options are: OPEN,CLOSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of Job Requisition representing whether it is a standard requisition or an evergreen (pipeline) requisition. Note that EVERGREEN requisition should not contain parentJobRequisitionId. Available options are: STANDARD,EVERGREEN. Default is STANDARD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Details of the job requisition owner containing first name, last name \u0026 email. List of complex type of firstName, lastName, emailAddress. Please provide at least one owner in this array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#owner-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "numberOfOpenings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of Openings that need to be closed with this particular Job Requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used to represent parent requisition ID for a particular requisition. This is specifically useful for cases where multiple Standard requisitions are linked to 1 Evergreen requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "accessRestricted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag indicating whether the job requisition is ACL-protected or not.When set to false\u2014all recruiters can view the job requisitions in the 1CE dropdown list.When set to true\u2014if access group settings exist, only recruiters in the access group (ACL group) can view and search job requisitions in the 1CE dropdown list. If no access group settings exist, no recruiter can view or search job requisitions in the 1CE dropdown list.Note (version 202510 and later): The job owner can view all job requisitions regardless of the ACL settings.",
+            "Links": [],
+            "Values": [
+              "When set to false\u2014all recruiters can view the job requisitions in the 1CE dropdown list.",
+              "When set to true\u2014if access group settings exist, only recruiters in the access group (ACL group) can view and search job requisitions in the 1CE dropdown list. If no access group settings exist, no recruiter can view or search job requisitions in the 1CE dropdown list."
+            ]
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the Job Requisition was created in the partner system. The date is epoch timestamp in milliseconds (UTC) and should not be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the Job Requisition was last modified in the partner system. This date is epoch timestamp in milliseconds (UTC) and should not be a future time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetedStartAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target start date for candidates hired using this particular job requisition. This date is epoch timestamp in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location array which contains all locations corresponding to the Job Requisition. Please provide at least one location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "location[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#location-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The desired skills and experiences for a job position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferredSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The preferred skills and experiences of the job position on top of the basic skills.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job-specific duties (e.g., Accounting, Marketing, Sales), similar to a \u0022department\u0022 for Job Requisition. Refer to the JobRequisitionJobFunction enum Job Requisition Job Functions reference table. Ensure to provide job function codes in uppercase.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-requisition-job-function-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workplaceTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The workplace nature of the job. Currently accepts single element array with one of the following values On-site , Hybrid, Remote\u0022. (Should be one of On-site, Hybrid,Remote)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The industries of the job or company. Each array element must be quoted and in URN format: \u0022urn:li:industry:{industry_id}\u0022. Industry IDs are predefined by LinkedIn and can be retrieved from Industry Codes reference table. Default value is [] if no value is provided.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Array of IndustryUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/industry?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "compensation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compensation provided for the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PosterProvidedCompensation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#poster-provided-compensation-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employment status of the job position. Available options are: FULL_TIME, PART_TIME, CONTRACT, TEMPORARY, TEST, OTHER, VOLUNTEER,INTERNSHIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents experience level of the job position to hire. Available options are: NOT_APPLICABLE,INTERNSHIP,ENTRY_LEVEL, ASSOCIATE, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiredCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of openings that are already closed using this particular job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the Job Requisition. Possible values are Open or Closed. Available options are: OPEN,CLOSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of Job Requisition representing whether it is a standard requisition or an evergreen (pipeline) requisition. Note that EVERGREEN requisition should not contain parentJobRequisitionId. Available options are: STANDARD,EVERGREEN. Default is STANDARD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Details of the job requisition owner containing first name, last name \u0026 email. List of complex type of firstName, lastName, emailAddress, ownerType. Please provide at least one owner in this array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#owner-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "numberOfOpenings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of Openings that need to be closed with this particular Job Requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used to represent parent requisition ID for a particular requisition. This is specifically useful for cases where multiple Standard requisitions are linked to 1 Evergreen requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer-facing identifier for the job requisition (e.g., Req ID). A human-readable identifier for display purposes that is distinct from the canonical externalJobRequisitionId. Note (version 202603 and later):",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Body Fields"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "API Request Body Fields"
+      ],
+      "Text": "For optional fields (non-required field), if the ATS has a corresponding field, please send the value. If the field is not present in the ATS, you may skip it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "In production, requests must use query tunneling to avoid reaching maximum URL length. You can use non-tunneled requests when request URLs are shorter than length limits, for testing purposes, and for troubleshooting. Please check details on Query Tunneling Migration Guide.\nYou can use the x-restli-method header to specify the method as batch_update for bulk updates and batch_delete for bulk deletes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202504\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202505\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (with query tunneling)",
+      "Anchor": "sample-request-with-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (with query tunneling)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/rest/jobRequisitions\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].externalJobRequisitionId=id_12345\u0026ids[0].integrationContext=urn:li:organization:1234567890\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n\n{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022ethan@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022Ethan\u0022,\n        \u0022lastName\u0022: \u0022Allen\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202504\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202505\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202506\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022john@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022John\u0022,\n        \u0022lastName\u0022: \u0022Doe\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids%5B0%5D.externalJobRequisitionId=id_12345\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {    \n    \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022categories\u0022: [\u0022Software Engineering\u0022],\n      \u0022description\u0022: \u0022Java/C\u002B\u002B engineer job description\u0022,\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022industries\u0022: [\u0022urn:li:industry:47\u0022],\n      \u0022locations\u0022:[{\n        \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n        \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n        \u0022locationType\u0022: \u0022PRIMARY\u0022          \n      }],\n      \u0022owners\u0022:[{ \n        \u0022emailAddress\u0022: \u0022ethan@example.com\u0022,\n      \t\u0022firstName\u0022: \u0022Ethan\u0022,\n        \u0022lastName\u0022: \u0022Allen\u0022,\n        \u0022ownerType\u0022: \u0022PRIMARY\u0022\n      }],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022basicSkills\u0022: [\u0022c\u002B\u002B\u0022,\u0022java\u0022],\n      \u0022preferredSkills\u0022: [\u0022python\u0022,\u0022javascript\u0022],\n      \u0022title\u0022: \u0022Java/C\u002B\u002B Engineer\u0022,\n      \u0022workplaceTypes\u0022: [\u0022HYBRID\u0022],\n      \u0022externalCreatedAt\u0022: 1670935153,\n      \u0022externalLastModifiedAt\u0022: 1670935160,\n      \u0022numberOfOpenings\u0022: 2,\n      \u0022hiredCount\u0022: 1,\n      \u0022jobRequisitionType\u0022 : \u0022STANDARD\u0022,\n      \u0022compensation\u0022:{\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n    },\n    \u0022targetedStartAt\u0022: 1670935200\n   }\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022externalJobRequisitionId=id_12345\u0026integrationContext=urn%3Ali%3Aorganization%3A1234567890\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Sync Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Location Schema",
+      "Anchor": "location-schema",
+      "SectionPath": [
+        "Location Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actual location, e.g. \u0022San Francisco, California\u0022, \u0022Los Angeles, California, United States\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide locationName if locationGeoUrn can not be provided.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationGeoUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "will be the standardized location in format of urn:li:geo:12345. GeoUrns can be looked up using jobPostingGeoLocations externalized API. Please send the geoUrn whenever possible.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-company-\u0026-location-lookup?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide locationGeoUrn if locationName can not be provided.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of location. Available options are: UNKNOWN, PRIMARY, ALTERNATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for locations",
+      "Anchor": "sample-request-for-locations",
+      "SectionPath": [
+        "Sample Request for locations"
+      ],
+      "Text": "\u0022locations\u0022:[\n    {\n      \u0022locationName\u0022:\u0022Sunnyvale, California, United States\u0022,\n      \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n      \u0022locationType\u0022: \u0022PRIMARY\u0022          \n    }, \n    {\n      \u0022locationName\u0022:\u0022Santa Clara, California, United States\u0022,\n      \u0022locationGeoUrn\u0022:\u0022urn:li:geo:123456\u0022,\n      \u0022locationType\u0022: \u0022ALTERNATE\u0022          \n    }\n]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Poster Provided Compensation Schema",
+      "Anchor": "poster-provided-compensation-schema",
+      "SectionPath": [
+        "Poster Provided Compensation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "compensations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Compensation detail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of compensation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#compensation-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represent if compensation information is visible. Default value is TRUE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Compensation Schema",
+      "Anchor": "compensation-schema",
+      "SectionPath": [
+        "Compensation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The compensation amount, which may be either \u0022range\u0022 or \u0022exactAmount\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MoneyAmountRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#money-amount-range-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "period",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Period in which the amount of compensation is paid. Valid value is YEARLY,MONTHLY, SEMIMONTHLY, QUARTERLY, BIWEEKLY,WEEKLY,DAILY,HOURLY,ONCE,MILE, UNKNOWN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of compensation, valid value are BASE_SALARY,TIPS,COMMISSION,PROFIT_SHARING,STOCK_OPTIONS,STOCK,BONUS,SIGN_ON_BONUS,OVER_TIME,OTHER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Money Amount Schema",
+      "Anchor": "money-amount-schema",
+      "SectionPath": [
+        "Money Amount Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO currency code.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The amount of money as a real number string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Money Amount Range Schema",
+      "Anchor": "money-amount-range-schema",
+      "SectionPath": [
+        "Money Amount Range Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range. This field is optional. An unset field indicates an open range; For example if start is 2 it means everything greater than or equal to 2.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MoneyAmount",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#money-amount-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (less than or equal to) value in which to end the range. This field is optional. An unset field indicates an open range; For example, if end is 5, it means everything less than or equal to 5.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MoneyAmount",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04#money-amount-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for compensation",
+      "Anchor": "sample-request-for-compensation",
+      "SectionPath": [
+        "Sample Request for compensation"
+      ],
+      "Text": "\u0022compensation\u0022:{\n    \u0022visible\u0022: true,\n    \u0022compensations\u0022:[\n        {\n            \u0022period\u0022:\u0022YEARLY\u0022,\n            \u0022type\u0022:\u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n                \u0022range\u0022: {  \n                    \u0022start\u0022:{\u0022amount\u0022:\u00221234\u0022, \u0022currencyCode\u0022:\u0022USD\u0022},\n                    \u0022end\u0022:{\u0022amount\u0022:\u00224567\u0022, \u0022currencyCode\u0022:\u0022USD\u0022}\n                }\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Owner Schema",
+      "Anchor": "owner-schema",
+      "SectionPath": [
+        "Owner Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of the owner. This is mandatory.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Owner Schema",
+      "Anchor": "owner-schema",
+      "SectionPath": [
+        "Owner Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of the owner. This is mandatory.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownerType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the owner. Available options are PRIMARY, ALTERNATE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Job Requisitions",
+      "Anchor": "delete-job-requisitions",
+      "SectionPath": [
+        "Delete Job Requisitions"
+      ],
+      "Text": "Use the following endpoint to delete records:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Job Requisitions",
+      "Anchor": "delete-job-requisitions",
+      "SectionPath": [
+        "Delete Job Requisitions"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202506\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202507\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202508\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202508.02\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202510\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202511\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202512\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202602\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202603\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:{external_job_requisition_id},integrationContext:{org_urn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0022https://api.linkedin.com/rest/jobRequisitions?ids=List((externalJobRequisitionId:EXT_REQS_13,integrationContext:urn%3Ali%3Aorganization%3A1000))\u0022 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "A successful request will return a 204 response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022results\u0022: [\n    {\n      \u0022externalJobRequisitionId\u0022: \u0022EXT_REQS_13\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1000\u0022,\n      \u0022status\u0022: 204\n    }\n  ],\n  \u0022errors\u0022: []\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Delete Job Requisitions",
+        "Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

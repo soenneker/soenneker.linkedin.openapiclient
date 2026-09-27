@@ -1,0 +1,46 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+  "Title": "Shares",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Shares",
+      "Anchor": "shares",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is shares . Currently, this resource captures all legacy share model the member posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Legacy share",
+      "Anchor": "legacy-share",
+      "SectionPath": [
+        "Legacy share"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022resourceId\u0022: \u00226247502521259171840\u0022,\n  \u0022configVersion\u0022: 19,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022activity\u0022: \u0022urn:li:activity:6247502521250783232\u0022,\n    \u0022edited\u0022: false,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022time\u0022: 1489520674051\n    },\n    \u0022resharedShare\u0022: \u0022urn:li:share:6247432167937441792\u0022,\n    \u0022serviceProvider\u0022: \u0022LINKEDIN\u0022,\n    \u0022id\u0022: \u00226247502521259171840\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022time\u0022: 1489520674051\n    },\n    \u0022text\u0022: {\n      \u0022annotations\u0022: [],\n      \u0022text\u0022: \u0022Wow!\u0022\n    },\n    \u0022originalShare\u0022: \u0022urn:li:share:6247432167937441792\u0022,\n    \u0022distribution\u0022: {\n      \u0022linkedInDistributionTarget\u0022: {}\n    },\n    \u0022content\u0022: {\n      \u0022contentEntities\u0022: [],\n      \u0022description\u0022: \u0022Share this using the hashtag #LinkedIn2021.\u0022,\n      \u0022title\u0022: \u0022LinkedIn News 2021\u0022\n    }\n  },\n  \u0022processedAt\u0022: 1489520689960,\n  \u0022capturedAt\u0022: 1489520674194,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n    \u0022owner~\u0022: {...},\n    \u0022edited\u0022: false,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1489520674051\n    },\n    \u0022resharedShare\u0022: \u0022urn:li:share:6247432167937441792\u0022,\n    \u0022serviceProvider\u0022: \u0022LINKEDIN\u0022,\n    \u0022id\u0022: \u00226247502521259171840\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1489520674051\n    },\n    \u0022text\u0022: {\n      \u0022annotations\u0022: [],\n      \u0022text\u0022: \u0022Wow!\u0022\n    },\n    \u0022distribution\u0022: {\n      \u0022linkedInDistributionTarget\u0022: {}\n    },\n    \u0022originalShare\u0022: \u0022urn:li:share:6247432167937441792\u0022,\n    \u0022content\u0022: {\n      \u0022contentEntities\u0022: [],\n      \u0022description\u0022: \u0022Share this using the hashtag #LinkedIn2021.\u0022,\n      \u0022title\u0022: \u0022LinkedIn News 2021\u0022\n    }\n  },\n  \u0022resourceName\u0022: \u0022shares\u0022,\n  \u0022resourceUri\u0022: \u0022/shares/6247502521259171840\u0022,\n  \u0022id\u0022: 432132,\n  \u0022activityId\u0022: \u002212356788990000\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

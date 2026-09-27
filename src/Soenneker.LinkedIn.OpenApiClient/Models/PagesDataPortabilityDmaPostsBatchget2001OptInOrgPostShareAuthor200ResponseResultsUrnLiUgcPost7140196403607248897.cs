@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897LifecycleStateInfo LifecycleStateInfo { get; set; }
 #endif
         /// <summary>The publishedAt property</summary>
-        public int? PublishedAt { get; set; }
+        public long? PublishedAt { get; set; }
         /// <summary>The visibility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +106,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "isReshareDisabledByAuthor", n => { IsReshareDisabledByAuthor = n.GetBoolValue(); } },
                 { "lifecycleState", n => { LifecycleState = n.GetStringValue(); } },
                 { "lifecycleStateInfo", n => { LifecycleStateInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897LifecycleStateInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897LifecycleStateInfo.CreateFromDiscriminatorValue); } },
-                { "publishedAt", n => { PublishedAt = n.GetIntValue(); } },
+                { "publishedAt", n => { PublishedAt = n.GetLongValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteBoolValue("isReshareDisabledByAuthor", IsReshareDisabledByAuthor);
             writer.WriteStringValue("lifecycleState", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseResultsUrnLiUgcPost7140196403607248897LifecycleStateInfo>("lifecycleStateInfo", LifecycleStateInfo);
-            writer.WriteIntValue("publishedAt", PublishedAt);
+            writer.WriteLongValue("publishedAt", PublishedAt);
             writer.WriteStringValue("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }

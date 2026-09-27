@@ -25,7 +25,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfoConsentsItemConsent Consent { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfoConsentsItem"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "checkRequired", n => { CheckRequired = n.GetBoolValue(); } },
                 { "consent", n => { Consent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfoConsentsItemConsent>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfoConsentsItemConsent.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("checkRequired", CheckRequired);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfoConsentsItemConsent>("consent", Consent);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

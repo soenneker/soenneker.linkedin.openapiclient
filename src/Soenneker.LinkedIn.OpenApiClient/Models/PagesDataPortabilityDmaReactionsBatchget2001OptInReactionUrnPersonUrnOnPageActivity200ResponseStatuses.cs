@@ -15,43 +15,43 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448 property</summary>
-        public int? UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448 { get; set; }
+        public long? UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448 { get; set; }
         /// <summary>The urnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408 property</summary>
-        public int? UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408 { get; set; }
+        public long? UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408 { get; set; }
         /// <summary>The urnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 property</summary>
-        public int? UrnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 { get; set; }
+        public long? UrnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 { get; set; }
         /// <summary>The urnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408 property</summary>
-        public int? UrnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408 { get; set; }
+        public long? UrnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408 { get; set; }
         /// <summary>The urnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 property</summary>
-        public int? UrnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 { get; set; }
+        public long? UrnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448 property</summary>
-        public int? UrnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336 property</summary>
-        public int? UrnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697 property</summary>
-        public int? UrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408 property</summary>
-        public int? UrnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 property</summary>
-        public int? UrnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216 property</summary>
-        public int? UrnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 property</summary>
-        public int? UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 { get; set; }
         /// <summary>The urnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552 property</summary>
-        public int? UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552 { get; set; }
+        public long? UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552 { get; set; }
         /// <summary>The urnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952 property</summary>
-        public int? UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952 { get; set; }
+        public long? UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952 { get; set; }
         /// <summary>The urnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216 property</summary>
-        public int? UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216 { get; set; }
+        public long? UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216 { get; set; }
         /// <summary>The urnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104 property</summary>
-        public int? UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104 { get; set; }
+        public long? UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104 { get; set; }
         /// <summary>The urnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 property</summary>
-        public int? UrnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 { get; set; }
+        public long? UrnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 { get; set; }
         /// <summary>The urnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216 property</summary>
-        public int? UrnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216 { get; set; }
+        public long? UrnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216 { get; set; }
         /// <summary>The urnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104 property</summary>
-        public int? UrnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104 { get; set; }
+        public long? UrnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -77,25 +77,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "urn:li:like:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", n => { UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448 = n.GetIntValue(); } },
-                { "urn:li:like:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408 = n.GetIntValue(); } },
-                { "urn:li:like:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", n => { UrnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 = n.GetIntValue(); } },
-                { "urn:li:like:(urn:li:person:fmjIdRRZHe,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408 = n.GetIntValue(); } },
-                { "urn:li:like:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", n => { UrnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:10002687,urn:li:share:7138303271273742336)", n => { UrnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:10002687,urn:li:ugcPost:7136138963253149697)", n => { UrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", n => { UrnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:share:7127705247652745216)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7137596169156759552)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", n => { UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:share:7127705247652745216)", n => { UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:ugcPost:7136526602112303104)", n => { UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", n => { UrnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:share:7127705247652745216)", n => { UrnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216 = n.GetIntValue(); } },
-                { "urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:ugcPost:7136526602112303104)", n => { UrnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104 = n.GetIntValue(); } },
+                { "urn:li:like:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", n => { UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448 = n.GetLongValue(); } },
+                { "urn:li:like:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408 = n.GetLongValue(); } },
+                { "urn:li:like:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", n => { UrnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 = n.GetLongValue(); } },
+                { "urn:li:like:(urn:li:person:fmjIdRRZHe,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408 = n.GetLongValue(); } },
+                { "urn:li:like:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", n => { UrnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", n => { UrnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:10002687,urn:li:share:7138303271273742336)", n => { UrnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:10002687,urn:li:ugcPost:7136138963253149697)", n => { UrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", n => { UrnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:share:7127705247652745216)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7137596169156759552)", n => { UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", n => { UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:share:7127705247652745216)", n => { UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:ugcPost:7136526602112303104)", n => { UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", n => { UrnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:share:7127705247652745216)", n => { UrnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216 = n.GetLongValue(); } },
+                { "urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:ugcPost:7136526602112303104)", n => { UrnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104 = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -105,25 +105,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("urn:li:like:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448);
-            writer.WriteIntValue("urn:li:like:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408);
-            writer.WriteIntValue("urn:li:like:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", UrnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104);
-            writer.WriteIntValue("urn:li:like:(urn:li:person:fmjIdRRZHe,urn:li:activity:7127463160269201408)", UrnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408);
-            writer.WriteIntValue("urn:li:like:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", UrnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", UrnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:10002687,urn:li:share:7138303271273742336)", UrnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:10002687,urn:li:ugcPost:7136138963253149697)", UrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", UrnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", UrnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:share:7127705247652745216)", UrnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7137596169156759552)", UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:share:7127705247652745216)", UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:ugcPost:7136526602112303104)", UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", UrnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:share:7127705247652745216)", UrnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216);
-            writer.WriteIntValue("urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:ugcPost:7136526602112303104)", UrnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104);
+            writer.WriteLongValue("urn:li:like:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", UrnLiLikeUrnLiOrganization10002687UrnLiActivity7138303274226536448);
+            writer.WriteLongValue("urn:li:like:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", UrnLiLikeUrnLiOrganization2414183UrnLiActivity7127463160269201408);
+            writer.WriteLongValue("urn:li:like:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", UrnLiLikeUrnLiOrganization2414183UrnLiUgcPost7136526602112303104);
+            writer.WriteLongValue("urn:li:like:(urn:li:person:fmjIdRRZHe,urn:li:activity:7127463160269201408)", UrnLiLikeUrnLiPersonFmjIdRRZHeUrnLiActivity7127463160269201408);
+            writer.WriteLongValue("urn:li:like:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", UrnLiLikeUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:10002687,urn:li:activity:7138303274226536448)", UrnLiReactionUrnLiOrganization10002687UrnLiActivity7138303274226536448);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:10002687,urn:li:share:7138303271273742336)", UrnLiReactionUrnLiOrganization10002687UrnLiShare7138303271273742336);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:10002687,urn:li:ugcPost:7136138963253149697)", UrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:activity:7127463160269201408)", UrnLiReactionUrnLiOrganization2414183UrnLiActivity7127463160269201408);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", UrnLiReactionUrnLiOrganization2414183UrnLiCommentUrnLiActivity71277052482567249927137543297882877952);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:share:7127705247652745216)", UrnLiReactionUrnLiOrganization2414183UrnLiShare7127705247652745216);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7136526602112303104)", UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7136526602112303104);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:organization:2414183,urn:li:ugcPost:7137596169156759552)", UrnLiReactionUrnLiOrganization2414183UrnLiUgcPost7137596169156759552);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:comment:(urn:li:activity:7127705248256724992,7137543297882877952))", UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiCommentUrnLiActivity71277052482567249927137543297882877952);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:share:7127705247652745216)", UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiShare7127705247652745216);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:person:fmjIdRRZHe,urn:li:ugcPost:7136526602112303104)", UrnLiReactionUrnLiPersonFmjIdRRZHeUrnLiUgcPost7136526602112303104);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:activity:7127463160269201408)", UrnLiReactionUrnLiPersonSyabJjccePUrnLiActivity7127463160269201408);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:share:7127705247652745216)", UrnLiReactionUrnLiPersonSyabJjccePUrnLiShare7127705247652745216);
+            writer.WriteLongValue("urn:li:reaction:(urn:li:person:syabJjcceP,urn:li:ugcPost:7136526602112303104)", UrnLiReactionUrnLiPersonSyabJjccePUrnLiUgcPost7136526602112303104);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

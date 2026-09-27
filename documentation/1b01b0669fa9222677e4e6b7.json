@@ -1,0 +1,3437 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+  "Title": "Receive job applications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Receive job applications",
+      "Anchor": "receive-job-applications",
+      "SectionPath": [],
+      "Text": "As a partner, when an applicant submits a job application to your posted job on LinkedIn, LinkedIn creates a POST request to the webhook URL you have registered for that job posting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive job applications",
+      "Anchor": "receive-job-applications",
+      "SectionPath": [],
+      "Text": "In the payload, you will receive the job application ID. Ensure that you store this ID to further use it in the Applicant Highlights plugin, Apply Connect Full Profile plugin, and in the Job Application Feedback API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive job applications",
+      "Anchor": "receive-job-applications",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive job applications",
+      "Anchor": "receive-job-applications",
+      "SectionPath": [],
+      "Text": "If the first application fails to deliver to your servers, the job will be converted to an off-site apply (on your website instead of LinkedIn) using the companyApplyUrl provided in the payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementation checklist",
+      "Anchor": "implementation-checklist",
+      "SectionPath": [
+        "Implementation checklist"
+      ],
+      "Text": "Respond to all LinkedIn validation requests. For more information, refer to webhook validation.\nVerify the validity of push event requests using the x-li-signature. For more information, refer to webhook validation.\nReturn a 200 OK status code to indicate that the application is successfully received by your servers. LinkedIn will attempt to re-send the application 6 times if a non-200 status code is returned.\nCreate or supplement existing candidate application details from the delivered application response.\nMark the application source as \u0022LinkedIn Easy Apply\u0022 in your system for tracking and analytics purposes.\nProvide the associated errorCode and additionalErrorDetails for failed application delivery (non-200 HTTP response). For more information, refer to error handling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the request",
+      "Anchor": "validate-the-request",
+      "SectionPath": [
+        "Validate the request"
+      ],
+      "Text": "LinkedIn generates webhook signatures using HMAC-SHA256 encryption with your application\u0027s secret key. The signature is calculated from the escaped unicode request payload, prefixed with hmacsha256=, and included in the X-LI-Signature header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the request",
+      "Anchor": "validate-the-request",
+      "SectionPath": [
+        "Validate the request"
+      ],
+      "Text": "To validate incoming webhooks, compute your own HMAC-SHA256 signature using the same secret key and compare it against the X-LI-Signature header value. Add the prefix hmacsha256= to your signature for a complete match. Test your implementation using local tooling and standard cryptographic libraries in your programming language of choice\u2014never expose your secret key or payload to third-party or online HMAC generators.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook endpoint validation",
+      "Anchor": "webhook-endpoint-validation",
+      "SectionPath": [
+        "Webhook endpoint validation"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook endpoint validation",
+      "Anchor": "webhook-endpoint-validation",
+      "SectionPath": [
+        "Webhook endpoint validation"
+      ],
+      "Text": "The jobApplicationWebhookUrl is provided in the job payload when creating an OnsiteApplyConfigured job\u2014no separate registration in the developer portal is required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook endpoint validation",
+      "Anchor": "webhook-endpoint-validation",
+      "SectionPath": [
+        "Webhook endpoint validation"
+      ],
+      "Text": "To ensure secure communication, all jobApplicationWebhookUrls must support the webhook endpoint validation flow, specified in Webhooks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Child app credentials for webhook validation",
+      "Anchor": "child-app-credentials-for-webhook-validation",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Child app credentials for webhook validation"
+      ],
+      "Text": "LinkedIn sends an applicationId query parameter with validation requests to indicate which application\u0027s clientSecret to use for generating the challenge response. Use the clientSecret associated with the child application specified in the applicationId parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation frequency",
+      "Anchor": "validation-frequency",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Validation frequency"
+      ],
+      "Text": "LinkedIn performs validation of webhook endpoints at the following times:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation frequency",
+      "Anchor": "validation-frequency",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Validation frequency"
+      ],
+      "Text": "Initial validation: When a new jobApplicationWebhookUrl is first registered.\nRe-validation: Every 2 hours after initial validation.\nManual validation: Can be triggered from the developer portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation frequency",
+      "Anchor": "validation-frequency",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Validation frequency"
+      ],
+      "Text": "If re-validation fails 3 consecutive times, the endpoint will be blocked and events will no longer be sent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verifying webhook validation status",
+      "Anchor": "verifying-webhook-validation-status",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Verifying webhook validation status"
+      ],
+      "Text": "You can verify the validation status of your webhook endpoint using any of the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verifying webhook validation status",
+      "Anchor": "verifying-webhook-validation-status",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Verifying webhook validation status"
+      ],
+      "Text": "Developer portal: Navigate to the Webhooks tab in your application, where blocked endpoints are displayed with a blocked status.\nEmail notifications: Review warning emails sent for failed validation attempts and the notification sent when the endpoint is blocked.\nChallenge response: Successfully returning the correct challengeResponse during validation confirms the endpoint is validated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verifying webhook validation status",
+      "Anchor": "verifying-webhook-validation-status",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Verifying webhook validation status"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verifying webhook validation status",
+      "Anchor": "verifying-webhook-validation-status",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Verifying webhook validation status"
+      ],
+      "Text": "If validation fails, the job posting will be automatically converted to off-site apply, and you will stop receiving applications through the webhook.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Webhook payload structure",
+      "Anchor": "webhook-payload-structure",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure"
+      ],
+      "Text": "POST https://{jobApplicationWebhookUrl}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "jobApplicationWebhookUrl payload fields",
+      "Anchor": "jobapplicationwebhookurl-payload-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "jobApplicationWebhookUrl payload fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of push event. This will always be EXPORT_JOB_APPLICATION for Apply Connect use-cases.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalJobId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The reference ID of the external job in the partner\u0027s system to which the applicant applied.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job application ID on LinkedIn. This ID must be saved and passed into the Applicant Highlights widget as a parameter in order to properly display Applicant Highlights for this applicant. This ID is also used by the JobApplicationLifecycleActions API. Partners should save this String in its entirety as the format of the String is subject to change in the future.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "appliedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the job application was submitted. This value is represented in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to the job application questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponses",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "applicantSkills[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of skills that the applicant has. Currently, this list will contain explicit skills listed by the applicant on their LinkedIn profile that match the job posting\u0027s standardized skills, as well as all skills for which an applicant has completed a skill assessment, regardless of whether that skill matches the job posting\u0027s standardized skills. If a partner is ineligible to receive skills due to contractual agreement, then this field will not be present in the payload. Otherwise, this field will contain an array of the applicant\u0027s skills (will be an empty array if the applicant has no skills, null if LinkedIn encounters an issue retrieving applicant skills).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ApplicantSkill[]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobApplicant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job applicant ID on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn in format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationData",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn-issued identity and workplace verification signals at submission time. Absent when the application is not eligible for verification data. For details, see Apply Connect with Verifications and the Verification data schema.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "VerificationData",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleTalentQuestionResponses fields",
+      "Anchor": "simpletalentquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "SimpleTalentQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contactInformationQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to contact information questions. This field will always be present as first name, last name, and email will always be included as part of contact information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContactInformationQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#contactinformationquestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resumeQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to the resume questions. This field is null if there are no resume questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ResumeQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#resumequestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverLetterQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to the cover letter questions. This field is null if there are no cover letter questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CoverLetterQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#coverletterquestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to the work questions. This field is null if there are no work questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WorkQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#workexperiencequestionsetresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educationQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to the education questions. This field is null if there are no education questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EducationQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#educationquestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "voluntarySelfIdentificationQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to voluntary self identification questions. This field is null if there are no voluntary self identification questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VoluntarySelfIdentificationQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#voluntaryselfidentificationquestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "additionalQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to questions in the additional questions section. This field is null if there are no responses to CustomQuestionSets.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdditionalQuestionResponses",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#additionalquestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ApplicantSkill fields",
+      "Anchor": "applicantskill-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "ApplicantSkill fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "skillUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for this skill.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "skillUrn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skillName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The standardized name for this skill.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobMatched",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This indicates whether the skill matched the job posting\u0027s skills.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assessmentVerified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This indicates whether the applicant has passed a skill assessment for this skill.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContactInformationQuestionResponses fields",
+      "Anchor": "contactinformationquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "ContactInformationQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstNameAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s first name. This field will always be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastNameAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s last name. This field will always be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email. This field will always be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "middleNameAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s middle name. This field is null if no middle name was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cellphoneNumberQuestionAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s cellphone number. This field is null if no cellphone was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PhoneNumberAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#phonenumberanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s location answer. This field will not be present if no answer was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocationAnswer",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#locationanswer-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that an applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ResumeQuestionResponses fields",
+      "Anchor": "resumequestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "ResumeQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "resumeQuestionAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resume question response. This field is null if no resume was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DocumentAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#documentanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that the applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CoverLetterQuestionResponses fields",
+      "Anchor": "coverletterquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "CoverLetterQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "coverLetterQuestionAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cover letter question response. This field is null if no cover letter was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DocumentAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#documentanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textCoverLetterQuestionAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text cover letter question response. This field is null if no text cover letter was entered.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that the applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkExperienceQuestionSetResponses fields",
+      "Anchor": "workexperiencequestionsetresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "WorkExperienceQuestionSetResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the city question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the company question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the description question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentDates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The employment dates for this work experience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRangeAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#daterange-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the title question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that the applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EducationQuestionResponses fields",
+      "Anchor": "educationquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "EducationQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "educationExperienceQuestionSetResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of responses to repeating EducationExperienceQuestionSets.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EducationExperienceQuestionSetResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#educationexperiencequestionsetresponses-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that the applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EducationExperienceQuestionSetResponses fields",
+      "Anchor": "educationexperiencequestionsetresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "EducationExperienceQuestionSetResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the city question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degree",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the degree question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "datesAttended",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The dates attended at the educational institution.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRangeAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#daterange-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the field of study question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "school",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The response to the school question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that the applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "VoluntarySelfIdentificationQuestionResponses fields",
+      "Anchor": "voluntaryselfidentificationquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "VoluntarySelfIdentificationQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "disabilityAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to the disability question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DisabilityAnswer Enum",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#disabilityanswer-enum-values"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "genderAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to the gender question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GenderAnswer Enum",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#genderanswer-enum-values"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "raceAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to the race question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RaceAnswer Enum",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#raceanswer-enum-values"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "veteranStatusAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to the veteran status question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VeteranStatus Enum",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#veteranstatusanswer-enum-values"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestionResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question section. This field will not be present in the payload if no custom questions were included. Otherwise, this field will have a list containing question responses that the applicant has provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DisabilityAnswer enum values",
+      "Anchor": "disabilityanswer-enum-values",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "DisabilityAnswer enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022Yes, I Have A Disability, Or Have A History/Record Of Having A Disability\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022No, I Don\u0027t Have A Disability, Or A History/Record Of Having A Disability\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OPT_OUT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022I don\u0027t wish to answer\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "GenderAnswer enum values",
+      "Anchor": "genderanswer-enum-values",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "GenderAnswer enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "MALE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022Male\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FEMALE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CFemale\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OPT_OUT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022I prefer not to specify\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "RaceAnswer enum values",
+      "Anchor": "raceanswer-enum-values",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "RaceAnswer enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "HISPANIC_OR_LATINO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022Hispanic or Latino\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AMERICAN_INDIAN_OR_ALASKA_NATIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CAmerican Indian or Alaska Native (Not Hispanic or Latino)\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ASIAN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022Asian (Not Hispanic or Latino)\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BLACK_OR_AFRICAN_AMERICAN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CBlack or African American (Not Hispanic or Latino)\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NATIVE_HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CNative Hawaiian or Other Pacific Islander (Not Hispanic or Latino)\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TWO_OR_MORE_RACES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CTwo or More Races (Not Hispanic or Latino)\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WHITE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CWhite (Not Hispanic or Latino)\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OPT_OUT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u201CI prefer not to specify\u201D.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "VeteranStatusAnswer enum values",
+      "Anchor": "veteranstatusanswer-enum-values",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "VeteranStatusAnswer enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PROTECTED_VETERAN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022I identify as one or more of the classifications of protected veteran listed above\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_PROTECTED_VETERAN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022I am not a protected veteran\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OPT_OUT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant answered \u0022I prefer not to specify\u0022.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdditionalQuestionResponses fields",
+      "Anchor": "additionalquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "AdditionalQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "customQuestionSetResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of responses to custom question sets.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CustomQuestionResponses[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#customquestionresponses-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CustomQuestionResponses fields",
+      "Anchor": "customquestionresponses-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "CustomQuestionResponses fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "customQuestionSetResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The responses to custom questions within this question set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionResponse[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpletalentquestionresponse-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleTalentQuestionResponse fields",
+      "Anchor": "simpletalentquestionresponse-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "SimpleTalentQuestionResponse fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "questionIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The questionIdentifier used in the SimpleTalentQuestion. This should be used by external systems to map the response to the corresponding question. This field is provided by external systems (for example, ATS partners\u0027) and the LinkedIn system does not use this field as an identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "answer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#simpleanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleAnswerValue fields",
+      "Anchor": "simpleanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "SimpleAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DocumentAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a document question. If this field is present, then all other fields will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DocumentAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#documentanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "multipleChoiceAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a multiple choice question. If this field is present, then all other fields will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#multiplechoiceanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "numericAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a numeric question. If this field is present, then all other fields will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NumericAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#numericanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneNumberAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a phone number question. If this field is present, then all other fields will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PhoneNumberAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#phonenumberanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TextAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a text question. If this field is present, then all other fields will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#textanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DateAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a date question. If this field is present, then all other fields will be null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#dateanswervalue-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TextAnswerValue fields",
+      "Anchor": "textanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "TextAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s text answer for this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "BooleanAnswerValue fields",
+      "Anchor": "booleananswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "BooleanAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s boolean answer for this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRangeAnswerValue fields",
+      "Anchor": "daterangeanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "DateRangeAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s date range answer for this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#daterange-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRange fields",
+      "Anchor": "daterange-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "DateRange fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inclusive (greater than or equal to) value at which to start the range. This value is optional. An unset field indicates an open range; for example, if start is not set and end is 01/01/2016, it indicates values before 01/01/2016.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#date-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The exclusive (strictly less than) value at which to end the range. This value is optional. An unset field indicates an open range; for example, if end is not set and start is 01/01/2016, it indicates values on or after 01/01/2016.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#date-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Date fields",
+      "Anchor": "date-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "Date fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The day component of the date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The month component of the date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The year component of the date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DocumentAnswerValue fields",
+      "Anchor": "documentanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "DocumentAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "mediaUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The MediaUrn that represents the document.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaUrn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The MediaUrl that represents the location of the document.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaUrl",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswerValue fields",
+      "Anchor": "multiplechoiceanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "MultipleChoiceAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "symbolicNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of symbolic names for the answer value from the array of choices. The array may only have more than one item if the multiple choice question accepts multiple answers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "NumericAnswerValue fields",
+      "Anchor": "numericanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "NumericAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integer answer value. This field is present if the member\u0027s answer is an integer. The decimalValue field will be null if this field is present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "decimalValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The decimal answer value. This field is present if the member\u0027s answer is a decimal. The integerValue field will be null if this field is present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PhoneNumberAnswerValue fields",
+      "Anchor": "phonenumberanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "PhoneNumberAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The country code for the phone number. It\u0027s an integer in string format. Also called IDD (International Direct Dialing) or ISD (International Subscriber Dialing) codes. For example, the country code for Switzerland is \u002741\u0027.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "nationalNumber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The phone number you would dial if you were in the same country/region.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The extension number for this phone number. This field is null if no extension was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateAnswerValue fields",
+      "Anchor": "dateanswervalue-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "DateAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s date answer for the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#date-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocationAnswer fields",
+      "Anchor": "locationanswer-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locationCityAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s city answer. This field is null if no city location was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locationCityAnswer",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#locationcityanswer-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationCountryAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s country answer. This field is null if no country location was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocationCountryAnswer",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#locationcountryanswer-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationLatLong",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to the geo location question. This field is null if no geo location was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocationLatLong",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#locationlatlong-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationStateAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s state answer. This field is null if no state location was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locationStateAnswer",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#locationstateanswer-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LocationAnswer fields",
+      "Anchor": "locationanswer-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationAnswer fields"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LocationAnswer fields",
+      "Anchor": "locationanswer-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationAnswer fields"
+      ],
+      "Text": "If an applicant selects a location with only state and country (no city):\n\nlocationCityAnswer will be null since no city is provided.\nlocationStateAnswer and locationCountryAnswer will contain the values for the selected state and country.\nlocationLatLong will still provide valid geo-location data.\n\n\nIf an applicant selects a region (rather than a specific location):\n\nAll location-related fields (locationCityAnswer, locationStateAnswer, locationCountryAnswer, locationLatLong) will be null.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LocationStateAnswer fields",
+      "Anchor": "locationstateanswer-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationStateAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s answer for this question in comma-separated format.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocationCityAnswer fields",
+      "Anchor": "locationcityanswer-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationCityAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s answer for this text question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocationCountryAnswer fields",
+      "Anchor": "locationcountryanswer-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationCountryAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s answer for this text question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocationLatLong fields",
+      "Anchor": "locationlatlong-fields",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Webhook payload structure",
+        "LocationLatLong fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "longitude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The longitude coordinate of the answered location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "latitude",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The latitude coordinate of the answered location.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample payload",
+      "Anchor": "sample-payload",
+      "SectionPath": [
+        "Webhook endpoint validation",
+        "Sample payload"
+      ],
+      "Text": "\u0022Content-Type\u0022:\u0022application/json\u0022,\n\u0022X-LI-Signature\u0022:\u0022d3756e445a8065c0f38c2182c502f8229800eb2c6a9f3b4a1fdf152af867e6fc\u0022,\n\u0022Content-Length\u0022:\u0022107\u0022,\n\u0022Connection\u0022:\u0022Keep-Alive\u0022,\n\u0022Accept-Encoding\u0022:\u0022gzip,deflate\u0022\n\n{\n  \u0022type\u0022: \u0022EXPORT_JOB_APPLICATION\u0022,\n  \u0022externalJobId\u0022: \u0022jobIdOnAtsPartner\u0022,\n  \u0022jobApplicationId\u0022: \u0022urn:li:jobApplication:12345678\u0022,\n  \u0022jobApplicant\u0022: \u0022urn:li:person:abc123\u0022,\n  \u0022appliedAt\u0022: 1602137400011,\n  \u0022applicantSkills\u0022: [\n    {\n      \u0022skillUrn\u0022: \u0022urn:li:skill:12345\u0022,\n      \u0022skillName\u0022: \u0022Java\u0022,\n      \u0022jobMatched\u0022: true,\n      \u0022assessmentVerified\u0022: true\n    }\n  ],\n  \u0022questionResponses\u0022: {\n    \u0022resumeQuestionResponses\u0022: {\n      \u0022resumeQuestionAnswer\u0022: {\n        \u0022mediaUrl\u0022: \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFBV...\u0022,\n        \u0022mediaUrn\u0022: \u0022urn:li:media:AgAAA...\u0022\n      }\n    },\n    \u0022contactInformationQuestionResponses\u0022: {\n      \u0022firstNameAnswer\u0022: {\n        \u0022value\u0022: \u0022First\u0022\n      },\n      \u0022lastNameAnswer\u0022: {\n        \u0022value\u0022: \u0022Last\u0022\n      },\n      \u0022emailAnswer\u0022: {\n        \u0022value\u0022: \u0022applicant@linkedin.com\u0022\n      }\n    },\n    \u0022voluntarySelfIdentificationQuestionResponses\u0022: {\n      \u0022disabilityAnswer\u0022: \u0022NO\u0022,\n      \u0022genderAnswer\u0022: \u0022MALE\u0022,\n      \u0022raceAnswer\u0022: \u0022ASIAN\u0022,\n      \u0022veteranStatusAnswer\u0022: \u0022NOT_PROTECTED_VETERAN\u0022\n    },\n    \u0022educationQuestionResponses\u0022: {\n      \u0022educationExperienceQuestionSetResponses\u0022: [\n        {\n          \u0022school\u0022: {\n            \u0022value\u0022: \u0022UC Berkeley\u0022\n          }\n        }\n      ]\n    },\n    \u0022workQuestionResponses\u0022: {\n      \u0022workExperienceQuestionSetResponses\u0022: [\n        {\n          \u0022company\u0022: {\n            \u0022value\u0022: \u0022LinkedIn\u0022\n          },\n          \u0022title\u0022: {\n            \u0022value\u0022: \u0022Software Engineer\u0022\n          }\n        }\n      ]\n    },\n    \u0022locationAnswer\u0022: {\n      \u0022locationStateAnswer\u0022: \u0022San Francisco, California, United States\u0022,\n      \u0022locationLatLong\u0022: {\n        \u0022longitude\u0022: -122.42016,\n        \u0022latitude\u0022: 37.78008\n      },\n      \u0022locationCityAnswer\u0022: \u0022San Francisco\u0022,\n      \u0022locationCountryAnswer\u0022: \u0022US\u0022\n    },\n    \u0022additionalQuestionResponses\u0022: {\n      \u0022customQuestionSetResponses\u0022: [\n        {\n          \u0022customQuestionResponses\u0022: [\n            {\n              \u0022questionIdentifier\u0022: \u0022question1\u0022,\n              \u0022answer\u0022: {\n                \u0022multipleChoiceAnswerValue\u0022: {\n                  \u0022symbolicNames\u0022: [\n                    \u0022right\u0022\n                  ]\n                }\n              }\n            }\n          ]\n        }\n      ]\n    }\n  }\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve applicant media files",
+      "Anchor": "retrieve-applicant-media-files",
+      "SectionPath": [
+        "Retrieve applicant media files"
+      ],
+      "Text": "The mediaUrl will be returned when the applicant uploads a resume, cover letter, or additional files with their job application. This media is short-lived and will be available for 30 days. This url can be accessed and the media file stored for use within your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Sample request"
+      ],
+      "Text": "GET https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFBV...",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample headers",
+      "Anchor": "sample-headers",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Sample headers"
+      ],
+      "Text": "Authorization: Bearer {access_token}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample headers",
+      "Anchor": "sample-headers",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Sample headers"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample headers",
+      "Anchor": "sample-headers",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Sample headers"
+      ],
+      "Text": "Use the content-type header in the response to indicate how the media data should be interpreted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Troubleshooting"
+      ],
+      "Text": "In a browser you can paste the mediaUrl and an active access token using the oauth2_access_token field to download the resume media.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Troubleshooting",
+      "Anchor": "troubleshooting",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Troubleshooting"
+      ],
+      "Text": "https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFBV...\u0026oauth2_access_token=AQXsov...",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve applicant media files",
+        "Troubleshooting",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "oauth2_access_token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token of the application which received the mediaUrl.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error handling"
+      ],
+      "Text": "If an application delivery is attempted and your system is unable to process, return the HTTP response and the associated errorCode and additionalErrorDetails in the response body to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error handling"
+      ],
+      "Text": "The following error codes can be returned:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error handling"
+      ],
+      "Text": "",
+      "Headers": [
+        "Error Code",
+        "Description",
+        "Job Posting Behavior",
+        "Impact to Applicant"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "MISSING_REQUIRED_RESPONSE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Responses are missing for the required questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant will receive an application delivery failure email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INPUT_VALIDATION_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input validation failed. For example, a phone number is entered in a format that the ATS doesn\u0027t accept, incorrect formatting or file type for attachments, or the size of an attachment exceeded the limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant will receive an application delivery failure email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DUPLICATE_APPLICATION_RECEIVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A duplicate job application is received. This error only occurs if the applicationId of the incoming application matches that of an application that was already received.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant will receive a successful delivery email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_POSTING_CLOSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job posting is closed and cannot receive any more applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Disable onsite apply (LinkedIn Easy Apply) and redirect to apply url.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant will receive an application delivery failure email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too many application submissions are being processed at the same time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn will retry to deliver the application. Once retries have been exhausted, the applicant will receive an application delivery failure email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SIGNATURE_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The signature from the job application failed to match with the partner\u0027s signature.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn will not retry to deliver the application as this will be considered a fatal error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TRANSIENT_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An unknown error occurred on the ATS end. Only use this error when confident that the application should be retried after a short delay.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn will retry to deliver the application. Once retries have been exhausted, the applicant will receive an application delivery failure email.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OTHER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An error was caused by other unknown issues. This error should be sent by the partner when the error doesn\u0027t fall into the other predefined categories.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn will retry to deliver the application. Once retries have been exhausted, the applicant will receive an application delivery failure email.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Application delivery failure email",
+      "Anchor": "application-delivery-failure-email",
+      "SectionPath": [
+        "Error handling",
+        "Application delivery failure email"
+      ],
+      "Text": "The applicants receive the following email notification when their application fails to deliver. Selecting Apply on company website redirects them to apply directly on the company\u0027s website.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error response schema",
+      "Anchor": "error-response-schema",
+      "SectionPath": [
+        "Error response schema"
+      ],
+      "Text": "The error response schemas are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ApplicationDeliveryErrorDetails schema",
+      "Anchor": "applicationdeliveryerrordetails-schema",
+      "SectionPath": [
+        "Error response schema",
+        "ApplicationDeliveryErrorDetails schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "errors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array(ApplicationDeliveryError)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field contains error details, including the error code and corresponding error message sent by the partner.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ApplicationDeliveryError schema",
+      "Anchor": "applicationdeliveryerror-schema",
+      "SectionPath": [
+        "Error response schema",
+        "ApplicationDeliveryError schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "errorCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The error code that represents the error that occurred during application delivery failure.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "additionalErrorDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#additionalerrordetails-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field provides additional information about the delivery failure.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdditionalErrorDetails schema",
+      "Anchor": "additionalerrordetails-schema",
+      "SectionPath": [
+        "Error response schema",
+        "AdditionalErrorDetails schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "missingQuestionResponseErrorDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#missingquestionresponseerrordetails-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field provides details about missing required question responses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "inputValidationErrorDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#inputvalidationerrordetails-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field provides details about input validation failures.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "otherErrorDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field provides a description of other errors that don\u0027t fall into the predefined categories.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "duplicateApplicationErrorDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#duplicateapplicationerrordetails-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field provides details about duplicate application submissions.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MissingQuestionResponseErrorDetails schema",
+      "Anchor": "missingquestionresponseerrordetails-schema",
+      "SectionPath": [
+        "Error response schema",
+        "MissingQuestionResponseErrorDetails schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partnerQuestionIdentifiers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array(string)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of partner question identifiers for which responses are missing.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "InputValidationErrorDetails schema",
+      "Anchor": "inputvalidationerrordetails-schema",
+      "SectionPath": [
+        "Error response schema",
+        "InputValidationErrorDetails schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "invalidInputQuestionIdentifierDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array invalidInputQuestionIdentifierDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04#invalidinputquestionidentifierdetails-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array containing details about questions with invalid input responses.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "InvalidInputQuestionIdentifierDetails schema",
+      "Anchor": "invalidinputquestionidentifierdetails-schema",
+      "SectionPath": [
+        "Error response schema",
+        "InvalidInputQuestionIdentifierDetails schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partnerQuestionIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The partner\u0027s identifier for the question that has invalid input.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validationHint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A hint or message describing why the validation failed.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DuplicateApplicationErrorDetails schema",
+      "Anchor": "duplicateapplicationerrordetails-schema",
+      "SectionPath": [
+        "Error response schema",
+        "DuplicateApplicationErrorDetails schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "duplicateApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the existing application that matches the incoming duplicate application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample missing required response",
+      "Anchor": "sample-missing-required-response",
+      "SectionPath": [
+        "Sample application delivery response",
+        "Sample missing required response"
+      ],
+      "Text": "{\n\u0022errors\u0022: [{\n\u0022errorCode\u0022:\u0022MISSING_REQUIRED_RESPONSE\u0022,\n\u0022additionalErrorDetails\u0022: {\n    \u0022missingQuestionResponseErrorDetails\u0022: {\n        \u0022partnerQuestionIdentifiers\u0022:[\u002293940492\u0022]\n      }\n     }\n   }]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample input validation response",
+      "Anchor": "sample-input-validation-response",
+      "SectionPath": [
+        "Sample application delivery response",
+        "Sample input validation response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: [\n      {\n        \u0022errorCode\u0022: \u0022INPUT_VALIDATION_FAILED\u0022,\n        \u0022additionalErrorDetails\u0022: {\n          \u0022inputValidationErrorDetails\u0022: {\n            \u0022invalidInputQuestionIdentifierDetails\u0022: [\n              {\n                \u0022partnerQuestionIdentifier\u0022: \u002212345\u0022,\n                \u0022validationHint\u0022: \u0022Invalid Zip Code\u0022\n              }\n            ]\n          }\n        }\n      }\n    ]\n  }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample duplicate application response",
+      "Anchor": "sample-duplicate-application-response",
+      "SectionPath": [
+        "Sample application delivery response",
+        "Sample duplicate application response"
+      ],
+      "Text": "{\n\u0022errors\u0022: [{\n\u0022errorCode\u0022:\u0022DUPLICATE_APPLICATION_RECEIVED\u0022,\n\u0022additionalErrorDetails\u0022: {\n    \u0022duplicateApplicationErrorDetails\u0022: {\n        \u0022duplicateApplicationId\u0022:\u002293940492\u0022\n         }\n       }\n    }]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

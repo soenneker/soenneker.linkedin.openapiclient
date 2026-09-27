@@ -1,0 +1,407 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-definitions",
+  "Title": "Group Definitions API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-definitions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-memberships",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-posts-and-actions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Group Definitions API",
+      "Anchor": "group-definitions-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Definitions API",
+      "Anchor": "group-definitions-api",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Definitions API",
+      "Anchor": "group-definitions-api",
+      "SectionPath": [],
+      "Text": "The Group Definitions API provides rich access to see the metadata of LinkedIn groups.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Group Definition Schema",
+      "Anchor": "group-definition-schema",
+      "SectionPath": [
+        "Group Definition Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The description of what this Group is about.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of this Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logoUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional DigitalmediaAsset URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset?context=linkedin/compliance/context"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "DigitalMediaAssetUrn of the originally uploaded logo image. If empty, then there is no logo image for this Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rules",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The rules of this Group. This is Member generated input. This can be thought of as the policy of the Group as defined by an admin. A null value means that an admin has not defined any rules for their Group.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The Group title.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of Group. Can be either: STANDARD - Indicates that the Group is a STANDARD type. UNLISTED - Indicated the Group is an UNLISTED type. An UNLISTED Group has 2 restrictions: Members can join if and only if an admin invites them \u0026 the group will not be surfaced in any search results.",
+            "Links": [],
+            "Values": [
+              "STANDARD - Indicates that the Group is a STANDARD type.",
+              "UNLISTED - Indicated the Group is an UNLISTED type. An UNLISTED Group has 2 restrictions: Members can join if and only if an admin invites them \u0026 the group will not be surfaced in any search results."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the Group that will be used in URLs. This value is globally unique amongst all other groups and is URL safe. A null value indicates there is no vanityName and this group will not be locatable via a static URL.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Group Definitions",
+      "Anchor": "retrieving-group-definitions",
+      "SectionPath": [
+        "Retrieving Group Definitions"
+      ],
+      "Text": "You can retrieve one or more group information via group ID using the API requests below. You will get a 403 if you are blocked from a specific group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Group Definitions",
+      "Anchor": "retrieving-group-definitions",
+      "SectionPath": [
+        "Retrieving Group Definitions"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupDefinitions/{group ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Group Definitions",
+      "Anchor": "retrieving-group-definitions",
+      "SectionPath": [
+        "Retrieving Group Definitions"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupDefinitions?ids=List({group ID1},{group ID2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Group Definitions",
+      "Anchor": "retrieving-group-definitions",
+      "SectionPath": [
+        "Retrieving Group Definitions"
+      ],
+      "Text": "Note : In order to make sample calls above succeed, you need indicate X-RestLi-Protocol-Version:2.0.0 in the request header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample group response",
+      "Anchor": "sample-group-response",
+      "SectionPath": [
+        "Retrieving Group Definitions",
+        "sample group response"
+      ],
+      "Text": "{\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022, \n        \u0022time\u0022: 1451016805\n    }, \n    \u0022description\u0022: {\n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US  \u0022, \n            \u0022language\u0022: \u0022en\u0022, \n            \u0022variant\u0022: null\n        }, \n        \u0022value\u0022: \u0022To discuss LinkedIn APIs!\u0022\n    }, \n    \u0022id\u0022: 7025949, \n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022, \n        \u0022time\u0022: 1452001682\n    }, \n    \u0022logoUrn\u0022: \u0022urn:li:digitalmediaAsset:C4E07AQGzgQPFVWqo9w\u0022, \n    \u0022rules\u0022: {\n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US  \u0022, \n            \u0022language\u0022: \u0022en\u0022, \n            \u0022variant\u0022: null\n        }, \n        \u0022value\u0022: \u0022Refer to https://developer.linkedin.com/docs\u0022\n    }, \n    \u0022title\u0022: {\n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US  \u0022, \n            \u0022language\u0022: \u0022en\u0022, \n            \u0022variant\u0022: null\n        }, \n        \u0022value\u0022: \u0022My Awesome Developer Group\u0022\n    }, \n    \u0022type\u0022: \u0022UNLISTED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Group Definitions",
+      "Anchor": "updating-group-definitions",
+      "SectionPath": [
+        "Updating Group Definitions"
+      ],
+      "Text": "As a group admin, you can edit your group\u0027s title , description , rules , logoUrn and type .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Group Definitions",
+      "Anchor": "updating-group-definitions",
+      "SectionPath": [
+        "Updating Group Definitions"
+      ],
+      "Text": "POST\n\nhttps://api.linkedin.com/v2/groupDefinitions/{group ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "request body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Updating Group Definitions",
+        "request body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022description\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US  \u0022, \n                    \u0022language\u0022: \u0022en\u0022, \n                    \u0022variant\u0022: null\n                }, \n                \u0022value\u0022: \u0022Updating my group\u0027s description!\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deleting Group Definitions",
+      "Anchor": "deleting-group-definitions",
+      "SectionPath": [
+        "Deleting Group Definitions"
+      ],
+      "Text": "As a group admin, you have the ability to delete your own group(s).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Deleting Group Definitions",
+      "Anchor": "deleting-group-definitions",
+      "SectionPath": [
+        "Deleting Group Definitions"
+      ],
+      "Text": "DELETE\n\nhttps://api.linkedin.com/v2/groupDefinitions/{group ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration of groupUrn and logoUrn",
+      "Anchor": "decoration-of-groupurn-and-logourn",
+      "SectionPath": [
+        "Decoration of groupUrn and logoUrn"
+      ],
+      "Text": "To decorate a groupUrn, you will need specify ~:groupDefinition . See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Decoration of groupUrn and logoUrn",
+      "Anchor": "decoration-of-groupurn-and-logourn",
+      "SectionPath": [
+        "Decoration of groupUrn and logoUrn"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupMemberships?q=member\u0026membershipStatuses=MEMBER\u0026member={person URN}\u0026projection=(elements*(group~:groupDefinition))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration of groupUrn and logoUrn",
+      "Anchor": "decoration-of-groupurn-and-logourn",
+      "SectionPath": [
+        "Decoration of groupUrn and logoUrn"
+      ],
+      "Text": "To decorate a logoUrn, you will need specify ~:playableStreams . See the here for more information and below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Decoration of groupUrn and logoUrn",
+      "Anchor": "decoration-of-groupurn-and-logourn",
+      "SectionPath": [
+        "Decoration of groupUrn and logoUrn"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupDefinitions/{ID}?projection=(logoUrn~:playableStreams)",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

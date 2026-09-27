@@ -1,0 +1,738 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+  "Title": "LinkedIn Learning and Cornerstone OnDemand Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Cornerstone and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cornerstone Deep Integration Functionality",
+      "Anchor": "cornerstone-deep-integration-functionality",
+      "SectionPath": [
+        "Cornerstone Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML SSO Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cornerstone Deep Integration Functionality",
+      "Anchor": "cornerstone-deep-integration-functionality",
+      "SectionPath": [
+        "Cornerstone Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cornerstone Deep Integration Functionality",
+      "Anchor": "cornerstone-deep-integration-functionality",
+      "SectionPath": [
+        "Cornerstone Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cornerstone Deep Integration Functionality",
+      "Anchor": "cornerstone-deep-integration-functionality",
+      "SectionPath": [
+        "Cornerstone Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cornerstone Deep Integration Functionality",
+      "Anchor": "cornerstone-deep-integration-functionality",
+      "SectionPath": [
+        "Cornerstone Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Cornerstone deep integration configuration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cornerstone Deep Integration Functionality",
+      "Anchor": "cornerstone-deep-integration-functionality",
+      "SectionPath": [
+        "Cornerstone Deep Integration Functionality"
+      ],
+      "Text": "An active Cornerstone LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Cornerstone LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Cornerstone\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "Do not configure your SSO unless you are certain of your organization\u0027s SSO method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and\nCornerstone to establish a secure SAML single sign-on (SSO) connection that\nensures seamless and secure access to content. SSO authentication reduces\nfriction for users and administrators by eliminating the need for manual user\nregistration. SSO ensures that learners spend more of their time watching content and less of their time trying to remember usernames and passwords. You have two configuration options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "Connect to your organization\u2019s identity management solution (Recommended) \u2013 If your organization has a centrally managed identity management solution like Azure AD, you can configure your identity provider to authenticate users into Cornerstone and LinkedIn Learning.\n\nConnect directly to Cornerstone IdP \u2013 You can configure LinkedIn Learning and Cornerstone to establish a direct SAML single sign-on (SSO) connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "If you opt to connect to your organization\u2019s identity management\nsolution, you must configure it to send the same unique user identifier to\nLinkedIn Learning and Cornerstone. If UUIDs aren\u2019t the same between the two\nsystems, learner activity tracking (xAPI) does not work. To find your user\u0027s\nidentifier that is being used in Cornerstone, locate their \u0022User ID\u0022 value in\nthe LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. Courses are added\nat a rate of 25-30 courses per week at no extra cost. Traditionally, the\nadministrator of a content discovery platform manually uploads new content on a\nregular interval. However, the Cornerstone deep integration uses LinkedIn\nLearning APIs to dynamically refresh the content library daily. This process\nensures new LinkedIn Learning content is available within 24 hours of its\nrelease.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "All content titles, subjects and descriptions are aggregated and indexed to\naccommodate keyword searches and support efficient discoverability. Cornerstone\nsupports automatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (Authentication Steps)",
+      "Anchor": "enabling-saml-sso-authentication-steps",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (Authentication Steps)"
+      ],
+      "Text": "You can configure SSO authentication in your LinkedIn Learning Admin settings.\nMost organizations have a centrally -managed identity management solution like\nAzure AD, Okta, or ADFS which can be configured to authenticate users into\nenterprise applications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (Authentication Steps)",
+      "Anchor": "enabling-saml-sso-authentication-steps",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (Authentication Steps)"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with\nyour organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (Authentication Steps)",
+      "Anchor": "enabling-saml-sso-authentication-steps",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (Authentication Steps)"
+      ],
+      "Text": "In the Cornerstone navigation menu, go to Admin \u003E Tools \u003E Edge \u003E Marketplace.\n\nIn the Edge Marketplace, search for LinkedIn and click the LinkedIn Learning tile.\n\n\nClick Try it Free. This button now appears as Install.\n\n\nClick Install. Then, when prompted, click Configure Now.\n\n\nIn a new window or tab, login to your LinkedIn Learning account and, if you are not already in the Admin screen, select Go to Admin \u003E Me \u003E Authenticate.\n\n\nSelect Configure single sign-on and click Add new SSO.\n\n\nThere is one SSO connection by default, but you can add more than one connection. Expand the default SSO connection or click Add a new SSO.\n\nSelect an SSO method (in this case, \u0022SAML\u0022).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "To complete the SAML SSO enablement process, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "From the Identity provider settings tab, click Load and copy information from fields.\n\n\nCopy the values of the LinkedIn Learning fields noted in the table below. Switch back to the Cornerstone portal window/tab. Paste the LinkedIn\nLearning values in their corresponding Cornerstone fields under the Service Provider section based on the mapping below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "",
+      "Headers": [
+        "LINKEDIN LEARNING (COPY)",
+        "CORNERSTONE (PASTE)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Entity ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SP Entity ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Assertion Consumer Service (ACS) URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SP ACS URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SP X.509 Certificate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SP Certificate",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "On the Cornerstone Settings page, copy the values of the fields under the Identity Provider section as outlined in the below table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "",
+      "Headers": [
+        "CORNERSTONE (COPY)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "IdP Entity ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IdP Redirect URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IdP Certificate",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "Paste the values in the corresponding fields of the Identity Provider page.\n\n\nSwitch back to the LinkedIn Learning tab.\n\nOn the Authenticate users with SAML SSO screen, select the SSO settings tab.\n\nPaste the Cornerstone identity provider values (from Step 2 of this section) to their corresponding LinkedIn Learning fields based on the mapping below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "",
+      "Headers": [
+        "CORNERSTONE (COPY)",
+        "LINKEDIN LEARNING (PASTE)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "IdP Entity ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Issuer String or Entity ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IdP Redirect URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IdP redirect endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IdP Certificate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "x.509 Public Certificate",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO (IdP Settings)",
+      "Anchor": "enabling-saml-sso-idp-settings",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO (IdP Settings)"
+      ],
+      "Text": "Leave the Sign AuthnRequest option as \u0022No\u0022 (default) in LinkedIn Learning.\n\nClick Save to save the SSO configuration.\n\n\nSet the connection status to \u0022Active\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to your IdP (Recommended)",
+      "Anchor": "connect-to-your-idp-recommended",
+      "SectionPath": [
+        "Configuration",
+        "Connect to your IdP (Recommended)"
+      ],
+      "Text": "To authenticate learners into Cornerstone and LinkedIn Learning through your\nidentity provider (IdP), follow the LinkedIn Learning SSO Integration Partners Overview guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to your IdP (Recommended)",
+      "Anchor": "connect-to-your-idp-recommended",
+      "SectionPath": [
+        "Configuration",
+        "Connect to your IdP (Recommended)"
+      ],
+      "Text": "When you connect with your identify provider, the unique user identifier you pass to LinkedIn Learning must match the user\u2019s \u2018User ID\u2019 value in Cornerstone or reporting will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to your IdP (Recommended)",
+      "Anchor": "connect-to-your-idp-recommended",
+      "SectionPath": [
+        "Configuration",
+        "Connect to your IdP (Recommended)"
+      ],
+      "Text": "A Cornerstone admin can find this value by taking the following actions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to your IdP (Recommended)",
+      "Anchor": "connect-to-your-idp-recommended",
+      "SectionPath": [
+        "Configuration",
+        "Connect to your IdP (Recommended)"
+      ],
+      "Text": "In CSOD, go to Admin \u003E Users.\n\nSearch any user/s, and identify the \u0022User ID\u0022 field.\n\nNote this value must be passed in the SAML response, preferably as the \u0022NameID\u0022 value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connect to Cornerstone IdP",
+      "Anchor": "connect-to-cornerstone-idp",
+      "SectionPath": [
+        "Configuration",
+        "Connect to Cornerstone IdP"
+      ],
+      "Text": "From the Identity provider settings tab, click Load and copy information from fields.\n\n\nCopy and paste the fields from LinkedIn Learning into the Edge Marketplace Service Provider settings. Following the mapping below:\nExpand table\n\n\nLINKEDIN LEARNING TEXT (COPY)\nCORNERSTONE INPUTS (PASTE)\n\n\n\n\nEntity ID\nSP Entity ID\n\n\nAssertion Consumer Service (ACS) URL\nSP ACS URL\n\n\nSP X.509 Certificate (warning below)\nSP Certificate\n\n\n\n\n Note\nBefore copying and pasting the SP X.509 Certificate into Cornerstone, you must remove line breaks to avoid authentication errors.\n\n\nClick Save to save the SAML SSO configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Validation",
+      "Anchor": "sso-validation",
+      "SectionPath": [
+        "Configuration",
+        "SSO Validation"
+      ],
+      "Text": "To validate your SSO settings, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Validation",
+      "Anchor": "sso-validation",
+      "SectionPath": [
+        "Configuration",
+        "SSO Validation"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nIn the browser address bar, copy the account ID value. In the example below the account ID is \u0022123456\u0022.\nhttps://www.linkedin.com/enterprise/accountcenter/settings?account=123456\n\nConstruct an SSO URL for testing by pasting the account ID value from the last step into the URL below.\nSSO URL Format:\nhttps://www.linkedin.com/checkpoint/enterprise/login/[account-ID]?application=learning\nSSO URL Example:\nhttps://www.linkedin.com/checkpoint/enterprise/login/2141641?application=learning\n\nCopy and paste the SSO URL into a private browsing window. Provide your Cornerstone credentials when prompted. If SSO authentication is working as expected, you are redirected to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Validation",
+      "Anchor": "sso-validation",
+      "SectionPath": [
+        "Configuration",
+        "SSO Validation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Validation",
+      "Anchor": "sso-validation",
+      "SectionPath": [
+        "Configuration",
+        "SSO Validation"
+      ],
+      "Text": "If your LinkedIn Learning account has account binding enabled,\nLinkedIn may prompt you to log in even after successful SSO authentication. LinkedIn Learning uses this login to associate your LinkedIn Learning login with your personal LinkedIn account to drive custom content recommendations. If you encounter the below screen, please login with your personal LinkedIn credentials. If you do not have a LinkedIn account, you have the option to create one.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "Before proceeding, ensure that you have configured and enabled SSO for your LinkedIn Learning account. If you enable content syncing before completing the SSO configuration, course launches will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Cornerstone to sync LinkedIn Learning catalog metadata, you must provision API keys in LinkedIn Learning admin settings. To enable content catalog sync, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "This section requires you to exchange values between the LinkedIn Learning admin dashboard and the \u0022LinkedIn Learning\u0022 Cornerstone Edge Connector. Login to both LinkedIn Learning and Cornerstone to complete the following sections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "Login to LinkedIn Learning. If you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, click Access content and reports via API, then expand the Generate LinkedIn Learning REST API panel.\n\n\nClick Add Application.\n\nProvide the name of your learning platform (e.g., \u0022Cornerstone\u0022), as the application name.\n\nProvide a short description of the integration use case in the application description field. For example, \u0022Cornerstone content catalog sync\u0022.\n\nThere are two\u202Fcheckboxes\u202F\u2013\u202FContent\u202Fand\u202FReport. Select\u00A0Content.\u202F\u00A0\n\nClick Generate application.\n\n\nSave the Client ID and Client Secret values.\n\nLog in to Cornerstone as an administrator, and open the LinkedIn Learning Edge Connector configuration.\n\nPaste the Client ID and Client Secret into the appropriate first two fields of the Edge configuration page.\n\n\nKeep the Cornerstone Edge Connector configuration and the LinkedIn Learning windows open for the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking",
+      "Anchor": "enable-xapi-learner-activity-tracking",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking"
+      ],
+      "Text": "Login to LinkedIn Learning, if you are not already in the Admin screen, select Go to Admin\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add Integration.\n\nIn the Integration Name field, type \u0022Cornerstone reporting\u0022.\n\nIn the User Type field, select \u0022ID\u0022 (default value).\n\nGo to Cornerstone, copy and paste the Client Secret, Client ID, Tenant Server URL and OAuth Server URL in the Cornerstone Edge settings under the \u0022xAPI\u0022 header into the LinkedIn Learning xAPI configuration.\nExpand table\n\n\nLINKEDIN LEARNING TEXT (COPY)\nCORNERSTONE INPUTS (PASTE)\n\n\n\n\nOAuth Server URL\nOAuth Server URL\n\n\nxAPI URL\nTenant Server URL\u00A0\n\n\nClient ID\nClient ID\n\n\nClient Secret\nClient Secret\n\n\n\n\nClick Enable.\n\nYou have enabled the Cornerstone xAPI keys in LinkedIn Learning.\n\n\nIn Cornerstone\u2019s Edge Marketplace, under Identity Provider, toggle Bypass AuthNRequest validation to \u0022On\u0022.\n\n Caution\nYou must enable this setting if the Sign AuthNRequest validation is set to \u0022No (Default)\u0022 in LinkedIn Learning, or CSOD learner SSOs will fail.\n\n\nEnable Bypass Registration to allow all LinkedIn course completions to appear on a learner\u2019s CSOD transcript.\n\nEnable Subjects Synchronization to import course subjects.\n\nClick Save Settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking",
+      "Anchor": "enable-xapi-learner-activity-tracking",
+      "SectionPath": [
+        "Configuration",
+        "Enable xAPI Learner Activity Tracking"
+      ],
+      "Text": "In Cornerstone, the enabled xAPI settings allow you to search and review learner data:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI (Learner Activity Tracking) Validation",
+      "Anchor": "xapi-learner-activity-tracking-validation",
+      "SectionPath": [
+        "Configuration",
+        "xAPI (Learner Activity Tracking) Validation"
+      ],
+      "Text": "To confirm that the success of your xAPI configuration, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI (Learner Activity Tracking) Validation",
+      "Anchor": "xapi-learner-activity-tracking-validation",
+      "SectionPath": [
+        "Configuration",
+        "xAPI (Learner Activity Tracking) Validation"
+      ],
+      "Text": "Copy and paste the SSO URL (from the previous section) into an incognito or private browsing window. Provide your Cornerstone credentials when prompted.\n\nComplete a course LinkedIn Learning course in full. Below you will find a list of short courses you may want to use to test completions.\n\nOutlook: Email Signatures for Beginners (19m)\n\nWord: Mail Merge for Beginners (24m)\n\nManaging your Time (11m)\n\nLinkedIn Quick Tips (18m)\n\nHow to Tell Stories That Win Market Share (24m)\n\n\n\nAfter completing a course, visit your learner transcript in Cornerstone to ensure the completion appears.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI (Learner Activity Tracking) Validation",
+      "Anchor": "xapi-learner-activity-tracking-validation",
+      "SectionPath": [
+        "Configuration",
+        "xAPI (Learner Activity Tracking) Validation"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their Cornerstone OnDemand instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

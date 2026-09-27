@@ -1,0 +1,198 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api-faq",
+  "Title": "LinkedIn Learning Reporting API FAQs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api-faq",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Reporting API FAQs",
+      "Anchor": "linkedin-learning-reporting-api-faqs",
+      "SectionPath": [],
+      "Text": "LinkedIn Learning Reporting APIs provide key insights like course completions, user days active, and learner progress, among others, to admins. These insights help organizations measure the effectiveness of their L\u0026D initiatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Reporting API FAQs",
+      "Anchor": "linkedin-learning-reporting-api-faqs",
+      "SectionPath": [],
+      "Text": "Here are some of the most frequently asked questions about this feature:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the LinkedIn Learning Reporting API and which Use Cases Does It Support?",
+      "Anchor": "what-is-the-linkedin-learning-reporting-api-and-which-use-cases-does-it-support",
+      "SectionPath": [
+        "What is the LinkedIn Learning Reporting API and which Use Cases Does It Support?"
+      ],
+      "Text": "The LinkedIn Learning Reporting API allows developers to access key insights and engagement metrics such as course completions, hours of content viewed, and learner days active, in a programmatic way.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the LinkedIn Learning Reporting API and which Use Cases Does It Support?",
+      "Anchor": "what-is-the-linkedin-learning-reporting-api-and-which-use-cases-does-it-support",
+      "SectionPath": [
+        "What is the LinkedIn Learning Reporting API and which Use Cases Does It Support?"
+      ],
+      "Text": "You can aggregate insights by entities like individuals, groups, and accounts, or content objects like courses and videos. These insights can help organizations to measure the effectiveness of learning and inform talent development initiatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What do I need to use the LinkedIn Learning Reporting API?",
+      "Anchor": "what-do-i-need-to-use-the-linkedin-learning-reporting-api",
+      "SectionPath": [
+        "What do I need to use the LinkedIn Learning Reporting API?"
+      ],
+      "Text": "You need to have a LinkedIn Learning enterprise license and admin access to provision the API keys. You do not need to be have an LMS to use the Reporting API to query learner data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Where can I find documentation for the LinkedIn Learning Reporting API?",
+      "Anchor": "where-can-i-find-documentation-for-the-linkedin-learning-reporting-api",
+      "SectionPath": [
+        "Where can I find documentation for the LinkedIn Learning Reporting API?"
+      ],
+      "Text": "You can obtain detailed instructions about retrieving Learning reports here. You can also check out the LinkedIn Learning Reporting API guide to get more information about this feature.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the difference between the LinkedIn Learning Reporting API and the xAPI?",
+      "Anchor": "what-is-the-difference-between-the-linkedin-learning-reporting-api-and-the-xapi",
+      "SectionPath": [
+        "What is the difference between the LinkedIn Learning Reporting API and the xAPI?"
+      ],
+      "Text": "The Reporting API can be used to provide programmatic access to LinkedIn Learning reports. The most common use of the API is to bulk-import learner activity regularly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the difference between the LinkedIn Learning Reporting API and the xAPI?",
+      "Anchor": "what-is-the-difference-between-the-linkedin-learning-reporting-api-and-the-xapi",
+      "SectionPath": [
+        "What is the difference between the LinkedIn Learning Reporting API and the xAPI?"
+      ],
+      "Text": "Unlike the Reporting API, xAPI is used to push learner activity (like course completions) out to external systems as they happen. It is most commonly used to notify external Learning Management System when a LinkedIn Learning course has been completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the difference between the LinkedIn Learning Reporting API and the xAPI?",
+      "Anchor": "what-is-the-difference-between-the-linkedin-learning-reporting-api-and-the-xapi",
+      "SectionPath": [
+        "What is the difference between the LinkedIn Learning Reporting API and the xAPI?"
+      ],
+      "Text": "While the Reporting API enables retrieving aggregated data, the xAPI only provides individual events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why do I Have to Agree to Additional API Program Terms in Order to Gain Access to my Client Id and Client Secret Tokens?",
+      "Anchor": "why-do-i-have-to-agree-to-additional-api-program-terms-in-order-to-gain-access-to-my-client-id-and-client-secret-tokens",
+      "SectionPath": [
+        "Why do I Have to Agree to Additional API Program Terms in Order to Gain Access to my Client Id and Client Secret Tokens?"
+      ],
+      "Text": "Once you have access to your Client Id and Client Secret tokens, you have the ability to use those access codes in combination with the LinkedIn Learning APIs (including the Content and the Reporting APIs) to access LinkedIn Learning course information and learner activity (like days active and video views). Any use of LinkedIn Learning APIs is subject to certain standard API terms to ensure that any related functionality, along with any data available via the APIs, is being used appropriately. If you\u2019re not using or sub-licensing the LinkedIn Learning APIs and are only accessing your Client Id and Client Secret tokens to provide them to your learning management system, you\u2019ll notice that your obligations under the API Program Terms are primarily limited to protecting the confidentiality and security of your Client Id and Client Secret tokens. In addition, the API Program Terms clearly state that in the event of any conflict between your LinkedIn customer agreement and the API Program Terms, your customer agreement shall govern.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] What changes are being made to the Reporting API?",
+      "Anchor": "changes-oct-2021-what-changes-are-being-made-to-the-reporting-api",
+      "SectionPath": [
+        "[Changes Oct 2021] What changes are being made to the Reporting API?"
+      ],
+      "Text": "The Reporting API is being upgraded to support all content types and providers now available on LinkedIn Learning Hub. This means you will be able to access engagement for LinkedIn Learning content, learning paths you created or any content partners you\u2019ve integrated. In addition, the Reporting API is now using the same reporting infrastructure that powers our CSV reports, resulting in big improvements in scalability and performance. As a result of this change, the API will have the same data recency of our CSV reports.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] How is the recency of data changing?",
+      "Anchor": "changes-oct-2021--how-is-the-recency-of-data-changing",
+      "SectionPath": [
+        "[Changes Oct 2021] How is the recency of data changing?"
+      ],
+      "Text": "The Reporting API data will no longer be returned in real-time. Reporting API data will run in conjunction with all reporting data under the new system. Every day at midnight PST we start a process to compute the previous day\u2019s data. This data typically is pushed into our system by 8am PST the next day. The results from Reporting API will now contain a latestDataAt field which dentes when the data was last updated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] What do I need to do to account for these changes?",
+      "Anchor": "changes-oct-2021-what-do-i-need-to-do-to-account-for-these-changes",
+      "SectionPath": [
+        "[Changes Oct 2021] What do I need to do to account for these changes?"
+      ],
+      "Text": "We are giving customers a 2 month overlap period to ensure that they can test and migrate to the new system. Between October 6th and December 6th, all calls will still be sent to the previous Reporting API system until you make changes to the contentSource parameter values.\nBefore December 6th, we ask that you test your scripts with this new system and make any necessary changes to account for the data delay. After December 6th, we will automatically route all API calls to the new system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] What are the new values accepted by the contentSource parameter?",
+      "Anchor": "changes-oct-2021-what-are-the-new-values-accepted-by-the-contentsource-parameter",
+      "SectionPath": [
+        "[Changes Oct 2021] What are the new values accepted by the contentSource parameter?"
+      ],
+      "Text": "To migrate to the new API system, you need to update the contentSource parameter to one of the four values below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] What are the new values accepted by the contentSource parameter?",
+      "Anchor": "changes-oct-2021-what-are-the-new-values-accepted-by-the-contentsource-parameter",
+      "SectionPath": [
+        "[Changes Oct 2021] What are the new values accepted by the contentSource parameter?"
+      ],
+      "Text": "LINKEDIN_LEARNING: Returns engagement for LinkedIn Learning content\n\nExample of current call structure with contentSource parameter: https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026contentSource=EXTERNAL\u0026aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026assetType=COURSE\u0026startedAt=1633662001000\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\nExample of new call structure with contentSource parameter:\nhttps://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026contentSource=LINKEDIN_LEARNING\u0026aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026assetType=COURSE\u0026startedAt=1633046400000\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\n\n\nORGANIZATION \u2192 Returns engagement for your organization\u2019s own content\nTHIRD_PARTY \u2192 Returns engagement for all partner content\nALL_SOURCES \u2192 Returns engagement for all of the above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] What are the structural/schema changes in the returned data that we should account for?",
+      "Anchor": "changes-oct-2021--what-are-the-structuralschema-changes-in-the-returned-data-that-we-should-account-for",
+      "SectionPath": [
+        "[Changes Oct 2021] What are the structural/schema changes in the returned data that we should account for?"
+      ],
+      "Text": "The JSON format of your results will remain the same. We\u2019ve added a new field called lastestDataAt, which indicates when the data was last updated. In addition, the response field previously known as contentSource will now be contentProviderName.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Changes Oct 2021] What are the structural/schema changes in the returned data that we should account for?",
+      "Anchor": "changes-oct-2021--what-are-the-structuralschema-changes-in-the-returned-data-that-we-should-account-for",
+      "SectionPath": [
+        "[Changes Oct 2021] What are the structural/schema changes in the returned data that we should account for?"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

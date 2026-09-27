@@ -21,7 +21,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemActivated Activated { get; set; }
 #endif
         /// <summary>The activeAfter property</summary>
-        public int? ActiveAfter { get; set; }
+        public long? ActiveAfter { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created property</summary>
@@ -90,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "activated", n => { Activated = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemActivated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemActivated.CreateFromDiscriminatorValue); } },
-                { "activeAfter", n => { ActiveAfter = n.GetIntValue(); } },
+                { "activeAfter", n => { ActiveAfter = n.GetLongValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
@@ -106,7 +106,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemActivated>("activated", Activated);
-            writer.WriteIntValue("activeAfter", ActiveAfter);
+            writer.WriteLongValue("activeAfter", ActiveAfter);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemCreated>("created", Created);
             writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaVerificationAgentsOrganizationalPage200ResponseElementsItemLastModified>("lastModified", LastModified);

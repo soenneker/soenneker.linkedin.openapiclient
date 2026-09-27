@@ -75,7 +75,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The spamValue property</summary>
         public bool? SpamValue { get; set; }
         /// <summary>The subscriberCount property</summary>
-        public int? SubscriberCount { get; set; }
+        public long? SubscriberCount { get; set; }
         /// <summary>The targetAudiences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,7 +134,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624LastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624LastModified.CreateFromDiscriminatorValue); } },
                 { "latestIssue", n => { LatestIssue = n.GetStringValue(); } },
                 { "spamValue", n => { SpamValue = n.GetBoolValue(); } },
-                { "subscriberCount", n => { SubscriberCount = n.GetIntValue(); } },
+                { "subscriberCount", n => { SubscriberCount = n.GetLongValue(); } },
                 { "targetAudiences", n => { TargetAudiences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624Title>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624Title.CreateFromDiscriminatorValue); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624LastModified>("lastModified", LastModified);
             writer.WriteStringValue("latestIssue", LatestIssue);
             writer.WriteBoolValue("spamValue", SpamValue);
-            writer.WriteIntValue("subscriberCount", SubscriberCount);
+            writer.WriteLongValue("subscriberCount", SubscriberCount);
             writer.WriteCollectionOfPrimitiveValues<string>("targetAudiences", TargetAudiences);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaContentSeriesBatchget200ResponseResultsUrnLiContentSeries7135371914721562624Title>("title", Title);
             writer.WriteStringValue("versionTag", VersionTag);

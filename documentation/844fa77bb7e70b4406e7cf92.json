@@ -1,0 +1,215 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/upcoming-release-and-deprecation-timeline",
+  "Title": "Upcoming Release and Deprecation Timeline",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/announcements/data-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-shareurn",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/upcoming-release-and-deprecation-timeline",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Data restrictions on Compliance Snapshot APIs",
+      "Anchor": "data-restrictions-on-compliance-snapshot-apis",
+      "SectionPath": [
+        "September 15, 2023",
+        "Data restrictions on Compliance Snapshot APIs"
+      ],
+      "Text": "As part of our commitment to delivering the best possible experience to our members we continuously evaluate and refine our APIs. In this regard, we will be imposing data restrictions on the UgcPosts API, Social Actions API, and Profile API effective September 15th, 2023.\nMore details on specific restrictions are detailed here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 30, 2021",
+      "Anchor": "november-30-2021",
+      "SectionPath": [
+        "November 30, 2021"
+      ],
+      "Text": "/organizationalEntityAcls API will be deprecated on November 30 2021. Please use Organization Access Control API \u0027/organizationAcls\u0027 to fetch a member\u0027s or an organization\u0027s access control information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "August 31, 2021",
+      "Anchor": "august-31-2021",
+      "SectionPath": [
+        "August 31, 2021"
+      ],
+      "Text": "Organization Search API will be deprecated. Please use Company Search API to find organization entities.\n\nGeoTypeahead API \u0027/geoTypeahead?q=federated\u0027 will be deprecated. Please use GeoTypeahead API \u0027/geoTypeahead?q=search\u0027 to find the best matching geo URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 31, 2021",
+      "Anchor": "march-31-2021",
+      "SectionPath": [
+        "March 31, 2021"
+      ],
+      "Text": "To improve our network infrastructure and better serve API traffic globally, LinkedIn will begin rejecting API requests not meeting new criteria starting March 31, 2021. Check out the Query Tunneling Migration Guide for more information on how to ensure your LinkedIn API requests comply with the new maximum length requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "July 13, 2020",
+      "Anchor": "july-13-2020",
+      "SectionPath": [
+        "July 13, 2020"
+      ],
+      "Text": "LinkedIn will deprecate and remove Member Rich Media API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 1, 2020",
+      "Anchor": "april-1-2020",
+      "SectionPath": [
+        "April 1, 2020"
+      ],
+      "Text": "LinkedIn will deprecate and disable access to the remaining V1 APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 1, 2020",
+      "Anchor": "april-1-2020",
+      "SectionPath": [
+        "April 1, 2020"
+      ],
+      "Text": "Mailbox APIs\n\nReading Member Mailbox\nMessaging Between Connections: https://developer.linkedin.com/docs/v1/communications/messaging-between-connections-api\nOther Messaging Functionalities: https://developer.linkedin.com/docs/v1/communications/message-api-calls\n\n\nSales Navigator Mailbox API: https://developer.linkedin.com/docs/v1/compliance/sales-navigator-mailbox-api",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 1, 2020",
+      "Anchor": "april-1-2020",
+      "SectionPath": [
+        "April 1, 2020"
+      ],
+      "Text": "Marketplace Platform Opportunities will deprecate and remove the legacy location field and the new geo field will be the only source of truth for this entity\u0027s geographical location display name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 26, 2020",
+      "Anchor": "march-26-2020",
+      "SectionPath": [
+        "March 26, 2020"
+      ],
+      "Text": "ugcOrigin and origin field will be deprecated and removed from the UGC Post API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 6, 2020",
+      "Anchor": "march-6-2020",
+      "SectionPath": [
+        "March 6, 2020"
+      ],
+      "Text": "Permission w_fullprofile will be deprecated and removed from all Compliance applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "February 26, 2020",
+      "Anchor": "february-26-2020",
+      "SectionPath": [
+        "February 26, 2020"
+      ],
+      "Text": "The Replayer Feature in Compliance Events API will go live. This feature provides the ability to reprocess events that have already occurred and surfaced in the API response. It will provide more information on past events that were not previously available during the initial compliance capture and process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 30, 2020",
+      "Anchor": "january-30-2020",
+      "SectionPath": [
+        "January 30, 2020"
+      ],
+      "Text": "Rich Media Upload API deprecation in favor of Media Assets API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 15, 2020",
+      "Anchor": "january-15-2020",
+      "SectionPath": [
+        "January 15, 2020"
+      ],
+      "Text": "Release of the Messages API for connection-to-connection messages. This API allows members to create new messages or reply to existing conversations with first-degree connections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 6, 2019",
+      "Anchor": "november-6-2019",
+      "SectionPath": [
+        "November 6, 2019"
+      ],
+      "Text": "Changes to Share URN decoration - Compliance Events API will return UGCPost schema decoration for all share URNs. For more information, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 1, 2019",
+      "Anchor": "october-1-2019",
+      "SectionPath": [
+        "October 1, 2019"
+      ],
+      "Text": "On this date, LinkedIn will disable access to all V1 APIs with exception to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 1, 2019",
+      "Anchor": "october-1-2019",
+      "SectionPath": [
+        "October 1, 2019"
+      ],
+      "Text": "Mailbox APIs\n\nReading Member Mailbox\nMessaging Between Connections: https://developer.linkedin.com/docs/v1/communications/messaging-between-connections-api\nOther Messaging Functionalities: https://developer.linkedin.com/docs/v1/communications/message-api-calls\n\n\nSales Navigator Mailbox API: https://developer.linkedin.com/docs/v1/compliance/sales-navigator-mailbox-api",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 1, 2019",
+      "Anchor": "october-1-2019",
+      "SectionPath": [
+        "October 1, 2019"
+      ],
+      "Text": "Any V1 API requests not mentioned above will receive a 403 Forbidden response.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

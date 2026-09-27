@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The associatedCampaigns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AssociatedCampaigns { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseAssociatedCampaignsItem>? AssociatedCampaigns { get; set; }
 #nullable restore
 #else
-        public UntypedNode AssociatedCampaigns { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseAssociatedCampaignsItem> AssociatedCampaigns { get; set; }
 #endif
         /// <summary>The attributionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The campaigns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Campaigns { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseCampaignsItem>? Campaigns { get; set; }
 #nullable restore
 #else
-        public UntypedNode Campaigns { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseCampaignsItem> Campaigns { get; set; }
 #endif
         /// <summary>The conversionMethod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,13 +55,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string ConversionMethod { get; set; }
 #endif
         /// <summary>The created property</summary>
-        public int? Created { get; set; }
+        public long? Created { get; set; }
+        /// <summary>The elements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItem>? Elements { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItem> Elements { get; set; }
+#endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
+        /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseKey? Key { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseKey Key { get; set; }
+#endif
         /// <summary>The lastModified property</summary>
-        public int? LastModified { get; set; }
+        public long? LastModified { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +87,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The postClickAttributionWindowSize property</summary>
-        public int? PostClickAttributionWindowSize { get; set; }
+        public long? PostClickAttributionWindowSize { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,13 +99,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The urlRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? UrlRules { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseUrlRulesItem>? UrlRules { get; set; }
 #nullable restore
 #else
-        public UntypedNode UrlRules { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseUrlRulesItem> UrlRules { get; set; }
 #endif
         /// <summary>The viewThroughAttributionWindowSize property</summary>
-        public int? ViewThroughAttributionWindowSize { get; set; }
+        public long? ViewThroughAttributionWindowSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201Response"/> and sets the default values.
         /// </summary>
@@ -116,19 +132,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
-                { "associatedCampaigns", n => { AssociatedCampaigns = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "associatedCampaigns", n => { AssociatedCampaigns = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseAssociatedCampaignsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseAssociatedCampaignsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attributionType", n => { AttributionType = n.GetStringValue(); } },
-                { "campaigns", n => { Campaigns = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "campaigns", n => { Campaigns = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseCampaignsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseCampaignsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversionMethod", n => { ConversionMethod = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetIntValue(); } },
+                { "created", n => { Created = n.GetLongValue(); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "lastModified", n => { LastModified = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseKey.CreateFromDiscriminatorValue); } },
+                { "lastModified", n => { LastModified = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "postClickAttributionWindowSize", n => { PostClickAttributionWindowSize = n.GetIntValue(); } },
+                { "postClickAttributionWindowSize", n => { PostClickAttributionWindowSize = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "urlRules", n => { UrlRules = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "viewThroughAttributionWindowSize", n => { ViewThroughAttributionWindowSize = n.GetIntValue(); } },
+                { "urlRules", n => { UrlRules = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseUrlRulesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseUrlRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "viewThroughAttributionWindowSize", n => { ViewThroughAttributionWindowSize = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -139,19 +157,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
-            writer.WriteObjectValue<UntypedNode>("associatedCampaigns", AssociatedCampaigns);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseAssociatedCampaignsItem>("associatedCampaigns", AssociatedCampaigns);
             writer.WriteStringValue("attributionType", AttributionType);
-            writer.WriteObjectValue<UntypedNode>("campaigns", Campaigns);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseCampaignsItem>("campaigns", Campaigns);
             writer.WriteStringValue("conversionMethod", ConversionMethod);
-            writer.WriteIntValue("created", Created);
+            writer.WriteLongValue("created", Created);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseElementsItem>("elements", Elements);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("lastModified", LastModified);
+            writer.WriteLongValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseKey>("key", Key);
+            writer.WriteLongValue("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("postClickAttributionWindowSize", PostClickAttributionWindowSize);
+            writer.WriteLongValue("postClickAttributionWindowSize", PostClickAttributionWindowSize);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<UntypedNode>("urlRules", UrlRules);
-            writer.WriteIntValue("viewThroughAttributionWindowSize", ViewThroughAttributionWindowSize);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation6ACreateANewConversionRuleWithAutoAssociationToAllCampaigns201ResponseUrlRulesItem>("urlRules", UrlRules);
+            writer.WriteLongValue("viewThroughAttributionWindowSize", ViewThroughAttributionWindowSize);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

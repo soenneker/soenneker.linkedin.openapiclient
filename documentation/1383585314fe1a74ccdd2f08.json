@@ -1,0 +1,3203 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+  "Title": "Insight Tag Conversion Tracking",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Conversion Tracking",
+      "Anchor": "insight-tag-conversion-tracking",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Conversion Tracking",
+      "Anchor": "insight-tag-conversion-tracking",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Conversion Tracking",
+      "Anchor": "insight-tag-conversion-tracking",
+      "SectionPath": [],
+      "Text": "Conversion tracking gives advertisers confidence that an ad product delivers a measurable return on investment. This includes better ad reporting based on tracked conversions coming from impressions, the ability to optimize campaigns through better targeting and impression delivery, and more efficient media planning and budget allocation through impression tracking and attribution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful calls: (1) Scope permissions to rw_ads and/or r_ads, and (2) the user assigning permissions holds one of the following roles in the Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "rw_ads (Read/Write).\nr_ads (Read-Only).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account Roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (Read-Only, even with rw_ads scope).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "See the following setup requirements to perform conversion tracking:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Create Insight Tag for an advertiser account.\nDeploy the Insight Tag JavaScript snippet in a common header or footer on the advertiser\u2019s site. This is your tracking code and is unique to the advertiser account.\nCreate one or more conversions that have URL matching rules or conversion image pixel.\nAdd campaign(s) to the conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Advertisers with an existing Insight Tag and LLA relationship must have their LLA account internally allowlisted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Insight Tags",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID for this Insight Tag.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The HTML tag contents, either the JS or the image. Read-only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003Cscript type=\\\u0022text/javascript\\\u0022\u003E\u003C/script\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sponsoredAccounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn[] default=[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifies the sponsored accounts associated with this Insight Tag. Create-only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[\u0022urn:li:sponsoredAccount:123456\u0022]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstPartyTrackingEnabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean default=true",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If first party tracking is enabled for this Insight Tag, then the Insight Tag will attempt to drop a first party cookie on the advertiser\u0027s domain given that the page url contains the 1st party tracking id. This setting will propagate to all the accounts with the same Insight Tag. Read more: First-Party Cookies on LinkedIn.",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/102793"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Insight Tag",
+      "Anchor": "create-an-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Create an Insight Tag"
+      ],
+      "Text": "Create Insight Tag for given Ad account. Copy the tag code from newly created Insight Tag and paste at global footer, right above the closing of HTML \u003Cbody\u003E tag of advertiser\u2019s website. Adding the tag to the global footer will let you track conversions or re-target on any page across your whole site.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create an Insight Tag",
+      "Anchor": "create-an-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Create an Insight Tag"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTags",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field key",
+        "Field Descriptions"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sponsoredAccounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored accounts associated with this insight tag. Passing multiple Ad accounts won\u0027t create insight tag for all Ad accounts. It fail to create insight tag. Use Insight Tag Permissions endpoint to share this insight with other Ad Accounts. Create-Only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTags",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022sponsoredAccounts\u0022: [\n    \u0022urn:li:sponsoredAccount:123456\u0022\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/insightTags\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022sponsoredAccounts\u0022: [\n    \u0022urn:li:sponsoredAccount:123456\u0022\n  ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 201 Created\nContent-Type: application/json\nLocation: /insightTags/100\nx-restli-id: 100\nX-Restli-Protocol-Version: 2.0.0\n\n{\n  \u0022firstPartyTrackingEnabled\u0022: true,\n  \u0022sponsoredAccounts\u0022: [\n    \u0022urn:li:sponsoredAccount:123456\u0022\n  ],\n  \u0022id\u0022: 100,\n  \u0022tag\u0022: \u0022\u003Cscript type=\\\u0022text/javascript\\\u0022\u003E\u003C/script\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Insight Tags",
+        "Request Body Fields",
+        "Sample Response"
+      ],
+      "Text": "Once the tag is installed on your website and traffic to your site exists, you can verify the tag is working by making the Find Insight Tag Domains by Account request. It takes 5 to 10 minutes to populate insight tag domains after the webpage is updated with Insight Tag JavaScript and after a visit to that webpage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Insight Tag by Account",
+      "Anchor": "find-insight-tag-by-account",
+      "SectionPath": [
+        "Insight Tags",
+        "Find Insight Tag by Account"
+      ],
+      "Text": "Find the Insight Tag for a given Ad account. An account can have only one Insight Tag.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Insight Tag by Account",
+      "Anchor": "find-insight-tag-by-account",
+      "SectionPath": [
+        "Insight Tags",
+        "Find Insight Tag by Account"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Insight Tag by Account",
+      "Anchor": "find-insight-tag-by-account",
+      "SectionPath": [
+        "Insight Tags",
+        "Find Insight Tag by Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTags?q=account\u0026account={encoded sponsoredAccountUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Insight Tag by Account",
+      "Anchor": "find-insight-tag-by-account",
+      "SectionPath": [
+        "Insight Tags",
+        "Find Insight Tag by Account"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/insightTags?q=account\u0026account={encoded sponsoredAccountUrn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Insight Tags",
+        "Find Insight Tag by Account",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK\nContent-Type: application/json\nETag: W/\u00220\u0022\nX-Restli-Protocol-Version: 2.0.0\n\n{\n  \u0022elements\u0022: [\n    {\n      \u0022firstPartyTrackingEnabled\u0022: true,\n      \u0022sponsoredAccounts\u0022: [\n        \u0022urn:li:sponsoredAccount:123456\u0022\n      ],\n      \u0022id\u0022: 100,\n      \u0022tag\u0022: \u0022\u003Cscript type=\\\u0022text/javascript\\\u0022\u003E\u003C/script\u003E\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Insight Tag",
+      "Anchor": "get-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Get Insight Tag"
+      ],
+      "Text": "Get Insight Tag for a given Insight Tag ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Insight Tag",
+      "Anchor": "get-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Get Insight Tag"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Insight Tag",
+      "Anchor": "get-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Get Insight Tag"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTags/{InsightTagID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Insight Tag",
+      "Anchor": "get-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Get Insight Tag"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/insightTags/{InsightTagID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Insight Tags",
+        "Get Insight Tag",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK\nContent-Type: application/json\nETag: W/\u00220\u0022\nX-Restli-Protocol-Version: 2.0.0\n\n{\n  \u0022firstPartyTrackingEnabled\u0022: true,\n  \u0022sponsoredAccounts\u0022: [\n    \u0022urn:li:sponsoredAccount:123456\u0022\n  ],\n  \u0022id\u0022: 100,\n  \u0022tag\u0022: \u0022\u003Cscript type=\\\u0022text/javascript\\\u0022\u003E\u003C/script\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update Insight Tag",
+      "Anchor": "partial-update-insight-tag",
+      "SectionPath": [
+        "Insight Tags",
+        "Partial Update Insight Tag"
+      ],
+      "Text": "Update Insight Tag\u2019s firstPartyTrackingEnabled using this API. Please make sure the header X-RestLi-Method must be included in the request and set to PARTIAL_UPDATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Insight Tags",
+        "Partial Update Insight Tag",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Insight Tags",
+        "Partial Update Insight Tag",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTags/100",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Insight Tags",
+        "Partial Update Insight Tag",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022firstPartyTrackingEnabled\u0022: true\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Insight Tags",
+        "Partial Update Insight Tag",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/insightTags/100\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022firstPartyTrackingEnabled\u0022: true\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Insight Tags",
+        "Partial Update Insight Tag",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 204 No Content\nETag: W/\u00220\u0022\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "two access roles for Insight Tag permissions: FULL (administrator) and USE_ONLY.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "FULL has general administrative permissions to the Insight Tag.\nUSE_ONLY can only edit and view conversions and match rules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "More details about what actions each role can take are in the table below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Access role",
+        "View Insight Tag",
+        "Update Insight Tag",
+        "Grant/revoke Insight Tag Access",
+        "Update Insight Tag Domains"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FULL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "USE_ONLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "When creating an Insight Tag, the advertiser account creating the Insight Tag gets the FULL role by default. Alternatively, an advertiser account that doesn\u0027t have an Insight Tag can be granted FULL or USE_ONLY access to an Insight Tag from another advertiser account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "A Sponsored Account can have only one Insight Tag associated to it at any given time. An Insight Tag may have multiple ad accounts associated with it. An Insight Tag must have at least 1 account with FULL access assigned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "If a Sponsored Account with an existing Insight Tag wants to use a different or new Insight Tag, the account must:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions",
+      "Anchor": "insight-tag-permissions",
+      "SectionPath": [
+        "Insight Tag Permissions"
+      ],
+      "Text": "Ensure at least 1 other Ad Account has FULL access to the Insight Tag. This role must be passed to another Ad Account if no other Ad Account currently has FULL access.\nRevoke access to the Insight Tag for the original Ad Account.\nGive FULL access to a new Insight Tag that a different Ad Account currently has FULL access to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions for an Advertiser Account",
+      "Anchor": "insight-tag-permissions-for-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Insight Tag Permissions for an Advertiser Account"
+      ],
+      "Text": "To query for the access role associated to an advertiser account and Insight Tag, use q=account and the sponsoredAccountUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Permissions for an Advertiser Account",
+      "Anchor": "insight-tag-permissions-for-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Insight Tag Permissions for an Advertiser Account"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Insight Tag Permissions for an Advertiser Account",
+      "Anchor": "insight-tag-permissions-for-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Insight Tag Permissions for an Advertiser Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTagsPermission?account={sponsoredAccountUrn}\u0026q=account",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Insight Tag Permissions for an Advertiser Account",
+      "Anchor": "insight-tag-permissions-for-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Insight Tag Permissions for an Advertiser Account"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/insightTagsPermission?account={sponsoredAccountUrn}\u0026q=account\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Insight Tag Permissions for an Advertiser Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n            \u0022insightTag\u0022: \u0022urn:tscp:insightTag:100\u0022,\n            \u0022role\u0022: \u0022FULL\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant Insight Tag Access to a Different Advertiser Account",
+      "Anchor": "grant-insight-tag-access-to-a-different-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account"
+      ],
+      "Text": "Give access to another Ad Account by granting an access role to an Insight Tag.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Grant Insight Tag Access to a Different Advertiser Account",
+      "Anchor": "grant-insight-tag-access-to-a-different-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTagsPermission?action=grantAccess",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field key",
+        "Field Descriptions"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "insightTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Insight Tag URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account URN of the recipient.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FULL or USE_ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTagsPermission?action=grantAccess",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n    \u0022insightTag\u0022: \u0022urn:tscp:insightTag:100\u0022,\n    \u0022targetAccount\u0022: \u0022urn:li:sponsoredAccount:7890\u0022,\n    \u0022role\u0022: \u0022FULL\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Grant Insight Tag Access to a Different Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/insightTagsPermission?action=grantAccess\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n    \u0022insightTag\u0022: \u0022urn:tscp:insightTag:100\u0022,\n    \u0022targetAccount\u0022: \u0022urn:li:sponsoredAccount:7890\u0022,\n    \u0022role\u0022: \u0022FULL\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Revoke Insight Tag Access from an Advertiser Account",
+      "Anchor": "revoke-insight-tag-access-from-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account"
+      ],
+      "Text": "Revoke access to another advertiser account by removing an access role to an Insight Tag.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Revoke Insight Tag Access from an Advertiser Account",
+      "Anchor": "revoke-insight-tag-access-from-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account"
+      ],
+      "Text": "An Insight Tag must be associated with at least one Ad Account. The API doesn\u0027t allow you to revoke access to an Insight Tag when there\u0027s only one remaining associated Ad Account because it would create an orphan Insight Tag.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Revoke Insight Tag Access from an Advertiser Account",
+      "Anchor": "revoke-insight-tag-access-from-an-advertiser-account",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTagsPermission?action=revokeAccess",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-2",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field key",
+        "Field Descriptions"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "insightTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Insight Tag URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account URN of the recipient.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTagsPermission?action=revokeAccess",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n    \u0022insightTag\u0022: \u0022urn:tscp:insightTag:100\u0022,\n    \u0022targetAccount\u0022: \u0022urn:li:sponsoredAccount:7890\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Insight Tag Permissions",
+        "Revoke Insight Tag Access from an Advertiser Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/insightTagsPermission?action=revokeAccess\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n    \u0022insightTag\u0022: \u0022urn:tscp:insightTag:100\u0022,\n    \u0022targetAccount\u0022: \u0022urn:li:sponsoredAccount:7890\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Domains",
+      "Anchor": "insight-tag-domains",
+      "SectionPath": [
+        "Insight Tag Domains"
+      ],
+      "Text": "Once the Insight Tag code is placed on the partner\u2019s sites, we\u0027ll receive signals from these sites. The list of domains associated with this Insight Tag will be automatically populated. Advertisers can also block any unrecognized domains. Blocking a domain may impact associated conversions, website audiences and website professional demographics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field key",
+        "Field Descriptions",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of the domain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1560228798550",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "insightTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Insight Tag URN for this domain.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:tscp:insightTag:100",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "domainName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The domain name without the protocol.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "www.example.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastCallbackAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last time (in milliseconds) the Insight Tag for this domain called back to the server.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1560228798550",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "blocked",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether this domain should be tagged as blocked. Block domains won\u0027t send a signal to downstream services, so conversion tracking, re-targeting, etc won\u0027t get captured under blocked domains.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Insight Tag Domains by Account",
+      "Anchor": "find-insight-tag-domains-by-account",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Find Insight Tag Domains by Account"
+      ],
+      "Text": "Find all the domains associated with an Ad account. Sorted by most recent first. Returns a max of 100 records if no count is specified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Find Insight Tag Domains by Account",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Find Insight Tag Domains by Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTagDomains?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A123456",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Find Insight Tag Domains by Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/insightTagDomains?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A123456\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Find Insight Tag Domains by Account",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK\nContent-Type: application/json\nETag: W/\u00220\u0022\nX-Restli-Protocol-Version: 2.0.0\n\n{\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1560228798550,\n            \u0022blocked\u0022: false,\n            \u0022lastCallbackAt\u0022: 1560228798550,\n            \u0022domainName\u0022: \u0022www.example.com\u0022,\n            \u0022insightTag\u0022: \u0022urn:tscp:insightTag:100\u0022\n        },\n        {\n            \u0022created\u0022: 1560228798550,\n            \u0022blocked\u0022: false,\n            \u0022lastCallbackAt\u0022: 1560228798550,\n            \u0022domainName\u0022: \u0022www.example.com\u0022,\n            \u0022insightTag\u0022: \u0022urn:tscp:insightTag:101\u0022\n        },\n        ...\n    ],\n\u0022paging\u0022: {\n  \u0022count\u0022: 10,\n  \u0022start\u0022: 0,\n  \u0022links\u0022:[]\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partial Update Insight Tag Domain",
+      "Anchor": "partial-update-insight-tag-domain",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Partial Update Insight Tag Domain"
+      ],
+      "Text": "Update Insight Tag domain using partial update. Advertiser can block/allow domain using this method. Blocking a domain may impact associated conversions, website audiences and website professional demographics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Partial Update Insight Tag Domain",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Partial Update Insight Tag Domain",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTagDomains/(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Partial Update Insight Tag Domain",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022blocked\u0022: true\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Partial Update Insight Tag Domain",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/insightTagDomains/(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022blocked\u0022: true\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Partial Update Insight Tag Domain",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 204 No Content\nETag: W/\u00220\u0022\nX-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Partial Update Insight Tag Domains",
+      "Anchor": "batch-partial-update-insight-tag-domains",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Batch Partial Update Insight Tag Domains"
+      ],
+      "Text": "Bulk update insight tag domains using batch partial update. Advertiser can block/allow domains using this method. Blocking a domain may impact associated conversions, website audiences and website professional demographics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Batch Partial Update Insight Tag Domains",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Batch Partial Update Insight Tag Domains",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/insightTagDomains?ids=List((account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com),(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Batch Partial Update Insight Tag Domains",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022blocked\u0022: false\n        }\n      }\n    },\n    \u0022(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022blocked\u0022: true\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Batch Partial Update Insight Tag Domains",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/insightTagDomains?ids=List((account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com),(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022blocked\u0022: false\n        }\n      }\n    },\n    \u0022(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com)\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022blocked\u0022: true\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Batch Partial Update Insight Tag Domains",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK\nX-LI-ResponseOrigin: RGW\nContent-Type: application/json\nETag: W/\u00222113768114\u0022\nX-Restli-Protocol-Version: 2.0.0\nContent-Length: 285\n\n{\n    \u0022results\u0022: {\n        \u0022(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com)\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Insight Tag Domains",
+      "Anchor": "get-insight-tag-domains",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains"
+      ],
+      "Text": "The following endpoint returns a single insightTagDomain record.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Insight Tag Domains",
+      "Anchor": "get-insight-tag-domains",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTagDomains/(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Sample Response"
+      ],
+      "Text": "{\n\u0022blocked\u0022: true,\n\u0022insightTag\u0022: \u0022urn:tscp:insightTag:3981306\u0022,\n\u0022created\u0022: 1447843020000,\n\u0022domainName\u0022: \u0022example.com\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get",
+      "Anchor": "batch-get",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Batch Get"
+      ],
+      "Text": "Multiple records can be requested with a Batch Get that accepts multiple ids parameters each with an insightTagDomain ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get",
+      "Anchor": "batch-get",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Batch Get"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTagDomains?ids=List((account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com),(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-9",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022(account:urn%3Ali%3AsponsoredAccount%3A123456,domainName:www.example.com)\u0022: {\n          \u0022blocked\u0022: true,\n          \u0022insightTag\u0022: \u0022urn:tscp:insightTag:3981306\u0022,\n          \u0022created\u0022: 1447843020000,\n          \u0022domainName\u0022: \u0022www.example.com\u0022\n        },\n        \u0022(account:urn%3Ali%3AsponsoredAccount%3A507578740,domainName:www.example.com)\u0022: {\n          \u0022blocked\u0022: false,\n          \u0022insightTag\u0022: \u0022urn:tscp:insightTag:3981306\u0022,\n          \u0022created\u0022: 1447843020000,\n          \u0022domainName\u0022: \u0022www.example.com\u0022\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Insight Tag Domains by Account",
+      "Anchor": "find-insight-tag-domains-by-account-1",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Find Insight Tag Domains by Account"
+      ],
+      "Text": "All Insight Tag Domains associated with an Ad Account can be used with the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Insight Tag Domains by Account",
+      "Anchor": "find-insight-tag-domains-by-account-1",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Find Insight Tag Domains by Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTagDomains?q=account\u0026account={sponsoredAccountURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Insight Tag Domains by Account",
+      "Anchor": "find-insight-tag-domains-by-account-1",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Find Insight Tag Domains by Account"
+      ],
+      "Text": "For more precision, you can also include a domainName parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Insight Tag Domains by Account",
+      "Anchor": "find-insight-tag-domains-by-account-1",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Find Insight Tag Domains by Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/insightTagDomains?q=account\u0026account={sponsoredAccountURN}\u0026domainName={domainName}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Insight Tag Domains",
+        "Get Insight Tag Domains",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022blocked\u0022:true,\n            \u0022insightTag\u0022:\u0022urn:tscp:insightTag:3981306\u0022,\n            \u0022created\u0022: 1447843020000,\n            \u0022domainName\u0022: \u0022example1.com\u0022\n        },\n        {\n            \u0022blocked\u0022:true,\n            \u0022insightTag\u0022:\u0022urn:tscp:insightTag:3981306\u0022,\n            \u0022created\u0022: 1447843020000,\n            \u0022domainName\u0022: \u0022example2.com\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions",
+      "Anchor": "conversions",
+      "SectionPath": [
+        "Conversions"
+      ],
+      "Text": "LinkedIn conversion tracking is an analytical function powered by the LinkedIn Insight Tag. Conversions are actions a member makes that are valuable to your business. Conversion tracking gathers insights into post-click and view-through conversions of your LinkedIn ads campaigns, giving you the ability to measure the impact and ROI of your ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions",
+      "Anchor": "conversions",
+      "SectionPath": [
+        "Conversions"
+      ],
+      "Text": "The Insight Tag Conversion Tracking API supports both event-specific and site-wide tags.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions",
+      "Anchor": "conversions",
+      "SectionPath": [
+        "Conversions"
+      ],
+      "Text": "For more information on conversion tracking, see this help article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Conversion",
+      "Anchor": "create-a-conversion",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion"
+      ],
+      "Text": "Conversions for Insight Tag can be created with the following endpoint. Include rules in the urlMatchRuleExpression field to track site-wide conversions. Don\u0027t include any urlMatchRuleExpression to track event-specific conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Conversion",
+      "Anchor": "create-a-conversion",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Key",
+        "Type/Info",
+        "Field Descriptions"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "attributionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string, default=LAST_TOUCH_BY_CAMPAIGN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LAST_TOUCH_BY_CAMPAIGN(Each campaign): conversion actions are counted once for each campaign to which they can be attributed LAST_TOUCH_BY_CONVERSION(Single Campaign): conversion actions are counted once for each Conversion with at least one associated campaign. learn more",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/108047"
+            ],
+            "Values": [
+              "LAST_TOUCH_BY_CAMPAIGN(Each campaign): conversion actions are counted once for each campaign to which they can be attributed",
+              "LAST_TOUCH_BY_CONVERSION(Single Campaign): conversion actions are counted once for each Conversion with at least one associated campaign. learn more"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Sponsored Account URN that this Conversion resides under. This can be either specified in URL query parameter or in the request JSON body. Example: urn:li:sponsoredAccount:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean Optional, default=true",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set to true or false to enable or disable this rule from matching on the advertiser\u2019s website. The initial state can be either, but only rules that are enabled will trigger conversion events.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A short name for this rule, which will be shown in the UI and in reports.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the rule. Can be one of the following: ADD_TO_CART - The user added one or more things to their shopping cart. DOWNLOAD - The user downloaded a file. INSTALL - The user installed a plugin or an app. KEY_PAGE_VIEW - The user viewed an important web page or app screen. LEAD - The user filled out a lead generation form. PURCHASE - The user made a purchase. SIGN_UP - The user signed up for a web site or app service. OTHER - Other case not listed above.",
+            "Links": [],
+            "Values": [
+              "ADD_TO_CART - The user added one or more things to their shopping cart.",
+              "DOWNLOAD - The user downloaded a file.",
+              "INSTALL - The user installed a plugin or an app.",
+              "KEY_PAGE_VIEW - The user viewed an important web page or app screen.",
+              "LEAD - The user filled out a lead generation form.",
+              "PURCHASE - The user made a purchase.",
+              "SIGN_UP - The user signed up for a web site or app service.",
+              "OTHER - Other case not listed above."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "latestFirstPartyCallbackAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time in milliseconds Read Only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "As part of mitigating Intelligent Tracking Prevention, we have introduced an option to advertisers so that they can choose to drop LINKEDIN cookies as first party cookies or third party cookies. This field will help in debugging when advertisers switch from first party to third party.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postClickAttributionWindowSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int, default=\u002230\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a user\u0027s settings on the post click attribution window in days. By setting these fields to something else, the advertiser can narrow the window. Allowed values are 1, 7, or 30. learn more",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/86511?query=conversion%20window\u0026hcppcid=search"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "viewThroughAttributionWindowSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int, default=\u00227\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a user\u0027s settings on the view through (post view) attribution window in days. By setting these fields to something else, the advertiser can narrow the window. Allowed values are 1, 7, or 30. learn more",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/86511?query=conversion%20window\u0026hcppcid=search"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastCallbackAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time in milliseconds Read Only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last time one or more of the URL match rules fired and called back to the server. It may take 20 min to update.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional. The monetary value for this conversion. If this is set, the currency code should be identical to the currency set on the advertiser account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifying code for currency type. See currency codes for the valid codes.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The amount of money as a real number string.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedCampaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN CampaignConversion[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read only. Array of campaigns associated with this conversion.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urlMatchRuleExpression",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urlMatchRuleExpression",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Expression used to determine if a page view event matches. The top-level expression is the logical disjunction(OR) of AdUrlMatchRules, that are grouped by logical conjunction(AND). Example: (matchRule1 AND matchRule2 AND matchRule3) OR (matchRule4 AND matchRule2). Refer to sample request on how to build these rules.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "matchType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of this match rule that specifies how the URL will be matched. Can be one of the following: EXACT - The match is exact.STARTS_WITH - A prefix to match.CONTAINS - A substring to match, multiple substrings can be supplied separated by an \u0022OR\u0022 boolean.",
+            "Links": [],
+            "Values": [
+              "EXACT - The match is exact.",
+              "STARTS_WITH - A prefix to match.",
+              "CONTAINS - A substring to match, multiple substrings can be supplied separated by an \u0022OR\u0022 boolean."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "matchValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL value text to match. Regular expressions or special syntax are not supported. Examples: \u0027www.example.com\u0027, \u0027example.com/download.php\u0027, \u0027example.com/download/coolWhitepaper\u0027. For CONTAINS only: \u0027example.com/order OR example.com/checkout\u0027. There is no need to include the protocol (for example, http, https).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "valueType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string, default=DYNAMIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC: Will override the conversion value with the monetary value passed in the eventsFIXED: Will use the static conversion value set on the conversion ruleNO_VALUE: Won\u0027t use any value for the conversion.",
+            "Links": [],
+            "Values": [
+              "DYNAMIC: Will override the conversion value with the monetary value passed in the events",
+              "FIXED: Will use the static conversion value set on the conversion rule",
+              "NO_VALUE: Won\u0027t use any value for the conversion."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022postClickAttributionWindowSize\u0022: 7,\n  \u0022viewThroughAttributionWindowSize\u0022: 1,\n  \u0022type\u0022: \u0022OTHER\u0022,\n  \u0022name\u0022: \u0022test\u0022,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n  \u0022urlMatchRuleExpression\u0022: [\n    [\n      {\n        \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n        \u0022matchValue\u0022: \u0022www.example.com/category\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/product1\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/sku100\u0022\n      }\n    ],\n    [\n      {\n        \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n        \u0022matchValue\u0022: \u0022www.example.com\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/product1\u0022\n      }    ]\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversions\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022postClickAttributionWindowSize\u0022: 7,\n  \u0022viewThroughAttributionWindowSize\u0022: 1,\n  \u0022type\u0022: \u0022OTHER\u0022,\n  \u0022name\u0022: \u0022test\u0022,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n  \u0022urlMatchRuleExpression\u0022: [\n    [\n      {\n        \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n        \u0022matchValue\u0022: \u0022www.example.com/category\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/product1\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/sku100\u0022\n      }\n    ],\n    [\n      {\n        \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n        \u0022matchValue\u0022: \u0022www.example.com\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/product1\u0022\n      }    ]\n  ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-11",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022postClickAttributionWindowSize\u0022: 7,\n  \u0022created\u0022: 1566320988691,\n  \u0022viewThroughAttributionWindowSize\u0022: 1,\n  \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=107612\u0026fmt=img\\\u0022 /\u003E\u0022,\n  \u0022type\u0022: \u0022OTHER\u0022,\n  \u0022enabled\u0022: true,\n  \u0022associatedCampaigns\u0022: [],\n  \u0022campaigns\u0022: [],\n  \u0022name\u0022: \u0022test\u0022,\n  \u0022urlMatchRuleExpression\u0022: [\n    [\n      {\n        \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n        \u0022matchValue\u0022: \u0022www.example.com/category\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/product1\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/sku100\u0022\n      }\n    ],\n    [\n      {\n        \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n        \u0022matchValue\u0022: \u0022www.example.com\u0022\n      },\n      {\n        \u0022matchType\u0022: \u0022CONTAINS\u0022,\n        \u0022matchValue\u0022: \u0022/product1\u0022\n      }\n    ]\n  ],\n  \u0022lastModified\u0022: 1566320988691,\n  \u0022id\u0022: 107612,\n  \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n  \u0022urlRules\u0022: [],\n  \u0022key\u0022: {\n    \u0022id\u0022: 107612,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n  },\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-11",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create",
+      "Anchor": "batch-create",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Batch Create"
+      ],
+      "Text": "When you create multiple conversion rules, include the X-RestLi-Method header and set it to BATCH_CREATE. A batch can contain a maximum of 100 conversion rules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create",
+      "Anchor": "batch-create",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Batch Create"
+      ],
+      "Text": "To associate campaigns automatically, include autoAssociationType=ALL_CAMPAIGNS or autoAssociationType=OBJECTIVE_BASED in the request URL. The selected value applies to each conversion rule that is created successfully. If you omit autoAssociationType, no campaigns are associated automatically. For details about each value, see Campaign Conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversions?autoAssociationType=OBJECTIVE_BASED",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022postClickAttributionWindowSize\u0022: 7,\n      \u0022viewThroughAttributionWindowSize\u0022: 1,\n      \u0022type\u0022: \u0022OTHER\u0022,\n      \u0022name\u0022: \u0022test 1 last touch by campaign\u0022,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 7,\n      \u0022viewThroughAttributionWindowSize\u0022: 1,\n      \u0022type\u0022: \u0022OTHER\u0022,\n      \u0022name\u0022: \u0022test\u0022,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/products\u0022\n          },\n          {\n            \u0022matchType\u0022: \u0022CONTAINS\u0022,\n            \u0022matchValue\u0022: \u0022/category/\u0022\n          }\n        ],\n        [\n          {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/orderConfirmation\u0022\n          }\n        ]\n      ]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversions?autoAssociationType=OBJECTIVE_BASED\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022elements\u0022: [\n    {\n      \u0022postClickAttributionWindowSize\u0022: 7,\n      \u0022viewThroughAttributionWindowSize\u0022: 1,\n      \u0022type\u0022: \u0022OTHER\u0022,\n      \u0022name\u0022: \u0022test 1 last touch by campaign\u0022,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 7,\n      \u0022viewThroughAttributionWindowSize\u0022: 1,\n      \u0022type\u0022: \u0022OTHER\u0022,\n      \u0022name\u0022: \u0022test\u0022,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/products\u0022\n          },\n          {\n            \u0022matchType\u0022: \u0022CONTAINS\u0022,\n            \u0022matchValue\u0022: \u0022/category/\u0022\n          }\n        ],\n        [\n          {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/orderConfirmation\u0022\n          }\n        ]\n      ]\n    }\n  ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-12",
+      "SectionPath": [
+        "Conversions",
+        "Create a Conversion",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022location\u0022: \u0022/conversions/107628\u0022,\n      \u0022id\u0022: \u0022107628\u0022,\n      \u0022entity\u0022: {\n        \u0022postClickAttributionWindowSize\u0022: 7,\n        \u0022created\u0022: 1566323091819,\n        \u0022viewThroughAttributionWindowSize\u0022: 1,\n        \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=107628\u0026fmt=img\\\u0022 /\u003E\u0022,\n        \u0022type\u0022: \u0022OTHER\u0022,\n        \u0022enabled\u0022: true,\n        \u0022associatedCampaigns\u0022: [],\n        \u0022campaigns\u0022: [],\n        \u0022name\u0022: \u0022test 1 last touch by campaign\u0022,\n        \u0022lastModified\u0022: 1566323091819,\n        \u0022id\u0022: 107628,\n        \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n        \u0022urlRules\u0022: [],\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n      },\n      \u0022status\u0022: 201\n    },\n    {\n      \u0022location\u0022: \u0022/conversions/107620\u0022,\n      \u0022id\u0022: \u0022107620\u0022,\n      \u0022entity\u0022: {\n        \u0022postClickAttributionWindowSize\u0022: 7,\n        \u0022created\u0022: 1566323091819,\n        \u0022viewThroughAttributionWindowSize\u0022: 1,\n        \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=107620\u0026fmt=img\\\u0022 /\u003E\u0022,\n        \u0022type\u0022: \u0022OTHER\u0022,\n        \u0022enabled\u0022: true,\n        \u0022associatedCampaigns\u0022: [],\n        \u0022campaigns\u0022: [],\n        \u0022name\u0022: \u0022test\u0022,\n        \u0022urlMatchRuleExpression\u0022: [\n          [\n            {\n              \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n              \u0022matchValue\u0022: \u0022www.example.com/products\u0022\n            },\n            {\n              \u0022matchType\u0022: \u0022CONTAINS\u0022,\n              \u0022matchValue\u0022: \u0022/category/\u0022\n            }\n          ],\n          [\n            {\n              \u0022matchType\u0022: \u0022EXACT\u0022,\n              \u0022matchValue\u0022: \u0022www.example.com/orderConfirmation\u0022\n            }\n          ]\n        ],\n        \u0022lastModified\u0022: 1566323091819,\n        \u0022id\u0022: 107620,\n        \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n        \u0022urlRules\u0022: [],\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n      },\n      \u0022status\u0022: 201\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Conversions",
+      "Anchor": "get-conversions",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions"
+      ],
+      "Text": "The following endpoint returns a single conversion record.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Conversions",
+      "Anchor": "get-conversions",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Conversions",
+      "Anchor": "get-conversions",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversions/{conversionId}?account={sponsoredAccountUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Conversions",
+      "Anchor": "get-conversions",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/conversions/{conversionId}?account={sponsoredAccountUrn}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get",
+      "Anchor": "batch-get-1",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Batch Get"
+      ],
+      "Text": "Multiple records can be requested with a Batch Get that accepts multiple ids parameters each with a conversion ID. Conversion ids should be passed in List format and encoded as shown in the examples below. Also API request requires the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get",
+      "Anchor": "batch-get-1",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Batch Get"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get",
+      "Anchor": "batch-get-1",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Batch Get"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversions?account=urn%3Ali%3AsponsoredAccount%3A519072844\u0026ids=List(104012,104004)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get",
+      "Anchor": "batch-get-1",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Batch Get"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/conversions?account=urn%3Ali%3AsponsoredAccount%3A519072844\u0026ids=List(104012,104004)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-13",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022statuses\u0022: {},\n  \u0022results\u0022: {\n    \u0022104004\u0022: {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022created\u0022: 1563230255308,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=104004\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: true,\n      \u0022associatedCampaigns\u0022: [\n        {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n          \u0022associatedAt\u0022: 1563657869695,\n          \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104004\u0022\n        }\n      ],\n      \u0022campaigns\u0022: [\n        \u0022urn:li:sponsoredCampaign:345396555\u0022\n      ],\n      \u0022name\u0022: \u0022test\u0022,\n      \u0022lastModified\u0022: 1563230265652,\n      \u0022id\u0022: 104004,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u002210\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n    },\n    \u0022104012\u0022: {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022created\u0022: 1563230311551,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=104012\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: true,\n      \u0022associatedCampaigns\u0022: [\n        {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n          \u0022associatedAt\u0022: 1563657869695,\n          \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104012\u0022\n        }\n      ],\n      \u0022campaigns\u0022: [\n        \u0022urn:li:sponsoredCampaign:345396555\u0022\n      ],\n      \u0022name\u0022: \u0022test via campaign creation\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022CONTAINS\u0022,\n            \u0022matchValue\u0022: \u0022thankyou\u0022\n          }\n        ],\n        [\n          {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/thankyou\u0022\n          }\n        ]\n      ],\n      \u0022lastModified\u0022: 1563831171814,\n      \u0022id\u0022: 104012,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [\n        {\n          \u0022matchValue\u0022: \u0022thankyou\u0022,\n          \u0022type\u0022: \u0022CONTAINS\u0022\n        },\n        {\n          \u0022matchValue\u0022: \u0022www.example.com/thankyou\u0022,\n          \u0022type\u0022: \u0022EXACT\u0022\n        }\n      ],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u002210\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Conversions by Ad Account",
+      "Anchor": "find-conversions-by-ad-account",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Find Conversions by Ad Account"
+      ],
+      "Text": "All conversions associated with an ad account can be retrieved by using the following API which takes in a sponsoredAccount URN in the account parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Conversions by Ad Account",
+      "Anchor": "find-conversions-by-ad-account",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Find Conversions by Ad Account"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Conversions by Ad Account",
+      "Anchor": "find-conversions-by-ad-account",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Find Conversions by Ad Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/conversions?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A519072844",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Find Conversions by Ad Account",
+      "Anchor": "find-conversions-by-ad-account",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Find Conversions by Ad Account"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/conversions?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A519072844\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-14",
+      "SectionPath": [
+        "Conversions",
+        "Get Conversions",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022created\u0022: 1563230311551,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=104012\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: true,\n      \u0022associatedCampaigns\u0022: [\n        {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n          \u0022associatedAt\u0022: 1563657869695,\n          \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:107620\u0022\n        }\n      ],\n      \u0022campaigns\u0022: [\n        \u0022urn:li:sponsoredCampaign:345396555\u0022\n      ],\n      \u0022name\u0022: \u0022test via campaign creation\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022CONTAINS\u0022,\n            \u0022matchValue\u0022: \u0022thankyou\u0022\n          }\n        ]\n      ],\n      \u0022lastModified\u0022: 1563230311551,\n      \u0022id\u0022: 104012,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [\n        {\n          \u0022matchValue\u0022: \u0022thankyou\u0022,\n          \u0022type\u0022: \u0022CONTAINS\u0022\n        }\n      ],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u002210\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022created\u0022: 1563230255308,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=104004\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: true,\n      \u0022associatedCampaigns\u0022: [\n        {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n          \u0022associatedAt\u0022: 1563657869695,\n          \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104004\u0022\n        }\n      ],\n      \u0022campaigns\u0022: [\n        \u0022urn:li:sponsoredCampaign:345396555\u0022\n      ],\n      \u0022name\u0022: \u0022test\u0022,\n      \u0022lastModified\u0022: 1563230265652,\n      \u0022id\u0022: 104004,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u002210\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n      \u0022key\u0022: {\n        \u0022id\u0022: 104004,\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n      }\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022created\u0022: 1558369606720,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=94924\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: false,\n      \u0022associatedCampaigns\u0022: [],\n      \u0022campaigns\u0022: [],\n      \u0022name\u0022: \u0022test 123\u0022,\n      \u0022lastModified\u0022: 1558369606720,\n      \u0022id\u0022: 94924,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u00220\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n      \u0022key\u0022: {\n        \u0022id\u0022: 94924,\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n      }\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022created\u0022: 1558369532355,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=94916\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: true,\n      \u0022associatedCampaigns\u0022: [\n        {\n          \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n          \u0022associatedAt\u0022: 1563657869695,\n          \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:94916\u0022\n        }\n      ],\n      \u0022campaigns\u0022: [\n        \u0022urn:li:sponsoredCampaign:345396555\u0022\n      ],\n      \u0022name\u0022: \u0022test conversion\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n            \u0022matchValue\u0022: \u0022www.google.com\u0022\n          }\n        ]\n      ],\n      \u0022lastModified\u0022: 1558369532355,\n      \u0022id\u0022: 94916,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [\n        {\n          \u0022matchValue\u0022: \u0022www.google.com\u0022,\n          \u0022type\u0022: \u0022STARTS_WITH\u0022\n        }\n      ],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u00220\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n      \u0022key\u0022: {\n        \u0022id\u0022: 94916,\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n      }\n    },\n    {\n      \u0022postClickAttributionWindowSize\u0022: 30,\n      \u0022viewThroughAttributionWindowSize\u0022: 7,\n      \u0022created\u0022: 1558369470905,\n      \u0022imagePixelTag\u0022: \u0022\u003Cimg height=\\\u00221\\\u0022 width=\\\u00221\\\u0022 style=\\\u0022display:none;\\\u0022 alt=\\\u0022\\\u0022 src=\\\u0022https://px.ads.linkedin.com/collect/?pid=175804\u0026conversionId=94908\u0026fmt=img\\\u0022 /\u003E\u0022,\n      \u0022type\u0022: \u0022ADD_TO_CART\u0022,\n      \u0022enabled\u0022: false,\n      \u0022associatedCampaigns\u0022: [],\n      \u0022campaigns\u0022: [],\n      \u0022name\u0022: \u0022test conversion\u0022,\n      \u0022lastModified\u0022: 1558369470905,\n      \u0022id\u0022: 94908,\n      \u0022attributionType\u0022: \u0022LAST_TOUCH_BY_CAMPAIGN\u0022,\n      \u0022urlRules\u0022: [],\n      \u0022value\u0022: {\n        \u0022amount\u0022: \u00220\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n      },\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022,\n      \u0022key\u0022: {\n        \u0022id\u0022: 94908,\n        \u0022account\u0022: \u0022urn:li:sponsoredAccount:519072844\u0022\n      }\n    }\n  ],\n  \u0022paging\u0022: {\n  \u0022count\u0022: 10,\n  \u0022start\u0022: 0,\n  \u0022links\u0022:[]\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Conversion",
+      "Anchor": "update-a-conversion",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion"
+      ],
+      "Text": "Use this to update your conversion. Only the field that changes needs to be specified. All fields can be modified, but should be done so with care. If you update campaigns or urlMatchRuleExpression, then all the existing items in the array need to be specified. The update replaces the whole field, rather than appending the new updated values.\nThe header X-RestLi-Method must be included in the request and set to partial_update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Conversion",
+      "Anchor": "update-a-conversion",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion"
+      ],
+      "Text": "Updating a field doesn\u0027t change the data associated with previous conversion events. For example, changing the value of a conversion from $50 to $25 doesn\u0027t change the $50 value associated with conversion events for this rule that triggered previous to the change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversions/107524?account=urn%3Ali%3AsponsoredAccount%3A519072844",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022postClickAttributionWindowSize\u0022: 1,\n      \u0022viewThroughAttributionWindowSize\u0022: 1,\n      \u0022name\u0022: \u0022test 1 last touch by campaign\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com\u0022\n          },\n          {\n            \u0022matchType\u0022: \u0022CONTAINS\u0022,\n            \u0022matchValue\u0022: \u0022/category/\u0022\n          }\n        ],\n        [\n          {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/order-confirmation\u0022\n          }\n        ]\n      ]\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversions/107524?account=urn%3Ali%3AsponsoredAccount%3A519072844\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022postClickAttributionWindowSize\u0022: 1,\n      \u0022viewThroughAttributionWindowSize\u0022: 1,\n      \u0022name\u0022: \u0022test 1 last touch by campaign\u0022,\n      \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com\u0022\n          },\n          {\n            \u0022matchType\u0022: \u0022CONTAINS\u0022,\n            \u0022matchValue\u0022: \u0022/category/\u0022\n          }\n        ],\n        [\n          {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022www.example.com/order-confirmation\u0022\n          }\n        ]\n      ]\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Partial Update",
+      "Anchor": "batch-partial-update",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Batch Partial Update"
+      ],
+      "Text": "To make multiple updates in a single request, the header X-RestLi-Method must be included in the request and set to BATCH_PARTIAL_UPDATE. Conversion ids should be passed in List format shown in the examples below. Also API request requires the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Partial Update",
+      "Anchor": "batch-partial-update",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Batch Partial Update"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Partial Update",
+      "Anchor": "batch-partial-update",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Batch Partial Update"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversions?account=urn%3Ali%3AsponsoredAccount%3A519072844\u0026ids=List(104004,107620)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Partial Update",
+      "Anchor": "batch-partial-update",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Batch Partial Update"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022104004\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022postClickAttributionWindowSize\u0022: 1\n        }\n      }\n    },\n    \u0022107620\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022postClickAttributionWindowSize\u0022: 1,\n          \u0022urlMatchRuleExpression\u0022: [\n            [\n              {\n                \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n                \u0022matchValue\u0022: \u0022www.example.com\u0022\n              },\n              {\n                \u0022matchType\u0022: \u0022CONTAINS\u0022,\n                \u0022matchValue\u0022: \u0022/category/\u0022\n              }\n            ],\n            [\n              {\n                \u0022matchType\u0022: \u0022EXACT\u0022,\n                \u0022matchValue\u0022: \u0022www.example.com/order-confirmation\u0022\n              }\n            ]\n          ]\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Partial Update",
+      "Anchor": "batch-partial-update",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Batch Partial Update"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/conversions?account=urn%3Ali%3AsponsoredAccount%3A519072844\u0026ids=List(104004,107620)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022104004\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022postClickAttributionWindowSize\u0022: 1\n        }\n      }\n    },\n    \u0022107620\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022postClickAttributionWindowSize\u0022: 1,\n          \u0022urlMatchRuleExpression\u0022: [\n            [\n              {\n                \u0022matchType\u0022: \u0022STARTS_WITH\u0022,\n                \u0022matchValue\u0022: \u0022www.example.com\u0022\n              },\n              {\n                \u0022matchType\u0022: \u0022CONTAINS\u0022,\n                \u0022matchValue\u0022: \u0022/category/\u0022\n              }\n            ],\n            [\n              {\n                \u0022matchType\u0022: \u0022EXACT\u0022,\n                \u0022matchValue\u0022: \u0022www.example.com/order-confirmation\u0022\n              }\n            ]\n          ]\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-15",
+      "SectionPath": [
+        "Conversions",
+        "Update a Conversion",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022104004\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022107620\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Conversions",
+      "Anchor": "campaign-conversions",
+      "SectionPath": [
+        "Campaign Conversions"
+      ],
+      "Text": "Campaign Conversions are association records between campaigns and conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Conversions",
+      "Anchor": "campaign-conversions",
+      "SectionPath": [
+        "Campaign Conversions"
+      ],
+      "Text": "When you create a conversion rule, the optional autoAssociationType query parameter can associate campaigns automatically. Both auto-association types consider campaigns in ACTIVE, PAUSED, and DRAFT status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Campaign Conversions",
+      "Anchor": "campaign-conversions",
+      "SectionPath": [
+        "Campaign Conversions"
+      ],
+      "Text": "",
+      "Headers": [
+        "autoAssociationType value",
+        "Association behavior"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ALL_CAMPAIGNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associates up to 200 campaigns in the ad account. The 200-campaign limit applies only to ALL_CAMPAIGNS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OBJECTIVE_BASED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associates campaigns whose campaign objective maps to the conversion rule type. The 200-campaign limit doesn\u0027t apply to OBJECTIVE_BASED. For the complete mapping, see Objective-based auto-association mapping.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema?view=li-lms-2026-09#objective-based-auto-association-mapping"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Conversions",
+      "Anchor": "campaign-conversions",
+      "SectionPath": [
+        "Campaign Conversions"
+      ],
+      "Text": "If you omit autoAssociationType, no campaigns are associated automatically. Use the following Campaign Conversions operations to associate a conversion rule with specific campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:337643194\u0022,\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:70203\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:337643194\u0022,\n  \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:70203\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create",
+      "Anchor": "batch-create-1",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Batch Create"
+      ],
+      "Text": "Multiple campaign conversions can be created with a Batch Create that accepts ids parameters each with a campaign URN and conversion URN. The campaign and conversion URNs should be passed in List format and encoded as shown in the examples below. Also API request requires the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Create a Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-16",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022associatedAt\u0022: 1506552037373,\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:337643194\u0022,\n    \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:70203\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-16",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get",
+      "Anchor": "batch-get-2",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Batch Get"
+      ],
+      "Text": "Multiple campaign conversion records can be requested with a Batch Get that accepts ids parameters each with a campaign URN and campaignConversions URN.\nThe campaign and conversion URNs should be passed in List format and encoded as shown in the examples below. Also API request requires the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-13",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-13",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004),(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104012))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-13",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004),(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104012))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-17",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004)\u0022: {\n            \u0022associatedAt\u0022: 1563657869695,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n            \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104004\u0022\n        },\n        \u0022(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104012)\u0022: {\n            \u0022associatedAt\u0022: 1563657869695,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n            \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104012\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-17",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Get Campaign Conversion",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Campaign Conversions by Campaigns",
+      "Anchor": "find-campaign-conversions-by-campaigns",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Find Campaign Conversions by Campaigns"
+      ],
+      "Text": "All campaign conversions associated with campaign(s) can be retrieved by using the following API that takes in a list of sponsored campaign URNs in campaigns parameter. API accepts parameter q=campaigns to find campaign conversions. The campaign URNs should be passed in List format and encoded as shown in the examples below. Also API request requires the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-14",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Find Campaign Conversions by Campaigns",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-14",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Find Campaign Conversions by Campaigns",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/campaignConversions?q=campaigns\u0026campaigns=List(urn%3Ali%3AsponsoredCampaign%3A345396555,urn%3Ali%3AsponsoredCampaign%3A324175962",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-14",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Find Campaign Conversions by Campaigns",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/campaignConversions?q=campaigns\u0026campaigns=List(urn%3Ali%3AsponsoredCampaign%3A345396555,urn%3Ali%3AsponsoredCampaign%3A324175962\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-18",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Find Campaign Conversions by Campaigns",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022associatedAt\u0022: 1503516717694,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:324175962\u0022,\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:58980\u0022\n    },\n    {\n      \u0022associatedAt\u0022: 1563657869695,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:94916\u0022\n    },\n    {\n      \u0022associatedAt\u0022: 1565302307661,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:107604\u0022\n    },\n    {\n      \u0022associatedAt\u0022: 1565300532743,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:107596\u0022\n    },\n    {\n      \u0022associatedAt\u0022: 1563657869695,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104012\u0022\n    },\n    {\n      \u0022associatedAt\u0022: 1565387276816,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:345396555\u0022,\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:104004\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n  \u0022count\u0022: 10,\n  \u0022start\u0022: 0,\n  \u0022links\u0022:[]\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-15",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-15",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-15",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/campaignConversions/(campaign:urn%3Ali%3AsponsoredCampaign%3A337643194,conversion:urn%3Alla%3AllaPartnerConversion%3A70203)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-15",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-16",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Batch Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "Multiple campaign conversion records can be deleted with a Batch delete API that accepts ids parameters each with a campaign URN and campaignConversions URN.\nThe campaign and conversion URNs should be passed in List format and encoded as shown in the examples below. Also API request requires the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-17",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Batch Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-17",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Batch Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004),(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104012))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-17",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Batch Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/campaignConversions?ids=List((campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104004),(campaign:urn%3Ali%3AsponsoredCampaign%3A345396555,conversion:urn%3Alla%3AllaPartnerConversion%3A104012))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-17",
+      "SectionPath": [
+        "Campaign Conversions",
+        "Batch Delete Campaign Conversion",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Path to Conversion API Metrics",
+      "Anchor": "path-to-conversion-api-metrics",
+      "SectionPath": [
+        "Path to Conversion API Metrics"
+      ],
+      "Text": "Conversion data from events such as impressions or clicks before the most recent event is now available. For example, you can query multiple impressions leading to the same conversion action instead of only the most recent action.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Prerequisites"
+      ],
+      "Text": "LinkedIn supports receiving custom order IDs. Advertisers can define the conversion type they want to track by writing custom Javascript that calls the endpoint directly to register conversion actions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Prerequisites"
+      ],
+      "Text": "You must pass cookies associated with the linkedin.com domain during the call since this process is typically handled by the insight tag, and can be verified in the request headers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Prerequisites"
+      ],
+      "Text": "The primary URL is",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Prerequisites"
+      ],
+      "Text": "https://px.ads.linkedin.com/collect/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Query Parameters"
+      ],
+      "Text": "The following table details query parameters:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "pid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn\u0027s insight tag ID. This parameter must be associated with at least one account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This parameter uses this URL for the conversion match URL. If the parameter is missing, the default value is the referring party in the request headers. This must be URL-encoded. Ignored if conversionId is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fmt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The format of the query. Only img is supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionId (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn-defined ID created in Campaign Manager. If present, this parameter will ignore the url parameter and will try to attribute campaigns associated with the conversion ID found in Campaign Manager.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "oid (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The order ID. If present, this parameter attributes any impressions or clicks within 90 days. By making a call to an adEventWithConversion, you can fetch all events with any order IDs that lead to a conversion event. You need to create and set the order ID. This parameter is required for the Path to Conversion feature.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "Placing the following examples on a web page will correctly direct an event to LinkedIn\u0027s tracking server.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "The following example shows an event with both the conversionId and orderId parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "\u003Cimg height=\u00221\u0022 width=\u00221\u0022 style=\u0022display:none;\u0022 alt=\u0022\u0022 src=\u0022https://px.ads.linkedin.com/collect/?pid=12345\u0026conversionId=12345\u0026oid=12345fmt=img\u0022 /\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "The following example shows an event with the orderId parameter only. It relies on URL match rules defined in campaign manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "\u003Cimg height=\u00221\u0022 width=\u00221\u0022 style=\u0022display:none;\u0022 alt=\u0022\u0022 src=\u0022https://px.ads.linkedin.com/collect/?pid=12345\u0026oid=12345fmt=img\u0022 /\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "The following example shows an event with an override URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Implementation Examples",
+      "Anchor": "implementation-examples",
+      "SectionPath": [
+        "Path to Conversion API Metrics",
+        "Implementation Examples"
+      ],
+      "Text": "\u003Cimg height=\u00221\u0022 width=\u00221\u0022 style=\u0022display:none;\u0022 alt=\u0022\u0022 src=\u0022https://px.ads.linkedin.com/collect/?pid=12345\u0026url=https%3A%2F%2Fwww.example.com\u0026fmt=img\u0022 /\u003E",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

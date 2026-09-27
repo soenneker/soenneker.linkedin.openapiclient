@@ -14,9 +14,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The frequency property</summary>
+        /// <summary>The number of times the campaign is shown to a member. For MAX_FREQUENCY, the maximum allowable frequency is between 3 and 30.Documented type: int</summary>
         public int? Frequency { get; set; }
-        /// <summary>The optimizationType property</summary>
+        /// <summary>Type of frequency optimization strategy, such as MAX_FREQUENCY, which indicates that a viewer can be shown the campaign no more than the specified number of times within the given time span.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OptimizationType { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string OptimizationType { get; set; }
 #endif
-        /// <summary>The timeSpan property</summary>
+        /// <summary>Time span of the frequency optimization rule.Documented type: TimeSpan</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiSearchForCampaignsUsingSearchCriteria200ResponseElementsItemOptimizationPreferenceFrequencyOptimizationPreferenceTimeSpan? TimeSpan { get; set; }

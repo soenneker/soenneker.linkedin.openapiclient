@@ -1,0 +1,115 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile",
+  "Title": "Lite Profile Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lite Profile Fields",
+      "Anchor": "lite-profile-fields",
+      "SectionPath": [],
+      "Text": "To access any of the Lite Profile fields listed below, your application must request the r_liteprofile member permission scope:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Lite Profile Fields",
+      "Anchor": "lite-profile-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the given member. May also be referenced as the personId within a Person URN (urn:li:person:{personId}). The id is unique to your specific developer application. Any attempts to use the id with other developer applications will not succeed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the firstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the member.\u00A0Represented as a\u00A0MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the lastName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata about the member\u0027s picture in the profile. See Profile Picture Fields for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

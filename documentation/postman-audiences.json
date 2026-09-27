@@ -1,0 +1,2566 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "body",
+      "scope": "r_ads,rw_dmp_segments,r_basicprofile",
+      "tokenName": "audiences-token",
+      "useBrowser": true
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027audiences-linkedin-postman-versioning\u0027",
+          "});"
+        ],
+        "id": "1ee2caf5-579c-4b8e-9694-57533e5fd2fd",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "159097d9-19d0-4a5a-a01b-6e7fa08ae1a2",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "434db00b-d792-4a89-8939-050a01b58b94",
+    "description": "This collection aims to focus on different Audiences use cases and should be used with the **audiences-env-versioning** environment.\n\n\\--All requests for the Audiences API collection are in the Restli 2.0 format--\n\nAuthorizationOAuth 2.0",
+    "name": "Audiences",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "description": "LinkedIn Audiences is a set of targeting capabilities to combine LinkedIn\u2019s data with your own data to reach the right audiences on LinkedIn.",
+      "id": "a938f713-2eb8-41b9-9531-6a8cbe12269c",
+      "item": [
+        {
+          "description": "1.  Obtain user authorization to create and manage audiences.\n2.  Retrieve the user\u0027s Ad Accounts (sponsored accounts)\n3.  Ask the user to select the Ad Account where the audience should be created or dynamically updated\n4.  Fetch existing Audiences for the chosen Ad Account\n5.  Allow the user to choose if they want to create a new Audience or update an existing one\n6.  Create a Company DMP segment (skip this step if the user chose to update an existing Audience)\n7.  Stream company data - add or remove multiple companies\n8.  Monitor Status of the Company DMP segments and display match rate, audience size, and segment status to the user",
+          "id": "84d61572-c882-41d4-80fa-66c5784ff0e8",
+          "item": [
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 200 OK response, continue",
+                      "if(httpresponse == \u0027200\u0027) {",
+                      "    var jsonData = JSON.parse(responseBody);",
+                      "    //grab the first sponsored account id from the list of elements returned",
+                      "    pm.environment.set(\u0022sponsoredaccount_id\u0022, jsonData.elements[0].id);",
+                      "}",
+                      ""
+                    ],
+                    "id": "56ba0abb-8f56-482a-9c94-0b51fed4eb7b",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "68e1d7e7-c1ad-499b-a9df-88250e18b4e9",
+              "name": "2. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "adAccounts"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "search"
+                    },
+                    {
+                      "key": "search",
+                      "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,test,reference"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: \u0022Test ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:11223344\u0022,\n            \u0022id\u0022: 123456,\n            \u0022test\u0022: false\n        },\n        {\n            \u0022name\u0022: \u0022MDO ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:2355689\u0022,\n            \u0022id\u0022: 456789,\n            \u0022test\u0022: false\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:47:08 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vbgdrKFAJD/Noy62wQ=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683067628:t=1683069447:v=2:sig=AQFQZq9JrAjWAqd2cFAaQ22npih6xv3o\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683067628:t=1683069447:v=2:sig=AQFQZq9JrAjWAqd2cFAaQ22npih6xv3o\u0022"
+                    }
+                  ],
+                  "id": "aee9d489-d883-4bb8-b62f-6ed36ef4c1c7",
+                  "name": "2. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "adAccounts"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "search"
+                        },
+                        {
+                          "key": "search",
+                          "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                        },
+                        {
+                          "key": "fields",
+                          "value": "id,name,test,reference"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 200 OK response, continue",
+                      "if(httpresponse == \u0027200\u0027) {",
+                      "    var jsonData = JSON.parse(responseBody);",
+                      "    for (let i = 0; i \u003C jsonData.elements.length; i\u002B\u002B) {",
+                      "        //find the first element that includes a segment of type COMPANY.",
+                      "        if(jsonData.elements[i].type.includes(\u0022COMPANY\u0022)){",
+                      "            //grab the first one we see and set the environment variable for the company segment.",
+                      "            pm.collectionVariables.set(\u0022company_segment_id\u0022, jsonData.elements[i].id);",
+                      "            break;",
+                      "        }",
+                      "    }",
+                      "}",
+                      ""
+                    ],
+                    "id": "400ec1cf-37ce-4bf3-9592-0544eb2a01c8",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "68424ff3-65cd-401d-af94-a35d67a9c066",
+              "name": "4. Fetch existing Audiences for chosen Ad Accounts",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The api call\u00A0[fetches all DMP segments for a specific ad account](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#find-dmp-segments-by-account)\u00A0and your designated sourcePlatform ENUM.\n\nDisplay match rate, audience size, and segment status to the user. Match Rate is calculated by rounding matchedCount / inputCount. Review our online documentation for more information on\u00A0[audienceSize vs matchedCount](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-destinations?tabs=http#differences-between-audience-size-and-matched-count-fields).",
+                "header": [
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dmpSegments"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "account"
+                    },
+                    {
+                      "key": "account",
+                      "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                    },
+                    {
+                      "key": "sourcePlatform",
+                      "value": "{{dmp_partner_platform_enum}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1634519022000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022audienceSize\u0022: 240000,\n                    \u0022created\u0022: 1634519022000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:8596576\u0022,\n                    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n                    \u0022matchedCount\u0022: 2,\n                    \u0022lastModified\u0022: 1637219449000,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022DMP Segment 1\u0022,\n            \u0022sourcePlatform\u0022: \u0022FAKE\u0022,\n            \u0022lastModified\u0022: 1634592751000,\n            \u0022accessPolicy\u0022: \u0022PRIVATE\u0022,\n            \u0022id\u0022: 9821736,\n            \u0022type\u0022: \u0022COMPANY\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n            \u0022inputCount\u0022: 2\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "1.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:48:01 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vbtDOd93w2C8KRA1VA=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683067681:t=1683069447:v=2:sig=AQHLrZryuJcOAaN8_etKGVvm-VviW-vE\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683067681:t=1683069447:v=2:sig=AQHLrZryuJcOAaN8_etKGVvm-VviW-vE\u0022"
+                    }
+                  ],
+                  "id": "1b9302d2-2f41-4a9a-b5be-fa9f58c0f073",
+                  "name": "4. Fetch existing Audiences for chosen Ad Accounts",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dmpSegments"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "account"
+                        },
+                        {
+                          "key": "account",
+                          "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                        },
+                        {
+                          "key": "sourcePlatform",
+                          "value": "{{dmp_partner_platform_enum}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 201 Create response, continue",
+                      "if(httpresponse == \u0027201\u0027) {",
+                      "    //set the collection variable",
+                      "    pm.collectionVariables.set(\u0022company_segment_id\u0022, pm.response.headers.get(\u0022x-restli-id\u0022));",
+                      "}",
+                      ""
+                    ],
+                    "id": "533331b0-1084-47e9-a34e-1d34e4f81a3b",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "e88ce7fb-9e15-47ba-b027-783d1e33267f",
+              "name": "6. Create a Company DMP Segment",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n   \u0022name\u0022:\u0022Company DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022{{dmp_partner_platform_enum}}\u0022, // Your LinkedIn contact will provide this value.\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n   \u0022type\u0022:\u0022COMPANY\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}"
+                },
+                "description": "This call\u00A0[creates a DMP segment](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#create-dmp-segment)\u00A0named\u00A0\u0022DMP Segment 1\u0022\u00A0tied to the sponsored account the user chose in step 2.\n\nThe sourcePlatform is an ENUM value that is provided by your LinkedIn contact after you have been granted access to the Audience APIs.\n\n**NOTE:**\u00A0there must be at least a 5 second delay between step 2 (creating the segment) and step 3 (streaming company data) or the segment may not be populated.",
+                "header": [
+                  {
+                    "key": "Linkedin-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "plain",
+                  "body": null,
+                  "code": 201,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "ETag",
+                      "value": "W/\u00221\u0022"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "/dmpSegments/17667075"
+                    },
+                    {
+                      "key": "x-restli-id",
+                      "value": "17667093"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:55:24 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vdWqQoy0ZUru6mQpZg=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068124:t=1683069447:v=2:sig=AQHtrHtbUpO6rqYLxS1PsTLGsscwpK5m\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068124:t=1683069447:v=2:sig=AQHtrHtbUpO6rqYLxS1PsTLGsscwpK5m\u0022"
+                    }
+                  ],
+                  "id": "f66afc85-d00e-4c43-b443-a5ed5e444fc2",
+                  "name": "6. Create a Company DMP Segment",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n   \u0022name\u0022:\u0022Company DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022{{dmp_partner_platform_enum}}\u0022, // Your LinkedIn contact will provide this value.\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n   \u0022accessPolicy\u0022:\u0022PRIVATE\u0022,\n   \u0022type\u0022:\u0022COMPANY\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/dmpSegments"
+                  },
+                  "responseTime": null,
+                  "status": "Created"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "id": "3e83c121-9bdd-4913-9021-3167d04a12ab",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "b7367f10-8925-4b1c-9624-c94777c8a00f",
+              "name": "7.  Stream company data - add or remove multiple companies",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n   \u0022elements\u0022: [\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022LinkedIn\u0022\n       },\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022Microsoft\u0022\n       }\n   ]\n}"
+                },
+                "description": "This example adds multiple companies to the DMP segment created in step 2.\n\nTo see what other fields can also be added/removed, review the\u00A0[schema section](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-companies?tabs=http#add-or-remove-a-company)\u00A0of our online documentation.\n\nThe more information on a company that is provided, the better chance of a higher match rate.",
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-RestLi-Method",
+                    "value": "BATCH_CREATE"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments/{{company_segment_id}}/companies"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022status\u0022: 201\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:56:46 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vdqLsYwB\u002BtXouQO1cA=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068205:t=1683069447:v=2:sig=AQFEEXdqcMCtFkgBba-GCvayrtzWiB6L\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068205:t=1683069447:v=2:sig=AQFEEXdqcMCtFkgBba-GCvayrtzWiB6L\u0022"
+                    }
+                  ],
+                  "id": "9ebd5efa-5fab-47f3-a2f9-c17281d9b446",
+                  "name": "7.  Stream company data - add or remove multiple companies",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n   \u0022elements\u0022: [\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022LinkedIn\u0022\n       },\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022Microsoft\u0022\n       }\n   ]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-RestLi-Method",
+                        "value": "BATCH_CREATE"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/dmpSegments/{{company_segment_id}}/companies"
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "id": "7919b3f1-05cc-4909-98cd-e4865b925bdd",
+              "name": "8.  Monitor Status of the Company DMP Segments",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The api call\u00A0[fetches all DMP segments for a specific ad account](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#find-dmp-segments-by-account)\u00A0and your designated sourcePlatform ENUM.\n\nAfter the initial processing, which could take up to 48 hours, any subsequent addition or removal of companies happen in near real-time. The API should be periodically polled to fetch the latest match rate, audience size, and segment status. Match Rate is calculated by rounding matchedCount / inputCount. Review our online documentation for more information on\u00A0[audienceSize vs matchedCount](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-destinations?tabs=http#differences-between-audience-size-and-matched-count-fields).",
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dmpSegments"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "account"
+                    },
+                    {
+                      "key": "account",
+                      "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                    },
+                    {
+                      "key": "sourcePlatform",
+                      "value": "{{dmp_partner_platform_enum}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1634519022000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022audienceSize\u0022: 240000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:8596576\u0022,\n                    \u0022created\u0022: 1634519022000,\n                    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n                    \u0022matchedCount\u0022: 2,\n                    \u0022lastModified\u0022: 1637219449000,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022DMP Segment 1\u0022,\n            \u0022sourcePlatform\u0022: \u0022FAKE\u0022,\n            \u0022accessPolicy\u0022: \u0022PRIVATE\u0022,\n            \u0022id\u0022: 9821736,\n            \u0022lastModified\u0022: 1634592751000,\n            \u0022type\u0022: \u0022COMPANY\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n            \u0022inputCount\u0022: 2\n        },\n        {\n            \u0022created\u0022: 1683068124000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n                    \u0022lastModified\u0022: 1683068124000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:15326243\u0022,\n                    \u0022created\u0022: 1683068124000,\n                    \u0022status\u0022: \u0022BUILDING\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022Company DMP Segment\u0022,\n            \u0022sourcePlatform\u0022: \u0022FAKE\u0022,\n            \u0022accessPolicy\u0022: \u0022PRIVATE\u0022,\n            \u0022id\u0022: 17667093,\n            \u0022lastModified\u0022: 1683068124000,\n            \u0022type\u0022: \u0022COMPANY\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123546\u0022\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:57:01 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vdt4JA4lwf9p0viXsA=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068221:t=1683069447:v=2:sig=AQEBo4a-auBfN5iPabeIt8_yEtajyO54\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068221:t=1683069447:v=2:sig=AQEBo4a-auBfN5iPabeIt8_yEtajyO54\u0022"
+                    }
+                  ],
+                  "id": "771929b3-cd2f-43ad-ba53-05412e0cac35",
+                  "name": "8.  Monitor Status of the Company DMP Segments",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dmpSegments"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "account"
+                        },
+                        {
+                          "key": "account",
+                          "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                        },
+                        {
+                          "key": "sourcePlatform",
+                          "value": "{{dmp_partner_platform_enum}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            }
+          ],
+          "name": "Streaming Companies - Account Targeting"
+        },
+        {
+          "description": "1.  Obtain user authorization to create and manage audiences\n2.  Retrieve the user\u0027s Ad Accounts (sponsored accounts)\n3.  Ask the user to select the Ad Account where the audience should be created or dynamically updated\n4.  Fetch existing Audiences for the chosen Ad Account\n5.  Allow the user to choose if they want to create a new Audience or update an existing one\n6.  Create a User DMP segment (skip this step if the user chose to update an existing Audience)\n7.  Stream User data - add or remove multiple users\n8.  Monitor Status of the User DMP segments and display match rate, audience size, and segment status to the user",
+          "id": "2c30157d-6a3f-460a-abfe-f4faa8793d58",
+          "item": [
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 200 OK response, continue",
+                      "if(httpresponse == \u0027200\u0027) {",
+                      "    var jsonData = JSON.parse(responseBody);",
+                      "    //grab the first sponsored account id from the list of elements returned",
+                      "    pm.environment.set(\u0022sponsoredaccount_id\u0022, jsonData.elements[0].id);",
+                      "}",
+                      ""
+                    ],
+                    "id": "910e81f6-3aa5-4b65-b394-16f1dd66e4db",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "1b96bc57-983b-4b15-8e17-43da3104bfca",
+              "name": "2. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "View\u00A0[Search for Accounts](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts)\u00A0documentation for more information.\n\nThis API call pulls back Ad Accounts that the member has access to where the status = ACTIVE, type = BUSINESS, and test = false (NOT a test Ad Account).\n\nLearn more about Test Ad Accounts\u00A0[here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#working-with-test-ad-accounts).\n\nFor testing purposes, if you wish to use this example api to pull back a Test Ad Account, simply remove\u00A0\u0060test:false\u0060\u00A0from the search parameter.\n\n**3\\. Ask the user to select the Ad Account where the audience should be created or dynamically updated**",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "adAccounts"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "search"
+                    },
+                    {
+                      "key": "search",
+                      "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,test,reference"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: \u0022Test ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:11223344\u0022,\n            \u0022id\u0022: 123456,\n            \u0022test\u0022: false\n        },\n        {\n            \u0022name\u0022: \u0022MDO ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:2355689\u0022,\n            \u0022id\u0022: 456789,\n            \u0022test\u0022: false\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 23:00:53 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6velJCN67opNxnkxnWQ=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068453:t=1683069447:v=2:sig=AQHZV3AMmOVY9ZWDvPU9p-ECpu5VRbgf\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068453:t=1683069447:v=2:sig=AQHZV3AMmOVY9ZWDvPU9p-ECpu5VRbgf\u0022"
+                    }
+                  ],
+                  "id": "648dfbc1-8e3a-428a-933b-3835c6c30a7b",
+                  "name": "2. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "adAccounts"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "search"
+                        },
+                        {
+                          "key": "search",
+                          "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                        },
+                        {
+                          "key": "fields",
+                          "value": "id,name,test,reference"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 200 OK response, continue",
+                      "if(httpresponse == \u0027200\u0027) {",
+                      "    var jsonData = JSON.parse(responseBody);",
+                      "    for (let i = 0; i \u003C jsonData.elements.length; i\u002B\u002B) {",
+                      "        //find the first element that includes a segment of type USER.",
+                      "        if(jsonData.elements[i].type.includes(\u0022USER\u0022)){",
+                      "            //grab the first one we see and set the environment variable for the user segment.",
+                      "            pm.collectionVariables.set(\u0022user_segment_id\u0022, jsonData.elements[i].id);",
+                      "            break;",
+                      "        }",
+                      "    }",
+                      "}",
+                      ""
+                    ],
+                    "id": "91555f20-3a30-4499-b8e5-c569b5af60d8",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "e2aacd72-e1e7-4f21-b2f9-14fa9dde0dd0",
+              "name": "4. Fetch existing Audiences for the chosen Ad Account",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The api call\u00A0[fetches all DMP segments for a specific ad account](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#find-dmp-segments-by-account)\u00A0and your designated sourcePlatform ENUM.\n\nDisplay match rate, audience size, and segment status to the user. Match Rate is calculated by rounding matchedCount / inputCount. Review our online documentation for more information on\u00A0[audienceSize vs matchedCount](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-destinations?tabs=http#differences-between-audience-size-and-matched-count-fields).\n\n**5\\. Allow the user to choose if they want to create a new Audience or update an existing one**",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dmpSegments"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "account"
+                    },
+                    {
+                      "key": "account",
+                      "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                    },
+                    {
+                      "key": "sourcePlatform",
+                      "value": "{{dmp_partner_platform_enum}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1634519022000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022audienceSize\u0022: 240000,\n                    \u0022created\u0022: 1634519022000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:9896577\u0022,\n                    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n                    \u0022matchedCount\u0022: 2,\n                    \u0022lastModified\u0022: 1637219449000,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022DMP Segment TEST\u0022,\n            \u0022sourcePlatform\u0022: \u0022FAKE\u0022,\n            \u0022lastModified\u0022: 1634592751000,\n            \u0022accessPolicy\u0022: \u0022PRIVATE\u0022,\n            \u0022id\u0022: 96754,\n            \u0022type\u0022: \u0022USER\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n            \u0022inputCount\u0022: 2\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 23:01:14 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6veqISiYEwUGdOOgauQ=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068474:t=1683069447:v=2:sig=AQE6HipCf2yT4MhGtNM8WyZ9at-bN6-k\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068474:t=1683069447:v=2:sig=AQE6HipCf2yT4MhGtNM8WyZ9at-bN6-k\u0022"
+                    }
+                  ],
+                  "id": "850bfc48-cc35-441b-b556-5299e7fff7f4",
+                  "name": "4. Fetch existing Audiences for the chosen Ad Account",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dmpSegments"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "account"
+                        },
+                        {
+                          "key": "account",
+                          "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                        },
+                        {
+                          "key": "sourcePlatform",
+                          "value": "{{dmp_partner_platform_enum}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 201 Create response, continue",
+                      "if(httpresponse == \u0027201\u0027) {",
+                      "    //set the environment variable",
+                      "    pm.collectionVariables.set(\u0022user_segment_id\u0022, pm.response.headers.get(\u0022x-restli-id\u0022));",
+                      "}",
+                      ""
+                    ],
+                    "id": "a3193be7-cad5-49ea-8b1d-d24f8da8f7dd",
+                    "packages": {},
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "5bc31402-ab45-4123-b8d5-de019c25ef86",
+              "name": "6. Create a User DMP segment (skip this step if the user chose to update an existing Audience)",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n   \u0022name\u0022:\u0022User DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022{{dmp_partner_platform_enum}}\u0022, // Your LinkedIn contact will provide this value.\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}"
+                },
+                "description": "This call\u00A0[creates a DMP segment](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#create-dmp-segment)\u00A0named\u00A0\u0022DMP Segment 2\u0022\u00A0for users to be streamed to.\n\nThe sourcePlatform is an ENUM value that is provided by your LinkedIn contact after you have been granted access to the Audience APIs.\n\n**NOTE:**\u00A0there must be at least a 5 second delay between step 2 (creating the segment) and step 3 (streaming user data) or the segment may not be populated.",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "plain",
+                  "body": null,
+                  "code": 201,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "ETag",
+                      "value": "W/\u00221\u0022"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "/dmpSegments/17667167"
+                    },
+                    {
+                      "key": "x-restli-id",
+                      "value": "17667143"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 23:01:53 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vezgxsKWZ9cwxuQh8w=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068513:t=1683069447:v=2:sig=AQEUs6b73IRj48z1M8Tfv_zdLA6ala_B\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068513:t=1683069447:v=2:sig=AQEUs6b73IRj48z1M8Tfv_zdLA6ala_B\u0022"
+                    }
+                  ],
+                  "id": "4cbbe557-47fc-4beb-bf8f-b5d571d6b59e",
+                  "name": "6. Create a User DMP segment (skip this step if the user chose to update an existing Audience)",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n   \u0022name\u0022:\u0022User DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022{{dmp_partner_platform_enum}}\u0022, // Your LinkedIn contact will provide this value.\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n   \u0022accessPolicy\u0022:\u0022PRIVATE\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/dmpSegments"
+                  },
+                  "responseTime": null,
+                  "status": "Created"
+                }
+              ]
+            },
+            {
+              "id": "80a0fead-97b2-4270-8f47-41f5231b388c",
+              "name": "7. Stream user data - add or remove multiple users",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022elements\u0022: [\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022:[{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u00226b56c85c1ce461e7ef77e3a52f13a6bc09feb93a04ce0670f9909e8ffde01f3a\u0022\n            }]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u00220100c74de9670c6bf2882502a486ec9e9d259fd090f19895974bae7efdc87913\u0022\n            }]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u002289147c81369d80ff259ed23a7d6949f2ce34b5e62619d7e00e880db0495bbed0\u0022\n            }]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u00224f123dc421f679369532452374c003dd9e825273e9929bd61060a65cd8587bb3\u0022\n            }]\n        }\n    ]\n}"
+                },
+                "description": "This example adds multiple users to the DMP segment created in step 2.\n\nTo see what other fields can also be added/removed, review the\u00A0[schema section](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-users?tabs=http#add-or-remove-a-user)\u00A0of our online documentation.\n\nThe more information on a user that is provided, the better chance of a higher match rate.",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "X-RestLi-Method",
+                    "type": "text",
+                    "value": "BATCH_CREATE"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments/{{user_segment_id}}/users"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022status\u0022: 201\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "x-restli-protocol-version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Mon, 01 Apr 2024 22:26:54 GMT"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-ltx1"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Source-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAYVEHycvNA1RmXDtYiFuA=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=TB05:s=T:r=T:a=T:p=T:g=7217:u=1774:x=1:i=1712010414:t=1712082317:v=2:sig=AQEIk4zdz3K6oVRcSUulM-SLt_PUpEZr\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=TB05:s=T:r=T:a=T:p=T:g=7217:u=1774:x=1:i=1712010414:t=1712082317:v=2:sig=AQEIk4zdz3K6oVRcSUulM-SLt_PUpEZr\u0022"
+                    }
+                  ],
+                  "id": "b7773d6d-dacd-4b23-8902-a204b51dd6e0",
+                  "name": "7. Stream user data - add or remove multiple users",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n    \u0022elements\u0022: [\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022:[{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u00226b56c85c1ce461e7ef77e3a52f13a6bc09feb93a04ce0670f9909e8ffde01f3a\u0022\n            }]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u00220100c74de9670c6bf2882502a486ec9e9d259fd090f19895974bae7efdc87913\u0022\n            }]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u002289147c81369d80ff259ed23a7d6949f2ce34b5e62619d7e00e880db0495bbed0\u0022\n            }]\n        },\n        {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022userIds\u0022: [{\n                \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n                \u0022idValue\u0022: \u00224f123dc421f679369532452374c003dd9e825273e9929bd61060a65cd8587bb3\u0022\n            }]\n        }\n    ]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "X-RestLi-Method",
+                        "value": "BATCH_CREATE"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/dmpSegments/{{user_segment_id}}/users"
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "id": "3f1db61f-f74f-41cd-a989-03307ce63e52",
+              "name": "8. Monitor Status of the User DMP Segments",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The api call\u00A0[fetches all DMP segments for a specific ad account](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#find-dmp-segments-by-account)\u00A0and your designated sourcePlatform ENUM.\n\nAfter the initial processing, which could take up to 48 hours, any subsequent addition or removal of users happen in near real-time. The API should be periodically polled to fetch the latest match rate, audience size, and segment status. Match Rate is calculated by rounding matchedCount / inputCount. Review our online documentation for more information on\u00A0[audienceSize vs matchedCount](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-destinations?tabs=http#differences-between-audience-size-and-matched-count-fields).",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dmpSegments"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "account"
+                    },
+                    {
+                      "key": "account",
+                      "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                    },
+                    {
+                      "key": "sourcePlatform",
+                      "value": "{{dmp_partner_platform_enum}}"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 30\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1634519022000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022audienceSize\u0022: 240000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:9896577\u0022,\n                    \u0022created\u0022: 1634519022000,\n                    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n                    \u0022matchedCount\u0022: 2,\n                    \u0022lastModified\u0022: 1637219449000,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022DMP Segment TEST\u0022,\n            \u0022sourcePlatform\u0022: \u0022FAKE\u0022,\n            \u0022accessPolicy\u0022: \u0022PRIVATE\u0022,\n            \u0022id\u0022: 96754,\n            \u0022lastModified\u0022: 1634592751000,\n            \u0022type\u0022: \u0022USER\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123456\u0022,\n            \u0022inputCount\u0022: 2\n        },\n        {\n            \u0022created\u0022: 1683068124000,\n            \u0022destinations\u0022: [\n                {\n                    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n                    \u0022lastModified\u0022: 1683068124000,\n                    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:15326243\u0022,\n                    \u0022created\u0022: 1683068124000,\n                    \u0022status\u0022: \u0022BUILDING\u0022\n                }\n            ],\n            \u0022name\u0022: \u0022User DMP Segment\u0022,\n            \u0022sourcePlatform\u0022: \u0022FAKE\u0022,\n            \u0022accessPolicy\u0022: \u0022PRIVATE\u0022,\n            \u0022id\u0022: 17667093,\n            \u0022lastModified\u0022: 1683068124000,\n            \u0022type\u0022: \u0022USER\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123546\u0022\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 23:07:06 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vf\u002BM2zOdMDWFKgsn3A=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068826:t=1683069447:v=2:sig=AQElc1pv0Q6VZEfvOXkJ1sYGXJL-uy05\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068826:t=1683069447:v=2:sig=AQElc1pv0Q6VZEfvOXkJ1sYGXJL-uy05\u0022"
+                    }
+                  ],
+                  "id": "7cee8700-bdd3-4f07-9431-a72a546e1dca",
+                  "name": "8. Monitor Status of the User DMP Segments",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dmpSegments"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "account"
+                        },
+                        {
+                          "key": "account",
+                          "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                        },
+                        {
+                          "key": "sourcePlatform",
+                          "value": "{{dmp_partner_platform_enum}}"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform={{dmp_partner_platform_enum}}"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            }
+          ],
+          "name": "Streaming Users - Contact Targeting"
+        },
+        {
+          "description": "1. Obtain user authorization to create and manage audiences.\n    \n2. Retrieve the user\u0027s Ad Accounts (sponsored accounts)\n    \n3. Ask the user to select the Ad Account where the audience should be created or dynamically updated\n    \n4. Create a Predictive Audience DMP segment\n    \n5. Retrive the created predictive audience",
+          "id": "f1410e5e-24ba-4ca7-a235-0c47baa30be5",
+          "item": [
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 200 OK response, continue",
+                      "if(httpresponse == \u0027200\u0027) {",
+                      "    var jsonData = JSON.parse(responseBody);",
+                      "    //grab the first sponsored account id from the list of elements returned",
+                      "    pm.environment.set(\u0022sponsoredaccount_id\u0022, jsonData.elements[0].id);",
+                      "}",
+                      ""
+                    ],
+                    "id": "56ba0abb-8f56-482a-9c94-0b51fed4eb7b",
+                    "packages": {},
+                    "requests": {},
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "176562b5-f412-4d99-8e03-98e31d900208",
+              "name": "1. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "value": "{{insert_token}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "adAccounts"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "search"
+                    },
+                    {
+                      "key": "search",
+                      "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,test,reference"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: \u0022Test ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:11223344\u0022,\n            \u0022id\u0022: 123456,\n            \u0022test\u0022: false\n        },\n        {\n            \u0022name\u0022: \u0022MDO ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:2355689\u0022,\n            \u0022id\u0022: 456789,\n            \u0022test\u0022: false\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:47:08 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vbgdrKFAJD/Noy62wQ=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683067628:t=1683069447:v=2:sig=AQFQZq9JrAjWAqd2cFAaQ22npih6xv3o\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683067628:t=1683069447:v=2:sig=AQFQZq9JrAjWAqd2cFAaQ22npih6xv3o\u0022"
+                    }
+                  ],
+                  "id": "0de1e755-0deb-4cb6-93f7-910159e40f5e",
+                  "name": "1. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "adAccounts"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "search"
+                        },
+                        {
+                          "key": "search",
+                          "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                        },
+                        {
+                          "key": "fields",
+                          "value": "id,name,test,reference"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 201 Create response, continue",
+                      "if(httpresponse == \u0027201\u0027) {",
+                      "    //set the collection variable",
+                      "    pm.collectionVariables.set(\u0022pa_dmp_segment_id\u0022, pm.response.headers.get(\u0022x-restli-id\u0022));",
+                      "}",
+                      ""
+                    ],
+                    "id": "533331b0-1084-47e9-a34e-1d34e4f81a3b",
+                    "packages": {},
+                    "requests": {},
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "41eb5a1f-275a-4959-9328-8ca4d02cc1e4",
+              "name": "2. Create a Predictive Audience DMP Segment",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n   \u0022name\u0022:\u0022Company DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022LINKEDIN_BUSINESS_OBJECTIVE_BASED_AUDIENCES\u0022, // Your LinkedIn contact will provide this value.\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n   \u0022type\u0022:\u0022COMPANY\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}"
+                },
+                "description": "This call [creates a DMP segment](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#create-dmp-segment) named \u0022DMP Segment 1\u0022 tied to the sponsored account the user chose in step 2.",
+                "header": [
+                  {
+                    "key": "Linkedin-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "plain",
+                  "body": null,
+                  "code": 201,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "ETag",
+                      "value": "W/\u00221\u0022"
+                    },
+                    {
+                      "key": "Location",
+                      "value": "/dmpSegments/17667075"
+                    },
+                    {
+                      "key": "x-restli-id",
+                      "value": "17667093"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:55:24 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vdWqQoy0ZUru6mQpZg=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068124:t=1683069447:v=2:sig=AQHtrHtbUpO6rqYLxS1PsTLGsscwpK5m\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068124:t=1683069447:v=2:sig=AQHtrHtbUpO6rqYLxS1PsTLGsscwpK5m\u0022"
+                    }
+                  ],
+                  "id": "3e22fbaf-5f2c-47e0-a605-f78fe094b8f6",
+                  "name": "2. Create a Predictive Audience DMP Segment",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n   \u0022name\u0022:\u0022Company DMP Segment\u0022,\n   \u0022sourcePlatform\u0022:\u0022LINKEDIN_BUSINESS_OBJECTIVE_BASED_AUDIENCES\u0022, // Your LinkedIn contact will provide this value.\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n   \u0022type\u0022:\u0022COMPANY\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "Linkedin-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/dmpSegments"
+                  },
+                  "responseTime": null,
+                  "status": "Created"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 201 Create response, continue",
+                      "if(httpresponse == \u0027201\u0027) {",
+                      "    //set the collection variable",
+                      "    pm.collectionVariables.set(\u0022predictive_audience_id\u0022, pm.response.headers.get(\u0022x-restli-id\u0022));",
+                      "}"
+                    ],
+                    "id": "3e83c121-9bdd-4913-9021-3167d04a12ab",
+                    "packages": {},
+                    "requests": {},
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "82eec0d8-123a-471d-9307-a14de82d808c",
+              "name": "3.  Create Predictive Audience",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n  \u0022targetingFilter\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:countryGroup:AS\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n \u0022desiredAudienceCount\u0022: 20000,\n \u0022seeds\u0022: [ \u0022urn:li:dmpSegment:{{seed_segment_id}}\u0022]\n}"
+                },
+                "description": "This example created a predictive audience within the DMP segment created in step 2.",
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-RestLi-Method",
+                    "value": "BATCH_CREATE"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments/{{pa_dmp_segment_id}}/businessObjectiveBasedAudiences"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": null,
+                  "code": 201,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 22:56:46 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vdqLsYwB\u002BtXouQO1cA=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068205:t=1683069447:v=2:sig=AQFEEXdqcMCtFkgBba-GCvayrtzWiB6L\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068205:t=1683069447:v=2:sig=AQFEEXdqcMCtFkgBba-GCvayrtzWiB6L\u0022"
+                    }
+                  ],
+                  "id": "952c7e45-9e33-454c-ae1e-c3bb7a4654d1",
+                  "name": "3.  Create Predictive Audience",
+                  "originalRequest": {
+                    "body": {
+                      "mode": "raw",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      },
+                      "raw": "{\n  \u0022targetingFilter\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:countryGroup:AS\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n \u0022desiredAudienceCount\u0022: 20000,\n \u0022seeds\u0022: [ \u0022urn:li:dmpSegment:{{seed_segment_id}}\u0022]\n}"
+                    },
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "POST",
+                    "url": "{{baseUrl}}/dmpSegments/{{pa_dmp_segment_id}}/businessObjectiveBasedAudiences"
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "id": "73fa4880-a441-4622-9ad1-c1e5a63317e0",
+              "name": "4. Retrieve the Predictive Audience",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "GET",
+                "url": "{{baseUrl}}/dmpSegments/{{pa_dmp_segment_id}}/businessObjectiveBasedAudiences/{{predictive_audience_id}}"
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022targetingFilter\u0022: {\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:countryGroup:AS\u0022\n                        ]\n                    }\n                }\n            ]\n        }\n    },\n    \u0022created\u0022: 1740775557000,\n    \u0022dmpSegmentId\u0022: 12345,\n    \u0022seeds\u0022: [\n        \u0022urn:li:dmpSegment:84735\u0022\n    ],\n    \u0022versionTag\u0022: \u00221\u0022,\n    \u0022lastModified\u0022: 1740775557000,\n    \u0022desiredAudienceCount\u0022: 20000\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 23:07:06 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vf\u002BM2zOdMDWFKgsn3A=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068826:t=1683069447:v=2:sig=AQElc1pv0Q6VZEfvOXkJ1sYGXJL-uy05\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683068826:t=1683069447:v=2:sig=AQElc1pv0Q6VZEfvOXkJ1sYGXJL-uy05\u0022"
+                    }
+                  ],
+                  "id": "e1f47731-eccd-43fc-8de7-c7c253e710d1",
+                  "name": "4. Retrieve the Predictive Audience",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      },
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": "{{baseUrl}}/dmpSegments/{{pa_dmp_segment_id}}/businessObjectiveBasedAudiences/{{predictive_audience_id}}"
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            }
+          ],
+          "name": "Predictive Audiences"
+        },
+        {
+          "description": "1.  Obtain user authorization to create and manage audiences\n2.  Retrieve the user\u0027s Ad Accounts (sponsored accounts)\n3.  Ask the user to select the Ad Account where the audience should be created\n4.  Create a CSV list file to be uploaded to LinkedIn in step 5\n5.  Upload the CSV list file\n6.  Create a List Upload DMP Segment\n7.  Attach the Uploaded List to the List Upload DMP Segment\n8.  Monitor Status of the DMP Segments",
+          "id": "5b6a3083-4d39-4b74-a006-9f8160636336",
+          "item": [
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 200 OK response, continue",
+                      "if(httpresponse == \u0027200\u0027) {",
+                      "    var jsonData = JSON.parse(responseBody);",
+                      "    //grab the first sponsored account id from the list of elements returned",
+                      "    pm.environment.set(\u0022sponsoredaccount_id\u0022, jsonData.elements[0].id);",
+                      "}",
+                      ""
+                    ],
+                    "id": "e17c8fa2-1000-4aab-bd56-d2c738d91b7f",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "bf403cbc-3325-47ca-8a00-76be81bdcbef",
+              "name": "2. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "View [Search for Accounts](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#search-for-accounts) documentation for more information.\n\nThis API call pulls back Ad Accounts that the member has access to where the status = ACTIVE, type = BUSINESS, and test = false (NOT a test Ad Account).\n\nLearn more about Test Ad Accounts [here](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?tabs=http#working-with-test-ad-accounts).\n\nFor testing purposes, if you wish to use this example api to pull back a Test Ad Account, simply remove \u0060test:false\u0060 from the search parameter.\n\n**3\\. Ask the user to select the Ad Account where the audience should be created**\n\n**4\\. Create a CSV file to upload**\n\n**5\\. Upload the CSV file using the below curl command**\n\ncurl --form \u0022fileupload=@filename.csv;type=text/csv\u0022 -H \u0027Authorization: Bearer \u0027 [https://api.linkedin.com/media/upload?media_type=ad_segments](https://api.linkedin.com/media/upload?media_type=ad_segments)\n\nSee our online documentation for [example CSV file templates](https://desktop.postman.com/?desktopVersion=10.13.0\u0026userId=16069442\u0026teamId=1986404). See [Upload List File](https://desktop.postman.com/?desktopVersion=10.13.0\u0026userId=16069442\u0026teamId=1986404) in our online documentation for details on this API.",
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "adAccounts"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "search"
+                    },
+                    {
+                      "key": "search",
+                      "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "id,name,test,reference"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                }
+              },
+              "response": [
+                {
+                  "_postman_previewlanguage": "json",
+                  "body": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: \u0022Test ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:11223344\u0022,\n            \u0022id\u0022: 123456,\n            \u0022test\u0022: false\n        },\n        {\n            \u0022name\u0022: \u0022MDO ad account\u0022,\n            \u0022reference\u0022: \u0022urn:li:organization:2355689\u0022,\n            \u0022id\u0022: 456789,\n            \u0022test\u0022: false\n        }\n    ]\n}",
+                  "code": 200,
+                  "cookie": [],
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "X-RestLi-Protocol-Version",
+                      "value": "2.0.0"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Tue, 02 May 2023 23:11:41 GMT"
+                    },
+                    {
+                      "key": "Transfer-Encoding",
+                      "value": "chunked"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "X-Li-Fabric",
+                      "value": "prod-lva1"
+                    },
+                    {
+                      "key": "X-Li-Pop",
+                      "value": "prod-lva1-x"
+                    },
+                    {
+                      "key": "X-LI-Proto",
+                      "value": "http/1.1"
+                    },
+                    {
+                      "key": "X-LI-UUID",
+                      "value": "AAX6vg/t5z6XRQmuvoZgzw=="
+                    },
+                    {
+                      "key": "Set-Cookie",
+                      "value": "lidc=\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683069101:t=1683073047:v=2:sig=AQHiOoxfX4z9r50gSjH5aubpt36gagD8\u0022"
+                    },
+                    {
+                      "key": "X-LI-Route-Key",
+                      "value": "\u0022b=VB05:s=V:r=V:a=V:p=V:g=5510:u=1257:x=1:i=1683069101:t=1683073047:v=2:sig=AQHiOoxfX4z9r50gSjH5aubpt36gagD8\u0022"
+                    }
+                  ],
+                  "id": "cdcb3e1e-48be-4182-8155-d5d326677c3a",
+                  "name": "2. Retrieve the user\u0027s Ad Accounts (sponsoredAccount)",
+                  "originalRequest": {
+                    "header": [
+                      {
+                        "key": "X-Restli-Protocol-Version",
+                        "value": "2.0.0"
+                      },
+                      {
+                        "key": "LinkedIn-Version",
+                        "value": "{{insert_version}}"
+                      },
+                      {
+                        "disabled": true,
+                        "key": "Authorization",
+                        "value": "{{insert_token}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "adAccounts"
+                      ],
+                      "query": [
+                        {
+                          "key": "q",
+                          "value": "search"
+                        },
+                        {
+                          "key": "search",
+                          "value": "(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)"
+                        },
+                        {
+                          "key": "fields",
+                          "value": "id,name,test,reference"
+                        }
+                      ],
+                      "raw": "{{baseUrl}}/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE)),test:false)\u0026fields=id,name,test,reference"
+                    }
+                  },
+                  "responseTime": null,
+                  "status": "OK"
+                }
+              ]
+            },
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var httpresponse = pm.response.code;",
+                      "//if 201 Create response, continue",
+                      "if(httpresponse == \u0027201\u0027) {",
+                      "    //set the environment variable",
+                      "    pm.collectionVariables.set(\u0022listupload_segment_id\u0022, pm.response.headers.get(\u0022x-restli-id\u0022));",
+                      "}",
+                      ""
+                    ],
+                    "id": "3d9e6127-cdc6-4c95-a5e9-9bbf087a4f9b",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "8a3d7df4-c694-4565-8825-304383a31fb4",
+              "name": "6. Create list upload DMP Segment",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:{{sponsoredaccount_id}}\u0022,\n    \u0022destinations\u0022: [\n        {\n            \u0022destination\u0022: \u0022LINKEDIN\u0022\n        }\n    ],\n    \u0022name\u0022: \u0022DMP segment for CSV uploads\u0022,\n    \u0022sourcePlatform\u0022: \u0022LIST_UPLOAD\u0022,\n    \u0022type\u0022: \u0022COMPANY_LIST_UPLOAD\u0022\n}"
+                },
+                "description": "Here we create the CSV List Upload DMP segment. See our [online documentation](https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/create-and-manage-list-uploads?tabs=http#sample-request-1) for more information.\n\n**NOTE:** there must be at least a 5 second delay between step 6 (creating the segment) and step 7 (attaching the uploaded list file) or the segment may not be populated.",
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments"
+              },
+              "response": []
+            },
+            {
+              "id": "49be98ea-e9a8-4fee-99c7-15cc3f6d6c71",
+              "name": "7. Attach the Uploaded List to the List Upload DMP Segment",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022inputFile\u0022: \u0022\u003Cmedia urn returned from step 5 curl call\u003E\u0022\n}"
+                },
+                "description": "This call attaches the uploaded CSV list file (using the media URN returned in step 5) to the DMP segment created in step 6.\n\nFor more detail on [attaching an uploaded list to a DMP segment](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-list-uploads?tabs=http#attach-list-to-dmp-segment), see our online documentation.",
+                "header": [
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  },
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  }
+                ],
+                "method": "POST",
+                "url": "{{baseUrl}}/dmpSegments/{{listupload_segment_id}}/listUploads"
+              },
+              "response": []
+            },
+            {
+              "id": "a091b002-9378-43f6-ab55-1a7cddc595cb",
+              "name": "8. Monitor Status of the List Upload DMP Segments",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "The api call\u00A0[fetches all DMP segments for a specific ad account](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segments?tabs=http#find-dmp-segments-by-account)\u00A0that are List Upload segments.\n\nInitial processing can take up to 48 hours. The API should be periodically polled to fetch the latest match rate, audience size, and segment status. Match Rate is calculated by rounding matchedCount / inputCount. Review our online documentation for more information on\u00A0[audienceSize vs matchedCount](https://docs.microsoft.com/linkedin/marketing/integrations/matched-audiences/create-and-manage-segment-destinations?tabs=http#differences-between-audience-size-and-matched-count-fields).",
+                "header": [
+                  {
+                    "key": "X-Restli-Protocol-Version",
+                    "type": "text",
+                    "value": "2.0.0"
+                  },
+                  {
+                    "key": "LinkedIn-Version",
+                    "type": "text",
+                    "value": "{{insert_version}}"
+                  },
+                  {
+                    "disabled": true,
+                    "key": "Authorization",
+                    "type": "text",
+                    "value": "{{insert_token}}"
+                  }
+                ],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dmpSegments"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "account"
+                    },
+                    {
+                      "key": "account",
+                      "value": "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+                    },
+                    {
+                      "key": "sourcePlatform",
+                      "value": "LIST_UPLOAD"
+                    }
+                  ],
+                  "raw": "{{baseUrl}}/dmpSegments?q=account\u0026account=urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}\u0026sourcePlatform=LIST_UPLOAD"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "CSV list upload - Account \u0026 Contact Targeting"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ],
+  "variable": [
+    {
+      "id": "7d31b111-3677-44c2-8191-6dff5d9ce1b8",
+      "key": "user_segment_id",
+      "value": ""
+    },
+    {
+      "id": "1b281ceb-026c-4c1d-a9f4-b479f71ddde6",
+      "key": "company_segment_id",
+      "value": ""
+    },
+    {
+      "id": "c078559f-235a-4827-ad61-b7039d5bb17a",
+      "key": "lookalike_segment_id",
+      "value": ""
+    },
+    {
+      "id": "568d7d6b-85e4-41a4-8223-b1f565009a58",
+      "key": "seed_segment_id",
+      "value": ""
+    },
+    {
+      "id": "4a67b2d6-06ed-4fa5-b6b5-4c0c454a12e3",
+      "key": "listupload_segment_id",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,1143 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+  "Title": "Increasing Access",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/account-intel/integration-requirements-company-intel",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Increasing Access",
+      "Anchor": "increasing-access",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Increasing Access",
+      "Anchor": "increasing-access",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Increasing Access",
+      "Anchor": "increasing-access",
+      "SectionPath": [],
+      "Text": "This page provides details on the available permissions, guidance on upgrading your access level, and instructions for requesting access to APIs and permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Increasing Access",
+      "Anchor": "increasing-access",
+      "SectionPath": [],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Increasing Access",
+      "Anchor": "increasing-access",
+      "SectionPath": [],
+      "Text": "Not sure where to start?\nThe Advertising API, Community Management API, Events Management API, Lead Sync API, Conversions API, and Matched Audiences API are open to all approved developers \u2014 apply through the standard process. Access to Audience Insights and Media Planning APIs is restricted to developers who meet additional qualification criteria evaluated by LinkedIn. The Company Intelligence API is not currently accepting new applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions are available?",
+      "Anchor": "what-permissions-are-available",
+      "SectionPath": [
+        "What permissions are available?"
+      ],
+      "Text": "The following table lists each LinkedIn Marketing API product, who can access it, how to request access, and the OAuth permissions granted upon approval. General Availability (GA) programs are open to all approved developers; restricted programs require meeting additional criteria evaluated by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What permissions are available?",
+      "Anchor": "what-permissions-are-available",
+      "SectionPath": [
+        "What permissions are available?"
+      ],
+      "Text": "",
+      "Headers": [
+        "API Product",
+        "Availability",
+        "How to Request",
+        "Permission"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers approved for Advertising API access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply to Advertising API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "r_1st_connections_size r_ads_reportingr_basicprofiler_organization_adminr_organization_socialr_adsrw_adsrw_organization_adminw_member_socialw_organization_social",
+            "Links": [],
+            "Values": [
+              "r_1st_connections_size",
+              "r_ads_reporting",
+              "r_basicprofile",
+              "r_organization_admin",
+              "r_organization_social",
+              "r_ads",
+              "rw_ads",
+              "rw_organization_admin",
+              "w_member_social",
+              "w_organization_social"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Matched Audiences API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers approved for Matched Audiences Access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply to Matched Audiences API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Audience Insights API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to qualified developers who meet additional criteria for access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Submit the application survey.",
+            "Links": [
+              "https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR5fbjjE-clZOgMCGtRk-dO5UMDlUN1k3RVpNTTdIT1RENElOWDVEOFNZVi4u\u0026route=shorturl"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Developer application is assigned the Audience Insights permission. Additional member permission is not required.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Media Planning API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to qualified developers who meet additional criteria for access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Submit the application survey.",
+            "Links": [
+              "https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2nKQuSJfwlGv739TlchjNVUOFRKRTZNQkFMNkVLV1hHWDY2VUs4SExRMS4u"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Developer application is assigned the Media Planning permission. Additional member permission is not required unless you need to save and retrieve created media plans.rw_media_plans",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Lead Sync API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers approved for Lead Sync API access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply to Lead Sync API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "r_marketing_leadgen_automationr_adsr_eventsr_liteprofiler_organization_admin",
+            "Links": [],
+            "Values": [
+              "r_marketing_leadgen_automation",
+              "r_ads",
+              "r_events",
+              "r_liteprofile",
+              "r_organization_admin"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Conversions API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers approved for Conversions API access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply to Conversions API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "rw_conversionsr_adsr_liteprofile",
+            "Links": [],
+            "Values": [
+              "rw_conversions",
+              "r_ads",
+              "r_liteprofile"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Community Management API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers approved for Community Management API access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply for Community Management API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "r_1st_connections_sizer_basicprofiler_organization_followersr_organization_socialr_organization_social_feedrw_organization_adminw_member_socialw_member_social_feedw_organization_socialw_organization_social_feedr_member_profileAnalytics(supported only in API versions starting from 202504)r_member_postAnalytics(supported only in API versions starting from 202506)",
+            "Links": [],
+            "Values": [
+              "r_1st_connections_size",
+              "r_basicprofile",
+              "r_organization_followers",
+              "r_organization_social",
+              "r_organization_social_feed",
+              "rw_organization_admin",
+              "w_member_social",
+              "w_member_social_feed",
+              "w_organization_social",
+              "w_organization_social_feed",
+              "r_member_profileAnalytics(supported only in API versions starting from 202504)",
+              "r_member_postAnalytics(supported only in API versions starting from 202506)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Events Management API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to all developers as a self-serve API product on request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply to Events Management API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-09#step-1-apply-for-api-access"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "r_eventsrw_events",
+            "Links": [],
+            "Values": [
+              "r_events",
+              "rw_events"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Company Intelligence API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Private API available only to previously approved developers. Not currently accepting new applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "We are not currently accepting new applications for the Company Intelligence API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer application is assigned the Company Intelligence API permission. The authenticated member must have consented to the r_ads_reporting permission of the Advertising API product for your developer app. If the member has already consented through an existing integration (e.g., Ad Analytics API), you can use their existing member access token and do not need to require re-authentication.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions are available?",
+      "Anchor": "what-permissions-are-available",
+      "SectionPath": [
+        "What permissions are available?"
+      ],
+      "Text": "In addition to these permissions, members must have the appropriate roles as defined in Company Page Roles and Ad Account Roles to act on or read data from a given Company Page or Ad Account. See How Do I Know What Roles a Member Has to determine which roles an authenticated member has through the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions are available?",
+      "Anchor": "what-permissions-are-available",
+      "SectionPath": [
+        "What permissions are available?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What permissions are available?",
+      "Anchor": "what-permissions-are-available",
+      "SectionPath": [
+        "What permissions are available?"
+      ],
+      "Text": "Access to Advertising API is a mandatory requirement for applying to Matched Audiences API, Audience Insights API and Media Planning API.\nAudience Insights API does not require any additional member permission to be passed in OAuth2 scope for member consent.\nFor restricted APIs, LinkedIn evaluates applications based on partnership fit and access criteria. Restricted APIs are evaluated on a case-by-case basis with no fixed timeline \u2014 contact Developer Support for status updates.\nRefer to the list in the API Products and Permissions table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upgrade your Access Tier",
+      "Anchor": "how-to-upgrade-your-access-tier",
+      "SectionPath": [
+        "How to Upgrade your Access Tier"
+      ],
+      "Text": "The Advertising API and Community Management API each have two access tiers with different access criteria. All applications start with Development tier. You must apply separately to upgrade to the Standard tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upgrade your Access Tier",
+      "Anchor": "how-to-upgrade-your-access-tier",
+      "SectionPath": [
+        "How to Upgrade your Access Tier"
+      ],
+      "Text": "Advertising API: Development tier is designed to build end-to-end workflows and supports read-only access for unlimited ad accounts and edit capabilities for up to five (5) Ad Accounts. Standard tier is designed to support campaign management solutions including edit capabilities for unlimited ad accounts.\nCommunity Management API: Development tier is designed to build and test integrations with API call restrictions. You must complete your integration and testing within twelve months of receiving the API access. Standard tier is designed for live production with no restrictions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "How to Upgrade your Access Tier",
+      "Anchor": "how-to-upgrade-your-access-tier",
+      "SectionPath": [
+        "How to Upgrade your Access Tier"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Access Tier",
+        "Description",
+        "API Access Granted",
+        "Request Process"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Advertising",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Build end-to-end workflows",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read: No limits on reading data related to Ad Accounts you administerCreate : Access to create 1 test Ad Account through the API. All real Ad Accounts must be created through the Campaign Manager tool in this tier.Edit: Make updates related to up to 5 ad accounts that you administer.",
+            "Links": [],
+            "Values": [
+              "Read: No limits on reading data related to Ad Accounts you administer",
+              "Create : Access to create 1 test Ad Account through the API. All real Ad Accounts must be created through the Campaign Manager tool in this tier.",
+              "Edit: Make updates related to up to 5 ad accounts that you administer."
+            ]
+          },
+          {
+            "Text": "Apply for access to Advertising API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Advertising",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support campaign management for multiple ad accounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read : No limits on reading data for Ad Accounts you administerCreate : Create unlimited Ad AccountsEdit : Make unlimited updates to Ad Accounts that you administer",
+            "Links": [],
+            "Values": [
+              "Read : No limits on reading data for Ad Accounts you administer",
+              "Create : Create unlimited Ad Accounts",
+              "Edit : Make unlimited updates to Ad Accounts that you administer"
+            ]
+          },
+          {
+            "Text": "The Standard API Access must be requested via a support ticket to be submitted on the Developer Support Portal.",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Community Management",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the default tier provisioned. Developers are expected to build core business use cases, using the provided permissions and APIs, within twelve (12) months of the provisioning.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All APIs: 500 API calls for an app for 24 hrs100 API calls per member of an App for 24 hrsAll APIs with BATCH_GET: No API calls allowedWebhook for Social Actions:Push notifications disabled",
+            "Links": [],
+            "Values": [
+              "500 API calls for an app for 24 hrs",
+              "100 API calls per member of an App for 24 hrs",
+              "No API calls allowed",
+              "Push notifications disabled"
+            ]
+          },
+          {
+            "Text": "Apply for access to Community Management API Development tier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Community Management",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standard",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the full-featured capability of the program",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No restrictions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply for Standard tier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upgrade your Access Tier",
+      "Anchor": "how-to-upgrade-your-access-tier",
+      "SectionPath": [
+        "How to Upgrade your Access Tier"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upgrade your Access Tier",
+      "Anchor": "how-to-upgrade-your-access-tier",
+      "SectionPath": [
+        "How to Upgrade your Access Tier"
+      ],
+      "Text": "LinkedIn reserves the right to review applications and select partners at its discretion and a partner might not be upgraded even if they meet these minimum requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Products and Permissions",
+      "Anchor": "api-products-and-permissions",
+      "SectionPath": [
+        "API Products and Permissions"
+      ],
+      "Text": "The following table lists all OAuth permission scopes available across LinkedIn Marketing API products. All permissions listed are Member Permissions (3-legged OAuth), meaning they require an authenticated LinkedIn member to grant consent \u2014 your application requests these scopes during the OAuth authorization flow. For details on implementing OAuth, see Authorization Code Flow. Once your API access is approved, the corresponding permissions are automatically granted to your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Products and Permissions",
+      "Anchor": "api-products-and-permissions",
+      "SectionPath": [
+        "API Products and Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description",
+        "Type",
+        "API Products Accessible"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_1st_connections_size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve the number of 1st-degree connections within your network.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your advertising accounts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Lead Sync API, Conversions API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads_reporting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve reporting for your advertising accounts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_basicprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use your basic profile including your name, photo, headline, and public profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_followers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use follower data to enable your organization to mention them in posts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization pages and reporting data, including follower, visitor, and content analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Lead Sync API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization posts, including any comments, likes, and other engagement data with AUTHOR injection.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read social actions for organizations that you are an administrator of to focus on Community Management partners.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts where the authenticated member has one of the following roles: ACCOUNT_BILLING_ADMIN, ACCOUNT_MANAGER, CAMPAIGN_MANAGER, CREATIVE_MANAGER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data. Restricted to organizations in which the authenticated member has the following role: ADMINISTRATOR.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API, Advertising API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on your behalf.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create, modify, and delete comments and reactions on posts on your behalf.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on your organization\u0027s behalf.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API, Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage social actions for organizations that you are an administrator of.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u0027s events.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lead Sync API, Events Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage your organization\u0027s events.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Events Management API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_liteprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use your name and photo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lead Sync API, Conversions API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_marketing_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access your lead generation forms and retrieve leads (including event leads, ad leads, and organization page leads).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lead Sync API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and manage your matched audiences.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Matched Audiences API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_conversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upload your conversion data to LinkedIn and manage your conversion tracking data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Conversions API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_media_plans",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage media plans for your advertising accounts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media Planning API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_postAnalytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve analytics for your posts, including impressions, reactions, comments, and shares.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API (in API versions starting from 202506).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_profileAnalytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your profile analytics, including number of profile viewers, followers, and search appearances.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Permission (3-legged).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Community Management API (in API versions starting from 202504).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Once you have identified the API product and access tier you need, use the resources below to continue:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Apply for access: Follow the Quick Start guide to submit your application.\nUnderstand integration requirements: Review the integration requirements page for your program before building. Each page lists technical prerequisites, data handling obligations, and launch criteria.\n\nAdvertising API\nAds Reporting\nAudience Insights API\nCommunity Management API\nCompany Intelligence API\nConversions API\nEvents Management API\nLead Sync API\nMatched Audiences API\nMedia Planning API\n\n\nGet an access token: Use the Developer Portal Token Generator or Postman to generate a token for testing.\nMake your first API call: Follow the Quick Start walkthrough for your program.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

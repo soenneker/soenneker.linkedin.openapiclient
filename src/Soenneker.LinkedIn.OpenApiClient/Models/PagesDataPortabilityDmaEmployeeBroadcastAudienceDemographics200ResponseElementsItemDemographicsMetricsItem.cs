@@ -25,10 +25,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The dimensionMemberCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DimensionMemberCount { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItemDimensionMemberCountItem>? DimensionMemberCount { get; set; }
 #nullable restore
 #else
-        public UntypedNode DimensionMemberCount { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItemDimensionMemberCountItem> DimensionMemberCount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItem"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "demographicDimensionType", n => { DemographicDimensionType = n.GetStringValue(); } },
-                { "dimensionMemberCount", n => { DimensionMemberCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "dimensionMemberCount", n => { DimensionMemberCount = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItemDimensionMemberCountItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItemDimensionMemberCountItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("demographicDimensionType", DemographicDimensionType);
-            writer.WriteObjectValue<UntypedNode>("dimensionMemberCount", DimensionMemberCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEmployeeBroadcastAudienceDemographics200ResponseElementsItemDemographicsMetricsItemDimensionMemberCountItem>("dimensionMemberCount", DimensionMemberCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

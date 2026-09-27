@@ -1,0 +1,432 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+  "Title": "Receive Push Events",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Receive Push Events",
+      "Anchor": "receive-push-events",
+      "SectionPath": [],
+      "Text": "LinkedIn Middleware has enabled the ability for developer applications to subscribe to changes made by their customers in LinkedIn products in real time. When the subscribed event happens, a HTTP POST request will be sent to the callback URL registered by the developer for the customer. This will allow developers to receive data only when changes happen and no longer continuously poll the LinkedIn APIs to determine any changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive Push Events",
+      "Anchor": "receive-push-events",
+      "SectionPath": [],
+      "Text": "When an action is taken within a LinkedIn product which corresponds to the specific event type, a push notification will be sent to the developer\u2019s registered callback URL. This notification will provide a unique identifier corresponding to the event within LinkedIn. This ID can then be used by your application to make a secondary API call to retrieve more data and information about the specific event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Registering a Developer Application",
+      "Anchor": "registering-a-developer-application",
+      "SectionPath": [
+        "Getting Started",
+        "Registering a Developer Application"
+      ],
+      "Text": "In order to successfully receive push notifications from LinkedIn, you must have a registered developer application . If your product is already integrated on the LinkedIn Middleware platform, you will likely be using the same keys for development and production as provisioned before.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting up Callback URLs",
+      "Anchor": "setting-up-callback-urls",
+      "SectionPath": [
+        "Getting Started",
+        "Setting up Callback URLs"
+      ],
+      "Text": "You need to prepare a URL that can be used as a callback URL and is accessible by LinkedIn\u2019s servers. LinkedIn also requires every customer on your platform to have a unique callback URL to receive POST data whenever subscribed events happen within LinkedIn. Ensure that the callback URL is secure https with port 80 or 443.\nLinkedIn does not support re-using the same callback URL for multiple customers or providing multiple callback URLs for one customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Registering your URLs",
+      "Anchor": "registering-your-urls",
+      "SectionPath": [
+        "Getting Started",
+        "Registering your URLs"
+      ],
+      "Text": "You will register customer callback URLs as part of Configuring Customer Middleware Integrations . This process is also used during development using your test customer app credentials.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Registering your URLs",
+      "Anchor": "registering-your-urls",
+      "SectionPath": [
+        "Getting Started",
+        "Registering your URLs"
+      ],
+      "Text": "Developers are only able to listen to events related to customers who have provisioned the developer access to listen to the specified event type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "To generate an \u0022HMACSHA256\u0022 signature, LinkedIn uses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "Your developer application secret as the secret key for encryption\nPrefixes \u0022hmacsha256=\u0022 to the request payload to get the encryption string",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "UTF-8 encoding is used for both the above steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "This signature is then included as an \u0022X-LI-Signature\u0022 header in the HTTP POST request sent from LinkedIn servers. Use the secret key associated with your API Key in order to compute and compare with the signature included in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "We are unable to share our IP range to validate incoming push events. We recommend domain allowlist over IP allowlist.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "The computed HMAC can be tested using a free HMAC Generator. Using \u0022hmacsha256=\u0022 and appending the request payload, the computed HMAC should match the X-LI-Signature from the request when using the associated secret key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "Example: hmacsha256={\u0022id\u0022:\u002259a92119-3b72-4d2f-8e12-137a13180df6-1\u0022,\u0022type\u0022:\u0022EXPORT_CANDIDATE_PROFILE\u0022,\u0022expiresAt\u0022:1481402799192}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Validating the Request",
+      "Anchor": "validating-the-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Validating the Request"
+      ],
+      "Text": "POST https://{provided unique callback URL}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of notification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id of the export candidate request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expires_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when this \u0022id\u0022 will expire. If not provided, the \u0022id\u0022 will never expire.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Sample Request"
+      ],
+      "Text": "\u0022Content-Type\u0022:\u0022application/json\u0022,\n\u0022X-LI-Signature\u0022:\u0022d3756e445a8065c0f38c2182c502f8229800eb2c6a9f3b4a1fdf152af867e6fc\u0022,\n\u0022Content-Length\u0022:\u0022107\u0022,\n\u0022Connection\u0022:\u0022Keep-Alive\u0022,\n\u0022Accept-Encoding\u0022:\u0022gzip,deflate\u0022\n\n\n{\n   \u0022id\u0022:\u002259a92119-3b72-4d2f-8e12-137a13180df6-1\u0022,\n   \u0022type\u0022:\u0022EXPORT_CANDIDATE_PROFILE\u0022,\n   \u0022expiresAt\u0022:1481402799192\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Codes",
+      "Anchor": "response-codes",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Response Codes"
+      ],
+      "Text": "Your URL should return one of the expected HTTP responses when a call is received from LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Codes",
+      "Anchor": "response-codes",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Response Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Result",
+        "HTTP Response Code",
+        "HTTP Response Payload"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Notification was successfully received",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "200 OK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Notification was received, but payload was not understood",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400 Bad Request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JSON result with the field \u201CerrorMessage\u201D. This string field should be the reason the request payload was not understood. Example: { \u0022errorMessage\u0022: \u0022Failed to get id from request payload.\u0022}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "System encountered an error while processing the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500 Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retry Logic",
+      "Anchor": "retry-logic",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Retry Logic"
+      ],
+      "Text": "If a push notification request sent to the registered callback URL receives an unsuccessful response (\u201C200 OK\u201D), then LinkedIn will retry sending the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Retry Logic",
+      "Anchor": "retry-logic",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Retry Logic"
+      ],
+      "Text": "",
+      "Headers": [
+        "Retry Frequency",
+        "Delay Between Retry Requests"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Maximum of five retry attempts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "300 seconds between retry attempts",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retry Logic",
+      "Anchor": "retry-logic",
+      "SectionPath": [
+        "Receiving Push Notifications",
+        "Retry Logic"
+      ],
+      "Text": "After the maximum number of retry attempts have been sent, the notification will be dropped. Each retry from LinkedIn will have a unique ID value. Developers should be validating data received when using the ID to make subsequent API calls to handle deduplication of updates that may result from retry attempts.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

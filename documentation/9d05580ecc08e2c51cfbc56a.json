@@ -1,0 +1,628 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+  "Title": "Migration Guide - Updated API Request Maximum Length",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/api-max-length-lms-samples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Migration Guide - Updated API Request Maximum Length",
+      "Anchor": "migration-guide---updated-api-request-maximum-length",
+      "SectionPath": [],
+      "Text": "To improve our network infrastructure and better serve API traffic globally, LinkedIn will begin rejecting API calls not meeting new criteria starting April 30, 2022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Ensure your LinkedIn API requests comply with the following size requirements. If your request exceeds any of the size requirements listed below, your request will receive a 414 response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Request parameter",
+        "Size in KB"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Raw URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "8 KB max length (scheme \u002B hostname \u002B port \u002B path \u002B query string of the URL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Query String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "4 KB max length",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Request URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "28 KB max length (headers \u002B cookies \u002B URI \u002B queryString, but excluding POST data)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "URL path segment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "4 KB max characters (the area between slashes in a URL)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Tunneling",
+      "Anchor": "query-tunneling",
+      "SectionPath": [
+        "Query Tunneling"
+      ],
+      "Text": "To support these requirements, we\u2019re introducing the concept of query tunneling. This feature allows you to modify your existing requests with a custom header to easily resolve offending requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requests without Body",
+      "Anchor": "requests-without-body",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body"
+      ],
+      "Text": "Change the request from GET to POST.\nAdd the X-HTTP-Method-Override header, using the original HTTP method (-H \u0022X-HTTP-Method-Override: GET\u0022).\nAdd the Content-Type header (-H \u0022Content-Type: application/x-www-form-urlencoded\u0022).\nMove the query string to the body of the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example"
+      ],
+      "Text": "Let\u2019s use the example request below to see how we can quickly convert our existing request to the organizationalEntityAcls API using query tunneling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee\u0026projection=(elements*(organizationalTarget~))\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "Change the request type from GET to POST.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee\u0026projection=(elements*(organizationalTarget~))\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "Add the method override header and append the original GET request type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee\u0026projection=(elements*(organizationalTarget~))\u0027 \\\n-H \u0027X-HTTP-Method-Override: GET\u0027\n-H \u0027Authorization: Bearer redacted\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "Add the Content-Type header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee\u0026projection=(elements*(organizationalTarget~))\u0027 \\\n-H \u0027X-HTTP-Method-Override: GET\u0027\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027\n-H \u0027Authorization: Bearer redacted\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "Move the query string of the request URL to the request body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current Request",
+      "Anchor": "current-request",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests without Body",
+        "Example",
+        "Current Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/organizationalEntityAcls\u0027 \\\n-H \u0027X-HTTP-Method-Override: GET\u0027\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \n-H \u0027Authorization: Bearer redacted\u0027\n--data \u0027q=roleAssignee\u0026projection=(elements*(organizationalTarget~))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requests with Body",
+      "Anchor": "requests-with-body",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body"
+      ],
+      "Text": "Change the request type from PUT to POST if the original request type was PUT. If the original request type was POST, keep it as POST.\nAdd the X-HTTP-Method-Override header using the original HTTP method -H \u0027X-HTTP-Method-Override: POST\u0027 for POSTs or -H \u0027X-HTTP-Method-Override: PUT\u0027 for PUTs.\nAdd the Content-Type header -H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027. Note that here we need to specify a boundary delimiter (here we use xyz for illustration) for multipart body, this delimiter needs to be unique and not appearing in your request content body or url.\nMove the query string and original request body to body as two sections explained above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "Let\u2019s use the example request below to see how we can quickly convert our existing request to the adCreativesV2 API using query tunneling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/adCreativesV2?ids=List(47770196)\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method:  BATCH_PARTIAL_UPDATE\u0027 \\\n--data \u0027{\u0022entities\u0022: {\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "Change the request type from PUT to POST if the original request type was PUT. If the original request type was POST, keep it as POST.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/v2/adCreativesV2?ids=List(47770196) \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n  -H \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n  --data ${\u0022entities\u0022: {{\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "Add the X-HTTP-Method-Override header using the original HTTP method -H \u0027X-HTTP-Method-Override: POST\u0027 for POSTs or -H \u0027X-HTTP-Method-Override: PUT\u0027 for PUTs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/v2/adCreativesV2?ids=List(47770196) \\\n  -H \u0027X-HTTP-Method-Override: POST\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n  -H \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n  --data ${\u0022entities\u0022: {{\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "Add the Content-Type header -H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/v2/adCreativesV2?ids=List(47770196) \\\n  -H \u0027X-HTTP-Method-Override: POST\u0027 \\\n  -H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n  -H \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 \\\n  --data ${\u0022entities\u0022: {{\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "Move the query string and original request body to body as two sections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Query Tunneling",
+        "Requests with Body",
+        "Example"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/v2/adCreativesV2 \\\n  -H \u0027X-HTTP-Method-Override: POST\u0027 \\\n  -H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  -H \u0027X-RestLi-Method:  BATCH_PARTIAL_UPDATE\u0027 \\\n  --data $\u0027--xyz\\r\\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids=List(47770196)\\r\\n--xyz\\r\\n \n         Content-Type: application/json\\r\\n\\r\\n{\u0022entities\u0022: {\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-2",
+      "SectionPath": [
+        "Compliance Sample Use Cases",
+        "UGC Posts API",
+        "Current request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List(urn%3Ali%3Aperson%3A123ABC)\u0026sortBy=LAST_MODIFIED\u0026projection=(...)\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request",
+      "SectionPath": [
+        "Compliance Sample Use Cases",
+        "UGC Posts API",
+        "New request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=authors\u0026authors=List(urn%3Ali%3Aperson%3A123ABC)\u0026sortBy=LAST_MODIFIED\u0026projection=(...)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-3",
+      "SectionPath": [
+        "Compliance Sample Use Cases",
+        "Social Action API",
+        "Current request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments?projection=(...)\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-1",
+      "SectionPath": [
+        "Compliance Sample Use Cases",
+        "Social Action API",
+        "New request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027projection=(...)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LMS Use Cases",
+      "Anchor": "lms-use-cases",
+      "SectionPath": [
+        "LMS Use Cases"
+      ],
+      "Text": "For the full list of Marketing API examples, see Max Request Length Samples for Marketing APIs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-4",
+      "SectionPath": [
+        "LMS Use Cases",
+        "Retrieve UGC Posts by Author",
+        "Current request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List(urn%3Ali%3Aorganization%3A2414183)\u0026sortBy=LAST_MODIFIED\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-2",
+      "SectionPath": [
+        "LMS Use Cases",
+        "Retrieve UGC Posts by Author",
+        "New request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=authors\u0026authors=List(urn%3Ali%3Aorganization%3A2414183)\u0026sortBy=LAST_MODIFIED\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-5",
+      "SectionPath": [
+        "LMS Use Cases",
+        "Find Ad Budget Pricing Insights",
+        "Current request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/adBudgetPricing?q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A123\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-3",
+      "SectionPath": [
+        "LMS Use Cases",
+        "Find Ad Budget Pricing Insights",
+        "New request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/adBudgetPricing \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A123\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-6",
+      "SectionPath": [
+        "LMS Use Cases",
+        "Batch Partial Update Ad Creatives",
+        "Current request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/adCreativesV2?ids=List(47770196)\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method:  BATCH_PARTIAL_UPDATE\u0027 \\\n--data \u0027{\u0022entities\u0022: {\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-4",
+      "SectionPath": [
+        "LMS Use Cases",
+        "Batch Partial Update Ad Creatives",
+        "New request"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/v2/adCreativesV2 \\\n  -H \u0027X-HTTP-Method-Override: POST\u0027 \\\n  -H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  -H \u0027X-RestLi-Method:  BATCH_PARTIAL_UPDATE\u0027 \\\n  --data $\u0027--xyz\\r\\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids=List(47770196)\\r\\n--xyz\\r\\n \n         Content-Type: application/json\\r\\n\\r\\n{\u0022entities\u0022: {\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-7",
+      "SectionPath": [
+        "LTS Use Cases",
+        "Retrieve Candidate Matches",
+        "Current request"
+      ],
+      "Text": "curl -L -X GET \u0027https://api.linkedin.com/v2/atsCandidates?ids[0].atsCandidateId=CAND123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsCandidateId=CAND456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:2414183\u0026fields=matchedMembers,manualMatchedMember\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-5",
+      "SectionPath": [
+        "LTS Use Cases",
+        "Retrieve Candidate Matches",
+        "New request"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsCandidates\u0027 \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n--data \u0027ids[0].atsCandidateId=CAND123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsCandidateId=CAND456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:2414183\u0026fields=matchedMembers,manualMatchedMember\u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-8",
+      "SectionPath": [
+        "LTS Use Cases",
+        "Sync Candidates",
+        "Current request"
+      ],
+      "Text": "curl -L -X PUT \u0027https://api.linkedin.com/v2/atsCandidates?ids[0].atsCandidateId=CAND123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsCandidateId=CAND456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:2414183\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: { \u0022atsCandidateId=CAND123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u002231 Spooner St\u0022,\n          \u0022city\u0022: \u0022Quahog\u0022,\n          \u0022geographicArea\u0022: \u0022RI\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002202802\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022currentCompanyName\u0022: \u0022Pawtucket Patriot Brewery\u0022,\n      \u0022currentJobTitle\u0022: \u0022Quality Assurance\u0022,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/p-griffin\u0022,\n      \u0022firstName\u0022: \u0022Peter\u0022,\n      \u0022lastName\u0022: \u0022Griffin\u0022,\n      \u0022middleInitial\u0022: \u0022L\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-555-5555\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    },\n\u0022atsCandidateId=CAND456\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u00221000 W Maude Ave\u0022,\n          \u0022line2\u0022: \u0022ATTN: Maude Flanders\u0022,\n          \u0022city\u0022: \u0022Calgary\u0022,\n          \u0022geographicArea\u0022: \u0022AB\u0022,\n          \u0022geographicAreaType\u0022: \u0022PROVINCE\u0022,\n          \u0022postalCode\u0022: \u0022T1X 0L3\u0022,\n          \u0022country\u0022: \u0022ca\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/m-flanders\u0022,\n      \u0022firstName\u0022: \u0022Maude\u0022,\n      \u0022lastName\u0022: \u0022Flanders\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-666-7777\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mrs\u0022\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-6",
+      "SectionPath": [
+        "LTS Use Cases",
+        "Sync Candidates",
+        "New request"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsCandidates\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n--data $\u0027--xyz\\r\\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsCandidateId=CAND123\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[1].atsCandidateId=CAND456\u0026ids[1].dataProvider=ATS\u0026ids[1].integrationContext=urn:li:organization:2414183\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n{\n  \u0022entities\u0022: {    \u0022atsCandidateId=CAND123\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u002231 Spooner St\u0022,\n          \u0022city\u0022: \u0022Quahog\u0022,\n          \u0022geographicArea\u0022: \u0022RI\u0022,\n          \u0022geographicAreaType\u0022: \u0022STATE\u0022,\n          \u0022postalCode\u0022: \u002202802\u0022,\n          \u0022country\u0022: \u0022us\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022currentCompanyName\u0022: \u0022Pawtucket Patriot Brewery\u0022,\n      \u0022currentJobTitle\u0022: \u0022Quality Assurance\u0022,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/p-griffin\u0022,\n      \u0022firstName\u0022: \u0022Peter\u0022,\n      \u0022lastName\u0022: \u0022Griffin\u0022,\n      \u0022middleInitial\u0022: \u0022L\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-555-5555\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mr\u0022,\n      \u0022suffix\u0022: \u0022Jr\u0022\n    },\n    \u0022atsCandidateId=CAND456\u0026dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0022: {\n      \u0022addresses\u0022: [\n        {\n          \u0022line1\u0022: \u00221000 W Maude Ave\u0022,\n          \u0022line2\u0022: \u0022ATTN: Maude Flanders\u0022,\n          \u0022city\u0022: \u0022Calgary\u0022,\n          \u0022geographicArea\u0022: \u0022AB\u0022,\n          \u0022geographicAreaType\u0022: \u0022PROVINCE\u0022,\n          \u0022postalCode\u0022: \u0022T1X 0L3\u0022,\n          \u0022country\u0022: \u0022ca\u0022\n        }\n      ],\n      \u0022atsCreatedAt\u0022: 1484864187000,\n      \u0022atsLastModifiedAt\u0022: 1484864187000,\n      \u0022emailAddresses\u0022: [\n        \u0022foo@example.com\u0022\n      ],\n      \u0022externalProfileUrl\u0022: \u0022https://example.com/m-flanders\u0022,\n      \u0022firstName\u0022: \u0022Maude\u0022,\n      \u0022lastName\u0022: \u0022Flanders\u0022,\n      \u0022phoneNumbers\u0022: [\n        {\n          \u0022number\u0022: \u0022555-666-7777\u0022,\n          \u0022extension\u0022: \u00221234\u0022\n        }\n      ],\n      \u0022prefix\u0022: \u0022Mrs\u0022\n    }\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current request",
+      "Anchor": "current-request-9",
+      "SectionPath": [
+        "LTS Use Cases",
+        "Check Job Operation Task Status",
+        "Current request"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/v2/simpleJobPostingTasks?ids=urn:li:simpleJobPostingTask:\u003Ctask_id_1\u003E\u0026ids=urn:li:simpleJobPostingTask:\u003Ctask_id_2\u003E\u0027 \\\n--header \u0027Authorization: Bearer \u003Ctoken\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New request",
+      "Anchor": "new-request-7",
+      "SectionPath": [
+        "LTS Use Cases",
+        "Check Job Operation Task Status",
+        "New request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/v2/simpleJobPostingTasks\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027X-HTTP-Method-Override: GET\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--data-urlencode \u0027ids=urn:li:simpleJobPostingTask:{id}\u0027",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

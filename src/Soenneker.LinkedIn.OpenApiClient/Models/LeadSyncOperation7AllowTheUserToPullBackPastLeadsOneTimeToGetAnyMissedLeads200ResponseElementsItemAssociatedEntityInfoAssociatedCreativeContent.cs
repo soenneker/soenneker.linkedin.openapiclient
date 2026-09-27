@@ -7,13 +7,54 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Content of the Lead Form which is displayed to the viewer.Documented type: DisplayContent
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemAssociatedEntityInfoAssociatedCreativeContent : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>(Optional) Description of the form. Optional since the owner may choose to not have this information.Documented type: MultiLocaleString</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectDescription? Description { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectDescription Description { get; set; }
+#endif
+        /// <summary>Headline of the form.Documented type: MultiLocaleString</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectHeadline? Headline { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectHeadline Headline { get; set; }
+#endif
+        /// <summary>Legal information displayed alongside the Lead Form.Documented type: LeadGenFormLegalInfo</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo? LegalInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo LegalInfo { get; set; }
+#endif
+        /// <summary>(Optional) Information displayed to the user after submitting the form (e.g. thank you message, etc.). It is optional since not all use cases require a post submission experience.Documented type: PostSubmissionInfo</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfo? PostSubmissionInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfo PostSubmissionInfo { get; set; }
+#endif
+        /// <summary>Questions to request information from the viewer. At least one question should be present.Documented type: LeadGenFormQuestion[]</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject>? Questions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject> Questions { get; set; }
+#endif
         /// <summary>The reference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +88,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectDescription.CreateFromDiscriminatorValue); } },
+                { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectHeadline.CreateFromDiscriminatorValue); } },
+                { "legalInfo", n => { LegalInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo.CreateFromDiscriminatorValue); } },
+                { "postSubmissionInfo", n => { PostSubmissionInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfo.CreateFromDiscriminatorValue); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reference", n => { Reference = n.GetStringValue(); } },
             };
         }
@@ -57,6 +103,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectHeadline>("headline", Headline);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectLegalInfo>("legalInfo", LegalInfo);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaDisplaycontentObjectPostSubmissionInfo>("postSubmissionInfo", PostSubmissionInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaLeadgenformquestionSubObject>("questions", Questions);
             writer.WriteStringValue("reference", Reference);
             writer.WriteAdditionalData(AdditionalData);
         }

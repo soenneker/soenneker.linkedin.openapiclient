@@ -1,0 +1,981 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "clientId": "{{client_id}}",
+      "clientSecret": "{{client_secret}}",
+      "client_authentication": "body",
+      "grant_type": "client_credentials",
+      "scope": "r_learning",
+      "tokenName": "learning-content"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027learningcontent-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "7289cea0-d150-4a4f-9635-5620a0f36b68",
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "47b2a030-0f7b-4c3f-b123-7464c74d5736",
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "f9bca761-41ba-4938-abbe-4d8a70f2489d",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nThe 2 main uses for the externalized LinkedIn Learning APIs are for Learning Content and Learning Activity Reports.\n\n*Access to LinkedIn Learning APIs is available to members of our* [*Partner Program*](https://learning.linkedin.com/partners) *and organizations that have purchased LinkedIn Learning site licenses.*\n\nOverview: [https://docs.microsoft.com/en-us/linkedin/learning/overview/](https://docs.microsoft.com/en-us/linkedin/learning/overview/)\n\n* * *\n\nUse this collection with the **LinkedIn Learning Solutions** environment\n\n* * *",
+    "name": "Learning Content",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "67d109c9-f606-4be6-bae1-3fe70f40df78",
+      "item": [
+        {
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "a9e6e7e2-d6d5-494f-a857-dc3438a05efa",
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "2c7fdaa3-0a78-464b-bd76-6ce79532edf1",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "6f08c17e-da4b-4047-97d2-ff886fc5ac87",
+          "item": [
+            {
+              "id": "4fd6d3f5-66db-4605-967c-a355a70dfc53",
+              "item": [
+                {
+                  "id": "61df8d59-30bf-4343-bd2a-2d8f5784d55e",
+                  "name": "Learning Assets by Individual Asset URN",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "To retrieve an individual learning asset, given an URN, issue a GET request to the following endpoint:\nGET https://api.linkedin.com/v2/learningAssets/{URN}\n\nThe URN types supported by this endpoint are \u0022urn:li:lyndaCourse\u0022, \u0022urn:li:lyndaChapter\u0022, and \u0022urn:li:lyndaVideo\u0022.\n\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#learningassets-get\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningAssets",
+                        "{{asset_urn}}"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "description": "The locale language the API will use to try to localize the learning asset. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "disabled": true,
+                          "key": "targetLocale.language",
+                          "value": "en"
+                        },
+                        {
+                          "description": "The locale country the API will use to try to localize the learning asset. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022. ",
+                          "disabled": true,
+                          "key": "targetLocale.country",
+                          "value": "en_us"
+                        },
+                        {
+                          "description": "The number of levels in the learning asset hierarchy to include asset details. Default is 1. ",
+                          "disabled": true,
+                          "key": "expandDepth",
+                          "value": "3"
+                        },
+                        {
+                          "description": "Whether to include retired learning assets. The value of this parameter should be true or false.",
+                          "disabled": true,
+                          "key": "includeRetired",
+                          "value": "false"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningAssets/{{asset_urn}}"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n  \u0022urn\u0022: \u0022urn:li:lyndaCourse:111779\u0022,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:111779,119368)\u0022,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:111779,119369)\u0022,\n              \u0022contents\u0022: [],\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: {\n                \u0022locale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Welcome\u0022\n              }\n            }\n          },\n    \u2026\n  ],\n  \u2026\n  \u0022type\u0022: \u0022COURSE\u0022,\n  \u0022title\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022Audition: Mixing a Short Film\u0022\n  }\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": null,
+                      "id": "7a6757e9-6471-43ce-afeb-9fa9bd92cefd",
+                      "name": "Learning Assets by Individual Asset URN",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "referer",
+                            "type": "text",
+                            "value": "{{referrer_urn}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "api",
+                            "linkedin",
+                            "com"
+                          ],
+                          "path": [
+                            "v2",
+                            "learningAssets",
+                            "{{asset_urn}}"
+                          ],
+                          "protocol": "https",
+                          "query": [
+                            {
+                              "description": "The locale language the API will use to try to localize the learning asset. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "disabled": true,
+                              "key": "targetLocale.language",
+                              "value": "en"
+                            },
+                            {
+                              "description": "The locale country the API will use to try to localize the learning asset. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022. ",
+                              "disabled": true,
+                              "key": "targetLocale.country",
+                              "value": "en_us"
+                            },
+                            {
+                              "description": "The number of levels in the learning asset hierarchy to include asset details. Default is 1. ",
+                              "disabled": true,
+                              "key": "expandDepth",
+                              "value": "3"
+                            },
+                            {
+                              "description": "Whether to include retired learning assets. The value of this parameter should be true or false.",
+                              "disabled": true,
+                              "key": "includeRetired",
+                              "value": "false"
+                            }
+                          ],
+                          "raw": "https://api.linkedin.com/v2/learningAssets/{{asset_urn}}"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                }
+              ],
+              "name": "Learning Object by URN"
+            },
+            {
+              "id": "2f3da463-284d-4dec-8496-4e87092bdcbd",
+              "item": [
+                {
+                  "id": "27a44baa-789e-4de4-8cf8-90bc4d3748b2",
+                  "name": "Learning Assets by Criteria Finder",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "This finder can be used to retrieve a page of learning assets, given some set of criteria. Using this endpoint you can:\n\nSearch for learning assets given some search and relevance criteria.  \nRetrieve a list of learning assets released, retired or modified since a given date.  \nRetrieve a list of learning assets the requester is licensed to access.\n\nGET [https://api.linkedin.com/v2/learningAssets?q=criteria](https://api.linkedin.com/v2/learningAssets?q=criteria)\n\nDocumentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningassets#criteria)\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningAssets"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "description": "Value of this parameter should always be criteria",
+                          "key": "q",
+                          "value": "criteria"
+                        },
+                        {
+                          "description": "An array of types of learning assets to search. The search results will include only learning assets of these types. The values of this parameter should be COURSE, LEARNING_PATH, or VIDEO.",
+                          "key": "assetFilteringCriteria.assetTypes[0]",
+                          "value": "COURSE"
+                        },
+                        {
+                          "description": "An array of learning classification URNs to search learning assets. The search results will include only learning assets tagged with these classifications. The supported URN types are \u0022urn:li:lyndaCategory\u0022 and \u0022urn:li:skill\u0022. The URNs can be discovered using the /v2/learningClassifications endpoint. ",
+                          "disabled": true,
+                          "key": "assetFilteringCriteria.classifications",
+                          "value": ""
+                        },
+                        {
+                          "description": "An array of difficulty levels of learning assets to search. The search results will include only learning assets of these difficulty levels. The values of this parameter should be BEGINNER, INTERMEDIATE, or ADVANCED.",
+                          "disabled": true,
+                          "key": "assetFilteringCriteria.difficultyLevels",
+                          "value": ""
+                        },
+                        {
+                          "description": "The keyword string to search learning assets. The search results will include only learning assets matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm.",
+                          "disabled": true,
+                          "key": "assetFilteringCriteria.keyword",
+                          "value": "json"
+                        },
+                        {
+                          "description": "The time after which the assets were changed i.e. released, modified or retired. Represented by number of milliseconds since midnight, January 1, 1970 UTC.",
+                          "disabled": true,
+                          "key": "assetFilteringCriteria.lastModifiedAfter",
+                          "value": ""
+                        },
+                        {
+                          "description": "An array of languages from which results should be filtered on. The value of this parameter can be de, en, es, fr, or ja. Since this parameter is an array, you will need to specify a zero-based index per value.",
+                          "disabled": true,
+                          "key": "assetFilteringCriteria.locales[0].language",
+                          "value": "en"
+                        },
+                        {
+                          "description": "An array of locale countries from which results should be filtered on. The value of this parameter can be DE, US, ES, FR, or JP.",
+                          "disabled": true,
+                          "key": "assetFilteringCriteria.locales[0].country",
+                          "value": "US"
+                        },
+                        {
+                          "description": "Boolean that indicates results should be filtered to only include learningAssets the caller is licensed to access. If this parameter is set to true and assetFilteringCriteria.locales parameter is omitted the locale values are implied by the callers licensed access.",
+                          "key": "assetFilteringCriteria.licensedOnly",
+                          "value": "true"
+                        },
+                        {
+                          "description": "How to sort the learning assets in the search results. The value of this parameter should be RELEVANCE, POPULARITY, or RECENCY. Relevance sorts the learning assets by LinkedIn Learning\u0027s relevance algorithm. ",
+                          "disabled": true,
+                          "key": "assetPresentationCriteria.sortBy",
+                          "value": "POPULARITY"
+                        },
+                        {
+                          "description": "The number of levels in the learning asset hierarchy to include asset details. ",
+                          "disabled": true,
+                          "key": "assetRetrievalCriteria.expandDepth",
+                          "value": "1"
+                        },
+                        {
+                          "description": "Whether to include retired learning assets. The value of this parameter should be true or false. ",
+                          "disabled": true,
+                          "key": "assetRetrievalCriteria.includeRetired",
+                          "value": "true"
+                        },
+                        {
+                          "description": "The start index of learning assets for the page.",
+                          "disabled": true,
+                          "key": "start",
+                          "value": "3400"
+                        },
+                        {
+                          "description": "The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+                          "disabled": true,
+                          "key": "count",
+                          "value": "2"
+                        },
+                        {
+                          "disabled": true,
+                          "key": "fields",
+                          "type": "text",
+                          "value": "urn,title,details:(level)"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022metadata\u0022: {},\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:187499\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Collaborative Design: Process and Efficiency\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:187500\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Collaborative Design: Vision and Strategy\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 9782,\n        \u0022count\u0022: 2,\n        \u0022start\u0022: 3400,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true\u0026assetFilteringCriteria.locales[0].country=US\u0026assetFilteringCriteria.locales[0].language=en\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=2\u0026q=criteria\u0026start=3398\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true\u0026assetFilteringCriteria.locales[0].country=US\u0026assetFilteringCriteria.locales[0].language=en\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=2\u0026q=criteria\u0026start=3402\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": null,
+                      "id": "db4fff76-be88-4c1a-a2fd-ba0d7f3159e4",
+                      "name": "Learning Assets by Criteria Finder",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "referer",
+                            "type": "text",
+                            "value": "{{referrer_urn}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "api",
+                            "linkedin",
+                            "com"
+                          ],
+                          "path": [
+                            "v2",
+                            "learningAssets"
+                          ],
+                          "protocol": "https",
+                          "query": [
+                            {
+                              "description": "Value of this parameter should always be criteria",
+                              "key": "q",
+                              "value": "criteria"
+                            },
+                            {
+                              "description": "An array of types of learning assets to search. The search results will include only learning assets of these types. The values of this parameter should be COURSE, LEARNING_PATH, or VIDEO.",
+                              "key": "assetFilteringCriteria.assetTypes[0]",
+                              "value": "COURSE"
+                            },
+                            {
+                              "description": "An array of learning classification URNs to search learning assets. The search results will include only learning assets tagged with these classifications. The supported URN types are \u0022urn:li:lyndaCategory\u0022 and \u0022urn:li:skill\u0022. The URNs can be discovered using the /v2/learningClassifications endpoint. ",
+                              "disabled": true,
+                              "key": "assetFilteringCriteria.classifications",
+                              "value": ""
+                            },
+                            {
+                              "description": "An array of difficulty levels of learning assets to search. The search results will include only learning assets of these difficulty levels. The values of this parameter should be BEGINNER, INTERMEDIATE, or ADVANCED.",
+                              "disabled": true,
+                              "key": "assetFilteringCriteria.difficultyLevels",
+                              "value": ""
+                            },
+                            {
+                              "description": "The keyword string to search learning assets. The search results will include only learning assets matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm.",
+                              "disabled": true,
+                              "key": "assetFilteringCriteria.keyword",
+                              "value": "json"
+                            },
+                            {
+                              "description": "The time after which the assets were changed i.e. released, modified or retired. Represented by number of milliseconds since midnight, January 1, 1970 UTC.",
+                              "disabled": true,
+                              "key": "assetFilteringCriteria.lastModifiedAfter",
+                              "value": ""
+                            },
+                            {
+                              "description": "An array of languages from which results should be filtered on. The value of this parameter can be de, en, es, fr, or ja. Since this parameter is an array, you will need to specify a zero-based index per value.",
+                              "key": "assetFilteringCriteria.locales[0].language",
+                              "value": "en"
+                            },
+                            {
+                              "description": "An array of locale countries from which results should be filtered on. The value of this parameter can be DE, US, ES, FR, or JP.",
+                              "key": "assetFilteringCriteria.locales[0].country",
+                              "value": "US"
+                            },
+                            {
+                              "description": "Boolean that indicates results should be filtered to only include learningAssets the caller is licensed to access. If this parameter is set to true and assetFilteringCriteria.locales parameter is omitted the locale values are implied by the callers licensed access.",
+                              "key": "assetFilteringCriteria.licensedOnly",
+                              "value": "true"
+                            },
+                            {
+                              "description": "How to sort the learning assets in the search results. The value of this parameter should be RELEVANCE, POPULARITY, or RECENCY. Relevance sorts the learning assets by LinkedIn Learning\u0027s relevance algorithm. ",
+                              "disabled": true,
+                              "key": "assetPresentationCriteria.sortBy",
+                              "value": "POPULARITY"
+                            },
+                            {
+                              "description": "The number of levels in the learning asset hierarchy to include asset details. ",
+                              "disabled": true,
+                              "key": "assetRetrievalCriteria.expandDepth",
+                              "value": "1"
+                            },
+                            {
+                              "description": "Whether to include retired learning assets. The value of this parameter should be true or false. ",
+                              "disabled": true,
+                              "key": "assetRetrievalCriteria.includeRetired",
+                              "value": "true"
+                            },
+                            {
+                              "description": "The start index of learning assets for the page.",
+                              "key": "start",
+                              "value": "3400"
+                            },
+                            {
+                              "description": "The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+                              "key": "count",
+                              "value": "2"
+                            },
+                            {
+                              "key": "fields",
+                              "type": "text",
+                              "value": "urn,title,details:(level)"
+                            }
+                          ],
+                          "raw": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.locales[0].language=en\u0026assetFilteringCriteria.locales[0].country=US\u0026assetFilteringCriteria.licensedOnly=true\u0026start=3400\u0026count=2\u0026fields=urn,title,details:(level)"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                }
+              ],
+              "name": "Criteria Finder"
+            },
+            {
+              "id": "d68065b4-3da7-4b68-b325-63da2ebe043d",
+              "item": [
+                {
+                  "id": "3d2f7bd2-58be-4eac-967a-575092a33107",
+                  "name": "Learning Assets by Locale and Type",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "To retrieve a page of learning assets, given some criteria, issue a GET call to the following endpoint:\nGET https://api.linkedin.com/v2/learningAssets?q=localeAndType\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningassets-localeandtype-finder\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningAssets"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "description": "The value of this parameter should always be: localeAndType.",
+                          "key": "q",
+                          "value": "localeAndType"
+                        },
+                        {
+                          "description": "The locale language of the learning assets. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "key": "sourceLocale.language",
+                          "value": "en"
+                        },
+                        {
+                          "description": "The locale country of the learning assets. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "key": "sourceLocale.country",
+                          "value": "US"
+                        },
+                        {
+                          "description": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.",
+                          "key": "expandDepth",
+                          "value": "1"
+                        },
+                        {
+                          "description": "Whether to include retired learning assets. The value of this parameter should be true or false. ",
+                          "key": "includeRetired",
+                          "value": "false"
+                        },
+                        {
+                          "description": "The start index of learning assets for the page.",
+                          "key": "start",
+                          "value": "1000"
+                        },
+                        {
+                          "description": "The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+                          "key": "count",
+                          "value": "20"
+                        },
+                        {
+                          "key": "assetType",
+                          "value": "COURSE"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningAssets?q=localeAndType\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026start=1000\u0026count=20\u0026assetType=COURSE"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:lyndaCourse:110715\u0022,\n      \u0022contents\u0022: [\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:110715,114477)\u0022,\n            \u0022contents\u0022: [\n              {\n                \u0022asset\u0022: {\n                  \u0022urn\u0022: \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:110715,114478)\u0022,\n                  \u0022contents\u0022: [],\n                  \u0022type\u0022: \u0022VIDEO\u0022,\n                  \u0022title\u0022: {\n                    \u0022locale\u0022: {\n                      \u0022country\u0022: \u0022US\u0022,\n                      \u0022language\u0022: \u0022en\u0022\n                    },\n                    \u0022value\u0022: \u0022Welcome\u0022\n                  }\n                }\n              },\n    \u2026\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 5810,\n    \u0022count\u0022: 20,\n    \u0022start\u0022: 1000,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=980\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      },\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=1020\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      }\n    ]\n  }\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": null,
+                      "id": "564eeeb6-29a9-41b5-88ed-eb39aad21cbb",
+                      "name": "Learning Assets by Locale and Type",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "referer",
+                            "type": "text",
+                            "value": "{{referrer_urn}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "api",
+                            "linkedin",
+                            "com"
+                          ],
+                          "path": [
+                            "v2",
+                            "learningAssets"
+                          ],
+                          "protocol": "https",
+                          "query": [
+                            {
+                              "description": "The value of this parameter should always be: localeAndType.",
+                              "key": "q",
+                              "value": "localeAndType"
+                            },
+                            {
+                              "description": "The locale language of the learning assets. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "key": "sourceLocale.language",
+                              "value": "en"
+                            },
+                            {
+                              "description": "The locale country of the learning assets. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "key": "sourceLocale.country",
+                              "value": "US"
+                            },
+                            {
+                              "description": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.",
+                              "key": "expandDepth",
+                              "value": "1"
+                            },
+                            {
+                              "description": "Whether to include retired learning assets. The value of this parameter should be true or false. ",
+                              "key": "includeRetired",
+                              "value": "false"
+                            },
+                            {
+                              "description": "The start index of learning assets for the page.",
+                              "key": "start",
+                              "value": "1000"
+                            },
+                            {
+                              "description": "The number of learning assets to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+                              "key": "count",
+                              "value": "20"
+                            },
+                            {
+                              "key": "assetType",
+                              "value": "COURSE"
+                            }
+                          ],
+                          "raw": "https://api.linkedin.com/v2/learningAssets?q=localeAndType\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026start=1000\u0026count=20\u0026assetType=COURSE"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "a0dbe454-5e68-4a3e-a2fd-56b0c44167cf",
+                  "name": "Learning Classification by Locale and Type",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "To retrieve a page of learning classifications, given some criteria, issue a GET call to the following endpoint:\nGET https://api.linkedin.com/v2/learningClassifications?q=localeAndType\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api#learningclassifications-localeandtype-finder\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningClassifications"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "description": "The value of this parameter should always be: localeAndType.",
+                          "key": "q",
+                          "value": "localeAndType"
+                        },
+                        {
+                          "description": "The type of the learning classifications. The value of this parameter should be LIBRARY, SUBJECT, or TOPIC. ",
+                          "key": "type",
+                          "value": "LIBRARY"
+                        },
+                        {
+                          "description": "The locale language of the learning classifications. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "key": "sourceLocale.language",
+                          "value": "en"
+                        },
+                        {
+                          "description": "The locale country of the learning classifications. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "key": "sourceLocale.country",
+                          "value": "US"
+                        },
+                        {
+                          "disabled": true,
+                          "key": "start",
+                          "value": ""
+                        },
+                        {
+                          "disabled": true,
+                          "key": "count",
+                          "value": ""
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningClassifications?q=localeAndType\u0026type=LIBRARY\u0026sourceLocale.language=en\u0026sourceLocale.country=US"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": null,
+                      "body": null,
+                      "cookie": [],
+                      "header": null,
+                      "id": "dec6c85d-e3de-42d0-9c60-38fa8745b1a7",
+                      "name": "Learning Classification by Locale and Type",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "referer",
+                            "type": "text",
+                            "value": "{{referrer_urn}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "api",
+                            "linkedin",
+                            "com"
+                          ],
+                          "path": [
+                            "v2",
+                            "learningClassifications"
+                          ],
+                          "protocol": "https",
+                          "query": [
+                            {
+                              "description": "The value of this parameter should always be: localeAndType.",
+                              "key": "q",
+                              "value": "localeAndType"
+                            },
+                            {
+                              "description": "The type of the learning classifications. The value of this parameter should be LIBRARY, SUBJECT, or TOPIC. ",
+                              "key": "type",
+                              "value": "LIBRARY"
+                            },
+                            {
+                              "description": "The locale language of the learning classifications. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "key": "sourceLocale.language",
+                              "value": "en"
+                            },
+                            {
+                              "description": "The locale country of the learning classifications. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "key": "sourceLocale.country",
+                              "value": "US"
+                            },
+                            {
+                              "key": "start",
+                              "value": "0"
+                            },
+                            {
+                              "key": "count",
+                              "value": "100"
+                            }
+                          ],
+                          "raw": "https://api.linkedin.com/v2/learningClassifications?q=localeAndType\u0026type=LIBRARY\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026start=0\u0026count=100"
+                        }
+                      },
+                      "responseTime": null
+                    }
+                  ]
+                }
+              ],
+              "name": "Type Finder"
+            },
+            {
+              "id": "f5696897-6c5f-410a-8f48-688c625d3961",
+              "item": [
+                {
+                  "id": "9f53058a-6773-4010-bae5-48e107906e3e",
+                  "name": "Learning Classifications by Category Urn",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "To retrieve an individual learning classification, given an URN, issue a GET request to the following endpoint:\nGET https://api.linkedin.com/v2/learningClassifications/{URN}\n\nThe URN types supported by this endpoint are \u0022urn:li:lyndaCategory\u0022 and \u0022urn:li:skill\u0022.\n\nDocumentation: https://docs.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#learningclassifications-get\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningClassifications",
+                        "{{category_urn}}"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "description": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "disabled": true,
+                          "key": "targetLocale.language",
+                          "value": "en"
+                        },
+                        {
+                          "description": "The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022. ",
+                          "disabled": true,
+                          "key": "targetLocale.country",
+                          "value": "US"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningClassifications/{{category_urn}}"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022urn\u0022: \u0022urn:li:lyndaCategory:7220\u0022,\n    \u0022owner\u0022: {\n        \u0022urn\u0022: \u0022urn:li:company:0000\u0022,\n        \u0022name\u0022: {\n            \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022value\u0022: \u0022LinkedIn\u0022\n        }\n    },\n    \u0022name\u0022: {\n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Audio Post-Production\u0022\n    },\n    \u0022type\u0022: \u0022TOPIC\u0022\n}",
+                      "code": 200,
+                      "cookie": [],
+                      "header": null,
+                      "id": "66331a06-f5a5-4c4f-80a9-01a5e81c34d2",
+                      "name": "Learning Classifications by Category Urn",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "referer",
+                            "type": "text",
+                            "value": "{{referrer_urn}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "api",
+                            "linkedin",
+                            "com"
+                          ],
+                          "path": [
+                            "v2",
+                            "learningClassifications",
+                            "{{category_urn}}"
+                          ],
+                          "protocol": "https",
+                          "query": [
+                            {
+                              "description": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "key": "targetLocale.language",
+                              "value": "en"
+                            },
+                            {
+                              "description": "The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022. ",
+                              "key": "targetLocale.country",
+                              "value": "US"
+                            }
+                          ],
+                          "raw": "https://api.linkedin.com/v2/learningClassifications/{{category_urn}}?targetLocale.language=en\u0026targetLocale.country=US"
+                        }
+                      },
+                      "responseTime": null,
+                      "status": "OK"
+                    }
+                  ]
+                },
+                {
+                  "id": "80d46451-d69d-43e2-81cf-b711a7900922",
+                  "name": "Learning Classifications by Keyword",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "description": "To retrieve learning classifications for a keyboard, use a GET request supplied with a keyword to receive all of the classifications for that keyword. [https://api.linkedin.com/v2/learningClassifications?q=keyword\u0026keyword=business](https://api.linkedin.com/v2/learningClassifications/{URN})\n\nDocumentation: [https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword](https://docs.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#keyword)\n\n*Access to LinkedIn Learning APIs is available to members of our [Partner Program](https://learning.linkedin.com/partners) and organizations that have purchased LinkedIn Learning site licenses.*",
+                    "header": [
+                      {
+                        "key": "referer",
+                        "type": "text",
+                        "value": "{{referrer_urn}}"
+                      }
+                    ],
+                    "method": "GET",
+                    "url": {
+                      "host": [
+                        "api",
+                        "linkedin",
+                        "com"
+                      ],
+                      "path": [
+                        "v2",
+                        "learningClassifications"
+                      ],
+                      "protocol": "https",
+                      "query": [
+                        {
+                          "description": "The value of this parameter should always be keyword.",
+                          "key": "q",
+                          "value": "keyword"
+                        },
+                        {
+                          "description": "The keyword string to search learning classifications. The search results will include only learning classifications matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm. The value of this parameter is case-insensitive.",
+                          "key": "keyword",
+                          "value": "business"
+                        },
+                        {
+                          "description": "The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022. ",
+                          "key": "sourceLocale.country",
+                          "value": "US"
+                        },
+                        {
+                          "description": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                          "key": "sourceLocale.language",
+                          "value": "en"
+                        },
+                        {
+                          "description": "The start index of learning classifications for the page.",
+                          "key": "start",
+                          "value": "0"
+                        },
+                        {
+                          "description": "The number of learning classifications to include in the page. The maximum supported count is 100 classifications per page.",
+                          "key": "count",
+                          "value": "100"
+                        }
+                      ],
+                      "raw": "https://api.linkedin.com/v2/learningClassifications?q=keyword\u0026keyword=business\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=0\u0026count=100"
+                    }
+                  },
+                  "response": [
+                    {
+                      "_postman_previewlanguage": "json",
+                      "body": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7162\u0022,\n            \u0022name\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Business\u0022\n            },\n            \u0022type\u0022: \u0022LIBRARY\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7166\u0022,\n            \u0022name\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Business Software and Tools\u0022\n            },\n            \u0022type\u0022: \u0022SUBJECT\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 2,\n        \u0022count\u0022: 2,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningClassifications?count=2\u0026keyword=business\u0026q=keyword\u0026start=2\u0026targetLocale.country=US\u0026targetLocale.language=en\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+                      "cookie": [],
+                      "header": null,
+                      "id": "e7560d61-0ddf-4333-a3a7-ac4e4d68518f",
+                      "name": "Learning Classifications by Keyword",
+                      "originalRequest": {
+                        "header": [
+                          {
+                            "key": "referer",
+                            "type": "text",
+                            "value": "{{referrer_urn}}"
+                          }
+                        ],
+                        "method": "GET",
+                        "url": {
+                          "host": [
+                            "api",
+                            "linkedin",
+                            "com"
+                          ],
+                          "path": [
+                            "v2",
+                            "learningClassifications"
+                          ],
+                          "protocol": "https",
+                          "query": [
+                            {
+                              "description": "The value of this parameter should always be keyword.",
+                              "key": "q",
+                              "value": "keyword"
+                            },
+                            {
+                              "description": "The keyword string to search learning classifications. The search results will include only learning classifications matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm. The value of this parameter is case-insensitive.",
+                              "key": "keyword",
+                              "value": "business"
+                            },
+                            {
+                              "description": "The locale country the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, or JP. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022. ",
+                              "key": "sourceLocale.country",
+                              "value": "US"
+                            },
+                            {
+                              "description": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, or ja. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, and \u0022ja_JP\u0022.",
+                              "key": "sourceLocale.language",
+                              "value": "en"
+                            },
+                            {
+                              "description": "The start index of learning classifications for the page.",
+                              "key": "start",
+                              "value": "0"
+                            },
+                            {
+                              "description": "The number of learning classifications to include in the page. The maximum supported count is 100 classifications per page.",
+                              "key": "count",
+                              "value": "100"
+                            }
+                          ],
+                          "raw": "https://api.linkedin.com/v2/learningClassifications?q=keyword\u0026keyword=business\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=0\u0026count=100"
+                        }
+                      },
+                      "responseTime": null
+                    }
+                  ]
+                }
+              ],
+              "name": "Learning Classifications"
+            }
+          ],
+          "name": "Learning Content"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ],
+  "variable": [
+    {
+      "key": "referrer_urn",
+      "value": "urn:li:partner:democompany"
+    },
+    {
+      "key": "asset_urn",
+      "value": ""
+    },
+    {
+      "key": "category_urn",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+  "Title": "LinkedIn Learning and Okta SSO Implementation Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Okta SSO Implementation Overview",
+      "Anchor": "okta-sso-implementation-overview",
+      "SectionPath": [
+        "Okta SSO Implementation Overview"
+      ],
+      "Text": "This document outlines the necessary steps for LinkedIn Learning administrators to set up Single Sign-on with Okta. The Okta/LinkedIn Learning SAML integration currently supports the following features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Okta SSO Implementation Overview",
+      "Anchor": "okta-sso-implementation-overview",
+      "SectionPath": [
+        "Okta SSO Implementation Overview"
+      ],
+      "Text": "IdP-initiated SSO\nSP-initiated SSO\nJIT (Just In Time) Provisioning\nAutomated user management with SCIM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To get started, you need the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "An Okta account\nA LinkedIn Learning enterprise account\nFull administrator privileges in both platforms",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Okta connection in LinkedIn Learning",
+      "Anchor": "configure-okta-connection-in-linkedin-learning",
+      "SectionPath": [
+        "Configure Okta connection in LinkedIn Learning"
+      ],
+      "Text": "To configure Okta as your organization\u0027s IdP, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Okta connection in LinkedIn Learning",
+      "Anchor": "configure-okta-connection-in-linkedin-learning",
+      "SectionPath": [
+        "Configure Okta connection in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then navigate to Authentication.\n\n\nFrom the side navigation menu, select Configure single sign-on and click on Add new SSO.\n\n\n\n\n\nSelect SAML.\n\nOn the Basics tab, give your SSO connection a name and click Next.\n\n\n\n\n\nOn the Identity provider settings tab, click Load and copy information from fields.\n\n\n\n\n\nCopy the Entity ID and Assertion Consumer Service (ACS) URL values and paste them into a text document or keep this tab open. These values will be used in the next section to configure the application in Okta.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning Application in Okta",
+      "Anchor": "configure-linkedin-learning-application-in-okta",
+      "SectionPath": [
+        "Configure LinkedIn Learning Application in Okta"
+      ],
+      "Text": "To configure Single Sign-on for LinkedIn Learning, you should create a SAML 2.0 App Integration in Okta. There is an older LinkedIn Learning application available in the Okta catalog that does not support SCIM provisioning or custom attributes, so make sure you do not choose that application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning Application in Okta",
+      "Anchor": "configure-linkedin-learning-application-in-okta",
+      "SectionPath": [
+        "Configure LinkedIn Learning Application in Okta"
+      ],
+      "Text": "Open Okta in a new tab, navigate to the Admin section and choose Applications.\n\nClick on Create App Integration and select SAML 2.0. Click Next.\n\n\n\n\n\nGive your app integration a name and upload a logo. LinkedIn Learning logos can be downloaded here, or you can use the image below. Click Next.\n\n\n\n\n\n\n\n\n\nIn the Configure SAML settings for the application, Paste the ACS URL from the previous section into the Single sign-on URL field. The \u0022Use this for Recipient URL and Destination URL\u0022 option should be selected.\n\n\n\n\n\nPaste the Entity ID from the previous section into the Audience URI (SP Entity ID) field.\n\nSet the Application username to a unique, immutable user attribute. By default, this value is set to Okta username. If Okta Username values have the potential to change at your organization, you may want to change this identifier to user.employeeNumber or some other user attribute.\n\n Note\nIf you are also integrating LinkedIn Learning into a Learning Management System, this value needs to match the User ID value in your LMS to ensure completion tracking.\n\n\nScroll down to the Attribute Statements section. Add any user attributes you would like to include in the SAML assertion. At minimum, we recommend including firstname, lastname and email. There is no limit to the number of attributes you can include.\n\n\n\n\n\nClick Next at the bottom of the page.\n\nAnswer the optional Feedback questions and click Finish.\n\n\n\n\n\nOn the application\u0027s Sign On tab, scroll down to the SAML Signing Certificates section and locate the SHA-2 certificate. Click on Actions and select View IdP metadata.\n\n\n\n\n\nRight click on the page displaying the metadata and choose Save As. Save the file to your computer. This will be used in the next section to finish configuring the SSO connection in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Activate Okta connection in LinkedIn Learning",
+      "Anchor": "activate-okta-connection-in-linkedin-learning",
+      "SectionPath": [
+        "Activate Okta connection in LinkedIn Learning"
+      ],
+      "Text": "Return to the LinkedIn Learning admin tab in your browser.\n\nOn the SSO settings tab, click Upload XML file. Navigate to the metadata file you just downloaded on your computer, and upload the file to LinkedIn Learning.\n\n\n\n\n\nClick Save.\n\nOn the SSO configuration screen, activate your SSO connection by selecting Active from the drop down, then click Activate on the subsequent screen.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify your SSO",
+      "Anchor": "verify-your-sso",
+      "SectionPath": [
+        "Verify your SSO"
+      ],
+      "Text": "To validate your SSO configuration and invite learners, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify your SSO",
+      "Anchor": "verify-your-sso",
+      "SectionPath": [
+        "Verify your SSO"
+      ],
+      "Text": "In the LinkedIn Learning admin interface, click on the People tab.\n\nClick on Add new users and select Add users by activation link.\n\n\n\n\n\nCopy the activation link and paste it into your browser. This will trigger a Service Provider-initiated authentication flow. This link can be sent to anyone who has been assigned the LinkedIn Learning application in Okta.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connecting your LinkedIn profile to Learning",
+      "Anchor": "connecting-your-linkedin-profile-to-learning",
+      "SectionPath": [
+        "Verify your SSO",
+        "Connecting your LinkedIn profile to Learning"
+      ],
+      "Text": "LinkedIn Learning allows learners to connect their personal LinkedIn profile to their organization\u0027s LinkedIn Learning account. This step, known as profile binding, allows LinkedIn Learning to surface content that aligns with your learners\u0027 goals and interests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connecting your LinkedIn profile to Learning",
+      "Anchor": "connecting-your-linkedin-profile-to-learning",
+      "SectionPath": [
+        "Verify your SSO",
+        "Connecting your LinkedIn profile to Learning"
+      ],
+      "Text": "If you see the below login screen while testing SSO, it does not mean SSO is broken. It simply means you need to re-login to LinkedIn.com with your personal profile credentials, separate from your organization SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Connecting your LinkedIn profile to Learning",
+      "Anchor": "connecting-your-linkedin-profile-to-learning",
+      "SectionPath": [
+        "Verify your SSO",
+        "Connecting your LinkedIn profile to Learning"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning via their Okta IdP instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning",
+      "Anchor": "configure-automatic-user-provisioning",
+      "SectionPath": [
+        "Configure Automatic User Provisioning"
+      ],
+      "Text": "Okta allows for automated provisioning in LinkedIn Learning to automate management of LinkedIn Learning licenses, user attributes and user group membership(s). Provisioning can be enabled in the same Okta SAML 2.0 application you just created. To configure automatic provisioning, follow the instructions in this document: Configure SCIM Automated User Management - Okta",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning",
+      "Anchor": "configure-automatic-user-provisioning",
+      "SectionPath": [
+        "Configure Automatic User Provisioning"
+      ],
+      "Text": "If you are new to LinkedIn Learning and have not launched to your user base yet, make sure to only provision the application to the administrators and/or test group who should have access prior to your official launch.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Configure SCIM Automated User Management - Okta\n\nLinkedIn Learning SSO Implementation\n\nAdd and Manage Users in Bulk via CSV\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

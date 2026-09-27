@@ -1,0 +1,422 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-benchmarking",
+  "Title": "Organization Benchmarking",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-benchmarking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Benchmarking",
+      "Anchor": "organization-benchmarking",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Benchmarking",
+      "Anchor": "organization-benchmarking",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Benchmarking",
+      "Anchor": "organization-benchmarking",
+      "SectionPath": [],
+      "Text": "Organization APIs provides access to limited publicly available organization data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [
+        "Company Search"
+      ],
+      "Text": "Use the Company Search API to find organizations using keywords, industry, location, or some other criteria. The example searches for organizations using the keywords \u0022LinkedIn\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [
+        "Company Search"
+      ],
+      "Text": "Learn more including searching by facets in the Company Search API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [
+        "Company Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [
+        "Company Search"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/search?q=companiesV2\u0026baseSearchParams.keywords=LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Company Search",
+      "Anchor": "company-search",
+      "SectionPath": [
+        "Company Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/search?q=companiesV2\u0026baseSearchParams.keywords=LinkedIn\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Company Search",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022metadata\u0022: {\n        \u0022primaryType\u0022: \u0022COMPANIES\u0022,\n        \u0022facetContainers\u0022: [\n            {\n                \u0022facetType\u0022: \u0022network\u0022,\n                \u0022isPremiumFacet\u0022: false,\n                \u0022hasSelectedFacets\u0022: false,\n                \u0022facetValues\u0022: [\n                    {\n                        \u0022count\u0022: 12,\n                        \u0022isSelected\u0022: false,\n                        \u0022value\u0022: \u0022F\u0022\n                    }\n                ],\n                \u0022shortName\u0022: \u0022N\u0022,\n                \u0022numSelectedFacets\u0022: 0,\n                \u0022isNotDecorated\u0022: true\n            },\n            ...\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022entity\u0022: \u0022urn:li:organization:0000\u0022\n        },\n        {\n            \u0022entity\u0022: \u0022urn:li:organization:9195954\u0022\n        },\n        {\n            \u0022entity\u0022: \u0022urn:li:organization:2790267\u0022\n        },\n        {\n            \u0022entity\u0022: \u0022urn:li:organization:9202023\u0022\n        },\n        ...\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 46080,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/search?q=companiesV2\u0026baseSearchParams.searchTrackingInfo.searchId=urn%3Ali%3AdeveloperApplication%3A4992581\u0026start=10\u0026count=10\u0026baseSearchParams.viewerId=149435169\u0026baseSearchParams.searchTrackingInfo.searchType=API_ORGANIZATION\u0026fields=entity\u0026baseSearchParams.keywords=LinkedIn\u002BCorporation\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Network Size",
+      "Anchor": "organization-network-size",
+      "SectionPath": [
+        "Organization Network Size"
+      ],
+      "Text": "The Organization Network Size API provides the ability to retrieve the number of first-degree connections for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Network Size",
+      "Anchor": "organization-network-size",
+      "SectionPath": [
+        "Organization Network Size"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Network Size",
+      "Anchor": "organization-network-size",
+      "SectionPath": [
+        "Organization Network Size"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/networkSizes/urn:li:organization:1234567?edgeType=COMPANY_FOLLOWED_BY_MEMBER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Network Size",
+      "Anchor": "organization-network-size",
+      "SectionPath": [
+        "Organization Network Size"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/networkSizes/urn:li:organization:1234567?edgeType=COMPANY_FOLLOWED_BY_MEMBER\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Organization Network Size",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022firstDegreeSize\u0022: 219145\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follower Statistics",
+      "Anchor": "follower-statistics",
+      "SectionPath": [
+        "Follower Statistics"
+      ],
+      "Text": "Organization administrators can access granular follower information using the Follower Statistics API. This endpoint provides the ability to retrieve both lifetime and time-bound statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follower Statistics",
+      "Anchor": "follower-statistics",
+      "SectionPath": [
+        "Follower Statistics"
+      ],
+      "Text": "Your application will need to request the rw_organization_admin member permission in order for your application to successfully make API calls to this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follower Statistics",
+      "Anchor": "follower-statistics",
+      "SectionPath": [
+        "Follower Statistics"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Follower Statistics",
+      "Anchor": "follower-statistics",
+      "SectionPath": [
+        "Follower Statistics"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Follower Statistics",
+      "Anchor": "follower-statistics",
+      "SectionPath": [
+        "Follower Statistics"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:1234\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Follower Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022totalFollowerCounts\u0022: {\n        \u0022organicFollowerCount\u0022: 33916,\n        \u0022paidFollowerCount\u0022: 268\n      },\n      \u0022followerCountsByStaffCountRange\u0022: [\n        {\n          \u0022followerCounts\u0022: {\n            \u0022organicFollowerCount\u0022: 6,\n            \u0022paidFollowerCount\u0022: 0\n          },\n          \u0022staffCountRange\u0022: \u0022SIZE_1\u0022\n        },\n        {\n          \u0022followerCounts\u0022: {\n            \u0022organicFollowerCount\u0022: 29,\n            \u0022paidFollowerCount\u0022: 0\n          },\n          \u0022staffCountRange\u0022: \u0022SIZE_2_TO_10\u0022\n        },\n        {\n          \u0022followerCounts\u0022: {\n            \u0022organicFollowerCount\u0022: 5,\n            \u0022paidFollowerCount\u0022: 0\n          },\n          \u0022staffCountRange\u0022: \u0022SIZE_11_TO_50\u0022\n        },\n        {\n          \u0022followerCounts\u0022: {\n            \u0022organicFollowerCount\u0022: 29,\n            \u0022paidFollowerCount\u0022: 0\n          },\n          \u0022staffCountRange\u0022: \u0022SIZE_51_TO_200\u0022\n        },\n        {\n          \u0022followerCounts\u0022: {\n            \u0022organicFollowerCount\u0022: 2,\n            \u0022paidFollowerCount\u0022: 0\n          },\n          \u0022staffCountRange\u0022: \u0022SIZE_501_TO_1000\u0022\n        },\n        {\n          \u0022followerCounts\u0022: {\n            \u0022organicFollowerCount\u0022: 1,\n            \u0022paidFollowerCount\u0022: 0\n          },\n          \u0022staffCountRange\u0022: \u0022SIZE_1001_TO_5000\u0022\n        },\n        ...\n    ],\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:1234\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Shares",
+      "Anchor": "organization-shares",
+      "SectionPath": [
+        "Organization Shares"
+      ],
+      "Text": "Your application may retrieve shares owned by a specific organization. Just use URNs of format urn:li:organization:{id} to retrieve shares for the relevant entity. The shares per owner finder can return up to 1,000 shares. The results are ordered by creation date in descending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Shares",
+      "Anchor": "organization-shares",
+      "SectionPath": [
+        "Organization Shares"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Shares",
+      "Anchor": "organization-shares",
+      "SectionPath": [
+        "Organization Shares"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/shares?q=owners\u0026owners=urn:li:organization:2414183\u0026sharesPerOwner=1000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Shares",
+      "Anchor": "organization-shares",
+      "SectionPath": [
+        "Organization Shares"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/shares?q=owners\u0026owners=urn:li:organization:2414183\u0026sharesPerOwner=1000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Organization Shares",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022activity\u0022: \u0022urn:li:activity:6271118395911999488\u0022,\n            \u0022edited\u0022: false,\n            \u0022created\u0022: {\n                \u0022time\u0022: 1495151137000\n            },\n            \u0022id\u0022: \u00226271118395953934336\u0022,\n            \u0022lastModified\u0022: {\n                \u0022time\u0022: 1495151137000\n            },\n            \u0022text\u0022: {\n                \u0022text\u0022: \u0022Business France emm\u00E8ne des start-ups au Web Summit de Lisbonne #airmisconseil\u0022\n            },\n            \u0022distribution\u0022: {\n                \u0022linkedInDistributionTarget\u0022: {\n                    \u0022visibleToGuest\u0022: false\n                }\n            },\n            \u0022content\u0022: {\n                \u0022contentEntities\u0022: [\n                    {\n                        \u0022entityLocation\u0022: \u0022http://www.lemondeinformatique.fr/actualites/lire-business-france-emmene-des-start-ups-au-web-summit-de-lisbonne-66405.html?utm_source=Sociallymap\u0026utm_medium=Sociallymap\u0026utm_campaign=Sociallymap\u0022,\n                        \u0022thumbnails\u0022: [\n                            {\n                                \u0022imageSpecificContent\u0022: {\n                                    \u0022size\u0022: 54076,\n                                    \u0022width\u0022: 650,\n                                    \u0022height\u0022: 433\n                                },\n                                \u0022resolvedUrl\u0022: \u0022http://images.itnewsinfo.com/lmi/articles/grande/000000054391.jpg\u0022\n                            }\n                        ],\n                        \u0022entity\u0022: \u0022urn:li:article:6994272117874578221\u0022\n                    }\n                ],\n                \u0022description\u0022: \u00228 start-ups fran\u00E7aises IT ont \u00E9t\u00E9 s\u00E9lectionn\u00E9es parmi 60 candidates par la d\u00E9l\u00E9gation Business France pour participer au Web Summit 2016 qui aura...\u0022,\n                \u0022title\u0022: \u0022Business France emm\u00E8ne des start-ups au Web Summit de Lisbonne - Le Monde Informatique\u0022\n            }\n        },\n      ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1000,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/shares?count=10\u0026owners=urn%3Ali%3Acompany%3A2414183\u0026q=owners\u0026sharesPerOwner=1000\u0026start=10\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Social Engagement Metrics",
+      "Anchor": "share-social-engagement-metrics",
+      "SectionPath": [
+        "Share Social Engagement Metrics"
+      ],
+      "Text": "For organizational benchmarking, you may want to collect social engagement metrics like the number of likes and comments associated an organization\u0027s shares. In this section, we\u0027ll look at the most efficient way to query the number of comment and likes on a group of shares.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Social Engagement Metrics",
+      "Anchor": "share-social-engagement-metrics",
+      "SectionPath": [
+        "Share Social Engagement Metrics"
+      ],
+      "Text": "To collect this data, we\u0027ll need to make two calls. The first to collect share IDs and the second to collect like and comment counts for each share. To slim down the share response payload, we\u0027ll append a projection parameter to return only the share IDs and pagination details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Social Engagement Metrics",
+      "Anchor": "share-social-engagement-metrics",
+      "SectionPath": [
+        "Share Social Engagement Metrics"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Share Social Engagement Metrics",
+      "Anchor": "share-social-engagement-metrics",
+      "SectionPath": [
+        "Share Social Engagement Metrics"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/shares?q=owners\u0026owners=urn:li:organization:2414183\u0026sharesPerOwner=1000count=2\u0026projection=(elements*(id),paging)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Share Social Engagement Metrics",
+      "Anchor": "share-social-engagement-metrics",
+      "SectionPath": [
+        "Share Social Engagement Metrics"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/shares?q=owners\u0026owners=urn:li:organization:2414183\u0026sharesPerOwner=1000count=2\u0026projection=(elements*(id),paging)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Share Social Engagement Metrics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022id\u0022: \u00226271124519444840448\u0022\n        }, \n        {\n            \u0022id\u0022: \u00226271124358870106112\u0022\n        }\n    ], \n    \u0022paging\u0022: {\n        \u0022count\u0022: 2, \n        \u0022links\u0022: [\n            {\n                \u0022href\u0022: \u0022/v2/shares?count=2\u0026owners=urn%3Ali%3Acompany%3A2414183\u0026projection=%28elements*%28id%29%2Cpaging%29\u0026q=owners\u0026sharesPerOwner=1000\u0026start=2\u0022, \n                \u0022rel\u0022: \u0022next\u0022, \n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ], \n        \u0022start\u0022: 0, \n        \u0022total\u0022: 1000\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Share Social Engagement Metrics",
+        "Sample Response"
+      ],
+      "Text": "Now that we\u0027ve collected the share IDs, we can fetch the comment and like counts for each share. Notice in the request below, we\u0027ve transformed the share ID into a share URN using the following format: urn:li:share:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Share Social Engagement Metrics",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Share Social Engagement Metrics",
+        "Sample Response"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/socialActions?ids=urn:li:share:6271124358870106112\u0026ids=urn:li:share:6271124519444840448",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Share Social Engagement Metrics",
+        "Sample Response"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/socialActions?ids=urn:li:share:6271124358870106112\u0026ids=urn:li:share:6271124519444840448\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Share Social Engagement Metrics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {}, \n    \u0022results\u0022: {\n        \u0022urn:li:share:6271124358870106112\u0022: {\n            \u0022commentsSummary\u0022: {\n                \u0022totalFirstLevelComments\u0022: 2\n            }, \n            \u0022likesSummary\u0022: {\n                \u0022totalLikes\u0022: 1\n            }, \n            \u0022target\u0022: \u0022urn:li:activity:6271124358823964673\u0022\n        }, \n        \u0022urn:li:share:6271124519444840448\u0022: {\n            \u0022likesSummary\u0022: {\n                \u0022totalLikes\u0022: 1\n            }, \n            \u0022target\u0022: \u0022urn:li:activity:6271124519398707200\u0022\n        }\n    }, \n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,1220 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+  "Title": "Upload and Sync Attachments",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Upload and Sync Attachments",
+      "Anchor": "upload-and-sync-attachments",
+      "SectionPath": [],
+      "Text": "As LinkedIn partners, you can upload and sync attachments, enabling recruiters to access these materials directly within your ATS systems. You can link documents to job applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The following sections explain two main workflows for managing candidate documents in LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Upload resume: A two-step process where you first request a signed URL from LinkedIn, then upload the resume file directly to that URL.\n\nSync application resume: Use this API to link uploaded documents to applications or candidate profiles in LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v2/hireMediaUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1,000,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Upload a resume",
+      "Anchor": "1-upload-a-resume",
+      "SectionPath": [
+        "1. Upload a resume"
+      ],
+      "Text": "To upload a resume, you first need to get a signed URL from LinkedIn and then use it to upload the file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Upload a resume",
+      "Anchor": "1-upload-a-resume",
+      "SectionPath": [
+        "1. Upload a resume"
+      ],
+      "Text": "When uploading a resume, consider the following guidelines:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Upload a resume",
+      "Anchor": "1-upload-a-resume",
+      "SectionPath": [
+        "1. Upload a resume"
+      ],
+      "Text": "Use one of the supported media formats from PDF, DOC, DOCX, or TXT.\nEnsure that the media file size does not exceed 10MB for all file types.\nUpload only one resume object per API call.\nEnsure that all calls to upload a resume use OAuth 2.0 authentication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Upload a resume",
+      "Anchor": "1-upload-a-resume",
+      "SectionPath": [
+        "1. Upload a resume"
+      ],
+      "Text": "Take the following steps to upload a resume:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Upload a resume",
+      "Anchor": "1-upload-a-resume",
+      "SectionPath": [
+        "1. Upload a resume"
+      ],
+      "Text": "1.1 Create URL\n1.2 Upload resume file",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1.1 Create URL",
+      "Anchor": "11-create-url",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL"
+      ],
+      "Text": "Use the following endpoint to create a URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "1.1 Create URL",
+      "Anchor": "11-create-url",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/hireMediaUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "API authorization"
+      ],
+      "Text": "This API is governed by OAuth 2.0 Authorization Framework and you must pass a bearer access token in your request as authorization header. Obtain access tokens via OAuth 2.0 Client Credentials flow. Use your customer\u0027s application client_id and client_secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "usageParameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This helps LinkedIn to uniquely identify the use case for which media upload is being done. For this use case, refer to the value as shown in the sample request below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complex",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the resume file. Valid values are: \u0022text/plain\u0022 for TXT file\u0022application/pdf\u0022 for PDF file\u0022application/msword\u0022 for DOC file\u0022application/vnd.openxmlformats-officedocument.wordprocessingml.document\u0022 for DOCX file",
+            "Links": [],
+            "Values": [
+              "\u0022text/plain\u0022 for TXT file",
+              "\u0022application/pdf\u0022 for PDF file",
+              "\u0022application/msword\u0022 for DOC file",
+              "\u0022application/vnd.openxmlformats-officedocument.wordprocessingml.document\u0022 for DOCX file"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the resume file.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiringContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract which is signed by the customer with LinkedIn to use LinkedIn Recruiter services. Must be in the format urn:li:contract:{Id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter contract URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Timespan",
+      "Anchor": "timespan",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Request body fields",
+        "Timespan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "DataType"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "unit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM values of the type: MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, YEAR",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Sample request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Sample request"
+      ],
+      "Text": "Authorization: Bearer {token}\nAccept:application/json\nContent-Type:application/json\nX-RestLi-Protocol-Version:2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request body for permanent storage",
+      "Anchor": "request-body-for-permanent-storage",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Request body for permanent storage"
+      ],
+      "Text": "{\n   \u0022usageParameters\u0022:     \n   {\n      \u0022recruiterSystemConnectResumeParameters\u0022 : {}\n   },\n   \u0022contentType\u0022: \u0022text/plain\u0022,\n   \u0022fileName\u0022: \u0022resume.txt\u0022,\n   \u0022hiringContext\u0022: \u0022urn:li:contract:123456\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Sample response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains a signed URL in the x-linkedin-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.1 Create URL",
+        "Sample response"
+      ],
+      "Text": "HTTP/2 201 \nx-li-responseorigin: RGW\nlocation: /hireMediaUrl/https%3A%2F%2Fwww.linkedin.com%2Fambry%2F%3Fx-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-linkedin-id: https://www.linkedin.com/ambry/?x-li-ambry-ep=IKNzqXRAxc1n6yCEaLQFyikjNuvufa9i6Ek2Or5V4RpUZu8AY9CRylnLjOWX6ABe05uiXOyr0rw6hvnNcDdJLEd1Kunfn...fdfr67h\nx-restli-protocol-version: 2.0.0\ncontent-length: 0\ndate: Thu, 17 Jun 2021 09:27:30 GMT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1.2 Upload resume file",
+      "Anchor": "12-upload-resume-file",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.2 Upload resume file"
+      ],
+      "Text": "After getting a signed URL, upload the resume file by calling the following API. This API expects the Content-Type header. The valid values are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "1.2 Upload resume file",
+      "Anchor": "12-upload-resume-file",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.2 Upload resume file"
+      ],
+      "Text": "",
+      "Headers": [
+        "File type",
+        "Content-Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "TXT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "text/plain",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PDF",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "application/pdf",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "application/msword",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOCX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.2 Upload resume file",
+        "Sample request"
+      ],
+      "Text": "curl -i -H \u0022Authorization: Bearer {token}\u0022 -H \u0027Content-Type: application/pdf\u0027 https://www.linkedin.com/ambry/?x-li-ambry-ep=AQEvzZSZZQH75QAAAXhws9LWCtrppkjlS2oJyQOrJA...1XFGyS1XfEvSo --data-binary @datafile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.2 Upload resume file",
+        "Sample response"
+      ],
+      "Text": "A successful request returns a 201 HTTP response code. The response has an empty body and contains file location in the location response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "1. Upload a resume",
+        "1.2 Upload resume file",
+        "Sample response"
+      ],
+      "Text": "HTTP/2 201 \ncache-control: no-cache, no-store\npragma: no-cache\nexpires: Thu, 01 Jan 1970 00:00:00 GMT\nlocation: /AAYUAgCvAAkAAQAAAAJFyLgwRkz_TmebRMrAixANdQ.txt\nx-li-uuid: HP2pABxWiRI1FsAisAAA==\ndate: Thu, 17 Jun 2021 09:56:58 GMT\ncontent-length: 0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync application resume",
+      "Anchor": "sync-application-resume",
+      "SectionPath": [
+        "Sync application resume"
+      ],
+      "Text": "Sync uploaded candidate documents with their applications or profiles. Use the following endpoint after uploading files to ensure recruiters can access the documents.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Sync application resume",
+        "API endpoint"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/attachments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API request parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Sync application resume",
+        "API request parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalReferenceEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique ID assigned by the external system to the parent entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalAttachmentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the attachment assigned by the external provider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This specifies who owns the attachment. The format is \u0022urn:li:organization:{id}\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalReferenceEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the external reference entity. The available option is APPLICATION.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attachmentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the attachment. The available option is RESUME.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Sync application resume",
+        "Request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalFileName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The original file name of the attachment as provided by your system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FileType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The file format of the uploaded document (for example, PDF, DOCX).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "internalAttachmentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AmbryBlobUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The internal URN of the file record within LinkedIn\u0027s storage systems. This represents the Ambry URN returned by LinkedIn (for example, urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the file was created in your system (epoch milliseconds, UTC). It must be a positive value and not a future timestamp.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the file was last modified in your system (epoch milliseconds, UTC). It must be a positive value and not a future timestamp.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Sync application resume",
+        "Request body fields"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Sync application resume",
+        "Request body fields"
+      ],
+      "Text": "The externalReferenceEntityType field currently only supports \u0022APPLICATION\u0022.\nThe attachmentType field currently only supports \u0022RESUME\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FileType",
+      "Anchor": "filetype",
+      "SectionPath": [
+        "Sync application resume",
+        "Enum definitions",
+        "FileType"
+      ],
+      "Text": "Supported file types for attachments:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "FileType",
+      "Anchor": "filetype",
+      "SectionPath": [
+        "Sync application resume",
+        "Enum definitions",
+        "FileType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PDF",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents a PDF document.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents a Microsoft Word document (.doc).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOCX",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents a Microsoft Word document (.docx).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TXT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents a plain text file.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "externalReferenceEntityType",
+      "Anchor": "externalreferenceentitytype",
+      "SectionPath": [
+        "Sync application resume",
+        "Enum definitions",
+        "externalReferenceEntityType"
+      ],
+      "Text": "The type of entity the attachment is associated with:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "externalReferenceEntityType",
+      "Anchor": "externalreferenceentitytype",
+      "SectionPath": [
+        "Sync application resume",
+        "Enum definitions",
+        "externalReferenceEntityType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLICATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job application that the attachment is associated with.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "attachmentType",
+      "Anchor": "attachmenttype",
+      "SectionPath": [
+        "Sync application resume",
+        "Enum definitions",
+        "attachmentType"
+      ],
+      "Text": "The type of attachment being synced:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "attachmentType",
+      "Anchor": "attachmenttype",
+      "SectionPath": [
+        "Sync application resume",
+        "Enum definitions",
+        "attachmentType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RESUME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents a resume or CV document.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (with query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-with-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (with query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/attachments\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022: {\n      \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n      \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n      \u0022fileType\u0022: \u0022PDF\u0022,\n      \u0022externalCreatedAt\u0022: 1757552826000,\n      \u0022externalLastModifiedAt\u0022: 1757552826000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request to upsert attachment (without query tunneling)",
+      "Anchor": "sample-request-to-upsert-attachment-without-query-tunneling",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample request to upsert attachment (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/attachments?ids[0].externalReferenceEntityId=external_ref_entity_id_0001\u0026ids[0].externalAttachmentId=attachment_0001\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026ids[0].externalReferenceEntityType=APPLICATION\u0026ids[0].attachmentType=RESUME\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n      \u0022externalReferenceEntityId=external_ref_entity_id_0001\u0026externalAttachmentId=attachment_0001\u0026integrationContext=urn%3Ali%3Aorganization%3A70540833\u0026externalReferenceEntityType=APPLICATION\u0026attachmentType=RESUME\u0022:\n       {\n        \u0022externalFileName\u0022: \u0022sample_resume\u0022,\n        \u0022internalAttachmentUrn\u0022: \u0022urn:li:ambryBlob:AYEBADqAAkAAQAAAAAAAS7h6TEbMXRJQQ2DTaGESDnzow.pdf\u0022,\n        \u0022fileType\u0022: \u0022PDF\u0022,\n        \u0022externalCreatedAt\u0022: 1757552826000,\n        \u0022externalLastModifiedAt\u0022: 1757552826000\n      }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Sync application resume",
+        "Sample response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(attachmentType:RESUME,externalAttachmentId:attachment_test_resume_0001,externalReferenceEntityId:externalReference_0001,externalReferenceEntityType:APPLICATION,integrationContext:urn:li:organization:70540833)\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

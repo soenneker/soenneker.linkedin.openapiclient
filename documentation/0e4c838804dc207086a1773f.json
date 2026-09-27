@@ -1,0 +1,1544 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+  "Title": "Validation Status API (/validationStatus)",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Validation Status API (/validationStatus)",
+      "Anchor": "validation-status-api-validationstatus",
+      "SectionPath": [],
+      "Text": "The Validation Status API (/validationStatus) allows enterprise partners to retrieve the current validation status of LinkedIn members at scale. This API is optimized for bulk or single-member checks and provides validation results across three categories.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation Status API (/validationStatus)",
+      "Anchor": "validation-status-api-validationstatus",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation Status API (/validationStatus)",
+      "Anchor": "validation-status-api-validationstatus",
+      "SectionPath": [],
+      "Text": "Plus Tier Only: This API is exclusively available to Plus tier partners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation Status API (/validationStatus)",
+      "Anchor": "validation-status-api-validationstatus",
+      "SectionPath": [],
+      "Text": "Tier Availability: Development \u274C | Lite \u274C | Plus \u2705",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Key Features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Check validation status for up to 500 members per request\nNo member consent required (2-legged OAuth)\nGet identity, workplace, and profile information status\nOAuth: 2-legged (application-level authorization)\nVersion: 202510",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Validation Categories",
+      "Anchor": "validation-categories",
+      "SectionPath": [
+        "Overview",
+        "Validation Categories"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Description",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "identity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Government ID verification status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VALID, INVALID, VALID_WITH_UPDATES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workplace",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Work affiliation verification status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VALID, INVALID, VALID_WITH_UPDATES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileInformationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile data validation status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VALID, INVALID",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation Categories",
+      "Anchor": "validation-categories",
+      "SectionPath": [
+        "Overview",
+        "Validation Categories"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validation Categories",
+      "Anchor": "validation-categories",
+      "SectionPath": [
+        "Overview",
+        "Validation Categories"
+      ],
+      "Text": "This API uses 2-legged OAuth and does NOT require member interaction or consent. You can call this endpoint directly to validate existing member data at scale.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Key Differences from Other APIs",
+      "Anchor": "key-differences-from-other-apis",
+      "SectionPath": [
+        "Key Differences from Other APIs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Feature",
+        "/validationStatus",
+        "/verificationReport",
+        "/identityMe"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "OAuth Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2-legged (application)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3-legged (member)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3-legged (member)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member Consent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Not required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Use Case",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bulk validation checks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Individual verification details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Individual profile details",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Batch Support",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Up to 500 members",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Single member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Single member",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Returns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Validation status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Detailed verification metadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile information",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Token Lifetime",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "30 minutes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "60 days",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "60 days",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Differences from Other APIs",
+      "Anchor": "key-differences-from-other-apis",
+      "SectionPath": [
+        "Key Differences from Other APIs"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Differences from Other APIs",
+      "Anchor": "key-differences-from-other-apis",
+      "SectionPath": [
+        "Key Differences from Other APIs"
+      ],
+      "Text": "Use Case: Use this API to check if any of your members\u0027 profile or verification information has changed. This allows you to efficiently identify which members need data refreshes, then pull only the changed member data using /verificationReport and /identityMe.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Differences from Other APIs",
+      "Anchor": "key-differences-from-other-apis",
+      "SectionPath": [
+        "Key Differences from Other APIs"
+      ],
+      "Text": "See the Data Freshness Guide for complete implementation patterns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Before using this API, ensure you\u0027re using the latest versions of related APIs to get the required id field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "/identityMe \u2013 Version 202510.03 or later\n/verificationReport \u2013 Version 202510 or later",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "The id field returned by these endpoints is required for validation checks. Without upgrading to these versions, you cannot use the Validation Status API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication: 2-Legged OAuth",
+      "Anchor": "authentication-2-legged-oauth",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth"
+      ],
+      "Text": "This API requires an application-level access token obtained through OAuth 2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Characteristics",
+      "Anchor": "key-characteristics",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Key Characteristics"
+      ],
+      "Text": "No member consent required \u2013 Application acts on its own behalf\nScope: r_validation_status\nToken validity: 30 minutes\nNo refresh token issued \u2013 Request new token after expiry",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Access Token",
+      "Anchor": "get-access-token",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Get Access Token"
+      ],
+      "Text": "curl -X POST \u0027https://www.linkedin.com/oauth/v2/accessToken\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  --data-urlencode \u0027grant_type=client_credentials\u0027 \\\n  --data-urlencode \u0027client_id={YOUR_CLIENT_ID}\u0027 \\\n  --data-urlencode \u0027client_secret={YOUR_CLIENT_SECRET}\u0027 \\\n  --data-urlencode \u0027scope=r_validation_status\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Access Token",
+      "Anchor": "get-access-token",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Get Access Token"
+      ],
+      "Text": "Sample Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Access Token",
+      "Anchor": "get-access-token",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Get Access Token"
+      ],
+      "Text": "{\n  \u0022access_token\u0022: \u0022AQVjYwl_Z-PJW2bChvx9ewKy3hrkQtJuM70LOj17...\u0022,\n  \u0022expires_in\u0022: 1799\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Access Token",
+      "Anchor": "get-access-token",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Get Access Token"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Access Token",
+      "Anchor": "get-access-token",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Get Access Token"
+      ],
+      "Text": "Request a new access token every 25 minutes to avoid expiry during API calls. Implement token caching and refresh logic in your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Access Token",
+      "Anchor": "get-access-token",
+      "SectionPath": [
+        "Authentication: 2-Legged OAuth",
+        "Get Access Token"
+      ],
+      "Text": "For complete OAuth details, see the Client Credentials Flow Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Limit Type",
+        "Default",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application-level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000 requests/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum API calls per day",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member-level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500 requests/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum checks per individual member per day",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "Rate limits may be customized based on your partnership agreement. Contact your LinkedIn Partner Solutions Engineer for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint Details",
+      "Anchor": "endpoint-details",
+      "SectionPath": [
+        "Endpoint Details"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/validationStatus?action=retrieve",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required Headers",
+      "Anchor": "required-headers",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {ACCESS_TOKEN}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2-legged OAuth access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API version",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Content-Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "application/json",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request body format",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Endpoint Details",
+        "Request Body"
+      ],
+      "Text": "{\n  \u0022validationQueries\u0022: [\n    {\n      \u0022id\u0022: \u0022string\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Endpoint Details",
+        "Request Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "validationQueries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of validation requests (max 500)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validationQueries[].id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member identifier from /identityMe or /verificationReport",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Endpoint Details",
+        "Request Body"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Endpoint Details",
+        "Request Body"
+      ],
+      "Text": "Maximum 500 queries per request\nUse the id field from /identityMe or /verificationReport responses\nEach unique member ID counts toward member-level rate limits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Member Validation",
+      "Anchor": "single-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Single Member Validation"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Single Member Validation",
+      "Anchor": "single-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Single Member Validation"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/validationStatus?action=retrieve\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: 202510\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -d \u0027{\n    \u0022validationQueries\u0022: [\n      {\u0022id\u0022: \u0022abc123\u0022}\n    ]\n  }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Member Validation",
+      "Anchor": "single-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Single Member Validation"
+      ],
+      "Text": "Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Single Member Validation",
+      "Anchor": "single-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Single Member Validation"
+      ],
+      "Text": "{\n  \u0022value\u0022: [\n    {\n      \u0022id\u0022: \u0022abc123\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022VALID\u0022,\n        \u0022workplace\u0022: \u0022VALID\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk Member Validation",
+      "Anchor": "bulk-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Bulk Member Validation"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bulk Member Validation",
+      "Anchor": "bulk-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Bulk Member Validation"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/validationStatus?action=retrieve\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: 202510\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -d \u0027{\n    \u0022validationQueries\u0022: [\n      {\u0022id\u0022: \u0022abc123\u0022},\n      {\u0022id\u0022: \u0022def456\u0022},\n      {\u0022id\u0022: \u0022ghi789\u0022}\n    ]\n  }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk Member Validation",
+      "Anchor": "bulk-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Bulk Member Validation"
+      ],
+      "Text": "Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bulk Member Validation",
+      "Anchor": "bulk-member-validation",
+      "SectionPath": [
+        "Example Request and Response",
+        "Bulk Member Validation"
+      ],
+      "Text": "{\n  \u0022value\u0022: [\n    {\n      \u0022id\u0022: \u0022abc123\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022VALID\u0022,\n        \u0022workplace\u0022: \u0022VALID_WITH_UPDATES\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n    },\n    {\n      \u0022id\u0022: \u0022def456\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022INVALID\u0022,\n        \u0022workplace\u0022: \u0022VALID\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022INVALID\u0022\n    },\n    {\n      \u0022id\u0022: \u0022ghi789\u0022,\n      \u0022verificationStatus\u0022: {\n        \u0022identity\u0022: \u0022VALID\u0022,\n        \u0022workplace\u0022: \u0022VALID\u0022\n      },\n      \u0022profileInformationStatus\u0022: \u0022VALID\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Top-Level Fields",
+      "Anchor": "top-level-fields",
+      "SectionPath": [
+        "Response Schema",
+        "Top-Level Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array of objects",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of validation results (one per member)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Validation Result Object",
+      "Anchor": "validation-result-object",
+      "SectionPath": [
+        "Response Schema",
+        "Validation Result Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member identifier (same as submitted in request)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identity and workplace verification status",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileInformationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile data validation status",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "verificationStatus Object",
+      "Anchor": "verificationstatus-object",
+      "SectionPath": [
+        "Response Schema",
+        "verificationStatus Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "identity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identity verification status: VALID, INVALID, or VALID_WITH_UPDATES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workplace",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Workplace verification status: VALID, INVALID, or VALID_WITH_UPDATES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Status Values Explained",
+      "Anchor": "status-values-explained",
+      "SectionPath": [
+        "Response Schema",
+        "Status Values Explained"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Applies To",
+        "Description",
+        "Action Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information is current and valid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No action needed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All fields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information is no longer valid (verification removed or expired)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fetch fresh data via /verificationReport and /identityMe",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VALID_WITH_UPDATES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "identity, workplace",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information is valid, but updates are available (new verifications added or existing re-verified)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fetch updated data if you need the latest verification details",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Decision Logic",
+      "Anchor": "decision-logic",
+      "SectionPath": [
+        "Response Schema",
+        "Decision Logic"
+      ],
+      "Text": "// Example: Determine which members need data refresh\nresults.value.forEach(member =\u003E {\n  const { id, verificationStatus, profileInformationStatus } = member;\n  \n  // Check if any verification changed\n  if (verificationStatus.identity === \u0027INVALID\u0027 || \n      verificationStatus.identity === \u0027VALID_WITH_UPDATES\u0027 ||\n      verificationStatus.workplace === \u0027INVALID\u0027 ||\n      verificationStatus.workplace === \u0027VALID_WITH_UPDATES\u0027) {\n    // Fetch fresh verification data\n    refreshVerificationData(id);\n  }\n  \n  // Check if profile changed\n  if (profileInformationStatus === \u0027INVALID\u0027) {\n    // Fetch fresh profile data\n    refreshProfileData(id);\n  }\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Token Management",
+      "Anchor": "token-management",
+      "SectionPath": [
+        "Best Practices",
+        "Token Management"
+      ],
+      "Text": "\u2705 Cache tokens - Don\u0027t request new tokens for every API call\n\u2705 Refresh proactively - Get new token at 25 minutes (before 30-minute expiry)\n\u2705 Handle 401 errors gracefully - Automatically retry with fresh token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batching Strategy",
+      "Anchor": "batching-strategy",
+      "SectionPath": [
+        "Best Practices",
+        "Batching Strategy"
+      ],
+      "Text": "\u2705 Batch up to 500 members - Maximize efficiency by filling each request\n\u2705 Parallel requests - Send multiple batches in parallel for large datasets\n\u2705 Respect rate limits - Track daily and per-member limits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness Workflow",
+      "Anchor": "data-freshness-workflow",
+      "SectionPath": [
+        "Best Practices",
+        "Data Freshness Workflow"
+      ],
+      "Text": "Daily validation - Run bulk validation once per day for all members\nIdentify changes - Filter members with INVALID or VALID_WITH_UPDATES status\nFetch fresh data - Call /verificationReport and /identityMe only for changed members\nUpdate database - Store latest verification and profile data",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness Workflow",
+      "Anchor": "data-freshness-workflow",
+      "SectionPath": [
+        "Best Practices",
+        "Data Freshness Workflow"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness Workflow",
+      "Anchor": "data-freshness-workflow",
+      "SectionPath": [
+        "Best Practices",
+        "Data Freshness Workflow"
+      ],
+      "Text": "This approach reduces 3-legged OAuth API calls by 95% compared to polling all members daily.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Best Practices",
+        "Error Handling"
+      ],
+      "Text": "\u2705 Validate id format before sending requests\n\u2705 Handle partial failures gracefully (some IDs may be invalid)\n\u2705 Implement exponential backoff for 500 errors\n\u2705 Log failed IDs for investigation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API-Specific Errors",
+      "Anchor": "api-specific-errors",
+      "SectionPath": [
+        "Error Handling",
+        "API-Specific Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status",
+        "Error Code",
+        "Error Message",
+        "Cause",
+        "Solution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "S_400_BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Validation status request array cannot be null or empty\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty validationQueries array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include at least one validation query",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "S_400_BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Validation status request array size ({size}) exceeds maximum limit of 500\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request exceeds 500 items",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Split into multiple requests with max 500 queries each",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "S_400_BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Invalid personId: {personId}\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid or malformed member ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use valid id from /identityMe or /verificationReport",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "S_400_BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022API version is not available in the request\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing or invalid LinkedIn-Version header",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include LinkedIn-Version: 202510 header",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid or expired 2-legged token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request new token using client credentials flow",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access denied",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_validation_status permission not enabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact LinkedIn Partner Solutions Engineer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too Many Requests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit exceeded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry after delay; check Retry-After header",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "S_500_INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Failed to get validation status response\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Downstream service failure",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry with exponential backoff; contact support if persists",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API-Specific Errors",
+      "Anchor": "api-specific-errors",
+      "SectionPath": [
+        "Error Handling",
+        "API-Specific Errors"
+      ],
+      "Text": "For additional error handling guidance, see the LinkedIn API Error Handling Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API-Specific Errors",
+      "Anchor": "api-specific-errors",
+      "SectionPath": [
+        "Error Handling",
+        "API-Specific Errors"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API-Specific Errors",
+      "Anchor": "api-specific-errors",
+      "SectionPath": [
+        "Error Handling",
+        "API-Specific Errors"
+      ],
+      "Text": "If you receive a 403 \u0022access denied\u0022 error, contact your LinkedIn Partner Solutions Engineer to enable the r_validation_status permission for your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Daily Data Freshness Check",
+      "Anchor": "1-daily-data-freshness-check",
+      "SectionPath": [
+        "Common Use Cases",
+        "1. Daily Data Freshness Check"
+      ],
+      "Text": "Validate all members once per day to identify who needs data refresh:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "1. Daily Data Freshness Check",
+      "Anchor": "1-daily-data-freshness-check",
+      "SectionPath": [
+        "Common Use Cases",
+        "1. Daily Data Freshness Check"
+      ],
+      "Text": "// Step 1: Get all member IDs from your database\nconst allMemberIds = await db.getAllMemberIds();\n\n// Step 2: Batch into groups of 500\nconst batches = chunk(allMemberIds, 500);\n\n// Step 3: Validate each batch\nconst validationResults = await Promise.all(\n  batches.map(batch =\u003E validateMembers(batch))\n);\n\n// Step 4: Identify members needing refresh\nconst membersToRefresh = validationResults\n  .flat()\n  .filter(m =\u003E \n    m.verificationStatus.identity !== \u0027VALID\u0027 ||\n    m.verificationStatus.workplace !== \u0027VALID\u0027 ||\n    m.profileInformationStatus === \u0027INVALID\u0027\n  );\n\n// Step 5: Refresh only changed members\nawait refreshMemberData(membersToRefresh);",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Pre-Transaction Validation",
+      "Anchor": "2-pre-transaction-validation",
+      "SectionPath": [
+        "Common Use Cases",
+        "2. Pre-Transaction Validation"
+      ],
+      "Text": "Validate member data before critical transactions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "2. Pre-Transaction Validation",
+      "Anchor": "2-pre-transaction-validation",
+      "SectionPath": [
+        "Common Use Cases",
+        "2. Pre-Transaction Validation"
+      ],
+      "Text": "// Before processing payment or granting access\nconst validation = await validateMember(memberId);\n\nif (validation.verificationStatus.identity === \u0027INVALID\u0027) {\n  // Identity no longer valid - require re-verification\n  return redirectToReVerification(memberId);\n}\n\nif (validation.verificationStatus.workplace === \u0027INVALID\u0027) {\n  // Workplace verification removed - update member status\n  await updateMemberWorkplaceStatus(memberId, \u0027unverified\u0027);\n}\n\n// Proceed with transaction",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Compliance Audit Trail",
+      "Anchor": "3-compliance-audit-trail",
+      "SectionPath": [
+        "Common Use Cases",
+        "3. Compliance Audit Trail"
+      ],
+      "Text": "Track verification status changes over time:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "3. Compliance Audit Trail",
+      "Anchor": "3-compliance-audit-trail",
+      "SectionPath": [
+        "Common Use Cases",
+        "3. Compliance Audit Trail"
+      ],
+      "Text": "// Daily compliance check\nconst results = await bulkValidateMembers(allMemberIds);\n\n// Store validation results with timestamp\nawait db.saveValidationSnapshot({\n  timestamp: Date.now(),\n  results: results,\n  summary: {\n    totalMembers: results.length,\n    validMembers: results.filter(r =\u003E r.verificationStatus.identity === \u0027VALID\u0027).length,\n    invalidMembers: results.filter(r =\u003E r.verificationStatus.identity === \u0027INVALID\u0027).length,\n    updatedMembers: results.filter(r =\u003E r.verificationStatus.identity === \u0027VALID_WITH_UPDATES\u0027).length\n  }\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "APIs",
+      "Anchor": "apis",
+      "SectionPath": [
+        "Related Resources",
+        "APIs"
+      ],
+      "Text": "Profile Details API \u2013 Get member profile information\nVerification Report API \u2013 Get detailed verification metadata",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guides",
+      "Anchor": "guides",
+      "SectionPath": [
+        "Related Resources",
+        "Guides"
+      ],
+      "Text": "Client Credentials Flow \u2013 OAuth 2.0 2-legged authentication\nData Freshness Strategies \u2013 Keep member data up-to-date with polling strategies\nImplementation Guide \u2013 Best practices for OAuth, user ID management, and token storage",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Resources",
+      "Anchor": "other-resources",
+      "SectionPath": [
+        "Related Resources",
+        "Other Resources"
+      ],
+      "Text": "Overview \u2013 Learn about Plus tier features\nCertification Requirements \u2013 Production readiness checklist\nCommon FAQ \u2013 Troubleshooting and answers\nLinkedIn API Status Page \u2013 Monitor API health\nRelease Notes \u2013 API updates and current versions",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

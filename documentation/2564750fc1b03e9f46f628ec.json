@@ -1,0 +1,743 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+  "Title": "Build an Ad Campaign",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Build an Ad Campaign",
+      "Anchor": "build-an-ad-campaign",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Build an Ad Campaign",
+      "Anchor": "build-an-ad-campaign",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0 and Permission Scopes",
+      "Anchor": "oauth-20-and-permission-scopes",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes"
+      ],
+      "Text": "All LinkedIn API endpoints have access limitations called permission \u0022Scopes\u0022, which define what your app can do on a user\u0027s behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0 and Permission Scopes",
+      "Anchor": "oauth-20-and-permission-scopes",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes"
+      ],
+      "Text": "OAuth 2.0 Scopes are a part of the authentication process and define USER ACCESS (r_basicprofile, r_ads, rw_ads) to LinkedIn PRODUCTS (Consumer, Marketing, Learning) and SERVICES (Posts, Ad Accounts, Campaign management.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth 2.0 and Permission Scopes",
+      "Anchor": "oauth-20-and-permission-scopes",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes"
+      ],
+      "Text": "Marketing APIs require the rw_ads scope. Other APIs require additional permission scopes which are documented in topic-specific pages. To learn more, see Marketing-Frequently Asked Questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map Campaign Ad Account ID to Application",
+      "Anchor": "map-campaign-ad-account-id-to-application",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes",
+        "Map Campaign Ad Account ID to Application"
+      ],
+      "Text": "From Campaign Manager, copy the nine-digit Ad \u0022Account ID\u0022.\nOpen the Developer Portal and select your application.\nFrom the \u0022Products\u0022 tab click \u0022View Ad Accounts\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map Campaign Ad Account ID to Application",
+      "Anchor": "map-campaign-ad-account-id-to-application",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes",
+        "Map Campaign Ad Account ID to Application"
+      ],
+      "Text": "Click \u0022Add Ad Account\u0022 and paste the Ad Account ID, then save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map Campaign Ad Account ID to Application",
+      "Anchor": "map-campaign-ad-account-id-to-application",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes",
+        "Map Campaign Ad Account ID to Application"
+      ],
+      "Text": "This particular Ad Account is now mapped to the selected application. Repeat for any other Ad Accounts you need to add for this or any other applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map Campaign Ad Account ID to Application",
+      "Anchor": "map-campaign-ad-account-id-to-application",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes",
+        "Map Campaign Ad Account ID to Application"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Map Campaign Ad Account ID to Application",
+      "Anchor": "map-campaign-ad-account-id-to-application",
+      "SectionPath": [
+        "OAuth 2.0 and Permission Scopes",
+        "Map Campaign Ad Account ID to Application"
+      ],
+      "Text": "This step is only required for a developer application with development tier access of the Advertising API. For more information on Advertising API tiers and how to gain access to them, see Increasing Access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create an Ad Account",
+        "Ad Account",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Create an Ad Account",
+        "Ad Account",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022currency\u0022: \u0022USD\u0022,\n    \u0022name\u0022: \u0022Company ABC\u0022,\n    \u0022notifiedOnCampaignOptimization\u0022: true,\n    \u0022notifiedOnCreativeApproval\u0022: true,\n    \u0022notifiedOnCreativeRejection\u0022: true,\n    \u0022notifiedOnEndOfCampaign\u0022: true,\n    \u0022reference\u0022: \u0022urn:li:organization:101202303\u0022,\n    \u0022type\u0022: \u0022BUSINESS\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Create an Ad Account",
+        "Ad Account",
+        "Sample Request Body"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID of the account in the x-restli-id response header. Also retrieve the Ad Account ID later through the API or UI. To learn more about working with Ad Accounts, see Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "Campaign Groups give advertisers a way to manage status, budget, and performance across multiple related campaigns. Creating Campaign Groups is optional. Campaigns can still be created on their own without an associated Campaign Group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign Group",
+      "Anchor": "create-a-campaign-group",
+      "SectionPath": [
+        "Create a Campaign Group"
+      ],
+      "Text": "Use the following API to create a Campaign Group:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Campaign Group",
+        "Ad Campaign Groups",
+        "Sample request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Campaign Group",
+        "Ad Campaign Groups",
+        "Sample request"
+      ],
+      "Text": "This API doesn\u0027t support ENTERPRISE accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Campaign Group",
+        "Ad Campaign Groups",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountID}/adCampaignGroups",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create a Campaign Group",
+        "Ad Campaign Groups",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:502616245\u0022,\n    \u0022name\u0022: \u0022CampaignGroup1\u0022,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022totalBudget\u0022: {\n        \u0022amount\u0022: \u002260000.00\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Target Audience",
+      "Anchor": "find-target-audience",
+      "SectionPath": [
+        "Find Target Audience"
+      ],
+      "Text": "Before creating a campaign, you must define the right audience by specifying targeting criteria. The targeting criteria can also be updated after the campaign is created.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Target Audience",
+      "Anchor": "find-target-audience",
+      "SectionPath": [
+        "Find Target Audience"
+      ],
+      "Text": "LinkedIn offers a collection of APIs to discover audiences for your campaign. For a campaign to run, the target audience must have at least 300 members. This ensures that there\u0027s enough impression data for the system to properly assess its effectiveness. To learn more, see Audience Counts API and Ads Targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Target Audience",
+      "Anchor": "find-target-audience",
+      "SectionPath": [
+        "Find Target Audience"
+      ],
+      "Text": "First, explore the targeting criteria that\u0027s available on the LinkedIn Campaign Management platform. The following example uses the adTargetingFacets API to discover the available ad targeting facets. Facets are targeting types such as industries, locations, or seniority level. Each facet contains entities that reflect the individual values which can be fetched through the adTargetingEntities API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Target Audience",
+      "Anchor": "find-target-audience",
+      "SectionPath": [
+        "Find Target Audience"
+      ],
+      "Text": "For example, the locations facet includes entities such as Canada and the United States.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Facets",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTargetingFacets",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Find Target Audience",
+        "Response"
+      ],
+      "Text": "The API response shows the available targeting facets. Each facet record contains the name of the facet, the type, and the Finder methods available to query for more information and discover the facet\u0027s entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Find Target Audience",
+        "Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022facetName\u0022: \u0022seniorities\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ],\n            \u0022entityTypes\u0022: [\n                \u0022SENIORITY\u0022\n            ],\n            \u0022$URN\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022\n        },\n        {\n            \u0022facetName\u0022: \u0022locations\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022\n            ],\n            \u0022entityTypes\u0022: [\n                \u0022GEO\u0022\n            ],\n            \u0022$URN\u0022: \u0022urn:li:adTargetingFacet:locations\u0022\n        },\n        {\n            \u0022facetName\u0022: \u0022industries\u0022,\n            \u0022availableEntityFinders\u0022: [\n                \u0022AD_TARGETING_FACET\u0022,\n                \u0022TYPEAHEAD\u0022,\n                \u0022SIMILAR_ENTITIES\u0022\n            ],\n            \u0022entityTypes\u0022: [\n                \u0022INDUSTRY\u0022\n            ],\n            \u0022$URN\u0022: \u0022urn:li:adTargetingFacet:industries\u0022\n        },\n        ...\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Find Target Audience",
+        "Response"
+      ],
+      "Text": "Next, drill down into a facet to discover its entities. Entities can be included or excluded from your targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Find Target Audience",
+        "Response"
+      ],
+      "Text": "Use the following API to discover the entities within a facet. The example below fetches possible seniority levels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample request"
+      ],
+      "Text": "GET http://api.linkedin.com/rest/adTargetingEntities?q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026facet=urn:li:adTargetingFacet:seniorities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:1\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Unpaid\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:2\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Training\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:3\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Entry\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:4\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Senior\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:seniority:5\u0022,\n            \u0022facetUrn\u0022: \u0022urn:li:adTargetingFacet:seniorities\u0022,\n            \u0022name\u0022: \u0022Manager\u0022\n        },\n        ...\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "For more information, see Ad Targeting Facets \u0026 Entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "Once you have settled on a target audience, you\u0027ll need to look up the size of the audience you\u0027re targeting using the Audience Counts API. Target audiences must have at least 300 members to run a campaign against that audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "This API takes in query parameters that define your desired targeting criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "The parameter q=targetingCriteria is always required as it represents the Finder targetingCriteria request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Find Target Audience",
+        "Ad Targeting Entities",
+        "Sample Response"
+      ],
+      "Text": "The following sample targeting request estimates the audience count of members in Canada and the United States while excluding members who are in entry-level positions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Find Target Audience",
+        "Audience Counts",
+        "Sample request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/audienceCounts?q=targetingCriteria\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.seniorities[0]=urn:li:seniority:3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Find Target Audience",
+        "Audience Counts",
+        "Sample Response"
+      ],
+      "Text": "The API returns a list of AudienceCount results based on the targetingCriteria parameters input above. The following example shows the data that\u0027s returned. Values are rounded estimates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Find Target Audience",
+        "Audience Counts",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022total\u0022: 170000000,\n            \u0022active\u0022: 0\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Find Target Audience",
+        "Audience Counts",
+        "Sample Response"
+      ],
+      "Text": "For more information, see Audience Counts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "View Ad Budget Pricing",
+      "Anchor": "view-ad-budget-pricing",
+      "SectionPath": [
+        "View Ad Budget Pricing"
+      ],
+      "Text": "The last thing you\u0027ll do before creating your campaign is to discover how you should bid. The Ad Budget Pricing API returns pricing metrics such as minimum, maximum, and suggested bids. The Ad Budget Pricing API offers insight into these metrics given the targeting criteria that you specify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "View Ad Budget Pricing",
+      "Anchor": "view-ad-budget-pricing",
+      "SectionPath": [
+        "View Ad Budget Pricing"
+      ],
+      "Text": "The following sample request returns the pricing based on our targeting criteria of members living in the United States and Canada, while excluding members in an entry-level position. The suggested bid returned is for the specified dailyBudget of USD 100.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "View Ad Budget Pricing",
+        "Ad Budget Pricing",
+        "Sample request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adBudgetPricing?account=urn:li:sponsoredAccount:502616245\u0026bidType=CPM\u0026campaignType=TEXT_AD\u0026matchType=EXACT\u0026q=criteria\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:101174742\u0026target.includedTargetingFacets.locations[1]=urn:li:geo:103644278\u0026target.excludingTargetingFacets.seniorities[0]=urn:li:seniority:3\u0026dailyBudget.amount=100\u0026dailyBudget.currencyCode=USD",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "View Ad Budget Pricing",
+        "Ad Budget Pricing",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022suggestedBid\u0022: {\n                \u0022default\u0022: {\n                    \u0022amount\u0022: \u00222.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022min\u0022: {\n                    \u0022amount\u0022: \u00222.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022max\u0022: {\n                    \u0022amount\u0022: \u00222.73\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                }\n            },\n            \u0022dailyBudgetLimits\u0022: {\n                \u0022default\u0022: {\n                    \u0022amount\u0022: \u002225.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022min\u0022: {\n                    \u0022amount\u0022: \u002210.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022max\u0022: {\n                    \u0022amount\u0022: \u00221000000.00\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                }\n            },\n            \u0022bidLimits\u0022: {\n                \u0022min\u0022: {\n                    \u0022amount\u0022: \u00222\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                },\n                \u0022max\u0022: {\n                    \u0022amount\u0022: \u0022200.0\u0022,\n                    \u0022currencyCode\u0022: \u0022USD\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "View Ad Budget Pricing",
+        "Ad Budget Pricing",
+        "Sample Response"
+      ],
+      "Text": "To learn more, see Ad Budget Pricing.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign",
+      "Anchor": "create-a-campaign",
+      "SectionPath": [
+        "Create a Campaign"
+      ],
+      "Text": "Now that you know your target audience and bid amounts, create your campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign",
+      "Anchor": "create-a-campaign",
+      "SectionPath": [
+        "Create a Campaign"
+      ],
+      "Text": "Campaigns can be created with a variety of types such as SPONSORED_UPDATES, SPONSORED_INMAILS, AND TEXT_AD. This example shows how to create a simple text ad campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Create a Campaign",
+        "Ad Campaigns",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountID}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Create a Campaign",
+        "Ad Campaigns",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Create a Campaign",
+        "Ad Campaigns",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:502616245\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u0022100\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022Text Ad Campaign\u0022,\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022runSchedule\u0022: {\n        \u0022end\u0022: 9876543210123,\n        \u0022start\u0022: 1234567890987\n    },\n    \u0022targetingCriteria\u0022: {\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:geo:103644278\u0022,\n                            \u0022urn:li:geo:101174742\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022: {\n            \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        }\n    },\n    \u0022type\u0022: \u0022TEXT_AD\u0022,\n    \u0022unitCost\u0022: {\n        \u0022amount\u0022: \u00222\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Create a Campaign",
+        "Ad Campaigns",
+        "Sample Response"
+      ],
+      "Text": "To learn more about working with campaigns, see Create and Manage Campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Ad Creative",
+      "Anchor": "create-an-ad-creative",
+      "SectionPath": [
+        "Create an Ad Creative"
+      ],
+      "Text": "Next, you\u0027ll create an Ad Creative defining how the ad should appear on LinkedIn. There are several creative types in LinkedIn Campaign Management:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Ad Creative",
+      "Anchor": "create-an-ad-creative",
+      "SectionPath": [
+        "Create an Ad Creative"
+      ],
+      "Text": "Text Ads: Appears in various parts of LinkedIn.com.\nSponsored Content: Appears in the homepage feed of members within the targeted audience.\nSponsored InMail: A message delivered to a LinkedIn member\u2019s InMail.\nSponsored Video: Contains user-generated video content.\nSponsored Carousel Ad: Displays multiple images in succession in a single ad unit, each with its own description and destination link.\nEvent Ads: Promotes LinkedIn Events to a defined audience. Displayed in a member\u2019s LinkedIn feed, these ads highlight important event details and drive interest and RSVPs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Ad Creative",
+      "Anchor": "create-an-ad-creative",
+      "SectionPath": [
+        "Create an Ad Creative"
+      ],
+      "Text": "In this example, we\u0027ll show you how to create a text ad and associate it with a campaign in the same request by specifying the type field as a TEXT_AD and the campaign field with a campaign\u0027s URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Create an Ad Creative",
+        "Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountID}/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Create an Ad Creative",
+        "Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Create an Ad Creative",
+        "Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123456\u0022,\n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022type\u0022: \u0022TEXT_AD\u0022,\n    \u0022variables\u0022: {\n        \u0022clickUri\u0022: \u0022https://www.linkedin.com\u0022,\n        \u0022data\u0022: {\n            \u0022com.linkedin.ads.TextAdCreativeVariables\u0022: {\n                \u0022text\u0022: \u0022This is a test ad description that links to LinkedIn\u0022,\n                \u0022title\u0022: \u0022This is Test Ad!\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Create an Ad Creative",
+        "Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "To learn more about working with creatives, see Ad Creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Check out the Overview page to discover all that\u0027s possible with the APIs. LinkedIn\u0027s Campaign Management APIs offer a wide range of capabilities to help you build powerful integrations quickly and easily.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

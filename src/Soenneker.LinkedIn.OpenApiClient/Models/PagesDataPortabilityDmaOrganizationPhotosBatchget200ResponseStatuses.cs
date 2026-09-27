@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 property</summary>
-        public int? UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 { get; set; }
+        public long? UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 { get; set; }
         /// <summary>The urnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 property</summary>
-        public int? UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 { get; set; }
+        public long? UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationPhotosBatchget200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)", n => { UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 = n.GetIntValue(); } },
-                { "urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)", n => { UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 = n.GetIntValue(); } },
+                { "urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)", n => { UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3 = n.GetLongValue(); } },
+                { "urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)", n => { UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8 = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)", UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3);
-            writer.WriteIntValue("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)", UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8);
+            writer.WriteLongValue("urn:li:organizationPhoto:(urn:li:organization:3811762,601ff776-563b-4231-a3a0-8caafff2dbf3)", UrnLiOrganizationPhotoUrnLiOrganization3811762601ff776563b4231A3a08caafff2dbf3);
+            writer.WriteLongValue("urn:li:organizationPhoto:(urn:li:organization:3811762,d9e11389-9b2c-4bf6-8475-691bb86c14d8)", UrnLiOrganizationPhotoUrnLiOrganization3811762D9e113899b2c4bf68475691bb86c14d8);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

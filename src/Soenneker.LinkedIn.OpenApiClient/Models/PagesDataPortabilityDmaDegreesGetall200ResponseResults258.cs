@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258AliasItem> Alias { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258AliasItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258AliasItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258Name.CreateFromDiscriminatorValue); } },
                 { "rollup", n => { Rollup = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258AliasItem>("alias", Alias);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseResults258Name>("name", Name);
             writer.WriteStringValue("rollup", Rollup);
             writer.WriteAdditionalData(AdditionalData);

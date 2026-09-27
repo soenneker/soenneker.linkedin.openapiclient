@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The elements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Elements { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItem>? Elements { get; set; }
 #nullable restore
 #else
-        public UntypedNode Elements { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItem> Elements { get; set; }
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +37,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponsePaging Paging { get; set; }
+#endif
+        /// <summary>The results property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseResults? Results { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseResults Results { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200Response"/> and sets the default values.
@@ -63,9 +71,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "elements", n => { Elements = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseMetadata.CreateFromDiscriminatorValue); } },
                 { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponsePaging>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponsePaging.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseResults>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseResults.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +84,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("elements", Elements);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseElementsItem>("elements", Elements);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseMetadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponsePaging>("paging", Paging);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisSearchForCreative200ResponseResults>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

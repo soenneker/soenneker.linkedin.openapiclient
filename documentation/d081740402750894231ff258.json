@@ -1,0 +1,159 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+  "Title": "API Jobs Lifecycle",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "API Jobs Lifecycle",
+      "Anchor": "api-jobs-lifecycle",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Jobs Lifecycle",
+      "Anchor": "api-jobs-lifecycle",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The following diagram outlines how different types of API jobs interact with each other. Please ensure this diagram is followed across all API integrations such as Job Posting, Recruiter System Connect (RSC), and Apply Connect (AC).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The following diagram is applicable when all API jobs are transmitted to LinkedIn using the same customer\u0027s Application Client ID or Child Application ID.\nThe same parent application was utilized for the integration process.\nThe inline upgrade/downgrade feature is subject to availability, please contact your Business Development point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "LinkedIn Basic Job Post knowledge base.\nLinkedIn Premium Job Post knowledge base.\nLinkedIn Private Job knowledge base.\nLinkedIn Recruiter System Connect knowledge base.\nLinkedIn Apply Connect knowledge base.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "LinkedIn Basic Job Post knowledge base.\nLinkedIn Premium Job Post knowledge base.\nLinkedIn Recruiter System Connect knowledge base.\nLinkedIn Apply Connect knowledge base.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC \u0026 Basic Job Post are enabled for a customer",
+      "Anchor": "rsc--basic-job-post-are-enabled-for-a-customer",
+      "SectionPath": [
+        "RSC \u0026 Basic Job Post are enabled for a customer"
+      ],
+      "Text": "Upon the posting of a Basic API Job, it will be automatically published on LinkedIn making it accessible to all members. The job will also be integrated into RSC, enabling recruiters to source candidates through One Click Export as long as the job is configured for recruiter visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC \u0026 Premium Job Post are enabled for a customer",
+      "Anchor": "rsc--premium-job-post-are-enabled-for-a-customer",
+      "SectionPath": [
+        "RSC \u0026 Premium Job Post are enabled for a customer"
+      ],
+      "Text": "Upon the posting of a Premium API Job, it will be automatically published on LinkedIn making it accessible to all members. However, this job will not be integrated into RSC nor will it be visible within One Click Export.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Upgrade / Downgrade impact on API Jobs \u0026 RSC",
+      "Anchor": "inline-upgrade--downgrade-impact-on-api-jobs--rsc",
+      "SectionPath": [
+        "RSC \u0026 Premium Job Post are enabled for a customer",
+        "Inline Upgrade / Downgrade impact on API Jobs \u0026 RSC"
+      ],
+      "Text": "When an API Job is designated as Basic, either by creating a new Basic API Job or by inline downgrading a Premium API Job, it will be visible in the RSC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Upgrade / Downgrade impact on API Jobs \u0026 RSC",
+      "Anchor": "inline-upgrade--downgrade-impact-on-api-jobs--rsc",
+      "SectionPath": [
+        "RSC \u0026 Premium Job Post are enabled for a customer",
+        "Inline Upgrade / Downgrade impact on API Jobs \u0026 RSC"
+      ],
+      "Text": "Inline upgrading a Basic API Job to a Premium Job does not change its visibility in the RSC; the job remains visible until it is closed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Upgrade / Downgrade impact on API Jobs \u0026 RSC",
+      "Anchor": "inline-upgrade--downgrade-impact-on-api-jobs--rsc",
+      "SectionPath": [
+        "RSC \u0026 Premium Job Post are enabled for a customer",
+        "Inline Upgrade / Downgrade impact on API Jobs \u0026 RSC"
+      ],
+      "Text": "Similarly, inline downgrading a Premium API Job to a Basic Job will make the job appear in the RSC. No updates to an API Job, except for the CLOSE action, are sent to the RSC.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

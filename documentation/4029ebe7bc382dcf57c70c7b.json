@@ -1,0 +1,302 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+  "Title": "Tutorial: Configure Automated User Management for LinkedIn Learning via Azure AD",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This tutorial describes the steps you need to perform in both LinkedIn Learning and Azure Active Directory (Azure AD) to configure automatic user provisioning. When configured, Azure AD automatically provisions and de-provisions users and groups to LinkedIn Learning using SCIM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "For important details on what this service does, how it works, and frequently asked questions, see What is app provisioning in Azure Active Directory?.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Capabilities Supported",
+      "Anchor": "capabilities-supported",
+      "SectionPath": [
+        "Capabilities Supported"
+      ],
+      "Text": "Create user profiles and assign licenses in LinkedIn Learning\nRemove user licenses in LinkedIn Learning when they do not require access anymore\nKeep user attributes synchronized between Azure AD and LinkedIn Learning\nProvision groups and group memberships in LinkedIn Learning\nSingle sign-on to LinkedIn Learning (preferred)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "The scenario outlined in this tutorial assumes that you already have the following prerequisites:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "An Azure AD tenant\nA user account in Azure AD with permission to configure provisioning (e.g.\nApplication Administrator, Cloud Application administrator, Application Owner, or\nGlobal Administrator)\nLinkedIn Learning admin access\nAccurate user data in LinkedIn Learning. See this guide for instructions on cleaning up your user data if necessary for existing Learning accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with Azure AD",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-azure-ad",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with Azure AD"
+      ],
+      "Text": "Log into LinkedIn Learning as an admin and navigate to Admin\u003E Authentication.\n\n\nClick on Automate user management and expand the Configure SCIM section.\n\n\n\n\n\nIn the Configure SCIM section, elect Add SCIM.\n\n\n\n\n\nEnter a name for the configuration and set Auto-assign licenses to On. Then, click Generate token.\n\n\n\n\n\nCopy the Access token for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable SCIM Provisioning in Azure AD",
+      "Anchor": "enable-scim-provisioning-in-azure-ad",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD"
+      ],
+      "Text": "If you have previously set up Single Sign-On for LinkedIn Learning, you can use the same application you\u2019ve already configured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable SCIM Provisioning in Azure AD",
+      "Anchor": "enable-scim-provisioning-in-azure-ad",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD"
+      ],
+      "Text": "If you have not yet configured SSO for LinkedIn Learning and plan to utilize SSO, follow the instructions here before moving on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Azure AD allows you to assign the application to specific users or groups or to all users and groups. When SCIM provisioning is enabled, all users and groups assigned to the application will be automatically provisioned in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Start small. Test with a small set of users and/or groups before assigning the application to your full user group. When the scope for provisioning is set to only assigned users and groups, you can control this by assigning one or two users or groups to the app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "When new users are provisioned in LinkedIn Learning, an invitation email is sent out automatically. If you want to assign users to the application without notifying them, you should disable emails to new learners as well as recommendation emails in the LinkedIn Learning admin settings. Make sure to re-enable these settings when you are ready to notify your learners. You can also re-send the invitation email at any time in the admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure automatic user provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Configure automatic user provisioning to LinkedIn Learning"
+      ],
+      "Text": "This section guides you through the steps to configure the Azure AD provisioning service to create, update, and disable users and/or groups in LinkedIn Learning based on user and/or group assignments in Azure AD.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure automatic user provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Configure automatic user provisioning to LinkedIn Learning"
+      ],
+      "Text": "To configure automatic user provisioning for LinkedIn Learning in Azure AD:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure automatic user provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Configure automatic user provisioning to LinkedIn Learning"
+      ],
+      "Text": "Sign in to the Azure portal and navigate to Azure Active Directory. Select Enterprise Applications, then select All applications.\n\n\n\n\n\nIn the applications list, select LinkedIn Learning.\n\n\n\n\n\nSelect the Provisioning tab from the Manage menu on the left.\n\n\n\n\n\nSet the Provisioning Mode to Automatic.\n\n\n\n\n\nUnder the Admin Credentials section, input https://api.linkedin.com/scim in the Tenant URL field and input the access token value retrieved earlier in the Secret Token field. Click Test Connection to ensure Azure AD can connect to LinkedIn Learning.\n\n\n\n\n\nClick Save.\n\nUnder the Mappings section, select Provision Azure Active Directory Users.\n\nReview the user attributes that are synchronized from Azure AD to LinkedIn Learning in the Attribute-Mapping section.\nAt this time, the list of attributes eligible to be synched automatically is limited to the below table. Leave as-is or remove attributes as needed.\n\n Note\nThe user attribute mapped to both externalId and userName must match the Unique User Identifier attribute configured for Single Sign-On. By default, these attributes are mapped to userPrincipalName. If userPrincipalName is not a unique, immutable value in your organization, you may want to change the source attribute to employeeId for both Provisioning and Single Sign-On. If you are at all unsure which attribute should be used for the unique identifier, reach out to your LinkedIn Learning account team for guidance.\n\nExpand table\n\n\nDefault Azure AD Attribute\nSCIM Attribute Mapping\nRequired\n\n\n\n\nuserPrincipalName\nexternalId\nYes\n\n\nuserPrincipalName\nuserName\nYes\n\n\nmanager\nurn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager\nNo\n\n\ngivenName\nname.givenName\nNo\n\n\nsurname\nname.familyName\nNo\n\n\ndisplayName\ndisplayName\nNo\n\n\ncity\naddresses[type eq \u0022work\u0022].locality\nNo\n\n\njobTitle\ntitle\nNo\n\n\ndepartment\nurn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department\nNo\n\n\nmail\nemails[type eq \u0022work\u0022].value\nNo (Preferred)\n\n\n\nClick Save if you made any changes to the attribute mapping.\n\nExpand the Settings section.\n\nIn the Notification Email field, enter the email address of a person or group who should receive the provisioning error notifications, and select the Send an email notification when a failure occurs check box.\n\n\n\n\n\nDefine the users and/or groups that you would like to provision to LinkedIn Learning by choosing the desired values in the Scope section.\n\n Note\nWhen enabling automatic provisioning for the first time, choose Sync only assigned users and groups. When provisioning is enabled, an activation email from LinkedIn Learning will be sent to all users who are provisioned to the application in Azure AD. You may want to start by only provisioning a handful of administrators and/or test users.\n\n\n\n\n\nIf your scope is only assigned user and groups, make sure to assign users and groups in the Azure AD LinkedIn Learning application under Users and Groups.\n\nTo enable the Azure AD provisioning service for LinkedIn Learning, change the Provisioning Status to On.\n\n\n\n\n\nWhen you are ready to provision, click Save.\n\n\n\n\nThis operation starts the initial synchronization cycle of all users and groups defined in the Scope section. The initial cycle takes longer to perform than subsequent cycles, which occur approximately every 40 minutes, as long as the Azure AD provisioning service is running.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Monitor Your Deployment"
+      ],
+      "Text": "Once you\u0027ve configured the provisioning service , use the following resources to monitor your deployment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Monitor Your Deployment"
+      ],
+      "Text": "Use the provisioning logs to determine which users have been provisioned successfully or unsuccessfully.\n\nCheck the progress bar to see the status of the provisioning cycle and how close it is to completion.\n\nIf the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Monitor Your Deployment"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Monitor Your Deployment"
+      ],
+      "Text": "After successfully completing the initial sync, it is highly recommended you stop the provisioning service before making any changes to assigned users/groups to avoid revoking licenses in error. Stop provisioning, complete all changes, then restart the provisioning process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Azure AD",
+        "Monitor Your Deployment"
+      ],
+      "Text": "If you have any questions, please reach out to your LinkedIn Learning Account team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Appendix",
+        "Additional resources"
+      ],
+      "Text": "Azure AD SSO Tutorial\nManaging user account provisioning for Enterprise Apps\nWhat is application access and single sign-on with Azure Active Directory?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

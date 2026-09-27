@@ -23,9 +23,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange AdForecastRange { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
-        public int? Timestamp { get; set; }
+        public long? Timestamp { get; set; }
         /// <summary>The value property</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItem"/> and sets the default values.
         /// </summary>
@@ -52,8 +52,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "adForecastRange", n => { AdForecastRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetIntValue(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "timestamp", n => { Timestamp = n.GetLongValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementAdSupplyForecastApi200ResponseElementsItemTimeSeriesItemAdForecastRange>("adForecastRange", AdForecastRange);
-            writer.WriteIntValue("timestamp", Timestamp);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("timestamp", Timestamp);
+            writer.WriteLongValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,980 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+  "Title": "Organization Photos",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Photos API returns photos uploaded by organization admins to be displayed on organization pages (including Companies, Schools, and Showcase pages). These photos can appear in various sections of the organization\u0027s page, such as the Photos section on Life Pages (Targeted Content pages) or other media sections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Organization admins can upload photos through the LinkedIn organization page management interface to showcase their workplace, culture, events, and team. These photos are then available via this API for data portability purposes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Terminology",
+      "Anchor": "product-terminology",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Terminology"
+      ],
+      "Text": "This API relates to the following LinkedIn features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Terminology",
+      "Anchor": "product-terminology",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Terminology"
+      ],
+      "Text": "Organization Photos - Refers to photos uploaded to organization pages. This is the current term used for such images.\nLife Pages - Also known as \u0022Targeted Content\u0022 pages, where these photos can be displayed.\nCompany Pages - Now referred to as \u0022Organization Pages,\u0022 which include companies, schools, and showcase pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Terminology",
+      "Anchor": "product-terminology",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Terminology"
+      ],
+      "Text": "If you\u0027re looking for photos displayed on your organization\u0027s Life Page or Company Page, this is the correct API to use.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to Use This API?",
+        "Prerequisites"
+      ],
+      "Text": "To use this API, the authenticated member must have one of the following organization page roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to Use This API?",
+        "Prerequisites"
+      ],
+      "Text": "ADMINISTRATOR\nCONTENT_ADMINISTRATOR",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to Use This API?",
+        "Prerequisites"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Organization Photo URNs",
+      "Anchor": "obtaining-organization-photo-urns",
+      "SectionPath": [
+        "How to Use This API?",
+        "Obtaining Organization Photo URNs"
+      ],
+      "Text": "To retrieve organization photos, you need to construct an organizationPhotoUrn. There are two primary ways to obtain the necessary information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Obtaining Organization Photo URNs",
+      "Anchor": "obtaining-organization-photo-urns",
+      "SectionPath": [
+        "How to Use This API?",
+        "Obtaining Organization Photo URNs"
+      ],
+      "Text": "From Targeted Content (Life Pages) - If you want to retrieve photos displayed on a Life Page, first call the Organization Targeted Contents API to get the targeted content data. The response includes a photosSection field containing an array of OrganizationPhotoUrn values that you can use directly with this API.\n\nUsing Available Endpoints - Call the Organization Photos API\u0027s GET or BATCH_GET method with:\n\nThe organization URN (obtained from Organizations API)\nThe specific photo ID (if known from previous uploads or content management)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Available Methods",
+      "Anchor": "available-methods",
+      "SectionPath": [
+        "How to Use This API?",
+        "Available Methods"
+      ],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Available Methods",
+      "Anchor": "available-methods",
+      "SectionPath": [
+        "How to Use This API?",
+        "Available Methods"
+      ],
+      "Text": "GET - Returns a single photo based on the unique organizationPhotoUrn.\nBATCH_GET - Returns multiple photos for the given organizationPhotoUrn values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required Permission",
+      "Anchor": "required-permission",
+      "SectionPath": [
+        "Authentication and Authorization",
+        "Required Permission"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u0027s posts, comments, reactions, and other engagement data. Retrieve your organization\u0027s pages and their reporting data (including follower, visitor and content analytics).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Required Organization Roles",
+      "Anchor": "required-organization-roles",
+      "SectionPath": [
+        "Authentication and Authorization",
+        "Required Organization Roles"
+      ],
+      "Text": "Access to this API is restricted to organizations in which the authenticated member has one of the following organization page roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required Organization Roles",
+      "Anchor": "required-organization-roles",
+      "SectionPath": [
+        "Authentication and Authorization",
+        "Required Organization Roles"
+      ],
+      "Text": "ADMINISTRATOR - Full administrative access to the organization page\nCONTENT_ADMINISTRATOR - Can manage content and media on the organization page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required Organization Roles",
+      "Anchor": "required-organization-roles",
+      "SectionPath": [
+        "Authentication and Authorization",
+        "Required Organization Roles"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles and their permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Authentication and Authorization",
+        "Required Organization Roles",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Authentication and Authorization",
+        "Required Organization Roles",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "The Organization Photos API returns the following fields for each photo:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationPhotoUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for this uploaded photo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "photoAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The uploaded photo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "caption",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Admin/uploader can specify a caption for each uploaded image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAudienceNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of strings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Names of current published target audiences this photo was used in, such as US Engineering, Designers, etc. These names are customized by organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the creation of this resource, association, or sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the deletion of this resource, association, or sub-resource. The deleted timestamp must be later than the creation timestamp. Note: It may or may not match the lastModified timestamp, depending on the semantics of the resource, association, or sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the last modification of this resource, association, or sub-resource. Note: If no modification has happened since creation, lastModified should be the same as created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Object",
+      "Anchor": "image-object",
+      "SectionPath": [
+        "Response Schema",
+        "Image Object"
+      ],
+      "Text": "The photoAsset field contains an Image object with the following structure:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Image Object",
+      "Anchor": "image-object",
+      "SectionPath": [
+        "Response Schema",
+        "Image Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL where the image can be downloaded. This URL points to LinkedIn\u0027s media servers where the photo is hosted. Note: This URL is temporary and will expire after the time specified in downloadUrlExpiresAt.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unix timestamp (milliseconds since epoch) indicating when the downloadUrl will expire. After this time, you\u0027ll need to fetch the photo again to get a new valid URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Availability status of the photo. Values include: AVAILABLE (photo can be downloaded), PROCESSING (photo is being processed), or FAILED (processing failed). Only photos with AVAILABLE status have valid download URLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Photo URN",
+      "Anchor": "organization-photo-urn",
+      "SectionPath": [
+        "Organization Photo URN"
+      ],
+      "Text": "An organization photo URN is a composite URN that uniquely identifies a photo within a specific organization. The URN format combines:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Photo URN",
+      "Anchor": "organization-photo-urn",
+      "SectionPath": [
+        "Organization Photo URN"
+      ],
+      "Text": "The organization URN (e.g., urn:li:organization:1234)\nThe unique photo ID (e.g., ABC789 or a UUID like 0052aaaa-7777-8888-9362-00f4b1234aaa)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Photo URN",
+      "Anchor": "organization-photo-urn",
+      "SectionPath": [
+        "Organization Photo URN"
+      ],
+      "Text": "URN Format:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Photo URN",
+      "Anchor": "organization-photo-urn",
+      "SectionPath": [
+        "Organization Photo URN"
+      ],
+      "Text": "urn:li:organizationPhoto:(urn:li:organization:{ORGANIZATION_ID},{PHOTO_ID})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Photo URN",
+      "Anchor": "organization-photo-urn",
+      "SectionPath": [
+        "Organization Photo URN"
+      ],
+      "Text": "Examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Photo URN",
+      "Anchor": "organization-photo-urn",
+      "SectionPath": [
+        "Organization Photo URN"
+      ],
+      "Text": "Photo with ID ABC789 for organization 1234:\n Copy urn:li:organizationPhoto:(urn:li:organization:1234,ABC789)\n\n\nPhoto with UUID for organization 1234:\n Copy urn:li:organizationPhoto:(urn:li:organization:1234,0052aaaa-7777-8888-9362-00f4b1234aaa)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Organization Photo URN",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Organization Photo URN",
+        "URN URL Encoding"
+      ],
+      "Text": "When using these URNs in API requests, they must be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Organization Photo URN",
+        "URN URL Encoding"
+      ],
+      "Text": "For example, the URN:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Organization Photo URN",
+        "URN URL Encoding"
+      ],
+      "Text": "urn:li:organizationPhoto:(urn:li:organization:1234,ABC789)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Organization Photo URN",
+        "URN URL Encoding"
+      ],
+      "Text": "Becomes URL-encoded as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Organization Photo URN",
+        "URN URL Encoding"
+      ],
+      "Text": "urn%3Ali%3AorganizationPhoto%3A%28urn%3Ali%3Aorganization%3A1234%2CABC789%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "GET"
+      ],
+      "Text": "An organizationPhotoUrn is a composite URN constructed using a photo ID and an organization URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationPhotos/{ORGANIZATION_PHOTO_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationPhotos/urn%3Ali%3AorganizationPhoto%3A%28urn%3Ali%3Aorganization%3A1234%2CABC789%29\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022photoAsset\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media-akam.AAcdn-ei.com/dms/image/123456789Eg/company-photo_900_600/0/imageid\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1707350400000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n  },\n  \u0022lastModified\u0022: {\n    \u0022time\u0022: 1519154710453\n  },\n  \u0022created\u0022: {\n    \u0022time\u0022: 1466036288997\n  },\n  \u0022key\u0022: \u0022urn:li:organizationPhoto:(urn:li:organization:1234,0052aaaa-7777-8888-9362-00f4b1234aaa)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "BATCH_GET"
+      ],
+      "Text": "An organizationPhotoUrn is a composite URN constructed using a photo ID and an organization URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationPhotos?ids=List(id_1,id_2,id_3)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationPhotos?ids=List(id_1,id_2,id_3)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022statuses\u0022: {\n    \u0022urn:li:organizationPhoto:(urn:li:organization:1234,0052aaaa-7777-8888-9362-00f4b1234aaa)\u0022: 200\n  },\n  \u0022results\u0022: {\n    \u0022urn:li:organizationPhoto:(urn:li:organization:1234,0052aaaa-7777-8888-9362-00f4b1234aaa)\u0022: {\n      \u0022photoAsset\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media-akam.AAcdn-ei.com/dms/image/123456789Eg/company-photo_900_600/0/imageid\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1707350400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      },\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1519154710453\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1466036288997\n      },\n      \u0022key\u0022: \u0022urn:li:organizationPhoto:(urn:li:organization:1234,0052aaaa-7777-8888-9362-00f4b1234aaa)\u0022\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Organization Photos",
+        "BATCH_GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of organization photo urns to query for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(urn%3Ali%3AorganizationPhoto%3A%28urn%3Ali%3Aorganization%3A1234%2CABC789%29, urn%3Ali%3AorganizationPhoto%3A%28urn%3Ali%3Aorganization%3A5%2CJSklsaC733%29, ...)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource. BatchGet will get 403 if either of the requested URNs doesn\u0027t have Admin access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

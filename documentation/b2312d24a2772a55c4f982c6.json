@@ -1,0 +1,187 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-posts-and-actions",
+  "Title": "Group Posts and their Social Actions",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-definitions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-memberships",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-posts-and-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Group Posts and their Social Actions",
+      "Anchor": "group-posts-and-their-social-actions",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Posts and their Social Actions",
+      "Anchor": "group-posts-and-their-social-actions",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Posts and their Social Actions",
+      "Anchor": "group-posts-and-their-social-actions",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Group Posts and their Social Actions rely on the following APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Posts and their Social Actions",
+      "Anchor": "group-posts-and-their-social-actions",
+      "SectionPath": [],
+      "Text": "UGC Post API\nSocial Actions APIs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Utilizing UGC Post API for Groups",
+      "Anchor": "utilizing-ugc-post-api-for-groups",
+      "SectionPath": [
+        "Utilizing UGC Post API for Groups"
+      ],
+      "Text": "All Group posts will contain a group URNin the containerEntityfield. Group posts are represented as groupPost URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Group Post",
+      "Anchor": "create-a-group-post",
+      "SectionPath": [
+        "Utilizing UGC Post API for Groups",
+        "Create a Group Post"
+      ],
+      "Text": "POST\n\nhttps://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Utilizing UGC Post API for Groups",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:person:123ABC\u0022, \n    \u0022containerEntity\u0022: \u0022urn:li:group:123\u0022, \n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022, \n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022description\u0022: {\n                        \u0022attributes\u0022: [], \n                        \u0022text\u0022: \u0022Check out our awesome group!\u0022\n                    }, \n                    \u0022status\u0022: \u0022READY\u0022, \n                    \u0022thumbnails\u0022: [], \n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [], \n                        \u0022text\u0022: \u0022Group Post!\u0022\n                    }\n                }\n            ], \n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [], \n                \u0022text\u0022: \u0022Some group text\u0022\n            }\n        }\n    }, \n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022CONTAINER\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Group Posts",
+      "Anchor": "retrieving-group-posts",
+      "SectionPath": [
+        "Utilizing UGC Post API for Groups",
+        "Retrieving Group Posts"
+      ],
+      "Text": "You can either:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Group Posts",
+      "Anchor": "retrieving-group-posts",
+      "SectionPath": [
+        "Utilizing UGC Post API for Groups",
+        "Retrieving Group Posts"
+      ],
+      "Text": "GET /ugcPosts to retrieve a single group post via the groupPostUrn\nFINDER \u0022containerEntities\u0022 /ugcPosts \u00A0to get all posts of a Group\nFINDER \u0022authors\u0022 /ugcPosts \u00A0to get all posts of a member. Posts include public and group shares. They are differentiated by the containerEntityfield.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Utilizing Social Actions APIs for Groups",
+      "Anchor": "utilizing-social-actions-apis-for-groups",
+      "SectionPath": [
+        "Utilizing Social Actions APIs for Groups"
+      ],
+      "Text": "All Group social actions will be retrieved the same way as any other social actions. Simply use the Social Actions API with the groupPostUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Utilizing Compliance Events API for Group Content",
+      "Anchor": "utilizing-compliance-events-api-for-group-content",
+      "SectionPath": [
+        "Utilizing Compliance Events API for Group Content"
+      ],
+      "Text": "All Group content activities involving posts and social actions made by a regulated member will appear on Compliance Events API. It will be surfaced through the resourceName:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Utilizing Compliance Events API for Group Content",
+      "Anchor": "utilizing-compliance-events-api-for-group-content",
+      "SectionPath": [
+        "Utilizing Compliance Events API for Group Content"
+      ],
+      "Text": "ugcPosts \u00A0- will contain containerEntity\nsocialActions \u00A0- will be ugcPostUrnthat links to a group post",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Utilizing Compliance Events API for Group Content",
+      "Anchor": "utilizing-compliance-events-api-for-group-content",
+      "SectionPath": [
+        "Utilizing Compliance Events API for Group Content"
+      ],
+      "Text": "Group content activities made by non-regulated members within a group owned by a regulated member are currently not captured through Compliance Events. Please use UGC Posts and Social Actions APIs to retrieve this information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Post",
+      "Anchor": "group-post",
+      "SectionPath": [
+        "ID Migration from V1 to V2",
+        "Group Post"
+      ],
+      "Text": "V1 format:\u00A0 g-{groupID}-S-{postID}\nV2 format:\u00A0 urn:li:groupPost:{groupID}-{postID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Comment",
+      "Anchor": "group-comment",
+      "SectionPath": [
+        "ID Migration from V1 to V2",
+        "Group Comment"
+      ],
+      "Text": "V1 format:\u00A0 g-{groupID}-S-{postID}-{commentID}\nV2 format: urn:li:comment:(urn:li:groupPost:{groupID}-{postID},{commentID})",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

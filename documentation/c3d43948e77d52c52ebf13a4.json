@@ -1,0 +1,206 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+  "Title": "LinkedIn Learning and Google SSO Implementation Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Google SSO and LinkedIn Learning implementation process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google SSO Implementation Overview",
+      "Anchor": "google-sso-implementation-overview",
+      "SectionPath": [
+        "Google SSO Implementation Overview"
+      ],
+      "Text": "The administrator for your organization account can configure your company to authenticate to LinkedIn Learning using Google SSO. To use Google authentication, your organization must have a Google account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "An organization-level Google account\n\nYour company email account\n\nFull administrator privileges\n\nIdentity Provider (IdP) administrative privileges",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Google Single Sign-On (SSO)",
+      "Anchor": "about-google-single-sign-on-sso",
+      "SectionPath": [
+        "About Google Single Sign-On (SSO)"
+      ],
+      "Text": "If your organization uses a Google account, you can choose to give your learners access to LinkedIn Learning based on their email address. This method authenticates your learners via Google Sign-in or Sign in with Google, and Google serves as the identity provider (IdP) for your account. Use this option as an alternative to authentication via a third-party SAML SSO provider (IdP).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Google Single Sign-On (SSO)",
+      "Anchor": "about-google-single-sign-on-sso",
+      "SectionPath": [
+        "About Google Single Sign-On (SSO)"
+      ],
+      "Text": "You can enable Google authentication by adding your organization\u2019s email domain (@examplecompany.com) to LinkedIn Learning\u0027s \u0022allow list\u0022. Once you have enabled the domains, LinkedIn Learning automatically assigns your learners licenses when they use their company email address to log into LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Google Single Sign-On (SSO)",
+      "Anchor": "about-google-single-sign-on-sso",
+      "SectionPath": [
+        "About Google Single Sign-On (SSO)"
+      ],
+      "Text": "If you upload a learners via CSV or invite by email, please either use the same domain used for Google authentication, or use the learner\u0027s Google ID as their external ID. If your learners use another domain or external ID, the process creates a duplicate profile for that learner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why you Should Use Google SSO",
+      "Anchor": "why-you-should-use-google-sso",
+      "SectionPath": [
+        "Why you Should Use Google SSO"
+      ],
+      "Text": "Simple, intuitive configuration\n\nAn alternative for small to medium-sized organizations that lack the resources to implement a traditional SAML IdP configuration\n\nLeveraging of your existing company\u0027s authentication\n\nBetter security when employees use your company\u0027s established password protocols rather than their individual accounts\n\nEasier user management when employees leave your company",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before you Begin",
+      "Anchor": "before-you-begin",
+      "SectionPath": [
+        "Before you Begin"
+      ],
+      "Text": "Please remember these conditions before you begin using Google SSO:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before you Begin",
+      "Anchor": "before-you-begin",
+      "SectionPath": [
+        "Before you Begin"
+      ],
+      "Text": "Authentication occurs via Google\u0027s OAuth 2.0 APIs: https://developers.google.com/identity/protocols/OpenIDConnect\n\nGoogle Auth is always \u0022just in time\u0022 or \u0022JIT\u0022 (i.e., users are assigned licenses on a first-come-first-serve basis.) The JIT license assignment cannot be disabled at this time.\n\nGoogle authentication supports custom attributes with Google as the IdP. Check out more information about managing custom attributes in LinkedIn Learning.\n\nTo use Google SSO, your learners must have their work email address listed on their LinkedIn profile. Check out more information about adding or changing email addresses on LinkedIn profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Google SSO",
+      "Anchor": "configure-google-sso",
+      "SectionPath": [
+        "Configure Google SSO"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Authenticate.\n\n\nFrom the side navigation menu, select Configure single sign-on and click Add new SSO.\n\nSelect an SSO method (in this case, \u0022Google SSO\u0022).\n\n\nIn the Authenticate users with Google SSO field, give your SSO connection a name, or leave the default name (in this case, \u0022GOOGLE-1\u0022).\n\nIn the Enter a domain field, enter your organization\u0027s domain name and click the \u002B icon.\n\nClick Save.\n\n\nOn the Settings screen, enable SSO by selecting \u0022Active\u0022 from the SSO Status drop down.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Google SSO",
+      "Anchor": "configure-google-sso",
+      "SectionPath": [
+        "Configure Google SSO"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via Google SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Google Workspace Admin Help\n\nSSO Implementation Guide\n\nOkta SSO\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

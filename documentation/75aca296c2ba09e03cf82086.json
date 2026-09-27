@@ -1,0 +1,569 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adpagesets",
+  "Title": "adPageSets",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adpagesets",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "adPageSets",
+      "Anchor": "adpagesets",
+      "SectionPath": [],
+      "Text": "Every page set is owned by a Sponsored Account (advertiser) and describes a pattern (set of pages) on the advertiser\u2019s website. If a user visits a page in this page set, the user can be added to a segment so they can be retargeted later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "CREATE | GET | FINDER | PARTIAL_UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (String)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account Urn that owns this page set.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "changeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ChangeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audit change stamps including creation timestamp and last updated timestamp",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The synthetic key for this AdPageSet.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "matchRules",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdUrlMatchRule[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "These AdUrlMatchRules are logically OR\u0027ed define the membership of this AdPageSet. Each AdUrlMatchRule represents a matcher function which is used to test whether the Url associated with an incoming user page view event belongs in this pageset. If this field contains an empty array the adPageSet will NOT match against any URLs, if this field is null then the adPageSet will match against ALL URLs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A short name for this page set, e.g. \u0027Homepage\u0027, meant to be displayed in a UI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version number of ad Page Set.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urlMatchRuleExpression",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdUrlMatchRuleExpression",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Expression used to determine if a page view event matches. The top-level expression is the logical disjunction(OR) of AdUrlMatchRules, that are grouped by logical conjunction(AND). Example: (matchRule1 AND matchRule2 AND matchRule3) OR (matchRule4 AND matchRule2)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "field urlMatchRuleExpression will replace the field matchRules. While the field matchRules is still allowed for this moment, we would suggest and all examples in our api are using the field urlMatchRuleExpression.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdUrlMatchRule",
+      "Anchor": "adurlmatchrule",
+      "SectionPath": [
+        "AdUrlMatchRule"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "matchType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdUrlMatchRuleType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type field determines how the matchValue field is used to match URLs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "matchValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The string to match URLs against according to the matchType. This field does not necessarily contain a well-formed URL. By design, matchValues cannot distinguish between URL protocols \u0027http://example.com/page\u0027 and \u0027https://example.com/page\u0027 are equivalent matchValues) or the \u0027www.\u0027 subdomain prefix \u0027www.example.com\u0027 and \u0027example.com\u0027 are equivalent matchValues).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdUrlMatchRuleType",
+      "Anchor": "adurlmatchruletype",
+      "SectionPath": [
+        "AdUrlMatchRuleType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "EXACT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Matches if the URL and the match value are exactly the same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STARTS_WITH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Matches if the URL starts with the matchValue.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTAINS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Matches if the URL contains the matchValue at any location.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdUrlMatchRuleExpression",
+      "Anchor": "adurlmatchruleexpression",
+      "SectionPath": [
+        "AdUrlMatchRuleExpression"
+      ],
+      "Text": "Reference Type: AdUrlMatchRuleAndOperands[]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AdUrlMatchRuleAndOperands",
+      "Anchor": "adurlmatchruleandoperands",
+      "SectionPath": [
+        "AdUrlMatchRuleExpression",
+        "AdUrlMatchRuleAndOperands"
+      ],
+      "Text": "Reference Type: AdUrlMatchRule[]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adPageSets",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "CREATE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (String)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account Urn that owns this page set.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A short name for this page set, e.g. \u0027Homepage\u0027, meant to be displayed in a UI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "matchRules",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdUrlMatchRule[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "These AdUrlMatchRules are logically OR\u0027ed define the membership of this AdPageSet. Each AdUrlMatchRule represents a matcher function which is used to test whether the Url associated with an incoming user pageview event belongs in this pageset. If this field contains an empty array the adPageSet will NOT match against any URLs, if this field is null then the adPageSet will match against ALL URLs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urlMatchRuleExpression",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AdUrlMatchRuleExpression",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Expression used to determine if a page view event matches. The top-level expression is the logical disjunction(OR) of AdUrlMatchRules, that are grouped by logical conjunction(AND). Example: (matchRule1 AND matchRule2 AND matchRule3) OR (matchRule4 AND matchRule2)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "CREATE",
+        "Sample request"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:$accountId\u0022,\n    \u0022urlMatchRuleExpression\u0022: [\n        [\n          {\n            \u0022matchType\u0022: \u0022EXACT\u0022,\n            \u0022matchValue\u0022: \u0022foo\u0022\n          }\n        ]\n    ],\n    \u0022name\u0022: \u0022TestPageSet\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adPageSets/{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "GET",
+        "Example"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adPageSets/10101",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:$accountId\u0022,\n    \u0022created\u0022: 1461779273000,\n    \u0022id\u0022: 10101,\n    \u0022lastModified\u0022: 1461779273000,\n    \u0022name\u0022: \u0022TestPageSet\u0022,\n    \u0022versionTag\u0022: \u00221\u0022,\n    \u0022urlMatchRuleExpression\u0022: [\n        [\n            {\n                \u0022matchType\u0022: \u0022EXACT\u0022,\n                \u0022matchValue\u0022: \u0022foo\u0022\n            }\n        ]\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER",
+      "Anchor": "finder",
+      "SectionPath": [
+        "FINDER"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adPageSets?q=account",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Page sets associated with this ads account",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "FINDER",
+        "Example"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adPageSets?q=account\u0026account=urn:li:sponsoredAccount:500605635",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:$accountId\u0022,\n            \u0022created\u0022: 1461277669000,\n            \u0022id\u0022: 10052,\n            \u0022lastModified\u0022: 1461277669000,\n            \u0022urlMatchRuleExpression\u0022: [\n                [\n                    {\n                        \u0022matchValue\u0022: \u0022foo\u0022,\n                        \u0022matchType\u0022: \u0022EXACT\u0022\n                    }\n                ]\n            ],\n            \u0022name\u0022: \u0022TestPageSet\u0022,\n            \u0022versionTag\u0022: \u00221\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "PARTIAL UPDATE",
+      "Anchor": "partial-update",
+      "SectionPath": [
+        "PARTIAL UPDATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adPageSets/{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-2",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "Example"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adPageSets/10101",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "PARTIAL UPDATE",
+        "Sample request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:$accountId\u0022,\n            \u0022id\u0022: 10101,\n            \u0022name\u0022: \u0022TestPageSetUpdated\u0022,\n            \u0022urlMatchRuleExpression\u0022: [\n                [\n                  {\n                    \u0022matchType\u0022: \u0022EXACT\u0022,\n                    \u0022matchValue\u0022: \u0022foo\u0022\n                  }\n                ]\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

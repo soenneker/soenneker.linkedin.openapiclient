@@ -12,7 +12,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class CampaignManagementFetchACampaignGroupById200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account property</summary>
+        /// <summary>URN identifying the advertising account associated with the campaign. This value is immutable once set. For example, urn:li:SponsoredAccount:{id}.Documented type: SponsoredAccountUrn</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Account { get; set; }
@@ -20,18 +20,60 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Account { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The backfilled property</summary>
-        public bool? Backfilled { get; set; }
-        /// <summary>The buyingType property</summary>
+        /// <summary>Information about the advertising account associated with the campaign. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: Account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuyingType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAccountInfo? AccountInfo { get; set; }
 #nullable restore
 #else
-        public string BuyingType { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAccountInfo AccountInfo { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Array of enums that indicates allowed campaign types within the specific campaign group. Possible values are:TEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn.SPONSORED_UPDATES - Native ads that promote a company&apos;s content updates in the LinkedIn feed.SPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to a LinkedIn&apos;s member inbox.DYNAMIC - Ads that are dynamically personalized. This is a read-only field.Documented type: string[]</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAllowedCampaignTypesItem?>? AllowedCampaignTypes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAllowedCampaignTypesItem?> AllowedCampaignTypes { get; set; }
+#endif
+        /// <summary>Flag that denotes whether the campaign group was created organically or to backfill existing campaigns. This is a read-only field set by the system.Documented type: boolean, default=&quot;false&quot;</summary>
+        public bool? Backfilled { get; set; }
+        /// <summary>A reference to the beneficiary of this campaign group. For a LinkedIn Marketing Solutions enterprise account, this is typically the organization (or company) entity being promoted. This field is optional and immutable once set. Note: This field applies to API Versions starting from 202608 and later.Documented type: BeneficiaryReference</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBeneficiaryReference? BeneficiaryReference { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBeneficiaryReference BeneficiaryReference { get; set; }
+#endif
+        /// <summary>A reference to the parent of the billing object referenced by the billingReference field. This field is optional and immutable once set, and applies to ENTERPRISE accounts only. Note: This field applies to API Versions starting from 202608 and later.Documented type: optional URN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingParentReference { get; set; }
+#nullable restore
+#else
+        public string BillingParentReference { get; set; }
+#endif
+        /// <summary>A reference to a billing object. This field is optional and immutable once set, and applies to ENTERPRISE accounts only. Note: This field applies to API Versions starting from 202608 and later.Documented type: optional URN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingReference { get; set; }
+#nullable restore
+#else
+        public string BillingReference { get; set; }
+#endif
+        /// <summary>The budgetOptimization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization? BudgetOptimization { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization BudgetOptimization { get; set; }
+#endif
+        /// <summary>Represents whether the campaigns in the campaign group participate in an auction or have reserved inventory. This field is optional and immutable once set. Possible values are: AUCTION - Campaigns in the campaign group participate in an auction.RESERVATION - Campaigns in the campaign group have reserved inventory. Note: This field applies to API Versions starting from 202608 and later.Documented type: string</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBuyingType? BuyingType { get; set; }
         /// <summary>The changeAuditStamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,9 +82,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps ChangeAuditStamps { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public int? Id { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Daily budget for the campaign group and will be shared among all campaigns within the campaign group. This field is optional and mutable. It can only be used if budgetOptimization.budgetOptimizationStrategy is DYNAMIC Note: This field applies to API Versions starting from 202504 and later.Documented type: BigDecimal</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget? DailyBudget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget DailyBudget { get; set; }
+#endif
+        /// <summary>Numerical identifier for the campaign group. This is a read-only field set by the system.Documented type: long</summary>
+        public long? Id { get; set; }
+        /// <summary>The name of the campaign group used to make it easier to reference a campaign group and recall its purpose. The value of this field can&apos;t exceed 200 bytes when UTF-8 encoded.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -50,14 +100,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The objectiveType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ObjectiveType { get; set; }
-#nullable restore
-#else
-        public string ObjectiveType { get; set; }
-#endif
+        /// <summary>Campaign Group Objective type values. This field is optional and immutable. Campaigns in this group will automatically have the same objective type. Click here for Objective descriptions BRAND_AWARENESSENGAGEMENTJOB_APPLICANTSLEAD_GENERATIONWEBSITE_CONVERSIONSWEBSITE_VISITVIDEO_VIEWSDocumented type: string</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseObjectiveType? ObjectiveType { get; set; }
         /// <summary>The runSchedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,23 +110,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseRunSchedule RunSchedule { get; set; }
 #endif
-        /// <summary>The servingStatuses property</summary>
+        /// <summary>Array of enums that determine whether or not campaigns within the campaign group may be served. Unlike status, which is user-managed, the values are controlled by the service. This is a read-only field. Possible values are: RUNNABLE Campaign group is currently active; billing information, budgetary constraints, or start and end dates are valid.STOPPED Campaign group is currently not eligible for serving for reasons other than billing information, budgetary constraints, or termination dates. For instance, a campaign group will be STOPPED if it has been canceled by the user, or it&apos;s marked as spam.BILLING_HOLD Parent account is on billing hold.ACCOUNT_TOTAL_BUDGET_HOLD Parent account total budget has been reached.ACCOUNT_END_DATE_HOLD Parent account end date has been reached.CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD Campaign group total budget has been reached.CAMPAIGN_GROUP_START_DATE_HOLD Campaign group start date is in the future.CAMPAIGN_GROUP_END_DATE_HOLD Campaign group end date has been reached.Documented type: string[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ServingStatuses { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseServingStatusesItem?>? ServingStatuses { get; set; }
 #nullable restore
 #else
-        public List<string> ServingStatuses { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseServingStatusesItem?> ServingStatuses { get; set; }
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
-        /// <summary>The test property</summary>
+        /// <summary>Status of campaign group. Possible values are: ACTIVE - Denotes that the campaign group is capable of serving ads, subject to run date and budget limitations (as well as any other limitations at the account or campaign level).ARCHIVED - Denotes that the campaign group is presently inactive, and should mostly be hidden in the UI until un-archived. CANCELLED - Denotes that the campaign group has been permanently canceled and can&apos;t be reactivated. Not a settable status. DRAFT - Denotes that the campaign group is in a preliminary state and should temporarily not be served. PAUSED - Denotes that the campaign group meets all requirements to be served, but temporarily shouldn&apos;t be. PENDING_DELETION - Denotes that the campaign group has been requested to be deleted that&apos;s currently pending. REMOVED - Denoted that the campaign group was deleted, but must remain fetchable due to the existence of performance data.Documented type: string</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseStatus? Status { get; set; }
+        /// <summary>Flag showing whether this campaign group is a test campaign group, i.e., belongs to a test account. This is a read-only and immutable field that&apos;s set implicitly during creation based on whether the account is a Test Account or not.Documented type: boolean, default=&quot;false&quot;</summary>
         public bool? Test { get; set; }
         /// <summary>The totalBudget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,15 +156,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
+                { "accountInfo", n => { AccountInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAccountInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAccountInfo.CreateFromDiscriminatorValue); } },
+                { "allowedCampaignTypes", n => { AllowedCampaignTypes = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAllowedCampaignTypesItem>()?.AsList(); } },
                 { "backfilled", n => { Backfilled = n.GetBoolValue(); } },
-                { "buyingType", n => { BuyingType = n.GetStringValue(); } },
+                { "beneficiaryReference", n => { BeneficiaryReference = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBeneficiaryReference>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBeneficiaryReference.CreateFromDiscriminatorValue); } },
+                { "billingParentReference", n => { BillingParentReference = n.GetStringValue(); } },
+                { "billingReference", n => { BillingReference = n.GetStringValue(); } },
+                { "budgetOptimization", n => { BudgetOptimization = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization.CreateFromDiscriminatorValue); } },
+                { "buyingType", n => { BuyingType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBuyingType>(); } },
                 { "changeAuditStamps", n => { ChangeAuditStamps = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "dailyBudget", n => { DailyBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objectiveType", n => { ObjectiveType = n.GetStringValue(); } },
+                { "objectiveType", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseObjectiveType>(); } },
                 { "runSchedule", n => { RunSchedule = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseRunSchedule>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseRunSchedule.CreateFromDiscriminatorValue); } },
-                { "servingStatuses", n => { ServingStatuses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "servingStatuses", n => { ServingStatuses = n.GetCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseServingStatusesItem>()?.AsList(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseStatus>(); } },
                 { "test", n => { Test = n.GetBoolValue(); } },
                 { "totalBudget", n => { TotalBudget = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseTotalBudget>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseTotalBudget.CreateFromDiscriminatorValue); } },
             };
@@ -139,15 +184,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAccountInfo>("accountInfo", AccountInfo);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseAllowedCampaignTypesItem>("allowedCampaignTypes", AllowedCampaignTypes);
             writer.WriteBoolValue("backfilled", Backfilled);
-            writer.WriteStringValue("buyingType", BuyingType);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBeneficiaryReference>("beneficiaryReference", BeneficiaryReference);
+            writer.WriteStringValue("billingParentReference", BillingParentReference);
+            writer.WriteStringValue("billingReference", BillingReference);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBudgetOptimization>("budgetOptimization", BudgetOptimization);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseBuyingType>("buyingType", BuyingType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseChangeAuditStamps>("changeAuditStamps", ChangeAuditStamps);
-            writer.WriteIntValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseDailyBudget>("dailyBudget", DailyBudget);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("objectiveType", ObjectiveType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseObjectiveType>("objectiveType", ObjectiveType);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseRunSchedule>("runSchedule", RunSchedule);
-            writer.WriteCollectionOfPrimitiveValues<string>("servingStatuses", ServingStatuses);
-            writer.WriteStringValue("status", Status);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseServingStatusesItem>("servingStatuses", ServingStatuses);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseStatus>("status", Status);
             writer.WriteBoolValue("test", Test);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchACampaignGroupById200ResponseTotalBudget>("totalBudget", TotalBudget);
             writer.WriteAdditionalData(AdditionalData);

@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Event { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The liveVideoAsset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The scheduledAt property</summary>
-        public int? ScheduledAt { get; set; }
+        public long? ScheduledAt { get; set; }
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,10 +84,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "event", n => { Event = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "liveVideoAsset", n => { LiveVideoAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAsset.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scheduledAt", n => { ScheduledAt = n.GetIntValue(); } },
+                { "scheduledAt", n => { ScheduledAt = n.GetLongValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "ugcPost", n => { UgcPost = n.GetStringValue(); } },
             };
@@ -100,10 +100,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("event", Event);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAsset>("liveVideoAsset", LiveVideoAsset);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("scheduledAt", ScheduledAt);
+            writer.WriteLongValue("scheduledAt", ScheduledAt);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("ugcPost", UgcPost);
             writer.WriteAdditionalData(AdditionalData);

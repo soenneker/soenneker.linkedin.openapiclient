@@ -1,0 +1,245 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+  "Title": "Tips to Get Started",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/sample-apps-lms",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Tips to Get Started",
+      "Anchor": "tips-to-get-started",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Tips to Get Started",
+      "Anchor": "tips-to-get-started",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Tiers",
+      "Anchor": "access-tiers",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Access Tiers"
+      ],
+      "Text": "The Advertising API and Community Management API each have two access tiers (Development, Standard) with different access criteria. All applications start with Development tier. You have to apply separately for Standard tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Tiers",
+      "Anchor": "access-tiers",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Access Tiers"
+      ],
+      "Text": "For Advertising API, Development tier is designed to build end-to-end workflows and supports read-only access for unlimited ad accounts and edit capabilities for up to five (5) Ad Accounts. Standard tier is designed to support campaign management solutions for multiple ad accounts.\nFor Community Management API, Development tier is designed to build and test integrations with API call restrictions; you\u0027re expected to complete your integration and testing within twelve months after you received API access. Standard tier is designed for live production with no restrictions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Permissions"
+      ],
+      "Text": "Our platform uses permission scopes which provide transparent access control for our members and their data. Your application must have the appropriate permissions before it can access data.\u200B Make sure you have the right permissions for your application through the developer portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Roles",
+      "Anchor": "roles",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Roles"
+      ],
+      "Text": "Know which roles can manage a LinkedIn Page and Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Artifacts",
+      "Anchor": "test-artifacts",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Test Artifacts"
+      ],
+      "Text": "You may create LinkedIn test profiles to test your Application, provided that they don\u0027t interact with real Members or company or other organization pages on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Artifacts",
+      "Anchor": "test-artifacts",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Test Artifacts"
+      ],
+      "Text": "You may create up to five test LinkedIn Member profiles for purposes of testing your Application only. You must create the profiles manually and not via automated means, such as scripts. Test profiles must: (a) generally appear to be standard LinkedIn Member profiles; (b) not interact with non-test profiles (for example, you may only share Content with other test profiles, you can\u0027t use test profiles to comment on posts, and you can\u0027t connect test profiles with non-test profiles, such as your own personal LinkedIn profile); (c) not use a stock photo or any photo that\u0027s not your own; and (d) not override our API call limits. You must clearly identify the profiles as test profiles using your company\u2019s name (if applicable) in the headline \u201CTest Profile at [insert real company name]\u201D. You may not: (1) use a test profile to manage your Application; (2) create any profile positions at real companies (besides your own) for the test profiles; or (3) create any test companies.\nRefer API Terms of use for more information.\nAlso refer to Page Terms for more information on LinkedIn Page terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Artifacts",
+      "Anchor": "test-artifacts",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Test Artifacts"
+      ],
+      "Text": "Related help center articles as follows.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Artifacts",
+      "Anchor": "test-artifacts",
+      "SectionPath": [
+        "Know Your Access Levels",
+        "Test Artifacts"
+      ],
+      "Text": "Account or Content Restricted or Removed\nReactivate Your LinkedIn Page or Showcase Page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Know the platform",
+        "Error codes"
+      ],
+      "Text": "LinkedIn provides standard HTTP Status Codes and clear and concise messages to help you easily troubleshoot and provide a better customer experience. \u200B",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Policies",
+      "Anchor": "policies",
+      "SectionPath": [
+        "Know the platform",
+        "Policies"
+      ],
+      "Text": "Ensure that you adhere to the Data Storage Requirements. and MDP terms. Make sure to review our Breaking Change Policy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get an Access Token",
+      "Anchor": "get-an-access-token",
+      "SectionPath": [
+        "Know the platform",
+        "Get an Access Token"
+      ],
+      "Text": "Generate an access token to make API calls on behalf of authenticated members \u2014 either using the Token Generator tool on the Developer Portal, or Postman. Use refresh tokens to get new access tokens without interrupting your customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Know how versioning works at LinkedIn",
+      "Anchor": "know-how-versioning-works-at-linkedin",
+      "SectionPath": [
+        "Know the platform",
+        "Know how versioning works at LinkedIn"
+      ],
+      "Text": "Starting June 2022, LinkedIn Marketing APIs will be versioned and released under the base path: https://api.linkedin.com/rest/. Each version will be supported for 12 months. When making API calls make sure to specify the version you want and include the request header with key \u201CLinkedin-Version\u201D and date (YYYYMM).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support Resources",
+      "Anchor": "support-resources",
+      "SectionPath": [
+        "Support Resources"
+      ],
+      "Text": "Reach Developer Support through Developer Support.\nAPI product endpoint catalog\nTest Ad Accounts\nAPI Status and Incidents page\nUsage Insights on your app.\nToken generator tool\nToken inspector\nSample application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed",
+      "Anchor": "stay-informed",
+      "SectionPath": [
+        "Stay Informed"
+      ],
+      "Text": "These resources will keep you up to date on the latest releases, changes to the platform, and other relevant news.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed",
+      "Anchor": "stay-informed",
+      "SectionPath": [
+        "Stay Informed"
+      ],
+      "Text": "Monthly Newsletter\nDeveloper Blog\nRecent Changes and Migration page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed",
+      "Anchor": "stay-informed",
+      "SectionPath": [
+        "Stay Informed"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed",
+      "Anchor": "stay-informed",
+      "SectionPath": [
+        "Stay Informed"
+      ],
+      "Text": "The Monthly Newsletter Email is sent to your primary email associated with your LinkedIn profile. To ensure your colleagues \u200B\nreceive the monthly email, make sure to add them as a team member under My Apps in the Developer Portal.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

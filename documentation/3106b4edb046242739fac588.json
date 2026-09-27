@@ -1,0 +1,224 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing",
+  "Title": "Brand Lift Testing",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/experimentation/brand-lift-testing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Brand Lift Testing",
+      "Anchor": "brand-lift-testing",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Brand Lift Testing",
+      "Anchor": "brand-lift-testing",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Brand Lift Testing",
+      "Anchor": "brand-lift-testing",
+      "SectionPath": [],
+      "Text": "Brand lift testing makes it easy for advertisers to measure the impact of your ads on brand metrics that you care about \u2013 like awareness, consideration, familiarity, favorability, and more. This helps you close the loop on your brand marketing efforts and better optimize for future brand value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About the feature",
+      "Anchor": "about-the-feature",
+      "SectionPath": [
+        "About the feature"
+      ],
+      "Text": "For the duration of the brand lift test, we split your target audience into two groups: a test group that\u2019s eligible to see your ads and a control group that\u2019s not. We then deliver surveys to a subset of the active members in both groups. Finally, we analyze the differences in how the test and control groups respond to measure how your ads have impacted members\u2019 perception of your brand. We also estimate the return on your investment. Find out how to get started here!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Your application must have an access token with the rw_ads permissions to use the Brand Lift Testing APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Additionally, the authenticated member must meet the following condition:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Have one of the following ad account roles:\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER (Read only).\nVIEWER (Read only).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflows",
+      "Anchor": "workflows",
+      "SectionPath": [
+        "Workflows"
+      ],
+      "Text": "Creating a Brand Lift Test can be done easily through the Brand Lift Test API. This allows an advertiser to create and manage their Brand Lift Test\u2014including creation, validation, serving, and reporting.\nA high level flow chart of API usage are shown below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflows",
+      "Anchor": "workflows",
+      "SectionPath": [
+        "Workflows"
+      ],
+      "Text": "The following table provides a step-by-step guide to most common scenarios.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Workflows",
+      "Anchor": "workflows",
+      "SectionPath": [
+        "Workflows"
+      ],
+      "Text": "",
+      "Headers": [
+        "Intent",
+        "Workflow",
+        "Lift Test State"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "I want to create and launch new Lift Test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. Create Lift Test Configuration in JSON format. See Lift Test Schema for details Step 2. Validate Lift Test Configuration in JSON format before save. Use validate action from Brand Lift Test API Step 3. Identify number of questions available for Lift Test Survey. Use validate budget action from Brand Lift Test API Step 4. Create Lift Test. Use create request from Brand Lift Test API Step 5. Create desired survey questions. At least 2 questions should be created. RECALL is mandatory question type. Do not exceed number of questions identified on step 3. Use create survey request from Brand Lift Test Survey API Step 6. Activate Lift Test to make it servable. Use activate request from Brand Lift Test API Step 7. Wait till schedule.start date/time reached",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#adlifttest-schema",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#validate-lift-test-setup",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#budget-requirements-validation",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#create-ad-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#create-ad-lift-test-survey-questions",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#activate-ad-lift-test"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. User State: DRAFTExecution State: N/AStep 2. User State: DRAFTExecution State: N/AStep 3. User State: DRAFTExecution State: N/AStep 4. User State: DRAFTExecution State: CREATEDStep 5. User State: DRAFTExecution State: CREATED Step 6. User State: READYExecution State: SCHEDULED Step 7. User State: READYExecution State: STARTED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "I want to get results of running/finished Lift Test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. Get Lift Test state to ensure that test is running or completed. Use get action from Brand Lift Test APIStep 2. Use Brand Lift Test Results API to access collected result. Results can change overtime even after test end for at most 15 days.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#get-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. User State: Any Execution State: STARTED or ENDED_RESUMABLE or ENDEDStep 2. User State: Any Execution State: STARTED or ENDED_RESUMABLE or ENDED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "I want to extend already running test or resume ended test withthin 90 days after start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. Get Lift Test state to ensure that test is scheduled, running or ended but can be resumed. Use get action from Brand Lift Test APIStep 2. Use Brand Lift Test API to extend schedule.end date as desired. Tests can not run for more than 90 days.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#get-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#update-lift-tests"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. User State: READYExecution State: SCHEDULED or STARTED or ENDED_RESUMABLEStep 2. User State: READY Execution State: SCHEDULED or STARTED or ENDED_RESUMABLE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "I want to terminate running test before end date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. Get Lift Test state to ensure that test is scheduled, running or ended but can be resumed. Use get action from Brand Lift Test APIStep 2. Use Brand Lift Test API to set user state to CANCELED. Terminated tests can not be restarted.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#get-lift-tests",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests?view=li-lms-2026-09#update-lift-tests"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Step 1. User State: READYExecution State: SCHEDULED or STARTED or ENDED_RESUMABLEStep 2. User State: CANCELED Execution State: ENDED",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Documentation Links",
+      "Anchor": "api-documentation-links",
+      "SectionPath": [
+        "API Documentation Links"
+      ],
+      "Text": "Create an Ad Lift Test\nAdd Ad Lift Test Surveys underneath a parent Ad Lift Test\nGet the results of an Ad Lift Test",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,880 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-memberships",
+  "Title": "Group Memberships API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-definitions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-memberships",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-posts-and-actions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/identity/people",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Group Memberships API",
+      "Anchor": "group-memberships-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Memberships API",
+      "Anchor": "group-memberships-api",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Group Memberships API",
+      "Anchor": "group-memberships-api",
+      "SectionPath": [],
+      "Text": "The Group Memberships API represents association of a member with a LinkedIn group. You can utilize the following APIs to retrieve, update and deleting membership associations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Group Membership Schema",
+      "Anchor": "group-membership-schema",
+      "SectionPath": [
+        "Group Membership Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "availableActions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Membership specific actions that can be taken on group membership determined by the viewer\u0027s group membership status. Can be the following enums: MESSAGE - Send a message to a group member. CONNECT - Send a connection request. PROMOTE_TO_OWNER - Promote a group member/manager to be a group owner. PROMOTE_TO_MANAGER - Promote a group member to be a group manager. DEMOTE_TO_MANAGER - Demote a group owner to be a group manager. DEMOTE_TO_MEMBER - Demote a group owner/manager to be a group member. ACCEPT_REQUEST - Accept a request from a member who requested to join the group. REJECT_REQUEST - Reject a request from a member who requested to join the group. SEND_REQUEST - Send a request to join a group. WITHDRAW_INVITATION - Withdraw the invitation to a member who was invited to join the group. WITHDRAW_REQUEST - Withdraw the request to join the group. REMOVE - Remove a group owner/manager/member from the group. LEAVE_GROUP - Leave the group. BLOCK - Block a group owner/manager/member from the group. UNBLOCK - Unblock a group owner/manager/member to be again a group member. TRANSFER_OWNERSHIP - Group owner transfers group ownership to a group manager in the same group. Previous owner becomes a group manager. SEND_INVITATION - Invite a member to join a group.",
+            "Links": [],
+            "Values": [
+              "MESSAGE - Send a message to a group member.",
+              "CONNECT - Send a connection request.",
+              "PROMOTE_TO_OWNER - Promote a group member/manager to be a group owner.",
+              "PROMOTE_TO_MANAGER - Promote a group member to be a group manager.",
+              "DEMOTE_TO_MANAGER - Demote a group owner to be a group manager.",
+              "DEMOTE_TO_MEMBER - Demote a group owner/manager to be a group member.",
+              "ACCEPT_REQUEST - Accept a request from a member who requested to join the group.",
+              "REJECT_REQUEST - Reject a request from a member who requested to join the group.",
+              "SEND_REQUEST - Send a request to join a group.",
+              "WITHDRAW_INVITATION - Withdraw the invitation to a member who was invited to join the group.",
+              "WITHDRAW_REQUEST - Withdraw the request to join the group.",
+              "REMOVE - Remove a group owner/manager/member from the group.",
+              "LEAVE_GROUP - Leave the group.",
+              "BLOCK - Block a group owner/manager/member from the group.",
+              "UNBLOCK - Unblock a group owner/manager/member to be again a group member.",
+              "TRANSFER_OWNERSHIP - Group owner transfers group ownership to a group manager in the same group. Previous owner becomes a group manager.",
+              "SEND_INVITATION - Invite a member to join a group."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this Group Membership.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this Group Membership.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Group URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-definitions?context=linkedin/compliance/context"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn group URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "joined",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp containing the timestamp when user joined the group and the corresponding user who approved the join request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this Group Membership.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN representing an identity that is associated with the group membership. Can currently only be a person URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Membership status of the Group. Can be the following enums: BLOCKED - User has been blocked from joining or participating in the group. FORMER_MEMBER - User left the group or have been removed from the group. INVITE_PENDING - User has been invited to join the group and the invite is in pending state waiting for the user to accept it. MEMBER - A regular group member who can use basic functionality of a group such as viewing, engaging, posting into the group. MANAGER - A group manager who is appointed to help manage the group. A manager possesses admin controls that only include group membership and content moderation. They may be multiple managers in a group. OWNER - A group owner who possesses full admin control over group membership, content moderation, editing group information, archiving and deleting a group. They may be multiple owners in a group. REJECTED - User has been rejected to join the group. REQUEST_PENDING - User\u0027s request to join the group is in pending state and is waiting to be approved. INVITE_WITHDRAWN - Invitation to join the group has been withdrawn by the inviter. REQUEST_WITHDRAWN - Request to join the group has been withdrawn by the request sender.",
+            "Links": [],
+            "Values": [
+              "BLOCKED - User has been blocked from joining or participating in the group.",
+              "FORMER_MEMBER - User left the group or have been removed from the group.",
+              "INVITE_PENDING - User has been invited to join the group and the invite is in pending state waiting for the user to accept it.",
+              "MEMBER - A regular group member who can use basic functionality of a group such as viewing, engaging, posting into the group.",
+              "MANAGER - A group manager who is appointed to help manage the group. A manager possesses admin controls that only include group membership and content moderation. They may be multiple managers in a group.",
+              "OWNER - A group owner who possesses full admin control over group membership, content moderation, editing group information, archiving and deleting a group. They may be multiple owners in a group.",
+              "REJECTED - User has been rejected to join the group.",
+              "REQUEST_PENDING - User\u0027s request to join the group is in pending state and is waiting to be approved.",
+              "INVITE_WITHDRAWN - Invitation to join the group has been withdrawn by the inviter.",
+              "REQUEST_WITHDRAWN - Request to join the group has been withdrawn by the request sender."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Group Memberships",
+      "Anchor": "retrieving-group-memberships",
+      "SectionPath": [
+        "Retrieving Group Memberships"
+      ],
+      "Text": "You can retrieve one or multiple group membership association information via group URN and person URN using the API requests below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Group Memberships",
+      "Anchor": "retrieving-group-memberships",
+      "SectionPath": [
+        "Retrieving Group Memberships"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupMemberships/(group:{group URN},member:{person URN})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving Group Memberships",
+      "Anchor": "retrieving-group-memberships",
+      "SectionPath": [
+        "Retrieving Group Memberships"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupMemberships?ids=List((group:{group URN1},member:{person URN1}),(group:{group URN2},member:{person URN2}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Group Memberships",
+      "Anchor": "retrieving-group-memberships",
+      "SectionPath": [
+        "Retrieving Group Memberships"
+      ],
+      "Text": "Note : In order to make sample calls above succeed, you need indicate X-RestLi-Protocol-Version:2.0.0 in the request header. The group URN and person URN need to be url encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample group membership response",
+      "Anchor": "sample-group-membership-response",
+      "SectionPath": [
+        "Retrieving Group Memberships",
+        "sample group membership response"
+      ],
+      "Text": "{\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022, \n        \u0022time\u0022: 1527803821100\n    }, \n    \u0022group\u0022: \u0022urn:li:group:1\u0022, \n    \u0022joined\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022, \n        \u0022time\u0022: 1527803821100\n    }, \n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022, \n        \u0022time\u0022: 1527803821100\n    }, \n    \u0022member\u0022: \u0022urn:li:person:123ABC\u0022, \n    \u0022status\u0022: \u0022OWNER\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving all Group Memberships of a Member",
+      "Anchor": "retrieving-all-group-memberships-of-a-member",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Member"
+      ],
+      "Text": "You can retrieve all group memberships of a member based on a number of filtering facets using the API request below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving all Group Memberships of a Member",
+      "Anchor": "retrieving-all-group-memberships-of-a-member",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Member"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupMemberships?q=member\u0026member={person URN}\u0026membershipStatuses=List(MEMBER,OWNER)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample group membership response",
+      "Anchor": "sample-group-membership-response-1",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Member",
+        "sample group membership response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022group\u0022: \u0022urn:li:group:1\u0022,\n      \u0022joined\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022member\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022status\u0022: \u0022OWNER\u0022\n    },\n    {\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022group\u0022: \u0022urn:li:group:1\u0022,\n      \u0022joined\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022member\u0022: \u0022urn:li:person:456DEF\u0022,\n      \u0022status\u0022: \u0022MEMBER\u0022\n    },\n    {...}\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [],\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Member",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "membershipStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter based on Group Membership status. Can be the following enums: BLOCKED - User has been blocked from joining or participating in the group. FORMER_MEMBER - User left the group or have been removed from the group. INVITE_PENDING - User has been invited to join the group and the invite is in pending state waiting for the user to accept it. MEMBER - A regular group member who can use basic functionality of a group such as viewing, engaging, posting into the group. MANAGER - A group manager who is appointed to help manage the group. A manager possesses admin controls that only include group membership and content moderation. They may be multiple managers in a group. OWNER - A group owner who possesses full admin control over group membership, content moderation, editing group information, archiving and deleting a group. They may be multiple owners in a group. REJECTED - User has been rejected to join the group. REQUEST_PENDING - User\u0027s request to join the group is in pending state and is waiting to be approved. INVITE_WITHDRAWN - Invitation to join the group has been withdrawn by the inviter. REQUEST_WITHDRAWN - Request to join the group has been withdrawn by the request sender.",
+            "Links": [],
+            "Values": [
+              "BLOCKED - User has been blocked from joining or participating in the group.",
+              "FORMER_MEMBER - User left the group or have been removed from the group.",
+              "INVITE_PENDING - User has been invited to join the group and the invite is in pending state waiting for the user to accept it.",
+              "MEMBER - A regular group member who can use basic functionality of a group such as viewing, engaging, posting into the group.",
+              "MANAGER - A group manager who is appointed to help manage the group. A manager possesses admin controls that only include group membership and content moderation. They may be multiple managers in a group.",
+              "OWNER - A group owner who possesses full admin control over group membership, content moderation, editing group information, archiving and deleting a group. They may be multiple owners in a group.",
+              "REJECTED - User has been rejected to join the group.",
+              "REQUEST_PENDING - User\u0027s request to join the group is in pending state and is waiting to be approved.",
+              "INVITE_WITHDRAWN - Invitation to join the group has been withdrawn by the inviter.",
+              "REQUEST_WITHDRAWN - Request to join the group has been withdrawn by the request sender."
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once created after a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdBefore",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once created before a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "joinedAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once joined after a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "joinedBefore",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once joined before a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sort",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sort order used for sorting Group Memberships. Sort memberships by the time when member joined the group. Default to DESCENDING . Can be either: ASCENDING - Sort by ascending order. The interpretation of this is domain-specific -- typically increasing order for numbers, lexicographic order for strings, but it varies. Enumerated types may be sorted in order of declaration, for instance. DESCENDING - Sort by descending order. The interpretation of this is domain-specific -- typically decreasing order for numbers, reverse lexicographic order for strings, but it varies. Enumerated types may be sorted in reverse order of declaration, for instance.",
+            "Links": [],
+            "Values": [
+              "ASCENDING - Sort by ascending order. The interpretation of this is domain-specific -- typically increasing order for numbers, lexicographic order for strings, but it varies. Enumerated types may be sorted in order of declaration, for instance.",
+              "DESCENDING - Sort by descending order. The interpretation of this is domain-specific -- typically decreasing order for numbers, reverse lexicographic order for strings, but it varies. Enumerated types may be sorted in reverse order of declaration, for instance."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving all Group Memberships of a Group",
+      "Anchor": "retrieving-all-group-memberships-of-a-group",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Group"
+      ],
+      "Text": "You can retrieve all group memberships of a group based on a number of filtering facets using the API request below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving all Group Memberships of a Group",
+      "Anchor": "retrieving-all-group-memberships-of-a-group",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Group"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/groupMemberships?q=group\u0026group={group URN}\u0026membershipStatuses=List(MEMBER)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample group membership response",
+      "Anchor": "sample-group-membership-response-2",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Group",
+        "sample group membership response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022group\u0022: \u0022urn:li:group:1\u0022,\n      \u0022joined\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022member\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022status\u0022: \u0022MEMBER\u0022\n    },\n    {\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022group\u0022: \u0022urn:li:group:1\u0022,\n      \u0022joined\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:456DEF\u0022,\n        \u0022time\u0022: 1527803821100\n      },\n      \u0022member\u0022: \u0022urn:li:person:456DEF\u0022,\n      \u0022status\u0022: \u0022MEMBER\u0022\n    },\n    {...}\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [],\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieving all Group Memberships of a Group",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn of the group to which the group memberships belong.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Group URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "membershipStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter based on Group Membership status. Can be the following enums: BLOCKED - User has been blocked from joining or participating in the group. FORMER_MEMBER - User left the group or have been removed from the group. INVITE_PENDING - User has been invited to join the group and the invite is in pending state waiting for the user to accept it. MEMBER - A regular group member who can use basic functionality of a group such as viewing, engaging, posting into the group. MANAGER - A group manager who is appointed to help manage the group. A manager possesses admin controls that only include group membership and content moderation. They may be multiple managers in a group. OWNER - A group owner who possesses full admin control over group membership, content moderation, editing group information, archiving and deleting a group. They may be multiple owners in a group. REJECTED - User has been rejected to join the group. REQUEST_PENDING - User\u0027s request to join the group is in pending state and is waiting to be approved. INVITE_WITHDRAWN - Invitation to join the group has been withdrawn by the inviter. REQUEST_WITHDRAWN - Request to join the group has been withdrawn by the request sender.",
+            "Links": [],
+            "Values": [
+              "BLOCKED - User has been blocked from joining or participating in the group.",
+              "FORMER_MEMBER - User left the group or have been removed from the group.",
+              "INVITE_PENDING - User has been invited to join the group and the invite is in pending state waiting for the user to accept it.",
+              "MEMBER - A regular group member who can use basic functionality of a group such as viewing, engaging, posting into the group.",
+              "MANAGER - A group manager who is appointed to help manage the group. A manager possesses admin controls that only include group membership and content moderation. They may be multiple managers in a group.",
+              "OWNER - A group owner who possesses full admin control over group membership, content moderation, editing group information, archiving and deleting a group. They may be multiple owners in a group.",
+              "REJECTED - User has been rejected to join the group.",
+              "REQUEST_PENDING - User\u0027s request to join the group is in pending state and is waiting to be approved.",
+              "INVITE_WITHDRAWN - Invitation to join the group has been withdrawn by the inviter.",
+              "REQUEST_WITHDRAWN - Request to join the group has been withdrawn by the request sender."
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once created after a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdBefore",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once created before a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "joinedAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once joined after a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "joinedBefore",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Filter Group Memberships to include only once joined before a given timestamp. In epoch milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sort",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sort order used for sorting Group Memberships. Sort memberships by the time when member joined the group. Default to DESCENDING . Can be either: ASCENDING - Sort by ascending order. The interpretation of this is domain-specific -- typically increasing order for numbers, lexicographic order for strings, but it varies. Enumerated types may be sorted in order of declaration, for instance. DESCENDING - Sort by descending order. The interpretation of this is domain-specific -- typically decreasing order for numbers, reverse lexicographic order for strings, but it varies. Enumerated types may be sorted in reverse order of declaration, for instance.",
+            "Links": [],
+            "Values": [
+              "ASCENDING - Sort by ascending order. The interpretation of this is domain-specific -- typically increasing order for numbers, lexicographic order for strings, but it varies. Enumerated types may be sorted in order of declaration, for instance.",
+              "DESCENDING - Sort by descending order. The interpretation of this is domain-specific -- typically decreasing order for numbers, reverse lexicographic order for strings, but it varies. Enumerated types may be sorted in reverse order of declaration, for instance."
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating and Updating Group Memberships",
+      "Anchor": "creating-and-updating-group-memberships",
+      "SectionPath": [
+        "Creating and Updating Group Memberships"
+      ],
+      "Text": "Create or update the group membership statuses for a list of group members with a given action. All the actions that can be performed on a group membership can be found in availableActions . API response will contain successful results and error information. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Creating and Updating Group Memberships",
+      "Anchor": "creating-and-updating-group-memberships",
+      "SectionPath": [
+        "Creating and Updating Group Memberships"
+      ],
+      "Text": "POST\n\nhttps://api.linkedin.com/v2/groupMemberships?action=membershipAction",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating and Updating Group Memberships",
+      "Anchor": "creating-and-updating-group-memberships",
+      "SectionPath": [
+        "Creating and Updating Group Memberships"
+      ],
+      "Text": "Note : In order to make sample call above succeed, you need indicate X-RestLi-Protocol-Version:2.0.0 in the request header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Parameters",
+      "Anchor": "request-body-parameters",
+      "SectionPath": [
+        "Creating and Updating Group Memberships",
+        "Request Body Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Names",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action to be performed on membership status. See availableActions for a complete list of available actions.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-memberships#group-membership-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Urn of the LinkedIn group that is associated with the group membership.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Each Urn represents an identity that is associated with the group membership. It is currently a PersonUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/identity/people"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "request body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Creating and Updating Group Memberships",
+        "request body"
+      ],
+      "Text": "{\n    \u0022action\u0022: \u0022SEND_REQUEST\u0022, \n    \u0022group\u0022: \u0022urn:li:group:7026583\u0022, \n    \u0022members\u0022: [\n        \u0022urn:li:person:123ABC\u0022, \n        \u0022urn:li:person:456DEF\u0022\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Creating and Updating Group Memberships",
+        "response body"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022failedActions\u0022: [\n            {\n                \u0022customCode\u0022: 123, \n                \u0022httpStatusCode\u0022: 500, \n                \u0022member\u0022: \u0022urn:li:person:456DEF\u0022, \n                \u0022message\u0022: \u0022Failed to update status\u0022\n            }\n        ], \n        \u0022succeededActions\u0022: [\n            {\n                \u0022member\u0022: \u0022urn:li:person:123ABC\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deleting Group Memberships",
+      "Anchor": "deleting-group-memberships",
+      "SectionPath": [
+        "Deleting Group Memberships"
+      ],
+      "Text": "As a group admin, you have the ability to delete your own group(s).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Deleting Group Memberships",
+      "Anchor": "deleting-group-memberships",
+      "SectionPath": [
+        "Deleting Group Memberships"
+      ],
+      "Text": "DELETE\n\nhttps://api.linkedin.com/v2/groupMemberships/(group:{group URN},member:{person URN})",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

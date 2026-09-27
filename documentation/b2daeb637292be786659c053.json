@@ -1,0 +1,784 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+  "Title": "Matched Audiences FAQ",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "To get better understanding on the integration best practices refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Which segment statuses are allowed in campaign targeting?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Segments with BUILDING, UPDATING, READY or ARCHIVED are allowed to be included/excluded in a campaign\u0027s targeting. Archived segments with 0 audience count won\u0027t become Ready even after being added to an active campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Which segment statuses are not allowed in campaign targeting?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Segments with EXPIRED, FAILED or ERROR status are not allowed to be included/excluded in a campaign\u0027s targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: How to find expired segments?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "From the Finder API, iterate through all the segments status with expired for a given sponsored account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "FINDER Example for dmpSegments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments?q=account\u0026account=urn:li:sponsoredAccount:516848833",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "From the response, check the status value from destinations object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "FINDER Example for adSegments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "GET https://api.linkedin.com/rest/adSegments?q=accounts\u0026accounts=urn:li:sponsoredAccount:511910281\u0026start=0\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "From the response, check the status value for adSegments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What happens if campaign attempts to use an expired segment?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "When a campaign attempts to use a segment that\u0027s expired, API returns a 400 error response with a detailed validation message.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Can expired segment be updated again?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Yes. But please note that when an segment is expired, the input and resolved data is purged due to our data retention policy and compliance to GDPR. Bring a segment back to BUILDING status by uploading another list, or stream new users or companies to it. The segment will be in BUILDING status, but it\u0027s essentially a new segment with the same segment ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Why is a segment stuck in BUILDING status and not updated?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "A segment is considered unused and set to ARCHIVED after it\u0027s not continuously used for 30 days in a draft or active campaign. Because of this, a segment may appear \u0022stuck\u0022 in BUILDING when updates are streamed to an ARCHIVED segment, thus pushing it into the BUILDING state, and right before it\u0027s archived again, new updates are streamed to the unused segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What data can be used to match?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Users can be matched with hashed email addresses and other identifiers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Companies can be matched on companyname, companydomain, and other identifiers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What hash methods are acceptable for email addresses?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "SHA256 and SHA512 are accepted when using the streaming API. CSV uploads accept SHA256 only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Before hashing, capital letters and whitespace must be removed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: I sent a request to remove a company from my audience segment but it wasn\u0027t removed, why?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Ensure that the same metadata sent to add the company is also sent to remove the company. If there\u0027s not a high enough confidence that the company attempting to be removed is a match, it won\u0027t be removed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: I sent a batch request to add multiple users to my audience segment but the audience size is still 0, why?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "If the segment status is in a READY state and the audience size is 0, there are two potential reasons:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "No matches were found.\nThere were multiple matches with low relevance scores between match candidates. In this scenario, it\u0027s determined that who the advertiser was trying to target was unclear and thus no matches are returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Can users be added or removed in batch?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Yes, the DMP Segments Users endpoint allows both batch creation and removal. See DMP Segment Users for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What match feedback/reach projections are available?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Audience size and matched count are returned as documented under DMP Segment Destinations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What limits exist on audience size?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "The minimum audience size that can be used in a campaign is 300 members matched. The maximum size of a CSV list upload is 300,000 hashed email addresses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: How is the 1,000 limit on DMP segments counted?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "The limit counts all DMP segments in the sponsored account regardless of status \u2014 including active, expired, and archived segments \u2014 not just segments that are actively being used. For more information on segment statuses, see Matched Audiences statuses and definitions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What happens when I reach the 1,000 limit on DMP segments?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "You won\u0027t be able to create new DMP segments in that sponsored account until you delete existing ones. Your existing segments remain available and any live campaigns using them keep running \u2014 nothing is deleted for you.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: How do I stay within the 1,000 limit on DMP segments?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Review your segments and delete the ones you no longer use. Start with expired segments \u2014 they\u0027re no longer collecting members and are usually the safest to remove. See Delete DMP Segment for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Will my existing audiences or campaigns be affected if I reach 1,000 DMP segments?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "No. Only the creation of new DMP segments is blocked when your sponsored account reaches 1,000 DMP segments. Existing segments keep working and active campaigns are unaffected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: How many users can be passed in a single API call?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Up to 5,000 hashed emails can be sent in a single call to DMP Segment Users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Are DMP Segments viewable in the LinkedIn UI?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Yes, the Matched Audiences page within Campaign Manager has this information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Is it possible to create multiple DMP Segments with the same name?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Yes, segment names are not required to be unique.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Can DMP Segments be deleted or made inactive?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Delete DMP Segments and the users, companies, and list uploads added to a DMP Segment. Matches are also automatically removed after 90 days. For details on deleting a DMP segment, see Deleting DMP Segments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Can multiple CSV list uploads be associated with a single DMP Segment?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "No, a DMP Segment can only have one list upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Can list upload DMP Segments (sourcePlatform of LIST_UPLOAD) receive streamed users or companies?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "No, a list upload segment can only receive list uploads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Are there rate limits on DMP API usage?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Since October 31, 2022, we have introduced 1-minute rate limit per user (member) for our DMP streaming APIs Users and Companies to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "For the /users endpoint, an application will have a 1 minute limit of 600 requests per user. This means, that at any given minute, an application can make up to 600 requests on behalf of a single user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "For the /companies endpoint, an application will have a 1 minute limit of 300 requests per user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "If your application calls /dmpSegments/users or /dmpSegments/companies, you may get an HTTP 429 response while calling the endpoints too frequently, indicating that you\u0027re exceeding the rate limits.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "If your application makes a large amount of automated, bulk data pushes that exceed tens of millions of calls, you can expect to see frequent throttling. While this might affect the throughput of your API calls, you won\u0027t see any differences in the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: How do I handle API calls that are rate limited?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Your application should be catching errors when making calls to /dmpSegments/users and /dmpSegments/companies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Example response for 1 minute per user level throttling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "How to handle? Retry in 1 minute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "{\n  \u0022serviceErrorCode\u0022: 101,\n  \u0022message\u0022: \u0022Too Many Requests\u0022,\n  \u0022status\u0022: 429\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Example response for 24 hour per user level throttling and application level throttling (what\u0027s experienced today for daily limits).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "How to handle? Slow down the frequency of requests. A common practice is exponential backoff, where the time between requests starts off small (a few seconds, for example), then doubles before each retry. This is continued until a request is successful or a reasonable maximum time between requests is reached (5 minutes, for example).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "{\n  \u0022serviceErrorCode\u0022: 101,\n  \u0022message\u0022: \u0022Resource level throttle APPLICATION_AND_MEMBER DAY limit for calls to this resource is reached\u0022,\n  \u0022status\u0022: 429\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "{\n  \u0022serviceErrorCode\u0022: 101,\n  \u0022message\u0022: \u0022Resource level throttle APPLICATION DAY limit for calls to this resource is reached\u0022,\n  \u0022status\u0022: 429\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Can I get my application\u0027s rate limits increased?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "No, the limits we intend to enforce won\u0027t be customizable at an application level. However, the limits will be enforced such that there\u0027s minimal interruption to existing applications and their users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Why am I seeing \u0022Audience too small\u0022 even when the matched count is more than 300?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Upon processing the matched count, there\u0027s another filter that runs to finalize the audience count based on their privacy settings. If the member prefers to opt out of third-party data settings, then these members will be filtered out of the total audience count.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Why can\u2019t I delete certain DMP segments?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "DMP segments that are being used as the seed of a predictive audience cannot be deleted. Attempting to delete them will result in an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: Why must desiredAudienceCount be greater than 300 for predictive audiences?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Predictive audiences require a minimum population size to ensure member privacy. If desiredAudienceCount is set to 300 or below, the system will reject the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "Q: What targeting facets are supported for predictive audiences?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences FAQ",
+      "Anchor": "matched-audiences-faq",
+      "SectionPath": [],
+      "Text": "A geo filter is mandatory for predictive audiences to build correctly. Currently, the predictive audience targeting criteria only support geo-based filtering, meaning no other filter types are accepted.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Locale of the entity. This field serves as the preferred locale for all fields within the Lead Form with an object type that&apos;s capable of localization, such as MultiLocaleString.Documented type: Locale
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -29,6 +30,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public string Language { get; set; }
+#endif
+        /// <summary>Vendor or browser-specific code.Documented type: string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Variant { get; set; }
+#nullable restore
+#else
+        public string Variant { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale"/> and sets the default values.
@@ -57,6 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "variant", n => { Variant = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +78,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,96 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/concepts/contracts",
+  "Title": "Contracts in Sales Navigator",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/concepts/contracts",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Contracts in Sales Navigator",
+      "Anchor": "contracts-in-sales-navigator",
+      "SectionPath": [],
+      "Text": "Sales Navigator is a subscription-based product. When a group of users are granted seats to access a Sales Navigator subscription, the contract is the entity which groups those seats together.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contracts in Sales Navigator",
+      "Anchor": "contracts-in-sales-navigator",
+      "SectionPath": [],
+      "Text": "Contracts can have a tier which defines what Sales Navigator functionality is available to seat holders. The follow tiers exist for Sales Navigator Contracts (see Sales Navigator Account Types for more information):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contracts in Sales Navigator",
+      "Anchor": "contracts-in-sales-navigator",
+      "SectionPath": [],
+      "Text": "Sales Navigator Core\nSales Navigator Advanced\nSales Navigator Advanced Plus",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contracts in Sales Navigator",
+      "Anchor": "contracts-in-sales-navigator",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contracts in Sales Navigator",
+      "Anchor": "contracts-in-sales-navigator",
+      "SectionPath": [],
+      "Text": "Analytics Services requires seat holders be on an Enterprise contract to access the Analytics APIs. Display Services integrations require Team or Enterprise.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contract Impact on Integration Experiences",
+      "Anchor": "contract-impact-on-integration-experiences",
+      "SectionPath": [
+        "Contract Impact on Integration Experiences"
+      ],
+      "Text": "Some features the Sales Navigator Application Platform offers are affected by the contract context. Here are a few examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contract Impact on Integration Experiences",
+      "Anchor": "contract-impact-on-integration-experiences",
+      "SectionPath": [
+        "Contract Impact on Integration Experiences"
+      ],
+      "Text": "All profile matches used by the iframe and Profile Associations API exist in the context of a contract, and can be leveraged by all other users on that contract.\nAll calls to export user activity via the Analytics Services API require specifying which contract the export should be performed for.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Seats",
+      "Anchor": "seats",
+      "SectionPath": [
+        "Seats"
+      ],
+      "Text": "Users who are granted access to Sales Navigator subscriptions are considered seat holders. Seat assignments are managed by contract administrators. You can find out more about the roles available for Sales Navigator seat holders in our Help Center Documentation.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

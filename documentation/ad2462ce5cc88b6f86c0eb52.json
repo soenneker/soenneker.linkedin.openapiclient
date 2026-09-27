@@ -1,0 +1,223 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/",
+  "Title": "LinkedIn Learning API and Technical Documentation",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/xapi",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-lms",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/libraries/libraries-docs/libraries-upgrade",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/moodle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/overview-blocking-policy",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api-faq",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/revoking-users-in-bulk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning API and Technical Documentation",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "This homepage hosts LinkedIn Learning API and Technical Documentation. This documentation is for developers building integrations with LinkedIn Learning and technical administrators configuring LinkedIn Learning instances.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "",
+      "SectionPath": [
+        "Overview and LinkedIn.com Blocking Policy",
+        "Overview"
+      ],
+      "Text": "LinkedIn Learning Overview and LinkedIn.com Blocking Policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "APIs",
+        "How-To Guide"
+      ],
+      "Text": "Retrieve an Individual Learning Object\n \n \n Retrieve Objects Based on Locale \u0026 Asset Type\n \n \n Retrieve Objects Based on Criteria\n \n \n Learning Activity Reports\n \n \n xAPI Activity Webhooks",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reference",
+      "Anchor": "",
+      "SectionPath": [
+        "APIs",
+        "Reference"
+      ],
+      "Text": "learningAssets\n \n \n learningClassifications\n \n \n learningActivityReports",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "Authentication",
+        "How-To Guide"
+      ],
+      "Text": "SSO Overview\n \n \n Configure your SSO\n \n \n Configure your SSO with Okta\n \n \n Configure your SSO with ADFS\n \n \n Configure your SSO with Azure AD\n \n \n Authenticate with Multiple SSO Methods\n \n \n Switch from SSO to Non-SSO\n \n \n Authenticate with Google\n \n \n Authenticate with LTI\n \n \n Authenticate Canvas with LinkedIn Learning via LTI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "LMS Integrations (Non-Partner) - Packages \u0026 AICC Reporting",
+        "How-To Guide"
+      ],
+      "Text": "Schoox/UltiPro\n \n \n Halogen/Saba TalentSpace\n \n \n LMS365\n \n \n Litmos\n \n \n Other AICC Systems",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "LMS Integrations - Catalog Sync \u0026 AICC Reporting",
+        "How-To Guide"
+      ],
+      "Text": "Partner LMS Integrations Overview\n \n \n Absorb\n \n \n Adobe\n \n \n CrossKnowledge\n \n \n Digital Chalk\n \n \n Docebo/Ceridian Dayforce\n \n \n Infor",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "LMS Integrations - Catalog Sync \u0026 xAPI Reporting",
+        "How-To Guide"
+      ],
+      "Text": "360Learning\n \n \n Bridge\n \n \n Cornerstone\n \n \n Degreed\n \n \n Edcast\n \n \n MindTickle\n \n \n Saba\n \n \n SumTotal\n \n \n Totara\n \n \n Workday",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "LMS Integrations - Defined Solutions",
+        "How-To Guide"
+      ],
+      "Text": "Blackboard\n \n \n Knowledge Anywhere\n \n \n Moodle\n \n \n Pathgather\n \n \n SuccessFactors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Learning Hub - Integration Guides",
+        "How-To Guide"
+      ],
+      "Text": "LinkedIn Learning Hub SFTP Guide\n \n \n LMS and Content Integration Guide (It enabled)\n \n \n LinkedIn Learning Career Hub \u002B Workday HCM Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "LinkedIn Learning for Library",
+        "How-To Guide"
+      ],
+      "Text": "LinkedIn Learning for Libraries Configuration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "User and Attribute Management",
+        "How-To Guide"
+      ],
+      "Text": "Learner Management Overview\n \n \n Add and Manage Learners in Bulk via CSV\n \n \n Add Learner Data\n \n \n Add Learners Automatically via SFTP\n \n \n Add Learners Automatically via HTTPS\n \n \n Revoke Learners in Bulk via CSV\n \n \n Automate User Management with SCIM\n \n \n Automate User Management with SCIM - OneLogin\n \n \n Automate User Management with SCIM - Okta\n \n \n Automate User Management with SCIM - Azure Active Directory",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How-To Guide",
+      "Anchor": "",
+      "SectionPath": [
+        "Reporting",
+        "How-To Guide"
+      ],
+      "Text": "Configure xAPI\n \n \n Configure Reporting API\n \n \n Reporting API FAQs",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

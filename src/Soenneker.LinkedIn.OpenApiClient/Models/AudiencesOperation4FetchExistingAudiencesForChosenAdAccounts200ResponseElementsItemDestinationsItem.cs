@@ -12,12 +12,30 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>URN identifying the advertising account associated with the segment. This field is immutable.Documented type: optional SponsoredAccountUrn</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Account { get; set; }
+#nullable restore
+#else
+        public string Account { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Approximate number of members in the segment. Please note that because of member privacy protection mechanisms we have in place, this metric is approximate. (Read only)Documented type: optional long</summary>
+        public long? ApproximateMemberCount { get; set; }
         /// <summary>The audienceSize property</summary>
-        public int? AudienceSize { get; set; }
+        public long? AudienceSize { get; set; }
         /// <summary>The created property</summary>
-        public int? Created { get; set; }
+        public long? Created { get; set; }
+        /// <summary>The detailed description of the ad segment.Documented type: optional string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,18 +52,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string DestinationSegmentId { get; set; }
 #endif
+        /// <summary>The ad segment&apos;s ID. (Read only)Documented type: long</summary>
+        public long? Id { get; set; }
         /// <summary>The lastModified property</summary>
-        public int? LastModified { get; set; }
+        public long? LastModified { get; set; }
         /// <summary>The matchedCount property</summary>
-        public int? MatchedCount { get; set; }
-        /// <summary>The status property</summary>
+        public long? MatchedCount { get; set; }
+        /// <summary>The display name of the ad segment.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Name { get; set; }
 #endif
+        /// <summary>Status on readiness of useDocumented type: AdSegmentStatus</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItemStatus? Status { get; set; }
+        /// <summary>Type of the ad segment.Documented type: AdSegmentType</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItemType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItem"/> and sets the default values.
         /// </summary>
@@ -71,13 +95,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audienceSize", n => { AudienceSize = n.GetIntValue(); } },
-                { "created", n => { Created = n.GetIntValue(); } },
+                { "account", n => { Account = n.GetStringValue(); } },
+                { "approximateMemberCount", n => { ApproximateMemberCount = n.GetLongValue(); } },
+                { "audienceSize", n => { AudienceSize = n.GetLongValue(); } },
+                { "created", n => { Created = n.GetLongValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "destinationSegmentId", n => { DestinationSegmentId = n.GetStringValue(); } },
-                { "lastModified", n => { LastModified = n.GetIntValue(); } },
-                { "matchedCount", n => { MatchedCount = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "lastModified", n => { LastModified = n.GetLongValue(); } },
+                { "matchedCount", n => { MatchedCount = n.GetLongValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItemStatus>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItemType>(); } },
             };
         }
         /// <summary>
@@ -87,13 +117,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("audienceSize", AudienceSize);
-            writer.WriteIntValue("created", Created);
+            writer.WriteStringValue("account", Account);
+            writer.WriteLongValue("approximateMemberCount", ApproximateMemberCount);
+            writer.WriteLongValue("audienceSize", AudienceSize);
+            writer.WriteLongValue("created", Created);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("destination", Destination);
             writer.WriteStringValue("destinationSegmentId", DestinationSegmentId);
-            writer.WriteIntValue("lastModified", LastModified);
-            writer.WriteIntValue("matchedCount", MatchedCount);
-            writer.WriteStringValue("status", Status);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("lastModified", LastModified);
+            writer.WriteLongValue("matchedCount", MatchedCount);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItemStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.AudiencesOperation4FetchExistingAudiencesForChosenAdAccounts200ResponseElementsItemDestinationsItemType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

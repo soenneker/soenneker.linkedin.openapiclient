@@ -1,0 +1,511 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+  "Title": "Social Metadata API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "Some shares and posts may have social actions such as reactions and comments attached to them. The socialMetadata API allows you to read social actions on these shares or posts,both organic and sponsored. The new service provides access to the reactions content type, which is an expansion of likes and replaces the functionality provided by the existing socialActions endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "Get a Summary of Social Metadata\nBatch Get a Summary of Social Metadata\nEnable or Disable Comments on a Thread",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "For creating and retrieving a comment, please visit Comments API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and react on posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERRECRUITING_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "RECRUITING_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and reactions. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and react on posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Restricted Retrieve posts, reactions, and likes on behalf of an authenticated member. This permission is granted to select developers only.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information about company page roles, refer to Organization Access Control by role.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Social Metadata",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "commentsState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of thread comments. Possible values OPEN: Thread is open to comments.CLOSED: Thread is closed to comments.PROCESSING: Thread is in the process of being deleted.DELETED: Thread is deleted.",
+            "Links": [],
+            "Values": [
+              "OPEN: Thread is open to comments.",
+              "CLOSED: Thread is closed to comments.",
+              "PROCESSING: Thread is in the process of being deleted.",
+              "DELETED: Thread is deleted."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "commentSummary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the comment summary of the entity being commented on.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentSummary.count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of comments (including replies).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentSummary.topLevelCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of comments (excluding replies).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity to which this Social Metadata is tied.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reactionSummaries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the reaction summary of the entity being reacted to. Key will be the reaction type\u0027s enum.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reactionSummaries.reactionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of reaction. Possible values are: LIKE: \u0022Like\u0022 in the UIPRAISE: \u0022Celebrate\u0022 in the UIMAYBE: \u0022Curious\u0022 in the UIEMPATHY: \u0022Love\u0022 in the UIINTEREST: \u0022Insightful\u0022 in the UIAPPRECIATION: \u0022Support\u0022 in the UI",
+            "Links": [],
+            "Values": [
+              "LIKE: \u0022Like\u0022 in the UI",
+              "PRAISE: \u0022Celebrate\u0022 in the UI",
+              "MAYBE: \u0022Curious\u0022 in the UI",
+              "EMPATHY: \u0022Love\u0022 in the UI",
+              "INTEREST: \u0022Insightful\u0022 in the UI",
+              "APPRECIATION: \u0022Support\u0022 in the UI"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "reactionSummaries.count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total number of a given type of reactions.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Summary of Social Metadata",
+      "Anchor": "get-a-summary-of-social-metadata",
+      "SectionPath": [
+        "Get a Summary of Social Metadata"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Summary of Social Metadata",
+      "Anchor": "get-a-summary-of-social-metadata",
+      "SectionPath": [
+        "Get a Summary of Social Metadata"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialMetadata/{shareUrn|ugcPostUrn|commentUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Summary of Social Metadata",
+      "Anchor": "get-a-summary-of-social-metadata",
+      "SectionPath": [
+        "Get a Summary of Social Metadata"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialMetadata/{shareUrn|ugcPostUrn|commentUrn}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Summary of Social Metadata",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022reactionSummaries\u0022: {\n        \u0022EMPATHY\u0022: {\n            \u0022reactionType\u0022: \u0022EMPATHY\u0022,\n            \u0022count\u0022: 1\n        }\n    },\n    \u0022commentsState\u0022: \u0022OPEN\u0022,\n    \u0022commentSummary\u0022: {\n        \u0022count\u0022: 4,\n        \u0022topLevelCount\u0022: 3,\n     },\n    \u0022entity\u0022: \u0022urn:li:activity:6524387688164966400\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get a Summary of Social Metadata",
+      "Anchor": "batch-get-a-summary-of-social-metadata",
+      "SectionPath": [
+        "Batch Get a Summary of Social Metadata"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get a Summary of Social Metadata",
+      "Anchor": "batch-get-a-summary-of-social-metadata",
+      "SectionPath": [
+        "Batch Get a Summary of Social Metadata"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialMetadata?ids=List({shareUrn|ugcPostUrn|commentUrn},{shareUrn|ugcPostUrn|commentUrn})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get a Summary of Social Metadata",
+      "Anchor": "batch-get-a-summary-of-social-metadata",
+      "SectionPath": [
+        "Batch Get a Summary of Social Metadata"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialMetadata?ids=List({shareUrn|ugcPostUrn|commentUrn},{shareUrn|ugcPostUrn|commentUrn})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get a Summary of Social Metadata",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u0022urn:li:activity:6516117581072519168\u0022: {\n            \u0022commentsState\u0022: \u0022OPEN\u0022,\n            \u0022entity\u0022: \u0022urn:li:activity:6516117581072519168\u0022,\n            \u0022reactionSummaries\u0022: {\n                \u0022PRAISE\u0022: {\n                    \u0022reactionType\u0022: \u0022PRAISE\u0022,\n                    \u0022count\u0022: 1\n                }\n            },\n            \u0022commentSummary\u0022: {\n                \u0022count\u0022: 4,\n                \u0022topLevelCount\u0022: 3,\n            }\n        },\n        \u0022urn:li:comment:(urn:li:activity:6524387688164966400,6636062862760562688)\u0022: {\n            \u0022commentsState\u0022: \u0022OPEN\u0022,\n            \u0022entity\u0022: \u0022urn:li:comment:(urn:li:activity:6524387688164966400,6636062862760562688)\u0022,\n            \u0022reactionSummaries\u0022: {\n                \u0022CELEBRATION\u0022: {\n                    \u0022reactionType\u0022: \u0022CELEBRATION\u0022,\n                    \u0022count\u0022: 5\n                }\n            },\n            \u0022commentSummary\u0022: {\n                \u0022count\u0022: 9,\n                \u0022topLevelCount\u0022: 5,\n            }\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable or Disable Comments on a Thread",
+      "Anchor": "enable-or-disable-comments-on-a-thread",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread"
+      ],
+      "Text": "To disable comments, set the commentsState field to CLOSED. To enable comments, set commentsState field to OPEN. This API only accepts thread Urns and will reject any writes with a comment URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable or Disable Comments on a Thread",
+      "Anchor": "enable-or-disable-comments-on-a-thread",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread"
+      ],
+      "Text": "Disabling comments will delete all existing comments on the thread. Reactions will be left as is. Re-enabling comments will allow comments to be written on the thread again.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/socialMetadata/{shareUrn|ugcPostUrn}?actor={organizationUrn|personUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022commentsState\u0022: \u0022CLOSED\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/socialMetadata/{shareUrn|ugcPostUrn}?actor={organizationUrn|personUrn}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022commentsState\u0022: \u0022CLOSED\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 202 Accepted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Enable or Disable Comments on a Thread",
+        "Sample Request"
+      ],
+      "Text": "To resolve nested comments for a given parent comment, provide a parent commentUrn as the target in the request URL. A commentUrn is a composite URN constructed using a comment ID and threadUrn such as an ActivityUrn.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

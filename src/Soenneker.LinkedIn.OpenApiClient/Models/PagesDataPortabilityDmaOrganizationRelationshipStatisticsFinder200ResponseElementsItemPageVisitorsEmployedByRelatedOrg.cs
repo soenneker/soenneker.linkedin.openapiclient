@@ -7,19 +7,20 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// TThe number of unique visitors to the focus organization&apos;s page who are currently employed by the related organization.Documented type: OrganizationRelationshipStatisticsDataRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public int? Count { get; set; }
+        public long? Count { get; set; }
         /// <summary>The percentChange property</summary>
-        public int? PercentChange { get; set; }
+        public long? PercentChange { get; set; }
         /// <summary>The previousCount property</summary>
-        public int? PreviousCount { get; set; }
+        public long? PreviousCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationRelationshipStatisticsFinder200ResponseElementsItemPageVisitorsEmployedByRelatedOrg"/> and sets the default values.
         /// </summary>
@@ -45,9 +46,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetIntValue(); } },
-                { "percentChange", n => { PercentChange = n.GetIntValue(); } },
-                { "previousCount", n => { PreviousCount = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
+                { "percentChange", n => { PercentChange = n.GetLongValue(); } },
+                { "previousCount", n => { PreviousCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,9 +58,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
-            writer.WriteIntValue("percentChange", PercentChange);
-            writer.WriteIntValue("previousCount", PreviousCount);
+            writer.WriteLongValue("count", Count);
+            writer.WriteLongValue("percentChange", PercentChange);
+            writer.WriteLongValue("previousCount", PreviousCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

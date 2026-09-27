@@ -1,0 +1,204 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/marketing-permissions-migration",
+  "Title": "Marketing Permissions Migration",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/marketing-permissions-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Marketing Permissions Migration",
+      "Anchor": "marketing-permissions-migration",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Permissions Migration",
+      "Anchor": "marketing-permissions-migration",
+      "SectionPath": [],
+      "Text": "This migration is complete. This page is left for reference purposes only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Permissions Migration",
+      "Anchor": "marketing-permissions-migration",
+      "SectionPath": [],
+      "Text": "LinkedIn is making changes to a selection of our permissions to better serve our members and partners. This document serves as a guide for migration from LinkedIn\u2019s old to new permissions. This guide is created for those with LinkedIn Marketing Solutions permissions only. This guide may not be relevant to all partners based on the program they belong to.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Permissions Migration",
+      "Anchor": "marketing-permissions-migration",
+      "SectionPath": [],
+      "Text": "If you have an existing integration, these changes will not immediately impact you. We will reach out at a later date to help guide your migration for existing integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Old to New Permissions Mapping",
+      "Anchor": "old-to-new-permissions-mapping",
+      "SectionPath": [
+        "Old to New Permissions Mapping"
+      ],
+      "Text": "",
+      "Headers": [
+        "Old Permissions",
+        "Associated New Permissions"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ad_campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_ads - Manage member\u2019s advertising accounts r_ads_reporting - Retrieve reporting for member\u2019s advertising accounts r_targeting - Discover targeting facets and targeting entities. This scope is provided to all LMS Ads partners, please do not request this scope in your OAuth flow.",
+            "Links": [],
+            "Values": [
+              "rw_ads - Manage member\u2019s advertising accounts",
+              "r_ads_reporting - Retrieve reporting for member\u2019s advertising accounts",
+              "r_targeting - Discover targeting facets and targeting entities. This scope is provided to all LMS Ads partners, please do not request this scope in your OAuth flow."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ad_campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads - Retrieve member\u2019s advertising accounts r_ads_reporting - Retrieve reporting for member\u2019s advertising accounts r_targeting - Discover targeting facets and targeting entities. This scope is provided to all LMS Ads partners, please do not request this scope in your OAuth flow.",
+            "Links": [],
+            "Values": [
+              "r_ads - Retrieve member\u2019s advertising accounts",
+              "r_ads_reporting - Retrieve reporting for member\u2019s advertising accounts",
+              "r_targeting - Discover targeting facets and targeting entities. This scope is provided to all LMS Ads partners, please do not request this scope in your OAuth flow."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "rw_organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_member_social - Retrieve member\u2019s posts, comments, likes, and other engagement data. w_member_social - Post, comment and like posts on member\u2019s behalf rw_organization_admin - Manage member\u2019s organizations\u0027 pages and retrieve reporting data w_organization_social - Post, comment and like posts on behalf of member\u2019s organizations r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data r_organization_lookup - Read organizations by ids",
+            "Links": [],
+            "Values": [
+              "r_member_social - Retrieve member\u2019s posts, comments, likes, and other engagement data.",
+              "w_member_social - Post, comment and like posts on member\u2019s behalf",
+              "rw_organization_admin - Manage member\u2019s organizations\u0027 pages and retrieve reporting data",
+              "w_organization_social - Post, comment and like posts on behalf of member\u2019s organizations",
+              "r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data",
+              "r_organization_lookup - Read organizations by ids"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_member_social - Retrieve member\u2019s posts, comments, likes, and other engagement data. rw_organization_admin - Manage member\u2019s organizations\u0027 pages and retrieve reporting data r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data r_organization_lookup - Read organizations by ids",
+            "Links": [],
+            "Values": [
+              "r_member_social - Retrieve member\u2019s posts, comments, likes, and other engagement data.",
+              "rw_organization_admin - Manage member\u2019s organizations\u0027 pages and retrieve reporting data",
+              "r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data",
+              "r_organization_lookup - Read organizations by ids"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads - Retrieve member\u2019s advertising accounts rw_dmp_segments - Create and manage member\u2019s matched audiencesNote: Some endpoints that were earlier available under the \u2018rw_dmp_segments\u2019 permission are being moved into \u2018r_ads\u2019 permissions. You must request both these permissions to ensure continued access to these endpoints.",
+            "Links": [],
+            "Values": [
+              "r_ads - Retrieve member\u2019s advertising accounts",
+              "rw_dmp_segments - Create and manage member\u2019s matched audiences",
+              "Note: Some endpoints that were earlier available under the \u2018rw_dmp_segments\u2019 permission are being moved into \u2018r_ads\u2019 permissions. You must request both these permissions to ensure continued access to these endpoints."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_ads - Retrieve member\u2019s advertising accounts r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data. r_ads_leadgen_automation - Access member\u2019s Lead Gen Forms and retrieve leadsNote: Some endpoints that were earlier available under the \u2018r_ads_leadgen_automation\u2019 permission are being moved into \u2018r_ads\u2019 and \u2018r_organization_social\u2019 permissions. You must request all three permissions to ensure continued access to these endpoints.",
+            "Links": [],
+            "Values": [
+              "r_ads - Retrieve member\u2019s advertising accounts",
+              "r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data.",
+              "r_ads_leadgen_automation - Access member\u2019s Lead Gen Forms and retrieve leads",
+              "Note: Some endpoints that were earlier available under the \u2018r_ads_leadgen_automation\u2019 permission are being moved into \u2018r_ads\u2019 and \u2018r_organization_social\u2019 permissions. You must request all three permissions to ensure continued access to these endpoints."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "rw_company_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rw_organization_admin - Manage member\u2019s organizations\u0027 pages and retrieve reporting data r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data w_organization_social - Post, comment and like posts on behalf of member\u2019s organization\u0027s",
+            "Links": [],
+            "Values": [
+              "rw_organization_admin - Manage member\u2019s organizations\u0027 pages and retrieve reporting data",
+              "r_organization_social - Retrieve member\u2019s organizations\u0027 posts, including any comments, likes and other engagement data",
+              "w_organization_social - Post, comment and like posts on behalf of member\u2019s organization\u0027s"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_organization_social - Post, comment and like posts on your organization\u0027s behalf w_member_social - Post, comment and like posts on member\u2019s behalf",
+            "Links": [],
+            "Values": [
+              "w_organization_social - Post, comment and like posts on your organization\u0027s behalf",
+              "w_member_social - Post, comment and like posts on member\u2019s behalf"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

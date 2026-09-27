@@ -7,13 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Record containing entity info that owns this Lead Form Response. It&apos;s an optional Union of sponsoredAccountInfo and organizationInfo.Documented type: (optional) LeadGenFormResponseOwnerInfo
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The locale-specific name of the organization associated with this ad accountDocumented type: (Optional) string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocalizedOrganizationName { get; set; }
+#nullable restore
+#else
+        public string LocalizedOrganizationName { get; set; }
+#endif
+        /// <summary>Name of the advertising account, useful for labeling an accountDocumented type: string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
         /// <summary>The organizationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +38,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo OrganizationInfo { get; set; }
+#endif
+        /// <summary>Identifier for the advertising accountDocumented type: sponsoredAccountUrn</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SponsoredAccount { get; set; }
+#nullable restore
+#else
+        public string SponsoredAccount { get; set; }
 #endif
         /// <summary>The sponsoredAccountInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +80,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "localizedOrganizationName", n => { LocalizedOrganizationName = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationInfo", n => { OrganizationInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo.CreateFromDiscriminatorValue); } },
+                { "sponsoredAccount", n => { SponsoredAccount = n.GetStringValue(); } },
                 { "sponsoredAccountInfo", n => { SponsoredAccountInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +94,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("localizedOrganizationName", LocalizedOrganizationName);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoOrganizationInfo>("organizationInfo", OrganizationInfo);
+            writer.WriteStringValue("sponsoredAccount", SponsoredAccount);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemOwnerInfoSponsoredAccountInfo>("sponsoredAccountInfo", SponsoredAccountInfo);
             writer.WriteAdditionalData(AdditionalData);
         }

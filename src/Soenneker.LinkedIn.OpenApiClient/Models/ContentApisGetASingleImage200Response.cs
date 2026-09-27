@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string DownloadUrl { get; set; }
 #endif
         /// <summary>The downloadUrlExpiresAt property</summary>
-        public int? DownloadUrlExpiresAt { get; set; }
+        public long? DownloadUrlExpiresAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +74,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
-                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetIntValue(); } },
+                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -88,7 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("downloadUrl", DownloadUrl);
-            writer.WriteIntValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
+            writer.WriteLongValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("status", Status);

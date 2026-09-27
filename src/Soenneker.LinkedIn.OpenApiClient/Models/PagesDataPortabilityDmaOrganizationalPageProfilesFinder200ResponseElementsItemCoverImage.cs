@@ -7,20 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// The organizational page&apos;s cover image. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no cover image for a particular organizational page.Documented type: OrganizationVectorImageRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The artifacts property</summary>
+        /// <summary>List of artifacts under the vector image.Documented type: Array[OrganizationVectorArtifact]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageArtifactsItem>? Artifacts { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact>? Artifacts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageArtifactsItem> Artifacts { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact> Artifacts { get; set; }
+#endif
+        /// <summary>The localized image attribution (for copyright purposes).Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Attribution { get; set; }
+#nullable restore
+#else
+        public string Attribution { get; set; }
 #endif
         /// <summary>The digitalmediaAsset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +38,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset DigitalmediaAsset { get; set; }
+#endif
+        /// <summary>The percentage-based focal point for the vector image, with reference to the original center of the media.Documented type: PercentageOffsetPointRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint? FocalPoint { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint FocalPoint { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImage"/> and sets the default values.
@@ -55,8 +72,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "artifacts", n => { Artifacts = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageArtifactsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageArtifactsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "artifacts", n => { Artifacts = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "attribution", n => { Attribution = n.GetStringValue(); } },
                 { "digitalmediaAsset", n => { DigitalmediaAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset.CreateFromDiscriminatorValue); } },
+                { "focalPoint", n => { FocalPoint = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +85,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageArtifactsItem>("artifacts", Artifacts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityPagesProfilesOrganizationalPageProfilesOrganizationvectorartifact>("artifacts", Artifacts);
+            writer.WriteStringValue("attribution", Attribution);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageDigitalmediaAsset>("digitalmediaAsset", DigitalmediaAsset);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageProfilesFinder200ResponseElementsItemCoverImageFocalPoint>("focalPoint", FocalPoint);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

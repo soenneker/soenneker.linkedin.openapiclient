@@ -1,0 +1,316 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+  "Title": "Create and Manage Video Ads",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Video Ads",
+      "Anchor": "create-and-manage-video-ads",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Video Ads",
+      "Anchor": "create-and-manage-video-ads",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Video Ads",
+      "Anchor": "create-and-manage-video-ads",
+      "SectionPath": [],
+      "Text": "Video ads help you engage business decision-makers on LinkedIn\u0027s mobile and desktop news feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Video Ads",
+      "Anchor": "create-and-manage-video-ads",
+      "SectionPath": [],
+      "Text": "Create video ads in two ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Video Ads",
+      "Anchor": "create-and-manage-video-ads",
+      "SectionPath": [],
+      "Text": "Post videos to your Company Page and sponsor the post to reach more than just followers. With a Company Page Video, your organization can share a first-hand look into your company culture, products, news, and events to drive further engagement and conversation.\nCreate video ads that bypass Company Page followers and go directly to your news feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Video Ads",
+      "Anchor": "create-and-manage-video-ads",
+      "SectionPath": [],
+      "Text": "Video ads must meet the requirements described in Advertising Specifications for Video Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to the company admin, DSC poster, or content admin.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note: There are additional permission checks performed when retrieving or editing a video asset, please see Video API Permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schemas",
+      "Anchor": "schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schemas"
+      ],
+      "Text": "Familiarize yourself with the following APIs required to create a Video Ad:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schemas",
+      "Anchor": "schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schemas"
+      ],
+      "Text": "Videos - upload videos (replaces Assets API).\nPosts - create posts (User Generated Content) on behalf of an organization or a member.\nCreatives - design creative content for an Ad Campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Video Ad with a New Post",
+      "Anchor": "create-a-video-ad-with-a-new-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with a New Post"
+      ],
+      "Text": "Create an Video campaign. See Video Campaign.\n\nCreate a Post using the Video URN in the content field.\n\nCreate an Video Creative with the video post. See creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Video Ad with a New Post",
+      "Anchor": "create-a-video-ad-with-a-new-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with a New Post"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Video Ad with a New Post",
+      "Anchor": "create-a-video-ad-with-a-new-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with a New Post"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Video Ad with a New Post",
+      "Anchor": "create-a-video-ad-with-a-new-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with a New Post"
+      ],
+      "Text": "{\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n  \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n  \u0022commentary\u0022: \u0022Sample Video Post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022,\n    \u0022targetEntities\u0022: [{\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }],\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022:{\n    \u0022media\u0022:{\n      \u0022title\u0022:\u0022title of the video\u0022,\n      \u0022id\u0022: \u0022urn:li:video:C5F10AQGKQg_6y2a4sQ\u0022\n      }\n    },\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022isReshareDisabledByAuthor\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Video Ad with a New Post",
+      "Anchor": "create-a-video-ad-with-a-new-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with a New Post"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/posts/\u0027 \\\n\u2013header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n  \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n  \u0022commentary\u0022: \u0022Sample Video Post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022,\n    \u0022targetEntities\u0022: [{\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }],\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022:{\n    \u0022media\u0022:{\n      \u0022title\u0022:\u0022title of the video\u0022,\n      \u0022id\u0022: \u0022urn:li:video:C5F10AQGKQg_6y2a4sQ\u0022\n      }\n    },\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022isReshareDisabledByAuthor\u0022: true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with a New Post",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Video Ad with an Inline Post",
+      "Anchor": "create-a-video-ad-with-an-inline-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with an Inline Post"
+      ],
+      "Text": "Directly create a sponsored video post that won\u0027t show to Company Page followers but will be directly sponsored to target LinkedIn members\u0027 news feeds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Video Ad with an Inline Post",
+      "Anchor": "create-a-video-ad-with-an-inline-post",
+      "SectionPath": [
+        "Permissions",
+        "Create a Video Ad with an Inline Post"
+      ],
+      "Text": "Create a Video Campaign. See Video Campaign.\n\nCreate an Video Creative with inlineContent. See Video Ad Creative with inlineContent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Help Articles",
+      "Anchor": "help-articles",
+      "SectionPath": [
+        "Permissions",
+        "Help Articles"
+      ],
+      "Text": "LinkedIn Marketing Solutions\nLinkedIn Video Ads\nCampaign Manager User Roles for Video Ads\nAdvertising Specifications for Video Ads",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

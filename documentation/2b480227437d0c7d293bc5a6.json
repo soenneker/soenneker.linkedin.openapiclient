@@ -1,0 +1,134 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+  "Title": "Display Services Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Display Services Overview",
+      "Anchor": "display-services-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn Sales Navigator is a leading social selling tool that enables sales professionals to build and nurture customer relationships and attain increased sales performance. With Display Services, Sales Navigator functionality, identity, and insights can be incorporated into external applications through modular UI components and REST APIs, so that sales professionals can engage, understand, and target potential leads within the sales tools they already use.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services Overview",
+      "Anchor": "display-services-overview",
+      "SectionPath": [],
+      "Text": "The modular components available in the Display Services iframe allow for customizable and flexible workflow experiences. By selectively utilizing components, you can deliver the right LinkedIn Sales Navigator data at the right time to facilitate important insights for current and potential leads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services Iframe",
+      "Anchor": "display-services-iframe",
+      "SectionPath": [
+        "Integrations Offered",
+        "Display Services Iframe"
+      ],
+      "Text": "The LinkedIn Sales Navigator Display Services iframe is a component you can place in any HTML page. The exact information depends on the parameters passed into the iframe, but can include basic profile information, related leads, recent activity on LinkedIn, and more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services Iframe",
+      "Anchor": "display-services-iframe",
+      "SectionPath": [
+        "Integrations Offered",
+        "Display Services Iframe"
+      ],
+      "Text": "You can learn about the features of the iframe and design suggestions in the Embedding the Iframe guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Access Tokens API",
+      "Anchor": "sales-access-tokens-api",
+      "SectionPath": [
+        "Integrations Offered",
+        "Sales Access Tokens API"
+      ],
+      "Text": "The Sales Access Tokens API enables iframe integrations on native applications and in environments where using a pop-up to authenticate is a barrier for integrating. It enables users to authorize external applications to request short-lived Sales Access Tokens for passing into the iframe query string to authenticate the user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "Get Started"
+      ],
+      "Text": "Ready to start integrating Display Services with your application? Check out our Getting Started guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "Get Started"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "Get Started"
+      ],
+      "Text": "It\u0027s required that all integrations are built by approved partners for the SNAP program. To become a partner, visit this page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "Get Started"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "Get Started"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn SNAP Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount property</summary>
+        /// <summary>This value is used as one of the following: amount to bid (for manual bidding), amount which is the target cost (for target cost bidding) per click, impression, or other event depending on the pricing model, or cost cap (for cost cap bidding). The amount of money as a real number string. The amount should be non-negative if the bidding strategy is manual, target cost, or cost cap bidding. The default is 0 with the currency code set to match that of the associated account.Documented type: BigDecimal, default=0Requirement: True</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Amount { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>The currencyCode property</summary>
+        /// <summary>Amount to bid per click, impression, or other event depending on the pricing model. The default is 0 with the currency code set to match that of the associated account. ISO currency code.Documented type: Currencydefault is set to match the associated accountRequirement: False</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CurrencyCode { get; set; }

@@ -1,0 +1,337 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo",
+  "Title": "Geo",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Geo",
+      "Anchor": "geo",
+      "SectionPath": [],
+      "Text": "Bing Geo is LinkedIn location taxonomy. Geo API will provide the display name for a given geo ID, or a set of geo IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo",
+      "Anchor": "geo",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo",
+      "Anchor": "geo",
+      "SectionPath": [],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo",
+      "Anchor": "geo",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo",
+      "Anchor": "geo",
+      "SectionPath": [],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "defaultLocalizedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific name of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET | BATCH_GET",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "Supported Methods",
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/geo/12345\nGET https://api.linkedin.com/v2/geo/12345?locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Supported Methods",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the country/region data is requested in. \u0022en_US\u0022 locale will be used if locale is not provided or not supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Supported Methods",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022defaultLocalizedName\u0022:{\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022San Francisco Bay Area\u0022\n  },\n  \u0022id\u0022: 104565322",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH GET",
+      "Anchor": "batch-get",
+      "SectionPath": [
+        "Supported Methods",
+        "BATCH GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/geo?ids=List(12345,23456)\nGET https://api.linkedin.com/v2/geo?ids=List(12345,23456)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Supported Methods",
+        "BATCH GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the country/region data is requested in. \u0022en_US\u0022 locale will be used if locale is not provided or not supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Supported Methods",
+        "BATCH GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022statuses\u0022: {},\n  \u0022results\u0022: {\n    \u002212345\u0022: {\n      \u0022defaultLocalizedName\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022San Francisco Bay Area\u0022\n      }\n    },\n    \u002223456\u0022: {\n      \u0022defaultLocalizedName\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022San Francisco, California, United States\u0022\n      }\n    }\n  },\n  \u0022errors\u0022: {}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

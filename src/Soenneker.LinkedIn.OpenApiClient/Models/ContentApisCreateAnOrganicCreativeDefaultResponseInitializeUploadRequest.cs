@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fileSizeBytes property</summary>
-        public int? FileSizeBytes { get; set; }
+        public long? FileSizeBytes { get; set; }
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fileSizeBytes", n => { FileSizeBytes = n.GetIntValue(); } },
+                { "fileSizeBytes", n => { FileSizeBytes = n.GetLongValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "uploadCaptions", n => { UploadCaptions = n.GetBoolValue(); } },
                 { "uploadThumbnail", n => { UploadThumbnail = n.GetBoolValue(); } },
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("fileSizeBytes", FileSizeBytes);
+            writer.WriteLongValue("fileSizeBytes", FileSizeBytes);
             writer.WriteStringValue("owner", Owner);
             writer.WriteBoolValue("uploadCaptions", UploadCaptions);
             writer.WriteBoolValue("uploadThumbnail", UploadThumbnail);

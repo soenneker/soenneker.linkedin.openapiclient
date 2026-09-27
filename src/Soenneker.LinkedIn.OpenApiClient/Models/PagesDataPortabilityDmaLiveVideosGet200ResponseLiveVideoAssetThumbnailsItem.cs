@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string DownloadUrl { get; set; }
 #endif
         /// <summary>The downloadUrlExpiresAt property</summary>
-        public int? DownloadUrlExpiresAt { get; set; }
+        public long? DownloadUrlExpiresAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLiveVideosGet200ResponseLiveVideoAssetThumbnailsItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
-                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetIntValue(); } },
+                { "downloadUrlExpiresAt", n => { DownloadUrlExpiresAt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("downloadUrl", DownloadUrl);
-            writer.WriteIntValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
+            writer.WriteLongValue("downloadUrlExpiresAt", DownloadUrlExpiresAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

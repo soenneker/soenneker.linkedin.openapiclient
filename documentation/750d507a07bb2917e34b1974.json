@@ -1,0 +1,481 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+  "Title": "LinkedIn Learning - Adding Learner Data Administration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the process for adding learner data via LinkedIn Learning org sync:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This document provides information about your options for adding employee data to LinkedIn Learning, including both manual and automated methods for integrating HR data. You can also learn about updating or modifying existing employee data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing the Account Center",
+      "Anchor": "accessing-the-account-center",
+      "SectionPath": [
+        "Accessing the Account Center"
+      ],
+      "Text": "In the LinkedIn Learning Account Center, you can manage learner data, curate content, and gain learner progress insights.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure your CSV File",
+      "Anchor": "configure-your-csv-file",
+      "SectionPath": [
+        "Configure your CSV File"
+      ],
+      "Text": "If you are adding learners via CSV upload, take the following steps to configure your CSV file:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure your CSV File",
+      "Anchor": "configure-your-csv-file",
+      "SectionPath": [
+        "Configure your CSV File"
+      ],
+      "Text": "After you log in, from the Admin screen, select People \u003E Users.\n\nSelect Add new users \u003E \u0022Add users by CSV\u0022.\n\n\nIn the Add users by CSV screen, below No, I need help creating one, click Get started.\n\n\nClick Download the CSV template, then select \u0022Add user only\u0022 or \u0022Add users and admin permissions\u0022, depending on your requirements.\n\nClick Next, then open the downloaded template in Microsoft Excel or a text editor application such as Microsoft Notepad. You then can replace/enter information for each user you want to add.\n\n\nAfter completing your CSV file, save it to your computer. Make sure to save your CSV with the file format as Comma Delimited or Comma Separated Value (.csv). If you use special characters, save the CSV file as UTF-8.\n\n\nIn the Upload users via CSV screen, click Upload from computer, navigate to the CSV file, and click Open.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding Learners to LinkedIn Learning",
+      "Anchor": "adding-learners-to-linkedin-learning",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning"
+      ],
+      "Text": "To add learners to LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding Learners to LinkedIn Learning",
+      "Anchor": "adding-learners-to-linkedin-learning",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning"
+      ],
+      "Text": "After you log in, from the Admin screen, select People \u003E Users.\n\nSelect Add new users and select one of the two following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding Learners to LinkedIn Learning",
+      "Anchor": "adding-learners-to-linkedin-learning",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning"
+      ],
+      "Text": "Add users by email\n\nAdd users by CSV",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners by Email",
+      "Anchor": "add-learners-by-email",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners by Email"
+      ],
+      "Text": "To add learners by email, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners by Email",
+      "Anchor": "add-learners-by-email",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners by Email"
+      ],
+      "Text": "From the Add new users drop-down menu, select \u0022Add users by email\u0022.\n\n\nIn the Add users by email screen, enter the user\u0027s email address in the Add users field. You can add multiple email addresses, separated by commas.\n\n\nClick Confirm.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners by Email",
+      "Anchor": "add-learners-by-email",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners by Email"
+      ],
+      "Text": "To learn more detail about how to manage the emails learners and admins receive from LinkedIn Learning, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "You can use the CSV file upload to add new learners, and to update existing learners in your LinkedIn Learning account. Any changes you make affects only the information that appears in your LinkedIn Learning account. Your changes do not alter your learners\u0027 personal LinkedIn profiles (for example, their names).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "It is critical to the success of your user management workflow that you complete one of the following tasks to ensure your language license aligns with your selected product. (If the language license is incorrect, the CSV file upload will fail.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "Download the CSV template (in which the language license header is pre-populated per your product).\nUpdate the language license header to reflect your organization\u0027s product (see below).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "Review your CSV file to ensure you do not leave any fields blank or you may encounter an error. To remove or grant access to a learner, include the \u0022Default_license_learning_proAllLanguages_status\u0022 (or the language license name aligned with your product) field heading.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "To grant access to a learner, enter \u0022active\u0022 under the language license heading.\nTo remove access for a learner, enter \u0022inactive\u0022 under the language license heading.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Learners via Bulk CSV Upload",
+      "Anchor": "add-learners-via-bulk-csv-upload",
+      "SectionPath": [
+        "Adding Learners to LinkedIn Learning",
+        "Add Learners via Bulk CSV Upload"
+      ],
+      "Text": "Review how to add learners via bulk CSV upload in LinkedIn Learning in more detail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Information",
+      "Anchor": "learner-information",
+      "SectionPath": [
+        "Learner Information"
+      ],
+      "Text": "Make sure you have reviewed the following criteria when creating your CSV file:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Information",
+      "Anchor": "learner-information",
+      "SectionPath": [
+        "Learner Information"
+      ],
+      "Text": "You must provide at a minimum the learners\u0027 email addresses.\nNames are optional, but highly recommended.\nWork titles are optional, but highly recommended (so that you can group and recommend content to your learners).\nIf you are not using the CSV template and creating your own file, make sure you use the following headers (The headers are case sensitive and must be all lowercase to avoid errors.):\n\npreferred_first_name\npreferred_last_name\nprimary_email_address\nwork_title\nDefault_license_learning_proAlllanguages_status (or the language license name aligned with your product)\n\n\nAdd a line for each learner you\u2019d like to add and use commas to separate their values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CSV File Best Practices",
+      "Anchor": "csv-file-best-practices",
+      "SectionPath": [
+        "CSV File Best Practices"
+      ],
+      "Text": "The following tips will make a seamless, error-free CSV org sync process more likely:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CSV File Best Practices",
+      "Anchor": "csv-file-best-practices",
+      "SectionPath": [
+        "CSV File Best Practices"
+      ],
+      "Text": "Break large files into smaller sizes.\nIf you encounter an error, download the Results CSV for failure information. If possible, correct the file based on error messaging.\nUpdate information for existing users by downloading a CSV file of existing users, making edits, and uploading the updated file to LinkedIn Learning.\nMake sure you use the correct column headers and the headers are lowercase.\nDo not include duplicate field headers.\nInclude a value for every learner for the fields you are providing.\nMake sure to include a \u0022primary_email\u0022 field, and that every learner has an email value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Groups",
+      "Anchor": "groups",
+      "SectionPath": [
+        "Groups"
+      ],
+      "Text": "You can specify whether a learner is in a group. In the CSV file you downloaded, provide the group name preceded by \u0022group/\u0022 as a field heading. Enter a zero (0) to indicate that the learner is not in the group or a one (1) if the learner is in the group. If the group does not yet exist, LinkedIn Learning creates the group and adds the learner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advanced Fields",
+      "Anchor": "advanced-fields",
+      "SectionPath": [
+        "Advanced Fields"
+      ],
+      "Text": "To change the email addresses for your learners, you have the option of adding the \u0022unique_user_id\u0022 field heading and then adding a unique value for the learners in your CSV. After assigning a unique ID to your learners, you can change their email addresses.\nIf you attempt to change the email address of existing learners without first adding \u0022unique_user_id\u0022, they are treated as new users.\nYou can upload learners without providing their names; however, it is a best practice to include your learners\u0027 names so LinkedIn can personalize their welcome email. In addition, learners might appear in your user list and reports without a name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples",
+      "Anchor": "examples",
+      "SectionPath": [
+        "Examples"
+      ],
+      "Text": "In the following example, John Doe and Jane Smith belong to an account and can access LinkedIn Learning once they activate their profiles. John belongs to the Engineering group and Jane to the HR group. The Excel file is saved as a CSV file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples",
+      "Anchor": "examples",
+      "SectionPath": [
+        "Examples"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples",
+      "Anchor": "examples",
+      "SectionPath": [
+        "Examples"
+      ],
+      "Text": "Make sure your language license aligns with your selected product. (If the language license is incorrect, the CSV file upload will fail.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Excel file view",
+      "Anchor": "excel-file-view",
+      "SectionPath": [
+        "Examples",
+        "Excel file view"
+      ],
+      "Text": "In the following example, Jane Smith is removed from the HR group in your administrator groups. In the CSV file, John Doe\u0027s first name now shows up as Jonathan instead of John, but only in your administrator experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Status",
+      "Anchor": "access-status",
+      "SectionPath": [
+        "Access Status"
+      ],
+      "Text": "To control learner access to LinkedIn Learning in your CSV file, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Status",
+      "Anchor": "access-status",
+      "SectionPath": [
+        "Access Status"
+      ],
+      "Text": "To specify whether you want your learners to have access to LinkedIn Learning, include the language license header.\n\nTo grant access to LinkedIn Learning, enter \u0022active\u0022. If you do not want a learner to have access, enter \u0022inactive\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Status",
+      "Anchor": "access-status",
+      "SectionPath": [
+        "Access Status"
+      ],
+      "Text": "You can always change a learner\u0027s access from your administrator account.\nIf you do not include the language license column, the learners is added to your account, but is not assigned a license. Their status shows up in your user list as \u0022unassigned\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access Status",
+      "Anchor": "access-status",
+      "SectionPath": [
+        "Access Status"
+      ],
+      "Text": "To grant a learner access to LinkedIn Learning, in your list of Learners on the site, select the More Options icon (\u0022...\u0022) \u003E Assign License from the menu next to the learner\u0027s name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV via HTTPS Org Sync",
+      "Anchor": "upload-your-csv-via-https-org-sync",
+      "SectionPath": [
+        "Upload your CSV via HTTPS Org Sync"
+      ],
+      "Text": "Please review how to automate the uploading of CSV files via HTTPS org sync in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV via SFTP Org Sync",
+      "Anchor": "upload-your-csv-via-sftp-org-sync",
+      "SectionPath": [
+        "Upload your CSV via SFTP Org Sync"
+      ],
+      "Text": "Please review how to automate the uploading of CSV files via SFTP org sync in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What Happens Next",
+      "Anchor": "what-happens-next",
+      "SectionPath": [
+        "What Happens Next"
+      ],
+      "Text": "The post-CSV upload workflow includes the following processes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What Happens Next",
+      "Anchor": "what-happens-next",
+      "SectionPath": [
+        "What Happens Next"
+      ],
+      "Text": "LinkedIn Learning processes the file and checks for errors. If there are errors processing your file, a dialog appears and provides a link to a Results CSV file detailing the issues found. Update your file to correct the errors and upload again.\n\nLinkedIn Learning sends an email to your added learners with instructions on how to activate their accounts. If a learner has been added as \u0022inactive\u0022, that learner does not receive a welcome email.\n\nYour newly-added learners appear in the People tab of your administrator account. Initially their status is \u0022Invited\u0022. After they have registered and activated their accounts, their status changes to \u0022Activated\u0022. If you have uploaded the learner as \u0022Inactive\u0022, they appear in the user list as \u0022Unassigned\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Use the following resources if you need assistance adding employee data to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Add and Manage Learners via Bulk CSV Org Sync\n\nAdding Learners Individually to your LinkedIn Learning Account\n\nCreate Learner Child Groups\n\nCreate Learning Path or Collection\n\nCreate a Learner Report\n\nManage Custom Learner Attributes\n\nRecommend or Share Content with Learners\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

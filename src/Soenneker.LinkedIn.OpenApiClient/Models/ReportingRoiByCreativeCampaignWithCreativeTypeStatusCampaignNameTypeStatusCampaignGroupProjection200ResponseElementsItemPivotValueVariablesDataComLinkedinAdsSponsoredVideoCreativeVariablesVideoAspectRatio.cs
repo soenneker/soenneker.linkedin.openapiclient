@@ -17,7 +17,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The heightAspect property</summary>
         public double? HeightAspect { get; set; }
         /// <summary>The widthAspect property</summary>
-        public int? WidthAspect { get; set; }
+        public long? WidthAspect { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "heightAspect", n => { HeightAspect = n.GetDoubleValue(); } },
-                { "widthAspect", n => { WidthAspect = n.GetIntValue(); } },
+                { "widthAspect", n => { WidthAspect = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("heightAspect", HeightAspect);
-            writer.WriteIntValue("widthAspect", WidthAspect);
+            writer.WriteLongValue("widthAspect", WidthAspect);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

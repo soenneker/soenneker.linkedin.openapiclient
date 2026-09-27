@@ -14,18 +14,52 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
+        /// <summary>The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.Documented type: IntegerRequirement: No</summary>
         public int? Count { get; set; }
+        /// <summary>The dimensions filters for filtering the data.Documented type: array[OrganizationalPageDimensionFilter]Requirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilter>? DimensionFilters { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilter> DimensionFilters { get; set; }
+#endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Links { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingLinksItem>? Links { get; set; }
 #nullable restore
 #else
-        public UntypedNode Links { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingLinksItem> Links { get; set; }
 #endif
-        /// <summary>The start property</summary>
+        /// <summary>Types of analytics that is to be requested. Supported enum values include: IMPRESSIONSCOMMENTSREACTIONSREPOSTSDocumented type: OrganizationalPageContentAnalyticsTypeRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingMetricType? MetricType { get; set; }
+        /// <summary>Name of the finder to retrieve data from. Finder name: postGestures.Documented type: StringRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Q { get; set; }
+#nullable restore
+#else
+        public string Q { get; set; }
+#endif
+        /// <summary>Source post entity URN for which the analytics is being fetched for. It can either be a share URN with format urn:li:share:{ID} or an ugcPost URN with format urn:li:ugcPost:{ID}.Documented type: URNRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourcePostEntity { get; set; }
+#nullable restore
+#else
+        public string SourcePostEntity { get; set; }
+#endif
+        /// <summary>The index of the first item you want results for. Defaults to 0.Documented type: IntegerRequirement: No</summary>
         public int? Start { get; set; }
+        /// <summary>Optional viewer support to provide guest URN with format urn:li:guest:{ID}.Documented type: GuestUrnRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Viewer { get; set; }
+#nullable restore
+#else
+        public string Viewer { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePaging"/> and sets the default values.
         /// </summary>
@@ -52,8 +86,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "links", n => { Links = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "dimensionFilters", n => { DimensionFilters = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilter>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilter.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metricType", n => { MetricType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingMetricType>(); } },
+                { "q", n => { Q = n.GetStringValue(); } },
+                { "sourcePostEntity", n => { SourcePostEntity = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetIntValue(); } },
+                { "viewer", n => { Viewer = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +103,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteObjectValue<UntypedNode>("links", Links);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityAnalyticsOrganizationalPageContentAnalyticsOrganizationalpagedimensionfilter>("dimensionFilters", DimensionFilters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingLinksItem>("links", Links);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCreatorAnalyticsFinderVideoPlayTotalCount200ResponsePagingMetricType>("metricType", MetricType);
+            writer.WriteStringValue("q", Q);
+            writer.WriteStringValue("sourcePostEntity", SourcePostEntity);
             writer.WriteIntValue("start", Start);
+            writer.WriteStringValue("viewer", Viewer);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

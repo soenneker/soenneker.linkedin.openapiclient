@@ -1,0 +1,785 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+  "Title": "Implementation Best Practices",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Implementation Best Practices",
+      "Anchor": "implementation-best-practices",
+      "SectionPath": [],
+      "Text": "Comprehensive guide covering OAuth implementation, testing strategies, and production deployment best practices. These guidelines apply to all Verified on LinkedIn tiers (Development, Lite, and Plus).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request All Scopes at Once (Recommended)",
+      "Anchor": "request-all-scopes-at-once-recommended",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Request All Scopes at Once (Recommended)"
+      ],
+      "Text": "To provide the best user experience and avoid multiple authorization prompts, request all required OAuth scopes in a single authorization request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request All Scopes at Once (Recommended)",
+      "Anchor": "request-all-scopes-at-once-recommended",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Request All Scopes at Once (Recommended)"
+      ],
+      "Text": "Available Scopes by Tier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request All Scopes at Once (Recommended)",
+      "Anchor": "request-all-scopes-at-once-recommended",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Request All Scopes at Once (Recommended)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scope",
+        "Purpose",
+        "API",
+        "Available In"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_profile_basicinfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile information (name, email, profile URL, picture)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All tiers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_verify",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification categories (not detailed metadata)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development, Lite",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_verify_details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Detailed verification status and metadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_most_recent_education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Most recent education details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_primary_current_experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current workplace information",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "When redirecting members to LinkedIn for authorization, include all required scopes in the authorization URL, here are the example redirection URLs for different tiers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "Development/Lite Tier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "https://www.linkedin.com/oauth/v2/authorization?\n  response_type=code\u0026\n  client_id={YOUR_CLIENT_ID}\u0026\n  redirect_uri={YOUR_REDIRECT_URI}\u0026\n  state={RANDOM_STATE}\u0026\n  scope=r_profile_basicinfo%20r_verify",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "Plus Tier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "https://www.linkedin.com/oauth/v2/authorization?\n  response_type=code\u0026\n  client_id={YOUR_CLIENT_ID}\u0026\n  redirect_uri={YOUR_REDIRECT_URI}\u0026\n  state={RANDOM_STATE}\u0026\n  scope=r_verify_details%20r_profile_basicinfo%20r_most_recent_education%20r_primary_current_experience",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "Key Points:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authorization URL Examples",
+      "Anchor": "authorization-url-examples",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Authorization URL Examples"
+      ],
+      "Text": "Scopes are space-separated (URL-encoded as %20)\nRequest all scopes upfront to avoid re-authorization\nMember grants consent once for all requested permissions\nReduces friction in the user experience",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Best Practices",
+      "Anchor": "state-parameter-best-practices",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "State Parameter Best Practices"
+      ],
+      "Text": "The OAuth 2.0 state parameter helps maintain session context and protect against cross-site request forgery (CSRF) attacks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Best Practices",
+      "Anchor": "state-parameter-best-practices",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "State Parameter Best Practices"
+      ],
+      "Text": "Best practices:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Best Practices",
+      "Anchor": "state-parameter-best-practices",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "State Parameter Best Practices"
+      ],
+      "Text": "Generate a unique, cryptographically secure state value for each authorization request\nStore the state value before redirecting the member to LinkedIn\nVerify that the returned state matches the original value before processing the authorization response\nDo not reuse state values across sessions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Best Practices",
+      "Anchor": "state-parameter-best-practices",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "State Parameter Best Practices"
+      ],
+      "Text": "When using Verified on LinkedIn verification flows, the state parameter is preserved and passed through to the partner\u0027s registered redirectUri after verification completes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Best Practices",
+      "Anchor": "state-parameter-best-practices",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "State Parameter Best Practices"
+      ],
+      "Text": "For more information about redirect URI validation and state parameter behavior, see Verification URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Request All Scopes Together?",
+      "Anchor": "why-request-all-scopes-together",
+      "SectionPath": [
+        "OAuth Scope Management",
+        "Why Request All Scopes Together?"
+      ],
+      "Text": "\u2705 Single consent flow - Member authorizes once instead of multiple times\n\u2705 Complete data access - Get all profile and verification data in one session\n\u2705 Better UX - Avoid interrupting member with additional authorization requests\n\u2705 Simplified implementation - No need to manage partial authorization states",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ID Uniqueness Validation (Critical)",
+      "Anchor": "id-uniqueness-validation-critical",
+      "SectionPath": [
+        "User ID Management",
+        "ID Uniqueness Validation (Critical)"
+      ],
+      "Text": "Requirement: You must validate that each id is unique in your system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ID Uniqueness Validation (Critical)",
+      "Anchor": "id-uniqueness-validation-critical",
+      "SectionPath": [
+        "User ID Management",
+        "ID Uniqueness Validation (Critical)"
+      ],
+      "Text": "Why: Failing to validate uniqueness allows a single LinkedIn account to verify multiple accounts on your platform, creating a security vulnerability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ID Uniqueness Validation (Critical)",
+      "Anchor": "id-uniqueness-validation-critical",
+      "SectionPath": [
+        "User ID Management",
+        "ID Uniqueness Validation (Critical)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ID Uniqueness Validation (Critical)",
+      "Anchor": "id-uniqueness-validation-critical",
+      "SectionPath": [
+        "User ID Management",
+        "ID Uniqueness Validation (Critical)"
+      ],
+      "Text": "Always use the id field (available since version 202510). The userId field will be deprecated in future versions and should only be used for temporary backward compatibility during migration from older API versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "User ID Management",
+        "Best Practices"
+      ],
+      "Text": "\u2705 Enforce uniqueness at the database level (UNIQUE constraint)\n\u2705 Check for existing LinkedIn ID before saving new verification\n\u2705 Log security alerts when duplicate attempts are detected\n\u2705 Display clear error messages to members\n\u2705 Provide support contact for legitimate edge cases",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Token Storage",
+      "Anchor": "token-storage",
+      "SectionPath": [
+        "Token Storage"
+      ],
+      "Text": "Requirement: You must securely store OAuth access tokens and refresh tokens with encryption.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Token Storage",
+      "Anchor": "token-storage",
+      "SectionPath": [
+        "Token Storage"
+      ],
+      "Text": "Why: Storing refresh tokens is necessary to generate new access tokens when needed to refresh member data without requiring the member to re-authorize. This enables you to keep member profile and verification information up-to-date through background processes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Storage Best Practices",
+      "Anchor": "storage-best-practices",
+      "SectionPath": [
+        "Token Storage",
+        "Storage Best Practices"
+      ],
+      "Text": "\u2705 Encrypt tokens using AES-256-GCM or equivalent\n\u2705 Store in secure backend database with proper access controls\n\u2705 Implement token rotation and secure deletion policies\n\u2705 Never store tokens in client-side storage (cookies, localStorage, sessionStorage)\n\u2705 Log access to tokens for audit purposes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Periodic Re-verification Best Practices",
+      "Anchor": "periodic-re-verification-best-practices",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices"
+      ],
+      "Text": "Some applications require members to periodically re-confirm their identity or workplace verification\u2014for example, during annual compliance checks or before performing high-trust actions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Periodic Re-verification Best Practices",
+      "Anchor": "periodic-re-verification-best-practices",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices"
+      ],
+      "Text": "Instead of calculating verification age in your own application, use the optional verifiedWithinDays query parameter when calling /verificationReport.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Periodic Re-verification Best Practices",
+      "Anchor": "periodic-re-verification-best-practices",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices"
+      ],
+      "Text": "For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Periodic Re-verification Best Practices",
+      "Anchor": "periodic-re-verification-best-practices",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices"
+      ],
+      "Text": "GET /verificationReport?verifiedWithinDays=365",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Periodic Re-verification Best Practices",
+      "Anchor": "periodic-re-verification-best-practices",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices"
+      ],
+      "Text": "If an existing verification is older than the requested freshness window, the response includes a verificationUrl so the member can re-verify. Existing verification data continues to be returned and is not removed or invalidated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices:",
+      "Anchor": "best-practices-1",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices",
+        "Best Practices:"
+      ],
+      "Text": "\u2705 Use verifiedWithinDays when your business policy requires periodic re-verification.\n\u2705 Let LinkedIn determine whether re-verification is required Instead of maintaining your own verification age logic, use the optional verifiedWithinDays query parameter when calling /verificationReport.\n\u2705 Continue displaying existing verification data while the member completes the re-verification flow.\n\u2705 Choose a freshness window that aligns with your business or regulatory requirements (for example, 90 or 365 days).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices:",
+      "Anchor": "best-practices-1",
+      "SectionPath": [
+        "Periodic Re-verification Best Practices",
+        "Best Practices:"
+      ],
+      "Text": "See the /verificationReport API for complete details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Test Flow",
+      "Anchor": "basic-test-flow",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Basic Test Flow"
+      ],
+      "Text": "1. OAuth Flow Testing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Test Flow",
+      "Anchor": "basic-test-flow",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Basic Test Flow"
+      ],
+      "Text": "\u2705 Test successful authorization\n\u2705 Test member denies authorization (handle gracefully)\n\u2705 Test token expiry and refresh\n\u2705 Validate state parameter (CSRF protection)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Test Flow",
+      "Anchor": "basic-test-flow",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Basic Test Flow"
+      ],
+      "Text": "2. API Testing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Test Flow",
+      "Anchor": "basic-test-flow",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Basic Test Flow"
+      ],
+      "Text": "\u2705 Call /identityMe with valid token\n\u2705 Call /verificationReport with valid token\n\u2705 Verify response fields (id, basicInfo, verifications)\n\u2705 Handle missing optional fields (email, profile picture)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Test Flow",
+      "Anchor": "basic-test-flow",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Basic Test Flow"
+      ],
+      "Text": "3. Error Handling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Test Flow",
+      "Anchor": "basic-test-flow",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Basic Test Flow"
+      ],
+      "Text": "\u2705 Test with invalid token (401 error)\n\u2705 Test with insufficient scopes (403 error)\n\u2705 Handle API errors gracefully\n\u2705 Log errors for debugging",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Variations",
+      "Anchor": "test-variations",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Test Variations"
+      ],
+      "Text": "Verification Cases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Variations",
+      "Anchor": "test-variations",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Test Variations"
+      ],
+      "Text": "Fully verified (IDENTITY \u002B WORKPLACE)\nPartially verified (IDENTITY only or WORKPLACE only)\nUnverified (empty verifications array)\nRedirect Member to LinkedIn verification URL to add more verifications\nHandle callback to Partner website on successful verification completion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Variations",
+      "Anchor": "test-variations",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Test Variations"
+      ],
+      "Text": "Edge Cases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Variations",
+      "Anchor": "test-variations",
+      "SectionPath": [
+        "Testing Your Integration",
+        "Test Variations"
+      ],
+      "Text": "Missing email address\nMissing profile picture\nNon-English names and locales, Special characters in names\nMember has no verifications and not eligible for any verifications as well",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "Security:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "\u2705 Tokens encrypted at rest\n\u2705 Client secret in environment variables\n\u2705 HTTPS only for all API calls\n\u2705 State parameter implemented (CSRF protection)\n\u2705 Token refresh automated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "API Integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "\u2705 Error handling for all API responses\n\u2705 Timeout handling (5s timeout for all endpoints and 30s timeout for /validationStatus)\n\u2705 Logging for errors and key events",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "Data Handling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "\u2705 Member ID uniqueness enforced based on your business use case\n\u2705 Handle missing optional fields gracefully\n\u2705 Check image URL expiry before display",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "User Experience:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Production Checklist",
+      "Anchor": "pre-production-checklist",
+      "SectionPath": [
+        "Production Deployment",
+        "Pre-Production Checklist"
+      ],
+      "Text": "\u2705 Follow branding guidelines\n\u2705 Handle unverified members gracefully\n\u2705 Clear success and error messaging\n\u2705 Mobile responsive design",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Tier-Specific Guides",
+      "Anchor": "tier-specific-guides",
+      "SectionPath": [
+        "Related Resources",
+        "Tier-Specific Guides"
+      ],
+      "Text": "10-min Development Tier Quickstart \u2013 Get started with testing\n10-min Lite Tier Quickstart \u2013 Production-ready integration\n10-min Plus Tier Quickstart \u2013 Enterprise features",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth Guides",
+      "Anchor": "oauth-guides",
+      "SectionPath": [
+        "Related Resources",
+        "OAuth Guides"
+      ],
+      "Text": "Authorization Code Flow \u2013 OAuth 2.0 3-legged authentication\nClient Credentials Flow \u2013 OAuth 2.0 2-legged authentication (Plus tier only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API References",
+      "Anchor": "api-references",
+      "SectionPath": [
+        "Related Resources",
+        "API References"
+      ],
+      "Text": "/identityMe API \u2013 Profile details endpoint\n/verificationReport API \u2013 Verification details endpoint\n/validationStatus API \u2013 Bulk validation (Plus tier only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Features",
+      "Anchor": "plus-tier-features",
+      "SectionPath": [
+        "Related Resources",
+        "Plus Tier Features"
+      ],
+      "Text": "Data Freshness \u2013 Keep member data up-to-date (Plus only)\nCertification \u2013 Production readiness requirements (Plus only)",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

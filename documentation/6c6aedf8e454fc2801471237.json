@@ -1,0 +1,139 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+  "Title": "Rate Limiting",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "To prevent abuse and ensure service stability, all API requests are rate limited. Rate limits specify the maximum number of API calls that can be made in a 24 hour period. These limits reset at midnight UTC every day.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "There are two kinds of limits that affect your application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "Application \u2014 The total number of calls that your application can make in a day.\nMember \u2014 The total number of calls that a single member per application can make in a day.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "The term Member refers to a LinkedIn user whose token is used to initiate API calls from the developer application. For example, a partner is responsible for managing multiple members. This member-level designation indicates the permissible number of API calls the partner can initiate from their application on behalf of a member token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "Rate limited requests will receive a 429 response. In rare cases, LinkedIn may also return a 429 response as part of infrastructure protection. API service will return to normal automatically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [],
+      "Text": "Your application\u0027s daily rate limit varies based on which API endpoint you are using. Standard rate limits are not published in documentation. You can look up the rate limit of any endpoint your app has access to through the Developer Portal. Select your app from the list and navigate to its Analytics tab. This page will only show usage and rate limits for endpoints you have made at least 1 request to today(UTC). If you want to look up a rate limit for an endpoint not listed in your app\u0027s Analytics page, make 1 test call to that endpoint and refresh the Analytics page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Alert Notifications",
+      "Anchor": "rate-limit-alert-notifications",
+      "SectionPath": [
+        "Rate Limit Alert Notifications"
+      ],
+      "Text": "Developer Admins will receive email alerts when their application exceeds 75% of the assigned rate limit quota.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Alert Notifications",
+      "Anchor": "rate-limit-alert-notifications",
+      "SectionPath": [
+        "Rate Limit Alert Notifications"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Alert Notifications",
+      "Anchor": "rate-limit-alert-notifications",
+      "SectionPath": [
+        "Rate Limit Alert Notifications"
+      ],
+      "Text": "Alerts are triggered only on application-level threshold breaches, not on member-level or combined member\u002Bapp-level breaches.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limit Alert Notifications",
+      "Anchor": "rate-limit-alert-notifications",
+      "SectionPath": [
+        "Rate Limit Alert Notifications"
+      ],
+      "Text": "Alert Timing: Alerts are not sent in real-time. There is an expected delay of approximately 1\u20132 hours after the threshold is reached.\n\nAdditional Alerts: If another API endpoint breaches the threshold later in the same day, a new alert will be sent, even if a previous alert was already delivered.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

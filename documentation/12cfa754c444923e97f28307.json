@@ -1,0 +1,647 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+  "Title": "DMP Segment Companies",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Companies",
+      "Anchor": "dmp-segment-companies",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Companies",
+      "Anchor": "dmp-segment-companies",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Companies",
+      "Anchor": "dmp-segment-companies",
+      "SectionPath": [],
+      "Text": "DMP Segment Companies is a sub-resource of DMP segments that lets you add companies to a DMP Segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Companies",
+      "Anchor": "dmp-segment-companies",
+      "SectionPath": [],
+      "Text": "This API is restricted to approved LinkedIn developers and is subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Companies",
+      "Anchor": "dmp-segment-companies",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Companies",
+      "Anchor": "dmp-segment-companies",
+      "SectionPath": [],
+      "Text": "After you create a DMP segment, wait 5 seconds for it to become available before adding companies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments with the ability to read and manage audience DMP segments.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Managing audiences is restricted to ad accounts where the authenticated member has a role other than VIEWER.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Data Type",
+        "Description",
+        "examples"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action to take on this entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ADD or REMOVE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A string representing the company\u0027s name.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Microsoft",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyWebsiteDomain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A string representing the company\u0027s website domain in URL format. e.g.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "www.microsoft.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyEmailDomain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company email domain string in URL format (sometimes different from the website domain).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "linkedin.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn company page URN of this particular company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organizationUrn:123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn company page URL of this particular company with a maximum length of 100 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "linkedin.com/company/microsoft",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stockSymbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The stock symbol of this particular company with a maximum length of 5 letters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MSFT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List[String] (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum three industry names of this particular company each with a maximum length of 50 letters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[\u0022technology\u0022, \u0022software\u0022]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The city of this particular company with a maximum length of 50 letters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "San Francisco",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state or province of this particular company with a maximum length of 50 letters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "California or CA",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO standardized two letter country code e.g. US",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The postal code of this particular company with a maximum length of 20 letters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "94103",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Input data requirements",
+      "Anchor": "input-data-requirements",
+      "SectionPath": [
+        "Schema",
+        "Input data requirements"
+      ],
+      "Text": "Input data must provide at least one of the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Input data requirements",
+      "Anchor": "input-data-requirements",
+      "SectionPath": [
+        "Schema",
+        "Input data requirements"
+      ],
+      "Text": "companyNameorganizationUrncompanyWebsiteDomain or companyEmailDomaincompanyPageUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove a Company",
+      "Anchor": "add-or-remove-a-company",
+      "SectionPath": [
+        "Add or Remove a Company"
+      ],
+      "Text": "Add or remove a single company from a DMP Segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10804/companies",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022action\u0022: \u0022ADD\u0022,\n    \u0022companyName\u0022: \u0022LinkedIn\u0022,\n    \u0022companyWebsiteDomain\u0022: \u0022linkedin.com\u0022,\n    \u0022companyPageUrl\u0022: \u0022www.linkedin.com/company/linkedin\u0022,\n    \u0022stockSymbol\u0022: \u0022MSFT\u0022,\n    \u0022industries\u0022: [\n      \u0022information technology\u0022,\n      \u0022software\u0022\n    ],\n    \u0022city\u0022: \u0022Seattle\u0022,\n    \u0022state\u0022: \u0022WA\u0022,\n    \u0022country\u0022: \u0022US\u0022,\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10804/companies\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022action\u0022: \u0022ADD\u0022,\n    \u0022companyName\u0022: \u0022LinkedIn\u0022,\n    \u0022companyWebsiteDomain\u0022: \u0022linkedin.com\u0022,\n    \u0022companyPageUrl\u0022: \u0022www.linkedin.com/company/linkedin\u0022,\n    \u0022stockSymbol\u0022: \u0022MSFT\u0022,\n    \u0022industries\u0022: [\n      \u0022information technology\u0022,\n      \u0022software\u0022\n    ],\n    \u0022city\u0022: \u0022Seattle\u0022,\n    \u0022state\u0022: \u0022WA\u0022,\n    \u0022country\u0022: \u0022US\u0022,\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Add or Remove a Company",
+        "Sample Request"
+      ],
+      "Text": "A 201 Created HTTP status code is returned if you add the same ID again or remove an already deleted ID. This is by design.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Multiple Companies",
+      "Anchor": "add-or-remove-multiple-companies",
+      "SectionPath": [
+        "Add or Remove Multiple Companies"
+      ],
+      "Text": "Add or remove multiple companies from a DMP Segment by passing the X-RestLi-Method: BATCH_CREATE header. This method is more efficient than sending individual requests to add or remove companies. Stream up to 5000 companies in a single batch request. If you see issues with your batch request responses, try to resubmit with smaller batch size.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Companies",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Companies",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10804/companies",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Companies",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022elements\u0022: [\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022LinkedIn\u0022\n       },\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022Microsoft\u0022\n       }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Companies",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10804/companies\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n   \u0022elements\u0022: [\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022LinkedIn\u0022\n       },\n       {\n            \u0022action\u0022: \u0022ADD\u0022,\n            \u0022companyName\u0022: \u0022Microsoft\u0022\n       }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Companies",
+        "Sample Request"
+      ],
+      "Text": "A 400 Bad Request is returned if the request syntax is incorrect. For valid syntax, we return a batch response array with HTTP response status for each element, including 201 status for success and 400 status for errors. If there\u0027s an error, the message field will reference the batchIndex, specifying the exact index of the invalid element that caused the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Add or Remove Multiple Companies",
+        "Sample Request"
+      ],
+      "Text": "{\n\u0022elements\u0022:\n  [ \n    {\n\t    \u0022status\u201D:201\n    },\n    {\n        \u0022status\u0022:201\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "We have introduced a 1 minute rate limit per user (member) for our DMP streaming APIs Users \u0026 Companies to prevent abuse, ensure service stability, and consistent API availability. These limits are enforced in addition to your existing daily limits per user and per app, which can be found in the Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "For the /companies endpoint, an application will have a 1 minute limit of 300 requests per user. This means an application can make up to 300 requests per user within a minute.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "If your application calls /dmpSegments/users or /dmpSegments/companies too frequently, you may get an HTTP 429 response, indicating that you have exceeded the rate limits.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "If your application performs a high volume of automated data pushes, frequent throttling may occur. While this could impact API call throughput, it won\u0027t affect the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

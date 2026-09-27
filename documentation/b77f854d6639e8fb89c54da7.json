@@ -1,0 +1,140 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+  "Title": "targetingCriteria Object",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/migration-targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [],
+      "Text": "LinkedIn uses member facets to define a segment of members who will be either included or excluded from an advertising campaign\u0027s targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [],
+      "Text": "targetingCriteria provides a generic AND / OR construct to include and exclude different targeting facets when defining the audience for an Ad campaign. targetingCriteria is\u00A0attached to a campaign and is replacing the now deprecated targeting object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [],
+      "Text": "If you use targetingCriteria field to specify targeting criteria for a campaign, you cannot use the targeting field. Furthermore, if an existing campaign is ever updated using targetingCriteria , you must use targetingCriteria going forward, since this field permits more expressive criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Structure",
+      "Anchor": "structure",
+      "SectionPath": [
+        "Structure"
+      ],
+      "Text": "The basic structure for a targetingCriteria object is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Structure",
+      "Anchor": "structure",
+      "SectionPath": [
+        "Structure"
+      ],
+      "Text": "{\n    \u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:{facet1}\u0022:[\n                            \u0022{facet1_value1}\u0022,\n                            \u0022{facet1_value2}\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:{facet2}\u0022:[\n                            \u0022{facet2_value1}\u0022,\n                            \u0022{facet2_value2}\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:{facet3}\u0022:[\n                            \u0022{facet3_value1}\u0022,\n                            \u0022{facet3_value2}\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:{facet4}\u0022:[\n                            \u0022{facet4_value1}\u0022\n                            \u0022{facet4_value2}\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n            \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:{facet5}\u0022:[\n                    \u0022{facet5_value1}\u0022\n                    \u0022{facet5_value2}\u0022\n                ],\n                \u0022urn:li:adTargetingFacet:{facet6}\u0022:[\n                    \u0022{facet6_value1}\u0022\n                    \u0022{facet6_value2}\u0022\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rules",
+      "Anchor": "rules",
+      "SectionPath": [
+        "Rules"
+      ],
+      "Text": "The include object contains a single encompassing array object called \u201Cand\u201D .\nThe exclude object contains a single \u0022or\u0022 object. It does not support the same \u0022and\u0022 array object in the include object.\nEach element within this \u201Cand\u201D , contains at least 1 or many \u201Cor\u201D objects.\nEach \u201Cor\u201D object can contain a collection of adTargetingFacets .\nEach adTargetingFacet supports a list of pre-defined, standardized values.\nWithin a single adTargetingFacet , all values in the list are OR\u2019d.\nThe exclude \u00A0values in the list are OR\u2019d.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Order of evaluation",
+      "Anchor": "order-of-evaluation",
+      "SectionPath": [
+        "Order of evaluation"
+      ],
+      "Text": "The include object is evaluated before the exclude object.\nThe include object cannot be empty and is evaluated first.\nThe exclude object can be empty. (in which case no further processing is required)\nThe set of members specified by the exclude object is filtered from the set of members specified by the include list.\nThe resulting set of members will be used for targeting. (provided the number of members is greater than **300).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Convert your desired audience to Targeting Criteria",
+      "Anchor": "convert-your-desired-audience-to-targeting-criteria",
+      "SectionPath": [
+        "Convert your desired audience to Targeting Criteria"
+      ],
+      "Text": "To create a targeting criteria describing your desired audience, please follow the guide for /adTargetingFacets and /adTargetingEntities to find the most fitting adTargetingFacets and values within the adTargetingFacet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to display Targeting Criteria",
+      "Anchor": "how-to-display-targeting-criteria",
+      "SectionPath": [
+        "How to display Targeting Criteria"
+      ],
+      "Text": "To display a targeting criteria in a human readable format, adTargetingFacet urns and adTargetingEntity urns must be converted to localized names. To do so please use the urn-to-name resolver API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Links",
+      "Anchor": "links",
+      "SectionPath": [
+        "Links"
+      ],
+      "Text": "List of supported adTargetingFacets in targetingCriteria object\nDescriptive examples for targetingCriteria object\nMigration from targeting object to targetingCriteria object",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

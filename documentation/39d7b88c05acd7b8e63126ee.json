@@ -1,0 +1,1572 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api",
+  "Title": "Criteria Finder API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The LinkedIn Learning criteria Finder API is a set of endpoints you can call to filter and search the catalog of LinkedIn Learning content. The main endpoint takes a request with filtering and relevance criteria criteria for LinkedIn Learning content and returns the content metadata in JSON format. Since this API uses the same filtering and search functionality as the LinkedIn Learning application, you can call the API to find the same results as you would find in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The LinkedIn Learning criteria Finder complements the LinkedIn Learning localeAndType Finder. The localeAndType API allows you to bulk import the entire catalog of LinkedIn Learning content, the criteria API allows you to discover a subset of LinkedIn Learning content based on filter parameters, sorted by relevance, popularity, or recency. As part of this use case, the criteria API also supports searching category and skill metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The LinkedIn Learning criteria API and localeAndType API share the same key concepts, terminology, and data models. The criteria API builds on the localeAndType API to allow you to query the LinkedIn Learning content library and control how the results appear.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "One important difference between the LinkedIn Learning criteria API and localeAndType API is how the APIs treat retired content. In the localeAndType API, you can specify a parameter to retrieve retired as well as active content. In the criteria API, you can retrieve only active content. This document explains how you can access and use the LinkedIn Learning criteria API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "The LinkedIn Learning criteria API provides two endpoints - one for learning assets, and one for learning classifications. You can call these endpoints to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "Retrieve a page of learning assets, given some search and relevance criteria.\nRetrieve a list of learning assets updated since a given date.\nRetrieve a page of learning classifications, given a keyword.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "Each API endpoint and its parameters are documented in the \u0022API endpoints\u0022 section. First, a note about pagination, using learning assets as an example (the same applies for learning classifications).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "When you call the endpoint that retrieves a page of learning assets, given some search and relevance criteria, you will get a response like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    \u0022total\u0022: 2179,\n    \u0022count\u0022: 20,\n    \u0022start\u0022: 100,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetFilteringCriteria.keyword=java\u0026count=20\u0026q=criteria\u0026start=80\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      },\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022:\n\u0022/v2/learningAssets?assetFilteringCriteria.keyword=java\u0026count=20\u0026q=criteria\u0026start=220\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "The value of the elements field is an array of learning assets for the requested page. The value of the metadata field, if present, is an object with metadata about the search results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "The value of the paging field is an object with paging metadata. In particular, if you wish to retrieve the next page of search results, you can use the \u0022links\u0022 field in the paging metadata to help construct a request for the next page. The links field simplifies requests for additional pages because you will not need to track the page start and count yourself.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Pagination Reference Table",
+      "Anchor": "pagination-reference-table",
+      "SectionPath": [
+        "Understanding the Endpoints",
+        "Pagination Reference Table"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "total",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total number of learning entities matching the requested criteria",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested number of learning entities for the page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested start index of learning entities for the page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "links",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of link objects. Each link object includes: A \u0022rel\u0022 field whose value can be prev or next.An \u0022href\u0022 field whose value is the link (relative to the base API URL) for the previous or next page of learning entities matching the requested criteria. If the previous or next page does not exist, the corresponding link object will be omitted",
+            "Links": [],
+            "Values": [
+              "A \u0022rel\u0022 field whose value can be prev or next.",
+              "An \u0022href\u0022 field whose value is the link (relative to the base API URL) for the previous or next page of learning entities matching the requested criteria."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination Reference Table",
+      "Anchor": "pagination-reference-table",
+      "SectionPath": [
+        "Understanding the Endpoints",
+        "Pagination Reference Table"
+      ],
+      "Text": "Each LinkedIn Learning learningAssets criteria finder and learningClassifications keyword finders and supported parameters are documented below. Note that all parameter names and values (unless noted) are case-sensitive.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "This finder can be used to retrieve a page of learning assets, given some set of criteria. Using this endpoint you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "Search for learning assets given some search and relevance criteria.\nRetrieve a list of learning assets released, retired or modified since a given date.\nRetrieve a list of learning assets the requester is licensed to access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/learningAssets?q=criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "The parameters of this endpoint are grouped into three logical sets of criteria:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "assetFilteringCriteria: criteria that narrows the content you wish to retrieve from the LinkedIn Learning catalog.\nassetPresentationCriteria: criteria that controls how the search results appear.\nassetRetrievalCriteria: criteria that controls how much information is retrieved for the search results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets Criteria Finder",
+      "Anchor": "learningassets-criteria-finder",
+      "SectionPath": [
+        "learningAssets Criteria Finder"
+      ],
+      "Text": "Some calls to the learningAssets criteria finder will only return 500 results rather than all the records in the entire catalog that match the query if the result size is greater than 500 records. The scenarios in which only 500 results are returned are documented in the API Reference section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "learningAssets Criteria Finder",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be: criteria.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.assetTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of types of learning assets to search. The search results will include only learning assets of these types. The values of this parameter should be COURSE, LEARNING_PATH, or VIDEO. If omitted, the search results will include learning assets of any type. Since this parameter is an array, you will need to specify a zero-based index per value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.classifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of learning classification URNs to search learning assets. The search results will include only learning assets tagged with these classifications. The supported URN types are \u0022urn:li:lyndaCategory\u0022 and \u0022urn:li:skill\u0022. The URNs can be discovered using the /v2/learningClassifications endpoint. If omitted, the search results will include learning assets tagged with any classification. Since this parameter is an array, you will need to specify a zero-based index per value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.difficultyLevels",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of difficulty levels of learning assets to search. The search results will include only learning assets of these difficulty levels. The values of this parameter should be BEGINNER, INTERMEDIATE, or ADVANCED. If omitted, the search results will include learning assets of any difficulty level. Since this parameter is an array, you will need to specify a zero-based index per value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.keyword",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The keyword string to search learning assets. The search results will include only learning assets matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm. The value of this parameter is case-insensitive.If omitted, the search results will include learning assets matching any keyword string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.lastModifiedAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time after which the assets were changed i.e. released, modified or retired. Represented by number of milliseconds since midnight, January 1, 1970 UTC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.locales.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of languages from which results should be filtered on. The value of this parameter can be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. Since this parameter is an array, you will need to specify a zero-based index per value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default=en)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.locales.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of locale countries/regions from which results should be filtered on. The value of this parameter can beDE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. Since this parameter is an array, you will need to specify a zero-based index per value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default=US)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.licensedOnly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean that indicates results should be filtered to only include learningAssets the caller is licensed to access. If this parameter is set to true and assetFilteringCriteria.locales parameter is omitted the locale values are implied by the callers licensed access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetPresentationCriteria.sortBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How to sort the learning assets in the search results. The value of this parameter should be RELEVANCE, POPULARITY, or RECENCY. Relevance sorts the learning assets by LinkedIn Learning\u0027s relevance algorithm. Popularity sorts the learning assets by view count. Recency sorts the learning assets by publish date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = RELEVANCE)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetPresentationCriteria.targetLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language the API will use to try to localize the learning asset. The value of this parameter should be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning asset cannot be localized or if the target locale is not set, the API will use the source locale of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetPresentationCriteria.targetLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region the API will use to try to localize the learning asset. The value of this parameter should beDE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022.If the learning asset cannot be localized or if the target locale is not set, the API will use the source locale of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetRetrievalCriteria.expandDepth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api#specifying-the-level-of-asset-details"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 1)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetRetrievalCriteria.includeRetired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to include retired learning assets. The value of this parameter should be true or false. To retrieve active and retired learning assets, set this parameter to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning assets for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning assets to include in the page. The maximum count is 100 assets per page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 20)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve learning assets based on modification date",
+      "Anchor": "retrieve-learning-assets-based-on-modification-date",
+      "SectionPath": [
+        "API Use Cases",
+        "Retrieve learning assets based on modification date"
+      ],
+      "Text": "You can use the criteria finder to retrieve a list of learning assets modified after a given date. To determine the type of modification made, compare created and retired dates to the lastModifiedAfter parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve learning assets based on modification date",
+      "Anchor": "retrieve-learning-assets-based-on-modification-date",
+      "SectionPath": [
+        "API Use Cases",
+        "Retrieve learning assets based on modification date"
+      ],
+      "Text": "Newly Released: publishedAt date is greater than the assetFilteringCriteria.lastModifiedAfter parameter value.\nModified: publishedAt date is less than the assetFilteringCriteria.lastModifiedAfter parameter value.\nRetired: retiredAt date is present and greater than assetFilteringCriteria.lastModifiedAfter parameter value",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve learning assets based on modification date",
+      "Anchor": "retrieve-learning-assets-based-on-modification-date",
+      "SectionPath": [
+        "API Use Cases",
+        "Retrieve learning assets based on modification date"
+      ],
+      "Text": "In the example below, the result set contains learning assets modified after January 4th, 2018. A field projection is used to limit the response body to asset titles, URNs and key dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "cURL Request",
+      "Anchor": "curl-request",
+      "SectionPath": [
+        "API Use Cases",
+        "Retrieve learning assets based on modification date",
+        "cURL Request"
+      ],
+      "Text": "Note: Use the -g curl option to turn off globbing since the URL includes brackets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request",
+      "SectionPath": [
+        "API Use Cases",
+        "Retrieve learning assets based on modification date",
+        "cURL Request"
+      ],
+      "Text": "curl -X GET -H \u0027Authorization: Bearer AQXX6Z....\u0027 -g \\\n  \u0027https://api.linkedin.com/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.lastModifiedAfter=1515097718000\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=1\u0026q=criteria\u0026start=20\u0026fields=title:(value),details:(lastUpdatedAt,publishedAt,retiredAt,availability),urn\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "API Use Cases",
+        "Retrieve learning assets based on modification date",
+        "Response"
+      ],
+      "Text": "{\n    \u0022metadata\u0022: {\n        \u0022assetTypeFacetMetadata\u0022: [\n            {\n                \u0022count\u0022: 83,\n                \u0022assetType\u0022: \u0022VIDEO\u0022\n            },\n            {\n                \u0022count\u0022: 40,\n                \u0022assetType\u0022: \u0022COURSE\u0022\n            },\n            {\n                \u0022count\u0022: 0,\n                \u0022assetType\u0022: \u0022LEARNING_PATH\u0022\n            }\n        ],\n        \u0022difficultyLevelFacetMetadata\u0022: [\n            {\n                \u0022difficultyLevel\u0022: \u0022INTERMEDIATE\u0022,\n                \u0022count\u0022: 10\n            },\n            {\n                \u0022difficultyLevel\u0022: \u0022BEGINNER\u0022,\n                \u0022count\u0022: 8\n            },\n            {\n                \u0022difficultyLevel\u0022: \u0022ADVANCED\u0022,\n                \u0022count\u0022: 4\n            }\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:578072\u0022,\n            \u0022details\u0022: {\n                \u0022publishedAt\u0022: 1499644800000,\n                \u0022lastUpdatedAt\u0022: 1515184875057,\n                \u0022availability\u0022: \u0022AVAILABLE\u0022\n            },\n            \u0022title\u0022: {\n                \u0022value\u0022: \u0022The Essential Elements of Predictive Analytics and Data Mining\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 40,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 20,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.lastModifiedAfter=1515097718000\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=1\u0026q=criteria\u0026start=19\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.lastModifiedAfter=1515097718000\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=1\u0026q=criteria\u0026start=21\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Querying an account\u0027s licensed assets",
+      "Anchor": "querying-an-accounts-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Querying an account\u0027s licensed assets"
+      ],
+      "Text": "When assetFilteringCriteria.licensedOnly is set to true, only assets licensed to the caller will be returned in the result set based on context carried in the OAuth 2.0 bearer token. LinkedIn Learning content is licensed by locale and API keys are associated with a given LinkedIn Learning tenant. Since tenants are licensed to access any permutation of our English, French, German, Spanish and Japanese content libraries, OAuth 2.0 bearer tokens are used to infer assets licensed to a given account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Querying an account\u0027s licensed assets",
+      "Anchor": "querying-an-accounts-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Querying an account\u0027s licensed assets"
+      ],
+      "Text": "In the request below, the result set changes based on OAuth token used to authenticate the request. For example, if a tenant is licensed to access English content and you make a request with an OAuth 2.0 token generated from the tenant\u0027s API keys, the result set will only include English assets. If another tenant is licensed to access French and German content and you makes the same API request with an OAuth token generated from API keys associated with the French \u0026 German tenant you can page through the result set to access assets details from the French \u0026 German content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "API Use Cases",
+        "Querying an account\u0027s licensed assets",
+        "cURL Request"
+      ],
+      "Text": "Note: Use the -g curl option to turn off globbing since the URL includes brackets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "API Use Cases",
+        "Querying an account\u0027s licensed assets",
+        "cURL Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true\u0026fields=urn,title:%28value%29,details:%28availableLocales%29\u0026count=1\u0027 -H \u0027Authorization: Bearer AQXX..\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "API Use Cases",
+        "Querying an account\u0027s licensed assets",
+        "cURL Request"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "API Use Cases",
+        "Querying an account\u0027s licensed assets",
+        "cURL Request"
+      ],
+      "Text": "In most cases, you will want to set assetFilteringCriteria.licensedOnly to true to ensure only licensed assets are included in the result set. In the event assetFilteringCriteria.locales AND assetFilteringCriteria.licensedOnly are both included in a request, only learning assets that meet both criteria will be included in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "To replicate the LinkedIn Learning content catalog in an external system we recommend importing content in two phases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "1. Initial bulk asset import: To import all active assets licensed to a tenant, use the criteria finder API with licensedOnly parameter. The result set may exclude assets released in the last 48 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "Combining \u0022empty\u0022 queries with the sortBy parameter can cause slow or degraded queries. Empty criteria queries are requests where there are no keyword, difficulty, skill, classification, or lastModifiedAfter filters. For the best bulk import performance, omit sortBy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true\u0026assetRetrievalCriteria.includeRetired=false\u0026count=75\u0027 -H \u0027Authorization: Bearer AQXX..\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "2. Recently released asset import: Since the initial bulk import may exclude recently released assets, you can import the remaining assets by backdating assetFilteringCriteria.lastModifiedAfter 48 hours before the initial bulk asset import began.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Bulk importing a tenant\u0027s licensed assets",
+      "Anchor": "bulk-importing-a-tenants-licensed-assets",
+      "SectionPath": [
+        "API Use Cases",
+        "Bulk importing a tenant\u0027s licensed assets"
+      ],
+      "Text": "curl -X GET -H \u0027Authorization: Bearer AQXX6Z....\u0027 -g \u0027https://api.linkedin.com/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.lastModifiedAfter=1515097718000\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=1\u0026q=criteria\u0026start=20\u0026fields=title:(value),details:(lastUpdatedAt,publishedAt,retiredAt,availability),urn\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for learning assets based on relevance criteria",
+      "Anchor": "search-for-learning-assets-based-on-relevance-criteria",
+      "SectionPath": [
+        "API Use Cases",
+        "Search for learning assets based on relevance criteria"
+      ],
+      "Text": "In the example below, the result set contains learningAssets that meet the search and relevance criteria provided. A field projection is used to limit the response body to include asset titles, urns and levels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-2",
+      "SectionPath": [
+        "API Use Cases",
+        "Search for learning assets based on relevance criteria",
+        "cURL Request"
+      ],
+      "Text": "Note: Use the -g curl option to turn off globbing since the URL includes brackets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-2",
+      "SectionPath": [
+        "API Use Cases",
+        "Search for learning assets based on relevance criteria",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 -g \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.classifications[0]=urn:li:lyndaCategory:7164\u0026assetFilteringCriteria.difficultyLevels[0]=BEGINNER\u0026assetFilteringCriteria.difficultyLevels[1]=INTERMEDIATE\u0026assetFilteringCriteria.difficultyLevels[2]=ADVANCED\u0026assetFilteringCriteria.keyword=java\u0026assetPresentationCriteria.sortBy=RELEVANCE\u0026count=10\u0026fields=urn,title:(value),details:(level)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-1",
+      "SectionPath": [
+        "API Use Cases",
+        "Search for learning assets based on relevance criteria",
+        "Response"
+      ],
+      "Text": "{\n    \u0022metadata\u0022: {\n        \u0022assetTypeFacetMetadata\u0022: [\n            {\n                \u0022count\u0022: 1984,\n                \u0022assetType\u0022: \u0022VIDEO\u0022\n            },\n            {\n                \u0022count\u0022: 81,\n                \u0022assetType\u0022: \u0022COURSE\u0022\n            },\n            {\n                \u0022count\u0022: 0,\n                \u0022assetType\u0022: \u0022LEARNING_PATH\u0022\n            }\n        ],\n        \u0022difficultyLevelFacetMetadata\u0022: [\n            {\n                \u0022difficultyLevel\u0022: \u0022INTERMEDIATE\u0022,\n                \u0022count\u0022: 50\n            },\n            {\n                \u0022difficultyLevel\u0022: \u0022BEGINNER\u0022,\n                \u0022count\u0022: 25\n            },\n            {\n                \u0022difficultyLevel\u0022: \u0022ADVANCED\u0022,\n                \u0022count\u0022: 6\n            }\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:375490\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022value\u0022: \u0022Java Essential Training for Students\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:606088\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022INTERMEDIATE\u0022\n            },\n            \u0022title\u0022: {\n                \u0022value\u0022: \u0022Spring: Framework In Depth\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:636136\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022INTERMEDIATE\u0022\n            },\n            \u0022title\u0022: {\n                \u0022value\u0022: \u0022Java EE: Servlets and JavaServer Pages (JSP)\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:107061\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022ADVANCED\u0022\n            },\n            \u0022title\u0022: {\n                \u0022value\u0022: \u0022Advanced Java Programming\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:184457\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022value\u0022: \u0022Learning Java\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 81,\n        \u0022count\u0022: 5,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.classifications[0]=urn%3Ali%3AlyndaCategory%3A7164\u0026assetFilteringCriteria.difficultyLevels[0]=BEGINNER\u0026assetFilteringCriteria.difficultyLevels[1]=INTERMEDIATE\u0026assetFilteringCriteria.difficultyLevels[2]=ADVANCED\u0026assetFilteringCriteria.keyword=java\u0026assetPresentationCriteria.sortBy=RELEVANCE\u0026count=5\u0026q=criteria\u0026start=5\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningClassifications Keyword Finder",
+      "Anchor": "learningclassifications-keyword-finder",
+      "SectionPath": [
+        "learningClassifications Keyword Finder"
+      ],
+      "Text": "To retrieve a page of learning classifications, given a keyword, issue a GET call to the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "learningClassifications Keyword Finder",
+      "Anchor": "learningclassifications-keyword-finder",
+      "SectionPath": [
+        "learningClassifications Keyword Finder"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/learningClassifications?q=keyword",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "learningClassifications Keyword Finder",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be: keyword.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "keyword",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The keyword string to search learning classifications. The search results will include only learning classifications matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm. The value of this parameter is case-insensitive.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning classification cannot be localized or if the target locale is not set, the API will use the source locale of the learning classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning classification cannot be localized or if the target locale is not set, the API will use the source locale of the learning classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning classifications for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning classifications to include in the page. Please choose a reasonable value if overriding the default; the API will return an error if the requested page exceeds the 2 MB response size limit of the framework.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 100)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request",
+      "SectionPath": [
+        "learningClassifications Keyword Finder",
+        "Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningClassifications?q=keyword\u0026keyword=software\u0026targetLocale.language=en\u0026targetLocale.country=US\u0026start=0\u0026count=20\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-2",
+      "SectionPath": [
+        "learningClassifications Keyword Finder",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:skill:242\u0022,\n      \u0022owner\u0022: {\n        \u0022urn\u0022: \u0022urn:li:organization:0000\u0022,\n        \u0022name\u0022: {\n          \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          },\n          \u0022value\u0022: \u0022LinkedIn\u0022\n        }\n      },\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Software\u0022\n      },\n      \u0022type\u0022: \u0022SKILL\u0022\n    },\n    {\n      \u0022urn\u0022: \u0022urn:li:lyndaCategory:7186\u0022,\n      \u0022owner\u0022: {\n        \u0022urn\u0022: \u0022urn:li:organization:0000\u0022,\n        \u0022name\u0022: {\n          \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          },\n          \u0022value\u0022: \u0022LinkedIn\u0022\n        }\n      },\n      \u0022name\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Software Development\u0022\n      },\n      \u0022type\u0022: \u0022SUBJECT\u0022\n    },\n    ...\n  ],\n  \u0022paging\u0022: {\n    \u0022total\u0022: 15,\n    \u0022count\u0022: 20,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Advanced Concepts",
+      "Anchor": "api-advanced-concepts",
+      "SectionPath": [
+        "API Advanced Concepts"
+      ],
+      "Text": "This section explains several advanced topics about the LinkedIn Learning APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "When you call /v2/learningAssets to retrieve a page of learning assets, given some search and relevance criteria, you can optionally set an assetRetrievalCriteria.expandDepth parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026assetRetrievalCriteria.expandDepth=1\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "This parameter (defaults to 1) tells the API how many levels in the learning asset hierarchy should include asset details. A detailed learning asset has the following structure:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: \u2026,\n  \u0022title\u0022: \u2026,\n  \u0022details\u0022: {\n    \u2026\n  },\n  \u0022contents\u0022: [\n    \u2026\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "The urn, type, and title fields are the basic metadata about the learning asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "The details field is an object that includes detailed metadata about the learning asset - for example, its associated learning classifications, description, change timestamps, etc. (see the \u0022Asset schema\u0022 section for the full schema reference).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "The contents field is an array of sub-assets of the learning asset, each sub-asset of which is a learning asset itself. For example, a course contains chapters, and a chapter contains videos. The learning asset representing the course would look like the following (focusing on the nested structure and omitting other fields):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "{\n  \u0022type\u0022: \u0022COURSE\u0022,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022contents\u0022: [],\n              \u2026\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "In this learning asset hierarchy, you can think of the course as the first level of learning assets. The chapters, which are sub-assets of the course, are the second level of learning assets. The videos, which are sub-assets of the chapters, are the third level of learning assets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "With this explanation of the learning asset hierarchy and the earlier explanation of asset details in mind, we can refer back to the request we started with:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026assetRetrievalCriteria.expandDepth=1\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "Setting the assetRetrievalCriteria.expandDepth parameter to 1 tells the API to include asset details only for the first level of learning assets. Each learning asset in the elements array of the response would look like the following (assuming the learning asset is a course):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: COURSE,\n  \u0022title\u0022: \u2026,\n  \u0022details\u0022: {\n    \u2026\n  },\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u2026,\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022title\u0022: \u2026,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u2026,\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: \u2026,\n              \u0022contents\u0022: []\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "If you wish to include asset details for both the course and its chapters, you can tell the API to expand learning assets down to the second level:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026assetRetrievalCriteria.expandDepth=2\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "With the assetRetrievalCriteria.expandDepth parameter set to 2, each learning asset in the elements array of the response would look like the following (assuming the learning asset is a course):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: COURSE,\n  \u0022title\u0022: \u2026,\n  \u0022details\u0022: {\n    \u2026\n  },\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u2026,\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022title\u0022: \u2026,\n        \u0022details\u0022: {\n          \u2026\n        },\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u2026,\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: \u2026,\n              \u0022contents\u0022: []\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "By setting the assetRetrievalCriteria.expandDepth parameter to 3 when calling the API, you can include asset details for all three levels - course, chapters, and videos.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "When expanding learning assets down to deeper levels, take care that the larger responses do not exceed the 2 MB response size limit of the API framework. The assetRetrievalCriteria.expandDepth parameter is a convenience so that you can retrieve more information with fewer calls. But you can always retrieve the same nested information in multiple steps. For example, leaving the assetRetrievalCriteria.expandDepth parameter at its default value of 1, you can retrieve a page of learning assets representing courses, which will include asset details only for each course. Then for each chapter URN and video URN under the courses, you can call the endpoint that retrieves an individual learning asset, which will include asset details for the chapter or video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "Note that you can also set the assetRetrievalCriteria.expandDepth parameter to 0 when calling the API. This tells the API to omit all asset details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026assetRetrievalCriteria.expandDepth=0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "With the assetRetrievalCriteria.expandDepth parameter set to 0, each learning asset in the \u0022elements\u0022 array of the response would look like the following (no asset details at any level):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details",
+        "Request"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: COURSE,\n  \u0022title\u0022: \u2026,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u2026,\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022title\u0022: \u2026,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u2026,\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: \u2026,\n              \u0022contents\u0022: []\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rolling up sub-asset classifications",
+      "Anchor": "rolling-up-sub-asset-classifications",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Rolling up sub-asset classifications"
+      ],
+      "Text": "A learning asset may be tagged with one or more learning classifications. For example, a course or video may be tagged with category, skill, or continuing education metadata. These learning classifications are included in the asset details (see the Specifying the level of asset details section).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rolling up sub-asset classifications",
+      "Anchor": "rolling-up-sub-asset-classifications",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Rolling up sub-asset classifications"
+      ],
+      "Text": "When retrieving a learning asset with sub-assets, all the learning classifications that the sub-assets are tagged with are rolled up into the asset details for the top-level learning asset. For example, when retrieving a learning asset representing a course, the asset details for the course include the learning classifications that the chapters and videos are tagged with. In this case, if you set the assetRetrievalCriteria.expandDepth parameter to include the asset details for the chapter and video sub-assets as well, the asset details for each sub-asset will not include its individual learning classifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rolling up sub-asset classifications",
+      "Anchor": "rolling-up-sub-asset-classifications",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Rolling up sub-asset classifications"
+      ],
+      "Text": "The API rolls up sub-asset classifications for two reasons. First, it makes sense for a learning asset to inherit all the learning classifications of its sub-assets. Second, rolling up sub-asset classifications lets the API de-duplicate them, reducing the response size if multiple sub-assets are tagged with the same learning classification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the response fields",
+      "Anchor": "specifying-the-response-fields",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields"
+      ],
+      "Text": "When calling any of the API endpoints, you can include a special request parameter that specifies the fields that will be in the response. Note that if the response fields you wish to specify are part of the asset details (see the Specifying the level of asset details section), you will also need to set the assetRetrievalCriteria.expandDepth parameter so that the required level of asset details will be included.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Reference",
+      "Anchor": "field-projection-reference",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Reference"
+      ],
+      "Text": "If you set the \u0022fields\u0022 parameter when calling an endpoint that retrieves a page of learning entities, the previous and next links in the paging metadata in the response (see the \u0022Understanding the endpoints\u0022 section) will not include the \u0022fields\u0022 parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field Projection Reference",
+      "Anchor": "field-projection-reference",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Reference"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of field projections that specify the fields that will be in the response. You will need to add the same \u0022fields\u0022 parameter to the generated links yourself",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Syntax",
+      "Anchor": "field-projection-syntax",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Syntax"
+      ],
+      "Text": "field_name to include the entire value of the field.\nfield_name:(sub_field_name) to include only the value of the sub-field if the parent field is an object.\nfield_name:($*:(sub_field_name)) to include only the value of the sub-field if the parent field is an array of objects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Syntax",
+      "Anchor": "field-projection-syntax",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Syntax"
+      ],
+      "Text": "Here are four sample requests showing an example of each kind of field projection:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-3",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=title\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-3",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022title\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Java Essential Training for Students\u0022\n      }\n    },\n    {\n      \u0022title\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Scala Essential Training\u0022\n      }\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-4",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=title:(value)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-4",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022title\u0022: {\n        \u0022value\u0022: \u0022Java Essential Training for Students\u0022\n      }\n    },\n    {\n      \u0022title\u0022: {\n        \u0022value\u0022: \u0022Scala Essential Training\u0022\n      }\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-5",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=contents:($*:(asset:(urn)))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-5",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022contents\u0022: [\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415232)\u0022\n          }\n        },\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415237)\u0022\n          }\n        },\n      ...\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-6",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=urn,type,contents:($*:(asset:(urn,type)))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-6",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:lyndaCourse:375490\u0022,\n      \u0022contents\u0022: [\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415232)\u0022,\n            \u0022type\u0022: \u0022CHAPTER\u0022\n          }\n        },\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415237)\u0022,\n            \u0022type\u0022: \u0022CHAPTER\u0022\n          }\n        },\n        ...\n      ],\n      \u0022type\u0022: \u0022COURSE\u0022\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

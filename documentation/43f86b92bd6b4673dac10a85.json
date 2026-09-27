@@ -1,0 +1,642 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+  "Title": "Talent CRM Connect error handling",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect error handling",
+      "Anchor": "talent-crm-connect-error-handling",
+      "SectionPath": [],
+      "Text": "Talent CRM Connect integration partners will naturally encounter errors as a result of data validation errors, transient infrastructure issues, or other causes. How partners empower their customers to resolve their own issues or seek help can reduce the operational load placed on engineering and support teams in our respective organizations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent CRM Connect error handling",
+      "Anchor": "talent-crm-connect-error-handling",
+      "SectionPath": [],
+      "Text": "This guide makes recommendations for a minimum set of error handling and logging capabilities in order to empower users to self-serve and effectively seek assistance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer reactivation",
+      "Anchor": "customer-reactivation",
+      "SectionPath": [
+        "Customer reactivation"
+      ],
+      "Text": "Customers occasionally will need to re-enable CRM Connect. Re-enabling CRM Connect consists of:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer reactivation",
+      "Anchor": "customer-reactivation",
+      "SectionPath": [
+        "Customer reactivation"
+      ],
+      "Text": "removing existing integration values stored in the CRM like urn:li:organization:{id}, etc.\nre-enabling CRM Connect through the onboarding plugin as described in the customer configuration documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer reactivation",
+      "Anchor": "customer-reactivation",
+      "SectionPath": [
+        "Customer reactivation"
+      ],
+      "Text": "Partners should be able to support this flow through managed process that support teams or even customers can perform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Re-enablement and historical data",
+      "Anchor": "re-enablement-and-historical-data",
+      "SectionPath": [
+        "Customer reactivation",
+        "Re-enablement and historical data"
+      ],
+      "Text": "Data sent to LinkedIn will be persisted unless deleted. If a customer re-enables within a CRM, it is up to CRM partners to determine if data should be deleted from previous enablements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error logging",
+      "Anchor": "error-logging",
+      "SectionPath": [
+        "Error logging"
+      ],
+      "Text": "API requests failures frequently need detailed error logging to determine the root cause. In order to accelerate support issue resolution and empower customers to ask for help, it is recommended that partners store detailed error logs and make them available to customers in the event of API request failures.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error logging",
+      "Anchor": "error-logging",
+      "SectionPath": [
+        "Error logging"
+      ],
+      "Text": "When errors are encountered, logs should record details of the failure. Some request formats, like BATCH_UPDATE and BATCH_GET request methods, return 200 HTTP status codes even if some of the request elements fail. Partners should treat these requests as failures in their logging for the purposes of future troubleshooting. Error logs should record:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error logging",
+      "Anchor": "error-logging",
+      "SectionPath": [
+        "Error logging"
+      ],
+      "Text": "the full request, including URL, request headers, and request body\nresponse headers and body, and status code. It is especially important to log the x-li-uuid response header",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error logging",
+      "Anchor": "error-logging",
+      "SectionPath": [
+        "Error logging"
+      ],
+      "Text": "Details of request failures can be made available to customers, but access tokens in the request headers should be masked or removed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Log access",
+      "Anchor": "log-access",
+      "SectionPath": [
+        "Error logging",
+        "Log access"
+      ],
+      "Text": "Partner support teams and customers should have access to detailed error logs to simplify support requests and load on engineering teams. Partners are strongly encouraged to make access to detailed errors a component of end user workflow to resolve issues like data validation problems encountered when syncing data between the CRM and LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request retries",
+      "Anchor": "request-retries",
+      "SectionPath": [
+        "Request retries"
+      ],
+      "Text": "Retry when there may be an intermittent issue with LinkedIn infrastructure. Whether to retry depends on the response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request retries",
+      "Anchor": "request-retries",
+      "SectionPath": [
+        "Request retries"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response",
+        "Recommendation"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For BATCH requests, check for failed elements. Retry only those elements.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If it fails again, do not retry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request a new access token, then retry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If it fails again, do not retry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit reached. Retry after midnight UTC.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "4xx (other)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If it fails again, do not retry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "5xx",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If it fails again, do not retry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Timeouts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry the request. If it fails again, do not retry.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request retries",
+      "Anchor": "request-retries",
+      "SectionPath": [
+        "Request retries"
+      ],
+      "Text": "Partners may adapt this retry strategy to their needs, as long as the behavior is clear and LinkedIn\u0027s guidance is respected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error response examples",
+      "Anchor": "error-response-examples",
+      "SectionPath": [
+        "Error response examples"
+      ],
+      "Text": "The following examples show typical error responses for Talent CRM Connect (and related) APIs. Always capture and store the x-li-uuid response header when an error occurs; provide it when reporting the issue to LinkedIn support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error response examples",
+      "Anchor": "error-response-examples",
+      "SectionPath": [
+        "Error response examples"
+      ],
+      "Text": "Important response header to save on errors:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Error response examples",
+      "Anchor": "error-response-examples",
+      "SectionPath": [
+        "Error response examples"
+      ],
+      "Text": "x-li-uuid: AAZLFYFBm9/EcmxFuiti\u002BQ==",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error response examples",
+      "Anchor": "error-response-examples",
+      "SectionPath": [
+        "Error response examples"
+      ],
+      "Text": "Provide this value when contacting the LinkedIn team about the failure.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Missing required field (batch request)",
+      "Anchor": "1-missing-required-field-batch-request",
+      "SectionPath": [
+        "Error response examples",
+        "1. Missing required field (batch request)"
+      ],
+      "Text": "When: A BATCH_UPDATE (or similar batch) request omits a required field for one or more entities (e.g. title for a pipeline).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Missing required field (batch request)",
+      "Anchor": "1-missing-required-field-batch-request",
+      "SectionPath": [
+        "Error response examples",
+        "1. Missing required field (batch request)"
+      ],
+      "Text": "The HTTP status is 200 OK; per-entity failures are in the errors object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Missing required field (batch request)",
+      "Anchor": "1-missing-required-field-batch-request",
+      "SectionPath": [
+        "Error response examples",
+        "1. Missing required field (batch request)"
+      ],
+      "Text": "Response: 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Missing required field (batch request)",
+      "Anchor": "1-missing-required-field-batch-request",
+      "SectionPath": [
+        "Error response examples",
+        "1. Missing required field (batch request)"
+      ],
+      "Text": "Response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "1. Missing required field (batch request)",
+      "Anchor": "1-missing-required-field-batch-request",
+      "SectionPath": [
+        "Error response examples",
+        "1. Missing required field (batch request)"
+      ],
+      "Text": "{\n  \u0022results\u0022: {},\n  \u0022errors\u0022: {\n    \u0022dataProvider=urn%3Ali%3AdeveloperApplication%3A226891577\u0026integrationContext=urn%3Ali%3Acompany%3A82988289\u0026tcrmPipelineId=pipeline_lts_sw_eng\u0022: {\n      \u0022message\u0022: \u0022Missing required field: /title\u0022,\n      \u0022status\u0022: 400\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Invalid access token",
+      "Anchor": "2-invalid-access-token",
+      "SectionPath": [
+        "Error response examples",
+        "2. Invalid access token"
+      ],
+      "Text": "When: The Authorization: Bearer {token} header contains an invalid or expired access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Invalid access token",
+      "Anchor": "2-invalid-access-token",
+      "SectionPath": [
+        "Error response examples",
+        "2. Invalid access token"
+      ],
+      "Text": "Response: 401 Unauthorized",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Invalid access token",
+      "Anchor": "2-invalid-access-token",
+      "SectionPath": [
+        "Error response examples",
+        "2. Invalid access token"
+      ],
+      "Text": "Response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "2. Invalid access token",
+      "Anchor": "2-invalid-access-token",
+      "SectionPath": [
+        "Error response examples",
+        "2. Invalid access token"
+      ],
+      "Text": "{\n  \u0022status\u0022: 401,\n  \u0022serviceErrorCode\u0022: 65600,\n  \u0022code\u0022: \u0022INVALID_ACCESS_TOKEN\u0022,\n  \u0022message\u0022: \u0022Invalid access token\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Invalid access token",
+      "Anchor": "2-invalid-access-token",
+      "SectionPath": [
+        "Error response examples",
+        "2. Invalid access token"
+      ],
+      "Text": "Action: Request a new access token (e.g. via OAuth refresh or client credentials), then retry.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Developer application not onboarded for CRM Connect",
+      "Anchor": "3-developer-application-not-onboarded-for-crm-connect",
+      "SectionPath": [
+        "Error response examples",
+        "3. Developer application not onboarded for CRM Connect"
+      ],
+      "Text": "When: The developer application (child app) used in the request is not onboarded as CRM for the given integration context (e.g. company). For example, CRMC is not enabled for that app\u2013company pair.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Developer application not onboarded for CRM Connect",
+      "Anchor": "3-developer-application-not-onboarded-for-crm-connect",
+      "SectionPath": [
+        "Error response examples",
+        "3. Developer application not onboarded for CRM Connect"
+      ],
+      "Text": "Response: 401 Unauthorized",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Developer application not onboarded for CRM Connect",
+      "Anchor": "3-developer-application-not-onboarded-for-crm-connect",
+      "SectionPath": [
+        "Error response examples",
+        "3. Developer application not onboarded for CRM Connect"
+      ],
+      "Text": "Response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "3. Developer application not onboarded for CRM Connect",
+      "Anchor": "3-developer-application-not-onboarded-for-crm-connect",
+      "SectionPath": [
+        "Error response examples",
+        "3. Developer application not onboarded for CRM Connect"
+      ],
+      "Text": "{\n  \u0022message\u0022: \u0022Request failed because \u003Curn:li:developerApplication:230482493\u003E has not been onboarded as CRM for \u003Curn:li:company:107201551\u003E\u0022,\n  \u0022status\u0022: 401\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Developer application not onboarded for CRM Connect",
+      "Anchor": "3-developer-application-not-onboarded-for-crm-connect",
+      "SectionPath": [
+        "Error response examples",
+        "3. Developer application not onboarded for CRM Connect"
+      ],
+      "Text": "Action: Ensure the application is onboarded for CRM Connect for the specified integration context (company), or use an application that is onboarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Resource not found or request expired (example: Exported Candidates)",
+      "Anchor": "4-resource-not-found-or-request-expired-example-exported-candidates",
+      "SectionPath": [
+        "Error response examples",
+        "4. Resource not found or request expired (example: Exported Candidates)"
+      ],
+      "Text": "When: The requested resource does not exist or the request/export has expired. This example is for the Exported Candidates endpoint when the request ID is no longer valid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Resource not found or request expired (example: Exported Candidates)",
+      "Anchor": "4-resource-not-found-or-request-expired-example-exported-candidates",
+      "SectionPath": [
+        "Error response examples",
+        "4. Resource not found or request expired (example: Exported Candidates)"
+      ],
+      "Text": "Request (example):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "4. Resource not found or request expired (example: Exported Candidates)",
+      "Anchor": "4-resource-not-found-or-request-expired-example-exported-candidates",
+      "SectionPath": [
+        "Error response examples",
+        "4. Resource not found or request expired (example: Exported Candidates)"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/exportedCandidates?q=request\u0026requestId={{Request_ID_from_POST_callback}}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Resource not found or request expired (example: Exported Candidates)",
+      "Anchor": "4-resource-not-found-or-request-expired-example-exported-candidates",
+      "SectionPath": [
+        "Error response examples",
+        "4. Resource not found or request expired (example: Exported Candidates)"
+      ],
+      "Text": "Response: 404 Not Found",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Resource not found or request expired (example: Exported Candidates)",
+      "Anchor": "4-resource-not-found-or-request-expired-example-exported-candidates",
+      "SectionPath": [
+        "Error response examples",
+        "4. Resource not found or request expired (example: Exported Candidates)"
+      ],
+      "Text": "Response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "4. Resource not found or request expired (example: Exported Candidates)",
+      "Anchor": "4-resource-not-found-or-request-expired-example-exported-candidates",
+      "SectionPath": [
+        "Error response examples",
+        "4. Resource not found or request expired (example: Exported Candidates)"
+      ],
+      "Text": "{\n  \u0022message\u0022: \u0022Exported candidate request 79806ddd-9373-4a8f-b056-996cc9cdc8ff-12 expired at 1749644828280\u0022,\n  \u0022status\u0022: 404\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Internal server error",
+      "Anchor": "5-internal-server-error",
+      "SectionPath": [
+        "Error response examples",
+        "5. Internal server error"
+      ],
+      "Text": "When: LinkedIn\u0027s service encounters an internal error while processing the request (e.g. downstream failure). These are not caused by invalid request data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Internal server error",
+      "Anchor": "5-internal-server-error",
+      "SectionPath": [
+        "Error response examples",
+        "5. Internal server error"
+      ],
+      "Text": "Response: 500 Internal Server Error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Internal server error",
+      "Anchor": "5-internal-server-error",
+      "SectionPath": [
+        "Error response examples",
+        "5. Internal server error"
+      ],
+      "Text": "Response body (example):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "5. Internal server error",
+      "Anchor": "5-internal-server-error",
+      "SectionPath": [
+        "Error response examples",
+        "5. Internal server error"
+      ],
+      "Text": "{\n  \u0022status\u0022: 500,\n  \u0022code\u0022: \u0022SERVICE_INTERNAL_ERROR\u0022,\n  \u0022message\u0022: \u0022Error encountered when calling com.linkedin.r2.RemoteInvocationException: Failed to get response from server for URI https://[2a04:f545:42:d51a::c6a0]:19101/lts-external-api/resources/atsApplications\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Internal server error",
+      "Anchor": "5-internal-server-error",
+      "SectionPath": [
+        "Error response examples",
+        "5. Internal server error"
+      ],
+      "Text": "Action: Retry the request. If the error persists, report it to LinkedIn support and include the full response and the x-li-uuid header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Summary",
+      "Anchor": "summary",
+      "SectionPath": [
+        "Summary"
+      ],
+      "Text": "Log full request and response (including x-li-uuid) for every error.\nFor 200 responses with batch methods, treat any non-empty errors as a failure and log it.\nMask or remove tokens before sharing logs.\nUse the retry table above to decide when to retry.\nWhen contacting LinkedIn about an error, always provide the x-li-uuid value from the error response.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

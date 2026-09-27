@@ -1,0 +1,184 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-usecases",
+  "Title": "AWLI Supported Use Cases",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-usecases",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-v2-to-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Supported Use Cases",
+      "Anchor": "apply-with-linkedin-supported-use-cases",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases"
+      ],
+      "Text": "To ensure that the customers can view data on job seekers who are starting their application vs completing them regardless of how their Application Tracking System (ATS) is set up, we have the following two built-in modes for our plugin:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Supported Use Cases",
+      "Anchor": "apply-with-linkedin-supported-use-cases",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases"
+      ],
+      "Text": "BUTTON_DATA mode\nCONVERSION mode",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Supported Use Cases",
+      "Anchor": "apply-with-linkedin-supported-use-cases",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Supported Use Cases",
+      "Anchor": "apply-with-linkedin-supported-use-cases",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases"
+      ],
+      "Text": "We also support multiple page flows with few additional steps. Refer Version Comparision AWLI V2 to AWLI V3 for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Supported Use Cases",
+      "Anchor": "apply-with-linkedin-supported-use-cases",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases"
+      ],
+      "Text": "A job application submission experience can belong to the following flow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "One Page Flow",
+      "Anchor": "one-page-flow",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow"
+      ],
+      "Text": "Consists of a job overview page with enter information components, and finished application page as displayed below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "One Page Flow",
+      "Anchor": "one-page-flow",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow"
+      ],
+      "Text": "Render the Apply button on Job Overview pageUser clicks Apply With LinkedIn buttonUser hits submit and lands on finished application page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Render the Apply button on Job Overview page",
+      "Anchor": "step-1---render-the-apply-button-on-job-overview-page",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow",
+        "Step 1 - Render the Apply button on Job Overview page"
+      ],
+      "Text": "When you land on the Job Overview page, the Apply With LinkedIn plugin should be rendered with BUTTON_DATA mode. This makes the Apply with LinkedIn button visible on the page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 1 - Render the Apply button on Job Overview page",
+      "Anchor": "step-1---render-the-apply-button-on-job-overview-page",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow",
+        "Step 1 - Render the Apply button on Job Overview page"
+      ],
+      "Text": "\u003Cscript src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n     api_key: {API Key}\n     extensions: AwliWidget@https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3\n   \u003C/script\u003E\n    \u003Cscript type=\u0022IN/AwliWidget\u0022 \n    data-integration-context=\u0022urn:li:organization:{id}\u0022 \n    data-mode=\u0022BUTTON_DATA\u0022\n    data-callback-method=\u0022handleProfileData\u0022 \n    data-company-job-code=\u201D{Unique job code}\u201D\n    data-height=\u002250\u0022\u003E\u003C/script\u003E\n\u003Cscript\u003E\n    function handleProfileData(profileData) {\n        var firstnameField = document.getElementById(\u0027firstname\u0027);\n        var lastnameField = document.getElementById(\u0027lastname\u0027);\n        firstnameField.value = profileData.firstName;\n        lastnameField.value = profileData.lastName;\n    }\n    // prefill form with profile data\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Render the Apply button on Job Overview page",
+      "Anchor": "step-1---render-the-apply-button-on-job-overview-page",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow",
+        "Step 1 - Render the Apply button on Job Overview page"
+      ],
+      "Text": "When you click the Apply With LinkedIn button, LinkedIn tracks that the member has clicked Apply for that job. This tracking is done within the plugin and no explicit configurations are needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - User clicks Apply With LinkedIn button",
+      "Anchor": "step-2---user-clicks-apply-with-linkedin-button",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow",
+        "Step 2 - User clicks Apply With LinkedIn button"
+      ],
+      "Text": "When you click the Apply With LinkedIn button, an OAuth screen displays to request for the user consent. LinkedIn tracks that the member has started the application for the job and once the user gives consent, LinkedIn gets the member\u2019s profile data and pass it back to the client. The callback provided for plugin\u2019s data-callback-method parameter will be invoked where the profile data of the job seeker will be shared. This data can be persisted by career site platform and should be used to pre-populate the job application fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3 - User hits submit and lands on finished application page",
+      "Anchor": "step-3---user-hits-submit-and-lands-on-finished-application-page",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow",
+        "Step 3 - User hits submit and lands on finished application page"
+      ],
+      "Text": "When you land on the page designating that the application process is finished, LinkedIn tracks that the member has finished the application for the job. To add confirmation tracking, the plugin must be included on the confirmation page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3 - User hits submit and lands on finished application page",
+      "Anchor": "step-3---user-hits-submit-and-lands-on-finished-application-page",
+      "SectionPath": [
+        "Apply with LinkedIn Supported Use Cases",
+        "One Page Flow",
+        "Step 3 - User hits submit and lands on finished application page"
+      ],
+      "Text": "\u003Cscript src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n     api_key: {API Key}\n     extensions: AwliWidget @https://www.linkedin.com/talentwidgets/extensions/apply-with-linkedin-widget-v3\n   \u003C/script\u003E\n    \u003Cscript type=\u0022IN/AwliWidget\u0022 \n    data-integration-context=\u0022urn:li:organization:{id}\u0022 \n    data-mode=\u0022CONVERSION\u0022\n    data-company-job-code=\u201D{Unique job code}\u201D\u003E\n    \u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

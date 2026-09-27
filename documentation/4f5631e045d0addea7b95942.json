@@ -1,0 +1,879 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-api-migration-guide",
+  "Title": "Community Management API Migration",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Community Management API Migration",
+      "Anchor": "community-management-api-migration",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API Migration",
+      "Anchor": "community-management-api-migration",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "LinkedIn Marketing Solutions is releasing a new Community Management API product.\nThis migration guide facilitates the onboarding of community management developers to the new product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "Community Management API"
+      ],
+      "Text": "The Community Management API product allows developers to build products that enable organizations to manage their brand presence on LinkedIn and engage in conversation with their community.\nThe new product maintains support for the following features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "Community Management API"
+      ],
+      "Text": "Page Access management: APIs to find the organization\u2019s administrators, access control details by roles, and brands profiles. Permissions required is rw_organization_admin.\nContent management: APIs to manage the creation, modification, searching, and reading of rich content on behalf of organizations or brands. Content ranges from simple article posts to images Post, videos Post (including thumbnails and captions), Carousel posts, Polls, and creating comments and likes on a post. Permissions required is w_organization_social, r_organization_social, w_member_social.\nContent Analysis: APIs to analyze created content and associated social actions - number of comments, likes, and reactions - and to find statistics on the organization\u0027s followers, pages, and shares. Permissions required are w_organization_social, r_organization_social, w_member_social.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "Community Management API"
+      ],
+      "Text": "It also comes with an additional feature:\nAt mentions member: A new typeahead search API to find an organization\u0027s followers, so organization admins can mention members while creating posts. Member details can also be found through a vanity name lookup. For more information, see documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "Community Management API"
+      ],
+      "Text": "This migration guide, will provide you with information on the following",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management API",
+      "Anchor": "community-management-api",
+      "SectionPath": [
+        "Community Management API"
+      ],
+      "Text": "Requesting access to the Community Management API. See here.\nOnboarding for developers with an existing app with Marketing Developer Platform (MDP) product access. See here.\nNew Permissions for Community Management API. See here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisite",
+      "Anchor": "prerequisite",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "Prerequisite"
+      ],
+      "Text": "Company Page Verification: Company page verification is one of the prerequisites for a developer application applying for access to a product. Use the same company page if you have an existing developer app with access to the Marketing Developer Platform \u201CMDP\u201D product and want to apply for access to the new Community Management API.\n\nBe part of the beta program: The initial launch is only for targeted developers as a beta phase. Apply to the new program upon receiving the email invite as part of the beta launch by December 2022. All the remaining developers will receive invitations as a GA announcement email in January 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Apply",
+      "Anchor": "how-to-apply",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "How to Apply"
+      ],
+      "Text": "Log on to \u201Cdeveloper.linkedin.com\u201D with your account.\nCreate a new developer application.\nNavigate to the \u201CProducts\u201D link under your App name.\nFrom the list of \u201CAdditional available products,\u201D choose \u201CRequest Access\u201D for the Community Management API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Provisioning Stages",
+      "Anchor": "product-provisioning-stages",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "How to Apply",
+        "Product Provisioning Stages"
+      ],
+      "Text": "Development tier: This is the default tier provisioned. Developers are expected to build core business use cases, using the provided permissions and APIs, within twelve (12) months of the provisioning. The development tier restricts how API calls can be performed, as shown in the table below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Product Provisioning Stages",
+      "Anchor": "product-provisioning-stages",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "How to Apply",
+        "Product Provisioning Stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "APIs",
+        "API Restrictions",
+        "Duration"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "All APIs in All permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500 API calls for an app for 24 hrs. 100 API calls per member of an App for 24 hrs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "During the Development Tier or 12 months max",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "All APIs with Method as BATCH_GET in All permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No API calls with BATCH_GET method allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "During the Development Tier or 12 months max",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Webhooks for Social Actions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Push notifications for Social Actions disabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "During the Development Tier or 12 months max",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Provisioning Stages",
+      "Anchor": "product-provisioning-stages",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "How to Apply",
+        "Product Provisioning Stages"
+      ],
+      "Text": "Standard tier: This is the full-featured capability of the program. The APIs have no restrictions to invoke, and all the features are enabled. The tier is provisioned only after approval via the vetting process explained below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before Submitting the Access Request",
+      "Anchor": "before-submitting-the-access-request",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "Before Submitting the Access Request"
+      ],
+      "Text": "Read the LinkedIn Marketing API Terms and developer documentation.\nReview our API and data restrictions to ensure your use case is supported, and your application won\u0027t be rejected due to a restricted use case.\nNote: At this time, our Community Management APIs are only available to registered legal organizations for commercial use cases only.\nBe prepared to share your business email address and your organization\u2019s legal name, registered address, website, and privacy policy. Your business email address will have to be verified. If you don\u2019t receive the verification email, be sure to check your email\u0027s spam folder, junk folder, social tab, and promotional tab. Personal email addresses won\u0027t pass the vetting process.\nEnsure a super admin of the LinkedIn Page associated with your organization has verified your application.\nEnsure that your application doesn\u0027t include any portion of the LinkedIn or Microsoft names or logos (e.g. Linked or In).\nEnsure that you have filled out all required fields in the access request form for development tier accurately and completely.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for Standard tier upgrade only",
+      "Anchor": "requirements-for-standard-tier-upgrade-only",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "Requirements for Standard tier upgrade only"
+      ],
+      "Text": "Make sure your application has been approved for the development tier and you have fully integrated the Community Management APIs into your application. Subsequent changes to your application\u0027s functionality after your application has been reviewed by LinkedIn may require re-review.\n\nPrepare to provide test credentials, if requested, for our reviewers to review your application.\n\nPrepare a screen recording/screencast of your application that includes the following:\n\nDemonstrate an application user approving access to their LinkedIn data via the complete OAuth flow.\nDemonstrate all core functionality that uses data associated with LinkedIn members*, including (if applicable):\n\nDemonstrate a user posting to LinkedIn.\nDemonstrate how engagement on posts (e.g. comments, reactions) is displayed to users (including aggregate data and member-level* interactions).\n\n\nIf member-level* engagement on posts (e.g. comments, reactions) is displayed to users, demonstrate how users can interact with the comments or reactions, including what personal data fields from members\u2019* LinkedIn profiles are displayed to users.\nLimit length of screencast to under 5 min.\nEnsure the screen recording is high resolution and downloadable.\nLimit your screencast to just the screens associated with your application (i.e. close all other windows and applications before recording).\n\n\nA member is an individual that has registered and joined the LinkedIn Network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for Standard tier upgrade only",
+      "Anchor": "requirements-for-standard-tier-upgrade-only",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "Requirements for Standard tier upgrade only"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for Standard tier upgrade only",
+      "Anchor": "requirements-for-standard-tier-upgrade-only",
+      "SectionPath": [
+        "Apply to the Community Management API",
+        "Requirements for Standard tier upgrade only"
+      ],
+      "Text": "Any failure to complete the above tasks may result in your access request being rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "Once you have created your application and submitted the access request form, your access request form will be reviewed by LinkedIn for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "Approved use case\nVerified business email address.\nVerified organization\nVerified organization website and domain address\nApplication verified by LinkedIn Page associated with same organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "If your application is reviewed and approved, you\u0027ll get the access to Community Management Development tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "If your application is rejected, review the qualifications, create a new app, and submit a new Development tier access request form. You won\u0027t be able to re-apply for Development tier access with your existing app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "Once you meet the above requirements for access to the Development tier, you\u0027ll find a Standard tier access request form in the Developer Portal under My Apps \u003E Products. To get access to Standard tier, you\u0027ll be required to complete this access request form and submit a screen recording of your app. Your application and access request form will be reviewed for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "Approved use case\nValid privacy policy.\nCompliance with our terms, restrictions, security guidelines, and data storage requirements.\nScreen recording that accurately demonstrates all core functionality as outlined above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "If you\u0027re approved for Standard tier and would like to apply your Standard tier access to a different app, you\u0027ll need to complete another Standard tier access form for the app and in the form indicate you have an existing app with Standard tier access. You will be prompted to provide the client ID for the approved Standard tier app. This will expedite the review process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "If your application is rejected, review the qualifications, create a new app, and submit a new Development tier access form. You won\u0027t be able to re-apply for Standard tier access with your existing app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "Even if LinkedIn approves your integration, you\u0027re solely responsible for ensuring that your integration (including all use, disclosure, and storage of LinkedIn data) is, at all times, in compliance with:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "The LinkedIn Marketing API Terms and the Linkedin developer documentation.\nAll other requirements or restrictions that LinkedIn separately communicates to you (e.g. during or after the vetting process). LinkedIn retains the right to monitor your application and suspend or discontinue access to the Community Management APIs for any non-compliance with the LinkedIn Marketing API Terms, even if your application was previously approved by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "If you have additional questions or concerns, please reach out via a support ticket.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+      "Anchor": "onboarding-of-developers-with-access-to-the-marketing-developer-platform-mdp-product",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product"
+      ],
+      "Text": "If you already have an app with development or standard tier access to the Marketing Developer Platform product, you\u2019re still required to create a new app to access the Community Management API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+      "Anchor": "onboarding-of-developers-with-access-to-the-marketing-developer-platform-mdp-product",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product"
+      ],
+      "Text": "The steps are the same regardless of your access tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developers with MDP Development or Standard Tier Access",
+      "Anchor": "developers-with-mdp-development-or-standard-tier-access",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Developers with MDP Development or Standard Tier Access"
+      ],
+      "Text": "Note down the company page you\u2019ve already verified for the Marketing Developer Platform App.\nCreate a new developer application.\n\nLog on to developer.linkedin.com.\nCreate a new developer Application.\nNote: Note down the \u201Cclient id\u201D of the new app\n\n\nUse the same company page noted above to verify the new application.\nRequest access to the Community Management API.\n\nFollow the previously defined steps to get the Development tier.\nApply to the Development tier and obtain the approval.\n\n\nRequest an upgrade to the Standard tier- Click on the \u201CUpgrade options\u201D for the Standard tier, and in the access form, provide:\n\nA recorded video of the existing products/services you have developed using your existing Marketing Developer Platform App.\nTest credentials of the existing products/services you have developed using your existing Marketing Developer Platform App (and the Community Management APIs).\nNote: Proceed to the next step only after you\u2019ve obtained the upgrade to Standard tier,\n\n\nNavigate to your Marketing Developer Platform developer application and perform the following steps:\n\nLog on to developer.linkedin.com.\nNavigate to the \u201CProducts\u201D Tab.\nRequest access to the Community Management API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developers with MDP Development or Standard Tier Access",
+      "Anchor": "developers-with-mdp-development-or-standard-tier-access",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Developers with MDP Development or Standard Tier Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developers with MDP Development or Standard Tier Access",
+      "Anchor": "developers-with-mdp-development-or-standard-tier-access",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Developers with MDP Development or Standard Tier Access"
+      ],
+      "Text": "You should be presented with the option to upgrade to Standard tier on the Community Management API as both apps are associated with the same company page\n4. Fill out the \u201CStandard tier\u201D access form for the Community Management API.\n5. In the access form, enter the \u201Cclient id\u201D of the new app created.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developers with MDP Development or Standard Tier Access",
+      "Anchor": "developers-with-mdp-development-or-standard-tier-access",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Developers with MDP Development or Standard Tier Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developers with MDP Development or Standard Tier Access",
+      "Anchor": "developers-with-mdp-development-or-standard-tier-access",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Developers with MDP Development or Standard Tier Access"
+      ],
+      "Text": "If your use case for the Community Management product remains the same for both applications, the rest of the access form questionnaire will be skipped.\n6. Submit the \u201CStandard tier\u201D access form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developers with MDP Development or Standard Tier Access",
+      "Anchor": "developers-with-mdp-development-or-standard-tier-access",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Developers with MDP Development or Standard Tier Access"
+      ],
+      "Text": "Note: Subject to our approval of your access form, your Marketing Developer Platform App will soon have the \u201CStandard tier\u201D for the Community Management API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions for Community Management API",
+      "Anchor": "permissions-for-community-management-api",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Permissions for Community Management API"
+      ],
+      "Text": "With the launch of the Community Management API, we\u2019re introducing the following new permissions to better align with the business use cases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Permissions",
+      "Anchor": "organization-permissions",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Permissions for Community Management API",
+        "Organization Permissions"
+      ],
+      "Text": "r_organization_social_feed: Corresponding MDP Permission: r_organization_social\n\n/reactions- GET, BATCH_GET, and FINDER Methods\n/socialActions- GET and BATCH_GET Methods\n/socialActions/comments- GET, GET_ALL, and BATCH_GET Methods\n/socialActions/likes- GET and BATCH_GET Methods\n/socialMetadata- GET and BATCH_GET Methods\n\n\nw_organization_social_feed: Corresponding MDP Permission: w_organization_social\n\n/reactions- CREATE, DELETE, and PARTIAL_UPDATE Methods\n/socialActions/comments- CREATE and DELETE Methods\n/socialActions/likes- CREATE and DELETE Methods\n/socialMetadata- PARTIAL_UPDATE Method",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Permissions",
+      "Anchor": "member-permissions",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Permissions for Community Management API",
+        "Member Permissions"
+      ],
+      "Text": "w_member_social_feed: Corresponding MDP Permission: w_member_social\n\n/reactions- CREATE, DELETE, and PARTIAL_UPDATE Methods\n/socialActions/comments- CREATE and DELETE Methods\n/socialActions/likes- CREATE and DELETE Methods\n/socialMetadata- PARTIAL_UPDATE Method",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Permissions",
+      "Anchor": "member-permissions",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Permissions for Community Management API",
+        "Member Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "APIs",
+        "Old Permission Name",
+        "New Permission Name",
+        "Deprecation Date"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/reactions /socialActions/comments /socialActions/likes /socialMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 2023",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/reactions /socialActions/comments /socialActions/likes /socialMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 2023",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/reactions /socialActions/comments /socialActions/likes /socialMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "June 2023",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Access to Member Feed Management Program",
+      "Anchor": "access-to-member-feed-management-program",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Access to Member Feed Management Program"
+      ],
+      "Text": "NOTE: Developer applications that have access to Member Feed Management APIs (r_member_social) must be approved for Standard tier access to Community Management APIs to retain access to those API products.\nTo continue access to the APIs, you should take the following steps to complete the vetting process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access to Member Feed Management Program",
+      "Anchor": "access-to-member-feed-management-program",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Access to Member Feed Management Program"
+      ],
+      "Text": "Complete the steps described above to apply to the new Community Management API.\nComplete the application and vetting process for Development and Standard tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access to Member Feed Management Program",
+      "Anchor": "access-to-member-feed-management-program",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Access to Member Feed Management Program"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access to Member Feed Management Program",
+      "Anchor": "access-to-member-feed-management-program",
+      "SectionPath": [
+        "Onboarding Of Developers with Access to the Marketing Developer Platform \u201CMDP\u201D Product",
+        "Access to Member Feed Management Program"
+      ],
+      "Text": "Deprecation Date: Partners should complete the vetting process by June 2023. Failure to do so will result in removal of the Member Feed Management API product from your developer application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: Can you summarize the steps to gain access to the new Community Management API if I already have access to the Ads API?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: Follow the below steps if you have received an email to join the program:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Create a new developer application with the same company page as the Ads API.\nApply for Community Management API Development Tier access.\nUpon approval, complete the Standard Tier access request form and submit a screen recording of your app to be upgraded to Standard Tier.\nOnce approved, request Community Management API Standard Tier access, on your Ads API developer application. Enter the application ID of your new developer application in the access form to skip most of the questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: What do I do with my newly created developer application if my existing Ads API application now has the Community Management API product?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: The newly created developer application was used for verification purposes only and can be discarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: Why is the option to request access to the Community Management API product grayed out?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: Only request Community Management API Development Tier access with a new developer application that doesn\u0027t have access to any other API product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: Can the Community Management API product be added to an existing app?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: Yes, follow the steps from FAQ (1)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: If I have an integration with the Community Management API and the Ads API, will those need two separate apps going forward?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: No. As long as both applications have been verified with the same company page, both products can exist on the same developer application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: I have created a new developer application but can\u0027t see the Community Management API product",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: The Community Management API is currently only available to select developers. We update our docs when it\u0027s made available to all developers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: Can I apply for access to the Community Management API but not do the permissions migration?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: Defer the permissions migration after attaining Standard Tier access. But LinkedIn strongly recommends starting the permissions migration soon as we\u0027ll sunset sensitive APIs from the existing permissions by June 2023.**",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: Do I have to re-auth all my LinkedIn accounts when permission are migrated?\nA.: Yes. After the mandatory permission migration is completed, your develoepr application will need to perform OAuth token request again with the new set of permissions in the scope. This make all the LinkedIn accounts to be authenticated again.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "Q.: By when do I have to migrate the permissions?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions (FAQ)",
+      "Anchor": "frequently-asked-questions-faq",
+      "SectionPath": [
+        "Frequently Asked Questions (FAQ)"
+      ],
+      "Text": "A.: You are strongly encouraged to complete the permissions migration before the end of June 2023",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

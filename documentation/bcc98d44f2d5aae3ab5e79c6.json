@@ -1,0 +1,228 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-overview",
+  "Title": "Audience Insights - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Audience Insights API empowers marketers to discover, analyze, and understand their target audiences using LinkedIn\u2019s rich professional data. By providing detailed insights into audience demographics, job titles, skills, locations, and behaviors, the API helps define precise audience segments and optimize content and media strategies. Marketers can answer key questions about their audiences\u2014such as where they work, what skills they have, and how they compare to other segments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "With these insights, marketers can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "Push discovered audiences to Campaign Manager to streamline workflows.\nTarget audiences based on specific campaign objectives (e.g., reach, frequency, demand generation).\nPersonalize messaging for greater relevance and impact.\nSupport go-to-market strategies with audience-first and account-based marketing (ABM) approaches.\nMitigate the impact of third-party data loss by leveraging LinkedIn\u2019s professional demographic, firmographic, behavioral, and engagement data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "This enables more effective:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights - Overview",
+      "Anchor": "audience-insights---overview",
+      "SectionPath": [],
+      "Text": "Audience discovery\nAudience activation\nAudience and content planning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "API product",
+        "Availability",
+        "How to Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Audience Insights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to qualified developers who meet additional criteria for access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Submit a request through application survey. Note: You must also have access to the Advertising API to access the Audience Insights API.",
+            "Links": [
+              "https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR5fbjjE-clZOgMCGtRk-dO5UMDlUN1k3RVpNTTdIT1RENElOWDVEOFNZVi4u\u0026route=shorturl"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Note\nApplications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data. To know more about the OAuth flows, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u2019s Marketing API Program supports versioning so API partners can release changes over time. This document explains how to use versioned APIs, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "How to generate a token for Audience Insights API use?.\nAudience Insights API requires a 3-legged OAuth member token, and your developer application needs to be provisioned with the Audience Insights API product. Once you have been approved to access, you can use any valid member access token associated with the authenticated user with any valid scope permissions for member authentication. If there\u0027s no valid member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like r_ads which will be required to fetch authenticated user\u0027s ad accounts. This API is application-specific; hence, explicit member consent is not required. Any valid member access token associated with the authenticated user can be used, and you don\u0027t need to add any additional permission in the scope of your OAuth2 flow for authorization.\n\nWho\u2019s eligible to access the Audience Insights API:\nB2B marketing technology companies that are audience focused and support audience discovery, planning, activation, or campaign creation partners, or data platforms that aggregate and analyse audience interests and behavior to provide insights for campaign strategy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "You are encouraged to apply if you meet the eligibility criteria and the following qualifications (although access remains subject to LinkedIn\u2019s approval and any other program requirements):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "You have a B2B marketing company with an established use case for the API.\nYou have access to LinkedIn Advertising APIs. If you\u0027re new to our APIs, get started by applying for Advertising API access.\nYou agree to comply with the LinkedIn Marketing API Program Terms of Use.\nDemonstrate your data management practices, where applicable.\nDemonstrate Engineering readiness and the ability to complete integration with Media Planning API in a reasonable time frame.\nYou are able to dedicate go-to-market resources to launch your solution to customers.\nYou plan to join the LinkedIn Marketing Partner Program by completing the certification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Complete the application surveyto the best of your ability. You will receive a response from the LinkedIn team with the status of your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Why do we see only 5 segments in the response?.\nBy default only the top five results appear in the breakdown in response. But up to 100 segments can be returned. Include \u0022maxReturnCount\u0022: 100 in your request body.\n\nIs it possible to fetch insights on specific matched audience company/contact lists?.\nYes, you can first fetch matched audience\u2019s ad segment destinations from GET /adSegmentsV2 that\u0027s accessible from MDP permissions r_ads and rw_ads, parse its response to get ids and then pass the adSegment URN in urn:li:adTargetingFacet:audienceMatchingSegments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "If you are an API partner integrating with the Audience Insights API, please review the Integration Requirements to understand the capabilities you need to build and demonstrate during the Technical Sign Off process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources can help you stay on top of new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Check out the Recent Changes page to see the latest API releases.\nCheck out the Developer Portal to know more about our API products.\nUse the Migrations page to stay on top of breaking changes.\nNeed help? Reach out to Developer Support by submitting a support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

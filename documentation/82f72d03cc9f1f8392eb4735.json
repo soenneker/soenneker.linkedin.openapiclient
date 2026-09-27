@@ -1,0 +1,877 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+  "Title": "Integration Requirements for the Lead Sync API Program",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "To become a formal Certified API Partner, LinkedIn has a technical sign off process for the Lead Sync API program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "A Demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn may suggest modifications which will need to be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for the Lead Sync API Program",
+      "Anchor": "integration-requirements-for-the-lead-sync-api-program",
+      "SectionPath": [],
+      "Text": "Joint Go-To-Market efforts can only begin after receiving the tech sign off.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo",
+        "Demo Type",
+        "Expectations"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration, with right scopes, consent screen",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide the list of scopes. We want to see the flow with the consent screen via a live demo",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please let us know which API is used and at what frequency (as a heartbeat) OR which API call happens on a regular basis (daily or more), that can act as a heartbeat and detect token expiry",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide an explanation of your OAuth flow. Do you use any standard OAuth libraries? Do you have a custom library for LinkedIn?",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrigger OAuth Flow in case token has expired or been invalidated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If both access and refresh tokens have expired or have been revoked by LinkedIn or the user, we expect you to fallback to retriggering the entire authorization code flow",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use refresh tokens to mint new access tokens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide an explanation of your OAuth flow",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and retrigger OAuth Flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If both access and refresh tokens have expired or have been revoked by LinkedIn or the user, we expect you to fallback to retriggering the entire authorization code flow",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to check user access and permissions to start receiving leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation \u0026 demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Demo a user who doesn\u0027t have sufficient permissions on the Company Page- Explain your permission/role check logic- We expect you to check if a member has sufficient privileges on the Sponsored Account and Company Page to sync leads",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Core",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to:Retrieve all Sponsored Accounts with status for the authenticated userRetrieve all Organizations the authenticated user is an administrator of",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "We expect Sponsored Ad Account numbers to be shown. Your integration should be able to support a user that manages more than one ad account and/or organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all forms available per sponsored account and organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to automatically read all predefined fields (predefinedField) of a form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all custom questions (and options) of a form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all Hidden Fields of a form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all Consent texts of a form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create datastore/tables as required for a lead form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "code screenshot \u0026 explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show how Leads are stored. The goal is to ensure fields are not hard-coded with a static list of fields and can be configured depending on the list of fields available on different forms. Addition of new fields or new types of fields shouldn\u0027t be a breaking change for partner implementations",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-108",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to fetch all leads across all available leadTypes and store them in the data store",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For push or pull method, we suggest an automatic pull of past 365 days leads upon integration creation. LinkedIn stores lead data for 365 days",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-109",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate an end-to-end test, when a lead flows from Campaign Manager UI and a Company Page all the way to data store",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-110",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to teardown/delete integration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo and API logs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When an integration is deleted via your UI any associated webhooks should deleted as well",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-111",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate a single field failure doesn\u0027t block the lead syncing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-112",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate a single lead failure won\u0027t break syncing of other leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-113",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate mappings are based on predefined field (predefinedField) values when available (Custom questions don\u0027t have a predefinedField field)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-114",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use metadata fields while syncing in addition to the form fields (Form id, campaign id, account id, creative id, campaign name, account name, form name, event name, organization name, etc.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Push implementation (best practice with pull backup)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to recover from outages, missed PUSH notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In the rare case where leads can\u0027t be pulled in either due to a LinkedIn or Partner issue, we recommend pulling all leads periodically, for example, every 24 hours",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create/register and update webhooks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo \u0026 API logs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Allow users to register for webhooks at the Sponsored account and Organization level",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advanced Push implementation - nice to have but not required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[optional] Demonstrate ability to register and listen for webhooks at the associatedEntity or form level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo \u0026 API logs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pull implementation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-301",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[optional] Demonstrate ability to recover from outages using a time-bound PULL request to get missed leads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In the rare case where leads can\u0027t be pulled in either due to a LinkedIn or Partner issue, we recommend pulling all leads periodically, for example, every 24 hours",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-302",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[optional] Demonstrate ability to re-pull leads periodically",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "explanation \u0026 API logs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pull form responses on a fixed time period",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advanced Pull implementation - nice to have but not required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LGF-303",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[optional] Demonstrate ability to configure the intervals between PULL requests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "demo \u0026 API logs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Allow users to configure frequency of pulling leads",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Demo Scenarios",
+      "Anchor": "demo-scenarios",
+      "SectionPath": [
+        "Demo Scenarios"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rules Section",
+        "Demo Scenarios"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Your application should be able to detect whether or not an access token has expired (TTL 60 days) or has been invalidated/revoked. You should be using an API call has a heartbeat to check for this every 24 hours (proactively catch issues for your users) - Expired \u2192 use refresh token to mint a new access token - Invalidated/revoked \u2192 Allow the user retrigger oauth flow and notify user in some way Tech sign off Demo: login to your platform and authenticate. Then go to linkedin.com \u003E me \u003E Settings \u0026 Privacy \u003E Data Privacy \u003E Permitted Services \u003E Remove your app. Go back to your platform - what\u0027s the experience for the user? 2. Your application should be able to detect when a refresh token has expired (TTL is 365 days)- Expired \u2192 Allow the user retrigger oauth flow- Best practice \u2192 proactively notify the user that their token will be expiring in x number of days and they should reauthenticate to avoid any issues. Notification could be via email, in app, manual reach out, etc. Tech sign off Demo: Explanation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Core",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "What happens if the authenticated user doesn\u2019t have access to any ad accounts or company pages (organization)? What does the UI experience look like? - Suggestion: display a message stating: \u201CIt looks like you don\u2019t have access to any Ad Accounts/Organizations. Reach out to an Admin on your team to grant access. \u003CSteps to do on your platform once they\u0027re granted access\u003E.\u201D Tech sign off Demo: How can you demo this? Only the ad accounts and organizations the authenticated user has access to will be returned via the API. To simulate this, for all of the ad accounts and company pages you have access to, have an account manager remove you OR create a test profile and authenticate as this user on your platform (see section 2.3 of API terms of use)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Push \u0026 Pull Implementation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How do you handle this scenario: What happens if the authenticated member that set up the lead syncing leaves the company and either a goes to their linkedin profile and revokes or apps access OR b their access is revoked from all ad accounts and or company pages. In both scenarios, the API calls will fail. Suggestion: - Your API calls should have a back off mechanism implemented so your app doesn\u0027t indefinitely call the LinkedIn APIs. - An error message should be displayed in the UI indicating what the issue is based off of the error message returned from the API. - In the case where the original authenticated user is no longer able to re-authenticate, your platform should provide the ability for a different user to authenticate and take over the scheduled syncs. How can you test this? Revoke access via linkedin.com or remove access to ad accounts an company pages for your testing authenticated user",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

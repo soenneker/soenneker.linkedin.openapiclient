@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A brief description of the child application. This value is only used by LinkedIn administration and is not shown to end-users of the application.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the child application. This value will be shown to users in the OAuth 2.0 authorization dialog for 3-legged scenarios. Additionally, it will be used by LinkedIn as a reference value. Note: Usage of &quot;LinkedIn&quot; in name is no supported.Documented type: String (max 50 chars) Format: &quot;{ATS Name} - {Customer Name}&quot;Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The oauth2AuthorizedCallbackUrls property</summary>
+        /// <summary>List of fully qualified OAuth 2.0 redirect URLs to allow.Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Oauth2AuthorizedCallbackUrls { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> Oauth2AuthorizedCallbackUrls { get; set; }
 #endif
-        /// <summary>The uniqueForeignId property</summary>
+        /// <summary>A unique ID that represents the child application being created, as seen from the parent/calling application. This value must be unique across all child applications that belong to the parent application. Attempting to create more than one child with the same uniqueForeignId value will result in a conflict error. Use your customer identifier for this value.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UniqueForeignId { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string UniqueForeignId { get; set; }
 #endif
-        /// <summary>The validJsSdkDomains property</summary>
+        /// <summary>List of fully qualified JavaScript SDK domain names.Documented type: String[]Requirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ValidJsSdkDomains { get; set; }

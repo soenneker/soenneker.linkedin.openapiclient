@@ -1,0 +1,1547 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+  "Title": "RSC Release Notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recommended-matches",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/prospect-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-receive-push-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/unified-search",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "RSC Release Notes",
+      "Anchor": "rsc-release-notes",
+      "SectionPath": [],
+      "Text": "This page documents all RSC API changes by version, plus documentation updates that don\u0027t map to a specific API version. Each version section uses the same sub-heading pattern (New fields, New endpoints, Renamed resources, Data Deletion, Documentation updates, Version summary) so changes are easy to scan.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick reference",
+      "Anchor": "quick-reference",
+      "SectionPath": [
+        "Quick reference"
+      ],
+      "Text": "This section covers all new and migrated RSC APIs from version 202507 through 202604. For migration deadlines, refer to the migration timeline. Expand each section below to view the details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick reference",
+      "Anchor": "quick-reference",
+      "SectionPath": [
+        "Quick reference"
+      ],
+      "Text": "RSC currently supports the following new versioned REST APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Quick reference",
+      "Anchor": "quick-reference",
+      "SectionPath": [
+        "Quick reference"
+      ],
+      "Text": "",
+      "Headers": [
+        "Summary",
+        "Resource",
+        "Methods",
+        "Documentation"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync resumes as attachments for applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upload and sync attachments",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/upload-sync-documents?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Retrieve application evaluations generated by LinkedIn Hiring Assistant (LiHA)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "exportedApplicationEvaluations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exported application evaluation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick reference",
+      "Anchor": "quick-reference",
+      "SectionPath": [
+        "Quick reference"
+      ],
+      "Text": "The following endpoints have been migrated from the unversioned v2 API to the versioned rest API. The table lists the unversioned and versioned endpoint paths, supported methods, field-level changes required for migration, and references to learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Quick reference",
+      "Anchor": "quick-reference",
+      "SectionPath": [
+        "Quick reference"
+      ],
+      "Text": "",
+      "Headers": [
+        "Summary",
+        "Unversioned endpoint",
+        "Versioned endpoint",
+        "Methods",
+        "Changes",
+        "Documentation"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync and manage applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Resource path changed from rest/atsApplications in 202603 to rest/applications in 202604",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync ApplicationsDelete Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync and manage ATS candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_get, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsCandidateId \u2192 externalCandidateId\u2022 atsCreatedAt \u2192 externalCreatedAt\u2022 atsLastModifiedAt \u2192 externalLastModifiedAt\u2022 dataProvider removed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manage ATS integration instances",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsIntegrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/integrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_partial_update, batch_get, finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 dataProvider removed from entity keys",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration types",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manage integration configuration settings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsIntegrationConfigurations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/integrationConfigurations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_get",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 dataProvider removed from entity keys",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer configuration",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Retrieve recruiter seat and contract information",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/seatsV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/seatsV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 id \u2192 seatId\u2022 created.time \u2192 createdAt.actor \u002B createdAt.time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter seatholders",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync notes for ATS candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsCandidates/{id}/notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/candidateNotes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsCandidateId \u2192 externalCandidateId\u2022 ids \u2192 externalNoteId\u2022 atsCreatedAt \u2192 externalCreatedAt\u2022 externalLastModifiedAt added\u2022 dataProvider removed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync candidate notes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidate-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync notes for ATS applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsApplications/{id}/notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/applicationNotes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsJobApplicationId \u2192 externalJobApplicationId\u2022 ids \u2192 externalNoteId\u2022 dataProvider removed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync application notes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manage entity access control lists",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsEntityAcls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/entityAcls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete, finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsEntityAclId \u2192 entityAclId\u2022 atsEntityId \u2192 entityId\u2022 atsEntityType \u2192 entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync ACLs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Manage entity ACL assignees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsEntityAclAssignees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/entityAclAssignees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete, finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsEntityAclId \u2192 entityAclId\u2022 atsEntityId \u2192 entityId\u2022 atsEntityType \u2192 entityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync ACLs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Retrieve InMail stub profiles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/mailStubs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/mailStubs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 location type changed from string to profileLocation object (locationName, countryCode)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "InMail stub profiles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync application interview feedback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsApplications/{id}/interviewFeedback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/applicationInterviewFeedbacks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsJobApplicationId \u2192 jobApplicationId\u2022 interviewFeedbackId added as key param\u2022 dataProvider removed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync application interview feedback",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-interview-feedback?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync application stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/atsApplications/{id}/stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/applicationStage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_update, batch_delete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 atsJobApplicationId \u2192 jobApplicationId\u2022 atsCreatedAt \u2192 externalCreatedAt\u2022 externalLastModifiedAt added\u2022 dataProvider removed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync application stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Retrieve exported candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "v2/exportedCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "rest/exportedCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "finder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 externalJobPostingId removed\u2022 referenceEntityType added\u2022 referenceEntityId added\u2022 source added",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve exported candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202604 (latest)",
+      "Anchor": "version-202604-latest",
+      "SectionPath": [
+        "Version 202604 (latest)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202604 (latest)",
+      "Anchor": "version-202604-latest",
+      "SectionPath": [
+        "Version 202604 (latest)"
+      ],
+      "Text": "Use LinkedIn-Version: 202604 in your API requests to access the most recent features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applications resource renamed",
+      "Anchor": "applications-resource-renamed",
+      "SectionPath": [
+        "Version 202604 (latest)",
+        "Applications resource renamed"
+      ],
+      "Text": "atsApplications renamed to applications:\n\nResource path changed from rest/atsApplications to rest/applications.\nSupported methods: batch_update and batch_delete.\nFor sync request examples, refer to Sync Applications.\nFor delete request examples, refer to Delete Applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program updates",
+      "Anchor": "program-updates",
+      "SectionPath": [
+        "Version 202603",
+        "Program updates"
+      ],
+      "Text": "Recommended Matches and Unified Search sunset timeline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program updates",
+      "Anchor": "program-updates",
+      "SectionPath": [
+        "Version 202603",
+        "Program updates"
+      ],
+      "Text": "Starting December 2025, support for these widgets will end for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program updates",
+      "Anchor": "program-updates",
+      "SectionPath": [
+        "Version 202603",
+        "Program updates"
+      ],
+      "Text": "New RSC partners.\nExisting RSC partners when they move to the versioned Job Requisitions APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Program updates",
+      "Anchor": "program-updates",
+      "SectionPath": [
+        "Version 202603",
+        "Program updates"
+      ],
+      "Text": "Because some components of these widgets depend on the unversioned Job Postings API, both widgets will be sunset in line with the unversioned API sunset date of July 31, 2028.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New fields",
+      "Anchor": "new-fields",
+      "SectionPath": [
+        "Version 202603",
+        "New fields"
+      ],
+      "Text": "vanityIdentifier added to jobRequisitions (LinkedIn-Version: 202603):\n\nNew optional field that provides a human-readable, customer-facing identifier for a job requisition (for example, Req ID). This is distinct from the canonical externalJobRequisitionId used internally.\n\nExpand table\n\n\nField\nType\nRequired\nDescription\n\n\n\n\nvanityIdentifier\nString\nOptional\nCustomer-facing display identifier for the job requisition (for example, Req ID).\n\n\n\nSee Sync Job Requisitions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation updates",
+      "Anchor": "documentation-updates",
+      "SectionPath": [
+        "Version 202603",
+        "Documentation updates"
+      ],
+      "Text": "Upload and Sync Attachments throttle limits: Updated the throttle limit for v2/hireMediaUrl at 1,000,000 requests per day.\nSee Upload and Sync Attachments\n\nUpload and Sync Attachments: Added DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) as a supported content type for resume upload.\nSee Upload and Sync Attachments\n\nRSC 1.0 and RSC\u002B overview updates:\n\nAdded RSC 1.0 vs RSC\u002B feature comparison table and Connected Projects section.\nAdded note that existing RSC partners need an amended API agreement to enable RSC\u002B features.\n\nSee RSC Overview\n\nRSC data quality requirements: Added new page documenting data quality thresholds that partners must meet before RSC certification and GA. Covers applicant evaluation, sourcing and intake, and ACL completeness metrics.\nSee RSC data quality requirements\n\nRemoved Recommended Matches and Unified Search from API docs: All references to Recommended Matches and Unified Search are removed from Recruiter System Connect documentation. The dedicated pages, TOC entries, integration types table rows, and widget URL migration guide entries for these features are no longer available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Version summary",
+      "Anchor": "version-summary",
+      "SectionPath": [
+        "Version 202603",
+        "Version summary"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version Header",
+        "Base Path",
+        "Changes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "202603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202602",
+      "Anchor": "version-202602",
+      "SectionPath": [
+        "Version 202602"
+      ],
+      "Text": "candidates renamed:\n\ndataProvider removed\nSupported methods: batch_update, batch_get, batch_delete\nResource renamed from atsCandidates to candidates; three fields renamed:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsCandidates\nrest/candidates\n\n\nKey param\natsCandidateId\nexternalCandidateId\n\n\nBody field\natsCreatedAt\nexternalCreatedAt\n\n\nBody field\natsLastModifiedAt\nexternalLastModifiedAt\n\n\nKey param\ndataProvider\nRemoved\n\n\n\n\nintegrations and integrationConfigurations renamed:\n\nNo field changes\nintegrations supported methods: batch_partial_update, batch_get, finder\nintegrationConfigurations supported methods: batch_update, batch_get\nResource names updated:\n\nExpand table\n\n\nBefore\nAfter\n\n\n\n\nv2/atsIntegrations\nrest/integrations\n\n\nv2/atsIntegrationConfigurations\nrest/integrationConfigurations\n\n\n\nSee Customer Configuration\n\nData Deletion:\n\nAdded DELETE /rest/candidates, replacing DELETE /v2/atsCandidates\nRenamed parameter atsCandidateId to externalCandidateId\n\nSee Data Deletion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202512",
+      "Anchor": "version-202512",
+      "SectionPath": [
+        "Version 202512"
+      ],
+      "Text": "seatsV2 externalized:\n\nPath updated from v2/seatsV2 to rest/seatsV2\nSupported methods: finder\nTwo response fields changed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nSeat ID\nid\nseatId\n\n\nCreation audit\ncreated.time\ncreatedAt.actor \u002B createdAt.time\n\n\n\nSee Recruiter Seatholders\n\ncandidateNotes and applicationNotes renamed:\n\nResource path changed from v2/atsCandidates/{id}/notes to rest/candidateNotes\nResource path changed from v2/atsApplications/{id}/notes to rest/applicationNotes\ndataProvider removed\nSupported methods: batch_update, batch_delete\nFields renamed:\n\nExpand table\n\n\nField\ncandidateNotes Before \u2192 After\napplicationNotes Before \u2192 After\n\n\n\n\nPath\nv2/atsCandidates/{id}.../notes \u2192 rest/candidateNotes\nv2/atsApplications/{id}.../notes \u2192 rest/applicationNotes\n\n\nCandidate param\natsCandidateId \u2192 externalCandidateId\natsJobApplicationId \u2192 externalJobApplicationId\n\n\nNote param\nids \u2192 externalNoteId\nids \u2192 externalNoteId\n\n\nTimestamp\natsCreatedAt \u2192 externalCreatedAt\n\u2014\n\n\nAdded\nexternalLastModifiedAt\n\u2014\n\n\nRemoved\ndataProvider\ndataProvider\n\n\n\nSee Sync Candidate Notes\n\nData Deletion:\n\nAdded DELETE /rest/candidateNotes and DELETE /rest/applicationNotes\n\nSee Data Deletion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enhanced one-click export field descriptions",
+      "Anchor": "enhanced-one-click-export-field-descriptions",
+      "SectionPath": [
+        "Enhanced one-click export field descriptions"
+      ],
+      "Text": "One-Click Export context:\n\nAdded description of Enhanced 1CE fields (email addresses, years of experience, skills, work positions, education history). See StubProfile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202511",
+      "Anchor": "version-202511",
+      "SectionPath": [
+        "Version 202511"
+      ],
+      "Text": "entityAcls and entityAclAssignees renamed:\n\nResources renamed from atsEntityAcls and atsEntityAclAssignees, respectively\nSupported methods: batch_update, batch_delete, finder\nThree key params renamed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nPath\nv2/atsEntityAcls / v2/atsEntityAclAssignees\nrest/entityAcls / rest/entityAclAssignees\n\n\nKey param\natsEntityAclId\nentityAclId\n\n\nKey param\natsEntityId\nentityId\n\n\nKey param\natsEntityType\nentityType\n\n\n\nSee Sync ACLs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application evaluation and migration guide updates",
+      "Anchor": "application-evaluation-and-migration-guide-updates",
+      "SectionPath": [
+        "Application evaluation and migration guide updates"
+      ],
+      "Text": "Application Evaluation enhancements:\n\nAdded evaluationProfileURL field - link to candidate\u0027s Recruiter profile page for the evaluation\nUpdated criteriaClassification enum value from Meet to Meets\nSee Export Application Evaluation\n\n\nRSC Migration Guide updates:\n\nAdded hiredCount field to /jobRequisitions API\nAdded compensation field (new in Job Requisitions, not available in old API)\nClarified accessRestricted field mapping from extension schema\nUpdated field mapping for requisitionType and owners fields\nClarified job requisition stage purpose for application progression\nSee RSC Migration Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202510",
+      "Anchor": "version-202510",
+      "SectionPath": [
+        "Version 202510"
+      ],
+      "Text": "mailStubs externalized:\n\nSupported methods: finder\nPath updated from v2/mailStubs to rest/mailStubs\nlocation response field type changed:\n\nExpand table\n\n\nField\nBefore\nAfter\n\n\n\n\nPath\nv2/mailStubs\nrest/mailStubs\n\n\nlocation type\nstring\nprofileLocation object (locationName, countryCode)\n\n\n\nSee Retrieve Exported Candidates\n\nData Deletion:\n\nAdded DELETE /rest/attachments\nSupports deleting synced resume attachments\n\nSee Data Deletion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application secret management and evaluation updates",
+      "Anchor": "application-secret-management-and-evaluation-updates",
+      "SectionPath": [
+        "Application secret management and evaluation updates"
+      ],
+      "Text": "New Child Application Secret Management APIs:\n\nAdded support for rotating and deleting secrets for parent, child, and standalone applications\nPartners can now maintain up to two active secrets per application, enabling zero-downtime credential updates\nSee Application Secret Management\n\n\nApplication Evaluation documentation updates:\n\nAdded evaluationClassification field to indicate candidate fit (TOP_FIT, MIGHT_BE_FIT, MIGHT_NOT_BE_FIT, UNKNOWN)\nUpdated criteriaClassification enum values from MATCH to MEET/DOES_NOT_MEET\nSee Application Evaluation Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application evaluation push notifications",
+      "Anchor": "application-evaluation-push-notifications",
+      "SectionPath": [
+        "Application evaluation push notifications"
+      ],
+      "Text": "Application Evaluation push notifications:\n\nNew webhook-based push notifications for application evaluations\nPartners can now receive real-time updates when recruiters evaluate candidates\nSee Receive Push Notifications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202508.02",
+      "Anchor": "version-20250802",
+      "SectionPath": [
+        "Version 202508.02"
+      ],
+      "Text": "applicationInterviewFeedbacks renamed:\n\ndataProvider removed from key params\nSupported methods: batch_update, batch_delete\nResource path changed from v2/atsApplications/{id}/interviewFeedback to rest/applicationInterviewFeedbacks:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications/{id}.../interviewFeedback?ids={id}\nrest/applicationInterviewFeedbacks\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\njobApplicationId, interviewFeedbackId, integrationContext\n\n\n\nSee Sync Application Interview Feedback",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202508",
+      "Anchor": "version-202508",
+      "SectionPath": [
+        "Version 202508"
+      ],
+      "Text": "attachments new endpoint:\n\nNew rest/attachments endpoint for syncing resumes as attachments; supports batch_update, batch_delete\n\nSee Upload and Sync Attachments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202507",
+      "Anchor": "version-202507",
+      "SectionPath": [
+        "Version 202507"
+      ],
+      "Text": "simpleJobPostings REST migration:\n\nPrivate RSC job postings removed from simpleJobPostings\nsimpleJobPostings, simpleJobPostingStatus, and simpleJobPostingTasks moved to rest/ base path:\n\nExpand table\n\n\nEndpoint\nBefore\nAfter\n\n\n\n\nsimpleJobPostings\nv2/simpleJobPostings; supports private (RSC) and public jobs\nrest/simpleJobPostings; private RSC job postings no longer supported; RSC partners must use jobRequisitions\n\n\nsimpleJobPostingStatus\nv2/simpleJobPostingStatus\nrest/simpleJobPostingStatus; no field changes\n\n\nsimpleJobPostingTasks\nv2/simpleJobPostingTasks\nrest/simpleJobPostingTasks; no field changes\n\n\n\nSee Sync Job Postings and RSC Migration Guide\n\napplicationStage renamed:\n\ndataProvider removed\nSupported methods: batch_update, batch_delete\nResource path changed from v2/atsApplications/{id}/stages to rest/applicationStage\nTimestamp fields renamed:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications/{id}.../stages?ids={stageId}\nrest/applicationStage\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\njobApplicationId, jobApplicationStageId, integrationContext\n\n\nTimestamp fields\natsCreatedAt\nexternalCreatedAt, externalLastModifiedAt (added)\n\n\n\nSee Sync Application Stages\n\nexportedApplicationEvaluations new endpoint:\n\nNew GET https://api.linkedin.com/rest/exportedApplicationEvaluations\nRetrieves evaluation data generated by LinkedIn Hiring Assistant (LiHA)\nSupported methods: finder\n\nSee Application Evaluation Overview\n\nexportedCandidates updated:\n\nPath updated to GET https://api.linkedin.com/rest/exportedCandidates\nSupported methods: finder\nField changes:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nRemoved field\nexternalJobPostingId\n\u2014\n\n\nAdded fields\n\u2014\nreferenceEntityType, referenceEntityId, source\n\n\n\nSee Retrieve Exported Candidates\n\natsPurgedExportedCandidates versioned:\n\nPath updated from v2/atsPurgedExportedCandidates to rest/atsPurgedExportedCandidates\nNo field changes\n\nSee Retrieve Exported Candidates\n\natsApplications updated:\n\ndataProvider removed from key params\nPath updated to rest/atsApplications\nTwo body fields added:\n\nExpand table\n\n\nChange\nBefore\nAfter\n\n\n\n\nPath\nv2/atsApplications\nrest/atsApplications\n\n\nKey params\natsJobApplicationId, dataProvider, integrationContext\natsJobApplicationId, integrationContext\n\n\nAdded body fields\n\u2014\natsJobRequisitionId, accessRestricted\n\n\n\nSee Sync Applications\n\nData Deletion:\n\nAdded DELETE endpoints: DELETE /rest/atsApplications, DELETE /rest/applicationInterviewFeedbacks, DELETE /rest/applicationStage, DELETE /rest/jobRequisitions, DELETE /rest/jobRequisitionStages\n\nSee Data Deletion",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202504",
+      "Anchor": "version-202504",
+      "SectionPath": [
+        "Version 202504"
+      ],
+      "Text": "jobRequisitions and jobRequisitionStages new endpoints:\n\nNew rest/jobRequisitions endpoint syncs requisition data to LinkedIn; link to job postings via partnerRequisitionId in simpleJobPostings; supports batch_update, batch_delete\nNew rest/jobRequisitionStages endpoint manages requisition lifecycle stages; supports batch_update, batch_delete\n\nSee Job Requisition API Migration Guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202501",
+      "Anchor": "version-202501",
+      "SectionPath": [
+        "Version 202501"
+      ],
+      "Text": "Versioned API introduction:\n\nBase path updated from https://api.linkedin.com/v2/ to https://api.linkedin.com/rest/ for all RSC API requests.\nLinkedIn-Version: 202501 header required on all requests.\nPOST /v2/simpleJobPostings updated to POST /rest/simpleJobPostings; required company field added (URN format: urn:li:company:{id}).\nfirstName now required for all /atsCandidates requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2024 -- updates to atsCandidates",
+      "Anchor": "march-2024----updates-to-atscandidates",
+      "SectionPath": [
+        "March 2024 -- updates to atsCandidates"
+      ],
+      "Text": "Updated Sync Candidates to indicate that the firstName field is required\nUpdated Sync Candidates to add doNotContact field\nUpdated Sync Candidates updated phone number and address fields to indicate they are required but can be empty\nChanged Stubprofile emailAddress field lists array of email to type string.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 2023 -- One-Click Export limits",
+      "Anchor": "october-2023----one-click-export-limits",
+      "SectionPath": [
+        "October 2023 -- One-Click Export limits"
+      ],
+      "Text": "Limits for One Click Export updated to 300 requests per month per seat.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "July 2023 minor updates",
+      "Anchor": "july-2023-minor-updates",
+      "SectionPath": [
+        "July 2023 minor updates"
+      ],
+      "Text": "Updated Retrieving Closed Candidate Profiles documentation to describe expected partner behavior:\nOur ATS partners must query this endpoint periodically (at least once in 30 days) and notify end customers that they may need to delete the data that appear within this endpoint from their records if they do not have a legal basis to continue processing it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2023",
+      "Anchor": "june-2023",
+      "SectionPath": [
+        "June 2023"
+      ],
+      "Text": "Sync Candidates - Updated description for externalProfileUrl and added linkedInProfileUrl in Request Body Fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2023",
+      "Anchor": "may-2023",
+      "SectionPath": [
+        "May 2023"
+      ],
+      "Text": "Added new technical questions in RSC FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2021",
+      "Anchor": "november-2021",
+      "SectionPath": [
+        "November 2021"
+      ],
+      "Text": "Sync Candidates - New field validations added to request body fields\nSync Applications - New field validations added to request body fields\nSync Application Stages - New field validations added to request body fields",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2021",
+      "Anchor": "november-2021",
+      "SectionPath": [
+        "November 2021"
+      ],
+      "Text": "A consolidated summary of the new validation changes is below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Candidates",
+      "Anchor": "sync-candidates",
+      "SectionPath": [
+        "November 2021",
+        "Sync Candidates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Field",
+        "Type",
+        "New validation(s)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/atsCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be greater than 0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be greater than 0Value must be greater than or equal to atsCreatedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsCandidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Emails must follow X@X.X pattern",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Applications",
+      "Anchor": "sync-applications",
+      "SectionPath": [
+        "November 2021",
+        "Sync Applications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Field",
+        "Type",
+        "New validation(s)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be greater than 0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be greater than 0Value must be greater than or equal to atsCreatedAt",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Min. length: 1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsJobPostingName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Min. length: 1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "candidateEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email must follow X@X.X pattern",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Min. length: 1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Min. length: 1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Min. length: 1",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Application Stages",
+      "Anchor": "sync-application-stages",
+      "SectionPath": [
+        "November 2021",
+        "Sync Application Stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Field",
+        "Type",
+        "New validation(s)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/atsApplications/{atsJobApplicationId}/stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be greater than 0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/atsApplications/{atsJobApplicationId}/stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Min. length: 1Value cannot be \u0022Not Available\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2021",
+      "Anchor": "june-2021",
+      "SectionPath": [
+        "June 2021"
+      ],
+      "Text": "Retrieve Recruiter Contract Seatholders - Updated query parameter state to states.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2021",
+      "Anchor": "may-2021",
+      "SectionPath": [
+        "May 2021"
+      ],
+      "Text": "Closed Candidate Profiles - Time for purging a closed candidate profile updated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2021",
+      "Anchor": "april-2021",
+      "SectionPath": [
+        "April 2021"
+      ],
+      "Text": "Retrieve Recruiter Contract Seatholders - Added SeatV2 API details. Partners must migrate to new API by April 1, 2022.\nRecommended Matches - Added details of customer enablement.\nUnified Search - Added details of customer enablement.\nIntegration Types - Added new integrationTypes for Recommended Matches and Unified Search.\nSync Applications - Added note that API is currently in development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2020",
+      "Anchor": "june-2020",
+      "SectionPath": [
+        "June 2020"
+      ],
+      "Text": "Recommended Matches - Introducing new Recommended Matches integration for RSC.\nUnified Search - Introducing new Unified Search integration for RSC.\nDevelopment APIs now grouped into 5 Modules\nRSC FAQ - Newly introduced FAQ Wiki\nRSC Development Tools - Newly introduced Development Tools Wiki\nRSC Certification - Newly introduced Certification Section\nRSC Support Resources - Newly introduced customer support resources for Partners\nRSC Release Notes - New wiki containing RSC documentation\u0027s release notes.\nRetrieve Exported Candidates - Updated Call Volume Limit for One-Click Export\nSync Jobs - The default value for Job Sync for Partners to be PRIVATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2020",
+      "Anchor": "april-2020",
+      "SectionPath": [
+        "April 2020"
+      ],
+      "Text": "Added Required Fields table for all Recruiter System Connect APIs.\nProspect Notes - Added push event type of DELETE_PROSPECT_NOTE to process customer deleted Recruiter notes.\nSync Jobs - Added note on how to update job posting from PUBLIC to PRIVATE_TO_ATS_INTEGRATION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2019",
+      "Anchor": "may-2019",
+      "SectionPath": [
+        "May 2019"
+      ],
+      "Text": "Client Credential Flow (2-legged OAuth) - Updated HTTP method to POST.\nRecords Per Minute Throttle - Updated per minute throttle for batch calls to 10,000.\nInMail Stub Profiles - Updated response body fields to include headline and profileUrl.\nSync Candidates - Updated sample response with character encoding.\nBind Customer Users - Updated reference to OAuth 2 Authorization Code flow\nProfile Plugin - Added note on member profile matching.\nSync Applications - Added optional note requirement for resume upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 2019",
+      "Anchor": "january-2019",
+      "SectionPath": [
+        "January 2019"
+      ],
+      "Text": "Sync Candidates - Updated Retrieve Candidate Matches with field projection: matchedMembers, manualMatchedMember.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "Push Events - Added note that we are unable to share our IP range to validate incoming push events.\nSync Jobs - Updated sample request job description to meet minimum character limit of 100\nBind Customer Users - Added note that Person URN should be used to match the ATS user to Recruiter seatholders.\nRecruiter Seatholders - Added note that Person URN should be used to match the ATS user to Recruiter seatholders.\nIntegration Types - Updated descriptions for Integration Configuration Keys\nInMail History - Added note that the id returned is a unique identifier for each InMail event.\nProspect Notes - Added note regarding timestamps and status\nProfile Plugin - Updated references from \u0022https://www.linkedin.com/uas/in.js\u0022 to \u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022. Example of the change below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: \u003Center api key here\u003E\n  extensions: HcmWidget@https://www.linkedin.com/recruiter/widget/hcm\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "Customer Configuration Plugin - Updated references from \u0022https://www.linkedin.com/uas/in.js\u0022 to \u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022. Example of the change below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "August 2018",
+      "Anchor": "august-2018",
+      "SectionPath": [
+        "August 2018"
+      ],
+      "Text": "InMail History - Removed note that InMail content is only visible to the sender/receiver of the particular InMail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2018",
+      "Anchor": "june-2018",
+      "SectionPath": [
+        "June 2018"
+      ],
+      "Text": "Recruiter System Connect - Updated sample responses for endpoints which support pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2018",
+      "Anchor": "april-2018",
+      "SectionPath": [
+        "April 2018"
+      ],
+      "Text": "ATS Integration Configuration Plugin - Added note on widget reload for single page JS applications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "Referrals - Updated communication that we are no longer accepting new LinkedIn Referrals integrations\nInMail History - Added note that InMail content is only visible to the sender/receiver of the particular InMail.\nProfile Plugin - Added callback function for linking and unlinking profiles. See example below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://www.linkedin.com/uas/in.js\u0022\u003E\n  api_key: \u003Center api key here\u003E\n  extensions: HcmWidget@https://www.linkedin.com/recruiter/widget/hcm\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/HcmWidget\u0022\n  data-widget-type=\u0022ATS\u0022\n  data-ats-candidate-id=\u0022{your unique candidate id}\u0022\n  data-integration-context=\u0022{customer\u0027s integration context URN}\u0022\n  data-show-unlink-url=\u0022{true|false}\u0022\n  data-confirm-unlink=\u0022{true|false}\u0022\n  data-onlink=\u0022link\u0022\n  data-onunlink=\u0022unlink\u0022  \n  data-width=\u0022{Width}\u0022\u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\n  function link(profile) {\n     console.log(\u0022Link callback\u0022, memberToken);\n  }\n  function unlink(profile) {\n     console.log(\u0022Unlink callback\u0022, memberToken);\n  }\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "Records Per Minute Throttle - In addition to our daily call limits we have a per minute throttle applied to batch calls. See example below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

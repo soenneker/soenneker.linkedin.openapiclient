@@ -1,0 +1,160 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+  "Title": "Module 2 - Customer Application Provisioning and Job Board Setup",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Customer Application Provisioning and Job Board Setup",
+      "Anchor": "module-2---customer-application-provisioning-and-job-board-setup",
+      "SectionPath": [],
+      "Text": "Upon completing development, to ensure official certification of Module 2, please review each of the test cases mentioned below. To ensure an efficient meeting, please review all appropriate documentation and send technical questions to your Business Development and/or Partner Engineering representative beforehand.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Customer Application Provisioning and Job Board Setup",
+      "Anchor": "module-2---customer-application-provisioning-and-job-board-setup",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Customer Application Provisioning and Job Board Setup",
+      "Anchor": "module-2---customer-application-provisioning-and-job-board-setup",
+      "SectionPath": [],
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Customer Application Provisioning and Job Board Setup",
+      "Anchor": "module-2---customer-application-provisioning-and-job-board-setup",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API requirements"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JP-B-01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create a customer application - Confirm when do you create customer application - Confirm that there is always only one customer application created per customer account in your platform - For both Basic \u0026 Premium job post, the same customer application is being utilised for job posting purpose",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-B-02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect an application has already been provisioned for a customer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-B-03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the Global Customer Settings for job posting on LinkedIn: - Show how customers can opt in to post jobs on the LinkedIn Job Board, or confirm if customers are automatically opted in by default. - Note: LinkedIn recommends allowing configuration of LinkedIn job integrations for any new customer, including the capability being the default Job Board. This means that any new customer onboarded to your ATS system should have the LinkedIn Job Board enabled by default. - Ensure that the necessary companyId input is provided for both Basic and Premium job postings. - For Premium job postings, ensure that the widget opt-in is also enabled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-B-04",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability for a customer to add/edit LinkedIn company page id that they own and they want their jobs to be posted to this company page. Basic / Premium jobs posted via API integration will be visible at their company page as well. - Provision needs to be made to take the companyId as input per customer. - Demonstrate that a customer has the ability to view LinkedIn Help Articles preferably linked next to the company-id input. To find the companyID",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/answer/a415420/associate-your-linkedin-company-id-with-the-linkedin-job-board-faqs?lang=en"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-B-05",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that the customer has agreed to following LinkedIn T\u0026C by selecting a check-box on the job-board settings page. Also, the same information should be visible to the job poster as an info, at the job posting page. And the text that needs to be displayed is as below. By posting your job to LinkedIn, you agree to LinkedIn\u0027s Jobs Terms \u0026 Condition. Jobs T\u0026C Link",
+            "Links": [
+              "https://www.linkedin.com/legal/jobs-terms-conditions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-B-06",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that the uniqueForeignId is stored in ATS db, as this will be used to update any already provisioned child-application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-B-07",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If your ATS needs any specific url domain to be allowed to launch the PJP Onboarding widget, demonstrate that the urls are passed in appropriate manner while creating the child / customer application. Provisioning API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

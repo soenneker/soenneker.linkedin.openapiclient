@@ -1,0 +1,732 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/video-statistics",
+  "Title": "Member Video Statistics",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/post-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/members/video-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Member Video Statistics",
+      "Anchor": "member-video-statistics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Video Statistics",
+      "Anchor": "member-video-statistics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Video Statistics",
+      "Anchor": "member-video-statistics",
+      "SectionPath": [],
+      "Text": "The memberCreatorVideoAnalytics API retrieves video analytics from the member posts for an authenticated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_member_postAnalytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your posts and their reporting data.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Metrics Definition for Member Post Analytics",
+      "Anchor": "metrics-definition-for-member-post-analytics",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric",
+        "Definition"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VIDEO_PLAY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video plays count with play-pause cycles for at least 2 seconds. Auto-looping videos are counted as one when loaded. Each subsequent auto-looped play doesn\u0027t increase this metric. Analytics data for this metric won\u0027t be available after one year of post creation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO_VIEWER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique viewers who made engaged plays on the video. Auto-looping videos are counted as one when loaded. Each subsequent auto-looped play doesn\u0027t increase this metric. Analytics data for this metric won\u0027t be available after one year of post creation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO_WATCH_TIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total time the video was watched, in milliseconds. Video auto-looping will continue to increase this metric for each subsequent play.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Metrics Definition for Member Post Analytics",
+      "Anchor": "metrics-definition-for-member-post-analytics",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Metrics Definition for Member Post Analytics",
+      "Anchor": "metrics-definition-for-member-post-analytics",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics"
+      ],
+      "Text": "The VIDEO_PLAY, VIDEO_VIEWER, and VIDEO_WATCH_TIME metrics are only available for posts that contain a video. If the post doesn\u0027t contain a video, these metrics won\u0027t be returned.\nThe VIDEO_VIEWER and VIDEO_WATCH_TIME metrics don\u0027t support daily aggregation or time-bound queries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name. Value must be entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the entity that contains a video and whose type should be ugcPost or share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN. For example, urn:li:ugcPost:6443156446455693312.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "queryType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: VIDEO_PLAY, VIDEO_VIEWER, VIDEO_WATCH_TIME.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of aggregation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String. Options: DAILY: The query result will be a list of data points with metric counts broken down by day for the content. TOTAL (default): The query result will be a single data point with the total number of metric counts for the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for which the analytics will be fetched. If missing, it will return analytics for the lifetime of the video. It is an object with start and end fields holding the start and end date/time. The time range is inclusive of the start and exclusive of the end. The start and end fields are both optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the post entity with type ugcPost or share, e.g., urn:li:ugcPost:123.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of analytics returned for all available metrics. Data is best-effort accurate and shouldn\u0027t be used for billing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics metrics returned. Options: VIDEO_PLAY, VIDEO_VIEWER, VIDEO_WATCH_TIME.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range for fetching analytics. If missing, returns analytics for the lifetime of the post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRange Object Schema",
+      "Anchor": "daterange-object-schema",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "DateRange Object Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting date (year, month, day format).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting month.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.start.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending date (year, month, day format). Defaults to the current date.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.year",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending year.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.month",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending month.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRange.end.day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending day.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if dateRange.start is present.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "To fetch the daily video plays count of a post owned by the current member from 2024/05/04 to 2024/05/06.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "For the entity parameter, if the URN is a ugcPostUrn, use entity=(ugc:urn%3Ali%3AugcPost%3A7325786486870552578). If the URN is a shareUrn, use entity=(share:urn%3Ali%3Ashare%3A7325786486870552578).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberCreatorVideoAnalytics?q=entity\u0026entity=(share:urn%3Ali%3Ashare%3A7325786486870552578)\u0026queryType=VIDEO_PLAY\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/memberCreatorVideoAnalytics?q=entity\u0026entity=(share:urn%3Ali%3Ashare%3A7325786486870552578)\u0026queryType=VIDEO_PLAY\u0026aggregation=DAILY\u0026dateRange=(start:(day:4,month:5,year:2024),end:(day:6,month:5,year:2024))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Metrics Definition for Member Post Analytics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022count\u0022: 7852,\n            \u0022metricType\u0022: \u0022VIDEO_PLAY\u0022,\n            \u0022targetEntity\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7325786486870552578\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 4,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                }\n            }\n        },\n        {\n            \u0022count\u0022: 9876,\n            \u0022metricType\u0022: \u0022VIDEO_PLAY\u0022,\n            \u0022targetEntity\u0022: {\n                \u0022share\u0022: \u0022urn:li:share:7325786486870552578\u0022\n            },\n            \u0022dateRange\u0022: {\n                \u0022start\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 5,\n                    \u0022year\u0022: 2024\n                },\n                \u0022end\u0022: {\n                    \u0022month\u0022: 5,\n                    \u0022day\u0022: 6,\n                    \u0022year\u0022: 2024\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported video metric type: xxx for non-video post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user requested video-related metrics, but the requested post doesn\u0027t contain a video.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update the requested metric type or entity URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intermittent LinkedIn server error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please try again.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -14,9 +14,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The pageViewCount property</summary>
-        public int? PageViewCount { get; set; }
-        /// <summary>The reportingId property</summary>
+        /// <summary>The number of page views to an organization page.Documented type: longRequirement: Yes</summary>
+        public long? PageViewCount { get; set; }
+        /// <summary>Reporting ID of the targeted content.Documented type: stringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportingId { get; set; }
@@ -24,8 +24,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string ReportingId { get; set; }
 #endif
-        /// <summary>The uniqueVisitorCount property</summary>
-        public int? UniqueVisitorCount { get; set; }
+        /// <summary>The number of unique visitors to an organization page.Documented type: longRequirement: Yes</summary>
+        public long? UniqueVisitorCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationLifePageTrafficStatisticsFinderOrganization200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pageViewCount", n => { PageViewCount = n.GetIntValue(); } },
+                { "pageViewCount", n => { PageViewCount = n.GetLongValue(); } },
                 { "reportingId", n => { ReportingId = n.GetStringValue(); } },
-                { "uniqueVisitorCount", n => { UniqueVisitorCount = n.GetIntValue(); } },
+                { "uniqueVisitorCount", n => { UniqueVisitorCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("pageViewCount", PageViewCount);
+            writer.WriteLongValue("pageViewCount", PageViewCount);
             writer.WriteStringValue("reportingId", ReportingId);
-            writer.WriteIntValue("uniqueVisitorCount", UniqueVisitorCount);
+            writer.WriteLongValue("uniqueVisitorCount", UniqueVisitorCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,977 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+  "Title": "Dynamic UTM Tracking",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Dynamic UTM Tracking",
+      "Anchor": "dynamic-utm-tracking",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Dynamic UTM Tracking",
+      "Anchor": "dynamic-utm-tracking",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Dynamic UTM Tracking",
+      "Anchor": "dynamic-utm-tracking",
+      "SectionPath": [],
+      "Text": "Seamless tracking across multiple campaigns and platforms is a core part of enabling advertisers to prove ROI. UTM codes are parameters added to the end of a URL to track the success of marketing efforts in driving traffic to a web page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Dynamic UTM Tracking",
+      "Anchor": "dynamic-utm-tracking",
+      "SectionPath": [],
+      "Text": "This feature provides a way to add dynamic tracking parameters to the landing page URLs of ad creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Dynamic UTM Tracking",
+      "Anchor": "dynamic-utm-tracking",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Dynamic UTM Tracking",
+      "Anchor": "dynamic-utm-tracking",
+      "SectionPath": [],
+      "Text": "Tracking parameters can be set at the Campaign level, or at the ad account (sponsoredAccount) level starting with version 202608.\nTracking parameters set on Campaign will affect the landing page URLs of ad creatives under that Campaign.\nTracking parameters set on an ad account will affect the landing page URLs of ad creatives across all campaigns under that ad account. For more information, refer to Ad account-level tracking parameters.\nExisting tracking parameters of a Campaign will be applied to all new creatives created under it.\nAn update to the tracking parameters of a Campaign with running ads will have the updated tracking parameters applied to all creatives under the Campaign.\nA Creative can be tracked across multiple campaigns if dynamic tracking parameters are configured on these campaigns.\nIf static UTM Tracking was configured on the creative, for example utm_abc=123 and dynamic UTM parameters were configured at the CAMPAIGN level as campaign=CAMPAIGN_ID, then the effective served URL will have the assignment: utm_abc=123\u0026campaign=1234567. You must ensure uniqueness of the dynamic UTM parameters, and if a static UTM key was already present using the UTM Parameters (legacy) api, you should change from the UGC Posts and Shares API. Additionally, remove that static assignment to avoid multiple duplicate UTM parameters in the URL.\nThe ad won\u0027t require review again.\nExisting shortened URLs will be appended with dynamic tracking parameters before the ad is rendered. If the shortened URL has existing static UTM parameters, those will be appended with dynamic tracking parameters too.\nThe following creative formats are currently unsupported:\n\nConversation Ads\nMessage Ads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "X-Restli-Protocol-Version: 2.0.0 must be passed as the header in your API requests.\nLinkedin-Version: {yyyymm} must be passed as the header in your API requests as this API is released with Versioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "Creating Tracking parameters on an existing Campaign can be done by calling the /adTrackingParameters API as below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "Two types of tracking parameters can be set: dynamicTrackingParameters and customTrackingParameters.\ndynamicTrackingParameters are of the format: any_string_key -\u003E AdDynamicTrackingParameterValue. The value of dynamicTrackingParameters needs to be of type AdDynamicTrackingParameterValue. These values are resolved and the actual values will be substituted before appending the parameters to the landing page URL.\ncustomTrackingParameters are of the format: any_string_key -\u003E any_string_value. These parameters are appended as it\u0027s to the landing page URL.\nAdDynamicTrackingParameterValue currently supports the following enum:\n\nACCOUNT_ID\nACCOUNT_NAME\nCAMPAIGN_GROUP_ID\nCAMPAIGN_GROUP_NAME\nCAMPAIGN_ID\nCAMPAIGN_NAME\nCREATIVE_ID\nCREATIVE_NAME (available starting version 202606)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom\u0022:\u0022any_value\u0022, \n        \u0022source\u0022:\u0022LinkedIn\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom\u0022:\u0022any_value\u0022, \n        \u0022source\u0022:\u0022LinkedIn\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For a Campaign",
+      "Anchor": "create-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign"
+      ],
+      "Text": "A successful request returns 201 CREATED. If sponsoredCampaignUrn is malformed, then a error 400 Bad Request status code is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:urn%3Ali%3AsponsoredCampaign%3A12345))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Create Tracking Parameters For a Campaign",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022utm_campaign\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022utm_campaign_id\u0022: \u0022CAMPAIGN_ID\u0022,\n        \u0022utm_campaign_group_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022,\n        \u0022utm_creative_id\u0022: \u0022CREATIVE_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022utm_source\u0022:\u0022linkedin\u0022,\n        \u0022utm_medium\u0022:\u0022social\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Tracking Parameters of a Campaign",
+      "Anchor": "get-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Get Tracking Parameters of a Campaign"
+      ],
+      "Text": "To retrieve existing tracking parameters of a campaign:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Tracking Parameters of a Campaign",
+      "Anchor": "get-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Get Tracking Parameters of a Campaign"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Tracking Parameters of a Campaign",
+      "Anchor": "get-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Get Tracking Parameters of a Campaign"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Tracking Parameters of a Campaign",
+      "Anchor": "get-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Get Tracking Parameters of a Campaign"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Get Tracking Parameters of a Campaign",
+        "Sample Response"
+      ],
+      "Text": "{ \n    \u0022dynamicValueParameters\u0022: { \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022, \n        \u0022account_id\u0022: \u0022ACCOUNT_ID\u0022 \n    }, \n    \u0022idempotencyToken\u0022: \u00221653526665978\u0022, \n    \u0022changeTimeStamps\u0022: { \n        \u0022created\u0022: 1653526665978, \n        \u0022lastModified\u0022: 1653526665978 \n    }, \n    \u0022customValueParameters\u0022: { \n        \u0022any_custom\u0022: \u0022value_1\u0022, \n        \u0022source\u0022: \u0022LinkedIn\u0022\n    }, \n    \u0022adEntity\u0022: { \n        \u0022sponsoredCampaign\u0022: \u0022urn:li:sponsoredCampaign:366948955\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Tracking Parameters For a Campaign",
+      "Anchor": "update-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign"
+      ],
+      "Text": "Update the Tracking parameters on a Campaign with existing parameters by performing the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Tracking Parameters For a Campaign",
+      "Anchor": "update-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign"
+      ],
+      "Text": "Retrieve an existing tracking parameters by Campaign URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Tracking Parameters For a Campaign",
+      "Anchor": "update-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Tracking Parameters For a Campaign",
+      "Anchor": "update-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Tracking Parameters For a Campaign",
+      "Anchor": "update-tracking-parameters-for-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "{ \n    \u0022dynamicValueParameters\u0022: { \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022, \n        \u0022account_id\u0022: \u0022ACCOUNT_ID\u0022 \n    }, \n    \u0022idempotencyToken\u0022: \u00221653526665978\u0022, \n    \u0022changeTimeStamps\u0022: { \n        \u0022created\u0022: 1653526665978, \n        \u0022lastModified\u0022: 1653526665978 \n    }, \n    \u0022customValueParameters\u0022: { \n        \u0022any_custom\u0022: \u0022value_1\u0022, \n        \u0022source\u0022: \u0022LinkedIn\u0022\n    }, \n    \u0022adEntity\u0022: { \n        \u0022sponsoredCampaign\u0022: \u0022urn:li:sponsoredCampaign:366948955\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "Extract idempotencyToken from the response. This must be passed in a query parameter for update.\nUse the new parameter mapping to be set on the Campaign and call the Update API as below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns 200 OK. If the idempotencyToken doesn\u0027t match, a 409 CONFLICT error is returned. This means the tracking parameter mapping has been updated after your GET call. Perform the GET operation again and use the new idempotencyToken.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))?idempotencyToken=1653526665978",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022cg\u0022: \u0022CAMPAIGN_ID\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom_new\u0022:\u0022any_value_new\u0022 },\n        \u0022adEntity\u0022: {\u0022sponsoredCampaign\u0022: \u0022urn:li:sponsoredCampaign:123444678\u0022 }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Update Tracking Parameters For a Campaign",
+        "Sample Response"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))?idempotencyToken=1653526665978\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022cg\u0022: \u0022CAMPAIGN_ID\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom_new\u0022:\u0022any_value_new\u0022 },\n        \u0022adEntity\u0022: {\u0022sponsoredCampaign\u0022: \u0022urn:li:sponsoredCampaign:123444678\u0022 }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Tracking Parameters of a Campaign",
+      "Anchor": "delete-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Delete Tracking Parameters of a Campaign"
+      ],
+      "Text": "To delete existing tracking parameters of a campaign:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Tracking Parameters of a Campaign",
+      "Anchor": "delete-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Delete Tracking Parameters of a Campaign"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Tracking Parameters of a Campaign",
+      "Anchor": "delete-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Delete Tracking Parameters of a Campaign"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Tracking Parameters of a Campaign",
+      "Anchor": "delete-tracking-parameters-of-a-campaign",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Delete Tracking Parameters of a Campaign"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredCampaign:{sponsoredCampaignURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Campaign-level tracking parameters",
+        "Delete Tracking Parameters of a Campaign",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns 204 NO CONTENT.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad account-level tracking parameters",
+      "Anchor": "ad-account-level-tracking-parameters",
+      "SectionPath": [
+        "Ad account-level tracking parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad account-level tracking parameters",
+      "Anchor": "ad-account-level-tracking-parameters",
+      "SectionPath": [
+        "Ad account-level tracking parameters"
+      ],
+      "Text": "Ad account-level tracking parameters are available starting with version 202608. On earlier versions, only campaign-level (sponsoredCampaign) tracking parameters are supported.\nX-Restli-Protocol-Version: 2.0.0 must be passed as the header in your API requests.\nLinkedin-Version: {yyyymm} must be passed as the header in your API requests, where {yyyymm} is 202608 or later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad account-level tracking parameters",
+      "Anchor": "ad-account-level-tracking-parameters",
+      "SectionPath": [
+        "Ad account-level tracking parameters"
+      ],
+      "Text": "The same create, get, update, and delete operations are available keyed by an ad account. Use the sponsoredAccount member of the adEntity key in place of sponsoredCampaign. Account-level tracking parameters apply to the landing page URLs of ad creatives across all campaigns under that ad account. The request and response bodies use the same dynamicValueParameters and customValueParameters fields as the campaign-level operations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For an Ad Account",
+      "Anchor": "create-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account"
+      ],
+      "Text": "Creating tracking parameters on an ad account can be done by calling the /adTrackingParameters API as below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For an Ad Account",
+      "Anchor": "create-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Tracking Parameters For an Ad Account",
+      "Anchor": "create-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Tracking Parameters For an Ad Account",
+      "Anchor": "create-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account"
+      ],
+      "Text": "{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom\u0022:\u0022any_value\u0022, \n        \u0022source\u0022:\u0022LinkedIn\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Tracking Parameters For an Ad Account",
+      "Anchor": "create-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom\u0022:\u0022any_value\u0022, \n        \u0022source\u0022:\u0022LinkedIn\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Tracking Parameters For an Ad Account",
+      "Anchor": "create-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account"
+      ],
+      "Text": "A successful request returns 201 CREATED. If the sponsored account URN is malformed, the request returns a 400 Bad Request error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account",
+        "Sample Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:urn%3Ali%3AsponsoredAccount%3A507165814))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Create Tracking Parameters For an Ad Account",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022utm_campaign\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022utm_campaign_id\u0022: \u0022CAMPAIGN_ID\u0022,\n        \u0022utm_campaign_group_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022,\n        \u0022utm_creative_id\u0022: \u0022CREATIVE_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022utm_source\u0022:\u0022linkedin\u0022,\n        \u0022utm_medium\u0022:\u0022social\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Tracking Parameters of an Ad Account",
+      "Anchor": "get-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Get Tracking Parameters of an Ad Account"
+      ],
+      "Text": "To retrieve existing tracking parameters of an ad account:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Tracking Parameters of an Ad Account",
+      "Anchor": "get-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Get Tracking Parameters of an Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Tracking Parameters of an Ad Account",
+      "Anchor": "get-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Get Tracking Parameters of an Ad Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Tracking Parameters of an Ad Account",
+      "Anchor": "get-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Get Tracking Parameters of an Ad Account"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Get Tracking Parameters of an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "{ \n    \u0022dynamicValueParameters\u0022: { \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022, \n        \u0022account_id\u0022: \u0022ACCOUNT_ID\u0022 \n    }, \n    \u0022idempotencyToken\u0022: \u00221653526665978\u0022, \n    \u0022changeTimeStamps\u0022: { \n        \u0022created\u0022: 1653526665978, \n        \u0022lastModified\u0022: 1653526665978 \n    }, \n    \u0022customValueParameters\u0022: { \n        \u0022any_custom\u0022: \u0022value_1\u0022, \n        \u0022source\u0022: \u0022LinkedIn\u0022\n    }, \n    \u0022adEntity\u0022: { \n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:507165814\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Tracking Parameters For an Ad Account",
+      "Anchor": "update-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account"
+      ],
+      "Text": "Update the tracking parameters on an ad account with existing parameters by performing the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Tracking Parameters For an Ad Account",
+      "Anchor": "update-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account"
+      ],
+      "Text": "Retrieve the existing tracking parameters by ad account URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Tracking Parameters For an Ad Account",
+      "Anchor": "update-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Tracking Parameters For an Ad Account",
+      "Anchor": "update-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Tracking Parameters For an Ad Account",
+      "Anchor": "update-tracking-parameters-for-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "{ \n    \u0022dynamicValueParameters\u0022: { \n        \u0022campaign_name\u0022: \u0022CAMPAIGN_NAME\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022, \n        \u0022account_id\u0022: \u0022ACCOUNT_ID\u0022 \n    }, \n    \u0022idempotencyToken\u0022: \u00221653526665978\u0022, \n    \u0022changeTimeStamps\u0022: { \n        \u0022created\u0022: 1653526665978, \n        \u0022lastModified\u0022: 1653526665978 \n    }, \n    \u0022customValueParameters\u0022: { \n        \u0022any_custom\u0022: \u0022value_1\u0022, \n        \u0022source\u0022: \u0022LinkedIn\u0022\n    }, \n    \u0022adEntity\u0022: { \n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:507165814\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "Extract idempotencyToken from the response. This must be passed in a query parameter for update.\nUse the new parameter mapping to be set on the ad account and call the Update API as below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns 200 OK. If the idempotencyToken doesn\u0027t match, a 409 CONFLICT error is returned. This means the tracking parameter mapping has been updated after your GET call. Perform the GET operation again and use the new idempotencyToken.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))?idempotencyToken=1653526665978",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022cg\u0022: \u0022CAMPAIGN_ID\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom_new\u0022:\u0022any_value_new\u0022\n    },\n    \u0022adEntity\u0022: {\u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:507165814\u0022 }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Update Tracking Parameters For an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "curl -X PUT \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))?idempotencyToken=1653526665978\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027 \\\n--data \u0027{\n    \u0022dynamicValueParameters\u0022: {\n        \u0022accountId\u0022:\u0022ACCOUNT_ID\u0022, \n        \u0022cg\u0022: \u0022CAMPAIGN_ID\u0022, \n        \u0022cg_id\u0022: \u0022CAMPAIGN_GROUP_ID\u0022\n    },\n    \u0022customValueParameters\u0022: {\n        \u0022any_custom_new\u0022:\u0022any_value_new\u0022\n    },\n    \u0022adEntity\u0022: {\u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:507165814\u0022 }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Tracking Parameters of an Ad Account",
+      "Anchor": "delete-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Delete Tracking Parameters of an Ad Account"
+      ],
+      "Text": "To delete existing tracking parameters of an ad account:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Tracking Parameters of an Ad Account",
+      "Anchor": "delete-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Delete Tracking Parameters of an Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Tracking Parameters of an Ad Account",
+      "Anchor": "delete-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Delete Tracking Parameters of an Ad Account"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Tracking Parameters of an Ad Account",
+      "Anchor": "delete-tracking-parameters-of-an-ad-account",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Delete Tracking Parameters of an Ad Account"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adTrackingParameters/(adEntity:(sponsoredAccount:{sponsoredAccountURN}))\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {yyyymm}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Ad account-level tracking parameters",
+        "Delete Tracking Parameters of an Ad Account",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns 204 NO CONTENT.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

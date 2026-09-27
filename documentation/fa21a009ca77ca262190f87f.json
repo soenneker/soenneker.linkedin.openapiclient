@@ -1,0 +1,326 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+  "Title": "RSC data quality requirements",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "RSC data quality requirements",
+      "Anchor": "rsc-data-quality-requirements",
+      "SectionPath": [],
+      "Text": "As a LinkedIn partner, you must meet the data quality thresholds defined on this page before your Recruiter System Connect (RSC) integration is certified and made generally available (GA) to production customers. If any metric deviates from the expected threshold, you must analyze the examples with LinkedIn, resolve any data-sync issues, and provide a clear explanation for any unavoidable deviation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant evaluation",
+      "Anchor": "applicant-evaluation",
+      "SectionPath": [
+        "Applicant evaluation"
+      ],
+      "Text": "These metrics ensure your data allows LinkedIn to map applications to jobs and candidates, determine application stage, and access resume or profile data for LinkedIn Hiring Assistant (LiHA) evaluation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Applicant evaluation",
+      "Anchor": "applicant-evaluation",
+      "SectionPath": [
+        "Applicant evaluation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric type",
+        "Metric",
+        "Expected threshold"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Completeness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% applications without candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 5%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Completeness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% applications without job postings or requisitions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 5%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Completeness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% applications without stages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 10%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Completeness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% applications that cannot be associated with a resume (check both application and candidate resumes)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 10%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Completeness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% stages without applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 10%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Validity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member match rate \u2014 % of ATS candidates matched to a LinkedIn member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003E 65%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sourcing, intake, and applicant management",
+      "Anchor": "sourcing-intake-and-applicant-management",
+      "SectionPath": [
+        "Sourcing, intake, and applicant management"
+      ],
+      "Text": "These metrics ensure your data allows LinkedIn to connect an ATS job to a hiring project, infer hiring intent, and display source data in the Connected Projects UI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sourcing, intake, and applicant management",
+      "Anchor": "sourcing-intake-and-applicant-management",
+      "SectionPath": [
+        "Sourcing, intake, and applicant management"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric type",
+        "Metric",
+        "Expected threshold"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Validity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% job postings or requisitions with insufficient description (fewer than 200 characters)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 10%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Validity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% job postings or requisitions with insufficient title (fewer than 5 characters)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 5%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Validity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% job postings or requisitions with insufficient location (country is minimum; city or zip code preferred)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 5%",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Validity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% applications without source (source is displayed next to each applicant record)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 5%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ACLs",
+      "Anchor": "acls",
+      "SectionPath": [
+        "ACLs"
+      ],
+      "Text": "Your ACL data is required for requisitions to appear in the UI and for accurate LiHA grade scoring. Missing ACLs can cause dashboards to misrepresent system health even when your completeness metrics appear healthy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ACLs",
+      "Anchor": "acls",
+      "SectionPath": [
+        "ACLs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric type",
+        "Metric",
+        "Expected threshold"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Completeness",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "% job postings or requisitions without ACLs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u003C 5%",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ACLs",
+      "Anchor": "acls",
+      "SectionPath": [
+        "ACLs"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACLs",
+      "Anchor": "acls",
+      "SectionPath": [
+        "ACLs"
+      ],
+      "Text": "These thresholds apply to all net new RSC partners before going GA. If a metric does not meet the expected threshold, work with your LinkedIn Business Development point of contact to investigate and resolve the issue before proceeding with certification.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

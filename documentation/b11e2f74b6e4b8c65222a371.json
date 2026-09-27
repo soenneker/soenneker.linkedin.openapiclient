@@ -1,0 +1,201 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/localized-profile",
+  "Title": "Localized Profile Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Localized Profile Fields",
+      "Anchor": "localized-profile-fields",
+      "SectionPath": [],
+      "Text": "Localized profile fields are optional string values that default to the preferred locale of the member\u0027s profile. These fields are read-only and the values are copied over from the actual field object. If you perform profile edit, you will need to edit the original field objects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Localized Profile Fields",
+      "Anchor": "localized-profile-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "localizedAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the address field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedAssociations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Please refer to organizations for more information.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedContactInstructions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Please refer to phoneNumbers, websites, and emails in ClientAwareMemberHandle API for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the firstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedHeadline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the headline field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedIndustryName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Please use industryId for more information. Localized version of the industryName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedInterests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the interests field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedLegacyHonors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Please refer to honors for more information.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedMaidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the maidenName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedPhoneticFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the phoneticFirstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedPhoneticLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the phoneticLastName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedSpecialties",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the specialties field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedSummary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the summary field.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

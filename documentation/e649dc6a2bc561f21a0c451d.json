@@ -1,0 +1,578 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+  "Title": "Carousel Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Carousel Ads API",
+      "Anchor": "carousel-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Carousel Ads API",
+      "Anchor": "carousel-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Carousel Ads API",
+      "Anchor": "carousel-ads-api",
+      "SectionPath": [],
+      "Text": "Create and manage Carousel Ad content inline while publishing a creative using the Posts API with images assets uploaded via the Images API. Also create a Carousel Ad using the Creatives API and using a Post with Carousel content inline.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_socialads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles:ADMINISTRATOR DIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Restricted) Retrieve posts, comments, and likes on behalf of an authenticated member. This is a restricted permission.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisite",
+      "Anchor": "prerequisite",
+      "SectionPath": [
+        "Permissions",
+        "Prerequisite"
+      ],
+      "Text": "Any assets (for example, images) must be uploaded via Images API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Upload Carousel image assets via Images API.\nCreate Carousel content.\nGet Carousel content.\nBatch Get Carousel content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Carousel",
+      "Anchor": "carousel",
+      "SectionPath": [
+        "Workflow",
+        "Schema",
+        "Carousel"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CarouselUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Read-Only) The URN of the carousel content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cards",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09\u0026tabs=http#cards"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "CarouselCard",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The array of cards in the carousel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Cards",
+      "Anchor": "cards",
+      "SectionPath": [
+        "Workflow",
+        "Schema",
+        "Cards"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details/Notes/Values",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The web page that can be associated with the content and is opened when the member clicks on the content. For example, if the content is an image and the landing page is a web page then clicking on the image will take the member to the web page. If empty, then there\u0027s no landing page associated with the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09\u0026tabs=http#media"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "MediaContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The media contained in the card. Only supports images.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Media",
+      "Anchor": "media",
+      "SectionPath": [
+        "Workflow",
+        "Schema",
+        "Media"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "altText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The alternative text for the media. None if empty. Must be less than 4,086 characters in length.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title for media. None if empty. Must be less than 400 characters in length.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Carousel Content",
+      "Anchor": "create-carousel-content",
+      "SectionPath": [
+        "Create Carousel Content"
+      ],
+      "Text": "Carousel posts must be sponsored and are not intended to be a regular post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Carousel Content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Carousel Content",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Carousel Content",
+        "Sample Request"
+      ],
+      "Text": "{\n \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n \u0022commentary\u0022: \u0022sample commentary\u0022,\n \u0022visibility\u0022: \u0022PUBLIC\u0022,\n \u0022distribution\u0022: {\n   \u0022feedDistribution\u0022: \u0022NONE\u0022,\n   \u0022targetEntities\u0022: [],\n   \u0022thirdPartyDistributionChannels\u0022: []\n },\n \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n \u0022isReshareDisabledByAuthor\u0022: false,\n \u0022content\u0022: {\n     \u0022carousel\u0022: {\n         \u0022cards\u0022: [\n             {\u0022media\u0022: {\n                 \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n                 \u0022title\u0022: \u0022first card\u0022\n             },\n             \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022\n             },\n             {\u0022media\u0022: {\n                 \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n                 \u0022title\u0022: \u0022second card\u0022\n             },\n             \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022\n             }\n         ]\n     }\n },  \n\u0022contentLandingPage\u0022: \u0022http://www.linkedin.com/contentLandingPage\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Carousel Content",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n\n--header \u0027X-Restli-Protocol-version: 2.0.0\u0027 \\\n\n--header \u0027Linkedin-Version: \\{version number in the format YYYYMM}\u0027 \\\n\n--header \u0027Authorization: Bearer \\{INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n\u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n\u0022adContext\u0022: {\n\u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n\u0022dscStatus\u0022: \u0022ACTIVE\u0022\n},\n\u0022commentary\u0022: \u0022sample commentary\u0022,\n\u0022visibility\u0022: \u0022PUBLIC\u0022,\n\u0022distribution\u0022: {\n\u0022feedDistribution\u0022: \u0022NONE\u0022,\n\u0022targetEntities\u0022: [],\n\u0022thirdPartyDistributionChannels\u0022: []\n},\n\u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n\u0022isReshareDisabledByAuthor\u0022: false,\n\u0022content\u0022: {\n\u0022carousel\u0022: {\n\u0022cards\u0022: [\n{\u0022media\u0022: {\n\u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n\u0022title\u0022: \u0022first card\u0022\n},\n\u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022\n},\n{\u0022media\u0022: {\n\u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022,\n\u0022title\u0022: \u0022second card\u0022\n},\n\u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022\n}\n]\n}\n},\n\u0022contentLandingPage\u0022: \u0022http://www.linkedin.com/contentLandingPage\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Carousel Content",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Carousel Content",
+      "Anchor": "get-carousel-content",
+      "SectionPath": [
+        "Get Carousel Content"
+      ],
+      "Text": "Retrieve carousel content associated with a Post by performing a GET operation to the Posts API on a post that was created with carousel content. Example post ID: urn:li:ugcPost:6914373086788128769",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Carousel Content",
+      "Anchor": "get-carousel-content",
+      "SectionPath": [
+        "Get Carousel Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Carousel Content",
+      "Anchor": "get-carousel-content",
+      "SectionPath": [
+        "Get Carousel Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{postId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Carousel Content",
+      "Anchor": "get-carousel-content",
+      "SectionPath": [
+        "Get Carousel Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts/urn:li:ugcPost:6914373086788128769\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Carousel Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n   \u0022lastModifiedAt\u0022: 1648516563685,\n   \u0022visibility\u0022: \u0022PUBLIC\u0022,\n   \u0022publishedAt\u0022: 1648515006906,\n   \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n   \u0022distribution\u0022: {\n       \u0022feedDistribution\u0022: \u0022NONE\u0022,\n       \u0022thirdPartyDistributionChannels\u0022: []\n   },\n   \u0022content\u0022: {\n       \u0022carousel\u0022: {\n           \u0022cards\u0022: [\n               {\n                   \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                   \u0022media\u0022: {\n                       \u0022title\u0022: \u0022first card\u0022,\n                       \u0022taggedEntities\u0022: [],\n                       \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                   }\n               },\n               {\n                   \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                   \u0022media\u0022: {\n                       \u0022title\u0022: \u0022second card\u0022,\n                       \u0022taggedEntities\u0022: [],\n                       \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                   }\n               }\n           ]\n       }\n   },\n   \u0022lifecycleStateInfo\u0022: {\n       \u0022isEditedByAuthor\u0022: false\n   },\n   \u0022contentLandingPage\u0022: \u0022http://www.linkedin.com/contentLandingPage\u0022,\n   \u0022isReshareDisabledByAuthor\u0022: false,\n   \u0022createdAt\u0022: 1648515006906,\n   \u0022id\u0022: \u0022urn:li:ugcPost:6914373086788128769\u0022,\n   \u0022commentary\u0022: \u0022sample commentary\u0022,\n   \u0022adContext\u0022: {\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n       \u0022dscAdType\u0022: \u0022CAROUSEL\u0022,\n       \u0022isDsc\u0022: true,\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Carousel Content",
+      "Anchor": "batch-get-carousel-content",
+      "SectionPath": [
+        "Batch Get Carousel Content"
+      ],
+      "Text": "Fetch multiple posts with carousel content by providing multiple post IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Carousel Content",
+      "Anchor": "batch-get-carousel-content",
+      "SectionPath": [
+        "Batch Get Carousel Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Carousel Content",
+      "Anchor": "batch-get-carousel-content",
+      "SectionPath": [
+        "Batch Get Carousel Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts?ids=List({encoded postId},{encoded postId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Carousel Content",
+      "Anchor": "batch-get-carousel-content",
+      "SectionPath": [
+        "Batch Get Carousel Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts?ids=List(urn%3Ali%3AugcPost%3A6914373086788128769,urn%3Ali%3AugcPost%3A6914374851449270272)\u0027 \\\n--header \u0027X-RestLi-Method: batch_get\u0027 \\\n--header \u0027X-Restli-Protocol-version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get Carousel Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:ugcPost:6914374851449270272\u0022: {\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1648515427782,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1648515427701,\n           \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022NONE\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022carousel\u0022: {\n                   \u0022cards\u0022: [\n                       {\n                           \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                           \u0022media\u0022: {\n                               \u0022title\u0022: \u0022first card\u0022,\n                               \u0022taggedEntities\u0022: [],\n                               \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                           }\n                       },\n                       {\n                           \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                           \u0022media\u0022: {\n                               \u0022title\u0022: \u0022second card\u0022,\n                               \u0022taggedEntities\u0022: [],\n                               \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                           }\n                       }\n                   ]\n               }\n           },\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           },\n           \u0022contentLandingPage\u0022: \u0022http://www.linkedin.com/contentLandingPage\u0022,\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1648515427701,\n           \u0022id\u0022: \u0022urn:li:ugcPost:6914374851449270272\u0022,\n           \u0022commentary\u0022: \u0022sample commentary\u0022,\n           \u0022adContext\u0022: {\n               \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n               \u0022dscAdType\u0022: \u0022CAROUSEL\u0022,\n               \u0022isDsc\u0022: true,\n               \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n           }\n       },\n       \u0022urn:li:ugcPost:6914373086788128769\u0022: {\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1648516563685,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1648515006906,\n           \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022NONE\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022carousel\u0022: {\n                   \u0022cards\u0022: [\n                       {\n                           \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                           \u0022media\u0022: {\n                               \u0022title\u0022: \u0022first card\u0022,\n                               \u0022taggedEntities\u0022: [],\n                               \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                           }\n                       },\n                       {\n                           \u0022landingPage\u0022: \u0022http://www.linkedin.com/\u0022,\n                           \u0022media\u0022: {\n                               \u0022title\u0022: \u0022second card\u0022,\n                               \u0022taggedEntities\u0022: [],\n                               \u0022id\u0022: \u0022urn:li:image:C4E22AQGX_uq7mQBfAA\u0022\n                           }\n                       }\n                   ]\n               }\n           },\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           },\n           \u0022contentLandingPage\u0022: \u0022http://www.linkedin.com/contentLandingPage\u0022,\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1648515006906,\n           \u0022id\u0022: \u0022urn:li:ugcPost:6914373086788128769\u0022,\n           \u0022commentary\u0022: \u0022sample commentary\u0022,\n           \u0022adContext\u0022: {\n               \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n               \u0022dscAdType\u0022: \u0022CAROUSEL\u0022,\n               \u0022isDsc\u0022: true,\n               \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n           }\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:ugcPost:6914374851449270272\u0022: 200,\n       \u0022urn:li:ugcPost:6914373086788128769\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "Batch Get Carousel Content",
+        "References"
+      ],
+      "Text": "Posts API",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

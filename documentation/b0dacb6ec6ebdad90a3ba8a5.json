@@ -1,0 +1,988 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+  "Title": "Verified on LinkedIn \u2013 Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Overview",
+      "Anchor": "verified-on-linkedin--overview",
+      "SectionPath": [],
+      "Text": "The Verified on LinkedIn API allows you to access trusted verification signals from LinkedIn members, enabling you to display verified identity and workplace information directly within your platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Overview",
+      "Anchor": "verified-on-linkedin--overview",
+      "SectionPath": [],
+      "Text": "Today, more than 100 million LinkedIn members have confirmed their identity with a government-issued ID or verified their workplace using a company email. Read more about LinkedIn verifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Overview",
+      "Anchor": "verified-on-linkedin--overview",
+      "SectionPath": [],
+      "Text": "Build trust and authenticity into your platform by leveraging LinkedIn\u0027s verification ecosystem, helping you distinguish real professionals from fraudulent accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try it Now - It only takes 10 minutes",
+      "Anchor": "try-it-now---it-only-takes-10-minutes",
+      "SectionPath": [
+        "Try it Now - It only takes 10 minutes"
+      ],
+      "Text": "It just takes 10 minutes to make your first API call. Refer to our Quickstart Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What Verified on LinkedIn Can Be Used For",
+      "Anchor": "what-verified-on-linkedin-can-be-used-for",
+      "SectionPath": [
+        "Use Cases",
+        "What Verified on LinkedIn Can Be Used For"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Examples"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Trust \u0026 Safety",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Professional communities, networking platforms, online marketplaces, peer-to-peer exchanges",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Communities \u0026 Networks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event registration, professional conferences, community moderation, alumni groups",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Marketplaces",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Buyer/seller verification, freelance platforms, service-sharing, resale platforms",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What Verified on LinkedIn Cannot Be Used For",
+      "Anchor": "what-verified-on-linkedin-cannot-be-used-for",
+      "SectionPath": [
+        "Use Cases",
+        "What Verified on LinkedIn Cannot Be Used For"
+      ],
+      "Text": "The API is designed for trust enhancement, not regulatory compliance or eligibility decisions.\nUse of the API is subject to LinkedIn\u0027s Developer Terms and Verification Policies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What Verified on LinkedIn Cannot Be Used For",
+      "Anchor": "what-verified-on-linkedin-cannot-be-used-for",
+      "SectionPath": [
+        "Use Cases",
+        "What Verified on LinkedIn Cannot Be Used For"
+      ],
+      "Text": "",
+      "Headers": [
+        "Restricted Use Case",
+        "Reason"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Hiring or employment decisions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not an employment screening tool. Do not use to rank or approve candidates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Background checks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Does not include criminal, financial, or government background data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Credit, loans, or insurance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not related to creditworthiness or insurability.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Housing eligibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot be used for rental or housing determinations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Fintech or banking KYC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not a regulated KYC/AML service.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Government or regulated identity checks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not a substitute for official ID verification systems.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Platform safety or risk scoring",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Should complement \u2014 not replace your platform\u0027s trust and risk systems.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose Your Tier",
+      "Anchor": "choose-your-tier",
+      "SectionPath": [
+        "Choose Your Tier"
+      ],
+      "Text": "LinkedIn offers three tiers of the Verified on LinkedIn API, each designed for different use cases and stages of development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Choose Your Tier",
+      "Anchor": "choose-your-tier",
+      "SectionPath": [
+        "Choose Your Tier"
+      ],
+      "Text": "",
+      "Headers": [
+        "Tier",
+        "Best For",
+        "Access",
+        "Cost",
+        "Rate Limits",
+        "Get Started"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Testing \u0026 prototyping",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer app admins only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Free",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development Tier Quickstart (10 min)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Lite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SMBs \u0026 startups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn members",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Free",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lite Tier Quickstart",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enterprise partners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn members \u002B enhanced data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact us",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus Tier Quickstart",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Detailed Tier Comparison",
+      "Anchor": "detailed-tier-comparison",
+      "SectionPath": [
+        "Choose Your Tier",
+        "Detailed Tier Comparison"
+      ],
+      "Text": "",
+      "Headers": [
+        "Feature",
+        "Development",
+        "Lite",
+        "Plus"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Access Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Self-serve (automatic)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application review",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Business Development approval",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member Data Access",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer app admins only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn members",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All LinkedIn members",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Production Ready",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Testing only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Profile Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile info",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile info",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile info \u002B Current experience \u002B Recent education",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Verification Details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified categories only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified categories only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified Categories \u002B Details \u002B Timestamps",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Bulk Validation API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Validate if the member data has changed and needs to be refreshed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Push Notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Get push notification events when a member data has changed",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Detailed Tier Comparison",
+      "Anchor": "detailed-tier-comparison",
+      "SectionPath": [
+        "Choose Your Tier",
+        "Detailed Tier Comparison"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Detailed Tier Comparison",
+      "Anchor": "detailed-tier-comparison",
+      "SectionPath": [
+        "Choose Your Tier",
+        "Detailed Tier Comparison"
+      ],
+      "Text": "For Plus tier pricing and partnership inquiries, contact LinkedIn Business Development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Verification Types",
+      "Anchor": "verification-types",
+      "SectionPath": [
+        "Verification Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Type",
+        "Description",
+        "Methods",
+        "Data Available"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Identity Verification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirms the member\u0027s real identity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Government-issued ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified Categories (all tiers), Verification details (Plus tier)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Workplace Verification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirms current association with a company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Work email, Microsoft Entra Verified ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified Categories (all tiers), Organization details (Plus tier)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How It Works",
+      "Anchor": "how-it-works",
+      "SectionPath": [
+        "How It Works"
+      ],
+      "Text": "Member Authorizes: Grants your app permission to access their LinkedIn verification data via OAuth 2.0.\nFetch Verification Data: Call LinkedIn APIs to retrieve verification status and profile information.\nOptional Re-verification: The /verificationReport API also supports the optional verifiedWithinDays query parameter, allowing your application to periodically prompt members to re-verify while continuing to display their existing verification data.\nDisplay Verification Badges: Show \u0022Verified on LinkedIn\u0022 badges in your UI following our branding guidelines if the member is verified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "By Role",
+      "Anchor": "by-role",
+      "SectionPath": [
+        "Quick Navigation",
+        "By Role"
+      ],
+      "Text": "",
+      "Headers": [
+        "Who You Are",
+        "Where to Start"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Developer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pick a quickstart \u2192 API Reference \u2192 Implementation Guide",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Product Manager",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use Cases \u2192 Tier comparison (above) \u2192 Pick a quickstart",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview#use-cases"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Marketing \u0026 Design",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Branding Guidelines \u2192 Use Cases",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview#use-cases"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "By Goal",
+      "Anchor": "by-goal",
+      "SectionPath": [
+        "Quick Navigation",
+        "By Goal"
+      ],
+      "Text": "",
+      "Headers": [
+        "I Want To...",
+        "Go Here"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Test the API quickly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Quickstart (Development Tier) - 10 minutes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Launch in production",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upgrade to Lite Tier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Get enterprise features",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus Tier Quickstart",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "See API docs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API Reference",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Understand use cases",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use Cases",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview#use-cases"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Display badges correctly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Branding Guidelines",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Reference",
+      "Anchor": "api-reference",
+      "SectionPath": [
+        "API Reference"
+      ],
+      "Text": "All tiers use the same API endpoints with different access levels:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Reference",
+      "Anchor": "api-reference",
+      "SectionPath": [
+        "API Reference"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Purpose",
+        "Development",
+        "Lite",
+        "Plus"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/identityMe",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Profile data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile \u002B current Experience \u002B recent Education",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/verificationReport",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Verification status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Categories only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Categories only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Categories \u002B Verification details",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/validationStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Bulk validation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Validation statuses of Profile \u002B Verification Information",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Reference",
+      "Anchor": "api-reference",
+      "SectionPath": [
+        "API Reference"
+      ],
+      "Text": "View complete API reference \u2192",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Choose Your Tier",
+      "Anchor": "step-1-choose-your-tier",
+      "SectionPath": [
+        "Getting Started",
+        "Step 1: Choose Your Tier"
+      ],
+      "Text": "Review the tier comparison table above to find the right tier for your needs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Follow the Quickstart",
+      "Anchor": "step-2-follow-the-quickstart",
+      "SectionPath": [
+        "Getting Started",
+        "Step 2: Follow the Quickstart"
+      ],
+      "Text": "Quickstart (Development Tier) - Test with developer app admins (10 min)\nUpgrade to Lite Tier - Production for SMBs\nPlus Tier Quickstart - Enterprise features",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Implement \u0026 Launch",
+      "Anchor": "step-3-implement--launch",
+      "SectionPath": [
+        "Getting Started",
+        "Step 3: Implement \u0026 Launch"
+      ],
+      "Text": "Follow the Implementation Guide for API Integration, OAuth, testing, and production best practices.\nReview Branding Guidelines\nCheck our FAQ for common questions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation",
+      "Anchor": "documentation",
+      "SectionPath": [
+        "Support \u0026 Resources",
+        "Documentation"
+      ],
+      "Text": "API Reference - Complete API documentation\nCommon FAQ - Frequently asked questions\nRelease Notes - API updates and changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Tools",
+      "Anchor": "tools",
+      "SectionPath": [
+        "Support \u0026 Resources",
+        "Tools"
+      ],
+      "Text": "Sample App - Test OAuth flow and API calls\nDeveloper Portal - Manage your applications\nOAuth Tool - Generate test tokens",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Help",
+      "Anchor": "help",
+      "SectionPath": [
+        "Support \u0026 Resources",
+        "Help"
+      ],
+      "Text": "LinkedIn API Status - Monitor API health\nPartner Support - Get help from LinkedIn team",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

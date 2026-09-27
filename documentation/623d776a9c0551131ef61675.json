@@ -1,0 +1,259 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+  "Title": "Quick Start",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/restricted-use-cases",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/page-management/organic-posts-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Quick Start",
+      "Anchor": "quick-start",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Start",
+      "Anchor": "quick-start",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Start",
+      "Anchor": "quick-start",
+      "SectionPath": [],
+      "Text": "Use this quick start guide to begin working with the LinkedIn APIs. Refer to the following steps to get started:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Quick Start",
+      "Anchor": "quick-start",
+      "SectionPath": [],
+      "Text": "Apply for API access.\nGet started with the Advertising API.\nGet started with the Community Management.\nGet started with the Lead Sync API.\nGet started with the Conversions API.\nGet started with the Events Management API.\nGet started with the Matched Audiences API.\nLearn about the tools to manage your app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Apply for API Access",
+      "Anchor": "step-1-apply-for-api-access",
+      "SectionPath": [
+        "Step 1: Apply for API Access"
+      ],
+      "Text": "Create a LinkedIn Page.\n\nCreate a developer application in the Developer Portal.\n\nReview our API and data restrictions to ensure your use case is supported and your application is not rejected due to a restricted use case.\n\nApply to the desired API under the Products tab of your app.\n\n\n\n\n\nComplete the access form.\n\nLearn more about the application process for the Community Management API.\nLearn more about the application process for the Lead Sync API.\nLearn more about the application process for the Conversions API.\nLearn more about the application process for the Matched Audiences API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Get Started with the Advertising API",
+      "Anchor": "step-2-get-started-with-the-advertising-api",
+      "SectionPath": [
+        "Step 2: Get Started with the Advertising API"
+      ],
+      "Text": "Generate an access token to make authenticated API calls for testing, either by using the Token Generator tool available on the Developer Portal or the LinkedIn Marketing Solutions Workspace on the Postman Network.\n\nEnsure you have the right permission based on your use case.\nReview the permissions available and confirm you have access to the required permissions in the Developer Portal under the Auth tab for your app.\n\nValidate the ad accounts a user can access.\nThe /adAccountUsers endpoint provides methods to determine which members have access to specific ad accounts. Refer to the following links for specific examples.\n\nFind ad account users by ad accounts\nFind ad accounts by Authenticated User\nGet ad account user\n\nAdditionally, /adAccountUsers can be used to grant, update, or revoke access to an ad account. This action must be performed using the token of a member who has either an ACCOUNT_BILLING_ADMIN or ACCOUNT_MANAGER role.\n\nGrant Access\nUpdate Access\nRevoke Access\n\nTo map the ad account ID(s) to your developer application in the Development tier, refer to the following steps:\n\nFrom the Campaign Manager tool, copy the nine-digit Ad Account ID.\nOpen the Developer Portal and select your application.\nFrom the Products tab, click View Ad Accounts.\n\n\n\n\nChoose Add Ad Account, enter the Ad Account ID, and save the changes.\nReview the Tips to Get Started.\nCheck out the Advertising Use Case Guide to build your solution.\nAfter you build and test your application, apply for Standard tier access. To upgrade to Advertising API Standard tier, submit a tier upgrade request with a video demonstrating how your platform creates, edits, or optimizes LinkedIn campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Started with the Community Management API",
+      "Anchor": "step-3-get-started-with-the-community-management-api",
+      "SectionPath": [
+        "Step 3: Get Started with the Community Management API"
+      ],
+      "Text": "If you have an existing integration and need to migrate to the new API, check out the migration guide. If you are new to LinkedIn Marketing APIs, refer to the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Started with the Community Management API",
+      "Anchor": "step-3-get-started-with-the-community-management-api",
+      "SectionPath": [
+        "Step 3: Get Started with the Community Management API"
+      ],
+      "Text": "Generate an access token to make authenticated API calls for testing either through Token Generator tool available on the Developer Portal or the LinkedIn Marketing Solutions Workspace on the Postman Network.\n\nEnsure you have the right permission based on your use case.\nReview the permissions available and confirm access in the Developer Portal under the Auth tab for your app.\n\nValidate all LinkedIn Pages a user can access.\nThe /organizationAcls endpoint has the following methods to determine which members have access to each company Page. Refer to the following links for specific examples:\n\nFind an Organization\u0027s Members\nFind a Member\u0027s Organizations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Started with the Community Management API",
+      "Anchor": "step-3-get-started-with-the-community-management-api",
+      "SectionPath": [
+        "Step 3: Get Started with the Community Management API"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Started with the Community Management API",
+      "Anchor": "step-3-get-started-with-the-community-management-api",
+      "SectionPath": [
+        "Step 3: Get Started with the Community Management API"
+      ],
+      "Text": "Access to a Company Page cannot be granted or updated through the API. Please use the UI tool to grant, update, or remove access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Started with the Community Management API",
+      "Anchor": "step-3-get-started-with-the-community-management-api",
+      "SectionPath": [
+        "Step 3: Get Started with the Community Management API"
+      ],
+      "Text": "Review the Tips to Get Started.\n\nCheck out the Community Management Use Case Guides to build your solution.\n\nOnce you have built and tested your application, apply for Standard tier access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Get Started with the Community Management API",
+      "Anchor": "step-3-get-started-with-the-community-management-api",
+      "SectionPath": [
+        "Step 3: Get Started with the Community Management API"
+      ],
+      "Text": "To upgrade to Community Management Standard tier, you need to complete a Standard tier access form, submit a screen recording of your app, and share test credentials for your app. Learn more on the Community Management App Review page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Get Started with the Lead Sync API",
+      "Anchor": "step-4-get-started-with-the-lead-sync-api",
+      "SectionPath": [
+        "Step 4: Get Started with the Lead Sync API"
+      ],
+      "Text": "If you have an existing integration and need to migrate to the new API, check out the migration guide. If you are new to LinkedIn Marketing APIs, refer to the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Get Started with the Lead Sync API",
+      "Anchor": "step-4-get-started-with-the-lead-sync-api",
+      "SectionPath": [
+        "Step 4: Get Started with the Lead Sync API"
+      ],
+      "Text": "Generate an access token to make authenticated API calls for testing either through Token Generator tool available on the Developer Portal or the LinkedIn Marketing Solutions Workspace on the Postman Network.\n\nEnsure you have the right permission(s) based on your use case. Review the permissions available and confirm you have access to the right permissions in the Developer Portal under the Auth tab for your app.\n\nValidate the member\u2019s role on the ad account and company page.\n\nRefer Account Access Controls for information on how to retrieve a member\u0027s ad account roles.\nRefer Organization Access Control for information on how to retrieve a member\u0027s company page/organization roles.\n\n\nReview the Tips to Get Started.\n\nOnce you have built and tested your application, review the\nIntegration Requirements to become a formally certified partner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Get Started with the Conversions API",
+      "Anchor": "step-5-get-started-with-the-conversions-api",
+      "SectionPath": [
+        "Step 5: Get Started with the Conversions API"
+      ],
+      "Text": "Generate an access token to make authenticated API calls either through Direct API access in Campaign Manager for advertisers or for testing through Token Generator tool available on the Developer Portal or the LinkedIn Marketing Solutions Workspace on the Postman Network.\n\nEnsure you have the right permission(s) for your use case. Review the permissions available and confirm you have access to the required permissions in the Developer Portal under the Auth tab for your app.\n\nValidate if the member has the right role on the ad account. Refer Account Access Controls for information on how to retrieve a member\u0027s ad account roles.\n\nReview the Tips to Get Started.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Get Started with the Event Management API",
+      "Anchor": "step-6-get-started-with-the-event-management-api",
+      "SectionPath": [
+        "Step 6: Get Started with the Event Management API"
+      ],
+      "Text": "Event promotion, whether paid or organic, requires using these APIs together with the Advertising APIs or Community Management APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Get Started with the Event Management API",
+      "Anchor": "step-6-get-started-with-the-event-management-api",
+      "SectionPath": [
+        "Step 6: Get Started with the Event Management API"
+      ],
+      "Text": "Generate an access token to make authenticated API calls for testing through Token Generator tool available on the Developer Portal.\nEnsure you have the right permission(s) based on your use case. Review the permissions available and confirm you have access to the right permissions in the Developer Portal under the Auth tab for your app.\nValidate whether the member has the right role in the organization. Refer Account Access Controls for information on how to retrieve a member\u0027s company page/organization roles.\nReview the Tips to Get Started.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Get Started with the Event Management API",
+      "Anchor": "step-6-get-started-with-the-event-management-api",
+      "SectionPath": [
+        "Step 6: Get Started with the Event Management API"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Get Started with the Event Management API",
+      "Anchor": "step-6-get-started-with-the-event-management-api",
+      "SectionPath": [
+        "Step 6: Get Started with the Event Management API"
+      ],
+      "Text": "Check out the Event Management API overview page to understand the use cases and start building your solution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 7: Get Started with the Matched Audiences API",
+      "Anchor": "step-7-get-started-with-the-matched-audiences-api",
+      "SectionPath": [
+        "Step 7: Get Started with the Matched Audiences API"
+      ],
+      "Text": "Generate an access token to make authenticated API calls for testing either through Token Generator tool available on the Developer Portal or the LinkedIn Marketing Solutions Workspace on the Postman Network.\nEnsure you have the right permission(s) for your use case. Review the permissions available and confirm you have access to the required permissions in the Developer Portal under the Auth tab for your app.\nValidate if the member has the right role on the ad account. Refer Account Access Controls for information on how to retrieve a member\u0027s ad account roles.\nReview the Tips to Get Started.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 8: Tools to Manage Your App on the Developer Portal",
+      "Anchor": "step-8-tools-to-manage-your-app-on-the-developer-portal",
+      "SectionPath": [
+        "Step 8: Tools to Manage Your App on the Developer Portal"
+      ],
+      "Text": "Token generator: Generate a new token for testing using the Developer Portal.\nToken inspector: Check the Time to Live (TTL) and status (active/expired) for all tokens.\nAPI endpoint catalog: Get a holistic view of the endpoints and permissions your application has access to.\nApp analytics: Assess app performance to understand product health, diagnose issues, and stay informed on usage trends in order to better serve your users.\nWebhooks: Register your webhook to receive real-time HTTP notifications for subscribed events.\nAdd team members: Enable your team to manage your app and receive the API newsletter.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

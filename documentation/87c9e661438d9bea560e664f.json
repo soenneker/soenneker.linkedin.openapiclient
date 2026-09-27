@@ -1,0 +1,125 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+  "Title": "Apply Connect overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply Connect overview",
+      "Anchor": "apply-connect-overview",
+      "SectionPath": [],
+      "Text": "Apply Connect is an integration between applicant tracking system (ATS) and LinkedIn. It allows LinkedIn members to apply to jobs on LinkedIn without being redirected to external websites, and stay updated on their job application statuses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect overview",
+      "Anchor": "apply-connect-overview",
+      "SectionPath": [],
+      "Text": "With this integration, you, as a LinkedIn partner, can post jobs on LinkedIn on behalf of your customers, through your ATS, and receive all job applications directly into your ATS system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Components",
+      "Anchor": "components",
+      "SectionPath": [
+        "Components"
+      ],
+      "Text": "Apply Connect consists of the following components:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Components",
+      "Anchor": "components",
+      "SectionPath": [
+        "Components"
+      ],
+      "Text": "A set of APIs to\n\nsend job postings and associated application questions to LinkedIn.\nreceive real-time job applications and skills match data from LinkedIn applicants.\ndeliver job statuses to applicants to keep them updated.\n\n\nAn interactive Applicant Highlights widget that appears on hover, optimized for candidate list views.\nA full-page Apply Connect Full Profile widget rendered on the application view of a candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Components",
+      "Anchor": "components",
+      "SectionPath": [
+        "Components"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Components",
+      "Anchor": "components",
+      "SectionPath": [
+        "Components"
+      ],
+      "Text": "Apply Connect also supports Apply Connect with Verifications. It adds a verificationData object to the job application payload that shows LinkedIn verified the applicant\u0027s identity or workplace.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Integrate with Apply Connect",
+        "Requirements"
+      ],
+      "Text": "Use a LinkedIn Recruiter Corporate license or LinkedIn Recruiter Professional Services license to access real-time LinkedIn data directly in your ATS and evaluate applicants based on your job criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration steps",
+      "Anchor": "integration-steps",
+      "SectionPath": [
+        "Integrate with Apply Connect",
+        "Integration steps"
+      ],
+      "Text": "To complete the integration, follow these steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration steps",
+      "Anchor": "integration-steps",
+      "SectionPath": [
+        "Integrate with Apply Connect",
+        "Integration steps"
+      ],
+      "Text": "Step 1 - Configure customer application\nStep 2 - Create and manage jobs with Onsite Apply\nStep 3 - Display job posting status\nStep 4 - Receive applications\nStep 5 - Sync job application feedback signals\nStep 6 - Display Apply Connect plugins\nStep 7 - Handle job resync requests\nStep 8 - Complete Apply Connect certification",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

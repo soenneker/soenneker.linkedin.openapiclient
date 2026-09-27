@@ -1,0 +1,171 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+  "Title": "Pagination",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [],
+      "Text": "API calls that return a large number of entities are broken up into multiple pages of results. You might need to make multiple API calls with slightly varied paging parameters to iteratively collect all the data you are trying to gather.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [],
+      "Text": "Use the following query parameters to paginate through results:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results.\u00A0There could be fewer items remaining than the value you specify.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "To paginate through results, begin with a start value of 0 and a count value of N.\u00A0To get the next page, set start value to N, while the count value stays the same.\u00A0Subsequent pages start at 2N, 3N, 4N, and so on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Samples",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Samples",
+        "Sample Response"
+      ],
+      "Text": "\u0022elements\u0022: [\n    {\u0022Result #0\u0022},\n    {\u0022Result #1\u0022},\n    {\u0022Result #2\u0022},\n    {\u0022Result #3\u0022},\n    {\u0022Result #4\u0022},\n    {\u0022Result #5\u0022},\n    {\u0022Result #6\u0022},\n    {\u0022Result #7\u0022},\n    {\u0022Result #8\u0022},\n    {\u0022Result #9\u0022}\n],\n\u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Samples",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}?start=10\u0026count=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Samples",
+        "Sample Response"
+      ],
+      "Text": "\u0022elements\u0022: [\n    {\u0022Result #10\u0022},\n    {\u0022Result #11\u0022},\n    {\u0022Result #12\u0022},\n    {\u0022Result #13\u0022},\n    {\u0022Result #14\u0022},\n    {\u0022Result #15\u0022},\n    {\u0022Result #16\u0022},\n    {\u0022Result #17\u0022},\n    {\u0022Result #18\u0022},\n    {\u0022Result #19\u0022}\n],\n\u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 10\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "End of the Dataset",
+      "Anchor": "end-of-the-dataset",
+      "SectionPath": [
+        "Samples",
+        "End of the Dataset"
+      ],
+      "Text": "You have reached the end of the dataset when your response contains fewer elements in the entities block of the response than your count parameter request.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

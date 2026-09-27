@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content property</summary>
+        /// <summary>Content of the Lead Form which is displayed to the viewer.Documented type: DisplayContent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContent? Content { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContent Content { get; set; }
 #endif
-        /// <summary>The created property</summary>
-        public int? Created { get; set; }
-        /// <summary>The creationLocale property</summary>
+        /// <summary>An epoch time corresponding to the creation of the form.Documented type: Time</summary>
+        public long? Created { get; set; }
+        /// <summary>Locale of the entity. This field serves as the preferred locale for all fields within the Lead Form with an object type that&apos;s capable of localization, such as MultiLocaleString.Documented type: Locale</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale? CreationLocale { get; set; }
@@ -32,19 +32,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale CreationLocale { get; set; }
 #endif
-        /// <summary>The hiddenFields property</summary>
+        /// <summary>Hidden fields used by the owner to track key attributes of the form that generated the lead. The field is empty if the owner chooses to not append any tracking attributes to the Lead Form.Documented type: HiddenField[]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemHiddenFieldsItem>? HiddenFields { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaHiddenfieldSubObject>? HiddenFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemHiddenFieldsItem> HiddenFields { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaHiddenfieldSubObject> HiddenFields { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public int? Id { get; set; }
-        /// <summary>The lastModified property</summary>
-        public int? LastModified { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Numerical identifier for the form.Documented type: Long</summary>
+        public long? Id { get; set; }
+        /// <summary>An epoch time corresponding to the last modified of the form.Documented type: Time</summary>
+        public long? LastModified { get; set; }
+        /// <summary>Name of the Lead Form provided by the owner.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemOwner Owner { get; set; }
 #endif
-        /// <summary>The reviewInfo property</summary>
+        /// <summary>Latest information about the content review of the Lead Form. (Optional) It is not present if the form hasn&apos;t been reviewed by the review pipeline.Documented type: LeadGenReviewInfo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfo? ReviewInfo { get; set; }
@@ -68,16 +68,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfo ReviewInfo { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>Information about the current state of the Lead Form.Documented type: LeadGenLifecycleState</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemState? State { get; set; }
+        /// <summary>The version ID of the form. This is a derived field and is generated on the server side.Documented type: int</summary>
+        public int? VersionId { get; set; }
+        /// <summary>The number of times the form has been modified.Documented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? VersionTag { get; set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public string VersionTag { get; set; }
 #endif
-        /// <summary>The versionId property</summary>
-        public int? VersionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -104,16 +106,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContent.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetIntValue(); } },
+                { "created", n => { Created = n.GetLongValue(); } },
                 { "creationLocale", n => { CreationLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale.CreateFromDiscriminatorValue); } },
-                { "hiddenFields", n => { HiddenFields = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemHiddenFieldsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemHiddenFieldsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "lastModified", n => { LastModified = n.GetIntValue(); } },
+                { "hiddenFields", n => { HiddenFields = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaHiddenfieldSubObject>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaHiddenfieldSubObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "lastModified", n => { LastModified = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemOwner>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemOwner.CreateFromDiscriminatorValue); } },
                 { "reviewInfo", n => { ReviewInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfo.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemState>(); } },
                 { "versionId", n => { VersionId = n.GetIntValue(); } },
+                { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -124,16 +127,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemContent>("content", Content);
-            writer.WriteIntValue("created", Created);
+            writer.WriteLongValue("created", Created);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemCreationLocale>("creationLocale", CreationLocale);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemHiddenFieldsItem>("hiddenFields", HiddenFields);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("lastModified", LastModified);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnMarketingLeadSyncLeadSyncSchemaHiddenfieldSubObject>("hiddenFields", HiddenFields);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemOwner>("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemReviewInfo>("reviewInfo", ReviewInfo);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation5GetFormsForTheUserSOrganization200ResponseElementsItemState>("state", State);
             writer.WriteIntValue("versionId", VersionId);
+            writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

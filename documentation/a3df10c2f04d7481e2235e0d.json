@@ -1,0 +1,2513 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+  "Title": "learningAssets API Reference",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "learningAssets API Reference",
+      "Anchor": "learningassets-api-reference",
+      "SectionPath": [],
+      "Text": "This resource represents LinkedIn Learning content metadata. You can use these methods to bulk import content metadata or add content search into your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "get\ncriteria\nlocaleAndType",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Supported Methods",
+        "get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:563322?targetLocale.language=en\u0026targetLocale.country=US\u0026includeRetired=true\u0026expandDepth=3\u0026fields=urn,title\u0027 \\\n  -H \u0027Authorization: Bearer  AQU...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Supported Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022urn\u0022: \u0022urn:li:lyndaCourse:563322\u0022,\n    \u0022title\u0022: {\n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Measuring Company Culture\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Supported Methods",
+        "get",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language the API will use to try to localize the learning asset. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning asset cannot be localized or if the target locale is not set, the API will use the default locale of the learning asset. Supported language values include: deenesfrinitjakoplpttrzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "in",
+              "it",
+              "ja",
+              "ko",
+              "pl",
+              "pt",
+              "tr",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region the API will use to try to localize the learning asset. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning asset cannot be localized or if the target locale is not set, the API will use the default locale of the learning asset. Supported country/region values include: BRESCNDEFRIDITJPKRPLUSTR",
+            "Links": [],
+            "Values": [
+              "BR",
+              "ES",
+              "CN",
+              "DE",
+              "FR",
+              "ID",
+              "IT",
+              "JP",
+              "KR",
+              "PL",
+              "US",
+              "TR"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expandDepth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 1)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeRetired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to include retired learning assets. Supported values include: truefalse",
+            "Links": [],
+            "Values": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetRetrievalCriteria.includeRetired=true\u0026assetRetrievalCriteria.expandDepth=1\u0026count=2\u0026start=3400\u0026assetFilteringCriteria.licensedOnly=true\u0026assetFilteringCriteria.locales[0].country=US\u0026assetFilteringCriteria.locales[0].language=en\u0026fields=urn,title,details:(level)\u0027 \\\n  -H \u0027Authorization: Bearer  AQU...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022metadata\u0022: {},\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:187499\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Collaborative Design: Process and Efficiency\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:187500\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Collaborative Design: Vision and Strategy\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 9782,\n        \u0022count\u0022: 2,\n        \u0022start\u0022: 3400,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true\u0026assetFilteringCriteria.locales[0].country=US\u0026assetFilteringCriteria.locales[0].language=en\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=2\u0026q=criteria\u0026start=3398\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.licensedOnly=true\u0026assetFilteringCriteria.locales[0].country=US\u0026assetFilteringCriteria.locales[0].language=en\u0026assetRetrievalCriteria.expandDepth=1\u0026assetRetrievalCriteria.includeRetired=true\u0026count=2\u0026q=criteria\u0026start=3402\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be criteria.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.assetTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The types of learning assets to search. The search results will include only learning assets of these types. If omitted, the search results will include learning assets of any type. Since this parameter is an array, you will need to specify a zero-based index per value. Supported values include: COURSELEARNING_PATHVIDEO",
+            "Links": [],
+            "Values": [
+              "COURSE",
+              "LEARNING_PATH",
+              "VIDEO"
+            ]
+          },
+          {
+            "Text": "AssetType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assettype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.classifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of learning classification URNs to search learning assets. The search results will include only learning assets tagged with these classifications. The supported URN types are \u0022urn:li:lyndaCategory\u0022 and \u0022urn:li:skill\u0022. Classification URNs can be discovered using /v2/learningClassifications endpoint. If omitted, the search results will include learning assets tagged with any classification. Since this parameter is an array, you will need to specify a zero-based index per value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.difficultyLevels",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of difficulty levels of learning assets to search. The search results will include only learning assets of these difficulty levels. If omitted, the search results will include learning assets of any difficulty level. Since this parameter is an array, you will need to specify a zero-based index per value. Supported values include: BEGINNERINTERMEDIATEADVANCED",
+            "Links": [],
+            "Values": [
+              "BEGINNER",
+              "INTERMEDIATE",
+              "ADVANCED"
+            ]
+          },
+          {
+            "Text": "DifficultyLevel",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#difficultylevel"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.isCurated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether to filter for learning assets curated by an account administrator for integration use cases. If set to true, search results will include only and all curated learning assets. If omitted or set to false, results will include all learning assets, regardless of their curation status. Note: This filter applies only to videos, as detailed in the LMS Video Curation feature article. When using assetFilteringCriteria.isCurated=true, only the following additional filters are supported: assetFilteringCriteria.assetTypes[0]=VIDEOassetRetrievalCriteria.expandDepthassetRetrievalCriteria.includeRetiredstartcount",
+            "Links": [
+              "https://www.linkedin.com/help/learning/answer/a7121731"
+            ],
+            "Values": [
+              "assetFilteringCriteria.assetTypes[0]=VIDEO",
+              "assetRetrievalCriteria.expandDepth",
+              "assetRetrievalCriteria.includeRetired",
+              "start",
+              "count"
+            ]
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.keyword",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The keyword string to search learning assets. The search results will include only learning assets matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm. The value of this parameter is case-insensitive.If omitted, the search results will include learning assets matching any keyword string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.lastModifiedAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time after which the assets were changed i.e. released, modified or retired. Represented by number of milliseconds since midnight, January 1, 1970 UTC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.locales[].language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of languages from which results should be filtered on. The supported values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Since the locales parameter is an array, you will need to specify a zero-based index per value. Supported language values include: deenesfrinitjakoplpttrzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "in",
+              "it",
+              "ja",
+              "ko",
+              "pl",
+              "pt",
+              "tr",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default=en)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.locales[].country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of locale countries/regions from which results should be filtered on. Since the locales parameter is an array, you will need to specify a zero-based index per value. The supported values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported country/region values include: BRESCNDEFRIDITJPKRPLUSTR",
+            "Links": [],
+            "Values": [
+              "BR",
+              "ES",
+              "CN",
+              "DE",
+              "FR",
+              "ID",
+              "IT",
+              "JP",
+              "KR",
+              "PL",
+              "US",
+              "TR"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default=US)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.licensedOnly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean that indicates results should be filtered to only include learningAssets the caller is licensed to access. If this parameter is set to true and assetFilteringCriteria.locales parameter is omitted the locale values are implied by the callers licensed access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetPresentationCriteria.sortBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How to sort the learning assets in the search results. Relevance sorts the learning assets by LinkedIn Learning\u0027s relevance algorithm. Popularity sorts the learning assets by view count. Recency sorts the learning assets by publish date. Supported values include: POPULARITYRELEVANCERECENCY",
+            "Links": [],
+            "Values": [
+              "POPULARITY",
+              "RELEVANCE",
+              "RECENCY"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = RELEVANCE)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetRetrievalCriteria.expandDepth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the \u0022Specifying the level of asset details\u0022 section for an explanation with examples.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 1)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetRetrievalCriteria.includeRetired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to include retired learning assets. To retrieve active and retired learning assets, set this parameter to true. Supported values include: truefalse",
+            "Links": [],
+            "Values": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning assets for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning assets to include in the page. The maximum count is 100 assets per page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 20)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Limited Response Scenarios",
+      "Anchor": "limited-response-scenarios",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Limited Response Scenarios"
+      ],
+      "Text": "When certain query parameters are used to call the /learningAssets criteria finder, the endpoint returns only 1000 records in the response body even if the number of records that match the query are greater than 1000. A list of the parameters that trigger this behavior is documented below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Limited Response Scenarios",
+      "Anchor": "limited-response-scenarios",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Limited Response Scenarios"
+      ],
+      "Text": "",
+      "Headers": [
+        "Query Parameter",
+        "Sample Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assetFilteringCriteria.assetTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE\u0026assetFilteringCriteria.assetTypes[1]=CHAPTER",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.difficultyLevels",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.difficultyLevels[0]=INTERMEDIATE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.keyword",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=Mixing Audio",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.lastModifiedAfter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.lastModifiedAfter=1271848477000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetFilteringCriteria.licensedOnly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.licensedOnly=true",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetPresentationCriteria.sortBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetPresentationCriteria.sortBy=POPULARITY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Limited Response Scenarios",
+      "Anchor": "limited-response-scenarios",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Limited Response Scenarios"
+      ],
+      "Text": "Additionally, in some circumstances, calls to /learningAssets criteria finder endpoint will return the all the records rather than the truncated 1000 if the calls match the exact following conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limited Response Scenarios",
+      "Anchor": "limited-response-scenarios",
+      "SectionPath": [
+        "Supported Methods",
+        "criteria",
+        "Limited Response Scenarios"
+      ],
+      "Text": "Query parameter assetFilteringCriteria.assetTypes is set only once in the request to search records only for a single type of asset. A sample request in this scenario will look like https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.assetTypes[0]=COURSE.\nQuery parameter assetFilteringCriteria.licensedOnly is set in the request along with query parameterassetFilteringCriteria.assetTypes and query parameterassetFilteringCriteria.assetTypes is set only once. A sample request in this scenario will look like https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.licensedOnly=true\u0026assetFilteringCriteria.assetTypes[0]=COURSE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Supported Methods",
+        "localeAndType",
+        "Sample Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=localeAndType\u0026assetType=COURSE\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026start=1000\u0026count=20\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Supported Methods",
+        "localeAndType",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:144562\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022mocha 3 Essential Training\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCourse:144561\u0022,\n            \u0022details\u0022: {\n                \u0022level\u0022: \u0022BEGINNER\u0022\n            },\n            \u0022title\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Learning AutoCAD for Mac\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 7657,\n        \u0022count\u0022: 2,\n        \u0022start\u0022: 1000,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetType=COURSE\u0026count=2\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=998\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningAssets?assetType=COURSE\u0026count=2\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=1002\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Supported Methods",
+        "localeAndType",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be localeAndType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "assetType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the type of learning asset you are retrieving. Supported values include: COURSELEARNING_PATHVIDEO",
+            "Links": [],
+            "Values": [
+              "COURSE",
+              "LEARNING_PATH",
+              "VIDEO"
+            ]
+          },
+          {
+            "Text": "AssetType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assettype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language of the learning assets. The supported values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported language values include: deenesfrinitjakoplpttrzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "in",
+              "it",
+              "ja",
+              "ko",
+              "pl",
+              "pt",
+              "tr",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region of the learning assets. The supported values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022in_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported country/region values include: BRESCNDEFRIDITJPKRPLUSTR",
+            "Links": [],
+            "Values": [
+              "BR",
+              "ES",
+              "CN",
+              "DE",
+              "FR",
+              "ID",
+              "IT",
+              "JP",
+              "KR",
+              "PL",
+              "US",
+              "TR"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expandDepth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 1)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeRetired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to include retired learning assets. To retrieve active and retired learning assets, set this parameter to true. Supported values include: truefalse",
+            "Links": [],
+            "Values": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning assets for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning assets to include in the page. The maximum count is 100 assets per page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 20)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Response Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sub-assets of the learning asset. For example, a learning asset representing a course has sub-assets representing its chapters; a learning asset representing a chapter has sub-assets representing its videos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SubAsset[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#subasset"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the details about the learning asset. If this field is not present, it means the request did not specify retrieving the asset details (see the \u0022Specifying the level of asset details\u0022 section).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assetdetails"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title of the learning asset, localized if available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assettype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the learning asset. The URN is a unique identifier whose value should be treated as opaque. Do not use the URN to determine the type of the learning asset; use the \u0022type\u0022 field instead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Definitions",
+      "Anchor": "definitions",
+      "SectionPath": [
+        "Definitions"
+      ],
+      "Text": "AssetClassification\nAssetDetails\nAssetImages\nAssetType\nAssetUrls\nAssociatedClassification\nAvailability\nContributionType\nContributor\nDifficultyLevel\nLocale\nLocaleString\nNamedParty\nSubAsset\nTimeSpan\nTimeUnit",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AssetClassification",
+      "Anchor": "assetclassification",
+      "SectionPath": [
+        "Definitions",
+        "AssetClassification"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "assigner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The person or organization who tagged the learning asset with the learning classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NamedParty",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#namedparty"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedClassification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning classification the learning asset is tagged with.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Classification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "path",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The parent learning classifications of the associated learning classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Classification []",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AssetDetails",
+      "Anchor": "assetdetails",
+      "SectionPath": [
+        "Definitions",
+        "AssetDetails"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "availability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The availability of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Availability",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#availability"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "availableLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locales the learning asset is available in.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale []",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "classifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning classifications the learning asset is tagged with.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetClassification []",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assetclassification"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contributors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contributors involved in the lifecycle of the learning asset - for example, authors or publishers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contributor []",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#contributor"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the text-only description of the learning asset, localized if available. Any HTML markup will be stripped from this description.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "descriptionIncludingHtml",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the description - including any HTML markup - of the learning asset, localized if available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "images",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The images that can be used to represent the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetImages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assetimages"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastUpdatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch time in milliseconds indicating when the learning asset was last updated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the difficulty level of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DifficultyLevel",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#difficultylevel"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publishedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch time in milliseconds indicating when the learning asset was published.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relationships",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this field is currently always an empty array. Future versions of the API may use this field to indicate relationships the learning asset has to other learning assets.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "retiredAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the epoch time in milliseconds indicating when the learning asset was retired.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shortDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized text only short description of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeToComplete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the time span indicating how long the learning asset takes to complete.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#timespan"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URLs that can be used to launch the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetUrls",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#asseturls"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "curatedForLearningManagementSystem",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether the learning asset was curated for Learning Management System consumption by an account administrator in LinkedIn Learning. Currently applies only to video assets",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AssetImages",
+      "Anchor": "assetimages",
+      "SectionPath": [
+        "Definitions",
+        "AssetImages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "primary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the URL of the primary image associated with the learning asset. This image is usually high-resolution.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AssetType",
+      "Anchor": "assettype",
+      "SectionPath": [
+        "Definitions",
+        "AssetType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CHAPTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset is a chapter.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COURSE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset is a course.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset is a video.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AssetUrls",
+      "Anchor": "asseturls",
+      "SectionPath": [
+        "Definitions",
+        "AssetUrls"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "aiccLaunch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the AICC launch URL of the learning asset. This value is used to initiate course completion tracking in AICC-compliant systems. The value is only included in the response when the requestor has AICC enabled in their LinkedIn Learning admin settings.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ssoLaunch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the single sign-on launch URL of the learning asset. The value is only included in the response when the requestor has configured an active SSO connection in their LinkedIn Learning admin settings.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "webLaunch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, the launch URL of the learning asset in the LinkedIn Learning web application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AssociatedClassification",
+      "Anchor": "associatedclassification",
+      "SectionPath": [
+        "Definitions",
+        "AssociatedClassification"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The localized name of the skill or category.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies which person or organization is responsible for originally creating this classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NamedParty",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#namedparty"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates which type of classification this summary represents.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ClassificationType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#classificationtype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifies the classification, currently supports skill, lyndaCategory, and lyndaCredentialingProgram (CEU) urns.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Availability",
+      "Anchor": "availability",
+      "SectionPath": [
+        "Definitions",
+        "Availability"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AVAILABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset is available and active.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RETIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset is retired and no longer available.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContributionType",
+      "Anchor": "contributiontype",
+      "SectionPath": [
+        "Definitions",
+        "ContributionType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AUTHOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contributor is an author of the learning asset.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PUBLISHER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contributor is a publisher of the learning asset.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Contributor",
+      "Anchor": "contributor",
+      "SectionPath": [
+        "Definitions",
+        "Contributor"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contributionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of contribution the contributor made to the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContributionType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#contributiontype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the contributor, localized if available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN identifying the contributor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DifficultyLevel",
+      "Anchor": "difficultylevel",
+      "SectionPath": [
+        "Definitions",
+        "DifficultyLevel"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BEGINNER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset assumes little to no understanding of the concepts related to the material.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INTERMEDIATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset assumes basic understanding of the concepts related to the material.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ADVANCED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset assumes advanced understanding of the concepts related to the material.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Locale",
+      "Anchor": "locale",
+      "SectionPath": [
+        "Definitions",
+        "Locale"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, an uppercase two-letter country code as defined by ISO-3166.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "variant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, a vendor or browser-specific code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocaleString",
+      "Anchor": "localestring",
+      "SectionPath": [
+        "Definitions",
+        "LocaleString"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale of the localized string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The localized string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "NamedParty",
+      "Anchor": "namedparty",
+      "SectionPath": [
+        "Definitions",
+        "NamedParty"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of a person or organization, localized if available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN identifying a person or organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SubAsset",
+      "Anchor": "subasset",
+      "SectionPath": [
+        "Definitions",
+        "SubAsset"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "asset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning asset that is a sub-asset of another learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#assetdetails"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TimeSpan",
+      "Anchor": "timespan",
+      "SectionPath": [
+        "Definitions",
+        "TimeSpan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The duration the time span represents.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "unit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unit of time the duration refers to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeUnit",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets#timeunit"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TimeUnit",
+      "Anchor": "timeunit",
+      "SectionPath": [
+        "Definitions",
+        "TimeUnit"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SECOND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A second.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MINUTE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A minute.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HOUR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An hour.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

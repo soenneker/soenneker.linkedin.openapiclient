@@ -1,0 +1,449 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/api-max-length-lms-samples",
+  "Title": "Max Request Length Samples for Marketing APIs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/api-max-length-lms-samples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Max Request Length Samples for Marketing APIs",
+      "Anchor": "max-request-length-samples-for-marketing-apis",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Max Request Length Samples for Marketing APIs",
+      "Anchor": "max-request-length-samples-for-marketing-apis",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Max Request Length Samples for Marketing APIs",
+      "Anchor": "max-request-length-samples-for-marketing-apis",
+      "SectionPath": [],
+      "Text": "LinkedIn will begin rejecting API calls not meeting new length requirements. Requests exceeding these limits must be adjusted and use query tunneling. This page provides sample API requests re-constructed to use query tunneling for Marketing APIs. This page is not designed to be a comprehensive list of all possible examples. If the API you are using is not mentioned on this page, please refer to the other API examples to re-construct your API call. Query tunneling is supported for all APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Max Request Length Samples for Marketing APIs",
+      "Anchor": "max-request-length-samples-for-marketing-apis",
+      "SectionPath": [],
+      "Text": "See the Migration Guide - Updated API Request Maximum Length for the full summary of these changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request",
+      "SectionPath": [
+        "Ad Analytics",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAnalyticsV2?q=analytics\u0026dateRange=(start:(year:2019,month:5,day:28),end:(year:2019,month:9,day:30))\u0026timeGranularity=DAILY\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A12345)\u0026pivot=MEMBER_COMPANY\u0026projection=(*,elements*(externalWebsiteConversions,dateRange(*),impressions,landingPageClicks,likes,shares,costInLocalCurrency,approximateUniqueImpressions,pivot,pivotValue~(localizedName)))\u0026fields=externalWebsiteConversions,dateRange,impressions,landingPageClicks,likes,shares,costInLocalCurrency,pivot,pivotValue\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling",
+      "SectionPath": [
+        "Ad Analytics",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAnalyticsV2\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=analytics\u0026dateRange=(start:(year:2019,month:5,day:28),end:(year:2019,month:9,day:30))\u0026timeGranularity=DAILY\u0026accounts=List(urn%3Ali%3AsponsoredAccount%3A12345)\u0026pivot=MEMBER_COMPANY\u0026projection=(*,elements*(externalWebsiteConversions,dateRange(*),impressions,landingPageClicks,likes,shares,costInLocalCurrency,approximateUniqueImpressions,pivot,pivotValue~(localizedName)))\u0026fields=externalWebsiteConversions,dateRange,impressions,landingPageClicks,likes,shares,costInLocalCurrency,pivot,pivotValue\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adBudgetPricing?q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A123\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-1",
+      "SectionPath": [
+        "Ad Budget Pricing",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adBudgetPricing\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A123\u0026bidType=CPM\u0026optimizationTargetType=MAX_CLICK\u0026objectiveType=WEBSITE_VISIT\u0026campaignType=SPONSORED_INMAILS\u0026matchType=EXACT\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%28501%2C1000%29))))))\u0026dailyBudget=(amount:300,currencyCode:USD)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-2",
+      "SectionPath": [
+        "Ad Campaigns",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adCampaignsV2?ids[0]=337643194\u0026ids[1]=141049524\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-2",
+      "SectionPath": [
+        "Ad Campaigns",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adCampaignsV2\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027ids[0]=337643194\u0026ids[1]=141049524\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-3",
+      "SectionPath": [
+        "Ad Campaign Groups",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adCampaignGroupsV2?ids[0]=337643194\u0026ids[1]=141049524\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-3",
+      "SectionPath": [
+        "Ad Campaign Groups",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adCampaignGroupsV2\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027ids[0]=337643194\u0026ids[1]=141049524\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-4",
+      "SectionPath": [
+        "Ad Creatives",
+        "Batch Get",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adCreativesV2?ids=List(47771456,47771492)\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-4",
+      "SectionPath": [
+        "Ad Creatives",
+        "Batch Get",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adCreativesV2\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027ids=List(47771456,47771492)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-5",
+      "SectionPath": [
+        "Ad Creatives",
+        "Batch Partial Update",
+        "Original Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adCreativesV2?ids=List(47770196)\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method:  BATCH_PARTIAL_UPDATE\u0027 \\\n--data \u0027{\u0022entities\u0022: {\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-5",
+      "SectionPath": [
+        "Ad Creatives",
+        "Batch Partial Update",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/rest/adCreativesV2 \\\n  -H \u0027X-HTTP-Method-Override: POST\u0027 \\\n  -H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  -H \u0027X-RestLi-Method:  BATCH_PARTIAL_UPDATE\u0027 \\\n  --data $\u0027--xyz\\r\\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids=List(47770196)\\r\\n--xyz\\r\\n \n         Content-Type: application/json\\r\\n\\r\\n{\u0022entities\u0022: {\u002247770196\u0022: {\u0022patch\u0022: {\u0022$set\u0022: {\u0022status\u0022: \u0022ACTIVE\u0022}}}}}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-6",
+      "SectionPath": [
+        "Ad Direct Sponsored Contents",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adDirectSponsoredContents?owner=urn%3Ali%3Aorganization%3A5590506\u0026q=owner\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-6",
+      "SectionPath": [
+        "Ad Direct Sponsored Contents",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adDirectSponsoredContents\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027owner=urn%3Ali%3Aorganization%3A5590506\u0026q=owner\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-7",
+      "SectionPath": [
+        "Ad Form Responses",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adFormResponses?q=account\u0026account=urn:li:sponsoredAccount:12345\u0026form=urn:li:adForm:56789\u0026projection=(paging,elements*(id,account,form~(form(hiddenFields)),campaign,creative,leadType,testLead,formResponse(consentResponses,submittedAt,answers*(question~(name),answerDetails))))\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-7",
+      "SectionPath": [
+        "Ad Form Responses",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adFormResponses\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=account\u0026account=urn:li:sponsoredAccount:12345\u0026form=urn:li:adForm:56789\u0026projection=(paging,elements*(id,account,form~(form(hiddenFields)),campaign,creative,leadType,testLead,formResponse(consentResponses,submittedAt,answers*(question~(name),answerDetails))))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-8",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adSupplyForecasts?q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A507001111\u0026timeRange=(start:1566284400000,end:1568962800000)\u0026campaignType=SPONSORED_UPDATES\u0026totalBudget=(amount:100.00,currencyCode:USD)\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A101165590))))),exclude:(or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%2810001%2C2147483647%29))))\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-8",
+      "SectionPath": [
+        "Ad Supply Forecasts",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adSupplyForecasts\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=criteriaV2\u0026account=urn%3Ali%3AsponsoredAccount%3A507001111\u0026timeRange=(start:1566284400000,end:1568962800000)\u0026campaignType=SPONSORED_UPDATES\u0026totalBudget=(amount:100.00,currencyCode:USD)\u0026competingBid=(bidType:CPM,bidPrice:(currencyCode:USD,amount:10))\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A101165590))))),exclude:(or:(urn%3Ali%3AadTargetingFacet%3AstaffCountRanges:List(urn%3Ali%3AstaffCountRange%3A%2810001%2C2147483647%29))))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-9",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adTargetingEntities?facet=urn%3Ali%3AadTargetingFacet%3AcompanyCategory\u0026q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026totals=false\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-9",
+      "SectionPath": [
+        "Ad Targeting Entities",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adTargetingEntities\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027facet=urn%3Ali%3AadTargetingFacet%3AcompanyCategory\u0026q=adTargetingFacet\u0026queryVersion=QUERY_USES_URNS\u0026totals=false\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-10",
+      "SectionPath": [
+        "Audience Counts",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/audienceCountsV2?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A102221843))),(or:(urn%3Ali%3AadTargetingFacet%3Askills:List(urn%3Ali%3Askill%3A17))))))\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-10",
+      "SectionPath": [
+        "Audience Counts",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/audienceCountsV2\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A102221843))),(or:(urn%3Ali%3AadTargetingFacet%3Askills:List(urn%3Ali%3Askill%3A17))))))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-11",
+      "SectionPath": [
+        "DMP Segments",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments?ids=List(10804,10814)\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-11",
+      "SectionPath": [
+        "DMP Segments",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027ids=List(10804,10814)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-12",
+      "SectionPath": [
+        "Follower Statistics",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-12",
+      "SectionPath": [
+        "Follower Statistics",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/organizationalEntityFollowerStatistics\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-13",
+      "SectionPath": [
+        "Shares",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/shares?ids=List(1234,5678)\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-13",
+      "SectionPath": [
+        "Shares",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/shares\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027ids=List(1234,5678)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-14",
+      "SectionPath": [
+        "UGC Posts",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/ugcPosts?q=authors\u0026authors=List(urn%3Ali%3Aorganization%3A2414183)\u0026sortBy=LAST_MODIFIED\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-14",
+      "SectionPath": [
+        "UGC Posts",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/ugcPosts\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=authors\u0026authors=List(urn%3Ali%3Aorganization%3A2414183)\u0026sortBy=LAST_MODIFIED\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Original Request",
+      "Anchor": "original-request-15",
+      "SectionPath": [
+        "Video Analytics",
+        "Original Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/videoAnalytics?q=entity\u0026entity=urn:li:ugcPost:6422171828579602432\u0026type=TIME_WATCHED\u0026timeRange=(start:1531165717442,end:1531770742335)\u0026aggregation=DAY\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request with Query Tunneling",
+      "Anchor": "request-with-query-tunneling-15",
+      "SectionPath": [
+        "Video Analytics",
+        "Request with Query Tunneling"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/videoAnalytics\u0027 \\\n  -H \u0027X-HTTP-Method-Override: GET\u0027 \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -H \u0027Authorization: Bearer redacted\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027q=entity\u0026entity=urn:li:ugcPost:6422171828579602432\u0026type=TIME_WATCHED\u0026timeRange=(start:1531165717442,end:1531770742335)\u0026aggregation=DAY\u0027",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

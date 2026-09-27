@@ -15,15 +15,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The urnLiShare7140151510616682496 property</summary>
-        public int? UrnLiShare7140151510616682496 { get; set; }
+        public long? UrnLiShare7140151510616682496 { get; set; }
         /// <summary>The urnLiShare7140190856493359105 property</summary>
-        public int? UrnLiShare7140190856493359105 { get; set; }
+        public long? UrnLiShare7140190856493359105 { get; set; }
         /// <summary>The urnLiShare7140193926367383555 property</summary>
-        public int? UrnLiShare7140193926367383555 { get; set; }
+        public long? UrnLiShare7140193926367383555 { get; set; }
         /// <summary>The urnLiUgcPost7140192340899471360 property</summary>
-        public int? UrnLiUgcPost7140192340899471360 { get; set; }
+        public long? UrnLiUgcPost7140192340899471360 { get; set; }
         /// <summary>The urnLiUgcPost7140196403607248897 property</summary>
-        public int? UrnLiUgcPost7140196403607248897 { get; set; }
+        public long? UrnLiUgcPost7140196403607248897 { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -49,11 +49,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "urn:li:share:7140151510616682496", n => { UrnLiShare7140151510616682496 = n.GetIntValue(); } },
-                { "urn:li:share:7140190856493359105", n => { UrnLiShare7140190856493359105 = n.GetIntValue(); } },
-                { "urn:li:share:7140193926367383555", n => { UrnLiShare7140193926367383555 = n.GetIntValue(); } },
-                { "urn:li:ugcPost:7140192340899471360", n => { UrnLiUgcPost7140192340899471360 = n.GetIntValue(); } },
-                { "urn:li:ugcPost:7140196403607248897", n => { UrnLiUgcPost7140196403607248897 = n.GetIntValue(); } },
+                { "urn:li:share:7140151510616682496", n => { UrnLiShare7140151510616682496 = n.GetLongValue(); } },
+                { "urn:li:share:7140190856493359105", n => { UrnLiShare7140190856493359105 = n.GetLongValue(); } },
+                { "urn:li:share:7140193926367383555", n => { UrnLiShare7140193926367383555 = n.GetLongValue(); } },
+                { "urn:li:ugcPost:7140192340899471360", n => { UrnLiUgcPost7140192340899471360 = n.GetLongValue(); } },
+                { "urn:li:ugcPost:7140196403607248897", n => { UrnLiUgcPost7140196403607248897 = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -63,11 +63,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("urn:li:share:7140151510616682496", UrnLiShare7140151510616682496);
-            writer.WriteIntValue("urn:li:share:7140190856493359105", UrnLiShare7140190856493359105);
-            writer.WriteIntValue("urn:li:share:7140193926367383555", UrnLiShare7140193926367383555);
-            writer.WriteIntValue("urn:li:ugcPost:7140192340899471360", UrnLiUgcPost7140192340899471360);
-            writer.WriteIntValue("urn:li:ugcPost:7140196403607248897", UrnLiUgcPost7140196403607248897);
+            writer.WriteLongValue("urn:li:share:7140151510616682496", UrnLiShare7140151510616682496);
+            writer.WriteLongValue("urn:li:share:7140190856493359105", UrnLiShare7140190856493359105);
+            writer.WriteLongValue("urn:li:share:7140193926367383555", UrnLiShare7140193926367383555);
+            writer.WriteLongValue("urn:li:ugcPost:7140192340899471360", UrnLiUgcPost7140192340899471360);
+            writer.WriteLongValue("urn:li:ugcPost:7140196403607248897", UrnLiUgcPost7140196403607248897);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

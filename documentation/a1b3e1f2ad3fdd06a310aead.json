@@ -1,0 +1,712 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+  "Title": "Organization Life Page Traffic Statistics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What is a Life Page?",
+      "Anchor": "what-is-a-life-page",
+      "SectionPath": [
+        "What is a Life Page?"
+      ],
+      "Text": "A Life Page (also known as a \u0022Life at [Company]\u0022 page) is a customizable section of a LinkedIn Company Page where organizations showcase their company culture, values, and employee experiences to attract potential talent. Admins can create multiple targeted versions of their Life Page, each with content tailored to specific audiences based on attributes such as location, industry, job function, and seniority.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Life Page?",
+      "Anchor": "what-is-a-life-page",
+      "SectionPath": [
+        "What is a Life Page?"
+      ],
+      "Text": "Life Pages can include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Life Page?",
+      "Anchor": "what-is-a-life-page",
+      "SectionPath": [
+        "What is a Life Page?"
+      ],
+      "Text": "Featured leaders and recruiters\nCustom media sections with images and videos\nEmployee testimonials\nPhotos showcasing company culture\nEmployee-generated content tagged with specific hashtags\nContact information for interested candidates",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Life Page?",
+      "Anchor": "what-is-a-life-page",
+      "SectionPath": [
+        "What is a Life Page?"
+      ],
+      "Text": "To view a Life Page on LinkedIn, navigate to a company page and click on the \u0022Life\u0022 tab.\nExample: linkedin.com/company/[company-name]/life/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Life Page Traffic Statistics API returns page view and visitor traffic statistics for Life Pages (Targeted Content pages) on LinkedIn. This API helps admins understand how many people are viewing their Life Page content and track engagement across different targeted content variations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Each Life Page variation has a unique reportingId used to track and report on its traffic statistics. This API allows you to retrieve traffic data for one or more Life Page variations by providing their reporting IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "How to determine which organizational pages you can query?\nTo find organizations you can query traffic statistics for, use OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with the authorization action set to CareerPageAuthorizationActionType.CAREER_PAGE_LIFE_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain Reporting IDs",
+      "Anchor": "how-to-obtain-reporting-ids",
+      "SectionPath": [
+        "How to Obtain Reporting IDs"
+      ],
+      "Text": "Before you can query traffic statistics, you need to obtain the reportingId values for your Life Page content. Follow these steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain Reporting IDs",
+      "Anchor": "how-to-obtain-reporting-ids",
+      "SectionPath": [
+        "How to Obtain Reporting IDs"
+      ],
+      "Text": "Verify Authorization: Ensure the authenticated member has the required role on the organization. Use OrganizationAuthorization\u0027s BATCH_FIND with authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:CAREER_PAGE_LIFE_READ)) to verify access.\n\nFetch Targeted Content: Use the Organization Targeted Contents API to retrieve all Life Page variations for your organization.\nExample:\n Copy GET /rest/organizationTargetedContents?q=organization\u0026organization={ORGANIZATION_URN}\n\n\nExtract Reporting IDs: Each targeted content item in the response will contain a reportingId field. These are the unique identifiers you\u0027ll use to query traffic statistics.\n\nQuery Traffic Statistics: Once you have the reporting IDs, pass them to this API as shown in the examples below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain Reporting IDs",
+      "Anchor": "how-to-obtain-reporting-ids",
+      "SectionPath": [
+        "How to Obtain Reporting IDs"
+      ],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain Reporting IDs",
+      "Anchor": "how-to-obtain-reporting-ids",
+      "SectionPath": [
+        "How to Obtain Reporting IDs"
+      ],
+      "Text": "Organization - Fetches the life page traffic statistics for a given organization using reporting IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "pageViewCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of page views to an organization page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "uniqueVisitorCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of unique visitors to an organization page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reportingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reporting ID of the targeted content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of {{authorization action}}.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_URN} must be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationLifePageTrafficStatistics?q=organization\u0026organization={ORGANIZATION_URN}\u0026reportingIds=List(reporting_id1,reporting_id2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationLifePageTrafficStatistics?q=organization\u0026organization=urn%3Ali%3Aorganization%3A123\u0026reportingIds=List(31731111-31dd-444-222-12345df,23c1c2c3-31dd-444-a66d-12345cc8)\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [],\n    \u0022total\u0022: 2\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022pageViewCount\u0022: 73,\n      \u0022reportingId\u0022: \u002231731111-31dd-444-222-12345df\u0022,\n      \u0022uniqueVisitorCount\u0022: 21\n    },\n    {\n      \u0022pageViewCount\u0022: 69,\n      \u0022reportingId\u0022: \u002223c1c2c3-31dd-444-a66d-12345cc8\u0022,\n      \u0022uniqueVisitorCount\u0022: 23\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization for which statistics is requested. This identifies the company page that owns the Life Page content. Note: Must be URL-encoded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization\u0026organization=urn%3Ali%3Aorganization%3A123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reportingIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of strings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of reporting IDs for the Life Page variations (targeted content) you want to retrieve statistics for. These IDs are obtained from the Organization Targeted Contents API. You can request statistics for multiple Life Page variations in a single call.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(31731111-31dd-444-222-12345df,23c1c2c3-31dd-444-a66d-12345cc8)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional date range filter for the statistics. If not provided, returns all-time statistics. Use Unix timestamps in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeRange=(start:1698796800000,end:1701302400000)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "How to Obtain Reporting IDs",
+        "Organization",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unix timestamp in milliseconds representing the start of the time range (inclusive). Statistics will include data from this time onwards. Example: 1698796800000 represents November 1, 2023 00:00:00 UTC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unix timestamp in milliseconds representing the end of the time range (exclusive). Statistics will include data up to but not including this time. Example: 1701302400000 represents November 30, 2023 00:00:00 UTC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

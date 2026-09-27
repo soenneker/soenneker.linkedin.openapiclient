@@ -1,0 +1,412 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+  "Title": "little Text Format",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "little Text Format",
+      "Anchor": "little-text-format",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "little Text Format",
+      "Anchor": "little-text-format",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "little Text Format",
+      "Anchor": "little-text-format",
+      "SectionPath": [],
+      "Text": "little is a representation of user-generated text with a focus on capturing non-textual information in a concise manner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "little Text Format",
+      "Anchor": "little-text-format",
+      "SectionPath": [],
+      "Text": "In the Posts API, commentary text is stored as a text string along with an array of attributes. little is a simplified replacement for this model used in the Posts API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "little Text Format",
+      "Anchor": "little-text-format",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "little Text Format",
+      "Anchor": "little-text-format",
+      "SectionPath": [],
+      "Text": "Characters reserved for little elements must be escaped to be treated as plaintext. See Text for a list of reserved characters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Elements",
+      "Anchor": "supported-elements",
+      "SectionPath": [
+        "Supported Elements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Element Type",
+        "Purpose",
+        "Params",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "TextElement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents plain text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hello World",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MentionElement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mention an entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN representing the entity to be mentioned. Can be a Person or Organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "@[Eddy](urn:li:person:1234) @[Devtestco] (urn:li:organization:2414183)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HashtagElement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show a hashtag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#hashtag",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Templates",
+      "Anchor": "supported-templates",
+      "SectionPath": [
+        "Supported Templates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Template Name",
+        "Purpose",
+        "Parameters",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "HashtagTemplate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents a hashtag, including the hashtag sign, which should be either \u0027#\u0027 (U\u002B0023) or \u0027\uFF03\u0027 (U\u002BFF03).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(String hashtagSign, String hashtagValue)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{hashtag\\|#\\|mytag} {hashtag\\|\uFF03\\|mytag}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "curl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/posts\u0027 \\\n--header \u0027Linkedin-Version: 202502\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: \u2022\u2022\u2022\u2022\u2022\u2022\u0027 \\\n--data-raw \u0027{\n \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n \u0022commentary\u0022: \u0022This example mentions a company @[DevtestCo](urn:li:organization:2414183) and {hashtag|\\\\#|MyTestTag}\u0022,\n \u0022visibility\u0022: \u0022PUBLIC\u0022,\n \u0022distribution\u0022: {\n   \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022\n },\n \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "The above example mentions a company called DevtestCo",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "{\n   \u0022commentary\u0022: \u0022This example mentions a company @[DevtestCo](urn:li:organization:2414183)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "The above example also includes a hashtag for #MyTestTag using the HashtagTemplate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "{\n   \u0022commentary\u0022: \u0022This example mentions a {hashtag|\\\\#|MyTestTag}\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "Example 1"
+      ],
+      "Text": "All reserved characters need to be escaped with a backslash, even if those characters are not used in one of the supported elements or templates.\nReserved characters that need escaping are listed in the text section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample",
+      "Anchor": "sample",
+      "SectionPath": [
+        "Example 1",
+        "Sample"
+      ],
+      "Text": "{\n   \u0022commentary\u0022: \u0022Hello, these are some bullet points:\\n\\n\\\\* Point 1\\n\\\\* Point 2\\n\\\\* Point 3\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "content",
+      "Anchor": "content",
+      "SectionPath": [
+        "Language Grammar",
+        "content"
+      ],
+      "Text": "content ::= LittleText\u002B | \u0027EOF\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LittleText",
+      "Anchor": "littletext",
+      "SectionPath": [
+        "Language Grammar",
+        "LittleText"
+      ],
+      "Text": "LittleText ::= LittleElement\u002B",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LittleElement",
+      "Anchor": "littleelement",
+      "SectionPath": [
+        "Language Grammar",
+        "LittleElement"
+      ],
+      "Text": "LittleElement ::= TextElement | MentionElement | HashtagElement | HashtagTemplate",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "HashtagTemplate",
+      "Anchor": "hashtagtemplate",
+      "SectionPath": [
+        "Language Grammar",
+        "HashtagTemplate"
+      ],
+      "Text": "HashtagTemplate ::=  \u0027{hashtag|\u0027 ( # | \uFF03) \u0027|\u0027 Text}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "MentionElement",
+      "Anchor": "mentionelement",
+      "SectionPath": [
+        "Language Grammar",
+        "MentionElement"
+      ],
+      "Text": "MentionElement ::= \u0027@\u0027 FallbackText? \u0027(\u0027 \u0027Urn\u0027 \u0027)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Hashtag Element",
+      "Anchor": "hashtag-element",
+      "SectionPath": [
+        "Language Grammar",
+        "Hashtag Element"
+      ],
+      "Text": "HashtagElement ::= \u0027#\u0027 SINGLE_WORD",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fallback Text",
+      "Anchor": "fallback-text",
+      "SectionPath": [
+        "Language Grammar",
+        "Fallback Text"
+      ],
+      "Text": "Text to be rendered and displayed (e.g. in place of MentionElement URN)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Fallback Text",
+      "Anchor": "fallback-text",
+      "SectionPath": [
+        "Language Grammar",
+        "Fallback Text"
+      ],
+      "Text": "FallbackText ::= \u0027[\u0027 Text \u0027]\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Text",
+      "Anchor": "text",
+      "SectionPath": [
+        "Language Grammar",
+        "Text"
+      ],
+      "Text": "Text ::= ( NON_RESERVED_CHAR_SEQUENCES | \u0027\u0022\\\\|\u0022 | \u0022\\\\{\u0022 | \u0022\\\\}\u0022 | \u0022\\\\@\u0022 | \u0022\\\\[\u0022 | \u0022\\\\]\u0022 | \u0022\\\\(\u0022 | \u0022\\\\)\u0022 | \u0022\\\\\u003C\u0022 | \u0022\\\\\u003E\u0022 | \u0022\\\\#\u0022 | \u0022\\\\\\\\\u0022 | \u0022\\\\*\u0022 | \u0022\\\\_\u0022 | \u0022\\\\~\u0022\u0027 )\u002B",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

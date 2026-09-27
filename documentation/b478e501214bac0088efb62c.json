@@ -1,0 +1,368 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+  "Title": "Tutorial: Configure Automated User Management for LinkedIn Learning via Okta SCIM",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This tutorial describes the steps you need to perform in both LinkedIn Learning and Okta to configure automatic user provisioning. When configured, Okta automatically provisions and de-provisions users and groups to LinkedIn Learning using SCIM provisioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "For additional details on what this service does, see Okta \u2013 Understanding SCIM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Capabilities Supported",
+      "Anchor": "capabilities-supported",
+      "SectionPath": [
+        "Capabilities Supported"
+      ],
+      "Text": "Create user profiles and assign licenses in LinkedIn Learning\nRemove user licenses in LinkedIn Learning when they do not require access anymore\nKeep user attributes synchronized between Okta and LinkedIn Learning\nCreate groups and manage group memberships in LinkedIn Learning\nSingle sign-on to LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "The scenario outlined in this tutorial assumes that you already have the following prerequisites:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Okta tenant with admin permissions\nLinkedIn Learning admin access\nSAML 2.0 Application configured in Okta (See configuration guide here.)\nAccurate user data in LinkedIn Learning. See this guide for instructions on cleaning up your user data if necessary for existing Learning accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning with Okta",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning-with-okta",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning with Okta"
+      ],
+      "Text": "Log into LinkedIn Learning as an admin and navigate to Admin \u003E Authentication.\n\n\nClick on Automate user management and expand the Configure SCIM section.\n\n\n\n\n\nIn the Configure SCIM section, elect Add SCIM.\n\n\n\n\n\nEnter a name for the configuration and set Auto-assign licenses to On. Then, click Generate token.\n\n\n\n\n\nCopy the Access token for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable SCIM Provisioning in Okta",
+      "Anchor": "enable-scim-provisioning-in-okta",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta"
+      ],
+      "Text": "If you have not yet configured SSO for LinkedIn Learning and plan to utilize SSO, follow the instructions here before moving on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable SCIM Provisioning in Okta",
+      "Anchor": "enable-scim-provisioning-in-okta",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta"
+      ],
+      "Text": "When utilizing SCIM with Okta, you must create a SAML 2.0 App Integration in Okta. There is an older LinkedIn Learning application available in the Okta catalog that does not support SCIM, so make sure you do not choose that application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Okta allows you to assign the application to specific users or groups. When SCIM provisioning is enabled, all users assigned to the application will be automatically provisioned in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Start small. Test with a small set of users and/or groups before assigning the application to your full user group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Determine who will be in scope for provisioning",
+      "Anchor": "determine-who-will-be-in-scope-for-provisioning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Determine who will be in scope for provisioning"
+      ],
+      "Text": "When new users are provisioned in LinkedIn Learning, an invitation email is sent out automatically. If you want to assign users to the application without notifying them, make sure to disable emails to new learners in the LinkedIn Learning admin settings. Make sure to re-enable these settings when you are ready to notify your learners. You can also re-send the invitation email at any time in the admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "This section guides you through the steps to configure the Okta SCIM provisioning service to create, update, and disable users in LinkedIn Learning based on user assignments in the Okta application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "To configure automatic user provisioning for LinkedIn Learning in Okta:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Automatic User Provisioning to LinkedIn Learning",
+      "Anchor": "configure-automatic-user-provisioning-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Configure Automatic User Provisioning to LinkedIn Learning"
+      ],
+      "Text": "Sign into the Okta admin portal and navigate to Applications. In your list of applications, select the LinkedIn Learning SAML 2.0 application you created. If you have not yet created a LinkedIn Learning SAML 2.0 application, do so before continuing.\n\nSelect the General tab.\n\nUnder Application Settings, click Edit.\n\nIn the Provisioning section, select SCIM.\n\n\n\n\n\nClick Save.\n\nNavigate to the Provisioning tab and click Edit on the Integration section.\n\n\n\n\n\nIn the SCIM connector base URL field, input https://api.linkedin.com/scim.\n\nIn the Unique identifier field for users field, input userName.\n\nUnder Supported provisioning actions, select the following:\n\nPush New Users\nPush Profile Updates\nPush Groups\n\n\nSelect HTTP Header from the Authentication Mode drop-down.\n\nIn the Authorization field, input the access token retrieved from LinkedIn Learning in the previous section. Click Test Connector Configuration to ensure Okta can connect to LinkedIn Learning.\n\n\n\n\n\nClick Save.\n\nMake sure you are in the To App settings on the Provisioning tab and click Edit.\n\nEnable the following settings:\n\nCreate Users\nUpdate User Attributes\nDeactivate Users\n\n\n\n\n\n\nClick Save.\n\nScroll down to the Attribute Mapping section.\n\nEdit the attribute mappings or remove attributes as needed. The Username attribute is required and can be mapped to a specific user attribute in the Single Sign-On settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Okta Groups to LinkedIn Learning",
+      "Anchor": "push-okta-groups-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Push Okta Groups to LinkedIn Learning"
+      ],
+      "Text": "This section guides you through the steps to configure the Okta SCIM provisioning service to create, update, and delete groups in LinkedIn Learning based on the selected groups in the Okta application. If members of a pushed group are assigned to the application in Okta, they will be added to a group of the same name in LinkedIn Learning and kept in sync.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Okta Groups to LinkedIn Learning",
+      "Anchor": "push-okta-groups-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Push Okta Groups to LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Okta Groups to LinkedIn Learning",
+      "Anchor": "push-okta-groups-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Push Okta Groups to LinkedIn Learning"
+      ],
+      "Text": "When pushing groups for the first time, group names must be unique between Okta and LinkedIn Learning. If you push a group with a name that already exists in LinkedIn Learning, you will receive an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Okta Groups to LinkedIn Learning",
+      "Anchor": "push-okta-groups-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Push Okta Groups to LinkedIn Learning"
+      ],
+      "Text": "To configure group syncing for LinkedIn Learning in Okta:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Push Okta Groups to LinkedIn Learning",
+      "Anchor": "push-okta-groups-to-linkedin-learning",
+      "SectionPath": [
+        "Enable SCIM Provisioning in Okta",
+        "Push Okta Groups to LinkedIn Learning"
+      ],
+      "Text": "Navigate to the Push Groups tab and select \u002B Push Groups.\n\n\n\n\n\nSearch for the group(s) you would like to push and click Save.\n\nContinue adding as many groups as you like.\n\nTo remove a group, click on the Push Status and choose Unlink pushed group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "Now that you have finished configuring SCIM provisioning, all users assigned to the application in Okta should be automatically provisioned with a license in LinkedIn Learning, and any pushed groups should be automatically created and populated in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "The initial sync may take longer if you have a large employee population, but subsequent changes and user updates should reflect in LinkedIn Learning in near real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "To monitor the SCIM events, click on View Logs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "Any future changes after the initial successful setup of SCIM implementation, it is highly recommended to stop the provisioning tool before making any changes on Okta side to avoid unnecessary sync process.\nThis may lead to revoking licenses in error. Hence strongly suggest stopping the provisioning tool before making any changes first and turn back on provisioning once ready to sync.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Your Deployment",
+      "Anchor": "monitor-your-deployment",
+      "SectionPath": [
+        "Monitor Your Deployment"
+      ],
+      "Text": "If you wish to discuss any questions, please contact LinkedIn Learning Account team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Appendix",
+        "Additional resources"
+      ],
+      "Text": "Okta SSO Tutorial\nLinkedIn Learning SCIM Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

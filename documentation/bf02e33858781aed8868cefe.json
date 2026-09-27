@@ -1,0 +1,834 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts",
+  "Title": "adAccounts",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adaccounts",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "adAccounts",
+      "Anchor": "adaccounts",
+      "SectionPath": [],
+      "Text": "The LinkedIn ads platform allows advertisers to create multiple accounts for both Text Ads and Sponsored Content. Use the Ad Accounts API to create and manage accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "CREATE | GET | SEARCH\u00A0FINDER | UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string, default=\u0022USD\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ISO 4217 currency code of the account, such as \u0027USD\u0027 for United States Dollar. Note: Advertisers selecting BRL as a currency will see their account budget, advertising bids, and spend in BRL, but their account will be billed in USD. We recommend communicating this to advertisers in your application if they opt for BRL. Learn more",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes",
+              "https://www.linkedin.com/help/linkedin/answer/41250"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique internal ID representing the account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A label for the account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCampaignOptimization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the campaign contact is notified about campaign optimization opportunities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeApproval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the creative contact is notified when a creative has been reviewed and approved.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeRejection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the creative contact is notified when a creative has been rejected due to content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnEndOfCampaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the campaign contact is notified when an associated campaign has been completed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnNewFeaturesEnabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the account owner is notified about new Campaign Manager features.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity on whose behalf the account advertises. Must either be in the format urn:li:person:{id} or urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servingStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[], default=\u0022[]\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of enums with information about the account\u0027s system serving statuses. If an account is eligible for serving, then this array will have a single element: RUNNABLE Otherwise, this array will contain one or more reasons why the account is not servable: STOPPED BILLING_HOLD ACCOUNT_TOTAL_BUDGET_HOLD ACCOUNT_END_DATE_HOLD RESTRICTED_HOLD INTERNAL_HOLD",
+            "Links": [],
+            "Values": [
+              "RUNNABLE",
+              "STOPPED",
+              "BILLING_HOLD",
+              "ACCOUNT_TOTAL_BUDGET_HOLD",
+              "ACCOUNT_END_DATE_HOLD",
+              "RESTRICTED_HOLD",
+              "INTERNAL_HOLD"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string, default=\u0022ACTIVE\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTIVE - Account is active; this is the default stateCANCELED - Account has been permanently canceledDRAFT - Account is in draft status, meaning it\u0027s not yet fully set up and it is not serving",
+            "Links": [],
+            "Values": [
+              "ACTIVE - Account is active; this is the default state",
+              "CANCELED - Account has been permanently canceled",
+              "DRAFT - Account is in draft status, meaning it\u0027s not yet fully set up and it is not serving"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BUSINESS \u2013 This is the only value allowed when creating accounts through the API. ENTERPRISE \u2013 This value cannot be used to create accounts through the API and is reserved for accounts created by LinkedIn\u0027s internal ad operations systems.",
+            "Links": [],
+            "Values": [
+              "BUSINESS \u2013 This is the only value allowed when creating accounts through the API.",
+              "ENTERPRISE \u2013 This value cannot be used to create accounts through the API and is reserved for accounts created by LinkedIn\u0027s internal ad operations systems."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag showing whether this account is marked as a test account. An account can be marked as test only during creation. This is an immutable field.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE",
+      "Anchor": "create",
+      "SectionPath": [
+        "CREATE"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/adAccountsV2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "CREATE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The account\u0027s ISO-4217 currency code. Default is \u0022USD\u0022.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_4217"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A label for the account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCampaignOptimization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if campaign contact is notified about campaign optimization opportunities. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeApproval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if creative contact is notified when a creative has been reviewed and approved. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeRejection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if creative contact is notified when a creative has been rejected due to content. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnEndOfCampaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if campaign contact is notified when an associated campaign has been completed. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity on whose behalf the account advertises. Must either be in the format urn:li:person:{id} or urn:li:company:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of account. Must either be \u0022PERSONAL\u0022 or \u0022BUSINESS\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "CREATE",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022currency\u0022: \u0022USD\u0022,\n    \u0022dailyBudget\u0022: {\n        \u0022amount\u0022: \u002215000\u0022,\n        \u0022currencyCode\u0022: \u0022USD\u0022\n    },\n    \u0022name\u0022: \u0022Test Advertiser Account\u0022,\n    \u0022notifiedOnCampaignOptimization\u0022: true,\n    \u0022notifiedOnCreativeApproval\u0022: true,\n    \u0022notifiedOnCreativeRejection\u0022: true,\n    \u0022notifiedOnEndOfCampaign\u0022: true,\n    \u0022reference\u0022: \u0022urn:li:company:1000\u0022,\n    \u0022type\u0022: \u0022BUSINESS\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adAccountsV2/{account ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique numerical identifier for the advertising account",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022test\u0022: false,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:fGcyYDdglZ\u0022, \n            \u0022time\u0022: 1449768717000\n        }, \n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022, \n            \u0022time\u0022: 1477941718075\n        }\n    }, \n    \u0022currency\u0022: \u0022USD\u0022, \n    \u0022id\u0022: 123456, \n    \u0022name\u0022: \u0022Company A\u0022, \n    \u0022notifiedOnCampaignOptimization\u0022: true, \n    \u0022notifiedOnCreativeApproval\u0022: true, \n    \u0022notifiedOnCreativeRejection\u0022: true, \n    \u0022notifiedOnEndOfCampaign\u0022: true, \n    \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022, \n    \u0022servingStatuses\u0022: [\n        \u0022RUNNABLE\u0022\n    ], \n    \u0022status\u0022: \u0022ACTIVE\u0022, \n    \u0022totalBudget\u0022: {\n        \u0022amount\u0022: \u00221000\u0022, \n        \u0022currencyCode\u0022: \u0022USD\u0022\n    }, \n    \u0022totalBudgetEndsAt\u0022: 1454683809000, \n    \u0022type\u0022: \u0022BUSINESS\u0022, \n    \u0022version\u0022: {\n        \u0022versionTag\u0022: \u002210\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "SEARCH FINDER",
+      "Anchor": "search-finder",
+      "SectionPath": [
+        "SEARCH FINDER"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adAccountsV2?q=search\u0026search.{searchCriteria}.values[0]={searchValue}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "SEARCH FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "search.status.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts with the\u00A0provided status. The possible values are: DRAFT CANCELED ACTIVE",
+            "Links": [],
+            "Values": [
+              "DRAFT",
+              "CANCELED",
+              "ACTIVE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "search.reference.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts by reference",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.name.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for an account by name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.id.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for an account by ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "search.type.values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts by type. Possible values include: BUSINESS ENTERPRISE",
+            "Links": [],
+            "Values": [
+              "BUSINESS",
+              "ENTERPRISE"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "SEARCH FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:person:T1xE4HItnJ\u0022,\n                    \u0022time\u0022: 1479402003000\n                },\n                \u0022lastModified\u0022: {\n                    \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n                    \u0022time\u0022: 1479402004534\n                }\n            },\n            \u0022currency\u0022: \u0022USD\u0022,\n            \u0022id\u0022: 507404993,\n            \u0022name\u0022: \u0022Dunder Mifflin Account\u0022,\n            \u0022notifiedOnCampaignOptimization\u0022: true,\n            \u0022notifiedOnCreativeApproval\u0022: true,\n            \u0022notifiedOnCreativeRejection\u0022: true,\n            \u0022notifiedOnEndOfCampaign\u0022: true,\n            \u0022reference\u0022: \u0022urn:li:company:2414183\u0022,\n            \u0022servingStatuses\u0022: [\n                \u0022BILLING_HOLD\u0022\n            ],\n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022totalBudget\u0022: {\n                \u0022amount\u0022: \u00220\u0022,\n                \u0022currencyCode\u0022: \u0022USD\u0022\n            },\n            \u0022totalBudgetEndsAt\u0022: 0,\n            \u0022type\u0022: \u0022PERSONAL\u0022,\n            \u0022version\u0022: {\n                \u0022versionTag\u0022: \u00224\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2147483647,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 56\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "UPDATE",
+      "Anchor": "update",
+      "SectionPath": [
+        "UPDATE"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/adAccountsV2/{account ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-3",
+      "SectionPath": [
+        "UPDATE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A label for the account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCampaignOptimization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if campaign contact is notified about campaign optimization opportunities. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeApproval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if creative contact is notified when a creative has been reviewed and approved. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeRejection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if creative contact is notified when a creative has been rejected due to content. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnEndOfCampaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if campaign contact is notified when an associated campaign has been completed. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

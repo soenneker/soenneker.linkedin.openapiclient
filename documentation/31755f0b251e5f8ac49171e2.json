@@ -1,0 +1,548 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-history",
+  "Title": "Retrieve InMail History - CRM Connect",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-history",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "The InMail History API allows you to retrieve InMail activity, both sent and received, that occurred on a given LinkedIn Recruiter contract. In order to properly store and associate these InMails within your application, you will need to already have retrieved the LinkedIn seat URN for the Recruiter seatholders and the member URN for the prospects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "It is recommended to make calls to this API on a periodic basis using a batch process. Set the time range to be no more than 12 hours per call, or more frequently as needed (e.g. every 30 minutes).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "All API requests require authorization. Additionally, API requests return paged results; details on paging through results can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail History - CRM Connect",
+      "Anchor": "retrieve-inmail-history---crm-connect",
+      "SectionPath": [],
+      "Text": "Unlimited InMails can be sent to your 1st degree connection in your development environment provisioned by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per member Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ConversationEvents maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "12",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Details",
+      "Anchor": "api-details",
+      "SectionPath": [
+        "API Details"
+      ],
+      "Text": "Details for the API are below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Details",
+        "API Endpoint"
+      ],
+      "Text": "Retrieve message history between seat holders and prospects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Details",
+        "API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/conversationEvents?q=criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "API Details",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "viewer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Recruiter seatholder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat URN in format urn:li:seat:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find InMails (sent and received) associated with a specific Recruiter Seatholder.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive lower date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find InMails that were sent and received on or after a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive upper date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find InMails that were sent and received before a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "threadUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Thread Identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Thread URN in the format urn:li:messagingThread:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find InMails (sent and received) associated with a specific Thread",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "API Details",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/conversationEvents?q=criteria\u0026viewer=urn:li:seat:123456789\u0026timeRange.start=1486428734634",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Body Field",
+      "Anchor": "response-body-field",
+      "SectionPath": [
+        "API Details",
+        "Response Body Field"
+      ],
+      "Text": "The response will contain the list of events belonging to a conversation. Events have an author, a time that it was created and the mail content.\nBoth private and public InMail messages associated with the viewer will be returned in this api call.\nThe response body fields are described below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Field",
+      "Anchor": "response-body-field",
+      "SectionPath": [
+        "API Details",
+        "Response Body Field"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The participant that created this event. If the mail is sent by the candidate this field will contain a Person URN else if the email is sent by the recruiter this field will contain a Recruiter seatholder URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Author URN will be in format urn:li:seat:{id} or urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of this event, for example mail item with a subject and body.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MailContent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-history?view=li-lts-2026-04#mailcontent-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the event was created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity ID of the Event. It is a unique identifier for each InMail event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recipients",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of all participants designated to receive this event. This field will contain the list of URNs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]. Array will contain URNs in the format urn:li:seat:{id} or urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "threadUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Thread identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Thread URN in the format urn:li:messagingThread:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MailContent Schema",
+      "Anchor": "mailcontent-schema",
+      "SectionPath": [
+        "API Details",
+        "Response Body Field",
+        "MailContent Schema"
+      ],
+      "Text": "This defines the content of a mail item. It represents an item in the mail inbox.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MailContent Schema",
+      "Anchor": "mailcontent-schema",
+      "SectionPath": [
+        "API Details",
+        "Response Body Field",
+        "MailContent Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The body of the mail. This field holds the content of the body in the text field as described in the sample response body below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The subject of the mail.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "API Details",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022author\u0022: \u0022urn:li:seat:123456789\u0022,\n            \u0022content\u0022: {\n                \u0022com.linkedin.messaging.events.MailContent\u0022: {\n                    \u0022body\u0022: {\n                        \u0022text\u0022: \u0022Test response complete.\u0022\n                    },\n                    \u0022subject\u0022: \u0022RE: Testing Stub Profile\u0022\n                }\n            },\n            \u0022createdAt\u0022: 1486428775129,\n            \u0022id\u0022: \u0022I6234554148858486784_1000\u0022,\n            \u0022recipients\u0022: [\n                \u0022urn:li:person:a1b2c3d4d5\u0022\n            ],\n            \u0022threadUrn\u0022: \u0022urn:li:messagingThread:6234532054298611712\u0022\n        },\n        {\n            \u0022author\u0022: \u0022urn:li:person:a1b2c3d4d5\u0022,\n            \u0022content\u0022: {\n                \u0022com.linkedin.messaging.events.MailContent\u0022: {\n                    \u0022body\u0022: {\n                        \u0022text\u0022: \u0022Responding to test v2.\u0022\n                    },\n                    \u0022subject\u0022: \u0022RE: Testing Stub Profile\u0022\n                }\n            },\n            \u0022createdAt\u0022: 1486428775229,\n            \u0022id\u0022: \u0022I6234554148858486784_1000\u0022,\n            \u0022recipients\u0022: [\n                \u0022urn:li:seat:123456789\u0022\n            ],\n            \u0022threadUrn\u0022: \u0022urn:li:messagingThread:6234532054298611712\u0022\n        },\n        {\n            \u0022author\u0022: \u0022urn:li:seat:123456789\u0022,\n            \u0022content\u0022: {\n                \u0022com.linkedin.messaging.events.MailContent\u0022: {\n                    \u0022body\u0022: {\n                        \u0022text\u0022: \u0022Update test v2 complete.\u0022\n                    },\n                    \u0022subject\u0022: \u0022RE: Testing Stub Profile\u0022\n                }\n            },\n            \u0022createdAt\u0022: 1486428775329,\n            \u0022id\u0022: \u0022I6234544148858486784_1000\u0022,\n            \u0022recipients\u0022: [\n                \u0022urn:li:person:a1b2c3d4d5\u0022\n            ],\n            \u0022threadUrn\u0022: \u0022urn:li:messagingThread:6234532054298611712\u0022\n        },\n        {\n            \u0022author\u0022: \u0022urn:li:person:a1b2c3d4d5\u0022,\n            \u0022content\u0022: {\n                \u0022com.linkedin.messaging.events.MailContent\u0022: {\n                    \u0022body\u0022: {\n                        \u0022text\u0022: \u0022Test v2 complete.\u0022\n                    },\n                    \u0022subject\u0022: \u0022RE: Testing Stub Profile\u0022\n                }\n            },\n            \u0022createdAt\u0022: 1486428775429,\n            \u0022id\u0022: \u0022I6234534148858486784_1000\u0022,\n            \u0022recipients\u0022: [\n                \u0022urn:li:seat:123456789\u0022\n            ],\n            \u0022threadUrn\u0022: \u0022urn:li:messagingThread:6234532054298611712\u0022\n        },\n        {\n            \u0022author\u0022: \u0022urn:li:seat:123456789\u0022,\n            \u0022content\u0022: {\n                \u0022com.linkedin.messaging.events.MailContent\u0022: {\n                    \u0022body\u0022: {\n                        \u0022text\u0022: \u0022Dear testFirst, \\n\\nTesting Stub Profile v2\\n\\n\u0022\n                    },\n                    \u0022subject\u0022: \u0022Testing Stub Profile\u0022\n                }\n            },\n            \u0022createdAt\u0022: 1486428775529,\n            \u0022id\u0022: \u0022S6234533985997901824_1000\u0022,\n            \u0022recipients\u0022: [\n                \u0022urn:li:person:a1b2c3d4e5\u0022\n            ],\n            \u0022threadUrn\u0022: \u0022urn:li:messagingThread:6234532054298611712\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 5,\n        \u0022links\u0022: [\n            {\n                \u0022href\u0022: \u0022/v2/conversationEvents?count=5\u0026q=criteria\u0026start=5\u0026viewer=urn%3Ali%3Aseat%3A123456789\u0026timeRange.start=1486428734634\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 10\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,519 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+  "Title": "Employer Brand APIs Overview",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Employer Brand APIs Overview",
+      "Anchor": "employer-brand-apis-overview",
+      "SectionPath": [],
+      "Text": "The Employer Brand APIs enable organizations to manage and retrieve content for their LinkedIn Company Pages, including the Life tab, career page settings, analytics, and more. These APIs provide programmatic access to the data and settings that help companies showcase their culture, values, and workplace to potential candidates and visitors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Life Tab Architecture",
+      "Anchor": "understanding-life-tab-architecture",
+      "SectionPath": [
+        "Understanding Life Tab Architecture"
+      ],
+      "Text": "The Life tab on a LinkedIn Company Page is based on two key backend concepts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Life Tab Architecture",
+      "Anchor": "understanding-life-tab-architecture",
+      "SectionPath": [
+        "Understanding Life Tab Architecture"
+      ],
+      "Text": "Targeted Content\nContent Revisions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeted Content",
+      "Anchor": "targeted-content",
+      "SectionPath": [
+        "Understanding Life Tab Architecture",
+        "Targeted Content"
+      ],
+      "Text": "Targeted content is the Life page variant for an organization, including modules (such as photos, articles, testimonials, and featured members or leaders) and the audience targeting rules that determine visibility. This is available through the OrganizationTargetedContent resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeted Content",
+      "Anchor": "targeted-content",
+      "SectionPath": [
+        "Understanding Life Tab Architecture",
+        "Targeted Content"
+      ],
+      "Text": "Each time an admin creates a new company page version, a new targeted content ID is generated. When targeted content is created, a new content revision is also automatically generated to capture the page\u0027s state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeted Content",
+      "Anchor": "targeted-content",
+      "SectionPath": [
+        "Understanding Life Tab Architecture",
+        "Targeted Content"
+      ],
+      "Text": "Targeting Attributes: Typical targeting attributes include language, location, job function, industry, company size, and seniority. These attributes determine which Life page variant is displayed to a member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeted Content",
+      "Anchor": "targeted-content",
+      "SectionPath": [
+        "Understanding Life Tab Architecture",
+        "Targeted Content"
+      ],
+      "Text": "Key Fields: Targeted content entries include identifiers such as a per-version ID and a shared reportingId that links all versions of the same page over time. An originType field may also indicate whether the page was manually authored or AI-assisted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content Revision",
+      "Anchor": "content-revision",
+      "SectionPath": [
+        "Understanding Life Tab Architecture",
+        "Content Revision"
+      ],
+      "Text": "Content revision is the version-history record of a company\u0027s Life page. Each time a Life page is saved or published, a new version with a unique ID is created, and the system writes a ContentRevision that references the targeted contents in that version. Previously, versions accumulated indefinitely.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How they work together",
+      "Anchor": "how-they-work-together",
+      "SectionPath": [
+        "Understanding Life Tab Architecture",
+        "How they work together"
+      ],
+      "Text": "Admins author targeted content (the page variant plus targeting rules). Creating or editing that content generates a new content revision representing the current state. On the member-facing Company Page, the Life tab uses targeting logic to determine which page variant is presented, and ordering can differ based on how a member\u2019s profile matches the company\u2019s targeting settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Content Management APIs",
+      "Anchor": "content-management-apis",
+      "SectionPath": [
+        "Available APIs",
+        "Content Management APIs"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Description",
+        "Required Permission"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Admin Content",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve media gallery assets (images, videos) for your organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Targeted Contents",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve Life page variants with audience targeting rules and content modules.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Content Revisions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve version history of Life page changes, including published and draft states.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Photos",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve photos uploaded for display on the organization page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Commitment",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organization commitments data (e.g., Diversity, Equity \u0026 Inclusion).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Workplace Policies",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve workplace policy data (hybrid, remote, onsite) for the organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Settings and Configuration APIs",
+      "Anchor": "settings-and-configuration-apis",
+      "SectionPath": [
+        "Available APIs",
+        "Settings and Configuration APIs"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Description",
+        "Required Permission"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Career Page Settings",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve career page configuration including module visibility and automatic job posting settings.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR or CONTENT_ADMINISTRATOR role.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Analytics and Statistics APIs",
+      "Anchor": "analytics-and-statistics-apis",
+      "SectionPath": [
+        "Available APIs",
+        "Analytics and Statistics APIs"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Description",
+        "Required Permission"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Organization Life Page Traffic Statistics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve page view and unique visitor counts for Life page variants.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR, CONTENT_ADMINISTRATOR, or ANALYST role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Relationship Statistics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve relationship statistics between your organization and related organizations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR, CONTENT_ADMINISTRATOR, ANALYST, or LEAD_GEN_FORMS_MANAGER role.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent Brand Analytic Summaries",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve talent brand analytics including career page visitor data by time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_dma_admin_pages_content with ADMINISTRATOR, CONTENT_ADMINISTRATOR, ANALYST, or LEAD_GEN_FORMS_MANAGER role.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Permissions",
+      "Anchor": "common-permissions",
+      "SectionPath": [
+        "Common Permissions"
+      ],
+      "Text": "Most Employer Brand APIs require the r_dma_admin_pages_content permission, which allows you to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Permissions",
+      "Anchor": "common-permissions",
+      "SectionPath": [
+        "Common Permissions"
+      ],
+      "Text": "Retrieve your organization\u0027s posts, comments, reactions, and other engagement data.\nRetrieve your organization\u0027s pages and their reporting data (including follower, visitor, and content analytics).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Permissions",
+      "Anchor": "common-permissions",
+      "SectionPath": [
+        "Common Permissions"
+      ],
+      "Text": "This permission is restricted to organizations in which the authenticated member has one of the following company page roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Permissions",
+      "Anchor": "common-permissions",
+      "SectionPath": [
+        "Common Permissions"
+      ],
+      "Text": "ADMINISTRATOR - Full access to all content and settings.\nCONTENT_ADMINISTRATOR - Access to content management features.\nANALYST - Access to analytics and reporting features (for analytics APIs only).\nLEAD_GEN_FORMS_MANAGER - Access to lead generation and analytics features (for some analytics APIs).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Permissions",
+      "Anchor": "common-permissions",
+      "SectionPath": [
+        "Common Permissions"
+      ],
+      "Text": "For more information on company page roles, refer to Organization Access Control.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Member Data Obfuscation"
+      ],
+      "Text": "All Employer Brand APIs do not obfuscate member personal data. These APIs focus on organization-level content and aggregate analytics, not individual member data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "To use these APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Determine which organizations you can query: Use OrganizationAuthorization\u0027s BATCH_FIND method with the appropriate authorization action for your use case.\n\nUnderstand URN encoding: Most APIs require URL-encoded URNs. Example: urn:li:organization:1234 becomes urn%3Ali%3Aorganization%3A1234.\n\nReview API-specific requirements: Each API has specific query parameters and response formats detailed in their respective documentation pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Building a Life Page Dashboard",
+      "Anchor": "building-a-life-page-dashboard",
+      "SectionPath": [
+        "Common Use Cases",
+        "Building a Life Page Dashboard"
+      ],
+      "Text": "Combine Organization Targeted Contents and Organization Life Page Traffic Statistics to create a dashboard showing which page variants are performing best with different audiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Auditing Life Page Changes",
+      "Anchor": "auditing-life-page-changes",
+      "SectionPath": [
+        "Common Use Cases",
+        "Auditing Life Page Changes"
+      ],
+      "Text": "Use Organization Content Revisions to track the complete history of Life page modifications, including who made changes and when content was published.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analyzing Employer Brand Performance",
+      "Anchor": "analyzing-employer-brand-performance",
+      "SectionPath": [
+        "Common Use Cases",
+        "Analyzing Employer Brand Performance"
+      ],
+      "Text": "Leverage Talent Brand Analytic Summaries and Organization Relationship Statistics to understand how your employer brand resonates with different audiences and organizations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Media Assets",
+      "Anchor": "managing-media-assets",
+      "SectionPath": [
+        "Common Use Cases",
+        "Managing Media Assets"
+      ],
+      "Text": "Use Admin Content and Organization Photos to retrieve and manage the visual assets displayed on your organization page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Resources",
+      "Anchor": "related-resources",
+      "SectionPath": [
+        "Related Resources"
+      ],
+      "Text": "Organization Access Control\nOrganization Authorization API\nURN Concepts",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

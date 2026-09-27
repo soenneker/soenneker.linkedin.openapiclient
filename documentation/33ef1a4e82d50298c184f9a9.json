@@ -1,0 +1,315 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/entity-monitoring",
+  "Title": "Entity Monitoring",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/entity-monitoring",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Entity Monitoring",
+      "Anchor": "entity-monitoring",
+      "SectionPath": [],
+      "Text": "We added this feature to monitor activities that does not reference the regulated member directly. The activities returned will be related to the regulated member but not directly associated or performed by the regulated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Entity Monitoring",
+      "Anchor": "entity-monitoring",
+      "SectionPath": [],
+      "Text": "For example, if the regulated member performs a share and another member comments on the share, this feature will capture the comment activity of the second member and return it in the response. Another example can be when the regulated member is an admin of an organization. Any activities done by the organization will be returned in the regulated member\u0027s feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Entity Monitoring",
+      "Anchor": "entity-monitoring",
+      "SectionPath": [],
+      "Text": "In these activities, the owner field will always be that of the regulated member. The actor field, however, will be that of the entity that performed it. In the first example, the actor field will be that of the second member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Use Cases",
+      "Anchor": "supported-use-cases",
+      "SectionPath": [
+        "Supported Use Cases"
+      ],
+      "Text": "Comments and Likes on a Share\nComments and Likes on an Article\nComments and Likes on a Work Anniversary\nComments and Likes on a Job Change\nInvitations Received\nEndorsements Received\nRecommendation Requests Received\nRecommendations Received\nMessages Received\n[Coming soon] Organization Shares\n[Coming soon] Organization Comments and Likes\n[Coming soon] Organization Job Postings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on a Share",
+      "Anchor": "comments-and-likes-on-a-share",
+      "SectionPath": [
+        "Comments and Likes on a Share"
+      ],
+      "Text": "When a regulated member performs a share, any subsequent comments and likes on that share will be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the comment/like. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on a Share",
+      "Anchor": "comments-and-likes-on-a-share",
+      "SectionPath": [
+        "Comments and Likes on a Share"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on a Share",
+      "Anchor": "comments-and-likes-on-a-share",
+      "SectionPath": [
+        "Comments and Likes on a Share"
+      ],
+      "Text": "Comment edits made by a non-regulated member will not be captured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of a comment on a share",
+      "Anchor": "sample-response-of-a-comment-on-a-share",
+      "SectionPath": [
+        "sample response of a comment on a share"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022resourceId\u0022: \u00226318971194909560123\u0022,\n  \u0022configVersion\u0022: 24,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022time\u0022: 1506560133675\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022time\u0022: 1506560133675\n    },\n    \u0022id\u0022: \u00226318971194909560832\u0022,\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [\n\n      ],\n      \u0022text\u0022: \u0022entity monitoring comment!\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6318969988023746123\u0022\n  },\n  \u0022parentSiblingActivities\u0022: [\n\n  ],\n  \u0022resourceName\u0022: \u0022socialActions/comments\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:6318969988023746123/comments/63189711949095608123\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n  \u0022processedAt\u0022: 1506560145059,\n  \u0022capturedAt\u0022: 1506560133816,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1506560133675\n    },\n    \u0022id\u0022: \u00226318971194909560832\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1506560133675\n    },\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [\n\n      ],\n      \u0022text\u0022: \u0022entity monitoring comment!\u0022\n    },\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022owner~\u0022: {...},\n        \u0022created\u0022: {\n          \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n          \u0022actor~\u0022: {...},\n          \u0022time\u0022: 1531329595651\n        },\n        \u0022text\u0022: {\n          \u0022text\u0022: \u0022this is a share\u0022\n        },\n        \u0022lastModified\u0022: {\n          \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n          \u0022time\u0022: 1531329806139\n        },\n        \u0022distribution\u0022: {\n          \u0022linkedInDistributionTarget\u0022: {\n            \u0022visibleToGuest\u0022: true\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:share\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:share:6422861848344821123\u0022,\n      \u0022object\u0022: \u0022urn:li:share:6422861848344821123\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6318969988023746561\u0022\n  },\n  \u0022siblingActivities\u0022: [\n\n  ],\n  \u0022id\u0022: 20744452\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on an Article",
+      "Anchor": "comments-and-likes-on-an-article",
+      "SectionPath": [
+        "Comments and Likes on an Article"
+      ],
+      "Text": "When a regulated member performs an article, any subsequent comments and likes on that share will be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the comment/like. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on an Article",
+      "Anchor": "comments-and-likes-on-an-article",
+      "SectionPath": [
+        "Comments and Likes on an Article"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on an Article",
+      "Anchor": "comments-and-likes-on-an-article",
+      "SectionPath": [
+        "Comments and Likes on an Article"
+      ],
+      "Text": "Comment edits made by a non-regulated member will not be captured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of a like on an article",
+      "Anchor": "sample-response-of-a-like-on-an-article",
+      "SectionPath": [
+        "sample response of a like on an article"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:KPA1hpZ1yM\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:article:7980097982484950123\u0022,\n  \u0022configVersion\u0022: 13,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022time\u0022: 1506560737726\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022time\u0022: 1506560737726\n    },\n    \u0022object\u0022: \u0022urn:li:article:7980097982484950123\u0022\n  },\n  \u0022parentSiblingActivities\u0022: [\n\n  ],\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:article:7980097982484950123/likes/urn:li:person:V9W_L_bioc\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n  \u0022processedAt\u0022: 1506560767862,\n  \u0022capturedAt\u0022: 1506560737780,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n    \u0022actor~\u0022: {\n      \u0022firstName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022lastName\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022User\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022headline\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Partner Engineer at LinkedIn\u0022,\n\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      }\n    },\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022actor~\u0022: {\n        \u0022firstName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Test\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022lastName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022User\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022headline\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Partner Engineer at LinkedIn\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022time\u0022: 1506560737726\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n      \u0022actor~\u0022: {\n        \u0022firstName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Test\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022lastName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022User\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022headline\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Partner Engineer at LinkedIn\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022time\u0022: 1506560737726\n    },\n    \u0022object~\u0022: {\n      \u0022summary\u0022: \u0022It works well with the like!\u0022,\n      \u0022fullText\u0022: \u0022It works well with the like!\u0022,\n      \u0022publishedOn\u0022: 1506560719000,\n      \u0022active\u0022: true,\n      \u0022id\u0022: 7980097982484950731,\n      \u0022source\u0022: {\n        \u0022name\u0022: \u0022linkedin.com\u0022,\n        \u0022url\u0022: \u0022https://www.linkedin.com/pulse/demo-article-entity-monitoring-bobby-smith\u0022,\n        \u0022entity\u0022: \u0022urn:li:company:0000\u0022\n      },\n      \u0022title\u0022: \u0022A New Article about Entity Monitoring\u0022,\n      \u0022url\u0022: \u0022https://www.linkedin.com/pulse/demo-article-entity-monitoring-bobby-smith\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:article:7980097982484950123\u0022\n  },\n  \u0022siblingActivities\u0022: [\n\n  ],\n  \u0022id\u0022: 20748924\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on a Work Anniversary",
+      "Anchor": "comments-and-likes-on-a-work-anniversary",
+      "SectionPath": [
+        "Comments and Likes on a Work Anniversary"
+      ],
+      "Text": "When a regulated member has a work anniversary, LinkedIn creates a post on the feed to notify the member\u0027s connections of the work anniversary. Any comments and likes on that work anniversary post will now surface on the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the comment/like. See below for examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of a comment on a work anniversary",
+      "Anchor": "sample-response-of-a-comment-on-a-work-anniversary",
+      "SectionPath": [
+        "Sample response of a comment on a work anniversary"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022123456789\u0022,\n  \u0022configVersion\u0022: 24,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681023517\n    },\n    \u0022id\u0022: \u0022123456789\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681023517\n    },\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [],\n      \u0022text\u0022: \u0022Congrats!\u0022\n    },\n    \u0022likesSummary\u0022: {\n      \u0022selectedLikes\u0022: [],\n      \u0022likedByCurrentUser\u0022: false,\n      \u0022aggregatedTotalLikes\u0022: 0,\n      \u0022totalLikes\u0022: 0\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022parentSiblingActivities\u0022: [],\n  \u0022resourceName\u0022: \u0022socialActions/comments\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:123456789/comments/6550164963657420800\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022c3bcc9b1-20cd-4bd0-bf71-42723c54ae16\u0022,\n  \u0022processedAt\u0022: 1561681053889,\n  \u0022capturedAt\u0022: 1561681023595,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022id\u0022: \u00226550164963657420800\u0022,\n    \u0022lastModified\u0022: {...},\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [],\n      \u0022text\u0022: \u0022Congrats!\u0022\n    },\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022object~\u0022: {\n        \u0022companyName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022LinkedIn\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022API Developer\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022domainEntity~\u0022: {\n        \u0022createdAt\u0022: 1524166778647,\n        \u0022detail\u0022: {\n          \u0022com.linkedin.props.WorkAnniversary\u0022: {\n            \u0022date\u0022: {\n              \u0022month\u0022: 6,\n              \u0022year\u0022: 2014,\n              \u0022day\u0022: 27\n            },\n            \u0022numberOfYears\u0022: 5,\n            \u0022affiliate!\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022LinkedIn\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022API Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022affiliate\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,717780123)\u0022\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:anniversary\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:prop:(WORK_ANNIVERSARY,BobSmith123456)\u0022,\n      \u0022object\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,717780123)\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022siblingActivities\u0022: [],\n  \u0022id\u0022: 699288116\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of a like on a work anniversary",
+      "Anchor": "sample-response-of-a-like-on-a-work-anniversary",
+      "SectionPath": [
+        "Sample response of a like on a work anniversary"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:activity:123456789\u0022,\n  \u0022configVersion\u0022: 16,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681015656\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681015656\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022parentSiblingActivities\u0022: [],\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:123456789/likes/urn:li:person:2qXA98-mVk\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022ed39d05d-c366-4ecb-be09-3f80bb3cbed6\u0022,\n  \u0022processedAt\u0022: 1561681045974,\n  \u0022capturedAt\u0022: 1561681015663,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022lastModified\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022object~\u0022: {\n        \u0022companyName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022LinkedIn\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022API Developer\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022domainEntity~\u0022: {\n        \u0022createdAt\u0022: 1524166778647,\n        \u0022detail\u0022: {\n          \u0022com.linkedin.props.WorkAnniversary\u0022: {\n            \u0022date\u0022: {\n              \u0022month\u0022: 6,\n              \u0022year\u0022: 2014,\n              \u0022day\u0022: 27\n            },\n            \u0022numberOfYears\u0022: 5,\n            \u0022affiliate!\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022LinkedIn\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022API Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022affiliate\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,717780123)\u0022\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:anniversary\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:prop:(WORK_ANNIVERSARY,BobSmith123456)\u0022,\n      \u0022object\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,717780123)\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022siblingActivities\u0022: [],\n  \u0022id\u0022: 699288100\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments and Likes on a Job Change",
+      "Anchor": "comments-and-likes-on-a-job-change",
+      "SectionPath": [
+        "Comments and Likes on a Job Change"
+      ],
+      "Text": "When a regulated member has a job change, LinkedIn creates a post on the feed to notify the member\u0027s connections of the job change. Any comments and likes on that job change post will now surface on the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the comment/like. See below for examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of a comment on a job change",
+      "Anchor": "sample-response-of-a-comment-on-a-job-change",
+      "SectionPath": [
+        "Sample response of a comment on a job change"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022123456789\u0022,\n  \u0022configVersion\u0022: 24,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681023517\n    },\n    \u0022id\u0022: \u0022123456789\u0022,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681023517\n    },\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [],\n      \u0022text\u0022: \u0022Congrats!\u0022\n    },\n    \u0022likesSummary\u0022: {\n      \u0022selectedLikes\u0022: [],\n      \u0022likedByCurrentUser\u0022: false,\n      \u0022aggregatedTotalLikes\u0022: 0,\n      \u0022totalLikes\u0022: 0\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022parentSiblingActivities\u0022: [],\n  \u0022resourceName\u0022: \u0022socialActions/comments\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:123456789/comments/6550164963657420800\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022c3bcc9b1-20cd-4bd0-bf71-42723c54ae16\u0022,\n  \u0022processedAt\u0022: 1561681053889,\n  \u0022capturedAt\u0022: 1561681023595,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022id\u0022: \u00226550164963657420800\u0022,\n    \u0022lastModified\u0022: {...},\n    \u0022message\u0022: {\n      \u0022attributes\u0022: [],\n      \u0022text\u0022: \u0022Congrats!\u0022\n    },\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022createdAt\u0022: 1561680484539,\n        \u0022detail\u0022: {\n          \u0022com.linkedin.props.PositionChange\u0022: {\n            \u0022newPosition~\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022New Company 123\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022newPosition\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,1481872774)\u0022,\n            \u0022oldPosition~\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Old Company\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022oldPosition\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,1223451594)\u0022\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:profile-change-position\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:prop:(JOB_CHANGE,_01dp6deYvcQlJFn7yyD144qyQvskJL-HXBriApaxNymYM=)\u0022,\n      \u0022object\u0022: \u0022urn:li:prop:(JOB_CHANGE,_01dp6deYvcQlJFn7yyD144qyQvskJL-HXBriApaxNymYM=)\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022siblingActivities\u0022: [],\n  \u0022id\u0022: 699288116\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response of a like on a job change",
+      "Anchor": "sample-response-of-a-like-on-a-job-change",
+      "SectionPath": [
+        "Sample response of a like on a job change"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:activity:123456789\u0022,\n  \u0022configVersion\u0022: 16,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681015656\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022time\u0022: 1561681015656\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022parentSiblingActivities\u0022: [],\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:123456789/likes/urn:li:person:2qXA98-mVk\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022activityId\u0022: \u0022ed39d05d-c366-4ecb-be09-3f80bb3cbed6\u0022,\n  \u0022processedAt\u0022: 1561681045974,\n  \u0022capturedAt\u0022: 1561681015663,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022lastModified\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022createdAt\u0022: 1561680484539,\n        \u0022detail\u0022: {\n          \u0022com.linkedin.props.PositionChange\u0022: {\n            \u0022newPosition~\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022New Company 123\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022newPosition\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,1481872774)\u0022,\n            \u0022oldPosition~\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Old Company\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022oldPosition\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,1223451594)\u0022\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:profile-change-position\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:prop:(JOB_CHANGE,_01dp6deYvcQlJFn7yyD144qyQvskJL-HXBriApaxNymYM=)\u0022,\n      \u0022object\u0022: \u0022urn:li:prop:(JOB_CHANGE,_01dp6deYvcQlJFn7yyD144qyQvskJL-HXBriApaxNymYM=)\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022siblingActivities\u0022: [],\n  \u0022id\u0022: 699288100\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations Received",
+      "Anchor": "invitations-received",
+      "SectionPath": [
+        "Invitations Received"
+      ],
+      "Text": "When a regulated member receives an invitation request from another member, that action will now be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the invitation request. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of an invitation request",
+      "Anchor": "sample-response-of-an-invitation-request",
+      "SectionPath": [
+        "sample response of an invitation request"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:invitation:6418245652337160192\u0022,\n  \u0022configVersion\u0022: 11,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022inviter\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022invitee\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n    \u0022trackingId\u0022: \u0022\\u009a\\u00038\u00EC@ F\\u001e\u00B6\u00FA\u00B8w\\u0085\\u0086\u00E6;\u0022\n  },\n  \u0022resourceName\u0022: \u0022invitations\u0022,\n  \u0022resourceUri\u0022: \u0022/invitations/urn:li:invitation:6418245652337160192\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u0022ab6247e4-4b51-44bb-a82e-7afc312543cc\u0022,\n  \u0022processedAt\u0022: 1530229039261,\n  \u0022capturedAt\u0022: 1530229008941,\n  \u0022processedActivity\u0022: {\n    \u0022invitee~\u0022: {...},\n    \u0022inviter~\u0022: {...},\n    \u0022inviter\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022invitee\u0022: \u0022urn:li:person:2qXA98-mVk\u0022\n  },\n  \u0022id\u0022: 97287545\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Endorsements Received",
+      "Anchor": "endorsements-received",
+      "SectionPath": [
+        "Endorsements Received"
+      ],
+      "Text": "When a regulated member receives an endorsement from another member, that action will now be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the endorsement. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of an endorsement received",
+      "Anchor": "sample-response-of-an-endorsement-received",
+      "SectionPath": [
+        "sample response of an endorsement received"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022endorser\u0022: \u0022urn:li:person:J1CQ1YfAGi\u0022, \n        \u0022item\u0022: {\n            \u0022nonStandardEntity\u0022: {\n                \u0022entityPhrase\u0022: \u0022Java\u0022, \n                \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022\n            }\n        }, \n        \u0022location\u0022: \u0022neptune-skills-section\u0022, \n        \u0022recipient\u0022: \u0022urn:li:person:2qXA98-mVk\u0022, \n        \u0022status\u0022: \u0022ACCEPTED\u0022\n    }, \n    \u0022activityId\u0022: \u0022466ac44d-cd76-41fe-8a75-b7abae47a7e1\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:J1CQ1YfAGi\u0022, \n    \u0022capturedAt\u0022: 1530144904331, \n    \u0022configVersion\u0022: 5, \n    \u0022id\u0022: 122650466, \n    \u0022method\u0022: \u0022CREATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:2qXA98-mVk\u0022, \n    \u0022parentSiblingActivities\u0022: [], \n    \u0022processedActivity\u0022: {\n        \u0022endorser\u0022: \u0022urn:li:person:J1CQ1YfAGi\u0022, \n        \u0022endorser~\u0022: {\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Jenny\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022headline\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Senior Partner Engineer at LinkedIn\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Green\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022localizedFirstName\u0022: \u0022Jenny\u0022, \n            \u0022localizedHeadline\u0022: \u0022Senior Partner Engineer at LinkedIn\u0022, \n            \u0022localizedLastName\u0022: \u0022Green\u0022, \n            \u0022profilePicture\u0022: {\n                \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5603AQG7VF4Hn8ABow\u0022, \n                \u0022displayImage~\u0022: {\n                    \u0022elements\u0022: [\n                       {\n                              \u0022identifiers\u0022: [...]\n                       },\n                       {...}\n                    ]\n                }\n            }\n        }, \n        \u0022item\u0022: {\n            \u0022nonStandardEntity\u0022: {\n                \u0022entityPhrase\u0022: \u0022Java\u0022, \n                \u0022entityType\u0022: \u0022PROFILE_SKILL\u0022\n            }\n        }, \n        \u0022location\u0022: \u0022neptune-skills-section\u0022, \n        \u0022recipient\u0022: \u0022urn:li:person:2qXA98-mVk\u0022, \n        \u0022recipient~\u0022: {\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bob\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022headline\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Partner Engineer at LinkedIn\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Smith\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022localizedFirstName\u0022: \u0022Bob\u0022, \n            \u0022localizedHeadline\u0022: \u0022Partner Engineer at LinkedIn\u0022, \n            \u0022localizedLastName\u0022: \u0022Smith\u0022, \n            \u0022profilePicture\u0022: {\n                \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5603AQG7VF4Hn8ABow\u0022, \n                \u0022displayImage~\u0022: {\n                    \u0022elements\u0022: [\n                       {\n                              \u0022identifiers\u0022: [...]\n                       },\n                       {...}\n                    ]\n                }\n            }\n        }, \n        \u0022status\u0022: \u0022ACCEPTED\u0022\n    }, \n    \u0022processedAt\u0022: 1530144934471, \n    \u0022resourceId\u0022: \u0022urn:li:endorsement:(urn:li:person:2qXA98-mVk,71104380844)\u0022, \n    \u0022resourceName\u0022: \u0022endorsement\u0022, \n    \u0022resourceUri\u0022: \u0022/endorsement/urn:li:endorsement:(urn:li:person:2qXA98-mVk,71104380123)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation Requests Received",
+      "Anchor": "recommendation-requests-received",
+      "SectionPath": [
+        "Recommendation Requests Received"
+      ],
+      "Text": "When a regulated member receives a recommendation requests from another member, the activity will be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the recommendation request. See below for example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of a member asking a recommendation for a regulated member",
+      "Anchor": "sample-response-of-a-member-asking-a-recommendation-for-a-regulated-member",
+      "SectionPath": [
+        "sample response of a member asking a recommendation for a regulated member"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:recommendationRequest:(urn:li:person:2SqvgON4PZ,1279897764)\u0022,\n  \u0022configVersion\u0022: 6,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022requester\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n    \u0022notification\u0022: {\n      \u0022created\u0022: 1530209450079,\n      \u0022subject\u0022: \u0022Recommendation Request\u0022,\n      \u0022lastModified\u0022: 1530209450079,\n      \u0022message\u0022: \u0022Hi Bob, can you write me a recommendation?\\n\\nWrite Jenny a recommendation:\\nhttps://www.linkedin.com/recs/give?senderId=12345\u0022\n    },\n    \u0022requestee\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022requesterEntity\u0022: \u0022urn:li:position:(urn:li:person:2SqvgON4PZ,1214669864)\u0022,\n    \u0022relationship\u0022: \u0022WORKED_IN_SAME_GROUP\u0022,\n    \u0022status\u0022: \u0022PENDING\u0022\n  },\n  \u0022resourceName\u0022: \u0022recRequests\u0022,\n  \u0022resourceUri\u0022: \u0022/recRequests/urn:li:recommendationRequest:(urn:li:person:2SqvgON4PZ,1279897764)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n  \u0022activityId\u0022: \u0022e22a8826-77d6-4ae3-8600-24878e03b90b\u0022,\n  \u0022processedAt\u0022: 1530209480364,\n  \u0022capturedAt\u0022: 1530209450109,\n  \u0022processedActivity\u0022: {\n    \u0022requester\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n    \u0022notification\u0022: {\n      \u0022created\u0022: 1530209450079,\n      \u0022subject\u0022: \u0022Recommendation Request\u0022,\n      \u0022lastModified\u0022: 1530209450079,\n      \u0022message\u0022: \u0022Hi Bob, can you write me a recommendation?\\n\\nWrite Jenny a recommendation:\\nhttps://www.linkedin.com/recs/give?senderId=12345\u0022\n    },\n    \u0022requestee\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022requester~\u0022: {...},\n    \u0022requestee~\u0022: {...},\n    \u0022requesterEntity\u0022: \u0022urn:li:position:(urn:li:person:2SqvgON4PZ,1214669864)\u0022,\n    \u0022requesterEntity~\u0022: {\n      \u0022localizedCompanyName\u0022: \u0022LinkedIn\u0022,\n      \u0022localizedTitle\u0022: \u0022Technical Lead\u0022\n    },\n    \u0022relationship\u0022: \u0022WORKED_IN_SAME_GROUP\u0022,\n    \u0022status\u0022: \u0022PENDING\u0022\n  },\n  \u0022id\u0022: 122943450\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendations Received",
+      "Anchor": "recommendations-received",
+      "SectionPath": [
+        "Recommendations Received"
+      ],
+      "Text": "When a regulated member receives a recommendation from a member, the activity will be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the recommendation. See below for example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of a member giving a recommendation to a regulated member",
+      "Anchor": "sample-response-of-a-member-giving-a-recommendation-to-a-regulated-member",
+      "SectionPath": [
+        "sample response of a member giving a recommendation to a regulated member"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:recommendation:(urn:li:person:2SqvgON4PZ,634676834)\u0022,\n  \u0022configVersion\u0022: 6,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022recommendee\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022recommendationText\u0022: \u0022Bob was awesome at understanding my requirements as a client and completing the project on time!\u0022,\n    \u0022recommendeeEntity\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,1223451594)\u0022,\n    \u0022visibilityForRecommender\u0022: \u0022EVERYONE\u0022,\n    \u0022message\u0022: \u0022Dhar sent you a recommendation\\n\\nReview Recommendation:\\nhttps://www.linkedin.com/recs/received?senderId=12345\u0022,\n    \u0022relationship\u0022: \u0022RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE\u0022,\n    \u0022recommender\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n    \u0022status\u0022: \u0022PENDING\u0022\n  },\n  \u0022resourceName\u0022: \u0022recs\u0022,\n  \u0022resourceUri\u0022: \u0022/recs/urn:li:recommendation:(urn:li:person:2SqvgON4PZ,634676834)\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n  \u0022activityId\u0022: \u0022aad5e4c4-01ee-477b-81c5-c96131c2cbe9\u0022,\n  \u0022processedAt\u0022: 1530210168941,\n  \u0022capturedAt\u0022: 1530210138512,\n  \u0022processedActivity\u0022: {\n    \u0022recommender~\u0022: {...},\n    \u0022recommendee~\u0022: {...},\n    \u0022recommendee\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022recommendationText\u0022: \u0022Bob was awesome at understanding my requirements as a client and completing the project on time!\u0022,\n    \u0022recommendeeEntity\u0022: \u0022urn:li:position:(urn:li:person:yrZCpj2ZYQ,1223451594)\u0022,\n    \u0022visibilityForRecommender\u0022: \u0022EVERYONE\u0022,\n    \u0022message\u0022: \u0022Dhar sent you a recommendation\\n\\nReview Recommendation:\\nhttps://www.linkedin.com/recs/received?senderId=12345\u0022,\n    \u0022relationship\u0022: \u0022RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE\u0022,\n    \u0022recommender\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n    \u0022status\u0022: \u0022PENDING\u0022\n  },\n  \u0022id\u0022: 122943586\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages Received",
+      "Anchor": "messages-received",
+      "SectionPath": [
+        "Messages Received"
+      ],
+      "Text": "When a regualted member receives a message, the activity will be captured in the API. The owner field will have the regulated member\u0027s personUrn whereas the actor field will have the personUrn who performed the message. See below for example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response of the message received",
+      "Anchor": "sample-response-of-the-message-received",
+      "SectionPath": [
+        "sample response of the message received"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n  \u0022resourceId\u0022: \u00220-VTYzNjI4MjU0OTA3NTkyMDA3NjhfNTAw\u0022,\n  \u0022configVersion\u0022: 5,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022,\n    \u0022createdAt\u0022: 1517015812663,\n    \u0022author\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022,\n    \u0022id\u0022: \u00220-VTYzNjI4MjU0OTA3NTkyMDA3NjhfNTAw\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjIzNDYxMzI4NzYwMjkyNTU2OA==\u0022,\n    \u0022readAt\u0022: 1517015812000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022HELLO!\u0022\n      }\n    }\n  },\n  \u0022parentSiblingActivities\u0022: [\n\n  ],\n  \u0022resourceName\u0022: \u0022messages\u0022,\n  \u0022resourceUri\u0022: \u0022/messages/0-VTYzNjI4MjU0OTA3NTkyMDA3NjhfNTAw\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022,\n  \u0022activityId\u0022: \u0022ce1b1f56-391a-4945-b505-0b62a063770f\u0022,\n  \u0022processedAt\u0022: 1517015814445,\n  \u0022capturedAt\u0022: 1517015812830,\n  \u0022processedActivity\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022,\n    \u0022createdAt\u0022: 1517015812663,\n    \u0022owner~\u0022: {...},\n    \u0022author~\u0022: {...},\n    \u0022thread~\u0022: {\n      \u0022owner\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022,\n      \u0022membership\u0022: [\n        {\n          \u0022createdAt\u0022: 0,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022\n        },\n        {\n          \u0022createdAt\u0022: 0,\n          \u0022identity~\u0022: {...},\n          \u0022identity\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022\n        }\n      ]\n    },\n    \u0022author\u0022: \u0022urn:li:person:fb9JdiOYTc\u0022,\n    \u0022id\u0022: \u00220-VTYzNjI4MjU0OTA3NTkyMDA3NjhfNTAw\u0022,\n    \u0022thread\u0022: \u0022urn:li:messagingThread:0-NjIzNDYxMzI4NzYwMjkyNTU2OA==\u0022,\n    \u0022readAt\u0022: 1517015812000,\n    \u0022content\u0022: {\n      \u0022format\u0022: \u0022TEXT\u0022,\n      \u0022fallback\u0022: \u0022\u0022,\n      \u0022formatVersion\u0022: 1,\n      \u0022content\u0022: {\n        \u0022string\u0022: \u0022HELLO!\u0022\n      }\n    }\n  },\n  \u0022id\u0022: 623563\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

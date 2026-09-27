@@ -1,0 +1,132 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+  "Title": "Analytics Services Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What is Analytics Services?",
+      "Anchor": "what-is-analytics-services",
+      "SectionPath": [
+        "What is Analytics Services?"
+      ],
+      "Text": "LinkedIn Sales Navigator Analytics Services provides a set of APIs you can use to obtain user activity data from Sales Navigator. With the insights contained in the analytics data, sales organizations can understand usage and performance of sales teams.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics on Activity Levels",
+      "Anchor": "analytics-on-activity-levels",
+      "SectionPath": [
+        "Data and Insights",
+        "Analytics on Activity Levels"
+      ],
+      "Text": "Analytics Services offers analytics data describing the activities performed within Sales Navigator like performing searches, viewing profiles, saving accounts and leads, and sending InMail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Analytics on Activity Outcomes",
+      "Anchor": "analytics-on-activity-outcomes",
+      "SectionPath": [
+        "Data and Insights",
+        "Analytics on Activity Outcomes"
+      ],
+      "Text": "Analytics Services offers analytics data capturing the results of performed activities, such as InMails accepted and rejected, and offers a daily summary of various statistics on a seat holder, including their number of connections and SSI (Social Selling Index).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Comprehensive Visibility of Usage",
+      "Anchor": "get-comprehensive-visibility-of-usage",
+      "SectionPath": [
+        "Key Use Cases",
+        "Get Comprehensive Visibility of Usage"
+      ],
+      "Text": "Since analytics data is now offered via API, analysts will no longer need to manually download CSVs from Usage Reporting within Sales Navigator and switch between contracts to export all data. Analytics data can be leveraged to build customized dashboards or reporting pipelines to enable better decision making.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Correlate Activities with Sales Outcomes",
+      "Anchor": "correlate-activities-with-sales-outcomes",
+      "SectionPath": [
+        "Key Use Cases",
+        "Correlate Activities with Sales Outcomes"
+      ],
+      "Text": "Analytics data enables analysts to understand usage of Sales Navigator by sales team members over time. With activity and usage data in hand, analysts can correlate Sales Navigator activities with sales outcomes and optimize activities within Sales Navigator to achieve desireable outcomes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Want to get started right now? Check out our Getting Started guide",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "It\u0027s required that all integrations are built by approved partners for the SNAP program. To become a partner, visit this page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn SNAP Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

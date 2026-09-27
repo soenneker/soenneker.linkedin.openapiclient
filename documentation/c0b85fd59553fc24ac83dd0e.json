@@ -1,0 +1,412 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+  "Title": "API Foundations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/partner-identifier",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/terminology",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "LinkedIn Learning APIs use two-legged OAuth 2.0 for access. Two-legged OAuth is also known as OAuth 2.0 application access using the Client Credentials Flow. This flow allows your application to authorize with LinkedIn\u0027s API directly - outside the context of any specific user. To generate an access token, you will need a client ID and client secret which can be obtained by following the steps in Request Access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Foundations Pagination",
+      "Anchor": "foundations-pagination",
+      "SectionPath": [
+        "Foundations Pagination"
+      ],
+      "Text": "In order to support retrieval of larger datasets, LinkedIn Learning APIs support pagination on many GET and FINDER endpoints. Paginated responses include a paging object with the fields below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Foundations Pagination",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "total",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total number of learning entities matching the requested criteria",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested number of learning entities for the page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested start index of learning entities for the page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "links",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of link objects. Each link object includes: A \u0022rel\u0022 field whose value can be prev or next.An \u0022href\u0022 field whose value is the link (relative to the base API URL) for the previous or next page of learning entities matching the requested criteria. If the previous or next page does not exist, the corresponding link object will be omitted",
+            "Links": [],
+            "Values": [
+              "A \u0022rel\u0022 field whose value can be prev or next.",
+              "An \u0022href\u0022 field whose value is the link (relative to the base API URL) for the previous or next page of learning entities matching the requested criteria."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Foundations Pagination",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  ...\n\u0022paging\u0022: {\n    \u0022total\u0022: 5810,\n    \u0022count\u0022: 20,\n    \u0022start\u0022: 1000,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=980\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      },\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \n\u0022/v2/learningAssets?assetType=COURSE\u0026count=20\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=1020\u0022,\n        \u0022type\u0022: \u0022application/json\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Paged Requests",
+      "Anchor": "sample-paged-requests",
+      "SectionPath": [
+        "Foundations Pagination",
+        "Sample Paged Requests"
+      ],
+      "Text": "Here is an example of sequential GET requests used to iterate through 90 active learning assets from the english content library, 30 at a time:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Paged Requests",
+      "Anchor": "sample-paged-requests",
+      "SectionPath": [
+        "Foundations Pagination",
+        "Sample Paged Requests"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?assetType=COURSE\u0026count=30\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Paged Requests",
+      "Anchor": "sample-paged-requests",
+      "SectionPath": [
+        "Foundations Pagination",
+        "Sample Paged Requests"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?assetType=COURSE\u0026count=30\u0026start=30\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Paged Requests",
+      "Anchor": "sample-paged-requests",
+      "SectionPath": [
+        "Foundations Pagination",
+        "Sample Paged Requests"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?assetType=COURSE\u0026count=30\u0026start=60\u0026expandDepth=1\u0026includeRetired=false\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Field Projections",
+      "Anchor": "about-field-projections",
+      "SectionPath": [
+        "About Field Projections"
+      ],
+      "Text": "Field projection are a mechanism in LinkedIn Learning APIs that can be used to control how much of an entity\u0027s data is included in a response body. When calling any of the API endpoints, you can include a special request parameter that specifies the fields that will be in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Field Projections",
+      "Anchor": "about-field-projections",
+      "SectionPath": [
+        "About Field Projections"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "About Field Projections",
+      "Anchor": "about-field-projections",
+      "SectionPath": [
+        "About Field Projections"
+      ],
+      "Text": "If you set the fields parameter when calling an endpoint that retrieves a page of entities, the previous and next links in the paging response (see Pagination) will not include the fields parameter. You will need to add the parameter values to the generated links yourself.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Reference",
+      "Anchor": "field-projection-reference",
+      "SectionPath": [
+        "About Field Projections",
+        "Query Parameters",
+        "Field Projection Reference"
+      ],
+      "Text": "If you set the \u0022fields\u0022 parameter when calling an endpoint that retrieves a page of learning entities, the previous and next links in the paging metadata in the response (see the \u0022Understanding the endpoints\u0022 section) will not include the \u0022fields\u0022 parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field Projection Reference",
+      "Anchor": "field-projection-reference",
+      "SectionPath": [
+        "About Field Projections",
+        "Query Parameters",
+        "Field Projection Reference"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of field projections that specify the fields that will be in the response. You will need to add the same \u0022fields\u0022 parameter to the generated links yourself",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Syntax",
+      "Anchor": "field-projection-syntax",
+      "SectionPath": [
+        "About Field Projections",
+        "Query Parameters",
+        "Field Projection Syntax"
+      ],
+      "Text": "field_name to include the entire value of the field.\nfield_name:(sub_field_name) to include only the value of the sub-field if the parent field is an object.\nfield_name:($*:(sub_field_name)) to include only the value of the sub-field if the parent field is an array of objects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Syntax",
+      "Anchor": "field-projection-syntax",
+      "SectionPath": [
+        "About Field Projections",
+        "Query Parameters",
+        "Field Projection Syntax"
+      ],
+      "Text": "Here are four sample requests showing an example of each kind of field projection:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request",
+      "SectionPath": [
+        "About Field Projections",
+        "Parent Field Projection",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=title\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "About Field Projections",
+        "Parent Field Projection",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022title\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Java Essential Training for Students\u0022\n      }\n    },\n    {\n      \u0022title\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022Scala Essential Training\u0022\n      }\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "About Field Projections",
+        "Child Field Projection",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=title:(value)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-2",
+      "SectionPath": [
+        "About Field Projections",
+        "Child Field Projection",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022title\u0022: {\n        \u0022value\u0022: \u0022Java Essential Training for Students\u0022\n      }\n    },\n    {\n      \u0022title\u0022: {\n        \u0022value\u0022: \u0022Scala Essential Training\u0022\n      }\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-2",
+      "SectionPath": [
+        "About Field Projections",
+        "Map with Child Field Projection",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=contents:($*:(asset:(urn)))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-3",
+      "SectionPath": [
+        "About Field Projections",
+        "Map with Child Field Projection",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022contents\u0022: [\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415232)\u0022\n          }\n        },\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415237)\u0022\n          }\n        },\n      ...\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-3",
+      "SectionPath": [
+        "About Field Projections",
+        "Complex Field Projection",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets?q=criteria\u0026assetFilteringCriteria.keyword=java\u0026fields=urn,type,contents:($*:(asset:(urn,type)))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-4",
+      "SectionPath": [
+        "About Field Projections",
+        "Complex Field Projection",
+        "Sample Response Body"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022urn\u0022: \u0022urn:li:lyndaCourse:375490\u0022,\n      \u0022contents\u0022: [\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415232)\u0022,\n            \u0022type\u0022: \u0022CHAPTER\u0022\n          }\n        },\n        {\n          \u0022asset\u0022: {\n            \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:375490,415237)\u0022,\n            \u0022type\u0022: \u0022CHAPTER\u0022\n          }\n        },\n        ...\n      ],\n      \u0022type\u0022: \u0022COURSE\u0022\n    },\n    ...\n  ],\n  \u0022metadata\u0022: {\n    ...\n  },\n  \u0022paging\u0022: {\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "Rate limits define the number of calls that can be made in a 24 hour period, beginning at midnight UTC. Rate limiting for the LinkedIn Learning API is enforced on a per application basis. In the event an application exceeds the rate limit for a given API endpoint, the API will return HTTP 429 \u0022Too Many Requests\u0022. The following error will be returned in the reponse body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "{ \n\u0022status\u0022: 429, \n\u0022serviceErrorCode\u0022: 101, \n\u0022message\u0022: \u0022Resource level throttle limit for calls to this resource is reached.\u0022 \n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "The exact number of calls that your application can make per day varies based on the type of request you are making.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

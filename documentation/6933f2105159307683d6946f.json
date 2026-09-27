@@ -1,0 +1,514 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
+  "Title": "Ad Lift Test Benchmark",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/appendix",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "Using Brand Lift Testing you can provide advertiser access to the median aggregated lift test results data organized by specific region and industry.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "The specific region and industry lift test data are grouped by key metric types. For a description of the key metric types refer to Available Key Metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "Note: Brand Lift benchmarks offer empirical guidance and insights rather than data that has been tested and validated for statistical significance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Test Benchmark",
+      "Anchor": "ad-lift-test-benchmark",
+      "SectionPath": [],
+      "Text": "For more information about Brand Lift Testing, refer to the Getting Started Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s lift tests. Restricted to ad account authenticated members with one of the following roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s lift tests. Restricted to ad accounts authenticated members with one of the following roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on ad account roles refer to Account Access Controls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestBenchmarkResult Schema",
+      "Anchor": "adlifttestbenchmarkresult-schema",
+      "SectionPath": [
+        "AdLiftTestBenchmarkResult Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "benchmarkMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestBenchmarkMetrics[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metric array (relativeLift, absoluteLift, etc.) for each existing AdLiftKeyMetric type (advertiser-specific questionsfor measuring results such as AWARENESS, RECALL, etc.) Only advertiser specified questions provide returnable benchmark metrics. See Lift Test Benchmark Metrics Schema for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark?view=li-lms-2026-09#adlifttestbenchmarkmetrics-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "peerGroupType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of: INDUSTRYGEO",
+            "Links": [],
+            "Values": [
+              "INDUSTRY",
+              "GEO"
+            ]
+          },
+          {
+            "Text": "Peer group type used for aggregating benchmarking results (e.g., all lift tests identified for the same industry/geographic locale). See Peer Group Type Schema for details.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark?view=li-lms-2026-09#adlifttestbenchmarkpeergrouptype-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestBenchmarkMetrics Schema",
+      "Anchor": "adlifttestbenchmarkmetrics-schema",
+      "SectionPath": [
+        "AdLiftTestBenchmarkResult Schema",
+        "AdLiftTestBenchmarkMetrics Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "benchmarkMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftResultMetrics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specific region and industry benchmark metrics. Aligned with the result metrics for lift test measurement. For metric definitions refer to Lift Test metrics schema.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results?view=li-lms-2026-09#adliftresultmetrics-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftKeyMetric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The measured lift key metric type using surveys described in lift test key metrics definition.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#available-key-metrics"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestBenchmarkPeerGroupType Schema",
+      "Anchor": "adlifttestbenchmarkpeergrouptype-schema",
+      "SectionPath": [
+        "AdLiftTestBenchmarkResult Schema",
+        "AdLiftTestBenchmarkPeerGroupType Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "INDUSTRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry selected for lift test",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Geographic area selected for lift test",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Ad Lift Test Benchmark Results Finder",
+      "Anchor": "get-ad-lift-test-benchmark-results-finder",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder"
+      ],
+      "Text": "Get Ad Lift Test Benchmark Results Finder fetches benchmark results by using the lift test geographic region and industry to locate peer group URN test results.\nKey Metric data is returned if it exists and conforms to statistical strength requirements. If no key metric result is returned, then a benchmark group either doesn\u0027t exist or there\u0027s not a significant amount of peer group data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Ad Lift Test Benchmark Results Finder",
+      "Anchor": "get-ad-lift-test-benchmark-results-finder",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder"
+      ],
+      "Text": "Your request must include the Restli Protocol 2.0.0 as X-Restli-Protocol-Version: 2.0.0 header. Restli 2.0 requires URL encoded URNs in query params. For example, urn:li:adLiftTest:1245678 becomes urn%3Ali%3AadLiftTest%3A1245678.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftTest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The selected ad lift tests to fetch benchmarking results for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adLiftTestBenchmark?q=adLiftTest\u0026adLiftTests=urn%3Ali%3AadLiftTest%3A{liftTestId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Sample Response"
+      ],
+      "Text": "The API returns benchmark results for a specific lift test. It uses industry and geographic URN values to define a peer group. It fetches median values for the identified group for each key metric. The API returns results if they\u0027re available. If no results are returned, there\u0027s likely insufficient data to calculate return values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022:[\n        {\n            \u0022benchmarkMetrics\u0022:[\n                {\n                    \u0022benchmarkMetrics\u0022:{\n                        \u0022totalEstimatedLift\u0022:62666,\n                        \u0022absoluteLift\u0022:0.06563,\n                        \u0022relativeLift\u0022:0.726425\n                    },\n                    \u0022id\u0022:\u0022RECALL\u0022\n                }\n            ],\n            \u0022peerGroupType\u0022:\u0022GEO\u0022\n        },\n        {\n            \u0022benchmarkMetrics\u0022:[\n                {\n                    \u0022benchmarkMetrics\u0022:{\n                        \u0022totalEstimatedLift\u0022:45481,\n                        \u0022absoluteLift\u0022:0.074857,\n                        \u0022relativeLift\u0022:0.613321\n                    },\n                    \u0022id\u0022:\u0022RECALL\u0022\n                }\n            ],\n            \u0022peerGroupType\u0022:\u0022INDUSTRY\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Sample Response"
+      ],
+      "Text": "A successful request returns a 200 OK response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error Codes you may encounter. Each Service Error Code represents a unique condition where input can be invalid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Get Ad Lift Test Benchmark Results Finder",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malformed requests (e.g., adLiftTestUrn is formatted incorrectly, missing, or more than one is passed in)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User is not present or is not authorized to view the lift test. Check to confirm whether the user is a Billing Admin, Account Manager, Campaign Manager, or Viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lift test URN doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

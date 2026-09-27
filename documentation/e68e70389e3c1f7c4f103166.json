@@ -1,0 +1,350 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/partner-support-guide",
+  "Title": "Support Guide for Integration Partners",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/partner-support-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Support Guide for Integration Partners",
+      "Anchor": "support-guide-for-integration-partners",
+      "SectionPath": [],
+      "Text": "This document gives guidance to LinkedIn\u0027s Talent Solutions integration Partners on how to leverage LinkedIn\u0027s support ecosystem to best support our shared customers for a seamless integration experience. We cover four common use-cases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support Guide for Integration Partners",
+      "Anchor": "support-guide-for-integration-partners",
+      "SectionPath": [],
+      "Text": "I want to direct our shared customer to reach out to LinkedIn Support\nI am encountering the same error/challenge across several customers and I suspect a broader system issue\nI need support with App settings, have questions on the API or need operational support as a partner\nI want to escalate my customer/partner support issue to LinkedIn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support Guide for Integration Partners",
+      "Anchor": "support-guide-for-integration-partners",
+      "SectionPath": [],
+      "Text": "LinkedIn support teams are product experts and will find the relevant LinkedIn consultant and team best equipped to solve the issue directly, or escalate to the engineering owners in cases of issues.\nAs a partner, there are a few ways you can get the support you need to ensure visibility into issues.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support Guide for Integration Partners",
+      "Anchor": "support-guide-for-integration-partners",
+      "SectionPath": [],
+      "Text": "Please note that support during charter / beta testing varies by program and is not specified in these guidelines.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "You are working with a customer \u0026 believe an issue may be on the LinkedIn end and you need to guide them to contact the LinkedIn support team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "We recommend for you or the customer to reach out to ltsatsintegrations@linkedin.com with both you and the customer on the email. This will ensure all relevant parties can communicate directly with each other to drive resolution.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "If the customer needs to reach out to LinkedIn directly, they can raise a ticket via our HelpCenter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "You can expect an answer from our support team within 1 business day. Provide the information below to speed up the resolution process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "Integration type (RSC, Apply Connect, etc.)\nSteps taken to encounter the error\nAny error message \u002B screenshots of the UI\nCustomer company name or LinkedIn Company ID\nLinkedIn Contract and Application Id\nHAR file (if issue is widget related)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "Once a ticket is created, you/customer should see a case # that begins with \u0022CAS\u0022 or \u0022CRM\u0022 added to the subject line in the email. Please ensure this number does not get dropped upon reply all, otherwise our CRM system will no longer be able to see the thread.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "Once a case enters our system, if it is related to a LinkedIn bug, it will be escalated to the LinkedIn engineering owner team - regardless of how it originated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "If you get several/additional reports from customers of the same issue after initially filing a case with your first report, you can engage with the Partner support team via the partner support form, as described below (please make sure to mention any existing customer cases including CRM# or CAS# number)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "If our teams identify that your issue will be better served by another team who is a subject matter expert on your issue, the case might get transferred. This will always be called out in the tickets when it happens and will be handled directly by LinkedIn teams.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to direct our shared customer to reach out to LI support",
+      "Anchor": "i-want-to-direct-our-shared-customer-to-reach-out-to-li-support",
+      "SectionPath": [
+        "I want to direct our shared customer to reach out to LI support"
+      ],
+      "Text": "Please do not open up multiple cases/tickets for the same customer facing the same issue as this will lead to duplicate tickets. If escalation is needed, please see item 4 below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "You are encountering the same error message across several of your customers, or several customers have raised support cases with you and you require additional LinkedIn engineering support \u003E as a partner, you can file a support case directly with our Partner Integrations team via the partner support form",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "You will be directed to a webform:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "Select Developer Support Form\nSelect the Inquiry Topic \u003E this should match the LTS Integrations Product that you are having an issue with",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "Ensure to provide the right information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "LinkedIn Application Client ID (parent and child if relevant)\nExamples of API calls (API URL, UUid) or specific JobPostingTaskId for Job Posting\nAttachments of error messages",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "As best practice:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I am encountering the same error/challenge across several customers and I suspect a broader system issue",
+      "Anchor": "i-am-encountering-the-same-errorchallenge-across-several-customers-and-i-suspect-a-broader-system-issue",
+      "SectionPath": [
+        "I am encountering the same error/challenge across several customers and I suspect a broader system issue"
+      ],
+      "Text": "Do provide support existing cases # (begins with CAS or CRM) that you are aware of (raised by your customers or relevant). This will allow the support teams to get additional context and identify what has already been done internally\nDo not cc customers in Partner cases for visibility on resolution and case update. If an issue is sitting with LinkedIn and you want your customers to have visibility on progress, you can leverage the ltsatsintegrations@linkedin.com email to create a case directly for your customers to be updated by LinkedIn support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I need support with App settings, have questions on the API or need operational support as a partner",
+      "Anchor": "i-need-support-with-app-settings-have-questions-on-the-api-or-need-operational-support-as-a-partner",
+      "SectionPath": [
+        "I need support with App settings, have questions on the API or need operational support as a partner"
+      ],
+      "Text": "For any operational issues with the management of your integrations, as a partner, you can file a support case directly with our Partner Integrations team via the partner support form",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I need support with App settings, have questions on the API or need operational support as a partner",
+      "Anchor": "i-need-support-with-app-settings-have-questions-on-the-api-or-need-operational-support-as-a-partner",
+      "SectionPath": [
+        "I need support with App settings, have questions on the API or need operational support as a partner"
+      ],
+      "Text": "You will be directed to a webform:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I need support with App settings, have questions on the API or need operational support as a partner",
+      "Anchor": "i-need-support-with-app-settings-have-questions-on-the-api-or-need-operational-support-as-a-partner",
+      "SectionPath": [
+        "I need support with App settings, have questions on the API or need operational support as a partner"
+      ],
+      "Text": "Select Developer Support Form\nSelect the Inquiry Topic \u003E this should match the LTS Integrations Product that you are having an issue with",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I need support with App settings, have questions on the API or need operational support as a partner",
+      "Anchor": "i-need-support-with-app-settings-have-questions-on-the-api-or-need-operational-support-as-a-partner",
+      "SectionPath": [
+        "I need support with App settings, have questions on the API or need operational support as a partner"
+      ],
+      "Text": "As best practice for your support needs, we recommend you to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I need support with App settings, have questions on the API or need operational support as a partner",
+      "Anchor": "i-need-support-with-app-settings-have-questions-on-the-api-or-need-operational-support-as-a-partner",
+      "SectionPath": [
+        "I need support with App settings, have questions on the API or need operational support as a partner"
+      ],
+      "Text": "Manage your admins on the developer application and ensure you have several people with admin rights to not block work on your integration\nAdd a business email to your app/profile \u003E this will make it easier for us to link back to your business identity in case one of your admins moves to another role externally\nEnsure that developers working on the app are linked to your company on LinkedIn.com with a verified work email address\nEnsure to provide the right information (Application Client ID (parent and child if relevant)) and to initiate the request with an admin for any changes that will have production impact or with a security impact",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to escalate my customer/partner support issue to LinkedIn",
+      "Anchor": "i-want-to-escalate-my-customerpartner-support-issue-to-linkedin",
+      "SectionPath": [
+        "I want to escalate my customer/partner support issue to LinkedIn"
+      ],
+      "Text": "If you believe any customer (ID# starting with CRM###) or partner support case requires escalation (more immediate attention) due to reasons including:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to escalate my customer/partner support issue to LinkedIn",
+      "Anchor": "i-want-to-escalate-my-customerpartner-support-issue-to-linkedin",
+      "SectionPath": [
+        "I want to escalate my customer/partner support issue to LinkedIn"
+      ],
+      "Text": "Large scope (partner-level) breakage\nNon-responsive / aging tickets\nUnacceptable resolution / recommendations (e.g. premature ticket closures, prolonged outstanding bugs)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to escalate my customer/partner support issue to LinkedIn",
+      "Anchor": "i-want-to-escalate-my-customerpartner-support-issue-to-linkedin",
+      "SectionPath": [
+        "I want to escalate my customer/partner support issue to LinkedIn"
+      ],
+      "Text": "Please email your Business Development contact and include [Support Escalation] in the email subject line. For a prompt response and escalation process, please include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "I want to escalate my customer/partner support issue to LinkedIn",
+      "Anchor": "i-want-to-escalate-my-customerpartner-support-issue-to-linkedin",
+      "SectionPath": [
+        "I want to escalate my customer/partner support issue to LinkedIn"
+      ],
+      "Text": "CAS/CRM/Support Case Number (or the Email Subject Line, if ticket number is not available)\nNames of Customer(s) impacted\nInitial ticket filed date and date of most recent LinkedIn response (if any)\nBrief reasoning for escalation\nRelated integration (e.g. Job posting, RSC, Apply Connect, etc.)",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

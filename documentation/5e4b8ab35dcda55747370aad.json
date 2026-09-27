@@ -1,0 +1,544 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+  "Title": "Recruiter System Connect - Customer Support \u0026 FAQ Guide",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Customer Support \u0026 FAQ Guide",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Congratulations Partner ATS! Your team has completed RSC Certification and customers will now be able to enable an integration that is aimed to significantly improve their workflow. In an effort to prepare your support teams for general availability, please refer this guide to support teams who will interface with customers enabling RSC or developer teams who will be troubleshooting the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Below documentations are great to get the product overview:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "RSC Microsite",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "RSC FAQs (General Product FAQs)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "RSC Data \u0026 Security FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Product Support:",
+      "Anchor": "customer-product-support---",
+      "SectionPath": [
+        "Support Overview",
+        "Customer Product Support:"
+      ],
+      "Text": "If a customer has a product, functionality, or security questions about Recruiter System Connect, please direct them to their LinkedIn Customer Success Manager. Typically, these questions will arise when a customer is still evaluating RSC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer Technical Support:",
+      "Anchor": "customer-technical-support---",
+      "SectionPath": [
+        "Support Overview",
+        "Customer Technical Support:"
+      ],
+      "Text": "If a customer has a technical question regarding enablement or troubleshooting of RSC, they should be directed to send an email to LTSATSintegrations@linkedin.com. It\u2019s typically helpful to keep the partner\u2019s support team on the thread as well to ensure the customer issue is resolved. If there is a company-wide issue, please refer to partner support below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner Support:",
+      "Anchor": "partner-support-",
+      "SectionPath": [
+        "Support Overview",
+        "Partner Support:"
+      ],
+      "Text": "Only issues that are company-wide or related to API bugs should require a LinkedIn support case, and cases should come from the partner\u2019s engineering team once they have already investigated the issue. When submitting a support case via the partner support form, in order for our team to most efficiently troubleshoot, please be sure to include the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner Support:",
+      "Anchor": "partner-support-",
+      "SectionPath": [
+        "Support Overview",
+        "Partner Support:"
+      ],
+      "Text": "Description of issue\nAPI key\nFull API request / headers / request body / response / UUID\nIf the issue is related to widgets:\n\nFull script used to display the widget\nHAR file",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner Support:",
+      "Anchor": "partner-support-",
+      "SectionPath": [
+        "Support Overview",
+        "Partner Support:"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner Support:",
+      "Anchor": "partner-support-",
+      "SectionPath": [
+        "Support Overview",
+        "Partner Support:"
+      ],
+      "Text": "Please keep in mind that we do not have SLAs for our partner engineering team as this is a small team and we try to respond to requests as soon as we can.\nIf the issue requires immediate escalation or attention, please CC your LinkedIn Business Development representative and send them an email describing the customer impact and need for escalation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security Breach:",
+      "Anchor": "security-breach--",
+      "SectionPath": [
+        "Support Overview",
+        "Security Breach:"
+      ],
+      "Text": "If you suspect there may have been a breach of security or unauthorized access to or disclosure of the data accessed via the LinkedIn APIs (e.g., client secret key, member profiles, etc.), please send an email security@linkedin.com immediately and contact your LinkedIn Business Development representative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Testing:",
+      "Anchor": "rsc-testing--",
+      "SectionPath": [
+        "Support Overview",
+        "RSC Testing:"
+      ],
+      "Text": "If a client asks whether they can \u201Ctest\u201D RSC, please inform them that LinkedIn does not have a staging / testing environment. All \u201Ctesting\u201D of RSC functionality happens in LinkedIn production, which means \u2013 jobs synced as \u201CPublic\u201D through RSC will be discoverable on LinkedIn.com, all RSC features enabled on a particular contract will be visible to all users on that contract. RSC is an \u201Cout of the box\u201D activation. If a customer would like to \u201Ctest\u201D the RSC functionality, please have them reach out to their LinkedIn CSM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Deletion or Disablement:",
+      "Anchor": "rsc-deletion-or-disablement-",
+      "SectionPath": [
+        "Support Overview",
+        "RSC Deletion or Disablement:"
+      ],
+      "Text": "If there is ever a time when customers would like to disable the Recruiter System Connect integration or remove this data, customers can request to disable or explicitly delete their ATS data at any time by contacting LTSATSintegrations@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Deletion or Disablement:",
+      "Anchor": "rsc-deletion-or-disablement-",
+      "SectionPath": [
+        "Support Overview",
+        "RSC Deletion or Disablement:"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Deletion or Disablement:",
+      "Anchor": "rsc-deletion-or-disablement-",
+      "SectionPath": [
+        "Support Overview",
+        "RSC Deletion or Disablement:"
+      ],
+      "Text": "Please note that the user requesting disablement must be a Recruiter Admin on the contract. Customers will then be directed to contact their ATS to ensure RSC is deleted or disabled on the ATS side as well, to ensure API calls are no longer being made on behalf of the customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the user roles or permissions required to enable RSC?",
+      "Anchor": "what-are-the-user-roles-or-permissions-required-to-enable-rsc-",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "What are the user roles or permissions required to enable RSC?"
+      ],
+      "Text": "You must be a Recruiter Admin within LinkedIn Recruiter, and an Admin of your ATS to enable RSC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What does the \u0022Your account is not associated to any company\u0022 error message indicate?",
+      "Anchor": "what-does-the--your-account-is-not-associated-to-any-company--error-message-indicate-",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "What does the \u0022Your account is not associated to any company\u0022 error message indicate?"
+      ],
+      "Text": "Your account might not be correctly linked to a LinkedIn Recruiter contract. Please have customer reach out to their LinkedIn Customer Success Manager with a screenshot of the error for assistance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u2019s the difference between contract-level access \u0026 company-level access?",
+      "Anchor": "what-s-the-difference-between-contract-level-access---company-level-access-",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "What\u2019s the difference between contract-level access \u0026 company-level access?"
+      ],
+      "Text": "When a customer activates RSC, they will be asked if they want to enable Contract Level Access and / or Company Level Access.\nIf a customer only enables Company-Level Access, this means every seat in the company (regardless of contract) will be able to One-Click Export candidate profiles to their ATS, see In-ATS Indicator in Recruiter \u0026 view LI Profile Widget in the ATS. However, contract-level specific features, like the SeatsV2 API, will not be available until the contract is enabled through the onboarding process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do member-level privacy settings impact my ability to export candidates to an ATS?",
+      "Anchor": "how-do-member-level-privacy-settings-impact-my-ability-to-export-candidates-to-an-ats--",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "How do member-level privacy settings impact my ability to export candidates to an ATS?"
+      ],
+      "Text": "Please refer to this Help Center Article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Are there any other factors that could impact my ability to successfully export candidates?",
+      "Anchor": "are-there-any-other-factors-that-could-impact-my-ability-to-successfully-export-candidates-",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "Are there any other factors that could impact my ability to successfully export candidates?"
+      ],
+      "Text": "If your ATS has implemented Security Groups, you may need to verify that you are in the correct security group within that ATS. You can find more details on Security Groups below.\n\nSecurity Groups: Some ATSs create security groups to further restrict unauthorized users from viewing job or candidate information. In most cases, when an ATS has implemented security groups, your LinkedIn Recruiter account must be connected from within the ATS. Your account should be under the correct security group within your ATS in order to take specific actions from your LinkedIn dashboard. You can reach out to your ATS representative to make sure you are listed under the correct security group for the job(s) you are trying to export to.\n\n\nJob posting data must also be synced from your ATS to LinkedIn so that LinkedIn can match candidates with the correct job IDs within your ATS. Job posting data must be published by your ATS, and then synced to LinkedIn. LinkedIn can then match candidates with the correct job requisition which will allow you to successfully export candidates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why am I unable to view Interview Feedback, Notes, or job statuses in the ATS indicator in my LinkedIn dashboard?",
+      "Anchor": "why-am-i-unable-to-view-interview-feedback--notes--or-job-statuses-in-the-ats-indicator-in-my-linkedin-dashboard--",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "Why am I unable to view Interview Feedback, Notes, or job statuses in the ATS indicator in my LinkedIn dashboard?"
+      ],
+      "Text": "Interview Feedback and Notes are optional features that some ATSs have chosen not to include in the LinkedIn Recruiter dashboard. Reach out to your ATS representative to confirm that these features should be visible through your dashboard.\nYour ATS may have also enabled Security Groups which could prevent you from seeing these features. You will only be able to see interview feedback, notes, and job statuses for the jobs that you have access to within your ATS. See the above section on Security Groups for specific ATSs that have implemented this, and for more information on how to ensure your profile is linked to the correct security group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the \u201CIn-ATS\u201D indicator not populating for a candidate that I know is in my ATS?",
+      "Anchor": "why-is-the--in-ats--indicator-not-populating-for-a-candidate-that-i-know-is-in-my-ats-",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "Why is the \u201CIn-ATS\u201D indicator not populating for a candidate that I know is in my ATS?"
+      ],
+      "Text": "This happens when candidates have not been synced from the ATS to LinkedIn Recruiter. To initiate this sync, we suggest you reach out to your ATS representative.\nThe candidate may also not have been matched if we were unable to map them to a LinkedIn profile via email address.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the \u201CIn-ATS\u201D indicator not populating for a candidate that I know is in my ATS?",
+      "Anchor": "why-is-the--in-ats--indicator-not-populating-for-a-candidate-that-i-know-is-in-my-ats-",
+      "SectionPath": [
+        "Customer Support FAQs",
+        "Why is the \u201CIn-ATS\u201D indicator not populating for a candidate that I know is in my ATS?"
+      ],
+      "Text": "Congratulations Partner ATS! Your team has completed RSC Certification and customers will now be able to enable an integration that is aimed to significantly improve their workflow. In an effort to prepare your support teams for general availability, please refer this guide to support teams who will interface with customers enabling RSC or developer teams who will be troubleshooting the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Below documentations are great to get the product overview:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "RSC Microsite",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "RSC FAQs (General Product FAQs)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "RSC Data \u0026 Security FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "If a customer has a product, functionality, or security questions about Recruiter System Connect, please direct them to their LinkedIn Customer Success Manager. Typically, these questions will arise when a customer is still evaluating RSC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "If a customer has a technical question regarding enablement or troubleshooting of RSC, they should be directed to send an email to LTSATSintegrations@linkedin.com. It\u2019s typically helpful to keep the partner\u2019s support team on the thread as well to ensure the customer issue is resolved. If there is a company-wide issue, please refer to partner support below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Only issues that are company-wide or related to API bugs should require a LinkedIn support case, and cases should come from the partner\u2019s engineering team once they have already investigated the issue. When submitting a support case via the partner support form, in order for our team to most efficiently troubleshoot, please be sure to include the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Description of issue\nAPI key\nFull API request / headers / request body / response / UUID\nIf the issue is related to widgets:\n\nFull script used to display the widget\nHAR file",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Please keep in mind that we do not have SLAs for our partner engineering team as this is a small team and we try to respond to requests as soon as we can.\nIf the issue requires immediate escalation or attention, please CC your LinkedIn Business Development representative and send them an email describing the customer impact and need for escalation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "If you suspect there may have been a breach of security or unauthorized access to or disclosure of the data accessed via the LinkedIn APIs (e.g., client secret key, member profiles, etc.), please send an email security@linkedin.com immediately and contact your LinkedIn Business Development representative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "If a client asks whether they can \u201Ctest\u201D RSC, please inform them that LinkedIn does not have a staging / testing environment. All \u201Ctesting\u201D of RSC functionality happens in LinkedIn production, which means \u2013 jobs synced as \u201CPublic\u201D through RSC will be discoverable on LinkedIn.com, all RSC features enabled on a particular contract will be visible to all users on that contract. RSC is an \u201Cout of the box\u201D activation. If a customer would like to \u201Ctest\u201D the RSC functionality, please have them reach out to their LinkedIn CSM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "If there is ever a time when customers would like to disable the Recruiter System Connect integration or remove this data, customers can request to disable or explicitly delete their ATS data at any time by contacting LTSATSintegrations@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Please note that the user requesting disablement must be a Recruiter Admin on the contract. Customers will then be directed to contact their ATS to ensure RSC is deleted or disabled on the ATS side as well, to ensure API calls are no longer being made on behalf of the customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "You must be a Recruiter Admin within LinkedIn Recruiter, and an Admin of your ATS to enable RSC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Your account might not be correctly linked to a LinkedIn Recruiter contract. Please have customer reach out to their LinkedIn Customer Success Manager with a screenshot of the error for assistance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "When a customer activates RSC, they will be asked if they want to enable Contract Level Access and / or Company Level Access.\nIf a customer only enables Company-Level Access, this means every seat in the company (regardless of contract) will be able to One-Click Export candidate profiles to their ATS, see In-ATS Indicator in Recruiter \u0026 view LI Profile Widget in the ATS. However, contract-level specific features, like the SeatsV2 API, will not be available until the contract is enabled through the onboarding process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Please refer to this Help Center Article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "If your ATS has implemented Security Groups, you may need to verify that you are in the correct security group within that ATS. You can find more details on Security Groups below.\n\nSecurity Groups: Some ATSs create security groups to further restrict unauthorized users from viewing job or candidate information. In most cases, when an ATS has implemented security groups, your LinkedIn Recruiter account must be connected from within the ATS. Your account should be under the correct security group within your ATS in order to take specific actions from your LinkedIn dashboard. You can reach out to your ATS representative to make sure you are listed under the correct security group for the job(s) you are trying to export to.\n\n\nJob posting data must also be synced from your ATS to LinkedIn so that LinkedIn can match candidates with the correct job IDs within your ATS. Job posting data must be published by your ATS, and then synced to LinkedIn. LinkedIn can then match candidates with the correct job requisition which will allow you to successfully export candidates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "Interview Feedback and Notes are optional features that some ATSs have chosen not to include in the LinkedIn Recruiter dashboard. Reach out to your ATS representative to confirm that these features should be visible through your dashboard.\nYour ATS may have also enabled Security Groups which could prevent you from seeing these features. You will only be able to see interview feedback, notes, and job statuses for the jobs that you have access to within your ATS. See the above section on Security Groups for specific ATSs that have implemented this, and for more information on how to ensure your profile is linked to the correct security group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RSC Product Overview:",
+      "Anchor": "rsc-product-overview",
+      "SectionPath": [
+        "RSC Product Overview:"
+      ],
+      "Text": "This happens when candidates have not been synced from the ATS to LinkedIn Recruiter. To initiate this sync, we suggest you reach out to your ATS representative.\nThe candidate may also not have been matched if we were unable to map them to a LinkedIn profile via email address.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

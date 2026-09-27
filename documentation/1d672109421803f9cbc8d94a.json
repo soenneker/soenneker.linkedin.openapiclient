@@ -1,0 +1,463 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+  "Title": "LinkedIn Learning and LCvista Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LCvista Deep Integration Functionality",
+      "Anchor": "lcvista-deep-integration-functionality",
+      "SectionPath": [
+        "LCvista Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SSO\nContent Discovery: Automated and Manual Catalog Sync options.\nReporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Deep Integration Functionality",
+      "Anchor": "lcvista-deep-integration-functionality",
+      "SectionPath": [
+        "LCvista Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Deep Integration Functionality",
+      "Anchor": "lcvista-deep-integration-functionality",
+      "SectionPath": [
+        "LCvista Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and LCvista integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Deep Integration Functionality",
+      "Anchor": "lcvista-deep-integration-functionality",
+      "SectionPath": [
+        "LCvista Deep Integration Functionality"
+      ],
+      "Text": "An active LCvista LMS instance\nAn active LinkedIn Learning account\nAdmin access to LinkedIn Learning\nAdmin privileges to your LCvista instance\nOrganization access to this feature on LCvista - please contact your LCvista account manager to enable this feature",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "We recommend SSO for all enterprise learning platform integrations. You can configure SSO authentication in your LinkedIn Learning Admin settings. Most organizations have a centrally-managed identity management solution like Azure AD, Okta, or ADFS, which can be configured to authenticate users into enterprise applications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "To configure SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains over 25,000 courses, with 20-30 courses added per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "LCvista automates this process using the LinkedIn Learning content APIs, so LMS admins do not have to manually upload new content packages at regular intervals. After the initial setup, LCvista will dynamically refresh the content library on an automated basis. This ensures new LinkedIn Learning content is available to learners within 24 hours of release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "All content titles and descriptions are aggregated and indexed to accommodate keyword searches and support efficient discoverability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "LCvista supports automatic syncing of English Only content libraries. An organization will have the option to sync new content automatically or manually; in the case of manual selection the organization will be responsible for specifying the exact content to be loaded to their site.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage reports accessible from the LinkedIn Learning administrative interface. In addition to generating reports, LinkedIn Learning uses xAPI to communicate a learner\u0027s activity back to LCvista when the learner completes a LinkedIn Learning course. All LinkedIn Learning course completions will be reported both in LinkedIn Learning and in LCvista.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "To ensure xAPI completions flow back and update correctly in LCvista, SSO must be configured to send a matching user identifier. The Unique User ID in LinkedIn Learning must align exactly with the Username value in LCvista.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "For NASBA-eligible courses, certificate-based completion can be enabled so that xAPI completion statements are generated only after the learner earns the LinkedIn Learning course certificate. This ensures course completions align with NASBA CPE credit requirements. To enable certificate-based completion for NASBA-eligible courses, please contact your LinkedIn Learning representative or submit a support ticket to request this configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "Enabling SSO:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "LinkedIn Learning recommends SSO for all enterprise learning platform integrations. SSO authentication can be configured in your LinkedIn Learning Admin settings. Most organizations have a centrally managed identity management solution like Azure AD, Okta or AD FS which can be configured to authenticate users into enterprise applications like LinkedIn Learning.\n\nTo configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For LCvista to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "To sync your LCvista content with LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "Log in to LinkedIn Learning. If you are not already in the Admin screen, select Go to Admin, then click Me \u003E Integrate\n\n\n\n\n\nFrom the side navigation menu, Access content and reports via API.\n\n\n\n\n\nClick the down arrow on the right to expand the Generate LinkedIn Learning REST API Application section.\n\nClick Add Application and provide the name related to your LMS (e.g., \u0022LCvista LMS Integration\u0022), as the application name, and provide a short description of the integration use case in the application description field.\n\n\n\n\n\nThere are two checkboxes \u2013 Content and Report. Select the fields that apply to you. For Content Sync to the LMS, only Content is required.\n\nClick Next and agree to the Terms and Conditions\n\nSave the Client ID and Client Secret values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Configuration",
+      "Anchor": "lcvista-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LCvista",
+        "LCvista Configuration"
+      ],
+      "Text": "To complete the configuration with LCvista, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Configuration",
+      "Anchor": "lcvista-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LCvista",
+        "LCvista Configuration"
+      ],
+      "Text": "\u2022 Client ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Configuration",
+      "Anchor": "lcvista-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LCvista",
+        "LCvista Configuration"
+      ],
+      "Text": "\u2022 Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Configuration",
+      "Anchor": "lcvista-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LCvista",
+        "LCvista Configuration"
+      ],
+      "Text": "Once you\u2019ve gathered the required information and have logged into the LCvista LMS, follow these steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Configuration",
+      "Anchor": "lcvista-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LCvista",
+        "LCvista Configuration"
+      ],
+      "Text": "Access LCvista, find Integration Providers. Select the External Catalog Providers tab and Add Provider.\n\n\n\n\n\nEnter Client ID \u0026 Client Secret and then select Save.\n\n\n\n\n\nAs a result of saving the above, a new card on this page will appear, LinkedIn Learning Reporting Integration xAPI credentials.\n\n\n\n\n\nRetrieve Client ID, Client Secret, Tenant Server URL and OAuth Server URL from LCvista under LinkedIn Learning Reporting Integration xAPI credentials (this will be used when returning to LinkedIn Learning to complete the xAPI reporting configuration).\n\nNext Define Topic Area Handling in LCvista. Specifically choose whether you wish to use the expected duration sent by LinkedIn Learning to calculate a 50-minute credit hour across non-NASBA sponsored courses.\nNASBA sponsored courses will be loaded based on the NASBA topic area and credit value specified. Non-NASBA sponsored courses will be loaded with a None field of study.\n\n\n\n\n\nOn the Content tab, select the content sync preference:\n\nAutomate Full Catalog Sync: All LinkedIn Learning content will be automatically created and loaded into LCvista.\n\nManual Selection: Courses are reviewed and manually selected before being loaded into LCvista. Administrators must return to the Content tab to review and load any new courses made available.\n\n\n\n\n\n\n\n Note\nRegardless of the sync preference, any courses that have already been loaded will be automatically updated if LinkedIn Learning retires a course or releases an update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Configuration",
+      "Anchor": "lcvista-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LCvista",
+        "LCvista Configuration"
+      ],
+      "Text": "Please note that it can take up to 48 hours for LCvista to index and make content available to learners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "For NASBA-eligible courses, certificate-based completion can be enabled so that xAPI completion statements are generated only after the learner earns the LinkedIn Learning course certificate. This ensures course completions align with NASBA CPE credit requirements. To enable certificate-based completion for NASBA-eligible courses, please contact your LinkedIn Learning representative or submit a support ticket to request this configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Using the information you acquired in LCvista, follow the instructions below to configure XAPI configuration within LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you login, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Integrate.\n\n\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\n\n\n\nIn the Integration name field, enter a name such as \u0022LCvista Reporting\u0022.\n\nIn the User Type drop down, select ID. This value must match the Username in LCvista. Please reach out to support@lcvista.com if you need assistance identifying this value.\n\nCopy and paste the following items provided by LCvista into LinkedIn Learning:\n\nOAuth Server URL\nTenant Server URL\nClient ID\nClient Secret\n\n\nSelect Course completions under Confirm which data you want to share for this integration.\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "You have now successfully enabled the LCvista xAPI connection in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LCvista Troubleshooting",
+      "Anchor": "lcvista-troubleshooting",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "LCvista Troubleshooting"
+      ],
+      "Text": "In order to reach out to LCvista\u0027s support team, please visit their website LCvista Customer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

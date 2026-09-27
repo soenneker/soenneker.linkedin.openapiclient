@@ -1,0 +1,211 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+  "Title": "Analytics Services - Design Considerations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-analytics-export-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-contracts",
+    "https://learn.microsoft.com/en-us/linkedin/sales/concepts/contracts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Analytics Services - Design Considerations",
+      "Anchor": "analytics-services---design-considerations",
+      "SectionPath": [],
+      "Text": "The Design Considerations Guide includes recommendations and guidance when you are integrating with Sales Navigator Analytics Services.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Building a Contract Chooser",
+      "Anchor": "building-a-contract-chooser",
+      "SectionPath": [
+        "Building a Contract Chooser"
+      ],
+      "Text": "All export jobs for analytics data are created in the context of a contract, so it is necessary to build a contract chooser to enable the user to select the contracts for which they want to export data. For more information on how to get the list of contracts for a user, see /salesContracts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating Successful Export Jobs",
+      "Anchor": "creating-successful-export-jobs",
+      "SectionPath": [
+        "Creating Successful Export Jobs"
+      ],
+      "Text": "It\u0027s recommended to provide users a list of pre-defined date ranges, such as 1 week, 1 month, and 3 months to help users easily select date rages. The maximum date range we support for an export job is 90 days.\nCreate jobs using day boundaries only, rather than giving datetime pickers to users. This makes incremental refresh much easier.\nMake sure the date range is valid when you are exporting the analytics data. The criteria for a valid range can be found in exportActivityData\nSince export data is refreshed every 24 hours, do not build your integration to repeatedly creates jobs looking for data within the past 24 hours.\nWhen polling periodically for an export job\u0027s status, it is recommended to set an appropriate polling interval to avoid unnecessary calls, and to stop polling once the export job has completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "The export job may not be created or completed successfully due to various reasons. Instead of ignoring the 4xx or 5xx status code, make sure the corresponding errors are handled in your integration and users are presented with the appropriate information to decide the correct course of action. Here are a list of potential error codes that your application should handle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad request, missing parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized (typically a result of token expiration)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User does not have enough access to complete the request. Some example cases of insufficient access are: \u0022User does not have reporting permission on Sales Navigator contract\u0022\u0022User does not have any assigned permission on Sales Navigator contract\u0022",
+            "Links": [],
+            "Values": [
+              "\u0022User does not have reporting permission on Sales Navigator contract\u0022",
+              "\u0022User does not have any assigned permission on Sales Navigator contract\u0022"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum number of requests enqueued for this export type. See Throttling and Limits for more info",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations#throttling-and-limits"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unhandled service error",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Service unavailable due to high demand",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "Refer to API Guide - Error Handling for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttling and Limits",
+      "Anchor": "throttling-and-limits",
+      "SectionPath": [
+        "Throttling and Limits"
+      ],
+      "Text": "Only one query can be in progress at a time per user, per export type, per contract. If an additional request is made for an export type, there will be a 409 response with a message indicating that a job is already enqueued or processing for this export type. New requests for this user, export type, and contract will not be successful until the previous request for that export is completed. Read Error Handling - 429 Rate Limit to learn more about throttling and limits.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Logout from authentication",
+      "Anchor": "logout-from-authentication",
+      "SectionPath": [
+        "Logout from authentication"
+      ],
+      "Text": "Your users might want to logout from the authentication or switch to a different LinkedIn account within your product. In this case, your product should provide \u0022logout\u0022 or \u0022unlink\u0022 option for users after they have successfully authorized the authentication. The tokens stored on both client or server should be removed upon logout.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Logout from authentication",
+      "Anchor": "logout-from-authentication",
+      "SectionPath": [
+        "Logout from authentication"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Logout from authentication",
+      "Anchor": "logout-from-authentication",
+      "SectionPath": [
+        "Logout from authentication"
+      ],
+      "Text": "In order to allow users to successfully switch LinkedIn accounts authenticated to your integration, you can direct users to switch their account on www.linkedin.com before authenticating a different LinkedIn account to your integration.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+  "Title": "CRM Connect release notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-bind-customer-users",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-history",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recommended-matches-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acl-assignees",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Versioning certification update",
+      "Anchor": "versioning-certification-update",
+      "SectionPath": [
+        "Versioning certification update"
+      ],
+      "Text": "Added CRM-141 certification test case. Partners must demonstrate that all versioned CRM Connect API calls include a LinkedIn-Version header value of 202603 or higher.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "Updated the following API docs for LinkedIn-Version 202603:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "Sync Candidate Pipeline Stages \u2014 Updated endpoint to rest/candidatePipelineStages, query string parameters and request body fields with new external* field names, and sample PUT and DELETE requests and responses.\nSync Candidate Pipelines \u2014 Updated endpoint to rest/candidatePipelines, query string parameters and request body fields with new external* field names, and sample PUT and DELETE requests and responses.\nSync Pipeline Stages \u2014 Updated endpoint to rest/pipelineStages, query string parameters and request body fields with new external* field names, and sample PUT and DELETE requests and responses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error handling documentation improvements",
+      "Anchor": "error-handling-documentation-improvements",
+      "SectionPath": [
+        "Error handling documentation improvements"
+      ],
+      "Text": "Error Handling\n\nAdded error response examples with concrete scenarios (200 batch errors, 401, 404, 500).\nUpdated the Request retries section to use a table format.\nAdded a Summary section with quick-reference best practices.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application secret management and Recommended Matches certification",
+      "Anchor": "application-secret-management-and-recommended-matches-certification",
+      "SectionPath": [
+        "Application secret management and Recommended Matches certification"
+      ],
+      "Text": "New Child Application Secret Management APIs - Added support for rotating and deleting secrets for parent, child, and standalone applications. Partners can now maintain up to two active secrets per application, enabling zero-downtime credential updates. See Application Secret Management for implementation details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application secret management and Recommended Matches certification",
+      "Anchor": "application-secret-management-and-recommended-matches-certification",
+      "SectionPath": [
+        "Application secret management and Recommended Matches certification"
+      ],
+      "Text": "CRM Recommended Matches Certification",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application secret management and Recommended Matches certification",
+      "Anchor": "application-secret-management-and-recommended-matches-certification",
+      "SectionPath": [
+        "Application secret management and Recommended Matches certification"
+      ],
+      "Text": "Added Recommended Matches Certification documentation with test cases for validating CRM Connect integration with LinkedIn\u0027s AI-powered candidate recommendations. The certification covers:\n\nDisplay of Recommended Matches widget\nLogged in/logged out functionality\nFull profile display\nSave to pipeline functionality\nInMail integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL sync certification modules",
+      "Anchor": "acl-sync-certification-modules",
+      "SectionPath": [
+        "ACL sync certification modules"
+      ],
+      "Text": "Updated certification requirements to add Module 8 - Sync CRM ACLs (CRM-155 - CRM-161).\nUpdated certification requirements with additional certification items for Module 5 - Data Deletion related to ACL management (CRM-162 - CRM-165)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ACL sync APIs, bind customer users, and pipeline versioning",
+      "Anchor": "acl-sync-apis-bind-customer-users-and-pipeline-versioning",
+      "SectionPath": [
+        "ACL sync APIs, bind customer users, and pipeline versioning"
+      ],
+      "Text": "Updated Sync Candidate Resumes with a new example that omits the blobTtl field.\nUpdated CRM Connect Overview to reference Module 8 - Sync ACLs.\nAdded ACL Overview.\nAdded Sync CRM ACLs.\nAdded Sync CRM ACL Assignees.\nUpdated Sync Pipelines with versioning details and new accessRestricted field.\nAdded Bind Customer Users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Candidate sync field updates and documentation fixes",
+      "Anchor": "candidate-sync-field-updates-and-documentation-fixes",
+      "SectionPath": [
+        "Candidate sync field updates and documentation fixes"
+      ],
+      "Text": "Updated Sync Candidates to indicate that the firstName field is required\nUpdated Sync Candidates to add doNotContact field\nUpdated Sync Candidates updated phone number and address fields to indicate they are required but can be empty\nChanged Stubprofile emailAddress field lists array of email to type string.\nDocumentation now linked to public TOC.\nUpdated Retrieve CRM Exported Candidates to indicate that externalPipelineId is a required field.\nFixed various types in CRM Customer Configuration and Sync CRM Interactions docs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pipeline sync fixes, resume filename requirements, and sample app updates",
+      "Anchor": "pipeline-sync-fixes-resume-filename-requirements-and-sample-app-updates",
+      "SectionPath": [
+        "Pipeline sync fixes, resume filename requirements, and sample app updates"
+      ],
+      "Text": "Removed tcrmStageId as a field from the PUT example in Sync Candidate Pipelines via Batch Update.\nClarified requirements for defining filenames for uploaded resumes in Upload Resume File.\nClarified that Module 2 - Sync TCRM Candidate Pipelines in the certification test cases includes validation of stage syncing for a candidate.\nModifications have been made to sample apps to support CRM Connect, for more information see Sample HTML Applications for Talent CRM Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM One-Click Export rate limits",
+      "Anchor": "crm-one-click-export-rate-limits",
+      "SectionPath": [
+        "CRM One-Click Export rate limits"
+      ],
+      "Text": "Limits for CRM One-Click Export updated to 300 requests per month per seat.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Candidate sync, resume header, InMail, SMS, error handling, and certification updates",
+      "Anchor": "candidate-sync-resume-header-inmail-sms-error-handling-and-certification-updates",
+      "SectionPath": [
+        "Candidate sync, resume header, InMail, SMS, error handling, and certification updates"
+      ],
+      "Text": "Made changes to the documentation including these updates:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Candidate sync, resume header, InMail, SMS, error handling, and certification updates",
+      "Anchor": "candidate-sync-resume-header-inmail-sms-error-handling-and-certification-updates",
+      "SectionPath": [
+        "Candidate sync, resume header, InMail, SMS, error handling, and certification updates"
+      ],
+      "Text": "Clarified in sync CRM candidates documentation that attaching a person URN should use BATCH_UPDATE method. BATCH_UPDATE now supports supplying manualMatchedMember.\nUpdated Sync Candidate Resumes to specify x-linkedin-id instead of x-restli-id as the header which contains the created hireMediaUrl.\nAdded a clarification to each Module 2 page indicating that all historical data must be synced upon activation.\nClarified that InMail stub profiles will only be populated when members share contact info.\nAdded SMS as a supported interaction type in synced interactions.\nClarified that the RSC Schema is also for CRM Connect. Added note that alternateLocations are not supported for jobs synced for RSC and CRM Connect.\nAdded Talent CRM Connect Error Handling to documentation and updated side bar links.\nMoved certification test case CRM-133 from Module 7 to Module 3.\nAdded new certification requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidate sync, resume header, InMail, SMS, error handling, and certification updates",
+      "Anchor": "candidate-sync-resume-header-inmail-sms-error-handling-and-certification-updates",
+      "SectionPath": [
+        "Candidate sync, resume header, InMail, SMS, error handling, and certification updates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API Requirements",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM-036",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all candidate records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of candidates that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-042",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all candidate resume records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of candidate resumes that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-052",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all pipeline records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of pipelines that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-063",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all pipeline stage records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of pipeline stages that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-073",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all candidate pipeline records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of candidate pipelines that exist in the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-084",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Confirm that all interaction records have been synced to LI as part of historical sync.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gross number of interaction records that exist and should be synced from the CRM matches the number in LI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-109",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the deletion of purged members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Purged members that customers choose to delete have data retrieved from LI removed from the CRM.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM-150",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner is in compliance with all Terms of Service and partnership agreements.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner is not violating partnership agreements or Terms of Service. Any remediation plans defined to resolve violations have been completed.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 7 API documentation and closed candidate profile retrieval",
+      "Anchor": "module-7-api-documentation-and-closed-candidate-profile-retrieval",
+      "SectionPath": [
+        "Module 7 API documentation and closed candidate profile retrieval"
+      ],
+      "Text": "Published the following API docs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 7 API documentation and closed candidate profile retrieval",
+      "Anchor": "module-7-api-documentation-and-closed-candidate-profile-retrieval",
+      "SectionPath": [
+        "Module 7 API documentation and closed candidate profile retrieval"
+      ],
+      "Text": "Retrieve Recruiter Contract Seatholders (/seatsV2)\nRetrieve InMail History (/conversationEvents)\nRetrieve InMail Stub Profiles (/mailStubs)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 7 API documentation and closed candidate profile retrieval",
+      "Anchor": "module-7-api-documentation-and-closed-candidate-profile-retrieval",
+      "SectionPath": [
+        "Module 7 API documentation and closed candidate profile retrieval"
+      ],
+      "Text": "Made the following minor revisions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 7 API documentation and closed candidate profile retrieval",
+      "Anchor": "module-7-api-documentation-and-closed-candidate-profile-retrieval",
+      "SectionPath": [
+        "Module 7 API documentation and closed candidate profile retrieval"
+      ],
+      "Text": "Updated Retrieving Closed Candidate Profiles documentation to describe expected partner behavior:\nOur CRM partners must query this endpoint periodically (at least once in 30 days) and notify end customers that they may need to delete the data that appear within this endpoint from their records if they do not have a legal basis to continue processing it.\nUpdated Upload Resume File to remove x-ambry-content-type parameter requirement from file upload step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pipeline private field and API versioning announcement",
+      "Anchor": "pipeline-private-field-and-api-versioning-announcement",
+      "SectionPath": [
+        "Pipeline private field and API versioning announcement"
+      ],
+      "Text": "tcrmPipelines has been updated to include the private optional field. See documentation link for more details",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning Announcment",
+      "Anchor": "versioning-announcment",
+      "SectionPath": [
+        "Pipeline private field and API versioning announcement",
+        "Versioning Announcment"
+      ],
+      "Text": "In order to release new API versions to incorporate feedback and new enhancements, future endpoint updates will only be released on LinkedIn\u0027s verisoning solution, which can be accessed with a new base URL and version header:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Versioning Announcment",
+      "Anchor": "versioning-announcment",
+      "SectionPath": [
+        "Pipeline private field and API versioning announcement",
+        "Versioning Announcment"
+      ],
+      "Text": "",
+      "Headers": [
+        "Old Base URL",
+        "New URL"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "https://api.linkedin.com/v2/",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://api.linkedin.com/rest/",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning Announcment",
+      "Anchor": "versioning-announcment",
+      "SectionPath": [
+        "Pipeline private field and API versioning announcement",
+        "Versioning Announcment"
+      ],
+      "Text": "Consuming the new versioned endpoint will also require sending a LinkedIn-Version header in requests, populated with a version identifier.\nOld versions of endpoints will continue to function in the state in which they exist today until deprecation.\nIn order to facilitate easy migration, all partners are asked to support easy configuration switch base URLs and conditionally supply a version header, so that new versioned endpoints can be quickly adopted. Support for rapid migration will be considered as certification criteria (see new certification section here).\nLinkedIn will notify partners as new versions are available through communications and in our documentation release notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Candidate validation rules, Profile Plugin, and onboarding updates",
+      "Anchor": "candidate-validation-rules-profile-plugin-and-onboarding-updates",
+      "SectionPath": [
+        "Candidate validation rules, Profile Plugin, and onboarding updates"
+      ],
+      "Text": "linkedInProfileUrl has been added as a valid field in the request body (details)\nProfile Plugin documentation has been updated to reflect production release details\nModule 1 - Configure Customer Applications \u0026 CRM Integrations has been completely updated to reflect customer onboarding requirements\nThe atsCandidates validation rules have been updated with the following changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidate validation rules, Profile Plugin, and onboarding updates",
+      "Anchor": "candidate-validation-rules-profile-plugin-and-onboarding-updates",
+      "SectionPath": [
+        "Candidate validation rules, Profile Plugin, and onboarding updates"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "New Validation Rules"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "addresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All fields are optional but must comply with the following rules: Address.Line1 is required if Line 2 or Line3 or Line4 are provided.Address.Line2 is required if Line3 or Line4 are provided.Address.Line3 is required if Line4 is provided.Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.At most 30 addresses can be provided.",
+            "Links": [],
+            "Values": [
+              "Address.Line1 is required if Line 2 or Line3 or Line4 are provided.",
+              "Address.Line2 is required if Line3 or Line4 are provided.",
+              "Address.Line3 is required if Line4 is provided.",
+              "Address.GeographicArea required if Address.GeographicAreaType is provided. Address.GeographicAreaType is required if Address.GeographicArea is provided.",
+              "If Address.Country is US, and Address.GeographicAreaType is provided, Address.GeographicAreaType must be set to STATE.",
+              "At most 30 addresses can be provided."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "currentCompanyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If specified, string value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currentJobTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "30 email addresses max.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalProfileURL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "linkedInProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String value cannot be empty or blank spaces.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneNumber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Format must follow com.google.i18n.phonenumbers standard. At most 30 phone numbers can be provided.",
+            "Links": [
+              "https://javadoc.io/doc/com.googlecode.libphonenumber/libphonenumber/8.4.1/com/google/i18n/phonenumbers/PhoneNumberUtil.html"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync APIs and CRM One-Click Export launch",
+      "Anchor": "sync-apis-and-crm-one-click-export-launch",
+      "SectionPath": [
+        "Sync APIs and CRM One-Click Export launch"
+      ],
+      "Text": "Talent CRM Sync APIs are available for adoption. /exportedCandidates service that powers CRM One-Click Export is also available.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync APIs and CRM One-Click Export launch",
+      "Anchor": "sync-apis-and-crm-one-click-export-launch",
+      "SectionPath": [
+        "Sync APIs and CRM One-Click Export launch"
+      ],
+      "Text": "Sync CRM Candidates\nSync Candidate Resumes\nSync Pipelines\nSync Pipeline Stages\nSync Candidate Pipeline Information\nSync Interactions\nSync Job Postings\nRetrieve Exported Candidates Overview",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

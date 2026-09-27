@@ -1,0 +1,356 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers",
+  "Title": "Series Subscribers",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/content-series",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Series Subscribers",
+      "Anchor": "series-subscribers",
+      "SectionPath": [],
+      "Text": "The SeriesSubscribers API returns all newsletter\u0027s subscribers, which is the collection of SeriesSubscribers (including Subscriber PersonUrn and lastModifiedAt time).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Series Subscribers",
+      "Anchor": "series-subscribers",
+      "SectionPath": [],
+      "Text": "This endpoint requires q=contentSeris with a contentSeries Urn as param",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Series Subscribers",
+      "Anchor": "series-subscribers",
+      "SectionPath": [],
+      "Text": "The finders for this API utilize the Pagination Cursor and Max Pagination Count pattern for pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Series Subscribers",
+      "Anchor": "series-subscribers",
+      "SectionPath": [],
+      "Text": "Please note the following restrictions of the API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Series Subscribers",
+      "Anchor": "series-subscribers",
+      "SectionPath": [],
+      "Text": "The value of the maxPaginationCount parameter cannot exceed 1000 for any single request.\nData returned by this API can be up to 48 hours delayed.\nThis API has a rate limit of 1 request per 60 seconds. An error will be returned if this rate limit is exceeded.\nThe latency for certain requests might at times exceed 10 seconds. If a timeout is experienced, wait 60 seconds then retry calling the API. Most requests should however have a significant lower latency.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated. The subscriber field will only be populated in an element if the subscribing member has granted permission to share their data via the DMA API; otherwise it is omitted from that element, as seen in the sample response below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "subscriber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only populated if the subscribing member has granted permission to share their data via the DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "subscriber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the subscriber. Only populated if the subscribing member has granted permission to share their data via the DMA API. For details, refer to Member Data Obfuscation.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers?view=li-dma-data-portability-2026-08\u0026tabs=http#member-data-obfuscation"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The most recent time this subscriber subscribed to the newsletter, represented as epoch time in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaSeriesSubscribers?q=contentSeries\u0026contentSeries=urn%3Ali%3AcontentSeries%3A7084999622758129665\u0026maxPaginationCount=12\u0026paginationCursor=MTJfXw==",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaSeriesSubscribers?q=contentSeries\u0026contentSeries=urn%3Ali%3AcontentSeries%3A7084999622758129665\u0026maxPaginationCount=12\u0026paginationCursor=MTJfXw==\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Permissions",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 12\n    },\n    \u0022metadata\u0022: {\n        \u0022nextPaginationCursor\u0022: \u0022MjRfXw==\u0022\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022lastModifiedAt\u0022: 1700073061200\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1700061867385\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1699825410781\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1698919888017\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1698816412139\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1698423784473,\n            \u0022subscriber\u0022: \u0022urn:li:person:tZ2kaFKa25\u0022\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1698351542140\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1698206608003\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1698145366189\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1697722406832\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1697214288716\n        },\n        {\n            \u0022lastModifiedAt\u0022: 1697032923796\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported entity type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided unsupported urn entity types on ids param",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide valid urns only (urn:li:contentTopic, urn:li:job, urn:li:jobPosting, urn:li:lyndaCourse, urn:li:lyndaVideo )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token, Make sure you provide valid OAuth2 access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

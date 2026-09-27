@@ -1,0 +1,834 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+  "Title": "Jobs Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Jobs Ads API",
+      "Anchor": "jobs-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Jobs Ads API",
+      "Anchor": "jobs-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Jobs Ads API",
+      "Anchor": "jobs-ads-api",
+      "SectionPath": [],
+      "Text": "Linkedin is introducing its next generation of APIs for the creation and management of Dynamic Job Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Jobs Ads API",
+      "Anchor": "jobs-ads-api",
+      "SectionPath": [],
+      "Text": "Jobs Ads allow you to personalize ads to top talent, encouraging relevant candidates to apply with your company. Promote one or more job opportunities to qualified LinkedIn members and drive traffic to active job openings based on members\u2019 skills and experience. Learn more about jobs ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dynamic Job Ad",
+      "Anchor": "create-a-dynamic-job-ad",
+      "SectionPath": [
+        "Create a Dynamic Job Ad"
+      ],
+      "Text": "Upload an image asset that acts as Company logo in the Job ad creative. For more information, see Images API. This step can be skipped if you want to reuse Company logo from the Company Page.\nCreate a Dynamic Ads Campaign. For more information, see Dynamic Ad Campaigns.\nCreate a Job Ad Creative. For more information, see Create a Dynamic Job Ad Creative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s Ad Accounts. In addition, authenticated member must have READ access for a Company Page. Have one of the following Ad Account roles:ACCOUNT_BILLING_ADMIN ACCOUNT_MANAGERCAMPAIGN_MANAGER CREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Starting 202410, a new name field is introduced in Creative schema. Going forward, this new name field is the preferred approach to set and get the creative\u0027s name, consistently across all ad formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Upload an image asset. The Image API replaces the Assets API, with simplified and consistent schema. Refer to Images API for more information.\n\nCreate a Dynamic Ads Campaign. See Dynamic Ad Campaigns.\n\nDesign a Creative.\nThe new Creatives API replaces the adCreativesV2 API, and features dynamic job ad format fields for easier creative design and development. For more details refer to the schema section below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Workflow",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "buttonLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either a preApproved string or a custom string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The button label at the bottom of the ad when there are at least three jobs for the member. Not used for mobile job ads. It can follow either of the following formats: {\u0022preApproved\u0022: \u0022{label}\u0022} Pre-approved and localized follower description text not subject to review process. Standard values: SEE_MORE_JOBS - See More Jobs VIEW_MORE - View MoreCAREERS_AT_COMPANY - Careers at {companyName} {\u0022custom\u0022: \u0022{label}\u0022} Custom buttonLabel text subject to Ads review process.",
+            "Links": [],
+            "Values": [
+              "{\u0022preApproved\u0022: \u0022{label}\u0022} Pre-approved and localized follower description text not subject to review process. Standard values: SEE_MORE_JOBS - See More Jobs VIEW_MORE - View MoreCAREERS_AT_COMPANY - Careers at {companyName}",
+              "SEE_MORE_JOBS - See More Jobs",
+              "VIEW_MORE - View More",
+              "CAREERS_AT_COMPANY - Careers at {companyName}",
+              "{\u0022custom\u0022: \u0022{label}\u0022} Custom buttonLabel text subject to Ads review process."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "showMemberProfilePhoto",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean value that helps decide whether to display profile photo of member in the job ad or not. Defaults to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either a preApproved string or a custom string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The headline of the ad. It is the main message seen by your target audience. Not used for mobile job ads. It can follow either of the following formats: {\u0022preApproved\u0022: \u0022{label}\u0022} Pre-approved and localized jobs headline text not subject to Ads review process. Standard values: MEMBER_READY_FOR_YOUR_DREAM_JOB - {memberName}, ready for your dream job?MEMBER_PICTURE_YOURSELF_AT_COMPANY - {memberName}, picture yourself at {companyName}MEMBER_YOU_MAY_BE_INTERESTED_IN_THIS_INTERNAL_ROLE - {memberName}, you may be interested in this internal roleMEMBER_YOU_MAY_BE_INTERESTED_IN_THESE_INTERNAL_ROLES - {memberName}, you may be interested in these internal role(s)MEMBER_YOU_MAY_BE_INTERESTED_IN_THESE_INTERNAL_ROLES_PLURAL - {memberName}, you may be interested in these internal rolesMEMBER_EXPLORE_INTERNAL_ROLES_AT_COMPANY_THAT_MATCH_YOUR_SKILLS - {memberName}, explore internal roles at {companyName} that match your skillsMEMBER_EXPLORE_JOBS_AT_COMPANY_THAT_MATCH_YOUR_SKILLS - {memberName}, explore jobs at {companyName} that match your skillsMEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP - {memberName}, need a new challenge? We can help!MEMBER_WORK_WITH_US_AT_COMPANY - {memberName}, work with us at {companyName} {\u0022custom\u0022: \u0022{label}\u0022} Custom headline text subject to Ads review process.",
+            "Links": [],
+            "Values": [
+              "{\u0022preApproved\u0022: \u0022{label}\u0022} Pre-approved and localized jobs headline text not subject to Ads review process. Standard values: MEMBER_READY_FOR_YOUR_DREAM_JOB - {memberName}, ready for your dream job?MEMBER_PICTURE_YOURSELF_AT_COMPANY - {memberName}, picture yourself at {companyName}MEMBER_YOU_MAY_BE_INTERESTED_IN_THIS_INTERNAL_ROLE - {memberName}, you may be interested in this internal roleMEMBER_YOU_MAY_BE_INTERESTED_IN_THESE_INTERNAL_ROLES - {memberName}, you may be interested in these internal role(s)MEMBER_YOU_MAY_BE_INTERESTED_IN_THESE_INTERNAL_ROLES_PLURAL - {memberName}, you may be interested in these internal rolesMEMBER_EXPLORE_INTERNAL_ROLES_AT_COMPANY_THAT_MATCH_YOUR_SKILLS - {memberName}, explore internal roles at {companyName} that match your skillsMEMBER_EXPLORE_JOBS_AT_COMPANY_THAT_MATCH_YOUR_SKILLS - {memberName}, explore jobs at {companyName} that match your skillsMEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP - {memberName}, need a new challenge? We can help!MEMBER_WORK_WITH_US_AT_COMPANY - {memberName}, work with us at {companyName}",
+              "MEMBER_READY_FOR_YOUR_DREAM_JOB - {memberName}, ready for your dream job?",
+              "MEMBER_PICTURE_YOURSELF_AT_COMPANY - {memberName}, picture yourself at {companyName}",
+              "MEMBER_YOU_MAY_BE_INTERESTED_IN_THIS_INTERNAL_ROLE - {memberName}, you may be interested in this internal role",
+              "MEMBER_YOU_MAY_BE_INTERESTED_IN_THESE_INTERNAL_ROLES - {memberName}, you may be interested in these internal role(s)",
+              "MEMBER_YOU_MAY_BE_INTERESTED_IN_THESE_INTERNAL_ROLES_PLURAL - {memberName}, you may be interested in these internal roles",
+              "MEMBER_EXPLORE_INTERNAL_ROLES_AT_COMPANY_THAT_MATCH_YOUR_SKILLS - {memberName}, explore internal roles at {companyName} that match your skills",
+              "MEMBER_EXPLORE_JOBS_AT_COMPANY_THAT_MATCH_YOUR_SKILLS - {memberName}, explore jobs at {companyName} that match your skills",
+              "MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP - {memberName}, need a new challenge? We can help!",
+              "MEMBER_WORK_WITH_US_AT_COMPANY - {memberName}, work with us at {companyName}",
+              "{\u0022custom\u0022: \u0022{label}\u0022} Custom headline text subject to Ads review process."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company logo. This may differ from the logo on the official company page. If not present on create, the logo from company page is used.This is optional on creates, but will always be present on reads. Setting it to null on update would default to the logo from company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name to use in the ad. This may differ from the name on the official company page. If not present on create, the company name from company page is used. This is optional on creates, but will always be present on reads. Setting it to null on update would default to the name from company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Workflow",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Attribute",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Campaign Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Campaign Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOBS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creative Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOBS_V2",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Objective Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOB_APPLICANT",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dynamic Job Ad Creative",
+      "Anchor": "create-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Job Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dynamic Job Ad Creative",
+      "Anchor": "create-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Job Ad Creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dynamic Job Ad Creative",
+      "Anchor": "create-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Job Ad Creative"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n        \u0022jobs\u0022: {\n            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n            \u0022headline\u0022: {\n                \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n            },\n            \u0022buttonLabel\u0022: {\n                \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n            },\n            \u0022showMemberProfilePhoto\u0022: true\n        }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dynamic Job Ad Creative",
+      "Anchor": "create-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Job Ad Creative"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022content\u0022: {\n        \u0022jobs\u0022: {\n            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n            \u0022headline\u0022: {\n                \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n            },\n            \u0022buttonLabel\u0022: {\n                \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n            },\n            \u0022showMemberProfilePhoto\u0022: true\n        }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dynamic Job Ad Creative",
+      "Anchor": "create-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Job Ad Creative"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:120491345",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Dynamic Job Ad Creative",
+      "Anchor": "get-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Get a Dynamic Job Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Dynamic Job Ad Creative",
+      "Anchor": "get-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Get a Dynamic Job Ad Creative"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Dynamic Job Ad Creative",
+      "Anchor": "get-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Get a Dynamic Job Ad Creative"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Dynamic Job Ad Creative",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022servingHoldReasons\u0022: [\n        \u0022UNDER_REVIEW\u0022,\n        \u0022CAMPAIGN_STOPPED\u0022\n    ],\n    \u0022lastModifiedAt\u0022: 1643767858000,\n    \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n    \u0022content\u0022: {\n        \u0022jobs\u0022: {\n            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n            \u0022showMemberProfilePhoto\u0022: true,\n            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n            \u0022headline\u0022: {\n                \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n            },\n            \u0022buttonLabel\u0022: {\n                \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n            }\n        }\n    },\n    \u0022createdAt\u0022: 1643767858000,\n    \u0022isTest\u0022: false,\n    \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n    \u0022review\u0022: {\n        \u0022status\u0022: \u0022PENDING\u0022\n    },\n    \u0022isServing\u0022: false,\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n    \u0022id\u0022: \u0022urn:li:sponsoredCreative:160701894\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:506316595\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Dynamic Job Ad Creative",
+      "Anchor": "update-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Job Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Job Ad Creative",
+      "Anchor": "update-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Job Ad Creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Job Ad Creative",
+      "Anchor": "update-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Job Ad Creative"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    },\n                    \u0022showMemberProfilePhoto\u0022: false,\n                    \u0022organizationName\u0022: \u0022organizationName\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Job Ad Creative",
+      "Anchor": "update-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Job Ad Creative"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-RestLi-Method: partial_update\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    },\n                    \u0022showMemberProfilePhoto\u0022: false,\n                    \u0022organizationName\u0022: \u0022organizationName\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Update a Dynamic Job Ad Creative",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 204 No Content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Dynamic Job Ad Creative",
+      "Anchor": "delete-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Job Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Dynamic Job Ad Creative",
+      "Anchor": "delete-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Job Ad Creative"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Dynamic Job Ad Creative",
+      "Anchor": "delete-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Job Ad Creative"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Dynamic Job Ad Creative",
+      "Anchor": "delete-a-dynamic-job-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Job Ad Creative"
+      ],
+      "Text": "A successful response returns a 204 No Content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Dynamic Job Ads",
+      "Anchor": "batch-create-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Job Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Job Ads",
+      "Anchor": "batch-create-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Job Ads"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Job Ads",
+      "Anchor": "batch-create-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Job Ads"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    },\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        },\n        {\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022headline\u0022: {\n                        \u0022custom\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    },\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Job Ads",
+      "Anchor": "batch-create-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Job Ads"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    },\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        },\n        {\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022headline\u0022: {\n                        \u0022custom\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    },\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Create Dynamic Job Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A160731524\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:160731524\u0022\n        },\n        {\n            \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A160731534\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:160731534\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Dynamic Job Ads",
+      "Anchor": "batch-get-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Get Dynamic Job Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Dynamic Job Ads",
+      "Anchor": "batch-get-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Get Dynamic Job Ads"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Dynamic Job Ads",
+      "Anchor": "batch-get-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Get Dynamic Job Ads"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_GET\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Batch Get Dynamic Job Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:160731534\u0022: {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643800364000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true,\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022headline\u0022: {\n                        \u0022custom\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    }\n                }\n            },\n            \u0022createdAt\u0022: 1643800364000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:160731534\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506316595\u0022\n        },\n        \u0022urn:li:sponsoredCreative:160731524\u0022: {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643800364000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true,\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    }\n                }\n            },\n            \u0022createdAt\u0022: 1643800364000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:160731524\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506316595\u0022\n        }\n    },\n    \u0022statuses\u0022: {\n        \u0022urn:li:sponsoredCreative:160731534\u0022: 200,\n        \u0022urn:li:sponsoredCreative:160731524\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Dynamic Job Ads",
+      "Anchor": "batch-update-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Job Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Job Ads",
+      "Anchor": "batch-update-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Job Ads"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Job Ads",
+      "Anchor": "batch-update-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Job Ads"
+      ],
+      "Text": "{\n    \u0022entities\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022jobs\u0022: {\n                            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                            \u0022headline\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022buttonLabel\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        },\n        \u0022{sponsoredCreative-urn2}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022jobs\u0022: {\n                            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                            \u0022headline\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022buttonLabel\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Job Ads",
+      "Anchor": "batch-update-dynamic-job-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Job Ads"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022urn:li:sponsoredCreative:{sponsoredCreative-id1}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022jobs\u0022: {\n                            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                            \u0022headline\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022buttonLabel\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        },\n        \u0022urn:li:sponsoredCreative:{sponsoredCreative-id2}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022jobs\u0022: {\n                            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                            \u0022headline\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022buttonLabel\u0022: {\n                                \u0022custom\u0022: \u0022CUSTOM\u0022\n                            },\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Update Dynamic Job Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:160731534\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022urn:li:sponsoredCreative:160731524\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Dynamic Jobs Ads",
+      "Anchor": "batch-delete-dynamic-jobs-ads",
+      "SectionPath": [
+        "Batch Delete Dynamic Jobs Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Dynamic Jobs Ads",
+      "Anchor": "batch-delete-dynamic-jobs-ads",
+      "SectionPath": [
+        "Batch Delete Dynamic Jobs Ads"
+      ],
+      "Text": "DELETE \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Dynamic Jobs Ads",
+      "Anchor": "batch-delete-dynamic-jobs-ads",
+      "SectionPath": [
+        "Batch Delete Dynamic Jobs Ads"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_DELETE\u0027\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Batch Delete Dynamic Jobs Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:160731884\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022urn:li:sponsoredCreative:160731874\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finders for Dynamic Job Ads",
+      "Anchor": "finders-for-dynamic-job-ads",
+      "SectionPath": [
+        "Finders for Dynamic Job Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Finders for Dynamic Job Ads",
+      "Anchor": "finders-for-dynamic-job-ads",
+      "SectionPath": [
+        "Finders for Dynamic Job Ads"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/creatives?campaigns=List(urn%3Ali%3AsponsoredCampaign%3A190357284)\u0026intendedStatuses=List(ACTIVE)\u0026q=criteria\u0026sortOrder=ASCENDING\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Finders for Dynamic Job Ads",
+      "Anchor": "finders-for-dynamic-job-ads",
+      "SectionPath": [
+        "Finders for Dynamic Job Ads"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?campaigns=List(urn%3Ali%3AsponsoredCampaign%3A190357284)\u0026intendedStatuses=List(ACTIVE)\u0026q=criteria\u0026sortOrder=ASCENDING\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: FINDER\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Finders for Dynamic Job Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 2,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643800073000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022showMemberProfilePhoto\u0022: false,\n                    \u0022organizationName\u0022: \u0022organizationName\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022MEMBER_NEED_A_NEW_CHALLENGE_WE_CAN_HELP\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022preApproved\u0022: \u0022CAREERS_AT_COMPANY\u0022\n                    }\n                }\n            },\n            \u0022createdAt\u0022: 1643767858000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:160701894\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506316595\u0022\n        },\n        {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643791704000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022content\u0022: {\n                \u0022jobs\u0022: {\n                    \u0022logo\u0022: \u0022urn:li:image:C4E22AQExxAnf-VY49w\u0022,\n                    \u0022showMemberProfilePhoto\u0022: false,\n                    \u0022organizationName\u0022: \u0022organizationName\u0022,\n                    \u0022headline\u0022: {\n                        \u0022custom\u0022: \u0022CUSTOM2\u0022\n                    },\n                    \u0022buttonLabel\u0022: {\n                        \u0022custom\u0022: \u0022CUSTOM2\u0022\n                    }\n                }\n            },\n            \u0022createdAt\u0022: 1643791171000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190357284\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:160712624\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:506316595\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Finders for Dynamic Job Ads",
+        "API Error Details"
+      ],
+      "Text": "General creative errors are included here - Creatives error.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

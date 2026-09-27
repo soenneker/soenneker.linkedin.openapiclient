@@ -1,0 +1,440 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+  "Title": "LinkedIn Learning and Mindtickle Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Mindtickle Deep Integration Functionality",
+      "Anchor": "mindtickle-deep-integration-functionality",
+      "SectionPath": [
+        "Mindtickle Deep Integration Functionality"
+      ],
+      "Text": "Authentication: N/A",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mindtickle Deep Integration Functionality",
+      "Anchor": "mindtickle-deep-integration-functionality",
+      "SectionPath": [
+        "Mindtickle Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Course Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mindtickle Deep Integration Functionality",
+      "Anchor": "mindtickle-deep-integration-functionality",
+      "SectionPath": [
+        "Mindtickle Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mindtickle Deep Integration Functionality",
+      "Anchor": "mindtickle-deep-integration-functionality",
+      "SectionPath": [
+        "Mindtickle Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mindtickle Deep Integration Functionality",
+      "Anchor": "mindtickle-deep-integration-functionality",
+      "SectionPath": [
+        "Mindtickle Deep Integration Functionality"
+      ],
+      "Text": "An active Mindtickle LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin permissions to LinkedIn Learning\n\nAdmin privileges to your Mindtickle LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Mindtickle\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "Single Sign-On is recommended for all enterprise learning platform integrations and should be enabled prior to integrating with Mindtickle. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "To configure SAML SSO with your organization\u0027s Identity Provider, review the LinkedIn Learning SSO Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning\nadds courses at a rate of 20-30 per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Mindtickle deep integration with LinkedIn Learning uses LinkedIn\nAPIs to refresh the course content library daily. This feature ensures Mindtickle makes new content available within 24 hours of release. Mindtickle aggregates and indexes all course titles and descriptions to\naccommodate keyword searches and support efficient discoverability. Mindtickle\nsupports automatic syncing of courses in all available languages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses xAPI to communicate a\nlearner\u2019s activity back to Mindtickle when the learner completes a LinkedIn Learning course. All LinkedIn Learning course completions will be reported both in LinkedIn Learning and in Mindtickle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up LinkedIn Learning Integration",
+      "Anchor": "setting-up-linkedin-learning-integration",
+      "SectionPath": [
+        "Configuration",
+        "Setting Up LinkedIn Learning Integration"
+      ],
+      "Text": "Integration with LinkedIn Learning enables admins to provide their learners with seamless access to select LinkedIn Learning courses from the Mindtickle platform. When you have completed the integration with LinkedIn Learning, new content from LinkedIn Learning automatically syncs with Mindtickle. The integration also updates or removes existing courses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up LinkedIn Learning Integration",
+      "Anchor": "setting-up-linkedin-learning-integration",
+      "SectionPath": [
+        "Configuration",
+        "Setting Up LinkedIn Learning Integration"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up LinkedIn Learning Integration",
+      "Anchor": "setting-up-linkedin-learning-integration",
+      "SectionPath": [
+        "Configuration",
+        "Setting Up LinkedIn Learning Integration"
+      ],
+      "Text": "You can enable this integration only for organizations that have a licensed LinkedIn Learning instance. The LinkedIn Learning content is available only to users who are licensed learners on the LinkedIn Learning platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up LinkedIn Learning Integration",
+      "Anchor": "setting-up-linkedin-learning-integration",
+      "SectionPath": [
+        "Configuration",
+        "Setting Up LinkedIn Learning Integration"
+      ],
+      "Text": "This section contains two sub-sections that explain how to integrate LinkedIn Learning with Mindtickle:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up LinkedIn Learning Integration",
+      "Anchor": "setting-up-linkedin-learning-integration",
+      "SectionPath": [
+        "Configuration",
+        "Setting Up LinkedIn Learning Integration"
+      ],
+      "Text": "Steps Performed in LinkedIn Learning\n\nSteps Performed in Mindtickle",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Mindtickle to sync LinkedIn Learning content, you must provision API keys in LinkedIn Learning and complete the content sync on the Mindtickle side.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in LinkedIn Learning",
+      "Anchor": "steps-performed-in-linkedin-learning",
+      "SectionPath": [
+        "Provision API Keys for Content Catalog Sync",
+        "Steps Performed in LinkedIn Learning"
+      ],
+      "Text": "For Mindtickle to sync LinkedIn Learning catalog metadata, you first must provision API keys in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in LinkedIn Learning",
+      "Anchor": "steps-performed-in-linkedin-learning",
+      "SectionPath": [
+        "Provision API Keys for Content Catalog Sync",
+        "Steps Performed in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, click Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API, then expand the Generate LinkedIn Learning REST API Application panel.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter \u201CMindtickle\u201D in the Application Name field.\n\nIn the Application description field, provide a short description of the integration use case. For example, \u201CMindtickle content catalog sync\u201D.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\n\n\n\nCopy the generated Client Id and Client Secret. Use these values later in the \u0022Steps Performed in Mindtickle\u0022 section (below).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in Mindtickle",
+      "Anchor": "steps-performed-in-mindtickle",
+      "SectionPath": [
+        "Provision API Keys for Content Catalog Sync",
+        "Steps Performed in Mindtickle"
+      ],
+      "Text": "To complete the content sync with LinkedIn Learning, enter the LinkedIn Learning data into the Mindtickle configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in Mindtickle",
+      "Anchor": "steps-performed-in-mindtickle",
+      "SectionPath": [
+        "Provision API Keys for Content Catalog Sync",
+        "Steps Performed in Mindtickle"
+      ],
+      "Text": "On the Mindtickle Content Home page, click the hamburger icon menu located on the upper right corner of your Admin Site and go to Account Settings.\n\n\nOn the Security and Integrations tab, navigate to the Content Sync section. In the LinkedIn Learning tab, enter values for the Client ID and Client Secret copied earlier in step 6 of the Steps Performed in LinkedIn Learning section. Click Submit.\n\n\nClick the Edit button to modify the values entered or click Disable to disable the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up xAPI",
+      "Anchor": "setting-up-xapi",
+      "SectionPath": [
+        "Setting Up xAPI"
+      ],
+      "Text": "The LinkedIn Learning xAPI allows LinkedIn Learning to send learner completion status back to Mindtickle. Learn more about this process in the Setting Up LinkedIn Learning Integration section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up xAPI",
+      "Anchor": "setting-up-xapi",
+      "SectionPath": [
+        "Setting Up xAPI"
+      ],
+      "Text": "This section contains two sub-sections that explain the procedure to set up xAPI in LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up xAPI",
+      "Anchor": "setting-up-xapi",
+      "SectionPath": [
+        "Setting Up xAPI"
+      ],
+      "Text": "Steps Performed in Mindtickle (below)\n\nSteps Performed in LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in Mindtickle",
+      "Anchor": "steps-performed-in-mindtickle-1",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Steps Performed in Mindtickle"
+      ],
+      "Text": "On the Mindtickle Content Home page, click the hamburger menu icon located on the upper right corner of your administrator site and go to Account Settings.\n\n\nOn the Security and Integrations tab, navigate to the Content Sync section. In the LinkedIn Learning tab, click Download xAPI Credentials. Your local computer downloads a file named xapi_credentials.txt containing values for the following data:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in Mindtickle",
+      "Anchor": "steps-performed-in-mindtickle-1",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Steps Performed in Mindtickle"
+      ],
+      "Text": "ClientId\n\nClientSecret\n\nOauthServerUrl\n\nTenantServerUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in Mindtickle",
+      "Anchor": "steps-performed-in-mindtickle-1",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Steps Performed in Mindtickle"
+      ],
+      "Text": "Use these values in the Steps Performed in LinkedIn Learning section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in LinkedIn Learning",
+      "Anchor": "steps-performed-in-linkedin-learning-1",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Steps Performed in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nIn the left-hand side navigation, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\nIn the Add xAPI integration screen, enter \u0022Mindtickle reporting\u0022 in the Integration name field and select the username or the email address from the User Type drop down. From the xapi_credentials.txt file downloaded in Step 2 of the Steps Performed in Mindtickle section, enter values for the following data:\n\nClientId\n\nClientSecret\n\nOauthServerUrl\n\nTenantServerUrl\n\n\nThe User Type value for LinkedIn Learning should match the User Type value in Mindtickle.\nIf the User Type value does not match, the learner\u0027s percentage completion and score will not be updated on Mindtickle.\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in LinkedIn Learning",
+      "Anchor": "steps-performed-in-linkedin-learning-1",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Steps Performed in LinkedIn Learning"
+      ],
+      "Text": "Once enabled, the xAPI Connection appears in the list below. You can enable or disable the xAPI connection using the Status toggle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps Performed in LinkedIn Learning",
+      "Anchor": "steps-performed-in-linkedin-learning-1",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Steps Performed in LinkedIn Learning"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their Mindtickle instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mindtickle Troubleshooting",
+      "Anchor": "mindtickle-troubleshooting",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Mindtickle Troubleshooting"
+      ],
+      "Text": "You can access Mindtickle\u2019s support services or at support@Mindtickle.com. You must register as a Mindtickle member to receive technical support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Setting Up xAPI",
+        "Questions"
+      ],
+      "Text": "Back to top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

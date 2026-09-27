@@ -1,0 +1,1210 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+  "Title": "Retrieve InMail Stub Profiles",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail Stub Profiles",
+      "Anchor": "retrieve-inmail-stub-profiles",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail Stub Profiles",
+      "Anchor": "retrieve-inmail-stub-profiles",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail Stub Profiles",
+      "Anchor": "retrieve-inmail-stub-profiles",
+      "SectionPath": [],
+      "Text": "The InMail Stub Profile API allows you to retrieve basic profile data of LinkedIn members that have replied to InMails sent from Recruiter seat holders. When InMails are sent from Recruiter seatholders to members, the initial reply to that InMail asks the member if they would be willing to share their contact information with the Recruiter. On reply, if they elect to share, a subset of that member\u2019s profile data (mailStub) will be retrievable with this API. The stub profile data can then be stored in your application database. If a member does not share their contact info, a mailStub will not be stored for the member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve InMail Stub Profiles",
+      "Anchor": "retrieve-inmail-stub-profiles",
+      "SectionPath": [],
+      "Text": "All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Requests Per Day (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v2/mailStubs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rest/mailStubs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Retrieve stub profiles for a contract:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/mailStubs?q=contract",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/mailStubs?q=contract",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Throttle Limits",
+        "Query parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required",
+        "Notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContractUrn in format urn:li:contract:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find stub profiles associated with a specific Recruiter contract.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The seat identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SeatUrn in format urn:li:seat:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find stub profiles associated with specific seat holders. Multiple allowed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdDateStart",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive lower date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find stub profiles that were created on or after a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdDateEnd",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-inclusive upper date boundary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Find stub profiles that were created before or on a specific date.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Throttle Limits",
+        "Query parameters"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Throttle Limits",
+        "Query parameters"
+      ],
+      "Text": "Even though \u0027owners\u0027 is not a required field, it should always be provided to avoid costly search operations at the LinkedIn backend.\nPlease make use of as much filtering criteria as possible.\nFor createdDateStart and createdDateEnd, if not specified we will search from all timespan.\nThe limit for hosted query search is 20000, if the query is trying to access the result more than 20000, api response will return an error with status code 500.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/v2/mailStubs?q=contract\u0026start=0\u0026count=5\u0026contract=urn%3Ali%3Acontract%3A{contract_id}\u0026owners=urn%3Ali%3Aseat%3A{seat_id}\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Throttle Limits",
+        "Response Body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id of the member within LinkedIn system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn in format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prospect\u0027s email address at the time of sharing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prospect\u0027s phone number at the time of sharing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "phoneNumber",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04#phonenumber-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the member (e.g. San Francisco Bay Area or\u00A0Sunnyvale, California).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "profileLocation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04#profilelocation-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prospect\u0027s position including title and company at the time of sharing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Position[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04#position-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat to which the mail stub was shared.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SeatUrn in format urn:li:seat:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Created timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of the member\u0027s public LinkedIn profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Throttle Limits",
+        "Response Body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id of the member within LinkedIn system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn in format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prospect\u0027s email address at the time of sharing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prospect\u0027s phone number at the time of sharing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "phoneNumber",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04#phonenumber-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the member (e.g. San Francisco Bay Area or\u00A0Sunnyvale, California).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prospect\u0027s position including title and company at the time of sharing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Position[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles?view=li-lts-2026-04#position-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seat to which the mail stub was shared.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SeatUrn in format urn:li:seat:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Created timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of the member\u0027s public LinkedIn profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "profileLocation Schema",
+      "Anchor": "profilelocation-schema",
+      "SectionPath": [
+        "Throttle Limits",
+        "profileLocation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actual location, e.g. \u0022San Francisco, California\u0022, \u0022Los Angeles, California, United States\u0022. It returns the full localized name of the member\u0027s location (from their LinkedIn profile geolocation).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The 2-letter country code from ISO 3166-1 alpha-2, e.g., \u0027US\u0027 for United States of America.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Position Schema",
+      "Anchor": "position-schema",
+      "SectionPath": [
+        "Throttle Limits",
+        "Position Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company name as entered by the member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description for this position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title name of the position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startMonthYear",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endMonthYear",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PhoneNumber Schema",
+      "Anchor": "phonenumber-schema",
+      "SectionPath": [
+        "Throttle Limits",
+        "Position Schema",
+        "PhoneNumber Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the phone number. The length should be no more than 25.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Formatted String of the extension",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If countryCode is provided, it must be in the ISO 3166 country code set. If number contains a country code (e.g., \u002B1) and countryCode (e.g., GB) is provided, then the numeric country code has higher priority.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1486428734000,\n        \u0022firstName\u0022: \u0022firstName0\u0022,\n        \u0022lastName\u0022: \u0022lastName0\u0022,\n        \u0022phone\u0022: {\n            \u0022number\u0022: \u0022123-456-7890\u0022\n        },\n        \u0022member\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022,\n        \u0022location\u0022: \u0022United States\u0022,\n        \u0022position\u0022: {\n                \u0022companyName\u0022: \u0022LinkedIn\u0022,\n                \u0022title\u0022: \u0022Software Engineer at LinkedIn\u0022\n            },\n        \u0022email\u0022: \u0022test@linkedin.com\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName1\u0022,\n        \u0022lastName\u0022: \u0022lastName1\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a2b3c4d5\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName2\u0022,\n        \u0022lastName\u0022: \u0022lastName2\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a3b4c5d6\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName3\u0022,\n        \u0022lastName\u0022: \u0022lastName3\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a4b5c6d7\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName4\u0022,\n        \u0022lastName\u0022: \u0022lastName4\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a5b6c7d8\u0022\n    }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 5,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/mailStubs?contract=urn%3Ali%3Acontract%3A123456789\u0026count=5\u0026owners=urn%3Ali%3Aseat%3A123456789\u0026q=contract\u0026start=5\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Throttle Limits",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1486428734000,\n        \u0022firstName\u0022: \u0022firstName0\u0022,\n        \u0022lastName\u0022: \u0022lastName0\u0022,\n        \u0022phone\u0022: {\n            \u0022number\u0022: \u0022123-456-7890\u0022\n        },\n        \u0022member\u0022: \u0022urn:li:person:a1b2c3d4e5\u0022,\n        \u0022location\u0022: {\n            \u0022locationName\u0022: \u0022San Francisco, California\u0022,\n            \u0022countryCode\u0022:\u0022US\u0022\n        },\n        \u0022position\u0022: {\n                \u0022companyName\u0022: \u0022LinkedIn\u0022,\n                \u0022title\u0022: \u0022Software Engineer at LinkedIn\u0022\n            },\n        \u0022email\u0022: \u0022test@linkedin.com\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName1\u0022,\n        \u0022lastName\u0022: \u0022lastName1\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a2b3c4d5\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName2\u0022,\n        \u0022lastName\u0022: \u0022lastName2\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a3b4c5d6\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName3\u0022,\n        \u0022lastName\u0022: \u0022lastName3\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a4b5c6d7\u0022\n    },\n    {\n        \u0022seat\u0022: \u0022urn:li:seat:123456789\u0022,\n        \u0022createdAt\u0022: 1526935559000,\n        \u0022firstName\u0022: \u0022firstName4\u0022,\n        \u0022lastName\u0022: \u0022lastName4\u0022,\n        \u0022member\u0022: \u0022urn:li:person:a5b6c7d8\u0022\n    }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 5,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/rest/mailStubs?contract=urn%3Ali%3Acontract%3A123456789\u0026count=5\u0026owners=urn%3Ali%3Aseat%3A123456789\u0026q=contract\u0026start=5\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

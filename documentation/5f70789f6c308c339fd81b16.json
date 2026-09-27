@@ -1,0 +1,1304 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+  "Title": "Comments API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "Some shares may have comments attached to them. The socialActions/comments API enables you to write and read comments on shares.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "Get a Comment\nBatch Get a Collection of Comments\nGet Comments on Shares\nGet Comments on Comments\nCreate a Comment\nEdit a Comment\nDelete a Comment",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments API",
+      "Anchor": "comments-api",
+      "SectionPath": [],
+      "Text": "For reactions and social metadata on social actions on a post, please see Reactions and Social Metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and react on posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERRECRUITING_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "RECRUITING_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and reactions. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and react on posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Restricted Retrieve posts, reactions, and likes on behalf of an authenticated member. This permission is granted to select developers only.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information about company page roles, refer to Organization Access Control by role.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Actions Comments",
+      "Anchor": "social-actions-comments",
+      "SectionPath": [
+        "Social Actions Comments"
+      ],
+      "Text": "The socialActions endpoint provides comments API that allows access to both personal and organization comments. The type of URN specified in the actor field of a comment indicates the type:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Social Actions Comments",
+      "Anchor": "social-actions-comments",
+      "SectionPath": [
+        "Social Actions Comments"
+      ],
+      "Text": "",
+      "Headers": [
+        "URN Type",
+        "Comment Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:person",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Personal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Comment was created by a member. The member is displayed as the publisher.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:organization urn:li:organizationBrand",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Comment was created by a member on behalf of an organizational entity. The organization or brand is displayed as the publisher.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Comment Urns",
+      "Anchor": "comment-urns",
+      "SectionPath": [
+        "Comment Urns"
+      ],
+      "Text": "A comment URN is a composite URN constructed using the ID of the comment and the URN of the thread the comment is on. For example, a comment with an ID of 6636062862760562688 on thread URN urn:li:activity:6631349431612559360 would look like - urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Comment",
+      "Anchor": "get-a-comment",
+      "SectionPath": [
+        "Get a Comment"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Comment",
+      "Anchor": "get-a-comment",
+      "SectionPath": [
+        "Get a Comment"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments/{commentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Comment",
+      "Anchor": "get-a-comment",
+      "SectionPath": [
+        "Get a Comment"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments/{commentId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Comment",
+        "Sample Response"
+      ],
+      "Text": "{\n     \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n     \u0022commentUrn\u0022:\u0022urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688)\u0022,\n     \u0022created\u0022:{\n        \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n        \u0022time\u0022:1582160678569\n     },\n     \u0022id\u0022:\u00226636062862760562688\u0022,\n     \u0022lastModified\u0022:{\n        \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n        \u0022time\u0022:1582160678569\n     },\n     \u0022likesSummary\u0022: {\n        \u0022aggregatedTotalLikes\u0022: 1,\n        \u0022selectedLikes\u0022: [\n           \u0022urn:li:like:(urn:li:person:A8xe03Qt10,urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688))\u0022\n        ],\n        \u0022likedByCurrentUser\u0022: true,\n        \u0022totalLikes\u0022: 1\n     },\n     \u0022parentComment\u0022: \u0022urn:li:comment:(urn:li:activity:6631349431612559360,6850752781414875136)\u0022,\n     \u0022message\u0022:{\n        \u0022attributes\u0022:[],\n        \u0022text\u0022:\u0022Comment with comment-image media\u0022\n     },\n     \u0022content\u0022:[\n        {\n           \u0022type\u0022:\u0022IMAGE\u0022,\n           \u0022entity\u0022:{\n              \u0022image\u0022:\u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n           },\n            }\n     ],\n     \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get a Collection of Comments",
+      "Anchor": "batch-get-a-collection-of-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get a Collection of Comments",
+      "Anchor": "batch-get-a-collection-of-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments/ids=List({commentId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get a Collection of Comments",
+      "Anchor": "batch-get-a-collection-of-comments",
+      "SectionPath": [
+        "Batch Get a Collection of Comments"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments?ids=List({commentId})\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get a Collection of Comments",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u00226636062862760562688\u0022: {\n            \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n            \u0022commentUrn\u0022:\u0022urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688)\u0022,\n            \u0022created\u0022:{\n                \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n                \u0022time\u0022:1582160678569\n            },\n            \u0022id\u0022:\u00226636062862760562688\u0022,\n            \u0022lastModified\u0022:{\n                \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n                \u0022time\u0022:1582160678569\n            },\n            \u0022likesSummary\u0022: {\n               \u0022aggregatedTotalLikes\u0022: 1,\n               \u0022selectedLikes\u0022: [\n                  \u0022urn:li:like:(urn:li:person:A8xe03Qt10,urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688))\u0022\n               ],\n               \u0022likedByCurrentUser\u0022: true,\n               \u0022totalLikes\u0022: 1\n            },\n            \u0022parentComment\u0022: \u0022urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688)\u0022,\n            \u0022message\u0022:{\n                \u0022attributes\u0022:[],\n                \u0022text\u0022:\u0022Comment with comment-image media\u0022\n            },\n            \u0022content\u0022:[\n                {\n                   \u0022type\u0022:\u0022IMAGE\u0022,\n                   \u0022entity\u0022:{\n                      \u0022image\u0022:\u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n                   },\n                }\n            ],\n            \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022\n       },\n       \u00226643206422739898368\u0022: {\n            \u0022actor\u0022: \u0022urn:li:organization:5637409\u0022,\n            \u0022agent\u0022: \u0022urn:li:person:CnpTkB7V70\u0022,\n            \u0022commentUrn\u0022: \u0022urn:li:comment:(urn:li:activity:6641861161010679808,6643206422739898368)\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:organization:5637409\u0022,\n                \u0022impersonator\u0022: \u0022urn:li:person:CnpTkB7V70\u0022,\n                \u0022time\u0022: 1583863835990\n            },\n            \u0022id\u0022: \u00226643206422739898368\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:organization:5637409\u0022,\n                \u0022impersonator\u0022: \u0022urn:li:person:CnpTkB7V70\u0022,\n                \u0022time\u0022: 1583863835990\n            },\n            \u0022likesSummary\u0022: {\n               \u0022aggregatedTotalLikes\u0022: 2,\n               \u0022selectedLikes\u0022: [\n                  \u0022urn:li:like:(urn:li:person:CnpTkB7V70,urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688))\u0022,\n                  \u0022urn:li:like:(urn:li:person:f49f2kf0,urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688))\u0022\n               ],\n               \u0022likedByCurrentUser\u0022: false,\n               \u0022totalLikes\u0022: 2\n            },\n            \u0022message\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022A sample text comment\u0022\n            },\n            \u0022object\u0022: \u0022urn:li:activity:6641861161010679808\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Comments on Shares",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Comments on Shares",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Comments on Shares",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Comments on Shares",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Comments on Shares",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \n--data \u0027{...}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Get Comments on Shares",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n        \u0022actor\u0022:\u0022urn:li:person:A8xe03Qt10\u0022,\n        \u0022commentUrn\u0022:\u0022urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688)\u0022,\n        \u0022created\u0022:{\n          \u0022actor\u0022:\u0022urn:li:person:A8xe03Qt10\u0022,\n          \u0022time\u0022:1582160678569\n        },\n        \u0022id\u0022:\u00226636062862760562688\u0022,\n        \u0022lastModified\u0022:{\n            \u0022actor\u0022:\u0022urn:li:person:A8xe03Qt10\u0022,\n            \u0022time\u0022:1582160678569\n        },\n        \u0022likesSummary\u0022: {\n           \u0022aggregatedTotalLikes\u0022: 1,\n           \u0022selectedLikes\u0022: [\n              \u0022urn:li:like:(urn:li:person:A8xe03Qt10,urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688))\u0022\n           ],\n           \u0022likedByCurrentUser\u0022: true,\n           \u0022totalLikes\u0022: 1\n        },\n        \u0022message\u0022:{\n            \u0022attributes\u0022:[],\n            \u0022text\u0022:\u0022Comment with comment-image media\u0022\n        },\n        \u0022content\u0022:[\n          {\n            \u0022type\u0022:\u0022IMAGE\u0022,\n            \u0022entity\u0022:{\n               \u0022image\u0022:\u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n            },\n}\n        ],\n        \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Comments on Comments",
+      "Anchor": "get-comments-on-comments",
+      "SectionPath": [
+        "Get Comments on Comments"
+      ],
+      "Text": "To resolve nested comments for a given parent comment, provide a parent commentUrn as the target in the request URL. A commentUrn is a composite URN constructed using a threadUrn such as an ActivityUrn and a comment ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Comments on Comments",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Comments on Comments",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/socialActions/urn:li:comment:(urn:li:activity:6273189577469632512,6275822846992351232)/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Comments on Comments",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/socialActions/urn:li:comment:(urn:li:activity:6273189577469632512,6275822846992351232)/comments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Comments on Comments",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Comments on Comments",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/socialActions/urn:li:comment:(urn:li:activity:6273189577469632512,6275822846992351232)/comments \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \n--data \u0027{...}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get Comments on Comments",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022:[\n      {\n        \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n        \u0022commentUrn\u0022:\u0022urn:li:comment:(urn:li:activity:6631349431612559360,6636062862760562688)\u0022,\n        \u0022created\u0022:{\n            \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n            \u0022time\u0022:1582160678569\n        },\n        \u0022id\u0022:\u00226636062862760562688\u0022,\n        \u0022lastModified\u0022:{\n            \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n            \u0022time\u0022:1582160678569\n        },\n        \u0022likesSummary\u0022: {\n           \u0022aggregatedTotalLikes\u0022: 1,\n           \u0022selectedLikes\u0022: [\n              \u0022urn:li:like:(urn:li:person:f49f2kf0,urn:li:comment:(urn:li:activity:6273189577469632512,6636062862760562688))\u0022\n           ],\n           \u0022likedByCurrentUser\u0022: true,\n           \u0022totalLikes\u0022: 1\n        },\n        \u0022message\u0022:{\n            \u0022attributes\u0022:[],\n            \u0022text\u0022:\u0022Comment with comment-image media\u0022\n        },\n        \u0022content\u0022:[\n            {\n                \u0022type\u0022:\u0022IMAGE\u0022,\n                \u0022entity\u0022:{\n                    \u0022image\u0022:\u0022urn:li:imge:C552CAQGu16obsGZENQ\u0022\n                },\n            }\n        ],\n        \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022, \n        \u0022parentComment\u0022:\u0022urn:li:comment:(urn:li:activity:6631349431612559360,6275822846992351232)\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Retrieval Errors",
+      "Anchor": "common-retrieval-errors",
+      "SectionPath": [
+        "Common Retrieval Errors"
+      ],
+      "Text": "The table below lists commonly encountered errors retrieving social actions. It is not meant to be a comprehensive list of all possible social action retrieval errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common Retrieval Errors",
+      "Anchor": "common-retrieval-errors",
+      "SectionPath": [
+        "Common Retrieval Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid query parameters passed to request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Occurs when using Restli 2.0 and the query parameters are not encoded properly. See Protocol Version for more on Restli 2.0 encoding. Calls with Postman and some other HTTP clients can trigger this error. Try using curl or another client when testing.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Syntax exception in path variables",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates an invalid URN was requested. Try again with a share or ugcPost URN.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create a Comment",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity which authored the comment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN or person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text of the comment. May contain attributes such as links to people and organizations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of the comment, such as an image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of ContentEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentComment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For nested comments, this is the URN of the parent comment. This is not available for first-level comments.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Composite URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create a Comment",
+        "Request Body Fields"
+      ],
+      "Text": "Use the object field in the request body to specify the share or the ugcPost which contains the comment. Specify the share or the ugcPost in the request URL, and represent it as an URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create a Comment",
+        "Request Body Fields"
+      ],
+      "Text": "Use the ID returned in the response header to take further action on the newly created comment. The following response body also contains a comment URN which can be used as parent comment for creating nested comments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022actor\u0022:\u0022urn:li:person:A8xe03Qt10\u0022,\n   \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022,\n   \u0022message\u0022:{\n      \u0022text\u0022:\u0022commentV2 with image entity\u0022\n   },\n   \u0022content\u0022:[\n      {\n         \u0022entity\u0022:{\n            \u0022image\u0022:\u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n         }\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn|commentUrn}/comments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n \n--data \u0027{\n   \u0022actor\u0022:\u0022urn:li:person:A8xe03Qt10\u0022,\n   \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022,\n   \u0022message\u0022:{\n      \u0022text\u0022:\u0022commentV2 with image entity\u0022\n   },\n   \u0022content\u0022:[\n      {\n         \u0022entity\u0022:{\n            \u0022image\u0022:\u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n         }\n      }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Header",
+      "Anchor": "sample-response-header",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Response Header"
+      ],
+      "Text": "x-restli-id: 6643206422739898368",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022actor\u0022: \u0022urn:li:organization:5637409\u0022,\n    \u0022agent\u0022: \u0022urn:li:person:CnpTkB7V70\u0022,\n    \u0022commentUrn\u0022: \u0022urn:li:comment:(urn:li:activity:6641861161010679808,6643206422739898368)\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:organization:5637409\u0022,\n        \u0022impersonator\u0022: \u0022urn:li:person:CnpTkB7V70\u0022,\n        \u0022time\u0022: 1583863835990\n    },\n    \u0022id\u0022: \u00226643206422739898368\u0022,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:organization:5637409\u0022,\n        \u0022impersonator\u0022: \u0022urn:li:person:CnpTkB7V70\u0022,\n        \u0022time\u0022: 1583863835990\n    },\n    \u0022message\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022commentV2 with image urn\u0022\n    },\n    \u0022content\u0022: [\n        {\n            \u0022type\u0022: \u0022IMAGE\u0022,\n            \n            \u0022entity\u0022: {\n                \u0022image\u0022: \u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n            }\n        }\n    ],\n    \u0022object\u0022: \u0022urn:li:activity:6641861161010679808\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Create a Comment",
+        "Sample Response Body"
+      ],
+      "Text": "For more information on how to upload an image and obtain the image URN required here, see the Image API documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Creation Errors",
+      "Anchor": "common-creation-errors",
+      "SectionPath": [
+        "Common Creation Errors"
+      ],
+      "Text": "The table below lists commonly encountered errors creating comments. It is not meant to be a comprehensive list of all possible comment creation errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common Creation Errors",
+      "Anchor": "common-creation-errors",
+      "SectionPath": [
+        "Common Creation Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unpermitted fields present in REQUEST_BODY: Data Processing Exception while processing fields [/content]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Occurs when attempting to include an image in an inline comment which is not currently not supported by the API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Comment create throttled: creation rate limit exceeded for member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates member has hit the short term 1 minute rate limit for common creation.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Edit a Comment",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity editing the comment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only when editing comment as an organization",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Edit a Comment",
+        "Request Body Fields"
+      ],
+      "Text": "Only the text and attributes field in the comment\u0027s message field may be modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Edit a Comment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Edit a Comment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn}/comments/{comment ID}?actor={actorURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Edit a Comment",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/socialActions/urn:li:ugcPost:701614862413057/comments/70172482676457473?actor=urn:li:organization:12345\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \n--data-raw \u0027{\n    \u0022patch\u0022:{\n        \u0022message\u0022:{\n            \u0022$set\u0022:{\n                \u0022text\u0022: \u0022Updated comment message\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Header",
+      "Anchor": "sample-response-header-1",
+      "SectionPath": [
+        "Edit a Comment",
+        "Sample Response Header"
+      ],
+      "Text": "x-resourceidentity-urn: urn:li:comment:(urn:li:activity:6912417282191147008,6915442672119734272)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Header",
+      "Anchor": "sample-response-header-1",
+      "SectionPath": [
+        "Edit a Comment",
+        "Sample Response Header"
+      ],
+      "Text": "This is a composite URN constructed from the target in the request URL and the comment ID. Therefore, the URN in this header is not a reliable identifier for the comment. An accurate key for a comment can always be constructed from the comment\u0027s object field (which may differ from the target in the request URL) and its ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Edit a Comment",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022actor\u0022: \u0022urn:li:organization:5515715\u0022,\n    \u0022agent\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:organization:5515715\u0022,\n        \u0022impersonator\u0022: \u0022urn:li:member:231303601\u0022,\n        \u0022time\u0022: 1648770015746\n    },\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:organization:5515715\u0022,\n        \u0022impersonator\u0022: \u0022urn:li:member:231303601\u0022,\n        \u0022time\u0022: 1649797906424\n    },\n    \u0022id\u0022: \u00226915442672119734272\u0022,\n    \u0022message\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022Updated comment message\u0022\n    },\n    \u0022likesSummary\u0022: {\n        \u0022selectedLikes\u0022: [],\n        \u0022aggregatedTotalLikes\u0022: 0,\n        \u0022likedByCurrentUser\u0022: false,\n        \u0022totalLikes\u0022: 0\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6912417282191147008\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Delete a Comment",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity deleting the comment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only when deleting comment as an organization",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete a Comment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete a Comment",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/socialActions/{shareUrn|ugcPostUrn}/comments/{comment ID}?actor={actorURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete a Comment",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/socialActions/urn:li:ugcPost:70161431162413057/comments/70172482676457473?actor=urn:li:organization:12345\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Comment on a Comment",
+      "Anchor": "create-a-comment-on-a-comment",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Create a Comment on a Comment"
+      ],
+      "Text": "To create a nested comment, add a parentComment field to your request body. The value is a composite URN, which is comprised of the activityUrn and parent comment ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Create a Comment on a Comment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Create a Comment on a Comment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/socialActions/urn:li:comment:(urn:li:activity:6305471423192264704,6308007194273021952)/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Create a Comment on a Comment",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022actor\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022message\u0022: {\n        \u0022text\u0022: \u0022Dunder Mifflin\u0027s Dundie Award goes to Dwight Schrute!\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:share:6305471423242596352\u0022,\n    \u0022parentComment\u0022: \u0022urn:li:comment:(urn:li:activity:6305471423192264704,6308007194273021952)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Create a Comment on a Comment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/socialActions/urn:li:comment:(urn:li:activity:6305471423192264704,6308007194273021952)/comments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022actor\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022message\u0022: {\n        \u0022text\u0022: \u0022Dunder Mifflin\u0027s Dundie Award goes to Dwight Schrute!\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:share:6305471423242596352\u0022,\n    \u0022parentComment\u0022: \u0022urn:li:comment:(urn:li:activity:6305471423192264704,6308007194273021952)\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comment Mentioning",
+      "Anchor": "comment-mentioning",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comment Mentioning"
+      ],
+      "Text": "Comment text may contain attributes, which are links to other LinkedIn entities such as people or organizations. Mentioning requires knowledge of the URN for the referenced entity. You must also specify the part of the comment text that should be rendered as a link to the entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comment Mentioning",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "length",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The length of the annotation link",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The starting character index beginning the annotation link",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An object that includes the URN of the organization or member you want to mention in the comment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comment Mentioning",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022actor\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022message\u0022: {\n        \u0022attributes\u0022: [\n            {\n                \u0022length\u0022: 17,\n                \u0022start\u0022: 0,\n                \u0022value\u0022: {\n                   \u0022organization\u0022: {\n                        \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022\n                    }\n                }\n            },\n            {\n                \u0022length\u0022: 14,\n                \u0022start\u0022: 38,\n                \u0022value\u0022: {\n                    \u0022person\u0022: {\n                        \u0022person\u0022: \u0022urn:li:person:uOeeiwWoxO\u0022\n                    }\n                }\n            }\n        ],\n        \u0022text\u0022: \u0022Dunder Mifflin\u0027s Dundie Award goes to Dwight Schrute!\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:share:6305471423242596352\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comments with Images",
+      "Anchor": "comments-with-images",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comments with Images"
+      ],
+      "Text": "An entity field is now part of the content field in a comment, replacing the url field. When creating a comment with an image, specify the image as an image URN within the entity field instead of the URL field. This ImageUrn is obtained when uploading an image to the Vector API (if an Urn like urn:li:digitalMediaAsset:ABC123 is returned then use urn:li:image:ABC123). Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comments with Images",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Digitalmedia Asset URN of the image you want to include in the comment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the content, in this case, use \u0022IMAGE\u0022. (This is a read-only field and shouldn\u0027t be provided for comment creates.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comments with Images",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022actor\u0022:\u0022urn:li:person:f49f2kf0\u0022,\n   \u0022object\u0022:\u0022urn:li:activity:6631349431612559360\u0022,\n   \u0022message\u0022:{\n      \u0022text\u0022:\u0022commentV2 with image entity\u0022\n   },\n   \u0022content\u0022:[\n      {\n         \u0022entity\u0022:{\n            \u0022image\u0022:\u0022urn:li:image:C552CAQGu16obsGZENQ\u0022\n         }\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Additional Comment Features",
+        "Comments with Images",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022actor~\u0022: {\n                \u0022localizedLastName\u0022: \u0022Tester\u0022,\n                \u0022lastName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Tester\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022vanityName\u0022: \u0022test-person\u0022,\n                \u0022localizedHeadline\u0022: \u0022Test Profile at Acme Corp\u0022,\n                \u0022profilePicture\u0022: {\n                    \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5603AQEuebSM6NP8wq\u0022,\n                    \u0022displayImage~\u0022: {\n                        \u0022paging\u0022: {\n                            \u0022count\u0022: 10,\n                            \u0022start\u0022: 0,\n                            \u0022links\u0022: []\n                        },\n                        \u0022elements\u0022: [\n                            {\n                                \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5603AQEuebSM6NP8wq,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_800_800)\u0022,\n                                \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n                                \u0022data\u0022: {\n                                    \u0022com.linkedin.digitalmedia.mediaartifact.StillImage\u0022: {\n                                        \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                                        \u0022rawCodecSpec\u0022: {\n                                            \u0022name\u0022: \u0022jpeg\u0022,\n                                            \u0022type\u0022: \u0022image\u0022\n                                        },\n                                        \u0022displaySize\u0022: {\n                                            \u0022width\u0022: 800.0,\n                                            \u0022uom\u0022: \u0022PX\u0022,\n                                            \u0022height\u0022: 800.0\n                                        },\n                                        \u0022storageSize\u0022: {\n                                            \u0022width\u0022: 800,\n                                            \u0022height\u0022: 800\n                                        },\n                                        \u0022storageAspectRatio\u0022: {\n                                            \u0022widthAspect\u0022: 1.0,\n                                            \u0022heightAspect\u0022: 1.0,\n                                            \u0022formatted\u0022: \u00221.00:1.00\u0022\n                                        },\n                                        \u0022displayAspectRatio\u0022: {\n                                            \u0022widthAspect\u0022: 1.0,\n                                            \u0022heightAspect\u0022: 1.0,\n                                            \u0022formatted\u0022: \u00221.00:1.00\u0022\n                                        }\n                                    }\n                                },\n                                \u0022identifiers\u0022: [\n                                    {\n                                        \u0022identifier\u0022: \u0022https://example.com/image.jpg\u0022,\n                                        \u0022index\u0022: 0,\n                                        \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                                        \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5603AQEuebSM6NP8wq,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_800_800,0)\u0022,\n                                        \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                                        \u0022identifierExpiresInSeconds\u0022: 1609372800\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                },\n                \u0022firstName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Tester\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022id\u0022: \u0022j8924gj82\u0022,\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Test Profile at Acme Corp\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022localizedFirstName\u0022: \u0022Tester\u0022\n            },\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:j8924gj82\u0022,\n                \u0022time\u0022: 1603870852695\n            },\n            \u0022message\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Test Comment!\u0022\n            },\n            \u0022actor\u0022: \u0022urn:li:person:j8924gj82\u0022,\n            \u0022commentsSummary\u0022: {\n                \u0022totalFirstLevelComments\u0022: 1,\n                \u0022selectedComments\u0022: [\n                    \u0022urn:li:comment:(urn:li:activity:1234,567)\u0022\n                ],\n                \u0022aggregatedTotalComments\u0022: 1\n            },\n            \u0022commentUrn\u0022: \u0022urn:li:comment:(urn:li:activity:1234,789)\u0022,\n            \u0022id\u0022: \u0022789\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:j8924gj82\u0022,\n                \u0022time\u0022: 1603870852695\n            },\n            \u0022likesSummary\u0022: {\n                \u0022selectedLikes\u0022: [\n                    \u0022urn:li:like:(urn:li:person:j8924gj82,urn:li:comment:(urn:li:activity:1234,789))\u0022\n                ],\n                \u0022likedByCurrentUser\u0022: false,\n                \u0022aggregatedTotalLikes\u0022: 1,\n                \u0022totalLikes\u0022: 1\n            },\n            \u0022object\u0022: \u0022urn:li:activity:1234\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

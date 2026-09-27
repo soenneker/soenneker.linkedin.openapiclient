@@ -1,0 +1,184 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+  "Title": "Cursor Based Pagination For Search APIs",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Cursor Based Pagination For Search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor Based Pagination For Search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor Based Pagination For Search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [],
+      "Text": "From 202401 version and above, we have moved from index based pagination to cursor based pagination for our search APIs for the following endpoints:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor Based Pagination For Search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [],
+      "Text": "adAccounts\nadCampaignGroups\nadCampaigns\nadCreatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor Based Pagination For Search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [],
+      "Text": "API calls that return a large number of entities are broken up into multiple pages of results. You might need to make multiple API calls with slightly varied paging parameters to iteratively collect all the data you\u0027re trying to gather.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "pageSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the number of entities to be returned. The default is 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique key used to fetch the next set of entities. nextPageToken is returned in metadata field of the search response. This should be passed in pageToken query parameter in the request to get the next page of results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "To paginate through results, begin with a pageSize value of N and no pageToken. To get the next set of results, set pageToken value to the nextPageToken returned in the previous response, while the pageSize value stays the same.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}?pageSize=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022nextPageToken\u0022: \u0022DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo\u0022\n  },\n  \u0022elements\u0022: [\n    {\u0022Result #0\u0022},\n    {\u0022Result #1\u0022},\n    {\u0022Result #2\u0022},\n    {\u0022Result #3\u0022},\n    {\u0022Result #4\u0022},\n    {\u0022Result #5\u0022},\n    {\u0022Result #6\u0022},\n    {\u0022Result #7\u0022},\n    {\u0022Result #8\u0022},\n    {\u0022Result #9\u0022}\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "API Call to get the next set of results would use the nextPageToken returned in the response above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Sample Request",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}?pageSize=10\u0026pageToken=DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "End of the Dataset",
+      "Anchor": "end-of-the-dataset",
+      "SectionPath": [
+        "Sample Request",
+        "End of the Dataset"
+      ],
+      "Text": "When the response doesn\u0027t contain a nextPageToken, it indicates that you have reached the end of the dataset.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

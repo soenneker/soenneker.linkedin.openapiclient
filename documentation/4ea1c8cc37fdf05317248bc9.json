@@ -1,0 +1,989 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+  "Title": "Documents API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Documents API",
+      "Anchor": "documents-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documents API",
+      "Anchor": "documents-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documents API",
+      "Anchor": "documents-api",
+      "SectionPath": [],
+      "Text": "Documents API makes it easier for you to manage Document assets and create Document ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to the company admin, DSC poster, or content admin.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organizations\u0027 posts, including any comments, likes, and other engagement data with AUTHOR injection.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve posts, comments, reactions, and other engagement data on behalf of authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles.ACCOUNT_BILLING_ADMIN ACCOUNT_MANAGER CAMPAIGN_MANAGER CREATIVE_MANAGER VIEWER",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The following permission checks are performed when uploading a document:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For documents with company URN owners, the caller must have ADMIN or DSC permissions for the company page.\nFor documents with SponsoredContentAccount URN owners, all GET\u0027s and UPDATE\u0027s are permitted.\nFor documents with person URN owners, the caller must match the document owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Invalid permissions results in the following API response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022Accessing this document resource is forbidden. Please check your permissions for this resource\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "The file size can\u0027t exceed 100MB and 300 pages. The following file types are supported: PPT, PPTX, DOC, DOCX, and PDF.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "All APIs require the request headers Linkedin-Version: {Version in YYYYMM format}\nand X-Restli-Protocol-Version: 2.0.0. Refer to the Protocol Versions page to learn more about\u00A0Rest.li\u00A0Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public URL to download/view the media asset. Is empty if the media asset isn\u0027t available, failed processing, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires. If not present, it might never expire but there\u0027s no guarantee. Unless the use case has a security\u002Blegal exception, all URLs have an expiration time. If they don\u0027t, they can still expire because URLs are signed, and the sign keys might be rotated. If a non expiring URL was signed with a key that gets invalidated, it essentially expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DocumentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique URN for an Document. Synthetic key that shouldn\u0027t be allowed during the creation of a Document. The field is read only and derived to be populated internally.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the entity that owns this asset. It can be a person(urn:li:person:123), organization(urn:li:organization:123) or sponsoredAccount(urn:li:sponsoredAccount:123) URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PROCESSING Asset is processing to generate missing artifacts. PROCESSING_FAILED - Processing failed due to client error such as file size too large, unsupported file format, internal error (e.g., performance issue, database error, network failure), or other issue. AVAILABLE - All of the recipe\u0027s required artifacts are ready. The asset is available to be served. WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "initializeUploadRequest.owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the entity that owns this asset. Can be a person(urn:li:person:123), or organization(urn:li:organization:123) URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Document Upload",
+      "Anchor": "initialize-document-upload",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload"
+      ],
+      "Text": "Use the initializeUpload action to register the upload. When you initialize, you declare the upcoming upload. Use the upload URL to upload the document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Document Upload",
+      "Anchor": "initialize-document-upload",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initialize Document Upload",
+      "Anchor": "initialize-document-upload",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload"
+      ],
+      "Text": "SYNCHRONOUS_UPLOAD is not supported in Documents API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/documents?action=initializeUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022initializeUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:1234567\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/documents?action=initializeUpload\u0027  \n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022initializeUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:1234567\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Initialize Document Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022value\u0022: {\n       \u0022uploadUrlExpiresAt\u0022: 1650567510704,\n       \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/D5510AQHXjcP8QBYD9A/ads-uploadedDocument/0?ca=vector_ads\u0026cn=uploads\u0026sync=0\u0026v=beta\u0026ut=36ezHi_Pod5aM1\u0022,\n       \u0022document\u0022: \u0022urn:li:document:C5F10AQGKQg_6y2a4sQ\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Document",
+      "Anchor": "upload-the-document",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Upload the Document"
+      ],
+      "Text": "Using the uploadUrl returned from the previous step, upload the document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Document",
+      "Anchor": "upload-the-document",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Upload the Document"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Document",
+      "Anchor": "upload-the-document",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Upload the Document"
+      ],
+      "Text": "Documents uploaded with the Documents API can be reused across different document and document ad formats. For example, a document can be used in a single document ad and a carousel ad and doesn\u0027t require separate document uploads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample curl Request",
+      "Anchor": "sample-curl-request",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Upload the Document",
+        "Sample curl Request"
+      ],
+      "Text": "curl -i --upload-file ~/Desktop/Mydoc.pdf -H \u0027Authorization: Bearer Redacted\u0027 \u0022https://www.linkedin.com/dms-uploads/D5510AQHXjcP8QBYD9A/ads-uploadedDocument/0?ca=vector_ads\u0026cn=uploads\u0026sync=0\u0026v=beta\u0026ut=36ezHi_Pod5aM1\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Uploading an Document",
+        "Upload the Document",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201 \nserver: Play\nset-cookie: lang=v=2\u0026lang=en-us; Path=/; Domain=api.linkedin.com\ndate: Wed, 16 Oct 2019 06:25:12 GMT\ncontent-length: 0\nx-li-proto: http/2\nreport-to: {\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}\nnel: {\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.0001,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}\nx-li-uuid: slguD4sMzhUwATrTkisAAA==\nset-cookie: lidc=\u0022b=ETB86:g=301:u=12:i=1571207079:t=1571261189:s=AQGEngFr_Vc-bGAR4gREsIou-eLZon31\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GET a single document",
+      "Anchor": "get-a-single-document",
+      "SectionPath": [
+        "Managing Document Asset",
+        "GET a single document"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET a single document",
+      "Anchor": "get-a-single-document",
+      "SectionPath": [
+        "Managing Document Asset",
+        "GET a single document"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/documents/urn:li:document:D5510AQHXjcP8QBYD9A",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET a single document",
+      "Anchor": "get-a-single-document",
+      "SectionPath": [
+        "Managing Document Asset",
+        "GET a single document"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/documents/urn:li:document:D5510AQHXjcP8QBYD9A\u0027  \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Managing Document Asset",
+        "GET a single document",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:organization:1234567\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/document/D5510AQFx87994pYx0Q/ads-document-pdf-analyzed/0/1683274701806?e=1683921600\u0026v=beta\u0026t=JAT9bwclvaFdZOCYO0V7CwgfbaZJAouAeE9iMKdsAEM\u0022,\n    \u0022id\u0022: \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1679083200000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch get documents",
+      "Anchor": "batch-get-documents",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Batch get documents"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch get documents",
+      "Anchor": "batch-get-documents",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Batch get documents"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/documents?ids=List(urn%3Ali%3Adocument%3AD5510AQFx87994pYx0Q,urn%3Ali%3Adocument%3AC4E10AQFgOYeVoHFeBw)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch get documents",
+      "Anchor": "batch-get-documents",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Batch get documents"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/documents?ids=List(urn%3Ali%3Adocument%3AD5510AQFx87994pYx0Q,urn%3Ali%3Adocument%3AC4E10AQFgOYeVoHFeBw)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Managing Document Asset",
+        "Batch get documents",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:document:C5F10AQGKQg_6y2a4sQ\u0022: {\n            \u0022owner\u0022: \u0022urn:li:organization:1234567\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n            \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/document/D5510AQFx87994pYx0Q/ads-document-pdf-analyzed/0/1683274701806?e=1683921600\u0026v=beta\u0026t=JAT9bwclvaFdZOCYO0V7CwgfbaZJAouAeE9iMKdsAEM\u0022,\n            \u0022id\u0022: \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1679083200000,\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022urn:li:document:C4E10AQFgOYeVoHFeBw\u0022:\n        {\n            \u0022owner\u0022: \u0022urn:li:organization:1234567\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1676584800000,\n            \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/document/C4E10AQFgOYeVoHFeBw/ads-document-pdf-analyzed/0/1683274701806?e=1683921600\u0026v=beta\u0026t=JAT9bwclvaFdZOCYO0V7CwgfbaZJAouAeE9iMKdsAEM\u0022,\n            \u0022id\u0022: \u0022urn:li:document:C4E10AQFgOYeVoHFeBw\u0022,\n            \u0022status\u0022: \u0022WAITING_UPLOAD\u0022\n        }\n    },\n    \u0022statuses\u0022:\n    {\n        \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022: 200,\n        \u0022urn:li:document:C4E10AQFgOYeVoHFeBw\u0022: 200\n    },\n    \u0022errors\u0022:\n    {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Document content",
+      "Anchor": "create-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Create Document content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Document content",
+      "Anchor": "create-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Create Document content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Document content",
+      "Anchor": "create-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Create Document content"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n    \u0022commentary\u0022: \u0022test strings!\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022media\u0022: {\n            \u0022title\u0022:\u0022Example.pdf\u0022,\n            \u0022id\u0022: \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Document content",
+      "Anchor": "create-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Create Document content"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n    \u0022commentary\u0022: \u0022test strings!\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022media\u0022: {\n            \u0022title\u0022:\u0022Example.pdf\u0022,\n            \u0022id\u0022: \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Managing Document content",
+        "Create Document content",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Document content",
+      "Anchor": "get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Get Document content"
+      ],
+      "Text": "Retrieve document content associated with a Post performing GET call to the Posts API on a post that was created with document content. Example post ID: urn:li:share:6876614985750310912",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Document content",
+      "Anchor": "get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Get Document content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Document content",
+      "Anchor": "get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Get Document content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{postId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Document content",
+      "Anchor": "get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Get Document content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts/urn:li:share:6876614985750310912 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Managing Document content",
+        "Get Document content",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022publishedBy\u0022: \u0022urn:li:person:abcdefg\u0022,\n    \u0022lastModifiedAt\u0022: 1639512853791,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022publishedAt\u0022: 1639512774391,\n    \u0022author\u0022: \u0022urn:li:company:1234567\u0022,\n    \u0022lastModifiedBy\u0022: \u0022urn:li:csUser:2\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022media\u0022: {\n            \u0022taggedEntities\u0022: [],\n            \u0022id\u0022: \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022,\n            \u0022title\u0022: \u0022Example1.pdf\u0022\n        }\n    },\n    \u0022lifecycleStateInfo\u0022: {\n        \u0022isEditedByAuthor\u0022: false\n    },\n    \u0022isReshareDisabledByAuthor\u0022: false,\n    \u0022createdAt\u0022: 1639512774185,\n    \u0022createdBy\u0022: \u0022urn:li:person:abcdefg\u0022,\n    \u0022id\u0022: \u0022urn:li:share:6876614985750310912\u0022,\n    \u0022commentary\u0022: \u0022test strings!\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Document Content",
+      "Anchor": "batch-get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Batch Get Document Content"
+      ],
+      "Text": "Fetch multiple posts with document content by providing multiple post IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Document Content",
+      "Anchor": "batch-get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Batch Get Document Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Document Content",
+      "Anchor": "batch-get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Batch Get Document Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts?ids=List({encoded postId},{encoded postId})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Document Content",
+      "Anchor": "batch-get-document-content",
+      "SectionPath": [
+        "Managing Document content",
+        "Batch Get Document Content"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/posts?ids=List(urn%3Ali%3Ashare%3A6914373086788128769,urn%3Ali%3Ashare%3A6914374851449270272)\u0027 \\\n--header \u0027X-RestLi-Method: batch_get\u0027 \\\n--header \u0027X-Restli-Protocol-version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Managing Document content",
+        "Batch Get Document Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:share:6927408039457087488\u0022: {\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1651622781932,\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1651622781932,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1651622781932,\n           \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n           \u0022id\u0022: \u0022urn:li:share:6927408039457087488\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022media\u0022: {\n                   \u0022taggedEntities\u0022: [],\n                   \u0022id\u0022: \u0022urn:li:document:D5510AQFx87994pYx0Q\u0022,\n                   \u0022title\u0022: \u0022Example1.pdf\u0022\n               }\n           },\n           \u0022commentary\u0022: \u0022test strings!\u0022,\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           }\n       },\n       \u0022urn:li:share:6927408326569783296\u0022: {\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1651622850346,\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1651622850346,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1651622850346,\n           \u0022author\u0022: \u0022urn:li:organization:1234567\u0022,\n           \u0022id\u0022: \u0022urn:li:share:6927408326569783296\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022media\u0022: {\n                   \u0022taggedEntities\u0022: [],\n                   \u0022id\u0022: \u0022urn:li:document:C5F22AQFIMShx0jJbQw\u0022,\n                   \u0022title\u0022: \u0022Example2.pdf\u0022\n               }\n           },\n           \u0022commentary\u0022: \u0022test strings!\u0022,\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           }\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:share:6927408039457087488\u0022: 200,\n       \u0022urn:li:share:6927408326569783296\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code HTTP",
+        "Status Code",
+        "Error Message",
+        "Description",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "INVALID_DOCUMENT_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This Document ID is invalid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested Document ID is invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the right Document ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_URN_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This URN ID is invalid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The format of an URN in the request is invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check the format of any URNs in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_URN_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} must be a {urnType} URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN needs to be a specific type.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check the type of any URNs in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested document asset is not found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the correct Document ID is passed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOCUMENT_FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing this document resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request actor doesn\u0027t have the permissions to operate on the document resource on behalf of the document\u0027s owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Obtain content creation permission from the designated owner of the document resource.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

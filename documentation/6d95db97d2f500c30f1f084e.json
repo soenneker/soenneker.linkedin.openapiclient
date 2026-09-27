@@ -1,0 +1,98 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+  "Title": "Module 6 - Notifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 6 - Notifications",
+      "Anchor": "module-6---notifications",
+      "SectionPath": [],
+      "Text": "Upon completing development, to ensure official certification of Module 6, please review each of the test cases mentioned below. To ensure an efficient meeting or review of the recorded demo shared via the partner support form, please review all appropriate documentation and send technical questions to your Business Development and/or Partner Engineering representative beforehand.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 6 - Notifications",
+      "Anchor": "module-6---notifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 6 - Notifications",
+      "Anchor": "module-6---notifications",
+      "SectionPath": [],
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 6 - Notifications",
+      "Anchor": "module-6---notifications",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API requirements"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JP-F-01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to receive a Job Status Change Notification and subsequently display the update to end users",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-status-change-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-F-02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to receive a Resync Notification and subsequent resyncing of a job",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

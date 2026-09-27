@@ -1,0 +1,2707 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+  "Title": "Organization Authorization API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/identity/me",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Authorization API",
+      "Anchor": "organization-authorization-api",
+      "SectionPath": [],
+      "Text": "The Organization Authorizations DMA API allow you to access an organization\u0027s administrative data on its behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorization API",
+      "Anchor": "organization-authorization-api",
+      "SectionPath": [],
+      "Text": "The API provides the following method:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Authorization API",
+      "Anchor": "organization-authorization-api",
+      "SectionPath": [],
+      "Text": "Get authorization for an action to be made on behalf of an organization.\nBatch get authorizations for actions to be made on behalf of organizations.\nFind all the organizations that a particular impersonator has for particular authorizations to do on behalf of that organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on\ncompany page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "impersonation.subject.value.member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity requesting the organization\u0027s administrative data on its behalf.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[approved: Approved,denied: Denied]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#approved",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#denied"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Status of the auth response.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization on behalf of which the action is being taken. It is of type urn:li:organization:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SubjectAndScope",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#subjectandscope"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Information of the impersonation which contains: The subject (person or enterprise profile) impersonating the actor.The scope within which the subject is attempting to perform the desired action on the organization.",
+            "Links": [],
+            "Values": [
+              "The subject (person or enterprise profile) impersonating the actor.",
+              "The scope within which the subject is attempting to perform the desired action on the organization."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity on whose behalf the impersonator is publicly acting. It is of type urn:li:organization:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action requested, such as \u0022Editing Post XYZ\u0022. It can be one of the following values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
+            ],
+            "Values": [
+              "businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)",
+              "careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)",
+              "leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)",
+              "messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)",
+              "organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)",
+              "organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)",
+              "organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)",
+              "organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)",
+              "organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))",
+              "organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)",
+              "organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)",
+              "organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)",
+              "organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)",
+              "organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)",
+              "organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)",
+              "organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)",
+              "organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)",
+              "organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)",
+              "pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))",
+              "pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)",
+              "productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)",
+              "servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization on behalf of which the action is being taken. It is of type urn:li:organization:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SubjectAndScope",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#subjectandscope"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Information of the impersonation which contains: The subject (person or enterprise profile) impersonating the actor.The scope within which the subject is attempting to perform the desired action on the organization.",
+            "Links": [],
+            "Values": [
+              "The subject (person or enterprise profile) impersonating the actor.",
+              "The scope within which the subject is attempting to perform the desired action on the organization."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity on which the impersonator is publicly acting on behalf of. It is of type urn:li:organization:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action requested, such as \u0022Editing Post XYZ\u0022. It can be one of below values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
+            ],
+            "Values": [
+              "businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)",
+              "careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)",
+              "leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)",
+              "messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)",
+              "organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)",
+              "organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)",
+              "organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)",
+              "organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)",
+              "organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))",
+              "organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)",
+              "organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)",
+              "organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)",
+              "organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)",
+              "organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)",
+              "organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)",
+              "organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)",
+              "organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)",
+              "organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)",
+              "pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))",
+              "pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)",
+              "productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)",
+              "servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "authorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAuthorizationAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action requested, such as \u0022Editing Post XYZ\u0022. It can be one of below values: businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#careerpageauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenerationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#messagingauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationactivityauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationanalyticsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationapplicationauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationbroadcastauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationcontentsuggestionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemployeeexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationeventauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationjobsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationmemberexperienceauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationprofileauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationroleauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationsocialactionauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationverifieddomainsauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pipelinebuilderauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#pollauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productauthorizationaction",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#servicespageauthorizationaction"
+            ],
+            "Values": [
+              "businessManagerAuthorizationAction: BusinessManagerAuthorizationAction (Group of authorization actions related to an organization that is claimed by a Business Manager)",
+              "careerPageAuthorizationAction: CareerPageAuthorizationAction (Group of authorization actions related to an organization\u0027s career pages)",
+              "leadGenerationAuthorizationAction: LeadGenerationAuthorizationAction (Group of authorization actions related to an organization\u0027s lead generation)",
+              "messagingAuthorizationAction: MessagingAuthorizationAction (Group of authorization actions related to the messaging actions that can be taken on behalf of the organization, such as reading or sending messages)",
+              "organizationActivityAuthorizationAction: OrganizationActivityAuthorizationAction (Group of authorization actions related to an organization\u0027s activity)",
+              "organizationAnalyticsAuthorizationAction: OrganizationAnalyticsAuthorizationAction (Group of authorization actions related to an organization\u0027s analytics)",
+              "organizationApplicationAuthorizationAction: OrganizationApplicationAuthorizationAction (Group of authorization actions related to an organization\u0027s third party developer applications)",
+              "organizationBroadcastAuthorizationAction: OrganizationBroadcastAuthorizationAction (Group of authorization actions related to an organization\u0027s broadcasts)",
+              "organizationContentAuthorizationAction: OrganizationContentAuthorizationAction (Group of authorization actions related to an organization\u0027s content (share/ugc))",
+              "organizationContentSuggestionAuthorizationAction: OrganizationContentSuggestionAuthorizationAction (Group of authorization actions related to an organization\u0027s content suggestions)",
+              "organizationEmployeeExperienceAuthorizationAction: OrganizationEmployeeExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Employee Experience)",
+              "organizationEventAuthorizationActions: OrganizationEventAuthorizationAction (Group of authorization actions related to an organization\u0027s events)",
+              "organizationJobsAuthorizationActions: OrganizationJobsAuthorizationAction (Group of authorization actions related to an organization\u0027s job postings)",
+              "organizationMemberExperienceAuthorizationAction: OrganizationMemberExperienceAuthorizationAction (Group of authorization actions related to an organization\u0027s Member Experience)",
+              "organizationProfileAuthorizationAction: OrganizationProfileAuthorizationAction (Group of authorization actions that can be made on an organization profile itself)",
+              "organizationRoleAuthorizationAction: OrganizationRoleAuthorizationAction (Group of authorization actions related to the administrators of an organization)",
+              "organizationSocialActionAuthorizationAction: OrganizationSocialActionAuthorizationAction (Group of authorization actions related to the social actions an organization can take, such as comments and reactions)",
+              "organizationVerifiedDomainsAuthorizationAction: OrganizationVerifiedDomainsAuthorizationAction (Group of authorization actions related to an organization\u0027s verified domains)",
+              "pipelineBuilderAuthorizationAction: PipelineBuilderAuthorizationAction (Group of authorization actions related to an organization\u0027s pipeline builder page (aka lead capture landing page))",
+              "pollAuthorizationAction: PollAuthorizationAction (Group of authorization actions related to an organization\u0027s polls)",
+              "productAuthorizationAction: ProductAuthorizationAction (Group of authorization actions related to an organization\u0027s products)",
+              "servicesPageAuthorizationAction: ServicesPageAuthorizationAction (Group of authorization actions related to an organization\u0027s services page)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "authorizationRenderingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuthorizationRenderingContext",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#authorizationrenderingcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Contextual information regarding how to render an authorized action.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "disallowedEntryPoints",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[AuthorizationEntryPoint]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of entry points that an authorization should not be rendered in. This is a deny list, so any entry points that do not show up in the array can be considered allowed. Value enum includes:VOYAGERCAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": [
+              "VOYAGER",
+              "CAMPAIGN_MANAGER"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reasons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[AuthorizationDenialReason]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum of reasons for the OrganizationAuthorization request being denied. If there are multiple denial reasons for a request, all must be resolved in order to get an approved response. Value enum includes:MEMBER_HAS_INSUFFICIENT_PERMISSIONS_IN_ACCESS_CONTROLORGANIZATION_INACTIVENOT_BROADCAST_AUTHOR_NOR_ORGANIZATION_ADMINUNSUPPORTED_AUTHORIZATION_ACTIONCONDITIONS_NOT_MET_FOR_EMPLOYEE_EXPERIENCENOT_VERIFIED_EMPLOYEE_OF_ORGANIZATIONORGANIZATION_NOT_LISTED_AS_EMPLOYER_ON_MEMBER_PROFILEORGANIZATION_ARCHIVEDIMPERSONATING_SUBJECT_HAS_INSUFFICIENT_PERMISSIONS_IN_BUSINESS_MANAGERORGANIZATION_AND_BUSINESS_MANAGER_RELATIONSHIP_NOT_FOUNDROLE_NOT_ALLOWED_TO_BE_EDITED_FOR_ORGANIZATION_SHARED_TO_BUSINESS_MANAGERMEMBER_HAS_INSUFFICIENT_FIRST_DEGREE_CONNECTIONS_TO_INVITE_TO_FOLLOWADMIN_UNAUTHORIZED_USE_EMPLOYEE_INVITE_TO_FOLLOWMEMBER_IMPERSONATION_REQUIREDADMIN_UNAUTHORIZEDEMPLOYEE_UNAUTHORIZEDMEMBER_DOES_NOT_HAVE_PROFILE_PICTUREORGANIZATION_HAS_INSUFFICIENT_FOLLOWERSORGANIZATION_HAS_TOO_MANY_FOLLOWERSORGANIZATION_HAS_NOT_POSTED_RECENTLYORGANIZATION_MISSING_DATA",
+            "Links": [],
+            "Values": [
+              "MEMBER_HAS_INSUFFICIENT_PERMISSIONS_IN_ACCESS_CONTROL",
+              "ORGANIZATION_INACTIVE",
+              "NOT_BROADCAST_AUTHOR_NOR_ORGANIZATION_ADMIN",
+              "UNSUPPORTED_AUTHORIZATION_ACTION",
+              "CONDITIONS_NOT_MET_FOR_EMPLOYEE_EXPERIENCE",
+              "NOT_VERIFIED_EMPLOYEE_OF_ORGANIZATION",
+              "ORGANIZATION_NOT_LISTED_AS_EMPLOYER_ON_MEMBER_PROFILE",
+              "ORGANIZATION_ARCHIVED",
+              "IMPERSONATING_SUBJECT_HAS_INSUFFICIENT_PERMISSIONS_IN_BUSINESS_MANAGER",
+              "ORGANIZATION_AND_BUSINESS_MANAGER_RELATIONSHIP_NOT_FOUND",
+              "ROLE_NOT_ALLOWED_TO_BE_EDITED_FOR_ORGANIZATION_SHARED_TO_BUSINESS_MANAGER",
+              "MEMBER_HAS_INSUFFICIENT_FIRST_DEGREE_CONNECTIONS_TO_INVITE_TO_FOLLOW",
+              "ADMIN_UNAUTHORIZED_USE_EMPLOYEE_INVITE_TO_FOLLOW",
+              "MEMBER_IMPERSONATION_REQUIRED",
+              "ADMIN_UNAUTHORIZED",
+              "EMPLOYEE_UNAUTHORIZED",
+              "MEMBER_DOES_NOT_HAVE_PROFILE_PICTURE",
+              "ORGANIZATION_HAS_INSUFFICIENT_FOLLOWERS",
+              "ORGANIZATION_HAS_TOO_MANY_FOLLOWERS",
+              "ORGANIZATION_HAS_NOT_POSTED_RECENTLY",
+              "ORGANIZATION_MISSING_DATA"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the subject that is attempting to perform the desired action on the organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The scope within which the subject can attempt to perform an action on the organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union [ enterpriseProfile: EnterpriseProfileUrn,member: PersonUrn,enterpriseMember: EnterpriseMember]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#enterprisemember"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the subject that can attempt to perform an action on a target. It can be of type urn:li:person:{ID},urn:li:enterpriseProfile:(urn:li:enterpriseAccount:{ID_1},{ID_2}) (see below table for more details on EnterpriseProfileUrn) or EnterpriseMember.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#enterprisemember"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "enterpriseProfile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EnterpriseProfileUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A reference to the enterprise user. It is of type urn:li:enterpriseProfile:(urn:li:enterpriseAccount:{ID_1},{ID_2}). Where ID_1 is the ID of the enterprise account which this user belongs to. ID_2 is the unique ID of this user profile within the enterprise account, there is no guarantee that this ID would be unique globally.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A reference to the member. It is of type urn:li:person:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union[ businessManagerScope: BusinessManagerScope, enterprisePlatformScope: EnterprisePlatformScope ]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#businessmanagerscope",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#enterpriseplatformscope"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the scope within which a subject can attempt to perform an action on a target.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAuthorizationActionCriteria",
+      "Anchor": "organizationauthorizationactioncriteria",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAuthorizationActionCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "businessManagerAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BusinessManagerAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Business Manager account. This will be specified when the target for the Decision falls within a Business Manager account. For example, SponsoredAccount/Organization. It is of type urn:li:businessManagerAccount:{ID}. The ID of the business manager account entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "asset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The asset urn to optionally be added to the scope. This will be specified when the target for the Decision falls within the scope of a Business Manager account and an asset. It is of type urn:li:organizatio:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EnterprisePlatformScope",
+      "Anchor": "enterpriseplatformscope",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "EnterprisePlatformScope"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "enterpriseApplicationInstance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EnterpriseApplicationInstanceUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the enterprise platform scope within which a subject can attempt to perform an action on a target. It is of type urn:li:enterpriseApplicationInstance:(urn:li:enterpriseAccount:{ID_1},{ID_2}). Where ID_1 is the ID of the enterprise account which this Application Instance belongs to and ID_2 is the unique ID of this Application Instance within the enterprise account, there is no guarantee that this ID would be unique globally.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "BusinessManagerAuthorizationAction",
+      "Anchor": "businessmanagerauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "BusinessManagerAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BusinessManagerAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A type of action a user can take on an organization on behalf of a Business Manager. Value enums include:ORGANIZATION_CLAIM (Action denoting a user wants to claim an organization on behalf of a Business Manager)",
+            "Links": [],
+            "Values": [
+              "ORGANIZATION_CLAIM (Action denoting a user wants to claim an organization on behalf of a Business Manager)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CareerPageAuthorizationAction",
+      "Anchor": "careerpageauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "CareerPageAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CareerPageAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A type of action a user wants to take on an organization\u0027s career pages such as editing or reading. Value enums include:CAREER_PAGE_MANAGE (Grouped Action denoting that a user wants to either see or edit an organization\u0027s life or jobs career pages)CAREER_PAGE_LIFE_READ (Action denoting that a user wants to see an organization\u0027s life career pages)CAREER_PAGE_LIFE_WRITE (Action denoting that a user wants to edit an organization\u0027s life career pages)CAREER_PAGE_JOBS_READ (Action denoting that a user wants to see an organization\u0027s jobs career pages)CAREER_PAGE_JOBS_WRITE (Action denoting that a user wants to edit an organization\u0027s jobs career pages)",
+            "Links": [],
+            "Values": [
+              "CAREER_PAGE_MANAGE (Grouped Action denoting that a user wants to either see or edit an organization\u0027s life or jobs career pages)",
+              "CAREER_PAGE_LIFE_READ (Action denoting that a user wants to see an organization\u0027s life career pages)",
+              "CAREER_PAGE_LIFE_WRITE (Action denoting that a user wants to edit an organization\u0027s life career pages)",
+              "CAREER_PAGE_JOBS_READ (Action denoting that a user wants to see an organization\u0027s jobs career pages)",
+              "CAREER_PAGE_JOBS_WRITE (Action denoting that a user wants to edit an organization\u0027s jobs career pages)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenerationAuthorizationAction",
+      "Anchor": "leadgenerationauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "LeadGenerationAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenerationAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on an organization\u0027s lead generation data on behalf of an organization. Value enums include:LEAD_GENERATION_READ (Action denoting that a user wants to see an organization lead generations (members who have somehow expressed interest in working for an organization))",
+            "Links": [],
+            "Values": [
+              "LEAD_GENERATION_READ (Action denoting that a user wants to see an organization lead generations (members who have somehow expressed interest in working for an organization))"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MessagingAuthorizationAction",
+      "Anchor": "messagingauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "MessagingAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MessagingAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A messaging action a user can make on behalf of an organization. Value enums include:READ_MESSAGES (Action denoting that a user can read messages in an organization\u0027s mailbox)SEND_MESSAGES (Action denoting that a user can send messages on behalf of an organization)MANAGE_MESSAGING_ACCESS (Action denoting that a user can enable/disable new messages from being sent to/from an organization\u0027s mailbox)",
+            "Links": [],
+            "Values": [
+              "READ_MESSAGES (Action denoting that a user can read messages in an organization\u0027s mailbox)",
+              "SEND_MESSAGES (Action denoting that a user can send messages on behalf of an organization)",
+              "MANAGE_MESSAGING_ACCESS (Action denoting that a user can enable/disable new messages from being sent to/from an organization\u0027s mailbox)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationActivityAuthorizationAction",
+      "Anchor": "organizationactivityauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationActivityAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationActivityAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on an organization\u0027s activity monitoring page on behalf of an organization. Value enums include:ORGANIZATION_ACTIVITY_READ (Action denoting that a user wants to read activity on a particular organization)",
+            "Links": [],
+            "Values": [
+              "ORGANIZATION_ACTIVITY_READ (Action denoting that a user wants to read activity on a particular organization)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAnalyticsAuthorizationAction",
+      "Anchor": "organizationanalyticsauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationAnalyticsAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAnalyticsAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take with regards to the analytics of a particular organization. Value enums include:VISITOR_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s visitor analytics)FOLLOWER_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s follower analytics)UPDATE_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s update (share/ugc) analytics)PIPELINE_BUILDER_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s pipeline builder (lead capture) analytics)TALENT_BRAND_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s talent brand analytics)",
+            "Links": [],
+            "Values": [
+              "VISITOR_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s visitor analytics)",
+              "FOLLOWER_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s follower analytics)",
+              "UPDATE_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s update (share/ugc) analytics)",
+              "PIPELINE_BUILDER_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s pipeline builder (lead capture) analytics)",
+              "TALENT_BRAND_ANALYTICS_READ (Action denoting that a user wants to see an organization\u0027s talent brand analytics)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationApplicationAuthorizationAction",
+      "Anchor": "organizationapplicationauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationApplicationAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationApplicationAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enumerations of the potential actions that a user can take with regards to the third party developer applications of a particular organization. Value enums include:APPLICATION_ASSOCIATE (Action denoting that a user wants associate an application with an organization of their choice)",
+            "Links": [],
+            "Values": [
+              "APPLICATION_ASSOCIATE (Action denoting that a user wants associate an application with an organization of their choice)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationBroadcastAuthorizationAction",
+      "Anchor": "organizationbroadcastauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationBroadcastAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationBroadcastAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on an organization\u0027s broadcasts. A broadcast is an organization curated piece of content that is distributed to employees of the organization with the goal of encouraging employees to share the content to their LinkedIn network. Value enum includes:BROADCAST_CREATE (Action denoting that a user wants to create a broadcast for an organization)BROADCAST_EDIT (Action denoting that a user wants to edit a specific broadcast for an organization)BROADCAST_DELETE (Action denoting that a user wants to delete a specific broadcast for an organization)BROADCAST_READ (Action denoting that a user wants to view any broadcast for an organization)BROADCAST_ANALYTICS_READ (Action denoting that a user wants to view broadcast analytics)",
+            "Links": [],
+            "Values": [
+              "BROADCAST_CREATE (Action denoting that a user wants to create a broadcast for an organization)",
+              "BROADCAST_EDIT (Action denoting that a user wants to edit a specific broadcast for an organization)",
+              "BROADCAST_DELETE (Action denoting that a user wants to delete a specific broadcast for an organization)",
+              "BROADCAST_READ (Action denoting that a user wants to view any broadcast for an organization)",
+              "BROADCAST_ANALYTICS_READ (Action denoting that a user wants to view broadcast analytics)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The UGC(User Generated Content) URN of the broadcast this action is being taken on. If empty, this authorization action represents an attempt create or read broadcasts. For edits and deletes on broadcasts this field is required, and the authorization action represents an attempt to edit or delete a particular broadcast. This field can be either of type ShareUrn (urn:li:share:{SHARE_ID}) or UgcPostUrn (urn:li:ugcPost:{POST_ID}).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationContentAuthorizationAction",
+      "Anchor": "organizationcontentauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationContentAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A content (aka ugc/share) action that a user can take on behalf of an organization. Value enums include:ORGANIC_SHARE_VIEW_AS_AUTHOR (Action denoting that a user wants to view an organization\u0027s organic posts as the author. This should be used when the viewer wants to see things like draft states, unfinished edits, or the impersonator who last modified or created the share)ORGANIC_SHARE_VIEW_MANAGEMENT_TOOLS (Action denoting that a user wants to view management tools that can manage an organization\u0027s organic posts)ORGANIC_SHARE_CREATE (Action denoting that a user wants to create a share as an organization)ORGANIC_SHARE_EDIT (Action denoting that a user wants to edit an organization\u0027s share on behalf of that organization)ORGANIC_SHARE_DELETE (Action denoting that a user wants to delete an organization\u0027s share on behalf of that organization)ORGANIC_SHARE_PIN (Action denoting that a user wants to pin an organization\u0027s share on behalf of that organization)DARK_SHARE_CREATE (Action denoting that a user wants to create an organization\u0027s dark post on behalf of that organization)DARK_SHARE_EDIT (Action denoting that a user wants to edit an organization\u0027s dark post on behalf of that organization)DARK_SHARE_DELETE (Action denoting that a user wants to delete an organization\u0027s dark post on behalf of that organization)DARK_SHARE_VIEW_AS_AUTHOR (Action denoting that a user wants to view an organization\u0027s dark posts as the author)SHARE_ENABLE_COMMENTS (Action denoting that a user wants to enable comments on an organization\u0027s share on behalf of that organization)SHARE_DISABLE_COMMENTS (Action denoting that a user wants to disable comments on an organization\u0027s share on behalf of that organization)SHARE_SPONSOR (Action denoting that a user wants to sponsor an organization\u0027s share on behalf of that organization)",
+            "Links": [],
+            "Values": [
+              "ORGANIC_SHARE_VIEW_AS_AUTHOR (Action denoting that a user wants to view an organization\u0027s organic posts as the author. This should be used when the viewer wants to see things like draft states, unfinished edits, or the impersonator who last modified or created the share)",
+              "ORGANIC_SHARE_VIEW_MANAGEMENT_TOOLS (Action denoting that a user wants to view management tools that can manage an organization\u0027s organic posts)",
+              "ORGANIC_SHARE_CREATE (Action denoting that a user wants to create a share as an organization)",
+              "ORGANIC_SHARE_EDIT (Action denoting that a user wants to edit an organization\u0027s share on behalf of that organization)",
+              "ORGANIC_SHARE_DELETE (Action denoting that a user wants to delete an organization\u0027s share on behalf of that organization)",
+              "ORGANIC_SHARE_PIN (Action denoting that a user wants to pin an organization\u0027s share on behalf of that organization)",
+              "DARK_SHARE_CREATE (Action denoting that a user wants to create an organization\u0027s dark post on behalf of that organization)",
+              "DARK_SHARE_EDIT (Action denoting that a user wants to edit an organization\u0027s dark post on behalf of that organization)",
+              "DARK_SHARE_DELETE (Action denoting that a user wants to delete an organization\u0027s dark post on behalf of that organization)",
+              "DARK_SHARE_VIEW_AS_AUTHOR (Action denoting that a user wants to view an organization\u0027s dark posts as the author)",
+              "SHARE_ENABLE_COMMENTS (Action denoting that a user wants to enable comments on an organization\u0027s share on behalf of that organization)",
+              "SHARE_DISABLE_COMMENTS (Action denoting that a user wants to disable comments on an organization\u0027s share on behalf of that organization)",
+              "SHARE_SPONSOR (Action denoting that a user wants to sponsor an organization\u0027s share on behalf of that organization)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationContentSuggestionAuthorizationAction",
+      "Anchor": "organizationcontentsuggestionauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationContentSuggestionAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentSuggestionAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action related to content suggestions that a user can take on behalf of an organization. Value enums include:CONTENT_SUGGESTION_READ (Action denoting that a user wants to see content suggested for an organization to post)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationEmployeeExperienceAuthorizationAction",
+      "Anchor": "organizationemployeeexperienceauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationEmployeeExperienceAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEmployeeExperienceAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take with regards to Employee Experience of a particular organization.Value enums include:EMPLOYEE_EXPERIENCE_SETTINGS_MANAGE (Action denoting that a user wants to manage the organization\u0027s Employee Experience settings)EMPLOYEE_EXPERIENCE_VIEW_AS_MEMBER (Action denoting that a user wants to view an organization\u0027s Employee Experience (My Company tab) as a member)EMPLOYEE_EXPERIENCE_MANAGE_CURATORS (Action denoting that a user wants to manage the curators of an organization)",
+            "Links": [],
+            "Values": [
+              "EMPLOYEE_EXPERIENCE_SETTINGS_MANAGE (Action denoting that a user wants to manage the organization\u0027s Employee Experience settings)",
+              "EMPLOYEE_EXPERIENCE_VIEW_AS_MEMBER (Action denoting that a user wants to view an organization\u0027s Employee Experience (My Company tab) as a member)",
+              "EMPLOYEE_EXPERIENCE_MANAGE_CURATORS (Action denoting that a user wants to manage the curators of an organization)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationEventAuthorizationAction",
+      "Anchor": "organizationeventauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationEventAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEventAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action a user can take on an organization\u0027s events on behalf of an organization. Value enums include:EVENTS_MANAGE (Grouped Action denoting that a user wants to either see or edit, create, or delete an event hosted by a particular organization)EVENTS_READ (Action indicating that the viewer is trying to see events hosted by a particular organization)EVENTS_CREATE",
+            "Links": [],
+            "Values": [
+              "EVENTS_MANAGE (Grouped Action denoting that a user wants to either see or edit, create, or delete an event hosted by a particular organization)",
+              "EVENTS_READ (Action indicating that the viewer is trying to see events hosted by a particular organization)",
+              "EVENTS_CREATE"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationJobsAuthorizationAction",
+      "Anchor": "organizationjobsauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationJobsAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationJobsAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on behalf of an organization on an organization\u0027s jobs. Value enums include:JOB_POSTING_CREATE (Action denoting that a user wants to post a job on behalf as an organization)",
+            "Links": [],
+            "Values": [
+              "JOB_POSTING_CREATE (Action denoting that a user wants to post a job on behalf as an organization)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationMemberExperienceAuthorizationAction",
+      "Anchor": "organizationmemberexperienceauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationMemberExperienceAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationMemberExperienceAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of actions that a user can take on behalf of an organization with regards to Member Experience. These actions will be used by Non-Admin viewers like Employees, Followers or Members who view or manage specific action on behalf of an organization. Value enums include:EMPLOYEES_INVITE_TO_FOLLOW (Action denoting that an employee of the organization can invite their connections to follow the page)MEMBERS_INVITE_TO_FOLLOW (Action denoting that a member (neither admin nor employee) can invite their connections to follow the page, that their connections might be interested in)",
+            "Links": [],
+            "Values": [
+              "",
+              "MEMBERS_INVITE_TO_FOLLOW (Action denoting that a member (neither admin nor employee) can invite their connections to follow the page, that their connections might be interested in)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationProfileAuthorizationAction",
+      "Anchor": "organizationprofileauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationProfileAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationProfileAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on behalf of an organization on the organization profile itself. Value enums include:ADMINISTRATION_PAGE_VIEW (Action denoting that a user wants to view an organization\u0027s administration page)ORGANIZATION_PROFILE_WRITE (Action denoting that a user wants to edit an organization\u0027s profile such as name or description)ORGANIZATION_COMPETITORS_VIEW (Action denoting that a user wants to read but not edit an organization\u0027s designated competitors on LinkedIn)ORGANIZATION_COMPETITORS_MANAGE (Action denoting that a user wants to read or edit an organization\u0027s designated competitors on LinkedIn)ORGANIZATION_PROFILE_READ_THROUGH_SPAM_FILTER (Action denoting that a user wants to bypass the spam filter to read organization profiles)ORGANIZATION_PROFILE_ADMINISTRATIVE_READ (Action denoting that a user wants to view an organization in an administrative context (e.g. in Business Manager))ORGANIZATION_DEACTIVATE (Action denoting that a user wants to deactivate an organization)ORGANIZATION_CREATE_SHOWCASE (Action denoting that a user wants to create a showcase child of an organization)ORGANIZATION_MIGRATE_TO_SHOWCASE (Action denoting that a user wants to migrate an organization to be a showcase of another organization)ORGANIZATION_MIGRATE_FOLLOWERS (Action denoting that a user wants to migrate followers of an organization to another organization)ORGANIZATION_MIGRATE_EMPLOYEES (Action denoting that a user wants to migrate employees of an organization to another organization)SHOWCASE_MIGRATE_TO_ORGANIZATION (Action denoting that a user wants to migrate a showcase to an organization)ORGANIZATION_TERMS_AND_AGREEMENTS_READ (Action denoting that a user wants to view an organization\u0027s terms and agreements)LINKEDIN_PRODUCT_FEEDBACK_WRITE (Action denoting that a user wants to write LinkedIn product feedback)INVITE_MEMBER_TO_FOLLOW_CREATE (Action denoting that a user wants to invite someone to follow an organization)ASSOCIATED_HASHTAG_WRITE (Action denoting that a user wants to create, edit, or remove the hashtags an organization are associated with)ORGANIZATIONAL_PAGE_FOLLOW_MANAGE (Action denoting that a user of organizational page wants to manage following other entities like other Organizational page, members, etc)",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATION_PAGE_VIEW (Action denoting that a user wants to view an organization\u0027s administration page)",
+              "ORGANIZATION_PROFILE_WRITE (Action denoting that a user wants to edit an organization\u0027s profile such as name or description)",
+              "ORGANIZATION_COMPETITORS_VIEW (Action denoting that a user wants to read but not edit an organization\u0027s designated competitors on LinkedIn)",
+              "ORGANIZATION_COMPETITORS_MANAGE (Action denoting that a user wants to read or edit an organization\u0027s designated competitors on LinkedIn)",
+              "ORGANIZATION_PROFILE_READ_THROUGH_SPAM_FILTER (Action denoting that a user wants to bypass the spam filter to read organization profiles)",
+              "ORGANIZATION_PROFILE_ADMINISTRATIVE_READ (Action denoting that a user wants to view an organization in an administrative context (e.g. in Business Manager))",
+              "ORGANIZATION_DEACTIVATE (Action denoting that a user wants to deactivate an organization)",
+              "ORGANIZATION_CREATE_SHOWCASE (Action denoting that a user wants to create a showcase child of an organization)",
+              "ORGANIZATION_MIGRATE_TO_SHOWCASE (Action denoting that a user wants to migrate an organization to be a showcase of another organization)",
+              "ORGANIZATION_MIGRATE_FOLLOWERS (Action denoting that a user wants to migrate followers of an organization to another organization)",
+              "ORGANIZATION_MIGRATE_EMPLOYEES (Action denoting that a user wants to migrate employees of an organization to another organization)",
+              "SHOWCASE_MIGRATE_TO_ORGANIZATION (Action denoting that a user wants to migrate a showcase to an organization)",
+              "ORGANIZATION_TERMS_AND_AGREEMENTS_READ (Action denoting that a user wants to view an organization\u0027s terms and agreements)",
+              "LINKEDIN_PRODUCT_FEEDBACK_WRITE (Action denoting that a user wants to write LinkedIn product feedback)",
+              "INVITE_MEMBER_TO_FOLLOW_CREATE (Action denoting that a user wants to invite someone to follow an organization)",
+              "ASSOCIATED_HASHTAG_WRITE (Action denoting that a user wants to create, edit, or remove the hashtags an organization are associated with)",
+              "ORGANIZATIONAL_PAGE_FOLLOW_MANAGE (Action denoting that a user of organizational page wants to manage following other entities like other Organizational page, members, etc)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationRoleAuthorizationAction",
+      "Anchor": "organizationroleauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationRoleAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationRoleAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action a user can take on the list of an organization\u0027s administrative role holders on behalf of that organization. Value enums include:ADMINISTRATOR_READ (Action denoting that a user wants to see the administrators of an organization)ADMINISTRATOR_WRITE (Action denoting that a user wants to edit the administrators of an organization)APPROVE_OR_REJECT_BUSINESS_MANAGER_ACCESS (Action denoting that a user wants to approve or reject access request from a Business Manager Account for an organization)CONTENT_ADMINISTRATOR_WRITE (Action denoting that a user wants to edit the content administrators of an organization)CURATOR_WRITE (Action denoting that a user wants to edit the curators of an organization)ANALYST_WRITE (Action denoting that a user wants to edit the analysts of an organization)DIRECT_SPONSORED_CONTENT_POSTER_READ (Action denoting that a user wants to see the direct sponsored content posters of an organization)DIRECT_SPONSORED_CONTENT_POSTER_WRITE (Action denoting that a user wants to edit the direct sponsored content sponsored posters of an organization)PIPELINE_BUILDER_READ (Action denoting that a user wants to see the pipeline builder administrators of an organization)PIPELINE_BUILDER_WRITE (Action denoting that a user wants to edit the pipeline builder administrators of an organization)LEAD_GEN_FORMS_MANAGER_READ (Action denoting that a user wants to see the lead gen forms managers of an organization)LEAD_GEN_FORMS_MANAGER_WRITE (Action denoting that a user wants to edit the lead gen forms managers of an organization)PENDING_ADMIN_READ (Action denoting that a user wants to see the pending administrators of an organization)PENDING_ADMIN_WRITE (Action denoting that a user wants to edit the pending administrators of an organization)PENDING_DIRECT_SPONSORED_CONTENT_POSTER_READ (Action denoting that a user wants to see the pending direct sponsored content posters of an organization)PENDING_DIRECT_SPONSORED_CONTENT_POSTER_WRITE (Action denoting that a user wants to edit the pending direct sponsored content posters of an organization)SELF_REQUEST_SUPER_ADMINISTRATOR_ACCESS (Action denoting that a user wants to self-request for super admin access from member view for an organization)READ_PERMISSIONS_OF_OTHER_USERS (Action denoting a user wants to view the permissions of other users)READ_UNIDENTIFIED_USERS_ROLE (Action denoting that a user wants to see the unidentified users\u0027 role of an organization)WRITE_UNIDENTIFIED_USERS_ROLE (Action denoting that a user wants to edit the unidentified users\u0027 role of an organization)",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR_READ (Action denoting that a user wants to see the administrators of an organization)",
+              "ADMINISTRATOR_WRITE (Action denoting that a user wants to edit the administrators of an organization)",
+              "APPROVE_OR_REJECT_BUSINESS_MANAGER_ACCESS (Action denoting that a user wants to approve or reject access request from a Business Manager Account for an organization)",
+              "CONTENT_ADMINISTRATOR_WRITE (Action denoting that a user wants to edit the content administrators of an organization)",
+              "CURATOR_WRITE (Action denoting that a user wants to edit the curators of an organization)",
+              "ANALYST_WRITE (Action denoting that a user wants to edit the analysts of an organization)",
+              "DIRECT_SPONSORED_CONTENT_POSTER_READ (Action denoting that a user wants to see the direct sponsored content posters of an organization)",
+              "DIRECT_SPONSORED_CONTENT_POSTER_WRITE (Action denoting that a user wants to edit the direct sponsored content sponsored posters of an organization)",
+              "PIPELINE_BUILDER_READ (Action denoting that a user wants to see the pipeline builder administrators of an organization)",
+              "PIPELINE_BUILDER_WRITE (Action denoting that a user wants to edit the pipeline builder administrators of an organization)",
+              "LEAD_GEN_FORMS_MANAGER_READ (Action denoting that a user wants to see the lead gen forms managers of an organization)",
+              "LEAD_GEN_FORMS_MANAGER_WRITE (Action denoting that a user wants to edit the lead gen forms managers of an organization)",
+              "PENDING_ADMIN_READ (Action denoting that a user wants to see the pending administrators of an organization)",
+              "PENDING_ADMIN_WRITE (Action denoting that a user wants to edit the pending administrators of an organization)",
+              "PENDING_DIRECT_SPONSORED_CONTENT_POSTER_READ (Action denoting that a user wants to see the pending direct sponsored content posters of an organization)",
+              "PENDING_DIRECT_SPONSORED_CONTENT_POSTER_WRITE (Action denoting that a user wants to edit the pending direct sponsored content posters of an organization)",
+              "SELF_REQUEST_SUPER_ADMINISTRATOR_ACCESS (Action denoting that a user wants to self-request for super admin access from member view for an organization)",
+              "READ_PERMISSIONS_OF_OTHER_USERS (Action denoting a user wants to view the permissions of other users)",
+              "READ_UNIDENTIFIED_USERS_ROLE (Action denoting that a user wants to see the unidentified users\u0027 role of an organization)",
+              "WRITE_UNIDENTIFIED_USERS_ROLE (Action denoting that a user wants to edit the unidentified users\u0027 role of an organization)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationSocialActionAuthorizationAction",
+      "Anchor": "organizationsocialactionauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationSocialActionAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationSocialActionAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "COMMENT_CREATE (Action denoting that a user wants to comment on a post (share/ugc) on behalf of an organization)REACTION_CREATE (Action denoting that a user wants to react to a post (share/ugc) on behalf of an organization)MENTION_UNTAG_SELF (Action denoting that a user wants to untag an organization from a post (share/ugc) on behalf of that organization)MUTE_ACTOR (Action denoting that a user, on behalf of an organization, wants to mute a another actor\u0027s ability to make social actions on a post (share/ugc))ADMIN_FEED_FOLLOWING_PILL_READ (Action denoting that a user, on behalf of an organization, wants to view the admin feed following pill containing feed from following entities like Organizational Pages, Power Creator (i.e. Members))",
+            "Links": [],
+            "Values": [
+              "COMMENT_CREATE (Action denoting that a user wants to comment on a post (share/ugc) on behalf of an organization)",
+              "REACTION_CREATE (Action denoting that a user wants to react to a post (share/ugc) on behalf of an organization)",
+              "MENTION_UNTAG_SELF (Action denoting that a user wants to untag an organization from a post (share/ugc) on behalf of that organization)",
+              "MUTE_ACTOR (Action denoting that a user, on behalf of an organization, wants to mute a another actor\u0027s ability to make social actions on a post (share/ugc))",
+              "ADMIN_FEED_FOLLOWING_PILL_READ (Action denoting that a user, on behalf of an organization, wants to view the admin feed following pill containing feed from following entities like Organizational Pages, Power Creator (i.e. Members))"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationVerifiedDomainsAuthorizationAction",
+      "Anchor": "organizationverifieddomainsauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationVerifiedDomainsAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationVerifiedDomainsAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A type of action that a user can take on behalf of an organization on that organization\u0027s verified domains. Value enums include:EMAIL_DOMAINS_READ (Action denoting that a user wants to see administrative information on an organization\u0027s email domains, such as which use cases are associated with the domains)\u003CliEMAIL_DOMAINS_MANAGE (Action denoting that a user wants to create, edit, or delete an organization\u0027s email domains)",
+            "Links": [],
+            "Values": [
+              "EMAIL_DOMAINS_READ (Action denoting that a user wants to see administrative information on an organization\u0027s email domains, such as which use cases are associated with the domains)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PipelineBuilderAuthorizationAction",
+      "Anchor": "pipelinebuilderauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "PipelineBuilderAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PipelineBuilderAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A pipeline-builder (aka lead capture) related action that a user can take on behalf of an organization Value enums include:PIPELINE_BUILDER_ADMINISTRATION_PAGE_VIEW (Action denoting that a user wants to view an organization\u0027s pipeline builder administration page)PIPELINE_BUILDER_ADMINISTRATION_PAGE_EDI (Action denoting that a user wants to edit content on an organization\u0027s pipeline builder administration page)",
+            "Links": [],
+            "Values": [
+              "PIPELINE_BUILDER_ADMINISTRATION_PAGE_VIEW (Action denoting that a user wants to view an organization\u0027s pipeline builder administration page)",
+              "PIPELINE_BUILDER_ADMINISTRATION_PAGE_EDI (Action denoting that a user wants to edit content on an organization\u0027s pipeline builder administration page)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PollAuthorizationAction",
+      "Anchor": "pollauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "PollAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PollAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on behalf of an organization on that organization\u0027s polls. Value enums include:POLL_CREATE ( Action denoting that a user wants to create an organic poll that will be owned by an organization)ORGANIC_POLL_MANAGE (Grouped Action denoting that a user wants to either edit, create, or delete an organic poll on behalf of an organization)BRAND_LIFT_POLL_CREATE (Action denoting that a user wants to create a brand lift poll, which will be send to members by LinkedIn company to prevent bias)BRAND_LIFT_QUESTIONNAIRE_CREATE (Action denoting that a user wants to create a brand lift questionnaire, which will send one or more questions to members by LinkedIn company to prevent bias)",
+            "Links": [],
+            "Values": [
+              "POLL_CREATE ( Action denoting that a user wants to create an organic poll that will be owned by an organization)",
+              "ORGANIC_POLL_MANAGE (Grouped Action denoting that a user wants to either edit, create, or delete an organic poll on behalf of an organization)",
+              "BRAND_LIFT_POLL_CREATE (Action denoting that a user wants to create a brand lift poll, which will be send to members by LinkedIn company to prevent bias)",
+              "BRAND_LIFT_QUESTIONNAIRE_CREATE (Action denoting that a user wants to create a brand lift questionnaire, which will send one or more questions to members by LinkedIn company to prevent bias)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ProductAuthorizationAction",
+      "Anchor": "productauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "ProductAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on behalf of an organization on an organization\u0027s products. Value enums include: PRODUCTS_READPRODUCTS_EDIT",
+            "Links": [],
+            "Values": [
+              "PRODUCTS_READ",
+              "PRODUCTS_EDIT"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ServicesPageAuthorizationAction",
+      "Anchor": "servicespageauthorizationaction",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "ServicesPageAuthorizationAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ServicesPageAuthorizationActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An action that a user can take on behalf of an organization on that organization\u0027s services page. Value enums include:SERVICES_PAGE_MANAGE (Action denoting that a user wants to either edit or manage an organization\u0027s services page, such as responding to RFPs (Request for Proposals))",
+            "Links": [],
+            "Values": [
+              "SERVICES_PAGE_MANAGE (Action denoting that a user wants to either edit or manage an organization\u0027s services page, such as responding to RFPs (Request for Proposals))"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Authorization Data",
+      "Anchor": "retrieve-organization-authorization-data",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Authorization Data",
+      "Anchor": "retrieve-organization-authorization-data",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data"
+      ],
+      "Text": "How to determine the parameters for GET and BATCH_GET:\nThe GET and BATCH_GET methods below require you to already know the organization URN, the action, and your own personUrn (used in impersonation.subject.value.member) in order to construct the ORGANIZATION_AUTHORIZATION_KEY.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Authorization Data",
+      "Anchor": "retrieve-organization-authorization-data",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data"
+      ],
+      "Text": "To determine your own personUrn for impersonation.subject.value.member, call the Me resource and construct the URN as urn:li:person:{id} using the returned id field.\nTo discover which organizations and actions you are eligible for, use BATCH_FIND by authorizationAction and Authenticated Member below, which does not require you to already know an organization URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationAuthorizations/($params:(),{ORGANIZATION_AUTHORIZATION_KEY})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationAuthorizations/($params:(),{ORGANIZATION_AUTHORIZATION_KEY})\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022action\u0022: {\n    \u0022productAuthorizationAction\u0022: {\n      \u0022actionType\u0022: \u0022PRODUCTS_EDIT\u0022\n    }\n  },\n  \u0022impersonation\u0022: {\n    \u0022subject\u0022: {\n      \u0022value\u0022: {\n        \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n      }\n    },\n    \u0022scope\u0022: {\n      \u0022value\u0022: {}\n    }\n  },\n  \u0022status\u0022: {\n    \u0022approved\u0022: {\n      \u0022authorizationRenderingContext\u0022: {\n        \u0022disallowedEntryPoints\u0022: []\n      }\n    }\n  },\n  \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022action\u0022: {\n    \u0022productAuthorizationAction\u0022: {\n      \u0022actionType\u0022: \u0022PRODUCTS_EDIT\u0022\n    }\n  },\n  \u0022impersonation\u0022: {\n    \u0022subject\u0022: {\n      \u0022value\u0022: {}\n    },\n    \u0022scope\u0022: {\n      \u0022value\u0022: {}\n    }\n  },\n  \u0022status\u0022: {\n    \u0022approved\u0022: {\n      \u0022authorizationRenderingContext\u0022: {\n        \u0022disallowedEntryPoints\u0022: []\n      }\n    }\n  },\n  \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ORGANIZATION_AUTHORIZATION_KEY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAuthorizationKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Request for authorizing an action on an entity on behalf of an actor e.g. a request can be made for a member to act on behalf of an organization while commenting on a ugc post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "action:(productAuthorizationAction:(actionType:PRODUCTS_EDIT)),organization:urn%3Ali%3Aorganization%3A123456,impersonation:(subject:(value:(member:urn%3Ali%3Aperson%3AabcdefGH)))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationAuthorization?ids=List(ORGANIZATION_AUTHORIZATION_KEY_1,ORGANIZATION_AUTHORIZATION_KEY_2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationAuthorizations?ids=List(ORGANIZATION_AUTHORIZATION_KEY_1,ORGANIZATION_AUTHORIZATION_KEY_2)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(ORGANIZATION_AUTHORIZATION_KEY_1)\u0022: {\n      \u0022action\u0022: {\n        \u0022productAuthorizationAction\u0022: {\n          \u0022actionType\u0022: \u0022PRODUCTS_EDIT\u0022\n        }\n      },\n      \u0022impersonation\u0022: {\n        \u0022subject\u0022: {\n          \u0022value\u0022: {\n            \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n          }\n        },\n        \u0022scope\u0022: {\n          \u0022value\u0022: {}\n        }\n      },\n      \u0022status\u0022: {\n        \u0022approved\u0022: {\n          \u0022authorizationRenderingContext\u0022: {\n            \u0022disallowedEntryPoints\u0022: []\n          }\n        }\n      },\n      \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n    },\n    \u0022(ORGANIZATION_AUTHORIZATION_KEY_2)\u0022: {\n      \u0022action\u0022: {\n        \u0022productAuthorizationAction\u0022: {\n          \u0022actionType\u0022: \u0022PRODUCTS_EDIT\u0022\n        }\n      },\n      \u0022impersonation\u0022: {\n        \u0022subject\u0022: {\n          \u0022value\u0022: {\n            \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n          }\n        },\n        \u0022scope\u0022: {\n          \u0022value\u0022: {}\n        }\n      },\n      \u0022status\u0022: {\n        \u0022denied\u0022: {\n          \u0022reasons\u0022: [\u0022MEMBER_HAS_INSUFFICIENT_PERMISSIONS_IN_ACCESS_CONTROL\u0022]\n        }\n      },\n      \u0022organization\u0022: \u0022urn:li:organization:234567\u0022\n    }\n  },\n  \u0022statuses\u0022: {},\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022(ORGANIZATION_AUTHORIZATION_KEY_1)\u0022: {\n      \u0022action\u0022: {\n        \u0022productAuthorizationAction\u0022: {\n          \u0022actionType\u0022: \u0022PRODUCTS_EDIT\u0022\n        }\n      },\n      \u0022impersonation\u0022: {\n        \u0022subject\u0022: {\n          \u0022value\u0022: {}\n        },\n        \u0022scope\u0022: {\n          \u0022value\u0022: {}\n        }\n      },\n      \u0022status\u0022: {\n        \u0022approved\u0022: {\n          \u0022authorizationRenderingContext\u0022: {\n            \u0022disallowedEntryPoints\u0022: []\n          }\n        }\n      },\n      \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n    },\n    \u0022(ORGANIZATION_AUTHORIZATION_KEY_2)\u0022: {\n      \u0022action\u0022: {\n        \u0022productAuthorizationAction\u0022: {\n          \u0022actionType\u0022: \u0022PRODUCTS_EDIT\u0022\n        }\n      },\n      \u0022impersonation\u0022: {\n        \u0022subject\u0022: {\n          \u0022value\u0022: {}\n        },\n        \u0022scope\u0022: {\n          \u0022value\u0022: {}\n        }\n      },\n      \u0022status\u0022: {\n        \u0022denied\u0022: {\n          \u0022reasons\u0022: [\u0022MEMBER_HAS_INSUFFICIENT_PERMISSIONS_IN_ACCESS_CONTROL\u0022]\n        }\n      },\n      \u0022organization\u0022: \u0022urn:li:organization:234567\u0022\n    }\n  },\n  \u0022statuses\u0022: {},\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of OrganizationAuthorizationKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of requests for authorizing an action on an entity on behalf of an actor e.g. a request can be made for a member to act on behalf of an organization while commenting on a ugc post.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List((action:(productAuthorizationAction:(actionType:PRODUCTS_EDIT)),organization:urn%3Ali%3Aorganization%3A123456,impersonation:(subject:(value:(member:urn%3Ali%3Aperson%3AabcdefGH)))),(action:(productAuthorizationAction:(actionType:PRODUCTS_EDIT)),organization:urn%3Ali%3Aorganization%3A23456,impersonation:(subject:(value:(member:urn%3Ali%3Aperson%3AabcdefGH)))))",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationAuthorizations?bq=authorizationActionsAndImpersonator\u0026authorizationActions=List((authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:FOLLOWER_ANALYTICS_READ))))\u0026start=0\u0026count=4",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationAuthorizations?bq=authorizationActionsAndImpersonator\u0026authorizationActions=List((authorizationAction%3A(organizationAnalyticsAuthorizationAction%3A(actionType%3AFOLLOWER_ANALYTICS_READ))))\u0026start=0\u0026count=4\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 4,\n        \u0022links\u0022: []\n      },\n      \u0022elements\u0022: [\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:123456\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {\n                \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n              }\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n        },\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:234567\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {\n                \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n              }\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:234567\u0022\n        },\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:345678\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {\n                \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n              }\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:345678\u0022\n        },\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:456789\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {\n                \u0022member\u0022: \u0022urn:li:person:abcdefGH\u0022\n              }\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:456789\u0022\n        }\n      ]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 4,\n        \u0022links\u0022: []\n      },\n      \u0022elements\u0022: [\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:123456\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {}\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n        },\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:234567\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {}\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:234567\u0022\n        },\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:345678\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {}\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:345678\u0022\n        },\n        {\n          \u0022actor\u0022: \u0022urn:li:organization:456789\u0022,\n          \u0022action\u0022: {\n            \u0022organizationAnalyticsAuthorizationAction\u0022: {\n              \u0022actionType\u0022: \u0022FOLLOWER_ANALYTICS_READ\u0022\n            }\n          },\n          \u0022impersonation\u0022: {\n            \u0022subject\u0022: {\n              \u0022value\u0022: {}\n            },\n            \u0022scope\u0022: {}\n          },\n          \u0022status\u0022: {\n            \u0022approved\u0022: {\n              \u0022authorizationRenderingContext\u0022: {\n                \u0022disallowedEntryPoints\u0022: []\n              }\n            }\n          },\n          \u0022organization\u0022: \u0022urn:li:organization:456789\u0022\n        }\n      ]\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Organization Authorization Data",
+        "BATCH_FIND by authorizationAction and Authenticated Member",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "bq",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the batch finder data to retreive data from. Batch finder name: authorizationActionsAndImpersonator.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "bq=authorizationActionsAndImpersonator",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "authorizationActions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of OrganizationAuthorizationActionCriteria",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationauthorizationactioncriteria"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Criteria used by the organizationAuthorizations batch finder to find OrganizationAuthorization by a list of OrganizationAuthorizationAction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "authorizationActions=List((authorizationAction:(organizationAnalyticsAuthorizationAction:(actionType:FOLLOWER_ANALYTICS_READ))))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "If the API is returning 200 status for a request with denied field being populated in the response indicates that the request has been denied due to these reasons.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -41,10 +41,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The thumbnails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Thumbnails { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemThumbnailsItem>? Thumbnails { get; set; }
 #nullable restore
 #else
-        public UntypedNode Thumbnails { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemThumbnailsItem> Thumbnails { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemDescription.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "thumbnails", n => { Thumbnails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "thumbnails", n => { Thumbnails = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemThumbnailsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemThumbnailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemTitle>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemTitle.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemDescription>("description", Description);
             writer.WriteStringValue("media", Media);
             writer.WriteStringValue("status", Status);
-            writer.WriteObjectValue<UntypedNode>("thumbnails", Thumbnails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemThumbnailsItem>("thumbnails", Thumbnails);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementOperation5CreatePostRequestSpecificContentComLinkedinUgcShareContentMediaItemTitle>("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

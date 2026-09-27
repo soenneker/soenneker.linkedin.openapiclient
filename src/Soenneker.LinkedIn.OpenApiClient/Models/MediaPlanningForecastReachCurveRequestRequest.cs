@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestStartDateOn StartDateOn { get; set; }
 #endif
         /// <summary>The targetBudgetMicros property</summary>
-        public int? TargetBudgetMicros { get; set; }
+        public long? TargetBudgetMicros { get; set; }
         /// <summary>The targetingCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +100,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "optimizationType", n => { OptimizationType = n.GetStringValue(); } },
                 { "sponsoredAccountUrn", n => { SponsoredAccountUrn = n.GetStringValue(); } },
                 { "startDateOn", n => { StartDateOn = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestStartDateOn>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestStartDateOn.CreateFromDiscriminatorValue); } },
-                { "targetBudgetMicros", n => { TargetBudgetMicros = n.GetIntValue(); } },
+                { "targetBudgetMicros", n => { TargetBudgetMicros = n.GetLongValue(); } },
                 { "targetingCriteria", n => { TargetingCriteria = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestTargetingCriteria>(global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestTargetingCriteria.CreateFromDiscriminatorValue); } },
             };
         }
@@ -118,7 +118,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("optimizationType", OptimizationType);
             writer.WriteStringValue("sponsoredAccountUrn", SponsoredAccountUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestStartDateOn>("startDateOn", StartDateOn);
-            writer.WriteIntValue("targetBudgetMicros", TargetBudgetMicros);
+            writer.WriteLongValue("targetBudgetMicros", TargetBudgetMicros);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.MediaPlanningForecastReachCurveRequestRequestTargetingCriteria>("targetingCriteria", TargetingCriteria);
             writer.WriteAdditionalData(AdditionalData);
         }

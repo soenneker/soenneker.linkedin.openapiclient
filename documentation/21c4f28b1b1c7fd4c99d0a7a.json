@@ -1,0 +1,1252 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls",
+  "Title": "Sync CRM ACLs",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acl-assignees",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning-announcement"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync CRM ACLs",
+      "Anchor": "sync-crm-acls",
+      "SectionPath": [],
+      "Text": "ACLs establish a relationship between a synced record and a group that can view that record. You can use the endpoints and methods defined in this document to establish and manage ACLs throughout the integration lifecycle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM ACLs",
+      "Anchor": "sync-crm-acls",
+      "SectionPath": [],
+      "Text": "ACLs are a relationship between a atsEntityId and atsEntityAclId. The atsEntityId represents the entity which needs restricted visibility and the atsEntityAclId is the identifier of the list of users which will have access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM ACLs",
+      "Anchor": "sync-crm-acls",
+      "SectionPath": [],
+      "Text": "For broader context on how ACLs are defined across multiple endpoints, see Sync ACLs Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM ACLs",
+      "Anchor": "sync-crm-acls",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync CRM ACLs",
+      "Anchor": "sync-crm-acls",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites and Requirements",
+      "Anchor": "prerequisites-and-requirements",
+      "SectionPath": [
+        "Prerequisites and Requirements"
+      ],
+      "Text": "Query Tunneling -- Requests require query tunneling if the request URL is larger than LinkedIn\u0027s maximum URL length. See Query Tunneling and Migration Guide - Updated API Request Maximum Length for more details.\nCompliance with LinkedIn API Breaking Change Policy\nUsage of the Client Credential Flow (2-legged OAuth) for authentication.\nUsage of the Versioning request format for endpoints and methods that require it as defined in this document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records at a time.\nDo not assign more than 10 ACLs per user.\nUpdate ACLs when users or records are added or updated to prevent visibility issues.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Securable Entity Types",
+      "Anchor": "securable-entity-types",
+      "SectionPath": [
+        "Securable Entity Types"
+      ],
+      "Text": "The following entity types support ACL definition.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Securable Entity Types",
+      "Anchor": "securable-entity-types",
+      "SectionPath": [
+        "Securable Entity Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Entity",
+        "Value to use for atsEntityId Field",
+        "Description",
+        "atsEntityType Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CRM Pipeline",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "tcrmPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A CRM pipeline synced to the /tcrmPipelines endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PIPELINE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM Interaction",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "tcrmInteractionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A CRM interaction synced to the /tcrmInteractions endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERACTION",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsEntityAcls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Create or Update ACLs Query Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the Access Control List within the external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the entity used within the external Talent CRM used to sync the record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the entity used within the external Talent CRM used to sync the record. See Securable Entity Types for list of valid values.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs Sample Request (Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Query Tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsEntityAcls\u0027 \\\n-H \u0027X-HTTP-Method-Override: PUT\u0027 \\\n-H \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n-H \u0027x-restli-method: batch_update\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data $\u0027--xyz\\r\\n\nContent-Type: application/x-www-form-urlencoded\\r\\n\\r\\nids[0].atsEntityAclId=crm_acl_12345\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A2414183\u0026ids[0].atsEntityId=pipeline_1243\u0026ids[0].atsEntityType=PIPELINE\\r\\n--xyz\\r\\n \nContent-Type: application/json\\r\\n\\r\\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0026atsEntityType=PIPELINE\u0026atsEntityId=pipeline_1243\u0026atsEntityAclId=crm_acl_12345\u0022: {}\n  }\n}\\r\\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or Update ACLs Sample Request (Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Query Tunneled)"
+      ],
+      "Text": "If you would like to set a particular securable entity or a set of entities to be visible to all users (regardless of their ACL assignment), you can set the accessRestricted field on that entity to false (See Sync Pipelines Request Body Fields).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs Sample Request (Not Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Not Query Tunneled)"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsEntityAcls?ids[0].atsEntityAclId=crm_acl_12345\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[0].atsEntityId=pipeline_1243\u0026ids[0].atsEntityType=PIPELINE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or Update ACLs Sample Request (Not Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Not Query Tunneled)"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs Sample Request (Not Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Not Query Tunneled)"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or Update ACLs Sample Request (Not Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Not Query Tunneled)"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs Sample Request (Not Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Request (Not Query Tunneled)"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0026atsEntityType=PIPELINE\u0026atsEntityId=pipeline_1243\u0026atsEntityAclId=crm_acl_12345\u0022: {}\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0026atsEntityType=PIPELINE\u0026atsEntityId=pipeline_1243\u0026atsEntityAclId=crm_acl_12345\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create or Update ACLs API Endpoint",
+      "Anchor": "create-or-update-acls-api-endpoint-1",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint"
+      ],
+      "Text": "PUT https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId={entity_acl_id}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext={org_urn}\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId={entity_id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or Update ACLs API Endpoint",
+      "Anchor": "create-or-update-acls-api-endpoint-1",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint"
+      ],
+      "Text": "For each id specified in the request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create or Update ACLs API Endpoint",
+      "Anchor": "create-or-update-acls-api-endpoint-1",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint"
+      ],
+      "Text": "Use your security group or role id as the value of ids[i].entityAclId.\nUse the customer\u0027s organization id as the value of ids[i].integrationContext. The format should be \u0022urn:li:organization:{id}\u0022.\nUse \u0022ATS\u0022 as the value of ids[i].dataProvider.\nUse your entity identifier for the value of ids[i].entityId.\nUse one of the Securable Entity Types enums for the value of ids[i].entityType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAcl entry was created in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp indicating when this entityAcl entry was last modified in the partner system, represented in milliseconds since epoch. This value must be greater than 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (query tunneling)",
+      "Anchor": "sample-request-query-tunneling-4",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (query tunneling)"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/entityAcls\u0027 \\\n--header \u0027X-HTTP-Method-Override: PUT\u0027 \\\n--header \u0027Content-Type: multipart/mixed; boundary=xyz\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027--xyz\nContent-Type: application/x-www-form-urlencoded\n\nids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\n--xyz\nContent-Type: application/json\n\n{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\n--xyz--\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-4",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityType=JOB_REQUISITION\u0026ids[0].entityId=jdoe_acl_job_test_20250715\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:1234\u0026entityType=JOB_REQUISITION\u0026entityId=jdoe_acl_job_test_20250715\u0026entityAclId=TEST_JOBS\u0022: {\n      \u0022externalCreatedAt\u0022: 1762485938000,\n      \u0022externalLastModifiedAt\u0022: 1762485938000\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create or Update ACLs API Endpoint",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022entityAclId=TEST_JOBS\u0026entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Entity ACLs API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs API Endpoint"
+      ],
+      "Text": "To retrieve a list of ACLs defined for a given atsEntityId, use the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Entity ACLs API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsEntityAcls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Retrieve Entity ACLs Query Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the entity used within the external Talent CRM used to sync the record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the entity used within the external Talent CRM used to sync the record. See Securable Entity Types for list of valid values.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Query enum value. Always criteria.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Entity ACLs Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsEntityAcls?dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0026atsEntityId=pipeline_1243\u0026atsEntityType=PIPELINE\u0026q=criteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Entity ACLs Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs Sample Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Entity ACLs Sample Request",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs Sample Request"
+      ],
+      "Text": "Authorization: Bearer {token}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Entity ACLs Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs Sample Response"
+      ],
+      "Text": "A successful request will return 200 OK response code with the following response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Entity ACLs Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022atsEntityAclId\u0022: \u0022crm_acl_12345\u0022,\n            \u0022atsEntityId\u0022: \u0022pipeline_1243\u0022,\n            \u0022atsEntityType\u0022: \u0022PIPELINE\u0022,\n            \u0022dataProvider\u0022: \u0022ATS\u0022,\n            \u0022integrationContext\u0022: \u0022urn:li:organization:2414183\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Entity ACLs",
+      "Anchor": "retrieve-entity-acls",
+      "SectionPath": [
+        "Retrieve Entity ACLs"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/entityAcls?entityId={entity_id}\u0026entityType={entity_type}\u0026dataProvider=ATS\u0026integrationContext={org_urn}\u0026q=criteria\u0026start=0\u0026count=100",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Retrieve Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-9",
+      "SectionPath": [
+        "Retrieve Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/entityAcls?entityId=jdoe_acl_job_test_20250715\u0026entityType=JOB_REQUISITION\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0026q=criteria\u0026start=0\u0026count=100\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Entity ACLs",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 100,\n    \u0022links\u0022: [],\n    \u0022total\u0022: 1\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022externalLastModifiedAt\u0022: 1762485938000,\n      \u0022entityId\u0022: \u0022jdoe_acl_job_test_20250715\u0022,\n      \u0022entityAclId\u0022: \u0022TEST_JOBS\u0022,\n      \u0022integrationContext\u0022: \u0022urn:li:organization:1234\u0022,\n      \u0022entityType\u0022: \u0022JOB_REQUISITION\u0022,\n      \u0022externalCreatedAt\u0022: 1762485938000\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Entity ACLs API Endpoint",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs API Endpoint"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsEntityAcls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Delete Entity ACLs Query Parameters",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "atsEntityAclId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the Access Control List within the external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsEntityId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the entity used within the external Talent CRM used to sync the record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "atsEntityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the entity used within the external Talent CRM used to sync the record. See Securable Entity Types for list of valid values.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-acls?view=li-lts-2026-04#securable-entity-types"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn organization URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Entity ACLs Sample Request (Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Sample Request (Query Tunneled)"
+      ],
+      "Text": "curl -L -X POST \u0027https://api.linkedin.com/v2/atsEntityAcls\u0027 \\\n-H \u0027X-HTTP-Method-Override: DELETE\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n--data-urlencode \u0027ids[0].atsEntityAclId=crm_acl_12345\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[0].atsEntityId=pipeline_1243\u0026ids[0].atsEntityType=PIPELINE\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Entity ACLs Sample Request (Not Query Tunneled)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Sample Request (Not Query Tunneled)"
+      ],
+      "Text": "curl -L -X DELETE \u0027https://api.linkedin.com/v2/atsEntityAcls?ids[0].atsEntityAclId=crm_acl_12345\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn:li:organization:2414183\u0026ids[0].atsEntityId=pipeline_1243\u0026ids[0].atsEntityType=PIPELINE\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Entity ACLs Sample Response",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Sample Response"
+      ],
+      "Text": "A successful request to upsert or delete will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Entity ACLs Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022dataProvider=ATS\u0026integrationContext=urn:li:organization:2414183\u0026atsEntityType=PIPELINE\u0026atsEntityId=pipeline_1243\u0026atsEntityAclId=crm_acl_12345\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Entity ACLs Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Entity ACLs Sample Response Body",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs Sample Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.\nUpon success, all copies of data will be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Entity ACLs",
+      "Anchor": "delete-entity-acls",
+      "SectionPath": [
+        "Delete Entity ACLs"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId={entity_acl_id}\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext={org_urn}\u0026ids[0].entityId={entity_id}\u0026ids[0].entityType={entity_type}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityId=jdoe_acl_job_test_20250715_001\u0026ids[0].entityType=JOB_REQUISITION\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityId=jdoe_acl_job_test_20250715_001\u0026ids[0].entityType=JOB_REQUISITION\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityId=jdoe_acl_job_test_20250715_001\u0026ids[0].entityType=JOB_REQUISITION\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "",
+      "SectionPath": [
+        "Delete Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityId=jdoe_acl_job_test_20250715_001\u0026ids[0].entityType=JOB_REQUISITION\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (without query tunneling)",
+      "Anchor": "sample-request-without-query-tunneling-14",
+      "SectionPath": [
+        "Delete Entity ACLs",
+        "Sample Request (without query tunneling)"
+      ],
+      "Text": "curl --location --globoff --request DELETE \u0027https://api.linkedin.com/rest/entityAcls?ids[0].entityAclId=TEST_JOBS\u0026ids[0].dataProvider=ATS\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A1234\u0026ids[0].entityId=jdoe_acl_job_test_20250715_001\u0026ids[0].entityType=JOB_REQUISITION\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Delete Entity ACLs",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022entityAclId=TEST_JOBS\u0026entityId=jdoe_acl_job_test_20250715_001\u0026entityType=JOB_REQUISITION\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

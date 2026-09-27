@@ -1,0 +1,692 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+  "Title": "LinkedIn Learning LTI 1.1 Implementation Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps illustrate the LinkedIn Learning and LTI 1.1 integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Overview",
+      "Anchor": "lti-overview",
+      "SectionPath": [
+        "LTI Overview"
+      ],
+      "Text": "LTI is a standardized way of integrating learning content into learning platforms such as Learning Management Systems and other educational\nenvironments. Learning applications like LinkedIn Learning are \u0022Tool Providers\u0022 and learning platforms are \u0022Tool Consumers\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Overview",
+      "Anchor": "lti-overview",
+      "SectionPath": [
+        "LTI Overview"
+      ],
+      "Text": "You can use LTI to authenticate learners from a Tool Consumer into LinkedIn Learning. LTI is based on OAuth 1.0, an open standard for authorization. When a learner selects an LTI Launch URL, the Tool Consumer \u0022POSTs\u0022 a signed form with user details to LinkedIn Learning. The form is used to authenticate and provision the user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Things to Consider before Implementation",
+      "Anchor": "things-to-consider-before-implementation",
+      "SectionPath": [
+        "Things to Consider before Implementation"
+      ],
+      "Text": "Since the LTI standard requires an LMS to launch the LinkedIn Learning content, the integration has distinct tradeoffs. Before opting for LTI, please review the\nsections below to ensure you fully understand the advantages and disadvantages of LTI integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "If you are a LinkedIn Learning user or admin, you have the following benefits of LTI integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "Seamless access to LinkedIn Learning for students and instructors\n\nDistinct user experiences for students and instructors\n\nGradable content\n\nContent easily integrated into LMS courses",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disadvantages",
+      "Anchor": "disadvantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Disadvantages"
+      ],
+      "Text": "If you are thinking about using the LTI standard in your learning platform, keep in mind the following restrictions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disadvantages",
+      "Anchor": "disadvantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Disadvantages"
+      ],
+      "Text": "LTI is not compatible with LinkedIn Learning native mobile applications. This includes both the LinkedIn Learning iOS and Android apps.\n\nTo access LinkedIn Learning content, users must have access to your LMS. If a user cannot log into the LMS, the user does not have access to LinkedIn Learning.\n\nContent is only accessible from within the LMS. Educators cannot \u0022deep link\u0022 to LinkedIn Learning content on class webpages, wikis, or other external systems.\n\nIf your organization uses another form of single sign-on (SSO) with LinkedIn Learning, the SSO connection must use the same unique user ID as your LTI connection to prevent duplicate profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI Authentication in LinkedIn Learning",
+      "Anchor": "enable-lti-authentication-in-linkedin-learning",
+      "SectionPath": [
+        "Enable LTI Authentication in LinkedIn Learning"
+      ],
+      "Text": "You must be a designated LinkedIn Learning administrator to access integration settings. If you are not an administrator, please reach out to your internal LinkedIn Learning lead, who can add you as an administrator in the system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LTI Keys",
+      "Anchor": "provision-lti-keys",
+      "SectionPath": [
+        "Enable LTI Authentication in LinkedIn Learning",
+        "Provision LTI Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Authentication.\n\n\nIn the left-hand navigation menu, select Configure single sign-on and click Add new SSO.\n\n\nSelect \u0022LTI\u0022 from the drop down.\n\n\nIn the Authenticate users with LTI SSO screen, enter a LTI connection a name in the LTI Connection Name field.\n\nIf your LMS does not support Tool Provider-initiated authentication, enter an LMS Login URL. This URL can be your LMS login page or a specific section in your LMS that gives users access to LinkedIn Learning.\n\nUnder Enable automatic role provisioning for instructors, choose whether to automatically provision sub-admin permissions for instructors (by switching the toggle to \u0022On\u0022).\n\nSelect which parameter you would like to use to identify users. If you are unsure which value to use, select \u0022User ID\u0022.\n\n Caution\nThe configured User ID value must match the value your LMS sends to LinkedIn Learning. If the values do not match, you run the risk of creating duplicate profiles. If you do not know the correct value, contact your LinkedIn Learning Customer Success Manager.\n\n\nIf your LMS supports Tool Provider-initiated authentication, enter the value in the SP-initiated redirect URL field. If you do not know which URL to use, leave the field blank.\n\nClick\u00A0Generate Keys.\n\n\nCopy and paste the LTI keys for use in your learning platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Descriptions",
+      "Anchor": "field-descriptions",
+      "SectionPath": [
+        "Field Descriptions"
+      ],
+      "Text": "The following fields include the settings for provisioning LTI keys:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LMS login",
+      "Anchor": "lms-login",
+      "SectionPath": [
+        "Field Descriptions",
+        "LMS login"
+      ],
+      "Text": "Some Learning Management Systems do not allow direct access to LinkedIn Learning and require users to access learning through the LMS. If this is the case, you can use this field to redirect users who try to access LinkedIn Learning directly. Users can be redirected to your LMS login page or to a specific section within your LMS if they prefer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Automatic Role Provisioning for Instructors",
+      "Anchor": "enable-automatic-role-provisioning-for-instructors",
+      "SectionPath": [
+        "Field Descriptions",
+        "Enable Automatic Role Provisioning for Instructors"
+      ],
+      "Text": "When you enable this toggle, anyone with the role \u201CInstructor\u201D in your learning platform is automatically provisioned as a sub-admin in LinkedIn Learning. As a sub-admin, instructors can manage, curate, and recommend content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External ID Parameter Name",
+      "Anchor": "external-id-parameter-name",
+      "SectionPath": [
+        "Field Descriptions",
+        "External ID Parameter Name"
+      ],
+      "Text": "Use this setting to determine which authentication attribute is used to identify users. The default value is \u201CUser ID\u201D. You also can use \u201CEmail Address\u201D or a custom attribute name. For example, your LMS may provide an additional identifier, like lis_person_sourcedid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SP-Initiated redirect URL",
+      "Anchor": "sp-initiated-redirect-url",
+      "SectionPath": [
+        "Field Descriptions",
+        "SP-Initiated redirect URL"
+      ],
+      "Text": "Some Learning Management Systems allow users direct access to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SP-Initiated redirect URL",
+      "Anchor": "sp-initiated-redirect-url",
+      "SectionPath": [
+        "Field Descriptions",
+        "SP-Initiated redirect URL"
+      ],
+      "Text": "These learning platforms should offer a tenant-specific \u0022LTI initiation\u0022 endpoint to be used by LinkedIn Learning to trigger the LTI authentication flow. If a learner attempts to access LinkedIn Learning content outside of the LMS, the application redirects to the learner\u0027s configured \u201CLTI initiation\u201D endpoint for their account. After receiving the redirect, your learning platform prompts the user to authenticate and sends them back to LinkedIn Learning authenticated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SP-Initiated redirect URL",
+      "Anchor": "sp-initiated-redirect-url",
+      "SectionPath": [
+        "Field Descriptions",
+        "SP-Initiated redirect URL"
+      ],
+      "Text": "The SP-initiated redirect URL in the LinkedIn Learning settings should be populated with your learning platform\u2019s LTI initiation URL. If this field is not populated or your learning platform does not support this functionality, you can initiate LTI only through your learning platform. Users will not be able to log in directly to the LinkedIn Learning website. If you do not know this URL, consult with your learning management system\u2019s support team or community.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI Reporting",
+      "Anchor": "enable-lti-reporting",
+      "SectionPath": [
+        "Enable LTI Reporting"
+      ],
+      "Text": "If your Learning Management System supports LTI v1.1, you need to add your LMS hostname to LinkedIn Learning to allow communication back to your LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI Reporting",
+      "Anchor": "enable-lti-reporting",
+      "SectionPath": [
+        "Enable LTI Reporting"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Me \u003E Integrate.\n\n\nOn the left-hand side navigation menu, select Configure reporting integrations and expand Configure LTI reporting.\n\nIn the Enter hostname or port field, enter your LMS hostname (for example, examplecompany.lms.com).\n\nClick the \u002B symbol to the right of the hostname field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI Reporting",
+      "Anchor": "enable-lti-reporting",
+      "SectionPath": [
+        "Enable LTI Reporting"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI Reporting",
+      "Anchor": "enable-lti-reporting",
+      "SectionPath": [
+        "Enable LTI Reporting"
+      ],
+      "Text": "Do not include the protocol such as http:// or https://. An example hostname is examplecompany.lms.com, not https://examplecompany.lms.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI in your Learning Management System",
+      "Anchor": "enable-lti-in-your-learning-management-system",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System"
+      ],
+      "Text": "Setup steps within an LMS vary depending on which LTI-compatible LMS you are using. LinkedIn Learning does not maintain configuration documentation for LTI-compliant learning platforms. If you have questions concerning how to configure a new tool provider in your learning platform, please consult your technical support team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI in your Learning Management System",
+      "Anchor": "enable-lti-in-your-learning-management-system",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System"
+      ],
+      "Text": "When setting up LTI, you need to configure LinkedIn Learning as a new external tool provider, entering the consumer key and consumer secret that you provisioned in your LTI settings within LinkedIn Learning. If a base URL is required, use the following format:\nhttps://www.linkedin.com/checkpoint/enterprise/login/[accountID]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI in your Learning Management System",
+      "Anchor": "enable-lti-in-your-learning-management-system",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System"
+      ],
+      "Text": "You cannot load LinkedIn Learning in an iFrame; if you are given the option to do so, always choose to launch content in a new tab or window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LTI in your Learning Management System",
+      "Anchor": "enable-lti-in-your-learning-management-system",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System"
+      ],
+      "Text": "If you do not know your account ID, please reach out to the LinkedIn Learning account team for this value. You should be able to locate the account ID in the browser URL when you are logged in to LinkedIn Learning. Example: https://www.linkedin.com/learning-admin/settings/global?[account=123456]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Launch URLs",
+      "Anchor": "launch-urls",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "Launch URLs"
+      ],
+      "Text": "LinkedIn Learning supports four launch URLs that can be embedded into any LTI-compliant system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Launch URLs",
+      "Anchor": "launch-urls",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "Launch URLs"
+      ],
+      "Text": "Base Endpoint \u2013 Logs the user into their LinkedIn Learning homepage.\n\nCourse \u2013 Logs the user in and redirects them to a specific course on LinkedIn Learning.\n\nVideo \u2013 Logs the user in and redirects them to a specific video on LinkedIn Learning.\n\nLearning Path \u2013 Logs the user in and redirects them to a specific Learning path on LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Launch URLs",
+      "Anchor": "launch-urls",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "Launch URLs"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Launch URLs",
+      "Anchor": "launch-urls",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "Launch URLs"
+      ],
+      "Text": "The value\u00A0[accountID] is a placeholder and should be replaced by your unique numeric account number.\u00A0If you do not know your account ID, please reach out to the LinkedIn support team for this value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Launch URLs",
+      "Anchor": "supported-launch-urls",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "Supported Launch URLs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Launch Page",
+        "Example Launch URL"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Base Endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[https://www.linkedin.com/checkpoint/enterprise/login/[accountID]?application=learning\u0026redirect=https://www.linkedin.com/checkpoint/enterprise/login/%5baccountID%5d",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Course",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/checkpoint/enterprise/login/[accountID]?application=learning\u0026redirect=https://www.linkedin.com/learning/onenote-2016-essential-training\u0026u=[accountID]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/checkpoint/enterprise/login/[accountID]?application=learning\u0026redirect=https://www.linkedin.com/learning/onenote-2016-essential-training/what-is-onenote\u0026u=[accountID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Learning Path",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/checkpoint/enterprise/login/[accountID]?application=learning\u0026redirect=https://www.linkedin.com/learning/paths/test-path\u0026u=[accountIDhttps://www.linkedin.com/checkpoint/enterprise/login/%5baccountID%5d?application=learning\u0026redirect%20=https://www.linkedin.com/learning/paths/test-path\u0026u=%5baccountID%5d",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Standard Launch Data",
+      "Anchor": "lti-standard-launch-data",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Standard Launch Data"
+      ],
+      "Text": "When you select the LTI launch URL, your LMS sends data about your users to LinkedIn Learning. Below you find a list of common attribute names, example values, and brief descriptions of the attributes sent via LTI. Typically, the attributes listed below are stored in our database to provide better reporting data, easier user management, and a personalized user experience. When possible, we recommend passing these attributes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Standard Launch Data",
+      "Anchor": "lti-standard-launch-data",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Standard Launch Data"
+      ],
+      "Text": "Examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Standard Launch Data",
+      "Anchor": "lti-standard-launch-data",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Standard Launch Data"
+      ],
+      "Text": "lis_person_name_given (First Name): Ferris\n\nlis_person_name_family (Last Name): Bueller\n\nlis_person_name_full (Full Name): Ferris Bueller\n\nlis_person_contact_email_primary (Email): fbueller@newtrier.edu\n\nroles (User Role): student\n\ncontext_title (Course Name): Graphic Design 101\n\ntool_consumer_instance_description (School): New Trier High School",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Custom Attributes"
+      ],
+      "Text": "When creating an LTI launch URL, you can add custom key/value attributes the launch data includes. We recommend using lower-case names and no punctuation other than underscores when creating a custom attribute. Organizations can use custom attributes to automatically send additional data about users to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Custom Attributes"
+      ],
+      "Text": "Examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Custom Attributes"
+      ],
+      "Text": "custom_keyname: value\n\ngraduation_year: 2022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Enable LTI in your Learning Management System",
+        "LTI Custom Attributes"
+      ],
+      "Text": "Congratulations! Your learners now can use the LinkedIn Learning and LTI 1.1 integration for SSO and learner progress reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Are all users able to connect their LinkedIn profiles through an LTI connection?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, LTI supports profile association.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Which provisioning types are supported?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. LTI requires\u00A0JIT (just in time)\u00A0provisioning and is automatically configured. This condition means that, upon the first successful LTI authentication, LinkedIn Learning automatically creates a user profile (if a user does not already exist).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can SAML SSO and LTI be enabled at the same time?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. You can enable both authentication options\u00A0at the same time, but we recommend that you consult your dedicated Technical Consultant before adopting this method. You might unintentionally create duplicate accounts if the same group of users has access to both LTI and a second SSO connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Is the Unique User ID value configurable?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, you can configure the Unique User ID in the External ID Parameter Name field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can LTI launches be loaded in an iFrame?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. No, LTI does not support iFrames.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "LinkedIn Learning SSO Implementation\n\nLTI, Canvas, and LinkedIn Learning Configuration\n\nGoogle SSO\n\nOkta SSO\n\nAdd and Manage Users in Bulk via CSV\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "For more information on integrating LTI v1.1 with your LMS and LinkedIn Learning, see IMS Global\u2019s\u00A0LTI 1.1 Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+  "Title": "Implementation Best Practices for Display Services 2.1 Migration",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/provisioning-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Implementation Best Practices for Display Services 2.1 Migration",
+      "Anchor": "implementation-best-practices-for-display-services-21-migration",
+      "SectionPath": [],
+      "Text": "This document describes best practices for implementing the Display Services 2.1 migration changes. The purpose of this guide is to document recommendations which if taken will reduce or eliminate risk of errors. It also documents recommendations that will ensure the best experience for end users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General Recommendations",
+      "Anchor": "general-recommendations",
+      "SectionPath": [
+        "General Recommendations"
+      ],
+      "Text": "Always use tokens for the duration of their TTL.\nAlways encrypt access tokens, secrets, and refresh tokens at rest (a requirement for certification).\nRequest only the scopes you need in the Authorization Code Flow (3-legged OAuth). For Display Services, you only need r_sales_nav_display. Some open-source Oauth2 SDKs include LinkedIn defaults that are not applicable for this program and will throw an error during the launch of the flow in the browser.\nUse refresh tokens. This feature will enable long-term authentication for users of the integration across clients.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provisioning API Recommendations",
+      "Anchor": "provisioning-api-recommendations",
+      "SectionPath": [
+        "Provisioning API Recommendations"
+      ],
+      "Text": "Best practices related to use of the Application Provisioning API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provisioning API Recommendations",
+      "Anchor": "provisioning-api-recommendations",
+      "SectionPath": [
+        "Provisioning API Recommendations"
+      ],
+      "Text": "If you implement subsequent DELETE and CREATE calls, use the same token in the Authentication header for both requests. This will prevent cross-data center replication issues from throwing errors if the calls are made in rapid succession.\nWhen making CREATE calls, ensure that you are using the CRM tenantId as the uniqueForeignId property for each child application. This property is used for this integration and the Sales and Marketing Systems Connect (SMSC) integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Access Tokens",
+      "Anchor": "sales-access-tokens",
+      "SectionPath": [
+        "Sales Access Tokens"
+      ],
+      "Text": "Best practices for implementation of Sales Access Tokens:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales Access Tokens",
+      "Anchor": "sales-access-tokens",
+      "SectionPath": [
+        "Sales Access Tokens"
+      ],
+      "Text": "Reuse the SAT for the duration of its TTL. This will prevent encountering of throttling limits for individual members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Display Services iframe",
+      "Anchor": "display-services-iframe",
+      "SectionPath": [
+        "Display Services iframe"
+      ],
+      "Text": "Utilize the crmRecordId field for profiles/accounts to enable persisting of matches for the respective entity in the solution hosting the iframe.\nIf integrating alongside the Sales and Marketing Systems Connect (SMSC) integration ensure, the crmOrgId parameter, and developer application parameter uniqueForeignId are consistent across both integrations. These properties are the crm tenant Id and are used to identify the CRM instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sign in experience",
+      "Anchor": "sign-in-experience",
+      "SectionPath": [
+        "Sign in experience"
+      ],
+      "Text": "The sign in experience requires users go through two rounds of pop-ups -* one driven by the iframe Sign in button and one launched by the solution hosting the iframe. The second popup, because it is initiated via JavaScript, can be blocked by modern browsers. It is recommended that you detect the blocking of this pop-up and provide users a button to complete the sign in flow via the Authorization Code Flow if it is needed.\nIf you are embedding multiple iframes on the same page, ensure that only one postMessage/successful sign in is necessary to trigger the refresh of all iframes on the same parent window.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

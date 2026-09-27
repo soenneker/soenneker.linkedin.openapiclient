@@ -1,0 +1,422 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+  "Title": "Job Posting API",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Posting API",
+      "Anchor": "job-posting-api",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API",
+      "Anchor": "job-posting-api",
+      "SectionPath": [],
+      "Text": "We are currently not accepting new partnerships for LinkedIn\u0027s Job Posting API. If you would like to gain access to LinkedIn\u0027s Job Posting APIs please request access to Apply Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API",
+      "Anchor": "job-posting-api",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Job Posting API enables authorized third parties such as clients, ATS systems, and job distributors to post jobs directly to LinkedIn on behalf of customers. This guide details on how to integrate with LinkedIn\u0027s Jobs Posting API.\nThe below button will take you to LinkedIn\u0027s Postman\u0027s workspace. Select the workspace with name LinkedIn Talent Solutions. You will find the Job Posting API collection in it. Learn more on our Development Tools page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Legal Requirement",
+      "Anchor": "job-posting-legal-requirement",
+      "SectionPath": [
+        "Job Posting Legal Requirement"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Legal Requirement",
+      "Anchor": "job-posting-legal-requirement",
+      "SectionPath": [
+        "Job Posting Legal Requirement"
+      ],
+      "Text": "The use of these APIs is restricted to those developers approved by LinkedIn. Please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.\nIf you are not yet a LinkedIn Talent Solutions Partner, please complete the LinkedIn Talent Solutions Partner Request Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Legal Requirement",
+      "Anchor": "job-posting-legal-requirement",
+      "SectionPath": [
+        "Job Posting Legal Requirement"
+      ],
+      "Text": "In addition to any restrictions or obligations contained in a signed API agreement, partner:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Legal Requirement",
+      "Anchor": "job-posting-legal-requirement",
+      "SectionPath": [
+        "Job Posting Legal Requirement"
+      ],
+      "Text": "Acknowledges that LinkedIn acts as a passive conduit for the online distribution and publication of job listings and LinkedIn is not responsible for screening or monitoring job listings. Jobs posted to the LinkedIn Service (including via the LinkedIn APIs) may be posted only for lawful purposes by individuals and employers seeking employees. The LinkedIn APIs may not be used to post job listings that violate the restrictions included in the LinkedIn Jobs Terms and Conditions\nWill ensure that its customers agree to the LinkedIn Jobs Terms and Conditions prior to posting any jobs to the LinkedIn Service via partner\u2019s application and shall have a method of keeping track of which of its customers have agreed to the LinkedIn Jobs Terms and Conditions and when, and shall furnish such information to LinkedIn upon request\nShall not market any job listings to be distributed via LinkedIn or its syndication network as a \u0022free way to post jobs to LinkedIn\u0022 or anything substantially similar in any marketing or sales materials\nAcknowledges that in some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D). These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "Development Milestones",
+        "Request Access"
+      ],
+      "Text": "Before beginning development, you will need to be provisioned access to test resources, and your API applications will have to be enabled to access the job posting API endpoints. You can request access by completing the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "Development Milestones",
+        "Request Access"
+      ],
+      "Text": "Create API applications for the integration. You may create two API applications per integration - one for production, and another for development and testing. Please contact your LinkedIn Business Development point of contact and request to fill out the Partner Onboarding Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "Development Milestones",
+        "Request Access"
+      ],
+      "Text": "After the above steps, you are guided with test environment details that can be consumed for your development and testing. In order to test these APIs we will set up test organization which you can use to create and update test jobs. Please note that any jobs created to this page will be frequently closed and you should expect jobs created to this test organization to be short-lived.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Begin Development",
+      "Anchor": "begin-development",
+      "SectionPath": [
+        "Development Milestones",
+        "Begin Development"
+      ],
+      "Text": "Once your application is configured, you may begin making API requests and testing the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Begin Development",
+      "Anchor": "begin-development",
+      "SectionPath": [
+        "Development Milestones",
+        "Begin Development"
+      ],
+      "Text": "In order to post jobs on behalf of customers, you may need to create a child API Key. Refer to Create and Configure Customer Application to know the steps. LinkedIn\u0027s Job Posting API follows Rest.li standards and requires OAuth. To learn more about Job Posting API, refer to Sync Basic or Promoted Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Begin Development",
+      "Anchor": "begin-development",
+      "SectionPath": [
+        "Development Milestones",
+        "Begin Development"
+      ],
+      "Text": "You can post any of the below two job categories:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Begin Development",
+      "Anchor": "begin-development",
+      "SectionPath": [
+        "Development Milestones",
+        "Begin Development"
+      ],
+      "Text": "Basic Jobs - These are job posts aggregated on LinkedIn to create a comprehensive job-seeking experience for LinkedIn members. These jobs receive limited active promotion to members as compared to jobs posted in Job Slots (paid jobs). To post basic jobs refer to:\n\nJob Postings API Overview and Create Basic Jobs\nFoundation Schema\n\n\nPromoted Jobs - These are jobs posted in Job Slots as paid jobs. For customers with paid job slots, the API allows posting jobs directly into their Job Slots. To post promoted jobs refer to:\n\nJob Postings API Overview and Create Promoted Jobs\nFoundation Schema and Promoted Jobs Extension Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Begin Development",
+      "Anchor": "begin-development",
+      "SectionPath": [
+        "Development Milestones",
+        "Begin Development"
+      ],
+      "Text": "If you are an Apply Connect partner then you can use Job Posting API to also enable onsite apply. To create Apply Connect jobs refer to",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Begin Development",
+      "Anchor": "begin-development",
+      "SectionPath": [
+        "Development Milestones",
+        "Begin Development"
+      ],
+      "Text": "Job Postings API Overview and Create Apply Connect Jobs\nFoundation Schema, Apply Connect Extension Schema and OnsiteApplyConfiguration Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Configure Customer Applications",
+      "Anchor": "create-and-configure-customer-applications",
+      "SectionPath": [
+        "Development Milestones",
+        "Create and Configure Customer Applications"
+      ],
+      "Text": "If you are a LinkedIn Partner (for example, Applicant Tracking System or Job Distributor) implementing Job Posting for multiple customers, please follow below steps to complete the Job Posting Integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Configure Customer Applications",
+      "Anchor": "create-and-configure-customer-applications",
+      "SectionPath": [
+        "Development Milestones",
+        "Create and Configure Customer Applications"
+      ],
+      "Text": "Create and configure a customer(child) application for posting jobs on behalf of customer. The Provisioning API allows you to create API keys for each of your customers using the parent application provisioned by LinkedIn\nOnce you have created customer application, you will need to store the API Key (client id for the customer application created by Provisioning API) and a LinkedIn Developer Application id for each of your customers. You should also persist the companyID (and contractID for Promoted Jobs Extension Schema) as provided by the customers when opting for posting jobs on LinkedIn\nFor existing customers of Recruiter System Connect, Apply with LinkedIn or Apply Connect you will be using their existing customer API keys",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Configure Customer Applications",
+      "Anchor": "create-and-configure-customer-applications",
+      "SectionPath": [
+        "Development Milestones",
+        "Create and Configure Customer Applications"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Configure Customer Applications",
+      "Anchor": "create-and-configure-customer-applications",
+      "SectionPath": [
+        "Development Milestones",
+        "Create and Configure Customer Applications"
+      ],
+      "Text": "We expect partners to create only one application per customer account on your platform and use it to make all API calls such as Job Postings, RSC and Apply Connect. The customer account and its corresponsding application created via Provisioning API should strictly have 1:1 mapping.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "In order to enable Job Posting for a Recruiter customer, your application requires implementing an onboarding widget to collect below essential details to post a job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Note"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn company page ID of LinkedIn Recruiter customer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contractId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contract ID of LinkedIn Recruiter customer. This is required only for posting paid jobs",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "Below Help Article links can be shared to help customers find their Contract and Company ID:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "For Company ID refer to this help center\nFor Contract ID refer to this help center",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "The value of integrationContext field will be urn:li:organization:\u0022organizationId\u0022\nFor Recruiter System Connect customers, integrationContext is provided by ATS customer onboarding widget. To know more, refer to Recruiter System Connect\u0027s Customer OnBoarding\nFor others, the value of integrationContext field can be constructed manually if the customer provides value for organizationId. In absence of this value, provide the company information via companyName field\nContract ID field is mandatory for Premium job postings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ATS Customer Onboarding",
+      "Anchor": "ats-customer-onboarding",
+      "SectionPath": [
+        "Development Milestones",
+        "ATS Customer Onboarding"
+      ],
+      "Text": "The value of company field will be urn:li:company:{company_id}\u0022\nFor Recruiter System Connect customers, company is provided by ATS customer onboarding widget. To know more, refer to Recruiter System Connect\u0027s Customer OnBoarding\nFor others, the value of company field can be constructed manually if the customer provides value for companyId. In absence of this value, provide the company information via companyName field\nContract ID field is mandatory for Premium job postings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "View Job Posting on LinkedIn",
+      "Anchor": "view-job-posting-on-linkedin",
+      "SectionPath": [
+        "Development Milestones",
+        "View Job Posting on LinkedIn"
+      ],
+      "Text": "When a customer posts a job on clients or ATS systems which are integrated with the Job Posting API, the job is published on LinkedIn and is associated company page on LinkedIn. It is similar to manually posting jobs in New Recruiter and Jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Refer to FAQ document for most commonly asked questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Announcements and Releases",
+      "Anchor": "announcements-and-releases",
+      "SectionPath": [
+        "Announcements and Releases"
+      ],
+      "Text": "All the changes that are continuously being made to LinkedIn\u0027s Job Posting documentation can be tracked in the section for Annoucements and Release Notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

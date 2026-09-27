@@ -1,0 +1,749 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+  "Title": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/postman-getting-started"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "The LinkedIn Conversions API Tag template directly connects marketing data from an advertiser\u2019s server or Google Tag Manager(GTM) and LinkedIn. This enables advertisers to measure the performance of their LinkedIn marketing campaigns no matter where the conversion happens and use this data to power campaign optimization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "This guide explains the process of configuring your GTM environment paired with a server on Google Cloud Platform (GCP) to send key web and offline event data to the LinkedIn Conversions API. Conversion event data will flow from your website through to your GTM web container to your own server container (configured with GCP) where an event tag makes the API call to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "The LinkedIn Conversions API Tag template is developed and maintained by LinkedIn following the Google Custom Tag Template. If you have any questions about setting up Google products, please contact your Google representative or review Google\u2019s documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "This configuration guide provides the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Google Tag Manager Server-Side Tagging - Implementation Guide",
+      "Anchor": "google-tag-manager-server-side-tagging---implementation-guide",
+      "SectionPath": [],
+      "Text": "Prerequisites you need to implement this solution.\nHow to configure your GTM web container and conversion events to work with your implementation of the GA4 Web Tag.\nHow to pass data from your website to your GTM web container and then to your GTM server container (on GCP).\nHow to configure your GTM server container for the data to be passed to LinkedIn\u2019s Conversions API endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Review the LinkedIn\u2019s Conversion API product, see here.\nReview Google\u2019s Introduction to Server-Side Tagging and Custom Tag Templates.\nHave GA4 conversion events configured and tracked on your website.\nHave a GTM account and web container up and running.\nGenerate a LinkedIn API access token as outlined here..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "This solution is only available if you\u0027re using GA4. If your system runs on an older version than GA4, you must upgrade before proceeding.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a GTM Server Container",
+      "Anchor": "create-a-gtm-server-container",
+      "SectionPath": [
+        "Configuration Steps",
+        "Create a GTM Server Container"
+      ],
+      "Text": "You must configure both a server container and a web container within your GTM account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a GTM Server Container",
+      "Anchor": "create-a-gtm-server-container",
+      "SectionPath": [
+        "Configuration Steps",
+        "Create a GTM Server Container"
+      ],
+      "Text": "Web container: If you don\u0027t have a GTM account already set up, start by installing a web container in your GTM account. For more information, see here.\nServer container: Create a server container within your GTM account to set up a tagging server URL. For more information, see here to complete this step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a GTM Server Container",
+      "Anchor": "create-a-gtm-server-container",
+      "SectionPath": [
+        "Configuration Steps",
+        "Create a GTM Server Container"
+      ],
+      "Text": "Starting up a server container requires configuring a tagging server. GCP offers a default deployment that can be completed when setting up the server container. For more information, see here. If you want to use any other cloud provider (Azure or AWS etc), you\u2019ll need to complete the manual server setup as documented here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure Your Web and Server Containers",
+      "Anchor": "configure-your-web-and-server-containers",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure Your Web and Server Containers"
+      ],
+      "Text": "To configure web container, create the following:\n\nA Google Tag where you\u0027ll configure the server_container_url.\nA GA4 Event tag where you\u0027ll configure the event schema for the conversion event that will be passed to the server_container and on to LinkedIn.\n\n\nTo configure server container, create the following:\n\nA GA4 Client that will listen for the GA4 conversion event.\nA LinkedIn | CAPI Tag, based on the template, that will convert the standard event model from GA4 to the LinkedIn Conversions API event schema and then sends the event data to the Conversions API endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL",
+      "Anchor": "google-tag-configuration---set-the-tagging-server-url",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL"
+      ],
+      "Text": "In this section, you\u0027ll configure your web container to send your website data to the tagging server you created earlier. Google\u2019s documentation on sending data to the server-side tag manager can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL",
+      "Anchor": "google-tag-configuration---set-the-tagging-server-url",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL"
+      ],
+      "Text": "To set up a new \u2018Google Tag\u2019, see here.\n\nAfter creating a new Google Tag, you need to set the Tag ID and add a Configuration Parameter under the Configuration Settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL",
+      "Anchor": "google-tag-configuration---set-the-tagging-server-url",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL",
+      "Anchor": "google-tag-configuration---set-the-tagging-server-url",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "\u2018Google Tag\u2019 Configuration - Set the Tagging Server URL"
+      ],
+      "Text": "The Configuration Parameter field should be set to server_container_url and the Value field set to the Server container URL that\u0027s found in the server_container \u2018Admin\u2019 \u003E \u2018Container Settings\u2019 page.\nIf you\u0027re setting up server-side tagging for the first time, when you add the server container URL, all of your event traffic will be sent to the server container. To continue sending data to GA4, you\u0027ll need an additional GA4 server-side tag in the server container and make sure that it fires on all events you want to send to GA4.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GA4 Event Tag - Create a Conversion Event Tag",
+      "Anchor": "ga4-event-tag---create-a-conversion-event-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag - Create a Conversion Event Tag"
+      ],
+      "Text": "If you don\u0027t have a GA4 Event tag already set up, perform the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GA4 Event Tag - Create a Conversion Event Tag",
+      "Anchor": "ga4-event-tag---create-a-conversion-event-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag - Create a Conversion Event Tag"
+      ],
+      "Text": "Navigate to Tags \u003E New \u003E Template Gallery and select a new \u2018GA4 Event\u2019 tag.\nSet an Event Name and name the tag. Configure this tag to be triggered by the desired conversion event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GA4 Event Tag Event Schema Configuration",
+      "Anchor": "ga4-event-tag-event-schema-configuration",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag Event Schema Configuration"
+      ],
+      "Text": "You need to create a Data Layer Variable for each of the GTM Common Event Schema\u2019s user_data parameters you want to pass to LinkedIn. These variables will then be mapped to the Data Layer Variable name. Google\u2019s documentation on configuring data-layer variables is found here. For example, to pass a user\u0027s first name to the server container, create a variable named user_data_first_name and then map this variable to the Data Layer Variable name user_data.address.first_name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GA4 Event Tag Event Schema Configuration",
+      "Anchor": "ga4-event-tag-event-schema-configuration",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag Event Schema Configuration"
+      ],
+      "Text": "The variable data will be read from the event using the common event schema. Similar to the example above, if you want to pass a hashed email address, you need to define the parameter name as user_data.sha256_email_address. Otherwise, the \u2018LinkedIn CAPI Tag\u2019 won\u0027t be able to read the variable and pass the data on to LinkedIn\u2019s Conversions API endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GA4 Event Tag Event Schema Configuration",
+      "Anchor": "ga4-event-tag-event-schema-configuration",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag Event Schema Configuration"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "GA4 Event Tag Event Schema Configuration",
+      "Anchor": "ga4-event-tag-event-schema-configuration",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag Event Schema Configuration"
+      ],
+      "Text": "If you\u0027re not using the data layer, you must configure variables for each parameter, as indicated in the table below. This table shows the mappings for LinkedIn API spec and GTM user_data parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "GA4 Event Tag Event Schema Configuration",
+      "Anchor": "ga4-event-tag-event-schema-configuration",
+      "SectionPath": [
+        "Configuration Steps",
+        "1. Web Container Setup",
+        "GA4 Event Tag Event Schema Configuration"
+      ],
+      "Text": "",
+      "Headers": [
+        "LinkedIn Conversions API Parameter",
+        "GA4 Field Name",
+        "GTM Data Layer Variable Name",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ConversionUrn conversion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "conversion_rule_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.conversion_rule_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Conversion Event Time conversionHappenedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "conversion_happened_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.conversion_happened_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Event Id eventId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "event_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.event_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sha256 Hashed Email SHA256_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.sha256_email_address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.sha256_email_address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*1 of these IDs is required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "First-party Click ID LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.linkedinFirstPartyId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.linkedinFirstPartyId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*1 of these IDs is required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Acxiom ID ACXIOM_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.acxiomID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.acxiomID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*1 of these IDs is required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IP Address PLAINTEXT_IP_ADDRESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.ip_address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.ip_address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*1 of these IDs is required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Google Ad ID GOOGLE_AID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.gaid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.gaid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "*1 of these IDs is required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "First Name firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.address.first_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.address.first_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Last Name lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.address.last_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.address.last_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Country Code countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.address.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.address.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company Name companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Title title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conversionValue conversionValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user_data.currency and user_data.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "eventModel.user_data.currency, eventModel.user_data.value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the GA4 Client",
+      "Anchor": "configure-the-ga4-client",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the GA4 Client"
+      ],
+      "Text": "The GTM server container comes with a default GA4 client that will listen for events configured with the GA4 Web Tag. Specifically, the GA4 client will listen to the /g/collect route on the tagging server URL and then sends the eventModel (which represents all the data from the conversion event) to the downstream \u2018LinkedIn | CAPI Tag\u2019. With the default GA4 client installed in your server container, you can proceed to the tag setup. If the default GA4 client is not installed, navigate to Clients \u003E New \u003E Edit, select Google Analytics: GA4, add a name, and save the changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "\u2018LinkedIn | CAPI Tag\u2019 is the server-side tag that converts the standard event model data from the GA4 client to the LinkedIn Conversions API event schema and sends the data to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "To easily send the conversion event data to LinkedIn, you must:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "Install the \u2018LinkedIn | CAPI Tag\u2019 from the Community Template Gallery.\nNavigate to Tags \u003E New \u003E Edit \u003E Community Template Gallery and select \u2018LinkedIn | CAPI Tag\u2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "Select the correct called \u2018LinkedIn | CAPI Tag\u2019 by LinkedIn-developers.\nConfigure this tag to be triggered by any events received by the GA4 client and sent to LinkedIn.\n3. To install this tag, you\u0027ll need the conversion rule ID and a LinkedIn API access token. See OAuth Token Generation documentation here and Postman Getting Started guide here. Click here to generate an access token now.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "The conversion rule ID can be found by navigating to the conversion rule in question within Campaign Manager, opening the settings page, and navigating to step 3. On this screen, select the option Use a tag manager, scroll down, and you\u2019ll see the ID under Conversion ID for Google Tag Manager. Paste both your access token and the conversion rule ID into the tag configuration page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "Once you have configured the above steps, you\u0027re set to begin streaming conversion events to LinkedIn\u2019s conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure the \u2018LinkedIn | CAPI Tag\u2019",
+      "Anchor": "configure-the-linkedin--capi-tag",
+      "SectionPath": [
+        "Configuration Steps",
+        "Configure the \u2018LinkedIn | CAPI Tag\u2019"
+      ],
+      "Text": "To test and inspect your setup, utilize Google Tag Manager\u2019s preview mode, which is available on both the web container and the server container.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

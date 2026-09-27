@@ -1,0 +1,1015 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide",
+  "Title": "Job Requisition API Migration Guide",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-support-resources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Requisition API Migration Guide",
+      "Anchor": "job-requisition-api-migration-guide",
+      "SectionPath": [],
+      "Text": "LinkedIn has released a new API endpoint, /jobRequisitions, to replace the older /simpleJobPostings API for job requisitions. This update helps keep job postings and job requisitions separate. Earlier, both were managed using the same API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Requisition API Migration Guide",
+      "Anchor": "job-requisition-api-migration-guide",
+      "SectionPath": [],
+      "Text": "As RSC partners, you are required to migrate to the new /jobRequisitions endpoint by July 31, 2027. Go through the following sections to learn more about the endpoint updates and migration guidelines.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Requisition API Migration Guide",
+      "Anchor": "job-requisition-api-migration-guide",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Requisition API Migration Guide",
+      "Anchor": "job-requisition-api-migration-guide",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job posting versus job requisition",
+      "Anchor": "job-posting-versus-job-requisition",
+      "SectionPath": [
+        "Job posting versus job requisition"
+      ],
+      "Text": "Job posting: A job ad that is shown to candidates on LinkedIn or other websites.\nJob requisition: An internal request used by recruiters or hiring managers to fill a job. It includes information like budget, job status, and approval details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job posting versus job requisition",
+      "Anchor": "job-posting-versus-job-requisition",
+      "SectionPath": [
+        "Job posting versus job requisition"
+      ],
+      "Text": "The following table summarizes the differences between job postings and job requisitions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job posting versus job requisition",
+      "Anchor": "job-posting-versus-job-requisition",
+      "SectionPath": [
+        "Job posting versus job requisition"
+      ],
+      "Text": "",
+      "Headers": [
+        "Aspect",
+        "Job posting",
+        "Job requisition"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Audience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "External candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal recruiters/hiring managers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Purpose",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attract job seekers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request and manage hiring needs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Visibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public job boards",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter (1CE)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of the separate APIs",
+      "Anchor": "benefits-of-the-separate-apis",
+      "SectionPath": [
+        "Benefits of the separate APIs"
+      ],
+      "Text": "Jobs used for One Click Export (1CE) function more like internal job requisitions and are not meant to be seen by the public on LinkedIn or other websites. Separating the APIs will",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of the separate APIs",
+      "Anchor": "benefits-of-the-separate-apis",
+      "SectionPath": [
+        "Benefits of the separate APIs"
+      ],
+      "Text": "To better serve RSC users\u0027 preference to manage sourcing at the Job Requisitions level and to 1CE candidates directly to requisitions.\nTo better capture this workflow intent and prepare for future integration enhancements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of the separate APIs",
+      "Anchor": "benefits-of-the-separate-apis",
+      "SectionPath": [
+        "Benefits of the separate APIs"
+      ],
+      "Text": "To streamline LinkedIn\u0027s job posting APIs and align with how RSC partners manage sourcing, all RSC partners must migrate from the previous Job Posting API to the new Job Requisitions API. Posting RSC (private) jobs using Job Posting API will not be supported in the new versioned APIs. Use the versioned Job Requisition API instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For One Click Export (1CE)",
+      "Anchor": "for-one-click-export-1ce",
+      "SectionPath": [
+        "Changes after switching APIs",
+        "For One Click Export (1CE)"
+      ],
+      "Text": "Old requisitions (private jobs) using /simpleJobPostings will still show up in the 1CE dropdown.\nNew requisitions using /jobRequisitions will also show up in the 1CE dropdown.\nWhen the new externalJobRequisitionId field value matches the old externalJobPostingId, only the Job Requisition will be shown and not the old Job Posting record. This keeps the requisition as one entry in the dropdown instead of creating duplicates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For ATS applications",
+      "Anchor": "for-ats-applications",
+      "SectionPath": [
+        "Changes after switching APIs",
+        "For ATS applications"
+      ],
+      "Text": "ATS applications created with the old API will still appear in LinkedIn Recruiter.\nNew or updated ATS applications will also appear, as long as they are linked to a job requisition/old private job posting using externalJobRequisitionId.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field mapping: /simpleJobPostings versus /jobRequisitions",
+      "Anchor": "field-mapping-simplejobpostings-versus-jobrequisitions",
+      "SectionPath": [
+        "Field mapping: /simpleJobPostings versus /jobRequisitions"
+      ],
+      "Text": "The following table compares the fields in the old and new APIs, and highlights new fields introduced in the /jobRequisitions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field mapping: /simpleJobPostings versus /jobRequisitions",
+      "Anchor": "field-mapping-simplejobpostings-versus-jobrequisitions",
+      "SectionPath": [
+        "Field mapping: /simpleJobPostings versus /jobRequisitions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field in /simpleJobPostings",
+        "Field in /jobRequisitions",
+        "New Field?",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalJobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the job requisition.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "requisitionStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current status of the job\u2014either OPEN or CLOSED.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accessRestricted (extension schema)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "accessRestricted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Marks the job as private (ACL-protected) or public.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job title shown on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the job role and responsibilities.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more geographic job locations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skillsDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "basicSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must-have skills and experience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "preferredSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nice-to-have skills in addition to basic skills.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tags that describe the job function or domain.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workplaceTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workplaceTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Work setting\u2014Remote, On-site, or Hybrid.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URNs representing relevant industries.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "compensation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Salary or wage details for the job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Level of experience required (e.g., Internship, Senior).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of employment\u2014Full-time, Part-time, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "requisitionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of requisition\u2014STANDARD or EVERGREEN. EVERGREEN must not include a parent requisition ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionOwnerFirstName, requisitionOwnerLastName, requisitionOwnerEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owners",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requisition owners with contact details.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "numberOfOpenings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total number of positions to be filled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "parentRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID of the parent requisition for evergreen hiring model.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the job was created in the partner system (epoch UTC).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when the job was last updated in the partner system (epoch UTC).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetedStartAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Preferred start date for candidates (epoch time, UTC).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "hiredCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of candidates hired for this requisition.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API request comparison",
+      "Anchor": "api-request-comparison",
+      "SectionPath": [
+        "API request comparison"
+      ],
+      "Text": "The differences between old and new API request bodies are the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Old API: /simpleJobPostings",
+      "Anchor": "old-api-simplejobpostings",
+      "SectionPath": [
+        "API request comparison",
+        "Old API: /simpleJobPostings"
+      ],
+      "Text": "This endpoint supported creating and syncing job postings for public listings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Old API: /simpleJobPostings",
+      "Anchor": "old-api-simplejobpostings",
+      "SectionPath": [
+        "API request comparison",
+        "Old API: /simpleJobPostings"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/v2/simpleJobPostings\u0027 \\\n--header \u0027x-restli-method: batch_create\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {TOKEN}\u0027 \\\n--data-raw \u0027{\n  \u0022elements\u0022: [\n    {\n      \u0022title\u0022: \u0022Example Job\u0022,\n      ...\n    }\n  ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "API request comparison",
+        "Old API: /simpleJobPostings",
+        "Request body"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022integrationContext\u0022: \u0022urn:li:organization:15180688\u0022,\n      \u0022externalJobPostingId\u0022: \u0022{{public_externalJobPostingId}}\u0022,\n      \u0022title\u0022: \u0022Technical Lead- Test\u0022,\n      \u0022description\u0022: \u0022Lorem Ipsum is simply dummy text...\u0022,\n      \u0022location\u0022: \u0022Sunnyvale, CA\u0022,\n      \u0022availability\u0022: \u0022PUBLIC\u0022,\n      \u0022jobPostingOperationType\u0022: \u0022CREATE\u0022,\n      \u0022industries\u0022: [\n        \u0022urn:li:industry:94\u0022,\n        \u0022urn:li:industry:127\u0022\n      ],\n      \u0022companyApplyUrl\u0022: \u0022http://localhost:5000/jobs\u0022,\n      \u0022listedAt\u0022: 1747088057000,\n      \u0022companyJobCode\u0022: \u0022RR\u0022,\n      \u0022skillsDescription\u0022: \u0022TECH\u0022,\n      \u0022requisitionOwnerFirstName\u0022: \u0022John\u0022,\n      \u0022requisitionOwnerLastName\u0022: \u0022Doe\u0022,\n      \u0022requisitionOwnerEmail\u0022: \u0022jdoe@abc.com\u0022,\n      \u0022sourceDomain\u0022: \u0022www.linkedin.com/careers\u0022,\n      \u0022categories\u0022: [\u0022eng\u0022],\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "This new endpoint supports job requisitions for internal tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202507\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202508\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202508.02\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202510\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202511\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202512\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New API: /jobRequisitions",
+      "Anchor": "new-api-jobrequisitions",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/jobRequisitions?ids[0].externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026ids[0].integrationContext=urn%3Ali%3Aorganization%3A15180688\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data-raw \u0027{",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request body",
+      "Anchor": "request-body-1",
+      "SectionPath": [
+        "API request comparison",
+        "New API: /jobRequisitions",
+        "Request body"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022externalJobRequisitionId=JDOE_BUG_BASH_0904_1_req\u0026integrationContext=urn:li:organization:15180688\u0022: {\n      \u0022accessRestricted\u0022: true,\n      \u0022title\u0022: \u0022test\u0022,\n      \u0022description\u0022: \u0022Develop and maintain backend services...\u0022,\n      \u0022externalCreatedAt\u0022: 1749166766000,\n      \u0022externalLastModifiedAt\u0022: 1749166766000,\n      \u0022targetedStartAt\u0022: 1749166766000,\n      \u0022categories\u0022: [\u0022ACCT\u0022, \u0022ADVR\u0022],\n      \u0022basicSkills\u0022: [\u0022Java\u0022, \u0022Spring Boot\u0022, \u0022Kafka\u0022],\n      \u0022preferredSkills\u0022: [\u0022Kubernetes\u0022, \u0022Microservices\u0022],\n      \u0022workplaceTypes\u0022: [\u0022Hybrid\u0022],\n      \u0022industries\u0022: [\u0022urn:li:industry:121\u0022],\n      \u0022employmentStatus\u0022: \u0022FULL_TIME\u0022,\n      \u0022experienceLevel\u0022: \u0022INTERNSHIP\u0022,\n      \u0022locations\u0022: [\n        {\n          \u0022locationName\u0022: \u0022SUNNYVALE, USA\u0022,\n          \u0022location[GeoUrn](../../DMA/taxonomy/geo.md)\u0022: \u0022urn:li:geo:117712\u0022,\n          \u0022locationType\u0022: \u0022PRIMARY\u0022\n        }\n      ],\n      \u0022compensation\u0022: {\n        \u0022visible\u0022: true,\n        \u0022compensations\u0022: [\n          {\n            \u0022period\u0022: \u0022MONTHLY\u0022,\n            \u0022type\u0022: \u0022COMMISSION\u0022,\n            \u0022value\u0022: {\n              \u0022exactAmount\u0022: {\n                \u0022currencyCode\u0022: \u0022INR\u0022,\n                \u0022amount\u0022: \u00221214145\u0022\n              }\n            }\n          },\n          {\n            \u0022period\u0022: \u0022HOURLY\u0022,\n            \u0022type\u0022: \u0022BASE_SALARY\u0022,\n            \u0022value\u0022: {\n              \u0022range\u0022: {\n                \u0022start\u0022: { \u0022currencyCode\u0022: \u0022INR\u0022, \u0022amount\u0022: \u002210000\u0022 },\n                \u0022end\u0022: { \u0022currencyCode\u0022: \u0022INR\u0022, \u0022amount\u0022: \u002215000\u0022 }\n              }\n            }\n          }\n        ]\n      },\n      \u0022owners\u0022: [\n        {\n          \u0022firstName\u0022: \u0022John\u0022,\n          \u0022lastName\u0022: \u0022Doe\u0022,\n          \u0022emailAddress\u0022: \u0022johndoe@example.com\u0022,\n          \u0022ownerType\u0022: \u0022PRIMARY\u0022\n        }\n      ],\n      \u0022requisitionStatus\u0022: \u0022OPEN\u0022,\n      \u0022numberOfOpenings\u0022: 3,\n      \u0022requisitionType\u0022: \u0022STANDARD\u0022,\n      \u0022parentRequisitionId\u0022: \u0022REQ-0000\u0022,\n      \u0022hiredCount\u0022: 0\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration guidelines",
+      "Anchor": "migration-guidelines",
+      "SectionPath": [
+        "Migration guidelines"
+      ],
+      "Text": "By July 31, 2027, ensure to",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration guidelines",
+      "Anchor": "migration-guidelines",
+      "SectionPath": [
+        "Migration guidelines"
+      ],
+      "Text": "use the /jobRequisitions API to create or update all old and new job requisitions.\nsubmit all new or updated ATS applications via the latest version of the atsApplications API, including the corresponding job requisition ID.\ndiscontinue all traffic to unversioned atsApplications and simpleJobPostings endpoints for job requisitions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration guidelines",
+      "Anchor": "migration-guidelines",
+      "SectionPath": [
+        "Migration guidelines"
+      ],
+      "Text": "Follow the guidelines below to use the appropriate endpoints for creating, updating, and syncing different jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating job requisitions",
+      "Anchor": "creating-job-requisitions",
+      "SectionPath": [
+        "Migration guidelines",
+        "Creating job requisitions"
+      ],
+      "Text": "To create a new job requisition in RSC 1CE, use the /jobRequisitions endpoint to submit the job details.\nTo define the template stages that all job applications can progress through, send a stage update using the /jobRequisitionStage endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating job requisitions",
+      "Anchor": "updating-job-requisitions",
+      "SectionPath": [
+        "Migration guidelines",
+        "Updating job requisitions"
+      ],
+      "Text": "To update an existing job, use the /jobRequisitions endpoint to submit the revised job requisition details.\nTo specify the application stages for a job requisition, include the relevant stages via the /jobRequisitionStage endpoint when creating or updating the job requisition.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Syncing ATS applications",
+      "Anchor": "syncing-ats-applications",
+      "SectionPath": [
+        "Migration guidelines",
+        "Syncing ATS applications"
+      ],
+      "Text": "To create a new application, include the required atsJobRequisitionId field and post the related job using the /jobRequisitions endpoint (atsJobRequisitionId is mandatory for any new atsApplication record).\nFor detailed information on syncing ATS applications, refer to Sync Applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Maintaining existing jobs",
+      "Anchor": "maintaining-existing-jobs",
+      "SectionPath": [
+        "Migration guidelines",
+        "Maintaining existing jobs"
+      ],
+      "Text": "Jobs previously posted via /simpleJobPostings remain visible in RSC 1CE.\nTo update those jobs using /jobRequisitions, ensure the externalJobRequisitionId matches the old externalJobPostingId.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling public job posts",
+      "Anchor": "handling-public-job-posts",
+      "SectionPath": [
+        "Migration guidelines",
+        "Handling public job posts"
+      ],
+      "Text": "For job requisition (private) jobs syncing, use /jobRequisitions. For public job syncing, use versioned /simpleJobPostings endpoint.\nOnce you begin private job syncing via /jobRequisitions, do not use the old endpoint /simpleJobPostings for any private/internal job sync after migration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling One Click Export",
+      "Anchor": "handling-one-click-export",
+      "SectionPath": [
+        "Migration guidelines",
+        "Handling One Click Export"
+      ],
+      "Text": "Use the /exportedCandidate endpoint to retrieve exported candidates. For detailed information, see Retrieve Exported Candidates Overview. In the response, the values of the referenceEntityType field will be \u0022REQUISITION\u0022 and the referenceEntityId will be the job requisition ID that was used to export the candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Handling ACL",
+      "Anchor": "handling-acl",
+      "SectionPath": [
+        "Migration guidelines",
+        "Handling ACL"
+      ],
+      "Text": "To create a new ACL group, retrieve, update, or delete an existing ACL group, use /entityAcls with parameter entityType=JOB_REQUISITION.\nTo create, retrieve, update, or delete existing ACL assignees, use /entityAclAssignees.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

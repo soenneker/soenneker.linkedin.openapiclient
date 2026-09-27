@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// LeadGenForm entry point shown on the organization page.Documented type: LeadGenFormEntryPointRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The body property</summary>
+        /// <summary>Body of the entry point.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Body { get; set; }
@@ -22,15 +23,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Body { get; set; }
 #endif
-        /// <summary>The ctaType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CtaType { get; set; }
-#nullable restore
-#else
-        public string CtaType { get; set; }
-#endif
-        /// <summary>The headline property</summary>
+        /// <summary>Options for different CTA types shown in the entry point. They represent different types of inquiries for collecting leads through LeadGenForm. Value enums include: CONTACT_SALESREQUEST_DEMOSTART_FREE_TRIALREQUEST_MORE_INFOGET_STARTEDDocumented type: LeadGenFormEntryPointCallToActionTypeRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPointCtaType? CtaType { get; set; }
+        /// <summary>Headline of the entry point.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Headline { get; set; }
@@ -38,7 +33,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Headline { get; set; }
 #endif
-        /// <summary>The leadGenFormUrn property</summary>
+        /// <summary>URN that references the LeadGenForm that will be rendered from the entry point.Documented type: VersionedLeadGenFormUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeadGenFormUrn { get; set; }
@@ -46,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string LeadGenFormUrn { get; set; }
 #endif
-        /// <summary>The visible property</summary>
+        /// <summary>Whether or not the entry point is visible on the organization page. Default is falseDocumented type: booleanRequirement: Yes</summary>
         public bool? Visible { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPoint"/> and sets the default values.
@@ -74,7 +69,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "body", n => { Body = n.GetStringValue(); } },
-                { "ctaType", n => { CtaType = n.GetStringValue(); } },
+                { "ctaType", n => { CtaType = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPointCtaType>(); } },
                 { "headline", n => { Headline = n.GetStringValue(); } },
                 { "leadGenFormUrn", n => { LeadGenFormUrn = n.GetStringValue(); } },
                 { "visible", n => { Visible = n.GetBoolValue(); } },
@@ -88,7 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
-            writer.WriteStringValue("ctaType", CtaType);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsGet200ResponseLeadGenFormEntryPointCtaType>("ctaType", CtaType);
             writer.WriteStringValue("headline", Headline);
             writer.WriteStringValue("leadGenFormUrn", LeadGenFormUrn);
             writer.WriteBoolValue("visible", Visible);

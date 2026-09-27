@@ -1,0 +1,211 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/support-content-topic",
+  "Title": "Support for ContentTopic in ComplianceEvents",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/support-content-topic",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Support for ContentTopic in ComplianceEvents",
+      "Anchor": "support-for-contenttopic-in-complianceevents",
+      "SectionPath": [],
+      "Text": "When content is shared, commented or liked from\u00A0\u00A0\u0022What people are talking about now\u0022 section on Linkedin.com application, the target of the activity is a ContentTopic Urn of type \u0022urn:li:contentTopic:{id}\u0022 . This object is now expanded in Compliance Events API. The schema and example output is shown below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ContentTopic URN Schema",
+      "Anchor": "contenttopic-urn-schema",
+      "SectionPath": [
+        "ContentTopic URN Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Object Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "auditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "ChangeAuditStamps for this ContentTopic.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A one-liner description of what this ContentTopic is about.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of this content topic.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "imageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional DigitalmediaAssetUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset?context=linkedin/compliance/context"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An image urn associated with this content topic.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?context=linkedin/compliance/context#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The Locale for the String fields (name, headline, summary)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of this content topic",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional\u00A0enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of the content topic. Used to denote where in the workflow this content topic is. Can be one of following:DRAFT: This interest is not ready for prime time yet. It is a work in progressACTIVE*: This interest is active. LinkedIn members can interact with it.EXPIRED: An editor has determined that this Interest is expired, or no longer relevant to any member.FLAGGED: This interest is flagged for review. Most likely the items in the Interest Feed are spammy / low quality / offensive*In Compliance Events API scenario, you should only experience: ACTIVE.",
+            "Links": [],
+            "Values": [
+              "DRAFT: This interest is not ready for prime time yet. It is a work in progress",
+              "ACTIVE*: This interest is active. LinkedIn members can interact with it.",
+              "EXPIRED: An editor has determined that this Interest is expired, or no longer relevant to any member.",
+              "FLAGGED: This interest is flagged for review. Most likely the items in the Interest Feed are spammy / low quality / offensive*In Compliance Events API scenario, you should only experience: ACTIVE."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A short description of what this ContentTopic is about. Usually no more than a paragraph.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "schema format of Content Topic urn decoration response",
+      "Anchor": "schema-format-of-content-topic-urn-decoration-response",
+      "SectionPath": [
+        "schema format of Content Topic urn decoration response"
+      ],
+      "Text": "{\n    \u0022object\u0022: \u0022urn:li:contentTopic:1234567\u0022, \n    \u0022object~\u0022: {\n        \u0022auditStamps\u0022: {\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:XXXXX\u0022, \n                \u0022time\u0022: 1533174398091\n            }, \n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:XXXXX\u0022, \n                \u0022time\u0022: 1533178068519\n            }\n        }, \n        \u0022headline\u0022: \u0022Testing ContentTopic\u0022, \n        \u0022id\u0022: 1234567, \n        \u0022imageUrn\u0022: \u0022urn:li:digitalmediaAsset:C4E1AAQFOlhSrzsV6GQ\u0022, \n        \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022, \n            \u0022language\u0022: \u0022en\u0022\n        }, \n        \u0022name\u0022: \u0022Test ContentTopic\u0022, \n        \u0022state\u0022: \u0022ACTIVE\u0022, \n        \u0022summary\u0022: \u0022\u003Cp\u003EThis is a test content\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "schema format of Content Topic urn decoration response",
+      "Anchor": "schema-format-of-content-topic-urn-decoration-response",
+      "SectionPath": [
+        "schema format of Content Topic urn decoration response"
+      ],
+      "Text": "ContentTopic URNs appear mostly in\u00A0object\u00A0fields in Social Actions and UGC Post resources.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

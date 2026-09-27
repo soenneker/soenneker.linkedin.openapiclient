@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public int? Count { get; set; }
+        public long? Count { get; set; }
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,9 +25,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponsePagingLinksItem> Links { get; set; }
 #endif
         /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        public long? Start { get; set; }
         /// <summary>The total property</summary>
-        public int? Total { get; set; }
+        public long? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponsePaging"/> and sets the default values.
         /// </summary>
@@ -53,10 +53,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
                 { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponsePagingLinksItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponsePagingLinksItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "start", n => { Start = n.GetIntValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,10 +66,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
+            writer.WriteLongValue("count", Count);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityEmployeeBroadcastAnalyticsGet200ResponsePagingLinksItem>("links", Links);
-            writer.WriteIntValue("start", Start);
-            writer.WriteIntValue("total", Total);
+            writer.WriteLongValue("start", Start);
+            writer.WriteLongValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

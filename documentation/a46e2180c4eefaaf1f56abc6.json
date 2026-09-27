@@ -1,0 +1,1127 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+  "Title": "Media Planning",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Media Planning",
+      "Anchor": "media-planning",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Planning",
+      "Anchor": "media-planning",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Media Planning API can help Media Planners understand the reach and ROI that LinkedIn can offer to their client. It allows them to make budget allocation recommendations with confidence and know how to improve the results, even before spending the first dollar.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Media Planning API helps Media Planners make that decision by giving the forecasted reach, impressions, and lead curves over the budget (and more in the future, like clicks), based on inputs provided, like the targeted audience, campaign start/end date, and more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This is a private API that\u0027s available to qualified developers who meet additional criteria for access. To learn more about eligibility qualifications and how to request access, please see the FAQ. If you wish to apply for access, submit the application survey.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Media Planning API requires a 3-legged OAuth member token, and your developer application needs to be provisioned with the Media Planning API product. Once you have been approved to access, you can use any valid member access token associated with the authenticated user with any valid scope permissions for member authentication. If there\u0027s no valid member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like r_ads which will be required to fetch authenticated user\u0027s ad accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "This API is application-specific; hence, explicit member consent is not required. Any valid member access token associated with the authenticated user can be used, and you don\u0027t need to add any additional permission in the scope of your Oauth2 flow for authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "request Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#request-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "request Object that wraps the entire request body. See details below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored ad account URN where the authenticated user has a valid ad account user role.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#targetingcriteria-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object defines the audience that the desired insights are for. This is a boolean expression of ad targeting facets and entities that identifies the member attributes to be included/excluded in the audience. See details below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The currency units for the forecasting curve.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional(default=USD)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "objectiveType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (Enum)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The objective of your marketing campaign. Refer objectivetype.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "optimizationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (Enum)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The marketing results that you\u2019re optimizing for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=MAX_REACH for BRAND_AWARENESS objectiveType, default=MAX_VIDEO_VIEW for VIDEO_VIEW objective type, and default=MAX_LEAD for LEAD_GENERATION objective type)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startDateOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-09#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=today\u2019s date in UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endDateOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan?view=li-lms-2026-09#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The end date of the media plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=90 days since today\u2019s date in UTC)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetBudgetMicros",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A specific budget that the caller is interested in. More metrics will be returned about this point.Note: This budget is represented in micros for precision ($1 USD = 1000000 micros)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=none)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enableAudienceNetwork",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn Audience Network status. (It\u2019s enabled if true and disabled if false.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=true)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enableAudienceExpansion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Audience Expansion status. (It\u2019s enabled if true and disabled if false.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=true)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ctvOnly",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forecast for connected TV only campaigns if true. This only be supported if objective is BRAND_AWARENESS and enableAudienceNetwork is set to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=false)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "Ad Account User Roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "To make a request on behalf of a given user, you should fetch that authenticated user\u2019s ad accounts and select one of their ad accounts. Refer Find Ad Accounts By Authenticated User to find and select an ad account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "targetingCriteria provides a generic AND / OR construct to include and exclude different adTargetingFacets when defining the audience. The targeting criteria can be composed of LinkedIn Audience Attributes and/or existing matched audience Ad Segments (Contact/Company lists). See Ad Segments to fetch existing matched audience ad segment URNs that can be passed to urn:li:adTargetingFacet:audienceMatchingSegments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "The basic structure for a targetingCriteria object is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "{\n    \u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:{facet1}\u0022:[\n                            \u0022{facet1_value1}\u0022,\n                            \u0022{facet1_value2}\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:{facet2}\u0022:[\n                            \u0022{facet2_value1}\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:{facet3}\u0022:[\n                            \u0022{facet3_value1}\u0022,\n                            \u0022{facet3_value2}\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n            \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:{facet4}\u0022:[\n                    \u0022{facet4_value1}\u0022\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "Refer the below links for additional details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "targetingCriteria object\nDescriptive examples for targetingCriteria object\nList of supported adTargetingFacets in targetingCriteria object\nAd Targeting Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations and Minimum Requirements",
+      "Anchor": "validations-and-minimum-requirements",
+      "SectionPath": [
+        "Request Schema",
+        "Validations and Minimum Requirements"
+      ],
+      "Text": "A sponsored ad account ID must be provided in the request. Authenticated members must have access to that sponsored ad account (any role VIEWER or above)..\nFor the MVP version of the API, the only currency supported as input is USD (default).\nAn objectiveType must always be present as input in the API request. Current supported values are \u0022BRAND_AWARENESS\u0022, \u0022VIDEO_VIEW\u0022, and \u0022LEAD_GENERATION\u0022.\nThe optimizationType values supported are \u0022MAX_REACH\u0022, \u0022MAX_IMPRESSION\u0022, \u0022MAX_VIDEO_VIEW\u0022 and \u0022MAX_LEAD\u0022. This is an optional input in the API request and defaults to \u0022MAX_REACH\u0022 for the objectiveType \u0022BRAND_AWARENESS\u0022, \u0022MAX_VIDEO_VIEW\u0022 for the objectiveType \u0022VIDEO_VIEW\u0022, and \u0022MAX_LEAD\u0022 for the objectiveType \u0022LEAD_GENERATION\u0022.\nThe minimum target budget to be input for a single point metric corresponding to that budget is $100 USD. The upper bound of the metric curve is dynamic instead of fixed, any request with budget value exceeding the upper bound won\u0027t be served.\nThe total audience counts for the Targeting Criteria provided should be at least 300 for the API to predict reach metrics.\nThe targeting criteria provided in the request should always have a geo or profileGeo criteria in the input.\nThe start date and end date are optional inputs and defaults to today\u2019s date in UTC and 90 days after respectively. If set explicitly, both the dates must be in the future and the duration between them shouldn\u0027t exceed 90 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations and Minimum Requirements",
+      "Anchor": "validations-and-minimum-requirements",
+      "SectionPath": [
+        "Request Schema",
+        "Validations and Minimum Requirements"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations and Minimum Requirements",
+      "Anchor": "validations-and-minimum-requirements",
+      "SectionPath": [
+        "Request Schema",
+        "Validations and Minimum Requirements"
+      ],
+      "Text": "Applications utilizing LinkedIn\u0027s targeting capabilities are required to clearly and prominently display a notice in their user interface notifying advertisers that they can\u0027t use LinkedIn to discriminate against members based on personal characteristics. The notice should include the following text:\nLinkedIn tools may not be used to discriminate based on personal characteristics like gender, age, race, or ethnicity. Learn more.\nApplications utilizing the Media Planning API need to clearly and prominently display notice in their user interface notifying advertisers the forecasted results are directional estimates and don\u0027t guarantee performance. The notice should include the following text: The forecasted results are directional estimates and don\u0027t guarantee the actual performance of campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "All API requests are represented in Rest.li Protocol 2.0.0 and require the header: X-Restli-Protocol-Version: 2.0.0. Read the Protocol Versions document to learn about using Rest.li Protocol 2.0.0.\nTo generate Reach/Reach Percentage curve use action=forecastReaches, to generate Impression/Average Lifetime Frequency curve action=forecastImpressions and to generate Lead Generation curve use action=forecastLeads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/mediaPlanning?action=forecastReaches",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022request\u0022: {\n        \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n        \u0022targetingCriteria\u0022: {\n            \u0022include\u0022: {\n                \u0022and\u0022: [\n                    {\n                        \u0022or\u0022: {\n                            \u0022urn:li:adTargetingFacet:locations\u0022: [\n                                \u0022urn:li:geo:105080838\u0022\n                            ]\n                        }\n                    },\n                    {\n                        \u0022or\u0022: {\n                            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                                \u0022urn:li:locale:en_US\u0022\n                            ]\n                        }\n                    },\n                    {\n                        \u0022or\u0022: {\n                            \u0022urn:li:adTargetingFacet:skills\u0022: [\n                                \u0022urn:li:skill:236\u0022,\n                                \u0022urn:li:skill:242\u0022,\n                                \u0022urn:li:skill:252\u0022\n                            ]\n                        }\n                    }\n                ]\n            }\n        },\n        \u0022targetBudgetMicros\u0022: 300000000,\n        \u0022optimizationType\u0022: \u0022MAX_IMPRESSION\u0022,\n        \u0022objectiveType\u0022: \u0022VIDEO_VIEW\u0022,\n        \u0022startDateOn\u0022: {\n            \u0022day\u0022: 20,\n            \u0022month\u0022: 8,\n            \u0022year\u0022: 2025\n        },\n        \u0022endDateOn\u0022: {\n            \u0022day\u0022: 25,\n            \u0022month\u0022: 9,\n            \u0022year\u0022: 2025\n        },\n        \u0022enableAudienceNetwork\u0022: true,\n        \u0022enableAudienceExpansion\u0022: true\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/mediaPlanning?action=forecastReaches\u0027 \\\n--header \u0027X-RestLi-Method: action\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--data \u0027{\n    \u0022request\u0022: {\n        \u0022sponsoredAccountUrn\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n        \u0022targetingCriteria\u0022: {\n            \u0022include\u0022: {\n                \u0022and\u0022: [\n                    {\n                        \u0022or\u0022: {\n                            \u0022urn:li:adTargetingFacet:locations\u0022: [\n                                \u0022urn:li:geo:105080838\u0022\n                            ]\n                        }\n                    },\n                    {\n                        \u0022or\u0022: {\n                            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                                \u0022urn:li:locale:en_US\u0022\n                            ]\n                        }\n                    },\n                    {\n                        \u0022or\u0022: {\n                            \u0022urn:li:adTargetingFacet:skills\u0022: [\n                                \u0022urn:li:skill:236\u0022,\n                                \u0022urn:li:skill:242\u0022,\n                                \u0022urn:li:skill:252\u0022\n                            ]\n                        }\n                    }\n                ]\n            }\n        },\n        \u0022targetBudgetMicros\u0022: 300000000,\n        \u0022optimizationType\u0022: \u0022MAX_IMPRESSION\u0022,\n        \u0022objectiveType\u0022: \u0022VIDEO_VIEW\u0022,\n        \u0022startDateOn\u0022: {\n            \u0022day\u0022: 20,\n            \u0022month\u0022: 8,\n            \u0022year\u0022: 2025\n        },\n        \u0022endDateOn\u0022: {\n            \u0022day\u0022: 25,\n            \u0022month\u0022: 9,\n            \u0022year\u0022: 2025\n        },\n        \u0022enableAudienceNetwork\u0022: true,\n        \u0022enableAudienceExpansion\u0022: true\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reachCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the reach curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action= forecastReaches). The forecasted results are directional estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reachPercentageCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the reach percentage curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action= forecastReaches and enableAudienceExpansion=false). The forecasted results are directional estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impressionCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the impressions curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and reach would be on the y-axis. Optional(returned only when action= forecastImpressions). The forecasted results are directional estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "averageFrequency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Average Frequency is a single point value calculated by impression/reach assuming the single point budget in the request was used to forecast impression and reach results. It would be returned together with the impression curve if the forecasted impression is requested. Optional (returned when action=forecastImpressions and targetBudgetMicros is set in the input). The forecasted results are directional estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the lead generation curve. Will currently return 100 points and an additional point if an input targetBudget was provided. If we were illustrating the curve, budget would be on the x-axis and leads generated would be on the y-axis. Optional(returned only when action= forecastLeads). The forecasted results are directional estimates and don\u2019t guarantee the actual performance of campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerReach",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cost Per Reach is a single point value calculated by spend/reach assuming the single point budget in the request was used to forecast cost per each reach, currently supports USD only. The forecasted results are directional estimates and don\u0027t guarantee the actual performance of campaigns. NOTE: costPerReach is only supported for API Versions starting from February 2025 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerThousandImpressions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cost Per Thousand Impressions is a single point value calculated by (spend/impression)*1000, assuming the single point budget in the request was used to forecast cost per thousand impressions, currently supports USD only. The forecasted results are directional estimates and don\u0027t guarantee the actual performance of campaigns. NOTE: costPerThousandImpressions is only supported for API Versions starting from February 2025 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "costPerLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ForecastMetrics object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#forecastmetrics-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cost Per Lead is a single point value calculated by spend/lead assuming the single point budget in the request was used to forecast cost per each lead, currently supports USD only. The forecasted results are directional estimates and don\u0027t guarantee the actual performance of campaigns. NOTE: costPerLead is only supported for API Versions starting from February 2025 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ForecastMetrics Object",
+      "Anchor": "forecastmetrics-object",
+      "SectionPath": [
+        "Response Schema",
+        "ForecastMetrics Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "metricCurve",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array [MediaPlanningForecastDataPoint]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#mediaplanningforecastdatapoint-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The array of points along the reach, impressions, reachPercentage or averageFrequency curve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "singlePointMetric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array [MediaPlanningForecastDataPoint]]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api?view=li-lms-2026-09\u0026tabs=http#mediaplanningforecastdatapoint-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional metrics on a specific point (only returned when targetBudget in the request is populated).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MediaPlanningForecastDatapoint Object",
+      "Anchor": "mediaplanningforecastdatapoint-object",
+      "SectionPath": [
+        "Response Schema",
+        "MediaPlanningForecastDatapoint Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "budgetMicros",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The position on the budget axis of the curve. That is, how much budget is required to reach this point on the curve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The metric number on the curve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricUpper",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional, the upper bound of the metric.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "metricLower",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional, the lower bound of the metric.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022reachCurve\u0022: {\n            \u0022metricCurve\u0022: [\n                {\n                    \u0022metricValue\u0022: 21137.181640625,\n                    \u0022budgetMicros\u0022: 100000000\n                },\n                {\n                    \u0022metricValue\u0022: 22540.12109375,\n                    \u0022budgetMicros\u0022: 109020202\n                },\n                {\n                    \u0022metricValue\u0022: 23913.630859375,\n                    \u0022budgetMicros\u0022: 118040405\n                },\n                {\n                    \u0022metricValue\u0022: 25260.513671875,\n                    \u0022budgetMicros\u0022: 127060607\n                } \n                ... 96 other points\n            ],\n            \u0022singlePointMetric\u0022: {\n                \u0022metricValue\u0022: 21137.181640625,\n                \u0022budgetMicros\u0022: 100000000\n            }\n        },\n        \u0022costPerReach\u0022: {\n            \u0022singlePointMetric\u0022: {\n                \u0022budgetMicros\u0022: 100000000,\n                \u0022metricValue\u0022: 4.23\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Schema",
+        "Sample Response"
+      ],
+      "Text": "After fetching the required forecasts, you can save the targeting criteria used to plan for campaign planning with the Saved Audience Templates API. This allows you to activate them through the campaign API or the Campaign Manager User Interface.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: targetingAudienceInsights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the (Private) Media Planning API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller should have access to the Ad Account provided in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Ad Account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

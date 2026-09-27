@@ -1,0 +1,49 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data",
+  "Title": "Standardized Data",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/iab-categories",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/languages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/similar-entities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/skills",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Standardized Data",
+      "Anchor": "standardized-data",
+      "SectionPath": [],
+      "Text": "LinkedIn offers a set of APIs to grant access to standardized data across the platform. The available categories are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standardized Data",
+      "Anchor": "standardized-data",
+      "SectionPath": [],
+      "Text": "Degrees\nFields of Study\nFunctions\nIndustries\nLanguages\nLocations\nSeniorities\nSimilar Entities\nSkills\nTitles\nIAB Categories",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The atsCreatedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AtsCreatedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntitiesApplResume123AtsCreatedAt? AtsCreatedAt { get; set; }
 #nullable restore
 #else
-        public UntypedNode AtsCreatedAt { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntitiesApplResume123AtsCreatedAt AtsCreatedAt { get; set; }
 #endif
         /// <summary>The resumeFile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "atsCreatedAt", n => { AtsCreatedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "atsCreatedAt", n => { AtsCreatedAt = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntitiesApplResume123AtsCreatedAt>(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntitiesApplResume123AtsCreatedAt.CreateFromDiscriminatorValue); } },
                 { "resumeFile", n => { ResumeFile = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("atsCreatedAt", AtsCreatedAt);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncJobApplicationsResumeRequestEntitiesApplResume123AtsCreatedAt>("atsCreatedAt", AtsCreatedAt);
             writer.WriteStringValue("resumeFile", ResumeFile);
             writer.WriteAdditionalData(AdditionalData);
         }

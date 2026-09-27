@@ -1,0 +1,96 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+  "Title": "Invitations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Invitations",
+      "Anchor": "invitations",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is invitations . Currently, this resource captures all invitations acted on the behalf of the regulated members. This means an invitation sent by the regulated member will show up whereas an invitation received by the regulated member will not show up unless the member accept/decline the invitation. The methods available are: CREATE for invitations created via Invitations API, ACTION verifyAndCreate for invitations created or received via LinkedIn UI, PARTIAL_UPDATE , ACTION inviteeClosingInvitation , ACTION inviterClosingInvitation , ACTION purge , and DELETE .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations",
+      "Anchor": "invitations",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations",
+      "Anchor": "invitations",
+      "SectionPath": [],
+      "Text": "We do not currently capture address/contact book import.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations",
+      "Anchor": "invitations",
+      "SectionPath": [],
+      "Text": "Refer here for more information on invitations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Action verifyAndCreate - Send an Invitation via LinkedIn UI",
+      "Anchor": "action-verifyandcreate---send-an-invitation-via-linkedin-ui",
+      "SectionPath": [
+        "Action verifyAndCreate - Send an Invitation via LinkedIn UI"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CinviterID\u003E\u0022,\n    \u0022resourceId\u0022: \u00227030825461085577216\u0022,\n    \u0022activity\u0022: {\n        \u0022invitationV2\u0022: {\n            \u0022inviter\u0022: \u0022urn:li:person:\u003CinviterID\u003E\u0022,\n            \u0022invitee\u0022: \u0022urn:li:person:\u003CinviteeID\u003E\u0022,\n            \u0022trackingId\u0022:\u0022\u003C\u003E\u0022\n        }\n    },\n    \u0022method\u0022: \u0022ACTION\u0022,\n    \u0022configVersion\u0022: 7,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022methodName\u0022: \u0022verifyAndCreate\u0022,\n    \u0022resourceName\u0022: \u0022invitations\u0022,\n    \u0022resourceUri\u0022: \u0022/invitations\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CinviterID\u003E\u0022,\n    \u0022activityId\u0022: \u002290431a9a-2897-49cc-b0a0-b9a0292dbc04\u0022,\n    \u0022processedAt\u0022: 1676279446917,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022capturedAt\u0022: 1676279416795,\n    \u0022processedActivity\u0022: {\n        \u0022invitationV2\u0022: {\n            \u0022invitee~\u0022: {\n                \u0022localizedLastName\u0022: \u0022lastName\u0022,\n                \u0022firstName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022firstName\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022profilePicture\u0022: {...},\n                \u0022lastName\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022lastName\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022vanityName\u0022: \u0022vanityName\u0022,\n                \u0022localizedHeadline\u0022: \u0022Test Headline\u0022,\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Test Headline\u0022\n                    },\n                    \u0022preferredLocale\u0022: {\n                        \u0022country\u0022: \u0022US\u0022,\n                        \u0022language\u0022: \u0022en\u0022\n                    }\n                },\n                \u0022localizedFirstName\u0022: \u0022firstName\u0022\n            },\n            \u0022inviter\u0022: \u0022urn:li:person:\u003CinviterID\u003E\u0022,\n            \u0022inviter~\u0022: {\n                \u0022localizedLastName\u0022: \u0022lastName2\u0022,\n                \u0022firstName\u0022: {...},\n                \u0022profilePicture\u0022: {...},\n                \u0022lastName\u0022: {...},\n                \u0022vanityName\u0022: \u0022vanityName2\u0022,\n                \u0022localizedHeadline\u0022: \u0022Headline2\u0022,\n                \u0022headline\u0022: {...},\n                \u0022localizedFirstName\u0022: \u0022firstName2\u0022\n            },\n            \u0022invitee\u0022: \u0022urn:li:person:\u003CinviteeID\u003E\u0022\n        }\n    },\n    \u0022siblingActivities\u0022: [],\n    \u0022id\u0022: 1757310665\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "create invitation - Create an Invitation via Invitations API",
+      "Anchor": "create-invitation---create-an-invitation-via-invitations-api",
+      "SectionPath": [
+        "create invitation - Create an Invitation via Invitations API"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022invitee\u0022: \u0022urn:li:person:ZM4CYeotJo\u0022, \n        \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n        \u0022message\u0022: {\n            \u0022com.linkedin.invitations.InvitationMessage\u0022: {\n                \u0022body\u0022: \u0022Connect please!\u0022\n            }\n        }, \n        \u0022trackingId\u0022: \u0022M\\u00f3]e3\\u009dL\\u00af\\u008fuN^M\\u00ee\\u00eb\\u00c0\u0022\n    }, \n    \u0022activityId\u0022: \u002212356788990000\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n    \u0022capturedAt\u0022: 1496261559612, \n    \u0022configVersion\u0022: 6, \n    \u0022id\u0022: 46843, \n    \u0022method\u0022: \u0022CREATE\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n    \u0022processedActivity\u0022: {\n        \u0022invitee\u0022: \u0022urn:li:person:ZM4CYeotJo\u0022, \n        \u0022invitee~\u0022: {\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bob\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022headline\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Software Engineer at LinkedIn\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Smith\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }, \n        \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n        \u0022inviter~\u0022: {\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022John\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022headline\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Developer\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Doe\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }\n    }, \n    \u0022processedAt\u0022: 1496261577610, \n    \u0022resourceId\u0022: \u0022urn:li:invitation:6275775843683840000\u0022, \n    \u0022resourceName\u0022: \u0022invitations\u0022, \n    \u0022resourceUri\u0022: \u0022/invitations/urn:li:invitation:6275775843683840000\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "action inviterClosingInvitation - withdraw an invitation",
+      "Anchor": "action-inviterclosinginvitation---withdraw-an-invitation",
+      "SectionPath": [
+        "action inviterClosingInvitation - withdraw an invitation"
+      ],
+      "Text": "{\n    \u0022activity\u0022: {\n        \u0022inviteActionData\u0022: [\n            {\n                \u0022invitationId\u0022: \u0022urn:li:invitation:6230172048157614080\u0022\n            }\n        ], \n        \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n        \u0022inviterActionType\u0022: \u0022WITHDRAW\u0022\n    }, \n    \u0022activityId\u0022: \u0022f8b05048-66e4-46bc-8653-f9fe6f9f3719\u0022, \n    \u0022actor\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n    \u0022capturedAt\u0022: 1496417998332, \n    \u0022configVersion\u0022: 5, \n    \u0022id\u0022: 51411, \n    \u0022method\u0022: \u0022ACTION\u0022, \n    \u0022methodName\u0022: \u0022inviterClosingInvitation\u0022, \n    \u0022owner\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n    \u0022processedActivity\u0022: {\n        \u0022inviteActionData\u0022: [\n            {\n                \u0022invitationId\u0022: \u0022urn:li:invitation:6230172048157614080\u0022, \n                \u0022invitationId~\u0022: {\n                    \u0022created\u0022: 1485388767467, \n                    \u0022invitee\u0022: \u0022urn:li:person:RT7VAAk2nr\u0022, \n                    \u0022invitee~\u0022: {\n                        \u0022firstName\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Doe\u0022\n                            }, \n                            \u0022preferredLocale\u0022: {\n                                \u0022country\u0022: \u0022US\u0022, \n                                \u0022language\u0022: \u0022en\u0022\n                            }\n                        }, \n                        \u0022headline\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022developer\u0022\n                            }, \n                            \u0022preferredLocale\u0022: {\n                                \u0022country\u0022: \u0022US\u0022, \n                                \u0022language\u0022: \u0022en\u0022\n                            }\n                        }, \n                        \u0022lastName\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022John\u0022\n                            }, \n                            \u0022preferredLocale\u0022: {\n                                \u0022country\u0022: \u0022US\u0022, \n                                \u0022language\u0022: \u0022en\u0022\n                            }\n                        }\n                    }, \n                    \u0022lastModified\u0022: 1496417998290, \n                    \u0022sentAt\u0022: 1485388791605\n                }\n            }\n        ], \n        \u0022inviter\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022, \n        \u0022inviterActionType\u0022: \u0022WITHDRAW\u0022, \n        \u0022inviter~\u0022: {\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Bob\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022headline\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022LinkedIn Engineer\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }, \n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Smith\u0022\n                }, \n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022, \n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }\n    }, \n    \u0022processedAt\u0022: 1496418019786, \n    \u0022resourceId\u0022: \u0022\u0022, \n    \u0022resourceName\u0022: \u0022invitations\u0022, \n    \u0022resourceUri\u0022: \u0022/invitations\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

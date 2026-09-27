@@ -1,0 +1,464 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-facets",
+  "Title": "targetingFacets Object",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "targetingFacets Object",
+      "Anchor": "targetingfacets-object",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingFacets Object",
+      "Anchor": "targetingfacets-object",
+      "SectionPath": [],
+      "Text": "This page is deprecated. Please refer targetingCriteria and targetingCriteria facet URNs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingFacets Object",
+      "Anchor": "targetingfacets-object",
+      "SectionPath": [],
+      "Text": "LinkedIn uses member facets to define a segment of members who will be either included or excluded from an advertising campaign\u0027s targeting. A member belongs to the segment if the member matches at least one of the specified values for each non-empty field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingFacets Object",
+      "Anchor": "targetingfacets-object",
+      "SectionPath": [],
+      "Text": "The following table shows all the targeting facets available for targeting. All facets will default to empty. If an array-based criterion is associated with an empty array of values, whether explicitly or implicitly due to the default, it will be ignored. The same holds for gender; if no value is specified, it will be irrelevant to the process for determining whether a member is within the targeted audience. Note that some values can be inferred, rather than having been explicitly provided by a member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "targetingFacets Object",
+      "Anchor": "targetingfacets-object",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "audienceMatchingSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdSegmentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For ex: [\u0022urn:li:adSegment:10001\u0022]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "retargetingSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdSegmentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For ex: [\u0022urn:li:adSegment:10001\u0022]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ageRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AgeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Age ranges to match against member. Valid AgeRange enum values: AGE_18_24 - Age 18 ot 24 years, inclusive AGE_25_34 - Age 25 to 34 years, inclusive AGE_35_54 - Age 35 to 54 years, inclusive AGE_55_PLUS - Age 55 and up",
+            "Links": [],
+            "Values": [
+              "AGE_18_24 - Age 18 ot 24 years, inclusive",
+              "AGE_25_34 - Age 25 to 34 years, inclusive",
+              "AGE_35_54 - Age 35 to 54 years, inclusive",
+              "AGE_55_PLUS - Age 55 and up"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Degree URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Educational degrees attained to match against those of the member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Company URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Specific companies to match against member\u0027s current employer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldsOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of FieldOfStudy URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Fields of study to match against those listed by the member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followedCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Company URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specific companies to match against those the member is following.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "genders",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Gender",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Genders to match against member.\u00A0Valid Gender values: MALE FEMALE",
+            "Links": [],
+            "Values": [
+              "MALE",
+              "FEMALE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Group URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn groups to match against the member\u0027s group memberships.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Industry URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industries to be targeted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Interface locales to be targeted. Currently limited to one locale.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Function URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Top level groupings of supertitles to be targeted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of valid location-type URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location to be targeted. The URNs do not need to all be of the same type. The permitted URN types are: countryGroup country state region Location is a union of member\u0027s current IP location and his/her profile location.",
+            "Links": [],
+            "Values": [
+              "countryGroup",
+              "country",
+              "state",
+              "region"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "profileLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of valid location-type URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The values are similar to \u0022locations\u0022, however, profileLocation is purely based on the information provided on a member\u0027s profile.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schools",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of School URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Schools to match against the member\u0027s listed schools, both past and present.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seniorities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Seniority URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seniorities to be targeted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Skill URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Skills to match against the member\u0027s listed skills.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "staffCountRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of StaffCountRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization sizes to be targeted. Valid StaffCountRange enum values: SIZE_1 - A single staff member. SIZE_2_TO_10 - A staff of 2 to 10. SIZE_11_TO_50 - A staff of 11 to 50. SIZE_51_TO_200 - A staff of 51 to 200. SIZE_201_TO_500 - A staff of 201 to 500. SIZE_501_TO_1000 - A staff of 501 to 1000. SIZE_1001_TO_5000 - A staff of 1001 to 5000. SIZE_5001_TO_10000 - A staff of 5001 to 10000. SIZE_10001_OR_MORE - A staff of 10001 or more.",
+            "Links": [],
+            "Values": [
+              "SIZE_1 - A single staff member.",
+              "SIZE_2_TO_10 - A staff of 2 to 10.",
+              "SIZE_11_TO_50 - A staff of 11 to 50.",
+              "SIZE_51_TO_200 - A staff of 51 to 200.",
+              "SIZE_201_TO_500 - A staff of 201 to 500.",
+              "SIZE_501_TO_1000 - A staff of 501 to 1000.",
+              "SIZE_1001_TO_5000 - A staff of 1001 to 5000.",
+              "SIZE_5001_TO_10000 - A staff of 5001 to 10000.",
+              "SIZE_10001_OR_MORE - A staff of 10001 or more."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "titles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Title URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job titles to match against the member\u0027s current title.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "yearsOfExperienceRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive range of years of experience of the member. Valid numbers are 1 to 12. Number 12 is only allowed for lower bound and when upper bound is omitted, which means 12\u002B. Lower bound is mandatory, but upper is optional with unlimited as default. Represents the inclusive (greater than or equal) value in which to start the range. An unset field indicates an open range; for example, if end is 5, it means everything less than or equal to 5.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "yearsOfExperienceRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (less than or equal) value in which to end the range. This field is optional. An unset field indicates an open range; for example if start is 2 it means everything greater than or equal to 2.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

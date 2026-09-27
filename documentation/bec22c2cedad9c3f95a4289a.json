@@ -1,0 +1,332 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+  "Title": "Integration Requirements for Media Planning",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/integration-requirements-media-planning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-plan",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/media-planning/media-planning-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Media Planning",
+      "Anchor": "integration-requirements-for-media-planning",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Media Planning",
+      "Anchor": "integration-requirements-for-media-planning",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Media Planning",
+      "Anchor": "integration-requirements-for-media-planning",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Media Planning program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Media Planning",
+      "Anchor": "integration-requirements-for-media-planning",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Media Planning",
+      "Anchor": "integration-requirements-for-media-planning",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn can suggest modifications which should be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration with minimum permission scopes and consent screen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me) and detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry and ability to use refresh tokens to renew access tokens to extend beyond their expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and re-trigger OAuth Flow.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to have consistent oauth2 scope permissions to avoid token conflicts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media Planning",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Sponsored Ad Accounts (id, name, status) for the logged in user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to allow users to select one of the fetched ad accounts and the selected ad account should be then passed to subsequent API requests metadata.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to input combination of at least three targeting facets. for example: age, gender, industries, job functions, titles, skills, interests etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to input target budget, start and end dates for forecasting.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to select an Objective Type(mandatory) and an Optimization Type(optional) value as input.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to enable and disable LinkedIn Audience Network and LinkedIn Audience Expansion as inputs to forecast for campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability that you require to input one or more geo location urn and throw validation error if no geo location selected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-108",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to return points from at least one metric curve(reach/impressions/lead/reach percentage) in Media Planning API response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-109",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate error handling and user input validation, especially when audience is under 300, input budget in less than $100 or start/end date range is invalid. Note: The start date and end date are optional inputs and defaults to today\u0027s date in UTC and 90 days after respectively. If set explicitly, both the dates must be in the future and the duration between them should not exceed 90 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Saved Audience Templates",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to save the ad targeting criteria (used to generate Media Plan) in a new template in the selected ad account and allow user to input its name and description.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all available previously saved ad targeting templates in the selected ad account with name, desc and targeting criteria.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to update the ad targeting criteria (used to generate Media Plan) in an existing template saved in the selected ad account with name, desc, targetingCriteria.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MP-204",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that saved templates are ready for activation in campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

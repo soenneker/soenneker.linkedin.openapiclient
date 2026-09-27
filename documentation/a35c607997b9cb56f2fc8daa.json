@@ -1,0 +1,472 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+  "Title": "Tutorial: Configure Automated User Management for LinkedIn Learning via SCIM",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The System for Cross-domain Identity Management (SCIM) specification is designed to make managing user identities in cloud-based applications and services like LinkedIn Learning easier. By utilizing SCIM, you can automate user provisioning and de-provisioning and keep user attributes and group memberships up to date with your internal systems.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "LinkedIn Learning currently supports SCIM integrations with the following Identity Providers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Azure Active Directory\nOkta",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Capabilities Supported",
+      "Anchor": "capabilities-supported",
+      "SectionPath": [
+        "Capabilities Supported"
+      ],
+      "Text": "Create user profiles and assign licenses in LinkedIn Learning\nRemove user licenses in LinkedIn Learning when they do not require access anymore\nKeep user attributes synchronized between your Identity Provider and LinkedIn Learning\nProvision groups and group memberships in LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Features and Functionality",
+      "Anchor": "features-and-functionality",
+      "SectionPath": [
+        "Capabilities Supported",
+        "Features and Functionality"
+      ],
+      "Text": "Below are the list of SCIM features LinkedIn supports as of February 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Features and Functionality",
+      "Anchor": "features-and-functionality",
+      "SectionPath": [
+        "Capabilities Supported",
+        "Features and Functionality"
+      ],
+      "Text": "",
+      "Headers": [
+        "Functionality",
+        "Supported?"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Automatically add users and assign standard attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Assign licenses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Revoke licenses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Assign permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Automatically update user attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Change or revoke permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Delete users",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Add users to groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Remove users from groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Assign/remove users from groups based on attribute value(s) and/or pre-set conditions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Access rules based on attribute value(s) and/or pre-set conditions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCIM \u002B SSO Login Enabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Large scale group sync (10k \u003E)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Before implementing SCIM for LinkedIn Learning, you must already have the following prerequisites:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "A supported Identity Provider (Azure AD or Okta)\nAdmin access to your Identity Provider\nLinkedIn Learning admin access\nAccurate user data in LinkedIn Learning. See the appendix for instructions on cleaning up your user data if necessary for existing Learning accounts.\nSingle Sign-on enabled in LinkedIn Learning (preferred)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning"
+      ],
+      "Text": "LinkedIn Learning currently supports SCIM integrations with Azure AD and Okta. Please follow the detailed instructions for your relevant Identity Provider to configure automatic provisioning for your organization:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning"
+      ],
+      "Text": "Configure SCIM Automated User Management - Azure AD\nConfigure SCIM Automated User Management - Okta",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning"
+      ],
+      "Text": "If you are interested in utilizing a SCIM integration outside of the supported Identity Providers, please let your LinkedIn Customer Success Manager know so we can gauge interest for future enhancements and partnerships.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning to Support SCIM Provisioning",
+      "Anchor": "configure-linkedin-learning-to-support-scim-provisioning",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning"
+      ],
+      "Text": "It\u0027s important to be cautious when making any changes to the Azure AD / Okta / One Login groups or dynamic groups in scope after completing the integration. To avoid any sync issues, make sure to stop the provisioning tool before proceeding. Turn it back on once you\u0027re ready to sync again. If you have any doubts or questions, don\u0027t hesitate to consult with a Technical Consultant.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate SCIM Token",
+      "Anchor": "generate-scim-token",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning",
+        "Generate SCIM Token"
+      ],
+      "Text": "LinkedIn Learning utilizes a bearer token for SCIM authentication, which can be generated in the interface by a Full Admin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate SCIM Token",
+      "Anchor": "generate-scim-token",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning",
+        "Generate SCIM Token"
+      ],
+      "Text": "SCIM base URL = https://api.linkedin.com/scim",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate SCIM Token",
+      "Anchor": "generate-scim-token",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning",
+        "Generate SCIM Token"
+      ],
+      "Text": "To generate a SCIM token in LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate SCIM Token",
+      "Anchor": "generate-scim-token",
+      "SectionPath": [
+        "Configure LinkedIn Learning to Support SCIM Provisioning",
+        "Generate SCIM Token"
+      ],
+      "Text": "Log into LinkedIn Learning as an admin and navigate to Me \u003E Authentication.\n\n\nClick on Automate user management and expand the Configure SCIM section.\n\n\n\n\n\nIn the Configure SCIM section, Select Add SCIM.\n\n\n\n\n\nEnter a name for the configuration and set Auto-assign licenses to On. Then, click Generate token.\n\n\n\n\n\nCopy the Access token for use in the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User List Clean Up",
+      "Anchor": "user-list-clean-up",
+      "SectionPath": [
+        "Appendix",
+        "User List Clean Up"
+      ],
+      "Text": "If you are implementing user provisioning for an existing LinkedIn Learning account, it is very important to ensure your existing user list in LinkedIn Learning is accurate and has the correct Primary Email Address and Unique User Identifier values for every user. To clean up your existing user list:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User List Clean Up",
+      "Anchor": "user-list-clean-up",
+      "SectionPath": [
+        "Appendix",
+        "User List Clean Up"
+      ],
+      "Text": "Log into LinkedIn Learning as an admin and navigate to the People tab.\n\nFilter the user list to only show Active and Invited users.\n\nClick Manage users via CSV \u003E Download filtered users via CSV.\n\nUnder User attributes, add Unique user id.\n\nClick Download CSV.\n\nIn the downloaded CSV file, correct the unique_user_id value for any user record that is incorrect. This value will need to match exactly the unique user identifier that is used for both Provisioning and Single Sign-on. This value is case sensitive.\n\nOnce you have ensured the unique_user_id values are correct, return to the People tab and click Manage users via CSV\u003E Upload Custom Attributes CSV.\n\nSelect your updated CSV file and click Upload. Invitation emails are only sent if you included the license status column in the CSV. If you followed the above instructions, no email notifications will be sent and the option can be ignored.\n\n\n\n\n\n Note\nThe same steps can be followed to make changes to the Primary Email Address values, but these two identifiers cannot be changed in the same upload. If both values need to be corrected, first make adjustments to the unique_user_id column, upload the file, then make changes to the primary_email_address column and upload the file a second time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User List Clean Up",
+      "Anchor": "user-list-clean-up",
+      "SectionPath": [
+        "Appendix",
+        "User List Clean Up"
+      ],
+      "Text": "If you have questions about ensuring your user list data is accurate, please reach out to your LinkedIn Learning Customer Success Manager for assistance. It is very difficult to correct profiles once duplicates are created, so it\u0027s best to extra careful and get it right the first time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Appendix",
+        "Additional resources"
+      ],
+      "Text": "Azure AD SSO Tutorial\nConfigure Automated User Management - Azure AD\nOkta SSO Tutorial\nConfigure SCIM Automated User Management - Okta",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Appendix",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

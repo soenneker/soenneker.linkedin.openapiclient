@@ -1,0 +1,1331 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+  "Title": "DMA Feed Content API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMA Feed Content API",
+      "Anchor": "dma-feed-content-api",
+      "SectionPath": [],
+      "Text": "The DMA Feed Content API supports finders needed for feed DMA compliance. Standardized such that it only returns a collection of DMAFeedContent which can contain any ugcUrn, instantRepostUrn, commentUrn and reactionUrn. All finder results are sorted by creation time in descending order and disregard pagingContext field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMA Feed Content API",
+      "Anchor": "dma-feed-content-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following finder methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMA Feed Content API",
+      "Anchor": "dma-feed-content-api",
+      "SectionPath": [],
+      "Text": "postsByAuthor - A collection of post urns (urn:li:share, urn:li:ugcPost, urn:li:groupPost) authored by an organizational entity (urn:li:organization, urn:li:organizationalPage). Please use DMA Post BATCH_GET API to resolve the actual post object using the post urns.\ncommentsOnEntity - A collection of comment urns (urn:li:comment) on a provided entity (urn:li:share, urn:li:ugcPost, urn:li:groupPost, urn:li:activity, urn:li:comment). Please use DMA comment BATCH_GET API to resolve the actual comment object using the comment urns.\nreactionsOnEntity - A collection of reaction urns (urn:li:reaction) on a provided entity (urn:li:share, urn:li:ugcPost, urn:li:groupPost, urn:li:activity, urn:li:comment). Please use DMA reaction BATCH_GET API to resolve the actual reaction object using the reaction urns.\nrepostsByReposter - A collection of instantRepost urns (urn:li:instantRepost) reposted by an organizational entity (urn:li:organization, urn:li:organizationalPage). Please use DMA InstantRepost BATCH_GET APIs to resolve the actual instantRepost object using the instantRepost urns. Instant repost is resharing a post without commentary.\nrepostsFromEntity - A collection of instantRepost urns (urn:li:instantRepost) on a provided post entity (urn:li:share, urn:li:ugcPost, urn:li:groupPost). Please use DMA InstantRepost BATCH_GET APIs to resolve the actual instantRepost object using the instantRepost urns. Instant repost is resharing a post without commentary.\nresharesFromEntity - A collection of reshare post urns (urn:li:share, urn:li:ugcPost) on a provided entity (urn:li:share, urn:li:ugcPost, urn:li:groupPost, urn:li:activity, urn:li:comment). Please use DMA Post BATCH_GET API to resolve the actual post object using the post urns. Reshare is resharing a post with commentary.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMA Feed Content API",
+      "Anchor": "dma-feed-content-api",
+      "SectionPath": [],
+      "Text": "The finders for this API utilize the Pagination Cursor and Max Pagination Count pattern for pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMA Feed Content API",
+      "Anchor": "dma-feed-content-api",
+      "SectionPath": [],
+      "Text": "Please note the following restrictions of the API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMA Feed Content API",
+      "Anchor": "dma-feed-content-api",
+      "SectionPath": [],
+      "Text": "The value of the maxPaginationCount parameter cannot exceed 1000 for any single request.\nData returned by this API can be up to 48 hours delayed.\nThis API has a rate limit of 1 request per 60 seconds. An error will be returned if this rate limit is exceeded.\nThe latency for certain requests might at times exceed 10 seconds. If a timeout is experienced, wait 60 seconds then retry calling the API. Most requests should however have a significantly lower latency.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique URN representing DMA feed content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain URNs",
+      "Anchor": "how-to-obtain-urns",
+      "SectionPath": [
+        "How to Obtain URNs"
+      ],
+      "Text": "The DMA Feed Content API requires specific URNs to identify entities such as posts, organizations, and other content. This section provides guidance on how to obtain the necessary URNs for making API calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "urn:li:share",
+      "Anchor": "urnlishare",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "urn:li:share"
+      ],
+      "Text": "A Share URN represents a post or content shared on LinkedIn. You can obtain Share URNs by calling the postsByAuthor finder method, which returns a collection of post URNs (including urn:li:share, urn:li:ugcPost, and urn:li:groupPost) for a specified organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?author={ORG_URN}\u0026maxPaginationCount={MAX_PAGINATION_COUNT}\u0026q=postsByAuthor",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?author={ORG_URN}\u0026maxPaginationCount={MAX_PAGINATION_COUNT}\u0026q=postsByAuthor\u0027 \\\n    --header \u0027Authorization: Bearer {ORG_ACCESS_TOKEN}\u0027 \\\n    --header \u0027Linkedin-Version: {YYYYMM}\u0027 \\\n    --header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "Sample Request"
+      ],
+      "Text": "Description: Retrieves a list of post URNs (urn:li:share, urn:li:ugcPost, urn:li:groupPost) authored by the specified organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "urn:li:organization",
+      "Anchor": "urnliorganization",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "urn:li:organization"
+      ],
+      "Text": "An Organization URN can be obtained directly from the LinkedIn UI. When viewing a company page or its admin dashboard, the page URL includes the organization identifier. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "urn:li:organization",
+      "Anchor": "urnliorganization",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "urn:li:organization"
+      ],
+      "Text": "https://www.linkedin.com/company/109761421/admin/dashboard/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "urn:li:organization",
+      "Anchor": "urnliorganization",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "urn:li:organization"
+      ],
+      "Text": "The numeric value in the URL represents the organization ID, which can be converted into a usable OrganizationUrn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "urn:li:organization",
+      "Anchor": "urnliorganization",
+      "SectionPath": [
+        "How to Obtain URNs",
+        "urn:li:organization"
+      ],
+      "Text": "urn:li:organization:109761421",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "1. Retrieve a collection of post urns by author",
+        "postsByAuthor FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "1. Retrieve a collection of post urns by author",
+        "postsByAuthor FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?author=URN%3Ali%3Aorganization%3A9510323\u0026maxPaginationCount=2\u0026q=postsByAuthor",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "1. Retrieve a collection of post urns by author",
+        "postsByAuthor FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?author=URN%3Ali%3Aorganization%3A9510323\u0026maxPaginationCount=2\u0026q=postsByAuthor\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "1. Retrieve a collection of post urns by author",
+        "postsByAuthor FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022paginationCursorMetdata\u0022: {\n      \u0022nextPaginationCursor\u0022: \u0022M18=\u0022\n    }\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:share:1188488118\u0022\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:share:1177086984\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "1. Retrieve a collection of post urns by author",
+        "postsByAuthor FINDER",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The owner of post. Only accepts organizationUrn, organizationalPageUrn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:1 or urn:li:organizationalPage:1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max pagination count to apply. The server will attempt to return a number of entities equal to this value, however fewer items might be returned for various reasons. As long as the next pagination cursor is present in the response metadata, this indicates that more items are available in the collection and clients can make a subsequent request to get more items. Please note that max maxPaginationCount is 1000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional pagination cursor to apply. If no cursor is passed in, it will return results from the start of the list as if pagination start was 0. Please use the nextPaginationCursor string value from your previous API call response to fetch from the next pagination start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "paginationCursor=NSYtMQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to fetch scheduled posts",
+      "Anchor": "how-to-fetch-scheduled-posts",
+      "SectionPath": [
+        "1. Retrieve a collection of post urns by author",
+        "postsByAuthor FINDER",
+        "How to fetch scheduled posts"
+      ],
+      "Text": "To fetch scheduled posts, call postsByAuthor API to retrieve the posts by an organizational entity and then use DMA Post BATCH_GET API with viewContext=AUTHOR to retrieve the posts in AUTHOR viewContext. Among those posts, scheduled post payloads have scheduledAt fields. So API partners can filter the posts by checking whether post has scheduledAt or not to identify scheduled posts by an organizational entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "2. Retrieve a collection of comment urns on the provided content entity",
+        "commentsOnEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "2. Retrieve a collection of comment urns on the provided content entity",
+        "commentsOnEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=commentsOnEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "2. Retrieve a collection of comment urns on the provided content entity",
+        "commentsOnEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=commentsOnEntity\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "2. Retrieve a collection of comment urns on the provided content entity",
+        "commentsOnEntity FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022paginationCursorMetdata\u0022: {\n      \u0022nextPaginationCursor\u0022: \u0022M18=\u0022\n    }\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:comment:(urn:li:activity:1188488118,1177086984)\u0022\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:comment:(urn:li:activity:1188488119,1177086985)\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "2. Retrieve a collection of comment urns on the provided content entity",
+        "commentsOnEntity FINDER",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity urn (types = \u0022urn:li:share\u0022, \u0022urn:li:ugcPost\u0022, \u0022urn:li:groupPost\u0022, \u0022urn:li:comment\u0022, \u0022urn:li:activity\u0022) from which all reactions are fetched for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:1 or urn:li:ugcPost:1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max pagination count to apply. The server will attempt to return a number of entities equal to this value, however fewer items might be returned for various reasons. As long as the next pagination cursor is present in the response metadata, this indicates that more items are available in the collection and clients can make a subsequent request to get more items. Please note that max maxPaginationCount is 1000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional pagination cursor to apply. If no cursor is passed in, it will return results from the start of the list as if pagination start was 0. Please use the nextPaginationCursor string value from your previous API call response to fetch from the next pagination start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "paginationCursor=NSYtMQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "3. Retrieve a collection of reaction urns on the provided content entity",
+        "reactionsOnEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "3. Retrieve a collection of reaction urns on the provided content entity",
+        "reactionsOnEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=reactionsOnEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "3. Retrieve a collection of reaction urns on the provided content entity",
+        "reactionsOnEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=reactionsOnEntity\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "3. Retrieve a collection of reaction urns on the provided content entity",
+        "reactionsOnEntity FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022paginationCursorMetdata\u0022: {\n      \u0022nextPaginationCursor\u0022: \u0022M18=\u0022\n    }\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:reaction:(urn:li:organization:1188488118,urn:li:activity:1177086984)\u0022\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:reaction:(urn:li:organization:1188488119,urn:li:activity:1177086985)\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "3. Retrieve a collection of reaction urns on the provided content entity",
+        "reactionsOnEntity FINDER",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity urn (types = \u0022urn:li:share\u0022, \u0022urn:li:ugcPost\u0022, \u0022urn:li:groupPost\u0022, \u0022urn:li:comment\u0022, \u0022urn:li:activity\u0022) from which all reactions are fetched for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:1 or urn:li:ugcPost:1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max pagination count to apply. The server will attempt to return a number of entities equal to this value, however fewer items might be returned for various reasons. As long as the next pagination cursor is present in the response metadata, this indicates that more items are available in the collection and clients can make a subsequent request to get more items. Please note that max maxPaginationCount is 1000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional pagination cursor to apply. If no cursor is passed in, it will return results from the start of the list as if pagination start was 0. Please use the nextPaginationCursor string value from your previous API call response to fetch from the next pagination start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "paginationCursor=NSYtMQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "4. Retrieve a collection of instantRepost urns reposted by reposter",
+        "repostsByReposter FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "4. Retrieve a collection of instantRepost urns reposted by reposter",
+        "repostsByReposter FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?reposter=URN%3Ali%3Aorganization%3A9510323\u0026maxPaginationCount=2\u0026q=repostsByReposter",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "4. Retrieve a collection of instantRepost urns reposted by reposter",
+        "repostsByReposter FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?reposter=URN%3Ali%3Aorganization%3A9510323\u0026maxPaginationCount=2\u0026q=repostsByReposter\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "4. Retrieve a collection of instantRepost urns reposted by reposter",
+        "repostsByReposter FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022paginationCursorMetdata\u0022: {\n      \u0022nextPaginationCursor\u0022: \u0022M18=\u0022\n    }\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:instantRepost:(urn:li:ugcPost:1188488118,1177086984)\u0022\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:instantRepost:(urn:li:ugcPost:1188488119,1177086985)\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-3",
+      "SectionPath": [
+        "4. Retrieve a collection of instantRepost urns reposted by reposter",
+        "repostsByReposter FINDER",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reposter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The owner of the instantRepost (types = \u0022urn:li:company\u0022, \u0022urn:li:organization\u0022, \u0022urn:li:organizationalPage\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:1 or urn:li:organizationalPage:1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max pagination count to apply. The server will attempt to return a number of entities equal to this value, however fewer items might be returned for various reasons. As long as the next pagination cursor is present in the response metadata, this indicates that more items are available in the collection and clients can make a subsequent request to get more items. Please note that max maxPaginationCount is 1000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional pagination cursor to apply. If no cursor is passed in, it will return results from the start of the list as if pagination start was 0. Please use the nextPaginationCursor string value from your previous API call response to fetch from the next pagination start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "paginationCursor=NSYtMQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "5. Retrieve a collection of instantRepost urns reposted from the given content entity",
+        "repostsFromEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "5. Retrieve a collection of instantRepost urns reposted from the given content entity",
+        "repostsFromEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=repostsFromEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "5. Retrieve a collection of instantRepost urns reposted from the given content entity",
+        "repostsFromEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=repostsFromEntity\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "5. Retrieve a collection of instantRepost urns reposted from the given content entity",
+        "repostsFromEntity FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022paginationCursorMetdata\u0022: {\n      \u0022nextPaginationCursor\u0022: \u0022M18=\u0022\n    }\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:instantRepost:(urn:li:ugcPost:1188488118,1177086984)\u0022\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:instantRepost:(urn:li:ugcPost:1188488119,1177086985)\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-4",
+      "SectionPath": [
+        "5. Retrieve a collection of instantRepost urns reposted from the given content entity",
+        "repostsFromEntity FINDER",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn of the content that was reshared (supported types = \u0022urn:li:share\u0022, \u0022urn:li:ugcPost\u0022, \u0022urn:li:groupPost\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:1 or urn:li:ugcPost:1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max pagination count to apply. The server will attempt to return a number of entities equal to this value, however fewer items might be returned for various reasons. As long as the next pagination cursor is present in the response metadata, this indicates that more items are available in the collection and clients can make a subsequent request to get more items. Please note that max maxPaginationCount is 1000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional pagination cursor to apply. If no cursor is passed in, it will return results from the start of the list as if pagination start was 0. Please use the nextPaginationCursor string value from your previous API call response to fetch from the next pagination start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "paginationCursor=NSYtMQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "6. Retrieve a collection of reshare post urns reposted from the given content entity",
+        "resharesFromEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "6. Retrieve a collection of reshare post urns reposted from the given content entity",
+        "resharesFromEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=resharesFromEntity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "6. Retrieve a collection of reshare post urns reposted from the given content entity",
+        "resharesFromEntity FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaFeedContentsExternal?entity=URN%3Ali%3Ashare%3A9510323\u0026maxPaginationCount=2\u0026q=resharesFromEntity\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "6. Retrieve a collection of reshare post urns reposted from the given content entity",
+        "resharesFromEntity FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022paginationCursorMetdata\u0022: {\n      \u0022nextPaginationCursor\u0022: \u0022M18=\u0022\n    }\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022id\u0022: \u0022urn:li:share:1188488118\u0022\n    },\n    {\n      \u0022id\u0022: \u0022urn:li:share:1177086984\u0022\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 2,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-5",
+      "SectionPath": [
+        "6. Retrieve a collection of reshare post urns reposted from the given content entity",
+        "resharesFromEntity FINDER",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn of the content that was reshared (supported types = \u0022urn:li:share\u0022, \u0022urn:li:ugcPost\u0022, \u0022urn:li:groupPost\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:share:1 or urn:li:ugcPost:1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxPaginationCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max pagination count to apply. The server will attempt to return a number of entities equal to this value, however fewer items might be returned for various reasons. As long as the next pagination cursor is present in the response metadata, this indicates that more items are available in the collection and clients can make a subsequent request to get more items. Please note that max maxPaginationCount is 1000.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paginationCursor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The optional pagination cursor to apply. If no cursor is passed in, it will return results from the start of the list as if pagination start was 0. Please use the nextPaginationCursor string value from your previous API call response to fetch from the next pagination start.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "paginationCursor=NSYtMQ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to fetch all the reshares of a post",
+      "Anchor": "how-to-fetch-all-the-reshares-of-a-post",
+      "SectionPath": [
+        "6. Retrieve a collection of reshare post urns reposted from the given content entity",
+        "resharesFromEntity FINDER",
+        "How to fetch all the reshares of a post"
+      ],
+      "Text": "InstantRepost (represented by urn:li:instantRepost) is a repost without commentary. Reshare (represented by urn:li:share, urn:li:ugcPost, urn:li:groupPost) is a repost with commentary. To fetch all the reposts of a post, please call both repostsFromEntity and resharesFromEntity and then merge results from these calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported entity type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided unsupported URN entity types on entity/author/reposter param.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide valid URNs only (urn:li:organization, urn:li:organizationalPage).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide a valid OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

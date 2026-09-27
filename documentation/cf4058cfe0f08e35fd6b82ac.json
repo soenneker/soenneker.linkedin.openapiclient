@@ -1,0 +1,816 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-schema",
+  "Title": "AWLI Profile Schema",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-usecases",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "AWLI Profile Schema",
+      "Anchor": "awli-profile-schema",
+      "SectionPath": [],
+      "Text": "This document lists and describes the fields supported in AWLI:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Schema",
+      "Anchor": "api-schema",
+      "SectionPath": [
+        "API Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u0027s first name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u0027s last name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u0027s headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u0027s profile summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u0027s current location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (check table below for more details)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publicProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u0027s public profile url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of applicant\u0027s employment history",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (check table below for more details)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of applicant\u0027s top 3 skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (check table below for more details)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of applicant\u0027s education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (check table below for more details)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "languages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "list of languages known by applicant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (check table below for more details)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "certifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of applicant\u0027s certifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List (check table below for more details)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Primary email address on applicant\u0027s profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneNumber",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Phone number on applicant\u0027s profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Encoded member id of the applicant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "signature",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When LinkedIn sends profile data to partners, they need to verify the authenticity of the data. LinkedIn will add a signature of the data into the response. This field represents the signature created using raw profile data and developer application\u0027s secret key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Location Fields",
+      "Anchor": "location-fields",
+      "SectionPath": [
+        "API Schema",
+        "Location Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Country code of the location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Applicant\u2019s location name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Position Fields",
+      "Anchor": "position-fields",
+      "SectionPath": [
+        "API Schema",
+        "Position Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company associated with the position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "list",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "company name associated with the position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "End date of the position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "isCurrent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag to indicate if the position is current. This flag will be true if endDate is missing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start date of the position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "summary of the position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "job title held at the position",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Skill Fields",
+      "Anchor": "skill-fields",
+      "SectionPath": [
+        "API Schema",
+        "Skill Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name of skill",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Education Fields",
+      "Anchor": "education-fields",
+      "SectionPath": [
+        "API Schema",
+        "Education Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "activities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "description of activities, societies, clubs, or sports teams the applicant participated in while attending the school",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degree",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "degree name attained at the school",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "End date of the education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name of the field of study/major",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "description for additional detail about the education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schoolName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name of the school",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start date of the education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Language Fields",
+      "Anchor": "language-fields",
+      "SectionPath": [
+        "API Schema",
+        "Language Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name of the language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "proficiency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "proficiency level of the language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Certifications",
+      "Anchor": "certifications",
+      "SectionPath": [
+        "API Schema",
+        "Certifications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "authority",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name of the certification\u0027s issuing body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "End date of the certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name of the certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "number",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "license number for the certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start date of the certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

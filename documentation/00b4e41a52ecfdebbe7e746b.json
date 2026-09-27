@@ -1,0 +1,269 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+  "Title": "Field Projections",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Field Projections",
+      "Anchor": "field-projections",
+      "SectionPath": [],
+      "Text": "Field projection controls how much of an entity\u0027s data is displayed in response to an API request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projections",
+      "Anchor": "field-projections",
+      "SectionPath": [],
+      "Text": "All APIs have a default set of field projections that control which fields are returned. If you don\u0027t need certain fields, you can decrease response time and payload size by using a projection to ask only for the fields your application is interested in.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projections",
+      "Anchor": "field-projections",
+      "SectionPath": [],
+      "Text": "By default, services may not always return all of the information that your application requests.\u00A0In these cases, you\u0027ll need to use a projection to retrieve any non-default fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projections",
+      "Anchor": "field-projections",
+      "SectionPath": [],
+      "Text": "Field projections are defined using the \u0026fields= query parameter and narrowed by providing a comma-separated list of field names that you want returned as the value of the parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projections",
+      "Anchor": "field-projections",
+      "SectionPath": [],
+      "Text": "In the following example, a service returns these types of objects:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Objects",
+      "Anchor": "sample-objects",
+      "SectionPath": [
+        "Sample Objects"
+      ],
+      "Text": "{\n    \u0022id\u0022 : int,      \u003C- Default projection field\n    \u0022foo\u0022: string,   \u003C- Default projection field\n    \u0022bar\u0022: boolean,\n    \u0022baz\u0022: Object\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Objects",
+      "Anchor": "sample-objects",
+      "SectionPath": [
+        "Sample Objects"
+      ],
+      "Text": "A GET call to retrieve one of these objects provides the following response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Objects",
+      "Anchor": "sample-objects",
+      "SectionPath": [
+        "Sample Objects"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/sampleService/42",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022foo\u0022: \u0022Zing!\u0022,\n    \u0022id\u0022: 42\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "Notice how the bar and baz fields were not returned in the response. This is because they are not part of the service\u0027s default field projection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "If you want to get id, bar, and baz back in the response (but not foo, because it\u0027s irrelevant to your application), use a field projection:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/sampleService/42?fields=id,bar,baz",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022bar\u0022: true,\n    \u0022baz\u0022: {\n        \u0022beep\u0022: \u0022Yay!\u0022,\n        \u0022bloop\u0022: \u0022Meh\u0022,\n        \u0022blorp\u0022: \u0022Boo!\u0022\n    },\n    \u0022id\u0022: 42\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Child Objects",
+      "Anchor": "child-objects",
+      "SectionPath": [
+        "Child Objects"
+      ],
+      "Text": "In the above example, baz is returned in the response due to the field projection specified because baz is an object that has its own fields.\u00A0Use field projections to select the data you need.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Child Objects",
+      "Anchor": "child-objects",
+      "SectionPath": [
+        "Child Objects"
+      ],
+      "Text": "Use the parentField:(child**Field_1,\u2026,childField_n**) syntax to select fields for a child object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Child Objects",
+      "Anchor": "child-objects",
+      "SectionPath": [
+        "Child Objects"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/sampleService/42?fields=id,baz:(beep)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Child Objects",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022baz\u0022: {\n        \u0022beep\u0022: \u0022Yay!\u0022\n    },\n    \u0022id\u0022: 42\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parent Field as Map",
+      "Anchor": "parent-field-as-map",
+      "SectionPath": [
+        "Parent Field as Map"
+      ],
+      "Text": "Objects can have nested objects with child fields of their own such as the example below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Data",
+      "Anchor": "sample-data",
+      "SectionPath": [
+        "Parent Field as Map",
+        "Sample Data"
+      ],
+      "Text": "{\n    \u0022baz\u0022: {\n        \u00221\u0022: {\n            \u0022beep\u0022: \u0022Yay!\u0022,\n            \u0022foo\u0022: \u0022foo1\u0022\n        },\n        \u00222\u0022: {\n            \u0022beep\u0022: \u0022Nay!\u0022,\n            \u0022foo\u0022: \u0022foo2\u0022\n        }\n    },\n    \u0022id\u0022: 42\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data",
+      "SectionPath": [
+        "Parent Field as Map",
+        "Sample Data"
+      ],
+      "Text": "Use the\u00A0$*:(childField_1,\u2026,childField_n)\u00A0syntax to control the fields requested from nested objects:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Data",
+      "Anchor": "sample-data",
+      "SectionPath": [
+        "Parent Field as Map",
+        "Sample Data"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/sampleService/42?fields=id,baz:($*:(beep))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Parent Field as Map",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022baz\u0022: {\n        \u00221\u0022: {\n            \u0022beep\u0022: \u0022Yay!\u0022\n        },\n        \u00222\u0022: {\n            \u0022beep\u0022: \u0022Nay!\u0022\n        }\n    },\n    \u0022id\u0022: 42\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-sales-nav-faq",
+  "Title": "Compliance - Sales Navigator FAQ",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-management",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-sales-nav-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance - Sales Navigator FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance - Sales Navigator FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "For requesting access to the Compliance APIs please complete the access request form.\nFor more technical support please reach out us via Developer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "- Questions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "How can I get access to the Compliance APIs?\nWho is considered a regulated member?\nWhat is the timeframe for which I can query Compliance Events from a regulated member?\nHow long is the access token valid once a member has consented to be regulated?\nCan a regulated member opt out from Compliance regulation themself?\nWhat data is captured in the Compliance Events API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I get access to the Compliance APIs?",
+      "Anchor": "how-can-i-get-access-to-the-compliance-apis-",
+      "SectionPath": [
+        "How can I get access to the Compliance APIs?"
+      ],
+      "Text": "The Compliance - Sales Navigator Partner Program is a private and paid partnership. Acceptance to this partnership is subject to discretion of LinkedIn. Please complete the LinkedIn Compliance Partner Request Form",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Who is considered a regulated member?",
+      "Anchor": "who-is-considered-a-regulated-member--",
+      "SectionPath": [
+        "Who is considered a regulated member?"
+      ],
+      "Text": "A regulated member is a LinkedIn user who has consented to share information with the developer and the developer has registered the member for compliance monitoring via our POST /memberComplianceAuthorizations API. Only these members are considered as regulated members and their interaction on LinkedIn is archived for Compliance Events API. Note that there must be legal record-keeping compliance obligations, to justify achieving member posts for the Compliance API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the timeframe for which I can query Compliance Events from a regulated member?",
+      "Anchor": "what-is-the-timeframe-for-which-i-can-query-compliance-events-from-a-regulated-member-",
+      "SectionPath": [
+        "What is the timeframe for which I can query Compliance Events from a regulated member?"
+      ],
+      "Text": "The Compliance Events API allows you to query all LinkedIn activities from the past 28 days of a regulated, authenticated member. Compliance events older 28 days are purged from LinkedIn. Note that LinkedIn starts monitoring and archiving the compliance events for a member only once they have been opted in for compliance events. Events before opting in for Compliance Events would not be present.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How long is the access token valid once a member has consented to be regulated?",
+      "Anchor": "how-long-is-the-access-token-valid-once-a-member-has-consented-to-be-regulated-",
+      "SectionPath": [
+        "How long is the access token valid once a member has consented to be regulated?"
+      ],
+      "Text": "The access token is valid for 1 year from the time the member consents to be regulated. Post which the developer would have to initiate the oAuth flow again to request the member\u2019s consent and get a new token. We do not provide any refresh tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can a regulated member Opt Out from compliance regulation themselves?",
+      "Anchor": "can-a-regulated-member-opt-out-from-compliance-regulation-themselves--",
+      "SectionPath": [
+        "Can a regulated member Opt Out from compliance regulation themselves?"
+      ],
+      "Text": "Yes, members can remove access to any third-party application from their Settings and Privacy page on LinkedIn.com. For more information on how to remove access, refer to this article. Note that if a regulated member removes access from their Setting and Privacy page, their access_token is invalidated immediately and they are automatically removed from (Opted out) from Compliance Monitoring and LinkedIn stops monitoring the member for compliance events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data is captured in the Compliance Events API?",
+      "Anchor": "what-data-is-captured-in-the-compliance-events-api--",
+      "SectionPath": [
+        "What data is captured in the Compliance Events API?"
+      ],
+      "Text": "Communications from the regulated member\u0027s Sales Navigator\nINMAILS sent by a regulated member from their Sales Navigator\nMessages received by the regulated member in their sales Navigator mailbox",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data is captured in the Compliance Events API?",
+      "Anchor": "what-data-is-captured-in-the-compliance-events-api--",
+      "SectionPath": [
+        "What data is captured in the Compliance Events API?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What data is captured in the Compliance Events API?",
+      "Anchor": "what-data-is-captured-in-the-compliance-events-api--",
+      "SectionPath": [
+        "What data is captured in the Compliance Events API?"
+      ],
+      "Text": "For requesting access to the Compliance APIs please complete the access request form.\nFor more technical support please reach out us via Developer Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "- Questions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "How can I get access to the Compliance APIs?\nWho is considered a regulated member?\nWhat is the timeframe for which I can query Compliance Events from a regulated member?\nHow long is the access token valid once a member has consented to be regulated?\nCan a regulated member opt out from Compliance regulation themself?\nWhat data is captured in the Compliance Events API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The Compliance - Sales Navigator Partner Program is a private and paid partnership. Acceptance to this partnership is subject to discretion of LinkedIn. Please complete the LinkedIn Compliance Partner Request Form",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A regulated member is a LinkedIn user who has consented to share information with the developer and the developer has registered the member for compliance monitoring via our POST /memberComplianceAuthorizations API. Only these members are considered as regulated members and their interaction on LinkedIn is archived for Compliance Events API. Note that there must be legal record-keeping compliance obligations, to justify achieving member posts for the Compliance API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The Compliance Events API allows you to query all LinkedIn activities from the past 28 days of a regulated, authenticated member. Compliance events older 28 days are purged from LinkedIn. Note that LinkedIn starts monitoring and archiving the compliance events for a member only once they have been opted in for compliance events. Events before opting in for Compliance Events would not be present.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "The access token is valid for 1 year from the time the member consents to be regulated. Post which the developer would have to initiate the oAuth flow again to request the member\u2019s consent and get a new token. We do not provide any refresh tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Yes, members can remove access to any third-party application from their Settings and Privacy page on LinkedIn.com. For more information on how to remove access, refer to this article. Note that if a regulated member removes access from their Setting and Privacy page, their access_token is invalidated immediately and they are automatically removed from (Opted out) from Compliance Monitoring and LinkedIn stops monitoring the member for compliance events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Communications from the regulated member\u0027s Sales Navigator\nINMAILS sent by a regulated member from their Sales Navigator\nMessages received by the regulated member in their sales Navigator mailbox",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

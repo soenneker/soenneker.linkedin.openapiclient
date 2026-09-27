@@ -1,0 +1,1872 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+  "Title": "Vector Assets API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Vector Assets API",
+      "Anchor": "vector-assets-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vector Assets API",
+      "Anchor": "vector-assets-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vector Assets API",
+      "Anchor": "vector-assets-api",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vector Assets API",
+      "Anchor": "vector-assets-api",
+      "SectionPath": [],
+      "Text": "The Images API replaces the Assets API for uploading images and the Videos API replaces the Assets API for uploading videos. To understand more about the differences between Assets API vs Video API vs Images API, refer to compare \u0026 contrast section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vector Assets API",
+      "Anchor": "vector-assets-api",
+      "SectionPath": [],
+      "Text": "The assets API allows you to upload videos and images to the LinkedIn platform. These media uploads can then be referenced in a User-Generated Content (UGC) Post or various sponsored content and campaign ads. Partners can create and upload rich and engaging personal or organization content to be surfaced on various feeds within the LinkedIn ecosystem.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to manage and delete data for compliance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and delete data on behalf of an authenticated member for compliance requirements. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "All API requests require the header X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Images",
+      "Anchor": "how-to-upload-images",
+      "SectionPath": [
+        "How to Upload Images"
+      ],
+      "Text": "Determine the recipe type of your image asset before uploading your image. Use the table below as a guideline to prepare your image with the appropriate recipe. Currently, only jpeg and png formats are supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "How to Upload Images",
+      "Anchor": "how-to-upload-images",
+      "SectionPath": [
+        "How to Upload Images"
+      ],
+      "Text": "",
+      "Headers": [
+        "Content",
+        "Recipe"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Shares or UGC Post on behalf of an organization or member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:feedshare-image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Image or Article Ad for a campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:companyUpdate-article-image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Carousel Ad for a campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:ssu-carousel-card-image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Text Ad for a campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:rightRail-logo-image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Dynamic Ads for a campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:rightRail-logo-image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Background image for Dynamic Ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:rightRail-logo-image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sponsored Message Attachment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaRecipe:ads-image",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Images",
+      "Anchor": "how-to-upload-images",
+      "SectionPath": [
+        "How to Upload Images"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Images",
+      "Anchor": "how-to-upload-images",
+      "SectionPath": [
+        "How to Upload Images"
+      ],
+      "Text": "Note that Sponsored Message Attachment content previously used the urn:li:digitalmediaRecipe:ads-messaging-attachment-image recipe which required strict permissions to access and was not preview-able. To address these constraints, the urn:li:digitalmediaRecipe:ads-image recipe has been repurposed to support this use case. It is less restrictive and is now preview-able.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Images",
+      "Anchor": "how-to-upload-images",
+      "SectionPath": [
+        "How to Upload Images"
+      ],
+      "Text": "Upload Image With Assets API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Images",
+      "Anchor": "how-to-upload-images",
+      "SectionPath": [
+        "How to Upload Images"
+      ],
+      "Text": "Register an upload for Image\nUpload the Image\nCheck status of upload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Upload Images",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "registerUploadRequest. owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the entity that owns this asset. Can be a Person(urn:li:person:123), Ad Account(urn:li:sponsoredAdAccount:123), or Organization(urn:li:organization:123) URN. For marketing use cases, this should be an Ad Account or Organization URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. recipes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recipe URN identifies the use case associated with the upload request. The URN can be any of the following types: urn:li:digitalmediaRecipe:feedshare-imageurn:li:digitalmediaRecipe:companyUpdate-article-imageurn:li:digitalmediaRecipe:ssu-carousel-card-imageurn:li:digitalmediaRecipe:rightRail-logo-image",
+            "Links": [],
+            "Values": [
+              "urn:li:digitalmediaRecipe:feedshare-image",
+              "urn:li:digitalmediaRecipe:companyUpdate-article-image",
+              "urn:li:digitalmediaRecipe:ssu-carousel-card-image",
+              "urn:li:digitalmediaRecipe:rightRail-logo-image"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. recipes[*].status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String read-only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NEW A newly assigned recipe. This status is only used for new assignments. Transitions to PROCESSING as soon as processing requests are sent. PROCESSING Some or all of the recipe\u0027s required artifacts are not available and processing is underway to generate the missing artifacts. AVAILABLE All of the recipe\u0027s required artifacts are available. INCOMPLETE Some or all of the recipe\u0027s required artifacts are not available and no further processing is being done. WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.CLIENT_ERROR Vector stops processing this artifact because the source file uploaded by the client is incorrect, for example, the file size is too large or the file format is unsupported by the vector asset.SERVER_ERROR Vector service error, for example, a performance issue, database error, or network failure.MUTATING Vector is reprocessing the asset and the asset is still available to be served. But the representation of the asset will be changed after reprocessing. Users should decide whether to take actions on this status.",
+            "Links": [],
+            "Values": [
+              "NEW A newly assigned recipe. This status is only used for new assignments. Transitions to PROCESSING as soon as processing requests are sent.",
+              "PROCESSING Some or all of the recipe\u0027s required artifacts are not available and processing is underway to generate the missing artifacts.",
+              "AVAILABLE All of the recipe\u0027s required artifacts are available.",
+              "INCOMPLETE Some or all of the recipe\u0027s required artifacts are not available and no further processing is being done.",
+              "WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.",
+              "CLIENT_ERROR Vector stops processing this artifact because the source file uploaded by the client is incorrect, for example, the file size is too large or the file format is unsupported by the vector asset.",
+              "SERVER_ERROR Vector service error, for example, a performance issue, database error, or network failure.",
+              "MUTATING Vector is reprocessing the asset and the asset is still available to be served. But the representation of the asset will be changed after reprocessing. Users should decide whether to take actions on this status."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. serviceRelationships[*]. relationshipType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Possible values are as follows: GENERIC CREATOR OWNER",
+            "Links": [],
+            "Values": [
+              "GENERIC",
+              "CREATOR",
+              "OWNER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. serviceRelationships[*]. identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Should be of type - urn:li:userGeneratedContent",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String read-only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ALLOWED The content is allowed to be served. BLOCKED The content must not be served. ABANDONED The asset was abandoned by its owner. Some possible reasons: Upload was cancelled; The application no longer needs it; The uploaded file is not of the intended type.DELETED The asset was fully deleted and can\u0027t be processed again. Deletion might have been triggered by client.\u0022SCHEDULED_DELETION\u0022: The asset has been scheduled for deletion. Possible reason: a user deleted their account.",
+            "Links": [],
+            "Values": [
+              "ALLOWED The content is allowed to be served.",
+              "BLOCKED The content must not be served.",
+              "ABANDONED The asset was abandoned by its owner. Some possible reasons: Upload was cancelled; The application no longer needs it; The uploaded file is not of the intended type.",
+              "DELETED The asset was fully deleted and can\u0027t be processed again. Deletion might have been triggered by client.",
+              "\u0022SCHEDULED_DELETION\u0022: The asset has been scheduled for deletion. Possible reason: a user deleted their account."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Upload Images",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Upload Images",
+        "Schema"
+      ],
+      "Text": "registerUploadRequest.serviceRelationships array size can\u0027t be greater than 5.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register an Upload for Images",
+      "Anchor": "register-an-upload-for-images",
+      "SectionPath": [
+        "Register an Upload for Images"
+      ],
+      "Text": "Use the registerUpload action to register the image upload. Use the HTTP URL that\u0027s returned to upload the image. Use the uploadUrl returned within the response body output to upload your image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register an Upload for Images",
+      "Anchor": "register-an-upload-for-images",
+      "SectionPath": [
+        "Register an Upload for Images"
+      ],
+      "Text": "The assets API supports the following image pixel count and formats:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register an Upload for Images",
+      "Anchor": "register-an-upload-for-images",
+      "SectionPath": [
+        "Register an Upload for Images"
+      ],
+      "Text": "Images with less than 36,152,320 pixels.\nJPG, GIF, and PNG formats\nGIF format supports up to 250 frames",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Synchronously",
+      "Anchor": "upload-synchronously",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously"
+      ],
+      "Text": "It\u0027s required that image upload completes successfully before creating a UGC Post or Share. If the post is created before confirming image upload success and the image upload fails to process, the post won\u0027t be visible to members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Synchronously",
+      "Anchor": "upload-synchronously",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously"
+      ],
+      "Text": "Therefore, we recommend that you use synchronous mode to upload images with the assets API instead of using the default asynchronous mode for this task. This is done by specifying SYNCHRONOUS_UPLOAD in the supportedUploadMechanism field. See the sample request below for an example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Synchronously",
+      "Anchor": "upload-synchronously",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously"
+      ],
+      "Text": "Synchronous uploading provides a guaranteed response for the assets API after processing the image. This type of upload ensures your post will always be created and rendered correctly for your users.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Synchronously",
+      "Anchor": "upload-synchronously",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously"
+      ],
+      "Text": "If you opt to use asynchronous upload, it\u0027s crucial you confirm the upload succeeded before using the asset in a UGC Post or Share. Use the Check Status of Upload endpoint to validate success.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously",
+        "Sample Request"
+      ],
+      "Text": "Make sure you set the Content-Type header to application/json.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously",
+        "Sample Request"
+      ],
+      "Text": "{\n   \u0022registerUploadRequest\u0022:{\n      \u0022owner\u0022:\u0022urn:li:organization:24141830\u0022,\n      \u0022recipes\u0022:[\n         \u0022urn:li:digitalmediaRecipe:feedshare-image\u0022\n      ],\n      \u0022serviceRelationships\u0022:[\n         {\n            \u0022identifier\u0022:\u0022urn:li:userGeneratedContent\u0022,\n            \u0022relationshipType\u0022:\u0022OWNER\u0022\n         }\n      ],\n      \u0022supportedUploadMechanism\u0022:[\n         \u0022SYNCHRONOUS_UPLOAD\u0022\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/assets?action=registerUpload\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n\n--data \u0027{\n   \u0022registerUploadRequest\u0022:{\n      \u0022owner\u0022:\u0022urn:li:organization:24141830\u0022,\n      \u0022recipes\u0022:[\n         \u0022urn:li:digitalmediaRecipe:feedshare-image\u0022\n      ],\n      \u0022serviceRelationships\u0022:[\n         {\n            \u0022identifier\u0022:\u0022urn:li:userGeneratedContent\u0022,\n            \u0022relationshipType\u0022:\u0022OWNER\u0022\n         }\n      ],\n      \u0022supportedUploadMechanism\u0022:[\n         \u0022SYNCHRONOUS_UPLOAD\u0022\n      ]\n   }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Register an Upload for Images",
+        "Upload Synchronously",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5622AQHdBDflPp0pEg,urn:li:digitalmediaMediaArtifactClass:feedshare-uploadedImage)\u0022,\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5622AQHdBDflPp0pEg/feedshare-uploadedImage/0?ca=vector_feedshare\u0026cn=uploads\u0026sync=1\u0026v=beta\u0026ut=1lrKqjt4fYuqw1\u0022,\n                \u0022headers\u0022: {\n                    \u0022media-type-family\u0022: \u0022STILLIMAGE\u0022\n                }\n            }\n        },\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5622AQHdBDflPp0pEg\u0022,\n        \u0022assetRealTimeTopic\u0022: \u0022urn:li-realtime:digitalmediaAssetUpdatesTopic:urn:li:digitalmediaAsset:C5622AQHdBDflPp0pEg\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Image",
+      "Anchor": "upload-the-image",
+      "SectionPath": [
+        "Upload the Image"
+      ],
+      "Text": "Use the uploadUrl from the previous step to upload the image. Use a PUT method to upload the image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Image",
+      "Anchor": "upload-the-image",
+      "SectionPath": [
+        "Upload the Image"
+      ],
+      "Text": "The upload call requires a valid OAuth token in the \u0027Authorization\u0027 header. This is different than the upload video call which doesn\u0027t accept an OAuth token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample curl Request",
+      "Anchor": "sample-curl-request",
+      "SectionPath": [
+        "Upload the Image",
+        "Sample curl Request"
+      ],
+      "Text": "curl -i --upload-file ~/Desktop/Myimage.jpg -H \u0027Authorization: Bearer Redacted\u0027 \u0022https://www.linkedin.com/dms-uploads/C5622AQHdBDflPp0pEg/feedshare-uploadedImage/0?ca=vector_feedshare\u0026cn=uploads\u0026sync=1\u0026v=beta\u0026ut=1lrKqjt4fYuqw1\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Upload the Image",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201 \nserver: Play\nset-cookie: lang=v=2\u0026lang=en-us; Path=/; Domain=api.linkedin.com\ndate: Wed, 16 Oct 2019 06:25:12 GMT\ncontent-length: 0\nx-li-proto: http/2\nreport-to: {\u0022group\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:2592000,\u0022endpoints\u0022:[{\u0022url\u0022:\u0022https://www.linkedin.com/li/rep\u0022}],\u0022include_subdomains\u0022:true}\nnel: {\u0022report_to\u0022:\u0022network-errors\u0022,\u0022max_age\u0022:1296000,\u0022success_fraction\u0022:0.0001,\u0022failure_fraction\u0022:1,\u0022include_subdomains\u0022:true}\nx-li-uuid: slguD4sMzhUwATrTkisAAA==\nset-cookie: lidc=\u0022b=ETB86:g=301:u=12:i=1571207079:t=1571261189:s=AQGEngFr_Vc-bGAR4gREsIou-eLZon31\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "Depending on the size of the video you\u0027re uploading, use one of the following options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "Upload videos in a single operation \u2014 Upload videos less than 200 MB in a single operation.\nUpload videos in parts \u2014 Upload videos greater than 200 MB using multi-part upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "To upload a video as a single asset:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "Register an upload for Video\nUpload the video\nCheck status of upload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "To upload a large video in multiple parts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "Register an upload for Video\nSplit the file into 5 MB each (split -b 5242880).\nUpload the video\nComplete multi-part upload\nCheck status of upload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Upload Videos",
+      "Anchor": "how-to-upload-videos",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "registerUploadRequest. owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the entity that owns this asset. Can be a Person(urn:li:person:123), Ad Account(urn:li:sponsoredAdAccount:123), or Organization(urn:li:organization:123) URN. For marketing use cases, this should be an Ad Account or Organization URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. supportedUploadMechanism",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UploadMechanismType[], default=\u0022[ SINGLE_REQUEST_UPLOAD ]\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set it as SINGLE_REQUEST_UPLOAD if filesize \u003C 200MB. For content greater than 200MB, set it as [\u0022MULTIPART_UPLOAD\u0022]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. fileSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Size in bytes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. recipes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value is an URN that identifies the use case for which the upload is requested. It can be list of any of the following urns urn:li:digitalmediaRecipe:feedshare-videourn:li:digitalmediaRecipe:ads-video (Deprecated)urn:li:digitalmediaRecipe:ads-video_v2",
+            "Links": [],
+            "Values": [
+              "urn:li:digitalmediaRecipe:feedshare-video",
+              "urn:li:digitalmediaRecipe:ads-video (Deprecated)",
+              "urn:li:digitalmediaRecipe:ads-video_v2"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. recipes[*].status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "read-only String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NEW A newly assigned recipe. This status is only used for new assignments. Transitions to PROCESSING as soon as processing requests are sent. PROCESSING Some or all of the recipe\u0027s required artifacts are not available and processing is underway to generate the missing artifacts.AVAILABLE All of the recipe\u0027s required artifacts are available.INCOMPLETE The artifact is not available because it has been deleted or is in deleting process. WAITING_UPLOAD Vector is waiting for client to upload source file or uploading process to be completed.CLIENT_ERROR Vector stops processing this artifact because the source file uploaded by the client is incorrect, for example, the file size is too large or the file format is unsupported by the vector asset.SERVER_ERROR Vector service error, for example, a performance issue, database error, or network failure.MUTATING Vector is reprocessing the asset and the asset is still available to be served. But the representation of the asset will be changed after reprocessing. Users should decide whether to take actions on this status.",
+            "Links": [],
+            "Values": [
+              "NEW A newly assigned recipe. This status is only used for new assignments. Transitions to PROCESSING as soon as processing requests are sent.",
+              "PROCESSING Some or all of the recipe\u0027s required artifacts are not available and processing is underway to generate the missing artifacts.",
+              "AVAILABLE All of the recipe\u0027s required artifacts are available.",
+              "INCOMPLETE The artifact is not available because it has been deleted or is in deleting process.",
+              "WAITING_UPLOAD Vector is waiting for client to upload source file or uploading process to be completed.",
+              "CLIENT_ERROR Vector stops processing this artifact because the source file uploaded by the client is incorrect, for example, the file size is too large or the file format is unsupported by the vector asset.",
+              "SERVER_ERROR Vector service error, for example, a performance issue, database error, or network failure.",
+              "MUTATING Vector is reprocessing the asset and the asset is still available to be served. But the representation of the asset will be changed after reprocessing. Users should decide whether to take actions on this status."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. serviceRelationships[*]. relationshipType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Possible values are as follows: GENERIC CREATOR OWNER",
+            "Links": [],
+            "Values": [
+              "GENERIC",
+              "CREATOR",
+              "OWNER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "registerUploadRequest. serviceRelationships[*]. identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Should be of type - urn:li:userGeneratedContent",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String read-only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ALLOWED The content is allowed to be served. BLOCKED The content must not be served. ABANDONED The asset was abandoned by its owner. Some possible reasons: Upload was cancelled; The application no longer needs it; The uploaded file is not of the intended type; etc. DELETED The asset was fully deleted and can\u0027t be processed again. Deletion might have been triggered by client.\u0022SCHEDULED_DELETION\u0022: The asset has been scheduled for deletion. Possible reason: a user deleted their account.",
+            "Links": [],
+            "Values": [
+              "ALLOWED The content is allowed to be served.",
+              "BLOCKED The content must not be served.",
+              "ABANDONED The asset was abandoned by its owner. Some possible reasons: Upload was cancelled; The application no longer needs it; The uploaded file is not of the intended type; etc.",
+              "DELETED The asset was fully deleted and can\u0027t be processed again. Deletion might have been triggered by client.",
+              "\u0022SCHEDULED_DELETION\u0022: The asset has been scheduled for deletion. Possible reason: a user deleted their account."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Upload the Image",
+        "How to Upload Videos",
+        "Schema"
+      ],
+      "Text": "registerUploadRequest.serviceRelationships array size can\u0027t be greater than 5.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register an Upload for Video",
+      "Anchor": "register-an-upload-for-video",
+      "SectionPath": [
+        "Register an Upload for Video"
+      ],
+      "Text": "Use the registerUpload action to register the upload. When you register, you declare the upcoming upload. Use the returned URL to upload the video. Redo this step if the upload fails.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Request"
+      ],
+      "Text": "Make sure you set the Content-Type header to application/json.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022registerUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:24141830\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:feedshare-video\u0022\n        ],\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n                \u0022relationshipType\u0022: \u0022OWNER\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/assets?action=registerUpload\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n\n--data \u0027{\n    \u0022registerUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:organization:24141830\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:feedshare-video\u0022\n        ],\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n                \u0022relationshipType\u0022: \u0022OWNER\u0022\n            }\n        ]\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5605AQHAq1EzmbDx4A,urn:li:digitalmediaMediaArtifactClass:uploadedVideo)\u0022,\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022uploadUrl\u0022: \u0022https://www.linkedin.com/dms-uploads/C5605AQHAq1EzmbDx4A/uploadedVideo/0?ca=vector_feedshare\u0026cn=uploads_secure\u0026ccn=ambry-video\u0026sync=0\u0026v=beta\u0026ut=2IxLQWAqk1uGw1\u0022,\n                \u0022headers\u0022: {\n                    \u0022media-type-family\u0022: \u0022VIDEO\u0022\n                }\n            }\n        },\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5605AQHAq1EzmbDx4A\u0022,\n        \u0022assetRealTimeTopic\u0022: \u0022urn:li-realtime:digitalmediaAssetUpdatesTopic:urn:li:digitalmediaAsset:C5605AQHAq1EzmbDx4A\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Register an Upload for Video",
+        "Sample Response"
+      ],
+      "Text": "The headers x-amz-server-side-encryption and x-amz-server-side-encryption-aws-kms-key-id can be ignored. These were required for past implementations, but are only present now for backwards compatibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Registering Multi-Part Upload",
+      "Anchor": "registering-multi-part-upload",
+      "SectionPath": [
+        "Registering Multi-Part Upload"
+      ],
+      "Text": "For videos larger than 200MB, split the file and register a MULTIPART_UPLOAD instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Registering Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Registering Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Registering Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "{ \n   \u0022registerUploadRequest\u0022:{ \n      \u0022owner\u0022:\u0022urn:li:organization:24141830\u0022,\n      \u0022recipes\u0022:[ \n         \u0022urn:li:digitalmediaRecipe:feedshare-video\u0022\n      ],\n      \u0022serviceRelationships\u0022:[ \n         { \n            \u0022identifier\u0022:\u0022urn:li:userGeneratedContent\u0022,\n            \u0022relationshipType\u0022:\u0022OWNER\u0022\n         }\n      ],\n      \u0022supportedUploadMechanism\u0022:[ \n         \u0022MULTIPART_UPLOAD\u0022\n      ],\n      \u0022fileSize\u0022: 52428801\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Registering Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/assets?action=registerUpload\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n\n--data \u0027{ \n   \u0022registerUploadRequest\u0022:{ \n      \u0022owner\u0022:\u0022urn:li:organization:24141830\u0022,\n      \u0022recipes\u0022:[ \n         \u0022urn:li:digitalmediaRecipe:feedshare-video\u0022\n      ],\n      \u0022serviceRelationships\u0022:[ \n         { \n            \u0022identifier\u0022:\u0022urn:li:userGeneratedContent\u0022,\n            \u0022relationshipType\u0022:\u0022OWNER\u0022\n         }\n      ],\n      \u0022supportedUploadMechanism\u0022:[ \n         \u0022MULTIPART_UPLOAD\u0022\n      ],\n      \u0022fileSize\u0022: 52428801\n   }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Registering Multi-Part Upload",
+        "Sample Response"
+      ],
+      "Text": "The metadata field in this response will be used again in order to complete the multi-part upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Registering Multi-Part Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MultipartUpload\u0022: {\n                \u0022partUploadRequests\u0022: [\n                    {\n                        \u0022headers\u0022: {\n                            \u0022Content-Type\u0022: \u0022application/octet-stream\u0022\n                        },\n                        \u0022byteRange\u0022: {\n                            \u0022lastByte\u0022: 4194303,\n                            \u0022firstByte\u0022: 0\n                        },\n                        \u0022url\u0022: \u0022https://www.linkedin.com/dms-uploads/C4E05AQEw_VQIt69CrA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2FtYnJ5L2FtYnJ5LXZpZGVvLz94LWxpLWFtYnJ5LWVwPUFRR0kzaFZtYmV2VXl3QUFBWFJhR0t1NlpNOVZnaUtCR0dfY0xhOUR5SUVacXE3UEVDZGtFWDlUSFJFU1lOcElnaDF1SzVRZVdmT0l3ZW5RSGl6V0UyUXBLYUNmZmRydG4yRUgyQ0lpSDRBXzAzLXRNRGQtOGZ3aFFLZTVBblJOTnVvTi15b0EySFZwTVJ0ZHRGd3hKRkVteTZIRTEyVXNjRnNPV3IySjJRMXZWTl9BcW1faDdWQVFEQVBqeFFpQVVVVUxOblFpNTJtc1JKUmtPMGZOcnBuelNZVVF6WFFncUZyYkFkOHdVaUwzS2h1Q2dDUEUxc2owMFR3MEk3TGlCbk9hbDlieEJFS0FhMFZJVzdwQlVxcFBlWUxXV0ZhZTlUUWhFVllHMkFYWFVsUjdERWp5b0lWT0tJcTlqZGUxb3hTYzZVdDBHSUxsWmUxOVhqbFc1dHJwdDM0YXh2VVhwYi1WX2h1LW9NTmJHUkVHN0RLYS1teWw3VWE5LVBWTUEwdUxKTUhleXlHVkxyTk9LbjM4UENVRkJCeUVTNzVoa0xUdV9LYUdNSjJ3QjQ4YnV2bzJqcGpkdjhSRmxubTloN3JtX1NkRFdJcUR6cHdZYnFiMV9ZNjVIdG03OC01eDhyb1VLSHhyMThNaTJRYTdvMktjZHdOLVE1WnJ4RWd1S0s4Ny1RYzRrcE9fdDhYY1VfeEZvYnNlUUxqTmpMNWpkSTd3czdIRUZKYmtlSFN0c0VwOVV6amdzYUdLRFpoWlMtWmw3amR0QWtqSjBvQkRIS0RGamlFSG0wYXBLNlFzY2N3UV95UU15SmVodFQwTTN2OE5pU1M1MmIya2dYd3hwUFFLU3RLQ05qMXNvaUxKZFZPanJQcTdzaWEyWWpyWnlWSXpUU0JHRFdtaGpSNTk0THZyekU5WnR3a2c0S0F5b3BiQnBna3NxR2lSeVFDcEU3Z2lGZmo5bjlRRnhFREVnendyU3FOVDNPaWo1NjhOSEVzVEN5WlAtLTFpS2V0MFpuRmdxNGxubTliMWdiT2NKai1FNlF2Q3otckJRMGpjT3ZUd21mSGxMVmlxQkFMUktfcHZEUkItZEpxMTJWTDd5UzdVbEUzSFVHYnpSRnRuV0VtQ0ZvUjI2Tzlqb1JvTzJpTnJ1LUEzYlM5cFRETXdRR3luMTl6R0VtYkxUZ3k0Mm0tRWE4NXR2ZERTbWp0MDRYMVZtazYwVEszRVpsRGNGVHNid0twTTdqRFcxNG45VF9PT3B5MUItYlJnekdGLXNEVXZiYTlPcWd5MzZvSlFkUnhiWGRrSS1JMDlKUWtWQUhqOUhwcVlhbklDLVFyek1JQ3QyczloZWR6cS1YUUcybDVvcnpyMERHQkh2SkdVVHRTb3NiaXF6X3NsM05RZ3AwaS1Kc3MzQzNZLVd3\u0026pn=1\u0026m=73633761\u0026app=56349154\u0026sync=0\u0026v=beta\u0026ut=1LEOuYNiICJpo1\u0022,\n                        \u0022urlExpiresAt\u0022: 1599325800381\n                    },\n                    {\n                        \u0022headers\u0022: {\n                            \u0022Content-Type\u0022: \u0022application/octet-stream\u0022\n                        },\n                        \u0022byteRange\u0022: {\n                            \u0022lastByte\u0022: 8388607,\n                            \u0022firstByte\u0022: 4194304\n                        },\n                        \u0022url\u0022: \u0022https://www.linkedin.com/dms-uploads/C4E05AQEw_VQIt69CrA/uploadedVideo?sau=aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2FtYnJ5L2FtYnJ5LXZpZGVvLz94LWxpLWFtYnJ5LWVwPUFRR0kzaFZtYmV2VXl3QUFBWFJhR0t1NlpNOVZnaUtCR0dfY0xhOUR5SUVacXE3UEVDZGtFWDlUSFJFU1lOcElnaDF1SzVRZVdmT0l3ZW5RSGl6V0UyUXBLYUNmZmRydG4yRUgyQ0lpSDRBXzAzLXRNRGQtOGZ3aFFLZTVBblJOTnVvTi15b0EySFZwTVJ0ZHRGd3hKRkVteTZIRTEyVXNjRnNPV3IySjJRMXZWTl9BcW1faDdWQVFEQVBqeFFpQVVVVUxOblFpNTJtc1JKUmtPMGZOcnBuelNZVVF6WFFncUZyYkFkOHdVaUwzS2h1Q2dDUEUxc2owMFR3MEk3TGlCbk9hbDlieEJFS0FhMFZJVzdwQlVxcFBlWUxXV0ZhZTlUUWhFVllHMkFYWFVsUjdERWp5b0lWT0tJcTlqZGUxb3hTYzZVdDBHSUxsWmUxOVhqbFc1dHJwdDM0YXh2VVhwYi1WX2h1LW9NTmJHUkVHN0RLYS1teWw3VWE5LVBWTUEwdUxKTUhleXlHVkxyTk9LbjM4UENVRkJCeUVTNzVoa0xUdV9LYUdNSjJ3QjQ4YnV2bzJqcGpkdjhSRmxubTloN3JtX1NkRFdJcUR6cHdZYnFiMV9ZNjVIdG03OC01eDhyb1VLSHhyMThNaTJRYTdvMktjZHdOLVE1WnJ4RWd1S0s4Ny1RYzRrcE9fdDhYY1VfeEZvYnNlUUxqTmpMNWpkSTd3czdIRUZKYmtlSFN0c0VwOVV6amdzYUdLRFpoWlMtWmw3amR0QWtqSjBvQkRIS0RGamlFSG0wYXBLNlFzY2N3UV95UU15SmVodFQwTTN2OE5pU1M1MmIya2dYd3hwUFFLU3RLQ05qMXNvaUxKZFZPanJQcTdzaWEyWWpyWnlWSXpUU0JHRFdtaGpSNTk0THZyekU5WnR3a2c0S0F5b3BiQnBna3NxR2lSeVFDcEU3Z2lGZmo5bjlRRnhFREVnendyU3FOVDNPaWo1NjhOSEVzVEN5WlAtLTFpS2V0MFpuRmdxNGxubTliMWdiT2NKai1FNlF2Q3otckJRMGpjT3ZUd21mSGxMVmlxQkFMUktfcHZEUkItZEpxMTJWTDd5UzdVbEUzSFVHYnpSRnRuV0VtQ0ZvUjI2Tzlqb1JvTzJpTnJ1LUEzYlM5cFRETXdRR3luMTl6R0VtYkxUZ3k0Mm0tRWE4NXR2ZERTbWp0MDRYMVZtazYwVEszRVpsRGNGVHNid0twTTdqRFcxNG45VF9PT3B5MUItYlJnekdGLXNEVXZiYTlPcWd5MzZvSlFkUnhiWGRrSS1JMDlKUWtWQUhqOUhwcVlhbklDLVFyek1JQ3QyczloZWR6cS1YUUcybDVvcnpyMERHQkh2SkdVVHRTb3NiaXF6X3NsM05RZ3AwaS1Kc3MzQzNZLVd3\u0026pn=2\u0026m=73633761\u0026app=56349154\u0026sync=0\u0026v=beta\u0026ut=04tcszy7ICJpo1\u0022,\n                        \u0022urlExpiresAt\u0022: 1599325800381\n                    },\n                    ... // Additional upload URLS redacted\n                ],\n                \u0022metadata\u0022: \u0022eyJidWNrZXROYW1lIjoidmlkZW8tdXBsb2Fkcy1laSIsImtleU5hbWUiOiJDNTUwMEFRSEduM1pOa01OT0NRL2F3cy11c2VyVXBsb2FkZWRWaWRlbyIsInVwbG9hZElkIjoicDB0djRSdE1ORThGN19haklGY21EN0lSeGNZNlhzTmp5ZlZCaE1qQ18yWjUxOUlaOHhOZm1vaFFFcGNPY0xSM1VXb080cWlnRFQ0YmNkcExJMnhwZTgwa09aYzVZeHVDTzUxdS5FVTVwVVA5cjhsRUFpUm1ZMEdYNmhDQUk1ODEiLCJhc3NldElkIjoiQzU1MDBBUUhHbjNaTmtNTk9DUSIsIm1lZGlhQXJ0aWZhY3RJZCI6ImF3cy11c2VyVXBsb2FkZWRWaWRlbyJ9\u0022\n            }\n        },\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C4E05AQEw_VQIt69CrA\u0022,\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4E05AQEw_VQIt69CrA,urn:li:digitalmediaMediaArtifactClass:uploadedVideo)\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Video",
+      "Anchor": "upload-the-video",
+      "SectionPath": [
+        "Upload the Video"
+      ],
+      "Text": "Use the upload URL from the previous step to upload the video. Use a PUT method to upload the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload the Video",
+      "Anchor": "upload-the-video",
+      "SectionPath": [
+        "Upload the Video"
+      ],
+      "Text": "The upload call shouldn\u0027t include an OAuth token in the \u0027Authorization\u0027 header. This is different than the upload image call which requires an OAuth token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample curl Request",
+      "Anchor": "sample-curl-request-1",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample curl Request"
+      ],
+      "Text": "curl -v -H \u0022Content-Type:application/octet-stream\u0022 --upload-file /Users/username/SampleVideo_2mb.mp4 \u0027https://www.linkedin.com/dms-uploads/C5400AQHpR1ANqMWqNA/uploadedVideo/0?ca=vector_feedshare\u0026cn=uploads_secure\u0026ccn=ambry-video\u0026m=AQLEZ2pjh43pagYYYXRaCyztOykwDzluHkkYTbsMjNUzivrEOeObw9h3\u0026app=1234\u0026sync=1\u0026v=beta\u0026ut=1KeEm4JnMnJpo1\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample curl Request",
+      "Anchor": "sample-curl-request-1",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample curl Request"
+      ],
+      "Text": "The headers in the response will return an ETag if it\u0027s part of a multi-part upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample curl Request",
+      "Anchor": "sample-curl-request-1",
+      "SectionPath": [
+        "Upload the Video",
+        "Sample curl Request"
+      ],
+      "Text": "HTTP/1.1 200 OK\nContent-Length: 0\nConnection: keep-alive\nx-amz-id-2: 2wer1EizXFXQneT6n1VAa4l1ggPOM9cOl0jJFgpk0ocOYyZsjLKAHaQwmOKi47hHG6D9R2w4y5A=\nx-amz-request-id: C6DA7DF813E33C69\nDate: Thu, 27 Sep 2018 22:40:01 GMT\nx-amz-version-id: AguPSmqVmxmrKvuJ56mIDeUu5FqnJffZ\nx-amz-server-side-encryption: aws:kms\nx-amz-server-side-encryption-aws-kms-key-id: arn:aws:kms:us-east-1:123456789:key/e10ace24-blah-4977-bar-89foo193e2ab\nETag: \u0022e4383924336106965d6cd2a111beaceb\u0022\nServer: AmazonS3\nX-Amz-Cf-Id: CgvELDhzYQgJ8qpJka_pAscHJ4Dnwsc0sDj4zZAiwnji-YZXK2aRdA==",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complete Multi-Part Upload",
+      "Anchor": "complete-multi-part-upload",
+      "SectionPath": [
+        "Complete Multi-Part Upload"
+      ],
+      "Text": "When you register a video as a multi-part upload by setting \u0022supportedUploadMechanism\u0022:[\u0022MULTIPART_UPLOAD\u0022] and registerUploadRequest.fileSize = \u003Cfile size\u003E, you receive a response with multiple upload URLs and headers. Upload the split file using the URLs. See Upload the Video for an example. Once you upload the content, the response headers of each upload returns an ETag. Use the ETags to complete the multi-part upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Complete Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "Make sure to set the Content-Type header to application/json.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Complete Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "The metadata field is passed to you in the response when registering a multi-part Upload. Use it again as shown in the sample below to complete the multi-part upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Complete Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Complete Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/assets?action=completeMultiPartUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Complete Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022completeMultipartUploadRequest\u0022: {\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5500AQHGn3ZNkMNOCQ,urn:li:digitalmediaMediaArtifactClass:aws-userUploadedVideo)\u0022,\n        \u0022metadata\u0022: \u0022eyJidWNrZXROYW1lIjoidmlkZW8tdXBsb2Fkcy1laSIsImtleU5hbWUiOiJDNTUwMEFRSEduM1pOa01OT0NRL2F3cy11c2VyVXBsb2FkZWRWaWRlbyIsInVwbG9hZElkIjoicDB0djRSdE1ORThGN19haklGY21EN0lSeGNZNlhzTmp5ZlZCaE1qQ18yWjUxOUlaOHhOZm1vaFFFcGNPY0xSM1VXb080cWlnRFQ0YmNkcExJMnhwZTgwa09aYzVZeHVDTzUxdS5FVTVwVVA5cjhsRUFpUm1ZMEdYNmhDQUk1ODEiLCJhc3NldElkIjoiQzU1MDBBUUhHbjNaTmtNTk9DUSIsIm1lZGlhQXJ0aWZhY3RJZCI6ImF3cy11c2VyVXBsb2FkZWRWaWRlbyJ9\u0022,\n        \u0022partUploadResponses\u0022: [\n            {\n                \u0022headers\u0022: {\n                    \u0022ETag\u0022: \u0022d8a5ce5adcdac4063feabcda7183396e\u0022\n                },\n                \u0022httpStatusCode\u0022: 200\n            },\n            {\n                \u0022headers\u0022: {\n                    \u0022ETag\u0022: \u002224259a14365734f1f1b4abcdb5e55d01e\u0022\n                },\n                \u0022httpStatusCode\u0022: 200\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Complete Multi-Part Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/assets?action=completeMultiPartUpload\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n\n--data \u0027{\n    \u0022completeMultipartUploadRequest\u0022: {\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5500AQHGn3ZNkMNOCQ,urn:li:digitalmediaMediaArtifactClass:aws-userUploadedVideo)\u0022,\n        \u0022metadata\u0022: \u0022eyJidWNrZXROYW1lIjoidmlkZW8tdXBsb2Fkcy1laSIsImtleU5hbWUiOiJDNTUwMEFRSEduM1pOa01OT0NRL2F3cy11c2VyVXBsb2FkZWRWaWRlbyIsInVwbG9hZElkIjoicDB0djRSdE1ORThGN19haklGY21EN0lSeGNZNlhzTmp5ZlZCaE1qQ18yWjUxOUlaOHhOZm1vaFFFcGNPY0xSM1VXb080cWlnRFQ0YmNkcExJMnhwZTgwa09aYzVZeHVDTzUxdS5FVTVwVVA5cjhsRUFpUm1ZMEdYNmhDQUk1ODEiLCJhc3NldElkIjoiQzU1MDBBUUhHbjNaTmtNTk9DUSIsIm1lZGlhQXJ0aWZhY3RJZCI6ImF3cy11c2VyVXBsb2FkZWRWaWRlbyJ9\u0022,\n        \u0022partUploadResponses\u0022: [\n            {\n                \u0022headers\u0022: {\n                    \u0022ETag\u0022: \u0022d8a5ce5adcdac4063feabcda7183396e\u0022\n                },\n                \u0022httpStatusCode\u0022: 200\n            },\n            {\n                \u0022headers\u0022: {\n                    \u0022ETag\u0022: \u002224259a14365734f1f1b4abcdb5e55d01e\u0022\n                },\n                \u0022httpStatusCode\u0022: 200\n            }\n        ]\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check Status of Upload",
+      "Anchor": "check-status-of-upload",
+      "SectionPath": [
+        "Check Status of Upload"
+      ],
+      "Text": "Retrieve asset information using the Asset ID from the digitalmediaAsset URN. Depending on content size, it might take a few minutes for the upload to complete. Wait for the upload to complete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Check Status of Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Check Status of Upload",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/assets/C5400AQHpR1ANqMWqNA",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Check Status of Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/assets/C5400AQHpR1ANqMWqNA\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Check Status of Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1521582700662,\n    \u0022id\u0022: \u0022C5405AQEOFHXqeM2vRA\u0022,\n    \u0022lastModified\u0022: 1521583180818,\n    \u0022mediaTypeFamily\u0022: \u0022VIDEO\u0022,\n    \u0022recipes\u0022: [\n        {\n            \u0022recipe\u0022: \u0022urn:li:digitalmediaRecipe:feedshare-video\u0022,\n            \u0022status\u0022: \u0022PROCESSING\u0022\n        }\n    ],\n    \u0022serviceRelationships\u0022: [\n        {\n            \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n            \u0022relationshipType\u0022: \u0022OWNER\u0022\n        }\n    ],\n    \u0022status\u0022: \u0022ALLOWED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Media Artifacts",
+      "Anchor": "get-media-artifacts",
+      "SectionPath": [
+        "Get Media Artifacts"
+      ],
+      "Text": "Get the Media Artifacts associated with a vector asset by explicitly requesting for mediaArtifacts in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get Media Artifacts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get Media Artifacts",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/assets/C5400AQHpR1ANqMWqNA?fields=mediaArtifacts,recipes,id",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get Media Artifacts",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/assets/D5505AQEWConBCL9YCw?fields=mediaArtifacts,recipes,id\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Get Media Artifacts",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022recipes\u0022: [\n    {\n      \u0022recipe\u0022: \u0022urn:li:digitalmediaRecipe:feedshare-video\u0022,\n      \u0022status\u0022: \u0022AVAILABLE\u0022\n    }\n  ],\n  \u0022mediaArtifacts\u0022: [\n    {\n      \u0022data\u0022: {\n        \u0022adaptiveStreamVideoWithAudioMasterPlaylist\u0022: {\n          \u0022protocol\u0022: \u0022HLS\u0022,\n          \u0022playlistFileIndex\u0022: 0,\n          \u0022playlistType\u0022: \u0022VOD\u0022,\n          \u0022representations\u0022: [\n            {\n              \u0022bitrate\u0022: {\n                \u0022average\u0022: 156810,\n                \u0022maximum\u0022: 156810,\n                \u0022type\u0022: \u0022UNKNOWN\u0022,\n                \u0022minimum\u0022: 156810\n              },\n              \u0022codecs\u0022: [\n                {\n                  \u0022name\u0022: \u0022aac\u0022,\n                  \u0022longName\u0022: \u0022AAC (Advanced Audio Coding)\u0022\n                },\n                {\n                  \u0022name\u0022: \u0022h264\u0022,\n                  \u0022longName\u0022: \u0022H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\u0022\n                }\n              ],\n              \u0022artifactClass\u0022: \u0022urn:li:digitalmediaArtifactClass:hls-360p-30fp-crf28\u0022\n            }\n          ],\n          \u0022durationInMicroseconds\u0022: 2056556,\n          \u0022displayAspectRatio\u0022: {\n            \u0022widthAspect\u0022: 1.5,\n            \u0022heightAspect\u0022: 1.0,\n            \u0022formatted\u0022: \u00221.50:1.00\u0022\n          }\n        }\n      },\n      \u0022identifiers\u0022: [\n        {\n          \u0022identifier\u0022: \u0022https://dms-akam.licdn-ei.com/playlist/vid/dynamic/D5505AQEWConBCL9YCw/A1690847960739?e=1691456400\u0026v=beta\u0026t=8cSey_82WmVrXseSErxBDM5zrPxAOf1_KsPLNpSotyY\u0022,\n          \u0022mediaType\u0022: \u0022application/vnd.apple.mpegURL\u0022,\n          \u0022identifierExpiresInSeconds\u0022: 1691456400,\n          \u0022size\u0022: 0\n        }\n      ]\n    }\n  ],\n  \u0022id\u0022: \u0022D5505AQEWConBCL9YCw\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Compare \u0026 Contrast",
+      "Anchor": "compare--contrast",
+      "SectionPath": [
+        "Compare \u0026 Contrast"
+      ],
+      "Text": "",
+      "Headers": [
+        "Features",
+        "Assets API",
+        "Videos API",
+        "Images API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Image Upload Mechanism",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For images, /assets API supports Synchronous upload, by default it\u0027s Asynchronous.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/images API doesn\u0027t support Synchronous Upload.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Video Upload Mechanism",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "File Size based upload - Only MULTIPART_UPLOAD for files greater than 200 MB and either SINGLE_REQUEST_UPLOAD or MULTIPART_UPLOAD otherwise.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unified protocol irrespective of the file size. the API will respond with upload URLs. If the response contains multiple upload urls, then videos have to be uploaded as multipart using the received link in the same order.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NA",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Video Upload Flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Complete Multipart upload action is used to complete the video upload with the help of Etags.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In videos API, FinalizeUpload action is used to complete the video upload.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NA",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Video Supplementary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Assets API doesn\u0027t support uploading of thumbnails and captions for videos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/videos API supports uploading of captions and thumbnails. The captions, thumbnails can be uploaded independent of the file size with multipart upload functionality by default.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NA",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Asset Reuse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer needs to have understanding about concepts like recipes(either video or image). Assets generally can\u0027t be reused.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Videos API doesn\u0027t have any difference in terms of recipes and uploaded videos can be used across multiple video post formats. Eg. a video uploaded can be used for both organic posts and sponsored content ads.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No need for recipes. Uploaded image can be used in multiple ad formats such as single Image Ads, Carousel Ads and Spotlight Ads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "API Responsibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/assets API is same for video and images making the schema generic and more complex.Output Urn- After an asset is uploaded, the urn is of type urn:li:digitalmediaAsset:C55FS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/videos is used for all video uploads (no need to pre-determine purpose).Output Urn- After a video is uploaded, the urn is of type urn:li:video:C5505",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/images is used for all images uploads (no need to pre-determine purpose).Output Urn- After an image is uploaded, the urn is of type urn:li:image:C5505.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Asset Usage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Uploaded Assets can be used from /videos and /images.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer can take out the Id part from the Urn to use in the /videos API for the older videos uploaded using /assets API.For instance- /assets returns- urn:li:digitalmediaAsset:C5522AQHn46pwH96hxQ.To make use of the id in /videos API, simply reuse the id as urn:li:video:C5522AQHn46pwH96hxQ.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer can take out the Id part from the Urn to use in the /images API for the older images uploaded using /assets API. For instance- /assets returns- urn:li:digitalmediaAsset:C5522AQHn46pwH96hxQ. To make use of the id in /images API, simply reuse the id as urn:li:image:C5522AQHn46pwH96hxQ.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Future Roadmap",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/assets API won\u0027t have any feature additions and will be deprecated in the future.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/videos API will be improved with new features and is meant for long term availability.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/images API will be improved with new features and is meant for long term availability.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is malformed or missing required parameters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check request syntax and required fields.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNAUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The OAuth token is missing, invalid, or expired.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide a valid OAuth token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authenticated user doesn\u0027t have permission to perform this action.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure correct permissions and scopes are granted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested resource doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the asset or resource ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONFLICT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request couldn\u0027t be completed due to a conflict with the current state of the resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry or resolve the conflict before retrying.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "413",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REQUEST_ENTITY_TOO_LARGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The uploaded file exceeds the allowed size limit.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reduce the file size and try again.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "415",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNSUPPORTED_MEDIA_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The uploaded file format is not supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a supported file format (e.g., JPG, PNG, MP4).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNPROCESSABLE_ENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server understands the request but can\u0027t process it (e.g., invalid image/video).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check file integrity and format.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit exceeded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Wait and retry after some time.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An unexpected error occurred on the server.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry later or contact LinkedIn support if persistent.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SERVICE_UNAVAILABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service is temporarily unavailable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry after some time.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

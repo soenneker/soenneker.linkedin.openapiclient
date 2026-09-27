@@ -1,0 +1,2400 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+  "Title": "Engagement Retargeting",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "The LinkedIn Ads platform offers advertisers the ability to retarget audiences based on content engagement and interactions such as visiting a company page or watching a video. To enable engagement retargeting functionality, engagement rule(s) must be created.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "For more information on campaign targeting options, see Ads Targeting, and for information on using retargeting in Campaign Manager, see Retargeting Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn for the LinkedIn Marketing API Program and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Engagement Retargeting",
+      "Anchor": "engagement-retargeting",
+      "SectionPath": [],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Scope Permission",
+      "Anchor": "scope-permission",
+      "SectionPath": [
+        "Permissions",
+        "Scope Permission"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts data",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Account Roles",
+      "Anchor": "account-roles",
+      "SectionPath": [
+        "Permissions",
+        "Account Roles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Engagement Source Type",
+        "Required Account Roles"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Company Pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PAGE_ADMINDARK_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "PAGE_ADMIN",
+              "DARK_CONTENT_POSTER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Permissions",
+        "Rate Limits"
+      ],
+      "Text": "We have introduced granular rate limits for this API to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Permissions",
+        "Rate Limits"
+      ],
+      "Text": "You may get a HTTP 429 response if calling the endpoints too frequently, indicating that you\u0027re exceeding the rate limits. If your application makes a large amount of automated, bulk data pushes that exceed tens of millions of calls, you can expect to see frequent throttling.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Permissions",
+        "Rate Limits"
+      ],
+      "Text": "The limits we intend to enforce won\u0027t be customizable at an application level. However the limits will be enforced such that there\u0027s minimal interruption to existing applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "You need a DMP Segment with source_platform inline with type of engagement source in order to create or get an Engagement Rule. Refer to the following table:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "",
+      "Headers": [
+        "Engagement source type",
+        "Source Platform Enum"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Video Ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_ADS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Leadgen Forms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LEAD_GEN_FORMS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ORGANIZATION_PAGES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Website retargeting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LINKEDIN_WEBSITE_RETARGETING",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Single image ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SINGLE_IMAGE_ADS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Document ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DOCUMENT_ADS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Conversation ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONVERSATION_ADS",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Event Pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "If you have created a dmpSegment, please do add an engagement rule on it, or delete it if you don\u0027t plan to use it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "{\n   \u0022name\u0022:\u0022DMP Segment 1\u0022,\n   \u0022sourcePlatform\u0022:\u0022VIDEO_ADS\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:1000\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \n--data \u0027{\n   \u0022name\u0022:\u0022DMP Segment 1\u0022,\n   \u0022sourcePlatform\u0022:\u0022VIDEO_ADS\u0022,\n   \u0022account\u0022:\u0022urn:li:sponsoredAccount:1000\u0022,\n   \u0022type\u0022:\u0022USER\u0022,\n   \u0022destinations\u0022:[\n      {\n         \u0022destination\u0022:\u0022LINKEDIN\u0022\n      }\n   ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the segment ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request To Create a DMP Segment",
+      "Anchor": "sample-request-to-create-a-dmp-segment",
+      "SectionPath": [
+        "Prerequisites",
+        "Sample Request To Create a DMP Segment"
+      ],
+      "Text": "After you create a DMP segment, you must wait 5 seconds for the segment to be available to add any engagement rule.\nIf you try to create an engagement rule when a DMP segment is not ready, you might receive validation error(s) including:\n\u0022Entity with dmp segment id {your dmp segment id} was not found.\u0022 or\n\u0022Unable to load dmp segment id {your dmp segment id}. Please try again.\u0022\nRetry creating engagement rule(s).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Engagement Source Types",
+      "Anchor": "supported-engagement-source-types",
+      "SectionPath": [
+        "Supported Engagement Source Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Engagement Source Type",
+        "Engagement Trigger",
+        "Look Back"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Video Ads (VIDEO_ADS)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewed at least 25% (FIRST_QUARTILE)Viewed at least 50% (MIDPOINT)Viewed at least 75% (THIRD_QUARTILE)Viewed at least 97% (FULL_COMPLETE)",
+            "Links": [],
+            "Values": [
+              "Viewed at least 25% (FIRST_QUARTILE)",
+              "Viewed at least 50% (MIDPOINT)",
+              "Viewed at least 75% (THIRD_QUARTILE)",
+              "Viewed at least 97% (FULL_COMPLETE)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Leadgen Forms (LEAD_GEN_FORMS)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Anyone who opened your lead gen form, including submits (VIEW_FORM)Only people who submitted your lead gen form (LEAD_FORM_SUBMIT)",
+            "Links": [],
+            "Values": [
+              "Anyone who opened your lead gen form, including submits (VIEW_FORM)",
+              "Only people who submitted your lead gen form (LEAD_FORM_SUBMIT)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Company Pages (ORGANIZATION_PAGES)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "People who visited your organization page (VIEW)Call-to-action Button Clicks (CTA_CLICK)",
+            "Links": [],
+            "Values": [
+              "People who visited your organization page (VIEW)",
+              "Call-to-action Button Clicks (CTA_CLICK)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Single Image Ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "People who performed chargeable clicks on your ad (CLICK)Any interactions with your ad (ENGAGEMENT)",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a423098"
+            ],
+            "Values": [
+              "People who performed chargeable clicks on your ad (CLICK)",
+              "Any interactions with your ad (ENGAGEMENT)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Website",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "People who visited your website (VISIT)",
+            "Links": [],
+            "Values": [
+              "People who visited your website (VISIT)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Document Ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "People who performed chargeable clicks on your ad (CLICK)Any interactions with your ad (ENGAGEMENT) Those who downloaded the document (DOWNLOAD_CLICK)",
+            "Links": [],
+            "Values": [
+              "People who performed chargeable clicks on your ad (CLICK)",
+              "Any interactions with your ad (ENGAGEMENT)",
+              "Those who downloaded the document (DOWNLOAD_CLICK)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Conversation Ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "People who opened a conversation (OPEN)People who clicked on any call-to-action (ANY_CTA_CLICK)",
+            "Links": [],
+            "Values": [
+              "People who opened a conversation (OPEN)",
+              "People who clicked on any call-to-action (ANY_CTA_CLICK)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "Event Pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "People who marked themselves as \u0022attending\u0022 the event (RSVPED)People who viewed the stream/video for 2 continuous seconds (VIDEO_VIEWED)Viewed at least 25% of your event (FIRST_QUARTILE)Viewed at least 50% of your event (MIDPOINT)Viewed at least 75% of your event (THIRD_QUARTILE)Viewed at least 97% of your event (FULL_COMPLETE)Any interactions on your event (ENGAGEMENT)People who performed chargeable clicks on your event (CLICK)",
+            "Links": [],
+            "Values": [
+              "People who marked themselves as \u0022attending\u0022 the event (RSVPED)",
+              "People who viewed the stream/video for 2 continuous seconds (VIDEO_VIEWED)",
+              "Viewed at least 25% of your event (FIRST_QUARTILE)",
+              "Viewed at least 50% of your event (MIDPOINT)",
+              "Viewed at least 75% of your event (THIRD_QUARTILE)",
+              "Viewed at least 97% of your event (FULL_COMPLETE)",
+              "Any interactions on your event (ENGAGEMENT)",
+              "People who performed chargeable clicks on your event (CLICK)"
+            ]
+          },
+          {
+            "Text": "30 Days60 Days90 Days180 Days365 Days",
+            "Links": [],
+            "Values": [
+              "30 Days",
+              "60 Days",
+              "90 Days",
+              "180 Days",
+              "365 Days"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Engagement Source Types",
+      "Anchor": "supported-engagement-source-types",
+      "SectionPath": [
+        "Supported Engagement Source Types"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Engagement Source Types",
+      "Anchor": "supported-engagement-source-types",
+      "SectionPath": [
+        "Supported Engagement Source Types"
+      ],
+      "Text": "For website retargeting, the advertiser you\u0027re working with must have deployed a working and live Insight Tag on their website.\u00A0For more information, see Conversion Tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retargeting Audiences",
+      "Anchor": "retargeting-audiences",
+      "SectionPath": [
+        "Supported Engagement Source Types",
+        "Retargeting Audiences"
+      ],
+      "Text": "After you create an engagement rule on a dmp segment, it can take up to 48 hours (on a rare occasion, longer) for your retargeting audience to process and up to an additional 24 hours to start delivery. Include this audience to a campaign at any time and it will automatically start serving once ready. To check audience count and segment status, see DMP Segments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retargeting Audiences Example Workflow",
+      "Anchor": "retargeting-audiences-example-workflow",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow"
+      ],
+      "Text": "Each engagement retargeting audience has a dmp segment id associated with engagement rules, each rule containing the following: \nEngagement Source: content that the member engaged with \nEngagement Trigger: action performed by the member \nLookback: when was the action performed",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retargeting Audiences Example Workflow",
+      "Anchor": "retargeting-audiences-example-workflow",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow"
+      ],
+      "Text": "Example: if an advertiser wants to retarget all members who watched more than 25% of video ad campaign 123456 in the past 90 days, then the engagement source will be campaign id 123456, engagement trigger will be watched more than 25% of video ad and lookback will be 90 days. Engagement source is not to be confused with engagement source type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to Create An Engagement Retargeting Audience",
+      "Anchor": "steps-to-create-an-engagement-retargeting-audience",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow",
+        "Steps to Create An Engagement Retargeting Audience"
+      ],
+      "Text": "There are sevreal ways this flow could be implemented, below is an example flow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to Create An Engagement Retargeting Audience",
+      "Anchor": "steps-to-create-an-engagement-retargeting-audience",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow",
+        "Steps to Create An Engagement Retargeting Audience"
+      ],
+      "Text": "At this point, the user should be narrowed down to a single sponsored account.\nGet all Supported Engagement Source Types. Only engagement source types with the engagementSourceTypeStatus ACTIVE can be used for creating engagement rules.\nAllow the user to choose one of the available engagement source types from the previous step, then get all Supported Engagement Triggers for the chosen engagement source type. Only engagement triggers with the engagementTriggerStatus ACTIVE can be used for creating engagement rules.\nHave engagement source(s) ready to be used for engagement rule creation. For example, sponsoredCampaign urns for Video Ads and Leadgen Forms or an Organization URN for Company Pages. See Create and Manage Campaigns to find your campaigns.\nFetch and display the engagement source\u0027s Statistics and Analytics based on the chosen lookback window and engagement trigger.Allow the user to choose which engagement sources they want to use to create their engagement retargeting audience, along with the engagement trigger and lookback window.\nCreate a dmp segment with appropriate source platform. Refer to this table for the appropriate source platform to use in the request.\nCreate an Engagement Rule (or create multiple engagement rules if multiple engagement sources were chosen) for the dmpSegment created in the step 6.\n\n Tip\nThe trigger URN will be defined using the engagement source and trigger chosen from step 2 and 3. For example, urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE_VIEWERS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Statistics and Analytics",
+      "Anchor": "statistics-and-analytics",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow",
+        "Statistics and Analytics"
+      ],
+      "Text": "The LinkedIn Ads platform offers advertisers the ability to retrieve statistics and analytics for the source to help determine if engagement retargeting is beneficial.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Statistics and Analytics",
+      "Anchor": "statistics-and-analytics",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow",
+        "Statistics and Analytics"
+      ],
+      "Text": "For Video Ads, Leadgen Forms, and Single Image Ads, statistics will be available via /adAnalytics, see Ad Analytics.\nFor Company Pages, statistics will be available via /organizationPageStatistics, see Organization Page Statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Examples of Analytics",
+      "Anchor": "examples-of-analytics",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow",
+        "Statistics and Analytics",
+        "Examples of Analytics"
+      ],
+      "Text": "Example 1: engagement retargeting can be beneficial.\nA Video Ads campaign has 10,000\u002B videoStarts or 500\u002B videoCompletions from /adAnalytics, meaning the video ads has been watched by a decent number of audiences, and can be used for retargeting, to get a better ads experience with targeting audiences.\nExample 2: engagement retargeting may not be beneficial.\nA Video Ads campaign has 10 videoStarts or 0 videoCompletionsfrom /adAnalytics, meaning the video ads hasn\u0027t been watched by many people yet, so it\u0027s not suggested to be used for an engagement retargeting rule for now. It may be valuable later after more people watch it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Examples of Analytics",
+      "Anchor": "examples-of-analytics",
+      "SectionPath": [
+        "Retargeting Audiences Example Workflow",
+        "Statistics and Analytics",
+        "Examples of Analytics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Engagement Source Type",
+        "Engagement Trigger",
+        "Reference Field From Analytics or Statistics API",
+        "API Request Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VIDEO_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIRST_QUARTILE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(day:24,month:9,year:2020),end:(day:23,month:9,year:2021))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=videoFirstQuartileCompletions,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MIDPOINT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "THIRD_QUARTILE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FULL_COMPLETE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_GEN_FORMS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIEW_FORM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "oneClickLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_GEN_FORMS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LEAD_FORM_SUBMIT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "oneClickLeadFormOpens",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(day:24,month:9,year:2020),end:(day:23,month:9,year:2021))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=oneClickLeadFormOpens,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ORGANIZATION_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "totalPageStatistics.views",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/organizationPageStatistics?q=organization\u0026organization=URN%3Ali%3Aorganization%3A73841066\u0026timeIntervals=(timeRange:(start:1629926990000,end:1632518990000),timeGranularityType:MONTH)\u0026fields=totalPageStatistics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ORGANIZATION_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTA_CLICK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "totalPageStatistics.clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/organizationPageStatistics?q=organization\u0026organization=URN%3Ali%3Aorganization%3A73841066\u0026timeIntervals=(timeRange:(start:1629926990000,end:1632518990000),timeGranularityType:MONTH)\u0026fields=totalPageStatistics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SINGLE_IMAGE_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CLICK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(day:24,month:9,year:2021),end:(day:23,month:2,year:2021))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=clicks,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SINGLE_IMAGE_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENGAGEMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "totalEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(day:24,month:9,year:2021),end:(day:23,month:2,year:2021))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=totalEngagements,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_VIEWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoViews",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=videoViews,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIRST_QUARTILE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoFirstQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=videoFirstQuartileCompletions,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MIDPOINT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoMidpointCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=videoMidpointCompletions,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "THIRD_QUARTILE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoThirdQuartileCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=videoThirdQuartileCompletions,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FULL_COMPLETE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "videoCompletions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=videoCompletions,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENGAGEMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "totalEngagements",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=totalEngagements,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT_PAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CLICK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "clicks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "GET /rest/adAnalytics?q=analytics\u0026pivot=CAMPAIGN\u0026timeGranularity=ALL\u0026dateRange=(start:(year:2023,month:10,day:1),end:(year:2024,month:10,day:1))\u0026campaigns=List(URN%3Ali%3AsponsoredCampaign%3A123456)\u0026fields=clicks,pivotValues",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create An Engagement Rule",
+      "Anchor": "create-an-engagement-rule",
+      "SectionPath": [
+        "Create An Engagement Rule"
+      ],
+      "Text": "Add or Remove an engagement rule from a dmp segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "engagementSource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content URN that members are engaging with. For now, this could be a campaign or a organization URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementTrigger",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DMPEngagementTriggerUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action that users can take on the source. This could be viewed (2s, 25%, etc), visited, clicked, etc. E.g. urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE). See more details at Get Engagement Trigger",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting?view=li-lms-2026-09\u0026tabs=http#get-engagement-trigger"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeFrame",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time frame members engaged with the specified source URN with the specified engagement trigger. This should be a rolling time window like past 90 days.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TimeSpan",
+      "Anchor": "timespan",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Schema",
+        "TimeSpan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Object Name",
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the length of time",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "---",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "unit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeUnit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the unit of the duration of time. Allowed Unit(s): DAY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Input Data Requirements and Validations",
+      "Anchor": "input-data-requirements-and-validations",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Input Data Requirements and Validations"
+      ],
+      "Text": "An input request will be validated and it will fail if the following validation rules are not met:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Input Data Requirements and Validations",
+      "Anchor": "input-data-requirements-and-validations",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Input Data Requirements and Validations"
+      ],
+      "Text": "The DMP segment used must be valid, and must be created under the appropriate source platform as per this table and segment type USER.\nThe DMP segment must be accessible for the user.\nEngagement rules under the same segment must have the same engagement trigger, time frame, and engagement source URN type (e.g. sponsoredCampaign, organization, etc).\nInput engagement sources must be existing and accessible by the user making the request.\nInput engagement sources must be supported by LinkedIn Ads platform for API requests.\nInput engagement sources can\u0027t be duplicates of an engagement source that already exists in the engagement rule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10000/engagementRules",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:358004465\u0022,\n    \u0022timeFrame\u0022: {\n        \u0022timeSpan\u0022: {\n            \u0022duration\u0022: 60,\n            \u0022unit\u0022: \u0022DAY\u0022\n        }\n    },\n    \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10000/engagementRules\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \n--data \u0027{\n    \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:358004465\u0022,\n    \u0022timeFrame\u0022: {\n        \u0022timeSpan\u0022: {\n            \u0022duration\u0022: 60,\n            \u0022unit\u0022: \u0022DAY\u0022\n        }\n    },\n    \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the engagement rule ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (will fail)",
+      "Anchor": "sample-request-will-fail",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request (will fail)"
+      ],
+      "Text": "The below example would fail multiple validation rules because the engagement triggers, time frame, and engagement source URN types are different.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (will fail)",
+      "Anchor": "sample-request-will-fail",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request (will fail)"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:10000\u0022,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        },\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:campaignGroup:10001\u0022,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 30,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,MIDPOINT)\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/10000/engagementRules",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:10000\u0022,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        },\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:10001\u0022,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/10000/engagementRules\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:10000\u0022,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        },\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:10001\u0022,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "The response content will contain an id for each engagement rule created, along with the status code. A 201 will be returned if one engagement rule is created successfully.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/dmpSegments/119436/engagementRules/28265\u0022,\n            \u0022id\u0022: \u002228265\u0022,\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022location\u0022: \u0022/dmpSegments/119436/engagementRules/28275\u0022,\n            \u0022id\u0022: \u002228275\u0022,\n            \u0022status\u0022: 201\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete An Engagement Rule",
+      "Anchor": "delete-an-engagement-rule",
+      "SectionPath": [
+        "Delete An Engagement Rule"
+      ],
+      "Text": "Delete an engagement rule using the dmp segment ID and engagement rule ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete An Engagement Rule",
+      "Anchor": "delete-an-engagement-rule",
+      "SectionPath": [
+        "Delete An Engagement Rule"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete An Engagement Rule",
+      "Anchor": "delete-an-engagement-rule",
+      "SectionPath": [
+        "Delete An Engagement Rule"
+      ],
+      "Text": "If you have deleted all engagement rules under a segment, please do consider deleting the segment too.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/dmpSegments/10000/engagementRules/10000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/dmpSegments/10000/engagementRules/10000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Delete An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "The response returns a 204 No Content HTTP status code if the deletion succeeds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Multiple Engagement Rules",
+      "Anchor": "delete-multiple-engagement-rules",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules"
+      ],
+      "Text": "Delete a batch of engagement rules using dmp segment IDs and engagement rule IDs. Note that all the engagement rules must be under the same dmp segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Multiple Engagement Rules",
+      "Anchor": "delete-multiple-engagement-rules",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Multiple Engagement Rules",
+      "Anchor": "delete-multiple-engagement-rules",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules"
+      ],
+      "Text": "If you have deleted all engagement rules under a segment, please do consider deleting the segment too.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/dmpSegments/10000/engagementRules?ids=List(10001,10002)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/dmpSegments/10000/engagementRules?ids=List(10001,10002)\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "The response returns a 204 code for each segment that has been deleted successfully. Or an error with error message for each segment that has failed to be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Delete Multiple Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u002210001\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u002210002\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update An Engagement Rule",
+      "Anchor": "update-an-engagement-rule",
+      "SectionPath": [
+        "Update An Engagement Rule"
+      ],
+      "Text": "To ensure the data gets processed correctly, before updating an existing engagement rule, first delete the engagement rule and then create an engagement rule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update An Engagement Rule",
+      "Anchor": "update-an-engagement-rule",
+      "SectionPath": [
+        "Update An Engagement Rule"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update An Engagement Rule",
+      "Anchor": "update-an-engagement-rule",
+      "SectionPath": [
+        "Update An Engagement Rule"
+      ],
+      "Text": "After you delete an engagement rule, you must wait 5 seconds for the segment to be available to add any engagement rule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Get An Engagement Rule",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created, lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "creation timestamp and last updated timestamp.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dmpSegmentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The DMP segment id that this engagement retargeting rule belongs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementSource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content URN that members are engaging with.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementTrigger",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DMPEngagementTriggerUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action that users can take on the source.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The engagement rule id.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeFrame",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time frame members engaged with the specified source URN with the specified engagement trigger. This should be a rolling time window like past 90 days.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Get An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Get An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/10000/engagementRules/10001",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Get An Engagement Rule",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/10000/engagementRules/10001\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get An Engagement Rule",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:10000\u0022,\n    \u0022created\u0022: 1631251849000,\n    \u0022dmpSegmentId\u0022: 10000,\n    \u0022lastModified\u0022: 1631251849000,\n    \u0022id\u0022: 10001,\n    \u0022timeFrame\u0022: {\n        \u0022timeSpan\u0022: {\n            \u0022duration\u0022: 60,\n            \u0022unit\u0022: \u0022DAY\u0022\n        }\n    },\n    \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get All Engagement Rules",
+      "Anchor": "get-all-engagement-rules",
+      "SectionPath": [
+        "Get All Engagement Rules"
+      ],
+      "Text": "Get all engagement rules under one dmp segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get All Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get All Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/10000/engagementRules",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get All Engagement Rules",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/10000/engagementRules\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get All Engagement Rules",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:358004465\u0022,\n            \u0022dmpSegmentId\u0022: 10000,\n            \u0022created\u0022: 1631308284000,\n            \u0022lastModified\u0022: 1631308284000,\n            \u0022id\u0022: 10001,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        },\n        {\n            \u0022engagementSource\u0022: \u0022urn:li:sponsoredCampaign:358072465\u0022,\n            \u0022dmpSegmentId\u0022: 10000,\n            \u0022created\u0022: 1631308284000,\n            \u0022lastModified\u0022: 1631308284000,\n            \u0022id\u0022: 10002,\n            \u0022timeFrame\u0022: {\n                \u0022timeSpan\u0022: {\n                    \u0022duration\u0022: 60,\n                    \u0022unit\u0022: \u0022DAY\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022urn:li:dmpEngagementTrigger:(urn:li:dmpEngagementSourceType:VIDEO_ADS,FIRST_QUARTILE)\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-2",
+      "SectionPath": [
+        "Get Engagement Source Type",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "defaultLookBack",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The default look back window for this particular source. This value will be used if advertiser doesn\u0027t specify the look back window when creating engagement rules.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementSourceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The engagement source type - e.g. VIDEO_ADS, LEAD_GEN_FORMS, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementSourceTypeDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The i18n human-readable string description for the engagement source type - e.g. \u0027Video Ads\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementSourceTypeStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DMPEngagementSourceTypeStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The current status of this engagement source type - whether it\u0027s ACTIVE, DEPRECATED, or SOON_AVAILABLE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxLookBack",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum look-back window for this particular source.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minLookBack",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeSpan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum look-back window for this particular source.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "statusMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An i18n string providing more information on the engagement source type status.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get Engagement Source Type",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get Engagement Source Type",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpEngagementSourceTypes/VIDEO_ADS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get Engagement Source Type",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpEngagementSourceTypes/VIDEO_ADS\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Get Engagement Source Type",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022maxLookBack\u0022: {\n        \u0022duration\u0022: 365,\n        \u0022unit\u0022: \u0022DAY\u0022\n    },\n    \u0022minLookBack\u0022: {\n        \u0022duration\u0022: 30,\n        \u0022unit\u0022: \u0022DAY\u0022\n    },\n    \u0022engagementSourceTypeDescription\u0022: {\n        \u0022localized\u0022: {\n            \u0022ru_RU\u0022: \u0022\\u0412\\u0438\\u0434\\u0435\\u043e\\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0430\u0022,\n            \u0022it_IT\u0022: \u0022Annunci video\u0022,\n            \u0022pl_PL\u0022: \u0022Reklamy wideo\u0022,\n            \u0022sv_SE\u0022: \u0022Videoannonser\u0022,\n            \u0022ro_RO\u0022: \u0022Reclame video\u0022,\n            \u0022da_DK\u0022: \u0022Videoannoncer\u0022,\n            \u0022tr_TR\u0022: \u0022Video reklamlar\\u0131\u0022,\n            \u0022tl_PH\u0022: \u0022Mga video ad\u0022,\n            \u0022pt_BR\u0022: \u0022An\\u00fancios em v\\u00eddeo\u0022,\n            \u0022th_TH\u0022: \u0022\\u0e42\\u0e06\\u0e29\\u0e13\\u0e32\\u0e41\\u0e1a\\u0e1a\\u0e27\\u0e34\\u0e14\\u0e35\\u0e42\\u0e2d\u0022,\n            \u0022fr_FR\u0022: \u0022Video Ads\u0022,\n            \u0022ja_JP\u0022: \u0022\\u52d5\\u753b\\u5e83\\u544a\u0022,\n            \u0022cs_CZ\u0022: \u0022Video reklamy\u0022,\n            \u0022in_ID\u0022: \u0022Iklan video\u0022,\n            \u0022de_DE\u0022: \u0022Video Ads\u0022,\n            \u0022ms_MY\u0022: \u0022Iklan video\u0022,\n            \u0022zh_TW\u0022: \u0022\\u5f71\\u7247\\u5ee3\\u544a\u0022,\n            \u0022ko_KR\u0022: \u0022\\ub3d9\\uc601\\uc0c1 \\uad11\\uace0\u0022,\n            \u0022en_US\u0022: \u0022Video ads\u0022,\n            \u0022es_ES\u0022: \u0022Anuncios de v\\u00eddeo\u0022,\n            \u0022zh_CN\u0022: \u0022\\u89c6\\u9891\\u5e7f\\u544a\u0022,\n            \u0022ar_AE\u0022: \u0022\\u0625\\u0639\\u0644\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u0641\\u064a\\u062f\\u064a\\u0648\u0022,\n            \u0022no_NO\u0022: \u0022Videoannonser\u0022,\n            \u0022nl_NL\u0022: \u0022Video-advertenties\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022engagementSourceType\u0022: \u0022VIDEO_ADS\u0022,\n    \u0022statusMessage\u0022: {\n        \u0022localized\u0022: {\n            \u0022ru_RU\u0022: \u0022\\u042d\\u0442\\u043e\\u0442 \\u0442\\u0438\\u043f \\u0438\\u0441\\u0442\\u043e\\u0447\\u043d\\u0438\\u043a\\u0430 \\u0432\\u043e\\u0432\\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u0433\\u043e\\u0442\\u043e\\u0432 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0435\\u043d \\u0434\\u043b\\u044f \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\u0022,\n            \u0022it_IT\u0022: \u0022Questo tipo di fonte di interazione \\u00e8 pronto e disponibile per l\\u2019utilizzo in produzione\u0022,\n            \u0022pl_PL\u0022: \u0022Ten typ \\u017ar\\u00f3d\\u0142a zaanga\\u017cowania jest gotowy i dost\\u0119pny do wykorzystania w produkcji\u0022,\n            \u0022sv_SE\u0022: \u0022Den h\\u00e4r typen av aktivitetsk\\u00e4lla \\u00e4r f\\u00e4rdig och tillg\\u00e4nglig f\\u00f6r anv\\u00e4ndning i produktion\u0022,\n            \u0022ro_RO\u0022: \u0022Acest tip de surs\\u0103 de interac\\u021biune este gata \\u0219i disponibil pentru a fi utilizat \\u00een produc\\u021bie\u0022,\n            \u0022da_DK\u0022: \u0022Denne engagementskildetype er klar og tilg\\u00e6ngelig til brug i produktionen\u0022,\n            \u0022tr_TR\u0022: \u0022Bu etkile\\u015fim kayna\\u011f\\u0131 t\\u00fcr\\u00fc, prod\\u00fcksiyonda kullan\\u0131lmak \\u00fczere haz\\u0131rd\\u0131r\u0022,\n            \u0022tl_PH\u0022: \u0022Handa at available nang gamitin sa produksyon ang uring ito ng source ng pakikipag-ugnayan\u0022,\n            \u0022pt_BR\u0022: \u0022Este tipo de fonte de engajamento est\\u00e1 pronto e dispon\\u00edvel para ser usado na produ\\u00e7\\u00e3o\u0022,\n            \u0022th_TH\u0022: \u0022\\u0e1b\\u0e23\\u0e30\\u0e40\\u0e20\\u0e17\\u0e41\\u0e2b\\u0e25\\u0e48\\u0e07\\u0e02\\u0e49\\u0e2d\\u0e21\\u0e39\\u0e25\\u0e01\\u0e32\\u0e23\\u0e21\\u0e35\\u0e2a\\u0e48\\u0e27\\u0e19\\u0e23\\u0e48\\u0e27\\u0e21\\u0e19\\u0e35\\u0e49\\u0e1e\\u0e23\\u0e49\\u0e2d\\u0e21\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e30\\u0e21\\u0e35\\u0e43\\u0e2b\\u0e49\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e49\\u0e27\\u0e43\\u0e19\\u0e01\\u0e32\\u0e23\\u0e1c\\u0e25\\u0e34\\u0e15\u0022,\n            \u0022fr_FR\u0022: \u0022Ce type de source d\\u2019engagement est pr\\u00eat et disponible pour utilisation dans la production\u0022,\n            \u0022ja_JP\u0022: \u0022\\u3053\\u306e\\u30a8\\u30f3\\u30b2\\u30fc\\u30b8\\u30e1\\u30f3\\u30c8\\u30bd\\u30fc\\u30b9\\u30bf\\u30a4\\u30d7\\u306f\\u3001\\u6e96\\u5099\\u304c\\u3067\\u304d\\u3066\\u304a\\u308a\\u3001\\u672c\\u756a\\u74b0\\u5883\\u3067\\u5229\\u7528\\u53ef\\u80fd\\u3067\\u3059\u0022,\n            \u0022cs_CZ\u0022: \u0022Tento typ zdroje u\\u017eivatelsk\\u00e9 aktivity je p\\u0159ipraven k pou\\u017eit\\u00ed\u0022,\n            \u0022in_ID\u0022: \u0022Tipe sumber interaksi ini sudah siap dan tersedia untuk digunakan dalam produksi\u0022,\n            \u0022de_DE\u0022: \u0022Diese Engagement-Quelle ist verf\\u00fcgbar und kann verwendet werden.\u0022,\n            \u0022ms_MY\u0022: \u0022Jenis sumber penglibatan sudah sedia dan boleh digunakan dalam pengeluaran\u0022,\n            \u0022zh_TW\u0022: \u0022\\u6b64\\u4e92\\u52d5\\u4f86\\u6e90\\u985e\\u578b\\u5df2\\u6e96\\u5099\\u5c31\\u7dd2\\uff0c\\u53ef\\u5728\\u751f\\u7522\\u74b0\\u5883\\u4e2d\\u4f7f\\u7528\u0022,\n            \u0022ko_KR\u0022: \u0022\\uc774 \\ucc38\\uc5ec \\uc18c\\uc2a4 \\uc720\\ud615\\uc774 \\uc900\\ube44\\ub418\\uc5c8\\uc73c\\uba70 \\uc81c\\uc791 \\ub2e8\\uacc4\\uc5d0\\uc11c \\uc0ac\\uc6a9\\ud560 \\uc218 \\uc788\\uc2b5\\ub2c8\\ub2e4.\u0022,\n            \u0022en_US\u0022: \u0022This engagement source type is ready and available to be used in production\u0022,\n            \u0022es_ES\u0022: \u0022Este tipo de fuente de interacci\\u00f3n est\\u00e1 listo y disponible para usarse en producci\\u00f3n\u0022,\n            \u0022zh_CN\u0022: \u0022\\u6b64\\u53c2\\u4e0e\\u6e90\\u7c7b\\u578b\\u5df2\\u51c6\\u5907\\u5c31\\u7eea\\uff0c\\u53ef\\u7528\\u4e8e\\u5236\\u4f5c\u0022,\n            \u0022ar_AE\u0022: \u0022\\u0646\\u0648\\u0639 \\u0645\\u0635\\u062f\\u0631 \\u0627\\u0644\\u062a\\u0641\\u0627\\u0639\\u0644 \\u0647\\u0630\\u0627 \\u062c\\u0627\\u0647\\u0632 \\u0648\\u0645\\u062a\\u0627\\u062d \\u0644\\u0644\\u0627\\u0633\\u062a\\u062e\\u062f\\u0627\\u0645 \\u0641\\u064a \\u0627\\u0644\\u0625\\u0646\\u062a\\u0627\\u062c\u0022,\n            \u0022no_NO\u0022: \u0022Denne kildetypen for engasjement er klar og tilgjengelig for bruk i produksjon\u0022,\n            \u0022nl_NL\u0022: \u0022Dit type interactiebron is klaar en beschikbaar voor gebruik in productie\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022engagementSourceTypeStatus\u0022: \u0022ACTIVE\u0022,\n    \u0022defaultLookBack\u0022: {\n        \u0022duration\u0022: 90,\n        \u0022unit\u0022: \u0022DAY\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get All Supported Engagement Source Types",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get All Supported Engagement Source Types",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpEngagementSourceTypes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get All Supported Engagement Source Types",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpEngagementSourceTypes\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get All Supported Engagement Source Types",
+        "Sample Request"
+      ],
+      "Text": "The response will return all supported engagement source types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-3",
+      "SectionPath": [
+        "Get Engagement Trigger",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "default",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether this engagement trigger will be selected by default.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementSourceType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The engagement source type - e.g. VIDEO_ADS, LEAD_GEN_FORMS, etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementTrigger",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The engagement trigger - e.g. FIRST_QUARTILE (video ads), SUBMITTED (lead-gen forms), etc.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementTriggerDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The i18n human-readable string description for the engagement source type - e.g. \u002725% Video Viewers\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagementTriggerStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DMPEngagementTriggerStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The current status of this engagement trigger - whether it\u0027s ACTIVE, DEPRECATED, or SOON_AVAILABLE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "statusMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An i18n string providing more information on the engagement source type status.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Get Engagement Trigger",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Get Engagement Trigger",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpEngagementSourceTypes/VIDEO_ADS/dmpEngagementTriggers/FIRST_QUARTILE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Get Engagement Trigger",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpEngagementSourceTypes/VIDEO_ADS/dmpEngagementTriggers/FIRST_QUARTILE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get Engagement Trigger",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022default\u0022: true,\n    \u0022engagementTriggerStatus\u0022: \u0022ACTIVE\u0022,\n    \u0022engagementTriggerDescription\u0022: {\n        \u0022localized\u0022: {\n            \u0022it_IT\u0022: \u0022Persone che hanno visualizzato almeno il 25%\\u00a0del tuo annuncio video\u0022,\n            \u0022ru_RU\u0022: \u0022\\u041b\\u044e\\u0434\\u0438, \\u043f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u0435\\u0432\\u0448\\u0438\\u0435 \\u043d\\u0435 \\u043c\\u0435\\u043d\\u0435\\u0435 25%\\u00a0\\u0432\\u0430\\u0448\\u0435\\u0439 \\u0432\\u0438\\u0434\\u0435\\u043e\\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b\u0022,\n            \u0022pl_PL\u0022: \u0022Osoby, kt\\u00f3re obejrza\\u0142y co najmniej 25%\\u00a0Twojej reklamy wideo\u0022,\n            \u0022ro_RO\u0022: \u0022Persoane care au vizionat cel pu\\u021bin 25%\\u00a0din reclama dvs. video\u0022,\n            \u0022tr_TR\u0022: \u0022Video reklam\\u0131n\\u0131z\\u0131n en az\\u00a0%25\\u2018ini izleyen ki\\u015filer\u0022,\n            \u0022tl_PH\u0022: \u0022Mga tao na tumingin nang hindi bababa sa 25%\\u00a0ng iyong video ad\u0022,\n            \u0022pt_BR\u0022: \u0022Pessoas que visualizaram pelo menos 25%\\u00a0do seu an\\u00fancio em v\\u00eddeo\u0022,\n            \u0022th_TH\u0022: \u0022\\u0e1c\\u0e39\\u0e49\\u0e04\\u0e19\\u0e17\\u0e35\\u0e48\\u0e40\\u0e04\\u0e22\\u0e23\\u0e31\\u0e1a\\u0e0a\\u0e21\\u0e42\\u0e06\\u0e29\\u0e13\\u0e32\\u0e41\\u0e1a\\u0e1a\\u0e27\\u0e34\\u0e14\\u0e35\\u0e42\\u0e2d\\u0e02\\u0e2d\\u0e07\\u0e04\\u0e38\\u0e13\\u0e2d\\u0e22\\u0e48\\u0e32\\u0e07\\u0e19\\u0e49\\u0e2d\\u0e22 25%\u0022,\n            \u0022fr_FR\u0022: \u0022Personnes ayant visionn\\u00e9 au moins 25%\\u00a0de votre publicit\\u00e9 vid\\u00e9o\u0022,\n            \u0022ja_JP\u0022: \u0022\\u3042\\u306a\\u305f\\u306e\\u52d5\\u753b\\u5e83\\u544a\\u306e25%\\u4ee5\\u4e0a\\u3092\\u95b2\\u89a7\\u3057\\u305f\\u30e6\\u30fc\\u30b6\\u30fc\u0022,\n            \u0022cs_CZ\u0022: \u0022Lid\\u00e9, kte\\u0159\\u00ed si zobrazili alespo\\u0148 25\\u00a0%\\u00a0va\\u0161\\u00ed video reklamy\u0022,\n            \u0022in_ID\u0022: \u0022Orang yang melihat setidaknya 25%\\u00a0iklan video Anda\u0022,\n            \u0022de_DE\u0022: \u0022Personen, die Ihre Video Ad zu mindestens 25\\u00a0%\\u00a0angesehen haben\u0022,\n            \u0022ms_MY\u0022: \u0022Orang yang menonton sekurang-kurangnya 25%\\u00a0iklan video anda\u0022,\n            \u0022zh_TW\u0022: \u0022\\u89c0\\u770b\\u4e86\\u81f3\\u5c11 25%\\u00a0\\u5f71\\u7247\\u5ee3\\u544a\\u7684\\u6703\\u54e1\u0022,\n            \u0022es_ES\u0022: \u0022Personas que han visto al menos el 25\\u00a0%\\u00a0de tu anuncio de v\\u00eddeo\u0022,\n            \u0022nl_NL\u0022: \u0022Personen die minstens 25%\\u00a0van uw videoadvertentie hebben bekeken\u0022,\n            \u0022sv_SE\u0022: \u0022Personer som tittade p\\u00e5 minst 25\\u00a0%\\u00a0av din filmannons\u0022,\n            \u0022da_DK\u0022: \u0022Personer, der har set mindst 25\\u00a0%\\u00a0af din videoannonce\u0022,\n            \u0022ko_KR\u0022: \u0022\\ub3d9\\uc601\\uc0c1 \\uad11\\uace0\\ub97c 25%\\u00a0\\uc774\\uc0c1 \\ubcf8 \\uc0ac\\ub78c\u0022,\n            \u0022en_US\u0022: \u0022People who viewed at least 25% of your video ad\u0022,\n            \u0022zh_CN\u0022: \u0022\\u81f3\\u5c11\\u89c2\\u770b\\u4e86 25%\\u00a0\\u7684\\u89c6\\u9891\\u5e7f\\u544a\\u7684\\u4f1a\\u5458\u0022,\n            \u0022ar_AE\u0022: \u0022\\u0627\\u0644\\u0623\\u0634\\u062e\\u0627\\u0635 \\u0627\\u0644\\u0630\\u064a\\u0646 \\u0634\\u0627\\u0647\\u062f\\u0648\\u0627 \\u0645\\u0627 \\u0644\\u0627 \\u064a\\u0642\\u0644 \\u0639\\u0646 25\\u066a \\u0645\\u0646 \\u0625\\u0639\\u0644\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u0641\\u064a\\u062f\\u064a\\u0648 \\u0627\\u0644\\u062e\\u0627\\u0635\\u0629 \\u0628\\u0643\u0022,\n            \u0022no_NO\u0022: \u0022Personer som s\\u00e5 minst 25\\u00a0%\\u00a0av videoannonsen din\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022engagementSourceType\u0022: \u0022VIDEO_ADS\u0022,\n    \u0022statusMessage\u0022: {\n        \u0022localized\u0022: {\n            \u0022it_IT\u0022: \u0022Questo trigger di interazione \\u00e8 pronto e disponibile per l\\u2019utilizzo in produzione\u0022,\n            \u0022ru_RU\u0022: \u0022\\u042d\\u0442\\u043e\\u0442 \\u0442\\u0440\\u0438\\u0433\\u0433\\u0435\\u0440 \\u0432\\u043e\\u0432\\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u0433\\u043e\\u0442\\u043e\\u0432 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0435\\u043d \\u0434\\u043b\\u044f \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\u0022,\n            \u0022pl_PL\u0022: \u0022Ten wyzwalacz zaanga\\u017cowania jest gotowy i dost\\u0119pny do wykorzystania w produkcji\u0022,\n            \u0022ro_RO\u0022: \u0022Acest declan\\u0219ator de interac\\u021biune este preg\\u0103tit \\u0219i disponibil pentru a fi utilizat \\u00een produc\\u021bie\u0022,\n            \u0022tr_TR\u0022: \u0022Bu etkile\\u015fim ba\\u015flatma arac\\u0131, prod\\u00fcksiyonda kullan\\u0131lmak \\u00fczere haz\\u0131rd\\u0131r\u0022,\n            \u0022tl_PH\u0022: \u0022Ang engagement trigger na ito ay handa at available na para gamitin sa produksyon\u0022,\n            \u0022pt_BR\u0022: \u0022Este gatilho de engajamento est\\u00e1 pronto e dispon\\u00edvel para ser usado na produ\\u00e7\\u00e3o\u0022,\n            \u0022th_TH\u0022: \u0022\\u0e17\\u0e23\\u0e34\\u0e01\\u0e40\\u0e01\\u0e2d\\u0e23\\u0e4c\\u0e01\\u0e32\\u0e23\\u0e21\\u0e35\\u0e2a\\u0e48\\u0e27\\u0e19\\u0e23\\u0e48\\u0e27\\u0e21\\u0e19\\u0e35\\u0e49\\u0e1e\\u0e23\\u0e49\\u0e2d\\u0e21\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e30\\u0e21\\u0e35\\u0e43\\u0e2b\\u0e49\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e49\\u0e27\\u0e43\\u0e19\\u0e01\\u0e32\\u0e23\\u0e1c\\u0e25\\u0e34\\u0e15\u0022,\n            \u0022fr_FR\u0022: \u0022Ce facteur d\\u2019engagement est pr\\u00eat et disponible pour utilisation dans la production\u0022,\n            \u0022ja_JP\u0022: \u0022\\u3053\\u306e\\u30a8\\u30f3\\u30b2\\u30fc\\u30b8\\u30e1\\u30f3\\u30c8\\u30c8\\u30ea\\u30ac\\u30fc\\u306f\\u3001\\u6e96\\u5099\\u304c\\u3067\\u304d\\u3066\\u304a\\u308a\\u3001\\u672c\\u756a\\u74b0\\u5883\\u3067\\u5229\\u7528\\u53ef\\u80fd\\u3067\\u3059\u0022,\n            \u0022cs_CZ\u0022: \u0022Tento spou\\u0161t\\u011b\\u010d u\\u017eivatelsk\\u00e9 aktivity je p\\u0159ipraven k pou\\u017eit\\u00ed\u0022,\n            \u0022in_ID\u0022: \u0022Pemicu interaksi ini sudah siap dan tersedia untuk digunakan dalam produksi\u0022,\n            \u0022de_DE\u0022: \u0022Dieser Engagement-Trigger ist verf\\u00fcgbar und kann verwendet werden.\u0022,\n            \u0022ms_MY\u0022: \u0022Pencetus penglibatan ini sudah sedia dan boleh digunakan dalam pengeluaran\u0022,\n            \u0022zh_TW\u0022: \u0022\\u6b64\\u4e92\\u52d5\\u89f8\\u767c\\u689d\\u4ef6\\u5df2\\u6e96\\u5099\\u5c31\\u7dd2\\uff0c\\u53ef\\u5728\\u751f\\u7522\\u74b0\\u5883\\u4e2d\\u4f7f\\u7528\u0022,\n            \u0022es_ES\u0022: \u0022Este factor de interacci\\u00f3n est\\u00e1 listo y disponible para usarse en producci\\u00f3n\u0022,\n            \u0022nl_NL\u0022: \u0022Deze trigger voor interactie is klaar en beschikbaar voor gebruik in productie\u0022,\n            \u0022sv_SE\u0022: \u0022Den h\\u00e4r aktivitetsutl\\u00f6saren \\u00e4r klar och tillg\\u00e4nglig f\\u00f6r att anv\\u00e4ndas\u0022,\n            \u0022da_DK\u0022: \u0022Denne engagementsudl\\u00f8ser er klar og tilg\\u00e6ngelig til brug i produktionen\u0022,\n            \u0022ko_KR\u0022: \u0022\\uc774 \\ucc38\\uc5ec \\ud2b8\\ub9ac\\uac70\\uac00 \\uc900\\ube44\\ub418\\uc5c8\\uc73c\\uba70 \\ud604\\uc7ac \\uc6f9\\uc0ac\\uc774\\ud2b8\\uc5d0\\uc11c \\uc774\\uc6a9 \\uac00\\ub2a5\\ud569\\ub2c8\\ub2e4.\u0022,\n            \u0022en_US\u0022: \u0022This engagement trigger is ready and available to be used in production\u0022,\n            \u0022zh_CN\u0022: \u0022\\u6b64\\u53c2\\u4e0e\\u89e6\\u53d1\\u5668\\u5df2\\u51c6\\u5907\\u5c31\\u7eea\\uff0c\\u53ef\\u7528\\u4e8e\\u5236\\u4f5c\u0022,\n            \u0022ar_AE\u0022: \u0022\\u0645\\u064f\\u0641\\u0639\\u0644 \\u0627\\u0644\\u0645\\u0634\\u0627\\u0631\\u0643\\u0629 \\u0647\\u0630\\u0627 \\u062c\\u0627\\u0647\\u0632 \\u0648\\u0645\\u062a\\u0627\\u062d \\u0644\\u0644\\u0627\\u0633\\u062a\\u062e\\u062f\\u0627\\u0645 \\u0641\\u064a \\u0627\\u0644\\u0625\\u0646\\u062a\\u0627\\u062c\u0022,\n            \u0022no_NO\u0022: \u0022Denne engasjementsutl\\u00f8seren er klar og tilgjengelig for bruk i produksjon\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022engagementTrigger\u0022: \u0022FIRST_QUARTILE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get All Supported Engagement Triggers",
+      "Anchor": "get-all-supported-engagement-triggers",
+      "SectionPath": [
+        "Get All Supported Engagement Triggers"
+      ],
+      "Text": "Get all supported engagement triggers under one engagement source type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get All Supported Engagement Triggers",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get All Supported Engagement Triggers",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpEngagementSourceTypes/VIDEO_ADS/dmpEngagementTriggers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get All Supported Engagement Triggers",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpEngagementSourceTypes/VIDEO_ADS/dmpEngagementTriggers\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get All Supported Engagement Triggers",
+        "Sample Request"
+      ],
+      "Text": "The response will return all supported engagement triggers for the engagement source type, along with the status. Please note that the below example shows a partial response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get All Supported Engagement Triggers",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022default\u0022: true,\n            \u0022engagementTriggerStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022engagementTriggerDescription\u0022: {\n                \u0022localized\u0022: {\n                    \u0022it_IT\u0022: \u0022Persone che hanno visualizzato almeno il 25%\\u00a0del tuo annuncio video\u0022,\n                    \u0022ru_RU\u0022: \u0022\\u041b\\u044e\\u0434\\u0438, \\u043f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u0435\\u0432\\u0448\\u0438\\u0435 \\u043d\\u0435 \\u043c\\u0435\\u043d\\u0435\\u0435 25%\\u00a0\\u0432\\u0430\\u0448\\u0435\\u0439 \\u0432\\u0438\\u0434\\u0435\\u043e\\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b\u0022,\n                    \u0022pl_PL\u0022: \u0022Osoby, kt\\u00f3re obejrza\\u0142y co najmniej 25%\\u00a0Twojej reklamy wideo\u0022,\n                    \u0022ro_RO\u0022: \u0022Persoane care au vizionat cel pu\\u021bin 25%\\u00a0din reclama dvs. video\u0022,\n                    \u0022tr_TR\u0022: \u0022Video reklam\\u0131n\\u0131z\\u0131n en az\\u00a0%25\\u2018ini izleyen ki\\u015filer\u0022,\n                    \u0022tl_PH\u0022: \u0022Mga tao na tumingin nang hindi bababa sa 25%\\u00a0ng iyong video ad\u0022,\n                    \u0022pt_BR\u0022: \u0022Pessoas que visualizaram pelo menos 25%\\u00a0do seu an\\u00fancio em v\\u00eddeo\u0022,\n                    \u0022th_TH\u0022: \u0022\\u0e1c\\u0e39\\u0e49\\u0e04\\u0e19\\u0e17\\u0e35\\u0e48\\u0e40\\u0e04\\u0e22\\u0e23\\u0e31\\u0e1a\\u0e0a\\u0e21\\u0e42\\u0e06\\u0e29\\u0e13\\u0e32\\u0e41\\u0e1a\\u0e1a\\u0e27\\u0e34\\u0e14\\u0e35\\u0e42\\u0e2d\\u0e02\\u0e2d\\u0e07\\u0e04\\u0e38\\u0e13\\u0e2d\\u0e22\\u0e48\\u0e32\\u0e07\\u0e19\\u0e49\\u0e2d\\u0e22 25%\u0022,\n                    \u0022fr_FR\u0022: \u0022Personnes ayant visionn\\u00e9 au moins 25%\\u00a0de votre publicit\\u00e9 vid\\u00e9o\u0022,\n                    \u0022ja_JP\u0022: \u0022\\u3042\\u306a\\u305f\\u306e\\u52d5\\u753b\\u5e83\\u544a\\u306e25%\\u4ee5\\u4e0a\\u3092\\u95b2\\u89a7\\u3057\\u305f\\u30e6\\u30fc\\u30b6\\u30fc\u0022,\n                    \u0022cs_CZ\u0022: \u0022Lid\\u00e9, kte\\u0159\\u00ed si zobrazili alespo\\u0148 25\\u00a0%\\u00a0va\\u0161\\u00ed video reklamy\u0022,\n                    \u0022in_ID\u0022: \u0022Orang yang melihat setidaknya 25%\\u00a0iklan video Anda\u0022,\n                    \u0022de_DE\u0022: \u0022Personen, die Ihre Video Ad zu mindestens 25\\u00a0%\\u00a0angesehen haben\u0022,\n                    \u0022ms_MY\u0022: \u0022Orang yang menonton sekurang-kurangnya 25%\\u00a0iklan video anda\u0022,\n                    \u0022zh_TW\u0022: \u0022\\u89c0\\u770b\\u4e86\\u81f3\\u5c11 25%\\u00a0\\u5f71\\u7247\\u5ee3\\u544a\\u7684\\u6703\\u54e1\u0022,\n                    \u0022es_ES\u0022: \u0022Personas que han visto al menos el 25\\u00a0%\\u00a0de tu anuncio de v\\u00eddeo\u0022,\n                    \u0022nl_NL\u0022: \u0022Personen die minstens 25%\\u00a0van uw videoadvertentie hebben bekeken\u0022,\n                    \u0022sv_SE\u0022: \u0022Personer som tittade p\\u00e5 minst 25\\u00a0%\\u00a0av din filmannons\u0022,\n                    \u0022da_DK\u0022: \u0022Personer, der har set mindst 25\\u00a0%\\u00a0af din videoannonce\u0022,\n                    \u0022ko_KR\u0022: \u0022\\ub3d9\\uc601\\uc0c1 \\uad11\\uace0\\ub97c 25%\\u00a0\\uc774\\uc0c1 \\ubcf8 \\uc0ac\\ub78c\u0022,\n                    \u0022en_US\u0022: \u0022People who viewed at least 25% of your video ad\u0022,\n                    \u0022zh_CN\u0022: \u0022\\u81f3\\u5c11\\u89c2\\u770b\\u4e86 25%\\u00a0\\u7684\\u89c6\\u9891\\u5e7f\\u544a\\u7684\\u4f1a\\u5458\u0022,\n                    \u0022ar_AE\u0022: \u0022\\u0627\\u0644\\u0623\\u0634\\u062e\\u0627\\u0635 \\u0627\\u0644\\u0630\\u064a\\u0646 \\u0634\\u0627\\u0647\\u062f\\u0648\\u0627 \\u0645\\u0627 \\u0644\\u0627 \\u064a\\u0642\\u0644 \\u0639\\u0646 25\\u066a \\u0645\\u0646 \\u0625\\u0639\\u0644\\u0627\\u0646\\u0627\\u062a \\u0627\\u0644\\u0641\\u064a\\u062f\\u064a\\u0648 \\u0627\\u0644\\u062e\\u0627\\u0635\\u0629 \\u0628\\u0643\u0022,\n                    \u0022no_NO\u0022: \u0022Personer som s\\u00e5 minst 25\\u00a0%\\u00a0av videoannonsen din\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022engagementSourceType\u0022: \u0022VIDEO_ADS\u0022,\n            \u0022statusMessage\u0022: {\n                \u0022localized\u0022: {\n                    \u0022it_IT\u0022: \u0022Questo trigger di interazione \\u00e8 pronto e disponibile per l\\u2019utilizzo in produzione\u0022,\n                    \u0022ru_RU\u0022: \u0022\\u042d\\u0442\\u043e\\u0442 \\u0442\\u0440\\u0438\\u0433\\u0433\\u0435\\u0440 \\u0432\\u043e\\u0432\\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u0433\\u043e\\u0442\\u043e\\u0432 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0435\\u043d \\u0434\\u043b\\u044f \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\u0022,\n                    \u0022pl_PL\u0022: \u0022Ten wyzwalacz zaanga\\u017cowania jest gotowy i dost\\u0119pny do wykorzystania w produkcji\u0022,\n                    \u0022ro_RO\u0022: \u0022Acest declan\\u0219ator de interac\\u021biune este preg\\u0103tit \\u0219i disponibil pentru a fi utilizat \\u00een produc\\u021bie\u0022,\n                    \u0022tr_TR\u0022: \u0022Bu etkile\\u015fim ba\\u015flatma arac\\u0131, prod\\u00fcksiyonda kullan\\u0131lmak \\u00fczere haz\\u0131rd\\u0131r\u0022,\n                    \u0022tl_PH\u0022: \u0022Ang engagement trigger na ito ay handa at available na para gamitin sa produksyon\u0022,\n                    \u0022pt_BR\u0022: \u0022Este gatilho de engajamento est\\u00e1 pronto e dispon\\u00edvel para ser usado na produ\\u00e7\\u00e3o\u0022,\n                    \u0022th_TH\u0022: \u0022\\u0e17\\u0e23\\u0e34\\u0e01\\u0e40\\u0e01\\u0e2d\\u0e23\\u0e4c\\u0e01\\u0e32\\u0e23\\u0e21\\u0e35\\u0e2a\\u0e48\\u0e27\\u0e19\\u0e23\\u0e48\\u0e27\\u0e21\\u0e19\\u0e35\\u0e49\\u0e1e\\u0e23\\u0e49\\u0e2d\\u0e21\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e30\\u0e21\\u0e35\\u0e43\\u0e2b\\u0e49\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e49\\u0e27\\u0e43\\u0e19\\u0e01\\u0e32\\u0e23\\u0e1c\\u0e25\\u0e34\\u0e15\u0022,\n                    \u0022fr_FR\u0022: \u0022Ce facteur d\\u2019engagement est pr\\u00eat et disponible pour utilisation dans la production\u0022,\n                    \u0022ja_JP\u0022: \u0022\\u3053\\u306e\\u30a8\\u30f3\\u30b2\\u30fc\\u30b8\\u30e1\\u30f3\\u30c8\\u30c8\\u30ea\\u30ac\\u30fc\\u306f\\u3001\\u6e96\\u5099\\u304c\\u3067\\u304d\\u3066\\u304a\\u308a\\u3001\\u672c\\u756a\\u74b0\\u5883\\u3067\\u5229\\u7528\\u53ef\\u80fd\\u3067\\u3059\u0022,\n                    \u0022cs_CZ\u0022: \u0022Tento spou\\u0161t\\u011b\\u010d u\\u017eivatelsk\\u00e9 aktivity je p\\u0159ipraven k pou\\u017eit\\u00ed\u0022,\n                    \u0022in_ID\u0022: \u0022Pemicu interaksi ini sudah siap dan tersedia untuk digunakan dalam produksi\u0022,\n                    \u0022de_DE\u0022: \u0022Dieser Engagement-Trigger ist verf\\u00fcgbar und kann verwendet werden.\u0022,\n                    \u0022ms_MY\u0022: \u0022Pencetus penglibatan ini sudah sedia dan boleh digunakan dalam pengeluaran\u0022,\n                    \u0022zh_TW\u0022: \u0022\\u6b64\\u4e92\\u52d5\\u89f8\\u767c\\u689d\\u4ef6\\u5df2\\u6e96\\u5099\\u5c31\\u7dd2\\uff0c\\u53ef\\u5728\\u751f\\u7522\\u74b0\\u5883\\u4e2d\\u4f7f\\u7528\u0022,\n                    \u0022es_ES\u0022: \u0022Este factor de interacci\\u00f3n est\\u00e1 listo y disponible para usarse en producci\\u00f3n\u0022,\n                    \u0022nl_NL\u0022: \u0022Deze trigger voor interactie is klaar en beschikbaar voor gebruik in productie\u0022,\n                    \u0022sv_SE\u0022: \u0022Den h\\u00e4r aktivitetsutl\\u00f6saren \\u00e4r klar och tillg\\u00e4nglig f\\u00f6r att anv\\u00e4ndas\u0022,\n                    \u0022da_DK\u0022: \u0022Denne engagementsudl\\u00f8ser er klar og tilg\\u00e6ngelig til brug i produktionen\u0022,\n                    \u0022ko_KR\u0022: \u0022\\uc774 \\ucc38\\uc5ec \\ud2b8\\ub9ac\\uac70\\uac00 \\uc900\\ube44\\ub418\\uc5c8\\uc73c\\uba70 \\ud604\\uc7ac \\uc6f9\\uc0ac\\uc774\\ud2b8\\uc5d0\\uc11c \\uc774\\uc6a9 \\uac00\\ub2a5\\ud569\\ub2c8\\ub2e4.\u0022,\n                    \u0022en_US\u0022: \u0022This engagement trigger is ready and available to be used in production\u0022,\n                    \u0022zh_CN\u0022: \u0022\\u6b64\\u53c2\\u4e0e\\u89e6\\u53d1\\u5668\\u5df2\\u51c6\\u5907\\u5c31\\u7eea\\uff0c\\u53ef\\u7528\\u4e8e\\u5236\\u4f5c\u0022,\n                    \u0022ar_AE\u0022: \u0022\\u0645\\u064f\\u0641\\u0639\\u0644 \\u0627\\u0644\\u0645\\u0634\\u0627\\u0631\\u0643\\u0629 \\u0647\\u0630\\u0627 \\u062c\\u0627\\u0647\\u0632 \\u0648\\u0645\\u062a\\u0627\\u062d \\u0644\\u0644\\u0627\\u0633\\u062a\\u062e\\u062f\\u0627\\u0645 \\u0641\\u064a \\u0627\\u0644\\u0625\\u0646\\u062a\\u0627\\u062c\u0022,\n                    \u0022no_NO\u0022: \u0022Denne engasjementsutl\\u00f8seren er klar og tilgjengelig for bruk i produksjon\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022FIRST_QUARTILE\u0022\n        },\n        {\n            \u0022default\u0022: false,\n            \u0022engagementTriggerStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022engagementTriggerDescription\u0022: {\n                \u0022localized\u0022: {\n                    \u0022it_IT\u0022: \u0022Persone che hanno visualizzato almeno il 97%\\u00a0del tuo annuncio video\u0022,\n                    \u0022ru_RU\u0022: \u0022\\u041b\\u044e\\u0434\\u0438, \\u043f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u0435\\u0432\\u0448\\u0438\\u0435 \\u043d\\u0435 \\u043c\\u0435\\u043d\\u0435\\u0435 97%\\u00a0\\u0432\\u0430\\u0448\\u0435\\u0439 \\u0432\\u0438\\u0434\\u0435\\u043e\\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b\u0022,\n                    \u0022pl_PL\u0022: \u0022Osoby, kt\\u00f3re obejrza\\u0142y co najmniej 97%\\u00a0Twojej reklamy wideo\u0022,\n                    \u0022ro_RO\u0022: \u0022Persoane care au vizionat cel pu\\u021bin 97%\\u00a0din reclama dvs. video\u0022,\n                    \u0022tr_TR\u0022: \u0022Video reklam\\u0131n\\u0131z\\u0131n en az\\u00a0%97\\u2018sini izleyen ki\\u015filer\u0022,\n                    \u0022tl_PH\u0022: \u0022Mga tao na tumingin nang hindi bababa sa 97%\\u00a0ng iyong video ad\u0022,\n                    \u0022pt_BR\u0022: \u0022Pessoas que visualizaram pelo menos 97%\\u00a0do seu an\\u00fancio em v\\u00eddeo\u0022,\n                    \u0022th_TH\u0022: \u0022\\u0e1c\\u0e39\\u0e49\\u0e04\\u0e19\\u0e17\\u0e35\\u0e48\\u0e40\\u0e04\\u0e22\\u0e23\\u0e31\\u0e1a\\u0e0a\\u0e21\\u0e42\\u0e06\\u0e29\\u0e13\\u0e32\\u0e41\\u0e1a\\u0e1a\\u0e27\\u0e34\\u0e14\\u0e35\\u0e42\\u0e2d\\u0e02\\u0e2d\\u0e07\\u0e04\\u0e38\\u0e13\\u0e2d\\u0e22\\u0e48\\u0e32\\u0e07\\u0e19\\u0e49\\u0e2d\\u0e22 97%\u0022,\n                    \u0022fr_FR\u0022: \u0022Personnes ayant visionn\\u00e9 au moins 97%\\u00a0de votre publicit\\u00e9 vid\\u00e9o\u0022,\n                    \u0022ja_JP\u0022: \u0022\\u3042\\u306a\\u305f\\u306e\\u52d5\\u753b\\u5e83\\u544a\\u306e97%\\u4ee5\\u4e0a\\u3092\\u95b2\\u89a7\\u3057\\u305f\\u30e6\\u30fc\\u30b6\\u30fc\u0022,\n                    \u0022cs_CZ\u0022: \u0022Lid\\u00e9, kte\\u0159\\u00ed si zobrazili alespo\\u0148 97%\\u00a0va\\u0161\\u00ed video reklamy\u0022,\n                    \u0022in_ID\u0022: \u0022Orang yang melihat setidaknya 97%\\u00a0iklan video Anda\u0022,\n                    \u0022de_DE\u0022: \u0022Personen, die Ihre Video Ad zu mindestens 97\\u00a0%\\u00a0angesehen haben\u0022,\n                    \u0022ms_MY\u0022: \u0022Orang yang menonton sekurang-kurangnya 97%\\u00a0iklan video anda\u0022,\n                    \u0022zh_TW\u0022: \u0022\\u89c0\\u770b\\u4e86\\u81f3\\u5c11 97%\\u00a0\\u5f71\\u7247\\u5ee3\\u544a\\u7684\\u6703\\u54e1\u0022,\n                    \u0022es_ES\u0022: \u0022Personas que han visto al menos el 97\\u00a0%\\u00a0de tu anuncio de v\\u00eddeo\u0022,\n                    \u0022nl_NL\u0022: \u0022Personen die minstens 97%\\u00a0van uw videoadvertentie hebben bekeken\u0022,\n                    \u0022sv_SE\u0022: \u0022Personer som tittade p\\u00e5 minst 97\\u00a0%\\u00a0av din filmannons\u0022,\n                    \u0022da_DK\u0022: \u0022Personer, der har set mindst 97%\\u00a0af din videoannonce\u0022,\n                    \u0022ko_KR\u0022: \u0022\\ub3d9\\uc601\\uc0c1 \\uad11\\uace0\\ub97c 97%\\u00a0\\uc774\\uc0c1 \\ubcf8 \\uc0ac\\ub78c\u0022,\n                    \u0022en_US\u0022: \u0022People who viewed at least 97% of your video ad\u0022,\n                    \u0022zh_CN\u0022: \u0022\\u81f3\\u5c11\\u89c2\\u770b\\u4e86 97%\\u00a0\\u7684\\u89c6\\u9891\\u5e7f\\u544a\\u7684\\u4f1a\\u5458\u0022,\n                    \u0022ar_AE\u0022: \u0022\\u0627\\u0644\\u0623\\u0634\\u062e\\u0627\\u0635 \\u0627\\u0644\\u0630\\u064a\\u0646 \\u0634\\u0627\\u0647\\u062f\\u0648\\u0627 \\u0645\\u0627 \\u0644\\u0627 \\u064a\\u0642\\u0644 \\u0639\\u0646 \\u0669\\u0667\\u066a \\u0645\\u0646 \\u0625\\u0639\\u0644\\u0627\\u0646\\u0643 \\u0627\\u0644\\u0645\\u0635\\u0648\\u0631\u0022,\n                    \u0022no_NO\u0022: \u0022Personer som s\\u00e5 minst 97\\u00a0%\\u00a0av videoannonsen din\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022engagementSourceType\u0022: \u0022VIDEO_ADS\u0022,\n            \u0022statusMessage\u0022: {\n                \u0022localized\u0022: {\n                    \u0022it_IT\u0022: \u0022Questo trigger di interazione \\u00e8 pronto e disponibile per l\\u2019utilizzo in produzione\u0022,\n                    \u0022ru_RU\u0022: \u0022\\u042d\\u0442\\u043e\\u0442 \\u0442\\u0440\\u0438\\u0433\\u0433\\u0435\\u0440 \\u0432\\u043e\\u0432\\u043b\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u0433\\u043e\\u0442\\u043e\\u0432 \\u0438 \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0435\\u043d \\u0434\\u043b\\u044f \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f\u0022,\n                    \u0022pl_PL\u0022: \u0022Ten wyzwalacz zaanga\\u017cowania jest gotowy i dost\\u0119pny do wykorzystania w produkcji\u0022,\n                    \u0022ro_RO\u0022: \u0022Acest declan\\u0219ator de interac\\u021biune este preg\\u0103tit \\u0219i disponibil pentru a fi utilizat \\u00een produc\\u021bie\u0022,\n                    \u0022tr_TR\u0022: \u0022Bu etkile\\u015fim ba\\u015flatma arac\\u0131, prod\\u00fcksiyonda kullan\\u0131lmak \\u00fczere haz\\u0131rd\\u0131r\u0022,\n                    \u0022tl_PH\u0022: \u0022Ang engagement trigger na ito ay handa at available na para gamitin sa produksyon\u0022,\n                    \u0022pt_BR\u0022: \u0022Este gatilho de engajamento est\\u00e1 pronto e dispon\\u00edvel para ser usado na produ\\u00e7\\u00e3o\u0022,\n                    \u0022th_TH\u0022: \u0022\\u0e17\\u0e23\\u0e34\\u0e01\\u0e40\\u0e01\\u0e2d\\u0e23\\u0e4c\\u0e01\\u0e32\\u0e23\\u0e21\\u0e35\\u0e2a\\u0e48\\u0e27\\u0e19\\u0e23\\u0e48\\u0e27\\u0e21\\u0e19\\u0e35\\u0e49\\u0e1e\\u0e23\\u0e49\\u0e2d\\u0e21\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e30\\u0e21\\u0e35\\u0e43\\u0e2b\\u0e49\\u0e43\\u0e0a\\u0e49\\u0e07\\u0e32\\u0e19\\u0e41\\u0e25\\u0e49\\u0e27\\u0e43\\u0e19\\u0e01\\u0e32\\u0e23\\u0e1c\\u0e25\\u0e34\\u0e15\u0022,\n                    \u0022fr_FR\u0022: \u0022Ce facteur d\\u2019engagement est pr\\u00eat et disponible pour utilisation dans la production\u0022,\n                    \u0022ja_JP\u0022: \u0022\\u3053\\u306e\\u30a8\\u30f3\\u30b2\\u30fc\\u30b8\\u30e1\\u30f3\\u30c8\\u30c8\\u30ea\\u30ac\\u30fc\\u306f\\u3001\\u6e96\\u5099\\u304c\\u3067\\u304d\\u3066\\u304a\\u308a\\u3001\\u672c\\u756a\\u74b0\\u5883\\u3067\\u5229\\u7528\\u53ef\\u80fd\\u3067\\u3059\u0022,\n                    \u0022cs_CZ\u0022: \u0022Tento spou\\u0161t\\u011b\\u010d u\\u017eivatelsk\\u00e9 aktivity je p\\u0159ipraven k pou\\u017eit\\u00ed\u0022,\n                    \u0022in_ID\u0022: \u0022Pemicu interaksi ini sudah siap dan tersedia untuk digunakan dalam produksi\u0022,\n                    \u0022de_DE\u0022: \u0022Dieser Engagement-Trigger ist verf\\u00fcgbar und kann verwendet werden.\u0022,\n                    \u0022ms_MY\u0022: \u0022Pencetus penglibatan ini sudah sedia dan boleh digunakan dalam pengeluaran\u0022,\n                    \u0022zh_TW\u0022: \u0022\\u6b64\\u4e92\\u52d5\\u89f8\\u767c\\u689d\\u4ef6\\u5df2\\u6e96\\u5099\\u5c31\\u7dd2\\uff0c\\u53ef\\u5728\\u751f\\u7522\\u74b0\\u5883\\u4e2d\\u4f7f\\u7528\u0022,\n                    \u0022es_ES\u0022: \u0022Este factor de interacci\\u00f3n est\\u00e1 listo y disponible para usarse en producci\\u00f3n\u0022,\n                    \u0022nl_NL\u0022: \u0022Deze trigger voor interactie is klaar en beschikbaar voor gebruik in productie\u0022,\n                    \u0022sv_SE\u0022: \u0022Den h\\u00e4r aktivitetsutl\\u00f6saren \\u00e4r klar och tillg\\u00e4nglig f\\u00f6r att anv\\u00e4ndas\u0022,\n                    \u0022da_DK\u0022: \u0022Denne engagementsudl\\u00f8ser er klar og tilg\\u00e6ngelig til brug i produktionen\u0022,\n                    \u0022ko_KR\u0022: \u0022\\uc774 \\ucc38\\uc5ec \\ud2b8\\ub9ac\\uac70\\uac00 \\uc900\\ube44\\ub418\\uc5c8\\uc73c\\uba70 \\ud604\\uc7ac \\uc6f9\\uc0ac\\uc774\\ud2b8\\uc5d0\\uc11c \\uc774\\uc6a9 \\uac00\\ub2a5\\ud569\\ub2c8\\ub2e4.\u0022,\n                    \u0022en_US\u0022: \u0022This engagement trigger is ready and available to be used in production\u0022,\n                    \u0022zh_CN\u0022: \u0022\\u6b64\\u53c2\\u4e0e\\u89e6\\u53d1\\u5668\\u5df2\\u51c6\\u5907\\u5c31\\u7eea\\uff0c\\u53ef\\u7528\\u4e8e\\u5236\\u4f5c\u0022,\n                    \u0022ar_AE\u0022: \u0022\\u0645\\u064f\\u0641\\u0639\\u0644 \\u0627\\u0644\\u0645\\u0634\\u0627\\u0631\\u0643\\u0629 \\u0647\\u0630\\u0627 \\u062c\\u0627\\u0647\\u0632 \\u0648\\u0645\\u062a\\u0627\\u062d \\u0644\\u0644\\u0627\\u0633\\u062a\\u062e\\u062f\\u0627\\u0645 \\u0641\\u064a \\u0627\\u0644\\u0625\\u0646\\u062a\\u0627\\u062c\u0022,\n                    \u0022no_NO\u0022: \u0022Denne engasjementsutl\\u00f8seren er klar og tilgjengelig for bruk i produksjon\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022engagementTrigger\u0022: \u0022FULL_COMPLETE\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

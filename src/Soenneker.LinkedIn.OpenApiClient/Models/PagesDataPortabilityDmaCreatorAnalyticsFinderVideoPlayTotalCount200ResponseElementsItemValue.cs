@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public int? Count { get; set; }
+        public long? Count { get; set; }
         /// <summary>The percentage property</summary>
         public double? Percentage { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
                 { "percentage", n => { Percentage = n.GetDoubleValue(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
+            writer.WriteLongValue("count", Count);
             writer.WriteDoubleValue("percentage", Percentage);
             writer.WriteAdditionalData(AdditionalData);
         }

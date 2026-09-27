@@ -1,0 +1,334 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+  "Title": "Conversions - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "The Conversions API creates a direct connection between marketing data from an advertiser\u0027s server and LinkedIn. This enables advertisers to measure the performance of their LinkedIn marketing campaigns no matter where the conversion happens and use this data to power campaign optimization. Conversions API can help strengthen performance and decrease cost per action with more complete attribution and improved data reliability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Once properly ingested, LinkedIn will attribute these events to campaigns and customers will see Conversions API reporting directly in Campaign Manager at the account, campaign group, campaign, and ad level. Refer to LinkedIn Conversions API for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Understand some of the supported usecases, before applying for access to the Conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "What types of businesses should use Conversions API?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Customers who want to understand a fuller picture of their marketing impact and have important business outcomes that take place across online, offline, or custom touch points.\nCustomers who want to prepare their business for upcoming privacy changes, including cookie deprecation and browser-related issues.\nCustomers who are looking for more control and flexibility over what data they share and when they share it, perhaps due to compliance or privacy requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "What are the key benefits of Conversions API?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Improve full-funnel measurement: Connect online and offline conversions to LinkedIn to measure performance across your entire customer journey\nUnlock stronger optimization: Power your campaign optimization with all kinds of conversion data to drive more of the actions you care about, cost-effectively\nStrengthen performance and privacy: Drive a more efficient Cost Per Action with a reliable and secure data connection that doesn\u0027t require cookie-based tracking.\nIncrease data control: Decide what, when, and how you share data with LinkedIn, meeting your business\u0027 exact needs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "What is server-to-server tracking?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions - Overview",
+      "Anchor": "conversions---overview",
+      "SectionPath": [],
+      "Text": "Server-to-server refers to the connection between the customer\u0027s server and LinkedIn\u0027s server. The data is shared from one server to another, so this form of conversion tracking is sometimes called server-to-server (S2S) or server-side.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Apply for Access",
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Advertisers who want to send their conversion data directly to LinkedIn, without integrating through supported partner platforms, can generate access tokens for authentication from their Campaign Manager ad account. They don\u0027t need to create a developer application or apply for the Conversions API through the developer portal. The generated access tokens don\u0027t expire. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Apply for Access",
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Direct API access for Advertisers (through Campaign Manager)",
+      "Anchor": "direct-api-access-for-advertisers-through-campaign-manager",
+      "SectionPath": [
+        "Apply for Access",
+        "Direct API access for Advertisers (through Campaign Manager)"
+      ],
+      "Text": "Campaign Manager doesn\u0027t store previously generated access tokens, so be sure to copy and save your token in a secure location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API access for Partners (through Developer Portal)",
+      "Anchor": "api-access-for-partners-through-developer-portal",
+      "SectionPath": [
+        "Apply for Access",
+        "API access for Partners (through Developer Portal)"
+      ],
+      "Text": "",
+      "Headers": [
+        "API product",
+        "Availability",
+        "How to Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Conversions API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to qualified developers vetted for Conversions API with Standard tier access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply to Conversions API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions?view=li-lms-2026-09#api-access-for-partners-through-developer-portal"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API access for Partners (through Developer Portal)",
+      "Anchor": "api-access-for-partners-through-developer-portal",
+      "SectionPath": [
+        "Apply for Access",
+        "API access for Partners (through Developer Portal)"
+      ],
+      "Text": "You have access to the following permissions under the Conversions API product bundle from Developer Portal:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API access for Partners (through Developer Portal)",
+      "Anchor": "api-access-for-partners-through-developer-portal",
+      "SectionPath": [
+        "Apply for Access",
+        "API access for Partners (through Developer Portal)"
+      ],
+      "Text": "Conversions: APIs to create/retrieve conversion rules, stream conversion events, associate campaigns to conversions. Permission required is rw_conversions.\nAccount Structure: APIs to retrieve information across sponsored accounts, campaign groups, campaigns, and creatives. Permission required is r_ads.\nLite profile information: APIs to retrieve the name and photo of the authenticated user. Permission required is r_liteprofile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API access for Partners (through Developer Portal)",
+      "Anchor": "api-access-for-partners-through-developer-portal",
+      "SectionPath": [
+        "Apply for Access",
+        "API access for Partners (through Developer Portal)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API access for Partners (through Developer Portal)",
+      "Anchor": "api-access-for-partners-through-developer-portal",
+      "SectionPath": [
+        "Apply for Access",
+        "API access for Partners (through Developer Portal)"
+      ],
+      "Text": "Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data. To know more about the OAuth flows, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "If you are an API partner integrating with the Conversions API, please review the Integration Requirements to understand the capabilities you need to build and demonstrate during the Technical Sign Off process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Workflow and Use Cases",
+      "Anchor": "api-workflow-and-use-cases",
+      "SectionPath": [
+        "API Workflow and Use Cases"
+      ],
+      "Text": "To know more about conversions API workflow and some of the use cases, see Conversions API Use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Payload Builder",
+      "Anchor": "payload-builder",
+      "SectionPath": [
+        "Payload Builder"
+      ],
+      "Text": "The payload builder supports building the payload for steaming the Conversion Events. For more information, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Payload Builder",
+      "Anchor": "payload-builder",
+      "SectionPath": [
+        "Payload Builder"
+      ],
+      "Text": "Payload Builder\nConversions Payload Builder Documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u2019s Marketing API Program supports versioning so that developers can release changes over time. To know more about how to use versioned APIs, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "We have prepared a list of FAQs that would help answer frequently asked questions related to this API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources can help you stay on top of new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Check out the Recent Changes page to see the latest API releases.\nCheck out the Developer Portal to know more about our API products.\nUse the Migrations page to stay on top of breaking changes.\nNeed help? Reach out to Developer Support by submitting a support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

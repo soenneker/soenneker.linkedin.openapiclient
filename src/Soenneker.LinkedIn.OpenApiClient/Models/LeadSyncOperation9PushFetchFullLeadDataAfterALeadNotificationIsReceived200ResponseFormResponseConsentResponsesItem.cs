@@ -17,7 +17,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The consentId property</summary>
-        public int? ConsentId { get; set; }
+        public long? ConsentId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation9PushFetchFullLeadDataAfterALeadNotificationIsReceived200ResponseFormResponseConsentResponsesItem"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accepted", n => { Accepted = n.GetBoolValue(); } },
-                { "consentId", n => { ConsentId = n.GetIntValue(); } },
+                { "consentId", n => { ConsentId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("accepted", Accepted);
-            writer.WriteIntValue("consentId", ConsentId);
+            writer.WriteLongValue("consentId", ConsentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

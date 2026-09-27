@@ -1,0 +1,439 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/event",
+  "Title": "Event",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/event",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Event",
+      "Anchor": "event",
+      "SectionPath": [],
+      "Text": "An event is an entity that occurs in a certain place during a particular interval of time. For example, a professional conference or trade show would be an event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Event Schema",
+      "Anchor": "event-schema",
+      "SectionPath": [
+        "Event Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Address",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/event#address-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The physical address of the event (i.e. where the event is taking place)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backgroundImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional DigitalmediaAssetUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Background image associated with this event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalerichtext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The description of the event, as input by the user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional DigitalmediaAssetUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Logo associated with this event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The name of the event, as input by the user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "personUrn or organizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity responsible for organizing this event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/event#timerange-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The start and end time of the event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "venueDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional MultiLocaleRichText",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalerichtext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The additional details about the event venue, on top of the address field, like room name, floor number etc. as input by the user.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Address Schema",
+      "Anchor": "address-schema",
+      "SectionPath": [
+        "Address Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "City this address belongs to.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Country/region this address belongs to. Uses the ISO 3166-2 2 Character Country Code.",
+            "Links": [
+              "https://www.iso.org/iso-3166-country-codes.html"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geographicArea",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State of the Province this address belongs to.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geographicAreaType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the geographic area, State or Province. Can currently be the following: PROVINCE - province STATE -state",
+            "Links": [],
+            "Values": [
+              "PROVINCE - province",
+              "STATE -state"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "line1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First line of this address.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Second line of this address.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line3",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Third line of this address.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "line4",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fourth line of this address.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Postal code of this address.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TimeRange Schema",
+      "Anchor": "timerange-schema",
+      "SectionPath": [
+        "TimeRange Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the exclusive (strictly less than) value in which to end the range. An unset field here indicates an open range.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the inclusive (greater than or equal to) value in which to start the range. An unset field here indicates an open range.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

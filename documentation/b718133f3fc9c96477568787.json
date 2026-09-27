@@ -1,0 +1,659 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns",
+  "Title": "Targeting Criteria Facet URNs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingfacets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/skills",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "LinkedIn uses member facets to define a segment of members who will be either included or excluded from an advertising campaign\u0027s targeting. targetingCriteria provides a generic AND / OR construct to include and exclude different targeting facets when defining audience for campaigns. targetingCriteria can be attached to a campaign just like \u00A0previous targeting object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "The table below provides a list of adTargetingFacets that can be used in the targetingCriteria",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "These facets names and facet values mentioned below are discoverable using the adTargetingFacets and adTargetingEntities API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "Read more: Ads Targeting Discovery",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "adTargetingFacets",
+        "Array of URN Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:ageRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ageRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Values : urn:li:ageRange:(18,24) urn:li:ageRange:(25,34) urn:li:ageRange:(35,54) urn:li:ageRange:(55, 2147483647)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:audienceMatchingSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Segments",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/adsegments"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:adSegment:10001 All audience matching segments like contact or company lists, except retargeting segments which are of type urn:li:adTargetingFacet:dynamicSegments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:buyerGroups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "standardizedProductCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:standardizedProductCategory:1031 Reach members belonging to specific buyer groups that align with the desired audience for LinkedIn B2B sellers and marketers. The aim is to effectively engage with these individuals in order to promote or positively influence their perception of the products, ultimately leading to successful closed deals. Note: Applicable only from API versions 202603 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:companyCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationRankingList",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example: urn:li:organizationRankingList:1 urn:li:organizationRankingList:2",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized degrees",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:degree:700",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:dynamicSegments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Segments",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/matched-audiences/adsegments"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:adSegment:10001 Website and engagement retargeting ad segments are categorized as dynamicSegments facet. All other types of audience matching segments are of type urn:li:adTargetingFacet:audienceMatchingSegments. Website retargeting segments may not be AND\u2019ed with any clause targeting member behavior or interests.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:organization:1035 Industry and StaffCountRanges facets may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Employers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employersAll",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:organization:1035 Industry and StaffCountRanges facets may not be AND\u0027ed with any \u0022include\u0022 clauses targeting EmployersPast.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employersPast",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:organization:1035 Industry and StaffCountRanges facets may not be AND\u0027ed with any \u0022include\u0022 clauses targeting EmployersAll.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:fieldsOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized fieldsOfStudy",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:fieldOfStudy:100275",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:firstDegreeConnectionCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:organization:1035",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:followedCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:organization:1035",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:genders",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gender",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Values :urn:li:gender:FEMALE urn:li:gender:MALE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Group",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:group:1234",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:growthRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "growthRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Values : urn:li:growthRate:(-2147483647,0) urn:li:growthRate:(0,3) urn:li:growthRate:(3,10) urn:li:growthRate:(10,20) urn:li:growthRate:(20,2147483647) The lower and upper limits in the range represents the growth rate in percentages",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized industries",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:industry:9 Industries may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Employers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Interest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:interest:689290 Interest targeting allows advertisers to reach audiences based on specific interests expressed on LinkedIn. Subject to our members\u0027 ad settings, advertisers are able to target LinkedIn members whose interests are closely aligned with their goals and objectives, and deliver greater personalization with their content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:locale:en_US",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized jobFunctions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:function:22 Job functions may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Job Titles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized locations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Examples : urn:li:countryGroup:NA urn:li:country:us urn:li:state:(urn:li:country:us,CA) urn:li:region:84 *Targeting by location implies that either a member\u0027s current IP location or his/her profile location can be used for matching.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:memberBehaviors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "memberBehavior",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:memberBehavior:2 Member behaviors may not be AND\u2019ed with any clause targeting contact audience matching segments or website retargeting segments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:profileLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized locations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The values are the same as \u0022locations\u0022 facet. *Targeting by profileLocation implies that only the member\u0027s\u00A0profile location should be used for matching.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:schools",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:organization:1035",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:seniorities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized seniorities",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:seniority:7 Seniorities may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Job Titles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized skills",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/skills"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:skill:17",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:staffCountRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "staffCountRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Values : urn:li:staffCountRange:(1,1) urn:li:staffCountRange:(2,10) urn:li:staffCountRange:(11,50) urn:li:staffCountRange:(51,200) urn:li:staffCountRange:(201,500) urn:li:staffCountRange:(501,1000) urn:li:staffCountRange:(1001,5000) urn:li:staffCountRange:(5001,10000) urn:li:staffCountRange:(10001,2147483647) StaffCountRanges can be targeted either inclusively or exclusively, but not both. It cannot be AND\u0027ed with any \u0022include\u0022 clauses targeting Employers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized titles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:title:4 Seniorities and job functions may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Job Titles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titlesAll",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized titles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:title:4 Seniorities and job functions may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Job Titles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titlesPast",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized titles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:title:4 Seniorities and job functions may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Job Titles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:yearsOfExperienceRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "yearsOfExperienceRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Example : urn:li:yearsOfExperience:3 Range: 1 to 12\u002B yrs. Accepts up to 2 URNs to set a lower and upper limit. If you provide only 1 URN, it is considered the lower limit and the targeting will have no upper limit.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting Criteria Facet URNs",
+      "Anchor": "targeting-criteria-facet-urns",
+      "SectionPath": [],
+      "Text": "*Some facets representing range\u00A0(like StaffCount or Age) use INT_MAX value\u00A02147483647 as a way to represent no upper limit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Special Note",
+      "Anchor": "special-note",
+      "SectionPath": [
+        "Special Note"
+      ],
+      "Text": "The following facets can only be used in the \u0022include\u0022 clause of targetingCriteria :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Special Note",
+      "Anchor": "special-note",
+      "SectionPath": [
+        "Special Note"
+      ],
+      "Text": "urn:li:adTargetingFacet:ageRanges\nurn:li:adTargetingFacet:genders\nurn:li:adTargetingFacet:groups\nurn:li:adTargetingFacet:interfaceLocales",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

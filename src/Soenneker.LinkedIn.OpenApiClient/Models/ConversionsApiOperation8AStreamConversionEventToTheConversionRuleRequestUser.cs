@@ -7,52 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The externalIds property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExternalIds { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1? ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<string> ExternalIds { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 { get; set; }
 #endif
-        /// <summary>The lead property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lead { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2? ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Lead { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 { get; set; }
 #endif
-        /// <summary>The userIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserIdsItem>? UserIds { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserIdsItem> UserIds { get; set; }
-#endif
-        /// <summary>The userInfo property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserInfo? UserInfo { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserInfo UserInfo { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser"/> and sets the default values.
-        /// </summary>
-        public ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,7 +37,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUser();
+            result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1();
+            result.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,13 +48,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1 != null || ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2 != null)
             {
-                { "externalIds", n => { ExternalIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "lead", n => { Lead = n.GetStringValue(); } },
-                { "userIds", n => { UserIds = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserIdsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserIdsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "userInfo", n => { UserInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserInfo.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -84,11 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("externalIds", ExternalIds);
-            writer.WriteStringValue("lead", Lead);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserIdsItem>("userIds", UserIds);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserUserInfo>("userInfo", UserInfo);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1>(null, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf1, ConversionsApiOperation8AStreamConversionEventToTheConversionRuleRequestUserAnyOf2);
         }
     }
 }

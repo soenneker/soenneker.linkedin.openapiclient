@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Options { get; set; }
+        public List<long?>? Options { get; set; }
 #nullable restore
 #else
-        public List<int?> Options { get; set; }
+        public List<long?> Options { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation7AllowTheUserToPullBackPastLeadsOneTimeToGetAnyMissedLeads200ResponseElementsItemFormResponseAnswersItemAnswerDetailsMultipleChoiceAnswer"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "options", n => { Options = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "options", n => { Options = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<int?>("options", Options);
+            writer.WriteCollectionOfPrimitiveValues<long?>("options", Options);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

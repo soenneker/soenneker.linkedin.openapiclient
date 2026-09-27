@@ -1,0 +1,446 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workday-cloud-connect-for-learning",
+  "Title": "LinkedIn Learning and Workday Deep Integration Functionality Guide (CCL)",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workday-cloud-connect-for-learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Workday and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "SSO authentication reduces friction for users and administrators by eliminating the\nneed for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "We recommend SAML SSO for all enterprise learning platform integrations. You can\nconfigure SSO authentication in your LinkedIn Learning Admin settings. Most\norganizations have a centrally-managed identity management solution like Azure\nAD, Okta, or ADFS, which can be configured to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workday Deep Integration Functionality",
+      "Anchor": "workday-deep-integration-functionality",
+      "SectionPath": [
+        "Workday Deep Integration Functionality"
+      ],
+      "Text": "CCL Automated Content Catalog Sync\n\nContent Discovery: Automated Catalog Sync (All languages)\n\nThe LinkedIn Learning library contains over 24,000 courses, with 20 to 30 courses added per week at no extra cost. LinkedIn Learning automates this process using a direct connection between LinkedIn Learning and Workday, so LMS admins do not have to manually upload new content packages at regular intervals. After the initial setup, LinkedIn will dynamically refresh the content library on an automated basis. This ensures new\u202FLinkedIn Learning content is available to learners within 24 hours of release. All content titles, descriptions and skills are aggregated and indexed to accommodate keyword searches and support efficient discoverability. Workday supports automatic syncing of\u202FAll languages\u202Fcontent libraries.\n\nReporting: xAPI\n\nLinkedIn Learning captures all content viewed on its platform in robust usage reports accessible from the LinkedIn Learning administrative interface. In addition to generating reports, LinkedIn Learning uses xAPI to communicate a learner\u2019s activity back to Workday when the learner completes a LinkedIn Learning course, LinkedIn Learning learning path and/or previously curated videos. All LinkedIn Learning course completions, learning paths, and curated videos will be reported both in LinkedIn Learning and in Workday.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Benefits",
+      "Anchor": "integration-benefits",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "Integration Benefits"
+      ],
+      "Text": "More discoverable courses: Learners can more easily discover LinkedIn Learning courses mapped to Workday Skills Cloud, with greater visibility in search and recommendations across Workday - driving stronger skill alignment and learner engagement.\n\nMore bite-sized and in-depth learning formats: Learners can discover LinkedIn Learning videos curated by admins and learning paths in Workday.\n\nTake skills to the next level: Learners can practice and demonstrate their skills by filtering for LinkedIn Learning Hands-On Practice and Professional Certificates in Workday.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "System Requirements",
+      "Anchor": "system-requirements",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "System Requirements"
+      ],
+      "Text": "LinkedIn Learning Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "System Requirements",
+      "Anchor": "system-requirements",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "System Requirements"
+      ],
+      "Text": "An active LinkedIn Learning account\n\nAdmin privileges to your LinkedIn Learning instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "System Requirements",
+      "Anchor": "system-requirements",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "System Requirements"
+      ],
+      "Text": "Workday Content \u0026 Skills Cloud Requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "System Requirements",
+      "Anchor": "system-requirements",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "System Requirements"
+      ],
+      "Text": "An active Workday LMS instance with Cloud Connect for Learning\n\nAdmin privileges to your Workday LMS instance\n\nWorkday Skills Cloud for full skills data utilization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "System Requirements",
+      "Anchor": "system-requirements",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "System Requirements"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "System Requirements",
+      "Anchor": "system-requirements",
+      "SectionPath": [
+        "Workday Deep Integration Functionality",
+        "System Requirements"
+      ],
+      "Text": "Customers migrating from the legacy Workday Content integration should review the notes at the end of this guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Workflow Overview",
+      "Anchor": "integration-workflow-overview",
+      "SectionPath": [
+        "Integration Workflow Overview"
+      ],
+      "Text": "Step 1: Set up Integration System User for Cloud Connect for Learning\n\nStep 2: Configure Cloud Connect for Learning in Workday\n\nStep 3: Manage Content Catalog\n\nStep 4: Manage Cloud Connect for Learning Credentials\n\nStep 5: Integrate Workday CCL with LinkedIn Learning\n\nStep 6: Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Set up Integration System User for Cloud Connect for Learning",
+      "Anchor": "step-1-set-up-integration-system-user-for-cloud-connect-for-learning",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 1: Set up Integration System User for Cloud Connect for Learning"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Set up Integration System User for Cloud Connect for Learning",
+      "Anchor": "step-1-set-up-integration-system-user-for-cloud-connect-for-learning",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 1: Set up Integration System User for Cloud Connect for Learning"
+      ],
+      "Text": "If you do not complete this step correctly by following the linked Workday guide, the LinkedIn content import will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Set up Integration System User for Cloud Connect for Learning",
+      "Anchor": "step-1-set-up-integration-system-user-for-cloud-connect-for-learning",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 1: Set up Integration System User for Cloud Connect for Learning"
+      ],
+      "Text": "All Cloud Connect for Learning integrations require an Integration System User (ISU) and an Integration System Security Group (ISSG), which should be set up according to the instructions in the Workday Guide. As a result, Workday assigns the ISU to the Cloud Connect for Learning Security Group.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Configure Cloud Connect for Learning in Workday",
+      "Anchor": "step-2-configure-cloud-connect-for-learning-in-workday",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 2: Configure Cloud Connect for Learning in Workday"
+      ],
+      "Text": "Search for \u0022Configure Cloud Connect for Learning\u0022 in the global search bar at the top of any screen in your Workday Tenant.\n\nSelect \u0022LinkedIn Learning\u0022 as the Content Provider.\n\n\n\n\n\nYou will be directed to the Setup Content and Content Provider task. A flow of subsequent tasks will appear on the left-hand side.\n\nEnter the following information:\n\nInactivate Content Provider: Unchecked \u25FB\uFE0F\n\nIntegration System User: Select the CCL ISU you have configured. The example below shows \u0022wd-implementer / Workday Implementer\u0022 but you should select the CCL ISU that you configured.\n\nRequires Enrollment (Optional): Unchecked \u25FB\uFE0F\n\nExclude from Recommendations: Unchecked \u25FB\uFE0F\n\nExclude from Search and Browse: Unchecked \u25FB\uFE0F\n\nImport External Vendor Skills: Checked \u2705\n\n\n\n Note\nIf you do not have Workday Skills Cloud, you may not see this option. Customers should confirm with their Workday representative whether Workday Skills Cloud is available in their tenant.\n\n\nReminder: After checking Import External Vendor Skills, make sure to apply the same selection in the corresponding configuration on LinkedIn Learning. The settings must remain consistent between the Workday CCL configuration and LinkedIn Learning.\n\nOpt-Out of Synonymous Skills: Unchecked \u25FB\uFE0F\n\n\n\nClick Next. (Once you complete the above steps, the configuration should look like the example below.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Manage Content Catalog",
+      "Anchor": "step-3-manage-content-catalog",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 3: Manage Content Catalog"
+      ],
+      "Text": "You will be directed to the Manage Content Catalog task.\n\nSelect a Default Learning Topic. The example below shows \u201CLinkedIn Learning\u201D as the topic, but you should select the topic that makes the most sense for your organization.\n\nClick Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Manage Cloud Connect for Learning Credentials",
+      "Anchor": "step-4-manage-cloud-connect-for-learning-credentials",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 4: Manage Cloud Connect for Learning Credentials"
+      ],
+      "Text": "Enable the Generate Credentials toggle and click Next. If you previously completed this configuration, it will say Regenerate Credentials instead.\n\n\n\n\n\nAfter generating credentials, the following will be displayed:\n\nClient ID\n\nClient Secret (Note: Save this secret for future use; it won\u0027t be available after initial setup.)\n\nAuth URL\n\nContent URL\n\nTracking URL\n\n\n\nClick Next to display the Conclusion Screen.\n\nClick OK to complete the flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Manage Cloud Connect for Learning Credentials",
+      "Anchor": "step-4-manage-cloud-connect-for-learning-credentials",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 4: Manage Cloud Connect for Learning Credentials"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Manage Cloud Connect for Learning Credentials",
+      "Anchor": "step-4-manage-cloud-connect-for-learning-credentials",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 4: Manage Cloud Connect for Learning Credentials"
+      ],
+      "Text": "Credentials will not be valid if you do not complete all of the steps above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Manage Cloud Connect for Learning Credentials",
+      "Anchor": "step-4-manage-cloud-connect-for-learning-credentials",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 4: Manage Cloud Connect for Learning Credentials"
+      ],
+      "Text": "Result:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Manage Cloud Connect for Learning Credentials",
+      "Anchor": "step-4-manage-cloud-connect-for-learning-credentials",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 4: Manage Cloud Connect for Learning Credentials"
+      ],
+      "Text": "Your tenant is now configured to accept API requests from external systems. You have generated the URLs and credentials needed for communication with the CCL Self-Service API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Integrate Workday CCL with LinkedIn Learning",
+      "Anchor": "step-5-integrate-workday-ccl-with-linkedin-learning",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 5: Integrate Workday CCL with LinkedIn Learning"
+      ],
+      "Text": "Log in to LinkedIn Learning Admin (select Go to Admin from the Learner Experience).\n\nFrom the left rail, click Settings \u003E Integration \u003E Configure content push and reporting integrations.\n\n\n\n\n\nClick Add Integration under Configure Workday (CCL).\n\nProvide the Authentication URL, Content URL, Client ID, and Client Secret generated in Workday CCL.\n\nAnswer \u0022Yes\u0022 to Did you enable \u0027Import external vendor skills\u0027 in Workday? Your selection here should match your Workday setup.\n\nClick Enable",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "step-6-enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 6: Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To ensure accurate learner activity tracking between LinkedIn Learning and Workday CCL, follow the below steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "step-6-enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Step 6: Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Navigate to xAPI Integration Setup in LinkedIn Learning\n\nIn LinkedIn Learning Admin, go to the left rail and click Settings \u003E Integration \u003E Configure content push and reporting integrations \u003E Configure xAPI.\n\n\n\n\n\n\nAdd xAPI Integration\n\nClick Add Integration\n\nSet the Integration Name.\n\nIn the User Type drop-down, select Email or ID. The Email value must match the email address value in Workday. While the ID value (unique_user_id within LinkedIn Learning) must match the username value in Workday. Please reach out to Workday support if you need help identifying this value.\n\n\n\nConfigure OAuth and Tenant URLs\n\nOAuth Server URL: Enter the Auth URL generated in Workday CCL.\n\nTenant Server URL: Enter the Tracking URL generated in Workday CCL.\n\n\n\nEnter Provider Credentials\n\nClient ID: Enter the Client ID generated in Workday CCL.\n\nClient Secret: Enter the Client Secret generated in Workday CCL.\n\n\n\nSelect Data Scope\n\nSelect which detailed metrics to share with Workday.\n\nCourse completions (Default Checked) \u2705\n\nLearning Path completions: Checked \u2705\n\nCourse progress: Checked \u2705\n\nVideo completions: Checked \u2705\n\n\n\n\n\n\n\n\n\nSelect \u0022Yes\u0022 to \u0022Is this xAPI integration for Workday Cloud Connect for Learning (CCL)?\u0022. Once everything is configured correctly, it should look similar to the example below.\n\n\n\n\n\n\n\n\nClick Enable to activate the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conclusion",
+      "Anchor": "conclusion",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Conclusion"
+      ],
+      "Text": "You have successfully configured Workday CCL integration with LinkedIn Learning. Your system is now set up for automated content sync, Workday skill mapping, and learner activity tracking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conclusion",
+      "Anchor": "conclusion",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Conclusion"
+      ],
+      "Text": "Please complete the Integration Success Checklist to confirm all the content types, metadata, and filters are syncing correctly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conclusion",
+      "Anchor": "conclusion",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Conclusion"
+      ],
+      "Text": "Congratulations! Your learners can now access LinkedIn Learning content via their Workday instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workday Troubleshooting \u0026 Tips",
+      "Anchor": "workday-troubleshooting--tips",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Workday Troubleshooting \u0026 Tips"
+      ],
+      "Text": "Save your Client Secret Securely; it cannot be retrieved after initial setup.\n\nDefault Learning Topic can be changed later for more granular content assignment.\n\nTo re-trigger a full content sync, delete the Workday CCL integration in LinkedIn Learning, re-add it, and enable it. This should trigger a full resync.\n\nIf upgrading integration from existing Workday deep integration, please note the following:\n\nDelete existing xAPI configuration in LinkedIn Learning and create a new xAPI integration\nDisable the current course catalog sync in Workday prior to configuring the new CCL integration to ensure that courses are not duplicated.\n\n\nAdmin-created custom learning paths and collections in the LinkedIn Learning content library are not synced from LinkedIn Learning to Workday.\n\nIf Workday does not have the Workday Skills Cloud SKU, during configuration leave the \u0022import external vendor skills\u0022 option unchecked and the corresponding setting in LinkedIn Learning unchecked.\n\nFor further assistance, contact Workday\u2019s customer support. You must register as a Workday member to receive technical support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Resources",
+      "Anchor": "linkedin-learning-resources",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "LinkedIn Learning Resources"
+      ],
+      "Text": "Overview and Benefits Guide\n\nFAQs\n\nMigration FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Integration Workflow Overview",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

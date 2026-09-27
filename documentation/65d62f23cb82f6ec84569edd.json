@@ -1,0 +1,219 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+  "Title": "Compliance Snapshot Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation-request",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance Snapshot Overview",
+      "Anchor": "compliance-snapshot-overview",
+      "SectionPath": [],
+      "Text": "This documentation summarizes all Compliance APIs you will need to initially call to gather information on authenticated members (including their profile, current activities and more) for the purpose of your regulatory compliance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Snapshot Overview",
+      "Anchor": "compliance-snapshot-overview",
+      "SectionPath": [],
+      "Text": "These APIs are not intended to be called daily to check on updates. Please refer to the Compliance Events API for daily activities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve activities for compliance monitoring and archiving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and delete data on behalf of an authenticated member for compliance requirements. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile APIs",
+      "Anchor": "profile-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Profile APIs"
+      ],
+      "Text": "To gather a member\u0027s profile information, you can refer to the following documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile APIs",
+      "Anchor": "profile-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Profile APIs"
+      ],
+      "Text": "Profile API\nPrimary Contact API\nConnections API\nMember Rich Content API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share and Social Stream APIs",
+      "Anchor": "share-and-social-stream-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Share and Social Stream APIs"
+      ],
+      "Text": "To gather a member\u0027s shares and social stream, you can refer to the following documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share and Social Stream APIs",
+      "Anchor": "share-and-social-stream-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Share and Social Stream APIs"
+      ],
+      "Text": "Retrieve Personal Shares API\nRetrieve UGC Posts API\nRetrieve Share\u0027s Comments and Likes API\nRetrieve Articles API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization APIs",
+      "Anchor": "organization-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Organization APIs"
+      ],
+      "Text": "To gather a member\u0027s organizations and its content, you can refer to the following documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization APIs",
+      "Anchor": "organization-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Organization APIs"
+      ],
+      "Text": "Retrieve Organization Admin API\nRetrieve Organization API\nRetrieve Organization\u0027s Share API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitation APIs",
+      "Anchor": "invitation-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Invitation APIs"
+      ],
+      "Text": "To gather a member\u0027s pending invitation, you can refer to the following documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitation APIs",
+      "Anchor": "invitation-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Invitation APIs"
+      ],
+      "Text": "Invitations API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reputation APIs",
+      "Anchor": "reputation-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Reputation APIs"
+      ],
+      "Text": "Endorsement API\nRecommendation API\nRecommendation Request API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging APIs",
+      "Anchor": "messaging-apis",
+      "SectionPath": [
+        "Compliance Snapshot APIs",
+        "Messaging APIs"
+      ],
+      "Text": "We do not have Messages API to retrieve a snapshot of the member\u0027s inbox. Please refer to the Messages section of the Compliance Events API to monitor and archive the member\u0027s messaging activity. See here for Messages schema and Create a Message API.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

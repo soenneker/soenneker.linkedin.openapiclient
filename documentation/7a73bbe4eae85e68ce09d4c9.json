@@ -1,0 +1,116 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+  "Title": "Analytics Services - FAQ",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exporting-user-activity",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/exports-schema",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/analytics-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_analytics/sales-analytics-export-jobs"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Analytics Services - FAQ",
+      "Anchor": "analytics-services---faq",
+      "SectionPath": [],
+      "Text": "This FAQ covers answers to commonly asked questions about integrating with Analytics Services.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How often does the data refresh?",
+      "Anchor": "how-often-does-the-data-refresh",
+      "SectionPath": [
+        "How often does the data refresh?"
+      ],
+      "Text": "We refresh data once every 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the maximum time period that I can query data for?",
+      "Anchor": "what-is-the-maximum-time-period-that-i-can-query-data-for",
+      "SectionPath": [
+        "What is the maximum time period that I can query data for?"
+      ],
+      "Text": "An individual query can have a time range of up to 90 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I filter or choose which fields I\u0027d like to export?",
+      "Anchor": "can-i-filter-or-choose-which-fields-id-like-to-export",
+      "SectionPath": [
+        "Can I filter or choose which fields I\u0027d like to export?"
+      ],
+      "Text": "No, you can\u0027t choose specific fields to export at this time. You\u0027ll receive all exported fields in each request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I reduce the file size of the results?",
+      "Anchor": "how-can-i-reduce-the-file-size-of-the-results",
+      "SectionPath": [
+        "How can I reduce the file size of the results?"
+      ],
+      "Text": "Request data for a shorter time period.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How much time do I have to download data?",
+      "Anchor": "how-much-time-do-i-have-to-download-data",
+      "SectionPath": [
+        "How much time do I have to download data?"
+      ],
+      "Text": "We keep all files generated in last 7 days. The download URL will live for 1 hour starting from the time it\u0027s created. Once expired (within 7 days), users can initiate a GET request for the export job id again and receive a new download URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How are multiple query requests handled?",
+      "Anchor": "how-are-multiple-query-requests-handled",
+      "SectionPath": [
+        "How are multiple query requests handled?"
+      ],
+      "Text": "Only one query can be in progress at a time, per endpoint, per contract. If an additional query request is made for an endpoint, it will be enqueued until the previous request for that endpoint is completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the maximum size of the download file?",
+      "Anchor": "what-is-the-maximum-size-of-the-download-file",
+      "SectionPath": [
+        "What is the maximum size of the download file?"
+      ],
+      "Text": "The maximum file size is 3 GB.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the criteria for a valid time range?",
+      "Anchor": "what-is-the-criteria-for-a-valid-time-range",
+      "SectionPath": [
+        "What is the criteria for a valid time range?"
+      ],
+      "Text": "Criteria for valid range can be found exportActivityData",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

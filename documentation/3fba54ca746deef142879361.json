@@ -1,0 +1,58 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview",
+  "Title": "User and Attribute Management/ Org Sync Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "User and Attribute Management/ Org Sync Overview",
+      "Anchor": "user-and-attribute-management-org-sync-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn Learning offers you (the admin) the ability to generate learner reports that contain pre-defined learner attributes or categories, like primary email address, preferred first name, job title, department, and so on. You can tailor data points about learners that you then can define and view in learner reports. Custom attributes provide you the freedom to add learner attributes that align with the learning needs of your organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User and Attribute Management/ Org Sync Overview",
+      "Anchor": "user-and-attribute-management-org-sync-overview",
+      "SectionPath": [],
+      "Text": "Custom attributes also allow admins to have flexibility and insight into learning trends and learner behavior when they are tracking learner activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User and Attribute Management/ Org Sync Overview",
+      "Anchor": "user-and-attribute-management-org-sync-overview",
+      "SectionPath": [],
+      "Text": "You can create and upload custom attributes by uploading them via CSV or implementing custom attribute mapping using SSO.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User and Attribute Management/ Org Sync Overview",
+      "Anchor": "user-and-attribute-management-org-sync-overview",
+      "SectionPath": [],
+      "Text": "Learn more about building and using learner reports.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

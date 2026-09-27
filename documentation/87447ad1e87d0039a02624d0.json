@@ -1,0 +1,711 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+  "Title": "Article Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Article Ads API",
+      "Anchor": "article-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article Ads API",
+      "Anchor": "article-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article Ads API",
+      "Anchor": "article-ads-api",
+      "SectionPath": [],
+      "Text": "Article Ads are Sponsored Content posts that appear in the LinkedIn feed. Deliver your message to a targeted audience beyond your organization\u0027s LinkedIn Page with these native ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article Ads API",
+      "Anchor": "article-ads-api",
+      "SectionPath": [],
+      "Text": "Advertisers can create Sponsored Content Article Ads in two different ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article Ads API",
+      "Anchor": "article-ads-api",
+      "SectionPath": [],
+      "Text": "Post articles on a Company Page as organic content and then sponsor the article post to reach more than just Company Page followers.\nCreate article posts that don\u0027t appear to Company Page followers but can be directly sponsored to target LinkedIn members\u0027 news feed. These types of posts are known as Direct Sponsored Content (DSC) or Dark Shares.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisite (Optional)",
+      "Anchor": "prerequisite-optional",
+      "SectionPath": [
+        "Create an Article Ad",
+        "Prerequisite (Optional)"
+      ],
+      "Text": "Upload your image by following the steps provided here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisite (Optional)",
+      "Anchor": "prerequisite-optional",
+      "SectionPath": [
+        "Create an Article Ad",
+        "Prerequisite (Optional)"
+      ],
+      "Text": "two ways to create an Article Ad:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Article Ad with a new Post",
+      "Anchor": "create-an-article-ad-with-a-new-post",
+      "SectionPath": [
+        "Create an Article Ad",
+        "Create an Article Ad with a new Post"
+      ],
+      "Text": "Create an Article Post by providing the Image Urn from your uploaded image as a thumbnail in the post content field (thumbnail is optional when creating an Article Post) by following the steps in Create Article content.\nCreate an Article Creative with the new post. See creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Article Ad with an Inline Post",
+      "Anchor": "create-an-article-ad-with-an-inline-post",
+      "SectionPath": [
+        "Create an Article Ad",
+        "Create an Article Ad with an Inline Post"
+      ],
+      "Text": "Create an Article Creative with inlineContent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article Post API",
+      "Anchor": "article-post-api",
+      "SectionPath": [
+        "Article Post API"
+      ],
+      "Text": "Linkedin is introducing its next generation of APIs to create and manage Article organic (non-sponsored) posts and Article Ads. These APIs allow advertisers to create ads with content ingested from the web, including web pages, images, videos, and other formats, also known as articles. It also allows API partners to create non-sponsored article posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article Post API",
+      "Anchor": "article-post-api",
+      "SectionPath": [
+        "Article Post API"
+      ],
+      "Text": "Article Post API doesn\u0027t support URL scraping for article post creation as it introduces level of unpredictability in how a post is going to look when API partners create it. Instead, API partners need to set article fields such as thumbnail, title, and description within the post when creating an article post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Article Post API",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER CONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERCONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Restricted) Retrieve posts, comments, and likes on behalf of an authenticated member. This is a restricted permission.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Article Post API",
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Article Post API",
+        "Prerequisites"
+      ],
+      "Text": "Any assets (e.g. images) must be uploaded via Images API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Upload Article image assets via Images API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "This step only applies for optional thumbnail content\n2. Create Article content.\n3. Get Article content.\n4. Batch Get Article content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details/Notes/Values",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom or saved description of the article. If empty, there\u0027s none. The length must be less than 4,086 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A URL of the article. Typically the URL that was ingested to maintain URL parameters. Please note that this field maps to \u0022Destination URL \u0022 field in Campaign Manager UI.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thumbnail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom or saved thumbnail for the article. If empty, there\u0027s none. To retrieve the download URL , an additional request must be made to the Images API using this URN.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thumbnailAltText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Alt text for the custom thumbnail. If empty, there\u0027s none. The length must be less than 4,086 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom or saved title of the article. The length must be less than 400 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Article Content",
+      "Anchor": "create-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Create Article Content"
+      ],
+      "Text": "Note that to include a thumbnail, the image must be fetched and uploaded if it\u0027s to be included. See Workflow for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Article Content",
+      "Anchor": "create-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Create Article Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Article Content",
+      "Anchor": "create-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Create Article Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Article Content",
+      "Anchor": "create-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Create Article Content"
+      ],
+      "Text": "{\n \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n \u0022commentary\u0022: \u0022test strings\u0022,\n \u0022visibility\u0022: \u0022PUBLIC\u0022,\n \u0022distribution\u0022: {\n   \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n   \u0022targetEntities\u0022: [],\n   \u0022thirdPartyDistributionChannels\u0022: []\n },\n \u0022content\u0022: {\n     \u0022article\u0022: {\n         \u0022source\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n         \u0022thumbnail\u0022: \u0022urn:li:image:C49klciosC89\u0022,\n         \u0022title\u0022: \u0022prod test title two\u0022,\n         \u0022description\u0022: \u0022test description\u0022\n     }\n },\n \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n \u0022isReshareDisabledByAuthor\u0022: false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Article Content",
+      "Anchor": "create-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Create Article Content"
+      ],
+      "Text": "curl  --location --request POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data-raw \u0027{\n \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n \u0022commentary\u0022: \u0022test strings\u0022,\n \u0022visibility\u0022: \u0022PUBLIC\u0022,\n \u0022distribution\u0022: {\n   \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n   \u0022targetEntities\u0022: [],\n   \u0022thirdPartyDistributionChannels\u0022: []\n },\n \u0022content\u0022: {\n     \u0022article\u0022: {\n         \u0022source\u0022: \u0022https://lnkd.in/eabXpqi\u0022,\n         \u0022thumbnail\u0022: \u0022urn:li:image:C49klciosC89\u0022,\n         \u0022title\u0022: \u0022prod test title two\u0022,\n         \u0022description\u0022: \u0022test description\u0022\n     }\n },\n \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n \u0022isReshareDisabledByAuthor\u0022: false\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Article Content",
+      "Anchor": "create-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Create Article Content"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Article Content",
+      "Anchor": "get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content"
+      ],
+      "Text": "Retrieve Article content associated with a Post by performing a GET operation. The operation must be performed to the Posts API on a post that was created with Article content. Example post ID: urn:li:share:6894794184403075072",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Article Content",
+      "Anchor": "get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Article Content",
+      "Anchor": "get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content"
+      ],
+      "Text": "To retrieve the download URL for a thumbnail, an additional request must be made to the Images API which returns the highest resolution version of the thumbnail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Article Content",
+      "Anchor": "get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Article Content",
+      "Anchor": "get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{postId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Article Content",
+      "Anchor": "get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content"
+      ],
+      "Text": "curl  --location --request GET \u0027https://api.linkedin.com/rest/posts/urn:li:share:6894794184403075072 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Managing Article Content",
+        "Get Article Content",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022isReshareDisabledByAuthor\u0022: false,\n    \u0022createdAt\u0022: 1643847032795,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022lastModifiedAt\u0022: 1643847032891,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022publishedAt\u0022: 1643847032795,\n    \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n    \u0022id\u0022: \u0022urn:li:share:6894794184403075072\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022article\u0022: {\n            \u0022title\u0022: \u0022test title_2\u0022,\n            \u0022source\u0022: \u0022https://lnkd.in/eabXpqi\u0022\n        }\n    },\n    \u0022commentary\u0022: \u0022Test String\u0022,\n    \u0022lifecycleStateInfo\u0022: {\n        \u0022isEditedByAuthor\u0022: false\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Article Content",
+      "Anchor": "batch-get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Batch Get Article Content"
+      ],
+      "Text": "Fetch multiple posts with different types of content by providing multiple post IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Article Content",
+      "Anchor": "batch-get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Batch Get Article Content"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Article Content",
+      "Anchor": "batch-get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Batch Get Article Content"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts?ids={encoded postId}\u0026ids={encoded postId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Article Content",
+      "Anchor": "batch-get-article-content",
+      "SectionPath": [
+        "Managing Article Content",
+        "Batch Get Article Content"
+      ],
+      "Text": "curl  --location --request GET \u0027https://api.linkedin.com/rest/posts?ids=List(urn%3Ali%3Ashare%3A6927417443392843776,urn%3Ali%3Ashare%3A6927417320021585920)\u0027 \\\n-H \u0027X-RestLi-Method: batch_get\u0027 \\\n-H \u0027X-Restli-Protocol-version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Managing Article Content",
+        "Batch Get Article Content",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022results\u0022: {\n       \u0022urn:li:share:6927417443392843776\u0022: {\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1651625023833,\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1651625023833,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1651625023833,\n           \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n           \u0022id\u0022: \u0022urn:li:share:6927417443392843776\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022article\u0022: {\n                   \u0022title\u0022: \u0022prod test title one\u0022,\n                   \u0022description\u0022: \u0022test description\u0022,\n                   \u0022source\u0022: \u0022https://lnkd.in/eabXpqi\u0022\n               }\n           },\n           \u0022commentary\u0022: \u0022test strings2\u0022,\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           }\n       },\n       \u0022urn:li:share:6927417320021585920\u0022: {\n           \u0022isReshareDisabledByAuthor\u0022: false,\n           \u0022createdAt\u0022: 1651624994433,\n           \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n           \u0022lastModifiedAt\u0022: 1651624994433,\n           \u0022visibility\u0022: \u0022PUBLIC\u0022,\n           \u0022publishedAt\u0022: 1651624994433,\n           \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n           \u0022id\u0022: \u0022urn:li:share:6927417320021585920\u0022,\n           \u0022distribution\u0022: {\n               \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n               \u0022thirdPartyDistributionChannels\u0022: []\n           },\n           \u0022content\u0022: {\n               \u0022article\u0022: {\n                   \u0022title\u0022: \u0022prod test title two\u0022,\n                   \u0022description\u0022: \u0022test description\u0022,\n                   \u0022source\u0022: \u0022https://lnkd.in/eabXpqi\u0022\n               }\n           },\n           \u0022commentary\u0022: \u0022test strings1\u0022,\n           \u0022lifecycleStateInfo\u0022: {\n               \u0022isEditedByAuthor\u0022: false\n           }\n       }\n   },\n   \u0022statuses\u0022: {\n       \u0022urn:li:share:6927417443392843776\u0022: 200,\n       \u0022urn:li:share:6927417320021585920\u0022: 200\n   },\n   \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Create Article creative",
+      "Anchor": "inline-create-article-creative",
+      "SectionPath": [
+        "Managing Article Content",
+        "Inline Create Article creative"
+      ],
+      "Text": "This is for creating sponsored article creative only. If you only want to create organic (non-sponsored) article posts, please skip this section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Create Article creative",
+      "Anchor": "inline-create-article-creative",
+      "SectionPath": [
+        "Managing Article Content",
+        "Inline Create Article creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Inline Create Article creative",
+      "Anchor": "inline-create-article-creative",
+      "SectionPath": [
+        "Managing Article Content",
+        "Inline Create Article creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives?action=createInline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Inline Create Article creative",
+      "Anchor": "inline-create-article-creative",
+      "SectionPath": [
+        "Managing Article Content",
+        "Inline Create Article creative"
+      ],
+      "Text": "{\n\u0022creative\u0022: {\n\u0022inlineContent\u0022: {\n\u0022post\u0022: {\n\u0022adContext\u0022: {\n\u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{{adAccountId}}\u0022,\n\u0022dscStatus\u0022: \u0022ACTIVE\u0022\n},\n\u0022author\u0022: \u0022urn:li:organization:{{linkedInCompanyId}}\u0022,\n\u0022commentary\u0022: \u0022Test\u0022,\n\u0022visibility\u0022: \u0022PUBLIC\u0022,\n\u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n\u0022isReshareDisabledByAuthor\u0022: false,\n\u0022content\u0022: {\n\u0022media\u0022: {\n\u0022title\u0022: \u0022Automate your ad stack with our integrations\u0022,\n\u0022id\u0022: \u0022{{linkedInImageURN}}\u0022\n}\n}\n}\n},\n\u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{{linkedInCampaignId}}\u0022,\n\u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n\u0022variables\u0022: {\n\u0022data\u0022: {\n\u0022com.linkedin.ads.SponsoredImageCreativeVariables\u0022: {\n\u0022clickUri\u0022: \u0022https://www.example.com/landing-page\u0022,\n\u0022headline\u0022: {\n\u0022text\u0022: \u0022Boost Your Ad Performance\u0022\n},\n\u0022description\u0022: {\n\u0022text\u0022: \u0022Discover how our integrations can streamline your advertising workflow and drive better results.\u0022\n},\n\u0022callToAction\u0022: {\n\u0022type\u0022: \u0022LEARN_MORE\u0022\n}\n}\n}\n}\n}\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Inline Create Article creative",
+      "Anchor": "inline-create-article-creative",
+      "SectionPath": [
+        "Managing Article Content",
+        "Inline Create Article creative"
+      ],
+      "Text": "curl  --location --request POST \u0027https://api.linkedin.com/rest/creatives?action=createInline\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n\n--data-raw \u0027{\n    \u0022creative\u0022: {\n        \u0022inlineContent\u0022: {\n            \u0022post\u0022: {\n                \u0022adContext\u0022: {\n                  \u0022isDsc\u0022: true,\n                  \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n                  \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n                },\n                \u0022author\u0022: \u0022urn:li:organization:5515715\u0022,\n                \u0022commentary\u0022: \u0022This is an ad.\u0022,\n                \u0022visibility\u0022: \u0022PUBLIC\u0022,\n                \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n                \u0022isReshareDisabledByAuthor\u0022: true,\n                \u0022content\u0022: {\n                    \u0022article\u0022: {\u0022source\u0022: \u0022http://www.ddrfreak.com\u0022, \u0022title\u0022: \u0022test title\u0022}\n                },\n                \u0022contentLandingPage\u0022: \u0022http://www.ddrfreak.com/contentLandingPage\u0022\n              }\n        },\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n        \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Inline Create Article creative",
+      "Anchor": "inline-create-article-creative",
+      "SectionPath": [
+        "Managing Article Content",
+        "Inline Create Article creative"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-idresponse header. For example, urn:li:sponsoredCreative:121609175",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "References",
+      "Anchor": "references",
+      "SectionPath": [
+        "Managing Article Content",
+        "References"
+      ],
+      "Text": "Posts API",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

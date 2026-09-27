@@ -1,0 +1,846 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+  "Title": "Video Analytics API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "The videoAnalytics API lets you gather analytics about a video entity. The API provides the following metrics:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "Watch time\nVideo views\nVideo viewers",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "This is a unified resource to return all video related analytics. Likes and comment counts are not returned through the Video Analytics API. Pull these counts from the Social Actions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Analytics API",
+      "Anchor": "video-analytics-api",
+      "SectionPath": [],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the video entity with type ugcPost and includes the video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of analytics returned: VIDEO_VIEW Video views with play-pause cycles for at least 3 seconds. Auto-looping videos are counted as one when loaded. Each subsequent auto-looped play doesn\u0027t increase this metric. Analytics data for this metric won\u0027t be available after six months. VIEWER: Unique viewers who made engaged plays on the video. Auto-looping videos are counted as one when loaded. Each subsequent auto-looped play doesn\u0027t increase this metric. Analytics data for this metric won\u0027t be available after six months. TIME_WATCHED: The time the video was watched in milliseconds. Video auto-looping will continue to increase this metric for each subsequent play. TIME_WATCHED_FOR_VIDEO_VIEWS: The time watched in milliseconds for video play-pause cycles that are at least 3 seconds. Video auto-looping will continue to increase this metric for each subsequent play. Analytics data for this metric will be available for six months.",
+            "Links": [],
+            "Values": [
+              "VIDEO_VIEW Video views with play-pause cycles for at least 3 seconds. Auto-looping videos are counted as one when loaded. Each subsequent auto-looped play doesn\u0027t increase this metric. Analytics data for this metric won\u0027t be available after six months.",
+              "VIEWER: Unique viewers who made engaged plays on the video. Auto-looping videos are counted as one when loaded. Each subsequent auto-looped play doesn\u0027t increase this metric. Analytics data for this metric won\u0027t be available after six months.",
+              "TIME_WATCHED: The time the video was watched in milliseconds. Video auto-looping will continue to increase this metric for each subsequent play.",
+              "TIME_WATCHED_FOR_VIDEO_VIEWS: The time watched in milliseconds for video play-pause cycles that are at least 3 seconds. Video auto-looping will continue to increase this metric for each subsequent play. Analytics data for this metric will be available for six months."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of aggregation. One of the following: DAY: Aggregate data on a daily basis WEEK: Aggregate data on a weekly basis. The week starts on Sunday and ends on Saturday ALL (default): Aggregate all the data together",
+            "Links": [],
+            "Values": [
+              "DAY: Aggregate data on a daily basis",
+              "WEEK: Aggregate data on a weekly basis. The week starts on Sunday and ends on Saturday",
+              "ALL (default): Aggregate all the data together"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range that the analytics will be fetched for. If missing, it will return analytics for the lifetime of the video. This parameter is optional. It is an object with fields start and end holding start and end timestamp. The time range is inclusive of the start and exclusive on the end. The start and end fields are both optional. Timestamps are in epoch format. See the sample below for how to pass this field through the API. If the video has more than ten days/weeks records, and no timeRange being passed into the API call, the aggregate_DAY and aggregate_WEEK calls will return the default 10 results.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api?view=li-lms-2026-09\u0026tabs=http#retrieve-analytics-data-for-a-video-entity"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Analytics Data for a Video Entity",
+      "Anchor": "retrieve-analytics-data-for-a-video-entity",
+      "SectionPath": [
+        "Permissions",
+        "Retrieve Analytics Data for a Video Entity"
+      ],
+      "Text": "Retrieve analytics data for the VIEWER and VIDEO_VIEW metrics for a video entity for six months. Requests on posts older than six months don\u0027t return results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Analytics Data for a Video Entity",
+      "Anchor": "retrieve-analytics-data-for-a-video-entity",
+      "SectionPath": [
+        "Permissions",
+        "Retrieve Analytics Data for a Video Entity"
+      ],
+      "Text": "An exception is in an instance when a video receives viral views a certain amount of time after the initial post. In this instance you can retrieve views of the video for six months after the video received the viral view.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Analytics Data for a Video Entity",
+      "Anchor": "retrieve-analytics-data-for-a-video-entity",
+      "SectionPath": [
+        "Permissions",
+        "Retrieve Analytics Data for a Video Entity"
+      ],
+      "Text": "For example, if the video received viral views two months after the initial post, results will display eight months after the post (six months after the viral view in addition to the two months after the initial post).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/videoAnalytics?q=entity\u0026entity=urn%3Ali%3AugcPost%3A6422171828579602432\u0026type=TIME_WATCHED\u0026timeRange=(start:1531165717442,end:1531770742335)\u0026aggregation=DAY",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET https://api.linkedin.com/rest/videoAnalytics?q=entity\u0026entity=urn%3Ali%3AugcPost%3A6422171828579602432\u0026type=TIME_WATCHED\u0026timeRange=(start:1531165717442,end:1531770742335)\u0026aggregation=DAY \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {INSERT_VERSION}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Permissions",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Format",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finder name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value must be entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the video entity whose type should be ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN. For example urn:li:ugcPost:6443156446455693312",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the analytics that will be returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the following: VIDEO_VIEW VIEWER TIME_WATCHED TIME_WATCHED_FOR_VIDEO_VIEWS Note: The field Watch Time on UI is equal to the TIME_WATCHED_FOR_VIDEO_VIEWS type in the API.",
+            "Links": [],
+            "Values": [
+              "VIDEO_VIEW",
+              "VIEWER",
+              "TIME_WATCHED",
+              "TIME_WATCHED_FOR_VIDEO_VIEWS"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aggregation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The way to aggregate the analytics. Defaults to ALL, meaning aggregate all the data together. Analytics data for this metric will be available for six months.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the following: DAY WEEK ALL (default)",
+            "Links": [],
+            "Values": [
+              "DAY",
+              "WEEK",
+              "ALL (default)"
+            ]
+          },
+          {
+            "Text": "Yes. Defaults to ALL if missing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range that the analytics will be fetched for. If missing, it will return analytics for the lifetime of the video.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "It is an object with fields start and end holding start and end timestamp. The time range is inclusive at the start and exclusive on the end. The start and end fields are both optional. Timestamps are in epoch format. If the video has more than ten days/weeks records, and no timeRange being passed into the API call, the aggregate_DAY and aggregate_WEEK calls will return the default 10 results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Permissions",
+        "Parameters"
+      ],
+      "Text": "On success, a 200 OK response returns with a list of videoAnalytics objects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Permissions",
+        "Parameters"
+      ],
+      "Text": "On failure, a 400 Bad Request response is returned if request parameters are not valid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Permissions",
+        "Parameters"
+      ],
+      "Text": "Except for value, all other fields are defined in the same way as input parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Permissions",
+        "Parameters"
+      ],
+      "Text": "timeRange is an optional field. If it\u0027s missing, it means the data is for the lifetime of the video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Permissions",
+        "Parameters"
+      ],
+      "Text": "If aggregation is DAY/WEEK, timeRange will be start and end of the day/week (even if the data of the day is not complete).\nIf aggregation is ALL, timeRange will be the timeRange from input parameter.\nIf input timeRange is missing, timeRange in output is ignored.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Permissions",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022entity\u0022: \u0022urn:li:ugcPost:6426130460119830528\u0022,\n            \u0022statisticsType\u0022: \u0022VIEWER\u0022,\n            \u0022timeRange\u0022: {\n                \u0022end\u0022: 1535500800000,\n                \u0022start\u0022: 1535414400000\n            },\n            \u0022value\u0022: 1\n        },\n        {\n            \u0022entity\u0022: \u0022urn:li:ugcPost:6426130460119830528\u0022,\n            \u0022statisticsType\u0022: \u0022VIEWER\u0022,\n            \u0022timeRange\u0022: {\n                \u0022end\u0022: 1532563200000,\n                \u0022start\u0022: 1532476800000\n            },\n            \u0022value\u0022: 1\n        },\n        {\n            \u0022entity\u0022: \u0022urn:li:ugcPost:6426130460119830528\u0022,\n            \u0022statisticsType\u0022: \u0022VIEWER\u0022,\n            \u0022timeRange\u0022: {\n                \u0022end\u0022: 1532131200000,\n                \u0022start\u0022: 1532044800000\n            },\n            \u0022value\u0022: 1\n        },\n        {\n            \u0022entity\u0022: \u0022urn:li:ugcPost:6426130460119830528\u0022,\n            \u0022statisticsType\u0022: \u0022VIEWER\u0022,\n            \u0022timeRange\u0022: {\n                \u0022end\u0022: 1535760000000,\n                \u0022start\u0022: 1535673600000\n            },\n            \u0022value\u0022: 1\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 4\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Permissions",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Guaranteed in Response?"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN for the video entity whose type can be digitalmediaAsset or ugcPost which includes the video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN string: urn:li:ugcPost:6443156446455693312",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of analytics that will be returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One of the following: VIDEO_VIEW VIEWER TIME_WATCHED TIME_WATCHED_FOR_VIDEO_VIEWS Note: The field Watch Time on UI is equal to the TIME_WATCHED_FOR_VIDEO_VIEWS type in the API.",
+            "Links": [],
+            "Values": [
+              "VIDEO_VIEW",
+              "VIEWER",
+              "TIME_WATCHED",
+              "TIME_WATCHED_FOR_VIDEO_VIEWS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data is best effort accurate and shouldn\u0027t be used for billing purposes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range that the analytics will be fetched for. If missing, it will return analytics for the lifetime of the video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This parameter is optional. It is an object with fields start and end holding start and end timestamp. The time range is inclusive on the start and exclusive on the end. The start and end fields are both optional. Timestamps are in epoch format. Analytics data for this metric will be available for six months. If the video has more than ten days/weeks records, and no timeRange being passed into the API call, the aggregate_DAY and aggregate_WEEK calls will return the default 10 results.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Permissions",
+        "API Error Details"
+      ],
+      "Text": "The Video Analytics API uses standard LinkedIn API error responses. Below is a summary of possible error responses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Permissions",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "Error Code / Type",
+        "Description",
+        "Typical Causes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_REQUEST / BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request is invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing or invalid parameters, malformed URN, unsupported query values.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNAUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Authentication failed or user doesn\u0027t have permission.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing, expired, or invalid access token; insufficient permissions or scopes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authenticated user doesn\u0027t have the required role or permission for the organization or video entity.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requested resource couldn\u0027t be found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The video entity doesn\u0027t exist or is not accessible by the user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONFLICT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request couldn\u0027t be completed due to a conflict with the current state of the resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Duplicate requests or conflicting updates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNPROCESSABLE_ENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The request was well-formed but couldn\u0027t be processed due to semantic errors.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid field values or business logic errors.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TOO_MANY_REQUESTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit for the API has been exceeded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too many requests in a short period; wait and retry later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An unexpected error occurred on the server.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Temporary server issue; try again later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SERVICE_UNAVAILABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The service is temporarily unavailable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn service is down or under maintenance.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

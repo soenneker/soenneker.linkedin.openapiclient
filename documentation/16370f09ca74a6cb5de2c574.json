@@ -1,0 +1,247 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+  "Title": "LinkedIn Marketing API URN Resolution",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/urn-resolution",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API URN Resolution",
+      "Anchor": "linkedin-marketing-api-urn-resolution",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API URN Resolution",
+      "Anchor": "linkedin-marketing-api-urn-resolution",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API URN Resolution",
+      "Anchor": "linkedin-marketing-api-urn-resolution",
+      "SectionPath": [],
+      "Text": "As an alternative to API Decoration, individual requests can be made to access the corresponding entity associated with a URN. This is useful when additional information about the entity is needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API URN Resolution",
+      "Anchor": "linkedin-marketing-api-urn-resolution",
+      "SectionPath": [],
+      "Text": "The table below lists the available APIs for retrieving entities of various URN types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LinkedIn Marketing API URN Resolution",
+      "Anchor": "linkedin-marketing-api-urn-resolution",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "URN Format",
+        "API"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:geo:{geoId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/geo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:industry:{industryId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/industries",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:function:{functionId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/functions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:organization:{organizationId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/organizationsLookup",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:seniority:{seniorityId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/seniorities",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:share:{shareId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/posts",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:sponsoredAccount:{sponsoredAccountId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/adAccounts",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:sponsoredCampaign:{sponsoredCampaignId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/adCampaigns",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:sponsoredCreative:{sponsoredCreativeId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/creatives",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:sponsoredCampaignGroup:{sponsoredCampaignGroupId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/adCampaignGroups",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:title:{titleId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/titles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/titles?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:lla:llaPartnerConversion:{llaPartnerConversionId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/conversions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking?view=li-lms-2026-09#get-conversions"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

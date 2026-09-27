@@ -1,0 +1,73 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+  "Title": "LinkedIn Sync Jobs",
+  "Version": "li-lts-unversioned",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Sync Jobs",
+      "Anchor": "linkedin-sync-jobs",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Simple Job Posting API enables authorized third parties to post jobs directly to LinkedIn. This is an asynchronous API and you will receive a task id which you can use to see the status of the job, verify whether it successfully posted to LinkedIn, or see if there was an error during creation and view any details about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Sync Jobs",
+      "Anchor": "linkedin-sync-jobs",
+      "SectionPath": [],
+      "Text": "Currently only non-premium jobs can be posted via Recruiter System Connect (RSC) offering. Please contact your Business Development point of contact to find out more on Premium Job Postings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Sync Jobs",
+      "Anchor": "linkedin-sync-jobs",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Sync Jobs",
+      "Anchor": "linkedin-sync-jobs",
+      "SectionPath": [],
+      "Text": "Please note that in some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D) or jobs from search and staffing companies. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API",
+      "Anchor": "job-posting-api",
+      "SectionPath": [
+        "Job Posting API"
+      ],
+      "Text": "In order to post/sync your jobs to LinkedIn you are expected to integrate with LinkedIn\u0027s Job Postings API. To know more about Job Postings API please review below documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API",
+      "Anchor": "job-posting-api",
+      "SectionPath": [
+        "Job Posting API"
+      ],
+      "Text": "Job Postings API Overview and Create Basic Jobs\nSync Basic Jobs for Recruiter\nJob Posting API Foundation Schema and Recruiter System Connect Extension Schema",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

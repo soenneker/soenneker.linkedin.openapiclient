@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The elements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Elements { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseElementsItem>? Elements { get; set; }
 #nullable restore
 #else
-        public UntypedNode Elements { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseElementsItem> Elements { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "elements", n => { Elements = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseErrors>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseErrors.CreateFromDiscriminatorValue); } },
                 { "paging", n => { Paging = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponsePaging>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponsePaging.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults.CreateFromDiscriminatorValue); } },
@@ -93,7 +93,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("elements", Elements);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseElementsItem>("elements", Elements);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseErrors>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponsePaging>("paging", Paging);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindOrganizationBrandByVanityName200ResponseResults>("results", Results);

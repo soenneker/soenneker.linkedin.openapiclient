@@ -1,0 +1,126 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/restricted-use-cases",
+  "Title": "Restricted Uses of LinkedIn Marketing APIs and Data",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/restricted-use-cases",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/application-development",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/secure-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Restricted Uses of LinkedIn Marketing APIs and Data",
+      "Anchor": "restricted-uses-of-linkedin-marketing-apis-and-data",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restricted Uses of LinkedIn Marketing APIs and Data",
+      "Anchor": "restricted-uses-of-linkedin-marketing-apis-and-data",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restricted Uses of LinkedIn Marketing APIs and Data",
+      "Anchor": "restricted-uses-of-linkedin-marketing-apis-and-data",
+      "SectionPath": [],
+      "Text": "Use of the LinkedIn Marketing API Platform requires you to comply with LinkedIn\u2019s API Terms and Marketing API Platform Terms, as well as LinkedIn\u2019s Data Storage Requirements. Failure to comply with the terms will result in loss of API access. In addition, we\u0027re providing the following information in response to some of the questions we have received. We may update this page as we receive additional questions and suggest that you revisit it in the future.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions on Member Data",
+      "Anchor": "restrictions-on-member-data",
+      "SectionPath": [
+        "Restrictions on Member Data"
+      ],
+      "Text": "You\u2019ll have access to member data, such as: (1) Portions of members\u2019 profiles and identifiers for members, and (2) Member activity on LinkedIn (e.g. posts, comments, and reactions.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions on Member Data",
+      "Anchor": "restrictions-on-member-data",
+      "SectionPath": [
+        "Restrictions on Member Data"
+      ],
+      "Text": "This member data (including any derivatives thereof) is subject to a number of restrictions under our terms, such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions on Member Data",
+      "Anchor": "restrictions-on-member-data",
+      "SectionPath": [
+        "Restrictions on Member Data"
+      ],
+      "Text": "Data Usage Limitations: Accessing, using, or storing member data for any use case other than to manage LinkedIn Pages or Profiles via your application is a violation of our Marketing API Terms. In particular, member data shouldn\u0027t be used for advertising, sales, or recruiting use cases (including to identify sales or marketing prospects or prospective talent for hire, for lead creation, to enhance customer data in a CRM or marketing automation platform, to build an audience list, or for ad targeting purposes)..\n\nNo Transfer/Exporting Member Data: Member data can only be displayed via your application. Member data can\u0027t be exported, distributed, or otherwise transferred from your application (including to your customers).\n\nNo Combining Member Data with Other Data: Member data can\u0027t be combined with your data, any other LinkedIn data, or any third party data to create, supplement, verify, or append to user profiles, leads, reference tables, or portions thereof..\n\nNo Data Storage in Excess of 48 hours: Under our Data Storage Requirements, member social activity data can only be stored for 48 hours, and most member profile data can only be stored for 24 hours.\n\nData Minimization: You shouldn\u0027t request more member data than is required by your application.\n\nLimited Audience: If member data is obtained for the purpose of managing a specific LinkedIn Page or Profile, it may only be displayed to individuals associated with that Page or Profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unapproved Use Cases",
+      "Anchor": "unapproved-use-cases",
+      "SectionPath": [
+        "Unapproved Use Cases"
+      ],
+      "Text": "Additional use cases we don\u0027t permit:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Unapproved Use Cases",
+      "Anchor": "unapproved-use-cases",
+      "SectionPath": [
+        "Unapproved Use Cases"
+      ],
+      "Text": "No Social Feeds: Under our Marketing API Terms, none of the data provided via our Community Management APIs can be used in a social feed use case (e.g. to display a feed of LinkedIn company updates on the company\u2019s website or intranet).\n\nNo advertising, sales, or recruiting use cases: Member data can\u0027t be used for advertising, sales, or recruiting use cases (including to identify sales or marketing prospects or prospective talent for hire, to create leads, to enhance customer data in a CRM or marketing automation platform, to build an audience list, for ad targeting, for account-based marketing, or for sending mass messages). For these use cases, please take a look at our advertising APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions on LinkedIn Profiles",
+      "Anchor": "restrictions-on-linkedin-profiles",
+      "SectionPath": [
+        "Restrictions on LinkedIn Profiles"
+      ],
+      "Text": "No Headless or Fake Accounts: Do not create fake profiles to manage ad accounts or use individual profiles to manage multiple customers\u2019 accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions on LinkedIn Profiles",
+      "Anchor": "restrictions-on-linkedin-profiles",
+      "SectionPath": [
+        "Restrictions on LinkedIn Profiles"
+      ],
+      "Text": "Please see Section 3 (Use of Marketing APIs and Marketing Data) of our Marketing API Terms for additional details relating to our Marketing APIs and data restrictions.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,871 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-d2l",
+  "Title": "Setting up LinkedIn Learning with LTI 1.3 in D2L (Brightspace)",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-13-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-d2l",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-13-moodle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-lti-canvas",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps illustrate the LinkedIn Learning and LTI 1.3 integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "LTI is a standard used to integrate different learning platforms and tools to create a richer learning experience for the higher education sector. LTI 1.3 is the latest version of the LTI standard that focuses on improving security, enabling better content discoverability, and creating greater flexibility and extensibility. LTI 1.3 is the content discoverability standard for higher education using LMS providers such as Blackboard, Canvas, D2L, and Moodle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "LTI Advantage is a further set of extensions to LTI 1.3 that enhance its capabilities. Its main goals are to enable deeper integration between LMS and LTI tools and platforms, removing the need for custom integrations, and to provide a secure channel to transmit student and enrollment information. The three services included in LTI Advantage are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is LTI 1.3/Advantage?",
+      "Anchor": "what-is-lti-13advantage",
+      "SectionPath": [
+        "What is LTI 1.3/Advantage?"
+      ],
+      "Text": "Deep Linking: allows course creators to easily select and configure the content displayed to learners. For example, creators can configure a link that will launch a specific segment from a video, rather than displaying the full video and asking students to manually find the segment, saving time for both teachers and students.\n\nAssignments and Grades: syncs grades, progress, and comments from multiple sources into an LMS platform\u2019s gradebook, reducing faculty effort and any potential errors.\n\nNames and Roles Provisioning: securely shares course roster and enrollment information. This enables admins and instructors to access reports on student activity within the tool, such as which enrolled students have or have not started an activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Things to Consider before Implementation",
+      "Anchor": "things-to-consider-before-implementation",
+      "SectionPath": [
+        "Things to Consider before Implementation"
+      ],
+      "Text": "Since the LTI standard requires an LMS to launch the LinkedIn Learning content, the integration has distinct tradeoffs. Before opting for LTI, please review the\nsections below to ensure you fully understand the advantages and disadvantages of LTI integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "If you are a LinkedIn Learning user or admin, you have the following benefits of LTI integration:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Advantages"
+      ],
+      "Text": "Seamless access to LinkedIn Learning for students and instructors\n\nEngaging user experiences for students and instructors\n\nGradable content\n\nContent easily integrated into LMS courses",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "If you are thinking about using the LTI standard in your learning platform, keep in mind the following restrictions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "To access LinkedIn Learning content, users must have access to your LMS. If a user cannot log into the LMS, the user does not have access to LinkedIn Learning.\n\nContent is only accessible from within the LMS. Educators cannot \u0022deep link\u0022 to LinkedIn Learning content on class webpages, wikis, or other external systems.\n\nIf your organization uses another form of Single Sign-on (SSO) with LinkedIn Learning, the SSO connection must use the same unique user ID as your LTI connection to prevent duplicate profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "Please use the corresponding guides for your desired LMS integration. If you do not see your LMS listed below please continue to the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Limitations",
+      "Anchor": "limitations",
+      "SectionPath": [
+        "Things to Consider before Implementation",
+        "Limitations"
+      ],
+      "Text": "D2L\nMoodle\nCanvas\nBlackboard",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "You must be a designated LinkedIn Learning administrator to access Integration settings. If you are not an administrator, please reach out to your internal LinkedIn Learning lead, who can add you as an administrator in the system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Note: To register a tool, ensure the Manage LTI Advantage Tool Registrations and Manage LTI Advantage Tool Deployments permissions are set at the organization level within D2L.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "You must be a designated LinkedIn Learning administrator to access Integration settings. If you are not an administrator, please reach out to your internal LinkedIn Learning lead, who can add you as an administrator in the system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "From the Admin portal click on the Me drop down found in the upper right hand corner and select Authentication:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Click Add new SSO button in Configure single sign-on page and select LTI 1.3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Name your new SSO in the Basics tab (e.g. LTI 1.3 D2L Brightspace) and click Next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Keep the window open. We will be using these values in step 8 below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "With the LinkedIn Learning Configuration window still open, open a new tab or browser and log into D2L as an admin. Navigate to Settings (gear icon), and click Manage Extensibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Access the LTI Advantage tab, and click on the Register Tool button.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "If you already have LinkedIn Learning registered but want to deploy the tool for multiple LinkedIn Learning accounts, please create multiple deployments by following the steps in Deploy LinkedIn Learning in D2L and add a redirection URL in 8-d. Redirect URLs for each deployment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Select the Standard registration option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning in D2L",
+      "Anchor": "register-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Register LinkedIn Learning in D2L"
+      ],
+      "Text": "Fill out the form\na. Enabled - Toggle ON.\n\n\n\n\nb. Name - Set to LinkedIn Learning and add a description (Optional).\n\n\n\n\nc. Domain - Copy the Domain from LinkedIn Learning (Value A).\n\n\n\n\nPaste the LinkedIn Learning Domain into the D2L Domain field.\n\n\n\n\nd. Redirect URLs - Copy the OIDC Redirect URL from LinkedIn Learning (Value C).\n\n\n\n\nPaste the OIDC Redirect URL into the Redirect URLs field within D2L.\n\n\n\n\ne. OpenID Connect Login URL - Copy the OIDC Connect Initialization field from LinkedIn Learning (Value B).\n\n\n\n\nPaste the OIDC Connect Initialization field into the OpenID Connect URL Field.\n\n\n\n\nf. Target Link URI - Set to https://www.linkedin.com/learning-admin/lti-deep-link.\n\n\n\n\ng. Keyset URL - Copy the Keyset URL from LinkedIn Learning (Value D).\n\n\n\n\nPaste the Keyset URL from LinkedIn Learning into the Keyset URL field within D2L.\n\n\n\n\nh. Extensions - Enable all Extensions.\n\n\n\n\ni. Roles - Check Send Institution Role.\n\n\n\n\n\nClick Register, and the registration details will appear. This information will be used at a later step (Finalize D2L Connection in LinkedIn Learning Set).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy LinkedIn Learning in D2L",
+      "Anchor": "deploy-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Deploy LinkedIn Learning in D2L"
+      ],
+      "Text": "Access the settings by clicking on the gear icon, and click on External Learning Tools.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy LinkedIn Learning in D2L",
+      "Anchor": "deploy-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Deploy LinkedIn Learning in D2L"
+      ],
+      "Text": "Under the LTI Advantage tab, click New Deployment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy LinkedIn Learning in D2L",
+      "Anchor": "deploy-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Deploy LinkedIn Learning in D2L"
+      ],
+      "Text": "Complete the form\n\nEnabled: Toggle the switch to ON.\nTool: choose the LinkedIn Learning tool you previously registered.\nName: Set to LinkedIn Learning.\nDescription: Optional field.\nExtensions: Check all boxes.\nSecurity Settings: Fill out per your organization\u2019s policy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy LinkedIn Learning in D2L",
+      "Anchor": "deploy-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Deploy LinkedIn Learning in D2L"
+      ],
+      "Text": "Click the Add Org Units button.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy LinkedIn Learning in D2L",
+      "Anchor": "deploy-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Deploy LinkedIn Learning in D2L"
+      ],
+      "Text": "In the modal that opens, look up any Org Unit (Department, Semester, Course, etc.) that you want to make this tool available to. Check the corresponding boxes, and click the Add button when you are done.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deploy LinkedIn Learning in D2L",
+      "Anchor": "deploy-linkedin-learning-in-d2l",
+      "SectionPath": [
+        "Deploy LinkedIn Learning in D2L"
+      ],
+      "Text": "Scroll all the way down, and click Create Deployment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finalize D2L Connection in LinkedIn Learning Settings",
+      "Anchor": "finalize-d2l-connection-in-linkedin-learning-settings",
+      "SectionPath": [
+        "Finalize D2L Connection in LinkedIn Learning Settings"
+      ],
+      "Text": "Go back to the LinkedIn Learning Settings window, and click the Next button. Complete the form with the Brightspace Registration Details values obtained earlier (see Registration section, step 9).\na. Client ID - Copy the Client ID from D2L.\n\n\n\n\nPaste this value into the LinkedIn Learning Client ID field.\n\n\n\n\nb. Deployment ID - In D2L: Gear icon \u2192 External Learning Tools \u2192 LinkedIn Learning \u2192 Deployment ID at the bottom of the page.\n\n\n\n\nc. Issuer - Copy the Issuer value from D2L.\n\n\n\n\nPaste the Issuer value into the OIDC Issuer field within LinkedIn Learning.\n\n\n\n\nd. OpenID Connect Authentication Endpoint - Copy the OpenID Connect Authentication Endpoint from D2L.\n\n\n\n\nPaste this value into the Platform OIDC Authentication URL field within LinkedIn Learning.\n\n\n\n\ne. Select Keyset URL.\n\n\n\n\nf. Brightspace Keyset URL - Copy the Brightspace Keyset URL from D2L.\n\n\n\n\nPaste this value into the Platform OAuth 2.0 Keyset URL field within LinkedIn Learning.\n\n\n\n\ng. Brightspace OAuth2 Access Token URL - Copy the Brightspace OAuth2 Access Token URL from D2L.\n\n\n\n\nPaste this value into the Platform OAuth 2.0 Token Retrieval URL field within LinkedIn Learning.\n\n\n\n\nh. External ID Parameter Name:\nUse this setting to determine which authentication attribute is used to identify users. The default value is Subject. You also can use Email Address or a custom attribute name. For example, your LMS may provide an additional identifier, like lis_person_sourcedid.\n\n\n\n\n\nClick Next, and:\na. Toggle the Enable LTI Advantage switch to ON.\nb. In the textbox fill in your D2L domain such as example.d2l-partners.brightspace.com, and click Add.\nc. Toggle Reporting switch to ON.\nd. Toggle the Deep Linking switch to ON.\n\n\n\n\n\nClick Save.\n\nIn the SSO connections table, find the SSO we just saved, click the Status drop-down menu, select Active.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finalize D2L Connection in LinkedIn Learning Settings",
+      "Anchor": "finalize-d2l-connection-in-linkedin-learning-settings",
+      "SectionPath": [
+        "Finalize D2L Connection in LinkedIn Learning Settings"
+      ],
+      "Text": "Click Activate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finalize D2L Connection in LinkedIn Learning Settings",
+      "Anchor": "finalize-d2l-connection-in-linkedin-learning-settings",
+      "SectionPath": [
+        "Finalize D2L Connection in LinkedIn Learning Settings"
+      ],
+      "Text": "The SSO connection should look like this:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Up Deep Linking in D2L",
+      "Anchor": "set-up-deep-linking-in-d2l",
+      "SectionPath": [
+        "Set Up Deep Linking in D2L"
+      ],
+      "Text": "Access the settings by clicking on the gear icon, and click on External Learning Tools.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Up Deep Linking in D2L",
+      "Anchor": "set-up-deep-linking-in-d2l",
+      "SectionPath": [
+        "Set Up Deep Linking in D2L"
+      ],
+      "Text": "Under the LTI Advantage tab, click on the LinkedIn Learning tool you deployed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Up Deep Linking in D2L",
+      "Anchor": "set-up-deep-linking-in-d2l",
+      "SectionPath": [
+        "Set Up Deep Linking in D2L"
+      ],
+      "Text": "Scroll down to the bottom of the page, and click on View Links.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Up Deep Linking in D2L",
+      "Anchor": "set-up-deep-linking-in-d2l",
+      "SectionPath": [
+        "Set Up Deep Linking in D2L"
+      ],
+      "Text": "Click on New Link.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Up Deep Linking in D2L",
+      "Anchor": "set-up-deep-linking-in-d2l",
+      "SectionPath": [
+        "Set Up Deep Linking in D2L"
+      ],
+      "Text": "Complete the following fields:\na. Enabled: Toggle the switch to ON.\nb. Name: Set to \u201CLinkedIn Learning\u201D.\nc. URL: Set to https://www.linkedin.com/learning-admin/lti-deep-link.\nd. Type: Select Deep Linking Quicklink.\ne. Width: Set to 1000.\nf. Height: Set to 800.\n\n\n\n\n\nClick Save and Close.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Setup is Successful",
+      "Anchor": "verify-setup-is-successful",
+      "SectionPath": [
+        "Verify Setup is Successful"
+      ],
+      "Text": "Note for Firefox and Edge: To avoid Cross-site tracking issues in Firefox, click the shield icon next to the URL and toggle Enhances Tracking Protection to OFF.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Setup is Successful",
+      "Anchor": "verify-setup-is-successful",
+      "SectionPath": [
+        "Verify Setup is Successful"
+      ],
+      "Text": "For Edge, go to Settings \u2192 Privacy, Search and Services \u2192 Exceptions, and add linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding LinkedIn Learning content to your LMS",
+      "Anchor": "adding-linkedin-learning-content-to-your-lms",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS"
+      ],
+      "Text": "Click the grid icon, and search for a course that has Deep Linking enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding LinkedIn Learning content to your LMS",
+      "Anchor": "adding-linkedin-learning-content-to-your-lms",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS"
+      ],
+      "Text": "Under the Content tab, click Existing Activities, and select LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding LinkedIn Learning content to your LMS",
+      "Anchor": "adding-linkedin-learning-content-to-your-lms",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS"
+      ],
+      "Text": "Once you have created a course you will need to access the LinkedIn Learning tool which is shown below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding LinkedIn Learning content to your LMS",
+      "Anchor": "adding-linkedin-learning-content-to-your-lms",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS"
+      ],
+      "Text": "You can search, add, and remove courses/videos. When done, click the Confirm button at the bottom.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding LinkedIn Learning content to your LMS",
+      "Anchor": "adding-linkedin-learning-content-to-your-lms",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS"
+      ],
+      "Text": "The Deep Linking experience will close, and take you back to the activity with the newly added content. Review the activity fields, and click Save and return to course.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Standard Launch Data",
+      "Anchor": "lti-standard-launch-data",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "LTI Standard Launch Data"
+      ],
+      "Text": "When you select the LTI launch URL, your LMS sends data about your users to LinkedIn Learning. Below you find a list of common attribute names, example values, and brief descriptions of the attributes sent via LTI. Typically, the attributes listed below are stored in our database to provide better reporting data, easier user management, and a personalized user experience. When possible, we recommend passing these attributes.\nExamples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Standard Launch Data",
+      "Anchor": "lti-standard-launch-data",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "LTI Standard Launch Data"
+      ],
+      "Text": "lis_person_name_given (First Name): Ferris\nlis_person_name_family (Last Name): Bueller\nlis_person_name_full (Full Name): Ferris Bueller\nlis_person_contact_email_primary (Email): fbueller@newtrier.edu\nroles (User Role): student\ncontext_title (Course Name): Graphic Design 101\ntool_consumer_instance_description (School): New Trier High School",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "LTI Custom Attributes"
+      ],
+      "Text": "When creating an LTI launch URL, you can add custom key/value attributes the launch data includes. We recommend using lower-case names and no punctuation other than underscores when creating a custom attribute. Organizations can use custom attributes to automatically send additional data about users to LinkedIn Learning.\nExamples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "LTI Custom Attributes"
+      ],
+      "Text": "custom_keyname: value\ngraduation_year: 2022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LTI Custom Attributes",
+      "Anchor": "lti-custom-attributes",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "LTI Custom Attributes"
+      ],
+      "Text": "Congratulations! Your learners now can use the LinkedIn Learning and LTI 1.3 integration for SSO and learner progress reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Issue: if you find when launching the LTI Advantage Tool that it freezes or gets stuck in a loading screen. The issue could be due to cross-site tracking being enabled on your browser.\n\nFix: you will want to disable cross-site tracking on that browser. Please work with your IT team for assistance.\n\nIssue: If you experience a strange nested issue (or error) after clicking the Add button for either a Course or Video in the LTI Advantage tool the issue could be the domain you indicated in step 4.\n\nFix: You want to be sure you are including either https://www.linkedin.com or just www.linkedin.com. If you\u2019re already using one option try using the other to see if that fixes it. You may also need to clear your cache.\n\nIssue: If when launching the LTI Advantage Tool, you receive an \u201CThings Aren\u2019t Loading\u201D error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "The issue has to do with being logged into LinkedIn Learning or having an already active Learning session in another tab and/ or browser.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix 1: Try logging out of LinkedIn Learning in any tabs or browsers it is currently active in.\n\nFix 2: Try clearing your cache and cookies or launching the LTI Advantage Tool in a private/ incognito browser window.\n\nIssue If you receive an \u0022Oops! It\u0027s not you. It\u0027s us. Give it another try, please.\u0022 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "It means you are missing hostname(s) needing to be added in the LTI Advantage Tool tab in the LTI 1.3 configuration settings in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix 1: you will want to add those missing hostname(s) and test it again.\n\nTo add those hostname(s), you want to be logged into the Admin Tool in Linkedin Learning.\n\nHover over Me \u003E Authentication\n\nNext you want to click the 3 dots to the right of the LTI 1.3 configuration in the center panel \u003E followed by Edit\n\nClick on the LTI Advantage Tool tab\n\nType the hostname into the field \u003E click the Add button. Repeat for multiple names then click Save in the bottom right.\n\nFix 2: If this error is intermittent, you may need to reach out to LinkedIn Learning Support for further assistance, but you can try a different browser or clear your cache to see if it helps.\n\nIssue: If you see an \u201CUnable to connect to www.linkedin.com\u201D error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "This is likely due to a mismatch with the configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Issues \u0026 Troubleshooting Tips",
+      "Anchor": "common-issues--troubleshooting-tips",
+      "SectionPath": [
+        "Adding LinkedIn Learning content to your LMS",
+        "Common Issues \u0026 Troubleshooting Tips"
+      ],
+      "Text": "Fix: Check to see if the Redirect URLs, the Target Link URI and the OpenID Connect Initiation URL are configured correctly. Any mismatch in values will result in the LTI Advantage Tool to fail. If the issue continues, please reach out to LinkedIn support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Are all users able to connect their LinkedIn profiles through an LTI connection?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, LTI supports profile association.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Which provisioning types are supported?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. LTI requires\u00A0JIT (just in time)\u00A0provisioning and is automatically configured. This condition means that, upon the first successful LTI authentication, LinkedIn Learning automatically creates a user profile (if a user does not already exist).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can SAML SSO and LTI be enabled at the same time?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. You can enable both authentication options\u00A0at the same time, but we recommend that you consult your dedicated Technical Consultant before adopting this method. You might unintentionally create duplicate accounts if the same group of users has access to both LTI and a second SSO connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Is the Unique User ID value configurable?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. Yes, you can configure the Unique User ID in the External ID Parameter Name field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q. Can LTI launches be loaded in an iFrame?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "A. No, LTI does not support iFrames.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "LinkedIn Learning SSO Implementation\n\nLTI, Canvas, and LinkedIn Learning Configuration\n\nGoogle SSO\n\nOkta SSO\n\nAdd and Manage Users in Bulk via CSV\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "For more information on integrating LTI v1.3 with your LMS and LinkedIn Learning, see IMS Global\u2019s\u00A0LTI 1.3 Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Additional Resources",
+      "Anchor": "additional-resources",
+      "SectionPath": [
+        "Support",
+        "Additional Resources"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

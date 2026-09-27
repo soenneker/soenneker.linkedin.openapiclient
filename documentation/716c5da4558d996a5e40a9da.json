@@ -1,0 +1,272 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2019/marketing-api-changes",
+  "Title": "Archived Marketing API Changes 2019",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2019/marketing-api-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/migration-targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2019",
+      "Anchor": "archived-marketing-api-changes-2019",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2019",
+      "Anchor": "archived-marketing-api-changes-2019",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API Updates",
+      "Anchor": "general-api-updates",
+      "SectionPath": [
+        "December 2019",
+        "General API Updates"
+      ],
+      "Text": "New metrics available for video posts.\nWho\u0027s impacted: Partners using the organizationalEntityShareStatistics endpoint.\nWhat\u0027s happening: The following metrics are now available to measure the performance of a video post: clicks, comments, mentions, engagement, impressions, likes, shares, and more. Learn more.\nUse company URL to improve company matching.\nWho\u0027s impacted: Partners using the Organizations Lookup API.\nWhat\u0027s happening: Partners that support company targeting, company mentions or Matched Audience can use the new localizedWebsite field to more reliably identify and match target accounts. Learn more.\nCampaigns using new objectives must use new fields objectiveType and optimizationTargetType to pull bid minimums.\nWho\u0027s impacted: All partners using new campaign objectives including: Brand Awareness, Website Visit, Engagement, Video Views, Lead Generation, Website Conversion, Job Applicant, Talent Lead.\nWhat\u0027s happening:\nWith the launch of Objective-Based Advertising and the new objectives, we implemented new bid minimums based on the objective. To pull the new bid mins, you must use new fields: Objective Type and Optimization Target Type. Learn more.\nFor legacy objectives, continue to use the AdBudgetPricing endpoint to retrieve bid minimums.\nLinkedIn Marketing API Program data storage requirements.\nWho\u0027s impacted: All LinkedIn Marketing API Program partners.\nWhat\u0027s happening: The LinkedIn Marketing API Program data storage requirements have been updated. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions \u0026 Reporting",
+      "Anchor": "conversions--reporting",
+      "SectionPath": [
+        "December 2019",
+        "Conversions \u0026 Reporting"
+      ],
+      "Text": "Customize your conversion window with 90-day option.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: In August, we released new fields \u0027postClickAttributionWindowSize\u0027 and \u0027viewThroughAttributionWindowSize\u0027 that enable you to customize a 1,7,30-day conversion window for a post-click or view-through conversions. Now customize a 90-day conversion window, in addition to 1,7,30 days. The default conversion window for view-through is 7 days and post-click is 30 days. Learn more.\nUse new geographic reporting dimensions, as part of the migration to Bing-geo locations.\nWho\u0027s impacted: Partners using the adAnalytics API.\nWhat\u0027s happening: We are adding three new dimensions for demographic reporting: MEMBER_COUNTRY_V2, MEMBER_REGION_V2, and MEMBER_COUNTY. These new pivots will return geo urns as part of the data, so 10 clicks for urn urn:li:geo:1 for example. They will replace MEMBER_COUNTRY and MEMBER_REGION, which are deprecated and will be removed on March 31, 2020. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content \u0026 InMail",
+      "Anchor": "sponsored-content--inmail",
+      "SectionPath": [
+        "December 2019",
+        "Sponsored Content \u0026 InMail"
+      ],
+      "Text": "Send Sponsored InMail from a company name.\nWho\u0027s impacted: Partners that use the InMail API.\nWhat\u0027s happening: Now support Sponsored InMail from a company sender via API, previously a sender had to be an individual. Note, this feature is limited to customers that have company sender set up by their LinkedIn rep.\nDirect Sponsored Content (DSC) posters can now request access control information.\nWho\u0027s impacted: Any partner using the Company Pages APIs.\nWhat\u0027s happening: We are deprecating organizationalEntityAcls API in favor of a new API: organizationAcls. In addition we\u0027re now allowing the ability for a direct sponsored content poster to request an ACL via UPDATE method. Organizational Entity ACL API will be removed on February 29, 2020. Learn more.\nRemove Sponsored Content from campaign.\nWho\u0027s impacted: Any partner using the adDirectSponsoredContents API.\nWhat\u0027s happening: To help you clean up and organize your campaigns, you can now archive Sponsored Content that you no longer want to sponsor by setting the \u0027status\u0027 field of the AdDirectSponsoredContent to ARCHIVED. Learn more.\nBatch delete creatives capability is not available.\nWho\u0027s impacted: Any partner using the adCreativesV2 API.\nWhat\u0027s happening: In our September API update email, we inadvertently communicated the ability to delete multiple creatives from a campaign in batch. This is currently not available, but you can delete single creative from a campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting",
+      "Anchor": "targeting",
+      "SectionPath": [
+        "December 2019",
+        "Targeting"
+      ],
+      "Text": "New Matched Audiences fields to enhance account and contact matching.\nWho\u0027s impacted: Partners using the dmpSegments API for user, company and list upload endpoints.\nWhat\u0027s happening: Starting December 12, use these new fields to improve your Matched Audiences account and contact matching rates:\nFor contact matching: Google IDs, mobile IDs, first name, last name, job title, country/region, and company name.\nFor account matching: companyPageUrl, stockSymbol, industry, city, state, country/region, and zip code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [
+        "December 2019",
+        "Migrations"
+      ],
+      "Text": "Upload images via the new API.\nWho\u0027s impacted: Partners using the Rich Media API.\nWhat\u0027s happening: Use a new API to upload images for organic posts and Sponsored Content. The Rich Media API is now deprecated and will be terminated on January 30, 2020. The new API, called Vector, will support higher resolution images and faster image upload times. Refer to this migration guide for additional detail.\nGeo-location migration reminder.\nWho\u0027s impacted: Partners using the Ad Targeting API location facet only. This doesn\u0027t impact Share or UGC Post API.\nWhat\u0027s happening: In an effort to improve our geo targeting and provide a more.\ncomprehensive targeting experience, LinkedIn is migrating to Bing geo data. Refer to this migration guide for additional detail.\nWhen: By March 31, 2020, partners should stop using the Locations APIs, and instead integrate with our adTargetingEntities Typeahead and Urns APIs. Starting April 1, 2020, the legacy locations will no longer be accepted in campaign creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-1",
+      "SectionPath": [
+        "December 2019",
+        "Migrations"
+      ],
+      "Text": "ugcOrigin and serviceProvider field deprecated\nWho\u0027s impacted: Partners that use the ugcOrigin field from ugcPosts or serviceProvider field from sharesV2.\nWhat\u0027s happening: ugcOrigin and serviceProvider will be removed, as a part of schema cleanup efforts. These fields won\u0027t be replaced.\nWhen: The ugcOrigin and serviceProvider field will be removed on January 10, 2020.\nRemoving support for SHA1 hashed emails.\nWho\u0027s impacted: Partner using the DMP Segment List Upload and User Streaming API.\nWhat\u0027s happening: We\u0027ve removed support for a SHA1 emails from contact list matching, with the latest set of security changes. Moving forward, email addresses must be SHA256 hashed before you upload the list and SHA256 or SHA512 hashed to stream a user list..\nWhen: Support for SHA1 emails will be removed December 9, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API Updates",
+      "Anchor": "general-api-updates-1",
+      "SectionPath": [
+        "October 2019",
+        "General API Updates"
+      ],
+      "Text": "UGCPosts thumbnail and originalURL fields must be empty when creating video posts.\nWho\u0027s impacted: Partners using the UGC API.\nWhat\u0027s happening: Previously, you may have leveraged the thumbnail or originalURL field when creating a video post. These fields are meant for third-party articles, and not video posts. We didn\u0027t activate the appropriate validations to prevent such calls. Starting November 28, we\u0027ll be enforcing these validations, so please ensure thumbnail and originalURL fields are blank when creating video posts, otherwise the call will result in a 400 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration",
+      "Anchor": "migration",
+      "SectionPath": [
+        "October 2019",
+        "Migration"
+      ],
+      "Text": "Upload images via the new API.\nWho\u0027s impacted: Partners using the Rich Media API.\nWhat\u0027s happening: Use a new API to upload images for organic posts and Sponsored Content. The Rich Media API is now deprecated and will be terminated on January 30, 2020. The new API, called Vector, will support higher resolution images and faster image upload times. Refer to this migration guide for additional detail.\nGeo-location migration reminder.\nWho\u0027s impacted: Partners using the Ad Targeting API location facet only. This doesn\u0027t impact Share or UGC API.\nWhat\u0027s happening: In an effort to improve our geo targeting and provide a more.\ncomprehensive targeting experience, LinkedIn is migrating to Bing geo data. Refer to this migration guide for additional detail.\nWhen: By October 31, 2019, partners should stop using the Locations APIs, and instead integrate with our adTargetingEntities Typeahead and Urns APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecation",
+      "Anchor": "deprecation",
+      "SectionPath": [
+        "October 2019",
+        "Deprecation"
+      ],
+      "Text": "Matched Audiences: AdAudienceMatch endpoint replaced with DMP Segment List Upload.\nWho\u0027s impacted: Partners that use the AdAudienceMatch endpoint.\nWhat\u0027s happening: If you\u0027re currently using the AdAudienceMatch endpoint to create an audience match for companies or members, this endpoint is deprecated and will be removed. The same functionality is available in the DMP Segment List Upload API.\nWhen: The AdAudienceMatch endpoint will be removed on January 31, 2020.\nRich Media API replaced with a new API to upload images.\nWho\u0027s impacted: Partners using the Rich Media API.\nWhat\u0027s happening: We be deprecating the Rich Media API in favor of a new API, Vector, to upload and host media.\nWhen: The Rich Media API will be removed on January 30, 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API Updates",
+      "Anchor": "general-api-updates-2",
+      "SectionPath": [
+        "September 2019",
+        "General API Updates"
+      ],
+      "Text": "Create campaigns on the new set of full-funnel objectives, available with Objective-Based Advertising (OBA).\nWho\u0027s impacted: Partners using the Ad Campaigns and Ad Reporting APIs.\nWhat\u0027s happening: Campaign creation support, in addition to reporting, on the new objectives is now available to all partners. The new objectives are designed to optimize campaigns by showing ads to people most likely to take action and to better measure results based on a marketing objective. If you choose not to integrate OBA, customers will get a different experience on the LinkedIn UI vs. your platform. Learn more.\nNew ads review rejection reasons.\nWho\u0027s impacted: Any partner using the adCreativesV2 API.\nWhat\u0027s happening: We\u0027ve added three new rejection reasons: Lead Gen Form privacy policy missing, inactive job posting, and cryptocurrency, as LinkedIn prohibits ads relating to buying, selling, and promoting cryptocurrency. See here for full list of rejection reasons.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content",
+      "Anchor": "sponsored-content",
+      "SectionPath": [
+        "September 2019",
+        "Sponsored Content"
+      ],
+      "Text": "Create, update, and delete creatives in DRAFT mode.\nWho\u0027s impacted: Any partner using the adCreativesV2 API.\nReminder that starting October 7, DRAFT status is available for all creative types.\nWhat\u0027s happening: Starting October 7, 2019, developers will be able to create, update, and read creatives that are in DRAFT status for all creative types through the Ads API. See August email.\nAfter October 7, Remove ad creative.\nWhat\u0027s happening: You now have the ability to delete one or multiple creatives from campaigns. A new API call is available: DELETE creative_id. Note: Creatives must be in draft or under a draft campaign. Learn more.\nStarting November 1, test, and iterate Sponsored InMail in DRAFT status before activating.\nWhat\u0027s happening: Now test and iterate InMail creatives in DRAFT status before activating. Starting November 1, 2019, Sponsored InMail will default to being created in DRAFT status, enabling you to test your creative before activating, even if creative status is explicitly set to ACTIVE. You need to make a subsequent call to update a creative status to ACTIVE. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "September 2019",
+        "Reporting"
+      ],
+      "Text": "Reporting API Updates - adding additional core LMS metrics.\nWho\u0027s impacted: Partners using the Ads Reporting API.\nWhat\u0027s happening: Four new metrics are available: reactions, viralReactions, sends, and viralCommentLikes. Please refer to the Metrics Available in the API documentation for field descriptions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting",
+      "Anchor": "targeting-1",
+      "SectionPath": [
+        "September 2019",
+        "Targeting"
+      ],
+      "Text": "NEW RELEASE: Lookalike Audiences available via API.\nWho\u0027s impacted: Partners using /dmpSegments API.\nWhat\u0027s happening: Now create a DMP lookalike segment through our segments API. A DMP lookalike segment helps you find similar audiences of an existing segment by storing the details of the segment. For example, if your current audience is small, use the lookalike segment to reach a larger group that shares similarities to your existing group. This segment helps you expand or reach new audience types.\nNew status for Matched Audience segments.\nWho\u0027s impacted: Partners using the adSegmentsV2 and dmpSegments API.\nWhat\u0027s happening: On October 30, 2019, we\u0027ll launch new statuses and deprecate or replace existing ones for LinkedIn Matched Audiences. Learn more.\nManage your Matched Audiences with the ability to single or bulk delete.\nWho\u0027s impacted: Partners using the dmpSegments API.\nWhat\u0027s happening: Manage your Matched Audiences segments more efficiently by removing segments that are outdated or expired. Learn more.\nExpand targeting facet combinations with the new boolean construct.\nWho\u0027s impacted: Partner that use the Ad Targeting API.\nWhat\u0027s happening: Use the new AND / OR construct to expand the ways you can combine different targeting facets and define target audiences in a more effective and efficient manner. Learn more. To leverage this feature, you must migrate to the new targetingCriteria object. Please see the migration guide for more detail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API Updates",
+      "Anchor": "general-api-updates-3",
+      "SectionPath": [
+        "August 2019",
+        "General API Updates"
+      ],
+      "Text": "Manage your webhooks in the developer portal.\nWho can use this: Any developer using a webhooks API (currently available only for social action notifications on company posts to beta partners).\nWhat\u0027s happening: We now offer self-serve webhook management. Developers can register and validate their webhook URLs prior to creating push event subscriptions. Learn more.\nNew status for creatives review.\nWho\u0027s impacted: Any partner using the adCreativesV2 API.\nWhat\u0027s happening: We\u0027ve added a new AUTO_REJECTED value to the reviewStatus enum in the adCreativesV2 API. See here for reasons why an ad is rejected. Learn more.\nUse DRAFT status for all creative types.\nWho\u0027s impacted: Any partner using the adCreativesV2 API.\nWhat\u0027s happening: Starting October 7, 2019, developers will be able to create, update, and read creatives that are in DRAFT status for all creative types through the Ads API. This means the search finder for adCreativesV2 will start to include creatives in DRAFT status that match the criteria. To exclude DRAFT creatives in your search, update your code to explicitly specify values for the search.status.values parameter before October 7, 2019.\nUpdate your non-standard OAuth 2.0 requests.\nWho\u0027s impacted: All partners sending an empty bodied post to our platform.\nWhat\u0027s happening: Starting November 15, 2019, non-standard HTTP POST requests that have an empty body without content-length header will no longer be supported and will result in a standard 411 status code. Please refer to this documentation for more details.\nUpdate your app logo using a square image file.\nWho\u0027s impacted: All partners who have previously provided a URL for their app logo.\nWhat\u0027s happening: Starting September 26, 2019, LinkedIn will no longer accept external URLs to be used as app logos. Users must upload a square image file with at least 100x100 pixels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Forms",
+      "Anchor": "lead-gen-forms",
+      "SectionPath": [
+        "August 2019",
+        "Lead Gen Forms"
+      ],
+      "Text": "New features including: edit forms in draft mode and a new member profile link field.\nWho\u0027s impacted: Partners that use the Lead Gen Form API.\nWhat\u0027s happening:\nStarting August 28, 2019, you can edit Lead Gen Forms (LGF) that are not attached to any creatives or only attached to creatives under a DRAFT campaign. Learn more.\nStarting September 23, 2019, we\u0027re also adding the member profile URL as a new predefined form field option. Please ensure your integration can dynamically handle new predefined field ENUMs or is updated to handle this new value. If you choose not to support this new field, and your customer includes it in their LGF, it won\u0027t show up in reports pulled from your platform. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Forecasting",
+      "Anchor": "forecasting",
+      "SectionPath": [
+        "August 2019",
+        "Forecasting"
+      ],
+      "Text": "New metric: maximum potential spend.\nWho\u0027s impacted: Partners using the Ad Supply Forecasts API.\nWhat\u0027s happening: A new value for metricType called MAX_POTENTIAL_BUDGET has been added to the /adSupplyForecastsV2 resource. It enables you to understand total spend hypothetically available, if an advertiser has unlimited daily budget total budget.\nTake advantage of enhanced forecasting.\nWho\u0027s impacted: Partners using the Ad Supply Forecasts API.\nWhat\u0027s happening: Use new parameters (enableAudienceExpansion, enableAudienceNetwork, and optimizationTarget) to enhance forecasting by understanding the impact of enabling those campaign features. Learn more.\nNew metric types in forecasted results.\nWho\u0027s impacted: Partners using the Ad Supply Forecasts API.\nWhat\u0027s happening: New forecasting metrics available including: leads, message sends, video views, and more. Please refer to the updated documentation for the metricType field. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions \u0026 Insight Tag",
+      "Anchor": "conversions--insight-tag",
+      "SectionPath": [
+        "August 2019",
+        "Conversions \u0026 Insight Tag"
+      ],
+      "Text": "Select your attribution type with new field attributionType.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: New field attributionType enables you to select your attribution type: multi-campaign or last-click. Last-click is a new attribution type that only counts the conversion towards the single, most recent campaign a member interacted (impression or click) with in the attribution window (1,7,30, 90 days), versus all campaigns. Learn more.\nCustomize your conversion window.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: New fields postClickAttributionWindowSize and viewThroughAttributionWindowSize enables you to customize a 1,7,30, or 90-day conversion window for a post-click or view-through conversions. The default conversion window for view-through is 7 days and post-click is 30 days. Learn more.\nConversion tracking through first-party cookies.\nWho\u0027s impacted: Any partner who tracks conversions via our Insight Tag.\nWhat\u0027s happening: New field firstPartyTrackingEnabled offers the ability to track additional conversions through creation of first-party cookie, in addition to a third-party cookie, by sharing click IDs with LinkedIn that will be automatically added to landing page URLs for their ads. Learn more.\nAuto-populate domains in your ad account.\nWho\u0027s impacted: Any partner who uses the Matched Audiences or Conversion Tracking API.\nWhat\u0027s happening: Domains are now auto-populated in an ad account when a signal is received from the customer\u0027s website. Also allow/block domains from attributing conversions, matched audiences and website demographics. As a result insightTagDomain will be deprecated and replaced with insightTagDomain V2 (see deprecation section below).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecations \u0026 Removals",
+      "Anchor": "deprecations--removals",
+      "SectionPath": [
+        "August 2019",
+        "Deprecations \u0026 Removals"
+      ],
+      "Text": "insightTagDomain replaced with insightTagDomain V2\nWho\u0027s impacted: Any partner who tracks conversions via our Insight Tag.\nWhat\u0027s happening: Since we\u0027re auto-populating domains (see above), this will eliminate the steps of creating a manual insight tag domain and map it to conversion rules. We recommend partners to move to new endpoint: Insight Tag Domains V2.\nWhen: insightTagDomain is deprecated and will be removed November 26, 2019.\ndomainID \u0026 urlRules for conversion tracking, replaced with urlMatchRuleExpression.\nWho\u0027s impacted: Any partner who uses tracks conversions via our Insight Tag.\nWhat\u0027s happening: domainID and urlRules fields are being deprecated because our system is no longer matching the domain while processing conversion events. There is no replacement for domainID. urlRules will be replaced with urlMatchRuleExpression that supports AND and OR operations. Learn more.\nWhen: domainID and urlRules is deprecated and will be removed November 26, 2019.\nadSupplyForecasts criteria finder resource has been removed.\nWho\u0027s impacted: Partners that use the Ads API.\nWhat\u0027s happening: We have removed the Find Supply by Criteria finder. The Find Supply by CriteriaV2 finder should be used for forecasting. Learn more in the Migration Guide for targetingCriteria.\nWhen: The old finder has been removed.\nadBudgetPricing criteria finder resource has been removed.\nWho\u0027s impacted: Partners that use the Ads Reporting API.\nWhat\u0027s happening: We removed the Find Pricing Insights by Criteria finder. The Find Pricing Insights by CriteriaV2 finder should be used for pricing insights. Learn more in the Migration Guide for targetingCriteria.\nWhen: The old finder has been removed.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

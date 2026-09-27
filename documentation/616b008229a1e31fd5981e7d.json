@@ -1,0 +1,635 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation-request",
+  "Title": "Recommendation Request API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/reputation-guides/recommendation-request",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation-request"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Recommendation Request API",
+      "Anchor": "recommendation-request-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation Request API",
+      "Anchor": "recommendation-request-api",
+      "SectionPath": [],
+      "Text": "Usage of this API is restricted to approved partners, subject to limitations via API agreement.\nAll API requests are represented in protocol 2.0.0. Therefore, all API requests require the header X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation Request API",
+      "Anchor": "recommendation-request-api",
+      "SectionPath": [],
+      "Text": "With the Recommendation Requests API, you can replicate the full LinkedIn experience around recommendation requests of LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Recommendation Requests",
+      "Anchor": "create-recommendation-requests",
+      "SectionPath": [
+        "Create Recommendation Requests"
+      ],
+      "Text": "Create a recommendation by issuing a POST that specifies the requestee and notification. You can only send recommendation requests on behalf of the authenticated user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Recommendation Requests",
+      "Anchor": "create-recommendation-requests",
+      "SectionPath": [
+        "Create Recommendation Requests"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/recommendationRequest",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create Recommendation Requests",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "notification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Notification of this recommendation request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Message that requester sends to requestee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notification.subject",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subject of the message that requester sends to requestee.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "previousRecommendation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this recommendation replaces an old recommendation, this field should be the urn of the old recommendation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requestee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requestee represented in personUrn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requesteeEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requestee\u0027s entity. For example: urn:li:position:(urn:li:person:, )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requesterEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The requester\u0027s entity. For example: urn:li:position:(urn:li:person:, )",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relationship",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Relationship between recommender and recommendee. Can be the following enum values: RECOMMENDER_MANAGED_RECOMMENDEE -\u00A0Relation where the recommender managed the recipient. RECOMMENDER_REPORTED_TO_RECOMMENDEE -\u00A0Relation where the recommendee is more senior that the recipient. RECOMMENDER_SENIOR_THAN_RECOMMENDEE -\u00A0Relation where the recipient is more senior that the recommendee. RECOMMENDEE_SENIOR_THAN_RECOMMENDER -\u00A0Relation where the recommendee is more senior that the recipient. WORKED_IN_SAME_GROUP -\u00A0Relation where both recipient and recommendee worked in the same company. WORKED_IN_DIFFERENT_GROUPS -\u00A0Relation where both recipient and recommendee worked in different groups. WORKED_IN_DIFFERENT_COMPANIES -\u00A0Relation where both recipient and recommendee worked in different companies. RECOMMENDEE_IS_CLIENT_OF_RECOMMENDER -\u00A0Relation where recommendee is a client of the recipient. RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE -\u00A0Relation where the recipient is a client of the recommendee. RECOMMENDER_TAUGHT_RECOMMENDEE -\u00A0Relation where the recipient taught the recommendee. RECOMMENDER_ADVISED_RECOMMENDEE -\u00A0Relation where the recipient advised the recommendee. RECOMMENDER_STUDIED_WITH_RECOMMENDEE -\u00A0Relation where the recipient studied with the recommendee.",
+            "Links": [],
+            "Values": [
+              "RECOMMENDER_MANAGED_RECOMMENDEE -\u00A0Relation where the recommender managed the recipient.",
+              "RECOMMENDER_REPORTED_TO_RECOMMENDEE -\u00A0Relation where the recommendee is more senior that the recipient.",
+              "RECOMMENDER_SENIOR_THAN_RECOMMENDEE -\u00A0Relation where the recipient is more senior that the recommendee.",
+              "RECOMMENDEE_SENIOR_THAN_RECOMMENDER -\u00A0Relation where the recommendee is more senior that the recipient.",
+              "WORKED_IN_SAME_GROUP -\u00A0Relation where both recipient and recommendee worked in the same company.",
+              "WORKED_IN_DIFFERENT_GROUPS -\u00A0Relation where both recipient and recommendee worked in different groups.",
+              "WORKED_IN_DIFFERENT_COMPANIES -\u00A0Relation where both recipient and recommendee worked in different companies.",
+              "RECOMMENDEE_IS_CLIENT_OF_RECOMMENDER -\u00A0Relation where recommendee is a client of the recipient.",
+              "RECOMMENDER_IS_CLIENT_OF_RECOMMENDEE -\u00A0Relation where the recipient is a client of the recommendee.",
+              "RECOMMENDER_TAUGHT_RECOMMENDEE -\u00A0Relation where the recipient taught the recommendee.",
+              "RECOMMENDER_ADVISED_RECOMMENDEE -\u00A0Relation where the recipient advised the recommendee.",
+              "RECOMMENDER_STUDIED_WITH_RECOMMENDEE -\u00A0Relation where the recipient studied with the recommendee."
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Create Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022notification\u0022: {\n        \u0022message\u0022: \u0022Can you write me a recommendation? Thanks!\u0022,\n        \u0022subject\u0022: \u0022Recommendation request!!\u0022\n    },\n    \u0022requestee\u0022: \u0022urn:li:person:444FFF\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response header",
+      "Anchor": "sample-response-header",
+      "SectionPath": [
+        "Create Recommendation Requests",
+        "sample response header"
+      ],
+      "Text": "X-RestLi-Id: urn:li:recommendationRequest:(urn:li:person:123ABC,123456)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recommendation Requests",
+      "Anchor": "retrieve-recommendation-requests",
+      "SectionPath": [
+        "Retrieve Recommendation Requests"
+      ],
+      "Text": "Once a recommendation request has been created, you can retrieve that recommendation request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Recommendation Requests",
+      "Anchor": "retrieve-recommendation-requests",
+      "SectionPath": [
+        "Retrieve Recommendation Requests"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/recommendationRequest/urn:li:recommendationRequest:(urn:li:person:123ABC,123456)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recommendation Requests",
+      "Anchor": "retrieve-recommendation-requests",
+      "SectionPath": [
+        "Retrieve Recommendation Requests"
+      ],
+      "Text": "Above is the API request represented in pretty print. With X-Restli-Protocol-Version: 2.0.0, you will need to do the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Recommendation Requests",
+      "Anchor": "retrieve-recommendation-requests",
+      "SectionPath": [
+        "Retrieve Recommendation Requests"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/recommendationRequest/urn%3Ali%3ArecommendationRequest%3A%28urn%3Ali%3Aperson%3A123ABC%2C123456%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1490373303379,\n    \u0022id\u0022: 267254,\n    \u0022lastModified\u0022: 1490383550104,\n    \u0022numRequests\u0022: 1,\n    \u0022relationship\u0022: \u0022RECOMMENDER_REPORTED_TO_RECOMMENDEE\u0022,\n    \u0022requestee\u0022: \u0022urn:li:person:444FFF\u0022,\n    \u0022requesteeEntity\u0022: \u0022urn:li:position:(urn:li:person:444FFF,40855915)\u0022,\n    \u0022requester\u0022: \u0022urn:li:person:123ABC\u0022,\n    \u0022requesterEntity\u0022: \u0022urn:li:position:(urn:li:person:123ABC,40170411)\u0022,\n    \u0022status\u0022: \u0022PENDING\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "For more information, refer to the Recommendation Request schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "Alternatively, you can lookup multiple recommendation requests by doing the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/recommendationRequest?ids=List(urn:li:recommendationRequest:(urn:li:person:123ABC,123456),urn:li:recommendationRequest:(urn:li:person:123ABC,456789))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "Above is the API request represented in pretty print. With X-Restli-Protocol-Version: 2.0.0, you will need to do the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests",
+        "sample request body"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/recommendationRequest?ids=List(urn%3Ali%3ArecommendationRequest%3A%28urn%3Ali%3Aperson%3A123ABC%2C123456%29,urn%3Ali%3ArecommendationRequest%3A%28urn%3Ali%3Aperson%3A123ABC%2C456789%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recommendation Request by Recipient",
+      "Anchor": "retrieve-recommendation-request-by-recipient",
+      "SectionPath": [
+        "Retrieve Recommendation Request by Recipient"
+      ],
+      "Text": "You can look up the recommendation requests the authenticated member has received by requesting the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Recommendation Request by Recipient",
+      "Anchor": "retrieve-recommendation-request-by-recipient",
+      "SectionPath": [
+        "Retrieve Recommendation Request by Recipient"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/recommendationRequest?q=recipient\u0026statusFilters=List(ACCEPTED,PENDING)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Recommendation Request by Recipient",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Required",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "statusFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the recommendation request. Can be the following enum values: PENDING DECLINED FULFILLED WITHDRAWN POSITION_DELETED",
+            "Links": [],
+            "Values": [
+              "PENDING",
+              "DECLINED",
+              "FULFILLED",
+              "WITHDRAWN",
+              "POSITION_DELETED"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of string",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Recommendation Request by Recipient",
+        "sample response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1490383269808,\n            \u0022id\u0022: 269405,\n            \u0022lastModified\u0022: 1490383269809,\n            \u0022numRequests\u0022: 1,\n            \u0022requestee\u0022: \u0022urn:li:person:123ABC\u0022,\n            \u0022requester\u0022: \u0022urn:li:person:999AAA\u0022,\n            \u0022status\u0022: \u0022PENDING\u0022\n        },\n        {\n            \u0022created\u0022: 1490373303379,\n            \u0022id\u0022: 267254,\n            \u0022lastModified\u0022: 1490383550104,\n            \u0022numRequests\u0022: 1,\n            \u0022relationship\u0022: \u0022RECOMMENDER_REPORTED_TO_RECOMMENDEE\u0022,\n            \u0022requestee\u0022: \u0022urn:li:person:123ABC\u0022,\n            \u0022requesteeEntity\u0022: \u0022urn:li:position:(urn:li:person:123ABC,40855915)\u0022,\n            \u0022requester\u0022: \u0022urn:li:person:444FFF\u0022,\n            \u0022requesterEntity\u0022: \u0022urn:li:position:(urn:li:person:444FFF,40170411)\u0022,\n            \u0022status\u0022: \u0022PENDING\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 2\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Recommendation Requests by Requester",
+      "Anchor": "retrieve-recommendation-requests-by-requester",
+      "SectionPath": [
+        "Retrieve Recommendation Requests by Requester"
+      ],
+      "Text": "You can look up the recommendation requests the authenticated member has requested with the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Recommendation Requests by Requester",
+      "Anchor": "retrieve-recommendation-requests-by-requester",
+      "SectionPath": [
+        "Retrieve Recommendation Requests by Requester"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/recommendationRequest?q=requester\u0026statusFilters=List(ACCEPTED,PENDING)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests by Requester",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Required",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "statusFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of the recommendation. Can be the following enum values: PENDING VISIBLE HIDDEN WITHDRAWN REPLACED CLOSED",
+            "Links": [],
+            "Values": [
+              "PENDING",
+              "VISIBLE",
+              "HIDDEN",
+              "WITHDRAWN",
+              "REPLACED",
+              "CLOSED"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityFilters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of position or education Urns. Defaults to empty if not present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of Urn",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Recommendation Requests by Requester",
+        "sample response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1490383269808,\n            \u0022id\u0022: 269405,\n            \u0022lastModified\u0022: 1490383269809,\n            \u0022numRequests\u0022: 1,\n            \u0022requestee\u0022: \u0022urn:li:person:999AAA\u0022,\n            \u0022requester\u0022: \u0022urn:li:person:123ABC\u0022,\n            \u0022status\u0022: \u0022PENDING\u0022\n        },\n        {\n            \u0022created\u0022: 1490373303379,\n            \u0022id\u0022: 267254,\n            \u0022lastModified\u0022: 1490383550104,\n            \u0022numRequests\u0022: 1,\n            \u0022relationship\u0022: \u0022RECOMMENDER_REPORTED_TO_RECOMMENDEE\u0022,\n            \u0022requestee\u0022: \u0022urn:li:person:444FFF\u0022,\n            \u0022requesteeEntity\u0022: \u0022urn:li:position:(urn:li:person:444FFF,40855915)\u0022,\n            \u0022requester\u0022: \u0022urn:li:person:123ABC\u0022,\n            \u0022requesterEntity\u0022: \u0022urn:li:position:(urn:li:person:123ABC,40170411)\u0022,\n            \u0022status\u0022: \u0022PENDING\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 2\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Recommendation Requests",
+      "Anchor": "update-recommendation-requests",
+      "SectionPath": [
+        "Update Recommendation Requests"
+      ],
+      "Text": "You can update an recommendation request status, requesteeEntity, relationship, notification or previousRecommendation of one you have given or received by doing the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Recommendation Requests",
+      "Anchor": "update-recommendation-requests",
+      "SectionPath": [
+        "Update Recommendation Requests"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/recommendationRequest/urn:li:recommendationRequest:(urn:li:person:123ABC,123456)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Recommendation Requests",
+      "Anchor": "update-recommendation-requests",
+      "SectionPath": [
+        "Update Recommendation Requests"
+      ],
+      "Text": "You can construct the recommendationUrn by taking the requester personUrn and th recommendationRequestID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Recommendation Requests",
+      "Anchor": "update-recommendation-requests",
+      "SectionPath": [
+        "Update Recommendation Requests"
+      ],
+      "Text": "Example: urn:li:recommendationRequest:({**requester personUrn**},{**recommendationRequestID**})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Recommendation Requests",
+      "Anchor": "update-recommendation-requests",
+      "SectionPath": [
+        "Update Recommendation Requests"
+      ],
+      "Text": "Above is the API request represented in pretty print. With X-Restli-Protocol-Version: 2.0.0, you will need to do the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Recommendation Requests",
+      "Anchor": "update-recommendation-requests",
+      "SectionPath": [
+        "Update Recommendation Requests"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/recommendationRequest/urn%3Ali%3ArecommendationRequest%3A%28urn%3Ali%3Aperson%3A123ABC%2C123456%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Update Recommendation Requests",
+        "sample response"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022DECLINED\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

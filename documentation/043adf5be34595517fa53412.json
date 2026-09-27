@@ -1,0 +1,188 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+  "Title": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
+      "SectionPath": [],
+      "Text": "Customers who elect to enable RSC must be able to sync all historical candidates, applications, and jobs during the onboarding process. If additional filters, variations, or modifications from this expectation are built into the application, partners must obtain approval via writing from their LinkedIn\u0027s Business Development Representative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate a new customer implementing RSC for the first time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the test admin will see the appropriately named integration in Recruiter and will be able to enable it. Demonstrate the ATS instance (API key, API secret) and its ATS integration mappings (ATS integration context org urn and contract urn) will be properly stored in ATS. Demonstrate the ATS integration status will be displayed in ATS admin/configuration/setting page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that a customer should be able to configure the job availability type as PUBLIC or PRIVATE for the jobs synced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the ATS provides an option for the customer to choose the job availability type (PUBLIC or PRIVATE). If a partner cannot provide this choice, they should post jobs of type PRIVATE_TO_ATS_INTEGRATION only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple Recruiter contracts onboarding. For partners utilizing provisioning, demonstrate each customer has a unique developer application, and each developer application maps to 1 customer instance. Complete the onboarding experience in two unique instances.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customers can enable RSC for multiple recruiter contracts simultaneously. Developer applications are created for instances using a unique foreign ID of the instance and are used on behalf of a single instance. Activation for each instance and API traffic corresponds to the API credentials created for that instance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "atsIntegration configuration settings are properly stored.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate that the atsIntegration configuration setting for callback_url is set. JOB_POSTING_VIEWER, APPLICATIOIN_VIEWER is set to \u201CALL_PRODUCT_USERS\u201C if there\u2019s no ACL setting.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set the JS SDK domain for the provisioned application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate in developer portal or in a provisioning API call response that the JS SDK domain is correctly set for to a domain hosting your solution for the customer\u0027s developer application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate access token generation, validation checking.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid. Demonstrate ability to detect access token expiry. Demonstrate ability to retrigger OAuth 2.0 Client Credentials flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-107",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner agrees to participate in a recorded demo with LinkedIn where they demonstrate all core feature functionality of their ATS. If the partner has been flagged for a TOS violation in the past, or if a new TOS violation is uncovered as part of certification, the partner must demonstrate remediation of the violation to be certified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications and ATS Integrations (Customer Onboarding)",
+      "Anchor": "module-1---configure-customer-applications-and-ats-integrations-customer-onboarding",
+      "SectionPath": [],
+      "Text": "Relevant Documentation: Customer Configuration",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

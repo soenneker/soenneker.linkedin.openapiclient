@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The rollupIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RollupIds { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem>? RollupIds { get; set; }
 #nullable restore
 #else
-        public UntypedNode RollupIds { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem> RollupIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001"/> and sets the default values.
@@ -57,9 +57,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001Name.CreateFromDiscriminatorValue); } },
-                { "rollupIds", n => { RollupIds = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "rollupIds", n => { RollupIds = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -69,9 +69,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001Name>("name", Name);
-            writer.WriteObjectValue<UntypedNode>("rollupIds", RollupIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaFieldsOfStudyGetall200ResponseResults100001RollupIdsItem>("rollupIds", RollupIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

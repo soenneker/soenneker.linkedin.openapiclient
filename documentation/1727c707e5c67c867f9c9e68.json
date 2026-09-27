@@ -1,0 +1,1066 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+  "Title": "Organization Share Statistics",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Share Statistics",
+      "Anchor": "organization-share-statistics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Share Statistics",
+      "Anchor": "organization-share-statistics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Share Statistics",
+      "Anchor": "organization-share-statistics",
+      "SectionPath": [],
+      "Text": "This endpoint returns organic statistics only. Sponsored activity is not counted in this endpoint. Use Ad Analytics to retrieve statistics for sponsored activity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Share Statistics",
+      "Anchor": "organization-share-statistics",
+      "SectionPath": [],
+      "Text": "Lifetime share statistics: To retrieve lifetime share statistics, omit the timeIntervals query parameter. The API returns aggregated statistics for an organization\u0027s shares.\n\nTime-bound share statistics: To retrieve time-bound share statistics, include the timeIntervals query parameter. The API returns aggregate share statistics within all of the days or months in between the selected date range based on the specified timeIntervals.timeGranularityType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Share Statistics",
+      "Anchor": "organization-share-statistics",
+      "SectionPath": [],
+      "Text": "The organizationalEntityShareStatistics endpoint returns share data only within the past 12 months, using a rolling 12-month window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data. Restricted to organizations in which the authenticated member has the following role: ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organizational entity URN for which the statistics represents.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The share URN for describing individual share statistics. Is blank for aggregate share statistics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC Post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The UGC Post URN for describing individual share statistics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp (milliseconds since epoch)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting timestamp of when the query should begin. The smallest supported time granularity is on DAY level. For example, Nov 04 2025 23:59:59 is normalized to Nov 04 2025.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalShareStatistics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ShareStatisticsData",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics?view=li-lms-2026-09\u0026tabs=http#share-statistics-data-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Share statistics representing the total counts.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Share Statistics Data Schema",
+      "Anchor": "share-statistics-data-schema",
+      "SectionPath": [
+        "Permissions",
+        "Share Statistics Data Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "clickCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of clicks.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of comments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "engagement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of organic clicks, likes, comments, and shares over impressions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impressionCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of impressions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "likeCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of likes. This field can become negative when members who liked a sponsored share later unlike it. The like is not counted since it\u0027s not organic, but the unlike is counted as organic.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of shares.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "uniqueImpressionsCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number of unique impressions.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lifetime Share Statistics",
+      "Anchor": "retrieve-lifetime-share-statistics",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics"
+      ],
+      "Text": "Don\u0027t specify a timeIntervals parameter to retrieve lifetime share statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity={organization URN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A79988552\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "The /organizationalEntityShareStatistics endpoint doesn\u0027t support pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of the format urn:li:organization:{id} or urn:li:organizationBrand:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time restriction for the query. When omitted, lifetime stats are returned as shown in response below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeGranularityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Granularity of the statistics. Must be either DAY or MONTH.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting timestamp of when the query should begin (milliseconds since epoch) Queries from beginning of time when not set. The smallest supported time granularity is on DAY level. For example, Nov 04 2025 23:59:59 is normalized to Nov 04 2025.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending timestamp of when the query should end (milliseconds since epoch). Queries until current time when not set. The smallest supported time granularity is on DAY level. For example, Nov 04 2025 23:59:59 is normalized to Nov 04 2025.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shares",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "References to one or more shares for which statistics are returned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "share URN. Multiple allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPosts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "References to one or more UGC Posts for which statistics are returned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ugcPost URN. Multiple allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022totalShareStatistics\u0022: {\n        \u0022uniqueImpressionsCount\u0022: 9327,\n        \u0022clickCount\u0022: 109276,\n        \u0022engagement\u0022: 0.007549471334119487,\n        \u0022likeCount\u0022: 52,\n        \u0022commentCount\u0022: 70,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 14490816\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lifetime Share Statistics",
+        "Sample Response"
+      ],
+      "Text": "The socialActions endpoint provides up-to-date counts of likes and comments for a share that matches the LinkedIn feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Share Statistics",
+      "Anchor": "retrieve-time-bound-share-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics"
+      ],
+      "Text": "Specify the timeIntervals parameter to retrieve time-bound share statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "Fetch daily organization share statistics for the first week of March 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 1.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1551398400000\u0026timeIntervals.timeRange.end=1552003200000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1551398400000\u0026timeIntervals.timeRange.end=1552003200000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A79988552\u0026timeIntervals=(timeRange%3A(start%3A1551398400000%2Cend%3A1552003200000)%2CtimeGranularityType%3ADAY)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Example",
+      "Anchor": "sample-request-example-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Request Example"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A79988552\u0026timeIntervals=(timeRange%3A(start%3A1551398400000%2Cend%3A1552003200000)%2CtimeGranularityType%3ADAY)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1451606400000,\n        \u0022end\u0022: 1451692800000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 331,\n        \u0022uniqueImpressionsCounts\u0022: 203\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    },\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1451692800000,\n        \u0022end\u0022: 1451779200000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 0\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    },\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1451779200000,\n        \u0022end\u0022: 1451865600000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 0\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    },\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1451865600000,\n        \u0022end\u0022: 1451952000000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 0\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    },\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1451952000000,\n        \u0022end\u0022: 1452038400000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 0\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    },\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1452038400000,\n        \u0022end\u0022: 1452124800000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 0\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    },\n    {\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1452124800000,\n        \u0022end\u0022: 1452211200000\n      },\n      \u0022totalShareStatistics\u0022: {\n        \u0022clickCount\u0022: 0,\n        \u0022engagement\u0022: 0,\n        \u0022likeCount\u0022: 0,\n        \u0022commentCount\u0022: 0,\n        \u0022shareCount\u0022: 0,\n        \u0022impressionCount\u0022: 0\n      },\n      \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Share Statistics",
+        "Sample Response"
+      ],
+      "Text": "The shareCount for the time-bound statistics won\u0027t match the lifetime statistics because the time-bound data won\u0027t include the count from instant reposts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Statistics for Specific Shares",
+      "Anchor": "retrieve-statistics-for-specific-shares",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Statistics for Specific Shares",
+      "Anchor": "retrieve-statistics-for-specific-shares",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares"
+      ],
+      "Text": "A share URN is required for this API. Either post a new organization share or retrieve an existing organization share to get one.\nTime-bound statistics is not supported for specific share queries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Request"
+      ],
+      "Text": "Fetch lifetime share statistics for two specific organization shares.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Request"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026shares=List(urn%3Ali%3Ashare%3A7132564752928563200,urn%3Ali%3Ashare%3A7132402731377438720)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026shares=List(urn%3Ali%3Ashare%3A7132564752928563200%2Curn%3Ali%3Ashare%3A7132402731377438720)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022share\u0022: \u0022urn:li:share:1000000\u0022,\n            \u0022totalShareStatistics\u0022: {\n                \u0022clickCount\u0022: 78,\n                \u0022commentCount\u0022: 24,\n                \u0022engagement\u0022: 0.022886324947985624,\n                \u0022impressionCount\u0022: 5287,\n                \u0022likeCount\u0022: 14,\n                \u0022shareCount\u0022: 5\n            }\n        },\n        {\n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022share\u0022: \u0022urn:li:share:1000001\u0022,\n            \u0022totalShareStatistics\u0022: {\n                \u0022clickCount\u0022: 1,\n                \u0022commentCount\u0022: 0,\n                \u0022engagement\u0022: 0.2,\n                \u0022impressionCount\u0022: 5,\n                \u0022likeCount\u0022: 0,\n                \u0022shareCount\u0022: 0\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Response"
+      ],
+      "Text": "Elements with share fields indicate each requested share.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Statistics for Specific Shares",
+        "Sample Response"
+      ],
+      "Text": "Shares with no actions or impressions are not included in the list of elements. Shares that are not returned in the list of elements can be assumed to have counts of 0 for all statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Statistics for Specific UGC Posts",
+      "Anchor": "retrieve-statistics-for-specific-ugc-posts",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts"
+      ],
+      "Text": "A UGC URN is required for this API. Either post a new organization UGC Post or retrieve an existing UGC Post to get one.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Statistics for Specific UGC Posts",
+      "Anchor": "retrieve-statistics-for-specific-ugc-posts",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts"
+      ],
+      "Text": "Time-bound statistics is not supported for specific UGC Post queries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "Fetch lifetime share statistics for two specific organization UGC Posts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:2414183\u0026ugcPosts[0]=urn:li:ugcPost:1000000\u0026ugcPosts[1]=urn:li:ugcPost:1000001",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityShareStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:2414183\u0026ugcPosts[0]=urn:li:ugcPost:1000000\u0026ugcPosts[1]=urn:li:ugcPost:1000001\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:1000000\u0022,\n            \u0022totalShareStatistics\u0022: {\n                \u0022clickCount\u0022: 78,\n                \u0022commentCount\u0022: 24,\n                \u0022engagement\u0022: 0.022886324947985624,\n                \u0022impressionCount\u0022: 5287,\n                \u0022likeCount\u0022: 14,\n                \u0022shareCount\u0022: 5\n            }\n        },\n        {\n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:1000001\u0022,\n            \u0022totalShareStatistics\u0022: {\n                \u0022clickCount\u0022: 1,\n                \u0022commentCount\u0022: 0,\n                \u0022engagement\u0022: 0.2,\n                \u0022impressionCount\u0022: 5,\n                \u0022likeCount\u0022: 0,\n                \u0022shareCount\u0022: 0\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "Elements with ugcPost fields indicate each requested UGC Post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Statistics for Specific UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "UGC Posts with no actions or impressions are not included in the list of elements. UGC Posts that are not returned in the list of elements can be assumed to have counts of 0 for all statistics.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

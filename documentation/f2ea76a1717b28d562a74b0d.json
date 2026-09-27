@@ -1,0 +1,125 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+  "Title": "LinkedIn Job Posting API Certification",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Job Posting API Certification",
+      "Anchor": "linkedin-job-posting-api-certification",
+      "SectionPath": [],
+      "Text": "To ensure official certification of LinkedIn Job Posting API, please review each of the test cases mentioned here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Upon completing development, please review the below test cases, record a short video to demonstrate each test case and submit a certification request using the partner support form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "One video should capture all test cases. Multiple video files are not accepted\nUpon successful certification, LinkedIn provides a new Parent API key for production",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Requirements",
+      "Anchor": "video-requirements",
+      "SectionPath": [
+        "Video Requirements"
+      ],
+      "Text": "The video should not exceed ten minutes\nThe video file format should be a common video format (mp4, AVI, MOV)\nThe file name must follow the following format: Partner Name_ JP_CERT_ MM_DD_YY.mp4\nThe file should not exceed 100MB",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Job Posting program. This ensures that our members get the best experience using a LinkedIn partner integration. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you are nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "A demo will be scheduled during which you will be asked to showcase all your product capabilities. During this evaluation, LinkedIn may suggest modifications which will need to be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements",
+      "Anchor": "integration-requirements",
+      "SectionPath": [
+        "Integration Requirements"
+      ],
+      "Text": "Module 1 Certification - Authentication\nModule 2 Certification - Customer Application Provisioning and Job Board Setup\nModule 3 Certification - Create and Manage Jobs\nModule 4 Certification - PJP Widget and Enabling Customers via widget\nModule 5 Certification - Basic and Premium Job Posting\nModule 6 Certification - Notifications",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

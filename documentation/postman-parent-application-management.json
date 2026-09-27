@@ -1,0 +1,222 @@
+{
+  "auth": {
+    "oauth2": {
+      "accessTokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+      "addTokenTo": "header",
+      "clientId": "{{parent_app_client_id}}",
+      "clientSecret": "{{parent_app_client_secret}}",
+      "grant_type": "client_credentials"
+    },
+    "type": "oauth2"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "exec": [
+          "pm.request.headers.add({",
+          "  key: \u0027User-Agent\u0027,",
+          "  value: \u0027parentappmgmt-linkedin-postman\u0027",
+          "});"
+        ],
+        "id": "c734e21b-fb40-4936-8503-e41e33975a1a",
+        "requests": {},
+        "type": "text/javascript"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          ""
+        ],
+        "id": "4c33d830-41a3-4eb0-b2da-b543356d14ba",
+        "requests": {},
+        "type": "text/javascript"
+      }
+    }
+  ],
+  "info": {
+    "_postman_id": "75485adb-f25f-4955-9cb7-4779bca25db0",
+    "description": "We are making updates to our collections. If you run into any issues pulling the latest changes, simply fork the collection again.\n\nLinkedIn\u0027s Provisioning APIs allow partners to create and configure developer applications on behalf of their customers. This is an initial step to manage and enable customer integrations. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api) for more information.  \nEnsure that you select Partner Application Management environment while executing use cases.",
+    "name": "Parent Application Management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "description": "Make things Make things easier for your teammates with a complete folder description.easier for your teammates with a complete folder description.",
+      "id": "ad1a0533-f468-421b-829c-0762d2f98ec9",
+      "item": [
+        {
+          "description": "With the help of Partner Application, partners have to provision child applications for mutual customers. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api) for more information",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "9c0255f6-2950-46b4-acfb-61e5007aa256",
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "id": "3a4663e5-f004-4122-9fb4-72341ad8db89",
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "id": "c1764be9-392a-4072-bbd8-d7510297408f",
+          "item": [
+            {
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "var jsonData = JSON.parse(responseBody);",
+                      "pm.collectionVariables.set(\u0022customer_application_urn\u0022, jsonData.key);"
+                    ],
+                    "id": "ca36c741-3734-4f62-80af-5f512a83c55e",
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "id": "919524b6-595f-4574-b57b-e382d296eb77",
+              "name": "Provision Child Application",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022description\u0022: \u0022TEST APP FOR {{customer_name}}\u0022,\n    \u0022name\u0022: \u0022{{customer_name}}\u0022,\n    \u0022uniqueForeignId\u0022: \u0022{{unique_foreign_id}}\u0022,\n    \u0022oauth2AuthorizedCallbackUrls\u0022: [\u0022https://app.getpostman.com/oauth2/callback\u0022],\n    \u0022validJsSdkDomains\u0022: [\u0022http://localhost:5000\u0022]\n}"
+                },
+                "description": "Use this API Endpoint when partner wants to create a child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#create-application) for more information.",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "name": "Content-Type",
+                    "type": "text",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "url": "https://api.linkedin.com/v2/provisionedApplications"
+              },
+              "response": []
+            },
+            {
+              "id": "46a86d71-5f74-4142-ad2f-14b96b85d952",
+              "name": "Update JavaScript SDK Domain for Child Application",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022validJsSdkDomains\u0022: [\n                \u0022http://localhost:8000\u0022,\n                \u0022http://localhost:5000\u0022\n            ]\n        }\n    }\n}"
+                },
+                "description": "Use this API Endpoint when partner wants to update JavaScript SDK domain for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.",
+                "header": [],
+                "method": "POST",
+                "url": "https://api.linkedin.com/v2/provisionedApplications/{{customer_application_urn}}"
+              },
+              "response": []
+            },
+            {
+              "id": "b9296527-1110-4180-be4e-297541c0ded2",
+              "name": "Update OAuth2.0 Authorized CallBack URL for Child Application",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "body": {
+                  "mode": "raw",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  },
+                  "raw": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022oauth2AuthorizedCallbackUrls\u0022: [\n                \u0022https://app.getpostman.com/oauth2/callback\u0022\n            ]\n        }\n    }\n}"
+                },
+                "description": "Use this API Endpoint when partner wants to update OAuth2.0 Authorized CallBack URL for child application for any of mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#update-application) for more information.",
+                "header": [],
+                "method": "POST",
+                "url": "https://api.linkedin.com/v2/provisionedApplications/{{customer_application_urn}}"
+              },
+              "response": []
+            },
+            {
+              "id": "9fc56364-b808-4553-9704-9dc26ac5dd95",
+              "name": "Get Child Application",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "description": "Use this API Endpoint when partner wants to fetch a child application for any of our mutual customer. Refer [here](https://docs.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api#get-application) for more information.",
+                "header": [],
+                "method": "GET",
+                "url": {
+                  "host": [
+                    "api",
+                    "linkedin",
+                    "com"
+                  ],
+                  "path": [
+                    "v2",
+                    "provisionedApplications"
+                  ],
+                  "protocol": "https",
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "credentialsByUniqueForeignId"
+                    },
+                    {
+                      "key": "uniqueForeignId",
+                      "value": "{{unique_foreign_id}}"
+                    }
+                  ],
+                  "raw": "https://api.linkedin.com/v2/provisionedApplications?q=credentialsByUniqueForeignId\u0026uniqueForeignId={{unique_foreign_id}}"
+                }
+              },
+              "response": []
+            }
+          ],
+          "name": "Provision Customer (Child) Applications"
+        }
+      ],
+      "name": "Use Cases"
+    }
+  ],
+  "variable": [
+    {
+      "key": "customer_application_urn",
+      "value": ""
+    },
+    {
+      "key": "parent_app_client_id",
+      "value": "787tss74is1avr"
+    },
+    {
+      "key": "parent_app_client_secret",
+      "value": "WPL_AP1.ZzKdVpkxEPoRzR5q.velSFg=="
+    }
+  ]
+}

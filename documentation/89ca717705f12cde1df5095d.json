@@ -1,0 +1,44 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+  "Title": "Plugins",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/follow-company-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Plugins",
+      "Anchor": "plugins",
+      "SectionPath": [],
+      "Text": "Plugins are a quick and easy way to drop LinkedIn functionality into your website. Use the tools below to automatically generate JavaScript snippets to copy and paste directly to your sites.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugins",
+      "Anchor": "plugins",
+      "SectionPath": [],
+      "Text": "Share\nFollow Company\nLinkedIn AutoFill",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugins",
+      "Anchor": "plugins",
+      "SectionPath": [],
+      "Text": "By obtaining and using LinkedIn Plugins you agree to the Plugins Terms of Use.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

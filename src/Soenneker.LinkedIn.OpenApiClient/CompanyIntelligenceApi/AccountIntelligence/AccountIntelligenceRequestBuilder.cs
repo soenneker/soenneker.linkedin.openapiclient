@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LinkedIn.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,20 +36,20 @@ namespace Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelli
         /// <summary>
         /// Fetch account intelligence data using lookback window filter
         /// </summary>
-        /// <returns>A <see cref="UntypedNode"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UntypedNode?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UntypedNode> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.CompanyIntelligenceApi.AccountIntelligence.AccountIntelligenceRequestBuilder.AccountIntelligenceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200Response>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchAccountIntelligenceDataUsingLookbackWindowFilter200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch account intelligence data using lookback window filter

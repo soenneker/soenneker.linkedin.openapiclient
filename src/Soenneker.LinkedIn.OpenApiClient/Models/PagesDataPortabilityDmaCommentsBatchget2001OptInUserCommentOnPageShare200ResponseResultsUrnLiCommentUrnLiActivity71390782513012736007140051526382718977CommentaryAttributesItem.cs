@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The length property</summary>
-        public int? Length { get; set; }
+        public long? Length { get; set; }
         /// <summary>The start property</summary>
-        public int? Start { get; set; }
+        public long? Start { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +51,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "length", n => { Length = n.GetIntValue(); } },
-                { "start", n => { Start = n.GetIntValue(); } },
+                { "length", n => { Length = n.GetLongValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140051526382718977CommentaryAttributesItemValue>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140051526382718977CommentaryAttributesItemValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -63,8 +63,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("length", Length);
-            writer.WriteIntValue("start", Start);
+            writer.WriteLongValue("length", Length);
+            writer.WriteLongValue("start", Start);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCommentsBatchget2001OptInUserCommentOnPageShare200ResponseResultsUrnLiCommentUrnLiActivity71390782513012736007140051526382718977CommentaryAttributesItemValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

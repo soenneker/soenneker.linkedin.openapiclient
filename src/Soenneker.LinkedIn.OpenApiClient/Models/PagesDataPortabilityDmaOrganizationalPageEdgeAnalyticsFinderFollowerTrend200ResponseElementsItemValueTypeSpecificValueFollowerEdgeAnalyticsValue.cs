@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organicValue property</summary>
-        public int? OrganicValue { get; set; }
+        public long? OrganicValue { get; set; }
         /// <summary>The sponsoredValue property</summary>
-        public int? SponsoredValue { get; set; }
+        public long? SponsoredValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueFollowerEdgeAnalyticsValue"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "organicValue", n => { OrganicValue = n.GetIntValue(); } },
-                { "sponsoredValue", n => { SponsoredValue = n.GetIntValue(); } },
+                { "organicValue", n => { OrganicValue = n.GetLongValue(); } },
+                { "sponsoredValue", n => { SponsoredValue = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("organicValue", OrganicValue);
-            writer.WriteIntValue("sponsoredValue", SponsoredValue);
+            writer.WriteLongValue("organicValue", OrganicValue);
+            writer.WriteLongValue("sponsoredValue", SponsoredValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

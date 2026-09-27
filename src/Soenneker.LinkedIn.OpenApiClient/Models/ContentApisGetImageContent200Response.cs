@@ -39,7 +39,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent Content { get; set; }
 #endif
         /// <summary>The createdAt property</summary>
-        public int? CreatedAt { get; set; }
+        public long? CreatedAt { get; set; }
         /// <summary>The distribution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The isReshareDisabledByAuthor property</summary>
         public bool? IsReshareDisabledByAuthor { get; set; }
         /// <summary>The lastModifiedAt property</summary>
-        public int? LastModifiedAt { get; set; }
+        public long? LastModifiedAt { get; set; }
         /// <summary>The lifecycleState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,7 +77,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo LifecycleStateInfo { get; set; }
 #endif
         /// <summary>The publishedAt property</summary>
-        public int? PublishedAt { get; set; }
+        public long? PublishedAt { get; set; }
         /// <summary>The visibility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,14 +114,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "commentary", n => { Commentary = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent.CreateFromDiscriminatorValue); } },
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "distribution", n => { Distribution = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isReshareDisabledByAuthor", n => { IsReshareDisabledByAuthor = n.GetBoolValue(); } },
-                { "lastModifiedAt", n => { LastModifiedAt = n.GetIntValue(); } },
+                { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "lifecycleState", n => { LifecycleState = n.GetStringValue(); } },
                 { "lifecycleStateInfo", n => { LifecycleStateInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo.CreateFromDiscriminatorValue); } },
-                { "publishedAt", n => { PublishedAt = n.GetIntValue(); } },
+                { "publishedAt", n => { PublishedAt = n.GetLongValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
@@ -135,14 +135,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("author", Author);
             writer.WriteStringValue("commentary", Commentary);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseContent>("content", Content);
-            writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseDistribution>("distribution", Distribution);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isReshareDisabledByAuthor", IsReshareDisabledByAuthor);
-            writer.WriteIntValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteStringValue("lifecycleState", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetImageContent200ResponseLifecycleStateInfo>("lifecycleStateInfo", LifecycleStateInfo);
-            writer.WriteIntValue("publishedAt", PublishedAt);
+            writer.WriteLongValue("publishedAt", PublishedAt);
             writer.WriteStringValue("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }

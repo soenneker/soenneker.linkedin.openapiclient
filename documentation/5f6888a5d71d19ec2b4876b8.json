@@ -1,0 +1,340 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+  "Title": "LinkedIn Audience Network",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ad-supply-forecasts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/engagement-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/linkedin-audience-network",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/manage-audience-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Audience Network",
+      "Anchor": "linkedin-audience-network",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Audience Network",
+      "Anchor": "linkedin-audience-network",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Audience Network",
+      "Anchor": "linkedin-audience-network",
+      "SectionPath": [],
+      "Text": "In addition to appearing in the LinkedIn feed, Sponsored Content can appear on LinkedIn\u0027s partner sites. Only SPONSORED_UPDATES campaigns with CPC bidding can serve Sponsored Content beyond the LinkedIn feed. CPM bidding is not supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Audience Network",
+      "Anchor": "linkedin-audience-network",
+      "SectionPath": [],
+      "Text": "To learn more about how Sponsored Content can be delivered beyond the LinkedIn network, see the LinkedIn Audience Network FAQs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Offsite Sponsored Content Delivery",
+      "Anchor": "enable-offsite-sponsored-content-delivery",
+      "SectionPath": [
+        "Enable Offsite Sponsored Content Delivery"
+      ],
+      "Text": "The offsiteDeliveryEnabled flag on a campaign indicates whether or not it can be delivered off network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Offsite Sponsored Content Delivery",
+      "Anchor": "enable-offsite-sponsored-content-delivery",
+      "SectionPath": [
+        "Enable Offsite Sponsored Content Delivery"
+      ],
+      "Text": "Campaigns can also be excluded from certain websites or applications. This can be done by excluding IAB categories or individually specified websites/apps. See Manage Audience Restrictions for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign with Offsite Delivery Enabled",
+      "Anchor": "create-a-campaign-with-offsite-delivery-enabled",
+      "SectionPath": [
+        "Create a Campaign with Offsite Delivery Enabled"
+      ],
+      "Text": "When you create a campaign, offsiteDeliveryEnabled is set to false by default. Set it to true if the campaign should be served off network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Campaign with Offsite Delivery Enabled",
+        "Sample Request"
+      ],
+      "Text": "See Create a Campaign for a full sample request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Campaign with Offsite Delivery Enabled",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Campaign with Offsite Delivery Enabled",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Campaign with Offsite Delivery Enabled",
+        "Sample Request"
+      ],
+      "Text": "{\n   // See link above for examples of full campaign creation request bodies.\n   \u0022offsiteDeliveryEnabled\u0022:true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Campaign with Offsite Delivery Enabled",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n   // See link above for examples of full campaign creation request bodies.\n   \u0022offsiteDeliveryEnabled\u0022:true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Offsite Delivery for an Existing Campaign",
+      "Anchor": "enable-offsite-delivery-for-an-existing-campaign",
+      "SectionPath": [
+        "Enable Offsite Delivery for an Existing Campaign"
+      ],
+      "Text": "Existing campaigns can be updated to set offsiteDeliveryEnabled to true to enable offsite delivery. It uses the same update method as any other campaign update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable Offsite Delivery for an Existing Campaign",
+      "Anchor": "enable-offsite-delivery-for-an-existing-campaign",
+      "SectionPath": [
+        "Enable Offsite Delivery for an Existing Campaign"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Enable Offsite Delivery for an Existing Campaign",
+      "Anchor": "enable-offsite-delivery-for-an-existing-campaign",
+      "SectionPath": [
+        "Enable Offsite Delivery for an Existing Campaign"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Enable Offsite Delivery for an Existing Campaign",
+      "Anchor": "enable-offsite-delivery-for-an-existing-campaign",
+      "SectionPath": [
+        "Enable Offsite Delivery for an Existing Campaign"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsiteDeliveryEnabled\u0022: true\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Enable Offsite Delivery for an Existing Campaign",
+      "Anchor": "enable-offsite-delivery-for-an-existing-campaign",
+      "SectionPath": [
+        "Enable Offsite Delivery for an Existing Campaign"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsiteDeliveryEnabled\u0022: true\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disable Offsite Delivery",
+      "Anchor": "disable-offsite-delivery",
+      "SectionPath": [
+        "Disable Offsite Delivery"
+      ],
+      "Text": "Campaigns can be disabled for off network delivery by using the same update endpoint while settingoffsiteDeliveryEnabled to false.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disable Offsite Delivery",
+      "Anchor": "disable-offsite-delivery",
+      "SectionPath": [
+        "Disable Offsite Delivery"
+      ],
+      "Text": "Note that if offsiteDeliveryEnabled is set to false, the offsitePreferences field on the campaign managing exclusions can\u0027t be modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disable Offsite Delivery",
+      "Anchor": "disable-offsite-delivery",
+      "SectionPath": [
+        "Disable Offsite Delivery"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Disable Offsite Delivery",
+      "Anchor": "disable-offsite-delivery",
+      "SectionPath": [
+        "Disable Offsite Delivery"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Disable Offsite Delivery",
+      "Anchor": "disable-offsite-delivery",
+      "SectionPath": [
+        "Disable Offsite Delivery"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsiteDeliveryEnabled\u0022: false\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Disable Offsite Delivery",
+      "Anchor": "disable-offsite-delivery",
+      "SectionPath": [
+        "Disable Offsite Delivery"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022offsiteDeliveryEnabled\u0022: false\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

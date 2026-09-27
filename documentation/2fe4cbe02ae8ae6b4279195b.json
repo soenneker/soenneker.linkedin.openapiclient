@@ -1,0 +1,75 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+  "Title": "Module 6 - Other",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Module 6 - Other",
+      "Anchor": "module-6---other",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-601",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support for versioned APIs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain what changes will need to take place to facilitate migration to versioned endpoints. Versioning migration path clearly understood by LinkedIn. Switching consumption to versioned endpoints requires minimal development support.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-602",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partner has reviewed LinkedIn\u0027s Terms of Service and partnership agreement requirements, including references to Non-Official LinkedIn Content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrated or explained (at LinkedIn\u0027s option) no known violations at the time of certification and/or recertification.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

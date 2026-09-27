@@ -1,0 +1,924 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+  "Title": "OrganizationalPage Content Ingestion Sources API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPage Content Ingestion Sources API",
+      "Anchor": "organizationalpage-content-ingestion-sources-api",
+      "SectionPath": [],
+      "Text": "The OrganizationalPage Content Ingestion Sources API provides content ingestion sources for an organizational page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPage Content Ingestion Sources API",
+      "Anchor": "organizationalpage-content-ingestion-sources-api",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPage Content Ingestion Sources API",
+      "Anchor": "organizationalpage-content-ingestion-sources-api",
+      "SectionPath": [],
+      "Text": "Finder to get content ingestion sources by organizational page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Content Ingestion Sources Example",
+      "Anchor": "organizational-page-content-ingestion-sources-example",
+      "SectionPath": [
+        "Organizational Page Content Ingestion Sources Example"
+      ],
+      "Text": "Refer to the image below for an example on LinkedIn Feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and reporting data (including follower, visitor, and content analytics). Restricted to organizations where the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "automaticPostingAuthorUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited with the posts when automatic posting is enabled. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageContentIngestionSource",
+      "Anchor": "organizationalpagecontentingestionsource",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageContentIngestionSource"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID to uniquely identify this content ingestion source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organizational page URN the settings belong to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "automaticPostingAuthorUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Page admins can opt-in for automatic posting of ingested content. If this field exists, then this page has opted in for automatic posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the content ingestion source as given by the Page admin. For example, this could be \u0022News,\u0022 \u0022Feed 1,\u0022 \u0022Company blog,\u0022 etc. This text will not be localized.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "feedUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of the ingested feed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "feedStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentIngestionFeedStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#contentingestionfeedstatus"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The status of the ingested feed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "feedContentType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentIngestionFeedContentType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#contentingestionfeedcontenttype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The type of feed content used by the content ingestion source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postCommentaryTextType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentIngestionPostCommentaryTextType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#contentingestionpostcommentarytexttype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Configurable post commentary text type to be used for an organizational page\u0027s posts created from this particular content ingestion source. We will use the description text from feed content as the default post commentary text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customPostDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom post commentary text provided by the Page admin. This field will be populated if the page admin opted in for CUSTOM postCommentaryTextType. This text will not be localized.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "showThumbnailPreview",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to show the thumbnail preview for posts created from this content ingestion source.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "COMPANY_BLOG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content comes from a company blog.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "YOUTUBE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content comes from a YouTube channel.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PODCAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content comes from a podcast.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OTHER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content comes from another type of feed.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Signifies that the content source is connected and will actively ingest new content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROCESSING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Signifies that the content source has been configured but no content has been ingested yet for the source. Once an attempt to fetch content has been made, the source status will change to ACTIVE if the fetch was successful, or UNREACHABLE or MALFORMED if not.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNREACHABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Signifies that there was an error fetching content from the source due to the feed not being reachable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MALFORMED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Signifies that there was an error fetching content from the source due to a failure to parse the feed.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FEED_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use description text from feed content as post commentary.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use custom text configured by the member as post commentary.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPage Content Ingestion Sources",
+      "Anchor": "organizationalpage-content-ingestion-sources",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPage Content Ingestion Sources",
+      "Anchor": "organizationalpage-content-ingestion-sources",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember\nwith an authorization action of OrganizationContentAuthorizationActionType.ORGANIC_SHARE_CREATE. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageContentIngestionSources?q=organizationalPage\u0026organizationalPage=urn%3Ali%3AorganizationalPage%3A{ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageContentIngestionSources?q=organizationalPage\u0026organizationalPage=urn%3Ali%3AorganizationalPage%3A{ID}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022postCommentaryTextType\u0022: \u0022FEED_CONTENT\u0022,\n            \u0022feedUrl\u0022: \u0022http://mywebsite.com/rss/\u0022,\n            \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n            \u0022name\u0022: \u0022Our company blog\u0022,\n            \u0022id\u0022: 50302009,\n            \u0022feedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022showThumbnailPreview\u0022: true,\n            \u0022feedContentType\u0022: \u0022COMPANY_BLOG\u0022,\n            \u0022automaticPostingAuthorUrn\u0022: \u0022urn:li:person:C-eUkhGs6q\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022postCommentaryTextType\u0022: \u0022FEED_CONTENT\u0022,\n            \u0022feedUrl\u0022: \u0022http://mywebsite.com/rss/\u0022,\n            \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n            \u0022name\u0022: \u0022Our company blog\u0022,\n            \u0022id\u0022: 50302009,\n            \u0022feedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022showThumbnailPreview\u0022: true,\n            \u0022feedContentType\u0022: \u0022COMPANY_BLOG\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "OrganizationalPage Content Ingestion Sources",
+        "FIND_BY_PAGE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder function to retrieve data from. Finder name: organizationalPage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=organizationalPage",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational Page URN. The format of the organizational page is urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn=urn:li:organizationalPage:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

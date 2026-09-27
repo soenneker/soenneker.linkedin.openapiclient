@@ -1,0 +1,493 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+  "Title": "Client Credential Flow (2-legged OAuth)",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/secure-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/postman-getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "If your application needs to access APIs that are not member specific, use the Client Credential Flow. Your application cannot access these APIs by default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "Learn more:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "LinkedIn Developer Enterprise products and permission requests.\nLinkedIn Developers Platform knowledge base.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "2-legged OAuth authentication is not available for Marketing APIs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Credential Flow (2-legged OAuth)",
+      "Anchor": "client-credential-flow-2-legged-oauth",
+      "SectionPath": [],
+      "Text": "Generate a Token Manually Using the Developer Portal \nThe LinkedIn Developer Portal has a token generator for manually creating tokens. Visit the LinkedIn Developer Portal Token Generator or follow the steps outlined in Developer Portal Tools.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Get Client ID and Client Secret",
+      "Anchor": "step-1-get-client-id-and-client-secret",
+      "SectionPath": [
+        "Step 1: Get Client ID and Client Secret"
+      ],
+      "Text": "Getting started? Create a new application on the Developer Portal.\nExisting application? Go to My apps to modify your app settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Get Client ID and Client Secret",
+      "Anchor": "step-1-get-client-id-and-client-secret",
+      "SectionPath": [
+        "Step 1: Get Client ID and Client Secret"
+      ],
+      "Text": "Each application is assigned a unique Client ID (Consumer key/API key) and Client Secret. Please make a note of these values as they will be integrated into your application config files. Your Client Secret protects your application\u0027s security so be sure to keep it secure!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Get Client ID and Client Secret",
+      "Anchor": "step-1-get-client-id-and-client-secret",
+      "SectionPath": [
+        "Step 1: Get Client ID and Client Secret"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Get Client ID and Client Secret",
+      "Anchor": "step-1-get-client-id-and-client-secret",
+      "SectionPath": [
+        "Step 1: Get Client ID and Client Secret"
+      ],
+      "Text": "Do not share your Client Secret value with anyone, and do not pass it in the URL when making API calls, or URI query-string parameters, or post in support forums, chat, etc.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate an Access Token",
+      "Anchor": "step-2-generate-an-access-token",
+      "SectionPath": [
+        "Step 2: Generate an Access Token"
+      ],
+      "Text": "To generate an access token, issue a HTTP POST against accessToken with a Content-Type header of x-www-form-urlencoded and the following parameters in the request body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 2: Generate an Access Token",
+      "Anchor": "step-2-generate-an-access-token",
+      "SectionPath": [
+        "Step 2: Generate an Access Token"
+      ],
+      "Text": "https://www.linkedin.com/oauth/v2/accessToken",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 2: Generate an Access Token",
+      "Anchor": "step-2-generate-an-access-token",
+      "SectionPath": [
+        "Step 2: Generate an Access Token"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "grant_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this field should always be client_credentials",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Client ID value generated when you registered your application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Client Secret value generated when you registered your application. All values requiring URL encoding must be encoded. Client secrets can include characters like /,=,\u002B which require URL encoding.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Generate an Access Token",
+      "Anchor": "step-2-generate-an-access-token",
+      "SectionPath": [
+        "Step 2: Generate an Access Token"
+      ],
+      "Text": "View the Best Practices for Secure Applications page for more security info.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Secure Approach)",
+      "Anchor": "sample-request-secure-approach",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Request (Secure Approach)"
+      ],
+      "Text": "https\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Secure Approach)",
+      "Anchor": "sample-request-secure-approach",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Request (Secure Approach)"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/accessToken HTTP/1.1\n\nContent-Type: application/x-www-form-urlencoded\ngrant_type=client_credentials\nclient_id={your_client_id}\nclient_secret={your_client_secret}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Secure Approach)",
+      "Anchor": "sample-request-secure-approach",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Request (Secure Approach)"
+      ],
+      "Text": "curl --location --request POST \u0027https://www.linkedin.com/oauth/v2/accessToken\u0027 \\\n--header \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n--data-urlencode \u0027grant_type=client_credentials\u0027 \\\n--data-urlencode \u0027client_id={your_client_id}\u0027 \\\n--data-urlencode \u0027client_secret={your_client_secret}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Secure Approach)",
+      "Anchor": "sample-request-secure-approach",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Request (Secure Approach)"
+      ],
+      "Text": "A successful access token request returns a JSON object containing the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request (Secure Approach)",
+      "Anchor": "sample-request-secure-approach",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Request (Secure Approach)"
+      ],
+      "Text": "access_token \u2014 The access token for the application. This token must be kept secure.\nexpires_in \u2014 Seconds until token expiration.\n\nThe access token has a 30-minute lifespan and must be used immediately. You may request a new token once your current token expires.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022access_token\u0022: \u0022AQV8...\u0022,\n    \u0022expires_in\u0022: \u00221800\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Step 2: Generate an Access Token",
+        "Sample Response"
+      ],
+      "Text": "For error details, refer the API Error Details section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Make API Requests",
+      "Anchor": "step-3-make-api-requests",
+      "SectionPath": [
+        "Step 3: Make API Requests"
+      ],
+      "Text": "Once you\u0027ve received an access token, you can make API requests by including an Authorization header with your token in the HTTP call to LinkedIn\u0027s API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Step 3: Make API Requests",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/jobs HTTP/1.1\n\nConnection: Keep-Alive\nAuthorization: Bearer {access_token}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_client_id \u0022Client authentication failed\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client Authentication failed due to bad client credentials passed as part of the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the right Client ID, Client Secret are passed as part of the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "access_denied \u0022This application is not allowed to create application tokens\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The developer application doesn\u2019t have enough permission to generate 2L application token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reach out to the LinkedIn Relationship Manager or Business Development team to get the necessary access.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022grant_type\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Grant type in the request is missing. It is a mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add grant_type as client_credentials in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022client_id\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client ID in the request is missing. It is a mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the Client ID of the developer application in request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022client_secret\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client Secret in the request is missing. It is a mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the Client Secret of the developer application in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_client_id \u0022The passed in client_id is invalid \u0022abcdefghijk\u0022\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid client ID is passed in the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the right client ID from the developer application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

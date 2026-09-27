@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The OneSixOneTwoSevenFourEight property</summary>
-        public int? OneSixOneTwoSevenFourEight { get; set; }
+        public long? OneSixOneTwoSevenFourEight { get; set; }
         /// <summary>The OneZeroZeroZeroTwoSixEightSeven property</summary>
-        public int? OneZeroZeroZeroTwoSixEightSeven { get; set; }
+        public long? OneZeroZeroZeroTwoSixEightSeven { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationsFinderParentOrganization200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "1612748", n => { OneSixOneTwoSevenFourEight = n.GetIntValue(); } },
-                { "10002687", n => { OneZeroZeroZeroTwoSixEightSeven = n.GetIntValue(); } },
+                { "1612748", n => { OneSixOneTwoSevenFourEight = n.GetLongValue(); } },
+                { "10002687", n => { OneZeroZeroZeroTwoSixEightSeven = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("1612748", OneSixOneTwoSevenFourEight);
-            writer.WriteIntValue("10002687", OneZeroZeroZeroTwoSixEightSeven);
+            writer.WriteLongValue("1612748", OneSixOneTwoSevenFourEight);
+            writer.WriteLongValue("10002687", OneZeroZeroZeroTwoSixEightSeven);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

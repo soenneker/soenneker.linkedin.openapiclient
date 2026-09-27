@@ -1,0 +1,424 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+  "Title": "Profile API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile API",
+      "Anchor": "profile-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile API",
+      "Anchor": "profile-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile API",
+      "Anchor": "profile-api",
+      "SectionPath": [],
+      "Text": "The Profile API returns a member\u0027s LinkedIn profile, subject to the member\u0027s privacy settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You may only store data returned from the Profile API for the authenticated members with their permission. Please refer to this document for guidance on storing authenticated member data. You may never store data returned from the Profile API for members other than the authenticated member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Permissions"
+      ],
+      "Text": "This API requires one of the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_liteprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve name and photo for the authenticated user. Please review Lite Profile Fields.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_basicprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve name, photo, headline, and vanity name for the authenticated user. Please review Basic Profile Fields. Note that the v2 r_basicprofile permission grants only a subset of fields provided in v1.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[Private permission] Required to retrieve your activity for compliance monitoring and archiving. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Request"
+      ],
+      "Text": "To identify and retrieve the current member\u0027s profile based on the access token, simply call:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Current Member\u0027s Profile",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022firstName\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Bob\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022localizedFirstName\u0022: \u0022Bob\u0022,\n   \u0022headline\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022API Enthusiast at LinkedIn\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022localizedHeadline\u0022: \u0022API Enthusiast at LinkedIn\u0022,\n   \u0022vanityName\u0022: \u0022bsmith\u0022,\n   \u0022id\u0022:\u0022yrZCpj2Z12\u0022,\n   \u0022lastName\u0022:{\n      \u0022localized\u0022:{\n         \u0022en_US\u0022:\u0022Smith\u0022\n      },\n      \u0022preferredLocale\u0022:{\n         \u0022country\u0022:\u0022US\u0022,\n         \u0022language\u0022:\u0022en\u0022\n      }\n   },\n   \u0022localizedLastName\u0022: \u0022Smith\u0022,\n   \u0022profilePicture\u0022: {\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C4D00AAAAbBCDEFGhiJ\u0022\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "To retrieve another member\u0027s profile, you will need access to the Person ID, available only via certain limited access APIs and subject to member privacy settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/people/(id:{person ID})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "You can also retrieve multiple profiles at once:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/people?ids=List((id:{Person ID1}),(id:{Person ID2}),(id:{Person ID3}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "In order to make the sample calls above succeed, you must include X-RestLi-Protocol-Version:2.0.0 in your request header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Other Member\u0027s Profile",
+      "Anchor": "retrieve-other-members-profile",
+      "SectionPath": [
+        "Retrieve Other Member\u0027s Profile"
+      ],
+      "Text": "This API will only return data for members who haven\u0027t limited their Off-LinkedIn Visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Selections",
+      "Anchor": "field-selections",
+      "SectionPath": [
+        "Field Selections"
+      ],
+      "Text": "By default, only the Lite Profile Fields are returned for a profile request.\u00A0See the Profile Fields document for a full list of supported fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Selections",
+      "Anchor": "field-selections",
+      "SectionPath": [
+        "Field Selections"
+      ],
+      "Text": "To request more or less fields, you must have additional permissions that are only granted to select partners. Please refer to the field projections on proper syntax. Below is a sample request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Field Selections",
+      "Anchor": "field-selections",
+      "SectionPath": [
+        "Field Selections"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/people/(id:{profile ID})?projection=(id,firstName,lastName)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Person ID",
+      "Anchor": "person-id",
+      "SectionPath": [
+        "Person ID"
+      ],
+      "Text": "The id returned in the response is the unique identifier of the user. This should be stored and referenced where possible as LinkedIn APIs utilize both URNs and IDs. In our API documentation, we reference this id as person ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Person ID",
+      "Anchor": "person-id",
+      "SectionPath": [
+        "Person ID"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Person ID",
+      "Anchor": "person-id",
+      "SectionPath": [
+        "Person ID"
+      ],
+      "Text": "Each member id is unique to the context of your application only. Sharing a person ID across applications will not work and result in a 404 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Public Profile URL",
+      "Anchor": "public-profile-url",
+      "SectionPath": [
+        "Public Profile URL"
+      ],
+      "Text": "The vanityName from Basic Profile Fields is used to represent the public profile URL in the follow format: www.linkedin.com/in/{vanityName}.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "The geoLocation from Location Fields is the location field using Bing Geo taxonomy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "To determine a member\u0027s profile location, refer to the geoLocation field. The display name is retrieved from the geo field in geoLocation. When autoGenerated is true, the value was system-generated and may not reflect a member-confirmed selection; clients may suggest that members re-select their location. When autoGenerated is false, the member has explicitly selected the location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "In order to get the display name from the geo URN value of geo field, please use the Geo API. Alternatively, you can utilize decoration in your Profile request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(geoLocation(geo~,autoGenerated))\n\nGET https://api.linkedin.com/v2/people/(id:{person ID})?projection=(geoLocation(geo~,autoGenerated))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Location Display Name",
+      "Anchor": "location-display-name",
+      "SectionPath": [
+        "Location Display Name"
+      ],
+      "Text": "{\n  \u0022geoLocation\u0022: {\n    \u0022geo\u0022: \u0022urn:li:geo:12345\u0022,\n    \u0022autoGenerated\u0022: false,\n    \u0022geo~\u0022: {\n      \u0022id\u0022: 12345,\n      \u0022defaultLocalizedName\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022San Francisco Bay Area\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

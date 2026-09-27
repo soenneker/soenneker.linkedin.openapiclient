@@ -12,9 +12,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class ContentApisCreateAnOrganicCreativeRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>URN identifying the advertising account associated with the creative. This field is read-only.Documented type: Sponsored Account URNRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Account { get; set; }
+#nullable restore
+#else
+        public string Account { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The campaign property</summary>
+        /// <summary>URN identifying the campaign associated with the creativeDocumented type: Sponsored Campaign URNRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Campaign { get; set; }
@@ -30,6 +38,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent Content { get; set; }
 #endif
+        /// <summary>Creation timeDocumented type: TimeRequirement: No</summary>
+        public long? CreatedAt { get; set; }
+        /// <summary>Entity (e.g., a person URN) that developed the creativeDocumented type: Person URNRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
+#endif
         /// <summary>The creative property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,13 +56,75 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative Creative { get; set; }
 #endif
-        /// <summary>The intendedStatus property</summary>
+        /// <summary>The elements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntendedStatus { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestElementsItem>? Elements { get; set; }
 #nullable restore
 #else
-        public string IntendedStatus { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestElementsItem> Elements { get; set; }
+#endif
+        /// <summary>Unique ID for a creative (e.g.,SponsoredCreativeUrn). Read-onlyDocumented type: Sponsored creative URNRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; private set; }
+#nullable restore
+#else
+        public string Id { get; private set; }
+#endif
+        /// <summary>Inline content sponsored in the creative such as ugcPost in order to reduce the number of user calls.Documented type: PostRequirement: Required if action is createInline</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestInlineContent? InlineContent { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestInlineContent InlineContent { get; set; }
+#endif
+        /// <summary>Creative user intended status. The creative intended status is set independently from parent entity status, but parent entity status overrides creative intended status in effect. For example, parent entity status may be PAUSED while creative status is ACTIVE, in which case the creative&apos;s effective status is PAUSED, and not served.ACTIVE - Creative development is complete and the creative is available for review and can be served. PAUSED - Creative development is complete and the creative is current, but should temporarily not be served.DRAFT - Creative development is incomplete and may still be edited.ARCHIVED - Creative development is complete, but creative shouldn&apos;t be served and should be separated from non-archived creatives in any UI.CANCELED - The creative will be hidden when querying all creatives under a campaign and canceled creatives will be retrievable if the underlying posts are still valid/available. PENDING_DELETION - Denotes that the creative has been requested to be deleted that&apos;s currently pending.REMOVED - Denotes that the creative was deleted, but must remain fetchable due to the existence of performance data.Documented type: ENUMRequirement: No</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestIntendedStatus? IntendedStatus { get; set; }
+        /// <summary>This indicates whether the creative is currently being served or not. This field is read-only.Documented type: booleanRequirement: No</summary>
+        public bool? IsServing { get; set; }
+        /// <summary>Time at which the creative was last modified in milliseconds since epoch.Documented type: TimeRequirement: No</summary>
+        public long? LastModifiedAt { get; set; }
+        /// <summary>The entity (e.g., person URN) who modified the creativeDocumented type: Person URNRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastModifiedBy { get; set; }
+#nullable restore
+#else
+        public string LastModifiedBy { get; set; }
+#endif
+        /// <summary>The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.Documented type: LeadgenCreativeCallToActionRequirement: Required if campaign objective is LEAD_GENERATION</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToAction? LeadgenCallToAction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToAction LeadgenCallToAction { get; set; }
+#endif
+        /// <summary>The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.Documented type: stringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Creative review status. The review status can&apos;t be set/updated via the API but is started when the creative is activated (i.e., moves from draft state to active state). Hence, the review is absent (null) when the creative is in DRAFT state. Read-only.Documented type: CreativeReviewRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestReview? Review { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestReview Review { get; private set; }
+#endif
+        /// <summary>Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.Documented type: servingHoldReasonsRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestServingHoldReasons? ServingHoldReasons { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestServingHoldReasons ServingHoldReasons { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequest"/> and sets the default values.
@@ -71,10 +151,23 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account", n => { Account = n.GetStringValue(); } },
                 { "campaign", n => { Campaign = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "creative", n => { Creative = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative.CreateFromDiscriminatorValue); } },
-                { "intendedStatus", n => { IntendedStatus = n.GetStringValue(); } },
+                { "elements", n => { Elements = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestElementsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestElementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "inlineContent", n => { InlineContent = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestInlineContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestInlineContent.CreateFromDiscriminatorValue); } },
+                { "intendedStatus", n => { IntendedStatus = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestIntendedStatus>(); } },
+                { "isServing", n => { IsServing = n.GetBoolValue(); } },
+                { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "leadgenCallToAction", n => { LeadgenCallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToAction.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "review", n => { Review = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestReview>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestReview.CreateFromDiscriminatorValue); } },
+                { "servingHoldReasons", n => { ServingHoldReasons = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestServingHoldReasons>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestServingHoldReasons.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +177,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account", Account);
             writer.WriteStringValue("campaign", Campaign);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestContent>("content", Content);
+            writer.WriteLongValue("createdAt", CreatedAt);
+            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestCreative>("creative", Creative);
-            writer.WriteStringValue("intendedStatus", IntendedStatus);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestElementsItem>("elements", Elements);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestInlineContent>("inlineContent", InlineContent);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestIntendedStatus>("intendedStatus", IntendedStatus);
+            writer.WriteBoolValue("isServing", IsServing);
+            writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestLeadgenCallToAction>("leadgenCallToAction", LeadgenCallToAction);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateAnOrganicCreativeRequestServingHoldReasons>("servingHoldReasons", ServingHoldReasons);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

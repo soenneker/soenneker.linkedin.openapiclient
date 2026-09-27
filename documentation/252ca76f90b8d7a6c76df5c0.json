@@ -1,0 +1,563 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+  "Title": "Sync Interactions",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-acl-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning-announcement"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Interactions",
+      "Anchor": "sync-interactions",
+      "SectionPath": [],
+      "Text": "Interactions include any means by which a candidate has interacted with a recruiter, a candidate has interacted with a company, or a recruiter has updated a candidate\u2019s profile within the Talent CRM system (e.g., recruiter tags and notes). All of the interactions that fall into these categories should be sent via the Middleware Platform whenever they are created or updated in your CRM system. When a customer activates CRM Connect for the first time, you must sync all of their historical data to LinkedIn to power the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites and Requirements",
+      "Anchor": "prerequisites-and-requirements",
+      "SectionPath": [
+        "Prerequisites and Requirements"
+      ],
+      "Text": "Query Tunneling -- Requests require query tunneling if the request URL is larger than LinkedIn\u0027s maximum URL length. See Query Tunneling and Migration Guide - Updated API Request Maximum Length for more details.\nCompliance with LinkedIn API Breaking Change Policy\nUsage of the Client Credential Flow (2-legged OAuth) for authentication.\nUsage of the Versioning request format for endpoints and methods that require it as defined in this document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Interactions maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttle Limits",
+      "Anchor": "throttle-limits",
+      "SectionPath": [
+        "Throttle Limits"
+      ],
+      "Text": "Please submit batch calls grouped with no more than 100 records in sequential order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "API Endpoint"
+      ],
+      "Text": "https://api.linkedin.com/rest/tcrmInteractions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Interactions API Query String Parameters",
+      "Anchor": "sync-interactions-api-query-string-parameters",
+      "SectionPath": [
+        "Sync Interactions API Query String Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "tcrmInteractionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Interaction identifier within external Talent CRM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company URN provided during customer onboarding, e.g. urn:li:organization:1",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hardcoded, this value is always PARTNER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Interactions via Batch Update",
+      "Anchor": "sync-interactions-via-batch-update",
+      "SectionPath": [
+        "Sync Interactions via Batch Update"
+      ],
+      "Text": "Perform HTTP PUT on the /tcrmInteractions endpoint to send talent CRM interactions to LinkedIn. Batch requests require the x-restli-method: batch_update header. Multiple records can be sent in a single API request as indicated in the example below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sync Interactions API Request Body Fields",
+      "Anchor": "sync-interactions-api-request-body-fields",
+      "SectionPath": [
+        "Sync Interactions via Batch Update",
+        "Sync Interactions API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "tcrmCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the candidate associated with this interaction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmPipelineId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the pipeline associated with this interaction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accessRestricted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag indicating whether the interaction is restricted by ACL. If true, the pipeline is only accessible to a set of Recruiter users specified via ACLs. If false, the interaction is accessible to all Recruiter users. (Default value: false)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-acl-overview?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interactionDirection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the direction of the interaction: whether the recruiter initiated contact with the candidate (\u0022To\u0022) or the candidate initiated contact with the recruiter (\u0022From\u0022). Possible values: FROMTO",
+            "Links": [],
+            "Values": [
+              "FROM",
+              "TO"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interactionTypeCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of interaction. Must be one of these interaction type categories: EMAILINMAILPHONEATTENDED_IN_PERSON_EVENTATTENDED_ONLINE_EVENTEVENT_SIGN_UPENGAGED_WITH_ADVERTISEMENTENGAGED_ON_SOCIAL_MEDIAENGAGED_WITH_COMPANY_WEBSITESMS",
+            "Links": [],
+            "Values": [
+              "EMAIL",
+              "INMAIL",
+              "PHONE",
+              "ATTENDED_IN_PERSON_EVENT",
+              "ATTENDED_ONLINE_EVENT",
+              "EVENT_SIGN_UP",
+              "ENGAGED_WITH_ADVERTISEMENT",
+              "ENGAGED_ON_SOCIAL_MEDIA",
+              "ENGAGED_WITH_COMPANY_WEBSITE",
+              "SMS"
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interactionTypeDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Describes the interaction - this is used to provide a more specific interaction type and description if type enum not included",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contents of the interaction, including but not limited to: email message content, recruiter notes, tags, etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recruiterEmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address of the recruiter associated with this interaction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recruiterFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the recruiter associated with this interaction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recruiterLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the recruiter associated with this interaction.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tcrmCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time when this interaction was created within external CRM.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Sync Interactions API Request",
+      "Anchor": "sample-sync-interactions-api-request",
+      "SectionPath": [
+        "Sync Interactions via Batch Update",
+        "Sample Sync Interactions API Request"
+      ],
+      "Text": "curl -i -X PUT \u0027https://api.linkedin.com/rest/tcrmInteractions?ids%5B0%5D.tcrmInteractionId=tcrmInteractionId123\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmInteractionId=tcrmInteractionId456\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {access_token}\u0027 \\\n--header \u0027LinkedIn-Version: 202409\u0027 \\\n--data-raw \u0027{\n    \u0022entities\u0022: {\n        \u0022tcrmInteractionId=tcrmInteractionId123\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n        \u0022tcrmCandidateId\u0022:\u0022candidate123\u0022,\n        \u0022tcrmPipelineId\u0022:\u0022pipeline123\u0022,\n        \u0022accessRestricted\u0022:true,\n        \u0022interactionDirection\u0022:\u0022TO\u0022,\n        \u0022interactionTypeCategory\u0022:\u0022EMAIL\u0022,\n        \u0022interactionTypeDescription\u0022:\u0022Email correspondence\u0022,\n        \u0022notes\u0022:\u0022Notes about email interaction with John\u0022,\n        \u0022recruiterEmailAddress\u0022:\u0022johndoe@example.com\u0022,\n        \u0022recruiterFirstName\u0022:\u0022john\u0022,\n        \u0022recruiterLastName\u0022:\u0022doe\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000\n        },\n        \u0022tcrmInteractionId=tcrmInteractionId456\u0026dataProvider=PARTNER\u0026integrationContext=urn:li:organization:1234567890\u0022: {\n        \u0022tcrmCandidateId\u0022:\u0022candidate345\u0022,\n        \u0022tcrmPipelineId\u0022:\u0022pipeline345\u0022,\n        \u0022accessRestricted\u0022:true,\n        \u0022interactionDirection\u0022:\u0022TO\u0022,\n        \u0022interactionTypeCategory\u0022:\u0022INMAIL\u0022,\n        \u0022interactionTypeDescription\u0022:\u0022LinkedIn inMail\u0022,\n        \u0022notes\u0022:\u0022Notes for interaction with Jane\u0022,\n        \u0022recruiterEmailAddress\u0022:\u0022janeDoe@example.com\u0022,\n        \u0022recruiterFirstName\u0022:\u0022jane\u0022,\n        \u0022recruiterLastName\u0022:\u0022doe\u0022,\n        \u0022tcrmCreatedAt\u0022:1640995200000\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Sync Interactions via Batch Update",
+        "Sample API Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmInteractionId=tcrmInteractionId456\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmInteractionId=tcrmInteractionId123\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Interactions",
+      "Anchor": "delete-interactions",
+      "SectionPath": [
+        "Delete Interactions"
+      ],
+      "Text": "Perform HTTP DELETE on the /tcrmInteractions endpoint when a customer deletes candidate interaction records.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Delete Interactions Request",
+      "Anchor": "sample-delete-interactions-request",
+      "SectionPath": [
+        "Delete Interactions",
+        "Sample Delete Interactions Request"
+      ],
+      "Text": "curl -i -X DELETE \u0027https://api.linkedin.com/rest/tcrmInteractions?ids%5B0%5D.tcrmInteractionId=tcrmInteractionId123\u0026ids%5B0%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B0%5D.dataProvider=PARTNER\u0026ids%5B1%5D.tcrmInteractionId=tcrmInteractionId456\u0026ids%5B1%5D.integrationContext=urn:li:organization:1234567890\u0026ids%5B1%5D.dataProvider=PARTNER\u0027 \\\n-H \u0027Authorization: Bearer {access_token}\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:1.0.0\u0027 \\\n-H \u0027Accept:application/json\u0027\\\n-H \u0027LinkedIn-Version: 202409\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample DELETE Interactions Response Body",
+      "Anchor": "sample-delete-interactions-response-body",
+      "SectionPath": [
+        "Delete Interactions",
+        "Sample DELETE Interactions Response Body"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample DELETE Interactions Response Body",
+      "Anchor": "sample-delete-interactions-response-body",
+      "SectionPath": [
+        "Delete Interactions",
+        "Sample DELETE Interactions Response Body"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmInteractionId=tcrmInteractionId456\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022dataProvider=PARTNER\u0026integrationContext=urn%3Ali%3Aorganization%3A1000\u0026tcrmInteractionId=tcrmInteractionId123\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

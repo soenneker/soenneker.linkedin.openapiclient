@@ -7,36 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameBranch1"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CampaignManagementMePerson200ResponseFirstName : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CampaignManagementMePerson200ResponseFirstName : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The localized property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameLocalized? Localized { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameAnyOf2? CampaignManagementMePerson200ResponseFirstNameAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameLocalized Localized { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameAnyOf2 CampaignManagementMePerson200ResponseFirstNameAnyOf2 { get; set; }
 #endif
-        /// <summary>The preferredLocale property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNamePreferredLocale? PreferredLocale { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameBranch1? CampaignManagementMePerson200ResponseFirstNameBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNamePreferredLocale PreferredLocale { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameBranch1 CampaignManagementMePerson200ResponseFirstNameBranch1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName"/> and sets the default values.
-        /// </summary>
-        public CampaignManagementMePerson200ResponseFirstName()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +37,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName();
+            result.CampaignManagementMePerson200ResponseFirstNameAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameAnyOf2();
+            result.CampaignManagementMePerson200ResponseFirstNameBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameBranch1();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,11 +48,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CampaignManagementMePerson200ResponseFirstNameAnyOf2 != null || CampaignManagementMePerson200ResponseFirstNameBranch1 != null)
             {
-                { "localized", n => { Localized = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameLocalized>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameLocalized.CreateFromDiscriminatorValue); } },
-                { "preferredLocale", n => { PreferredLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNamePreferredLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNamePreferredLocale.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CampaignManagementMePerson200ResponseFirstNameAnyOf2, CampaignManagementMePerson200ResponseFirstNameBranch1);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,9 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameLocalized>("localized", Localized);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNamePreferredLocale>("preferredLocale", PreferredLocale);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstNameAnyOf2>(null, CampaignManagementMePerson200ResponseFirstNameAnyOf2, CampaignManagementMePerson200ResponseFirstNameBranch1);
         }
     }
 }

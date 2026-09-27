@@ -1,0 +1,1129 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+  "Title": "Audience Insights",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Audience Insights",
+      "Anchor": "audience-insights",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Insights",
+      "Anchor": "audience-insights",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Audience Insights API enables you to discover and identify the audience segments that meet your target persona, demonstrate interest and engagement in relevant customer products/offerings, uncover insights about the companies the target audience works for, and activate audience for targeting in sponsored ad campaigns on LinkedIn. This enables advertisers to use LinkedIn data and insights as a part of their broader audience discovery, planning, activation, and optimization processes by delivering on the \u201CAudience first\u201D approach.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Audience Insights API provides aggregated professional demographic insights, firmographic details, location, and interests / behaviors of a target audience. The insights are primarily comprised of the below categories :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Member Insights (Job Function, Title, Seniority, Years Of Experience, Skills).\nCompany Insights (Company Name, Industry, Size, Growth rate).\nLocation Insights (City, State, Country/Region, Continent).\nMember Interests (General and Product Interest categories derived from engagement behaviors and profile information).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This is a private API that\u0027s available to qualified developers who meet additional criteria for access. To learn more about eligibility qualifications and how to request access, please see the FAQ. If you wish to apply for access, please submit the application survey.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [
+        "Use cases - Audience Insights"
+      ],
+      "Text": "Understand the use cases for audience insights by referring to the Audience Insights Use Cases section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Audience Insights API requires a 3-legged OAuth member token and your developer application needs to be provisioned with the Audience Insights API product. Once you have been approved to access, you can use any valid member access token associated with the authenticated user with any valid scope permissions for member authentication. If there\u0027s no valid member token for the relevant user from any previous integration, we recommend using the bare minimum scope permissions like r_ads which will be required to fetch authenticated user\u0027s ad accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "This API is application-specific; hence, explicit member consent is not required. Any valid member access token associated with the authenticated user can be used, and you don\u0027t need to add any additional permission in the scope of your Oauth2 flow for authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Schema",
+      "Anchor": "request-schema",
+      "SectionPath": [
+        "Request Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "request Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#request-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "request Object that wraps the entire request body. See details below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Object",
+      "Anchor": "request-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "requestMetaData",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "requestMetaData Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#requestmetadata-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "requestMetaData Object with sponsoredAccountUrn to identify the sponsored ad account where the authenticated user has a valid user role. See details below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#targetingcriteria-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria Object defines the audience that the desired insights are for. This is a boolean expression of ad targeting facets and entities that identifies the member attributes to be included/excluded in the audience. See details below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "groupBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingFacetURN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#supported-adtargetingfacets-for-groupby-field"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The ad targeting facet for which the provided audience criteria should be segmented for insights in the response.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "segmentsOrderedBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (Enum)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The order in which the segments should be returned. By default, the segments will be ordered in the descending order of the audience percentage of segments. Available values are: AUDIENCE_PERCENTAGE : Based on DESC order of Audience Percentage. HIERARCHICAL : Based on the hierarchical order of urns. This is supported only for a select few low cardinality facets like YearsOfExperience, Company Size, etc.",
+            "Links": [],
+            "Values": [
+              "AUDIENCE_PERCENTAGE : Based on DESC order of Audience Percentage.",
+              "HIERARCHICAL : Based on the hierarchical order of urns. This is supported only for a select few low cardinality facets like YearsOfExperience, Company Size, etc."
+            ]
+          },
+          {
+            "Text": "Optional (default=AUDIENCE_PERCENTAGE)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxReturnCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The max number of segments to include in the response. Default is 5 and maximum is 100.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional (default=5)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "The requestMetaData Object requires a sponsoredAccountUrn, where the authenticated user must be assigned a valid ad account user role.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored ad account URN where the authenticated user has a valid ad account user role.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "Ad Account User Roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "To make a request on behalf of a given user, you should fetch that authenticated user\u2019s ad accounts and select one of their ad accounts. Refer Find Ad Accounts By Authenticated User to find and select an ad account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "requestMetaData Object",
+      "Anchor": "requestmetadata-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "requestMetaData Object"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "targetingCriteria provides a generic AND / OR construct to include and exclude different adTargetingFacets when defining the audience. The targeting criteria can be composed of LinkedIn Audience Attributes and/or existing matched audience Ad Segments (Contact/Company lists). See Ad Segments to fetch existing matched audience ad segment URNs that can be passed to urn:li:adTargetingFacet:audienceMatchingSegments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "The basic structure for a targetingCriteria object is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "{\n    \u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:{facet1}\u0022:[\n                            \u0022{facet1_value1}\u0022,\n                            \u0022{facet1_value2}\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:{facet2}\u0022:[\n                            \u0022{facet2_value1}\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:{facet3}\u0022:[\n                            \u0022{facet3_value1}\u0022,\n                            \u0022{facet3_value2}\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n            \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:{facet4}\u0022:[\n                    \u0022{facet4_value1}\u0022\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "Refer the below links for additional details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Object",
+      "Anchor": "targetingcriteria-object",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "targetingCriteria Object"
+      ],
+      "Text": "targetingCriteria object\nDescriptive examples for targetingCriteria object\nList of supported adTargetingFacets in targetingCriteria object\nAd Targeting Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported adTargetingFacets for groupBy Field",
+      "Anchor": "supported-adtargetingfacets-for-groupby-field",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "Supported adTargetingFacets for groupBy Field"
+      ],
+      "Text": "This list outlines the available adTargetingFacets in groupBy field to derive insights from the target audience segmented by one of these facets in response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported adTargetingFacets for groupBy Field",
+      "Anchor": "supported-adtargetingfacets-for-groupby-field",
+      "SectionPath": [
+        "Request Schema",
+        "Request Object",
+        "Supported adTargetingFacets for groupBy Field"
+      ],
+      "Text": "",
+      "Headers": [
+        "Facet URN",
+        "Facet Name"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Functions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:seniorities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Seniorities",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:titles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Titles",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:yearsOfExperienceRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Years Of Experience",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Interests",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:productInterests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Product Interests",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Skills",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company Industries",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:staffCountRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company Size",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:growthRate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company Growth Rate",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:employers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company Names",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:bingContinent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s continent level locations",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:bingCountry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s country/region level locations",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:bingCity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s city level locations",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:bingState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s state level locations",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validations and Minimum Requirements",
+      "Anchor": "validations-and-minimum-requirements",
+      "SectionPath": [
+        "Request Schema",
+        "Validations and Minimum Requirements"
+      ],
+      "Text": "You must provide a sponsored ad account ID in the request metadata. Authenticated member must have access to that sponsored ad account (any role VIEWER or above).\nThe Targeting Criteria provided in the request should have a geo or profileGeo, and a second targeting attribute other than age, gender, or language..\nA Targeting Criteria with a matched audience or a dynamic segment doesn\u0027t require additional targeting attributes (like geo) to be included with it.\nThe total audience count for the Targeting Criteria provided should be at least 300 but less than 100M..\nIf the audience size of the targeting criteria provided in the request is less than 300, an empty response with the audience count 0 will be returned..\nIf the audience size of the targeting criteria provided in the request is larger than 100M, an empty response with an approximate total audience count will be returned.\nA segment won\u0027t be returned in the response if the audience count for the segment is less than 30.\nCertain combinations of ad targeting facets are not supported in targeting criteria inclusion. For example, Seniorities may not be AND\u0027ed with any \u0022include\u0022 clauses targeting Job Titles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "All API requests are represented in Rest.li Protocol 2.0.0 and require the header: X-Restli-Protocol-Version: 2.0.0. Read the Protocol Versions document to learn about using Rest.li Protocol 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/targetingAudienceInsights?action=audienceInsights",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "{ \n \u0022request\u0022:{\n      \u0022requestMetaData\u0022: {\n         \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n      },\n      \u0022targetingCriteria\u0022:{\n         \u0022include\u0022:{\n            \u0022and\u0022:[\n               {\n                  \u0022or\u0022:{\n                     \u0022urn:li:adTargetingFacet:locations\u0022:[\n                        \u0022urn:li:geo:105080838\u0022\n                     ]\n                  }\n               },\n               {\n                  \u0022or\u0022:{\n                     \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n                        \u0022urn:li:locale:en_US\u0022\n                     ]\n                  }\n               },\n               {\n                  \u0022or\u0022:{\n                     \u0022urn:li:adTargetingFacet:skills\u0022:[\n                        \u0022urn:li:skill:236\u0022,\n                        \u0022urn:li:skill:242\u0022,\n                        \u0022urn:li:skill:252\u0022\n                     ]\n                  }\n               }\n            ]\n         }\n      },\n      \u0022groupBy\u0022: \u0022urn:li:adTargetingFacet:jobFunctions\u0022,\n      \u0022maxReturnCount\u0022 : 5\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Request Schema",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/targetingAudienceInsights?action=audienceInsights\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version:2.0.0\u0027\\\n-H \u0027Linkedin-Version:{yyyyMM}\u0027\\\n--data \u0027\n{ \n \u0022request\u0022:{\n      \u0022requestMetaData\u0022: {\n         \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n  },\n      \u0022targetingCriteria\u0022:{\n         \u0022include\u0022:{\n            \u0022and\u0022:[\n               {\n                  \u0022or\u0022:{\n                     \u0022urn:li:adTargetingFacet:locations\u0022:[\n                        \u0022urn:li:geo:105080838\u0022\n                     ]\n                  }\n               },\n               {\n                  \u0022or\u0022:{\n                     \u0022urn:li:adTargetingFacet:interfaceLocales\u0022:[\n                        \u0022urn:li:locale:en_US\u0022\n                     ]\n                  }\n               },\n               {\n                  \u0022or\u0022:{\n                     \u0022urn:li:adTargetingFacet:skills\u0022:[\n                        \u0022urn:li:skill:236\u0022,\n                        \u0022urn:li:skill:242\u0022,\n                        \u0022urn:li:skill:252\u0022\n                     ]\n                  }\n               }\n            ]\n         }\n      },\n      \u0022groupBy\u0022: \u0022urn:li:adTargetingFacet:jobFunctions\u0022,\n      \u0022maxReturnCount\u0022 : 5\n   }\n} \u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "audienceInsight",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "audienceInsight object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#audienceinsight-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Audience Insight object which gives a breakdown of the audience in the request into segments grouped by the selected ad facet.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totalAudienceCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The full audience count of the base audience provided in the request, which can be used to calculate percentages from the segmentations.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "audienceInsight Object",
+      "Anchor": "audienceinsight-object",
+      "SectionPath": [
+        "Response Schema",
+        "audienceInsight Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "groupedBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingFacetUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#supported-adtargetingfacets-for-groupby-field"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The ad facet for which the audience is sliced by. This field contains the ad facet urn; the same as the urn of the AdTargetingEntity element of the facets array.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "segmentations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array [segmentations object]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api?view=li-lms-2026-09\u0026tabs=http#segmentations-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array of segments and corresponding metric data that shows insights for a slice of this audience.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "segmentations Object",
+      "Anchor": "segmentations-object",
+      "SectionPath": [
+        "Response Schema",
+        "segmentations Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entityCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity count for this segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityPercentage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The percentage of the selected audience that\u0027s represented by this segment, calculated by dividing its entityCount by the totalEntityCount and then times 100 to be converted to an integer. The range of this field is between 0 to 100.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdTargetingEntityUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "A single segment value of the facet for which the results are grouped by. This field contains the segment urn, which is the same as the urn of the AdTargetingEntity element of the segments array.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022audienceInsight\u0022: {\n      \u0022segmentations\u0022: [\n        {\n          \u0022entityCount\u0022: 96000,\n          \u0022entityPercentage\u0022: 23,\n          \u0022value\u0022: \u0022urn:li:function:4\u0022\n        },\n        {\n          \u0022entityCount\u0022: 61000,\n          \u0022entityPercentage\u0022: 15,\n          \u0022value\u0022: \u0022urn:li:function:20\u0022\n        },\n        {\n          \u0022entityCount\u0022: 55000,\n          \u0022entityPercentage\u0022: 13,\n          \u0022value\u0022: \u0022urn:li:function:18\u0022\n        },\n        {\n          \u0022entityCount\u0022: 40000,\n          \u0022entityPercentage\u0022: 10,\n          \u0022value\u0022: \u0022urn:li:function:13\u0022\n        },\n        {\n          \u0022entityCount\u0022: 31000,\n          \u0022entityPercentage\u0022: 7,\n          \u0022value\u0022: \u0022urn:li:function:5\u0022\n        }\n      ],\n      \u0022groupedBy\u0022: \u0022urn:li:adTargetingFacet:jobFunctions\u0022\n    },\n    \u0022totalAudienceCount\u0022: 420000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Response Schema",
+        "Sample Response"
+      ],
+      "Text": "Once you have fetched the desired insights, you can save the targeting criteria used to fetch insights with the Saved Audience Templates API, so that you can activate them through the campaign API or from the Campaign Manager User Interface.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired oauth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: targetingAudienceInsights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you developer application is provisioned with the (Private) Audience Insights API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_NOT_AUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Caller should have access to the Ad Account provided in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Ad Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_VALIDATION_CONDITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request fails structure validation. / Missing required fields in the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure all required fields are passed and follow valid structure",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

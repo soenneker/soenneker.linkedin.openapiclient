@@ -1,0 +1,880 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-integration-types",
+  "Title": "Sync Integrations and  Integration Configurations - CRM Connect",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync Integrations and  Integration Configurations - CRM Connect",
+      "Anchor": "sync-integrations-and--integration-configurations---crm-connect",
+      "SectionPath": [],
+      "Text": "The Middleware Platform powers a number of integrations with LinkedIn products. Once a customer enables an integration with your CRM via the Onboarding Configuration Plugin, certain integration types require you to send various integration configuration data for the customer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Integrations and  Integration Configurations - CRM Connect",
+      "Anchor": "sync-integrations-and--integration-configurations---crm-connect",
+      "SectionPath": [],
+      "Text": "Each configuration has a unique key and a specific value data type as described below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Integrations and  Integration Configurations - CRM Connect",
+      "Anchor": "sync-integrations-and--integration-configurations---crm-connect",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync Integrations and  Integration Configurations - CRM Connect",
+      "Anchor": "sync-integrations-and--integration-configurations---crm-connect",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Integration Types",
+      "Anchor": "integration--types",
+      "SectionPath": [
+        "Integration Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Type",
+        "Description",
+        "Product",
+        "Integration Context"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLY_CONNECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Apply Connect integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPLY_WITH_LINKEDIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Apply with LinkedIn integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CSA_API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used to access recruiter data as part of Recruiter System Connect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contract URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IN_ATS_INDICATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the In-ATS Indicator feature within Recruiter System Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ONE_CLICK_EXPORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the One-Click Export feature within Recruiter System Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROFILE_PLUGIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Profile Plugin portion of Recruiter System Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECOMMENDED_MATCHES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Recommended Matches feature within Recruiter System Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNIFIED_SEARCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Unified Search feature within Recruiter System Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM_CSA_API",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used to access recruiter data as part of Talent CRM Connect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contract URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM_ONE_CLICK_EXPORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the CRM One-Click Export feature within Talent CRM Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IN_CRM_INDICATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the In-ATS Indicator feature within Talent CRM Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRM_PROFILE_PLUGIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Profile Plugin portion of Talent CRM Connect.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Recruiter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Integration Configuration Keys",
+      "Anchor": "integration--configuration-keys",
+      "SectionPath": [
+        "Integration Types",
+        "Integration Configuration Keys"
+      ],
+      "Text": "",
+      "Headers": [
+        "Configuration Key",
+        "Description",
+        "Integration Types",
+        "Required",
+        "Program"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CALLBACK_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer\u0027s HTTPS endpoint which will listen for candidate export events. The URL should be unique per customer. Value Format: string",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "ONE_CLICK_EXPORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter System Connect",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_POSTING_VIEWERS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Governs who may view job postings within the One-Click Export drop-down. Only valid value is \u0022ALL_PRODUCT_USERS\u0022. Value Format: string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ONE_CLICK_EXPORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if a customer will not be using ACLs or the ATS does not support Sync ACLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter System Connect",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPLICATION_VIEWERS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Governs who may view job-related data (Interview Feedback, Notes, Applications, and Stages) within the In-ATS indicator. Only valid value is \u0022ALL_PRODUCT_USERS\u0022. Value Format: string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IN_ATS_INDICATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if a customer will not be using ACLs or the ATS does not support Sync ACLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recruiter System Connect",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CALLBACK_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer\u0027s HTTPS endpoint which will listen for candidate export events. The URL should be unique per customer. Value Format: string",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/retrieve-crm-exported-candidates?view=li-lts-2026-04\u0026context=linkedin%2Ftalent%2Fcrm-connect%2Ffull_context%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "CRM_ONE_CLICK_EXPORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Connect",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Upsert Integration Configurations",
+      "Anchor": "upsert-integration-configurations",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Upsert Integration Configurations"
+      ],
+      "Text": "Once a customer creates an integration requiring configuration, you must create the configuration using the following API before they can enable the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upsert Integration Configurations",
+      "Anchor": "upsert-integration-configurations",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Upsert Integration Configurations"
+      ],
+      "Text": "Values for the integration key are obtained via the ATS Integration Configuration Plugin when a customer enables integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "configurationValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the specific configuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Depends on the configuration key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026configurationName=CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026configurationName=CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "curl --location --globoff --request PUT \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027x-restli-method: batch_update\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027 \\\n--data \u0027{\n    \u0022entities\u0022: {\n        \u0022integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026configurationName=CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsIntegrations/integrationContext={integrationContext}\u0026integrationType={integrationType}\u0026tenantType={tenantType}\u0026dataProvider=ATS/configurations?ids={configuration key}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "Headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "Sample URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/atsIntegrations/integrationContext=urn:li:organization:{org_id}\u0026integrationType=ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0026dataProvider=ATS/configurations?ids=CALLBACK_URL\u0026ids=JOB_POSTING_VIEWERS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "Request Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Request",
+      "Anchor": "sample-integration-configurations-upsert-request",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Request"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022CALLBACK_URL\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n      }\n    },\n    \u0022JOB_POSTING_VIEWERS\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022ALL_PRODUCT_USERS\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integration Configurations Upsert Response",
+      "Anchor": "sample-integration-configurations-upsert-response",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Response"
+      ],
+      "Text": "Returns 200 OK, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Response",
+      "Anchor": "sample-integration-configurations-upsert-response",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022configurationName=CALLBACK_URL\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022status\u0022: 204\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Upsert Response",
+      "Anchor": "sample-integration-configurations-upsert-response",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integration Configurations Upsert Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022JOB_POSTING_VIEWERS\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022CALLBACK_URL\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Integration Configurations",
+      "Anchor": "delete-integration-configurations",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Delete Integration Configurations"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/atsIntegrations/integrationContext={integrationContext}\u0026integrationType={integrationType}\u0026tenantType={tenantType}\u0026dataProvider=ATS/configurations?ids={configuration key}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Integration Configurations",
+      "Anchor": "delete-integration-configurations",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Delete Integration Configurations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Integration Configurations",
+      "Anchor": "delete-integration-configurations",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Delete Integration Configurations"
+      ],
+      "Text": "You can only delete the following configurations: JOB_POSTING_VIEWERS or APPLICATION_VIEWERS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integrations Configurations Delete Response",
+      "Anchor": "sample-integrations-configurations-delete-response",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integrations Configurations Delete Response"
+      ],
+      "Text": "Returns 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integrations Configurations Delete Response Body",
+      "Anchor": "sample-integrations-configurations-delete-response-body",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integrations Configurations Delete Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022CALLBACK_URL\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integrations Configurations Delete Response Body",
+      "Anchor": "sample-integrations-configurations-delete-response-body",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integrations Configurations Delete Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integrations Configurations Delete Response Body",
+      "Anchor": "sample-integrations-configurations-delete-response-body",
+      "SectionPath": [
+        "Sync Integration Configurations",
+        "Sample Integrations Configurations Delete Response Body"
+      ],
+      "Text": "Be sure to check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify Integration Configurations",
+      "Anchor": "verify-integration-configurations",
+      "SectionPath": [
+        "Verify Integration Configurations"
+      ],
+      "Text": "After creating or updating integration configurations, use the following API to retrieve what was submitted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Get Request",
+      "Anchor": "sample-integration-configurations-get-request",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027LinkedIn-Version: 202602\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Get Request",
+      "Anchor": "sample-integration-configurations-get-request",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027LinkedIn-Version: 202603\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Get Request",
+      "Anchor": "sample-integration-configurations-get-request",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Request"
+      ],
+      "Text": "curl --location --globoff \u0027https://api.linkedin.com/rest/integrationConfigurations?ids[0].integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026ids[0].integrationType=CRM_ONE_CLICK_EXPORT\u0026ids[0].tenantType=RECRUITER\u0026ids[0].configurationName=CALLBACK_URL\u0027 \\\n--header \u0027LinkedIn-Version: 202604\u0027 \\\n--header \u0027Authorization: Bearer {token}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Get Request",
+      "Anchor": "sample-integration-configurations-get-request",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsIntegrations/integrationContext={integrationContext}\u0026integrationType={integrationType}\u0026tenantType={tenantType}\u0026dataProvider=ATS/configurations?ids={config key}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Integration Configurations Get Response",
+      "Anchor": "sample-integration-configurations-get-response",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Response"
+      ],
+      "Text": "A successful request will return configuration values in the response body and a 200 OK response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Get Response Body",
+      "Anchor": "sample-integration-configurations-get-response-body",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Response Body"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022configurationName=CALLBACK_URL\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0026integrationType=CRM_ONE_CLICK_EXPORT\u0026tenantType=RECRUITER\u0022: {\n      \u0022configurationValue\u0022: {\n        \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n      }\n    }\n  },\n  \u0022statuses\u0022: {},\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Integration Configurations Get Response Body",
+      "Anchor": "sample-integration-configurations-get-response-body",
+      "SectionPath": [
+        "Verify Integration Configurations",
+        "Sample Integration Configurations Get Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022CALLBACK_URL\u0022: {\n            \u0022configurationValue\u0022: {\n                \u0022string\u0022: \u0022https://customer.callback.com/goes/here\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

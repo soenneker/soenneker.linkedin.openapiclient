@@ -1,0 +1,2576 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+  "Title": "Ad Accounts",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/supported-currencies",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [],
+      "Text": "LinkedIn enables you to create Ad Accounts for your organization\u0027s advertising campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [],
+      "Text": "An Ad Account can have a maximum of 5,000 campaigns and 15,000 creatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Accounts",
+      "Anchor": "ad-accounts",
+      "SectionPath": [],
+      "Text": "To create and manage ad campaigns, you must have an Enterprise or Business Ad Account with one authenticated user assigned as the account administrator.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful Ad Account Users API calls:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permission accessibility for:\n\nrw_ads (read/write).\nr_ads (read-only)\n\n\nThe ad account user assigning permission holding one of the following ad account roles:\n\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (read-only, even with rw_ads scope)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions, refer to the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [
+        "Permissions",
+        "Pagination"
+      ],
+      "Text": "The adAccounts API implements cursor-based pagination using the pageSize and pageToken parameters. The max allowed pageSize is 1,000.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pagination",
+      "Anchor": "pagination",
+      "SectionPath": [
+        "Permissions",
+        "Pagination"
+      ],
+      "Text": "For more information, see Pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "Starting 202211, response decoration is no longer supported and has been replaced by Additional Info Fields. These new field(s) provide additional information for a field that\u0027s present in a schema. Learn more about the Additional Info Fields here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Additional Info Field"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string, default=\u0022USD\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The 3 character standard currency code such as USD for United States Dollar. Refer to the list of supported currencies for the full list. Note: Advertisers selecting Brazilian Real (BRL) as a currency see their account budget, advertising bids, and spend in BRL, but their account is billed in USD. We recommend communicating this to stakeholders in your application if they opt for BRL. Learn more",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/supported-currencies?view=li-lms-2026-09",
+              "https://www.linkedin.com/help/linkedin/answer/41250"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique internal ID representing the account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A label for the account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCampaignOptimization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the campaign contact is notified about campaign optimization opportunities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeApproval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the creative contact is notified when a creative has been reviewed and approved",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnCreativeRejection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the creative contact is notified when a creative has been rejected due to content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnEndOfCampaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the campaign contact is notified when an associated campaign has been completed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "notifiedOnNewFeaturesEnabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates if the account owner is notified about new Campaign Manager features",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "originatingCustomer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the LinkedIn customer entity (an organization or an individual) that originated the order associated with this account, in the format urn:li:customer:{id}. This field applies to ENTERPRISE accounts only and is set when the account is created. It\u0027s an immutable field. Note: This field is only supported starting from API version 202608.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Source product type of all campaigns under this account. If set, all campaigns under the account inherit this product type. This field applies to ENTERPRISE accounts only and is set when the account is created. It\u0027s an immutable field. Possible values are: MARKETING_SOLUTIONS - The account is created for LinkedIn Marketing Solutions (LMS) products.TALENT_SOLUTIONS - The account is created for LinkedIn Talent Solutions (LTS) products.LINKEDIN_ON_LINKEDIN - The account is created for LinkedIn On LinkedIn (LOL) products. Note: This field is only supported starting from API version 202608.",
+            "Links": [],
+            "Values": [
+              "MARKETING_SOLUTIONS - The account is created for LinkedIn Marketing Solutions (LMS) products.",
+              "TALENT_SOLUTIONS - The account is created for LinkedIn Talent Solutions (LTS) products.",
+              "LINKEDIN_ON_LINKEDIN - The account is created for LinkedIn On LinkedIn (LOL) products. Note: This field is only supported starting from API version 202608."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity on whose behalf the account is advertised. Must either be in the format urn:li:person:{id} or urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "referenceInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information about the entity associated with the reference. If the entity is an organization, an Organizationinfo object is returned. If the entity is a person, a Personinfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09\u0026tabs=http#organizationinfo",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts?view=li-lms-2026-09\u0026tabs=http#personinfo",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/additional-info-field?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servingStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[], default=\u0022[]\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of enums with information about the account\u0027s system serving statuses. If an account is eligible for serving, then the array has a single element: RUNNABLE Otherwise, the array contains one or more reasons why the account is not servable: STOPPED BILLING_HOLD ACCOUNT_TOTAL_BUDGET_HOLD ACCOUNT_END_DATE_HOLD RESTRICTED_HOLD INTERNAL_HOLD",
+            "Links": [],
+            "Values": [
+              "RUNNABLE Otherwise, the array contains one or more reasons why the account is not servable:",
+              "STOPPED",
+              "BILLING_HOLD",
+              "ACCOUNT_TOTAL_BUDGET_HOLD",
+              "ACCOUNT_END_DATE_HOLD",
+              "RESTRICTED_HOLD",
+              "INTERNAL_HOLD"
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string, default=\u0022ACTIVE\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTIVE - Account is active; this is the default stateCANCELED - Account has been permanently canceledDRAFT - Account is in draft status, meaning it\u0027s not yet fully set up and it\u0027s not serving PENDING_DELETION - Denotes that the account has been requested to be deleted that\u0027s currently pendingREMOVED - Denotes that the account was deleted, but must remain fetchable due to the existence of performance data.",
+            "Links": [],
+            "Values": [
+              "ACTIVE - Account is active; this is the default state",
+              "CANCELED - Account has been permanently canceled",
+              "DRAFT - Account is in draft status, meaning it\u0027s not yet fully set up and it\u0027s not serving",
+              "PENDING_DELETION - Denotes that the account has been requested to be deleted that\u0027s currently pending",
+              "REMOVED - Denotes that the account was deleted, but must remain fetchable due to the existence of performance data."
+            ]
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BUSINESS \u2013 This is the only value allowed when creating accounts through the API. ENTERPRISE \u2013 This value can\u0027t be used to create accounts through the API and is reserved for accounts created by LinkedIn\u0027s internal ad operations systems.",
+            "Links": [],
+            "Values": [
+              "BUSINESS \u2013 This is the only value allowed when creating accounts through the API.",
+              "ENTERPRISE \u2013 This value can\u0027t be used to create accounts through the API and is reserved for accounts created by LinkedIn\u0027s internal ad operations systems."
+            ]
+          },
+          {
+            "Text": "True",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022false\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag showing whether this account is marked as a test account. An account can be marked as test only during creation. This is an immutable field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "False",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationInfo",
+      "Anchor": "organizationinfo",
+      "SectionPath": [
+        "Permissions",
+        "OrganizationInfo"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID representing the organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Name of the organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the organization present in the URLs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale specific name of the organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CroppedImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09#croppedimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organization\u2019s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PersonInfo",
+      "Anchor": "personinfo",
+      "SectionPath": [
+        "Permissions",
+        "PersonInfo"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID representing the member",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the member present in the URLs.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "LinkedIn Ad Accounts can be created via the LinkedIn API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "The type field must be set to BUSINESS when creating Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "{\n    \u0022currency\u0022: \u0022USD\u0022, \n    \u0022name\u0022: \u0022Company A\u0022, \n    \u0022notifiedOnCampaignOptimization\u0022: true, \n    \u0022notifiedOnCreativeApproval\u0022: true, \n    \u0022notifiedOnCreativeRejection\u0022: true, \n    \u0022notifiedOnEndOfCampaign\u0022: true, \n    \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022, \n    \u0022type\u0022: \u0022BUSINESS\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022currency\u0022: \u0022USD\u0022, \n    \u0022name\u0022: \u0022Company A\u0022, \n    \u0022notifiedOnCampaignOptimization\u0022: true, \n    \u0022notifiedOnCreativeApproval\u0022: true, \n    \u0022notifiedOnCreativeRejection\u0022: true, \n    \u0022notifiedOnEndOfCampaign\u0022: true, \n    \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022, \n    \u0022type\u0022: \u0022BUSINESS\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Account",
+      "Anchor": "create-ad-account",
+      "SectionPath": [
+        "Create Ad Account"
+      ],
+      "Text": "The Ad Account ID is returned back in the x-restli-id response header if creation is successful.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Ad Account",
+      "Anchor": "fetch-ad-account",
+      "SectionPath": [
+        "Fetch Ad Account"
+      ],
+      "Text": "Individual Ad Accounts can be fetched with the following endpoint taking in an adAccount ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Ad Account",
+      "Anchor": "fetch-ad-account",
+      "SectionPath": [
+        "Fetch Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Fetch Ad Account",
+      "Anchor": "fetch-ad-account",
+      "SectionPath": [
+        "Fetch Ad Account"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Fetch Ad Account",
+      "Anchor": "fetch-ad-account",
+      "SectionPath": [
+        "Fetch Ad Account"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch Ad Account",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022test\u0022: false,\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:fGcyYDdglZ\u0022, \n            \u0022time\u0022: 1449768717000\n        }, \n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:unknown:0\u0022, \n            \u0022time\u0022: 1477941718075\n        }\n    }, \n    \u0022currency\u0022: \u0022USD\u0022, \n    \u0022id\u0022: 123456, \n    \u0022name\u0022: \u0022Company A\u0022, \n    \u0022notifiedOnCampaignOptimization\u0022: true, \n    \u0022notifiedOnCreativeApproval\u0022: true, \n    \u0022notifiedOnCreativeRejection\u0022: true, \n    \u0022notifiedOnEndOfCampaign\u0022: true, \n    \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022, \n    \u0022servingStatuses\u0022: [\n        \u0022RUNNABLE\u0022\n    ], \n    \u0022status\u0022: \u0022ACTIVE\u0022,\n    \u0022type\u0022: \u0022BUSINESS\u0022, \n    \u0022version\u0022: {\n        \u0022versionTag\u0022: \u002210\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Account",
+      "Anchor": "update-ad-account",
+      "SectionPath": [
+        "Update Ad Account"
+      ],
+      "Text": "Ad Accounts can be updated through a partial update by patching the fields you want to change. A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Account",
+      "Anchor": "update-ad-account",
+      "SectionPath": [
+        "Update Ad Account"
+      ],
+      "Text": "The following example changes the name field only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Ad Account",
+      "Anchor": "update-ad-account",
+      "SectionPath": [
+        "Update Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Ad Account",
+      "Anchor": "update-ad-account",
+      "SectionPath": [
+        "Update Ad Account"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountID}\nX-RestLi-Method: PARTIAL_UPDATE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Ad Account",
+      "Anchor": "update-ad-account",
+      "SectionPath": [
+        "Update Ad Account"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: \u0022This is a new account name.\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Ad Account",
+      "Anchor": "update-ad-account",
+      "SectionPath": [
+        "Update Ad Account"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: \u0022This is a new account name.\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Account",
+      "Anchor": "delete-ad-account",
+      "SectionPath": [
+        "Delete Ad Account"
+      ],
+      "Text": "Ad Account can be deleted. Use DELETE method to delete a DRAFT account. To start the process of deleting non DRAFT account, update the status to PENDING_DELETION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Account",
+      "Anchor": "delete-ad-account",
+      "SectionPath": [
+        "Delete Ad Account"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Ad Account",
+      "Anchor": "delete-ad-account",
+      "SectionPath": [
+        "Delete Ad Account"
+      ],
+      "Text": "To delete DRAFT account: \nDELETE https://api.linkedin.com/rest/adAccounts/{adAccountID}\n\nTo delete non DRAFT account:\nPOST https://api.linkedin.com/rest/adAccounts/{adAccountID}\n{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022PENDING_DELETION\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Ad Account",
+      "Anchor": "delete-ad-account",
+      "SectionPath": [
+        "Delete Ad Account"
+      ],
+      "Text": "To delete DRAFT account:\ncurl -X DELETE \u0027https://api.linkedin.com/rest/adAccounts/{adAccountID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n\nTo delete non DRAFT account:\ncurl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022status\u0022: \u0022PENDING_DELETION\u0022\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Account",
+      "Anchor": "delete-ad-account",
+      "SectionPath": [
+        "Delete Ad Account"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Account",
+      "Anchor": "delete-ad-account",
+      "SectionPath": [
+        "Delete Ad Account"
+      ],
+      "Text": "Only the billing admin can delete the Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for Accounts",
+      "Anchor": "search-for-accounts",
+      "SectionPath": [
+        "Search for Accounts"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search for Accounts",
+      "Anchor": "search-for-accounts",
+      "SectionPath": [
+        "Search for Accounts"
+      ],
+      "Text": "From 202401 version and above, we have moved from index based pagination to cursor based pagination for our search APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "The adAccounts API implements cursor based pagination using the pageSize and pageToken parameters for search method. The max allowed pageSize is 1,000.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "pageSize governs the number of requested entities\npageToken is used to get the next set of results.\nnextPageToken is returned in metadata field of the search response.\nThis should be passed in pageToken query parameter in the request to get the next page of results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "Use the q=search parameter with adAccounts to search for accounts by ID, name, reference, type, and status fields. Search criteria can be chained together for increased granularity. If a search query is omitted, all accounts the caller has access to are returned in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "The Rest.li 2.0.0 syntax is required for most calls to /adAccounts. Include the header X-Restli-Protocol-Version: 2.0.0 in your request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts?q=search\u0026search=(field:(values:List(value1,value2,...)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search for Accounts",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts?q=search\u0026search=(field:(values:List(value1,value2,...)))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Search Parameters",
+      "Anchor": "search-parameters",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts with the provided status. The possible values include: DRAFT CANCELED PENDING_DELETION REMOVED ACTIVE As with most of the other parameters, this field is associated with a document containing a list field named values, so that multiple values may be specified",
+            "Links": [],
+            "Values": [
+              "DRAFT",
+              "CANCELED",
+              "PENDING_DELETION",
+              "REMOVED",
+              "ACTIVE As with most of the other parameters, this field is associated with a document containing a list field named values, so that multiple values may be specified"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "reference",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts by reference.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for an account by name.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for an account by ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts by type. Possible values include: BUSINESSENTERPRISE",
+            "Links": [],
+            "Values": [
+              "BUSINESS",
+              "ENTERPRISE"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Searches for accounts based on test or non-test. true: for test accountfalse: for non-test account If not specified, searches for both test and non-test accounts. Note that this parameter is unique in being associated with a single scalar boolean (true or false) rather than a document containing a list field named values",
+            "Links": [],
+            "Values": [
+              "true: for test account",
+              "false: for non-test account If not specified, searches for both test and non-test accounts. Note that this parameter is unique in being associated with a single scalar boolean (true or false) rather than a document containing a list field named values"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Parameters",
+      "Anchor": "search-parameters",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters"
+      ],
+      "Text": "These parameters are encoded within the search parameter as (field1:(values:List(value1,value2,...)), field2:(values:List(value1,value2,...))) -- all as the value of the parameter search. Substitute the appropriate field name (status type) for field1, field2, and so forth.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search Parameters",
+      "Anchor": "search-parameters",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters"
+      ],
+      "Text": "One exception to the above: the test field. This is associated with a scalar value of either true or false, rather than a list within a sub-document. For this, test:true or test:false would be appropriate -- don\u0027t use test:(values:List((true))).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sort Parameters",
+      "Anchor": "sort-parameters",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sort Parameters"
+      ],
+      "Text": "Use the sortOrder parameter to sort results. Accepted values: ASCENDING (default) or DESCENDING.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sort Parameters",
+      "Anchor": "sort-parameters",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sort Parameters"
+      ],
+      "Text": "It\u0027s optional to specify a sort for the account finder.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "The following sample request searches for Ad Accounts where type is BUSINESS and status is either ACTIVE or CANCELED. It also sorts by ID in descending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "The following call may return both test and non-test accounts.To search only non-test accounts, filter test accounts by specifying search.test=false.To search only test accounts, specify search.test=true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "Include request header: X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE,CANCELED)))\u0026sortOrder=DESCENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts?q=search\u0026search=(type:(values:List(BUSINESS)),status:(values:List(ACTIVE,CANCELED)))\u0026sortOrder=DESCENDING\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022test\u0022: false,\n            \u0022changeAuditStamps\u0022: {\n                \u0022created\u0022: {\n                    \u0022time\u0022: 1479402003000\n                }, \n                \u0022lastModified\u0022: {\n                    \u0022time\u0022: 1479402004534\n                }\n            }, \n            \u0022currency\u0022: \u0022USD\u0022, \n            \u0022id\u0022: 507404993, \n            \u0022name\u0022: \u0022Dunder Mifflin Account\u0022, \n            \u0022notifiedOnCampaignOptimization\u0022: true, \n            \u0022notifiedOnCreativeApproval\u0022: true, \n            \u0022notifiedOnCreativeRejection\u0022: true, \n            \u0022notifiedOnEndOfCampaign\u0022: true, \n            \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022, \n            \u0022servingStatuses\u0022: [\n                \u0022BILLING_HOLD\u0022\n            ], \n            \u0022status\u0022: \u0022ACTIVE\u0022,\n            \u0022type\u0022: \u0022BUSINESS\u0022, \n            \u0022version\u0022: {\n                \u0022versionTag\u0022: \u00224\u0022\n            }\n        }\n    ],\n    \u0022metadata\u0022: {\n      \u0022nextPageToken\u0022: \u0022DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Search for Accounts",
+        "Search Parameters",
+        "Sample Response"
+      ],
+      "Text": "API Call to get the next set of results would use the nextPageToken passed in the response above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Ad Accounts",
+      "Anchor": "batch-create-ad-accounts",
+      "SectionPath": [
+        "Batch Create Ad Accounts"
+      ],
+      "Text": "Multiple Ad Accounts can be created in a single API call. The endpoint request body requires an elements array that contains each Ad Account you would like to create.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Ad Accounts",
+      "Anchor": "batch-create-ad-accounts",
+      "SectionPath": [
+        "Batch Create Ad Accounts"
+      ],
+      "Text": "Note that the X-RestLi-Method header must be included in the request and set to BATCH_CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Ad Accounts",
+      "Anchor": "batch-create-ad-accounts",
+      "SectionPath": [
+        "Batch Create Ad Accounts"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Ad Accounts",
+      "Anchor": "batch-create-ad-accounts",
+      "SectionPath": [
+        "Batch Create Ad Accounts"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Ad Accounts",
+      "Anchor": "batch-create-ad-accounts",
+      "SectionPath": [
+        "Batch Create Ad Accounts"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022currency\u0022: \u0022USD\u0022, \n            \u0022name\u0022: \u0022MyTestAccount 1\u0022, \n            \u0022notifiedOnCampaignOptimization\u0022: true, \n            \u0022notifiedOnCreativeApproval\u0022: true, \n            \u0022notifiedOnCreativeRejection\u0022: true, \n            \u0022notifiedOnEndOfCampaign\u0022: true, \n            \u0022type\u0022: \u0022BUSINESS\u0022\n        }, \n        {\n            \u0022currency\u0022: \u0022USD\u0022, \n            \u0022name\u0022: \u0022MyTestAccount2\u0022, \n            \u0022notifiedOnCampaignOptimization\u0022: true, \n            \u0022notifiedOnCreativeApproval\u0022: true, \n            \u0022notifiedOnCreativeRejection\u0022: true, \n            \u0022notifiedOnEndOfCampaign\u0022: true, \n            \u0022type\u0022: \u0022BUSINESS\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Ad Accounts",
+      "Anchor": "batch-create-ad-accounts",
+      "SectionPath": [
+        "Batch Create Ad Accounts"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022currency\u0022: \u0022USD\u0022, \n            \u0022name\u0022: \u0022MyTestAccount 1\u0022, \n            \u0022notifiedOnCampaignOptimization\u0022: true, \n            \u0022notifiedOnCreativeApproval\u0022: true, \n            \u0022notifiedOnCreativeRejection\u0022: true, \n            \u0022notifiedOnEndOfCampaign\u0022: true, \n            \u0022type\u0022: \u0022BUSINESS\u0022\n        }, \n        {\n            \u0022currency\u0022: \u0022USD\u0022, \n            \u0022name\u0022: \u0022MyTestAccount2\u0022, \n            \u0022notifiedOnCampaignOptimization\u0022: true, \n            \u0022notifiedOnCreativeApproval\u0022: true, \n            \u0022notifiedOnCreativeRejection\u0022: true, \n            \u0022notifiedOnEndOfCampaign\u0022: true, \n            \u0022type\u0022: \u0022BUSINESS\u0022\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Create Ad Accounts",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/adAccounts/123456\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022123456\u0022\n        },\n        {\n            \u0022location\u0022: \u0022/adAccounts/987654\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022987654\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Working with Test Ad Accounts",
+      "Anchor": "working-with-test-ad-accounts",
+      "SectionPath": [
+        "Working with Test Ad Accounts"
+      ],
+      "Text": "LinkedIn enables you to create a test Ad Account so you can develop and demo your integration. A test Ad Account provides several benefits, including the ability to create test ads via the API which are not served and not billed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Working with Test Ad Accounts",
+      "Anchor": "working-with-test-ad-accounts",
+      "SectionPath": [
+        "Working with Test Ad Accounts"
+      ],
+      "Text": "Use a test Ad Account to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Working with Test Ad Accounts",
+      "Anchor": "working-with-test-ad-accounts",
+      "SectionPath": [
+        "Working with Test Ad Accounts"
+      ],
+      "Text": "Integrate with new ads API features (e.g., new formats).\nTest or demo your integration with the LinkedIn marketing platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Working with Test Ad Accounts",
+      "Anchor": "working-with-test-ad-accounts",
+      "SectionPath": [
+        "Working with Test Ad Accounts"
+      ],
+      "Text": "Follow these steps to set up your test Ad Account:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Working with Test Ad Accounts",
+      "Anchor": "working-with-test-ad-accounts",
+      "SectionPath": [
+        "Working with Test Ad Accounts"
+      ],
+      "Text": "Create a test Ad Account using the /adAccounts endpoint. Include an additional boolean parameter test to indicate this is a test Ad Account. Note that you can only create one test Ad Account per developer application.\n\nUsing the test Ad Account, perform other actions like creating and updating ads and creatives as you normally would.\n\nNote these behaviors in test Ad Accounts:\n\nAll creatives created under a test Ad Account are never served in production.\n\nCreatives under the test Ad Account are auto-rejected in the review process.\n\nTest campaigns don\u0027t require billing details or incur any costs.\n\nNo reporting data is available from /adAnalytics for test campaigns as they don\u0027t get served.\n\nReporting data is not available because impressions don\u0027t occur under a test account and no social actions can be measured.\n\nTest accounts don\u0027t support Audience segment upload.\n\nOnly business accounts support test Ad Accounts. Test enterprise Ad Accounts are not available.\n\nYou can\u0027t create a test Ad Account in Campaign Manager. You must create a test Ad Account using an API endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Test Ad Account Attributes",
+      "Anchor": "other-test-ad-account-attributes",
+      "SectionPath": [
+        "Working with Test Ad Accounts",
+        "Other Test Ad Account Attributes"
+      ],
+      "Text": "The following list details other attributes for test Ad Accounts:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Test Ad Account Attributes",
+      "Anchor": "other-test-ad-account-attributes",
+      "SectionPath": [
+        "Working with Test Ad Accounts",
+        "Other Test Ad Account Attributes"
+      ],
+      "Text": "You can\u0027t change the status of an existing Ad Account to be a test account. The only way an Ad Account can be a test Ad Account is if you establish it as a test account when you initially create it.\nAny object you create in a test Ad Account has the test flag enabled, indicating the test status of the account is true. All child objects within the test account inherit the test flag.\nWhen you set up a test account, the account doesn\u0027t require any credit card or payment information.\nCampaigns set up under a test account are not available publicly.\nYou can\u0027t duplicate a campaign within a test account under a production account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating a Test Ad Account",
+      "Anchor": "creating-a-test-ad-account",
+      "SectionPath": [
+        "Creating a Test Ad Account"
+      ],
+      "Text": "Create a test Ad Account using the adAccounts API by including an additional boolean test flag to true on the payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "{\n        \u0022currency\u0022: \u0022USD\u0022,\n        \u0022name\u0022: \u0022NAME_OF_T_ACCOUNT\u0022,\n        \u0022notifiedOnCampaignOptimization\u0022: true,\n        \u0022notifiedOnCreativeApproval\u0022: true,\n        \u0022notifiedOnCreativeRejection\u0022: true,\n        \u0022notifiedOnEndOfCampaign\u0022: true,\n        \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022,\n        \u0022type\u0022: \u0022BUSINESS\u0022,\n        \u0022test\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts \u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n        \u0022currency\u0022: \u0022USD\u0022,\n        \u0022name\u0022: \u0022NAME_OF_T_ACCOUNT\u0022,\n        \u0022notifiedOnCampaignOptimization\u0022: true,\n        \u0022notifiedOnCreativeApproval\u0022: true,\n        \u0022notifiedOnCreativeRejection\u0022: true,\n        \u0022notifiedOnEndOfCampaign\u0022: true,\n        \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022,\n        \u0022type\u0022: \u0022BUSINESS\u0022,\n        \u0022test\u0022: true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Ad Account",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Ad Account",
+        "Sample Response"
+      ],
+      "Text": "/test can\u0027t be set to true if /type is set to ENTERPRISE",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Ad Account",
+        "Sample Response"
+      ],
+      "Text": "{\n        \u0022currency\u0022: \u0022USD\u0022,\n        \u0022name\u0022: \u0022bizTestAccount\u0022,\n        \u0022notifiedOnCampaignOptimization\u0022: true,\n        \u0022notifiedOnCreativeApproval\u0022: true,\n        \u0022notifiedOnCreativeRejection\u0022: true,\n        \u0022notifiedOnEndOfCampaign\u0022: true,\n        \u0022reference\u0022: \u0022urn:li:organization:2414183\u0022,\n        \u0022type\u0022: \u0022BUSINESS\u0022,\n        \u0022test\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating a Campaign Under the Test Ad Account",
+      "Anchor": "creating-a-campaign-under-the-test-ad-account",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Creating a Campaign Under the Test Ad Account"
+      ],
+      "Text": "The approach to creating campaigns, campaign groups, and creatives under a test Ad Account each require the same steps. As an example of creating a test account entity, the following request creates a campaign under test Ad Account \u0022XXX213\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Creating a Campaign Under the Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "The following example methods create a test ad campaign under test Ad Account \u0022XXX213\u0022, and a retrieval shows that the test flag has been set.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Creating a Campaign Under the Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Creating a Campaign Under the Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Creating a Campaign Under the Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022locale\u0022: {...},\n    \u0022targetingCriteria\u0022: {...},\n    \u0022dailyBudget\u0022: { \u0022amount\u0022: \u002225\u0022, \u0022currencyCode\u0022: \u0022USD\u0022 }, \n    \u0022audienceExpansionEnabled\u0022: true, \n    \u0022type\u0022: \u0022TEXT_AD\u0022, \n    \u0022status\u0022: \u0022ACTIVE\u0022, \n    \u0022associatedEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:XXX213\u0022,\n    \u0022name\u0022: \u0022sample campaign data\u0022, \n    \u0022costType\u0022: \u0022CPC\u0022, ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Creating a Campaign Under the Test Ad Account",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022locale\u0022: {...},\n    \u0022targetingCriteria\u0022: {...},\n    \u0022dailyBudget\u0022: { \u0022amount\u0022: \u002225\u0022, \u0022currencyCode\u0022: \u0022USD\u0022 }, \n    \u0022audienceExpansionEnabled\u0022: true, \n    \u0022type\u0022: \u0022TEXT_AD\u0022, \n    \u0022status\u0022: \u0022ACTIVE\u0022, \n    \u0022associatedEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:XXX213\u0022,\n    \u0022name\u0022: \u0022sample campaign data\u0022, \n    \u0022costType\u0022: \u0022CPC\u0022, ...\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving a Test Campaign",
+      "Anchor": "retrieving-a-test-campaign",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Campaign"
+      ],
+      "Text": "Every campaign under a Test Ad Account is a Test Campaign and hence, you\u0027ll find \u0022test\u0022 to be true.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Campaign",
+        "Sample Request"
+      ],
+      "Text": "The following request is a retrieval of a campaign under test Ad Account \u0022XXX213\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Campaign",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Campaign",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{adCampaignID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Campaign",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{adCampaignID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Retrieving a Test Campaign",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022sponsoringLandingPage\u0022: false,\n    \u0022targetingCriteria\u0022: {...},  \n    \u0022type\u0022: \u0022TEXT_AD\u0022,  \u0022locale\u0022: {...}, \n    \u0022costType\u0022: \u0022CPC\u0022, \n    \u0022id\u0022: YYY695,\n    \u0022activationTime\u0022: 0,\n    \u0022audienceExpansionEnabled\u0022: true,\n    \u0022test\u0022: true, \n    \u0022associatedEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022dailyBudget\u0022: { \u0022currencyCode\u0022: \u0022USD\u0022, \u0022amount\u0022: \u002225\u0022 },    \n    \u0022name\u0022: \u0022sample campaign data\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:XXX213\u0022, ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finder Support",
+      "Anchor": "finder-support",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support"
+      ],
+      "Text": "The finder for each entity must be able to filter out the test and non-test ones. The finder calls for account, campaign group, campaign, and creative returns test entities (e.g., test accounts, test campaign group, test campaign and test creative) unless test entities are being explicitly filtered out.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finder Support",
+      "Anchor": "finder-support",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support"
+      ],
+      "Text": "The only change needed to search a test entity is the following:\nsearch.test=true",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "Search for all test accounts in DRAFT status by using search.test=true in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts?q=search\u0026search.status.values[0]=DRAFT\u0026search.test=true",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts?q=search\u0026search.status.values[0]=DRAFT\u0026search.test=true\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "Search for all non-test accounts in DRAFT status by using search.test=false in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts?q=search\u0026search.status.values[0]=DRAFT\u0026search.test=false",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts?q=search\u0026search.status.values[0]=DRAFT\u0026search.test=false\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AccountSearch",
+      "Anchor": "accountsearch",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "AccountSearch"
+      ],
+      "Text": "Similarly, CampaignGroupSearch, CampaignSearch, CreativeSearch have been modified to enable search based on test account or not.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "Find ACTIVE Test Campaign Groups by using search.test=true in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=true",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=true\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "To search for non-test campaign groups, specify search.test=false in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=false",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Group Search",
+      "Anchor": "campaign-group-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Group Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaignGroups?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=false\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "Find Five ACTIVE Test Campaigns by using search.test=true in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=true\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=true\u0026count=5\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "To search for non-test campaign, specify search.test=false",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=false\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Campaign Search",
+      "Anchor": "campaign-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Campaign Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=false\u0026count=5\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "To search for test creatives, specify search.test=true in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCreatives?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=true\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCreatives?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=true\u0026count=5\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "To search for non-test creatives, specify search.test=false in finder calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCreatives?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=false\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Creative Search",
+      "Anchor": "creative-search",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "Finder Support",
+        "Creative Search"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCreatives?q=search\u0026search.status.values[0]=ACTIVE\u0026search.test=false\u0026count=5\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "API Error Details"
+      ],
+      "Text": "The following table details potential errors that may generate when working with test Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Creating a Test Ad Account",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scenario",
+        "Message",
+        "Reason",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Create a test account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Syntax exception in path variables",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Remove X-Restli-Protocol-Version: 2.0.0 from the request header",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creating Test Enterprise Account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/test cannot be set to true if /type is set to ENTERPRISE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONDITIONAL_INVALID_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VALUE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creating More Than One Test Account Per App",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot create another test account. Each developer application may have a maximum of 1 test account(s) associated with it",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TEST_ACCOUNT_LIMIT_REACHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VALUE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Batch Create More Than One Test Account Per App",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch create request of 2 test accounts failed. Each developer application may have a maximum of 1 test account(s) associated with it",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BATCH_CREATION_TEST_ACCOUNTS_CROSSING_LIMIT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTION_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Uploading Audience Under a Test Account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Segment creation is not supported for test accounts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SEGMENT_CREATION_NOT_ALLOWED_FOR_TEST_ACCOUNTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTION_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Converting Existing Account to Test",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attempted to change the value of an un-editable field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "--",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_NOT_EDITABLE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creating Test Campaign Providing Flag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field is not allowed on creation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "--",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

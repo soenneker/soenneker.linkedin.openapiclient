@@ -36,18 +36,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.ValidationSta
         /// <summary>
         /// The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for `identity`, `workplace`, and `profileInformationStatus.`[Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatus2XxResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.ValidationStatus.ValidationStatusRequestBuilder.ValidationStatusRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatus2XxResponse?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.ValidationStatus.ValidationStatusRequestBuilder.ValidationStatusRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.ValidationStatus.ValidationStatusRequestBuilder.ValidationStatusRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatus2XxResponse> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.ValidationStatus.ValidationStatusRequestBuilder.ValidationStatusRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.VerifiedOnLinkedin.Rest.ValidationSta
             {
                 { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatusDefaultResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatus2XxResponse>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.VerifiedOnLinkedinValidationStatus2XxResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The **Validation Status API** lets Plus-tier partners check the current validation state of LinkedIn members at scale (single or bulk). It returns compact status flags for `identity`, `workplace`, and `profileInformationStatus.`[Learn more ](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status?context=linkedin%2Fconsumer%2Fcontext) by viewing our public documentation.

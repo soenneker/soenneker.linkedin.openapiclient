@@ -1,0 +1,395 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+  "Title": "LinkedIn Learning and SumTotal Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "SumTotal Deep Integration Functionality",
+      "Anchor": "sumtotal-deep-integration-functionality",
+      "SectionPath": [
+        "SumTotal Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML SSO Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Deep Integration Functionality",
+      "Anchor": "sumtotal-deep-integration-functionality",
+      "SectionPath": [
+        "SumTotal Deep Integration Functionality"
+      ],
+      "Text": "Reporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Deep Integration Functionality",
+      "Anchor": "sumtotal-deep-integration-functionality",
+      "SectionPath": [
+        "SumTotal Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Deep Integration Functionality",
+      "Anchor": "sumtotal-deep-integration-functionality",
+      "SectionPath": [
+        "SumTotal Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Deep Integration Functionality",
+      "Anchor": "sumtotal-deep-integration-functionality",
+      "SectionPath": [
+        "SumTotal Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and SumTotal deep integration configuration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Deep Integration Functionality",
+      "Anchor": "sumtotal-deep-integration-functionality",
+      "SectionPath": [
+        "SumTotal Deep Integration Functionality"
+      ],
+      "Text": "An active SumTotal LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your SumTotal LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of SumTotal\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and\nSumTotal to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to\ncontent. SSO authentication reduces friction for users and administrators by eliminating the\nneed for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "We recommend SAML SSO for all enterprise learning platform integrations. You can\nconfigure SSO authentication in your LinkedIn Learning Admin settings. Most\norganizations have a centrally-managed identity management solution like Azure\nAD, Okta, or ADFS which can be configured to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning\nadds courses at a rate of 20-30 per week at no extra cost. The SumTotal\nadministrator manually uploads new content at regular intervals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The SumTotal deep integration with LinkedIn Learning uses LinkedIn Learning APIs\nto refresh the content library daily. This feature ensures LinkedIn Learning\nmakes new content available within 24 hours of release. LinkedIn Learning\naggregates and indexes all content titles and descriptions to accommodate\nkeyword searches and support efficient discoverability. SumTotal supports\nautomatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Integration Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses xAPI to communicate a\nlearner\u2019s course completions back to SumTotal when the learner launches content from the\nLMS or views content directly on LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For SumTotal to sync LinkedIn Learning catalog metadata, you must provision API keys in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API and expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter \u0022SumTotal\u0022 in the Application Name field.\n\nIn the Application description field, enter a short description of the integration use case. For example, \u0022SumTotal deep integration\u0022.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\n\n\n\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\nCopy the Client ID and Client Secret values and paste them into the corresponding SumTotal fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Configuration",
+      "Anchor": "sumtotal-configuration",
+      "SectionPath": [
+        "Integration Overview",
+        "SumTotal Configuration"
+      ],
+      "Text": "To complete the configuration with SumTotal, you need the following\ninformation from the previous section:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Configuration",
+      "Anchor": "sumtotal-configuration",
+      "SectionPath": [
+        "Integration Overview",
+        "SumTotal Configuration"
+      ],
+      "Text": "Client ID\n\nClient Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Configuration",
+      "Anchor": "sumtotal-configuration",
+      "SectionPath": [
+        "Integration Overview",
+        "SumTotal Configuration"
+      ],
+      "Text": "SumTotal integration details and configuration instructions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SumTotal Configuration",
+      "Anchor": "sumtotal-configuration",
+      "SectionPath": [
+        "Integration Overview",
+        "SumTotal Configuration"
+      ],
+      "Text": "For online and telephone support for integration issues, contact SumTotal\u2019s customer service.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Overview",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Using the information you acquired from SumTotal, follow the instructions below to configure LinkedIn Learning xAPI reporting:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "Integration Overview",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\nIn the Integration name field, enter \u0022SumTotal Reporting\u0022.\n\nIn the User Type drop down, select ID. The unique user identifier in LinkedIn Learning must match the PersonNumber value in SumTotal. Please reach out to SumTotal support if you need help identifying this value.\n\nCopy and paste the Client Secret, Client ID, Tenant Server URL and OAuth Server URL provided by SumTotal into LinkedIn Learning.\n\nClick Enable.\n\n\n\n\nYou have enabled the SumTotal xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test the Integration",
+      "Anchor": "test-the-integration",
+      "SectionPath": [
+        "Integration Overview",
+        "Test the Integration"
+      ],
+      "Text": "After the configuration is complete and LinkedIn Learning courses are available in SumTotal, it is important to test the integration to make sure course completions are tracking in the LMS. SumTotal sends false-positive responses to LinkedIn when completions do not record correctly, which makes it impossible to accurately troubleshoot from the LinkedIn side.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test the Integration",
+      "Anchor": "test-the-integration",
+      "SectionPath": [
+        "Integration Overview",
+        "Test the Integration"
+      ],
+      "Text": "To confirm the integration is working as expected:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test the Integration",
+      "Anchor": "test-the-integration",
+      "SectionPath": [
+        "Integration Overview",
+        "Test the Integration"
+      ],
+      "Text": "Locate a short course either in SumTotal or in LinkedIn Learning. If launching the course from LinkedIn Learning, first verify the course does exist in SumTotal.\n\nView and complete the course.\n\nConfirm in SumTotal that the course has been marked as complete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test the Integration",
+      "Anchor": "test-the-integration",
+      "SectionPath": [
+        "Integration Overview",
+        "Test the Integration"
+      ],
+      "Text": "If the course completion does not track as expected, verify the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test the Integration",
+      "Anchor": "test-the-integration",
+      "SectionPath": [
+        "Integration Overview",
+        "Test the Integration"
+      ],
+      "Text": "The course exists and is available in SumTotal.\n\nYou completed a LinkedIn Learning course and not a video, learning path, etc. Only course completions are sent to SumTotal as part of the integration.\n\nYour unique identifier (Employee ID) in LinkedIn Learning is the same value as your PersonNumber value in SumTotal.\n\nSteps have been completed successfully under Enable xAPI Learner Activity Tracking in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test the Integration",
+      "Anchor": "test-the-integration",
+      "SectionPath": [
+        "Integration Overview",
+        "Test the Integration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their SumTotal instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Integration Overview",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Integration Overview",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

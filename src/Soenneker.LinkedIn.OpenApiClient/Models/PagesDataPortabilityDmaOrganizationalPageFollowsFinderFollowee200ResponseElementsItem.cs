@@ -39,7 +39,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Follower { get; set; }
 #endif
         /// <summary>The lastModifiedAt property</summary>
-        public int? LastModifiedAt { get; set; }
+        public long? LastModifiedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageFollowsFinderFollowee200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "edgeType", n => { EdgeType = n.GetStringValue(); } },
                 { "followee", n => { Followee = n.GetStringValue(); } },
                 { "follower", n => { Follower = n.GetStringValue(); } },
-                { "lastModifiedAt", n => { LastModifiedAt = n.GetIntValue(); } },
+                { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("edgeType", EdgeType);
             writer.WriteStringValue("followee", Followee);
             writer.WriteStringValue("follower", Follower);
-            writer.WriteIntValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

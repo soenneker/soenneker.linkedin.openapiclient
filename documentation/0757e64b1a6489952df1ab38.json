@@ -1,0 +1,874 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation",
+  "Title": "crmDataValidationExportJobs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "crmDataValidationExportJobs",
+      "Anchor": "crmdatavalidationexportjobs",
+      "SectionPath": [],
+      "Text": "This resource handles Sales Navigator Application Platform CRM Sync data validation export jobs. The resource defines actions for CRM Sync data validation export, and provides methods to get the latest status of an export job. The CRM Sync data validation export will help partners understand if the CRM records are expired in comparison to their LinkedIn profiles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Methods",
+      "Anchor": "methods",
+      "SectionPath": [
+        "Methods"
+      ],
+      "Text": "create\nget",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "create",
+      "Anchor": "create",
+      "SectionPath": [
+        "Methods",
+        "create"
+      ],
+      "Text": "Allows creation of CRM data validation export jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "create",
+      "Anchor": "create",
+      "SectionPath": [
+        "Methods",
+        "create"
+      ],
+      "Text": "POST /crmDataValidationExportJobs?crmInstanceId={crmInstanceId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "URI Parameters",
+      "Anchor": "uri-parameters",
+      "SectionPath": [
+        "Methods",
+        "create",
+        "URI Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "crmInstanceId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An URN containing the instance ID of the CRM you want the job to execute against and the CRM type in the format urn:li:crmInstance:(CRM_KEY,VALUE). The URN must be URL encoded in the query string. List of CRM Keys.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#crm-keys"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "CRM Instance URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Methods",
+        "create",
+        "Request Body"
+      ],
+      "Text": "CrmDataValidationExportJob",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Methods",
+        "create",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/crmDataValidationExportJobs?crmInstanceId=urn%3Ali%3AcrmInstance%3A%28DYNAMICS%2C362a3584-0d9b-44a1-a547-25de5cd95d08%29\u0027 \\\n-H \u0027Authorization: Bearer AQXt...\u0027 \\\n-H \u0027Content-Type=application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version=2.0.0\u0027  \\\n-d \u0027{\n  \u0022exportStartAt\u0022 : 1539027618223\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Methods",
+        "create",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 201 Created\nLocation: /crmDataValidationExportJobs/148\nX-RestLi-Id: 148\nX-RestLi-Protocol-Version: 2.0.0\nDate: Tue, 06 Nov 2018 21:19:13 GMT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "get",
+      "Anchor": "get",
+      "SectionPath": [
+        "Methods",
+        "get"
+      ],
+      "Text": "Get the CRM data validation export based on the export job id.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "get",
+      "Anchor": "get",
+      "SectionPath": [
+        "Methods",
+        "get"
+      ],
+      "Text": "GET /crmDataValidationExportJobs/{jobId}?crmInstanceId={crmInstanceId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "URI Parameters",
+      "Anchor": "uri-parameters-1",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "URI Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the export job. Job IDs will expire 1 week after they are created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmInstanceId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An URN containing the instance ID of the CRM you want the job to execute against and the CRM type in the format urn:li:crmInstance:(CRM_KEY,VALUE). The URN must be URL encoded in the query string. List of CRM Keys.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#crm-keys"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "CRM Instance URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Response Body"
+      ],
+      "Text": "CrmDataValidationExportJob",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/crmDataValidationExportJobs/148?crmInstanceId=urn%3Ali%3AcrmInstance%3A%28DYNAMICS%2C362a3584-0d9b-44a1-a547-25de5cd95d08%29\u0027 \\\n-H \u0027Authorization: Bearer AQXt...\u0027 \\\n-H \u0027X-RestLi-Protocol-Version=2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "Sample response for export job in processing:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022jobId\u0022: 148,\n  \u0022exportStartAt\u0022: 1538947151337,\n  \u0022exportEndAt\u0022: 1541539151570,\n  \u0022status\u0022: \u0022PROCESSING\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "Sample response for export job completed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022jobId\u0022: 148,\n  \u0022exportStartAt\u0022: 1538947151337,\n  \u0022exportEndAt\u0022: 1541539151570,\n  \u0022downloadUrls\u0022: [\u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFVMzGy8qJVMQAAAWbwbeHrHZG5mJkIDr2xq_Z3znIfOzp1FvApV-oL3Jd0ck\u0022],\n  \u0022nextExportStartAt\u0022: 1538947151337,\n  \u0022expireAt\u0022: 1541635625000,\n  \u0022status\u0022: \u0022COMPLETED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CrmDataValidationExportJob",
+      "Anchor": "crmdatavalidationexportjob",
+      "SectionPath": [
+        "Definitions",
+        "CrmDataValidationExportJob"
+      ],
+      "Text": "Contains response details of a crm data validation export. The job will be issued by customers in the LinkedIn Partner Program and their desire is to validate the data, such as if the job title is out-of-date, in their CRM system.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CrmDataValidationExportJob",
+      "Anchor": "crmdatavalidationexportjob",
+      "SectionPath": [
+        "Definitions",
+        "CrmDataValidationExportJob"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the export job. Job IDs will expire 1 week after they are created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "exportStartAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the export was started from (provided in initial request)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#time"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "exportEndAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time for the end bound of the export (provided in initial request). Defaults to current time of the initial request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#time"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status of the export. A list of possible statuses is in the Export Job Statuses table below",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CrmDataValidationExportJobStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#crmdatavalidationexportjobstatus"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of download URLs for the requested export. Displayed when the status is COMPLETED. URLs will expire 1 hour after they are created. Download all URLs to retrieve the entirety of the export",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#url"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when the downloadUrls expire. Displayed when the status is COMPLETED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#time"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "nextExportStartAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the next export\u0027s exportStartAt should be set to ensure continuity across jobs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation#time"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "CrmDataValidationExportJobStatus",
+      "Anchor": "crmdatavalidationexportjobstatus",
+      "SectionPath": [
+        "Definitions",
+        "CrmDataValidationExportJobStatus"
+      ],
+      "Text": "ENUM",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CrmDataValidationExportJobStatus",
+      "Anchor": "crmdatavalidationexportjobstatus",
+      "SectionPath": [
+        "Definitions",
+        "CrmDataValidationExportJobStatus"
+      ],
+      "Text": "Enumerate types of data validation export job status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CrmDataValidationExportJobStatus",
+      "Anchor": "crmdatavalidationexportjobstatus",
+      "SectionPath": [
+        "Definitions",
+        "CrmDataValidationExportJobStatus"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PROCESSING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job is currently being processed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPLETED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job has completed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_DUE_TO_INTERNAL_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job has failed due to internal error",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Time",
+      "Anchor": "time",
+      "SectionPath": [
+        "Definitions",
+        "Time"
+      ],
+      "Text": "Number of milliseconds since midnight, January 1, 1970 UTC. It must be a positive number.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Time",
+      "Anchor": "time",
+      "SectionPath": [
+        "Definitions",
+        "Time"
+      ],
+      "Text": "Reference Type: long",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Url",
+      "Anchor": "url",
+      "SectionPath": [
+        "Definitions",
+        "Url"
+      ],
+      "Text": "A short lived download URL for a resource. This URL requires authentication and Authorization header is required to download the resource.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Url",
+      "Anchor": "url",
+      "SectionPath": [
+        "Definitions",
+        "Url"
+      ],
+      "Text": "Reference Type: string",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Keys",
+      "Anchor": "crm-keys",
+      "SectionPath": [
+        "Definitions",
+        "CRM Keys"
+      ],
+      "Text": "A list of keys for the respective CRM systems, used in the first part of the CRM instance URN, and a description of the value to include in the value part of the URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CRM Keys",
+      "Anchor": "crm-keys",
+      "SectionPath": [
+        "Definitions",
+        "CRM Keys"
+      ],
+      "Text": "",
+      "Headers": [
+        "CRM System",
+        "Key",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Microsoft Dynamics 365",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMICS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The UUID for the Dynamics instance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Salesforce",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SFDC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Salesforce org ID for the Salesforce org.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response Code",
+        "Service Error Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad request, missing parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid export start date, export start is either greater than export end date or greater than the current time.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized (typically a result of token expiration)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application does not have enough access to complete the request. Application may not have the required scope to use the endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM instance and corresponding Sales Navigator contracts do not have CRM Sync enabled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM instance and corresponding Sales Navigator contracts do not have the Data Validation feature enabled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM instance cannot be accessed with the developer application used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Instance ID not found",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too many requests. The application is currently being throttled due to high call volume",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unhandled service error",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

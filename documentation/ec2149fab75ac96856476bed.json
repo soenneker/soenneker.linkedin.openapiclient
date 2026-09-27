@@ -1,0 +1,952 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+  "Title": "Talent Release Notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/developer-webhooks",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-function-codes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/build-awli-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/migration-testing-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-jobs-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/bind-customer-users",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/integration-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/new-widget-urls-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting/job-posting-field-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recommended-matches",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-history",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/prospect-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/recruiter-seatholders",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/unified-search",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Talent Release Notes",
+      "Anchor": "talent-release-notes",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent Release Notes",
+      "Anchor": "talent-release-notes",
+      "SectionPath": [],
+      "Text": "All unversioned (v2) API deprecation deadlines are extended to July 2028 to provide additional flexibility for partner integration teams. Connect with your LinkedIn Business Development partner before planning migration work.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner support channel update",
+      "Anchor": "partner-support-channel-update",
+      "SectionPath": [
+        "Partner support channel update"
+      ],
+      "Text": "All support references across LTS documentation that previously directed partners to Zendesk (linkedin.zendesk.com) have been updated to use the new partner support form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verifications",
+      "Anchor": "verifications",
+      "SectionPath": [
+        "Verifications"
+      ],
+      "Text": "New: Verifications - LinkedIn-issued identity and workplace trust signals are now available for both apply surfaces: Apply Connect with Verifications adds verificationData to the existing job application webhook payload, and Apply with LinkedIn with Verifications delivers a signed verificationData block to off-site applications. See the Verification data schema for the shared data model.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202604 (latest)",
+      "Anchor": "version-202604-latest",
+      "SectionPath": [
+        "Version 202604 (latest)"
+      ],
+      "Text": "RSC: The applications resource path changed from /rest/atsApplications to /rest/applications. For details, refer to RSC Release Notes \u2014 Version 202604.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "Recommended Matches and Unified Search sunset timeline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "Starting December 2025, support for these widgets will end for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "New RSC partners.\nExisting RSC partners when they move to the versioned Job Requisitions APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "Because some components of these widgets depend on the unversioned Job Postings API, both widgets will be sunset in line with the unversioned API sunset date of July 31, 2028.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202603",
+      "Anchor": "version-202603",
+      "SectionPath": [
+        "Version 202603"
+      ],
+      "Text": "RSC: New optional vanityIdentifier field added to jobRequisitions. See RSC Release Notes \u2014 Version 202603 for details.\nCRM Connect: Pipeline endpoints updated. See CRM Connect Release Notes for details.\nAPI versioning page updated: The LinkedIn Talent API versioning page now includes a supported versions table with release and sunset dates, an API version history table with endpoint changes and release notes links, upcoming sunset dates, migration guidance, and an FAQ section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202602",
+      "Anchor": "version-202602",
+      "SectionPath": [
+        "Version 202602"
+      ],
+      "Text": "\u26A0\uFE0F RSC: Breaking changes to candidates; integrations and integrationConfigurations renamed; data deletion APIs updated. See RSC Release Notes \u2014 Version 202602 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202512",
+      "Anchor": "version-202512",
+      "SectionPath": [
+        "Version 202512"
+      ],
+      "Text": "RSC: seatsV2, candidateNotes, and applicationNotes APIs updated. See RSC Release Notes \u2014 Version 202512 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202511",
+      "Anchor": "version-202511",
+      "SectionPath": [
+        "Version 202511"
+      ],
+      "Text": "RSC: entityAcls and entityAclAssignees migrated to versioned API. See RSC Release Notes \u2014 Version 202511 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202510",
+      "Anchor": "version-202510",
+      "SectionPath": [
+        "Version 202510"
+      ],
+      "Text": "RSC: mailStubs and attachments APIs updated. See RSC Release Notes \u2014 Version 202510 for details.\nRSC/CRM: New Child Application Secret Management APIs. See Application Secret Management for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202508.02",
+      "Anchor": "version-20250802",
+      "SectionPath": [
+        "Version 202508.02"
+      ],
+      "Text": "RSC: applicationInterviewFeedbacks API updated. See RSC Release Notes \u2014 Version 202508.02 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202508",
+      "Anchor": "version-202508",
+      "SectionPath": [
+        "Version 202508"
+      ],
+      "Text": "RSC: New attachments API for syncing resumes. See RSC Release Notes \u2014 Version 202508 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202507",
+      "Anchor": "version-202507",
+      "SectionPath": [
+        "Version 202507"
+      ],
+      "Text": "\u26A0\uFE0F RSC: Breaking changes to simpleJobPostings and exportedCandidates; applicationStage migrated to flat resource path; new exportedApplicationEvaluations endpoint added; multiple APIs migrated to rest/ base path. See RSC Release Notes \u2014 Version 202507 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version 202504",
+      "Anchor": "version-202504",
+      "SectionPath": [
+        "Version 202504"
+      ],
+      "Text": "RSC: New Job Requisitions APIs. See RSC Release Notes \u2014 Version 202504 for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API versioning announcement",
+      "Anchor": "api-versioning-announcement",
+      "SectionPath": [
+        "API versioning announcement"
+      ],
+      "Text": "A new API version 202504 is released as part of the April 2025 LinkedIn Talent APIs update. It aligns with the March 2025 updates, uses the base path https://api.linkedin.com/rest/, and includes no specific changes to the January 2025 APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioned API Transition",
+      "Anchor": "versioned-api-transition",
+      "SectionPath": [
+        "Versioned API Transition"
+      ],
+      "Text": "LinkedIn\u2019s Talent APIs are transitioning to a versioned API release cycle starting with the January 2025 release under a new base path: https://api.linkedin.com/rest/, see LTS API Documentation Versioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API and Migration Guide Updates",
+      "Anchor": "job-posting-api-and-migration-guide-updates",
+      "SectionPath": [
+        "Job Posting API and Migration Guide Updates"
+      ],
+      "Text": "API Jobs Migration Guide\n\nAdded details on migrating jobs from scraped sources to API job postings.\n\n\nJob Posting Customer Enablement\n\nAdded details on customer configuration and enablement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect Updates",
+      "Anchor": "apply-connect-updates",
+      "SectionPath": [
+        "Apply Connect Updates"
+      ],
+      "Text": "Apply Connect API\n\nAdded an configuration option for workExperienceQuestionSet and/or educationExperienceQuestionSet to allow setting a minimum number of subsections to be submitted alongside a question.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Client Secret Length Update",
+      "Anchor": "client-secret-length-update",
+      "SectionPath": [
+        "Client Secret Length Update"
+      ],
+      "Text": "The length of randomly generated client secret string for developer applications has been extended from 16 characters to 50 characters. This change does not affect existing client secrets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2024",
+      "Anchor": "march-2024",
+      "SectionPath": [
+        "March 2024"
+      ],
+      "Text": "Job Posting Status API\n\nAdded support for jobs with alternateLocations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provisioning API and Webhook Updates",
+      "Anchor": "provisioning-api-and-webhook-updates",
+      "SectionPath": [
+        "Provisioning API and Webhook Updates"
+      ],
+      "Text": "Provisioning API\n\nRemoving support for \u0022LinkedIn\u0022 to be used in name.\n\n\nDeveloperWebhooks API\n\nIntroduced new API to allow Apply Connect partners to look up and resolve webhook failures.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2023",
+      "Anchor": "november-2023",
+      "SectionPath": [
+        "November 2023"
+      ],
+      "Text": "SimpleJobPostingTask Schema\n\nAdd location field to response for jobs that use alternateLocations or have customer defined multiple location job rules.\nStarting June 30, 2024, we will no longer support countryCode, postalCode, workRemoteAllowed, and state schema field. Please use location instead of countryCode and postalCode. workplaceTypes instead of workRemoteAllowed. Do not send the state field as it will be automatically determined by LinkedIn, based on the jobPostingOperationType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2023",
+      "Anchor": "september-2023",
+      "SectionPath": [
+        "September 2023"
+      ],
+      "Text": "An important note has been added to indicate that we are currently not supporting new partners for AWLI as we actively work on developing a new version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "July 2023",
+      "Anchor": "july-2023",
+      "SectionPath": [
+        "July 2023"
+      ],
+      "Text": "Job Posting - Create Jobs API Error Details table updated\nApply Connect Receive Applications - Added tables for error response schema and standardized error codes that partners can return for various application delivery failures",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2023",
+      "Anchor": "june-2023",
+      "SectionPath": [
+        "June 2023"
+      ],
+      "Text": "RSC Sync Candidates - Updated description for externalProfileUrl and added linkedInProfileUrl in Request Body Fields.\nAdded new test case are for LinkedIn Partners\nAdded new Job Posting FAQ questions to Product FAQs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2023",
+      "Anchor": "may-2023",
+      "SectionPath": [
+        "May 2023"
+      ],
+      "Text": "Added new Integration and Support questions in Job Posting FAQ\nAdded new technical questions in RSC FAQ\nSync Premium Jobs API - Updated lifespan value of Task id to 30 days\nProduct and Technical FAQs questions updated for AWLI V3\nUpdates to alternateLocations and location schema fields in XML Feed and Job Posting API schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2023",
+      "Anchor": "april-2023",
+      "SectionPath": [
+        "April 2023"
+      ],
+      "Text": "Apply With LinkedIn - Partners who were using AWLI V 2.0 are now being automatically transitioned to AWLI V 3.0. No additional steps are necessary from our customers or partners\nUpdated Configure Customer Application and ATS Integration for widget screens and notes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2023",
+      "Anchor": "march-2023",
+      "SectionPath": [
+        "March 2023"
+      ],
+      "Text": "Removed companyDescription field desription from Job Posting API schema as it is no longer supported",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022",
+      "Anchor": "december-2022",
+      "SectionPath": [
+        "December 2022"
+      ],
+      "Text": "Job Posting XML Feed - Updated Limited Listings naming convenion to Basic Jobs\n\nUpdated requirements of fields: employmentStatus, experienceLevel, categories, workplaceTypes, description, location. companyJobCode, companyName, companyPageUrl, posterEmail.\n\n\nUpdated Limited Listings naming convenion to Basic Jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022",
+      "Anchor": "december-2022",
+      "SectionPath": [
+        "December 2022"
+      ],
+      "Text": "The following updates are made to Check Job Operation Task Status",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 2022",
+      "Anchor": "december-2022",
+      "SectionPath": [
+        "December 2022"
+      ],
+      "Text": "Lifespan for task IDs is increased to 30 days\nNew status values PROCESSED added",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Required for Widget URLs",
+      "Anchor": "migration-required-for-widget-urls",
+      "SectionPath": [
+        "December 2022",
+        "Migration Required for Widget URLs"
+      ],
+      "Text": "Partners using the Onboarding Widget, Profile Plugin, Recommended Matches Plugin, Unified Search Plugin are required to update the URLs used to load the widget by December 31, 2023.\nAll URLs in widget implementations in LinkedIn documentation have been updated to reflect the latest URLs.\nUtilizing the new URLs will produce faster load times for customers.\nPartners are required to update all implementations affected. See the New Widget URLs Migration Guide for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 2022",
+      "Anchor": "october-2022",
+      "SectionPath": [
+        "October 2022"
+      ],
+      "Text": "Added Guide to Build AWLI V3 Directly (for Existing Partners)\nMigration Testing Guide updated to include the following:\n\nInstructions to render and test AWLI V3\nStaffing and non-staffing customer setup\nStaffing and non-staffing consent screen examples\nMobile Devices Testing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2022",
+      "Anchor": "september-2022",
+      "SectionPath": [
+        "September 2022"
+      ],
+      "Text": "AWLI content updated from Cookie-based authentication to Oauth\nRestructured existing content for better user experience",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "August 2022",
+      "Anchor": "august-2022",
+      "SectionPath": [
+        "August 2022"
+      ],
+      "Text": "Please use Migration Testing Guide for information on how to migrate from Apply With Linkedin v2.0 to Apply With Linkedin v3.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "July 2022",
+      "Anchor": "july-2022",
+      "SectionPath": [
+        "July 2022"
+      ],
+      "Text": "Job Posting XML Feed - Updated Industry Codes for XML ingested jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2022",
+      "Anchor": "june-2022",
+      "SectionPath": [
+        "June 2022"
+      ],
+      "Text": "New customer onboarding widget for premium jobs. You can embed this widget in your platform to allow customers to log in and choose the premium job posting contract and enable premium job posting from the partner platform\nJob Posting API - Updated field definitions for industries and categories field",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2022",
+      "Anchor": "may-2022",
+      "SectionPath": [
+        "May 2022"
+      ],
+      "Text": "Apply With LinkedIn- As a part of migration, customer developer applications will be provisioned with the Apply With LinkedIn OAuth settings. This includes adding a new AWLI permission and two redirect URLs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2022",
+      "Anchor": "april-2022",
+      "SectionPath": [
+        "April 2022"
+      ],
+      "Text": "Apply With LinkedIn\n\nBeginning May 1, 2022, we will replace the current cookie-based Apply with LinkedIn experience with an OAuth model. Candidate consent will now be handled within the OAuth flow. We do not expect partners to do any work. The below images display the non-staffing and staffing variant of the consent screen.\n\nBeginning May 1, 2022, we will deprecate BUTTON and DATA mode. Multiple page flows like the Standard Flow and Create Account flow can still be supported but will require persisting profile data in the first page. Here\u0027s how a multi-page flow will look like with BUTTON_DATA mode: The Apply With LinkedIn widget in BUTTON_DATA mode is rendered on the first page of the job apply flow Candidate clicks the Apply With LinkedIn button LinkedIn sends the candidate\u0027s profile data to the callback method specified in the widget Partner stores/caches the LinkedIn profile data from the callback If the candidate\u0027s profile data needs to be populated on any subsequent pages, the partner uses the stored LinkedIn profile data from the first page When the candidate submits the job application, the partner loads the Apply With LinkedIn widget in CONVERSION mode \n\n\nJob Posting API TYPEAHEAD enum is removed from FormComponent Enum Values",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2022",
+      "Anchor": "march-2022",
+      "SectionPath": [
+        "March 2022"
+      ],
+      "Text": "Job Posting API -\n\nlocation field now supports \u0022COUNTRY CLUSTER\u0022\nUpdated field definitions for employmentStatus, experienceLevel, categories, and expiryAt fields\nAdded Legal Requirements for Job Posting API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "February 2022",
+      "Anchor": "february-2022",
+      "SectionPath": [
+        "February 2022"
+      ],
+      "Text": "Job Posting XML Feed - XML feed indexation for ATSs is increased from 12 hrs to every 6 hrs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2021",
+      "Anchor": "november-2021",
+      "SectionPath": [
+        "November 2021"
+      ],
+      "Text": "Job Posting XML Feed -\n\nXML feed indexation for ATSs has been increased from 24 hrs to every 12 hrs\nIntroduced workplaceTypes field in job posting schema to mark workplace nature of jobs. This field will be available for use by January 4, 2022\nIsRemote field to be sunset from November 1, 2022\nAdded customer facing FAQ section to Developer FAQs\n\n\nJob Posting API -\n\nIntroduced workplaceTypes field in job posting schema to mark workplace nature of jobs. This field will be available for use by January 4, 2022\nRevised description to include recommended value formats for location field\nAll partners need to adopt the latest Job Posting API\u0027s Schema by November 1, 2022. This means all partners should stop using fields mentioned in table below and marked with \u0027*\u0027 in the schema document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2021",
+      "Anchor": "november-2021",
+      "SectionPath": [
+        "November 2021"
+      ],
+      "Text": "A consolidated summary of the changes that the API partner needs to take care of is given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 2021",
+      "Anchor": "november-2021",
+      "SectionPath": [
+        "November 2021"
+      ],
+      "Text": "Job Posting API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "November 2021",
+      "Anchor": "november-2021",
+      "SectionPath": [
+        "November 2021"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Field",
+        "Change(s) Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "postalCode field will be deprecated. We recommend using the location field instead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "countryCode field will be deprecated. We recommend using the location field instead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workRemoteAllowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workRemoteAllowed field will be deprecated. We recommend using the workplaceTypes field instead. This field will be available for use by January 4, 2022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state field will be deprecated. We recommend using the jobPostingOperationType field instead. Thus, the state.listed field should be replaced by jobPostingOperationType.create and state.closed field should be replaced by jobPostingOperationType.close field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/simpleJobPostings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "expireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A value greater than 180 will not be allowed for the expireAt field. ATS should display to customers that the life of the job posting on LinkedIn will be 180 days and reflect the status as CLOSED on LinkedIn after 180 days. Once the job posting is closed on LinkedIn, it will be good to provide customers the support to RENEW the job posting or configure Auto-Renew in which case, ATS/Partner can renew the jobs proactively after 180 days if the job posting is still in LIVE/OPEN state on partner platform",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "August 2021",
+      "Anchor": "august-2021",
+      "SectionPath": [
+        "August 2021"
+      ],
+      "Text": "Single job posting API and schema introduced for Recruiter System Connect, Apply Connect and Premium Job Posting programs\nAll Job Posting API details now curated under the Job Postings API page\nAdded Job Posting API Certification\nAdded Job Posting FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2021",
+      "Anchor": "june-2021",
+      "SectionPath": [
+        "June 2021"
+      ],
+      "Text": "Sync Applications (Sync Data from ATS to LinkedIn) - Added section for Resume Upload and updated Sync Application Resumes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2021",
+      "Anchor": "may-2021",
+      "SectionPath": [
+        "May 2021"
+      ],
+      "Text": "Premium Job Postings now appears under Job Postings\nIntroduced XML feed based job ingestion documentation under Basic Jobs Documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2020",
+      "Anchor": "september-2020",
+      "SectionPath": [
+        "September 2020"
+      ],
+      "Text": "Premium Job Posting\n\nAdded support for workRemoteAllowed to post jobs that support remote work option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2020",
+      "Anchor": "june-2020",
+      "SectionPath": [
+        "June 2020"
+      ],
+      "Text": "Recommended Matches - Introducing new Recommended Matches integration for RSC.\nUnified Search - Introducing new Unified Search integration for RSC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2020",
+      "Anchor": "april-2020",
+      "SectionPath": [
+        "April 2020"
+      ],
+      "Text": "Recruiter System Connect\n\nAdded Required Fields table for all Recruiter System Connect APIs.\nProspect Notes - Added push event type of DELETE_PROSPECT_NOTE to process customer deleted Recruiter notes.\nSync Jobs - Added note on how to update job posting from PUBLIC to PRIVATE_TO_ATS_INTEGRATION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "February 2020",
+      "Anchor": "february-2020",
+      "SectionPath": [
+        "February 2020"
+      ],
+      "Text": "Premium Job Posting\n\nUpdated HTML tag supported fields, removed support for companyDescription.\nAdded support for trackingPixelUrl\nRemoved note to use the same access token between calls to /simpleJobPostings and /simpleJobPostingTasks to ensure a null response is not received.\nUpdated sample requests with valid locations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2019",
+      "Anchor": "may-2019",
+      "SectionPath": [
+        "May 2019"
+      ],
+      "Text": "Client Credential Flow (2-legged OAuth) - Updated HTTP method to POST.\n\nRecords Per Minute Throttle - Updated per minute throttle for batch calls to 10,000.\n\nInMail Stub Profiles - Updated response body fields to include headline and profileUrl.\n\nSync Candidates - Updated sample response with character encoding.\n\nPremium Job Posting\n\nUpdated sample requests with Industry URN.\nUpdated reference to Country Codes\nUpdated listingType is constant string of PREMIUM.\nUpdated Job Function Codes correcting invalid values.\nAdded note for same access token requirement to receive a proper response and to close jobs previously posted by /jobs using /jobs CLOSE call.\nCorrected valid HTML tag for underline Job Posting Field Schema\nAdded additional supported country codes Country Codes\n\n\nBind Customer Users - Updated reference to OAuth 2 Authorization Code flow\n\nProfile Plugin - Added note on member profile matching.\n\nSync Applications - Added optional note requirement for resume upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 2019",
+      "Anchor": "january-2019",
+      "SectionPath": [
+        "January 2019"
+      ],
+      "Text": "Premium Job Posting Field Schema - Added companyApplyUrl\nPremium Job Posting - Updated sample requests with companyApplyUrl.\nSync Candidates - Updated Retrieve Candidate Matches with field projection: matchedMembers, manualMatchedMember.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "Push Events - Added note that we are unable to share our IP range to validate incoming push events.\nSync Jobs - Updated sample request job description to meet minimum character limit of 100\nBind Customer Users - Added note that Person URN should be used to match the ATS user to Recruiter seatholders.\nRecruiter Seatholders - Added note that Person URN should be used to match the ATS user to Recruiter seatholders.\nIntegration Types - Updated descriptions for Integration Configuration Keys\nInMail History - Added note that the id returned is a unique identifier for each InMail event.\nProspect Notes - Added note regarding timestamps and status\nProfile Plugin - Updated references from \u0022https://www.linkedin.com/uas/in.js\u0022 to \u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022. Example of the change below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: \u003Center api key here\u003E\n  extensions: HcmWidget@https://www.linkedin.com/recruiter/widget/hcm\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "Customer Configuration Plugin - Updated references from \u0022https://www.linkedin.com/uas/in.js\u0022 to \u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022. Example of the change below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "August 2018",
+      "Anchor": "august-2018",
+      "SectionPath": [
+        "August 2018"
+      ],
+      "Text": "InMail History - Removed note that InMail content is only visible to the sender/receiver of the particular InMail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "June 2018",
+      "Anchor": "june-2018",
+      "SectionPath": [
+        "June 2018"
+      ],
+      "Text": "Recruiter System Connect - Updated sample responses for endpoints which support pagination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2018",
+      "Anchor": "may-2018",
+      "SectionPath": [
+        "May 2018"
+      ],
+      "Text": "Apply With LinkedIn - Added an illustration of the rendered plugin for customers that will use profile info across multiple jobs, i.e. Search \u0026 Staffing agencies.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 2018",
+      "Anchor": "april-2018",
+      "SectionPath": [
+        "April 2018"
+      ],
+      "Text": "ATS Integration Configuration Plugin - Added note on widget reload for single page JS applications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "Referrals - Updated communication that we are no longer accepting new LinkedIn Referrals integrations\nInMail History - Added note that InMail content is only visible to the sender/receiver of the particular InMail.\nProfile Plugin - Added callback function for linking and unlinking profiles. See example below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://www.linkedin.com/uas/in.js\u0022\u003E\n  api_key: \u003Center api key here\u003E\n  extensions: HcmWidget@https://www.linkedin.com/recruiter/widget/hcm\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/HcmWidget\u0022\n  data-widget-type=\u0022ATS\u0022\n  data-ats-candidate-id=\u0022{your unique candidate id}\u0022\n  data-integration-context=\u0022{customer\u0027s integration context URN}\u0022\n  data-show-unlink-url=\u0022{true|false}\u0022\n  data-confirm-unlink=\u0022{true|false}\u0022\n  data-onlink=\u0022link\u0022\n  data-onunlink=\u0022unlink\u0022  \n  data-width=\u0022{Width}\u0022\u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\n  function link(profile) {\n     console.log(\u0022Link callback\u0022, memberToken);\n  }\n  function unlink(profile) {\n     console.log(\u0022Unlink callback\u0022, memberToken);\n  }\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "Records Per Minute Throttle - In addition to our daily call limits we have a per minute throttle applied to batch calls. See example below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "March 2018",
+      "Anchor": "march-2018",
+      "SectionPath": [
+        "March 2018"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2,000",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

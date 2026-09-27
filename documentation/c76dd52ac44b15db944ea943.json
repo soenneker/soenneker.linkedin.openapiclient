@@ -1,0 +1,560 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+  "Title": "Sign In with LinkedIn using OpenID Connect",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "We are now offering a way for your apps to authenticate members using OpenID Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is OpenID Connect",
+      "Anchor": "what-is-openid-connect",
+      "SectionPath": [
+        "What is OpenID Connect"
+      ],
+      "Text": "OpenID Connect (OIDC) is an identity layer built on top of OAuth 2.0, enabling applications to authenticate members and obtain lite profile information about the member. OIDC will simplify the partner integration onboarding experience and eliminate dependencies on making additional API calls to find who the authenticated member is.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is OpenID Connect",
+      "Anchor": "what-is-openid-connect",
+      "SectionPath": [
+        "What is OpenID Connect"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is OpenID Connect",
+      "Anchor": "what-is-openid-connect",
+      "SectionPath": [
+        "What is OpenID Connect"
+      ],
+      "Text": "Keep in mind Sign In with LinkedIn using OpenID Connect does not verify user identities and should not be marketed as such.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "New members logging in to your service for the first time will need to follow the Authenticating with OAuth 2.0 Guide. When requesting the authorization code in Step 2 of the OAuth 2.0 Guide, make sure you use the OpenID scope openid to get the ID Token. We are also introducing new scopes profile and email.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "openid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to indicate the application wants to use OIDC to authenticate the member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve the member\u0027s lite profile including their id, name, and profile picture.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve the member\u0027s email address.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "After successful authentication, you will receive the member\u0027s access token and ID token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "If your application does not have these permissions provisioned, you can request access through the Developer Portal. Select your app from My Apps, navigate to the Products tab, and request the Sign in with LinkedIn using OpenID Connect product.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving Member Profiles Using ID Tokens",
+      "Anchor": "retrieving-member-profiles-using-id-tokens",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens"
+      ],
+      "Text": "The primary extension that OIDC adds to OAuth 2.0 is enabling members to be Authenticated using the ID Token data structure. The ID Token is a security token that contains Claims about the Authentication of a member by an Authorization Server when using a Client, and potentially other requested Claims. The ID Token is represented as a JSON Web Token (JWT). With OIDC, you are now able to extract the member details from the ID Token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ID Token Payload",
+      "Anchor": "id-token-payload",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "ID Token Payload"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "iss",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The authorization server\u2019s Identifier of the response https://www.linkedin.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sub",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User identifier",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "aud",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "client_id of Relying party/caller Application guarantees user authentication for itself.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "iat",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID Token issue time",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "exp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the expiration time of the token. The relying party processing this token should reject it once the expiration time is reached.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating ID Tokens",
+      "Anchor": "validating-id-tokens",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Validating ID Tokens"
+      ],
+      "Text": "ID Tokens can be validated using the metadata provided by discovery document which contains OAuth endpoints, public keys and claims.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Validating ID Tokens",
+      "Anchor": "validating-id-tokens",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Validating ID Tokens"
+      ],
+      "Text": "{\n    \u0022issuer\u0022: \u0022https://www.linkedin.com\u0022,\n    \u0022authorization_endpoint\u0022: \u0022https://www.linkedin.com/oauth/v2/authorization\u0022,\n    \u0022token_endpoint\u0022: \u0022https://www.linkedin.com/oauth/v2/accessToken\u0022,\n    \u0022userinfo_endpoint\u0022: \u0022https://api.linkedin.com/v2/userinfo\u0022,\n    \u0022jwks_uri\u0022: \u0022https://www.linkedin.com/oauth/openid/jwks\u0022,\n    \u0022response_types_supported\u0022: [\n        \u0022code\u0022\n    ],\n    \u0022subject_types_supported\u0022: [\n        \u0022pairwise\u0022\n    ],\n    \u0022id_token_signing_alg_values_supported\u0022: [\n        \u0022RS256\u0022\n    ],\n    \u0022scopes_supported\u0022: [\n        \u0022openid\u0022,\n        \u0022profile\u0022,\n        \u0022email\u0022\n    ],\n    \u0022claims_supported\u0022: [\n        \u0022iss\u0022,\n        \u0022aud\u0022,\n        \u0022iat\u0022,\n        \u0022exp\u0022,\n        \u0022sub\u0022,\n        \u0022name\u0022,\n        \u0022given_name\u0022,\n        \u0022family_name\u0022,\n        \u0022picture\u0022,\n        \u0022email\u0022,\n        \u0022email_verified\u0022,\n        \u0022locale\u0022\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validating ID Tokens",
+      "Anchor": "validating-id-tokens",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Validating ID Tokens"
+      ],
+      "Text": "JWKS_URI provided in the discovery document, can be used for signature verification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request to retreive member details",
+      "Anchor": "api-request-to-retreive-member-details",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "API Request to retreive member details"
+      ],
+      "Text": "In addition to the JWT received, you can also call userinfo endpoint to retrieve the member details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request to retreive member details",
+      "Anchor": "api-request-to-retreive-member-details",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "API Request to retreive member details"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/userinfo\nAuthorization: Bearer \u003Caccess token\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Schema",
+      "Anchor": "response-body-schema",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Response Body Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sub",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Subject Identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "given_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s first name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "family_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s last name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "picture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s profile picture URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s primary e-mail address. Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email_verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicator that Member\u0027s primary email has been verified. Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Body Schema",
+      "Anchor": "response-body-schema",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Response Body Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Body Schema",
+      "Anchor": "response-body-schema",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Response Body Schema"
+      ],
+      "Text": "The \u0027email\u0027 and \u0027email_verified\u0027 fields are optional and may not be included in all responses. Ensure your application can handle cases where these fields are absent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Sample API Response"
+      ],
+      "Text": "{\n    \u0022sub\u0022: \u0022782bbtaQ\u0022,\n    \u0022name\u0022: \u0022John Doe\u0022,\n    \u0022given_name\u0022: \u0022John\u0022,\n    \u0022family_name\u0022: \u0022Doe\u0022,\n    \u0022picture\u0022: \u0022https://media.licdn-ei.com/dms/image/C5F03AQHqK8v7tB1HCQ/profile-displayphoto-shrink_100_100/0/\u0022,\n    \u0022locale\u0022: \u0022en-US\u0022,\n    \u0022email\u0022: \u0022doe@email.com\u0022,\n    \u0022email_verified\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Getting Started",
+        "Retrieving Member Profiles Using ID Tokens",
+        "Sample API Response"
+      ],
+      "Text": "With the member\u0027s profile information successfully retrieved, the sign-in process is now complete and your member can continue to enjoy their personalized experience with your site or application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Resources",
+      "Anchor": "image-resources",
+      "SectionPath": [
+        "Additional Resources",
+        "Image Resources"
+      ],
+      "Text": "Download official Sign In with LinkedIn button images in multiple sizes and formats from the LinkedIn Brand Resources archive for use within your site or application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Additional Resources",
+        "Rate Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Type",
+        "Daily Request Limit (UTC)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500 Requests",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000 Requests",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

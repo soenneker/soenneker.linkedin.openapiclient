@@ -1,0 +1,167 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile",
+  "Title": "Basic Profile Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Basic Profile Fields",
+      "Anchor": "basic-profile-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifying value for the member. Referenced as personId in other API documentation pages. Can also be referenced as an URN such as urn:li:person:{personId}. This value is linked to your specific application. Any attempts to use it with a different application will result in a 404 error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable first name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the firstName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable last name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the lastName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable maiden name of the member. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedMaidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the maidenName field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable headline of member\u0027s choosing. Represented as a MultiLocaleString object type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedHeadline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized version of the headline field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata about the member\u0027s picture in the profile. This will replace pictureInfo. See Profile Picture Fields for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The vanity name of the member. Vanity name is represented as a string is used for the public profile URL: www.linkedin.com/in/{vanityName}.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

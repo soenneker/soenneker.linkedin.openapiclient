@@ -1,0 +1,539 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+  "Title": "Response Decoration",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Response Decoration",
+      "Anchor": "response-decoration",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Decoration",
+      "Anchor": "response-decoration",
+      "SectionPath": [],
+      "Text": "Deprecation Notice \nThe use of Response Decoration is deprecated in some versions of LMS APIs. Please refer the Recent Changes page for information on the specific API versions that are affected by this deprecation. You can also refer to this video to understand how to handle the deprecation of API decoration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Decoration",
+      "Anchor": "response-decoration",
+      "SectionPath": [],
+      "Text": "When you call an API, the response may contain URNs referencing the different types of objects provided by LinkedIn\u0027s services. These URNs are valuable on their own; however, there may be instances when you want to expand a URN and access the values associated with the entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Decoration",
+      "Anchor": "response-decoration",
+      "SectionPath": [],
+      "Text": "Decoration is a mechanism in LinkedIn\u0027s APIs to fetch data belonging to a URN object without having to make an extra call to that object\u0027s API. Decoration uses a syntax very similar to LinkedIn\u0027s Field Projections.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Decoration",
+      "Anchor": "response-decoration",
+      "SectionPath": [],
+      "Text": "See the following example of a service that returns URN references to another type of entity:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: 1234,\n    \u0022relatedEntity\u0022: \u0022urn:li:relatedEntity:6789\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "Rather than taking the relatedEntity URN value and making a second GET call to its parent service, you can use decoration to define how you\u0027d like the relatedEntity object to be expanded within the original API request.\u00A0To do this, append the ~ character to the\u00A0entity you wish to expand, and then provide the field projection in parentheses afterwards. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}/1234\u0026projection=(id,relatedEntity~($URN,foo,bar))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: 1234,\n    \u0022relatedEntity\u0022: {\n        \u0022$URN\u0022: \u0022urn:li:relatedEntity:6789\u0022,\n        \u0022bar\u0022: \u0022bloop\u0022,\n        \u0022foo\u0022: \u0022bleep\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decorating within Arrays/Lists",
+      "Anchor": "decorating-within-arrayslists",
+      "SectionPath": [
+        "Decorating within Arrays/Lists"
+      ],
+      "Text": "In some circumstances, a service might return a collection of URNs that are not all of the same type.\u00A0In this case, provide multiple decoration instructions to tell the service how to deal with any potential URN type that is returned. See the following sample request and the list of different URN types that it returns within entities:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Decorating within Arrays/Lists",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}/1234",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Data",
+      "Anchor": "sample-data",
+      "SectionPath": [
+        "Decorating within Arrays/Lists",
+        "Sample Data"
+      ],
+      "Text": "{\n    \u0022entities\u0022: [\n        \u0022urn:li:foo:123\u0022,\n        \u0022urn:li:bar:234\u0022,\n        \u0022urn:li:baz:345\u0022\n    ],\n    \u0022id\u0022: 1234\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data",
+      "SectionPath": [
+        "Decorating within Arrays/Lists",
+        "Sample Data"
+      ],
+      "Text": "To decorate each of the foo, bar, and baz URN types in this response, use the following projection syntax in your request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Decorating within Arrays/Lists",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/{service}/1234?projection=entities*~foo(a,b)~bar(c,d)~baz(e,f))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Decorating within Arrays/Lists",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022entities\u0022: [\n        {\n            \u0022a\u0022: 1,\n            \u0022b\u0022: 2\n        },\n        {\n            \u0022c\u0022: 10,\n            \u0022d\u0022: 20\n        },\n        {\n            \u0022e\u0022: 100,\n            \u0022f\u0022: 200\n        }\n    ],\n    \u0022id\u0022: 1234\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Projections",
+      "Anchor": "sample-projections",
+      "SectionPath": [
+        "Sample Projections"
+      ],
+      "Text": "Consider the following data model of a sample resource and review the below samples showing how to access various parts of this data in order to decorate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Projections",
+      "Anchor": "sample-projections",
+      "SectionPath": [
+        "Sample Projections"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022current_position\u0022: {\n            \u0022company\u0022: \u0022urn:li:company:1\u0022,\n            \u0022from\u0022: \u00222009\u0022,\n            \u0022job_title\u0022: \u0022SWE\u0022\n        },\n        \u0022firstname\u0022: \u0022First Name\u0022,\n        \u0022following_companies\u0022: [\n            \u0022urn:li:company:1\u0022,\n            \u0022urn:li:company:2\u0022\n        ],\n        \u0022lastname\u0022: \u0022Last Name\u0022,\n        \u0022messages\u0022: {\n            \u0022urn:li:message:1\u0022: {\n                \u0022bcc\u0022: [\n                    \u0022urn:li:person:1\u0022,\n                    \u0022urn:li:person:39\u0022\n                ],\n                \u0022content\u0022: \u0022xyz\u0022,\n                \u0022from\u0022: \u0022urn:li:person:99\u0022\n            },\n            \u0022urn:li:message:2\u0022: {\n                \u0022bcc\u0022: [\n                    \u0022urn:li:person:1\u0022,\n                    \u0022urn:li:person:80\u0022\n                ],\n                \u0022content\u0022: \u0022abc\u0022,\n                \u0022count\u0022: 1929\n            }\n        },\n        \u0022phone\u0022: \u0022200-100-200\u0022,\n        \u0022position_history\u0022: [\n            {\n                \u0022company\u0022: \u0022urn:li:company:4888383\u0022,\n                \u0022from\u0022: \u00222006\u0022,\n                \u0022job_title\u0022: \u0022SSE\u0022,\n                \u0022to\u0022: \u00222009\u0022\n            },\n            {\n                \u0022company\u0022: \u0022urn:li:company:39939\u0022,\n                \u0022from\u0022: \u00221999\u0022,\n                \u0022job_title\u0022: \u0022SE\u0022,\n                \u0022to\u0022: \u00222006\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing URN within a child object",
+      "Anchor": "accessing-urn-within-a-child-object",
+      "SectionPath": [
+        "Accessing URN within a child object"
+      ],
+      "Text": "(person(current_position(company)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Accessing URN within a child object",
+      "Anchor": "accessing-urn-within-a-child-object",
+      "SectionPath": [
+        "Accessing URN within a child object"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022current_position\u0022: {\n            \u0022company\u0022: \u0022urn:li:company:1\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing URNs within an array of child objects",
+      "Anchor": "accessing-urns-within-an-array-of-child-objects",
+      "SectionPath": [
+        "Accessing URNs within an array of child objects"
+      ],
+      "Text": "(person(position_history(*(company))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Accessing URNs within an array of child objects",
+      "Anchor": "accessing-urns-within-an-array-of-child-objects",
+      "SectionPath": [
+        "Accessing URNs within an array of child objects"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022position_history\u0022: [\n            {\n                \u0022company\u0022: \u0022urn:li:company:4888383\u0022\n            },\n            {\n                \u0022company\u0022: \u0022urn:li:company:39939\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing URNs within an array of URNs",
+      "Anchor": "accessing-urns-within-an-array-of-urns",
+      "SectionPath": [
+        "Accessing URNs within an array of URNs"
+      ],
+      "Text": "(person(following_companies(*)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Accessing URNs within an array of URNs",
+      "Anchor": "accessing-urns-within-an-array-of-urns",
+      "SectionPath": [
+        "Accessing URNs within an array of URNs"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022following_companies\u0022: [\n            \u0022urn:li:company:1\u0022,\n            \u0022urn:li:company:2\u0022\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Selecting a single child field with a URN and expanding the URN",
+      "Anchor": "selecting-a-single-child-field-with-a-urn-and-expanding-the-urn",
+      "SectionPath": [
+        "Selecting a single child field with a URN and expanding the URN"
+      ],
+      "Text": "(person(current_position(company~)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Selecting a single child field with a URN and expanding the URN",
+      "Anchor": "selecting-a-single-child-field-with-a-urn-and-expanding-the-urn",
+      "SectionPath": [
+        "Selecting a single child field with a URN and expanding the URN"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022current_position\u0022: {\n            \u0022company\u0022: \u0022urn:li:company:1\u0022,\n            \u0022company~\u0022: {\n                \u0022active\u0022: true,\n                \u0022administrators\u0022: [\n                    \u0022urn:li:person:6611647\u0022\n                ],\n                \u0022allEmployeesAsAdmins\u0022: false,\n                \u0022attributes\u0022: {\n                    \u0022disableThirdPartyNews\u0022: false,\n                    \u0022enableStatusUpdate\u0022: false,\n                    \u0022owns300x250RightAdSlot\u0022: false,\n                    \u0022paidCareers\u0022: false,\n                    \u0022paidGoldPlusCareers\u0022: false,\n                    \u0022paidPlatinumCareers\u0022: false,\n                    \u0022paidProducts\u0022: false,\n                    \u0022paidSilverCareers\u0022: false,\n                    \u0022paidSilverPlusCareers\u0022: false,\n                    \u0022showAnalytics\u0022: false,\n                    \u0022showBrandTree\u0022: false,\n                    \u0022showNews\u0022: true,\n                    \u0022showPastEmployees\u0022: false,\n                    \u0022silverProducts\u0022: false,\n                    \u0022useParentCareers\u0022: false\n                },\n                \u0022companyId\u0022: 1,\n                \u0022companyType\u0022: \u0022PUBLIC_COMPANY\u0022,\n                \u0022creationTime\u0022: 1375816467585,\n                \u0022creator\u0022: \u0022urn:li:person:6611647\u0022,\n                \u0022dataVersion\u0022: 4,\n                \u0022descriptions\u0022: [\n                    {\n                        \u0022description\u0022: \u0022test test test testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest test\u0022,\n                        \u0022locale\u0022: \u0022en_US\u0022\n                    }\n                ],\n                \u0022employeeCountRange\u0022: \u0022MYSELF_ONLY\u0022,\n                \u0022heroImage\u0022: {\n                    \u0022cropHeight\u0022: 220,\n                    \u0022cropWidth\u0022: 646,\n                    \u0022cropXPosition\u0022: 0,\n                    \u0022cropYPosition\u0022: 0,\n                    \u0022croppedImage\u0022: \u0022urn:li:media:/p/2/005/045/187/3d49ef0.png\u0022,\n                    \u0022height\u0022: 220,\n                    \u0022uncroppedImage\u0022: \u0022urn:li:media:/p/2/005/045/187/3b333d8.png\u0022,\n                    \u0022width\u0022: 646\n                },\n                \u0022images\u0022: [\n                    {\n                        \u0022originalMedia\u0022: \u0022urn:li:media:/p/2/005/045/188/1d5f329.png\u0022,\n                        \u0022type\u0022: \u0022SQUARE_LOGO_LEGACY\u0022,\n                        \u0022urn\u0022: \u0022urn:li:media:/p/2/005/045/188/1d5f329.png\u0022\n                    },\n                    {\n                        \u0022originalMedia\u0022: \u0022urn:li:media:/p/2/005/045/188/24809b3.png\u0022,\n                        \u0022type\u0022: \u0022LOGO_LEGACY\u0022,\n                        \u0022urn\u0022: \u0022urn:li:media:/p/2/005/045/188/24809b3.png\u0022\n                    }\n                ],\n                \u0022industries\u0022: [\n                    \u0022ACCOUNTING\u0022\n                ],\n                \u0022lastEditor\u0022: \u0022urn:li:person:6611647\u0022,\n                \u0022lastModifiedTime\u0022: 1375816467585,\n                \u0022logo\u0022: \u0022urn:li:media:/p/2/005/045/188/24809b3.png\u0022,\n                \u0022names\u0022: [\n                    {\n                        \u0022active\u0022: true,\n                        \u0022locale\u0022: \u0022en_US\u0022,\n                        \u0022name\u0022: \u0022r-NQkR5TwJ\u0022,\n                        \u0022type\u0022: \u0022CANONICAL\u0022\n                    }\n                ],\n                \u0022organizationalEntity\u0022: \u0022urn:li:organization:1\u0022,\n                \u0022squareLogo\u0022: \u0022urn:li:media:/p/2/005/045/188/1d5f329.png\u0022,\n                \u0022status\u0022: \u0022OPERATING\u0022,\n                \u0022stockSymbol\u0022: \u0022\u0022,\n                \u0022twitterId\u0022: \u0022\u0022,\n                \u0022universalName\u0022: \u0022r-nqkr5twj\u0022,\n                \u0022websiteUrl\u0022: \u0022https://www.whatismyreferer.com/\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Selecting all child fields and fully expanding a child field containing a URN",
+      "Anchor": "selecting-all-child-fields-and-fully-expanding-a-child-field-containing-a-urn",
+      "SectionPath": [
+        "Selecting all child fields and fully expanding a child field containing a URN"
+      ],
+      "Text": "(person(current_position(*,company~)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Selecting all child fields and fully expanding a child field containing a URN",
+      "Anchor": "selecting-all-child-fields-and-fully-expanding-a-child-field-containing-a-urn",
+      "SectionPath": [
+        "Selecting all child fields and fully expanding a child field containing a URN"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022current_position\u0022: {\n            \u0022company\u0022: \u0022urn:li:company:1\u0022,\n            \u0022company~\u0022: {\n                \u0022active\u0022: true,\n                \u0022administrators\u0022: [\n                    \u0022urn:li:person:6611647\u0022\n                ],\n                \u0022allEmployeesAsAdmins\u0022: false,\n                \u0022attributes\u0022: {\n                    \u0022disableThirdPartyNews\u0022: false,\n                    \u0022enableStatusUpdate\u0022: false,\n                    \u0022owns300x250RightAdSlot\u0022: false,\n                    \u0022paidCareers\u0022: false,\n                    \u0022paidGoldPlusCareers\u0022: false,\n                    \u0022paidPlatinumCareers\u0022: false,\n                    \u0022paidProducts\u0022: false,\n                    \u0022paidSilverCareers\u0022: false,\n                    \u0022paidSilverPlusCareers\u0022: false,\n                    \u0022showAnalytics\u0022: false,\n                    \u0022showBrandTree\u0022: false,\n                    \u0022showNews\u0022: true,\n                    \u0022showPastEmployees\u0022: false,\n                    \u0022silverProducts\u0022: false,\n                    \u0022useParentCareers\u0022: false\n                },\n                \u0022companyId\u0022: 1,\n                \u0022companyType\u0022: \u0022PUBLIC_COMPANY\u0022,\n                \u0022creationTime\u0022: 1375816467585,\n                \u0022creator\u0022: \u0022urn:li:person:6611647\u0022,\n                \u0022dataVersion\u0022: 4,\n                \u0022descriptions\u0022: [\n                    {\n                        \u0022description\u0022: \u0022test test test testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest testtest test\u0022,\n                        \u0022locale\u0022: \u0022en_US\u0022\n                    }\n                ],\n                \u0022employeeCountRange\u0022: \u0022MYSELF_ONLY\u0022,\n                \u0022heroImage\u0022: {\n                    \u0022cropHeight\u0022: 220,\n                    \u0022cropWidth\u0022: 646,\n                    \u0022cropXPosition\u0022: 0,\n                    \u0022cropYPosition\u0022: 0,\n                    \u0022croppedImage\u0022: \u0022urn:li:media:/p/2/005/045/187/3d49ef0.png\u0022,\n                    \u0022height\u0022: 220,\n                    \u0022uncroppedImage\u0022: \u0022urn:li:media:/p/2/005/045/187/3b333d8.png\u0022,\n                    \u0022width\u0022: 646\n                },\n                \u0022images\u0022: [\n                    {\n                        \u0022originalMedia\u0022: \u0022urn:li:media:/p/2/005/045/188/1d5f329.png\u0022,\n                        \u0022type\u0022: \u0022SQUARE_LOGO_LEGACY\u0022,\n                        \u0022urn\u0022: \u0022urn:li:media:/p/2/005/045/188/1d5f329.png\u0022\n                    },\n                    {\n                        \u0022originalMedia\u0022: \u0022urn:li:media:/p/2/005/045/188/24809b3.png\u0022,\n                        \u0022type\u0022: \u0022LOGO_LEGACY\u0022,\n                        \u0022urn\u0022: \u0022urn:li:media:/p/2/005/045/188/24809b3.png\u0022\n                    }\n                ],\n                \u0022industries\u0022: [\n                    \u0022ACCOUNTING\u0022\n                ],\n                \u0022lastEditor\u0022: \u0022urn:li:person:6611647\u0022,\n                \u0022lastModifiedTime\u0022: 1375816467585,\n                \u0022logo\u0022: \u0022urn:li:media:/p/2/005/045/188/24809b3.png\u0022,\n                \u0022names\u0022: [\n                    {\n                        \u0022active\u0022: true,\n                        \u0022locale\u0022: \u0022en_US\u0022,\n                        \u0022name\u0022: \u0022r-NQkR5TwJ\u0022,\n                        \u0022type\u0022: \u0022CANONICAL\u0022\n                    }\n                ],\n                \u0022organizationalEntity\u0022: \u0022urn:li:organization:1\u0022,\n                \u0022squareLogo\u0022: \u0022urn:li:media:/p/2/005/045/188/1d5f329.png\u0022,\n                \u0022status\u0022: \u0022OPERATING\u0022,\n                \u0022stockSymbol\u0022: \u0022\u0022,\n                \u0022twitterId\u0022: \u0022\u0022,\n                \u0022universalName\u0022: \u0022r-nqkr5twj\u0022,\n                \u0022websiteUrl\u0022: \u0022https://www.whatismyreferer.com/\u0022\n            },\n            \u0022from\u0022: \u00222009\u0022,\n            \u0022job_title\u0022: \u0022SWE\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Selecting all child fields and expanding child field with a URN for a single value",
+      "Anchor": "selecting-all-child-fields-and-expanding-child-field-with-a-urn-for-a-single-value",
+      "SectionPath": [
+        "Selecting all child fields and expanding child field with a URN for a single value"
+      ],
+      "Text": "(person(current_position(*,company~(vanityName))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Selecting all child fields and expanding child field with a URN for a single value",
+      "Anchor": "selecting-all-child-fields-and-expanding-child-field-with-a-urn-for-a-single-value",
+      "SectionPath": [
+        "Selecting all child fields and expanding child field with a URN for a single value"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022current_position\u0022: {\n            \u0022company\u0022: \u0022urn:li:company:1\u0022,\n            \u0022company~\u0022: {},\n            \u0022from\u0022: \u00222009\u0022,\n            \u0022job_title\u0022: \u0022SWE\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing complex type object",
+      "Anchor": "accessing-complex-type-object",
+      "SectionPath": [
+        "Accessing complex type object"
+      ],
+      "Text": "When a URN is a field\u2019s key and the value is an object, it is called a complex type object. In the following example, the messages field maps to an object with 2 fields that are MessageUrns. These 2 MessageUrns are keys that map to objects containing data such as bcc,count, and content. To access the bcc values for each MessageUrn, use the decoration (person(messages()))(person(messages(*(from,bcc(*))))).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing complex type object",
+      "Anchor": "accessing-complex-type-object",
+      "SectionPath": [
+        "Accessing complex type object"
+      ],
+      "Text": "(person(messages()))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Accessing complex type object",
+      "Anchor": "accessing-complex-type-object",
+      "SectionPath": [
+        "Accessing complex type object"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022messages\u0022: {\n            \u0022urn:li:message:1\u0022: {\n                \u0022bcc\u0022: [\n                    \u0022urn:li:personr:1\u0022,\n                    \u0022urn:li:person:39\u0022\n                ],\n                \u0022content\u0022: \u0022xyz\u0022,\n                \u0022from\u0022: \u0022urn:li:person:99\u0022\n            },\n            \u0022urn:li:message:2\u0022: {\n                \u0022bcc\u0022: [\n                    \u0022urn:li:person:1\u0022,\n                    \u0022urn:li:person:80\u0022\n                ],\n                \u0022content\u0022: \u0022abc\u0022,\n                \u0022count\u0022: 1929\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing complex type object",
+      "Anchor": "accessing-complex-type-object",
+      "SectionPath": [
+        "Accessing complex type object"
+      ],
+      "Text": "(person(messages(*(from,bcc(*)))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Accessing complex type object",
+      "Anchor": "accessing-complex-type-object",
+      "SectionPath": [
+        "Accessing complex type object"
+      ],
+      "Text": "{\n    \u0022person\u0022: {\n        \u0022messages\u0022: {\n            \u0022urn:li:message:1\u0022: {\n                \u0022bcc\u0022: [\n                    \u0022urn:li:person:1\u0022,\n                    \u0022urn:li:person:39\u0022\n                ],\n                \u0022from\u0022: \u0022urn:li:person:99\u0022\n            },\n            \u0022urn:li:message:2\u0022: {\n                \u0022bcc\u0022: [\n                    \u0022urn:li:person:1\u0022,\n                    \u0022urn:li:person:80\u0022\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing all URNs within any array from a BATCH_GET call",
+      "Anchor": "accessing-all-urns-within-any-array-from-a-batch_get-call",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call"
+      ],
+      "Text": "Note that a BATCH_GET call returns a results field by default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing all URNs within any array from a BATCH_GET call",
+      "Anchor": "accessing-all-urns-within-any-array-from-a-batch_get-call",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call"
+      ],
+      "Text": "(results(*(person(following_companies(*)))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Data",
+      "Anchor": "sample-data-1",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call",
+        "Sample Data"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022123123\u0022: {\n            \u0022person\u0022: {\n                \u0022current_position\u0022: {\n                    \u0022company\u0022: \u0022urn:li:company:1\u0022,\n                    \u0022from\u0022: \u00222009\u0022,\n                    \u0022job_title\u0022: \u0022SWE\u0022\n                },\n                \u0022firstname\u0022: \u0022First Name\u0022,\n                \u0022following_companies\u0022: [\n                    \u0022urn:li:company:1\u0022,\n                    \u0022urn:li:company:2\u0022\n                ],\n                \u0022lastname\u0022: \u0022Last Name\u0022,\n                \u0022messages\u0022: {\n                    \u0022urn:li:message:1\u0022: {\n                        \u0022bcc\u0022: [\n                            \u0022urn:li:person:1\u0022,\n                            \u0022urn:li:person:39\u0022\n                        ],\n                        \u0022content\u0022: \u0022xyz\u0022,\n                        \u0022from\u0022: \u0022urn:li:person:99\u0022\n                    },\n                    \u0022urn:li:message:2\u0022: {\n                        \u0022bcc\u0022: [\n                            \u0022urn:li:person:1\u0022,\n                            \u0022urn:li:person:80\u0022\n                        ],\n                        \u0022content\u0022: \u0022abc\u0022,\n                        \u0022count\u0022: 1929\n                    }\n                },\n                \u0022phone\u0022: \u0022200-100-200\u0022,\n                \u0022position_history\u0022: [\n                    {\n                        \u0022company\u0022: \u0022urn:li:company:4888383\u0022,\n                        \u0022from\u0022: \u00222006\u0022,\n                        \u0022job_title\u0022: \u0022SSE\u0022,\n                        \u0022to\u0022: \u00222009\u0022\n                    },\n                    {\n                        \u0022company\u0022: \u0022urn:li:company:39939\u0022,\n                        \u0022from\u0022: \u00221999\u0022,\n                        \u0022job_title\u0022: \u0022SE\u0022,\n                        \u0022to\u0022: \u00222006\u0022\n                    }\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data-1",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call",
+        "Sample Data"
+      ],
+      "Text": "(results(*(person(following_companies(*)))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Data",
+      "Anchor": "sample-data-1",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call",
+        "Sample Data"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022123123\u0022: {\n            \u0022person\u0022: {\n                \u0022following_companies\u0022: [\n                    \u0022urn:li:company:1\u0022,\n                    \u0022urn:li:company:2\u0022\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data-1",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call",
+        "Sample Data"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data-1",
+      "SectionPath": [
+        "Accessing all URNs within any array from a BATCH_GET call",
+        "Sample Data"
+      ],
+      "Text": "Always use entity~ in the projection parameter to make the expansion request. If the entity is expanded, the response returns entity~. If for some reason the entity cannot be expanded, the response returns entity!.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "Response decoration makes calls to other services in order to resolve the requested, decorated entity. These calls are subject to rate limiting. It is possible for calls to return a 200 while the decoration call is rate limited.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "The following example makes a request to the /me endpoint and uses response decoration to resolve the digitalMediaAsset URN in the displayImage field. The call to the /me endpoint is successful, but the decoration call to resolve displayImage is rate limited.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(id,profilePicture(displayImage~(*)))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Rate Limiting",
+      "Anchor": "rate-limiting",
+      "SectionPath": [
+        "Rate Limiting"
+      ],
+      "Text": "{\n    \u0022profilePicture\u0022: {\n        \u0022displayImage!\u0022: {\n            \u0022serviceErrorCode\u0022: 101,\n            \u0022message\u0022: \u0022Resource level throttle limit for calls to this resource is reached.\u0022,\n            \u0022status\u0022: 429\n        },\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C4D03AQGFBHiaY1XXNA\u0022\n    },\n    \u0022id\u0022: \u0022z6_nnTIGu-\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

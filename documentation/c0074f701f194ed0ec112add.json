@@ -1,0 +1,371 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+  "Title": "LinkedIn Learning and Everwise Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Everwise and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Deep Integration Functionality",
+      "Anchor": "everwise-deep-integration-functionality",
+      "SectionPath": [
+        "Everwise Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Deep Integration Functionality",
+      "Anchor": "everwise-deep-integration-functionality",
+      "SectionPath": [
+        "Everwise Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (English only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Deep Integration Functionality",
+      "Anchor": "everwise-deep-integration-functionality",
+      "SectionPath": [
+        "Everwise Deep Integration Functionality"
+      ],
+      "Text": "Reporting: AICC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Deep Integration Functionality",
+      "Anchor": "everwise-deep-integration-functionality",
+      "SectionPath": [
+        "Everwise Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Deep Integration Functionality",
+      "Anchor": "everwise-deep-integration-functionality",
+      "SectionPath": [
+        "Everwise Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Everwise integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Deep Integration Functionality",
+      "Anchor": "everwise-deep-integration-functionality",
+      "SectionPath": [
+        "Everwise Deep Integration Functionality"
+      ],
+      "Text": "An active Everwise LMS instance\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Everwise LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Everwise\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and Everwise to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to content. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning\nadds courses at a rate of 20-30 per week at no extra cost. The Everwise\nadministrator manually uploads new content at regular intervals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Everwise deep integration with LinkedIn Learning uses LinkedIn Learning APIs\nto refresh the content library daily. This feature ensures LinkedIn Learning\nmakes new content available within 24 hours of release. LinkedIn Learning\naggregates and indexes all content titles and descriptions to accommodate\nkeyword searches and support efficient discoverability. Everwise supports\nautomatic syncing of English only content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "SAML SSO is recommended for all enterprise learning platform integrations. SSO\nauthentication can be configured in your LinkedIn Learning Admin settings. Most\norganizations have a centrally managed identity management solution like Azure\nAD, Okta or AD FS which can be configured to authenticate users into enterprise\napplications like LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Enabling SAML SSO"
+      ],
+      "Text": "To configure SAML SSO with your identity management solution, review the LinkedIn Learning SSO Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Configuration",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage\nreports accessible from the LinkedIn Learning administrative interface. In\naddition to generating reports, LinkedIn Learning uses AICC to communicate a\nlearner\u2019s progress back to when the learner launches content from the LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "For LinkedIn Learning to communicate learner progress to via AICC, you need to \u0022allow list\u0022 your LMS hostname in your admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Add content to your LMS via AICC, then expand the Configure AICC panel.\n\nIn the Hostname(s) field, enter your LMS host name. Generally, this value should be you portal name (for example, lms.everwise.com). If you are unsure which value to use, contact your organization\u2019s LMS administrator or your internal LMS support contact.\n\n Note\nDo not use protocols for the hostname (e.g., http:// and https://).\n\n\nSet the AICC integration toggle to \u0022On\u0022. You must enter a hostname to check the Enable AICC integration box.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "Do not manually download or import AICC packages. In the next section of this document, we enable AN automatic content integration that allows you to automate the process on your behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AICC Configuration Steps",
+      "Anchor": "aicc-configuration-steps",
+      "SectionPath": [
+        "Configuration",
+        "AICC Configuration Steps"
+      ],
+      "Text": "For more information on enabling AICC, review the LinkedIn Learning Standard AICC LMS Integration Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "For Everwise to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision API Keys for Content Catalog Sync",
+      "Anchor": "provision-api-keys-for-content-catalog-sync",
+      "SectionPath": [
+        "Configuration",
+        "Provision API Keys for Content Catalog Sync"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the side navigation menu, select Access content and reports via API and expand the Generate LinkedIn Learning REST API Application panel.\n\nClick Add application.\n\nIn the Add LinkedIn Learning API application screen, enter \u0022Everwise\u0022 or \u0022Everwise LMS\u0022 in the Application Name field.\n\nIn the Application description field, provide a short description of the integration use case. For example, \u201CEverwise content catalog sync\u201D.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\u202F\u00A0\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nCopy the generated Client Id and Client Secret and paste the values into the corresponding Everwise fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Configuration",
+      "Anchor": "everwise-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Everwise Configuration"
+      ],
+      "Text": "To complete the configuration with Everwise, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Configuration",
+      "Anchor": "everwise-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Everwise Configuration"
+      ],
+      "Text": "Client ID\n\nClient Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Configuration",
+      "Anchor": "everwise-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Everwise Configuration"
+      ],
+      "Text": "Once you have gathered the required information, follow Everwise\u2019s configuration instructions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Everwise Configuration",
+      "Anchor": "everwise-configuration",
+      "SectionPath": [
+        "Configuration",
+        "Everwise Configuration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting from their Everwise instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuration",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

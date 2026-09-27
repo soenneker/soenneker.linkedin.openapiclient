@@ -1,0 +1,2525 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
+  "Title": "Updated Marketing API Error Responses",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Updated Marketing API Error Responses",
+      "Anchor": "updated-marketing-api-error-responses",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updated Marketing API Error Responses",
+      "Anchor": "updated-marketing-api-error-responses",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To make error messages more actionable, we have introduced a standardized error response schema that includes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "New error response fields: errorDetailType and errorDetails.\nStandard HTTP status codes that will be specific to the error.\nUpdated messages which are clear, actionable, and structured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "These updates are available for adCampaignGroups, adCampaigns and adAccounts endpoints only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "By providing a machine-readable error response schema, you\u0027ll know exactly how to troubleshoot and be able to programmatically fix the error. These changes should make it easier for you to debug effectively on your own.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample of Old Error Response",
+      "Anchor": "sample-of-old-error-response",
+      "SectionPath": [
+        "Changes in Error Response",
+        "Sample of Old Error Response"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022Validation failed because [{reason=FIELD_VALUE_CONDITIONAL_TOO_LOW, field=totalBudget, type=INVALID_VALUE, message=/totalBudget/amount cannot be set to 10; it cannot be lower than /dailyBudget/amount 50, parameters={field1=/totalBudget/amount, value2=50, value1=10, field2=/dailyBudget/amount, key=348989835}}]\u0022,\n    \u0022serviceErrorCode\u0022: 10007,\n    \u0022status\u0022: 400,\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Old Error Response Schema",
+      "Anchor": "old-error-response-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "Old Error Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A description of the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "serviceErrorCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A subcode that further classifies the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The HTTP status code.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample of New Error Response",
+      "Anchor": "sample-of-new-error-response",
+      "SectionPath": [
+        "Changes in Error Response",
+        "Old Error Response Schema",
+        "Sample of New Error Response"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022/Campaign/totalBudget/amount cannot be set to 10; it cannot be lower than /Campaign/dailyBudget/amount 50\u0022,\n    \u0022serviceErrorCode\u0022: 10007,\n    \u0022status\u0022: 400,\n    \u0022code\u0022: \u0022CONDITIONAL_VALUE_TOO_LOW\u0022,\n    \u0022errorDetailType\u0022: \u0022com.linkedin.common.error.BadRequest\u0022,\n    \u0022errorDetails\u0022: {\n        \u0022conditionalInputErrors\u0022: [\n            {\n                \u0022input\u0022: {\n                    \u0022value\u0022: {\n                        \u0022decimalValue\u0022: \u002210\u0022\n                    },\n                    \u0022inputPath\u0022: {\n                        \u0022fieldPath\u0022: \u0022/Campaign/totalBudget/amount\u0022\n                    }\n                },\n                \u0022minValue\u0022: \u002250\u0022,\n                \u0022code\u0022: \u0022CONDITIONAL_VALUE_TOO_LOW\u0022,\n                \u0022description\u0022: \u0022/Campaign/totalBudget/amount cannot be set to 10; it cannot be lower than /Campaign/dailyBudget/amount 50\u0022,\n                \u0022relatedInputs\u0022: [\n                    {\n                        \u0022value\u0022: {\n                            \u0022decimalValue\u0022: \u002250\u0022\n                        },\n                        \u0022inputPath\u0022: {\n                            \u0022fieldPath\u0022: \u0022/Campaign/dailyBudget/amount\u0022\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "New Error Response Schema",
+      "Anchor": "new-error-response-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A description of the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "serviceErrorCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A subcode that further classifies the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The HTTP status code.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "errorDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JSON object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional error details. Please see this section for schema. This field may be absent in certain cases.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#errordetails-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "errorDetailType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the schema for error detail. com.linkedin.common.error.BadRequest is the only available type in this release and more will be added in the future. This field may be absent in certain cases.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The constant error code that defines the category of the error. Please see this section for all possible error codes.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#error-codes"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "New Error Response Schema",
+      "Anchor": "new-error-response-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema"
+      ],
+      "Text": "Note: If you\u0027re getting code in the response, it means you\u0027re getting the new error response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "ErrorDetails Schema",
+      "Anchor": "errordetails-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "ErrorDetails Schema"
+      ],
+      "Text": "com.linkedin.common.error.BadRequest schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ErrorDetails Schema",
+      "Anchor": "errordetails-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "ErrorDetails Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "inputErrors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "InputError[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#inputerror-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Input validation failures for the request query parameters and request body.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "conditionalInputErrors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ConditionalInputError[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#conditionalinputerror-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Conditional input validation failures for the request query parameters and request body.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "InputError Schema",
+      "Anchor": "inputerror-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "InputError Schema"
+      ],
+      "Text": "For examples of errors, please see this section",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "InputError Schema",
+      "Anchor": "inputerror-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "InputError Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The error code, e.g. FIELD_VALUE_TOO_LOW.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "input",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#input-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The input in user request causing the error.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The key or an index of an entity in the request for batch operations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "allowedType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type that\u0027s allowed for the input field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An explanation of why the query parameters in the request are bad.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minLength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum length that\u0027s allowed for the input field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxLength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum length that\u0027s allowed for the input field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "encoding",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String encoding that\u0027s used for the input field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "minValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The minimum value that\u0027s allowed for an input field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional BigDecimal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum value that\u0027s allowed for an input field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "regex",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The regular expression pattern that input must match.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ConditionalInputError Schema",
+      "Anchor": "conditionalinputerror-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "ConditionalInputError Schema"
+      ],
+      "Text": "ConditionalInputError has all fields in InputError, along with the below field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ConditionalInputError Schema",
+      "Anchor": "conditionalinputerror-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "ConditionalInputError Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "relatedInputs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Input[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses?view=li-lms-2026-09#input-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Other inputs that cause the error when combined with the \u201Cinput\u201D field.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Input Schema",
+      "Anchor": "input-schema",
+      "SectionPath": [
+        "Changes in Error Response",
+        "New Error Response Schema",
+        "Input Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "inputPath",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "oneOf [fieldPath: string, parameterPath: string]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fieldPath: a path to the field that caused the error e.g. /Campaign/runSchedule/start. parameterPath: a path to the parameter within a field that caused the error e.g. /Campaign/targetingCriteria/include urn:li:adTargetingFacet:locations",
+            "Links": [],
+            "Values": [
+              "fieldPath: a path to the field that caused the error e.g. /Campaign/runSchedule/start.",
+              "parameterPath: a path to the parameter within a field that caused the error e.g. /Campaign/targetingCriteria/include urn:li:adTargetingFacet:locations"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional oneOf [decimalValue: BigDecimal, stringValue: string, booleanValue:boolean]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "decimalValue: the provided value with type BigDecimal in client request for \u0022inputPath\u0022 stringValue: the provided value with type string in client request for \u0022inputPath\u0022 booleanValue: the provided value with type boolean in client request for \u0022inputPath\u0022",
+            "Links": [],
+            "Values": [
+              "decimalValue: the provided value with type BigDecimal in client request for \u0022inputPath\u0022",
+              "stringValue: the provided value with type string in client request for \u0022inputPath\u0022",
+              "booleanValue: the provided value with type boolean in client request for \u0022inputPath\u0022"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Http Status Code Changes",
+      "Anchor": "http-status-code-changes",
+      "SectionPath": [
+        "Changes in Error Response",
+        "Http Status Code Changes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Old Error Message",
+        "Old Http Status Code",
+        "New Error Message",
+        "New Http Status Code"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Viewer may not have permission {permission} on entity {entity}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer may not have permission {permission} on entity {entity}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Viewer may not have permission on field {field}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer may not have permission on {field}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Viewer may not change {field} on {key} from {oldValue} to {newValue}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer may not have permission to change {field} on {entity} from {oldValue} to {newValue}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Cannot fetch audience size for the given targetingCriteria field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot fetch audience size for the given targeting criteria field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Cannot fetch segment information for the given targetingFacets field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot fetch segment information for the given targeting facets field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "Below is a list of all possible error codes along with the Http status code and message templates that could be present in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "General Errors",
+      "Anchor": "general-errors",
+      "SectionPath": [
+        "Error Codes",
+        "General Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status Code",
+        "Error Message Template"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACTION_NOT_ALLOWED_FOR_CANCELLED_STATUS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action {action} not allowed for cancelled campaigns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUDIENCE_SIZE_TOO_SMALL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The calculated audience size is too small for the given targeting. A minimum audience size of {minValue} is needed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BILLING_NOT_EDITABLE_FOR_LMS_ENTERPRISE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} is not editable for LMS Enterprise accounts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_CREATION_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign Group creation is not allowed for Enterprise accounts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CANNOT_UPDATE_BACKFILLED_CAMPAIGN_GROUPS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Backfilled campaign groups can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONDITIONAL_FIELD_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} is not allowed when field {field2} is set to {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONDITIONAL_INVALID_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} can\u0027t be set to {value1} if {field2} is set to {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONDITIONAL_MISSING_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} is required if {field2} is set to {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONDITIONAL_VALUE_TOO_HIGH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} can\u0027t be set to {value1}; it can\u0027t be higher than {field2} {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONDITIONAL_VALUE_TOO_LOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} can\u0027t be set to {value1}; it can\u0027t be lower than {field2} {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONVERSION_CAMPAIGN_MISSING_ASSOCIATED_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign being optimized for conversion should have at least one valid conversion associated with it",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATE_NOT_ALLOWED_WITH_FAILED_CREATIVES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign creation is not allowed with creatives in failed state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DATE_IMMUTABLE_WHEN_PASSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be updated when it has already passed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DATE_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} must be no earlier than {date}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DELETE_ALLOWED_ONLY_FOR_DRAFT_STATUS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete is allowed only in draft state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENTITY_WITH_SAME_KEY_ALREADY_EXISTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An entity with the same {field} already exists",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_GET_VALID_CAMPAIGN_CONFIGURATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to fetch valid campaign configurations for account {account} and campaign group {campaignGroup}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_PROCESS_CAMPAIGN_FOR_AUDIENCE_SIZE_ESTIMATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to process campaign for audience size estimation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_PROCESS_TARGETING_CRITERIA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to process campaign for audience size estimation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_RETRIEVE_AUDIENCE_SIZE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot fetch audience size for the given targeting criteria field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_RETRIEVE_SEGMENTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot fetch segment information for the given targeting facets field",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_SETUP_ACCOUNT_REPORTING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot create account because of internal error in setting up reporting during the creation process",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED_TO_VALIDATE_AGAINST_ALLOWED_CAMPAIGN_TYPES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to validate against allowed campaign type(s) for account {account}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_CANNOT_BE_BOTH_IN_INCLUDED_AND_EXCLUDED_TARGETING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot have {field} in both included and excluded targeting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_IMMUTABLE_FOR_NON_DRAFT_CAMPAIGNS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be updated unless in draft state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_LENGTH_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} length {length} can\u0027t exceeded maximum {max} length",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_NOT_ALLOWED_FOR_ENTERPRISE_LMS_ACCOUNTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account {field} must be null for Enterprise LMS accounts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} is not allowed to be set",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_VALUE_DOES_NOT_EXIST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_VALUE_NOT_ACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} is not active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_VALUE_NOT_ALLOWED_FOR_SEGMENT_STATUS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} field with Ad Segment {adSegmentId} can\u0027t be added to campaign {campaignId} due to invalid segment status value {status}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_VALUE_TOO_HIGH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} can\u0027t be higher than {max}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_VALUE_TOO_LOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} can\u0027t be lower than {min}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_ASSOCIATED_ENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associated entity can\u0027t be changed for talent landing or sponsored update campaigns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_CAMPAIGN_FLOOR_PRICE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign floor price can\u0027t be updated once set for Sponsored Updates, InMail, and Dynamic campaigns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_CAMPAIGN_OBJECTIVE_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign objective type can\u0027t be updated once set",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMMUTABLE_CAMPAIGN_TARGETING_AD_ZONES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dynamic Ad Campaigns may not change the size or switch between mobile and non-mobile adzones unless in draft mode",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INSUFFICIENT_CAMPAIGN_GROUP_BUDGET",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The campaign group needs a minimum available budget of {value1}. Currently the remaining campaign group budget is {value2}. Please increase your campaign group total budget to {value3} to meet the minimum amount required to proceed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_CAMPAIGN_CONFIGURATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ObjectiveType {objectiveType}, CampaignFormat {format}, CampaignType {type}, OptimizationTargetType {optimizationTargetType}, CostType {costType}, OffsiteDeliveryEnabled {offsiteDeliveryEnabled}, audienceExpansionEnabled {audienceExpansionEnabled} is not a valid CampaignConfiguration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_ENTITLEMENT_FOR_TALENT_LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Talent Leads objective can\u0027t be created as account doesn\u0027t have valid entitlement",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_OBJECTIVE_TYPE_WITH_MYNETWORK_DELIVERY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ads with objective type {objectiveType} can\u0027t be served on my network page. The allowed objective types are Engagement and Creative Engagement",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_PAST_ATTRIBUTE_COMBINATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only one {attributeName} field can be populated except past and current. Past must be inclusive while current is exclusive. {attributeName}sAll: {allValue} {attributeName}sPast: {pastValue} {attributeName}(Current): {currentValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_SEGMENT_ID_AND_FACET_COMBINATION_PROVIDED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audience segment {adSegmentId} doesn\u0027t belong to the facet {value1}. The expected facet is {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_BILLING_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid value {value} for billing reference. Must be a valid URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_BILLING_PARENT_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid value {value} for billing parent reference. Must be a valid URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_VALUE_BLANK_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be blank",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INCOMPATIBLE_TARGETING_COMBINATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be set in targeting as it\u0027s incompatible with other targeting facets",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_VALUE_DUPLICATE_EXIST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} includes duplicates",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_VALUE_FOR_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be set to {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISMATCH_FIELDS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value {value1} of {field1} expected to match value {value2} of {field2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_CAMPAIGN_GROUP_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign creation failed. This account has multiple campaign groups, so a campaign group field must be specified",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} is required but missing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_POSITIVE_OPTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The positive option is required for {field} but missing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. Please see errorDetails for more information.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALUES_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t have multiple values",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NONCHARGEABLE_NOT_ALLOWED_UNLESS_ACTIVE_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot create a non chargeable account unless its status is set to ACTIVE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO_DELETE_ON_LMS_ENTERPRISE_CAMPAIGN_GROUPS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deleting campaign groups in Marketing Solutions enterprise accounts is not allowed. You may change their statuses to Archived instead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO_PERMISSION_ON_ENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer may not have permission {permission} on entity {entity}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO_PERMISSION_ON_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer may not have permission on {field}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO_PERMISSION_TO_UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer may not have permission to change {field} on {entity} from {oldValue} to {newValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OBJECTIVE_CHANGE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Objective can only be changed from WEBSITE_TRAFFIC/null to CREATIVE_ENGAGEMENT and vice versa",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ONLY_DRAFT_CAMPAIGNS_ALLOWED_IN_DRAFT_CAMPAIGN_GROUPS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only draft campaigns are allowed in draft campaign groups",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SPONSORING_LANDING_PAGE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsoring landing page is allowed only for Enterprise LTS accounts for dynamic or sponsored updates campaigns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "START_DATE_AFTER_END_DATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start date can\u0027t be set to a date after end date",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STATUS_CHANGE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be changed from {beforeValue} to {afterValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TARGETING_ADZONE_CHANGE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t contain {values} as dynamic Ad Campaigns may not switch between mobile and non-mobile Ad Zones unless in draft mode",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TARGETING_ADZONE_COMBINATION_INVALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot target on both mobile and desktop adZones",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TARGETING_FIELD_DEPRECATED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field /targeting is deprecated, please use /targetingCriteria instead",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Found",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TIMEOUT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "408",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request Timeout",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONFLICT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Write Conflict",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PRECONDITION_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "412",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "HTTP precondition header failed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INTERNAL_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Error",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_IMPLEMENTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Implemented",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNDER_MAINTENANCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Under Maintenance",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Account Errors",
+      "Anchor": "account-errors",
+      "SectionPath": [
+        "Error Codes",
+        "Account Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status Code",
+        "Error Message Template"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BATCH_CREATE_TEST_ACCOUNT_LIMIT_REACHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch create request of {count} test accounts failed. Each developer application may have a maximum of {max} test account(s) associated with it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BLANK_ACCOUNT_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account name can\u0027t be blank.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CURRENCY_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The currency {totalBudgetCurrency} of the {totalBudgetField} doesn\u0027t match the currency {accountCurrency} of the account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CURRENCY_NOT_SUPPORTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The currency {currency} is not supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DELETE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot delete account {id} if the account status is not DRAFT.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INVALID_STATUS_TRANSITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status can\u0027t be updated to {afterStatus} if the previous status is {beforeStatus}.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_PRODUCT_TYPE_FOR_ENTERPRISE_ACCOUNT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The productType is missing. The productType is required for creating an enterprise account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEST_ACCOUNT_LIMIT_REACHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot create another test account. Each developer application may have a maximum of {max} test account(s) associated with it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UPDATE_REFERENCE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference for personal business and enterprise accounts can\u0027t be updated if the account has campaigns.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Account User Errors",
+      "Anchor": "account-user-errors",
+      "SectionPath": [
+        "Error Codes",
+        "Account User Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "HTTP Status Code",
+        "Error Message Template"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ACCOUNT_ID_MISMATCH_IN_PARAM_AND_BODY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The account id {account_id} in the query parameters doesn\u0027t match the account id {account_id} in the body.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEMBER_HAD_UNCONFIRMED_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A confirmed, primary email is required but is not present for account {account}. Please set a primary email and make sure it\u0027s confirmed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_ACCOUNTS_UNSUPPORTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This request has multiple accounts associated with it, but batch request only supports operations on a single account. Separate the requests by account URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "USER_MISMATCH_IN_PARAM_AND_BODY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The user id {user_id} in the query parameters doesn\u0027t match the user id {user_id} in the body",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Error response for single operation PARTIAL_UPDATE",
+      "Anchor": "example-1-error-response-for-single-operation-partial_update",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 1: Error response for single operation PARTIAL_UPDATE"
+      ],
+      "Text": "This is the error response when trying to set invalid campaign schedule.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Error response for single operation PARTIAL_UPDATE",
+      "Anchor": "example-1-error-response-for-single-operation-partial_update",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 1: Error response for single operation PARTIAL_UPDATE"
+      ],
+      "Text": "{\n    \u0022serviceErrorCode\u0022: 10007,\n    \u0022message\u0022: \u0022Multiple errors occurred during the input validation. Please see errorDetails for more information.\u0022,\n    \u0022status\u0022: 400,\n    \u0022code\u0022: \u0022MULTIPLE_VALIDATIONS_FAILED\u0022,\n    \u0022errorDetailType\u0022: \u0022com.linkedin.common.error.BadRequest\u0022,\n    \u0022errorDetails\u0022: {\n        \u0022inputErrors\u0022: [\n            {\n                \u0022input\u0022: {\n                    \u0022inputPath\u0022: {\n                        \u0022fieldPath\u0022: \u0022/Campaign/runSchedule/start\u0022\n                    },\n                   \u0022value\u0022: {\n                       \u0022decimalValue\u0022: \u00221104396800000\u0022,\n                   }\n                },\n                \u0022minValue\u0022: \u00221580407874019\u0022,\n                \u0022code\u0022: \u0022DATE_TOO_EARLY\u0022,\n                \u0022description\u0022: \u0022/Campaign/runSchedule/start value 1104396800000 must be no earlier than 1580407874019\u0022\n            }\n        ],\n        \u0022conditionalInputErrors\u0022: [\n            {\n                \u0022input\u0022: {\n                    \u0022inputPath\u0022: {\n                        \u0022fieldPath\u0022: \u0022/Campaign/runSchedule/end\u0022\n                    },\n                    \u0022value\u0022: {\n                       \u0022decimalValue\u0022: \u00221104396800001\u0022,\n                    }\n                },\n                \u0022code\u0022: \u0022DATE_IMMUTABLE_WHEN_PASSED\u0022,\n                \u0022description\u0022: \u0022/Campaign/runSchedule/end cannot be updated when it has already passed\u0022,\n                \u0022relatedFields\u0022: [\n                    {\n                        \u0022value\u0022: {\n                            \u0022stringValue\u0022: \u0022COMPLETED\u0022\n                        },\n                        \u0022inputPath\u0022: {\n                            \u0022fieldPath\u0022: \u0022/Campaign/status\u0022\n                        }\n                    },\n                ]\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Error response for batch operation BATCH_PARTIAL_UPDATE, complete failure",
+      "Anchor": "example-2-error-response-for-batch-operation-batch_partial_update-complete-failure",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 2: Error response for batch operation BATCH_PARTIAL_UPDATE, complete failure"
+      ],
+      "Text": "This is the error response when trying to set a budget lower than minimum budget for multiple campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Error response for batch operation BATCH_PARTIAL_UPDATE, complete failure",
+      "Anchor": "example-2-error-response-for-batch-operation-batch_partial_update-complete-failure",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 2: Error response for batch operation BATCH_PARTIAL_UPDATE, complete failure"
+      ],
+      "Text": "{\n    \u0022results\u0022: {},\n    \u0022errors\u0022: {\n        \u0022635137355\u0022: {\n            \u0022serviceErrorCode\u0022: 10007,\n            \u0022code\u0022: \u0022FIELD_VALUE_TOO_LOW\u0022,\n            \u0022errorDetailType\u0022: \u0022com.linkedin.common.error.BadRequest\u0022,\n            \u0022message\u0022: \u0022/Campaign/totalBudget/amount value 31.0 cannot be lower than 100.00\u0022,\n            \u0022status\u0022: 400,\n            \u0022errorDetails\u0022: {\n                \u0022inputErrors\u0022: [\n                    {\n                        \u0022input\u0022: {\n                            \u0022value\u0022: {\n                                \u0022decimalValue\u0022: \u002231.0\u0022\n                            },\n                            \u0022inputPath\u0022: {\n                                \u0022fieldPath\u0022: \u0022/Campaign/totalBudget/amount\u0022\n                            }\n                        },\n                        \u0022minValue\u0022: \u0022100.00\u0022,\n                        \u0022code\u0022: \u0022FIELD_VALUE_TOO_LOW\u0022,\n                        \u0022description\u0022: \u0022/Campaign/totalBudget/amount value 31.0 cannot be lower than 100.00\u0022\n                    }\n                ]\n            }\n        },\n        \u0022632105125\u0022: {\n            \u0022serviceErrorCode\u0022: 10007,\n            \u0022code\u0022: \u0022FIELD_VALUE_TOO_LOW\u0022,\n            \u0022errorDetailType\u0022: \u0022com.linkedin.common.error.BadRequest\u0022,\n            \u0022message\u0022: \u0022/Campaign/totalBudget/amount value 31.0 cannot be lower than 100.00\u0022,\n            \u0022status\u0022: 400,\n            \u0022errorDetails\u0022: {\n                \u0022inputErrors\u0022: [\n                    {\n                        \u0022input\u0022: {\n                            \u0022value\u0022: {\n                                \u0022decimalValue\u0022: \u002231.0\u0022\n                            },\n                            \u0022inputPath\u0022: {\n                                \u0022fieldPath\u0022: \u0022/Campaign/totalBudget/amount\u0022\n                            }\n                        },\n                        \u0022minValue\u0022: \u0022100.00\u0022,\n                        \u0022code\u0022: \u0022FIELD_VALUE_TOO_LOW\u0022,\n                        \u0022description\u0022: \u0022/Campaign/totalBudget/amount value 31.0 cannot be lower than 100.00\u0022\n                    }\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Error response for batch operation BATCH_PARTIAL_UPDATE, partial success",
+      "Anchor": "example-3-error-response-for-batch-operation-batch_partial_update-partial-success",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 3: Error response for batch operation BATCH_PARTIAL_UPDATE, partial success"
+      ],
+      "Text": "This is the error response when setting low budget for one campaign, but a correct value for the other.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 3: Error response for batch operation BATCH_PARTIAL_UPDATE, partial success",
+      "Anchor": "example-3-error-response-for-batch-operation-batch_partial_update-partial-success",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 3: Error response for batch operation BATCH_PARTIAL_UPDATE, partial success"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022632105125\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {\n        \u0022635137355\u0022: {\n            \u0022serviceErrorCode\u0022: 10007,\n            \u0022code\u0022: \u0022FIELD_VALUE_TOO_LOW\u0022,\n            \u0022errorDetailType\u0022: \u0022com.linkedin.common.error.BadRequest\u0022,\n            \u0022message\u0022: \u0022/Campaign/totalBudget/amount value 31.0 cannot be lower than 100.00\u0022,\n            \u0022status\u0022: 400,\n            \u0022errorDetails\u0022: {\n                \u0022inputErrors\u0022: [\n                    {\n                        \u0022input\u0022: {\n                            \u0022value\u0022: {\n                                \u0022decimalValue\u0022: \u002231.0\u0022\n                            },\n                            \u0022inputPath\u0022: {\n                                \u0022fieldPath\u0022: \u0022/Campaign/totalBudget/amount\u0022\n                            }\n                        },\n                        \u0022minValue\u0022: \u0022100.00\u0022,\n                        \u0022code\u0022: \u0022FIELD_VALUE_TOO_LOW\u0022,\n                        \u0022description\u0022: \u0022/Campaign/totalBudget/amount value 31.0 cannot be lower than 100.00\u0022\n                    }\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 4: Version header is missing in the request",
+      "Anchor": "example-4-version-header-is-missing-in-the-request",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 4: Version header is missing in the request"
+      ],
+      "Text": "This is the error response returned when the version header is missing in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 4: Version header is missing in the request",
+      "Anchor": "example-4-version-header-is-missing-in-the-request",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 4: Version header is missing in the request"
+      ],
+      "Text": "{\n  \u0022status\u0022: 400,\n  \u0022code\u0022: \u0022VERSION_MISSING\u0022,\n  \u0022message\u0022: \u0022A version must be present. Please specify a version by adding the Linkedin-Version header.\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 5: Version header is deprecated",
+      "Anchor": "example-5-version-header-is-deprecated",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 5: Version header is deprecated"
+      ],
+      "Text": "This is the error response returned when the version header is deprecated (e.g., 202401).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 5: Version header is deprecated",
+      "Anchor": "example-5-version-header-is-deprecated",
+      "SectionPath": [
+        "Examples of New Error Response",
+        "Example 5: Version header is deprecated"
+      ],
+      "Text": "{\n  \u0022status\u0022: 426,\n  \u0022code\u0022: \u0022NONEXISTENT_VERSION\u0022,\n  \u0022message\u0022: \u0022Requested version yyyymmdd is not active\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

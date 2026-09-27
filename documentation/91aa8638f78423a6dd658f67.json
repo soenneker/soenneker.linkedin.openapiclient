@@ -1,0 +1,410 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+  "Title": "LinkedIn Learning and Schoox Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Schoox Deep Integration Functionality",
+      "Anchor": "schoox-deep-integration-functionality",
+      "SectionPath": [
+        "Schoox Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SSO\nContent Discovery: Automatic Content Sync (All languages)\nReporting: AICC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Deep Integration Functionality",
+      "Anchor": "schoox-deep-integration-functionality",
+      "SectionPath": [
+        "Schoox Deep Integration Functionality"
+      ],
+      "Text": "Requirements:\nThe LinkedIn Learning and Schoox integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Deep Integration Functionality",
+      "Anchor": "schoox-deep-integration-functionality",
+      "SectionPath": [
+        "Schoox Deep Integration Functionality"
+      ],
+      "Text": "An active Schoox LMS instance\nAn active LinkedIn Learning account\nAdmin access to LinkedIn Learning\nAdmin privileges to your Schoox LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Overview",
+        "Authentication"
+      ],
+      "Text": "LinkedIn Learning supports SAML-based Single Sign-On (SSO) for enterprise integrations. Most organizations already use a centralized identity provider like Azure AD, Okta or ADFS to manage user authentication across business applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Overview",
+        "Authentication"
+      ],
+      "Text": "By enabling SSO, learners can seamlessly access LinkedIn Learning using their existing organizational credentials, eliminating the need to remember additional usernames or passwords and allowing them to focus on learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning adds courses at a rate of 20-30 per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Schoox deep integration with LinkedIn Learning uses LinkedIn Learning APIs to refresh the content library daily. This feature ensures LinkedIn Learning makes new content available within 24 hours of release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage reports accessible from the LinkedIn Learning administrative interface. In addition to generating reports, LinkedIn Learning uses AICC to communicate a learner\u2019s progress back to Schoox when the learner launches content from the LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "Enabling SAML SSO",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "LinkedIn Learning recommends SAML SSO for all enterprise learning platform integrations. SSO authentication is configured in the LinkedIn Learning Admin settings, where integration with an organization\u2019s identity provider (such as Azure AD, Okta, or ADFS) enables secure user authentication.\n\nTo configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For Schoox to sync LinkedIn Learning catalog metadata, API keys must be provisioned in the LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "To sync your Schoox content with LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "Login to LinkedIn Learning. If you are not already in the Admin screen, select Navigate to Admin, then select Settings \u003E Integration\n\n\nFrom the side navigation menu, Access content and reports via API.\n\nClick the down arrow on the right to expand the Generate LinkedIn Learning REST API Application section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "Click Add Application and provide the name related to your LMS (e.g. \u0022Schoox LMS Integration\u0022), as the application name, and provide a short description of the integration use case in the application description field.\n\n\n\n\n\nThere are two checkboxes \u2013 Content and Report. Select the fields that apply to you. For Content Sync to the LMS, only Content is required.\n\nClick Next and agree to the Terms and Conditions\n\nSave the Client ID and Client Secret values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "These values will be inputted into your Schoox system to enable the content sync between LinkedIn Learning and Schoox",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC in LinkedIn Learning",
+      "Anchor": "enable-aicc-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Enable AICC in LinkedIn Learning"
+      ],
+      "Text": "Check out the LinkedIn Learning AICC configuration workflow",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC in LinkedIn Learning",
+      "Anchor": "enable-aicc-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Enable AICC in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC in LinkedIn Learning",
+      "Anchor": "enable-aicc-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Enable AICC in LinkedIn Learning"
+      ],
+      "Text": "For courses to launch and to communicate learner activity back to Schoox, you must enable AICC in your LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC in LinkedIn Learning",
+      "Anchor": "enable-aicc-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Enable AICC in LinkedIn Learning"
+      ],
+      "Text": "To enable AICC in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC in LinkedIn Learning",
+      "Anchor": "enable-aicc-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Enable AICC in LinkedIn Learning"
+      ],
+      "Text": "After you login to LinkedIn Learning. If you are not already in the Admin screen, select Navigate to Admin, then select Settings \u003E Integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC in LinkedIn Learning",
+      "Anchor": "enable-aicc-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Enable AICC in LinkedIn Learning"
+      ],
+      "Text": "From the side navigation menu, select Add content to your LMS.\n\nExpand the Configure AICC section.\n\nClick Add Hostname(s).\n\nIn the Hostname name field, enter the hostname provided by Schoox such as \u0022company.schoox.com\u0022.\n\nSelect On to enable the AICC integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Configuration",
+      "Anchor": "schoox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Configuration"
+      ],
+      "Text": "To complete the configuration with Schoox, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Configuration",
+      "Anchor": "schoox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Configuration"
+      ],
+      "Text": "\u2022 Client ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Configuration",
+      "Anchor": "schoox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Configuration"
+      ],
+      "Text": "\u2022 Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Configuration",
+      "Anchor": "schoox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Configuration"
+      ],
+      "Text": "Once you\u2019ve gathered the required information and have logged into the Schoox LMS, follow these steps below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Configuration",
+      "Anchor": "schoox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Configuration"
+      ],
+      "Text": "In Schoox, on the LinkedIn Learning panel, enter the Client ID and Client Secret to import the content.\n\n\n\n\n\nIn the course Catalog the LinkedIn Learning provider can be selected to view content.\n\n\n\n\n\nCourse settings can be configured as required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Configuration",
+      "Anchor": "schoox-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Configuration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their Schoox instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schoox Troubleshooting",
+      "Anchor": "schoox-troubleshooting",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Schoox Troubleshooting"
+      ],
+      "Text": "In order to reach out to Schooxs support team please visit their website Schoox Customer Support",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in Schoox",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

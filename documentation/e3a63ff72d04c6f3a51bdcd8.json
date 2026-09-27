@@ -1,0 +1,904 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+  "Title": "Follower Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Follower Ads API",
+      "Anchor": "follower-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follower Ads API",
+      "Anchor": "follower-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follower Ads API",
+      "Anchor": "follower-ads-api",
+      "SectionPath": [],
+      "Text": "Linkedin is introducing its next generation of APIs for the creation and management of Dynamic Follower Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Follower Ads API",
+      "Anchor": "follower-ads-api",
+      "SectionPath": [],
+      "Text": "This ad format replaces the previous /adCreativesV2 ad format for follower ads.\nFollower Ads allow you to promote your LinkedIn Page or Showcase Page and encourage members to follow your LinkedIn Page. Learn more about follower ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dynamic Follower Ad",
+      "Anchor": "create-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Create a Dynamic Follower Ad"
+      ],
+      "Text": "Optionally, upload an image asset that acts as a Company logo in the Follower ad creative. Skip this step if you want to reuse the Company logo from the Company Page.\nCreate a Dynamic Ads Campaign using the steps described in Dynamic Ad Campaigns.\nCreate a Follower Ad Creative using the steps described in Create Dynamic Follower Ad.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s Ad Accounts. In addition, authenticated member must have READ access for a Company Page and have one of the following Ad Account roles: ACCOUNT_BILLING_ADMIN ACCOUNT_MANAGERCAMPAIGN_MANAGER CREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Starting 202410, a new name field is introduced in Creative schema. Going forward, this new name field is the preferred approach to set and get the creative\u0027s name, consistently across all ad formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Typical workflow to create dynamic follower ad format is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Upload an image asset. At present, LinkedIn partners are using Assets API to upload images.\nThe new Image API replaces the Assets API, with simplified and consistent schema.\nRefer to Images API for more information.\nCreate a Dynamic Ads Campaign. See Dynamic Ad Campaigns.\nDesign a Creative. The new Creatives API replaces the /adCreativesV2 API, and features dynamic follower ad format fields for easier creative design and development. For more details in schema section below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Workflow",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either a preApproved string or a custom string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description is text at the top of the ad. It provides more information to people who see the ad. It can follow either of the following formats: {\u0022preApproved\u0022: \u0022{description}\u0022} Pre-approved and localized follower description text not subject to review process. Standard values: GET_LATEST_JOBS_NEWS_AND_MORE - Get the latest on jobs, news, and more RECEIVE_DAILY_OR_WEEKLY_ORGANIZATION_UPDATES - Receive daily or weekly organization updates OPPORTUNITIES_ARE_KNOCKING_ON_YOUR_DOOR - Opportunities are knocking on your door GET_LATEST_JOBS_AND_INDUSTRY_NEWS - Get the latest jobs and industry news KEEP_UP_WITH_INTERESTING_RELEVANT_UPDATES - Keep up with interesting, relevant updates VISIT_CAREERS - Visit the careers page for {organizationName}! VISIT_ORGANIZATION - Visit the organization page for {organizationName}! MEMBER_STAY_INFORMED_ON_INDUSTRY_NEWS_AND_TRENDS {memberName}, stay informed on industry news and trends IMAGINE_YOUR_NEXT_CAREER - Imagine your next career move READY_FOR_NEXT_OPPORTUNITY - Ready for your next opportunity? YOU_GOT_SKILLS_WEVE_GOT_OPPORTUNITIES - You\u0027ve got the skills, we\u0027ve got the opportunities! YOU_GOT_SKILLS_ORGANIZATION_HAS_OPPORTUNITIES - You\u0027ve got the skills, {organizationName} has the opportunities! STAY_INFORMED_ON_INDUSTRY_NEWS_AND_TRENDS - Stay informed on industry news and trends VISIT_COMPANY - Visit the company page for {organizationName} RECEIVE_DAILY_OR_WEEKLY_COMPANY_UPDATES - Receive daily or weekly company updates {\u0022custom\u0022: \u0022{description}\u0022} Custom description text subject to review process.",
+            "Links": [],
+            "Values": [
+              "{\u0022preApproved\u0022: \u0022{description}\u0022} Pre-approved and localized follower description text not subject to review process. Standard values: GET_LATEST_JOBS_NEWS_AND_MORE - Get the latest on jobs, news, and more RECEIVE_DAILY_OR_WEEKLY_ORGANIZATION_UPDATES - Receive daily or weekly organization updates OPPORTUNITIES_ARE_KNOCKING_ON_YOUR_DOOR - Opportunities are knocking on your door GET_LATEST_JOBS_AND_INDUSTRY_NEWS - Get the latest jobs and industry news KEEP_UP_WITH_INTERESTING_RELEVANT_UPDATES - Keep up with interesting, relevant updates VISIT_CAREERS - Visit the careers page for {organizationName}! VISIT_ORGANIZATION - Visit the organization page for {organizationName}! MEMBER_STAY_INFORMED_ON_INDUSTRY_NEWS_AND_TRENDS {memberName}, stay informed on industry news and trends IMAGINE_YOUR_NEXT_CAREER - Imagine your next career move READY_FOR_NEXT_OPPORTUNITY - Ready for your next opportunity? YOU_GOT_SKILLS_WEVE_GOT_OPPORTUNITIES - You\u0027ve got the skills, we\u0027ve got the opportunities! YOU_GOT_SKILLS_ORGANIZATION_HAS_OPPORTUNITIES - You\u0027ve got the skills, {organizationName} has the opportunities! STAY_INFORMED_ON_INDUSTRY_NEWS_AND_TRENDS - Stay informed on industry news and trends VISIT_COMPANY - Visit the company page for {organizationName} RECEIVE_DAILY_OR_WEEKLY_COMPANY_UPDATES - Receive daily or weekly company updates",
+              "GET_LATEST_JOBS_NEWS_AND_MORE - Get the latest on jobs, news, and more",
+              "RECEIVE_DAILY_OR_WEEKLY_ORGANIZATION_UPDATES - Receive daily or weekly organization updates",
+              "OPPORTUNITIES_ARE_KNOCKING_ON_YOUR_DOOR - Opportunities are knocking on your door",
+              "GET_LATEST_JOBS_AND_INDUSTRY_NEWS - Get the latest jobs and industry news",
+              "KEEP_UP_WITH_INTERESTING_RELEVANT_UPDATES - Keep up with interesting, relevant updates",
+              "VISIT_CAREERS - Visit the careers page for {organizationName}!",
+              "VISIT_ORGANIZATION - Visit the organization page for {organizationName}!",
+              "MEMBER_STAY_INFORMED_ON_INDUSTRY_NEWS_AND_TRENDS {memberName}, stay informed on industry news and trends",
+              "IMAGINE_YOUR_NEXT_CAREER - Imagine your next career move",
+              "READY_FOR_NEXT_OPPORTUNITY - Ready for your next opportunity?",
+              "YOU_GOT_SKILLS_WEVE_GOT_OPPORTUNITIES - You\u0027ve got the skills, we\u0027ve got the opportunities!",
+              "YOU_GOT_SKILLS_ORGANIZATION_HAS_OPPORTUNITIES - You\u0027ve got the skills, {organizationName} has the opportunities!",
+              "STAY_INFORMED_ON_INDUSTRY_NEWS_AND_TRENDS - Stay informed on industry news and trends",
+              "VISIT_COMPANY - Visit the company page for {organizationName}",
+              "RECEIVE_DAILY_OR_WEEKLY_COMPANY_UPDATES - Receive daily or weekly company updates",
+              "{\u0022custom\u0022: \u0022{description}\u0022} Custom description text subject to review process."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "showMemberProfilePhoto",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean value that helps decide whether to display profile photo of member in the follower ad or not. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either a preApproved string or a custom string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The headline is bold text displayed right beneath the image or logo. It is the main message seen by the target audience. It can follow either of the following formats: {\u0022preApproved\u0022: \u0022{headline}\u0022} Pre-approved and localized follower headline text not subject to review process. Standard values: MEMBER_EXPLORE_RELEVANT_OPPORTUNITIES - {memberName}, explore relevant opportunities with {organizationName} MEMBER_GROW_BUSINESS_NEWS_INSIGHTS - {memberName}, grow your business with news and insights from {organizationName} GROW_YOUR_BUSINESS_INSIGHTS - Grow your business with insights from {organizationName} MEMBER_KEEP_UP_WITH_LATEST_INSIGHTS - {memberName}, keep up with the latest insights from {organizationName} MEMBER_YOU_MIGHT_LIKE_TO_FOLLOW - {memberName}, you might like to follow {organizationName} MEMBER_KEEP_UP_WITH_RELEVANT_OPPORTUNITIES - {memberName}, keep up with relevant opportunities at {organizationName} MEMBER_GROW_YOUR_CAREER_BY_FOLLOWING - {memberName}, grow your career by following {organizationName} MEMBER_GET_LATEST_NEWS_JOBS_AND_MORE - {memberName}, get the latest on {organizationName} news, jobs, and more! MEMBER_CURRENTLY_RECRUITING_IN_YOUR_SECTOR - {memberName}, currently recruiting in your sector! MEMBER_ORGANIZATION_IS_HIRING - {memberName}, {organizationName} is hiring! MEMBER_READY_FOR_YOUR_DREAM_JOB - {memberName}, ready for your dream job? GROW_YOUR_BUSINESS_WITH_NEWS_AND_INSIGHTS - Grow your business with news and insights from {organizationName} MEMBER_GET_THE_LATEST_ON_ORGANIZATION_NEW_JOBS_AND_MORE - {memberName}, Get the latest on {organizationName} News, Jobs, and More! {\u0022custom\u0022: \u0022{headline}\u0022} Custom headline text subject to review process.",
+            "Links": [],
+            "Values": [
+              "{\u0022preApproved\u0022: \u0022{headline}\u0022} Pre-approved and localized follower headline text not subject to review process. Standard values: MEMBER_EXPLORE_RELEVANT_OPPORTUNITIES - {memberName}, explore relevant opportunities with {organizationName} MEMBER_GROW_BUSINESS_NEWS_INSIGHTS - {memberName}, grow your business with news and insights from {organizationName} GROW_YOUR_BUSINESS_INSIGHTS - Grow your business with insights from {organizationName} MEMBER_KEEP_UP_WITH_LATEST_INSIGHTS - {memberName}, keep up with the latest insights from {organizationName} MEMBER_YOU_MIGHT_LIKE_TO_FOLLOW - {memberName}, you might like to follow {organizationName} MEMBER_KEEP_UP_WITH_RELEVANT_OPPORTUNITIES - {memberName}, keep up with relevant opportunities at {organizationName} MEMBER_GROW_YOUR_CAREER_BY_FOLLOWING - {memberName}, grow your career by following {organizationName} MEMBER_GET_LATEST_NEWS_JOBS_AND_MORE - {memberName}, get the latest on {organizationName} news, jobs, and more! MEMBER_CURRENTLY_RECRUITING_IN_YOUR_SECTOR - {memberName}, currently recruiting in your sector! MEMBER_ORGANIZATION_IS_HIRING - {memberName}, {organizationName} is hiring! MEMBER_READY_FOR_YOUR_DREAM_JOB - {memberName}, ready for your dream job? GROW_YOUR_BUSINESS_WITH_NEWS_AND_INSIGHTS - Grow your business with news and insights from {organizationName} MEMBER_GET_THE_LATEST_ON_ORGANIZATION_NEW_JOBS_AND_MORE - {memberName}, Get the latest on {organizationName} News, Jobs, and More!",
+              "MEMBER_EXPLORE_RELEVANT_OPPORTUNITIES - {memberName}, explore relevant opportunities with {organizationName}",
+              "MEMBER_GROW_BUSINESS_NEWS_INSIGHTS - {memberName}, grow your business with news and insights from {organizationName}",
+              "GROW_YOUR_BUSINESS_INSIGHTS - Grow your business with insights from {organizationName}",
+              "MEMBER_KEEP_UP_WITH_LATEST_INSIGHTS - {memberName}, keep up with the latest insights from {organizationName}",
+              "MEMBER_YOU_MIGHT_LIKE_TO_FOLLOW - {memberName}, you might like to follow {organizationName}",
+              "MEMBER_KEEP_UP_WITH_RELEVANT_OPPORTUNITIES - {memberName}, keep up with relevant opportunities at {organizationName}",
+              "MEMBER_GROW_YOUR_CAREER_BY_FOLLOWING - {memberName}, grow your career by following {organizationName}",
+              "MEMBER_GET_LATEST_NEWS_JOBS_AND_MORE - {memberName}, get the latest on {organizationName} news, jobs, and more!",
+              "MEMBER_CURRENTLY_RECRUITING_IN_YOUR_SECTOR - {memberName}, currently recruiting in your sector!",
+              "MEMBER_ORGANIZATION_IS_HIRING - {memberName}, {organizationName} is hiring!",
+              "MEMBER_READY_FOR_YOUR_DREAM_JOB - {memberName}, ready for your dream job?",
+              "GROW_YOUR_BUSINESS_WITH_NEWS_AND_INSIGHTS - Grow your business with news and insights from {organizationName}",
+              "MEMBER_GET_THE_LATEST_ON_ORGANIZATION_NEW_JOBS_AND_MORE - {memberName}, Get the latest on {organizationName} News, Jobs, and More!",
+              "{\u0022custom\u0022: \u0022{headline}\u0022} Custom headline text subject to review process."
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company logo. This may differ from the logo on the official company page. If not present on create, the logo from company page is used. This is optional on creates, but will always be present on reads. Setting it to null on update would default to the logo from company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name to use in the ad. This may differ from the name on the official company page. If not present on create, the company name from company page is used. This is optional on creates, but will always be present on reads. Setting it to null on update would default to the name from company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The call-to-action (CTA) is what you want your target audience to do after seeing your ad. Possible values: VISIT_ORGANIZATION_COMPANY_PAGE - Directs the member to the organization overview page. VISIT_ORGANIZATION_LIFE_PAGE - Directs the member to the organization life page. VISIT_ORGANIZATION_JOBS_PAGE - Directs the member to the organization jobs page. VISIT_ORGANIZATION_CAREERS_PAGE - Direct the member to the organization jobs page, but the text will read \u0027Visit Careers\u0027 instead of \u0027Visit Jobs\u0027",
+            "Links": [],
+            "Values": [
+              "VISIT_ORGANIZATION_COMPANY_PAGE - Directs the member to the organization overview page.",
+              "VISIT_ORGANIZATION_LIFE_PAGE - Directs the member to the organization life page.",
+              "VISIT_ORGANIZATION_JOBS_PAGE - Directs the member to the organization jobs page.",
+              "VISIT_ORGANIZATION_CAREERS_PAGE - Direct the member to the organization jobs page, but the text will read \u0027Visit Careers\u0027 instead of \u0027Visit Jobs\u0027"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Prerequisite Values",
+      "Anchor": "prerequisite-values",
+      "SectionPath": [
+        "Workflow",
+        "Prerequisite Values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Attribute",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Campaign Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Campaign Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FOLLOW_COMPANY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creative Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FOLLOW_COMPANY_V2",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Objective Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_AWARENESS, ENGAGEMENT",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Dynamic Follower Ad Creative",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Dynamic Follower Ad Creative",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Dynamic Follower Ad Creative",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n     \u0022follow\u0022: {\n      \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Dynamic Follower Ad Creative",
+        "Sample Request"
+      ],
+      "Text": "-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022content\u0022: {\n     \u0022follow\u0022: {\n      \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Dynamic Follower Ad Creative",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:164380864",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Dynamic Follower Ad",
+      "Anchor": "get-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Get a Dynamic Follower Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Dynamic Follower Ad",
+      "Anchor": "get-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Get a Dynamic Follower Ad"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Dynamic Follower Ad",
+      "Anchor": "get-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Get a Dynamic Follower Ad"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Dynamic Follower Ad",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022createdAt\u0022: 1646177413000,\n    \u0022servingHoldReasons\u0022: [\n        \u0022STOPPED\u0022,\n        \u0022CAMPAIGN_STOPPED\u0022\n    ],\n    \u0022lastModifiedAt\u0022: 1646177413000,\n    \u0022isTest\u0022: false,\n    \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n    \u0022isServing\u0022: false,\n    \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022id\u0022: \u0022urn:li:sponsoredCreative:164380864\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n    \u0022content\u0022: {\n        \u0022follow\u0022: {\n            \u0022description\u0022: {\n                \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n            },\n            \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n            \u0022showMemberProfilePhoto\u0022: true,\n            \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n            \u0022headline\u0022: {\n                \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n            },\n            \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Dynamic Follower Ad",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a HTTP 200 status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Dynamic Follower Ad",
+      "Anchor": "update-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Update a Dynamic Follower Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Follower Ad",
+      "Anchor": "update-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Update a Dynamic Follower Ad"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Follower Ad",
+      "Anchor": "update-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Update a Dynamic Follower Ad"
+      ],
+      "Text": "{\n\u0022patch\u0022: {\n          \u0022$set\u0022: {\n            \u0022content\u0022: {\n              \u0022follow\u0022: {\n                  \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                  \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n                  \u0022headline\u0022: {\n                      \u0022preApproved\u0022: \u0022MEMBER_KEEP_UP_WITH_LATEST_INSIGHTS\u0022\n                  },\n                  \u0022description\u0022: {\n                      \u0022custom\u0022: \u0022custom_description\u0022\n                  },\n                  \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n                  \u0022showMemberProfilePhoto\u0022: true\n                 }\n              }\n            }\n         }\n      }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Follower Ad",
+      "Anchor": "update-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Update a Dynamic Follower Ad"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-RestLi-Method: partial_update\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n\u0022patch\u0022: {\n          \u0022$set\u0022: {\n            \u0022content\u0022: {\n              \u0022follow\u0022: {\n                  \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                  \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n                  \u0022headline\u0022: {\n                      \u0022preApproved\u0022: \u0022MEMBER_KEEP_UP_WITH_LATEST_INSIGHTS\u0022\n                  },\n                  \u0022description\u0022: {\n                      \u0022custom\u0022: \u0022custom_description\u0022\n                  },\n                  \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n                  \u0022showMemberProfilePhoto\u0022: true\n              }\n            }\n         }\n      }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Dynamic Follower Ad",
+      "Anchor": "update-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Update a Dynamic Follower Ad"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Dynamic Follower Ad",
+      "Anchor": "delete-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Delete a Dynamic Follower Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Dynamic Follower Ad",
+      "Anchor": "delete-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Delete a Dynamic Follower Ad"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Dynamic Follower Ad",
+      "Anchor": "delete-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Delete a Dynamic Follower Ad"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-RestLi-Method: DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Dynamic Follower Ad",
+      "Anchor": "delete-a-dynamic-follower-ad",
+      "SectionPath": [
+        "Delete a Dynamic Follower Ad"
+      ],
+      "Text": "A successful response returns a 204 No Content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Dynamic Follower Ads",
+      "Anchor": "batch-create-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Follower Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Follower Ads",
+      "Anchor": "batch-create-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Follower Ads"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Follower Ads",
+      "Anchor": "batch-create-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Follower Ads"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n    \u0022content\u0022: {\n     \u0022follow\u0022: {\n      \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n    },\n    {\n    \u0022content\u0022: {\n     \u0022follow\u0022: {\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022custom\u0022: \u0022custom description\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n}\n]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Follower Ads",
+      "Anchor": "batch-create-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Create Dynamic Follower Ads"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022elements\u0022: [\n    {\n    \u0022content\u0022: {\n     \u0022follow\u0022: {\n      \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n    },\n    {\n    \u0022content\u0022: {\n     \u0022follow\u0022: {\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022custom\u0022: \u0022custom description\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n    \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n}\n]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Create Dynamic Follower Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A164385234\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:164385234\u0022\n        },\n        {\n            \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A164385244\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:164385244\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Dynamic Follower Ads",
+      "Anchor": "batch-get-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Get Dynamic Follower Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Dynamic Follower Ads",
+      "Anchor": "batch-get-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Get Dynamic Follower Ads"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Dynamic Follower Ads",
+      "Anchor": "batch-get-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Get Dynamic Follower Ads"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_GET\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Get Dynamic Follower Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:164385244\u0022: {\n            \u0022createdAt\u0022: 1646181778000,\n            \u0022servingHoldReasons\u0022: [\n                \u0022STOPPED\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1646181778000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022isServing\u0022: false,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:164385244\u0022,\n            \u0022intendedStatus\u0022: \u0022DRAFT\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n            \u0022content\u0022: {\n                \u0022follow\u0022: {\n                    \u0022description\u0022: {\n                        \u0022custom\u0022: \u0022custom description\u0022\n                    },\n                    \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true,\n                    \u0022organizationName\u0022: \u0022Italian Devtestco..\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n                    },\n                    \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022\n                }\n            }\n        },\n        \u0022urn:li:sponsoredCreative:164385234\u0022: {\n            \u0022createdAt\u0022: 1646181778000,\n            \u0022servingHoldReasons\u0022: [\n                \u0022STOPPED\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1646181778000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022isServing\u0022: false,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:164385234\u0022,\n            \u0022intendedStatus\u0022: \u0022DRAFT\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n            \u0022content\u0022: {\n                \u0022follow\u0022: {\n                    \u0022description\u0022: {\n                        \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n                    },\n                    \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true,\n                    \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n                    },\n                    \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022\n                }\n            }\n        }\n    },\n    \u0022statuses\u0022: {\n        \u0022urn:li:sponsoredCreative:164385244\u0022: 200,\n        \u0022urn:li:sponsoredCreative:164385234\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Dynamic Follower Ads",
+      "Anchor": "batch-update-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Follower Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Follower Ads",
+      "Anchor": "batch-update-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Follower Ads"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Follower Ads",
+      "Anchor": "batch-update-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Follower Ads"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022urn:li:sponsoredCreative:{sponsoredCreative-urn1}\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022content\u0022: {\n            \u0022follow\u0022: {\n      \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022custom\u0022: \u0022custom_headline1\u0022\n      },\n      \u0022description\u0022: {\n          \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n          }\n        }\n      }\n    },\n    \u0022urn:li:sponsoredCreative:{sponsoredCreative-urn2}\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022content\u0022: {\n            \u0022follow\u0022: {\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022custom\u0022: \u0022custom description2\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n          }\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Follower Ads",
+      "Anchor": "batch-update-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Update Dynamic Follower Ads"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022urn:li:sponsoredCreative:{sponsoredCreative-urn1}\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022content\u0022: {\n            \u0022follow\u0022: {\n      \u0022organizationName\u0022: \u0022Test Company Name\u0022,\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022custom\u0022: \u0022custom_headline1\u0022\n      },\n      \u0022description\u0022: {\n          \u0022preApproved\u0022: \u0022GET_LATEST_JOBS_AND_INDUSTRY_NEWS\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n          }\n        }\n      }\n    },\n    \u0022urn:li:sponsoredCreative:{sponsoredCreative-urn2}\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022content\u0022: {\n            \u0022follow\u0022: {\n      \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n      \u0022headline\u0022: {\n          \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n      },\n      \u0022description\u0022: {\n          \u0022custom\u0022: \u0022custom description2\u0022\n      },\n      \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022,\n      \u0022showMemberProfilePhoto\u0022: true\n     }\n          }\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Batch Update Dynamic Follower Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:164385244\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022urn:li:sponsoredCreative:164385234\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Dynamic Follower Ads",
+      "Anchor": "batch-delete-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Delete Dynamic Follower Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Dynamic Follower Ads",
+      "Anchor": "batch-delete-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Delete Dynamic Follower Ads"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Dynamic Follower Ads",
+      "Anchor": "batch-delete-dynamic-follower-ads",
+      "SectionPath": [
+        "Batch Delete Dynamic Follower Ads"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_DELETE\u0027\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Delete Dynamic Follower Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:sponsoredCreative:164385244\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022urn:li:sponsoredCreative:164385234\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finders for Dynamic Follower Ads",
+      "Anchor": "finders-for-dynamic-follower-ads",
+      "SectionPath": [
+        "Finders for Dynamic Follower Ads"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Finders for Dynamic Follower Ads",
+      "Anchor": "finders-for-dynamic-follower-ads",
+      "SectionPath": [
+        "Finders for Dynamic Follower Ads"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives?campaigns=List(urn%3Ali%3AsponsoredCampaign%3A164382034)\u0026intendedStatuses=List(ACTIVE)\u0026q=criteria\u0026sortOrder=ASCENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Finders for Dynamic Follower Ads",
+      "Anchor": "finders-for-dynamic-follower-ads",
+      "SectionPath": [
+        "Finders for Dynamic Follower Ads"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?campaigns=List(urn%3Ali%3AsponsoredCampaign%3A164382034)\u0026intendedStatuses=List(ACTIVE)\u0026q=criteria\u0026sortOrder=ASCENDING\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-RestLi-Method: FINDER\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Finders for Dynamic Follower Ads",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1646180655000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:system:0\u0022,\n            \u0022content\u0022: {\n                \u0022follow\u0022: {\n                    \u0022description\u0022: {\n                        \u0022custom\u0022: \u0022custom description2\u0022\n                    },\n                    \u0022logo\u0022: \u0022urn:li:image:C5522AQEomekaeMS6eQ\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true,\n                    \u0022organizationName\u0022: \u0022Italian Devtestco..\u0022,\n                    \u0022headline\u0022: {\n                        \u0022preApproved\u0022: \u0022GROW_YOUR_BUSINESS_INSIGHTS\u0022\n                    },\n                    \u0022callToAction\u0022: \u0022VISIT_ORGANIZATION_COMPANY_PAGE\u0022\n                }\n            },\n            \u0022createdAt\u0022: 1646179904000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022NEEDS_REVIEW\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:190492324\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:164382034\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Finders for Dynamic Follower Ads",
+        "API Error Details"
+      ],
+      "Text": "General creative errors are included here - Creatives error.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

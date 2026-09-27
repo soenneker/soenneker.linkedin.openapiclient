@@ -1,0 +1,452 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+  "Title": "Conversions API Use Cases",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Conversions API Use Cases",
+      "Anchor": "conversions-api-use-cases",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API Use Cases",
+      "Anchor": "conversions-api-use-cases",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API Use Cases",
+      "Anchor": "conversions-api-use-cases",
+      "SectionPath": [],
+      "Text": "Conversions are actions taken by your potential or existing customer that are valuable to your business. These actions include submitting leads, downloading content, signing up for a free trial, and making purchases. With LinkedIn Conversion Tracking, you can share your conversions with LinkedIn to measure the impact of advertising on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API Use Cases",
+      "Anchor": "conversions-api-use-cases",
+      "SectionPath": [],
+      "Text": "Create specific conversion rules and associate these with your LinkedIn ad campaigns to better understand which campaigns helped drive conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions API Use Cases",
+      "Anchor": "conversions-api-use-cases",
+      "SectionPath": [],
+      "Text": "For the end-to-end integration flow, see Conversions API Workflow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 1: Using Conversions API in Conjunction with Insight Tag",
+      "Anchor": "use-case-1-using-conversions-api-in-conjunction-with-insight-tag",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 1: Using Conversions API in Conjunction with Insight Tag"
+      ],
+      "Text": "LinkedIn supports three main types of conversions for Conversion Tracking:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 1: Using Conversions API in Conjunction with Insight Tag",
+      "Anchor": "use-case-1-using-conversions-api-in-conjunction-with-insight-tag",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 1: Using Conversions API in Conjunction with Insight Tag"
+      ],
+      "Text": "Insight Tag conversions\nConversions API\nCSV conversions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 1: Using Conversions API in Conjunction with Insight Tag",
+      "Anchor": "use-case-1-using-conversions-api-in-conjunction-with-insight-tag",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 1: Using Conversions API in Conjunction with Insight Tag"
+      ],
+      "Text": "To help ensure that you get the most complete view of the customer journey, we recommend that advertisers send conversions through both the Insight Tag as well as Conversions API for increased reliability. You can set up Insight Tag and then set up deduplication for Conversions API. We can then deduplicate information sent through Conversions API and Insight Tag, which means we identify if an event has been sent through both and only count it once. When you send a conversion through multiple methods, you need to create a conversion rule for each data source (browser and server). Once deduplication is implemented, Conversions API can identify and discard duplicate events. So, if a conversion event is received from both Insight Tag and Conversions API with the same event id, only the Insight tag event is counted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 2: Using Conversions API for Tracking on LinkedIn\u2019s First-Party Click IDs",
+      "Anchor": "use-case-2-using-conversions-api-for-tracking-on-linkedins-first-party-click-ids",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 2: Using Conversions API for Tracking on LinkedIn\u2019s First-Party Click IDs"
+      ],
+      "Text": "When enhanced conversion tracking is enabled on the Insight Tag, advertisers can capture LinkedIn\u2019s First-Party Ad Tracking Click ID (li_fat_id) from ad landing page URLs. This ID, added automatically by LinkedIn, enables first-party cookie tracking. Advertisers can capture Click IDs by parsing them from landing page URLs or reading them from cookies (if the Insight Tag is implemented on the website). Once captured, include the li_fat_id as LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID when streaming conversion events via the API. This improves match rates with LinkedIn profiles by using it as a supported user match identifier idType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "After streaming Conversions API events to LinkedIn, we assess signal quality to determine how effectively events match LinkedIn profiles. You can check the conversions status in Campaign Manager to validate that the conversion events were received and user identities were matched with LinkedIn profiles. If you see Low Match Rate below Active on your conversion rule, this means that the information streamed to LinkedIn has a low likelihood of successful event-to-profile matching. We recommend checking these best practices when setting up your Conversions API and ways to improve signal quality.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "After conversion events have been matched with LinkedIn profiles, we look for attribution to ads in the campaigns associated with the conversion rule. Consider using the Last Touch - Each Campaign attribution model on the conversion rule, which gives credit to all campaigns that had an ad interaction within the lookback window. With this model, each conversion event counts across all campaigns that served an impression within the conversion window to the converting member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "When you view campaign metrics and performance charts in Campaign Manager, you can check the conversion tracking reporting metrics in the Conversion \u0026 Leads view. These metrics are available at the campaign groups level, campaign level, and ads level to help you understand your conversion performance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "To find your Conversions \u0026 Leads view, go to the Campaigns, Campaign Groups, or Ads tab for your account, click the Columns dropdown menu and select Conversions \u0026 Leads. To view breakdown by Conversions, click the Breakdown menu and select Conversions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "Review the following key metrics to measure how effectively your marketing campaigns are producing outcomes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "",
+      "Headers": [
+        "Metric",
+        "Explanation"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Conversion rate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A direct measure of campaign effectiveness, conversion rate shows how well your marketing converts interest into actual results. The higher the conversion rate, the more you can attribute your ads to producing the intended action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Cost per conversion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cost per conversion shows you the average amount you spent on each conversion, so you can see the efficiency of your campaign\u0027s spend and directly link the cost to outcomes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Return on ad spend",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The revenue generated for ad spend, this metric allows you to monitor not just that your campaign is driving conversions, but that it\u0027s also justifying your investment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Click Conversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of clicks on your ads that led to a conversion.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Conversions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of views of your ads that led to a conversion.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Total Conversion Value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total value generated by your conversions (value per conversion multiplied by conversions).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "Learn more about Conversion Tracking Reporting Metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 3: Measurement in Campaign Manager",
+      "Anchor": "use-case-3-measurement-in-campaign-manager",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 3: Measurement in Campaign Manager"
+      ],
+      "Text": "These metrics are also available from the Ad Analytics API. Use pivot.value as CONVERSION to group results by conversion and fetch metrics like externalWebsiteConversions, externalWebsitePostClickConversions, externalWebsitePostViewConversions, and conversionValueInLocalCurrency, and derive other metrics as needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 4: Multiple Conversion Types",
+      "Anchor": "use-case-4-multiple-conversion-types",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 4: Multiple Conversion Types"
+      ],
+      "Text": "Send multiple types of conversions together to provide the most comprehensive and accurate picture of the complete customer journey. Most conversion types count only the first instance of a repeated conversion within the configured lookback window. Example, multiple sign-up conversions from a single ad will count as one conversion. Exceptions are when you select Purchase or Add to Cart as conversion type, which are always counted individually, even if repeated by the same member within the lookback window, we\u2019ll count each of the conversion events. Learn more about Conversion lookback window and Conversion attribution model. In order to measure unique conversions, you need to check at individual entity level (for each campaign) versus the aggregated number that you see like the campaign group aggregate because the same conversion could be attributed to multiple campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 4: Multiple Conversion Types",
+      "Anchor": "use-case-4-multiple-conversion-types",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 4: Multiple Conversion Types"
+      ],
+      "Text": "Create multiple conversion rules to attribute the impact of ad campaigns on your different sales stages in CRM that represent both pipeline and closed won deals. For Brand Awareness and upper funnel pipeline objectives, you can calculate Cost per influenced conversion as Spend divided by Conversions. For lower funnel pipeline objectives and closed won deals, Conversion value can be passed dynamically through CRM which can help you to calculate ROAS (Return on Ad Spend) as Total Conversion Value divided by Spend.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 5: Qualified Leads Optimization Goal",
+      "Anchor": "use-case-5-qualified-leads-optimization-goal",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 5: Qualified Leads Optimization Goal"
+      ],
+      "Text": "Subject to members\u0027 preferences, the qualified leads optimization goal helps LinkedIn deliver higher-quality leads by using qualified lead data sent through your Conversions API (CAPI) integration, supported through both direct API integrations and third-party partner integrations. As you process new leads and identify those that meet your criteria for a qualified lead, such as Marketing Qualified Lead or Sales Qualified Lead, this information allows LinkedIn to more accurately identify the most promising prospects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 5: Qualified Leads Optimization Goal",
+      "Anchor": "use-case-5-qualified-leads-optimization-goal",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 5: Qualified Leads Optimization Goal"
+      ],
+      "Text": "When creating a qualified leads ad set, choose the lead generation objective, select the qualified leads optimization goal, and choose one or more qualified lead conversions from your Conversions API (CAPI) integration. When creating your conversion rule, you must select QUALIFIED_LEAD as the conversion type in order for the associated conversions to be eligible for optimization under this goal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 5: Qualified Leads Optimization Goal",
+      "Anchor": "use-case-5-qualified-leads-optimization-goal",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 5: Qualified Leads Optimization Goal"
+      ],
+      "Text": "Qualified leads data must be shared with LinkedIn within 30 days to be included in ad set optimization; however, we recommend sharing qualified leads as soon as the information is available. Optimization also requires a two-week learning phase for peak performance, so we recommend sharing five or more qualified leads within two weeks to expedite this phase. Learn more about the qualified leads optimization goal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 5: Qualified Leads Optimization Goal",
+      "Anchor": "use-case-5-qualified-leads-optimization-goal",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 5: Qualified Leads Optimization Goal"
+      ],
+      "Text": "Attributed conversion events of this type are also reported in Campaign Manager as the qualifiedLeads metric, which shows the count of qualified leads attributed to ad entities in the selected date range, and the costPerQualifiedLead metric, which shows the count of qualified leads divided by ad spend.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 6: Retargeting Audience",
+      "Anchor": "use-case-6-retargeting-audience",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 6: Retargeting Audience"
+      ],
+      "Text": "Subject to members\u0027 preferences, you can build Matched Audiences using signals from your Conversions API (CAPI) integration to retarget and nurture audiences who have shown interest and are more likely to convert into customers down the funnel. Learn more about Conversions API (CAPI) audiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 6: Retargeting Audience",
+      "Anchor": "use-case-6-retargeting-audience",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 6: Retargeting Audience"
+      ],
+      "Text": "Advertisers stream Conversions API events to LinkedIn, and each streamed event is matched to a LinkedIn member based on the matching identifiers sent by the advertiser, such as a hashed email (HEM) or other supported idType. If a CAPI event successfully matches to a LinkedIn member, that member is added to the advertiser\u0027s audience, which can then be used for ad targeting inclusion or exclusion once it meets the minimum audience size requirement of 300 members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 7: Source Data for Predictive Audiences",
+      "Anchor": "use-case-7-source-data-for-predictive-audiences",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 7: Source Data for Predictive Audiences"
+      ],
+      "Text": "Subject to members\u0027 preferences, the CAPI-matched audience described in Use case 6 can also be used as source data for Predictive Audiences. Predictive audiences use your first-party or third-party data combined with LinkedIn\u0027s AI to auto-generate a custom audience that is predicted to perform actions similar to those within your source data. They can help expand your campaign\u0027s reach by finding prospects likely to engage and convert for your business, making them a good choice for your bottom-funnel advertising strategy.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 7: Source Data for Predictive Audiences",
+      "Anchor": "use-case-7-source-data-for-predictive-audiences",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 7: Source Data for Predictive Audiences"
+      ],
+      "Text": "When creating a predictive audience, select the source you\u0027d like to build it from: Contact list, Company list, Conversion, Lead gen form, or Retargeting. You can only choose one source per predictive audience. Selecting Conversion lets you use a CAPI-matched audience as the source data, so LinkedIn\u0027s AI can find prospects that are likely to take similar actions to the members already matched through your Conversions API integration. Learn more about creating predictive audiences and Predictive Audiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 8: Use Conversion Lift Testing to measure and prove impact",
+      "Anchor": "use-case-8-use-conversion-lift-testing-to-measure-and-prove-impact",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 8: Use Conversion Lift Testing to measure and prove impact"
+      ],
+      "Text": "Conversion Lift Testing helps you understand the value of your campaigns by measuring how effectively they drive incremental conversions on both LinkedIn and the LinkedIn Audience Network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 8: Use Conversion Lift Testing to measure and prove impact",
+      "Anchor": "use-case-8-use-conversion-lift-testing-to-measure-and-prove-impact",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 8: Use Conversion Lift Testing to measure and prove impact"
+      ],
+      "Text": "Conversion Lift Testing splits your target audience into control and test groups. The ad sets being tested are only shown to the test group, and then both groups are tracked for conversion events relevant to your campaign goals. This allows you to compare the conversions between the control and test groups to calculate the incremental lift.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case 8: Use Conversion Lift Testing to measure and prove impact",
+      "Anchor": "use-case-8-use-conversion-lift-testing-to-measure-and-prove-impact",
+      "SectionPath": [
+        "Use Cases",
+        "Use case 8: Use Conversion Lift Testing to measure and prove impact"
+      ],
+      "Text": "Learn more about Conversion Lift Testing and how to set up a Conversion Lift test.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

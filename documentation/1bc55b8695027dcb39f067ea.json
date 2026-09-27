@@ -1,0 +1,1750 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+  "Title": "DMP Segment List Uploads",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adsegmentsources"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMP Segment List Uploads",
+      "Anchor": "dmp-segment-list-uploads",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment List Uploads",
+      "Anchor": "dmp-segment-list-uploads",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment List Uploads",
+      "Anchor": "dmp-segment-list-uploads",
+      "SectionPath": [],
+      "Text": "Advertisers can upload their first party data as a CSV list of companies or contacts to match with companies or members to create new audience\u00A0(DMP) segments for targeting specific accounts within LinkedIn advertising campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment List Uploads",
+      "Anchor": "dmp-segment-list-uploads",
+      "SectionPath": [],
+      "Text": "DMP Segments act as staging entities, which can take in user information such as SHA256-hashed email addresses or company names from a third-party provider, map them to LinkedIn member profiles or company pages, and output adSegments, which can then be used with other LinkedIn ads APIs. The list may take up to 48 hours to process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment List Uploads",
+      "Anchor": "dmp-segment-list-uploads",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description",
+        "Endpoints"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adCampaignsdmpSegments/listUploadsadSegments",
+            "Links": [],
+            "Values": [
+              "adCampaigns",
+              "dmpSegments/listUploads",
+              "adSegments"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments. Can manage and read audience DMP segments.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "dmpSegmentsdmpSegments/listUploadsdmpSegments/usersdmpSegments/companiesadSegments",
+            "Links": [],
+            "Values": [
+              "dmpSegments",
+              "dmpSegments/listUploads",
+              "dmpSegments/users",
+              "dmpSegments/companies",
+              "adSegments"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps",
+      "Anchor": "steps",
+      "SectionPath": [
+        "Steps"
+      ],
+      "Text": "Create List File\nUpload List File\nCreate List Upload DMP Segment\nAttach the Uploaded List to a DMP Segment\nMonitor Status of DMP Segment\nUpdate Campaign Targeting with a Created adSegment",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create List File",
+      "Anchor": "create-list-file",
+      "SectionPath": [
+        "Create List File"
+      ],
+      "Text": "The list file must be in CSV format. It is recommended the file has UTF-8 encoding. See Account and Contact Targeting List Templates to download a sample CSV file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Header List",
+      "Anchor": "supported-header-list",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Supported Header List"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header Name",
+        "Header Alias",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyname",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name, for example, Microsoft",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companydomain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "companyemaildomain,emaildomain,domain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company email domain with a maximum length of 100 characters, for example, microsoft.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companywebsite",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "website",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company website with a maximum length of 100 characters, for example, microsoft.com",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "linkedincompanypageurl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Linkedin company page URL, for example, www.linkedin.com/company/microsoft",
+            "Links": [
+              "https://www.linkedin.com/company/microsoft"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "stocksymbol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "stockticker,ticker",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stock symbol with a maximum length of 5 characters, for example, MSFT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "City name with a maximum length of 50 characters, for example, Seattle",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "st,province,pr",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State/Province name with a maximum length of 50 characters for example, Washington",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companycountry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO standardized two letter country code, for example, US",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "zipcode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "zip,pincode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Zip code with a maximum length of 20 characters, for example, 941031234",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry name with a maximum length of 50 characters, for example, Technology",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industrytwo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indutry name with a maximumm length of 50 characters, for example, Technology",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industrythree",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry name with a maximum length of 50 characters, for example, Technology",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Header requirements",
+      "Anchor": "header-requirements",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Header requirements"
+      ],
+      "Text": "The header row must be included for proper parsing and it should always be the first now.\nInclude header names and header aliases defined in the supported header list above.\nProvide multiple headers in a header row, and multiple headers must be comma separated.\nDuplicate headers are not allowed. Note that different header names of the same type are also considered duplicates, for example, companywebsite and website are duplicate headers because they all refer to a company website.\nA header row must contain at least one of the header names: companynamecompanydomaincompanywebsitelinkedincompanypageurl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content requirements",
+      "Anchor": "content-requirements",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Content requirements"
+      ],
+      "Text": "Include one instance of data per row.\nIf a company name does contain a comma, the whole company name must be enclosed in double quotes. For example, test,company,name should be converted to \u0022test,company,name\u0022 in a CSV file.\nLinkedIn recommends at least 1,000 companies, with a maximum list size of 300,000.\nThe file must be in CSV format.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Sample Data"
+      ],
+      "Text": "See the following example to upload an account list. Each list must be a separate CSV file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Companies",
+      "Anchor": "companies",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Companies"
+      ],
+      "Text": "",
+      "Headers": [
+        "companyname"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Microsoft",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn Corp",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u0022Company,name,test\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Companies and Company Domains",
+      "Anchor": "companies-and-company-domains",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Companies and Company Domains"
+      ],
+      "Text": "",
+      "Headers": [
+        "companyname",
+        "companydomain"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "linkedin.com",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Website, LinkedIn Company Page URL, and Stock Symbol",
+      "Anchor": "company-website-linkedin-company-page-url-and-stock-symbol",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Company Website, LinkedIn Company Page URL, and Stock Symbol"
+      ],
+      "Text": "",
+      "Headers": [
+        "companywebsite",
+        "linkedincompanypageurl",
+        "stocksymbol"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "linkedin.com",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "www.linkedin.com/company/microsoft",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MSFT",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Companies, Location, and Industry",
+      "Anchor": "companies-location-and-industry",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Companies, Location, and Industry"
+      ],
+      "Text": "",
+      "Headers": [
+        "companyname",
+        "city",
+        "state",
+        "companycountry",
+        "industry"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mountain view",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Software",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Companies, Location, and Industry",
+      "Anchor": "companies-location-and-industry",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Companies, Location, and Industry"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Companies, Location, and Industry",
+      "Anchor": "companies-location-and-industry",
+      "SectionPath": [
+        "Create List File",
+        "Account Lists",
+        "Companies, Location, and Industry"
+      ],
+      "Text": "Matched company lists can\u0027t be shared with advertisers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Header List",
+      "Anchor": "supported-header-list-1",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Supported Header List"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header Name",
+        "Header Alias",
+        "Description",
+        "Data Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SHA256 hashed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "googleaid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Google Android mobile advertiser id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "googleuid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Google user id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstname",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fn,first",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name with a maximum length of 35 characters, for example, Mike",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastname",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ln,last",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name with a maximum length of 35 characters, for example, Smith",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employeecompany",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name with a maximum length of 50 characters,for example, Microsoft",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobtitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job title name with a maximum length of 50 characters, for example, Software Engineer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ISO standardized two letter country code, for example, US",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plain text",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Header requirements",
+      "Anchor": "header-requirements-1",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Header requirements"
+      ],
+      "Text": "Include the header row for proper parsing. The header row should always be the first now.\nOnly use header names and header aliases defined in the supported header list above.\nProvide multiple headers in a header row, and multiple headers must be comma separated.\nDuplicate headers are not allowed. Note that different header names of the same type are also considered duplicates, for example, firstname and fn are duplicate headers because they all refer to a first name.\nA header row must contain at least one of the following header names:\n\nEmail\nGoogle Aid\nGoogle Uid\nFirst name and Last name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content Requirements",
+      "Anchor": "content-requirements-1",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Content Requirements"
+      ],
+      "Text": "The following content requirements must be followed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content Requirements",
+      "Anchor": "content-requirements-1",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Content Requirements"
+      ],
+      "Text": "Include one contact per row.\nAt least 10,000 rows with a maximum list size of 300,000.\nMinimum audience count of 300 must be satisfied.\nMust be in CSV format.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Hashing Guideline",
+      "Anchor": "email-hashing-guideline",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Email Hashing Guideline"
+      ],
+      "Text": "Email addresses must be SHA256 hashed before you upload the list. If you use the LinkedIn Campaign Manager Tool, the UI hashes them for you. For parity in results (match rates) with the API, it\u0027s important that you follow these guidelines.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Hashing Guideline",
+      "Anchor": "email-hashing-guideline",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Email Hashing Guideline"
+      ],
+      "Text": "Convert email addresses to all lowercase.\nRemove all whitespaces.\nGenerate SHA256 hex hash. abc@example.com should be converted to FA922CB41FF930664D4C9CED3C472CE7ECF29A0F8248B7018456E990177FFF75 (NOT case-sensitive).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Data",
+      "Anchor": "sample-data-1",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Sample Data"
+      ],
+      "Text": "See the following example to upload a contact list. Each list must be a separate CSV file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Email only",
+      "Anchor": "email-only",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Sample Data",
+        "Email only"
+      ],
+      "Text": "",
+      "Headers": [
+        "email"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "7e27ef2718f1aaddb03936077715a60244e380ef09e27504fcb3184a2af7b6ea",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cb39d1f4b7f209e5bb36f71c20aa4c0d0b2ecf7b21d99d5d6cfc4b4c81898b24",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Multiple IDs",
+      "Anchor": "multiple-ids",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Sample Data",
+        "Multiple IDs"
+      ],
+      "Text": "",
+      "Headers": [
+        "email",
+        "googleaid"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "7e27ef2718f1aaddb03936087714a60244e380ef09e27504fcb3184a2af7b6ea",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "30F8fc7b-a9ef-4,830-a636-1f0deb4f189e",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cb39d1f4b7f209e5bb36f72c60aa4c0d0b2ecf7b21d99d5d6cfc4b4c81898b24",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "d0901f0e-7d98-4,804-af54-751ff829520a",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "People match",
+      "Anchor": "people-match",
+      "SectionPath": [
+        "Create List File",
+        "Contact Lists",
+        "Sample Data",
+        "People match"
+      ],
+      "Text": "",
+      "Headers": [
+        "firstname",
+        "lastname",
+        "country",
+        "employeecompany",
+        "title"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "mike",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "smith",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "linkedin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Engineer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mark",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "wang",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "US",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "microsoft",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accountant",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload List File",
+      "Anchor": "upload-list-file",
+      "SectionPath": [
+        "Upload List File"
+      ],
+      "Text": "Following is the two-step process to upload the media:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload List File",
+      "Anchor": "upload-list-file",
+      "SectionPath": [
+        "Upload List File"
+      ],
+      "Text": "Generate an upload URL. Refer to the Generate File Upload URL section for details.\nUpload a CSV file on the generated URL. Refer to the Upload to the URL section for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate File Upload URL",
+      "Anchor": "generate-file-upload-url",
+      "SectionPath": [
+        "Upload List File",
+        "Generate File Upload URL"
+      ],
+      "Text": "To upload the CSV list file to LinkedIn, use the generateUploadUrl method. The files must be in CSV format and should contain either company lists or contact lists. The CSV files must be UTF-8 encoded for accurate results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Upload List File",
+        "Generate File Upload URL",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Upload List File",
+        "Generate File Upload URL",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments?action=generateUploadUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Upload List File",
+        "Generate File Upload URL",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:sponsoredAccount:506303764\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Upload List File",
+        "Generate File Upload URL",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments?action=generateUploadUrl\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022owner\u0022: \u0022urn:li:sponsoredAccount:506303764\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Upload List File",
+        "Generate File Upload URL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022value\u0022: \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQLyKYkphCZFGAAAAZIr97lnLfOOIW0Eey2VXGwEnbZfjYQOcOf4EXepcIvFAGLecbGyRO9G9JI9Hv3CoUR9jZEmWcN3DxSmqmsI4xngPP-bq_DTwUZX3hPnTN6VU2XpV-ppnBcu8BDedFiPdauevctMKQ4qm_23zV_HENe9BwlW6nJaaPCT_pGXjwloeVqSzp60a05_V9VkD7the2y-0zg_YVdqzLOmzZEcmQGD1x8gbEigmviyi7kLeWH4S-0zR9pjbRQiDM8TZuhNymkhdxoGzbfrZm8g_Wo1UFc48naWq_vK8PyHFmQOPvF2kZLtWlSpFQCM-DgVXG8jJ0WUFFd3xNd5zPgQD-QFTP5igQlDCp4q8Y_oiFqmG3VoS-MHwNJYIEa9kkGhDJgvafotzIJ4SuQC2qGnXr_0VyvCmLUAU1834KwpLWL0JPzCOnM1_7JAUnpyxYpSYjm_Q4p-eqWUUI6LQF4B21bpxdn8YZ1jzHszZHRtx1RBhEzqp1NuaDDLPH2PTaA6SWvn4oyyb08BFe7b_WE-3X-jlqZVlT3MxYf3OfoQOw5tzjlBSgVQanJ215NMEPb6EEppnMkgD1nCiH-wG9XE7FIAgmNfInTFRGakLPMT6HtbriRUisfEG9vXrBcRFUeoVpJnE3S9UGH7rSz2ruoDTbjo-ZcajkO6vQ1behggPXFYT4skj8mSaLij5OpBftPFGUVquFVp7G1uLLqp83G7xvp94kYdlRo7S6YAS9vYhAfUmDRnjXv6VlaRXnLlery-fXdvxUq1Jf41OpxhV1MCdXI4j6hhmK__0jaaFzix0cTqNMA7skTuyuceqmiBRBKpo06sxOEM1JP_fZeZKKqa_Oy_FC2nsZrWcdKT1iFbGzFZKi8wwVztdbCs5h0YyFKVzsglPiysHjV-BI02l61iwUOsbvDJkdFYUU3wdfJ4Mg\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload to the URL",
+      "Anchor": "upload-to-the-url",
+      "SectionPath": [
+        "Upload List File",
+        "Upload to the URL"
+      ],
+      "Text": "Upload audience list CSV file to the generated URL returned in the value field of the previous step\u0027s response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Upload List File",
+        "Upload to the URL",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Upload List File",
+        "Upload to the URL",
+        "Sample Request"
+      ],
+      "Text": "POST https://www.linkedin.com/ambry/?x-li-ambry-ep=AQLyKYkphCZFGAAAAZIr97lnLfOOIW0Eey2VXGwEnbZfjYQOcOf4EXepcIvFAGLecbGyRO9G9JI9Hv3CoUR9jZEmWcN3DxSmqmsI4xngPP-bq_DTwUZX3hPnTN6VU2XpV-ppnBcu8BDedFiPdauevctMKQ4qm_23zV_HENe9BwlW6nJaaPCT_pGXjwloeVqSzp60a05_V9VkD7the2y-0zg_YVdqzLOmzZEcmQGD1x8gbEigmviyi7kLeWH4S-0zR9pjbRQiDM8TZuhNymkhdxoGzbfrZm8g_Wo1UFc48naWq_vK8PyHFmQOPvF2kZLtWlSpFQCM-DgVXG8jJ0WUFFd3xNd5zPgQD-QFTP5igQlDCp4q8Y_oiFqmG3VoS-MHwNJYIEa9kkGhDJgvafotzIJ4SuQC2qGnXr_0VyvCmLUAU1834KwpLWL0JPzCOnM1_7JAUnpyxYpSYjm_Q4p-eqWUUI6LQF4B21bpxdn8YZ1jzHszZHRtx1RBhEzqp1NuaDDLPH2PTaA6SWvn4oyyb08BFe7b_WE-3X-jlqZVlT3MxYf3OfoQOw5tzjlBSgVQanJ215NMEPb6EEppnMkgD1nCiH-wG9XE7FIAgmNfInTFRGakLPMT6HtbriRUisfEG9vXrBcRFUeoVpJnE3S9UGH7rSz2ruoDTbjo-ZcajkO6vQ1behggPXFYT4skj8mSaLij5OpBftPFGUVquFVp7G1uLLqp83G7xvp94kYdlRo7S6YAS9vYhAfUmDRnjXv6VlaRXnLlery-fXdvxUq1Jf41OpxhV1MCdXI4j6hhmK__0jaaFzix0cTqNMA7skTuyuceqmiBRBKpo06sxOEM1JP_fZeZKKqa_Oy_FC2nsZrWcdKT1iFbGzFZKi8wwVztdbCs5h0YyFKVzsglPiysHjV-BI02l61iwUOsbvDJkdFYUU3wdfJ4Mg",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Upload List File",
+        "Upload to the URL",
+        "Sample Request"
+      ],
+      "Text": "curl -i -X POST \u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQLyKYkphCZFGAAAAZIr97lnLfOOIW0Eey2VXGwEnbZfjYQOcOf4EXepcIvFAGLecbGyRO9G9JI9Hv3CoUR9jZEmWcN3DxSmqmsI4xngPP-bq_DTwUZX3hPnTN6VU2XpV-ppnBcu8BDedFiPdauevctMKQ4qm_23zV_HENe9BwlW6nJaaPCT_pGXjwloeVqSzp60a05_V9VkD7the2y-0zg_YVdqzLOmzZEcmQGD1x8gbEigmviyi7kLeWH4S-0zR9pjbRQiDM8TZuhNymkhdxoGzbfrZm8g_Wo1UFc48naWq_vK8PyHFmQOPvF2kZLtWlSpFQCM-DgVXG8jJ0WUFFd3xNd5zPgQD-QFTP5igQlDCp4q8Y_oiFqmG3VoS-MHwNJYIEa9kkGhDJgvafotzIJ4SuQC2qGnXr_0VyvCmLUAU1834KwpLWL0JPzCOnM1_7JAUnpyxYpSYjm_Q4p-eqWUUI6LQF4B21bpxdn8YZ1jzHszZHRtx1RBhEzqp1NuaDDLPH2PTaA6SWvn4oyyb08BFe7b_WE-3X-jlqZVlT3MxYf3OfoQOw5tzjlBSgVQanJ215NMEPb6EEppnMkgD1nCiH-wG9XE7FIAgmNfInTFRGakLPMT6HtbriRUisfEG9vXrBcRFUeoVpJnE3S9UGH7rSz2ruoDTbjo-ZcajkO6vQ1behggPXFYT4skj8mSaLij5OpBftPFGUVquFVp7G1uLLqp83G7xvp94kYdlRo7S6YAS9vYhAfUmDRnjXv6VlaRXnLlery-fXdvxUq1Jf41OpxhV1MCdXI4j6hhmK__0jaaFzix0cTqNMA7skTuyuceqmiBRBKpo06sxOEM1JP_fZeZKKqa_Oy_FC2nsZrWcdKT1iFbGzFZKi8wwVztdbCs5h0YyFKVzsglPiysHjV-BI02l61iwUOsbvDJkdFYUU3wdfJ4Mg\u0022 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--data-binary @/path/to/list.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Upload List File",
+        "Upload to the URL",
+        "Sample Response"
+      ],
+      "Text": "Since we used the -i option with curl, the headers will be included in the response. The response header location contains the media ID used as an input file later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Upload List File",
+        "Upload to the URL",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201\ncache-control: no-cache, no-store\npragma: no-cache\nlocation: /AAYAAwEvAAQAAQAAAAAAAAv-R5Tyj8t6SZGT6Wjwlp-3Qg.csv\n[...]\ncontent-length: 0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create List Upload DMP Segment",
+      "Anchor": "create-list-upload-dmp-segment",
+      "SectionPath": [
+        "Create List Upload DMP Segment"
+      ],
+      "Text": "To accept media URNs of the uploaded CSV files as input, a DMP Segment has to be created with a specific sourcePlatform field called LIST_UPLOAD.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create List Upload DMP Segment",
+      "Anchor": "create-list-upload-dmp-segment",
+      "SectionPath": [
+        "Create List Upload DMP Segment"
+      ],
+      "Text": "The type of DMP Segment determines the type of CSV file (company list or SHA256-hashed emails) to be ingested. Use COMPANY_LIST_UPLOAD for any company lists and USER_LIST_UPLOAD for email lists.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create List Upload DMP Segment",
+      "Anchor": "create-list-upload-dmp-segment",
+      "SectionPath": [
+        "Create List Upload DMP Segment"
+      ],
+      "Text": "A LIST_UPLOAD segment can\u0027t be used to add or remove users dynamically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Usecase",
+        "sourcePlatform",
+        "type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Uploading account lists (Company list)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LIST_UPLOAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "COMPANY_LIST_UPLOAD",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Uploading contact lists",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LIST_UPLOAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "USER_LIST_UPLOAD",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:506303764\u0022,\n    \u0022destinations\u0022: [\n        {\n            \u0022destination\u0022: \u0022LINKEDIN\u0022\n        }\n    ],\n    \u0022name\u0022: \u0022DMP segment for CSV uploads\u0022,\n    \u0022sourcePlatform\u0022: \u0022LIST_UPLOAD\u0022,\n    \u0022type\u0022: \u0022COMPANY_LIST_UPLOAD\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:506303764\u0022,\n    \u0022destinations\u0022: [\n        {\n            \u0022destination\u0022: \u0022LINKEDIN\u0022\n        }\n    ],\n    \u0022name\u0022: \u0022DMP segment for CSV uploads\u0022,\n    \u0022sourcePlatform\u0022: \u0022LIST_UPLOAD\u0022,\n    \u0022type\u0022: \u0022COMPANY_LIST_UPLOAD\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "See create DMP segments for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create List Upload DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "After you create a DMP segment, you must wait 5 seconds for the segment to be available to attach lists.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Attach List to DMP Segment",
+      "Anchor": "attach-list-to-dmp-segment",
+      "SectionPath": [
+        "Attach List to DMP Segment"
+      ],
+      "Text": "Once you have created the DMP segment, associate a list upload with the segment. The body of this call should include an inputFile field containing the media URN returned in the previous CSV file upload response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Attach List to DMP Segment",
+      "Anchor": "attach-list-to-dmp-segment",
+      "SectionPath": [
+        "Attach List to DMP Segment"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Attach List to DMP Segment",
+      "Anchor": "attach-list-to-dmp-segment",
+      "SectionPath": [
+        "Attach List to DMP Segment"
+      ],
+      "Text": "A DMP Segment can only have one list upload attached to it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attach List to DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attach List to DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/{dmpSegmentId}/listUploads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attach List to DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022inputFile\u0022: \u0022urn:li:media:/AAYAAwEvAAQAAQAAAAAAAAv-R5Tyj8t6SZGT6Wjwlp-3Qg.csv\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attach List to DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/{dmpSegmentId}/listUploads\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022inputFile\u0022: \u0022urn:li:media:/AAYAAwEvAAQAAQAAAAAAAAv-R5Tyj8t6SZGT6Wjwlp-3Qg.csv\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Attach List to DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code, the created list upload ID in the x-restli-id response header, and the complete path in the Location header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Monitor Status of DMP Segment",
+      "Anchor": "monitor-status-of-dmp-segment",
+      "SectionPath": [
+        "Monitor Status of DMP Segment"
+      ],
+      "Text": "It takes up to 48 hours for a DMP segment to move from PROCESSING to READY state. Use GET /dmpSegments to check its status. When the DMP Segment status is READY, the destinationSegmentId under destinations contains the target adSegment URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Monitor Status of DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Monitor Status of DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/22685",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Monitor Status of DMP Segment",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/22685\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Monitor Status of DMP Segment",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:518513895\u0022,\n    \u0022created\u0022: 1536351127000,\n    \u0022destinations\u0022: [\n        {\n            \u0022audienceSize\u0022: 5900,\n            \u0022created\u0022: 1536351127000,\n            \u0022destination\u0022: \u0022LINKEDIN\u0022,\n            \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:164005\u0022,\n            \u0022lastModified\u0022: 1536976381000,\n            \u0022matchedCount\u0022: 5800,\n            \u0022status\u0022: \u0022READY\u0022\n        }\n    ],\n    \u0022id\u0022: 22685,\n    \u0022inputCount\u0022: 6095,\n    \u0022lastModified\u0022: 1536976381000,\n    \u0022name\u0022: \u0022DMP segment for CSV uploads\u0022,\n    \u0022sourcePlatform\u0022: \u0022LIST_UPLOAD\u0022,\n    \u0022type\u0022: \u0022COMPANY_LIST_UPLOAD\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Campaign Targeting with a Created adSegment",
+      "Anchor": "update-campaign-targeting-with-a-created-adsegment",
+      "SectionPath": [
+        "Update Campaign Targeting with a Created adSegment"
+      ],
+      "Text": "When a DMP segment is in READY state, the adSegment URN is available for targeting. The advertiser can now use the segment in addition to other targeting criteria to run their campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Campaign Targeting with a Created adSegment",
+      "Anchor": "update-campaign-targeting-with-a-created-adsegment",
+      "SectionPath": [
+        "Update Campaign Targeting with a Created adSegment"
+      ],
+      "Text": "The following request updates an existing campaign with the new ad segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Campaign Targeting with a Created adSegment",
+      "Anchor": "update-campaign-targeting-with-a-created-adsegment",
+      "SectionPath": [
+        "Update Campaign Targeting with a Created adSegment"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Campaign Targeting with a Created adSegment",
+      "Anchor": "update-campaign-targeting-with-a-created-adsegment",
+      "SectionPath": [
+        "Update Campaign Targeting with a Created adSegment"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Campaign Targeting with a Created adSegment",
+      "Anchor": "update-campaign-targeting-with-a-created-adsegment",
+      "SectionPath": [
+        "Update Campaign Targeting with a Created adSegment"
+      ],
+      "Text": "{\n \u0022patch\u0022:{\n  \u0022$set\u0022:{\n   \u0022targetingCriteria\u0022:{\n    \u0022include\u0022:{\n     \u0022and\u0022:[\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:audienceMatchingSegments\u0022:[\n         \u0022urn:li:adSegment:30000\u0022\n        ]\n       }\n      },\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:locations\u0022:[\n         \u0022urn:li:geo:103644278\u0022\n        ]\n       }\n      }\n     ]\n    }\n   }\n  }\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Campaign Targeting with a Created adSegment",
+      "Anchor": "update-campaign-targeting-with-a-created-adsegment",
+      "SectionPath": [
+        "Update Campaign Targeting with a Created adSegment"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n \u0022patch\u0022:{\n  \u0022$set\u0022:{\n   \u0022targetingCriteria\u0022:{\n    \u0022include\u0022:{\n     \u0022and\u0022:[\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:audienceMatchingSegments\u0022:[\n         \u0022urn:li:adSegment:30000\u0022\n        ]\n       }\n      },\n      {\n       \u0022or\u0022:{\n        \u0022urn:li:adTargetingFacet:locations\u0022:[\n         \u0022urn:li:geo:103644278\u0022\n        ]\n       }\n      }\n     ]\n    }\n   }\n  }\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get DMP Segment\u0027s List Upload",
+      "Anchor": "get-dmp-segments-list-upload",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload"
+      ],
+      "Text": "Get list uploads associated with a DMP Segment. Note that only one list upload will be returned even though the response returns an array.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/{dmpSegmentId}/listUploads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/{dmpSegmentId}/listUploads\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022created\u0022: 1535418156000,\n            \u0022dmpSegmentId\u0022: 55484,\n            \u0022id\u0022: 52105,\n            \u0022inputFile\u0022: \u0022urn:li:media:\u003CREDACTED\u003E\u0022,\n            \u0022lastModified\u0022: 1535418156000\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Response"
+      ],
+      "Text": "Also get a specific list upload by ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/{dmpSegmentId}/listUploads/{listId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/{dmpSegmentId}/listUploads/{listId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Get DMP Segment\u0027s List Upload",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1535417362000,\n    \u0022dmpSegmentId\u0022: 55484,\n    \u0022id\u0022: 52095,\n    \u0022inputFile\u0022: \u0022urn:li:media:\u003CREDACTED\u003E\u0022,\n    \u0022lastModified\u0022: 1535417362000\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a List From a DMP Segment",
+      "Anchor": "delete-a-list-from-a-dmp-segment",
+      "SectionPath": [
+        "Delete a List From a DMP Segment"
+      ],
+      "Text": "Delete a list upload from a DMP Segment, identified by its unique ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a List From a DMP Segment",
+      "Anchor": "delete-a-list-from-a-dmp-segment",
+      "SectionPath": [
+        "Delete a List From a DMP Segment"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a List From a DMP Segment",
+      "Anchor": "delete-a-list-from-a-dmp-segment",
+      "SectionPath": [
+        "Delete a List From a DMP Segment"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/dmpSegments/{dmpSegmentId}/listUploads/{listId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a List From a DMP Segment",
+      "Anchor": "delete-a-list-from-a-dmp-segment",
+      "SectionPath": [
+        "Delete a List From a DMP Segment"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/v2/dmpSegments/{dmpSegmentId}/listUploads/{listId}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a List From a DMP Segment",
+      "Anchor": "delete-a-list-from-a-dmp-segment",
+      "SectionPath": [
+        "Delete a List From a DMP Segment"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

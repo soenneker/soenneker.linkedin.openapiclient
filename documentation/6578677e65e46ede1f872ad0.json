@@ -1,0 +1,365 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/exporting-crm-data-validation",
+  "Title": "Exporting CRM Data Validation",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_validation/sales-navigator-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/data-validation-design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/exporting-crm-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The Sales Navigator Data Validation API performs validation of data ingested via CRM Sync and returns an export for a CRM instance that identifies contact and lead records whose current company on LinkedIn does not match the company in the CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The API allows bulk export of the validated records through asynchronous jobs that a caller must create, poll for completion, and retrieve the results once completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To get started with CRM Data Validation API, please check out Getting Started before continue with this tutorial.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Export Job",
+      "Anchor": "create-an-export-job",
+      "SectionPath": [
+        "Create an Export Job"
+      ],
+      "Text": "Export jobs are created via POST by specifying the external CRM instance ID you want to create an export for, in the form of a URL-encoded CRM instance URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Export Job",
+      "Anchor": "create-an-export-job",
+      "SectionPath": [
+        "Create an Export Job"
+      ],
+      "Text": "To create an data validation export job that flag records expired from 11/9/2018 till now with /crmDataValidationExportJobs endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create an Export Job",
+      "Anchor": "create-an-export-job",
+      "SectionPath": [
+        "Create an Export Job"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/crmDataValidationExportJobs?crmInstanceId={crmInstanceId} HTTP/1.1\nAuthorization: Bearer {ACCESS_TOKEN}\nx-restli-protocol-version: 2.0.0\nContent-Type: application/json\n\n{\u0022exportStartAt\u0022:1533772800000}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Export Job",
+      "Anchor": "create-an-export-job",
+      "SectionPath": [
+        "Create an Export Job"
+      ],
+      "Text": "Successful job creation responses will have a 201 Created status code and contain the job ID in the x-restli-id header. There will be no response body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create an Export Job",
+      "Anchor": "create-an-export-job",
+      "SectionPath": [
+        "Create an Export Job"
+      ],
+      "Text": "HTTP/1.1 201 Created\nLocation: /crmDataValidationExportJobs/148\nX-RestLi-Id: 148\nX-RestLi-Protocol-Version: 2.0.0\nDate: Tue, 06 Nov 2018 21:19:13 GMT",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "Once an export job is created it will run asynchronously. Processing could take up to two hours. You can request the status of your query to check if it has been marked as COMPLETED. Once the job completes, and the status displays completed, you will be provided a short lived download URL in the downloadURL field which can be used to retrieve the data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "To query an export job with /crmDataValidationExportJobs endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/crmDataValidationExportJobs/{jobId}?crmInstanceId={crmInstanceId} HTTP/1.1\nAuthorization: Bearer {ACCESS TOKEN}\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "Completed jobs will have downloadUrls in the response, in case when the export is too big in file size, it will have multiple downloadUrls in the downloadUrls array. If the consumer is a Salesforce org, the downloadUrls will contain files no greater than 10 MB.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "Sample Response (Job completed):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "{\n  \u0022jobId\u0022: 148,\n  \u0022exportStartAt\u0022: 1538947151337,\n  \u0022exportEndAt\u0022: 1541539151570,\n  \u0022downloadUrls\u0022: [\u0022https://www.linkedin.com/ambry/?x-li-ambry-ep=AQFVMzGy8qJVMQAAAWbwbeHrHZG5mJkIDr2xq_Z3znIfOzp1FvApV-oL3Jd0ck\u0022],\n  \u0022nextExportStartAt\u0022: 1538947151337,\n  \u0022expireAt\u0022: 1541635625000,\n  \u0022status\u0022: \u0022COMPLETED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Export Job Status",
+      "Anchor": "query-export-job-status",
+      "SectionPath": [
+        "Query Export Job Status"
+      ],
+      "Text": "A job ID will not expire for at least a week.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download the Export",
+      "Anchor": "download-the-export",
+      "SectionPath": [
+        "Download the Export"
+      ],
+      "Text": "Once data is ready to download, you can download the CSV file from the downloadUrls provided. As with all other endpoints, access tokens must be sent in the Authorization header of the GET request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download the Export",
+      "Anchor": "download-the-export",
+      "SectionPath": [
+        "Download the Export"
+      ],
+      "Text": "To download the export:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Download the Export",
+      "Anchor": "download-the-export",
+      "SectionPath": [
+        "Download the Export"
+      ],
+      "Text": "GET {downloadUrl} HTTP/1.1\nAuthorization: Bearer {ACCESS_TOKEN}\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download the Export",
+      "Anchor": "download-the-export",
+      "SectionPath": [
+        "Download the Export"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download the Export",
+      "Anchor": "download-the-export",
+      "SectionPath": [
+        "Download the Export"
+      ],
+      "Text": "The CSV file will be returned as a stream\nThe short lived downloadUrls are only valid for 1 hour, and new downloadUrls may be returned upon expiry",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CSV Export Schema",
+      "Anchor": "csv-export-schema",
+      "SectionPath": [
+        "CSV Export Schema"
+      ],
+      "Text": "The export file is in CSV format. The schema can be found in below table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "CSV Export Schema",
+      "Anchor": "csv-export-schema",
+      "SectionPath": [
+        "CSV Export Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column Name",
+        "Data Type",
+        "Optional in response?",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "crmId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for the record in the CRM",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "crmRecordType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of record. Valid record type: CONTACT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expiredAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which the export was started from",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time for the end bound of the export",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

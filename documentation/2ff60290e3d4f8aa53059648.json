@@ -1,0 +1,303 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+  "Title": "LinkedIn Learning SSO via ADFS Configuration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "ADFS Overview",
+      "Anchor": "adfs-overview",
+      "SectionPath": [
+        "ADFS Overview"
+      ],
+      "Text": "This document outlines the necessary steps for LinkedIn Learning administrators to set up Single Sign-on with ADFS 3.0. This guide also describes troubleshooting steps for common issues in the SSO-ADFS configuration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "ADFS Overview",
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the SSO-ADFS configuration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download Service Provider Metadata from LinkedIn Learning",
+      "Anchor": "download-service-provider-metadata-from-linkedin-learning",
+      "SectionPath": [
+        "Download Service Provider Metadata from LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then select Me \u003E Authentication.\n\n\nFrom the side navigation menu, select Configure single sign-on and click Add new SSO.\n\n\nClick Add new SSO and select \u0022SAML\u0022.\n\n\nIn the Authenticate users with SAML SSO screen, under Identity provider settings, click Download.\n\n\nLinkedIn Learning downloads the SP metadata as an XML file. You need this file for the next section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Relying Party Trust",
+      "Anchor": "add-relying-party-trust",
+      "SectionPath": [
+        "Add Relying Party Trust"
+      ],
+      "Text": "In ADFS, navigate to Trust Relationships \u003E Relying Party Trusts. You should see the previously-added relying party trusts.\n\nIn the right hand column, select \u0022Add Relying Party Trust\u0022.\n\n\nIn the left-hand side navigation, click Select Data Source, then choose \u201CImport data about the relying party from a file\u201D and select the SP Metadata file downloaded from LinkedIn Learning.\n\n\nSelect Specify Display Name, then in the Display name field, enter a display name (i.e., \u0022LinkedIn Learning\u0022).\n\n\nSelect Configure Multi-factor Authentication Now?, then select \u0022I do not want to configure multi-factor authentication settings for this relying party trust at this time\u0022.\n\n\nSelect Choose Issuance Authorization Rules, then select \u0022Permit all users to access this relying party\u0022.\n\n\nSelect Finish, then select \u0022Open the Edit Claim Rules dialog for this relying party trust when the wizard closes\u0022, then click Close.\n\n\nIn the Issuance Transform Rules tab, select Add Rule..., then click OK.\n\n\nIn the Add Transform claim Rule Wizard window, select Choose Rule Type.\n\nSelect \u201CSend LDAP Attributes as Claims\u201D from the dropdown, then click Next.\n\n\nSelect Configure Claim Rule, then enter a name in the Claim rule name field.\n\nSelect \u201CActive Directory\u201D in the Attribute Store dropdown.\n\nChoose your mappings. We recommend the values shown below, but you can select the values that align with your organization\u0027s needs.\n\n Important\nFor authentication to be successful, you must map a unique identifier to the Name ID claim type. Linkedin Learning uses this value to identify users and should be unique and unchanging, like an Employee ID or a UPN.\n\n\n\n Note\nYou can create additional claim rules such as \u0022Job Title\u0022 or \u0022Department\u0022 for reporting or grouping purposes.\n\n\nClick Finish and OK on the next screen.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Install the Certificate",
+      "Anchor": "install-the-certificate",
+      "SectionPath": [
+        "Add Relying Party Trust",
+        "Install the Certificate"
+      ],
+      "Text": "In ADFS, go to the Properties of the Relying Party Trust you just created and click the Signature tab. Double-click the certificate. If the window looks like this, skip to the next section.\n\nIf the above window does not appear, install the certificate.\n\nClick Install Certificate\u2026 to open the wizard.\n\nFor Store Location, choose \u0022Local Machine\u0022.\n\n\nClick Next.\n\nOn the next screen, choose \u0022Place all certificates in the following store\u0022 and click Browse.\n\n\nChoose \u0022Trusted Root Certification Authorities\u0022.\n\n\nClick OK and then Finish. Your Certificate window should now look similar to the one above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Secure Hash Algorithm",
+      "Anchor": "set-secure-hash-algorithm",
+      "SectionPath": [
+        "Add Relying Party Trust",
+        "Set Secure Hash Algorithm"
+      ],
+      "Text": "On the properties of the Relying Party Trust you created, go to the Advanced tab.\n\nIn the Secure Hash Algorithm section, choose either \u0022SHA-1\u0022 or \u0022SHA-256\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Secure Hash Algorithm",
+      "Anchor": "set-secure-hash-algorithm",
+      "SectionPath": [
+        "Add Relying Party Trust",
+        "Set Secure Hash Algorithm"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Set Secure Hash Algorithm",
+      "Anchor": "set-secure-hash-algorithm",
+      "SectionPath": [
+        "Add Relying Party Trust",
+        "Set Secure Hash Algorithm"
+      ],
+      "Text": "LinkedIn Learning defaults to \u0022SHA-1\u0022. If you select \u0022SHA-256\u0022, make sure you also choose \u0022SHA-256\u0022 when completing the configuration in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure SAML SSO",
+      "Anchor": "configure-saml-sso",
+      "SectionPath": [
+        "Configure SAML SSO"
+      ],
+      "Text": "To configure SAML SSO in ADFS and LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure SAML SSO",
+      "Anchor": "configure-saml-sso",
+      "SectionPath": [
+        "Configure SAML SSO"
+      ],
+      "Text": "In ADFS, navigate to the Endpoints tab.\n\nOpen the SP Metadata XML file you downloaded from LinkedIn Learning, locate the AssertionConsumerService URL, and paste it in the Endpoint. For example:\nhttps://www.linkedin.com/checkpoint/enterprise/saml/1234567?application=learning\u0026appInstanceId=1234567\u0026authModeId=1234567",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure SAML SSO",
+      "Anchor": "configure-saml-sso",
+      "SectionPath": [
+        "Configure SAML SSO"
+      ],
+      "Text": "This field maps to the Assertion Consumer Service URL, where a SAML response sends a \u0022POST\u0022 via the user agent. In other words, you (the admin) trigger the IdP-initiated flows by sending the response to this endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload ADFS Metadata to LinkedIn Learning",
+      "Anchor": "upload-adfs-metadata-to-linkedin-learning",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Upload ADFS Metadata to LinkedIn Learning"
+      ],
+      "Text": "Download your ADFS metadata using the following format (replace your.adfsserver.com with your server name): https://your.adfsserver.com/FederationMetadata/2007-06/FederationMetadata.xml.\n\nSave the XML file to your computer.\n\nIn the Authenticate users with SAML SSO screen, select SSO settings.\n\nClick Upload XML file.\n\n\nSelect the ADFS metadata XML file you downloaded.\n\nIf you selected SHA-256 when configuring your relying party trust in ADFS, select the same value for Authentication Request Signing Algorithm. If you did not select SHA-256, leave the SSO options as the default values.\n\nClick Save.\n\nToggle the connection to Active.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Trigger the IdP-Initiated Authentication Flow",
+      "Anchor": "trigger-the-idp-initiated-authentication-flow",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Trigger the IdP-Initiated Authentication Flow"
+      ],
+      "Text": "To test Identity Provider-initiated SSO, use the following format (replace your.adfsserver.com with your server):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Trigger the IdP-Initiated Authentication Flow",
+      "Anchor": "trigger-the-idp-initiated-authentication-flow",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Trigger the IdP-Initiated Authentication Flow"
+      ],
+      "Text": "https://your.adfsserver.com/adfs/ls/IdpInitiatedSignOn.aspx",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Trigger the SP-Initiated Authentication Flow",
+      "Anchor": "trigger-the-sp-initiated-authentication-flow",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Trigger the SP-Initiated Authentication Flow"
+      ],
+      "Text": "First, locate your Account ID from the URL in the browser where you configured SSO. Example:\nhttps://www.linkedin.com/learning-admin/settings/global?account=1234567\n\nTo create the Service Provider-initiated URL, use the following format:\nhttps://www.linkedin.com/checkpoint/enterprise/login/[accountid]?application=learning\nExample:\nhttps://www.linkedin.com/checkpoint/enterprise/login/1234567?application=learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Trigger the SP-Initiated Authentication Flow",
+      "Anchor": "trigger-the-sp-initiated-authentication-flow",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Trigger the SP-Initiated Authentication Flow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Trigger the SP-Initiated Authentication Flow",
+      "Anchor": "trigger-the-sp-initiated-authentication-flow",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Trigger the SP-Initiated Authentication Flow"
+      ],
+      "Text": "If your LinkedIn Learning account has LinkedIn Profile binding enabled, you may be prompted to log in to LinkedIn after successful SSO authentication. This login is used to associate your LinkedIn Learning login with your personal LinkedIn account in order to drive content recommendations. If you have any questions about this prompt, contact your dedicated LinkedIn Learning Customer Success Manager to learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Trigger the SP-Initiated Authentication Flow",
+      "Anchor": "trigger-the-sp-initiated-authentication-flow",
+      "SectionPath": [
+        "Configure SAML SSO",
+        "Trigger the SP-Initiated Authentication Flow"
+      ],
+      "Text": "Congratulations! Your learners now can authenticate to LinkedIn Learning using ADFS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "SSO Implementation Guide\n\nGoogle SSO\n\nLTI SSO\n\nOkta SSO\n\nAdding and Managing Users in Bulk via CSV Org Sync\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

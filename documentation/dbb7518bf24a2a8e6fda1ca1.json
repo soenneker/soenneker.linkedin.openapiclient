@@ -1,0 +1,362 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+  "Title": "Recruiter System Connect - Development Tools",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Development Tools",
+      "Anchor": "recruiter-system-connect---development-tools",
+      "SectionPath": [],
+      "Text": "Kindly use the resources in the development tools to help expedite your development process. If you have any questions, you can reach out to us by raising a support ticket.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Development Tools",
+      "Anchor": "recruiter-system-connect---development-tools",
+      "SectionPath": [],
+      "Text": "We provide below resources:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Development Tools",
+      "Anchor": "recruiter-system-connect---development-tools",
+      "SectionPath": [],
+      "Text": "Project Plan describes different stages of Recruiter System Connect development and estimated timeline to help create project plans for Recruiter System Connect integration\nPostman Collection contains all the APIs required for Recruiter System Connect integration. Development teams can use te Postman collection for reference while developing their code. It is fully functional and covers all the APIs so that it can be used as a playground to understand them in detail and try them out before starting any development activities\nSample Applications provides an end to end flow concerning the Customer OnBoarding \u0026 Profile plugin. It can also be used as a playground to try the widgets out before embedding it on your website",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Recruiter System Connect Integration involves significant development and testing efforts. To help Project Managers and Developers with the planning, timelines and to help create checkpoints on different activities, we have created a Project Plan mentioned below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "The entire integration activity is split into different Milestones. To make planning and execution easier for developers, we have further divided the Development Milestone by logically grouping all the integration APIs into 5 Modules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Same Module structure is reflected in the API \u0026 Plugin Guide documentation \u0026 Postman Collection as well.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Below are the milestones definitions for Recruiter System Integration Project Plan",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Milestone",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Self-Serve access provided by LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Request Access2. LinkedIn partnership contact will allowlist your application for Recruiter System Connect integration.3. LinkedIn will also create and provide necessary development artifacts for you to proceed further with development.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect?view=li-lts-2026-04#1-development-prerequisites"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Program Overview",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Partner developers and project managers should go through Recruiter System Connect Documentation and set up \u0026 discuss timelines with the LinkedIn Business Development team to start development.2. They should also use this time to get any questions \u0026 doubts resolved from LinkedIn Business Development \u0026 Partner Engineering team.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Development",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Module 1 : Development, Testing \u0026 Certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Develop functionality to Configure Customer Applications and ATS Integrations(This Module is not applicable for Customers)2. Testing 3. Module 1 Certification (Prerequisite: Certification Overview)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Module 2 : Development, Testing \u0026 Certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Develop functionality to Sync Data from ATS to LinkedIn (like Candidate, Jobs, Candidate Notes, Job Application, Application Notes, Interview Feedback \u0026 Job Application Stages).2. Testing 3. Module 2 Certification (Prerequisite: Certification Overview)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Module 3 : Development, Testing \u0026 Certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Develop functionality to Retrieve Data from LinkedIn2. Testing 3. Module 3 Certification (Prerequisite: Certification Overview)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Module 4 : Development, Testing \u0026 Certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Develop functionality to Sync ACLs2.Testing 3. Module 4 Certification (Prerequisite: Certification Overview)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Module 5 : Development, Testing \u0026 Certification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Develop functionality for Data Deletion2.Testing 3. Module 5 Certification (Prerequisite: Certification Overview)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Final Certification Review \u0026 Approval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. LinkedIn Business Development Team will review all the certification videos submitted and provide feedback for corrections if any. 2. Once, there are no more corrections \u0026 integration looks compliant and correctly implemented, the partner or customer will be certified by LinkedIn and necessary privileges will be given to the production application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Public Relations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Finalization of the marketing materials to be sent to customers, PR announcement and website collateral confirmed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Customer Marketing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer notifications and announcements go public.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "You can use the Postman collection for Recruiter System Connect APIs and try out all APIs for different use cases.\nPostman is a free-to-download tool for making HTTP requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Please note that Postman is an independent entity and is not affiliated with LinkedIn. LinkedIn is providing the following resources to support your use of the Postman services but ultimately, any use of third party services, such as the Postman Services, is at your own discretion and risk. \nLinkedIn does not endorse or vet the Postman services and is not responsible for any damage or loss of data resulting from your use of third party services. Nothing herein shall restrict LinkedIn\u0027s ability to enforce all of its rights under its agreements with you.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "The easiest way to get started using the Recruiter System Connect APIs is to use our Postman collections. We have posted our APIs in LinkedIn\u0027s Postman workspace. If you prefer, you can explore our API with other tools like curl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Explore Postman Collection",
+      "Anchor": "explore-postman-collection",
+      "SectionPath": [
+        "Postman Collection",
+        "Explore Postman Collection"
+      ],
+      "Text": "The below button will take you to LinkedIn\u0027s Postman\u0027s workspace. Select the workspace with name LinkedIn Talent Solutions. You will find the Recruiter System Connect API collection in it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample HTML Applications for Recruiter System Connect",
+      "Anchor": "sample-html-applications-for-recruiter-system-connect",
+      "SectionPath": [
+        "Sample HTML Applications for Recruiter System Connect"
+      ],
+      "Text": "We have created a sample application for your development reference. This sample application demonstrates how the Customer OnBoarding plugin \u0026 Profile plugin of Recruiter System Connect will look like.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample HTML Applications for Recruiter System Connect",
+      "Anchor": "sample-html-applications-for-recruiter-system-connect",
+      "SectionPath": [
+        "Sample HTML Applications for Recruiter System Connect"
+      ],
+      "Text": "This will be present in the sample-applications folder in the GIT repository.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample HTML Applications for Recruiter System Connect",
+      "Anchor": "sample-html-applications-for-recruiter-system-connect",
+      "SectionPath": [
+        "Sample HTML Applications for Recruiter System Connect"
+      ],
+      "Text": "Please read the instructions mentioned in README.md file for instructions on how to use the Sample Applications.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

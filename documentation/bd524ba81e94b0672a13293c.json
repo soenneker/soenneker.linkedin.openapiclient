@@ -1,0 +1,1400 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+  "Title": "Ad Lift Tests Surveys",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-benchmark",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-results",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-tests",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/appendix",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests Surveys",
+      "Anchor": "ad-lift-tests-surveys",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests Surveys",
+      "Anchor": "ad-lift-tests-surveys",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests Surveys",
+      "Anchor": "ad-lift-tests-surveys",
+      "SectionPath": [],
+      "Text": "The Ad Lift Test Survey API enables advertisers to create, and delete the survey questions (Ad Lift Test Key Metrics) that are asked as part of an Ad Lift Test via API. Users may test for the metrics listed in Available Key Metrics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests Surveys",
+      "Anchor": "ad-lift-tests-surveys",
+      "SectionPath": [],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests Surveys",
+      "Anchor": "ad-lift-tests-surveys",
+      "SectionPath": [],
+      "Text": "Review the Getting Started Guide first to understand Lift Test concepts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Lift Tests Surveys",
+      "Anchor": "ad-lift-tests-surveys",
+      "SectionPath": [],
+      "Text": "Each Survey should contain at least one metric.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Available Key Metrics",
+      "Anchor": "available-key-metrics",
+      "SectionPath": [
+        "Available Key Metrics"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWARENESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022Have you heard of brand?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECALL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022Do you recall seeing an ad for brand/product online or on a mobile device in the last 7 days?\u0022We don\u0027t specify \u0022seen on LinkedIn\u0022 intentionally as these can also be seen on LAN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAMILIARITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How familiar are you with brand?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAVORABILITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How favorably do you view brand/product?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECOMMENDATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How likely are you to recommend brand/product to someone else?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONSIDERATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How likely are you to consider brand/product for your next purchase?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMPLOYER_FAMILIARITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How familiar are you with brand as an employer?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMPLOYER_FAVORABILITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How favorably do you view brand as an employer?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMPLOYER_RECOMMENDATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022How likely would you recommend brand as employer to your friend or colleague?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMPLOYER_CONSIDERATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022If you were looking for a job, how likely would you be to consider brand?\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOP_OF_MIND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ask the user: \u0022What [a] _____ comes to mind, when you [b] _____________ ?\u0022 where a and b are defined by the user. Sample [a] is \u0022brand\u0022 and sample [b] is \u0022think of cloud computing.\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Available Key Metrics",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s lift test surveys. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s lift test surveys. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Available Key Metrics",
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestSurvey Schema",
+      "Anchor": "adlifttestsurvey-schema",
+      "SectionPath": [
+        "AdLiftTestSurvey Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum AdLiftKeyMetric Available Options: AWARENESSRECALLFAMILIARITYFAVORABILITYRECOMMENDATIONCONSIDERATIONEMPLOYER_FAMILIARITYEMPLOYER_FAVORABILITYEMPLOYER_RECOMMENDATIONEMPLOYER_CONSIDERATION",
+            "Links": [],
+            "Values": [
+              "AWARENESS",
+              "RECALL",
+              "FAMILIARITY",
+              "FAVORABILITY",
+              "RECOMMENDATION",
+              "CONSIDERATION",
+              "EMPLOYER_FAMILIARITY",
+              "EMPLOYER_FAVORABILITY",
+              "EMPLOYER_RECOMMENDATION",
+              "EMPLOYER_CONSIDERATION"
+            ]
+          },
+          {
+            "Text": "RequiredThe lift key metric we\u0027re measuring using these surveys. E.g. we send a survey to the control/test splits that asks \u0022Have you heard of [brand]?\u0022 to measure recall. This is used as the key for the subresource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "adLiftTest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestUrn (e.g. urn:li:adLiftTest:1)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad Lift Test that this survey belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liftTestAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn (e.g urn:li:sponsoredAccount:123)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising account that owns the Ad Lift test that this survey is associated with. (the account that owns the advertising campaigns and the account that serves surveys have to be different for security and survey fairness reasons). Lift Test is owned by the advertiser but we make a special account for serving surveys from LinkedIn on behalf of the advertiser (e.g. \u0022LinkedIn Surveys\u0022) and serve from there. This is the advertiser account that \u0022owns\u0022 the surveys and whom is interested in the results of the survey.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedQuestionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Do you recall seeing an ad for your brand?\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized question text for this AdLiftKeyMetric. This be in the same locale as brandNameLocale defined in the associated lift test Ad Lift Test. Ad lift tests only target a single locale, so this string is only available in that single locale. Can be used to generate survey preview.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "answers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of AdLiftTestSurveyAnswerMetadata",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#adlifttestsurveyanswermetadata-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The localized answer text (like \u0022Yes\u0022 or \u0022Somewhat Familiar\u0022) for this answer. This be in the same locale as brandNameLocale defined in the lift test Ad Lift Test that this survey is for.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "AdLiftTestSurveyAnswerMetadata Schema",
+      "Anchor": "adlifttestsurveyanswermetadata-schema",
+      "SectionPath": [
+        "AdLiftTestSurveyAnswerMetadata Schema"
+      ],
+      "Text": "AdLiftTestSurveyAnswerMetadata data schema below should be used to build User experience preview in Brand Lift Test provided language.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "AdLiftTestSurveyAnswerMetadata Schema",
+      "Anchor": "adlifttestsurveyanswermetadata-schema",
+      "SectionPath": [
+        "AdLiftTestSurveyAnswerMetadata Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Read only, create only"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "adLiftSurveyAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftSurveyAnswer enum",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/experimentation/brand-lift-testing/ad-lift-test-surveys?view=li-lms-2026-09#possible-survey-answers"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for this answer (e.g. YES, NO, SOMEWHAT_FAMILIAR).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "desired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether or not this answer is desired from the perspective of the survey creator. A desired answer indicates that based on the intent of the survey, the survey creator would prefer the survey taker to pick this answer over other answers where desired is false. For example Somewhat Familiar would be desirable, but Not Familiar wouldn\u0027t.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedAnswerText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (e.g. \u0022Yes\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The localized answer text (like \u0022Yes\u0022 or \u0022Somewhat Familiar\u0022) for this answer. This be in the same locale as brandNameLocale defined in the lift test Ad Lift Test that this survey is for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read Only",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Possible Survey Answers",
+      "Anchor": "possible-survey-answers",
+      "SectionPath": [
+        "AdLiftTestSurveyAnswerMetadata Schema",
+        "Possible Survey Answers"
+      ],
+      "Text": "Answer Metadata uses AdLiftSurveyAnswer Enum to define possible answer string. The enum contains the following values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Possible Survey Answers",
+      "Anchor": "possible-survey-answers",
+      "SectionPath": [
+        "AdLiftTestSurveyAnswerMetadata Schema",
+        "Possible Survey Answers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "NEUTRAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Neutral\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022No\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_AT_ALL_FAMILIAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Not at all familiar\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_SURE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Not sure\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ONLY_HEARD_THE_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022I\u0027ve only heard the name\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOMEWHAT_FAMILIAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Somewhat familiar\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOMEWHAT_FAVORABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Somewhat favorable\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOMEWHAT_LIKELY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Somewhat likely\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOMEWHAT_UNFAVORABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Somewhat unfavorable\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOMEWHAT_UNLIKELY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Somewhat unlikely\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VERY_FAMILIAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Very Familiar\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VERY_FAVORABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Very favorable\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VERY_LIKELY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Very likely\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VERY_UNFAVORABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Very unfavorable\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VERY_UNLIKELY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Very unlikely\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "YES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022Yes\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents a survey answer defined by the advertiser",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NONE_OF_THE_ABOVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the answer \u0022None of the above\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Possible Survey Answers",
+      "Anchor": "possible-survey-answers",
+      "SectionPath": [
+        "AdLiftTestSurveyAnswerMetadata Schema",
+        "Possible Survey Answers"
+      ],
+      "Text": "All available questions and corresponding answers with translations to supported languages can be found an Appendix.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Ad Lift Test Survey Questions",
+      "Anchor": "create-ad-lift-test-survey-questions",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions"
+      ],
+      "Text": "New Ad Lift Tests Survey question can be created by issuing a POST to the below URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Ad Lift Test Survey Questions",
+      "Anchor": "create-ad-lift-test-survey-questions",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests/{id}/adLiftTestSurveys",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adLiftTests/15715/adLiftTestSurveys",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022id\u0022: \u0022FAVORABILITY\u0022,\n            \u0022status\u0022: 201\n        },\n        {\n            \u0022id\u0022: \u0022RECALL\u0022,\n            \u0022status\u0022: 201\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error code you may encounter during create. Each Service error code represents a unique condition where input can be invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLift Test referenced in the request doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHEMA_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid schema provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOT_ENOUGH_QUESTIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift tests need at least one question.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOO_MANY_QUESTIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift tests can have no more than six questions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_BUDGET_THRESHOLD_TOO_LOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Based on the chosen number of questions and test start/end dates, account doesn\u0027t have enough budget to run a brand lift test.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MULTIPLE_VALIDATIONS_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Multiple errors occurred during the input validation. Please see errorDetails for more information.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "QUESTION_TEXT_NOT_EDITABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The question text is not editable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ANSWER_TEXT_NOT_EDITABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer text is not editable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM_QUESTION_TEXT_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift test custom question text has incorrect length.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM_QUESTION_RESPONSE_TEXT_INCORRECT_LENGTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift test custom question response text has incorrect length.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM_QUESTION_NOT_ENOUGH_DESIRED_RESPONSES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand lift test custom question doesn\u0027t have enough desired responses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM_QUESTION_NOT_ENOUGH_UNDESIRED_RESPONSES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand Lift test custom question doesn\u0027t have enough undesired responses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CUSTOM_QUESTION_TOO_MANY_RESPONSES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BadRequest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brand Lift test custom question has too many responses.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Ad Lift Test Survey Question List",
+      "Anchor": "get-ad-lift-test-survey-question-list",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Get Ad Lift Test Survey Question List"
+      ],
+      "Text": "Ad Lift Test Surveys are fetched in batches. Use the endpoint below to fetch all surveys under an Ad LiftTest.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Ad Lift Test Survey Question List",
+      "Anchor": "get-ad-lift-test-survey-question-list",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Get Ad Lift Test Survey Question List"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adLiftTests/{AdLiftTestId}/adLiftTestSurveys",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Get Ad Lift Test Survey Question List",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022liftTestAccount\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n            \u0022answers\u0022: [\n                {\n                    \u0022desired\u0022: true,\n                    \u0022localizedAnswerText\u0022: \u0022Yes\u0022,\n                    \u0022adLiftSurveyAnswer\u0022: \u0022YES\u0022\n                },\n                {\n                    \u0022desired\u0022: false,\n                    \u0022localizedAnswerText\u0022: \u0022No\u0022,\n                    \u0022adLiftSurveyAnswer\u0022: \u0022NO\u0022\n                },\n                {\n                    \u0022desired\u0022: false,\n                    \u0022localizedAnswerText\u0022: \u0022Not sure\u0022,\n                    \u0022adLiftSurveyAnswer\u0022: \u0022NOT_SURE\u0022\n                }\n            ],\n            \u0022localizedQuestionText\u0022: \u0022Have you heard of the Brand Lift Test on LinkedIn?\u0022,\n            \u0022id\u0022: \u0022AWARENESS\u0022,\n            \u0022adLiftTest\u0022: \u0022urn:li:adLiftTest:456\u0022,\n        },\n        {\n            \u0022liftTestAccount\u0022: \u0022urn:li:sponsoredAccount:123\u0022,\n            \u0022answers\u0022: [\n                {\n                    \u0022desired\u0022: true,\n                    \u0022localizedAnswerText\u0022: \u0022Yes\u0022,\n                    \u0022adLiftSurveyAnswer\u0022: \u0022YES\u0022\n                },\n                {\n                    \u0022desired\u0022: false,\n                    \u0022localizedAnswerText\u0022: \u0022No\u0022,\n                    \u0022adLiftSurveyAnswer\u0022: \u0022NO\u0022\n                },\n                {\n                    \u0022desired\u0022: false,\n                    \u0022localizedAnswerText\u0022: \u0022Not sure\u0022,\n                    \u0022adLiftSurveyAnswer\u0022: \u0022NOT_SURE\u0022\n                }\n            ],\n            \u0022localizedQuestionText\u0022: \u0022Do you recall seeing an ad for Brand Lift Test on LinkedIn online or on a mobile device in the last 7 days?\u0022,\n            \u0022id\u0022: \u0022RECALL\u0022,\n            \u0022adLiftTest\u0022: \u0022urn:li:adLiftTest:456\u0022,\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-1",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Service Error Code"
+      ],
+      "Text": "This section documents different Service Error code you may encounter during GET. Each Service error code represents a unique condition where input can be invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Service Error Code",
+      "Anchor": "service-error-code-1",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Service Error Code"
+      ],
+      "Text": "",
+      "Headers": [
+        "Service Error Code",
+        "Http Status",
+        "Additional Detail",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Lift Test Survey Questions",
+      "Anchor": "delete-ad-lift-test-survey-questions",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Delete Ad Lift Test Survey Questions"
+      ],
+      "Text": "An Ad Lift Test Survey questions can be deleted by issuing a DELETE call to the URL below. Ad Lift Test Survey questions are deleted in batches. Provide a list of questions to delete to the method below. Questions to delete are specified as a List for ids parameter. See sample request below. If an id parameter from the above Available Key Metrics table is not specified, an error will be thrown.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete Ad Lift Test Survey Questions",
+      "Anchor": "delete-ad-lift-test-survey-questions",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Delete Ad Lift Test Survey Questions"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adLiftTests/{AdLiftTestId}/adLiftTestSurveys?ids=List(RECALL)\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Ad Lift Test Survey Questions",
+      "Anchor": "delete-ad-lift-test-survey-questions",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Delete Ad Lift Test Survey Questions"
+      ],
+      "Text": "To delete an Ad Lift Test Survey questions, the ad lift test executionState must be PENDING. If it\u2019s not, then the request will be rejected with HTTP response code 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "Delete Ad Lift Test Survey Questions",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adLiftTests/11406/adLiftTestSurveys?ids=List(RECALL)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "API Error Details"
+      ],
+      "Text": "This section documents different Service Error code you may encounter during DELETE. Each Service error code represents a unique condition where input can be invalid",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Create Ad Lift Test Survey Questions",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "ADDITIONAL DETAILS"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLiftTestValidationDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Accessing the resource is forbidden.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EXPERIMENT_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdLift Test referenced in the request doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DELETE_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "null",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A scheduled lift test is not allowed be deleted",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

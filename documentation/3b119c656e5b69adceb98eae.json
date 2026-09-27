@@ -1,0 +1,139 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+  "Title": "Module 5 - Data Deletion",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Module 5 - Data Deletion",
+      "Anchor": "module-5---data-deletion",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete Candidate Related Entities Test. 1. Select a candidate. 2. Delete that candidate\u0027s notes. 3. Delete that candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that the deleted notes no longer appear in the Enhanced In-ATS Indicator for that candidate. ul\u003E 2. Ensure that the Enhanced In-ATS indicator no longer appears for that candidate. Relevant Documentation: Delete Candidate Notes \u0026 Delete Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidate-notes",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidates"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-502",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete Entire Candidate Test. Select a candidate, delete this candidate in your ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1.Ensure that the deleted notes no longer appear in the Enhanced In-ATS Indicator for that candidate. 2.Ensure that the Enhanced In-ATS indicator no longer appears for that candidate. Relevant Documentation: Delete Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-candidates"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete Application Related Entities Test. Select an application and delete the following: - Application notes - Application stages - Application interview feedback - Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that the application\u0027s notes no longer appear in the Enhanced In-ATS Indicator. 2. Ensure that the application\u0027s stages no longer appear in the Enhanced In-ATS Indicator. 3. Ensure that the application\u0027s interview feedback no longer appears in the Enhanced In-ATS Indicator. 4. Ensure that the application no longer appears in the Enhanced In-ATS Indicator. Relevant Documentation: Delete Application Notes, Delete Application Stages, Delete Application Interview Feedback \u0026 Delete Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-notes",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-stages",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-application-interview-feedback",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Delete Entire Application Test. Select an application and delete it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that the application\u0027s notes no longer appear in the Enhanced In-ATS Indicator. 2. Ensure that the application\u0027s stages no longer appear in the Enhanced In-ATS Indicator. 3. Ensure that the application\u0027s interview feedback no longer appears in the Enhanced In-ATS Indicator. 4. Ensure that the application no longer appears in the Enhanced In-ATS Indicator. Relevant Documentation: Delete Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion?view=li-lts-2026-04#delete-applications"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-505",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support for version API.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain what changes will need to take place to facilitate migration to versioned endpoints. Versioning migration path clearly understood by LinkedIn. Switching consumption to versioned endpoints requires minimal development support.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

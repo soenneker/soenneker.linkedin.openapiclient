@@ -1,0 +1,91 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+  "Title": "Profile Fields Description",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/contact-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/full-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/language",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/localized-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-video",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Member Profile Fields",
+      "Anchor": "member-profile-fields",
+      "SectionPath": [
+        "Member Profile Fields"
+      ],
+      "Text": "The following selection of profile fields are available to all LinkedIn developers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Profile Fields",
+      "Anchor": "member-profile-fields",
+      "SectionPath": [
+        "Member Profile Fields"
+      ],
+      "Text": "Lite Profile Fields",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Fields Available with LinkedIn Partner Programs",
+      "Anchor": "profile-fields-available-with-linkedin-partner-programs",
+      "SectionPath": [
+        "Profile Fields Available with LinkedIn Partner Programs"
+      ],
+      "Text": "The following selection of profile fields are only available to applications that have applied and been approved for a LinkedIn Partner Program:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Fields Available with LinkedIn Partner Programs",
+      "Anchor": "profile-fields-available-with-linkedin-partner-programs",
+      "SectionPath": [
+        "Profile Fields Available with LinkedIn Partner Programs"
+      ],
+      "Text": "Basic Profile Fields\nFull Profile Fields\nLocation Fields\nProfile Picture Fields\nProfile Video Fields\nPosition Fields\nBackground Picture Fields\nCertification Fields\nContact Interest Fields\nCourse Fields\nEducation Fields\nHonor Fields\nIM Fields\nLanguage Fields\nLocalized Profile Fields\nOrganization Fields\nPatent Fields\nPhone Number Fields\nProject Fields\nPublication Fields\nSkill Fields\nTest Score Fields\nVolunteering Experience Fields\nVolunteering Interest Fields\nWebsite Fields",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

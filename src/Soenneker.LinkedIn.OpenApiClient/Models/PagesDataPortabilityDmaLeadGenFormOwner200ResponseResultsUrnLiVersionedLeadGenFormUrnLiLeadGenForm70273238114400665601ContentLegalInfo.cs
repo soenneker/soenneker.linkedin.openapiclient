@@ -17,13 +17,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The consents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Consents { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentLegalInfoConsentsItem>? Consents { get; set; }
 #nullable restore
 #else
-        public UntypedNode Consents { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentLegalInfoConsentsItem> Consents { get; set; }
 #endif
         /// <summary>The legalInfoId property</summary>
-        public int? LegalInfoId { get; set; }
+        public long? LegalInfoId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentLegalInfo"/> and sets the default values.
         /// </summary>
@@ -49,8 +49,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consents", n => { Consents = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "legalInfoId", n => { LegalInfoId = n.GetIntValue(); } },
+                { "consents", n => { Consents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentLegalInfoConsentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentLegalInfoConsentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "legalInfoId", n => { LegalInfoId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("consents", Consents);
-            writer.WriteIntValue("legalInfoId", LegalInfoId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormOwner200ResponseResultsUrnLiVersionedLeadGenFormUrnLiLeadGenForm70273238114400665601ContentLegalInfoConsentsItem>("consents", Consents);
+            writer.WriteLongValue("legalInfoId", LegalInfoId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

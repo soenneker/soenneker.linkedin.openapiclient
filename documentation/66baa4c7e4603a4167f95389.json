@@ -1,0 +1,503 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+  "Title": "Integration Requirements for Community Management",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Community Management",
+      "Anchor": "integration-requirements-for-community-management",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Community Management",
+      "Anchor": "integration-requirements-for-community-management",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Community Management",
+      "Anchor": "integration-requirements-for-community-management",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Community Management program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Community Management",
+      "Anchor": "integration-requirements-for-community-management",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Community Management",
+      "Anchor": "integration-requirements-for-community-management",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn can suggest modifications which should be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration, with right scopes, consent screen.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrigger OAuth Flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use refresh tokens to mint new access tokens.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and retrigger OAuth Flow.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization Administration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all organizations for the authenticated organization admin.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-008",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve organization information including organization logo for administered organizations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-009",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate compliance with MDP data storage requirements.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-010",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve access control information for an organization administered by the member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Managing Organic Company Page Posts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-011",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all posts for an administered organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-012",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve organization posts by ID for all media categories (TEXT, ARTICLE, IMAGE, RICH, VIDEO, CAROUSEL).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create organic posts for an organization for at least two media category (TEXT, ARTICLE, IMAGE, RICH, VIDEO, CAROUSEL).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to target organic posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-015",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve likes, comments and nested comments for organization posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-016",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve posts containing mentions along with its comments.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reporting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-017",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to get number of followers for an organization. For more information, see Data Storage Requirements.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-018",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to report on organization follower statistics. For more information, see Breaking Change Policy.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-019",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to report on organization page statistics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to report on organization share statistics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-021",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to report on video statistics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimizing retrieval of updates using PULL Method",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-021",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to PULL Shares IDs in an optimized manner.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to configure the intervals between PULL requests.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to recover from outages using a time-bound PULL request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimizing retrieval of updates using PUSH Notifications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to register webhooks for specific Company Pages.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to register webhooks for specific Events.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to register webhooks for @mentions usecase.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to de-register webhooks when unsubscribed by user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CM-028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to recover from outages, missed PUSH notifications.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

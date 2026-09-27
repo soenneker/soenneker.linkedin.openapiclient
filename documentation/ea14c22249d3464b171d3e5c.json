@@ -1,0 +1,543 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+  "Title": "LinkedIn Learning and Blackboard Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/standard-aicc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the Blackboard and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "If you opt for the LinkedIn Learning Standard AICC integration, you do not need to sync the API content keys, but you must manually manage course content. If you opt for the API content sync, you can enable reporting only through LTI integration. If you configure SAML SSO with API content sync, your organization will not have a reporting feature. For this reason, we recommend you choose LTI, technical and business requirements permitting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "Authentication: SAML SSO Identity Provider; LTI SSO",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "Reporting: LTI; AICC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (English only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and Blackboard integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "An active Blackboard LMS instance\n\nThe Partner Cloud Building Block (September 2018 Build 1460)\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your Blackboard LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Deep Integration Functionality",
+      "Anchor": "blackboard-deep-integration-functionality",
+      "SectionPath": [
+        "Blackboard Deep Integration Functionality"
+      ],
+      "Text": "Availability: Blackboard and LinkedIn Learning integration is available only for Higher Education, ProEd, and international market spaces.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of Blackboard\u2019s integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and Blackboard to establish a secure SAML single sign-on (SSO) connection that ensures seamless and secure access to content. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures that learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "SAML SSO: If your organization has a SAML-compliant Identity Provider (IdP) like Azure AD, Okta or ADFS, it can be configured to manage LinkedIn Learning authentication. For more information about the configuration process, review our LinkedIn Learning SSO Implementation Guide.\n\nLTI SSO (Recommended): If your organization doesn\u2019t have a SAML-compliant IdP, you can configure Blackboard and LinkedIn to manage authentication directly using LTI. In this case, learners must launch all content from Blackboard. Learners cannot directly visit LinkedIn Learning. For more information about the configuration process, review the Configuring LTI section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. LinkedIn Learning\nadds courses at a rate of 20-30 per week at no extra cost. The Blackboard\nadministrator manually uploads new content at regular intervals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The Blackboard deep integration with LinkedIn Learning uses LinkedIn Learning\nAPIs to refresh the content library daily. This feature ensures LinkedIn\nLearning makes new content available within 24 hours of release. LinkedIn\nLearning aggregates and indexes all content titles and descriptions to\naccommodate keyword searches and support efficient discoverability. Blackboard\nsupports automatic syncing of English only content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For Blackboard to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings. To provision the keys, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nFrom the side navigation menu, select Access content and reports via API and expand Generate LinkedIn Learning REST API Application.\n\nClick Add application.\n\n\nIn the Add LinkedIn Learning API application screen, enter \u0022Blackboard\u0022 in the Application Name field.\n\nIn the Application description field, enter a short description of the integration use case in the application description field. For example, \u0022Blackboard content integration\u0022.\n\nUnder Choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the \u0022Terms and Conditions\u0022.\n\n\nSave the Client ID and Client Secret values.\n\n\nPaste the Client ID and Client Secret into the corresponding Blackboard Partner Cloud integration fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LinkedIn Learning in Partner Cloud Settings",
+      "Anchor": "enable-linkedin-learning-in-partner-cloud-settings",
+      "SectionPath": [
+        "Enable LinkedIn Learning in Partner Cloud Settings"
+      ],
+      "Text": "In this section, we review the steps required to enable LinkedIn Learning in Blackboard\u2019s Partner Cloud. Before proceeding, if you plan to use SAML SSO authentication, it should be configured and enabled for your LinkedIn Learning account. If you plan to use LTI for authentication, jump to the Configuring LTI section of this document before proceeding.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable LinkedIn Learning in Partner Cloud Settings",
+      "Anchor": "enable-linkedin-learning-in-partner-cloud-settings",
+      "SectionPath": [
+        "Enable LinkedIn Learning in Partner Cloud Settings"
+      ],
+      "Text": "Login to Blackboard as an admin user.\n\nFrom the Administrator Panel, navigate to the Cloud Management section and select Partner Cloud Settings.\n\n\nIn the Configure and Activate Partners Available Through the Partner Cloud section, select Settings in the dropdown menu.\n\nSelect LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning Configuration and Settings",
+      "Anchor": "linkedin-learning-configuration-and-settings",
+      "SectionPath": [
+        "LinkedIn Learning Configuration and Settings"
+      ],
+      "Text": "Review the Blackboard interface and table below to determine your LinkedIn Learning configuration and settings. After completing the required fields and selections, click\nSubmit. The submission triggers the registration process. The Registration Status updates to indicate either a successful or failed registration. Upon successful registration, instructors can access the Partner Integration by returning to the Configure Partner Cloud section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LinkedIn Learning Configuration and Settings",
+      "Anchor": "linkedin-learning-configuration-and-settings",
+      "SectionPath": [
+        "LinkedIn Learning Configuration and Settings"
+      ],
+      "Text": "",
+      "Headers": [
+        "Section",
+        "Action"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "How will users access LinkedIn Learning content?",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Select your preferred authentication option. If SAML Single Sign-On is selected, no additional information is required. If your organization would like to use LTI for authentication, you\u2019ll need to provide an additional set of keys. These keys are not the same as the API keys created in the section above.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Please enter the API credentials provided by LinkedIn Learning.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API ID: The LinkedIn Learning client ID value obtained in the Provision LinkedIn Learning Content API Keys section. API Secret: The LinkedIn Learning client secret value obtained in the Provision LinkedIn Learning Content API Keys section. Both values are used to query LinkedIn Learning\u2019s Content Catalog API. These keys should not be the same as your LTI keys.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Do you want to share user information with LinkedIn Learning?",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If you\u2019re using SAML, you may select any value. If you\u2019re using LTI authentication, you must select Yes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Do you want to share course information with LinkedIn Learning?",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If you\u2019re using SAML, you may select any value. If you\u2019re using LTI authentication, you must select Yes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Do you want to enable LinkedIn Learning for specific institutions on this Blackboard installation?",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If multiple institution support is disabled for your instance, this option will not appear. If Multiple Institution support is enabled in the Partner Cloud Building Block, you can define the availability of this integration by specific institution. For more information see Multiple Institution Support.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard#multiple-institution-support"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Add LinkedIn Learning Content to a Course",
+      "Anchor": "add-linkedin-learning-content-to-a-course",
+      "SectionPath": [
+        "LinkedIn Learning Configuration and Settings",
+        "Add LinkedIn Learning Content to a Course"
+      ],
+      "Text": "Once you have enabled and registered the integration, instructors can add LinkedIn Learning content to their course. To add content to a course, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add LinkedIn Learning Content to a Course",
+      "Anchor": "add-linkedin-learning-content-to-a-course",
+      "SectionPath": [
+        "LinkedIn Learning Configuration and Settings",
+        "Add LinkedIn Learning Content to a Course"
+      ],
+      "Text": "Within a content area, select Partner Content \u003E Content Market \u003E LinkedIn Learning to search and discover LinkedIn Learning content.\n\nOnce you have identified a LinkedIn Learning course you\u2019d like to add to your content area in Blackboard, select the checkbox next to the title.\n\nWhen you are finished curating content for your Blackboard course, click Submit at the bottom of the page to review the selected content.\n\nOn the Confirm Content Selected page, you can review and edit the content previously selected. To add the item(s) into your content area, select Submit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable AICC Integration",
+      "Anchor": "enable-aicc-integration",
+      "SectionPath": [
+        "Enable AICC Integration"
+      ],
+      "Text": "Please review the Standard AICC integration with LinkedIn Learning guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Configure LTI Authentication"
+      ],
+      "Text": "If your organization would like to use LTI SSO for learner reporting and authentication, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Configure LTI Authentication"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\nSelect Configure single sign-on, click Add new SSO, then select \u0022LTI\u0022.\n\n\nIn the Authenticate users with LTI SSO screen, enter a valid LMS URL in the LMS Login URL field.\n\nClick Generate Keys. Save the consumer key and consumer secret values so you can reference them in the Enable LinkedIn Learning Partner Cloud Settings section.\n\n\nClick Save and select \u0022Active\u0022 in the connection status drop down.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Configure LTI Authentication"
+      ],
+      "Text": "For more detailed information on the LTI and LinkedIn Learning configuration process, review our LTI Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Configure LTI Authentication"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LTI Authentication",
+      "Anchor": "configure-lti-authentication",
+      "SectionPath": [
+        "Configure LTI Authentication"
+      ],
+      "Text": "Blackboard also supports AICC integration for reporting. For more information, please review the Standard AICC integration with LinkedIn Learning guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Institution Support",
+      "Anchor": "multiple-institution-support",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Multiple Institution Support"
+      ],
+      "Text": "The option for Specific Institutions allows extending any multi-institution configuration which allows only a subset of applicable courses to access the partner integration. Once you select \u0022Yes\u0022, you can move Available Institution Identifiers to the Selected Institution Identifiers list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Institution Support",
+      "Anchor": "multiple-institution-support",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Multiple Institution Support"
+      ],
+      "Text": "The selected list receives access to the LinkedIn Learning integration. Additional information is available on Behind the Blackboard.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Institution Support",
+      "Anchor": "multiple-institution-support",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Multiple Institution Support"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Institution Support",
+      "Anchor": "multiple-institution-support",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Multiple Institution Support"
+      ],
+      "Text": "When you select \u0022Yes\u0022, you must select at least one Institution Identifier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Institution Support",
+      "Anchor": "multiple-institution-support",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Multiple Institution Support"
+      ],
+      "Text": "Congratulations! Your learners now can access Linkedin Learning content via their Blackboard LMS instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Blackboard Resources",
+      "Anchor": "blackboard-resources",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Blackboard Resources"
+      ],
+      "Text": "Review Blackboard\u0027s admin or super user technical support for Blackboard technical assistance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configure LTI Authentication",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

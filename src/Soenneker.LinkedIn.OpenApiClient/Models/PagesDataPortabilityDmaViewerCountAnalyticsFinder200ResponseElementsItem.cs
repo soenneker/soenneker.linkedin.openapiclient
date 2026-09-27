@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The concurrentViewerCount property</summary>
-        public int? ConcurrentViewerCount { get; set; }
+        public long? ConcurrentViewerCount { get; set; }
         /// <summary>The timeRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "concurrentViewerCount", n => { ConcurrentViewerCount = n.GetIntValue(); } },
+                { "concurrentViewerCount", n => { ConcurrentViewerCount = n.GetLongValue(); } },
                 { "timeRange", n => { TimeRange = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaViewerCountAnalyticsFinder200ResponseElementsItemTimeRange>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaViewerCountAnalyticsFinder200ResponseElementsItemTimeRange.CreateFromDiscriminatorValue); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("concurrentViewerCount", ConcurrentViewerCount);
+            writer.WriteLongValue("concurrentViewerCount", ConcurrentViewerCount);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaViewerCountAnalyticsFinder200ResponseElementsItemTimeRange>("timeRange", TimeRange);
             writer.WriteAdditionalData(AdditionalData);
         }

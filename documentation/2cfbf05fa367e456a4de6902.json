@@ -1,0 +1,5196 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+  "Title": "Create and Manage Creatives",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/contentapi-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/ad-preview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/campaign-objectives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "The Creatives API provides all the data and information to visually render an ad. There are several types of Ad Creatives that you can associate with campaigns including:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "Text Ads\nSponsored Content (images, videos, carousels, articles, text, etc.).\nMessage Ads\nConversation Ads\nDynamic Ads (Spotlight, Follower, Jobs).\nEvent Ads\nVAST Tag Video Ads",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "The following conditions apply when using the Creatives API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "An Ad Account can have a maximum of 15,000 creatives.\nA campaign can have a maximum of 100 creatives.\nCreative types must match the source campaign ad format. If the campaign has no ad format set, it\u0027s set by the first creative developed under that campaign. Dynamic, carousel, and video ad campaigns must have their format set upon creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and Manage Creatives",
+      "Anchor": "create-and-manage-creatives",
+      "SectionPath": [],
+      "Text": "The Creatives API replaces the adCreativesV2 API. See Migration Guide for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Benefits",
+      "Anchor": "key-benefits",
+      "SectionPath": [
+        "Key Benefits"
+      ],
+      "Text": "This endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Benefits",
+      "Anchor": "key-benefits",
+      "SectionPath": [
+        "Key Benefits"
+      ],
+      "Text": "Provides a simplified schema with consistent fields for retrieval.\nEnables creation of a sponsored video post with one API call for an uploaded video and an available video campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "There are two conditions for successful calls:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions for rw_ads and/or r_ads.\nThe user assigning permission holds an administrative roles in the Ad Account itself.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Scope permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "rw_ads (Read/Write).\nr_ads (Read-Only).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account Roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "ACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER (read-only, even with the rw_ads scope).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on Ad Account roles and permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "All APIs require the request headers Linkedin-Version: {Version in YYYYMM format}\nand X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Account URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the advertising account associated with the creative. This field is read-only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "campaign",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Campaign URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the campaign associated with the creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Underlying content URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content sponsored in the creative. On creation, it can be dynamic Ad content (follower, job, spotlight), text, document, or a reference to InMail Content or post (image, video, article, carousel). Content can also be extended and specified as inline content instead of an URN. A reference must be a adInMailContent{id}, share{id}, or ugcPost{id}. Note: For API Versions starting from 202505 and later, the content may also be an EventAd, an advertisement of an event on LinkedIn. Note: For API Versions starting from 202507 and later, the content may also be an ThirdPartyVastTagVideoAd.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#eventad",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events?view=li-lms-2026-09",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creation time",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity (e.g., a person URN) that developed the creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored creative URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for a creative (e.g.,SponsoredCreativeUrn). Read-only",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "inlineContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required if action is createInline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inline content sponsored in the creative such as ugcPost in order to reduce the number of user calls.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "intendedStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative user intended status. The creative intended status is set independently from parent entity status, but parent entity status overrides creative intended status in effect. For example, parent entity status may be PAUSED while creative status is ACTIVE, in which case the creative\u0027s effective status is PAUSED, and not served.ACTIVE - Creative development is complete and the creative is available for review and can be served. PAUSED - Creative development is complete and the creative is current, but should temporarily not be served.DRAFT - Creative development is incomplete and may still be edited.ARCHIVED - Creative development is complete, but creative shouldn\u0027t be served and should be separated from non-archived creatives in any UI.CANCELED - The creative will be hidden when querying all creatives under a campaign and canceled creatives will be retrievable if the underlying posts are still valid/available. PENDING_DELETION - Denotes that the creative has been requested to be deleted that\u0027s currently pending.REMOVED - Denotes that the creative was deleted, but must remain fetchable due to the existence of performance data.",
+            "Links": [],
+            "Values": [
+              "ACTIVE - Creative development is complete and the creative is available for review and can be served.",
+              "PAUSED - Creative development is complete and the creative is current, but should temporarily not be served.",
+              "DRAFT - Creative development is incomplete and may still be edited.",
+              "ARCHIVED - Creative development is complete, but creative shouldn\u0027t be served and should be separated from non-archived creatives in any UI.",
+              "CANCELED - The creative will be hidden when querying all creatives under a campaign and canceled creatives will be retrievable if the underlying posts are still valid/available.",
+              "PENDING_DELETION - Denotes that the creative has been requested to be deleted that\u0027s currently pending.",
+              "REMOVED - Denotes that the creative was deleted, but must remain fetchable due to the existence of performance data."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "isServing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This indicates whether the creative is currently being served or not. This field is read-only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time at which the creative was last modified in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedBy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g., person URN) who modified the creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadgenCallToAction",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#leadgencreativecalltoaction"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Required if campaign objective is LEAD_GENERATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadgenCreativeCallToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field is needed for call to action. This currently only applies if the campaign objective is LEAD_GENERATION.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "review",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CreativeReview",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative review status. The review status can\u0027t be set/updated via the API but is started when the creative is activated (i.e., moves from draft state to active state). Hence, the review is absent (null) when the creative is in DRAFT state. Read-only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "servingHoldReasons",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#servingholdreasons"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "servingHoldReasons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array that contains all the reasons why the creative is not serving. In the case a creative is being served, this field will be null and not present in the response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the creative that can be set by advertiser; primarily used to make it easier to reference a Creative and to recall its purpose.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CreativeReview",
+      "Anchor": "creativereview",
+      "SectionPath": [
+        "Schema",
+        "CreativeReview"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ENUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PENDING - Creative is pending review and not serving. APPROVED - Creative is approved for serving. It includes Creative that has been preapproved or auto approved by content model. REJECTED - Creative is rejected. It includes the Creative that has been auto rejected by content model. NEEDS_REVIEW - Creative has been rejected by content model or policy checker or returned by fallback case that auto approval didn\u0027t make any decision.",
+            "Links": [],
+            "Values": [
+              "PENDING - Creative is pending review and not serving.",
+              "APPROVED - Creative is approved for serving. It includes Creative that has been preapproved or auto approved by content model.",
+              "REJECTED - Creative is rejected. It includes the Creative that has been auto rejected by content model.",
+              "NEEDS_REVIEW - Creative has been rejected by content model or policy checker or returned by fallback case that auto approval didn\u0027t make any decision."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "rejectionReasons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of reasons for rejecting creatives. For more details, refer to the RejectionReason list.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives?view=li-lms-2026-09\u0026tabs=http#ad-creative-rejection-reasons"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "servingHoldReasons",
+      "Anchor": "servingholdreasons",
+      "SectionPath": [
+        "Schema",
+        "servingHoldReasons"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "STOPPED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stopped by the advertiser.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNDER_REVIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative can\u0027t be served because it hasn\u0027t been reviewed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative can\u0027t be served because it was reviewed and rejected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FORM_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative can\u0027t be served because it\u0027s associated with a form and is currently not servable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROCESSING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative is being processed.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROCESSING_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative failed processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REFERRED_CONTENT_QUALITY_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative can\u0027t be served because it\u0027s associated with an non-quality entity (e.g., UGC/vector asset).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_POSTING_ON_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Single job ad, job state is in review or suspended or job posting is no longer available to members. The associated creatives should be held for serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_POSTING_INVALID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Single job ad, if job state is closed, deleted, or the member can not apply to the job, the single job ad is not served.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_STOPPED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign is currently not servable for reasons other than billing information, budgetary constraints, or termination dates. For example, a campaign is STOPPED if it has been PAUSED by the user.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_TOTAL_BUDGET_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Parent account total budget has been reached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_END_DATE_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Parent account end date has been reached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_START_DATE_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign start date is in the future.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_END_DATE_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign end date has been reached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_TOTAL_BUDGET_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign total budget has been reached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_AUDIENCE_COUNT_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign is on hold because it has an audience count lower than the threshold.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_START_DATE_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign group start date is in the future.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_END_DATE_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign group end date is in the past.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_TOTAL_BUDGET_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign group total budget has been reached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_GROUP_STATUS_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign group status is on hold.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_SERVING_HOLD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Parent account is on hold and not eligible for serving",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadgenCreativeCallToAction",
+      "Anchor": "leadgencreativecalltoaction",
+      "SectionPath": [
+        "Schema",
+        "LeadgenCreativeCallToAction"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "destination",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This form is a target destination for the callToAction button. It can only be modified when the creative is in DRAFT status. It is immutable once it\u0027s set for a creative once it transition to any non-draft intended status.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CallToActionLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Label for the CallToAction button.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Call to Action Label Types",
+      "Anchor": "call-to-action-label-types",
+      "SectionPath": [
+        "Schema",
+        "LeadgenCreativeCallToAction",
+        "Call to Action Label Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Apply now\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOWNLOAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Download\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIEW_QUOTE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Get Quote\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEARN_MORE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Learn More\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SIGN_UP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Sign Up\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SUBSCRIBE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Subscribe\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REGISTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Register\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REQUEST_DEMO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Request Demo\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Join\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATTEND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Attend\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNLOCK_FULL_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call To Action button on the creative shows \u0027Unlock Full Document\u0027.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EventAd",
+      "Anchor": "eventad",
+      "SectionPath": [
+        "Schema",
+        "EventAd"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required on Create",
+        "Read Only",
+        "Type",
+        "Default",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UserGeneratedContentPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the sponsored user generated content post.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "directSponsoredContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether the creative is direct sponsored content or not. Direct sponsored content allows an advertiser to sponsor content without first publishing the content on the Company Page or the Showcase Page, while non-direct sponsored content publish the content on the Company Page or the Showcase Page before sponsoring the content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn event URN associated with this creative.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preEventRegistrationImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalmediaAssetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image shown to users who haven\u0027t registered for event yet.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hidePreviewVideo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This flag will indicate whether the preview should be hidden or not. Applicable only to live video events to which a lead gen form is attached.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentAuthor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn or OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Author of the content.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "EventAd",
+      "Anchor": "eventad",
+      "SectionPath": [
+        "Schema",
+        "EventAd"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "EventAd",
+      "Anchor": "eventad",
+      "SectionPath": [
+        "Schema",
+        "EventAd"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video File Size Specifications",
+      "Anchor": "video-file-size-specifications",
+      "SectionPath": [
+        "Video File Size Specifications"
+      ],
+      "Text": "The following are the high-level specifications for non-connected-television video file sizing. For connected television video specification, refer to Connected Television Video Ads Specifications for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video File Size Specifications",
+      "Anchor": "video-file-size-specifications",
+      "SectionPath": [
+        "Video File Size Specifications"
+      ],
+      "Text": "Length: Three seconds to 30 minutes.\nFile size: Between 75kb and 500MB.\nFile format: MP4.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video File Size Specifications",
+      "Anchor": "video-file-size-specifications",
+      "SectionPath": [
+        "Video File Size Specifications"
+      ],
+      "Text": "Refer to Video Ads Advertising Specifications for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Create a Creative with an EventAd",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Create a Creative with an EventAd",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Create a Creative with an EventAd",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u2018Linkedin-Version: {version number in the format YYYYMM}\u2019 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022content\u0022: {\n    \u0022eventAd\u0022: {\n      \u0022post\u0022: \u0022urn:li:ugcPost:6778045555198214144\u0022,\n      \u0022event\u0022: \u0022urn:li:event:123456789\u0022\n    }\n  },\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Create a Creative with an EventAd",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022content\u0022: {\n    \u0022eventAd\u0022: {\n      \u0022post\u0022: \u0022urn:li:ugcPost:6778045555198214144\u0022,\n      \u0022event\u0022: \u0022urn:li:event:123456789\u0022\n    }\n  },\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Create a Creative with an EventAd",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:120491345.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creatives Inline Schema",
+      "Anchor": "creatives-inline-schema",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema"
+      ],
+      "Text": "The following tables describe the schemas available for action=createInline.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creatives Inline Schema",
+      "Anchor": "creatives-inline-schema",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creatives Inline Schema",
+      "Anchor": "creatives-inline-schema",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema"
+      ],
+      "Text": "Starting from the 202410 version, the new name field for creatives will override the legacy dscName field when displaying a creative\u0027s name in Campaign Manager. However, both names can still be accessed via their respective API endpoints: /creatives and /adDirectSponsoredContents.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "inlineContent Schema",
+      "Anchor": "inlinecontent-schema",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "inlineContent Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "inlineContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required if action=createInline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The inline content (e.g., ugcPost) that\u0027s sponsored in the creative. Inline creation reduces the number of user calls.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/521124266/creatives?action=createInline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/521124266/creatives?action=createInline\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022creative\u0022: {\n    \u0022inlineContent\u0022: {\n      \u0022post\u0022: {\n        \u0022adContext\u0022: {\n          \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:521124266\u0022,\n          \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:organization:5803528\u0022,\n        \u0022commentary\u0022: \u0022commentary about the post\u0022,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022content\u0022: {\n          \u0022media\u0022: {\n            \u0022title\u0022: \u0022Title of the video\u0022,\n            \u0022id\u0022: \u0022urn:li:video:C5510AQEdAeAosOmbOw\u0022\n          }\n        }\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:362490515\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022creative\u0022: {\n    \u0022inlineContent\u0022: {\n      \u0022post\u0022: {\n        \u0022adContext\u0022: {\n          \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:521124266\u0022,\n          \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n          \u0022dscName\u0022 : \u0022legacy name field\u0022\n        },\n        \u0022author\u0022: \u0022urn:li:organization:5803528\u0022,\n        \u0022commentary\u0022: \u0022commentary about the post\u0022,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022content\u0022: {\n          \u0022media\u0022: {\n            \u0022title\u0022: \u0022Title of the video\u0022,\n            \u0022id\u0022: \u0022urn:li:video:C5510AQEdAeAosOmbOw\u0022\n          }\n        }\n      }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:362490515\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n    \u0022name\u0022: \u0022new name field\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header (e.g., urn:li:sponsoredCreative:120491345)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request for Campaign Objective Type website visit",
+      "Anchor": "sample-request-for-campaign-objective-type-website-visit",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Request for Campaign Objective Type website visit"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Campaign Objective Type website visit",
+      "Anchor": "sample-request-for-campaign-objective-type-website-visit",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Request for Campaign Objective Type website visit"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/506213394/creatives?action=createInline",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request for Campaign Objective Type website visit",
+      "Anchor": "sample-request-for-campaign-objective-type-website-visit",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Request for Campaign Objective Type website visit"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/adAccounts/506213394/creatives?action=createInline\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data-raw \u0027{\n    \u0022creative\u0022: {\n        \u0022inlineContent\u0022: {\n            \u0022post\u0022: {\n                \u0022adContext\u0022: {\n                    \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:506213394\u0022,\n                    \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n                },\n                \u0022author\u0022: \u0022urn:li:organization:3798009\u0022,\n                \u0022commentary\u0022: \u0022commentary about the post\u0022,\n                \u0022visibility\u0022: \u0022PUBLIC\u0022,\n                \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n                \u0022isReshareDisabledByAuthor\u0022: false,\n                \u0022contentCallToActionLabel\u0022: \u0022DOWNLOAD\u0022,\n                \u0022contentLandingPage\u0022: \u0022https://google.com\u0022,\n                \u0022content\u0022: {\n                    \u0022media\u0022: {\n                        \u0022title\u0022: \u0022Title of the video\u0022,\n                        \u0022id\u0022: \u0022urn:li:video:C4D10AQEjgImrrO30gQ\u0022\n                    }\n                }\n            }\n        },\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:175127926\u0022,\n        \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Video File Size Specifications",
+        "Creatives Inline Schema",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022creative\u0022: {\n        \u0022inlineContent\u0022: {\n            \u0022post\u0022: {\n                \u0022adContext\u0022: {\n                    \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:506213394\u0022,\n                    \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n                },\n                \u0022author\u0022: \u0022urn:li:organization:3798009\u0022,\n                \u0022commentary\u0022: \u0022commentary about the post\u0022,\n                \u0022visibility\u0022: \u0022PUBLIC\u0022,\n                \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n                \u0022isReshareDisabledByAuthor\u0022: false,\n                \u0022contentCallToActionLabel\u0022: \u0022DOWNLOAD\u0022,\n                \u0022contentLandingPage\u0022: \u0022https://google.com\u0022,\n                \u0022content\u0022: {\n                    \u0022media\u0022: {\n                        \u0022title\u0022: \u0022Title of the video\u0022,\n                        \u0022id\u0022: \u0022urn:li:video:C4D10AQEjgImrrO30gQ\u0022\n                    }\n                }\n            }\n        },\n        \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:175127926\u0022,\n        \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Creative",
+      "Anchor": "get-a-creative",
+      "SectionPath": [
+        "Get a Creative"
+      ],
+      "Text": "To obtain details provide the Creative URN in encoded format as shown in the following example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get a Creative",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get a Creative",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/520866471/creatives/urn%3Ali%3AsponsoredCreative%3A120491345",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get a Creative",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/520866471/creatives/urn%3Ali%3AsponsoredCreative%3A120491345\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get a Creative",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022createdAt\u0022: 1624249280000,\n  \u0022servingHoldReasons\u0022: [\n    \u0022STOPPED\u0022,\n    \u0022CAMPAIGN_STOPPED\u0022,\n    \u0022ACCOUNT_SERVING_HOLD\u0022,\n    \u0022CAMPAIGN_GROUP_STATUS_HOLD\u0022\n  ],\n  \u0022lastModifiedAt\u0022: 1624249280000,\n  \u0022isTest\u0022: false,\n  \u0022createdBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n  \u0022isServing\u0022: false,\n  \u0022name\u0022: \u0022Test Creative 1\u0022,\n  \u0022lastModifiedBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n  \u0022id\u0022: \u0022urn:li:sponsoredCreative:119962155\u0022,\n  \u0022intendedStatus\u0022: \u0022DRAFT\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n  \u0022content\u0022: {\n    \u0022reference\u0022: \u0022urn:li:ugcPost:6778045555198214144\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search For Creatives",
+      "Anchor": "search-for-creatives",
+      "SectionPath": [
+        "Search For Creatives"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Search For Creatives",
+      "Anchor": "search-for-creatives",
+      "SectionPath": [
+        "Search For Creatives"
+      ],
+      "Text": "From 202401 version and above, we have moved from index based pagination to cursor based pagination for our search APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "The creatives API implements cursor based pagination using the pageSize and pageToken parameters for search method. The max allowed pageSize is 100.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "pageSize governs the number of requested entities\npageToken is used to get the next set of results.\n\nnextPageToken is returned in metadata field of the search response.\nThis should be passed in pageToken query parameter in the request to get the next page of results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cursor based Pagination for search APIs",
+      "Anchor": "cursor-based-pagination-for-search-apis",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs"
+      ],
+      "Text": "Search for creative content in order to get a collection of creatives matching your search parameters. The Creative API currently supports search by creative id, campaign, content reference, intendedStatus, leadgenCreativeCallToActionDestinations and test fields. The values within each field are displayed with \u0027or\u0027 (ORed) and values across fields are displayed with \u0027and\u0027 (ANDed).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?campaigns=List(id1,id2,id3)\u0026contentReferences=List(id1,id2,id3)\u0026creatives=List(id1,id2,id3)\u0026intendedStatuses=List(ARCHIVED,CANCELED)\u0026isTestAccount=true\u0026isTotalIncluded=false\u0026leadgenCreativeCallToActionDestinations=List()\u0026q=criteria\u0026sortOrder=ASCENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?creatives=List(urn%3Ali%3AsponsoredCreative%3A119962155)\u0026q=criteria\u0026intendedStatuses=List(ARCHIVED,CANCELED)\u0026sortOrder=ASCENDING\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: FINDER\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "campaigns",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sponsoredCampaignUrn[] default=[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search values associated with creative sponsored campaign account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentReferences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN[] default=[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search values associated with creative content reference, can be share URN, or ugcPosts URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creatives",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sponsoredCreativeUrn[] default=[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search values associated with creative ID",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "intendedStatuses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IntendedStatus[] default=[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search values associated with creative intendedStatus",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "isTestAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search values associated with creative isTest flag. True returns creatives only under test accounts. False returns creatives only under non-test accounts. Setting this to null returns creatives regardless of the account being test or non-test",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadgenCreativeCallToActionDestinations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "adFormUrn[] default=[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Search values associated with the creative leadgenCallToAction destination",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SortOrder default=ASCENDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sort mode by creative ID for matching records",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the number of entities to be returned. The default is 100.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageToken",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "no",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique key representing the last entity of the response. This is to be used to fetch the next set of entities. If less than pageSize entities are returned in the current response, pageToken will be null",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "The following example describes a search for all creatives associated with a list of creative IDs. The id results are in ascending order.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "The header X-RestLi-Method must be included in the request and set to FINDER.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/520866471/creatives?creatives=List(urn%3Ali%3AsponsoredCreative%3A119962155)\u0026q=criteria\u0026sortOrder=ASCENDING",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/520866471/creatives?creatives=List(urn%3Ali%3AsponsoredCreative%3A119962155)\u0026q=criteria\u0026sortOrder=ASCENDING\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: FINDER\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022metadata\u0022: {\n    \u0022nextPageToken\u0022: \u0022DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo\u0022\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022createdAt\u0022: 1624249280000,\n      \u0022servingHoldReasons\u0022: [\n        \u0022STOPPED\u0022,\n        \u0022CAMPAIGN_STOPPED\u0022,\n        \u0022ACCOUNT_SERVING_HOLD\u0022,\n        \u0022CAMPAIGN_GROUP_STATUS_HOLD\u0022\n      ],\n      \u0022lastModifiedAt\u0022: 1624249280000,\n      \u0022isTest\u0022: false,\n      \u0022createdBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n      \u0022isServing\u0022: false,\n      \u0022lastModifiedBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022id\u0022: \u0022urn:li:sponsoredCreative:119962155\u0022,\n      \u0022intendedStatus\u0022: \u0022DRAFT\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022,\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "API Call to get the next set of results would use the nextPageToken passed in the response above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/520866471/creatives?creatives=List(urn%3Ali%3AsponsoredCreative%3A119962155)\u0026q=criteria\u0026sortOrder=ASCENDING\u0026pageToken=DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Search For Creatives",
+        "Cursor based Pagination for search APIs",
+        "Sample Response"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/520866471/creatives?creatives=List(urn%3Ali%3AsponsoredCreative%3A119962155)\u0026q=criteria\u0026sortOrder=ASCENDING\u0026pageToken=DgGerr1iVQreCJVjZDOW_grcp63nueBDipsS4DJpvJo\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: FINDER\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Creative",
+      "Anchor": "update-a-creative",
+      "SectionPath": [
+        "Update a Creative"
+      ],
+      "Text": "You can change the details of following Creatives fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Creative",
+      "Anchor": "update-a-creative",
+      "SectionPath": [
+        "Update a Creative"
+      ],
+      "Text": "intendedStatus:\nleadgenCallToAction: field adFormUrn - The ad form that\u0027s a target destination for the callToAction button. It can only be modified when the creative is in DRAFT status. It is read only once it\u0027s set for a creative and once it transitions to any non-draft intended status.\nleadgenCallToAction: field label -Label for the callToAction button.\nname: The name of the creative that can be set by advertiser.\ncontent/eventAd/hidePreviewVideo: Indicates whether to display a sneak peek of a live video event. Note: This field is supported only for API Versions starting from 202505 and later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "The following example call is for updating intendedStatus to active.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "The status of a creative determines whether or not the ad is served. See intendedStatus under Creative Schema to understand active, paused, archived, and cancelled statuses. Change the intendedStatus using the creative ID. You can\u0027t pause an ad creative in review. This endpoint returns a 400 error if you attempt to change the status of an in-review ad creative to paused.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "The header X-RestLi-Method must be included in the request and set to PARTIAL_UPDATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "A creative ID is the ID returned in the x-restli-id response header on successful create, for example: urn:li:sponsoredCreative:120491345.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{creative ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/urn%3Ali%3AsponsoredCreative%3A119962155\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{ \n    \u0022patch\u0022: { \n    \u0022$set\u0022: { \n      \u0022intendedStatus\u0022: \u0022ACTIVE\u0022 \n    }\n  } \n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Update a Creative",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Creative",
+      "Anchor": "delete-a-creative",
+      "SectionPath": [
+        "Delete a Creative"
+      ],
+      "Text": "A Creative can be deleted. Use DELETE method to delete a creative that meets one of the following conditions. To start the process of deleting other creative, update the status to PENDING_DELETION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Creative",
+      "Anchor": "delete-a-creative",
+      "SectionPath": [
+        "Delete a Creative"
+      ],
+      "Text": "It is in a DRAFT state.\nIt is linked to a Campaign in a DRAFT state.\nIt is a video ad creative and processingState is PROCESSING_FAILED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Creative",
+      "Anchor": "delete-a-creative",
+      "SectionPath": [
+        "Delete a Creative"
+      ],
+      "Text": "The header X-RestLi-Method must be included in the request and set to DELETE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "To delete a creative that meets one of the above conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{creative ID}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "To delete any other creative:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{creative ID}\n{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022intendedStatus\u0022: \u0022PENDING_DELETION\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "To delete creative that meets one of the above conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{creative ID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: DELETE\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "To delete any other creative:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{creative ID}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{ \n    \u0022patch\u0022: { \n        \u0022$set\u0022: { \n            \u0022intendedStatus\u0022: \u0022PENDING_DELETION\u0022 \n        }\n    } \n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Delete a Creative",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Operations",
+      "Anchor": "batch-operations",
+      "SectionPath": [
+        "Batch Operations"
+      ],
+      "Text": "Batch Create Ads Creatives\nBatch Get Ads Creatives\nBatch Partial Update Ads Creatives\nBatch Delete Ads Creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Operations",
+      "Anchor": "batch-operations",
+      "SectionPath": [
+        "Batch Operations"
+      ],
+      "Text": "Batch operations may only be performed on entities that belong to the same Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Ad Creatives",
+      "Anchor": "batch-create-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Ad Creatives"
+      ],
+      "Text": "When you perform a batch create, the header X-RestLi-Method must be included in the request and set to BATCH_CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Ad Creatives",
+      "Anchor": "batch-create-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Ad Creatives"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Ad Creatives",
+      "Anchor": "batch-create-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Ad Creatives"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Ad Creatives",
+      "Anchor": "batch-create-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Ad Creatives"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      },\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n    },\n    {\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      },\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Ad Creatives",
+      "Anchor": "batch-create-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Ad Creatives"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n\u0022elements\u0022: [\n    {\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      },\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n    },\n    {\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      },\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n    }\n  ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Create Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A120493375\u0022,\n      \u0022status\u0022: 201,\n      \u0022id\u0022: \u0022urn:li:sponsoredCreative:120493375\u0022\n    },\n    {\n      \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A120493385\u0022,\n      \u0022status\u0022: 201,\n      \u0022id\u0022: \u0022urn:li:sponsoredCreative:120493385\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Ad Creatives",
+      "Anchor": "batch-get-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives"
+      ],
+      "Text": "Fetch a list of Ad Creatives with associated IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Ad Creatives",
+      "Anchor": "batch-get-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives"
+      ],
+      "Text": "When you perform a batch create, the header X-RestLi-Method must be included in the request and set to BATCH_GET. Additionally, the request must include a header for X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/520866471/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120560935,urn%3Ali%3AsponsoredCreative%3A120694175)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/520866471/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120560935,urn%3Ali%3AsponsoredCreative%3A120694175)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_GET\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Get Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:sponsoredCreative:120560935\u0022: {\n      \u0022servingHoldReasons\u0022: [\n        \u0022UNDER_REVIEW\u0022,\n        \u0022CAMPAIGN_STOPPED\u0022,\n        \u0022ACCOUNT_SERVING_HOLD\u0022,\n        \u0022CAMPAIGN_GROUP_STATUS_HOLD\u0022\n      ],\n      \u0022lastModifiedAt\u0022: 1633533057000,\n      \u0022lastModifiedBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      },\n      \u0022createdAt\u0022: 1633533057000,\n      \u0022isTest\u0022: false,\n      \u0022createdBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n      \u0022review\u0022: {\n        \u0022status\u0022: \u0022PENDING\u0022\n      },\n      \u0022isServing\u0022: false,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022id\u0022: \u0022urn:li:sponsoredCreative:120560935\u0022,\n      \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    },\n    \u0022urn:li:sponsoredCreative:120694175\u0022: {\n      \u0022servingHoldReasons\u0022: [\n        \u0022UNDER_REVIEW\u0022,\n        \u0022CAMPAIGN_STOPPED\u0022,\n        \u0022ACCOUNT_SERVING_HOLD\u0022,\n        \u0022CAMPAIGN_GROUP_STATUS_HOLD\u0022\n      ],\n      \u0022lastModifiedAt\u0022: 1634718249000,\n      \u0022lastModifiedBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n      \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:share:6778045555198214144\u0022\n      },\n      \u0022createdAt\u0022: 1634718249000,\n      \u0022isTest\u0022: false,\n      \u0022createdBy\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n      \u0022review\u0022: {\n        \u0022status\u0022: \u0022PENDING\u0022\n      },\n      \u0022isServing\u0022: false,\n      \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:360035215\u0022,\n      \u0022id\u0022: \u0022urn:li:sponsoredCreative:120694175\u0022,\n      \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n      \u0022account\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022urn:li:sponsoredCreative:120560935\u0022: 200,\n    \u0022urn:li:sponsoredCreative:120694175\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Partial Update Ad Creatives",
+      "Anchor": "batch-partial-update-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Partial Update Ad Creatives"
+      ],
+      "Text": "When you perform a batch partial update, the header X-RestLi-Method must be included in the request and set to BATCH_PARTIAL_UPDATE. Additionally, the request must include a header for X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Partial Update Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Partial Update Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120493375,urn%3Ali%3AsponsoredCreative%3A120493385)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Partial Update Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120493375,urn%3Ali%3AsponsoredCreative%3A120493385)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n  \u0022entities\u0022: {\n    \u0022urn:li:sponsoredCreative:120493375\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022intendedStatus\u0022: \u0022CANCELED\u0022\n        }\n      }\n    },\n    \u0022urn:li:sponsoredCreative:120493385\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n        }\n      }\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Partial Update Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022urn:li:sponsoredCreative:120493375\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022intendedStatus\u0022: \u0022CANCELED\u0022\n        }\n      }\n    },\n    \u0022urn:li:sponsoredCreative:120493385\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022intendedStatus\u0022: \u0022DRAFT\u0022\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Ad Creatives",
+      "Anchor": "batch-delete-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives"
+      ],
+      "Text": "Multiple creatives can be deleted. Use DELETE method to delete creatives that meet one of the following conditions. To start the process of deleting other creatives, update the status to PENDING_DELETION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Ad Creatives",
+      "Anchor": "batch-delete-ad-creatives",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives"
+      ],
+      "Text": "Creative is in a DRAFT state.\nCreative is linked to a Campaign in a DRAFT state.\nCreative is a Video Ad creative and processingState is PROCESSING_FAILED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "To delete creatives that meets one of the above conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120493375,urn%3Ali%3AsponsoredCreative%3A120493385)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "To delete any creatives that don\u0027t meet above conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120493375,urn%3Ali%3AsponsoredCreative%3A120493385)\n{\n   \u0022entities\u0022:{\n      \u0022120493375\u0022:{\n         \u0022patch\u0022:{\n            \u0022$set\u0022:{\n               \u0022intendedStatus\u0022:\u0022PENDING_DELETION\u0022\n            }\n         }\n      },\n      \u0022120493385\u0022:{\n         \u0022patch\u0022:{\n            \u0022$set\u0022:{\n               \u0022intendedStatus\u0022:\u0022PENDING_DELETION\u0022\n            }\n         }\n      }\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "To delete creatives that meets one of the above conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120493375,urn%3Ali%3AsponsoredCreative%3A120493385)\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\ \n-H \u0027X-RestLi-Method: DELETE\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "To delete creatives that don\u0027t meet one of the above conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives?ids=List(urn%3Ali%3AsponsoredCreative%3A120493375,urn%3Ali%3AsponsoredCreative%3A120493385)\u0027 \\ \n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n   \u0022entities\u0022:{\n      \u0022120493375\u0022:{\n         \u0022patch\u0022:{\n            \u0022$set\u0022:{\n               \u0022intendedStatus\u0022:\u0022PENDING_DELETION\u0022\n            }\n         }\n      },\n      \u0022120493385\u0022:{\n         \u0022patch\u0022:{\n            \u0022$set\u0022:{\n               \u0022intendedStatus\u0022:\u0022PENDING_DELETION\u0022\n            }\n         }\n      }\n   }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "The sample request attempted to delete two Ad Creatives. The sample response below shows that only Ad Creatives 1 was successfully updated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-8",
+      "SectionPath": [
+        "Batch Operations",
+        "Batch Delete Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n      \u0022creative_id_1\u0022:{\n            \u0022Status\u0022:204\n      }\n    },\n    \u0022errors\u0022:{\n        \u0022creative_id_2\u0022:{\n            //error detail\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Creative Rejection Reasons",
+      "Anchor": "ad-creative-rejection-reasons",
+      "SectionPath": [
+        "Ad Creative Rejection Reasons"
+      ],
+      "Text": "Ad creatives go through a review process before they can be served. The following table lists the possible reasons an ad could be rejected. The symbol column shows the values that are returned through the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Ad Creative Rejection Reasons",
+      "Anchor": "ad-creative-rejection-reasons",
+      "SectionPath": [
+        "Ad Creative Rejection Reasons"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ADULT_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Adult Content: LinkedIn doesn\u0027t allow ads related to sexual or adult content, products, or services, including images with nudity, escort services, erotic massage, pornography, sex toys, prostitution, sexual services, strip clubs, erotic dancing, or international bride services.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#adult-content"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AFFILIATE_ADVERTISING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Affiliate Advertising: LinkedIn doesn\u0027t allow affiliate ads and related programs.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#affiliate-advertising"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ALCOHOL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Alcohol: Ads for alcoholic beverages such as wine, beer, and spirits are restricted on LinkedIn and may not be placed through our self-service tool.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#alcohol"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ANIMAL_OR_ANIMAL_PRODUCTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Animal or Animal Products: LinkedIn doesn\u0027t allow ads for live animals or animal products, including sale of animals, furs or products made from furs, hides or body parts of animals included on any government endangered species lists.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#animal-products"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BACK_BUTTON_NOT_WORKING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Back button not working: The landing page must allow users to use the browser\u0027s \u0027Back\u0027 button to return to the page that the ad was displayed on.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#link-behavior"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CHILD_EXPLOITATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Child Exploitation: LinkedIn has zero tolerance for content that depicts the sexual exploitation of children. Ads promoting content that depicts, facilitates, encourages, or engages in the abuse or exploitation of children in violation of LinkedIn\u0027s Professional Community Policies are prohibited. Note: Applicable only from API versions 202504 and later.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#professional-community-policies",
+              "https://www.linkedin.com/legal/professional-community-policies#be-safe-policy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CHINA_POLICY_VIOLATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content doesn\u0027t comply with China Ads Policy.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTEST_AND_COMPETITION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ads promoting contests and competitions are restricted. Such ads must comply with LinkedIn\u2019s guidelines Note: This field is only supported in API versions starting from 202503.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#contest-and-competition"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COPYRIGHTED_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Copyrighted content: LinkedIn doesn\u0027t allow ads for products and services marketed for the purpose of (or that are primarily used for) the distribution of software, media, and other content in violation of the intellectual property rights of others.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#copyright-infringement"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COUNTERFEIT_GOODS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counterfeit goods: LinkedIn doesn\u0027t allow ads that sell or promote counterfeit goods.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#counterfeit"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CRYPTOCURRENCY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cryptocurrency: LinkedIn doesn\u0027t allow ads related to the buying, selling or trading of cryptocurrencies.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#cryptocurrency"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CURRENT_SENSITIVE_EVENTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn doesn\u0027t allow ads that could capitalize from, exploit or sensationalize the currently monitored sensitive event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DATA_COLLECTION_AND_PRIVACY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data collection \u0026 privacy: Do not use an ad to facilitate collection of a member\u0027s data. If you collect sensitive information, we ask that you use HTTPs. Sensitive information includes, but is not limited to, financial, identification, medical, and login information.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#https-and-http-support"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DECEPTIVE_BEHAVIOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deceptive Behavior: Behavior like cloaking or unicode manipulation.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DIETARY_SUPPLEMENTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn doesn\u0027t allow ads related to dietary supplements with ephedrine group alkaloids targeted to members under the age of 18.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DISCRIMINATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Discrimination: Ads promoting discrimination based on personal attributes such as age, gender, gender identity, disability, religion, ethnicity, race, color, national origin or sexual orientation are prohibited. Note: Applicable only from API versions 202504 and later.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#discrimination"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DRUGS_AND_RELATED_PRODUCTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prescription Drugs: Ads promoting prescription drugs are restricted and require prior authorization. Ads may only promote prescription drugs in the following jurisdictions: the United States and Canada. Such ads must not target members under 18 years of age. Learn more. Over-the-Counter: Ads promoting over-the-counter drugs are restricted and require prior authorization. Ads may only promote over-the-counter drugs in jurisdictions where it\u0027s legal and must adhere to all applicable laws and regulations. Such ads must not target members under 18 years of age. Ads targeting jurisdictions outside the United States or Canada may target healthcare-related professionals only. Illicit or Recreational Drugs and related products: LinkedIn doesn\u0027t allow ads related to illicit or recreational drugs or any related products or services. Ads that promote illegal drugs, highs, herbal medicines and treatments, psychoactive effects of substances, or aids to pass drug tests are all prohibited.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#prescription-drugs",
+              "https://www.linkedin.com/help/lms/answer/a1320991",
+              "https://www.linkedin.com/legal/ads-policy#over-the-counter-drugs",
+              "https://www.linkedin.com/legal/ads-policy#illicit-or-recreational-drugs"
+            ],
+            "Values": [
+              "Prescription Drugs: Ads promoting prescription drugs are restricted and require prior authorization. Ads may only promote prescription drugs in the following jurisdictions: the United States and Canada. Such ads must not target members under 18 years of age. Learn more.",
+              "Over-the-Counter: Ads promoting over-the-counter drugs are restricted and require prior authorization. Ads may only promote over-the-counter drugs in jurisdictions where it\u0027s legal and must adhere to all applicable laws and regulations. Such ads must not target members under 18 years of age. Ads targeting jurisdictions outside the United States or Canada may target healthcare-related professionals only.",
+              "Illicit or Recreational Drugs and related products: LinkedIn doesn\u0027t allow ads related to illicit or recreational drugs or any related products or services. Ads that promote illegal drugs, highs, herbal medicines and treatments, psychoactive effects of substances, or aids to pass drug tests are all prohibited."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "EXCESSIVE_CAPITALIZATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Excessive capitalization: Do not use excessive capitalization in your ad, with the exception of valid acronyms and trademarks.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#standard-text-and-contact-information"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXCESSIVE_CONTACT_INFORMATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Excessive contact information: You may include a single link and either a single email address or phone number in your ad. A QR code is considered an extra link if it\u2019s different from the landing page URL.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#standard-text-and-contact-information"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXCESSIVE_NEGATIVE_RESPONSE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Excessive negative response: Ensure that your ad doesn\u0027t continue the conversation after the member has declined your offer.",
+            "Links": [
+              "https://www.linkedin.com/legal/professional-community-policies#spam-content"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAKE_DOCUMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fake document: LinkedIn doesn\u0027t allow ads for fake documents that could be used to trick or defraud. Examples include: (1) academic degrees, (2) professional licenses or certifications, (3) national IDs, (4) working permits (immigration status), (5) business licenses, (6) birth certificates, (7) passports, (8) invoices or receipts, (9) medical records, and (10) noble titles/status.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fake-documents-and-related-services"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GAMBLING_SWEEPSTAKES_AND_VIRTUAL_CURRENCY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gambling and sweepstakes: LinkedIn doesn\u0027t allow ads related to gambling or sweepstakes. Ads related to the following are prohibited: sports betting, bingo, lotteries, gambling tours and tutoring, tools, and software for gambling, scratch games.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#gambling-and-sweepstakes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GENERAL_TRADEMARK_ISSUES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "General trademark issues: Do not use trademarks that you don\u0027t have a legal right to use in your ad. Your ad must not include any text that may be deemed as infringing upon the trademarks of other parties unless permission has been granted by the trademark owner.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#trademark-infringement"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HACKING_AND_CRACKING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hacking, cracking, and circumvention: LinkedIn doesn\u0027t allow ads that promote products or services for hacking. This includes: instructions on how to illegally alter electronic equipment, bypass digital content management systems, or otherwise illegally tamper with software, servers, cell phones, or websites, or listen in or record conversations or information without proper consent. LinkedIn also doesn\u0027t allow products designed to interfere with the enforcement of traffic laws (radar detectors), surveillance products, encryption products/services, and de-encryption devices and services.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#hacking-cracking-circumvention"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HATE_SPEECH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hate speech: Ads promoting hateful speech in violation of LinkedIn\u0027s Community Policies are prohibited.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#professional-community-policies",
+              "https://www.linkedin.com/legal/professional-community-policies#be-professional-policy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HEALTH_MATTERS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Health matters: Ads promoting unrealistic or misleading claims about health improvements, including related to diet and weight loss, are prohibited. Ads promoting unhealthy or unsafe behaviors, such as excessive consumption of an item, are also prohibited. LinkedIn reserves the right to restrict advertising related to any health matter.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#health-matters"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ILLICIT_OR_RECREATIONAL_DRUGS_AND_RELATED_PRODUCTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Illicit or Recreational Drugs and Related Products: LinkedIn doesn\u0027t allow ads promoting the sale or use of illicit or recreational drugs, or any related products or services. Ads promoting illegal drugs, highs, herbal medicines and treatments, psychoactive effects of substances, or aids to pass drug tests are prohibited.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#illicit-or-recreational-drugs"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IMPLIED_AFFILIATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Implied affiliation: Do not imply you or your product is affiliated with or endorsed by others without their permission.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INAPPROPRIATE_LANGUAGE_OR_IMAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inappropriate language or image: Please use appropriate and acceptable language and images in your ad. Do not use language or images that could be considered offensive by any reasonable viewer of your ad. Even if legal in the applicable jurisdiction, LinkedIn doesn\u0027t allow ads that are indecent, violent, vulgar, suggestive or that, in the opinion of LinkedIn, may be offensive to good taste.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#appropriate-language"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INAPPROPRIATE_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inappropriate name: For Sponsored InMails, we require the sender\u0027s name to be of a natural person. Do not use a fake name, invalid profile name, or company name to send the Sponsored InMail.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#appropriate-language"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INCITEMENT_OF_VIOLENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Incitement of Violence: Ads promoting incitement of violence in violation of LinkedIn\u0027s Professional Community Policies are prohibited. Note: Applicable only from API versions 202504 and later.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#professional-community-policies",
+              "https://www.linkedin.com/legal/professional-community-policies#be-safe-policy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INCONSISTENT_DISPLAY_AND_LANDING_PAGE_URLS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inconsistent display and landing page URLs: Your display URL must match your destination URL. All members who click on your ad must be sent to the same destination URL and landing page.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#link-behavior"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_POSTING_WITHOUT_LISTED_STATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Posting Inactive: This ad promotes a job posting that has been deleted, closed, is in draft, etc. Ensure your ad promotes an active job posting.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#incomplete-ad"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEGITSCRIPT_APPROVAL_MISSING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Authorization Required: Ads promoting pharmacy or telehealth services are restricted and require prior authorization. Requirements for authorization include LegitScript certification and onboarding.",
+            "Links": [
+              "https://www.linkedin.com/help/lms/answer/a1320991"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LINKEDIN_MENTIONED_IN_AD_TEXT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn in ad: Do not use LinkedIn in your ad unless it refers to a page or product on our site, such as \u2018Find me on LinkedIn.\u2019 Do not imply affiliation with or endorsement by LinkedIn.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#use-of-LinkedIn-trademark"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LOANS_AND_FINANCIAL_SERVICES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Loans \u0026 financial services: Ads for loan and financial services must fulfill a specific set of requirements.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#short-term-loans-and-financial-services"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MALICIOUS_SOFTWARE_OR_BROWSER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malicious Software/Browser: Do not use an ad to promote, install or distribute viruses, worms, spyware, malware or other malicious software. Software should only be installed with the permission of the user and should be readily removable by the user.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#malicious-software-browser"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MEDICAL_DEVICES_AND_TREATMENTS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Medical Devices and Medical Treatments: Ads for medical devices and medical treatments, including clinical trials, are restricted. Such ads must not target members under the age of 18, and can only target healthcare-related professionals.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#medical-devices-and-medical-treatments"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISINFORMATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Misinformation: Ads promoting confirmed false or substantially misleading claims in violation of LinkedIn\u2019s Professional Community Policies are prohibited.",
+            "Links": [
+              "https://www.linkedin.com/legal/professional-community-policies#false-or-misleading-content",
+              "https://www.linkedin.com/legal/ads-policy#professional-community-policies"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISLEADING_CLAIMS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Misleading claims: Your product or service must accurately match the text of your ad - don\u0027t lie, don\u0027t exaggerate and don\u0027t make false, misleading, or scientifically impossible claims. The claims you make in your ad should have factual support.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISMATCHED_AD_TEXT_AND_LANDING_PAGE_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mismatched ad text and landing page content: The photos and images in your ad should have a reasonable relationship to the product or service being advertised.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_PRIVACY_POLICY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing privacy policy: The landing page associated with the URL for your privacy policy is missing the actual privacy policy statement. Please note a privacy policy is required if using a Lead Gen Form.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#privacy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_UK_FCA_FINANCIAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UK FCA Authorisation: Ads promoting financial services or products targeting audiences in the United Kingdom may come from UK Financial Conduct Authority authorised advertisers only. Learn more.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#short-term-loans-and-financial-services",
+              "https://www.linkedin.com/help/lms/answer/a6238495"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MISSING_URL_FOR_WEBSITE_OBJECTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing URL: You must include URL links associated with the ad creative when your campaign objective is website visits or website conversion.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#link-behavior"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NON_MATCHING_LANGUAGES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-matching languages: The language of your creative should match the language on the site and the language you\u0027re targeting.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#supported-languages"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NON_STANDARD_TEXT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-standard text: Use correct spelling and grammar in the text of your ad. Do not use non-standard spelling, grammar, capitalization, and punctuation. Avoid excessive or inappropriate punctuation, or repeated punctuation (e.g. more than one single exclamation point). Do not use symbols (e.g. *, @) in a manner that differ from their standard meaning. Do not use symbols in place of a letter (\u0022cl!ck\u0022). Avoid repetitive words, text that\u0027s difficult to read because of how it\u0027s displayed (e.g. upside-down text), excessive or non-standard formatting, unsupported macro. Currently only %FIRSTNAME% and %FULLNAME% are supported in a Message Ad body.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#standard-text-and-contact-information"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NONFUNCTIONAL_SITE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-functional site: Do not advertise if any of the following scenarios applies: the URL doesn\u0027t work; your site is under construction; the domain is for sale; visitors land on an error page (such as 404 or 405 error); the URL leads to an email address or a file that requires an additional application to open.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#link-behavior"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OCCULT_PURSUITS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Occult pursuits: LinkedIn doesn\u0027t allow ads for fortune telling, dream interpretations and individual horoscopes.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#occult-pursuits"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OFFENSIVE_LANGUAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Offensive language: LinkedIn doesn\u0027t allow ads that use language that could be considered offensive by any reasonable viewer.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#appropriate-language"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OFFENSIVE_TO_GOOD_TASTE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Offensive to good taste: LinkedIn doesn\u0027t allow for ads that are indecent, vulgar, suggestive or that, in the opinion of LinkedIn, may be offensive to good taste. Ads that depict violent or degrading behavior are not acceptable. In special circumstances, LinkedIn may determine that an ad that was acceptable, is no longer appropriate given current events.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#offensive-to-good-taste"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OFFER_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Offer not found: Do not advertise prices or offers that are inaccurate - any advertised discount, offer, or price must be easily discoverable from the URL in your ad.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OVER_THE_COUNTER_DRUGS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Over-the-counter drugs: Ads promoting over-the-counter drugs are restricted and require prior authorization. Ads may only promote over-the-counter drugs in jurisdictions where it\u0027s legal and must adhere to all applicable laws and regulations. Such ads must not target members under 18 years of age. Ads targeting jurisdictions outside the United States or Canada may target healthcare-related professionals only.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#over-the-counter-drugs"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PHARMACY_AND_TELEHEALTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pharmacy and Telehealth: Ads promoting pharmacy or telehealth services are restricted and require prior authorization. Requirements for authorization include LegitScript certification. Ads may only promote pharmacy and telehealth services in the following jurisdictions: the United States. Such ads must not target members under 18 years of age. Learn more.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#pharmacy-and-telehealth-services",
+              "https://www.linkedin.com/help/lms/answer/a1320991"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PHISHING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Phishing: Do not use ads to promote websites that trick users into providing personal or other information.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#phishing"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "POP_UP_OR_POP_UNDER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pop-up or pop-under: Do not send members to a landing page that generates a pop-up or pop-under.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#link-behavior"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PRESCRIPTION_DRUGS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prescription drugs: Ads promoting prescription drugs are restricted and require prior authorization. Ads may only promote prescription drugs in the following jurisdictions: the United States and Canada. Such ads must not target members under 18 years of age. Learn more.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#prescription-drugs",
+              "https://www.linkedin.com/help/lms/answer/a1320991"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROHIBITED_DATING_SERVICES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prohibited dating services: LinkedIn doesn\u0027t allow targeting of dating services to persons who are under 18. The dating services must not be sexually themed or engage in \u0027escort type\u0027 services where any person is compensated to participate in the date.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#dating-services"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROHIBITED_POLITICAL_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Political: LinkedIn doesn\u0027t allow political advertisements including those ads advocating for or against a particular candidate, party, or ballot proposition or otherwise intended to influence an election outcome; ads fundraising for or by political candidates, parties, political action committees or similar organizations, or ballot propositions; and or ads exploiting a sensitive political issue even if the advertiser has no explicit political agenda.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#political"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "QUESTIONABLE_DOWNLOADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Questionable downloads: LinkedIn doesn\u0027t allow ads and sites that promote automatic downloads without user consent, or downloads that might harm members.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#harm-to-LinkedIn-or-members"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RESALE_OF_EVENT_TICKETS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resale of event tickets: LinkedIn doesn\u0027t allow ads for resale of event tickets.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#illegal-products-services-activities"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RINGTONES_AND_INAPPROPRIATE_VIDEO_GAMES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ringtones and video games: LinkedIn doesn\u0027t allow ads for downloadable ring tones and/or video games with inappropriate content, such as violence or adult content.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#offensive-to-good-taste"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCAMS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fraud and Deception: Ads must not be fraudulent or deceptive.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SOLICITATION_OF_FUNDS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Solicitation of funds: Ads that solicit funds are allowed only if they comply with applicable law and would qualify as tax deductible in the applicable jurisdiction. In the U.S., ads soliciting funds and donations must present tax exempt ID on the site.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#soliciting-funds"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TERRORISM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dangerous Organizations and Individuals: Ads promoting dangerous organizations or individuals in violation of LinkedIn\u0027s Professional Community Policies are prohibited. Note: Applicable only from API versions 202504 and later.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#professional-community-policies",
+              "https://www.linkedin.com/legal/professional-community-policies#be-safe-policy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEST_ADS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Incomplete ad: Your ad appears to be a test ad. Please resubmit when the ad is final.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#incomplete-ad"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TEST_TAKING_SERVICES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Test taking services: LinkedIn doesn\u0027t allow ads for test-taking services that offer to take tests for others, including but not limited to, academic tests, professional exams, certificates, etc.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fake-documents-and-related-services"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "THREATS_OF_VIOLENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Threats of Violence: Ads promoting threats of violence in violation of LinkedIn\u0027s Professional Community Policies are prohibited. Note: Applicable only from API versions 202504 and later.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#professional-community-policies",
+              "https://www.linkedin.com/legal/professional-community-policies#be-safe-policy"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOBACCO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Tobacco products or cigarettes: LinkedIn doesn\u0027t allow ads related to cigarettes, pipes, cigars, tobacco, e-cigarettes, and related products.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#tobacco-products"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNCLEAR_BILLING_PRACTICES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unclear billing practices: The products and services advertised in your ad should have fair and legal billing practices. Pricing and payment terms should be clear and easily findable and understandable by your customers prior to purchase, including explaining the rights to refunds and termination.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fair-and-legal-billing-practices"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNDISCLOSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type for hiding the internal rejection reasons caused by fraud content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNSUPPORTED_COMPETITIVE_CLAIMS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported competitive claims: Do not make deceptive or inaccurate claims about competitive products or services.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#fraud-and-deception"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UNSUPPORTED_LANGUAGE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported language: LinkedIn doesn\u0027t currently support the language used in your creative.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#supported-languages"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WEAPONS_AND_FIREWORKS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Weapons, firearms, ammunition, fireworks, or any other violent products or services: LinkedIn doesn\u0027t allow ads related to weapons, firearms, ammunition, fireworks, stun guns, air rifles, pyrotechnical devices or other violent products or services.",
+            "Links": [
+              "https://www.linkedin.com/legal/ads-policy#weapons-fireworks-other-violent-products-services"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACTION_CONDITIONALLY_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action {action} is forbidden if field {field} is not set to {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BATCH_OPERATION_CANNOT_HAVE_MULTI_AD_FORMATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch operation for multiple creatives of different formats in a campaign is not allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_LIFT_POLL_INVALID_SHARE_MEDIA_CATEGORY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Share Media Category {value} is invalid as Brand Life Poll must specify URN_REFERENCE as share media category",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_LIFT_POLL_NON_DARK_POST_CREATIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {reference} is invalid as Brand Lift Poll must be a dark post",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BUTTON_LABEL_REQUIRED_FOR_JOBS_POSTING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Button Label is required but missing for Jobs V2 creatives when included Ad Sizes is non-empty",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CAMPAIGN_EXCEEDING_CREATIVE_TYPE_LIMIT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative type {value} is invalid as all creatives within a campaign must be of the same type",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CANNOT_UPDATE_CANCELED_CREATIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot update a canceled creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CAROUSEL_NON_ACTIVITY_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as Sponsored Update Carousel creatives must have URN Relation type as ACTIVITY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CONDITIONAL_IMMUTABLE_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} can\u0027t be updated if {field2} is set to {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC_CAMPAIGN_INVALID_AD_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CPC campaigns should only contain dynamic ads creatives such as follower ads and spotlight ads, Creative type {value} is not allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_CONTENT_NOT_ASSOCIATED_WITH_LANDING_PAGE_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative content should be associated with a landing page URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_CONTENT_NOT_ASSOCIATED_WITH_VALID_PIPELINE_BUILDER_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative content should be associated with a valid pipeline builder URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_CONTENT_NOT_ASSOCIATED_WITH_VALID_PIPELINE_BUILDER_URL_OR_EVENT_PAGE_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative content should be associated with a valid pipeline builder URL or event page URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_NOT_ALLOWED_IN_CAMPAIGN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A creative is not allowed in this campaign",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTA_REQUIRED_FOR_LEAD_GEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call to Action {field} is required but missing for Lead Gen Creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DATE_CONDITIONAL_TOO_EARLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} can\u0027t be set to {value1}; it must be before {field2} {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DIRECT_SPONSORED_CONTENT_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Direct Sponsored Content is not created by the account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC_ADS_MISSING_AD_FORMAT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad format is required but missing for non Job Dynamic Ad",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be blank",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAILED_TO_EXTRACT_COMPANY_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to extract company id from company profile info {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAIL_TO_RETRIEVE_DIRECT_SPONSORED_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fail to retrieve Direct Sponsored Content. Reference {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FAIL_TO_RETRIEVE_UPDATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fail to retrieve update. Could be a temporary failure. Reference {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_CONDITIONALLY_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} is not allowed when field {field2} is set to {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_NOT_ALLOWED_ON_CREATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} is not allowed on creation",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_NOT_EDITABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} for {type} is not editable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FIELD_VALUE_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} length {length} can\u0027t exceeded maximum {max} length",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FOLLOW_COMPANY_V2_NONEMPTY_CLICK_URI",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Click URI can\u0027t be set to {value} and must be empty as the actual destination is determined from landing page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "HEADLINE_REQUIRED_FOR_JOBS_POSTING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Headline is required but missing for Jobs V2 creatives when included Ad Sizes is non-empty",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IMAGE_URN_EXCLUSIVE_WITH_IMAGE_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image ID and image URN are mutually exclusive",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IMMUTABLE_FIELD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} can\u0027t be updated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_CLICK_URI",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported click uri - {uri}. The scheme must be one of: {validSchemes} and the URI must be absolute",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_HREF",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Click Uri {value} is invalid as it should be 500 characters or less and formatted with preceding http or https",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_PARENT_CAMPAIGN_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid parent campaign type {type1} for this creative type {type2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URN_TYPE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} must be a {urnType} URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VALUE_NOT_ACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} is not active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VALUE_NOT_EXIST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} value {value} doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOBS_CREATIVE_INVALID_AD_FORMAT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ad format {value} is invalid as Jobs creative only allows work-with-us and picture-yourself ad formats",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOB_POSTING_CANNOT_BE_FETCHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot fetch Job Posting",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JOB_STATE_NOT_LISTED_BUT_CREATIVE_IS_ACTIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For a job posting creative to be ACTIVE, it must have a job state of LISTED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MISSING_FIELD_IN_VALUE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} is required but missing in {value}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ORGANIC_STORY_UGC_INVALID_CTA_LABEL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organic story landingPageTitle must contain a Call To Action label of type APPLY, DOWNLOAD, VIEW_QUOTE, LEARN_MORE, SIGN_UP, SUBSCRIBE, REGISTER, JOIN, ATTEND, REQUEST_DEMO, SEE_MORE for story to be sponsorable, label {value} is not allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PARENT_URN_KEY_NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid parent URN {URN} not found",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "POLI_LINK_FOLLOW_TEXT_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The href poli link can\u0027t be set to {hrefValue} because the follow text value is {followTextValue}. The href value should have the format - {hrefTemplate}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "POLL_STICKERS_NOT_SUPPORTED_FOR_STORIES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored story can\u0027t have poll sticker overlay",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REFERENCED_EVENT_CANNOT_HAVE_CANCELED_STATUS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Creative refers to a UGC which references an Event {value} with CANCELED status",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REFERENCED_EVENT_END_TIME_PASSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Creative refers to a UGC which references an Event {value} that has already ended",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REFERENCED_EVENT_ORGANIZER_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Author of UGC referenced in the Creative doesn\u0027t match with the Organizer of the Event {value} referenced in the UGC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REFERENCE_MEDIA_CATEGORY_AND_CAMPAIGN_FORMAT_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The media category of reference {category} doesn\u0027t match the parent campaign format {format}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "REFERENCE_NOT_ALLOWED_FOR_TEXT_AD_CREATIVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference is not allowed for text ad creative",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SINMAIL_INVALID_INMAIL_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "InMail content can\u0027t be set to {value} for creative {key} because it doesn\u0027t exist",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_JOB_POSTING_NON_UGC_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as Sponsored job posting can\u0027t be assigned with non UGC URN reference",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_JOB_POSTING_NON_JOB_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as Sponsored update job posting can\u0027t be assigned with non JOB reference",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATE_JOB_POSTING_NON_SHARING_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored update job posting creative can\u0027t be attributed as non-shareable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_VIDEO_NON_SHAREABLE_CONTENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sponsored Video creative can\u0027t be attributed as non-shareable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_VIDEO_NON_UGC_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as Sponsored Video creatives must have URN Relation type as UGC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_VIDEO_NON_VIDEO_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as Sponsored Video creative can\u0027t be assigned with non VIDEO reference",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT_NOT_ASSOCIATED_WITH_VALID_PIPELINE_BUILDER_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Creative {field} should have a valid pipeline builder URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SSU_NON_ACTIVITY_REFERENCE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as SSU creatives must have reference type as ACTIVITY except for IMAGE Story Items",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TRANSITION_CONDITIONALLY_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field1} transition is not allowed from {beforeValue} to {afterValue} if {field2} is not set to {value2}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TRANSITION_NOT_ALLOWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{field} transition is not allowed from {beforeValue} to {afterValue}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC_EXCEEDING_IMAGE_LIMIT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media can\u0027t be set to {value} as Image UGCs should have exactly one image to be sponsor",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC_INVALID_FEED_DISTRIBUTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Feed distribution {value} is invalid as UGC content should set NONE feed distribution for dark post, MAIN_FEED for organic posts, and CONTAINER_ONLY for container posts",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC_INVALID_SHARE_MEDIA_CATEGORY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC only allows share media category of type ARTICLE, CAROUSEL, IMAGE, RICH, VIDEO, JOB, DOCUMENT, and URN, Share Media Category {value} is not permitted",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC_INVALID_VISIBILITY_SETTING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This UGC reference {value} ad needs to be public to be sponsored, current visibility is set to {visibility}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC_NON_SHARING_CONTENT_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} is invalid as UGC content can\u0027t be attributed as non-shareable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC_RESHARE_CANNOT_BE_SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Reference {value} can\u0027t be sponsored as sponsoring a reshared UGC post is not allowed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNAUTHORIZED_ACCESS_TO_CHANGE_THE_REVIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized access to change the review",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNSAFE_HREF",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Click Uri {value} contains either malicious content or poses safety concerns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_INVALID_HEIGHT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video height value {value} must be between {minHeight} and {maxHeight}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_LENGTH_TOO_LONG",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video length value {value} seconds can\u0027t be higher than {maxLength} seconds",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_LENGTH_TOO_SHORT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video length value {value} seconds can\u0027t be lower than {minLength} seconds",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_UNSUPPORTED_ASPECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video must have aspect ratio value {value} between {minRatio} and {maxRatio}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_UNSUPPORTED_WIDTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video width value {value} must be between {minWidth} and {maxWidth}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WHITEPAPER_DOWNLOAD_CAMPAIGN_AD_FORM_MISMATCH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Campaign type and ad form type have to be both Whitepaper Download or both",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTV_VIDEO_UNSUPPORTED_BITRATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CTV video bitrate value {value} must be greater than {minBitRate}. Note: Applicable only from versions 202408 and above.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

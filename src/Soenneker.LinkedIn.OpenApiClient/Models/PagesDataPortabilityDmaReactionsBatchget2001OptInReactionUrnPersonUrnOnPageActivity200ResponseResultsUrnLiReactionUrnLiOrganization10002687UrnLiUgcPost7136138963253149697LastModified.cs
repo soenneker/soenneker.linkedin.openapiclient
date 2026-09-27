@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Impersonator { get; set; }
 #endif
         /// <summary>The time property</summary>
-        public int? Time { get; set; }
+        public long? Time { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaReactionsBatchget2001OptInReactionUrnPersonUrnOnPageActivity200ResponseResultsUrnLiReactionUrnLiOrganization10002687UrnLiUgcPost7136138963253149697LastModified"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "actor", n => { Actor = n.GetStringValue(); } },
                 { "impersonator", n => { Impersonator = n.GetStringValue(); } },
-                { "time", n => { Time = n.GetIntValue(); } },
+                { "time", n => { Time = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actor", Actor);
             writer.WriteStringValue("impersonator", Impersonator);
-            writer.WriteIntValue("time", Time);
+            writer.WriteLongValue("time", Time);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

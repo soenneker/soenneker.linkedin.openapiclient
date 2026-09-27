@@ -25,7 +25,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The percentChange property</summary>
         public double? PercentChange { get; set; }
         /// <summary>The totalCount property</summary>
-        public int? TotalCount { get; set; }
+        public long? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationSearchAppearanceFinder200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "percentChange", n => { PercentChange = n.GetDoubleValue(); } },
-                { "totalCount", n => { TotalCount = n.GetIntValue(); } },
+                { "totalCount", n => { TotalCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("organization", Organization);
             writer.WriteDoubleValue("percentChange", PercentChange);
-            writer.WriteIntValue("totalCount", TotalCount);
+            writer.WriteLongValue("totalCount", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

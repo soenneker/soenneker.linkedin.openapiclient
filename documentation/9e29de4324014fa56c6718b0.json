@@ -1,0 +1,140 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+  "Title": "Module 5 -  Basic and Premium Job Posting",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 5 -  Basic and Premium Job Posting",
+      "Anchor": "module-5----basic-and-premium-job-posting",
+      "SectionPath": [],
+      "Text": "Upon completing development, to ensure official certification of Module 5, please review each of the test cases mentioned below. To ensure an efficient meeting or review of the recorded demo shared via the partner support form, please review all appropriate documentation and send technical questions to your Business Development and/or Partner Engineering representative beforehand.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 5 -  Basic and Premium Job Posting",
+      "Anchor": "module-5----basic-and-premium-job-posting",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 5 -  Basic and Premium Job Posting",
+      "Anchor": "module-5----basic-and-premium-job-posting",
+      "SectionPath": [],
+      "Text": "The Certification Demo can be scheduled with your LinkedIn Business Development point of contact in any order of the above modules as and when development \u0026 testing is complete.\nIn the demo, all the module-specific test cases should be covered. If few test cases are not applicable for your integration, call them out and notify proactively if possible to your business development point of contact.\nLinkedIn will certify based on the complete coverage of test cases in the certification demos.\nUpon successful certification, LinkedIn will provision your Production API Key",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 5 -  Basic and Premium Job Posting",
+      "Anchor": "module-5----basic-and-premium-job-posting",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API requirements"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "JP-E-01",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "There should be a single customer/child application for a customer\u0027s Basic \u0026 Premium job post related to one company_id",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-E-02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to upgrade a Basic job to a Premium job. Steps to demonstrate this:- Post a Basic job - Upgrade the Basic job using the guide and the same externalJobPostingId - Wait for the /simpleJobPostingTasks API to reach a terminal state - Check the /jobPostingStatus API to determine the job listing type (Basic/Premium) and URL - Display the job URL and listing type to the customer in the ATS UI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-E-03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to downgrade a Premium job to a Basic job Steps to demonstrate this:- Post a Premium job - Downgrade the Premium job using the guide and keeping the same externalJobPostingId - Wait for the /simpleJobPostingTasks API to reach a terminal state - Check the /jobPostingStatus API to determine the job listing type (Basic/Premium) and URL - Display the updated job URL and listing type to the customer in the ATS UI.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-E-04",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the error handling while upgrading a job from Basic to Premium when the customer app is not configured with PJP Steps to demonstrate this - Do not onboard the PJP Widget using the customer app\u0027s child-app-id-1 - Post a Basic job using child-app-id-1 - Upgrade the same Basic job to Premium - If the upgrade fails, handle the error gracefully and guide the customer through the process.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-E-05",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the expiry date handling and show how recruiter customers are made aware of the expiry date updation, if any. Steps to demonstrate this: - When upgrading from Basic to Premium, the default expiry period is set to 30 days. If the \u0027expireAt\u0027 field value is passed via payload then that value will be set; it can be extended to a maximum of 90 days. If the ATS platform displays the job\u0027s expiry date to customers, any changes to the expiry date must be reflected in the UI. - When downgrading from Premium to Basic, the default expiry period is set to 180 days. If the \u0027expireAt\u0027 field value is passed via payload, it will be set accordingly. It is recommended to set the \u0027expireAt\u0027 field value for Basic jobs to no more than 180 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JP-E-06",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the LI job-url change handling and show how recruiter customers are made aware of the job-url updation. Steps to demonstrate this: - An inline downgrade will result in a change to the LI job URL. It is important to ensure that the new job URL is displayed in the ATS UI for customers to reference.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -47,7 +47,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemContent Content { get; set; }
 #endif
         /// <summary>The deliveredAt property</summary>
-        public int? DeliveredAt { get; set; }
+        public long? DeliveredAt { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,10 +75,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The reactions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Reactions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemReactionsItem>? Reactions { get; set; }
 #nullable restore
 #else
-        public UntypedNode Reactions { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemReactionsItem> Reactions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItem"/> and sets the default values.
@@ -109,11 +109,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemContent>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemContent.CreateFromDiscriminatorValue); } },
-                { "deliveredAt", n => { DeliveredAt = n.GetIntValue(); } },
+                { "deliveredAt", n => { DeliveredAt = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "messagingThread", n => { MessagingThread = n.GetStringValue(); } },
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "reactions", n => { Reactions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemReactionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemReactionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -127,11 +127,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemAttachmentsItem>("attachments", Attachments);
             writer.WriteStringValue("author", Author);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemContent>("content", Content);
-            writer.WriteIntValue("deliveredAt", DeliveredAt);
+            writer.WriteLongValue("deliveredAt", DeliveredAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("messagingThread", MessagingThread);
             writer.WriteStringValue("organizationalPage", OrganizationalPage);
-            writer.WriteObjectValue<UntypedNode>("reactions", Reactions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityMessagingMessagesGet200ResponseElementsItemReactionsItem>("reactions", Reactions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,112 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-shareurn",
+  "Title": "Decoration Change to Share URNs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-shareurn",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Decoration Change to Share URNs",
+      "Anchor": "decoration-change-to-share-urns",
+      "SectionPath": [],
+      "Text": "This page outlines the changes to decoration on share URN in processedActivity in Compliance Events API. These changes will take effect on November 6, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration Change to Share URNs",
+      "Anchor": "decoration-change-to-share-urns",
+      "SectionPath": [],
+      "Text": "Currently, the Compliance Events API returns a specific share schema for all decorations of share URNs. Going forward, the schema will change to the UGCPost schema for all new share URN decorations. Any activities generated BEFORE November 6, 2019 will have the existing share schema. Any activities generated AFTER November 6, 2019 will have the new UGCPost schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation",
+      "Anchor": "recommendation",
+      "SectionPath": [
+        "Recommendation"
+      ],
+      "Text": "As new activities identified with a Share URN will decorate using the UGCPost schema while the old activities remain decorated with share schema, your application must be able to dynamically handle both UGCPost URN and Share URN schemas. Thankfully in the Compliance Events API, activities are already surfacing UGCPost URNs decorated via UGCPost schema and can be reused to handle the UGCPost schema decoration for share URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation",
+      "Anchor": "recommendation",
+      "SectionPath": [
+        "Recommendation"
+      ],
+      "Text": "To identify which schema to use when parsing the data, look for fields specific to each schema. For example, the owner field is present in the Share URN schema, but not the UGCPost URN schema. Conversely, the author field is present in the UGCPost URN schema and not the Share URN schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation",
+      "Anchor": "recommendation",
+      "SectionPath": [
+        "Recommendation"
+      ],
+      "Text": "The example below provides a sample of the current and the new response of a social action using a Share URN. The only change is to the domainEntity~ field which changes the decoration from Share URN schema to UGCPost URN schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation",
+      "Anchor": "recommendation",
+      "SectionPath": [
+        "Recommendation"
+      ],
+      "Text": "In addition, you can input share URN into UGC Post API to get UGCPost schema back. This will be what is returned in the Compliance Events API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommendation",
+      "Anchor": "recommendation",
+      "SectionPath": [
+        "Recommendation"
+      ],
+      "Text": "Once these changes take effect, no new activities will have the share schema decoration. We recommend cleaning up the share schema logic after November 30, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Current Response",
+      "Anchor": "current-response",
+      "SectionPath": [
+        "Recommendation",
+        "Current Response"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:activity:123456789\u0022,\n  \u0022configVersion\u0022: 18,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022time\u0022: 1568060270953\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022time\u0022: 1568060270953\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:123456789/likes/urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u00228656b42f-47e1-43ec-8f61-7218d6111d92\u0022,\n  \u0022processedAt\u0022: 1568060301290,\n  \u0022capturedAt\u0022: 1568060270961,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022lastModified\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:company:0000\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022owner\u0022: \u0022urn:li:company:0000\u0022,\n        \u0022owner~\u0022: {\n          \u0022localizedName\u0022: \u0022LinkedIn\u0022,\n          \u0022names\u0022: [\n            {\n              \u0022name\u0022: \u0022LinkedIn\u0022,\n              \u0022active\u0022: true,\n              \u0022type\u0022: \u0022CANONICAL\u0022,\n              \u0022locale\u0022: \u0022en_US\u0022\n            }\n          ]\n        },\n        \u0022clientApp~\u0022: {\n          \u0022name\u0022: \u0022Test Application\u0022,\n          \u0022id\u0022: 123456\n        },\n        \u0022created\u0022: {\n          \u0022actor\u0022: \u0022urn:li:person:r6EOmQFLwk\u0022,\n          \u0022actor~\u0022: {...}\n        },\n        \u0022clientApp\u0022: \u0022urn:li:developerApplication:123456\u0022,\n        \u0022serviceProvider\u0022: \u0022API\u0022,\n        \u0022text\u0022: {\n          \u0022annotations\u0022: [],\n          \u0022text\u0022: \u0022Text for sample share demo for #sharedecoration\u0022\n        },\n        \u0022lastModified\u0022: {\n          \u0022actor\u0022: \u0022urn:li:csUser:0\u0022,\n          \u0022time\u0022: 1567946210796\n        },\n        \u0022distribution\u0022: {\n          \u0022linkedInDistributionTarget\u0022: {\n            \u0022visibleToGuest\u0022: true\n          }\n        },\n        \u0022content\u0022: {\n          \u0022contentEntities\u0022: [\n            {\n              \u0022description\u0022: \u0022Description for sample share demo for share decoration\u0022,\n              \u0022entityLocation\u0022: \u0022https://linkedin.com\u0022,\n              \u0022title\u0022: \u0022Title for sample share demo for share decoration\u0022,\n              \u0022thumbnails\u0022: [\n                {\n                  \u0022imageSpecificContent\u0022: {\n                    \u0022size\u0022: 97227,\n                    \u0022width\u0022: 938,\n                    \u0022height\u0022: 528\n                  },\n                  \u0022resolvedUrl\u0022: \u0022https://linkedin.com/thumbnails\u0022\n                }\n              ],\n              \u0022entity\u0022: \u0022urn:li:article:123456789\u0022\n            }\n          ],\n          \u0022shareMediaCategory\u0022: \u0022ARTICLE\u0022,\n          \u0022description\u0022: \u0022Description for sample share demo for share decoration\u0022,\n          \u0022title\u0022: \u0022Title for sample share demo for share decoration\u0022\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:share\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:share:123456789\u0022,\n      \u0022object\u0022: \u0022urn:li:share:123456789\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022id\u0022: 296263969\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Response",
+      "Anchor": "new-response",
+      "SectionPath": [
+        "Recommendation",
+        "New Response"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:activity:123456789\u0022,\n  \u0022configVersion\u0022: 18,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022time\u0022: 1568060270953\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022time\u0022: 1568060270953\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:activity:123456789/likes/urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022activityId\u0022: \u00228656b42f-47e1-43ec-8f61-7218d6111d92\u0022,\n  \u0022processedAt\u0022: 1568060301290,\n  \u0022capturedAt\u0022: 1568060270961,\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022lastModified\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:company:0000\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022visibility\u0022: {\n          \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n        },\n        \u0022specificContent\u0022: {\n          \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022shareMediaCategory\u0022: \u0022ARTICLE\u0022,\n            \u0022shareFeatures\u0022: {\n              \u0022hashtags\u0022: [\n                \u0022urn:li:hashtag:sharedecoration\u0022\n              ]\n            },\n            \u0022shareCommentary\u0022: {\n              \u0022inferredLocale\u0022: \u0022en_US\u0022,\n              \u0022attributes\u0022: [\n                {\n                  \u0022start\u0022: 31,\n                  \u0022length\u0022: 16,\n                  \u0022value\u0022: {\n                    \u0022com.linkedin.common.HashtagAttributedEntity\u0022: {\n                      \u0022hashtag\u0022: \u0022urn:li:hashtag:sharedecoration\u0022\n                    }\n                  }\n                }\n              ],\n              \u0022text\u0022: \u0022Text for sample share demo for #sharedecoration\u0022\n            },\n            \u0022media\u0022: [\n              {\n                \u0022description\u0022: {\n                  \u0022text\u0022: \u0022Description for sample share demo for share decoration\u0022\n                },\n                \u0022media\u0022: \u0022urn:li:article:123456789\u0022,\n                \u0022originalUrl\u0022: \u0022https://linkedin.com\u0022,\n                \u0022thumbnails\u0022: [\n                  {\n                    \u0022size\u0022: 97227,\n                    \u0022width\u0022: 938,\n                    \u0022url\u0022: \u0022https://linkedin.com/thumbnails\u0022,\n                    \u0022height\u0022: 528\n                  }\n                ],\n                \u0022title\u0022: {\n                  \u0022text\u0022: \u0022Title for sample share demo for share decoration\u0022\n                },\n                \u0022status\u0022: \u0022READY\u0022\n              }\n            ]\n          }\n        },\n        \u0022author\u0022: \u0022urn:li:organization:0000\u0022,\n        \u0022author~\u0022: {...},\n        \u0022created\u0022: {\n          \u0022actor\u0022: \u0022urn:li:person:r6EOmQFLwk\u0022,\n          \u0022actor~\u0022: {...},\n          \u0022time\u0022: 1567946103839\n        },\n        \u0022origin\u0022: \u0022API\u0022,\n        \u0022versionTag\u0022: \u00222\u0022,\n        \u0022distribution\u0022: {\n          \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n          \u0022externalDistributionChannels\u0022: [],\n          \u0022distributedViaFollowFeed\u0022: true\n        },\n        \u0022clientApplication\u0022: \u0022urn:li:developerApplication:123456\u0022,\n        \u0022clientApplication~\u0022: {...},\n        \u0022ugcOrigin\u0022: \u0022API\u0022,\n        \u0022id\u0022: \u0022urn:li:share:123456789\u0022,\n        \u0022firstPublishedAt\u0022: 1567946103839,\n        \u0022lastModified\u0022: {\n          \u0022actor\u0022: \u0022urn:li:csUser:7\u0022,\n          \u0022time\u0022: 1567946210796\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:share\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:share:123456789\u0022,\n      \u0022object\u0022: \u0022urn:li:share:123456789\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:123456789\u0022\n  },\n  \u0022id\u0022: 296263969\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

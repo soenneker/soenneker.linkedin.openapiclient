@@ -1,0 +1,198 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+  "Title": "Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/sample-apps-lms",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/postman-getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/sample-applications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [],
+      "Text": "The LinkedIn API uses OAuth 2.0 for member (user) authorization and API authentication. Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to LinkedIn member data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [],
+      "Text": "There are two types of Authorization Flows available:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [],
+      "Text": "Member Authorization (3-legged OAuth)\nApplication Authorization (2-legged OAuth)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [],
+      "Text": "Depending on the type of permissions your integration will require, follow one of the authorization flows to get started.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [],
+      "Text": "There are several third-party libraries in the open source community which abstract the OAuth 2.0 authentication process in every major programming language.\nLinkedIn does not support TLS 1.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Authorization (3-legged OAuth Flow)",
+      "Anchor": "member-authorization-3-legged-oauth-flow",
+      "SectionPath": [
+        "Member Authorization (3-legged OAuth Flow)"
+      ],
+      "Text": "The Member Authorization grants permissions to your application by a LinkedIn member to access the member\u2019s resources on LinkedIn. Your application has no access to these resources without member approval. The Member Auth uses the 3-legged OAuth code flow. For step-by-step instructions on how to implement 3-legged OAuth, see Authorization Code Flow (3-legged OAuth) page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Authorization (3-legged OAuth Flow)",
+      "Anchor": "member-authorization-3-legged-oauth-flow",
+      "SectionPath": [
+        "Member Authorization (3-legged OAuth Flow)"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Authorization (3-legged OAuth Flow)",
+      "Anchor": "member-authorization-3-legged-oauth-flow",
+      "SectionPath": [
+        "Member Authorization (3-legged OAuth Flow)"
+      ],
+      "Text": "When to use 3-legged OAuth \nUse this flow if you are requesting access to a member\u0027s account to use their data and make requests on their behalf. This is the most commonly used permission type across LinkedIn APIs. Open permissions available to all applications are of this type such as r_liteprofile, r_emailaddress, and w_member_social.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Auth Permissions",
+      "Anchor": "member-auth-permissions",
+      "SectionPath": [
+        "Member Authorization (3-legged OAuth Flow)",
+        "Member Auth Permissions"
+      ],
+      "Text": "Member Authorization Permissions are granted by a LinkedIn member to access members resources on LinkedIn. Permissions are authorization consents to access LinkedIn resources. The LinkedIn platform uses permissions to protect and prevent abuse of member data. Your application must have the appropriate permissions before it can access data. To see the list of permissions, descriptions and access details, refer to Getting Access to LinkedIn APIs page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Authorization (2-legged OAuth Client Credential Flow)",
+      "Anchor": "application-authorization-2-legged-oauth-client-credential-flow",
+      "SectionPath": [
+        "Application Authorization (2-legged OAuth Client Credential Flow)"
+      ],
+      "Text": "Application Authorization or using 2-Legged OAuth grants permissions to your application to access protected LinkedIn resources. If you are accessing APIs that are not member specific, use this flow. Not all APIs support Application Authorization. For example, Marketing APIs you must use Member Authorization explained above. For step-by-step instructions on how to implement 2-legged OAuth, see Client Credential Flow (2-legged OAuth) page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Authorization (2-legged OAuth Client Credential Flow)",
+      "Anchor": "application-authorization-2-legged-oauth-client-credential-flow",
+      "SectionPath": [
+        "Application Authorization (2-legged OAuth Client Credential Flow)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Authorization (2-legged OAuth Client Credential Flow)",
+      "Anchor": "application-authorization-2-legged-oauth-client-credential-flow",
+      "SectionPath": [
+        "Application Authorization (2-legged OAuth Client Credential Flow)"
+      ],
+      "Text": "Always request the minimal permission scopes necessary for your use case.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Auth Permissions",
+      "Anchor": "application-auth-permissions",
+      "SectionPath": [
+        "Application Authorization (2-legged OAuth Client Credential Flow)",
+        "Application Auth Permissions"
+      ],
+      "Text": "Application Authorization Permissions are granted to applications to access LinkedIn protected resources. To see the list of permissions, descriptions and access details, refer to Getting Access to LinkedIn APIs page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application",
+      "Anchor": "sample-application",
+      "SectionPath": [
+        "Application Authorization (2-legged OAuth Client Credential Flow)",
+        "Sample Application"
+      ],
+      "Text": "You can explore the OAuth Sample Applications that enables you to try out RESTful OAuth calls to the LinkedIn Authentication server. The sample app is available in Java.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application",
+      "Anchor": "sample-application",
+      "SectionPath": [
+        "Application Authorization (2-legged OAuth Client Credential Flow)",
+        "Sample Application"
+      ],
+      "Text": "Additionally, you can also explore the Marketing Sample Application.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

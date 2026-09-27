@@ -1,0 +1,591 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+  "Title": "Retrieve Enterprise Learning Activity Reports",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/api-foundations",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/xapi",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "LinkedIn Learning Reporting APIs provide key insights \u0026 engagement metrics such as course completions, hours of content viewed and learner days active. Insights can be aggregated by entities like individuals, groups and accounts or content objects like courses and videos. These insights can help organizations to measure effectiveness of learning and development initiatives.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "You can find the full API reference for the learningActivityReports resource here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To review how to provision API keys for LinkedIn Learning Reporting APIs, click here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Disclaimer: LinkedIn Learning is constantly investing in our reporting infrastructure. In the future, there may be changes to the Reporting API which can require adjustments to how the data is queried. These updates may require you to make some updates on your end. We intend to provide detailed guidance in advance of any potential changes to ensure that you have enough time to make necessary changes in your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoint",
+      "Anchor": "understanding-the-endpoint",
+      "SectionPath": [
+        "Understanding the Endpoint"
+      ],
+      "Text": "LinkedIn Learning Reporting APIs are designed to represent learner activity \u0026 content engagement in a unified \u0026 extensible format. This resource can be used to integrate LinkedIn Learning utilization metrics into your application. Using the reporting APIs you can:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoint",
+      "Anchor": "understanding-the-endpoint",
+      "SectionPath": [
+        "Understanding the Endpoint"
+      ],
+      "Text": "Retrieve a list of popular courses for a given LinkedIn Learning account.\nRetrieve a list of all course completions for a given LinkedIn Learning account.\nRetrieve a list of learner activity like days active and video views.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "The learningActivityReports API should be used when querying for insights \u0026 engagement metrics. This API supports a comprehensive set of URL parameters. When you call the endpoint to retrieve a page of learning activities you will get a response like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [ ... ],\n            \u0022learnerDetails\u0022: { ... },\n            \u0022contentDetails\u0022: { ... }\n        }\n    ],\n    \u0022paging\u0022: { ... }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "The value of the elements array includes LearningActivityReport objects. Each LearningActivityReport object must include an activities array which contains engagement metrics. The LearningActivityReport object may also include learnerDetails and contentDetails. Both objects are optional and will only be included in the response when explicitly requested as aggregation criteria in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Getting Started"
+      ],
+      "Text": "For a comprehensive view of all supported properties review the reference. The value of the paging field is an object with paging metadata. For more information, review the pagination section in API Basics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use-cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use-cases"
+      ],
+      "Text": "In this section we will review common API use-cases. The learningActivityReports API can be used to recreate reports available in the LinkedIn Learning administrative UI including:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use-cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use-cases"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use-cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use-cases"
+      ],
+      "Text": "The learningActivityReports API is being updated to support more content types for Learning Hub. You can see more details in our release notes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use-cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use-cases"
+      ],
+      "Text": "Organization Summary Report\nLearner Summary Report\nLearner Detail Report\nContent Summary Report",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use-cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use-cases"
+      ],
+      "Text": "During the transition period to Learning Hub, these reports will still be available:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use-cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use-cases"
+      ],
+      "Text": "Account Popular Courses Report\nLearner Activity Summary Report\nLearner Course Activity Detail Report\nAccount Total Activity Summary Report\nLearner Custom Content Activity Detail Report\nAccount Popular Custom Content Report",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Summary Report",
+      "Anchor": "organization-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Organization Summary Report"
+      ],
+      "Text": "This query returns a list of activities aggregated by a LinkedIn Learning Enterprise Account. The activities array includes engagement statistics for the entire account and the learnerDetails object includes account information instead of information about individual learners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Summary Report",
+      "Anchor": "organization-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Organization Summary Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026count=1\u0026startedAt=1562699900247\u0026timeOffset.unit=DAY\u0026timeOffset.duration=7\u0026aggregationCriteria.primary=ACCOUNT\u0026contentSource=ALL_SOURCES\u0027 \\\n  -H \u0027Authorization: Bearer AQW...",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Organization Summary Report",
+      "Anchor": "organization-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Organization Summary Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022latestDataAt\u0022: 1632207540000,\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementType\u0022: \u0022DAYS_ACTIVE\u0022,\n                    \u0022engagementValue\u0022: 88,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 12,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022engagementValue\u0022: 2505,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 16,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 1,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 2,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 66,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 22,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1627267600000,\n                    \u0022lastEngagedAt\u0022: 1627354000000\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022entity\u0022: {\n                    \u0022accountUrn\u0022: \u0022urn:li:enterpriseAccount:99999\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=ACCOUNT\u0026contentSource=ALL_SOURCES\u0026count=1\u0026q=criteria\u0026start=1\u0026startedAt=1562699900247\u0026timeOffset.duration=7\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Summary Report",
+      "Anchor": "learner-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Summary Report"
+      ],
+      "Text": "This query returns a list of learners sorted by the total number of LinkedIn Learning days active in the last week. The primary aggregation criteria is INDIVIDUAL so the results are aggregated by individual learners and each LearningActivityReport object includes learnerDetails with additional information about the learner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Summary Report",
+      "Anchor": "learner-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Summary Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026start=1\u0026count=1\u0026startedAt=1552652108993\u0026timeOffset.duration=2\u0026aggregationCriteria.primary=INDIVIDUAL\u0026timeOffset.unit=WEEK\u0026sortBy.engagementMetricType=DAYS_ACTIVE\u0026contentSource=LINKEDIN_LEARNING\u0027 \\\n  -H \u0027Authorization: Bearer AQWm...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Summary Report",
+      "Anchor": "learner-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Summary Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementType\u0022: \u0022DAYS_ACTIVE\u0022,\n                    \u0022engagementValue\u0022: 3,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022engagementValue\u0022: 8918,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022AUDIO\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022BOOK\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_COLLECTION\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 2,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 1,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022DOCUMENT\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022EVENT\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022LEARNING_PATH\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022engagementValue\u0022: 25,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 26,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022enterpriseGroups\u0022: [\n                    \u0022Scranton Branch\u0022\n                ],\n                \u0022name\u0022: \u0022Michael Scott\u0022,\n                \u0022entity\u0022: {\n                    \u0022profileUrn\u0022: \u0022urn:li:enterpriseProfile:(urn:li:enterpriseAccount:999,1234567)\u0022\n                },\n                \u0022email\u0022: \u0022mscott@dundermifflin.com\u0022,\n                \u0022customAttributes\u0022: {},\n                \u0022uniqueUserId\u0022: \u0022mscott\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 3416,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 1,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026count=1\u0026q=criteria\u0026sortBy=DAYS_ACTIVE\u0026start=0\u0026startedAt=1552652108993\u0026timeOffset.duration=1\u0026timeOffset.unit=WEEK\u0026contentSource=LINKEDIN_LEARNING\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026count=1\u0026q=criteria\u0026sortBy=DAYS_ACTIVE\u0026start=2\u0026startedAt=1552652108993\u0026timeOffset.duration=1\u0026timeOffset.unit=WEEK\u0026contentSource=LINKEDIN_LEARNING\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Detail Report",
+      "Anchor": "learner-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Detail Report"
+      ],
+      "Text": "Similar to the previous example, this query returns a list of activities aggregated by INDIVIDUAL and CONTENT. The only difference is assetType. In this case, we\u0027re using VIDEO instead of COURSE so the results are aggregated by video and the contentDetails object includes information about videos.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Detail Report",
+      "Anchor": "learner-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Detail Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026q=criteria\u0026start=0\u0026count=1\u0026contentSource=LINKEDIN_LEARNING\u0026assetType=VIDEO\u0026startedAt=1562699900247\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\u0027 \\\n  -H \u0027Authorization: Bearer AQW...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Detail Report",
+      "Anchor": "learner-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Detail Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022engagementValue\u0022: 3,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1598917945573,\n                    \u0022lastEngagedAt\u0022: 1627341660000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022PROGRESS_PERCENTAGE\u0022,\n                    \u0022engagementValue\u0022: 100,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1598917945573,\n                    \u0022lastEngagedAt\u0022: 1627341660000\n                },\n                {\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022engagementValue\u0022: 1,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022,\n                    \u0022firstEngagedAt\u0022: 1598917945573,\n                    \u0022lastEngagedAt\u0022: 1598917985780\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022enterpriseGroups\u0022: [\n                    \u0022Scranton Branch\u0022\n                ],\n                \u0022name\u0022: \u0022Creed Bratton\u0022,\n                \u0022entity\u0022: {\n                    \u0022profileUrn\u0022: \u0022urn:li:enterpriseProfile:(urn:li:enterpriseAccount:9999,112346)\u0022\n                },\n                \u0022email\u0022: \u0022cbratton@dundermifflin.com\u0022,\n                \u0022uniqueUserId\u0022: \u0022cbratton\u0022\n            },\n            \u0022contentDetails\u0022: {\n                \u0022name\u0022: \u0022What you should know\u0022,\n                \u0022contentProviderName\u0022: \u0022LinkedIn\u0022,\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022contentUrn\u0022: \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:612196,646883)\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 708,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026assetType=VIDEO\u0026contentSource=LINKEDIN_LEARNING\u0026count=1\u0026q=criteria\u0026sortBy.engagementMetricType=PROGRESS_PERCENTAGE\u0026start=1\u0026startedAt=1553222036382\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Content Summary Report",
+      "Anchor": "content-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Content Summary Report"
+      ],
+      "Text": "This query returns a list of the most popular content for an account based on number of viewers. The primary aggregation criteria is CONTENT so the results are aggregated by the selected content type and each LearningActivityReport object includes contentDetails with additional information about the content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Content Summary Report",
+      "Anchor": "content-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Content Summary Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?aggregationCriteria.primary=CONTENT\u0026q=criteria\u0026count=1\u0026contentSource=ORGANIZATION\u0026startedAt=1562699900247\u0026timeOffset.unit=DAY\u0026timeOffset.duration=14\u0026sortBy.engagementMetricType=COMPLETIONS\u0027 \\\n  -H \u0027Authorization: Bearer AQW..\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Content Summary Report",
+      "Anchor": "content-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Content Summary Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementValue\u0022: 536,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 285,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                },\n                {\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementValue\u0022: 60720,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                }\n            ],\n            \u0022contentDetails\u0022: {\n                \u0022contentProviderName\u0022: \u0022Dunder Mifflin, Inc.\u0022,\n                \u0022name\u0022: \u0022Dunder Mifflin Infinity PowerPoint\u0022,\n                \u0022contentUrn\u0022: \u0022urn:li:learningCustomContent:12340\u0022,\n                \u0022locale\u0022: {\n                    \u0022language\u0022: \u0022NO LANGUAGE\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 546,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=CONTENT\u0026contentSource=ORGANIZATION\u0026count=1\u0026q=criteria\u0026sortBy.engagementMetricType=COMPLETIONS\u0026start=1\u0026startedAt=1562699900247\u0026timeOffset.duration=14\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Popular Courses Report",
+      "Anchor": "account-popular-courses-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Popular Courses Report"
+      ],
+      "Text": "This query returns a list of the most popular courses for an account based on total seconds viewed. The primary aggregation criteria is CONTENT so the results are aggregated by courses and each LearningActivityReport object includes contentDetails with additional information about the course.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account Popular Courses Report",
+      "Anchor": "account-popular-courses-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Popular Courses Report"
+      ],
+      "Text": "curl -X GET \\\n\u0027https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026contentSource=EXTERNAL\u0026timeOffset.unit=DAY\u0026aggregationCriteria.primary=CONTENT\u0026start=1\u0026count=1\u0026assetType=COURSE\u0026startedAt=1552652108993\u0026=\u0026sortBy.engagementMetricQualifier=TOTAL\u0026timeOffset.duration=1\u0026sortBy.engagementMetricType=SECONDS_VIEWED\u0027 \\\n-H \u0027Authorization: Bearer AQW...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account Popular Courses Report",
+      "Anchor": "account-popular-courses-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Popular Courses Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementValue\u0022: 10,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 1177,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                }\n            ],\n            \u0022contentDetails\u0022: {\n                \u0022name\u0022: \u0022JavaScript Foundations\u0022,\n                \u0022contentUrn\u0022: \u0022urn:li:lyndaCourse:156548\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 390,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 1,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=CONTENT\u0026assetType=COURSE\u0026contentSource=EXTERNAL\u0026count=1\u0026q=criteria\u0026start=0\u0026startedAt=1552652108993\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=CONTENT\u0026assetType=COURSE\u0026contentSource=EXTERNAL\u0026count=1\u0026q=criteria\u0026start=2\u0026startedAt=1552652108993\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Activity Summary Report",
+      "Anchor": "learner-activity-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Activity Summary Report"
+      ],
+      "Text": "This query returns a list of learners sorted by the total number of LinkedIn Learning days active in the last week. The primary aggregation criteria is INDIVIDUAL so the results are aggregated by individual learners and each LearningActivityReport object includes learnerDetails with additional information about the learner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Activity Summary Report",
+      "Anchor": "learner-activity-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Activity Summary Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026start=1\u0026count=1\u0026startedAt=1552652108993\u0026timeOffset.duration=2\u0026aggregationCriteria.primary=INDIVIDUAL\u0026timeOffset.unit=WEEK\u0026sortBy.engagementMetricType=DAYS_ACTIVE\u0027 \\\n  -H \u0027Authorization: Bearer AQWm...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Activity Summary Report",
+      "Anchor": "learner-activity-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Activity Summary Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementValue\u0022: 31,\n                    \u0022engagementType\u0022: \u0022DAYS_ACTIVE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 183,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 5,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 5,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 2,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 5,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022VIDEO\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022enterpriseGroups\u0022: [\n                    \u0022Scranton Branch\u0022\n                ],\n                \u0022name\u0022: \u0022Michael Scott\u0022,\n                \u0022entity\u0022: {\n                    \u0022profileUrn\u0022: \u0022urn:li:enterpriseProfile:(urn:li:enterpriseAccount:999,1234567)\u0022\n                },\n                \u0022email\u0022: \u0022mscott@dundermifflin.com\u0022,\n                \u0022customAttributes\u0022: {},\n                \u0022uniqueUserId\u0022: \u0022mscott\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 3416,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 1,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022prev\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026count=1\u0026q=criteria\u0026sortBy=DAYS_ACTIVE\u0026start=0\u0026startedAt=1552652108993\u0026timeOffset.duration=1\u0026timeOffset.unit=WEEK\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            },\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026count=1\u0026q=criteria\u0026sortBy=DAYS_ACTIVE\u0026start=2\u0026startedAt=1552652108993\u0026timeOffset.duration=1\u0026timeOffset.unit=WEEK\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Course Activity Detail Report",
+      "Anchor": "learner-course-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Course Activity Detail Report"
+      ],
+      "Text": "Similar to the previous example, this query returns a list of activities aggregated by INDIVIDUAL and CONTENT. The only difference is assetType. In this case, we\u0027re using COURSE instead of VIDEO so the results are aggregated by course and the contentDetails object includes information about courses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Course Activity Detail Report",
+      "Anchor": "learner-course-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Course Activity Detail Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026q=criteria\u0026start=0\u0026count=1\u0026contentSource=EXTERNAL\u0026assetType=COURSE\u0026startedAt=1562699900247\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\u0027 \\\n  -H \u0027Authorization: Bearer AQW...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Course Activity Detail Report",
+      "Anchor": "learner-course-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Course Activity Detail Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementValue\u0022: 2440,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022firstEngagedAt\u0022: 1553265900000,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022lastEngagedAt\u0022: 1553267700000\n                },\n                {\n                    \u0022engagementValue\u0022: 100,\n                    \u0022engagementType\u0022: \u0022PROGRESS_PERCENTAGE\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022,\n                    \u0022lastEngagedAt\u0022: 1553267700000\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022enterpriseGroups\u0022: [\n                    \u0022Scranton Branch\u0022\n                ],\n                \u0022name\u0022: \u0022Creed Bratton\u0022,\n                \u0022entity\u0022: {\n                    \u0022profileUrn\u0022: \u0022urn:li:enterpriseProfile:(urn:li:enterpriseAccount:9999,112346)\u0022\n                },\n                \u0022email\u0022: \u0022cbratton@dundermifflin.com\u0022,\n                \u0022uniqueUserId\u0022: \u0022cbratton\u0022\n            },\n            \u0022contentDetails\u0022: {\n                \u0022contentSource\u0022: \u0022EXTERNAL\u0022,\n                \u0022name\u0022: \u0022Becoming a Male Ally at Work\u0022,\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022contentUrn\u0022: \u0022urn:li:lyndaCourse:5002835\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 708,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026assetType=COURSE\u0026contentSource=EXTERNAL\u0026count=1\u0026q=criteria\u0026sortBy.engagementMetricType=PROGRESS_PERCENTAGE\u0026start=1\u0026startedAt=1553222036382\u0026timeOffset.duration=1\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Total Activity Summary Report",
+      "Anchor": "account-total-activity-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Total Activity Summary Report"
+      ],
+      "Text": "This query returns a list of activities aggregated by a LinkedIn Learning Enterprise Account. The activities array includes engagement statistics for the entire account and the learnerDetails object includes account information instead of information about individual learners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account Total Activity Summary Report",
+      "Anchor": "account-total-activity-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Total Activity Summary Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?q=criteria\u0026count=1\u0026startedAt=1562699900247\u0026timeOffset.unit=DAY\u0026timeOffset.duration=7\u0026aggregationCriteria.primary=ACCOUNT\u0027 \\\n  -H \u0027Authorization: Bearer AQW...",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account Total Activity Summary Report",
+      "Anchor": "account-total-activity-summary-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Total Activity Summary Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementValue\u0022: 731,\n                    \u0022engagementType\u0022: \u0022DAYS_ACTIVE\u0022\n                },\n                {\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementValue\u0022: 434,\n                    \u0022engagementType\u0022: \u0022DAYS_ACTIVE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 256,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 105030,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 112,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 152,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 12,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022assetType\u0022: \u0022COURSE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 212,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022ENGAGED_LEARNERS\u0022\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022entity\u0022: {\n                    \u0022accountUrn\u0022: \u0022urn:li:enterpriseAccount:99999\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 1,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=ACCOUNT\u0026contentSource=EXTERNAL\u0026count=1\u0026q=criteria\u0026start=1\u0026startedAt=1562699900247\u0026timeOffset.duration=7\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Custom Content Activity Detail Report",
+      "Anchor": "learner-custom-content-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Custom Content Activity Detail Report"
+      ],
+      "Text": "Some LinkedIn Learning subscriptions allow admins to upload organization specific learning resources like videos \u0026 documents known as custom content. This feature allows admins to distribute homegrown content to learners alongside LinkedIn Learning\u2019s content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Learner Custom Content Activity Detail Report",
+      "Anchor": "learner-custom-content-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Custom Content Activity Detail Report"
+      ],
+      "Text": "This query lists the learners that have viewed custom content. You can query engagement data for custom content by setting content source to INTERNAL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Custom Content Activity Detail Report",
+      "Anchor": "learner-custom-content-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Custom Content Activity Detail Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?aggregationCriteria.secondary=CONTENT\u0026q=criteria\u0026count=1\u0026contentSource=INTERNAL\u0026startedAt=1562699900247\u0026timeOffset.unit=DAY\u0026timeOffset.duration=7\u0026aggregationCriteria.primary=INDIVIDUAL\u0026sortBy.engagementMetricType=MARKED_AS_DONE\u0027 \\\n  -H \u0027Authorization: Bearer AQW..\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Learner Custom Content Activity Detail Report",
+      "Anchor": "learner-custom-content-activity-detail-report",
+      "SectionPath": [
+        "Use-cases",
+        "Learner Custom Content Activity Detail Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementValue\u0022: 0,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022,\n                    \u0022lastEngagedAt\u0022: 1562796900000\n                },\n                {\n                    \u0022engagementValue\u0022: 1,\n                    \u0022engagementType\u0022: \u0022MARKED_AS_DONE\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                }\n            ],\n            \u0022learnerDetails\u0022: {\n                \u0022enterpriseGroups\u0022: [\n                    \u0022Scranton Branch\u0022\n                ],\n                \u0022name\u0022: \u0022Pam Beasley\u0022,\n                \u0022entity\u0022: {\n                    \u0022profileUrn\u0022: \u0022urn:li:enterpriseProfile:(urn:li:enterpriseAccount:999,1345678)\u0022\n                },\n                \u0022email\u0022: \u0022pbeasley@dundermifflin.com\u0022,\n                \u0022uniqueUserId\u0022: \u0022pbeasley\u0022,\n                \u0022customAttributes\u0022: {}\n            },\n            \u0022contentDetails\u0022: {\n                \u0022contentSource\u0022: \u0022INTERNAL\u0022,\n                \u0022websiteUrl\u0022: \u0022Unknown URL\u0022,\n                \u0022name\u0022: \u0022Dunder Mifflin Infinity PowerPoint\u0022,\n                \u0022contentUrn\u0022: \u0022urn:li:learningCustomContent:12340\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 4697,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=INDIVIDUAL\u0026aggregationCriteria.secondary=CONTENT\u0026contentSource=INTERNAL\u0026count=1\u0026q=criteria\u0026sortBy.engagementMetricType=MARKED_AS_DONE\u0026start=1\u0026startedAt=1562699900247\u0026timeOffset.duration=7\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Popular Custom Content Report",
+      "Anchor": "account-popular-custom-content-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Popular Custom Content Report"
+      ],
+      "Text": "Some LinkedIn Learning subscriptions allow admins to upload organization specific learning resources like videos \u0026 documents known as custom content. This feature allows admins to distribute homegrown content to learners alongside LinkedIn Learning\u2019s content. This query lists the most popular custom content for an account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account Popular Custom Content Report",
+      "Anchor": "account-popular-custom-content-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Popular Custom Content Report"
+      ],
+      "Text": "curl -X GET \\\n  \u0027https://api.linkedin.com/v2/learningActivityReports?aggregationCriteria.primary=CONTENT\u0026q=criteria\u0026count=1\u0026contentSource=INTERNAL\u0026startedAt=1562699900247\u0026timeOffset.unit=DAY\u0026timeOffset.duration=14\u0026sortBy.engagementMetricType=COMPLETIONS\u0027 \\\n  -H \u0027Authorization: Bearer AQW..\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account Popular Custom Content Report",
+      "Anchor": "account-popular-custom-content-report",
+      "SectionPath": [
+        "Use-cases",
+        "Account Popular Custom Content Report"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022activities\u0022: [\n                {\n                    \u0022engagementValue\u0022: 536,\n                    \u0022engagementMetricQualifier\u0022: \u0022UNIQUE\u0022,\n                    \u0022engagementType\u0022: \u0022VIEWS\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                },\n                {\n                    \u0022engagementValue\u0022: 285,\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementType\u0022: \u0022COMPLETIONS\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                },\n                {\n                    \u0022engagementMetricQualifier\u0022: \u0022TOTAL\u0022,\n                    \u0022engagementValue\u0022: 60720,\n                    \u0022engagementType\u0022: \u0022SECONDS_VIEWED\u0022,\n                    \u0022assetType\u0022: \u0022ARTICLE\u0022\n                }\n            ],\n            \u0022contentDetails\u0022: {\n                \u0022contentSource\u0022: \u0022INTERNAL\u0022,\n                \u0022websiteUrl\u0022: \u0022\u0022,\n                \u0022name\u0022: \u0022Dunder Mifflin Infinity PowerPoint\u0022,\n                \u0022contentUrn\u0022: \u0022urn:li:learningCustomContent:12340\u0022,\n                \u0022locale\u0022: {\n                    \u0022language\u0022: \u0022NO LANGUAGE\u0022\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 546,\n        \u0022count\u0022: 1,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningActivityReports?aggregationCriteria.primary=CONTENT\u0026contentSource=INTERNAL\u0026count=1\u0026q=criteria\u0026sortBy.engagementMetricType=COMPLETIONS\u0026start=1\u0026startedAt=1562699900247\u0026timeOffset.duration=14\u0026timeOffset.unit=DAY\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving contentUrn Metadata",
+      "Anchor": "retrieving-contenturn-metadata",
+      "SectionPath": [
+        "Retrieving contentUrn Metadata"
+      ],
+      "Text": "contentUrn values returned in the results for the Reporting API can be used to retrieve additional metadata about that content via the Learning Assets API. Consult the conceptual guide and API reference for the Learning Assets API for information on how to request this additional metadata. When calling the Learning Assets API, the contentUrn value is used as the asset URN.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

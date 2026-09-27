@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The automaticJobPostingSettings property</summary>
+        /// <summary>Page admins can opt-in to automatic job post creation. If this field is null the page is not opted-in for automatic job post creation.Documented type: AutomaticJobPostingSettingsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings? AutomaticJobPostingSettings { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseAutomaticJobPostingSettings AutomaticJobPostingSettings { get; set; }
 #endif
-        /// <summary>The candidateInterest property</summary>
+        /// <summary>Candidate interest module settings for an organization.Documented type: CandidateInterestRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest? CandidateInterest { get; set; }
@@ -30,11 +30,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200ResponseCandidateInterest CandidateInterest { get; set; }
 #endif
-        /// <summary>The employeesYouShouldReachOutToVisible property</summary>
+        /// <summary>If true, show the &quot;Employees You Should Reach Out To&quot; module. Module displaying list of employees whose titles match the titles of recommended jobs.Documented type: booleanRequirement: No</summary>
         public bool? EmployeesYouShouldReachOutToVisible { get; set; }
-        /// <summary>The jobCulturalInsightsVisible property</summary>
+        /// <summary>If true, show the jobs related cultural insights module. Example insights here include distributions of employee seniorities, skills, work location, etc.Documented type: booleanRequirement: No</summary>
         public bool? JobCulturalInsightsVisible { get; set; }
-        /// <summary>The meetTheTeamVisible property</summary>
+        /// <summary>If true, show the meet the team module. Module displaying list of employees who closely match the visitor&apos;s profile.Documented type: booleanRequirement: No</summary>
         public bool? MeetTheTeamVisible { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaCareerPageSettingsGet200Response"/> and sets the default values.

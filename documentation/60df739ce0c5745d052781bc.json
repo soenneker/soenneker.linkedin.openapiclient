@@ -1,0 +1,588 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/supported-currencies",
+  "Title": "Supported Currencies for Ad Accounts",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Supported Currencies for Ad Accounts",
+      "Anchor": "supported-currencies-for-ad-accounts",
+      "SectionPath": [],
+      "Text": "The following currencies are supported as the billing currency for Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Currencies for Ad Accounts",
+      "Anchor": "supported-currencies-for-ad-accounts",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Currencies for Ad Accounts",
+      "Anchor": "supported-currencies-for-ad-accounts",
+      "SectionPath": [],
+      "Text": "Advertisers selecting BRL as a currency will see their account budget, advertising bids, and spend in BRL, but their account will be billed in USD. We recommend communicating this to advertisers in your application if they opt for BRL. Learn more",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported Currencies for Ad Accounts",
+      "Anchor": "supported-currencies-for-ad-accounts",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Country/Region",
+        "Currency Name"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "United Arab Emirates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dirhams",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ARS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Argentina",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pesos",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Australia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dollars",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BRL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brazil",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Brazil Real",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Canada",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dollars",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CHF",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Switzerland",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Francs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CLP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Chile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pesos",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CNY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "China",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yuan Renminbi",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Columbia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pesos",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DKK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denmark",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Kroner",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EGP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Egypt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pounds",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EUR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Euro Member Countries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Euro",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GBP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "United Kingdom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pounds",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HKD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hong Kong Special Administrative Region",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dollars",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IDR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indonesia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rupiahs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "India",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rupees",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JPY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Japan",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yen",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "KRW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Korea (South)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Won",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MXN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mexico",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pesos",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MYR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malaysia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ringgits",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NOK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Norway",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Krone",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NZD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New Zealand",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dollars",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Peru",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nuevos Soles",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PLN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Poland",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Zlotych",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Saudi Arabia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Riyals",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SEK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sweden",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Kronor",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SGD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Singapore",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dollars",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "THB",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Thailand",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Baht",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "T\u00FCrkiye",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New Lira",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "USD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "United States of America",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dollars",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ZAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "South Africa",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rand",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

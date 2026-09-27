@@ -1,0 +1,635 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
+  "Title": "Ad Budget Type Allowable Combinations",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing-type-combinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Type Allowable Combinations",
+      "Anchor": "ad-budget-type-allowable-combinations",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Type Allowable Combinations",
+      "Anchor": "ad-budget-type-allowable-combinations",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Budget Type Allowable Combinations",
+      "Anchor": "ad-budget-type-allowable-combinations",
+      "SectionPath": [],
+      "Text": "This page provides details on allowable combinations and validations for different Ad Budget Pricing types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Objective Type Descriptions",
+      "Anchor": "objective-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "objectiveType",
+        "Description",
+        "Allowed optimizationTargetType Combination"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BRAND_AWARENESS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Spread brand awareness through reach and impression optimization using Standard Sponsored Content, Carousel Sponsored Content, Video Sponsored Content, Text Ads, Spotlight Dynamic Ads, or Dynamic Ads formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONE MAX_IMPRESSIONTARGET_COST_PER_IMPRESSIONCAP_COST_AND_MAXIMIZE_IMPRESSIONS",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_IMPRESSION",
+              "TARGET_COST_PER_IMPRESSION",
+              "CAP_COST_AND_MAXIMIZE_IMPRESSIONS"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "CREATIVE_ENGAGEMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(To be deprecated) Drive engagement on sponsored content posts through click, impression, or conversion optimization. Use the Ad Creative follow button for advertisers to get more page followers on LinkedIn. While this objective is supported we recommend you use ENGAGEMENT for precise optimization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEMAX_CONVERSION MAX_IMPRESSIONMAX_CLICK ENHANCED_CONVERSIONTARGET_COST_PER_CLICK",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_CONVERSION",
+              "MAX_IMPRESSION",
+              "MAX_CLICK",
+              "ENHANCED_CONVERSION",
+              "TARGET_COST_PER_CLICK"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "ENGAGEMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Engage on sponsored content posts through campaign type formats including Standard, Carousel, and Video. The ad unit includes a Follow button so you can attract and obtain more LinkedIn page followers.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEENHANCED_CONVERSIONMAX_CLICKTARGET_COST_PER_CLICKCAP_COST_AND_MAXIMIZE_CLICKS",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "ENHANCED_CONVERSION",
+              "MAX_CLICK",
+              "TARGET_COST_PER_CLICK",
+              "CAP_COST_AND_MAXIMIZE_CLICKS"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "JOB_APPLICANT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Gain more job applicants on LinkedIn through Job Dynamic Ads, Spotlight Dynamic Ads, and Standard Sponsored Content type campaign formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEMAX_CLICK",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_CLICK"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_GENERATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This objective aims to generate leads for advertisers with the business goal of brand conversion. When users click on this ad, they\u0027ll be led to a lead generation form pre-filled with their LinkedIn profile date. This objective allows for Lead Generation Form Sponsored Content, Lead Generation Form Carousel Sponsored Content, and Lead Generation Form Sponsored InMail type campaign formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONE ENHANCED_CONVERSIONMAX_LEADMAX_QUALIFIED_LEAD. Note: Applicable only from API versions 202602 and later.",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "ENHANCED_CONVERSION",
+              "MAX_LEAD",
+              "MAX_QUALIFIED_LEAD. Note: Applicable only from API versions 202602 and later."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "TALENT_LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This objective aims to get more talent leads on LinkedIn through maximizing clicks with the business goal of brand talent media. This objective type allows for Standard Sponsored content and Spotlight Dynamic Ads type and formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEMAX_CLICK",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_CLICK"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "VIDEO_VIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This objective aims to get more people to watch their video ads optimizing for number of views with the business goal of brand consideration. This objective type allows for Video Sponsored Content and Video Carousel Sponsored Content type campaign formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEMAX_VIDEO_VIEWTARGET_COST_PER_VIDEO_VIEWCAP_COST_AND_MAXIMIZE_VIDEO_VIEWS",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_VIDEO_VIEW",
+              "TARGET_COST_PER_VIDEO_VIEW",
+              "CAP_COST_AND_MAXIMIZE_VIDEO_VIEWS"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "WEBSITE_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This objective aims to get more conversion from advertiser\u0027s website with the business goal of brand conversion. Advertisers need to install LinkedIn InsightTag so that LinkedIn can track conversion events and optimize toward them. This objective allows for Standard Sponsored Content, Image, and Video Carousel Sponsored Content, Video Sponsored Content, Text Ads, Spotlight Dynamic Ads, and Sponsored InMail type campaign formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEENHANCED_CONVERSION MAX_CONVERSION",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "ENHANCED_CONVERSION",
+              "MAX_CONVERSION"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "WEBSITE_TRAFFIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "To be deprecated. Legacy objective used by advertisers to direct more people to visit a web site destination. This objective requires advertisers to configure their campaigns to optimize toward clicks, impressions, or conversions. The ad creative won\u0027t include a follow button. Currently, this objective is fully supported by the platform; however, LinkedIn recommends that advertisers use WEBSITE_VISIT, WEBSITE_CONVERSION, or BRAND_AWARENESS for more precise optimization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEMAX_CLICKMAX_CONVERSIONMAX_IMPRESSION ENHANCED_CONVERSION",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_CLICK",
+              "MAX_CONVERSION",
+              "MAX_IMPRESSION",
+              "ENHANCED_CONVERSION"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "WEBSITE_VISIT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This objective aims to get more people to visit a web site destination with the business goal of brand consideration. This objective allows for Standard Sponsored Content, Image, and Video Carousel Sponsored Content, Video Sponsored Content, Text Ads, Spotlight Dynamic Ads, and Sponsored InMail type campaign formats.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NONEMAX_CLICKENHANCED_CONVERSIONTARGET_COST_PER_CLICKCAP_COST_AND_MAXIMIZE_CLICKS",
+            "Links": [],
+            "Values": [
+              "NONE",
+              "MAX_CLICK",
+              "ENHANCED_CONVERSION",
+              "TARGET_COST_PER_CLICK",
+              "CAP_COST_AND_MAXIMIZE_CLICKS"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "OptimizationTargetType is used to optimize spending for a campaign. Depending on what value is populated in this field, the campaign will use either auto or manual bidding.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "For auto-bidding campaigns created using legacy Objectives, the costType is always CPM. The unitCost defaults to 0. Note that there are no validations and can be set to any arbitrary high/low value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "If optimizationTargetType is switched to a manual-bidding type, unitCost should be set to a value appropriate to the dailyBudget. Failure to set the unitCost correctly can lead to unexpected expenses. We highly recommend updating both unitCost and optimizationTargetType when switching.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "If you want to optimize the campaign for spending, you must set the OptimizationTargetType to one of the following target types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "Setting the optimizationTargetType as any of the following keeps a campaign in manual-bidding mode:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "optimizationTargetType",
+        "Description",
+        "Allowed objectiveType Combination"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "NONE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No optimization for this campaign.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENHANCED_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is used for conversion tracking based bid adjustment. For example, if one campaign has higher conversion rate for a particular member, we\u0027ll potentially bid higher for that specific member, vice versa.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_ENGAGEMENTENGAGEMENTLEAD_GENERATIONWEBSITE_CONVERSIONWEBSITE_TRAFFICWEBSITE_VISIT",
+            "Links": [],
+            "Values": [
+              "CREATIVE_ENGAGEMENT",
+              "ENGAGEMENT",
+              "LEAD_GENERATION",
+              "WEBSITE_CONVERSION",
+              "WEBSITE_TRAFFIC",
+              "WEBSITE_VISIT"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "Setting one of the following options for OptimizationTargetType activates auto-bidding for the campaign:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "optimizationTargetType",
+        "Description",
+        "Allowed objectiveType Combination"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "MAX_IMPRESSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization goal is to maximize the campaign\u0027s number of impressions and exhaust the daily budget without advertiser specifying bid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_AWARENESSCREATIVE_ENGAGEMENTWEBSITE_TRAFFIC",
+            "Links": [],
+            "Values": [
+              "BRAND_AWARENESS",
+              "CREATIVE_ENGAGEMENT",
+              "WEBSITE_TRAFFIC"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "MAX_CLICK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization goal is to maximize the campaign\u0027s number of clicks and exhaust the daily budget without advertiser specifying bid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_ENGAGEMENTJOB_APPLICANTTALENT_LEADWEBSITE_TRAFFICWEBSITE_VISIT",
+            "Links": [],
+            "Values": [
+              "CREATIVE_ENGAGEMENT",
+              "JOB_APPLICANT",
+              "TALENT_LEAD",
+              "WEBSITE_TRAFFIC",
+              "WEBSITE_VISIT"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "MAX_CONVERSION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization goal is to maximize the campaign\u0027s number of conversions and exhaust the daily budget without advertiser specifying bid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATIVE_ENGAGEMENTWEBSITE_CONVERSIONWEBSITE_TRAFFIC",
+            "Links": [],
+            "Values": [
+              "CREATIVE_ENGAGEMENT",
+              "WEBSITE_CONVERSION",
+              "WEBSITE_TRAFFIC"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "MAX_VIDEO_VIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization goal is to maximize the campaign\u0027s number of video views and exhaust the daily budget without advertiser specifying bid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_VIEW",
+            "Links": [],
+            "Values": [
+              "VIDEO_VIEW"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "MAX_LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization goal is to maximize the campaign\u0027s number of leads and exhaust the daily budget without advertiser specifying bid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LEAD_GENERATION",
+            "Links": [],
+            "Values": [
+              "LEAD_GENERATION"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "MAX_QUALIFIED_LEAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optimization goal is to maximize the campaign\u0027s number of qualified leads and exhaust the daily budget without advertiser specifying bid. Note: Applicable only from API versions 202602 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LEAD_GENERATION",
+            "Links": [],
+            "Values": [
+              "LEAD_GENERATION"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "Setting one of the following options for OptimizationTargetType activates cost cap bidding for the campaign:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Optimization Target Type Descriptions",
+      "Anchor": "optimization-target-type-descriptions",
+      "SectionPath": [
+        "Objective Type Descriptions",
+        "Optimization Target Type Descriptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "optimizationTargetType",
+        "Description",
+        "Allowed objectiveType Combination"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "CAP_COST_AND_MAXIMIZE_IMPRESSIONS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximize the campaign\u0027s number of impressions while keeping the average cost per 1,000 impressions under the advertiser-specified cost cap.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_AWARENESS",
+            "Links": [],
+            "Values": [
+              "BRAND_AWARENESS"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "CAP_COST_AND_MAXIMIZE_CLICKS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximize the campaign\u0027s number of clicks while keeping the average cost per click under the advertiser-specified cost cap.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WEBSITE_VISITENGAGEMENT",
+            "Links": [],
+            "Values": [
+              "WEBSITE_VISIT",
+              "ENGAGEMENT"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "CAP_COST_AND_MAXIMIZE_VIDEO_VIEWS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximize the campaign\u0027s number of video views while keeping the average cost per video view under the advertiser-specified cost cap.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO_VIEW",
+            "Links": [],
+            "Values": [
+              "VIDEO_VIEW"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

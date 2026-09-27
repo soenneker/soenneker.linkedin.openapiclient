@@ -12,6 +12,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class PagesDataPortabilityDmaOriginalArticlesGet200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The ActivityUrn of the original article.Documented type: ActivityUrnRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Activity { get; set; }
+#nullable restore
+#else
+        public string Activity { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The author property</summary>
@@ -22,7 +30,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseAuthor Author { get; set; }
 #endif
-        /// <summary>The contentHtml property</summary>
+        /// <summary>Full text of the content of original article with HTML markup.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentHtml { get; set; }
@@ -38,9 +46,25 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverImage CoverImage { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
-        public int? CreatedAt { get; set; }
-        /// <summary>The displayImage property</summary>
+        /// <summary>Image of the rich Media in the cover slot of the article, such as a Slideshow.Documented type: ImageRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMedia? CoverMedia { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMedia CoverMedia { get; set; }
+#endif
+        /// <summary>Cover media of the article, could be image or video.Note: Applicable from versions 202602 and later.Documented type: ArticleCoverMediaRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMediaV2? CoverMediaV2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMediaV2 CoverMediaV2 { get; set; }
+#endif
+        /// <summary>A timestamp corresponding to the creation of this content.Documented type: TimeRequirement: Yes</summary>
+        public long? CreatedAt { get; set; }
+        /// <summary>Display image for use when displaying the article around the site.Documented type: ImageRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage? DisplayImage { get; set; }
@@ -48,9 +72,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage DisplayImage { get; set; }
 #endif
-        /// <summary>The lastModifiedAt property</summary>
-        public int? LastModifiedAt { get; set; }
-        /// <summary>The linkedInArticleUrn property</summary>
+        /// <summary>A timestamp corresponding to the last modification of this article.Documented type: TimeRequirement: Yes</summary>
+        public long? LastModifiedAt { get; set; }
+        /// <summary>The URN of the original article.Documented type: LinkedInArticleUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkedInArticleUrn { get; set; }
@@ -66,7 +90,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseLocale Locale { get; set; }
 #endif
-        /// <summary>The newsArticle property</summary>
+        /// <summary>The ArticleUrn of the original article, valid only after the article has been published. Can be resolved via the DMA Ingested Content Summaries API.Documented type: ArticleUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NewsArticle { get; set; }
@@ -74,7 +98,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string NewsArticle { get; set; }
 #endif
-        /// <summary>The permlink property</summary>
+        /// <summary>Unique string used to compose the permanent link (URL) to this article.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Permlink { get; set; }
@@ -82,11 +106,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Permlink { get; set; }
 #endif
-        /// <summary>The publishedAt property</summary>
-        public int? PublishedAt { get; set; }
+        /// <summary>Custom message and annotations written by the author for article distribution.Documented type: AttributedTextRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponsePublishCommentary? PublishCommentary { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponsePublishCommentary PublishCommentary { get; set; }
+#endif
+        /// <summary>Time this article was published. This is valid only after the article has been published so it is optional.Documented type: TimeRequirement: No</summary>
+        public long? PublishedAt { get; set; }
         /// <summary>The readingDuration property</summary>
-        public int? ReadingDuration { get; set; }
-        /// <summary>The series property</summary>
+        public long? ReadingDuration { get; set; }
+        /// <summary>The Search Engine Optimization (SEO) description of the article.Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SeoDescription { get; set; }
+#nullable restore
+#else
+        public string SeoDescription { get; set; }
+#endif
+        /// <summary>The Search Engine Optimization (SEO) title of the article.Documented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SeoTitle { get; set; }
+#nullable restore
+#else
+        public string SeoTitle { get; set; }
+#endif
+        /// <summary>The Series this article belongs to.Documented type: ContentSeriesUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Series { get; set; }
@@ -94,7 +142,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Series { get; set; }
 #endif
-        /// <summary>The spamValue property</summary>
+        /// <summary>Derived from contentCertificationRecord. Indicates whether this article has been flagged as spam (true) or not spam (false) by automated content classification.Documented type: booleanRequirement: No</summary>
         public bool? SpamValue { get; set; }
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +160,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseStructuredContent StructuredContent { get; set; }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Title of the article.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get; set; }
@@ -120,7 +168,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>The ugcPost property</summary>
+        /// <summary>The ugcPost created when the article is initially published. Can be resolved via the DMA Posts API&apos;s BATCH_GET.Documented type: UserGeneratedContentPostUrnRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UgcPost { get; set; }
@@ -128,7 +176,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string UgcPost { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>Version number of this article’s contents.Documented type: IntegerRequirement: No</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200Response"/> and sets the default values.
@@ -155,18 +203,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "activity", n => { Activity = n.GetStringValue(); } },
                 { "author", n => { Author = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseAuthor>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseAuthor.CreateFromDiscriminatorValue); } },
                 { "contentHtml", n => { ContentHtml = n.GetStringValue(); } },
                 { "coverImage", n => { CoverImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverImage.CreateFromDiscriminatorValue); } },
-                { "createdAt", n => { CreatedAt = n.GetIntValue(); } },
+                { "coverMedia", n => { CoverMedia = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMedia>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMedia.CreateFromDiscriminatorValue); } },
+                { "coverMediaV2", n => { CoverMediaV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMediaV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMediaV2.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "displayImage", n => { DisplayImage = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage.CreateFromDiscriminatorValue); } },
-                { "lastModifiedAt", n => { LastModifiedAt = n.GetIntValue(); } },
+                { "lastModifiedAt", n => { LastModifiedAt = n.GetLongValue(); } },
                 { "linkedInArticleUrn", n => { LinkedInArticleUrn = n.GetStringValue(); } },
                 { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseLocale.CreateFromDiscriminatorValue); } },
                 { "newsArticle", n => { NewsArticle = n.GetStringValue(); } },
                 { "permlink", n => { Permlink = n.GetStringValue(); } },
-                { "publishedAt", n => { PublishedAt = n.GetIntValue(); } },
-                { "readingDuration", n => { ReadingDuration = n.GetIntValue(); } },
+                { "publishCommentary", n => { PublishCommentary = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponsePublishCommentary>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponsePublishCommentary.CreateFromDiscriminatorValue); } },
+                { "publishedAt", n => { PublishedAt = n.GetLongValue(); } },
+                { "readingDuration", n => { ReadingDuration = n.GetLongValue(); } },
+                { "seoDescription", n => { SeoDescription = n.GetStringValue(); } },
+                { "seoTitle", n => { SeoTitle = n.GetStringValue(); } },
                 { "series", n => { Series = n.GetStringValue(); } },
                 { "spamValue", n => { SpamValue = n.GetBoolValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
@@ -183,18 +237,24 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("activity", Activity);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseAuthor>("author", Author);
             writer.WriteStringValue("contentHtml", ContentHtml);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverImage>("coverImage", CoverImage);
-            writer.WriteIntValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMedia>("coverMedia", CoverMedia);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseCoverMediaV2>("coverMediaV2", CoverMediaV2);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseDisplayImage>("displayImage", DisplayImage);
-            writer.WriteIntValue("lastModifiedAt", LastModifiedAt);
+            writer.WriteLongValue("lastModifiedAt", LastModifiedAt);
             writer.WriteStringValue("linkedInArticleUrn", LinkedInArticleUrn);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponseLocale>("locale", Locale);
             writer.WriteStringValue("newsArticle", NewsArticle);
             writer.WriteStringValue("permlink", Permlink);
-            writer.WriteIntValue("publishedAt", PublishedAt);
-            writer.WriteIntValue("readingDuration", ReadingDuration);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOriginalArticlesGet200ResponsePublishCommentary>("publishCommentary", PublishCommentary);
+            writer.WriteLongValue("publishedAt", PublishedAt);
+            writer.WriteLongValue("readingDuration", ReadingDuration);
+            writer.WriteStringValue("seoDescription", SeoDescription);
+            writer.WriteStringValue("seoTitle", SeoTitle);
             writer.WriteStringValue("series", Series);
             writer.WriteBoolValue("spamValue", SpamValue);
             writer.WriteStringValue("state", State);

@@ -1,0 +1,3295 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products",
+  "Title": "Organization Products",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/productcategories",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/skills",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Products",
+      "Anchor": "organization-products",
+      "SectionPath": [],
+      "Text": "The Organization Products DMA API is used to fetch product information. The product info includes product name, description, URL, logo, category, CTA, lead-gen form, etc.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Products",
+      "Anchor": "organization-products",
+      "SectionPath": [],
+      "Text": "This API currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Products",
+      "Anchor": "organization-products",
+      "SectionPath": [],
+      "Text": "Get product related info for the given product ID.\nBatch get to retrieve all matching products for the given set of product IDs.\nFinder organization to return all products owned by an organization.\nFinder organizationalPage to retrieve all products owned by an organizational page.\nFinder vanityName to retrieve all the products owned by an organization by their corresponding vanity name where vanityName is product\u0027s unique name used in URLs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Obfuscated Fields",
+      "Anchor": "obfuscated-fields",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Obfuscated Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedByAdmin.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedByAdmin.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastPublished.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actor who last published the product. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastPublished.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions.created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions.created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions.lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions.lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions.deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions.deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LeadGenFormReportLastDownloaded.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actor URN (PersonUrn) who last downloaded the associated lead gen form response report for the product. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationProducts",
+      "Anchor": "organizationproducts",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationProducts"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of the product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique organizational page URN of the product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization that owns this product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the state of the product. Value enums includes PENDING_ACTIVATIONACTIVEREJECTEDPRE_REVIEWPENDING_REVIEWPASSED_REVIEWFAILED_REVIEW",
+            "Links": [],
+            "Values": [
+              "PENDING_ACTIVATION",
+              "ACTIVE",
+              "REJECTED",
+              "PRE_REVIEW",
+              "PENDING_REVIEW",
+              "PASSED_REVIEW",
+              "FAILED_REVIEW"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[StandardizedProductCategoryUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The product categories (urn:li:standardizedProductCategory:{ID}) to which a product belongs. Extract the numeric {ID} and use it with the dmaProductCategories taxonomy API to resolve the category name.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/productcategories?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Default locale of the product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Product\u0027s unique name used in URLs. This field can only be null while the product\u0027s state is PENDING_ACTIVATION.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Name of the product. This field can only be null while the product\u0027s state is PENDING_ACTIVATION.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The product\u0027s description. This field can only be null while the product\u0027s state is PENDING_ACTIVATION.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "website",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleUrl",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocaleurl"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The product\u0027s primary website. This field can only be null while the product\u0027s state is PENDING_ACTIVATION.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logoV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The product\u0027s optional logo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaSections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[ProductMediaSection]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productmediasection"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Custom media sections configured for the product. These media sections can represent images or videos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "standardizedSkills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[SkillUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The list of standardized skills (urn:li:skill:{ID}) associated with the product. Where SkillUrn can be resolved via /dmaSkills.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/seniority.md?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/skills?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductCallToAction",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcalltoaction"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Customizable call-to-action that the product is associated with. This is optional as an admin may choose to not create one.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationsUsingProduct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[OrganizationUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of organizations (urn:li:organization:{ID}) that are using the product, up to a maximum of 12.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rolesUsingProduct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[TitleUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/titles.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of user roles (urn:li:title:{ID}) that are using the product, up to a maximum of 10. Where TitleUrn can be resloved via /dmaTitles",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/titles.md?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/titles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastPublished",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An auditStamp corresponding to the last publication of the product. Publication time is defined as when the product\u0027s state changes to an ACTIVE state.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pendingClaimByAdmin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean denoting whether or not the product is pending to be claimed by one of the owning organization\u0027s admins.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedByAdmin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An auditStamp corresponding to the last modification of the product by an admin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionedLeadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn (urn:li:versionedLeadGenForm:(urn:li:leadGenForm:{ID},{VERSION_ID})) indicate\u0027s the associated lead gen form for the product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenFormReportLastDownloaded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormReportLastDownloaded",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#leadgenformreportlastdownloaded"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last download that an organization admin has done of the associated lead gen form response report for the product. This field will only be populated if versionedLeadGenForm is non-null and an organizational admin has taken action to download the lead gen form response report, capturing the last download time of the report and the last admin to download the report.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productCategoryAdminSuggestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductCategoryAdminSuggestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcategoryadminsuggestions"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "For products that are uncategorized, admins must give suggestions to provide additional information on what their category should be, such as competitors, keywords, etc. For categorized products, the questionnaire can still be filled out optionally to provide additional category related information for standardization purposes. Can be null for products that already have a category.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productPricing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductPricing",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productpricing"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Product pricing information that is provided by admins and/or prepopulated using 3rd party data. Admins would be notified and given time to review the prepopulated pricing before publishing. Only en_US locale and USD currency will be supported for MVP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "productIntegrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[StandardizedProductUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of products (represented by StandardizedProductUrns, urn:li:standardizedProduct:{ID}) that can be integrated with the product. The {ID} corresponds to the id field of the referenced product resource, and can be resolved via this same API\u0027s GET or BATCH_GET.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#retrieve-organization-products-data"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of when the resource/association/sub-resource moved into the specific lifecycle stage represented by this audit event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. a personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[image: Image , video: Video, ingestedContent: IngestedContentUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#video"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Media uploaded for the section. Represented via either an Image, Video or urn:li:ingestedContent:{ID}, which can be resolved via dmaIngestedContentSummaries.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#video",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaSource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductMediaSource",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The source that the product media is embedded from represented as an enum of possible source types. Value enums include: VECTOR_IMAGEVECTOR_VIDEOVIMEOYOUTUBE",
+            "Links": [],
+            "Values": [
+              "VECTOR_IMAGE",
+              "VECTOR_VIDEO",
+              "VIMEO",
+              "YOUTUBE"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title for the product media section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description for the product media section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "links",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hyperlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Links associated with the product media section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ctaType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ProductCallToActionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verb of the message that should be conveyed, such as a request for an estimate for the product. Value enums includes BUY_NOWDOWNLOADGET_STARTEDREQUEST_DEMOTRYCONTACT_USLEARN_MORELEAD_GEN_FORM",
+            "Links": [],
+            "Values": [
+              "BUY_NOW",
+              "DOWNLOAD",
+              "GET_STARTED",
+              "REQUEST_DEMO",
+              "TRY",
+              "CONTACT_US",
+              "LEARN_MORE",
+              "LEAD_GEN_FORM"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "redirectUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to redirect users to when they interact with CTA (call to action).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether or not CTA should be active. If the CTA is active, it will be visible for both members and admins. If its inactive, it will be visible to neither, though admins can access the last ctaType and redirectUrl values that were inputted in case they wish to reactivate it with the same values.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "privacyPolicy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL specified by product admins when configuring a product to use a lead generation form. The URL will point to a given organization\u2019s privacy policy web page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lastDownloadedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp in milliseconds since epoch of when the lead gen form response report for the product that was downloaded.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actor URN (PersonUrn) who last downloaded the associated lead gen form response report for the product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "suggestedCategories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[MultiLocaleString]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array of free-text inputted categories associated with the product. Should be of at least length 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "keywordsAssociatedWithProduct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[MultiLocaleString]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array of free-text inputted keywords associated with the product. Should be of at least length 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "competingCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[OrganizationUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of organizationUrn representing companies that offer competing / similar products to the current product. Should be of at least length 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "similarProducts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[union[standardizedProduct: StandardizedProductUrn, productName: MultiLocaleString]]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An array of standardizedProductUrn (if standardized product exists) or free-text string of the product name (if standardized product does not exist yet for the product) representing similar products. Should be of at least length 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "modifiedByAdmin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes if product pricing was ever modified by an admin. This field is only set to true when the modifications originate from an admin and not when it originates from other sources (i.e. 3rd party ingestion flows).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "freeTrialAvailable",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes if free-trial is available for the product. The field is optional in the event this information is not provided by admins and/or not available in the 3rd party dataset used to backfill product pricing data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "freePricingPlanAvailable",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Derived and read only field denoting whether the pricing plans attribute contains a free plan.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pricingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Field for external URL where additional pricing information on the product can be found. URL is in en_US locale. Can be null if the admin did not provide the pricing URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pricingPlans",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[ProductPricingPlan]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productpricingplan"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of product pricing plans, such as free-tier, subscription-based, and custom. The ordering of the pricing plan is the order in which the plans will show-up on the product page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of the pricing plan (e.g., \u0022Standard\u0022, \u0022Plus\u0022, \u0022Enterprise\u0022). Title is in en_US locale.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the pricing plan. Description is in en_US locale.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "price",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[freePrice: ProductFreePrice, fixedPrice: ProductFixedPrice, customPrice: ProductCustomPrice]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productfixedprice",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcustomprice"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Pricing details of the plan. ProductFreePrice represents a free-tier for a product. ProductFixedPrice represents a product price that is dependent on charge frequency and payment model. ProductCustomPrice represents a product price that is custom and requires contact with the product sale\u0027s team.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productfixedprice",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#productcustomprice"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "price",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MoneyAmount",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/ads/money-object.md?view=li-dma-data-portability-2026-08\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Amount of money to charge. Currency is in USD.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "chargeFrequency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ChargeFrequency",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether the price is determined on a monthly basis, yearly basis, etc. Value enums include: YEARLYMONTHLYWEEKLYDAILYONCE",
+            "Links": [],
+            "Values": [
+              "YEARLY",
+              "MONTHLY",
+              "WEEKLY",
+              "DAILY",
+              "ONCE"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "paymentModel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PaymentModel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the basis for determining price. Value enums include: FLATPER_USER",
+            "Links": [],
+            "Values": [
+              "FLAT",
+              "PER_USER"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contactMethod",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "union[leadGenForm: EmptyRecord, salesContactUrl: Url]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes whether to serve a lead gen form or a sales contact URL as contact method CTA (Call to Action). LeadGenForm represents the lead gen form stored on the product as the contact method. SalesContactUrl represents external URL to the sales contact page of the product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOAD",
+            "Links": [],
+            "Values": [
+              "PROCESSING",
+              "PROCESSING_FAILED",
+              "AVAILABLE",
+              "WAITING_UPLOAD"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download/view the media asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOAD",
+            "Links": [],
+            "Values": [
+              "PROCESSING",
+              "PROCESSING_FAILED",
+              "AVAILABLE",
+              "WAITING_UPLOAD"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download/view the media asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "captions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[Caption]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#caption"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Identifies the Captions provided by page admins. If not found returns an empty array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thumbnails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[Thumbnail]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#thumbnail"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Identifies the Thumbnails provided by page admins. If not found returns an empty array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to retrieve the caption file.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the file expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to retrieve the thumbnail file.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the file expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationProducts/{ORGANIZATION_PRODUCT_ID}?locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationProducts/{ORGANIZATION_PRODUCT_ID}?locale=(language:en,country:US)\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022vanityName\u0022: \u0022test123-abcd\u0022,\n  \u0022website\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022organizationsUsingProduct\u0022: [],\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n    \u0022time\u0022: 1640787326214\n  },\n  \u0022lastModifiedByAdmin\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n    \u0022time\u0022: 1641859126078\n  },\n  \u0022description\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022mediaSections\u0022: [],\n  \u0022standardizedSkills\u0022: [],\n  \u0022callToAction\u0022: {\n    \u0022active\u0022: true,\n    \u0022redirectUrl\u0022: \u0022https://www.google.com/\u0022,\n    \u0022ctaType\u0022: \u0022DOWNLOAD\u0022\n  },\n  \u0022defaultLocale\u0022: {\n    \u0022country\u0022: \u0022US\u0022,\n    \u0022language\u0022: \u0022en\u0022\n  },\n  \u0022productCategories\u0022: [\u0022urn:li:standardizedProductCategory:123\u0022],\n  \u0022productIntegrations\u0022: [],\n  \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:123456\u0022,\n  \u0022name\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022abcd\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022rolesUsingProduct\u0022: [],\n  \u0022pendingClaimByAdmin\u0022: false,\n  \u0022id\u0022: 98765,\n  \u0022state\u0022: \u0022PASSED_REVIEW\u0022,\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n    \u0022time\u0022: 1641859126078\n  },\n  \u0022logoV2\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022vanityName\u0022: \u0022test123-abcd\u0022,\n  \u0022website\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022organizationsUsingProduct\u0022: [],\n  \u0022created\u0022: {\n    \u0022time\u0022: 1640787326214\n  },\n  \u0022lastModifiedByAdmin\u0022: {\n    \u0022time\u0022: 1641859126078\n  },\n  \u0022description\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022mediaSections\u0022: [],\n  \u0022standardizedSkills\u0022: [],\n  \u0022callToAction\u0022: {\n    \u0022active\u0022: true,\n    \u0022redirectUrl\u0022: \u0022https://www.google.com/\u0022,\n    \u0022ctaType\u0022: \u0022DOWNLOAD\u0022\n  },\n  \u0022defaultLocale\u0022: {\n    \u0022country\u0022: \u0022US\u0022,\n    \u0022language\u0022: \u0022en\u0022\n  },\n  \u0022productCategories\u0022: [\u0022urn:li:standardizedProductCategory:123\u0022],\n  \u0022productIntegrations\u0022: [],\n  \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n  \u0022organization\u0022: \u0022urn:li:organization:123456\u0022,\n  \u0022name\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022abcd\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022rolesUsingProduct\u0022: [],\n  \u0022pendingClaimByAdmin\u0022: false,\n  \u0022id\u0022: 98765,\n  \u0022state\u0022: \u0022PASSED_REVIEW\u0022,\n  \u0022lastModified\u0022: {\n    \u0022time\u0022: 1641859126078\n  },\n  \u0022logoV2\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n    \u0022status\u0022: \u0022AVAILABLE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/dmaOrganizationProducts?ids=List(ORGANIZATION_PRODUCT_ID_1,ORGANIZATION_PRODUCT_ID_2)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationProducts?ids=List(ORGANIZATION_PRODUCT_ID_1,ORGANIZATION_PRODUCT_ID_2)\u0026locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022123456\u0022: {\n      \u0022vanityName\u0022: \u0022test123-abcd\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1640787326214\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1641859126078\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022https://www.google.com/\u0022,\n        \u0022ctaType\u0022: \u0022DOWNLOAD\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [\u0022urn:li:standardizedProductCategory:123\u0022],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:1000000\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:1000000\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022abcd\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 286119,\n      \u0022state\u0022: \u0022PASSED_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1641859126078\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    },\n    \u0022987654\u0022: {\n      \u0022vanityName\u0022: \u0022hello-world\u0022,\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_qwer\u0022,\n        \u0022time\u0022: 1698763877650\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_qwer\u0022,\n        \u0022time\u0022: 1698763877650\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:200000\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:200000\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022hello world\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 528002,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_qwer\u0022,\n        \u0022time\u0022: 1698763877650\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022123456\u0022: 200,\n    \u0022987654\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022123456\u0022: {\n      \u0022vanityName\u0022: \u0022test123-abcd\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022time\u0022: 1640787326214\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022time\u0022: 1641859126078\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022https://www.google.com/\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022https://www.google.com/\u0022,\n        \u0022ctaType\u0022: \u0022DOWNLOAD\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [\u0022urn:li:standardizedProductCategory:123\u0022],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:1000000\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:1000000\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022abcd\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 286119,\n      \u0022state\u0022: \u0022PASSED_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1641859126078\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    },\n    \u0022987654\u0022: {\n      \u0022vanityName\u0022: \u0022hello-world\u0022,\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022time\u0022: 1698763877650\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022time\u0022: 1698763877650\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:200000\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:200000\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022hello world\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 528002,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1698763877650\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022123456\u0022: 200,\n    \u0022987654\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[long]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List with organization product IDs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(ORGANIZATION_PRODUCT_ID_1,ORGANIZATION_PRODUCT_ID_2)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of ProductAuthorizationActionType.PRODUCTS_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/dmaOrganizationProducts?q=organization\u0026organization={ORGANIZATION_URN}\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationProducts?q=organization\u0026organization={ORGANIZATION_URN}\u0026locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test123\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://www.test123.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_qwer\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_qwer\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022http://www.test123.com\u0022,\n        \u0022ctaType\u0022: \u0022LEARN_MORE\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test 123\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1404189,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_qwer\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    },\n    {\n      \u0022vanityName\u0022: \u0022test123-vol-1\u0022,\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1689016101158\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1694817907368\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:987650\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:987650\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test 123 Vol 1\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1372839,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1694817907368\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test123\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://www.test123.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022http://www.test123.com\u0022,\n        \u0022ctaType\u0022: \u0022LEARN_MORE\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test 123\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1404189,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    },\n    {\n      \u0022vanityName\u0022: \u0022test123-vol-1\u0022,\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022time\u0022: 1689016101158\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022time\u0022: 1694817907368\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:987650\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:987650\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test 123 Vol 1\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1372839,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1694817907368\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATION",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Value must be organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=organization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization urn with format urn:li:organization:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn:li:organization:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/dmaOrganizationProducts?q=organizationalPage\u0026organizationalPage={ORGANIZATIONAL_PAGE_URN}\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationProducts?q=organizationalPage\u0026organizationalPage={ORGANIZATIONAL_PAGE_URN}\u0026locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test-org\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://www.testorg.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022http://www.testorg.com\u0022,\n        \u0022ctaType\u0022: \u0022LEARN_MORE\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test Org\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1404189,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test-org\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://www.testorg.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022http://www.testorg.com\u0022,\n        \u0022ctaType\u0022: \u0022LEARN_MORE\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test Org\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1404189,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-3",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER ORGANIZATIONALPAGE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Value must be organizationalPage.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=organizationalPage",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational page urn with format urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPage=urn:li:organizationalPage:12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/dmaOrganizationProducts?q=vanityName\u0026vanityName={VANITY_NAME}\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationProducts?q=vanityName\u0026vanityName={VANITY_NAME}\u0026locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test-company\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://www.testcompany.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022http://www.testcompany.com\u0022,\n        \u0022ctaType\u0022: \u0022LEARN_MORE\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test Company\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1404189,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test-company\u0022,\n      \u0022website\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022http://www.testcompany.com\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022organizationsUsingProduct\u0022: [],\n      \u0022created\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022lastModifiedByAdmin\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022mediaSections\u0022: [],\n      \u0022standardizedSkills\u0022: [],\n      \u0022callToAction\u0022: {\n        \u0022active\u0022: true,\n        \u0022redirectUrl\u0022: \u0022http://www.testcompany.com\u0022,\n        \u0022ctaType\u0022: \u0022LEARN_MORE\u0022\n      },\n      \u0022defaultLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022productCategories\u0022: [],\n      \u0022productIntegrations\u0022: [],\n      \u0022organizationalPage\u0022: \u0022urn:li:organizationalPage:12345\u0022,\n      \u0022organization\u0022: \u0022urn:li:organization:12345\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test Company\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022rolesUsingProduct\u0022: [],\n      \u0022pendingClaimByAdmin\u0022: false,\n      \u0022id\u0022: 1404189,\n      \u0022state\u0022: \u0022PRE_REVIEW\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1695936096637\n      },\n      \u0022logoV2\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-4",
+      "SectionPath": [
+        "Retrieve Organization Products data",
+        "FINDER VANITYNAME",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Value must be vanityName. Where vanityName is product\u0027s unique name used in URLs.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=vanityName",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vanity name to find the corresponding product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "vanityName=test-company",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Number format exception parsing batch key.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use valid IDs for batch get.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

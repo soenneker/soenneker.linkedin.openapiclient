@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The approximateMemberCount property</summary>
-        public int? ApproximateMemberCount { get; set; }
+        public long? ApproximateMemberCount { get; set; }
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,10 +108,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
-                { "approximateMemberCount", n => { ApproximateMemberCount = n.GetIntValue(); } },
+                { "approximateMemberCount", n => { ApproximateMemberCount = n.GetLongValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -127,10 +127,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
-            writer.WriteIntValue("approximateMemberCount", ApproximateMemberCount);
+            writer.WriteLongValue("approximateMemberCount", ApproximateMemberCount);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemCreated>("created", Created);
             writer.WriteStringValue("description", Description);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CompanyIntelligenceApiFetchExistingAdSegmentsBasedOnAdAccount200ResponseElementsItemLastModified>("lastModified", LastModified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("status", Status);

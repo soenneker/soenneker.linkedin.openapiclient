@@ -15,13 +15,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public long? Height { get; set; }
         /// <summary>The width property</summary>
-        public int? Width { get; set; }
+        public long? Width { get; set; }
         /// <summary>The x property</summary>
-        public int? X { get; set; }
+        public long? X { get; set; }
         /// <summary>The y property</summary>
-        public int? Y { get; set; }
+        public long? Y { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementRetrieveOrganizationById200ResponseCoverPhotoV2CropInfo"/> and sets the default values.
         /// </summary>
@@ -47,10 +47,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "width", n => { Width = n.GetIntValue(); } },
-                { "x", n => { X = n.GetIntValue(); } },
-                { "y", n => { Y = n.GetIntValue(); } },
+                { "height", n => { Height = n.GetLongValue(); } },
+                { "width", n => { Width = n.GetLongValue(); } },
+                { "x", n => { X = n.GetLongValue(); } },
+                { "y", n => { Y = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -60,10 +60,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("width", Width);
-            writer.WriteIntValue("x", X);
-            writer.WriteIntValue("y", Y);
+            writer.WriteLongValue("height", Height);
+            writer.WriteLongValue("width", Width);
+            writer.WriteLongValue("x", X);
+            writer.WriteLongValue("y", Y);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

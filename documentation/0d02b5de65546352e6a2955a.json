@@ -1,0 +1,66 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+  "Title": "CRM Sync",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/accounts-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/authentication-with-sales-access-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/crm-sync",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/custom-lists",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/display-21-best-practices",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/embedding-the-iframe",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/faq",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/integration-review",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/leads-screenshots_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/profile-matching",
+    "https://learn.microsoft.com/en-us/linkedin/sales/display-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/sales/index_full",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "CRM Sync",
+      "Anchor": "crm-sync",
+      "SectionPath": [],
+      "Text": "CRM Sync enables Sales Navigator contracts to sync accounts, leads, and contacts into Sales Navigator from open opportunities within your CRM. With this data, LinkedIn can perform fuzzy matching and identify possible matches for leads and accounts. CRM Sync also includes a write-back feature that saves information you create, like Notes, from Sales Navigator directly to your CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Sync",
+      "Anchor": "crm-sync",
+      "SectionPath": [],
+      "Text": "CRM Sync features are available for both the desktop version of LinkedIn Sales Navigator and the Sales Navigator mobile app (iOS and Android).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using CRM Sync",
+      "Anchor": "using-crm-sync",
+      "SectionPath": [
+        "Using CRM Sync"
+      ],
+      "Text": "CRM Sync can be enabled in the Admin Settings of Sales Navigator by your Sales Navigator administrator. You can read more about enabling CRM Sync in this article, Integration between Sales Navigator and your CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using CRM Sync",
+      "Anchor": "using-crm-sync",
+      "SectionPath": [
+        "Using CRM Sync"
+      ],
+      "Text": "Once enabled, CRM Sync improves the user experience for integrations in your application. For all iframe integrations, the profile matching process is seeded with CRM data, and the iframe can leverage predetermined matches for leads and accounts if external record IDs are passed in the query string to the iframe. Additionally, enabling of CRM Sync is a prerequisite for using the Profile Associations API.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

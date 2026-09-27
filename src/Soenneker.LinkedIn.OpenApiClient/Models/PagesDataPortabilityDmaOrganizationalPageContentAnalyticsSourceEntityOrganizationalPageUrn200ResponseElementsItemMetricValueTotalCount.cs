@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string BigDecimal { get; set; }
 #endif
         /// <summary>The long property</summary>
-        public int? Long { get; set; }
+        public long? Long { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageContentAnalyticsSourceEntityOrganizationalPageUrn200ResponseElementsItemMetricValueTotalCount"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bigDecimal", n => { BigDecimal = n.GetStringValue(); } },
-                { "long", n => { Long = n.GetIntValue(); } },
+                { "long", n => { Long = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bigDecimal", BigDecimal);
-            writer.WriteIntValue("long", Long);
+            writer.WriteLongValue("long", Long);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

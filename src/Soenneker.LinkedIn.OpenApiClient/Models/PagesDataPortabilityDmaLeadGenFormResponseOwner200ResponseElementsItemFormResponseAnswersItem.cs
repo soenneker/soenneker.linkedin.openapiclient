@@ -23,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponseAnswersItemAnswerDetails AnswerDetails { get; set; }
 #endif
         /// <summary>The questionId property</summary>
-        public int? QuestionId { get; set; }
+        public long? QuestionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponseAnswersItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "answerDetails", n => { AnswerDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponseAnswersItemAnswerDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponseAnswersItemAnswerDetails.CreateFromDiscriminatorValue); } },
-                { "questionId", n => { QuestionId = n.GetIntValue(); } },
+                { "questionId", n => { QuestionId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormResponseOwner200ResponseElementsItemFormResponseAnswersItemAnswerDetails>("answerDetails", AnswerDetails);
-            writer.WriteIntValue("questionId", QuestionId);
+            writer.WriteLongValue("questionId", QuestionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

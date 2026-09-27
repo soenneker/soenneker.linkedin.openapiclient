@@ -1,0 +1,892 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+  "Title": "Spotlight Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Spotlight Ads API",
+      "Anchor": "spotlight-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Spotlight Ads API",
+      "Anchor": "spotlight-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Spotlight Ads API",
+      "Anchor": "spotlight-ads-api",
+      "SectionPath": [],
+      "Text": "Linkedin is introducing creation and management of Dynamic Spotlight Ads with external Creatives APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Spotlight Ads API",
+      "Anchor": "spotlight-ads-api",
+      "SectionPath": [],
+      "Text": "Spotlight Ads allow you to showcase your product, service, event, content, and more. Upon clicking your Ad, you navigate to the website or landing page of your choice. Learn more about Spotlight Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Spotlight Ad",
+      "Anchor": "create-a-spotlight-ad",
+      "SectionPath": [
+        "Create a Spotlight Ad"
+      ],
+      "Text": "Optionally, upload an image asset that acts as a Company logo in the Spotlight ad creative. Skip this step if you want to reuse the Company logo from the Company Page.\nCreate a Dynamic Ads Campaign. See Dynamic Ad Campaigns.\nCreate a Spotlight Ad Creative. See Create a Dynamic Spotlight Ad Creative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Improvements over existing API",
+      "Anchor": "improvements-over-existing-api",
+      "SectionPath": [
+        "Create a Spotlight Ad",
+        "Improvements over existing API"
+      ],
+      "Text": "The new API has a simpler structure compared to the previous /adCreativesV2 API with Spotlight Ads content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Create a Spotlight Ad",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Starting 202410, a new name field is introduced in Creative schema. Going forward, this new name field is the preferred approach to set and get the creative\u0027s name, consistently across all ad formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "Upload an image asset. The new Image API replaces the Assets API, with simplified and consistent schema.\nSee the Images API for more information.\nCreate a Dynamic Ads Campaign. See Dynamic Ads Campaign.\nDesign a Creative. The adCreativesV2 API has historically been used to design creatives for a campaign. The new externalized Creatives API features dynamic spotlight ad format fields for easier creative design and development. For more details, see the schema section below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "backgroundImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom background image uploaded by the advertiser. The default is set to clear background. If you include a background image, there will be no ad description, and the member\u2019s profile photo won\u0027t be pulled into the ad.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The headline of the ad. It is the main message seen by your target audience. Not used for mobile spotlight ads.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Any additional message or description that provides more information about the ad. If not present, only the headline is shown on the ad. If you include a description, there will be no backgroundImage set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The call-to-action (CTA) is what you want your target audience to do after seeing your ad. It is used for the button text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL where the member should be re-directed to, on clicking the spotlight ad.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ImageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company logo. This may differ from the logo on the official company page. If not present on create, the logo from company page is used. This is optional on creates, but will always be present on reads. Setting it to null on update would default to the logo from company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name to use in the ad. This may differ from the name on the official company page. If not present on create, the company name from company page is used. This is optional on creates, but will always be present on reads. Setting it to null on update would default to the name from company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "showMemberProfilePhoto",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean value that helps decide whether to display profile photo of member in the spotlight ad or not. Defaults to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Prerequisite Values",
+      "Anchor": "prerequisite-values",
+      "SectionPath": [
+        "Workflow",
+        "Prerequisite Values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Attribute",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Campaign Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DYNAMIC",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Campaign Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creative Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPOTLIGHT_V2",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Objective Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_AWARENESS, WEBSITE_CONVERSION, WEBSITE_VISIT, JOB_APPLICANT, TALENT_LEAD",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dynamic Spotlight Ad Creative",
+      "Anchor": "create-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dynamic Spotlight Ad Creative",
+      "Anchor": "create-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dynamic Spotlight Ad Creative",
+      "Anchor": "create-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n        \u0022spotlight\u0022: {\n            \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n            \u0022description\u0022: \u0022Check out this demo\u0022,\n            \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n            \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n            \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n            \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n            \u0022showMemberProfilePhoto\u0022: true\n        }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dynamic Spotlight Ad Creative",
+      "Anchor": "create-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022content\u0022: {\n        \u0022spotlight\u0022: {\n            \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n            \u0022description\u0022: \u0022Check out this demo\u0022,\n            \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n            \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n            \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n            \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n            \u0022showMemberProfilePhoto\u0022: true\n        }\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dynamic Spotlight Ad Creative",
+      "Anchor": "create-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Create a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:123456789",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Dynamic Spotlight Ad Creative",
+      "Anchor": "get-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Get a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Dynamic Spotlight Ad Creative",
+      "Anchor": "get-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Get a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Dynamic Spotlight Ad Creative",
+      "Anchor": "get-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Get a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Dynamic Spotlight Ad Creative",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022servingHoldReasons\u0022: [\n        \u0022UNDER_REVIEW\u0022,\n        \u0022CAMPAIGN_STOPPED\u0022\n    ],\n    \u0022lastModifiedAt\u0022: 1648512200000,\n    \u0022lastModifiedBy\u0022: \u0022urn:li:member:123\u0022,\n    \u0022content\u0022: {\n        \u0022spotlight\u0022: {\n            \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n            \u0022showMemberProfilePhoto\u0022: true,\n            \u0022landingPage\u0022: \u0022http://linkedin.com\u0022,\n            \u0022description\u0022: \u0022Check out this demo\u0022,\n            \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n            \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n            \u0022callToAction\u0022: \u0022Join Us Now\u0022\n        }\n    },\n    \u0022createdAt\u0022: 1648512200000,\n    \u0022createdBy\u0022: \u0022urn:li:member:123\u0022,\n    \u0022isTest\u0022: false,\n    \u0022review\u0022: {\n        \u0022status\u0022: \u0022PENDING\u0022\n    },\n    \u0022isServing\u0022: false,\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n    \u0022id\u0022: \u0022urn:li:sponsoredCreative:123456789\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Dynamic Spotlight Ad Creative",
+      "Anchor": "update-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Spotlight Ad Creative",
+      "Anchor": "update-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Spotlight Ad Creative",
+      "Anchor": "update-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022callToAction\u0022: \u0022New Action\u0022,\n                    \u0022description\u0022: \u0022New Description\u0022,\n                    \u0022headline\u0022: \u0022New Headline\u0022,\n                    \u0022landingPage\u0022: \u0022http://example.com\u0022,                       \n                    \u0022organizationName\u0022: \u0022New Organization Name\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:def\u0022,\n                    \u0022showMemberProfilePhoto\u0022: false\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update a Dynamic Spotlight Ad Creative",
+      "Anchor": "update-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-RestLi-Method: PARTIAL_UPDATE\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022callToAction\u0022: \u0022New Action\u0022,\n                    \u0022description\u0022: \u0022New Description\u0022,\n                    \u0022headline\u0022: \u0022New Headline\u0022,\n                    \u0022landingPage\u0022: \u0022http://example.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:def\u0022,                     \n                    \u0022organizationName\u0022: \u0022New Organization Name\u0022,\n                    \u0022showMemberProfilePhoto\u0022: false\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update a Dynamic Spotlight Ad Creative",
+      "Anchor": "update-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Update a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "A successful response returns a 204 No Content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Dynamic Spotlight Ad Creative",
+      "Anchor": "delete-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Dynamic Spotlight Ad Creative",
+      "Anchor": "delete-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Dynamic Spotlight Ad Creative",
+      "Anchor": "delete-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Dynamic Spotlight Ad Creative",
+      "Anchor": "delete-a-dynamic-spotlight-ad-creative",
+      "SectionPath": [
+        "Delete a Dynamic Spotlight Ad Creative"
+      ],
+      "Text": "A successful response returns a 204 No Content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Create Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-create-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Create Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-create-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Create Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-create-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Create Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022description\u0022: \u0022Check out this demo\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        },\n        {\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022backgroundImage\u0022: \u0022urn:li:image:abc\u0022\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Create Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-create-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Create Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_CREATE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027\n--data \u0027{\n    \u0022elements\u0022: [\n        {\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022description\u0022: \u0022Check out this demo\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        },\n        {\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022backgroundImage\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n        }\n    ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Create Dynamic Spotlight Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A123456789\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:123456789\u0022\n        },\n        {\n            \u0022location\u0022: \u0022/partnerApiCreatives/urn%3Ali%3AsponsoredCreative%3A123456799\u0022,\n            \u0022status\u0022: 201,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:123456799\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-get-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Get Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-get-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Get Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-get-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Get Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_GET\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Batch Get Dynamic Spotlight Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643800364000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022description\u0022: \u0022Check out this demo\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022createdAt\u0022: 1643800364000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022id\u0022: \u0022{sponsoredCreative-urn1}\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n        },\n        \u0022{sponsoredCreative-urn2}\u0022: {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643800364000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022backgroundImage\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022createdAt\u0022: 1643800364000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022id\u0022: \u0022{sponsoredCreative-urn2}\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n        }\n    },\n    \u0022statuses\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: 200,\n        \u0022{sponsoredCreative-urn2}\u0022: 200\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Update Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-update-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Update Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-update-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Update Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-update-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Update Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "{\n    \u0022entities\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022spotlight\u0022: {\n                            \u0022callToAction\u0022: \u0022New Action\u0022,\n                            \u0022description\u0022: \u0022New Description\u0022,\n                            \u0022headline\u0022: \u0022New Headline\u0022,\n                            \u0022landingPage\u0022: \u0022http://example.com\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:def\u0022,                     \n                            \u0022organizationName\u0022: \u0022New Organization Name\u0022,\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        },\n        \u0022{sponsoredCreative-urn2}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022spotlight\u0022: {\n                            \u0022backgroundImage\u0022: \u0022urn:li:image:def\u0022,\n                            \u0022callToAction\u0022: \u0022New Action\u0022,\n                            \u0022description\u0022: \u0022New Description\u0022,\n                            \u0022headline\u0022: \u0022New Headline\u0022,\n                            \u0022landingPage\u0022: \u0022http://example.com\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:ghi\u0022,                 \n                            \u0022organizationName\u0022: \u0022New Organization Name\u0022,\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Update Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-update-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Update Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_PARTIAL_UPDATE\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027\n--data \u0027{\n     \u0022entities\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022spotlight\u0022: {\n                            \u0022callToAction\u0022: \u0022New Action\u0022,\n                            \u0022description\u0022: \u0022New Description\u0022,\n                            \u0022headline\u0022: \u0022New Headline\u0022,\n                            \u0022landingPage\u0022: \u0022http://example.com\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:def\u0022,                         \n                            \u0022organizationName\u0022: \u0022New Organization Name\u0022,\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        },\n        \u0022{sponsoredCreative-urn2}\u0022: {\n            \u0022patch\u0022: {\n                \u0022$set\u0022: {\n                    \u0022content\u0022: {\n                        \u0022spotlight\u0022: {\n                            \u0022backgroundImage\u0022: \u0022urn:li:image:def\u0022,\n                            \u0022callToAction\u0022: \u0022New Action\u0022,\n                            \u0022description\u0022: \u0022New Description\u0022,\n                            \u0022headline\u0022: \u0022New Headline\u0022,\n                            \u0022landingPage\u0022: \u0022http://example.com\u0022,\n                            \u0022logo\u0022: \u0022urn:li:image:ghi\u0022,                       \n                            \u0022organizationName\u0022: \u0022New Organization Name\u0022,\n                            \u0022showMemberProfilePhoto\u0022: false\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Batch Update Dynamic Spotlight Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022{sponsoredCreative-urn2}\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Delete Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-delete-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Delete Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-delete-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Delete Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "DELETE \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Delete Dynamic Spotlight Ad Creatives",
+      "Anchor": "batch-delete-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Batch Delete Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/creatives?ids=List({sponsoredCreative-urn1},{sponsoredCreative-urn2})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: BATCH_DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Batch Delete Dynamic Spotlight Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022{sponsoredCreative-urn1}\u0022: {\n            \u0022status\u0022: 204\n        },\n        \u0022{sponsoredCreative-urn2}\u0022: {\n            \u0022status\u0022: 204\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Finders for Dynamic Spotlight Ad Creatives",
+      "Anchor": "finders-for-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Finders for Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Finders for Dynamic Spotlight Ad Creatives",
+      "Anchor": "finders-for-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Finders for Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "GET \u0027https://api.linkedin.com/rest/creatives?campaigns=List(urn%3Ali%3AsponsoredCampaign%3A123)\u0026intendedStatuses=List(ACTIVE)\u0026q=criteria\u0026sortOrder=ASCENDING\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Finders for Dynamic Spotlight Ad Creatives",
+      "Anchor": "finders-for-dynamic-spotlight-ad-creatives",
+      "SectionPath": [
+        "Finders for Dynamic Spotlight Ad Creatives"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/creatives?campaigns=List(urn%3Ali%3AsponsoredCampaign%3A123)\u0026intendedStatuses=List(ACTIVE)\u0026q=criteria\u0026sortOrder=ASCENDING\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-RestLi-Method: FINDER\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Finders for Dynamic Spotlight Ad Creatives",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 2,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 2\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643800073000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022description\u0022: \u0022Check out this demo\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,  \n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022createdAt\u0022: 1643767858000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:123456789\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n        },\n        {\n            \u0022servingHoldReasons\u0022: [\n                \u0022UNDER_REVIEW\u0022,\n                \u0022CAMPAIGN_STOPPED\u0022\n            ],\n            \u0022lastModifiedAt\u0022: 1643791704000,\n            \u0022lastModifiedBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022content\u0022: {\n                \u0022spotlight\u0022: {\n                    \u0022backgroundImage\u0022: \u0022urn:li:image:abc\u0022,\n                    \u0022callToAction\u0022: \u0022Join Us Now\u0022,\n                    \u0022headline\u0022: \u0022Spotlight Ad Demo\u0022,\n                    \u0022landingPage\u0022: \u0022http://example.com\u0022,\n                    \u0022logo\u0022: \u0022urn:li:image:abc\u0022,  \n                    \u0022organizationName\u0022: \u0022LinkedIn Demo\u0022,\n                    \u0022showMemberProfilePhoto\u0022: true\n                }\n            },\n            \u0022createdAt\u0022: 1643791171000,\n            \u0022isTest\u0022: false,\n            \u0022createdBy\u0022: \u0022urn:li:member:123\u0022,\n            \u0022review\u0022: {\n                \u0022status\u0022: \u0022PENDING\u0022\n            },\n            \u0022isServing\u0022: false,\n            \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:123\u0022,\n            \u0022id\u0022: \u0022urn:li:sponsoredCreative:123456799\u0022,\n            \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:123\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "General creative errors are included in Creatives error.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

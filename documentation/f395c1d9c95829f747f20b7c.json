@@ -1,0 +1,434 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+  "Title": "Create and configure customer application",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Create and configure customer application",
+      "Anchor": "create-and-configure-customer-application",
+      "SectionPath": [],
+      "Text": "As a LinkedIn partner, a customer application represents your customer\u0027s unique instance within your ATS that connects to LinkedIn\u0027s APIs. You have to create a customer application for each customer. Each application has its own API key and configuration settings that control how their jobs and applicants are managed through the Apply Connect integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and configure customer application",
+      "Anchor": "create-and-configure-customer-application",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and configure customer application",
+      "Anchor": "create-and-configure-customer-application",
+      "SectionPath": [],
+      "Text": "Access to this API is restricted to approved developers. Contact your LinkedIn Relationship Manager or Business Development representative to discuss criteria and sign the required API agreement with data restrictions. If you are not yet a LinkedIn Talent Solutions Partner, complete the LinkedIn Talent Solutions Partner Request Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and configure customer application",
+      "Anchor": "create-and-configure-customer-application",
+      "SectionPath": [],
+      "Text": "Take the following steps to create and configure customer applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create and configure customer application",
+      "Anchor": "create-and-configure-customer-application",
+      "SectionPath": [],
+      "Text": "Provision customers\nCreate enablement toggle\nDisplay the ATS integration configuration plugin\nSync customer integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Provision customers",
+      "Anchor": "step-1-provision-customers",
+      "SectionPath": [
+        "Step 1: Provision customers"
+      ],
+      "Text": "Use the Provisioning API to create API keys for customers. Store a unique API key and LinkedIn Developer Application ID for each customer. If your customer already has API keys from other LinkedIn integrations (Job Postings, Recruiter System Connect, or Apply with LinkedIn), reuse those existing keys. Refer to complete configuration details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Provision customers",
+      "Anchor": "step-1-provision-customers",
+      "SectionPath": [
+        "Step 1: Provision customers"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Provision customers",
+      "Anchor": "step-1-provision-customers",
+      "SectionPath": [
+        "Step 1: Provision customers"
+      ],
+      "Text": "All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create enablement toggle",
+      "Anchor": "step-2-create-enablement-toggle",
+      "SectionPath": [
+        "Step 2: Create enablement toggle"
+      ],
+      "Text": "Take the following actions to create the enablement toggle:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create enablement toggle",
+      "Anchor": "step-2-create-enablement-toggle",
+      "SectionPath": [
+        "Step 2: Create enablement toggle"
+      ],
+      "Text": "Provide a toggle in your application settings that allows customers to enable or disable LinkedIn Easy Apply at both the account level and individual job level.\nDisplay the following required text directly next to or below the toggle in a noticeable font size and color: \u0022By posting your job to LinkedIn, you agree to LinkedIn\u0027s Jobs Terms \u0026 Conditions. Learn more about using LinkedIn Easy Apply\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create enablement toggle",
+      "Anchor": "step-2-create-enablement-toggle",
+      "SectionPath": [
+        "Step 2: Create enablement toggle"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create enablement toggle",
+      "Anchor": "step-2-create-enablement-toggle",
+      "SectionPath": [
+        "Step 2: Create enablement toggle"
+      ],
+      "Text": "By default, customers should be opted in to LinkedIn Easy Apply and the toggle should be readily available in an appropriate location within your settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Display ATS integration configuration plugin",
+      "Anchor": "step-3-display-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 3: Display ATS integration configuration plugin"
+      ],
+      "Text": "Display the ATS Integration configuration plugin to allow LinkedIn Recruiter customers to enable Apply Connect features\u2014 Profile Plugin and Applicant Notifications. Embed this widget code in your ATS where customers manage their integration or job board settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Display ATS integration configuration plugin",
+      "Anchor": "step-3-display-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 3: Display ATS integration configuration plugin"
+      ],
+      "Text": "Use the ATS Onboarding widget to capture customer integration details. Prefill the integrationContext input field with the value from the Onboarding widget callback response, then sync this data back to /atsIntegrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Display ATS integration configuration plugin",
+      "Anchor": "step-3-display-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 3: Display ATS integration configuration plugin"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: {customer_api_key}\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/ATSIntegrationWidget\u0022\n    data-supported-bundled-integration-types=\u0022APPLY_CONNECT\u0022\n    data-onintegrate=\u0022handleIntegrations\u0022\n    data-allow-hear-back-signal=true/false\n    data-width=\u0022{width}\u0022\u003E\n\u003C/script\u003E\n\u003Cscript\u003E\n/**\n* This callback should:\n*   1) Store the customer\u0027s integration in your ATS. These values are used throughout the Middleware Platform\u0027s API.\n*   2) Tell your server to create and configure customer integrations through the Middleware Platform using this data.\n* @param {Object[]} integrations\n* @param {string} integrations[].integrationContext\n* @param {string} integrations[].integrationType\n* @param {string} integrations[].tenantType\n*/\nfunction handleIntegrations(integrations) {\n//Your code here\n}\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration enums",
+      "Anchor": "integration-enums",
+      "SectionPath": [
+        "Step 3: Display ATS integration configuration plugin",
+        "Integration enums"
+      ],
+      "Text": "The value for data-supported-bundled-integration-types should be based on the type of integration, as indicated in the following table:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Integration enums",
+      "Anchor": "integration-enums",
+      "SectionPath": [
+        "Step 3: Display ATS integration configuration plugin",
+        "Integration enums"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLY_CONNECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This enum is used for the Apply Connect integrations only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin load",
+      "Anchor": "plugin-load",
+      "SectionPath": [
+        "Step 3: Display ATS integration configuration plugin",
+        "Plugin load"
+      ],
+      "Text": "The plugin will load based on the data-width and data-supported-bundled-integration-types attributes you specify. Use the latter attribute to declare which integrations you support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Sync customer integration",
+      "Anchor": "step-4-sync-customer-integration",
+      "SectionPath": [
+        "Step 4: Sync customer integration"
+      ],
+      "Text": "After a customer configures their integration, make a sync request to the following endpoint with the provided values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Sync customer integration",
+      "Anchor": "step-4-sync-customer-integration",
+      "SectionPath": [
+        "Step 4: Sync customer integration"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Sync customer integration",
+      "Anchor": "step-4-sync-customer-integration",
+      "SectionPath": [
+        "Step 4: Sync customer integration"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Sync customer integration",
+      "Anchor": "step-4-sync-customer-integration",
+      "SectionPath": [
+        "Step 4: Sync customer integration"
+      ],
+      "Text": "Create integrations from your server (not client-side) immediately when the customer completes the Onboarding widget flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Sync customer integration",
+      "Anchor": "step-4-sync-customer-integration",
+      "SectionPath": [
+        "Step 4: Sync customer integration"
+      ],
+      "Text": "Submit batch calls with no more than 100 records per batch and a minimum one-second delay between calls. Use the following values from the Onboarding widget for each request parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Sync customer integration",
+      "Anchor": "step-4-sync-customer-integration",
+      "SectionPath": [
+        "Step 4: Sync customer integration"
+      ],
+      "Text": "id[i].integrationContext - Customer\u0027s integration context (format: urn:li:organization:{id})\nid[i].integrationType - Integration type from the plugin\nid[i].tenantType - Tenant type from the plugin\nid[i].dataProvider - Use \u0022ATS\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request body fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the customer-facing name for the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample request"
+      ],
+      "Text": "The following example shows how to sync a customer integration with the integration name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Headers",
+      "Anchor": "headers",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample request",
+        "Headers"
+      ],
+      "Text": "Authorization: Bearer {token}\nx-restli-method: batch_partial_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample request",
+        "Request body"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:1234\u0026integrationType=APPLY_CONNECT\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022My Customer\u0027s LinkedIn Apply Connect Integration\u0022\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample response"
+      ],
+      "Text": "A successful request will return a 200 OK response code, and you will find the status of each entity in the response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample response",
+        "Sample response body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationType=APPLY_CONNECT\u0026tenantType=JOBS\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A1234\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample response",
+        "Sample response body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample response body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 4: Sync customer integration",
+        "Sample response",
+        "Sample response body"
+      ],
+      "Text": "Check the response for error statuses corresponding to individual entities you submit.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

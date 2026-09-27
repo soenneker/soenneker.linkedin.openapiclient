@@ -14,6 +14,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The PageUrn3Ali3AorganizationalPage3A19096789TopicORGANIZATION_HOME property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHome? PageUrn3Ali3AorganizationalPage3A19096789TopicORGANIZATIONHOME { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHome PageUrn3Ali3AorganizationalPage3A19096789TopicORGANIZATIONHOME { get; set; }
+#endif
+        /// <summary>The PageUrn3Ali3AorganizationalPage3A2414183TopicORGANIZATION_HOME property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHome? PageUrn3Ali3AorganizationalPage3A2414183TopicORGANIZATIONHOME { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHome PageUrn3Ali3AorganizationalPage3A2414183TopicORGANIZATIONHOME { get; set; }
+#endif
         /// <summary>The PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCT_HIGHLIGHTS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +63,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "(page:urn%3Ali%3AorganizationalPage%3A19096789,topic:ORGANIZATION_HOME)", n => { PageUrn3Ali3AorganizationalPage3A19096789TopicORGANIZATIONHOME = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHome>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHome.CreateFromDiscriminatorValue); } },
+                { "(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:ORGANIZATION_HOME)", n => { PageUrn3Ali3AorganizationalPage3A2414183TopicORGANIZATIONHOME = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHome>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHome.CreateFromDiscriminatorValue); } },
                 { "(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:PRODUCT_HIGHLIGHTS)", n => { PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicProductHighlights>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicProductHighlights.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +75,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A19096789TopicOrganizationHome>("(page:urn%3Ali%3AorganizationalPage%3A19096789,topic:ORGANIZATION_HOME)", PageUrn3Ali3AorganizationalPage3A19096789TopicORGANIZATIONHOME);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicOrganizationHome>("(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:ORGANIZATION_HOME)", PageUrn3Ali3AorganizationalPage3A2414183TopicORGANIZATIONHOME);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseResultsPageUrn3Ali3AorganizationalPage3A2414183TopicProductHighlights>("(page:urn%3Ali%3AorganizationalPage%3A2414183,topic:PRODUCT_HIGHLIGHTS)", PageUrn3Ali3AorganizationalPage3A2414183TopicPRODUCTHIGHLIGHTS);
             writer.WriteAdditionalData(AdditionalData);
         }

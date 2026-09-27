@@ -1,0 +1,1566 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+  "Title": "Development Guide",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/experience-level-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-function-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-type-codes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Development Guide",
+      "Anchor": "development-guide",
+      "SectionPath": [],
+      "Text": "The LinkedIn XML feed contains the information required to ingest and post jobs on LinkedIn. To expedite your implementation process, as well as ensure the accuracy of your ingested jobs\u2019 details, create the XML feed in the below format:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating the XML Feed",
+      "Anchor": "creating-the-xml-feed",
+      "SectionPath": [
+        "Creating the XML Feed"
+      ],
+      "Text": "The XML feed contains two types of job elements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating the XML Feed",
+      "Anchor": "creating-the-xml-feed",
+      "SectionPath": [
+        "Creating the XML Feed"
+      ],
+      "Text": "Mandatory\nRecommended",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mandatory Fields",
+      "Anchor": "mandatory-fields",
+      "SectionPath": [
+        "Creating the XML Feed",
+        "Mandatory Fields"
+      ],
+      "Text": "Following is the list of fields that must be included on the Basic Jobs XML feed for the jobs to be considered as valid to be posted on LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mandatory Fields",
+      "Anchor": "mandatory-fields",
+      "SectionPath": [
+        "Creating the XML Feed",
+        "Mandatory Fields"
+      ],
+      "Text": "Job ID (your internal unique Job ID)\nCompany Name (only when posting to multiple company pages)\nJob Title\nJob Description\nLocation\nApply URL\nLinkedIn Company ID [Mandatory for Applicant Tracking Systems (ATSs)]\nJob Poster Email",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optional Field to Surface Internal-Only Jobs in LinkedIn Learning",
+      "Anchor": "optional-field-to-surface-internal-only-jobs-in-linkedin-learning",
+      "SectionPath": [
+        "Creating the XML Feed",
+        "Optional Field to Surface Internal-Only Jobs in LinkedIn Learning"
+      ],
+      "Text": "Customers who have purchased both LinkedIn Learning Hub and either LinkedIn Recruiter and/or Enterprise Jobs can add a new field: jobPostingAvailability - to their XML feeds in order to surface their internal-only jobs to employees searching for their next internal role on LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "This following table lists and describes the job fields supported by the Basic Jobs XML feed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "Fields that are not mandatory are recommended.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Field",
+        "Description",
+        "Mandatory",
+        "Value Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Last Build Date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "lastBuildDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Most recent feed generation timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Publisher URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "publisherURL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your public web presence",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Publisher",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "publisher",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Your company name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Expected Job Count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "expectedJobCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Expected job count for the next feed scrape",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Partner Job ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "partnerJobId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique ID used by the partner to reference the job within their own system",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (max. 40 chars)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name of the client (name of the employer). Only required when posting to multiple company pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, only when posting to multiple company pages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of the job. This field cannot be changed once the job is posted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of job responsibilities. Requires a minimum of 100 characters to be considered as valid. Accepts a limited set of HTML tags",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide?view=li-lts-2026-04#formatting-guidelines"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (min. 100 chars)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Apply URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "applyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to which candidates are directed to apply (typically the URL of the job on the client\u0027s website or ATS system)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL starting with \u0022https://www\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Company ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "companyId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client\u0027s company ID on LinkedIn. This can be found in the Admin URL for the LinkedIn Page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes (for ATSs)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer Steps to identify numeric CO ID",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/answer/a415420/associating-your-linkedin-company-id-with-the-linkedin-job-board-frequently-asked-questions?lang=en"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is a description of the job location. US locations - City, State (for example, \u0022San Francisco, CA\u0022) Non-US locations - City, Country/Region (for example, \u0022London, United Kingdom\u0022) LinkedIn automatically maps this to a country/region and postal code unless those fields are provided. If the job needs to be posted in multiple locations, please ensure to fill out the alternateLocations field with various cities/locations. When posting a job for multiple locations, please be sure to include all locations in the alternateLocations field. The presence of this field will override any information entered in the locations field. Note: If both the location field and one or more of city, state, or country are provided in the XML feed, the city, state, and country values take precedence in determining the job\u0027s target location. The location field value is ignored in this case.",
+            "Links": [],
+            "Values": [
+              "US locations - City, State (for example, \u0022San Francisco, CA\u0022)",
+              "Non-US locations - City, Country/Region (for example, \u0022London, United Kingdom\u0022)"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AlternateLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "alternateLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of alternate job locations. US locations - City, State (for example, \u201CSan Francisco, CA\u201D) Non-US locations - City, Country/Region (for example, \u201CLondon, United Kingdom\u201D) LinkedIn automatically maps this to a country/region and postal code unless those fields are provided. If the job needs to be posted in multiple locations, please ensure to fill out the alternateLocations field with various cities/locations with no more than seven values. The presence of the alternateLocations field in a job feed will override the value of the locations field",
+            "Links": [],
+            "Values": [
+              "US locations - City, State (for example, \u201CSan Francisco, CA\u201D)",
+              "Non-US locations - City, Country/Region (for example, \u201CLondon, United Kingdom\u201D)"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of alternateLocation elements",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "City",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "city",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "City of the job location (for example, \u0022San Francisco\u0022). Note: If both the location field and one or more of city, state, or country are provided in the XML feed, the city, state, and country values take precedence in determining the job\u0027s target location. The location field value is ignored in this case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, only if location is not provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "State",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State of the job location (for example, \u0022California\u0022). Note: If both the location field and one or more of city, state, or country are provided in the XML feed, the city, state, and country values take precedence in determining the job\u0027s target location. The location field value is ignored in this case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, only if location is not provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Country/region of the job location (for example, \u0022US\u0022). Note: If both the location field and one or more of city, state, or country are provided in the XML feed, the city, state, and country values take precedence in determining the job\u0027s target location. The location field value is ignored in this case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, only if location is not provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String Code from Country Codes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Postal Code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Postal code of the job location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Is Remote Job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "isRemote",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Will be sunset on November 1, 2022. All feeds should include the workplaceTypes field instead. Whether a job is hiring remote applicants or not. Location (city and country/region) is a mandatory field for Remote jobs. Available options are: Yes, No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Workplace types",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "workplaceTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the workplace nature of the job. Available options: On-site, Hybrid, Remote. Location is mandatory for workplaceTypes: City and country/region are mandatory for On-site and Hybrid jobs For US based On-site and Hybrid jobs, City and State fields are acceptable Remote jobs require either Country only, City and Country, or Country Cluster.",
+            "Links": [],
+            "Values": [
+              "City and country/region are mandatory for On-site and Hybrid jobs",
+              "For US based On-site and Hybrid jobs, City and State fields are acceptable",
+              "Remote jobs require either Country only, City and Country, or Country Cluster."
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String, On-site, Hybrid, Remote",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Industry Codes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "industryCodes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of industry codes for the company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of industryCode elements",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Industry Codes\u003E Industry Code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "industryCodes/ industryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents industries of this job or company. Industry IDs are predefined by LinkedIn and can be retrieved from Industry Codes reference table",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Numeric Industry ID from Industry Codes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Experience Level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Experience level of the job position to hire. Available options are: ENTRY_LEVEL, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE, INTERNSHIP, ASSOCIATE, NOT_APPLICABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String Code from Experience Level Codes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/experience-level-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Functions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of job functions for this job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of jobFunction elements",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Functions\u003E Job Function",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobFunctions/ jobFunction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents job functions specific to this job (for example, Accounting, Marketing, Sales). Category names are predefined by LinkedIn and can be retrieved from Job Functions Codes reference table",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String Code from Job Function Codes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-function-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobtype",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employment status of the job position. Available options are: FULL_TIME PART_TIME, CONTRACT, INTERNSHIP, VOLUNTEER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String Code from Job Type Codes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-type-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add skills that are relevant for the job (up to ten). Our system converts the skills into LinkedIn standardized skills. For example, if your skill reads MS Office, the system converts it to standardized LinkedIn skill Microsoft Office. You can find supported LinkedIn standardized skills in the Recruiter manual job posting flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of skill elements",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Salaries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "salaries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided salary for this job posting. Each \u003Csalary\u003E object under the \u003Csalaries\u003E list should represent a component of the total salary for the job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of salary elements",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Salaries \u003E Salary \u003E High End/Low End \u003E Amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "salaries/salary/ highEnd(lowEnd) /amount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value for the higher/lower end of the range of the salary for this job posting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Salaries \u003E Salary \u003E High End/Low End \u003E Currency Code",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "salaries/salary/ highEnd(lowEnd) /currencyCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The currency for the higher/lower end of the range of the salary for this job posting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String Code from Currency Codes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/currency-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Salaries \u003E Salary \u003E Period",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "salaries/ salary/period",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time period that this salary component is given at. Available options are: YEARLY, MONTHLY, SEMIMONTHLY, BIWEEKLY, WEEKLY, DAILY, HOURLY, ONCE (upper case required)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Salaries \u003E Salary \u003E Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "salaries/ salary/type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of this salary component. Available options are: BASE_SALARY, TOTAL_ADDITIONAL (upper case required)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "List Date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "listDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The day the job was first posted on LinkedIn (MM/DD/YYYY)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Expiration Date",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "expirationDate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The date on which the job is expected to close (MM/DD/YYYY)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Job Posting Availability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobPostingAvailability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the availability and visibility of a job. Default value will be PUBLIC if the field is not identified. Use INTERNAL flag for internal-only jobs. Available options are: PUBLIC, INTERNAL. Customers who have purchased both LinkedIn Learning Hub and either LinkedIn Recruiter and/or Enterprise Jobs can use this field to surface their internal-only jobs to employees on LinkedIn Learning.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Poster Email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "posterEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The email associated with the owner of the job posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Partner Requisition ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "partnerRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of the job requisition, used to link an Enterprise job posting with its associated job requisition when the requisition is synced through Recruiter System Connect. Required for RSC customers whose job requisitions are synced via API through the RSC integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No. Required for customers with RSC integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field Schema",
+      "Anchor": "job-posting-field-schema",
+      "SectionPath": [
+        "Job Posting Field Schema"
+      ],
+      "Text": "Job Poster Email :- Email associated with the owner of the job posting. LinkedIn\u0027s Jobs Trust \u0026 Safety team requires the email address to verify the business entity that posts the job. The usage of this info is as per LinkedIn\u0027s Privacy Policy.\nPartner Requisition ID :- The Partner Requisition ID links job postings sent to LinkedIn via XML with their corresponding job requisitions (sent via RSC). This ensures that when an RSC requisition is associated with an existing Enterprise Wrapped Job, duplicate Hiring Project creation is prevented when the requisition is used to create a Connected Project.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Remote and Workplace Type Fields",
+      "Anchor": "remote-and-workplace-type-fields",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Remote and Workplace Type Fields"
+      ],
+      "Text": "We will sunset the IsRemote field on November 1, 2022. The IsRemote field will be replaced by the workplaceTypes field with three new workplace types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Remote and Workplace Type Fields",
+      "Anchor": "remote-and-workplace-type-fields",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Remote and Workplace Type Fields"
+      ],
+      "Text": "On-site\nHybrid\nRemote",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Remote and Workplace Type Fields",
+      "Anchor": "remote-and-workplace-type-fields",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Remote and Workplace Type Fields"
+      ],
+      "Text": "Below are the minimum location requirements for these workplace types:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Remote and Workplace Type Fields",
+      "Anchor": "remote-and-workplace-type-fields",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Remote and Workplace Type Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Workplace Type",
+        "Minimum Location Requirements"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "On-site",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "City and Country",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Hybrid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "City and Country",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Remote",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State, Country or Country Cluster",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Remote and Workplace Type Fields",
+      "Anchor": "remote-and-workplace-type-fields",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Remote and Workplace Type Fields"
+      ],
+      "Text": "In the scenario IsRemote field is not removed from the XML feed by November 1, 2022, jobs marked Remote through the IsRemote field will be marked as Workplace Type as On-site by default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Formatting Guidelines",
+      "Anchor": "formatting-guidelines",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines"
+      ],
+      "Text": "When you provide job descriptions in XML, we expect you to use the same HTML formatting from your website. Include your formatting in CDATA tags.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Formatting Guidelines",
+      "Anchor": "formatting-guidelines",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Formatting Guidelines",
+      "Anchor": "formatting-guidelines",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines"
+      ],
+      "Text": "We do not support escaped HTML entities. For example, use \u003C instead of \u0026lt;",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Formatting Guidelines",
+      "Anchor": "formatting-guidelines",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines"
+      ],
+      "Text": "The following HTML tags are supported for description field. Other HTML tags will be stripped out, and their contents will be displayed as plain text.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Formatting Guidelines",
+      "Anchor": "formatting-guidelines",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines"
+      ],
+      "Text": "",
+      "Headers": [
+        "Tag",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "\u003Cb\u003E, \u003Cstrong\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bold/Strong",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cu\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Underline",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Ci\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "italic",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cbr\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Line Break",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cp\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paragraph",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cul\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unordered List",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cli\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ordered List",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cem\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Emphasized text(italics)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Using CDATA with HTML",
+      "Anchor": "using-cdata-with-html",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines",
+        "Using CDATA with HTML"
+      ],
+      "Text": "CDATA (Character Data) sections allow you to include HTML tags and special characters without XML escaping. Wrap your HTML-formatted content within \u003C![CDATA[ and ]]\u003E tags.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using CDATA with HTML",
+      "Anchor": "using-cdata-with-html",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines",
+        "Using CDATA with HTML"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Using CDATA with HTML",
+      "Anchor": "using-cdata-with-html",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines",
+        "Using CDATA with HTML"
+      ],
+      "Text": "\u003Cdescription\u003E\u003C![CDATA[\n\u003Cp\u003E\u003Cstrong\u003EAbout the Role:\u003C/strong\u003E\u003C/p\u003E\n\u003Cp\u003EWe are seeking a talented Software Engineer to join our team.\u003C/p\u003E\n\n\u003Cp\u003E\u003Cstrong\u003EResponsibilities:\u003C/strong\u003E\u003C/p\u003E\n\u003Cul\u003E\n\u003Cli\u003EDesign and develop scalable applications\u003C/li\u003E\n\u003Cli\u003ECollaborate with cross-functional teams\u003C/li\u003E\n\u003Cli\u003EWrite clean, maintainable code\u003C/li\u003E\n\u003C/ul\u003E\n\n\u003Cp\u003E\u003Cstrong\u003ERequirements:\u003C/strong\u003E\u003C/p\u003E\n\u003Cul\u003E\n\u003Cli\u003E5\u002B years of software development experience\u003C/li\u003E\n\u003Cli\u003EProficiency in Java or Python\u003C/li\u003E\n\u003Cli\u003EExperience with cloud platforms\u003C/li\u003E\n\u003C/ul\u003E\n]]\u003E\u003C/description\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using CDATA with HTML",
+      "Anchor": "using-cdata-with-html",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines",
+        "Using CDATA with HTML"
+      ],
+      "Text": "Key points:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using CDATA with HTML",
+      "Anchor": "using-cdata-with-html",
+      "SectionPath": [
+        "Job Posting Field Schema",
+        "Formatting Guidelines",
+        "Using CDATA with HTML"
+      ],
+      "Text": "Place \u003C![CDATA[ immediately after the opening tag and close with ]]\u003E before the closing tag\nDo not escape HTML inside CDATA (use \u003C not \u0026lt;)\nOnly use the supported HTML tags listed above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "XML Feed Considerations",
+      "Anchor": "xml-feed-considerations",
+      "SectionPath": [
+        "XML Feed Considerations"
+      ],
+      "Text": "LinkedIn recommends the following feed considerations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "XML Feed Considerations",
+      "Anchor": "xml-feed-considerations",
+      "SectionPath": [
+        "XML Feed Considerations"
+      ],
+      "Text": "Ensure all required fields are populated correctly\nEnsure Partner Job Id has a maximum length of 40 characters to be considered as valid\nEnsure job descriptions have a minimum of 100 characters to be considered as valid\nMinimize the number of expired jobs in your XML feed\nMinimize the number of duplicate jobs in your XML feed\nDo not use your company name or other job boards\u2019 company name in place of the name of the company that originally posted the job\nInclude maximum information about the location such as full name of cities and countries/regions. Providing only a city name can be ambiguous",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirement Considerations",
+      "Anchor": "requirement-considerations",
+      "SectionPath": [
+        "Requirement Considerations"
+      ],
+      "Text": "LinkedIn recommends the following requirement considerations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirement Considerations",
+      "Anchor": "requirement-considerations",
+      "SectionPath": [
+        "Requirement Considerations"
+      ],
+      "Text": "Do not have duplicate jobs in feeds\nDo not close and reopen jobs repeatedly\nDo not use redirecting URLs for jobs\nLinkedIn only accepts jobs that are directly posted by employers on your platform. Once the member clicks the \u0027Apply\u0027 button for these jobs on LinkedIn, they should be directly taken to the site where they can complete the application process. Ensure to exclude jobs from the feed that are aggregated from other third-party sites\nA feed can contain maximum 500K jobs. However, for feeds with 500k jobs or more (large partners):\n\nSplit jobs into several feeds based on country/region location\n\nDo not rotate jobs between feeds. Each feed should contain unique and consistent jobs to avoid having a job show on one feed today and later (or also) on another feed. Refer the below example of job rotation that may lead to errors at our end:\nExpand table\n\n\nDay\nSource\nJob ID\n\n\n\n\n1\npartition1\n123\n\n\n1\npartition2\n456\n\n\n2\npartition1\nNo Job ID with 123\n\n\n2\npartition2\n123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example XML Feed",
+      "Anchor": "example-xml-feed",
+      "SectionPath": [
+        "Example XML Feed"
+      ],
+      "Text": "Spider Name: Jobs_xml",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example XML Feed",
+      "Anchor": "example-xml-feed",
+      "SectionPath": [
+        "Example XML Feed"
+      ],
+      "Text": "\u003C?xml version=\u00221.0\u0022 encoding=\u0022UTF-8\u0022?\u003E\n\u003Csource\u003E\n    \u003ClastBuildDate\u003EThu, 11 Sep 2014 19:39:59 GMT\u003C/lastBuildDate\u003E\n    \u003CpublisherUrl\u003E[https://www.linkedin.com%3c/publisherUrl%3e]https://www.linkedin.com\u003C/publisherUrl\u003E\n    \u003Cpublisher\u003ELinkedIn\u003C/publisher\u003E\n   \u003CexpectedJobCount\u003E\u003C![CDATA[5596]]\u003E\u003C/expectedJobCount\u003E\n    \u003Cjob\u003E\n        \u003CpartnerJobId\u003E\u003C![CDATA[12345]]\u003E\u003C/partnerJobId\u003E\n        \u003Ccompany\u003E\u003C![CDATA[LinkedIn]]\u003E\u003C/company\u003E\n        \u003Ctitle\u003E\u003C![CDATA[Staff Software Engineer - Applications]]\u003E\u003C/title\u003E\n        \u003Cdescription\u003E\u003C![CDATA[LinkedIn was built to help professionals achieve more in their careers, and every day millions of people use our products to make connections, discover opportunities and gain insights. Our global reach means we get to make a direct impact on the world\u2019s workforce in ways no other company can. ... ]]\u003E\u003C/description\u003E\n        \u003Cindustry\u003E\u003C![CDATA[Internet,Information Technology and Services]]\u003E\u003C/industry\u003E\n        \u003CapplyUrl\u003E\u003C![CDATA[https://www.linkedin.com/jobs/view/1234?trk=linkedin]]\u003E\u003C/applyUrl\u003E\n        \u003CcompanyId\u003E\u003C![CDATA[xxxx]]\u003E\u003C/companyId\u003E\n        \u003Clocation\u003E\u003C![CDATA[Sunnyvale, CA, US]]\u003E\u003C/location\u003E\n        \u003CalternateLocations\u003E\n           \u003CalternateLocation\u003E\u003C![CDATA[Mumbai,IN]]\u003E\u003C/alternateLocation\u003E\n           \u003CalternateLocation\u003E\u003C![CDATA[Delhi,IN]]\u003E\u003C/alternateLocation\u003E\n           \u003CalternateLocation\u003E\u003C![CDATA[Bengaluru,IN]]\u003E\u003C/alternateLocation\u003E\n        \u003C/alternateLocations\u003E\n        \u003Ccity\u003E\u003C![CDATA[Sunnyvale]]\u003E\u003C/city\u003E\n        \u003Cstate\u003E\u003C![CDATA[CA]]\u003E\u003C/state\u003E\n        \u003Ccountry\u003E\u003C![CDATA[US]]\u003E\u003C/country\u003E\n        \u003CpostalCode\u003E\u003C![CDATA[94085]]\u003E\u003C/postalCode\u003E\n        \u003CindustryCodes\u003E\n            \u003CindustryCode\u003E\u003C![CDATA[120]]\u003E\u003C/industryCode\u003E\n\u003CindustryCode\u003E\u003C![CDATA[125]]\u003E\u003C/industryCode\u003E\n        \u003C/industryCodes\u003E\n        \u003CjobFunctions\u003E\n            \u003CjobFunction\u003E\u003C![CDATA[eng]]\u003E\u003C/jobFunction\u003E\n            \u003CjobFunction\u003E\u003C![CDATA[it]]\u003E\u003C/jobFunction\u003E\n        \u003C/jobFunctions\u003E\n        \u003CexperienceLevel\u003E\u003C![CDATA[MID_SENIOR_LEVEL]]\u003E\u003C/experienceLevel\u003E\n        \u003Cjobtype\u003E\u003C![CDATA[FULL_TIME]]\u003E\u003C/jobtype\u003E\n        \u003Cskills\u003E\n            \u003Cskill\u003E\u003C![CDATA[Java]]\u003E\u003C/skill\u003E\n            \u003Cskill\u003E\u003C![CDATA[Python]]\u003E\u003C/skill\u003E\n            \u003Cskill\u003E\u003C![CDATA[Oracle]]\u003E\u003C/skill\u003E\n            \u003Cskill\u003E\u003C![CDATA[SQL]]\u003E\u003C/skill\u003E\n        \u003C/skills\u003E\n        \u003Csalaries\u003E\n            \u003Csalary\u003E\n                \u003ChighEnd\u003E\n                    \u003Camount\u003E\u003C![CDATA[100000]]\u003E\u003C/amount\u003E\n                    \u003CcurrencyCode\u003E\u003C![CDATA[USD]]\u003E\u003C/currencyCode\u003E\n                \u003C/highEnd\u003E\n                \u003ClowEnd\u003E\n                    \u003Camount\u003E\u003C![CDATA[50000]]\u003C/amount\u003E\n                    \u003CcurrencyCode\u003E\u003C![CDATA[USD]]\u003E\u003C/currencyCode\u003E\n                \u003C/lowEnd\u003E\n                \u003Cperiod\u003E\u003C![CDATA[YEARLY]]\u003E\u003C/period\u003E\n                \u003Ctype\u003E\u003C![CDATA[BASE_SALARY]]\u003E\u003C/type\u003E\n            \u003C/salary\u003E\n        \u003C/salaries\u003E\n        \u003CworkplaceTypes\u003E\u003C![CDATA[On-site]]\u003E\u003C/workplaceTypes\u003E\n        \u003CjobPostingAvailability\u003E\u003C![CDATA[PUBLIC]]\u003E\u003C/jobPostingAvailability\u003E\n        \u003ClistDate\u003E\u003C![CDATA[08/28/2023]]\u003E\u003C/listDate\u003E\n        \u003CexpirationDate\u003E\u003C![CDATA[09/28/2023]]\u003E\u003C/expirationDate\u003E\n        \u003CposterEmail\u003E\u003C![CDATA[recruiter@linkedin.com]]\u003E\u003C/posterEmail\u003E\n    \u003C/job\u003E\n    \u003Cjob\u003E\n    ...\n    \u003C/job\u003E\n\u003C/source\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Referenced Links",
+      "Anchor": "referenced-links",
+      "SectionPath": [
+        "Referenced Links"
+      ],
+      "Text": "Country Code\nIndustry Codes\nJob Function Codes\nCurrency Codes\nExperience Level Code\nJob Type Codes\nRetrieving a LinkedIn Company ID: https://www.linkedin.com/help/linkedin/answer/a415420",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Referenced Links",
+      "Anchor": "referenced-links",
+      "SectionPath": [
+        "Referenced Links"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Referenced Links",
+      "Anchor": "referenced-links",
+      "SectionPath": [
+        "Referenced Links"
+      ],
+      "Text": "Ensure that the Company IDs are validated before being sent on the XML feed. Once ingested, it can only be updated if a new Company ID is updated on the feed for the same employer.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

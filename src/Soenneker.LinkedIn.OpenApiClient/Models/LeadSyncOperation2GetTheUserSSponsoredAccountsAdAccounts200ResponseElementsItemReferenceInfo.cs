@@ -7,13 +7,40 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Information about the entity associated with the reference. If the entity is an organization, an Organizationinfo object is returned. If the entity is a person, a Personinfo object is returned. For all other entity types an empty record will be returned. This is a read only field. Please refer to Additional Info Fields to learn how to access this field.Documented type: UnionRequirement: False
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Unique ID representing the organization.Documented type: long</summary>
+        public long? Id { get; set; }
+        /// <summary>Locale specific name of the organization.Documented type: string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LocalizedName { get; set; }
+#nullable restore
+#else
+        public string LocalizedName { get; set; }
+#endif
+        /// <summary>The organization’s logo. The sizes may vary greatly, i.e., 50x50, 100x60, 400x400, so clients should handle the given height and width accordingly.Documented type: CroppedImage</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoLogo? Logo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoLogo Logo { get; set; }
+#endif
+        /// <summary>Name of the organization.Documented type: MultiLocaleString</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoName? Name { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoName Name { get; set; }
+#endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +48,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoOrganization Organization { get; set; }
+#endif
+        /// <summary>Name of the organization present in the URLs.Documented type: string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VanityName { get; set; }
+#nullable restore
+#else
+        public string VanityName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfo"/> and sets the default values.
@@ -47,7 +82,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
+                { "logo", n => { Logo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoLogo>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoLogo.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoName>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoName.CreateFromDiscriminatorValue); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoOrganization>(global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoOrganization.CreateFromDiscriminatorValue); } },
+                { "vanityName", n => { VanityName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +97,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteLongValue("id", Id);
+            writer.WriteStringValue("localizedName", LocalizedName);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoLogo>("logo", Logo);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LeadSyncOperation2GetTheUserSSponsoredAccountsAdAccounts200ResponseElementsItemReferenceInfoOrganization>("organization", Organization);
+            writer.WriteStringValue("vanityName", VanityName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

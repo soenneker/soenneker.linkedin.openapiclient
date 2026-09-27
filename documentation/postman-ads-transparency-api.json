@@ -1,0 +1,57 @@
+{
+  "info": {
+    "_postman_id": "b4abea55-526a-462f-b4cd-ee1ef25cb7d6",
+    "name": "Ads Transparency API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "9b5286db-ffa7-493d-8881-4f8f48916a85",
+      "name": "Advertiser Transparency Data",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "header": [
+          {
+            "key": "LinkedIn-Version",
+            "type": "text",
+            "value": "{{insert_version}}"
+          },
+          {
+            "key": "X-Restli-Protocol-Version",
+            "type": "text",
+            "value": "2.0.0"
+          },
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "{{insert_token}}"
+          }
+        ],
+        "method": "GET",
+        "url": {
+          "host": [
+            "api",
+            "linkedin",
+            "com"
+          ],
+          "path": [
+            "rest",
+            "advertiserTransparencyData",
+            "urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}"
+          ],
+          "protocol": "https",
+          "query": [
+            {
+              "key": "month",
+              "value": "202312"
+            }
+          ],
+          "raw": "https://api.linkedin.com/rest/advertiserTransparencyData/urn%3Ali%3AsponsoredAccount%3A{{sponsoredaccount_id}}?month=202312"
+        }
+      },
+      "response": []
+    }
+  ]
+}

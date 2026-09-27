@@ -17,22 +17,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The directSponsoredContent property</summary>
         public bool? DirectSponsoredContent { get; set; }
         /// <summary>The durationMicro property</summary>
-        public int? DurationMicro { get; set; }
+        public long? DurationMicro { get; set; }
         /// <summary>The mediaAsset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset? MediaAsset { get; set; }
+        public string? MediaAsset { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset MediaAsset { get; set; }
+        public string MediaAsset { get; set; }
 #endif
         /// <summary>The mediaAsset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset? ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get; set; }
 #nullable restore
 #else
-        public string ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset { get; set; }
 #endif
         /// <summary>The userGeneratedContentPost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,9 +76,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "directSponsoredContent", n => { DirectSponsoredContent = n.GetBoolValue(); } },
-                { "durationMicro", n => { DurationMicro = n.GetIntValue(); } },
-                { "mediaAsset~", n => { MediaAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset.CreateFromDiscriminatorValue); } },
-                { "mediaAsset", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = n.GetStringValue(); } },
+                { "durationMicro", n => { DurationMicro = n.GetLongValue(); } },
+                { "mediaAsset", n => { MediaAsset = n.GetStringValue(); } },
+                { "mediaAsset~", n => { ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset.CreateFromDiscriminatorValue); } },
                 { "userGeneratedContentPost", n => { UserGeneratedContentPost = n.GetStringValue(); } },
                 { "videoAspectRatio", n => { VideoAspectRatio = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio>(global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio.CreateFromDiscriminatorValue); } },
             };
@@ -91,9 +91,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("directSponsoredContent", DirectSponsoredContent);
-            writer.WriteIntValue("durationMicro", DurationMicro);
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset>("mediaAsset~", MediaAsset);
-            writer.WriteStringValue("mediaAsset", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset);
+            writer.WriteLongValue("durationMicro", DurationMicro);
+            writer.WriteStringValue("mediaAsset", MediaAsset);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset>("mediaAsset~", ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesMediaAsset);
             writer.WriteStringValue("userGeneratedContentPost", UserGeneratedContentPost);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ReportingRoiByCreativeCampaignWithCreativeTypeStatusCampaignNameTypeStatusCampaignGroupProjection200ResponseElementsItemPivotValueVariablesDataComLinkedinAdsSponsoredVideoCreativeVariablesVideoAspectRatio>("videoAspectRatio", VideoAspectRatio);
             writer.WriteAdditionalData(AdditionalData);

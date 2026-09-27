@@ -1,0 +1,489 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+  "Title": "LinkedIn Learning SSO Multiple Authentication (Multi-Auth) Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/lti-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-google",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps illustrate the LinkedIn Learning SSO multiple authentication process flow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Multiple Authentication Overview",
+      "Anchor": "sso-multiple-authentication-overview",
+      "SectionPath": [
+        "SSO Multiple Authentication Overview"
+      ],
+      "Text": "LinkedIn Learning now supports multiple authentication methods for users. If you are a new user/admin integrating with LinkedIn Learning, you can allow learners to authenticate using one authentication method, like SSO, and allow other learners to authenticate using other authentication methods, like email and password, LTI, or a secondary SSO connection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Multiple Authentication Overview",
+      "Anchor": "sso-multiple-authentication-overview",
+      "SectionPath": [
+        "SSO Multiple Authentication Overview"
+      ],
+      "Text": "This guide walks you through the various authentication methods available during your integration, how to configure them, and how to manage the preferred authentication method for each user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Multiple Authentication Methods?",
+      "Anchor": "what-are-multiple-authentication-methods",
+      "SectionPath": [
+        "What are Multiple Authentication Methods?"
+      ],
+      "Text": "LinkedIn Learning uses authentication methods to determine whether a learner should have access to its platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Multiple Authentication Methods?",
+      "Anchor": "what-are-multiple-authentication-methods",
+      "SectionPath": [
+        "What are Multiple Authentication Methods?"
+      ],
+      "Text": "Authentication methods can be SAML Single Sign-On, LTI, or Non-SSO (username and password).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Multiple Authentication Methods?",
+      "Anchor": "what-are-multiple-authentication-methods",
+      "SectionPath": [
+        "What are Multiple Authentication Methods?"
+      ],
+      "Text": "Multi-authentication means that an organization can use a combination of authentication methods based on their needs. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Multiple Authentication Methods?",
+      "Anchor": "what-are-multiple-authentication-methods",
+      "SectionPath": [
+        "What are Multiple Authentication Methods?"
+      ],
+      "Text": "Okta (SAML SSO) \u002B Ping (SAML SSO)\n\nOkta \u002B Email Domain Verification\n\nOkta \u002B LTI \u002B Email Domain Verification\n\nOkta \u002B Manual User Upload\n\nOkta \u002B Ping \u002B Email invitation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Multiple Authentication Methods?",
+      "Anchor": "what-are-multiple-authentication-methods",
+      "SectionPath": [
+        "What are Multiple Authentication Methods?"
+      ],
+      "Text": "There are three possible authentication scenarios for using multiple authentication methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Multiple Authentication Methods?",
+      "Anchor": "what-are-multiple-authentication-methods",
+      "SectionPath": [
+        "What are Multiple Authentication Methods?"
+      ],
+      "Text": "\u0022I want one SSO connection, and I want it to apply to everyone\u0022.\n\u0022I want one SSO connection, but some people won\u0027t be using SSO\u0022.\n\u0022I want multiple SSO connections, with some people going to one and some going to another\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-on",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Single Sign-on"
+      ],
+      "Text": "LinkedIn Learning currently supports two types of Single Sign-on, SAML 2.0, and LTI (1.0 and 1.1).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add a SAML SSO Connection",
+      "Anchor": "add-a-saml-sso-connection",
+      "SectionPath": [
+        "Single Sign-on",
+        "Add a SAML SSO Connection"
+      ],
+      "Text": "To set up multiple authentication methods, you first need to configure a Single Sign-on connection. To configure a SSO, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add a SAML SSO Connection",
+      "Anchor": "add-a-saml-sso-connection",
+      "SectionPath": [
+        "Single Sign-on",
+        "Add a SAML SSO Connection"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Me \u003E Authentication.\n\n\nFrom the side navigation menu, select Configure single sign-on and click Add new SSO.\n\n\nSelect an SSO method (in this case, \u0022SAML\u0022).\n\n\nIn the Authenticate users with SAML SSO screen, enter a name for your SSO connection and click Next.\n\nFor detailed information, review our LinkedIn Learning SSO Implementation Guide.\n\nToggle the connection status to \u0022Active\u0022.\n\nAfter setting up your SSO connection, under SSO Default Override, select \u0022None (Default)\u0022 if you plan to give users access to your learning platform outside of SSO. This action allows the admin to choose which users must authenticate via SSO and which users must authenticate via Email Domain Verification or email invitation (manual user upload).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add an LTI Connection",
+      "Anchor": "add-an-lti-connection",
+      "SectionPath": [
+        "Single Sign-on",
+        "Add an LTI Connection"
+      ],
+      "Text": "To add an LTI SSO connection, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add an LTI Connection",
+      "Anchor": "add-an-lti-connection",
+      "SectionPath": [
+        "Single Sign-on",
+        "Add an LTI Connection"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Me \u003E Authentication.\n\n\nFrom the side navigation menu, select Configure single sign-on and click Add new SSO.\n\nClick on Add new SSO and choose \u0022LTI\u0022.\n\n\nGive the SSO connection a name. Do not include spaces or special characters.\n\nToggle Enable automatic role provisioning for instructors to \u0022On\u0022 if you wish to automatically provision sub-admin permissions for instructors.\n\nIn the External ID Parameter Name drop down, select the parameter you would like to use to identify users. If you are unsure which value to use, leave \u0022User ID\u0022.\n\n Important\nThe configured \u0022User ID\u0022 value must match the value your LMS sends to LinkedIn Learning. If the values do not match, you run the risk of creating duplicate profiles. If you do not know what value to select, contact your LinkedIn Learning Customer Success Manager.\n\n\nIf your LMS supports Tool Provider-initiated authentication, enter your SP-initiated redirect URL. If you do not know which URL to use, leave the field blank.\n\nClick Generate Keys. You need this information enter into your Learning Management System.\n\n\nToggle the connection status to \u0022Active\u0022. For more information on adding an LTI connection during your integration process, review the LinkedIn Learning LTI Implementation Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Additional SAML or LTI SSO Connections",
+      "Anchor": "add-additional-saml-or-lti-sso-connections",
+      "SectionPath": [
+        "Single Sign-on",
+        "Add Additional SAML or LTI SSO Connections"
+      ],
+      "Text": "Repeat the steps above to add additional SSO connections as needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create your SSO Launch URL",
+      "Anchor": "create-your-sso-launch-url",
+      "SectionPath": [
+        "Single Sign-on",
+        "Create your SSO Launch URL"
+      ],
+      "Text": "When using multiple SAML SSO connections, you may want to create a unique Service Provider-initiated URL for each connection. You can use this URL to provide SSO users quick access to LinkedIn Learning. To configure a SSO launch URL, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create your SSO Launch URL",
+      "Anchor": "create-your-sso-launch-url",
+      "SectionPath": [
+        "Single Sign-on",
+        "Create your SSO Launch URL"
+      ],
+      "Text": "Locate your Account ID from the URL in the browser. Example: https://www.linkedin.com/learning-admin/settings/global?account=2108666\n\nLocate the SSO Connection name that you configured when setting up the connection.\n\nTo create the SP-initiated URL, use the following format:\n\u003Chttps://www.linkedin.com/checkpoint/enterprise/login/accountid/?application=learning\u0026authModeName=/SSO_Connection_Name/\u003E\nExample: \u003Chttps://www.linkedin.com/checkpoint/enterprise/login/2108666?application=learning\u0026authModeName=OneLogin-Attribute_test\u003E\nYou can use the SP-initiated URL to activate new users if you enable automatic license provisioning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create your SSO Launch URL",
+      "Anchor": "create-your-sso-launch-url",
+      "SectionPath": [
+        "Single Sign-on",
+        "Create your SSO Launch URL"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create your SSO Launch URL",
+      "Anchor": "create-your-sso-launch-url",
+      "SectionPath": [
+        "Single Sign-on",
+        "Create your SSO Launch URL"
+      ],
+      "Text": "If you change the name of the SSO connection, the SSO URL will not work.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose a Default SSO",
+      "Anchor": "choose-a-default-sso",
+      "SectionPath": [
+        "Single Sign-on",
+        "Choose a Default SSO"
+      ],
+      "Text": "You can configure as many SSO connections as you need, but only one SSO can act as the default connection. If you are integrating LinkedIn Learning content into a Learning Management System, the default SSO connection is used for all course launches.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose a Default SSO",
+      "Anchor": "choose-a-default-sso",
+      "SectionPath": [
+        "Single Sign-on",
+        "Choose a Default SSO"
+      ],
+      "Text": "To specify a default, identify which SSO connection should be used and select Set as default.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose a Default SSO",
+      "Anchor": "choose-a-default-sso",
+      "SectionPath": [
+        "Single Sign-on",
+        "Choose a Default SSO"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Choose a Default SSO",
+      "Anchor": "choose-a-default-sso",
+      "SectionPath": [
+        "Single Sign-on",
+        "Choose a Default SSO"
+      ],
+      "Text": "When using both SAML SSO and LTI, do not set LTI as the default authentication method. LTI does not always support SP-initiated logins and using LTI as the default can break the other authentication methods used on the account. Doing so also leaves the user no option but to log in from the LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Domain Verification",
+      "Anchor": "email-domain-verification",
+      "SectionPath": [
+        "Single Sign-on",
+        "Email Domain Verification"
+      ],
+      "Text": "Email domain verification allows you to specify approved email domains so learners can register themselves without needing to be manually added by an admin. Once you enable email domain verification, users can self-activate their SSOs using their work email or organization address. They receive an activation email and are either routed through SSO or prompted to create a password if SSO for domain verification is set to \u0022No\u0022. To enable email domain verification, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Email Domain Verification",
+      "Anchor": "email-domain-verification",
+      "SectionPath": [
+        "Single Sign-on",
+        "Email Domain Verification"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Me \u003E Authenticate.\n\n\nFrom the side navigation menu, select Automate user management and expand Configure Email Domain Verification.\n\nClick Add email domain.\n\n\nIn the Add a new email domain screen, enter your email domain name (amd sub-domain names, if applicable).\n\nIn the SSO for domain verification drop down, select \u0022No\u0022 if you plan to activate your SSO connection via email (see above). Otherwise, select the authentication method you have chosen.\n\nClick Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing User Authentication Methods",
+      "Anchor": "managing-user-authentication-methods",
+      "SectionPath": [
+        "Managing User Authentication Methods"
+      ],
+      "Text": "You can specify the authentication method for users individually or in bulk via a CSV.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User List CSV Management",
+      "Anchor": "user-list-csv-management",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "User List CSV Management"
+      ],
+      "Text": "You can use the User List to edit the authentication method for groups of users in bulk. To manage learner authentication via User List CSV management, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User List CSV Management",
+      "Anchor": "user-list-csv-management",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "User List CSV Management"
+      ],
+      "Text": "From the LinkedIn Learning Admin settings, select People \u003E Users.\n\n\nSelect Manage users \u003E Download \u003E All users.\n\n\nIn the Customize fields to include in your CSV download of all users screen, add \u0022Authentication method\u0022 in the Default attributes field.\n\nClick Download CSV.\n\n\nOpen the downloaded CSV file.\n\nUse the \u0022authentication_method\u0022 column to choose which authentication method each learner should use.\n\n\nBased on the names you created for each SSO connection in steps 1-3, fill in the \u0022authentication_method\u0022 column for each learner with the SSO connection name.\n\nIf you leave a cell blank, that learner must use the default SSO connection you configured.\nEnter \u0022no_sso\u0022 for any users who activate via an email invitation or email domain verification.\n\n\nSave the updated CSV to your computer.\n\nReturn to the People tab and select Users \u003E Add new users \u003E Add users by CSV.\n\n\nIn the Add users by CSV screen, select Upload CSV.\n\n\nIn the Upload users via CSV screen, click Upload from computer.\n\nSelect the CSV file and click Upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Individual User Management",
+      "Anchor": "individual-user-management",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "Individual User Management"
+      ],
+      "Text": "To manage an individual user\u2019s authentication method, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Individual User Management",
+      "Anchor": "individual-user-management",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "Individual User Management"
+      ],
+      "Text": "From the LinkedIn Learning Admin settings, select People \u003E Users.\n\n\nSelect the filters you want to use to find the user, or search by user name.\n\n\nSelect the Authentication Type drop down and choose the user\u0027s (new) authentication method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding New Users by Email",
+      "Anchor": "adding-new-users-by-email",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "Adding New Users by Email"
+      ],
+      "Text": "When adding new users via email, you can set their authentication method. To add users by email, take the following steps",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding New Users by Email",
+      "Anchor": "adding-new-users-by-email",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "Adding New Users by Email"
+      ],
+      "Text": "In the People tab, select Users \u003E Add new users \u003E Add users by email.\n\n\nIn the Add users by email screen, enter the user\u2019s email address in the Add Users field.\n\nUnder Authentication Type, select the user\u0027s preferred authentication method.\n\nClick Confirm. The system sends the user an activation email to log in directly or via the selected SSO method.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Adding New Users by Email",
+      "Anchor": "adding-new-users-by-email",
+      "SectionPath": [
+        "Managing User Authentication Methods",
+        "Adding New Users by Email"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via multiple SSO authentication methods.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "SSO Implementation Guide\n\nADFS SSO\n\nGoogle SSO\n\nLTI Implementation\n\nOkta SSO\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with your multiple SSO configuration, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Support",
+        "Questions"
+      ],
+      "Text": "If you need further support, please contact your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Support",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

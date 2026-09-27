@@ -1,0 +1,645 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+  "Title": "LinkedIn Learning HTTPS Org Sync",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Learning HTTPS Org Sync",
+      "Anchor": "linkedin-learning-https-org-sync",
+      "SectionPath": [],
+      "Text": "This document provides information about automated org sync. The org sync process involves adding your employee data to LinkedIn Learning and the automatic updating or modifying of that data in your HR system. The focus of the workflow is how to automate the uploading of CSV files via HTTPS org sync.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the process for org sync via HTTPS:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "Please feel free to take a few minutes to review how to add learner data to LinkedIn Learning via manual and automated methods.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits",
+      "Anchor": "benefits",
+      "SectionPath": [
+        "Benefits"
+      ],
+      "Text": "LinkedIn Learning customers benefit from our automated org sync via HTTPS in the following ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits",
+      "Anchor": "benefits",
+      "SectionPath": [
+        "Benefits"
+      ],
+      "Text": "Save time - Org sync lets you spend less time on manual uploads to manage users and groups. This enhancement allows you to assign courses to custom groups and automatically revoke licenses when learners leave your organization.\n\nMeasure value - Org sync allows you to slice and dice reports based on employee attributes, and update attributes in real time. This functionality gives you enhanced abilities to tell your organization\u0027s ROI story to its stakeholders.\n\nDrive engagement - Org sync gives you the power to drive engagement by sending you relevant content notifications and recommendations. You can notify colleagues when employees like, share, and complete courses and learning paths. You also can target learners by course relevance to department, team, or job title.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "To automate org sync in your organization, you need the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "A HRIS system\n\nFull LinkedIn Learning admin privileges",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accessing the Account Center",
+      "Anchor": "accessing-the-account-center",
+      "SectionPath": [
+        "Accessing the Account Center"
+      ],
+      "Text": "In the LinkedIn Learning Account Center, you can manage learner data, curate content, and gain learner progress insights.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automating Employee Data Integration",
+      "Anchor": "automating-employee-data-integration",
+      "SectionPath": [
+        "Automating Employee Data Integration"
+      ],
+      "Text": "Take a few minutes to review how to format your bulk CSV and license headers in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automating Employee Data Integration",
+      "Anchor": "automating-employee-data-integration",
+      "SectionPath": [
+        "Automating Employee Data Integration"
+      ],
+      "Text": "To automate employee data integration, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV over HTTPS",
+      "Anchor": "upload-your-csv-over-https",
+      "SectionPath": [
+        "Upload your CSV over HTTPS"
+      ],
+      "Text": "Get your authorization token.\n\nAfter you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the left-hand navigation menu, select Automatic user management panel and expand Create OAuth Access Tokens.\n\n\n\nFill in each field and click Generate token. You should see your access token pop up in the Access Token field.\n\n\n\nClick Copy to clipboard and save your access token to your clipboard or computer before leaving the page. You will not be able to view this token again.\n\n\n\nView your configuration to ensure you have generated the token.\n\n\n\nUpload your CSV file to LinkedIn servers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV over HTTPS",
+      "Anchor": "upload-your-csv-over-https",
+      "SectionPath": [
+        "Upload your CSV over HTTPS"
+      ],
+      "Text": "There are two modes you can use to upload the file:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV over HTTPS",
+      "Anchor": "upload-your-csv-over-https",
+      "SectionPath": [
+        "Upload your CSV over HTTPS"
+      ],
+      "Text": "Automatic mode: Once you upload your CSV, it starts processing automatically and the results file will be emailed to you.\n\nManual mode: After you upload the file, you must manually trigger the processing. You can use this mode to track the file processing progress and retrieve the results programmatically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Notes",
+      "Anchor": "notes",
+      "SectionPath": [
+        "Upload your CSV over HTTPS",
+        "Notes"
+      ],
+      "Text": "\u003COAUTH_TOKEN\u003E should always be replaced with the token generated from Step 1.\n\n\u003C/path/to/upload.csv\u003E should always be replaced with the file path to your CSV file.\n\nMake sure your LinkedIn Learning CSV file follows the correct format.\n\nEnsure values in brackets (\u003C\u003E), such as \u003CCSV_FILE_HASH\u003E, \u003CJOB_ID\u003E, \u003COAUTH_TOKEN\u003E, \u003CRESULT_FILE_HASH\u003E, and so on, are specific to your input and expected response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automatic Mode",
+      "Anchor": "automatic-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Automatic Mode"
+      ],
+      "Text": "Run this command:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Automatic Mode",
+      "Anchor": "automatic-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Automatic Mode"
+      ],
+      "Text": "curl -H \u0027Content-Type: multipart/form-data\u0027 -H\n\u0027Authorization: Bearer \u003COAUTH_TOKEN\u003E\u0027 --form\n\u0027file=@\u003C/path/to/upload.csv\u003E;type=text/csv\u0027 -X POST\n\u0022https://api.linkedin.com/media/upload?media_type=enterprise_csv_upload\u0026auto_notify=true\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automatic Mode",
+      "Anchor": "automatic-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Automatic Mode"
+      ],
+      "Text": "Expected response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Automatic Mode",
+      "Anchor": "automatic-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Automatic Mode"
+      ],
+      "Text": "HTTP/1.1 201 Created\n\n{\n\n\u0022location\u0022: \u0022urn:li:media: \u003CCSV_FILE_HASH\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Run this command:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "curl -H \u0027Content-Type: multipart/form-data\u0027 -H\n\u0027Authorization: Bearer \u003COAUTH_TOKEN\u003E\u0027 --form\n\u0027file=@\u003C/path/to/upload.csv\u003E;type=text/csv\u0027 -X POST\n\u0022https://api.linkedin.com/media/upload?media_type=enterprise_csv_upload\u0026auto_notify=false\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Expected response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "HTTP/1.1 201 Created\n\n{\n\n\u0022location\u0022: \u0022urn:li:media: \u003CCSV_FILE_HASH\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Process the file:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Copy the returned \u003CCSV_FILE_HASH\u003E value to your clipboard.\n\nStart processing your file by running this command:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer \u003COAUTH_TOKEN\u003E\u0027 -H\n\u0027Content-Type: application/json\u0027 -X POST\n\u0022https://api.linkedin.com/v2/enterpriseUploadJobs?action=processFile\u0022 --data\u0027{\u0022mediaUrn\u0022:\u0022urn:li:media: \u003CCSV_FILE_HASH\u003E\u0022} \u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Note: Replace \u003CCSV_FILE_HASH\u003E with the urn:li:media: token you get in the response after running the curl command in the prior step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Expected response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "HTTP/1.1 201 Created\n\n{\n\n\u0022value\u0022: \u0022\u003CJOB_ID\u003E\u0022\n\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Track the processing job (optional):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Copy the returned \u003CJOB_ID\u003E value to your clipboard.\n\nGet updates to the job processing using this command:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer \u003COAUTH_TOKEN\u003E\u0027 -X GET \u0022\u003Chttps://api.linkedin.com/v2/enterpriseUploadJobs/[JOB_ID\u003E]\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Replace \u003CJOB_ID\u003E with the value you get in the response after running the command in the prior step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "Expected response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Manual Mode",
+      "Anchor": "manual-mode",
+      "SectionPath": [
+        "Linux-Specific Instructions",
+        "Manual Mode"
+      ],
+      "Text": "{\n    \u0022resultStats\u0022: {\n        \u0022updatedCount\u0022: 1,\n        \u0022deletedCount\u0022: 0,\n        \u0022warningCount\u0022: 0,\n        \u0022totalCount\u0022: 0,\n        \u0022errorCount\u0022: 0\n} ,\n    \u0022created\u0022: 1466552257141,\n    \u0022sourceMedia\u0022: \u0022urn:li:media:SRC_FILE_HASH\u0022,\n    \u0022messages\u0022: [...],\n    \u0022lastModified\u0022: 1466552257141,\n    \u0022Id\u0022: JOB_ID,\n    \u0022resultMedia\u0022: \u0022urn:li:media: \u003CRESULT_FILE_HASH\u003E\u0022,\n    \u0022status\u0022: \u0022DONE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Define the following parameters:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "$uri = \u0022https://api.linkedin.com/media/upload?media_type=enterprise_csv_upload\u0026auto_notify=true\u0022\n$AuthHeader = @{\u0027Authorization\u0027 = \u0027Bearer  \u003CAuth token\u003E \u0027}\n$boundary = [System.Guid]::NewGuid().ToString()\n\n$filePath = \u0022\u003CFile path\u003E\u0022\n$fileContent = [System.IO.File]::ReadAllText($filePath)\n$LF=\u0022\u0060r\u0060n\u0022\n$bodyLines = -join @(\u0022------$boundary$LF\u0022,\n\u0022Content-Disposition: form-data; name=\u0060\u0022uploadedfile\u0060\u0022; filename=\u0060\u0022AccountCenterImport.csv\u0060\u0022$LF\u0022,\n\u0022Content-Type: text/csv$LF$LF\u0022,\n$fileContent,\n\u0022------$boundary--$LF\u0022)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Run the following command:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Invoke-RestMethod -Uri $uri -Method Post -ContentType \u0022multipart/form-data;boundary= \u0060\u0022----$boundary\u0060\u0022\u0022 -Body $bodyLines -Headers $AuthHeader",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Expected response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "\u0060location urn:li:media: RESULT_FILE_HASH\u0060",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "After you have uploaded your learners, view them at People \u003E Learners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Download resulting CSV file (Optional).\nIf you checked that you would like an email sent when you generate an authorization token, take the following steps:\n\nCheck your email to get instructions on downloading the result CSV file. When the has processed the CSV job, it sends a result summary email to the primary email address and any others provided in step one.\n\nDownload result CSV file by running this command (Linux users):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer \u003COAUTH_TOKEN\u003E\u0027 -X GET \u0022https://api.linkedin.com/media/upload?media_type=enterprise_csv_upload\u0026id=urn:li:media: \u003CRESULT_FILE_HASH\u003E\u0022 -o results.csv",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Replace the \u003CRESULT_FILE_HASH\u003E with the \u0022resultMedia\u0022:\u0022urn:li:media: token you get in the response after you run the curl command in the prior step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Powershell Automatic Mode",
+      "Anchor": "powershell-automatic-mode",
+      "SectionPath": [
+        "Windows PowerShell-Specific Instructions",
+        "Powershell Automatic Mode"
+      ],
+      "Text": "Congratulations! You now can add learners to your LMS instance via HTTPS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Use the following resources if you need assistance adding employee data to LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Single Sign-on Implementation Guide\n\nAdding and Managing Users in Bulk via CSV Org Sync\n\nAdding Learners Individually to your LinkedIn Learning Account\n\nAdding Employee Data Administration Guide\n\nManage Custom Learner Attributes\n\nRecommend or Share Content with Learners\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

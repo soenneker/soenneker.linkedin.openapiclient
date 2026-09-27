@@ -1,0 +1,976 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+  "Title": "LinkedIn Learning and SuccessFactors Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the SuccessFactors OCN and LinkedIn Learning integration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "Authentication (OCN API): OAuth 2.0 (Platform Token Server), authenticated via an X.509 certificate registered as a trusted client application in SAP SuccessFactors Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "Authentication (Learner SSO): SAML SSO Identity Provider",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "Reporting: OCN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "The LinkedIn Learning and SuccessFactors deep integration configuration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors Deep Integration Functionality",
+      "Anchor": "successfactors-deep-integration-functionality",
+      "SectionPath": [
+        "SuccessFactors Deep Integration Functionality"
+      ],
+      "Text": "An active SuccessFactors LMS instance with BizX suite\n\nAn active LinkedIn Learning account\n\nAdmin access to LinkedIn Learning\n\nAdmin privileges to your SuccessFactors LMS instance\n\nAdmin access to the SAP SuccessFactors Platform (Employee Central/BizX Platform), in addition to SuccessFactors Learning, for the OAuth2 client registration steps below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Overview",
+      "Anchor": "integration-overview",
+      "SectionPath": [
+        "Integration Overview"
+      ],
+      "Text": "Check out our overview of SuccessFactors\u0027 integration benefits and capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and\nSuccessFactors to establish a secure SAML single sign-on (SSO) connection that\nensures seamless and secure access to content. SSO authentication reduces\nfriction for users and administrators by eliminating the need for manual user\nregistration. SSO ensures that learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On (SSO)",
+      "Anchor": "single-sign-on-sso",
+      "SectionPath": [
+        "Integration Overview",
+        "Single Sign-On (SSO)"
+      ],
+      "Text": "This SAML SSO connection governs how learners sign in to LinkedIn Learning. It is a separate mechanism from the OCN API authentication used for content sync and completion reporting (covered under \u0022SuccessFactors API Configuration\u0022 below).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains thousands of courses. Courses are added\nat a rate of 25-30 courses per week at no extra cost. Traditionally, the\nadministrator of a content discovery platform manually uploads new content on a\nregular interval. However, the SuccessFactors deep integration uses LinkedIn\nLearning APIs to dynamically refresh the content library daily. This method ensures new\nLinkedIn Learning content is available within 24 hours of its release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Integration Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "LinkedIn Learning connects to SuccessFactors OCN APIs, so LMS admins do not have\nto manually upload new content packages at regular intervals. After initial\nsetup, LinkedIn Learning uses OCN APIs to dynamically refresh the content\nlibrary on an automated basis. This ensures new LinkedIn Learning content is\navailable to learners within 24 hours of release. All content titles and\ndescriptions are aggregated and indexed to accommodate keyword searches and\nsupport efficient discoverability. SuccessFactors supports\nautomatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "LinkedIn Learning and SuccessFactors can be configured to establish a SAML\nsingle sign-on (SSO) connection to ensure seamless and secure access to content.\nYou have two configuration options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabling SAML SSO",
+      "Anchor": "enabling-saml-sso",
+      "SectionPath": [
+        "Configuration",
+        "Enabling SAML SSO"
+      ],
+      "Text": "Connect to your organization\u2019s identity management solution (Recommended) \u2013 If your organization has a centrally-managed identity management solution like Azure AD, Okta, or ADFS, you can configure it to authenticate users into SuccessFactors and LinkedIn Learning. Your IdP must be configured to send the SuccessFactors unique user identifier (also known as BizX UserID) to LinkedIn Learning and SuccessFactors. If user IDs aren\u2019t the same between the two systems, learner activity tracking will not work. To learn more about identifying your SuccessFactors BizX UserID, see the \u0022Identifying your BizX UserID\u0022 section in the Appendix. To pursue this option, contact your dedicated LinkedIn Learning Technical Consultant.\n\nConnect directly to SuccessFactors BizX SAML IdP \u2013 LinkedIn Learning and SuccessFactors can be configured to establish a SAML single sign-on (SSO) connection. See the \u0022Configuring SAML SSO via SuccessFactors\u0022 section of the Appendix.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors API Configuration (OCN Authentication)",
+      "Anchor": "successfactors-api-configuration-ocn-authentication",
+      "SectionPath": [
+        "Configuration",
+        "SuccessFactors API Configuration (OCN Authentication)"
+      ],
+      "Text": "For LinkedIn Learning to push new content and learner progress into\nSuccessFactors LMS, a system user must be provisioned, and API access must be\ngranted using SAP\u0027s OAuth 2.0 (Platform Token Server) method. In this section,\nwe will review the steps required to authorize communication between the two systems.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors API Configuration (OCN Authentication)",
+      "Anchor": "successfactors-api-configuration-ocn-authentication",
+      "SectionPath": [
+        "Configuration",
+        "SuccessFactors API Configuration (OCN Authentication)"
+      ],
+      "Text": "Before proceeding, ensure you have configured and enabled SSO for your LinkedIn Learning account. If you enable content syncing before completing the SSO configuration, course launches will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors API Configuration (OCN Authentication)",
+      "Anchor": "successfactors-api-configuration-ocn-authentication",
+      "SectionPath": [
+        "Configuration",
+        "SuccessFactors API Configuration (OCN Authentication)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SuccessFactors API Configuration (OCN Authentication)",
+      "Anchor": "successfactors-api-configuration-ocn-authentication",
+      "SectionPath": [
+        "Configuration",
+        "SuccessFactors API Configuration (OCN Authentication)"
+      ],
+      "Text": "SAP publishes an official companion guide, \u0022Implementing OAuth 2.0 Token for OCN APIs,\u0022 which covers the SAP-side configuration in greater detail. Use it alongside this guide for the full Platform and Role-Based Permissions steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create OCN Admin Role",
+      "Anchor": "create-ocn-admin-role",
+      "SectionPath": [
+        "Configuration",
+        "Create OCN Admin Role"
+      ],
+      "Text": "To create an OCN admin profile in SuccessFactors, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create OCN Admin Role",
+      "Anchor": "create-ocn-admin-role",
+      "SectionPath": [
+        "Configuration",
+        "Create OCN Admin Role"
+      ],
+      "Text": "Log in to the SuccessFactors Learning Administration environment and go to System Administration \u003E Security \u003E Role Management.\n\nClick Add New.\n\n\nIn the Role ID field, enter \u0022OCN_ADMIN\u0022.\n\nClick Add.\n\n\nSelect Permissions, then click the link under Add Permissions to the Role.\n\n\nUnder Add Permissions to Roles, enable Learning Activities, Search, and People Management.\n:\n\nSet Status Restriction to \u0022Active\u0022 for each activity under Permission Restrictions:\n\nAdd Item\n\nAdd Item Libraries\n\nEdit Item\n\nEdit item Libraries\n\nEdit Item Finance\n\nEdit Item Cost/Price\n\nEdit Item Custom Fields\n\nEdit Item State\n\nOpen Content Network Import\n\nView Item\n\nView Item Libraries\n\nView Item Finance\n\nView Item Cost/Price\n\nView Item Custom Fields\n\nSearch User\n\nAdd History Record (required for completion writeback)\n\n\n\nClick Apply Changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create OCN Admin Role",
+      "Anchor": "create-ocn-admin-role",
+      "SectionPath": [
+        "Configuration",
+        "Create OCN Admin Role"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create OCN Admin Role",
+      "Anchor": "create-ocn-admin-role",
+      "SectionPath": [
+        "Configuration",
+        "Create OCN Admin Role"
+      ],
+      "Text": "The Add History Record permission is required for completion writeback. If you already have a working OCN integration, your existing OCN Admin Role already includes it and no change is needed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create System Admin User",
+      "Anchor": "create-system-admin-user",
+      "SectionPath": [
+        "Configuration",
+        "Create System Admin User"
+      ],
+      "Text": "To create a system admin user in SuccessFactors, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create System Admin User",
+      "Anchor": "create-system-admin-user",
+      "SectionPath": [
+        "Configuration",
+        "Create System Admin User"
+      ],
+      "Text": "Log in to the SuccessFactors Learning Administration environment and go to System Administration \u003E Security \u003E Administrators.\n\nIn the upper right-hand corner of the screen, click Add New.\n\nIn the Admin ID field, enter \u0022LILADMIN\u0022. If you already have this administrator from a prior OCN setup, you can reuse it and skip to Step 6.\n\nEnter a new password in the password fields.\n\nClick Add.\n\n\nSelect the Assigned Roles tab. If this integration is your first SuccessFactors instance, click Edit.\n\nIn the Role ID field, enter \u0022OCN_ADMIN\u0022, then click Add.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create System Admin User",
+      "Anchor": "create-system-admin-user",
+      "SectionPath": [
+        "Configuration",
+        "Create System Admin User"
+      ],
+      "Text": "This Admin ID must be linked to an SAP SuccessFactors Platform user and granted OAuth2 client permissions, as described below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Link this Admin to an SAP SuccessFactors Platform user",
+      "Anchor": "link-this-admin-to-an-sap-successfactors-platform-user",
+      "SectionPath": [
+        "Configuration",
+        "Link this Admin to an SAP SuccessFactors Platform user"
+      ],
+      "Text": "An SAP SuccessFactors Platform user must be created and imported so it can be mapped to your LMS Administrator account above. This user is the identity under which API calls are made. If you have already created this user, this step is optional.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Link this Admin to an SAP SuccessFactors Platform user",
+      "Anchor": "link-this-admin-to-an-sap-successfactors-platform-user",
+      "SectionPath": [
+        "Configuration",
+        "Link this Admin to an SAP SuccessFactors Platform user"
+      ],
+      "Text": "In SAP SuccessFactors Platform, go to Admin Center \u2192 Employee Export and select Export Template.\n\nPopulate one row with the minimum required fields:\n\nSTATUS = active\nUSERID = your existing Admin ID from the OCN integration above (for example, LILADMIN)\nUSERNAME\nFIRSTNAME\nLASTNAME\nMANAGER = NO_MANAGER\nHR = NO_HR\nDEFAULT_LOCALE = en_US\n\n\nGo to Admin Center \u2192 Import Employee Data. For the action, choose Import Data. For the entity, choose Basic Import. Click Validate Import File Data, correct any errors, then Import.\n\nAdd the Platform user to the SFAPI permission group (or the equivalent group used in your environment for API access, based on your org\u0027s access structure): Admin Center \u2192 Manage Permission Groups. The exact group name varies by configuration; confirm it with your system administrator.\n\nLink the Platform user to the SAP SuccessFactors Learning Administrator account (the Admin ID created above) that has the required OCN permissions, by matching the user ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Link this Admin to an SAP SuccessFactors Platform user",
+      "Anchor": "link-this-admin-to-an-sap-successfactors-platform-user",
+      "SectionPath": [
+        "Configuration",
+        "Link this Admin to an SAP SuccessFactors Platform user"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Link this Admin to an SAP SuccessFactors Platform user",
+      "Anchor": "link-this-admin-to-an-sap-successfactors-platform-user",
+      "SectionPath": [
+        "Configuration",
+        "Link this Admin to an SAP SuccessFactors Platform user"
+      ],
+      "Text": "If you are migrating an existing OCN integration, no new Learning permissions are required, since your OCN Admin Role already has them (see the note under \u0022Create OCN Admin Role\u0022). If this is a new integration, confirm the LMS Administrator account has the Add History Record permission before continuing, or completion reporting will fail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create the API Administrator role in Platform (Role-Based Permissions)",
+      "Anchor": "create-the-api-administrator-role-in-platform-role-based-permissions",
+      "SectionPath": [
+        "Configuration",
+        "Create the API Administrator role in Platform (Role-Based Permissions)"
+      ],
+      "Text": "Create a dedicated Permission Role in Platform to grant the OAuth2 management and Learning access permissions required for token-based API calls.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create the API Administrator role in Platform (Role-Based Permissions)",
+      "Anchor": "create-the-api-administrator-role-in-platform-role-based-permissions",
+      "SectionPath": [
+        "Configuration",
+        "Create the API Administrator role in Platform (Role-Based Permissions)"
+      ],
+      "Text": "In Platform, go to Admin Center \u2192 Manage Permission Roles and click Create New Role. As a best practice, name the role API Administrator.\n\nOn the Add Permissions tab, add:\n\nManage Integration Tools \u2192 Manage OAuth2 Client Applications\nLearning \u2192 Learning Access Permission (checkbox)\n\n\nSave the role. Then click Add Role Assignment and assign it to a restricted group that contains the Platform user created above. Do not assign this role to All Employees.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning as an OAuth2 Client Application",
+      "Anchor": "register-linkedin-learning-as-an-oauth2-client-application",
+      "SectionPath": [
+        "Configuration",
+        "Register LinkedIn Learning as an OAuth2 Client Application"
+      ],
+      "Text": "Before generating your certificate in the next section, note that LinkedIn Learning provides the X.509 certificate used for this registration \u2014 you do not need to generate a certificate or private key on the SuccessFactors side.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning as an OAuth2 Client Application",
+      "Anchor": "register-linkedin-learning-as-an-oauth2-client-application",
+      "SectionPath": [
+        "Configuration",
+        "Register LinkedIn Learning as an OAuth2 Client Application"
+      ],
+      "Text": "Go to Admin Center \u2192 Security Center \u2192 OAuth Configurations \u2192 Manage OAuth2 Client Applications and click Register Client Application.\n\nCompany: pre-filled with your company name.\n\nApplication Name: enter a unique name, for example \u0022LinkedIn Learning OCN\u0022.\n\nApplication URL: https://linkedin.com/ (copy as-is, including the trailing \u0022/\u0022).\n\nBind to Users: check this box.\n\nX.509 Certificate: paste the certificate generated by LinkedIn Learning (see \u0022Configure LinkedIn Learning OCN Settings\u0022 below). Paste only the text between the BEGIN and END lines, not the BEGIN/END lines themselves.\n\nClick Register. SAP SuccessFactors generates an API Key (Client ID) for this application.\n\nClick View on the registered application to retrieve and copy the API Key.\n\nFrom this same page, also copy your Company value \u2014 this becomes your Company ID in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning as an OAuth2 Client Application",
+      "Anchor": "register-linkedin-learning-as-an-oauth2-client-application",
+      "SectionPath": [
+        "Configuration",
+        "Register LinkedIn Learning as an OAuth2 Client Application"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register LinkedIn Learning as an OAuth2 Client Application",
+      "Anchor": "register-linkedin-learning-as-an-oauth2-client-application",
+      "SectionPath": [
+        "Configuration",
+        "Register LinkedIn Learning as an OAuth2 Client Application"
+      ],
+      "Text": "LinkedIn Learning performs SAP\u0027s token generation and API call signing automatically using the certificate you registered. You do not generate assertions or tokens yourself.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OCN Property File",
+      "Anchor": "ocn-property-file",
+      "SectionPath": [
+        "Configuration",
+        "OCN Property File"
+      ],
+      "Text": "To configure the OCN property file, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OCN Property File",
+      "Anchor": "ocn-property-file",
+      "SectionPath": [
+        "Configuration",
+        "OCN Property File"
+      ],
+      "Text": "In the SuccessFactors Learning Administration navigation menu, select System Administration \u003E Configuration \u003E System Configuration.\n\nFind the Open Content Network option in the configuration file and select the Edit (pen) icon.\n\n\nScroll to the bottom of the configuration file.\n\nCopy and paste the values below into the configuration file:\nproviders[LINKEDINLEARNING].enabled=true\nproviders[LINKEDINLEARNING].name=LinkedIn Learning\nproviders[LINKEDINLEARNING].label=label.u.ProviderLinkedInLearning\nproviders[LINKEDINLEARNING].baseLaunchUrl=\u003Chttps://www.linkedin.com/learning\u003E\nproviders[LINKEDINLEARNING].pricingModel=\n\nIf LinkedIn Learning is your first OCN integration, enter the three additional parameters. To find the possible values, follow the click paths below:\n\ndefaultValues.itemType[default]: References \u003E Learning Activities \u003E Item Types \u003E Do a blank search \u003E choose the necessary item type and add it to the value parameter in the OCN property file.\n\ndefaultValues.itemCompletionStatus[default]: References \u003E Manage Users Learning \u003E Completion Status \u003E Do a blank search \u003E choose the necessary item completion and add it to the value parameter in the OCN property file.\n\ndefaultValues.domainID[default]: System Admin \u003E Security \u003E Security Domains \u003E Do a blank search \u003E choose the default domain where the item would be created and add it to the parameter in the OCN property file.\n\n\nThese values vary per SuccessFactors deployment. LinkedIn cannot provide guidance regarding which values you should use. If you have questions, direct them to SuccessFactors support.\nFor reference, here is a sample configuration:\n#Domain group\ndefaultValues.domainID[default]=LIL\n#This configuration sets the item type.\ndefaultValues.itemType[default]=Course\n#This configuration sets the item completion status.\ndefaultValues.itemCompletionStatus[default]=CRSE-C\n\nClick Apply Changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OCN Content Synchronization Automatic Process",
+      "Anchor": "ocn-content-synchronization-automatic-process",
+      "SectionPath": [
+        "Configuration",
+        "OCN Content Synchronization Automatic Process"
+      ],
+      "Text": "To automate the OCN content sync process, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OCN Content Synchronization Automatic Process",
+      "Anchor": "ocn-content-synchronization-automatic-process",
+      "SectionPath": [
+        "Configuration",
+        "OCN Content Synchronization Automatic Process"
+      ],
+      "Text": "In the SuccessFactors Learning Administration navigation menu, select System Administration \u003E Automatic Processes.\n\nSelect Open Content Network Content Synchronization.\n\nSelect the Schedule This Process check box.\n\nSelect the Daily radio button.\n\nIn the Time of Day field, specify a time outside of peak usage hours.\n\nClick Apply Changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a LinkedIn Learning Label",
+      "Anchor": "create-a-linkedin-learning-label",
+      "SectionPath": [
+        "Configuration",
+        "Create a LinkedIn Learning Label"
+      ],
+      "Text": "To create a LinkedIn Learning label, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a LinkedIn Learning Label",
+      "Anchor": "create-a-linkedin-learning-label",
+      "SectionPath": [
+        "Configuration",
+        "Create a LinkedIn Learning Label"
+      ],
+      "Text": "In the SuccessFactors Learning Administration navigation menu, select References \u003E Manage Labels \u003E Labels.\n\nClick Add New.\n\nIn Label Type, enter \u0022LABEL\u0022 and click Next.\n\n\nIn Label ID, type \u0022ProviderLinkedInLearning\u0022.\n\nIn Description, type \u0022LinkedIn Learning Label\u0022.\n\nIn Use By drop down, select \u0022Both\u0022.\n\nSelect Assign to All Locales.\n\nClick Add.\n\n\nSelect the Locales tab.\n\nTo add a locale to the LinkedIn Learning label, enter the locale (i.e., \u0022Japanese\u0022) in the Active Locale ID field and \u0022LinkedIn Learning\u0022 in the Label Value field, then click Add.\n\nFor each Active Locale ID, enter \u0022LinkedIn Learning\u0022 (if the Label Value field is not already populated).\n\nClick Apply Changes.\n\n\nTo verify the label, within the Learning Administration menu, visit Content \u003E Open Content Network and confirm the list of content providers includes LinkedIn Learning (LINKEDINLEARNING). If you see null (LINKEDINLEARNING) confirm the label ID created in this section matches the providers[LINKEDINLEARNING]label value provided in your OCN property file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning OCN Settings",
+      "Anchor": "configure-linkedin-learning-ocn-settings",
+      "SectionPath": [
+        "Configuration",
+        "Configure LinkedIn Learning OCN Settings"
+      ],
+      "Text": "To configure LinkedIn Learning OCN settings, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configure LinkedIn Learning OCN Settings",
+      "Anchor": "configure-linkedin-learning-ocn-settings",
+      "SectionPath": [
+        "Configuration",
+        "Configure LinkedIn Learning OCN Settings"
+      ],
+      "Text": "In your LinkedIn Learning account, if you are not already in the Admin screen, select Go to Admin \u003E Integrate.\n\n\nIn the side menu, select Configure reporting integrations.\n\nExpand the Configure SuccessFactors (OCN) section.\n\nClick Add integration (or the pencil/edit icon if you are updating an existing integration). The Add/Edit SuccessFactors (OCN) integration screen appears.\n\n\nIn the user type drop down, there are three options:\n\nID \u2013 SAML SSO IdP configured unique user ID (UUID) value for your\naccount. You should select this value if you are using SuccessFactors as\nyour SAML IdP. If you\u2019re using a 3rd Party SSO IdP, you should only select\nthis option once you\u2019ve confirmed your IdP is configured to send the same\nSSO UUID value to SuccessFactors and LinkedIn Learning. Unless a LinkedIn Learning Technical Consultant explicitly recommends an alternate option, select this value.\n\nUsername \u2013 SAML SSO custom attribute used solely for communication with external systems. You should select this value if you are using a third party SAML IdP that is configured to send the SuccessFactors UUID value as \u201Cusername\u201D in the SAML SSO payload.\n\nEmail \u2013 A user\u2019s work email address value. You should select this value if you are using email as your UUID in both LinkedIn Learning and SuccessFactors.\n\n\n\nIn the OCN Server field enter your SuccessFactors host name.\n\n Note\nServer names differ for new and legacy customers. Example: for new customers, the OCN server name follows this format: examplecompany.successfactors.com; for legacy customers, the OCN server name follows this format: examplecompanyname.plateau.com.\n\n\nCopy the X.509 Certificate. LinkedIn Learning generates this certificate for you \u2014 you do not need to create one yourself. Click Copy Certificate to copy it. When pasting it into SuccessFactors (Step \u0022Register LinkedIn Learning as an OAuth2 Client Application\u0022 above), paste only the text between the BEGIN CERT and END CERT lines; the Copy Certificate button includes the header/footer automatically, so remove them before pasting into SuccessFactors.\n\n\nEnter the four values now used for OCN authentication:\nExpand table\n\n\nField in LinkedIn Learning\nWhere it comes from\n\n\n\n\nCompany ID\nThe Company value from the SuccessFactors OAuth2 Client Application page\n\n\nAPI Key\nThe API Key generated by SuccessFactors when you registered LinkedIn Learning as a client application\n\n\nX.509 Certificate\nGenerated by LinkedIn Learning (Step 7 above); you paste it into SuccessFactors, not the other way around\n\n\nToken Server URL\nThe web address you use to access your SuccessFactors environment (for example, hcm-us10-sales.hr.cloud.sap)\n\n\n\n\nIn the Admin User ID field, enter the value \u0022LILADMIN\u0022 (or your existing Admin ID).\n\n Note\nThe initial content import takes several hours to complete. After the initial import completes, future content imports take place daily in a fraction of the original time. Once the import process completes, we strongly recommend you run another process to associate the content with a library, category, or course length of duration. A monthly audit allows you to continue to import new titles into your LMS and remove corresponding titles from the library when LinkedIn Learning courses retire.\n\n\nTo begin the content import, click Enable and Sync Content.\n\n\nOnce the sync is complete and you are ready to make courses available to learners, you can import the content individually or in bulk. You can now automatically import learning content from OCN providers to make LinkedIn Learning content readily available to all learners. Please refer to step 12.\n\nTo configure automatic import of LinkedIn Learning content into SuccessFactors LMS, take the following steps:\n\nGo to System Administration \u003E Configuration \u003E System Configuration \u003E OPEN CONTENT NETWORK. Setting this feature to true automatically imports courses from LinkedIn Learning.\nSet the defaultValue.autoImportOCNCourseEnabled[default] property to \u0027true\u0027.\nEnsure that you\u0027ve scheduled the Open Content Network Content Synchronization automatic process to regularly update the list of courses in the LMS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "Starting August 2026, LinkedIn Learning sends a list of skills with each course imported into SuccessFactors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "Skills are sent through the existing OCN course import process, so as SAP customers, you don\u0027t need to change the OCN property file or any of the integration settings described above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "Courses imported before August 2026 don\u0027t have skills attached. To backfill skills on those courses, rebootstrap your content catalog.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "For LinkedIn Learning skills to match the skills in your Talent Intelligence Hub skill library, your SuccessFactors instance must have the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "Talent Intelligence Hub (TIH)\n\nAI-Assisted Skills Inference for Learning (a separately licensed SAP feature that consumes AI units)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "Without these, LinkedIn Learning still sends the skills, but SuccessFactors doesn\u0027t match them to your skill library, so they don\u0027t appear on the course page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "When a LinkedIn Learning skill matches a skill in your skill library, it appears on the course page as an attribute. If no match exists, add the skill to your skill library first.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage skills on imported courses",
+      "Anchor": "manage-skills-on-imported-courses",
+      "SectionPath": [
+        "Appendix",
+        "Manage skills on imported courses"
+      ],
+      "Text": "To enable skills tagging in your SuccessFactors instance, refer to SAP\u0027s guide on Associating Skills with Open Content Network Items Using AI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers Migrating to SAML Authentication",
+      "Anchor": "for-customers-migrating-to-saml-authentication",
+      "SectionPath": [
+        "Appendix",
+        "For Customers Migrating to SAML Authentication"
+      ],
+      "Text": "If you already have a working SuccessFactors OCN integration configured with an OAuth Client ID and Secret, you can move it to the certificate-based method above without re-running the full setup:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Customers Migrating to SAML Authentication",
+      "Anchor": "for-customers-migrating-to-saml-authentication",
+      "SectionPath": [
+        "Appendix",
+        "For Customers Migrating to SAML Authentication"
+      ],
+      "Text": "In LinkedIn Learning, open your existing SuccessFactors (OCN) integration and copy the X.509 Certificate.\n\nIn SAP SuccessFactors, complete the Platform user linking, API Administrator role, and OAuth2 Client Application registration steps under \u0022Create System Admin User\u0022 and \u0022Register LinkedIn Learning as an OAuth2 Client Application,\u0022 reusing your existing Admin ID (e.g., LILADMIN), OCN Server, and OCN Admin Role \u2014 no changes are required to these.\n\nBack in LinkedIn Learning, enter the new Company ID, API Key, and Token Server URL alongside your unchanged OCN Server and Admin User ID, then click Save.\n\nYour previous credentials continue to work for approximately 24 hours until they expire; content sync and completion reporting continue uninterrupted during this window. After that, confirm the daily delta sync still brings new content into SuccessFactors and that a completed course is reported back correctly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "For a completion to be sent back to SuccessFactors, the following conditions must be true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "The learner\u2019s SuccessFactors BizX ID must match the LinkedIn Learning user type value.\n\nThe completed course must be imported into SuccessFactors catalog.\n\nThe learner must complete a course in full. You can verify the learner has completed the course in LinkedIn Learning by selecting Home \u003E Me \u003E In Progress \u003E Learning History and confirming the \u201CCompleted on\u201D date.\n\n\nThe SuccessFactors Learning Administrator account used for OCN must have the Add History Record permission. If you are migrating an existing OCN integration, it already has this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "If the above conditions are met, provide your dedicated technical consultant with the following information to further investigate:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Troubleshooting Course Completions",
+      "Anchor": "troubleshooting-course-completions",
+      "SectionPath": [
+        "Appendix",
+        "Troubleshooting Course Completions"
+      ],
+      "Text": "The user\u2019s SuccessFactors BizX UserID. To learn more about identifying BizX UserIDs see the \u0022Identifying your BizX UserID\u0022 section below.\n\nThe user\u2019s LinkedIn Learning Employee ID (SSO ID).\n\nThe name of the completed course and the date on which it the learner completed it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Identifying your BizX UserID",
+      "Anchor": "identifying-your-bizx-userid",
+      "SectionPath": [
+        "Appendix",
+        "Identifying your BizX UserID"
+      ],
+      "Text": "If you opt to connect your organization\u2019s identity management solution to LinkedIn Learning, you must configure it to send the SuccessFactors unique user identifier (also known as \u0022BizX ID\u0022) to LinkedIn Learning so LinkedIn Learning can communicate course completions back to SuccessFactors. This section describes how to identify your BizX ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Identifying your BizX UserID",
+      "Anchor": "identifying-your-bizx-userid",
+      "SectionPath": [
+        "Appendix",
+        "Identifying your BizX UserID"
+      ],
+      "Text": "To identify your BizX ID, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Identifying your BizX UserID",
+      "Anchor": "identifying-your-bizx-userid",
+      "SectionPath": [
+        "Appendix",
+        "Identifying your BizX UserID"
+      ],
+      "Text": "In the SuccessFactors Learning Administration navigation menu, select People \u003E Users.\n\nClick Search, then click Download Search Results. The file downloads to your computer.\n\nOpen the CSV file.\n\nThe \u201CUser ID\u201D column contains your BizX ID; send this value to LinkedIn Learning via your third-party SAML IdP. To ensure the correct value is released in the SAML attribute statement, share examples of this value with the administrator of your SAML IdP.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing SuccessFactors Locales",
+      "Anchor": "managing-successfactors-locales",
+      "SectionPath": [
+        "Appendix",
+        "Managing SuccessFactors Locales"
+      ],
+      "Text": "In SuccessFactors LMS, course titles and descriptions only appear in the locale\nto which they are populated. If your LinkedIn Learning subscription includes\naccess to multiple languages and locales, you may notice some LinkedIn Learning content appears in search results without a title and description. This error indicates the locale in which you are searching does not match the locale of the LinkedIn\nLearning content. LinkedIn has no control over how SuccessFactors displays content metadata in the LMS. Please contact your LinkedIn Learning technical consultant to enable additional locales (when and if they are available for courses).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via SuccessFactors",
+      "Anchor": "configuring-saml-sso-via-successfactors",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors"
+      ],
+      "Text": "In this section, we review how to establish a SAML SSO directly with\nSuccessFactors (BizX) IdP. SuccessFactors does not provide any basic profile information (like a learner\u2019s first name and last name), which can complicate\nreporting in LinkedIn Learning. You should only pursue this option if your organization does not have a third-party SSO provider or a LinkedIn Learning Technical consultant recommends it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via SuccessFactors",
+      "Anchor": "configuring-saml-sso-via-successfactors",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors"
+      ],
+      "Text": "This section governs learner SSO login and is separate from the OCN API authentication described above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via SuccessFactors",
+      "Anchor": "configuring-saml-sso-via-successfactors",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring SAML SSO via SuccessFactors",
+      "Anchor": "configuring-saml-sso-via-successfactors",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors"
+      ],
+      "Text": "Use SuccessFactors as an SSO identity provider only if you have no other available option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generating Identity Provider Metadata",
+      "Anchor": "generating-identity-provider-metadata",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Generating Identity Provider Metadata"
+      ],
+      "Text": "To generate IdP metadata in SuccessFactors, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generating Identity Provider Metadata",
+      "Anchor": "generating-identity-provider-metadata",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Generating Identity Provider Metadata"
+      ],
+      "Text": "In the SuccessFactors Learning Administration navigation menu, select System Administration \u003E Configuration \u003E System Configuration.\n\nFind the BizX option in the configuration file and select View (magnifying glass) icon.\n\n\nWithin the property file, scroll down to the SAML Single Sign On section.\n\nFind the metadataProviders.IDP1.value entry. The value should look like the following sample URL:\nhttps://performancemanager[numericvariable].successfactors.[variable-depending-on-global-region]/idp/samlmetadata?company=[company_id]\n\n\nVisit the above URL to download the identity provider XML file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring an SSO Service Provider",
+      "Anchor": "configuring-an-sso-service-provider",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Configuring an SSO Service Provider"
+      ],
+      "Text": "To configure an SSO provider in LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring an SSO Service Provider",
+      "Anchor": "configuring-an-sso-service-provider",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Configuring an SSO Service Provider"
+      ],
+      "Text": "In your LinkedIn Learning account, if you are not already in the Admin screen, select Go to Admin \u003E Authentication.\n\n\nIn the Configure single sign-on section, click Add new SSO.\n\n\nSelect your SSO method (in this case, \u0022SAML\u0022).\n\n\nIn the Authenticate users with SAML SSO screen, select the Identity provider settings tab, then click Load and copy information from fields.\n\nClick Download file.\n\n\nTo open a communication with the SuccessFactors team, create a support ticket and copy and paste the SSO configuration values from the LinkedIn Learning interface into the template below.\nSuccessFactors Support,\nMy organization would like to integrate with LinkedIn Learning via the Open Content Network. To complete the single sign-on setup, a new authorized SP assertion consumer service needs to be configured in your back-end provisioning settings. Below you will find the relevant details provided by LinkedIn Learning for the assertion consumer service configuration:\nAssertion Consumer Service (ACS) URL: \u003Cinsert-your-linkedin-learning-acs-url\u003E\nCertificate: \u003Cinsert-your-linkedin-learning-x509-certificate\u003E\n\nOnce SuccessFactors support has configured a new assertion consumer service, return to the Authenticate users with SAML SSO screen and click Next.\n\nSelect the \u0022Upload XML file\u0022 radio button, then click Upload XML file and navigate to the downloaded metadata file, select it and click Open.\n\n\nIn SuccessFactors, select Save SSO configuration \u003E Activate SSO configuration \u003E I\u2019m ready.\n\nIn the LinkedIn Learning SSO settings tab, under SAML Request Binding, select \u0022HTTP-Post\u0022.\n\nUnder Include Assertion Consumer Service URL, select \u201CYes\u201D, then click Save.\n\n\nIn the Configure single sign-on screen, set the connection to \u0022Active\u0022.\n\nIn the bottom right-hand corner of the screen, click the \u0022More Options\u0022 icon (...) and select \u0022Edit\u0022.\n\n\nToggle Automatically assign licenses to \u0022On\u0022, then click Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify the SSO Configuration",
+      "Anchor": "verify-the-sso-configuration",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Verify the SSO Configuration"
+      ],
+      "Text": "To verify the success of your SSO configuration, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify the SSO Configuration",
+      "Anchor": "verify-the-sso-configuration",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Verify the SSO Configuration"
+      ],
+      "Text": "If you are not already in the Admin screen, select Go to Admin \u003E Authentication.\n\nIn the browser address bar, copy the account ID value. In the example below the account ID is \u201C123456\u201D.\nhttps://www.linkedin.com/enterprise/accountcenter/settings?account=123456\n\nConstruct a SSO URL for testing by pasting the account ID value from the last step into the URL below.\nhttps://www.linkedin.com/checkpoint/enterprise/login/[account-ID]?application=learning\n\nCopy and paste the SSO URL into your web browser and provide your SuccessFactors credentials when prompted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify the SSO Configuration",
+      "Anchor": "verify-the-sso-configuration",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Verify the SSO Configuration"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content and reporting via their SuccessFactors OCN instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verify the SSO Configuration",
+      "Anchor": "verify-the-sso-configuration",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Verify the SSO Configuration"
+      ],
+      "Text": "If SSO authentication is working as expected, you will be redirected to LinkedIn Learning. If applicable, you may be prompted to login with your LinkedIn credentials before being redirected to the course page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Support"
+      ],
+      "Text": "Please review additional resources on SuccessFactors integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "Configuring SAML SSO via SuccessFactors",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

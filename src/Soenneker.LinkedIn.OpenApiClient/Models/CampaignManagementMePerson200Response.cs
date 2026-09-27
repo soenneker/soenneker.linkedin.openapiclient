@@ -14,6 +14,40 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The URN of the artifact this record is related to.Documented type: URN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Artifact { get; set; }
+#nullable restore
+#else
+        public string Artifact { get; set; }
+#endif
+        /// <summary>The authorization method for this artifact. Can be the following enums: NONE - The artifact can not be served to users. PUBLIC - The artifact is public and no authorization is needed to serve. INTERNAL - The artifact is only accessible internally to other systems in the hosting or processing infrastructure. PRIVATE - The artifact is private and only an authorized user can access it.Documented type: String</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseAuthorizationMethod? AuthorizationMethod { get; set; }
+        /// <summary>The backgroundPicture property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture? BackgroundPicture { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture BackgroundPicture { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CampaignManagementMePerson200ResponseId { get; set; }
+#nullable restore
+#else
+        public string CampaignManagementMePerson200ResponseId { get; set; }
+#endif
+        /// <summary>The data property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData? Data { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData Data { get; set; }
+#endif
         /// <summary>The firstName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +55,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName FirstName { get; set; }
+#endif
+        /// <summary>The geoLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation? GeoLocation { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation GeoLocation { get; set; }
 #endif
         /// <summary>The headline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,13 +72,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseHeadline Headline { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The member&apos;s unique identifierDocumented type: Person URN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? ID { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string ID { get; set; }
 #endif
         /// <summary>The lastName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,9 +153,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "artifact", n => { Artifact = n.GetStringValue(); } },
+                { "authorizationMethod", n => { AuthorizationMethod = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseAuthorizationMethod>(); } },
+                { "backgroundPicture", n => { BackgroundPicture = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture.CreateFromDiscriminatorValue); } },
+                { "id", n => { CampaignManagementMePerson200ResponseId = n.GetStringValue(); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData.CreateFromDiscriminatorValue); } },
                 { "firstName", n => { FirstName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName.CreateFromDiscriminatorValue); } },
+                { "geoLocation", n => { GeoLocation = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation.CreateFromDiscriminatorValue); } },
                 { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseHeadline.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "ID", n => { ID = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseLastName>(global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseLastName.CreateFromDiscriminatorValue); } },
                 { "localizedFirstName", n => { LocalizedFirstName = n.GetStringValue(); } },
                 { "localizedHeadline", n => { LocalizedHeadline = n.GetStringValue(); } },
@@ -129,9 +177,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("artifact", Artifact);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseAuthorizationMethod>("authorizationMethod", AuthorizationMethod);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseBackgroundPicture>("backgroundPicture", BackgroundPicture);
+            writer.WriteStringValue("id", CampaignManagementMePerson200ResponseId);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseData>("data", Data);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseFirstName>("firstName", FirstName);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseGeoLocation>("geoLocation", GeoLocation);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseHeadline>("headline", Headline);
-            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("ID", ID);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementMePerson200ResponseLastName>("lastName", LastName);
             writer.WriteStringValue("localizedFirstName", LocalizedFirstName);
             writer.WriteStringValue("localizedHeadline", LocalizedHeadline);

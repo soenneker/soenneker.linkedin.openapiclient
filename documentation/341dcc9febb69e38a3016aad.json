@@ -1,0 +1,408 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+  "Title": "Matched Audiences - Overview",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences - Overview",
+      "Anchor": "matched-audiences---overview",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences - Overview",
+      "Anchor": "matched-audiences---overview",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences - Overview",
+      "Anchor": "matched-audiences---overview",
+      "SectionPath": [],
+      "Text": "LinkedIn offers a centralized Data Management Platform (DMP) platform that aggregates LinkedIn advertiser data. This enables B2B marketers to identify and reach their target audiences across different platforms and ad exchanges. This platform generates a mapping between user information from LinkedIn advertisers and LinkedIn member profiles. The platform uses this mapping to output a custom audience list in a format that can be used by an ad exchange (for example, LinkedIn) for targeted advertising. The set of APIs to programmatically manage segments, users, companies, and destinations are referred to as DMP Segment APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matched Audiences - Overview",
+      "Anchor": "matched-audiences---overview",
+      "SectionPath": [],
+      "Text": "The use of these APIs is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segments APIs",
+      "Anchor": "dmp-segments-apis",
+      "SectionPath": [
+        "DMP Segments APIs"
+      ],
+      "Text": "The following APIs are available under matched audiences program:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segments APIs",
+      "Anchor": "dmp-segments-apis",
+      "SectionPath": [
+        "DMP Segments APIs"
+      ],
+      "Text": "DMP Segments: DMP Segments act as staging entities, which can take in user information from a third-party provider, map them to LinkedIn member profiles, and output Ad Segments, which can then be used with other LinkedIn ads APIs. A DMP segment is tied to a sponsored account.\n\nDMP Segment Destinations: DMP Segment Destinations is a sub-resource of DMP segments that allows you to add destinations (ad exchanges) to a DMP Segment.\n\nDMP Segment Users: DMP Segment Users is a sub-resource of DMP segments that allows you to dynamically add users to a DMP Segment.\n\nDMP Segment Companies: DMP Segment Companies is a sub-resource of DMP segments that allows you to dynamically add companies to a DMP Segment.\n\nDMP Segment List Uploads: Advertisers can upload their first party data as a CSV list of companies or contacts to match with companies or members to create new audience (DMP) segments for targeting specific accounts within LinkedIn advertising campaigns.\n\nAd Segments: An Ad segment is a collection of entities (such as members or companies) to which ads can be targeted. Ad Segments are created automatically after DMP Segments are matched with LinkedIn members.\n\nWebsite Retargeting: The LinkedIn Ads platform offers advertisers the ability to retarget visitors of their website with ad content on LinkedIn. By adding the LinkedIn Insight Tag to their website, advertisers can match website visitors to members on LinkedIn to enable further engagement. Advertisers can also use website retargeting with LinkedIn professional demographic segments for more refined targeting.\n\nPredictive Audiences: Predictive Audiences allow customers to combine their first-party or third-party data with LinkedIn\u0027s predictive AI modeling to build a high-intent audience tailored just for their business.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segments APIs",
+      "Anchor": "dmp-segments-apis",
+      "SectionPath": [
+        "DMP Segments APIs"
+      ],
+      "Text": "DMP Segments act as staging entities, which can take in user information from a third-party provider, map them to LinkedIn member profiles, and output Ad Segments, which can then be used with other LinkedIn ads APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use Cases"
+      ],
+      "Text": "DMP Segments support three use cases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases",
+      "Anchor": "use-cases",
+      "SectionPath": [
+        "Use Cases"
+      ],
+      "Text": "Upload Audience Lists as CSV Files\nUpdate Audience Lists Dynamically\nPredictive Audiences",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Audience Lists as CSV Files",
+      "Anchor": "upload-audience-lists-as-csv-files",
+      "SectionPath": [
+        "Upload Audience Lists as CSV Files"
+      ],
+      "Text": "Advertisers can upload their data as a CSV list of companies or email addresses to match with LinkedIn company pages or members to create new audience\u00A0segments for targeting specific accounts within LinkedIn advertising campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Audience Lists as CSV Files",
+      "Anchor": "upload-audience-lists-as-csv-files",
+      "SectionPath": [
+        "Upload Audience Lists as CSV Files"
+      ],
+      "Text": "Your application must have a member access token with the rw_ads permission to use this API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Audience Lists as CSV Files",
+      "Anchor": "upload-audience-lists-as-csv-files",
+      "SectionPath": [
+        "Upload Audience Lists as CSV Files"
+      ],
+      "Text": "See Create and Manage List Uploads for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Audience Lists Dynamically",
+      "Anchor": "update-audience-lists-dynamically",
+      "SectionPath": [
+        "Update Audience Lists Dynamically"
+      ],
+      "Text": "The DMP segments APIs allow you to programmatically and dynamically add or remove users or companies from a DMP Segment using the streaming APIs dmpSegments/id/users and dmpSegments/id/companies. After the initial processing,\u00A0which could take up to 48 hours, any subsequent\u00A0addition or removal of users and companies happen in near real-time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Audience Lists Dynamically",
+      "Anchor": "update-audience-lists-dynamically",
+      "SectionPath": [
+        "Update Audience Lists Dynamically"
+      ],
+      "Text": "Your application must have a member access token with the rw_dmp_segments permission to use DMP Segment APIs. DMP Segment APIs are part of the Matched Audiences API that\u0027s separate from the Advertising API. Access to the Advertising API doesn\u0027t automatically grant access to DMP Segment APIs. Developers must apply separately to be considered for access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Audience Lists Dynamically",
+      "Anchor": "update-audience-lists-dynamically",
+      "SectionPath": [
+        "Update Audience Lists Dynamically"
+      ],
+      "Text": "A typical workflow consists of the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Audience Lists Dynamically",
+      "Anchor": "update-audience-lists-dynamically",
+      "SectionPath": [
+        "Update Audience Lists Dynamically"
+      ],
+      "Text": "Pick one of the following sourcePlatform ENUMs that fit your organization\u0027s use case:\n\nDIRECT_API - A LinkedIn advertiser that wants to use matched audiences for its own ad account(s).\nAGENCY_API - An agency managing audiences on behalf of multiple clients.\nPARTNER_API - A platform enabling many LinkedIn advertisers to sync audiences at scale (not an agency).\n\n\nCreate an empty DMP Segment with some metadata such as account, type and sourcePlatform. When you create the segment, you must define whether you\u0027re adding companies or users.\nOptional: Add Destinations to the segment. If you don\u0027t provide a destination, the default is LinkedIn.\nAdd or remove companies or users to the segment using the streaming APIs.\nMonitor processing status for each segment.\nWhen status is READY, the output adSegment can be used with other LinkedIn APIs.\nTo add or remove users or companies from the segment, repeat steps 4-6.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Audience Lists Dynamically",
+      "Anchor": "update-audience-lists-dynamically",
+      "SectionPath": [
+        "Update Audience Lists Dynamically"
+      ],
+      "Text": "To create a DMP Segment and add users or companies, see the following links.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Audience Lists Dynamically",
+      "Anchor": "update-audience-lists-dynamically",
+      "SectionPath": [
+        "Update Audience Lists Dynamically"
+      ],
+      "Text": "Create and Manage Segments\nOptional: Create and Manage Segment Destinations.\nCreate and Manage Segment Users\nCreate and Manage Segment Companies",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Predictive Audiences",
+      "Anchor": "predictive-audiences",
+      "SectionPath": [
+        "Predictive Audiences"
+      ],
+      "Text": "Predictive Audiences allow customers to combine their first-party or third-party data with LinkedIn\u0027s predictive AI modeling to build a high-intent audience tailored just for their business. LinkedIn\u0027s AI combines millions of engagement signals with the customer\u0027s data to identify members who are most likely to convert based on the customer\u0027s business objectives.\nCustomers can select from company list or contact list as the data source and predictive audiences predicts the likelihood of our members to convert for a given customer, using the customer\u0027s own data as the input (think behavioral \u002B lookalike). The most relevant members are then made available as an audience segment customers can target.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Predictive Audiences",
+      "Anchor": "predictive-audiences",
+      "SectionPath": [
+        "Predictive Audiences"
+      ],
+      "Text": "Your application must have a member access token with the rw_dmp_segments permission to use Predictive Audience APIs. It is part of the Matched Audiences API that\u0027s separate from the Advertising API. Access to the Advertising API doesn\u0027t automatically grant access to DMP Segment APIs. Developers must apply separately to be considered for access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment State Transition",
+      "Anchor": "dmp-segment-state-transition",
+      "SectionPath": [
+        "DMP Segment State Transition"
+      ],
+      "Text": "The mapping of users to a destination (ad exchange) is a continuous process and requires a certain workflow. When users are added to a DMP segment, the initial matching process can take up to 48 hours to resolve the IDs into a destination segment. Any subsequent addition or removal of users to or from an existing DMP Segment can take up to 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment State Transition",
+      "Anchor": "dmp-segment-state-transition",
+      "SectionPath": [
+        "DMP Segment State Transition"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment State Transition",
+      "Anchor": "dmp-segment-state-transition",
+      "SectionPath": [
+        "DMP Segment State Transition"
+      ],
+      "Text": "A streaming segment can always be in UPDATING status if user keeps streaming to the segment, although it doesn\u0027t affect previously matched members/companies.Empty segments will now have status updated to READY about 48 hours after creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment State Transition",
+      "Anchor": "dmp-segment-state-transition",
+      "SectionPath": [
+        "DMP Segment State Transition"
+      ],
+      "Text": "The following diagram outlines the various changes to the states:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment State Transition",
+      "Anchor": "dmp-segment-state-transition",
+      "SectionPath": [
+        "DMP Segment State Transition"
+      ],
+      "Text": "A typical state transition can occur in following way:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment State Transition",
+      "Anchor": "dmp-segment-state-transition",
+      "SectionPath": [
+        "DMP Segment State Transition"
+      ],
+      "Text": "Building: When a segment is first created, the initial state is Building, which means the segment doesn\u0027t have anything to serve.\nBuilding to Failed: A segment is set to Failed status if a failure happened when uploading lists.\nBuilding to Ready: A segment is set to Ready when it\u0027s fully available to be used in a campaign. The campaign should be able to serve right away.\nReady to Updating: A segment is updated either with a new list or some new users/companies have been streamed to it.\nUpdating to Ready: The updated input is ready to be used in a campaign.\nReady to Archived: A segment is not used continuously for 30 days in a draft or active campaign. Streaming updates to an unused segment don\u0027t prevent it from being archived.\nArchived to Building: A segment is updated or added to some active campaign before it gets expired.\nArchived to Expired: A segment is not used or updated for 90 days continuously. That means 60 more days after it gets archived.\nExpired to Building: This transition only happens for list upload segments, when an expired segment is updated with a new list.\nBuilding to Archived: A segment is not used continuously for 30 days in a draft or active campaign. Streaming updates to an unused segment don\u0027t prevent it from being archived.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "",
+      "Headers": [
+        "API product",
+        "Availability",
+        "How to Request"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Matched Audiences",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Available to qualified developers vetted for Matched Audiences API with Default tier access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refer to Getting access to Matched Audiences API for access information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply for Access",
+      "Anchor": "apply-for-access",
+      "SectionPath": [
+        "Apply for Access"
+      ],
+      "Text": "Make sure you have access to Advertising API first, before submitting the form as it is an obligatory pre-requisite. You can learn more about Advertising API application here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioning",
+      "Anchor": "versioning",
+      "SectionPath": [
+        "Versioning"
+      ],
+      "Text": "LinkedIn\u2019s Marketing API Program supports versioning so API partners can release changes over time. This document explains how to use versioned APIs, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ",
+      "Anchor": "faq",
+      "SectionPath": [
+        "FAQ"
+      ],
+      "Text": "For frequently asked questions about Matched Audiences, see Matched Audiences FAQ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "These resources can help you stay on top of new features, migrations, and deprecations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Stay Informed and Get Support",
+      "Anchor": "stay-informed-and-get-support",
+      "SectionPath": [
+        "Stay Informed and Get Support"
+      ],
+      "Text": "Check out the Recent Changes page to see the latest API releases.\nCheck out the Developer Portal to know more about our API products.\nUse the Migrations page to stay on top of breaking changes.\nNeed help? Reach out to Developer Support by submitting a support ticket.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

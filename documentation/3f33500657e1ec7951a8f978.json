@@ -1,0 +1,336 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+  "Title": "Deduplication",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Deduplication",
+      "Anchor": "deduplication",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication",
+      "Anchor": "deduplication",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "We recommend that advertisers send events through both the Insight Tag, or the Image pixel, and Conversions API for increased reliability and a more complete view of the customer journey. If you\u0027re sharing the same events via multiple methods, also called a redundant set up, we may receive the same events from the browser and the server. Deduplication allows us to identify if the same events are being passed via multiple methods so we can discard the duplicate event and only count the conversion once.\u200B\nThis document outlines the steps for setting up and using deduplication for the Insight Tag, or Image pixel, and Conversions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How Does Deduplication Work?",
+      "Anchor": "how-does-deduplication-work",
+      "SectionPath": [
+        "How Does Deduplication Work?"
+      ],
+      "Text": "For any conversion that you want to send through multiple methods, such as Insight Tag and Conversions API, you must create a conversion rule for each data source (browser and server). Then, you can implement a logic to pick up the eventId from the browser and send it with the corresponding event from your server. If we receive an Insight Tag event and a Conversions API event from the same account with the same eventId, we discard the Conversions API event and count only the Insight Tag event in campaign reporting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What Does Deduplication Look Like In Campaign Reporting?",
+      "Anchor": "what-does-deduplication-look-like-in-campaign-reporting",
+      "SectionPath": [
+        "What Does Deduplication Look Like In Campaign Reporting?"
+      ],
+      "Text": "Once you have set up a redundant conversion for Conversions API and Insight Tag and associated both conversions with a campaign:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What Does Deduplication Look Like In Campaign Reporting?",
+      "Anchor": "what-does-deduplication-look-like-in-campaign-reporting",
+      "SectionPath": [
+        "What Does Deduplication Look Like In Campaign Reporting?"
+      ],
+      "Text": "See both conversions in reporting under the conversion breakdowns. For example, you can see \u201CInsight Tag trial activation\u201D and \u201CCAPI trial activation\u201D.\nIf we detect a redundant occurrence of an event, it\u0027s only counted once under the Insight Tag conversion and is deducted from the Conversions API conversion count. For example, if we detected that a \u201Ctrial activation\u201D was sent through both the Insight Tag and Conversions API, we\u0027ll only count it under the \u201CInsight Tag trial activation\u201D.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Status Monitoring",
+      "Anchor": "deduplication-status-monitoring",
+      "SectionPath": [
+        "Deduplication Status Monitoring"
+      ],
+      "Text": "You must check that the Conversions API event and the Insight Tag event are showing up in your conversion breakdown and review the counts for each. Typically, the Insight Tag event will have a higher count if deduplication is working correctly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up Deduplication On a Browser",
+      "Anchor": "setting-up-deduplication-on-a-browser",
+      "SectionPath": [
+        "Setting Up Deduplication On a Browser"
+      ],
+      "Text": "The setup steps differ depending on how you installed your Insight Tag or Image pixel. Follow one of the following methods to set up deduplication on the browser:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Setting Up Deduplication On a Browser",
+      "Anchor": "setting-up-deduplication-on-a-browser",
+      "SectionPath": [
+        "Setting Up Deduplication On a Browser"
+      ],
+      "Text": "Manual installation method.\nInsight Tag Procedure.\nImage Pixel Procedure.\nTag Manager installation method.\nInsight Tag Procedure.\nImage Pixel Procedure.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure",
+      "SectionPath": [
+        "Manual Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Page load conversions\nAssign the eventId to the _linkedin_event_id property on the global window namespace before the Insight Tag base code executes. For more information, see here.\n JavaScriptCopy window._linkedin_event_id = \u0022ABCDppSv6kBwg\u0022;",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure",
+      "SectionPath": [
+        "Manual Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Example\nAn example of placing the script define _linkedin_event_id before the Insight Tag base code in advertiser codebase:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure",
+      "SectionPath": [
+        "Manual Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "// index.html\n    // Define page load event ID before insight tag base code\n    \u003Chtml\u003E\n       \u003Chead\u003E\n          \u003Cscript\u003E\n             window._linkedin_event_id = \u0060very-unique-page-load-event-id\u0060;\n          \u003C/script\u003E\n          \u003C!-- Insight Tag Code starts--\u003E\n          \u003Cscript type=\u0022text/javascript\u0022\u003E\n             _linkedin_partner_id = \u002212345\u0022;\n             window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];\n             window._linkedin_data_partner_ids.push(_linkedin_partner_id);\n          \u003C/script\u003E\u003Cscript type=\u0022text/javascript\u0022\u003E\n             (function(l) {\n             if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};\n             window.lintrk.q=[]}\n             var s = document.getElementsByTagName(\u0022script\u0022)[0];\n             var b = document.createElement(\u0022script\u0022);\n             b.type = \u0022text/javascript\u0022;b.async = true;\n             b.src = \u0022https://snap.licdn.com/li.lms-analytics/insight.min.js\u0022;\n             s.parentNode.insertBefore(b, s);})(window.lintrk);\n          \u003C/script\u003E\n          \u003Cnoscript\u003E\n             \u003Cimg height=\u00221\u0022 width=\u00221\u0022 style=\u0022display:none;\u0022 alt=\u0022\u0022 src=\u0022https://px.ads.linkedin.com/collect/?pid=5041322\u0026fmt=gif\u0022 /\u003E\n          \u003C/noscript\u003E\n          \u003C/script\u003E\n          \u003C!-- Insight Tag Code ends --\u003E\n       \u003C/head\u003E\n    \u003C/html\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure",
+      "SectionPath": [
+        "Manual Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Event-specific conversions\nOn the event performed by the user, invoke the window.lintrk function by passing in the event_id property along with the conversion_id in the second argument.\n JavaScriptCopy window.lintrk(\u0022track\u0022, { conversion_id: 12345, event_id: \u0022ABCDppSv6kBwg\u0022 })",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Pixel Procedure",
+      "Anchor": "image-pixel-procedure",
+      "SectionPath": [
+        "Manual Installation Method",
+        "Image Pixel Procedure"
+      ],
+      "Text": "Pass the eventId into the image pixel URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Image Pixel Procedure",
+      "Anchor": "image-pixel-procedure",
+      "SectionPath": [
+        "Manual Installation Method",
+        "Image Pixel Procedure"
+      ],
+      "Text": "\u003Cimg height=\u00221\u0022 width=\u00221\u0022 style=\u0022display:none;\u0022 alt=\u0022\u0022 src=\u0022https://px.ads.linkedin.com/collect/?pid=1\u0026conversionId=123\u0026fmt=gif\u0026eventId=ABCDppSv6kBwg\u0022 /\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Tag Manager Installation Method",
+      "Anchor": "tag-manager-installation-method",
+      "SectionPath": [
+        "Tag Manager Installation Method"
+      ],
+      "Text": "LinkedIn Insight Tag 2.0 on Google Tag Manager can be extended to push the Event ID field for deduplication as mentioned in the following instructions.To add the LinkedIn Insight Tag 2.0 to Google Tag Manager, refer to the Help Center article. The GTM V2 template is extended to support the Event ID field for deduplication.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Page load conversions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Configure a GTM variable to read eventId from the data layer and plug it into the Event ID field in the template.\n\nPush eventId to the data layer before the GTM script executes.\n JavaScriptCopy window.dataLayer = window.dataLayer || [];\n window.dataLayer.push({ eventId: \u0027ABCDppSv6kBwg\u0027});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Example",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Example of placing the script to define push the eventId to data layer before GTM script executes in advertiser codebase:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "// index.html\n    // Push page load event ID to data layer GTM base code\n    \u003Chtml\u003E\n       \u003Chead\u003E\n          \u003Cscript\u003E\n             window.dataLayer = window.dataLayer || [];\n             window.dataLayer.push({ eventId: \u0027ABCDppSv6kBwg\u0027});\n          \u003C/script\u003E\n          \u003C!-- Google Tag Manager starts--\u003E\n          \u003Cscript type=\u0022text/javascript\u0022\u003E\n             (function (w, d, s, l, i) {\n                  w[l] = w[l] || [];\n                  w[l].push({ \u0022gtm.start\u0022: new Date().getTime(), event: \u0022gtm.js\u0022 });\n                  var f = d.getElementsByTagName(s)[0],\n                    j = d.createElement(s),\n                    dl = l != \u0022dataLayer\u0022 ? \u0022\u0026l=\u0022 \u002B l : \u0022\u0022;\n                  j.async = true;\n                  j.src = \u0022https://www.googletagmanager.com/gtm.js?id=\u0022 \u002B i \u002B dl;\n                  f.parentNode.insertBefore(j, f);\n                })(window, document, \u0022script\u0022, \u0022dataLayer\u0022, \u0022GTM-NP2LSDV\u0022);\n          \u003C/script\u003E\n          \u003C!-- Google Tag Manager ends --\u003E\n       \u003C/head\u003E\n    \u003C/html\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Event-Specific Conversions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Configure a GTM variable to read eventId from the data layer and plug it into the Event ID field in the template.\n\nConfigure conversion to trigger on a specific custom GTM event (e.g. contact).\n\nPush event and eventId to the data layer on any given user event.\n JavaScriptCopy window.dataLayer.push({ event: \u0027contact\u0027, eventId: \u0022ABCDppSv6kBwg\u0022 });",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Image Pixel Instructions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "The GTM V2 template doesn\u0027t support image pixel conversions. However, the eventId can still be specified by using a custom image tag as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "Configure a GTM variable to read the image URL from the data layer and plug it into the \u201CImage URL\u201D field for the image tag.\nConfigure conversion to trigger on a specific GTM event. For example, add_to_cart.\nPush event and eventId to the data layer on any given user event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Insight Tag Procedure",
+      "Anchor": "insight-tag-procedure-1",
+      "SectionPath": [
+        "Tag Manager Installation Method",
+        "Insight Tag Procedure"
+      ],
+      "Text": "dataLayer.push({ event: \u201Cadd_to_cart\u201D, pixliUrl: \u201Chttps://px.ads.linkedin.com/collect/?pid=1\u0026conversionId=123\u0026fmt=gif\u0026eventId=ABCDppSv6kBwg\u201D })",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

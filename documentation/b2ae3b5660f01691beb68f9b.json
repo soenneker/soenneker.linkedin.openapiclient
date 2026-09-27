@@ -1,0 +1,528 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead",
+  "Title": "Geo Typeahead",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Geo Typeahead API provides the best matching geo URNs based on the search query.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema q=search",
+      "Anchor": "schema-qsearch",
+      "SectionPath": [
+        "Geo Typeahead: q=search",
+        "Schema q=search"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "displayText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The display name of the geo URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Geo urn matching the search query.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Parameters",
+      "Anchor": "request-parameters",
+      "SectionPath": [
+        "Geo Typeahead: q=search",
+        "Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "query",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Typeahead query parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the country/region data is requested in. \u0022en_US\u0022 locale will be used if locale is not provided or not supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Geo Typeahead: q=search",
+        "Sample Requests"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Geo Typeahead: q=search",
+        "Sample Requests"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/geoTypeahead?q=search\u0026query=united\n\nGET https://api.linkedin.com/v2/geoTypeahead?q=search\u0026query=united\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Geo Typeahead: q=search",
+        "Sample Requests"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/geoTypeahead?q=search\u0026query=united\u0027 \\\n-H \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\n\ncurl -X GET \u0027https://api.linkedin.com/v2/geoTypeahead?q=search\u0026query=united\u0026locale=(language%3Aen%2Ccountry%3AUS)\u0027 \\\n-H \u0027X-RestLi-Protocol-Version: 2.0.0\u0027 -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Geo Typeahead: q=search",
+        "Sample Response"
+      ],
+      "Text": "{\n   \n    },\n    \u0022elements\u0022: [\n        {\n            \u0022displayText\u0022: \u0022United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:103644278\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:101165590\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022United Arab Emirates\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:104305776\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022England, United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102299470\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022California, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102095887\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022Texas, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102748797\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022New York, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:105080838\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022Florida, United States\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:101318387\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022London Area, United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90009496\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022London, England, United Kingdom\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:102257491\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DEPRECATED - Geo Typeahead: q=federated",
+      "Anchor": "deprecated---geo-typeahead-qfederated",
+      "SectionPath": [
+        "DEPRECATED - Geo Typeahead: q=federated"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DEPRECATED - Geo Typeahead: q=federated",
+      "Anchor": "deprecated---geo-typeahead-qfederated",
+      "SectionPath": [
+        "DEPRECATED - Geo Typeahead: q=federated"
+      ],
+      "Text": "The Geo Typeahead API below (/geoTypeahead?q=federated) will be deprecated on August 31, 2021 and replaced with the new Geo Typeahead API above (/geoTypeahead?q=search).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema q=federated",
+      "Anchor": "schema-qfederated",
+      "SectionPath": [
+        "DEPRECATED - Geo Typeahead: q=federated",
+        "Schema q=federated"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "hits",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The record containing the typeahead hit information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "displayName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hit title. The display name of the geo URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The urn matching the search query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "DEPRECATED - Geo Typeahead: q=federated",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "query",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Typeahead query parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the country/region data is requested in. \u0022en_US\u0022 locale will be used if locale is not provided or not supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by\u00A0ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by\u00A0ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request",
+      "SectionPath": [
+        "DEPRECATED - Geo Typeahead: q=federated",
+        "Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/geoTypeahead?q=federated\u0026query=San\n\nGET https://api.linkedin.com/v2/geoTypeahead?q=federated\u0026query=San\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "DEPRECATED - Geo Typeahead: q=federated",
+        "Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022hits\u0022: [\n        {\n          \u0022displayName\u0022: \u0022San Francisco Bay Area\u0022,\n          \u0022entity\u0022: \u0022urn:li:geo:12345\u0022\n        },\n        {\n          \u0022displayName\u0022: \u0022San Francisco, California, United States\u0022,\n          \u0022entity\u0022: \u0022urn:li:geo:23456\u0022\n        },\n        {...},\n        {...}\n      ]\n    }\n  ],\n \n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

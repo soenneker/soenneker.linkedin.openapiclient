@@ -14,7 +14,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The callToAction property</summary>
+        /// <summary>Customizable call-to-action that the product is associated with. This is optional as an admin may choose to not create one.Documented type: ProductCallToActionRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction? CallToAction { get; set; }
@@ -38,6 +38,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDefaultLocale DefaultLocale { get; set; }
 #endif
+        /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDeleted? Deleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDeleted Deleted { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDescription Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        /// <summary>Unique ID of the product.Documented type: longRequirement: Yes</summary>
+        public long? Id { get; set; }
         /// <summary>The lastModified property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,22 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin LastModifiedByAdmin { get; set; }
 #endif
+        /// <summary>An auditStamp corresponding to the last publication of the product. Publication time is defined as when the product&apos;s state changes to an ACTIVE state.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastPublished? LastPublished { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastPublished LastPublished { get; set; }
+#endif
+        /// <summary>An AuditStamp corresponding to the last download that an organization admin has done of the associated lead gen form response report for the product. This field will only be populated if versionedLeadGenForm is non-null and an organizational admin has taken action to download the lead gen form response report, capturing the last download time of the report and the last admin to download the report.Documented type: LeadGenFormReportLastDownloadedRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLeadGenFormReportLastDownloaded? LeadGenFormReportLastDownloaded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLeadGenFormReportLastDownloaded LeadGenFormReportLastDownloaded { get; set; }
+#endif
         /// <summary>The logoV2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,13 +96,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2 LogoV2 { get; set; }
 #endif
-        /// <summary>The mediaSections property</summary>
+        /// <summary>Custom media sections configured for the product. These media sections can represent images or videos.Documented type: Array[ProductMediaSection]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? MediaSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseMediaSectionsItem>? MediaSections { get; set; }
 #nullable restore
 #else
-        public UntypedNode MediaSections { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseMediaSectionsItem> MediaSections { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +112,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName Name { get; set; }
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>URN of the organization that owns this product.Documented type: OrganizationUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Organization { get; set; }
@@ -96,7 +120,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Organization { get; set; }
 #endif
-        /// <summary>The organizationalPage property</summary>
+        /// <summary>Unique organizational page URN of the product.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationalPage { get; set; }
@@ -104,7 +128,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string OrganizationalPage { get; set; }
 #endif
-        /// <summary>The organizationsUsingProduct property</summary>
+        /// <summary>List of organizations (urn:li:organization:{ID}) that are using the product, up to a maximum of 12.Documented type: Array[OrganizationUrn]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OrganizationsUsingProduct { get; set; }
@@ -112,17 +136,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> OrganizationsUsingProduct { get; set; }
 #endif
-        /// <summary>The pendingClaimByAdmin property</summary>
+        /// <summary>Boolean denoting whether or not the product is pending to be claimed by one of the owning organization&apos;s admins.Documented type: BooleanRequirement: Yes</summary>
         public bool? PendingClaimByAdmin { get; set; }
-        /// <summary>The productCategories property</summary>
+        /// <summary>The product categories (urn:li:standardizedProductCategory:{ID}) to which a product belongs. Extract the numeric {ID} and use it with the dmaProductCategories taxonomy API to resolve the category name.Documented type: Array[StandardizedProductCategoryUrn]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProductCategories { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchema>? ProductCategories { get; set; }
 #nullable restore
 #else
-        public List<string> ProductCategories { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchema> ProductCategories { get; set; }
 #endif
-        /// <summary>The productCategoryAdminSuggestions property</summary>
+        /// <summary>For products that are uncategorized, admins must give suggestions to provide additional information on what their category should be, such as competitors, keywords, etc. For categorized products, the questionnaire can still be filled out optionally to provide additional category related information for standardization purposes. Can be null for products that already have a category.Documented type: ProductCategoryAdminSuggestionsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions? ProductCategoryAdminSuggestions { get; set; }
@@ -130,7 +154,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions ProductCategoryAdminSuggestions { get; set; }
 #endif
-        /// <summary>The productIntegrations property</summary>
+        /// <summary>List of products (represented by StandardizedProductUrns, urn:li:standardizedProduct:{ID}) that can be integrated with the product. The {ID} corresponds to the id field of the referenced product resource, and can be resolved via this same API&apos;s GET or BATCH_GET.Documented type: Array[StandardizedProductUrn]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProductIntegrations { get; set; }
@@ -138,37 +162,47 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<string> ProductIntegrations { get; set; }
 #endif
-        /// <summary>The rolesUsingProduct property</summary>
+        /// <summary>Product pricing information that is provided by admins and/or prepopulated using 3rd party data. Admins would be notified and given time to review the prepopulated pricing before publishing. Only en_US locale and USD currency will be supported for MVP.Documented type: ProductPricingRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RolesUsingProduct { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductPricing? ProductPricing { get; set; }
 #nullable restore
 #else
-        public List<string> RolesUsingProduct { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductPricing ProductPricing { get; set; }
 #endif
-        /// <summary>The standardizedSkills property</summary>
+        /// <summary>List of user roles (urn:li:title:{ID}) that are using the product, up to a maximum of 10. Where TitleUrn can be resloved via /dmaTitlesDocumented type: Array[TitleUrn]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? StandardizedSkills { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchema>? RolesUsingProduct { get; set; }
 #nullable restore
 #else
-        public UntypedNode StandardizedSkills { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchema> RolesUsingProduct { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The list of standardized skills (urn:li:skill:{ID}) associated with the product. Where SkillUrn can be resolved via /dmaSkills.Documented type: Array[SkillUrn]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchema>? StandardizedSkills { get; set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchema> StandardizedSkills { get; set; }
 #endif
-        /// <summary>The vanityName property</summary>
+        /// <summary>Represents the state of the product. Value enums includes PENDING_ACTIVATIONACTIVEREJECTEDPRE_REVIEWPENDING_REVIEWPASSED_REVIEWFAILED_REVIEWDocumented type: ProductStateRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseState? State { get; set; }
+        /// <summary>Product&apos;s unique name used in URLs. This field can only be null while the product&apos;s state is PENDING_ACTIVATION.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VanityName { get; set; }
 #nullable restore
 #else
         public string VanityName { get; set; }
+#endif
+        /// <summary>VersionedLeadGenFormUrn (urn:li:versionedLeadGenForm:(urn:li:leadGenForm:{ID},{VERSION_ID})) indicate&apos;s the associated lead gen form for the product.Documented type: VersionedLeadGenFormUrnRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VersionedLeadGenForm { get; set; }
+#nullable restore
+#else
+        public string VersionedLeadGenForm { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200Response"/> and sets the default values.
@@ -198,24 +232,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "callToAction", n => { CallToAction = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCreated.CreateFromDiscriminatorValue); } },
                 { "defaultLocale", n => { DefaultLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDefaultLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDefaultLocale.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDeleted.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDescription.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModified.CreateFromDiscriminatorValue); } },
                 { "lastModifiedByAdmin", n => { LastModifiedByAdmin = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin.CreateFromDiscriminatorValue); } },
+                { "lastPublished", n => { LastPublished = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastPublished>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastPublished.CreateFromDiscriminatorValue); } },
+                { "leadGenFormReportLastDownloaded", n => { LeadGenFormReportLastDownloaded = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLeadGenFormReportLastDownloaded>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLeadGenFormReportLastDownloaded.CreateFromDiscriminatorValue); } },
                 { "logoV2", n => { LogoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2.CreateFromDiscriminatorValue); } },
-                { "mediaSections", n => { MediaSections = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "mediaSections", n => { MediaSections = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseMediaSectionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseMediaSectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName.CreateFromDiscriminatorValue); } },
                 { "organization", n => { Organization = n.GetStringValue(); } },
                 { "organizationalPage", n => { OrganizationalPage = n.GetStringValue(); } },
                 { "organizationsUsingProduct", n => { OrganizationsUsingProduct = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pendingClaimByAdmin", n => { PendingClaimByAdmin = n.GetBoolValue(); } },
-                { "productCategories", n => { ProductCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "productCategories", n => { ProductCategories = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchema>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "productCategoryAdminSuggestions", n => { ProductCategoryAdminSuggestions = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions.CreateFromDiscriminatorValue); } },
                 { "productIntegrations", n => { ProductIntegrations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "rolesUsingProduct", n => { RolesUsingProduct = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "standardizedSkills", n => { StandardizedSkills = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "productPricing", n => { ProductPricing = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductPricing>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductPricing.CreateFromDiscriminatorValue); } },
+                { "rolesUsingProduct", n => { RolesUsingProduct = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchema>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchema.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "standardizedSkills", n => { StandardizedSkills = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchema>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchema.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseState>(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
+                { "versionedLeadGenForm", n => { VersionedLeadGenForm = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -228,24 +267,29 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCallToAction>("callToAction", CallToAction);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseCreated>("created", Created);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDefaultLocale>("defaultLocale", DefaultLocale);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDeleted>("deleted", Deleted);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseDescription>("description", Description);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModified>("lastModified", LastModified);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastModifiedByAdmin>("lastModifiedByAdmin", LastModifiedByAdmin);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLastPublished>("lastPublished", LastPublished);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLeadGenFormReportLastDownloaded>("leadGenFormReportLastDownloaded", LeadGenFormReportLastDownloaded);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseLogoV2>("logoV2", LogoV2);
-            writer.WriteObjectValue<UntypedNode>("mediaSections", MediaSections);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseMediaSectionsItem>("mediaSections", MediaSections);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseName>("name", Name);
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("organizationalPage", OrganizationalPage);
             writer.WriteCollectionOfPrimitiveValues<string>("organizationsUsingProduct", OrganizationsUsingProduct);
             writer.WriteBoolValue("pendingClaimByAdmin", PendingClaimByAdmin);
-            writer.WriteCollectionOfPrimitiveValues<string>("productCategories", ProductCategories);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyProductcategoriesSchema>("productCategories", ProductCategories);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions>("productCategoryAdminSuggestions", ProductCategoryAdminSuggestions);
             writer.WriteCollectionOfPrimitiveValues<string>("productIntegrations", ProductIntegrations);
-            writer.WriteCollectionOfPrimitiveValues<string>("rolesUsingProduct", RolesUsingProduct);
-            writer.WriteObjectValue<UntypedNode>("standardizedSkills", StandardizedSkills);
-            writer.WriteStringValue("state", State);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductPricing>("productPricing", ProductPricing);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomyTitlesSchema>("rolesUsingProduct", RolesUsingProduct);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnDmaPagesDataPortabilityTaxonomySkillsSchema>("standardizedSkills", StandardizedSkills);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationProductsGet200ResponseState>("state", State);
             writer.WriteStringValue("vanityName", VanityName);
+            writer.WriteStringValue("versionedLeadGenForm", VersionedLeadGenForm);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

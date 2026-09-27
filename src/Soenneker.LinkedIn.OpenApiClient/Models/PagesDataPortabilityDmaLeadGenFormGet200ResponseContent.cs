@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Content of the form which is displayed to the viewer.Documented type: DisplayContentRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaLeadGenFormGet200ResponseContent : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the form. Optional since the owner may choose to not have this information.Documented type: MultiLocaleStringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentDescription? Description { get; set; }
@@ -30,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentHeadline Headline { get; set; }
 #endif
-        /// <summary>The legalInfo property</summary>
+        /// <summary>Legal information displayed alongside the form.Documented type: LeadGenFormLegalInfoRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfo? LegalInfo { get; set; }
@@ -38,7 +39,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfo LegalInfo { get; set; }
 #endif
-        /// <summary>The questions property</summary>
+        /// <summary>Information displayed to the user after submitting the form (e.g. thank you message, etc.). Optional since not all use cases require a post submission experience.Documented type: PostSubmissionInfoRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentPostSubmissionInfo? PostSubmissionInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentPostSubmissionInfo PostSubmissionInfo { get; set; }
+#endif
+        /// <summary>Questions to request information from the viewer. At least one question should be present.Documented type: LeadGenFormQuestion[]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem>? Questions { get; set; }
@@ -74,6 +83,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentDescription>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentDescription.CreateFromDiscriminatorValue); } },
                 { "headline", n => { Headline = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentHeadline>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentHeadline.CreateFromDiscriminatorValue); } },
                 { "legalInfo", n => { LegalInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfo.CreateFromDiscriminatorValue); } },
+                { "postSubmissionInfo", n => { PostSubmissionInfo = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentPostSubmissionInfo>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentPostSubmissionInfo.CreateFromDiscriminatorValue); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -87,6 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentHeadline>("headline", Headline);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentLegalInfo>("legalInfo", LegalInfo);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentPostSubmissionInfo>("postSubmissionInfo", PostSubmissionInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaLeadGenFormGet200ResponseContentQuestionsItem>("questions", Questions);
             writer.WriteAdditionalData(AdditionalData);
         }

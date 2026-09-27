@@ -1,0 +1,302 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+  "Title": "LinkedIn Learning: SSO to Non-SSO Authentication",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-adfs-config",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-azure-ad",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-cert-renewal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-multi-auth",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-non-sso",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-okta",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the SSO to non-SSO transition process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "Prior to switching your organization\u2019s authentication, we recommend that you check with your IT team to make sure SSO is truly not available outside of the organization network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO to Non-SSO Authentication Overview",
+      "Anchor": "sso-to-non-sso-authentication-overview",
+      "SectionPath": [
+        "SSO to Non-SSO Authentication Overview"
+      ],
+      "Text": "In emergencies, many LinkedIn Learning partner organizations direct their employees and learners to remote working environments where they maintain their access to LinkedIn Learning. These situations involve several use cases, including the following scenarios:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO to Non-SSO Authentication Overview",
+      "Anchor": "sso-to-non-sso-authentication-overview",
+      "SectionPath": [
+        "SSO to Non-SSO Authentication Overview"
+      ],
+      "Text": "Furloughed employees/learners with access to the organization\u2019s VPN\n\nFurloughed employees/learners without access to the organization\u2019s VPN\n\nFull-time or contract employees working remotely, but lacking access to the\norganization\u2019s VPN\n\nOrganizations concerned about VPN overload due to its majority workforce practicing remote work",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO to Non-SSO Authentication Overview",
+      "Anchor": "sso-to-non-sso-authentication-overview",
+      "SectionPath": [
+        "SSO to Non-SSO Authentication Overview"
+      ],
+      "Text": "These members fall into three categories:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO to Non-SSO Authentication Overview",
+      "Anchor": "sso-to-non-sso-authentication-overview",
+      "SectionPath": [
+        "SSO to Non-SSO Authentication Overview"
+      ],
+      "Text": "Those with off-site VPN access who have the simple option of extending the SSO timeout period (up to 180 days)\n\nThose whose organizations have directed them to unbind their corporate SSO and use non-SSO authentication (e.g., out of concerns for bandwidth overload, among others)\n\nThose without remote VPN access, who can maintain access to LinkedIn Learning only by switching from SSO to non-SSO",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages and Disadvantages",
+      "Anchor": "advantages-and-disadvantages",
+      "SectionPath": [
+        "Advantages and Disadvantages"
+      ],
+      "Text": "Before you disconnect your company SSO and move to non-SSO LinkedIn Learning access, you should understand the advantages and disadvantages of making this transition.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Advantages",
+      "Anchor": "advantages",
+      "SectionPath": [
+        "Advantages and Disadvantages",
+        "Advantages"
+      ],
+      "Text": "You can continue to access LinkedIn Learning content while working outside your company or organization network.\n\nYour company or organization need not worry about VPN overload due to high-volume traffic.\n\nIf you don\u2019t have remote VPN access (due to company policy, bandwidth, and so on) you still can access LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Disadvantages",
+      "Anchor": "disadvantages",
+      "SectionPath": [
+        "Advantages and Disadvantages",
+        "Disadvantages"
+      ],
+      "Text": "When you return to work on-site, you may have to update any profiles added while SSO was disabled.\n\nWhen the grace period (i.e., access to LinkedIn Learning after termination) for laid-off employees is over, admins must manually deactivate the learners\u0027 licenses in order to revoke access to LinkedIn Learning.\n\nThere is a possibility of more internal IT issues and tickets due to learners trying to access LinkedIn Learning through the reactivated SSO, or the learners not receiving the invitation email once their organization grants them SSO access.\n\nYou must manually add learners to LinkedIn Learning, either individually or in bulk via a CSV upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download List of Existing Users",
+      "Anchor": "download-list-of-existing-users",
+      "SectionPath": [
+        "Download List of Existing Users"
+      ],
+      "Text": "Before you download the CSV file of existing users, filter them by taking the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Download List of Existing Users",
+      "Anchor": "download-list-of-existing-users",
+      "SectionPath": [
+        "Download List of Existing Users"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E People \u003E Users.\n\n\nClick the Manage Users dropdown and select \u0022Filtered users\u0022.\n\n\nEnter \u0022Authentication method\u0022 in the Default attributes field, click the search icon, and add \u0022Authentication method\u0022 to \u0022Custom Attributes\u0022 by selecting it from the dropdown.\n\nClick \u0022Select All\u0022 in the \u0022Licenses\u0022 section.\n\n\nClick the \u0022Download CSV\u0022 button and open the file.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deactivate your SSO",
+      "Anchor": "deactivate-your-sso",
+      "SectionPath": [
+        "Deactivate your SSO"
+      ],
+      "Text": "To deactivate your SSO connection, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deactivate your SSO",
+      "Anchor": "deactivate-your-sso",
+      "SectionPath": [
+        "Deactivate your SSO"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin \u003E Authentication.\n\n\nSelect Configure single sign-on and locate your SSO connection.\n\nSwitch the connection from \u0022Active\u0022 to \u0022Inactive\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deactivate Users who have Logged in via SSO",
+      "Anchor": "deactivate-users-who-have-logged-in-via-sso",
+      "SectionPath": [
+        "Deactivate Users who have Logged in via SSO"
+      ],
+      "Text": "To deactivate SSO users, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deactivate Users who have Logged in via SSO",
+      "Anchor": "deactivate-users-who-have-logged-in-via-sso",
+      "SectionPath": [
+        "Deactivate Users who have Logged in via SSO"
+      ],
+      "Text": "For any user with a value in the \u0022Authentication method\u0022 column, change their \u0022Default_license_learning_allLanguages_status\u0022 to \u0022inactive\u0022 (the license column heading may vary based on what type of license you have).\n\n\nSave a copy of the CSV file to your desktop.\n\nGo to People \u003E Users \u003E Manage Users \u003E User CSV.\n\nIn the pop-up, click Upload CSV.\n\n\nNavigate to the file and upload it to your account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Switch Authentication Method and Re-Invite Users",
+      "Anchor": "switch-authentication-method-and-re-invite-users",
+      "SectionPath": [
+        "Switch Authentication Method and Re-Invite Users"
+      ],
+      "Text": "To switch the authentication method to non-SSO and re-invite users, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Switch Authentication Method and Re-Invite Users",
+      "Anchor": "switch-authentication-method-and-re-invite-users",
+      "SectionPath": [
+        "Switch Authentication Method and Re-Invite Users"
+      ],
+      "Text": "Using the file mentioned in the above the steps, in the \u0022authentication_method\u0022 column, add \u0022no_sso\u0022 for each user.\n\nIn the \u0022Default_license_learning_allLanguages_status\u0022 column, enter \u0022active\u0022 for each user.\n\n\nSave a copy of the CSV file to your desktop.\n\nGo to People \u003E Users \u003E Manage Users \u003E User CSV (see above).\n\nIn the pop-up, click Upload CSV.\n\nSave the file and upload it into your account. This action triggers an email notification prompting the users to create a password.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Switch Authentication Method and Re-Invite Users",
+      "Anchor": "switch-authentication-method-and-re-invite-users",
+      "SectionPath": [
+        "Switch Authentication Method and Re-Invite Users"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content outside your organization\u2019s network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Below you can find supporting documentation and other resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "SSO Implementation\n\nMultiple Authentication SSO\n\nAdd and Manage Users in Bulk via CSV\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Issues",
+      "Anchor": "technical-issues",
+      "SectionPath": [
+        "Support",
+        "Technical Issues"
+      ],
+      "Text": "If you have technical issues with the SSO setup, contact your account team or application support team through the LinkedIn Learning Help Center.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u0027s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u0027s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

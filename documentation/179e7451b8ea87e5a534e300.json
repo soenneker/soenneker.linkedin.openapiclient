@@ -1,0 +1,396 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+  "Title": "Protocol Versions",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/data-formats",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/methods",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/projections",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/rate-limits",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/urns",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Protocol Versions",
+      "Anchor": "protocol-versions",
+      "SectionPath": [],
+      "Text": "LinkedIn V2 APIs support two protocol versions: 1.0 and 2.0. See the following syntax differences to help you migrate from 1.0 to 2.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Protocol Versions",
+      "Anchor": "protocol-versions",
+      "SectionPath": [],
+      "Text": "LinkedIn plans to deprecate protocol version 1.0 in the near future. We strongly encourage developers to migrate as soon as possible and take advantage of the performance improvements in protocol version 2.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Protocol Versions",
+      "Anchor": "protocol-versions",
+      "SectionPath": [],
+      "Text": "To use version 2.0, you must pass X-Restli-Protocol-Version: 2.0.0 as the header in your API requests. If you don\u0027t pass a header, your call will default to version 1.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "When performing a GET, PARTIAL_UPDATE, or DELETE on a resource, you must supply the resource key. See the following protocol version 1.0 example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "GET https://api.linkedin.com/urn:li:endorsement:(urn:li:person:2qXA98-mVk,65761962366)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "In protocol version 2.0, you must URL encode the entire resource key. The ( must be encoded to %28, ) to %29, : to %3A and , to %2C. See the following example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/endorsement/urn%3Ali%3Aendorsement%3A%28urn%3Ali%3Aperson%3A2qXA98-mVk%2C65761962366%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "Note that special characters in a params string not part of a resource key should not be encoded. See the following example where parentheses are not encoded:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List(urn%3Ali%3Aorganization%3A12345)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "In cases where only numeric ID are passed in as the primary resource key, nothing will change from 1.0 to 2.0. Some APIs require a compound or complex key. The following table lists the syntax differences:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Single Resource Key",
+      "Anchor": "single-resource-key",
+      "SectionPath": [
+        "Single Resource Key"
+      ],
+      "Text": "",
+      "Headers": [
+        "Key Type",
+        "Version 1.0",
+        "Version 2.0"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "primitive key, long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "3",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primitive key, string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "someString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "someString",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "compound key with association",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "stringKey=string\u0026longKey=5",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(stringKey:string,longKey:5)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "complex key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "$param.a=value\u0026$param.b=value \u0026keyPart1=value1\u0026keyPart2=value2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "($param:(a:value,b:value), keyPart1:value1,keyPart2=value2)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Resource Keys",
+      "Anchor": "multiple-resource-keys",
+      "SectionPath": [
+        "Multiple Resource Keys"
+      ],
+      "Text": "To perform a BATCH_GET in protocol version 1.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Multiple Resource Keys",
+      "Anchor": "multiple-resource-keys",
+      "SectionPath": [
+        "Multiple Resource Keys"
+      ],
+      "Text": "GET https://api.linkedin.com/people?ids=1\u0026ids=2\u0026ids=3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multiple Resource Keys",
+      "Anchor": "multiple-resource-keys",
+      "SectionPath": [
+        "Multiple Resource Keys"
+      ],
+      "Text": "In protocol version 2.0, you must change this query to a List syntax:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Multiple Resource Keys",
+      "Anchor": "multiple-resource-keys",
+      "SectionPath": [
+        "Multiple Resource Keys"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/people?ids=List(1,2,3,4)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Keys",
+      "Anchor": "complex-keys",
+      "SectionPath": [
+        "Complex Keys"
+      ],
+      "Text": "In protocol version 1.0, if a resource has complex keys:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Complex Keys",
+      "Anchor": "complex-keys",
+      "SectionPath": [
+        "Complex Keys"
+      ],
+      "Text": "GET https://api.linkedin.com/people?ids[0].$params.a=value0A\u0026ids[0].$params.b=value0B\u0026ids[1].$params.a=value1A\u0026ids[1].$params.b=value1B\u0026ids[2].$params.a=value2A\u0026ids[2].$params.b=value2B",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Keys",
+      "Anchor": "complex-keys",
+      "SectionPath": [
+        "Complex Keys"
+      ],
+      "Text": "In protocol version 2.0, if a resource has complex keys:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Complex Keys",
+      "Anchor": "complex-keys",
+      "SectionPath": [
+        "Complex Keys"
+      ],
+      "Text": "GET https://api.linkedin.com/people?ids=List(($params.a:value0A,$params.b:value0B),($params.a:value1A,$params.b:value1B),($params.a:value2A,$params.b:value2B))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Keys",
+      "Anchor": "complex-keys",
+      "SectionPath": [
+        "Complex Keys"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Keys",
+      "Anchor": "complex-keys",
+      "SectionPath": [
+        "Complex Keys"
+      ],
+      "Text": "The values and the resource parameters must be URL encoded but not the , grouping the fields and values. The single resource key had the , encoded because it was part of the whole value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "When performing a FINDER in version 1.0, you often have query parameters such as filters represented as an array:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "GET https://api.linkedin.com/resource?q=FinderParam\u0026param.aList[0]=foo\u0026param.aList[1]=bar\u0026param.aList[2]=baz\u0026 param.anObject.aField=1\u0026param.anObject.anotherField=value",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "In protocol version 2.0, you must change this query to a List syntax, much like the multiple keys:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "GET https://api.linkedin.com/resource?q=myFinder\u0026param=(aList:List(foo,bar,baz),anObject:(aField:1,anotherField:value))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Parameters"
+      ],
+      "Text": "The values and the resource parameters must be URL encoded but not the , grouping the fields and values. The single resource key had the , encoded because it was part of the whole value.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

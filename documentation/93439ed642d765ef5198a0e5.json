@@ -1,0 +1,363 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+  "Title": "LinkedIn Apply with LinkedIn Certification",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To ensure both Apply with LinkedIn Plugin integration and Middleware Platform integration work as expected, LinkedIn must certify the finished development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Middleware Platform integration applies only to LinkedIn partners implementing Apply with LinkedIn for multiple customers (for example, an ATS).\nReview the appropriate documentation and send technical questions to your business development contact or partner engineering representative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Upon completing development, please review the test cases below and record a short video demonstrating each test case. LinkedIn will certify based on the complete coverage of test cases in the submitted certification video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification Process",
+      "Anchor": "certification-process",
+      "SectionPath": [
+        "Certification Process"
+      ],
+      "Text": "One video should capture all test cases. We do not accept multiple video files. Refer to the sample certification video.\n\nUpon successful certification, LinkedIn provides you with a new Parent API Key for Production.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Requirements",
+      "Anchor": "video-requirements",
+      "SectionPath": [
+        "Video Requirements"
+      ],
+      "Text": "The video should not exceed 10 minutes\nThe video file format should be a common video format (mp4, AVI, MOV)\nThe file name must follow the following format: Partner Name_ AWLI_CERT_ MM_DD_YY.mp4\nThe file should not exceed 100MB",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Cases",
+      "Anchor": "test-cases",
+      "SectionPath": [
+        "Test Cases"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Cases",
+      "Anchor": "test-cases",
+      "SectionPath": [
+        "Test Cases"
+      ],
+      "Text": "The sample certification video provided here covers all of the test scenarios described below.\nReview this video to ensure your certification video follows a similar structure and reduce the chance of resubmitting because a test case is missing.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Customer configuration (for partners, such as ATS providers)",
+      "Anchor": "module-1---customer-configuration-for-partners-such-as-ats-providers",
+      "SectionPath": [
+        "Module 1 - Customer configuration (for partners, such as ATS providers)"
+      ],
+      "Text": "The following test cases are for LinkedIn partners implementing Apply with LinkedIn for multiple customers. For instance, if you are an Applicant Tracking System (ATS) service provider, you should demonstrate the following test cases. See Middleware Platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 1 - Customer configuration (for partners, such as ATS providers)",
+      "Anchor": "module-1---customer-configuration-for-partners-such-as-ats-providers",
+      "SectionPath": [
+        "Module 1 - Customer configuration (for partners, such as ATS providers)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo a functioning customer configuration plugin on your settings/integration page",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The configuration widget loads, allowing the admin user to enable the integration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo receiving a working integrationContext for a customer who turns on Apply with LinkedIn in the customer configuration plugin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integrationContext is received and presented using the developer console in your browser, logs, or any other visual aid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo customers can update or add validJsSdkDomains for their application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The AWLI widget and plugin button are available only on the listed domains for the customer application. Customers can configure multiple domains or edit existing domains based on their requirements. For wildcard domain support, contact LinkedIn through the partner support form.",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 2 - Deploy the Apply with LinkedIn widget (for partners, such as ATS providers)",
+      "Anchor": "module-2---deploy-the-apply-with-linkedin-widget-for-partners-such-as-ats-providers",
+      "SectionPath": [
+        "Module 2 - Deploy the Apply with LinkedIn widget (for partners, such as ATS providers)"
+      ],
+      "Text": "The following test cases are for LinkedIn partners implementing Apply with LinkedIn for multiple customers. See Apply with LinkedIn Plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Deploy the Apply with LinkedIn widget (for partners, such as ATS providers)",
+      "Anchor": "module-2---deploy-the-apply-with-linkedin-widget-for-partners-such-as-ats-providers",
+      "SectionPath": [
+        "Module 2 - Deploy the Apply with LinkedIn widget (for partners, such as ATS providers)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo the application flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Apply With LinkedIn button renders on a customer\u0027s job posted on their career site. Once authenticated using LinkedIn credentials, the OAuth consent screen displays. Once consent is given, the application form populates correctly.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo the Apply with LinkedIn widget in conversion mode on the completion page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The plugin triggers the conversion tracking event from the job submission page and sends it to LinkedIn systems when the data-mode plugin parameter is set to CONVERSION. In-browser developer tools log the event accurately in the console and display the track conversion call on the submit page. If the job is non-paid, http-status 400 error appears, which is a valid response.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)",
+      "Anchor": "module-3---deploy-the-apply-with-linkedin-widget-for-customers-with-a-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)"
+      ],
+      "Text": "The following test cases apply to LinkedIn partners implementing Apply with LinkedIn for their own Applicant Tracking System (ATS) or hosting job applications on their career page. See Apply with LinkedIn Plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)",
+      "Anchor": "module-3---deploy-the-apply-with-linkedin-widget-for-customers-with-a-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Test Case",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AWLI-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo the application flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Apply With LinkedIn button renders on a customer\u0027s job posted on their career site. User enters LinkedIn credentials to authenticate and the OAuth screen displays. Next, the user clicks allow and the application form populates correctly",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AWLI-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demo the Apply with LinkedIn widget in conversion mode on the completion page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The plugin triggers the conversion tracking event from the job submission page and sends it to LinkedIn systems when the data-mode plugin parameter is set to CONVERSION. In-browser developer tools log the event accurately in the console and display the track conversion call on the submit page. If the job is non-paid, http-status 400 error appears, which is a valid response.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)",
+      "Anchor": "module-3---deploy-the-apply-with-linkedin-widget-for-customers-with-a-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)",
+      "Anchor": "module-3---deploy-the-apply-with-linkedin-widget-for-customers-with-a-proprietary-ats-or-career-page-solution",
+      "SectionPath": [
+        "Module 3 - Deploy the Apply with LinkedIn widget (for customers with a proprietary ATS or career page solution)"
+      ],
+      "Text": "If your integration also supports verification data, see Step 6: Complete certification and testing in the Apply with LinkedIn with Verifications guide for the additional test cases required to recertify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Certification Video",
+      "Anchor": "sample-certification-video",
+      "SectionPath": [
+        "Sample Certification Video"
+      ],
+      "Text": "This is a sample certification video to act as a reference. Please make sure to have a look at this before you make your certification video.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

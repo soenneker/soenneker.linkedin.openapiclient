@@ -1,0 +1,645 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+  "Title": "Key Concepts",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Key Concepts",
+      "Anchor": "key-concepts",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key Concepts",
+      "Anchor": "key-concepts",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Company Page/Organization?",
+      "Anchor": "what-is-a-company-pageorganization",
+      "SectionPath": [
+        "What is a Company Page/Organization?"
+      ],
+      "Text": "A Company Page is an entity that represents an organization on LinkedIn. The Company Page is where a company can post organic content and interact with members on LinkedIn. In addition to the Ad Account, the Company Page is one of the key entities that\u0027s used across marketing APIs for both sponsored and organic use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Company Page/Organization?",
+      "Anchor": "what-is-a-company-pageorganization",
+      "SectionPath": [
+        "What is a Company Page/Organization?"
+      ],
+      "Text": "See Creating a LinkedIn Page guide for instructions on creating a company page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Company Page/Organization?",
+      "Anchor": "what-is-a-company-pageorganization",
+      "SectionPath": [
+        "What is a Company Page/Organization?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is a Company Page/Organization?",
+      "Anchor": "what-is-a-company-pageorganization",
+      "SectionPath": [
+        "What is a Company Page/Organization?"
+      ],
+      "Text": "Company Pages are also referred to as \u0022Organizations\u0022, and these terms are used interchangeably in the documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page Roles",
+      "Anchor": "company-page-roles",
+      "SectionPath": [
+        "What is a Company Page/Organization?",
+        "Company Page Roles"
+      ],
+      "Text": "Company Pages can be managed by members who have been granted one of the following roles within that Company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Page Roles",
+      "Anchor": "company-page-roles",
+      "SectionPath": [
+        "What is a Company Page/Organization?",
+        "Company Page Roles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Role",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Administer an organizational entity; Post updates; Edit the organization page; Manage administrators; View analytics and notifications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create/View direct sponsored content (DSC) for an organizational entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECRUITING_POSTER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post to an organizational entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_CAPTURE_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View/Manage landing pages for the company; Create/Edit landing pages",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access leads that belong to a specific account which is associated with a company page",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ANALYST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to view an organization\u0027s private administrative data that relates to its social presence on LinkedIn, access limited to analytics tab to monitor the Page\u2019s performance to help drive goals. Can edit the competitors of a page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CURATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to broadcast content to employees of the organization, view Content Suggestions, create recommended content, and view and export Page analytics. Can edit the competitors of a page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to create and manage Page content, including updates, pinned posts, boosting updates, events, jobs etc.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Company Page Roles",
+      "Anchor": "company-page-roles",
+      "SectionPath": [
+        "What is a Company Page/Organization?",
+        "Company Page Roles"
+      ],
+      "Text": "The creator of the Company Page is the Administrator by default. All others can be added and given roles through the UI. Click \u0022Admin tools\u0022 on the right side of the admin view of the Company Page and then select \u0022Manage Admins\u0022. To add a member to a company page you must be connected on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is an Ad Account?",
+      "Anchor": "what-is-an-ad-account",
+      "SectionPath": [
+        "What is an Ad Account?"
+      ],
+      "Text": "An Ad Account (a.k.a. Sponsored Account) is an umbrella entity for advertising management on LinkedIn, e.g., billing, campaigns, ad creatives, tracking tags, and more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is an Ad Account?",
+      "Anchor": "what-is-an-ad-account",
+      "SectionPath": [
+        "What is an Ad Account?"
+      ],
+      "Text": "Ad Accounts can be managed through the UI using the Campaign Manager tool. Learn how to access Campaign Manager from the LinkedIn homepage, or for more information see Campaign Manager Overview",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ad Account Roles",
+      "Anchor": "ad-account-roles",
+      "SectionPath": [
+        "What is an Ad Account?",
+        "Ad Account Roles"
+      ],
+      "Text": "Ad Accounts can be managed by members who have been granted one of the following roles within that Ad Account. Please note that you must be connected to a LinkedIn member to add them to a Company Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Ad Account Roles",
+      "Anchor": "ad-account-roles",
+      "SectionPath": [
+        "What is an Ad Account?",
+        "Ad Account Roles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Role",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VIEWER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports (can\u0027t Create/Edit campaigns or ads)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATIVE_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create/Edit/View campaign data and reports; Create/Edit ads",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CAMPAIGN_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports; Create/Edit campaigns and ads",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_MANAGER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports. Create/Edit campaigns and ads; Edit account data and manage user access",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ACCOUNT_BILLING_ADMIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View campaign data and reports; Create/Edit campaigns and ads. Edit account data and manage user access. Can also access billing data and will be billed for this account. (See next paragraph for more details on this role",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Account Billing Admin role",
+      "Anchor": "account-billing-admin-role",
+      "SectionPath": [
+        "What is an Ad Account?",
+        "Account Billing Admin role"
+      ],
+      "Text": "There should be only one ACCOUNT_BILLING_ADMIN user role for an account.\nThe creator of the Ad Account is assigned Account Billing Administrator by default.\nOther roles can be added and given roles through the UI.\nClick the gear icon in the upper right corner of Campaign Manager and then select \u0022Manage Access\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Your Ad Accounts List",
+      "Anchor": "managing-your-ad-accounts-list",
+      "SectionPath": [
+        "Managing Your Ad Accounts List"
+      ],
+      "Text": "Once your application has been accepted into the Development Tier, you can manage and view your Ad Accounts from the developer portal. Add up to 5 accounts to manage in the Development Tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Your Ad Accounts List",
+      "Anchor": "managing-your-ad-accounts-list",
+      "SectionPath": [
+        "Managing Your Ad Accounts List"
+      ],
+      "Text": "Select your application from the list of apps..\nClick the \u0022Products\u0022 tab in the navigation.\nClick the \u0022View settings\u0022 link next to \u0022Advertising API\u0022.\nAdd or remove Ad Accounts from this page .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Your Ad Accounts List",
+      "Anchor": "managing-your-ad-accounts-list",
+      "SectionPath": [
+        "Managing Your Ad Accounts List"
+      ],
+      "Text": "Only accounts that have been configured for access in the Ad Accounts tab of your application can be managed through the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Managing Your Ad Accounts List",
+      "Anchor": "managing-your-ad-accounts-list",
+      "SectionPath": [
+        "Managing Your Ad Accounts List"
+      ],
+      "Text": "You can\u0027t create new accounts through the API in the Development Tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do Company Pages and Ad Accounts relate to each other?",
+      "Anchor": "how-do-company-pages-and-ad-accounts-relate-to-each-other",
+      "SectionPath": [
+        "How do Company Pages and Ad Accounts relate to each other?"
+      ],
+      "Text": "Company Pages can be associated with Ad Accounts to advertise on behalf of that organization. For example, if an organization wanted to boost exposure to their Company Page\u0027s content by sponsoring it, they would need to associate their Company Page with an Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do Company Pages and Ad Accounts relate to each other?",
+      "Anchor": "how-do-company-pages-and-ad-accounts-relate-to-each-other",
+      "SectionPath": [
+        "How do Company Pages and Ad Accounts relate to each other?"
+      ],
+      "Text": "While not required, we recommended that you always associate a Company Page with an Ad Account to get the full benefits of LinkedIn\u0027s marketing capabilities. Some campaign objectives and ad creative types require a Company Page to be associated with the Ad Account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do Company Pages and Ad Accounts relate to each other?",
+      "Anchor": "how-do-company-pages-and-ad-accounts-relate-to-each-other",
+      "SectionPath": [
+        "How do Company Pages and Ad Accounts relate to each other?"
+      ],
+      "Text": "A Company Page can be associated with multiple Ad Accounts.\nAn Ad Account can only be associated with a single Company Page.\nOnce an Ad Account is linked to a particular Company Page, it can\u0027t be changed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I make API calls on behalf of a LinkedIn member?",
+      "Anchor": "how-do-i-make-api-calls-on-behalf-of-a-linkedin-member",
+      "SectionPath": [
+        "How do I make API calls on behalf of a LinkedIn member?"
+      ],
+      "Text": "Once you have a developer application that has been given access to the LinkedIn Marketing API Program, you\u0027re ready to start generating OAuth access tokens to make API calls on behalf of authenticated members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I make API calls on behalf of a LinkedIn member?",
+      "Anchor": "how-do-i-make-api-calls-on-behalf-of-a-linkedin-member",
+      "SectionPath": [
+        "How do I make API calls on behalf of a LinkedIn member?"
+      ],
+      "Text": "Before an API call can be made, any required permission scopes must first be granted by the LinkedIn member. This ensures that members are made aware of what an application could potentially access or do on their behalf.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I make API calls on behalf of a LinkedIn member?",
+      "Anchor": "how-do-i-make-api-calls-on-behalf-of-a-linkedin-member",
+      "SectionPath": [
+        "How do I make API calls on behalf of a LinkedIn member?"
+      ],
+      "Text": "If your application requires multiple permissions to access all the data it requires, members who use your application are required to accept all of them. They can\u0027t accept only a subset of the requested application permissions. To provide the best experience for the member, ensure that your application requests the fewest necessary permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I know what roles a member has?",
+      "Anchor": "how-do-i-know-what-roles-a-member-has",
+      "SectionPath": [
+        "How do I know what roles a member has?"
+      ],
+      "Text": "One of the common errors developers encounter is attempting to make API calls to Company Pages, Ad Accounts, and their associated objects using a token belonging to a member who doesn\u0027t have a role defined under a given Company Page or Ad Account. Use the /adAccountUsers and /organizationAcls API to validate what roles a member has.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I know what roles a member has?",
+      "Anchor": "how-do-i-know-what-roles-a-member-has",
+      "SectionPath": [
+        "How do I know what roles a member has?"
+      ],
+      "Text": "The LinkedIn Advertising API gives you access to the following permissions. All these permission scopes are 3-legged permissions requiring explicit consent from a LinkedIn member. The 2-legged client credentials flow is not available for any marketing use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "How do I know what roles a member has?",
+      "Anchor": "how-do-i-know-what-roles-a-member-has",
+      "SectionPath": [
+        "How do I know what roles a member has?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage an authenticated member\u2019s company pages and retrieve reporting data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u0027s pages and their reporting data (including follower, visitor, and content analytics).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATOR DIRECT_SPONSORED_CONTENT_POSTERLEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "LEAD_GEN_FORMS_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER CREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Accounts. Restricted to ad accounts in which the authenticated member has one of the following Ad Account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGER CREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads_reporting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve reporting for advertising accounts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_1st_connections_size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve the count of an authenticated member\u0027s 1st-degree connections.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_basicprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s basic profile including name, photo, headline, and public profile URL.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I know what roles a member has?",
+      "Anchor": "how-do-i-know-what-roles-a-member-has",
+      "SectionPath": [
+        "How do I know what roles a member has?"
+      ],
+      "Text": "In addition to these permissions, members must have the appropriate roles as defined in Company Page Roles and Ad Account Roles to act on or read data from a given Company Page or Ad Account. See How Do I Know What Roles a Member Has to determine which roles an authenticated member has through the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I know what roles a member has?",
+      "Anchor": "how-do-i-know-what-roles-a-member-has",
+      "SectionPath": [
+        "How do I know what roles a member has?"
+      ],
+      "Text": "One of the common errors developers encounter is attempting to make API calls to Company Pages, Ad Accounts, and their associated objects using a token belonging to a member who doesn\u0027t have a role defined under a given Company Page or Ad Account. Use the API to validate what roles a member has.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

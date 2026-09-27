@@ -1,0 +1,322 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+  "Title": "Apply Connect release notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/developer-webhooks",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verification data",
+      "Anchor": "verification-data",
+      "SectionPath": [
+        "Verification data"
+      ],
+      "Text": "Apply Connect with Verifications\n\nAdded verificationData to the job application webhook payload, carrying the applicant\u0027s completed identity or workplace verifications. Refer to the Verification data schema for details.\n\n\nDisplay Apply Connect plugins\n\nAdded Display verification badges, documenting the verification badges rendered in the Applicant Highlights and Full Profile plugins.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cover letter question answer type correction",
+      "Anchor": "cover-letter-question-answer-type-correction",
+      "SectionPath": [
+        "Cover letter question answer type correction"
+      ],
+      "Text": "Receive job applications\n\nFixed the type for textCoverLetterQuestionAnswer from SimpleTalentQuestionResponse[] to TextAnswerValue to match the actual webhook payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Source attribution requirement for received applications",
+      "Anchor": "source-attribution-requirement-for-received-applications",
+      "SectionPath": [
+        "Source attribution requirement for received applications"
+      ],
+      "Text": "Apply Connect certification\n\nAdded AC-018 requirement to set the application source to LinkedIn Easy Apply in the ATS when receiving and creating a candidate record from a submitted application, for tracking and analytics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lifecycle signal documentation correction",
+      "Anchor": "lifecycle-signal-documentation-correction",
+      "SectionPath": [
+        "Lifecycle signal documentation correction"
+      ],
+      "Text": "Sync job application status updates\n\nCorrected the documented supported lifecycle signal enum values to omit the unsupported OFFERED and OTHER values and removed actionName. This corrects previously inaccurate documentation and does not represent a change to API functionality.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Removed non-Recruiter customer enablement",
+      "Anchor": "removed-non-recruiter-customer-enablement",
+      "SectionPath": [
+        "Removed non-Recruiter customer enablement"
+      ],
+      "Text": "Configure Customer Application\n\nRemoved the \u0022Sync Non-Recruiter Customer Integrations\u0022 section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Documentation structure and editorial improvements",
+      "Anchor": "documentation-structure-and-editorial-improvements",
+      "SectionPath": [
+        "Documentation structure and editorial improvements"
+      ],
+      "Text": "Apply Connect\n\nUpdated documentation structure and editorial improvements for better readability and navigation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook validation and status verification",
+      "Anchor": "webhook-validation-and-status-verification",
+      "SectionPath": [
+        "Webhook validation and status verification"
+      ],
+      "Text": "Receive job applications\n\nClarified webhook validation frequency and status verification methods.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample payload correction",
+      "Anchor": "sample-payload-correction",
+      "SectionPath": [
+        "Sample payload correction"
+      ],
+      "Text": "Receive job applications\n\nFixed type value in sample payload from JOB_APPLICATION_EXPORT to EXPORT_JOB_APPLICATION.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application secret management APIs",
+      "Anchor": "application-secret-management-apis",
+      "SectionPath": [
+        "Application secret management APIs"
+      ],
+      "Text": "Application Secret Management\n\nAdded APIs for rotating and managing secrets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification test case updates",
+      "Anchor": "certification-test-case-updates",
+      "SectionPath": [
+        "Certification test case updates"
+      ],
+      "Text": "Apply Connect Certification\n\nUpdated certification test cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant location question and migration guide",
+      "Anchor": "applicant-location-question-and-migration-guide",
+      "SectionPath": [
+        "Applicant location question and migration guide"
+      ],
+      "Text": "Sync Jobs with Onsite Apply\n\nAdded support for applicant location question.\n\n\nApply Connect Migration Guide\n\nAdded a guide for partners to migrate existing customers from Easy Apply to Apply Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration context and feedback signals",
+      "Anchor": "integration-context-and-feedback-signals",
+      "SectionPath": [
+        "Integration context and feedback signals"
+      ],
+      "Text": "Job Application Feedback Signals\n\nUpdated integrationContext as optional.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required fields overview",
+      "Anchor": "required-fields-overview",
+      "SectionPath": [
+        "Required fields overview"
+      ],
+      "Text": "Required Fields\n\nAdded overview page of all required fields of APIs.\n\n\nReceive Applications\n\nThe count of skills that pass to the ATS for each candidate is updated to 3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module requirements",
+      "Anchor": "module-requirements",
+      "SectionPath": [
+        "Module requirements"
+      ],
+      "Text": "Added detailed requirements to all Apply Connect modules.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SimpleJobPosting API and provisioning updates",
+      "Anchor": "simplejobposting-api-and-provisioning-updates",
+      "SectionPath": [
+        "SimpleJobPosting API and provisioning updates"
+      ],
+      "Text": "Sync Jobs with Onsite Apply\n\nAdded disclaimer for usage of SimpleJobPosting API.\n\n\nProvisioning API\n\nRemoving support for \u0022LinkedIn\u0022 to be used in name.\n\n\nDeveloperWebhooks API\n\nIntroduced new API to allow Apply Connect partners to look up and resolve webhook failures.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema field updates and plugin improvements",
+      "Anchor": "schema-field-updates-and-plugin-improvements",
+      "SectionPath": [
+        "Schema field updates and plugin improvements"
+      ],
+      "Text": "Job Posting API Schema\n\nUpdates to alternateLocations and workplaceTypes schema fields in XML Feed and Job Posting API schema\n\n\nApply Connect Plugins\n\nAdded examples for non-LinkedIn applicant implementations.\nCorrected required fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compensation field and error response schema",
+      "Anchor": "compensation-field-and-error-response-schema",
+      "SectionPath": [
+        "Compensation field and error response schema"
+      ],
+      "Text": "Job Posting API Schema\n\nAdded compensation field (optional) to support compensation in job posting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error response schema and standardized error codes",
+      "Anchor": "error-response-schema-and-standardized-error-codes",
+      "SectionPath": [
+        "Error response schema and standardized error codes"
+      ],
+      "Text": "Receive Applications - Added tables for error response schema and standardized error codes that partners can return for various application delivery failures",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Numeric question details and certification environment",
+      "Anchor": "numeric-question-details-and-certification-environment",
+      "SectionPath": [
+        "Numeric question details and certification environment"
+      ],
+      "Text": "Apply Connect Job Posting Schema\n\nCorrected required fields for NumericQuestionDetails, requiring either decimalQuestionDetails or integerQuestionDetails to be provided.\nRemoved support for fields patternRegex and patternErrorText.\n\n\nApply Connect certification\n\nProvide requirements for Certification Environment Configuration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Status API and Resync Webhook",
+      "Anchor": "job-posting-status-api-and-resync-webhook",
+      "SectionPath": [
+        "Job Posting Status API and Resync Webhook"
+      ],
+      "Text": "Job Posting Status API\n\nIntroducing the Job Posting Status API, providing the ability for partners to fetch up-to-date statuses and details of customer synced jobs.\n\n\nJob Resync Webhook\n\nIntroducing a new push event which allows LinkedIn to notify partners of out-of-sync customer jobs data and request a re-sync of the affected customer job(s).\n\n\nJob Posting API Schema\n\nAdded new field companyPageUrl to support better job to company mappings.\nUpdated requirements of fields: employmentStatus, experienceLevel, categories, workplaceTypes, description, location. companyJobCode, companyName, companyPageUrl, posterEmail.\n\n\nApply Connect certification\n\nUpdated requirements",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customer integration sync and plugin screenshots",
+      "Anchor": "customer-integration-sync-and-plugin-screenshots",
+      "SectionPath": [
+        "Customer integration sync and plugin screenshots"
+      ],
+      "Text": "Customer Configuration\n\nAdded Sync Customer Integration section\n\n\nReceive Applications\n\nAdded note regarding jobs converting to off-site apply if applications fail to deliver.\n\n\nSync Job Application Notifications\n\nAdded screenshots for Application Notification Experience\n\n\nApply Connect Plugins\n\nAdded screenshot for Applicant Highlights Experience.\nAdded screenshot for Apply Connect Full Profile Experience.\n\n\nApply Connect Certification\n\nUpdated certification requirements for Apply Connect\n\n\nCreate Apply Connect Jobs\n\nUpdated jobApplicationCallbackUrl to jobApplicationWebhookUrl\n\n\nOnsiteApplyConfiguration Schema\n\nUpdated jobApplicationCallbackUrl to jobApplicationWebhookUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field value correction",
+      "Anchor": "field-value-correction",
+      "SectionPath": [
+        "Field value correction"
+      ],
+      "Text": "Sync Jobs\n\nCorrected field value to displayValue.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Date question support and media URL",
+      "Anchor": "date-question-support-and-media-url",
+      "SectionPath": [
+        "Date question support and media URL"
+      ],
+      "Text": "Sync Jobs\n\nAdded support for date questions using DateQuestionDetails field.\n\n\nReceive Applications\n\nIntroduced new mediaUrl field in payload to download job applicant\u0027s uploaded media.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Remote jobs, prerequisite questions, and customer enablement",
+      "Anchor": "remote-jobs-prerequisite-questions-and-customer-enablement",
+      "SectionPath": [
+        "Remote jobs, prerequisite questions, and customer enablement"
+      ],
+      "Text": "Receive Applications\n\nAdded support for push event payload to return jobApplicant field.\nCorrected sample push event payload.\n\n\nCreate and Manage Jobs\n\nAdded support for remote location jobs.\nAdded support for date range and prerequisite questions.\n\n\nCustomer Configuration\n\nAdded details on providing a customer toggle to enable Apply Connect and required legal language.\nAdded requirement for partners to allow customers option to opt in/out of Apply Connect for individual jobs.\n\n\nSync Job Application Feedback Signals\n\nAdded supported for job application signal enum APPLICATION_REJECTED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Initial certification test cases",
+      "Anchor": "initial-certification-test-cases",
+      "SectionPath": [
+        "Initial certification test cases"
+      ],
+      "Text": "Apply Connect certification\n\nAdded Apply Connect certification test cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect launch",
+      "Anchor": "apply-connect-launch",
+      "SectionPath": [
+        "Apply Connect launch"
+      ],
+      "Text": "Apply Connect\n\nRelease of Apply Connect program.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

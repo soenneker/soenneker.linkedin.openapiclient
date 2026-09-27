@@ -1,0 +1,65 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+  "Title": "Development Tools",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Development Tools",
+      "Anchor": "development-tools",
+      "SectionPath": [],
+      "Text": "This section provides tools to serve partner teams such as development team and project management team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Postman collection contains all the APIs required for the Apply With LinkedIn integration. Development teams can use it for reference while integrating Apply With LinkedIn APIs into their code. Postman collection is fully functional and covers all the APIs included in the Apply With LinkedIn integration, so it can be used as a playground to understand APIs in detail before you begin any development activities.\nYou can download the postman collection for Apply With LinkedIn APIs from below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application",
+      "Anchor": "sample-application",
+      "SectionPath": [
+        "Sample Application"
+      ],
+      "Text": "Sample Application provides an end to end flow with respect to the Apply With LinkedIn widget. It demonstrates a scenario where a user clicks the Apply With LinkedIn button on a job application page and the form is pre-filled with user information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Application",
+      "Anchor": "sample-application",
+      "SectionPath": [
+        "Sample Application"
+      ],
+      "Text": "We have created a sample application as a reference for development. This sample application demonstrates the integration of Apply with LinkedIn Plugin.\nYou can download the sample application from here.\nPlease read the instructions mentioned in Readme file in the sample application folder to find out how to use the sample application.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

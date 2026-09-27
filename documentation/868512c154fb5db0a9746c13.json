@@ -1,0 +1,703 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+  "Title": "Organization Talent Brand Analytic Summaries",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Talent Brand Analytic Summaries API provides analytics data for organization career pages on LinkedIn. Career pages (also known as Life Pages) are dedicated pages that showcase an organization\u0027s employer brand, culture, and open positions to potential candidates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Career pages consist of two main sections:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Life tab: Displays company culture, employee stories, photos, and workplace policies.\nJobs tab: Shows current job openings at the organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "This API returns aggregated visitor statistics for career pages, specifically the total number of people who viewed the organization\u0027s Life and Jobs tabs within a specified time range. This data helps organization administrators understand the reach and effectiveness of their employer branding efforts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The API is available for LinkedIn company pages, schools, and showcase pages that have career page features enabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Career pages are a paid product feature. For more information, see Company Career Pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API"
+      ],
+      "Text": "To retrieve talent brand analytics data, you need to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API"
+      ],
+      "Text": "Verify access permissions: Ensure the authenticated user has one of the required roles, as described in the Permissions section.\n\nFind eligible organizations: To determine the organizations for which you can query analytics, use the OrganizationAuthorization API\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of OrganizationAnalyticsAuthorizationActionType.TALENT_BRAND_ANALYTICS_READ. This returns a list of organization URNs the authenticated member is permitted to access.\n\nQuery the API: Use the organization URN and desired time range to retrieve analytics data. Examples are provided in this documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API"
+      ],
+      "Text": "The Organization Talent Brand Analytic Summaries API returns visitor statistics for organizations, including company, school, and showcase pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API"
+      ],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API"
+      ],
+      "Text": "OrganizationAndTimeRange - Retrieves talent brand analytics data summaries (career page visitors) for a specific organization and time range.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYSTLEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST",
+              "LEAD_GEN_FORMS_MANAGER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "careerPagesVisitors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TalentBrandAnalyticDataItem",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Analytics data for career page visitors, including the total count of unique visitors who viewed the organization\u0027s Life and Jobs tabs in the specified time range, with comparison data from the previous period.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TalentBrandAnalyticDataItem",
+      "Anchor": "talentbrandanalyticdataitem",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "TalentBrandAnalyticDataItem"
+      ],
+      "Text": "Schema that records talent brand statistics for each organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TalentBrandAnalyticDataItem",
+      "Anchor": "talentbrandanalyticdataitem",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "TalentBrandAnalyticDataItem"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN identifying the company, school, or showcase page. For example: urn:li:organization:1234. This URN corresponds to the organization whose career page analytics are being returned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total count of visitors in the current time range. For example, if timeRange is THREE_MONTHS, this represents the total number of unique visitors from the present date back to 3 months ago.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "previousCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total count of visitors in the previous time range (for comparison). For example, if timeRange is THREE_MONTHS, this represents the total number of unique visitors from 3 months ago back to 6 months ago. This enables period-over-period comparison to track growth trends.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TalentBrandAnalyticsTimeRange",
+      "Anchor": "talentbrandanalyticstimerange",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "TalentBrandAnalyticsTimeRange"
+      ],
+      "Text": "Talent brand analytics query time range.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TalentBrandAnalyticsTimeRange",
+      "Anchor": "talentbrandanalyticstimerange",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "TalentBrandAnalyticsTimeRange"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "THREE_MONTHS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range from present to 3 months ago.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SIX_MONTHS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range from present to 6 months ago.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ONE_YEAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range from present to one year ago.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "URN URL Encoding"
+      ],
+      "Text": "The {ORGANIZATION_URN} must be URL-encoded in the API request.Organization URN is in the format urn:li:organization:{organization id} and represents a LinkedIn Company Page.\nUse this API to find the Organization ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization for which career page analytics are requested. Obtain this from the OrganizationAuthorization API, as described in the \u0022How to Use This API\u0022 section. The URN must be URL-encoded in the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TalentBrandAnalyticsTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range for analytics data. Valid values: THREE_MONTHS (present to 3 months ago), SIX_MONTHS (present to 6 months ago), or ONE_YEAR (present to 1 year ago). The previousCount in the response will cover an equivalent period before the specified timeRange.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeRange=(value:THREE_MONTHS)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaTalentBrandAnalyticSummaries?q=organizationAndTimeRange\u0026organization={ORGANIZATION_URN}\u0026timeRange=(value:THREE_MONTHS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaTalentBrandAnalyticSummaries?q=organizationAndTimeRange\u0026organization=urn%3Ali%3Aorganization%3A1234\u0026timeRange=(value:THREE_MONTHS)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "How to Use This API",
+        "Permissions",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022 : [\n    {\n      \u0022careerPagesVisitors\u0022 : {\n        \u0022count\u0022 : 201022,\n        \u0022organization\u0022 : \u0022urn:li:organization:1234\u0022,\n        \u0022previousCount\u0022 : 232164\n      }\n    }\n  ],\n  \u0022paging\u0022 : {\n    \u0022count\u0022 : 10,\n    \u0022links\u0022 : [],\n    \u0022start\u0022 : 0,\n    \u0022total\u0022 : 1\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

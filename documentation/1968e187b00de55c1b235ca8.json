@@ -1,0 +1,437 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+  "Title": "LinkedIn Events",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/articles",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/shares",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Events",
+      "Anchor": "linkedin-events",
+      "SectionPath": [],
+      "Text": "The identity of the resourceName is events . Currently, this resource captures all LinkedIn events created by regulated members. This also includes LinkedIn events created by a regulated member on behalf of a Company Page. The methods available are: CREATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Event activity schema",
+      "Anchor": "linkedin-event-activity-schema",
+      "SectionPath": [
+        "LinkedIn Event activity schema"
+      ],
+      "Text": "Following is the schema for the activity field of the Compliance Events created for LinkedIn Events. This activity is processed and additional contextual information is added and stored as the processedActivity field in the compliance event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LinkedIn Event activity schema",
+      "Anchor": "linkedin-event-activity-schema",
+      "SectionPath": [
+        "LinkedIn Event activity schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the event, as input by the user",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalerichtext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vanity name (unique across events) for the event that helps with easy identification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description of the event, as input by the user. This field will not be present when event description is not provided by the organizer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalerichtext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity responsible for organizing this event - possible urn types: urn:li:person:{personID} (Event created by a regulated member), urn:li:organization:{organizationID} (Event created on behalf of a company page).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backgroundImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalMediaAssetUrn of the background image associated with this event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRangeV2.startAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start time of the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRangeV2.endsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end time of the event. The field will not be present if the organizer hasn\u0027t entered an end time during event creation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url external to LinkedIn containing event information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "settings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Container for various event settings.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventSettings",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events#eventsettings-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "venueDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The additional details about the event venue, on top of the address field, like room name, floor number etc. as input by the user.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalerichtext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The physical address of the event (i.e. where the event is taking place). This field will not be present when address is not provided by the organizer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "eventTimezone",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The event\u0027s timezone in IANA Time Zone database format.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hashtags",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hashtag urns used to generate event feed, specified by event organizer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List[string]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "closed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Flag to indicate if this is a closed event meaning the attendees are required to register before joining the event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EventSettings Schema",
+      "Anchor": "eventsettings-schema",
+      "SectionPath": [
+        "LinkedIn Event activity schema",
+        "EventSettings Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entryCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entry criteria member needs to satisfy to be able to attend the event. Possible values: PUBLIC: This event is open to all members.GATED: A member needs to raise a request to attend the event.",
+            "Links": [],
+            "Values": [
+              "PUBLIC: This event is open to all members.",
+              "GATED: A member needs to raise a request to attend the event."
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "discoveryMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mode in which the event can be discovered on LinkedIn. Possible values: LISTED: Event is discoverable through search/relevance/recommendation channels.URL_ONLY: Event can only be discovered via URL.",
+            "Links": [],
+            "Values": [
+              "LISTED: Event is discoverable through search/relevance/recommendation channels.",
+              "URL_ONLY: Event can only be discovered via URL."
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attendanceMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mode in which the attendees can attend an event. Possible values: IN_PERSON: The event is an offline only event with physical location associated to it and can only be attended in person.VIRTUAL: The event is an online only event, which has no physical location associated to it. It can only be attended virtually using steaming Url.IN_PERSON_OR_VIRTUAL: The event has a physical location to attend in person and also has url for attending virtually.",
+            "Links": [],
+            "Values": [
+              "IN_PERSON: The event is an offline only event with physical location associated to it and can only be attended in person.",
+              "VIRTUAL: The event is an online only event, which has no physical location associated to it. It can only be attended virtually using steaming Url.",
+              "IN_PERSON_OR_VIRTUAL: The event has a physical location to attend in person and also has url for attending virtually."
+            ]
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample activity - LinkedIn event created by a regulated user",
+      "Anchor": "sample-activity---linkedin-event-created-by-a-regulated-user",
+      "SectionPath": [
+        "Sample activity - LinkedIn event created by a regulated user"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022resourceId\u0022: \u00227022126346663247872\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022resourceName\u0022: \u0022events\u0022,\n    \u0022resourceUri\u0022: \u0022/events/7022126346663247872\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activityId\u0022: \u0022e1f1e63b-2840-4c91-bb44-937c017fa186\u0022,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022processedActivity\u0022: {\n        \u0022timeRangeV2\u0022: {\n            \u0022startsAt\u0022: 1674210600000\n        },\n        \u0022vanityName\u0022: \u0022event-vanity-name\u0022,\n        \u0022settings\u0022: {\n            \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n            \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n        },\n        \u0022externalUrl\u0022: \u0022https://companyName.com/eventLink\u0022,\n        \u0022backgroundImage~\u0022: {\n            \u0022paging\u0022: {\n                \u0022start\u0022: 0,\n                \u0022count\u0022: 10,\n                \u0022links\u0022: []\n            },\n            \u0022elements\u0022: [\n                {\n                    \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:D4D1EAQH7emFRT6ZOpw,urn:li:digitalmediaMediaArtifactClass:event-background-image-crop_720_1280)\u0022,\n                    \u0022pluggableServiceFactory\u0022: \u0022com.linkedin.vector.assetmanager.logic.pluggableservice.uploaddownloadservice.UploadDownloadServiceFactory\u0022,\n                    \u0022data\u0022: {...\n                    },\n                    \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n                    \u0022identifiers\u0022: [\n                        {\n                            \u0022identifier\u0022: \u0022https://media.licdn.com/dms/image/D4D1EAQH7emFRT6ZOpw/event-background-image-crop_720_1280/0/1674205384525?e=2147483647\u0026v=beta\u0026t=OEFOAYMWj7nRAZtTjp5rAeyYMRioTE1OItkj1mU-rTY\u0022,\n                            \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:D4D1EAQH7emFRT6ZOpw,urn:li:digitalmediaArtifactClass:event-background-image-crop_720_1280,0)\u0022,\n                            \u0022size\u0022: 64326,\n                            \u0022index\u0022: 0,\n                            \u0022mediaType\u0022: \u0022image/png\u0022,\n                            \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                            \u0022identifierExpiresInSeconds\u0022: 1674810216\n                        }\n                    ]\n                }\n            ]\n        },\n        \u0022organizer~\u0022: {\n            \u0022localizedLastName\u0022: \u0022Test\u0022,\n            \u0022firstName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Siddartha\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022profilePicture\u0022: {\n                \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C4D03AQEA6HWqv-N3Yw\u0022,\n                \u0022displayImage~\u0022: {...\n                }\n            },\n            \u0022lastName\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Test\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022vanityName\u0022: \u0022testVanityName\u0022,\n            \u0022localizedHeadline\u0022: \u0022 LinkedIn Headline\u0022,\n            \u0022headline\u0022: {...\n            },\n            \u0022localizedFirstName\u0022: \u0022Siddartha\u0022\n        },\n        \u0022organizer\u0022: \u0022urn:li:person:A3iH9CIw-n\u0022,\n        \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D4D1EAQH7emFRT6ZOpw\u0022,\n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022https://company.name/eventLink\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022description\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: {\n                    \u0022rawText\u0022: \u0022Description Lorem Ipsum\u0022\n                }\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022id\u0022: \u003CeventID\u003E,\n        \u0022eventTimezone\u0022: \u0022Asia/Kolkata\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample activity - LinkedIn event created on behalf of a company page",
+      "Anchor": "sample-activity---linkedin-event-created-on-behalf-of-a-company-page",
+      "SectionPath": [
+        "Sample activity - LinkedIn event created on behalf of a company page"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022resourceId\u0022: \u00227022128501281468416\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022configVersion\u0022: 5,\n    \u0022parentSiblingActivities\u0022: [],\n    \u0022resourceName\u0022: \u0022events\u0022,\n    \u0022resourceUri\u0022: \u0022/events/7022128501281468416\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activityId\u0022: \u00222851c9c3-0fdf-4cfc-90e3-c14de02f7065\u0022,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022processedActivity\u0022: {\n        \u0022timeRangeV2\u0022: {\n            \u0022startsAt\u0022: 1674210600000\n        },\n        \u0022vanityName\u0022: \u0022eventbythecompany7022128501281468416\u0022,\n        \u0022settings\u0022: {\n            \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n            \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022\n        },\n        \u0022externalUrl\u0022: \u0022https://companyName.com/eventLink\u0022,\n        \u0022backgroundImage~\u0022: {\n            \u0022paging\u0022: {\n                \u0022start\u0022: 0,\n                \u0022count\u0022: 10,\n                \u0022links\u0022: []\n            },\n            \u0022elements\u0022: [\n                {\n                    \u0022artifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:\u003CassedID\u003E,urn:li:digitalmediaMediaArtifactClass:event-background-image-crop_720_1280)\u0022,\n                    \u0022pluggableServiceFactory\u0022: \u0022com.linkedin.vector.assetmanager.logic.pluggableservice.uploaddownloadservice.UploadDownloadServiceFactory\u0022,\n                    \u0022data\u0022: {},\n                    \u0022authorizationMethod\u0022: \u0022PUBLIC\u0022,\n                    \u0022identifiers\u0022: [\n                        {\n                            \u0022identifier\u0022: \u0022https://media.licdn.com/dms/image/D4wD1EAQHivBOEijWxpA/event-background-image-crop_720_1280/0/1674205898339?e=2147483647\u0026v=beta\u0026t=kZ26MHfSqF8kc3Rnwg8soZYxm9-XVZwcy2uvhroFkCA\u0022,\n                            \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:\u003CassedID\u003E,urn:li:digitalmediaArtifactClass:event-background-image-crop_720_1280,0)\u0022,\n                            \u0022size\u0022: 64326,\n                            \u0022index\u0022: 0,\n                            \u0022mediaType\u0022: \u0022image/png\u0022,\n                            \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                            \u0022identifierExpiresInSeconds\u0022: 1674810729\n                        }\n                    ]\n                }\n            ]\n        },\n        \u0022organizer~\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022TestCompany\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedName\u0022: \u0022TestCompany\u0022\n        },\n        \u0022organizer\u0022: \u0022urn:li:organization:\u003CorgID\u003E\u0022,\n        \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:\u003CassedID\u003E\u0022,\n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Event by the company\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022description\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: {\n                    \u0022rawText\u0022: \u0022Description Lorem Ipsum\u0022\n                }\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022id\u0022: 7022128501281468416,\n        \u0022eventTimezone\u0022: \u0022Asia/Kolkata\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample activity - In-Person LinkedIn event created by a regulated user",
+      "Anchor": "sample-activity---in-person-linkedin-event-created-by-a-regulated-user",
+      "SectionPath": [
+        "Sample activity - In-Person LinkedIn event created by a regulated user"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022resourceId\u0022: \u00227022128906526699520\u0022,\n    \u0022activity\u0022: {...},\n    \u0022method\u0022: \u0022CREATE\u0022,\n    \u0022resourceName\u0022: \u0022events\u0022,\n    \u0022resourceUri\u0022: \u0022/events/7022128906526699520\u0022,\n    \u0022actor\u0022: \u0022urn:li:person:\u003CpersonID\u003E\u0022,\n    \u0022activityId\u0022: \u0022cb179af2-daf5-47f7-a2be-0285b3c13298\u0022,\n    \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n    \u0022processedActivity\u0022: {\n        \u0022vanityName\u0022: \u0022inpersonevent7022128906526699520\u0022,\n        \u0022timeRangeV2\u0022: {\n            \u0022endsAt\u0022: 1674387000000,\n            \u0022startsAt\u0022: 1674297000000\n        },\n        \u0022settings\u0022: {\n            \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n            \u0022attendanceMode\u0022: \u0022IN_PERSON\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022\n        },\n        \u0022externalUrl\u0022: \u0022https://companyName.com/eventLink\u0022,\n        \u0022address\u0022: {\n            \u0022country\u0022: \u0022IN\u0022,\n            \u0022geographicArea\u0022: \u0022State\u0022,\n            \u0022line2\u0022: \u0022demo line2\u0022,\n            \u0022city\u0022: \u0022demoCity\u0022,\n            \u0022line1\u0022: \u0022demo line1\u0022,\n            \u0022postalCode\u0022: \u0022000000\u0022\n        },\n        \u0022organizer~\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022TestCompany\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022localizedName\u0022: \u0022TestCompany\u0022\n        },\n        \u0022organizer\u0022: \u0022urn:li:organization:77346936\u0022,\n        \u0022name\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022In Person Event\u0022\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022venueDetails\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: {\n                    \u0022rawText\u0022: \u00227th Floor\u0022\n                }\n            },\n            \u0022preferredLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            }\n        },\n        \u0022description\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: {\n                    \u0022rawText\u0022: \u0022Description Lorem Ipsum\u0022\n                }\n            },\n            \u0022preferredLocale\u0022: {...}\n        },\n        \u0022id\u0022: 7022128906526699520,\n        \u0022eventTimezone\u0022: \u0022Asia/Kolkata\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

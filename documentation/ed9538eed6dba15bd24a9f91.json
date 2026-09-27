@@ -1,0 +1,283 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/data-validation-design-considerations",
+  "Title": "CRM Data Validation - Design Considerations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/data-validation-design-considerations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/exporting-crm-data-validation",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/profile-associations",
+    "https://learn.microsoft.com/en-us/linkedin/sales/sync-services/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "CRM Data Validation - Design Considerations",
+      "Anchor": "crm-data-validation---design-considerations",
+      "SectionPath": [],
+      "Text": "The Design Considerations Guide includes recommendations and guidance when you are integrating with Sales Navigator Sync Services.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating Successful Export Jobs",
+      "Anchor": "creating-successful-export-jobs",
+      "SectionPath": [
+        "Creating Successful Export Jobs"
+      ],
+      "Text": "If there is export job created previously, use the value of nextExportStartAt in previous request as the value of exportStartAt in current request.\nSince data validation pipeline runs once everyday, do not build your integration to repeatedly creates jobs looking for data within the past 24 hours.\nWhen polling periodically for an export job\u0027s status, it is recommended to set an appropriate polling interval to avoid unnecessary calls, and to stop polling once the export job has completed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Handling",
+      "Anchor": "error-handling",
+      "SectionPath": [
+        "Error Handling"
+      ],
+      "Text": "The export job may not be created or completed successfully due to various reasons. Instead of ignoring the 4xx or 5xx status code, make sure the corresponding errors are handled in your integration. Here are a list of potential error codes that your application should handle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Handling",
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response Code",
+        "Service Error Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad request, missing parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid export start date, export start is either greater than export end date or greater than the current time.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized (typically a result of token expiration)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application does not have enough access to complete the request. Application may not have the required scope to use the endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM instance and corresponding Sales Navigator contracts do not have CRM Sync enabled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM instance and corresponding Sales Navigator contracts do not have the Data Validation feature enabled.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM instance cannot be accessed with the developer application used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Instance ID not found",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too many requests. The application is currently being throttled due to high call volume",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unhandled service error",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Message Response Format",
+      "Anchor": "error-message-response-format",
+      "SectionPath": [
+        "Error Handling",
+        "Error Message Response Format"
+      ],
+      "Text": "Error responses will be returned in the following response format. The HTTP response code in the response header will also be present in the status field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Error Message Response Format",
+      "Anchor": "error-message-response-format",
+      "SectionPath": [
+        "Error Handling",
+        "Error Message Response Format"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022Application does not have access to /crmDataValidationExportJobs\u0022,\n    \u0022status\u0022: 403,\n    \u0022serviceErrorCode\u0022: 40003\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Message Response Format",
+      "Anchor": "error-message-response-format",
+      "SectionPath": [
+        "Error Handling",
+        "Error Message Response Format"
+      ],
+      "Text": "Refer to API Guide - Error Handling for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Throttling and Limits",
+      "Anchor": "throttling-and-limits",
+      "SectionPath": [
+        "Throttling and Limits"
+      ],
+      "Text": "To prevent abuse and to ensure service stability, everyday any app is granted a quota of 50 requests to create export jobs, and 5000 requests to query export jobs every day. Read Error Handling - 429 Rate Limit to learn more about throttling and limits.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

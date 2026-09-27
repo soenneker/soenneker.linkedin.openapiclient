@@ -1,0 +1,4671 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields",
+  "Title": "Apply Connect - Required Fields",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply Connect - Required Fields",
+      "Anchor": "apply-connect---required-fields",
+      "SectionPath": [],
+      "Text": "To ensure a consistent experience for customers using Apply Connect below are the APIs and fields required per category.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect - Required Fields",
+      "Anchor": "apply-connect---required-fields",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect - Required Fields",
+      "Anchor": "apply-connect---required-fields",
+      "SectionPath": [],
+      "Text": "LinkedIn strictly audits partner behavior to ensure good user experience. If required fields are not available in your ATS system, instead of sending incorrect values, we strongly suggest you get in touch with your LinkedIn Business Development point of contact and inform them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply Connect - Required Fields",
+      "Anchor": "apply-connect---required-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer-facing name for the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization this job posting is created for. Must be in the format urn:li:organization:1234.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The data provider value. Use ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The tenantType received during customer enablement.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization this job posting is created for. Must be in the format urn:li:organization:1234.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job ID within the applicant tracking system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title of this job posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (Max 200 Characters)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom description of the job posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The geographic location of the job position. Must be in the format \u0022CITY,STATE\u0022 or \u0022CITY,COUNTRY\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The operation on the job posting. Available operation options are: CREATE, UPDATE, RENEW, CLOSE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "companyApplyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL to redirect applicants to apply for the job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The date the job posting was added to the partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "onsiteApplyConfiguration",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#onsiteapplyconfiguration-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The information required to enable onsite job applications on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, for Apply Connect.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostingTasks API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique ID for a simple job posting task.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID for which an action has been taken.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action taken on the given job application. Possible enum values: APPLICATION_VIEWED, RESUME_DOWNLOADED, or APPLICATION_REJECTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "performedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp for when the action was taken.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context. Must be of the form urn:li:organization:12345.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if received during customer enablement.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job posting ID within the partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobPostingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The link to the job posting on LinkedIn. This is only present if the job is listed on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "linkedInApplyStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn Easy Apply status of the job posting. This is one of ENABLED, NOT_ENABLED, IN_PROGRESS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "linkedInApplyStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn Easy Apply status detail.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listingStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The listing state of the job posting. This is one of LISTED, NOT_LISTED, IN_PROGRESS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listingStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The error description for the job, if not listed successfully.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "promotionStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The promoted status of the job listing. This is one of PROMOTED, NOT_PROMOTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "promotionStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The instruction message to manage job promotion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "rawLocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The original location as inputted for this job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "developerApplicationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Developer Application URN for a child app.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the callback request. The current supported type includes RESYNC_JOBS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "syncAllOpenJobs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents whether all open jobs belonging to the Developer Application ID need to be re-synced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of unique job IDs within the partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if received and must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-job-application-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID received from the Receive Job Applications API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS job posting ID. This must be the same as externalJobPostingId in Sync Jobs API. Note: The job posting needs to be LinkedIn Easy Apply enabled for the widget to load for offsite job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No, for LinkedIn onsite applicants. Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-applicant-email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-applicant-profile-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context value for the customer\u0027s APPLY_CONNECT integration type. This value is provided when the customer enables the integration via the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-widget-type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The widget type identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context value for the customer\u0027s APPLY_CONNECT integration type. This value is provided when the customer enables the integration via the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS job posting ID. This must be the same as externalJobPostingId in Sync Jobs API. Note: The job posting needs to be LinkedIn Easy Apply enabled for the widget to load for offsite job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No, for LinkedIn onsite applicants. Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-applicant-email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-applicant-profile-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ability to override the default width of the widget. Defaults to 800px, minimum value is 500px.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, to override default settings.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-job-application-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID received from the Receive Job Applications API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Apply Connect - Required Fields",
+      "Anchor": "apply-connect---required-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The customer-facing name for the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization this job posting is created for. Must be in the format urn:li:organization:1234.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company this job posting is created for. Must be in the format urn:li:company:{company_id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The data provider value. Use ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ATS Integrations API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The tenantType received during customer enablement.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job ID within the applicant tracking system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title of this job posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (Max 200 Characters)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom description of the job posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The geographic location of the job position. Must be in the format \u0022CITY,STATE\u0022 or \u0022CITY,COUNTRY\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The operation on the job posting. Available operation options are: CREATE, UPDATE, RENEW, CLOSE.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "companyApplyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL to redirect applicants to apply for the job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The date the job posting was added to the partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostings API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "onsiteApplyConfiguration",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#onsiteapplyconfiguration-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The information required to enable onsite job applications on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, for Apply Connect.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SimpleJobPostingTasks API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique ID for a simple job posting task.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID for which an action has been taken.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action taken on the given job application. Possible enum values: APPLICATION_VIEWED, RESUME_DOWNLOADED, or APPLICATION_REJECTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "performedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp for when the action was taken.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobApplicationLifecycleActions API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context. Must be of the form urn:li:organization:12345.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if received during customer enablement.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique job posting ID within the partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobPostingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The link to the job posting on LinkedIn. This is only present if the job is listed on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "linkedInApplyStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn Easy Apply status of the job posting. This is one of ENABLED, NOT_ENABLED, IN_PROGRESS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "linkedInApplyStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn Easy Apply status detail.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listingStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The listing state of the job posting. This is one of LISTED, NOT_LISTED, IN_PROGRESS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listingStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The error description for the job, if not listed successfully.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "promotionStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The promoted status of the job listing. This is one of PROMOTED, NOT_PROMOTED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "promotionStatusDetail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The instruction message to manage job promotion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobPostingStatusDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#jobpostingstatusdetail-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JobPostingStatus API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "rawLocation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The original location as inputted for this job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "developerApplicationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Developer Application URN for a child app.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the callback request. The current supported type includes RESYNC_JOBS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "syncAllOpenJobs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This represents whether all open jobs belonging to the Developer Application ID need to be re-synced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resync Webhook",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-resync-notifications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of unique job IDs within the partner system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if received and must be stored to handle processing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-job-application-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID received from the Receive Job Applications API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS job posting ID. This must be the same as externalJobPostingId in Sync Jobs API. Note: The job posting needs to be LinkedIn Easy Apply enabled for the widget to load for offsite job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No, for LinkedIn onsite applicants. Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-applicant-email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-applicant-profile-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Applicant Highlights Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-applicant-highlights-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context value for the customer\u0027s APPLY_CONNECT integration type. This value is provided when the customer enables the integration via the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-widget-type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The widget type identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-integration-context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context value for the customer\u0027s APPLY_CONNECT integration type. This value is provided when the customer enables the integration via the Integration Configuration Plugin.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-ats-job-posting-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ATS job posting ID. This must be the same as externalJobPostingId in Sync Jobs API. Note: The job posting needs to be LinkedIn Easy Apply enabled for the widget to load for offsite job applications.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No, for LinkedIn onsite applicants. Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-applicant-email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-applicant-profile-url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s LinkedIn profile URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied off LinkedIn on company career site or other job boards.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ability to override the default width of the widget. Defaults to 800px, minimum value is 500px.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, to override default settings.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Full Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins?view=li-lts-2026-04#display-full-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "data-li-job-application-id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID received from the Receive Job Applications API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if applicant applied on LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OnsiteApplyConfiguration fields",
+      "Anchor": "onsiteapplyconfiguration-fields",
+      "SectionPath": [
+        "OnsiteApplyConfiguration fields"
+      ],
+      "Text": "Sub-fields for OnsiteApplyConfiguration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OnsiteApplyConfiguration fields",
+      "Anchor": "onsiteapplyconfiguration-fields",
+      "SectionPath": [
+        "OnsiteApplyConfiguration fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobApplicationWebhookUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field is required for Apply Connect. The URL where you will receive job applications from LinkedIn in near-realtime for this job posting. Note: Any URL that is passed into this field must be capable of passing the Webhook Endpoint Validation Flow.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleTalentQuestion fields",
+      "Anchor": "simpletalentquestion-fields",
+      "SectionPath": [
+        "SimpleTalentQuestion fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "contactInformationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The contact information question section. If this field is null, then only mandatory contact information questions (First Name, Last Name, and Email) will be collected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContactInformationQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#contactinformationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "resumeQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resume question section. If this field is null, then no resume questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ResumeQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#resumequestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverLetterQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cover letter question section. If this field is null, then no cover letter questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CoverLetterQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#coverletterquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work questions section. If this field is null then no work questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WorkQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#workquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The education question section. If this field is null then no education questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EducationQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#educationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "voluntarySelfIdentificationQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The voluntary self identification question section. If this field is null then no voluntary self identification questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VoluntarySelfIdentificationQuestions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#voluntaryselfidentificationquestions-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "additionalQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A collection of custom questions which can be added if questions don\u0027t fit into any other question sections. Questions asked in additional Questions will be rendered in the \u0022Additional Questions\u0022 section of the Job Application UI. If this field is null, then no Additional Questions will be asked.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdditionalQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContactInformationQuestions fields",
+      "Anchor": "contactinformationquestions-fields",
+      "SectionPath": [
+        "ContactInformationQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "middleNameQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether middle name should be collected. Defaults to SKIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cellphoneNumberQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether cell phone number should be collected. Defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within Contact Information section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ResumeQuestions fields",
+      "Anchor": "resumequestions-fields",
+      "SectionPath": [
+        "ResumeQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "resumeQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether a resume file (max 2 MB, accepted file types: \u0022doc\u0022, \u0022docx\u0022, \u0022pdf\u0022) needs to be provided. Defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within Resume Question section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CoverLetterQuestions fields",
+      "Anchor": "coverletterquestions-fields",
+      "SectionPath": [
+        "CoverLetterQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "coverLetterQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether a cover letter file (max 512 KB, accepted file types: \u0022doc\u0022, \u0022docx\u0022, \u0022pdf\u0022) needs to be provided. Defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textCoverLetterQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether to accept a multi-line text input for a cover letter. Defaults to SKIP.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within Cover Letter section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkQuestions fields",
+      "Anchor": "workquestions-fields",
+      "SectionPath": [
+        "WorkQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "workExperienceQuestionSet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work experience set of repeatable questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WorkExperienceQuestionSet",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#workexperiencequestionset-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkExperienceQuestionSet fields",
+      "Anchor": "workexperiencequestionset-fields",
+      "SectionPath": [
+        "WorkExperienceQuestionSet fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "minRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field requires submission of work experience. The work experience min limit can be set to 1, then at least 1 has to be provided in order to submit the subsection.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "repeatLimit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum number of times this question set can be asked, for example, if the value is 1 then the question set will only appear once. For this question set, the acceptable range of values is [1, 10]. If no repeatLimit is specified, this field will default to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "titleQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Title\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentDatesQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Employment Dates\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cityQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022City\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Company\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "descriptionQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Description\u0022 question should be asked. If not specified, this field will default to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom questions to be included within Work Experience section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EducationQuestions fields",
+      "Anchor": "educationquestions-fields",
+      "SectionPath": [
+        "EducationQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "educationExperienceQuestionSet",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The education experience set of repeatable questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EducationExperienceQuestionSet",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#educationexperiencequestionset-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "EducationExperienceQuestionSet fields",
+      "Anchor": "educationexperiencequestionset-fields",
+      "SectionPath": [
+        "EducationExperienceQuestionSet fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "minRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field requires submission of education experience. The education experience min limit can be set to 1, then at least 1 has to be provided in order to submit the subsection.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "repeatLimit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum number of times this question set can be asked, for example, if the value is 1 then the question set will only appear once. For this question set, the acceptable range of values is [1, 3]. If no repeatLimit is specified, this field will default to 3.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "schoolQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022School\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "datesAttendedQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Dates Attended\u0022 question should be asked. If not specified, this field will default to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cityQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022City\u0022 question should be asked. If not specified, this field will defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degreeQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Degree\u0022 question should be asked. If not specified, this field will defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldOfStudyQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Captures whether the \u0022Field of Study\u0022 question should be asked. If not specified, this field will defaults to OPTIONAL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The additional repeatable custom questions to be included within the Education Experience question set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "VoluntarySelfIdentificationQuestions fields",
+      "Anchor": "voluntaryselfidentificationquestions-fields",
+      "SectionPath": [
+        "VoluntarySelfIdentificationQuestions fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "disabilityQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Disability question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "genderQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Gender question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "raceQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Race question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "veteranStatusQuestionRequirement",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field captures whether the Equal Employment Opportunity Commission (EEOC) Veteran Status question should be asked. Defaults to REQUIRED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "QuestionRequirement",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#questionrequirement-enum-values"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "customQuestions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The additional repeatable custom questions to be included within the Voluntary Self Identification question set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleTalentQuestionDefinition[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simpletalentquestiondefinition-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleTalentQuestionDefinition fields",
+      "Anchor": "simpletalentquestiondefinition-fields",
+      "SectionPath": [
+        "SimpleTalentQuestionDefinition fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partnerQuestionIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique identifier for this custom question. This is intended to be used by your systems to associate the answer(s) to this question when a job application is delivered by LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if custom questions are required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The details needed for a member to answer a question in any form. These question details will instruct the front-end as to how to render inputs and validation for this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SimpleQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#simplequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field indicates whether the question is required to complete the job application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The label text to describe this question. This field supports the following formats: Unordered list \u003Cul\u003E, List item \u003Cli\u003E, Bold \u003Cb\u003E, Italic \u003Ci\u003E, Links \u003Ca\u003E and Paragraph \u003Cp\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SimpleQuestionDetails fields",
+      "Anchor": "simplequestiondetails-fields",
+      "SectionPath": [
+        "SimpleQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "dateQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, all other fields must be null. The representation of a question where a date must be provided as the answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dateRangeQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, all other fields must be null. The representation of a question where a date range must be provided as the answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DateRangeQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#daterangequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "documentQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, all other fields must be null. The representation of a question where a document must be provided as the answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DocumentQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "multipleChoiceQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, all other fields must be null. The representation of a question where a multiple-choice selection must be provided as the answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#multiplechoicequestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "numericQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, all other fields must be null. The representation of a question where a number must be provided as the answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NumericQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#numericquestiondetails-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, all other fields must be null. The representation of a question where text must be provided as the answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TextQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "QuestionRequirement enum values",
+      "Anchor": "questionrequirement-enum-values",
+      "SectionPath": [
+        "QuestionRequirement enum values"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "REQUIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This question is required. An answer must be provided by the applicant in order to complete the job application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "OPTIONAL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This question is optional. An answer does not need to be provided by the applicant in order to complete the job application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SKIP",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This question is not rendered on the job application. No response will be provided for this question.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "DateRangeQuestionDetails fields",
+      "Anchor": "daterangequestiondetails-fields",
+      "SectionPath": [
+        "DateRangeQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "hideEndDateLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text that will be used to describe the input that will control whether or not the end date question is shown. For example, for employment dates this might be displayed as a checkbox with a label of \u0022I currently work here\u0022. Checking the checkbox would unset and hide the end date question regardless of the content of the label.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PrerequisiteQuestionResponse fields",
+      "Anchor": "prerequisitequestionresponse-fields",
+      "SectionPath": [
+        "PrerequisiteQuestionResponse fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "prerequisiteQuestion",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The prerequisite question that triggers the display of this question. The prerequisite question must be a multiple choice question with RADIO_BUTTONS as form component.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteQuestionIdentifier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#prerequisitequestionidentifier-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "prerequisiteResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The required response to the prerequisite question that triggers the display of this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PrerequisiteAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#prerequisiteanswervalue-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PrerequisiteQuestionIdentifier fields",
+      "Anchor": "prerequisitequestionidentifier-fields",
+      "SectionPath": [
+        "PrerequisiteQuestionIdentifier fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partnerQuestionIdentifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier for custom questions. Each custom question has an identifier specified in partnerQuestionIdentifier under SimpleTalentQuestionDefinition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "PrerequisiteAnswerValue fields",
+      "Anchor": "prerequisiteanswervalue-fields",
+      "SectionPath": [
+        "PrerequisiteAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "multipleChoiceAnswerValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An answer to a multiple choice question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceAnswerValue",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#multiplechoiceanswervalue-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceQuestionDetails fields",
+      "Anchor": "multiplechoicequestiondetails-fields",
+      "SectionPath": [
+        "MultipleChoiceQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "choices",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The array of possible answers to this question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceAnswerOption[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#multiplechoiceansweroption-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswerOption fields",
+      "Anchor": "multiplechoiceansweroption-fields",
+      "SectionPath": [
+        "MultipleChoiceAnswerOption fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "symbolicName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The machine-parsable name to refer to this particular answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "displayValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The display value for this multiple choice answer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswerValue fields",
+      "Anchor": "multiplechoiceanswervalue-fields",
+      "SectionPath": [
+        "MultipleChoiceAnswerValue fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "symbolicNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of symbolic names for the answer value from the array of choices. Specify only one symbolic name when this MultipleChoiceAnswerValue is used to represent a prerequisite answer value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "FavorableMultipleChoiceAnswer fields",
+      "Anchor": "favorablemultiplechoiceanswer-fields",
+      "SectionPath": [
+        "FavorableMultipleChoiceAnswer fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "favorableSymbolicNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The symbolicNames from MultipleChoiceQuestionDetails that should be considered favorable. An example could be [\u0022BACHELOR\u0022, \u0022MASTERS\u0022] to indicate that the job poster wants the candidate to have either one of the educational levels.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "NumericQuestionDetails fields",
+      "Anchor": "numericquestiondetails-fields",
+      "SectionPath": [
+        "NumericQuestionDetails fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "decimalQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, the field integerQuestionDetails must be null. If this field is null, integerQuestionDetails must be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DecimalQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application. Yes, if integerQuestionDetails is not provided.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integerQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If this field is present, the field decimalQuestionDetails must be null. If this field is null, decimalQuestionDetails must be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IntegerQuestionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if required on application. Yes, if decimalQuestionDetails is not provided.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "JobPostingInfo field schema",
+      "Anchor": "jobpostinginfo-field-schema",
+      "SectionPath": [
+        "JobPostingInfo field schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "listedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The initial date the job posting was listed on LinkedIn. The date is epoch timestamp in milliseconds (UTC).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The standardized location for the job listing.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "alternateLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The alternate locations for a job with multiple locations. This field takes the locations as input (including the one set in the location field). This field is null if the job has only one location. Maximum up to seven alternate locations are allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job company details, containing company name and page url.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CompanyDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-required-fields?view=li-lts-2026-04#companydetails-field-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CompanyDetails field schema",
+      "Anchor": "companydetails-field-schema",
+      "SectionPath": [
+        "CompanyDetails field schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of a company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company page on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "JobPostingStatusDetail field schema",
+      "Anchor": "jobpostingstatusdetail-field-schema",
+      "SectionPath": [
+        "JobPostingStatusDetail field schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "statusMessage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description of the status.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, must be displayed if returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

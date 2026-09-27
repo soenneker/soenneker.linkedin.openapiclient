@@ -1,0 +1,150 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/iab-categories",
+  "Title": "IAB Categories - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/iab-categories",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "IAB Categories - Standardized Data API",
+      "Anchor": "iab-categories---standardized-data-api",
+      "SectionPath": [],
+      "Text": "Mobile apps and web domains/pages are divided into categories called Interactive Advertising Bureau (IAB) Categories. These categories sort advertisers into standardized industries and segments. Though these categories do not change often, you should use this reference API to get current IAB categories. This API allows advertisers to align with LinkedIn\u0027s IAB Categories.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET| GET_ALL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "displayName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field contains localized strings used to describe the category based on locale request. Currently, we only support en_US.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "iabName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Original IAB category name as specified in OpenRTB 2.3 spec in the English language.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique string used to represent the category. For example, IAB12-18.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique string used to represent the parent category. For example, IAB12. If it is a parent category, this field can be null.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/iabCategory/{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022displayName\u0022: \u0022Painting\u0022,\n    \u0022id\u0022: \u0022IAB9-22\u0022,\n    \u0022iabName\u0022: \u0022Painting\u0022,\n    \u0022parentId\u0022: \u0022IAB9\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/iabCategories",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "GET_ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022displayName\u0022: \u0022Magic \u0026 Illusion\u0022,\n            \u0022id\u0022: \u0022IAB9-20\u0022,\n            \u0022iabName\u0022: \u0022Magic \u0026 Illusion\u0022,\n            \u0022parentId\u0022: \u0022IAB9\u0022\n        },\n        {\n            \u0022displayName\u0022: \u0022Needlework\u0022,\n            \u0022id\u0022: \u0022IAB9-21\u0022,\n            \u0022iabName\u0022: \u0022Needlework\u0022,\n            \u0022parentId\u0022: \u0022IAB9\u0022\n        },\n        {\n            \u0022displayName\u0022: \u0022Painting\u0022,\n            \u0022id\u0022: \u0022IAB9-22\u0022,\n            \u0022iabName\u0022: \u0022Painting\u0022,\n            \u0022parentId\u0022: \u0022IAB9\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 379,\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

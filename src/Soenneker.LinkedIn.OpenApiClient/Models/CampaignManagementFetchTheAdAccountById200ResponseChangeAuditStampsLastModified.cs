@@ -12,7 +12,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class CampaignManagementFetchTheAdAccountById200ResponseChangeAuditStampsLastModified : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The actor property</summary>
+        /// <summary>The entity authorized the change.Documented type: UrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Actor { get; set; }
@@ -22,8 +22,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The time property</summary>
-        public int? Time { get; set; }
+        /// <summary>The entity which performs the change on behalf of the actor. Must be authorized to act as the actor.Documented type: UrnRequirement: Optional</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Impersonator { get; set; }
+#nullable restore
+#else
+        public string Impersonator { get; set; }
+#endif
+        /// <summary>When the event happened in epoch time.Documented type: longRequirement: Yes</summary>
+        public long? Time { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchTheAdAccountById200ResponseChangeAuditStampsLastModified"/> and sets the default values.
         /// </summary>
@@ -50,7 +58,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetStringValue(); } },
-                { "time", n => { Time = n.GetIntValue(); } },
+                { "impersonator", n => { Impersonator = n.GetStringValue(); } },
+                { "time", n => { Time = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +70,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("actor", Actor);
-            writer.WriteIntValue("time", Time);
+            writer.WriteStringValue("impersonator", Impersonator);
+            writer.WriteLongValue("time", Time);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

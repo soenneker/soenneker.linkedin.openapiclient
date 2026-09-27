@@ -1,0 +1,292 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+  "Title": "Data Storage Requirements",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Data Storage Requirements",
+      "Anchor": "data-storage-requirements",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Storage Requirements",
+      "Anchor": "data-storage-requirements",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Storage Requirements",
+      "Anchor": "data-storage-requirements",
+      "SectionPath": [],
+      "Text": "This documentation specifies how long you can store or cache data received via the LinkedIn Marketing API Program. If LinkedIn has granted you access to the LinkedIn Marketing API Program, it will appear in the list of products that your application has access to on the LinkedIn developer portal. Of note, you may not have access to all of the following data fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Storage Requirements",
+      "Anchor": "data-storage-requirements",
+      "SectionPath": [],
+      "Text": "Please consult the LinkedIn Marketing API Program Terms for other restrictions, conditions, and data deletion obligations relating to this data. For example, the LinkedIn Marketing API Program Terms require that you obtain an authenticated member\u2019s consent to store their profile data and delete data upon the member\u2019s request. If there\u0027s any conflict between these requirements and the requirements in the terms, the requirements that are more restrictive or more protective of the data apply. Similarly, if a given data field is encompassed by two or more of the following requirements, the shortest storage/caching duration shall apply.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Storage Requirements",
+      "Anchor": "data-storage-requirements",
+      "SectionPath": [],
+      "Text": "LinkedIn reserves the right to update these requirements at any time, upon posting the updated requirements on our developer documentation. The following requirements don\u0027t apply to data that\u0027s independently provided to you by your clients and not retrieved via the LinkedIn Marketing APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Data Storage Requirements",
+      "Anchor": "data-storage-requirements",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Data Field(s)",
+        "Description",
+        "Allowed Storage/Caching Duration"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authenticated Members\u0027 Person ID and Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person ID and Person URN for a LinkedIn member (e.g. organization page admin or advertising account manager) who has authenticated into your application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No Restriction on Duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authenticated Members\u0027 Profile Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic Profile Information for a LinkedIn member (e.g. organization page admin or advertising account manager) who has authenticated into your application",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No Restriction on Duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Other Members\u0027 Person ID and Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person ID and Person URN retrieved for a LinkedIn member, other than in connection with the member authenticating into your application. For example, Person ID and Person URN for a LinkedIn member who has taken a social action (e.g. like, comment) on an organization post managed by your application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No Restriction on Duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Other Members\u0027 Profile Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic Profile Information retrieved for a LinkedIn member, other than in connection with the member authenticating into your application or completing a lead gen form. For example, profile information for a LinkedIn member who has taken a social action (e.g. like, comment) on an organization post managed by your application. For clarity, nothing in these requirements or the LI MDP Terms shall permit you to cache this data in excess of 24 hours or store this data.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "24 Hour Caching",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "IDs and URNs associated with Managing Advertising and Organization Activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID and URN identifiers for organizations, posts/shares, social actions (e.g. likes, comments), ad accounts, ad campaigns, ad creatives, lead gen forms, ad targeting, and other IDs and URNs for managing advertising and organization activity on LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No Restriction on Duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Members\u0027 Social Activity Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data relating to social activity by LinkedIn members, including articles, posts/shares, likes, comments, mentions, and the metadata relating thereto (e.g. time of creation, content, visibility, etc.). For clarity, this restriction shall not limit your ability to store data relating to social activity by organizations, provided such data doesn\u2019t relate to LinkedIn members. For example, if an organization comments on a member\u2019s share, the organization\u2019s comment is not subject to this restriction but the content of the member\u2019s share is.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "48 Hours",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organizations\u2019 Social Activity Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data relating to social activity by organizations on LinkedIn, including articles, posts/shares, likes, reshares, mentions, and comments, and the metadata relating thereto (e.g. time of creation, content, visibility, etc.). For clarity, if a social activity by an organization includes member content or results in a social action by a member, the member content can only be stored for 48 hours and the member profile data can only be cached for 24 hours as specified by the preceding requirements.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Six Weeks. If content is being pulled that relates to an organization that has authenticated into your application, you may store it for six months.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Profile Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile data retrieved from an organization\u0027s LinkedIn page (e.g. name, size, industry, description, etc.).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If organization profile data is being pulled that relates to an organization that has authenticated into your application, you may store it for eight weeks. Otherwise, storing/caching is not allowed, except organization name and logo URL for 30 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Organization Pages\u0027 Admin and Reporting Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data relating to administration and reporting for an organization\u2019s LinkedIn page (e.g. number of followers, summary of social actions, visitor information). Does not include individual member level data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One Year",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Advertising Accounts\u0027 Admin and Reporting Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data relating to administration of a LinkedIn advertising account (e.g. forecasting reach, budget pricing, targeting options) and reporting for the LinkedIn advertising account. Does not include individual member level data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One Year",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Lead Gen Response Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data provided by a LinkedIn member as part of a response to a lead gen form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No Restriction on Duration",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Standardized Data",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn\u0027s Standardized Lists of industries, job functions, degrees, skills, locations, etc.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "One Year (but expressly excluding the Microsoft Bing Maps location data which may not be stored)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

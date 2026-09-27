@@ -1,0 +1,418 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-visitor-of-the-day",
+  "Title": "Organizational Page Visitor Of The Day",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/creator-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-content-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-edge-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/analytics/organizational-page-visitor-of-the-day",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Visitor Of The Day",
+      "Anchor": "organizational-page-visitor-of-the-day",
+      "SectionPath": [],
+      "Text": "The Organizational Page Visitor Of The Day Digital Markets Act (DMA) API returns the Visitor Of The Day data for an Organizational Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Visitor Of The Day",
+      "Anchor": "organizational-page-visitor-of-the-day",
+      "SectionPath": [],
+      "Text": "The API currently provides a method to find an Organizational Page\u2019s visitor of the day by an Organizational Page\u2019s OrganizationalPageUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Visitor of the Day (VOTD) feature selects one page viewer per day for your organization\u0027s LinkedIn page. The API returns a historical list of these daily selections. Organizations with a premium company pages subscription receive unobfuscated visitor data (including the visitor\u0027s Person URN). Organizations without a premium subscription receive obfuscated visitor data (visitor identity is withheld).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Key details",
+      "Anchor": "key-details",
+      "SectionPath": [
+        "Feature Overview",
+        "Key details"
+      ],
+      "Text": "Each record includes the visitor\u0027s identity (as a Person URN if the page is premium) and how many days ago they were selected.\nThis feature is not available for Showcase pages. It only applies to Organizational pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles:ADMINISTRATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageVisitorOfTheDay",
+      "Anchor": "organizationalpagevisitoroftheday",
+      "SectionPath": [
+        "Feature Overview",
+        "Schemas",
+        "OrganizationalPageVisitorOfTheDay"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "visitorUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Uniform Resource Name (URN) of the page visitor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "daysSinceEpoch",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Days since epoch when the page visitor\u2019s information was generated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPageVisitorOfTheDay",
+      "Anchor": "organizationalpagevisitoroftheday",
+      "SectionPath": [
+        "Feature Overview",
+        "Schemas",
+        "OrganizationalPageVisitorOfTheDay"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPageVisitorOfTheDay",
+      "Anchor": "organizationalpagevisitoroftheday",
+      "SectionPath": [
+        "Feature Overview",
+        "Schemas",
+        "OrganizationalPageVisitorOfTheDay"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizational pages you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember\nwith an authorization action of OrganizationAnalyticsAuthorizationActionType.VISITOR_ANALYTICS_READ. For any organization returned, convert it to an organizationalPage using the OrganizationalPage pageEntity finder",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+      "Anchor": "fetch-visitors-of-the-day-by-an-organizational-pages-organizationalpageurn",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn"
+      ],
+      "Text": "Sample requests to retrieve the Visitor of the Day data from the Organizational Page Visitor Of The Day DMA API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageVisitorOfTheDay?q=organizationalPage\u0026organizationalPage=${ORGANIZATIONAL_PAGE_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageVisitorOfTheDay?q=organizationalPage\u0026organizationalPage=${ORGANIZATIONAL_PAGE_URN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022visitorUrn\u0022: \u0022urn:li:person:123456\u0022,\n    \u0022daysSinceEpoch\u0022: 10\n }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Sample Request",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022daysSinceEpoch\u0022: 10\n }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of format urn:li:organizationalPage:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organizational Page URN of the organization for which Visitor of the Day data is fetched.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pagingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PagingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Context to provide pagination requirements.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "API Error Details"
+      ],
+      "Text": "The following are the possible error codes and their resolutions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Fetch visitors of the Day by an Organizational Page\u2019s OrganizationalPageUrn",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The logged-in member is not allowed to view the analytics of this organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The logged-in member should request to be a page admin of the Organization\u2019s page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The page doesn\u0027t have the feature access entitlement to view who viewed their page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization may not have a Premium subscription. If the organization has a Premium subscription, they may need to reach out to LinkedIn Support.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

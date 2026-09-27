@@ -31,7 +31,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string UploadUrl { get; set; }
 #endif
         /// <summary>The uploadUrlExpiresAt property</summary>
-        public int? UploadUrlExpiresAt { get; set; }
+        public long? UploadUrlExpiresAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisInitializeImageUpload200ResponseValue"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "uploadUrl", n => { UploadUrl = n.GetStringValue(); } },
-                { "uploadUrlExpiresAt", n => { UploadUrlExpiresAt = n.GetIntValue(); } },
+                { "uploadUrlExpiresAt", n => { UploadUrlExpiresAt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("image", Image);
             writer.WriteStringValue("uploadUrl", UploadUrl);
-            writer.WriteIntValue("uploadUrlExpiresAt", UploadUrlExpiresAt);
+            writer.WriteLongValue("uploadUrlExpiresAt", UploadUrlExpiresAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

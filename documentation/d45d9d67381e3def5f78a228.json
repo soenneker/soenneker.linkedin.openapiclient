@@ -1,0 +1,539 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_profiles/sales-navigator-profile-associations",
+  "Title": "salesNavigatorProfileAssociations",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_profiles/sales-navigator-profile-associations"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "salesNavigatorProfileAssociations",
+      "Anchor": "salesnavigatorprofileassociations",
+      "SectionPath": [],
+      "Text": "This resource returns associated data for existing high-confidence matches between LinkedIn members and external, vendor-specific IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Methods",
+      "Anchor": "methods",
+      "SectionPath": [
+        "Methods"
+      ],
+      "Text": "get\nbatch_get",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "get",
+      "Anchor": "get",
+      "SectionPath": [
+        "Methods",
+        "get"
+      ],
+      "Text": "Fetches the corresponding match when provided with a SalesNavigatorProfileAssociationKey.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "get",
+      "Anchor": "get",
+      "SectionPath": [
+        "Methods",
+        "get"
+      ],
+      "Text": "GET /salesNavigatorProfileAssociations/(instanceId:foo,partner:bar,recordId:baz)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Response body"
+      ],
+      "Text": "SalesNavigatorProfileAssociation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/salesNavigatorProfileAssociations/(instanceId:foo,partner:bar,recordId:baz)\u0027 \\\n-H \u0027Authorization: Bearer AQXt...\u0027 \\\n-H \u0027X-RestLi-Protocol-Version=2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022profilePhoto\u0022: \u0022bar\u0022,\n  \u0022profile\u0022: \u0022foo\u0022,\n  \u0022member\u0022: \u0022urn:li:person:bar\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "batch_get",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Methods",
+        "batch_get"
+      ],
+      "Text": "Batch fetches the corresponding match when provided with multiple SalesNavigatorProfileAssociationKeys.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "batch_get",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "Methods",
+        "batch_get"
+      ],
+      "Text": "GET /salesNavigatorProfileAssociations?ids=List((instanceId:foo,partner:bar,recordId:foo),(instanceId:foo,partner:bar,recordId:bar))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response body",
+      "Anchor": "response-body-1",
+      "SectionPath": [
+        "Methods",
+        "batch_get",
+        "Response body"
+      ],
+      "Text": "SalesNavigatorProfileAssociation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Methods",
+        "batch_get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/salesNavigatorProfileAssociations?ids=List((instanceId:foo,partner:bar,recordId:foo),(instanceId:foo,partner:bar,recordId:bar))\u0027 \\\n-H \u0027Authorization: Bearer AQXt...\u0027 \\\n-H \u0027X-RestLi-Protocol-Version=2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Methods",
+        "batch_get",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022statuses\u0022: {},\n  \u0022results\u0022: {\n    \u0022(instanceId:foo,partner:bar,recordId:foo)\u0022: {\n      \u0022profilePhoto\u0022: \u0022baz\u0022,\n      \u0022profile\u0022: \u0022baz\u0022,\n      \u0022member\u0022: \u0022urn:li:person:foo\u0022\n    },\n    \u0022(instanceId:foo,partner:bar,recordId:bar)\u0022: {\n      \u0022profilePhoto\u0022: \u0022foo\u0022,\n      \u0022profile\u0022: \u0022bar\u0022,\n      \u0022member\u0022: \u0022urn:li:person:bar\u0022\n    }\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Definitions",
+      "Anchor": "definitions",
+      "SectionPath": [
+        "Definitions"
+      ],
+      "Text": "SalesNavigatorProfileAssociation\nSalesNavigatorProfileAssociationKey\nPersonUrn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SalesNavigatorProfileAssociation",
+      "Anchor": "salesnavigatorprofileassociation",
+      "SectionPath": [
+        "Definitions",
+        "SalesNavigatorProfileAssociation"
+      ],
+      "Text": "A model wrapping a unique member identifier with other profile information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SalesNavigatorProfileAssociation",
+      "Anchor": "salesnavigatorprofileassociation",
+      "SectionPath": [
+        "Definitions",
+        "SalesNavigatorProfileAssociation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents a LinkedIn Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/sales/api-reference/r_sales_nav_profiles/sales-navigator-profile-associations#personurn"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The absolute URL of a single Sales Navigator profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profilePhoto",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The absolute url for a LinkedIn profile photo. If the user has not uploaded their own profile photo or if their privacy settings preclude us from showing the profile photo to the public, then this field will not be present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "SalesNavigatorProfileAssociationKey",
+      "Anchor": "salesnavigatorprofileassociationkey",
+      "SectionPath": [
+        "Definitions",
+        "SalesNavigatorProfileAssociationKey"
+      ],
+      "Text": "Represents the LinkedIn partner that is making the request, an instance of that partner\u0027s application, and a specific record within that instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SalesNavigatorProfileAssociationKey",
+      "Anchor": "salesnavigatorprofileassociationkey",
+      "SectionPath": [
+        "Definitions",
+        "SalesNavigatorProfileAssociationKey"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Optional"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "partner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID of the CRM partner that synced with Sales Navigator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "instanceId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID of the CRM instance that synced with Sales Navigator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recordId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID of the CRM record",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PersonUrn",
+      "Anchor": "personurn",
+      "SectionPath": [
+        "Definitions",
+        "PersonUrn"
+      ],
+      "Text": "Represents person ID for the member that is unique to the developer application making the API call.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "PersonUrn",
+      "Anchor": "personurn",
+      "SectionPath": [
+        "Definitions",
+        "PersonUrn"
+      ],
+      "Text": "Reference Type: string",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Response Code",
+        "Service Error Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad request, missing parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Sync not enabled for this CRM instance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "40002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cannot determine CRM Sync status for this CRM instance.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized (typically a result of token expiration)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application does not have enough access to complete the request. Application may not have the required scope to use the endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Match unavailable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too many requests. The application is currently being throttled due to high call volume",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "-",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unhandled service error",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

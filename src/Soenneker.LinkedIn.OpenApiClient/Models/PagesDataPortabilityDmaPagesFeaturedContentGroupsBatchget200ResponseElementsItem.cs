@@ -22,7 +22,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemCreated Created { get; set; }
 #endif
-        /// <summary>The featuredContents property</summary>
+        /// <summary>An AuditStamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemDeleted? Deleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemDeleted Deleted { get; set; }
+#endif
+        /// <summary>Ordered list of PagesFeaturedContents that represents the content to be featured.Documented type: array[PagesFeaturedContent]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemFeaturedContentsItem>? FeaturedContents { get; set; }
@@ -30,7 +38,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemFeaturedContentsItem> FeaturedContents { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The key for FeaturedContentGroup.Documented type: PagesFeaturedContentGroupKeyRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKey? Key { get; set; }
@@ -72,6 +80,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemDeleted.CreateFromDiscriminatorValue); } },
                 { "featuredContents", n => { FeaturedContents = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemFeaturedContentsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemFeaturedContentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKey.CreateFromDiscriminatorValue); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
@@ -85,6 +94,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemCreated>("created", Created);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemDeleted>("deleted", Deleted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemFeaturedContentsItem>("featuredContents", FeaturedContents);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemKey>("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPagesFeaturedContentGroupsBatchget200ResponseElementsItemLastModified>("lastModified", LastModified);

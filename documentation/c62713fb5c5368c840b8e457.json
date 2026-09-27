@@ -1,0 +1,454 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+  "Title": "Refresh Tokens with OAuth 2.0",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/postman-getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Refresh Tokens with OAuth 2.0",
+      "Anchor": "refresh-tokens-with-oauth-20",
+      "SectionPath": [],
+      "Text": "LinkedIn supports programmatic refresh tokens for all approved Marketing Developer Platform (MDP) partners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "Refresh tokens are used to get a new access token when your current access token expires. For more information, see the OAuth 2.0 RFC.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "LinkedIn offers programmatic refresh tokens that are valid for a fixed length of time. By default, access tokens are valid for 60 days and programmatic refresh tokens are valid for a year. The member must reauthorize your application when refresh tokens expire.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "When you use a refresh token to generate a new access token, the lifespan or Time To Live (TTL) of the refresh token remains the same as specified in the initial OAuth flow (365 days), and the new access token has a new TTL of 60 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "For example, on:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "Day 1 - Your refresh token has a TTL of 365 days, and your access token has a TTL of 60 days.\nDay 59 - If you generate a new access token using the refresh token, the access token will have a TTL of 60 days and the refresh token will have a TTL of 306 days (365-59=306).\nDay 360- If you generate a new access token, your access token and refresh token will both expire in 5 days (365-360=5) and you must get your application reauthorized by the member using the authorization flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Introduction",
+      "Anchor": "introduction",
+      "SectionPath": [
+        "Introduction"
+      ],
+      "Text": "Refresh Tokens are useful in minting new Access tokens and allow for seamless operations for extended periods of time. However, LinkedIn reserves the right to revoke Refresh Tokens or Access Tokens at any time due to technical or policy reasons. In such scenarios, the expectation from products leveraging Refresh Tokens is to fallback to the standard OAuth flow, and present the login screen to the end users.\nTo track the usage of refresh tokens, refer to the Developer Portal Tools page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Getting a Refresh Token",
+      "Anchor": "step-1-getting-a-refresh-token",
+      "SectionPath": [
+        "Introduction",
+        "Step 1: Getting a Refresh Token"
+      ],
+      "Text": "Use the Authorization Code Flow to get both a refresh token and access token. If your application is authorized for programmatic refresh tokens, the following fields are returned when you exchange the authorization code for an access token:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Getting a Refresh Token",
+      "Anchor": "step-1-getting-a-refresh-token",
+      "SectionPath": [
+        "Introduction",
+        "Step 1: Getting a Refresh Token"
+      ],
+      "Text": "refresh_token \u2014 Your refresh token for the application. This token must be kept secure.\nrefresh_token_expires_in \u2014 The number of seconds remaining until the refresh token expires. Refresh tokens usually have a longer lifespan than access tokens.\nscope \u2014 URL-encoded, space-delimited list of member permissions your application has requested on behalf of the user.|",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Introduction",
+        "Step 1: Getting a Refresh Token",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022access_token\u0022: \u0022AQXNnd2kXITHELmWblJigbHEuoFdfRhOwGA0QNnumBI8XOVSs0HtOHEU-wvaKrkMLfxxaB1O4poRg2svCWWgwhebQhqrETYlLikJJMgRAvH1ostjXd3DP3BtwzCGeTQ7K9vvAqfQK5iG_eyS-q-y8WNt2SnZKZumGaeUw_zKqtgCQavfEVCddKHcHLaLPGVUvjCH_KW0DJIdUMXd90kWqwuw3UKH27ki5raFDPuMyQXLYxkqq4mYU-IUuZRwq1pcrYp1Vv-ltbA_svUxGt_xeWeSxKkmgivY_DlT3jQylL44q36ybGBSbaFn-UU7zzio4EmOzdmm2tlGwG7dDeivdPDsGbj5ig\u0022,\n  \u0022expires_in\u0022: 86400,\n  \u0022refresh_token\u0022: \u0022AQWAft_WjYZKwuWXLC5hQlghgTam-tuT8CvFej9-XxGyqeER_7jTr8HmjiGjqil13i7gMFjyDxh1g7C_G1gyTZmfcD0Bo2oEHofNAkr_76mSk84sppsGbygwW-5oLsb_OH_EXADPIFo0kppznrK55VMIBv_d7SINunt-7DtXCRAv0YnET5KroQOlmAhc1_HwW68EZniFw1YnB2dgDSxCkXnrfHYq7h63w0hjFXmgrdxeeAuOHBHnFFYHOWWjI8sLLenPy_EBrgYIitXsAkLUGvZXlCjAWl-W459feNjHZ0SIsyTVwzAQtl5lmw1ht08z5Du-RiQahQE0sv89eimHVg9VSNOaTvw\u0022,\n  \u0022refresh_token_expires_in\u0022: 525600,\n  \u0022scope\u0022:\u0022r_basicprofile\u0022\n\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Introduction",
+        "Step 1: Getting a Refresh Token",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Introduction",
+        "Step 1: Getting a Refresh Token",
+        "Sample Response"
+      ],
+      "Text": "Refresh tokens are approximately 500 characters long. We recommend that your application stack be made to handle tokens of at least 1000 characters to accommodate future expansion plans. This applies to access tokens as well as refresh tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Exchanging a Refresh Token for a New Access Token",
+      "Anchor": "step-2-exchanging-a-refresh-token-for-a-new-access-token",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token"
+      ],
+      "Text": "You can exchange the refresh token for a new access token by making the following HTTP POST request with a Content-Type header of x-www-form-urlencoded and the following parameters in the request body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 2: Exchanging a Refresh Token for a New Access Token",
+      "Anchor": "step-2-exchanging-a-refresh-token-for-a-new-access-token",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token"
+      ],
+      "Text": "https://www.linkedin.com/oauth/v2/accessToken",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 2: Exchanging a Refresh Token for a New Access Token",
+      "Anchor": "step-2-exchanging-a-refresh-token-for-a-new-access-token",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "grant_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this field should always be refresh_token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "refresh_token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The refresh token from Step 1.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Client ID value generated when you registered your application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Client Secret value generated when you registered your application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token",
+        "Sample Request"
+      ],
+      "Text": "POST https://www.linkedin.com/oauth/v2/accessToken\n\nContent-Type: application/x-www-form-urlencoded\ngrant_type=refresh_token\u0026refresh_token=AQQOMeCIQMa6-zjU-02w8EJW67wPVk3hjJE5x1lZhU013LihKD8i1DpvaAl2jnuP8F1uXMgkm8nzjPfnaJR_kQNOxsLRLZWnAMzHMm81S0yQlkBYicw\u0026client_id=861hhm46p48to2\u0026client_secret=gPecS7yqHkyyShvR",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token",
+        "Sample Request"
+      ],
+      "Text": "A successful request returns a new access token with a new expiration time and the refresh token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022access_token\u0022: \u0022BBBB2kXITHELmWblJigbHEuoFdfRhOwGA0QNnumBI8XOVSs0HtOHEU-wvaKrkMLfxxaB1O4poRg2svCWWgwhebQhqrETYlLikJJMgRAvH1ostjXd3DP3BtwzCGeTQ7K9vvAqfQK5iG_eyS-q-y8WNt2SnZKZumGaeUw_zKqtgCQavfEVCddKHcHLaLPGVUvjCH_KW0DJIdUMXd90kWqwuw3UKH27ki5raFDPuMyQXLYxkqq4mYU-IUuZRwq1pcrYp1Vv-ltbA_svUxGt_xeWeSxKkmgivY_DlT3jQylL44q36ybGBSbaFn-UU7zzio4EmOzdmm2tlGwG7dDeivdPDsGbj5ig\u0022,\n  \u0022expires_in\u0022: 86400,\n  \u0022refresh_token\u0022: \u0022AQWAft_WjYZKwuWXLC5hQlghgTam-tuT8CvFej9-XxGyqeER_7jTr8HmjiGjqil13i7gMFjyDxh1g7C_G1gyTZmfcD0Bo2oEHofNAkr_76mSk84sppsGbygwW-5oLsb_OH_EXADPIFo0kppznrK55VMIBv_d7SINunt-7DtXCRAv0YnET5KroQOlmAhc1_HwW68EZniFw1YnB2dgDSxCkXnrfHYq7h63w0hjFXmgrdxeeAuOHBHnFFYHOWWjI8sLenPy_EBrgYIitXsAkLUGvZXlCjAWl-W459feNjHZ0SIsyTVwzAQtl5lmw1ht08z5Du-RiQahQE0sv89eimHVg9VSNOaTvw\u0022,\n  \u0022refresh_token_expires_in\u0022: 439200,\n  \u0022scope\u0022:\u0022r_basicprofile\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Introduction",
+        "Step 2: Exchanging a Refresh Token for a New Access Token",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022The provided authorization grant or refresh token is invalid, expired or revoked\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid or expired or revoked refresh token is sent as part of the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refresh Token expired or revoked or invalid, hence reauthenticate the member to generate the new refresh token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022redirect_uri\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Redirect_URI in the request is missing. It is mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the Redirect_URI in the request to route user back to correct landing page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022grant_type\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Grant type in the request is missing. It is mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add grant_type as \u0022refresh_token\u0022 in the request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022client_id\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client ID in the request is missing. It is mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the client id of the app in request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "invalid_request \u0022A required parameter \u0022refresh_token\u0022 is missing\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refresh Token in the request is missing. It is mandatory parameter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pass the stored Refresh Token received as part of initial access token call.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

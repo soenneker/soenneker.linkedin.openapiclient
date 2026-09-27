@@ -1,0 +1,579 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adsegmentsources",
+  "Title": "Ad Segment Sources",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adpagesets",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adsegmentsources",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ad Segment Sources",
+      "Anchor": "ad-segment-sources",
+      "SectionPath": [],
+      "Text": "Used for retargeting advertiser\u0027s website visitors, an adSegmentSource object associates an adPageSet to an adSegment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "UPDATE | GET | FINDER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The sponsored account Urn that owns this adSegmentSource. Should be the same as the owner of the referenced adSegment and source.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "changeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ChangeAuditStamps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Audit change stamps including creation timestamp and last updated timestamp",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "segment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associated segment URN, part of the key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resource defining the membership of the associated segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The version tag of the campaign record",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "UPDATE",
+      "Anchor": "update",
+      "SectionPath": [
+        "UPDATE"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/adSegmentSources/source={urn}\u0026segment={urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "UPDATE",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn identifying the advertising account associated with the segment. This field is immutable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "segment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associated segment URN, part of the key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resource defining the membership of the associated segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "UPDATE",
+        "Example"
+      ],
+      "Text": "PUT https://api.linkedin.com/v2/adSegmentSources/source=urn:li:adPageSet:10001\u0026segment=urn:li:adSegment:10001",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "UPDATE",
+        "Sample request"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:511910281\u0022,\n    \u0022segment\u0022: \u0022urn:li:adSegment:10001\u0022,\n    \u0022source\u0022: \u0022urn:li:adPageSet:10001\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources/source={urn}\u0026segment={urn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "segment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Associated segment URN, part of the key",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The resource defining the membership of the associated segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-1",
+      "SectionPath": [
+        "GET",
+        "Example"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources/source=urn:li:adPageSet:10001\u0026segment=urn:li:adSegment:89671",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022changeAuditStamps\u0022: {\n        \u0022created\u0022: {\n            \u0022actor\u0022: \u0022foo\u0022,\n            \u0022time\u0022: 7\n        },\n        \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022baz\u0022,\n            \u0022time\u0022: 2\n        }\n    },\n    \u0022created\u0022: 7,\n    \u0022lastModified\u0022: 2,\n    \u0022segment\u0022: \u0022foo\u0022,\n    \u0022source\u0022: \u0022bar\u0022,\n    \u0022version\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "FINDER",
+      "Anchor": "finder",
+      "SectionPath": [
+        "FINDER"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources/?q=account",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER",
+      "Anchor": "finder",
+      "SectionPath": [
+        "FINDER"
+      ],
+      "Text": "The adSegmentSources API supports the following types of finder methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER",
+      "Anchor": "finder",
+      "SectionPath": [
+        "FINDER"
+      ],
+      "Text": "Account\nSegments\nSources",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Account",
+      "Anchor": "account",
+      "SectionPath": [
+        "FINDER",
+        "Account"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources/?q=account",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Look up adSegmentSources associated with this account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example-2",
+      "SectionPath": [
+        "FINDER",
+        "Example"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources?q=account\u0026account=urn:li:sponsoredAccount:511726460\u0026start=0\u0026count=5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:511726460\u0022,\n    \u0022created\u0022: 1464992650000,\n    \u0022lastModified\u0022: 1464992650000,\n    \u0022segment\u0022: \u0022urn:li:adSegment:10031\u0022,\n    \u0022source\u0022: \u0022urn:li:adPageSet:10001\u0022,\n    \u0022versionTag\u0022: \u00221\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Segments",
+      "Anchor": "segments",
+      "SectionPath": [
+        "FINDER",
+        "Segments"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources/?q=segments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-3",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AdSegmentUrn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Look up adSegmentSources associated with these AdSegments",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sources",
+      "Anchor": "sources",
+      "SectionPath": [
+        "FINDER",
+        "Sources"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/adSegmentSources/?q=sources",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-4",
+      "SectionPath": [
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sources",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Look up adSegmentSources associated with these source Urns",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "totals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean, default=\u0022true\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean parameter indicating whether total results matched should be tallied and returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

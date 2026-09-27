@@ -1,0 +1,412 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+  "Title": "Module 2 - Sync Data from ATS to LinkedIn",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module1",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module4",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module5",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-cert-module6",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-quality-thresholds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Sync Data from ATS to LinkedIn",
+      "Anchor": "module-2---sync-data-from-ats-to-linkedin",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Execution Steps",
+        "Expected Result"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "RSC-201A",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Historical data syncing. Syncing historical jobs requisitions from your ATS system to Linkedin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure all jobs requistions are synced from your ATS to LinkedIn. 2. Ensure at least 2 year history of job requisitions are synced. 3. On LinkedIn Recruiter, ensure all synced jobs requisitions are available via the export dropdown on the member\u0027s profile page. 4. Compare the total number of job requisitions created in past 2 year are successfully synced to Linkedin (including closed job requisitions). Relevant Documentation: Sync JobRequisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-201B",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Historical data syncing. Syncing historical jobs requisition stages from your ATS system to Linkedin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure all jobs requisition stages are synced from your ATS to LinkedIn. 2. On LinkedIn Recruiter, ensure all synced jobs requisition stages are available on the member\u0027s profile page. 3. Compare the total number of job requisition stages created in past 2 year are successfully synced to Linkedin (including closed job requisitions). Sync JobRequisitionStages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Historical data syncing. Syncing historical candidates from your ATS system to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. On LinkedIn Recruiter, ensure that all synced candidates are available with enhanced in-ATS indicator. 2. On the ATS, in the Enhanced ATS Profile Widget, ensure that the correct LinkedIn profile appears for a candidate. 3. Ensure at least 2 year history of candidates are synced. 4. Compare the total number of candidates in your ATS and LinkedIn. Relevant Documentation: Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Historical data syncing. Syncing historical applications from your ATS system to LinkedIn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. On LinkedIn Recruiter, ensure that all synced applications are available in LinkedIn Recruiter. 2. Ensure at least 2 year history of applications are synced. 3. Ensure the application notes, stages and interview feedbacks associated with the given application are all synced and available in Recruiter. 4. Ensure at least 2 year history of applications data are synced. 5. Compare the total number of applications data in your ATS and LinkedIn. Relevant Documentation: Sync Data from ATS to LinkedIn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-204",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Sync Test. Create a new candidate for a role with unique values for all fields in your ATS system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that the unique values for all fields appear in the In-ATS indicator in Recruiter search results and profile page. 2. Ensure the correct LinkedIn profile appears in the ATS Profile Widget. 3. Ensure to get and store person urn in your ATS. Relevant Documentation: Sync Candidates \u0026 Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-205",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Sync Updates Test. Edit the value of a synced field for the previously created candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page and search results. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-206",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Application Sync Test. Create a new candidate application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the new application appear in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-207",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Application Sync Test. Create or use existing Candidate Application, create Application notes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure application notes appear in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Application Notes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-208",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Application Sync Test. Create or use existing Candidate Application, create Application Stages (multiple stages)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure application stages(multiple stages) appear in the In-ATS indicator on Recruiter. (application stages are mandatory to be synced, please demonstrate the application stage history). Relevant Documentation: Sync Application Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-209",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Application Sync Test. Create or use existing Candidate Application , create Application interview feedback.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure application interview feedback appears in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Application interview feedback",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-210",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate application Update Sync Test. Edit an existing application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the updated application is relfected in the In-ATS indicator on Recruiter. Relevant Documentation: Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-211",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate application Update Sync Test. Edit or add application notes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the application notes change reflected in the In-ATS indicator for that specific application. Relevant Documentation: Sync Application Notes",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-212",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate application Update Sync Test. Edit or add application stages.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the application stages change reflected in the In-ATS indicator for that specific application. Relevant Documentation: Sync Application Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-213",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate application Update Sync Test. Edit or add application interview feedback.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the application interview feedback change reflected in the In-ATS indicator for that specific application. Relevant Documentation: Sync Application interview feedback",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-214",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Requisition Sync Test. Create a new job requisition with unique values for all fields in your ATS system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the new value is reflected on the Recruiter profile page and One Click Export. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync JobRequisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-215",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Requisition Sync Updates Test. Edit the value of a synced field for the previously created job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page and One Click Export. 2.Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync JobRequisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-216",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Requisition Stage Sync Test. Create a new Job Requisition Stage with unique values for all fields in your ATS System.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure the new value is reflected in the In-ATS indicator on the Recruiter profile page. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency Relevant Documentation: Sync JobRequisitionStages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-217",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Job Requisition Stage Sync Updates Test. Update the new Job Requisition Stage with unique values for all fields in your ATS System.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. nsure the updated value is reflected in the In-ATS indicator on the Recruiter profile page. 2. Demonstrate the updates in the ATS synced in real-time to LinkedIn. If not, what is the expected frequency. Relevant Documentation: Sync JobRequisitionStages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RSC-218",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error Handling. Sync data with missing required fields.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Display how data errors are handled and what the customer experiences when this occurs. How does a customer fix data issues? 2. For other unexpected errors (5xx, 4xx), what is the retry logic and logging to identify and report these types of issues? 3. Confirm you can provide a call and response log (including response headers) made to LinkedIn APIs in order to debug customer support issues. 4. If any request in a batch request fails even if the http request returns 200 , then log the failure for the entire request (request body, headers, response headers, response body etc). Include an example link of the batch request. Relevant Documentation: Error Handling",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

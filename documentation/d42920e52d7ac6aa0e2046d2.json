@@ -1,0 +1,54 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/contact-interest",
+  "Title": "Contact Interest Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Contact Interest Fields",
+      "Anchor": "contact-interest-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "predefinedInterest",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Predefined interests that a profile owner could select to display on their profile. Can be the following enum values: ADVISING_COMPANIES - Advising companies CONTRACT_AND_FREELANCE_PROJECTS - Contracting and freelancing GRABBING_COFFEE - Getting coffee INVESTING - Investing JOINING_A_NONPROFIT_BOARD - Joining nonprofit boards MENTORING - Mentoring PAID_CONSULTING - Paid consulting PROBONO_CONSULTING_AND_VOLUNTEERING - Pro bono consulting and volunteering",
+            "Links": [],
+            "Values": [
+              "ADVISING_COMPANIES - Advising companies",
+              "CONTRACT_AND_FREELANCE_PROJECTS - Contracting and freelancing",
+              "GRABBING_COFFEE - Getting coffee",
+              "INVESTING - Investing",
+              "JOINING_A_NONPROFIT_BOARD - Joining nonprofit boards",
+              "MENTORING - Mentoring",
+              "PAID_CONSULTING - Paid consulting",
+              "PROBONO_CONSULTING_AND_VOLUNTEERING - Pro bono consulting and volunteering"
+            ]
+          }
+        ]
+      ]
+    }
+  ]
+}

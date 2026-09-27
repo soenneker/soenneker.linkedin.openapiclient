@@ -1,0 +1,102 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+  "Title": "Custom Matching Identifiers",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Custom Matching Identifiers",
+      "Anchor": "custom-matching-identifiers",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Matching Identifiers",
+      "Anchor": "custom-matching-identifiers",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Starting with the 202410 version, we\u2019ve introduced an optional externalIds field to the user object in the request payload on POST /conversionEvents for Streaming Conversion Events, which allows sending unique custom identifiers (such as external cookie IDs or unique advertiser owned user IDs). This improves signal quality, identity resolution, and match rates in cases where other matching parameters are available for some of the events or channels.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Use External IDs?",
+      "Anchor": "why-use-external-ids",
+      "SectionPath": [
+        "Why Use External IDs?"
+      ],
+      "Text": "External IDs provide a way to leverage unique/proprietary identifiers for improved signal quality and identity resolution. This helps in accurately matching users across devices and platforms, thereby enhancing the overall effectiveness of advertising efforts while complying with global privacy regulations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use External IDs in Conversions API?",
+      "Anchor": "how-to-use-external-ids-in-conversions-api",
+      "SectionPath": [
+        "How to Use External IDs in Conversions API?"
+      ],
+      "Text": "Assign a Unique Custom Identifier: Assign a unique custom identifier to a potential buyer within your system. This identifier can be any ID that you own and want to use for tracking purposes.\n\nSend Conversions API Events with External IDs: When a user completes the conversion action, send events via Conversions API with the standard matching parameters (such as SHA256_EMAIL, LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID, etc.) and a list of externalIds. The maximum supported size of the list is 1 at the moment. If the list contains multiple external IDs, only the first external ID will be used for association.\n\nLinkedIn Matching: LinkedIn matches this information to associate the conversion event with a LinkedIn member, utilizing the standard matching parameters\n\nContinuous Tracking: Subsequent events will maintain the association with the user through the externalIds, ensuring continuous tracking without relying on the standard matching parameters. Once your externalIds are successfully matched in an ad account, they can also be used in other ad accounts that are owned by the same Business Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "How to Use External IDs in Conversions API?",
+        "Example"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/conversionEvents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "How to Use External IDs in Conversions API?",
+        "Example"
+      ],
+      "Text": "{\n      \u0022conversion\u0022: \u0022urn:lla:llaPartnerConversion:123\u0022,\n      \u0022conversionHappenedAt\u0022: 1730017211229,\n      \u0022conversionValue\u0022: {\n           \u0022currencyCode\u0022: \u0022USD\u0022,\n           \u0022amount\u0022: \u002250.0\u0022\n       },\n       \u0022user\u0022: {\n           \u0022userIds\u0022: [ {\n               \u0022idType\u0022: \u0022SHA256_EMAIL\u0022,\n               \u0022idValue\u0022: \u0022bad8677b6c86f5d308ee82786c183482a5995f066694246c58c4df37b0cc41f1\u0022\n               }, {\n               \u0022idType\u0022: \u0022LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID\u0022,\n               \u0022idValue\u0022: \u0022df5gf5-gh6t7-ph4j7h-fgf6n1\u0022\n               } ],\n            \u0022userInfo\u0022: {\n               \u0022firstName\u0022: \u0022mike\u0022,\n               \u0022lastName\u0022: \u0022smith\u0022,\n               \u0022title\u0022: \u0022software engineer\u0022,\n               \u0022companyName\u0022: \u0022microsoft\u0022,\n               \u0022countryCode\u0022: \u0022US\u0022\n            },\n            \u0022externalIds\u0022: [\u0022mike_smith_external_user_id\u0022]\n       },\n   \u0022eventId\u0022 : \u0022abc12345\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

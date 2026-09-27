@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endsAt property</summary>
-        public int? EndsAt { get; set; }
+        public long? EndsAt { get; set; }
         /// <summary>The startsAt property</summary>
-        public int? StartsAt { get; set; }
+        public long? StartsAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseResults7130283397368741889TimeRangeV2"/> and sets the default values.
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endsAt", n => { EndsAt = n.GetIntValue(); } },
-                { "startsAt", n => { StartsAt = n.GetIntValue(); } },
+                { "endsAt", n => { EndsAt = n.GetLongValue(); } },
+                { "startsAt", n => { StartsAt = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("endsAt", EndsAt);
-            writer.WriteIntValue("startsAt", StartsAt);
+            writer.WriteLongValue("endsAt", EndsAt);
+            writer.WriteLongValue("startsAt", StartsAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

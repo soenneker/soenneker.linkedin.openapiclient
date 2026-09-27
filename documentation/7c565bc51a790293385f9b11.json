@@ -1,0 +1,329 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review",
+  "Title": "Community Management App Review",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management-app-review",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/restricted-use-cases",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Community Management App Review",
+      "Anchor": "community-management-app-review",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management App Review",
+      "Anchor": "community-management-app-review",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management App Review",
+      "Anchor": "community-management-app-review",
+      "SectionPath": [],
+      "Text": "To access the Community Management APIs, every developer must complete an access request form(s) which LinkedIn will review and vet the developer and app to ensure the APIs will be used in accordance with our API terms and supported use cases. Before submitting any access request, read the information below to understand the vetting process and requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Before You Submit the Access Request",
+      "Anchor": "before-you-submit-the-access-request",
+      "SectionPath": [
+        "Before You Submit the Access Request"
+      ],
+      "Text": "Read the LinkedIn Marketing API Terms and developer documentation.\nReview our API and data restrictions to ensure your use case is supported and your application won\u0027t be rejected due to a restricted use case.\nAt this time, our Community Management APIs are only available to registered legal organizations for commercial use cases only.\nBe prepared to share your business email address and your organization\u2019s legal name, registered address, website, and privacy policy. Your business email address will have to be verified. If you don\u2019t receive the verification email, be sure to check your email\u0027s spam folder, junk folder, social tab, and promotional tab. Personal email addresses won\u0027t pass the vetting process.\nEnsure a super admin of the LinkedIn Page associated with your organization has verified your application.\nEnsure that your application doesn\u0027t include any portion of the LinkedIn or Microsoft names or logos (e.g. Linked or In).\nEnsure that you have filled out all required fields in the access request form accurately and completely.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for Standard Tier Upgrade Only",
+      "Anchor": "requirements-for-standard-tier-upgrade-only",
+      "SectionPath": [
+        "Requirements for Standard Tier Upgrade Only"
+      ],
+      "Text": "Make sure your application has been approved for the development tier and you have fully integrated the Community Management APIs into your application. Subsequent changes to your application\u0027s functionality after your application has been reviewed by LinkedIn may require re-review.\nPrepare to provide a company and product overview, description of your use case, and test credentials for our reviewers to review your application.\nPrepare a screen recording/ screencast of your application that demonstrates each use case that you specified in the access request form (additional details are included below):\nEnsure the screen recording is high resolution and downloadable.\nPlease limit your screencast to just the screens associated with your application (i.e. close all other windows and applications before recording).\nNarration is recommended.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for Standard Tier Upgrade Only",
+      "Anchor": "requirements-for-standard-tier-upgrade-only",
+      "SectionPath": [
+        "Requirements for Standard Tier Upgrade Only"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements for Standard Tier Upgrade Only",
+      "Anchor": "requirements-for-standard-tier-upgrade-only",
+      "SectionPath": [
+        "Requirements for Standard Tier Upgrade Only"
+      ],
+      "Text": "Any failure to complete the above tasks may result in your access request being rejected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "Once you have created your application and submitted the access request form, your access request form will be reviewed by LinkedIn for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "Approved use case\nVerified business email address\nVerified organization\nVerified organization website and domain address\nApplication verified by LinkedIn Page associated with same organization",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "If your application is reviewed and approved, you\u0027ll get Community Management Development tier access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier Access",
+      "Anchor": "development-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Development Tier Access"
+      ],
+      "Text": "If your application is rejected, review the qualifications, create a new app, and submit a new Development tier access request form. You won\u0027t be able to re-apply for Development tier access with your existing app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "Once you meet the above requirements for access to the Development tier, you\u0027ll find a Standard tier access request form in the Developer Portal under My Apps \u003E Products. To get access to Standard tier, you\u0027ll be required to complete this access request form and submit a screen recording of your app. Your application and access request form will be reviewed for the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "Approved use case\nValid privacy policy\nCompliance with our terms, restrictions, security, privacy, and trust requirements, and data storage requirements\nScreen recording that accurately demonstrates all core functionality as outlined above",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "If you\u0027re approved for Standard tier and would like to apply your Standard tier access to a different app, you\u0027ll need to complete another Standard tier access form for the app and in the form indicate you have an existing app with Standard tier access. You will be prompted to provide the client ID for the approved Standard tier app. This will expedite the review process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier Access",
+      "Anchor": "standard-tier-access",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Standard Tier Access"
+      ],
+      "Text": "If your application is rejected, review the qualifications, create a new app, and submit a new Development tier access form. You won\u0027t be able to re-apply for Standard tier access with your existing app.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Screencast requirements",
+      "Anchor": "screencast-requirements",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements"
+      ],
+      "Text": "Ensure the screen recording is high resolution and downloadable.\nPlease limit your screencast to just the screens associated with your application (i.e. close all other windows and applications before recording).\nNarration is recommended. Our reviewers should be able to readily understand what you\u2019re demonstrating.\nPrepare a screen recording/screencast of your application that demonstrates the following test cases for each use case that you specified in the access request form for access to the Standard tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Page Management Use Cases",
+      "Anchor": "for-page-management-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Page Management Use Cases"
+      ],
+      "Text": "Demonstrate an application user approving access to their LinkedIn page data via the complete OAuth flow.\nDemonstrate a user posting to their LinkedIn page via your app.\nDemonstrate how a comment on that post by a member* is displayed to users in your app.\nDemonstrate what personal data fields from the commenter\u2019s LinkedIn profile are displayed to users in your app.\nDemonstrate any other core functionality that uses member* personal data from LinkedIn (e.g. profile data, content of posts or comments, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Brand Engagement Use Cases",
+      "Anchor": "for-brand-engagement-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Brand Engagement Use Cases"
+      ],
+      "Text": "If you don\u2019t have a Page Management use case, demonstrate the following for your Brand Engagement use case:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Brand Engagement Use Cases",
+      "Anchor": "for-brand-engagement-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Brand Engagement Use Cases"
+      ],
+      "Text": "Demonstrate an application user approving access to their LinkedIn page data via the complete OAuth flow.\nDemonstrate how a mention of the user\u2019s LinkedIn page in a post by a member* is displayed to users in your app.\nDemonstrate what personal data fields from the mentioning member\u2019s LinkedIn profile are displayed to users in your app.\nDemonstrate any other core functionality that uses member* personal data from LinkedIn (e.g. profile data, content of posts or comments, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Page Analytics Use Cases",
+      "Anchor": "for-page-analytics-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Page Analytics Use Cases"
+      ],
+      "Text": "Demonstrate an application user approving access to their LinkedIn page data via the complete OAuth flow (if not already demonstrated via one of the preceding use cases).\nDemonstrate how the performance of the page\u2019s posts (e.g. number of reactions) is displayed to users in your app.\nDemonstrate what personal data fields from the LinkedIn profiles of members* who engage with the page\u2019s posts are displayed to users in your app (if not already demonstrated via one of the preceding use cases).\nDemonstrate any other core functionality that uses member* personal data from LinkedIn (e.g. profile data, content of posts or comments, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Executive Management Use Cases",
+      "Anchor": "for-executive-management-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Executive Management Use Cases"
+      ],
+      "Text": "Demonstrate an application user approving access to their LinkedIn profile data via the complete OAuth flow.\nDemonstrate a user posting to their LinkedIn profile via your app.\nDemonstrate how a comment on that post by another member* is displayed to users in your app.\nDemonstrate what personal data fields from the commenter\u2019s LinkedIn profile are displayed to users in your app.\nDemonstrate any other core functionality that uses member* personal data from LinkedIn (e.g. profile data, content of posts or comments, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Employee Advocacy Use Cases",
+      "Anchor": "for-employee-advocacy-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Employee Advocacy Use Cases"
+      ],
+      "Text": "Demonstrate an application user approving access to their LinkedIn profile data via the complete OAuth flow.\nDemonstrate a user posting to their LinkedIn profile via your app.\nDemonstrate how a comment on that post by another member* is displayed to users in your app.\nDemonstrate what personal data fields from the commenter\u2019s LinkedIn profile are displayed to users in your app.\nDemonstrate how aggregate engagement on the post is displayed to users.\nDemonstrate any other core functionality that uses member* personal data from LinkedIn (e.g. profile data, content of posts or comments, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Employee Advocacy Use Cases",
+      "Anchor": "for-employee-advocacy-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Employee Advocacy Use Cases"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Employee Advocacy Use Cases",
+      "Anchor": "for-employee-advocacy-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Employee Advocacy Use Cases"
+      ],
+      "Text": "*A member is an individual that has registered and joined the LinkedIn Network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Employee Advocacy Use Cases",
+      "Anchor": "for-employee-advocacy-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Employee Advocacy Use Cases"
+      ],
+      "Text": "If your application doesn\u2019t include certain functionality specified in the above test cases, please just note that in your recording.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Employee Advocacy Use Cases",
+      "Anchor": "for-employee-advocacy-use-cases",
+      "SectionPath": [
+        "Application Review for Community Management API Access",
+        "Screencast requirements",
+        "For Employee Advocacy Use Cases"
+      ],
+      "Text": "Please note that even if LinkedIn approves your integration, you\u0027re solely responsible for ensuring that your integration (including all use, disclosure, and storage of LinkedIn data) is, at all times, in compliance with: (a) the LinkedIn Marketing API Terms and the LinkedIn developer documentation; and (b) all other requirements or restrictions that LinkedIn separately communicates to you (e.g. during or after the vetting process). LinkedIn retains the right to monitor your application and suspend or discontinue access to the Community Management APIs for any non-compliance with the LinkedIn Marketing API Terms, even if your application was previously approved by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

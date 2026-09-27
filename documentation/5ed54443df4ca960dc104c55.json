@@ -1,0 +1,1604 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+  "Title": "Profile Edit API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/connections-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/primary-contact-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/certifications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/courses",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/educations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/honors",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/languages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/patents",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/positions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/projects",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/publications",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/skills",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/test-scores",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/volunteering-experiences",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/contact-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Edit API",
+      "Anchor": "profile-edit-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Edit API",
+      "Anchor": "profile-edit-api",
+      "SectionPath": [],
+      "Text": "The use of this API is restricted to those developers approved by LinkedIn and subject to applicable data restrictions in their agreements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Edit API",
+      "Anchor": "profile-edit-api",
+      "SectionPath": [],
+      "Text": "Profile Edit API allows you to include functionality in your application to modify LinkedIn profiles (including changing existing fields as well as adding and deleting data from the profile sections). In order for your application to modify any member\u0027s profile, the member\u0027s authorization (via OAuth) is required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permissions",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to manage and delete data for compliance. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of that specific user. Only existing profiles can be edited using this API, a new profile can be created by a user using https://www.linkedin.com/. The Profile Edit API uses the response headers documented in the Request and Response Headers section. A successful profile edit will return the response code 200 OK.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "All basic profile fields will follow the sample request below. Keep in mind when you update a field, the entire value will update. For example if you are adding a firstName in another language, you will need to include the original values or else it will be deleted. If you want to delete the entire field, then you will pass in a empty string or array depending on the specified object type. Alternatively, you can also use the delete field method described below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "The complex fields will require calling the corresponding sub-resources. For more information, please click on the complex field you want to perform an action on.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "In order to make the sample calls below succeed, you must include X-RestLi-Protocol-Version:2.0.0 in your request header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/people/(id:{person ID})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "Sample JSON request body to change all the values in the field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022FIELD\u0022: {\n                \u0022VALUE1\u0022: \u0022value1\u0022,\n                \u0022VALUE2\u0022: \u0022value2\u0022,\n                \u0022VALUE3\u0022: \u0022value3\u0022\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "Sample Json to delete one or more profile Basic Fields. To delete entries within Complex Fields, please refer the specific Field page for more information. If you attempt to delete a field that is mandatory, the API will return a 422 Error Response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How to Perform a Profile Edit",
+      "Anchor": "how-to-perform-a-profile-edit",
+      "SectionPath": [
+        "How to Perform a Profile Edit"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$delete\u0022: [\n            \u0022field1\u0022,\n            \u0022field2\u0022\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "How to Perform a Profile Edit",
+        "Requirements"
+      ],
+      "Text": "You must adhere to the following requirements when editing LinkedIn member profiles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "How to Perform a Profile Edit",
+        "Requirements"
+      ],
+      "Text": "The user must request the change to their profile\nThe users change must be posted unaltered to the profile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Fields",
+      "Anchor": "basic-fields",
+      "SectionPath": [
+        "Supported Fields",
+        "Basic Fields"
+      ],
+      "Text": "address | associations | backgroundPicture | birthDate | certificationsOrder | contactInstructions | coursesOrder | educationsOrder | firstName | geoLocation | headline | honorsOrder | ims | imsOrder | industryId | interests | languagesOrder | lastName | legacyHonors | maidenName | memberRichContents | organizationsOrder | patentsOrder | phoneNumbers | phoneticFirstName | phoneticLastName | positionsOrder | profilePicture | projectsOrder | publicationsOrder | selectedContactInterests | skillsOrder | specialties | summary | supportedLocales | testScoresOrder | vanityName | volunteeringExperiencesOrder | volunteeringInterests | websites",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Fields",
+      "Anchor": "complex-fields",
+      "SectionPath": [
+        "Supported Fields",
+        "Complex Fields"
+      ],
+      "Text": "certifications | courses | educations | honors | languages | organizations | patents | positions | projects | publications | skills | testScores | volunteeringExperiences",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleString Fields",
+      "Anchor": "multilocalestring-fields",
+      "SectionPath": [
+        "MultiLocaleString Fields"
+      ],
+      "Text": "The following fields are the object type MultiLocaleString, which represents a textual fields with values for multiple locales.\u00A0See here for more description on this object type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleString Fields",
+      "Anchor": "multilocalestring-fields",
+      "SectionPath": [
+        "MultiLocaleString Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable address that a member wants to display on the profile.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable description of organizations and associations. Deprecated on favor of \u0022organizations\u0022 and only used for DELETE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contactInstructions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Use \u0022phoneNumbers\u0022 and \u0022websites\u0022 instead. Localizable notes on how to contact the member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable first name of a member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable headline of choosing to be put on the profile.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Use \u0022selectedContactInterests\u0022 instead. Localizable write-up of interests that a member wants to display on the profile.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable last name of a member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maidenName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable maiden name of a member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneticFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable phonetic representation of firstName. Only applicable for Japanese profiles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "phoneticLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable phonetic representation of lastName. Only applicable for Japanese profiles.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specialties",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable description of specialties. Deprecated in favor of \u0022skills\u0022 and only used for DELETE.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleString Fields",
+      "Anchor": "multilocalestring-fields",
+      "SectionPath": [
+        "MultiLocaleString Fields"
+      ],
+      "Text": "Sample JSON request body to edit address :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "MultiLocaleString Fields",
+      "Anchor": "multilocalestring-fields",
+      "SectionPath": [
+        "MultiLocaleString Fields"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022address\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u00222029 Stierlin Ct, Mountain View, CA 94043\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleRichText Fields",
+      "Anchor": "multilocalerichtext-fields",
+      "SectionPath": [
+        "MultiLocaleRichText Fields"
+      ],
+      "Text": "The following fields are the object type MultiLocaleRichText, which represents a textual fields with values for multiple locales. See here for more description on this object type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleRichText Fields",
+      "Anchor": "multilocalerichtext-fields",
+      "SectionPath": [
+        "MultiLocaleRichText Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "legacyHonors",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable description of honors and awards.\u00A0Deprecated in favor of \u0022honors\u0022 and only used for DELETE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "summary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localizable summary of the profile.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleRichText Fields",
+      "Anchor": "multilocalerichtext-fields",
+      "SectionPath": [
+        "MultiLocaleRichText Fields"
+      ],
+      "Text": "Sample JSON request body to edit summary :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "MultiLocaleRichText Fields",
+      "Anchor": "multilocalerichtext-fields",
+      "SectionPath": [
+        "MultiLocaleRichText Fields"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022summary\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022Awesome summary of me.\u0022\n                    }\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Objects Order",
+      "Anchor": "complex-objects-order",
+      "SectionPath": [
+        "Complex Objects Order"
+      ],
+      "Text": "The following fields are long arrays that determine the intra-section order of complex fields. Each long value represents an id of the complex object. If an id is placed before another id, the former will show up before the latter on linkedin.com. If you input an id that does not map to a complex object in its field, then the API will return an error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Complex Objects Order",
+      "Anchor": "complex-objects-order",
+      "SectionPath": [
+        "Complex Objects Order"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "certificationsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Certifications intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coursesOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Courses intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educationsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Educations intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "honorsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Honors intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "imsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "IMs intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "languagesOrder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Languages intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organizations intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "patentsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Patents intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positionsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Positions intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "projectsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Projects intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publicationsOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Publications intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testScoresOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TestScores intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "volunteeringExperiencesOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Volunteering experiences intra-section order.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Objects Order",
+      "Anchor": "complex-objects-order",
+      "SectionPath": [
+        "Complex Objects Order"
+      ],
+      "Text": "Sample JSON request body to edit educationOrder :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Complex Objects Order",
+      "Anchor": "complex-objects-order",
+      "SectionPath": [
+        "Complex Objects Order"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022educationsOrder\u0022: [\n                2601123,\n                2663456\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Objects Order",
+      "Anchor": "complex-objects-order",
+      "SectionPath": [
+        "Complex Objects Order"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Complex Objects Order",
+      "Anchor": "complex-objects-order",
+      "SectionPath": [
+        "Complex Objects Order"
+      ],
+      "Text": "The education ids listed above should be retrieved from the educations field of the Profile API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background Picture",
+      "Anchor": "background-picture",
+      "SectionPath": [
+        "Background Picture"
+      ],
+      "Text": "Edit the background picture for a member. You will first need to register, then upload the background picture image to LinkedIn and then update the member\u0027s profile with the image asset. We will walk through the following steps to update the background picture:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background Picture",
+      "Anchor": "background-picture",
+      "SectionPath": [
+        "Background Picture"
+      ],
+      "Text": "Register the background picture image to be uploaded.\nUpload the background picture image to LinkedIn.\nUpdate the member\u0027s profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background Picture",
+      "Anchor": "background-picture",
+      "SectionPath": [
+        "Background Picture"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background Picture",
+      "Anchor": "background-picture",
+      "SectionPath": [
+        "Background Picture"
+      ],
+      "Text": "Background Picture and Profile Picture edit requires the w_compliance permission",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Background Picture Image",
+      "Anchor": "register-the-background-picture-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image"
+      ],
+      "Text": "Send a POST request to the assets API, with the action query parameter to registerUpload. This will need to be done twice, once for the originalImage and once for the displayImage. You can use the same image for both fields. The only difference is in the \u0022recipes\u0022 value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Background Picture Image",
+      "Anchor": "register-the-background-picture-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Background Picture Image",
+      "Anchor": "register-the-background-picture-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image"
+      ],
+      "Text": "We will need to provide the member\u0027s Person URN. Additional recipes and serviceRelationships define the type of content we\u0027re publishing. See the request body below for reference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Background Picture Original Image",
+      "Anchor": "register-the-background-picture-original-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image",
+        "Register the Background Picture Original Image"
+      ],
+      "Text": "{\n  \u0022registerUploadRequest\u0022: {\n    \u0022recipes\u0022: [\n      \u0022urn:li:digitalmediaRecipe:profile-originalbackground-image\u0022\n    ],\n    \u0022owner\u0022: \u0022urn:li:person:ABCDEF\u0022,\n    \u0022serviceRelationships\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Background Picture Original Image",
+      "Anchor": "register-the-background-picture-original-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image",
+        "Register the Background Picture Original Image"
+      ],
+      "Text": "A successful response will contain an uploadUrl and asset that you will need to save for the next steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Background Picture Original Image",
+      "Anchor": "register-the-background-picture-original-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image",
+        "Register the Background Picture Original Image"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022headers\u0022: {},\n                \u0022uploadUrl\u0022: \u0022https://api.linkedin.com/mediaUpload/C5604AQEMWf4Nl_mf2g/profile-original-uploadedBackgroundImage/0?ca=vector_profile\u0026cn=uploads\u0026m=AQKUInFL-Ndi6QAAAWhdlc4iYOO-4OMcrxikL9KS3DLPqXFLtoDF11AGYQ\u0026app=5480656\u0026sync=0\u0026v=beta\u0026ut=0Y9HvZ5fS4DoA1\u0022\n            }\n        },\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5604AQEMWf4Nl_mf2g,urn:li:digitalmediaMediaArtifactClass:profile-original-uploadedBackgroundImage)\u0022,\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5604AQEMWf4Nl_mf2g\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Background Picture Display Image",
+      "Anchor": "register-the-background-picture-display-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image",
+        "Register the Background Picture Display Image"
+      ],
+      "Text": "{\n  \u0022registerUploadRequest\u0022: {\n    \u0022recipes\u0022: [\n      \u0022urn:li:digitalmediaRecipe:profile-displaybackground-image\u0022\n    ],\n    \u0022owner\u0022: \u0022urn:li:person:ABCDEF\u0022,\n    \u0022serviceRelationships\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Background Picture Display Image",
+      "Anchor": "register-the-background-picture-display-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image",
+        "Register the Background Picture Display Image"
+      ],
+      "Text": "A successful response will contain an uploadUrl and asset that you will need to save for the next steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Background Picture Display Image",
+      "Anchor": "register-the-background-picture-display-image",
+      "SectionPath": [
+        "Background Picture",
+        "Register the Background Picture Image",
+        "Register the Background Picture Display Image"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022headers\u0022: {},\n                \u0022uploadUrl\u0022: \u0022https://api.linkedin.com/mediaUpload/C5616AQEoeGkp7U5GEA/profile-uploadedBackgroundImage/0?ca=vector_profile\u0026cn=uploads\u0026m=AQIdKBw1WIgAWwAAAWhdlwvlhH13JEO0ZxBHb2VRuyAILbzD_VgJ-4UyLg\u0026app=5480656\u0026sync=0\u0026v=beta\u0026ut=1SpRkaq8G5DoA1\u0022\n            }\n        },\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5616AQEoeGkp7U5GEA,urn:li:digitalmediaMediaArtifactClass:profile-uploadedBackgroundImage)\u0022,\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5616AQEoeGkp7U5GEA\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Image Binary File",
+      "Anchor": "upload-image-binary-file",
+      "SectionPath": [
+        "Background Picture",
+        "Upload Image Binary File"
+      ],
+      "Text": "Using the uploadUrl returned from Step 1, upload your image to LinkedIn. To upload your image, send a POST request to the uploadUrl with your image included as a binary file. The example below uses cURL to upload the image file.\nDo this for both the originalImage and displayImage uploads. You can use the same image file for both fields, but use the upload url returned in the respective registerUpload response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Background Picture",
+        "Upload Image Binary File",
+        "Sample Request"
+      ],
+      "Text": "curl -i --upload-file /Users/peter/Desktop/superneatimage.png --header \u0022Authorization: Bearer redacted\u0022 \u0027https://api.linkedin.com/mediaUpload/C5616AQEoeGkp7U5GEA/profile-uploadedBackgroundImage/0?ca=vector_profile\u0026cn=uploads\u0026m=AQIdKBw1WIgAWwAAAWhdlwvlhH13JEO0ZxBHb2VRuyAILbzD_VgJ-4UyLg\u0026app=5480656\u0026sync=0\u0026v=beta\u0026ut=1SpRkaq8G5DoA1\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update the profile with the Background Picture",
+      "Anchor": "update-the-profile-with-the-background-picture",
+      "SectionPath": [
+        "Background Picture",
+        "Update the profile with the Background Picture"
+      ],
+      "Text": "After the image file has successfully uploaded from Step 2, we will use the asset from Step 1 to update the profile with the new background picture.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update the profile with the Background Picture",
+      "Anchor": "update-the-profile-with-the-background-picture",
+      "SectionPath": [
+        "Background Picture",
+        "Update the profile with the Background Picture"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update the profile with the Background Picture",
+      "Anchor": "update-the-profile-with-the-background-picture",
+      "SectionPath": [
+        "Background Picture",
+        "Update the profile with the Background Picture"
+      ],
+      "Text": "It is necessary and recommended to specify both the originalImage and displayImage fields in the profile update API call with the corresponding asset URNs. This is to avoid mismatches between the original and display images.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Background Picture",
+        "Update the profile with the Background Picture",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022backgroundPicture\u0022: {\n      \u0022$set\u0022: {\n        \u0022originalImage\u0022: \u0022urn:li:digitalmediaAsset:C5604AQEMWf4Nl_mf2g\u0022,\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5616AQEoeGkp7U5GEA\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Birth Date",
+      "Anchor": "birth-date",
+      "SectionPath": [
+        "Birth Date"
+      ],
+      "Text": "Edit the member\u0027s birth date: day, month and year.\u00A0See here for more description on this object type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Birth Date",
+      "Anchor": "birth-date",
+      "SectionPath": [
+        "Birth Date"
+      ],
+      "Text": "Sample JSON request body to edit birthDate :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Birth Date",
+      "Anchor": "birth-date",
+      "SectionPath": [
+        "Birth Date"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022birthDate\u0022: {\n                \u0022day\u0022: 1,\n                \u0022month\u0022: 1,\n                \u0022year\u0022: 1974\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMs",
+      "Anchor": "ims",
+      "SectionPath": [
+        "IMs"
+      ],
+      "Text": "Edit the member\u0027s ims. See Im Fields for a description of the fields available within this object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMs",
+      "Anchor": "ims",
+      "SectionPath": [
+        "IMs"
+      ],
+      "Text": "Sample request body to create an im :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "IMs",
+      "Anchor": "ims",
+      "SectionPath": [
+        "IMs"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022ims\u0022: {\n                \u0022bobsmith-linkedin\u0022: {\n                    \u0022id\u0022: \u0022bobsmith-linkedin\u0022,\n                    \u0022provider\u0022: \u0022GTalk\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMs",
+      "Anchor": "ims",
+      "SectionPath": [
+        "IMs"
+      ],
+      "Text": "To create, update or delete an im, you will need to include all the other ims as this API edits the whole ims field instead of individual im.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "IMs",
+      "Anchor": "ims",
+      "SectionPath": [
+        "IMs"
+      ],
+      "Text": "You will need to make sure the value of the top value on an im object matches the id value in the same object. In addition, the provider needs to be one of the following enums in the Im Fields above. Lastly, you can have up to 3 ims at one time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Industry ID",
+      "Anchor": "industry-id",
+      "SectionPath": [
+        "Industry ID"
+      ],
+      "Text": "Edit the member\u0027s industry. Requires a standardized referenced industry URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Industry ID",
+      "Anchor": "industry-id",
+      "SectionPath": [
+        "Industry ID"
+      ],
+      "Text": "Sample JSON request body to edit industryId :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Industry ID",
+      "Anchor": "industry-id",
+      "SectionPath": [
+        "Industry ID"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022industryId\u0022: \u0022urn:li:industry:47\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location",
+      "Anchor": "location",
+      "SectionPath": [
+        "Location"
+      ],
+      "Text": "Edit the member\u0027s current location.\u00A0See geoLocation field for a description of the fields available within this object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Location",
+      "Anchor": "location",
+      "SectionPath": [
+        "Location"
+      ],
+      "Text": "Sample JSON request body to edit geoLocation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Location",
+      "Anchor": "location",
+      "SectionPath": [
+        "Location"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022geoLocation\u0022: {\n        \u0022geo\u0022: \u0022urn:li:geo:123456789\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Contents",
+      "Anchor": "member-rich-contents",
+      "SectionPath": [
+        "Member Rich Contents"
+      ],
+      "Text": "Edit the member\u0027s rich content summary. This field is an array of MemberRichContentUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Rich Contents",
+      "Anchor": "member-rich-contents",
+      "SectionPath": [
+        "Member Rich Contents"
+      ],
+      "Text": "Sample JSON request body to edit memberRichContents:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Member Rich Contents",
+      "Anchor": "member-rich-contents",
+      "SectionPath": [
+        "Member Rich Contents"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022memberRichContents\u0022: [\n                \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981719813)\u0022,\n                \u0022urn:li:memberRichContent:(urn:li:person:yrZCpj2ZYQ,1586981706752)\u0022,\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Phone Numbers",
+      "Anchor": "phone-numbers",
+      "SectionPath": [
+        "Phone Numbers"
+      ],
+      "Text": "Edit the member\u0027s phone numbers.\u00A0See Phone Number Fields for a description of the fields available within this object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Phone Numbers",
+      "Anchor": "phone-numbers",
+      "SectionPath": [
+        "Phone Numbers"
+      ],
+      "Text": "Sample JSON request body to edit phoneNumbers :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Phone Numbers",
+      "Anchor": "phone-numbers",
+      "SectionPath": [
+        "Phone Numbers"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022phoneNumbers\u0022: [\n                {\n                    \u0022number\u0022: \u0022123-444-5555\u0022,\n                    \u0022type\u0022: \u0022WORK\u0022\n                },\n                {\n                    \u0022number\u0022: \u0022(222) 333-4444\u0022,\n                    \u0022type\u0022: \u0022HOME\u0022\n                }\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Picture",
+      "Anchor": "profile-picture",
+      "SectionPath": [
+        "Profile Picture"
+      ],
+      "Text": "Edit the member\u0027s profile photo. You will first need to register, then upload the profile picture image to LinkedIn and then update the member\u0027s profile with the image asset. We will walk through the following steps to update the profile picture:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Picture",
+      "Anchor": "profile-picture",
+      "SectionPath": [
+        "Profile Picture"
+      ],
+      "Text": "Register the profile picture image to be uploaded.\nUpload the profile picture image to LinkedIn.\nUpdate the member\u0027s profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Picture",
+      "Anchor": "profile-picture",
+      "SectionPath": [
+        "Profile Picture"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Picture",
+      "Anchor": "profile-picture",
+      "SectionPath": [
+        "Profile Picture"
+      ],
+      "Text": "Background Picture and Profile Picture edit requires the w_compliance permission",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Profile Picture Image",
+      "Anchor": "register-the-profile-picture-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image"
+      ],
+      "Text": "Send a POST request to the assets API, with the action query parameter to registerUpload. This will need to be done twice, once for the originalImage and once for the displayImage. You can use the same image for both fields. The only difference is in the \u0022recipes\u0022 value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Profile Picture Image",
+      "Anchor": "register-the-profile-picture-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Profile Picture Image",
+      "Anchor": "register-the-profile-picture-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image"
+      ],
+      "Text": "We will need to provide the member\u0027s Person URN. Additional recipes and serviceRelationships define the type of content we\u0027re publishing. See the request body below for reference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Profile Picture Original Image",
+      "Anchor": "register-the-profile-picture-original-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image",
+        "Register the Profile Picture Original Image"
+      ],
+      "Text": "{\n  \u0022registerUploadRequest\u0022: {\n    \u0022recipes\u0022: [\n      \u0022urn:li:digitalmediaRecipe:profile-originalphoto-image\u0022\n    ],\n    \u0022owner\u0022: \u0022urn:li:person:ABCDEF\u0022,\n    \u0022serviceRelationships\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Profile Picture Original Image",
+      "Anchor": "register-the-profile-picture-original-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image",
+        "Register the Profile Picture Original Image"
+      ],
+      "Text": "A successful response will contain an uploadUrl and asset that you will need to save for the next steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Profile Picture Original Image",
+      "Anchor": "register-the-profile-picture-original-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image",
+        "Register the Profile Picture Original Image"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022uploadMechanism\u0022: {\n      \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n        \u0022headers\u0022: {},\n        \u0022uploadUrl\u0022: \u0022https://api.linkedin.com/mediaUpload/C5604AQETz3tP1vbVrA/profile-original-uploadedImage/0?ca=vector_profile\u0026cn=uploads\u0026m=AQIMP2H3hPHVQgAAAWhdrSbB12VmhiQ0V0e5P2gkANXgOa512YhoXwQHCA\u0026app=5480656\u0026sync=0\u0026v=beta\u0026ut=0VMl1rOvOtDoA1\u0022\n      }\n    },\n    \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5604AQETz3tP1vbVrA,urn:li:digitalmediaMediaArtifactClass:profile-original-uploadedImage)\u0022,\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5604AQETz3tP1vbVrA\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Profile Picture Display Image",
+      "Anchor": "register-the-profile-picture-display-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image",
+        "Register the Profile Picture Display Image"
+      ],
+      "Text": "{\n  \u0022registerUploadRequest\u0022: {\n    \u0022recipes\u0022: [\n      \u0022urn:li:digitalmediaRecipe:profile-displayphoto-image\u0022\n    ],\n    \u0022owner\u0022: \u0022urn:li:person:ABCDEF\u0022,\n    \u0022serviceRelationships\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register the Profile Picture Display Image",
+      "Anchor": "register-the-profile-picture-display-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image",
+        "Register the Profile Picture Display Image"
+      ],
+      "Text": "A successful response will contain an uploadUrl and asset that you will need to save for the next steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register the Profile Picture Display Image",
+      "Anchor": "register-the-profile-picture-display-image",
+      "SectionPath": [
+        "Profile Picture",
+        "Register the Profile Picture Image",
+        "Register the Profile Picture Display Image"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022headers\u0022: {},\n                \u0022uploadUrl\u0022: \u0022https://api.linkedin.com/mediaUpload/C5603AQEZ69UT8-eyQg/profile-uploadedImage/0?ca=vector_profile\u0026cn=uploads\u0026m=AQL93-s4C9ABlAAAAWhdsCVA1e4g-pLr25mZkiJf_Oj8yalEZyrBe7wBZg\u0026app=5480656\u0026sync=0\u0026v=beta\u0026ut=2zm8ziQVmwDoA1\u0022\n            }\n        },\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C5603AQEZ69UT8-eyQg,urn:li:digitalmediaMediaArtifactClass:profile-uploadedImage)\u0022,\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5603AQEZ69UT8-eyQg\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload Image Binary File",
+      "Anchor": "upload-image-binary-file-1",
+      "SectionPath": [
+        "Profile Picture",
+        "Upload Image Binary File"
+      ],
+      "Text": "Using the uploadUrl returned from Step 1, upload your image to LinkedIn. To upload your image, send a PUT request to the uploadUrl with your image included as a binary file. The example below uses cURL to upload the image file.\nDo this for both the originalImage and displayImage uploads. You can use the same image file for both fields, but use the upload url returned in the respective registerUpload response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Profile Picture",
+        "Upload Image Binary File",
+        "Sample Request"
+      ],
+      "Text": "curl -i --upload-file /Users/peter/Desktop/superneatimage.png --header \u0022Authorization: Bearer redacted\u0022 \u0027https://api.linkedin.com/mediaUpload/C5603AQEZ69UT8-eyQg/profile-uploadedImage/0?ca=vector_profile\u0026cn=uploads\u0026m=AQL93-s4C9ABlAAAAWhdsCVA1e4g-pLr25mZkiJf_Oj8yalEZyrBe7wBZg\u0026app=5480656\u0026sync=0\u0026v=beta\u0026ut=2zm8ziQVmwDoA1\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update the profile with the Profile Picture",
+      "Anchor": "update-the-profile-with-the-profile-picture",
+      "SectionPath": [
+        "Profile Picture",
+        "Update the profile with the Profile Picture"
+      ],
+      "Text": "After the image file has successfully uploaded from Step 2, we will use the asset from Step 1 to update the profile with the new profile picture.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update the profile with the Profile Picture",
+      "Anchor": "update-the-profile-with-the-profile-picture",
+      "SectionPath": [
+        "Profile Picture",
+        "Update the profile with the Profile Picture"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update the profile with the Profile Picture",
+      "Anchor": "update-the-profile-with-the-profile-picture",
+      "SectionPath": [
+        "Profile Picture",
+        "Update the profile with the Profile Picture"
+      ],
+      "Text": "It is necessary and recommended to specify both the originalImage and displayImage fields in the profile update API call with the corresponding asset URNs. This is to avoid mismatches between the original and display images.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Profile Picture",
+        "Update the profile with the Profile Picture",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022profilePicture\u0022: {\n      \u0022$set\u0022: {\n        \u0022originalImage\u0022: \u0022urn:li:digitalmediaAsset:C5604AQETz3tP1vbVrA\u0022,\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5603AQEZ69UT8-eyQg\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Selected Contact Interests",
+      "Anchor": "selected-contact-interests",
+      "SectionPath": [
+        "Selected Contact Interests"
+      ],
+      "Text": "Edit the member\u0027s rich media summary. This field is an array of ContactInterests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Selected Contact Interests",
+      "Anchor": "selected-contact-interests",
+      "SectionPath": [
+        "Selected Contact Interests"
+      ],
+      "Text": "Sample JSON request body to edit selectedContactInterests :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Selected Contact Interests",
+      "Anchor": "selected-contact-interests",
+      "SectionPath": [
+        "Selected Contact Interests"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022selectedContactInterests\u0022: [\n                {\n                    \u0022predefinedInterest\u0022: \u0022GRABBING_COFFEE\u0022\n                },\n                {\n                    \u0022predefinedInterest\u0022: \u0022INVESTING\u0022\n                }\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Locales",
+      "Anchor": "supported-locales",
+      "SectionPath": [
+        "Supported Locales"
+      ],
+      "Text": "Edit the member\u0027s supported locales. These locales determine the translations of the profile the member chose to create. This field is an array of Locale.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Locales",
+      "Anchor": "supported-locales",
+      "SectionPath": [
+        "Supported Locales"
+      ],
+      "Text": "Sample JSON request body to edit supportedLocales :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Supported Locales",
+      "Anchor": "supported-locales",
+      "SectionPath": [
+        "Supported Locales"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022supportedLocales\u0022: [\n                {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vanity Name",
+      "Anchor": "vanity-name",
+      "SectionPath": [
+        "Vanity Name"
+      ],
+      "Text": "Edit the member\u0027s vanity name. \u00A0Vanity name is represented as a string and is used for the public profile URL (www.linkedin.com/in/{vanityName}).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vanity Name",
+      "Anchor": "vanity-name",
+      "SectionPath": [
+        "Vanity Name"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vanity Name",
+      "Anchor": "vanity-name",
+      "SectionPath": [
+        "Vanity Name"
+      ],
+      "Text": "Your custom URL must contain 3-100 letters or numbers. Please do not use spaces, symbols, or special characters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Vanity Name",
+      "Anchor": "vanity-name",
+      "SectionPath": [
+        "Vanity Name"
+      ],
+      "Text": "Sample JSON request body to edit vanityName :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Vanity Name",
+      "Anchor": "vanity-name",
+      "SectionPath": [
+        "Vanity Name"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022vanityName\u0022: \u0022bobsmith\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Volunteering Interests",
+      "Anchor": "volunteering-interests",
+      "SectionPath": [
+        "Volunteering Interests"
+      ],
+      "Text": "Edit the member\u0027s volunteering interests.\u00A0See Volunteering Interest Fields for a description of the fields available within this object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Volunteering Interests",
+      "Anchor": "volunteering-interests",
+      "SectionPath": [
+        "Volunteering Interests"
+      ],
+      "Text": "Sample JSON request body to edit volunteeringInterests :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Volunteering Interests",
+      "Anchor": "volunteering-interests",
+      "SectionPath": [
+        "Volunteering Interests"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022volunteeringInterests\u0022: {\n                \u0022supportedPredefinedCauses\u0022: [\n                    \u0022humanitarianRelief\u0022,\n                    \u0022politics\u0022,\n                    \u0022socialServices\u0022\n                ]\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Websites",
+      "Anchor": "websites",
+      "SectionPath": [
+        "Websites"
+      ],
+      "Text": "Edit the member\u0027s websites.\u00A0This field is an array of Website.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Websites",
+      "Anchor": "websites",
+      "SectionPath": [
+        "Websites"
+      ],
+      "Text": "Sample JSON request body to edit websites :",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Websites",
+      "Anchor": "websites",
+      "SectionPath": [
+        "Websites"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022websites\u0022: [\n                {\n                    \u0022category\u0022: \u0022OTHER\u0022,\n                    \u0022label\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022MY OTHER WEBSITE\u0022\n                        },\n                        \u0022preferredLocale\u0022: {\n                            \u0022country\u0022: \u0022US\u0022,\n                            \u0022language\u0022: \u0022en\u0022\n                        }\n                    },\n                    \u0022url\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022http://www.linkedin-other.com\u0022\n                        },\n                        \u0022preferredLocale\u0022: {\n                            \u0022country\u0022: \u0022US\u0022,\n                            \u0022language\u0022: \u0022en\u0022\n                        }\n                    }\n                },\n                {\n                    \u0022category\u0022: \u0022PERSONAL\u0022,\n                    \u0022url\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022http://www.linkedin-personal.com\u0022\n                        },\n                        \u0022preferredLocale\u0022: {\n                            \u0022country\u0022: \u0022US\u0022,\n                            \u0022language\u0022: \u0022en\u0022\n                        }\n                    }\n                }\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

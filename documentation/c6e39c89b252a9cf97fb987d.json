@@ -1,0 +1,116 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/sample-apps-lms",
+  "Title": "Marketing Sample Application",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/sample-apps-lms",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/sample-applications"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Marketing Sample Application",
+      "Anchor": "marketing-sample-application",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Sample Application",
+      "Anchor": "marketing-sample-application",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Sample Application",
+      "Anchor": "marketing-sample-application",
+      "SectionPath": [],
+      "Text": "The Marketing Sample Application provides ready-to-use code that you can use to try out RESTful API calls to LinkedIn\u0027s OAuth and marketing APIs. For example, you can use the sample application to fetch an authenticated user\u0027s ad account and role profile to confirm access. This version of the sample application is based on Java. In addition, the sample application code is scalable and customizable so that you can try different application configurations. The sample application is your first step in your development journey using the marketing APIs.\nThe below image displays the marketing sample application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Sample Application",
+      "Anchor": "marketing-sample-application",
+      "SectionPath": [],
+      "Text": "The sample application contains client and server components for managing LinkedIn API requests. The server creates and stores an access token, enabling API access via the client. Download or clone the sample application and try out some marketing APIs, as shown in the demo.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Sample Application",
+      "Anchor": "marketing-sample-application",
+      "SectionPath": [],
+      "Text": "The sample application uses the following development tools:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing Sample Application",
+      "Anchor": "marketing-sample-application",
+      "SectionPath": [],
+      "Text": "Spring Boot: provides the web server framework [https://spring.io/projects/spring-boot].\nLinkedIn OAuth 2.0: user authorization and API authentication.\nMaven: app building and management.\nJava: requires SE 7 or later versions for development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "Prerequisites"
+      ],
+      "Text": "Download the OAuth sample application from Sample Application Repository.\nConfigure the OAuth Sample Application before using the Marketing Sample Application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try the Marketing Solutions Sample Application",
+      "Anchor": "try-the-marketing-solutions-sample-application",
+      "SectionPath": [
+        "Try the Marketing Solutions Sample Application"
+      ],
+      "Text": "In your browser, open the client:\nhttp://localhost:8989/marketing\n\nExplore the marketing sample application using the demo below. The demo contains clickable areas on the screen, which you can use to navigate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try the Marketing Solutions Sample Application",
+      "Anchor": "try-the-marketing-solutions-sample-application",
+      "SectionPath": [
+        "Try the Marketing Solutions Sample Application"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Try the Marketing Solutions Sample Application",
+      "Anchor": "try-the-marketing-solutions-sample-application",
+      "SectionPath": [
+        "Try the Marketing Solutions Sample Application"
+      ],
+      "Text": "Reset the demo by refreshing the page.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

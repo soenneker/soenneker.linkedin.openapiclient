@@ -1,0 +1,3287 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+  "Title": "Events",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/event-management-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/integration-requirements-event-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events",
+      "SectionPath": [],
+      "Text": "Events have been an important approach for companies to attract leads and make conversions. Event organizers leverage the events platform at LinkedIn to create event pages where members can register to attend events, join live stream online events, and participate in the post-event activities. At the same time, attendees discover relevant events, make new connections, and nurture existing relationships on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Access to the LinkedIn Marketing API Program doesn\u0027t automatically grant access to the following APIs. Developers must apply separately to be considered for these APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve an organization\u2019s events. Restricted to organizations where the authenticated member holds one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "rw_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Modify an organization\u0027s events. This is restricted to organizations where the authenticated member holds one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Mutability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp and actor recorded when the event was created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp and actor recorded when the event was last modified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the event as provided by the creator.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of the event as provided by the creator. Not present if no description was provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OnlineEventType or InPersonEventType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the event is online or in-person. The top-level type discriminator and format cannot be changed after creation; only sub-fields within the chosen type (such as endsAt, url, address, venueDetails) can be updated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity responsible for organizing this event. Accepted URN types: urn:li:person:{id}, urn:li:organization:{id}. Cannot be changed after creation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL-friendly identifier unique across all events, useful for SEO.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start time of the event in epoch millis.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "backgroundImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalmediaAssetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Background image for the event. If not provided, a default image is used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenFormSpec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormSpec",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies how to attach a lead generation form to the event. Can only be set at creation \u2014 cannot be updated afterward.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The lead generation form attached to this event. System-generated from leadGenFormSpec.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "discoveryMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventDiscoveryMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Controls how the event can be discovered on LinkedIn. Possible values: LISTED (discoverable through search, recommendations, and other LinkedIn channels), URL_ONLY (only accessible via direct URL).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UserGeneratedContentPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the LinkedIn post associated with this event. Set automatically when the event is posted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "The following additional field is available from API version 202605 and later:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Mutability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "hasDarkUgc",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When true, the event is backed only by a dark UGC post created through sponsored ad workflows. The event has no LinkedIn Events Detail Page and is suppressed from all organic surfaces regardless of discoveryMode. Default: false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "For events with hasDarkUgc: true, organic visibility is suppressed by hasDarkUgc at the platform level regardless of the discoveryMode field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Events",
+      "Anchor": "events-1",
+      "SectionPath": [
+        "Schemas",
+        "Events"
+      ],
+      "Text": "All Updatable fields can only be modified while the event has not yet started (i.e., startsAt is in the future).\nOnce an event has started or ended, no fields can be updated.\nRefer to Update an Event for full lifecycle restrictions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OnlineEventType",
+      "Anchor": "onlineeventtype",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "OnlineEventType"
+      ],
+      "Text": "This schema describes an event held virtually.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OnlineEventType",
+      "Anchor": "onlineeventtype",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "OnlineEventType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Mutability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LiveVideo or External",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether the event is streamed on LinkedIn or streamed from an external website.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LiveVideo",
+      "Anchor": "livevideo",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "OnlineEventType",
+        "LiveVideo"
+      ],
+      "Text": "This schema represents a live event streamed on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LiveVideo",
+      "Anchor": "livevideo",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "OnlineEventType",
+        "LiveVideo"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Mutability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "endsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end time of the event in epoch millis.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liveVideo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LiveVideoUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier of the live video, automatically generated upon event creation. Present only in CREATE responses.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testEvent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, the event is treated as a test event visible only to that organization\u0027s admins. The default value is set to false.NOTE: The testEvent can only be set at creation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "External",
+      "Anchor": "external",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "OnlineEventType",
+        "External"
+      ],
+      "Text": "This schema represents an event streamed on an external website.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "External",
+      "Anchor": "external",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "OnlineEventType",
+        "External"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Mutability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "endsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end time of the event in epoch millis.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of the external page where the event is hosted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "InPersonEventType",
+      "Anchor": "inpersoneventtype",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "InPersonEventType"
+      ],
+      "Text": "This schema describes an event held at a physical location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "InPersonEventType",
+      "Anchor": "inpersoneventtype",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "InPersonEventType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Mutability"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "endsAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end time of the event in epoch millis.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The address of the event\u0027s venue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of a page external to LinkedIn that contains information on the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "venueDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleRichText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Additional details about the event venue.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormSpec",
+      "Anchor": "leadgenformspec",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "LeadGenFormSpec"
+      ],
+      "Text": "A union that specifies how to attach a lead generation form to an event during its creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormSpec",
+      "Anchor": "leadgenformspec",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "LeadGenFormSpec"
+      ],
+      "Text": "The following table provides the union\u0027s possible values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormSpec",
+      "Anchor": "leadgenformspec",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "LeadGenFormSpec"
+      ],
+      "Text": "",
+      "Headers": [
+        "Attribute",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "privacyPolicyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attaches a lead generation form, generated from a pre-defined template, to the event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VersionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attaches the pre-existing lead generation form to the event. This lead generation form must already be approved.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormSpec",
+      "Anchor": "leadgenformspec",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "LeadGenFormSpec"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormSpec",
+      "Anchor": "leadgenformspec",
+      "SectionPath": [
+        "Schemas",
+        "Events",
+        "LeadGenFormSpec"
+      ],
+      "Text": "These attributes are optional. Providing both attributes will result in a 422 error from the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event",
+      "Anchor": "create-an-event",
+      "SectionPath": [
+        "Operations",
+        "Create an Event"
+      ],
+      "Text": "Creating an event can be a one-step or three-step process, depending on whether a custom background image is included during setup. Optionally, you can create a background image asset. Refer to this section for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Without a custom background image",
+      "Anchor": "without-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Without a custom background image"
+      ],
+      "Text": "Create the event directly using the Create Event examples.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "With a custom background image",
+      "Anchor": "with-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "With a custom background image"
+      ],
+      "Text": "Follow these steps to create an event with a custom background image:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "With a custom background image",
+      "Anchor": "with-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "With a custom background image"
+      ],
+      "Text": "Register an upload.\nUpload a background image. Refer to the upload section.\nCreate an event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "With a custom background image",
+      "Anchor": "with-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "With a custom background image"
+      ],
+      "Text": "After creating an event, you must post it using the Posts API to make it publicly visible on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "With a custom background image",
+      "Anchor": "with-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "With a custom background image"
+      ],
+      "Text": "Follow these steps to create an event with a custom background image:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "With a custom background image",
+      "Anchor": "with-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "With a custom background image"
+      ],
+      "Text": "Register an upload.\nUpload a background image. Refer to the upload section.\nCreate an event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "With a custom background image",
+      "Anchor": "with-a-custom-background-image",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "With a custom background image"
+      ],
+      "Text": "After creating an event, you must post it using the Posts API to make it publicly visible on LinkedIn. For off-platform events created with hasDarkUgc: true, a dark post is still required but is created as part of the Event Ads workflow with feedDistribution: NONE. These events are not visible on organic surfaces.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Background Image Asset",
+      "Anchor": "create-background-image-asset",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset"
+      ],
+      "Text": "Following is an example of the two-step process for creating a background image asset:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Background Image Asset",
+      "Anchor": "create-background-image-asset",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset"
+      ],
+      "Text": "Register an upload.\nUpload an image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "The asset property in the response is a URN that uniquely identifies the background image uploaded in the subsequent step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "{\n    \u0022registerUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:3S98trzt4Ku\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:event-background-image\u0022\n        ],\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n                \u0022relationshipType\u0022: \u0022OWNER\u0022\n            }\n        ],\n        \u0022supportedUploadMechanism\u0022: [\n            \u0022SYNCHRONOUS_UPLOAD\u0022\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/assets?action=registerUpload\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022registerUploadRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:3S98trzt4Ku\u0022,\n        \u0022recipes\u0022: [\n            \u0022urn:li:digitalmediaRecipe:event-background-image\u0022\n        ],\n        \u0022serviceRelationships\u0022: [\n            {\n                \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022,\n                \u0022relationshipType\u0022: \u0022OWNER\u0022\n            }\n        ],\n        \u0022supportedUploadMechanism\u0022: [\n            \u0022SYNCHRONOUS_UPLOAD\u0022\n        ]\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "HTTP/1.1 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Register Upload",
+      "Anchor": "register-upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Register Upload"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q,urn:li:digitalmediaMediaArtifactClass:uploaded-image)\u0022,\n        \u0022uploadMechanism\u0022: {\n            \u0022com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest\u0022: {\n                \u0022uploadUrl\u0022: \u0022https://api.linkedin-ei.com/mediaUpload/sp/sync/D5522AQEFM6ArFzip2Q/uploaded-image/0?ca=vector_feedshare\u0026cn=uploads\u0026m=AQLJddCQmalNqwAAAZJyuIrtiqodKbVmtsUecAh5N02nWs9_GV6VcNVG6Q\u0026app=11700002\u0026sync=1\u0026v=beta\u0026ut=0gpoRJPpiDBbs1\u0022,\n                \u0022headers\u0022: {\n                    \u0022media-type-family\u0022: \u0022STILLIMAGE\u0022\n                }\n            }\n        },\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022,\n        \u0022assetRealTimeTopic\u0022: \u0022urn:li-realtime:digitalmediaAssetUpdatesTopic:urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload",
+      "Anchor": "upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Upload"
+      ],
+      "Text": "Use the uploadUrl from the response of the previous step to upload a background image.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload",
+      "Anchor": "upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Upload"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload",
+      "Anchor": "upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Upload"
+      ],
+      "Text": "POST https://api.linkedin.com/mediaUpload/sp/sync/D5522AQEFM6ArFzip2Q/uploaded-image/0?ca=vector_feedshare\u0026cn=uploads\u0026m=AQLJddCQmalNqwAAAZJyuIrtiqodKbVmtsUecAh5N02nWs9_GV6VcNVG6Q\u0026app=11700002\u0026sync=1\u0026v=beta\u0026ut=0gpoRJPpiDBbs1",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upload",
+      "Anchor": "upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Upload"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/mediaUpload/sp/sync/D5522AQEFM6ArFzip2Q/uploaded-image/0?ca=vector_feedshare\u0026cn=uploads\u0026m=AQLJddCQmalNqwAAAZJyuIrtiqodKbVmtsUecAh5N02nWs9_GV6VcNVG6Q\u0026app=11700002\u0026sync=1\u0026v=beta\u0026ut=0gpoRJPpiDBbs1\u0027 \\\n--header \u0027Content-Type: image/jpeg\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027@\u003Cpath to file\u003E\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload",
+      "Anchor": "upload",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Background Image Asset",
+        "Upload"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Event",
+      "Anchor": "create-event",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event"
+      ],
+      "Text": "Following are the examples of creating various types of events:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Event",
+      "Anchor": "create-event",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event"
+      ],
+      "Text": "Live video\nExternal\nIn-person",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "A live video event is an event that one streams on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/events",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022liveVideo\u0022: {\n                    \u0022endsAt\u0022: 9091536065000\n                }\n            }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022leadGenFormSpec\u0022: {\n        \u0022privacyPolicyUrl\u0022: \u0022https://kneelbeforezod.com\u0022\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-RestLi-Method: create\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022liveVideo\u0022: {\n                    \u0022endsAt\u0022: 9091536065000\n                }\n            }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022leadGenFormSpec\u0022: {\n        \u0022privacyPolicyUrl\u0022: \u0022https://kneelbeforezod.com\u0022\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "Live Video Event Example"
+      ],
+      "Text": "{\n    \u0022vanityName\u0022: \u0022testonlineevent7249811611689828352\u0022,\n    \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n    \u0022leadGenForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7249811611534639104,1)\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728489783272\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022id\u0022: 7249811611689828352,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728489783272\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022liveVideo\u0022: {\n                    \u0022endsAt\u0022: 9091536065000,\n                    \u0022liveVideo\u0022: \u0022urn:li:liveVideo:7249811612692275200\u0022\n                }\n            }\n        }\n    },\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "An external event is an event hosted on a site other than LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/events",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022external\u0022: {\n                    \u0022endsAt\u0022: 9091536065000,\n                    \u0022url\u0022: \u0022https://cometomesonofjorel.com\u0022\n                }\n            }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022leadGenFormSpec\u0022: {\n        \u0022privacyPolicyUrl\u0022: \u0022https://kneelbeforezod.com\u0022\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-RestLi-Method: create\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022external\u0022: {\n                    \u0022endsAt\u0022: 9091536065000,\n                    \u0022url\u0022: \u0022https://cometomesonofjorel.com\u0022\n                }\n            }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022leadGenFormSpec\u0022: {\n        \u0022privacyPolicyUrl\u0022: \u0022https://kneelbeforezod.com\u0022\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External Event Example",
+      "Anchor": "external-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "External Event Example"
+      ],
+      "Text": "{\n    \u0022vanityName\u0022: \u0022testonlineevent7249812147952566272\u0022,\n    \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n    \u0022leadGenForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7249812147889659904,1)\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728489911114\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022id\u0022: 7249812147952566272,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728489911114\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022external\u0022: {\n                    \u0022endsAt\u0022: 9091536065000,\n                    \u0022url\u0022: \u0022https://cometomesonofjorel.com\u0022\n                }\n            }\n        }\n    },\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "An in-person event is an event held at a physical address.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/events",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022inPerson\u0022: {\n            \u0022endsAt\u0022: 9091536065000,\n            \u0022url\u0022: \u0022https://cometomesonofjorel.com\u0022,\n            \u0022address\u0022: { }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022leadGenFormSpec\u0022: {\n        \u0022privacyPolicyUrl\u0022: \u0022https://kneelbeforezod.com\u0022\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-RestLi-Method: create\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022inPerson\u0022: {\n            \u0022endsAt\u0022: 9091536065000,\n            \u0022url\u0022: \u0022https://cometomesonofjorel.com\u0022,\n            \u0022address\u0022: { }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022leadGenFormSpec\u0022: {\n        \u0022privacyPolicyUrl\u0022: \u0022https://kneelbeforezod.com\u0022\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person Event Example",
+      "Anchor": "in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Create an Event",
+        "Create Event",
+        "In-person Event Example"
+      ],
+      "Text": "{\n    \u0022vanityName\u0022: \u0022testonlineevent7249812613549670400\u0022,\n    \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n    \u0022leadGenForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7249812613490958336,1)\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728490022117\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022id\u0022: 7249812613549670400,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728490022117\n    },\n    \u0022type\u0022: {\n        \u0022inPerson\u0022: {\n            \u0022address\u0022: {},\n            \u0022endsAt\u0022: 9091536065000,\n            \u0022url\u0022: \u0022https://cometomesonofjorel.com\u0022\n        }\n    },\n    \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Post an Event",
+      "Anchor": "post-an-event",
+      "SectionPath": [
+        "Operations",
+        "Post an Event"
+      ],
+      "Text": "After creating an event, post it using the Posts API to make it publicly visible on LinkedIn. The content reference URN to use depends on the event type as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Post an Event",
+      "Anchor": "post-an-event",
+      "SectionPath": [
+        "Operations",
+        "Post an Event"
+      ],
+      "Text": "After creating an event, post it using the Posts API to make it publicly visible on LinkedIn. For off-platform events created with hasDarkUgc: true, a dark post is still required but is created as part of the Event Ads workflow with feedDistribution: NONE. These events are not visible on organic surfaces. The content reference URN to use depends on the event type:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Post an Event",
+      "Anchor": "post-an-event",
+      "SectionPath": [
+        "Operations",
+        "Post an Event"
+      ],
+      "Text": "",
+      "Headers": [
+        "Event type",
+        "Content reference URN"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Live video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:liveVideo:{liveVideo} \u2014 use the type.online.format.liveVideo.liveVideo value from the create response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "External",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:event:{id} \u2014 use the id value from the create response.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "In-person",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:event:{id} \u2014 use the id value from the create response.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Post an Event",
+      "Anchor": "post-an-event",
+      "SectionPath": [
+        "Operations",
+        "Post an Event"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Post an Event",
+      "Anchor": "post-an-event",
+      "SectionPath": [
+        "Operations",
+        "Post an Event"
+      ],
+      "Text": "An event cannot be fetched via GET /rest/events/{id} or updated via POST /rest/events/{id} (partial update) until it has been successfully posted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Video Event Example",
+      "Anchor": "live-video-event-example-1",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example"
+      ],
+      "Text": "In this example, use the type.online.format.liveVideo.liveVideo value from the create response as the content reference.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022commentary\u0022: \u0022\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022reference\u0022: {\n            \u0022id\u0022: \u0022urn:li:liveVideo:7249811612692275200\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/posts\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022commentary\u0022: \u0022\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022reference\u0022: {\n            \u0022id\u0022: \u0022urn:li:liveVideo:7249811612692275200\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "Live Video Event Example",
+        "Sample Response"
+      ],
+      "Text": "No response body is returned.\nThe ID of the created post is provided in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External and In-person Event Example",
+      "Anchor": "external-and-in-person-event-example",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example"
+      ],
+      "Text": "For external (off-platform) and in-person events, use the event id from the create response to construct the content reference URN: urn:li:event:{id}.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022commentary\u0022: \u0022\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022reference\u0022: {\n            \u0022id\u0022: \u0022urn:li:event:7249812147952566272\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/posts\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022commentary\u0022: \u0022\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022reference\u0022: {\n            \u0022id\u0022: \u0022urn:li:event:7249812147952566272\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: false\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Operations",
+        "Post an Event",
+        "External and In-person Event Example",
+        "Sample Response"
+      ],
+      "Text": "No response body is returned.\nThe ID of the created post is provided in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch an Event",
+      "Anchor": "fetch-an-event",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event"
+      ],
+      "Text": "An event is not fetchable until one posts that event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event",
+        "Sample Request"
+      ],
+      "Text": "The last component of the URL path is the ID of the event to fetch.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/events/7246559654799892480",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event",
+        "Sample Request"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/events/7246559654799892480\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027X-RestLi-Method: get\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Operations",
+        "Fetch an Event",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022vanityName\u0022: \u0022kneelbeforezodyetagain\u0022,\n    \u0022discoveryMode\u0022: \u0022URL_ONLY\u0022,\n    \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7246780305028571136\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1727714456443\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022test online event\u0022\n        }\n    },\n    \u0022startsAt\u0022: 9091536064111,\n    \u0022id\u0022: 7246559654799892480,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1728493578344\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022liveVideo\u0022: {\n                    \u0022endsAt\u0022: 9091536065000\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update an Event",
+      "Anchor": "update-an-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event"
+      ],
+      "Text": "An event cannot be updated until it has been posted. Events are updated using a partial update request (POST with X-RestLi-Method: partial_update). The last component of the URL path is the ID of the event to update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field mutability",
+      "Anchor": "field-mutability",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Field mutability"
+      ],
+      "Text": "Not all event fields can be updated after creation. The following table summarizes the three mutability categories:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field mutability",
+      "Anchor": "field-mutability",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Field mutability"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Fields",
+        "Behavior"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "READ ONLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "id, created, lastModified, ugcPost, leadGenForm, type.online.format.liveVideo.liveVideo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Never settable by partners. Any attempt to include these in a partial update is rejected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CREATE ONLY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizer, type (online vs. in-person discriminator), type.online.format (liveVideo or external discriminator), leadGenFormSpec, type.online.format.liveVideo.testEvent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can be set at creation but cannot be changed afterward. Do not include these fields in partial updates to change their value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Updatable",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "name, description, vanityName, startsAt, backgroundImage, discoveryMode, and type sub-fields: endsAt, url, address, venueDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can be changed after creation, subject to the lifecycle restrictions below.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field mutability",
+      "Anchor": "field-mutability",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Field mutability"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field mutability",
+      "Anchor": "field-mutability",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Field mutability"
+      ],
+      "Text": "From API version 202605 and later, hasDarkUgc is also a CREATE ONLY field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lifecycle restrictions",
+      "Anchor": "lifecycle-restrictions",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Lifecycle restrictions"
+      ],
+      "Text": "The lifecycle state of an event determines whether any update is permitted:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Lifecycle restrictions",
+      "Anchor": "lifecycle-restrictions",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Lifecycle restrictions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Event state",
+        "Condition",
+        "Update behavior"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Upcoming",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "startsAt is in the future",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All updatable fields can be updated.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Ongoing or past",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "startsAt \u2264 current time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No fields can be updated. Returns HTTP 400: Event cannot be modified once it has started.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Cancelled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event has been cancelled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No fields can be updated. Returns HTTP 403: No updates can be made to cancelled event.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Lifecycle restrictions",
+      "Anchor": "lifecycle-restrictions",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Lifecycle restrictions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lifecycle restrictions",
+      "Anchor": "lifecycle-restrictions",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Lifecycle restrictions"
+      ],
+      "Text": "The \u0022started\u0022 check is based solely on whether the original startsAt has passed. This restriction applies to all fields, not just time-related fields. Attempting to update name, description, or any other field after this time will result in an HTTP 400 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example"
+      ],
+      "Text": "The following examples update all updatable fields. Replace the event id, timestamps, and field values with your own. The type sub-fields available depend on the event type:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example"
+      ],
+      "Text": "In-person:\n\ntype.inPerson.endsAt\ntype.inPerson.url\ntype.inPerson.address\ntype.inPerson.venueDetails\n\n\nExternal online:\n\ntype.online.format.external.endsAt\ntype.online.format.external.url\n\n\nLive video:\n\ntype.online.format.liveVideo.endsAt",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example"
+      ],
+      "Text": "The type discriminator (inPerson vs online) is CREATE ONLY and cannot be changed after creation.\nWhen including type in a partial update, the member key in the patch (inPerson, online) must match the event\u0027s existing type. Use it only to update nested sub-fields such as endsAt, url, address, and venueDetails.\nDo not attempt to change the type discriminator.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In-person event",
+      "Anchor": "in-person-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "In-person event"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person event",
+      "Anchor": "in-person-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "In-person event"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/events/7246559654799892480\nX-RestLi-Method: partial_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person event",
+      "Anchor": "in-person-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "In-person event"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Updated In-Person Event Name\u0022\n                }\n            },\n            \u0022description\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022Updated description with the latest event details.\u0022\n                    }\n                }\n            },\n            \u0022vanityName\u0022: \u0022updated-event-2026\u0022,\n            \u0022startsAt\u0022: 1773568800000,\n            \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022type\u0022: {\n                \u0022inPerson\u0022: {\n                    \u0022endsAt\u0022: 1773576000000,\n                    \u0022url\u0022: \u0022https://example.com/event-info\u0022,\n                    \u0022address\u0022: {\n                        \u0022line1\u0022: \u0022123 Main Street\u0022,\n                        \u0022city\u0022: \u0022San Francisco\u0022,\n                        \u0022geographicArea\u0022: \u0022California\u0022,\n                        \u0022postalCode\u0022: \u002294105\u0022,\n                        \u0022country\u0022: \u0022US\u0022\n                    },\n                    \u0022venueDetails\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: {\n                                \u0022rawText\u0022: \u0022Building A, Room 101\u0022\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "In-person event",
+      "Anchor": "in-person-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "In-person event"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events/7246559654799892480\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-RestLi-Method: partial_update\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Updated In-Person Event Name\u0022\n                }\n            },\n            \u0022description\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022Updated description with the latest event details.\u0022\n                    }\n                }\n            },\n            \u0022vanityName\u0022: \u0022updated-event-2026\u0022,\n            \u0022startsAt\u0022: 1773568800000,\n            \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022type\u0022: {\n                \u0022inPerson\u0022: {\n                    \u0022endsAt\u0022: 1773576000000,\n                    \u0022url\u0022: \u0022https://example.com/event-info\u0022,\n                    \u0022address\u0022: {\n                        \u0022line1\u0022: \u0022123 Main Street\u0022,\n                        \u0022city\u0022: \u0022San Francisco\u0022,\n                        \u0022geographicArea\u0022: \u0022California\u0022,\n                        \u0022postalCode\u0022: \u002294105\u0022,\n                        \u0022country\u0022: \u0022US\u0022\n                    },\n                    \u0022venueDetails\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: {\n                                \u0022rawText\u0022: \u0022Building A, Room 101\u0022\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "In-person event",
+      "Anchor": "in-person-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "In-person event"
+      ],
+      "Text": "HTTP/1.1 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External online event",
+      "Anchor": "external-online-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "External online event"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External online event",
+      "Anchor": "external-online-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "External online event"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/events/7246559654799892480\nX-RestLi-Method: partial_update",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External online event",
+      "Anchor": "external-online-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "External online event"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Updated Online Event Name\u0022\n                }\n            },\n            \u0022description\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022Updated description with the latest event details.\u0022\n                    }\n                }\n            },\n            \u0022vanityName\u0022: \u0022updated-online-event-2026\u0022,\n            \u0022startsAt\u0022: 1773568800000,\n            \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022external\u0022: {\n                            \u0022endsAt\u0022: 1773576000000,\n                            \u0022url\u0022: \u0022https://example.com/livestream\u0022\n                        }\n                    }\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External online event",
+      "Anchor": "external-online-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "External online event"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events/7246559654799892480\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-RestLi-Method: partial_update\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Updated Online Event Name\u0022\n                }\n            },\n            \u0022description\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: {\n                        \u0022rawText\u0022: \u0022Updated description with the latest event details.\u0022\n                    }\n                }\n            },\n            \u0022vanityName\u0022: \u0022updated-online-event-2026\u0022,\n            \u0022startsAt\u0022: 1773568800000,\n            \u0022backgroundImage\u0022: \u0022urn:li:digitalmediaAsset:D5522AQEFM6ArFzip2Q\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022external\u0022: {\n                            \u0022endsAt\u0022: 1773576000000,\n                            \u0022url\u0022: \u0022https://example.com/livestream\u0022\n                        }\n                    }\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External online event",
+      "Anchor": "external-online-event",
+      "SectionPath": [
+        "Operations",
+        "Update an Event",
+        "Example",
+        "External online event"
+      ],
+      "Text": "HTTP/1.1 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete an Event",
+      "Anchor": "delete-an-event",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event"
+      ],
+      "Text": "An event can\u0027t be deleted until it\u0027s posted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete an Event",
+      "Anchor": "delete-an-event",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event"
+      ],
+      "Text": "Delete a posted event by deleting its associated post. See the Posts API documentation for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "The last component of the URL path is the URL-encoded URN of the post to be deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/posts/urn%3Ali%3AugcPost%3A7246780305028571136",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/posts/urn%3Ali%3AugcPost%3A7246780305028571136\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027X-RestLi-Method: DELETE\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-10",
+      "SectionPath": [
+        "Operations",
+        "Delete an Event",
+        "Example",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 204 No Content",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required",
+        "Default Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn or OrganizerUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organizer of each event that this endpoint yields is equal to this value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first event to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The endpoint maximizes the number of events that it returns such that the number doesn\u0027t exceed this value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "10",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "excludeCancelled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, then the endpoint excludes cancelled events from the pool of candidates to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "false",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeBasedFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventTimeBasedFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Temporally restricts the pool of candidate events to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entryCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventEntryCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Restricts the candidate events to return to those only whose entry criteria matches this value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventSortOrder",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the order of the candidate events to return.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "EventTimeBasedFilter",
+      "Anchor": "eventtimebasedfilter",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Schemas",
+        "EventTimeBasedFilter"
+      ],
+      "Text": "A union with the following definitions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "EventTimeBasedFilter",
+      "Anchor": "eventtimebasedfilter",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Schemas",
+        "EventTimeBasedFilter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Key",
+        "Type",
+        "Description",
+        "Sample Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "lifeCycleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventLifeCycleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enumerates the states of an event\u0027s life cycle: UPCOMING, ONGOING, or PAST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{\u0022lifeCycleState\u0022:\u0022ONGOING\u0022}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ongoingTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ClosedTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A closed interval of timestamps [start, end].",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{\u0022ongoingTimeRange\u0022:{\u0022start\u0022:1, \u0022end\u0022:2}}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An open or semi-open interval of timestamps: (-\u221E, \u221E), [start, \u221E), or (-\u221E, end), or [start, end)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{\u0022startTimeRange\u0022:{\u0022start\u0022:1, \u0022end\u0022:2}}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "EventEntryCriteria",
+      "Anchor": "evententrycriteria",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Schemas",
+        "EventEntryCriteria"
+      ],
+      "Text": "An enumeration with the following possible values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "EventEntryCriteria",
+      "Anchor": "evententrycriteria",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Schemas",
+        "EventEntryCriteria"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PUBLIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes a public event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GATED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes a gated event.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "EventSortOrder",
+      "Anchor": "eventsortorder",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Schemas",
+        "EventSortOrder"
+      ],
+      "Text": "An enumeration with the following possible values:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "EventSortOrder",
+      "Anchor": "eventsortorder",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Schemas",
+        "EventSortOrder"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "START_TIME_ASC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sorts events in ascending order based on their start time.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "END_TIME_DESC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sorts events in descending order based on their end time.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-2",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example",
+      "Anchor": "example-2",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example"
+      ],
+      "Text": "Do not URL-encode the timeBasedFilter parameter or its nested fields in your request.\nFor example, use timeBasedFilter=(startTimeRange:(start:1741600500,end:1771062900)) or timeBasedFilter=(lifeCycleState:PAST) directly in the query string.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/events?q=eventsByOrganizer\u0026organizer=urn%3Ali%3Aorganization%3A7185861\u0026start=0\u0026count=10\u0026excludeCancelled=true\u0026timeBasedFilter=(lifeCycleState:PAST)\u0026entryCriteria=PUBLIC\u0026sortOrder=END_TIME_DESC",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events?q=eventsByOrganizer\u0026organizer=urn%3Ali%3Aorganization%3A7185861\u0026start=0\u0026count=10\u0026excludeCancelled=true\u0026timeBasedFilter=(lifeCycleState:PAST)\u0026entryCriteria=PUBLIC\u0026sortOrder=END_TIME_DESC\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-11",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-11",
+      "SectionPath": [
+        "Operations",
+        "Find Events by Organizer",
+        "Example",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130245568970252288\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699983017337\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130245568970252288,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699983017337\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130245292590788608\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699982951398\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130245292590788608,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699982951398\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130245111300386816\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699982908195\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130245111300386816,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699982908195\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130085076381364224\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944753112\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130085076381364224,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944753112\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130084947838529536\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944722223\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130084947838529536,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944722223\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130084808772182016\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944689146\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130084808772182016,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944689146\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130084664915947520\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944654766\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130084664915947520,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944654766\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130084640249241600\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944648888\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130084640249241600,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944648888\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130084608682909696\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944641362\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130084608682909696,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944641362\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        },\n        {\n            \u0022vanityName\u0022: \u0022testliveevent7130084539053268992\u0022,\n            \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7044751230899736576\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944624911\n            },\n            \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022test live event\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                }\n            },\n            \u0022startsAt\u0022: 1708749167000,\n            \u0022id\u0022: 7130084539053268992,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n                \u0022time\u0022: 1699944624911\n            },\n            \u0022type\u0022: {\n                \u0022online\u0022: {\n                    \u0022format\u0022: {\n                        \u0022liveVideo\u0022: {}\n                    }\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022href\u0022: \u0022/events?q=eventsByOrganizer\u0026timeBasedFilter=(lifeCycleState:PAST)\u0026organizer=urn%3Ali%3Aorganization%3A7185861\u0026sortOrder=END_TIME_DESC\u0026start=10\u0026count=10\u0026entryCriteria=PUBLIC\u0026excludeCancelled=true\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Events with Lead Gen Form by Organizer",
+      "Anchor": "find-events-with-lead-gen-form-by-organizer",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer"
+      ],
+      "Text": "This endpoint returns all the lead generation form enabled events organized by a particular organization. This endpoint requires q=organizerLeadGenFormEnabledEvents and organization URN in the organizer parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Events with Lead Gen Form by Organizer",
+      "Anchor": "find-events-with-lead-gen-form-by-organizer",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer"
+      ],
+      "Text": "Since an organization can have a large volume of Events, this API supports pagination using the count and start parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Find Events with Lead Gen Form by Organizer",
+      "Anchor": "find-events-with-lead-gen-form-by-organizer",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You must always set this to organizerLeadGenFormEnabledEvents. It indicates that you\u0027re querying based on organizerLeadGenFormEnabledEvents.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the organizer of the event. This is the organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "How many results to display on each page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the form to begin your result page at. Indexes start at 0. Default is 0.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/events?organizer=urn%3Ali%3Aorganization%3A7185861\u0026start=0\u0026count=2\u0026q=organizerLeadGenFormEnabledEvents",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer",
+        "Example",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/events?organizer=urn%3Ali%3Aorganization%3A7185861\u0026start=0\u0026count=2\u0026q=organizerLeadGenFormEnabledEvents\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-12",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer",
+        "Example",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-12",
+      "SectionPath": [
+        "Operations",
+        "Find Events with Lead Gen Form by Organizer",
+        "Example",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022testonlineevent7254255946724425728\u0022,\n      \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n      \u0022leadGenForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7254255946464378880,1)\u0022,\n      \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7254256112596574208\u0022,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1729549395432\n      },\n      \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022test online event\u0022\n        }\n      },\n      \u0022startsAt\u0022: 9091536064111,\n      \u0022id\u0022: 7254255946724426000,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1729549395432\n      },\n      \u0022type\u0022: {\n        \u0022online\u0022: {\n          \u0022format\u0022: {\n            \u0022liveVideo\u0022: {\n              \u0022endsAt\u0022: 9091536065000\n            }\n          }\n        }\n      }\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 2,\n    \u0022start\u0022: 0,\n    \u0022total\u0022: 0,\n    \u0022links\u0022: [\n      {\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022href\u0022: \u0022/events?organizer=urn%3Ali%3Aorganization%3A7185861\u0026start=2\u0026count=2\u0026q=organizerLeadGenFormEnabledEvents\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

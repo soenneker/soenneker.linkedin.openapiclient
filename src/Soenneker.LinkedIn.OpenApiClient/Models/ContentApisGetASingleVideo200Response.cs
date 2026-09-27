@@ -14,13 +14,67 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Media aspect ratio height. For media with a 16:9 ratio, it&apos;s a 9. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. It is empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: floatRequirement: No</summary>
+        public double? AspectRatioHeight { get; set; }
+        /// <summary>Aspect ratio width of the media. For media with a 16:9 ratio, it&apos;s 16. There might be decimal values for high density displays for a greater degree of precision. aspectRatioHeight and aspectRatioWidth would either both be present or both be null. It is empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: floatRequirement: No</summary>
+        public double? AspectRatioWidth { get; set; }
+        /// <summary>File identifier to retrieve the caption file. Present if initializeUploadRequest.uploadCaptions was true and a caption was successfully uploaded and processed.Documented type: URLRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Captions { get; set; }
+#nullable restore
+#else
+        public string Captions { get; set; }
+#endif
+        /// <summary>Public URL to download/view the media asset. It be empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: URLRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DownloadUrl { get; set; }
+#nullable restore
+#else
+        public string DownloadUrl { get; set; }
+#endif
+        /// <summary>The length of the video in milliseconds. It is empty if the media asset isn&apos;t available, failed processing, or there&apos;s another issue.Documented type: longRequirement: No</summary>
+        public long? Duration { get; set; }
+        /// <summary>The finalizeUploadRequest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest? FinalizeUploadRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest FinalizeUploadRequest { get; set; }
+#endif
+        /// <summary>The unique video URN. This field is read only.Documented type: Video URNRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>The initializeUploadRequest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest? InitializeUploadRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest InitializeUploadRequest { get; set; }
+#endif
+        /// <summary>The initializeVideoUploadResponse property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse? InitializeVideoUploadResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse InitializeVideoUploadResponse { get; set; }
+#endif
+        /// <summary>Metadata for assets stored in the media library. Metadata is tied to a specific account which must be specified in queries / requests.Documented type: MediaLibraryMetadataRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata? MediaLibraryMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata MediaLibraryMetadata { get; set; }
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,13 +84,31 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string Owner { get; set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Reason for video processing failure. This field will only be present if video.status is PROCESSING_FAILED.Documented type: StringRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? ProcessingFailureReason { get; set; }
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string ProcessingFailureReason { get; set; }
+#endif
+        /// <summary>PROCESSING Asset is processing to generate missing artifacts.PROCESSING_FAILED Processing failed due to client error such as file size too large, unsupported file format, internal error (e.g., performance issue, database error, network failure), or other issue.AVAILABLE All of the recipe&apos;s required artifacts are ready. The asset is available to be served.WAITING_UPLOAD Waiting for client to upload source file or uploading process to be completed.Documented type: StringRequirement: No</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus? Status { get; set; }
+        /// <summary>File identifier to retrieve the thumbnail file. Present in one of the following cases: a) initializeUploadRequest.uploadThumbnail was true and a thumbnail was successfully uploaded and processed. b) initializeUploadRequest.uploadThumbnail was false but a system generated default thumbnail is present.Documented type: URL optionalRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Thumbnail { get; set; }
+#nullable restore
+#else
+        public string Thumbnail { get; set; }
+#endif
+        /// <summary>upload tokenDocumented type: StringRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UploadToken { get; set; }
+#nullable restore
+#else
+        public string UploadToken { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200Response"/> and sets the default values.
@@ -63,9 +135,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "aspectRatioHeight", n => { AspectRatioHeight = n.GetDoubleValue(); } },
+                { "aspectRatioWidth", n => { AspectRatioWidth = n.GetDoubleValue(); } },
+                { "captions", n => { Captions = n.GetStringValue(); } },
+                { "downloadUrl", n => { DownloadUrl = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetLongValue(); } },
+                { "finalizeUploadRequest", n => { FinalizeUploadRequest = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "initializeUploadRequest", n => { InitializeUploadRequest = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest.CreateFromDiscriminatorValue); } },
+                { "initializeVideoUploadResponse", n => { InitializeVideoUploadResponse = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse.CreateFromDiscriminatorValue); } },
+                { "mediaLibraryMetadata", n => { MediaLibraryMetadata = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata>(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata.CreateFromDiscriminatorValue); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "processingFailureReason", n => { ProcessingFailureReason = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus>(); } },
+                { "thumbnail", n => { Thumbnail = n.GetStringValue(); } },
+                { "uploadToken", n => { UploadToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +159,21 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("aspectRatioHeight", AspectRatioHeight);
+            writer.WriteDoubleValue("aspectRatioWidth", AspectRatioWidth);
+            writer.WriteStringValue("captions", Captions);
+            writer.WriteStringValue("downloadUrl", DownloadUrl);
+            writer.WriteLongValue("duration", Duration);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseFinalizeUploadRequest>("finalizeUploadRequest", FinalizeUploadRequest);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeUploadRequest>("initializeUploadRequest", InitializeUploadRequest);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseInitializeVideoUploadResponse>("initializeVideoUploadResponse", InitializeVideoUploadResponse);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseMediaLibraryMetadata>("mediaLibraryMetadata", MediaLibraryMetadata);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("processingFailureReason", ProcessingFailureReason);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASingleVideo200ResponseStatus>("status", Status);
+            writer.WriteStringValue("thumbnail", Thumbnail);
+            writer.WriteStringValue("uploadToken", UploadToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

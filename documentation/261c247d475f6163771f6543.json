@@ -1,0 +1,379 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin",
+  "Title": "LinkedIn Learning xAPI Administration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/xapi",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/reporting-api-faq",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reporting/reporting-docs/xapi-admin"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "xAPI Overview",
+      "Anchor": "xapi-overview",
+      "SectionPath": [
+        "xAPI Overview"
+      ],
+      "Text": "LinkedIn Learning supports the xAPI standard for integrating with learning platforms like Learning Management Systems (LMSs) and Learning Record Stores\n(LRSs). xAPI is a secure and modern approach to communicating individual learner activity between learning platforms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "xAPI Overview",
+      "Anchor": "xapi-overview",
+      "SectionPath": [
+        "xAPI Overview"
+      ],
+      "Text": "Unlike its predecessors, AICC and SCORM, xAPI allows LinkedIn Learning to communicate completions back to learning platforms regardless of how and where the content is launched. Learners can launch content from an LMS, or they can view courses directly on LinkedIn Learning (desktop or mobile). Either way, course completions are communicated back to your organization\u0027s source of truth. This document covers the benefits of xAPI, technical requirements, and xAPI implementation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the LinkedIn Learning xAPI configuration process:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits of xAPI",
+      "Anchor": "benefits-of-xapi",
+      "SectionPath": [
+        "What this Document Tells You",
+        "Benefits of xAPI"
+      ],
+      "Text": "xAPI pushes learner activity (like course completions) to external systems as the activity occurs. Many organizations deploy xAPI to notify external learning management systems (LMSs) when a learner has completed a LinkedIn Learning course. xAPI surfaces individual learning engagement, in contrast to aggregated learner progress that Linkedin Learning Reporting API provides.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Technical Requirements",
+      "Anchor": "technical-requirements",
+      "SectionPath": [
+        "What this Document Tells You",
+        "Technical Requirements"
+      ],
+      "Text": "xAPI-compliant learning platform: LinkedIn Learning supports xAPI version 1.0.0 and uses OAuth 2.0 client credentials flow to authenticate with LRSs and LMSs. In order to integrate, your learning platform must support xAPI and the OAuth 2.0 client credentials flow. For more detailed technical information review our LinkedIn Learning xAPI developer documentation.\n\nWeb-accessible learning platform deployment: The LinkedIn Learning implementation of xAPI uses the https:// protocol to send xAPI messages to learning platforms. In order to integrate via xAPI, your learning platform must be capable of receiving xAPI statements over the Internet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "Before you configure xAPI in your LinkedIn Learning admin settings, you need to collect the following details from your learning platform:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "OAuth Server URL\n\nTenant Server URL\n\nClient Secret\n\nClient ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "Once you have received this information from your learning platform, take the\nfollowing steps to configure xAPI in LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin.\n\n\n\nFrom the left-hand navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI panel.\n\nClick Add integration.\n\nIn the Add xAPI integration screen, enter \u0022[Your LMS name] reporting\u0022 in the Integration name field.\n\nIn the User Type drop down, select the value (e.g., \u0022ID\u0022) specified by your Account Team.\n\nCopy and paste the following items provided by your LMS into LinkedIn Learning:\n\nOAuth Server URL\n\nTenant Server URL\n\nClient ID\n\nClient Secret\n\n\n\nClick Enable.\n\nYou have enabled your LMS\u0027 xAPI keys in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "Refer to the below table to fill out the required fields in the Add xAPI integration screen.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Integration Name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name identifying the xAPI connection. Examples:",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Watershed (Production)",
+            "Links": [],
+            "Values": [
+              "Watershed (Production)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Learning Locker (Staging)",
+            "Links": [],
+            "Values": [
+              "Learning Locker (Staging)"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "User Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the user identifier value (actor) in the xAPI statement. Options include the following values:",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID: SAML SSO attribute used to uniquely identify users in external systems. You can select this value if you are using a third-party SAML IdP that is configured to send a user-attributable UID value like employeeNumber, email address, or username in the SAML SSO authentication payload.",
+            "Links": [],
+            "Values": [
+              "ID: SAML SSO attribute used to uniquely identify users in external systems. You can select this value if you are using a third-party SAML IdP that is configured to send a user-attributable UID value like employeeNumber, email address, or username in the SAML SSO authentication payload."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Username: SAML SSO custom attribute used solely for communication with external systems. You should select this value if you are using a third-party SAML IdP that is configured to send the user\u2019s unique ID value as \u201Cusername\u201D in the SAML SSO payload.",
+            "Links": [],
+            "Values": [
+              "Username: SAML SSO custom attribute used solely for communication with external systems. You should select this value if you are using a third-party SAML IdP that is configured to send the user\u2019s unique ID value as \u201Cusername\u201D in the SAML SSO payload."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email: A user\u2019s work email address value. You should select this value if you are using email as your UUID in your learning platform.",
+            "Links": [],
+            "Values": [
+              "Email: A user\u2019s work email address value. You should select this value if you are using email as your UUID in your learning platform."
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "OAuth Server URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL LinkedIn Learning uses to authenticate with your learning platform. This value should be provided by your learning platform.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Tenant Server URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL LinkedIn Learning uses to send xAPI completion messages. This value should be provided by your learning platform.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Client ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning platform client ID value. This value should be provided by your learning platform.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Client Secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The learning platform client secret value. This value should be provided by your learning platform.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Configuring xAPI in LinkedIn Learning",
+      "Anchor": "configuring-xapi-in-linkedin-learning",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning"
+      ],
+      "Text": "Congratulations! Your organization now can receive data from LinkedIn Learning on individual learner progress and course completions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "Now that xAPI you have enabled xAPI, you can test its configuration. For an xAPI completion to be sent back to your learning platform, the following must be true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "The learner who completed the course must have an attribute associated with their learner profile that maps to the selected \u201CUser Type\u201D value. As an example, if you\u2019ve selected \u201CID\u201D as the User Type in your xAPI settings and a learner completes a course that doesn\u2019t have an ID associated with their profile, an xAPI statement will not be sent. This ID appears on the learner\u2019s profile as \u201CEmployee ID.\u201D\n\nA LinkedIn Learning course must be completed after you have configured xAPI. You can verify that the course has been completed in LinkedIn Learning by selecting In Progress \u003E Learning History and confirming the \u0022Completed on\u0022 date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "You can review the following list of courses that you can use to quickly trigger completion messages for testing:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "What is Graphic Design? (2m 49s)\n\nThe elements of gamification (3m 46s)\n\nUsing Data Science to Hire Employees (3m 25s)\n\n5 Tips for Building Your Financial Life (4m 29s)\n\nUpgrading from Lynda.com to LinkedIn Learning (6m 3s)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "LinkedIn Learning communicates the completion event within minutes after the learner completes the course. After a learner completes the course on LinkedIn Learning, check the learning activity transcripts of your learning platform to confirm the completion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "If your configuration meets the above conditions, provide your technical consultant with the learner\u2019s email address and the date the course was completed (for evaluation purposes).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Testing your Configuration",
+      "Anchor": "testing-your-configuration",
+      "SectionPath": [
+        "Configuring xAPI in LinkedIn Learning",
+        "Testing your Configuration"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

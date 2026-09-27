@@ -22,7 +22,15 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasItem> Alias { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>All aliases to this standardized degree nameDocumented type: array of MultiLocaleStringRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasesItem>? Aliases { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasesItem> Aliases { get; set; }
+#endif
+        /// <summary>Degree IDDocumented type: integerRequirement: Yes</summary>
         public int? Id { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +40,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemName Name { get; set; }
 #endif
-        /// <summary>The rollup property</summary>
+        /// <summary>The general standardized degree category for the standardized degreeDocumented type: URN of entity type degreeRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Rollup { get; set; }
@@ -66,6 +74,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alias", n => { Alias = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "aliases", n => { Aliases = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemName>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemName.CreateFromDiscriminatorValue); } },
                 { "rollup", n => { Rollup = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasItem>("alias", Alias);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemAliasesItem>("aliases", Aliases);
             writer.WriteIntValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaDegreesGetall200ResponseElementsItemName>("name", Name);
             writer.WriteStringValue("rollup", Rollup);

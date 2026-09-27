@@ -1,0 +1,1546 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+  "Title": "Profile Details API (/identityMe)",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Profile Details API (/identityMe)",
+      "Anchor": "profile-details-api-identityme",
+      "SectionPath": [],
+      "Text": "The Profile Details API endpoint (/identityMe) retrieves LinkedIn member profile information including name, email, profile photo, and profile URL. Plus tier also provides access to current job and education details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Details API (/identityMe)",
+      "Anchor": "profile-details-api-identityme",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Details API (/identityMe)",
+      "Anchor": "profile-details-api-identityme",
+      "SectionPath": [],
+      "Text": "Tier Availability: Development \u2705 | Lite \u2705 | Plus \u2705",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Details API (/identityMe)",
+      "Anchor": "profile-details-api-identityme",
+      "SectionPath": [],
+      "Text": "All tiers can access this API. Plus tier receives additional fields (education and current position).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Key Features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Retrieve member\u0027s basic profile (name, email, photo, profile URL)\nAccess most recent education details (Plus tier only)\nGet current workplace information (Plus tier only)\nOAuth: 3-legged (member consent required)\nVersion: 202510.03 (Plus tier) / Check Release Notes (Dev/Lite tier)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Education data comes from this API using the r_most_recent_education OAuth scope (Plus tier only). Education is not included in the /verificationReport API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Limit Type",
+        "Development",
+        "Lite",
+        "Plus",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application-level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum API calls per day across all users",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member-level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum calls per individual member per day",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "Plus tier rate limits are customized based on partnership agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint Details",
+      "Anchor": "endpoint-details",
+      "SectionPath": [
+        "Endpoint Details"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/identityMe",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required Headers",
+      "Anchor": "required-headers",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{LATEST_VERSION}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API version (see Release Notes)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes#current-api-versions"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Required OAuth Scopes",
+      "Anchor": "required-oauth-scopes",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scopes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scope",
+        "Development",
+        "Lite",
+        "Plus",
+        "Purpose"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_profile_basicinfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Basic profile info (name, email, photo, profile URL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_most_recent_education",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Most recent education details",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_primary_current_experience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current workplace information",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scopes",
+      "Anchor": "required-oauth-scopes",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scopes"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scopes",
+      "Anchor": "required-oauth-scopes",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scopes"
+      ],
+      "Text": "Development Tier Limitation: You can only access data for LinkedIn accounts that are administrators of your developer application. This tier is for testing only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scopes",
+      "Anchor": "required-oauth-scopes",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scopes"
+      ],
+      "Text": "For production use, upgrade to Lite tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Fields (All Tiers)",
+      "Anchor": "common-fields-all-tiers",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Common Fields (All Tiers)"
+      ],
+      "Text": "These fields are available in Development, Lite, and Plus tiers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common Fields (All Tiers)",
+      "Anchor": "common-fields-all-tiers",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Common Fields (All Tiers)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Always Returned",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the member scoped to your application",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastRefreshedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When profile data was pulled (current timestamp in milliseconds since epoch), useful to ignore older updates when subscribed to push notifications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains name, email, profile URL, and profile picture",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicInfo.firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s first name (localized)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicInfo.lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s last name (localized)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicInfo.primaryEmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s primary email address",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicInfo.profileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Public LinkedIn profile URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "basicInfo.profilePicture",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Profile picture with cropped image URL and expiry",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Only Fields",
+      "Anchor": "plus-tier-only-fields",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Only Fields",
+      "Anchor": "plus-tier-only-fields",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields"
+      ],
+      "Text": "Plus tier only: The following fields require Plus tier access and appropriate OAuth scopes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Education Fields (requires r_most_recent_education scope)",
+      "Anchor": "education-fields-requires-r_most_recent_education-scope",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields",
+        "Education Fields (requires r_most_recent_education scope)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Always Returned",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "mostRecentEducation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Most recent education details",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mostRecentEducation.schoolName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of school or university",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mostRecentEducation.degreeName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Degree name (e.g., \u0022Bachelor of Science\u0022)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mostRecentEducation.schoolLogo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "School/university logo image",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Experience Fields (requires r_primary_current_experience scope)",
+      "Anchor": "experience-fields-requires-r_primary_current_experience-scope",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields",
+        "Experience Fields (requires r_primary_current_experience scope)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Always Returned",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "primaryCurrentPosition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current job information",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryCurrentPosition.title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member\u0027s current job title",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryCurrentPosition.companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryCurrentPosition.companyPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company page URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryCurrentPosition.companyLogo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company logo image",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryCurrentPosition.startedOn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start date (month and year)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Experience Fields (requires r_primary_current_experience scope)",
+      "Anchor": "experience-fields-requires-r_primary_current_experience-scope",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields",
+        "Experience Fields (requires r_primary_current_experience scope)"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experience Fields (requires r_primary_current_experience scope)",
+      "Anchor": "experience-fields-requires-r_primary_current_experience-scope",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields",
+        "Experience Fields (requires r_primary_current_experience scope)"
+      ],
+      "Text": "Plus tier fields may be absent if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Experience Fields (requires r_primary_current_experience scope)",
+      "Anchor": "experience-fields-requires-r_primary_current_experience-scope",
+      "SectionPath": [
+        "Response Fields by Tier",
+        "Plus Tier Only Fields",
+        "Experience Fields (requires r_primary_current_experience scope)"
+      ],
+      "Text": "Member hasn\u0027t added education/experience to their LinkedIn profile\nRequired OAuth scopes were not requested during authorization\nMember denied consent for specific scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development \u0026 Lite Tier Response",
+      "Anchor": "example-1-development--lite-tier-response",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development \u0026 Lite Tier Response"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Development \u0026 Lite Tier Response",
+      "Anchor": "example-1-development--lite-tier-response",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development \u0026 Lite Tier Response"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/identityMe\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development \u0026 Lite Tier Response",
+      "Anchor": "example-1-development--lite-tier-response",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development \u0026 Lite Tier Response"
+      ],
+      "Text": "Response (Development/Lite Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Development \u0026 Lite Tier Response",
+      "Anchor": "example-1-development--lite-tier-response",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development \u0026 Lite Tier Response"
+      ],
+      "Text": "{\n  \u0022lastRefreshedAt\u0022: 1760631246905,\n  \u0022id\u0022: \u00221n23dEFSmS\u0022,\n  \u0022basicInfo\u0022: {\n    \u0022firstName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022John\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022lastName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Doe\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022primaryEmailAddress\u0022: \u0022john.doe@example.com\u0022,\n    \u0022profileUrl\u0022: \u0022https://www.linkedin.com/profile-thirdparty-redirect/example-profile-url\u0022,\n    \u0022profilePicture\u0022: {\n      \u0022croppedImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/example/profile-pic\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1763596800000\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Plus Tier Response (Basic Profile)",
+      "Anchor": "example-2-plus-tier-response-basic-profile",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Plus Tier Response (Basic Profile)"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Plus Tier Response (Basic Profile)",
+      "Anchor": "example-2-plus-tier-response-basic-profile",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Plus Tier Response (Basic Profile)"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/identityMe\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: 202510.03\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Plus Tier Response (Basic Profile)",
+      "Anchor": "example-2-plus-tier-response-basic-profile",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Plus Tier Response (Basic Profile)"
+      ],
+      "Text": "Response (Plus Tier with Education \u0026 Current Position):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Plus Tier Response (Basic Profile)",
+      "Anchor": "example-2-plus-tier-response-basic-profile",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Plus Tier Response (Basic Profile)"
+      ],
+      "Text": "{\n  \u0022lastRefreshedAt\u0022: 1761512274175,\n  \u0022id\u0022: \u0022abc123xyz\u0022,\n  \u0022basicInfo\u0022: {\n    \u0022firstName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022John\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022lastName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Doe\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022primaryEmailAddress\u0022: \u0022john.doe@example.com\u0022,\n    \u0022profileUrl\u0022: \u0022https://www.linkedin.com/profile-thirdparty-redirect/example-profile-url\u0022,\n    \u0022profilePicture\u0022: {\n      \u0022croppedImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/example/profile-pic\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1762992000000\n      }\n    }\n  },\n  \u0022mostRecentEducation\u0022: {\n    \u0022schoolName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Contoso University\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022schoolLogo\u0022: {\n      \u0022originalImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/example/company-logo\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1762992000000\n      }\n    },\n    \u0022degreeName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Master of Science in Computer Science\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    }\n  },\n  \u0022primaryCurrentPosition\u0022: {\n    \u0022title\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Senior Software Engineer\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022companyName\u0022: {\n      \u0022localized\u0022: {\n        \u0022en_US\u0022: \u0022Contoso\u0022\n      },\n      \u0022preferredLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      }\n    },\n    \u0022companyPageUrl\u0022: \u0022https://www.linkedin.com/company/contoso12345\u0022,\n    \u0022companyLogo\u0022: {\n      \u0022originalImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/example/company-logo\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1762992000000\n      }\n    },\n    \u0022startedOn\u0022: {\n      \u0022month\u0022: 1,\n      \u0022year\u0022: 2022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Plus Tier Response (Basic Profile)",
+      "Anchor": "example-2-plus-tier-response-basic-profile",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Plus Tier Response (Basic Profile)"
+      ],
+      "Text": "Use our Postman collection to test /identityMe response fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleString Format",
+      "Anchor": "multilocalestring-format",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "MultiLocaleString Format"
+      ],
+      "Text": "Used for fields like firstName, lastName, schoolName, degreeName, title, and companyName:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "MultiLocaleString Format",
+      "Anchor": "multilocalestring-format",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "MultiLocaleString Format"
+      ],
+      "Text": "{\n  \u0022localized\u0022: {\n    \u0022en_US\u0022: \u0022Example Text\u0022\n  },\n  \u0022preferredLocale\u0022: {\n    \u0022country\u0022: \u0022US\u0022,\n    \u0022language\u0022: \u0022en\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Objects (Profile Picture, School Logo, Company Logo)",
+      "Anchor": "image-objects-profile-picture-school-logo-company-logo",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Image Objects (Profile Picture, School Logo, Company Logo)"
+      ],
+      "Text": "Profile Picture:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Image Objects (Profile Picture, School Logo, Company Logo)",
+      "Anchor": "image-objects-profile-picture-school-logo-company-logo",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Image Objects (Profile Picture, School Logo, Company Logo)"
+      ],
+      "Text": "{\n  \u0022croppedImage\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/...\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1762992000000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Objects (Profile Picture, School Logo, Company Logo)",
+      "Anchor": "image-objects-profile-picture-school-logo-company-logo",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Image Objects (Profile Picture, School Logo, Company Logo)"
+      ],
+      "Text": "School/Company Logo:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Image Objects (Profile Picture, School Logo, Company Logo)",
+      "Anchor": "image-objects-profile-picture-school-logo-company-logo",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Image Objects (Profile Picture, School Logo, Company Logo)"
+      ],
+      "Text": "{\n  \u0022originalImage\u0022: {\n    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/v2/...\u0022,\n    \u0022downloadUrlExpiresAt\u0022: 1762992000000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Objects (Profile Picture, School Logo, Company Logo)",
+      "Anchor": "image-objects-profile-picture-school-logo-company-logo",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Image Objects (Profile Picture, School Logo, Company Logo)"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Image Objects (Profile Picture, School Logo, Company Logo)",
+      "Anchor": "image-objects-profile-picture-school-logo-company-logo",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Image Objects (Profile Picture, School Logo, Company Logo)"
+      ],
+      "Text": "Image URLs expire. Always check downloadUrlExpiresAt and re-fetch the API response if the URL has expired.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Start Date Object",
+      "Anchor": "start-date-object",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Start Date Object"
+      ],
+      "Text": "{\n  \u0022month\u0022: 1,\n  \u0022year\u0022: 2022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Start Date Object",
+      "Anchor": "start-date-object",
+      "SectionPath": [
+        "Detailed Field Schemas",
+        "Start Date Object"
+      ],
+      "Text": "month: Integer from 1-12\nyear: Four-digit year",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common API Errors",
+      "Anchor": "common-api-errors",
+      "SectionPath": [
+        "Error Handling",
+        "Common API Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status",
+        "Error",
+        "Cause",
+        "Solution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad Request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid parameters or malformed request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify request URL, parameters, and headers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid or expired access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refresh the access token and retry",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to get member ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid member information in token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Re-authenticate member to get new access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to get developer application urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid developer application info in token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify access token; re-authenticate if needed",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forbidden",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing required OAuth scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure r_profile_basicinfo scope is authorized",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No valid API product assigned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Product not enabled in Developer Portal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add \u0022Verified on LinkedIn\u0022 product to your app",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Insufficient permissions (admin required)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development tier: Non-admin member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use admin member token or upgrade to Lite tier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Insufficient permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing required OAuth scopes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Request required scopes during authorization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member not found or deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the member\u0027s LinkedIn account status",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "426",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upgrade Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated API version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update LinkedIn-Version header to latest version",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too Many Requests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit exceeded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry after delay specified in Retry-After header",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Temporary LinkedIn service issue or unexpected error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry with exponential backoff; contact support if persists",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Common API Errors",
+      "Anchor": "common-api-errors",
+      "SectionPath": [
+        "Error Handling",
+        "Common API Errors"
+      ],
+      "Text": "For additional error handling guidance, see the LinkedIn API Error Handling Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For All Tiers",
+      "Anchor": "for-all-tiers",
+      "SectionPath": [
+        "Best Practices",
+        "For All Tiers"
+      ],
+      "Text": "\u2705 Always use LinkedIn-Version header to ensure API compatibility\n\u2705 Cache responses temporarily to minimize redundant API calls\n\u2705 Validate member ID uniqueness in your system (critical for data integrity)\n\u2705 Handle missing optional fields gracefully (email, profile picture may be absent)\n\u2705 Check image URL expiration before displaying cached images\n\u2705 Combine with /verificationReport for complete verification context",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Development Tier",
+      "Anchor": "for-development-tier",
+      "SectionPath": [
+        "Best Practices",
+        "For Development Tier"
+      ],
+      "Text": "\u26A0\uFE0F Remember: Only admin accounts can be accessed\n\uD83D\uDCA1 Test thoroughly before requesting Lite tier upgrade\n\uD83D\uDCA1 Use for prototyping OAuth flow and UI integration",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Plus Tier",
+      "Anchor": "for-plus-tier",
+      "SectionPath": [
+        "Best Practices",
+        "For Plus Tier"
+      ],
+      "Text": "\u2705 Request only needed scopes - Don\u0027t request education/experience if not required\n\u2705 Implement data freshness strategies - Use /validationStatus API to check if data needs refresh\n\u2705 Handle missing Plus fields - Members may not have education/experience on profile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "All Tiers",
+      "Anchor": "all-tiers",
+      "SectionPath": [
+        "Use Cases",
+        "All Tiers"
+      ],
+      "Text": "Display member\u0027s name and profile picture in your application\nAssociate LinkedIn identity with your platform\u0027s user account\nShow \u0022Verified on LinkedIn\u0022 badges with member context\nPersonalize onboarding flows",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Additional Use Cases",
+      "Anchor": "plus-tier-additional-use-cases",
+      "SectionPath": [
+        "Use Cases",
+        "Plus Tier Additional Use Cases"
+      ],
+      "Text": "Display current job title and company in member profiles\nShow education credentials for professional verification\nBuild trust scores based on professional background\nPre-fill job application forms with LinkedIn data",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "APIs",
+      "Anchor": "apis",
+      "SectionPath": [
+        "Related Resources",
+        "APIs"
+      ],
+      "Text": "Verification Report API \u2013 Get verification details (identity \u0026 workplace)\nValidation Status API \u2013 Bulk validation checks (Plus tier only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guides",
+      "Anchor": "guides",
+      "SectionPath": [
+        "Related Resources",
+        "Guides"
+      ],
+      "Text": "Quickstart Guide \u2013 Get started with the API\nUpgrade to Lite Tier \u2013 Move to production\nImplementation Guide \u2013 Best practices\nData Freshness Strategies \u2013 Keep data current (Plus tier)\nCertification Requirements \u2013 Production readiness (Plus tier)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Related Resources",
+        "Authentication"
+      ],
+      "Text": "Authorization Code Flow \u2013 OAuth 2.0 3-legged authentication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Resources",
+      "Anchor": "other-resources",
+      "SectionPath": [
+        "Related Resources",
+        "Other Resources"
+      ],
+      "Text": "FAQ \u2013 Troubleshooting and answers\nRelease Notes \u2013 API updates and current versions\nOverview \u2013 Product overview and tier comparison",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

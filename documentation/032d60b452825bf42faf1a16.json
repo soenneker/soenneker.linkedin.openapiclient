@@ -1,0 +1,2537 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+  "Title": "Organization Targeted Contents",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Targeted Contents API returns targeted content variations configured by organization admins. These pages (also known as Life Pages or Career Pages) allow organizations to create customized views of their page for specific audiences. Admins can create multiple Life Page variations and target them to audiences based on criteria such as industry, job function, seniority, and location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Targeted Contents?",
+      "Anchor": "what-are-targeted-contents",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Targeted Contents?"
+      ],
+      "Text": "Targeted Contents (Life Pages/Career Pages) are customizable sections of a company\u0027s LinkedIn page that showcase:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Targeted Contents?",
+      "Anchor": "what-are-targeted-contents",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Targeted Contents?"
+      ],
+      "Text": "Featured media (images and videos)\nFeatured leaders and recruiters\nEmployee testimonials and perspectives\nOrganization photos and culture\nCustom content sections tailored to specific audiences",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are Targeted Contents?",
+      "Anchor": "what-are-targeted-contents",
+      "SectionPath": [
+        "Feature Overview",
+        "What are Targeted Contents?"
+      ],
+      "Text": "Each targeted content variation has a unique identifier and can be configured to be visible only to visitors matching specific targeting criteria, or visible to all with an option to select different variations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Name Variations",
+      "Anchor": "product-name-variations",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Name Variations"
+      ],
+      "Text": "This feature has been known by multiple names across LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Name Variations",
+      "Anchor": "product-name-variations",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Name Variations"
+      ],
+      "Text": "Life Page - The current product name visible to users.\nTargeted Content - The API and internal technical name.\nCareer Page - An earlier name for this feature.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Name Variations",
+      "Anchor": "product-name-variations",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Name Variations"
+      ],
+      "Text": "All three terms refer to the same functionality: customizable organization page content that can be targeted to specific audiences.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Name Variations",
+      "Anchor": "product-name-variations",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Name Variations"
+      ],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product Name Variations",
+      "Anchor": "product-name-variations",
+      "SectionPath": [
+        "Feature Overview",
+        "Product Name Variations"
+      ],
+      "Text": "Get - Get targeted content for a given organization targeted content key.\nBatchGet - Batch get organization targeted content for the given organizations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Query This API",
+      "Anchor": "how-to-query-this-api",
+      "SectionPath": [
+        "How to Query This API"
+      ],
+      "Text": "To successfully query the Organization Targeted Contents API, you need to obtain the proper query parameters. This section explains the prerequisites and how to construct requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to Query This API",
+        "Prerequisites"
+      ],
+      "Text": "To query this API, the authenticated user must have appropriate admin permissions for the organization. Specifically, they must have one of the following roles:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to Query This API",
+        "Prerequisites"
+      ],
+      "Text": "ADMINISTRATOR\nCONTENT_ADMINISTRATOR",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Prerequisites",
+      "Anchor": "prerequisites",
+      "SectionPath": [
+        "How to Query This API",
+        "Prerequisites"
+      ],
+      "Text": "For more information on company page roles, refer to Organization Access Control.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain Query Parameters?",
+      "Anchor": "how-to-obtain-query-parameters",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?"
+      ],
+      "Text": "Follow these steps to obtain the required query parameters for the Organization Targeted Contents API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Find Organizations You Can Query",
+      "Anchor": "step-1-find-organizations-you-can-query",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 1: Find Organizations You Can Query"
+      ],
+      "Text": "Before querying targeted contents, you need to find the organizations (pages) that the authenticated member has permission to access. Use the Organization Authorization API\u0027s BATCH_FIND by authorizationAction and Authenticated Member endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Find Organizations You Can Query",
+      "Anchor": "step-1-find-organizations-you-can-query",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 1: Find Organizations You Can Query"
+      ],
+      "Text": "Authorization Action to Use: CareerPageAuthorizationActionType.CAREER_PAGE_LIFE_READ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Find Organizations You Can Query",
+      "Anchor": "step-1-find-organizations-you-can-query",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 1: Find Organizations You Can Query"
+      ],
+      "Text": "This returns a list of organization URNs that the authenticated member can query for targeted content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Get Targeted Content URNs",
+      "Anchor": "step-2-get-targeted-content-urns",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 2: Get Targeted Content URNs"
+      ],
+      "Text": "Once you have an organization URN, you have two options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Get Targeted Content URNs",
+      "Anchor": "step-2-get-targeted-content-urns",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 2: Get Targeted Content URNs"
+      ],
+      "Text": "Construct the organizationTargetedContentUrn directly using this format:\n Copy urn:li:organizationTargetedContent:(urn:li:organization:{ORG_ID},{TARGETED_CONTENT_ID})\n\n\nUse the Organization Content Revisions API to retrieve all content revisions for an organization. This includes the targeted content configurations and their IDs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: URL Encode the URN",
+      "Anchor": "step-3-url-encode-the-urn",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 3: URL Encode the URN"
+      ],
+      "Text": "Use the organizationTargetedContentUrn in your API request, ensure it is URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: URL Encode the URN",
+      "Anchor": "step-3-url-encode-the-urn",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 3: URL Encode the URN"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: URL Encode the URN",
+      "Anchor": "step-3-url-encode-the-urn",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 3: URL Encode the URN"
+      ],
+      "Text": "urn:li:organizationTargetedContent:(urn:li:organization:1234,c7e20154-c8df-12ca-aaaa-123456bbddda)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: URL Encode the URN",
+      "Anchor": "step-3-url-encode-the-urn",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 3: URL Encode the URN"
+      ],
+      "Text": "becomes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: URL Encode the URN",
+      "Anchor": "step-3-url-encode-the-urn",
+      "SectionPath": [
+        "How to Query This API",
+        "How to Obtain Query Parameters?",
+        "Step 3: URL Encode the URN"
+      ],
+      "Text": "urn%3Ali%3AorganizationTargetedContent%3A%28urn%3Ali%3Aorganization%3A1234%2Cc7e20154-c8df-12ca-aaaa-123456bbddda%29",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions"
+      ],
+      "Text": "For more information on company page roles, refer to Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationTargetedContentUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/employer-brand/organization-targeted-contents.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for this targeted content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of this targeted content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "target",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attributes used to target this content to users.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredLeaders",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentFeaturedMembers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Featured leaders.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredRecruiters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentFeaturedMembers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Featured recruiters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredMediaSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentMediaSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prominently featured media, curated by organization admins",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "additionalMediaSections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [TargetedContentMediaSection]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom media modules admins can define, contains a title, subtitle and an image or video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "photosSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentPhotosSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Toggle-able section containing photos chosen by admins from a list of uploaded photos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employeePerspectivesSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentArticlesSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Toggle-able section containing posts published by employees chosen to display on the page by admin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether this targeted content is visible to page visitors. Admins can choose to configure and save all content for a targeted content while keeping it invisible so they can keep it hidden while it\u0027s still a work in progress. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visibleOnlyWhenTargeted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, this targeted content is not visible to visitors who do not meet its targeting criteria, whereas non-private contents are selectable via a drop down menu.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "showLifeAtCulturalInsights",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, show the organization non-job related cultural insights module. Example insights here include distributions of languages employees speak, volunteering causes they support, etc. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reportingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for reporting and tracking purposes. It is the same as the targetedContentId during the creation time, but differs in other cases.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultView",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean flag indicating whether this TargetedContent is configured as a default targeted audience view in the latest published ContentRevision. Default false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testimonialSections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [TargetedContentTestimonialSection]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of employees with their testimonial about the organization, curated by organization admins.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testimonialSectionsVisible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether testimonialSections are visible to page visitors. Default false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "candidateTestimonialSections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [TargetedContentTestimonialSection]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of testimonials from candidates (people looking for jobs through staffing companies). Curated by organization admins. Only available for staffing companies. All these sections go into a single section in display.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "candidateTestimonialSectionsVisible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether candidateTestimonialSections are visible to page visitors. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "clientTestimonialSections",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [TargetedContentOrganizationTestimonialSection]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of testimonials from client (organization looking to hire through staffing companies). Curated by organization admins. Only available for staffing companies. All these sections go into a single section in display.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "clientTestimonialSectionsVisible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether clientTestimonialSections are visible to page visitors. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contactUsSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentContactSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contact Us section. Admin can configure an email and a set of functions for viewer to reach out to. Only available for staffing company.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customizable part of the page URL. e.g., www.linkedin.com/company/ORGANIZATION_NAME/life/VANITY_NAME",
+            "Links": [
+              "https://www.linkedin.com/company/ORGANIZATION_NAME/life/VANITY_NAME"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employeeContentSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetedContentEmployeeContentSection",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stores employee content data associated with the targeted content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Target",
+      "Anchor": "target",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "Target"
+      ],
+      "Text": "Attributes used to target content to users. If no attributes are specified, it means all users are targeted. Targets are\nmatched by OR-ing within each attribute, and AND-ing across fields. So if targeting 5 functions and 2 geo locations, the\nmember needs to match at least 1 function and at least 1 geo location for the target to successfully match.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Target",
+      "Anchor": "target",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "Target"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [IndustryUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/industry.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Industries to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [FunctionUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Top level groupings of supertitles to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seniorities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [SeniorityUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/seniority?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Seniorities to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of URNs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated, use geoLocations instead. Locations to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "geoLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [GeoUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/geo.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Locations to be targeted. Each URN identifies a Bing Geo entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "staffCountRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [StaffCountRange]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization sizes to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [Locale]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Interface locales to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of DegreeUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/degree.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Standardized degrees to be targeted. This captures members that have completed these degrees according to their education info. degrees = [BS, MS] means people who have either BS or MS degree.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldsOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of FieldOfStudyUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/taxonomy/fields-of-study.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Standardized fields of study to be targeted. This captures members that have studied these fields according to their education info. fieldsOfStudy = [CS, MS] means people who have either CS or MS field of study.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Standardized organizations (companies, schools, etc) to be targeted. This captures members that have added any of these organizations (schools, companies, etc) to their experience or education info. organizations = [LinkedIn (urn:li:organization:23), Microsoft (urn:li:organization:56), Stanford (urn:li:organization:33), UCLA (urn:li:organization:88)] means people who have worked at LinkedIn or Microsoft or are from Stanford or UCLA.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentFeaturedMembers",
+      "Anchor": "targetedcontentfeaturedmembers",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentFeaturedMembers"
+      ],
+      "Text": "Members that are featured within an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentFeaturedMembers",
+      "Anchor": "targetedcontentfeaturedmembers",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentFeaturedMembers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title for a featured members section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "featuredMembers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [PersonUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Featured members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it\u0027s still a work in progress. Default = true",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "SectionTitle",
+      "Anchor": "sectiontitle",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "SectionTitle"
+      ],
+      "Text": "Title and sub-title used for sections on a page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SectionTitle",
+      "Anchor": "sectiontitle",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "SectionTitle"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Title of this section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "subTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Sub-title of this section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentMediaSection",
+      "Anchor": "targetedcontentmediasection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentMediaSection"
+      ],
+      "Text": "Custom media module configured for the organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentMediaSection",
+      "Anchor": "targetedcontentmediasection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentMediaSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title for a media section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of [OrganizationCroppedImage, TalentBrandVideo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media uploaded for the section. Can be a cropped image or video.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "photoAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationCroppedImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image used for display in the media section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it\u0027s still a work in progress. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Headline of this media section\u0027s text segment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Body of this media section\u0027s text segment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "links",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [Hyperlink]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Links at the end of this media section\u0027s text segment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationCroppedImage",
+      "Anchor": "organizationcroppedimage",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "OrganizationCroppedImage"
+      ],
+      "Text": "Image used for display in the media section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationCroppedImage",
+      "Anchor": "organizationcroppedimage",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "OrganizationCroppedImage"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "cropped",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The cropped Image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "original",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The original Image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "cropInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rectangle",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#rectangle"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The cropping information defined by a rectangle in which the specified corner is the upper-left corner of the crop area",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentPhotosSection",
+      "Anchor": "targetedcontentphotossection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentPhotosSection"
+      ],
+      "Text": "Featured photos uploaded by organization admins or employees.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentPhotosSection",
+      "Anchor": "targetedcontentphotossection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentPhotosSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "photos",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [OrganizationPhotoUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urns for the featured photos.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it\u0027s still a work in progress. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title for this photo section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentArticlesSection",
+      "Anchor": "targetedcontentarticlessection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentArticlesSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "articles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of ArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urns for the featured articles.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it\u0027s still a work in progress. Default true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SectionTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title for this article section.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentTestimonialSection",
+      "Anchor": "targetedcontenttestimonialsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentTestimonialSection"
+      ],
+      "Text": "Testimonial about the organization from employee or candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentTestimonialSection",
+      "Anchor": "targetedcontenttestimonialsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentTestimonialSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "employee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Employee or candidate (people looking for jobs through staffing companies) who states the testimonial.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testimonial",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Testimonial of the employee or candidate.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentOrganizationTestimonialSection",
+      "Anchor": "targetedcontentorganizationtestimonialsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentOrganizationTestimonialSection"
+      ],
+      "Text": "Testimonial about the organization from client.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentOrganizationTestimonialSection",
+      "Anchor": "targetedcontentorganizationtestimonialsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentOrganizationTestimonialSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "testimonial",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Testimonial of the client.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client organization who states the testimonial. Organization looking to hire through staffing companies.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "clientTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client name and title who states the testimonial on behalf of the client organization. This field is custom text the admin can enter, not standardized title.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentContactSection",
+      "Anchor": "targetedcontentcontactsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentContactSection"
+      ],
+      "Text": "Targeted content contact section. Admin configure a set of functions and one email for viewer to reach out.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentContactSection",
+      "Anchor": "targetedcontentcontactsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentContactSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Description of contact us section. Presented in the same locale as the targeted content page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "functions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [FunctionUrn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of job functions that viewer can contact (e.g. engineering, marketing, etc.) regarding interest.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization contact email address.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the section is visible to page visitors. Admins can choose to configure and save all content for a section while keeping it invisible so they can keep it hidden while it\u0027s still a work in progress.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetedContentEmployeeContentSection",
+      "Anchor": "targetedcontentemployeecontentsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentEmployeeContentSection"
+      ],
+      "Text": "Stores employee content data associated with a targeted content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetedContentEmployeeContentSection",
+      "Anchor": "targetedcontentemployeecontentsection",
+      "SectionPath": [
+        "How to Query This API",
+        "Permissions",
+        "TargetedContentEmployeeContentSection"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "hashtags",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of strings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hashtags used to select content posted by organization employees so it can be featured on the life page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, show employee content tagged with the hashtags on the life page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_TARGETED_CONTENT_URN} needs to be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get",
+      "Anchor": "get",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "Get"
+      ],
+      "Text": "An organizationTargetedContentUrn is a composite URN constructed using a targeted content ID and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "Get",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "Get",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationTargetedContents/{ORGANIZATION_TARGETED_CONTENT_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "Get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationTargetedContents/urn%3Ali%3AorganizationTargetedContent%3A%28urn%3Ali%3Aorganization%3A1234%2Cc7e20154-c8df-12ca-aaaa-123456bbddda%29\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "Get",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022additionalMediaSections\u0022 : [],\n  \u0022candidateTestimonialSections\u0022 : [],\n  \u0022candidateTestimonialSectionsVisible\u0022 : true,\n  \u0022clientTestimonialSections\u0022 : [],\n  \u0022clientTestimonialSectionsVisible\u0022 : true,\n  \u0022created\u0022 : {\n    \u0022time\u0022 : 1510797901809\n  },\n  \u0022defaultView\u0022 : false,\n  \u0022key\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,c7e20154-c8df-12ca-aaaa-123456bbddda)\u0022,\n  \u0022lastModified\u0022 : {\n    \u0022time\u0022 : 1510797901809\n  },\n  \u0022name\u0022 : \u0022New page\u0022,\n  \u0022reportingId\u0022 : \u0022c7e20154-c8df-12ca-aaaa-123456bbddda\u0022,\n  \u0022showLifeAtCulturalInsights\u0022 : true,\n  \u0022target\u0022 : {\n    \u0022industries\u0022 : [],\n    \u0022interfaceLocales\u0022 : [],\n    \u0022jobFunctions\u0022 : [],\n    \u0022locations\u0022 : [],\n    \u0022seniorities\u0022 : [],\n    \u0022staffCountRanges\u0022 : []\n  },\n  \u0022testimonialSections\u0022 : [],\n  \u0022testimonialSectionsVisible\u0022 : false,\n  \u0022visible\u0022 : false,\n  \u0022visibleOnlyWhenTargeted\u0022 : false\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BatchGet",
+      "Anchor": "batchget",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "BatchGet"
+      ],
+      "Text": "An organizationTargetedContentUrn is a composite URN constructed using a targeted content ID and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "BatchGet",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "BatchGet",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationTargetedContents?ids=List(ORGANIZATION_TARGETED_CONTENT_URN1,ORGANIZATION_TARGETED_CONTENT_URN2)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "BatchGet",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationTargetedContents?ids=List(urn%3Ali%3AorganizationTargetedContent%3A%28urn%3Ali%3Aorganization%3A1234%2Cc7e20154-c8df-12ca-aaaa-123456bbddda%29,)\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "BatchGet",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022errors\u0022 : {},\n  \u0022results\u0022 : {\n    \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,ddf12345-6s62-444c-bfb5-12bse45458bz)\u0022 : {\n      \u0022additionalMediaSections\u0022 : [],\n      \u0022candidateTestimonialSections\u0022 : [],\n      \u0022candidateTestimonialSectionsVisible\u0022 : false,\n      \u0022clientTestimonialSections\u0022 : [],\n      \u0022clientTestimonialSectionsVisible\u0022 : false,\n      \u0022created\u0022 : {\n        \u0022time\u0022 : 1700090751069\n      },\n      \u0022defaultView\u0022 : false,\n      \u0022featuredMediaSection\u0022 : {\n        \u0022links\u0022 : [],\n        \u0022media\u0022 : {\n          \u0022video\u0022 : {\n            \u0022link\u0022 : \u0022http://www.youtube.com/v/Jv1AUdSaaaA\u0022,\n            \u0022secureLink\u0022 : \u0022https://www.youtube.com/v/Jv1AUdSaaaA\u0022,\n            \u0022sourceId\u0022 : \u0022Jv1AUdSaaaA\u0022,\n            \u0022sourceType\u0022 : \u0022YOU_TUBE\u0022\n          }\n        },\n        \u0022sectionTitle\u0022 : {\n          \u0022title\u0022 : {\n            \u0022localized\u0022 : {\n              \u0022en_US\u0022 : \u0022Media\u0022\n            },\n            \u0022preferredLocale\u0022 : {\n              \u0022country\u0022 : \u0022US\u0022,\n              \u0022language\u0022 : \u0022en\u0022\n            }\n          }\n        },\n        \u0022visible\u0022 : false\n      },\n      \u0022key\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,ddf12345-6s62-444c-bfb5-12bse45458bz)\u0022,\n      \u0022lastModified\u0022 : {\n        \u0022time\u0022 : 1700090751069\n      },\n      \u0022name\u0022 : \u0022youtube\u0022,\n      \u0022photosSection\u0022 : {\n        \u0022photos\u0022 : [],\n        \u0022sectionTitle\u0022 : {\n          \u0022title\u0022 : {\n            \u0022localized\u0022 : {\n              \u0022en_US\u0022 : \u0022Photos\u0022\n            },\n            \u0022preferredLocale\u0022 : {\n              \u0022country\u0022 : \u0022US\u0022,\n              \u0022language\u0022 : \u0022en\u0022\n            }\n          }\n        },\n        \u0022visible\u0022 : false\n      },\n      \u0022reportingId\u0022 : \u0022baba5555-4412-46b2-b599-2cf12345c100\u0022,\n      \u0022showLifeAtCulturalInsights\u0022 : true,\n      \u0022target\u0022 : {\n        \u0022geoLocations\u0022 : [],\n        \u0022industries\u0022 : [],\n        \u0022interfaceLocales\u0022 : [\n          {\n            \u0022country\u0022 : \u0022US\u0022,\n            \u0022language\u0022 : \u0022en\u0022\n          }\n        ],\n        \u0022jobFunctions\u0022 : [],\n        \u0022locations\u0022 : [],\n        \u0022seniorities\u0022 : [],\n        \u0022staffCountRanges\u0022 : []\n      },\n      \u0022testimonialSections\u0022 : [],\n      \u0022testimonialSectionsVisible\u0022 : false,\n      \u0022vanityName\u0022 : \u0022baba5555-4412-46b2-b599-2cf12345c100\u0022,\n      \u0022visible\u0022 : false,\n      \u0022visibleOnlyWhenTargeted\u0022 : false\n    },\n    \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,d1b20122-c8df-45aa-abba-123456bde1ab)\u0022 : {\n      \u0022additionalMediaSections\u0022 : [],\n      \u0022candidateTestimonialSections\u0022 : [],\n      \u0022candidateTestimonialSectionsVisible\u0022 : true,\n      \u0022clientTestimonialSections\u0022 : [],\n      \u0022clientTestimonialSectionsVisible\u0022 : true,\n      \u0022created\u0022 : {\n        \u0022time\u0022 : 1510797901809\n      },\n      \u0022defaultView\u0022 : false,\n      \u0022key\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,d1b20122-c8df-45aa-abba-123456bde1ab)\u0022,\n      \u0022lastModified\u0022 : {\n        \u0022time\u0022 : 1510797901809\n      },\n      \u0022name\u0022 : \u0022New page\u0022,\n      \u0022reportingId\u0022 : \u0022d1b20122-c8df-45aa-abba-123456bde1ab\u0022,\n      \u0022showLifeAtCulturalInsights\u0022 : true,\n      \u0022target\u0022 : {\n        \u0022industries\u0022 : [],\n        \u0022interfaceLocales\u0022 : [],\n        \u0022jobFunctions\u0022 : [],\n        \u0022locations\u0022 : [],\n        \u0022seniorities\u0022 : [],\n        \u0022staffCountRanges\u0022 : []\n      },\n      \u0022testimonialSections\u0022 : [],\n      \u0022testimonialSectionsVisible\u0022 : false,\n      \u0022visible\u0022 : false,\n      \u0022visibleOnlyWhenTargeted\u0022 : false\n    }\n  },\n  \u0022statuses\u0022 : {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Targeted Contents",
+        "BatchGet",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of organization targeted content urns to query for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(urn%3Ali%3AorganizationTargetedContent%3A%28urn%3Ali%3Aorganization%3A1234%2Cd1b20122-c8df-45aa-abba-123456bde1ab%29,urn%3Ali%3AorganizationTargetedContent%3A%28urn%3Ali%3Aorganization%3A1234%2Cddf12345-6s62-444c-bfb5-12bse45458bz%29)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource. BatchGet gets 403 if either of the requested URNs doesn\u0027t have Admin access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

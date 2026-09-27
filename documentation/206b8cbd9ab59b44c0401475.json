@@ -1,0 +1,319 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+  "Title": "Generate an Access Token using Postman",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/authentication/lms-generate-an-access-token",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Generate an Access Token using Postman",
+      "Anchor": "generate-an-access-token-using-postman",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Generate an Access Token using Postman",
+      "Anchor": "generate-an-access-token-using-postman",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Summary",
+      "Anchor": "summary",
+      "SectionPath": [
+        "Summary"
+      ],
+      "Text": "The full process your application will need to implement for 3-legged tokens is described in Authorization Code Flow. The steps outlined below describe the process for using the public LinkedIn Marketing Solutions Postman workspace to generate OAuth tokens for testing.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1 - Application",
+      "Anchor": "step-1---application",
+      "SectionPath": [
+        "Summary",
+        "Step 1 - Application"
+      ],
+      "Text": "Go to the LinkedIn Developer Portal, select the app you\u0027ll be using, click the \u0022Auth\u0022 tab, and locate your Client ID and Client Secret. Please note these values for use later during this process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - Auth Settings",
+      "Anchor": "step-2---auth-settings",
+      "SectionPath": [
+        "Summary",
+        "Step 2 - Auth Settings"
+      ],
+      "Text": "From the same \u0022Auth\u0022 tab, scroll to the bottom of the page. Under \u0022OAuth 2.0 Settings\u0022, add the Postman callback URLs https://oauth.pstmn.io/v1/callback and https://oauth.pstmn.io/v1/browser-callback to your Redirect URL list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - Auth Settings",
+      "Anchor": "step-2---auth-settings",
+      "SectionPath": [
+        "Summary",
+        "Step 2 - Auth Settings"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2 - Auth Settings",
+      "Anchor": "step-2---auth-settings",
+      "SectionPath": [
+        "Summary",
+        "Step 2 - Auth Settings"
+      ],
+      "Text": "Postman uses the term \u0022Callback URL\u0022\nLinkedIn uses the term \u0022Redirect URL\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3 - Fork Collections and Environments",
+      "Anchor": "step-3---fork-collections-and-environments",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments"
+      ],
+      "Text": "Navigate to LinkedIn\u0027s public Postman workspaces:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3 - Fork Collections and Environments",
+      "Anchor": "step-3---fork-collections-and-environments",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments"
+      ],
+      "Text": "Choose the LinkedIn Marketing Solutions workspace and fork the collections and relevant environments of interest. Each collection will have an environment it should be used with. For example, the Campaign Management collection should be used with the campaign-management-env environment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fork a Postman Collection",
+      "Anchor": "fork-a-postman-collection",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments",
+        "Fork a Postman Collection"
+      ],
+      "Text": "New! On the LinkedIn Marketing Solutions overview page, choose a \u0027Run in Postman\u0027 button to fork a collection and environment bundle or see how to manually fork each separately below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fork a Postman Collection",
+      "Anchor": "fork-a-postman-collection",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments",
+        "Fork a Postman Collection"
+      ],
+      "Text": "Fork a collection:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fork a Postman Collection",
+      "Anchor": "fork-a-postman-collection",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments",
+        "Fork a Postman Collection"
+      ],
+      "Text": "This video shows how to fork a collection in the LinkedIn Marketing Solutions Postman workspace by clicking the three-dot menu next to a collection and selecting \u0022Fork Collection\u0022, then naming your fork and choosing a workspace destination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fork a Postman Collection",
+      "Anchor": "fork-a-postman-collection",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments",
+        "Fork a Postman Collection"
+      ],
+      "Text": "Fork an environment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fork a Postman Collection",
+      "Anchor": "fork-a-postman-collection",
+      "SectionPath": [
+        "Summary",
+        "Step 3 - Fork Collections and Environments",
+        "Fork a Postman Collection"
+      ],
+      "Text": "This video shows how to fork an environment in Postman by clicking the three-dot menu next to an environment and selecting \u0022Fork Environment\u0022, then naming your fork and choosing a workspace destination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4 - Fill in Environment Variables",
+      "Anchor": "step-4---fill-in-environment-variables",
+      "SectionPath": [
+        "Summary",
+        "Step 4 - Fill in Environment Variables"
+      ],
+      "Text": "Fill in the environment variables as necessary. Values for Client ID and Client Secret are required to get an access token in the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5 - Headers",
+      "Anchor": "step-5---headers",
+      "SectionPath": [
+        "Summary",
+        "Step 5 - Headers"
+      ],
+      "Text": "Each collection in the LinkedIn Marketing Solutions workspace will have its OAuth 2.0 Authorization settings pre-populated with the correct URLs, environment variables, and scopes to be able to successfully run the requests within the Use Cases folder. Ensure that the correct environment is selected and click \u0022Get new access token\u0022:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5 - Headers",
+      "Anchor": "step-5---headers",
+      "SectionPath": [
+        "Summary",
+        "Step 5 - Headers"
+      ],
+      "Text": "Grant Type: Authorization Code\nCallback (Redirect) URL: https://oauth.pstmn.io/v1/browser-callback\n\nNote the Callback URL should be https://oauth.pstmn.io/v1/callback with the \u0022Authorize using browser\u0022 box checked if you\u0027re using the Postman Desktop app.\n\n\nAuth URL: https://www.linkedin.com/oauth/v2/authorization\nAccess Token URL: https://www.linkedin.com/oauth/v2/accessToken\nClient ID: {using the client_id from the environment variables}\nClient Secret: {using the client_secret from the environment variables}\nScope: {rw_ads,r_basicprofile,w_organization_social,w_member_social,rw_organization_admin}\nClient Authentication: Send client credentials in body",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6 - Identity Authentication",
+      "Anchor": "step-6---identity-authentication",
+      "SectionPath": [
+        "Summary",
+        "Step 6 - Identity Authentication"
+      ],
+      "Text": "Postman will take you to the LinkedIn authorization page, where you may be prompted to log into LinkedIn. Click \u0022Allow\u0022 to authorize the request. The prompt on the authorization page is dictated by the requested scopes in the previous step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 7 - Use Token",
+      "Anchor": "step-7---use-token",
+      "SectionPath": [
+        "Summary",
+        "Step 7 - Use Token"
+      ],
+      "Text": "Postman will then display your access token to be used for testing. Choose the \u0027Use Token\u0027 button to set this as the currently used token. The token will automatically be propagated to all requests within this collection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 7 - Use Token",
+      "Anchor": "step-7---use-token",
+      "SectionPath": [
+        "Summary",
+        "Step 7 - Use Token"
+      ],
+      "Text": "This video shows Postman displaying the generated access token after successful authorization, and demonstrates clicking the \u0022Use Token\u0022 button to apply it to all requests in the collection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 8 - Testing",
+      "Anchor": "step-8---testing",
+      "SectionPath": [
+        "Summary",
+        "Step 8 - Testing"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 8 - Testing",
+      "Anchor": "step-8---testing",
+      "SectionPath": [
+        "Summary",
+        "Step 8 - Testing"
+      ],
+      "Text": "When you first click on a collection name, the documentation pane on the right side opens by default. On the bottom right, click \u0027view complete collection documentation\u0027 to gain a high-level overview of the documentation in the collection. Modify the language of the example requests in this view.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 8 - Testing",
+      "Anchor": "step-8---testing",
+      "SectionPath": [
+        "Summary",
+        "Step 8 - Testing"
+      ],
+      "Text": "Finally, send a request within the Use Cases folder. Ensure the correct environment is selected and that any environment variables used in the request are set in the associated environment. For example, in the screenshot below, the request uses the campaign-management-token and sponsoredaccount_id variables from the campaign-management-env environment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 8 - Testing",
+      "Anchor": "step-8---testing",
+      "SectionPath": [
+        "Summary",
+        "Step 8 - Testing"
+      ],
+      "Text": "Learn more about Postman Environments in Postman\u0027s online documentation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 8 - Testing",
+      "Anchor": "step-8---testing",
+      "SectionPath": [
+        "Summary",
+        "Step 8 - Testing"
+      ],
+      "Text": "To see an example sample response, view the saved example",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

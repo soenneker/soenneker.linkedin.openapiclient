@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents
 {
     /// <summary>
-    /// Builds and executes requests for operations under \content-apis\conversationAds\{conversationAds-id}\sponsoredMessageContents
+    /// Builds and executes requests for operations under \content-apis\conversationAds\{conversationUrn}\sponsoredMessageContents
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SponsoredMessageContentsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.Spon
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SponsoredMessageContentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/conversationAds/{conversationAds%2Did}/sponsoredMessageContents{?ids*}", pathParameters)
+        public SponsoredMessageContentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/conversationAds/{conversationUrn}/sponsoredMessageContents{?ids*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.Spon
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SponsoredMessageContentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/conversationAds/{conversationAds%2Did}/sponsoredMessageContents{?ids*}", rawUrl)
+        public SponsoredMessageContentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/content-apis/conversationAds/{conversationUrn}/sponsoredMessageContents{?ids*}", rawUrl)
         {
         }
         /// <summary>
@@ -70,6 +70,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.Spon
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetAllSponsoredMessageContentDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,27 +81,35 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.Spon
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetAllSponsoredMessageContentDefaultResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A successful response returns a `201 Created` HTTP status code and the ID in the `x-linkedin-id response` header, e.g. `&quot;urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)&quot;`.Creates Sponsored Message Content in Batches.Updates Sponsored Message Content in Batches.
+        /// Creates Sponsored Message Content in Batches.Updates Sponsored Message Content in Batches.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentDefaultResponse.CreateFromDiscriminatorValue },
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes Sponsored Message Content in Batches.
@@ -136,26 +145,28 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.Spon
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// A successful response returns a `201 Created` HTTP status code and the ID in the `x-linkedin-id response` header, e.g. `&quot;urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)&quot;`.Creates Sponsored Message Content in Batches.Updates Sponsored Message Content in Batches.
+        /// Creates Sponsored Message Content in Batches.Updates Sponsored Message Content in Batches.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisCreateSponsoredMessageContentRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisBatchCreateSponsoredMessageContentJsonRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.SponsoredMessageContents.SponsoredMessageContentsRequestBuilder.SponsoredMessageContentsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -209,7 +220,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.ConversationAds.Item.Spon
 #endif
         }
         /// <summary>
-        /// A successful response returns a `201 Created` HTTP status code and the ID in the `x-linkedin-id response` header, e.g. `&quot;urn:li:sponsoredMessageContent:(urn:li:sponsoredConversation:186604,14277)&quot;`.Creates Sponsored Message Content in Batches.Updates Sponsored Message Content in Batches.
+        /// Creates Sponsored Message Content in Batches.Updates Sponsored Message Content in Batches.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SponsoredMessageContentsRequestBuilderPostQueryParameters 

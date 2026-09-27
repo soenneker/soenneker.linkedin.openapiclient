@@ -15,9 +15,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The entityCount property</summary>
-        public int? EntityCount { get; set; }
+        public long? EntityCount { get; set; }
         /// <summary>The entityPercentage property</summary>
-        public int? EntityPercentage { get; set; }
+        public long? EntityPercentage { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +51,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entityCount", n => { EntityCount = n.GetIntValue(); } },
-                { "entityPercentage", n => { EntityPercentage = n.GetIntValue(); } },
+                { "entityCount", n => { EntityCount = n.GetLongValue(); } },
+                { "entityPercentage", n => { EntityPercentage = n.GetLongValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -63,8 +63,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("entityCount", EntityCount);
-            writer.WriteIntValue("entityPercentage", EntityPercentage);
+            writer.WriteLongValue("entityCount", EntityCount);
+            writer.WriteLongValue("entityPercentage", EntityPercentage);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

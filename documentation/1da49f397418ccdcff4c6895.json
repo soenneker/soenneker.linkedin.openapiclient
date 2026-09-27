@@ -1,0 +1,121 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+  "Title": "Job Posting Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Posting Overview",
+      "Anchor": "job-posting-overview",
+      "SectionPath": [],
+      "Text": "Jobs that are already created externally on ATS, company site, or job board can be automatically ingested by LinkedIn. LinkedIn provides various solutions to ingest such jobs to our customers, partner ATSs\u0027 and Job Distributors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingesting Jobs on LinkedIn",
+      "Anchor": "ingesting-jobs-on-linkedin",
+      "SectionPath": [
+        "Ingesting Jobs on LinkedIn"
+      ],
+      "Text": "Below are the different solutions for customers or partners to ingest jobs on LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingesting Jobs on LinkedIn",
+      "Anchor": "ingesting-jobs-on-linkedin",
+      "SectionPath": [
+        "Ingesting Jobs on LinkedIn"
+      ],
+      "Text": "API - LinkedIn\u0027s Job Posting API enables authorized third parties, such as clients, ATS systems, and job distributors, to post jobs directly to LinkedIn on behalf of customers. Please refer to Job Posting API Overview for more information.\n\nXML Feeds - When your customer creates a job in your system, the XML feed sends jobs to LinkedIn. These XML feeds contain the job posting information that helps facilitate creating a job that displays on LinkedIn. Please refer to XML Feeds Overview for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingesting Jobs on LinkedIn",
+      "Anchor": "ingesting-jobs-on-linkedin",
+      "SectionPath": [
+        "Ingesting Jobs on LinkedIn"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingesting Jobs on LinkedIn",
+      "Anchor": "ingesting-jobs-on-linkedin",
+      "SectionPath": [
+        "Ingesting Jobs on LinkedIn"
+      ],
+      "Text": "To avoid duplication, use either of the above solutions to ingest jobs on LinkedIn. Refer to FAQ to know more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Categories",
+      "Anchor": "job-posting-categories",
+      "SectionPath": [
+        "Job Posting Categories"
+      ],
+      "Text": "The following two job categories broadly define the ways to post jobs in LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Categories",
+      "Anchor": "job-posting-categories",
+      "SectionPath": [
+        "Job Posting Categories"
+      ],
+      "Text": "Basic Jobs - These are free job posts gathered by LinkedIn from external sources such as ATS, job boards, distributors and aggregators across the web to create a comprehensive job-seeking experience for LinkedIn members. Basic jobs can be posted using Job Postings API or XML feeds. For customers who purchased Job Slots, LinkedIn offers Job Wrapping which allows job posters to prioritize specific ingested basic jobs to automatically promote into customer\u0027s job slots based on some tags or rules.\n\nPromoted Jobs - These are paid job postings. You can directly post promoted jobs using Job Postings API. For customers with paid job slots, the API allows posting jobs directly into their job slots.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Refer to FAQ document for most commonly asked questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Announcements and Releases",
+      "Anchor": "announcements-and-releases",
+      "SectionPath": [
+        "Announcements and Releases"
+      ],
+      "Text": "All the changes that are continuously being made to LinkedIn\u0027s Job Posting documentation can be tracked in the section for Announcements and Release Notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

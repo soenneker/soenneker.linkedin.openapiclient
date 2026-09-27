@@ -1,0 +1,537 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/announcements/data-restrictions",
+  "Title": "Compliance Snapshot API Data Restrictions",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/announcements/data-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/basic-profile"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance Snapshot API Data Restrictions",
+      "Anchor": "compliance-snapshot-api-data-restrictions",
+      "SectionPath": [],
+      "Text": "As part of our commitment to delivering the best possible experience to our members we continuously evaluate and refine our APIs. In this regard, we will be imposing data restrictions on the ugcPosts API, Social Actions API, and Profile API effective September 15th, 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Snapshot API Data Restrictions",
+      "Anchor": "compliance-snapshot-api-data-restrictions",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Snapshot API Data Restrictions",
+      "Anchor": "compliance-snapshot-api-data-restrictions",
+      "SectionPath": [],
+      "Text": "The following restrictions apply only to access_tokens with r_compliance permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/ugcPosts/{encodedURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "Documentation: Get UGC Posts by URN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "API will return ugcPost data only if one of following conditions are met",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "The author of the post is the regulated member whose access_token is being used.\nPost mentions the regulated member whose access_token is being used.\nIf it is a company post (author = companyPage), The regulated member (whose access_token is being used) is the admin of the company page which authored the post.\nThe post mentions a company the regulated member (whose access_token is being used) is an admin of.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "For API call which do not meet the above conditions, the API will return 403 FORBIDDEN with the following sample response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "Response Status Code: 403 FORBIDDEN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "1. Get UGC Posts by URN",
+      "Anchor": "1-get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "1. Get UGC Posts by URN"
+      ],
+      "Text": "{\n\u0022message\u0022: \u0022Not enough permissions to access urn:li:ugcPost:\u003CugcPostId\u003E\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Find UGC Posts by Authors",
+      "Anchor": "2-find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "2. Find UGC Posts by Authors"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({author})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Find UGC Posts by Authors",
+      "Anchor": "2-find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "2. Find UGC Posts by Authors"
+      ],
+      "Text": "Documentation: Find UGC Posts by Authors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Find UGC Posts by Authors",
+      "Anchor": "2-find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "2. Find UGC Posts by Authors"
+      ],
+      "Text": "This API returns all the posts authored by the entity (author) specified as a queryParam in the API. If the author specified in the request is a LinkedIn user, i.e. a personUrn, the API returns all the posts authored by the LinkedIn User. If the author specified in the request is a Company Page i.e. an organizationURN, the API returns all the posts authored by the company page, also known as Company Posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Find UGC Posts by Authors",
+      "Anchor": "2-find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "2. Find UGC Posts by Authors"
+      ],
+      "Text": "The data restrictions would allow developers to query posts authored by the regulated member (whose access_token is used) or authored by a company page the regulated member is an admin of.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Find UGC Posts by Authors",
+      "Anchor": "2-find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "2. Find UGC Posts by Authors"
+      ],
+      "Text": "API will return a list of ugcPost data which satisfy the following conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Find UGC Posts by Authors",
+      "Anchor": "2-find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "2. Find UGC Posts by Authors"
+      ],
+      "Text": "If the author specified in the request is a personURN, API will return ugcPosts authored by the personURN only if the personURN is of the regulated member (whose access_token is being used), else return an empty list.\n\nIf the author specified in the request is an organizationURN, API will return the company posts only if the regulated member is an admin of the company page, else return an empty list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Find UGC Posts by Container Entities",
+      "Anchor": "3-find-ugc-posts-by-container-entities",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "3. Find UGC Posts by Container Entities"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/ugcPosts?q=containerEntities\u0026containerEntities=List(groupURN)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Find UGC Posts by Container Entities",
+      "Anchor": "3-find-ugc-posts-by-container-entities",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "3. Find UGC Posts by Container Entities"
+      ],
+      "Text": "Documentation: Find UGC Posts by Container Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Find UGC Posts by Container Entities",
+      "Anchor": "3-find-ugc-posts-by-container-entities",
+      "SectionPath": [
+        "Restrictions on /ugcPosts API",
+        "3. Find UGC Posts by Container Entities"
+      ],
+      "Text": "This API returns all the posts created inside a LinkedIn Group (groupURN).\nAccess to this API would be removed. All posts created by a regulated member including group posts are covered in #2 Find UGC Posts by Authors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/socialActions/{postURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "Documentation: Retrieve a Summary of Social Actions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "API will return a summary of social actions (reactions and comment) only if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "The post is authored by the regulated member (whose access_token is being used).\nThe regulated member (whose access_token is being used) is mentioned in the root post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "For API call which do not meet the above conditions, the API will return 403 FORBIDDEN with the following sample response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "Response Status Code: 403 FORBIDDEN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "1. Retrieve a Summary of Social Actions",
+      "Anchor": "1-retrieve-a-summary-of-social-actions",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "1. Retrieve a Summary of Social Actions"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022member is unauthorized on urn:li:ugcPost:7069273348039405569\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/socialActions/{postURN}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "Documentation: Retrieve Comments on a post",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/socialActions/{postURN}/likes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "Documentation: Retrieve Likes on a post",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "API will return a list of comments / likes on a post only if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "The root post is authored by the regulated member (whose access_token is being used).\nThe regulated member (whose access_token is being used) is mentioned in the root post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "For API call which do not meet the above conditions, the API will return 403 FORBIDDEN with the following sample response",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "Response Status Code: 403 FORBIDDEN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "2. Retrieve Comments / Likes on a post",
+      "Anchor": "2-retrieve-comments--likes-on-a-post",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "2. Retrieve Comments / Likes on a post"
+      ],
+      "Text": "{\n    \u0022message\u0022: \u0022member is unauthorized on urn:li:ugcPost:7069273348039405569\u0022,\n    \u0022status\u0022: 403\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Retrieve a Comment",
+      "Anchor": "3-retrieve-a-comment",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "3. Retrieve a Comment"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/socialActions/{postURN}/comments/{commentId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Retrieve a Comment",
+      "Anchor": "3-retrieve-a-comment",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "3. Retrieve a Comment"
+      ],
+      "Text": "Documentation: Retrieve a Comment",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Retrieve a Comment",
+      "Anchor": "3-retrieve-a-comment",
+      "SectionPath": [
+        "Restrictions on /socialActions API",
+        "3. Retrieve a Comment"
+      ],
+      "Text": "Access to this API would be removed. All comments on a regulated member\u2019s post is captured in #2 Retrieve Comments / Likes on a post. Also comments made by a regulated member are captured in /complianceEvents API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a regulated member\u2019s profile",
+      "Anchor": "1-retrieve-a-regulated-members-profile",
+      "SectionPath": [
+        "Restrictions on /people API",
+        "1. Retrieve a regulated member\u2019s profile"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/me",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a regulated member\u2019s profile",
+      "Anchor": "1-retrieve-a-regulated-members-profile",
+      "SectionPath": [
+        "Restrictions on /people API",
+        "1. Retrieve a regulated member\u2019s profile"
+      ],
+      "Text": "Documentation: Retrieve a regulated member\u2019s profile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "1. Retrieve a regulated member\u2019s profile",
+      "Anchor": "1-retrieve-a-regulated-members-profile",
+      "SectionPath": [
+        "Restrictions on /people API",
+        "1. Retrieve a regulated member\u2019s profile"
+      ],
+      "Text": "NO CHANGES to /me API. /me API returns FULL PROFILE details of the regulated member (whose access_token is being used).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve other Member\u2019s profile",
+      "Anchor": "2-retrieve-other-members-profile",
+      "SectionPath": [
+        "Restrictions on /people API",
+        "2. Retrieve other Member\u2019s profile"
+      ],
+      "Text": "API: GET https://api.linkedin.com/v2/people/(id:{personURN})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve other Member\u2019s profile",
+      "Anchor": "2-retrieve-other-members-profile",
+      "SectionPath": [
+        "Restrictions on /people API",
+        "2. Retrieve other Member\u2019s profile"
+      ],
+      "Text": "Documentation: Retrieve a regulated member\u2019s profile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "2. Retrieve other Member\u2019s profile",
+      "Anchor": "2-retrieve-other-members-profile",
+      "SectionPath": [
+        "Restrictions on /people API",
+        "2. Retrieve other Member\u2019s profile"
+      ],
+      "Text": "API will return only the basic profile fields (Field list) for the LinkedIn User.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

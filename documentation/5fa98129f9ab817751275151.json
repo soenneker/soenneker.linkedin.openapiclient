@@ -1,0 +1,401 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+  "Title": "LinkedIn Marketing API Versioning",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/data-storage-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/developer-ai-policy",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/tips-to-get-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Versioning",
+      "Anchor": "linkedin-marketing-api-versioning",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Marketing API Versioning",
+      "Anchor": "linkedin-marketing-api-versioning",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "LinkedIn Marketing APIs use versioning to provide stable and reliable integrations, even as new features are added. Versioning helps you plan, test, and update your integrations seamlessly, ensuring your applications keep working as the APIs evolve.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Latest Version",
+      "Anchor": "latest-version",
+      "SectionPath": [
+        "Latest Version"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version Name",
+        "Version Header"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "September 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202609",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u2019s changing",
+      "Anchor": "whats-changing",
+      "SectionPath": [
+        "What\u2019s changing"
+      ],
+      "Text": "LinkedIn\u2019s Marketing APIs first versioned API release was June 2022 under a new base path: https://api.linkedin.com/rest/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u2019s changing",
+      "Anchor": "whats-changing",
+      "SectionPath": [
+        "What\u2019s changing"
+      ],
+      "Text": "Our versioned API releases follow a monthly cycle. These API versions are supported and stable for a minimum of one year before sunset. The LinkedIn Marketing API Program supports versioning so API partners can release changes over time. This document explains how to use versioned APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why are our APIs versioned?",
+      "Anchor": "why-are-our-apis-versioned",
+      "SectionPath": [
+        "What\u2019s changing",
+        "Why are our APIs versioned?"
+      ],
+      "Text": "LinkedIn continuously improves our products, which means our APIs also evolve. We want our API partners to trust in stable integrations and reliable change schedules, so they can plan and execute more effectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How your API client should use versioning",
+      "Anchor": "how-your-api-client-should-use-versioning",
+      "SectionPath": [
+        "What\u2019s changing",
+        "How your API client should use versioning"
+      ],
+      "Text": "HTTP headers are used for clients to indicate which API version implementation they expect. Include a request header with the key \u201CLinkedin-Version\u201D and set the value to the version (format: YYYYMM) to correspond with the documentation version you are referencing. Example: \u201CLinkedin-Version: 202601\u201D would indicate that you are using the version published in the month of January.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How your API client should use versioning",
+      "Anchor": "how-your-api-client-should-use-versioning",
+      "SectionPath": [
+        "What\u2019s changing",
+        "How your API client should use versioning"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adCampaigns\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: 202601\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:123212321\u0022,\n    \u0022audienceExpansionEnabled\u0022: false,\n    }\u0027\n...",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Headers",
+      "Anchor": "version-headers",
+      "SectionPath": [
+        "What\u2019s changing",
+        "Version Headers"
+      ],
+      "Text": "In many cases, the URL resource paths your integration uses may not change across versions, but the behavior of the individual API methods can change. New parameters or fields may be available on the response schemas.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Headers",
+      "Anchor": "version-headers",
+      "SectionPath": [
+        "What\u2019s changing",
+        "Version Headers"
+      ],
+      "Text": "The API changes must include the Version Header for the version (release) that needs to be adopted. For the January 2026 Release, the versioned header would be: \u0022Linkedin-Version\u0022: \u0022202601\u0022. Version headers are tied to the LinkedIn Marketing Solutions release year and month. The following table includes examples of version headers for recent versions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Version Headers",
+      "Anchor": "version-headers",
+      "SectionPath": [
+        "What\u2019s changing",
+        "Version Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version",
+        "Version Header Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "November 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Linkedin-Version\u0022: \u0022202511\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "October 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Linkedin-Version\u0022: \u0022202510\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "September 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u0022Linkedin-Version\u0022: \u0022202509\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioned API Docs",
+      "Anchor": "versioned-api-docs",
+      "SectionPath": [
+        "What\u2019s changing",
+        "Versioned API Docs"
+      ],
+      "Text": "Each version of the LinkedIn Marketing API Program has distinct and comprehensive documentation covering all supported APIs.\nEach version includes a changelog that lists all changes from the previous version, indicating which resources have been updated or added. Initially, users have the option on each page in the marketing folder to view:\nVersioned content: \u201CMarketing {Month} 202X\u201D. The following image is an example of how to select the versioned content in the documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Cadence",
+      "Anchor": "version-cadence",
+      "SectionPath": [
+        "Version Cadence"
+      ],
+      "Text": "LinkedIn Marketing API Program publishes new versions monthly, and those versions are supported for a minimum of one (1) year.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Cadence",
+      "Anchor": "version-cadence",
+      "SectionPath": [
+        "Version Cadence"
+      ],
+      "Text": "Individual API resources can evolve at different times (e.g. a reporting API may be updated one quarter a year). Each API resource has its own migration guide to help you navigate major updates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version Cadence",
+      "Anchor": "version-cadence",
+      "SectionPath": [
+        "Version Cadence"
+      ],
+      "Text": "You can choose to integrate with the newest API changes as they are released or wait until you are ready - ensure it is within the one year change API support window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "No unversioned calls",
+      "Anchor": "no-unversioned-calls",
+      "SectionPath": [
+        "Expectations",
+        "No unversioned calls"
+      ],
+      "Text": "LinkedIn expects every versioned API call to specify a version; the latest version is not applied by default. It is important to us that customers have the best possible experience with LinkedIn integrations. It is likely that customers have a great experience when the integration is being regularly maintained (at least once per year).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Change Exceptions",
+      "Anchor": "breaking-change-exceptions",
+      "SectionPath": [
+        "Expectations",
+        "Breaking Change Exceptions"
+      ],
+      "Text": "At times, LinkedIn may need to change APIs within the supported stable window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Change Exceptions",
+      "Anchor": "breaking-change-exceptions",
+      "SectionPath": [
+        "Expectations",
+        "Breaking Change Exceptions"
+      ],
+      "Text": "LinkedIn reserves the right to release a patch version to any API if required for any critical security, privacy issues, or bug fixes. While the likelihood of these scenarios is minimal, we work closely with partners to minimize the impact of any breaking changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which versions can I use?",
+      "Anchor": "which-versions-can-i-use",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "Which versions can I use?"
+      ],
+      "Text": "Use any version that has not been sunset. The documentation reflects all available API versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I migrate from an older API version to a later version?",
+      "Anchor": "how-do-i-migrate-from-an-older-api-version-to-a-later-version",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I migrate from an older API version to a later version?"
+      ],
+      "Text": "To migrate your app from an older version to a later version, simply update the older version\u2018s YYYYMM formatted value in the header to the newer version\u2019s value. For example, here\u2019s how you can migrate from the January 2025 version to the January 2026 version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How do I migrate from an older API version to a later version?",
+      "Anchor": "how-do-i-migrate-from-an-older-api-version-to-a-later-version",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I migrate from an older API version to a later version?"
+      ],
+      "Text": "-H \u2018Linkedin-Version: 202501\u2019  to  -H \u2018Linkedin-Version: 202601\u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I migrate from an older API version to a later version?",
+      "Anchor": "how-do-i-migrate-from-an-older-api-version-to-a-later-version",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I migrate from an older API version to a later version?"
+      ],
+      "Text": "Reasons for migrating to a later version include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I migrate from an older API version to a later version?",
+      "Anchor": "how-do-i-migrate-from-an-older-api-version-to-a-later-version",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "How do I migrate from an older API version to a later version?"
+      ],
+      "Text": "Avoiding service disruptions; it is important to upgrade to a newer supported version before the older version is no longer supported. We are committed to supporting each version for a minimum of one year.\nUtilizing new features that are not accessible in the older version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which version of the API should I migrate to?",
+      "Anchor": "which-version-of-the-api-should-i-migrate-to",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "Which version of the API should I migrate to?"
+      ],
+      "Text": "While you can migrate to any later version of the API, migrating to the latest version comes with the following benefits:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which version of the API should I migrate to?",
+      "Anchor": "which-version-of-the-api-should-i-migrate-to",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "Which version of the API should I migrate to?"
+      ],
+      "Text": "You can take advantage of all of our latest features.\nYou have the option to wait up to one year before having to migrate again.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens if the Version Header is missing in the request?",
+      "Anchor": "what-happens-if-the-version-header-is-missing-in-the-request",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What happens if the Version Header is missing in the request?"
+      ],
+      "Text": "An error response is returned when the version header is missing in the request. Refer to the sample response here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens if a deprecated Version Header is used in the request?",
+      "Anchor": "what-happens-if-a-deprecated-version-header-is-used-in-the-request",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "What happens if a deprecated Version Header is used in the request?"
+      ],
+      "Text": "An error response is returned when the version header is deprecated (e.g., 202401). Refer to the sample response here.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

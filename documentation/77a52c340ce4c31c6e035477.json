@@ -1,0 +1,170 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+  "Title": "Background Picture Fields",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-image",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/certification",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/course",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/education",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/honor",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/im",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/language",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/organization",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/patent",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/phone-number",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/picture-info",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/project",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/publication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/skill",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/test-score",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-experience",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/volunteering-interest",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/website"
+  ],
+  "Blocks": [
+    {
+      "Kind": "table",
+      "Section": "Background Picture Fields",
+      "Anchor": "background-picture-fields",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch timestamp corresponding to the creation of the picture. Represented in milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch timestamp corresponding to the deletion of the picture. Represented in milliseconds. Optional.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "displayImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The digitalmediaAsset URN of the display image.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch timestamp corresponding to the last modification of the picture. Represented in milliseconds.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "originalImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The digitalmediaAsset URN of the original image. Will only appear in self-view.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "photoFilterEditInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional information object on the photo filter operations applied to the background picture.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Background Picture Fields",
+      "Anchor": "background-picture-fields",
+      "SectionPath": [],
+      "Text": "To decorate the digitalMediaAsset URN from displayImage or originalImage , you will use parameter projection that will include ~:playableStreams . For more information, see here about digital media asset URNs . See below for an example of Profile API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Background Picture Fields",
+      "Anchor": "background-picture-fields",
+      "SectionPath": [],
+      "Text": "GET https://api.linkedin.com/v2/me?projection=(id,backgroundPicture(displayImage~digitalmediaAsset:playableStreams))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "profile api sample responses",
+      "Anchor": "profile-api-sample-responses",
+      "SectionPath": [
+        "profile api sample responses"
+      ],
+      "Text": "{\n   \u0022backgroundPicture\u0022:{\n      \u0022displayImage\u0022:\u0022urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ\u0022,\n      \u0022displayImage~\u0022:{\n         \u0022elements\u0022:[\n            {\n               \u0022artifact\u0022:\u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100)\u0022,\n               \u0022authorizationMethod\u0022:\u0022PUBLIC\u0022,\n               \u0022data\u0022:{\n                  \u0022com.linkedin.digitalmedia.mediaartifact.StillImage\u0022:{\n                     \u0022storageSize\u0022:{\n                        \u0022width\u0022:100,\n                        \u0022height\u0022:100\n                     },\n                     \u0022storageAspectRatio\u0022:{\n                        \u0022widthAspect\u0022:1,\n                        \u0022heightAspect\u0022:1,\n                        \u0022formatted\u0022:\u00221.00:1.00\u0022\n                     },\n                     \u0022mediaType\u0022:\u0022image/jpeg\u0022,\n                     \u0022rawCodecSpec\u0022:{\n                        \u0022name\u0022:\u0022jpeg\u0022,\n                        \u0022type\u0022:\u0022image\u0022\n                     },\n                     \u0022displaySize\u0022:{\n                        \u0022uom\u0022:\u0022PX\u0022,\n                        \u0022width\u0022:100,\n                        \u0022height\u0022:100\n                     },\n                     \u0022displayAspectRatio\u0022:{\n                        \u0022widthAspect\u0022:1,\n                        \u0022heightAspect\u0022:1,\n                        \u0022formatted\u0022:\u00221.00:1.00\u0022\n                     }\n                  }\n               },\n               \u0022identifiers\u0022:[\n                  {\n                     \u0022identifier\u0022:\u0022https://media.licdn.com/dms/image/C4D03AQGsitRwG8U8ZQ/profile-displayphoto-shrink_100_100/0?e=1526940000\u0026v=alpha\u0026t=12345\u0022,\n                     \u0022file\u0022:\u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C4D03AQGsitRwG8U8ZQ,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100,0)\u0022,\n                     \u0022index\u0022:0,\n                     \u0022mediaType\u0022:\u0022image/jpeg\u0022,\n                     \u0022identifierExpiresInSeconds\u0022:1526940000\n                  }\n               ]\n            }\n         ],\n         \u0022paging\u0022:{\n            \u0022count\u0022:10,\n            \u0022start\u0022:0,\n            \u0022links\u0022:[\n\n            ]\n         }\n      }\n   },\n   \u0022id\u0022:\u0022yrZCpj2ZYQ\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "profile api sample responses",
+      "Anchor": "profile-api-sample-responses",
+      "SectionPath": [
+        "profile api sample responses"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "profile api sample responses",
+      "Anchor": "profile-api-sample-responses",
+      "SectionPath": [
+        "profile api sample responses"
+      ],
+      "Text": "Retrieving media via the LinkedIn CDN requires converting URNs to URLs as described in the examples below using stock photos provided by LinkedIn.\nIf the media-typed URN starts with urn:li:media:, you will need to replace that with https://media.licdn.com/mpr/mpr . For example, urn:li:media:/gcrc/dms/image/ABC/background-displayphoto-shrink_800_800/0?e=1525021200\u0026v=alpha\u0026t=abc123 would translate to https://media.licdn.com/mpr/mpr/gcrc/dms/image/ABC/background-displayphoto-shrink_800_800/0?e=1525021200\u0026v=alpha\u0026t=abc123.\nIf the media-typed URN starts with urn:li:scds:, you will need to replace that with https://static.licdn.com/scds/common/u/. For example, urn:li:scds:images/apps/profile/topcard_backgrounds/texture_bokeh_1400x425.jpg would translate to https://static.licdn.com/scds/common/u/images/apps/profile/topcard_backgrounds/texture_bokeh_1400x425.jpg.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

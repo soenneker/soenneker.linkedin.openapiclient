@@ -1,0 +1,1413 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control",
+  "Title": "Organization Access Control",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [],
+      "Text": "The Organization Access Control API returns the organization\u2019s access control information, such as the list of admins authorized to access the organization page data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Access Control",
+      "Anchor": "organization-access-control",
+      "SectionPath": [],
+      "Text": "Finder roleAssignee to get an access control information by role assignee.\nFinder organization to get an access control information by organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and reporting data (including follower, visitor, and content analytics). Restricted to organizations where the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR,ANALYST",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR,",
+              "ANALYST"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity that performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "key.roleAssignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity to that an access control is assigned for an organization. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationAccessControl",
+      "Anchor": "organizationaccesscontrol",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "OrganizationAccessControl"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationAccessControl",
+      "Anchor": "organizationaccesscontrol",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "OrganizationAccessControl"
+      ],
+      "Text": "Either of the created / lastmodified / deleted fields will always be present in the response schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationAccessControl",
+      "Anchor": "organizationaccesscontrol",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "OrganizationAccessControl"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAccessControlKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationaccesscontrolkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The key of the Organization Access Control entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RoleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of the role. Value enums include: APPROVEDREJECTEDREQUESTEDREVOKED",
+            "Links": [],
+            "Values": [
+              "APPROVED",
+              "REJECTED",
+              "REQUESTED",
+              "REVOKED"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "derived",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field will be set to false if this access control was created and stored normally, and set to true if it\u0027s been derived from the roleAssignee\u0027s other permissions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SubSchemas",
+      "Anchor": "subschemas",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "SubSchemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time stamp of when the resource/association/sub-resource moved into the specific lifecycle stage represented by this AuditEvent.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g, a personUrn, organizationalPageUrn, etc.) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SubSchemas",
+      "Anchor": "subschemas",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "SubSchemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "roleAssignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity to which an access control is assigned to for an organization. For example urn:li:person:123.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of an organization for which a role assignee is assigned a role.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RoleScope",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#rolescope"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The scope in which this role assignment is valid. Some role assignments might not have any scope but that does not imply that the assignment is valid in all scopes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the role that a role assignee is assigned to for an organization. Value enums include: ADMINISTRATORRECRUITING_POSTERDIRECT_SPONSORED_CONTENT_POSTERLEAD_CAPTURE_ADMINISTRATORLEAD_GEN_FORMS_MANAGERANALYSTCONTENT_ADMINISTRATORCURATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "RECRUITING_POSTER",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "LEAD_CAPTURE_ADMINISTRATOR",
+              "LEAD_GEN_FORMS_MANAGER",
+              "ANALYST",
+              "CONTENT_ADMINISTRATOR",
+              "CURATOR"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SubSchemas",
+      "Anchor": "subschemas",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "SubSchemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "businessManagerAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BusinessManagerAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The scope within which the role assignment is valid is a business manager account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SubSchemas",
+      "Anchor": "subschemas",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Schema",
+        "SubSchemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RoleScope",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#rolescope"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The role scope to filter by Null or empty matches results that have no scope.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "enabled",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Need this otherwise the rest.li encoding for query params will exclude the whole ScopeFilter object if the scope field is set to null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER RoleAssignee",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER RoleAssignee",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationAcls?q=roleAssignee\u0026scopeFilter=(enabled:false)\u0026role=(value:ADMINISTRATOR)\u0026state=(value:APPROVED)\u0026start=1\u0026count=3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER RoleAssignee",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationAcls?q=roleAssignee\u0026scopeFilter=(enabled:false)\u0026role=(value:ADMINISTRATOR)\u0026state=(value:APPROVED)\u0026start=1\u0026count=3\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER RoleAssignee",
+        "Sample Request"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER RoleAssignee",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 1,\n    \u0022count\u0022: 3,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationAcls?q=roleAssignee\u0026role=(value:ADMINISTRATOR)\u0026start=0\u0026count=3\u0026scopeFilter=(enabled:false)\u0026state=(value:APPROVED)\u0022\n      },\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationAcls?q=roleAssignee\u0026role=(value:ADMINISTRATOR)\u0026start=4\u0026count=3\u0026scopeFilter=(enabled:false)\u0026state=(value:APPROVED)\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1679544093786\n      },\n      \u0022key\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022organization\u0022: \u0022urn:li:organization:1000\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1607407218148\n      }\n    },\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1677125782320\n      },\n      \u0022key\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022organization\u0022: \u0022urn:li:organization:9095\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1677125782320\n      }\n    },\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1607407462883\n      },\n      \u0022key\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022organization\u0022: \u0022urn:li:organization:7039\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1607407462883\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER RoleAssignee",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 1,\n    \u0022count\u0022: 3,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationAcls?q=roleAssignee\u0026role=(value:ADMINISTRATOR)\u0026start=0\u0026count=3\u0026scopeFilter=(enabled:false)\u0026state=(value:APPROVED)\u0022\n      },\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022next\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationAcls?q=roleAssignee\u0026role=(value:ADMINISTRATOR)\u0026start=4\u0026count=3\u0026scopeFilter=(enabled:false)\u0026state=(value:APPROVED)\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1679544093786\n      },\n      \u0022key\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:1000\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1607407218148\n      }\n    },\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1677125782320\n      },\n      \u0022key\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:90955\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1677125782320\n      }\n    },\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1607407462883\n      },\n      \u0022key\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:7039\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1607407462883\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder function to retrieve data from. Finder Name: roleAssignee",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=roleAssignee",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific roles.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "role=(value:ADMINISTRATOR)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific role states.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state=(value:APPROVED)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scopeFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ScopeFilter",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#scopefilter"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a scope to filter results for the organization access control resources.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "scopeFilter=(enabled:false,roleScope:urn:li:businessManagerAccount:123)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER Organization",
+      "Anchor": "finder-organization",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FINDER Organization",
+      "Anchor": "finder-organization",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization"
+      ],
+      "Text": "If you do not yet know which organizations you are eligible for, use OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of OrganizationRoleAuthorizationActionType.ADMINISTRATOR_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationAcls?q=organization\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0026scopeFilter=(enabled:false)\u0026role=(value:ADMINISTRATOR)\u0026state=(value:APPROVED)\u0026start=1\u0026count=3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationAcls?q=organization\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0026scopeFilter=(enabled:false)\u0026role=(value:ADMINISTRATOR)\u0026state=(value:APPROVED)\u0026start=1\u0026count=3\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 1,\n    \u0022count\u0022: 3,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationAcls?q=organization\u0026role=(value:ADMINISTRATOR)\u0026organization=urn%3Ali%3Aorganization%3A7039\u0026start=0\u0026count=3\u0026scopeFilter=(enabled:false)\u0026state=(value:APPROVED)\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1701230750571\n      },\n      \u0022key\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:syabJj\u0022,\n        \u0022organization\u0022: \u0022urn:li:organization:7039\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1701230750571\n      }\n    },\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1607407462883\n      },\n      \u0022key\u0022: {\n        \u0022roleAssignee\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022organization\u0022: \u0022urn:li:organization:7039\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:syabJ\u0022,\n        \u0022time\u0022: 1607407462883\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "FINDER Organization",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 1,\n    \u0022count\u0022: 3,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationAcls?q=organization\u0026role=(value:ADMINISTRATOR)\u0026organization=urn%3Ali%3Aorganization%3A7039\u0026start=0\u0026count=3\u0026scopeFilter=(enabled:false)\u0026state=(value:APPROVED)\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1701230750571\n      },\n      \u0022key\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:7039\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1701230750571\n      }\n    },\n    {\n      \u0022state\u0022: \u0022APPROVED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1607407462883\n      },\n      \u0022key\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:7039\u0022,\n        \u0022role\u0022: \u0022ADMINISTRATOR\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1607407462883\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder function to retrieve data from. Finder name: organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=organization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of an organization for which a role assignee is assigned a role.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn:li:organization:{organization_id}",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "role",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific roles.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "role=(value:ADMINISTRATOR)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Limit results to specific role states.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "state=(value:APPROVED)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scopeFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ScopeFilter",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#scopefilter"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Specifies a scope to filter results for the organization access control resources.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "scopeFilter=(enabled:false,roleScope:urn:li:businessManagerAccount:123)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Retrieve Organization Access Control Data",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity ID is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

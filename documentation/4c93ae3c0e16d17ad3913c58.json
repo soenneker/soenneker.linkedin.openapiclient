@@ -1,0 +1,1249 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/",
+  "Title": "Live Events APIs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-content-access",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-spontaneous-migration",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Use the Live Events API to stream and manage Live Events with your LinkedIn network. The Live Events API offers the following functionality:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Register the Live Event.\nIngest RTMP(s) content.\nCreate a Post to share your Live Event with your LinkedIn network.\nEnd the Live Event.\nCheck the Live Event status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "New members authenticating with your developer application for the first time will need to follow the Authenticating with OAuth 2.0 Guide. When requesting an authorization code in Step 2 of the OAuth 2.0 Guide, make sure to request the minimum set of permission scopes required for your use case.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "Before authenticating with OAuth 2.0, determine if your use case permits creating live events for the member, or a company page. Combining both member and company page permission scopes within a single authentication request is not permitted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authenticating Members",
+      "Anchor": "authenticating-members",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members"
+      ],
+      "Text": "LinkedIn Live is currently a beta feature. As a broadcaster, to apply for access see Applying for Live Events Broadcasting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Live Events",
+      "Anchor": "member-live-events",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members",
+        "Member Live Events"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_member_live",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ access to a member\u0027s live events. This permission scope allows you to check the status of your Live Event, as well as retrieve the Live Event playable streams.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_member_live",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WRITE access to a member\u0027s live events. This permission scope allows you to upload and manage your Live Event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_liteprofile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ access to a member\u0027s lite profile. This permission scope permits access to retrieve the user\u0027s ID via the Profile API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/lite-profile",
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Company Page Live Events",
+      "Anchor": "company-page-live-events",
+      "SectionPath": [
+        "Getting Started",
+        "Authenticating Members",
+        "Company Page Live Events"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_organization_live",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ access to your organization\u0027s live events. This permission scope allows you to check the status of your Live Event, as well as retrieve the Live Event playable streams.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_live",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "WRITE access to your organization\u0027s live evends. This permission scope allows you to upload and manage your Live Events.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "READ access to a member\u0027s organization or company page. This permission scope permits access to retrieve the organization ID via the Organization Access Control API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Tiering",
+      "Anchor": "tiering",
+      "SectionPath": [
+        "Getting Started",
+        "Tiering"
+      ],
+      "Text": "The Live Events API Program is available in two tiers: Development and Standard Tiers. The intent of the Development Tier is to introduce Developers to Live Events APIs, giving you limited access to create and view Live Events on LinkedIn. A prerequisite to requesting access to the Standard Tier will require a demonstration from your platform, showcasing each of the Live Events certification test cases. Access to both the Development and Standard Tiers are available through managing your developer applications Products at developer.linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tier",
+      "Anchor": "development-tier",
+      "SectionPath": [
+        "Getting Started",
+        "Tiering",
+        "Development Tier"
+      ],
+      "Text": "The Developement Tier contains access to all APIs and services of the full Standard Tier, with a restriction on the total number of API calls your developer application can request within a 24 hour period. Generally, each Live Events API is limited to 100 API requests per day -- giving you the freedom to test and develop against LinkedIn APIs for your developer application. The intent of the Development Tier is to give you a preview of the Live Events Program, and to demonstrate your proficiency in integrating with LinkedIn before being elevated to the Standard Tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Tier",
+      "Anchor": "standard-tier",
+      "SectionPath": [
+        "Getting Started",
+        "Tiering",
+        "Standard Tier"
+      ],
+      "Text": "When you are ready to launch your LinkedIn Live Events integration to your broadcasters, you must request access to the Standard Tier. We will take this time to review your integration with LinkedIn, and require a demonstration video showcasing your fulfillment of our Certification Test Cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Register your Live Event using the liveAssetActions API with the action query parameter to register.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Newly registered Live Events will be discarded if ingestion has not started within 1 hour.\nAfter ingestion has started, a timeout will occur if the ingest URL has not received any data within 120 seconds.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person or Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the member or organization registering the asset. To identify your Person URN, use the Lite Profile API and append the ID returned to \u0022urn:li:person:\u0022. To identify your Organization URN, use the Organization Access Control API. You must be the Administrator of your Organization in order to post to your Organization Page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recipes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AssetRecipe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines the asset media type. The live event asset media type is always urn:li:digitalmediaRecipe:feedshare-live-video.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "region",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The region specifies the closest region your asset should be registered to. Possible values include: 1. WEST_US (West US)2. EAST_US_NORTH (Northeastern US)3. EAST_US_SOUTH (Southeastern US)4. CENTRAL_US (Central US)5. SOUTH_CENTRAL_US (South Central US)6. SOUTH_AMERICA (South America)7. NORTH_EUROPE (North Europe)8. WEST_EUROPE (West Europe)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "autoCaptionLanguageTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The BCP-47 language tag of the auto captions to generated for the live event. Use \u0022en-US\u0022 for English. Remove this parameter if you do not want auto captions added.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Use decoration syntax to retrieve the Person ID within a single request.\nGET https://api.linkedin.com/v2/me?projection=(id)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Register",
+      "Anchor": "register",
+      "SectionPath": [
+        "Register"
+      ],
+      "Text": "Use decoration syntax to retrieve the Organization URN within a single request.\nhttps://api.linkedin.com/v2/organizationAcls?q=roleAssignee\u0026projection=(elements*(organization~))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Register",
+        "API Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveAssetActions?action=register",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Register",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022registerLiveEventRequest\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:12345\u0022,\n        \u0022recipes\u0022: [\u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022],\n        \u0022region\u0022: \u0022WEST_US\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Register",
+        "Sample Request Body"
+      ],
+      "Text": "A successful response will include an array of ingestUrls where RTMPS is the preferred ingestion protocol. Secondary ingest URLs are available in the event the primary ingest URL is unavailable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Register",
+        "Sample Request Body"
+      ],
+      "Text": "Ingestion needs to begin before creating your Post on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Register",
+        "Sample Request Body"
+      ],
+      "Text": "The asset ID will be used in subsequent requests to create a Post, end the Live Event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Register",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022value\u0022: {\n        \u0022ingestUrls\u0022: [\n            {\n                \u0022ingestProtocol\u0022: \u0022RTMP\u0022,\n                \u0022url\u0022: \u0022rtmp://12345.channel.media.azure.net:1935/live/12345\u0022\n            },\n            {\n                \u0022ingestProtocol\u0022: \u0022RTMP\u0022,\n                \u0022url\u0022: \u0022rtmp://12345.channel.media.azure.net:1936/live/12345\u0022\n            },\n            {\n                \u0022ingestProtocol\u0022: \u0022RTMPS\u0022,\n                \u0022url\u0022: \u0022rtmps://12345.channel.media.azure.net:2935/live/12345\u0022\n            },\n            {\n                \u0022ingestProtocol\u0022: \u0022RTMPS\u0022,\n                \u0022url\u0022: \u0022rtmps://12345.channel.media.azure.net:2936/live/12345\u0022\n            }\n        ],\n        \u0022previewUrls\u0022: [\n            \u0022https://12345-vectoreimedia2.preview-usw22.channel.media.azure.net/e57e889f-aaaa-bbbb-cccc-c337afacf31a/preview.ism/manifest\u0022\n        ],\n        \u0022mediaArtifact\u0022: \u0022urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:12345,urn:li:digitalmediaMediaArtifactClass:feedshare-live-liveinput)\u0022,\n        \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:12345\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Register",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Register",
+        "Sample Response Body"
+      ],
+      "Text": "We recommend using RTMPS whenever available. If you would like to take advantage of a backup stream, a separate time-synced hardware encoder can be used to stream to the secondary RTMP(s) urls provided.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Ingest Requirements",
+      "Anchor": "live-ingest-requirements",
+      "SectionPath": [
+        "Live Ingest Requirements"
+      ],
+      "Text": "Use the following specifications when encoding your Live Event:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Live Ingest Requirements",
+      "Anchor": "live-ingest-requirements",
+      "SectionPath": [
+        "Live Ingest Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "max 4 hours. Live Events may not exceed 4 hour limit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Aspect Ratio",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "16:9",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Resolution",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "max 1080p",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Frame Rate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "max 30 fps",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Key Frame",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "every 2 seconds (60 frames)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Bitrate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "max 6 mbps video; max 128 kbps audio, 48 khz sample rate",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Encoding",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "H264 video, AAC audio",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Protocol",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RTMP/RTMPS (preferred)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Ingest Requirements",
+      "Anchor": "live-ingest-requirements",
+      "SectionPath": [
+        "Live Ingest Requirements"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Ingest Requirements",
+      "Anchor": "live-ingest-requirements",
+      "SectionPath": [
+        "Live Ingest Requirements"
+      ],
+      "Text": "When streaming via RTMP, check firewall and/or proxy settings to confirm that outbound TCP ports 1935 and 1936 are open.\nWhen streaming via RTMPS, check firewall and/or proxy settings to confirm that outbound TCP ports 2935 and 2936 are open.\nFor a complete list of IP ranges required for allowlisting, please refer to Microsoft Azure IP Ranges.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingest and Create a User Generated Content (UGC) Post",
+      "Anchor": "ingest-and-create-a-user-generated-content-ugc-post",
+      "SectionPath": [
+        "Ingest and Create a User Generated Content (UGC) Post"
+      ],
+      "Text": "Using the RTMP or RTMPS ingest URLs from the previous step, you may now begin ingestion of your Live Event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingest and Create a User Generated Content (UGC) Post",
+      "Anchor": "ingest-and-create-a-user-generated-content-ugc-post",
+      "SectionPath": [
+        "Ingest and Create a User Generated Content (UGC) Post"
+      ],
+      "Text": "Before creating the Post, first check if the Live ViEventdeo is ready to be shared on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check Recipe Status",
+      "Anchor": "check-recipe-status",
+      "SectionPath": [
+        "Check Recipe Status"
+      ],
+      "Text": "To check the status of your Live Event, send a GET request to the assets API. After successful ingestion, the recipe status is AVAILABLE, and ready to be included with your UGCPost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check Recipe Status",
+      "Anchor": "check-recipe-status",
+      "SectionPath": [
+        "Check Recipe Status"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Check Recipe Status",
+      "Anchor": "check-recipe-status",
+      "SectionPath": [
+        "Check Recipe Status"
+      ],
+      "Text": "If your asset recipe status has not updated after 15 seconds, there may be an issue with ingestion.\nEnd the current session by sending the action to endLiveEvent, and try again by registering a new Live Event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Check Recipe Status",
+      "Anchor": "check-recipe-status",
+      "SectionPath": [
+        "Check Recipe Status"
+      ],
+      "Text": "",
+      "Headers": [
+        "Recipe Status",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "NEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A newly assigned recipe. This status is only used for new assignments. Transitions to PROCESSING as soon as processing requests are sent.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROCESSING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Some or all of the recipe\u0027s required artifacts are not available and processing is underway to generate the missing artifacts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AVAILABLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All of the recipe\u0027s required artifacts are available.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INCOMPLETE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The artifact is not available because it has been deleted or is in deleting process.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request-1",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/assets/:id",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Check Recipe Status",
+        "Sample API Response"
+      ],
+      "Text": "{\n    \u0022owner\u0022: \u0022urn:li:person:12345\u0022,\n    \u0022resourceRelationships\u0022: [],\n    \u0022serviceRelationships\u0022: [],\n    \u0022recipes\u0022: [\n        {\n            \u0022recipe\u0022: \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022,\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        }\n    ],\n    \u0022mediaTypeFamily\u0022: \u0022VIDEO\u0022,\n    \u0022created\u0022: 1539649231180,\n    \u0022executedActions\u0022: [\n        {\n            \u0022recipe\u0022: \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022,\n            \u0022action\u0022: \u0022PROCESSING\u0022,\n            \u0022createdAt\u0022: 1539649231234\n        },\n        {\n            \u0022recipe\u0022: \u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022,\n            \u0022action\u0022: \u0022PROCESSED\u0022,\n            \u0022createdAt\u0022: 1539649504293\n        }\n    ],\n    \u0022lastModified\u0022: 1539649504293,\n    \u0022id\u0022: \u002212345\u0022,\n    \u0022status\u0022: \u0022ALLOWED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample API Response",
+      "Anchor": "sample-api-response",
+      "SectionPath": [
+        "Check Recipe Status",
+        "Sample API Response"
+      ],
+      "Text": "Use the ugcPosts API to create a Post on LinkedIn, viewable by your LinkedIn network. Include the asset ID returned from registering the Live Event, as well as relevant Post metadata in the request body. Keep in mind that the UGC Post must be created as soon as you begin ingestion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request-2",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request-2",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request-2",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request"
+      ],
+      "Text": "All requests require the following header: X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request",
+        "Request Body Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The author of a share contains either the Person or Organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URNOrganization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lifecycleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines the state of the share. For the purposes of creating a share, the lifecycleState will always be PUBLISHED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specificContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provides additional options while defining the content of the share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ShareContent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#share-content"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines any visibility restrictions for the share. Possible values include: PUBLIC - The share will be viewable by anyone on LinkedIn.",
+            "Links": [],
+            "Values": [
+              "PUBLIC - The share will be viewable by anyone on LinkedIn."
+            ]
+          },
+          {
+            "Text": "MemberNetworkVisibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Share Content",
+      "Anchor": "share-content",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request",
+        "Share Content"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "shareCommentary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provides the primary content for the share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareMediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the media assets attached to the share. Possible values include: LIVE_VIDEO - The share contains live event content.",
+            "Links": [],
+            "Values": [
+              "LIVE_VIDEO - The share contains live event content."
+            ]
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Asset URN returned from registering the live event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ShareMedia[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/#share-media"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Share Media",
+      "Anchor": "share-media",
+      "SectionPath": [
+        "Check Recipe Status",
+        "API Request",
+        "Share Media"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must be configured to READY.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID of the uploaded image asset. If you are uploading an article, this field is not required.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalMediaAsset URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Headers",
+      "Anchor": "request-headers",
+      "SectionPath": [
+        "Check Recipe Status",
+        "Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Check Recipe Status",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:person:abcde12345\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:12345\u0022,\n                    \u0022status\u0022: \u0022READY\u0022\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Join us as we live stream!\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022LIVE_VIDEO\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Check Recipe Status",
+        "Sample Request Body"
+      ],
+      "Text": "A 201 response confirms your UGC Post has been created successfully. To generate a user-friendly URL to your newly created UGC Post, identify the X-RestLi-Id within the response header. Append the header value to https://linkedin.com/feed/update/. The resulting URL should resemble:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Check Recipe Status",
+        "Sample Request Body"
+      ],
+      "Text": "https://www.linkedin.com/video/live/urn:li:ugcPost:1238957139875",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "End the Live Event",
+      "Anchor": "end-the-live-event",
+      "SectionPath": [
+        "End the Live Event"
+      ],
+      "Text": "Once your Live Event has ended, send an action to end for your asset ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request-3",
+      "SectionPath": [
+        "End the Live Event",
+        "API Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveAssetActions?action=end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "End the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5624AQEUbk4_xZgHJQ\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "End the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "End the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "We recommend waiting 10 seconds after your Live Event has ended before submitting the action to endLiveEvent to ensure your broadcast is not interrupted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "End the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "A successful response is indicated by a 200 Response Code.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

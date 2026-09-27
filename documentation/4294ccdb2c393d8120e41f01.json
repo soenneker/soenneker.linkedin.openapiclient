@@ -1,0 +1,385 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+  "Title": "LinkedIn Learning and RiseUp Deep Integration Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/360learning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/absorb",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/adobe",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bealink",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/betterworks",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/blackboard",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/bridge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/continu",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/cornerstone",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/crossknowledge",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/darwinbox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/degreed",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/digital-chalk",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/disprz",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/docebo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/edcast",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/everwise",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/fuse",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/hibob",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/imc",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/infor",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/knowledge-anywhere",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lcvista",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learn365",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnster",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/learnupon",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/lms-integrations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/marc-records",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/meridian",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/mindtickle",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/pathgather",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/riseup",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/saba-linkedin-learning-integration",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/schoox",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/skillsoft",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/sumtotal",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/thrive",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/totara",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/valamis",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workera",
+    "https://learn.microsoft.com/en-us/linkedin/learning/lms-integrations/integration-docs/workramp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/sso-auth/sso-docs/sso-implementation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "RiseUp Deep Integration Functionality",
+      "Anchor": "riseup-deep-integration-functionality",
+      "SectionPath": [
+        "RiseUp Deep Integration Functionality"
+      ],
+      "Text": "Content Discovery: Automated Catalog Sync (All languages)\nReporting: xAPI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RiseUp Deep Integration Functionality",
+      "Anchor": "riseup-deep-integration-functionality",
+      "SectionPath": [
+        "RiseUp Deep Integration Functionality"
+      ],
+      "Text": "Requirements:\nThe LinkedIn Learning and RiseUp integration involves the following requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RiseUp Deep Integration Functionality",
+      "Anchor": "riseup-deep-integration-functionality",
+      "SectionPath": [
+        "RiseUp Deep Integration Functionality"
+      ],
+      "Text": "An active RiseUp LMS instance\nAn active LinkedIn Learning account\nAdmin access to LinkedIn Learning\nAdmin privileges to your RiseUp LMS instance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Single Sign-On",
+      "Anchor": "single-sign-on",
+      "SectionPath": [
+        "Overview",
+        "Single Sign-On"
+      ],
+      "Text": "During the initial configuration, you can configure LinkedIn Learning and your SSO provider to establish a secure SAML single sign-on (SSO) connection to ensure seamless access to content. SSO authentication reduces friction for users and administrators by eliminating the need for manual user registration. SSO ensures learners spend more of their time watching content and less of their time trying to remember usernames and passwords.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "The LinkedIn Learning library contains over 24,000 courses, with 20-30 courses added per week at no extra cost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "RiseUp automates this process using the LinkedIn Learning content APIs, so LMS admins do not have to manually upload new content packages at regular intervals. After the initial setup, RiseUp will dynamically refresh the content library on an automated basis. This ensures new LinkedIn Learning content is available to learners within 24 hours of release. All content titles and descriptions are aggregated and indexed to accommodate keyword searches and support efficient discoverability.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automated Content Catalog Sync",
+      "Anchor": "automated-content-catalog-sync",
+      "SectionPath": [
+        "Overview",
+        "Automated Content Catalog Sync"
+      ],
+      "Text": "RiseUp supports automatic syncing of All languages content libraries.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "Overview",
+        "Reporting"
+      ],
+      "Text": "LinkedIn Learning captures all content viewed on its platform in robust usage reports accessible from the LinkedIn Learning administrative interface. In addition to generating reports, LinkedIn Learning uses xAPI to communicate a learner\u2019s activity back to RiseUp when the learner completes a LinkedIn Learning course. All LinkedIn Learning course completions will be reported both in LinkedIn Learning and in RiseUp.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "Enabling SAML SSO:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SSO Configuration",
+      "Anchor": "sso-configuration",
+      "SectionPath": [
+        "SSO Configuration"
+      ],
+      "Text": "LinkedIn Learning recommends SAML SSO for all enterprise learning platform integrations. SSO authentication can be configured in your LinkedIn Learning Admin settings. Most organizations have a centrally managed identity management solution like Azure AD, Okta or AD FS which can be configured to authenticate users into enterprise applications like LinkedIn Learning.\n\nTo configure SAML SSO with your identity management solution, share the LinkedIn Learning SSO Implementation Guide with your organization\u2019s IT team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "For RiseUp to sync LinkedIn Learning catalog metadata, API keys must be provisioned in LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "To sync your RiseUp content with LinkedIn Learning, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Provision LinkedIn Learning Content API Keys",
+      "Anchor": "provision-linkedin-learning-content-api-keys",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in LinkedIn Learning",
+        "Provision LinkedIn Learning Content API Keys"
+      ],
+      "Text": "Login to LinkedIn Learning. If you are not already in the Admin screen, select Go to Admin, then click Integration\n\n\nFrom the side navigation menu, Access content and reports via API.\n\nClick the down arrow on the right to expand the Generate LinkedIn Learning REST API Application section.\n\n\nClick Add Application and provide the name related to your LMS (e.g., \u0022RiseUp LMS Integration\u0022), as the application name, and provide a short description of the integration use case in the application description field. For example, \u0022RiseUp content catalog sync\u0022.\n\n\n\n\n\nUnder choose keys, there are two checkboxes \u2013 Content and Report. Select Content.\n\nClick Next and accept the Terms and Conditions\n\nSave the Client ID and Client Secret values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RiseUp Configuration",
+      "Anchor": "riseup-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "RiseUp Configuration"
+      ],
+      "Text": "To complete the configuration with Riseup, you need the following information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RiseUp Configuration",
+      "Anchor": "riseup-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "RiseUp Configuration"
+      ],
+      "Text": "\u2022 Client ID",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RiseUp Configuration",
+      "Anchor": "riseup-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "RiseUp Configuration"
+      ],
+      "Text": "\u2022 Client Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "RiseUp Configuration",
+      "Anchor": "riseup-configuration",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "RiseUp Configuration"
+      ],
+      "Text": "Share these credentials with Rise Up\u2019s technical team for them to configure the LinkedIn Learning connector",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "To communicate learner activity back to RiseUp, you must enable xAPI in your LinkedIn Learning admin settings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Using the information you acquired from RiseUp technical team, follow the instructions below to configure xAPI within LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "After you login, if you are not already in the Admin screen, click Go to Admin, then select Me \u003E Integrate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "From the side navigation menu, select Configure reporting integrations.\n\nExpand the Configure xAPI section.\n\nClick Add integration.\n\n\n\n\n\nIn the Integration name field, enter a name such as \u0022RiseUp Reporting\u0022.\n\nIn the User Type drop down, select Email.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "This value must match the email address value in RiseUp; please reach out to RiseUp support if you need help identifying this value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Copy and paste the following items provided by RiseUp into LinkedIn Learning:\n\nOAuth Server URL\nTenant Server URL\nClient ID\nClient Secret\n\n\nCheck if your LMS support Course Progress, Learning Path completions and video completions and check the box accordingly\n\nClick Enable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enable xAPI Learner Activity Tracking in LinkedIn Learning",
+      "Anchor": "enable-xapi-learner-activity-tracking-in-linkedin-learning",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Enable xAPI Learner Activity Tracking in LinkedIn Learning"
+      ],
+      "Text": "Congratulations! Your learners now can access LinkedIn Learning content via their RiseUp instance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Questions"
+      ],
+      "Text": "For LinkedIn Learning configuration questions, reach out to your dedicated Customer Success Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Questions",
+      "Anchor": "questions",
+      "SectionPath": [
+        "LMS Configuration \u2013 Steps Performed in RiseUp",
+        "Questions"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-spontaneous-migration",
+  "Title": "Spontaneous Live Events Migration",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-content-access",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-spontaneous-migration",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Spontaneous Live Events Migration",
+      "Anchor": "spontaneous-live-events-migration",
+      "SectionPath": [],
+      "Text": "We are consolidating our Live Events API around a single flow: Scheduled Live Events. Everything, whether the event will go live at a specific time or immediately, will now be created and managed under the scheduled live flow. We are retiring the spontaneous live events flow, moving to a single flow that gives everyone a consistent API surface and allows consolidation of logic around a single integration path.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u0027s Changing",
+      "Anchor": "whats-changing",
+      "SectionPath": [
+        "What\u0027s Changing"
+      ],
+      "Text": "The Live Events API has historically supported two paths: spontaneous and scheduled. The scheduled flow is already the primary path for most of our creators. We are now standardizing on it for all use cases, regardless of when the event will go live.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u0027s Changing",
+      "Anchor": "whats-changing",
+      "SectionPath": [
+        "What\u0027s Changing"
+      ],
+      "Text": "Going forward, only the scheduled live flow will be supported. You can use the same scheduled flow with scheduledAt set to 1 minute from now to provide continued support for the \u0022go live now\u0022 use case.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u0027s Changing",
+      "Anchor": "whats-changing",
+      "SectionPath": [
+        "What\u0027s Changing"
+      ],
+      "Text": "The following table summarizes the key differences between the two flows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What\u0027s Changing",
+      "Anchor": "whats-changing",
+      "SectionPath": [
+        "What\u0027s Changing"
+      ],
+      "Text": "",
+      "Headers": [
+        "Aspect",
+        "Spontaneous Flow (Deprecated)",
+        "Scheduled Flow (New Standard)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Steps",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/liveAssetActions (register) \u2192 /assets (poll) \u2192 /ugcPosts \u2192 /liveAssetActions (end)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/assets (upload image) \u2192 /liveVideos \u2192 /ugcPosts \u2192 /liveAssetActions (register) \u2192 /assets (poll) \u2192 /liveVideos (link asset) \u2192 /liveAssetActions (end)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareMediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LIVE_VIDEO",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN_REFERENCE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Media URN in Post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:digitalmediaAsset:...",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:liveVideo:...",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "distribution field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required (feedDistribution, distributedViaFollowFeed)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Post-registration step",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must PATCH liveVideo with registered asset",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "New APIs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "POST /liveVideos, POST /liveVideos/:id (PATCH)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecated Flow: Spontaneous Live Events",
+      "Anchor": "deprecated-flow-spontaneous-live-events",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events"
+      ],
+      "Text": "This is the flow being retired. It is provided here as reference for partners currently using this integration path.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 1: Register the Live Event",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveAssetActions?action=register",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 1: Register the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022registerLiveEventRequest\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:12345\u0022,\n    \u0022recipes\u0022: [\u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022],\n    \u0022region\u0022: \u0022WEST_US\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 1: Register the Live Event",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022,\n    \u0022ingestUrls\u0022: [\n      {\n        \u0022url\u0022: \u0022rtmps://live-ingest.linkedin.com:443/live/abc123def456\u0022,\n        \u0022ingestProtocol\u0022: \u0022RTMPS\u0022\n      },\n      {\n        \u0022url\u0022: \u0022rtmp://live-ingest.linkedin.com:1935/live/abc123def456\u0022,\n        \u0022ingestProtocol\u0022: \u0022RTMP\u0022\n      }\n    ],\n    \u0022previewUrls\u0022: [\n      \u0022https://live-preview.linkedin.com/preview/abc123def456.m3u8\u0022\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Start RTMP(s) Ingestion",
+      "Anchor": "step-2-start-rtmps-ingestion",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 2: Start RTMP(s) Ingestion"
+      ],
+      "Text": "Use one of the returned ingest URLs and stream to it. Ingestion must start within 1 hour of registration and within 120 seconds of receiving the URLs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 3: Check Recipe Status (Optional but Recommended)",
+        "Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/assets/C5524AQFazrOYw4_q2Q",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request",
+      "Anchor": "request-1",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 3: Check Recipe Status (Optional but Recommended)",
+        "Request"
+      ],
+      "Text": "Wait until the asset\u0027s recipe status is AVAILABLE before creating the post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-2",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 4: Create UGC Post (Live Video)",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 4: Create UGC Post (Live Video)",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022author\u0022: \u0022urn:li:person:12345\u0022,\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022media\u0022: [\n        {\n          \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022,\n          \u0022status\u0022: \u0022READY\u0022\n        }\n      ],\n      \u0022shareCommentary\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022Join us as we live stream!\u0022\n      },\n      \u0022shareMediaCategory\u0022: \u0022LIVE_VIDEO\u0022\n    }\n  },\n  \u0022visibility\u0022: {\n    \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 4: Create UGC Post (Live Video)",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201\nx-li-responseorigin: RGW\nlocation: /ugcPosts/urn:li:ugcPost:6676519700211556352\nx-restli-id: urn:li:ugcPost:6676519700211556352\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 4: Create UGC Post (Live Video)",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022urn:li:ugcPost:6676519700211556352\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: End the Live Event",
+      "Anchor": "step-5-end-the-live-event",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 5: End the Live Event"
+      ],
+      "Text": "After the stream ends:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-3",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 5: End the Live Event",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveAssetActions?action=end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-2",
+      "SectionPath": [
+        "Deprecated Flow: Spontaneous Live Events",
+        "Step 5: End the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Flow: Scheduled Live Events",
+      "Anchor": "new-flow-scheduled-live-events",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events"
+      ],
+      "Text": "This is the flow all partners must migrate to. For more details, see Scheduled Live Events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Flow: Scheduled Live Events",
+      "Anchor": "new-flow-scheduled-live-events",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Flow: Scheduled Live Events",
+      "Anchor": "new-flow-scheduled-live-events",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events"
+      ],
+      "Text": "To replicate the spontaneous \u0022go live now\u0022 experience, set scheduledAt to 1 minute in the future (currentTimeMs \u002B 60000).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Upload Announcement Image (Optional)",
+      "Anchor": "step-1-upload-announcement-image-optional",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 1: Upload Announcement Image (Optional)"
+      ],
+      "Text": "If you want a custom announcement image, use POST /assets?action=registerUpload and then upload to the returned uploadUrl. Otherwise, skip this step; a placeholder image will be used.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-4",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 1: Upload Announcement Image (Optional)",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/assets?action=registerUpload",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-3",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 1: Upload Announcement Image (Optional)",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022registerUploadRequest\u0022: {\n    \u0022recipes\u0022: [\n      \u0022urn:li:digitalmediaRecipe:video-liveannouncement-image\u0022\n    ],\n    \u0022owner\u0022: \u0022urn:li:person:12345\u0022,\n    \u0022serviceRelationships\u0022: [\n      {\n        \u0022relationshipType\u0022: \u0022OWNER\u0022,\n        \u0022identifier\u0022: \u0022urn:li:userGeneratedContent\u0022\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create Scheduled liveVideo",
+      "Anchor": "step-2-create-scheduled-livevideo",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create Scheduled liveVideo",
+      "Anchor": "step-2-create-scheduled-livevideo",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo"
+      ],
+      "Text": "For \u0022go live now\u0022 behavior, set scheduledAt to 1 minute in the future. Example: scheduledAt = currentTimeMs \u002B 60000.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-5",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveVideos",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "(Member Profile) Sample Request Body",
+      "Anchor": "member-profile-sample-request-body",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo",
+        "(Member Profile) Sample Request Body"
+      ],
+      "Text": "{\n  \u0022author\u0022: {\n    \u0022member\u0022: \u0022urn:li:person:12345\u0022\n  },\n  \u0022scheduledAt\u0022: 1740000060000,\n  \u0022name\u0022: \u0022Live now\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "(Organization) Sample Request Body",
+      "Anchor": "organization-sample-request-body",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo",
+        "(Organization) Sample Request Body"
+      ],
+      "Text": "{\n  \u0022author\u0022: {\n    \u0022organization\u0022: \u0022urn:li:organization:0000\u0022\n  },\n  \u0022scheduledAt\u0022: 1740000060000,\n  \u0022name\u0022: \u0022Live now\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201\nx-li-responseorigin: RGW\nlocation: /liveVideos/7298765432109876543\nx-restli-id: 7298765432109876543\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 2: Create Scheduled liveVideo",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022id\u0022: 7298765432109876543,\n  \u0022scheduledAt\u0022: 1740000060000,\n  \u0022announcementImage\u0022: {\n    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022,\n    \u0022title\u0022: {\n      \u0022text\u0022: \u0022My live event announcement image\u0022,\n      \u0022inferredLocale\u0022: \u0022en_US\u0022\n    }\n  },\n  \u0022liveVideoAsset\u0022: null,\n  \u0022state\u0022: \u0022PRE_LIVE\u0022,\n  \u0022ugcPost\u0022: null,\n  \u0022name\u0022: \u0022My Scheduled Live Event\u0022,\n  \u0022isSpontaneous\u0022: false,\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:member:12345\u0022,\n    \u0022time\u0022: 1740000000000\n  },\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:member:12345\u0022,\n    \u0022time\u0022: 1740000000000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Create Announcement Post",
+      "Anchor": "step-3-create-announcement-post",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 3: Create Announcement Post"
+      ],
+      "Text": "Create the post that will show the scheduled (or \u0022about to go live\u0022) event. Use the liveVideo URN, not the asset URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-6",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 3: Create Announcement Post",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-4",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 3: Create Announcement Post",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022author\u0022: \u0022urn:li:person:12345\u0022,\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022media\u0022: [\n        {\n          \u0022media\u0022: \u0022urn:li:liveVideo:7298765432109876543\u0022,\n          \u0022status\u0022: \u0022READY\u0022\n        }\n      ],\n      \u0022shareCommentary\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022Join us as we live stream!\u0022\n      },\n      \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022\n    }\n  },\n  \u0022visibility\u0022: {\n    \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n  },\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n    \u0022externalDistributionChannels\u0022: [],\n    \u0022distributedViaFollowFeed\u0022: true\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 3: Create Announcement Post",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201\nx-li-responseorigin: RGW\nlocation: /ugcPosts/urn:li:ugcPost:6676519700211556352\nx-restli-id: urn:li:ugcPost:6676519700211556352\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 3: Create Announcement Post",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022urn:li:ugcPost:6676519700211556352\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Register Live Event Asset",
+      "Anchor": "step-4-register-live-event-asset",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 4: Register Live Event Asset"
+      ],
+      "Text": "When ready to go live, register the live event asset. This step is unchanged from the spontaneous flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-7",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 4: Register Live Event Asset",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveAssetActions?action=register",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-5",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 4: Register Live Event Asset",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022registerLiveEventRequest\u0022: {\n    \u0022owner\u0022: \u0022urn:li:person:12345\u0022,\n    \u0022recipes\u0022: [\u0022urn:li:digitalmediaRecipe:feedshare-live-video\u0022],\n    \u0022region\u0022: \u0022WEST_US\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 4: Register Live Event Asset",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022,\n    \u0022ingestUrls\u0022: [\n      {\n        \u0022url\u0022: \u0022rtmps://live-ingest.linkedin.com:443/live/abc123def456\u0022,\n        \u0022ingestProtocol\u0022: \u0022RTMPS\u0022\n      },\n      {\n        \u0022url\u0022: \u0022rtmp://live-ingest.linkedin.com:1935/live/abc123def456\u0022,\n        \u0022ingestProtocol\u0022: \u0022RTMP\u0022\n      }\n    ],\n    \u0022previewUrls\u0022: [\n      \u0022https://live-preview.linkedin.com/preview/abc123def456.m3u8\u0022\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 5: Begin RTMP(s) Ingestion",
+      "Anchor": "step-5-begin-rtmps-ingestion",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 5: Begin RTMP(s) Ingestion"
+      ],
+      "Text": "Start streaming to one of the returned ingest URLs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Update liveVideo with Registered Asset",
+      "Anchor": "step-6-update-livevideo-with-registered-asset",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 6: Update liveVideo with Registered Asset"
+      ],
+      "Text": "Poll GET https://api.linkedin.com/v2/assets/C5524AQFazrOYw4_q2Q until the recipe status is AVAILABLE. Then link the live asset to the scheduled liveVideo.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Update liveVideo with Registered Asset",
+      "Anchor": "step-6-update-livevideo-with-registered-asset",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 6: Update liveVideo with Registered Asset"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 6: Update liveVideo with Registered Asset",
+      "Anchor": "step-6-update-livevideo-with-registered-asset",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 6: Update liveVideo with Registered Asset"
+      ],
+      "Text": "Use the liveVideo id from Step 2 and the asset URN from Step 4. A 204 response indicates success; the announcement post will now show the live stream.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-8",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 6: Update liveVideo with Registered Asset",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveVideos/7298765432109876543",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-6",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 6: Update liveVideo with Registered Asset",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022liveVideoAsset\u0022: {\n        \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 7: End the Live Event",
+      "Anchor": "step-7-end-the-live-event",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 7: End the Live Event"
+      ],
+      "Text": "This step is unchanged from the spontaneous flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request",
+      "Anchor": "request-9",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 7: End the Live Event",
+        "Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/liveAssetActions?action=end",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-7",
+      "SectionPath": [
+        "New Flow: Scheduled Live Events",
+        "Step 7: End the Live Event",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022asset\u0022: \u0022urn:li:digitalmediaAsset:C5524AQFazrOYw4_q2Q\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

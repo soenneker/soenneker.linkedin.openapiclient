@@ -55,7 +55,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string Owner { get; set; }
 #endif
         /// <summary>The submittedAt property</summary>
-        public int? SubmittedAt { get; set; }
+        public long? SubmittedAt { get; set; }
         /// <summary>The testLead property</summary>
         public bool? TestLead { get; set; }
         /// <summary>The versionedLeadGenFormUrn property</summary>
@@ -96,7 +96,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "leadType", n => { LeadType = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "submittedAt", n => { SubmittedAt = n.GetIntValue(); } },
+                { "submittedAt", n => { SubmittedAt = n.GetLongValue(); } },
                 { "testLead", n => { TestLead = n.GetBoolValue(); } },
                 { "versionedLeadGenFormUrn", n => { VersionedLeadGenFormUrn = n.GetStringValue(); } },
             };
@@ -113,7 +113,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("leadType", LeadType);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteIntValue("submittedAt", SubmittedAt);
+            writer.WriteLongValue("submittedAt", SubmittedAt);
             writer.WriteBoolValue("testLead", TestLead);
             writer.WriteStringValue("versionedLeadGenFormUrn", VersionedLeadGenFormUrn);
             writer.WriteAdditionalData(AdditionalData);

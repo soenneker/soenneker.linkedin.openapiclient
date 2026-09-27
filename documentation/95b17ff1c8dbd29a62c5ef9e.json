@@ -1,0 +1,2658 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+  "Title": "Lead Forms",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "LinkedIn Lead Forms allow advertisers to collect leads through forms that LinkedIn members can submit. Refer to LinkedIn Lead Forms and Lead Sync Ads for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "LinkedIn also allows you to collect and sync leads through organic surfaces which would be distinguished by a leadType during lead syncing.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "The following types of leads are supported for syncing:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "SPONSORED - Leads collected directly from an ad.\nEVENT - Leads collected from an event page.\nCOMPANY - Leads collected from a company page.\nORGANIZATION_PRODUCT - Leads collected from an organization\u0027s product page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "Developers supporting ads and Non-ads leads can use the same integration with correct set of permissions for lead syncing.\nLead forms for LinkedIn Pages and Showcase Pages are no longer available.\nYou can no longer create and download lead forms for your LinkedIn Page. Existing lead forms continue to function as expected. For more information, refer.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "The following APIs are designed to support Lead Forms:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Forms",
+      "Anchor": "lead-forms",
+      "SectionPath": [],
+      "Text": "leadForms - Get or find Lead Forms that appear on LinkedIn.\nleadFormResponses - Fetch submitted Lead Form responses.\nleadNotifications - Create webhook subscriptions to be notified of Lead Form responses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Lead Sync API is a separate program, and access to the Advertising API does not automatically grant access. You must apply separately to be considered for Lead Sync API access.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description",
+        "Endpoints",
+        "Program"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts data. Can manage and read ad forms. Cannot retrieve leads through leadFormResponses. Restricted to ad accounts where the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          },
+          {
+            "Text": "leadForms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read ad forms. Cannot retrieve leads through leadFormResponses. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          },
+          {
+            "Text": "leadForms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_marketing_leadgen_automation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s ad forms/organic forms and form responses (leads). Can manage and read leadNotifications. Reading forms and form responses are restricted to the following account and/or company page roles:Sponsored use case (leads from Ads): The authenticated user must have one of the following ad account and company page roles (on the company page associated with the Ad Account in Campaign Manager):Ad Account Roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWERCompany Page (Organization) roles: ADMINISTRATORLEAD_GEN_FORMS_MANAGERCURATORCONTENT_ADMINISTRATORANALYST Organic use case (leads not from Ads): The authenticated user must have one of the following company page roles (Note: for Event leads, one of the roles highlighted in bold are required. The other roles does not suffice):ADMINISTRATORLEAD_GEN_FORMS_MANAGERCURATORCONTENT_ADMINISTRATORANALYST",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER",
+              "ADMINISTRATOR",
+              "LEAD_GEN_FORMS_MANAGER",
+              "CURATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST",
+              "ADMINISTRATOR",
+              "LEAD_GEN_FORMS_MANAGER",
+              "CURATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST"
+            ]
+          },
+          {
+            "Text": "leadFormsleadFormResponsesleadNotifications",
+            "Links": [],
+            "Values": [
+              "leadForms",
+              "leadFormResponses",
+              "leadNotifications"
+            ]
+          },
+          {
+            "Text": "Lead Sync API",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on how to retrieve a member\u0027s ad account roles, refer to Account Access Controls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information on how to retrieve a member\u0027s company page/organization roles, refer to Organization Access Control.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "If the authenticated member does not have the appropriate ad account or company page/organization roles, a 403 error is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Form Schema",
+      "Anchor": "lead-form-schema",
+      "SectionPath": [
+        "Lead Form Schema"
+      ],
+      "Text": "For more information on lead form schema, refer to Lead Form Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Lead Forms",
+      "Anchor": "get-lead-forms",
+      "SectionPath": [
+        "Get Lead Forms"
+      ],
+      "Text": "Lead Forms can be fetched in 3 different ways.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Lead Forms",
+      "Anchor": "get-lead-forms",
+      "SectionPath": [
+        "Get Lead Forms"
+      ],
+      "Text": "Find forms by owner\nGet an individual form\nFetch Multiple Lead Forms",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Forms by Owner",
+      "Anchor": "find-forms-by-owner",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner"
+      ],
+      "Text": "This endpoint returns all forms that belong to a specified owner. This endpoint requires q=owner and a organization or sponsoredAccount URN in the owner parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Forms by Owner",
+      "Anchor": "find-forms-by-owner",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner"
+      ],
+      "Text": "Since an owner can have a large volume of Lead Forms, this API supports pagination using the count and start parameters. The API requires Restli 2.0 header and URL encoding of URNs in the URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You must always set this to string owner. It indicates that you\u0027re querying based on the Owner finder, and it\u0027s the only FINDER type currently available for Lead Forms.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredAccountUrn/OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the owner of the Lead Form. This is the advertiser account or organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of results to display on each page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the form to begin your result page at. Indexes start at 0. Default is 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadForms?owner=(organization:urn%3Ali%3Aorganization%3A5509810)\u0026q=owner\u0026count=1\u0026start=0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadForms?owner=(organization:urn%3Ali%3Aorganization%3A5509810)\u0026q=owner\u0026count=1\u0026start=0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Find Forms by Owner",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: {\n                \u0022organization\u0022: \u0022urn:li:organization:5509810\u0022\n            },\n            \u0022hiddenFields\u0022: [\n                {\n                    \u0022name\u0022: \u0022Entity name\u0022,\n                    \u0022value\u0022: \u0022Nimbus 2000\u0022\n                }\n            ],\n            \u0022versionId\u0022: 1,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022created\u0022: 1610579725356,\n            \u0022name\u0022: \u0022LeadGen form for Nimbus 2000\u0022,\n            \u0022id\u0022: 6755260984438374400,\n            \u0022lastModified\u0022: 1610579725356,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 10548,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022First Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022firstName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 10540,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Last Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022lastName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022description\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Share your information below with {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} to be contacted with more information about Nimbus 2000\u0022\n                    }\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Contact {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} about Nimbus 2000\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [\n                        {\n                            \u0022checkRequired\u0022: false,\n                            \u0022id\u0022: 1,\n                            \u0022consent\u0022: {\n                                \u0022localized\u0022: {\n                                    \u0022en_US\u0022: \u0022{localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} may contact me via email\u0022\n                                }\n                            }\n                        }\n                    ],\n                    \u0022legalInfoId\u0022: 5604,\n                    \u0022privacyPolicyUrl\u0022: \u0022https://cadfad.com/abc\u0022,\n                    \u0022legalDisclaimer\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022All emails include an unsubscribe link; you may opt out at any time. {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} will not sell or distribute your email address. See our Privacy Policy for more information on how we product and manage your data.\u0022\n                        }\n                    }\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get A Lead Form",
+      "Anchor": "get-a-lead-form",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Get A Lead Form"
+      ],
+      "Text": "Individual Lead Forms can be requested using the endpoint below that only requires Lead Form ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Get A Lead Form",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Get A Lead Form",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadForms/6755260984438374400",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Get A Lead Form",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadForms/6755260984438374400\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Get A Lead Form",
+        "Sample Response"
+      ],
+      "Text": "{\n            \u0022owner\u0022: {\n                \u0022organization\u0022: \u0022urn:li:organization:5509810\u0022\n            },\n            \u0022hiddenFields\u0022: [\n                {\n                    \u0022name\u0022: \u0022Entity name\u0022,\n                    \u0022value\u0022: \u0022Nimbus 2000\u0022\n                }\n            ],\n            \u0022versionId\u0022: 1,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022created\u0022: 1610579725356,\n            \u0022name\u0022: \u0022LeadGen form for Nimbus 2000\u0022,\n            \u0022id\u0022: 6755260984438374400,\n            \u0022lastModified\u0022: 1610579725356,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 10548,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022First Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022firstName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 10540,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Last Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022lastName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 9244,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Email Address\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022email\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022EMAIL\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 9252,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Job title\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022jobTitle\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022JOB_TITLE\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 9236,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Company name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022company\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022COMPANY_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022description\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Share your information below with {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} to be contacted with more information about Nimbus 2000\u0022\n                    }\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Contact {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} about Nimbus 2000\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [\n                        {\n                            \u0022checkRequired\u0022: false,\n                            \u0022id\u0022: 1,\n                            \u0022consent\u0022: {\n                                \u0022localized\u0022: {\n                                    \u0022en_US\u0022: \u0022{localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} may contact me via email\u0022\n                                }\n                            }\n                        }\n                    ],\n                    \u0022legalInfoId\u0022: 5604,\n                    \u0022privacyPolicyUrl\u0022: \u0022https://cadfad.com/abc\u0022,\n                    \u0022legalDisclaimer\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022All emails include an unsubscribe link; you may opt out at any time. {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} will not sell or distribute your email address. See our Privacy Policy for more information on how we product and manage your data.\u0022\n                        }\n                    }\n                }\n            }\n        }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Multiple Lead Forms",
+      "Anchor": "fetch-multiple-lead-forms",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Fetch Multiple Lead Forms"
+      ],
+      "Text": "Multiple Lead Forms can be requested by chaining multiple ids parameter that each have a Lead Form ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Fetch Multiple Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Fetch Multiple Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadForms?ids=List(6083,4073)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Fetch Multiple Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadForms?ids=List(6083,4073)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Get Lead Forms",
+        "Fetch Multiple Lead Forms",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {\n        \u00226083\u0022: 200,\n        \u00224073\u0022: 200\n    },\n    \u0022results\u0022: {\n        \u00226083\u0022: {\n            \u0022owner\u0022: {\n                \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:522147830\u0022\n            },\n            \u0022reviewInfo\u0022: {\n                \u0022rejectionReasons\u0022: [\n                    \u0022CRYPTOCURRENCY\u0022,\n                    \u0022OFFENSIVE_LANGUAGE\u0022\n                ],\n                \u0022lastUpdated\u0022: 1675775914000,\n                \u0022reviewStatus\u0022: \u0022REJECTED\u0022\n            },\n            \u0022hiddenFields\u0022: [],\n            \u0022versionId\u0022: 1,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022created\u0022: 1676620173813,\n            \u0022name\u0022: \u0022Form - Feb 17, 2023\u0022,\n            \u0022id\u0022: 6083,\n            \u0022lastModified\u0022: 1678689182106,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 100339966,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022First name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022First name\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 400339966,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Are you interested\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022Custom question 0\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022multipleChoiceQuestionDetails\u0022: {\n                                \u0022options\u0022: [\n                                    {\n                                        \u0022id\u0022: 0,\n                                        \u0022text\u0022: {\n                                            \u0022localized\u0022: {\n                                                \u0022en_US\u0022: \u0022Yes\u0022\n                                            }\n                                        }\n                                    },\n                                    {\n                                        \u0022id\u0022: 1,\n                                        \u0022text\u0022: {\n                                            \u0022localized\u0022: {\n                                                \u0022en_US\u0022: \u0022No\u0022\n                                            }\n                                        }\n                                    }\n                                ]\n                            }\n                        },\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022postSubmissionInfo\u0022: {\n                    \u0022message\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022Thank You\u0022\n                        }\n                    },\n                    \u0022callToAction\u0022: {\n                        \u0022callToActionTarget\u0022: {\n                            \u0022landingPageUrl\u0022: \u0022https://cadfad.com/abc\u0022\n                        },\n                        \u0022callToActionLabel\u0022: \u0022VISIT_COMPANY_WEBSITE\u0022\n                    }\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Test LGF\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [],\n                    \u0022legalInfoId\u0022: 100339966,\n                    \u0022privacyPolicyUrl\u0022: \u0022https://cadfad.com/abc\u0022\n                }\n            }\n        },\n        \u00224073\u0022: {\n            \u0022owner\u0022: {\n                \u0022organization\u0022: \u0022urn:li:organization:5509810\u0022\n            },\n            \u0022hiddenFields\u0022: [\n                {\n                    \u0022name\u0022: \u0022Entity name\u0022,\n                    \u0022value\u0022: \u0022Nimbus 2000\u0022\n                }\n            ],\n            \u0022versionId\u0022: 1,\n            \u0022creationLocale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022created\u0022: 1610579725356,\n            \u0022name\u0022: \u0022LeadGen form for Nimbus 2000\u0022,\n            \u0022id\u0022: 4073,\n            \u0022lastModified\u0022: 1610579725356,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022content\u0022: {\n                \u0022questions\u0022: [\n                    {\n                        \u0022questionId\u0022: 10548,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022First Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022firstName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    },\n                    {\n                        \u0022questionId\u0022: 10540,\n                        \u0022question\u0022: {\n                            \u0022localized\u0022: {\n                                \u0022en_US\u0022: \u0022Last Name\u0022\n                            }\n                        },\n                        \u0022responseEditable\u0022: true,\n                        \u0022name\u0022: \u0022lastName\u0022,\n                        \u0022questionDetails\u0022: {\n                            \u0022textQuestionDetails\u0022: {\n                                \u0022maxResponseLength\u0022: 300\n                            }\n                        },\n                        \u0022predefinedField\u0022: \u0022LAST_NAME\u0022,\n                        \u0022responseRequired\u0022: true\n                    }\n                ],\n                \u0022description\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Share your information below with {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} to be contacted with more information about Nimbus 2000\u0022\n                    }\n                },\n                \u0022headline\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Contact {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} about Nimbus 2000\u0022\n                    }\n                },\n                \u0022legalInfo\u0022: {\n                    \u0022consents\u0022: [\n                        {\n                            \u0022checkRequired\u0022: false,\n                            \u0022id\u0022: 1,\n                            \u0022consent\u0022: {\n                                \u0022localized\u0022: {\n                                    \u0022en_US\u0022: \u0022{localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} may contact me via email\u0022\n                                }\n                            }\n                        }\n                    ],\n                    \u0022legalInfoId\u0022: 5604,\n                    \u0022privacyPolicyUrl\u0022: \u0022https://cadfad.com/abc\u0022,\n                    \u0022legalDisclaimer\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022All emails include an unsubscribe link; you may opt out at any time. {localized={en_US=Mario Kart 8 Deluxe, es_ES=Mario Coche 8 Deluxe}, preferredLocale={country=US, language=en}} will not sell or distribute your email address. See our Privacy Policy for more information on how we product and manage your data.\u0022\n                        }\n                    }\n                }\n            }\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creating Lead Forms",
+      "Anchor": "creating-lead-forms",
+      "SectionPath": [
+        "Creating Lead Forms"
+      ],
+      "Text": "When setting the locale for an Ads Form, non-English forms can only be used for campaigns targeting that language. English forms can be used with any campaign, regardless of the campaign\u0027s target language.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/leadForms",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:507857085\u0022\n    },\n    \u0022hiddenFields\u0022: [\n        {\n            \u0022name\u0022: \u0022Entity name\u0022,\n            \u0022value\u0022: \u0022Nimbus 2000\u0022\n        }\n    ],\n    \u0022creationLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022LeadGen Form Creation Testing\u0022,\n    \u0022state\u0022: \u0022DRAFT\u0022,\n    \u0022content\u0022: {\n        \u0022questions\u0022: [\n            {\n                \u0022question\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022First Name\u0022\n                    }\n                },\n                \u0022name\u0022: \u0022firstName\u0022,\n                \u0022questionDetails\u0022: {\n                    \u0022textQuestionDetails\u0022: {}\n                },\n                \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022\n            },\n            {\n                \u0022question\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Last Name\u0022\n                    }\n                },\n                \u0022name\u0022: \u0022lastName\u0022,\n                \u0022questionDetails\u0022: {\n                    \u0022textQuestionDetails\u0022: {}\n                },\n                \u0022predefinedField\u0022: \u0022LAST_NAME\u0022\n            }\n        ],\n        \u0022description\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Share your information below with to be contacted with more information about Nimbus 2000\u0022\n            }\n        },\n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Contact us about Nimbus 2000\u0022\n            }\n        },\n        \u0022postSubmissionInfo\u0022: {\n            \u0022message\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022This is a test\u0022\n                }\n            },\n            \u0022callToAction\u0022: {\n                \u0022callToActionTarget\u0022: {\n                    \u0022landingPageUrl\u0022: \u0022http://www.example.com\u0022\n                },\n                \u0022callToActionLabel\u0022: \u0022VISIT_COMPANY_WEBSITE\u0022\n            }\n        },\n        \u0022legalInfo\u0022: {\n            \u0022consents\u0022: [\n                {\n                    \u0022checkRequired\u0022: false,\n                    \u0022id\u0022: 1,\n                    \u0022consent\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022may contact me via email\u0022\n                        }\n                    }\n                }\n            ],\n            \u0022privacyPolicyUrl\u0022: \u0022http://cadfad.com/abc\u0022,\n            \u0022legalDisclaimer\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022All emails include an unsubscribe link; you may opt out at any time. will not sell or distribute your email address. See our Privacy Policy for more information on how we product and manage your data.\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadForms\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027\n--data \u0027{\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:507857085\u0022\n    },\n    \u0022hiddenFields\u0022: [\n        {\n            \u0022name\u0022: \u0022Entity name\u0022,\n            \u0022value\u0022: \u0022Nimbus 2000\u0022\n        }\n    ],\n    \u0022creationLocale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022name\u0022: \u0022LeadGen Form Creation Testing\u0022,\n    \u0022state\u0022: \u0022DRAFT\u0022,\n    \u0022content\u0022: {\n        \u0022questions\u0022: [\n            {\n                \u0022question\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022First Name\u0022\n                    }\n                },\n                \u0022name\u0022: \u0022firstName\u0022,\n                \u0022questionDetails\u0022: {\n                    \u0022textQuestionDetails\u0022: {}\n                },\n                \u0022predefinedField\u0022: \u0022FIRST_NAME\u0022\n            },\n            {\n                \u0022question\u0022: {\n                    \u0022localized\u0022: {\n                        \u0022en_US\u0022: \u0022Last Name\u0022\n                    }\n                },\n                \u0022name\u0022: \u0022lastName\u0022,\n                \u0022questionDetails\u0022: {\n                    \u0022textQuestionDetails\u0022: {}\n                },\n                \u0022predefinedField\u0022: \u0022LAST_NAME\u0022\n            }\n        ],\n        \u0022description\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Share your information below with to be contacted with more information about Nimbus 2000\u0022\n            }\n        },\n        \u0022headline\u0022: {\n            \u0022localized\u0022: {\n                \u0022en_US\u0022: \u0022Contact us about Nimbus 2000\u0022\n            }\n        },\n        \u0022postSubmissionInfo\u0022: {\n            \u0022message\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022This is a test\u0022\n                }\n            },\n            \u0022callToAction\u0022: {\n                \u0022callToActionTarget\u0022: {\n                    \u0022landingPageUrl\u0022: \u0022http://www.example.com\u0022\n                },\n                \u0022callToActionLabel\u0022: \u0022VISIT_COMPANY_WEBSITE\u0022\n            }\n        },\n        \u0022legalInfo\u0022: {\n            \u0022consents\u0022: [\n                {\n                    \u0022checkRequired\u0022: false,\n                    \u0022id\u0022: 1,\n                    \u0022consent\u0022: {\n                        \u0022localized\u0022: {\n                            \u0022en_US\u0022: \u0022may contact me via email\u0022\n                        }\n                    }\n                }\n            ],\n            \u0022privacyPolicyUrl\u0022: \u0022http://cadfad.com/abc\u0022,\n            \u0022legalDisclaimer\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022All emails include an unsubscribe link; you may opt out at any time. will not sell or distribute your email address. See our Privacy Policy for more information on how we product and manage your data.\u0022\n                }\n            }\n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID of the form in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Text Questions",
+      "Anchor": "custom-text-questions",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Custom Text Questions"
+      ],
+      "Text": "Free form text questions can be included in forms. The response lengths must be between 1 and 300 characters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Custom Text Questions",
+      "Anchor": "custom-text-questions",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Custom Text Questions"
+      ],
+      "Text": "{\n    \u0022name\u0022: \u0022customTextQuestion\u0022,\n    \u0022question\u0022: \u0022I have a text question for you!  ?\u0022,\n    \u0022typeSpecificQuestionDetails\u0022: {\n        \u0022com.linkedin.ads.TextQuestionDetails\u0022: {}\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Multiple Choice Question",
+      "Anchor": "custom-multiple-choice-question",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Custom Multiple Choice Question"
+      ],
+      "Text": "Multiple choice questions can be included in forms. These questions require a minimum of 2 options. They can have up to 15 options.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Custom Multiple Choice Question",
+      "Anchor": "custom-multiple-choice-question",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Custom Multiple Choice Question"
+      ],
+      "Text": "The following example creates an multiple choice question with 2 options.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Creating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "{\n\t\u0022question\u0022: {\n\t\t\u0022localized\u0022: {\n\t\t\t\u0022en_US\u0022: \u0022Are you interested\u0022\n\t\t}\n\t},\n\t\u0022name\u0022: \u0022Custom question 0\u0022,\n\t\u0022questionDetails\u0022: {\n\t\t\u0022multipleChoiceQuestionDetails\u0022: {\n\t\t\t\u0022options\u0022: [{\n\t\t\t\t\t\u0022text\u0022: {\n\t\t\t\t\t\t\u0022localized\u0022: {\n\t\t\t\t\t\t\t\u0022en_US\u0022: \u0022Yes\u0022\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\u0022text\u0022: {\n\t\t\t\t\t\t\u0022localized\u0022: {\n\t\t\t\t\t\t\t\u0022en_US\u0022: \u0022No\u0022\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Lead Forms",
+      "Anchor": "updating-lead-forms",
+      "SectionPath": [
+        "Updating Lead Forms"
+      ],
+      "Text": "Update sponsored forms while they are in two states:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Lead Forms",
+      "Anchor": "updating-lead-forms",
+      "SectionPath": [
+        "Updating Lead Forms"
+      ],
+      "Text": "pre-published\npublished",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Lead Forms",
+      "Anchor": "updating-lead-forms",
+      "SectionPath": [
+        "Updating Lead Forms"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Lead Forms",
+      "Anchor": "updating-lead-forms",
+      "SectionPath": [
+        "Updating Lead Forms"
+      ],
+      "Text": "Organic (i.e., non-sponsored) forms do not support edits on published forms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Published State",
+      "Anchor": "pre-published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Pre-Published State"
+      ],
+      "Text": "An Ad Form is in a pre-published state when one of the following conditions is met:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Published State",
+      "Anchor": "pre-published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Pre-Published State"
+      ],
+      "Text": "Form is in DRAFT status.\nForm is not linked to an Ad Creative.\nForm is only linked to Ad Creatives that are part of DRAFT Ad Campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Published State",
+      "Anchor": "pre-published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Pre-Published State"
+      ],
+      "Text": "In this state, you can update all fields in the form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Published State",
+      "Anchor": "pre-published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Pre-Published State"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-Published State",
+      "Anchor": "pre-published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Pre-Published State"
+      ],
+      "Text": "Advertisers may have linked their forms to 3rd-party applications such as CRM or Marketing Automation tools. Editing a form after its schema has been ingested into the 3rd-party application may break ingestion of lead data. LinkedIn recommends warning users of this risk if your application allows editing of forms. Please advise the user to complete the following steps after editing:\n\u003E 1. Delete previously created test leads synced to any 3rd-party partner applications they use.\n\u003E 2. Re-map the form schema with the updated form fields in the 3rd-party application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Published State",
+      "Anchor": "published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Published State"
+      ],
+      "Text": "If an Ad Form doesn\u0027t meet the above conditions, it\u0027s in the published state. In this state, you can edit the following fields:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Published State",
+      "Anchor": "published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Published State"
+      ],
+      "Text": "headline\ndescription\nlegalDisclaimer\nlandingPageUrl\nprivacyPageUrl\nthankYouMessage\nthankYouPageCta\nstatus",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Published State",
+      "Anchor": "published-state",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Published State"
+      ],
+      "Text": "Sponsored Forms linked to Sponsored InMail and Conversation Ads can\u0027t be edited in this state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/leadForms/656",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022state\u0022: \u0022ARCHIVED\u0022\n           \n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadForms/656\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027\n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022state\u0022: \u0022ARCHIVED\u0022\n           \n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 204 No Content HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Sample Request"
+      ],
+      "Text": "If the form is not in an editable state or you attempt to edit an uneditable field, you\u0027ll receive a 400 Bad Request error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Form Status",
+      "Anchor": "updating-form-status",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status"
+      ],
+      "Text": "Form status can be changed from PUBLISHED to ARCHIVED. This can be done using a partial update request. Note that the status change only affects whether the form and the associated creative gets served or not. Including the entire form body is not required to change status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Form Status",
+      "Anchor": "updating-form-status",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Form Status",
+      "Anchor": "updating-form-status",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status"
+      ],
+      "Text": "When you perform an update, the header X-RestLi-Method must be included in the request and set to PARTIAL_UPDATE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/leadForms/656",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022state\u0022: \u0022ARCHIVED\u0022\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Updating Lead Forms",
+        "Updating Form Status",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/leadForms/656\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022state\u0022: \u0022ARCHIVED\u0022\n           \n        }\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Lead Form Responses",
+      "Anchor": "get-lead-form-responses",
+      "SectionPath": [
+        "Get Lead Form Responses"
+      ],
+      "Text": "The Lead Form Responses API returns the response data for leads that filled out a Lead Form. Collecting Lead Form responses requires that the viewer is the owner of the Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Form Response Schema",
+      "Anchor": "lead-form-response-schema",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Lead Form Response Schema"
+      ],
+      "Text": "For more information on the schema, refer to Lead Form Response Schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find Lead Form Responses by Owner",
+      "Anchor": "find-lead-form-responses-by-owner",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Find Lead Form Responses by Owner"
+      ],
+      "Text": "Response can be retrieved for a specified owner. This endpoint takes in 2 required parameters: owner={OrganizationUrn or SponsoredAccountUrn} \u0026 leadType. This API requires Restli 2.0 header and URL encoding URNs in URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Find Lead Form Responses by Owner",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "You must always set this to string owner. It indicates that you\u0027re querying via the Owner finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of SponsoredAccountUrn, OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN indicating the owner of the form which generated the lead. Example: OrganizationUrn or SponsoredAccountUrn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadtype-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Indicates LeadType used to filter Lead Form responses.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) VersionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional field indicating the specific form and version to retrieve the Lead Form Response. If specified, return the corresponding Lead Form responses for the versionedLeadGenFormUrn, otherwise return all results not applying this filter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional URN indicating the entity with which the lead is associated. Example: SponsoredCreativeUrn or OrganizationUrn. If specified, returns the corresponding Lead Form responses associated with the associatedEntity, otherwise returns all results not applying this filter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "submittedAtTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) TimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional field indicating the lead submitted time range filter. If specified, returns the corresponding Lead Form responses for the time range, otherwise returns all results not applying this filter. Note: The submittedAtTimeRange field accepts Epoch format only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "limitedToTestLeads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean(default=false)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, only return the test leads matching the filtering criteria. Clients could use this filter to only retrieve test leads for the purpose of testing the functionality of Lead Forms. Note: By default the value is false and returns all the leads matching the filtering criteria.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Find Lead Form Responses by Owner",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Find Lead Form Responses by Owner",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadFormResponses?owner=(sponsoredAccount:urn%3Ali%3AsponsoredAccount%3A522529623)\u0026leadType=(leadType:SPONSORED)\u0026limitedToTestLeads=false\u0026versionedLeadGenFormUrn=urn%3Ali%3AversionedLeadGenForm%3A%28urn%3Ali%3AleadGenForm%3A3162%2C1%29\u0026q=owner",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Find Lead Form Responses by Owner",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadFormResponses?owner=(sponsoredAccount:urn:li:sponsoredAccount:522529623)\u0026leadType=(leadType:SPONSORED)\u0026limitedToTestLeads=false\u0026versionedLeadGenFormUrn=urn%3Ali%3AversionedLeadGenForm%3A%28urn%3Ali%3AleadGenForm%3A3162%2C1%29\u0026q=owner\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027\\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Find Lead Form Responses by Owner",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022owner\u0022: {\n                \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:522529623\u0022\n            },\n            \u0022submitter\u0022: \u0022urn:li:person:MpGcnvaU_p\u0022,\n            \u0022versionedLeadGenFormUrn\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:3162,1)\u0022,\n            \u0022leadMetadata\u0022: {\n                \u0022sponsoredLeadMetadata\u0022: {\n                    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:367378525\u0022\n                }\n            },\n            \u0022ownerInfo\u0022: {\n                \u0022sponsoredAccountInfo\u0022: {\n                    \u0022name\u0022: \u0022Angela Test\u0022\n                }\n            },\n            \u0022testLead\u0022: false,\n            \u0022associatedEntity\u0022: {\n                \u0022associatedCreative\u0022: \u0022urn:li:sponsoredCreative:121608865\u0022\n            },\n            \u0022leadType\u0022: \u0022SPONSORED\u0022,\n            \u0022leadMetadataInfo\u0022: {\n                \u0022sponsoredLeadMetadataInfo\u0022: {\n                    \u0022campaign\u0022: {\n                        \u0022name\u0022: \u0022Brand awareness - May 3, 2022\u0022,\n                        \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n                        \u0022id\u0022: \u0022urn:li:sponsoredCampaign:367378525\u0022\n                    }\n                }\n            },\n            \u0022associatedEntityInfo\u0022: {\n                \u0022associatedCreative\u0022: {\n                    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n                    \u0022content\u0022: {\n                        \u0022reference\u0022: \u0022urn:li:ugcPost:6927151919538794496\u0022\n                    },\n                    \u0022id\u0022: \u0022urn:li:sponsoredCreative:121608865\u0022\n                }\n            },\n            \u0022id\u0022: \u0022aaaabbbb-0000-cccc-1111-dddd2222eeee-5\u0022,\n            \u0022submittedAt\u0022: 1686182358881,\n            \u0022formResponse\u0022: {\n                \u0022answers\u0022: [\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022textQuestionAnswer\u0022: {\n                                \u0022answer\u0022: \u0022Hello World-testing purpose\u0022\n                            }\n                        },\n                        \u0022questionId\u0022: 1\n                    },\n                    {\n                        \u0022answerDetails\u0022: {\n                            \u0022multipleChoiceAnswer\u0022: {\n                                \u0022options\u0022: [\n                                    1,\n                                    3\n                                ]\n                            }\n                        },\n                        \u0022questionId\u0022: 2\n                    }\n                ],\n                \u0022consentResponses\u0022: [\n                    {\n                        \u0022accepted\u0022: true,\n                        \u0022consentId\u0022: 4\n                    }\n                ]\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a single Lead Form Response",
+      "Anchor": "get-a-single-lead-form-response",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get a single Lead Form Response"
+      ],
+      "Text": "Use the lead id to fetch the corresponding response by making a GET call to the API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get a single Lead Form Response",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get a single Lead Form Response",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadFormResponses/aaaabbbb-0000-cccc-1111-dddd2222eeee-5",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get a single Lead Form Response",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadFormResponses/691c02e7-f7f0-430a-ae16-4fc7d76f61a6-5\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get a single Lead Form Response",
+        "Sample Response"
+      ],
+      "Text": "{\n\t\u0022owner\u0022: {\n\t\t\u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:522529623\u0022\n\t},\n\t\u0022submitter\u0022: \u0022urn:li:person:MpGcnvaU_p\u0022,\n\t\u0022versionedLeadGenFormUrn\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:3162,1)\u0022,\n\t\u0022leadMetadata\u0022: {\n\t\t\u0022sponsoredLeadMetadata\u0022: {\n\t\t\t\u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:367378525\u0022\n\t\t}\n\t},\n\t\u0022ownerInfo\u0022: {\n\t\t\u0022sponsoredAccountInfo\u0022: {\n\t\t\t\u0022name\u0022: \u0022Angela Test\u0022\n\t\t}\n\t},\n\t\u0022testLead\u0022: false,\n\t\u0022associatedEntity\u0022: {\n\t\t\u0022associatedCreative\u0022: \u0022urn:li:sponsoredCreative:121608865\u0022\n\t},\n\t\u0022leadType\u0022: \u0022SPONSORED\u0022,\n\t\u0022leadMetadataInfo\u0022: {\n\t\t\u0022sponsoredLeadMetadataInfo\u0022: {\n\t\t\t\u0022campaign\u0022: {\n\t\t\t\t\u0022name\u0022: \u0022Brand awareness - May 3, 2022\u0022,\n\t\t\t\t\u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n\t\t\t\t\u0022id\u0022: \u0022urn:li:sponsoredCampaign:367378525\u0022\n\t\t\t}\n\t\t}\n\t},\n\t\u0022associatedEntityInfo\u0022: {\n\t\t\u0022associatedCreative\u0022: {\n\t\t\t\u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n\t\t\t\u0022content\u0022: {\n\t\t\t\t\u0022reference\u0022: \u0022urn:li:ugcPost:6927151919538794496\u0022\n\t\t\t},\n\t\t\t\u0022id\u0022: \u0022urn:li:sponsoredCreative:121608865\u0022\n\t\t}\n\t},\n\t\u0022id\u0022: \u0022aaaabbbb-0000-cccc-1111-dddd2222eeee-5\u0022,\n\t\u0022submittedAt\u0022: 1686182358881,\n\t\u0022formResponse\u0022: {\n\t\t\u0022answers\u0022: [{\n\t\t\t\t\u0022answerDetails\u0022: {\n\t\t\t\t\t\u0022textQuestionAnswer\u0022: {\n\t\t\t\t\t\t\u0022answer\u0022: \u0022Hello World-testing purpose\u0022\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\u0022questionId\u0022: 1\n\t\t\t},\n\t\t\t{\n\t\t\t\t\u0022answerDetails\u0022: {\n\t\t\t\t\t\u0022multipleChoiceAnswer\u0022: {\n\t\t\t\t\t\t\u0022options\u0022: [\n\t\t\t\t\t\t\t1,\n\t\t\t\t\t\t\t3\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\u0022questionId\u0022: 2\n\t\t\t}\n\t\t],\n\t\t\u0022consentResponses\u0022: [{\n\t\t\t\u0022accepted\u0022: true,\n\t\t\t\u0022consentId\u0022: 4\n\t\t}]\n\t}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Multiple Lead Form responses",
+      "Anchor": "get-multiple-lead-form-responses",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get Multiple Lead Form responses"
+      ],
+      "Text": "If you already know the IDs of multiple Lead Forms you wish to fetch response, you can fetch the response by using ids parameter. This API requires Restli 2.0 header and URL encoding URNs in URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Multiple Lead Form responses",
+      "Anchor": "get-multiple-lead-form-responses",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get Multiple Lead Form responses"
+      ],
+      "Text": "The maximum number of permitted ids is 1000.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get Multiple Lead Form responses",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get Multiple Lead Form responses",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadFormResponses?ids=List(\u0022aaaabbbb-0000-cccc-1111-dddd2222eeee-5\u0022)\u0026owner=(sponsoredAccount:urn%3Ali%3AsponsoredAccount%3A522529623)\u0026leadType=(leadType:SPONSORED)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get Multiple Lead Form responses",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadFormResponses?ids=List(\u0022aaaabbbb-0000-cccc-1111-dddd2222eeee-5\u0022)\u0026owner=(sponsoredAccount:urn%3Ali%3AsponsoredAccount%3A522529623)\u0026leadType=(leadType:SPONSORED)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Get Lead Form Responses",
+        "Get Multiple Lead Form responses",
+        "Sample Response"
+      ],
+      "Text": "{\n\t\u0022results\u0022: {\n\t\t\u0022aaaabbbb-0000-cccc-1111-dddd2222eeee-5\u0022: {\n\t\t\t\u0022owner\u0022: {\n\t\t\t\t\u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:522529623\u0022\n\t\t\t},\n\t\t\t\u0022submitter\u0022: \u0022urn:li:person:MpGcnvaU_p\u0022,\n\t\t\t\u0022versionedLeadGenFormUrn\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:3162,1)\u0022,\n\t\t\t\u0022leadMetadata\u0022: {\n\t\t\t\t\u0022sponsoredLeadMetadata\u0022: {\n\t\t\t\t\t\u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:367378525\u0022\n\t\t\t\t}\n\t\t\t},\n\t\t\t\u0022ownerInfo\u0022: {\n\t\t\t\t\u0022sponsoredAccountInfo\u0022: {\n\t\t\t\t\t\u0022name\u0022: \u0022Angela Test\u0022\n\t\t\t\t}\n\t\t\t},\n\t\t\t\u0022testLead\u0022: false,\n\t\t\t\u0022associatedEntity\u0022: {\n\t\t\t\t\u0022associatedCreative\u0022: \u0022urn:li:sponsoredCreative:121608865\u0022\n\t\t\t},\n\t\t\t\u0022leadType\u0022: \u0022SPONSORED\u0022,\n\t\t\t\u0022leadMetadataInfo\u0022: {\n\t\t\t\t\u0022sponsoredLeadMetadataInfo\u0022: {\n\t\t\t\t\t\u0022campaign\u0022: {\n\t\t\t\t\t\t\u0022name\u0022: \u0022Brand awareness - May 3, 2022\u0022,\n\t\t\t\t\t\t\u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n\t\t\t\t\t\t\u0022id\u0022: \u0022urn:li:sponsoredCampaign:367378525\u0022\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\u0022associatedEntityInfo\u0022: {\n\t\t\t\t\u0022associatedCreative\u0022: {\n\t\t\t\t\t\u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n\t\t\t\t\t\u0022content\u0022: {\n\t\t\t\t\t\t\u0022reference\u0022: \u0022urn:li:ugcPost:6927151919538794496\u0022\n\t\t\t\t\t},\n\t\t\t\t\t\u0022id\u0022: \u0022urn:li:sponsoredCreative:121608865\u0022\n\t\t\t\t}\n\t\t\t},\n\t\t\t\u0022id\u0022: \u0022aaaabbbb-0000-cccc-1111-dddd2222eeee-5\u0022,\n\t\t\t\u0022submittedAt\u0022: 1686182358881,\n\t\t\t\u0022formResponse\u0022: {\n\t\t\t\t\u0022answers\u0022: [{\n\t\t\t\t\t\t\u0022answerDetails\u0022: {\n\t\t\t\t\t\t\t\u0022textQuestionAnswer\u0022: {\n\t\t\t\t\t\t\t\t\u0022answer\u0022: \u0022Hello World-testing purpose\u0022\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\u0022questionId\u0022: 1\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\u0022answerDetails\u0022: {\n\t\t\t\t\t\t\t\u0022multipleChoiceAnswer\u0022: {\n\t\t\t\t\t\t\t\t\u0022options\u0022: [\n\t\t\t\t\t\t\t\t\t1,\n\t\t\t\t\t\t\t\t\t3\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\u0022questionId\u0022: 2\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\u0022consentResponses\u0022: [{\n\t\t\t\t\t\u0022accepted\u0022: true,\n\t\t\t\t\t\u0022consentId\u0022: 4\n\t\t\t\t}]\n\t\t\t}\n\t\t},\n\t\t\u0022statuses\u0022: {},\n\t\t\u0022errors\u0022: {}\n\t}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Leads",
+      "Anchor": "test-leads",
+      "SectionPath": [
+        "Test Leads"
+      ],
+      "Text": "Test leads can be generated from the Campaign Manager UI. These leads can then be downloaded via the Lead Form Response API or UI. The testLead field on a response is equal to true for test leads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Leads",
+      "Anchor": "test-leads",
+      "SectionPath": [
+        "Test Leads"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Leads",
+      "Anchor": "test-leads",
+      "SectionPath": [
+        "Test Leads"
+      ],
+      "Text": "Test leads currently cannot be generated for InMail campaigns with lead forms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Leads",
+      "Anchor": "test-leads",
+      "SectionPath": [
+        "Test Leads"
+      ],
+      "Text": "Deleting draft campaigns associated with test leads is not recommended. Test leads linked to a deleted campaign are still downloadable, but the associated campaign is no longer retrievable which may cause problems in some integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Test Leads",
+      "Anchor": "test-leads",
+      "SectionPath": [
+        "Test Leads"
+      ],
+      "Text": "For more information on generating test leads, refer to Sending a Test Lead in Campaign Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Notification Subscriptions",
+      "Anchor": "lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions"
+      ],
+      "Text": "Register and validate your webhook URL endpoints to receive push notifications of new leads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Notification Subscriptions",
+      "Anchor": "lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Notification Subscriptions",
+      "Anchor": "lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions"
+      ],
+      "Text": "Only HTTPS URLs are supported.\nStarting March 16, 2026, new lead notifications will only be pushed to webhooks that have been validated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Notification Subscriptions",
+      "Anchor": "lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Notification Subscriptions",
+      "Anchor": "lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions"
+      ],
+      "Text": "Create up to 1,500 lead notification subscriptions. When you reach this limit, delete subscriptions that are no longer in use before creating new subscriptions. For details, refer to Delete Lead notification URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Schema"
+      ],
+      "Text": "For more information on the schema, refer to Lead Subscriptions Schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch Lead Notification Subscriptions",
+      "Anchor": "fetch-lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch Lead Notification Subscriptions"
+      ],
+      "Text": "Existing Lead notification URLs can be requested individually through the following endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch Lead Notification Subscriptions",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch Lead Notification Subscriptions",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadNotifications?q=criteria\u0026owner=(value:(sponsoredAccount:urn%3Ali%3AsponsoredAccount%3A511849581))\u0026leadType=(leadType:SPONSORED)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-10",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch Lead Notification Subscriptions",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadNotifications?q=criteria\u0026owner=(value:(organization:urn%3Ali%3Aorganization%3A5622087))\u0026leadType=(leadType:SPONSORED)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch Lead Notification Subscriptions",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n            \u0022owner\u0022: {\n                \u0022organization\u0022: \u0022urn:li:organization:5622087\u0022\n            },\n            \u0022id\u0022: 7012,\n            \u0022leadType\u0022: \u0022SPONSORED\u0022,\n            \u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:6851219773716516864,1)\u0022,\n            \u0022associatedEntity\u0022: {\n                \u0022event\u0022: \u0022urn:li:event:123\u0022\n            }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch a single Lead Notification Subscription",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch a single Lead Notification Subscription",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/leadNotifications/107708",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-11",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch a single Lead Notification Subscription",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/leadNotifications/107708\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-7",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Fetch a single Lead Notification Subscription",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    },\n    \u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\n    \u0022id\u0022: 107708,\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "Use the following endpoint to create a new leadNotificationSubcription against an owner entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "Only HTTPS URLs are supported.\nThe provided URL should be publicly accessible and accept POST bodies without any additional requirements such as authorization tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/leadNotifications --data \u0027{\u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\u0022owner\u0022: {\u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022}, \u0022leadType\u0022: \u0022SPONSORED\u0022}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u201D\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://eogi5ry4pv6izmq.m.pipedream.net\u0022,\n    \u0022owner\u0022: {\n        \u0022sponsoredAccount\u0022: \u0022urn:li:sponsoredAccount:520866471\u0022\n    },\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Owner Level",
+      "Anchor": "create-a-lead-notification-subscription---owner-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Owner Level"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Associated Entity Level",
+      "Anchor": "create-a-lead-notification-subscription---associated-entity-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level"
+      ],
+      "Text": "Use the following endpoint to create a new leadNotificationSubscription against an associated entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Associated Entity Level",
+      "Anchor": "create-a-lead-notification-subscription---associated-entity-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Notification Subscription - Associated Entity Level",
+      "Anchor": "create-a-lead-notification-subscription---associated-entity-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level"
+      ],
+      "Text": "Only HTTPS URLs are supported.\nThe provided URL should be publicly accessible and accept POST bodies without any additional requirements such as authorization tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/leadNotifications\u201D --data \u2018{\u201Cwebhook\u201D: \u201Chttps://linkedin.com\u201D,\u0022owner\u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\u0022associatedEntity\u0022:{\u0022event\u0022:\u0022urn:li:event:123\u0022}, \u0022leadType\u0022: \u0022SPONSORED\u0022}\u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u201D\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner \u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\n    \u0022associatedEntity\u0022:{\u0022event\u0022:\u0022urn:li:event:123\u0022},\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-12",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Notification Subscription - Associated Entity Level",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "Use the following endpoint to create a new leadNotificationSubscription against a Lead Gen Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "Only HTTPS URLs are supported.\nThe provided URL should be publicly accessible and accept POST bodies without any additional requirements such as authorization tokens.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/leadNotifications\u201D --data \u2018{\u201Cwebhook\u201D: \u201Chttps://linkedin.com\u201D,\u0022owner\u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:818,1)\u0022, \u0022leadType\u0022: \u0022SPONSORED\u0022}\u2019",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/leadNotifications\u201D\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022webhook\u0022: \u0022https://linkedin.com\u0022,\n    \u0022owner \u0022: {\u0022organization\u0022: \u0022urn:li:organization:1\u0022},\n    \u0022versionedForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:818,1)\u0022,\n    \u0022leadType\u0022: \u0022SPONSORED\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Notification Subscription - Form Level",
+      "Anchor": "create-a-lead-gen-notification-subscription---form-level",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security",
+      "Anchor": "security",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level",
+        "Security"
+      ],
+      "Text": "To verify that the notification is originated from LinkedIn, you can configure your service to only accept notifications that include a verification parameter that you explicitly set during the creation. Example: https://mywebservice.example.com/notificationHandler?secret=some-generated-token",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security",
+      "Anchor": "security",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level",
+        "Security"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Security",
+      "Anchor": "security",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Create a Lead Gen Notification Subscription - Form Level",
+        "Security"
+      ],
+      "Text": "All notifications are sent via HTTPS, so your payload and parameters on the URL are encrypted with SSL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Lead notification URL",
+      "Anchor": "delete-lead-notification-url",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Delete Lead notification URL"
+      ],
+      "Text": "Remove a Lead notification URL when you no longer want to receive notifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-13",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Delete Lead notification URL",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-13",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Delete Lead notification URL",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/leadNotifications/107708",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-13",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Delete Lead notification URL",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/leadNotifications/107708\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Deduplication",
+      "Anchor": "webhook-deduplication",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication"
+      ],
+      "Text": "LinkedIn webhook notifications can occasionally be delivered multiple times. Your application must implement deduplication logic to prevent processing the same lead multiple times.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "Use a composite key consisting of:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "leadGenFormResponse URN (the lead identifier)\noccurredAt timestamp (when the action occurred)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "const deduplicationKey = \u0060${notification.leadGenFormResponse}_${notification.occurredAt}\u0060;",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "The leadGenFormResponse URN is reused for the same member and form combination. This is expected behavior. For example, if a member:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "Registers for an event (leadGenFormResponse: urn:li:leadGenFormResponse:abc-123).\nUnregisters from the event (same URN: urn:li:leadGenFormResponse:abc-123).\nRe-registers for the event (same URN: urn:li:leadGenFormResponse:abc-123).\nThe same leadGenFormResponse URN will be used across all three actions. The occurredAt timestamp is what differentiates these separate submissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deduplication Key for Lead Sync",
+      "Anchor": "deduplication-key-for-lead-sync",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Webhook Deduplication",
+        "Deduplication Key for Lead Sync"
+      ],
+      "Text": "For additional webhook deduplication best practices, see the general webhook documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q: What happens if I have multiple subscriptions under an owner?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A: We honor all subscriptions and send push notifications for each valid subscription matching the context in which a lead was submitted/deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q: Why is my webhook invalid or why was it invalidated?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A: In most cases a webhook fails validation because it doesn\u0027t correctly return the HMAC-SHA256 encoding of the sent challenge code using the correct client secret. Please refer to the webhook documentation to ensure all steps are completed properly. Also, note that validation is ongoing and the webhook is challenged in a regular interval (~2 hours) so ensure no limitations are in place to prevent our service from calling the webhook.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q: Which subscription flow should I implement?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A: While each option is serviceable, unless there is an explicit need to have unique webhook URLs on a per form or associated entity basis, we recommend creating subscriptions at the owner level. This simplifies subscription management in that only a single subscription needs to exist per owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q: What happens if I create a subscription with both a form and an associated entity?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A: For a single subscription containing both a form and an associated entity, a notification is sent only when a lead is submitted that matches both the provided form and associated entity values.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q: What content can I expect to be included in the notification payloads?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "A: Please refer to the schema as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always set to LEAD_ACTION.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenFormResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the lead.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Owner of the lead. For the SPONSORED lead type the owner is a sponsored account URN. For all other lead types the owner is an organization URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying which entity the lead is associated with.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the Lead Gen Form.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the lead. Set to SPONSORED for sponsored leads.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Action performed on the lead. It is either CREATED or DELETED.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "occurredAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unix timestamp for when the action occurred.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Example payload for when a member registers for an event",
+      "Anchor": "example-payload-for-when-a-member-registers-for-an-event",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions",
+        "Example payload for when a member registers for an event"
+      ],
+      "Text": "{\n    type: \u201CLEAD_ACTION\u201D,\n    leadGenFormResponse: \u201Curn:li:leadGenFormResponse:1a2b3c-4\u201D,\n    leadGenForm: \u201Curn:li:versionedLeadGenForm:(urn:li:leadGenForm:1, 1)\u201D,\n    owner: {\u201Corganization\u201D: \u201Curn:li:organization:123\u201D},\n    associatedEntity:  {\u201Cevent\u201D: \u201Curn:li:event:123\u201D},\n    leadType: \u0022EVENT\u0022,\n    leadAction: \u201CCREATED\u201D,\n    occurredAt: 123456789\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example payload for when a member unregisters from an event",
+      "Anchor": "example-payload-for-when-a-member-unregisters-from-an-event",
+      "SectionPath": [
+        "Lead Notification Subscriptions",
+        "Frequently Asked Questions",
+        "Example payload for when a member unregisters from an event"
+      ],
+      "Text": "{\n    type: \u201CLEAD_ACTION\u201D,\n    leadGenFormResponse: \u201Curn:li:leadGenFormResponse:1a2b3c-4\u201D,\n    leadGenForm: \u201Curn:li:versionedLeadGenForm:(urn:li:leadGenForm:1, 1)\u201D,\n    owner: {\u201Corganization\u201D: \u201Curn:li:organization:123\u201D},\n    associatedEntity:  {\u201Cevent\u201D: \u201Curn:li:event:123\u201D},\n    leadType: \u0022EVENT\u0022\n    leadAction: \u201CDELETED\u201D\n    occurredAt: 1233589\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "The following are the possible error codes and their resolutions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member is not authorized to create LeadGenForm",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member doesn\u0027t have enough permissions under the sponsoredAccount to create a Lead Form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the right Permissions are present to manage forms.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member is not authorized to BatchGet LeadGenForms",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member doesn\u0027t have enough permissions under the sponsoredAccount/Organization to get a Lead Form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the right Permissions are present to manage forms.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member is not authorized to fetch LeadGenForms under a SponsoredAccount/Organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member doesn\u0027t have enough permissions under the sponsoredAccount/organization to fetch Lead Forms using criteria finder.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the right Permissions are present to manage forms.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member doesn\u0027t have lead access permission.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member doesn\u0027t have enough permissions to access the collected leads.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the right Permissions are present to fetch leads.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Failed to generate Lead Form identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create request for Lead Form is not correct.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please make sure the request payload is as per the schema.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#lead-form-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please specify a concrete LeadType and Owner for your request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch get request is missing leadType or owner param in the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure both the params are present when making the batch get request.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Malformed subscription creation request that doesn\u0027t meet validation checks. Owner of Lead Form doesn\u0027t match that of the subscription.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The subscription being accessed is not under the same sponsoredAccount/Organization as the Lead Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure owners for both Lead Form and the subscription are same.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized! the member doesn\u0027t have permission to take this action on a subscription for the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to take actions on the lead notification subscription.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Check whether the right Permissions are present to manage lead notification subscriptions.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09\u0026tabs=http#permissions"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Lead Form has duplicate {field}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Form being created has duplicate fields which is not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fix the fields in the error message to have unique values.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

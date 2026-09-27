@@ -1,0 +1,63 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2018/marketing-api-changes",
+  "Title": "Archived Marketing API Changes 2018",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2018/marketing-api-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "October 2018",
+      "Anchor": "october-2018",
+      "SectionPath": [
+        "October 2018"
+      ],
+      "Text": "Added DMP Segment List Uploads to Matched Audiences\nAdd DMP Segment by Companies to Matched Audiences\nAdded custom checkbox consents to Lead Gen.\nAdd Find by Organization Author to UGC Posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 2018",
+      "Anchor": "september-2018",
+      "SectionPath": [
+        "September 2018"
+      ],
+      "Text": "Added Video Analytics API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "August 2018",
+      "Anchor": "august-2018",
+      "SectionPath": [
+        "August 2018"
+      ],
+      "Text": "Added auto-bidding optimizationTargetTypes to Ad Campaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "July 2018",
+      "Anchor": "july-2018",
+      "SectionPath": [
+        "July 2018"
+      ],
+      "Text": "Added hidden fields to Lead Gen.\nAdded test leads to Lead Gen.\nAdded commentLikes field to Ad Analytics\nAdded SERVING_LOCATION pivot to Ad Analytics",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+  "Title": "Integration Requirements for Conversions API Program",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-api-gtm-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-payload-builder",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/conversions-workflow",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/custom-matching-identifiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/deduplication",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/enabling-first-party-cookies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/getting-access-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/conversions/integration-requirements-conversions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Conversions API Program",
+      "Anchor": "integration-requirements-for-conversions-api-program",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Conversions API Program",
+      "Anchor": "integration-requirements-for-conversions-api-program",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Conversions API Program",
+      "Anchor": "integration-requirements-for-conversions-api-program",
+      "SectionPath": [],
+      "Text": "LinkedIn is in the process of rolling out a Technical Sign Off process for the Conversions program. This ensures that our members get the best experience whether using LinkedIn\u0027s native UI or a partner product. The technical review and sign off also ensures that there are no gaps in integrations and that partner products keep up with the latest features and updates released by LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Conversions API Program",
+      "Anchor": "integration-requirements-for-conversions-api-program",
+      "SectionPath": [],
+      "Text": "As an API partner, please go through the requirements listed below. These are the capabilities that an integrating partner is expected to build in their product. We request you to plan and incorporate these features early in your design. When you\u0027re nearing completion, you must initiate a Technical Sign Off request by contacting your LinkedIn POC on the Business Development team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Integration Requirements for Conversions API Program",
+      "Anchor": "integration-requirements-for-conversions-api-program",
+      "SectionPath": [],
+      "Text": "A demo will be scheduled during which you\u0027ll be asked to showcase all your product capabilities. During this evaluation, LinkedIn can suggest modifications which should be completed for the sign off. If all criteria are met (as per the envisioned scope), the technical sign-off is awarded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "API capabilities to be demonstrated in Demo"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Basics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 integration with right scopes and consent screen. Minimum required permissions: r_ads, rw_conversions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid (heartbeat /me)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to re-trigger OAuth Flow in case token has expired or been invalidated",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to use refresh tokens to mint new access tokens that extend access token expiry up to 1 year",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect refresh token expiry and re-trigger OAuth Flow",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to request re-auth for consent for new permission to only intended existing customers that would be sending conversions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Core",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-101",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrieve all Sponsored Accounts (ad accounts) with status for the logged in user and allow user to select one of those ad accounts where user has non-VIEWER role",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-102",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to read all active CAPI conversion rules with name available in the selected ad account and allow user to select one of those existing conversion rules",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-103",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to create a new conversion rule with CONVERSIONS_API as conversionMethod",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-104",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to auto-associate the conversion rule to all existing active campaigns for attribution",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-105",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to stream conversion events with multiple user identifiers on newly created and existing conversion rules (required: conversion, conversionHappenedAt , user : SHA256_EMAIL)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-106",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Support userInfo fields in plain text such as first name, last name, company, title, country/region etc to increase the match rate",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Advanced",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-201",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to schedule updates in batches for streaming multiple conversion events together",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-202",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure email addresses are converted to lowercase and all whitespace is removed before hashing them with SHA256",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-203",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fetch click ids / first-party cookie ids and send them as LINKEDIN_FIRST_PARTY_ADS_TRACKING_UUID for higher match rates",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CO-204",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Schedule a daily or weekly status check on the conversion rules by sending a GET request and verify that it returns enabled: true. If it returns false, then it means user has deleted the conversion rule and you can stop event sync",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

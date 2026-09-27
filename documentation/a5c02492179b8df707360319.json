@@ -1,0 +1,817 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-lms",
+  "Title": "LinkedIn Learning Hub: LMS Integration and Content Integration (IT - Enabled) Guide",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/hcm",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-lms",
+    "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Learning Hub Overview",
+      "Anchor": "learning-hub-overview",
+      "SectionPath": [
+        "Learning Hub Overview"
+      ],
+      "Text": "This document aims to guide HRIT teams on how to integrate external data from an LMS or Content Partner into LinkedIn Learning Hub. The two use cases outlined below illustrate how LinkedIn Learning\u0027s Technical Consulting team partners with your team to determine the optimal integration design for your organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Benefits",
+      "Anchor": "benefits",
+      "SectionPath": [
+        "Benefits"
+      ],
+      "Text": "This integration brings in content from LMS-hosted resources (e.g. assignments, courses, events, and so on) and Content Partners into LinkedIn Learning Hub. It drives learner engagement and offers learners a single, intuitive platform to discover content most relevant to their needs and goals.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1",
+      "Anchor": "use-case-1",
+      "SectionPath": [
+        "Use Case 1"
+      ],
+      "Text": "You (the admin) send the raw CSV files via an automated method to the LinkedIn Learning Hub SFTP endpoint. Learning Hub then transforms the raw data on a continuing basis per the Hub ingestion schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1",
+      "Anchor": "use-case-1",
+      "SectionPath": [
+        "Use Case 1"
+      ],
+      "Text": "The Mapping Layer in the above diagram transforms raw data into data as per LinkedIn Learning Hub\u0027s ingestion schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1 Description",
+      "Anchor": "use-case-1-description",
+      "SectionPath": [
+        "Use Case 1",
+        "Use Case 1 Description"
+      ],
+      "Text": "You need to send the raw data from the your organization\u0027s infrastructure to the LinkedIn Learning SFTP endpoint, from which Learning Hub ingests the data and transforms it. As an admin, you automate the data drop mechanism.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1 Process",
+      "Anchor": "use-case-1-process",
+      "SectionPath": [
+        "Use Case 1",
+        "Use Case 1 Process"
+      ],
+      "Text": "To automate the transformation of your system\u0027s data into Learning Hub, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 1 Process",
+      "Anchor": "use-case-1-process",
+      "SectionPath": [
+        "Use Case 1",
+        "Use Case 1 Process"
+      ],
+      "Text": "Extract the raw data from your LMS/Content Partner while referring to the ingestion schema as guidance.\nDrop the raw data to the LinkedIn Learning SFTP endpoint on a daily cadence basis.\nOnce the raw data is sent to the SFTP end point, the configuration-based mapping layer in the Learning Hub transforms the data into the ingestion schema before ingestion occurs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Use Case 1 Roles \u0026 Responsibilities",
+      "Anchor": "use-case-1-roles--responsibilities",
+      "SectionPath": [
+        "Use Case 1",
+        "Use Case 1 Roles \u0026 Responsibilities"
+      ],
+      "Text": "",
+      "Headers": [
+        "Customer Admin\u0027s Responsibility",
+        "LinkedIn Learning\u0027s Responsibility"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "- Availability of IT resources for automation, SFTP handshake, allowing access to LinkedIn IPs, and so on.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Scoping to get the data to LinkedIn Learning Hub SFTP endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Data extraction from the LMS/Content Partner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Transformation of the files once they are pushed to the Learning Hub SFTP endpoint by the customer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Customers would need to be able to provide us a quality sample (fake data) of what their actual data may look like in order for us to be able to ensure the mapper has the correct output",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Ingestion of transformed data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Testing SFTP connectivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Validating script transformations and content sync",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Validating data transfer to Learning Hub per Learning Hub SFTP documentation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "- Troubleshooting content sync issues (if they occur)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Troubleshooting of issues related to data extraction from the LMS/Content Partner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field By Field Mapping Exercise (Use Case 1 only)",
+      "Anchor": "field-by-field-mapping-exercise-use-case-1-only",
+      "SectionPath": [
+        "Use Case 1",
+        "Field By Field Mapping Exercise (Use Case 1 only)"
+      ],
+      "Text": "The LinkedIn Learning Technical Consulting Team requests a field-by-field document from customers, on which files will be sent to us and which fields (and their format) each file will contain. Please refer to the sample format below as a guidance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field By Field Mapping Exercise (Use Case 1 only)",
+      "Anchor": "field-by-field-mapping-exercise-use-case-1-only",
+      "SectionPath": [
+        "Use Case 1",
+        "Field By Field Mapping Exercise (Use Case 1 only)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required",
+        "Default",
+        "Constraints",
+        "Comments"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Language of the content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "en_us",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "en_us, es_es, fr_f",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Format is locale",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field By Field Mapping Exercise (Use Case 1 only)",
+      "Anchor": "field-by-field-mapping-exercise-use-case-1-only",
+      "SectionPath": [
+        "Use Case 1",
+        "Field By Field Mapping Exercise (Use Case 1 only)"
+      ],
+      "Text": "LinkedIn Learning and customers align on ContentType mapping, i.e., which incoming content type is mapped to which LinkedIn Learning content type. The customer and the LinkedIn Learning Technical Consulting Team decide what types should map to which LinkedIn Learning content types. Please refer to the sample below for guidance. The customer approves the ContentType mapping process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field By Field Mapping Exercise (Use Case 1 only)",
+      "Anchor": "field-by-field-mapping-exercise-use-case-1-only",
+      "SectionPath": [
+        "Use Case 1",
+        "Field By Field Mapping Exercise (Use Case 1 only)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Source Content Type",
+        "Learning Hub Content Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Curriculum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "COURSE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "External Training",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Material",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DOCUMENT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Note",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DOCUMENT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Online Class",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Session",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VIDEO",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field By Field Mapping Exercise (Use Case 1 only)",
+      "Anchor": "field-by-field-mapping-exercise-use-case-1-only",
+      "SectionPath": [
+        "Use Case 1",
+        "Field By Field Mapping Exercise (Use Case 1 only)"
+      ],
+      "Text": "Once LinkedIn Learning has the customer\u0027s file format documentation, the Technical Consulting Team creates a field-by-field mapping table so the team can evaluate how the mapping script matches each customer field to a standardized template.\n\nThe customer provides the LinkedIn Learning Technical Consulting Team quality dummy data, which resembles the customer\u0027s Production data, so LinkedIn Learning can validate its transformation scripts with it.\n\nOnce the Technical Consulting Team knows which fields (and formats) the customer expects, how each field is mapped to the standardized template, and which customer content type is mapped to the LinkedIn Learning content type, the Technical Consulting Team codes and tests the mapping script.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 2",
+      "Anchor": "use-case-2",
+      "SectionPath": [
+        "Use Case 2"
+      ],
+      "Text": "The customer transforms the data as per the Learning Hub ingestion schema, and sends the transformed data to the Learning Hub SFTP endpoint for ingestion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 2 Description",
+      "Anchor": "use-case-2-description",
+      "SectionPath": [
+        "Use Case 2",
+        "Use Case 2 Description"
+      ],
+      "Text": "The customer transforms the data as per Learning Hub ingestion schema and automates the transformed data drop mechanism to the Learning Hub SFTP endpoint for ingestion.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Case 2 Process",
+      "Anchor": "use-case-2-process",
+      "SectionPath": [
+        "Use Case 2",
+        "Use Case 2 Process"
+      ],
+      "Text": "The LinkedIn Learning Account Team passes the Learning Hub ingestion schema file to the customer.\nThe customer extracts the raw data from the LMS/Content Partner based on ingestion schema.\nThe admin transforms the raw data into the expected ingestion schema format.\nThe admin automates sending the transformed data to the LinkedIn Learning Hub SFTP endpoint on a daily cadence basis.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Use Case 2 Roles \u0026 Responsibilities",
+      "Anchor": "use-case-2-roles--responsibilities",
+      "SectionPath": [
+        "Use Case 2",
+        "Use Case 2 Roles \u0026 Responsibilities"
+      ],
+      "Text": "",
+      "Headers": [
+        "Customer Admin\u0027s Responsibility",
+        "LinkedIn Learning\u0027s Responsibility"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "- Availability of IT resources for transformation, automation, SFTP handshake, allowing access to LinkedIn IPs, and so on",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Scoping to get the data to Learning Hub SFTP endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Data extraction from the LMS/Content Partner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Ingestion of transformed data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Data transformation as per ingestion schema",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Validation of data transformations once the customer pushes the files to the Learning Hub SFTP endpoint, and content sync",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Automation of the transformed data drop to the Learning Hub SFTP endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "- Troubleshooting content sync issues (if they occur)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Testing SFTP connectivity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Validating data transfer to Learning Hub as per Learning Hub SFTP documentation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/learning-experience-platform/lxp-docs/lxp-sftp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Troubleshooting issues related to data extraction from the LMS/Content Partner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "- Troubleshooting issues related to data transformation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: What data do you need?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: Please refer to our latest ingestion schema to determine what data needs to be pulled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "For LMSs there are three CSVs that are required for ingestion:\n\nContent\nAssignment\nProgress Data\n\n\nThere is only one Content CSV for Content Integrations (IT - Enabled), and Content Partner Integrations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: How does LinkedIn Learning handle and protect the data exports we provide as part of Learning Hub?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: Review the points below to understand how LinkedIn protects PII and maintains the confidentiality of sensitive information:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "LinkedIn Learning\u0027s Data Processing Agreement covers how we process and protect personal information (PII). The \u0022CONFIDENTIAL INFORMATION\u0022 provision in the LinkedIn Subscription Agreement covers how LinkedIn Learning keeps the information confidential.\n\nAs a current LinkedIn Learning customer, your organization has already agreed to these terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: How does LinkedIn keep Learning Hub data secure?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: LinkedIn keeps data ingested for Learning Hub secure via the following standards:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Review full information about LinkedIn\u2019s Information Security Program.\n\nIn summary:\n\nLinkedIn is SSAE16 SOC 2, ISO 27001, and PCI DSS certified.\nLinkedIn maintains a robust and extensive security program with policies and detailed security requirements that guide the program\u0027s execution. The objective of this program is to maintain the confidentiality, integrity and availability of all computer and data communication systems while meeting necessary legislative, industry, and contractual requirements.\nLinkedIn policies, procedures, and standards are based on International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC) \u002227001\u0022 requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q: What are your SFTP details?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: Please refer to the LinkedIn Learning Hub SFTP Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: What happens if I don\u2019t see data in Learning Hub that should be there?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: If the data does not surface in ~ 24 - 48 hours in the Learning Hub after the data has been dropped to the SFTP endpoint, please reach out to your LinkedIn Learning Account Team to flag this issue for troubleshooting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: How does data updating work? Is it snapshot or delta?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: LinkedIn Learning requires that you always provide the entire snapshot data to our SFTP endpoint. LinkedIn Learning is investing in delta sync capabilities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: How many Content Partners can I include in the integration if I have multiple Content Partners plugged in to my LMS?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "LinkedIn Learning recommends limiting Content Partners to no more than five (5) in the LMS integration. This guideline helps you avoid overwhelming learners with too many Content Partners in their search filters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: How do you handle locales as part of the data schema?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: LinkedIn Learning Hub manages locales via the following data schema conditions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "LinkedIn Learning ingests the locales for Title, Description, SubTitle, and ShortDescription per our ingestion schema; as a map, as they are multi-locale fields. LinkedIn Learning shows appropriate locales to users based on their language selection. If a user\u0027s language selection locale is unavailable, we default to PrimaryLocale.\n\nPrimaryLocale is a part of the ingestion schema.\n\nLinkedIn Learning recommends providing the PrimaryLocale explicitly. If the PrimaryLocale is not provided, LinkedIn Learning assumes the first locale is the PrimaryLocale.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "Q.: Is the data transfer mechanism via \u0022Push\u0022 or \u0022Get\u0022?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQs",
+      "Anchor": "faqs",
+      "SectionPath": [
+        "FAQs"
+      ],
+      "Text": "A.: The customer should push the CSV files via SFTP to the LinkedIn Learning Hub SFTP endpoint for Learning Hub to ingest them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "FAQs",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "FAQs",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "FAQs",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

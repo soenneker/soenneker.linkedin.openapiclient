@@ -1,0 +1,1034 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping",
+  "Title": "Organization Email Domain Mapping",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Email Domain Mapping",
+      "Anchor": "organization-email-domain-mapping",
+      "SectionPath": [],
+      "Text": "The Organization Email Domain Mapping API retrieves domain mappings for different use cases. Domain mapping information includes the domain name and details of the company or administrator responsible for adding, modifying, or deleting the domain.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Email Domain Mapping",
+      "Anchor": "organization-email-domain-mapping",
+      "SectionPath": [],
+      "Text": "The service currently provides the following method:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Email Domain Mapping",
+      "Anchor": "organization-email-domain-mapping",
+      "SectionPath": [],
+      "Text": "Finder organizationalPageAndUseCase to get an email domain mapping by organizational page urn and use case.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Obfuscated Fields",
+      "Anchor": "obfuscated-fields",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Obfuscated Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the actor has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationEmailDomainMapping",
+      "Anchor": "organizationemaildomainmapping",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationEmailDomainMapping"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationEmailDomainMapping",
+      "Anchor": "organizationemaildomainmapping",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationEmailDomainMapping"
+      ],
+      "Text": "Either of the created / lastmodified / deleted fields will always be present in the response schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationEmailDomainMapping",
+      "Anchor": "organizationemaildomainmapping",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationEmailDomainMapping"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEmailDomainMappingKey",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemaildomainmappingkey"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the key for an organization email domain mapping composed of an organizational page URN, email domain, and a use case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailVerificationDuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time to live for emails of this domain in milliseconds.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationTier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEmailDomainMappingVerificationTier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The verification tier for the organization email domain mapping. Value enums include: ADMIN_VERIFIEDALLOW_LISTEDLINKEDIN_VERIFIED",
+            "Links": [],
+            "Values": [
+              "ADMIN_VERIFIED",
+              "ALLOW_LISTED",
+              "LINKEDIN_VERIFIED"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activeAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the time at which this email domain will be active.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp field corresponding to when the email domain is made active and who activated it.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp when the resource/association/sub-resource moved into the specific lifecycle stage represented by this audit event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as an actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organizational page urn associated with the email domain and use case. It is of type urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailDomain",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Email domain associated with the organizational page and use case.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "useCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEmailDomainMappingUseCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use case associated with the organizational page and email domain. Value enums include: JOB_POSTINGMY_COMPANYLINKEDIN_SALES_SOLUTIONS_PRODUCTS",
+            "Links": [],
+            "Values": [
+              "JOB_POSTING",
+              "MY_COMPANY",
+              "LINKEDIN_SALES_SOLUTIONS_PRODUCTS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEmailDomainMappingUseCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use case associated with the organizational page and email domain. Value enums include: JOB_POSTINGMY_COMPANYLINKEDIN_SALES_SOLUTIONS_PRODUCTS",
+            "Links": [],
+            "Values": [
+              "JOB_POSTING",
+              "MY_COMPANY",
+              "LINKEDIN_SALES_SOLUTIONS_PRODUCTS"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Email Domain Mapping data",
+      "Anchor": "retrieve-organization-email-domain-mapping-data",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Email Domain Mapping data",
+      "Anchor": "retrieve-organization-email-domain-mapping-data",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of OrganizationProfileAuthorizationActionType.ORGANIZATION_PROFILE_WRITE.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageEmailDomainMapping?q=organizationalPageAndUseCase\u0026organizationalPageUrn={ORGANIZATIONAL_PAGE_URN}\u0026useCase=(value:JOB_POSTING)\u0026start=1\u0026count=10",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageEmailDomainMapping?q=organizationalPageAndUseCase\u0026organizationalPageUrn={ORGANIZATIONAL_PAGE_URN}\u0026useCase=(value:JOB_POSTING)\u0026start=1\u0026count=10\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 1,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationalPageEmailDomainMapping?q=organizationalPageAndUseCase\u0026useCase=(value:JOB_POSTING)\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A123456\u0026start=0\u0026count=10\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022verificationTier\u0022: \u0022LINKEDIN_VERIFIED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1649102934968\n      },\n      \u0022emailVerificationDuration\u0022: 15552000000,\n      \u0022key\u0022: {\n        \u0022useCase\u0022: \u0022JOB_POSTING\u0022,\n        \u0022emailDomain\u0022: \u0022testDomain.com\u0022,\n        \u0022organizationalPageUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_xyz\u0022,\n        \u0022time\u0022: 1649102934968\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 1,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: [\n      {\n        \u0022type\u0022: \u0022application/json\u0022,\n        \u0022rel\u0022: \u0022prev\u0022,\n        \u0022href\u0022: \u0022/rest/dmaOrganizationalPageEmailDomainMapping?q=organizationalPageAndUseCase\u0026useCase=(value:JOB_POSTING)\u0026organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A123456\u0026start=0\u0026count=10\u0022\n      }\n    ]\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022verificationTier\u0022: \u0022LINKEDIN_VERIFIED\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1649102934968\n      },\n      \u0022emailVerificationDuration\u0022: 15552000000,\n      \u0022key\u0022: {\n        \u0022useCase\u0022: \u0022JOB_POSTING\u0022,\n        \u0022emailDomain\u0022: \u0022testDomain.com\u0022,\n        \u0022organizationalPageUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022\n      },\n      \u0022created\u0022: {\n        \u0022time\u0022: 1649102934968\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organization Email Domain Mapping data",
+        "FINDER",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of finder to retrieve data from. Value must be organizationalPageAndUseCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=organizationalPageAndUseCase",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationalPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Organizational page urn to retrieve data for. It is of type urn:li:organizationalPage:{ID}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationalPageUrn=urn%3Ali%3AorganizationalPage%3A12345",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "useCase",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationEmailDomainMappingUseCaseRecord",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-email-domain-mapping?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationemaildomainmappingusecaserecord"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Wrapper for the OrganizationEmailDomainMappingUseCase enum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "useCase=(value:JOB_POSTING)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The index of the first item you want results for. Defaults to 0.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of items you want included on each page of results. There could be fewer items remaining than the value you specify. Defaults to 10.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "count=4",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

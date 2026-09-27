@@ -1,0 +1,1559 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+  "Title": "Recruiter System Connect - Required Fields",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Required Fields",
+      "Anchor": "recruiter-system-connect---required-fields",
+      "SectionPath": [],
+      "Text": "To ensure a consistent experience for customers using Recruiter System Connect below are the fields required to sync per category.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Required Fields",
+      "Anchor": "recruiter-system-connect---required-fields",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recruiter System Connect - Required Fields",
+      "Anchor": "recruiter-system-connect---required-fields",
+      "SectionPath": [],
+      "Text": "LinkedIn strictly audits partner behavior to ensure good user experience. If required fields are not available in your ATS system, instead of sending incorrect values, we strongly suggest you get in touch with your LinkedIn Business Development point of contact and inform them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Synchronization Options",
+      "Anchor": "job-synchronization-options",
+      "SectionPath": [
+        "Job Synchronization Options"
+      ],
+      "Text": "Partners can sync jobs to LinkedIn using either of the following approaches:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option 1: Direct Job Posting API",
+      "Anchor": "",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Option 1: Direct Job Posting API"
+      ],
+      "Text": "Use this approach to sync job requisitions directly as they become available for posting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Option 1: Direct Job Posting API",
+      "Anchor": "",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Option 1: Direct Job Posting API"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization this job posting is created for. Must be in the format urn:li:organization:1234",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job id within the applicant tracking system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of this job posting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (Max 200 Characters)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom description of the job posting.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Geographic location of the job position. Must be in the format \u0022CITY,STATE\u0022 or \u0022CITY,COUNTRY\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if countryCode and postalCode are not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Country code of the job position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if location is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Postal code of the job position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if location is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines the current state of the job. Must be either \u0022LISTED\u0022 or \u0022CLOSED\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "companyApplyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Where to redirect applicants to in order to apply for the job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Jobs",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-jobs?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "listedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date job posting was added to partner\u0027s system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Option 2: Job Requisitions with Stages",
+      "Anchor": "",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Option 2: Job Requisitions with Stages"
+      ],
+      "Text": "Use this approach to sync job requisitions and their lifecycle stages, allowing LinkedIn to determine when jobs should be posted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Option 2: Job Requisitions with Stages",
+      "Anchor": "",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Option 2: Job Requisitions with Stages"
+      ],
+      "Text": "Partners can sync jobs to LinkedIn using the following approach:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Requisitions with Stages",
+      "Anchor": "job-requisitions-with-stages",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Job Requisitions with Stages"
+      ],
+      "Text": "Use this approach to sync job requisitions and their lifecycle stages, allowing LinkedIn to determine when jobs should be posted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Requisitions with Stages",
+      "Anchor": "job-requisitions-with-stages",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Job Requisitions with Stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization this job requisition is created for. Must be in the format urn:li:organization:1234",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job requisition id within the applicant tracking system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of this job requisition",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (Max 200 Characters)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom description of the job requisition.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Geographic location of the job position. Must be in the format \u0022CITY,STATE\u0022 or \u0022CITY,COUNTRY\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if countryCode and postalCode are not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Country code of the job position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if location is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Postal code of the job position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if location is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "companyApplyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Where to redirect applicants to in order to apply for the job.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date job requisition was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisitions",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisitions?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date job requisition was last updated in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Requisitions with Stages",
+      "Anchor": "job-requisitions-with-stages",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Job Requisitions with Stages"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization this stage update is for. Must be in the format urn:li:organization:1234",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job requisition id within the applicant tracking system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "jobRequisitionStageId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for this stage update",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Current stage of the job requisition (e.g., \u0022DRAFT\u0022, \u0022APPROVED\u0022, \u0022OPEN\u0022, \u0022ON_HOLD\u0022, \u0022FILLED\u0022, \u0022CANCELLED\u0022)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "stageTimestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp when the job requisition entered this stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Job Requisition Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-job-requisition-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date stage record was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Requisitions with Stages",
+      "Anchor": "job-requisitions-with-stages",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Job Requisitions with Stages"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Requisitions with Stages",
+      "Anchor": "job-requisitions-with-stages",
+      "SectionPath": [
+        "Job Synchronization Options",
+        "Job Requisitions with Stages"
+      ],
+      "Text": "Partners should choose either the Job Posting API approach or the Job Requisitions approach, not both. Job Requisitions are used when you want LinkedIn to manage the posting lifecycle based on requisition stages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Candidate and Application Fields",
+      "Anchor": "candidate-and-application-fields",
+      "SectionPath": [
+        "Candidate and Application Fields"
+      ],
+      "Text": "The following fields are required regardless of which job synchronization approach you use:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Candidate and Application Fields",
+      "Anchor": "candidate-and-application-fields",
+      "SectionPath": [
+        "Candidate and Application Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was last updated in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of candidate email addresses.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of email addresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if no Person URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "externalProfileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Link to the candidate in your system",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s first name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s last name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Candidates",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "manualMatchedMember",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn Person URN received from One-Click Export.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if no email address",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsCandidateId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s unique identifier in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if data is available.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsLastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was last updated in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier in your ATS of the job being applied to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsJobPostingName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name in your ATS of the job being applied to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "candidateEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate email addresses as entered on the application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "dispositionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the reason the candidate was not hired.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if data is available.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s first name as entered on the application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate\u0027s last name as entered on the application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "source",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Where the application originated within your ATS. For example, \u0022Monster\u0022, \u0022Referral\u0022, or \u0022Career Fair\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Applications",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-applications?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The media urn of the resume you uploaded in step b). Note that this token will expire 24 hours after it is obtained.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes, if resume is available.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Application Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "atsCreatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date record was created in your ATS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UTC Epoch Milliseconds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sync Application Stages",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-application-stages?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "stage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Stage in which the application stayed supplied by external ATS (e.g. Phone Screen, Onsite Interview, Rejected, Hired, etc.).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+  "Title": "Third-Party Tracking",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Third-Party Tracking",
+      "Anchor": "third-party-tracking",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Third-Party Tracking",
+      "Anchor": "third-party-tracking",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Third-Party Tracking",
+      "Anchor": "third-party-tracking",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s third-party tracking allows you to add a tag from an approved third-party tracking vendor to your LinkedIn Ad Creative to measure your ad performance. LinkedIn currently supports Google DoubleClick reporting and attribution for LinkedIn Sponsored Content, Dynamic Ads (Spotlight Ads only), and Text Ads. See examples of tracking tags and learn how to set up and manage third-party tracking in Campaign Manager.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Third-Party Tracking",
+      "Anchor": "third-party-tracking",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Third-Party Tracking",
+      "Anchor": "third-party-tracking",
+      "SectionPath": [],
+      "Text": "Using both click tags and URL landing page link wrappers for a Creative results in clicks being double counted. We recommend using click tags as this most accurately captures all ad engagements, not just landing page link clicks.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "account",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Account URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read-only URN identifying the advertising account associated with the tag. For example, urn:li:sponsoredAccount:502840441.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredCreative URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the entity that this third party tracking tag is created for, such as a campaign or creative. For example, urn:li:sponsoredCreative.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ThirdPartyTrackingEvent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The event for which the third party tracking tag should be used. Possible values are IMPRESSION, CLICK.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read-only numerical identifier for the third party tracking tag; synthetic key that should be omitted during creation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "platform",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ThirdParty Tracking Platform",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The third party tracking platform for this tag. Possible value is DOUBLECLICK",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "trackingUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The third-party tracking URL.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Third-Party Tracking Tag",
+      "Anchor": "get-third-party-tracking-tag",
+      "SectionPath": [
+        "Permissions",
+        "Get Third-Party Tracking Tag"
+      ],
+      "Text": "Use thirdPartyTrackingTags to retrieve a previously created third-party tracking tag.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Get Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Get Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/thirdPartyTrackingTags/19664",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Permissions",
+        "Get Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/thirdPartyTrackingTags/19664\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Permissions",
+        "Get Third-Party Tracking Tag",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:502840441\u0022,\n    \u0022changeTimeStamps\u0022: {\n      \u0022created\u0022: 1536692090000,\n      \u0022lastModified\u0022: 1536692090000\n    },\n    \u0022entity\u0022: \u0022urn:li:sponsoredCreative:70572434\u0022,\n    \u0022event\u0022: \u0022IMPRESSION\u0022,\n    \u0022id\u0022: 15084,\n    \u0022platform\u0022: \u0022DOUBLECLICK\u0022,\n    \u0022trackingUrl\u0022: \u0022https://serverside.doubleclick.net/ddm/trackimp/N8480.281152LINKEDINUS/B20690748.213458830;dc_trk_aid=512607074;dc_trk_cid=107409144;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Third-Party Tracking Tag",
+      "Anchor": "create-third-party-tracking-tag",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag"
+      ],
+      "Text": "Third-party tracking tags can be created through the API. First, you\u0027ll need to get the tag URL from your third-party tracking vendor.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Third-Party Tracking Tag",
+      "Anchor": "create-third-party-tracking-tag",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Third-Party Tracking Tag",
+      "Anchor": "create-third-party-tracking-tag",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag"
+      ],
+      "Text": "Impression and click tracker tags are accepted; monitoring or blocking tags are not accepted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/thirdPartyTrackingTags",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022entity\u0022: \u0022urn:li:sponsoredCreative:114862845\u0022,\n    \u0022event\u0022: \u0022IMPRESSION\u0022,\n    \u0022platform\u0022: \u0022DOUBLECLICK\u0022,\n    \u0022trackingUrl\u0022: \u0022https://serverside.doubleclick.net/ddm/trackimp/N8480.281152LINKEDINUS/B20690748.213458830;dc_trk_aid=512607074;dc_trk_cid=107409144;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/thirdPartyTrackingTags\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \n--data \u0027{\n    \u0022entity\u0022: \u0022urn:li:sponsoredCreative:114862845\u0022,\n    \u0022event\u0022: \u0022IMPRESSION\u0022,\n    \u0022platform\u0022: \u0022DOUBLECLICK\u0022,\n    \u0022trackingUrl\u0022: \u0022https://serverside.doubleclick.net/ddm/trackimp/N8480.281152LINKEDINUS/B20690748.213458830;dc_trk_aid=512607074;dc_trk_cid=107409144;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "A failed response returns a 400 Bad Request status code. To avoid failures, make sure you verify the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Permissions",
+        "Create Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "Platform and event values are enums and should be provided as defined in the schema.\nEnsure your tag includes https.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Permissions",
+        "Delete Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Permissions",
+        "Delete Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/thirdPartyTrackingTags/19664",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Permissions",
+        "Delete Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/thirdPartyTrackingTags/19664\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Permissions",
+        "Delete Third-Party Tracking Tag",
+        "Sample Request"
+      ],
+      "Text": "The thirdPartyTrackingTag is deleted and a 204 No Content is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Creative Finder",
+      "Anchor": "creative-finder",
+      "SectionPath": [
+        "Permissions",
+        "Creative Finder"
+      ],
+      "Text": "Third-party tracking tags can be retrieved through the ad creative they\u0027re associated with. The following request takes in an ad creative URN in the creative parameter to search for third-party tracking tags linked to that ad creative.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Permissions",
+        "Creative Finder",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Permissions",
+        "Creative Finder",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/thirdPartyTrackingTags?creative={Sponsored-Creative-Urn}\u0026q=creative\u0026sortOrder=DESCENDING\u0026totals=true",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Permissions",
+        "Creative Finder",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/thirdPartyTrackingTags?creative={Sponsored-Creative-Urn}\u0026q=creative\u0026sortOrder=DESCENDING\u0026totals=true\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027\\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Permissions",
+        "Creative Finder",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:502840441\u0022,\n            \u0022changeTimeStamps\u0022: {\n              \u0022created\u0022: 1536692090000,\n              \u0022lastModified\u0022: 1536692090000\n            },\n            \u0022entity\u0022: \u0022urn:li:sponsoredCreative:70572434\u0022,\n            \u0022event\u0022: \u0022IMPRESSION\u0022,\n            \u0022id\u0022: 15084,\n            \u0022platform\u0022: \u0022DOUBLECLICK\u0022,\n            \u0022trackingUrl\u0022: \u0022https://serverside.doubleclick.net/ddm/trackimp/N8480.281152LINKEDINUS/B20690748.213458830;dc_trk_aid=512607074;dc_trk_cid=107409144;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?\u0022\n        },\n        {\n            \u0022account\u0022: \u0022urn:li:sponsoredAccount:502840441\u0022,\n            \u0022changeTimeStamps\u0022: {\n              \u0022created\u0022: 1536691506000,\n              \u0022lastModified\u0022: 1536691506000\n            },\n            \u0022entity\u0022: \u0022urn:li:sponsoredCreative:70572434\u0022,\n            \u0022event\u0022: \u0022IMPRESSION\u0022,\n            \u0022id\u0022: 15074,\n            \u0022platform\u0022: \u0022DOUBLECLICK\u0022,\n            \u0022trackingUrl\u0022: \u0022https://serverside.doubleclick.net/ddm/trackimp/N8480.281152LINKEDINUS/B20690748.213458830;dc_trk_aid=512607074;dc_trk_cid=107409144;ord=[timestamp];dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

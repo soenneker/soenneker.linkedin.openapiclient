@@ -1,0 +1,1735 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+  "Title": "Verification URL",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/verification-url",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The verificationUrl is a dynamic link that directs members to complete identity or workplace verification on LinkedIn before returning to your application. It serves as the primary mechanism for resolving unverified states and for prompting members to re-verify when existing verifications no longer satisfy a requested freshness requirement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The /verificationReport API may return a verificationUrl when:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "A member has not completed all available verifications.\nA member has completed only some available verifications.\nA member has existing verifications that are older than the requested verifiedWithinDays freshness window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Your application should use this URL to redirect the member to LinkedIn so they can complete verification. Once verification is completed, call /verificationReport again to retrieve the updated status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "This step is critical to the integration flow, ensuring eligible members are prompted to verify rather than remaining unverified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why the Verification URL Is Important",
+      "Anchor": "why-the-verification-url-is-important",
+      "SectionPath": [
+        "Why the Verification URL Is Important"
+      ],
+      "Text": "If your application only reads verification status but never surfaces the verification URL, many eligible members will remain unverified because they are never prompted to start the verification flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why the Verification URL Is Important",
+      "Anchor": "why-the-verification-url-is-important",
+      "SectionPath": [
+        "Why the Verification URL Is Important"
+      ],
+      "Text": "Using the verification URL enables your platform to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why the Verification URL Is Important",
+      "Anchor": "why-the-verification-url-is-important",
+      "SectionPath": [
+        "Why the Verification URL Is Important"
+      ],
+      "Text": "Prompt eligible members to complete LinkedIn verification\nIncrease verified user coverage",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why the Verification URL Is Important",
+      "Anchor": "why-the-verification-url-is-important",
+      "SectionPath": [
+        "Why the Verification URL Is Important"
+      ],
+      "Text": "Typical integration pattern:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why the Verification URL Is Important",
+      "Anchor": "why-the-verification-url-is-important",
+      "SectionPath": [
+        "Why the Verification URL Is Important"
+      ],
+      "Text": "Member signs in to your application\nYour app calls /verificationReport\nIf verificationUrl exists, display a \u0022Verify on LinkedIn\u0022 CTA\nRedirect member to LinkedIn verification flow\nMember completes verification\nYour app fetches updated verification data\nAfter successful verification, the member is brought back to your app based on the configured redirect URI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "The verificationUrl is returned when the member is eligible to complete additional verifications or when an existing verification is older than the requested verifiedWithinDays freshness window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "More specifically:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "If verificationCriteria is provided as a query parameter on the /verificationReport GET request: it shows up if a member is eligible for those specific verifications.\nExample:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "GET /verificationReport?verificationCriteria=IDENTITY",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "If no verificationCriteria query parameter is provided: it shows up when a member is eligible for any verification type.\nIf the optional verifiedWithinDays query parameter is provided, the verificationUrl is also returned when an existing verification is older than the requested freshness window, allowing the member to re-verify. Existing verification data continues to be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "When it\u0027s absent:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "Member has completed all requested verifications and satisfies the requested freshness window, OR\nMember is not eligible for any additional verifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "It may appear in the following situations:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "",
+      "Headers": [
+        "Member State",
+        "Verifications",
+        "verificationUrl Returned",
+        "Action Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Fully Verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All categories present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display verification badges",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Verified, but verification older than verifiedWithinDays",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Existing verification(s) present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prompt the member to re-verify while continuing to display existing verification data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Partially Verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Some categories present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show completed badges \u002B \u0022Complete Verification\u0022 button",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not Verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show \u0022Verify on LinkedIn\u0022 button",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not Eligible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member cannot verify (region/eligibility restrictions)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When verificationUrl Appears",
+      "Anchor": "when-verificationurl-appears",
+      "SectionPath": [
+        "When verificationUrl Appears"
+      ],
+      "Text": "Member eligibility depends on factors like region, account status, and verification availability. See LinkedIn Help Center for eligibility details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Member has completed both verifications. No verificationUrl in response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Response (Development/Lite Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Try the /verificationReport API in Postman to explore verification states and metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "Member has no verifications but is eligible. Response includes verificationUrl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verificationCriteria=IDENTITY\u0026verificationCriteria=WORKPLACE\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "Response (Development/Lite Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022,\n  \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=...\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Previously Verified Member Requiring Re-verification",
+      "Anchor": "example-3-previously-verified-member-requiring-re-verification",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 3: Previously Verified Member Requiring Re-verification"
+      ],
+      "Text": "Member has already completed verification, but the existing verification is older than the requested verifiedWithinDays freshness window. The response continues to include existing verification data and returns a verificationUrl so the member can re-verify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Previously Verified Member Requiring Re-verification",
+      "Anchor": "example-3-previously-verified-member-requiring-re-verification",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 3: Previously Verified Member Requiring Re-verification"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 3: Previously Verified Member Requiring Re-verification",
+      "Anchor": "example-3-previously-verified-member-requiring-re-verification",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 3: Previously Verified Member Requiring Re-verification"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verifiedWithinDays=15\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Previously Verified Member Requiring Re-verification",
+      "Anchor": "example-3-previously-verified-member-requiring-re-verification",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 3: Previously Verified Member Requiring Re-verification"
+      ],
+      "Text": "Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 3: Previously Verified Member Requiring Re-verification",
+      "Anchor": "example-3-previously-verified-member-requiring-re-verification",
+      "SectionPath": [
+        "When verificationUrl Appears",
+        "Example 3: Previously Verified Member Requiring Re-verification"
+      ],
+      "Text": "{\n  \u0022lastRefreshedAt\u0022: 1785874373805,\n  \u0022id\u0022: \u0022zy5ubopzH4\u0022,\n  \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3DAgFWe2YpiL316wAAAZ_OaFytE9qYJ-lSBK5yW%2522%253A%255B%2522WORK_EMAIL_ADDRESS%2522%252C%2522WORK_EMAIL_ADDRESS%2522%255D%257D\u0022,\n  \u0022verifications\u0022: [\n    \u0022IDENTITY\u0022,\n    \u0022WORKPLACE\u0022\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "The verificationUrl is returned when the member is eligible to complete additional verifications, or when an existing verification is older than the requested verifiedWithinDays freshness window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "Call the Verification Report API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/verificationReport",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "Required headers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "Authorization: Bearer {ACCESS_TOKEN}\nLinkedIn-Version: {LATEST_VERSION}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "Example response for a member who has not yet verified:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022,\n  \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?...\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Retrieve the Verification URL",
+      "Anchor": "how-to-retrieve-the-verification-url",
+      "SectionPath": [
+        "How to Retrieve the Verification URL"
+      ],
+      "Text": "Your application should use this URL to redirect the member to LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "When the member selects \u0022Verify on LinkedIn\u0022, redirect them to the verificationUrl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "After successfully completing verification on LinkedIn, the member can be automatically redirected back to your application if a valid redirectUri is provided.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "To enable automatic redirection:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "The redirectUri must exactly match one of the Authorized Redirect URLs configured in your LinkedIn Developer Portal\nThe redirectUri parameter must be URL encoded before appending to the verificationUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "https://www.linkedin.com/trust/verification?...\u0026redirectUri=https%3A%2F%2Fwww.example.com%2Fredirect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "If the redirect configuration is invalid or missing, the member will remain on LinkedIn after verification and must manually return to your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "Flow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "Your app redirects the member to the verificationUrl\nMember completes verification on LinkedIn\nIf a valid redirectUri is configured correctly, LinkedIn redirects the member back to your application\nYour app calls /verificationReport again to retrieve updated verification data\nYour app resumes the member\u0027s session and displays updated verification state",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "If you want the member to return to your application after completing verification, append the redirectUri parameter to the verificationUrl, making sure that the redirectUri value is URL-encoded before appending.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirecting the Member to LinkedIn",
+      "Anchor": "redirecting-the-member-to-linkedin",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn"
+      ],
+      "Text": "Example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Redirect URI Without State",
+      "Anchor": "example-1-redirect-uri-without-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 1: Redirect URI Without State"
+      ],
+      "Text": "Original redirect parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Redirect URI Without State",
+      "Anchor": "example-1-redirect-uri-without-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 1: Redirect URI Without State"
+      ],
+      "Text": "\u0026redirectUri=https://www.example.com/redirect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Redirect URI Without State",
+      "Anchor": "example-1-redirect-uri-without-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 1: Redirect URI Without State"
+      ],
+      "Text": "URL-encoded redirect parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Redirect URI Without State",
+      "Anchor": "example-1-redirect-uri-without-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 1: Redirect URI Without State"
+      ],
+      "Text": "%26redirectUri%3Dhttps%3A%2F%2Fwww.example.com%2Fredirect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Redirect URI Without State",
+      "Anchor": "example-1-redirect-uri-without-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 1: Redirect URI Without State"
+      ],
+      "Text": "Final verification URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Redirect URI Without State",
+      "Anchor": "example-1-redirect-uri-without-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 1: Redirect URI Without State"
+      ],
+      "Text": "https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3D...%26redirectUri%3Dhttps%3A%2F%2Fwww.example.com%2Fredirect",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "Original redirect parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "\u0026redirectUri=https://www.example.com/redirect?state=abc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "URL-encoded redirect parameter:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "%26redirectUri%3Dhttps%3A%2F%2Fwww.example.com%2Fredirect%3Fstate%3Dabc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "Final verification URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "redirectUri=https%3A%2F%2Fwww.example.com%2Fredirect%3Fstate%3Dabc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "Registration Steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "Go to LinkedIn Developer Portal\nSelect your application then navigate to Auth tab\nUnder Authorized redirect URLs, add your redirect URI\nSave changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Redirect URI With State",
+      "Anchor": "example-2-redirect-uri-with-state",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Example 2: Redirect URI With State"
+      ],
+      "Text": "The redirectUri must exactly match a URL registered in your LinkedIn Developer App\u0027s Auth tab.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirect URL Validation Requirements",
+      "Anchor": "redirect-url-validation-requirements",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirect URL Validation Requirements"
+      ],
+      "Text": "LinkedIn validates the redirectUri against the Authorized Redirect URLs configured in your LinkedIn Developer Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirect URL Validation Requirements",
+      "Anchor": "redirect-url-validation-requirements",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirect URL Validation Requirements"
+      ],
+      "Text": "Validation requires an exact match of:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirect URL Validation Requirements",
+      "Anchor": "redirect-url-validation-requirements",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirect URL Validation Requirements"
+      ],
+      "Text": "Protocol (for example, https)\nDomain\nPath\nAny pre-registered query parameters",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirect URL Validation Requirements",
+      "Anchor": "redirect-url-validation-requirements",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirect URL Validation Requirements"
+      ],
+      "Text": "Wildcard or prefix matching is not supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirect URL Validation Requirements",
+      "Anchor": "redirect-url-validation-requirements",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirect URL Validation Requirements"
+      ],
+      "Text": "The only exception is the OAuth 2.0 state parameter, which may vary per request and is ignored during validation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Support",
+      "Anchor": "state-parameter-support",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "State Parameter Support"
+      ],
+      "Text": "The OAuth 2.0 state parameter is the only supported dynamic query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Support",
+      "Anchor": "state-parameter-support",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "State Parameter Support"
+      ],
+      "Text": "Partners may append a state parameter to their redirectUri at runtime:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "State Parameter Support",
+      "Anchor": "state-parameter-support",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "State Parameter Support"
+      ],
+      "Text": "https://example.com/callback?state=abc123",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Support",
+      "Anchor": "state-parameter-support",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "State Parameter Support"
+      ],
+      "Text": "The state value:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Support",
+      "Anchor": "state-parameter-support",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "State Parameter Support"
+      ],
+      "Text": "Does not need to be pre-registered\nIs ignored during redirect URL validation\nIs preserved and passed through to the final redirect URL after verification",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "State Parameter Support",
+      "Anchor": "state-parameter-support",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "State Parameter Support"
+      ],
+      "Text": "If no state parameter is provided, the redirect URL is used as registered.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Query parameters other than state must be included in the registered redirect URL and must match exactly at runtime.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Registered URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "https://example.com/callback?source=web",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Runtime URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "https://example.com/callback?source=web",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Valid \u2705",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Runtime URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "https://example.com/callback?source=mobile",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Invalid \u274C",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Runtime URL:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "https://example.com/callback?source=web\u0026foo=bar",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "Invalid \u274C",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Query Parameters",
+      "Anchor": "other-query-parameters",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Other Query Parameters"
+      ],
+      "Text": "These examples fail because query parameters other than state differ from the registered URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "Automatic redirection back to your application will not occur in the following scenarios:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "The provided redirectUri does not exactly match a URL registered in the LinkedIn Developer Portal\nThe redirectUri parameter is missing\nThe redirectUri parameter is empty\nThe redirectUri value is not URL encoded correctly\nAdditional query parameters (other than state) are present and do not match the registered URL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "In these cases:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "The member will remain on the LinkedIn verification page after verification\nThe member must manually return to your application\nYour application should handle this gracefully and instruct the member to return\nNo error message is displayed explaining why the redirect failed",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "When no verification is present, display a clear call-to-action prompting the member to verify on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "Recommended messaging:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Redirection Failure Scenarios",
+      "Anchor": "redirection-failure-scenarios",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirection Failure Scenarios"
+      ],
+      "Text": "\u0022We didn\u0027t find any verifications associated with your LinkedIn profile. Please verify on LinkedIn, then return to [YourAppName] to share the verification.\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Redirect URL Validation Examples",
+      "Anchor": "redirect-url-validation-examples",
+      "SectionPath": [
+        "Redirecting the Member to LinkedIn",
+        "Redirect URL Validation Examples"
+      ],
+      "Text": "",
+      "Headers": [
+        "Registered URL",
+        "Runtime URL",
+        "Result",
+        "Reason"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "https://example.com/callback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://example.com/callback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Pass",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exact match",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "https://example.com/callback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://example.com/callback?state=XYZ123",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Pass",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exact match after removing state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "https://example.com/callback?fixed=val",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://example.com/callback?fixed=val\u0026state=ABC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Pass",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exact match after removing state",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "https://example.com/callback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://example.com/callback?other=val",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Fail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Non-state query parameter not present in the registered URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "https://example.com/callback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://example.com/other-path?state=XYZ",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Fail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Path mismatch",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "https://example.com/callback",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://other.com/callback?state=XYZ",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u274C Fail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Domain mismatch",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "After Verification Completes",
+      "Anchor": "after-verification-completes",
+      "SectionPath": [
+        "After Verification Completes"
+      ],
+      "Text": "After the member returns to your application, always call /verificationReport again to retrieve the latest verification state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After Verification Completes",
+      "Anchor": "after-verification-completes",
+      "SectionPath": [
+        "After Verification Completes"
+      ],
+      "Text": "Do not rely on previously cached responses because:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After Verification Completes",
+      "Anchor": "after-verification-completes",
+      "SectionPath": [
+        "After Verification Completes"
+      ],
+      "Text": "verification status may have changed\nverification URLs may expire\nverification URLs may be single-use",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After Verification Completes",
+      "Anchor": "after-verification-completes",
+      "SectionPath": [
+        "After Verification Completes"
+      ],
+      "Text": "Recommended steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "After Verification Completes",
+      "Anchor": "after-verification-completes",
+      "SectionPath": [
+        "After Verification Completes"
+      ],
+      "Text": "Call /verificationReport\nRetrieve updated verification categories and metadata\nUpdate your database\nDisplay updated verification badges and timestamps",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common Issues",
+      "Anchor": "common-issues",
+      "SectionPath": [
+        "Common Issues"
+      ],
+      "Text": "",
+      "Headers": [
+        "Issue",
+        "Cause",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Member never verifies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification URL not shown",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display a \u0022Verify on LinkedIn\u0022 CTA",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member stuck on LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing or improperly encoded redirectUri",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Append a correctly URL-encoded redirectUri parameter to verificationUrl",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationUrl reused",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Fetch a new URL from /verificationReport",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Verification not updating",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API not re-called",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call /verificationReport again",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Redirect fails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL mismatch or unsupported query parameters",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use an exact match to the registered URL. Only the state parameter may vary at runtime.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Always fetch a fresh verification URL. Always call /verificationReport before displaying verification UI to ensure you have the latest verification state.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "If your application requires members to periodically re-confirm their verification status, call /verificationReport with the optional verifiedWithinDays query parameter before displaying verification UI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Do not cache or persist the URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "Verification URLs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Best Practices",
+      "Anchor": "best-practices",
+      "SectionPath": [
+        "Best Practices"
+      ],
+      "Text": "may expire\nmay be single-use\nshould always be retrieved from /verificationReport",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "APIs",
+      "Anchor": "apis",
+      "SectionPath": [
+        "Related Resources",
+        "APIs"
+      ],
+      "Text": "Profile Details API \u2013 Get member profile information\nVerification Report API \u2013 Get detailed verification metadata\nValidation Status API \u2013 Bulk validation checks (Plus tier only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guides",
+      "Anchor": "guides",
+      "SectionPath": [
+        "Related Resources",
+        "Guides"
+      ],
+      "Text": "Quickstart Guide \u2013 Get started with the API\nUpgrade to Lite Tier \u2013 Move to production\nImplementation Guide \u2013 Best practices",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

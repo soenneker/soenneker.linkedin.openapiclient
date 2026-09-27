@@ -1,0 +1,988 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+  "Title": "StubProfile",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/recruiter-prospect-interactions/inmail-stub-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/requester",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "StubProfile",
+      "Anchor": "stubprofile",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "StubProfile",
+      "Anchor": "stubprofile",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "StubProfile Fields",
+      "Anchor": "stubprofile-fields",
+      "SectionPath": [
+        "StubProfile Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currentEmployerNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Names of the member\u0027s current employers. Empty if the member does not have any current employers listed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location of the member (e.g. San Francisco Bay Area or\u00A0Sunnyvale, California).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id of the member within LinkedIn system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn in format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL of the member\u0027s public LinkedIn profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of candidate email addresses manually entered by the user during 1-Click Export. Emails must follow X@X.X pattern. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "yearsOfExperience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Years of experience calculated based on member\u0027s LinkedIn profile. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Top 3 skills (top 3 member-highlighted skills, or 3 most recent skills if member has not highlighted any skills) (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The most recent two experiences from a member\u0027s profile. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "Position[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04#position-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member\u0027s education history. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "Education[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04#education-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "StubProfile Fields",
+      "Anchor": "stubprofile-fields",
+      "SectionPath": [
+        "StubProfile Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "currentEmployerNames",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The names of the member\u0027s current employers. This field remains empty if none are listed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The headline of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the member.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The location of the member (e.g. San Francisco Bay Area or\u00A0Sunnyvale, California).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "profileLocation",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04#profilelocation-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique ID of the member within LinkedIn system.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn in format urn:li:person:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "profileUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of the member\u0027s public LinkedIn profile.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "emailAddresses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The list of candidate email addresses manually entered by the recruiter user during 1-Click Export. Emails must follow X@X.X pattern. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "string[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "yearsOfExperience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The years of experience calculated based on member\u0027s LinkedIn profile. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skills",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The top 3 skills (top 3 member-highlighted skills, or 3 most recent skills if member has not highlighted any skills). (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "positions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The two most recent experiences from a member\u0027s profile. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "Position[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04#position-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "educations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member\u0027s education history. (Available for Enhanced 1CE)",
+            "Links": [],
+            "Values": [
+              "(Available for Enhanced 1CE)"
+            ]
+          },
+          {
+            "Text": "Education[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-exported-candidates/stubprofile?view=li-lts-2026-04#education-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "StubProfile Fields",
+      "Anchor": "stubprofile-fields",
+      "SectionPath": [
+        "StubProfile Fields"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "StubProfile Fields",
+      "Anchor": "stubprofile-fields",
+      "SectionPath": [
+        "StubProfile Fields"
+      ],
+      "Text": "One-Click Export (1CE) provides access to additional candidate profile fields including email addresses, years of experience, skills, work positions, and education history. Reach out to your business development manager to request RSC recertification to enable these fields. To learn more about 1CE, see Retrieve Exported Candidates Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Education Schema",
+      "Anchor": "education-schema",
+      "SectionPath": [
+        "StubProfile Fields",
+        "Education Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "schoolName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "School name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "degreeName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Degree attained at this school.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fieldOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Degrees achieved in respective fields of study.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startMonthYear",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endMonthYear",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "End date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Position Schema",
+      "Anchor": "position-schema",
+      "SectionPath": [
+        "StubProfile Fields",
+        "Position Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company name as entered by the member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description for this position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title name of the position.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "startMonthYear",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "endMonthYear",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The end date of the education. It is a Date type. Does not support \u0022day\u0022 and \u0022month\u0022 field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Date",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lts-2026-04#date"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "profileLocation Schema",
+      "Anchor": "profilelocation-schema",
+      "SectionPath": [
+        "StubProfile Fields",
+        "profileLocation Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The actual location, e.g. \u0022San Francisco, California\u0022, \u0022Los Angeles, California, United States\u0022. It returns the full localized name of the member\u0027s location (from their LinkedIn profile geolocation).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The 2-letter country code from ISO 3166-1 alpha-2, e.g., \u0027US\u0027 for United States of America.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/build-awli-v3",
+  "Title": "Guide to Build AWLI V3 Directly (for Existing Partners)",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-v2-to-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/build-awli-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/migration-testing-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Guide to Build AWLI V3 Directly (for Existing Partners)",
+      "Anchor": "guide-to-build-awli-v3-directly-for-existing-partners",
+      "SectionPath": [],
+      "Text": "This document is a help guide for existing Partners to build AWLI V3 directly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Build AWLI V3 Directly (for Existing Partners)",
+      "Anchor": "guide-to-build-awli-v3-directly-for-existing-partners",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Build AWLI V3 Directly (for Existing Partners)",
+      "Anchor": "guide-to-build-awli-v3-directly-for-existing-partners",
+      "SectionPath": [],
+      "Text": "Please complete the following steps only if you were instructed to do so via the partner support form",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guide to Build AWLI V3 Directly (for Existing Partners)",
+      "Anchor": "guide-to-build-awli-v3-directly-for-existing-partners",
+      "SectionPath": [],
+      "Text": "Different stages of Apply With LinkedIn development for Partners who are currently on AWLI V2 and want to implement AWLI V3 directly are described below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Guide to Build AWLI V3 Directly (for Existing Partners)",
+      "Anchor": "guide-to-build-awli-v3-directly-for-existing-partners",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Milestone",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Provide your production and development app metadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please fill out this form here. Our Partner Operations team will make sure your app has the right configuration and clean up your app metadata such as permissions, logo, naming and so on",
+            "Links": [
+              "https://docs.google.com/forms/u/0/d/13WQaQwJkFCFv6C3NKf7Ombb3lKY31zG90XxuqekxWJw/viewform?edit_requested=true"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Apply with LinkedIn Plugin Integration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Modify functionality to integrate with V3 Apply with LinkedIn widget on your job application page using the steps here. Fix page layout and any alignment issue with V3 button and ensure V3 button renders properly",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Testing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Run end-to-end testing and prepare for certification",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Certification for Apply with LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Please create a video (video requirements are listed here) which displays 1. Rendering of the AWLI v3 button. 2. The entire OAuth flow when the AWLI v3 button is clicked. Once completed, send the video to LinkedIn via the partner support form. Our Partner Operation team will check the video, and if everything looks good will certify the Apply with LinkedIn Integration",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview?view=li-lts-2026-04#video-requirements",
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Timelines",
+      "Anchor": "project-timelines",
+      "SectionPath": [
+        "Project Timelines"
+      ],
+      "Text": "The estimated time to develop the Apply With LinkedIn integration is three weeks.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

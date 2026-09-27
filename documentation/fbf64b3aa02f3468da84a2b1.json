@@ -1,0 +1,4065 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+  "Title": "UGC Post API (Legacy)",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-counts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "The above deprecation is applicable for partners with Marketing permissions only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "UGC Post is a content API best suited for creating and retrieving posts for organic video posts and video ads. For other media types, it\u0027s advised to use the Shares API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "As of now, you can\u0027t retrieve the actual video content of a video post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "Organic video statistics are available. For more detail, see Organization Share Statistics",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API (Legacy)",
+      "Anchor": "ugc-post-api-legacy",
+      "SectionPath": [],
+      "Text": "The Posts API replaces the ugcPosts API for creating posts (User Generated Content) on behalf of an organization or member.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERRECRUITING_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "RECRUITING_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Restricted Retrieve posts, comments, and likes on behalf of an authenticated member. This is a private permission.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve posts, comments, and likes on behalf of an authenticated member for compliance monitoring and archiving. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and delete data on behalf of an authenticated member for compliance requirements. This is a private permission and access is granted to select developers.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "All API requests require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Author URN for this content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person or Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "clientApplication",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "For posts from API creation only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Developer Application URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "containerEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of container entity that contains the user generated content such as a Group or a Story",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentCertificationRecord",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content certification record associated with this content. Used to maintain information about the content\u0027s visibility and spam status.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "distribution",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn and external destinations where the UGC post will be distributed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Distribution",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#distribution"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "firstPublishedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which this content was first published. Represented in epoch time.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID for this object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ugcPostURN or shareURN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lifecycleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of this content. PUBLISHED is the only accepted field during creation. The following values can be returned in responses: DRAFT - Represents content that\u0027s accessible only to the author and is not yet published. PUBLISHED - Represents content that\u0027s accessible to all entities. This is the only accepted field during creation. PROCESSING - Represents content that has been submitted for publish but is not yet ready for rendering. The content will be published asynchronously once the processing has successfully completed. PROCESSING_FAILED - Represents content that has been submitted for publish but a processing failure caused the publish to fail. An edit is required in order to re-attempt the publish. DELETED - Represents content that was once in another state, but has been deleted. PUBLISHED_EDITED - Represents content that was published and later edited. ARCHIVED - Represents content that was published, then later archived. This content is no longer distributed and only retrievable by the author. Archived content can return to a published state upon update.",
+            "Links": [],
+            "Values": [
+              "DRAFT - Represents content that\u0027s accessible only to the author and is not yet published.",
+              "PUBLISHED - Represents content that\u0027s accessible to all entities. This is the only accepted field during creation.",
+              "PROCESSING - Represents content that has been submitted for publish but is not yet ready for rendering. The content will be published asynchronously once the processing has successfully completed.",
+              "PROCESSING_FAILED - Represents content that has been submitted for publish but a processing failure caused the publish to fail. An edit is required in order to re-attempt the publish.",
+              "DELETED - Represents content that was once in another state, but has been deleted.",
+              "PUBLISHED_EDITED - Represents content that was published and later edited.",
+              "ARCHIVED - Represents content that was published, then later archived. This content is no longer distributed and only retrievable by the author. Archived content can return to a published state upon update."
+            ]
+          },
+          {
+            "Text": "Enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The context in which this content was created. Represents concepts such as reshare and reshare attribution.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ResponseContext",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#responsecontext"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specificContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents type-specific content of this object. For a share this is the share text and media, and for an article it\u0027s the article contents.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ShareContent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#sharecontent"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAudience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intended audience or best fit audiences for this content as decided by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetAudience",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#targetaudience"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version tag of the entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Visibility restrictions on content. Can be: com.linkedin.ugc. MemberNetworkVisibility which has the values of: CONNECTIONS - Represents 1st degree network of owner. PUBLIC - Anyone can view this. LOGGED_IN - Viewable by logged in members only. CONTAINER - Visibility is delegated to the owner of the container entity. For example, posts within a group are delegated to the groups authorization API for visibility authorization. com.linkedin.ugc. SponsoredContentVisibility which has the value of: DARK - Represents a dark post, which is only distributed as part of a sponsored campaign.",
+            "Links": [],
+            "Values": [
+              "CONNECTIONS - Represents 1st degree network of owner.",
+              "PUBLIC - Anyone can view this.",
+              "LOGGED_IN - Viewable by logged in members only.",
+              "CONTAINER - Visibility is delegated to the owner of the container entity. For example, posts within a group are delegated to the groups authorization API for visibility authorization.",
+              "DARK - Represents a dark post, which is only distributed as part of a sponsored campaign."
+            ]
+          },
+          {
+            "Text": "Union [MemberNetwork Visibility, SponsoredContent Visibility]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Distribution",
+      "Anchor": "distribution",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Distribution"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "distributedVia FollowFeed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether UGC post is distributed to follow-feed or not.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalDistribution Channels",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "External distribution channels that this content is distributed to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "externalDistribution ChannelType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Can be the following values: TWITTER- Distribute content to Twitter TENCENT- Distribute content to Tencent WEIBO - Distribute content to Weibo",
+            "Links": [],
+            "Values": [
+              "TWITTER- Distribute content to Twitter",
+              "TENCENT- Distribute content to Tencent",
+              "WEIBO - Distribute content to Weibo"
+            ]
+          },
+          {
+            "Text": "Enum Values",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "feedDistribution",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the type of feed distribution. Does not distribute to feed when missing. Can be the following values: NONE- Do not distribute within LinkedIn via feed. MAIN_FEED- Distribute to the flagship feed, and container entity feed if applicable. CONTAINER_ONLY - Distribute only to the container entity feed. The container is specified in the top level containerEntity field and is only valid when containerEntity exists. An example of a container entity feed is the LinkedIn Group feed.",
+            "Links": [],
+            "Values": [
+              "NONE- Do not distribute within LinkedIn via feed.",
+              "MAIN_FEED- Distribute to the flagship feed, and container entity feed if applicable.",
+              "CONTAINER_ONLY - Distribute only to the container entity feed. The container is specified in the top level containerEntity field and is only valid when containerEntity exists. An example of a container entity feed is the LinkedIn Group feed."
+            ]
+          },
+          {
+            "Text": "optional enum",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ResponseContext",
+      "Anchor": "responsecontext",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "ResponseContext"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "parent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content that a piece of content is a response to. Currently, the only supported URN is ugcPost URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Response content. ugcPost URN supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "root",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The initiation or origination of the response content. ugcPost URN supported",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ShareContent",
+      "Anchor": "sharecontent",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "ShareContent"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The media shared in this share. Can be videos, images, or articles.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of ShareMedia",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#sharemedia"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryLandingPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The main landing page URL of the share. Maximum length is 2000 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareCommentary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message content of this share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User generated attributes in the text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Attribute",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#attribute"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Default to empty array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "inferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale that may have be inferred for this text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text content that may be attributed. Defaults to \u0022\u0022NOTE: The maximum length of the text of a UGC Post is 3000 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareMediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of media contained within the media field of this object. Can be the following enum values: ARTICLE - Content containing articles IMAGE - Content containing images NONE - Content containing media RICH - Content containing rich media VIDEO - Content containing videos LEARNING_COURSE - Content containing learning courses JOB - Content contains jobs QUESTION - Content containing questa questions ANSWER - Content containing questa answers. CAROUSEL - Various types of content rendered in carousel format TOPIC - Content containing topics NATIVE_DOCUMENT - Content file types that are uploaded natively URN_REFERENCE - Media URN for the content category; except when URN type is digital media asset. Use mediaType in ShareMedia when disambiguation is required LIVE_VIDEO - Video content streamed live - ugcPost may be consumed during recording. The resource serving the media is the source of truth for whether the video is currently live.",
+            "Links": [],
+            "Values": [
+              "ARTICLE - Content containing articles",
+              "IMAGE - Content containing images",
+              "NONE - Content containing media",
+              "RICH - Content containing rich media",
+              "VIDEO - Content containing videos",
+              "LEARNING_COURSE - Content containing learning courses",
+              "JOB - Content contains jobs",
+              "QUESTION - Content containing questa questions",
+              "ANSWER - Content containing questa answers.",
+              "CAROUSEL - Various types of content rendered in carousel format",
+              "TOPIC - Content containing topics",
+              "NATIVE_DOCUMENT - Content file types that are uploaded natively",
+              "URN_REFERENCE - Media URN for the content category; except when URN type is digital media asset. Use mediaType in ShareMedia when disambiguation is required",
+              "LIVE_VIDEO - Video content streamed live - ugcPost may be consumed during recording. The resource serving the media is the source of truth for whether the video is currently live."
+            ]
+          },
+          {
+            "Text": "Enum string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ShareMedia",
+      "Anchor": "sharemedia",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "ShareMedia"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The description of this media.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User generated attributes in the text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Attribute",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#attribute"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Default to empty array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "inferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale that may have be inferred for this text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text content that may be attributed. Defaults to \u0022\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if providing description",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "landingPage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL that overrides the landing page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "landingPageTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, this content entity will be rendered as a CTA with landingPageTitle as the CTA text and landingPageUrl as the click through URL.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional Possible values are- LEARN_MORE APPLY_NOW DOWNLOAD GET_QUOTE SIGN_UP SUBSCRIBE REGISTER",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "landingPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The click through URL. Maximum length is 2000 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if landing page present",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Shared media URN. Can be: IngestedVideoMetadata URN IngestedImageMetadata URN IngestedArticleMetadata URN IngestedContent URN IngestedRichMedia Metadata URN DigitalmediaAsset URN Content URN",
+            "Links": [],
+            "Values": [
+              "IngestedVideoMetadata URN",
+              "IngestedImageMetadata URN",
+              "IngestedArticleMetadata URN",
+              "IngestedContent URN",
+              "IngestedRichMedia Metadata URN",
+              "DigitalmediaAsset URN",
+              "Content URN"
+            ]
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "mediaOverlay",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An overlay associated with a media(video, image etc).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "overlay",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of possible MediaOverlay model, could be media frame, stickers etc.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaFrame object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "originalUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL whose content is summarized; content may not have a corresponding URL for some entities. Maximum length is 8,192 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status of the availability of this media. Can be the following values: PROCESSING - This ShareMedia is processing and not yet available. READY - This ShareMedia is immediately available. FAILED - This ShareMedia is not available and no further processing is being done.",
+            "Links": [],
+            "Values": [
+              "PROCESSING - This ShareMedia is processing and not yet available.",
+              "READY - This ShareMedia is immediately available.",
+              "FAILED - This ShareMedia is not available and no further processing is being done."
+            ]
+          },
+          {
+            "Text": "Enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "thumbnails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The thumbnail saved from the ingestion of this article. If provided, only one thumbnail is used and any thumbnails beyond the first will be removed. Video thumbnails are not retrievable.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional, only allowed for article posts.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "altText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The alternate text of this thumbnail. Used for screen reader accessibility. Maximum length is 4,086 characters, recommended length is less than 120 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of the media in pixels.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "size",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Size of the media in bytes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of this media. Maximum length is 8,192 characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes if providing thumbnail",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of the media in pixels.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The title of this media.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User generated attributes in the text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Attribute",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#attribute"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Default to empty array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "inferredLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale that may have be inferred for this text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The text content that may be attributed. Defaults to \u0022\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Attribute",
+      "Anchor": "attribute",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Attribute"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "length",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The length of the range within the referenced ordered collection. Must be greater than zero and start \u002B length must be less than the length of the referenced ordered collection.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Starting position of the range within the referenced ordered collection. Must be greater than or equal to zero and start \u002B length must be less than the length of the referenced ordered collection. Zero-based index.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of the attribute that applies to given range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union [MemberAttributedEntity, CompanyAttributedEntity]",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.common. MemberAttributedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains a member field that points to a personUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "personUrn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.common. CompanyAttributedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains a company/school field that points to a company/school organization URN. Retrieve company/school organization Urn using Organization Lookup API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09#retrieve-organizations"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "organizationUrn",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "com.linkedin.common. SchoolAttributedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DEPRECATED. Please use CompanyAttributedEntity instead. Contains a school field that points to an organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizationURN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetAudience",
+      "Anchor": "targetaudience",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "TargetAudience"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetedEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entities targeted for distribution. Structured as an object containing multiple arrays of targeting entity URNs that functions like a series of OR conditionals.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Targets (see below)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeted standardized degrees",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Degree URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/degrees?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "fieldsOfStudy",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeted standardized fields of study",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of FieldOfStudy URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/fields-of-study?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeted industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Industry URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industries?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Interface locales to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#locale"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "jobFunctions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeted top level groupings of supertitles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Function URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/functions?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated. Please use geoLocations field instead. Location to be targeted. The URNs don\u0027t need to all be of the same type. The permitted URN types are: \u0027countryGroup\u0027, \u0027country\u0027, \u0027state\u0027, and \u0027region\u0027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Location URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "geoLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Targeted GeoLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Geo URN. Learn more",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/binggeo-migration-organic-targeting?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "schools",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated. Please use organizations field instead. Standardized schools to be targeted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of School URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organizations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "School Organizations to be targeted. Retrieve school organization URN using Organization Lookup API",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api?view=li-lms-2026-09#retrieve-organizations"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Array of Organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "seniorities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Seniorities to be targeted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Seniority URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/seniorities?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "staffCountRanges",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization sizes to be targeted. Can be the following enum values: SIZE_1 SIZE_2_TO_10 SIZE_11_TO_50 SIZE_51_TO_200 SIZE_201_TO_500 SIZE_501_TO_1000 SIZE_1001_TO_5000 SIZE_5001_TO_10000 SIZE_10001_OR_MORE",
+            "Links": [],
+            "Values": [
+              "SIZE_1",
+              "SIZE_2_TO_10",
+              "SIZE_11_TO_50",
+              "SIZE_51_TO_200",
+              "SIZE_201_TO_500",
+              "SIZE_501_TO_1000",
+              "SIZE_1001_TO_5000",
+              "SIZE_5001_TO_10000",
+              "SIZE_10001_OR_MORE"
+            ]
+          },
+          {
+            "Text": "Array of StaffCountRange",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetAudience",
+      "Anchor": "targetaudience",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "TargetAudience"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetAudience",
+      "Anchor": "targetaudience",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "TargetAudience"
+      ],
+      "Text": "The audience you target for your share must be greater than 300 members. See Target Organic UGC Posts for more information",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create UGC Posts",
+      "Anchor": "create-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts"
+      ],
+      "Text": "Creating UGC Posts with video requires uploading a video asset to get a digitalmediaAsset URN to be used in creating the UGC Post. See the Vector Assets API for instructions on how to do this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create UGC Posts",
+      "Anchor": "create-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create UGC Posts",
+      "Anchor": "create-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts"
+      ],
+      "Text": "The maximum length of the text of a UGC Post is 3,000 characters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create UGC Posts",
+      "Anchor": "create-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts"
+      ],
+      "Text": "Create Organic UGC Posts\nCreate Targeted Organic UGC Posts\nCreate Dark UGC Posts\nMention Organizations and Members\nReshare UGC Posts\nCommon Creation Errors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "Make sure to set the Content-Type header to application/json.\nIf you plan to sponsor this post later, make sure you set shareContent.ShareMedia.landingPage and shareContent.ShareMedia.title when you create the post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "The UGC Post is created with a 201 Created response and the response header x-restli-id contains the ugcPost ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Targeted Organic UGC Posts",
+      "Anchor": "create-targeted-organic-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts"
+      ],
+      "Text": "To increase the engagement and impact of your message, you may want to target organizational UGC Posts to a subset of your followers. Select a target audience within your company\u0027s existing follower base by using predefined criteria known as targeting facets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Targeted Organic UGC Posts",
+      "Anchor": "create-targeted-organic-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts"
+      ],
+      "Text": "Examples of targeting facets include geography, job function, industry, and seniority level. See Ads Targeting and Standardized Data to create a segment of a specific audience you may want to target.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Targeted Organic UGC Posts",
+      "Anchor": "create-targeted-organic-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts"
+      ],
+      "Text": "The audience you target for your UGC Post must be greater than 300 members. Use the Audience Counts API to calculate the approximate size of your audience. Make sure to pass in your organization URN in the followedCompanies field of the targetingFacet parameter so your audience count will be filtered down to only members who follow your company.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/audienceCountsV2?q=targetingCriteria\u0026target.includedTargetingFacets.industries[0]=urn:li:industry:4\u0026target.includedTargetingFacets.seniorities[0]=urn:li:seniority:3\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:103644278\u0026target.includedTargetingFacets.followedCompanies[0]=urn:li:organization:2414183",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/audienceCountsV2?q=targetingCriteria\u0026target.includedTargetingFacets.industries[0]=urn:li:industry:4\u0026target.includedTargetingFacets.seniorities[0]=urn:li:seniority:3\u0026target.includedTargetingFacets.locations[0]=urn:li:geo:103644278\u0026target.includedTargetingFacets.followedCompanies[0]=urn:li:organization:2414183\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022active\u0022: 0,\n            \u0022total\u0022: 380\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "Since this audience size is above 300, we can create a targeted organic UGC Post with these targeting details in the targetAudience.targetedEntities object. The targetAudience.targetedEntities object is structured as an array that accepts a single object. That object contains multiple targeting entity arrays. Each targeting facet array accepts targeting entity URNs. See the sample request below for an example.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "Don\u0027t send null-equivalent targetAudience.targetedEntities objects where no targeting entity URNs are provided. If you don\u0027t want to target a UGC post, don\u0027t include the targetAudience field. See the following examples for null-equivalent targeting that\u0027s not supported.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Response"
+      ],
+      "Text": "\u0022targetAudience\u0022: {\u0022targetedEntities\u0022:[{\u0022industries\u0022:[]},{\u0022jobFunctions\u0022:[]}\n\u0022targetAudience\u0022: {\u0022targetedEntities\u0022:[{}]}\n\u0022targetAudience\u0022: {\u0022targetedEntities\u0022:[]}\n\u0022targetAudience\u0022: {}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ],\n                \u0022industries\u0022: [\n                    \u0022urn:li:industry:4\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Targeted Organic UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022targetAudience\u0022: {\n        \u0022targetedEntities\u0022: [\n            {\n                \u0022geoLocations\u0022: [\n                    \u0022urn:li:geo:103644278\u0022\n                ],\n                \u0022seniorities\u0022: [\n                    \u0022urn:li:seniority:3\u0022\n                ],\n                \u0022industries\u0022: [\n                    \u0022urn:li:industry:4\u0022\n                ]\n            }\n        ]\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Dark UGC Posts",
+      "Anchor": "create-dark-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts"
+      ],
+      "Text": "Dark UGC Posts are used to create content that won\u0027t appear as organic content on a LinkedIn company page. Dark posts can be used in Ad Campaigns as Direct Sponsored Content (DSC). See our Direct Sponsored Content Overview for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Dark UGC Posts",
+      "Anchor": "create-dark-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts"
+      ],
+      "Text": "Create a dark UGC Post using an author as the organization urn:li:organization:{id} and setting visibility.com.linkedin.ugc.SponsoredContentVisibility = DARK.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Dark UGC Posts",
+      "Anchor": "create-dark-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts"
+      ],
+      "Text": "Dark posts have additional required steps to be used in an Ad Campaign. See our additional documentation on Video Ads for those steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "Make sure to set the Content-Type header to application/json.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022landingPage\u0022: {\n                        \u0022landingPageTitle\u0022: \u0022LEARN_MORE\u0022,\n                        \u0022landingPageUrl\u0022: \u0022https:linkedin.com\u0022\n                    },\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.SponsoredContentVisibility\u0022: \u0022DARK\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022author\u0022: \u0022urn:li:organization:5590506\u0022,\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022landingPage\u0022: {\n                        \u0022landingPageTitle\u0022: \u0022LEARN_MORE\u0022,\n                        \u0022landingPageUrl\u0022: \u0022https:linkedin.com\u0022\n                    },\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5500AQG7r2u00ByWjw\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022title\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022Sample Video Create\u0022\n                    }\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [],\n                \u0022text\u0022: \u0022Some share text\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.SponsoredContentVisibility\u0022: \u0022DARK\u0022\n    }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "The UGC Post is created with a 201 Created response and the response header x-restli-id contains the ugcPost ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "To prevent failures, make sure to verify the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "The registerUploadRequest.owner field of the referenced asset is the same as the author field when you create the UGC Post.\nShareContent.shareMediaCategory matches the same category as the media URN\nvisibility can be set as SponsoredContentVisibility only when author is an organization URN.\nshareContent.ShareMedia.landingPage.landingPageUrl is a required field for Video Dark Posts.\nThe member must have the role of Company Page ADMINISTRATOR or DIRECT_SPONSORED_CONTENT_POSTER.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "When a UGC Post is published (\u0022lifecycleState\u0022: \u0022PUBLISHED\u0022), an authorized member can view the post using:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Create Dark UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "https://www.linkedin.com/feed/update/urn:li:ugcPost:\u003Cid\u003E/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mentions in UGC Posts",
+      "Anchor": "mentions-in-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts"
+      ],
+      "Text": "You may create UGC Posts with mentions or tags of other Linkedin entities such as organizations or members. This requires providing the URN for the referenced entity, and specifying what part of the UGC Post\u0027s text should be rendered as a link to the entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mentions in UGC Posts",
+      "Anchor": "mentions-in-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts"
+      ],
+      "Text": "The text linking to the entity must match the name of the member or organization to be converted into a link. Matching is case sensitive. If there\u0027s no match, that part will appear as normal text. This includes cases where the length provided is longer or shorter than the name of the member or organization. The exception to this for member annotations is described next.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mentions in UGC Posts",
+      "Anchor": "mentions-in-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts"
+      ],
+      "Text": "Mentions of members only need to match one name in the full name. For example, take a member named \u0022Jane Smith\u0022. A share can match on \u0022Jane\u0022, \u0022Smith\u0022, or \u0022Jane Smith\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mentions in UGC Posts",
+      "Anchor": "mentions-in-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts"
+      ],
+      "Text": "Mentions of organizations must match the full name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Mentions in UGC Posts",
+      "Anchor": "mentions-in-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts"
+      ],
+      "Text": "If a mentions start or length is invalid, as described both in Attribute and below, then the creation or update of the share will be rejected with a 400 error code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "attributes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Allows links to other entities such as members within share text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of attributes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attributes[i].start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Starting character index of where in the text the annotation link should begin. Zero-based index. Must be greater than or equal to zero and start \u002B length must be less than the length of the text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attributes[i].length",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The length of the text of be linked. Must be greater than zero and start \u002B length must be less than the length of the text.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attributes[i].value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Describes the type of entity being mentioned. Possible values are: com.linkedin.common.CompanyAttributedEntity com.linkedin.common.MemberAttributedEntity This field accepts an object containing the referenced entity. See CompanyAttributedEntity, MemberAttributedEntity, and the sample request body for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#companyattributedentity",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#memberattributedentity",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#sample-object"
+            ],
+            "Values": [
+              "com.linkedin.common.CompanyAttributedEntity",
+              "com.linkedin.common.MemberAttributedEntity"
+            ]
+          },
+          {
+            "Text": "Union CompanyAttributedEntity, MemberAttributedEntity ]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#companyattributedentity",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#memberattributedentity"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CompanyAttributedEntity",
+      "Anchor": "companyattributedentity",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts",
+        "CompanyAttributedEntity"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "company",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of organization being mentioned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "MemberAttributedEntity",
+      "Anchor": "memberattributedentity",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts",
+        "MemberAttributedEntity"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the person being mentioned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Object",
+      "Anchor": "sample-object",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts",
+        "Sample Object"
+      ],
+      "Text": "The sample below mentions a company called Acme Corp. start=6 because Acme Corp starts on the sixth character of the text using a zero-based index. length=9 because \u0022Acme Corp\u0022 is 9 characters long.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Object",
+      "Anchor": "sample-object",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Mentions in UGC Posts",
+        "Sample Object"
+      ],
+      "Text": "{\n    ...\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [\n                    {\n                        \u0022length\u0022: 9,\n                        \u0022start\u0022: 6,\n                        \u0022value\u0022: {\n                            \u0022com.linkedin.common.CompanyAttributedEntity\u0022: {\n                                \u0022company\u0022: \u0022urn:li:organization:1234\u0022\n                            }\n                        }\n                    }\n                ],\n                \u0022text\u0022: \u0022Hello Acme Corp\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022NONE\u0022\n        }\n    },\n    ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reshare UGC Posts",
+      "Anchor": "reshare-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Reshare UGC Posts"
+      ],
+      "Text": "UGC Posts can be reshared by setting the responseContext.parent field with the UGC Post URN you want to reshare.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reshare UGC Posts",
+      "Anchor": "reshare-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Reshare UGC Posts"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Reshare UGC Posts",
+      "Anchor": "reshare-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Reshare UGC Posts"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Reshare UGC Posts",
+      "Anchor": "reshare-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Reshare UGC Posts"
+      ],
+      "Text": "{\n \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n \u0022visibility\u0022:{ \n  \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022 \n },\n \u0022specificContent\u0022: {\n  \u0022com.linkedin.ugc.ShareContent\u0022: {\n   \u0022shareMediaCategory\u0022: \u0022NONE\u0022,\n   \u0022shareCommentary\u0022:{ \n    \u0022text\u0022: \u0022Test reshare text\u0022 \n   },\n   \u0022media\u0022: [],\n   \u0022shareCategorization\u0022: {}\n  }\n },\n \u0022author\u0022: \u0022urn:li:organization:789\u0022,\n \u0022responseContext\u0022:{ \n  \u0022parent\u0022: \u0022urn:li:ugcPost:1234\u0022\n }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Reshare UGC Posts",
+      "Anchor": "reshare-ugc-posts",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Reshare UGC Posts"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n \u0022visibility\u0022:{ \n  \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022 \n },\n \u0022specificContent\u0022: {\n  \u0022com.linkedin.ugc.ShareContent\u0022: {\n   \u0022shareMediaCategory\u0022: \u0022NONE\u0022,\n   \u0022shareCommentary\u0022:{ \n    \u0022text\u0022: \u0022Test reshare text\u0022 \n   },\n   \u0022media\u0022: [],\n   \u0022shareCategorization\u0022: {}\n  }\n },\n \u0022author\u0022: \u0022urn:li:organization:789\u0022,\n \u0022responseContext\u0022:{ \n  \u0022parent\u0022: \u0022urn:li:ugcPost:1234\u0022\n }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Creation Errors",
+      "Anchor": "common-creation-errors",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Common Creation Errors"
+      ],
+      "Text": "The table below lists commonly encountered errors creating UGC Posts. It is not meant to be a comprehensive list of all possible UGC Post creation errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common Creation Errors",
+      "Anchor": "common-creation-errors",
+      "SectionPath": [
+        "Create UGC Posts",
+        "Common Creation Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:developerApplication:{developer application ID} doesn\u0027t have permission to create ugc posts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates your developer application is not allowlisted to create video UGC Posts. UGC Post video creation is restricted to approved applications only.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error parsing request body to json Unrecognized character escape",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates your request payload is escaping characters it shouldn\u0027t. For example, escaping apostrophes such as \u0022It\\\u0027s a test\u0022 will trigger this error. Review your payload for escaped characters and remove those escapes.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post should only contain 1 set of targeting criteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the targetedEntities field has more than 1 targeting object. See Create Targeted Organic UGC Posts for the correct structure.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#create-targeted-organic-ugc-posts"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target audience doesn\u0027t meet 300 follower minimum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the targeted audience is too small to target. Audiences must have at least 300 members to be targeted. See Create Targeted Organic UGC Posts for how to calculate audience counts upfront.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#create-targeted-organic-ugc-posts"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member is unauthorized to create UserGeneratedContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the authenticated member doesn\u0027t have permission to create content on the given company page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST {endpoint}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the token used hasn\u0027t been scoped to the correct permissions. Generate a new token with w_organization_social or w_member_social.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Write conflict due to an internal UGC error. Please retry the create operation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content is a duplicate of {share or UGC URN}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the UGC Post is an exact duplicate of a recently created UGC Post. Wait 10 minutes for the duplicate restriction to expire or modify the content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "422",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Error validating the post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates there\u0027s an error in the post, e.g. a required field is not present, a field with a length limit is too long, etc. The error message will contain the reason.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UGC action was blocked because a share limit has been reached",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the author has reached a maximum daily share limit.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resource level throttle {period} limit for calls to this resource is reached.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates that the developer application has reached the maximum limit against this resource",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "for the given time period.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve UGC Posts",
+      "Anchor": "retrieve-ugc-posts",
+      "SectionPath": [
+        "Retrieve UGC Posts"
+      ],
+      "Text": "Get UGC Posts by URN\nFind UGC Posts by Authors\nFind UGC Posts by Container Entities\nRequesting Playable Video Streams\nCommon Retrieval Errors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve UGC Posts",
+      "Anchor": "retrieve-ugc-posts",
+      "SectionPath": [
+        "Retrieve UGC Posts"
+      ],
+      "Text": "Note that URNs included in the URL params must be URL encoded when using Restli 2.0. For example, urn:li:ugcPost:12345 would become urn%3Ali%3AugcPost%3A12345. Other parts of the params shouldn\u0027t be encoded. Postman or similar API tools may not support these types of calls. Testing with curl is recommended if you encounter a 400 error with message Invalid query parameters passed to request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve UGC Posts",
+      "Anchor": "retrieve-ugc-posts",
+      "SectionPath": [
+        "Retrieve UGC Posts"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve UGC Posts",
+      "Anchor": "retrieve-ugc-posts",
+      "SectionPath": [
+        "Retrieve UGC Posts"
+      ],
+      "Text": "All API requests are represented in protocol 2.0.0 and require the header X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get UGC Posts by URN",
+      "Anchor": "get-ugc-posts-by-urn",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN"
+      ],
+      "Text": "To retrieve a UGC Post, provide the context in which the user generated content is being viewed. ViewContext can be either AUTHOR or READER. Retrieve UGC posts by URNs: ugcPostUrn (urn:li:ugcPost:{id}) or shareUrn (urn:li:share:{id}).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts/{encoded ugcPostUrn|shareUrn}?viewContext=AUTHOR",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts/{encoded ugcPostUrn|shareUrn}?viewContext=AUTHOR\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts/{encoded ugcPostUrn|shareUrn} \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027viewerContext=AUTHOR\u0026projection=(...)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022author\u0022: \u0022urn:li:person:123ABC\u0022,\n    \u0022contentCertificationRecord\u0022: \u0022{\\\u0022originCountryCode\\\u0022:\\\u0022us\\\u0022,\\\u0022modifiedAt\\\u0022:1500590592795,\\\u0022spamRestriction\\\u0022:{\\\u0022classifications\\\u0022:[],\\\u0022contentQualityClassifications\\\u0022:[],\\\u0022systemName\\\u0022:\\\u0022MACHINE_SYNC\\\u0022,\\\u0022lowQuality\\\u0022:false,\\\u0022contentClassificationTrackingId\\\u0022:\\\u0022B6A8B437D1D5E59D123455F6DCE5B\\\u0022,\\\u0022contentRelevanceClassifications\\\u0022:[],\\\u0022spam\\\u0022:false}}\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1500590543962\n    },\n    \u0022firstPublishedAt\u0022: 1500590592702,\n    \u0022id\u0022: \u0022urn:li:ugcPost:123456\u0022,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n        \u0022time\u0022: 1500590592806\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n            \u0022media\u0022: [\n                {\n                    \u0022media\u0022: \u0022urn:li:digitalmediaAsset:123ABDEFHAG\u0022,\n                    \u0022status\u0022: \u0022READY\u0022,\n                    \u0022thumbnails\u0022: []\n                }\n            ],\n            \u0022shareCommentary\u0022: {\n                \u0022attributes\u0022: [\n                    {\n                        \u0022length\u0022: 35,\n                        \u0022start\u0022: 66,\n                        \u0022value\u0022: {\n                            \u0022com.linkedin.common.CompanyAttributedEntity\u0022: {\n                                \u0022company\u0022: \u0022urn:li:organization:12345\u0022\n                            }\n                        }\n                    }\n                ],\n                \u0022text\u0022: \u0022Testing a UGC Post!\u0022\n            },\n            \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n        }\n    },\n    \u0022versionTag\u0022: \u00222\u0022,\n    \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Response"
+      ],
+      "Text": "Video thumbnails are not retrievable.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get UGC Posts",
+      "Anchor": "batch-get-ugc-posts",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Batch Get UGC Posts"
+      ],
+      "Text": "Multiple UGC Posts can be retrieved in a single API call by passing in multiple UGC Post URNs into the ids parameter. The UGC Post URNs should be passed in List format and should be encoded as shown in the examples below. Note that the , in the List separating each URN doesn\u0027t need to be encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?ids=List({encoded ugcPostUrn},{encoded ugcPostUrn})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?ids=List({encoded ugcPostUrn},{encoded ugcPostUrn})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027ids=List({encoded ugcPostUrn},{encoded ugcPostUrn})\u0026projection=(results*(...))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027ids=List(urn%3Ali%3AugcPost%3A6380472009834450944,urn%3Ali%3AugcPost%3A6380472009834450944)\u0026projection=(results*(...))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Get UGC Posts by URN",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022urn:li:ugcPost:638047200983445094\u0022: {\n            \u0022author\u0022: \u0022urn:li:person:Qih6zGPNUX\u0022,\n            \u0022contentCertificationRecord\u0022: \u0022{\\\u0022originCountryCode\\\u0022:\\\u0022us\\\u0022,\\\u0022modifiedAt\\\u0022:1500590592795,\\\u0022spamRestriction\\\u0022:{\\\u0022classifications\\\u0022:[],\\\u0022contentQualityClassifications\\\u0022:[],\\\u0022systemName\\\u0022:\\\u0022MACHINE_SYNC\\\u0022,\\\u0022lowQuality\\\u0022:false,\\\u0022contentClassificationTrackingId\\\u0022:\\\u0022B6A8B437D1D5E59DCB4D00C95F6DCE5B\\\u0022,\\\u0022contentRelevanceClassifications\\\u0022:[],\\\u0022spam\\\u0022:false}}\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:Qih6zGPNUX\u0022,\n                \u0022time\u0022: 1500590543962\n            },\n            \u0022firstPublishedAt\u0022: 1500590592702,\n            \u0022id\u0022: \u0022urn:li:ugcPost:6293932920864212345\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:Qih6zGPNUX\u0022,\n                \u0022time\u0022: 1500590592806\n            },\n            \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n            \u0022specificContent\u0022: {\n                \u0022com.linkedin.ugc.ShareContent\u0022: {\n                    \u0022media\u0022: [\n                        {\n                            \u0022media\u0022: \u0022urn:li:digitalmediaAsset:123ABDEFHAG\u0022,\n                            \u0022status\u0022: \u0022READY\u0022,\n                            \u0022thumbnails\u0022: []\n                        }\n                    ],\n                    \u0022shareCommentary\u0022: {\n                        \u0022attributes\u0022: [\n                            {\n                                \u0022length\u0022: 35,\n                                \u0022start\u0022: 66,\n                                \u0022value\u0022: {\n                                    \u0022com.linkedin.common.CompanyAttributedEntity\u0022: {\n                                        \u0022company\u0022: \u0022urn:li:organization:12345\u0022\n                                    }\n                                }\n                            }\n                        ],\n                        \u0022text\u0022: \u0022Testing a post!\u0022\n                    },\n                    \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022\n                }\n            },\n            \u0022versionTag\u0022: \u00222\u0022,\n            \u0022visibility\u0022: {\n                \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n            }\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find UGC Posts by Authors",
+      "Anchor": "find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors"
+      ],
+      "Text": "Retrieve all UGC posts for a member or an organization. Use authors=List(person Urn) or authors=List(organization Urn) as the query parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find UGC Posts by Authors",
+      "Anchor": "find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors"
+      ],
+      "Text": "Even though authors is structured as an Array, you can currently only pass one value for authors. You get a 400 Bad Request error with the message \u0022Multi author finder not implemented, please make separate requests per author\u0022 if you pass more than one value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find UGC Posts by Authors",
+      "Anchor": "find-ugc-posts-by-authors",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors"
+      ],
+      "Text": "URNs included in the URL params must be URL encoded. For example, urn:li:organization:12345 would become urn%3Ali%3Aorganization%3A12345. Other parts of the params don\u0027t need to be encoded. Postman or similar API tools may not support these types of calls. Testing with curl is recommended if you encounter a 400 error with message Invalid query parameters passed to request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "To retrieve all posts for a member. The r_member_social permission is required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded personUrn})\u0026sortBy=LAST_MODIFIED",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded personUrn})\u0026sortBy=LAST_MODIFIED\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=authors\u0026authors=List({encoded personUrn})\u0026sortBy=LAST_MODIFIED\u0026projection=(elements*(...))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "To retrieve all posts for an organization. The r_organization_social permission is required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded organizationUrn})\u0026sortBy=LAST_MODIFIED",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded organizationUrn})\u0026sortBy=LAST_MODIFIED\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=authors\u0026authors=List({organizationUrn})\u0026sortBy=LAST_MODIFIED\u0026projection=(elements*(...))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022author\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1438989838000\n            },\n            \u0022id\u0022: \u0022urn:li:share:6035560836041302016\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1438989838000\n            },\n            \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n            \u0022specificContent\u0022: {\n                \u0022com.linkedin.ugc.ShareContent\u0022: {\n                    \u0022media\u0022: [],\n                    \u0022shareCommentary\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022\u0022\n                    },\n                    \u0022shareMediaCategory\u0022: \u0022NONE\u0022\n                }\n            },\n            \u0022versionTag\u0022: \u00220\u0022,\n            \u0022visibility\u0022: {\n                \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022LOGGED_IN\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Options to Sort Result",
+      "Anchor": "options-to-sort-result",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Options to Sort Result"
+      ],
+      "Text": "Also pass an optional param sortBy=CREATED or sortBy=LAST_MODIFIED to author finder which will sort UGC posts based on created timestamp field (created.time) or lastModified timestamp field (lastModified.time) in descending order (most recent to least recent). Without this param, by default, it\u0027s set to sortBy=LAST_MODIFIED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "To retrieve 2 posts for a member/organization sorted by its last modified timestamp (most recent to least recent):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded personUrn/organizationUrn})\u0026sortBy=LAST_MODIFIED\u0026count=2",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded personUrn/organizationUrn})\u0026sortBy=LAST_MODIFIED\u0026count=2\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=authors\u0026authors=List({encoded personUrn|organizationUrn})\u0026sortBy=LAST_MODIFIED\u0026count=2\u0026projection=(elements*(...))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Authors",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022author\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1438989838000\n            },\n            \u0022id\u0022: \u0022urn:li:share:6035560836041302016\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1439989838000\n            },\n            \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n            \u0022specificContent\u0022: {\n                \u0022com.linkedin.ugc.ShareContent\u0022: {\n                    \u0022media\u0022: [],\n                    \u0022shareCommentary\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022\u0022\n                    },\n                    \u0022shareMediaCategory\u0022: \u0022NONE\u0022\n                }\n            },\n            \u0022versionTag\u0022: \u00220\u0022,\n            \u0022visibility\u0022: {\n                \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022LOGGED_IN\u0022\n            }\n        },\n        {\n            \u0022author\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1426576538000\n            },\n            \u0022id\u0022: \u0022urn:li:share:624460845041303116\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1426576538000\n            },\n            \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n            \u0022specificContent\u0022: {\n                \u0022com.linkedin.ugc.ShareContent\u0022: {\n                    \u0022media\u0022: [],\n                    \u0022shareCommentary\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022\u0022\n                    },\n                    \u0022shareMediaCategory\u0022: \u0022NONE\u0022\n                }\n            },\n            \u0022versionTag\u0022: \u00220\u0022,\n            \u0022visibility\u0022: {\n                \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022LOGGED_IN\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 2,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find UGC Posts by Container Entities",
+      "Anchor": "find-ugc-posts-by-container-entities",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities"
+      ],
+      "Text": "Retrieve all UGC posts of a group using containerEntities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Find UGC Posts by Container Entities",
+      "Anchor": "find-ugc-posts-by-container-entities",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities"
+      ],
+      "Text": "Note that URNs included in the URL params must be URL encoded. For example, urn:li:group:12345 would become urn%3Ali%3Agroup%3A12345. Other parts of the params don\u0027t need to be encoded. Postman or similar API tools may not support these types of calls. Testing with curl is recommended if you encounter a 400 error with message Invalid query parameters passed to request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts?q=containerEntities\u0026containerEntities=List({encoded groupUrn}, {encoded groupUrn})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts?q=containerEntities\u0026containerEntities=LIST({encoded groupUrn}, {encoded groupUrn})\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities",
+        "Sample Request"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-8",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027q=containerEntities\u0026containerEntities=List({encoded groupUrn}, {encoded groupUrn})\u0026projection=(elements*(...))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Find UGC Posts by Container Entities",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022author\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1438989838000\n            },\n            \u0022id\u0022: \u0022urn:li:share:6035560836041302016\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:csUser:4\u0022,\n                \u0022time\u0022: 1438989838000\n            },\n            \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n            \u0022specificContent\u0022: {\n                \u0022com.linkedin.ugc.ShareContent\u0022: {\n                    \u0022media\u0022: [],\n                    \u0022shareCommentary\u0022: {\n                        \u0022attributes\u0022: [],\n                        \u0022text\u0022: \u0022\u0022\n                    },\n                    \u0022shareMediaCategory\u0022: \u0022NONE\u0022\n                }\n            },\n            \u0022versionTag\u0022: \u00220\u0022,\n            \u0022visibility\u0022: {\n                \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022LOGGED_IN\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting Playable Video Streams",
+      "Anchor": "requesting-playable-video-streams",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Requesting Playable Video Streams"
+      ],
+      "Text": "UGC Posts of type video can be decorated through playableStreams to return playable video URLs. For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting Playable Video Streams",
+      "Anchor": "requesting-playable-video-streams",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Requesting Playable Video Streams"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Requesting Playable Video Streams",
+      "Anchor": "requesting-playable-video-streams",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Requesting Playable Video Streams"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/ugcPosts/urn%3Ali%3AugcPost%3A6382695519264866304?viewContext=AUTHOR\u0026projection=(specificContent(com.linkedin.ugc.ShareContent(media(*(media~:playableStreams)))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Requesting Playable Video Streams",
+      "Anchor": "requesting-playable-video-streams",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Requesting Playable Video Streams"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/ugcPosts/urn%3Ali%3AugcPost%3A6382695519264866304?viewContext=AUTHOR\u0026projection=(specificContent(com.linkedin.ugc.ShareContent(media(*(media~:playableStreams)))))\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting Playable Video Streams",
+      "Anchor": "requesting-playable-video-streams",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Requesting Playable Video Streams"
+      ],
+      "Text": "If your request exceeds the maximum length requirement, please utilize query tunneling:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Requesting Playable Video Streams",
+      "Anchor": "requesting-playable-video-streams",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Requesting Playable Video Streams"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/v2/ugcPosts/urn%3Ali%3AugcPost%3A6382695519264866304 \\\n-H \u0027X-HTTP-Method-Override: GET\u0027 \\\n-H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n-H \u0027Authorization: Bearer redacted\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027viewContext=AUTHOR\u0026projection=(specificContent(com.linkedin.ugc.ShareContent(media(*(media~:playableStreams)))))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Common Retrieval Errors",
+      "Anchor": "common-retrieval-errors",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Common Retrieval Errors"
+      ],
+      "Text": "The table below lists commonly encountered errors retrieving UGC Posts. It is not meant to be a comprehensive list of all possible UGC Post retrieval errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common Retrieval Errors",
+      "Anchor": "common-retrieval-errors",
+      "SectionPath": [
+        "Retrieve UGC Posts",
+        "Common Retrieval Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid query parameters passed to request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Occurs when using Restli 2.0 and the query parameters are not encoded properly. See Protocol Version for more on Restli 2.0 encoding. Calls with Postman and some other HTTP clients can trigger this error. Try using curl or another client when testing.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/protocol-version?view=li-lms-2026-09"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member doesn\u0027t have author access to view UserGeneratedContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates the requested content is not viewable to the authenticated member requesting it.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: GET-authors /ugcPosts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates token used in the call hasn\u0027t been authorized with r_organization_social. Refer to Permissions for more information.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api?view=li-lms-2026-09\u0026tabs=http#permissions"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete UGC Posts",
+      "Anchor": "delete-ugc-posts",
+      "SectionPath": [
+        "Delete UGC Posts"
+      ],
+      "Text": "Note that URNs included in the URL params must be URL encoded. For example, urn:li:ugcPost:12345 would become urn%3Ali%3AugcPost%3A12345.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete UGC Posts",
+      "Anchor": "delete-ugc-posts",
+      "SectionPath": [
+        "Delete UGC Posts"
+      ],
+      "Text": "UGC Post deletions are idempotent. Deletion requests for a previously deleted UGC Post will return 204 No Content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Delete UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Delete UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/v2/ugcPosts/{encoded ugcPostUrn|shareUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-9",
+      "SectionPath": [
+        "Delete UGC Posts",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/v2/ugcPosts/{encoded ugcPostUrn|shareUrn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

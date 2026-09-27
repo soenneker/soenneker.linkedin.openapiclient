@@ -1,0 +1,620 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+  "Title": "Provisioning API",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Provisioning API",
+      "Anchor": "provisioning-api",
+      "SectionPath": [],
+      "Text": "As LinkedIn partners, use LinkedIn\u0027s Provisioning API to create, configure, and manage developer applications on behalf of your customers which is an initial step in managing and enabling their integrations. You can also rotate and manage application secrets to maintain security.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting Access",
+      "Anchor": "requesting-access",
+      "SectionPath": [
+        "Getting Started",
+        "Requesting Access"
+      ],
+      "Text": "In order to access the specialized Provisioning APIs, reach out to a LinkedIn Partner Engineering representative to have a developer application configured with the required permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requesting Access",
+      "Anchor": "requesting-access",
+      "SectionPath": [
+        "Getting Started",
+        "Requesting Access"
+      ],
+      "Text": "All API requests require authorization .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Application",
+      "Anchor": "create-application",
+      "SectionPath": [
+        "Create Application"
+      ],
+      "Text": "Use the following endpoint to create a child application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create Application",
+      "Anchor": "create-application",
+      "SectionPath": [
+        "Create Application"
+      ],
+      "Text": "POST  https://api.linkedin.com/v2/provisionedApplications",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Create Application",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "uniqueForeignId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique ID that represents the child application being created, as seen from the parent/calling application. This value must be unique across all child applications that belong to the parent application. Attempting to create more than one child with the same uniqueForeignId value will result in a conflict error. Use your customer identifier for this value.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display name of the child application. This value will be shown to users in the OAuth 2.0 authorization dialog for 3-legged scenarios. Additionally, it will be used by LinkedIn as a reference value. Note: Usage of \u0022LinkedIn\u0022 in name is no supported.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (max 50 chars) Format: \u0022{ATS Name} - {Customer Name}\u0022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A brief description of the child application. This value is only used by LinkedIn administration and is not shown to end-users of the application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "oauth2AuthorizedCallbackUrls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of fully qualified OAuth 2.0 redirect URLs to allow.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "validJsSdkDomains",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of fully qualified JavaScript SDK domain names.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Create Application",
+        "sample request body"
+      ],
+      "Text": "{\n    \u0022description\u0022: \u0022My favorite customer\u0022,\n    \u0022name\u0022: \u0022My ATS - My Customer\u0022,\n    \u0022oauth2AuthorizedCallbackUrls\u0022: [\n        \u0022https://www.foo.com/\u0022,\n        \u0022https://www.bar.com/\u0022\n    ],\n    \u0022uniqueForeignId\u0022: \u002207d5284a-d0a1-45a3-93c0-ac69c9c78\u0022,\n    \u0022validJsSdkDomains\u0022: [\n        \u0022https://www.foo.js\u0022,\n        \u0022https://www.bar.js\u0022\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Code",
+      "Anchor": "response-code",
+      "SectionPath": [
+        "Create Application",
+        "Response Code"
+      ],
+      "Text": "A successful request will return a 201 Created response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body Fields",
+      "Anchor": "response-body-fields",
+      "SectionPath": [
+        "Create Application",
+        "Response Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN representing the application that was created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "credentials.client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client ID value used during OAuth 2.0 token request flow.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "credentials.client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client Secret value used during OAuth 2.0 token request flow. May be up to 256 characters in length and contain non-alphanumeric characters.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Application",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022credentials\u0022: {\n        \u0022client_id\u0022: \u00221234567890\u0022,\n        \u0022client_secret\u0022: \u0022ABCDEFGHIJKL\u0022\n    },\n    \u0022key\u0022: \u0022urn:li:developerApplication:234\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Application",
+      "Anchor": "update-application",
+      "SectionPath": [
+        "Update Application"
+      ],
+      "Text": "Use the following endpoint to update a child application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Update Application",
+      "Anchor": "update-application",
+      "SectionPath": [
+        "Update Application"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/provisionedApplications/{developer application URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Application",
+      "Anchor": "update-application",
+      "SectionPath": [
+        "Update Application"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Application",
+      "Anchor": "update-application",
+      "SectionPath": [
+        "Update Application"
+      ],
+      "Text": "Obtain the developer application URN from the key field in the Create Application response.\nThis action will write over the existing list of Javascript SDK domain names with the list of domains in the request body of this POST call. As such, be sure to take note of the JS domains created with each child application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Update Application",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "validJsSdkDomains",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of fully qualified JavaScript SDK domain names.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body-1",
+      "SectionPath": [
+        "Update Application",
+        "Sample Request Body"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n        \u0022$set\u0022: {\n            \u0022validJsSdkDomains\u0022: [\n                \u0022https://www.foo.js\u0022,\n                \u0022https://www.bar.js\u0022\n            ]\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Code",
+      "Anchor": "response-code-1",
+      "SectionPath": [
+        "Update Application",
+        "Response Code"
+      ],
+      "Text": "A successful request will return a 204 No Content response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Application",
+      "Anchor": "get-application",
+      "SectionPath": [
+        "Get Application"
+      ],
+      "Text": "Use the following endpoint to get attributes of a child application:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get Application",
+      "Anchor": "get-application",
+      "SectionPath": [
+        "Get Application"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/provisionedApplications?q=credentialsByUniqueForeignId\u0026uniqueForeignId={uniqueForeignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Parameter",
+      "Anchor": "request-parameter",
+      "SectionPath": [
+        "Get Application",
+        "Request Parameter"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "uniqueForeignId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of the child application supplied during the creation of the child application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Code",
+      "Anchor": "response-code-2",
+      "SectionPath": [
+        "Get Application",
+        "Response Code"
+      ],
+      "Text": "A successful request will return a 200 OK response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Application",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022credentials\u0022: {\n                \u0022client_id\u0022: \u0022123abc456defga\u0022\n            },\n            \u0022uniqueForeignId\u0022: \u0022Unique Foreign ID\u0022,\n            \u0022name\u0022: \u0022Test Application\u0022,\n            \u0022description\u0022: \u0022This is my test application\u0022,\n            \u0022validJsSdkDomains\u0022: [\n                \u0022http://linkedin.com\u0022,\n                \u0022https://linkedin.com\u0022\n            ],\n            \u0022key\u0022: \u0022urn:li:developerApplication:1234567\u0022,\n            \u0022oauth2AuthorizedCallbackUrls\u0022: [\n                \u0022https://www.linkedin.com.com/oauth2/callback\u0022,\n                \u0022http://www.linkedin.com/oauth2/callback\u0022\n            ]\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Application",
+        "Sample Response"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Application",
+        "Sample Response"
+      ],
+      "Text": "Do not use the client_id and client_secret generated through the Provisioning API right away for token generation or widget loading. Wait at least 5 minutes after creating a child app before performing operations such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get Application",
+        "Sample Response"
+      ],
+      "Text": "Generating access tokens\nLoading widgets with the client_id",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "The following error codes can be returned:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "Error Code",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "404: uniqueForeignId not found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In the situation where the requested foreign ID is not found to be associated with an application managed by the parent application making the request, an HTTP 404 response is returned.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "409: uniqueForeignId already exists",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In the case where a create call is made and a uniqueForeignID value is provided that is already associated to a child application controlled by the parent calling application, an HTTP 409 - Conflict response code is returned. A parent application will not accept the creation of multiple tenant applications that share the same uniqueForeignId value.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429: request limit exceeded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If the calling application has exceeded its call throttle limits, an HTTP 429 \u2013 Too Many Requests status code is returned.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage Application Secrets",
+      "Anchor": "manage-application-secrets",
+      "SectionPath": [
+        "Manage Application Secrets"
+      ],
+      "Text": "Rotate and delete secrets for your child applications to maintain security. Each application can have up to two active secrets, allowing you to rotate credentials without service interruption.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage Application Secrets",
+      "Anchor": "manage-application-secrets",
+      "SectionPath": [
+        "Manage Application Secrets"
+      ],
+      "Text": "For detailed instructions and API documentation, see Application Secret Management.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

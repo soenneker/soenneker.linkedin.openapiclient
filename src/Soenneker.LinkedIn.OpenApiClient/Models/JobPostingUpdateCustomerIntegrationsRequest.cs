@@ -7,28 +7,60 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf2"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf3"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf4"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf5"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf6"/>, <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestBranch1"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class JobPostingUpdateCustomerIntegrationsRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class JobPostingUpdateCustomerIntegrationsRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The entities property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestEntities? Entities { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf2? JobPostingUpdateCustomerIntegrationsRequestAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestEntities Entities { get; set; }
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf2 JobPostingUpdateCustomerIntegrationsRequestAnyOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequest"/> and sets the default values.
-        /// </summary>
-        public JobPostingUpdateCustomerIntegrationsRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf3? JobPostingUpdateCustomerIntegrationsRequestAnyOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf3 JobPostingUpdateCustomerIntegrationsRequestAnyOf3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf4? JobPostingUpdateCustomerIntegrationsRequestAnyOf4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf4 JobPostingUpdateCustomerIntegrationsRequestAnyOf4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf5? JobPostingUpdateCustomerIntegrationsRequestAnyOf5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf5 JobPostingUpdateCustomerIntegrationsRequestAnyOf5 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf6? JobPostingUpdateCustomerIntegrationsRequestAnyOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf6 JobPostingUpdateCustomerIntegrationsRequestAnyOf6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestBranch1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestBranch1? JobPostingUpdateCustomerIntegrationsRequestBranch1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestBranch1 JobPostingUpdateCustomerIntegrationsRequestBranch1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +69,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public static global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequest();
+            var result = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequest();
+            result.JobPostingUpdateCustomerIntegrationsRequestAnyOf2 = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf2();
+            result.JobPostingUpdateCustomerIntegrationsRequestAnyOf3 = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf3();
+            result.JobPostingUpdateCustomerIntegrationsRequestAnyOf4 = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf4();
+            result.JobPostingUpdateCustomerIntegrationsRequestAnyOf5 = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf5();
+            result.JobPostingUpdateCustomerIntegrationsRequestAnyOf6 = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf6();
+            result.JobPostingUpdateCustomerIntegrationsRequestBranch1 = new global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestBranch1();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +84,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(JobPostingUpdateCustomerIntegrationsRequestAnyOf2 != null || JobPostingUpdateCustomerIntegrationsRequestAnyOf3 != null || JobPostingUpdateCustomerIntegrationsRequestAnyOf4 != null || JobPostingUpdateCustomerIntegrationsRequestAnyOf5 != null || JobPostingUpdateCustomerIntegrationsRequestAnyOf6 != null || JobPostingUpdateCustomerIntegrationsRequestBranch1 != null)
             {
-                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestEntities>(global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestEntities.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(JobPostingUpdateCustomerIntegrationsRequestAnyOf2, JobPostingUpdateCustomerIntegrationsRequestAnyOf3, JobPostingUpdateCustomerIntegrationsRequestAnyOf4, JobPostingUpdateCustomerIntegrationsRequestAnyOf5, JobPostingUpdateCustomerIntegrationsRequestAnyOf6, JobPostingUpdateCustomerIntegrationsRequestBranch1);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +97,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestEntities>("entities", Entities);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.JobPostingUpdateCustomerIntegrationsRequestAnyOf2>(null, JobPostingUpdateCustomerIntegrationsRequestAnyOf2, JobPostingUpdateCustomerIntegrationsRequestAnyOf3, JobPostingUpdateCustomerIntegrationsRequestAnyOf4, JobPostingUpdateCustomerIntegrationsRequestAnyOf5, JobPostingUpdateCustomerIntegrationsRequestAnyOf6, JobPostingUpdateCustomerIntegrationsRequestBranch1);
         }
     }
 }

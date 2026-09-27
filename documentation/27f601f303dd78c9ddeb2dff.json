@@ -1,0 +1,509 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/getting-started",
+  "Title": "Getting Started with Organization Authorizations",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "Members require more granular permissions to assign administrator roles to an employee\u0027s job function. In the past, this may have required assigning everyone as an administrator. As new roles are introduced, the task of discovering, mapping, and assigning roles to permissions can be time-consuming.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "Current role-based permissions using /organizationAcls are either too powerful or too restrictive.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "LinkedIn recommends that partners call the permission-based endpoint /organizationAuthorizations, to check a user\u0027s permission level, e.g., authorize user to post as an organization (company.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "host: api.linkedin.com\nbasePath: /v2\nscheme: https\nendpoint: /organizationAuthorizations\nmethods: GET, BATCH_GET, BATCH_FIND",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started with Organization Authorizations",
+      "Anchor": "getting-started-with-organization-authorizations",
+      "SectionPath": [],
+      "Text": "All request headers should have X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Role Checking Types",
+      "Anchor": "role-checking-types",
+      "SectionPath": [
+        "Role Checking Types"
+      ],
+      "Text": "",
+      "Headers": [
+        "Endpoint",
+        "Authorization type",
+        "Access Control",
+        "Code changes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/organizationAcls",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "role-based",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization Access Controls",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "For every new role",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/organizationAuthorizations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "permission-based",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization Authorizations",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-authorizations/organization-authorizations?view=li-lms-2026-09"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Role Checking Types",
+      "Anchor": "role-checking-types",
+      "SectionPath": [
+        "Role Checking Types"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Role Checking Types",
+      "Anchor": "role-checking-types",
+      "SectionPath": [
+        "Role Checking Types"
+      ],
+      "Text": "Using /organizationAuthorizations is optional but recommended.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Use Organization Authorizations?",
+      "Anchor": "why-use-organization-authorizations",
+      "SectionPath": [
+        "Role Checking Types",
+        "Why Use Organization Authorizations?"
+      ],
+      "Text": "The /organizationAuthorizations endpoint provides a way to determine if a user has access to a particular feature without needing to know which roles the user has.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why Use Organization Authorizations?",
+      "Anchor": "why-use-organization-authorizations",
+      "SectionPath": [
+        "Role Checking Types",
+        "Why Use Organization Authorizations?"
+      ],
+      "Text": "When using /organizationAcls, every new Role introduced by LinkedIn will require additional checks for each of your user\u0027s permissions. For example, if you\u0027re checking /organizationAcls \u0022isAdmin\u0022 to determine whether or not they can post as the company, you\u0027ll need to also check is admin || content admin || each time a new role is released.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Role to Permission Mapping",
+      "Anchor": "role-to-permission-mapping",
+      "SectionPath": [
+        "Role to Permission Mapping"
+      ],
+      "Text": "Each Role is authorized to perform a certain behavior which is mapped to a list of permissions with same OrganizationAuthorizationAction, or permission type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ADMINISTRATOR ROLE",
+      "Anchor": "administrator-role",
+      "SectionPath": [
+        "Role to Permission Mapping",
+        "ADMINISTRATOR ROLE"
+      ],
+      "Text": "",
+      "Headers": [
+        "Behavior",
+        "Authorization Actions (permissions)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Retrieve and Update Access Control Assignments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationRoleAuthorizationActionTypeADMINISTRATOR_READADMINISTRATOR_WRITEDIRECT_SPONSORED_CONTENT_POSTER_READDIRECT_SPONSORED_CONTENT_POSTER_WRITEPIPELINE_BUILDER_READ PIPELINE_BUILDER_WRITE PENDING_ADMIN_READ PENDING_ADMIN_WRITE PENDING_DIRECT_SPONSORED_CONTENT_POSTER_READPENDING_DIRECT_SPONSORED_CONTENT_POSTER_WRITE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Create, Edit, and Read Posts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentAuthorizationActionTypeORGANIC_SHARE_VIEW_AS_AUTHORORGANIC_SHARE_CREATEORGANIC_SHARE_EDITORGANIC_SHARE_DELETEDARK_SHARE_CREATE DARK_SHARE_EDIT DARK_SHARE_DELETE DARK_SHARE_VIEW_AS_AUTHOR",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Read Company Information",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationProfileAuthorizationActionTypeADMINISTRATION_PAGE_VIEW",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationActivityAuthorizationActionTypeORGANIZATION_ACTIVITY_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAnalyticsAuthorizationActionTypeVISITOR_ANALYTICS_READFOLLOWER_ANALYTICS_READUPDATE_ANALYTICS_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Associate Developer Application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationApplicationAuthorizationActionTypeAPPLICATION_ASSOCIATE",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CONTENT ADMIN ROLE",
+      "Anchor": "content-admin-role",
+      "SectionPath": [
+        "Role to Permission Mapping",
+        "CONTENT ADMIN ROLE"
+      ],
+      "Text": "",
+      "Headers": [
+        "Behavior",
+        "Authorization Actions (permissions)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Retrieve Access Control Assignments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationRoleAuthorizationActionTypeADMINISTRATOR_READDIRECT_SPONSORED_CONTENT_POSTER_READPIPELINE_BUILDER_READ PIPELINE_BUILDER_WRITE PENDING_ADMIN_READ PENDING_DIRECT_SPONSORED_CONTENT_POSTER_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Create, Edit, and Read Posts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentAuthorizationActionTypeORGANIC_SHARE_VIEW_AS_AUTHORORGANIC_SHARE_CREATEORGANIC_SHARE_EDITORGANIC_SHARE_DELETEDARK_SHARE_CREATE DARK_SHARE_EDIT DARK_SHARE_DELETE DARK_SHARE_VIEW_AS_AUTHOR",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Read Company Information",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationProfileAuthorizationActionType ADMINISTRATION_PAGE_VIEW",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationActivityAuthorizationActionTypeORGANIZATION_ACTIVITY_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAnalyticsAuthorizationActionTypeVISITOR_ANALYTICS_READFOLLOWER_ANALYTICS_READUPDATE_ANALYTICS_READ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ANALYST ROLE",
+      "Anchor": "analyst-role",
+      "SectionPath": [
+        "Role to Permission Mapping",
+        "ANALYST ROLE"
+      ],
+      "Text": "",
+      "Headers": [
+        "Behavior",
+        "Authorization Actions (permissions)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Retrieve Access Control Assignments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationRoleAuthorizationActionTypeADMINISTRATOR_READDIRECT_SPONSORED_CONTENT_POSTER_READPIPELINE_BUILDER_READ PIPELINE_BUILDER_WRITE PENDING_ADMIN_READ PENDING_DIRECT_SPONSORED_CONTENT_POSTER_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Read Posts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentAuthorizationActionTypeORGANIC_SHARE_VIEW_AS_AUTHORDARK_SHARE_VIEW_AS_AUTHOR",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Read Company Information",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationProfileAuthorizationActionTypeADMINISTRATION_PAGE_VIEW",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationActivityAuthorizationActionTypeORGANIZATION_ACTIVITY_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAnalyticsAuthorizationActionTypeVISITOR_ANALYTICS_READFOLLOWER_ANALYTICS_READUPDATE_ANALYTICS_READ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CURATOR ROLE",
+      "Anchor": "curator-role",
+      "SectionPath": [
+        "Role to Permission Mapping",
+        "CURATOR ROLE"
+      ],
+      "Text": "",
+      "Headers": [
+        "Behavior",
+        "Authorization Actions (permissions)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "View Notifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationActivityAuthorizationActionTypeORGANIZATION_ACTIVITY_READ",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "View Analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationAnalyticsAuthorizationActionTypeVISITOR_ANALYTICS_READFOLLOWER_ANALYTICS_READUPDATE_ANALYTICS_READ",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "CURATOR ROLE",
+      "Anchor": "curator-role",
+      "SectionPath": [
+        "Role to Permission Mapping",
+        "CURATOR ROLE"
+      ],
+      "Text": "Next steps: Organization Authorizations",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

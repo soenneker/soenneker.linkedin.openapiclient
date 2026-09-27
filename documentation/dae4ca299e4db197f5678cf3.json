@@ -1,0 +1,542 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-html-faq",
+  "Title": "Job Posting HTML FAQ",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-html-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Posting HTML FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "This section provides answers to common questions about HTML formatting and styling in job postings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported HTML tags? Do we support styling-related attributes?",
+      "Anchor": "what-are-the-supported-html-tags--do-we-support-styling-related-attributes",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "What are the supported HTML tags? Do we support styling-related attributes?"
+      ],
+      "Text": "The list of supported HTML tags can be found in our job posting API schema documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported HTML tags? Do we support styling-related attributes?",
+      "Anchor": "what-are-the-supported-html-tags--do-we-support-styling-related-attributes",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "What are the supported HTML tags? Do we support styling-related attributes?"
+      ],
+      "Text": "LinkedIn doesn\u0027t recommend using HTML/CSS tags other than the supported ones. While certain attribute tags such as \u003Ca href=\u0027\u0027\u003E may be accepted, they are not guaranteed to work as expected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the supported HTML tags? Do we support styling-related attributes?",
+      "Anchor": "what-are-the-supported-html-tags--do-we-support-styling-related-attributes",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "What are the supported HTML tags? Do we support styling-related attributes?"
+      ],
+      "Text": "LinkedIn doesn\u0027t recommend using styling-related tags, as they may not render consistently.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I use HTML tags other than the ones listed? Sometimes other HTML tags seem to work.",
+      "Anchor": "can-i-use-html-tags-other-than-the-ones-listed--sometimes-other-html-tags-seem-to-work",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Can I use HTML tags other than the ones listed? Sometimes other HTML tags seem to work."
+      ],
+      "Text": "LinkedIn doesn\u0027t recommend using HTML/CSS tags beyond those specifically listed in our supported HTML tags documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I use HTML tags other than the ones listed? Sometimes other HTML tags seem to work.",
+      "Anchor": "can-i-use-html-tags-other-than-the-ones-listed--sometimes-other-html-tags-seem-to-work",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Can I use HTML tags other than the ones listed? Sometimes other HTML tags seem to work."
+      ],
+      "Text": "While some unlisted tags might appear to work, there\u0027s no guarantee they will be supported consistently. Unsupported tags may be:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Can I use HTML tags other than the ones listed? Sometimes other HTML tags seem to work.",
+      "Anchor": "can-i-use-html-tags-other-than-the-ones-listed--sometimes-other-html-tags-seem-to-work",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Can I use HTML tags other than the ones listed? Sometimes other HTML tags seem to work."
+      ],
+      "Text": "Stripped out entirely\nRendered as plain text\nLead to unpredictable formatting or display issues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why does my HTML content look different than what I previewed locally?",
+      "Anchor": "why-does-my-html-content-look-different-than-what-i-previewed-locally",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Why does my HTML content look different than what I previewed locally?"
+      ],
+      "Text": "The difference you\u0027re seeing is likely due to variations in rendering engines. Local preview depends on your browser and environment, which may render styles and elements differently than LinkedIn\u0027s platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why does my HTML content look different than what I previewed locally?",
+      "Anchor": "why-does-my-html-content-look-different-than-what-i-previewed-locally",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Why does my HTML content look different than what I previewed locally?"
+      ],
+      "Text": "LinkedIn\u0027s rendering engine is optimized for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why does my HTML content look different than what I previewed locally?",
+      "Anchor": "why-does-my-html-content-look-different-than-what-i-previewed-locally",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Why does my HTML content look different than what I previewed locally?"
+      ],
+      "Text": "Consistency across devices and browsers\nSecurity and safety\nPerformance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why does my HTML content look different than what I previewed locally?",
+      "Anchor": "why-does-my-html-content-look-different-than-what-i-previewed-locally",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Why does my HTML content look different than what I previewed locally?"
+      ],
+      "Text": "This means certain HTML tags or styles might be interpreted differently compared to local browser behavior. Additionally, some CSS or browser-specific behavior won\u0027t carry over to LinkedIn\u0027s environment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why does my HTML content look different than what I previewed locally?",
+      "Anchor": "why-does-my-html-content-look-different-than-what-i-previewed-locally",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Why does my HTML content look different than what I previewed locally?"
+      ],
+      "Text": "Best practices:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why does my HTML content look different than what I previewed locally?",
+      "Anchor": "why-does-my-html-content-look-different-than-what-i-previewed-locally",
+      "SectionPath": [
+        "HTML Tags and Styling",
+        "Why does my HTML content look different than what I previewed locally?"
+      ],
+      "Text": "Stick to the supported HTML tags\nKeep tags as simple as possible\nContact the tech support team if you encounter unexpected or confusing output",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there a character limit for the job description field?",
+      "Anchor": "is-there-a-character-limit-for-the-job-description-field",
+      "SectionPath": [
+        "Content Limitations",
+        "Is there a character limit for the job description field?"
+      ],
+      "Text": "Yes, there is a 25,000-character limit for the job description field on LinkedIn. This limit applies to all jobs posted on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is there a character limit for the job description field?",
+      "Anchor": "is-there-a-character-limit-for-the-job-description-field",
+      "SectionPath": [
+        "Content Limitations",
+        "Is there a character limit for the job description field?"
+      ],
+      "Text": "Important: This character count excludes HTML tags\u2014only the visible text content is counted toward the limit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the styling different for job postings when viewed signed in versus not signed in?",
+      "Anchor": "why-is-the-styling-different-for-job-postings-when-viewed-signed-in-versus-not-signed-in",
+      "SectionPath": [
+        "Display and Rendering",
+        "Why is the styling different for job postings when viewed signed in versus not signed in?"
+      ],
+      "Text": "Layout differences can occur because job descriptions are rendered differently depending on whether the viewer is signed in or not. This is due to different rendering engines used for each experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the styling different for job postings when viewed signed in versus not signed in?",
+      "Anchor": "why-is-the-styling-different-for-job-postings-when-viewed-signed-in-versus-not-signed-in",
+      "SectionPath": [
+        "Display and Rendering",
+        "Why is the styling different for job postings when viewed signed in versus not signed in?"
+      ],
+      "Text": "While aiming for consistency, some minor formatting differences may occur due to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the styling different for job postings when viewed signed in versus not signed in?",
+      "Anchor": "why-is-the-styling-different-for-job-postings-when-viewed-signed-in-versus-not-signed-in",
+      "SectionPath": [
+        "Display and Rendering",
+        "Why is the styling different for job postings when viewed signed in versus not signed in?"
+      ],
+      "Text": "Different rendering engines for signed-in vs. non-signed-in users\nDifferent experiences provided for each user state",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the styling different for job postings when viewed signed in versus not signed in?",
+      "Anchor": "why-is-the-styling-different-for-job-postings-when-viewed-signed-in-versus-not-signed-in",
+      "SectionPath": [
+        "Display and Rendering",
+        "Why is the styling different for job postings when viewed signed in versus not signed in?"
+      ],
+      "Text": "What to do:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the styling different for job postings when viewed signed in versus not signed in?",
+      "Anchor": "why-is-the-styling-different-for-job-postings-when-viewed-signed-in-versus-not-signed-in",
+      "SectionPath": [
+        "Display and Rendering",
+        "Why is the styling different for job postings when viewed signed in versus not signed in?"
+      ],
+      "Text": "If the differences aren\u0027t causing issues, no action is needed\nIf specific layout or style problems are affecting readability, please report them with details\nThe more detail provided, the better the possible solutions can be explored",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why is the styling different for job postings when viewed signed in versus not signed in?",
+      "Anchor": "why-is-the-styling-different-for-job-postings-when-viewed-signed-in-versus-not-signed-in",
+      "SectionPath": [
+        "Display and Rendering",
+        "Why is the styling different for job postings when viewed signed in versus not signed in?"
+      ],
+      "Text": "LinkedIn values your feedback and is available to help if anything becomes disruptive.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Topics",
+      "Anchor": "related-topics",
+      "SectionPath": [
+        "Related Topics"
+      ],
+      "Text": "Job Posting API Schema\nHTML Tags Reference",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "If you have additional questions not covered here, please contact LinkedIn Technical Support.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "This section provides answers to common questions about HTML formatting and styling in job postings.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "The list of supported HTML tags can be found in our job posting API schema documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "LinkedIn doesn\u0027t recommend using HTML/CSS tags other than the supported ones. While certain attribute tags such as \u003Ca href=\u0027\u0027\u003E may be accepted, they are not guaranteed to work as expected.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "LinkedIn doesn\u0027t recommend using styling-related tags, as they may not render consistently.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "LinkedIn doesn\u0027t recommend using HTML/CSS tags beyond those specifically listed in our supported HTML tags documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "While some unlisted tags might appear to work, there\u0027s no guarantee they will be supported consistently. Unsupported tags may be:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Stripped out entirely\nRendered as plain text\nLead to unpredictable formatting or display issues",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "The difference you\u0027re seeing is likely due to variations in rendering engines. Local preview depends on your browser and environment, which may render styles and elements differently than LinkedIn\u0027s platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "LinkedIn\u0027s rendering engine is optimized for:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Consistency across devices and browsers\nSecurity and safety\nPerformance",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "This means certain HTML tags or styles might be interpreted differently compared to local browser behavior. Additionally, some CSS or browser-specific behavior won\u0027t carry over to LinkedIn\u0027s environment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Best practices:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Stick to the supported HTML tags\nKeep tags as simple as possible\nContact the tech support team if you encounter unexpected or confusing output",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Yes, there is a 25,000-character limit for the job description field on LinkedIn. This limit applies to all jobs posted on the platform.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Important: This character count excludes HTML tags\u2014only the visible text content is counted toward the limit.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Layout differences can occur because job descriptions are rendered differently depending on whether the viewer is signed in or not. This is due to different rendering engines used for each experience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "While aiming for consistency, some minor formatting differences may occur due to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "Different rendering engines for signed-in vs. non-signed-in users\nDifferent experiences provided for each user state",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "What to do:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "If the differences aren\u0027t causing issues, no action is needed\nIf specific layout or style problems are affecting readability, please report them with details\nThe more detail provided, the better the possible solutions can be explored",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "LinkedIn values your feedback and is available to help if anything becomes disruptive.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related Topics",
+      "Anchor": "related-topics",
+      "SectionPath": [
+        "Related Topics"
+      ],
+      "Text": "Job Posting API Schema\nHTML Tags Reference",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Still Need Help?",
+      "Anchor": "still-need-help",
+      "SectionPath": [
+        "Still Need Help?"
+      ],
+      "Text": "If you have additional questions not covered here, please contact LinkedIn Technical Support.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

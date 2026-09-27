@@ -1,0 +1,149 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/new-widget-urls-migration-guide",
+  "Title": "New Widget URLs Migration Guide",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/new-widget-urls-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "New Widget URLs Migration Guide",
+      "Anchor": "new-widget-urls-migration-guide",
+      "SectionPath": [],
+      "Text": "Partners using the Onboarding Widget and Profile Plugin are required to update the URLs used to load the widget by December 31, 2023.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Widget URLs Migration Guide",
+      "Anchor": "new-widget-urls-migration-guide",
+      "SectionPath": [],
+      "Text": "Once updated, the new URLs will deliver faster load times of the widgets to customers. This guide details the widgets and plugins that require updated URLs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Widget Implementations by Program",
+      "Anchor": "widget-implementations-by-program",
+      "SectionPath": [
+        "Widget Implementations by Program"
+      ],
+      "Text": "",
+      "Headers": [
+        "Widget",
+        "Implementing Program(s)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Onboarding Widget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply Connect, Apply with LinkedIn, Recruiter System Connect",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Profile Plugin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apply Connect, Recruiter System Connect",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Migration Instructions",
+      "Anchor": "migration-instructions",
+      "SectionPath": [
+        "Migration Instructions"
+      ],
+      "Text": "The following URLs need to be replaced within the scripts used to render each of the widgets. You can click the widget name to see the new URL implemented inside the script.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Migration Instructions",
+      "Anchor": "migration-instructions",
+      "SectionPath": [
+        "Migration Instructions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Widget",
+        "Old URL",
+        "New URL"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Onboarding Widget",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/customer-configuration?view=li-lts-2026-04#2-display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "http://www.linkedin.com/recruiter/widget/ATSIntegration",
+            "Links": [
+              "http://www.linkedin.com/recruiter/widget/ATSIntegration"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "https://platform.linkedin.com/rsc/extensions/onboarding-widget",
+            "Links": [
+              "https://platform.linkedin.com/rsc/extensions/onboarding-widget"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Profile Plugin",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin?view=li-lts-2026-04#display-profile-plugin"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/talent/widgets/assets/javascripts/profile-widget.js",
+            "Links": [
+              "https://www.linkedin.com/talent/widgets/assets/javascripts/profile-widget.js"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "https://platform.linkedin.com/rsc/extensions/profile-widget",
+            "Links": [
+              "https://platform.linkedin.com/rsc/extensions/profile-widget"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

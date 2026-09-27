@@ -1,0 +1,157 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/overview",
+  "Title": "Compliance Solutions for Sales Navigator Overview",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-management",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-sales-nav-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance Solutions for Sales Navigator Overview",
+      "Anchor": "compliance-solutions-for-sales-navigator-overview",
+      "SectionPath": [],
+      "Text": "LinkedIn provides API solutions for monitoring, archiving, and management of communications from LinkedIn\u0027s Sales Navigator for enterprises. These APIs will help your communications via Sales Navigator remain effective while ensuring compliance with corporate governance policies and major regulations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user. To utilize all the Compliance APIs, you will need the following member permission:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "The use of these APIs is restricted to developers approved by LinkedIn. Reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permissions",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_compliance_sales_nav",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve communications from Sales Navigator for compliance monitoring and archiving.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "New Development",
+      "Anchor": "new-development",
+      "SectionPath": [
+        "New Development"
+      ],
+      "Text": "Ready to start development? Refer to the links below for guidance on building your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Development",
+      "Anchor": "new-development",
+      "SectionPath": [
+        "New Development"
+      ],
+      "Text": "Authentication\nAPI Concepts\nBreaking Change Policy\nBest Practices\nError Handling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Management API",
+      "Anchor": "compliance-management-api",
+      "SectionPath": [
+        "Compliance Management API"
+      ],
+      "Text": "Compliance APIs allow 3rd-party developer to archive communications sent and receive from a regulated member\u0027s Sales Navigator inbox with their consent. Compliance Management APIs allow developers to opt-in a member for compliance monitoring. Once the member has been opted in, all communications from Sales Navigator will be archived as compliance events and can be accessed by the Compliance Events API. The API will not contain any compliance events prior to opting in the member.\nTo know more about the API, refer the Compliance Management API Documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [
+        "Compliance Events API"
+      ],
+      "Text": "Once the member has been opted-in for compliance event archival using the Compliance Management API, LinkedIn will start archiving the communications from the regulated member\u0027s Sales Navigator as compliance events. Compliance Events API allows developers to query these compliance events for a regulated member. We currently store compliance events only up to 28 days.\nTo know more about the API, refer the Compliance Events API Documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [
+        "Compliance Events API"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API",
+      "Anchor": "compliance-events-api",
+      "SectionPath": [
+        "Compliance Events API"
+      ],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn API Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

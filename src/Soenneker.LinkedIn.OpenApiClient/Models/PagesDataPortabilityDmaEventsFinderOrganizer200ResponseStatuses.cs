@@ -15,13 +15,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven property</summary>
-        public int? SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven { get; set; }
+        public long? SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven { get; set; }
         /// <summary>The SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne property</summary>
-        public int? SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne { get; set; }
+        public long? SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne { get; set; }
         /// <summary>The SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine property</summary>
-        public int? SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine { get; set; }
+        public long? SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine { get; set; }
         /// <summary>The SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo property</summary>
-        public int? SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo { get; set; }
+        public long? SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaEventsFinderOrganizer200ResponseStatuses"/> and sets the default values.
         /// </summary>
@@ -47,10 +47,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "7130604419196358657", n => { SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = n.GetIntValue(); } },
-                { "7130283828383793151", n => { SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = n.GetIntValue(); } },
-                { "7130283397368741889", n => { SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine = n.GetIntValue(); } },
-                { "7128514732969357312", n => { SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo = n.GetIntValue(); } },
+                { "7130604419196358657", n => { SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven = n.GetLongValue(); } },
+                { "7130283828383793151", n => { SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne = n.GetLongValue(); } },
+                { "7130283397368741889", n => { SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine = n.GetLongValue(); } },
+                { "7128514732969357312", n => { SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -60,10 +60,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("7130604419196358657", SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven);
-            writer.WriteIntValue("7130283828383793151", SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne);
-            writer.WriteIntValue("7130283397368741889", SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine);
-            writer.WriteIntValue("7128514732969357312", SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo);
+            writer.WriteLongValue("7130604419196358657", SevenOneThreeZeroSixZeroFourFourOneNineOneNineSixThreeFiveEightSixFiveSeven);
+            writer.WriteLongValue("7130283828383793151", SevenOneThreeZeroTwoEightThreeEightTwoEightThreeEightThreeSevenNineThreeOneFiveOne);
+            writer.WriteLongValue("7130283397368741889", SevenOneThreeZeroTwoEightThreeThreeNineSevenThreeSixEightSevenFourOneEightEightNine);
+            writer.WriteLongValue("7128514732969357312", SevenOneTwoEightFiveOneFourSevenThreeTwoNineSixNineThreeFiveSevenThreeOneTwo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -1,0 +1,416 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+  "Title": "Verification data schema",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verification data schema",
+      "Anchor": "verification-data-schema",
+      "SectionPath": [],
+      "Text": "VerificationData is the decoded record model shared by Apply Connect with Verifications and Apply with LinkedIn with Verifications. It describes verified identity and workplace information. For AWLI, LinkedIn delivers the signed wrapper in verificationData.signature; the schema below represents the decoded claims, not the top-level browser payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification data schema",
+      "Anchor": "verification-data-schema",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification data schema",
+      "Anchor": "verification-data-schema",
+      "SectionPath": [],
+      "Text": "Verification data only confirms an applicant\u0027s verified identity or workplace. Its absence never indicates that an applicant is fraudulent, and it carries no negative meaning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "What a verification represents",
+      "Anchor": "what-a-verification-represents",
+      "SectionPath": [
+        "What a verification represents"
+      ],
+      "Text": "",
+      "Headers": [
+        "Dimension",
+        "Meaning",
+        "Example method"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Identity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member\u0027s real-world identity was confirmed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Government ID provider",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Workplace",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The member\u0027s association with an organization was confirmed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Corporate work email",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What a verification represents",
+      "Anchor": "what-a-verification-represents",
+      "SectionPath": [
+        "What a verification represents"
+      ],
+      "Text": "A member can hold multiple verifications, such as several employers. This schema currently includes identity and workplace verifications. LinkedIn shares which dimensions are verified and limited metadata, but not the underlying evidence (for example, an ID number or work email address).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "VerificationData fields",
+      "Anchor": "verificationdata-fields",
+      "SectionPath": [
+        "VerificationData fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "verifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of strings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field lists the verification categories the applicant completed, such as IDENTITY and WORKPLACE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of VerifiedDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04#verifieddetail-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "This field contains detailed metadata for each completed verification.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "VerifiedDetail fields",
+      "Anchor": "verifieddetail-fields",
+      "SectionPath": [
+        "VerifiedDetail fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "category",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The verification category, either IDENTITY or WORKPLACE.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastVerifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp when the verification was completed, in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VerifiedName",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04#verifiedname-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The legal name from government ID verification. This field is present only for IDENTITY records.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationMethod",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The method used to complete verification, such as EMAIL_ADDRESS or MICROSOFT_ENTRA. This field is present only for WORKPLACE records and isn\u0027t populated for IDENTITY records.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "organizationInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04#organizationinfo-fields"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organization information associated with the workplace verification.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "VerifiedName fields",
+      "Anchor": "verifiedname-fields",
+      "SectionPath": [
+        "VerifiedName fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The verified first name. This field isn\u0027t guaranteed to be populated because it depends on what the identity verification vendor returns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "middleName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The verified middle name. This field isn\u0027t guaranteed to be populated because it depends on what the identity verification vendor returns.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The verified last name. This field isn\u0027t guaranteed to be populated because it depends on what the identity verification vendor returns.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationInfo fields",
+      "Anchor": "organizationinfo-fields",
+      "SectionPath": [
+        "OrganizationInfo fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the company.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of the company\u0027s LinkedIn page.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Example",
+      "Anchor": "example",
+      "SectionPath": [
+        "Example"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [\n    \u0022IDENTITY\u0022,\n    \u0022WORKPLACE\u0022\n  ],\n  \u0022verifiedDetails\u0022: [\n    {\n      \u0022category\u0022: \u0022IDENTITY\u0022,\n      \u0022verifiedName\u0022: {\n        \u0022firstName\u0022: \u0022MICHAEL\u0022,\n        \u0022middleName\u0022: \u0022GARY\u0022,\n        \u0022lastName\u0022: \u0022SCOTT\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744141828585\n    },\n    {\n      \u0022category\u0022: \u0022WORKPLACE\u0022,\n      \u0022verificationMethod\u0022: \u0022EMAIL_ADDRESS\u0022,\n      \u0022organizationInfo\u0022: {\n        \u0022name\u0022: \u0022Contoso\u0022,\n        \u0022url\u0022: \u0022https://www.linkedin.com/company/contoso12345\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744139009883\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Interpretation rules",
+      "Anchor": "interpretation-rules",
+      "SectionPath": [
+        "Interpretation rules"
+      ],
+      "Text": "A workplace record means that employment was verified, not that the member is currently employed. Current and past employment are indistinguishable by design.\nOrder is not meaningful. Do not infer recency or seniority from list order.\nAbsence is not a negative signal. Never treat it as a red flag.\nExpect partial coverage. Data is shared only with member consent and certified partners, so it is present for a subset of applicants.\nverificationMethod only applies to WORKPLACE records; it\u0027s not populated for IDENTITY records.\nverifiedName fields (firstName, middleName, lastName) aren\u0027t guaranteed to all be populated. What\u0027s returned depends on the identity verification vendor, so handle missing name parts gracefully.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Related documentation"
+      ],
+      "Text": "Apply Connect with Verifications\nApply with LinkedIn with Verifications\nReceive job applications\nDisplay Apply Connect plugins",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

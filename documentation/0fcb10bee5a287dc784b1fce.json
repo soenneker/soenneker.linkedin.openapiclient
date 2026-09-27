@@ -1,0 +1,169 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+  "Title": "Apply With LinkedIn Announcements and Release Notes",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/build-awli-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/migration-testing-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Application secret management APIs",
+      "Anchor": "application-secret-management-apis",
+      "SectionPath": [
+        "Application secret management APIs"
+      ],
+      "Text": "New Child Application Secret Management APIs - Added support for rotating and deleting secrets for parent, child, and standalone applications. Partners can now maintain up to two active secrets per application, enabling zero-downtime credential updates. See Application Secret Management for implementation details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Skills count update in response payload",
+      "Anchor": "skills-count-update-in-response-payload",
+      "SectionPath": [
+        "Skills count update in response payload"
+      ],
+      "Text": "We\u0027ve updated the count of \u0022skills\u0022 that are sent back to the ATS in AWLI response payload up-to 3 skills per candidate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New partner onboarding paused",
+      "Anchor": "new-partner-onboarding-paused",
+      "SectionPath": [
+        "New partner onboarding paused"
+      ],
+      "Text": "Added an important note to indicate that we are currently not supporting new partners for AWLI as we actively work on developing a new version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New certification test cases",
+      "Anchor": "new-certification-test-cases",
+      "SectionPath": [
+        "New certification test cases"
+      ],
+      "Text": "Added new test case are for LinkedIn Partners",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "FAQ updates for AWLI V3",
+      "Anchor": "faq-updates-for-awli-v3",
+      "SectionPath": [
+        "FAQ updates for AWLI V3"
+      ],
+      "Text": "Product and Technical FAQs questions updated for AWLI V3",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Automatic V2 to V3 transition",
+      "Anchor": "automatic-v2-to-v3-transition",
+      "SectionPath": [
+        "Automatic V2 to V3 transition"
+      ],
+      "Text": "Partners who were using AWLI V 2.0 are now being automatically transitioned to AWLI V 3.0. No additional steps are necessary from our customers or partners.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AWLI V3 direct build guide and migration testing",
+      "Anchor": "awli-v3-direct-build-guide-and-migration-testing",
+      "SectionPath": [
+        "AWLI V3 direct build guide and migration testing"
+      ],
+      "Text": "Added Guide to Build AWLI V3 Directly (for Existing Partners)\nMigration Testing Guide updated to include the following:\n\nInstructions to render and test AWLI V3\nStaffing and non-staffing customer setup\nStaffing and non-staffing consent screen examples\nMobile Devices Testing",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Cookie-based to OAuth migration",
+      "Anchor": "cookie-based-to-oauth-migration",
+      "SectionPath": [
+        "Cookie-based to OAuth migration"
+      ],
+      "Text": "AWLI content updated from Cookie-based authentication to Oauth\nRestructured existing content for better user experience",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V2 to V3 migration guide",
+      "Anchor": "v2-to-v3-migration-guide",
+      "SectionPath": [
+        "V2 to V3 migration guide"
+      ],
+      "Text": "Please use Migration Testing Guide for information on how to migrate from Apply With Linkedin v2.0 to Apply With Linkedin v3.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth provisioning for customer applications",
+      "Anchor": "oauth-provisioning-for-customer-applications",
+      "SectionPath": [
+        "OAuth provisioning for customer applications"
+      ],
+      "Text": "As a part of migration, customer developer applications will be provisioned with the Apply With LinkedIn OAuth settings. This includes adding a new AWLI permission and two redirect URLs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BUTTON and DATA mode deprecation, OAuth consent flow",
+      "Anchor": "button-and-data-mode-deprecation-oauth-consent-flow",
+      "SectionPath": [
+        "BUTTON and DATA mode deprecation, OAuth consent flow"
+      ],
+      "Text": "Beginning May 1, 2022, we will replace the current cookie-based Apply with LinkedIn experience with an OAuth model. Candidate consent will now be handled within the OAuth flow. We do not expect partners to do any work. The below images display the non-staffing and staffing variant of the consent screen.\n\nBeginning May 1, 2022, we will deprecate BUTTON and DATA mode. Multiple page flows like the Standard Flow and Create Account flow can still be supported but will require persisting profile data in the first page. Here\u0027s how a multi-page flow will look like with BUTTON_DATA mode: The Apply With LinkedIn widget in BUTTON_DATA mode is rendered on the first page of the job apply flow Candidate clicks the Apply With LinkedIn button LinkedIn sends the candidate\u0027s profile data to the callback method specified in the widget Partner stores/caches the LinkedIn profile data from the callback If the candidate\u0027s profile data needs to be populated on any subsequent pages, the partner uses the stored LinkedIn profile data from the first page When the candidate submits the job application, the partner loads the Apply With LinkedIn widget in CONVERSION mode",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video tutorials and development tools",
+      "Anchor": "video-tutorials-and-development-tools",
+      "SectionPath": [
+        "Video tutorials and development tools"
+      ],
+      "Text": "Configure Customer Applications and ATS Integrations\n\nAdded a video tutorial in Display the ATS Integration Configuration Plugin section.\nAdded a video tutorial in Enable Customer Integrations section.\nAdded a video tutorial in Verify Customer Integrations section.\nAdded API error details in Display the ATS Integration Configuration Plugin , Enable Customer Integrations and Verify Customer Integrations sections.\n\n\nSeparate Release Notes section is added for Apply with LinkedIn.\nDevelopment Tool section is added for Apply with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Staffing agency plugin illustration",
+      "Anchor": "staffing-agency-plugin-illustration",
+      "SectionPath": [
+        "Staffing agency plugin illustration"
+      ],
+      "Text": "Apply With LinkedIn - Added an illustration of the rendered plugin for customers that will use profile info across multiple jobs, i.e. Search \u0026 Staffing agencies.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

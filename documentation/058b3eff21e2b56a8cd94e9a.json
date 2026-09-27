@@ -1,0 +1,116 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/revoking-users-in-bulk",
+  "Title": "Bulk-Revoking Licenses via CSV in LinkedIn Learning",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-user-data",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/revoking-users-in-bulk"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "The following steps outline the process for revoking learner licenses via bulk CSV:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Large organizations frequently need to revoke multiple licenses (i.e., for ex-employees and -learners) in bulk. The most efficient method of performing this task is administering user data using comma-separated values (CSVs). For example, you can\nadd users in bulk via LinkedIn Learning CSV. You can revoke user licenses in a similar way.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "To bulk-revoke user licenses via CSV, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "After you log in, if you are not already in the Admin screen, select Go to Admin, then click People \u003E Users.\n\nIn the Manage users dropdown, select \u0022All users\u0022.\n\n\nIn the Customize fields to include in your CSV download of all users screen, under Licenses, search for and select the licenses you want to revoke.\n\nClick Download CSV.\n\n\nOpen the downloaded Excel file.\n\nTo revoke the license, change the license status to \u0022inactive\u0022 for the learner.\n\n\nReturn to the People \u003E Users tab.\n\nSelect Manage users \u003E \u0022Upload\u0022 \u003E \u0022Custom Attributes CSV\u0022 .\n\n\nIn the Add users by CSV screen, click Upload CSV.\n\n\nIn the Upload users via CSV screen, click Upload from computer and navigate to the CSV (Excel) file on your computer.\n\n\nSelect the modified file and upload it to LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Congratulations! You now can revoke learner licenses in bulk via CSV.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Supporting Documentation"
+      ],
+      "Text": "Deleting Users in LinkedIn Learning FAQ\n\nAdd Employee Data Admin Guide\n\nAdd Users in Bulk via CSV\n\nAdd Learners Individually to your Learning Account\n\nCreate Learner Child Groups\n\nCreate Learning Path or Collection\n\nManage the Emails Admins and Learners Receive from LinkedIn Learning\n\nManage Custom Learner Attributes\n\nRecommend or Share Content as an Admin\n\nPrivacy and Security Whitepaper: Account Center Employee Database Integration (EDI) and Single Sign-On (SSO)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Supporting Documentation",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Supporting Documentation",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Supporting Documentation",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

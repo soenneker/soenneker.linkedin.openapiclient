@@ -1,0 +1,347 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+  "Title": "Getting Access to LinkedIn APIs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/getting-started/request-access",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/increasing-access",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Getting Access to LinkedIn APIs",
+      "Anchor": "getting-access-to-linkedin-apis",
+      "SectionPath": [],
+      "Text": "The LinkedIn API uses OAuth 2.0 for user authorization and API authentication. Applications must be authorized and authenticated before they can fetch data from LinkedIn or get access to member data. This page summarizes the available permissions and partner programs available for accessing LinkedIn APIs. Most permissions and partner programs require explicit approval from LinkedIn. Open Permissions are the only permissions that are available to all developers without special approval.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Access to LinkedIn APIs",
+      "Anchor": "getting-access-to-linkedin-apis",
+      "SectionPath": [],
+      "Text": "All permissions listed below are used in either Member Authentication Flow (3-legged) or Application Authentication Flow (2-legged). More about these permission types can be found in Authenticating with OAuth 2.0 Overview.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Open Permissions (Consumer)",
+      "Anchor": "open-permissions-consumer",
+      "SectionPath": [
+        "Open Permissions (Consumer)"
+      ],
+      "Text": "The following permissions are available to all developers, and may be added via self-service through the LinkedIn Developer Portal, under the Products tab on your application page. LinkedIn products can be enabled after creating a new application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Open Permissions (Consumer)",
+      "Anchor": "open-permissions-consumer",
+      "SectionPath": [
+        "Open Permissions (Consumer)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Product/Program",
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sign in with LinkedIn using OpenID Connect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "profile",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Retrieve authenticated member\u0027s name, headline, and photo.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sign in with LinkedIn using OpenID Connect",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "email",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Retrieve authenticated member\u0027s primary email address.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Share on LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Post, comment and like posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Learning",
+      "Anchor": "learning",
+      "SectionPath": [
+        "Learning"
+      ],
+      "Text": "Developers seeking to build a learning related integration should refer to the Request API Access page within the LinkedIn Learning API space.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing",
+      "Anchor": "marketing",
+      "SectionPath": [
+        "Marketing"
+      ],
+      "Text": "Developers seeking to build a marketing related integration using Advertising API permissions must be approved. You can apply for access through the Developer Portal. To do this, select your app from My Apps, navigate to the Products tab, and add the Advertising API product. More information of LinkedIn Marketing Partners here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing",
+      "Anchor": "marketing",
+      "SectionPath": [
+        "Marketing"
+      ],
+      "Text": "Audiences permissions may be applied for after becoming an approved Advertising API partner. Contact support or your partner representative for application information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Marketing",
+      "Anchor": "marketing",
+      "SectionPath": [
+        "Marketing"
+      ],
+      "Text": "For the most up-to-date list of available permissions and their descriptions, see the LinkedIn Marketing API Permissions Table.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sales",
+      "Anchor": "sales",
+      "SectionPath": [
+        "Sales"
+      ],
+      "Text": "Developers seeking to build sales related integration using one of the permissions below must be approved as a Sales Navigator Application Platform (SNAP) partner. Apply here to be a SNAP partner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Sales",
+      "Anchor": "sales",
+      "SectionPath": [
+        "Sales"
+      ],
+      "Text": "",
+      "Headers": [
+        "Product/Program",
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Sales Navigator Application Platform(SNAP)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_sales_nav_analytics",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Enables access to Sales Navigator Analytics retrieval.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sales Navigator Application Platform(SNAP)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_sales_nav_display",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Display Services permission for Sales Navigator.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sales Navigator Application Platform(SNAP)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_sales_nav_validation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application Auth: Access Sales Navigator endpoints for CRM data validation.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Sales Navigator Application Platform(SNAP)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_sales_nav_profiles",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application Auth: Access Sales Navigator endpoints that present matched, publicly available member profile information.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent",
+      "Anchor": "talent",
+      "SectionPath": [
+        "Talent"
+      ],
+      "Text": "Developers seeking to build talent related integrations through one of the programs listed below can apply here. We recommend familiarizing yourself with the types of partner integrations available before applying by visiting here and here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Talent",
+      "Anchor": "talent",
+      "SectionPath": [
+        "Talent"
+      ],
+      "Text": "Recruiter System Connect (RSC)\nApply Connect\nApply with LinkedIn\nPremium Job Posting",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance (Closed)",
+      "Anchor": "compliance-closed",
+      "SectionPath": [
+        "Compliance (Closed)"
+      ],
+      "Text": "The following permissions used for Compliance integrations are listed for reference purposes only. Access is closed and may not be requested.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Compliance (Closed)",
+      "Anchor": "compliance-closed",
+      "SectionPath": [
+        "Compliance (Closed)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Product/Program",
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "r_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Retrieve activities for compliance monitoring and archiving",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "w_compliance",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member Auth: Manage and delete data for compliance.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

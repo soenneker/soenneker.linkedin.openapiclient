@@ -1,0 +1,605 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+  "Title": "Apply Connect certification",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-apply-connect-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/create-configure-customer-application",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "The Apply Connect certification process ensures official certification of LinkedIn Apply Connect.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "To achieve certification, review and complete all applicable test cases for each development module. Schedule certification demos with your LinkedIn Business Development contact in any order once development and testing are complete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "During demos, cover all module-specific test cases. If any test cases don\u0027t apply to your integration, notify your business development contact in advance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "LinkedIn certifies integrations based on complete coverage of the test cases in the certification demos. Upon successful certification, LinkedIn provisions your production API key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "Review and understand the test cases for each module to ensure a successful certification process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect certification",
+      "Anchor": "apply-connect-certification",
+      "SectionPath": [],
+      "Text": "Schedule certification demos with your LinkedIn Business Development contact in any module order once development and testing are complete.\nCover all module-specific test cases during demos. If test cases don\u0027t apply to your integration, notify your business development contact proactively.\nLinkedIn certifies integrations based on complete test case coverage.\nUpon successful certification, LinkedIn provisions your Production API Key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 0 - Authentication",
+      "Anchor": "module-0---authentication",
+      "SectionPath": [
+        "Module 0 - Authentication"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-001",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate OAuth 2.0 Client Credentials integration.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-002",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to periodically verify that an access token is valid.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-003",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to detect access token expiry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-004",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to retrigger OAuth 2.0 Client Credentials flow in case token has expired or been invalidated.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 1 - Customer configuration",
+      "Anchor": "module-1---customer-configuration",
+      "SectionPath": [
+        "Module 1 - Customer configuration"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-005",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to enable/disable all public jobs for LinkedIn Easy Apply.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-006",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain what triggers updates to existing jobs with LinkedIn Easy Apply.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-007",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how customers are notified when all jobs have been updated with LinkedIn Easy Apply.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-008",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain actions taken when a customer opts out of LinkedIn Easy Apply.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 2 - Create and manage jobs with Onsite Apply",
+      "Anchor": "module-2---create-and-manage-jobs-with-onsite-apply",
+      "SectionPath": [
+        "Module 2 - Create and manage jobs with Onsite Apply"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-009",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how webhooks are configured for customer jobs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-010",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate enabling an existing job with LinkedIn Easy Apply for an existing RSC customer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-011",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate adding all supported question types to the application flow: Education, Work Experience, Voluntary Self Identification, and Favorable Questions (if applicable).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-012",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the ability to turn off LinkedIn Easy Apply for a synced job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-013",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate retrieving the current job posting status and displaying the LinkedIn Easy Apply status in the ATS.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 3 - Receive job applications",
+      "Anchor": "module-3---receive-job-applications",
+      "SectionPath": [
+        "Module 3 - Receive job applications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to submit an application to the job created.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-015",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate ability to listen and respond to webhook validation events.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-016",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain ability to verify x-li-signature for push events.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-017",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate webhooks receiving job applications for customer jobs.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-018",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate receiving an application and creating a candidate record in the ATS from the submitted application, with the application source set to LinkedIn Easy Apply for tracking and analytics.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-019",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain monitoring, logging, and recovering from webhook outages.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 4 - Sync job application feedback signals",
+      "Anchor": "module-4---sync-job-application-feedback-signals",
+      "SectionPath": [
+        "Module 4 - Sync job application feedback signals"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-020",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain how job application feedback signals are mapped to ATS application actions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-021",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate updating a candidate status in the ATS and syncing job application feedback signals for the previously created applicant.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-022",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate closing the job and viewing the updated signal.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 5 - Display Apply Connect plugins",
+      "Anchor": "module-5---display-apply-connect-plugins",
+      "SectionPath": [
+        "Module 5 - Display Apply Connect plugins"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-023",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate viewing the applicant list page displaying the Applicant Highlights plugin for each LinkedIn Easy Apply applicant record.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-024",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the hover action on the Applicant Highlights plugin for the candidate created while logged in to LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate the hover action on the Applicant Highlights plugin for the candidate created while logged out of LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate displaying the Apply Connect In-ATS profile plugin for the applicant record created while logged in to LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate displaying the Apply Connect In-ATS profile plugin for the applicant record created while logged out of LinkedIn.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 6 - Error handling",
+      "Anchor": "module-6---error-handling",
+      "SectionPath": [
+        "Module 6 - Error handling"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate or explain retry logic and logging the full request (request and response headers, request and response body) for failed job sync requests.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 7 - Consume and display verifications",
+      "Anchor": "module-7---consume-and-display-verifications",
+      "SectionPath": [
+        "Module 7 - Consume and display verifications"
+      ],
+      "Text": "This module applies only to partners who support Apply Connect with Verifications. If your integration doesn\u0027t support verifications, notify your business development contact and skip this module.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Module 7 - Consume and display verifications",
+      "Anchor": "module-7---consume-and-display-verifications",
+      "SectionPath": [
+        "Module 7 - Consume and display verifications"
+      ],
+      "Text": "",
+      "Headers": [
+        "Rule",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "AC-029",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate receiving and parsing the verificationData field from the job application webhook payload for an applicant with a LinkedIn-verified identity or workplace.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-030",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate storing verification records on the applicant record without using the absence of verification data, or an UNAVAILABLE, JOB_NOT_SYNCED, or PARTNER_NOT_CERTIFIED reason, to automatically reject an applicant.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-031",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate displaying verification data on the applicant record in the ATS.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AC-032 (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Demonstrate sorting, filtering, or searching the applicant list by verification data.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

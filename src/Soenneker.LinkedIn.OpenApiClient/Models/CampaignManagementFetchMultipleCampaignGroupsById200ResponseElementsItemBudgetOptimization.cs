@@ -14,15 +14,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bidStrategy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BidStrategy { get; set; }
-#nullable restore
-#else
-        public string BidStrategy { get; set; }
-#endif
-        /// <summary>The budgetOptimizationStrategy property</summary>
+        /// <summary>Denotes the strategy used for bidding in auction. Campaigns under the campaign group must have the same bid strategy. Possible values:MAXIMUM_DELIVERYMANUALCOST_CAPDocumented type: string</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchMultipleCampaignGroupsById200ResponseElementsItemBudgetOptimizationBidStrategy? BidStrategy { get; set; }
+        /// <summary>Strategy used for campaign group budgeting to decide how to allocate budget across campaigns under the campaign group. Possible values: DYNAMICDocumented type: string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BudgetOptimizationStrategy { get; set; }
@@ -55,7 +49,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bidStrategy", n => { BidStrategy = n.GetStringValue(); } },
+                { "bidStrategy", n => { BidStrategy = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchMultipleCampaignGroupsById200ResponseElementsItemBudgetOptimizationBidStrategy>(); } },
                 { "budgetOptimizationStrategy", n => { BudgetOptimizationStrategy = n.GetStringValue(); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bidStrategy", BidStrategy);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CampaignManagementFetchMultipleCampaignGroupsById200ResponseElementsItemBudgetOptimizationBidStrategy>("bidStrategy", BidStrategy);
             writer.WriteStringValue("budgetOptimizationStrategy", BudgetOptimizationStrategy);
             writer.WriteAdditionalData(AdditionalData);
         }

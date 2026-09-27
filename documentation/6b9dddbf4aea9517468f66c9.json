@@ -1,0 +1,155 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+  "Title": "Share Targeting",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/celebration-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/little-text-format",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/multiimage-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/poll-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/share-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Share Targeting",
+      "Anchor": "share-targeting",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Targeting",
+      "Anchor": "share-targeting",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Targeting",
+      "Anchor": "share-targeting",
+      "SectionPath": [],
+      "Text": "Share targeting allows share owners to specify a target audience to which the post is broadcast within LinkedIn. To do this, specify share distribution targets when posting a share.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Targeting",
+      "Anchor": "share-targeting",
+      "SectionPath": [],
+      "Text": "Share distribution targets represent the categories by which the audience is segmented. For example, the audience may be segmented by industry or geographic region - both are share distribution targets. For each target, share owners may specify values to limit distribution of the share to members matching that target within the category.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Matching Criteria",
+      "Anchor": "matching-criteria",
+      "SectionPath": [
+        "Target Matching",
+        "Matching Criteria"
+      ],
+      "Text": "Within each share distribution target, a member is matched if they have any of the target values.\nAcross share distribution targets, a member is matched if they have all of the target values.\nOmitting a share distribution target matches members having any value for that category.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Minimums",
+      "Anchor": "minimums",
+      "SectionPath": [
+        "Target Matching",
+        "Minimums"
+      ],
+      "Text": "Each targeting segment requires a minimum of 300 members in that segment for the POST to be successful. For example, if a share owner wants a share to reach members who have a VP title, there must be a minimum of 300 members who fall into this segment. When testing against LinkedIn\u0027s test organizations, however, you only need 1 member per segment:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Minimums",
+      "Anchor": "minimums",
+      "SectionPath": [
+        "Target Matching",
+        "Minimums"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "URL",
+        "Organization URN"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DevTestCo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "https://www.linkedin.com/company/devtestco/",
+            "Links": [
+              "https://www.linkedin.com/company/devtestco/"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:2414183",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Test University",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "http://www.linkedin.com/school/6177438",
+            "Links": [
+              "http://www.linkedin.com/school/6177438"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:organization:6177438",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Ensure Targeting Minimums",
+      "Anchor": "ensure-targeting-minimums",
+      "SectionPath": [
+        "Target Matching",
+        "Ensure Targeting Minimums"
+      ],
+      "Text": "Use the organizationalEntityFollowerStatistics API to check if a particular segment meets the 300 follower minimum before attempting to POST an organization share. This API returns follower counts segmented across all relevant facets.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

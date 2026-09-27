@@ -1,0 +1,73 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/",
+  "Title": "LinkedIn Consumer Solutions Platform",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Consumer Solutions Platform",
+      "Anchor": "linkedin-consumer-solutions-platform",
+      "SectionPath": [],
+      "Text": "The LinkedIn Consumer Solutions Platform enables sites and applications the power to enhance their sign-in experience using the world\u0027s largest professional network. The Consumer Solutions Platform contains APIs to Sign In with LinkedIn and Share on LinkedIn. Follow the links below to learn more about the Consumer Solutions Platform APIs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Consumer Solutions Platform",
+      "Anchor": "linkedin-consumer-solutions-platform",
+      "SectionPath": [],
+      "Text": "Sign In with LinkedIn using OpenID Connect\nShare on LinkedIn\nAdd to Profile\nPlugins",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Consumer Solutions Platform",
+      "Anchor": "linkedin-consumer-solutions-platform",
+      "SectionPath": [],
+      "Text": "Ready to start development? Refer to the links below for guidance on building your application.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Consumer Solutions Platform",
+      "Anchor": "linkedin-consumer-solutions-platform",
+      "SectionPath": [],
+      "Text": "Authentication\nAPI Concepts\nBest Practices\nBreaking Change Policy\nError Handling",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Consumer Solutions Platform",
+      "Anchor": "linkedin-consumer-solutions-platform",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Consumer Solutions Platform",
+      "Anchor": "linkedin-consumer-solutions-platform",
+      "SectionPath": [],
+      "Text": "Notwithstanding anything to the contrary in the Microsoft Terms of Use and Microsoft Privacy Statement (please find the relevant links in the footer below), your use of the LinkedIn programmatic web APIs, software and other functionality and their associated tools and documentation that LinkedIn makes available to developers are governed by the LinkedIn API Terms of Use unless you have executed a separate signed partnership agreement, in which case that agreement shall apply.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

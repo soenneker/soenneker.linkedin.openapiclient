@@ -1,0 +1,518 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
+  "Title": "Lead Analytics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-analytics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/lead-gen/lead-gen-form-response",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Analytics",
+      "Anchor": "lead-analytics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Analytics",
+      "Anchor": "lead-analytics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice\nThe Lead Analytics API version 202508 and earlier have been sunset. We recommend that you migrate to the latest version 202604 to avoid disruptions. Update the LinkedIn-Version header in your requests to 202604.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Analytics",
+      "Anchor": "lead-analytics",
+      "SectionPath": [],
+      "Text": "The Lead Analytics API provides analytics for leads collected from Lead Gen Forms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Analytics",
+      "Anchor": "lead-analytics",
+      "SectionPath": [],
+      "Text": "The service provides Owner method that finds all leads given for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about Lead Analytics. Restricted to page admins with the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYSTLEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST",
+              "LEAD_GEN_FORMS_MANAGER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "pivotValues",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadAnalyticsPivotValue[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The pivot values for a specific record in the response. Example: OWNER returns a list of records, one for each organization owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "nonTestLeadCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of non-test leads for the specific pivotValue. Non-test leads are real leads submitted by members.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testLeadCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The count of test leads for the specific pivotValue. Test leads are leads submitted for testing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadAnalyticsPivotValue Sub-Object",
+      "Anchor": "leadanalyticspivotvalue-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadAnalyticsPivotValue Sub-Object"
+      ],
+      "Text": "LeadAnalyticsPivotValue is a sub-object in the Lead Form Response that indicates the pivot value(s) to group analytics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadAnalyticsPivotValue Sub-Object",
+      "Anchor": "leadanalyticspivotvalue-sub-object",
+      "SectionPath": [
+        "Permissions",
+        "LeadAnalyticsPivotValue Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Variant",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the organization owner.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lead Analytics",
+      "Anchor": "retrieve-lead-analytics",
+      "SectionPath": [
+        "Retrieve Lead Analytics"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lead Analytics",
+      "Anchor": "retrieve-lead-analytics",
+      "SectionPath": [
+        "Retrieve Lead Analytics"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of LeadGenerationAuthorizationActionType.LEAD_GENERATION_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Analytics",
+        "Owner",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Analytics",
+        "Owner",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLeadAnalytics?q=owner\u0026owner={ORGANIZATION_URN}\u0026pivots=List((leadAnalyticsPivot:OWNER))\u0026leadTypes=List((leadType:EVENT))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lead Analytics",
+        "Owner",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaLeadAnalytics?q=owner\u0026owner={ORGANIZATION_URN}\u0026pivots=List((leadAnalyticsPivot:OWNER))\u0026leadTypes=List((leadType:EVENT))\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lead Analytics",
+        "Owner",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022total\u0022: 1\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022pivotValues\u0022: [\n                {\n                    \u0022owner\u0022: \u0022urn:li:organization:1\u0022\n                }\n            ],\n            \u0022testLeadCount\u0022: 0,\n            \u0022nonTestLeadCount\u0022: 1\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lead Analytics",
+        "Owner",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization URN that owns the lead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "owner=ORGANIZATION_URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pivots",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Pivots to partition the analytics. Supported value: OWNER.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "pivots=List((leadAnalyticsPivot:OWNER))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadTypes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Lead types to filter analytics. Supported values: SPONSOREDCANDIDATE_INTERESTEVENTCOMPANYORGANIZATION_PRODUCT If omitted, defaults to SPONSORED.",
+            "Links": [],
+            "Values": [
+              "SPONSORED",
+              "CANDIDATE_INTEREST",
+              "EVENT",
+              "COMPANY",
+              "ORGANIZATION_PRODUCT"
+            ]
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "leadTypes=List((leadType:EVENT))",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range to fetch for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeRange=(start:1,end:2)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "Error Message",
+        "Description",
+        "Error Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. This includes cases where the caller does not have permission to access the specified organization (e.g., querying with a lead type such as COMPANY for an organization the caller is not authorized to manage).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure your developer application is provisioned with the required permissions and that you have the appropriate admin role for the target organization.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

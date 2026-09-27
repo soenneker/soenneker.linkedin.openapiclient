@@ -42,14 +42,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(string body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(string body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
@@ -62,11 +62,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,17 +81,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(string body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackDeletePlainRequest body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(string body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.SetContentFromParsable(RequestAdapter, "text/plain", body);
+            requestInfo.SetContentFromScalar(RequestAdapter, "text/plain", body);
             return requestInfo;
         }
         /// <summary>
@@ -102,11 +102,11 @@ namespace Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplicat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(UntypedNode body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.LinkedIn.OpenApiClient.Models.RecruiterSystemConnectSyncApplicationInterviewFeedbackRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.LinkedIn.OpenApiClient.RecruiterSystemConnect.V2.AtsApplications.WithApplicationIdDataProviderATSIntegrationContextUrnLiOrganizationWithOrgId.InterviewFeedback.InterviewFeedbackRequestBuilder.InterviewFeedbackRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

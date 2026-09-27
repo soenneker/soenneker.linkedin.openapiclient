@@ -1,0 +1,2451 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+  "Title": "Event Ads API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/event-management/events",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/article-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/carousel-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/conversation-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/document-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/follower-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/image-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/jobs-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/message-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/text-ads-integrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/vast-tag-video-ads-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/cursor-based-pagination",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Event Ads API",
+      "Anchor": "event-ads-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Ads API",
+      "Anchor": "event-ads-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Ads API",
+      "Anchor": "event-ads-api",
+      "SectionPath": [],
+      "Text": "LinkedIn Event Ads are a type of Sponsored Content that allows advertisers to promote events directly in the LinkedIn feed. This ad type enables advertisers to seamlessly promote a LinkedIn event to a defined audience before, during, and after the event. By using Event Ads, advertisers can increase event visibility, drive registrations, and engage with attendees throughout the event lifecycle.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Event Ads API",
+      "Anchor": "event-ads-api",
+      "SectionPath": [],
+      "Text": "For Live Events, this format provides an immersive ad experience for event attendees and registrants. Before the event, members can seamlessly register and view event details. During the event, members can watch the live stream directly in their feed. After the event, members can watch a replay of the event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported event types for Event Ads",
+      "Anchor": "supported-event-types-for-event-ads",
+      "SectionPath": [
+        "Supported event types for Event Ads"
+      ],
+      "Text": "Event Ads can promote events created with the Events Management API. Supported event types include:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported event types for Event Ads",
+      "Anchor": "supported-event-types-for-event-ads",
+      "SectionPath": [
+        "Supported event types for Event Ads"
+      ],
+      "Text": "",
+      "Headers": [
+        "Event type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "LinkedIn Live (on-platform)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Live video events streamed on LinkedIn. Use type.online.format.liveVideo when creating the event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "External online (on-platform)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Virtual events hosted on an external website with a LinkedIn Events Detail Page. Create the event with type.online.format.external; members register on LinkedIn and attend via your URL.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "In-person (on-platform)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Events at a physical location with a LinkedIn Events Detail Page. Use type.inPerson when creating the event.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Off-platform event ad (no EDP)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An event created solely to back a sponsored ad campaign, without a LinkedIn Events Detail Page. Supported for external online (type.online.format.external) and in-person (type.inPerson) events that include an external URL. Create the event with hasDarkUgc: true. The event is not visible on organic surfaces and the ad always redirects to the external URL. See Create an Off-Platform Event Ad without a LinkedIn Events Detail Page.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/event-ads-integrations?view=li-lms-2026-09\u0026tabs=http#create-an-off-platform-event-ad-without-a-linkedin-events-detail-page"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported event types for Event Ads",
+      "Anchor": "supported-event-types-for-event-ads",
+      "SectionPath": [
+        "Supported event types for Event Ads"
+      ],
+      "Text": "For a general external event creation example, refer to the External event example in the Events Management API documentation. For off-platform Event Ads (no EDP), additionally set hasDarkUgc: true as described in the table above and detailed in Create an Off-Platform Event Ad without a LinkedIn Events Detail Page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "This API follows our standard OAuth Authorization Code flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "The user authenticates with LinkedIn (see OAuth guidance in the Appendix for introducing a new permission into your OAuth flow scopes).\nEnsure all the necessary scopes (permissions) are requested:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "rw_ads(for campaign and ad/creative management)\nw_organization_social,r_organization_social (to manage company page posts)\nr_events (get events).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "This API follows our standard OAuth Authorization Code flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "The user authenticates with LinkedIn (see OAuth guidance in the Appendix for introducing a new permission into your OAuth flow scopes).\nEnsure all the necessary scopes (permissions) are requested:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "rw_ads(for campaign and ad/creative management)\nw_organization_social,r_organization_social (to manage company page posts)\nr_events (get events).\nrw_events (create and manage events, required for off-platform events with hasDarkUgc: true).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Authentication",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description",
+        "Product"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to the company admin, DSC poster, or content admin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve Posts on the company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles: ACCOUNT_BILLING_ADMIN, ACCOUNT_MANAGER, CAMPAIGN_MANAGER, CREATIVE_MANAGER, VIEWER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organization\u2019s events. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATOR, CONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event Management API",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Authentication",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description",
+        "Product"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to the company admin, DSC poster, or content admin.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve Posts on the company page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s Ad Account. Restricted to Ad Accounts in which the authenticated member has one of the following Ad Account roles: ACCOUNT_BILLING_ADMIN, ACCOUNT_MANAGER, CAMPAIGN_MANAGER, CREATIVE_MANAGER, VIEWER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Advertising API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organization\u2019s events. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATOR, CONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event Management API",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_events",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and manage organization\u2019s events. Required for creating off-platform events with hasDarkUgc: true. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATOR, CONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Event Management API",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "Starting 202410, the name field is introduced in Creative schema. Going forward, this name field is the preferred approach to set and get the creative\u0027s name, consistently across all ad formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "Familiarize yourself with the following APIs required to create an Event Ad:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "Campaigns - create campaigns.\nCampaign Groups - create campaign groups.\nPosts- create posts (User Generated Content) on behalf of an organization.\nCreatives - design creative content for an Ad Campaign.\nEvents- retrieve Events",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "Schema for entire creative is similar to Creatives, only the content field now supports an Event Ad content for the creation and management of Event Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "Schema for Event Ad Content is as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Authentication",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Details",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "post",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UserGeneratedContentPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the sponsored user generated content post. This field is read only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "directSponsoredContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates whether the creative is direct sponsored content or not. This field is read only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn event URN associated with this creative. This field is derived from the UGC post URN and is read only.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preEventRegistrationImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalmediaAssetUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image shown to users who haven\u0027t registered for the event yet.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hidePreviewVideo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This flag indicates whether the preview should be hidden or not.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentAuthor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Author of the content. Optional for backwards compatibility reasons.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Authentication",
+        "Restrictions"
+      ],
+      "Text": "The following campaign objective types are supported for the Event Ads ad format:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Authentication",
+        "Restrictions"
+      ],
+      "Text": "Brand awareness (BRAND_AWARENESS)\nWebsite visits (WEBSITE_VISITS)\nEngagement (ENGAGEMENT)\nLead generation (LEAD_GENERATION)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Authentication",
+        "Restrictions"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Authentication",
+        "Restrictions"
+      ],
+      "Text": "Event Ads have the following restrictions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Restrictions",
+      "Anchor": "restrictions",
+      "SectionPath": [
+        "Authentication",
+        "Restrictions"
+      ],
+      "Text": "Event Ads are currently not available for delivery on the LinkedIn Audience Network.\nAudio events are not supported for Event Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event Ad with a New Post",
+      "Anchor": "create-an-event-ad-with-a-new-post",
+      "SectionPath": [
+        "Create an Event Ad with a New Post"
+      ],
+      "Text": "The event you promote can be any on-platform event with a LinkedIn Events Detail Page (LinkedIn Live video, external online, or in-person), or an off-platform event created with hasDarkUgc: true (external online or in-person with an external URL). In all cases, you create a dark post that references the event, then create an Event Ad creative that ties the campaign to that post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event Ad with a New Post",
+      "Anchor": "create-an-event-ad-with-a-new-post",
+      "SectionPath": [
+        "Create an Event Ad with a New Post"
+      ],
+      "Text": "To create an event creative, the following steps must be followed:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event Ad with a New Post",
+      "Anchor": "create-an-event-ad-with-a-new-post",
+      "SectionPath": [
+        "Create an Event Ad with a New Post"
+      ],
+      "Text": "Create a Campaign for Event Ad.\nCreate the Post for the Event (This should be a dark post).\nCreate an Event Creative with the Event dark post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:{campaignGroupId}\u0022,\n  \u0022audienceExpansionEnabled\u0022: false,\n  \u0022costType\u0022: \u0022CPV\u0022,\n  \u0022connectedTelevisionOnly\u0022: false,\n  \u0022objectiveType\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022name\u0022: \u0022Testing Live Event Ads\u0022,\n  \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n  \u0022offsiteDeliveryEnabled\u0022: false,\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1520890990333,\n    \u0022end\u0022: 1521754990333\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:103644278\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n  \u0022dailyBudget\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002218\u0022\n  },\n  \u0022unitCost\u0022: {\n    \u0022amount\u0022: \u002215\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022status\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "curl -X POST -v \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:{campaignGroupId}\u0022,\n  \u0022audienceExpansionEnabled\u0022: false,\n  \u0022costType\u0022: \u0022CPV\u0022,\n  \u0022connectedTelevisionOnly\u0022: false,\n  \u0022objectiveType\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022name\u0022: \u0022Testing Live Event Ads\u0022,\n  \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n  \u0022offsiteDeliveryEnabled\u0022: false,\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1520890990333,\n    \u0022end\u0022: 1521754990333\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:103644278\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n  \u0022dailyBudget\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002218\u0022\n  },\n  \u0022unitCost\u0022: {\n    \u0022amount\u0022: \u002215\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022status\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the campaign ID in the x-restli-id response header. For example, urn:li:sponsoredCampaign:164380864.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign for the Event Ad",
+      "Anchor": "create-a-campaign-for-the-event-ad",
+      "SectionPath": [
+        "Create a Campaign for the Event Ad"
+      ],
+      "Text": "To use lifetime or accelerated pacing (pacingStrategy: LIFETIME or ACCELERATED), see Accelerated Delivery.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/events/{eventId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/events/{eventId}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "Replace the eventId parameter with the specific Event ID, which will look like 7189069406168117248.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get an Event by ID",
+      "Anchor": "get-an-event-by-id",
+      "SectionPath": [
+        "Get an Event by ID"
+      ],
+      "Text": "The organizer returned in the response must match the organization tied to the ad account used in the Event Ad campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get an Event by ID",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022vanityName\u0022: \u0022testlive7189069406168117248\u0022,\n    \u0022settings\u0022: {\n        \u0022entryCriteria\u0022: \u0022PUBLIC\u0022,\n        \u0022attendanceMode\u0022: \u0022VIRTUAL\u0022,\n        \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n        \u0022invitationSettings\u0022: {\n            \u0022invitationPrivilegePolicies\u0022: [\n                {\n                    \u0022com.linkedin.adsexternalapi.events.v1.SimpleEventInvitationPrivilegePolicyV1\u0022: \u0022ALL_ATTENDEES\u0022\n                }\n            ]\n        },\n        \u0022mapsToSingleUgcPost\u0022: true\n    },\n    \u0022timeRangeV2\u0022: {\n        \u0022startsAt\u0022: 1735704000000\n    },\n    \u0022localizedName\u0022: \u0022Test Live\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:kb6e46S_kG\u0022,\n        \u0022time\u0022: 1714007712961\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:1234657\u0022,\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Test Live\u0022\n        },\n        \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n        }\n    },\n    \u0022id\u0022: 7189069406168117248,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:kb6e46S_kG\u0022,\n        \u0022time\u0022: 1714007712961\n    },\n    \u0022localizedDescription\u0022: {\n        \u0022rawText\u0022: \u0022\u0022\n    },\n    \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7246667386014023680\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get an Event by ID",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK HTTP status code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get an Event by ID",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get an Event by ID",
+        "Sample Response"
+      ],
+      "Text": "Using the URN from the ugcPost field, get the post by calling the GET Posts endpoint to get either the liveVideo URN (for a Live event) or an event URN (for a non-Live event). The ugcPost URN or the event URN is used in the next step to create a dark events ads post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Post by URN",
+      "Anchor": "get-a-post-by-urn",
+      "SectionPath": [
+        "Get a Post by URN"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Post by URN",
+      "Anchor": "get-a-post-by-urn",
+      "SectionPath": [
+        "Get a Post by URN"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{encodedUgcPostUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Post by URN",
+      "Anchor": "get-a-post-by-urn",
+      "SectionPath": [
+        "Get a Post by URN"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/posts/{encodedUgcPostUrn}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Post by URN",
+      "Anchor": "get-a-post-by-urn",
+      "SectionPath": [
+        "Get a Post by URN"
+      ],
+      "Text": "Replace the encodedUgcPostUrn parameter with the specific URL-encoded URN, which will look like urn%3Ali%3AugcPost%3A7246667386014023680.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get a Post by URN",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022isReshareDisabledByAuthor\u0022: false,\n   \u0022createdAt\u0022: 1727740141581,\n   \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n   \u0022lastModifiedAt\u0022: 1727740156240,\n   \u0022visibility\u0022: \u0022PUBLIC\u0022,\n   \u0022publishedAt\u0022: 1727740141581,\n   \u0022author\u0022: \u0022urn:li:organization:1234657\u0022,\n   \u0022id\u0022: \u0022urn:li:ugcPost:7246667386014023680\u0022,\n   \u0022distribution\u0022: {\n       \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n       \u0022thirdPartyDistributionChannels\u0022: []\n   },\n   \u0022content\u0022: {\n       \u0022reference\u0022: {\n          \u0022id\u0022: \u0022urn:li:liveVideo:{liveVideoId}\u0022\n       }\n   },\n   \u0022commentary\u0022: \u0022Testing live event, September 2024 POST\u0022,\n   \u0022lifecycleStateInfo\u0022: {\n       \u0022isEditedByAuthor\u0022: false\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Get a Post by URN",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 200 OK HTTP status code. Using the live video URN from the response in this step, create the dark post in this step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dark Post for a Live Event",
+      "Anchor": "create-a-dark-post-for-a-live-event",
+      "SectionPath": [
+        "Create a Dark Post for a Live Event"
+      ],
+      "Text": "Use the live video URN from the previous step as the content reference. For non-live event types (external online or in-person), use urn:li:event:{eventId} instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dark Post for a Live Event",
+      "Anchor": "create-a-dark-post-for-a-live-event",
+      "SectionPath": [
+        "Create a Dark Post for a Live Event"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dark Post for a Live Event",
+      "Anchor": "create-a-dark-post-for-a-live-event",
+      "SectionPath": [
+        "Create a Dark Post for a Live Event"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dark Post for a Live Event",
+      "Anchor": "create-a-dark-post-for-a-live-event",
+      "SectionPath": [
+        "Create a Dark Post for a Live Event"
+      ],
+      "Text": "{\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n  \u0022author\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n  \u0022commentary\u0022: \u0022Sample Live Event Post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022,\n    \u0022targetEntities\u0022: [],\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022:{\n    \u0022reference\u0022:{\n      \u0022id\u0022: \u0022urn:li:liveVideo:{liveVideoId}\u0022\n      }\n    },\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022isReshareDisabledByAuthor\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create a Dark Post for a Live Event",
+      "Anchor": "create-a-dark-post-for-a-live-event",
+      "SectionPath": [
+        "Create a Dark Post for a Live Event"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n   \u0022adContext\u0022: {\n       \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n       \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n   },\n  \u0022author\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n  \u0022commentary\u0022: \u0022Sample Live Event Post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022,\n    \u0022targetEntities\u0022: [],\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022:{\n    \u0022reference\u0022:{\n      \u0022id\u0022: \u0022urn:li:liveVideo:{liveVideoId}\u0022\n      }\n    },\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022isReshareDisabledByAuthor\u0022: true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Dark Post for a Live Event",
+      "Anchor": "create-a-dark-post-for-a-live-event",
+      "SectionPath": [
+        "Create a Dark Post for a Live Event"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event Ad Creative",
+      "Anchor": "create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Event Ad Creative"
+      ],
+      "Text": "This creative ties the campaign and the dark post together.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event Ad Creative",
+      "Anchor": "create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Event Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create an Event Ad Creative",
+      "Anchor": "create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Event Ad Creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create an Event Ad Creative",
+      "Anchor": "create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Event Ad Creative"
+      ],
+      "Text": "{\n  \u0022content\u0022: {\n    \u0022reference\u0022: \u0022urn:li:ugcPost:{ugcPostId}\u0022\n  },\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{campaignId}\u0022,\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Create an Event Ad Creative",
+      "Anchor": "create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Event Ad Creative"
+      ],
+      "Text": "curl -X POST -v \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022content\u0022: {\n    \u0022reference\u0022: \u0022urn:li:ugcPost:{ugcPostId}\u0022\n  },\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{campaignId}\u0022,\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Event Ad Creative",
+      "Anchor": "create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Event Ad Creative"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:120491345.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accelerated Delivery",
+      "Anchor": "accelerated-delivery",
+      "SectionPath": [
+        "Accelerated Delivery"
+      ],
+      "Text": "Event Ads support two non-default pacing strategies via the pacingStrategy field. By default (no pacingStrategy set), budget is distributed evenly each day using dailyBudget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Accelerated Delivery",
+      "Anchor": "accelerated-delivery",
+      "SectionPath": [
+        "Accelerated Delivery"
+      ],
+      "Text": "",
+      "Headers": [
+        "Setting",
+        "Lifetime pacing",
+        "Accelerated pacing"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "pacingStrategy value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LIFETIME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCELERATED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Budget type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "totalBudget (required)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "totalBudget (required)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "runSchedule.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Spend rate",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Evenly over campaign duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "As fast as possible",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Max campaign duration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No limit",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "24 hours",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Supported event types",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Accelerated Delivery",
+      "Anchor": "accelerated-delivery",
+      "SectionPath": [
+        "Accelerated Delivery"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accelerated Delivery",
+      "Anchor": "accelerated-delivery",
+      "SectionPath": [
+        "Accelerated Delivery"
+      ],
+      "Text": "Both LIFETIME and ACCELERATED require totalBudget (not dailyBudget) and a runSchedule.end date. Campaigns with pacingStrategy: ACCELERATED must be no longer than 24 hours in duration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Accelerated Delivery",
+      "Anchor": "accelerated-delivery",
+      "SectionPath": [
+        "Accelerated Delivery"
+      ],
+      "Text": "The following example shows a campaign with accelerated delivery. To use lifetime pacing instead, replace \u0022pacingStrategy\u0022: \u0022ACCELERATED\u0022 with \u0022pacingStrategy\u0022: \u0022LIFETIME\u0022 \u2014 the rest of the request is identical.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accelerated Delivery",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accelerated Delivery",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accelerated Delivery",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:{campaignGroupId}\u0022,\n  \u0022audienceExpansionEnabled\u0022: false,\n  \u0022costType\u0022: \u0022CPC\u0022,\n  \u0022connectedTelevisionOnly\u0022: false,\n  \u0022objectiveType\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022name\u0022: \u0022Event Ad \u2014 Accelerated Delivery\u0022,\n  \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n  \u0022pacingStrategy\u0022: \u0022ACCELERATED\u0022,\n  \u0022offsiteDeliveryEnabled\u0022: false,\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1735704000000,\n    \u0022end\u0022: 1735790400000\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:103644278\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u0022100\u0022\n  },\n  \u0022unitCost\u0022: {\n    \u0022amount\u0022: \u002215\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022status\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accelerated Delivery",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:{campaignGroupId}\u0022,\n  \u0022audienceExpansionEnabled\u0022: false,\n  \u0022costType\u0022: \u0022CPC\u0022,\n  \u0022connectedTelevisionOnly\u0022: false,\n  \u0022objectiveType\u0022: \u0022ENGAGEMENT\u0022,\n  \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n  \u0022locale\u0022: {\u0022language\u0022: \u0022en\u0022, \u0022country\u0022: \u0022US\u0022},\n  \u0022name\u0022: \u0022Event Ad \u2014 Accelerated Delivery\u0022,\n  \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n  \u0022pacingStrategy\u0022: \u0022ACCELERATED\u0022,\n  \u0022offsiteDeliveryEnabled\u0022: false,\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1735704000000,\n    \u0022end\u0022: 1735790400000\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:103644278\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n  \u0022totalBudget\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u0022100\u0022\n  },\n  \u0022unitCost\u0022: {\n    \u0022amount\u0022: \u002215\u0022,\n    \u0022currencyCode\u0022: \u0022USD\u0022\n  },\n  \u0022status\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Accelerated Delivery",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the campaign ID in the x-restli-id response header. After creating the campaign, proceed with the standard Create a Dark Post and Create an Event Ad Creative steps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+      "Anchor": "create-an-off-platform-event-ad-without-a-linkedin-events-detail-page",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page"
+      ],
+      "Text": "Use this flow to create an Event Ad for an off-platform event that has no LinkedIn Events Detail Page (EDP). The event is created solely to back a sponsored ad campaign and does not appear on organic surfaces. The ad always redirects to the external URL regardless of the event lifecycle stage (pre-event, during, post-event).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+      "Anchor": "create-an-off-platform-event-ad-without-a-linkedin-events-detail-page",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page"
+      ],
+      "Text": "Compared to the standard Event Ads flow, the key difference is in Step 1: you create a new event with hasDarkUgc: true rather than referencing a pre-existing LinkedIn event. All subsequent steps (campaign, dark post, creative) follow the same pattern.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+      "Anchor": "create-an-off-platform-event-ad-without-a-linkedin-events-detail-page",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page"
+      ],
+      "Text": "",
+      "Headers": [
+        "hasDarkUgc",
+        "LinkedIn Events Detail Page",
+        "Visible on organic surfaces",
+        "Ad URL routing"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "false (default)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EDP pre/post-event; external URL during event",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "true",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Always external URL",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+      "Anchor": "create-an-off-platform-event-ad-without-a-linkedin-events-detail-page",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+      "Anchor": "create-an-off-platform-event-ad-without-a-linkedin-events-detail-page",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page"
+      ],
+      "Text": "hasDarkUgc and discoveryMode are independent fields. hasDarkUgc: true suppresses the event from all organic event surfaces (events home, feed, search, and recommendations) at the platform level, regardless of discoveryMode. The discoveryMode field remains LISTED by default in the API response but has no practical effect on organic visibility for hasDarkUgc: true events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Create the Event",
+      "Anchor": "step-1-create-the-event",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event"
+      ],
+      "Text": "Create an off-platform event with hasDarkUgc: true. Note the id in the response \u2014 you will use that value as {eventId} to construct the event URN (urn:li:event:{eventId}) in the next step.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Create the Event",
+      "Anchor": "step-1-create-the-event",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event"
+      ],
+      "Text": "This requires the rw_events permission. The organizer must be the same organization tied to the ad account used in the campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Create the Event",
+      "Anchor": "step-1-create-the-event",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 1: Create the Event",
+      "Anchor": "step-1-create-the-event",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/events",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 1: Create the Event",
+      "Anchor": "step-1-create-the-event",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022My Off-Platform Event Ad\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022external\u0022: {\n                    \u0022endsAt\u0022: 1777839939000,\n                    \u0022url\u0022: \u0022https://example.com/my-event\u0022\n                }\n            }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n    \u0022startsAt\u0022: 1777829139000,\n    \u0022hasDarkUgc\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 1: Create the Event",
+      "Anchor": "step-1-create-the-event",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/events\u0027 \\\n--header \u0027Accept: application/json\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-RestLi-Method: create\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027X-LI-R2-W-MsgType: REST\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022My Off-Platform Event Ad\u0022\n        }\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022external\u0022: {\n                    \u0022endsAt\u0022: 1777839939000,\n                    \u0022url\u0022: \u0022https://example.com/my-event\u0022\n                }\n            }\n        }\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n    \u0022startsAt\u0022: 1777829139000,\n    \u0022hasDarkUgc\u0022: true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event",
+        "Sample Response"
+      ],
+      "Text": "HTTP/1.1 201 Created",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 1: Create the Event",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022hasDarkUgc\u0022: true,\n    \u0022vanityName\u0022: \u0022myoffplatformeventad7424900030345404416\u0022,\n    \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1770234115561\n    },\n    \u0022organizer\u0022: \u0022urn:li:organization:7185861\u0022,\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022My Off-Platform Event Ad\u0022\n        }\n    },\n    \u0022startsAt\u0022: 1777829139000,\n    \u0022id\u0022: 7424900030345404416,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:vU6QAVEtcr\u0022,\n        \u0022time\u0022: 1770234115561\n    },\n    \u0022type\u0022: {\n        \u0022online\u0022: {\n            \u0022format\u0022: {\n                \u0022external\u0022: {\n                    \u0022endsAt\u0022: 1777839939000,\n                    \u0022url\u0022: \u0022https://example.com/my-event\u0022\n                }\n            }\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Create a Campaign",
+      "Anchor": "step-2-create-a-campaign",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 2: Create a Campaign"
+      ],
+      "Text": "Create a campaign with format: SPONSORED_UPDATE_EVENT. See Create a Campaign for the Event Ad for a full example \u2014 the campaign creation request is the same as for standard Event Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Create a Dark Post",
+      "Anchor": "step-3-create-a-dark-post",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 3: Create a Dark Post"
+      ],
+      "Text": "Create a dark post referencing the event URN (urn:li:event:{eventId}) from the Step 1 response. Unlike Live Event Ads (which reference a liveVideo URN), off-platform event ads reference the event URN directly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Create a Dark Post",
+      "Anchor": "step-3-create-a-dark-post",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 3: Create a Dark Post"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Create a Dark Post",
+      "Anchor": "step-3-create-a-dark-post",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 3: Create a Dark Post"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Create a Dark Post",
+      "Anchor": "step-3-create-a-dark-post",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 3: Create a Dark Post"
+      ],
+      "Text": "{\n    \u0022adContext\u0022: {\n        \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n        \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n    \u0022commentary\u0022: \u0022Join us for our upcoming event!\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022NONE\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022reference\u0022: {\n            \u0022id\u0022: \u0022urn:li:event:{eventId}\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 3: Create a Dark Post",
+      "Anchor": "step-3-create-a-dark-post",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 3: Create a Dark Post"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--data \u0027{\n    \u0022adContext\u0022: {\n        \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n        \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n    \u0022commentary\u0022: \u0022Join us for our upcoming event!\u0022,\n    \u0022visibility\u0022: \u0022PUBLIC\u0022,\n    \u0022distribution\u0022: {\n        \u0022feedDistribution\u0022: \u0022NONE\u0022,\n        \u0022targetEntities\u0022: [],\n        \u0022thirdPartyDistributionChannels\u0022: []\n    },\n    \u0022content\u0022: {\n        \u0022reference\u0022: {\n            \u0022id\u0022: \u0022urn:li:event:{eventId}\u0022\n        }\n    },\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022isReshareDisabledByAuthor\u0022: true\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Create a Dark Post",
+      "Anchor": "step-3-create-a-dark-post",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 3: Create a Dark Post"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the dark post URN in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Create an Event Ad Creative",
+      "Anchor": "step-4-create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 4: Create an Event Ad Creative"
+      ],
+      "Text": "Tie the campaign and the dark post together. This step is identical to the standard Event Ads creative creation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Create an Event Ad Creative",
+      "Anchor": "step-4-create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 4: Create an Event Ad Creative"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Create an Event Ad Creative",
+      "Anchor": "step-4-create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 4: Create an Event Ad Creative"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Create an Event Ad Creative",
+      "Anchor": "step-4-create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 4: Create an Event Ad Creative"
+      ],
+      "Text": "{\n    \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:ugcPost:{ugcPostId}\u0022\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{campaignId}\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 4: Create an Event Ad Creative",
+      "Anchor": "step-4-create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 4: Create an Event Ad Creative"
+      ],
+      "Text": "curl -X POST -v \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022content\u0022: {\n        \u0022reference\u0022: \u0022urn:li:ugcPost:{ugcPostId}\u0022\n    },\n    \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{campaignId}\u0022,\n    \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Create an Event Ad Creative",
+      "Anchor": "step-4-create-an-event-ad-creative",
+      "SectionPath": [
+        "Create an Off-Platform Event Ad without a LinkedIn Events Detail Page",
+        "Step 4: Create an Event Ad Creative"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Generation with Event Ads",
+      "Anchor": "lead-generation-with-event-ads",
+      "SectionPath": [
+        "Lead Generation with Event Ads"
+      ],
+      "Text": "This section describes the workflow for creating Event Ads with the LEAD_GENERATION objective.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Event Ad with a New Post",
+      "Anchor": "create-a-lead-gen-event-ad-with-a-new-post",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Lead Gen Event Ad with a New Post"
+      ],
+      "Text": "Before starting, ensure the target event has already been created via the Events Management API. Lead gen registration forms used by the ad\u0027s CTA are associated with the ad creative (see leadgenCallToAction.destination), separate from any organic registration form attached to the event itself.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Event Ad with a New Post",
+      "Anchor": "create-a-lead-gen-event-ad-with-a-new-post",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Lead Gen Event Ad with a New Post"
+      ],
+      "Text": "Follow the steps to create a Lead Gen event creative:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Lead Gen Event Ad with a New Post",
+      "Anchor": "create-a-lead-gen-event-ad-with-a-new-post",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Lead Gen Event Ad with a New Post"
+      ],
+      "Text": "Create a Campaign for Event Ad.\nValidate Event Eligibility and verify lead gen requirements.\nGet a Post by URN and verify it references the Event.\nCreate a Dark Post for the Event.\nCreate an Event Ad Creative with Lead Gen CTA.\nOptionally Verify Created Creative and Verify Campaign Objective.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:{campaignGroupId}\u0022,\n  \u0022objectiveType\u0022: \u0022LEAD_GENERATION\u0022,\n  \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n  \u0022costType\u0022: \u0022CPC\u0022,\n  \u0022name\u0022: \u0022Event Lead Gen Campaign\u0022,\n  \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n  \u0022status\u0022: \u0022DRAFT\u0022,\n  \u0022dailyBudget\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250\u0022\n  },\n  \u0022unitCost\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u00225.00\u0022\n  },\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:103644278\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022locale\u0022: {\n    \u0022country\u0022: \u0022US\u0022,\n    \u0022language\u0022: \u0022en\u0022\n  },\n  \u0022offsiteDeliveryEnabled\u0022: false,\n  \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022,\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1738800000000\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "curl -i -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022account\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n    \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:{campaignGroupId}\u0022,\n    \u0022objectiveType\u0022: \u0022LEAD_GENERATION\u0022,\n    \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n    \u0022costType\u0022: \u0022CPC\u0022,\n    \u0022name\u0022: \u0022Event Lead Gen Campaign\u0022,\n    \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n    \u0022status\u0022: \u0022DRAFT\u0022,\n    \u0022dailyBudget\u0022: {\u0022currencyCode\u0022: \u0022USD\u0022, \u0022amount\u0022: \u002250\u0022},\n    \u0022unitCost\u0022: {\u0022currencyCode\u0022: \u0022USD\u0022, \u0022amount\u0022: \u00225.00\u0022},\n    \u0022targetingCriteria\u0022: {\n      \u0022include\u0022: {\n        \u0022and\u0022: [\n          {\n            \u0022or\u0022: {\n              \u0022urn:li:adTargetingFacet:locations\u0022: [\n                \u0022urn:li:geo:103644278\u0022\n              ]\n            }\n          },\n          {\n            \u0022or\u0022: {\n              \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n                \u0022urn:li:locale:en_US\u0022\n              ]\n            }\n          }\n        ]\n      }\n    },\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022offsiteDeliveryEnabled\u0022: false,\n    \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022,\n    \u0022runSchedule\u0022: {\n      \u0022start\u0022: 1738800000000\n    }\n  }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "Ensure objectiveType is LEAD_GENERATION and format is SPONSORED_UPDATE_EVENT for a valid Lead Gen Event campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Campaign for Event Ad with LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Validate Event Eligibility",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Validate Event Eligibility",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/events/{eventId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Validate Event Eligibility",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/events/{eventId}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027\\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Validate Event Eligibility",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022vanityName\u0022: \u0022testeventleadgen7424807067934375937\u0022,\n  \u0022discoveryMode\u0022: \u0022LISTED\u0022,\n  \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7424807071402991617\u0022,\n  \u0022leadGenForm\u0022: \u0022urn:li:versionedLeadGenForm:(urn:li:leadGenForm:7424807067728912384,1)\u0022,\n  \u0022organizer\u0022: \u0022urn:li:organization:103056081\u0022,\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:XQcAjrNBrF\u0022,\n    \u0022time\u0022: 1770211951302\n  },\n  \u0022name\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022Test event LeadGen\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022startsAt\u0022: 1801755000000,\n  \u0022id\u0022: 7424807067934375937,\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:XQcAjrNBrF\u0022,\n    \u0022time\u0022: 1770211952201\n  },\n  \u0022type\u0022: {\n    \u0022inPerson\u0022: {\n      \u0022endsAt\u0022: 1801758600000,\n      \u0022address\u0022: {\n        \u0022geographicArea\u0022: \u0022Maharashtra\u0022,\n        \u0022country\u0022: \u0022IN\u0022,\n        \u0022city\u0022: \u0022Pune\u0022\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Validate Event Eligibility",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Validate Event Eligibility",
+        "Sample Response"
+      ],
+      "Text": "Using the ugcPost URN from the Event response, call GET Posts and verify the post references the same Event.\nEnsure the organizer matches the organization tied to the ad account/campaign before proceeding. The event\u0027s organic leadGenForm field (if present) is independent of the form used by the Event Ad\u0027s CTA. The ad\u0027s form is attached to the creative via leadgenCallToAction.destination.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Get a Post by URN for LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Get a Post by URN for LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{encodedUgcPostUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Get a Post by URN for LEAD_GENERATION",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/posts/{encodedUgcPostUrn}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027\\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Get a Post by URN for LEAD_GENERATION",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022isReshareDisabledByAuthor\u0022: false,\n  \u0022createdAt\u0022: 1770211952157,\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022lastModifiedAt\u0022: 1770211976810,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022publishedAt\u0022: 1770211952157,\n  \u0022author\u0022: \u0022urn:li:organization:103056081\u0022,\n  \u0022id\u0022: \u0022urn:li:ugcPost:7424807071402991617\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n    \u0022thirdPartyDistributionChannels\u0022: []\n  },\n  \u0022content\u0022: {\n    \u0022reference\u0022: {\n      \u0022id\u0022: \u0022urn:li:event:7424807067934375937\u0022\n    }\n  },\n  \u0022commentary\u0022: \u0022\u0022,\n  \u0022lifecycleStateInfo\u0022: {\n    \u0022isEditedByAuthor\u0022: false\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Get a Post by URN for LEAD_GENERATION",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Get a Post by URN for LEAD_GENERATION",
+        "Sample Response"
+      ],
+      "Text": "Verify that content.reference.id is the expected Event URN before creating the dark post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/posts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022author\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022commentary\u0022: \u0022Test post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022NONE\u0022\n  },\n  \u0022content\u0022: {\n    \u0022reference\u0022: {\n      \u0022id\u0022: \u0022urn:li:event:{eventId}\u0022\n    }\n  },\n  \u0022adContext\u0022: {\n    \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n    \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022author\u0022: \u0022urn:li:organization:{organizationId}\u0022,\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022commentary\u0022: \u0022Test post\u0022,\n  \u0022visibility\u0022: \u0022PUBLIC\u0022,\n  \u0022distribution\u0022: { \u0022feedDistribution\u0022: \u0022NONE\u0022 },\n  \u0022content\u0022: { \u0022reference\u0022: { \u0022id\u0022: \u0022urn:li:event:{eventId}\u0022 } },\n  \u0022adContext\u0022: {\n    \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:{adAccountId}\u0022,\n    \u0022dscStatus\u0022: \u0022ACTIVE\u0022\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "Ensure author matches the campaign associated entity and adContext.dscAdAccount matches the campaign account to avoid creative validation errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create a Dark Post for the Event",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022content\u0022: {\n    \u0022reference\u0022: \u0022urn:li:ugcPost:{ugcPostId}\u0022\n  },\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{campaignId}\u0022,\n  \u0022leadgenCallToAction\u0022: {\n    \u0022destination\u0022: \u0022urn:li:adForm:{adFormId}\u0022,\n    \u0022label\u0022: \u0022REGISTER\u0022\n  },\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n  \u0022content\u0022: { \u0022reference\u0022: \u0022urn:li:ugcPost:{ugcPostId}\u0022 },\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:{campaignId}\u0022,\n  \u0022leadgenCallToAction\u0022: {\n    \u0022destination\u0022: \u0022urn:li:adForm:{adFormId}\u0022,\n    \u0022label\u0022: \u0022REGISTER\u0022\n  },\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "Use the dark post URN for the same Event in content.reference.\nEnsure campaign belongs to the same ad account and leadgenCallToAction.destination account matches the campaign account to avoid MISMATCH_FIELDS errors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Create Event Ad Creative with Lead Gen CTA",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the ID in the x-restli-id response header. For example, urn:li:sponsoredCreative:1172099093.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Created Creative (Optional)",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Created Creative (Optional)",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{encodedCreativeUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-6",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Created Creative (Optional)",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/creatives/{encodedCreativeUrn}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027\\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Created Creative (Optional)",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022servingHoldReasons\u0022: [\n    \u0022FORM_HOLD\u0022,\n    \u0022UNDER_REVIEW\u0022,\n    \u0022CAMPAIGN_STOPPED\u0022,\n    \u0022ACCOUNT_SERVING_HOLD\u0022,\n    \u0022CAMPAIGN_GROUP_STATUS_HOLD\u0022,\n    \u0022CAMPAIGN_GROUP_END_DATE_HOLD\u0022\n  ],\n  \u0022lastModifiedAt\u0022: 1770368999914,\n  \u0022leadgenCallToAction\u0022: {\n    \u0022destination\u0022: \u0022urn:li:adForm:8246744\u0022,\n    \u0022label\u0022: \u0022REGISTER\u0022\n  },\n  \u0022lastModifiedBy\u0022: \u0022urn:li:person:SxmZ_oygU7\u0022,\n  \u0022content\u0022: {\n    \u0022eventAd\u0022: {\n      \u0022post\u0022: \u0022urn:li:ugcPost:7425461981719060480\u0022,\n      \u0022event\u0022: \u0022urn:li:event:7425124626453778432\u0022,\n      \u0022hidePreviewVideo\u0022: false,\n      \u0022directSponsoredContent\u0022: true\n    }\n  },\n  \u0022createdAt\u0022: 1770368635830,\n  \u0022createdBy\u0022: \u0022urn:li:person:B1U4S2MZ-C\u0022,\n  \u0022isTest\u0022: false,\n  \u0022review\u0022: {\n    \u0022status\u0022: \u0022PENDING\u0022\n  },\n  \u0022isServing\u0022: false,\n  \u0022campaign\u0022: \u0022urn:li:sponsoredCampaign:479393263\u0022,\n  \u0022id\u0022: \u0022urn:li:sponsoredCreative:1172099093\u0022,\n  \u0022intendedStatus\u0022: \u0022ACTIVE\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Created Creative (Optional)",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-5",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Created Creative (Optional)",
+        "Sample Response"
+      ],
+      "Text": "Confirm the response includes leadgenCallToAction and that content.eventAd.event matches the intended Event URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Campaign Objective (Optional)",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Campaign Objective (Optional)",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-7",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Campaign Objective (Optional)",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/adAccounts/{adAccountId}/adCampaigns/{campaignId}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Content-Type: application/json\u0027\\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Campaign Objective (Optional)",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022storyDeliveryEnabled\u0022: false,\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:103644278\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022connectedTelevisionOnly\u0022: false,\n  \u0022locale\u0022: {\n    \u0022country\u0022: \u0022US\u0022,\n    \u0022language\u0022: \u0022en\u0022\n  },\n  \u0022type\u0022: \u0022SPONSORED_UPDATES\u0022,\n  \u0022optimizationTargetType\u0022: \u0022NONE\u0022,\n  \u0022runSchedule\u0022: {\n    \u0022start\u0022: 1738800000000\n  },\n  \u0022changeAuditStamps\u0022: {\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n      \u0022time\u0022: 1770367562770\n    },\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:unknown:0\u0022,\n      \u0022time\u0022: 1770367562770\n    }\n  },\n  \u0022costType\u0022: \u0022CPC\u0022,\n  \u0022creativeSelection\u0022: \u0022OPTIMIZED\u0022,\n  \u0022offsiteDeliveryEnabled\u0022: false,\n  \u0022id\u0022: 479393263,\n  \u0022audienceExpansionEnabled\u0022: false,\n  \u0022test\u0022: false,\n  \u0022format\u0022: \u0022SPONSORED_UPDATE_EVENT\u0022,\n  \u0022servingStatuses\u0022: [\n    \u0022STOPPED\u0022,\n    \u0022ACCOUNT_SERVING_HOLD\u0022,\n    \u0022CAMPAIGN_GROUP_STATUS_HOLD\u0022,\n    \u0022CAMPAIGN_GROUP_END_DATE_HOLD\u0022\n  ],\n  \u0022version\u0022: {\n    \u0022versionTag\u0022: \u00221\u0022\n  },\n  \u0022objectiveType\u0022: \u0022LEAD_GENERATION\u0022,\n  \u0022associatedEntity\u0022: \u0022urn:li:organization:2414183\u0022,\n  \u0022campaignGroup\u0022: \u0022urn:li:sponsoredCampaignGroup:619393574\u0022,\n  \u0022dailyBudget\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u002250\u0022\n  },\n  \u0022politicalIntent\u0022: \u0022NOT_POLITICAL\u0022,\n  \u0022unitCost\u0022: {\n    \u0022currencyCode\u0022: \u0022USD\u0022,\n    \u0022amount\u0022: \u00225\u0022\n  },\n  \u0022name\u0022: \u0022Event Lead Gen Campaign\u0022,\n  \u0022account\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022,\n  \u0022status\u0022: \u0022DRAFT\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Campaign Objective (Optional)",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-6",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Verify Campaign Objective (Optional)",
+        "Sample Response"
+      ],
+      "Text": "Ensure that objectiveType is set to LEAD_GENERATION and format is set to SPONSORED_UPDATE_EVENT to confirm campaign compatibility for Lead Gen Event Ads.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth Guidance",
+      "Anchor": "oauth-guidance",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Appendix",
+        "OAuth Guidance"
+      ],
+      "Text": "Since you\u0027ll be adding new permissions to the OAuth scopes, your customers will need to reauthenticate to allow you to make API calls to the new endpoints on their behalf. To do this seamlessly and with minimal disruption to your customers, we recommend the following: (Please note that the guidance below assumes you\u0027re using the same Client ID and Secret.)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth Guidance",
+      "Anchor": "oauth-guidance",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Appendix",
+        "OAuth Guidance"
+      ],
+      "Text": "Update your OAuth flow scope with the new permissions required to access the APIs for the new feature.\nNew customers (have never been a customer on your platform before) will by default trigger the updated OAuth flow (thus moving forward they\u0027ll be able to access the new features from an access token perspective once you\u2019ve ungated the feature in the UI for them).\nExisting customers who are not ramped to this new feature in your UI and thus not using the new permissions will continue as is, for now.\nWhen you exchange their refresh token for a new access token every 60 days, the access token returned will only have the scopes initially granted for the initial refresh token (this won\u0027t reflect the updated OAuth scope).\nIf an existing user\u2019s access tokens become invalidated/revoked or the refresh token expires, you\u0027ll force them to reauthenticate and go through the updated OAuth flow with the new scope and permissions (thus moving forward they\u0027ll be able to access the new features from an access token perspective once you\u2019ve ungated the feature in the UI for them).\nExisting customers who are ramped to use the new feature in your UI and the new permissions\nWhen they signal they want to use the new feature you\u0027ll force them to reauthenticate and go through the updated OAuth flow with the updated scope and permissions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OAuth Guidance",
+      "Anchor": "oauth-guidance",
+      "SectionPath": [
+        "Lead Generation with Event Ads",
+        "Appendix",
+        "OAuth Guidance"
+      ],
+      "Text": "Note: Once users reauthenticate, all tokens previously generated for each user by your client ID and secret will be invalidated so only the newly generated access and refresh token should be stored and used moving forward. A user can have multiple active/valid tokens generated by your client id and client secret so long as they were all granted with the same scopes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Q1: What if I want to use the same client ID and secret but want separate OAuth flows for each feature (matched audiences, Lead Syncing, conversions, etc)? In other words, the user authenticates for each feature with a unique set of scopes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Frequently Asked Questions",
+      "Anchor": "frequently-asked-questions",
+      "SectionPath": [
+        "Frequently Asked Questions"
+      ],
+      "Text": "Answer: This is not recommended because a user may use multiple features within your platform which would lead to token conflicts and the user inadvertently invalidating their tokens. If you want to achieve separate OAuth flows with unique scopes for each feature then you\u0027ll need a LinkedIn Developer App for each feature and use the unique Client ID and Secret for each OAuth flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Frequently Asked Questions",
+        "API Error Details"
+      ],
+      "Text": "General creative errors are included here - Creatives error.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

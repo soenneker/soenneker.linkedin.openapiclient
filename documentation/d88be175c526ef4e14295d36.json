@@ -1,0 +1,826 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+  "Title": "Adding and Managing Learners via Bulk CSV in LinkedIn Learning",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-https",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/add-sftp",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/azure-ad-auto-provisioning",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/okta-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/onelogin-scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-successfactors",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-workday",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/scim",
+    "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/user-management-overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "This document provides information about managing users in bulk via a CSV file, known as Org Sync. The Org Sync process involves adding or updating your organization\u0027s user data in LinkedIn Learning in bulk using a formatted CSV file. This document will help with creating, formatting, and uploading that CSV file in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "In the People Management admin interface, you can use CSV file uploads to add new users, update existing users, assign and revoke licenses, set admin permissions, and manage group memberships.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What this Document Tells You",
+      "Anchor": "what-this-document-tells-you",
+      "SectionPath": [
+        "What this Document Tells You"
+      ],
+      "Text": "Once you have formatted your CSV file to accomplish your needs, this same file can also be delivered to LinkedIn Learning via SFTP or HTTPS on a schedule to automate user management.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create your CSV File",
+      "Anchor": "create-your-csv-file",
+      "SectionPath": [
+        "Create your CSV File"
+      ],
+      "Text": "To download the CSV template and create your CSV file, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create your CSV File",
+      "Anchor": "create-your-csv-file",
+      "SectionPath": [
+        "Create your CSV File"
+      ],
+      "Text": "After you log in, from the Admin screen, click People in the menu bar at the top of the screen.\n\n\n\n\n\nSelect Add new users \u003E Add users by CSV.\n\n\n\n\n\nBelow No, I need help creating one, click Get started.\n\n\n\n\n\nClick the Download a CSV template drop down and select one of the template options.\n\n\n\n\n\nOpen the downloaded template file in Microsoft Excel or a text editor application. Add your user data to the file and save as a .csv file type. Additional details on the specific column headers and values can be found in the Customize Your CSV File section below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV File",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Create your CSV File",
+        "Upload your CSV File"
+      ],
+      "Text": "To upload your CSV and save your changes, take the following steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload your CSV File",
+      "Anchor": "upload-your-csv-file",
+      "SectionPath": [
+        "Create your CSV File",
+        "Upload your CSV File"
+      ],
+      "Text": "If you are not already in the People Management section, log in as an admin and click People in the menu bar at the top of the screen.\n\nClick Add new users and select Add users by CSV.\n\n\n\n\n\nIn the Add users by CSV window, click Upload CSV.\n\nSelect Upload from computer and choose the CSV file you saved.\n\nIf you have created a custom invitation email template, select it and click Upload.\n\n\n\n\n\n Note\nInvitation emails are only sent to learners if a license is assigned in the uploaded CSV file. Emails to learners can be disabled in the customization settings. To learn more about managing the emails learners receive, review the Help Center article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review your Upload",
+      "Anchor": "review-your-upload",
+      "SectionPath": [
+        "Create your CSV File",
+        "Review your Upload"
+      ],
+      "Text": "After you upload your CSV file:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Review your Upload",
+      "Anchor": "review-your-upload",
+      "SectionPath": [
+        "Create your CSV File",
+        "Review your Upload"
+      ],
+      "Text": "LinkedIn Learning will process the file and check for errors. If there are any errors or warnings, a dialogue box will appear with a link to download the error details report. An email is also sent to the admin with a link to the error report. The error report includes the rows that have errors and tips to help resolve them. With this information, you can determine the cause of the failure, make corrections, and re-upload the file as needed.\n\n\n\n\n\nLinkedIn Learning will send an invitation email to any newly added learners with instructions to activate their account. If a user has been added without an active license, a welcome email is not sent.\n\nYour newly added users will now appear in People Management and can be filtered by license type and status.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Customize Your CSV File",
+      "Anchor": "customize-your-csv-file",
+      "SectionPath": [
+        "Customize Your CSV File"
+      ],
+      "Text": "The CSV file is customizable and can be used to manage user attributes, licenses, permissions, and group memberships. The below sections cover these topics in more detail.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Basic Column Headers",
+      "Anchor": "basic-column-headers",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Basic Column Headers"
+      ],
+      "Text": "At minimum, you must include a primary_email_address value for all users in the CSV. A unique_user_id value is also strongly recommended. The license status column can be used to assign/revoke licenses but is not required. If the license status column is not included, profiles are created and updated, but licenses are not impacted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Basic Column Headers",
+      "Anchor": "basic-column-headers",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Basic Column Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "CSV Column Header",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "primary_email_address",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User\u0027s primary email address (Required)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferred_first_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User\u0027s first name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "preferred_last_name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User\u0027s last name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "unique_user_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique, unchanging value used to identify a user. This is typically an employee ID or number. (Recommended)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "BUDGET GROUP_license_LICENSE TYPE_status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "User\u2019s license status. License type varies by product. Refer to the Create Your CSV File section to download a template with the correct value for your account.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/user-and-attribute-management/user-attribute-mgmt-docs/org-sync-bulk-csv#create-your-csv-file"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage User Licenses",
+      "Anchor": "manage-user-licenses",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Licenses"
+      ],
+      "Text": "Refer to the Create Your CSV File section to download a template with the correct license column header for your account.\nWhen assigning or revoking users\u0027 licenses, use the following values in the license status column:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage User Licenses",
+      "Anchor": "manage-user-licenses",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Licenses"
+      ],
+      "Text": "active: Assign a license to a user and trigger an invitation email to the user to activate their license. If a user is already active or previously invited, no email is triggered.\ninactive: Revoke a user\u2019s license.\nLeave the field blank to update user attributes without assigning or revoking a license.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Custom Attributes",
+      "Anchor": "add-custom-attributes",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Add Custom Attributes"
+      ],
+      "Text": "Custom attributes can be included in your CSV file to populate additional user profile data in LinkedIn Learning\u2019s downloadable reports.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add Custom Attributes",
+      "Anchor": "add-custom-attributes",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Add Custom Attributes"
+      ],
+      "Text": "To add custom attributes to your CSV file, the column header should follow the format, \u0022attribute_\u0022 followed by your attribute name. Ex: attribute_Function or attribute_Office Location.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage User Groups",
+      "Anchor": "manage-user-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups"
+      ],
+      "Text": "Groups in LinkedIn Learning can be used to recommend content and filter reporting. Groups can be managed manually in the admin interface, or groups can be managed in bulk via a CSV upload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage User Groups",
+      "Anchor": "manage-user-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups"
+      ],
+      "Text": "If a group is included in the CSV file and has not been created in LinkedIn Learning, it will be created automatically.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Manage User Groups",
+      "Anchor": "manage-user-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups"
+      ],
+      "Text": "Review the following options for managing groups via a CSV:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replace Users\u2019 Group Memberships",
+      "Anchor": "replace-users-group-memberships",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Replace Users\u2019 Group Memberships"
+      ],
+      "Text": "Use the column header, groups, to replace all the groups a user is a member of. The groups column accepts a comma-separated list of group names the user should be a member of. If the user is a member of a group not included in the list, they will be removed from it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replace Users\u2019 Group Memberships",
+      "Anchor": "replace-users-group-memberships",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Replace Users\u2019 Group Memberships"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replace Users\u2019 Group Memberships",
+      "Anchor": "replace-users-group-memberships",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Replace Users\u2019 Group Memberships"
+      ],
+      "Text": "If you are adding users to a group that has a comma in the group name, you need to replace the comma with \u0022%2C\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replace Users\u2019 Group Memberships",
+      "Anchor": "replace-users-group-memberships",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Replace Users\u2019 Group Memberships"
+      ],
+      "Text": "Example: For group names such as \u0022NY,NY\u201D specify the value as \u0022NY%2CNY\u201D.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Users from Specific Groups",
+      "Anchor": "add-or-remove-users-from-specific-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Add or Remove Users from Specific Groups"
+      ],
+      "Text": "Use the column header format, group:Group Name, to add or remove users from a specific group. The value should be yes or no to add or remove the user from the group. You will need a separate column for each group you want to manage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Users from Specific Groups",
+      "Anchor": "add-or-remove-users-from-specific-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Add or Remove Users from Specific Groups"
+      ],
+      "Text": "Example: If you want to be able to recommend specific content to people leaders, include a column header, group:People Leaders. The value in the CSV should be yes for all people leaders and no for all individual contributors.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Users from Dynamic Groups",
+      "Anchor": "add-or-remove-users-from-dynamic-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Add or Remove Users from Dynamic Groups"
+      ],
+      "Text": "If you need to manage multiple groups without creating a separate column header for each group, use add_to_groups and remove_from_groups. These columns accept a comma-separated list of group names.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Users from Dynamic Groups",
+      "Anchor": "add-or-remove-users-from-dynamic-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Add or Remove Users from Dynamic Groups"
+      ],
+      "Text": "If needed, you can give these two column headers an additional label to differentiate them.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Add or Remove Users from Dynamic Groups",
+      "Anchor": "add-or-remove-users-from-dynamic-groups",
+      "SectionPath": [
+        "Customize Your CSV File",
+        "Manage User Groups",
+        "Add or Remove Users from Dynamic Groups"
+      ],
+      "Text": "Example: You can group users by both Department and Country by adding two column headers, add_to_groups:Department and add_to_groups:Country. You will also want to include their counterparts, remove_from_groups:Department and remove_from_groups:Country, to remove users from their previous Department or Function groups as changes occur.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant Admin Permissions to Users",
+      "Anchor": "grant-admin-permissions-to-users",
+      "SectionPath": [
+        "Grant Admin Permissions to Users"
+      ],
+      "Text": "Admin permissions can be managed manually in the admin interface, or they can be managed in bulk via a CSV upload. To download a template file that includes admin permissions, follow the steps in the Create your CSV File section and choose the Add users and admin permissions template option.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Grant Admin Permissions to Users",
+      "Anchor": "grant-admin-permissions-to-users",
+      "SectionPath": [
+        "Grant Admin Permissions to Users"
+      ],
+      "Text": "Permissions can be granted at the account level or at the group level.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assign Account-Level Permissions",
+      "Anchor": "assign-account-level-permissions",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Account-Level Permissions"
+      ],
+      "Text": "To assign permissions at the account level, the values for each user should be yes to assign a permission and no to revoke a permission. Include the following column headers to assign admin permissions at the account level:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Assign Account-Level Permissions",
+      "Anchor": "assign-account-level-permissions",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Account-Level Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column Header",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "permission_create_other_sub_admins_with_same_permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Grant admin permissions to other users.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "permission_manage_custom_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create, edit and delete custom content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "permission_curate_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage content, learning paths and collections.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "permission_manage_it_settings",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Configure Single Sign-On and other technical integrations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "permission_manage_role_guide",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create and edit role guides.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_edit_groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create groups, add and remove users from groups, rename groups, and delete groups.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_manage_users_licenses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invite new users, and assign \u0026 revoke licenses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_recommend_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recommend content, learning paths and collections.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_view_reports",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access downloadable reports and insights",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Assign Permissions to Specific Groups",
+      "Anchor": "assign-permissions-to-specific-groups",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Permissions to Specific Groups"
+      ],
+      "Text": "Some admin permissions can be granted at the group level, which narrows the scope of the sub-admin\u0027s permission and access to user data. When assigning permissions for a specific group, the group must be created first.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assign Permissions to Specific Groups",
+      "Anchor": "assign-permissions-to-specific-groups",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Permissions to Specific Groups"
+      ],
+      "Text": "The following column headers can be used to assign permissions to specific groups:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Assign Permissions to Specific Groups",
+      "Anchor": "assign-permissions-to-specific-groups",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Permissions to Specific Groups"
+      ],
+      "Text": "",
+      "Headers": [
+        "Column Header",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "group_permission_edit_groups",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create groups, add and remove users from groups, rename groups, and delete groups.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_manage_users_licenses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invite new users, and assign \u0026 revoke licenses.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_recommend_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Recommend content, learning paths and collections.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "group_permission_view_reports",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access downloadable reports and insights",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Assign Permissions to Specific Groups",
+      "Anchor": "assign-permissions-to-specific-groups",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Permissions to Specific Groups"
+      ],
+      "Text": "To assign permissions at the group level, the value should be in the format, group:Group Name. These permissions can also be assigned at the account level with a value of yes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Assign Permissions to Specific Groups",
+      "Anchor": "assign-permissions-to-specific-groups",
+      "SectionPath": [
+        "Grant Admin Permissions to Users",
+        "Assign Permissions to Specific Groups"
+      ],
+      "Text": "Example: To assign recommendation and reporting permissions to a specific group named, \u0022US Employees,\u0022 include the columns group_permission_recommend_content and group_permission_view_reports. The value for the permissions should be group:US Employees.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "If you have questions or would like guidance on how to best manage your user data in LinkedIn Learning, please reach out to your LinkedIn Learning account team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support",
+      "Anchor": "support",
+      "SectionPath": [
+        "Support"
+      ],
+      "Text": "Use the following resources if you need assistance adding or deleting learner data to LinkedIn Learning:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Manage Users Automatically via SFTP",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Manage Admin Permissions in LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Create Learner Child Groups",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Manage the Emails Admins and Learners Receive from LinkedIn Learning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Manage Custom Learner Attributes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supporting Documentation",
+      "Anchor": "supporting-documentation",
+      "SectionPath": [
+        "Support",
+        "Supporting Documentation"
+      ],
+      "Text": "Update User Emails in Bulk",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn\u2019s Privacy and Data Security Policy",
+      "Anchor": "linkedins-privacy-and-data-security-policy",
+      "SectionPath": [
+        "Support",
+        "LinkedIn\u2019s Privacy and Data Security Policy"
+      ],
+      "Text": "https://www.linkedin.com/legal/privacy-policy",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "If you have any security questions or you would like to report a security issue, write to us at security@linkedin.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Security Contacts",
+      "Anchor": "linkedin-security-contacts",
+      "SectionPath": [
+        "Support",
+        "LinkedIn Security Contacts"
+      ],
+      "Text": "Back to Top",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

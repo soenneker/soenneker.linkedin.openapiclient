@@ -1,0 +1,47 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin",
+  "Title": "Share Plugin",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Share Plugin",
+      "Anchor": "share-plugin",
+      "SectionPath": [],
+      "Text": "Plugins are a quick and easy way to drop LinkedIn functionality into your website. Use the Share Plugin to easily share content to your LinkedIn network.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Plugin",
+      "Anchor": "share-plugin",
+      "SectionPath": [],
+      "Text": "Using the JavaScript snippet below will generate a LinkedIn Share button. The example below contains a data-url reference to https://www.linkedin.com. Modify the data-url to include your favorite link, or leave it blank and let your users craft their own shares!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Share Plugin",
+      "Anchor": "share-plugin",
+      "SectionPath": [],
+      "Text": "\u003Cscript src=\u0022https://platform.linkedin.com/in.js\u0022 type=\u0022text/javascript\u0022\u003Elang: en_US\u003C/script\u003E\n\u003Cscript type=\u0022IN/Share\u0022 data-url=\u0022https://www.linkedin.com\u0022\u003E\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share Plugin",
+      "Anchor": "share-plugin",
+      "SectionPath": [],
+      "Text": "By obtaining and using LinkedIn Plugins you agree to the Plugins Terms of Use.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

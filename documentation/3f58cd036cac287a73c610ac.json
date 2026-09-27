@@ -1,0 +1,379 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/icims/sync-job-application-feedback",
+  "Title": "Sync job application notifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/icims/sync-job-application-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Sync job application notifications",
+      "Anchor": "sync-job-application-notifications",
+      "SectionPath": [],
+      "Text": "Deliver real-time feedback to applicants. LinkedIn supports three applicant notifications to give LinkedIn members greater insight into where their application stands: Application Viewed, Resume Downloaded, and Application Rejected. Once a customer is posting jobs to LinkedIn with LinkedIn Easy Apply, you must begin sending these application lifecycle events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application notifications",
+      "Anchor": "sync-job-application-notifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sync job application notifications",
+      "Anchor": "sync-job-application-notifications",
+      "SectionPath": [],
+      "Text": "LinkedIn will only communicate these events to the applicant if the customer has given consent through the \u201CApplicant notifications\u201D checkbox within the Customer Onboarding Widget.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "For every applicant that was received through LinkedIn, begin sending application lifecycle events.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "JobApplicationLifecycleAction request body fields",
+      "Anchor": "jobapplicationlifecycleaction-request-body-fields",
+      "SectionPath": [
+        "JobApplicationLifecycleAction request body fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "jobApplicationId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn job application ID for which an action has been taken.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The action that was taken on the given job application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "JobApplicationLifecycleActionType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/icims/sync-job-application-feedback?view=li-lts-2026-04#jobapplicationlifecycleactiontype-enums"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "performedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The timestamp for when the action was taken. The value is in milliseconds since epoch.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The integration context, which must be of the form urn:li:organization:12345.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "JobApplicationLifecycleActionType enums",
+      "Anchor": "jobapplicationlifecycleactiontype-enums",
+      "SectionPath": [
+        "JobApplicationLifecycleAction request body fields",
+        "JobApplicationLifecycleActionType enums"
+      ],
+      "Text": "",
+      "Headers": [
+        "Value",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLICATION_VIEWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This action represents the applicant\u0027s application is viewed in the ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RESUME_DOWNLOADED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This action represents the applicant\u0027s resume is downloaded or viewed in the ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPLICATION_REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This action represents the applicant\u0027s application is rejected in the ATS.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCREENED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This action represents the applicant\u0027s application has been screened (for example, ATS stage: Screen, Phone Screen, Assessment).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INTERVIEWED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This action represents the applicant has been interviewed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This action represents the applicant has accepted an offer of employment.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample headers",
+      "Anchor": "sample-headers",
+      "SectionPath": [
+        "JobApplicationLifecycleAction request body fields",
+        "Sample headers"
+      ],
+      "Text": "Authorization: Bearer {access_token}\nx-restli-method: create",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "JobApplicationLifecycleAction request body fields",
+        "Sample request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/jobApplicationLifecycleActions",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample request body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "JobApplicationLifecycleAction request body fields",
+        "Sample request body"
+      ],
+      "Text": "{\n  \u0022jobApplicationId\u0022:  \u0022urn:li:jobApplication:12345678\u0022,\n  \u0022action\u0022: \u0022APPLICATION_VIEWED\u0022,\n  \u0022performedAt\u0022: 1604600000017,\n  \u0022integrationContext\u0022: \u0022urn:li:organization:12345\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Applicant notification experience",
+      "Anchor": "applicant-notification-experience",
+      "SectionPath": [
+        "Applicant notification experience"
+      ],
+      "Text": "As job applications are updated with the available actions, an applicant will be able to view or be notified of them. The following guide shows what the experience looks like for actions: APPLICATION_VIEWED, RESUME_DOWNLOADED, APPLICATION_REJECTED.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application submitted",
+      "Anchor": "application-submitted",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application submitted"
+      ],
+      "Text": "This is a default action triggered once an application is submitted, this does not require a partner to send an API update. An applicant can view this status in three places: LinkedIn email notification, LinkedIn job posting they applied to, and My Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application viewed",
+      "Anchor": "application-viewed",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application viewed"
+      ],
+      "Text": "This action is triggered once an application record is viewed within the ATS. An applicant can view this status in three places: LinkedIn email notification, LinkedIn job posting they applied to, and My Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Resume downloaded",
+      "Anchor": "resume-downloaded",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Resume downloaded"
+      ],
+      "Text": "This action is triggered once an application resume is downloaded or displayed within a document viewer in the ATS. An applicant can view this status in two places: LinkedIn job posting they applied to and My Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application rejected",
+      "Anchor": "application-rejected",
+      "SectionPath": [
+        "Applicant notification experience",
+        "Application rejected"
+      ],
+      "Text": "This action is triggered once an application is rejected within the ATS. An applicant will receive a LinkedIn email notification after 72 hours of the action being updated.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

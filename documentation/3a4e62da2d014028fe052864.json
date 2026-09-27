@@ -1,0 +1,274 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-receive-push-notifications",
+  "Title": "Receive PUSH Notifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/webhook-validation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-acls",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/receive-push-events",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/profile-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/required-fields",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/application-evaluation-receive-push-notifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/retrieve-application-evaluation/exported-application-evaluation",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-data-deletion",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Receive PUSH Notifications",
+      "Anchor": "receive-push-notifications",
+      "SectionPath": [],
+      "Text": "When LinkedIn evaluates applications for your job postings, it makes a POST to the EVAL_CALLBACK_URL which you have registered during customer configuration of RSC onboarding. As a partner, you must return a 200 OK status code to indicate that the application evaluation is successfully received by your servers. LinkedIn will attempt to re-send the application 6 times if a non-200 status code is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive PUSH Notifications",
+      "Anchor": "receive-push-notifications",
+      "SectionPath": [],
+      "Text": "As part of the payload, you will be receiving an application-evaluation-id. You can use this ID to fetch the detailed evaluation as mentioned in the receive exported application evaluation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive PUSH Notifications",
+      "Anchor": "receive-push-notifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive PUSH Notifications",
+      "Anchor": "receive-push-notifications",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Respond to all LinkedIn validation requests.\nVerify validity of push event requests using the x-li-signature.\nRespond with a 200 HTTP status code indicating successful delivery of the notification to your webhook.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the Request",
+      "Anchor": "validate-the-request",
+      "SectionPath": [
+        "Validate the Request"
+      ],
+      "Text": "LinkedIn will use a secret key to generate an \u0022HMACSHA256\u0022 signature of the escaped Unicode version of the request payload prefixed by \u0022hmacsha256=\u0022. This signature is then included as an X-LI-Signature header in the HTTP POST request sent from LinkedIn servers. Use the secret key associated with your API Key in order to validate the signature included in the request.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the Request",
+      "Anchor": "validate-the-request",
+      "SectionPath": [
+        "Validate the Request"
+      ],
+      "Text": "The computed HMAC can be tested using a free HMAC generator. Using \u0022hmacsha256=\u0022 and appending the request payload, the computed HMAC should match the X-LI-Signature from the request when using the associated secret key.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Validate the Request",
+      "Anchor": "validate-the-request",
+      "SectionPath": [
+        "Validate the Request"
+      ],
+      "Text": "Example: hmacsha256={\u0022id\u0022:\u002259a92119-3b72-4d2f-8e12-137a13180df6-1\u0022,\u0022type\u0022:\u0022EXPORT_APPLICATION_EVALUATION\u0022,\u0022expiresAt\u0022:1481402799192}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Validate the Request",
+      "Anchor": "validate-the-request",
+      "SectionPath": [
+        "Validate the Request"
+      ],
+      "Text": "POST https://{provided unique application evaluation callback URL}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Endpoint Validation",
+      "Anchor": "webhook-endpoint-validation",
+      "SectionPath": [
+        "Webhook Endpoint Validation"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Endpoint Validation",
+      "Anchor": "webhook-endpoint-validation",
+      "SectionPath": [
+        "Webhook Endpoint Validation"
+      ],
+      "Text": "You do not need to register a webhook URL in the Developer Portal; the EVAL_CALLBACK_URL is must be configured during customer onboarding.\nLinkedIn does not share IP ranges for validating push events. Use domain allowlisting instead of IP allowlisting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Webhook Endpoint Validation",
+      "Anchor": "webhook-endpoint-validation",
+      "SectionPath": [
+        "Webhook Endpoint Validation"
+      ],
+      "Text": "To prevent webhook URLs from being compromised by malicious actors, all EVAL_CALLBACK_URL must support the Webhook Endpoint Validation flow, as specified here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Webhook Endpoint Validation",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the notification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier of the Exported Application Evaluation.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expires_at",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time when id will expire. If not provided, id will never expire.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Webhook Endpoint Validation",
+        "Sample Request"
+      ],
+      "Text": "\u0022Content-Type\u0022:\u0022application/json\u0022,\n\u0022X-LI-Signature\u0022:\u0022d3756e445a8065c0f38c2182c502f8229800eb2c6a9f3b4a1fdf152af867e6fc\u0022,\n\u0022Content-Length\u0022:\u0022107\u0022,\n\u0022Connection\u0022:\u0022Keep-Alive\u0022,\n\u0022Accept-Encoding\u0022:\u0022gzip,deflate\u0022\n\n\n{\n   \u0022id\u0022:\u002259a92119-3b72-4d2f-8e12-137a13180df6-1\u0022,\n   \u0022type\u0022:\u0022EXPORT_APPLICATION_EVALUATION\u0022,\n   \u0022expiresAt\u0022:1765091130000\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Codes",
+      "Anchor": "response-codes",
+      "SectionPath": [
+        "Webhook Endpoint Validation",
+        "Response Codes"
+      ],
+      "Text": "Your URL should return one of the expected HTTP responses when a call is received from LinkedIn. For more information about the response codes, refer to Response Codes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retry Logic",
+      "Anchor": "retry-logic",
+      "SectionPath": [
+        "Webhook Endpoint Validation",
+        "Retry Logic"
+      ],
+      "Text": "For more information about the retry logic, refer to Retry Logic.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

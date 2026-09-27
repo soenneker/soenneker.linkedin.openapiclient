@@ -1,0 +1,110 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/marketplace-platform-opportunity",
+  "Title": "Marketplace Platform Opportunity",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/skills",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/marketplace-platform-opportunity",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Marketplace Platform Opportunity",
+      "Anchor": "marketplace-platform-opportunity",
+      "SectionPath": [],
+      "Text": "A marketplace platform opportunity is defined as a request created by a member who needs some service or help. For example, a mentee looking for a mentor, or a member looking for a plumber.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Marketplace Platform Opportunity Schema",
+      "Anchor": "marketplace-platform-opportunity-schema",
+      "SectionPath": [
+        "Marketplace Platform Opportunity Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "opportunityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An optional field for the opportunity type for the marketplace. Current possible Urn types: urn:li:skill:{id} - skill Urn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/skills"
+            ],
+            "Values": [
+              "urn:li:skill:{id} - skill Urn"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "requester",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An optional field for the requester who created this opportunity. Current possible Urn types: urn:li:person:{id} - person Urn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile"
+            ],
+            "Values": [
+              "urn:li:person:{id} - person Urn"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "geo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "[GeoUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/taxonomy/geo"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An optional field for where the opportunity was created.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

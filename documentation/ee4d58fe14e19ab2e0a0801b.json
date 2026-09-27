@@ -1,0 +1,4115 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema",
+  "Title": "Lead Sync Schema",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/getting-access-leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-api-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/marketing-leads-integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Lead Sync Schema",
+      "Anchor": "lead-sync-schema",
+      "SectionPath": [],
+      "Text": "Lead Forms are used to request data from members responding to the Lead Form. Lead Forms can include multiple questions, hidden fields, and custom consent checkboxes. Many of these components are structured as sub-objects of the Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync Schema",
+      "Anchor": "lead-sync-schema",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Sync Schema",
+      "Anchor": "lead-sync-schema",
+      "SectionPath": [],
+      "Text": "This page describes schemas using a column Returned by Default. Any field that has a non-null value is included by default. This does not apply for empty optional fields; that is, an optional field with a null value is not included in the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Lead Sync Schema",
+      "Anchor": "lead-sync-schema",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Numerical identifier for the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch time corresponding to the creation of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch time corresponding to the last modified of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "creationLocale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#locale-datatype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Locale of the entity. This field serves as the preferred locale for all fields within the Lead Form with an object type that\u0027s capable of localization, such as MultiLocaleString.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of SponsoredAccountUrn, OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN that identifies the owner of the Lead Form. It\u0027s a union of sponsoredAccount and organization. sponsoredAccount is an URN of SponsoredAccountUrn that indicates the account of the advertiser. organization is an URN of OrganizationUrn that indicates the company page of the marketer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the Lead Form provided by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DisplayContent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#displaycontent-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Content of the Lead Form which is displayed to the viewer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "hiddenFields",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "HiddenField[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#hiddenfield-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Hidden fields used by the owner to track key attributes of the form that generated the lead. The field is empty if the owner chooses to not append any tracking attributes to the Lead Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenLifecycleState",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenlifecyclestate-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Information about the current state of the Lead Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reviewInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenReviewInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenreviewinfo-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Latest information about the content review of the Lead Form. (Optional) It is not present if the form hasn\u0027t been reviewed by the review pipeline.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The version ID of the form. This is a derived field and is generated on the server side.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionTag",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of times the form has been modified.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Locale dataType",
+      "Anchor": "locale-datatype",
+      "SectionPath": [
+        "Locale dataType"
+      ],
+      "Text": "Locale is a data type in the Lead Form which indicate the locale of the form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Locale dataType",
+      "Anchor": "locale-datatype",
+      "SectionPath": [
+        "Locale dataType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639-1.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "variant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Vendor or browser-specific code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "DisplayContent object",
+      "Anchor": "displaycontent-object",
+      "SectionPath": [
+        "DisplayContent object"
+      ],
+      "Text": "DisplayContent is a object in the Lead Form which represents the form content to be shown to the viewers for collecting responses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DisplayContent object",
+      "Anchor": "displaycontent-object",
+      "SectionPath": [
+        "DisplayContent object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "headline",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multilocalestring-datatype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Headline of the form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multilocalestring-datatype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) Description of the form. Optional since the owner may choose to not have this information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormQuestion[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformquestion-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Questions to request information from the viewer. At least one question should be present.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "legalInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormLegalInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformlegalinfo-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Legal information displayed alongside the Lead Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postSubmissionInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PostSubmissionInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#postsubmissioninfo-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) Information displayed to the user after submitting the form (e.g. thank you message, etc.). It is optional since not all use cases require a post submission experience.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiLocaleString dataType",
+      "Anchor": "multilocalestring-datatype",
+      "SectionPath": [
+        "DisplayContent object",
+        "MultiLocaleString dataType"
+      ],
+      "Text": "MultiLocaleString is a data type in the Lead Form that represents a textual field with values for multiple locales. We recommend to use the localized field entry keyed by preferredLocale. In the Lead Form, we use the creationLocale as the preferredLocale.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultiLocaleString dataType",
+      "Anchor": "multilocalestring-datatype",
+      "SectionPath": [
+        "DisplayContent object",
+        "MultiLocaleString dataType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "localized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "map",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maps a locale to a localized version of the string. Each key is a Locale record converted to string format, with the language, country, and variant separated by underscores. Examples: en, de_DE, en_US_WIN, de__POSIX, fr__MAC.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormQuestion sub-Object",
+      "Anchor": "leadgenformquestion-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object"
+      ],
+      "Text": "LeadGenFormQuestion is a sub-object in the DisplayContent object for each Lead Form question.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormQuestion sub-Object",
+      "Anchor": "leadgenformquestion-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "questionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the LeadGenFormQuestion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A human-readable, language-agnostic name for the question, used by the form owner to identify it within a form. This name is not visible to the viewer in the rendered form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "question",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The question prompt, shown to the viewer.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "textPrompt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) The description or hint of the question, shown to the viewer. Empty if no hint is provided.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "predefinedField",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PredefinedField",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#predefinedfield-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) The predefined field that the question is requesting. This field is used for specifying viewer specific fields (e.g. First name, City, School, etc.) that should be used to prefill the question response. Customized questions don\u0027t request a predefined field and leave this field empty.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseEditable",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True if the member viewing the form can edit a pre-filled form response. Default is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "True if the response is required for the question. Default is true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of TextQuestionDetails, MultipleChoiceQuestionDetails",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#textquestiondetails-sub-object",
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multiplechoicequestiondetails-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The specific details of the question including default answer, answer restrictions etc. We allow text and selection questions.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "questionSubmissionCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of WorkEmailSubmissionCriteria",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#workemailsubmissioncriteria-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) Criteria for submitting a response to the question. Example: Only non-freemium emails are allowed for the work email question. Applies only to questions using a predefined field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) The label of the question specified by marketers. These labels for the questions are unique within the context of a single form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PredefinedField sub-Object",
+      "Anchor": "predefinedfield-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "PredefinedField sub-Object"
+      ],
+      "Text": "PredefinedField is a sub-object within the LeadGenFormQuestion, which specifies that the question should use a predefined field in a Lead Form. Some of these fields can be prefilled using the viewer\u0027s profile information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PredefinedField sub-Object",
+      "Anchor": "predefinedfield-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "PredefinedField sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FIRST_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The first name of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LAST_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The last name of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PHONE_NUMBER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The phone number of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The email of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The city of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "STATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COUNTRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The country of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ZIP_CODE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The postal code or zip code of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_TITLE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The latest job title of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "JOB_FUNCTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The job function of the viewer\u0027s latest job (e.g. Sales, Engineering, etc.).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SENIORITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The seniority of the viewer\u0027s job title (e.g. manager, director, VP, etc.).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPANY_NAME",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the company of the viewer\u0027s latest job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPANY_SIZE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The size of the company of the viewer\u0027s latest job.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INDUSTRY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DEGREE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The degree attained from the latest school attended by the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FIELD_OF_STUDY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The field of study for the viewer\u0027s latest school attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SCHOOL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the school the viewer last attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "START_DATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start date of the viewer at the latest school attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GRADUATION_DATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The graduation date of the viewer at the latest school attended.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "GENDER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The gender of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WORK_EMAIL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work email address of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LINKEDIN_PROFILE_LINK",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The LinkedIn public profile URL of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WORK_PHONE_NUMBER",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The work phone number of the viewer.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TextQuestionDetails sub-Object",
+      "Anchor": "textquestiondetails-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "TextQuestionDetails sub-Object"
+      ],
+      "Text": "TextQuestionDetails is a sub-object in the LeadGenFormQuestion that represents text question specific details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TextQuestionDetails sub-Object",
+      "Anchor": "textquestiondetails-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "TextQuestionDetails sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "defaultResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Either the default response to a question as specified by the owner, or the prefilled viewer information for a predefined field. Can be empty in case the owner choose not to specify, or if the response could not be prefilled.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "maxResponseLength",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The maximum length of the response, in characters. Default is 300.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultipleChoiceQuestionDetails sub-Object",
+      "Anchor": "multiplechoicequestiondetails-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "MultipleChoiceQuestionDetails sub-Object"
+      ],
+      "Text": "MultipleChoiceQuestionDetails is a sub-object in the LeadGenFormQuestion that represents the details of a multiple choice question.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceQuestionDetails sub-Object",
+      "Anchor": "multiplechoicequestiondetails-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "MultipleChoiceQuestionDetails sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "options",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultipleChoiceQuestionOption",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#multiplechoicequestionoption-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The options for a multiple choice question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultSelectedOption",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Id of the option which is selected by default when shown to the viewer. If empty then No option is shown as selected.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultipleChoiceQuestionDetails sub-Object",
+      "Anchor": "multiplechoicequestiondetails-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "MultipleChoiceQuestionDetails sub-Object"
+      ],
+      "Text": "MultipleChoiceQuestionOption is a sub-object in the MultipleChoiceQuestionDetails, structured as an element in the array named options. MultipleChoiceQuestionOption represents an option of a multiple choice question specified by the owner.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceQuestionDetails sub-Object",
+      "Anchor": "multiplechoicequestiondetails-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "MultipleChoiceQuestionDetails sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The identifier for a MultipleChoiceQuestionOption within the context of a MultipleChoiceQuestion. This be unique only under the scope of a MultipleChoiceQuestion.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "text",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Text describing an option for a multiple choice question specified by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The label of the multiple choice option specified by marketers. These labels for the multiple choice options are unique within the context of a single form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "WorkEmailSubmissionCriteria sub-Object",
+      "Anchor": "workemailsubmissioncriteria-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "WorkEmailSubmissionCriteria sub-Object"
+      ],
+      "Text": "WorkEmailSubmissionCriteria is a sub-object in the LeadGenFormQuestion that represents the criteria for submission of responses to WORK_EMAIL PredefinedField.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "WorkEmailSubmissionCriteria sub-Object",
+      "Anchor": "workemailsubmissioncriteria-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormQuestion sub-Object",
+        "WorkEmailSubmissionCriteria sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "freemiumEmailAllowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If true, then a personal or freemium domain email address is allowed to be submitted as the response of the WORK EMAIL PredefinedField.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormLegalInfo sub-Object",
+      "Anchor": "leadgenformlegalinfo-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormLegalInfo sub-Object"
+      ],
+      "Text": "LeadGenFormLegalInfo is a sub-object in the Lead Form that represents Lead Form legal information to display to viewers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormLegalInfo sub-Object",
+      "Anchor": "leadgenformlegalinfo-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormLegalInfo sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "legalInfoId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the LeadGenFormLegalInfo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "privacyPolicyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) The URL of the privacy policy that covers any data passed to the owner of the form. Optional since it is not required to be present for all the use cases.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "legalDisclaimer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) Owner\u0027s legal disclaimer to accompany this form. This field is optional since the owner can use other fields (for example, privacyPolicyUrl or consents) to display the privacy policy. If this field is used, the value must be 1 to 2,000 characters. Don\u0027t set this field to an empty string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormConsent[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformconsent-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Additional consents used to obtain member approval for using data collected via the Lead Form. The array can be empty if no viewer consents are required by the owner. By default, this is an empty array.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormConsent sub-Object",
+      "Anchor": "leadgenformconsent-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormLegalInfo sub-Object",
+        "LeadGenFormConsent sub-Object"
+      ],
+      "Text": "LeadGenFormConsent is a sub-object in the LeadGenFormLegalInfo, structured as an element in the array named consents. LeadGenFormConsent that represents the Lead Form consent as defined by the owner of the form. Used for obtaining member approval to collecting data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormConsent sub-Object",
+      "Anchor": "leadgenformconsent-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormLegalInfo sub-Object",
+        "LeadGenFormConsent sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the consent, unique within LeadgenFormLegalInfo object.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom text that appears next to the checkbox, informing the member of what use of data they\u0027re consenting to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "checkRequired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether the consent is required to be checked by the member when submitting the form. Default is false.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "label",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) The label of the consent specified by marketers. These labels for the consents are unique within the context of a single form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PostSubmissionInfo sub-Object",
+      "Anchor": "postsubmissioninfo-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "PostSubmissionInfo sub-Object"
+      ],
+      "Text": "PostSubmissionInfo is a sub-object in the Lead Form that represents the content for displaying to viewers after they submit the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PostSubmissionInfo sub-Object",
+      "Anchor": "postsubmissioninfo-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "PostSubmissionInfo sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "message",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The message displayed to a member after the Lead Form is submitted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormCallToAction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Call to action shown after the Lead Form submission.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormCallToAction sub-Object",
+      "Anchor": "leadgenformcalltoaction-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormCallToAction sub-Object"
+      ],
+      "Text": "LeadGenFormCallToAction is a sub-object in the PostSubmissionInfo that represents a call to action in the form of a button or label a member can act on that opens a landing page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormCallToAction sub-Object",
+      "Anchor": "leadgenformcalltoaction-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "LeadGenFormCallToAction sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "callToActionLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PostSubmissionCallToActionLabel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Label for the call to action shown to the viewer. Default is VISIT_COMPANY_WEBSITE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "callToActionTarget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) Union of LandingPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Target where the user is taken after clicking on the CTA. Example: A LandingPageUrl which is a URL redirect to a web page. It can be empty for CTAs which do not require additional information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "PostSubmissionCallToActionLabel sub-Object",
+      "Anchor": "postsubmissioncalltoactionlabel-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "PostSubmissionCallToActionLabel sub-Object"
+      ],
+      "Text": "PostSubmissionCallToActionLabel is a sub-object in the LeadGenFormCallToAction that predefines values of call to action to be displayed after form submission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "PostSubmissionCallToActionLabel sub-Object",
+      "Anchor": "postsubmissioncalltoactionlabel-sub-object",
+      "SectionPath": [
+        "DisplayContent object",
+        "PostSubmissionCallToActionLabel sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "VISIT_COMPANY_WEBSITE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Visit Company Website call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LEARN_MORE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Learn More call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "VIEW_NOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "View Now call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DOWNLOAD_NoW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Download Now call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TRY_NOW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Try Now call to action.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "HiddenField sub-Object"
+      ],
+      "Text": "HiddenField is a sub-object in the Lead Form, structured as an element in the array named hiddenFields. HiddenField is not displayed on the form, but can be used by marketers for tracking purposes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "HiddenField sub-Object"
+      ],
+      "Text": "HiddenField values support both static and dynamic entries similar to Dynamic UTM Tracking. For more details about hidden fields behavior, refer to Lead Gen Form hidden fields. For a list of supported dynamic values, refer to Supported tracking parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "HiddenField sub-Object"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "HiddenField sub-Object"
+      ],
+      "Text": "Hidden field dynamic values follow the pattern {{DYNAMIC_VALUE}} where DYNAMIC_VALUE is replaced by the specific parameter name (e.g., {{ACCOUNT_ID}}).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "HiddenField sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "HiddenField sub-Object"
+      ],
+      "Text": "The array can contain a maximum of 20 HiddenField elements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HiddenField sub-Object",
+      "Anchor": "hiddenfield-sub-object",
+      "SectionPath": [
+        "HiddenField sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the hidden field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The content of the hidden field.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenLifecycleState sub-Object",
+      "Anchor": "leadgenlifecyclestate-sub-object",
+      "SectionPath": [
+        "LeadGenLifecycleState sub-Object"
+      ],
+      "Text": "LeadGenLifecycleState is a sub-object in the Lead Form that indicate the lifecycle stage of a Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenLifecycleState sub-Object",
+      "Anchor": "leadgenlifecyclestate-sub-object",
+      "SectionPath": [
+        "LeadGenLifecycleState sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "DRAFT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is still being edited.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PUBLISHED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is published, i.e. it has gone through processing (e.g. manual review) and is ready to be used.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ARCHIVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is archived.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenReviewInfo sub-Object",
+      "Anchor": "leadgenreviewinfo-sub-object",
+      "SectionPath": [
+        "LeadGenReviewInfo sub-Object"
+      ],
+      "Text": "LeadGenReviewInfo is a sub-object in the Lead Form that indicate the review info of the form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenReviewInfo sub-Object",
+      "Anchor": "leadgenreviewinfo-sub-object",
+      "SectionPath": [
+        "LeadGenReviewInfo sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reviewStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenFormReviewStatus",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformreviewstatus-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Indicate the state of review for the Lead Form.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastUpdated",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch time in millisecond indicating when the review status is initiated/last updated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rejectionReasons",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RejectionReason",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of rejection reasons for the Lead Form. It\u0027s Non-empty if the review status is REJECTED in the latest review.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormReviewStatus sub-Object",
+      "Anchor": "leadgenformreviewstatus-sub-object",
+      "SectionPath": [
+        "LeadGenReviewInfo sub-Object",
+        "LeadGenFormReviewStatus sub-Object"
+      ],
+      "Text": "LeadGenFormReviewStatus is a sub-object in the LeadGenReviewInfo that indicates whether the entity has been reviewed and the result of the review.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormReviewStatus sub-Object",
+      "Anchor": "leadgenformreviewstatus-sub-object",
+      "SectionPath": [
+        "LeadGenReviewInfo sub-Object",
+        "LeadGenFormReviewStatus sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "PENDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is pending review and not serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is approved for serving.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form is rejected.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PREAPPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been pre-approved, it\u0027s ready for serving but still need further review.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUTO_APPROVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been auto approved by content model.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "NEEDS_REVIEW",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been rejected by content model or policy checker or returned by fallback case that auto approval didn\u0027t make any decision.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUTO_REJECTED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The form has been auto rejected by content model.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Lead Form Response Schema",
+      "Anchor": "lead-form-response-schema",
+      "SectionPath": [
+        "Lead Form Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique id to identify the Lead Form Response.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadtype-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Type of the lead that represents the origination of the lead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "form",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadGenForm",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/leadsync?view=li-lms-2026-09#lead-form-schema"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The Lead Gen Form associated to the lead.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of SponsoredAccountURN, OrganizationURN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Owner of this Lead Form Response. It is a Union of sponsoredAccount and organization. sponsoredAccount is an URN of SponsoredAccountUrn that indicates the ad account of the advertiser. organization is an URN of OrganizationUrn that indicates the company page of the advertiser.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ownerInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) LeadGenFormResponseOwnerInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadgenformresponseownerinfo-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Record containing entity info that owns this Lead Form Response. It\u0027s an optional Union of sponsoredAccountInfo and organizationInfo.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) Union of SponsoredLeadMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metadata entity reference for a lead as SponsoredLeadMetadata with campaign field which is an URN of SponsoredCampaignUrn. This field is optional for test leads and other use cases where sponsored lead metadata (e.g. campaign) may not be relevant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadMetadataInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) Union of SponsoredLeadMetadataInfo",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#sponsoredleadmetadatainfo-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Metadata entity reference details. Record containing a subset of fields resolved on demand from the lead metadata references (e.g. campaign name , campaign type). Can be empty for test leads and cases where no lead metadata is relevant.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of SponsoredCreativeUrn , OrganizationUrn , EventUrn , StandardizedProductUrn, OrganizationLandingPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying which entity the lead is associated with. This field should match with the leadType if there is an associatedEntity. This field is optional for test leads and other use cases where leads don\u0027t have any associatedEntity. If there\u0027s no value, the field is not returned.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntityInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) Union of SponsoredCreativeInfo, OrganizationInfo, EventInfo, StandardizedProductInfo, OrganizationLandingPageInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Record containing useful fields (creative status, ugc reference etc.) resolved on demand from the associated entity object.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "submitter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "From version 202408 onwards, Guest Leads (when a user submits a form without being logged in) submitted to lead forms, submitter field is treated as a null field and omitted from the JSON response. For non-guest leads, the submitter field is included in the response and provides the person\u0027s URN. Ex: \u0022submitter\u0022: \u0022urn:li:person:MpGcnvaU_p\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "submittedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An epoch timestamp that records when the form response was submitted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "responseId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TrackingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier for the form response generated in the front-end when a submitter submits the response.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "formResponse",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FormResponse",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#formresponse-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Answers provided by the form submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "testLead",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether this is a test lead created for testing purposes.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadType Sub-Object",
+      "Anchor": "leadtype-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "LeadType Sub-Object"
+      ],
+      "Text": "LeadType is a sub-object in the Lead Form Response that indicates the type of the response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadType Sub-Object",
+      "Anchor": "leadtype-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "LeadType Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SPONSORED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from sponsored content.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "COMPANY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from the company page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EVENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from the event page.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ORGANIZATION_PRODUCT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The lead is collected from an organization product page.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormResponseOwnerInfo Sub-Object",
+      "Anchor": "leadgenformresponseownerinfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "LeadGenFormResponseOwnerInfo Sub-Object"
+      ],
+      "Text": "LeadGenFormResponseOwnerInfo is a sub-object in the Lead Form Response that indicates Union of sponsoredAccountInfo and organizationInfo that represents details of the LeadGenFormResponse\u0027s owner entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormResponseOwnerInfo Sub-Object",
+      "Anchor": "leadgenformresponseownerinfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "LeadGenFormResponseOwnerInfo Sub-Object"
+      ],
+      "Text": "sponsoredAccountInfo represents the below SponsoredAccount information as the owner of the Lead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "LeadGenFormResponseOwnerInfo Sub-Object",
+      "Anchor": "leadgenformresponseownerinfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "LeadGenFormResponseOwnerInfo Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sponsoredAccount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sponsoredAccountUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier for the advertising account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the advertising account, useful for labeling an account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedOrganizationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(Optional) string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale-specific name of the organization associated with this ad account",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "LeadGenFormResponseOwnerInfo Sub-Object",
+      "Anchor": "leadgenformresponseownerinfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "LeadGenFormResponseOwnerInfo Sub-Object"
+      ],
+      "Text": "organizationInfo represents the organizationUrn as the owner of the Lead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SponsoredLeadMetadataInfo Sub-Object",
+      "Anchor": "sponsoredleadmetadatainfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "SponsoredLeadMetadataInfo Sub-Object"
+      ],
+      "Text": "SponsoredLeadMetadataInfo is a sub-object in the Lead Form Response that indicates metadata entity reference details for a lead with campaign field. These fields hold some optional fields, that may or may not used for different cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "SponsoredLeadMetadataInfo Sub-Object",
+      "Anchor": "sponsoredleadmetadatainfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "SponsoredLeadMetadataInfo Sub-Object"
+      ],
+      "Text": "campaign represents the below SponsoredCampaign information as the metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "SponsoredLeadMetadataInfo Sub-Object",
+      "Anchor": "sponsoredleadmetadatainfo-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "SponsoredLeadMetadataInfo Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SponsoredCampaignUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Identifier for the ad campaign",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the ad campaign",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of ad campaign (TEXT_AD, SPONSORED_UPDATES, SPONSORED_INMAILS, DYNAMIC)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "FormResponse Sub-Object",
+      "Anchor": "formresponse-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "FormResponse Sub-Object"
+      ],
+      "Text": "FormResponse is a sub-object in the Lead Form Response that represents the form response from submitter, which contains a set of answers and consentResponses.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "FormResponse Sub-Object",
+      "Anchor": "formresponse-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "FormResponse Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "answers",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answer[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answers provided by the submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consentResponses",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ConsentResponse[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Responses to the consents that are provided by the submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Answer Sub-Object",
+      "Anchor": "answer-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "Answer Sub-Object"
+      ],
+      "Text": "Answer is a sub-object in FormResponse, structured as an element in the array named answers. It represents the submitter\u0027s response to the questions in the Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Answer Sub-Object",
+      "Anchor": "answer-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "Answer Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "questionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accepted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of TextQuestionAnswer, MultipleChoiceAnswer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Answer provided by a submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TextQuestionAnswer Sub-Object",
+      "Anchor": "textquestionanswer-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "TextQuestionAnswer Sub-Object"
+      ],
+      "Text": "TextQuestionAnswer is a sub-object in the Answer that represents the response to a TextQuestion of form in text format.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "TextQuestionAnswer Sub-Object",
+      "Anchor": "textquestionanswer-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "TextQuestionAnswer Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "answer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The answer to a single text-entry question.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "MultipleChoiceAnswer Sub-Object",
+      "Anchor": "multiplechoiceanswer-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "MultipleChoiceAnswer Sub-Object"
+      ],
+      "Text": "MultipleChoiceAnswer is a sub-object in the Answer that represents a form response to a particular Lead Form, which contains a set of answers provided by the submitter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "MultipleChoiceAnswer Sub-Object",
+      "Anchor": "multiplechoiceanswer-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "MultipleChoiceAnswer Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "options",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The array of the chosen option ids for a MultipleChoiceQuestion by the submitter. Default as empty array if No choice answered by submitter.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "ConsentResponse Sub-Object",
+      "Anchor": "consentresponse-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "ConsentResponse Sub-Object"
+      ],
+      "Text": "ConsentResponse is a sub-object in FormResponse, structured as an element in the array named consentResponses. It represents the submitter\u0027s response to the consents in the legal info in the Lead Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "ConsentResponse Sub-Object",
+      "Anchor": "consentresponse-sub-object",
+      "SectionPath": [
+        "Lead Form Response Schema",
+        "ConsentResponse Sub-Object"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Returned by Default"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "consentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The id of the consent, unique within LeadgenFormLegalInfo object.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "consent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The custom text that appears next to the checkbox, informing the member of what use of data they\u0027re consenting to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "accepted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consent answer provided by a submitter. True if the submitter chooses to opt-in.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Lead Notification Subscriptions",
+      "Anchor": "lead-notification-subscriptions",
+      "SectionPath": [
+        "Lead Notification Subscriptions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description",
+        "Read Only",
+        "Required in Write"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the subscription.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "webhook",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL designating where the notification payloads are delivered.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Union of SponsoredAccountUrn, OrganizationUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the owner of a Lead Form. Indicates that all forms under the owner are subject to triggering notifications. This can be the advertiser account or organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "leadType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LeadType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/marketing/lead-sync/lead-sync-schema?view=li-lms-2026-09#leadtype-sub-object"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Lead type for which the subscription is created. LeadType can be sponsored or organic.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "versionedFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) VersionedLeadGenFormUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the versioned Lead Form for which the subscription is created, e.g. urn:li:versionedLeadGenForm:(urn:li:leadGenForm:123,1). This is an optional field and is only present if the subscription is made for a Lead Form, i.e. only actions such as lead submissions made on this particular form should trigger notifications. If a separate subscription containing only an owner exists, the same trigger sends payloads to both subscriptions if the webhooks are different. Otherwise, this is null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "associatedEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(optional) Union of SponsoredCreativeUrn, OrganizationUrn, EventUrn, StandardizedProductUrn, and OrganizationLandingPageUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN identifying the entity to which the Lead Form is attached. Leads are collected via the Lead Form attached to this entity. Example: This could be a sponsored creative/ad (urn:li:sponsoredCreative:123456) with an attached Lead Form. This is an optional field. Include it only if the subscription is for an associated entity to which the Lead Form is attached. In this case, only actions such as lead submissions made on this particular form will trigger notifications. If a separate subscription exists for only an owner or for an owner and form, the same trigger sends payloads to both subscriptions if the webhooks are different. Otherwise, this is null.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

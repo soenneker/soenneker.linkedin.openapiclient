@@ -1,0 +1,869 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+  "Title": "Application Secret Management",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/application-secret-management",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/developer-portal-tools",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/postman-getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Application Secret Management",
+      "Anchor": "application-secret-management",
+      "SectionPath": [],
+      "Text": "Manage secrets for your parent, child, and standalone applications to keep your integrations secure. You can rotate secrets on demand or on a regular schedule, and manage up to two secrets per application. You can perform the following actions to manage secrets:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Application Secret Management",
+      "Anchor": "application-secret-management",
+      "SectionPath": [],
+      "Text": "Rotate a Secret\n\nRotate Parent or Standalone Application Secret\nRotate Child Application Secret\n\n\nDelete a Secret\n\nDelete Parent or Standalone Application Secret\nDelete Child Application Secret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rotate a Secret",
+      "Anchor": "rotate-a-secret",
+      "SectionPath": [
+        "Rotate a Secret"
+      ],
+      "Text": "Rotate your application secrets regularly to maintain security. When you rotate a secret, the new secret gets added without removing the old one\u2014both remain active so you can update your integration without downtime.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Rotation Schedule",
+      "Anchor": "recommended-rotation-schedule",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Recommended Rotation Schedule"
+      ],
+      "Text": "Every 60\u201390 days\nAfter any potential exposure\nBefore major releases or infrastructure changes\nDuring security or compliance audits",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Rotation Schedule",
+      "Anchor": "recommended-rotation-schedule",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Recommended Rotation Schedule"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Recommended Rotation Schedule",
+      "Anchor": "recommended-rotation-schedule",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Recommended Rotation Schedule"
+      ],
+      "Text": "Each application can have a maximum of two secrets\nIf two secrets already exist, delete one before rotating, else the rotation API request will fail",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint",
+      "Anchor": "endpoint",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/developerApplicationsSecurity?action=rollDeveloperApplicationSecret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Headers",
+      "Anchor": "headers",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-RestLi-Protocol-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2.0.0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer 2L/3L token",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Headers",
+      "Anchor": "headers",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Headers"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Headers",
+      "Anchor": "headers",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Headers"
+      ],
+      "Text": "Generate the Bearer token using the application\u0027s credentials.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Body",
+      "Anchor": "request-body",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Request Body"
+      ],
+      "Text": "{}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "{}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty braces",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Response"
+      ],
+      "Text": "Success: HTTP 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Response"
+      ],
+      "Text": "Response Body:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Parent or Standalone Application Secret",
+        "Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022client_secret\u0022: \u0022bFWEECAwQp1AT6rJ\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint",
+      "Anchor": "endpoint-1",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/developerApplicationsSecurity?action=rollDeveloperApplicationSecret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Headers",
+      "Anchor": "headers-1",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-RestLi-Protocol-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2.0.0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer 2L/3L \u003Ctoken\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Headers",
+      "Anchor": "headers-1",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Headers"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Headers",
+      "Anchor": "headers-1",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Headers"
+      ],
+      "Text": "Use your parent application credentials to generate the Bearer token for child applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Body",
+      "Anchor": "request-body-1",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Request Body"
+      ],
+      "Text": "{\n  \u0022childDeveloperApplication\u0022: \u0022urn:li:developerApplication:\u003Cchild-application-id\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-1",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "childDeveloperApplication",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the child application (for example, urn:li:developerApplication:123456).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Shell)",
+      "Anchor": "sample-request-shell",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Sample Request (Shell)"
+      ],
+      "Text": "curl --location \u0022https://api.linkedin.com/v2/developerApplicationsSecurity?action=rollDeveloperApplicationSecret\u0022 \\\n-X POST \\\n-H \u0027X-RestLi-Method:action\u0027 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Authorization: Bearer \u003Ctoken\u003E\u0027 \\\n--data \u0027{\n  \u0022childDeveloperApplication\u0022: \u0022urn:li:developerApplication:123456\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Sample Response"
+      ],
+      "Text": "Success: HTTP 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Rotate a Secret",
+        "Rotate Child Application Secret",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022value\u0022: {\n    \u0022client_secret\u0022: \u0022bFWEECAwQp1AT6rJ\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Secret",
+      "Anchor": "delete-a-secret",
+      "SectionPath": [
+        "Delete a Secret"
+      ],
+      "Text": "Delete a secret when you need to rotate but already have two active secrets, or when removing a secret that\u0027s no longer needed. While deleting a secret, the same secret needs to be passed as part of the API payload.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint",
+      "Anchor": "endpoint-2",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/developerApplicationsSecurity?action=removeDeveloperApplicationSecret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Headers",
+      "Anchor": "request-headers",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-RestLi-Protocol-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2.0.0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer 2L/3L token",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Body",
+      "Anchor": "request-body-2",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Request Body"
+      ],
+      "Text": "{\n  \u0022secret\u0022: \u0022\u003Cyour_app_secret\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-2",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The secret to be deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Shell)",
+      "Anchor": "sample-request-shell-1",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Sample Request (Shell)"
+      ],
+      "Text": "curl --location \u0022https://api.linkedin.com/v2/developerApplicationsSecurity?action=removeDeveloperApplicationSecret\u0022 \\\n-X POST \\\n-H \u0027X-RestLi-Method:action\u0027 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Authorization: Bearer \u003C2L/3L token\u003E\u0027 \\\n--data \u0027{\n  \u0022secret\u0022: \u0022\u003Cyour_app_secret\u003E\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response-1",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Response"
+      ],
+      "Text": "Success: HTTP 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response-1",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Parent or Standalone Application Secret",
+        "Response"
+      ],
+      "Text": "The API returns an HTTP 200 status code with an empty response body when the secret is successfully deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint",
+      "Anchor": "endpoint-3",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/developerApplicationsSecurity?action=removeDeveloperApplicationSecret",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Headers",
+      "Anchor": "request-headers-1",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "X-RestLi-Protocol-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2.0.0",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer 2L/3L \u003Ctoken\u003E",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Request Body",
+      "Anchor": "request-body-3",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Request Body"
+      ],
+      "Text": "{\n  \u0022childDeveloperApplication\u0022: \u0022urn:li:developerApplication:\u003Cchild-application-id\u003E\u0022,\n  \u0022secret\u0022: \u0022\u003Cyour_app_secret\u003E\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Fields",
+      "Anchor": "request-body-fields-3",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "childDeveloperApplication",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the child application.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The secret to be deleted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response-2",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Response"
+      ],
+      "Text": "Success: HTTP 200 OK",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response-2",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Response"
+      ],
+      "Text": "The API returns an HTTP 200 status code with an empty response body when the secret is successfully deleted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request (Shell)",
+      "Anchor": "sample-request-shell-2",
+      "SectionPath": [
+        "Delete a Secret",
+        "Delete Child Application Secret",
+        "Sample Request (Shell)"
+      ],
+      "Text": "curl --location \u0022https://api.linkedin.com/v2/developerApplicationsSecurity?action=removeDeveloperApplicationSecret\u0022 \\\n-X POST \\\n-H \u0027X-RestLi-Method:action\u0027 \\\n-H \u0027Accept:application/json\u0027 \\\n-H \u0027Content-Type:application/json\u0027 \\\n-H \u0027X-RestLi-Protocol-Version:2.0.0\u0027 \\\n-H \u0027Authorization: Bearer \u003Ctoken\u003E\u0027 \\\n--data \u0027{\n  \u0022childDeveloperApplication\u0022: \u0022urn:li:developerApplication:123456\u0022,\n  \u0022secret\u0022: \u0022\u003Cyour_app_secret\u003E\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP code",
+        "Status",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2022 Occurs when a different parent-app-id or secret token is used for a child-app not linked to the selected parent-app.\u2022 Removing the last remaining secret from a child-app.\u2022 Attempting to create a third secret when two already exist.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Codes",
+      "Anchor": "error-codes",
+      "SectionPath": [
+        "Error Codes"
+      ],
+      "Text": "These error codes are specific to secret rotation and deletion APIs. Error codes may change in future updates.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

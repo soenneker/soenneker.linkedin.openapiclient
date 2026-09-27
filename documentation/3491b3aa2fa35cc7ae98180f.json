@@ -1,0 +1,453 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+  "Title": "Verified on LinkedIn \u2013 Release Notes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Release Notes",
+      "Anchor": "verified-on-linkedin--release-notes",
+      "SectionPath": [],
+      "Text": "The Verified on LinkedIn API enables developers and partners to display LinkedIn-trusted verification signals\u2014confirming a member\u0027s identity, workplace, and other professional attributes\u2014within their own platforms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified on LinkedIn \u2013 Release Notes",
+      "Anchor": "verified-on-linkedin--release-notes",
+      "SectionPath": [],
+      "Text": "This page summarizes release updates, key features, and known limitations of the Verified on LinkedIn API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current API Versions",
+      "Anchor": "current-api-versions",
+      "SectionPath": [
+        "Current API Versions"
+      ],
+      "Text": "Use the latest versions in the LinkedIn-Version header for all API requests:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Current API Versions",
+      "Anchor": "current-api-versions",
+      "SectionPath": [
+        "Current API Versions"
+      ],
+      "Text": "",
+      "Headers": [
+        "API Endpoint",
+        "Current Version",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202510.03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve member profile details (name, email, education, position)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202607",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve verification status and metadata",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/validationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bulk validation checks (Plus tier only)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Current API Versions",
+      "Anchor": "current-api-versions",
+      "SectionPath": [
+        "Current API Versions"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Current API Versions",
+      "Anchor": "current-api-versions",
+      "SectionPath": [
+        "Current API Versions"
+      ],
+      "Text": "Always use the latest versions listed above in all API requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "/identityMe \u2014 Version 202510.03 (Latest)",
+      "Anchor": "identityme--version-20251003-latest",
+      "SectionPath": [
+        "What\u2019s New in the Latest Release",
+        "Release Highlights \u2013 Latest Version",
+        "/identityMe \u2014 Version 202510.03 (Latest)"
+      ],
+      "Text": "What changed vs. 202507.03:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "/identityMe \u2014 Version 202510.03 (Latest)",
+      "Anchor": "identityme--version-20251003-latest",
+      "SectionPath": [
+        "What\u2019s New in the Latest Release",
+        "Release Highlights \u2013 Latest Version",
+        "/identityMe \u2014 Version 202510.03 (Latest)"
+      ],
+      "Text": "Removed basicInfo.headline\nAdded basicInfo.primaryEmailAddress\nAll other fields in mostRecentEducation and primaryCurrentPosition remain unchanged",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "/verificationReport \u2014 Version 202607 (Latest)",
+      "Anchor": "verificationreport--version-202607-latest",
+      "SectionPath": [
+        "What\u2019s New in the Latest Release",
+        "Release Highlights \u2013 Latest Version",
+        "/verificationReport \u2014 Version 202607 (Latest)"
+      ],
+      "Text": "What changed vs. 202510:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "/verificationReport \u2014 Version 202607 (Latest)",
+      "Anchor": "verificationreport--version-202607-latest",
+      "SectionPath": [
+        "What\u2019s New in the Latest Release",
+        "Release Highlights \u2013 Latest Version",
+        "/verificationReport \u2014 Version 202607 (Latest)"
+      ],
+      "Text": "Added optional verifiedWithinDays query parameter.\nPartners can now request freshness validation for existing verifications.\nExisting verification data, including verifiedDetails, continues to be returned and is never removed or invalidated.\nverificationUrl is returned when an existing verification is older than the requested freshness window, allowing eligible members to re-verify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "/validationStatus \u2014 Version 202510 (Latest)",
+      "Anchor": "validationstatus--version-202510-latest",
+      "SectionPath": [
+        "What\u2019s New in the Latest Release",
+        "Release Highlights \u2013 Latest Version",
+        "/validationStatus \u2014 Version 202510 (Latest)"
+      ],
+      "Text": "No schema or behavior changes compared to 202507. The API continues to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "/validationStatus \u2014 Version 202510 (Latest)",
+      "Anchor": "validationstatus--version-202510-latest",
+      "SectionPath": [
+        "What\u2019s New in the Latest Release",
+        "Release Highlights \u2013 Latest Version",
+        "/validationStatus \u2014 Version 202510 (Latest)"
+      ],
+      "Text": "Return verificationStatus.workplace\nReturn verificationStatus.identity\nReturn profileInformationStatus\nUse 2-legged application authorization (r_validation_status)\nSupport bulk and single-member validation checks",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Version History",
+      "Anchor": "version-history",
+      "SectionPath": [
+        "Version History"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version",
+        "Endpoint",
+        "Summary",
+        "Details"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "202607",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Added verifiedWithinDays parameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Introduced the optional verifiedWithinDays query parameter to support freshness validation of existing verifications. Existing verification data continues to be returned, while verificationUrl is returned when a completed verification is older than the requested freshness window.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202510.03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Removed headline, added primaryEmailAddress",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "In version 202510.03, /identityMe responses no longer include basicInfo.headline and instead include basicInfo.primaryEmailAddress. All other fields remain unchanged from 202507.03.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/verificationReport",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Added verifications field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A new top-level verifications field summarizes a member\u2019s verified categories (e.g., WORKPLACE, IDENTITY), alongside existing verifiedDetails.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/validationStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No change vs 202507",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supports up to 500 queries per request. Requires the id from /identityMe or /verificationReport responses. The response structure and semantics remain identical to 202507.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202507.03",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Added lastRefreshedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Includes everything from 202507, plus lastRefreshedAt.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "202507",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "/identityMe",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Added companyPageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Includes everything from 202501, plus company page URL in primaryCurrentPosition.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Key Features",
+      "Anchor": "key-features",
+      "SectionPath": [
+        "Key Features"
+      ],
+      "Text": "",
+      "Headers": [
+        "Feature",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Consistent OAuth 2.0 Authorization Code Flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used across all tiers for secure Member consent.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Standardized Member ID field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Consistent ID handling for member identification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Unified verification categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Common taxonomy across Identity and Workplace.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Simplified redirect flow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn automatically redirects Members to the registered redirect URI after completing verifications.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Verification freshness validation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Partners can optionally require members to re-verify using the verifiedWithinDays query parameter without invalidating existing verification data.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Next Steps",
+      "Anchor": "next-steps",
+      "SectionPath": [
+        "Next Steps"
+      ],
+      "Text": "Review the Verified on LinkedIn Quickstart Guide and API Reference.\nFollow the Verified on LinkedIn Overview for API details.\nSee the Branding \u0026 UX Guidelines for approved \u0022Verified on LinkedIn\u0022 assets.\nExplore Certification Requirements for enterprise integrations.\nStay up to date via the LinkedIn Engineering Blog for product and version announcements.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

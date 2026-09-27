@@ -12,19 +12,27 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class LearningActivityReportsLearningActivityReports200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activities property</summary>
+        /// <summary>All the relevant content engagements that occurred like the number of completions and unique views.Documented type: EngagementMetric[]Requirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemActivitiesItem>? Activities { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric>? Activities { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemActivitiesItem> Activities { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric> Activities { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The latestDataAt property</summary>
-        public int? LatestDataAt { get; set; }
-        /// <summary>The learnerDetails property</summary>
+        /// <summary>Details corresponding to the content like the name, locale and ID.Documented type: ContentDetailsRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemContentDetails? ContentDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemContentDetails ContentDetails { get; set; }
+#endif
+        /// <summary>Milliseconds since epoch for the latest data on which the report is based.Documented type: LongRequirement: No</summary>
+        public long? LatestDataAt { get; set; }
+        /// <summary>Details corresponding to the learner like the name, email and uniqueUserIdDocumented type: LearnerDetailsRequirement: No</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails? LearnerDetails { get; set; }
@@ -57,8 +65,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemActivitiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemActivitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "latestDataAt", n => { LatestDataAt = n.GetIntValue(); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "contentDetails", n => { ContentDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemContentDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemContentDetails.CreateFromDiscriminatorValue); } },
+                { "latestDataAt", n => { LatestDataAt = n.GetLongValue(); } },
                 { "learnerDetails", n => { LearnerDetails = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails>(global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails.CreateFromDiscriminatorValue); } },
             };
         }
@@ -69,8 +78,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemActivitiesItem>("activities", Activities);
-            writer.WriteIntValue("latestDataAt", LatestDataAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.LearnLearningReferenceLearningActivityReportsReferenceEngagementmetric>("activities", Activities);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemContentDetails>("contentDetails", ContentDetails);
+            writer.WriteLongValue("latestDataAt", LatestDataAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.LearningActivityReportsLearningActivityReports200ResponseElementsItemLearnerDetails>("learnerDetails", LearnerDetails);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -1,0 +1,267 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-usecase",
+  "Title": "Use Cases - Audience Insights",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-account-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/audience-insights-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/integration-requirements-audience-insights",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/saved-audience-templates",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [],
+      "Text": "LinkedIn\u0027s Audience Insights API enables marketers to analyze and identify target audiences and their interests. This tool provides insights into professional demographics on LinkedIn, helping define audience segments and optimize content and media strategies. The API can answer questions such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [],
+      "Text": "What are the top job titles for members of my audience working in a specific industry?\nIn which top U.S. cities do members interested in \u0022Computer Programming\u0022 reside?\nHow many decision-makers meet my audience criteria?\nWhat are the common skills of audience A compared to audience B?\nWhat is the profile make up of my 1st party audiences?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [],
+      "Text": "The marketer with these insights can then:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use Cases - Audience Insights",
+      "Anchor": "use-cases---audience-insights",
+      "SectionPath": [],
+      "Text": "Push discovered audiences to Campaign Manager to simplify workflows.\nTarget the appropriate audience based on campaign objectives, such as reach, frequency, and demand generation.\nPersonalize messaging to the right audience based on insights.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why",
+      "Anchor": "why",
+      "SectionPath": [
+        "Why"
+      ],
+      "Text": "Marketers must understand, segment, activate, and measure key audiences essential for business growth.\nMarketers require support in go-to-market strategies, including audience-first and ABM approaches.\nMarketers require solutions to mitigate data and intelligence loss from third party data deprecation.\nLinkedIn provides rich professional demographic, firmographic, behavioral, and engagement data to support:\n\nAudience discovery\nAudience activation\nAudience \u0026 content planning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For information on specific permissions, see Permissions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-requisites",
+      "Anchor": "pre-requisites",
+      "SectionPath": [
+        "Pre-requisites"
+      ],
+      "Text": "Your developer application has access to LinkedIn Advertising APIs. If you\u0027re new to our APIs, get started by applying for Advertising API access.\nYour developer application must be provisioned with the Audience Insights API product.\nYou have access to at least one ad account with one of the following roles:\n\nACCOUNT_BILLING_ADMIN\nACCOUNT_MANAGER\nCAMPAIGN_MANAGER\nCREATIVE_MANAGER\nVIEWER",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-requisites",
+      "Anchor": "pre-requisites",
+      "SectionPath": [
+        "Pre-requisites"
+      ],
+      "Text": "For more information on Ad Account roles and permissions, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Pre-requisites",
+      "Anchor": "pre-requisites",
+      "SectionPath": [
+        "Pre-requisites"
+      ],
+      "Text": "Ad Account User Role Definitions\nCreate and Manage Ad Account Users",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example User Process Flow - Prospect Audience",
+      "Anchor": "example-user-process-flow---prospect-audience",
+      "SectionPath": [
+        "Example User Process Flow - Prospect Audience"
+      ],
+      "Text": "Media Planner received a new campaign brief. They log into their agency tool and navigate to the \u201CLinkedIn Audience\u201D module to begin validating the campaign brief target audience and exploring other audiences to potentially target. When they complete their analysis, they save the created audience to their client\u2019s LinkedIn Ad account.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Use case : Prospect Audience",
+      "Anchor": "use-case--prospect-audience",
+      "SectionPath": [
+        "Use case : Prospect Audience"
+      ],
+      "Text": "Understand the professional profile of the audience to develop audience strategy and create an audience based on insights to reach identified people on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Generate a 3L OAuth Token",
+      "Anchor": "step-1-generate-a-3l-oauth-token",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 1: Generate a 3L OAuth Token"
+      ],
+      "Text": "If there\u0027s no valid existing member token for the relevant user from any previous integration, we recommend using the minimum required scope permissions, such as r_ads, to fetch the authenticated user\u0027s Ad accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1: Generate a 3L OAuth Token",
+      "Anchor": "step-1-generate-a-3l-oauth-token",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 1: Generate a 3L OAuth Token"
+      ],
+      "Text": "For generating 3L OAuth token, please see\nGenerate 3L OAuth Token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve all LinkedIn Ad Accounts",
+      "Anchor": "step-2-retrieve-all-linkedin-ad-accounts",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 2: Retrieve all LinkedIn Ad Accounts"
+      ],
+      "Text": "Retrieve all LinkedIn Ad accounts for the end user to select one for use with the LinkedIn Audience Insights APIs. Pass the chosen Ad account along with the metadata in subsequent API requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2: Retrieve all LinkedIn Ad Accounts",
+      "Anchor": "step-2-retrieve-all-linkedin-ad-accounts",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 2: Retrieve all LinkedIn Ad Accounts"
+      ],
+      "Text": "For information on retrieving Ad accounts, please see Retrieve Ad Accounts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Generate Audience Insights",
+      "Anchor": "step-3-generate-audience-insights",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 3: Generate Audience Insights"
+      ],
+      "Text": "Utilize the Ad account from the previous step to generate audience insights. Audience insights can be derived based on various facets such as job functions, job titles, job seniorities, member interests, and member skills, among others. This list outlines the available ad targeting facets to derive insights from the target audience segmented by one of these facets in response. For more information on targeting capabilities, see the following additional details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Generate Audience Insights",
+      "Anchor": "step-3-generate-audience-insights",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 3: Generate Audience Insights"
+      ],
+      "Text": "TargetingCriteria object\nDescriptive examples for targetingCriteria object\nList of supported adTargetingFacets in targetingCriteria object\nAd Targeting Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3: Generate Audience Insights",
+      "Anchor": "step-3-generate-audience-insights",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 3: Generate Audience Insights"
+      ],
+      "Text": "To generate audience insights using the Audience Insights API, please refer to the API documentation here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Push the Prospected Audience to LinkedIn",
+      "Anchor": "step-4-push-the-prospected-audience-to-linkedin",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 4: Push the Prospected Audience to LinkedIn"
+      ],
+      "Text": "Save the targeting criteria used to fetch insights and prospect the audience with the Saved Audience Templates API. Saving the audience in LinkedIn allows you to activate them through the Campaign API or from the Campaign Manager user interface.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4: Push the Prospected Audience to LinkedIn",
+      "Anchor": "step-4-push-the-prospected-audience-to-linkedin",
+      "SectionPath": [
+        "Use case : Prospect Audience",
+        "Step 4: Push the Prospected Audience to LinkedIn"
+      ],
+      "Text": "For more information on saving an audience on LinkedIn, refer to Saved Audience Templates.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

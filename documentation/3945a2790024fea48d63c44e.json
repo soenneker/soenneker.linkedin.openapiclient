@@ -1,0 +1,1887 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+  "Title": "Organizational Page Profiles",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/products/organization-products",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Profiles",
+      "Anchor": "organizational-page-profiles",
+      "SectionPath": [],
+      "Text": "The Organizational Page Profiles DMA API represents an organizational page profile\u2014a page with a unique URL that members can visit and interact with (such as follow, comment, or view posts). It serves as a wrapper entity for shared fields among all underlying page entities that are generally managed by an organization, but not necessarily the organization itself (such as brands and products).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Profiles",
+      "Anchor": "organizational-page-profiles",
+      "SectionPath": [],
+      "Text": "For more details on organizations (companies, schools, etc.), see Organizational Page Profiles. For more information on products, see Organization Products.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Profiles",
+      "Anchor": "organizational-page-profiles",
+      "SectionPath": [],
+      "Text": "This API currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organizational Page Profiles",
+      "Anchor": "organizational-page-profiles",
+      "SectionPath": [],
+      "Text": "Get an organizational page profile using the OrganizationalPageUrn.\nBatch get to retrieve all organizational page profiles for the given set of OrganizationalPageUrns.\nFinder pageEntity to retrive the OrganizationalPageProfile record by an URN associated with a page entity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control\nfor more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Obfuscated Fields",
+      "Anchor": "obfuscated-fields",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation",
+        "Obfuscated Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified.impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor. The field is only populated if the member has granted permission to share their data via DMA API.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPageProfiles",
+      "Anchor": "organizationalpageprofiles",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageProfiles"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "OrganizationalPageProfiles",
+      "Anchor": "organizationalpageprofiles",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageProfiles"
+      ],
+      "Text": "Either of the created / lastmodified / deleted fields will always be present in the response schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationalPageProfiles",
+      "Anchor": "organizationalpageprofiles",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "OrganizationalPageProfiles"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource/association/sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "entityUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier of the organizational page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageProfileEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "unioncompany: OrganizationUrn, combinedOrganizationProductPage: CombinedOrganizationProductPageEntity, school: OrganizationUrn](../pages-profiles/organizations.md), school: OrganizationUrn](../pages-profiles/organizations.md), skill: OrganizationUrn](../pages-profiles/organizations.md), standardizedProduct: OrganizationUrn](../pages-profiles/organizations.md)]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08",
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#combinedorganizationproductpageentity"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the different entities eligible to be represented by an organizational page profile. Company represents the organizational page is a company page. CombinedOrganizationProductPage represents the organizational page is a combined company and product page. School represents the organizational page is a school page. Showcase represents the organizational page is a showcase page. Skill represents the organizational page is a skill page. StandardizedProduct represents the organizational page is a product page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentOrganizationEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationalPageUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents parent page organization associated with the organizational page. This will be present in the case there is a parent organization for a given organizational page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/references/v2/object-types.md?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Name of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized name of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MultiLocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#multilocalestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Description of the organizational Page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "localizedDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Localized description of the organizational page. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URL of the organizational page within the LinkedIn application. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "logo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationVectorImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationvectorimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organizational page\u0027s logo. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no logo for a particular organizational page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationVectorImage",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationvectorimage"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organizational page\u0027s cover image. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or if there is no cover image for a particular organizational page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverImageCropMetadata",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rectangle",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#rectangle"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Cropped image metadata used for positioning the organizational page cover image. This will only be present if the organizational page doesn\u0027t have a cropped cover image vector asset and only has the original size.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "vanityName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organizational page\u0027s unique name used in URLs scoped to their specific underlying entities. This field will not be present if the organizational page is inaccessible by the viewer (i.e. a non admin trying to view an inactive product) or the underlying organizational page entities do not support vanity name functionality.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "primaryPageEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "unionorganization: OrganizationUrn, standardizedProduct: StandardizedProductUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the different entities eligible to be represented by an organizational page. Organization represents an organization (a company, school, etc). StandardizedProduct represents a product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp of when the resource/association/sub-resource moved into the specific lifecycle stage represented by this audit event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. a personUrn, organizationalPageUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the actor and must be authorized to act as the actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "unioncompany: OrganizationUrn, school: OrganizationUrn](../pages-profiles/organizations.md), showcase: OrganizationUrn](../pages-profiles/organizations.md)]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The organization in the combined entity with it\u0027s associated organization type. Company represents the organization is a company page. School represents the organization is a school page. Showcase represents the organization is a showcase page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "standardizedProduct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "StandardizedProductUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Denotes a product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberExperienceViewableState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CombinedOrganizationProductPageEntityMemberExperienceViewableState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the viewability of the combined organization and product page entity relationship in the member experience. Value enums include COMBINEDORGANIZATION",
+            "Links": [],
+            "Values": [
+              "COMBINED",
+              "ORGANIZATION"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Sub Schemas",
+      "Anchor": "sub-schemas",
+      "SectionPath": [
+        "Permissions",
+        "Schema",
+        "Sub Schemas"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "artifacts",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[OrganizationVectorArtifact]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#organizationvectorartifact"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of artifacts under the vector image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "attribution",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The localized image attribution (for copyright purposes).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "digitalmediaAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#image"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The media asset representation for the vector image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "focalPoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PercentageOffsetPoint",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08\u0026tabs=http%2Cnon-obfuscated#percentageoffsetpoint"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The percentage-based focal point for the vector image, with reference to the original center of the media.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationVectorArtifact",
+      "Anchor": "organizationvectorartifact",
+      "SectionPath": [
+        "Permissions",
+        "OrganizationVectorArtifact"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "expiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time at which this artifact is no longer available. If not set, the artifact does not expire.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "fileIdentifyingUrlPathSegment",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This contains the part of the URL which identifies file path required to retrieve an artifact.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of the image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of the image.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationVectorArtifact",
+      "Anchor": "organizationvectorartifact",
+      "SectionPath": [
+        "Permissions",
+        "OrganizationVectorArtifact"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "xOffsetPercentage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The percentage based horizontal shift from the original center of the visual media. Right shift is positive and left shift is negative.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "yOffsetPercentage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The percentage based vertical shift from the original center of the visual media. Up shift is positive and down shift is negative.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationVectorArtifact",
+      "Anchor": "organizationvectorartifact",
+      "SectionPath": [
+        "Permissions",
+        "OrganizationVectorArtifact"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "x",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "X coordinate of the corner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "y",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Y coordinate of the corner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "width",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Width of the rectangle.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "height",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Height of the rectangle.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationVectorArtifact",
+      "Anchor": "organizationvectorartifact",
+      "SectionPath": [
+        "Permissions",
+        "OrganizationVectorArtifact"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MediaStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Status of an Asset. Value enums include: PROCESSINGPROCESSING_FAILEDAVAILABLEWAITING_UPLOAD",
+            "Links": [],
+            "Values": [
+              "PROCESSING",
+              "PROCESSING_FAILED",
+              "AVAILABLE",
+              "WAITING_UPLOAD"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to download/view the media asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "downloadUrlExpiresAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Milliseconds since the epoch (1970-01-01 00:00 UTC) when the identifier expires.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationalPageProfiles/{ORGANIZATIONAL_PAGE_URN}?locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationalPageProfiles/{ORGANIZATIONAL_PAGE_URN}?locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022vanityName\u0022: \u0022test-product\u0022,\n  \u0022localizedName\u0022: \u0022Test\u0022,\n  \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n    \u0022time\u0022: 1666824070037\n  },\n  \u0022name\u0022: {\n    \u0022localized\u0022: {\n      \u0022it_IT\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022en_US\u0022: \u0022Test\u0022,\n      \u0022fa_IR\u0022: \u0022Today Action Test\u0022,\n      \u0022da_DK\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022hi_IN\u0022: \u0022Today Action1\u0022,\n      \u0022ar_AE\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022in_ID\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022cs_CZ\u0022: \u0022CZ Product Marketplace | A Marketplace for Products 1\u0022,\n      \u0022de_DE\u0022: \u0022German Product Marketplace | A Marketplace for Products 1\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022logo\u0022: {\n    \u0022digitalmediaAsset\u0022: {\n      \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n      \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n      \u0022status\u0022: \u0022AVAILABLE\u0022\n    },\n    \u0022artifacts\u0022: [\n      {\n        \u0022width\u0022: 200,\n        \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1701892954141/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n        \u0022height\u0022: 200\n      },\n      {\n        \u0022width\u0022: 100,\n        \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n        \u0022height\u0022: 100\n      },\n      {\n        \u0022width\u0022: 400,\n        \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n        \u0022height\u0022: 400\n      }\n    ]\n  },\n  \u0022description\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-product/\u0022,\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n    \u0022time\u0022: 1666824070037\n  },\n  \u0022primaryPageEntity\u0022: {\n    \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n  },\n  \u0022pageProfileEntity\u0022: {\n    \u0022combinedOrganizationProductPage\u0022: {\n      \u0022organizationEntity\u0022: {\n        \u0022company\u0022: \u0022urn:li:organization:123456\u0022\n      },\n      \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:123\u0022,\n      \u0022memberExperienceViewableState\u0022: \u0022COMBINED\u0022\n    }\n  },\n  \u0022localizedDescription\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022vanityName\u0022: \u0022test-product\u0022,\n  \u0022localizedName\u0022: \u0022Test\u0022,\n  \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n  \u0022created\u0022: {\n    \u0022time\u0022: 1666824070037\n  },\n  \u0022name\u0022: {\n    \u0022localized\u0022: {\n      \u0022it_IT\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022en_US\u0022: \u0022Test\u0022,\n      \u0022fa_IR\u0022: \u0022Today Action Test\u0022,\n      \u0022da_DK\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022hi_IN\u0022: \u0022Today Action1\u0022,\n      \u0022ar_AE\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022in_ID\u0022: \u0022Today Action Test Page1\u0022,\n      \u0022cs_CZ\u0022: \u0022CZ Product Marketplace | A Marketplace for Products 1\u0022,\n      \u0022de_DE\u0022: \u0022German Product Marketplace | A Marketplace for Products 1\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022logo\u0022: {\n    \u0022digitalmediaAsset\u0022: {\n      \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n      \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n      \u0022status\u0022: \u0022AVAILABLE\u0022\n    },\n    \u0022artifacts\u0022: [\n      {\n        \u0022width\u0022: 200,\n        \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1701892954141/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n        \u0022height\u0022: 200\n      },\n      {\n        \u0022width\u0022: 100,\n        \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n        \u0022height\u0022: 100\n      },\n      {\n        \u0022width\u0022: 400,\n        \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n        \u0022height\u0022: 400\n      }\n    ]\n  },\n  \u0022description\u0022: {\n    \u0022localized\u0022: {\n      \u0022en_US\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n    },\n    \u0022preferredLocale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    }\n  },\n  \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-product/\u0022,\n  \u0022lastModified\u0022: {\n    \u0022time\u0022: 1666824070037\n  },\n  \u0022primaryPageEntity\u0022: {\n    \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n  },\n  \u0022pageProfileEntity\u0022: {\n    \u0022combinedOrganizationProductPage\u0022: {\n      \u0022organizationEntity\u0022: {\n        \u0022company\u0022: \u0022urn:li:organization:123456\u0022\n      },\n      \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:123\u0022,\n      \u0022memberExperienceViewableState\u0022: \u0022COMBINED\u0022\n    }\n  },\n  \u0022localizedDescription\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/dmaOrganizationalPageProfiles?ids=List(ORGANIZATIONAL_PAGE_URN_1,ORGANIZATIONAL_PAGE_URN_2)\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationalPageProfiles?ids=List(ORGANIZATIONAL_PAGE_URN_1,ORGANIZATIONAL_PAGE_URN_2)\u0026locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:organizationalPage:123456\u0022: {\n      \u0022vanityName\u0022: \u0022test-product\u0022,\n      \u0022localizedName\u0022: \u0022Test\u0022,\n      \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022it_IT\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022en_US\u0022: \u0022Test\u0022,\n          \u0022fa_IR\u0022: \u0022Today Action Test\u0022,\n          \u0022da_DK\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022hi_IN\u0022: \u0022Today Action1\u0022,\n          \u0022ar_AE\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022in_ID\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022cs_CZ\u0022: \u0022CZ Product Marketplace | A Marketplace for Products 1\u0022,\n          \u0022de_DE\u0022: \u0022German Product Marketplace | A Marketplace for Products 1\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022logo\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 200,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1701892954141/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 200\n          },\n          {\n            \u0022width\u0022: 100,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 100\n          },\n          {\n            \u0022width\u0022: 400,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 400\n          }\n        ]\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-product/\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_abcd\u0022,\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022primaryPageEntity\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n      },\n      \u0022pageProfileEntity\u0022: {\n        \u0022combinedOrganizationProductPage\u0022: {\n          \u0022organizationEntity\u0022: {\n            \u0022company\u0022: \u0022urn:li:organization:123456\u0022\n          },\n          \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:123\u0022,\n          \u0022memberExperienceViewableState\u0022: \u0022COMBINED\u0022\n        }\n      },\n      \u0022localizedDescription\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n    },\n    \u0022urn:li:organizationalPage:987654\u0022: {\n      \u0022vanityName\u0022: \u0022test-product-2\u0022,\n      \u0022localizedName\u0022: \u0022Test product 2\u0022,\n      \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:987654\u0022,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_xyz\u0022,\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022it_IT\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022en_US\u0022: \u0022Test\u0022,\n          \u0022fa_IR\u0022: \u0022Today Action Test\u0022,\n          \u0022da_DK\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022hi_IN\u0022: \u0022Today Action1\u0022,\n          \u0022ar_AE\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022in_ID\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022cs_CZ\u0022: \u0022CZ Product Marketplace | A Marketplace for Products 2\u0022,\n          \u0022de_DE\u0022: \u0022German Product Marketplace | A Marketplace for Products 2\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022logo\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 200,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1701892954141/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 200\n          },\n          {\n            \u0022width\u0022: 100,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 100\n          },\n          {\n            \u0022width\u0022: 400,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 400\n          }\n        ]\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-product-2/\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_xyz\u0022,\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022primaryPageEntity\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:987654\u0022\n      },\n      \u0022pageProfileEntity\u0022: {\n        \u0022combinedOrganizationProductPage\u0022: {\n          \u0022organizationEntity\u0022: {\n            \u0022company\u0022: \u0022urn:li:organization:987654\u0022\n          },\n          \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:1000\u0022,\n          \u0022memberExperienceViewableState\u0022: \u0022COMBINED\u0022\n        }\n      },\n      \u0022localizedDescription\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022urn:li:organizationalPage:123456\u0022: 200,\n    \u0022urn:li:organizationalPage:987654\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022results\u0022: {\n    \u0022urn:li:organizationalPage:123456\u0022: {\n      \u0022vanityName\u0022: \u0022test-product\u0022,\n      \u0022localizedName\u0022: \u0022Test\u0022,\n      \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022it_IT\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022en_US\u0022: \u0022Test\u0022,\n          \u0022fa_IR\u0022: \u0022Today Action Test\u0022,\n          \u0022da_DK\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022hi_IN\u0022: \u0022Today Action1\u0022,\n          \u0022ar_AE\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022in_ID\u0022: \u0022Today Action Test Page1\u0022,\n          \u0022cs_CZ\u0022: \u0022CZ Product Marketplace | A Marketplace for Products 1\u0022,\n          \u0022de_DE\u0022: \u0022German Product Marketplace | A Marketplace for Products 1\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022logo\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 200,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1701892954141/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 200\n          },\n          {\n            \u0022width\u0022: 100,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 100\n          },\n          {\n            \u0022width\u0022: 400,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 400\n          }\n        ]\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-product/\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022primaryPageEntity\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n      },\n      \u0022pageProfileEntity\u0022: {\n        \u0022combinedOrganizationProductPage\u0022: {\n          \u0022organizationEntity\u0022: {\n            \u0022company\u0022: \u0022urn:li:organization:123456\u0022\n          },\n          \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:123\u0022,\n          \u0022memberExperienceViewableState\u0022: \u0022COMBINED\u0022\n        }\n      },\n      \u0022localizedDescription\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n    },\n    \u0022urn:li:organizationalPage:987654\u0022: {\n      \u0022vanityName\u0022: \u0022test-product-2\u0022,\n      \u0022localizedName\u0022: \u0022Test product 2\u0022,\n      \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:987654\u0022,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022it_IT\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022en_US\u0022: \u0022Test\u0022,\n          \u0022fa_IR\u0022: \u0022Today Action Test\u0022,\n          \u0022da_DK\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022hi_IN\u0022: \u0022Today Action1\u0022,\n          \u0022ar_AE\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022in_ID\u0022: \u0022Today Action Test Page2\u0022,\n          \u0022cs_CZ\u0022: \u0022CZ Product Marketplace | A Marketplace for Products 2\u0022,\n          \u0022de_DE\u0022: \u0022German Product Marketplace | A Marketplace for Products 2\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022logo\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 200,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1701892954141/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 200\n          },\n          {\n            \u0022width\u0022: 100,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 100\n          },\n          {\n            \u0022width\u0022: 400,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1701892954142/test_product_logo?e=1710374400\u0026v=beta\u0026t=RVH_IT3FBJJXyU7YU\u0022,\n            \u0022height\u0022: 400\n          }\n        ]\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-product-2/\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1666824070037\n      },\n      \u0022primaryPageEntity\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:987654\u0022\n      },\n      \u0022pageProfileEntity\u0022: {\n        \u0022combinedOrganizationProductPage\u0022: {\n          \u0022organizationEntity\u0022: {\n            \u0022company\u0022: \u0022urn:li:organization:987654\u0022\n          },\n          \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:1000\u0022,\n          \u0022memberExperienceViewableState\u0022: \u0022COMBINED\u0022\n        }\n      },\n      \u0022localizedDescription\u0022: \u0022- Hier k\u00F6nnen Sie eine Beschreibung Ihres Unternehmens einf\u00FCgen - 123444\u0022\n    }\n  },\n  \u0022statuses\u0022: {\n    \u0022urn:li:organizationalPage:123456\u0022: 200,\n    \u0022urn:li:organizationalPage:987654\u0022: 200\n  },\n  \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array[OrganizationalPageUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "List of OrganizationalPageUrn to retrieve all organizational page profiles.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizational-page-profiles?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(ORGANIZATIONAL_PAGE_URN_1,ORGANIZATIONAL_PAGE_URN_2)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Sample Request"
+      ],
+      "Text": "https://api.linkedin.com/rest/dmaOrganizationalPageProfiles?q=pageEntity\u0026pageEntity=(organization:{ORGANIZATION_URN})\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Sample Request"
+      ],
+      "Text": "curl --location \u0027https://api.linkedin.com/rest/dmaOrganizationalPageProfiles?q=pageEntity\u0026pageEntity=(organization:{ORGANIZATION_URN})\u0026locale=(language:en,country:US)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Sample Response"
+      ],
+      "Text": "Non Obfuscated\n\n\nObfuscated",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test-ventures123\u0022,\n      \u0022localizedName\u0022: \u0022Test Ventures\u0022,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_xyz\u0022,\n        \u0022time\u0022: 1679951295570\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022At Test Ventures Recruiting we partner with the fastest growing and most innovative tech startups in North America.\\n\\nWe specialize in recruiting for high tech positions in Engineering and Product Management.\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022primaryPageEntity\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n      },\n      \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n      \u0022coverImage\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1703077200000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 749,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u002227_750/0/1685734087877/test_ventures123_cover?e=1703077200\u0026v=beta\u0022,\n            \u0022height\u0022: 127\n          },\n          {\n            \u0022width\u0022: 108,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u002208_640/0/1685734087878/test_ventures123_cover?e=1703077200\u0026v=beta\u0022,\n            \u0022height\u0022: 18\n          },\n          {\n            \u0022width\u0022: 1128,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u002291_1128/0/1685734087878/test_ventures123_cover?e=1703077200\u0026v=beta\u0022,\n            \u0022height\u0022: 191\n          }\n        ]\n      },\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test Ventures\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022logo\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 200,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1631344793027?e=1710374400\u0026v=beta\u0026t=Yo-G4iH79pR86ItfryiKvqQIR\u0022,\n            \u0022height\u0022: 200\n          },\n          {\n            \u0022width\u0022: 100,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1631344793027?e=1710374400\u0026v=beta\u0026t=HZjM_Ks9gS-0GtNeRNZ_UZ-QBDg\u0022,\n            \u0022height\u0022: 100\n          },\n          {\n            \u0022width\u0022: 400,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1631344793027?e=1710374400\u0026v=beta\u0026t=vjay0OS0tu6vKRvRjOUChx4J9\u0022,\n            \u0022height\u0022: 400\n          }\n        ]\n      },\n      \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-ventures123/\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:_xyz\u0022,\n        \u0022time\u0022: 1695936096832\n      },\n      \u0022pageProfileEntity\u0022: {\n        \u0022combinedOrganizationProductPage\u0022: {\n          \u0022organizationEntity\u0022: {\n            \u0022company\u0022: \u0022urn:li:organization:123456\u0022\n          },\n          \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:10000\u0022,\n          \u0022memberExperienceViewableState\u0022: \u0022ORGANIZATION\u0022\n        }\n      },\n      \u0022localizedDescription\u0022: \u0022At Test Ventures Recruiting we partner with the fastest growing and most innovative tech startups in North America.\\n\\nWe specialize in recruiting for high tech positions in Engineering and Product Management.\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022start\u0022: 0,\n    \u0022count\u0022: 10,\n    \u0022links\u0022: []\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022vanityName\u0022: \u0022test-ventures123\u0022,\n      \u0022localizedName\u0022: \u0022Test Ventures\u0022,\n      \u0022created\u0022: {\n        \u0022time\u0022: 1679951295570\n      },\n      \u0022description\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022At Test Ventures Recruiting we partner with the fastest growing and most innovative tech startups in North America.\\n\\nWe specialize in recruiting for high tech positions in Engineering and Product Management.\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022primaryPageEntity\u0022: {\n        \u0022organization\u0022: \u0022urn:li:organization:123456\u0022\n      },\n      \u0022entityUrn\u0022: \u0022urn:li:organizationalPage:123456\u0022,\n      \u0022coverImage\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1703077200000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 749,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u002227_750/0/1685734087877/test_ventures123_cover?e=1703077200\u0026v=beta\u0022,\n            \u0022height\u0022: 127\n          },\n          {\n            \u0022width\u0022: 108,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u002208_640/0/1685734087878/test_ventures123_cover?e=1703077200\u0026v=beta\u0022,\n            \u0022height\u0022: 18\n          },\n          {\n            \u0022width\u0022: 1128,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u002291_1128/0/1685734087878/test_ventures123_cover?e=1703077200\u0026v=beta\u0022,\n            \u0022height\u0022: 191\n          }\n        ]\n      },\n      \u0022name\u0022: {\n        \u0022localized\u0022: {\n          \u0022en_US\u0022: \u0022Test Ventures\u0022\n        },\n        \u0022preferredLocale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        }\n      },\n      \u0022logo\u0022: {\n        \u0022digitalmediaAsset\u0022: {\n          \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/C4E0BAQHI/company-logo_400_400/0/16313447\u0022,\n          \u0022downloadUrlExpiresAt\u0022: 1710374400000,\n          \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022artifacts\u0022: [\n          {\n            \u0022width\u0022: 200,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022200_200/0/1631344793027?e=1710374400\u0026v=beta\u0026t=Yo-G4iH79pR86ItfryiKvqQIR\u0022,\n            \u0022height\u0022: 200\n          },\n          {\n            \u0022width\u0022: 100,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022100_100/0/1631344793027?e=1710374400\u0026v=beta\u0026t=HZjM_Ks9gS-0GtNeRNZ_UZ-QBDg\u0022,\n            \u0022height\u0022: 100\n          },\n          {\n            \u0022width\u0022: 400,\n            \u0022fileIdentifyingUrlPathSegment\u0022: \u0022400_400/0/1631344793027?e=1710374400\u0026v=beta\u0026t=vjay0OS0tu6vKRvRjOUChx4J9\u0022,\n            \u0022height\u0022: 400\n          }\n        ]\n      },\n      \u0022pageUrl\u0022: \u0022https://www.linkedin.com/company/test-ventures123/\u0022,\n      \u0022lastModified\u0022: {\n        \u0022time\u0022: 1695936096832\n      },\n      \u0022pageProfileEntity\u0022: {\n        \u0022combinedOrganizationProductPage\u0022: {\n          \u0022organizationEntity\u0022: {\n            \u0022company\u0022: \u0022urn:li:organization:123456\u0022\n          },\n          \u0022standardizedProduct\u0022: \u0022urn:li:standardizedProduct:10000\u0022,\n          \u0022memberExperienceViewableState\u0022: \u0022ORGANIZATION\u0022\n        }\n      },\n      \u0022localizedDescription\u0022: \u0022At Test Ventures Recruiting we partner with the fastest growing and most innovative tech startups in North America.\\n\\nWe specialize in recruiting for high tech positions in Engineering and Product Management.\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "Retrieve Organizational Page Profiles data",
+        "FINDER - pageEntity",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Name of the finder to retrieve data from. Value must be pageEntity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "q=pageEntity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "unionorganization: OrganizationUrn, standardizedProduct: StandardizedProductUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the different entities eligible to be represented by an organizational page. Organization represents an organization (a company, school, etc). StandardizedProduct represents a product.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "pageEntity=(organization:urn%3Ali%3Aorganization%3A1234)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-dma-data-portability-2026-08#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Used for retrieving localized fields. If unspecified, then the default locale of each product will be used.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "locale=(language:en,country:US)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch key parameter value is invalid.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid batch key.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

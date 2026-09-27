@@ -1,0 +1,773 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+  "Title": "Organization Relationship Statistics",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Relationship Statistics",
+      "Anchor": "organization-relationship-statistics",
+      "SectionPath": [],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Relationship Statistics",
+      "Anchor": "organization-relationship-statistics",
+      "SectionPath": [],
+      "Text": "How to determine which organizational pages are eligible for queries:\nTo find the organizations you can query relationship statistics for, please use OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of TalentBrandAuthorizationActionType.TALENT_BRAND_ANALYTICS_READ.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Relationship Statistics API returns relationship statistics between a given organization (company, school, or showcase page) and its related organizations for a specified time period. This API helps organization admins understand the connections and engagement between their organization and other companies on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "A primary use case is tracking page visitors who are employees of related organizations. Example: A company can see which other companies\u0027 employees are visiting its LinkedIn organization page, providing insights into talent pools, partnership opportunities, and competitive intelligence.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The relationship statistics are sorted by statistical type and include metrics like employee counts, visitor counts, and trends over time.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Names",
+      "Anchor": "feature-names",
+      "SectionPath": [
+        "Feature Overview",
+        "Feature Names"
+      ],
+      "Text": "This feature may also be referred to as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Names",
+      "Anchor": "feature-names",
+      "SectionPath": [
+        "Feature Overview",
+        "Feature Names"
+      ],
+      "Text": "Organization Relationship Analytics\nCompany Relationship Statistics\nTalent Brand Analytics (in the context of recruitment and employer branding)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Names",
+      "Anchor": "feature-names",
+      "SectionPath": [
+        "Feature Overview",
+        "Feature Names"
+      ],
+      "Text": "The service currently provides the following method:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Names",
+      "Anchor": "feature-names",
+      "SectionPath": [
+        "Feature Overview",
+        "Feature Names"
+      ],
+      "Text": "statisticSortType - Finds a list of relationship statistics between a given organization and its related organizations for a specified time period, sorted by the statistic type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Access reporting data for your organization\u2019s pages, including follower, visitor, and content analytics. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATORANALYSTLEAD_GEN_FORMS_MANAGER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR",
+              "ANALYST",
+              "LEAD_GEN_FORMS_MANAGER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URN of focus organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "relatedOrganization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "URN of the related organization whose relationship to the focus organization is being detailed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pageVisitorsEmployedByRelatedOrg",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationRelationshipStatisticsData",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TThe number of unique visitors to the focus organization\u0027s page who are currently employed by the related organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationRelationshipStatisticsData",
+      "Anchor": "organizationrelationshipstatisticsdata",
+      "SectionPath": [
+        "Feature Overview",
+        "Permissions",
+        "OrganizationRelationshipStatisticsData"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value of the statistic for the examined current time period (eg. 100 page views in the last 3 months).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "previousCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value of the statistic for the previous time period (eg. 200 page views during the time period of 6 to 3 months ago).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "percentChange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "double",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The percent change that occurred for the statistic over the previous and current time periods. This value is computed according to the formula: (count - previousCount) / previousCount, and can be negative to represent declining counts.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Relationship Statistics",
+      "Anchor": "retrieve-organization-relationship-statistics",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics"
+      ],
+      "Text": "Find a list of relationship statistics between a given organization and its related organizations for a certain time period, sorted by the statistic type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Organization Relationship Statistics",
+      "Anchor": "retrieve-organization-relationship-statistics",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics"
+      ],
+      "Text": "Clients must supply field projections to specify what fields they need. In the absence of a specified projection, this Finder returns HttpStatus 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_URN} must be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationRelationshipStatistics?q=statisticSortType\u0026organization={ORGANIZATION_URN}\u0026timeWindow=(value:THREE_MONTHS)\u0026sortType=(value:EMPLOYEE_INFLOWS)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOrganizationRelationshipStatistics?q=statisticSortType\u0026organization=urn%3Ali%3Aorganization%3A123\u0026timeWindow=(value:THREE_MONTHS)\u0026sortType=(value:EMPLOYEE_INFLOWS)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022elements\u0022 : [\n      {\n         \u0022organization\u0022 : \u0022urn:li:organization:34567\u0022,\n         \u0022pageVisitorsEmployedByRelatedOrg\u0022 : {\n            \u0022count\u0022 : 27,\n            \u0022percentChange\u0022 : 0,\n            \u0022previousCount\u0022 : 0\n         },\n         \u0022relatedOrganization\u0022 : \u0022urn:li:organization:1234\u0022\n      },\n      {\n         \u0022organization\u0022 : \u0022urn:li:organization:34567\u0022,\n         \u0022pageVisitorsEmployedByRelatedOrg\u0022 : {\n            \u0022count\u0022 : 6,\n            \u0022percentChange\u0022 : 0,\n            \u0022previousCount\u0022 : 0\n         },\n         \u0022relatedOrganization\u0022 : \u0022urn:li:organization:10002233\u0022\n      }\n   ],\n   \u0022paging\u0022 : {\n      \u0022count\u0022 : 10,\n      \u0022links\u0022 : [\n         {\n            \u0022href\u0022 : \u0022/rest/dmaOrganizationRelationshipStatistics?q=statisticSortType\u0026timeWindow=(value:ONE_YEAR)\u0026sortType=(value:FOCUS_PAGE_VISITORS_WHO_ARE_RELATED_EMPLOYEES)\u0026organization=urn%3Ali%3Aorganization%3A34567\u0026start=0\u0026count=10\u0022,\n            \u0022rel\u0022 : \u0022next\u0022,\n            \u0022type\u0022 : \u0022application/json\u0022\n         }\n      ],\n      \u0022start\u0022 : 0,\n      \u0022total\u0022 : 2\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization for which statistics is requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A123",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sortType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationRelationshipStatisticsSortType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enumeration of the different ways that OrganizationRelationshipStatistics can be sorted.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sortType=(value:EMPLOYEE_INFLOWS)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeWindow",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TalentBrandAnalyticsTimeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Talent brand analytics query time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timeWindow=(value:THREE_MONTHS)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "OrganizationRelationshipStatisticsSortType",
+      "Anchor": "organizationrelationshipstatisticssorttype",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "OrganizationRelationshipStatisticsSortType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "FOCUS_PAGE_VISITORS_WHO_ARE_RELATED_EMPLOYEES",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sort by the number of unique employees at each related organization that have viewed the focus organization\u0027s organziation page. Maps to OrganizationRelationshipStatistics.pageVisitorsEmployedByRelatedOrg.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TalentBrandAnalyticsTimeRange",
+      "Anchor": "talentbrandanalyticstimerange",
+      "SectionPath": [
+        "Retrieve Organization Relationship Statistics",
+        "TalentBrandAnalyticsTimeRange"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "THREE_MONTHS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range from present to 3 months ago.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SIX_MONTHS",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range from present to 6 months ago.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ONE_YEAR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time range from present to one year ago.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

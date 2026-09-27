@@ -1,0 +1,2472 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/release-notes",
+  "Title": "Compliance Program Announcements \u0026 Release Notes",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/announcements/data-restrictions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-activityurn",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-shareurn",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/instant-reposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/messages",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/people",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/ugcposts",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/support-content-topic",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-posts-and-actions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/organizations/organization-access-control",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/upcoming-release-and-deprecation-timeline",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/company-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-search",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/decoration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/invitations",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/communications/messages",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/member-rich-content-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api/positions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-vanity-name-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/article-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/media-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/digital-media-asset",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/message-schema",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/background-picture",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/location",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/position",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/profile/profile-video",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations/geo-typeahead",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/appreciation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ugc/marketplace-platform-opportunity",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/urn-namespace"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance Program Announcements \u0026 Release Notes",
+      "Anchor": "compliance-program-announcements--release-notes",
+      "SectionPath": [],
+      "Text": "On this page, you will find links and information about each Compliance API program release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile.location field sunset on /v2/me and /v2/people",
+      "Anchor": "profilelocation-field-sunset-on-v2me-and-v2people",
+      "SectionPath": [
+        "August 2026",
+        "Profile.location field sunset on /v2/me and /v2/people"
+      ],
+      "Text": "The top-level location field (for example, \u0022San Francisco Bay Area\u0022) is being removed from /v2/me and /v2/people responses. Partners currently relying on location may begin receiving an empty or null value and should migrate to the geoLocation field (for example, request projection=(geoLocation(geo~,autoGenerated))), which is already available on both endpoints. See the Profile API documentation for guidance on using geoLocation with the geo~ projection to retrieve the location display name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MultiPhoto/Carousel content model rollout: nested media payload for multi-image posts",
+      "Anchor": "multiphotocarousel-content-model-rollout-nested-media-payload-for-multi-image-posts",
+      "SectionPath": [
+        "July 2026",
+        "MultiPhoto/Carousel content model rollout: nested media payload for multi-image posts"
+      ],
+      "Text": "As part of an upstream, platform-wide MultiPhoto content model migration (rollout window: ~early June 2026), the processedActivity payload for multi-image (MultiPhoto/Carousel) posts returned by the Compliance Events API now nests the media entities under media~ \u2192 multiPhotoEntities[] \u2192 actionableContent \u2192 content \u2192 value \u2192 com.linkedin.content.MediaContent \u2192 media~ \u2192 elements, replacing the previously flat media~ \u2192 elements layout. Single-image posts are unaffected and continue to use the flat layout. Because Compliance Events serves the decorated snapshot archived at ingestion time, events ingested before the rollout retain the earlier flat structure. See the Compliance Events API overview and the UGC Posts resource reference for sample payloads and parsing guidance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legacy geo location lookup endpoints deprecated",
+      "Anchor": "legacy-geo-location-lookup-endpoints-deprecated",
+      "SectionPath": [
+        "May 2026",
+        "Legacy geo location lookup endpoints deprecated"
+      ],
+      "Text": "GET_ALL support on the legacy geo lookup endpoints (region, state, country/region, and country/region group) is deprecated. Migrate to the adTargetingEntities endpoint, which provides the new targeting typeahead finder and URN-to-name resolver API. See the ads targeting migration guide for the full endpoint mapping. These legacy endpoints will be completely sunset by August 31, 2026.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Instant Repost support on Compliance Events API",
+      "Anchor": "instant-repost-support-on-compliance-events-api",
+      "SectionPath": [
+        "January 2023",
+        "Instant Repost support on Compliance Events API"
+      ],
+      "Text": "LinkedIn members can repost existing posts from other members or LinkedIn pages. To know more about reposts, refer this LinkedIn Help Article. Reposts made my regulated members are now processed and archived as part of the Compliance Events API. More details with sample request and responses are documented here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data restrictions on Compliance Snapshot APIs",
+      "Anchor": "data-restrictions-on-compliance-snapshot-apis",
+      "SectionPath": [
+        "September 2023",
+        "Data restrictions on Compliance Snapshot APIs"
+      ],
+      "Text": "As part of our commitment to delivering the best possible experience to our members we continuously evaluate and refine our APIs. In this regard, we will be imposing data restrictions on the UgcPosts API, Social Actions API, and Profile API effective September 15th, 2023.\nMore details on specific restrictions are detailed here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Multi Photo support in UGC Posts API",
+      "Anchor": "multi-photo-support-in-ugc-posts-api",
+      "SectionPath": [
+        "September 2023",
+        "Multi Photo support in UGC Posts API"
+      ],
+      "Text": "UGC Posts API now supports retrieval of image data for user generated post with multiple photos. More details with sample request and responses are documented here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message edits and deletes on Compliance Events",
+      "Anchor": "message-edits-and-deletes-on-compliance-events",
+      "SectionPath": [
+        "June 2023",
+        "Message edits and deletes on Compliance Events"
+      ],
+      "Text": "The Compliance Events API now surfaces events when a regulated member edits or deletes a sent message. The values of the method field of the compliance event would be UPDATE and DELETE accordingly. For information and sample compliance events, please refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Pages Messaging on Compliance Events",
+      "Anchor": "support-for-pages-messaging-on-compliance-events",
+      "SectionPath": [
+        "June 2023",
+        "Support for Pages Messaging on Compliance Events"
+      ],
+      "Text": "LinkedIn has a new feature that allows users to message LinkedIn Company Pages. Archiving messages sent and received between a regulated member and a LinkedIn Company page are now supported via the complianceEvents API. More more information and sample compliance events, please refer here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Pages Messaging on Compliance Events",
+      "Anchor": "support-for-pages-messaging-on-compliance-events",
+      "SectionPath": [
+        "June 2023",
+        "Support for Pages Messaging on Compliance Events"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support for Pages Messaging on Compliance Events",
+      "Anchor": "support-for-pages-messaging-on-compliance-events",
+      "SectionPath": [
+        "June 2023",
+        "Support for Pages Messaging on Compliance Events"
+      ],
+      "Text": "Compliance events for use cases where a regulated member sends messages on behalf of a LinkedIn Company Page to other LinkedIn users are still under development.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "May 2023",
+      "Anchor": "may-2023",
+      "SectionPath": [
+        "May 2023"
+      ],
+      "Text": "Updated Compliance FAQ page with new set of frequently asked questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Event on compliance events",
+      "Anchor": "linkedin-event-on-compliance-events",
+      "SectionPath": [
+        "February, 2023",
+        "LinkedIn Event on compliance events"
+      ],
+      "Text": "The Compliance Events API now surfaces events detailing LinkedIn events created by a regulated users. This includes LinkedIn events created by a regulated user themselves and also LinkedIn events created by regulated users on behalf of an organization. For more information, please see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Cover Story",
+      "Anchor": "profile-cover-story",
+      "SectionPath": [
+        "September 6, 2021",
+        "Profile Cover Story"
+      ],
+      "Text": "LinkedIn allows members to add a short introductory video as their Cover Story in addition to their profile pictures. The Profile API now has an additional field profileVideoInfo to provide details regarding the member\u0027s cover story. For more information on the Profile Video fields, please see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Contextual decoration of entities shared on messages",
+      "Anchor": "contextual-decoration-of-entities-shared-on-messages",
+      "SectionPath": [
+        "September 6, 2021",
+        "Contextual decoration of entities shared on messages"
+      ],
+      "Text": "Compliance Events API for messages would now surface additional information for certain LinkedIn entities (e.g. Audio and Video messages) shared via messages. For more information, please see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Entity ACL API Migration",
+      "Anchor": "organization-entity-acl-api-migration",
+      "SectionPath": [
+        "September 6, 2021",
+        "Organization Entity ACL API Migration"
+      ],
+      "Text": "/organizationalEntityAcls API will be deprecated on November 30 2021. Please use Organization Access Control API \u0027/organizationAcls\u0027 to fetch a member\u0027s or an organization\u0027s access control information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging Events Backfilled on Compliance Events API",
+      "Anchor": "messaging-events-backfilled-on-compliance-events-api",
+      "SectionPath": [
+        "June 21, 2021",
+        "Messaging Events Backfilled on Compliance Events API"
+      ],
+      "Text": "The Compliance Events API experienced an issue from March 08, 2021 to April 28, 2021. Due to this, Messaging events corresponding to messages sent without any text and only attachments were not captured.\nLinkedIn has completed backfilling the missing Messaging events during the affected time. All missing events would have funnelled into each member\u0027s Compliance Events API feed during June 16, 2021 and June 17, 2021",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging Events Backfilled on Compliance Events API",
+      "Anchor": "messaging-events-backfilled-on-compliance-events-api",
+      "SectionPath": [
+        "June 21, 2021",
+        "Messaging Events Backfilled on Compliance Events API"
+      ],
+      "Text": "The capturedAt and processedAt timestamp will be the time of backfill, which would be during June 16, 2021 and June 17, 2021. The activity and processedActivity fields of the Messaging events will contain createdAt and deliveredAt that timestamp when the activity occurred, which will be between March 08,2021 to April 28, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Search and Geo Typeahead API Migration",
+      "Anchor": "organization-search-and-geo-typeahead-api-migration",
+      "SectionPath": [
+        "May 28, 2021",
+        "Organization Search and Geo Typeahead API Migration"
+      ],
+      "Text": "Organization Search API will be deprecated on August 31, 2021. Please use Company Search API to find organization entities.\n\nGeoTypeahead API \u0027/geoTypeahead?q=federated\u0027 will be deprecated on August 31, 2021. Please use GeoTypeahead API \u0027/geoTypeahead?q=search\u0027 to find the best matching geo URNs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging Events Backfill on Compliance Events API",
+      "Anchor": "messaging-events-backfill-on-compliance-events-api",
+      "SectionPath": [
+        "April 1, 2021",
+        "Messaging Events Backfill on Compliance Events API"
+      ],
+      "Text": "Due to the recent outage in Compliance Events API, LinkedIn will begin backfilling the missing Messaging events during that time starting April 2, 10:00am PST. This means all the missing events will slowly funnel into each member\u0027s Compliance Events API feed after April 2.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging Events Backfill on Compliance Events API",
+      "Anchor": "messaging-events-backfill-on-compliance-events-api",
+      "SectionPath": [
+        "April 1, 2021",
+        "Messaging Events Backfill on Compliance Events API"
+      ],
+      "Text": "The capturedAt and processedAt timestamp will be the present time, which will be on or after April 2. The activity and processedActivity fields of the Messaging events will contain createdAt and deliveredAt that timestamp when the activity occurred, which will be between March 17, 9:30am to March 19, 2:20pm PST.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messaging Events Backfill on Compliance Events API",
+      "Anchor": "messaging-events-backfill-on-compliance-events-api",
+      "SectionPath": [
+        "April 1, 2021",
+        "Messaging Events Backfill on Compliance Events API"
+      ],
+      "Text": "Due to this backfill, you may experience some duplicate Messaging events, specifically around the start and end time of the outage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Events Outage on Compliance Events API",
+      "Anchor": "message-events-outage-on-compliance-events-api",
+      "SectionPath": [
+        "March 19, 2021",
+        "Message Events Outage on Compliance Events API"
+      ],
+      "Text": "The Compliance Events API experienced an outage from March 17, 9:30am to March 19, 2:20pm PST. Due to this outage, messaging activities that occurred during this time are not surfaced. New messaging activities are now surfacing as expected. We are investigating on possible remediation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Duration Increase on Compliance Events API",
+      "Anchor": "duration-increase-on-compliance-events-api",
+      "SectionPath": [
+        "March 17, 2021",
+        "Duration Increase on Compliance Events API"
+      ],
+      "Text": "The Compliance Events API now supports up to 30 days of past LinkedIn activities, up from the previously supported 15 days.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Providing Services",
+      "Anchor": "providing-services",
+      "SectionPath": [
+        "March 17, 2021",
+        "Providing Services"
+      ],
+      "Text": "LinkedIn members can display services they provide for free on their profiles. The Compliance Events API now surfaces the Providing services activities for archiving.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "December 17, 2020",
+      "Anchor": "december-17-2020",
+      "SectionPath": [
+        "December 17, 2020"
+      ],
+      "Text": "To improve our network infrastructure and better serve API traffic globally, LinkedIn will begin rejecting API requests not meeting new criteria starting March 31, 2021. Check out the Query Tunneling Migration Guide for more information on how to ensure your LinkedIn API requests comply with the new maximum length requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Media Migration",
+      "Anchor": "profile-media-migration",
+      "SectionPath": [
+        "April 15, 2020",
+        "Profile Media Migration"
+      ],
+      "Text": "LinkedIn recently released the Featured section to allow members to showcase samples of their work on their profiles. With this, LinkedIn is deprecating Member Rich Media APIand MemberRichMedia content on Compliance Events API on July, 13, 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Media Migration",
+      "Anchor": "profile-media-migration",
+      "SectionPath": [
+        "April 15, 2020",
+        "Profile Media Migration"
+      ],
+      "Text": "We are introducing Member Rich Content API that will replace this existing feature. For more information on migration, please see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API Field Deprecation",
+      "Anchor": "ugc-post-api-field-deprecation",
+      "SectionPath": [
+        "February 26, 2020",
+        "UGC Post API Field Deprecation"
+      ],
+      "Text": "ugcOrigin and origin field will be deprecated and removed from the UGC Post API on March 26, 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update - Social Action Image Comment Events",
+      "Anchor": "update---social-action-image-comment-events",
+      "SectionPath": [
+        "February 26, 2020",
+        "Update - Social Action Image Comment Events"
+      ],
+      "Text": "After evaluating the impact of the December 17, 2019 to January 7, 2020 outage, LinkedIn will not provide data to remediate the missing image url from the select comment activities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature Release",
+      "Anchor": "replayer-feature-release",
+      "SectionPath": [
+        "February 26, 2020",
+        "Replayer Feature Release"
+      ],
+      "Text": "The Replayer Feature in Compliance Events API is live! This feature is slowly ramping and will be enabled to all members using the Compliance Events API by March 3, 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages API Release",
+      "Anchor": "messages-api-release",
+      "SectionPath": [
+        "January 21, 2020",
+        "Messages API Release"
+      ],
+      "Text": "The Messages API is now available! Please refer to the message attachment creation documentation for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Replayer Feature Update",
+      "Anchor": "replayer-feature-update",
+      "SectionPath": [
+        "January 21, 2020",
+        "Replayer Feature Update"
+      ],
+      "Text": "The Replayer release date has been updated from January 21, 2020 to February 26, 2020.\nThe activityStatus field is now available. This field was previously named as status in the Compliance Events API documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Action Image Comment Events",
+      "Anchor": "social-action-image-comment-events",
+      "SectionPath": [
+        "January 21, 2020",
+        "Social Action Image Comment Events"
+      ],
+      "Text": "From December 17, 2019 to January 7, 2020, we experienced an outage with all image comment creation from linkedin.com such that comments with images did not surface the url of the image in the content object. This issue has now been fixed but the existing images are still affected. We are making efforts to remediate this.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Messages API",
+      "Anchor": "messages-api",
+      "SectionPath": [
+        "December 20, 2019",
+        "Messages API"
+      ],
+      "Text": "LinkedIn is introducing the Messages API for connection-to-connection messages on January 15, 2020. This API allows members to create messages to one or more first-degree connections or reply to existing conversations.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V1 Message and Sales Navigator API Deprecation",
+      "Anchor": "v1-message-and-sales-navigator-api-deprecation",
+      "SectionPath": [
+        "December 20, 2019",
+        "V1 Message and Sales Navigator API Deprecation"
+      ],
+      "Text": "With the upcoming release of the Messages API and the availability of the existing Messaging Activities on Compliance Events API, LinkedIn will deprecate and disable access to the remaining V1 APIs on April 1, 2020:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V1 Message and Sales Navigator API Deprecation",
+      "Anchor": "v1-message-and-sales-navigator-api-deprecation",
+      "SectionPath": [
+        "December 20, 2019",
+        "V1 Message and Sales Navigator API Deprecation"
+      ],
+      "Text": "Mailbox APIs\n\nReading Member Mailbox\nMessaging Between Connections\nOther Messaging Functionalities\n\n\nSales Navigator Mailbox API",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Actions Comment Events Outage on Compliance Events API",
+      "Anchor": "social-actions-comment-events-outage-on-compliance-events-api",
+      "SectionPath": [
+        "December 20, 2019",
+        "Social Actions Comment Events Outage on Compliance Events API"
+      ],
+      "Text": "Social Actions Comment Events on the Compliance Events API experienced a lapse in data content from September 17, 2019 to December 16, 2019. Specifically, comments with images did not surface the url of the image in the content object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Actions Comment Events Outage on Compliance Events API",
+      "Anchor": "social-actions-comment-events-outage-on-compliance-events-api",
+      "SectionPath": [
+        "December 20, 2019",
+        "Social Actions Comment Events Outage on Compliance Events API"
+      ],
+      "Text": "Expected Response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Social Actions Comment Events Outage on Compliance Events API",
+      "Anchor": "social-actions-comment-events-outage-on-compliance-events-api",
+      "SectionPath": [
+        "December 20, 2019",
+        "Social Actions Comment Events Outage on Compliance Events API"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022content\u0022: [\n      {\n        \u0022type\u0022: \u0022IMAGE\u0022,\n        \u0022url\u0022: \u0022https://sample-image-url.com/image/123456789\u0022\n      }\n    ],\n    \u0022message\u0022 : {\n      \u0022text\u0022: \u0022This is a sample comment with an image\u0022\n    },\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Actions Comment Events Outage on Compliance Events API",
+      "Anchor": "social-actions-comment-events-outage-on-compliance-events-api",
+      "SectionPath": [
+        "December 20, 2019",
+        "Social Actions Comment Events Outage on Compliance Events API"
+      ],
+      "Text": "Actual Response where the content array does not include the type or url.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Social Actions Comment Events Outage on Compliance Events API",
+      "Anchor": "social-actions-comment-events-outage-on-compliance-events-api",
+      "SectionPath": [
+        "December 20, 2019",
+        "Social Actions Comment Events Outage on Compliance Events API"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022content\u0022: [],\n    \u0022message\u0022 : {\n      \u0022text\u0022: \u0022This is a sample comment with an image\u0022\n    },\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecation of legacy location field for Marketplace Platform Opportunities",
+      "Anchor": "deprecation-of-legacy-location-field-for-marketplace-platform-opportunities",
+      "SectionPath": [
+        "December 20, 2019",
+        "Deprecation of legacy location field for Marketplace Platform Opportunities"
+      ],
+      "Text": "On November 26, 2019, we announced Marketplace Platform Opportunities will migrate to the new Bing Geo entity with the addition of the geo field. With this, we will deprecate and remove the legacy location field on April 1, 2020. After this date, geo field will be the only source of truth for this entity\u0027s geographical location display name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking API Change Policy Guideline",
+      "Anchor": "breaking-api-change-policy-guideline",
+      "SectionPath": [
+        "December 20, 2019",
+        "Breaking API Change Policy Guideline"
+      ],
+      "Text": "As our APIs evolve, LinkedIn will make reasonable efforts to notify you of breaking changes in advance with sufficient time to adapt to these changes. We may make changes without prior notice if the change is considered non-breaking, or if it is being made to address critical product, security or privacy bugs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking API Change Policy Guideline",
+      "Anchor": "breaking-api-change-policy-guideline",
+      "SectionPath": [
+        "December 20, 2019",
+        "Breaking API Change Policy Guideline"
+      ],
+      "Text": "Please review this guide carefully to understand what kind of changes we consider non-breaking, and ensure that your application can adapt automatically to any change we categorize as non-breaking.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permission w_fullprofile Deprecation",
+      "Anchor": "permission-w_fullprofile-deprecation",
+      "SectionPath": [
+        "December 6, 2019",
+        "Permission w_fullprofile Deprecation"
+      ],
+      "Text": "LinkedIn will deprecate and remove the legacy w_fullprofile permission from all Compliance applications on March 6, 2020. This permission provides access to the Profile Edit API and was used to maintain backward compatibility during the V1 to V2 migration. Access to the Profile Edit API has been and will continue to be from w_compliance going forward. Requests to Profile Edit API will not be affected if the access token has w_compliance granted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permission w_fullprofile Deprecation",
+      "Anchor": "permission-w_fullprofile-deprecation",
+      "SectionPath": [
+        "December 6, 2019",
+        "Permission w_fullprofile Deprecation"
+      ],
+      "Text": "If your application is currently requesting w_fullprofile during authorization, please remove it to prevent authorization error before March 6,2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API Replayer Feature Update",
+      "Anchor": "compliance-events-api-replayer-feature-update",
+      "SectionPath": [
+        "December 6, 2019",
+        "Compliance Events API Replayer Feature Update"
+      ],
+      "Text": "The Compliance Events API Replayer Feature will ramp on January 21, 2020 instead of the prior announcement date of December 6, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API Replayer Feature Update",
+      "Anchor": "compliance-events-api-replayer-feature-update",
+      "SectionPath": [
+        "December 6, 2019",
+        "Compliance Events API Replayer Feature Update"
+      ],
+      "Text": "We will also introduce the following to help partners transition smoothly:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API Replayer Feature Update",
+      "Anchor": "compliance-events-api-replayer-feature-update",
+      "SectionPath": [
+        "December 6, 2019",
+        "Compliance Events API Replayer Feature Update"
+      ],
+      "Text": "New status field to denote each event\u0027s process state.\n\nCan be one of the following: SUCCESS, FAILURE, or SUCCESSFUL_REPLAY.\nTo prevent archiving duplicate events, partners can filter out reprocessed events by filtering out SUCCESSFUL_REPLAY events until they are ready to utilize this feature.\n\n\nReprocessed events will only appear in the API response if it\u0027s successfully reprocessed with no processing failures. This means the maximum number of Compliance Events for a unique activity is two.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Improvements to Messaging Activities on Compliance Events API",
+      "Anchor": "improvements-to-messaging-activities-on-compliance-events-api",
+      "SectionPath": [
+        "November 26, 2019",
+        "Improvements to Messaging Activities on Compliance Events API"
+      ],
+      "Text": "The following fixes have been made to the Messaging Activities on Compliance Events API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Improvements to Messaging Activities on Compliance Events API",
+      "Anchor": "improvements-to-messaging-activities-on-compliance-events-api",
+      "SectionPath": [
+        "November 26, 2019",
+        "Improvements to Messaging Activities on Compliance Events API"
+      ],
+      "Text": "Decoration of salesIdentity URN in to provide the Sales Navigator contract information.\nReceive inbound messages for a Sales Navigator account.\nAll message attachments are now downloadable. See here for more information.\nUpdated fields and schema to all Messages events. See here on Compliance Events integration and here for updated message schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "We are migrating our location taxonomy to Bing Geo. This location taxonomy relies on the Geo API and Geo Typeahead API which reference Geo URN entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "Multiple APIs which make use of location taxonomy will experience differing migration timelines throughout the Bing Geo migration. Profile API is the first API to start the Bing Geo migration. The new and legacy Profile fields are outlined below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "location to geoLocation\npositions.location and positions.locationName to positions.geoLocations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "To determine the location display name for a profile, refer here for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "To update a member\u0027s profile:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bing Geo Migration - Profile",
+      "Anchor": "bing-geo-migration---profile",
+      "SectionPath": [
+        "November 26, 2019",
+        "Bing Geo Migration - Profile"
+      ],
+      "Text": "Refer to here for geoLocation.\nRefer to here for positions.geoPositionLocation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "Marketplace Platform Opportunities will migrate to the new Bing Geo entity with the addition of the geo field. We will maintain backward compatibility to the location field as the Bing Geo\u0027s geo field populates. Please see the Marketplace Platform Opportunity Schema for more information. See below for a sample response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "{\n  \u0022media\u0022: \u0022urn:li:marketplacePlatformOpportunity:(123456789,SERVICE_MARKETPLACE)\u0022,\n  \u0022media~\u0022: {\n    ...\n    \u0022location\u0022: {\n      \u0022region~\u0022: {\n        \u0022country\u0022: \u0022urn:li:country:us\u0022,\n        \u0022name\u0022: {\n          \u0022locale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          },\n          \u0022value\u0022: \u0022San Francisco Bay Area\u0022\n        },\n        \u0022id\u0022: 84,\n        \u0022$URN\u0022: \u0022urn:li:region:84\u0022,\n        \u0022states\u0022: [\n          \u0022urn:li:state:(urn:li:country:us,CA)\u0022\n        ]\n      },\n      \u0022region\u0022: \u0022urn:li:region:84\u0022\n    },\n    \u0022geo\u0022: \u0022urn:li:geo:103644278\u0022,\n    \u0022geo~\u0022: {\n      \u0022id\u0022: 103644278,\n      \u0022defaultLocalizedName\u0022: {\n        \u0022locale\u0022: {\n          \u0022country\u0022: \u0022US\u0022,\n          \u0022language\u0022: \u0022en\u0022\n        },\n        \u0022value\u0022: \u0022San Francisco Bay Area\u0022\n      }\n    }\n  },\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "Bing Geo Targeting on UGC Post - Live Events posts and other UGC Posts have the ability to target to Bing Geo locations as well as legacy locations. Bing Geo locations will be classified under the geoLocations field whereas legacy location will be under locations field in targetAudience:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "{\n  ...\n  \u0022targetAudience\u0022: {\n    \u0022targetedEntities\u0022: [\n      {\n        \u0022locations\u0022: [\n          \u0022urn:li:country:th\u0022\n        ],\n        \u0022locations~\u0022: [\n          {\n            \u0022countryGroup\u0022: \u0022urn:li:countryGroup:AS\u0022,\n            \u0022countryCode\u0022: \u0022th\u0022,\n            \u0022name\u0022: {\n              \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022value\u0022: \u0022Thailand\u0022\n            },\n            \u0022$URN\u0022: \u0022urn:li:country:th\u0022\n          }\n        ],\n        \u0022geoLocations\u0022: [\n          \u0022urn:li:geo:90000084\u0022\n        ],\n        \u0022geoLocations~\u0022: [\n          {\n            \u0022id\u0022: 103644278,\n            \u0022defaultLocalizedName\u0022: {\n              \u0022locale\u0022: {\n                \u0022country\u0022: \u0022US\u0022,\n                \u0022language\u0022: \u0022en\u0022\n              },\n              \u0022value\u0022: \u0022Thailand\u0022\n            }\n          }\n        ],\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "Event Creation Timestamp of Shares - All posts, comments, and likes related to Events will return the event\u0027s timestamp creation. Below is a snippet sample response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "{\n  \u0022containerEntity\u0022: \u0022urn:li:event:123456789\u0022,\n  \u0022containerEntity~\u0022: {\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:2qXA98-mVk\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1569542293839\n    },\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "Posts a group and social actions of these posts of a group are now decorated. Below is a snippet sample response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Events API processedActivity Decoration Updates",
+      "Anchor": "compliance-events-api-processedactivity-decoration-updates",
+      "SectionPath": [
+        "November 26, 2019",
+        "Compliance Events API processedActivity Decoration Updates"
+      ],
+      "Text": "{\n  \u0022media\u0022: \u0022urn:li:group:112345\u0022,\n  \u0022media~\u0022: {\n    \u0022created\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1522194788\n    },\n    \u0022description\u0022: {\n      \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022value\u0022: \u0022group description\u0022\n    },\n    \u0022id\u0022: 112345,\n    \u0022lastModified\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:123ABC\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022time\u0022: 1522194788\n    },\n    \u0022title\u0022: {\n      \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022value\u0022: \u0022Group Title\u0022\n    },\n    \u0022type\u0022: \u0022STANDARD\u0022\n  },\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "November 13, 2019",
+      "Anchor": "november-13-2019",
+      "SectionPath": [
+        "November 13, 2019"
+      ],
+      "Text": "LinkedIn Compliance Server powering the Compliance Events API experienced an outage on November 12, from 1:00pm to 6:00pm PST. Due to this outage, events during this time were delayed from being surfaced and some events were not processed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share URN decoration changes on Compliance Events API",
+      "Anchor": "share-urn-decoration-changes-on-compliance-events-api",
+      "SectionPath": [
+        "November 6, 2019",
+        "Share URN decoration changes on Compliance Events API"
+      ],
+      "Text": "Compliance Events API is now returning UGCPost schema decoration for all new share URNs. Old activities with share URNs will continue to return the legacy share schema decoration. For more information, see here. This change was deployed today at 4:45 PM PST.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API Replayer Feature",
+      "Anchor": "compliance-events-api-replayer-feature",
+      "SectionPath": [
+        "November 6, 2019",
+        "Compliance Events API Replayer Feature"
+      ],
+      "Text": "Compliance Events API is introducing the Replayer Feature on December 6, 2019. This feature provides the ability to reprocess events that have already occurred and surfaced in the API response. It will provide more information on past events that were not previously available during the initial compliance capture and process.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rich Media Upload Deprecation and Migration",
+      "Anchor": "rich-media-upload-deprecation-and-migration",
+      "SectionPath": [
+        "November 6, 2019",
+        "Rich Media Upload Deprecation and Migration"
+      ],
+      "Text": "LinkedIn launched the Media Assets API to host media types such as images and videos to replace the Rich Media Upload API. We are deprecating the existing Rich Media Upload API on January 30, 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 13, 2019",
+      "Anchor": "september-13-2019",
+      "SectionPath": [
+        "September 13, 2019"
+      ],
+      "Text": "From August 22 to September 12, Compliance Events API experienced an outage with resourceName ugcPosts activities. Specifically, the majority of resourceName ugcPosts with share Urn activities are missing (see below for an example). Since 3:20PM PST on September, 12, the API has recovered and is now returning share Urn entities on resourceName ugcPosts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "September 13, 2019",
+      "Anchor": "september-13-2019",
+      "SectionPath": [
+        "September 13, 2019"
+      ],
+      "Text": "{\n  \u0022resourceId\u0022: \u0022urn:li:share:\u003Cid\u003E\u0022,\n  \u0022method\u0022: \u0022CREATE\u0022, //can be UPDATE or DELETE as well\n  \u0022resourceName\u0022: \u0022ugcPosts\u0022,\n  \u0022resourceUri\u0022: \u0022/ugcPosts/urn:li:share:\u003Cid\u003E\u0022,\n  \u0022activity\u0022: {...},\n  \u0022processedActivity\u0022: {...},\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 13, 2019",
+      "Anchor": "september-13-2019",
+      "SectionPath": [
+        "September 13, 2019"
+      ],
+      "Text": "Fortunately, these shares were and still are being surfaced on resourceName shares activities. If you are using resourceName shares activities on Compliance Events API, you are NOT affected by this outage. Back on March 13, 2018, we mentioned that there are share activity duplication under both resourceName shares and ugcPosts, and all posts will appear as ugcPosts. As a result, we are aware that some partners have proactively stopped archiving for any resourceName shares and you are impacted by this outage.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 13, 2019",
+      "Anchor": "september-13-2019",
+      "SectionPath": [
+        "September 13, 2019"
+      ],
+      "Text": "Unfortunately, these activities cannot resurface on the Compliance Events API. If you are impacted, the only way to remediate and retrieve these shares are to use either:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 13, 2019",
+      "Anchor": "september-13-2019",
+      "SectionPath": [
+        "September 13, 2019"
+      ],
+      "Text": "UGCPost API - Find UGC Posts by Authors\nShare API - Find Shares by Owner",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 13, 2019",
+      "Anchor": "september-13-2019",
+      "SectionPath": [
+        "September 13, 2019"
+      ],
+      "Text": "You will need to traverse through the API response back to August 22 to capture all possible missing share posts.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 10, 2019",
+      "Anchor": "september-10-2019",
+      "SectionPath": [
+        "September 10, 2019"
+      ],
+      "Text": "There was a V1 API outage today from 11:30 AM to 2:10 PM PST. During this time, any V1 API requests may have returned 410 with a message of This resource is no longer available under v1 APIs. This has since been resolved.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Release and Deprecation Timeline",
+      "Anchor": "upcoming-release-and-deprecation-timeline",
+      "SectionPath": [
+        "September 9, 2019",
+        "Upcoming Release and Deprecation Timeline"
+      ],
+      "Text": "Please see here for all the upcoming release and deprecation timeline dates.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to Share URN decoration on Compliance Events API on November 6, 2019",
+      "Anchor": "changes-to-share-urn-decoration-on-compliance-events-api-on-november-6-2019",
+      "SectionPath": [
+        "September 9, 2019",
+        "Changes to Share URN decoration on Compliance Events API on November 6, 2019"
+      ],
+      "Text": "Please see here for additional information regarding this upcoming change.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API - Social Actions of Work Anniversary and Job Change Update",
+      "Anchor": "compliance-events-api---social-actions-of-work-anniversary-and-job-change-update",
+      "SectionPath": [
+        "August 7, 2019",
+        "Compliance Events API - Social Actions of Work Anniversary and Job Change Update"
+      ],
+      "Text": "Compliance Events API now surfaces all Social Actions (comments and likes) activities performed by other members on a regulated member\u0027s work anniversary and job change update.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to Profile Picture on Compliance Events API",
+      "Anchor": "changes-to-profile-picture-on-compliance-events-api",
+      "SectionPath": [
+        "July 26, 2019",
+        "Changes to Profile Picture on Compliance Events API"
+      ],
+      "Text": "Compliance Events API events are now only returning the largest profile picture size (800x800). The information contained within the profile picture displayImage~ object remains the same.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share URN decoration changes on Compliance Events API on November 6, 2019",
+      "Anchor": "share-urn-decoration-changes-on-compliance-events-api-on-november-6-2019",
+      "SectionPath": [
+        "July 26, 2019",
+        "Share URN decoration changes on Compliance Events API on November 6, 2019"
+      ],
+      "Text": "Compliance Events API is currently returning this specific schema for all decorations to share URNs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Share URN decoration changes on Compliance Events API on November 6, 2019",
+      "Anchor": "share-urn-decoration-changes-on-compliance-events-api-on-november-6-2019",
+      "SectionPath": [
+        "July 26, 2019",
+        "Share URN decoration changes on Compliance Events API on November 6, 2019"
+      ],
+      "Text": "{\n  \u0022domainEntity\u0022: \u0022urn:li:share:123456\u0022,\n  \u0022domainEntity~\u0022: {\n    \u0022owner\u0022: ...,\n    \u0022created\u0022: {...},\n    \u0022serviceProvider\u0022: ...,\n    \u0022text\u0022: {...},\n    \u0022lastModified\u0022: {...},\n    \u0022distribution\u0022: {...},\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Share URN decoration changes on Compliance Events API on November 6, 2019",
+      "Anchor": "share-urn-decoration-changes-on-compliance-events-api-on-november-6-2019",
+      "SectionPath": [
+        "July 26, 2019",
+        "Share URN decoration changes on Compliance Events API on November 6, 2019"
+      ],
+      "Text": "On November 6, 2019, the schema will change to that of UGCPost for all share URNs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Share URN decoration changes on Compliance Events API on November 6, 2019",
+      "Anchor": "share-urn-decoration-changes-on-compliance-events-api-on-november-6-2019",
+      "SectionPath": [
+        "July 26, 2019",
+        "Share URN decoration changes on Compliance Events API on November 6, 2019"
+      ],
+      "Text": "{\n  \u0022domainEntity\u0022: \u0022urn:li:share:123456\u0022,\n  \u0022domainEntity~\u0022: {\n    \u0022lifecycleState\u0022: ...,\n    \u0022visibility\u0022: {...},\n    \u0022specificContent\u0022: {...},\n    \u0022author\u0022: ...,\n    \u0022id\u0022: ...,\n    \u0022lastModified\u0022: {...},\n    \u0022created\u0022: {...},\n    \u0022ugcOrigin\u0022: ...,\n    \u0022responseContext\u0022: {...},\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update on Profile IM Deprecation",
+      "Anchor": "update-on-profile-im-deprecation",
+      "SectionPath": [
+        "June 10, 2019",
+        "Update on Profile IM Deprecation"
+      ],
+      "Text": "On January 30, 2019, we announced LinkedIn will be deprecating certain IM providers on March 1, 2019. Below is the latest update for these IM providers deprecation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update on Profile IM Deprecation",
+      "Anchor": "update-on-profile-im-deprecation",
+      "SectionPath": [
+        "June 10, 2019",
+        "Update on Profile IM Deprecation"
+      ],
+      "Text": "Starting June 17, 2019, LinkedIn will begin deprecating IM providers (AIM, MSN, and YAHOO) from linkedin.com. Profiles will stop displaying IMs with these providers and members will not be able to create or update them. This deprecation will apply to all LinkedIn profiles by June 30, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update on Profile IM Deprecation",
+      "Anchor": "update-on-profile-im-deprecation",
+      "SectionPath": [
+        "June 10, 2019",
+        "Update on Profile IM Deprecation"
+      ],
+      "Text": "Both the Profile APIs (/me and /people) and the Profile Edit API will continue surfacing and allowing updates of these IM providers until July 10, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Clarification on schoolName vs school fields in educations object",
+      "Anchor": "clarification-on-schoolname-vs-school-fields-in-educations-object",
+      "SectionPath": [
+        "June 10, 2019",
+        "Clarification on schoolName vs school fields in educations object"
+      ],
+      "Text": "On October 19, 2018, we informed of the upcoming changes to school and schoolName. Below are other clarifications to the changes:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Clarification on schoolName vs school fields in educations object",
+      "Anchor": "clarification-on-schoolname-vs-school-fields-in-educations-object",
+      "SectionPath": [
+        "June 10, 2019",
+        "Clarification on schoolName vs school fields in educations object"
+      ],
+      "Text": "The school display name on a member profile will take schoolName field as the primary source of truth.\nIf the schoolName field is missing, it will fall back to the display name of the organizationUrn decoration in school field.\nIf the school field exists:\n\nThe school display name will hyperlink to the school standardized page referenced by the organizationUrn in the school field.\nThe logo image will be from the organizationUrn in the school field.\n\n\nWhen there is a mismatch of display name between the schoolName and decoration of organizationUrn from the school field, it is intended. It is a LinkedIn product feature that allows a member to customize the display name on his or her profile.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API - Decoration Error on Groups Social Actions Activities",
+      "Anchor": "compliance-events-api---decoration-error-on-groups-social-actions-activities",
+      "SectionPath": [
+        "May 22, 2019",
+        "Compliance Events API - Decoration Error on Groups Social Actions Activities"
+      ],
+      "Text": "From May 1, 5:00pm PST to May 7, 4:00pm PST, all Groups Social Action (comments and likes) activities experienced decoration errors that resulted in an error message on the processedActivity field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Events API - Decoration Error on Groups Social Actions Activities",
+      "Anchor": "compliance-events-api---decoration-error-on-groups-social-actions-activities",
+      "SectionPath": [
+        "May 22, 2019",
+        "Compliance Events API - Decoration Error on Groups Social Actions Activities"
+      ],
+      "Text": "To archive the processed content, we recommend using the resourceUri field from each activity and making additional Social Actions API requests to retrieve the content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Content Type in UGCPost - Events",
+      "Anchor": "new-content-type-in-ugcpost---events",
+      "SectionPath": [
+        "May 22, 2019",
+        "New Content Type in UGCPost - Events"
+      ],
+      "Text": "LinkedIn is introducing Events to provide members with an easy way to create and join professional events that interest them. Currently, we will only surface feed experience (posts, comments, and likes) related to events. LinkedIn Compliance API program is NOT providing direct API access to events\u0027 information or events\u0027 attendees. For more information on the feed experience related to events, please see below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Content Type in UGCPost - Events",
+      "Anchor": "new-content-type-in-ugcpost---events",
+      "SectionPath": [
+        "May 22, 2019",
+        "New Content Type in UGCPost - Events"
+      ],
+      "Text": "Compliance Events API - Sharing an event\nCompliance Events API - Comment/Like on a share of an event\nSample UGCPost API request on a share of an event:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Content Type in UGCPost - Events",
+      "Anchor": "new-content-type-in-ugcpost---events",
+      "SectionPath": [
+        "May 22, 2019",
+        "New Content Type in UGCPost - Events"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts/{urn}?projection=(author,clientApplication,created,distribution,lastModified,lifecycleState,permalinkSuffix,ugcOrigin,visibility,specificContent(*(shareMediaCategory,shareFeatures,media(*(media~event(name,localizedName,organizer~member(vanityName,profilePicture(displayImage~:playableStreams),localizedFirstName,localizedLastName,localizedHeadline,localizedName,firstName,lastName,headline)~organization(name,localizedName),timeRange,address,venueDetails,id,logo~:playableStreams,description,localizedDescription,backgroundImage~:playableStreams),thumbnails,description,landingPage,originalUrl,title,status)),primaryLandingPageUrl,shareCategorization(skills*),shareCommentary(attributes*(length,start,value(*(*~))),inferredLocale,text))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Content Type in UGCPost - Events",
+      "Anchor": "new-content-type-in-ugcpost---events",
+      "SectionPath": [
+        "May 22, 2019",
+        "New Content Type in UGCPost - Events"
+      ],
+      "Text": "Sample UGCPost API request on a share on an event page:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Content Type in UGCPost - Events",
+      "Anchor": "new-content-type-in-ugcpost---events",
+      "SectionPath": [
+        "May 22, 2019",
+        "New Content Type in UGCPost - Events"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts/{urn}?projection=(author,containerEntity~,clientApplication,created,distribution,lastModified,lifecycleState,permalinkSuffix,ugcOrigin,visibility,specificContent(*(shareMediaCategory,shareFeatures,media,primaryLandingPageUrl,shareCategorization(skills*),shareCommentary(attributes*(length,start,value(*(*~))),inferredLocale,text))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming changes to profile picture on July 23, 2019",
+      "Anchor": "upcoming-changes-to-profile-picture-on-july-23-2019",
+      "SectionPath": [
+        "May 22, 2019",
+        "Upcoming changes to profile picture on July 23, 2019"
+      ],
+      "Text": "To minimize the response size and provide necessary information to partners, we will update profile picture information within all Compliance Events API events to only return the largest size (800x800). Currently, there are 4 sizes of the same image returned - 100x100, 200x200, 400x400 and 800x800. The information contained within the profile picture displayImage~ object will be the same as it is today, only the number of elements will be restricted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Reactions",
+      "Anchor": "linkedin-reactions",
+      "SectionPath": [
+        "May 2, 2019",
+        "LinkedIn Reactions"
+      ],
+      "Text": "LinkedIn recently introduced Reactions to provide members more ways to quickly and constructively communicate with one another. As of right now, the Compliance API program does not have any plans to surface these Reactions. Currently, all Reactions are attributed and aggregated as Likes on Social Actions API and Compliance Events API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Reactions",
+      "Anchor": "linkedin-reactions",
+      "SectionPath": [
+        "May 2, 2019",
+        "LinkedIn Reactions"
+      ],
+      "Text": "The only new feature we are surfacing is when a member updates from one Reaction type to another. It is surfaced in Compliance Events API as a PARTIAL_UPDATE with an empty activity field:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LinkedIn Reactions",
+      "Anchor": "linkedin-reactions",
+      "SectionPath": [
+        "May 2, 2019",
+        "LinkedIn Reactions"
+      ],
+      "Text": "{\n  \u0022resourceId\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n  \u0022method\u0022: \u0022PARTIAL_UPDATE\u0022,\n  \u0022activity\u0022: {},\n  \u0022resourceName\u0022: \u0022socialActions/likes\u0022,\n  \u0022resourceUri\u0022: \u0022/socialActions/urn:li:ugcPost:123456789/likes/urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022processedActivity\u0022: {},\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reminder on Past Announcement Changes",
+      "Anchor": "reminder-on-past-announcement-changes",
+      "SectionPath": [
+        "May 2, 2019",
+        "Reminder on Past Announcement Changes"
+      ],
+      "Text": "Removal of Kudos image via thumbnails.url on UGCPost API.\nChanges to school Urn and schoolName fields.\nPublishing Article Changes to take effect on June 17, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Publishing Article Changes",
+      "Anchor": "linkedin-publishing-article-changes",
+      "SectionPath": [
+        "April 17, 2019",
+        "LinkedIn Publishing Article Changes"
+      ],
+      "Text": "On June 17, 2019, LinkedIn will begin changing how LinkedIn Publishing Articles are surfaced through the APIs. See the migration guide for more information on the changes to the API workflows, and how to successfully continue satisfying your Publishing Articles use cases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Publishing Article Changes",
+      "Anchor": "linkedin-publishing-article-changes",
+      "SectionPath": [
+        "April 17, 2019",
+        "LinkedIn Publishing Article Changes"
+      ],
+      "Text": "This change will NOT affect third party article shares on LinkedIn.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration enhancements in Compliance Events API",
+      "Anchor": "decoration-enhancements-in-compliance-events-api",
+      "SectionPath": [
+        "April 17, 2019",
+        "Decoration enhancements in Compliance Events API"
+      ],
+      "Text": "logoUrn field for Group posts and social actions on group posts - Compliance Events API for Group Posts and Social Actions on Group posts events will now include expansion of the logoUrn field for group information. This field is a DigitalMediaAsset Urn.\n\nDecoration of Job Urn - Compliance Events API will now include basic job post information when a job is shared in a post, or when a social action is performed on a shared job post. See below for example processedActivity for a job share. The media~ field contains the job information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Decoration enhancements in Compliance Events API",
+      "Anchor": "decoration-enhancements-in-compliance-events-api",
+      "SectionPath": [
+        "April 17, 2019",
+        "Decoration enhancements in Compliance Events API"
+      ],
+      "Text": "{\n  \u0022processedActivity\u0022: {\n    \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n    \u0022specificContent\u0022: {\n      \u0022com.linkedin.ugc.ShareContent\u0022: {\n        \u0022shareMediaCategory\u0022: \u0022JOB\u0022,\n        \u0022shareFeatures\u0022: {\n          \u0022hashtags\u0022: []\n        },\n        \u0022shareCommentary\u0022: {\n          \u0022text\u0022: \u0022job-share\u0022\n        },\n        \u0022media\u0022: [\n          {\n            \u0022media~\u0022: {\n              \u0022closeDate\u0022: 1540837498000,\n              \u0022listDate\u0022: 1535932815000,\n              \u0022companyName\u0022: \u0022abcd\u0022,\n              \u0022jobState\u0022: \u0022CLOSED\u0022,\n              \u0022locationDescription\u0022: \u0022300 ABC St, San Francisco, CA 94015, US\u0022,\n              \u0022company\u0022: \u0022urn:li:company:1000\u0022,\n              \u0022id\u0022: 8271424,\n              \u0022title\u0022: \u0022Software Engineer\u0022,\n              \u0022expirationDate\u0022: 1540745342000\n            },\n            \u0022media\u0022: \u0022urn:li:job:8271424\u0022,\n            \u0022status\u0022: \u0022READY\u0022\n          }\n        ],\n        \u0022shareCategorization\u0022: {}\n      }\n    },\n    \u0022visibility\u0022: {\n      \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n    },\n    \u0022author\u0022: \u0022urn:li:person:ABCDEF\u0022,\n    ...\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Content Type in UGCPost - Marketplace Platform Opportunity",
+      "Anchor": "new-content-type-in-ugcpost---marketplace-platform-opportunity",
+      "SectionPath": [
+        "April 1, 2019",
+        "New Content Type in UGCPost - Marketplace Platform Opportunity"
+      ],
+      "Text": "LinkedIn is introducing a new content type post, Marketplace Platform Opportunity. A marketplace platform opportunity is defined as a request created by a member who needs some service or help. For example, a mentee looking for a mentor or a member looking for a plumber.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Content Type in UGCPost - Marketplace Platform Opportunity",
+      "Anchor": "new-content-type-in-ugcpost---marketplace-platform-opportunity",
+      "SectionPath": [
+        "April 1, 2019",
+        "New Content Type in UGCPost - Marketplace Platform Opportunity"
+      ],
+      "Text": "See below for a sample UGCPost API request and response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Content Type in UGCPost - Marketplace Platform Opportunity",
+      "Anchor": "new-content-type-in-ugcpost---marketplace-platform-opportunity",
+      "SectionPath": [
+        "April 1, 2019",
+        "New Content Type in UGCPost - Marketplace Platform Opportunity"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts/{urn}?projection=(author,clientApplication,created,distribution,lastModified,lifecycleState,permalinkSuffix,ugcOrigin,visibility,specificContent(*(shareMediaCategory,shareFeatures,media(*(media~marketplacePlatformOpportunity(requester~(localizedFirstName,localizedLastName),opportunityType(skill~;localeLanguage=en_US;localeCountry=US),location(region~region:standardization,state~,place~)),thumbnails,description,landingPage,originalUrl,title,status)),primaryLandingPageUrl,shareCategorization(skills*),shareCommentary(attributes*(length,start,value(*(*~))),inferredLocale,text))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "New Content Type in UGCPost - Marketplace Platform Opportunity",
+      "Anchor": "new-content-type-in-ugcpost---marketplace-platform-opportunity",
+      "SectionPath": [
+        "April 1, 2019",
+        "New Content Type in UGCPost - Marketplace Platform Opportunity"
+      ],
+      "Text": "{\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022visibility\u0022: {\n    \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n  },\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n      \u0022shareCommentary\u0022: {\n        \u0022inferredLocale\u0022: \u0022en_US\u0022,\n        \u0022text\u0022: \u0022Looking for a plumber!\u0022\n      },\n      \u0022media\u0022: [\n        {\n          \u0022media~\u0022: {\n            \u0022requester\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n            \u0022opportunityType\u0022: {\n              \u0022skill\u0022: \u0022urn:li:skill:123\u0022,\n              \u0022skill~\u0022: {\n                \u0022standardizedName\u0022: \u0022Plumbing\u0022,\n                \u0022id\u0022: 123,\n                \u0022locale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022requester~\u0022: {\n              \u0022localizedLastName\u0022: \u0022Mario\u0022,\n              \u0022localizedFirstName\u0022: \u0022Mario\u0022\n            },\n            \u0022region~\u0022: {\n              \u0022country\u0022: \u0022urn:li:country:us\u0022,\n              \u0022name\u0022: {\n                \u0022locale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022San Francisco Bay Area\u0022\n              },\n              \u0022id\u0022: 84,\n              \u0022$URN\u0022: \u0022urn:li:region:84\u0022,\n              \u0022states\u0022: [\n                \u0022urn:li:state:(urn:li:country:us,CA)\u0022\n              ]\n            },\n            \u0022region\u0022: \u0022urn:li:region:84\u0022\n          },\n          \u0022media\u0022: \u0022urn:li:marketplacePlatformOpportunity:(123456789,SERVICE_MARKETPLACE)\u0022,\n          \u0022thumbnails\u0022: [],\n          \u0022status\u0022: \u0022READY\u0022\n        }\n      ]\n    }\n  },\n  \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  ...\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Content Type in UGCPost - Marketplace Platform Opportunity",
+      "Anchor": "new-content-type-in-ugcpost---marketplace-platform-opportunity",
+      "SectionPath": [
+        "April 1, 2019",
+        "New Content Type in UGCPost - Marketplace Platform Opportunity"
+      ],
+      "Text": "For Compliance Events API, please see here for UGCPost activity or here for Social Action activity on a UGCPost of a Marketplace Platform Opportunity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations HTTP Status Code Change",
+      "Anchor": "invitations-http-status-code-change",
+      "SectionPath": [
+        "April 1, 2019",
+        "Invitations HTTP Status Code Change"
+      ],
+      "Text": "If there is an existing invitation and the user is trying to create another invitation to the same invitee, LinkedIn regards this as a resend use case. In this scenario, LinkedIn Invitations API currently returns 409.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Invitations HTTP Status Code Change",
+      "Anchor": "invitations-http-status-code-change",
+      "SectionPath": [
+        "April 1, 2019",
+        "Invitations HTTP Status Code Change"
+      ],
+      "Text": "We are changing this to 202 to reflect that the request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place. This change will take place on April 2, 2019 and be fully in effect by April 22, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to school Urn and schoolName Fields",
+      "Anchor": "changes-to-school-urn-and-schoolname-fields",
+      "SectionPath": [
+        "March 20, 2019",
+        "Changes to school Urn and schoolName Fields"
+      ],
+      "Text": "The earlier announced changes on Oct 19 2018 to the school and schoolName fields will now be implemented on May 1st, 2019. The schoolName field will be continue to be automatically populated until May 15, 2019, for cases where the school field is populated. This is to allow partners to test the changes to retrieve the school name by decorating the Organization URN. After May 15, 2019, schoolName will only be populated for cases where the school field is not present.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to article schema in socialActions activities within Compliance Events API to include authors field",
+      "Anchor": "changes-to-article-schema-in-socialactions-activities-within-compliance-events-api-to-include-authors-field",
+      "SectionPath": [
+        "March 20, 2019",
+        "Changes to article schema in socialActions activities within Compliance Events API to include authors field"
+      ],
+      "Text": "Previously, commenting or liking an article would not include the authors field within Compliance Events API. This is now returned, but due to this change, the link to the article is now present in the resolvedUrl field, instead of the url field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to article schema in socialActions activities within Compliance Events API to include authors field",
+      "Anchor": "changes-to-article-schema-in-socialactions-activities-within-compliance-events-api-to-include-authors-field",
+      "SectionPath": [
+        "March 20, 2019",
+        "Changes to article schema in socialActions activities within Compliance Events API to include authors field"
+      ],
+      "Text": "See below for sample response from a comment on an article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to article schema in socialActions activities within Compliance Events API to include authors field",
+      "Anchor": "changes-to-article-schema-in-socialactions-activities-within-compliance-events-api-to-include-authors-field",
+      "SectionPath": [
+        "March 20, 2019",
+        "Changes to article schema in socialActions activities within Compliance Events API to include authors field"
+      ],
+      "Text": "{\n  \u0022object~\u0022: {\n    \u0022urn\u0022: \u0022urn:li:ingestedContent:XXXXXXX\u0022,\n    \u0022specificContent\u0022: {\n      \u0022com.linkedin.ingestedcontent.ArticleSpecificContent\u0022: {\n        \u0022images\u0022: [\n          {\n            \u0022imageSpecificContent\u0022: {\n              \u0022width\u0022: 744,\n              \u0022height\u0022: 400\n            },\n            \u0022resolvedUrl\u0022: \u0022https://media.licdn.com/dms/image/xxxxxxx....\u0022\n          }\n        ],\n        \u0022fullText\u0022: \u0022abcd\u0022\n      }\n    },\n    \u0022provider\u0022: {\n      \u0022url\u0022: \u0022linkedin.com\u0022\n    },\n    \u0022publishedAt\u0022: 1509599385000,\n    \u0022description\u0022: \u0022abcd\u0022,\n    \u0022mediaType\u0022: \u0022text/html\u0022,\n    \u0022id\u0022: \u0022123456789\u0022,\n    \u0022resolvedUrl\u0022: \u0022https://www.linkedin.com/pulse/test-article\u0022,\n    \u0022locale\u0022: {\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022title\u0022: \u0022def\u0022,\n    \u0022authors\u0022: []\n  },\n  \u0022object\u0022: \u0022urn:li:article:123456789\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Look up Profile by VanityName API",
+      "Anchor": "look-up-profile-by-vanityname-api",
+      "SectionPath": [
+        "March 11, 2019",
+        "Look up Profile by VanityName API"
+      ],
+      "Text": "Retrieving Profile by vanityName is now available on V2 API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to UGCPost with Kudos",
+      "Anchor": "upcoming-changes-to-ugcpost-with-kudos",
+      "SectionPath": [
+        "March 11, 2019",
+        "Upcoming Changes to UGCPost with Kudos"
+      ],
+      "Text": "On April 30, 2019, UGCPost entities of Kudos will no longer return the Kudos image via thumbnails.url. Instead, it will only be surfaced through media field in media as an AppreciationUrn. Currently both fields are being returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to UGCPost with Kudos",
+      "Anchor": "upcoming-changes-to-ugcpost-with-kudos",
+      "SectionPath": [
+        "March 11, 2019",
+        "Upcoming Changes to UGCPost with Kudos"
+      ],
+      "Text": "See below for a sample UGCPost API request and response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upcoming Changes to UGCPost with Kudos",
+      "Anchor": "upcoming-changes-to-ugcpost-with-kudos",
+      "SectionPath": [
+        "March 11, 2019",
+        "Upcoming Changes to UGCPost with Kudos"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts/{urn}?projection=(author,clientApplication,created,distribution,lastModified,lifecycleState,permalinkSuffix,ugcOrigin,visibility,specificContent(*(shareMediaCategory,shareFeatures,media(*(media~appreciation(created,creator~(vanityName,profilePicture(displayImage~:playableStreams),localizedFirstName,localizedLastName, localizedHeadline),deleted,id,lastModified,media*~:playableStreams,reason,recipients*~(vanityName,profilePicture(displayImage~:playableStreams),localizedFirstName,localizedLastName,localizedHeadline),source),thumbnails,description,landingPage,originalUrl,title,status)),primaryLandingPageUrl,shareCategorization(skills*),shareCommentary(attributes*(length,start,value(*(*~))),inferredLocale,text))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Upcoming Changes to UGCPost with Kudos",
+      "Anchor": "upcoming-changes-to-ugcpost-with-kudos",
+      "SectionPath": [
+        "March 11, 2019",
+        "Upcoming Changes to UGCPost with Kudos"
+      ],
+      "Text": "{\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022visibility\u0022: {\n    \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n  },\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022shareMediaCategory\u0022: \u0022URN_REFERENCE\u0022,\n      \u0022shareFeatures\u0022: {\n        \u0022hashtags\u0022: [\n          \u0022urn:li:hashtag:kudos\u0022,\n          \u0022urn:li:hashtag:thankyou\u0022\n        ]\n      },\n      \u0022shareCommentary\u0022: {\n        \u0022attributes\u0022: [\n          {\n            \u0022length\u0022: 16,\n            \u0022start\u0022: 0,\n            \u0022value\u0022: {\n              \u0022com.linkedin.common.MemberAttributedEntity\u0022: {\n                \u0022member\u0022: \u0022urn:li:person:2SqvgON4PZ\u0022,\n                \u0022member~\u0022: {...}\n              }\n            }\n          },\n          {\n            \u0022length\u0022: 6,\n            \u0022start\u0022: 17,\n            \u0022value\u0022: {\n              \u0022com.linkedin.common.HashtagAttributedEntity\u0022: {\n                \u0022hashtag\u0022: \u0022urn:li:hashtag:kudos\u0022\n              }\n            }\n          },\n          {\n            \u0022length\u0022: 9,\n            \u0022start\u0022: 45,\n            \u0022value\u0022: {\n              \u0022com.linkedin.common.HashtagAttributedEntity\u0022: {\n                \u0022hashtag\u0022: \u0022urn:li:hashtag:thankyou\u0022\n              }\n            }\n          }\n        ],\n        \u0022text\u0022: \u0022Partners, #Kudos I just wanted to say #ThankYou \u0022\n      },\n      \u0022media\u0022: [\n        {\n          \u0022media~\u0022: {\n            \u0022reason\u0022: \u0022THANK_YOU\u0022,\n            \u0022creator\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n            \u0022creator~\u0022: {...},\n            \u0022media~\u0022: [\n              {...}\n            ],\n            \u0022created\u0022: 1551990436449,\n            \u0022recipients\u0022: [\n              \u0022urn:li:person:2SqvgON4PZ\u0022\n            ],\n            \u0022recipients~\u0022: [\n              {...}\n            ],\n            \u0022id\u0022: 123456789,\n            \u0022lastModified\u0022: 1551990437838,\n            \u0022media\u0022: [\n              \u0022urn:li:digitalmediaAsset:C4D22AQE7o2HSehnd9Q\u0022\n            ],\n            \u0022source\u0022: \u0022urn:li:ugcPost:123456789\u0022\n          },\n          \u0022media\u0022: \u0022urn:li:appreciation:123456789\u0022,\n          \u0022thumbnails\u0022: [\n            {\n              \u0022url\u0022: \u0022https://media.licdn.com/dms/image/...\u0022\n            }\n          ],\n          \u0022status\u0022: \u0022READY\u0022\n        }\n      ]\n    }\n  },\n  \u0022author\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n  \u0022created\u0022: {...},\n  \u0022ugcOrigin\u0022: \u0022DESKTOP\u0022,\n  \u0022lastModified\u0022: {...},\n  \u0022distribution\u0022: {\n    \u0022feedDistribution\u0022: \u0022MAIN_FEED\u0022,\n    \u0022externalDistributionChannels\u0022: [],\n    \u0022distributedViaFollowFeed\u0022: true\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to UGCPost with Kudos",
+      "Anchor": "upcoming-changes-to-ugcpost-with-kudos",
+      "SectionPath": [
+        "March 11, 2019",
+        "Upcoming Changes to UGCPost with Kudos"
+      ],
+      "Text": "For Compliance Events API, please see here for UGCPost activity or here for Social Action activity on a UGCPost of Kudos. Currently, Compliance Events API does not track Kudos given to regulated members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Action Activities on Compliance Events API",
+      "Anchor": "social-action-activities-on-compliance-events-api",
+      "SectionPath": [
+        "March 11, 2019",
+        "Social Action Activities on Compliance Events API"
+      ],
+      "Text": "All of the decoration and missing content issues surfaced on February 11th with Social Action activities on Compliance Events API have been resolved as of Friday evening, March 8th.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Action Activities on Compliance Events API",
+      "Anchor": "social-action-activities-on-compliance-events-api",
+      "SectionPath": [
+        "March 11, 2019",
+        "Social Action Activities on Compliance Events API"
+      ],
+      "Text": "These fixes only resolve the new activities being surfaced, not the previous activities. To capture the loss of content, partners are advised to take the resourceUri and call the Social Action APIs to capture the unprocessed content.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile picture field changes within Compliance Events API",
+      "Anchor": "profile-picture-field-changes-within-compliance-events-api",
+      "SectionPath": [
+        "February 22, 2019",
+        "Profile picture field changes within Compliance Events API"
+      ],
+      "Text": "Due to the previously announced Media Migration to new fields, the pictureInfo field within member information in various objects in Compliance Events API is no longer available. We are now including profilePicture for this information, and the Digital Media Asset URN is expanded to return the downloadable url.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "February 22, 2019",
+        "Profile picture field changes within Compliance Events API",
+        "Sample Response"
+      ],
+      "Text": "\u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:12345\u0022,\n    \u0022actor~\u0022: {\n      \u0022localizedLastName\u0022: \u0022User\u0022,\n      \u0022vanityName\u0022: \u0022user-test-66514738\u0022,\n      \u0022profilePicture\u0022: {\n        \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:C5503AQEnuoJzDXmX_g\u0022,\n        \u0022displayImage~\u0022: {\n          \u0022elements\u0022: [\n            {\n              \u0022identifiers\u0022: [\n                {\n                  \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/C5503AQEnuoJzDXmX_g/profile-displayphoto-shrink_100_100/0?app=1838494\u0026m=AQIH1djulo_yGQAAAWkRaelfnepCbK-JW-JSRsak2UDiVFLvWCtBrHi2AQ\u0026e=1552071347\u0026v=beta\u0026t=7YX6MXFidN48oKy5hhYGik8stv30_-nT3Tzvr3BzWoY\u0022,\n                  \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5503AQEnuoJzDXmX_g,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_100_100,0)\u0022,\n                  \u0022index\u0022: 0,\n                  \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                  \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                  \u0022identifierExpiresInSeconds\u0022: 1552071347\n                }\n              ]\n            },\n            {\n              \u0022identifiers\u0022: [\n                {\n                  \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/C5503AQEnuoJzDXmX_g/profile-displayphoto-shrink_200_200/0?app=1838494\u0026m=AQIqc2LxkcIRfAAAAWkRaelghJb7C5tsAc3PQycypIQt5BRVPMECJvm1fg\u0026e=1552071347\u0026v=beta\u0026t=w8QNI8cvy5DIqOSttWDF4CIcSBirAjUXC3KgurIw9rA\u0022,\n                  \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5503AQEnuoJzDXmX_g,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_200_200,0)\u0022,\n                  \u0022index\u0022: 0,\n                  \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                  \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                  \u0022identifierExpiresInSeconds\u0022: 1552071347\n                }\n              ]\n            },\n            {\n              \u0022identifiers\u0022: [\n                {\n                  \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/C5503AQEnuoJzDXmX_g/profile-displayphoto-shrink_400_400/0?app=1838494\u0026m=AQIYQo4erRbqHQAAAWkRaelgK5XIxx6svCJrZtlEWj0fhbUH_7PA2LQvFg\u0026e=1552071347\u0026v=beta\u0026t=VuPoSwOrJYagzUUy3loLq5C4g5KYeL9Hip-DaqPM3ZU\u0022,\n                  \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:C5503AQEnuoJzDXmX_g,urn:li:digitalmediaMediaArtifactClass:profile-displayphoto-shrink_400_400,0)\u0022,\n                  \u0022index\u0022: 0,\n                  \u0022mediaType\u0022: \u0022image/jpeg\u0022,\n                  \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                  \u0022identifierExpiresInSeconds\u0022: 1552071347\n                }\n              ]\n            }\n          ]\n        }\n      }\n    }\n  }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration Addition for Social Actions on reshare of ugcPost",
+      "Anchor": "decoration-addition-for-social-actions-on-reshare-of-ugcpost",
+      "SectionPath": [
+        "February 22, 2019",
+        "Decoration Addition for Social Actions on reshare of ugcPost"
+      ],
+      "Text": "When a member performs a social action on a reshare of an ugcPost, the ugcPost is attributed in the responseContext",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Decoration Addition for Social Actions on reshare of ugcPost",
+      "Anchor": "decoration-addition-for-social-actions-on-reshare-of-ugcpost",
+      "SectionPath": [
+        "February 22, 2019",
+        "Decoration Addition for Social Actions on reshare of ugcPost"
+      ],
+      "Text": "\u0022responseContext\u0022: {\n        \u0022parent\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        \u0022root\u0022: \u0022urn:li:ugcPost:123456789\u0022\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration Addition for Social Actions on reshare of ugcPost",
+      "Anchor": "decoration-addition-for-social-actions-on-reshare-of-ugcpost",
+      "SectionPath": [
+        "February 22, 2019",
+        "Decoration Addition for Social Actions on reshare of ugcPost"
+      ],
+      "Text": "We will now decorate both parent and root to provide more context on the original post",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Decoration Addition for Social Actions on reshare of ugcPost",
+      "Anchor": "decoration-addition-for-social-actions-on-reshare-of-ugcpost",
+      "SectionPath": [
+        "February 22, 2019",
+        "Decoration Addition for Social Actions on reshare of ugcPost"
+      ],
+      "Text": "\u0022responseContext\u0022: {\n        \u0022parent\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        \u0022parent~\u0022: {...},\n        \u0022root\u0022: \u0022urn:li:ugcPost:123456789\u0022,\n        \u0022root~\u0022: {...},\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V2 Compliance API Documentation",
+      "Anchor": "v2-compliance-api-documentation",
+      "SectionPath": [
+        "January 30, 2019",
+        "V2 Compliance API Documentation"
+      ],
+      "Text": "Please see here for all V2 API documentation for the Compliance Partner Program.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile IM Deprecation",
+      "Anchor": "profile-im-deprecation",
+      "SectionPath": [
+        "January 30, 2019",
+        "Profile IM Deprecation"
+      ],
+      "Text": "Starting March 1, 2019, LinkedIn will begin deprecating certain IM providers: AIM, MSN and YAHOO. We will no longer allow IM creation for these providers via API and linkedin.com. In addition, we will be removing all IMs associated with these providers after March 1, 2019.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V2 APIs now available for Profile Picture and Background Picture uploads",
+      "Anchor": "v2-apis-now-available-for-profile-picture-and-background-picture-uploads",
+      "SectionPath": [
+        "January 30, 2019",
+        "V2 APIs now available for Profile Picture and Background Picture uploads"
+      ],
+      "Text": "Documentation for uploading Background Picture and Profile Picture using V2 APIs is now available. Please note that w_compliance permission is required for this functionality.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to school and schoolName fields in educations object",
+      "Anchor": "changes-to-school-and-schoolname-fields-in-educations-object",
+      "SectionPath": [
+        "January 7, 2019",
+        "Changes to school and schoolName fields in educations object"
+      ],
+      "Text": "The earlier announced changes on Oct 19 2018 to the school and schoolName fields is postponed. An updated timeframe will be communicated later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Media Migration Timeline changes for Articles API",
+      "Anchor": "media-migration-timeline-changes-for-articles-api",
+      "SectionPath": [
+        "January 7, 2019",
+        "Media Migration Timeline changes for Articles API"
+      ],
+      "Text": "The displayImage and coverImage fields in Articles API will return information in the format mentioned here, in the \u0022Existing Field Changes\u0022 format till March 31, 2019, due to a delay in the migration of the underlying service.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V1 Groups API Deprecation",
+      "Anchor": "v1-groups-api-deprecation",
+      "SectionPath": [
+        "October 26, 2018",
+        "V1 Groups API Deprecation"
+      ],
+      "Text": "LinkedIn will deprecate V1 Groups APIs on November 26, 2018. We advise our partners to integrate with the V2 Group API Solution as soon as possible.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V2 Compliance Events API Decoration",
+      "Anchor": "v2-compliance-events-api-decoration",
+      "SectionPath": [
+        "October 26, 2018",
+        "V2 Compliance Events API Decoration"
+      ],
+      "Text": "Decoration of original share in reshare activities involving videos (UGC Posts) are now being shown. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "processedActivity decoration for reshare of ugcPost URN",
+      "Anchor": "processedactivity-decoration-for-reshare-of-ugcpost-urn",
+      "SectionPath": [
+        "October 26, 2018",
+        "processedActivity decoration for reshare of ugcPost URN"
+      ],
+      "Text": "{\n\u0022processedActivity\u0022: {\n  \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n  \u0022author~\u0022: {...},\n  \u0022specificContent\u0022: {\n    \u0022com.linkedin.ugc.ShareContent\u0022: {\n      \u0022shareMediaCategory\u0022: \u0022NONE\u0022,\n      \u0022shareFeatures\u0022: {\n        \u0022hashtags\u0022: []\n      },\n      \u0022shareCommentary\u0022: {\n        \u0022text\u0022: \u0022wow!\u0022\n      },\n      \u0022media\u0022: [],\n      \u0022shareCategorization\u0022: {}\n    }\n  },\n  \u0022visibility\u0022: {\n    \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n  },\n  \u0022author\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n  \u0022created\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022time\u0022: 1540586029111\n  },\n  \u0022responseContext\u0022: {\n    \u0022parent\u0022: \u0022urn:li:ugcPost:6461684238709202944\u0022,\n    \u0022parent~\u0022: {\n      \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n      \u0022author~\u0022: {...},\n      \u0022specificContent\u0022: {\n        \u0022com.linkedin.ugc.ShareContent\u0022: {\n          \u0022shareMediaCategory\u0022: \u0022VIDEO\u0022,\n          \u0022shareCommentary\u0022: {\n            \u0022inferredLocale\u0022: \u0022en_US\u0022,\n            \u0022text\u0022: \u0022hello\u0022\n          },\n          \u0022media\u0022: [\n            {\n              \u0022media~\u0022: {\n                \u0022elements\u0022: [\n                  {\n                    \u0022identifiers\u0022: [\n                      {\n                        \u0022identifier\u0022: \u0022https://api.linkedin.com/mediaDownload/..\u0022,\n                        \u0022file\u0022: \u0022urn:li:digitalmediaFile:(urn:li:digitalmediaAsset:123ABC,urn:li:digitalmediaMediaArtifactClass:feedshare-hls_200_3300_low-captions-thumbnails,0)\u0022,\n                        \u0022size\u0022: 1530,\n                        \u0022index\u0022: 0,\n                        \u0022mediaType\u0022: \u0022application/vnd.apple.mpegurl\u0022,\n                        \u0022identifierType\u0022: \u0022EXTERNAL_URL\u0022,\n                        \u0022identifierExpiresInSeconds\u0022: 1541882059,\n                        \u0022slug\u0022: \u0022masterplaylist.m3u8\u0022\n                      }\n                    ]\n                  }\n                ]\n              },\n              \u0022media\u0022: \u0022urn:li:digitalmediaAsset:C5405AQHJk0950D6fcQ\u0022\n            }\n          ],\n          \u0022shareCategorization\u0022: {}\n        }\n      },\n      \u0022visibility\u0022: {\n        \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n      },\n      \u0022author\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:Ylpq-RobP9\u0022,\n        \u0022actor~\u0022: {...},\n        \u0022time\u0022: 1540585574799\n      },\n      \u0022origin\u0022: \u0022DESKTOP\u0022,\n      \u0022firstPublishedAt\u0022: 1540585644517,\n      \u0022id\u0022: \u0022urn:li:ugcPost:6461684238709202944\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:csUser:7\u0022,\n        \u0022time\u0022: 1540585645395\n      }\n    },\n    \u0022root~\u0022: {...},\n    \u0022root\u0022: \u0022urn:li:ugcPost:6461684238709202944\u0022\n  },\n  \u0022firstPublishedAt\u0022: 1540586029111,\n  \u0022id\u0022: \u0022urn:li:ugcPost:6461686144219262976\u0022,\n  \u0022lastModified\u0022: {\n    \u0022actor\u0022: \u0022urn:li:csUser:2\u0022,\n    \u0022time\u0022: 1540586029180\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Release Reminders",
+      "Anchor": "upcoming-release-reminders",
+      "SectionPath": [
+        "October 19, 2018",
+        "Upcoming Release Reminders"
+      ],
+      "Text": "Decoration Changes to Activity URN in Compliance Events API- On October 22, 2018, 11:00 AM PST, we will be changing the activity URN decoration schema on Compliance Events API. Please update your application accordingly to handle the current and new activity schema.\nMedia Changes \u0026 Migration- On December 1, 2018, there will be changes to V2 medias such as profile photos and more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "[Update] Upcoming Changes to Profile API",
+      "Anchor": "update-upcoming-changes-to-profile-api",
+      "SectionPath": [
+        "October 19, 2018",
+        "[Update] Upcoming Changes to Profile API"
+      ],
+      "Text": "The upcoming changes for profile fields limitations on October 31, 2018 has been postponed until further notice.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "school and schoolName fields changes in educations object",
+      "Anchor": "school-and-schoolname-fields-changes-in-educations-object",
+      "SectionPath": [
+        "October 19, 2018",
+        "school and schoolName fields changes in educations object"
+      ],
+      "Text": "On May 1, 2019, the following changes will be made -",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "school and schoolName fields changes in educations object",
+      "Anchor": "school-and-schoolname-fields-changes-in-educations-object",
+      "SectionPath": [
+        "October 19, 2018",
+        "school and schoolName fields changes in educations object"
+      ],
+      "Text": "The school field will change from a school URN ( urn:li:school:XXX ) to an organization URN ( urn:li:organization:XXX ). The school field can then be expanded using decoration to get the name of the school, and other information.\n\nThe schoolName field will no longer be populated by default within the educations object. It will only be present if the user chose to type in or overwrite a school name in the UI, that is not recognized as a school URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "school and schoolName fields changes in educations object",
+      "Anchor": "school-and-schoolname-fields-changes-in-educations-object",
+      "SectionPath": [
+        "October 19, 2018",
+        "school and schoolName fields changes in educations object"
+      ],
+      "Text": "Note: The school field may not be present in all cases, for example, if the user chooses to manually enter the information through LinkedIn, instead of choosing from the drop-down list.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Background Image \u0026 Picture Decoration",
+      "Anchor": "background-image--picture-decoration",
+      "SectionPath": [
+        "October 5, 2018",
+        "Background Image \u0026 Picture Decoration"
+      ],
+      "Text": "If the media-typed URN starts with urn:li:scds: , then you will need to replace that with https://static.licdn.com/scds/common/u/ . For more information, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Application URN Decoration",
+      "Anchor": "developer-application-urn-decoration",
+      "SectionPath": [
+        "October 5, 2018",
+        "Developer Application URN Decoration"
+      ],
+      "Text": "Developer Application URN can now be decorated to see name .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Application URN Decoration",
+      "Anchor": "developer-application-urn-decoration",
+      "SectionPath": [
+        "October 5, 2018",
+        "Developer Application URN Decoration"
+      ],
+      "Text": "In Compliance Events API, the processedActivity field will display developer application name if available. It will appear in UGC Post or Social Action activities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Application URN Decoration",
+      "Anchor": "developer-application-urn-decoration",
+      "SectionPath": [
+        "October 5, 2018",
+        "Developer Application URN Decoration"
+      ],
+      "Text": "You can also decorate API request to UGC Post and Social Action to retrieve the name of the developerApplication URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "MemberRichMedia on Compliance Events API",
+      "Anchor": "memberrichmedia-on-compliance-events-api",
+      "SectionPath": [
+        "October 5, 2018",
+        "MemberRichMedia on Compliance Events API"
+      ],
+      "Text": "We now capture activities for profile updates containing member rich media. For more information, see here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "V2 Group APIs Release",
+      "Anchor": "v2-group-apis-release",
+      "SectionPath": [
+        "September 7, 2018",
+        "V2 Group APIs Release"
+      ],
+      "Text": "Compliance applications now have V2 Group API capabilities. Please see here for detailed documentation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to UGC Posts API",
+      "Anchor": "changes-to-ugc-posts-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to UGC Posts API"
+      ],
+      "Text": "Starting today, we will expose authors as a query parameter to enable finding ugcPost by an organization. On October 8, 2018 , this field will be marked as required and will start accepting organizationURN . Please plan this breaking change accordingly.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to UGC Posts API",
+      "Anchor": "changes-to-ugc-posts-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to UGC Posts API"
+      ],
+      "Text": "For example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to UGC Posts API",
+      "Anchor": "changes-to-ugc-posts-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to UGC Posts API"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts?q=authors\u0026authors=List({encoded personURN|organizationURN})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to UGC Posts API",
+      "Anchor": "changes-to-ugc-posts-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to UGC Posts API"
+      ],
+      "Text": "Action Required: If you are making UGC Post API requests (see below) today, then modify the API with the newly exposed required authors field as shown above. Please let us know if you have any questions or concerns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Changes to UGC Posts API",
+      "Anchor": "changes-to-ugc-posts-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to UGC Posts API"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts?q=authors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Deprecations of imsOrder in Profile Fields",
+      "Anchor": "deprecations-of-imsorder-in-profile-fields",
+      "SectionPath": [
+        "September 7, 2018",
+        "Deprecations of imsOrder in Profile Fields"
+      ],
+      "Text": "We are deprecating imsOrder . Please refer to ims as the only source of truth for displaying IMs. LinkedIn user interface will not have a sorting order for IMs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to VanityName in Profile API",
+      "Anchor": "changes-to-vanityname-in-profile-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to VanityName in Profile API"
+      ],
+      "Text": "We are changing the vanityName rule in Profile Edit API to \u0022Your custom URL must contain 3-100 letters or numbers. Please do not use spaces, symbols, or special characters.\u0022",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Changes to VanityName in Profile API",
+      "Anchor": "changes-to-vanityname-in-profile-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Changes to VanityName in Profile API"
+      ],
+      "Text": "While we discourage members from using special characters, LinkedIn.com will now accept certain special characters to align with our backend API validation.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to Profile API",
+      "Anchor": "upcoming-changes-to-profile-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Upcoming Changes to Profile API"
+      ],
+      "Text": "On October 31, 2018 , LinkedIn will be limiting profile fields of members other than the authenticated member. This means that:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to Profile API",
+      "Anchor": "upcoming-changes-to-profile-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Upcoming Changes to Profile API"
+      ],
+      "Text": "V2 Profile API (/v2/people) will only return id , firstName , lastName , localizedFirstName , localizedLastName , pictureInfo , profilePicture , vanityName , headline , localizedHeadline , and positions .\nDecoration of person URN will only return the same above profile fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to Profile API",
+      "Anchor": "upcoming-changes-to-profile-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Upcoming Changes to Profile API"
+      ],
+      "Text": "Personal Profile API (/v2/me) will remain the same.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming Changes to Profile API",
+      "Anchor": "upcoming-changes-to-profile-api",
+      "SectionPath": [
+        "September 7, 2018",
+        "Upcoming Changes to Profile API"
+      ],
+      "Text": "Action Required: If you are making Profile API or decoration of person URN in other API requests involving other fields than the ones listed above, you will need to update your application to only specify these fields. If you specify more than what is allowed, you will receive a 403 HTTP code with an error code of not enough permissions to access field ___ for GET /people .",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release",
+      "Anchor": "release",
+      "SectionPath": [
+        "August 2, 2018",
+        "Release"
+      ],
+      "Text": "ContentTopic on Compliance Events API - The API now shows information about the ContentTopic Urn that was either shared, liked or commented on from the \u0022What people are talking about now\u0022 section on LinkedIn.com.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release",
+      "Anchor": "release-1",
+      "SectionPath": [
+        "July 20, 2018",
+        "Release"
+      ],
+      "Text": "Messaging Events on Compliance Events API - the API now shows both inbound and outbound messages for a regulated member. The messages include personal mailbox such as direct messages and InMails, Recruiter and Sales Navigator mailbox.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming",
+      "Anchor": "upcoming",
+      "SectionPath": [
+        "July 20, 2018",
+        "Upcoming"
+      ],
+      "Text": "OAuth 2.0 Redirects: https://developer.linkedin.com/blog/posts/2018/redirecting-oauth-uas - Beginning July 23, 2018, we will start performing OAuth 2.0 redirects for applications still using the legacy OAuth 2.0 flow to the new OAuth 2.0 flow. This change will happen gradually for select users and will affect all members by August 6, 2018. With this redirect, the member will experience a new UI flow and a slight delay in the authorization due to the redirects. If you haven\u0027t already, LinkedIn recommends all partners to migrate to the new OAuth 2.0 flow for a better member experience. We will eventually deprecate the legacy flow but the date is yet to be determined.\n\nDecoration Changes to Activity URN in Compliance Events API- On October 20, 2018, we will be changing the activity URN decoration schema on Compliance Events API. Please update your application accordingly to handle the current and new activity schema*. The new schema is subject to change pending discovery of any issues before release.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release",
+      "Anchor": "release-2",
+      "SectionPath": [
+        "June 29, 2018",
+        "Release"
+      ],
+      "Text": "Invitation Received Events on Compliance Events API - The API now shows both outbound and inbound invitation invites for a regulated member.\nEndorsement, Recommendation Requests, Recommendations Received Events on Compliance Events API - The API will return activities for endorsements received, recommendation requests received, and recommendations received.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming",
+      "Anchor": "upcoming-1",
+      "SectionPath": [
+        "June 29, 2018",
+        "Upcoming"
+      ],
+      "Text": "Messaging Events on Compliance Events API - The API now shows both inbound and outbound messages for a regulated member. The messages include personal mailbox such as direct messages and InMails, Recruiter and Sales Navigator mailbox. ETA - July 16, 2018.\nGroups and Group Membership APIs -The APIs will allow you to retrieve groups, group memberships and their activities such as posts, comments and likes. ETA - July 23, 2018.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Known V1 Issues",
+      "Anchor": "known-v1-issues",
+      "SectionPath": [
+        "May 30, 2018",
+        "Known V1 Issues"
+      ],
+      "Text": "",
+      "Headers": [
+        "API",
+        "Description",
+        "Suggested workaround"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "v1/network/updates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sharing a pulse article returns update-type for that article in the api response as SHAR instead of ARTC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The link to the article contains \u0022/pulse/\u0022 which can be used to identify the item as an article.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "v1/people/~/mailbox",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Attachments are not returned in the API response for messages that include them",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "None",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "May 22, 2018",
+      "Anchor": "may-22-2018",
+      "SectionPath": [
+        "May 22, 2018"
+      ],
+      "Text": "Compliance Events API now captures all Elevate shares and their subsequent comments and likes since 12:00pm PST, May 22, 2018. Previous Elevate shares and their social actions are retrievable via the snapshot APIs mentioned in the May 10, 2018 section.\nThe following Profile fields are no longer supported by LinkedIn and will NOT appear on any LinkedIn UI platforms starting today. Partners are advised to stop retrieving and updating these fields. The Profile Edit API for these fields will still return 200 but will not perform the update action.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "May 22, 2018",
+      "Anchor": "may-22-2018",
+      "SectionPath": [
+        "May 22, 2018"
+      ],
+      "Text": "",
+      "Headers": [
+        "V1",
+        "V2"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "/people/~/interests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "interests - /people/id={ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api?context=linkedin/compliance/context#multilocalestring-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/people/~/proposal-comments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contactInstructions - /people/id={ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api?context=linkedin/compliance/context#multilocalestring-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/people/~/volunteer/supported-organizations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "volunteeringInterests.supportedNonprofits - /people/id={ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api?context=linkedin/compliance/context#volunteering-interests"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "/people/~/volunteer/opportunities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "associations - /people/id={ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api?context=linkedin/compliance/context#multilocalestring-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "legacyHonors - /people/id={ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api?context=linkedin/compliance/context#multilocalerichtext-fields"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "specialties - /people/id={ID}",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-edit-api?context=linkedin/compliance/context#multilocalestring-fields"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "May 10, 2018",
+      "Anchor": "may-10-2018",
+      "SectionPath": [
+        "May 10, 2018"
+      ],
+      "Text": "We recently identified shares generated from LinkedIn Elevate and their subsequent comments and likes are NOT captured from Compliance Events API. We are actively fixing this issue. UGC Post API (filtering by \u0022ugcOrigin\u0022: \u0022ELEVATE\u0022) to retrieve the missing share content that has not been captured. After identifying the missing shares, please use the Social Actions API to retrieve all subsequent comments and likes of those shares. See Examples below. Use these APIs to capture shares from LinkedIn Elevate and their subsequent comments and likes that have been missed from the time of using Compliance Events API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "May 10, 2018",
+      "Anchor": "may-10-2018",
+      "SectionPath": [
+        "May 10, 2018"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/shares?q=owners\u0026owners={URN}\u0026sharesPerOwner=100",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Shares API Sample Response for Elevate Shares",
+      "Anchor": "shares-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "Shares API Sample Response for Elevate Shares"
+      ],
+      "Text": "{\n   ......\n   \u0022serviceProvider\u0022: \u0022ELEVATE\u0022,\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Shares API Sample Response for Elevate Shares",
+      "Anchor": "shares-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "Shares API Sample Response for Elevate Shares"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/ugcPosts?q=authors",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "UGC Post API Sample Response for Elevate Shares",
+      "Anchor": "ugc-post-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "UGC Post API Sample Response for Elevate Shares"
+      ],
+      "Text": "{\n   ......\n   \u0022ugcOrigin\u0022: \u0022ELEVATE\u0022,\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "UGC Post API Sample Response for Elevate Shares",
+      "Anchor": "ugc-post-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "UGC Post API Sample Response for Elevate Shares"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/socialActions/{shareUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "UGC Post API Sample Response for Elevate Shares",
+      "Anchor": "ugc-post-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "UGC Post API Sample Response for Elevate Shares"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/socialActions/{shareUrn}/comments",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "UGC Post API Sample Response for Elevate Shares",
+      "Anchor": "ugc-post-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "UGC Post API Sample Response for Elevate Shares"
+      ],
+      "Text": "GET\n\nhttps://api.linkedin.com/v2/socialActions/{shareUrn}/likes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "UGC Post API Sample Response for Elevate Shares",
+      "Anchor": "ugc-post-api-sample-response-for-elevate-shares",
+      "SectionPath": [
+        "May 10, 2018",
+        "UGC Post API Sample Response for Elevate Shares"
+      ],
+      "Text": "Media Changes \u0026 Migration - Original Article, Organization and Organization Brand API are now available for both the old and new photo fields!\nWe will be deprecating the \u0022origin\u0022 field in UGC Post API. The field will stop being returned on August 10, 2018. You can find the service provider information by referring to the new \u0022ugcOrigin\u0022 field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "April 11, 2018",
+      "Anchor": "april-11-2018",
+      "SectionPath": [
+        "April 11, 2018"
+      ],
+      "Text": "Effective May 18th, 2018, V1 Company Pages API will no longer work with OAuth 1.0. We recommend all apps switch over to OAuth 2.0 authentication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 13, 2018",
+      "Anchor": "march-13-2018",
+      "SectionPath": [
+        "March 13, 2018"
+      ],
+      "Text": "Common URNs \u0026 Namespace - reference page to help partners migrate from V1 to V2 API by identifying different types of urns and what they correspond to.\nLinkedIn internal migration with Share services - Due to internal migration, you might experience duplicate share activities in Compliance Events API under both resourceName shares and ugcPosts . The duplication is caused by dual writes to both services and will stop when the migration is completed on March 22. Once migration is done, all posts will appear as ugcPosts , even the Share API creation. See below for an example:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "same share and ugc activities",
+      "Anchor": "same-share-and-ugc-activities",
+      "SectionPath": [
+        "March 13, 2018",
+        "same share and ugc activities"
+      ],
+      "Text": "{\n  \u0022owner\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n  \u0022resourceId\u0022: \u00226379484686464481234\u0022,\n  \u0022configVersion\u0022: 6,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {...},\n  \u0022resourceName\u0022: \u0022shares\u0022,\n  \u0022resourceUri\u0022: \u0022/shares/6379484686464481234\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n  \u0022activityId\u0022: \u002239027022-9b4e-46bb-9248-dfa3ac859107\u0022,\n  \u0022processedAt\u0022: 1520987704675,\n  \u0022capturedAt\u0022: 1520987674553,\n  \u0022processedActivity\u0022: {...},\n  \u0022id\u0022: 105171548\n},\n{\n  \u0022owner\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n  \u0022resourceId\u0022: \u0022urn:li:share:6379484686464481234\u0022,\n  \u0022configVersion\u0022: 8,\n  \u0022method\u0022: \u0022CREATE\u0022,\n  \u0022activity\u0022: {...},\n  \u0022resourceName\u0022: \u0022ugcPosts\u0022,\n  \u0022resourceUri\u0022: \u0022/ugcPosts/urn:li:share:6379484686464481234\u0022,\n  \u0022actor\u0022: \u0022urn:li:person:V9W_L_bioc\u0022,\n  \u0022activityId\u0022: \u002241b5c280-541f-4746-9d3d-997ffe7adfd8\u0022,\n  \u0022processedAt\u0022: 1520987704686,\n  \u0022capturedAt\u0022: 1520987674535,\n  \u0022processedActivity\u0022: {...},\n  \u0022id\u0022: 105171556\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "same share and ugc activities",
+      "Anchor": "same-share-and-ugc-activities",
+      "SectionPath": [
+        "March 13, 2018",
+        "same share and ugc activities"
+      ],
+      "Text": "From the example above, the id of the share will be the same but represented in different format, id vs urn. The activityId , processedAt and capturedAt will be slightly different as well. The activity and processedActivity payload will retain its own respective schema.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 5, 2018",
+      "Anchor": "march-5-2018",
+      "SectionPath": [
+        "March 5, 2018"
+      ],
+      "Text": "ComplianceEvents - Compliance events API will now capture comment edits made by a regulated member on a share or article.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "March 5, 2018",
+      "Anchor": "march-5-2018",
+      "SectionPath": [
+        "March 5, 2018"
+      ],
+      "Text": "Note : Comment edits made by a non-regulated member will not be captured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "February 28, 2018",
+      "Anchor": "february-28-2018",
+      "SectionPath": [
+        "February 28, 2018"
+      ],
+      "Text": "Media Changes \u0026 Migration - Changes and upcoming releases on media changes on V2.\nV1 Media Changes - V1 API will return different image URLs for picture-url and picture-urls . The URLs will be dynamic and can change from request to request even though the content image is the same. The change started ramping earlier this week and will be ramped to 100% at the end of the week. In addition, the dimension size will be either 100x100, 200x200, 300x300, or 400x400. We will round to the nearest correct dimension when an incorrect size is requested. See examples below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "old photo URL format",
+      "Anchor": "old-photo-url-format",
+      "SectionPath": [
+        "February 28, 2018",
+        "old photo URL format"
+      ],
+      "Text": "{\n    \u0022pictureUrl\u0022: \u0022https://media.licdn.com/mpr/mpr/shrink_80_80/AAMAAgBpAAIAAQAAAAAA.png\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "new photo URL format",
+      "Anchor": "new-photo-url-format",
+      "SectionPath": [
+        "February 28, 2018",
+        "new photo URL format"
+      ],
+      "Text": "{\n    \u0022pictureUrl\u0022: \u0022https://media.licdn.com/dms/image/C5603AQG2aht_l8r_0A/profile-displayphoto-shrink_100_100/0?e=1525050000\u0026v=alpha\u0026t=fqCXyA31\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "January 30, 2018",
+      "Anchor": "january-30-2018",
+      "SectionPath": [
+        "January 30, 2018"
+      ],
+      "Text": "Messaging Events now available on Compliance Events API - This only contains mailbox messages sent by the regulated member. The outbound messages include personal mailbox such as direct messages and InMails, Recruiter and Sales Navigator mailbox.\nRetrieval of video on UGC Post Events on Compliance Events API - Ability to download the video as a media file via the decorated media URL.\nShare Migration to UGC Post Events on Compliance Events API - Text shares can now be created through either Share API or UGC Post API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "September 28, 2017",
+      "Anchor": "september-28-2017",
+      "SectionPath": [
+        "September 28, 2017"
+      ],
+      "Text": "Compliance Events API - new feature enhancements\n\nContextual Decoration on Comment Activities\nEntity Based Monitoring\nUGC Posts Activity\n\n\nMember Rich Media API - allows for retrieval of rich media content on member\u0027s profile\nUGC Posts API - retrieval and deletion of video posts and all other shares. Currently does not support retrieval of actual video content.\nRich Media Summary API - provides an url to resolve the image of a richMediaSummaryUrn\nActivity Feeds API - provides a share feed of the member\u0027s first degree connections\nInvitations API - ability to invite a raw email address (urn:li:email:{raw_email_string})",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

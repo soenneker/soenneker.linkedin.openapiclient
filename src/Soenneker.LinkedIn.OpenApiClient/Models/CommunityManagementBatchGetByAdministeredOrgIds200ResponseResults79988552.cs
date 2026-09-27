@@ -17,10 +17,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The alternativeNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? AlternativeNames { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552AlternativeNamesItem>? AlternativeNames { get; set; }
 #nullable restore
 #else
-        public UntypedNode AlternativeNames { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552AlternativeNamesItem> AlternativeNames { get; set; }
 #endif
         /// <summary>The coverPhotoV2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,13 +41,13 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Groups { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552GroupsItem>? Groups { get; set; }
 #nullable restore
 #else
-        public UntypedNode Groups { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552GroupsItem> Groups { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The industries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,18 +67,18 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The localizedSpecialties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? LocalizedSpecialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocalizedSpecialtiesItem>? LocalizedSpecialties { get; set; }
 #nullable restore
 #else
-        public UntypedNode LocalizedSpecialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocalizedSpecialtiesItem> LocalizedSpecialties { get; set; }
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Locations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocationsItem>? Locations { get; set; }
 #nullable restore
 #else
-        public UntypedNode Locations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocationsItem> Locations { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,10 +107,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The specialties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Specialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552SpecialtiesItem>? Specialties { get; set; }
 #nullable restore
 #else
-        public UntypedNode Specialties { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552SpecialtiesItem> Specialties { get; set; }
 #endif
         /// <summary>The vanityName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,19 +153,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alternativeNames", n => { AlternativeNames = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "alternativeNames", n => { AlternativeNames = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552AlternativeNamesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552AlternativeNamesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "coverPhotoV2", n => { CoverPhotoV2 = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552CoverPhotoV2>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552CoverPhotoV2.CreateFromDiscriminatorValue); } },
                 { "defaultLocale", n => { DefaultLocale = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552DefaultLocale>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552DefaultLocale.CreateFromDiscriminatorValue); } },
-                { "groups", n => { Groups = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552GroupsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552GroupsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "industries", n => { Industries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
-                { "localizedSpecialties", n => { LocalizedSpecialties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "locations", n => { Locations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "localizedSpecialties", n => { LocalizedSpecialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocalizedSpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocalizedSpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552Name.CreateFromDiscriminatorValue); } },
                 { "organizationType", n => { OrganizationType = n.GetStringValue(); } },
                 { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetStringValue(); } },
-                { "specialties", n => { Specialties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "specialties", n => { Specialties = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552SpecialtiesItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552SpecialtiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
                 { "versionTag", n => { VersionTag = n.GetStringValue(); } },
             };
@@ -177,19 +177,19 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("alternativeNames", AlternativeNames);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552AlternativeNamesItem>("alternativeNames", AlternativeNames);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552CoverPhotoV2>("coverPhotoV2", CoverPhotoV2);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552DefaultLocale>("defaultLocale", DefaultLocale);
-            writer.WriteObjectValue<UntypedNode>("groups", Groups);
-            writer.WriteIntValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552GroupsItem>("groups", Groups);
+            writer.WriteLongValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("industries", Industries);
             writer.WriteStringValue("localizedName", LocalizedName);
-            writer.WriteObjectValue<UntypedNode>("localizedSpecialties", LocalizedSpecialties);
-            writer.WriteObjectValue<UntypedNode>("locations", Locations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocalizedSpecialtiesItem>("localizedSpecialties", LocalizedSpecialties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552LocationsItem>("locations", Locations);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552Name>("name", Name);
             writer.WriteStringValue("organizationType", OrganizationType);
             writer.WriteStringValue("primaryOrganizationType", PrimaryOrganizationType);
-            writer.WriteObjectValue<UntypedNode>("specialties", Specialties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementBatchGetByAdministeredOrgIds200ResponseResults79988552SpecialtiesItem>("specialties", Specialties);
             writer.WriteStringValue("vanityName", VanityName);
             writer.WriteStringValue("versionTag", VersionTag);
             writer.WriteAdditionalData(AdditionalData);

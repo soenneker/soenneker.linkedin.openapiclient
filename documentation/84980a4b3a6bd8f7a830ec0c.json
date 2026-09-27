@@ -1,0 +1,1357 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+  "Title": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-usecases",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+      "Anchor": "module-1---configure-customer-applications--ats-integrations",
+      "SectionPath": [],
+      "Text": "Customers must authorize and enable your ATS to use specific Middleware Platform integrations, such as Apply With LinkedIn, on their behalf. To achieve this:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+      "Anchor": "module-1---configure-customer-applications--ats-integrations",
+      "SectionPath": [],
+      "Text": "Create and configure a developer application for the customer\nUsing the application\u2019s credential, host a customer-facing configuration plugin which allows customers to manage their integrations with your ATS\nAfter the customer pre-authorizes integrations in the plugin, update integrations on their behalf with a user-facing integration name",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+      "Anchor": "module-1---configure-customer-applications--ats-integrations",
+      "SectionPath": [],
+      "Text": "Details for each step are given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+      "Anchor": "module-1---configure-customer-applications--ats-integrations",
+      "SectionPath": [],
+      "Text": "Create and Configure a Customer App\nDisplay the ATS Integration Configuration Plugin\nEnable Customer Integrations\nVerify the Customer Configuration is Enabled",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+      "Anchor": "module-1---configure-customer-applications--ats-integrations",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Module 1 - Configure Customer Applications \u0026 ATS Integrations",
+      "Anchor": "module-1---configure-customer-applications--ats-integrations",
+      "SectionPath": [],
+      "Text": "Please refer to Development Tools section to download postman collection of the APIs mentioned in this document.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1. Create and Configure a Customer App",
+      "Anchor": "step-1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1. Create and Configure a Customer App"
+      ],
+      "Text": "The Provisioning API allows you to create API keys for each of your customers. Ensure that you use proper customer names while provisioning as it will display on the consent screen (during OAuth flow). Please note that you need to store a unique API key for each of your customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1. Create and Configure a Customer App",
+      "Anchor": "step-1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1. Create and Configure a Customer App"
+      ],
+      "Text": "Once your app is configured, you may begin making API requests and testing the integration. All API requests require authorization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1. Create and Configure a Customer App",
+      "Anchor": "step-1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1. Create and Configure a Customer App"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 1. Create and Configure a Customer App",
+      "Anchor": "step-1-create-and-configure-a-customer-app",
+      "SectionPath": [
+        "Step 1. Create and Configure a Customer App"
+      ],
+      "Text": "For existing CSA customers, you will be using their existing API keys. Please contact your Partner Engineering representative to coordinate migrating these API keys.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "Use the ATS Integration Configuration Plugin to allow your customers to request for different integration types.\nEmbed the Javascript code below to display the ATS Integration Configuration plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "The plugin loads based on the data-width and data-supported-bundled-integration-types attributes you specify\nUse the data-supported-bundled-integration-types attribute to declare which integrations you support, a list of different integration types are displayed on the plugin as mentioned in data-supported-bundled-integration-types attribute\ndata-onintegrate attribute holds a callback function name that is invoked when the customer requests for an integration type within the plugin\nWhen the customer requests for an integration, Linkedin invokes this function in response and a response data is passed to the function parameter\nThe response data contains integrationContext, integrationType, and tenantType\nEnsure that you store the values of integrationContext, integrationType, and tenantType as they will be used in the next step",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "\u003Cscript type=\u0022text/javascript\u0022 src=\u0022https://platform.linkedin.com/xdoor/scripts/in.js\u0022\u003E\n  api_key: { Enter the customer app API key (client_id) received in the Provisioning API response. }\n  extensions: ATSIntegrationWidget@https://platform.linkedin.com/rsc/extensions/onboarding-widget\n\u003C/script\u003E\n\n\u003Cscript type=\u0022IN/ATSIntegrationWidget\u0022\n  data-supported-bundled-integration-types=\u0022RECRUITER_SYSTEM_CONNECT_COMPANY,RECRUITER_SYSTEM_CONNECT_CONTRACT,APPLY_WITH_LINKEDIN\u0022\n  data-onintegrate=\u0022handleIntegrations\u0022\n  data-width=\u0022{width}\u0022 \u003E\n\u003C/script\u003E\n\n\u003Cscript\u003E\n/**\n* This callback should:\n*   1) Store the customer\u0027s integration in your ATS. These values are used to throughout the Middleware Platform\u0027s API.\n*   2) Tell your server to create and configure customer integrations via the Middleware Platform using this data.\n* @param {Object[]} integrations\n* @param {string} integrations[].integrationContext\n* @param {string} integrations[].integrationType\n* @param {string} integrations[].tenantType\n*/ \nfunction handleIntegrations (integrations) {\n//Your code here\n\n}\n\u003C/script\u003E",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "The value for data-supported-bundled-integration-types should be based on the integrations as indicated below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "APPLY_CONNECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Apply Connect integrations only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPLY_WITH_LINKEDIN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the Apply with LinkedIn integrations only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "RECRUITER_SYSTEM_CONNECT_COMPANY, RECRUITER_SYSTEM_CONNECT_CONTRACT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Used for the RSC integrations only",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "Details on the customer\u0027s workflow within the plugin can be found here.\nTo reload the plugin on a single page application, use in.parse()",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 2. Display the ATS Integration Configuration Plugin",
+      "Anchor": "step-2-display-the-ats-integration-configuration-plugin",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin"
+      ],
+      "Text": "All error tables in this page are in show/hide collapsible text. Please click the text view error details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plugin Error Details",
+      "Anchor": "plugin-error-details",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin",
+        "Plugin Error Details"
+      ],
+      "Text": "Use In-browser developer tools console to find out errors while rendering the plugin.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Plugin Error Details",
+      "Anchor": "plugin-error-details",
+      "SectionPath": [
+        "Step 2. Display the ATS Integration Configuration Plugin",
+        "Plugin Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Domain validation failed for the api key.Please contact your ATS for further assistance.One should be seeing error.origin.not.in.api.domains in the In-browser developer-tool console",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Partner Domain URL is not allowlisted for the child application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1.Update validJsSdkDomains for child application 2. Ensure validJsSdkDomains should not contain trailing slash (/)3. Ensure validJsSdkDomains should contain complete URL and should start with http and https",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "There seems to be a problem you do not have permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Logged in customer does not have Admin permissions for the selected contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that the customer Admin has an active seat on the Recruiter contract.2. Ensure the customer seat has been granted Admin privileges.3. Ensure that the customer is logged in using the same email as mentioned in the contract seat 4. After the above corrections please ask the customer to re-login.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3. Enable Customer Integrations",
+      "Anchor": "step-3-enable-customer-integrations",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations"
+      ],
+      "Text": "After your customer has requested enablement of Apply with LinkedIn as part of Step 2, please complete the request using the Enable Customer Integrations API. After successful execution of this API, your customers are enabled to use Apply with LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 3. Enable Customer Integrations",
+      "Anchor": "step-3-enable-customer-integrations",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations"
+      ],
+      "Text": "API Details\nThe details for Enable Customer Integrations API are given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass a bearer access token in your request as Authorization header. The access tokens are obtained via OAuth 2 Client Credentials flow. You must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Headers",
+      "Anchor": "api-headers",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "x-restli-method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "batch_partial_update",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration context obtained in step 2. The format will be urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration type obtained in step 2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s tenant type obtained in step 2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use ATS as the value for data provider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "Sample Request Body"
+      ],
+      "Text": "{\n  \u0022entities\u0022: {\n    \u0022integrationContext=urn:li:organization:{org_id}\u0026integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022integrationName\u0022: \u0022My Customer\u0027s Apply with LinkedIn Integration\u0022\n        }\n      }\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Body Fields",
+      "Anchor": "api-request-body-fields",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Request Body Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Customer-facing name for the integration.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration context obtained in step 2. The format will be urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "integrationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration type obtained in step 2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s tenant type obtained in step 2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use \u0022ATS\u0022 as the value for data provider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Successful execution of this API will return a 200 OK HTTP response code.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS\u0026dataProvider=ATS\u0026integrationContext=urn%3Ali%3Aorganization%3A{org_id}\u0022: {\n            \u0022status\u0022: 204\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Caution",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Access token should be generated using customer application client id and client secret while making this api calls.\nCreating integrations must be done server-side and in real-time.\nEnable Customer Integration API must not be called from the client using java script, it must be initiated from server side.\nOnce an Integration is Enabled for a customer, it cannot be disabled.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Error Details"
+      ],
+      "Text": "One of the following responses will be returned, containing a JSON object with a status and a message about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "Step 3. Enable Customer Integrations",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more of your update keys areviolating update rule :modifying onboarding statusfor already enabled integration is not allowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The status for the requested integrationType (i.e APPLY_WITH_LINKEDIN) for the customer is already ENABLED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the status of the Integration request and check for onBoardingStatus. Use Verify the Customer Configuration is Enabled API to verify the status",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#step-4-verify-customer-integrations"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Batch request mismatch. Entity key dataProvider=urn:li:developerApplication:\u003Capplication_id\u003E\u0026integrationContext=urn:li:company:\u003Ccompany_id\u003E\u0026integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS not found in the query parameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of following fields in request body and request parameters are not matching 1. integrationContext 2. integrationType 3. dataProvider 4. tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that values for following fields should match in request body and request parameters 1.integrationContext 2.integrationType 3.dataProvider 4.tenantType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration key parts are incomplete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more of the mandatory keys is missing from request body or request parameters. Following are mandatory keys 1.integrationContext 2.integrationType 3.dataProvider 4.tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Ensure that all the required keys are present in request body and request parameter 2. Ensure that values of following keys should match in request body and request parametersa. integrationContextb. integrationTypec. dataProviderd. tenantType",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access: POST /atsIntegrations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Application does not have required permissions",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that correct child application credentials are used for fetching access token which is used as Authorization header in this api call",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#api-authorization"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access Token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used is either tempered or not correct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token.Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#api-authorization"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No record found to partial update",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not able to find out any ATSIntegration Request which is initiated by the given customer application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the customer has initiated Apply with LinkedIn integration request using Step 2",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#step-2-display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4. Verify Customer Integrations",
+      "Anchor": "step-4-verify-customer-integrations",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations"
+      ],
+      "Text": "Verify Customer Integrations API is used to find out the onboarding status of the integrations requested by customers using Step 2.\nWhen a customer enables Apply with LinkedIn integration using Step 3, the onboarding status of that integration changes from Requested to Enabled. \nCustomer integrations can have following three onboarding statuses:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4. Verify Customer Integrations",
+      "Anchor": "step-4-verify-customer-integrations",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations"
+      ],
+      "Text": "Requested - the customer requested the integration. This is the status when customers have successfully completed Step 2\nPartner Ready - the integration is ready to be enabled by the customer. It is not applicable for Apply with LinkedIn Integration type.\nEnabled - the integration is set up and ready to use. This is the status when Step 3 is completed successfully",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Step 4. Verify Customer Integrations",
+      "Anchor": "step-4-verify-customer-integrations",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations"
+      ],
+      "Text": "API Details\nThe details for Verify Customer Integrations API are given below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "API Endpoint"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/atsIntegrations?ids[0].integrationContext={integrationContext}\u0026ids[0].integrationType={integrationType}\u0026ids[0].tenantType={tenantType}\u0026ids[0].dataProvider=ATS",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "API Authorization"
+      ],
+      "Text": "This API is governed by OAuth 2 authorization and you must pass a bearer access token in your request as Authorization header.\nThe access tokens are obtained via OAuth 2 Client Credentials flow.\nYou must use your customer\u0027s application client id and client secret to obtain the access token.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Headers",
+      "Anchor": "api-headers-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "API Authorization",
+        "API Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {accessToken}",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Request Parameters",
+      "Anchor": "api-request-parameters-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "API Authorization",
+        "API Request Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameters",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids[i].integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration context obtained in step 2. The format will be urn:li:organization:{id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].integrationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s integration type obtained in step 2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the customer\u0027s tenant type obtained in step 2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ids[i].dataProvider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use ATS as the value for data provider",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022errors\u0022: {},\n    \u0022results\u0022: {\n        \u0022integrationContext=urn:li:organization:{org_id}\u0026integrationType=APPLY_WITH_LINKEDIN\u0026tenantType=JOBS\u0026dataProvider=ATS\u0022: {\n            \u0022integrationName\u0022: \u0022My Customer\u0027s Apply with LinkedIn Integration\u0022,\n            \u0022onboardingStatus\u0022: \u0022ENABLED\u0022\n        }\n    },\n    \u0022statuses\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "Sample Response Body"
+      ],
+      "Text": "Access token should be generated using customer application client id and client secret while making this api calls.\nPARTNER_READY value of onboardingStatus is not applicable for APPLY_WITH_LINKEDIN integration type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "API Error Details"
+      ],
+      "Text": "One of the following responses will be returned, containing a JSON object with a status and a message about the error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details-1",
+      "SectionPath": [
+        "Step 4. Verify Customer Integrations",
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP CODE",
+        "RESPONSE STATUS",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NA",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No data in statuses, results and errors field of the response body",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No ATSIntegration is requested using customer application",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that the customer has initiated Apply with LinkedIn integration request using Step 2",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#step-2-display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid integration context urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value passed in integrationContext request parameter is not valid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure that you pass the correct integrationContext value in the request parameter. The integrationContext value is obtained in Step 2 .",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#step-2-display-the-ats-integration-configuration-plugin"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integration key parts are incomplete",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "One or more of the required fields are missing in request parameters or contains wrong values Following are mandatory fields 1.integrationContext 2.integrationType 3.dataProvider 4.tenantType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1.Ensure that you provide all the mandatory fields in the request parameter and provide correct values to the fields 2. Refer to API Request Parameter section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#api-request-parameters-1"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The token used in the request has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used in Authorization header has expired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token.Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#api-authorization-1"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The access token used is either tempered or not correct",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Regenerate a new access token.Use API Authorization section for more details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration?view=li-lts-2026-04#api-authorization-1"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

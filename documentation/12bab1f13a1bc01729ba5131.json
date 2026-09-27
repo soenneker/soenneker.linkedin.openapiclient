@@ -1,0 +1,552 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+  "Title": "DMP Segment Destinations",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Destinations",
+      "Anchor": "dmp-segment-destinations",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Destinations",
+      "Anchor": "dmp-segment-destinations",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "DMP Segment Destinations",
+      "Anchor": "dmp-segment-destinations",
+      "SectionPath": [],
+      "Text": "DMP Segment Destinations is a sub-resource of DMP segments and lets you add destinations (ad exchanges) to a DMP Segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments. Can manage and read audience DMP segments.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Create DMP Segment Destination",
+      "Anchor": "create-dmp-segment-destination",
+      "SectionPath": [
+        "Create DMP Segment Destination"
+      ],
+      "Text": "A destination can be defined either while creating the segment or added to an existing segment later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Create DMP Segment Destination",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "destination",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ad exchange or platform where the content of this segment will be on-boarded. Possible values are LINKEDIN.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/11134/destinations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022destination\u0022: \u0022LINKEDIN\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/dmpSegments/11134/destinations\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--data \u0027{\n    \u0022destination\u0022: \u0022LINKEDIN\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "A successful response returns a 201 Created HTTP status code and the type of destination created in the x-restli-id header.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch DMP Segment Destination",
+      "Anchor": "fetch-dmp-segment-destination",
+      "SectionPath": [
+        "Fetch DMP Segment Destination"
+      ],
+      "Text": "Fetch status and other metadata about the destination. Note that matchedCount only returns matches for the last seven days. audienceSize should be used for available audience for targeting.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "DMP Segment Statuses",
+      "Anchor": "dmp-segment-statuses",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "DMP Segment Statuses"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "BUILDING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that this segment is being built by the Audience pipeline and not ready to be used yet.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "UPDATING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that a segment is being updated and is being built by the backend again to pick up the updates.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "READY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that all information about this segment is ready and that campaigns using this segment can start to serve.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that some failure happened during the backend processing of this segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ARCHIVED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that the segment hasn\u0027t been used in any active campaign for more than 30 days. The segment can still be used in a campaign before it gets expired in 90 days.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EXPIRED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A status representing that a segment audience has been purged from our system due to data retention policy. Segments that haven\u0027t been used in any campaign for 90 days will become expired.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "audienceSize",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The approximate number of output entities that will be sent to this destination.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "matchedCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The approximate number of input entities that were successfully mapped to this destination segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Differences Between Audience Size and Matched Count Fields",
+      "Anchor": "differences-between-audience-size-and-matched-count-fields",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Differences Between Audience Size and Matched Count Fields"
+      ],
+      "Text": "It\u0027s important to understand the subtle difference between audienceSize and matchedCount values. If any change occurs on the segment, matched count and input count are calculated based on data collected from the past seven days (rolling seven-day window). Audience size is based on all input data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Differences Between Audience Size and Matched Count Fields",
+      "Anchor": "differences-between-audience-size-and-matched-count-fields",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Differences Between Audience Size and Matched Count Fields"
+      ],
+      "Text": "In addition audience count takes opt-out instances into account whereas match count doesn\u0027t. The relationships between matched input and actual audience can be one-to-many in either direction (one source profile can either match to one, many, or no profiles in the destination ad exchange).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Differences Between Audience Size and Matched Count Fields",
+      "Anchor": "differences-between-audience-size-and-matched-count-fields",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Differences Between Audience Size and Matched Count Fields"
+      ],
+      "Text": "For example, in an instance where a segment contains 2,000 user profiles from the source platform, 1,400 profiles were successfully matched to the destination ad-exchange. This value corresponds to matchedCount.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Differences Between Audience Size and Matched Count Fields",
+      "Anchor": "differences-between-audience-size-and-matched-count-fields",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Differences Between Audience Size and Matched Count Fields"
+      ],
+      "Text": "Out of these 1,400 matches, some profiles were matched to more than one profile in the destination, for example, 100, bringing the total audience size to 1,500. It is also possible that some profiles were matched to the same profile in the destination, for example, 200, bringing the total audience size to 1,300.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Differences Between Audience Size and Matched Count Fields",
+      "Anchor": "differences-between-audience-size-and-matched-count-fields",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Differences Between Audience Size and Matched Count Fields"
+      ],
+      "Text": "In summary, match count and input count indicate how well matching occurs for the past seven days. The match count doesn\u0027t necessarily have a correlation with the audience size.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/11134/destinations/LINKEDIN",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/11134/destinations/LINKEDIN\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022created\u0022: 1505349172000,\n    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:10001\u0022,\n    \u0022dmpSegmentId\u0022: 11134,\n    \u0022lastModified\u0022: 1505349172000,\n    \u0022status\u0022: \u0022BUILDING\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Response"
+      ],
+      "Text": "It is important to track whether the status field is BUILDING or READY. When the destination status is READY, audienceSize and matchedCount are also returned. Note that for member privacy protection, these metrics are approximate.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Response"
+      ],
+      "Text": "The following response is returned when status is READY:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Fetch DMP Segment Destination",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022audienceSize\u0022: 1500,\n    \u0022created\u0022: 1505349172000,\n    \u0022destination\u0022: \u0022LINKEDIN\u0022,\n    \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:10001\u0022,\n    \u0022dmpSegmentId\u0022: 11134,\n    \u0022lastModified\u0022: 1506349172000,\n    \u0022matchedCount\u0022: 1400,\n    \u0022status\u0022: \u0022READY\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Fetch All DMP Segment Destinations",
+      "Anchor": "fetch-all-dmp-segment-destinations",
+      "SectionPath": [
+        "Fetch All DMP Segment Destinations"
+      ],
+      "Text": "Retrieve information on all destinations configured for a segment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch All DMP Segment Destinations",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch All DMP Segment Destinations",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/11134/destinations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Fetch All DMP Segment Destinations",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmpSegments/11134/destinations\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\ \n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Fetch All DMP Segment Destinations",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022audienceSize\u0022: 152,\n            \u0022created\u0022: 1505349172000,\n            \u0022destination\u0022: \u0022LINKEDIN\u0022,\n            \u0022destinationSegmentId\u0022: \u0022urn:li:adSegment:10002\u0022,\n            \u0022dmpSegmentId\u0022: 11134,\n            \u0022lastModified\u0022: 1506349172000,\n            \u0022matchedCount\u0022: 135,\n            \u0022status\u0022: \u0022READY\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,1014 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+  "Title": "XML Feeds - Developer FAQ",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes-v2",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "XML Feeds - Developer FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "XML Feeds - Developer FAQ",
+      "Anchor": "",
+      "SectionPath": [],
+      "Text": "These FAQs are based on common developer questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Integration Phase FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "Why should I provide recommended fields?\nHow should we provide the feed?\nIs the XML feed testing conducted in an externalized environment?\nShould partners provide a full list of jobs or just the changes such as new jobs or edits to their list of jobs?\nDo I need to pay to have my jobs ingested?\nDoes LinkedIn guarantee that it will ingest all listings from my feed?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Product Functionality FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "What if LinkedIn already has a subset of the jobs in my feeds?\nWhat are the possible reasons for a Basic Jobs not going live on LinkedIn?\nHow can we ensure Basic Jobs from the feed are posted on LinkedIn?\nWill the jobs be associated with the Basic Jobs feed partner or the job posting company?\nIs it possible to only ingest a portion of listings from my feed?\nHow are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?\nHow often is the XML feed scraped?\nIs it possible to make changes to a job after it has been posted on LinkedIn through the XML feed?\nHow do I mark a job with workplace type as remote, on-site or hybrid?\nHow can I edit or claim an ingested job?\nWhat are industry codes and why are they important?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Customer Facing FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "What is job wrapping?\nHow is a standalone individual XML feed per customer different from a consolidated XML feed?\nWhen should customers use standalone XML Jobs Feed?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Technical Support FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "What is the support process to solve for technical issues with the feed or job postings?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Why should I provide recommended fields?",
+      "Anchor": "why-should-i-provide-recommended-fields-",
+      "SectionPath": [
+        "Integration Phase",
+        "Why should I provide recommended fields?"
+      ],
+      "Text": "Jobs with complete and detailed information are more likely to be ingested, discovered and are better able to attract high quality applicants.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How should we provide the feed?",
+      "Anchor": "how-should-we-provide-the-feed-",
+      "SectionPath": [
+        "Integration Phase",
+        "How should we provide the feed?"
+      ],
+      "Text": "Partners should provide a static URL where LinkedIn can download the feed on an ongoing basis. Alternatively, partners can upload an XML feed to their own SFTP server.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is the XML feed testing conducted in an externalized environment?",
+      "Anchor": "is-the-xml-feed-testing-conducted-in-an-externalized-environment-",
+      "SectionPath": [
+        "Integration Phase",
+        "Is the XML feed testing conducted in an externalized environment?"
+      ],
+      "Text": "The XML feed testing is conducted internally and we do not have an externalized environment for the same. We provide our partners with feedback on the performance of the feed or on technical changes. Further, if required by the partner, we can send screenshots of how the jobs would appear on LinkedIn from our internal testing environment. Upon partner approval we will push the feed live so that the jobs start posting on the LinkedIn company Page of their customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Should partners provide a full list of jobs or just the changes such as new jobs or edits to their list of jobs?",
+      "Anchor": "should-partners-provide-a-full-list-of-jobs-or-just-the-changes-such-as-new-jobs-or-edits-to-their-list-of-jobs-",
+      "SectionPath": [
+        "Integration Phase",
+        "Should partners provide a full list of jobs or just the changes such as new jobs or edits to their list of jobs?"
+      ],
+      "Text": "Partners must provide a full list of jobs. We recommend to update the feed every 12 hours to ensure freshness of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Do I need to pay to have my jobs ingested?",
+      "Anchor": "do-i-need-to-pay-to-have-my-jobs-ingested-",
+      "SectionPath": [
+        "Integration Phase",
+        "Do I need to pay to have my jobs ingested?"
+      ],
+      "Text": "No. LinkedIn does not charge for ingestion and hosting of Basic Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Does LinkedIn guarantee that it will ingest all listings from my feed?",
+      "Anchor": "does-linkedin-guarantee-that-it-will-ingest-all-listings-from-my-feed-",
+      "SectionPath": [
+        "Integration Phase",
+        "Does LinkedIn guarantee that it will ingest all listings from my feed?"
+      ],
+      "Text": "No. However, you can provide information for all the recommended fields and increase the chances that a listing is posted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What if LinkedIn already has a subset of the jobs in my feeds?",
+      "Anchor": "what-if-linkedin-already-has-a-subset-of-the-jobs-in-my-feeds-",
+      "SectionPath": [
+        "Product Functionality",
+        "What if LinkedIn already has a subset of the jobs in my feeds?"
+      ],
+      "Text": "We ensure that any duplicate jobs are removed from the feed. We prioritize our jobs based on their sources and accordingly deduplicate them to ensure the jobs on LinkedIn are from high quality sources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the possible reasons for a Basic Jobs not going live on LinkedIn?",
+      "Anchor": "what-are-the-possible-reasons-for-a-basic-jobs-not-going-live-on-linkedin-",
+      "SectionPath": [
+        "Product Functionality",
+        "What are the possible reasons for a Basic Jobs not going live on LinkedIn?"
+      ],
+      "Text": "There are several reasons why a Basic Jobs may not be posted on LinkedIn, such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the possible reasons for a Basic Jobs not going live on LinkedIn?",
+      "Anchor": "what-are-the-possible-reasons-for-a-basic-jobs-not-going-live-on-linkedin-",
+      "SectionPath": [
+        "Product Functionality",
+        "What are the possible reasons for a Basic Jobs not going live on LinkedIn?"
+      ],
+      "Text": "LinkedIn Premium Job Post: Job is already posted as a paid job by the customer on their company page\nMissing or Invalid fields: Jobs will not post if any mandatory field(s) is blank or have invalid info. Please refer to the XML requirements\nMissing Company ID: Company ID is a mandatory field on the XML feed for ATSs. Please find the steps for retrieving Company ID\nEmployer opt-out: Employer has opted out of job ingestion from any third-party site\nSpam Jobs: Jobs posted on LinkedIn may be selected to undergo our jobs review process and must meet our guidelines as part of our commitment to professionalism and integrity. If jobs do not meet the guidelines, they may be marked as spam\nIn some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D) or jobs from search and staffing companies. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are the possible reasons for a Basic Jobs not going live on LinkedIn?",
+      "Anchor": "what-are-the-possible-reasons-for-a-basic-jobs-not-going-live-on-linkedin-",
+      "SectionPath": [
+        "Product Functionality",
+        "What are the possible reasons for a Basic Jobs not going live on LinkedIn?"
+      ],
+      "Text": "If after checking the above details, your Basic Jobs still does not post, please follow the process to file a ticket with our Help Center for further information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can we ensure Basic Jobs from the feed are posted on LinkedIn?",
+      "Anchor": "how-can-we-ensure-basic-jobs-from-the-feed-are-posted-on-linkedin-",
+      "SectionPath": [
+        "Product Functionality",
+        "How can we ensure Basic Jobs from the feed are posted on LinkedIn?"
+      ],
+      "Text": "There are several reasons why a Basic Jobs may not be posted on LinkedIn. You can follow the below to ensure jobs are posted:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can we ensure Basic Jobs from the feed are posted on LinkedIn?",
+      "Anchor": "how-can-we-ensure-basic-jobs-from-the-feed-are-posted-on-linkedin-",
+      "SectionPath": [
+        "Product Functionality",
+        "How can we ensure Basic Jobs from the feed are posted on LinkedIn?"
+      ],
+      "Text": "Ensure all mandatory fields are populated correctly\nEnsure that the job descriptions are a minimum of 100 characters to be considered as valid\nMinimize the number of expired jobs in your XML feed\nMinimize the number of duplicate jobs in your XML feed\nDo not use your company\u2019s name or other job boards\u2019 company names in place of the name of the employer hiring for the job\nInclude as much location information as possible. The city name by itself may be ambiguous so ensure to include State and Country/Region (where ever available)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Will the jobs be associated with the Basic Jobs feed partner or the job posting company?",
+      "Anchor": "will-the-jobs-be-associated-with-the-basic-jobs-feed-partner-or-the-job-posting-company-",
+      "SectionPath": [
+        "Product Functionality",
+        "Will the jobs be associated with the Basic Jobs feed partner or the job posting company?"
+      ],
+      "Text": "The jobs must be associated with the actual employer hiring for the job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is it possible to only ingest a portion of listings from my feed?",
+      "Anchor": "is-it-possible-to-only-ingest-a-portion-of-listings-from-my-feed-",
+      "SectionPath": [
+        "Product Functionality",
+        "Is it possible to only ingest a portion of listings from my feed?"
+      ],
+      "Text": "Unfortunately, we cannot select a subset of open roles to ingest as Basic Jobs. We suggest you only send jobs on the feed that you would like LinkedIn to ingest.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?",
+      "Anchor": "how-are-basic-jobs-different-from-linkedin-job-slots-and-linkedin-job-posts-",
+      "SectionPath": [
+        "Product Functionality",
+        "How are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?"
+      ],
+      "Text": "Basic Jobs differ in the following ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?",
+      "Anchor": "how-are-basic-jobs-different-from-linkedin-job-slots-and-linkedin-job-posts-",
+      "SectionPath": [
+        "Product Functionality",
+        "How are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?"
+      ],
+      "Text": "Job Slots have greater visibility across LinkedIn, being promoted in job searches and getting distributed across the platform via targeted recommendations in the LinkedIn feed, Jobs tab, and Notifications\nBasic Jobs are ingested jobs that only appear in the Jobs tab of the employers\u2019 company Page and central Jobs search tab. Basic Jobs don\u2019t offer access to premium features like the Job Analytics Report",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?",
+      "Anchor": "how-are-basic-jobs-different-from-linkedin-job-slots-and-linkedin-job-posts-",
+      "SectionPath": [
+        "Product Functionality",
+        "How are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?"
+      ],
+      "Text": "For more information, refer to this Help Centre article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How often is the XML feed scraped?",
+      "Anchor": "how-often-is-the-xml-feed-scraped-",
+      "SectionPath": [
+        "Product Functionality",
+        "How often is the XML feed scraped?"
+      ],
+      "Text": "We scrape the XML feeds of ATS partners every six hours and for job board partners every 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Is it possible to make changes to a job after it has been posted on LinkedIn through the XML feed?",
+      "Anchor": "is-it-possible-to-make-changes-to-a-job-after-it-has-been-posted-on-linkedin-through-the-xml-feed-",
+      "SectionPath": [
+        "Product Functionality",
+        "Is it possible to make changes to a job after it has been posted on LinkedIn through the XML feed?"
+      ],
+      "Text": "Yes, it is possible to make changes to a job already posted on LinkedIn. This can be done by making changes to the job on the XML feed. The job will be updated on LinkedIn by the next scrape, typically within 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I mark a job with workplace type as remote, on-site or hybrid?",
+      "Anchor": "how-do-i-mark-a-job-with-workplace-type-as-remote--on-site-or-hybrid-",
+      "SectionPath": [
+        "Product Functionality",
+        "How do I mark a job with workplace type as remote, on-site or hybrid?"
+      ],
+      "Text": "Starting January 4, 2022, we will support the following two ways to mark jobs as remote, on-site or hybrid:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I mark a job with workplace type as remote, on-site or hybrid?",
+      "Anchor": "how-do-i-mark-a-job-with-workplace-type-as-remote--on-site-or-hybrid-",
+      "SectionPath": [
+        "Product Functionality",
+        "How do I mark a job with workplace type as remote, on-site or hybrid?"
+      ],
+      "Text": "workplaceTypes field in the XML feed. Please see Job Posting Schema and workplace requirements here Include one of the following relevant hashtags in the job description:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "How do I mark a job with workplace type as remote, on-site or hybrid?",
+      "Anchor": "how-do-i-mark-a-job-with-workplace-type-as-remote--on-site-or-hybrid-",
+      "SectionPath": [
+        "Product Functionality",
+        "How do I mark a job with workplace type as remote, on-site or hybrid?"
+      ],
+      "Text": "",
+      "Headers": [
+        "Workplace Type",
+        "Hashtag"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "On-Site",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#Li-onsite",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Hybrid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#Li-hybrid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Remote",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#Li-remote",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I mark a job with workplace type as remote, on-site or hybrid?",
+      "Anchor": "how-do-i-mark-a-job-with-workplace-type-as-remote--on-site-or-hybrid-",
+      "SectionPath": [
+        "Product Functionality",
+        "How do I mark a job with workplace type as remote, on-site or hybrid?"
+      ],
+      "Text": "Please note that only the above hashtags will be accepted. The hashtags will take precedence over the workplaceTypes field in marking the workplace nature of the job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How can I edit or claim an ingested job?",
+      "Anchor": "how-can-i-edit-or-claim-an-ingested-job-",
+      "SectionPath": [
+        "Product Functionality",
+        "How can I edit or claim an ingested job?"
+      ],
+      "Text": "You can claim a Basic Jobs or ingested job if you work for the company hiring for the job. Once claimed, you can edit and manage it through LinkedIn as a free job or promote it for greater visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What are industry codes and why are they important?",
+      "Anchor": "what-are-industry-codes-and-why-are-they-important-",
+      "SectionPath": [
+        "Product Functionality",
+        "What are industry codes and why are they important?"
+      ],
+      "Text": "Industry codes represent the LinkedIn code representative of industry. This is a mandatory value for any job to go live on LinkedIn. LinkedIn uses Company ID values provided in the XML feed or those inferred by our job-to-company standardizer (if Company ID is not available on the XML feed) to infer industry codes from the company page. For example, all jobs mapped to \u201CBMW Group\u201D company page will read industry as \u201CAutomotive\u201D. Since the Company ID field is mandatory for ATS partners, we have not made industry codes a \u0022mandatory\u0022 field. In the event, you cannot provide the company ID, we will highly recommend you include the Industry field in the XML to ensure industry is available for jobs to go live. Please contact LL-BD@linkedin.com in case you add or remove any fields in the XML feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is job wrapping?",
+      "Anchor": "what-is-job-wrapping-",
+      "SectionPath": [
+        "Customer Facing",
+        "What is job wrapping?"
+      ],
+      "Text": "Job Wrapping is a service provided through LinkedIn Recruiter which allows customers to prioritize which open jobs are automatically posted from your Applicant Tracking System (ATS) or career site into LinkedIn job slots. For LinkedIn customers that have Job Slots, Job Wrapping is an efficient method to automate the job posting process of posting jobs into slots. To get started with job wrapping, LinkedIn customers should contact their LinkedIn account manager. More information on Job Wrapping is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How is a standalone individual XML feed per customer different from a consolidated XML feed?",
+      "Anchor": "how-is-a-standalone-individual-xml-feed-per-customer-different-from-a-consolidated-xml-feed-",
+      "SectionPath": [
+        "Customer Facing",
+        "How is a standalone individual XML feed per customer different from a consolidated XML feed?"
+      ],
+      "Text": "A standalone individual XML feed is recommended for mutual customers with job wrapping. This gives them greater control over how their jobs are \u201Cwrapped\u201D or ingested from your ATS or career site and onto the LinkedIn platform. Customers can choose which fields from your system you want to include or do not want to include to determine how your jobs are listed on LinkedIn. To set-up such feeds, please have the customer contact their LinkedIn Account Manager. The consolidated XML feed will work well for non-LinkedIn customers or LinkedIn customers who do not use job wrapping. For more information on job wrapping, please click here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When should customers use standalone XML Jobs Feed?",
+      "Anchor": "when-should-customers-use-standalone-xml-jobs-feed-",
+      "SectionPath": [
+        "Customer Facing",
+        "When should customers use standalone XML Jobs Feed?"
+      ],
+      "Text": "The XML Jobs feed is self-service so you maintain control over how your jobs are displayed on LinkedIn. This is a good option if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "When should customers use standalone XML Jobs Feed?",
+      "Anchor": "when-should-customers-use-standalone-xml-jobs-feed-",
+      "SectionPath": [
+        "Customer Facing",
+        "When should customers use standalone XML Jobs Feed?"
+      ],
+      "Text": "The jobs on your career site are inconsistent or incomplete\nYou would like to use values from fields that are captured in your ATS but not displayed on your career site in order to influence how jobs are listed on LinkedIn\nThe job wrapping from your career site yields inconsistent results as your site updates at the same time we ingest jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the support process to solve for technical issues with the feed or job postings?",
+      "Anchor": "what-is-the-support-process-to-solve-for-technical-issues-with-the-feed-or-job-postings-",
+      "SectionPath": [
+        "Technical Support",
+        "What is the support process to solve for technical issues with the feed or job postings?"
+      ],
+      "Text": "Create a ticket using the following link: https://www.linkedin.com/help/recruiter. Note: If you are placing a request on behalf of a customer, ensure that you have a screenshot of the customer\u2019s consent included as an attachment on the ticket.\n\nIf you have a LinkedIn Recruiter seat, the \u0022Recruiter Help Center\u0022 page displays. Get started under \u201CChat with support\u201D or \u201CCreate a support ticket\u201D on the right hand rail (as shown in the image below). We highly recommend the chat option (if available) for a faster turnaround.\n\nFor all other members, the \u0022How can we help\u0022 page displays (as shown in the image below). Proceed by selecting \u0022Other\u0022 and type \u0022Jobs\u0022 as a response to the question \u0022What do you need help with?\u0022 You will see the option to \u0022Create a support ticket\u0022 at the bottom of the page.\n\n\n\nFill out the ticket as per the below request scenario:\n\nStart ingestion from ATS feed as the preferred source of ingestion and opt-out other ingestion sources\n\nContact Reason: General Question/Service Request\nIssue Type: Jobs\nYour Question: Please opt-in the following employer for Basic Jobs ingestion from the below ATS XML feed that is already integrated with LinkedIn. Please use the following information:\n\nATS XML Name (JAM Source): \u2018Your platform name\u2019 ATS XML\nEmployer Name: Exact company name as on the feed\nCompany Page URL: LinkedIn Company Page URL starting with https://www.linkedin.com/company/\nWe have also attached the consent from the customer for your reference. Please note that to stop ingestion from other sources on a given company Page, we need consent (screenshot) from either a company page admin, or someone that has a seat on a connected Recruiter Dashboard to the company page that is either a Recruiter or Dashboard manager.\n\n\n\n\nIncorrectly mapped jobs\n\nContact Reason: Something is broken or not working\nIssue Type: Jobs\nYour Question: Our customer\u2019s job posting is incorrectly mapped to a different company, and needs to be edited. Please use the following information:\n\nSample LinkedIn Job URL: LinkedIn Job URL starting with https://www.linkedin.com/jobs/\nIncorrect LinkedIn Company Page URL: LinkedIn Company Page URL starting with https://www.linkedin.com/company/\nCorrect LinkedIn Company Page URL: LinkedIn Company Page URL starting with https://www.linkedin.com/company/",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the support process to solve for technical issues with the feed or job postings?",
+      "Anchor": "what-is-the-support-process-to-solve-for-technical-issues-with-the-feed-or-job-postings-",
+      "SectionPath": [
+        "Technical Support",
+        "What is the support process to solve for technical issues with the feed or job postings?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is the support process to solve for technical issues with the feed or job postings?",
+      "Anchor": "what-is-the-support-process-to-solve-for-technical-issues-with-the-feed-or-job-postings-",
+      "SectionPath": [
+        "Technical Support",
+        "What is the support process to solve for technical issues with the feed or job postings?"
+      ],
+      "Text": "These FAQs are based on common developer questions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Integration Phase FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "Why should I provide recommended fields?\nHow should we provide the feed?\nIs the XML feed testing conducted in an externalized environment?\nShould partners provide a full list of jobs or just the changes such as new jobs or edits to their list of jobs?\nDo I need to pay to have my jobs ingested?\nDoes LinkedIn guarantee that it will ingest all listings from my feed?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Product Functionality FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "What if LinkedIn already has a subset of the jobs in my feeds?\nWhat are the possible reasons for a Basic Jobs not going live on LinkedIn?\nHow can we ensure Basic Jobs from the feed are posted on LinkedIn?\nWill the jobs be associated with the Basic Jobs feed partner or the job posting company?\nIs it possible to only ingest a portion of listings from my feed?\nHow are Basic Jobs different from LinkedIn Job Slots and LinkedIn Job Posts?\nHow often is the XML feed scraped?\nIs it possible to make changes to a job after it has been posted on LinkedIn through the XML feed?\nHow do I mark a job with workplace type as remote, on-site or hybrid?\nHow can I edit or claim an ingested job?\nWhat are industry codes and why are they important?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Customer Facing FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "What is job wrapping?\nHow is a standalone individual XML feed per customer different from a consolidated XML feed?\nWhen should customers use standalone XML Jobs Feed?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "- Technical Support FAQ",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Developer Questions",
+      "Anchor": "developer-questions",
+      "SectionPath": [
+        "Developer Questions"
+      ],
+      "Text": "What is the support process to solve for technical issues with the feed or job postings?",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Jobs with complete and detailed information are more likely to be ingested, discovered and are better able to attract high quality applicants.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Partners should provide a static URL where LinkedIn can download the feed on an ongoing basis. Alternatively, partners can upload an XML feed to their own SFTP server.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The XML feed testing is conducted internally and we do not have an externalized environment for the same. We provide our partners with feedback on the performance of the feed or on technical changes. Further, if required by the partner, we can send screenshots of how the jobs would appear on LinkedIn from our internal testing environment. Upon partner approval we will push the feed live so that the jobs start posting on the LinkedIn company Page of their customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Partners must provide a full list of jobs. We recommend to update the feed every 12 hours to ensure freshness of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "No. LinkedIn does not charge for ingestion and hosting of Basic Jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "No. However, you can provide information for all the recommended fields and increase the chances that a listing is posted.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "We ensure that any duplicate jobs are removed from the feed. We prioritize our jobs based on their sources and accordingly deduplicate them to ensure the jobs on LinkedIn are from high quality sources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "There are several reasons why a Basic Jobs may not be posted on LinkedIn, such as:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "LinkedIn Premium Job Post: Job is already posted as a paid job by the customer on their company page\nMissing or Invalid fields: Jobs will not post if any mandatory field(s) is blank or have invalid info. Please refer to the XML requirements\nMissing Company ID: Company ID is a mandatory field on the XML feed for ATSs. Please find the steps for retrieving Company ID\nEmployer opt-out: Employer has opted out of job ingestion from any third-party site\nSpam Jobs: Jobs posted on LinkedIn may be selected to undergo our jobs review process and must meet our guidelines as part of our commitment to professionalism and integrity. If jobs do not meet the guidelines, they may be marked as spam\nIn some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D) or jobs from search and staffing companies. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "If after checking the above details, your Basic Jobs still does not post, please follow the process to file a ticket with our Help Center for further information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "There are several reasons why a Basic Jobs may not be posted on LinkedIn. You can follow the below to ensure jobs are posted:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Ensure all mandatory fields are populated correctly\nEnsure that the job descriptions are a minimum of 100 characters to be considered as valid\nMinimize the number of expired jobs in your XML feed\nMinimize the number of duplicate jobs in your XML feed\nDo not use your company\u2019s name or other job boards\u2019 company names in place of the name of the employer hiring for the job\nInclude as much location information as possible. The city name by itself may be ambiguous so ensure to include State and Country/Region (where ever available)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The jobs must be associated with the actual employer hiring for the job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Unfortunately, we cannot select a subset of open roles to ingest as Basic Jobs. We suggest you only send jobs on the feed that you would like LinkedIn to ingest.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Basic Jobs differ in the following ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Job Slots have greater visibility across LinkedIn, being promoted in job searches and getting distributed across the platform via targeted recommendations in the LinkedIn feed, Jobs tab, and Notifications\nBasic Jobs are ingested jobs that only appear in the Jobs tab of the employers\u2019 company Page and central Jobs search tab. Basic Jobs don\u2019t offer access to premium features like the Job Analytics Report",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "For more information, refer to this Help Centre article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "We scrape the XML feeds of ATS partners every six hours and for job board partners every 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Yes, it is possible to make changes to a job already posted on LinkedIn. This can be done by making changes to the job on the XML feed. The job will be updated on LinkedIn by the next scrape, typically within 24 hours.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Starting January 4, 2022, we will support the following two ways to mark jobs as remote, on-site or hybrid:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "workplaceTypes field in the XML feed. Please see Job Posting Schema and workplace requirements here Include one of the following relevant hashtags in the job description:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "",
+      "Headers": [
+        "Workplace Type",
+        "Hashtag"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "On-Site",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#Li-onsite",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Hybrid",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#Li-hybrid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Remote",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "#Li-remote",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Please note that only the above hashtags will be accepted. The hashtags will take precedence over the workplaceTypes field in marking the workplace nature of the job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "You can claim a Basic Jobs or ingested job if you work for the company hiring for the job. Once claimed, you can edit and manage it through LinkedIn as a free job or promote it for greater visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Industry codes represent the LinkedIn code representative of industry. This is a mandatory value for any job to go live on LinkedIn. LinkedIn uses Company ID values provided in the XML feed or those inferred by our job-to-company standardizer (if Company ID is not available on the XML feed) to infer industry codes from the company page. For example, all jobs mapped to \u201CBMW Group\u201D company page will read industry as \u201CAutomotive\u201D. Since the Company ID field is mandatory for ATS partners, we have not made industry codes a \u0022mandatory\u0022 field. In the event, you cannot provide the company ID, we will highly recommend you include the Industry field in the XML to ensure industry is available for jobs to go live. Please contact LL-BD@linkedin.com in case you add or remove any fields in the XML feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Job Wrapping is a service provided through LinkedIn Recruiter which allows customers to prioritize which open jobs are automatically posted from your Applicant Tracking System (ATS) or career site into LinkedIn job slots. For LinkedIn customers that have Job Slots, Job Wrapping is an efficient method to automate the job posting process of posting jobs into slots. To get started with job wrapping, LinkedIn customers should contact their LinkedIn account manager. More information on Job Wrapping is available here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "A standalone individual XML feed is recommended for mutual customers with job wrapping. This gives them greater control over how their jobs are \u201Cwrapped\u201D or ingested from your ATS or career site and onto the LinkedIn platform. Customers can choose which fields from your system you want to include or do not want to include to determine how your jobs are listed on LinkedIn. To set-up such feeds, please have the customer contact their LinkedIn Account Manager. The consolidated XML feed will work well for non-LinkedIn customers or LinkedIn customers who do not use job wrapping. For more information on job wrapping, please click here",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The XML Jobs feed is self-service so you maintain control over how your jobs are displayed on LinkedIn. This is a good option if:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "The jobs on your career site are inconsistent or incomplete\nYou would like to use values from fields that are captured in your ATS but not displayed on your career site in order to influence how jobs are listed on LinkedIn\nThe job wrapping from your career site yields inconsistent results as your site updates at the same time we ingest jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Product FAQs",
+      "Anchor": "product-faqs",
+      "SectionPath": [
+        "Product FAQs"
+      ],
+      "Text": "Create a ticket using the following link: https://www.linkedin.com/help/recruiter. Note: If you are placing a request on behalf of a customer, ensure that you have a screenshot of the customer\u2019s consent included as an attachment on the ticket.\n\nIf you have a LinkedIn Recruiter seat, the \u0022Recruiter Help Center\u0022 page displays. Get started under \u201CChat with support\u201D or \u201CCreate a support ticket\u201D on the right hand rail (as shown in the image below). We highly recommend the chat option (if available) for a faster turnaround.\n\nFor all other members, the \u0022How can we help\u0022 page displays (as shown in the image below). Proceed by selecting \u0022Other\u0022 and type \u0022Jobs\u0022 as a response to the question \u0022What do you need help with?\u0022 You will see the option to \u0022Create a support ticket\u0022 at the bottom of the page.\n\n\n\nFill out the ticket as per the below request scenario:\n\nStart ingestion from ATS feed as the preferred source of ingestion and opt-out other ingestion sources\n\nContact Reason: General Question/Service Request\nIssue Type: Jobs\nYour Question: Please opt-in the following employer for Basic Jobs ingestion from the below ATS XML feed that is already integrated with LinkedIn. Please use the following information:\n\nATS XML Name (JAM Source): \u2018Your platform name\u2019 ATS XML\nEmployer Name: Exact company name as on the feed\nCompany Page URL: LinkedIn Company Page URL starting with https://www.linkedin.com/company/\nWe have also attached the consent from the customer for your reference. Please note that to stop ingestion from other sources on a given company Page, we need consent (screenshot) from either a company page admin, or someone that has a seat on a connected Recruiter Dashboard to the company page that is either a Recruiter or Dashboard manager.\n\n\n\n\nIncorrectly mapped jobs\n\nContact Reason: Something is broken or not working\nIssue Type: Jobs\nYour Question: Our customer\u2019s job posting is incorrectly mapped to a different company, and needs to be edited. Please use the following information:\n\nSample LinkedIn Job URL: LinkedIn Job URL starting with https://www.linkedin.com/jobs/\nIncorrect LinkedIn Company Page URL: LinkedIn Company Page URL starting with https://www.linkedin.com/company/\nCorrect LinkedIn Company Page URL: LinkedIn Company Page URL starting with https://www.linkedin.com/company/",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema",
+  "Title": "Reputation Schema",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/endorsement",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/reputation-schema/recommendation-request",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Reputation Schema",
+      "Anchor": "reputation-schema",
+      "SectionPath": [],
+      "Text": "Endorsement\nRecommendation\nRecommendation Request",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

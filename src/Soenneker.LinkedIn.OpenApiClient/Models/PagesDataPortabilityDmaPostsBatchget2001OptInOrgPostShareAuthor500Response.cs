@@ -26,7 +26,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public int? Status { get; set; }
+        public long? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaPostsBatchget2001OptInOrgPostShareAuthor500Response"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteIntValue("status", Status);
+            writer.WriteLongValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

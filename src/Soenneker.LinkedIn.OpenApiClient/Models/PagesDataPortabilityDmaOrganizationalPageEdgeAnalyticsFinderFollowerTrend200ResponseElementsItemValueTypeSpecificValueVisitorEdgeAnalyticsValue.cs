@@ -15,17 +15,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The desktopCount property</summary>
-        public int? DesktopCount { get; set; }
+        public long? DesktopCount { get; set; }
         /// <summary>The desktopCtaClickCount property</summary>
-        public int? DesktopCtaClickCount { get; set; }
+        public long? DesktopCtaClickCount { get; set; }
         /// <summary>The guestDesktopCount property</summary>
-        public int? GuestDesktopCount { get; set; }
+        public long? GuestDesktopCount { get; set; }
         /// <summary>The guestMobileCount property</summary>
-        public int? GuestMobileCount { get; set; }
+        public long? GuestMobileCount { get; set; }
         /// <summary>The mobileCount property</summary>
-        public int? MobileCount { get; set; }
+        public long? MobileCount { get; set; }
         /// <summary>The mobileCtaClickCount property</summary>
-        public int? MobileCtaClickCount { get; set; }
+        public long? MobileCtaClickCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEdgeAnalyticsFinderFollowerTrend200ResponseElementsItemValueTypeSpecificValueVisitorEdgeAnalyticsValue"/> and sets the default values.
         /// </summary>
@@ -51,12 +51,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "desktopCount", n => { DesktopCount = n.GetIntValue(); } },
-                { "desktopCtaClickCount", n => { DesktopCtaClickCount = n.GetIntValue(); } },
-                { "guestDesktopCount", n => { GuestDesktopCount = n.GetIntValue(); } },
-                { "guestMobileCount", n => { GuestMobileCount = n.GetIntValue(); } },
-                { "mobileCount", n => { MobileCount = n.GetIntValue(); } },
-                { "mobileCtaClickCount", n => { MobileCtaClickCount = n.GetIntValue(); } },
+                { "desktopCount", n => { DesktopCount = n.GetLongValue(); } },
+                { "desktopCtaClickCount", n => { DesktopCtaClickCount = n.GetLongValue(); } },
+                { "guestDesktopCount", n => { GuestDesktopCount = n.GetLongValue(); } },
+                { "guestMobileCount", n => { GuestMobileCount = n.GetLongValue(); } },
+                { "mobileCount", n => { MobileCount = n.GetLongValue(); } },
+                { "mobileCtaClickCount", n => { MobileCtaClickCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -66,12 +66,12 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("desktopCount", DesktopCount);
-            writer.WriteIntValue("desktopCtaClickCount", DesktopCtaClickCount);
-            writer.WriteIntValue("guestDesktopCount", GuestDesktopCount);
-            writer.WriteIntValue("guestMobileCount", GuestMobileCount);
-            writer.WriteIntValue("mobileCount", MobileCount);
-            writer.WriteIntValue("mobileCtaClickCount", MobileCtaClickCount);
+            writer.WriteLongValue("desktopCount", DesktopCount);
+            writer.WriteLongValue("desktopCtaClickCount", DesktopCtaClickCount);
+            writer.WriteLongValue("guestDesktopCount", GuestDesktopCount);
+            writer.WriteLongValue("guestMobileCount", GuestMobileCount);
+            writer.WriteLongValue("mobileCount", MobileCount);
+            writer.WriteLongValue("mobileCtaClickCount", MobileCtaClickCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

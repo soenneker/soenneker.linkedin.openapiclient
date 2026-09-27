@@ -1,0 +1,659 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+  "Title": "Organization Follower Statistics",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Follower Statistics",
+      "Anchor": "organization-follower-statistics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Follower Statistics",
+      "Anchor": "organization-follower-statistics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Follower Statistics",
+      "Anchor": "organization-follower-statistics",
+      "SectionPath": [],
+      "Text": "The organizationalEntityFollowerStatistics API allows you to retrieve both lifetime and time-bound statistics on followers for an organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Follower Statistics",
+      "Anchor": "organization-follower-statistics",
+      "SectionPath": [],
+      "Text": "Lifetime follower statistics: To retrieve lifetime follower statistics, omit the timeIntervals query parameter. The API returns follower counts segmented by various facets such as geo location and industry.\n\nTime-bound follower statistics: To retrieve time-bound follower statistics, include the timeIntervals query parameter. The API returns the aggregate follower count for both paid and organic followers during the days, weeks or months of the selected date range, based on the specified timeIntervals.timeGranularityType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Follower Statistics",
+      "Anchor": "organization-follower-statistics",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Follower Statistics",
+      "Anchor": "organization-follower-statistics",
+      "SectionPath": [],
+      "Text": "Time-bound follower counts are aggregated and not segmented by facet.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data. Restricted to organizations in which the authenticated member has the following role: ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lifetime Follower Statistics",
+      "Anchor": "retrieve-lifetime-follower-statistics",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics"
+      ],
+      "Text": "Calling organizationalEntityFollowerStatistics without specifying a timeIntervals parameter will retrieve lifetime follower statistics segmented by various professional demographic facets. Professional Demographic results are rolled up as a total of both organic and paid followers in the organicFollowerCount field. Do not refer to the paidFollowerCount field for professional demographic statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lifetime Follower Statistics",
+      "Anchor": "retrieve-lifetime-follower-statistics",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics"
+      ],
+      "Text": "This endpoint no longer returns totalFollowerCounts. Use the networkSizes API under Organization Lookup to retrieve an organization\u0027s total follower count.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Professional Demographic Facets",
+      "Anchor": "professional-demographic-facets",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets"
+      ],
+      "Text": "Follower statistics can be broken down by 7 professional demographic facets. The results for any individual facet are limited to the top 100 results. For example, if a page has followers in more than 100 countries/regions, only the top 100 countries/regions will be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Professional Demographic Facets",
+      "Anchor": "professional-demographic-facets",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets"
+      ],
+      "Text": "Professional Demographic results are rolled up as a total of both organic and paid followers in the organicFollowerCount field. Do not refer to the paidFollowerCount field for professional demographic statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Professional Demographic Facets",
+      "Anchor": "professional-demographic-facets",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets"
+      ],
+      "Text": "",
+      "Headers": [
+        "Facet",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "followerCountsByAssociationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by association type(employee) of the followers.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followerCountsByGeoCountry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by country/region of the followers. The array will contain one item per country/region.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followerCountsByFunction",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by the function of the followers. The array will contain one item per function.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followerCountsByIndustry",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by industry of the followers. The array will contain one item per industry.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followerCountsByGeo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by market area of the followers. The array will contain one item per market area.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followerCountsBySeniority",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by the seniority of the followers. The array will contain one item per seniority",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "followerCountsByStaffCountRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Counts by staff count range of the current organizations of the followers. The array will contain one item per staff count range.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Professional Demographic Facets",
+      "Anchor": "professional-demographic-facets",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets"
+      ],
+      "Text": "See Standardized Data for additional detail on these professional demographic facets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity={organization URN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organizationalEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN Must be of format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time restriction for the query. When omitted, segmented lifetime stats are returned as shown in response below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeGranularityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Granularity of the statistics. Must be DAY, WEEK or MONTH",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive starting timestamp of when the query should begin (milliseconds since epoch). Queries from the longest allowed data retention time when set before that.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive ending timestamp of when the query should end (milliseconds since epoch). Queries until current time when not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  },\n  \u0022elements\u0022: [\n    {\n       \u0022followerCountsByStaffCountRange\u0022:[\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:29,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022staffCountRange\u0022:\u0022SIZE_1\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:6,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022staffCountRange\u0022:\u0022SIZE_2_TO_10\u0022\n          }\n       ],\n       \u0022followerCountsByFunction\u0022:[\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:1662,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022function\u0022:\u0022urn:li:function:22\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:674,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022function\u0022:\u0022urn:li:function:13\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:62,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022function\u0022:\u0022urn:li:function:25\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:1,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022function\u0022:\u0022urn:li:function:15\u0022\n          }\n       ],\n       \u0022followerCountsByAssociationType\u0022:[\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:196,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022associationType\u0022:\u0022EMPLOYEE\u0022\n          }\n       ],\n       \u0022followerCountsBySeniority\u0022:[\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:4,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022seniority\u0022:\u0022urn:li:seniority:2\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:3,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022seniority\u0022:\u0022urn:li:seniority:3\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:2,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022seniority\u0022:\u0022urn:li:seniority:8\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:1,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022seniority\u0022:\u0022urn:li:seniority:9\u0022\n          }\n       ],\n       \u0022followerCountsByGeoCountry\u0022:[\n          {\n             \u0022geo\u0022:\u0022urn:li:geo:102713980\u0022,\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:66,\n                \u0022paidFollowerCount\u0022:0\n             }\n          },\n          {\n             \u0022geo\u0022:\u0022urn:li:geo:103644278\u0022,\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:60,\n                \u0022paidFollowerCount\u0022:0\n             }\n          }\n       ],\n       \u0022followerCountsByGeo\u0022:[\n          {\n             \u0022geo\u0022:\u0022urn:li:geo:90009626\u0022,\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:84,\n                \u0022paidFollowerCount\u0022:0\n             }\n          },\n          {\n             \u0022geo\u0022:\u0022urn:li:geo:90009633\u0022,\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:74,\n                \u0022paidFollowerCount\u0022:0\n             }\n          }\n       ],\n       \u0022followerCountsByIndustry\u0022:[\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:33,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022industry\u0022:\u0022urn:li:industry:96\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:15,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022industry\u0022:\u0022urn:li:industry:4\u0022\n          },\n          {\n             \u0022followerCounts\u0022:{\n                \u0022organicFollowerCount\u0022:12,\n                \u0022paidFollowerCount\u0022:0\n             },\n             \u0022industry\u0022:\u0022urn:li:industry:6\u0022\n          }\n       ],\n       \u0022organizationalEntity\u0022:\u0022urn:li:organization:1234\u0022\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lifetime Follower Statistics",
+        "Professional Demographic Facets",
+        "Sample Response"
+      ],
+      "Text": "For details on various segments and URNs returned in the response, such as seniority and function, see Standardized Data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Follower Statistics",
+      "Anchor": "retrieve-time-bound-follower-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Follower Statistics",
+      "Anchor": "retrieve-time-bound-follower-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics"
+      ],
+      "Text": "Time-bound follower statistics (queries that include a timeIntervals parameter) do not return demographic breakdown fields. The following fields are unsupported when a time range is specified:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Follower Statistics",
+      "Anchor": "retrieve-time-bound-follower-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics"
+      ],
+      "Text": "followerCountsByFunction\nfollowerCountsByStaffCountRange\nfollowerCountsByGeo\nfollowerCountsByGeoCountry",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Follower Statistics",
+      "Anchor": "retrieve-time-bound-follower-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics"
+      ],
+      "Text": "To retrieve a demographic breakdown, omit timeIntervals and query the total follower count instead.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Follower Statistics",
+      "Anchor": "retrieve-time-bound-follower-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics"
+      ],
+      "Text": "Specifying the timeIntervals parameter will retrieve time-bound follower statistics. This endpoint will provide statistics from 12 months before the request date (UTC) till 2 days before the request date (UTC). For example, if you\u0027re calling this endpoint on December 31, 2021, the first available data point will be December 31, 2020, and the last data point available will be December 29, 2021.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "To fetch daily organization follower statistics for the first week of March 2019:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 1.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1536364800000\u0026timeIntervals.timeRange.end=1536796800000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn:li:organization:2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1536364800000\u0026timeIntervals.timeRange.end=1536796800000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1536364800000,end:1536796800000),timeGranularityType:DAY)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationalEntityFollowerStatistics?q=organizationalEntity\u0026organizationalEntity=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1536364800000,end:1536796800000),timeGranularityType:DAY)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Follower Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  },\n  \u0022elements\u0022: [\n        {\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1536364800000, \n                \u0022end\u0022: 1536451200000\n            }, \n            \u0022followerGains\u0022: {\n                \u0022organicFollowerGain\u0022: 223, \n                \u0022paidFollowerGain\u0022: 12\n            }, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n        }, \n        {\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1536451200000, \n                \u0022end\u0022: 1536537600000\n            }, \n            \u0022followerGains\u0022: {\n                \u0022organicFollowerGain\u0022: 1, \n                \u0022paidFollowerGain\u0022: 2\n            }, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n        }, \n        {\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1536537600000, \n                \u0022end\u0022: 1536624000000\n            }, \n            \u0022followerGains\u0022: {\n                \u0022organicFollowerGain\u0022: 23, \n                \u0022paidFollowerGain\u0022: 7\n            }, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n        }, \n        {\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1536624000000, \n                \u0022end\u0022: 1536710400000\n            }, \n            \u0022followerGains\u0022: {\n                \u0022organicFollowerGain\u0022: 9, \n                \u0022paidFollowerGain\u0022: 0\n            }, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n        }, \n        {\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1536710400000, \n                \u0022end\u0022: 1536796800000\n            }, \n            \u0022followerGains\u0022: {\n                \u0022organicFollowerGain\u0022: 2, \n                \u0022paidFollowerGain\u0022: 3\n            }, \n            \u0022organizationalEntity\u0022: \u0022urn:li:organization:2414183\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

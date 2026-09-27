@@ -1,0 +1,1156 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience",
+  "Title": "Live Events Target Audiences",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-content-access",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-scheduled-live",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-spontaneous-migration",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Live Events Target Audiences",
+      "Anchor": "live-events-target-audiences",
+      "SectionPath": [],
+      "Text": "With Target Audiences, you can now specify a country, region, or language along with your Organization\u0027s Live Events posts. Target Audiences is available for use with Company Pages only. To implement target audiences, there will be a few key changes to your user workflow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Events Target Audiences",
+      "Anchor": "live-events-target-audiences",
+      "SectionPath": [],
+      "Text": "Register the Live Event.\nIngest RTMP(s) content.\nNEW Identify countries, regions, and languages to target. Use the geoTypeahead service to allow members to search for countries or regions. Refer to ISO-639 for a list of supported langauges.\nNEW Create a Post with a list of countries, regions, and languages to target to share your Live Event with your LinkedIn network.\nEnd the Live Event.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo Typeahead",
+      "Anchor": "geo-typeahead",
+      "SectionPath": [
+        "Geo Typeahead"
+      ],
+      "Text": "The Bing Geo Typeahead API will provide a list of corresponding Geo URNs given a user input search query. The display name represents the user-friendly representation of the country or region, while the entity represents the URN that will be appended to the ugcPost.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo Typeahead",
+      "Anchor": "geo-typeahead",
+      "SectionPath": [
+        "Geo Typeahead"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Geo Typeahead",
+      "Anchor": "geo-typeahead",
+      "SectionPath": [
+        "Geo Typeahead"
+      ],
+      "Text": "All use of the Microsoft Bing Maps location data is subject to Microsoft Bing Maps and MapPoint Web Service End User Terms of Use and Embedded Maps Service Terms of Use and the Microsoft Privacy Statement. By accessing any Microsoft Bing Maps location data, you are agreeing to be bound by these Microsoft terms.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Geo Typeahead",
+      "Anchor": "geo-typeahead",
+      "SectionPath": [
+        "Geo Typeahead"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "hits",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The record containing the typeahead hit information.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "displayName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Hit title. The display name of the geo URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The urn matching the search query.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request",
+      "SectionPath": [
+        "Geo Typeahead",
+        "API Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/geoTypeahead?q=search\u0026query=San\nGET https://api.linkedin.com/v2/geoTypeahead?q=search\u0026query=San\u0026locale=(language:en,country:US)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Geo Typeahead",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "query",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Typeahead query used to find available geo results given the user input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the country data is requested in, as represented by the two-letter language and country codes. Defaults to en_US.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response Body",
+      "Anchor": "sample-response-body",
+      "SectionPath": [
+        "Geo Typeahead",
+        "Sample Response Body"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [\n            {\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/geoTypeahead?q=search\u0026query=san\u0026start=10\u0026count=10\u0026locale=(country:US,language:en)\u0022\n            }\n        ],\n        \u0022total\u0022: 0\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022displayText\u0022: \u0022San Francisco Bay Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90000084\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Diego Metropolitan Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90010472\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Antonio, Texas Metropolitan Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90000724\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022Santiago Metropolitan Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90009899\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Juan-Carolina Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90009445\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Luis Potos\u00ED Metropolitan Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90010051\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Jos\u00E9 Metropolitan Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90010358\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022Santa Barbara-Santa Maria Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90010474\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Crist\u00F3bal Metropolitan Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90010453\u0022\n        },\n        {\n            \u0022displayText\u0022: \u0022San Angelo Area\u0022,\n            \u0022entity\u0022: \u0022urn:li:geo:90000720\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Locales",
+      "Anchor": "locales",
+      "SectionPath": [
+        "Locales"
+      ],
+      "Text": "The interfaceLocales object represents an array of Locales to target. You can specify locales using the format below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Locales",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample JSON",
+      "Anchor": "sample-json",
+      "SectionPath": [
+        "Locales",
+        "Sample JSON"
+      ],
+      "Text": "{\n  \u0022interfaceLocales\u0022: [\n    {\n      \u0022language\u0022: \u0022en\u0022\n    },\n    {\n      \u0022language\u0022: \u0022es\u0022\n    }\n  ]",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audience Counts",
+      "Anchor": "audience-counts",
+      "SectionPath": [
+        "Audience Counts"
+      ],
+      "Text": "With the Audience Counts API, you can forecast the reach of your target audience. Use the Audience Counts API to ensure your target audience contains at least 300 followers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active audience count for the given targeting criteria. Active audience includes members that are more likely to visit LinkedIn sites.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "total",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Total audience count for the given targeting criteria. To protect member privacy, this value is 0 when the audience size is less than 300. The total is a rounded approximation, and the degree of approximation depends upon the size of the audience segment.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "The following TargetingCriteria can be used with your request. See here for more information about Targeting Criteria.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "TargetingCriteria",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:followedCompanies",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "include the Organization URN (urn:li:organization:3487269) here",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "include the list of Locales (urn:li:locale:en_US) here",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn:li:adTargetingFacet:locations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "include the list of Location URNs (urn:li:geo:90000084) here",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "All API requests require the header: X-Restli-Protocol-Version: 2.0.0.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "To comply with Restli 2.0 format, all URNs must be URL encoded. For example, urn:li:skill:17 is URL encoded as urn%3Ali%3Askill%3A17.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Schema"
+      ],
+      "Text": "Postman or similar API tools may not support URL encoding query parameters within the request. If you encounter the response: Invalid query parameters passed to request, please test your request using curl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request-1",
+      "SectionPath": [
+        "Audience Counts",
+        "API Request"
+      ],
+      "Text": "This sample submits a request to the audienceCountsV2 service to find the audience size of Organization 5340951 under the Geo Location 90000084 and Interface Locale en_US.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request-1",
+      "SectionPath": [
+        "Audience Counts",
+        "API Request"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/audienceCountsV2?q=targetingCriteriaV2\u0026targetingCriteria=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AfollowedCompanies:List(urn%3Ali%3Aorganization%3A5340951))),(or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A90000084))),(or:(urn%3Ali%3AadTargetingFacet%3AinterfaceLocales:List(urn%3Ali%3Alocale%3Aen_US))))))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Required",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This field should always be targetingCriteriaV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "targetingCriteria object",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Specifies the targeting criteria that the member should match.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Audience Counts",
+        "Parameters"
+      ],
+      "Text": "For reference, the unencoded and encoded Targeting Criteria used in the sample request is provided below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Encoded Targeting Criteria",
+      "Anchor": "encoded-targeting-criteria",
+      "SectionPath": [
+        "Audience Counts",
+        "Parameters",
+        "Encoded Targeting Criteria"
+      ],
+      "Text": "=(include:(and:List((or:(urn%3Ali%3AadTargetingFacet%3AfollowedCompanies:List(urn%3Ali%3Aorganization%3A5340951))),(or:(urn%3Ali%3AadTargetingFacet%3Alocations:List(urn%3Ali%3Ageo%3A90000084))),(or:(urn%3Ali%3AadTargetingFacet%3AinterfaceLocales:List(urn%3Ali%3Alocale%3Aen_US))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Unencoded Targeting Criteria",
+      "Anchor": "unencoded-targeting-criteria",
+      "SectionPath": [
+        "Audience Counts",
+        "Parameters",
+        "Unencoded Targeting Criteria"
+      ],
+      "Text": "=(include:(and:List((or:(urn:li:adTargetingFacet:followedCompanies:List(urn:li:organization:5340951))),(or:(urn:li:adTargetingFacet:locations:List(urn:li:geo:90000084))),(or:(urn:li:adTargetingFacet:interfaceLocales:List(urn:li:locale:en_US))))))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "JSON Representation",
+      "Anchor": "json-representation",
+      "SectionPath": [
+        "Audience Counts",
+        "Parameters",
+        "JSON Representation"
+      ],
+      "Text": "{\n  \u0022targetingCriteria\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:followedCompanies\u0022: [\n              \u0022urn:li:organization:5340951\u0022\n            ]\n          }\n        },\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:interfaceLocales\u0022: [\n              \u0022urn:li:locale:en_US\u0022\n            ],\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:geo:90000084\u0022\n            ]\n          }\n        }\n      ]\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Audience Counts",
+        "Parameters",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022total\u0022: 420,\n      \u0022active\u0022: 0\n    }\n  ],\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0,\n    \u0022links\u0022: []\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Request",
+      "Anchor": "api-request-2",
+      "SectionPath": [
+        "ugcPosts",
+        "API Request"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/ugcPosts",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request-2",
+      "SectionPath": [
+        "ugcPosts",
+        "API Request"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Request",
+      "Anchor": "api-request-2",
+      "SectionPath": [
+        "ugcPosts",
+        "API Request"
+      ],
+      "Text": "All requests require the following header: X-Restli-Protocol-Version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Schema",
+      "Anchor": "request-body-schema",
+      "SectionPath": [
+        "ugcPosts",
+        "Request Body Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The author of a share contains either the Person or Organization URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Person URNOrganization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lifecycleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines the state of the share. For the purposes of creating a share, the lifecycleState will always be PUBLISHED.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "specificContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provides additional options while defining the content of the share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ShareContent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience#share-content"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "visibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Defines any visibility restrictions for the share. Possible values include: PUBLIC - The share will be viewable by anyone on LinkedIn.",
+            "Links": [],
+            "Values": [
+              "PUBLIC - The share will be viewable by anyone on LinkedIn."
+            ]
+          },
+          {
+            "Text": "MemberNetworkVisibility",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetAudience",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Intended audience or best fit audiences for this content as decided by the owner.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetAudience",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience#targetaudience"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Share Content",
+      "Anchor": "share-content",
+      "SectionPath": [
+        "ugcPosts",
+        "Share Content"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "shareCommentary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provides the primary content for the share.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "shareMediaCategory",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the media assets attached to the share. Possible values include: LIVE_VIDEO - The share contains live event content.",
+            "Links": [],
+            "Values": [
+              "LIVE_VIDEO - The share contains live event content."
+            ]
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use the Asset URN returned from registering the live event.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ShareMedia[]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/live-video/live-video-target-audience#share-media"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Share Media",
+      "Anchor": "share-media",
+      "SectionPath": [
+        "ugcPosts",
+        "Share Media"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "status",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Must be configured to READY.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "media",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ID of the uploaded image asset. If you are uploading an article, this field is not required.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DigitalMediaAsset URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "TargetAudience",
+      "Anchor": "targetaudience",
+      "SectionPath": [
+        "ugcPosts",
+        "TargetAudience"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Sub-Field",
+        "Description",
+        "Format"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetedEntities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entities targeted for distribution. Structured as an object containing multiple arrays of targeting entity URNs that functions like a series of OR conditionals.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Targets (see below)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "geoLocations",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of countries and regions to target. Countries and regions are represented as a Geo URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Geo URN",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "interfaceLocales",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of languages to target. Languages are represented as a Locale.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Locale",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetAudience",
+      "Anchor": "targetaudience",
+      "SectionPath": [
+        "ugcPosts",
+        "TargetAudience"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetAudience",
+      "Anchor": "targetaudience",
+      "SectionPath": [
+        "ugcPosts",
+        "TargetAudience"
+      ],
+      "Text": "Your target audience must include at least 300 members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Headers",
+      "Anchor": "request-headers",
+      "SectionPath": [
+        "ugcPosts",
+        "Request Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "X-RestLi-Method",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "ugcPosts",
+        "Sample Request Body"
+      ],
+      "Text": "{\n   \u0022author\u0022:\u0022urn:li:organization:abcde12345\u0022,\n   \u0022lifecycleState\u0022:\u0022PUBLISHED\u0022,\n   \u0022specificContent\u0022:{\n      \u0022com.linkedin.ugc.ShareContent\u0022:{\n         \u0022media\u0022:[\n            {\n               \u0022media\u0022:\u0022urn:li:digitalmediaAsset:12345\u0022,\n               \u0022status\u0022:\u0022READY\u0022\n            }\n         ],\n         \u0022shareCommentary\u0022:{\n            \u0022attributes\u0022:[\n\n            ],\n            \u0022text\u0022:\u0022Join us as we live stream!\u0022\n         },\n         \u0022shareMediaCategory\u0022:\u0022LIVE_VIDEO\u0022\n      }\n   },\n   \u0022visibility\u0022:{\n      \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022:\u0022PUBLIC\u0022\n   },\n   \u0022targetAudience\u0022:{\n      \u0022targetedEntities\u0022:[\n         {\n            \u0022geoLocations\u0022:[\n               \u0022urn:li:geo:867\u0022,\n               \u0022urn:li:geo:5309\u0022\n            ],\n            \u0022interfaceLocales\u0022:[\n               {\n                  \u0022language\u0022:\u0022en\u0022\n               },\n               {\n                  \u0022language\u0022:\u0022es\u0022\n               }\n            ]\n         }\n      ]\n   }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "ugcPosts",
+        "Sample Request Body"
+      ],
+      "Text": "A 201 response confirms your UGC Post has been created successfully. To generate a user-friendly URL to your newly created UGC Post, identify the X-RestLi-Id within the response header. Append the header value to https://linkedin.com/video/live/. The resulting URL should resemble:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "ugcPosts",
+        "Sample Request Body"
+      ],
+      "Text": "https://www.linkedin.com/video/live/urn:li:ugcPost:1238957139875",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

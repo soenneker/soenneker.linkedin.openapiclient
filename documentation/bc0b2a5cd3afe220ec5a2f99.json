@@ -1,0 +1,37 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+  "Title": "Groups APIs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-definitions",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-memberships",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/groups/group-posts-and-actions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Groups APIs",
+      "Anchor": "groups-apis",
+      "SectionPath": [],
+      "Text": "Use LinkedIn\u0027s Group APIs to enhance your members\u0027 interaction experience:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Groups APIs",
+      "Anchor": "groups-apis",
+      "SectionPath": [],
+      "Text": "Group Definitions API\nGroup Memberships API\nGroup Posts and Their Social Actions",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

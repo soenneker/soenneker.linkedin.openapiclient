@@ -12,6 +12,16 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
     public partial class PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>AuditStamp field corresponding to when the email domain is made active and who activated it.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated? Activated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated Activated { get; set; }
+#endif
+        /// <summary>Represents the time at which this email domain will be active.Documented type: longRequirement: No</summary>
+        public long? ActiveAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created property</summary>
@@ -22,9 +32,17 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated Created { get; set; }
 #endif
-        /// <summary>The emailVerificationDuration property</summary>
-        public int? EmailVerificationDuration { get; set; }
-        /// <summary>The key property</summary>
+        /// <summary>Timestamp corresponding to the deletion of this resource/association/sub-resource.Documented type: AuditStampRequirement: No</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted? Deleted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted Deleted { get; set; }
+#endif
+        /// <summary>The time to live for emails of this domain in milliseconds.Documented type: longRequirement: No</summary>
+        public long? EmailVerificationDuration { get; set; }
+        /// <summary>Represents the key for an organization email domain mapping composed of an organizational page URN, email domain, and a use case.Documented type: OrganizationEmailDomainMappingKeyRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey? Key { get; set; }
@@ -40,14 +58,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified LastModified { get; set; }
 #endif
-        /// <summary>The verificationTier property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VerificationTier { get; set; }
-#nullable restore
-#else
-        public string VerificationTier { get; set; }
-#endif
+        /// <summary>The verification tier for the organization email domain mapping. Value enums include: ADMIN_VERIFIEDALLOW_LISTEDLINKEDIN_VERIFIEDDocumented type: OrganizationEmailDomainMappingVerificationTierRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemVerificationTier? VerificationTier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItem"/> and sets the default values.
         /// </summary>
@@ -73,11 +85,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "activated", n => { Activated = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated.CreateFromDiscriminatorValue); } },
+                { "activeAt", n => { ActiveAt = n.GetLongValue(); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated.CreateFromDiscriminatorValue); } },
-                { "emailVerificationDuration", n => { EmailVerificationDuration = n.GetIntValue(); } },
+                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted.CreateFromDiscriminatorValue); } },
+                { "emailVerificationDuration", n => { EmailVerificationDuration = n.GetLongValue(); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey.CreateFromDiscriminatorValue); } },
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified>(global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified.CreateFromDiscriminatorValue); } },
-                { "verificationTier", n => { VerificationTier = n.GetStringValue(); } },
+                { "verificationTier", n => { VerificationTier = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemVerificationTier>(); } },
             };
         }
         /// <summary>
@@ -87,11 +102,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemActivated>("activated", Activated);
+            writer.WriteLongValue("activeAt", ActiveAt);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemCreated>("created", Created);
-            writer.WriteIntValue("emailVerificationDuration", EmailVerificationDuration);
+            writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemDeleted>("deleted", Deleted);
+            writer.WriteLongValue("emailVerificationDuration", EmailVerificationDuration);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey>("key", Key);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemLastModified>("lastModified", LastModified);
-            writer.WriteStringValue("verificationTier", VerificationTier);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemVerificationTier>("verificationTier", VerificationTier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

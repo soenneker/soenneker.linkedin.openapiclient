@@ -1,0 +1,425 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-management",
+  "Title": "Compliance Management API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-events",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-management",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/compliance-sales-nav-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-sales-nav/overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Compliance Management API",
+      "Anchor": "compliance-management-api",
+      "SectionPath": [],
+      "Text": "The Compliance API allows you to archive all communication from Sales Navigator from the past 28 days of a regulated, authenticated member. It returns each monitored communication as an individual event record to provide ease of archive and remediation if necessary. Compliance Management APIs allows developers to onboard or opt-in a member to LinkedIn Compliance platform to start monitoring and archiving the member\u0027s communications on Sales Navigator.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Management API",
+      "Anchor": "compliance-management-api",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Management API",
+      "Anchor": "compliance-management-api",
+      "SectionPath": [],
+      "Text": "Only Compliance APIs for Sales Navigator uses the Versioned LinkedIn APIs. Please append the header LinkedIn-Version: 202310 while making the API requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Usage",
+      "Anchor": "usage",
+      "SectionPath": [
+        "Usage"
+      ],
+      "Text": "You must use an access token to make an authenticated call on behalf of a user.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_compliance_sales_nav",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Required to retrieve communications from Sales Navigator Inbox for compliance monitoring and archiving.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Usage",
+        "Permissions"
+      ],
+      "Text": "To use the following APIs, you will need to know your application ID. This can be found in your Developer Application Setting page. Select your application and go to the Mobile section to view your application ID. Alternatively, you can find the ID from the URL as well (ie. https://www.linkedin.com/developer/apps/{applicationID}/auth).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "To begin monitoring a member\u0027s Sales Navigator Communications, you will need to opt in the member into our Compliance system by calling the following API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/memberComplianceAuthorizations\nRequest Body {}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "curl --location --request POST \u0027https://api.linkedin.com/rest/memberComplianceAuthorizations\u0027 \\\n--header \u0027LinkedIn-Version: 202310\u0027 \\\n--header \u0027Authorization: Bearer \u003Caccess_token\u003E\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\\n--data-raw \u0027{}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "You will need to supply an empty JSON object, {} to the request body to successfully opt the member into compliance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "Once the member has been opted in, all the compliance events captured can be queried via the Compliance Events API. The API will not contain any preceding communications and will only capture communications performed following the authorization toggle. You can check the member\u0027s authorization status by requesting the following member FINDER API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/memberComplianceAuthorizations",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance Authorization",
+      "Anchor": "compliance-authorization",
+      "SectionPath": [
+        "Compliance Authorization"
+      ],
+      "Text": "curl --location --request GET \u0027https://api.linkedin.com/rest/memberComplianceAuthorizations?q=memberAndApplication\u0027 \\\n--header \u0027LinkedIn-Version: 202310\u0027 \\\n--header \u0027Authorization: Bearer \u003Caccess_token\u003E\u0027 \\\n--header \u0027Content-Type: application/json\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "sample GET response",
+      "Anchor": "sample-get-response",
+      "SectionPath": [
+        "Compliance Authorization",
+        "sample GET response"
+      ],
+      "Text": "{\n  \u0022elements\u0022: [\n    {\n      \u0022memberComplianceAuthorizationKey\u0022: {\n        \u0022developerApplication\u0022: \u0022urn:li:developerApplication:123456\u0022,\n        \u0022member\u0022: \u0022urn:li:person:123ABC\u0022,\n      },\n      \u0022regulatedAt\u0022: 1698382869085,\n      \u0022memberComplianceScopes\u0022: [\n                \u0022SALES_NAV\u0022\n      ],\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "sample GET response",
+      "Anchor": "sample-get-response",
+      "SectionPath": [
+        "Compliance Authorization",
+        "sample GET response"
+      ],
+      "Text": "If the response contains your own developerApplicationUrn , then you are good to go!",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "memberComplianceAuthorization Response Schema",
+      "Anchor": "membercomplianceauthorization-response-schema",
+      "SectionPath": [
+        "Compliance Authorization",
+        "memberComplianceAuthorization Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description",
+        "Data Type"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "regulatedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch timestamp since which the user\u0027s compliance activities are being monitored and archived",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberComplianceAuthorizationKey.developerApplication",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "developer application which is monitoring the user",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberComplianceAuthorizationKey.member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "user whose compliance events are being archived (This the user whose token is being used)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN String",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "memberComplianceScopes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of Compliance Products, the user has consented to. This would contain only be \u0022SALES_NAV\u0022 for now",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of ENUM",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "If you wish to have LinkedIn stop monitoring a regulated member\u0027s Sales Navigator communication i.e. opt out the member from our Compliance Platform, call the following and all subsequent communications will not be captured.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "To allow developers to De-Authorize members for whom the access token might have expired, the following API can also be used with access tokens obtained via OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Here the values for the developerApplication and member request params should be same as in the response to the GET /memberComplianceAuthorizations?q=member\u0026Application documented above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/memberComplianceAuthorizations/developerApplication={developerApplicationURN}\u0026member={personURN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "curl --location --request DELETE \u0027https://api.linkedin.com/rest/memberComplianceAuthorizations/developerApplication=urn:li:developerApplication:\u003CapplicationID\u003E\u0026member=urn:li:person:\u003CpersonID\u003E\u0027 \\\n--header \u0027Authorization: Bearer \u003CAccess Token\u003E\u0027 \\\n--header \u0027LinkedIn-Version: 202310\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "A member will not opt out of Compliance authorization due to access token expiration. The only ways an opt out can happen are:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Application invokes the DELETE API mentioned above\nThe regulated member removes the application\u0027s authorization through LinkedIn\u0027s Privacy Setting page. This can be found under the Third Parties section.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Compliance De-Authorization",
+      "Anchor": "compliance-de-authorization",
+      "SectionPath": [
+        "Compliance De-Authorization"
+      ],
+      "Text": "Therefore, it is always a good idea to periodically check the member\u0027s authorization status using the GET API.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

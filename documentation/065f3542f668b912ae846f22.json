@@ -1,0 +1,576 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/xapi",
+  "Title": "xAPI Learning Activity Webhooks",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/learning-activity-reports",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/xapi",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "xAPI Learning Activity Webhooks",
+      "Anchor": "xapi-learning-activity-webhooks",
+      "SectionPath": [],
+      "Text": "The Experience API (xAPI) is a learning technology interoperability specification that makes it easier for learning technology products to communicate with one another. In the context of LinkedIn Learning, xAPI can be used to track learning events in realtime. When an event takes place, LinkedIn will send an xAPI compliant HTTP POST payload to your webhook URL. The webhook URL \u0026 credentials are configured in LinkedIn Learning admin settings. To learn more about xAPI, review the Experience API (xAPI) Specification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Authentication"
+      ],
+      "Text": "LinkedIn Learning xAPI webhooks use two-legged OAuth 2.0 to send authenticated POST requests to your learning platform. Two-legged OAuth is also known as OAuth 2.0 Client Credentials Grant. Your Learning Platform is the authorization server and LinkedIn Learning is the client. LinkedIn Learning will authenticate with your Learning Platform directly in a system-to-system context. This section outlines the authentication request/response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Details",
+      "Anchor": "request-details",
+      "SectionPath": [
+        "Authentication",
+        "Access Token Request Reference",
+        "Request Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "URL",
+        "Verb",
+        "Headers"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "https://your-learning-platform.com/oauth2/token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "POST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content-type=x-www-form-urlencoded",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Request Body Parameters",
+      "Anchor": "request-body-parameters",
+      "SectionPath": [
+        "Authentication",
+        "Access Token Request Reference",
+        "Request Details",
+        "Request Body Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "grant_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value will always be client_credentials",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Supported values are xapi:read, xapi:write and xapi:all. LinkedIn Learning will request the xapi:write scope.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value should be obtained from your learning platform",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value should be obtained from your learning platform",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample cURL Request",
+      "Anchor": "sample-curl-request",
+      "SectionPath": [
+        "Authentication",
+        "Access Token Request Reference",
+        "Request Details",
+        "Sample cURL Request"
+      ],
+      "Text": "curl -X POST https://your-learning-platform/oauth2/token \\\n  -H \u0027Content-Type: application/x-www-form-urlencoded\u0027 \\\n  -d \u0027grant_type=client_credentials\u0026client_id=dunder_mifflin\u0026client_secret=abc123def45\u0026scope=xapi:write\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Details",
+      "Anchor": "response-details",
+      "SectionPath": [
+        "Authentication",
+        "Access Token Request Reference",
+        "Access Token Response Reference",
+        "Response Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Status",
+        "Headers"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content-Type: application/json;charset=UTF-8",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Body",
+      "Anchor": "response-body",
+      "SectionPath": [
+        "Authentication",
+        "Access Token Request Reference",
+        "Access Token Response Reference",
+        "Response Body"
+      ],
+      "Text": "",
+      "Headers": [
+        "Item",
+        "Value"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "access_token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid access token string",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expires_in",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time to live (TTL) in seconds",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "token_type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Value should always be \u0022bearer\u0022",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Authentication",
+        "Access Token Request Reference",
+        "Access Token Response Reference",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022access_token\u0022:\u00222YotnFZFEjr1zCsicMWpAA....\u0022,\n  \u0022token_type\u0022:\u0022bearer\u0022,\n  \u0022expires_in\u0022:3600\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Activity Statement",
+      "Anchor": "activity-statement",
+      "SectionPath": [
+        "Activity Statement"
+      ],
+      "Text": "A learner activity webhook POST body follows an Actor, Verb, Object data model. This section describes each object in the data model. For additional details, review the Experience API Data section of the specification. LinkedIn will report the following activities to your LMS system:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Enabled by default:",
+      "Anchor": "enabled-by-default",
+      "SectionPath": [
+        "Activity Statement",
+        "Enabled by default:"
+      ],
+      "Text": "Course Completion: Sent when the learner/actor has completed a course.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Must be enabled by account administrator in the LinkedIn Learning xAPI Integrations Admin Settings (see LinkedIn Learning xAPI Administration Guide):",
+      "Anchor": "must-be-enabled-by-account-administrator-in-the-linkedin-learning-xapi-integrations-admin-settings-see-linkedin-learning-xapi-administration-guide",
+      "SectionPath": [
+        "Activity Statement",
+        "Must be enabled by account administrator in the LinkedIn Learning xAPI Integrations Admin Settings (see LinkedIn Learning xAPI Administration Guide):"
+      ],
+      "Text": "Course Progress: Sent when the learner/actor has completed a video in a course.\nVideo Completion: Sent when the learner/actor has completed a video that was curated by an admin for LMS consumption.\nLearning Path Completion: Sent when the learner/actor has completed a learning path.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Must be enabled by account administrator in the LinkedIn Learning xAPI Integrations Admin Settings (see LinkedIn Learning xAPI Administration Guide):",
+      "Anchor": "must-be-enabled-by-account-administrator-in-the-linkedin-learning-xapi-integrations-admin-settings-see-linkedin-learning-xapi-administration-guide",
+      "SectionPath": [
+        "Activity Statement",
+        "Must be enabled by account administrator in the LinkedIn Learning xAPI Integrations Admin Settings (see LinkedIn Learning xAPI Administration Guide):"
+      ],
+      "Text": "Please note that the xAPI statements must be supported by the LMS/LXP in order to be successful.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "COURSE",
+      "Anchor": "course",
+      "SectionPath": [
+        "Activity Statement",
+        "Examples of COMPLETED Statements",
+        "COURSE"
+      ],
+      "Text": "{\n    \u0022actor\u0022: {\n        \u0022mbox\u0022: \u0022mailto:dschrute@dundermifflin.com\u0022,\n        \u0022objectType\u0022: \u0022Agent\u0022\n    },\n    \u0022result\u0022: {\n        \u0022duration\u0022: \u0022PT1M22S\u0022,\n        \u0022completion\u0022: true\n    },\n    \u0022verb\u0022: {\n        \u0022display\u0022: {\n            \u0022en-US\u0022: \u0022COMPLETED\u0022\n        },\n        \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/completed\u0022\n    },\n    \u0022id\u0022: \u0022e45018e3-e91f-47a1-b003-5938e4db4a8c\u0022,\n    \u0022object\u0022: {\n        \u0022definition\u0022: {\n            \u0022type\u0022: \u0022http://adlnet.gov/expapi/activities/course\u0022\n        },\n        \u0022id\u0022: \u0022urn:li:lyndaCourse:563463\u0022,\n        \u0022objectType\u0022: \u0022Activity\u0022\n    },\n    \u0022timestamp\u0022: \u00222018-09-17T19:13:27.384Z\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "VIDEO",
+      "Anchor": "video",
+      "SectionPath": [
+        "Activity Statement",
+        "Examples of COMPLETED Statements",
+        "VIDEO"
+      ],
+      "Text": "{\n    \u0022actor\u0022: {\n        \u0022mbox\u0022: \u0022mailto: test-user@testxapi.com\u0022,\n        \u0022objectType\u0022: \u0022Agent\u0022\n    },\n    \u0022result\u0022: {\n        \u0022duration\u0022: \u0022PT1M22S\u0022,\n        \u0022completion\u0022: true,\n        \u0022extensions\u0022: {\n            \u0022https://w3id.org/xapi/cmi5/result/extensions/progress\u0022: \u0022100\u0022\n        }\n    },\n    \u0022verb\u0022: {\n        \u0022display\u0022: {\n            \u0022en-US\u0022: \u0022COMPLETED\u0022\n        },\n        \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/completed\u0022\n    },\n    \u0022id\u0022: \u0022e44018e3-e91f-2233d-122-ashasdsajw04\u0022,\n    \u0022object\u0022: {\n        \u0022definition\u0022: {\n            \u0022type\u0022: \u0022http://adlnet.gov/expapi/activities/video\u0022\n        },\n        \u0022id\u0022: \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:123,123)\u0022,\n        \u0022objectType\u0022: \u0022Activity\u0022\n    },\n    \u0022timestamp\u0022: \u00222024-10-01T18:26:54.453Z\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LEARNING PATH",
+      "Anchor": "learning-path",
+      "SectionPath": [
+        "Activity Statement",
+        "Examples of COMPLETED Statements",
+        "LEARNING PATH"
+      ],
+      "Text": "{\n    \u0022actor\u0022: {\n        \u0022mbox\u0022: \u0022mailto: test-user@testxapi.com\u0022,\n        \u0022objectType\u0022: \u0022Agent\u0022\n    },\n    \u0022result\u0022: {\n        \u0022duration\u0022: \u0022PT1M22S\u0022,\n        \u0022completion\u0022: true,\n        \u0022extensions\u0022: {\n            \u0022https://w3id.org/xapi/cmi5/result/extensions/progress\u0022: \u0022100\u0022\n        }\n    },\n    \u0022verb\u0022: {\n        \u0022display\u0022: {\n            \u0022en-US\u0022: \u0022COMPLETED\u0022\n        },\n        \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/completed\u0022\n    },\n    \u0022id\u0022: \u00229a0a4814-355f-4c30-bff4-cf90171ab971\u0022,\n    \u0022object\u0022: {\n        \u0022definition\u0022: {\n            \u0022type\u0022: \u0022http://id.tincanapi.com/activitytype/playlist\u0022\n        },\n        \u0022id\u0022: \u0022urn:li:lyndaLearningPath:a1b2c3\u0022,\n        \u0022objectType\u0022: \u0022Activity\u0022\n    },\n    \u0022timestamp\u0022: \u00222024-10-01T18:26:54.453Z\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Progressed Statement POST Body example",
+      "Anchor": "progressed-statement-post-body-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Progressed Statement POST Body example"
+      ],
+      "Text": "Here is an example PROGRESSED statement request POST body. In this example a statement is sent after actor dschrute@linkedin.com completes a video in the course urn:li:lyndaCourse:2822089 in LinkedIn Learning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Progressed Statement POST Body example",
+      "Anchor": "progressed-statement-post-body-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Progressed Statement POST Body example"
+      ],
+      "Text": "{\n    \u0022actor\u0022: {\n        \u0022account\u0022: {\n            \u0022homePage\u0022: \u0022https://example.com\u0022,\n            \u0022name\u0022: \u0022dschrute@linkedin.com\u0022\n        },\n        \u0022objectType\u0022: \u0022Agent\u0022\n    },\n    \u0022id\u0022: \u0022b2f642cb-5a65-4b15-a1ae-887f1099a4e1\u0022,\n    \u0022object\u0022: {\n        \u0022definition\u0022: {\n            \u0022type\u0022: \u0022http://adlnet.gov/expapi/activities/course\u0022\n        },\n        \u0022id\u0022: \u0022urn:li:lyndaCourse:2822089\u0022,\n        \u0022objectType\u0022: \u0022Activity\u0022\n    },\n    \u0022result\u0022: {\n        \u0022completion\u0022: false,\n        \u0022extensions\u0022: {\n            \u0022https://w3id.org/xapi/cmi5/result/extensions/progress\u0022: \u002228\u0022\n        }\n    },\n    \u0022timestamp\u0022: \u00222020-04-16T21:27:19.996Z\u0022,\n    \u0022verb\u0022: {\n        \u0022display\u0022: {\n            \u0022en-US\u0022: \u0022PROGRESSED\u0022\n        },\n        \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/progressed\u0022\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Activity Statement: Sample cURL",
+      "Anchor": "activity-statement-sample-curl",
+      "SectionPath": [
+        "Activity Statement",
+        "Activity Statement: Sample cURL"
+      ],
+      "Text": "curl -X POST \\\n  https://your-learning-platform.com/xAPI/statements \\\n  -H \u0027Authorization: Bearer AyOtu...\u0027 \\\n  -H \u0027Connection: close\u0027 \\\n  -H \u0027Content-Type: application/json\u0027 \\\n  -H \u0027X-Experience-API-Version: 1.0.0\u0027 \\\n  -d \u0027{\n    \u0022actor\u0022: {\n        \u0022mbox\u0022: \u0022mailto:dschrute@dundermifflin.com\u0022,\n        \u0022objectType\u0022: \u0022Agent\u0022\n    },\n    \u0022result\u0022: {\n        \u0022duration\u0022: \u0022PT1M22S\u0022,\n        \u0022completion\u0022: true\n    },\n    \u0022verb\u0022: {\n        \u0022display\u0022: {\n            \u0022en-US\u0022: \u0022COMPLETED\u0022\n        },\n        \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/completed\u0022\n    },\n    \u0022id\u0022: \u0022e45018e3-e91f-47a1-b003-5938e4db4a8c\u0022,\n    \u0022object\u0022: {\n        \u0022definition\u0022: {\n            \u0022type\u0022: \u0022http://adlnet.gov/expapi/activities/course\u0022\n        },\n        \u0022id\u0022: \u0022urn:li:lyndaCourse:563463\u0022,\n        \u0022objectType\u0022: \u0022Activity\u0022\n    },\n    \u0022timestamp\u0022: \u00222018-09-17T19:13:27.384Z\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Actor",
+      "Anchor": "actor",
+      "SectionPath": [
+        "Activity Statement",
+        "Actor"
+      ],
+      "Text": "The actor object identifies the learner who performed an action in LinkedIn Learning. The functional identifier value used in activity statements is configurable in Linkedin Learning admin settings. There are two supported options:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Actor",
+      "Anchor": "actor",
+      "SectionPath": [
+        "Activity Statement",
+        "Actor"
+      ],
+      "Text": "SAML SSO User Identifier: User identifier value included in SAML SSO authentication payload. This value can be an email address, username, employee number or any other unique and immutable user identifier. If your learning platform is configured as a SAML IdP select this option. If a third party identity management system is in use, this option can be used if both relying parties (LinkedIn Learning \u0026 your learning platform) are configured to receive the same user identifier from the SAML IdP.\nEmail: A learner\u0027s work email address value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Actor: SAML SSO User Identifier Example",
+      "Anchor": "actor-saml-sso-user-identifier-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Actor",
+        "Actor: SAML SSO User Identifier Example"
+      ],
+      "Text": "\u0022actor\u0022: {\n    \u0022account\u0022: {\n        \u0022name\u0022: \u0022dpappas\u0022,\n        \u0022homePage\u0022: \u0022https://linkedin.com/learning\u0022\n    },\n    \u0022objectType\u0022: \u0022Agent\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Actor: Email Identifier Example",
+      "Anchor": "actor-email-identifier-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Actor",
+        "Actor: Email Identifier Example"
+      ],
+      "Text": "\u0022actor\u0022: {\n    \u0022mbox\u0022: \u0022mailto:mscott@dundermifflin.com\u0022,\n    \u0022objectType\u0022: \u0022Agent\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Result",
+      "Anchor": "result",
+      "SectionPath": [
+        "Activity Statement",
+        "Result"
+      ],
+      "Text": "The result object represents a measured learning outcome. The completion field indicates whether or not the LinkedIn Learning course was completed in full and duration is the period of time over which the completion took place. Durations are expressed using the format for Duration in ISO 8601:2004(E) section 4.4.3.2.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example when course is completed",
+      "Anchor": "example-when-course-is-completed",
+      "SectionPath": [
+        "Activity Statement",
+        "Result",
+        "Example when course is completed"
+      ],
+      "Text": "\u0022result\u0022: {\n    \u0022duration\u0022: \u0022PT1M22S\u0022,\n    \u0022completion\u0022: true\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example when course is not completed",
+      "Anchor": "example-when-course-is-not-completed",
+      "SectionPath": [
+        "Activity Statement",
+        "Result",
+        "Example when course is not completed"
+      ],
+      "Text": "\u0022result\u0022: {\n        \u0022completion\u0022: false,\n        \u0022extensions\u0022: {\n            \u0022https://w3id.org/xapi/cmi5/result/extensions/progress\u0022: \u002228\u0022\n        }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verb",
+      "Anchor": "verb",
+      "SectionPath": [
+        "Activity Statement",
+        "Verb"
+      ],
+      "Text": "The verb object identifies the event triggered in LinkedIn Learning. The supported verbs are COMPLETED and PROGRESSED. The events are fired when a user completes a LinkedIn Learning course for COMPLETED statements and when a video is completed for PROGRESSED statements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Verb: Completed Example",
+      "Anchor": "verb-completed-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Verb",
+        "Verb: Completed Example"
+      ],
+      "Text": "\u0022verb\u0022: {\n    \u0022display\u0022: {\n        \u0022en-US\u0022: \u0022COMPLETED\u0022\n    },\n    \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/completed\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Verb: PROGRESSED Example",
+      "Anchor": "verb-progressed-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Verb",
+        "Verb: PROGRESSED Example"
+      ],
+      "Text": "\u0022verb\u0022: {\n    \u0022display\u0022: {\n        \u0022en-US\u0022: \u0022PROGRESSED\u0022\n    },\n    \u0022id\u0022: \u0022http://adlnet.gov/expapi/verbs/progressed\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Object",
+      "Anchor": "object",
+      "SectionPath": [
+        "Activity Statement",
+        "Object"
+      ],
+      "Text": "Object identifies a course on LinkedIn Learning. The object.id URN value is a unique identifier whose value should be treated as opaque. The object.id value is synonymous with course URN values returned in the /learningAssets API response body.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Object: LinkedIn Learning Course Example",
+      "Anchor": "object-linkedin-learning-course-example",
+      "SectionPath": [
+        "Activity Statement",
+        "Object",
+        "Object: LinkedIn Learning Course Example"
+      ],
+      "Text": "\u0022object\u0022: {\n    \u0022definition\u0022: {\n        \u0022type\u0022: \u0022http://adlnet.gov/expapi/activities/course\u0022\n    },\n    \u0022id\u0022: \u0022urn:li:lyndaCourse:563463\u0022,\n    \u0022objectType\u0022: \u0022Activity\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retry Behavior for xAPI Events",
+      "Anchor": "retry-behavior-for-xapi-events",
+      "SectionPath": [
+        "Retry Behavior for xAPI Events"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retry Behavior for xAPI Events",
+      "Anchor": "retry-behavior-for-xapi-events",
+      "SectionPath": [
+        "Retry Behavior for xAPI Events"
+      ],
+      "Text": "Retry behavior is only utilized for completion events, not progress statements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retry Behavior for xAPI Events",
+      "Anchor": "retry-behavior-for-xapi-events",
+      "SectionPath": [
+        "Retry Behavior for xAPI Events"
+      ],
+      "Text": "In order to send an xAPI event to an external system, a multi-step process is initiated to request an OAuth2 access token and then send the xAPI event using the access token. If an error status code is encountered in either HTTP request, or any other failure is encountered at any time during this process, the event is enqueued and retried at a later time. Status codes 300 and above will result in a failed attempt, only 2XX level status codes are considered successful. The retry cadence may change over time, but today the current behavior retries sending xAPI events that have failed every 12 hours for 5 days.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

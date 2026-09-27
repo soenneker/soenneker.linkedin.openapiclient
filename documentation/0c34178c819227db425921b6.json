@@ -1,0 +1,841 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+  "Title": "Legacy Static UTM Tracking",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ad-budget-pricing",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/conversion-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/dynamic-utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/getting-started",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/integration-requirements-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/third-party-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/utm-tracking",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/account-access-controls",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/ads-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/marketing-tiers",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Legacy Static UTM Tracking",
+      "Anchor": "legacy-static-utm-tracking",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legacy Static UTM Tracking",
+      "Anchor": "legacy-static-utm-tracking",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legacy Static UTM Tracking",
+      "Anchor": "legacy-static-utm-tracking",
+      "SectionPath": [],
+      "Text": "Seamless tracking across multiple campaigns and platforms is a core part of enabling advertisers to prove ROI. UTM codes are parameters added to the end of a URL to help track the success of marketing efforts at driving traffic to a web page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legacy Static UTM Tracking",
+      "Anchor": "legacy-static-utm-tracking",
+      "SectionPath": [],
+      "Text": "This feature provides a way to retroactively add tracking parameters to the URLs of existing shares.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legacy Static UTM Tracking",
+      "Anchor": "legacy-static-utm-tracking",
+      "SectionPath": [],
+      "Text": "No other attributes of the share will be modified..\nThe ad won\u0027t require review again.\nThe performance of a campaigns using the share won\u0027t be impacted by UTM edits.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Legacy Static UTM Tracking",
+      "Anchor": "legacy-static-utm-tracking",
+      "SectionPath": [],
+      "Text": "Updates are restricted to adding or modifying query parameters beginning with utm_. The domain, path, and all query parameters not beginning with utm_ can\u0027t be modified.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage and read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles. ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERRECRUITING_POSTER/li\u003E",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "RECRUITING_POSTER/li\u003E"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and likes. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Account Access Controls for more information on ad account roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating UTM Params Using Posts API",
+      "Anchor": "updating-utm-params-using-posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API"
+      ],
+      "Text": "The Posts API provides a PARTIAL UPDATE method where UTM params can be added to the Sponsored Content entities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating UTM Params Using Posts API",
+      "Anchor": "updating-utm-params-using-posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API"
+      ],
+      "Text": "You need the permission w_organization_social to perform this action. To read an organization\u0027s posts before and after modifying UTM params, you should also include the r_organization_social permission.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating UTM Params Using Posts API",
+      "Anchor": "updating-utm-params-using-posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API"
+      ],
+      "Text": "The Posts API for UTM tracking works for updating the following types of entities:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating UTM Params Using Posts API",
+      "Anchor": "updating-utm-params-using-posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API"
+      ],
+      "Text": "Updating Image/Rich Shares\nUpdating Article Shares\nUpdating Carousel Shares",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating UTM Params Using Posts API",
+      "Anchor": "updating-utm-params-using-posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API"
+      ],
+      "Text": "The following table lists the type of entities and a list of editable fields (for UTM tracking), which (if edited) won\u0027t trigger reviews or affect campaign performance:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Updating UTM Params Using Posts API",
+      "Anchor": "updating-utm-params-using-posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API"
+      ],
+      "Text": "",
+      "Headers": [
+        "Entity Type",
+        "Editable Fields (for UTM updates only)"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Image Share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contentLandingPage",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Article Share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contentLandingPage commentary (if required)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Carousel Share",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "contentLandingPage",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Image/Rich Shares - Posts API",
+      "Anchor": "updating-imagerich-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Image/Rich Shares - Posts API"
+      ],
+      "Text": "For image/rich shares, the contentLandingPage field contains the URL. The URL can be a regular link or a short link. The goal is to update the URL with a new URL with UTM params appended.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Image/Rich Shares - Posts API",
+      "Anchor": "updating-imagerich-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Image/Rich Shares - Posts API"
+      ],
+      "Text": "Retrieve an existing share by ID using GET:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Image/Rich Shares - Posts API",
+      "Anchor": "updating-imagerich-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Image/Rich Shares - Posts API"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Image/Rich Shares - Posts API",
+      "Anchor": "updating-imagerich-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Image/Rich Shares - Posts API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{encoded ugcPostUrn|shareUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Image/Rich Shares - Posts API",
+      "Anchor": "updating-imagerich-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Image/Rich Shares - Posts API"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/posts/{encoded ugcPostUrn|shareUrn}?viewContext=AUTHOR\u0027 \\\n    -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n    -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n    -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "{\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022lastModifiedAt\u0022: 1666206861469,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022publishedAt\u0022: 1666202504237,\n        \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n        \u0022contentCallToActionLabel\u0022: \u0022LEARN_MORE\u0022,\n        \u0022distribution\u0022: {\n            \u0022feedDistribution\u0022: \u0022NONE\u0022,\n            \u0022thirdPartyDistributionChannels\u0022: []\n        },\n        \u0022content\u0022: {\n            \u0022media\u0022: {\n                \u0022taggedEntities\u0022: [],\n                \u0022id\u0022: \u0022urn:li:image:D4E18AQGw3P4mVWBrpg\u0022\n            }\n        },\n        \u0022lifecycleStateInfo\u0022: {\n            \u0022isEditedByAuthor\u0022: true\n        },\n        \u0022contentLandingPage\u0022: \u0022http://www.google.com/123\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022createdAt\u0022: 1666202504237,\n        \u0022id\u0022: \u0022urn:li:share:6988559827463454720\u0022,\n        \u0022commentary\u0022: \u0022Introductory text with http://www.linkedin.com\u0022,\n        \u0022adContext\u0022: {\n            \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022dscName\u0022: \u0022Single Image Ad\u0022,\n            \u0022dscAdType\u0022: \u0022STANDARD\u0022,\n            \u0022isDsc\u0022: true,\n            \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Locate the contentLandingPage field to replace the link in the field in-place with a new (full) URL appended with UTM query parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "You may only append UTM query parameters to the links. The added query parameters must begin with utm_. The domain, path, and any existing query params can\u0027t be modified. If you modify anything other than the UTM params, a 400 Bad Request error is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Use the modified contentLandingPage payload and create a PARTIAL UPDATE request for /Posts endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/posts/{shared ID}/{ugcPosts ID}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "{\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022contentLandingPage\u0022: \u0022https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022\n        }\n      }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts/{shared ID}/{ugcPosts ID}\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n    --data \u0027{\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022contentLandingPage\u0022: \u0022https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022\n        }\n      }\n  }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Response"
+      ],
+      "Text": "Returns 204 No Content on success. Upon success, a subsequent GET on the share will show the updated URL in the contentLandingPage field.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Article Shares - Posts API",
+      "Anchor": "updating-article-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Article Shares - Posts API"
+      ],
+      "Text": "For article shares, the contentLandingPage field contains the URL. Additionally, the commentary may also contain the same URL (or its shortlink equivalent).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Article Shares - Posts API",
+      "Anchor": "updating-article-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Article Shares - Posts API"
+      ],
+      "Text": "The goal is to only update the contentLandingPage with a new URL with UTM params appended and updating that same URL (or shortlink) in commentary without changing any other text.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Article Shares - Posts API",
+      "Anchor": "updating-article-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Article Shares - Posts API"
+      ],
+      "Text": "Retrieve an existing share by ID using GET:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Article Shares - Posts API",
+      "Anchor": "updating-article-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Article Shares - Posts API"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Article Shares - Posts API",
+      "Anchor": "updating-article-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Article Shares - Posts API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{encoded ugcPostUrn|shareUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Article Shares - Posts API",
+      "Anchor": "updating-article-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Article Shares - Posts API"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/posts/{encoded ugcPostUrn|shareUrn}?viewContext=AUTHOR\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "{\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022lastModifiedAt\u0022: 1666206861469,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022publishedAt\u0022: 1666202504237,\n        \u0022author\u0022: \u0022urn:li:organization:2414183\u0022,\n        \u0022contentCallToActionLabel\u0022: \u0022LEARN_MORE\u0022,\n        \u0022distribution\u0022: {\n            \u0022feedDistribution\u0022: \u0022NONE\u0022,\n            \u0022thirdPartyDistributionChannels\u0022: []\n        },\n        \u0022content\u0022: {\n            \u0022article\u0022: {\n                \u0022description\u0022: \u0022Description of the Ad\u0022,\n                \u0022thumbnail\u0022: \u0022urn:li:image:D4E18AQGw3P4mVWBrpg\u0022,\n                \u0022source\u0022: \u0022http://www.google.com/123\u0022,\n                \u0022title\u0022: \u0022Headline of the Ad\u0022\n            }\n        },\n        \u0022lifecycleStateInfo\u0022: {\n            \u0022isEditedByAuthor\u0022: true\n        },\n        \u0022contentLandingPage\u0022: \u0022http://www.google.com/123\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022createdAt\u0022: 1666202504237,\n        \u0022id\u0022: \u0022urn:li:share:6988559827463454720\u0022,\n        \u0022commentary\u0022: \u0022Introductory text with http://www.linkedin.com\u0022,\n        \u0022adContext\u0022: {\n            \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022dscName\u0022: \u0022Single Image Ad\u0022,\n            \u0022dscAdType\u0022: \u0022STANDARD\u0022,\n            \u0022isDsc\u0022: true,\n            \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:508915158\u0022\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Locate the contentLandingPage field. This contains the URL of the landing page of the share. This URL should be modified by appending UTM codes as query parameters. In addition to this, the commentary field can also have a URL. If this needs to be updated, locate the commentary field as well.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "You may only append UTM query parameters to the contentLandingPage or commentary field URL. The added query parameters must begin with utm_. The domain, path, and any existing query params can\u0027t be modified. If you modify anything other than the UTM params, a 400 Bad Request error is returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Use the modified contentLandingPage and commentary payload and create a PARTIAL UPDATE request for /Posts endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/posts/{shared ID}/{ugcPosts ID}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "{\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022commentary\u0022: \u0022\u0022Introductory text with https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022,\n          \u0022contentLandingPage\u0022: \u0022https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022\n        }\n      }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts/{shared ID}/{ugcPosts ID}\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Content-Type: application/json\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  --data \u0027{\n    \u0022patch\u0022: {\n      \u0022$set\u0022: {\n        \u0022commentary\u0022: \u0022\u0022Introductory text with https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022,\n        \u0022contentLandingPage\u0022: \u0022https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022\n      }\n    }\n  }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response-1",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Response"
+      ],
+      "Text": "Returns 204 No Content on success. Upon success, a subsequent GET on the share will show the updated URL under contentLandingPage and commentary fields.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Carousel Shares - Posts API",
+      "Anchor": "updating-carousel-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Carousel Shares - Posts API"
+      ],
+      "Text": "For carousel shares, the contentLandingPage field contains the URL, which determines the landing page where members will be redirected to if the commentary is clicked on mobile apps. Individual cards could have their own landing page URLs in content.carousel.cards.landingPage. Currently, only the UTM params in contentLandingPage are allowed for update, and the update on contentLandingPage will NOT be propagated to the landing page URLs of individual cards, which is consistent with the UI behavior.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Carousel Shares - Posts API",
+      "Anchor": "updating-carousel-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Carousel Shares - Posts API"
+      ],
+      "Text": "Retrieve an existing share by ID using GET:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updating Carousel Shares - Posts API",
+      "Anchor": "updating-carousel-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Carousel Shares - Posts API"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Carousel Shares - Posts API",
+      "Anchor": "updating-carousel-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Carousel Shares - Posts API"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/posts/{encoded ugcPostUrn|shareUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Updating Carousel Shares - Posts API",
+      "Anchor": "updating-carousel-shares---posts-api",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Updating Carousel Shares - Posts API"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/posts/{encoded ugcPostUrn|shareUrn}?viewContext=AUTHOR\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "{\n        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n        \u0022lastModifiedAt\u0022: 1666173167715,\n        \u0022visibility\u0022: \u0022PUBLIC\u0022,\n        \u0022publishedAt\u0022: 1656026022523,\n        \u0022author\u0022: \u0022urn:li:organization:18799005\u0022,\n        \u0022distribution\u0022: {\n            \u0022feedDistribution\u0022: \u0022NONE\u0022,\n            \u0022thirdPartyDistributionChannels\u0022: []\n        },\n        \u0022content\u0022: {\n            \u0022carousel\u0022: {\n                \u0022cards\u0022: [\n                    {\n                        \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                        \u0022media\u0022: {\n                            \u0022title\u0022: \u0022Linkedin\u0022,\n                            \u0022id\u0022: \u0022urn:li:image:D4E1DAQFP3SqPwiOaZA\u0022\n                        }\n                    },\n                    {\n                        \u0022landingPage\u0022: \u0022http://www.linkedin.com\u0022,\n                        \u0022media\u0022: {\n                            \u0022title\u0022: \u0022Linkedin\u0022,\n                            \u0022id\u0022: \u0022urn:li:image:D4E1DAQHslRn2pVZGSQ\u0022\n                        }\n                    }\n                ]\n            }\n        },\n        \u0022lifecycleStateInfo\u0022: {\n            \u0022isEditedByAuthor\u0022: false\n        },\n        \u0022contentLandingPage\u0022: \u0022http://www.linkedin.com\u0022,\n        \u0022isReshareDisabledByAuthor\u0022: false,\n        \u0022createdAt\u0022: 1656026022523,\n        \u0022id\u0022: \u0022urn:li:share:6945876569575854081\u0022,\n        \u0022commentary\u0022: \u0022Ads Preview\u0022,\n        \u0022adContext\u0022: {\n            \u0022dscStatus\u0022: \u0022ACTIVE\u0022,\n            \u0022dscName\u0022: \u0022Ads Preview\u0022,\n            \u0022dscAdType\u0022: \u0022CAROUSEL\u0022,\n            \u0022isDsc\u0022: true,\n            \u0022dscAdAccount\u0022: \u0022urn:li:sponsoredAccount:509639419\u0022\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Locate the contentLandingPage field to get the URL. This URL should be modified by appending UTM codes as query parameters.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "You may only append UTM query parameters to the links. The added query parameters must begin with utm_ or hsa_. The domain, path, and any existing query params shouldn\u0027t be modified. If you modify anything other than the UTM params, the ad review will be triggered, and the ads serving for this specific carousel ad could be paused.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "Use the modified contentLandingPage payload and create a PARTIAL UPDATE request for /Posts endpoint.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "POST \u0027https://api.linkedin.com/rest/posts/{shared ID}/{ugcPosts ID}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022patch\u0022: {\n      \u0022$set\u0022: {\n        \u0022contentLandingPage\u0022: \u0022https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022\n      }\n    }\n  }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Sample Response"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/posts/{shared ID}/{ugcPosts ID}\u0027 \\\n    -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n    -H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n    -H \u0027Content-Type: application/json\n    -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n    --data \u0027{\n      \u0022patch\u0022: {\n        \u0022$set\u0022: {\n          \u0022contentLandingPage\u0022: \u0022https://www.linkedin.com?utm_1=11\u0026hsa_2=22\u0026utm_3=33\u0026hsa_4=44\u0022\n        }\n      }\n    }\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response",
+      "Anchor": "response-2",
+      "SectionPath": [
+        "Updating UTM Params Using Posts API",
+        "Response"
+      ],
+      "Text": "Returns 204 No Content upon success. Upon success, a subsequent GET on the share will show the updated URL under contentLandingPage.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

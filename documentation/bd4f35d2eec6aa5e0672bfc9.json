@@ -1,0 +1,334 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+  "Title": "API Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-posting-status",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/check-job-taskstatus",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/close-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/create-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-lifecycle",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module1-basics",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-module4-upgrade-downgrade",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/update-renew-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/sync-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "The LinkedIn\u0027s Job Posting API allows members to automatically post jobs to LinkedIn from their Applicant Tracking System (ATS), instead of manually posting using the website. This API enables partners to post and manage lifecycle for both basic or promoted jobs. The promoted jobs via API get promoted directly to paid job slots of LinkedIn Recruiter customers. Not all partners have the capability to post promoted jobs. To request for access, please reach out to your LinkedIn Business Development point of contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "If you are not yet a LinkedIn Talent Solutions Partner, please complete the LinkedIn Talent Solutions Partner Request Form",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "Please note that in some cases, we may require certain types of jobs to be promoted on LinkedIn. Jobs that require promotion may include jobs by companies with generic names (such as \u201CConfidential Company\u201D) or jobs from search and staffing companies. These limits are designed to prevent abuse, improve product quality, and increase transparency while ensuring that job seekers have access to the best possible opportunities. Please note that LinkedIn reserves the right to require promotion of jobs.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Overview",
+      "Anchor": "api-overview",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use this version in the LinkedIn-Version header for all API requests to access the most recent features and improvements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Schema",
+      "Anchor": "job-posting-api-schema",
+      "SectionPath": [
+        "Job Posting API Schema"
+      ],
+      "Text": "In order to publish a job, you need to construct the request body with all required fields. The more information your application can provide, the more candidates can be reached to satisfy customers\u2019 needs. To post basic jobs, refer to Foundation schema. To enable advanced features on job posting, refer to Extension schema",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Schema",
+      "Anchor": "job-posting-api-schema",
+      "SectionPath": [
+        "Job Posting API Schema"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Schema",
+      "Anchor": "job-posting-api-schema",
+      "SectionPath": [
+        "Job Posting API Schema"
+      ],
+      "Text": "For a given customer, when their first job is sent via the SJP API, all the customer\u2019s open, public jobs should be sent via API. All future public jobs should also be sent via API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Operations",
+      "Anchor": "job-posting-operations",
+      "SectionPath": [
+        "Job Posting Operations"
+      ],
+      "Text": "Listed below are the four job posting operations supported by LinkedIn:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Operations",
+      "Anchor": "job-posting-operations",
+      "SectionPath": [
+        "Job Posting Operations"
+      ],
+      "Text": "Create\nClose\nUpdate\nRenew",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Operations",
+      "Anchor": "job-posting-operations",
+      "SectionPath": [
+        "Job Posting Operations"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Operations",
+      "Anchor": "job-posting-operations",
+      "SectionPath": [
+        "Job Posting Operations"
+      ],
+      "Text": "For all the above operations, value for jobPostingOperationType field in API schema determines the operation to be performed.\nFor example, use jobPostingOperationType as CREATE in request body to create a job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Endpoint"
+      ],
+      "Text": "Use the following endpoint to submit a task to create, close, update, or renew one or more jobs asynchronously:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/v2/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "API Endpoint",
+      "Anchor": "api-endpoint",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Endpoint"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/simpleJobPostings",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Authorization"
+      ],
+      "Text": "All requests below require access tokens obtained via the OAuth2.0 Client Credentials flow.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Authorization"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Authorization",
+      "Anchor": "api-authorization",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Authorization"
+      ],
+      "Text": "We strongly recommend to use same access token for all concurrent and consecutive calls. An access token has a lifespan of 30 mins. Only on expiry of the existing token, new token should be generated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Throttling",
+      "Anchor": "api-throttling",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Throttling"
+      ],
+      "Text": "",
+      "Headers": [
+        "Throttle Limits",
+        "Requests Per Day (UTC)",
+        "Records Per Minute",
+        "Records Per Day"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application maximum",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "100,000",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "2,000 (applicable only for Promoted jobs)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "60,000 (applicable only for Promoted jobs)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "API Throttling",
+      "Anchor": "api-throttling",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "API Throttling"
+      ],
+      "Text": "Refer to the below sections for sample requests and responses for each operation type.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "Sample Request Body"
+      ],
+      "Text": "We have provided below wiki pages to help with API request samples as well as error guide tables based on the following job posting operation type:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request Body",
+      "Anchor": "sample-request-body",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "Sample Request Body"
+      ],
+      "Text": "Create Jobs\nUpdate and Renew Jobs\nClose Jobs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Continue RSC Development",
+      "Anchor": "continue-rsc-development",
+      "SectionPath": [
+        "Post Jobs on LinkedIn",
+        "Continue RSC Development"
+      ],
+      "Text": "In case you are building with RSC program, you can continue developing the remaining modules using RSC Sync Candidates",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

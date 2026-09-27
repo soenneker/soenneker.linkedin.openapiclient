@@ -1,0 +1,33 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/instant-reposts",
+  "Title": "Instant Reposts",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/instant-reposts",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Instant Reposts",
+      "Anchor": "instant-reposts",
+      "SectionPath": [],
+      "Text": "The resourceName for reposts events is instantReposts. This captures all reposts (without additional commentary) made by a regulated member. The methods available are CREATE.\nThe content reposts is specified int he repostedContent field within processedActivity.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "CREATE Instant Reposts - Regulated member reposts existing content on LinkedIn",
+      "Anchor": "create-instant-reposts---regulated-member-reposts-existing-content-on-linkedin",
+      "SectionPath": [
+        "CREATE Instant Reposts - Regulated member reposts existing content on LinkedIn"
+      ],
+      "Text": "{\n            \u0022owner\u0022: \u0022urn:li:person:abc\u0022,\n            \u0022resourceId\u0022: \u0022urn:li:instantRepost:(urn:li:ugcPost:123,456)\u0022,\n            \u0022activity\u0022: {\n                \u0022repostedContent\u0022: {\n                    \u0022ugcPost\u0022: \u0022urn:li:ugcPost:123\u0022\n                }\n            },\n            \u0022method\u0022: \u0022CREATE\u0022,\n            \u0022resourceName\u0022: \u0022instantReposts\u0022,\n            \u0022resourceUri\u0022: \u0022/instantReposts/urn:li:instantRepost:(urn:li:ugcPost:123,456)\u0022,\n            \u0022actor\u0022: \u0022urn:li:person:abc\u0022,\n            \u0022activityId\u0022: \u0022c5f04b65-b0ce-4f58-a5a1-65d7b6f2433f\u0022,\n            \u0022processedAt\u0022: 1704698990969,\n            \u0022activityStatus\u0022: \u0022SUCCESS\u0022,\n            \u0022capturedAt\u0022: 1704698960839,\n            \u0022processedActivity\u0022: {\n                \u0022repostedContent\u0022: {\n                    \u0022ugcPost\u0022: \u0022urn:li:ugcPost:123\u0022,\n                    \u0022ugcPost~\u0022: {\n                        \u0022lifecycleState\u0022: \u0022PUBLISHED\u0022,\n                        \u0022visibility\u0022: {\n                            \u0022com.linkedin.ugc.MemberNetworkVisibility\u0022: \u0022PUBLIC\u0022\n                        },\n                        \u0022specificContent\u0022: {\n                            \u0022com.linkedin.ugc.ShareContent\u0022: {\n                                \u0022shareCommentary\u0022: {\n                                    \u0022inferredLocale\u0022: \u0022en_US\u0022,\n                                    \u0022attributes\u0022: [\n                                        {...}\n                                    ],\n                                    \u0022text\u0022: \u0022This is a repost!\u0022\n                                },\n                            }\n                        },\n                        \u0022author~\u0022: {\n                            \u0022localizedName\u0022: \u0022user name\u0022,\n                        },\n                        \u0022created\u0022: {\n                            \u0022actor\u0022: \u0022urn:li:person:456\u0022,\n                            \u0022actor~\u0022: {\n                                \u0022localizedLastName\u0022: \u0022lastname\u0022,\n                                \u0022firstName\u0022: {\n                                    \u0022localized\u0022: {\n                                        \u0022en_US\u0022: \u0022lastname\u0022\n                                    },\n                                    \u0022preferredLocale\u0022: {\n                                        \u0022country\u0022: \u0022US\u0022,\n                                        \u0022language\u0022: \u0022en\u0022\n                                    }\n                                },\n                                \u0022profilePicture\u0022: {\n                                    \u0022displayImage\u0022: \u0022urn:li:digitalmediaAsset:picID\u0022,\n                                    \u0022displayImage~\u0022: {...}\n                                },\n                                \u0022lastName\u0022: {\n                                    \u0022localized\u0022: {\n                                        \u0022en_US\u0022: \u0022lastname\u0022\n                                    },\n                                    \u0022preferredLocale\u0022: {\n                                        \u0022country\u0022: \u0022US\u0022,\n                                        \u0022language\u0022: \u0022en\u0022\n                                    }\n                                },\n                                \u0022vanityName\u0022: \u0022vanityName\u0022,\n                                \u0022localizedHeadline\u0022: \u0022headline\u0022,\n                                \u0022headline\u0022: {\n                                    \u0022localized\u0022: {\n                                        \u0022en_US\u0022: \u0022headline\u0022\n                                    },\n                                    \u0022preferredLocale\u0022: {\n                                        \u0022country\u0022: \u0022US\u0022,\n                                        \u0022language\u0022: \u0022en\u0022\n                                    }\n                                },\n                                \u0022localizedFirstName\u0022: \u0022name\u0022\n                            },\n                            \u0022time\u0022: 1704602155353\n                        },\n                        \u0022author\u0022: \u0022urn:li:company:43196932\u0022,\n                        \u0022firstPublishedAt\u0022: 1704602244559\n                    }\n                }\n            },\n            \u0022id\u0022: 5165368868\n        }",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

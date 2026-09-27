@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// For products that are uncategorized, admins must give suggestions to provide additional information on what their category should be, such as competitors, keywords, etc. For categorized products, the questionnaire can still be filled out optionally to provide additional category related information for standardization purposes. Can be null for products that already have a category.Documented type: ProductCategoryAdminSuggestionsRequirement: No
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationProductsGet200ResponseProductCategoryAdminSuggestions : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

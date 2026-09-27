@@ -15,7 +15,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The localizedName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,10 +27,10 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Locations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552LocationsItem>? Locations { get; set; }
 #nullable restore
 #else
-        public UntypedNode Locations { get; set; }
+        public List<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552LocationsItem> Locations { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,9 +81,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "localizedName", n => { LocalizedName = n.GetStringValue(); } },
-                { "locations", n => { Locations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552LocationsItem>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552LocationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552Name>(global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552Name.CreateFromDiscriminatorValue); } },
                 { "primaryOrganizationType", n => { PrimaryOrganizationType = n.GetStringValue(); } },
                 { "vanityName", n => { VanityName = n.GetStringValue(); } },
@@ -96,9 +96,9 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("localizedName", LocalizedName);
-            writer.WriteObjectValue<UntypedNode>("locations", Locations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552LocationsItem>("locations", Locations);
             writer.WriteObjectValue<global::Soenneker.LinkedIn.OpenApiClient.Models.CommunityManagementFindNonAdministeredOrganization200ResponseResults79988552Name>("name", Name);
             writer.WriteStringValue("primaryOrganizationType", PrimaryOrganizationType);
             writer.WriteStringValue("vanityName", VanityName);

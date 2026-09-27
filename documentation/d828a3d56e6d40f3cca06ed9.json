@@ -1,0 +1,210 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+  "Title": "CRM Connect Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/pagination",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidate-resumes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-candidates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-interactions",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipeline-stages",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/sync-crm-pipelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/middleware-platform/provisioning-api",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "CRM Connect Overview",
+      "Anchor": "crm-connect-overview",
+      "SectionPath": [],
+      "Text": "CRM Connect synchronizes candidate information between your Candidate Relationship Management system and LinkedIn Recruiter. With CRM Connect, LinkedIn Recruiter users will be able to export LinkedIn member profiles to your external CRM System and view member profiles directly within the CRM. Users will also be able to view CRM recruiting activity from within LinkedIn Recruiter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Connect Overview",
+      "Anchor": "crm-connect-overview",
+      "SectionPath": [],
+      "Text": "The following features will be available with CRM Connect:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "CRM Connect Overview",
+      "Anchor": "crm-connect-overview",
+      "SectionPath": [],
+      "Text": "In-CRM Indicator\nOne-Click Export\nProfile Plugin\nCRM tab in LinkedIn Recruiter\nIn-CRM Advanced Search Filter",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "The use of these APIs is restricted to those developers approved by LinkedIn. Please reach out to your LinkedIn Relationship Manager or Business Development contact as you will need to meet certain criteria and sign an API agreement with data restrictions in order to use this integration.\nIf you are not yet a LinkedIn Talent Solutions Partner, please complete the LinkedIn Talent Solutions Partner Request Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Create API applications for the integration. You may create 2 API applications per integration - 1 for production, and 1 for development and testing.\nPlease contact the member from LinkedIn Business Development who you have been working with and request to fill out the Partner Onboarding Form.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "After the above steps, you\u0027ll be provided with various Test Credentials in the mail which you will consume for your development \u0026 testing. Next, ensure that:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "1. Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "You can log into LinkedIn Recruiter\nYou can access the One-Click Export and In-ATS indicator within LinkedIn Recruiter",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Once your application is configured, you may begin making API requests and testing the integration.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Terms like \u0022Partner CRM\u0022 \u0026 \u0022Customer\u0022 are referenced throughout this documentation. \u0022Partner CRM\u0022 is an CRM with multiple customers. \u0022Customer\u0022 represents a customer of the CRM that uses a standalone tenant.\nAll API requests require OAuth\u0027s 2 Legged Authorization.\nAPI requests return paged results; details on paging through results can be found here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "In order to implement Talent CRM Connect, LinkedIn has broken down the scope of integration into 7 Development Modules that can be found in the lefthand sidebar and in our Talent CRM Connect Certification. As a partner, you will need to utilize the components described within below modules:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get Started",
+      "Anchor": "get-started",
+      "SectionPath": [
+        "2. Begin Development",
+        "Get Started"
+      ],
+      "Text": "Module 1 - Configure Customer Applications and CRM Integrations : This module defines how you enable customer activations and map LinkedIn customers to your internal solution topology. It usage of the Provisioning API to create developer applications for individual customers and implementation of the Onboarding Widget to allow customers to activate the CRM Connect integration.\nModule 2 - Sync Data from CRM to LinkedIn : This module includes APIs to sync CRM records to LinkedIn. The data synced will be incorporated to various LinkedIn features, like One Click Export to CRM, In-CRM indicator, and the CRM tab shown on a LinkedIn member record within Recruiter or the Profile Plugin. It includes the following APIs: Sync CRM Candidates, Sync Candidate Resumes, Sync Pipelines, Sync Pipeline Stages, Sync Candidate Pipeline Information, Sync Candidate Pipeline Stage Information, Sync Interactions.\nModule 3 - Retrieve Data from LinkedIn : This module includes the Push Notification calls that LinkedIn makes to your callback URL to notify of One-Click Export \u0026 provide other updates. This also includes APIs to help you retrieve data from LinkedIn once you get these Push Notifications.\nModule 4 - Profile Plugin : This module includes implementation of the Profile Plugin, which is an iframe that will live inside the CRM to present LinkedIn data within the CRM.\nModule 5 - Data Deletion : This module includes all DELETE HTTP methods provided by LinkedIn as implementation of deletion notices sent by LinkedIn for data that has been ingested via One Click Export and other APIs.\nModule 6 - Error Handling : This module defines error handling best practices that should be implemented to enable a customer-centric support experience for the Talent CRM Connect Integration.\nModule 7 - Retrieve Data from LinkedIn (cont\u0027d) : This module includes additional APIs to retrieve data from LinkedIn, such as Inmail History, and profile Mailstubs shared with LinkedIn recruiters.\nModule 8 - Sync ACLs: This module includes all APIs to define record visibility within Recruiter for records synced from the CRM.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "3. Development Tools",
+      "Anchor": "3-development-tools",
+      "SectionPath": [
+        "3. Development Tools"
+      ],
+      "Text": "We provide a snapshot of your integration journey in Project Planner Template. It provides a very helpful summary if you are just beginning development. We also provide few development tools like API Postman Collection to assist in efficient, organized \u0026 speedy development. Refer to Development Tools documentation for details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "4. Certification",
+      "Anchor": "4-certification",
+      "SectionPath": [
+        "4. Certification"
+      ],
+      "Text": "Be sure to review the test cases per module required for your certification. These test cases should be demoed in your certification meetings. These are described in detail here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "5. Announcements \u0026 Release Notes",
+      "Anchor": "5-announcements--release-notes",
+      "SectionPath": [
+        "5. Announcements \u0026 Release Notes"
+      ],
+      "Text": "All the changes that are continuously being made to LinkedIn\u0027s Talent CRM Connect documentation can be tracked in Release Notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

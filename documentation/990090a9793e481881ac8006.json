@@ -1,0 +1,216 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+  "Title": "Apply with LinkedIn Development",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/customer-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "Note that we are currently not accepting any new partners for Apply with LinkedIn (AWLI). We continue to provide support to our existing partners while actively working on the development of a new version of AWLI.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "Apply with LinkedIn (AWLI) aims to bring a shorter and more seamless job application experience to candidates who apply on the career site of our customers.\nAWLI drives more job applicants to complete applications by reducing the friction caused by adding redundant information that leads to applicant drop-off. It accomplishes this by allowing candidates to share information from their LinkedIn profile and automatically populate answers to common application questions such as name, contact information, location, employers, and education background.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "A job seeker goes through the following experience:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "Firstly, the job seeker visits a job posting on our customer\u2019s career site and can view the Apply with LinkedIn button. If the seeker opts to click Apply with LinkedIn, they are requested to log in into LinkedIn, if not already\nNext, they are requested for permission to share their profile information as part of an OAuth authentication flow\nAfter the job seeker consents in the OAuth flow, we share relevant information from their LinkedIn profile to the career site. The customer platform (career site) pre-populates appropriate application fields from the profile information shared by LinkedIn\nThe job seekers can review this pre-populated information in the job application and edit (if required) before submitting their application",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "LinkedIn AWLI integration also provides conversion tracking metrics to help our customers distinguish between those who have only initiated their application and those who have completed their application and are in the ATS. Research indicates that having access to the pool of candidates who have started but not finished their application, may reduce time-to-hire for our customers by up to 30%.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply with LinkedIn Development",
+      "Anchor": "apply-with-linkedin-development",
+      "SectionPath": [],
+      "Text": "Existing AWLI partners can also adopt Apply with LinkedIn with Verifications. It adds a signed verificationData object that shows LinkedIn verified the applicant\u0027s identity or workplace.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Before beginning development, you need to be provisioned with access to a test resource. Complete the following steps to request access:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Request Access",
+      "Anchor": "request-access",
+      "SectionPath": [
+        "Development Prerequisites",
+        "Request Access"
+      ],
+      "Text": "Create API applications for the integration.\nYou may create two API applications per integration, one for production and one for development and testing. If you have already created an API application for Job Posting, Recruiter System Connect and Apply Connect, then skip this step and go to the next one.\nEnsure the application follows the below naming convention: \u003CCompanyName-Dev\u003E for Development application and \u003CCompanyName\u003E for Production application. If you already have created an API application for Job Posting, Recruiter System Connect and Apply Connect then submit a support case using the partner support form to get this updated. Also please follow same naming convention when creating applications for your customers.\nEnsure that you use the correct company logo as it will display on the consent screen (during OAuth Flow). If you already have created an API application for Job Posting, Recruiter System Connect and Apply Connect and it does not have correct logo then submit a support case using the partner support form to get your logo corrected.\nFill out the Onboarding Request Form provided to you by your LinkedIn partnerships contact.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Begin Development",
+        "Getting Started"
+      ],
+      "Text": "In order to implement AWLI, LinkedIn has broken down the scope of integration into two Development Modules that can be found under API \u0026 Plugin Guide documentation. As a customer or partner, you will need to utilize the components described within the below modules:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Begin Development",
+        "Getting Started"
+      ],
+      "Text": "Module 1 - Configure Customer Applications \u0026 ATS Integrations: Partners can create and manage customer\u2019s applications and support AWLI onboarding flow on LinkedIn\u2019s ATS middleware\nModule 2 - Apply with LinkedIn Plugin : Step by step guide to integrate the Apply With LinkedIn plugin onto your career site\u2019s job application page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Begin Development",
+        "Getting Started"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Getting Started",
+      "Anchor": "getting-started",
+      "SectionPath": [
+        "Begin Development",
+        "Getting Started"
+      ],
+      "Text": "Module 1 is applicable to partners only. For example application tracking systems serving multiple customers.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Development Tools",
+      "Anchor": "development-tools",
+      "SectionPath": [
+        "Development Tools"
+      ],
+      "Text": "We provide a snapshot of your integration journey in the Project Plan template that acts as a helpful summary if you are just beginning development. We also provide a few development tools like API Postman Collection, Sample Applications an so on to assist in efficient, organized and speedy development. Refer to Development Tools documentation for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Certification",
+      "Anchor": "certification",
+      "SectionPath": [
+        "Certification"
+      ],
+      "Text": "To ensure both the Apply With LinkedIn Plugin on career site work as expected, LinkedIn must certify the finished development. Be sure to review the test cases per module required for your certification. These test cases should be demoed in your certification recordings. Refer to Certification documentation for more details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Partner Frequently Asked Questions",
+      "Anchor": "partner-frequently-asked-questions",
+      "SectionPath": [
+        "Partner Frequently Asked Questions"
+      ],
+      "Text": "If you have any product or technical questions, please refer to the FAQ documentation before reaching out to your LinkedIn Business Development point of contact or open a ticket with our support team.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Announcements and Releases",
+      "Anchor": "announcements-and-releases",
+      "SectionPath": [
+        "Announcements and Releases"
+      ],
+      "Text": "Summary of changes made to Apply With LinkedIn documentation is published under Announcements and Release Notes.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "ads-transparency-api": {
+    "fetchIssue": null,
+    "file": "postman-ads-transparency-api.json",
+    "sha256": "257f8b0a2ba1a2faf9b875716c6ba21d8d5811fcad7bfe996a28fd2b5f8b9bb0"
+  },
+  "apply-connect": {
+    "fetchIssue": null,
+    "file": "postman-apply-connect.json",
+    "sha256": "74e677ce5f0cd667e84538a93d6366474f1fb931d2fff85548098337c909f039"
+  },
+  "apply-with-linkedin-v3": {
+    "fetchIssue": null,
+    "file": "postman-apply-with-linkedin-v3.json",
+    "sha256": "fbadf0ae69855808eeb2844dfc74ce404b13910c4c56950ae74aa69c00467f94"
+  },
+  "audience-insights": {
+    "fetchIssue": null,
+    "file": "postman-audience-insights.json",
+    "sha256": "56557d59efdff97814c07b6316f45859c43a474e2f8165eee1641559d52b4b12"
+  },
+  "audiences": {
+    "fetchIssue": null,
+    "file": "postman-audiences.json",
+    "sha256": "866e51c117171f21189f849d94ae9c40b23dd6c1c4d939d26d12b44ff4a6d41d"
+  },
+  "campaign-management": {
+    "fetchIssue": null,
+    "file": "postman-campaign-management.json",
+    "sha256": "0005da610401322dc6dc34428907cbbfcdab92c0846a722971aca6287711c56d"
+  },
+  "community-management": {
+    "fetchIssue": "Download failed; previous Postman snapshot retained (stale). Response status code does not indicate success: 404 (Not Found).",
+    "file": "postman-community-management.json",
+    "sha256": "626c3fc0ecf042088d3a11b05dc096c4daa6ac98bddc287aeed1b1ae0e18a021"
+  },
+  "company-intelligence-api": {
+    "fetchIssue": null,
+    "file": "postman-company-intelligence-api.json",
+    "sha256": "b0032ddabd1a9748ace57de361afdd313cbbdcbdc2f0e014f824a119252925b5"
+  },
+  "compliance-events": {
+    "fetchIssue": null,
+    "file": "postman-compliance-events.json",
+    "sha256": "20f0a760dadadb7dc0a59e22cd111fe230c6c024fb8a8991d271ba94e89660eb"
+  },
+  "content-apis": {
+    "fetchIssue": null,
+    "file": "postman-content-apis.json",
+    "sha256": "70a2638ef6e6536dc7af7cc76b3131fd73a0ac1f2042e641b8cf4cfcbd4f51b2"
+  },
+  "conversions-api": {
+    "fetchIssue": null,
+    "file": "postman-conversions-api.json",
+    "sha256": "1fab31f32a8f6f8099a05bd2794524c52bee032374bee5c7c6288d64d9720673"
+  },
+  "events-management-api": {
+    "fetchIssue": null,
+    "file": "postman-events-management-api.json",
+    "sha256": "777dfdb9660922793ba69ade1db93088280ebdc67a5d12758fe11ca53dff07d3"
+  },
+  "job-posting": {
+    "fetchIssue": null,
+    "file": "postman-job-posting.json",
+    "sha256": "2ee84acd6ead0f775529b0d2206418f036975e34b73787431c6a07eceacaae0f"
+  },
+  "lead-sync": {
+    "fetchIssue": null,
+    "file": "postman-lead-sync.json",
+    "sha256": "de48cf8f5d6a07e38744916a2af7102412022a6e982f8625579f9d673d69ef17"
+  },
+  "learning-activity-reports": {
+    "fetchIssue": null,
+    "file": "postman-learning-activity-reports.json",
+    "sha256": "d1aaada81768eaf8ccd955dc3c4420ff943252612d3b871710196a6bf34d8c99"
+  },
+  "learning-content": {
+    "fetchIssue": null,
+    "file": "postman-learning-content.json",
+    "sha256": "1a1aabc69f1991ee9f868cce9627d40511d1839f4cf954ab98cddf5ab20a1ca6"
+  },
+  "linkedin-live-events": {
+    "fetchIssue": null,
+    "file": "postman-linkedin-live-events.json",
+    "sha256": "a8bce0d53fdd31500e5ab91b3a4e5d797368d0a9fa9193f7cc7de9093453e356"
+  },
+  "lms-api-siteup": {
+    "fetchIssue": null,
+    "file": "postman-lms-api-siteup.json",
+    "sha256": "7035ba106a6c37d39e76b062de90c25f8f6105bd658a6c9a50da99538821f256"
+  },
+  "media-planning": {
+    "fetchIssue": null,
+    "file": "postman-media-planning.json",
+    "sha256": "ebf693c0d0a697f54da87a96949a8fe2fb900c14a60c801700871f77436cc387"
+  },
+  "pages-data-portability": {
+    "fetchIssue": null,
+    "file": "postman-pages-data-portability.json",
+    "sha256": "4b1fbecda46397f101f5332baa6a2ea6d69c49523ee11ff6190556cced9015eb"
+  },
+  "parent-application-management": {
+    "fetchIssue": null,
+    "file": "postman-parent-application-management.json",
+    "sha256": "5b878c071cbeec08cb014f2f4faeecb89401b40875df83a1650f194763672bb3"
+  },
+  "recruiter-system-connect": {
+    "fetchIssue": null,
+    "file": "postman-recruiter-system-connect.json",
+    "sha256": "dd34b93a901b5ccab9b85f53df4e9ce7f655a67c9301df5bb7eef69a738f0f5d"
+  },
+  "recruiter-system-connect-versioned": {
+    "fetchIssue": null,
+    "file": "postman-recruiter-system-connect-versioned.json",
+    "sha256": "21886c59b2961d5cdc8284877f12766a40c06f8c4074bf015d9718707e70da5e"
+  },
+  "reporting-roi": {
+    "fetchIssue": null,
+    "file": "postman-reporting-roi.json",
+    "sha256": "e302248a8dd05e13d877407346ae84cdda60e55252f3d28797cd4bf04205816e"
+  },
+  "talent-crm-connect": {
+    "fetchIssue": null,
+    "file": "postman-talent-crm-connect.json",
+    "sha256": "c926812efd22e3f4cdd35307dc17017820a4ef25ea869d099348c755951c3093"
+  },
+  "utilities": {
+    "fetchIssue": null,
+    "file": "postman-utilities.json",
+    "sha256": "8faec17509e2c6bdfee36940272366c9195a28e98fbb57f82945e10d4461f930"
+  },
+  "verified-on-linkedin": {
+    "fetchIssue": null,
+    "file": "postman-verified-on-linkedin.json",
+    "sha256": "6b6af1864af8b535cde187d431b0d74e603ab6c2db86b905a2d318542368721b"
+  }
+}

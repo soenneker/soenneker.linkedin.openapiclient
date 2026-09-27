@@ -1,0 +1,1173 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/versioning",
+  "Title": "LinkedIn Talent API versioning",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent API versioning",
+      "Anchor": "linkedin-talent-api-versioning",
+      "SectionPath": [],
+      "Text": "LinkedIn Talent APIs are versioned, so your integrations stay stable while new features are added. New versions are released as updates become available. Use this page to find supported versions, upcoming sunsets, release changes, and migration guidance.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent API versioning",
+      "Anchor": "linkedin-talent-api-versioning",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "LinkedIn Talent API versioning",
+      "Anchor": "linkedin-talent-api-versioning",
+      "SectionPath": [],
+      "Text": "The latest API version is 202604. Use LinkedIn-Version: 202604 in all requests to access the most recent features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "LinkedIn Talent API versioning",
+      "Anchor": "linkedin-talent-api-versioning",
+      "SectionPath": [],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/{resource}\u0027 \\\n-H \u0027Authorization: Bearer {token}\u0027 \\\n-H \u0027LinkedIn-Version: 202604\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported versions",
+      "Anchor": "supported-versions",
+      "SectionPath": [
+        "Supported versions"
+      ],
+      "Text": "The following table lists all versions and their support status. LinkedIn supports each version for a minimum of 2 years from its release date.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Supported versions",
+      "Anchor": "supported-versions",
+      "SectionPath": [
+        "Supported versions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version",
+        "Release Date",
+        "Sunset Date",
+        "Status"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Talent version 202604",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apr 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apr 2028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active (Latest)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mar 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mar 2028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202602",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Feb 2026",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Feb 2028",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202512",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dec 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dec 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202511",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nov 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nov 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oct 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oct 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202508.02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aug 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aug 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202508",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aug 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aug 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202507",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jul 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jul 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202506",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jun 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jun 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202505",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apr 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apr 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mar 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mar 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 2025",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 2027",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Version header",
+      "Anchor": "version-header",
+      "SectionPath": [
+        "How versioning works",
+        "Version header"
+      ],
+      "Text": "All requests must include the LinkedIn-Version header. The value identifies the API version and uses YYYYMM format for standard releases or YYYYMM.xx for patch releases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Version header",
+      "Anchor": "version-header",
+      "SectionPath": [
+        "How versioning works",
+        "Version header"
+      ],
+      "Text": "-H \u0027LinkedIn-Version: 202604\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Version and base path",
+      "Anchor": "version-and-base-path",
+      "SectionPath": [
+        "How versioning works",
+        "Version and base path"
+      ],
+      "Text": "Versioned APIs use the https://api.linkedin.com/rest/ base path. Legacy unversioned APIs use https://api.linkedin.com/v2/. As versioned replacements are released, the corresponding legacy endpoints will be sunset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Release cadence",
+      "Anchor": "release-cadence",
+      "SectionPath": [
+        "How versioning works",
+        "Release cadence"
+      ],
+      "Text": "LinkedIn publishes new API versions as updates are ready. Patch versions (e.g., 202508.02) are issued for critical security, privacy, or bug fixes only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Support window",
+      "Anchor": "support-window",
+      "SectionPath": [
+        "How versioning works",
+        "Support window"
+      ],
+      "Text": "Each version is supported for a minimum of 2 years from its release date. You can stay on any supported version within that window, but migrating to the latest version gives you the longest support window and access to all new features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Versioned API docs",
+      "Anchor": "versioned-api-docs",
+      "SectionPath": [
+        "How versioning works",
+        "Versioned API docs"
+      ],
+      "Text": "Use the version dropdown selector to view the API updates applicable to a specific version.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API version history",
+      "Anchor": "api-version-history",
+      "SectionPath": [
+        "API version history"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version",
+        "Status",
+        "APIs updated",
+        "Summary of changes",
+        "Release notes"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Talent version 202604",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active (Latest)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PUT /rest/applicationsDELETE /rest/applications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC: Applications resource renamed from /rest/atsApplications to /rest/applications; update the endpoint path for sync and delete requests. Key parameters and request body fields are unchanged.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202604-latest"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PUT /rest/candidatePipelinesDELETE /rest/candidatePipelinesPUT /rest/pipelineStagesDELETE /rest/pipelineStagesPUT /rest/candidatePipelineStagesDELETE /rest/candidatePipelineStages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Connect: CRM candidate pipelines and pipeline stages APIs migrated to versioned REST endpoints (new external* field names).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CRM Connect",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/crm-connect/crm-release-notes?view=li-lts-2026-04#version-202603"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202602",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DELETE /rest/candidates",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Data Deletion: Delete Candidates migrated to new versioned endpoint; externalCandidateId and integrationContext replace legacy atsCandidateId and dataProvider.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202602"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202512",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No new endpoints.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202512"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202511",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No new endpoints.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202511"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PUT /rest/candidateNotesDELETE /rest/candidateNotesDELETE /rest/applicationNotesDELETE /rest/attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Candidate Notes new REST endpoint; Delete Candidate Notes, Delete Application Notes, and Delete Document (Resume) endpoints introduced; exported candidate location updated to structured object.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202510"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202508.02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "DELETE /rest/applicationInterviewFeedbacks",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Patch: Delete Application Interview Feedback migrated to versioned REST endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-20250802"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202508",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PUT /rest/attachmentsDELETE /rest/attachments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "New Attachments endpoint introduced for syncing resumes as attachments.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202508"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202507",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PUT /rest/applicationStageDELETE /rest/applicationStageGET /rest/exportedCandidatesGET /rest/atsPurgedExportedCandidatesDELETE /rest/atsApplicationsGET /rest/exportedApplicationEvaluationsGET /rest/simpleJobPostingsGET /rest/simpleJobPostingStatusGET /rest/simpleJobPostingTasksDELETE /rest/jobRequisitionsDELETE /rest/jobRequisitionStages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync Application Stages, Exported Candidates, Purged Exported Candidates, and Application Evaluations migrated or introduced as REST endpoints; Simple Job Postings endpoints migrated to REST; referenceEntityType and referenceEntityId added to exported candidates response; Delete endpoints introduced for job requisitions and stages.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202507"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202506",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync Job Requisitions: hiredCount and ownerType fields added.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202505",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No new endpoints.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PUT /rest/jobRequisitionsPUT /rest/jobRequisitionStages",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Sync Job Requisitions and Sync Job Requisition Stages REST endpoints introduced.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "RSC",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/recruiter-system-connect/rsc-release-notes?view=li-lts-2026-04#version-202504"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No new endpoints.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Talent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/release-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Active",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2014",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Initial versioned API release under new https://api.linkedin.com/rest/ base path.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Talent",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/release-notes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Upcoming sunsets",
+      "Anchor": "upcoming-sunsets",
+      "SectionPath": [
+        "Upcoming sunsets"
+      ],
+      "Text": "Plan your migrations before these dates to avoid service disruptions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Upcoming sunsets",
+      "Anchor": "upcoming-sunsets",
+      "SectionPath": [
+        "Upcoming sunsets"
+      ],
+      "Text": "",
+      "Headers": [
+        "Version",
+        "Sunset Date"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Talent version 202501",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jan 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202503",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mar 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202504",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apr 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202505",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "May 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202506",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jun 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202507",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Jul 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202508",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aug 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202508.02",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Aug 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202510",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Oct 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202511",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Nov 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202512",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Dec 2027",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202602",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Feb 2028",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202603",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mar 2028",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Talent version 202604",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Apr 2028",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrating between versions",
+      "Anchor": "migrating-between-versions",
+      "SectionPath": [
+        "Migrating between versions"
+      ],
+      "Text": "When migrating between REST API versions, update the LinkedIn-Version header value to the target version. No URL changes are required unless an endpoint path itself changed (see the API Version History table above). When migrating from legacy https://api.linkedin.com/v2/ endpoints, you must also update the base path to https://api.linkedin.com/rest/ and, in some cases, use updated endpoint paths.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Migrating between versions",
+      "Anchor": "migrating-between-versions",
+      "SectionPath": [
+        "Migrating between versions"
+      ],
+      "Text": "# Before\n-H \u0027LinkedIn-Version: 202510\u0027\n\n# After\n-H \u0027LinkedIn-Version: 202604\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrating between versions",
+      "Anchor": "migrating-between-versions",
+      "SectionPath": [
+        "Migrating between versions"
+      ],
+      "Text": "Review the Summary of Changes column in the API version history table for each version between your current and target version to identify any new required fields or endpoint changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking change policy",
+      "Anchor": "breaking-change-policy",
+      "SectionPath": [
+        "Migrating between versions",
+        "Breaking change policy"
+      ],
+      "Text": "LinkedIn may release a patch version to address critical security, privacy, or bug fix issues. These cases are rare, and LinkedIn works closely with partners to minimize disruption when they occur.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What happens if I use a sunset version?",
+      "Anchor": "what-happens-if-i-use-a-sunset-version",
+      "SectionPath": [
+        "FAQ",
+        "What happens if I use a sunset version?"
+      ],
+      "Text": "Requests will return a 426 Upgrade Required error:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "What happens if I use a sunset version?",
+      "Anchor": "what-happens-if-i-use-a-sunset-version",
+      "SectionPath": [
+        "FAQ",
+        "What happens if I use a sunset version?"
+      ],
+      "Text": "{\n    \u0022error\u0022: \u0022Unsupported API version\u0022,\n    \u0022message\u0022: \u0022The API version you are using has been sunset. Please upgrade to a supported version.\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Which version should I migrate to?",
+      "Anchor": "which-version-should-i-migrate-to",
+      "SectionPath": [
+        "FAQ",
+        "Which version should I migrate to?"
+      ],
+      "Text": "Always migrate to the latest version listed in the Supported versions table. It provides the longest support window and access to all current features.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How do I know what changed between versions?",
+      "Anchor": "how-do-i-know-what-changed-between-versions",
+      "SectionPath": [
+        "FAQ",
+        "How do I know what changed between versions?"
+      ],
+      "Text": "Refer to the API version history table and the linked program-level release notes for each version.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

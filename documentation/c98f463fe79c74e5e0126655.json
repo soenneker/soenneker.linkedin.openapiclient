@@ -1,0 +1,380 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+  "Title": "Job Posting API - Development Tools",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/job-posting-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/xml-feeds-job-posting-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Posting API - Development Tools",
+      "Anchor": "job-posting-api---development-tools",
+      "SectionPath": [],
+      "Text": "Use the resources in the development tools to help expedite your development process. If you have any questions, please submit a support case using the partner support form and reach out to us.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API - Development Tools",
+      "Anchor": "job-posting-api---development-tools",
+      "SectionPath": [],
+      "Text": "We provide below resources:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API - Development Tools",
+      "Anchor": "job-posting-api---development-tools",
+      "SectionPath": [],
+      "Text": "Project Plan describes different stages of Job Posting API development and estimated timeline to help create project plans for Job Posting API integration\nPostman Collection contains all the APIs required for Job Posting API integration. Development teams can use the Postman collection for reference while developing their code. It is fully functional and covers all the APIs and can be used as a playground to understand them in detail and try them out before starting any development activities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Job Posting API is a light weight offering from LinkedIn. This is also a foundation element that all LTS partners should first develop with. To help Project Managers and Developers with the planning, timelines and create checkpoints on different activities, we have created a Project Plan mentioned below.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "Milestones definitions for Job Posting API Integration Project Plan as follows:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Project Plan",
+      "Anchor": "project-plan",
+      "SectionPath": [
+        "Project Plan"
+      ],
+      "Text": "",
+      "Headers": [
+        "Milestone",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Self-Serve access provided by LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Request Access2. If your partnership request gets approved, LinkedIn\u0027s Business Development point of contact reaches out to you and proceeds with a contract 3. Please create a developer application on LinkedIn\u0027s Developer platform and submit a support case using the partner support form requesting to provision access 4. LinkedIn will provision your developer application that should be used for testing and also create and provide necessary test environment artifacts. These details are shared with you as a response to your support case 5. After the provisioning request is submitted, LinkedIn takes three days time to complete the same",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview?view=li-lts-2026-04#development-milestones",
+              "https://developer.linkedin.com/",
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Program Overview",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Partner developers and project managers should go through Job Posting API and set up and discuss timelines with the LinkedIn Business Development team to start development2. They should also use this time to get any questions and doubts resolved by submitting a support case using the partner support form",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/overview?view=li-lts-2026-04",
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Development and Testing",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Develop functionality for Job Posting API2. Ensure that integration adheres to Foundation Schema. In case you are building an extension on top of the Foundation Schema, please ensure development against specific schema extension definitions 3. Ensure to test out all Certification use cases as applicable to your integration 4. This should approximately take one month of development effort",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-job-postings?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema?view=li-lts-2026-04",
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-postings-certification?view=li-lts-2026-04"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Final Certification Review and Approval",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Partner should submit a recording covering all applicable certification use cases by submitting a support case using the partner support form 2. LinkedIn Business Development and Partner Engineering Team will review all the certification videos submitted and provide feedback for corrections if any 3. Once, there are no more corrections and integration looks compliant and correctly implemented, the partner or customer is certified by LinkedIn and necessary privileges will be given to the production application 4. Post submission of the recording, certification should take a week approximately",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/ask/dsapi"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "General Availability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "1. Partner should configure production application in their production environment and perform quality testing independently 2. When production changes are ready to be pushed live, the partner can work with LinkedIn\u0027s Business Development point of contact on any marketing collaterals and go live date",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "You can use the Postman collection for Job Posting APIs and try out all APIs for different use cases.\nPostman is a free-to-download tool for making HTTP requests.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "Please note that Postman is an independent entity and is not affiliated with LinkedIn. LinkedIn is providing the following resources to support your use of the Postman services but ultimately, any use of third party services, such as the Postman Services, is at your own discretion and risk. \nLinkedIn does not endorse or vet the Postman services and is not responsible for any damage or loss of data resulting from your use of third party services. Nothing herein shall restrict LinkedIn\u0027s ability to enforce all of its rights under its agreements with you.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Postman Collection",
+      "Anchor": "postman-collection",
+      "SectionPath": [
+        "Postman Collection"
+      ],
+      "Text": "The easiest way to get started using the Job Posting APIs is to use our Postman collections. We have posted our APIs in LinkedIn\u0027s Postman workspace. If you prefer, you can explore our API with other tools like curl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Explore Postman Collection",
+      "Anchor": "explore-postman-collection",
+      "SectionPath": [
+        "Postman Collection",
+        "Explore Postman Collection"
+      ],
+      "Text": "The below button will take you to LinkedIn\u0027s Postman\u0027s workspace. Select the workspace with name LinkedIn Talent Solutions. You will find the Job Posting API collection in it.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Postman Collection Environment Variables",
+      "Anchor": "job-posting-api-postman-collection-environment-variables",
+      "SectionPath": [
+        "Postman Collection",
+        "Job Posting API Postman Collection Environment Variables"
+      ],
+      "Text": "In order to start using your Job Posting API Postman collection, you need to first configure your environment variables. These variables are defined in the Job Posting environment within the Environment section of Postman. Please set the value for these variables and click Save.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Postman Collection Environment Variables",
+      "Anchor": "job-posting-api-postman-collection-environment-variables",
+      "SectionPath": [
+        "Postman Collection",
+        "Job Posting API Postman Collection Environment Variables"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Postman Collection Environment Variables",
+      "Anchor": "job-posting-api-postman-collection-environment-variables",
+      "SectionPath": [
+        "Postman Collection",
+        "Job Posting API Postman Collection Environment Variables"
+      ],
+      "Text": "Ensure that you select Job Posting environment. To know more about selecting the environment, refer to this Postman article",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting API Postman Collection Environment Variables",
+      "Anchor": "job-posting-api-postman-collection-environment-variables",
+      "SectionPath": [
+        "Postman Collection",
+        "Job Posting API Postman Collection Environment Variables"
+      ],
+      "Text": "Below is the list of variables:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Posting API Postman Collection Environment Variables",
+      "Anchor": "job-posting-api-postman-collection-environment-variables",
+      "SectionPath": [
+        "Postman Collection",
+        "Job Posting API Postman Collection Environment Variables"
+      ],
+      "Text": "",
+      "Headers": [
+        "Variable Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "client_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client id of partner\u0027s application. This is used to get the access token to be able to call Job Posting APIs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "client_secret",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Client secret of partner\u0027s application. This is used to get the access token to be able to call Job Posting APIs",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "company_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization(company) id value for customer. This appears in integration_context of type urn:li:organization:id",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contract_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contract id present in contract urn of type urn:li:contract:id. This is required only if you are also building with Promoted Jobs Extension Schema else can be left blank",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/job-posting-api-schema?view=li-lts-2026-04#promoted-jobs-extension-schema"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "external_job_posting_id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique job id within the partner system",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to get Access Token to Execute APIs",
+      "Anchor": "how-to-get-access-token-to-execute-apis",
+      "SectionPath": [
+        "Postman Collection",
+        "How to get Access Token to Execute APIs"
+      ],
+      "Text": "Authorization is configured at the collection level. Select the Job Posting collection and click the Authorization tab. Ensure that you have defined the values for the client_id and client_secret variables in the Job Posting environment.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to get Access Token to Execute APIs",
+      "Anchor": "how-to-get-access-token-to-execute-apis",
+      "SectionPath": [
+        "Postman Collection",
+        "How to get Access Token to Execute APIs"
+      ],
+      "Text": "To request an access token, click Get New Access Token. This calls LinkedIn\u0027s authorization service to fetch new access token. Once Postman receives the access token, click Use Token. This access token is used for all API calls automatically within the collection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to get Access Token to Execute APIs",
+      "Anchor": "how-to-get-access-token-to-execute-apis",
+      "SectionPath": [
+        "Postman Collection",
+        "How to get Access Token to Execute APIs"
+      ],
+      "Text": "In case the token expires, you can generate the access token again by following the above steps.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

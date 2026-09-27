@@ -1,0 +1,1141 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+  "Title": "Organization Content Revisions",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/admin-content",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/career-page-settings",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/employer-brand-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-commitment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-content-revisions",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-life-page-traffic-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-photos",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-relationship-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-targeted-contents",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/organization-workplace-policies",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/employer-brand/talent-brand-analytic-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "The Organization Content Revisions API returns version history and content revisions for an organization\u0027s Life Pages (also known as Targeted Content pages or Career Pages). Life Pages allow companies to create customized page experiences for different audiences (e.g., by location, job function, or seniority level). This API tracks all revisions of Life Page content, including drafts, published versions, and historical changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Product Name Translation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Current: Life Page, Targeted Content\nLegacy: Career Pages\nHierarchy: Company Page \u2192 Organization \u2192 Organizational Page \u2192 Life Page",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Each content revision represents a snapshot of Life Page configuration, including:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Feature Overview",
+      "Anchor": "feature-overview",
+      "SectionPath": [
+        "Feature Overview"
+      ],
+      "Text": "Multiple targeted content variations for different audiences.\nDefault fallback content when no targeting criteria match.\nPublishing status and revision history\nAuto-save and migration tracking",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API?",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API?"
+      ],
+      "Text": "To use the Organization Content Revisions API, you need:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Use This API?",
+      "Anchor": "how-to-use-this-api",
+      "SectionPath": [
+        "How to Use This API?"
+      ],
+      "Text": "Required Role: The authenticated user must have one of these organization page roles:\n\nADMINISTRATOR\nCONTENT_ADMINISTRATOR\n\n\nHow to Find Organizations You Can Query?\n\nCall OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of CareerPageAuthorizationActionType.CAREER_PAGE_LIFE_READ to retrieve eligible organizations.\n\n\nHow to Get Content Revision URNs?\nContent Revision URNs are composite identifiers in the format:\n Copy urn:li:organizationContentRevision:(urn:li:organization:{orgId},{revisionId})\n\nUse one of these methods to discover content revision URNs:\n\nHistory method: Lists all revision history for an organization.\nPublished method: Returns the currently published revision that\u0027s visible to LinkedIn members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Available Methods",
+      "Anchor": "available-methods",
+      "SectionPath": [
+        "Available Methods"
+      ],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Available Methods",
+      "Anchor": "available-methods",
+      "SectionPath": [
+        "Available Methods"
+      ],
+      "Text": "Get - Returns a content revision for a given organization content revision URN.\nBatchGet - Batch get content revisions for multiple organization content revision URNs.\nHistory - Retrieve the revision history for an organization (all revisions, including drafts and published).\nPublished - Retrieve the current published revision for an organization that is served to members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "key",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentRevisionUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for this revision.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetedContents",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Array of [OrganizationTargetedContentUrn]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/employer-brand/organization-targeted-contents.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Unique targeting attributes paired with the content. Specifying multiple targeted contents with the identical targeting attributes is not allowed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "defaultTargetedContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationTargetedContentUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/DMA/employer-brand/organization-targeted-contents.md?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "If none of the targetedContents match, this targeted content should be used as a fallback. Note that it\u0027s permitted to re-use a targeted content inside of targetedContents, and if used as a default fallback, the targeting criteria won\u0027t be evaluated.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentRevision",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OrganizationContentRevisionUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Revision the user started the modification from.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "published",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If and when this content revision was published to be viewable by members. Note that while only the newest published content is viewable by members, older content retains the published attribute so administrators are able to inspect which older revisions were published. Also, content revisions that aren\u0027t published are considered to be in a draft state, and there is no requirement to ever publish them.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "saveMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SaveMode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates which saving process (migration, autoSave etc.) this Content Revision was created by.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the creation of this resource, association, or sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the deletion of this resource, association, or sub-resource. The deleted timestamp must be later than the creation timestamp. Note: It may or may not match the lastModified timestamp, depending on the semantics of the resource, association, or sub-resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp that records the last modification of this resource, association, or sub-resource. Note: If no modification has happened since creation, lastModified should be the same as created.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "AuditStamp",
+      "Anchor": "auditstamp",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions",
+        "AuditStamp"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "When did the resource/association/sub-resource move into the specific lifecycle stage represented by this AuditEvent.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity (e.g. a memberUrn, organizationUrn, etc) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "impersonator",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/shared/api-guide/concepts/urns.md?view=li-dma-data-portability-2026-08#urns"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SaveMode",
+      "Anchor": "savemode",
+      "SectionPath": [
+        "Available Methods",
+        "Permissions",
+        "SaveMode"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "MIGRATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Migration process (from BizSections to ContentRevision).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "AUTO_SAVE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Automatically save process.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "URN URL Encoding"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "URN URL Encoding",
+      "Anchor": "urn-url-encoding",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "URN URL Encoding"
+      ],
+      "Text": "Ensure that {ORGANIZATION_URN} and {ORGANIZATION_CONTENT_REVISION_URN} need to be URL-encoded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get",
+      "Anchor": "get",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Get"
+      ],
+      "Text": "An OrganizationContentRevisionUrn is a composite URN constructed using a content revision ID and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Get",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Get",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationContentRevisions/{ORGANIZATION_CONTENT_REVISION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationContentRevisions/urn%3Ali%3AorganizationContentRevision%3A%28urn%3Ali%3Aorganization%3A1234%2Cd5e2b076-3335-444d-6666-442244ddaa%29\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Get",
+        "Sample Response"
+      ],
+      "Text": "{\n   \u0022created\u0022 : {\n      \u0022time\u0022 : 1701300206204\n   },\n   \u0022defaultTargetedContent\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,cfez4a2-3333-4444-8888-027272797123)\u0022,\n   \u0022key\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-444d-6666-442244ddaa)\u0022,\n   \u0022lastModified\u0022 : {\n      \u0022time\u0022 : 1701300206204\n   },\n   \u0022parentRevision\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-2225-333d-5555-1122233ddaa)\u0022,\n   \u0022targetedContents\u0022 : [\n      \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,c7e20154-c8df-45ca-a2da-4651234567fc)\u0022,\n      \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,3df34690-6b61-486c-bfb5-45b1234899ba)\u0022\n   ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BatchGet",
+      "Anchor": "batchget",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet"
+      ],
+      "Text": "An OrganizationContentRevisionUrn is a composite URN constructed using a content revision ID and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationContentRevisions?ids=List(organization_content_revision_id1,organization_content_revision_id2..)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationContentRevisions?ids=List(urn%3Ali%3AorganizationContentRevision%3A%28urn%3Ali%3Aorganization%3A1234%2Cd5e2b076-3335-444d-6666-442244ddaa%29,urn%3Ali%3AorganizationContentRevision%3A%28urn%3Ali%3Aorganization%3A1234%2Cd5e2b076-3335-555d-7777-553344ddzz%29)\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022errors\u0022 : {},\n  \u0022results\u0022 : {\n    \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-444d-6666-442244ddaa)\u0022 : {\n      \u0022created\u0022 : {\n        \u0022time\u0022 : 1701300206204\n      },\n      \u0022defaultTargetedContent\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:3811762,cfef4b90-4a7c-4eb3-8c65-027272896453)\u0022,\n      \u0022key\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-444d-6666-442244ddaa)\u0022,\n      \u0022lastModified\u0022 : {\n        \u0022time\u0022 : 1701300206204\n      },\n      \u0022parentRevision\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-2225-333d-5555-1122233ddaa)\u0022,\n      \u0022targetedContents\u0022 : [\n        \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,c7e20154-c8df-45ca-a2da-4651234567fc)\u0022,\n        \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,3df34690-6b61-486c-bfb5-45b1234899ba)\u0022\n      ]\n    },\n    \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-555d-7777-553344ddzz)\u0022 : {\n      \u0022created\u0022 : {\n        \u0022time\u0022 : 1701300206204\n      },\n      \u0022defaultTargetedContent\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:3811762,azef4b90-4a7c-4eb3-8c65-027272891224)\u0022,\n      \u0022key\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-555d-7777-553344ddzz)\u0022,\n      \u0022lastModified\u0022 : {\n        \u0022time\u0022 : 1701300206204\n      },\n      \u0022parentRevision\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,s5e2b076-2225-333d-5555-123456vvta)\u0022,\n      \u0022targetedContents\u0022 : [\n        \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,12f34690-6b61-232c-bfb5-25b1234899cd)\u0022\n      ]\n    }\n  },\n  \u0022statuses\u0022 : {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of organization content revision urns to query for",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ids=List(urn%3Ali%3AorganizationContentRevision%3A%28urn%3Ali%3Aorganization%3A1234%2Cd5e2b076-3335-444d-6666-442244ddaa%29,urn%3Ali%3AorganizationContentRevision%3A%28urn%3Ali%3Aorganization%3A1234%2Cd5e2b076-3335-555d-7777-553344ddzz%29)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Query Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "BatchGet",
+        "Query Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query?\nTo find the organizations you can query content revisions for, use OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of CareerPageAuthorizationActionType.CAREER_PAGE_LIFE_READ. Returns organizations where you have the necessary permissions to access Life Page content revisions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "History",
+      "Anchor": "history",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History"
+      ],
+      "Text": "An OrganizationContentRevisionUrn is a composite URN constructed using a content revision ID and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationContentRevisions?q=history\u0026organization={ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationContentRevisions?q=history\u0026organization=urn%3Ali%3Aorganization%3A1234\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022 : [\n    {\n      \u0022created\u0022 : {\n        \u0022time\u0022 : 1701473440736\n      },\n      \u0022defaultTargetedContent\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:3811762,azef4b90-4a7c-4eb3-8c65-027272891224)\u0022,\n      \u0022key\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-555d-7777-553344ddzz)\u0022,\n      \u0022lastModified\u0022 : {\n        \u0022time\u0022 : 1701473440736\n      },\n      \u0022parentRevision\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,s5e2b076-2225-333d-5555-123456vvta)\u0022,\n      \u0022targetedContents\u0022 : [\n        \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,12f34690-6b61-232c-bfb5-25b1234899cd)\u0022\n      ]\n    }\n  ],\n  \u0022paging\u0022 : {\n    \u0022count\u0022 : 1,\n    \u0022links\u0022 : [\n      {\n        \u0022href\u0022 : \u0022/rest/dmaOrganizationContentRevisions?q=history\u0026organization=urn%3Ali%3Aorganization%3A1234\u0022,\n        \u0022rel\u0022 : \u0022next\u0022,\n        \u0022type\u0022 : \u0022application/json\u0022\n      }\n    ],\n    \u0022start\u0022 : 0,\n    \u0022total\u0022 : 0\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization for which content revisions are requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A123",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Query Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "History",
+        "Query Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query?\nTo find the organizations you can query content revisions for, use OrganizationAuthorization\u0027s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of CareerPageAuthorizationActionType.CAREER_PAGE_LIFE_READ. Returns organizations where you have the necessary permissions to access Life Page content revisions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Published",
+      "Anchor": "published",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Published"
+      ],
+      "Text": "An OrganizationContentRevisionUrn is a composite URN constructed using a content revision ID and an organizationUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Published",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Published",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOrganizationContentRevisions?q=published\u0026organization={ORGANIZATION_URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Published",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027\u0027https://api.linkedin.com/rest/dmaOrganizationContentRevisions?q=published\u0026organization=urn%3Ali%3Aorganization%3A1234\u0027\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Published",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022elements\u0022 : [\n    {\n      \u0022created\u0022 : {\n        \u0022time\u0022 : 1701473440736\n      },\n      \u0022defaultTargetedContent\u0022 : \u0022urn:li:organizationTargetedContent:(urn:li:organization:3811762,azef4b90-4a7c-4eb3-8c65-027272891224)\u0022,\n      \u0022key\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,d5e2b076-3335-555d-7777-553344ddzz)\u0022,\n      \u0022lastModified\u0022 : {\n        \u0022time\u0022 : 1701473440736\n      },\n      \u0022parentRevision\u0022 : \u0022urn:li:organizationContentRevision:(urn:li:organization:1234,s5e2b076-2225-333d-5555-123456vvta)\u0022,\n      \u0022targetedContents\u0022 : [\n        \u0022urn:li:organizationTargetedContent:(urn:li:organization:1234,12f34690-6b61-232c-bfb5-25b1234899cd)\u0022\n      ]\n    }\n  ],\n  \u0022paging\u0022 : {\n    \u0022count\u0022 : 1,\n    \u0022links\u0022 : [\n      {\n        \u0022href\u0022 : \u0022/rest/dmaOrganizationContentRevisions?q=published\u0026organization=urn%3Ali%3Aorganization%3A1234\u0022,\n        \u0022rel\u0022 : \u0022next\u0022,\n        \u0022type\u0022 : \u0022application/json\u0022\n      }\n    ],\n    \u0022start\u0022 : 0,\n    \u0022total\u0022 : 0\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Retrieve Content Revisions",
+        "Published",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Name",
+        "Sub-Field Name",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "encoded Organization URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN of the organization for which content revisions are requested.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "organization=urn%3Ali%3Aorganization%3A123",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid request. Please verify the API input.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid URL and parameters.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "FORBIDDEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to the resource is forbidden. Please check your permissions for this resource. BatchGet will get 403 if either of the requested URNs doesn\u0027t have Admin access.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided entity id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Server encountered an unexpected condition that prevented it from fulfilling the request.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

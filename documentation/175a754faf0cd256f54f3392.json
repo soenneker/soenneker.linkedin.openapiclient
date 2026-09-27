@@ -1,0 +1,468 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions",
+  "Title": "Industry Taxonomy Versions - Standardized Data API",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/compliance-faq",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-api/overview",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/compliance-snapshot-overview",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/industrytaxonomyversions"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Industry Taxonomy Versions - Standardized Data API",
+      "Anchor": "industry-taxonomy-versions---standardized-data-api",
+      "SectionPath": [],
+      "Text": "The Industry Taxonomy Versions - Standardized Data API provides standardized industry data across the LinkedIn platform. The API offers a hierarchical/tree structure to easily navigate through a comprehensive list of 400\u002B industries that are aligned with NAICS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "GET | BATCH_GET | GET_ALL",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry ID.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "$URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Standardized industry URN.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Industry name in various locales. Represented as MultiLocaleString type.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types#multilocalestring"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "childrenIndustries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URNs of the children industries associated with this node. It is empty if this industry is a leaf node.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "parentIndustries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URNs of the parent industry associated with this node. It is empty if this industry is a root node.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "GET",
+      "Anchor": "get",
+      "SectionPath": [
+        "GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/industryTaxonomyVersions/{version}/industries/{id}?locale.language=en\u0026locale.country=US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale in which industry data is requested. The en_US locale is used if the locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version of the industry data on LinkedIn. Currently supports V1_0 V2_5 V2_6 V2_7 DEFAULT points to the latest version",
+            "Links": [],
+            "Values": [
+              "V1_0",
+              "V2_5",
+              "V2_6",
+              "V2_7",
+              "DEFAULT points to the latest version"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022name\u0022: {\n        \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022Food and Beverage Manufacturing\u0022\n        }\n    },\n    \u0022parentIndustries\u0022: [\n        \u0022urn:li:industry:25\u0022\n    ],\n    \u0022id\u0022: 23,\n    \u0022childrenIndustries\u0022: [\n        \u0022urn:li:industry:65\u0022,\n        \u0022urn:li:industry:142\u0022,\n        \u0022urn:li:industry:481\u0022,\n        \u0022urn:li:industry:495\u0022,\n        \u0022urn:li:industry:504\u0022,\n        \u0022urn:li:industry:521\u0022,\n        \u0022urn:li:industry:528\u0022,\n        \u0022urn:li:industry:529\u0022\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "BATCH_GET",
+      "Anchor": "batch_get",
+      "SectionPath": [
+        "BATCH_GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/industryTaxonomyVersions/{version}/industries?ids={id1}\u0026ids={id2}\u0026locale.language=en\u0026locale.country=US",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the industry data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version of the industry data on LinkedIn. Currently supports V1_0 V2_5 V2_6 V2_7 DEFAULT points to the latest version",
+            "Links": [],
+            "Values": [
+              "V1_0",
+              "V2_5",
+              "V2_6",
+              "V2_7",
+              "DEFAULT points to the latest version"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u002222\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Retail Groceries\u0022\n                }\n            },\n            \u0022parentIndustries\u0022: [\n                \u0022urn:li:industry:1339\u0022\n            ],\n            \u0022id\u0022: 22,\n            \u0022childrenIndustries\u0022: []\n        },\n        \u002223\u0022: {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Food and Beverage Manufacturing\u0022\n                }\n            },\n            \u0022parentIndustries\u0022: [\n                \u0022urn:li:industry:25\u0022\n            ],\n            \u0022id\u0022: 23,\n            \u0022childrenIndustries\u0022: [\n                \u0022urn:li:industry:65\u0022,\n                \u0022urn:li:industry:142\u0022,\n                \u0022urn:li:industry:481\u0022,\n                \u0022urn:li:industry:495\u0022,\n                \u0022urn:li:industry:504\u0022,\n                \u0022urn:li:industry:521\u0022,\n                \u0022urn:li:industry:528\u0022,\n                \u0022urn:li:industry:529\u0022\n            ]\n        }\n    },\n    \u0022statuses\u0022: {},\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "GET_ALL",
+      "Anchor": "get_all",
+      "SectionPath": [
+        "GET_ALL"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/industryTaxonomyVersions/{version}/industries",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Sub-Field Name",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale the industry data is requested in. en_US locale is used if locale is not provided or supported.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase, two-letter language code as defined by ISO-639.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An uppercase, two-letter country code as defined by ISO-3166.",
+            "Links": [
+              "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version of the industry data on LinkedIn. Currently supports V1_0 V2_5 V2_6 V2_7 DEFAULT points to the latest version",
+            "Links": [],
+            "Values": [
+              "V1_0",
+              "V2_5",
+              "V2_6",
+              "V2_7",
+              "DEFAULT points to the latest version"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "GET_ALL",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Chiropractors\u0022\n                }\n            },\n            \u0022parentIndustries\u0022: [\n                \u0022urn:li:industry:13\u0022\n            ],\n            \u0022id\u0022: 2048,\n            \u0022childrenIndustries\u0022: []\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Defense and Space Manufacturing\u0022\n                }\n            },\n            \u0022parentIndustries\u0022: [\n                \u0022urn:li:industry:1029\u0022\n            ],\n            \u0022id\u0022: 1,\n            \u0022childrenIndustries\u0022: []\n        },\n        {\n            \u0022name\u0022: {\n                \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022Software Development\u0022\n                }\n            },\n            \u0022parentIndustries\u0022: [\n                \u0022urn:li:industry:6\u0022\n            ],\n            \u0022id\u0022: 4,\n            \u0022childrenIndustries\u0022: [\n                \u0022urn:li:industry:5\u0022,\n                \u0022urn:li:industry:3099\u0022,\n                \u0022urn:li:industry:3100\u0022,\n                \u0022urn:li:industry:3101\u0022,\n                \u0022urn:li:industry:3130\u0022,\n                \u0022urn:li:industry:109\u0022\n            ]\n        },\n        .\n        .\n        .\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

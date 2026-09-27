@@ -1,0 +1,1183 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications",
+  "Title": "learningClassifications API Reference",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learning-activity-reports-reference",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningassets",
+    "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "learningClassifications API Reference",
+      "Anchor": "learningclassifications-api-reference",
+      "SectionPath": [],
+      "Text": "This resource represents LinkedIn Learning content taxonomy. You can use these methods to resolve subjects, topic and skills.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Supported Methods",
+      "Anchor": "supported-methods",
+      "SectionPath": [
+        "Supported Methods"
+      ],
+      "Text": "get\nkeyword\nlocaleAndType",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Supported Methods",
+        "get",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET https://api.linkedin.com/v2/learningClassifications/urn:li:lyndaCategory:573028 \\\n  -H \u0027Authorization: Bearer  AQU...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Supported Methods",
+        "get",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u0022urn:li:lyndaCategory:7220\u0022,\n  \u0022owner\u0022: {\n    \u0022urn\u0022: \u0022urn:li:company:0000\u0022,\n    \u0022name\u0022: {\n      \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022value\u0022: \u0022LinkedIn\u0022\n    }\n  },\n  \u0022name\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022Audio Post-Production\u0022\n  },\n  \u0022type\u0022: \u0022TOPIC\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Supported Methods",
+        "get",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language the API will use to try to localize the learning classification. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning classification cannot be localized or if the target locale is not set, the API will use the default locale of the learning classification. Supported language values include: deenesfrinitjakoplpttrzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "in",
+              "it",
+              "ja",
+              "ko",
+              "pl",
+              "pt",
+              "tr",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region the API will use to try to localize the learning classification. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning classification cannot be localized or if the target locale is not set, the API will use the default locale of the learning classification. Supported country/region values include: BRESCNDEFRIDITJPKRPLUSTR",
+            "Links": [],
+            "Values": [
+              "BR",
+              "ES",
+              "CN",
+              "DE",
+              "FR",
+              "ID",
+              "IT",
+              "JP",
+              "KR",
+              "PL",
+              "US",
+              "TR"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Supported Methods",
+        "keyword",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/learningClassifications?q=keyword\u0026keyword=business\u0026targetLocale.language=en\u0026targetLocale.country=US\u0026start=0\u0026count=2\u0026fields=name,type,urn\u0027 \\\n  -H \u0027Authorization: Bearer  AQU...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Supported Methods",
+        "keyword",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7162\u0022,\n            \u0022name\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Business\u0022\n            },\n            \u0022type\u0022: \u0022LIBRARY\u0022\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7166\u0022,\n            \u0022name\u0022: {\n                \u0022locale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Business Software and Tools\u0022\n            },\n            \u0022type\u0022: \u0022SUBJECT\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 2,\n        \u0022count\u0022: 2,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningClassifications?count=2\u0026keyword=business\u0026q=keyword\u0026start=2\u0026targetLocale.country=US\u0026targetLocale.language=en\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Supported Methods",
+        "keyword",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be keyword.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "keyword",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The keyword string to search learning classifications. The search results will include only learning classifications matching this keyword string, as determined by LinkedIn Learning\u0027s relevance algorithm. The value of this parameter is case-insensitive.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language of the learning classifications. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported language values include: deenesfrinitjakoplpttrzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "in",
+              "it",
+              "ja",
+              "ko",
+              "pl",
+              "pt",
+              "tr",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region of the learning classifications. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported country/region values include: BRESCNDEFRIDITJPKRPLUSTR",
+            "Links": [],
+            "Values": [
+              "BR",
+              "ES",
+              "CN",
+              "DE",
+              "FR",
+              "ID",
+              "IT",
+              "JP",
+              "KR",
+              "PL",
+              "US",
+              "TR"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning classifications for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning classifications to include in the page. The maximum supported count is 100 classifications per page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Supported Methods",
+        "localeAndType",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/v2/learningClassifications?q=localeAndType\u0026type=SUBJECT\u0026sourceLocale.language=en\u0026sourceLocale.country=US\u0026count=4\u0026fields=name:(value),urn\u0027 \\\n  -H \u0027Authorization: Bearer  AQU...\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Supported Methods",
+        "localeAndType",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7168\u0022,\n            \u0022name\u0022: {\n                \u0022value\u0022: \u0022Training and Education\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7165\u0022,\n            \u0022name\u0022: {\n                \u0022value\u0022: \u0022Professional Development\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7166\u0022,\n            \u0022name\u0022: {\n                \u0022value\u0022: \u0022Business Software and Tools\u0022\n            }\n        },\n        {\n            \u0022urn\u0022: \u0022urn:li:lyndaCategory:7169\u0022,\n            \u0022name\u0022: {\n                \u0022value\u0022: \u0022Finance and Accounting\u0022\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022total\u0022: 34,\n        \u0022count\u0022: 4,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: [\n            {\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/v2/learningClassifications?count=4\u0026q=localeAndType\u0026sourceLocale.country=US\u0026sourceLocale.language=en\u0026start=4\u0026type=SUBJECT\u0022,\n                \u0022type\u0022: \u0022application/json\u0022\n            }\n        ]\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Supported Methods",
+        "localeAndType",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "q",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The value of this parameter should always be localeAndType.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of the learning classifications. Supported values include:LIBRARYSUBJECTTOPICLibraries, subjects, and topics are taxonomy categories associated with learning assets. Libraries - for example, \u0022Technology\u0022 - are broad groups of learning assets. Subjects - for example, \u0022Software Development\u0022 - are children of libraries and are groups of related topics. Topics - for example, \u0022Version Control\u0022 - are children of subjects and are focused topics.",
+            "Links": [],
+            "Values": [
+              "LIBRARY",
+              "SUBJECT",
+              "TOPIC"
+            ]
+          },
+          {
+            "Text": "ClassificationType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#classificationtype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language of the learning classifications. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported language values include: deenesfrinitjakoplpttrzh",
+            "Links": [],
+            "Values": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "in",
+              "it",
+              "ja",
+              "ko",
+              "pl",
+              "pt",
+              "tr",
+              "zh"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "sourceLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region of the learning classifications. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. Supported country/region values include: BRESCNDEFRIDITJPKRPLUSTR",
+            "Links": [],
+            "Values": [
+              "BR",
+              "ES",
+              "CN",
+              "DE",
+              "FR",
+              "ID",
+              "IT",
+              "JP",
+              "KR",
+              "PL",
+              "US",
+              "TR"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The start index of learning classifications for the page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 0)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of learning classifications to include in the page. The maximum supported count is 100 classifications per page.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Fields",
+      "Anchor": "response-fields",
+      "SectionPath": [
+        "Response Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The localized name of the skill or category.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies which person or organization is responsible for originally creating this classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NamedParty",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#namedparty"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates which type of classification this summary represents.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ClassificationType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#classificationtype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the learning classification. The URN is a unique identifier whose value should be treated as opaque.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies additional details for this classification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SupplementalDetail",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#supplementaldetail"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ClassificationType",
+      "Anchor": "classificationtype",
+      "SectionPath": [
+        "Definitions",
+        "ClassificationType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Symbol",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "SKILL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates this is a skill that should be acquired or strengthened by completing this learning asset.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LIBRARY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Library of content that this learning asset is associated with. Represents a broad grouping of content, e.g. Business",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "SUBJECT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content subject that this learning asset is associated with. Subjects are children of libraries and represent a group of related topics, e.g. Marketing.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "TOPIC",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Content topic that this learning asset is associated with. Topics are children of subject and represent a single granular topic, e.g. Email Marketing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CONTINUING_EDUCATION_UNIT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Continuing Education Unit associated with this content, e.g. Continuing Professional Education",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROFESSIONAL_CERTIFICATE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates that the learning asset is associated with a professional certificate.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "HANDS_ON_PRACTICE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Indicates that the learning asset has Hands-on Practice, e.g. Coding Challenges",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "SupplementalDetail",
+      "Anchor": "supplementaldetail",
+      "SectionPath": [
+        "Definitions",
+        "SupplementalDetail"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "value.certificationDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This indicates the education credit measurement for the certification content. It will conly be included if the classification type is \u0027CONTINUING_EDUCATION_UNIT\u0027.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentCertification",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#contentcertification"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ContentCertification",
+      "Anchor": "contentcertification",
+      "SectionPath": [
+        "Definitions",
+        "ContentCertification"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "metric",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The education credit measurement for the certification content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Metric",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#metric"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "disciplines",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An array of fields of study associated with the certification content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Metric",
+      "Anchor": "metric",
+      "SectionPath": [
+        "Definitions",
+        "Metric"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the education credit units associated with the certification content, localized if available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "units",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of education credit units associated with the certification content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Locale",
+      "Anchor": "locale",
+      "SectionPath": [
+        "Definitions",
+        "Locale"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, an uppercase two-letter country code as defined by ISO-3166.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A lowercase two-letter language code as defined by ISO-639.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "variant",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "If present, a vendor or browser-specific code.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "LocaleString",
+      "Anchor": "localestring",
+      "SectionPath": [
+        "Definitions",
+        "LocaleString"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale of the localized string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#locale"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "value",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The localized string.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "NamedParty",
+      "Anchor": "namedparty",
+      "SectionPath": [
+        "Definitions",
+        "NamedParty"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of a person or organization, localized if available.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LocaleString",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/reference/learningclassifications#localestring"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "urn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN identifying a person or organization.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

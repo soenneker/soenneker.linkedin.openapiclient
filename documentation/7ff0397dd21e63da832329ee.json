@@ -1,0 +1,173 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+  "Title": "targetingCriteria Examples",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/",
+    "https://learn.microsoft.com/en-us/linkedin/sales/",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/how-to-give-doc-feedback",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/talent/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "targetingCriteria Examples",
+      "Anchor": "targetingcriteria-examples",
+      "SectionPath": [],
+      "Text": "This page starts with the most basic structure of targetingCriteria object and goes on the explain\u00A0how more complex criteria can be developed using boolean AND / OR constructs provided.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "The basic structure for any targetingCriteria is as follows",
+      "Anchor": "the-basic-structure-for-any-targetingcriteria-is-as-follows",
+      "SectionPath": [
+        "The basic structure for any targetingCriteria is as follows"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n\n        },\n        \u0022exclude\u0022:{\n\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "The basic structure for any targetingCriteria is as follows",
+      "Anchor": "the-basic-structure-for-any-targetingcriteria-is-as-follows",
+      "SectionPath": [
+        "The basic structure for any targetingCriteria is as follows"
+      ],
+      "Text": "Now, let\u2019s see the object with only \u201Cinclude\u201D part. The \u201Cinclude\u201D object contains a single encompassing array object called \u201Cand\u201D. Each element within this \u201Cand\u201D, contains at least 1 or many \u201Cor\u201D objects. This example just contains a single \u201Cor\u201D object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "This object is \u201Cincluding\u201D all users with seniority:5 which is \u201CManager\u201D OR seniority:6 which is \u201CDirector\u201D",
+      "Anchor": "this-object-is-including-all-users-with-seniority5-which-is-manager-or-seniority6-which-is-director",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D all users with seniority:5 which is \u201CManager\u201D OR seniority:6 which is \u201CDirector\u201D"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:seniorities\u0022:[\n                            \u0022urn:li:seniority:5\u0022,\n                            \u0022urn:li:seniority:6\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "This object is \u201Cincluding\u201D all users with seniority:5 which is \u201CManager\u201D OR seniority:6 which is \u201CDirector\u201D",
+      "Anchor": "this-object-is-including-all-users-with-seniority5-which-is-manager-or-seniority6-which-is-director",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D all users with seniority:5 which is \u201CManager\u201D OR seniority:6 which is \u201CDirector\u201D"
+      ],
+      "Text": "Each \u201Cor\u201D object can contain collection of adTargetingFacets. Each \u201CadTargetingFacet\u201D supports a list of pre-defined, standardized values. Within a single adTargetingFacet, all values in the list are OR\u2019d.\u00A0Here is an example with two different types of adTargetingFacets within the \u201Cor\u201D object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "This object is \u201Cincluding\u201D users who either are \u201CManagers\u201D OR have \u201CMBA\u201D degree",
+      "Anchor": "this-object-is-including-users-who-either-are-managers-or-have-mba-degree",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who either are \u201CManagers\u201D OR have \u201CMBA\u201D degree"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:seniorities \u0022:[\n                            \u0022urn:li:seniority:5\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:degrees\u0022:[\n                            \u0022urn:li:degree:700\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "This object is \u201Cincluding\u201D users who either are \u201CManagers\u201D OR have \u201CMBA\u201D degree",
+      "Anchor": "this-object-is-including-users-who-either-are-managers-or-have-mba-degree",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who either are \u201CManagers\u201D OR have \u201CMBA\u201D degree"
+      ],
+      "Text": "Next, is an example of multiple elements within the \u201Cand\u201D array object:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "This object is \u201Cincluding\u201D users who (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users work at a company belonging to the \u201CSemiconductors\u201D industry",
+      "Anchor": "this-object-is-including-users-who-are-managers-or-have-mba-degree-and-the-users-work-at-a-company-belonging-to-the-semiconductors-industry",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users work at a company belonging to the \u201CSemiconductors\u201D industry"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:seniorities\u0022:[\n                            \u0022urn:li:seniority:5\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:degrees\u0022:[\n                            \u0022urn:li:degree:700\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:industries\u0022:[\n                            \u0022urn:li:industry:7\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "This object is \u201Cincluding\u201D users who (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users work at a company belonging to the \u201CSemiconductors\u201D industry",
+      "Anchor": "this-object-is-including-users-who-are-managers-or-have-mba-degree-and-the-users-work-at-a-company-belonging-to-the-semiconductors-industry",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users work at a company belonging to the \u201CSemiconductors\u201D industry"
+      ],
+      "Text": "The schema for \u201Cexclude\u201D object is slightly different from the \u201Cinclude\u201D object. All facets values mentioned in the \u201Cexclude\u201D list are filtered out of the results. The \u201Cexclude\u201D values in the list are OR\u2019d.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "This object \u201Cincludes\u201D all users in California , \u201Cexcluding\u201D users who are \u201CManagers\u201D",
+      "Anchor": "this-object-includes-all-users-in-california--excluding-users-who-are-managers",
+      "SectionPath": [
+        "This object \u201Cincludes\u201D all users in California , \u201Cexcluding\u201D users who are \u201CManagers\u201D"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n        \u0022include\u0022: {\n            \u0022and\u0022: [{\n                \u0022or\u0022: {\n                    \u0022urn:li:adTargetingFacet:locations\u0022: [\n                        \u0022urn:li:geo:102095887\u0022\n                    ]\n                }\n            }]\n        },\n        \u0022exclude\u0022: {\n            \u0022or\u0022: {\n                \u0022urn:li:adTargetingFacet:seniorities\u0022: [\n                    \u0022urn:li:seniority:5\u0022\n                ]\n            }\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "This object \u201Cincludes\u201D all users in California , \u201Cexcluding\u201D users who are \u201CManagers\u201D",
+      "Anchor": "this-object-includes-all-users-in-california--excluding-users-who-are-managers",
+      "SectionPath": [
+        "This object \u201Cincludes\u201D all users in California , \u201Cexcluding\u201D users who are \u201CManagers\u201D"
+      ],
+      "Text": "The last example is one which uses both \u201CInclude\u201D and \u201CExclude\u201D objects in the criteria:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "This object is \u201Cincluding\u201D users who either (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users who are native to \u201CUnited States\u201D and \u201Cexcluding\u201D users working for companies belonging to the \u201CSemiconductors\u201D industry and users working in \u201CCalifornia\u201D",
+      "Anchor": "this-object-is-including-users-who-either-are-managers-or-have-mba-degree-and-the-users-who-are-native-to-united-states-and-excluding-users-working-for-companies-belonging-to-the-semiconductors-industry-and-users-working-in-california",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who either (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users who are native to \u201CUnited States\u201D and \u201Cexcluding\u201D users working for companies belonging to the \u201CSemiconductors\u201D industry and users working in \u201CCalifornia\u201D"
+      ],
+      "Text": "\u0022targetingCriteria\u0022:{\n        \u0022include\u0022:{\n            \u0022and\u0022:[\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:seniorities\u0022:[\n                            \u0022urn:li:seniority:5\u0022\n                        ],\n                        \u0022urn:li:adTargetingFacet:degrees\u0022:[\n                            \u0022urn:li:degree:700\u0022\n                        ]\n                    }\n                },\n                {\n                    \u0022or\u0022:{\n                        \u0022urn:li:adTargetingFacet:locations\u0022:[\n                            \u0022urn:li:geo:103644278\u0022\n                        ]\n                    }\n                }\n            ]\n        },\n        \u0022exclude\u0022:{\n            \u0022or\u0022:{\n                \u0022urn:li:adTargetingFacet:industries\u0022:[\n                    \u0022urn:li:industry:8\u0022\n                ],\n                \u0022urn:li:adTargetingFacet:locations\u0022:[\n                    \u0022urn:li:geo:102095887\u0022\n                ]\n            }\n        }\n    }",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "This object is \u201Cincluding\u201D users who either (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users who are native to \u201CUnited States\u201D and \u201Cexcluding\u201D users working for companies belonging to the \u201CSemiconductors\u201D industry and users working in \u201CCalifornia\u201D",
+      "Anchor": "this-object-is-including-users-who-either-are-managers-or-have-mba-degree-and-the-users-who-are-native-to-united-states-and-excluding-users-working-for-companies-belonging-to-the-semiconductors-industry-and-users-working-in-california",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who either (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users who are native to \u201CUnited States\u201D and \u201Cexcluding\u201D users working for companies belonging to the \u201CSemiconductors\u201D industry and users working in \u201CCalifornia\u201D"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "This object is \u201Cincluding\u201D users who either (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users who are native to \u201CUnited States\u201D and \u201Cexcluding\u201D users working for companies belonging to the \u201CSemiconductors\u201D industry and users working in \u201CCalifornia\u201D",
+      "Anchor": "this-object-is-including-users-who-either-are-managers-or-have-mba-degree-and-the-users-who-are-native-to-united-states-and-excluding-users-working-for-companies-belonging-to-the-semiconductors-industry-and-users-working-in-california",
+      "SectionPath": [
+        "This object is \u201Cincluding\u201D users who either (are \u201CManagers\u201D OR have \u201CMBA\u201D degree) AND the users who are native to \u201CUnited States\u201D and \u201Cexcluding\u201D users working for companies belonging to the \u201CSemiconductors\u201D industry and users working in \u201CCalifornia\u201D"
+      ],
+      "Text": "\u201Cexclude\u201D contains a single OR construct under which all exceptions can be listed. This implies that, in order to filter out a user from the all the users shortlisted by \u201Cinclude\u201D clause,\u00A0 the user must match at least one of the exceptions defined in \u0022exclude\u0022 clause.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

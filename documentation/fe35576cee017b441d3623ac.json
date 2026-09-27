@@ -1,0 +1,833 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+  "Title": "Social Metadata API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "The Feed Social Metadata API returns the social metadata for specific feed content. It supports urn:li:activity, urn:li:share, urn:li:ugcPost, urn:li:comment. These feed content items may have social actions such as reactions and comments attached to them. The socialMetadata API allows you to acquire a summary of these social actions on the content, both organic and sponsored.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "Example showing a LinkedIn post with social metadata including reactions (likes) and comments that can be retrieved via the Social Metadata API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Social Metadata API",
+      "Anchor": "social-metadata-api",
+      "SectionPath": [],
+      "Text": "BATCH_GET - List of Social Metadata for the given set of feed content with ids",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s social metadata under your organization\u2019s feed content. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "An organizational admin can access the social metadata of a feed content through this API if the following is true:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "That organization/organizationalPage created the feed content",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Access",
+      "Anchor": "access",
+      "SectionPath": [
+        "Access"
+      ],
+      "Text": "If a non-authorized viewer tries to access social metadata, the API will throw 403.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Access",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has no member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Access",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "entity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The entity to which this social metadata is tied.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentsState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ThreadState",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#threadstate"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The state of thread comments.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "commentSummary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "CommentSummary",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#commentsummary"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the comment summary of this entity.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "reactionSummaries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "map[string, ReactionSummary]",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#reactionsummary"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Represents the reaction summary of this entity. Key will be reaction type in string format.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ThreadState",
+      "Anchor": "threadstate",
+      "SectionPath": [
+        "ThreadState"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "OPEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The threaded content are readable and writable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "CLOSED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The threaded content are not readable nor writable.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PROCESSING",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The threaded content are not readable nor writable. It means the thread is in the process of being deleted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "DELETED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The threaded content are not readable nor writable. Thread is deleted.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "FROZEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The threaded content are readable, but not writable.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "CommentSummary",
+      "Anchor": "commentsummary",
+      "SectionPath": [
+        "CommentSummary"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the total number of comments (including replies) that should be displayed based on the context of the request. The clients that have onboarded to Interstitial will have the non spam replies of a parent comment marked \u0027SPAM\u0027 included in the count, whereas the clients that have not will exclude all replies of a parent comment marked \u0027SPAM\u0027 from the count. The updated count is returned to clients that have onboarded to Interstitial by passing CommentFilterLabel values in API request to include additional comments which are otherwise ignored.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "topLevelCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This is the total number of comments (excluding replies) that should be displayed based on the context of the request. (e.g.: count can be different due to filtering)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ReactionSummary",
+      "Anchor": "reactionsummary",
+      "SectionPath": [
+        "ReactionSummary"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reactionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ReactionType",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata?view=li-dma-data-portability-2026-08\u0026tabs=http#reactiontype"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The entity to which this social metadata is tied",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "count",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The total number of a given type of reactions on this entity by LinkedIn members and organizations.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "ReactionType",
+      "Anchor": "reactiontype",
+      "SectionPath": [
+        "ReactionType"
+      ],
+      "Text": "",
+      "Headers": [
+        "Enum",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "LIKE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A like reaction on the entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "PRAISE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A praise reaction on the entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "MAYBE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A maybe reaction on the entity DEPRECATED",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "EMPATHY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An empathy reaction on the entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "INTEREST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An interest reaction on the entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "APPRECIATION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An appreciation reaction on the entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ENTERTAINMENT",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "An entertainment reaction on the entity",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain URNs",
+      "Anchor": "how-to-obtain-urns",
+      "SectionPath": [
+        "How to Obtain URNs"
+      ],
+      "Text": "The Social Metadata API requires specific URNs to identify entities such as activities, comments, shares, and posts. For detailed instructions on how to obtain the necessary URNs, refer to the following documentation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "How to Obtain URNs",
+      "Anchor": "how-to-obtain-urns",
+      "SectionPath": [
+        "How to Obtain URNs"
+      ],
+      "Text": "urn:li:activity - See Activities for instructions on obtaining Activity URNs\nurn:li:comment - See Comments for instructions on obtaining Comment URNs\nurn:li:share and urn:li:ugcPost - See Posts for instructions on obtaining Share and UGC Post URNs",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Social Metadata for specific feed content",
+      "Anchor": "retrieve-social-metadata-for-specific-feed-content",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content"
+      ],
+      "Text": "Retrieves a list of post URNs (urn:li:share, urn:li:ugcPost, urn:li:groupPost) authored by the specified organization.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "BATCH_GET a Collection of Social Metadata of specific feed content",
+      "Anchor": "batch_get-a-collection-of-social-metadata-of-specific-feed-content",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content",
+        "BATCH_GET a Collection of Social Metadata of specific feed content"
+      ],
+      "Text": "The BATCH_GET method retrieves social metadata (reactions, comments, and their counts) for a collection of feed content entities. You can request metadata for multiple URNs in a single API call, making it efficient to retrieve engagement data for posts, comments, and activities.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content",
+        "BATCH_GET a Collection of Social Metadata of specific feed content",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content",
+        "BATCH_GET a Collection of Social Metadata of specific feed content",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaSocialMetadata?ids=List(urn%3Ali%3Aactivity%3A{ACTIVITY_ID},urn%3Ali%3Acomment%3A%28activity%3A{ACTIVITY_ID}%2C{COMMENT_ID}%29)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content",
+        "BATCH_GET a Collection of Social Metadata of specific feed content",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaSocialMetadata?ids=List(urn%3Ali%3Aactivity%3A{ACTIVITY_ID},urn%3Ali%3Acomment%3A%28activity%3A{ACTIVITY_ID}%2C{COMMENT_ID}%29)\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content",
+        "BATCH_GET a Collection of Social Metadata of specific feed content",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {},\n    \u0022results\u0022: {\n        \u0022urn:li:activity:{ACTIVITY_ID}\u0022: {\n            \u0022reactionSummaries\u0022: {\n                \u0022PRAISE\u0022: {\n                    \u0022reactionType\u0022: \u0022PRAISE\u0022,\n                    \u0022count\u0022: 1\n                },\n                \u0022APPRECIATION\u0022: {\n                    \u0022reactionType\u0022: \u0022APPRECIATION\u0022,\n                    \u0022count\u0022: 1\n                }\n            },\n            \u0022commentsState\u0022: \u0022OPEN\u0022,\n            \u0022commentSummary\u0022: {\n                \u0022count\u0022: 2,\n                \u0022topLevelCount\u0022: 2\n            },\n            \u0022entity\u0022: \u0022urn:li:activity:{ACTIVITY_ID}\u0022\n        },\n        \u0022urn:li:comment:(activity:{ACTIVITY_ID},{COMMENT_ID})\u0022: {\n            \u0022reactionSummaries\u0022: {\n                \u0022EMPATHY\u0022: {\n                    \u0022reactionType\u0022: \u0022EMPATHY\u0022,\n                    \u0022count\u0022: 1\n                }\n            },\n            \u0022commentsState\u0022: \u0022OPEN\u0022,\n            \u0022commentSummary\u0022: {\n                \u0022count\u0022: 0,\n                \u0022topLevelCount\u0022: 0\n            },\n            \u0022entity\u0022: \u0022urn:li:comment:(activity:{ACTIVITY_ID},{COMMENT_ID})\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Social Metadata for specific feed content",
+        "BATCH_GET a Collection of Social Metadata of specific feed content",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URNs of specific feed content to fetch the Social Metadata for. Only accepts ActivityUrn, ShareUrn, UserGeneratedContentPostUrn, CommentUrn.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3Aactivity%3A{ACTIVITY_ID},urn%3Ali%3Acomment%3A%28activity%3A{ACTIVITY_ID}%2C{COMMENT_ID}%29)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unsupported entity type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provided unsupported URN entity types on ids param.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide valid URNs only (urn:li:activity, urn:li:share, urn:li:ugcPost, urn:li:comment).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide a valid OAuth2 member access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not authorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The viewer is not an admin of the organizational entity that the feed content belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the member associated with access token has a user role on the provided Ad Account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

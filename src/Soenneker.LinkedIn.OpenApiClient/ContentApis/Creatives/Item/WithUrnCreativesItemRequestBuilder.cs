@@ -36,58 +36,61 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.Item
         /// <summary>
         /// A Creative can be deleted. Use DELETE method to delete a creative that meets one of the following conditions. To start the process of deleting other creative, update the status to `PENDING_DELETION`.\*   It is in a DRAFT state.\*   It is linked to a Campaign in a DRAFT state.\*   It is a video ad creative and `processingState` is `PROCESSING_FAILED`.    The header X-RestLi-Method must be included in the request and set to `DELETE`.Updates a dynamic follower ad after passing an urn.A successful response returns a `204 No Content`.#### Delete a Dynamic Spotlight Ad Creative\*   [http](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&amp;tabs=http#tabpanel_4_http)\*   [curl](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&amp;tabs=http#tabpanel_4_curl)    HTTPCopy```DELETE https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}```A successful response returns a `204 No Content`.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a dynamic follower ad after passing an urn.A successful response returns a `HTTP 200` status code.##Retrives a Dynamic Spotlight Ad.#### Sample ResponseJSONCopy```{    &quot;servingHoldReasons&quot;: [        &quot;UNDER_REVIEW&quot;,        &quot;CAMPAIGN_STOPPED&quot;    ],    &quot;lastModifiedAt&quot;: 1648512200000,    &quot;lastModifiedBy&quot;: &quot;urn:li:member:123&quot;,    &quot;content&quot;: {        &quot;spotlight&quot;: {            &quot;organizationName&quot;: &quot;LinkedIn Demo&quot;,            &quot;showMemberProfilePhoto&quot;: true,            &quot;landingPage&quot;: &quot;http://linkedin.com&quot;,            &quot;description&quot;: &quot;Check out this demo&quot;,            &quot;logo&quot;: &quot;urn:li:image:abc&quot;,            &quot;headline&quot;: &quot;Spotlight Ad Demo&quot;,            &quot;callToAction&quot;: &quot;Join Us Now&quot;        }    },    &quot;createdAt&quot;: 1648512200000,    &quot;createdBy&quot;: &quot;urn:li:member:123&quot;,    &quot;isTest&quot;: false,    &quot;review&quot;: {        &quot;status&quot;: &quot;PENDING&quot;    },    &quot;isServing&quot;: false,    &quot;campaign&quot;: &quot;urn:li:sponsoredCampaign:123&quot;,    &quot;id&quot;: &quot;urn:li:sponsoredCreative:123456789&quot;,    &quot;intendedStatus&quot;: &quot;ACTIVE&quot;,    &quot;account&quot;: &quot;urn:li:sponsoredAccount:123&quot;}```##
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreative2XxResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreative2XxResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreative2XxResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreativeDefaultResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreative2XxResponse>(requestInfo, global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisGetASponsoredCreative2XxResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// You can change the details of following Creatives fields:\*   `intendedStatus`:\*   `leadgenCallToAction`: field `adFormUrn` - The ad form that is a target destination for the `callToAction` button. It can only be modified when the creative is in DRAFT status. It is read only once it is set for a creative and once it transitions to any non-draft intended status.\*   `leadgenCallToAction`: field label `-Label` for the `callToAction` button      This API updates a sponsored creative.Updates a dynamic follower ad after passing an urn.A successful response returns a `204 No Content` HTTP status code.##   #### Update a Dynamic Spotlight Ad Creative\*   [http](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&amp;tabs=http#tabpanel_3_http)\*   [curl](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&amp;tabs=http#tabpanel_3_curl)    HTTPCopy```POST https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}```JSONCopy```{    &quot;patch&quot;: {        &quot;$set&quot;: {            &quot;content&quot;: {                &quot;spotlight&quot;: {                    &quot;callToAction&quot;: &quot;New Action&quot;,                    &quot;description&quot;: &quot;New Description&quot;,                    &quot;headline&quot;: &quot;New Headline&quot;,                    &quot;landingPage&quot;: &quot;http://example.com&quot;,                                           &quot;organizationName&quot;: &quot;New Organization Name&quot;,                    &quot;logo&quot;: &quot;urn:li:image:def&quot;,                    &quot;showMemberProfilePhoto&quot;: false                }            }        }    }}```A successful response returns a `204 No Content`.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.LinkedIn.OpenApiClient.Models.ContentApisUpdateACreativeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A Creative can be deleted. Use DELETE method to delete a creative that meets one of the following conditions. To start the process of deleting other creative, update the status to `PENDING_DELETION`.\*   It is in a DRAFT state.\*   It is linked to a Campaign in a DRAFT state.\*   It is a video ad creative and `processingState` is `PROCESSING_FAILED`.    The header X-RestLi-Method must be included in the request and set to `DELETE`.Updates a dynamic follower ad after passing an urn.A successful response returns a `204 No Content`.#### Delete a Dynamic Spotlight Ad Creative\*   [http](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&amp;tabs=http#tabpanel_4_http)\*   [curl](https://docs.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/version/spotlight-ads?view=li-lms-2022-08&amp;tabs=http#tabpanel_4_curl)    HTTPCopy```DELETE https://api.linkedin.com/rest/creatives/{sponsoredCreative-urn}```A successful response returns a `204 No Content`.
@@ -123,6 +126,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.ContentApis.Creatives.Item
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

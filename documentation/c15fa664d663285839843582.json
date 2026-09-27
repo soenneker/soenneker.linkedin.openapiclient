@@ -1,0 +1,81 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-jobs-migration-guide",
+  "Title": "API Jobs Migration Overview",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/api-jobs-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "API Jobs Migration Overview",
+      "Anchor": "api-jobs-migration-overview",
+      "SectionPath": [],
+      "Text": "This page provides a comprehensive guide on migrating customer jobs from scraped jobs to API job postings. It outlines the requirements and steps involved in the migration process, ensuring a smooth transition for customers. Additionally, the guide emphasizes the importance of a validation strategy, specifically the Parity Check process, which ensures the accuracy and integrity of job data before customers are \u0022cutover\u0022 to API job postings. By following this guide, customers can seamlessly migrate their jobs and leverage the benefits of the API for enhanced job management and visibility.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parity Check Process",
+      "Anchor": "parity-check-process",
+      "SectionPath": [
+        "Parity Check Process"
+      ],
+      "Text": "When development has been completed for a LinkedIn Job Posting integration, customers enabling the integration will be subject to a \u0022Parity Check\u0022 process. This process will monitor readiness of the API jobs being received compared to a customer\u0027s already posted scraped jobs. LinkedIn will measure customer eligibility for customer using a few different metrics:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parity Check Process",
+      "Anchor": "parity-check-process",
+      "SectionPath": [
+        "Parity Check Process"
+      ],
+      "Text": "Job Matching Rate: the number of scraped jobs paired to API jobs divided by the number of scraped jobs.\nData Parity Rate: the number of API jobs that have exact match of job title, job description, and job location divided by the number of API jobs that has a paired job.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parity Check Process",
+      "Anchor": "parity-check-process",
+      "SectionPath": [
+        "Parity Check Process"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Parity Check Process",
+      "Anchor": "parity-check-process",
+      "SectionPath": [
+        "Parity Check Process"
+      ],
+      "Text": "Your Partner Solutions Engineer or Business Development contact will share reporting to assist resolving identified issues.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Job Cutover",
+      "Anchor": "api-job-cutover",
+      "SectionPath": [
+        "API Job Cutover"
+      ],
+      "Text": "Customers who have met LinkedIn\u0027s parity check metrics (Job Matching Rate \u003E 95% \u0026 Data Parity Rate \u003E 90%) customer\u0027s will be automatically cutover to API jobs, disabling legacy scraped methods for job postings. Once all customers have been cutover to API jobs partners may begin deprecating legacy methods of job posting ie. bulk XML feeds.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

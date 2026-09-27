@@ -1,0 +1,517 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+  "Title": "Ingested Content Summaries API",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/comment",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-public-url",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-content-resource-api",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/feed-social-metadata",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/instantrepost",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-content-ingestion-sources",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/organizational-page-credibility",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/pages-featured-content-groups",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/reaction",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Ingested Content Summaries API",
+      "Anchor": "ingested-content-summaries-api",
+      "SectionPath": [],
+      "Text": "The Ingested Content Summaries API returns a resolved URL that a given article or ingested content URN points to. It supports urn:li:article and urn:li:ingestedContent.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingested Content Summaries API",
+      "Anchor": "ingested-content-summaries-api",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Ingested Content Summaries API",
+      "Anchor": "ingested-content-summaries-api",
+      "SectionPath": [],
+      "Text": "BATCH_GET - List of resolved URL entities for the given set of ids",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Content Types",
+      "Anchor": "understanding-content-types",
+      "SectionPath": [
+        "Understanding Content Types"
+      ],
+      "Text": "Different types of LinkedIn content use different URN formats:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding Content Types",
+      "Anchor": "understanding-content-types",
+      "SectionPath": [
+        "Understanding Content Types"
+      ],
+      "Text": "Article URN (urn:li:article) \u2192 LinkedIn long-form articles (Pulse)\nIngested Content URN (urn:li:ingestedContent) \u2192 External links shared in posts/ads (with preview)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Article URNs (for LinkedIn Pulse Articles)",
+      "Anchor": "article-urns-for-linkedin-pulse-articles",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)"
+      ],
+      "Text": "The recommended way to obtain urn:li:article identifiers is through the DMA Posts API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using DMA Posts API",
+      "Anchor": "using-dma-posts-api",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Using DMA Posts API"
+      ],
+      "Text": "Obtain the post URN (urn:li:ugcPost, urn:li:share, or urn:li:groupPost). See DMA Posts API documentation for details on finding post URNs.\n\nRetrieve the post to extract the article URN:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Using DMA Posts API",
+      "Anchor": "using-dma-posts-api",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Using DMA Posts API"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaPosts?ids=List(urn%3Ali%3AugcPost%3A{postId})\u0027 \\\n--header \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: 202412\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using DMA Posts API",
+      "Anchor": "using-dma-posts-api",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Using DMA Posts API"
+      ],
+      "Text": "Extract the URN: Look for urn:li:linkedInArticle in the content.reference.id field",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using DMA Posts API",
+      "Anchor": "using-dma-posts-api",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Using DMA Posts API"
+      ],
+      "Text": "Example response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Using DMA Posts API",
+      "Anchor": "using-dma-posts-api",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Using DMA Posts API"
+      ],
+      "Text": "{\n  \u0022content\u0022: {\n    \u0022reference\u0022: {\n      \u0022id\u0022: \u0022urn:li:linkedInArticle:{articleId}\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using DMA Posts API",
+      "Anchor": "using-dma-posts-api",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Using DMA Posts API"
+      ],
+      "Text": "Convert the URN format for API compatibility:\n\nSource format: urn:li:linkedInArticle:{articleId}\nTarget format: urn:li:article:{articleId}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Alternative Method: Browser Developer Tools",
+      "Anchor": "alternative-method-browser-developer-tools",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Alternative Method: Browser Developer Tools"
+      ],
+      "Text": "If you prefer not to use the DMA Posts API:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Alternative Method: Browser Developer Tools",
+      "Anchor": "alternative-method-browser-developer-tools",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Article URNs (for LinkedIn Pulse Articles)",
+        "Alternative Method: Browser Developer Tools"
+      ],
+      "Text": "Navigate to your LinkedIn Pulse article URL\nOpen browser developer tools and observe network requests\nLocate requests to https://www.linkedin.com/voyager/api/graphql\nExtract the linkedInArticleUrn from the response payload\nConvert from urn:li:linkedInArticle:{id} to urn:li:article:{id}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External Link Posts",
+      "Anchor": "external-link-posts",
+      "SectionPath": [
+        "Obtaining URNs",
+        "External Link Posts"
+      ],
+      "Text": "For posts with external links (link previews), the DMA Posts API returns the external URL directly in the content.article.source field. You can use this to get the resolved URL without needing the Ingested Content Summaries API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "External Link Posts",
+      "Anchor": "external-link-posts",
+      "SectionPath": [
+        "Obtaining URNs",
+        "External Link Posts"
+      ],
+      "Text": "Example response for a post with an external link:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "External Link Posts",
+      "Anchor": "external-link-posts",
+      "SectionPath": [
+        "Obtaining URNs",
+        "External Link Posts"
+      ],
+      "Text": "{\n  \u0022content\u0022: {\n    \u0022article\u0022: {\n      \u0022title\u0022: \u0022Example Site\u0022,\n      \u0022description\u0022: \u0022Description of the external link\u0022,\n      \u0022source\u0022: \u0022http://www.example.com\u0022\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on organization page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Obtaining URNs",
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "resolvedUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A resolved URL that a given article or ingested content URN points to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve a resolved URL that a given article or ingested content URN points to",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve a resolved URL that a given article or ingested content URN points to",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaIngestedContentSummaries?ids=List(encoded articleUrn, ingestedContentUrn)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve a resolved URL that a given article or ingested content URN points to",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaIngestedContentSummaries?ids=List(urn%3Ali%3Aarticle%3A7988932514512997214,urn%3Ali%3AingestedContentSummaries%3A7167943861433514405)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve a resolved URL that a given article or ingested content URN points to",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:article:7988932514512997214\u0022: {\n            \u0022resolvedUrl\u0022: \u0022www.google.com\u0022\n        },\n        \u0022urn:li:ingestedContent:7167943861433514405\u0022: {\n          \u0022resolvedUrl\u0022: \u0022http://www.example.com\u0022\n        }\n    },\n    \u0022statuses\u0022: {},\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve a resolved URL that a given article or ingested content URN points to",
+        "BATCH_GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URNs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of URNs to fetch resolved URLs that the given URNs point to. Only accepts articleUrn, ingestedContentUrn.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3Aarticle%3A7988932514512997214,urn%3Ali%3AingestedContent%3A7167943861433514405)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure you provide a valid OAuth2 access token.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Resolved URL not found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided id is correct.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

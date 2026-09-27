@@ -1,0 +1,561 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2020/marketing-api-changes",
+  "Title": "Archived Marketing API Changes 2020",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-lookup-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/ugc-post-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads-reporting/ads-reporting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-accounts",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaign-groups",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/ads-targeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/bing-geo-migration-guide",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/advertising-targeting/create-and-manage-video",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/archived-recent-changes/2020/marketing-api-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/query-tunneling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/programmatic-refresh-tokens",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/token-introspection",
+    "https://learn.microsoft.com/en-us/linkedin/shared/breaking-change-policy",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/migrations/query-tunneling-migration",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/standardized-data/locations"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2020",
+      "Anchor": "archived-marketing-api-changes-2020",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Archived Marketing API Changes 2020",
+      "Anchor": "archived-marketing-api-changes-2020",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Campaign Management",
+      "Anchor": "campaign-management",
+      "SectionPath": [
+        "December 2020",
+        "Campaign Management"
+      ],
+      "Text": "Updates to Message \u0026 Conversation Ads.\nWho\u2019s impacted: Partners using the Message \u0026 Conversation Ads API.\nWhat\u2019s happening: Starting July 5, 2021, we\u0027re changing how you create a Message or Conversation ad:\nUpdate creatives that are not in the DRAFT status for Message/Conversation Ads.\nThe AdInMailContent\u2019s editable field won\u0027t be automatically set to false any longer.\nThe Sponsored Conversation\u2019s editable field will be set to false when an AdInMailContent is associated with a SponsoredConversation. When calling the adInMailContentsV2 endpoint with a subContent of type AdInMailGuidedRepliesSubContent, the editable field of the referenced SponsoredConversation will be set to false automatically.\nSupport for additional currencies.\nWho\u2019s impacted: Partners using the adAccountsV2 API.\nWhat\u2019s happening: Starting February 24, 2021, the account creation endpoint adAccountsV2 will support creating ad accounts with 14 new currencies. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting \u0026 ROI",
+      "Anchor": "reporting--roi",
+      "SectionPath": [
+        "December 2020",
+        "Reporting \u0026 ROI"
+      ],
+      "Text": "We discovered two measurement issues.\nWho\u2019s impacted: All reporting partners.\nWhat\u2019s happening: We are committed to transparency and the integrity of our ads products, and we wanted to let you know about two measurement issues that our engineering team discovered in August and subsequently fixed on November 10. As a result of these issues, we may have over-reported some of your customers\u2019 Sponsored Content campaign performance metrics. Learn more by reading our blog post.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Audiences",
+      "Anchor": "audiences",
+      "SectionPath": [
+        "December 2020",
+        "Audiences"
+      ],
+      "Text": "New API rate limits for DMP streaming.\nWho\u2019s impacted: Partners using the DMP streaming API.\nWhat\u2019s happening: Starting March 31, 2021, we\u0027ll be introducing granular rate limits for our DMP streaming APIs (Users \u0026 Companies) to prevent abuse, ensure service stability, and consistent API availability. These limits will be enforced in addition to your current daily limits, which can be found through Developer Portal \u003E My Apps \u003E App \u003E Analytics \u003E Quotas and usage.\nWhat does this mean for my application? If your application calls /dmpSegments/users or /dmpSegments/companies, you may get a HTTP 429 response if calling the endpoints too frequently, indicating that you\u0027re exceeding the rate limits.\nHow do I handle API calls that are throttled? Your application should be catching errors when making calls to /dmpSegment/users and /dmpSegment/companies and retry after a minimum of 1 second whenever you receive an HTTP 429 response.\nCan I get the limits increased for my application? No, the limits we intend to enforce won\u0027t be customizable at an application level. However the limits will be enforced such that there\u0027s minimal interruption to existing applications.\nMy application creates a significant amount of automated API calls (eg. one time full data dump or weekly data pushes with large volumes followed by smaller traffic that contains diffs throughout the week). Will this rate limit affect my throughput ? If the volume of your automated traffic exceeds tens of millions, then you can expect to see frequent throttling. While this might affect the throughput of your API calls, you won\u0027t see any differences in the matched audience processing SLA.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Breaking Changes",
+      "Anchor": "breaking-changes",
+      "SectionPath": [
+        "December 2020",
+        "Breaking Changes"
+      ],
+      "Text": "New API call length requirements.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: To improve our network infrastructure and API traffic, we now require all API calls to meet the new length requirements. Requests exceeding the new length requirements will be rejected. To avoid calls being rejected, we recommend using query tunneling. See migration guide here.\nWhen: Starting March 31, 2021, we\u0027ll reject calls that don\u0027t meet the new requirements.\nUGC permalinkSuffixes endpoint removed.\nWho\u0027s impacted: Partners using the UGC permalinkSuffixes finder endpoint.\nWhat\u0027s happening: The permalinkSuffixes endpoint has been removed. To retrieve UGC posts, we recommend you find posts by author.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "October 2020",
+      "Anchor": "october-2020",
+      "SectionPath": [
+        "October 2020"
+      ],
+      "Text": "Page Management\nNew validations for mentions.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: New validations for the start and length fields for mentions that require the following: length must be greater than 0, start must be greater than or equal to 0, and start \u002B length must be less than the length of the text. If these requirements are not met, the request will result in a 400 error code.\nUGC Posts duplicate content error code change\nWho\u0027s impacted: Partners using the UGC Posts API.\nWhat\u0027s happening: Previously, requests to create duplicate UGC Posts returned a 409 error code. Now, these requests return a 422 error code.\nReporting \u0026 ROI\nIncreased pivot values on Statistics Finder.\nWho\u0027s impacted: Partners using the Ad Analytics Statistics Finder.\nWhat\u0027s happening: The Statistics Finder now supports grouping results by up to 3 pivot values. See Ad Analytics to learn more.\nBreaking Changes\n[Optional to Required] campaignGroup field for campaign creation.\nWho\u2019s impacted: Partners using adCampaignsV2.\nWhat\u2019s happening: Starting October 30, 2020, campaignGroup field in adCampaignsV2 endpoint will change from optional to required. Any calls to the adCampaignsV2 endpoint to create a new campaign that don\u0027t specify campaignGroup will fail and return a 400.\nIntegrate Lifetime Pacing for a better customer experience.\nWho\u2019s impacted: Partners using adCampaignsV2.\nWhat\u2019s happening: We recommend you integrate Lifetime Pacing by September 30 not only for improved ROI but also for a better customer experience. Starting in end-September, all campaigns created in LinkedIn Campaign Manager will be lifetime pacing campaigns only. The biggest impact will be on customers who create campaigns in LinkedIn Campaign Manager and then manage budgets via your platform. If you choose not to integrate Lifetime Pacing, you\u0027ll still need to update API restrictions. For example, setting total budget \u002B daily budget with fixed schedule or total budget run continuously are no longer valid options.\n[Warning] Deprecation of totalBudget and totalBudgetEndsAt\nWho\u2019s impacted: all partners using adAccountsV2.\nWhat\u2019s happening: Starting October 30, 2020, totalBudget, and totalBudgetEndAt field in adAccountsV2 will be deprecated. All budget and run date information should be set and read at the Campaign Group level. totalBudget from adAccountsV2 maps to totalBudget in adCampaignGroupsV2 and totalBudgetEndAt maps to runSchedule.end in adCampaignGroupsV2.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api",
+      "SectionPath": [
+        "September 2020",
+        "General API"
+      ],
+      "Text": "Specify synchronous upload when creating a post with an image.\nWho\u2019s impacted: Partners using the Shares and UGC Posts APIs.\nWhat\u2019s happening: When creating a post with an image, you\u0027re required to specify \u201CSYNCHRONOUS_UPLOAD\u201D as supportedUploadMechanism in registerUploadRequest Json to make sure an image asset is created. Learn more..",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization",
+      "Anchor": "optimization",
+      "SectionPath": [
+        "September 2020",
+        "Optimization"
+      ],
+      "Text": "Integrate Lifetime Pacing for a better customer experience.\nWho\u2019s impacted: Partners using the adCampaigns API.\nWhat\u2019s happening: We recommend you integrate Lifetime Pacing by September 30 not only for improved ROI but also for a better customer experience. Starting in end-September, all campaigns created in LinkedIn Campaign Manager will be lifetime pacing campaigns only. The biggest impact will be on customers who create campaigns in LinkedIn Campaign Manager and then manage budgets via your platform. If you choose not to integrate Lifetime Pacing, you\u0027ll still need to update API restrictions. For example, setting total budget \u002B daily budget with fixed schedule or total budget run continuously are no longer valid options.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations",
+      "SectionPath": [
+        "September 2020",
+        "Migrations"
+      ],
+      "Text": "[Warning] Deprecation of totalBudget and totalBudgetEndsAt\nWho\u2019s impacted: all partners using adAccountsV2.\nWhat\u2019s happening: Starting October 30, 2020, totalBudget, and totalBudgetEndAt field in adAccountsV2 will be deprecated. All budget and run date information should be set and read at the Campaign Group level. totalBudget from adAccountsV2 maps to totalBudget in adCampaignGroupsV2 and totalBudgetEndAt maps to runSchedule.end in adCampaignGroupsV2.\n[Optional to Required] campaignGroup field.\nWho\u0027s impacted: all partners using adCampaignsV2.\nWhat\u0027s happening: campaignGroup field in adCampaignsV2 endpoint will be a required field (currently is optional). Any campaign creation calls to the adCampaignsV2 endpoint that don\u0027t specify campaignGroup will fail and return a 400 starting October 30, 2020.\n[Reminder] Enforced projections for adAnalyticsV2\nWho\u2019s impacted: Partners using the adAnalytics API.\nWhat\u2019s happening: The /adAnalyticsV2 API will require all callers to request only the metrics they need from the API by using the fields parameter. There will also be an enforcement of 20 fields maximum per request.\nWhen: September 30, 2020. After this date, any request without fields= will return a 400. Additionally any request asking for more than 20 fields will return a 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api-1",
+      "SectionPath": [
+        "August 2020",
+        "General API"
+      ],
+      "Text": "OAuth refresh tokens now available for all partners\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Refresh tokens create a more seamless authorization experience for your customers. Customers will only be required to explicitly authorize your application once each year. While access tokens are still only valid for 60 days, you can now programmatically get new access tokens using refresh tokens for up to a year. Note, there may however be cases where LinkedIn expires tokens sooner. Please refer to the documentation to get started.\nUGC video posts now available\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Previously restricted to a limited audience, the ability to create a video post using the UGC Post API is now generally available.\nSort UGC posts by last modified or created date.\nWho\u2019s impacted: Partners using the UGC Post author finder API and Shares owner finder API.\nWhat\u2019s happening: UGC author finder and Shares owner finder now support retrieving ugcPosts chronologically by setting the optional parameter \u2018sortBy\u2019 to \u2018CREATED\u2019. The default sort option is \u2018LAST_MODIFIED\u2019, which means Shares and UGC posts are ordered by last modified time instead of creation time (most recent to least recent).\nEnable and disable comments on threads through the socialMetadata API.\nWho\u2019s impacted: All partners.\nWhat\u2019s happening: Now enable or disable comments on threads. Disabling comments will delete all existing comments and prevent new ones from being written on the thread. Enabling comments will allow new comments to be written.\nCampaign Groups campaign creation limit increase.\nWho\u0027s impacted: Partners using the adCampaignsGroups API.\nWhat\u2019s happening: We have increased the limit from 1,000 to 2,000 campaigns per non-default campaign group. Learn more here.\nEnable and disable comments on threads through the socialMetadata API.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: Now enable or disable comments on threads. Disabling comments will delete all existing comments and prevent new ones from being written on the thread. Enabling comments will allow new comments to be written.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization",
+      "Anchor": "optimization-1",
+      "SectionPath": [
+        "August 2020",
+        "Optimization"
+      ],
+      "Text": "Integrate Lifetime Pacing to avoid breaking the campaign management experience for your customers.\nWho\u0027s impacted: Partners using the adCampaigns API.\nWhat\u0027s happening: We recommend you integrate Lifetime Pacing by Sept 30 to avoid breaking the campaign management experience for your customers. The experience may break for customers that create a Lifetime Pacing campaign in LinkedIn\u0027s UI and edits in a partner platform. Use the parameter \u0022pacingStrategy=LIFETIME\u0022 when you save the campaigns using adCampaigns API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-1",
+      "SectionPath": [
+        "August 2020",
+        "Migrations"
+      ],
+      "Text": "[Warning] Deprecation of totalBudget and totalBudgetEndsAt\nWho\u0027s impacted: all partners using adAccountsV2.\nWhat\u0027s happening: totalBudget and totalBudgetEndAt field in adAccountsV2 will be deprecated starting October 30, 2020. All budget and run date information should be set and read at the Campaign Group level. totalBudget from adAccountsV2 maps to totalBudget in adCampaignGroupsV2 and totalBudgetEndAt maps to runSchedule.end in adCampaignGroupsV2.\n[Optional to Required] campaignGroup field.\nWho\u0027s impacted: all partners using adCampaignsV2.\nWhat\u0027s happening: campaignGroup field in adCampaignsV2 endpoint will be a required field (currently is optional). Any campaign creation calls to the adCampaignsV2 endpoint that don\u0027t specify campaignGroup will fail and return a 400 starting October 30, 2020.\n[Extension] Enforced projections for adAnalyticsV2\nWho\u0027s impacted: Partners using the adAnalytics API.\nWhat\u0027s happening: The /adAnalyticsV2 API will require all callers to request only the metrics they need from the API by using the fields= parameter. There will also be an enforcement of 20 fields maximum per request.\nWhen: We have extended the deadline by 60 days to September 30, 2020. After this date, any request without fields= will return a 400. Additionally any request asking for more than 20 fields will return a 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api-2",
+      "SectionPath": [
+        "July 2020",
+        "General API"
+      ],
+      "Text": "Introducing LinkedIn\u0027s New OAuth Token Inspector Tool \u0026 API.\n\nWho\u0027s impacted: All partners.\n\nWhat\u0027s happening: The new token inspector tool which allows you to check detailed metadata information about a token in a secure way through our developer portal or API. The tool has been added to our developer portal and the documentation for the new Token Introspection Endpoint is available here.\n\nIntroducing allowedCampaignTypes field.\n\nWho\u0027s impacted: Partners using the adCampaignsGroupsV2 API.\n\nWhat\u0027s happening: Field allowedCampaignTypes in adCampaignsGroupsV2 endpoint will be introduced only for accounts with type ENTERPRISE. The field allowedCampaignTypes won\u0027t be returned for accounts with type BUSINESS as all campaign types can be created within these accounts. Before creating new campaigns in Enterprise accounts, it\u0027s recommended to check allowedCampaignTypes. The array of allowedCampaignTypes can return the following campaign types:\n\nTEXT_AD - Text-based ads that show up in the right column or top of the page on LinkedIn.\n\nDYNAMIC - Ads that are dynamically personalized.\n\nSPONSORED_UPDATES - Native ads that promote a company\u0027s content updates in the LinkedIn feed.\n\nSPONSORED_INMAILS - Personalized messages with a call-to-action button delivered to LinkedIn\u0027s member inbox.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Message Ads",
+      "Anchor": "message-ads",
+      "SectionPath": [
+        "July 2020",
+        "Message Ads"
+      ],
+      "Text": "Conversations Ads Now Supported on Three New Objective Types.\nWho\u0027s impacted: Partners using Objective-Based Advertising.\nWhat\u0027s happening: Conversations Ads was previously only available as a format when choosing Lead Generation or Website Visits as an Objective. Now, you can select Conversation Ads for Brand Awareness, Engagement, and Website Conversion Objective Types.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-2",
+      "SectionPath": [
+        "July 2020",
+        "Migrations"
+      ],
+      "Text": "[Warning] Deprecation of totalBudget and totalBudgetEndsAt\n\nWho\u0027s impacted: all partners using adAccountsV2.\n\nWhat\u0027s happening: totalBudget and totalBudgetEndAt field in adAccountsV2 will be deprecated starting October 30, 2020. All budget and run date information should be set and read at the Campaign Group level. totalBudget from adAccountsV2 maps to totalBudget in adCampaignsGroupsV2 and totalBudgetEndAt maps to runSchedule.end in adCampaignsGroupsV2.\n\n[Optional to Required] campaignGroup field.\n\nWho\u0027s impacted: all partners using adCampaignsV2.\n\nWhat\u0027s happening: campaignGroup field in adCampaignsV2 endpoint will be a required field (currently is optional). Any campaign creation calls to the adCampaignsV2 endpoint that don\u0027t specify campaignGroup will fail and return a 400 starting October 30, 2020.\n\n[Extension] Enforced projections for adAnalyticsV2\n\nWho\u0027s impacted: Partners using the adAnalytics API.\n\nWhat\u0027s happening: The adAnalyticsV2 API will require all callers to request only the metrics they need from the API by using the fields= parameter. There will also be an enforcement of 20 fields maximum per request.\n\nWhen: We have extended the deadline by 60 days to September 30, 2020. After this date, any request without fields= will return a 400. Additionally any request asking for more than 20 fields will return a 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api-3",
+      "SectionPath": [
+        "June 2020",
+        "General API"
+      ],
+      "Text": "REMINDER: New error response schema\nWho\u0027s impacted: Partners using the adCampaignsGroups and adCampaigns API.\nWhat\u0027s happening: To make error responses more actionable, we\u0027ve introduced: new error response fields -- errorDetailType and errorDetails -- and updated HTTP status codes that will be specific to the error. Make sure you\u0027ve parsed these fields and updated your error parsing logic to account for the new error fields and the updated HTTP codes, as necessary. Learn more.\nIntroducing Test Ad Accounts\nWho\u0027s impacted: Partners using the adCampaigns API.\nWhat\u0027s happening: Use Test Ad Accounts to test new integrations in a sandbox environment, where no billing setup is required and you don\u0027t need to worry about LinkedIn members seeing your test ads. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Optimization",
+      "Anchor": "optimization-2",
+      "SectionPath": [
+        "June 2020",
+        "Optimization"
+      ],
+      "Text": "Introducing Lifetime Pacing for campaigns using updated budget-schedule combinations.\nWho\u0027s impacted: Partners using the adCampaigns API.\nWhat\u0027s happening: Lifetime Pacing spends the budget more efficiently by allocating for ad request traffic for the duration of the campaign. Advertisers no longer need to pause campaigns during times of predicted lower traffic, such as the weekends. Lifetime Pacing is available for Daily Budget \u002B Fixed Schedule, Lifetime Budget, and Daily and Lifetime Budget options. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content \u0026 Message Ads",
+      "Anchor": "sponsored-content--message-ads",
+      "SectionPath": [
+        "June 2020",
+        "Sponsored Content \u0026 Message Ads"
+      ],
+      "Text": "Fix to resolve Message Ads campaign validation issue.\nWho\u0027s impacted: Partners using the adCampaigns API.\nWhat\u0027s happening: You may have experienced a delay in delivery of some creatives when selecting \u0027Optimize for Performance\u0027 in your Message or Conversation Ad campaigns. This option has been removed from Sponsored Messaging. New validations will be added to ensure \u0022creativeSelection\u0022 is \u0022ROUND_ROBIN\u0022 for all creates and updates. For SPONSORED_INMAILS campaigns, make sure in new create/batch_create requests put \u0022creativeSelection\u0022 = \u0022ROUND_ROBIN\u0022; For existing SPONSORED_INMAILS campaigns, make sure to update \u0022creativeSelection\u0022, otherwise updating other fields will fail this validation. Learn more.\nWhen: The validation will take effect on July 29. Please update your existing SPONSORED_INMAILS campaigns and make sure your newly created campaigns are valid.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reporting",
+      "Anchor": "reporting",
+      "SectionPath": [
+        "June 2020",
+        "Reporting"
+      ],
+      "Text": "Data limit throttling for adAnalyticsV2.\nWho\u0027s impacted: Partners using the adAnalytics API.\nWhat\u0027s happening: The /adAnalyticsV2 API will enforce a data limit over a 5 min window to protect LinkedIn API servers from being overwhelmed by a user requesting too much data. Learn more.\nWhen: By August 31, 2020, We recommend partners to start using fields= parameter to reduce the query loads and spread the requests over a longer duration. After August 31, if a partner exceeds the limit, further requests from the partner will return 400 for the rest of the 5 min window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-3",
+      "SectionPath": [
+        "June 2020",
+        "Migrations"
+      ],
+      "Text": "REMINDER: Enforced projections for adAnalyticsV2\nWho\u0027s impacted: Partners using the adAnalytics API.\nWhat\u0027s happening: The /adAnalyticsV2 API will require all callers to request only the metrics they need from the API by using the fields= parameter. There will also be an enforcement of 15 fields maximum per request.\nWhen: We require all partners to pass the fields= parameter by July 31, 2020. After that date, any request without fields= will return a 400. Additionally any request asking for more than 15 fields will return a 400.\nSetting a deprecated targeting object will now throw an error.\nWho\u0027s impacted: Partners setting targeting object in adCampaignsV2 API.\nWhat\u0027s happening: Setting the targeting object in your request will now throw an error. Please use targeting criteria instead. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api-4",
+      "SectionPath": [
+        "June 2020",
+        "General API"
+      ],
+      "Text": "Introducing Test Ad Accounts.\nWho\u0027s impacted: Partners using the adCampaigns API.\nWhat\u0027s happening: Use Test Ad Accounts to test new integrations in a sandbox environment, where no billing setup is required and you don\u0027t need to worry about LinkedIn members seeing your test ads. Learn more.\nNew error response schema.\nWho\u0027s impacted: Partners using the adCampaignGroupsV2 and adCampaigns API.\nWhat\u0027s happening: To make error responses more actionable, we\u0027re introducing: new error response fields -- errorDetailType and errorDetails -- and updated HTTP status codes that will be specific to the error. Make sure to check if you have parsed these fields and update your error parsing logic to account for the new error fields and the updated HTTP codes, as necessary. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content \u0026 InMail",
+      "Anchor": "sponsored-content--inmail",
+      "SectionPath": [
+        "June 2020",
+        "Sponsored Content \u0026 InMail"
+      ],
+      "Text": "Fix to reduce errors when creating ads.\nWho\u0027s impacted: Partners using the adCampaigns API.\nWhat\u0027s happening: You may have previously observed an error if you created a post on LinkedIn and then immediately tried to sponsor it. This issue has been resolved.\nDisabling \u0027Optimize for Performance\u0027 option.\nWho\u0027s impacted: Partner using the Message Ads or Conversations Ads API.\nWhat\u0027s happening: You may have experienced a delay in delivery of some creatives when selecting \u0027Optimize for Performance\u0027 in your Message or Conversation Ad campaigns. This option has been removed from Sponsored Messaging, so if you do select \u0027Optimize for Performance\u0027, you\u0027ll be unable to create or update your campaign. Make sure creativeSelection = \u0022ROUND_ROBIN\u0022 and not \u0022OPTIMIZED\u0022 when creating your Message campaign. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions",
+      "Anchor": "conversions",
+      "SectionPath": [
+        "June 2020",
+        "Conversions"
+      ],
+      "Text": "Missing conversion data.\nWho\u0027s impacted: All reporting partners.\nWhat\u0027s happening: Due to delays in finalized daily conversion data, you may have noticed missing campaign performance metrics for May 13-14 and campaign demographic metrics for May 13-15. The issue has been resolved.\nAction required: Please resync all conversions data between May 13-15.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api-5",
+      "SectionPath": [
+        "April 2020",
+        "General API"
+      ],
+      "Text": "Campaign Groups Campaign Creation Limit.\nWho\u0027s impacted: Partners using the adCampaignGroupsV2 endpoint.\nWhat\u0027s happening: We have increased the limit from 200 to 1,000 campaigns per non-default campaign group. Learn more here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content \u0026 InMail",
+      "Anchor": "sponsored-content--inmail-1",
+      "SectionPath": [
+        "April 2020",
+        "Sponsored Content \u0026 InMail"
+      ],
+      "Text": "New ad format: square \u0026 vertical video ads.\nWho\u0027s Impacted: Partners using the Assets API and Video Ads.\nWhat\u0027s happening: Create video ads with different aspect ratios (square 1:1 and vertical ads). Please use ads-video_v2, and no longer use ads-video. Continue to use video formats. Note: vertical aspect ratio video ads will only be served to a mobile device player. Learn More.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Bidding \u0026 Optimization",
+      "Anchor": "bidding--optimization",
+      "SectionPath": [
+        "April 2020",
+        "Bidding \u0026 Optimization"
+      ],
+      "Text": "New bidding option - Target Cost Bidding.\nWho\u0027s impacted: Partners using the Ad Campaigns.\nWhat\u0027s happening: Target Cost Bidding is a new bidding option that provides advertisers with an additional way to optimize their campaigns and better manage costs. When choosing Target Cost, the campaign will be optimized to generate as many objective key results as possible, while maintaining a 30 percent upper and lower bound value specified by the advertiser. Learn More.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting",
+      "Anchor": "targeting",
+      "SectionPath": [
+        "April 2020",
+        "Targeting"
+      ],
+      "Text": "New firmographic facets available for targeting -- Company Growth \u0026 Company Categories.\nWho\u0027s impacted: Partners using the adTargetingEntities endpoint.\nWhat\u0027s happening: We have added two new firmographic facets: company growth and company categories allow you to target a curated list from well-recognized publications and thought leaders like Forbes, Fortune, and LinkedIn. Company growth measures year-over-year growth in employee count and an be used to reach companies in high growth and may be in need of a system or technology.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-4",
+      "SectionPath": [
+        "April 2020",
+        "Migrations"
+      ],
+      "Text": "Enforced projections for adAnalyticsV2.\nWho\u0027s impacted: Partners using the adAnalytics API.\nWhat\u0027s happening: The /adAnalyticsV2 API will require all callers to request only the metrics they need from the API by using the fields= parameter. There will also be an enforcement of 15 fields maximum per request.\nWhen: We require all partners to pass the fields= parameter by July 31, 2020. After that date, any request without fields= will return a 400 error. Additionally any request asking for more than 15 fields will return a 400 error.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-5",
+      "SectionPath": [
+        "April 2020",
+        "Migrations"
+      ],
+      "Text": "Geo-location targeting migration.\nWho\u0027s impacted: Partners using the Ad Targeting API location facet only. This doesn\u0027t impact the Share or UGC API.\nWhat\u0027s happening: We have asked partners to complete their migration to Bing geo data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API",
+      "Anchor": "general-api-6",
+      "SectionPath": [
+        "March 2020",
+        "General API"
+      ],
+      "Text": "Asset API when uploading image to LinkedIn platform.\nWho\u0027s impacted: Partners using the Asset API to Upload Image.\nWhat\u0027s happening: When registering an upload for images, specify \u0022SYNCHRONOUS_UPLOAD\u0022 as supportedUploadMechanism in registerUploadRequest JSON to make sure an Image Asset is created when the ugcPost is created, so that the feed update can be rendered. Learn more..\nTrack and report Reaction on organic posts and Sponsored Content.\nWho\u0027s impacted: Partners that use Social Actions API.\nWhat\u0027s happening: Member reactions, such as likes, celebrate, love, insightful, curious, to organize and paid posts can now be accessed with the new Reactions and SocialMetadataAPIs. The Reactions endpoint provides reaction, creation, update, delete, and reads, while the SocialMetadata endpoint provides comment and reaction counts and metadata on posts. Learn more.\nImages\u002BComments capability availability via the Vector API.\nWho\u0027s impacted: Partners adding image in comments previously using the Rich Media API and migrating to the Vector API.\nWhat\u0027s happening: Previously, you could add an image to comments via the Rich Media API but not with the new Vector API, which was blocking the migration. This issue was resolved starting March 10. A new entity urn field was added to the content field, replacing the existing URL field. When creating a comment with an image, specify the image as an urn (obtained when uploading an image to the Vector API) instead of a URL. Learn more.\nAttaching images to comments by URL won\u0027t be supported after the Rich Media API is sunset. The URL will still be provided when reading comments, but note that this is an expiring URL.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions \u0026 Reporting",
+      "Anchor": "conversions--reporting",
+      "SectionPath": [
+        "March 2020",
+        "Conversions \u0026 Reporting"
+      ],
+      "Text": "[Fixing soon] Viral impressions/clicks for single-image Sponsored Content.\n\nWho\u0027s impacted: Partners using adAnalyticsV2.\n\nWhat\u0027s happening:\n\nIf a Sponsored Content is commented or liked, it can be distributed to a member\u0027s network beyond the target audience. These are called viral impressions \u0026 viral clicks, which are free and not charged for. In reporting these metrics, start with the word \u0022viral\u0022.\n\nHistorically, viral reporting counts for single-image Sponsored Content were not returned. Video and Carousel Ads are unaffected.\n\nThis be fixed by April 30 in Ads Reporting. Historical performance data won\u0027t be backfilled. Learn more.\n\nRecommendations when retrieving large data sets.\n\nWho\u0027s impacted: All partners trying to retrieve large data sets via adAnalyticsV2 API.\n\nWhat\u0027s happening: An ongoing problem when trying to retrieve large data sets (for example, adAnalyticsV2 endpoint with projection and demographic pivots) is a combination of 400 and 400 errors that too much data is being called. Specify fields in the projection, but to reduce the content length limit in the response, you should limit the fields by adding \u0026fields= to your request with the specific fields you want returned. Learn more.\n\nExample:\n HTTPCopy https://api.linkedin.com/v2/adAnalyticsV2?q=analytics\u0026dateRange.start.year=2019\u0026dateRange.start.month=9\u0026dateRange.start.day=1\u0026dateRange.end.year=2020\u0026dateRange.end.month=1\u0026dateRange.end.day=31\u0026timeGranularity=ALL\u0026accounts=urn%3Ali%3AsponsoredAccount%3A\u003Caccount_id\u003E\u0026pivot=MEMBER_COMPANY\u0026projection=(*,elements*(*,pivotValue~(localizedName)))\u0026fields=dateRange,impressions,clicks,landingPageClicks,externalWebsiteConversions,pivotValue",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content \u0026 Messaging",
+      "Anchor": "sponsored-content--messaging",
+      "SectionPath": [
+        "March 2020",
+        "Sponsored Content \u0026 Messaging"
+      ],
+      "Text": "Introducing Conversation Ads.\nWho\u0027s impacted: Partners using the Conversation Ads API.\nWhat\u0027s happening: On March 17, we launched a new messaging-based ad format, Conversation Ads. With this ad, advertisers will be able to add multiple, custom calls-to-action (CTAs) to each step of their conversation that generates automated responses. These responses can include showing a subsequent message, linking to a landing page, or opening up a LinkedInLead Gen Form. In-product templates will be available in early April. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Targeting",
+      "Anchor": "targeting-1",
+      "SectionPath": [
+        "March 2020",
+        "Targeting"
+      ],
+      "Text": "New targeting attributes to reach the right audience.\nWho\u0027s impacted: Partners using the adTargetingEntities API.\nWhat\u0027s happening: We have released 10 new targeting attributes, based on known characteristics and behaviors (i.e., frequent traveler, iOS user, Android user, desktop user, open to jobs, open to education), to help you reach the audiences that matter. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API Updates",
+      "Anchor": "general-api-updates",
+      "SectionPath": [
+        "February 2020",
+        "General API Updates"
+      ],
+      "Text": "Images\u002BComments capability via the Vector API will be available on March 10.\n\nWho\u0027s impacted: Partners adding an image in comments previously using the Rich Media API and migrating to the Vector API.\n\nWhat\u0027s happening: Previously, you could add an image to comments via the Rich Media API, but not with the new Vector API which was blocking the migration. This issue will be resolved on March 10.\n\nAn entity field is now part of the content field in a comment, replacing the url field. When creating a comment with an image, specify the image as a digitalmediaAsset URN (obtained when uploading an image to the Vector API) within the entity field instead of the URL field. Learn more.\n\nAttaching images to comments by URL won\u0027t be supported after the Rich Media API is retired. The URL will still be provided when reading comments, but this will only be an expiring URL.\n\nREMINDER: UGCPosts thumbnail, originalURL, and description fields must be empty when creating video, live video, and document posts.\n\nWho\u0027s impacted: Partners using UGC API.\n\nWhat\u0027s happening: Previously, you may have leveraged the thumbnail, originalURL, or description field when creating a video, live video, or document post where the UgcPosts\u0027s shareMediaCategory field is either VIDEO, LIVE_VIDEO, or NATIVE_DOCUMENT. These fields are meant for third-party articles, and not for the above posts. We didn\u0027t activate the appropriate validations to prevent such calls. Starting February 28, we\u0027ll be enforcing these validations, so please ensure these fields are blank when creating the above posts, otherwise the call will result in a 400 error. For creating UGCPosts with ShareMediaCategory of URN_Reference, the title, description, originalUrl, mediaOverlay, and thumbnail fields must be empty.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Community Management",
+      "Anchor": "community-management",
+      "SectionPath": [
+        "February 2020",
+        "Community Management"
+      ],
+      "Text": "New field to look up organization type.\nWho\u0027s impacted: Partners using the Organization Lookup API.\nWhat\u0027s happening: New primaryOrganizationType field enables you to easily look up the primary organization type: school, brand, or none. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-6",
+      "SectionPath": [
+        "February 2020",
+        "Migrations"
+      ],
+      "Text": "REMINDER: Geo-location targeting migration\n\nWho\u0027s impacted: Partners using the Ad Targeting API location facet only. This doesn\u0027t impact the Share or UGC API.\n\nWhat\u0027s happening: In an effort to improve our geo targeting and provide a more comprehensive targeting experience, LinkedIn is migrating to Bing geo data. Refer to this Migration Guide for additional detail.\n\nWhen:; By March 31, 2020, partners should stop using the Locations APIs, and instead integrate with our adTargetingEntities Typeahead and Urns APIs. Starting April 1, 2020, the legacy locations will no longer be accepted in campaign creation.\n\nREMINDER: Upload images via the new API.\n\nWho\u0027s impacted: Partners using the Rich Media API.\n\nWhat\u0027s happening: Use a new API to upload images for organic posts and Sponsored Content. The new API, called Vector, supports higher resolution images and faster image upload times. We are extending the removal date for the Rich Media API from January 30 to May 31, 2020.\n\nWhen: Migrate to the new API for image uploads by May 31, 2020, to avoid disruptions to your service.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-7",
+      "SectionPath": [
+        "February 2020",
+        "Migrations"
+      ],
+      "Text": "REMINDER: Member Company Pivot Name change\nWho\u0027s impacted: Partners using the adAnalyticsV2 API.\nWhat\u0027s happening: The format of pivotValue values in the response to requests using the pivot(s) MEMBER_COMPANY will change from company urn (urn:li:company:1) to organization urn (urn:li:organization:1). Those leveraging this pivot will need to use the Organization API to resolve the new organization urn.\nWhen: The company URN will be removed on February 27, 2020.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "General API Updates",
+      "Anchor": "general-api-updates-1",
+      "SectionPath": [
+        "January 2020",
+        "General API Updates"
+      ],
+      "Text": "Updated API error messages to provide the most relevant information to help you troubleshoot.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: Error messages have been updated to provide the specific information you need to fix errors and make it easier to use our APIs. This is the first step in a long-term plan to improve our error schema, which includes a new error detail field to provide additional information. Look for more details in the coming months.\nChanges to rw_company_admin, r_basicprofile, r_emailaddress, and w_share permissions.\nWho\u0027s impacted: Partners requesting member authorization for rw_company_admin, r_basicprofile, r_emailaddress or w_share.\nWhat\u0027s happening: Previously, you were able to access the following four permissions without approval: rw_company_admin, r_basicprofile, r_emailaddress and w_share. Starting February 27, 2020, you can only request these permissions if they\u0027re permissions granted to your application and visible as an available permission under the Auth tab in the Developer Portal. Requesting permissions that your application doesn\u0027t have will result in an error (unauthorized_scope_error) thrown during OAuth authorization.\nUGCPosts thumbnail, originalURL, and description fields must be empty when creating video, live video, and document posts.\nWho\u0027s impacted: Partners using the UGC API.\nWhat\u0027s happening: Previously, you may have leveraged the thumbnail, originalURL, or description fields when creating a video, live video, or document post where the UgcPost\u0027s shareMediaCategory field is either VIDEO, LIVE_VIDEO, or NATIVE_DOCUMENT. These fields are meant for third-party articles, and not for the above posts. We didn\u0027t activate the appropriate validations to prevent such calls. Starting February 28, we\u0027ll be enforcing these validations, so please ensure these fields are blank when creating the above posts, otherwise the call will result in a 400 error.\nFor creating UGCPosts with ShareMediaCategory of URN_REFERENCE, the title, description, originalUrl, mediaOverlay and thumbnail fields must be empty.\nUpdates to the Breaking Change policy.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: A new Breaking Change Policy article has been added to developer documentation. Please review this guide to understand how LinkedIn defines and manages breaking changes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Conversions \u0026 Reporting",
+      "Anchor": "conversions--reporting-1",
+      "SectionPath": [
+        "January 2020",
+        "Conversions \u0026 Reporting"
+      ],
+      "Text": "New field: Approximate unique impressions.\nWho\u0027s impacted: Partners using the adAnalytics V2 API.\nWhat\u0027s happening: Starting February 27, use a new field, Approximate Unique Impressions, to enhance your reporting. Learn More.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Lead Gen Forms",
+      "Anchor": "lead-gen-forms",
+      "SectionPath": [
+        "January 2020",
+        "Lead Gen Forms"
+      ],
+      "Text": "Edit most components of live Lead Gen Forms.\nWho\u0027s impacted: Partners that use the Lead Gen Form API.\nWhat\u0027s happening: Now edit Lead Gen Forms (LGF) attached to creatives under a non-draft campaign, with the exception of forms attached to Sponsored InMail or Conversation Ads. This includes the form headline, form details, form description, thank you message, thank you page CTA, link to website, privacy policy URL, and custom privacy policy text. Learn more.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sponsored Content \u0026 InMail",
+      "Anchor": "sponsored-content--inmail-2",
+      "SectionPath": [
+        "January 2020",
+        "Sponsored Content \u0026 InMail"
+      ],
+      "Text": "Sponsored InMail rebranded to Message Ads.\nWho\u0027s impacted: All partners.\nWhat\u0027s happening: \u0022Sponsored InMail\u0022 is now labeled as \u0022Message Ad\u0022. We have updated our API docs to reflect the new product name.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-8",
+      "SectionPath": [
+        "January 2020",
+        "Migrations"
+      ],
+      "Text": "Geo-location targeting migration reminder.\nWho\u0027s impacted: Partners using the Ad Targeting API location facet only. This doesn\u0027t impact Share or UGC API.\nWhat\u0027s happening: In an effort to improve our geo targeting and provide a more comprehensive targeting experience, LinkedIn is migrating to Bing geo data. Refer to this Migration Guide for additional detail.\nWhen: By March 31, 2020, partners should stop using the Locations APIs, and instead integrate with our adTargetingEntities Typeahead and Urns APIs. Starting April 1, 2020, the legacy locations will no longer be accepted in campaign creation.\nUpload images via the new API.\nWho\u0027s impacted: Partners using the Rich Media API.\nWhat\u0027s happening: Use a new API to upload images for organic posts and Sponsored Content. The new API, called Vector, will support higher resolution images and faster image upload times. We are extending the removal date for the Rich Media API from January 30 to March 30, 2020.\nWhen: Migrate to the new API for image uploads by March 30, 2020 to avoid disruptions to your service.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Migrations",
+      "Anchor": "migrations-9",
+      "SectionPath": [
+        "January 2020",
+        "Migrations"
+      ],
+      "Text": "Member Company Pivot Name Change.\nWho\u0027s impacted: Partners using the adAnalytics V2 API.\nWhat\u0027s happening: The format of pivotValue(s) in the response of requests using the pivot(s) MEMBER_COMPANY will change from company urn (urn:li:company:1) to organization urn (urn:li:organization:1). Those leveraging this pivot will need to use the Organization API to resolve the new organization urn.\nWhen: Company URN will be removed on February 27, 2020.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

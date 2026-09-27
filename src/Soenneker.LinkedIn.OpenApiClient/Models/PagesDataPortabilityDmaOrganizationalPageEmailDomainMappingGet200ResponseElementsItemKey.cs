@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents the key for an organization email domain mapping composed of an organizational page URN, email domain, and a use case.Documented type: OrganizationEmailDomainMappingKeyRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The emailDomain property</summary>
+        /// <summary>Email domain associated with the organizational page and use case.Documented type: StringRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailDomain { get; set; }
@@ -22,7 +23,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string EmailDomain { get; set; }
 #endif
-        /// <summary>The organizationalPageUrn property</summary>
+        /// <summary>The organizational page urn associated with the email domain and use case. It is of type urn:li:organizationalPage:{ID}.Documented type: OrganizationalPageUrnRequirement: Yes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationalPageUrn { get; set; }
@@ -30,14 +31,8 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public string OrganizationalPageUrn { get; set; }
 #endif
-        /// <summary>The useCase property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseCase { get; set; }
-#nullable restore
-#else
-        public string UseCase { get; set; }
-#endif
+        /// <summary>Use case associated with the organizational page and email domain. Value enums include: JOB_POSTINGMY_COMPANYLINKEDIN_SALES_SOLUTIONS_PRODUCTSDocumented type: OrganizationEmailDomainMappingUseCaseRequirement: Yes</summary>
+        public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase? UseCase { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKey"/> and sets the default values.
         /// </summary>
@@ -65,7 +60,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             {
                 { "emailDomain", n => { EmailDomain = n.GetStringValue(); } },
                 { "organizationalPageUrn", n => { OrganizationalPageUrn = n.GetStringValue(); } },
-                { "useCase", n => { UseCase = n.GetStringValue(); } },
+                { "useCase", n => { UseCase = n.GetEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase>(); } },
             };
         }
         /// <summary>
@@ -77,7 +72,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("emailDomain", EmailDomain);
             writer.WriteStringValue("organizationalPageUrn", OrganizationalPageUrn);
-            writer.WriteStringValue("useCase", UseCase);
+            writer.WriteEnumValue<global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaOrganizationalPageEmailDomainMappingGet200ResponseElementsItemKeyUseCase>("useCase", UseCase);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

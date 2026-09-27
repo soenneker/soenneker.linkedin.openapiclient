@@ -1,0 +1,1036 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+  "Title": "Predictive Audiences API",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/adsegments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-list-uploads",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-companies",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-destinations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segment-users",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/create-and-manage-segments",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/getting-access-matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/integration-requirements",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/matched-audiences-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/predictive-audiences",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/matched-audiences/website-visitors-retargeting",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/adtargetingentities",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-examples",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/ads/targeting-criteria-facet-urns"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Predictive Audiences API",
+      "Anchor": "predictive-audiences-api",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Predictive Audiences API",
+      "Anchor": "predictive-audiences-api",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Predictive Audiences API",
+      "Anchor": "predictive-audiences-api",
+      "SectionPath": [],
+      "Text": "Predictive Audiences allow customers to combine their first-party or third-party data with LinkedIn\u0027s predictive AI modeling to build a high-intent audience tailored just for their business. LinkedIn\u0027s AI combines millions of engagement signals with the customer\u0027s data to identify members who are most likely to convert based on the customer\u0027s business objectives.\nCustomers can select from company list or contact list as the data source and predictive audiences predicts the likelihood of our members to convert for a given customer, using the customer\u0027s own data as the input (think behavioral \u002B lookalike). The most relevant members are then made available as an audience segment customers can target.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_dmp_segments",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access an authenticated member\u0027s DMP Segments with the ability to read and manage audience DMP segments.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "Managing audiences is restricted to ad accounts where the authenticated member has a role other than VIEWER.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Predictive Audience",
+      "Anchor": "predictive-audience",
+      "SectionPath": [
+        "Schemas",
+        "Predictive Audience"
+      ],
+      "Text": "Schema for predictive audience, which is a type of matched audience created using predictive modeling based on business objectives defined by the advertiser.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Predictive Audience",
+      "Anchor": "predictive-audience",
+      "SectionPath": [
+        "Schemas",
+        "Predictive Audience"
+      ],
+      "Text": "",
+      "Headers": [
+        "Property",
+        "Type",
+        "Read-only",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The unique identifier (Predictive Audience ID) of the predictive audience. This field is set by the system and is ignored on create and partial update requests. Returned by the retrieve and list operations when LinkedIn-Version is 202607 or later.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch timestamp in milliseconds at which one created the predictive audience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch timestamp in milliseconds at which one most recently updated the predictive audience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch timestamp in milliseconds at which one deleted the predictive audience.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "dmpSegmentId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ID of the predictive audience\u0027s parent data management platform (DMP) segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seeds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[Urn]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The seeds from which the predictive audience sprouts. Acceptable types of seeds include conversions (e.g. urn:lla:llaPartnerConversion:1), matched audience contact or company upload segments (e.g. urn:li:dmpSegment:123), and ad leadgen forms (e.g. urn:li:adForm:1231).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "desiredAudienceCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of members the advertiser aims for in the targetable matched audience segment. The advertiser could specify this value in creating the predictive audience, or after the recommended audience size is calculated by the system. If the advertiser doesn\u0027t specify a desired audience count, the system will use the size from the recommendedAudienceCount field.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "recommendedAudienceCount",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The recommended number of members in the targetable matched audience segment which finds a good balance between audience reach and campaign performance. This field is set by the system and cannot be set or changed by the client. This field will be null if there is no recommended audience count available. This can occur if the system is still processing an audience count to recommend or if the system can\u0027t generate a recommendation due to poor input data.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetingFilter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "TargetingCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The targeting filter advertiser selects to build the predictive audience segment.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "audienceAutomation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AudienceAutomation",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The audience automation from which this audience is created (e.g. predictive audiences created from an Optima campaign). It is undefined for audiences not created from audience automation. Accepted value: AUTO_TARGETING (signifies that auto-targeting is active for campaigns).",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyExpansionMultiplier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "int",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company expansion multiplier for the company seeds, representing their expansion factor. For example, if the company expansion multiplier is 2, with the seeds consisting of 10 companies, the expansion output will have 20 companies. This field is only applicable to company seeds and will be validated with a valid range supported.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetingCriteria",
+      "Anchor": "targetingcriteria",
+      "SectionPath": [
+        "Schemas",
+        "TargetingCriteria"
+      ],
+      "Text": "Schema for targeting criteria for an advertising campaign, using a boolean expression identifying which members are included, and optionally excluded.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetingCriteria",
+      "Anchor": "targetingcriteria",
+      "SectionPath": [
+        "Schemas",
+        "TargetingCriteria"
+      ],
+      "Text": "Note: A geo filter must be present in the targeting criteria for predictive audiences to build correctly. Currently, the targeting criteria only supports geo filtering.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetingCriteria",
+      "Anchor": "targetingcriteria",
+      "SectionPath": [
+        "Schemas",
+        "TargetingCriteria"
+      ],
+      "Text": "targetingCriteria provides a generic AND / OR construct to include and exclude different adTargetingFacets when defining the audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetingCriteria",
+      "Anchor": "targetingcriteria",
+      "SectionPath": [
+        "Schemas",
+        "TargetingCriteria"
+      ],
+      "Text": "For more information, see:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "TargetingCriteria",
+      "Anchor": "targetingcriteria",
+      "SectionPath": [
+        "Schemas",
+        "TargetingCriteria"
+      ],
+      "Text": "targetingCriteria object\nDescriptive examples for targetingCriteria object\nList of supported adTargetingFacets in targetingCriteria object\nAd Targeting Entities",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Predictive Audience",
+      "Anchor": "create-predictive-audience",
+      "SectionPath": [
+        "Create Predictive Audience"
+      ],
+      "Text": "Creates a new predictive audience. Returns the ID of the created predictive audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "In this request, 12345 is the ID of the parent DMP segment. Please refer to DMP Segment API for more information on creating and managing DMP segments.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022targetingFilter\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:countryGroup:AS\u0022\n            ]\n          }\n        }\n      ]\n    },\n    \u0022exclude\u0022: {\n      \u0022or\u0022: {\n        \u0022urn:li:adTargetingFacet:skills\u0022: [\n          \u0022urn:li:skill:200\u0022\n        ]\n      }\n    }\n  },\n  \u0022desiredAudienceCount\u0022: 100,\n  \u0022seeds\u0022: [ \u0022urn:li:dmpSegment:12345\u0022 ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \\\n\u0027https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022targetingFilter\u0022: {\n    \u0022include\u0022: {\n      \u0022and\u0022: [\n        {\n          \u0022or\u0022: {\n            \u0022urn:li:adTargetingFacet:locations\u0022: [\n              \u0022urn:li:countryGroup:AS\u0022\n            ]\n          }\n        }\n      ]\n    }\n  },\n  \u0022desiredAudienceCount\u0022: 100,\n  \u0022seeds\u0022: [ \u0022urn:li:dmpSegment:12345\u0022 ]\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Response"
+      ],
+      "Text": "In this response, 67890 is the ID of the created Predictive Audience.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Create Predictive Audience",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 201\ncontent-length: 0\nx-restli-protocol-version: 2.0.0\nx-linkedin-id: 67890\nlocation: /dmpSegments/12345/businessObjectiveBasedAudiences/67890",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Predictive Audience by ID",
+      "Anchor": "retrieve-predictive-audience-by-id",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID"
+      ],
+      "Text": "Retrieves a predictive audience by its unique ID.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "In this request, 12345 is the ID of the parent DMP segment, and 67890 is the ID of the Predictive Audience to fetch.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences/67890",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "curl \u0027https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences/67890\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Response"
+      ],
+      "Text": "The id field (Predictive Audience ID) is returned when LinkedIn-Version is 202607 or later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Predictive Audience by ID",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 200\ncontent-length: 340\nx-restli-protocol-version: 2.0.0\ncontent-type: application/json\n\n{\n    \u0022id\u0022: 67890,\n    \u0022targetingFilter\u0022: {\n        \u0022include\u0022: {\n            \u0022and\u0022: [\n                {\n                    \u0022or\u0022: {\n                        \u0022urn:li:adTargetingFacet:locations\u0022: [\n                            \u0022urn:li:countryGroup:AS\u0022\n                        ]\n                    }\n                }\n            ]\n        }\n    },\n    \u0022created\u0022: 1740775557000,\n    \u0022dmpSegmentId\u0022: 12345,\n    \u0022seeds\u0022: [\n        \u0022urn:li:dmpSegment:84735\u0022\n    ],\n    \u0022versionTag\u0022: \u00221\u0022,\n    \u0022lastModified\u0022: 1740775557000,\n    \u0022desiredAudienceCount\u0022: 100\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "List All Predictive Audiences",
+      "Anchor": "list-all-predictive-audiences",
+      "SectionPath": [
+        "List All Predictive Audiences"
+      ],
+      "Text": "Retrieves all predictive audiences under a given parent DMP segment as a paginated collection.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Request"
+      ],
+      "Text": "In this request, 12345 is the ID of the parent DMP segment. Use the count and start query parameters to paginate through results.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences?count=10\u0026start=0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Request"
+      ],
+      "Text": "curl \u0027https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences?count=10\u0026start=0\u0027 \\\n  -H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n  -H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Response"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Response"
+      ],
+      "Text": "The id field (Predictive Audience ID) is returned for each element when LinkedIn-Version is 202607 or later.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "List All Predictive Audiences",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 200\ncontent-type: application/json\nx-restli-protocol-version: 2.0.0\n\n{\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 2,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022id\u0022: 67890,\n            \u0022dmpSegmentId\u0022: 12345,\n            \u0022created\u0022: 1740775557000,\n            \u0022lastModified\u0022: 1740775557000,\n            \u0022seeds\u0022: [\n                \u0022urn:lla:llaPartnerConversion:336212\u0022\n            ],\n            \u0022desiredAudienceCount\u0022: 50000,\n            \u0022recommendedAudienceCount\u0022: 48000,\n            \u0022targetingFilter\u0022: {\n                \u0022include\u0022: {\n                    \u0022and\u0022: [\n                        {\n                            \u0022or\u0022: {\n                                \u0022urn:li:adTargetingFacet:locations\u0022: [\n                                    \u0022urn:li:countryGroup:US\u0022\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \u0022id\u0022: 67891,\n            \u0022dmpSegmentId\u0022: 12345,\n            \u0022created\u0022: 1740862000000,\n            \u0022lastModified\u0022: 1740862000000,\n            \u0022seeds\u0022: [\n                \u0022urn:li:dmpSegment:789\u0022\n            ],\n            \u0022desiredAudienceCount\u0022: 100000,\n            \u0022recommendedAudienceCount\u0022: 95000,\n            \u0022targetingFilter\u0022: {\n                \u0022include\u0022: {\n                    \u0022and\u0022: [\n                        {\n                            \u0022or\u0022: {\n                                \u0022urn:li:adTargetingFacet:locations\u0022: [\n                                    \u0022urn:li:countryGroup:EU\u0022\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Update Predictive Audience by ID",
+      "Anchor": "update-predictive-audience-by-id",
+      "SectionPath": [
+        "Update Predictive Audience by ID"
+      ],
+      "Text": "Applies the given patch to the predictive audience to which the given ID maps. Note that this patch must be devoid of any properties marked as read-only in the predictive audience schema above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "In this request, 12345 is the ID of the parent DMP segment, and 67890 is the ID of the predictive audience to update. This patch sets the predictive audience\u0027s company expansion multiplier to 3.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences/67890",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022companyExpansionMultiplier\u0022: 3\n    }\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Update Predictive Audience by ID",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \\\n\u0027https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences/67890\u0027 \\\n-H \u0027X-RestLi-Method:partial_update\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027 \\\n--data \u0027{\n  \u0022patch\u0022: {\n    \u0022$set\u0022: {\n      \u0022companyExpansionMultiplier\u0022: 3\n    }\n  }\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Update Predictive Audience by ID",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 204\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete Predictive Audience",
+      "Anchor": "delete-predictive-audience",
+      "SectionPath": [
+        "Delete Predictive Audience"
+      ],
+      "Text": "Deletes the predictive audience to which the given ID maps.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "In this request, 12345 is the ID of the parent DMP segment, and 67890 is the ID of the predictive audience to delete.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences/67890",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-4",
+      "SectionPath": [
+        "Delete Predictive Audience",
+        "Sample Request"
+      ],
+      "Text": "curl -X DELETE \\\n\u0027https://api.linkedin.com/rest/dmpSegments/12345/businessObjectiveBasedAudiences/67890\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027LinkedIn-Version: {version number in the format YYYYMM}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Delete Predictive Audience",
+        "Sample Response"
+      ],
+      "Text": "HTTP/2 204\nx-restli-protocol-version: 2.0.0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Error Details",
+      "Anchor": "error-details",
+      "SectionPath": [
+        "Error Details"
+      ],
+      "Text": "The table below lists commonly encountered errors when using the Predictive Audiences API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Error Details",
+      "Anchor": "error-details",
+      "SectionPath": [
+        "Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "Code",
+        "Message",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "sourcePlatform cannot be set to XYZ",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A Predictive Audience can only be created in a DMP Segment where the sourcePlatform is set to LINKEDIN_BUSINESS_OBJECTIVE_BASED_AUDIENCES.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No WRITE access to {sponsored account URN}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not present or user is not authorized to perform dmp segment write operations within the ad account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No READ access to {sponsored account URN}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewer is not present or user is not authorized to perform dmp segment read operations within the ad account.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity with key {predictive audience ID} is not found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Predictive audience of the provided ID in the path doesn\u0027t exist.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity with key {dmpSegmentId} is not found.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The parent DMP segment specified in the path does not exist.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

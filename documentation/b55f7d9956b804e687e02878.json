@@ -1,0 +1,2246 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+  "Title": "Verification Report API (/verificationReport)",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/consumer/",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/migration-faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/identity-me",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/validation-status",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/api-reference/verification-report",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/branding-ux-guidelines",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/faq",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/implementation-guide",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/certification",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/plus-tier/data-freshness",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/quickstart",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/overview",
+    "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/api-guide/concepts/error-handling",
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Verification Report API (/verificationReport)",
+      "Anchor": "verification-report-api-verificationreport",
+      "SectionPath": [],
+      "Text": "The Verification Report API allows you to retrieve verification information for LinkedIn members, including verification categories (e.g., IDENTITY, WORKPLACE), detailed metadata, and verification URLs for eligible members.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification Report API (/verificationReport)",
+      "Anchor": "verification-report-api-verificationreport",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification Report API (/verificationReport)",
+      "Anchor": "verification-report-api-verificationreport",
+      "SectionPath": [],
+      "Text": "Tier Availability: Development \u2705 | Lite \u2705 | Plus \u2705",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Verification Report API (/verificationReport)",
+      "Anchor": "verification-report-api-verificationreport",
+      "SectionPath": [],
+      "Text": "All tiers can access this API. Plus tier receives additional detailed metadata (verified names, timestamps, methods, organization info).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Key Features:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "Check member\u0027s verification status (identity and workplace)\nGet detailed verification metadata (Plus tier only)\nGenerate verification URLs for unverified members\nRequest freshness validation for existing verifications using the optional verifiedWithinDays parameter\nOAuth: 3-legged (member consent required)\nVersion: 202607 (Plus tier) / Check Release Notes (Dev/Lite tier)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Verification Categories",
+      "Anchor": "verification-categories",
+      "SectionPath": [
+        "Overview",
+        "Verification Categories"
+      ],
+      "Text": "",
+      "Headers": [
+        "Category",
+        "Description",
+        "Available In"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "IDENTITY",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Government ID-based verification",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All tiers",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "WORKPLACE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Work affiliation verification (email or Microsoft Entra)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "All tiers",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "",
+      "Headers": [
+        "Limit Type",
+        "Development",
+        "Lite",
+        "Plus",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Application-level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "5,000/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum API calls per day across all users",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member-level",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "500/day",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Maximum calls per individual member per day",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rate Limits",
+      "Anchor": "rate-limits",
+      "SectionPath": [
+        "Rate Limits"
+      ],
+      "Text": "Plus tier rate limits are customized based on partnership agreement.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Endpoint Details",
+      "Anchor": "endpoint-details",
+      "SectionPath": [
+        "Endpoint Details"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/verificationReport",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Required Headers",
+      "Anchor": "required-headers",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required Headers"
+      ],
+      "Text": "",
+      "Headers": [
+        "Header",
+        "Value",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Authorization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bearer {ACCESS_TOKEN}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "OAuth 2.0 access token authorized by the member",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "LinkedIn-Version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{LATEST_VERSION}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API version (see Release Notes)",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/release-notes#current-api-versions"
+            ],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scope"
+      ],
+      "Text": "",
+      "Headers": [
+        "Scope",
+        "Development",
+        "Lite",
+        "Plus",
+        "Purpose"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_verify_details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705 Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Access to verification data",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scope"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scope"
+      ],
+      "Text": "Some older implementations may use r_verify scope. Both are accepted, but r_verify_details is the current standard.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scope"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scope"
+      ],
+      "Text": "Development Tier Limitation: You can only access data for LinkedIn accounts that are administrators of your developer application. This tier is for testing only.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Required OAuth Scope",
+      "Anchor": "required-oauth-scope",
+      "SectionPath": [
+        "Endpoint Details",
+        "Required OAuth Scope"
+      ],
+      "Text": "For production use, upgrade to Lite tier.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Type",
+        "Required",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "verificationCriteria",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specifies verification categories for URL generation. Can be repeated for multiple values: IDENTITY, WORKPLACE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedWithinDays",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Optional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Requests a freshness check on existing verifications. If a completed verification is older than the specified number of days, the response includes a verificationUrl so the member can re-verify. Existing verification data is still returned. Accepted values: 0 or any positive integer. Negative values return 400 Bad Request.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "How verificationCriteria works:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "Does NOT filter response \u2013 Always returns ALL completed verifications\nControls URL generation \u2013 Only generates URL for requested criteria\nMultiple values \u2013 Repeat parameter: ?verificationCriteria=IDENTITY\u0026verificationCriteria=WORKPLACE\nDO NOT use comma-separated \u2013 Will return 400 Bad Request error",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "How verifiedWithinDays works:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "Does NOT invalidate existing verification data.\nDoes NOT remove or filter verifiedDetails.\nOnly influences whether a verificationUrl is returned.\nIf an existing verification is older than the requested freshness window and the member is still eligible to re-verify the existing verification, a verificationUrl is returned so the member can re-verify.\nIf the verification is within the requested freshness window, verifiedWithinDays does not require re-verification. However, a verificationUrl may still be returned if the member is eligible to complete additional verifications.\nIf omitted, the API behaves exactly as it does today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "Examples:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Endpoint Details",
+        "Query Parameters"
+      ],
+      "Text": "# Request both verifications\nGET /verificationReport?verificationCriteria=IDENTITY\u0026verificationCriteria=WORKPLACE\n\n# Request only identity\nGET /verificationReport?verificationCriteria=IDENTITY\n\n# No criteria (returns URL for any eligible verification)\nGET /verificationReport\n\n# Require verification completed within the last year\nGET /verificationReport?verifiedWithinDays=365\n\n# Require verification completed within the last 90 days\nGET /verificationReport?verifiedWithinDays=90\n\n# Require identity verification completed within the last 90 days\nGET /verificationReport?verificationCriteria=IDENTITY\u0026verifiedWithinDays=90\n\n# Always require re-verification (if member is eligible)\nGET /verificationReport?verifiedWithinDays=0",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Tier Availability",
+        "Always Returned",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development, Lite, Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for member scoped to your application",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "userId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legacy identifier format. Partners should use id for new integrations.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifications",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[string]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development, Lite, Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Completed verification categories (e.g., [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022])",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verificationUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development, Lite, Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL to the LinkedIn verification flow. Returned when the member is eligible for additional verifications, or when an existing verification is older than the requested verifiedWithinDays threshold and the member is still eligible to re-verify the existing verification.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastRefreshedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp indicating when verification data was last refreshed (milliseconds since epoch)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "array[object]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Detailed verification metadata for completed verifications",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].category",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verification category: IDENTITY or WORKPLACE",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].lastVerifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "timestamp",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u2705",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Timestamp indicating when verification was completed (milliseconds since epoch)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].verifiedName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Legal name from government ID verification",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].verifiedName.firstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified first name (uppercase)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].verifiedName.middleName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified middle name (uppercase)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].verifiedName.lastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verified last name (uppercase)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].verificationMethod",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Method used to complete verification (for example, EMAIL_ADDRESS or MICROSOFT_ENTRA)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].organizationInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Organization information associated with workplace verification",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].organizationInfo.name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Company name",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verifiedDetails[].organizationInfo.url",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Plus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "\u26A0\uFE0F Conditional",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedIn company page URL",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Response Schema",
+      "Anchor": "response-schema",
+      "SectionPath": [
+        "Response Schema"
+      ],
+      "Text": "Plus tier responses include additional detailed metadata in the verifiedDetails array. Development and Lite tiers return only basic verification category information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Member has completed both verifications. No verificationUrl in response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Response (Development/Lite Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 1: Development/Lite Tier - Fully Verified Member",
+      "Anchor": "example-1-developmentlite-tier---fully-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 1: Development/Lite Tier - Fully Verified Member"
+      ],
+      "Text": "Try the /verificationReport API in Postman to explore verification states and metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "Member has no verifications but is eligible. Response includes verificationUrl.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verificationCriteria=IDENTITY\u0026verificationCriteria=WORKPLACE\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027LinkedIn-Version: {LATEST_VERSION}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "Response (Development/Lite Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 2: Development/Lite Tier - Unverified Member",
+      "Anchor": "example-2-developmentlite-tier---unverified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 2: Development/Lite Tier - Unverified Member"
+      ],
+      "Text": "{\n  \u0022verifications\u0022: [],\n  \u0022id\u0022: \u0022Yw-zU_kyua\u0022,\n  \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=...\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Plus Tier - Fully Verified Member with Metadata",
+      "Anchor": "example-3-plus-tier---fully-verified-member-with-metadata",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 3: Plus Tier - Fully Verified Member with Metadata"
+      ],
+      "Text": "Member has completed both verifications. Plus tier includes detailed metadata.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Plus Tier - Fully Verified Member with Metadata",
+      "Anchor": "example-3-plus-tier---fully-verified-member-with-metadata",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 3: Plus Tier - Fully Verified Member with Metadata"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 3: Plus Tier - Fully Verified Member with Metadata",
+      "Anchor": "example-3-plus-tier---fully-verified-member-with-metadata",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 3: Plus Tier - Fully Verified Member with Metadata"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 3: Plus Tier - Fully Verified Member with Metadata",
+      "Anchor": "example-3-plus-tier---fully-verified-member-with-metadata",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 3: Plus Tier - Fully Verified Member with Metadata"
+      ],
+      "Text": "Response (Plus Tier with Detailed Metadata):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 3: Plus Tier - Fully Verified Member with Metadata",
+      "Anchor": "example-3-plus-tier---fully-verified-member-with-metadata",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 3: Plus Tier - Fully Verified Member with Metadata"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022zy5ubopzH4\u0022,\n  \u0022userId\u0022: \u0022UfBk1351j0zQTGeF9TT3JCeztYB8CTz6INgveqjzg8g=\u0022,\n  \u0022lastRefreshedAt\u0022: 1761504023786,\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022, \u0022WORKPLACE\u0022],\n  \u0022verifiedDetails\u0022: [\n    {\n      \u0022category\u0022: \u0022IDENTITY\u0022,\n      \u0022verifiedName\u0022: {\n        \u0022firstName\u0022: \u0022MICHAEL\u0022,\n        \u0022middleName\u0022: \u0022GARY\u0022,\n        \u0022lastName\u0022: \u0022SCOTT\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744141828585\n    },\n    {\n      \u0022category\u0022: \u0022WORKPLACE\u0022,\n      \u0022verificationMethod\u0022: \u0022EMAIL_ADDRESS\u0022,\n      \u0022organizationInfo\u0022: {\n        \u0022name\u0022: \u0022Contoso\u0022,\n        \u0022url\u0022: \u0022https://www.linkedin.com/company/contoso12345\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744139009883\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 4: Plus Tier - Partially Verified Member",
+      "Anchor": "example-4-plus-tier---partially-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 4: Plus Tier - Partially Verified Member"
+      ],
+      "Text": "Member has identity verification, eligible for workplace. URL provided for workplace verification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 4: Plus Tier - Partially Verified Member",
+      "Anchor": "example-4-plus-tier---partially-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 4: Plus Tier - Partially Verified Member"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 4: Plus Tier - Partially Verified Member",
+      "Anchor": "example-4-plus-tier---partially-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 4: Plus Tier - Partially Verified Member"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verificationCriteria=WORKPLACE\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 4: Plus Tier - Partially Verified Member",
+      "Anchor": "example-4-plus-tier---partially-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 4: Plus Tier - Partially Verified Member"
+      ],
+      "Text": "Response (Plus Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 4: Plus Tier - Partially Verified Member",
+      "Anchor": "example-4-plus-tier---partially-verified-member",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 4: Plus Tier - Partially Verified Member"
+      ],
+      "Text": "{\n  \u0022id\u0022: \u0022zy5ubopzH4\u0022,\n  \u0022userId\u0022: \u0022UfBk1351j0zQTGeF9TT3JCeztYB8CTz6INgveqjzg8g=\u0022,\n  \u0022lastRefreshedAt\u0022: 1761504023786,\n  \u0022verifications\u0022: [\u0022IDENTITY\u0022],\n  \u0022verifiedDetails\u0022: [\n    {\n      \u0022category\u0022: \u0022IDENTITY\u0022,\n      \u0022verifiedName\u0022: {\n        \u0022firstName\u0022: \u0022MICHAEL\u0022,\n        \u0022middleName\u0022: \u0022GARY\u0022,\n        \u0022lastName\u0022: \u0022SCOTT\u0022\n      },\n      \u0022lastVerifiedAt\u0022: 1744141828585\n    }\n  ],\n  \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=...WORKPLACE...\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays",
+      "Anchor": "example-5-previously-verified-member---re-verification-triggered-by-verifiedwithindays",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays"
+      ],
+      "Text": "The member has already completed verification, but the existing verification is older than the requested freshness window. Because the member is still eligible to re-verify the existing verification, the response includes a verificationUrl. Existing verification data continues to be returned.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays",
+      "Anchor": "example-5-previously-verified-member---re-verification-triggered-by-verifiedwithindays",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays"
+      ],
+      "Text": "Request:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays",
+      "Anchor": "example-5-previously-verified-member---re-verification-triggered-by-verifiedwithindays",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/verificationReport?verifiedWithinDays=0\u0027 \\\n  -H \u0027Linkedin-Version: 202607\u0027 \\\n  -H \u0027Authorization: Bearer {ACCESS_TOKEN}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays",
+      "Anchor": "example-5-previously-verified-member---re-verification-triggered-by-verifiedwithindays",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays"
+      ],
+      "Text": "Response (Plus Tier):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays",
+      "Anchor": "example-5-previously-verified-member---re-verification-triggered-by-verifiedwithindays",
+      "SectionPath": [
+        "Example Requests and Responses",
+        "Example 5: Previously Verified Member - Re-verification Triggered by verifiedWithinDays"
+      ],
+      "Text": "{\n    \u0022lastRefreshedAt\u0022: 1785874373805,\n    \u0022id\u0022: \u0022zy5ubopzH4\u0022,\n    \u0022verificationUrl\u0022: \u0022https://www.linkedin.com/trust/verification?isDeeplinkToCCT=true\u0026verificationUrl=https%3A%2F%2Fwww.linkedin.com%2Fverify%3FentryPoint%3Dfederation_external_api%26partnerId%3DAgFWe2YpiL316wAAAZ_OaFytE9qYJ-lSBK5yWyWnjChzf_IdqPyO1YmG9w%26verificationRequiredAfter%3D1785874373418%26verificationCriteria%3D%257B%2522WORK_EMAIL_ADDRESS%2522%253A%255B%2522WORK_EMAIL_ADDRESS%2522%252C%2522WORK_EMAIL_ADDRESS%2522%255D%257D\u0022,\n    \u0022verifications\u0022: [\n      \u0022IDENTITY\u0022,\n      \u0022WORKPLACE\u0022\n    ],\n    \u0022verifiedDetails\u0022: [\n      {\n        \u0022workplaceEmailDomain\u0022: \u0022linkedin.com\u0022,\n        \u0022lastVerifiedAt\u0022: 1785873873287,\n        \u0022verificationMethod\u0022: \u0022EMAIL_ADDRESS\u0022,\n        \u0022category\u0022: \u0022WORKPLACE\u0022,\n        \u0022organizationInfo\u0022: {\n          \u0022name\u0022: \u0022LinkedIn\u0022,\n          \u0022url\u0022: \u0022https://www.linkedin.com/company/1337\u0022\n        }\n      },\n      {\n        \u0022category\u0022: \u0022IDENTITY\u0022,\n        \u0022verifiedName\u0022: {\n          \u0022firstName\u0022: \u0022SOKKALINGAM\u0022,\n          \u0022lastName\u0022: \u0022SUBRAMANIAN\u0022\n        },\n        \u0022lastVerifiedAt\u0022: 1785525889850\n      }\n    ],\n    \u0022userId\u0022: \u0022UfBk1351j0zQTGeF9TT3JCeztYB8CTz6INgveqjzg8g=\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Understanding Verification States",
+      "Anchor": "understanding-verification-states",
+      "SectionPath": [
+        "Understanding Verification States"
+      ],
+      "Text": "",
+      "Headers": [
+        "State",
+        "verifications",
+        "verificationUrl",
+        "Action Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Fully Verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains all categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display verification badges",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Previously Verified (Older than verifiedWithinDays)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Existing verification(s) present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Returned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Prompt the member to re-verify while continuing to display existing verification data",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Partially Verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contains some categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show completed badges \u002B \u0022Complete Verification\u0022 button",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not Verified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty array []",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Show \u0022Verify with LinkedIn\u0022 button",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Not Eligible",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty array []",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not present",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Member cannot verify (region/eligibility restrictions)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "The verificationUrl field is a LinkedIn URL that directs members to complete verification on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "When it\u0027s present:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "Member is eligible for additional verifications\nMember has completed verification previously, but it is older than the requested verifiedWithinDays threshold and the member is still eligible to re-verify the existing verification.\nIf verificationCriteria specified: eligible for those specific verifications\nIf no criteria: eligible for any verification type",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "When it\u0027s absent:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "Member has completed all requested verifications, OR\nMember is not eligible for any additional verifications, OR\nExisting verification satisfies the requested freshness window.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What is verificationUrl?",
+      "Anchor": "what-is-verificationurl",
+      "SectionPath": [
+        "Verification URL Usage",
+        "What is verificationUrl?"
+      ],
+      "Text": "Member eligibility depends on factors like region, account status, and verification availability. See LinkedIn Help Center for eligibility details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "A redirect URI (callback URL) allows LinkedIn to return the member to your application after verification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Flow:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Your app redirects member to the verification URL\nMember completes verification on LinkedIn\nLinkedIn redirects member back to your redirect URI\nYour app resumes the member\u0027s session",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Configuration Requirements:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Important",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "The redirectUri must exactly match a URL registered in your LinkedIn Developer App\u0027s Auth tab.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Registration Steps:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Go to LinkedIn Developer Portal\nSelect your application \u2192 Auth tab\nUnder Authorized redirect URLs, add your redirect URI\nSave changes",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Implementation:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "// Get verification URL from API response\nconst verificationUrl = apiResponse.verificationUrl;\n\n// Add your redirect URI (must be URL-encoded)\nconst redirectUri = encodeURIComponent(\u0027https://yourapp.com/verification/callback\u0027);\nconst fullUrl = \u0060${verificationUrl}\u0026redirectUri=${redirectUri}\u0060;\n\n// Optionally add state parameter for CSRF protection\nconst state = generateRandomState(); // Store this in your database\nconst finalUrl = \u0060${fullUrl}\u0026state=${state}\u0060;\n\n// Redirect member to LinkedIn\nwindow.location.href = finalUrl;",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Handling Member\u0027s Return:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "// In your callback handler at /verification/callback\napp.get(\u0027/verification/callback\u0027, async (req, res) =\u003E {\n  const { state, error } = req.query;\n  \n  // Validate state parameter\n  if (state \u0026\u0026 !validateState(state)) {\n    return res.status(400).send(\u0027Invalid state\u0027);\n  }\n  \n  // Check for errors\n  if (error) {\n    return res.redirect(\u0027/dashboard?message=verification_cancelled\u0027);\n  }\n  \n  // Fetch updated verification data\n  const verificationData = await callVerificationReportAPI(accessToken);\n  \n  // Update your database\n  await updateMemberVerification(memberId, verificationData);\n  \n  // Redirect to success page\n  res.redirect(\u0027/dashboard?message=verification_complete\u0027);\n});",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Do NOT cache or persist verificationUrl. Always get a fresh URL from the API.\nURLs are single-use and may expire.\nIf redirectUri is omitted, member stays on LinkedIn after verification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "Common Issues:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Using Redirect URI (Optional)",
+      "Anchor": "using-redirect-uri-optional",
+      "SectionPath": [
+        "Verification URL Usage",
+        "Using Redirect URI (Optional)"
+      ],
+      "Text": "",
+      "Headers": [
+        "Issue",
+        "Cause",
+        "Resolution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Member not redirected",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "redirectUri not URL-encoded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL-encode the parameter",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Redirect fails",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Mismatch with registered URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use exact URL from Developer Portal",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Member stays on LinkedIn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing redirectUri parameter",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add parameter if redirect desired",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Verified Name vs LinkedIn Profile Name (Plus Tier)",
+      "Anchor": "verified-name-vs-linkedin-profile-name-plus-tier",
+      "SectionPath": [
+        "Important Concepts",
+        "Verified Name vs LinkedIn Profile Name (Plus Tier)"
+      ],
+      "Text": "The verifiedName in identity verification is the legal name from government ID\nLinkedIn Profile Name comes from /identityMe API (e.g., \u0022John Doe\u0022)\nVerified Name comes from /verificationReport API (e.g., \u0022JOHN M DOE\u0022)\nThese names may differ intentionally",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [
+        "Important Concepts",
+        "Data Freshness"
+      ],
+      "Text": "All Tiers:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [
+        "Important Concepts",
+        "Data Freshness"
+      ],
+      "Text": "Check verification status before critical actions (payments, access grants)\nIf your application requires members to periodically reconfirm their identity or workplace verification, use the optional verifiedWithinDays parameter when calling /verificationReport. This performs an on-demand freshness check without removing any existing verification data.\nConsider caching responses temporarily to reduce API calls",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [
+        "Important Concepts",
+        "Data Freshness"
+      ],
+      "Text": "Plus Tier:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Data Freshness",
+      "Anchor": "data-freshness",
+      "SectionPath": [
+        "Important Concepts",
+        "Data Freshness"
+      ],
+      "Text": "Use lastRefreshedAt timestamp to determine when to refresh\nRecommended refresh frequency: once per day for most use cases\nUse /validationStatus API for bulk data freshness checks\nSee Data Freshness Guide for comprehensive strategies",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Common API Errors",
+      "Anchor": "common-api-errors",
+      "SectionPath": [
+        "Error Handling",
+        "Common API Errors"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status",
+        "Error",
+        "Cause",
+        "Solution"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad Request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid verificationCriteria, or comma-separated values",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use only IDENTITY or WORKPLACE; repeat parameter for multiple values",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bad Request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "verifiedWithinDays is negative",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Specify 0 or a positive integer",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "API version not available",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing or invalid LinkedIn-Version header",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Include LinkedIn-Version: {LATEST_VERSION} header",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unauthorized",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid or expired access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Refresh the access token and retry",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Forbidden",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Missing required OAuth scope",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Ensure r_verify_details scope is authorized",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Insufficient permissions (admin required)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Development tier: Non-admin member",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use admin member token or upgrade to Lite tier",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/consumer/integrations/verified-on-linkedin/guides/upgrade-to-lite-tier"
+            ],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No valid API product assigned",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Product not enabled in Developer Portal",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Add \u0022Verified on LinkedIn\u0022 product to your app",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not Found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid endpoint or member not found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify request URL and member status",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "426",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Upgrade Required",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Deprecated API version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Update LinkedIn-Version header to latest version",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "429",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Too Many Requests",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Rate limit exceeded",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry after delay specified in Retry-After header",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal Server Error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Temporary LinkedIn service issue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retry with exponential backoff; contact support if persists",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Common API Errors",
+      "Anchor": "common-api-errors",
+      "SectionPath": [
+        "Error Handling",
+        "Common API Errors"
+      ],
+      "Text": "For additional error handling guidance, see the LinkedIn API Error Handling Guide.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For All Tiers",
+      "Anchor": "for-all-tiers",
+      "SectionPath": [
+        "Best Practices",
+        "For All Tiers"
+      ],
+      "Text": "\u2705 Always use LinkedIn-Version header for API compatibility\n\u2705 Handle all verification states (fully verified, partially verified, not verified, not eligible)\n\u2705 Use verificationUrl only for redirection \u2013 Don\u0027t expose or store it\n\u2705 URL-encode your redirectUri before appending\n\u2705 Validate id field uniqueness in your system\n\u2705 Combine with /identityMe for complete member context\n\u2705 Cache responses temporarily to reduce API calls\n\u2705 Use verifiedWithinDays only when your application requires periodic re-verification.\n\u2705 Choose a freshness window appropriate for your business use case (for example, 30, 90, or 365 days).\n\u2705 Continue displaying existing verification information while prompting members to re-verify.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Development Tier",
+      "Anchor": "for-development-tier",
+      "SectionPath": [
+        "Best Practices",
+        "For Development Tier"
+      ],
+      "Text": "\u26A0\uFE0F Remember: Only admin accounts can be accessed\n\uD83D\uDCA1 Test verification flows thoroughly before requesting Lite tier\n\uD83D\uDCA1 Verify badge display in your UI",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "For Plus Tier",
+      "Anchor": "for-plus-tier",
+      "SectionPath": [
+        "Best Practices",
+        "For Plus Tier"
+      ],
+      "Text": "\u2705 Use id field (not deprecated userId)\n\u2705 Display verified names when showing identity verification\n\u2705 Show organization info for workplace verifications\n\u2705 Implement data freshness checks using lastVerifiedAt timestamps\n\u2705 Use /validationStatus API for bulk freshness validation",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "All Tiers",
+      "Anchor": "all-tiers",
+      "SectionPath": [
+        "Use Cases",
+        "All Tiers"
+      ],
+      "Text": "Display \u0022Verified on LinkedIn\u0022 badges\nConfirm member trust and authenticity\nTrigger verification flows for unverified members\nPrompt members to periodically re-confirm identity or workplace verification.\nEnforce freshness requirements for high-trust workflows without invalidating existing verification data.\nBuild trust scores based on verification status",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Plus Tier Additional Use Cases",
+      "Anchor": "plus-tier-additional-use-cases",
+      "SectionPath": [
+        "Use Cases",
+        "Plus Tier Additional Use Cases"
+      ],
+      "Text": "Display verified legal name for identity confirmation\nShow verified company affiliation with logo\nBuild detailed audit trails with verification timestamps\nImplement data freshness validation workflows\nDisplay verification methods for transparency",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "APIs",
+      "Anchor": "apis",
+      "SectionPath": [
+        "Related Resources",
+        "APIs"
+      ],
+      "Text": "Profile Details API \u2013 Get member profile information\nValidation Status API \u2013 Bulk validation checks (Plus tier only)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Guides",
+      "Anchor": "guides",
+      "SectionPath": [
+        "Related Resources",
+        "Guides"
+      ],
+      "Text": "Quickstart Guide \u2013 Get started with the API\nUpgrade to Lite Tier \u2013 Move to production\nImplementation Guide \u2013 Best practices\nData Freshness Strategies \u2013 Keep data current (Plus tier)\nCertification Requirements \u2013 Production readiness (Plus tier)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Authentication",
+      "Anchor": "authentication",
+      "SectionPath": [
+        "Related Resources",
+        "Authentication"
+      ],
+      "Text": "Authorization Code Flow \u2013 OAuth 2.0 3-legged authentication",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Other Resources",
+      "Anchor": "other-resources",
+      "SectionPath": [
+        "Related Resources",
+        "Other Resources"
+      ],
+      "Text": "Branding \u0026 UX Guidelines \u2013 Display verification badges correctly\nFAQ \u2013 Troubleshooting and answers\nRelease Notes \u2013 API updates and current versions\nOverview \u2013 Product overview and tier comparison",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

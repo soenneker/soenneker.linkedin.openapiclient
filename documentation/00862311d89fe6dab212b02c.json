@@ -1,0 +1,577 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/video-ads-usecase",
+  "Title": "Video Ads",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/vector-asset-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-campaigns",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/ads/account-structure/create-and-manage-creatives",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/usecases/ad-tech/video-ads-usecase",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Video Ads",
+      "Anchor": "video-ads",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Ads",
+      "Anchor": "video-ads",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Ads",
+      "Anchor": "video-ads",
+      "SectionPath": [],
+      "Text": "Video Ads is the next generation of our Sponsored Content products that help you engage business decision-makers on LinkedIn\u0027s mobile and desktop news feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Ads",
+      "Anchor": "video-ads",
+      "SectionPath": [],
+      "Text": "Create video ads in two ways:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Ads",
+      "Anchor": "video-ads",
+      "SectionPath": [],
+      "Text": "Post videos to your company page and sponsor the post to reach more than just your followers. With a company page video, your organization can share a first-hand look into your company culture, products, news, and events to drive engagement and conversation with members right from their LinkedIn Company Page.\nCreate video ads that bypass Company Page followers and go directly to the news feed.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Video Ads",
+      "Anchor": "video-ads",
+      "SectionPath": [],
+      "Text": "Refer to Advertising Specifications for Video Ads for video ad requirements.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "To use Video Ads, you must have the following permissions:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATOR DIRECT_SPONSORED_CONTENT_POSTER CONTENT_ADMIN",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "CONTENT_ADMIN"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and like posts on behalf of authenticated member",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "rw_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Create ads and creatives for a sponsored account",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_ads",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Read an authenticated member\u0027s ad accounts. Restricted to ad accounts in which the authenticated member has one of the following ad account roles: ACCOUNT_BILLING_ADMINACCOUNT_MANAGERCAMPAIGN_MANAGERCREATIVE_MANAGERVIEWER",
+            "Links": [],
+            "Values": [
+              "ACCOUNT_BILLING_ADMIN",
+              "ACCOUNT_MANAGER",
+              "CAMPAIGN_MANAGER",
+              "CREATIVE_MANAGER",
+              "VIEWER"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Prerequisite Values for Video Ad Campaigns",
+      "Anchor": "prerequisite-values-for-video-ad-campaigns",
+      "SectionPath": [
+        "Prerequisite Values for Video Ad Campaigns"
+      ],
+      "Text": "",
+      "Headers": [
+        "Attribute",
+        "Possible Values"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "Campaign Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_UPDATES",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Campaign Format",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SINGLE_VIDEO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Creative Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "SPONSORED_VIDEO",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "Objective Type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BRAND_AWARENESS\u003EENGAGEMENTLEAD_GENERATIONVIDEO_VIEWWEBSITE_CONVERSIONWEBSITE_VISIT",
+            "Links": [],
+            "Values": [
+              "BRAND_AWARENESS\u003EENGAGEMENT",
+              "LEAD_GENERATION",
+              "VIDEO_VIEW",
+              "WEBSITE_CONVERSION",
+              "WEBSITE_VISIT"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "New Video Ads APIs",
+      "Anchor": "new-video-ads-apis",
+      "SectionPath": [
+        "New Video Ads APIs"
+      ],
+      "Text": "The following APIs are part of the new Video Ads:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Video Ads APIs",
+      "Anchor": "new-video-ads-apis",
+      "SectionPath": [
+        "New Video Ads APIs"
+      ],
+      "Text": "Videos API - upload video (replaces Assets API).\nPosts - create posts (User Generated Content) on behalf of an organization or a member.\nCreatives - develop a creative for an Ad Campaign (replaces adCreativesV2 API).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "New Video Ads APIs",
+      "Anchor": "new-video-ads-apis",
+      "SectionPath": [
+        "New Video Ads APIs"
+      ],
+      "Text": "Using the Videos APIs reduces the number of distinct calls you need to make to create ads with inline post resources.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Updated Schemas",
+      "Anchor": "updated-schemas",
+      "SectionPath": [
+        "Updated Schemas"
+      ],
+      "Text": "The schemas for the new APIs are more simplified and consistent when compared to previous creative APIs. We recommend that you don\u0027t map to previous API schemas (e.g., Assets, ugcPosts, and others) as LinkedIn is working towards onboarding for all types of ad formats.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Workflow",
+      "Anchor": "workflow",
+      "SectionPath": [
+        "Workflow"
+      ],
+      "Text": "A video ad can be created in one of the following ways using the Videos APIs:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Video Ad with a New Post",
+      "Anchor": "create-a-video-ad-with-a-new-post",
+      "SectionPath": [
+        "Workflow",
+        "Create a Video Ad with a New Post"
+      ],
+      "Text": "Upload a Videos\n\nUpload thumbnails\n\nUpload captions\n\nCreate a Post\n\nCreate a Video Campaign\n\nCreate a Video Ad Creative",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Video Ad with an Inline Post",
+      "Anchor": "create-a-video-ad-with-an-inline-post",
+      "SectionPath": [
+        "Workflow",
+        "Create a Video Ad with an Inline Post"
+      ],
+      "Text": "Upload a Video\nCreate a Video Campaign\nCreate a Video Ad Creative with inlineContent",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Steps to Complete Video Ads",
+      "Anchor": "steps-to-complete-video-ads",
+      "SectionPath": [
+        "Steps to Complete Video Ads"
+      ],
+      "Text": "The following sections provide more information about how to complete video ads using the Video Ads API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload a Video",
+      "Anchor": "upload-a-video",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Upload a Video"
+      ],
+      "Text": "Historically, uploading of videos and images has been completed using the Assets API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Upload a Video",
+      "Anchor": "upload-a-video",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Upload a Video"
+      ],
+      "Text": "The Videos API replaces the Assets API with benefits such as support to upload captions and thumbnails, simplified, and consistent schema, and a singular upload mechanism irrespective of the video\u0027s file size. Refer to Videos API Betafor more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Post",
+      "Anchor": "create-a-post",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Create a Post"
+      ],
+      "Text": "The Posts API provides a unified API to manage all types of content when fully launched. For video ads, the Posts API has been designed to reference an uploaded video file along with sponsored campaign information. To learn more, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Post",
+      "Anchor": "create-a-post",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Create a Post"
+      ],
+      "Text": "Refer to Posts API for more information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create a Campaign",
+      "Anchor": "create-a-campaign",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Create a Campaign"
+      ],
+      "Text": "The steps to create a video campaign remain the same as described in Video Ad Campaigns.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Design a Creative",
+      "Anchor": "design-a-creative",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Design a Creative"
+      ],
+      "Text": "The adCreativesV2 API has historically been used to design creatives for a campaign.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Design a Creative",
+      "Anchor": "design-a-creative",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Design a Creative"
+      ],
+      "Text": "The Creatives API features video ad format fields for easier creative design development. LinkedIn intends to include the rest of the possible ad formats in forthcoming releases.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Design a Creative",
+      "Anchor": "design-a-creative",
+      "SectionPath": [
+        "Steps to Complete Video Ads",
+        "Design a Creative"
+      ],
+      "Text": "A new feature has been introduced in the Creative API in which a post can be created inline to save the exclusive call to create a post. To learn more, click here.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP STATUS CODE",
+        "ERROR MESSAGE",
+        "ERROR DESCRIPTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_VIDEO_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This Video ID is invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_CALL_TO_ACTION",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{cta} is an invalid Call To Action",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "{cta} is an invalid URL",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EXPIRED_UPLOAD_URL",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Video upload URL is expired",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INVALID_URN_ID",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "This URN Id is invalid",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find entity",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MEDIA_ASSET_PROCESSING_FAILED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media asset failed processing",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "MEDIA_ASSET_WAITING_UPLOAD",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Media asset is waiting upload",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Help Articles",
+      "Anchor": "help-articles",
+      "SectionPath": [
+        "Help Articles"
+      ],
+      "Text": "LinkedIn Marketing Solutions\nLinkedIn Video Ads\nCampaign Manager User Roles for Video Ads\nAdvertising Specifications for Video Ads",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

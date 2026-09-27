@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LinkedIn.OpenApiClient.Models
 {
+    /// <summary>
+    /// requestMetaData Object with sponsoredAccountUrn to identify the sponsored ad account where the authenticated user has a valid user role. See details below.Documented type: requestMetaData ObjectRequirement: Yes
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -21,6 +22,14 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #nullable restore
 #else
         public string SponsoredAccount { get; set; }
+#endif
+        /// <summary>The sponsored ad account URN where the authenticated user has a valid ad account user role.Documented type: URNRequirement: Yes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SponsoredAccountUrn { get; set; }
+#nullable restore
+#else
+        public string SponsoredAccountUrn { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.AudienceInsightsWhatAreTheTopJobFunctionsAmongMembersWithProductManagementSkillsInNyRequestRequestRequestMetaData"/> and sets the default values.
@@ -48,6 +57,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "sponsoredAccount", n => { SponsoredAccount = n.GetStringValue(); } },
+                { "sponsoredAccountUrn", n => { SponsoredAccountUrn = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +68,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("sponsoredAccount", SponsoredAccount);
+            writer.WriteStringValue("sponsoredAccountUrn", SponsoredAccountUrn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

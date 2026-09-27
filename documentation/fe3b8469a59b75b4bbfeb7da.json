@@ -1,0 +1,1354 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
+  "Title": "Original Articles",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/error-responses",
+    "https://learn.microsoft.com/en-us/linkedin/dma/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-data-portability-overview",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/content-series",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/original-articles",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/publishing/series-subscribers",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/settings/organization-authorization",
+    "https://learn.microsoft.com/en-us/linkedin/dma/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Original Articles",
+      "Anchor": "original-articles",
+      "SectionPath": [],
+      "Text": "The OriginalArticles API returns details for original articles (i.e. authors, title, coverImage, contentHtml, etc.).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Original Articles",
+      "Anchor": "original-articles",
+      "SectionPath": [],
+      "Text": "The service provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Original Articles",
+      "Anchor": "original-articles",
+      "SectionPath": [],
+      "Text": "GET - A single OriginalArticle entity for the given linkedInArticleUrn.\nBATCH_GET - A list of OriginalArticle entities for the given set of linkedInArticleUrns.\nFindByPermlink - A single OriginalArticle entity for the given permlink.\nFindByAuthor - A list of OriginalArticle entities for the given authorUrn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve your organization\u2019s posts, comments, reactions, and other engagement data. Retrieve your organization\u2019s pages and their reporting data (including follower, visitor and content analytics). Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API has member data that is obfuscated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Author field is being encoded to PersonUrn from its respective MemberUrn, only if the author is of type MemberUrn",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "linkedInArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedInArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The URN of the original article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "activity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ActivityUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ActivityUrn of the original article.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/activities?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "newsArticle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ArticleUrn of the original article, valid only after the article has been published. Can be resolved via the DMA Ingested Content Summaries API.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/ingested-content-summaries?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn / OrganizationUrn",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/pages-profiles/organizations?view=li-dma-data-portability-2026-08"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The author of the original article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contentHtml",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full text of the content of original article with HTML markup.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cover image of original article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverMedia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image of the rich Media in the cover slot of the article, such as a Slideshow.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "coverMediaV2",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleCoverMedia",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Cover media of the article, could be image or video.Note: Applicable from versions 202602 and later.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "createdAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the creation of this content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "displayImage",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Image",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Display image for use when displaying the article around the site.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "spamValue",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Derived from contentCertificationRecord. Indicates whether this article has been flagged as spam (true) or not spam (false) by automated content classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModifiedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A timestamp corresponding to the last modification of this article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Locale",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale that the article is published in.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "permlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique string used to compose the permanent link (URL) to this article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publishedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time this article was published. This is valid only after the article has been published so it is optional.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "readingDuration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "float",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The estimated reading time of the article in minutes according to the content.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seoDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Search Engine Optimization (SEO) description of the article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "seoTitle",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Search Engine Optimization (SEO) title of the article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "series",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ContentSeriesUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The Series this article belongs to.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State of the article (draft, published, deleted, etc.).",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "structuredContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "StructuredContent",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Full content of the article version, represented as structured data.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Title of the article.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "publishCommentary",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AttributedText",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Custom message and annotations written by the author for article distribution.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UserGeneratedContentPostUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The ugcPost created when the article is initially published. Can be resolved via the DMA Posts API\u0027s BATCH_GET.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-08#batch_get"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "version",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Version number of this article\u2019s contents.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOriginalArticles/encoded LinkedInArticleUrn",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOriginalArticles/urn%3Ali%3AlinkedInArticle%3A7132679965661114368?context=(value:READER)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022readingDuration\u0022: 1.0,\n    \u0022lastModifiedAt\u0022: 1701413121000,\n    \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7132680219055779841\u0022,\n    \u0022publishedAt\u0022: 1700563483000,\n    \u0022newsArticle\u0022: \u0022urn:li:article:7478008014918459258\u0022,\n    \u0022linkedInArticleUrn\u0022: \u0022urn:li:linkedInArticle:7132679965661114368\u0022,\n    \u0022author\u0022: {\n        \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022,\n        \u0022author\u0022: \u0022urn:li:person:f3Hnz-K5rc\u0022\n    },\n    \u0022structuredContent\u0022: {\n        \u0022content\u0022: [\n            {\n                \u0022textBlock\u0022: {\n                    \u0022type\u0022: \u0022HEADING1\u0022,\n                    \u0022content\u0022: \u0022Test Description\u0022\n                }\n            },\n            {\n                \u0022dividerBlock\u0022: {\n                    \u0022dividerBlockType\u0022: \u0022DEFAULT\u0022\n                }\n            },\n            {\n                \u0022textBlock\u0022: {\n                    \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                    \u0022content\u0022: \u0022Divider Testing\u0022\n                }\n            },\n            {\n                \u0022textBlock\u0022: {\n                    \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                    \u0022content\u0022: \u0022\u0022\n                }\n            },\n            {\n                \u0022imageBlock\u0022: {\n                    \u0022caption\u0022: \u00222222!\u0022,\n                    \u0022content\u0022: {\n                        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQF3f2JoGF0mxQ/article-inline_image-shrink_1000_1488/0/1701412345035?e=1706745600\u0026v=beta\u0026t=Ya-kQm6BOKi8L1C67P9CItM43AyfwpOysozuhCgu370\u0022,\n                        \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n                        \u0022status\u0022: \u0022AVAILABLE\u0022\n                    },\n                    \u0022textWrapping\u0022: \u0022RESIZE\u0022\n                }\n            },\n            {\n                \u0022textBlock\u0022: {\n                    \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                    \u0022content\u0022: \u0022\u0022\n                }\n            }\n        ]\n    },\n    \u0022contentHtml\u0022: \u0022\u003Ch2\u003ETest Description\u003C/h2\u003E\u003Chr\u003E\u003Cp\u003EDivider Testing\u003C/p\u003E\u003Cp\u003E\u003C/p\u003E\u003Cfigure\u003E\u003Cimg data-media-urn=\\\u0022\\\u0022 data-li-src=\\\u0022https://media.licdn.com/dms/image/D4E12AQF3f2JoGF0mxQ/article-inline_image-shrink_1000_1488/0/1701412345035?e=1706745600\u0026amp;v=beta\u0026amp;t=Ya-kQm6BOKi8L1C67P9CItM43AyfwpOysozuhCgu370\\\u0022 src=\\\u0022//:0\\\u0022\u003E\u003Cfigcaption\u003E2222!\u003C/figcaption\u003E\u003C/figure\u003E\u003Cp\u003E\u003C/p\u003E\u0022,\n    \u0022locale\u0022: {\n        \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022title\u0022: \u0022Test Image Article One\u0022,\n    \u0022version\u0022: 97,\n    \u0022spamValue\u0022: false,\n    \u0022createdAt\u0022: 1700563422000,\n    \u0022displayImage\u0022: {\n        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQEbTVSomcXzqg/article-cover_image-shrink_600_2000/0/1701238305141?e=1706745600\u0026v=beta\u0026t=K3ThRthuzva3unG3pfMQegiFsnUgibokw75wy-EoGXs\u0022,\n        \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n        \u0022status\u0022: \u0022AVAILABLE\u0022\n    },\n    \u0022coverImage\u0022: {\n        \u0022caption\u0022: \u0022test 1100\u0022,\n        \u0022originalImage\u0022: {\n            \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQEbTVSomcXzqg/article-cover_image-shrink_600_2000/0/1701238305141?e=1706745600\u0026v=beta\u0026t=K3ThRthuzva3unG3pfMQegiFsnUgibokw75wy-EoGXs\u0022,\n            \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        }\n    },\n    \u0022state\u0022: \u0022PUBLISHED\u0022,\n    \u0022permlink\u0022: \u0022test-image-article-leia-team-one-e0ure\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "linkedInArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LinkedInArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn to fetch the Original Article details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn:li:linkedInArticle:7132679965661114368",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "context",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleViewContextRecord",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleViewContext for the article (READER/AUTHOR)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(value:READER)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOriginalArticles?ids=List(encoded LinkedInArticleUrn)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "BATCH_GET",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOriginalArticles?ids=List(urn%3Ali%3AlinkedInArticle%3A7132679965661114368,urn%3Ali%3AlinkedInArticle%3A7135610650210283520)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "BATCH_GET",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u0022urn:li:linkedInArticle:7135610650210283520\u0022: {\n            \u0022readingDuration\u0022: 1.0,\n            \u0022lastModifiedAt\u0022: 1701430673000,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7135610700025974784\u0022,\n            \u0022publishedAt\u0022: 1701262164000,\n            \u0022newsArticle\u0022: \u0022urn:li:article:7921757498019220986\u0022,\n            \u0022linkedInArticleUrn\u0022: \u0022urn:li:linkedInArticle:7135610650210283520\u0022,\n            \u0022author\u0022: {\n                \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022,\n                \u0022author\u0022: \u0022urn:li:person:f3Hnz-K5rc\u0022\n            },\n            \u0022structuredContent\u0022: {\n                \u0022content\u0022: [\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022testing\u0022\n                        }\n                    },\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022Hello!\u0022\n                        }\n                    }\n                ]\n            },\n            \u0022contentHtml\u0022: \u0022\u003Cp\u003Etesting\u003C/p\u003E\u003Cp\u003EHello!\u003C/p\u003E\u0022,\n            \u0022locale\u0022: {\n                \u0022language\u0022: \u0022no\u0022\n            },\n            \u0022title\u0022: \u0022testing\u0022,\n            \u0022version\u0022: 6,\n            \u0022spamValue\u0022: false,\n            \u0022createdAt\u0022: 1701262152000,\n            \u0022displayImage\u0022: {\n                \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4D12AQG_GHNw4DmRDg/article-cover_image-shrink_600_2000/0/1701262150855?e=1706745600\u0026v=beta\u0026t=XCP6iOWSHKjONgmax0VX6outGP2NBoowJFpJwYgoKww\u0022,\n                \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n                \u0022status\u0022: \u0022AVAILABLE\u0022\n            },\n            \u0022coverImage\u0022: {\n                \u0022caption\u0022: \u0022Test art!\u0022,\n                \u0022originalImage\u0022: {\n                    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4D12AQG_GHNw4DmRDg/article-cover_image-shrink_600_2000/0/1701262150855?e=1706745600\u0026v=beta\u0026t=XCP6iOWSHKjONgmax0VX6outGP2NBoowJFpJwYgoKww\u0022,\n                    \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n                    \u0022status\u0022: \u0022AVAILABLE\u0022\n                }\n            },\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022permlink\u0022: \u0022testing-leia-team-one-ifhkf\u0022\n        },\n        \u0022urn:li:linkedInArticle:7132679965661114368\u0022: {\n            \u0022readingDuration\u0022: 1.0,\n            \u0022lastModifiedAt\u0022: 1701413121000,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7132680219055779841\u0022,\n            \u0022publishedAt\u0022: 1700563483000,\n            \u0022newsArticle\u0022: \u0022urn:li:article:7478008014918459258\u0022,\n            \u0022linkedInArticleUrn\u0022: \u0022urn:li:linkedInArticle:7132679965661114368\u0022,\n            \u0022author\u0022: {\n                \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022,\n                \u0022author\u0022: \u0022urn:li:person:f3Hnz-K5rc\u0022\n            },\n            \u0022structuredContent\u0022: {\n                \u0022content\u0022: [\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022HEADING1\u0022,\n                            \u0022content\u0022: \u0022Test Description\u0022\n                        }\n                    },\n                    {\n                        \u0022dividerBlock\u0022: {\n                            \u0022dividerBlockType\u0022: \u0022DEFAULT\u0022\n                        }\n                    },\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022Divider Testing\u0022\n                        }\n                    },\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022\u0022\n                        }\n                    },\n                    {\n                        \u0022imageBlock\u0022: {\n                            \u0022caption\u0022: \u00222222!\u0022,\n                            \u0022content\u0022: {\n                                \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQF3f2JoGF0mxQ/article-inline_image-shrink_1000_1488/0/1701412345035?e=1706745600\u0026v=beta\u0026t=Ya-kQm6BOKi8L1C67P9CItM43AyfwpOysozuhCgu370\u0022,\n                                \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n                                \u0022status\u0022: \u0022AVAILABLE\u0022\n                            },\n                            \u0022textWrapping\u0022: \u0022RESIZE\u0022\n                        }\n                    },\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022\u0022\n                        }\n                    }\n                ]\n            },\n            \u0022contentHtml\u0022: \u0022\u003Ch2\u003ETest Description\u003C/h2\u003E\u003Chr\u003E\u003Cp\u003EDivider Testing\u003C/p\u003E\u003Cp\u003E\u003C/p\u003E\u003Cfigure\u003E\u003Cimg data-media-urn=\\\u0022\\\u0022 data-li-src=\\\u0022https://media.licdn.com/dms/image/D4E12AQF3f2JoGF0mxQ/article-inline_image-shrink_1000_1488/0/1701412345035?e=1706745600\u0026amp;v=beta\u0026amp;t=Ya-kQm6BOKi8L1C67P9CItM43AyfwpOysozuhCgu370\\\u0022 src=\\\u0022//:0\\\u0022\u003E\u003Cfigcaption\u003E2222!\u003C/figcaption\u003E\u003C/figure\u003E\u003Cp\u003E\u003C/p\u003E\u0022,\n            \u0022locale\u0022: {\n                \u0022language\u0022: \u0022en\u0022\n            },\n            \u0022title\u0022: \u0022Test Image Article One\u0022,\n            \u0022version\u0022: 97,\n            \u0022spamValue\u0022: false,\n            \u0022createdAt\u0022: 1700563422000,\n            \u0022displayImage\u0022: {\n                \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQEbTVSomcXzqg/article-cover_image-shrink_600_2000/0/1701238305141?e=1706745600\u0026v=beta\u0026t=K3ThRthuzva3unG3pfMQegiFsnUgibokw75wy-EoGXs\u0022,\n                \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n                \u0022status\u0022: \u0022AVAILABLE\u0022\n            },\n            \u0022coverImage\u0022: {\n                \u0022caption\u0022: \u0022test 1100\u0022,\n                \u0022originalImage\u0022: {\n                    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQEbTVSomcXzqg/article-cover_image-shrink_600_2000/0/1701238305141?e=1706745600\u0026v=beta\u0026t=K3ThRthuzva3unG3pfMQegiFsnUgibokw75wy-EoGXs\u0022,\n                    \u0022downloadUrlExpiresAt\u0022: 1706745600000,\n                    \u0022status\u0022: \u0022AVAILABLE\u0022\n                }\n            },\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022permlink\u0022: \u0022test-image-article-leia-team-one-e0ure\u0022\n        }\n    },\n    \u0022statuses\u0022: {},\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-1",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "BATCH_GET",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of LinkedInArticleUrn",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Set of LinkedInArticleUrns to fetch the Original Articles\u0027 details",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(urn%3Ali%3AlinkedInArticle%3A7132679965661114368,urn%3Ali%3AlinkedInArticle%3A7135610650210283520)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOriginalArticles?q=permlink\u0026permlink=permlink",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOriginalArticles?q=permlink\u0026permlink=test-image-article-leia-team-one-e0ure\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 10,\n        \u0022links\u0022: []\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022lastModifiedAt\u0022: 1701756305000,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7132680219055779841\u0022,\n            \u0022publishedAt\u0022: 1700563483000,\n            \u0022newsArticle\u0022: \u0022urn:li:article:7478008014918459258\u0022,\n            \u0022linkedInArticleUrn\u0022: \u0022urn:li:linkedInArticle:7132679965661114368\u0022,\n            \u0022author\u0022: {\n                \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022\n            },\n            \u0022structuredContent\u0022: {\n                \u0022content\u0022: [\n                    {\n                        \u0022imageBlock\u0022: {\n                            \u0022content\u0022: {\n                                \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4D12AQErvL_Cghp67w/article-inline_image-shrink_1000_1488/0/1701756180511?e=1707350400\u0026v=beta\u0026t=eMOYv3G4VcsuIIvSMtTtgqf9RrWaF1TXJL-XLrBtIts\u0022,\n                                \u0022downloadUrlExpiresAt\u0022: 1707350400000,\n                                \u0022status\u0022: \u0022AVAILABLE\u0022\n                            },\n                            \u0022textWrapping\u0022: \u0022RESIZE\u0022\n                        }\n                    },\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022HEADING1\u0022,\n                            \u0022content\u0022: \u0022\u0022\n                        }\n                    },\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022\u0022\n                        }\n                    }\n                ]\n            },\n            \u0022contentHtml\u0022: \u0022\u003Cfigure\u003E\u003Cimg data-media-urn=\\\u0022\\\u0022 data-li-src=\\\u0022https://media.licdn.com/dms/image/D4D12AQErvL_Cghp67w/article-inline_image-shrink_1000_1488/0/1701756180511?e=1707350400\u0026amp;v=beta\u0026amp;t=eMOYv3G4VcsuIIvSMtTtgqf9RrWaF1TXJL-XLrBtIts\\\u0022 src=\\\u0022//:0\\\u0022\u003E\u003Cfigcaption\u003E\u003C/figcaption\u003E\u003C/figure\u003E\u003Ch2\u003E\u003C/h2\u003E\u003Cp\u003E\u003C/p\u003E\u0022,\n            \u0022locale\u0022: {\n                \u0022language\u0022: \u0022unknown\u0022\n            },\n            \u0022title\u0022: \u0022Test Image Article One\u0022,\n            \u0022version\u0022: 108,\n            \u0022spamValue\u0022: false,\n            \u0022createdAt\u0022: 1700563422000,\n            \u0022displayImage\u0022: {\n                \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQEbTVSomcXzqg/article-cover_image-shrink_600_2000/0/1701238305141?e=1707350400\u0026v=beta\u0026t=gGpQCJCh4-VApsd-0A6I1xrhV2MKes4ygoVTs1nWGwc\u0022,\n                \u0022downloadUrlExpiresAt\u0022: 1707350400000,\n                \u0022status\u0022: \u0022AVAILABLE\u0022\n            },\n            \u0022coverImage\u0022: {\n                \u0022caption\u0022: \u0022test 1100\u0022,\n                \u0022originalImage\u0022: {\n                    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E12AQEbTVSomcXzqg/article-cover_image-shrink_600_2000/0/1701238305141?e=1707350400\u0026v=beta\u0026t=gGpQCJCh4-VApsd-0A6I1xrhV2MKes4ygoVTs1nWGwc\u0022,\n                    \u0022downloadUrlExpiresAt\u0022: 1707350400000,\n                    \u0022status\u0022: \u0022AVAILABLE\u0022\n                }\n            },\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022permlink\u0022: \u0022test-image-article-leia-team-one-e0ure\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "permlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique string used to compose the permanent link (URL) to this article",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "test-image-article-leia-team-one-e0ure",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Query Parameters"
+      ],
+      "Text": "Tip",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-2",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByPermlink",
+        "Query Parameters"
+      ],
+      "Text": "How to determine which organizational pages you can query:\nTo find the organizations you can query {{resource, plural}} for, please use OrganizationAuthorization\u2019s BATCH_FIND by AuthorizationAction and AuthenticatedMember with an authorization action of {{authorization action}}.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByAuthor",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByAuthor",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaOriginalArticles?q=author\u0026author=encodedUrn\u0026start=startValue\u0026count=countValue\u0026state=(value:articleState)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByAuthor",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaOriginalArticles?q=author\u0026author=urn%3Ali%3Aorganization%3A49370076\u0026start=0\u0026count=1\u0026state=(value:PUBLISHED)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByAuthor",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022paging\u0022: {\n        \u0022start\u0022: 0,\n        \u0022count\u0022: 1,\n        \u0022links\u0022: [\n            {\n                \u0022type\u0022: \u0022application/json\u0022,\n                \u0022rel\u0022: \u0022next\u0022,\n                \u0022href\u0022: \u0022/rest/dmaOriginalArticles?q=author\u0026author=urn%3Ali%3Aorganization%3A49370076\u0026start=1\u0026count=1\u0026state=(value:PUBLISHED)\u0022\n            }\n        ]\n    },\n    \u0022elements\u0022: [\n        {\n            \u0022readingDuration\u0022: 1.0,\n            \u0022lastModifiedAt\u0022: 1701842146000,\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7138043316427714561\u0022,\n            \u0022publishedAt\u0022: 1701842145000,\n            \u0022newsArticle\u0022: \u0022urn:li:article:7991863195163658602\u0022,\n            \u0022linkedInArticleUrn\u0022: \u0022urn:li:linkedInArticle:7138043261088079874\u0022,\n            \u0022author\u0022: {\n                \u0022type\u0022: \u0022PRIMARY_AUTHOR\u0022,\n                \u0022author\u0022: \u0022urn:li:organization:49370076\u0022\n            },\n            \u0022structuredContent\u0022: {\n                \u0022content\u0022: [\n                    {\n                        \u0022textBlock\u0022: {\n                            \u0022type\u0022: \u0022PARAGRAPH\u0022,\n                            \u0022content\u0022: \u0022 article!!\u0022\n                        }\n                    }\n                ]\n            },\n            \u0022contentHtml\u0022: \u0022\u003Cp\u003E article!!\u003C/p\u003E\u0022,\n            \u0022locale\u0022: {\n                \u0022language\u0022: \u0022ro\u0022\n            },\n            \u0022title\u0022: \u0022New test\u0022,\n            \u0022version\u0022: 4,\n            \u0022spamValue\u0022: false,\n            \u0022createdAt\u0022: 1701842131000,\n            \u0022series\u0022: \u0022urn:li:contentSeries:6876969483483832320\u0022,\n            \u0022state\u0022: \u0022PUBLISHED\u0022,\n            \u0022permlink\u0022: \u0022new-test-domaine-des-burger-yy3we\u0022\n        }\n    ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters-3",
+      "SectionPath": [
+        "Retrieve Original Article data",
+        "FindByAuthor",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "author",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PersonUrn / OrganizationUrn](../pages-profiles/organizations.md)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The author of the original article",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "urn%3Ali%3Aorganization%3A49370076",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "pagingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "PagingContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paging parameters for the request",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "start=0\u0026count=1",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ArticleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "State of the article (draft, published, deleted, etc.)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(value:PUBLISHED)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "400",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "BAD_REQUEST",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Invalid ArticleViewContext / ArticleState provided",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide valid ArticleViewContext / ArticleState",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UNAUTHORIZED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Viewed is not authorized to view articles with the specified ArticleState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure the viewer has the required authorization",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access this endpoint",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with this endpoint",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Could not find an OriginalArticle for the given articleUrn / permlink",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Provide valid articleUrn / permlink",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

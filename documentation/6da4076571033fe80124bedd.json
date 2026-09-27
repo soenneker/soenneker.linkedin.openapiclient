@@ -1,0 +1,257 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-activityurn",
+  "Title": "Decoration Change to Activity URNs",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/compliance/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/decoration-change-with-activityurn",
+    "https://learn.microsoft.com/en-us/linkedin/compliance/integrations/compliance-events/resource-references/socialactions",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Decoration Change to Activity URNs",
+      "Anchor": "decoration-change-to-activity-urns",
+      "SectionPath": [],
+      "Text": "This page will outline the changes for decoration on activity URN in processedActivity in Compliance Events API . This change took effect on October 20, 2018.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Decoration Change to Activity URNs",
+      "Anchor": "decoration-change-to-activity-urns",
+      "SectionPath": [],
+      "Text": "Below outlines the new activity URN schema and a sample response:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "New Activity URN Schema",
+      "Anchor": "new-activity-urn-schema",
+      "SectionPath": [
+        "New Activity URN Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Object Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "actor",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity that performed the action.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "domainEntity",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "optional URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Urn referencing the action that was performed. This URN can be resolved to get details of the action. For example, if a share action was performed then this field will capture URN of the share. This will be further decorated to provide more contextual reference.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Entity on which action was performed.\u00A0This will be further decorated to provide more contextual reference.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "verb",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Type of the action that was performed.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "schema format of activity urn decoration response",
+      "Anchor": "schema-format-of-activity-urn-decoration-response",
+      "SectionPath": [
+        "schema format of activity urn decoration response"
+      ],
+      "Text": "{\n  \u0022object\u0022: \u0022urn:li:activity:6422861848709726123\u0022,  \n  \u0022object~\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022domainEntity\u0022: \u0022urn:li:share:6422861848344821123\u0022,\n    \u0022domainEntity~\u0022: {...},\n    \u0022object\u0022: \u0022urn:li:share:6422861848344821123\u0022,\n    \u0022object~\u0022: {...},\n    \u0022verb\u0022: \u0022linkedin:share\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "schema format of activity urn decoration response",
+      "Anchor": "schema-format-of-activity-urn-decoration-response",
+      "SectionPath": [
+        "schema format of activity urn decoration response"
+      ],
+      "Text": "Activity URNs appear mostly in\u00A0object\u00A0fields in Social Actions resources. Below are examples to demonstrate what the new decoration schemas will be:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "schema format of activity urn decoration response",
+      "Anchor": "schema-format-of-activity-urn-decoration-response",
+      "SectionPath": [
+        "schema format of activity urn decoration response"
+      ],
+      "Text": "Share Type Activity\nWork Anniversary Type Activity\nJob Change Type Activity\nComment Type Activity",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "current sample response",
+      "Anchor": "current-sample-response",
+      "SectionPath": [
+        "Share Type Activity",
+        "current sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022urn:li:activity:6422861848709726123\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: {\n        \u0022urn\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022urn~\u0022: {...}\n      },\n      \u0022verb\u0022: {\n        \u0022properties\u0022: {\n          \u0022li.verbs.linkedin.Post\u0022: {\n            \u0022shareUrn\u0022: \u0022urn:li:share:6422861848344821123\u0022,\n            \u0022shareUrn~\u0022: {\n              \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n              \u0022owner~\u0022: {...},\n              \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n                \u0022actor~\u0022: {...},\n                \u0022time\u0022: 1531329595651\n              },\n              \u0022text\u0022: {\n                \u0022text\u0022: \u0022testing\u0022\n              },\n              \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:3XwTkgAJbS\u0022,\n                \u0022time\u0022: 1531329806139\n              },\n              \u0022distribution\u0022: {\n                \u0022linkedInDistributionTarget\u0022: {\n                  \u0022visibleToGuest\u0022: true\n                }\n              }\n            }\n          }\n        }\n      },\n      \u0022object\u0022: {}\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6422861848709726123\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "new sample response",
+      "Anchor": "new-sample-response",
+      "SectionPath": [
+        "Share Type Activity",
+        "new sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022urn:li:activity:6422861848709726123\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022owner~\u0022: {...},\n        \u0022created\u0022: {\n          \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n          \u0022actor~\u0022: {...},\n          \u0022time\u0022: 1531329595651\n        },\n        \u0022text\u0022: {\n          \u0022text\u0022: \u0022this is a share\u0022\n        },\n        \u0022lastModified\u0022: {\n          \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n          \u0022time\u0022: 1531329806139\n        },\n        \u0022distribution\u0022: {\n          \u0022linkedInDistributionTarget\u0022: {\n            \u0022visibleToGuest\u0022: true\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:share\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:share:6422861848344821123\u0022,\n      \u0022object\u0022: \u0022urn:li:share:6422861848344821123\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6422861848709726123\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "current sample response",
+      "Anchor": "current-sample-response-1",
+      "SectionPath": [
+        "Work Anniversary Type Activity",
+        "current sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022urn:li:activity:6424089203360960123\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: {\n        \u0022urn\u0022: \u0022urn:li:person:ymtUfDtizK\u0022,\n        \u0022urn~\u0022: {...}\n      },\n      \u0022verb\u0022: {\n        \u0022properties\u0022: {\n          \u0022li.verbs.linkedin.Anniversary\u0022: {}\n        }\n      },\n      \u0022object\u0022: {\n        \u0022com.linkedin.ucp.ObjectSummary\u0022: {\n          \u0022type\u0022: \u0022linkedin:anniversary\u0022,\n          \u0022properties\u0022: {\n            \u0022li.objects.linkedin.Anniversary\u0022: {\n              \u0022numYears\u0022: 4,\n              \u0022sinceMonth\u0022: 7,\n              \u0022positionUrn\u0022: \u0022urn:li:position:(urn:li:person:ymtUfDtizK,717780123)\u0022,\n              \u0022companyName\u0022: \u0022LinkedIn\u0022,\n              \u0022positionUrn~\u0022: {\n                \u0022companyName\u0022: {\n                  \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022LinkedIn\u0022\n                  },\n                  \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                  }\n                },\n                \u0022title\u0022: {\n                  \u0022localized\u0022: {\n                    \u0022en_US\u0022: \u0022API Developer\u0022\n                  },\n                  \u0022preferredLocale\u0022: {\n                    \u0022country\u0022: \u0022US\u0022,\n                    \u0022language\u0022: \u0022en\u0022\n                  }\n                }\n              }\n            }\n          }\n        }\n      },\n      \u0022target\u0022: {\n        \u0022urn\u0022: \u0022urn:li:company:1384\u0022,\n        \u0022urn~\u0022: {...},\n        \u0022title\u0022: \u0022LinkedIn\u0022,\n        \u0022type\u0022: \u0022linkedin:company\u0022\n      }\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6424089203360960123\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "new sample response",
+      "Anchor": "new-sample-response-1",
+      "SectionPath": [
+        "Work Anniversary Type Activity",
+        "new sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022urn:li:activity:6424089203360960123\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:ymtUfDtizK\u0022,\n      \u0022object~\u0022: {\n        \u0022companyName\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022LinkedIn\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        },\n        \u0022title\u0022: {\n          \u0022localized\u0022: {\n            \u0022en_US\u0022: \u0022API Developer\u0022\n          },\n          \u0022preferredLocale\u0022: {\n            \u0022country\u0022: \u0022US\u0022,\n            \u0022language\u0022: \u0022en\u0022\n          }\n        }\n      },\n      \u0022domainEntity~\u0022: {\n        \u0022createdAt\u0022: 1524166778647,\n        \u0022detail\u0022: {\n          \u0022com.linkedin.props.WorkAnniversary\u0022: {\n            \u0022date\u0022: {\n              \u0022month\u0022: 7,\n              \u0022year\u0022: 2014,\n              \u0022day\u0022: 1\n            },\n            \u0022numberOfYears\u0022: 4,\n            \u0022affiliate!\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022LinkedIn\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022API Developer\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022affiliate\u0022: \u0022urn:li:position:(urn:li:person:ymtUfDtizK,717780123)\u0022\n          }\n        }\n      },\n      \u0022actor~\u0022: {\n        ...\n      },\n      \u0022verb\u0022: \u0022linkedin:anniversary\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:prop:(WORK_ANNIVERSARY,BobSmith123456)\u0022,\n      \u0022object\u0022: \u0022urn:li:position:(urn:li:person:ymtUfDtizK,717780123)\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6424089203360960123\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "current sample response",
+      "Anchor": "current-sample-response-2",
+      "SectionPath": [
+        "Job Change Type Activity",
+        "current sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022object\u0022: \u0022urn:li:activity:6422955713366237123\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: {\n        \u0022urn\u0022: \u0022urn:li:person:OdrZ9RhHMX\u0022,\n        \u0022urn~\u0022: {...}\n      },\n      \u0022verb\u0022: {\n        \u0022properties\u0022: {\n          \u0022li.verbs.linkedin.Profile_change_position\u0022: {}\n        }\n      },\n      \u0022object\u0022: {\n        \u0022com.linkedin.ucp.ObjectSummary\u0022: {\n          \u0022type\u0022: \u0022linkedin:job-change\u0022,\n          \u0022properties\u0022: {\n            \u0022li.objects.linkedin.Job_change\u0022: {\n              \u0022profileUpdates\u0022: [\n                {\n                  \u0022title\u0022: \u0022Co-Founder\u0022,\n                  \u0022type\u0022: \u0022linkedin:position\u0022\n                }\n              ]\n            }\n          }\n        }\n      },\n      \u0022target\u0022: {\n        \u0022urn\u0022: \u0022urn:li:company:0000\u0022,\n        \u0022urn~\u0022: {\n          \u0022names\u0022: [\n            {\n              \u0022name\u0022: \u0022LinkedIn\u0022,\n              \u0022active\u0022: true,\n              \u0022locale\u0022: \u0022en_US\u0022,\n              \u0022type\u0022: \u0022CANONICAL\u0022\n            }\n          ]\n        },\n        \u0022title\u0022: \u0022LinkedIn\u0022,\n        \u0022type\u0022: \u0022linkedin:company\u0022\n      }\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6422955713366237123\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "new sample response",
+      "Anchor": "new-sample-response-2",
+      "SectionPath": [
+        "Job Change Type Activity",
+        "new sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022object\u0022: \u0022urn:li:activity:6422955713366237123\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:OdrZ9RhHMX\u0022,\n      \u0022domainEntity~\u0022: {\n        \u0022createdAt\u0022: 1529711358277,\n        \u0022detail\u0022: {\n          \u0022com.linkedin.props.PositionChange\u0022: {\n            \u0022newPosition~\u0022: {\n              \u0022companyName\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022LinkedIn\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              },\n              \u0022title\u0022: {\n                \u0022localized\u0022: {\n                  \u0022en_US\u0022: \u0022Co-Founder\u0022\n                },\n                \u0022preferredLocale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                }\n              }\n            },\n            \u0022newPosition\u0022: \u0022urn:li:position:(urn:li:person:OdrZ9RhHMX,47290786)\u0022\n          }\n        }\n      },\n      \u0022actor~\u0022: {...},\n      \u0022verb\u0022: \u0022linkedin:profile-change-position\u0022,\n      \u0022domainEntity\u0022: \u0022urn:li:prop:(JOB_CHANGE,_019u5ffN900_gz7Lhi6nEd4Z7tEIxli6h3FRcUGlSj5mQ=)\u0022,\n      \u0022object\u0022: \u0022urn:li:prop:(JOB_CHANGE,_019u5ffN900_gz7Lhi6nEd4Z7tEIxli6h3FRcUGlSj5mQ=)\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:activity:6422955713366237123\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Comment Type Activity",
+      "Anchor": "comment-type-activity",
+      "SectionPath": [
+        "Comment Type Activity"
+      ],
+      "Text": "The comment activity type will surface the same comment schema with an embedded object that can reference to an activity URN . The activity URN will be decorated in the same way as the example types shown above.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "current sample response",
+      "Anchor": "current-sample-response-3",
+      "SectionPath": [
+        "Comment Type Activity",
+        "current sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022urn:li:comment:(activity:6422861848709726208,6425527540101705728)\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {\n      ...\n    },\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022actor~\u0022: {...},\n        \u0022time\u0022: 1531965146089\n      },\n      \u0022id\u0022: \u00226425527540101705728\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022actor~\u0022: {...},\n        \u0022time\u0022: 1531965146089\n      },\n      \u0022message\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022this is a comment\u0022\n      },\n      \u0022object~\u0022: {\n        \u0022actor\u0022: {\n          \u0022urn\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n          \u0022urn~\u0022: {...}\n        },\n        \u0022verb\u0022: {\n          \u0022properties\u0022: {\n            \u0022li.verbs.linkedin.Post\u0022: {\n              \u0022shareUrn\u0022: \u0022urn:li:share:6422861848344821760\u0022,\n              \u0022shareUrn~\u0022: {\n                \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n                \u0022owner~\u0022: {...},\n                \u0022created\u0022: {\n                  \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n                  \u0022actor~\u0022: {...},\n                  \u0022time\u0022: 1531329595651\n                },\n                \u0022text\u0022: {\n                  \u0022text\u0022: \u0022this is a share\u0022\n                },\n                \u0022lastModified\u0022: {\n                  \u0022actor\u0022: \u0022urn:li:person:3XwTkgAJbS\u0022,\n                  \u0022time\u0022: 1531329806139\n                },\n                \u0022distribution\u0022: {\n                  \u0022linkedInDistributionTarget\u0022: {\n                    \u0022visibleToGuest\u0022: true\n                  }\n                }\n              }\n            }\n          }\n        },\n        \u0022object\u0022: {}\n      },\n      \u0022object\u0022: \u0022urn:li:activity:6422861848709726208\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:comment:(activity:6422861848709726208,6425527540101705728)\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "new sample response",
+      "Anchor": "new-sample-response-3",
+      "SectionPath": [
+        "Comment Type Activity",
+        "new sample response"
+      ],
+      "Text": "{\n  \u0022activity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022object\u0022: \u0022urn:li:comment:(activity:6422861848709726208,6425527540101705728)\u0022\n  },\n  \u0022processedActivity\u0022: {\n    \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n    \u0022actor~\u0022: {...},\n    \u0022object~\u0022: {\n      \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n      \u0022actor~\u0022: {...},\n      \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022actor~\u0022: {...},\n        \u0022time\u0022: 1531965146089\n      },\n      \u0022id\u0022: \u00226425527540101705728\u0022,\n      \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022actor~\u0022: {...},\n        \u0022time\u0022: 1531965146089\n      },\n      \u0022message\u0022: {\n        \u0022attributes\u0022: [],\n        \u0022text\u0022: \u0022this is a comment\u0022\n      },\n      \u0022object~\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n        \u0022domainEntity~\u0022: {\n          \u0022owner\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n          \u0022owner~\u0022: {...},\n          \u0022created\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n            \u0022actor~\u0022: {...},\n            \u0022time\u0022: 1531329595651\n          },\n          \u0022text\u0022: {\n            \u0022text\u0022: \u0022this is a share\u0022\n          },\n          \u0022lastModified\u0022: {\n            \u0022actor\u0022: \u0022urn:li:person:yrZCpj2ZYQ\u0022,\n            \u0022time\u0022: 1531329806139\n          },\n          \u0022distribution\u0022: {\n            \u0022linkedInDistributionTarget\u0022: {\n              \u0022visibleToGuest\u0022: true\n            }\n          }\n        },\n        \u0022actor~\u0022: {...},\n        \u0022verb\u0022: \u0022linkedin:share\u0022,\n        \u0022domainEntity\u0022: \u0022urn:li:share:6422861848344821123\u0022,\n        \u0022object\u0022: \u0022urn:li:share:6422861848344821123\u0022\n      },\n      \u0022object\u0022: \u0022urn:li:activity:6422861848709726208\u0022\n    },\n    \u0022object\u0022: \u0022urn:li:comment:(activity:6422861848709726208,6425527540101705728)\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

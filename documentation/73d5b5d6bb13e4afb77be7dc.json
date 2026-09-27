@@ -1,0 +1,645 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+  "Title": "Live Videos",
+  "Version": "li-dma-data-portability-2026-08",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts",
+    "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/events/live-videos",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Live Videos",
+      "Anchor": "live-videos",
+      "SectionPath": [],
+      "Text": "The Live Videos API allows you to interact with LinkedIn Live Videos, providing information about organization live video data. This API doesn\u2019t share member personal data as part of the API response.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Videos",
+      "Anchor": "live-videos",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Live Videos",
+      "Anchor": "live-videos",
+      "SectionPath": [],
+      "Text": "Get: Retrieves information about a live video\nBatch Get: Retrieves information list of live videos",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "r_dma_admin_pages_content",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve information about live videos. Restricted to page admins with the following company page roles: ADMINISTRATORADMINISTRATORCONTENT_ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "ADMINISTRATOR",
+              "CONTENT_ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "See Organization Access Control for more information on company page roles.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Member Data Obfuscation",
+      "Anchor": "member-data-obfuscation",
+      "SectionPath": [
+        "Permissions",
+        "Member Data Obfuscation"
+      ],
+      "Text": "This DMA API does not include member personal data.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Permissions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the live video event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "scheduledAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The epoch time in milliseconds the live video is intended to start streaming",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "liveVideoAsset",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Video (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The video recording for the live video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "LiveVideoState",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The state of the live video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "ugcPost",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "UgcPostUrn (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The UGC post associated with the live video. Can be resolved via the DMA Posts API BATCH_GET.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/dma/pages-data-portability/content/posts?view=li-dma-data-portability-2026-08#batch_get"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "event",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EventUrn (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The event URN this live video is associated with",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "name",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String (optional)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The name of the live video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLiveVideos/{liveVideoId} -b",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "Batch Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/dmaLiveVideos?ids=List({liveVideoId1},{liveVideoId2}...) -b",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaLiveVideos/7130296343318716416\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "Batch Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Requests",
+      "Anchor": "sample-requests",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Requests"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/dmaLiveVideos?ids=List(7130261649805967360,1234,7130296343318716416)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Responses",
+      "Anchor": "sample-responses",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Responses"
+      ],
+      "Text": "Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Responses",
+      "Anchor": "sample-responses",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Responses"
+      ],
+      "Text": "{\n    \u00227130296343318716416\u0022: {\n        \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7117576254173667329\u0022,\n        \u0022author\u0022: {\n            \u0022organization\u0022: \u0022urn:li:organization:12345678\u0022\n        },\n        \u0022liveVideoAsset\u0022: {\n            \u0022downloadUrl\u0022: \u0022https://dms.licdn.com/playlist/vid/D4E24AQH5EAa69zQAnA/feedshare-live-vod-ambry-analysis/0/1696979077900?e=1700787600\u0026v=beta\u0026t=fqyUqVqPS2FfurFEyF3GLDChrNGh3k4z48BVMd1oBeg\u0022,\n            \u0022thumbnails\u0022: [\n                {\n                    \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E24AQH5EAa69zQAnA/feedshare-live-thumbnail_high/0/1696962626953?e=1700787600\u0026v=beta\u0026t=sBKBkAi1xIfpRqqeRi97CQhJDEf9LmlT8pwnVD7CKHM\u0022,\n                    \u0022downloadUrlExpiresAt\u0022: 1700787600000\n                }\n            ],\n            \u0022downloadUrlExpiresAt\u0022: 1700787600000,\n            \u0022captions\u0022: [],\n            \u0022status\u0022: \u0022AVAILABLE\u0022\n        },\n        \u0022name\u0022: \u0022Live Event Name\u0022,\n        \u0022id\u0022: 7130296343318716416,\n        \u0022state\u0022: \u0022LIVE\u0022,\n        \u0022event\u0022: \u0022urn:li:event:7117576252311359470\u0022,\n        \u0022scheduledAt\u0022: 1696962600000\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Responses",
+      "Anchor": "sample-responses",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Responses"
+      ],
+      "Text": "Batch Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Responses",
+      "Anchor": "sample-responses",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Sample Responses"
+      ],
+      "Text": "{\n    \u0022results\u0022: {\n        \u00227130296343318716416\u0022: {\n            \u0022ugcPost\u0022: \u0022urn:li:ugcPost:7117576254173667329\u0022,\n            \u0022author\u0022: {\n                \u0022organization\u0022: \u0022urn:li:organization:12345678\u0022\n            },\n            \u0022liveVideoAsset\u0022: {\n                \u0022downloadUrl\u0022: \u0022https://dms.licdn.com/playlist/vid/D4E24AQH5EAa69zQAnA/feedshare-live-vod-ambry-analysis/0/1696979077900?e=1700787600\u0026v=beta\u0026t=fqyUqVqPS2FfurFEyF3GLDChrNGh3k4z48BVMd1oBeg\u0022,\n                \u0022thumbnails\u0022: [\n                    {\n                        \u0022downloadUrl\u0022: \u0022https://media.licdn.com/dms/image/D4E24AQH5EAa69zQAnA/feedshare-live-thumbnail_high/0/1696962626953?e=1700787600\u0026v=beta\u0026t=sBKBkAi1xIfpRqqeRi97CQhJDEf9LmlT8pwnVD7CKHM\u0022,\n                        \u0022downloadUrlExpiresAt\u0022: 1700787600000\n                    }\n                ],\n                \u0022downloadUrlExpiresAt\u0022: 1700787600000,\n                \u0022captions\u0022: [],\n                \u0022status\u0022: \u0022AVAILABLE\u0022\n            },\n            \u0022name\u0022: \u0022Live Event Name\u0022,\n            \u0022id\u0022: 7130296343318716416,\n            \u0022state\u0022: \u0022LIVE\u0022,\n            \u0022event\u0022: \u0022urn:li:event:7117576252311359470\u0022,\n            \u0022scheduledAt\u0022: 1696962600000\n        }\n    },\n    \u0022statuses\u0022: {\n        \u00227130296343318716416\u0022: 200,\n        \u00221234\u0022: 404,\n        \u00227130261649805967360\u0022: 403\n    },\n    \u0022errors\u0022: {\n        \u00221234\u0022: {\n            \u0022message\u0022: \u0022LiveVideo not found: 1234\u0022,\n            \u0022status\u0022: 404\n        },\n        \u00227130261649805967360\u0022: {\n            \u0022message\u0022: \u0022current viewer is not allowed to fetch the liveVideo data\u0022,\n            \u0022status\u0022: 403\n        }\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Query Parameters"
+      ],
+      "Text": "Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "id",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique identifier for the live video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "7130261649805967360",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Query Parameters"
+      ],
+      "Text": "Batch Get:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Query Parameters",
+      "Anchor": "query-parameters",
+      "SectionPath": [
+        "Retrieve Live Video Information",
+        "Query Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description",
+        "Required",
+        "Example"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "ids",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List of unique identifiers for the live video",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List(7130261649805967360,1234,7130296343318716416)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "API Error Details",
+      "Anchor": "api-error-details",
+      "SectionPath": [
+        "API Error Details"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTTP Status Code",
+        "ERROR MESSAGE",
+        "DESCRIPTION",
+        "ERROR RESOLUTION"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "401",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "EMPTY_ACCESS_TOKEN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Empty or expired OAuth2 access token",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Use a valid member access token",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "403",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "ACCESS_DENIED",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not enough permissions to access live video information",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Make sure your developer application is provisioned with the required permissions",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "404",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "NOT_FOUND",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Live video not found",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Verify the provided id is correct",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "500",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "INTERNAL_SERVER_ERROR",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Internal server-side error",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "N/A",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-v2-to-v3",
+  "Title": "Version Comparison AWLI V2 to AWLI V3",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/apply-with-linkedin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-certification-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-faq",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-plugin",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/awli-v2-to-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/build-awli-v3",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/development-tools",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/middleware-cust-configuration",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin/migration-testing-guide",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Version Comparison AWLI V2 to AWLI V3",
+      "Anchor": "version-comparison-awli-v2-to-awli-v3",
+      "SectionPath": [],
+      "Text": "This page describes new features introduced in AWLI V3 and provides a comparison between AWLI V2 and V3 versions.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "What\u0027s New",
+      "Anchor": "whats-new",
+      "SectionPath": [
+        "What\u0027s New"
+      ],
+      "Text": "Button Rendering\nUser Consent Management\nProfile Response\nSupported Use Cases",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Button Rendering",
+      "Anchor": "button-rendering",
+      "SectionPath": [
+        "What\u0027s New",
+        "Button Rendering"
+      ],
+      "Text": "Refer to the description below to see how button rendering for AWLI V2 and V3 is revised:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Button Rendering for AWLI V2",
+      "Anchor": "button-rendering-for-awli-v2",
+      "SectionPath": [
+        "What\u0027s New",
+        "Button Rendering for AWLI V2"
+      ],
+      "Text": "When not signed in \nAfter sign in to LinkedIn, you will have a LinkedIn cookie on your browser and the \u0022Apply with LinkedIn\u0022 button renders",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Button Rendering for AWLI V3",
+      "Anchor": "button-rendering-for-awli-v3",
+      "SectionPath": [
+        "What\u0027s New",
+        "Button Rendering for AWLI V3"
+      ],
+      "Text": "Apply with LinkedIn button is rendered as shown below. Also if you are not signed in, the button still displays and you are directed to the sign in screen when you click it",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "User Consent Management",
+      "Anchor": "user-consent-management",
+      "SectionPath": [
+        "What\u0027s New",
+        "User Consent Management"
+      ],
+      "Text": "With new Apply With Linkedin, the current cookie-based Apply with LinkedIn experience is replaced with an OAuth model. Candidate consents are now handled within the OAuth flow. The below images display the non-staffing and staffing variant of the consent screen",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Response",
+      "Anchor": "profile-response",
+      "SectionPath": [
+        "What\u0027s New",
+        "Profile Response"
+      ],
+      "Text": "With AWLI V3, the following fields from profile response are deprecated.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Response",
+      "Anchor": "profile-response",
+      "SectionPath": [
+        "What\u0027s New",
+        "Profile Response"
+      ],
+      "Text": "Specialities\nPatents\nPublications\nHonors\nRecommendationsReceived\nProfileImageUrl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Profile Response",
+      "Anchor": "profile-response",
+      "SectionPath": [
+        "What\u0027s New",
+        "Profile Response"
+      ],
+      "Text": "To ensure that your exisiting integrations do not break, these deprecated fields will be returned in the response but will have empty value.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "AWLI Supported Use Cases",
+      "Anchor": "awli-supported-use-cases",
+      "SectionPath": [
+        "What\u0027s New",
+        "AWLI Supported Use Cases"
+      ],
+      "Text": "With the Apply With Linkedin V3, we deprecated BUTTON and DATA mode. Multiple page flows such as the Standard Flow and Create Account Flow continue to be supported but require persisting profile data in the first page.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Standard Flow",
+      "Anchor": "standard-flow",
+      "SectionPath": [
+        "What\u0027s New",
+        "AWLI Supported Use Cases",
+        "Standard Flow"
+      ],
+      "Text": "The Standard Flow consists of a Job Overview (page A), Enter Information (page B), and Finished Application (page C) as shown below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Create Account Flow",
+      "Anchor": "create-account-flow",
+      "SectionPath": [
+        "What\u0027s New",
+        "Create Account Flow"
+      ],
+      "Text": "The Create Account Flow consists of a Job Overview (page A), create account on ATS (page B), Enter Information (page C) and Finished Application (page D) as shown below:",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

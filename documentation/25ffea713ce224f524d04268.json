@@ -1,0 +1,764 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+  "Title": "Organization Page Statistics",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Organization Page Statistics",
+      "Anchor": "organization-page-statistics",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Page Statistics",
+      "Anchor": "organization-page-statistics",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Page Statistics",
+      "Anchor": "organization-page-statistics",
+      "SectionPath": [],
+      "Text": "organizationPageStatistics and brandPageStatistics allow you to retrieve both lifetime and time-bound statistics on views and clicks for an organization or organization brand page respectively.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Page Statistics",
+      "Anchor": "organization-page-statistics",
+      "SectionPath": [],
+      "Text": "Lifetime page statistics: To retrieve lifetime page statistics, omit the timeIntervals query parameter. The API returns view and click statistics segmented by various facets.\n\nTime-bound page statistics: To retrieve time-bound page statistics, include the timeIntervals query parameter. The API returns aggregate page statistics within all of the days or months in between the selected date range based on the specified timeIntervals.timeGranularityType.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Page Statistics",
+      "Anchor": "organization-page-statistics",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Organization Page Statistics",
+      "Anchor": "organization-page-statistics",
+      "SectionPath": [],
+      "Text": "LinkedIn provides a detailed breakdown of Mobile, Desktop, and Overall page views. The reported counts for allPageViews and overviewPageViews are higher because they include comprehensive mobile and desktop traffic.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "rw_organization_admin",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Manage organizations pages and retrieve reporting data. Restricted to organizations in which the authenticated member has the following role: ADMINISTRATOR",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR"
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Lifetime Organization Page Statistics",
+      "Anchor": "retrieve-lifetime-organization-page-statistics",
+      "SectionPath": [
+        "Retrieve Lifetime Organization Page Statistics"
+      ],
+      "Text": "Don\u0027t specify the timeIntervals parameter to retrieve lifetime page statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationPageStatistics?q=organization\u0026organization={organization URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Retrieve Lifetime Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationPageStatistics?q=organization\u0026organization={organization URN}\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "Retrieve Lifetime Organization Page Statistics",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "organization",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization identifier.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN. Must be of format urn:li:organization:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time restriction for the query. When omitted, lifetime stats are returned as shown in response below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeGranularityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Granularity of the statistics. Must be either DAY or MONTH.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive starting timestamp of when the query should begin (milliseconds since epoch) Queries from beginning of time when not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive ending timestamp of when the query should end (milliseconds since epoch). Queries until current time when not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Retrieve Lifetime Organization Page Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n            \u0022pageStatisticsByGeoCountry\u0022: [\n                {\n                    \u0022geo\u0022: \u0022urn:li:geo:103644278\u0022,\n                    \u0022pageStatistics\u0022: {\n                        \u0022views\u0022: {\n                            \u0022allDesktopPageViews\u0022: {\n                                \u0022pageViews\u0022: 1680\n                            },\n                            \u0022allMobilePageViews\u0022: {\n                                \u0022pageViews\u0022: 16\n                            },\n                            \u0022allPageViews\u0022: {\n                                \u0022pageViews\u0022: 1696\n                            },\n                            \u0022careersPageViews\u0022: {\n                                \u0022pageViews\u0022: 3\n                            },\n                            \u0022desktopCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 3\n                            },\n                            \u0022desktopJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 3\n                            },\n                            \u0022desktopOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 1677\n                            },\n                            \u0022jobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022lifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 3\n                            },\n                            \u0022mobileCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 16\n                            },\n                            \u0022overviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 1693\n                            }\n                        }\n                    }\n                }\n            ],\n            \u0022pageStatisticsByFunction\u0022: [\n                {\n                    \u0022function\u0022: \u0022urn:li:function:1\u0022,\n                    \u0022pageStatistics\u0022: {\n                        \u0022views\u0022: {\n                            \u0022allDesktopPageViews\u0022: {\n                                \u0022pageViews\u0022: 25\n                            },\n                            \u0022allMobilePageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022allPageViews\u0022: {\n                                \u0022pageViews\u0022: 25\n                            },\n                            \u0022careersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 25\n                            },\n                            \u0022jobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022lifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022overviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 25\n                            }\n                        }\n                    }\n                }\n            ],\n            \u0022pageStatisticsByIndustryV2\u0022: [\n                {\n                    \u0022industryV2\u0022: \u0022urn:li:industry:1\u0022,\n                    \u0022pageStatistics\u0022: {\n                        \u0022views\u0022: {\n                            \u0022allPageViews\u0022: {\n                                \u0022pageViews\u0022: 33\n                            }\n                        }\n                    }\n                }\n            ],\n            \u0022pageStatisticsByGeo\u0022: [\n                {\n                    \u0022geo\u0022: \u0022urn:li:geo:7\u0022,\n                    \u0022pageStatistics\u0022: {\n                        \u0022views\u0022: {\n                            \u0022allDesktopPageViews\u0022: {\n                                \u0022pageViews\u0022: 62\n                            },\n                            \u0022allMobilePageViews\u0022: {\n                                \u0022pageViews\u0022: 1\n                            },\n                            \u0022allPageViews\u0022: {\n                                \u0022pageViews\u0022: 63\n                            },\n                            \u0022careersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 62\n                            },\n                            \u0022jobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022lifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 1\n                            },\n                            \u0022overviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 63\n                            }\n                        }\n                    }\n                }\n            ],\n            \u0022pageStatisticsBySeniority\u0022: [\n                {\n                    \u0022pageStatistics\u0022: {\n                        \u0022views\u0022: {\n                            \u0022allDesktopPageViews\u0022: {\n                                \u0022pageViews\u0022: 320\n                            },\n                            \u0022allMobilePageViews\u0022: {\n                                \u0022pageViews\u0022: 2\n                            },\n                            \u0022allPageViews\u0022: {\n                                \u0022pageViews\u0022: 322\n                            },\n                            \u0022careersPageViews\u0022: {\n                                \u0022pageViews\u0022: 1\n                            },\n                            \u0022desktopCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 1\n                            },\n                            \u0022desktopJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 1\n                            },\n                            \u0022desktopOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 319\n                            },\n                            \u0022jobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022lifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 1\n                            },\n                            \u0022mobileCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 2\n                            },\n                            \u0022overviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 321\n                            }\n                        }\n                    },\n                    \u0022seniority\u0022: \u0022urn:li:seniority:10\u0022\n                }\n            ],\n            \u0022pageStatisticsByStaffCountRange\u0022: [\n                {\n                    \u0022pageStatistics\u0022: {\n                        \u0022views\u0022: {\n                            \u0022allDesktopPageViews\u0022: {\n                                \u0022pageViews\u0022: 602\n                            },\n                            \u0022allMobilePageViews\u0022: {\n                                \u0022pageViews\u0022: 12\n                            },\n                            \u0022allPageViews\u0022: {\n                                \u0022pageViews\u0022: 614\n                            },\n                            \u0022careersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022desktopOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 602\n                            },\n                            \u0022jobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022lifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileCareersPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileJobsPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileLifeAtPageViews\u0022: {\n                                \u0022pageViews\u0022: 0\n                            },\n                            \u0022mobileOverviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 12\n                            },\n                            \u0022overviewPageViews\u0022: {\n                                \u0022pageViews\u0022: 614\n                            }\n                        }\n                    },\n                    \u0022staffCountRange\u0022: \u0022SIZE_10001_OR_MORE\u0022\n                }\n            ],\n            \u0022totalPageStatistics\u0022: {\n                \u0022clicks\u0022: {\n                    \u0022desktopCustomButtonClickCounts\u0022: [],\n                    \u0022mobileCustomButtonClickCounts\u0022: []\n                },\n                \u0022views\u0022: {\n                    \u0022allDesktopPageViews\u0022: {\n                        \u0022pageViews\u0022: 17321\n                    },\n                    \u0022allMobilePageViews\u0022: {\n                        \u0022pageViews\u0022: 465\n                    },\n                    \u0022allPageViews\u0022: {\n                        \u0022pageViews\u0022: 17786\n                    },\n                    \u0022careersPageViews\u0022: {\n                        \u0022pageViews\u0022: 5\n                    },\n                    \u0022desktopCareersPageViews\u0022: {\n                        \u0022pageViews\u0022: 5\n                    },\n                    \u0022desktopJobsPageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022desktopLifeAtPageViews\u0022: {\n                        \u0022pageViews\u0022: 5\n                    },\n                    \u0022desktopOverviewPageViews\u0022: {\n                        \u0022pageViews\u0022: 17316\n                    },\n                    \u0022jobsPageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022lifeAtPageViews\u0022: {\n                        \u0022pageViews\u0022: 5\n                    },\n                    \u0022mobileCareersPageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022mobileJobsPageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022mobileLifeAtPageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022mobileOverviewPageViews\u0022: {\n                        \u0022pageViews\u0022: 465\n                    },\n                    \u0022overviewPageViews\u0022: {\n                        \u0022pageViews\u0022: 17781\n                    }\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieve Time-Bound Organization Page Statistics",
+      "Anchor": "retrieve-time-bound-organization-page-statistics",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics"
+      ],
+      "Text": "Specify the timeIntervals parameter to retrieve time-bound page statistics.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 1.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationPageStatistics?q=organization\u0026organization=urn:li:organization:2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1551398400000\u0026timeIntervals.timeRange.end=1552003200000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationPageStatistics?q=organization\u0026organization=urn:li:organization:2414183\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1551398400000\u0026timeIntervals.timeRange.end=1552003200000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/organizationPageStatistics?q=organization\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/organizationPageStatistics?q=organization\u0026organization=urn%3Ali%3Aorganization%3A2414183\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Retrieve Time-Bound Organization Page Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n  \u0022paging\u0022: {\n    \u0022count\u0022: 10,\n    \u0022start\u0022: 0\n  },\n  \u0022elements\u0022: [\n    {\n      \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1451606400000,\n        \u0022end\u0022: 1451692800000\n      },\n      \u0022totalPageStatistics\u0022: {\n        \u0022clicks\u0022: {\n            \u0022desktopCustomButtonClickCounts\u0022: [],\n            \u0022mobileCustomButtonClickCounts\u0022: []\n        },\n        \u0022views\u0022: {\n          \u0022careersPageViews\u0022: {\n            \u0022uniquePageViews\u0022: 0,\n            \u0022pageViews\u0022: 0\n          },\n          \u0022overviewPageViews\u0022: {\n            \u0022uniquePageViews\u0022: 0,\n            \u0022pageViews\u0022: 0\n          },\n          \u0022allPageViews\u0022: {\n            \u0022pageViews\u0022: 0\n          }\n        }\n      }\n    },\n    {\n      \u0022organization\u0022: \u0022urn:li:organization:2414183\u0022,\n      \u0022timeRange\u0022: {\n        \u0022start\u0022: 1452124800000,\n        \u0022end\u0022: 1452211200000\n      },\n      \u0022totalPageStatistics\u0022: {\n        \u0022clicks\u0022: {\n            \u0022desktopCustomButtonClickCounts\u0022: [],\n            \u0022mobileCustomButtonClickCounts\u0022: []\n        },\n        \u0022views\u0022: {\n          \u0022careersPageViews\u0022: {\n            \u0022uniquePageViews\u0022: 0,\n            \u0022pageViews\u0022: 0\n          },\n          \u0022overviewPageViews\u0022: {\n            \u0022uniquePageViews\u0022: 0,\n            \u0022pageViews\u0022: 0\n          },\n          \u0022allPageViews\u0022: {\n            \u0022uniquePageViews\u0022: 0,\n            \u0022pageViews\u0022: 0\n          }\n        }\n      }\n    }\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Career Page Statistics",
+      "Anchor": "career-page-statistics",
+      "SectionPath": [
+        "Career Page Statistics"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Career Page Statistics",
+      "Anchor": "career-page-statistics",
+      "SectionPath": [
+        "Career Page Statistics"
+      ],
+      "Text": "totalPageStatistics includes careersPageViews, and is only available for organizations that have career pages. This is a paid product. For more information, see Company Career Pages.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Brand Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Brand Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/brandPageStatistics?q=brand\u0026brand=urn:li:organizationBrand:3617422",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-2",
+      "SectionPath": [
+        "Retrieve Organization Brand Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/brandPageStatistics?q=brand\u0026brand=urn:li:organizationBrand:3617422\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "Retrieve Organization Brand Page Statistics",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Format",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "brand",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The organization brand identifier",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN. Must be of format urn:li:organizationBrand:{id}.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Time restriction for the query. When omitted, lifetime stats are returned as shown in response below.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeGranularityType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Granularity of the statistics. Must be either \u0022DAY\u0022 or \u0022MONTH\u0022.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "string",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The time range.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "object",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.start",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Exclusive starting timestamp of when the query should begin (milliseconds since epoch) Queries from beginning of time when not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "timeIntervals.timeRange.end",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Inclusive ending timestamp of when the query should end (milliseconds since epoch). Queries until current time when not set.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Retrieve Organization Brand Page Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022brand\u0022: \u0022urn:li:organizationBrand:18085185\u0022,\n            \u0022pageStatisticsByCountry\u0022: [],\n            \u0022pageStatisticsByFunction\u0022: [],\n            \u0022pageStatisticsByIndustry\u0022: [],\n            \u0022pageStatisticsByRegion\u0022: [],\n            \u0022pageStatisticsBySeniority\u0022: [],\n            \u0022pageStatisticsByStaffCountRange\u0022: [],\n            \u0022totalPageStatistics\u0022: {\n                \u0022views\u0022: {\n                    \u0022allDesktopPageViews\u0022: {\n                        \u0022pageViews\u0022: 1\n                    },\n                    \u0022allMobilePageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022allPageViews\u0022: {\n                        \u0022pageViews\u0022: 1\n                    },\n                    \u0022desktopOverviewPageViews\u0022: {\n                        \u0022pageViews\u0022: 1\n                    },\n                    \u0022mobileOverviewPageViews\u0022: {\n                        \u0022pageViews\u0022: 0\n                    },\n                    \u0022overviewPageViews\u0022: {\n                        \u0022pageViews\u0022: 1\n                    }\n                }\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022links\u0022: [],\n        \u0022start\u0022: 0\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 1.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/brandPageStatistics?q=brand\u0026brand=urn:li:organizationBrand:11280505\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1551398400000\u0026timeIntervals.timeRange.end=1552003200000",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/brandPageStatistics?q=brand\u0026brand=urn:li:organizationBrand:11280505\u0026timeIntervals.timeGranularityType=DAY\u0026timeIntervals.timeRange.start=1551398400000\u0026timeIntervals.timeRange.end=1552003200000\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "Restli 2.0:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/brandPageStatistics?q=brand\u0026brand=urn%3Ali%3AorganizationBrand%3A11280505\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Request"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/brandPageStatistics?q=brand\u0026brand=urn%3Ali%3AorganizationBrand%3A11280505\u0026timeIntervals=(timeRange:(start:1551398400000,end:1552003200000),timeGranularityType:DAY)\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Retrieve Organization Brand Time-Bound Page Statistics",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022brand\u0022: \u0022urn:li:organizationBrand:11280505\u0022,\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1537142400000,\n                \u0022end\u0022: 1537228800000\n            }\n        },\n        {\n            \u0022brand\u0022: \u0022urn:li:organizationBrand:11280505\u0022,\n            \u0022timeRange\u0022: {\n                \u0022start\u0022: 1537228800000,\n                \u0022end\u0022: 1537315200000\n            }\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

@@ -1,0 +1,884 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+  "Title": "Retrieve an Individual Learning Object",
+  "Version": "",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/learning/",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/certification",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/criteria-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/locale-and-type-api",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object",
+    "https://learn.microsoft.com/en-us/linkedin/learning/overview/"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Retrieve an Individual Learning Object",
+      "Anchor": "retrieve-an-individual-learning-object",
+      "SectionPath": [],
+      "Text": "Learn how to retrieve an individual learning object.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Overview",
+      "Anchor": "overview",
+      "SectionPath": [
+        "Overview"
+      ],
+      "Text": "The LinkedIn Learning API provides two sets of endpoints - one for fetching a learning asset\u0027s details and another for a learning classification\u0027s details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "You can use these endpoints to:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Understanding the Endpoints",
+      "Anchor": "understanding-the-endpoints",
+      "SectionPath": [
+        "Understanding the Endpoints"
+      ],
+      "Text": "Retrieve an individual learning asset, given an URN.\nRetrieve an individual learning classification, given an URN.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets GET",
+      "Anchor": "learningassets-get",
+      "SectionPath": [
+        "learningAssets GET"
+      ],
+      "Text": "To retrieve an individual learning asset, given an URN, issue a GET request to the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "learningAssets GET",
+      "Anchor": "learningassets-get",
+      "SectionPath": [
+        "learningAssets GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/learningAssets/{URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningAssets GET",
+      "Anchor": "learningassets-get",
+      "SectionPath": [
+        "learningAssets GET"
+      ],
+      "Text": "The URN types supported by this endpoint are \u0022urn:li:lyndaCourse\u0022, \u0022urn:li:lyndaChapter\u0022, and \u0022urn:li:lyndaVideo\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters",
+      "SectionPath": [
+        "learningAssets GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language the API will use to try to localize the learning asset. The value of this parameter should be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning asset cannot be localized or if the target locale is not set, the API will use the source locale of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region the API will use to try to localize the learning asset. The value of this parameter should be DE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning asset cannot be localized or if the target locale is not set, the API will use the source locale of the learning asset.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expandDepth",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The number of levels in the learning asset hierarchy to include asset details. This parameter is optional; please see the Specifying the level of asset details section for an explanation with examples.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/learning/integrations/retrieve-an-individual-learning-object#specifying-the-level-of-asset-details"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "No (default = 1)",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "includeRetired",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Whether to include retired learning assets. The value of this parameter should be true or false. To retrieve active and retired learning assets, set this parameter to true.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No (default = false)",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request",
+      "SectionPath": [
+        "learningAssets GET",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response",
+      "SectionPath": [
+        "learningAssets GET",
+        "Response"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u0022urn:li:lyndaCourse:111779\u0022,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:111779,119368)\u0022,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u0022urn:li:lyndaVideo:(urn:li:lyndaCourse:111779,119369)\u0022,\n              \u0022contents\u0022: [],\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: {\n                \u0022locale\u0022: {\n                  \u0022country\u0022: \u0022US\u0022,\n                  \u0022language\u0022: \u0022en\u0022\n                },\n                \u0022value\u0022: \u0022Welcome\u0022\n              }\n            }\n          },\n    \u2026\n  ],\n  \u2026\n  \u0022type\u0022: \u0022COURSE\u0022,\n  \u0022title\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022Audition: Mixing a Short Film\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningClassifications GET",
+      "Anchor": "learningclassifications-get",
+      "SectionPath": [
+        "learningClassifications GET"
+      ],
+      "Text": "To retrieve an individual learning classification, given an URN, issue a GET request to the following endpoint:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "learningClassifications GET",
+      "Anchor": "learningclassifications-get",
+      "SectionPath": [
+        "learningClassifications GET"
+      ],
+      "Text": "GET https://api.linkedin.com/v2/learningClassifications/{URN}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "learningClassifications GET",
+      "Anchor": "learningclassifications-get",
+      "SectionPath": [
+        "learningClassifications GET"
+      ],
+      "Text": "The URN types supported by this endpoint are \u0022urn:li:lyndaCategory\u0022 and \u0022urn:li:skill\u0022.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Parameters",
+      "Anchor": "parameters-1",
+      "SectionPath": [
+        "learningClassifications GET",
+        "Parameters"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "targetLocale.language",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale language the API will use to try to localize the learning classification. The value of this parameter should be de, en, es, fr, in, it, ja, ko, nl, pl, pt, tr, or zh. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning classification cannot be localized or if the target locale is not set, the API will use the source locale of the learning classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "targetLocale.country",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The locale country/region the API will use to try to localize the learning classification. The value of this parameter should be DE, US, ES, FR, ID, IT, JP, KR, NL, PL, BR, TR or CN. These values correspond to the locales \u0022de_DE\u0022, \u0022en_US\u0022, \u0022es_ES\u0022, \u0022fr_FR\u0022, \u0022id_ID\u0022, \u0022it_IT\u0022, \u0022ja_JP\u0022, \u0022ko_KR\u0022, \u0022pl_PL\u0022, \u0022pt_BR\u0022, \u0022tr_TR\u0022 and \u0022zh_CN\u0022. If the learning classification cannot be localized or if the target locale is not set, the API will use the source locale of the learning classification.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL request",
+      "Anchor": "curl-request-1",
+      "SectionPath": [
+        "learningClassifications GET",
+        "cURL request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningClassifications/urn:li:lyndaCategory:7220?targetLocale.language=en\u0026targetLocale.country=US\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-1",
+      "SectionPath": [
+        "learningClassifications GET",
+        "Response"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u0022urn:li:lyndaCategory:7220\u0022,\n  \u0022owner\u0022: {\n    \u0022urn\u0022: \u0022urn:li:company:0000\u0022,\n    \u0022name\u0022: {\n      \u0022locale\u0022: {\n        \u0022country\u0022: \u0022US\u0022,\n        \u0022language\u0022: \u0022en\u0022\n      },\n      \u0022value\u0022: \u0022LinkedIn\u0022\n    }\n  },\n  \u0022name\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022Audio Post-Production\u0022\n  },\n  \u0022type\u0022: \u0022TOPIC\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "API Advanced Concepts",
+      "Anchor": "api-advanced-concepts",
+      "SectionPath": [
+        "API Advanced Concepts"
+      ],
+      "Text": "This section explains several advanced topics about the LinkedIn Learning Content API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "When you call the endpoints under /v2/learningAssets to retrieve a page of learning assets or an individual learning asset, you can optionally set an expandDepth parameter. This parameter (defaults to 1) tells the API how many levels in the learning asset hierarchy should include asset details. A detailed learning asset has the following structure:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: \u2026,\n  \u0022title\u0022: \u2026,\n  \u0022details\u0022: {\n    \u2026\n  },\n  \u0022contents\u0022: [\n    \u2026\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "The urn, type, and title fields are the basic metadata about the learning asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "The details field is an object that includes detailed metadata about the learning asset - for example, its associated learning classifications, description, change timestamps, etc. (see the \u0022Asset schema\u0022 section for the full schema reference).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "The contents field is an array of sub-assets of the learning asset, each sub-asset of which is a learning asset itself. For example, a course contains chapters, and a chapter contains videos. The learning asset representing the course would look like the following (focusing on the nested structure and omitting other fields):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "{\n  \u0022type\u0022: \u0022COURSE\u0022,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022contents\u0022: [],\n              \u2026\n            }\n          },\n        ]\n      }\n    },\n    \u2026\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "In this learning asset hierarchy, you can think of the course as the first level of learning assets. The chapters, which are sub-assets of the course, are the second level of learning assets. The videos, which are sub-assets of the chapters, are the third level of learning assets.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "With this explanation of the learning asset hierarchy and the earlier explanation of asset details in mind, we can refer to the request below:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "Setting the expandDepth parameter to 1 tells the API to include asset details only for the first level of learning assets - in this example, only for the course. The response would look like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: COURSE,\n  \u0022title\u0022: \u2026,\n  \u0022details\u0022: {\n    \u2026\n  },\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u2026,\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022title\u0022: \u2026,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u2026,\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: \u2026,\n              \u0022contents\u0022: []\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "If you wish to include asset details for both the course and its chapters, you can tell the API to expand learning assets down to the second level:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=2\u0026includeRetired=false\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "With the expandDepth parameter set to 2, the response would look like the following:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: COURSE,\n  \u0022title\u0022: \u2026,\n  \u0022details\u0022: {\n    \u2026\n  },\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u2026,\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022title\u0022: \u2026,\n        \u0022details\u0022: {\n          \u2026\n        },\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u2026,\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: \u2026,\n              \u0022contents\u0022: []\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "Similarly, by setting the expandDepth parameter to 3 when calling the API, you can include asset details for all three levels - course, chapters, and videos - in this example learning asset.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "When expanding learning assets down to deeper levels, take care that the larger responses do not exceed the 2 MB response size limit of the API framework. The expandDepth parameter is a convenience so that you can retrieve more information with fewer calls. But you can always retrieve the same nested information in multiple steps. For example, leaving the expandDepth parameter at its default value of 1, you can retrieve a page of learning assets representing courses, which will include asset details only for each course. Then for each chapter URN and video URN under the courses, you can call the endpoint that retrieves an individual learning asset, which will include asset details for the chapter or video.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "Note that you can also set the expandDepth parameter to 0 when calling the API. This tells the API to omit all asset details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "Sample request (using cURL):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=0\u0026includeRetired=false\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "With the expandDepth parameter set to 0, the response would look like the following (no asset details at any level):",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Specifying the level of asset details",
+      "Anchor": "specifying-the-level-of-asset-details",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the level of asset details"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u2026,\n  \u0022type\u0022: \u0022COURSE\u0022,\n  \u0022title\u0022: \u2026,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u2026,\n        \u0022type\u0022: \u0022CHAPTER\u0022,\n        \u0022title\u0022: \u2026,\n        \u0022contents\u0022: [\n          {\n            \u0022asset\u0022: {\n              \u0022urn\u0022: \u2026,\n              \u0022type\u0022: \u0022VIDEO\u0022,\n              \u0022title\u0022: \u2026,\n              \u0022contents\u0022: []\n            }\n          },\n  \u2026\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rolling up sub-asset classifications",
+      "Anchor": "rolling-up-sub-asset-classifications",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Rolling up sub-asset classifications"
+      ],
+      "Text": "A learning asset may be tagged with one or more learning classifications. For example, a course or video may be tagged with category, skill, or continuing education metadata. These learning classifications are included in the asset details (see the Specifying the level of asset details section).",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rolling up sub-asset classifications",
+      "Anchor": "rolling-up-sub-asset-classifications",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Rolling up sub-asset classifications"
+      ],
+      "Text": "When retrieving a learning asset with sub-assets, all the learning classifications that the sub-assets are tagged with are rolled up into the asset details for the top-level learning asset. For example, when retrieving a learning asset representing a course, the asset details for the course include the learning classifications that the chapters and videos are tagged with. In this case, if you set the expandDepth parameter to include the asset details for the chapter and video sub-assets as well, the asset details for each sub-asset will not include its individual learning classifications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Rolling up sub-asset classifications",
+      "Anchor": "rolling-up-sub-asset-classifications",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Rolling up sub-asset classifications"
+      ],
+      "Text": "The API rolls up sub-asset classifications for two reasons. First, it makes sense for a learning asset to inherit all the learning classifications of its sub-assets. Second, rolling up sub-asset classifications lets the API de-duplicate them, reducing the response size if multiple sub-assets are tagged with the same learning classification.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving retired assets",
+      "Anchor": "retrieving-retired-assets",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Retrieving retired assets"
+      ],
+      "Text": "To retrieve learning assets that are retired, you will need to set the includeRetired parameter to true when calling the endpoints under /v2/learningAssets. Additionally, you will need to set the expandDepth parameter (see the Specifying the level of asset details section) so that, in the learning asset hierarchy, the retired learning assets will include asset details:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving retired assets",
+      "Anchor": "retrieving-retired-assets",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Retrieving retired assets"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:80436?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=true\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Retrieving retired assets",
+      "Anchor": "retrieving-retired-assets",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Retrieving retired assets"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u0022urn:li:lyndaCourse:80434\u0022,\n  \u0022contents\u0022: [],\n  \u0022details\u0022: {\n    \u2026,\n    \u0022availability\u0022: \u0022RETIRED\u0022,\n    \u2026\n  },\n  \u0022type\u0022: \u0022COURSE\u0022,\n  \u0022title\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022CSS Fundamentals (2011)\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving retired assets",
+      "Anchor": "retrieving-retired-assets",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Retrieving retired assets"
+      ],
+      "Text": "If, however, you set the expandDepth parameter so that, in the learning asset hierarchy, the retired learning assets will not include asset details, the API will not retrieve the retired learning assets, even if the includeRetired parameter is set to true. In this case:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving retired assets",
+      "Anchor": "retrieving-retired-assets",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Retrieving retired assets"
+      ],
+      "Text": "When retrieving an individual learning asset that is retired, the API will return a 404 Not Found status.\nWhen retrieving a page of learning assets, the API will behave as if the includeRetired parameter were set to \u0022false\u0022 and omit retired learning assets.\nWhen retrieving sub-assets of an active learning asset, the API will omit the sub-assets that are retired.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Retrieving retired assets",
+      "Anchor": "retrieving-retired-assets",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Retrieving retired assets"
+      ],
+      "Text": "To retrieve retired learning assets, the API requires the learning assets to include asset details to remove ambiguity, since the status - retired or active - of a learning asset is part of its asset details.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Specifying the response fields",
+      "Anchor": "specifying-the-response-fields",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields"
+      ],
+      "Text": "When calling any of the API endpoints, you can include a special request parameter that specifies the fields that will be in the response. Note that if the response fields you wish to specify are part of the asset details (see the Specifying the level of asset details section), you will also need to set the expandDepth parameter so that the required level of asset details will be included.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Reference",
+      "Anchor": "field-projection-reference",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Reference"
+      ],
+      "Text": "If you set the \u0022fields\u0022 parameter when calling an endpoint that retrieves a page of learning entities, the previous and next links in the paging metadata in the response (see the \u0022Understanding the endpoints\u0022 section) will not include the \u0022fields\u0022 parameter.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Field Projection Fields",
+      "Anchor": "field-projection-fields",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Fields"
+      ],
+      "Text": "",
+      "Headers": [
+        "Parameter",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A list of field projections that specify the fields that will be in the response. You will need to add the same \u0022fields\u0022 parameter to the generated links yourself",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Syntax",
+      "Anchor": "field-projection-syntax",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Syntax"
+      ],
+      "Text": "field_name to include the entire value of the field.\nfield_name:(sub_field_name) to include only the value of the sub-field if the parent field is an object.\nfield_name:($*:(sub_field_name)) to include only the value of the sub-field if the parent field is an array of objects.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Field Projection Syntax",
+      "Anchor": "field-projection-syntax",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Field Projection Syntax"
+      ],
+      "Text": "Here are four sample requests showing an example of each kind of field projection:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-2",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026fields=title\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-2",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022title\u0022: {\n    \u0022locale\u0022: {\n      \u0022country\u0022: \u0022US\u0022,\n      \u0022language\u0022: \u0022en\u0022\n    },\n    \u0022value\u0022: \u0022Audition: Mixing a Short Film\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-3",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026fields=title:(value)\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-3",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022title\u0022: {\n    \u0022value\u0022: \u0022Audition: Mixing a Short Film\u0022\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-4",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026fields=contents:($*:(asset:(urn)))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-4",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:111779,119368)\u0022\n      }\n    },\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:111779,119372)\u0022\n      }\n    },\n    \u2026\n  ]\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "cURL Request",
+      "Anchor": "curl-request-5",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "cURL Request"
+      ],
+      "Text": "curl -H \u0027Authorization: Bearer AQXt\u2026\u0027 \\\n\u0027https://api.linkedin.com/v2/learningAssets/urn:li:lyndaCourse:111779?targetLocale.language=en\u0026targetLocale.country=US\u0026expandDepth=1\u0026includeRetired=false\u0026fields=urn,type,contents:($*:(asset:(urn,type)))\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Response",
+      "Anchor": "response-5",
+      "SectionPath": [
+        "API Advanced Concepts",
+        "Specifying the response fields",
+        "Response"
+      ],
+      "Text": "{\n  \u0022urn\u0022: \u0022urn:li:lyndaCourse:111779\u0022,\n  \u0022contents\u0022: [\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:111779,119368)\u0022,\n        \u0022type\u0022: \u0022CHAPTER\u0022\n      }\n    },\n    {\n      \u0022asset\u0022: {\n        \u0022urn\u0022: \u0022urn:li:lyndaChapter:(urn:li:lyndaCourse:111779,119372)\u0022,\n        \u0022type\u0022: \u0022CHAPTER\u0022\n      }\n    },\n    \u2026\n  ],\n  \u0022type\u0022: \u0022COURSE\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

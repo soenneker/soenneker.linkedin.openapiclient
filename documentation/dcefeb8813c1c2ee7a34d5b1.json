@@ -1,0 +1,931 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting/job-posting-field-schema",
+  "Title": "Job Posting Field API Schema",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-function-codes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/job-postings/api/sync-premium-api-jobs",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/premium-job-posting/job-posting-field-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field API Schema",
+      "Anchor": "job-posting-field-api-schema",
+      "SectionPath": [],
+      "Text": "This document lists and describes the job fields supported by the Premium Job Posting API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Job Posting Field API Schema",
+      "Anchor": "job-posting-field-api-schema",
+      "SectionPath": [],
+      "Text": "The documentation for this page is obsolete. Please refer to the Job Posting Field Schema for current schema information.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Posting Field API Schema",
+      "Anchor": "job-posting-field-api-schema",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "integrationContext",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the organization this job posting is created for. Must be in the format urn:li:organization:{organization id}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the contract this job posting is published to, which is signed by the customer with LinkedIn to use LinkedIn Recruiter services. Must be in the format urn:li:contract:{contractId}",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Contract URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyApplyUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Where to redirect applicants to in order to apply for the job",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "externalJobPostingId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents unique job id within the applicant tracking system. Do not send an empty or null string for this field",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyJobCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "A unique job identifier. ATSs provide jobRequisitionId, and job distributors use externalJobPostingId when jobRequisitionId isn\u2019t available. LinkedIn tracks and links jobs across sources using these identifiers to detect duplicates.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "jobPostingOperationType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the operation on the job posting. Available operation options are: CREATE, UPDATE, RENEW, CLOSE",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "title",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the title of the job posting that will be published. Character limit: 200",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "description",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the job description including the job basic information, responsibility etc. Character limit: 100 ~ 25,000, limited set of HTML tags accepted (details below)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "skillsDescription",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents desired skills and experiences of the job position. Limited set of HTML tags accepted (details below)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "listingType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the type of this job posting to be published. For premium job posting, this field is a constant string PREMIUM",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "listedAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents initial date the job posting was added into the application tracking system. The date is epoch timestamp in milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Integer",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "workRemoteAllowed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents whether this job posting supports remote work option. The value for the location field should be provided as the company headquarters location. Remote jobs can be posted on country/region level hence just country/region name will suffice in the location field. The default value is false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "location",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents the geographic location of the job position to hire. Please use one of the below recommended formats: \u0022CITY, STATE, COUNTRY\u0022 \u0022CITY, STATE\u0022\u0022CITY, PROVINCE\u0022 \u0022CITY, COUNTRY\u0022 \u0022POSTALCODE, COUNTRYCODE\u0022. \u0022COUNTRY\u0022 (accepted only for Remote jobs) \u0022COUNTRY CLUSTER\u0022 (accepted only for Remote jobs) To know more about COUNTRY CLUSTER, refer to our Help Article. Best practices to use location field, refer to our Help Article",
+            "Links": [
+              "https://www.linkedin.com/help/linkedin/answer/a524054",
+              "https://www.linkedin.com/help/recruiter/answer/a478845?trk=partner-documentation"
+            ],
+            "Values": [
+              "\u0022CITY, STATE, COUNTRY\u0022",
+              "\u0022CITY, STATE\u0022",
+              "\u0022CITY, PROVINCE\u0022",
+              "\u0022CITY, COUNTRY\u0022",
+              "\u0022POSTALCODE, COUNTRYCODE\u0022.",
+              "\u0022COUNTRY\u0022 (accepted only for Remote jobs)",
+              "\u0022COUNTRY CLUSTER\u0022 (accepted only for Remote jobs)",
+              "COUNTRY CLUSTER, refer to our Help Article.",
+              "Best practices to use location field, refer to our Help Article"
+            ]
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "countryCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents country code of the job position to hire. See Country Code reference table.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/country-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if location is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "postalCode",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents postal code of the job position to hire.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Only if location is not provided",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "posterEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents valid email address of the poster who will publish the job. Must be a primary email address of LinkedIn Recruiter seat, who is associated with the contract",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "categories",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents job functions specific to this job (for example Accounting, Marketing, Sales). Category names are predefined by LinkedIn and can be retrieved from Job Functions reference table.If predefined LinkedIn values are provided, they are displayed on the LinkedIn Job Posting If none of the values match our predefined LinkedIn values, we recommend partner to still provide raw values. This allows customers to configure job field processors directly with LinkedIn support If no value is provided, then LinkedIn will infer a value by referencing other fields of the Job Posting",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/job-function-codes?view=li-lts-2026-04"
+            ],
+            "Values": [
+              "If predefined LinkedIn values are provided, they are displayed on the LinkedIn Job Posting",
+              "If none of the values match our predefined LinkedIn values, we recommend partner to still provide raw values. This allows customers to configure job field processors directly with LinkedIn support",
+              "If no value is provided, then LinkedIn will infer a value by referencing other fields of the Job Posting"
+            ]
+          },
+          {
+            "Text": "String Array",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "industries",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents industries of this job or company. Array element must be quoted and in URN format: \u0022urn:li:industry:{industry_id}\u0022. Industry IDs are predefined by LinkedIn and can be retrieved from Industry Codes reference table. If no value is provided for this field, then industries associated with the LinkedIn company page is used. If this field value is not provided and the company page is also not associated with industries, then the API returns error.",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/reference-tables/industry-codes?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "Array of Industry URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "employmentStatus",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents employment status of the job position. Available options are: FULL_TIME PART_TIME, CONTRACT, INTERNSHIP, TEMPORARY, VOLUNTEER, OTHER. If predefined LinkedIn values are provided, they are displayed on the LinkedIn job posting. If a non-standard value is provided, LinkedIn attempts to standardize and match it to the closest pre-defined value. If no values are provided, LinkedIn standardizes to the closest matched value based on other fields in the job posting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "experienceLevel",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents experience level of the job position to hire. Available options are: ENTRY_LEVEL, MID_SENIOR_LEVEL, DIRECTOR, EXECUTIVE, INTERNSHIP, ASSOCIATE, NOT_APPLICABLE. If predefined LinkedIn values are provided, they are displayed on the LinkedIn job posting. If a non-standard value is provided, LinkedIn attempts to standardize and match it to the closest pre-defined value. If no values are provided, LinkedIn standardizes to the closest matched value based on other fields in the job posting",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "showPosterInfo",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Represents whether LinkedIn would show the poster information on job description page. The default value is false",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Boolean",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "trackingPixelUrl",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URL for the tracking pixel to be embedded on the job description. (for example http://www.trackingpixellocation.com/pixel.gif)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionOwnerEmail",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "description comes here",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "onsiteApplyConfiguration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Information required to configure job applications to be collected on LinkedIn. Please refer to OnsiteApplyConfiguration field schema for details",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/onsite-apply-configuration-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "OnsiteApplyConfiguration",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "state",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "description comes here",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "type",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "availability",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Valid values are PUBLIC or PRIVATE_TO_ATS_INTEGRATION. Must be PUBLIC for Apply Connect enabled jobs",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "companyName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The company name for which this job posting is created for. This field should be used in lieu of integrationContext only if the company is not a LinkedIn customer with access to the onboarding widget",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionOwnerLastName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Last name of the requisition owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "requisitionOwnerFirstName",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "First name of the requisition owner",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "expireAt",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The date when a job should expire and no longer be available to users. This date should be greater than the current date. If this field is not provided, the default expiration is 180 days. For PREMIUM jobs, the expiration date defaults to the LinkedIn customer\u0027s contract settings (generally 30 days)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Epoch in Milliseconds (UTC)",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "table",
+      "Section": "Job Posting Field API Schema",
+      "Anchor": "job-posting-field-api-schema",
+      "SectionPath": [],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Description",
+        "Type",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "locationGeoId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location ID for Bing Geo location entities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "alternateLocationGeoIds",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Location IDs for Bing Geo location entities",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Long[]",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "partnerRequisitionId",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unique ID of job requisition, used to link job posting and job requisition. Required for RSC customers who sync requisitions via RSC integration. It should be the unique ID of the job requisition that this job posting belongs to. A job requisition will be the ATS job requirement where all sourced candidates and job applications are managed.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "No. Required for RSC customers",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "HTML Tags",
+      "Anchor": "html-tags",
+      "SectionPath": [
+        "HTML Tags"
+      ],
+      "Text": "The following HTML tags are supported for description and skillsDescription fields. Other HTML tags will be stripped out, and their contents will be displayed as plain text.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "HTML Tags",
+      "Anchor": "html-tags",
+      "SectionPath": [
+        "HTML Tags"
+      ],
+      "Text": "",
+      "Headers": [
+        "HTML Tag",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "\u003Cb\u003E, \u003Cstrong\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Bold / strong",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cu\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Underline",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Ci\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Italic",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cbr\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Line break",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cp\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Paragraph",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cul\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Unordered list",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "\u003Cli\u003E",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "List element",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+  "Title": "Apply Connect with Verifications",
+  "Version": "li-lts-2026-04",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/shared/authentication/authentication",
+    "https://learn.microsoft.com/en-us/linkedin/talent/",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-certification",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/apply-connect-verifications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/display-apply-connect-plugins",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/receive-applications",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/sync-job-application-status-updates",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema",
+    "https://learn.microsoft.com/en-us/linkedin/talent/apply-with-linkedin-with-verifications/apply-with-linkedin-verifications-overview",
+    "https://learn.microsoft.com/en-us/linkedin/talent/lts-glossary-terms",
+    "https://learn.microsoft.com/en-us/linkedin/talent/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/talent/release-notes",
+    "https://learn.microsoft.com/en-us/linkedin/talent/versioning"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Apply Connect with Verifications",
+      "Anchor": "apply-connect-with-verifications",
+      "SectionPath": [],
+      "Text": "As a certified ATS partner, you receive LinkedIn-verified identity and workplace information about applicants through Apply Connect with Verifications, which extends Apply Connect. When a member verifies their identity or workplace, LinkedIn shares that result with you. Your customers (recruiters) can use verified information to prioritize applicants without leaving the ATS.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect with Verifications",
+      "Anchor": "apply-connect-with-verifications",
+      "SectionPath": [],
+      "Text": "For Apply Connect, verification data is added to the existing job application webhook payload for on-site applications submitted on LinkedIn.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect with Verifications",
+      "Anchor": "apply-connect-with-verifications",
+      "SectionPath": [],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect with Verifications",
+      "Anchor": "apply-connect-with-verifications",
+      "SectionPath": [],
+      "Text": "Verification data only confirms an applicant\u0027s verified identity or workplace. It never indicates that an applicant is fraudulent, and its absence carries no negative meaning.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect with Verifications",
+      "Anchor": "apply-connect-with-verifications",
+      "SectionPath": [],
+      "Text": "Both Apply Connect with Verifications and Apply with LinkedIn with Verifications render verification badges in the LinkedIn-hosted plugins. For more information, see Display verification badges.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Apply Connect with Verifications",
+      "Anchor": "apply-connect-with-verifications",
+      "SectionPath": [],
+      "Text": "Member consent is collected in the existing application flow, so no new consent work is required.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Requirements",
+      "Anchor": "requirements",
+      "SectionPath": [
+        "Requirements"
+      ],
+      "Text": "Have a certified Apply Connect integration, recertified for verification data.\nStore and display verification records on the applicant record.\nOptionally, give customers a way to find applicants with verifications.\nSend lifecycle and outcome signals through the Job application lifecycle actions API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive verification data",
+      "Anchor": "receive-verification-data",
+      "SectionPath": [
+        "Receive verification data"
+      ],
+      "Text": "Apply Connect with Verifications adds one new top-level field, verificationData, to the existing application delivery push event sent to your registered jobApplicationWebhookUrl. For the full payload, see Receive job applications.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Receive verification data",
+      "Anchor": "receive-verification-data",
+      "SectionPath": [
+        "Receive verification data"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "verificationData",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "VerificationData",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/talent/apply-connect/verification-data-schema?view=li-lts-2026-04"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "The applicant\u0027s verified identity or workplace details at the time of application. Absent when LinkedIn did not verify the applicant.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Receive verification data",
+      "Anchor": "receive-verification-data",
+      "SectionPath": [
+        "Receive verification data"
+      ],
+      "Text": "Because this payload travels server-to-server over a trusted channel, verificationData arrives as an unsigned object containing category names in verifications and detailed records in verifiedDetails. Continue to validate the existing X-LI-Signature header on the payload exactly as you do today.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Receive verification data",
+      "Anchor": "receive-verification-data",
+      "SectionPath": [
+        "Receive verification data"
+      ],
+      "Text": "{\n  \u0022verificationData\u0022: {\n    \u0022verifications\u0022: [\n      \u0022IDENTITY\u0022,\n      \u0022WORKPLACE\u0022\n    ],\n    \u0022verifiedDetails\u0022: [\n      {\n        \u0022category\u0022: \u0022IDENTITY\u0022,\n        \u0022verifiedName\u0022: {\n          \u0022firstName\u0022: \u0022MICHAEL\u0022,\n          \u0022middleName\u0022: \u0022GARY\u0022,\n          \u0022lastName\u0022: \u0022SCOTT\u0022\n        },\n        \u0022lastVerifiedAt\u0022: 1744141828585\n      },\n      {\n        \u0022category\u0022: \u0022WORKPLACE\u0022,\n        \u0022verificationMethod\u0022: \u0022EMAIL_ADDRESS\u0022,\n        \u0022organizationInfo\u0022: {\n          \u0022name\u0022: \u0022Contoso\u0022,\n          \u0022url\u0022: \u0022https://www.linkedin.com/company/contoso12345\u0022\n        },\n        \u0022lastVerifiedAt\u0022: 1744139009883\n      }\n    ]\n  }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Related documentation",
+      "Anchor": "related-documentation",
+      "SectionPath": [
+        "Related documentation"
+      ],
+      "Text": "Verification data schema\nApply Connect overview\nReceive job applications\nSync job application status updates\nDisplay Apply Connect plugins\nApply Connect certification\nApply with LinkedIn with Verifications",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}

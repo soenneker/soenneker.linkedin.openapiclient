@@ -22,7 +22,7 @@ namespace Soenneker.LinkedIn.OpenApiClient.Models
 #else
         public global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoGet200ResponseDefaultLocalizedName DefaultLocalizedName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The Geo IDDocumented type: intRequirement: Yes</summary>
         public int? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LinkedIn.OpenApiClient.Models.PagesDataPortabilityDmaGeoGet200Response"/> and sets the default values.

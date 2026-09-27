@@ -1,0 +1,689 @@
+{
+  "Url": "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+  "Title": "Reactions",
+  "Version": "li-lms-2026-09",
+  "Error": null,
+  "Links": [
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/community-management-overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/integration-requirements-community-management",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/follower-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/organization-access-control-by-role",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/page-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/organizations/share-statistics",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/comments-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/network-update-social-actions",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/reactions-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/social-metadata-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/video-analytics-api",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/migrations",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/lms-faq",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+    "https://learn.microsoft.com/en-us/linkedin/marketing/versioning",
+    "https://learn.microsoft.com/en-us/linkedin/shared/integrations/people/profile-api",
+    "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types"
+  ],
+  "Blocks": [
+    {
+      "Kind": "text",
+      "Section": "Reactions",
+      "Anchor": "reactions",
+      "SectionPath": [],
+      "Text": "Warning",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reactions",
+      "Anchor": "reactions",
+      "SectionPath": [],
+      "Text": "Deprecation Notice:\nThe Marketing Version 202510 (Marketing October 2025) will be sunset on October 15, 2026. We recommend that you migrate to the latest versioned APIs to avoid disruptions. For information on all the supported versions, refer to the migrations documentation.\nIf you haven\u2019t yet migrated and have questions, submit a request on the LinkedIn Developer Support Portal.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reactions",
+      "Anchor": "reactions",
+      "SectionPath": [],
+      "Text": "The Reactions API replaces the likes functionality provided by the existing socialActions endpoint. The new service provides access to \u0022reactions\u0022 which are an expansion of likes.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reactions",
+      "Anchor": "reactions",
+      "SectionPath": [],
+      "Text": "The service currently provides the following methods:",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reactions",
+      "Anchor": "reactions",
+      "SectionPath": [],
+      "Text": "Get a Reaction\nBatch Get a Collection of Reactions\nGet Reactions on Shares\nCreate a Reaction on a Share\nCreate a Reaction on a Comment\nDelete a Reaction",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Reactions",
+      "Anchor": "reactions",
+      "SectionPath": [],
+      "Text": "For fetching social actions on a share, please visit Social Metadata API. For creating and retrieving a comment, please visit Comments API.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "",
+      "Headers": [
+        "Permission",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "w_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and react on posts on behalf of an organization. Restricted to organizations in which the authenticated member has one of the following company page roles: ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTERRECRUITING_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER",
+              "RECRUITING_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "r_organization_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Retrieve organizations\u0027 posts, comments, and reactions. Restricted to organizations in which the authenticated member has one of the following company page roles. ADMINISTRATORDIRECT_SPONSORED_CONTENT_POSTER",
+            "Links": [],
+            "Values": [
+              "ADMINISTRATOR",
+              "DIRECT_SPONSORED_CONTENT_POSTER"
+            ]
+          }
+        ],
+        [
+          {
+            "Text": "w_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Post, comment, and react to posts on behalf of an authenticated member.",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "r_member_social_feed",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Restricted Retrieve posts, reactions, and likes on behalf of an authenticated member. This permission is granted to select developers only.",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Permissions",
+      "Anchor": "permissions",
+      "SectionPath": [
+        "Permissions"
+      ],
+      "Text": "For more information about company page roles, refer to Organization Access Control by role.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Reactions",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field",
+        "Format",
+        "Description",
+        "Required"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "reactionType",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Enum String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "The type of reaction. Possible values are: LIKE: \u0022Like\u0022 in the UIPRAISE: \u0022Celebrate\u0022 in the UIMAYBE: DEPRECATED. Used to be \u0022Curious\u0022 in the UIEMPATHY: \u0022Love\u0022 in the UIINTEREST: \u0022Insightful\u0022 in the UIAPPRECIATION: \u0022Support\u0022 in the UIENTERTAINMENT: \u0022Funny\u0022 in the UI",
+            "Links": [],
+            "Values": [
+              "LIKE: \u0022Like\u0022 in the UI",
+              "PRAISE: \u0022Celebrate\u0022 in the UI",
+              "MAYBE: DEPRECATED. Used to be \u0022Curious\u0022 in the UI",
+              "EMPATHY: \u0022Love\u0022 in the UI",
+              "INTEREST: \u0022Insightful\u0022 in the UI",
+              "APPRECIATION: \u0022Support\u0022 in the UI",
+              "ENTERTAINMENT: \u0022Funny\u0022 in the UI"
+            ]
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "root",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "URN",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Thread of this social action. For comments on a share, the root of both nested and top level comments would be the share URN.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Yes",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "created",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the creation of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not settable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "lastModified",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the last modification of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not settable",
+            "Links": [],
+            "Values": []
+          }
+        ],
+        [
+          {
+            "Text": "deleted",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "AuditStamp",
+            "Links": [
+              "https://learn.microsoft.com/en-us/linkedin/shared/references/v2/object-types?view=li-lms-2026-09\u0026context=linkedin%2Fmarketing%2Fcontext#auditstamp"
+            ],
+            "Values": []
+          },
+          {
+            "Text": "An AuditStamp corresponding to the deletion of this resource.",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "Not settable",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Reactions",
+        "Schema"
+      ],
+      "Text": "Note",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema",
+      "SectionPath": [
+        "Reactions",
+        "Schema"
+      ],
+      "Text": "The MAYBE reactionType (curious in the UI) is deprecated starting from version 202307. Using MAYBE reactionType on CREATE and UPDATE would return 400.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Get a Reaction",
+      "Anchor": "get-a-reaction",
+      "SectionPath": [
+        "Get a Reaction"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Reaction",
+      "Anchor": "get-a-reaction",
+      "SectionPath": [
+        "Get a Reaction"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/reactions/(actor:{encoded personUrn|encoded organizationUrn},entity:{encoded shareUrn|encoded ugcPostUrn|encoded commentUrn})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Get a Reaction",
+      "Anchor": "get-a-reaction",
+      "SectionPath": [
+        "Get a Reaction"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/reactions/(actor:urn%3Ali%3Aorganization%3A123456,entity:urn%3Ali%3Acomment%3A%28activity%3A7019389037459226624%2C7021942390034694144%29)\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response",
+      "SectionPath": [
+        "Get a Reaction",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022urn:li:reaction:(urn:li:person:rboDhL7Xsf,urn:li:activity:7067167295080394752)\u0022,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n        \u0022time\u0022: 1686183251857\n    },\n    \u0022reactionType\u0022: \u0022LIKE\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n        \u0022time\u0022: 1686183251857\n    },\n    \u0022root\u0022: \u0022urn:li:activity:7067167295080394752\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Batch Get a Collection of Reactions",
+      "Anchor": "batch-get-a-collection-of-reactions",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get a Collection of Reactions",
+      "Anchor": "batch-get-a-collection-of-reactions",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/reactions?ids=List((actor:{encoded personUrn|encoded organizationUrn},entity:{encoded shareUrn|encoded ugcPostUrn|encoded commentUrn}),(actor:{encoded personUrn|encoded organizationUrn},entity:{encoded shareUrn|encoded ugcPostUrn|encoded commentUrn}))",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Batch Get a Collection of Reactions",
+      "Anchor": "batch-get-a-collection-of-reactions",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/reactions?ids=List((actor:urn%3Ali%3Aorganization%3A123456,entity:urn%3Ali%3Acomment%3A%28activity%3A7017259249298792448%2C7017259297759780864%29),(actor:urn%3Ali%3Aperson%3AaVesTeT,entity:urn%3Ali%3Ashare%3A7019389037023006721))\u0027 \\\n--header \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n--header \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-1",
+      "SectionPath": [
+        "Batch Get a Collection of Reactions",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022statuses\u0022: {\n        \u0022(actor:urn%3Ali%3Aperson%3ArboDhL7Xsf,entity:urn%3Ali%3Aactivity%3A7067167295080394752)\u0022: 200\n    },\n    \u0022results\u0022: {\n        \u0022(actor:urn%3Ali%3Aperson%3ArboDhL7Xsf,entity:urn%3Ali%3Aactivity%3A7067167295080394752)\u0022: {\n            \u0022id\u0022: \u0022urn:li:reaction:(urn:li:person:rboDhL7Xsf,urn:li:activity:7067167295080394752)\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n                \u0022time\u0022: 1686183251857\n            },\n            \u0022reactionType\u0022: \u0022LIKE\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n                \u0022time\u0022: 1686183251857\n            },\n            \u0022root\u0022: \u0022urn:li:activity:7067167295080394752\u0022\n        }\n    },\n    \u0022errors\u0022: {}\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "table",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Get Reactions on a Share",
+        "Schema"
+      ],
+      "Text": "",
+      "Headers": [
+        "Field Name",
+        "Type",
+        "Description"
+      ],
+      "Rows": [
+        [
+          {
+            "Text": "sort",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "String",
+            "Links": [],
+            "Values": []
+          },
+          {
+            "Text": "(value:CHRONOLOGICAL)- Sort by created date ascending. (value:REVERSE_CHRONOLOGICAL) - Sort by created date descending. (value:RELEVANCE) - Sort by relevance to the viewer. By default, it\u0027s set to (value:REVERSE_CHRONOLOGICAL).",
+            "Links": [],
+            "Values": []
+          }
+        ]
+      ]
+    },
+    {
+      "Kind": "text",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Get Reactions on a Share",
+        "Schema"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Get Reactions on a Share",
+        "Schema"
+      ],
+      "Text": "GET https://api.linkedin.com/rest/reactions/(entity:{entityUrn})?q=entity\u0026sort=(value:REVERSE_CHRONOLOGICAL)",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Schema",
+      "Anchor": "schema-1",
+      "SectionPath": [
+        "Get Reactions on a Share",
+        "Schema"
+      ],
+      "Text": "curl -X GET \u0027https://api.linkedin.com/rest/reactions/(entity:{entityUrn})?q=entity\u0026sort=(value:REVERSE_CHRONOLOGICAL)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-2",
+      "SectionPath": [
+        "Get Reactions on a Share",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022elements\u0022: [\n        {\n            \u0022id\u0022: \u0022urn:li:reaction:(urn:li:person:rboDhL7Xsf,urn:li:activity:7067167295080394752)\u0022,\n            \u0022lastModified\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n                \u0022time\u0022: 1686257332832\n            },\n            \u0022reactionType\u0022: \u0022LIKE\u0022,\n            \u0022created\u0022: {\n                \u0022actor\u0022: \u0022urn:li:person:rboDhL7Xsf\u0022,\n                \u0022time\u0022: 1686257332832\n            },\n            \u0022root\u0022: \u0022urn:li:activity:7067167295080394752\u0022\n        }\n    ],\n    \u0022paging\u0022: {\n        \u0022count\u0022: 10,\n        \u0022start\u0022: 0,\n        \u0022total\u0022: 1,\n        \u0022links\u0022: []\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Reaction on a Share",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Reaction on a Share",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/reactions?actor={encoded organizationUrn|encoded personUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Reaction on a Share",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022root\u0022: \u0022{unencoded activityURN for a share|unencoded shareURN|unencoded ugcPostURN}\u0022,\n    \u0022reactionType\u0022: \u0022{REACTION_TYPE}\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request",
+      "SectionPath": [
+        "Create a Reaction on a Share",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/reactions?actor=urn%3Ali%3Aorganization%3A12345\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n--header \u0027X-Restli-Protocol-Version: 2.0.0\u0027\n--data \u0027{\n    \u0022root\u0022: \u0022urn:li:activity:6666\u0022,\n    \u0022reactionType\u0022: \u0022{REACTION_TYPE}\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Create a Reaction on a Share",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022urn:li:reaction:(urn:li:person:A8xe03Qt10,urn:li:activity:6666)\u0022,\n    \u0022reactionType\u0022: \u0022LIKE\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:A8xe03Qt10\u0022,\n        \u0022time\u0022: 1555543895726\n    },\n    \u0022root\u0022: \u0022urn:li:activity:6666\u0022,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:A8xe03Qt10\u0022,\n        \u0022time\u0022: 1555543895726\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-3",
+      "SectionPath": [
+        "Create a Reaction on a Share",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Reaction on a Comment",
+        "Sample Request"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Reaction on a Comment",
+        "Sample Request"
+      ],
+      "Text": "POST https://api.linkedin.com/rest/reactions?actor={encoded organizationUrn|encoded personUrn}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Reaction on a Comment",
+        "Sample Request"
+      ],
+      "Text": "{\n    \u0022root\u0022: \u0022urn:li:comment:(urn:li:activity:6666,120381273128)\u0022,\n    \u0022reactionType\u0022: \u0022{REACTION_TYPE}\u0022\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Request",
+      "Anchor": "sample-request-1",
+      "SectionPath": [
+        "Create a Reaction on a Comment",
+        "Sample Request"
+      ],
+      "Text": "curl -X POST \u0027https://api.linkedin.com/rest/reactions?actor=urn%3Ali%3Aperson%3AaeXtErs\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027Content-Type: application/json\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027\n--data \u0027{\n    \u0022root\u0022: \u0022urn:li:activity:6666\u0022,\n    \u0022reactionType\u0022: \u0022{REACTION_TYPE}\u0022\n}\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Create a Reaction on a Comment",
+        "Sample Response"
+      ],
+      "Text": "{\n    \u0022id\u0022: \u0022urn:li:reaction:(urn:li:person:A8xe03Qt10,urn:li:comment:(urn:li:activity:6666,120381273128)\u0022,\n    \u0022reactionType\u0022: \u0022LIKE\u0022,\n    \u0022created\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:A8xe03Qt10\u0022,\n        \u0022time\u0022: 1555543895730\n    },\n    \u0022root\u0022: \u0022urn:li:comment:(urn:li:activity:6666,120381273128)\u0022,\n    \u0022lastModified\u0022: {\n        \u0022actor\u0022: \u0022urn:li:person:A8xe03Qt10\u0022,\n        \u0022time\u0022: 1555543895730\n    }\n}",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Sample Response",
+      "Anchor": "sample-response-4",
+      "SectionPath": [
+        "Create a Reaction on a Comment",
+        "Sample Response"
+      ],
+      "Text": "A successful response returns a 201 Created.",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Reaction",
+      "Anchor": "delete-a-reaction",
+      "SectionPath": [
+        "Delete a Reaction"
+      ],
+      "Text": "http\n\n\ncurl",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Reaction",
+      "Anchor": "delete-a-reaction",
+      "SectionPath": [
+        "Delete a Reaction"
+      ],
+      "Text": "DELETE https://api.linkedin.com/rest/reactions/(actor:{encoded personUrn|encoded organizationUrn},entity:{encoded shareUrn|encoded ugcPostUrn|encoded commentUrn})",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "code",
+      "Section": "Delete a Reaction",
+      "Anchor": "delete-a-reaction",
+      "SectionPath": [
+        "Delete a Reaction"
+      ],
+      "Text": "curl -X DELETE \u0027https://api.linkedin.com/rest/reactions/(actor:urn%3Ali%3Aperson%3AaeXtErs,entity:urn%3Ali%3Ashare%3A7021942390034694144)\u0027 \\\n-H \u0027Authorization: Bearer {INSERT_TOKEN}\u0027 \\\n-H \u0027Linkedin-Version: {version number in the format YYYYMM}\u0027 \\\n-H \u0027X-Restli-Protocol-Version: 2.0.0\u0027",
+      "Headers": [],
+      "Rows": []
+    },
+    {
+      "Kind": "text",
+      "Section": "Delete a Reaction",
+      "Anchor": "delete-a-reaction",
+      "SectionPath": [
+        "Delete a Reaction"
+      ],
+      "Text": "A successful response returns a 204 No Content status code.",
+      "Headers": [],
+      "Rows": []
+    }
+  ]
+}
